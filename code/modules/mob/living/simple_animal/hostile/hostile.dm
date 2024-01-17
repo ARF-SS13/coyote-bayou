@@ -62,7 +62,9 @@
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
 	
-	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
+	/// Does the mob do a little windup before attacking?
+	var/telegraphs_melee = TRUE
+	/// Mobs will actually attack after this many seconds of winding up.
 	var/melee_windup_time = 0.3 SECONDS
 	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
 	var/melee_windup_sound = 'sound/effects/flip.ogg'
@@ -70,13 +72,19 @@
 	var/melee_windup_magnitude = 0.3
 	/// TRUE while a mob is winding up a melee attack, otherwise FALSE.
 	var/winding_up_melee = FALSE
+	var/windup_timer_id = 0
 
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
 
+	var/ranged_attack_cooldown = 2 SECONDS
+	COOLDOWN_DECLARE(ranged_cooldown)
+
 	var/sight_shoot_delay_time = 0.7 SECONDS
 	COOLDOWN_DECLARE(sight_shoot_delay)
 
+	/// If it can move and shoot on the same turn, set this to TRUE. otherwise it will shoot if it can, or move if it cant
+	var/can_move_and_shoot = TRUE
 	var/ranged_message = "fires" //Fluff text for ranged mobs
 	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
@@ -198,10 +206,14 @@
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF) // hard off switch
 		return 0
+	if(incapacitated())
+		return FALSE
 	/// first try to kick our way free of whatever
-	if(Confined())
-		return EscapeConfinement()
-
+	if(EscapeConfinement()) // we get one kick per turn
+		return TRUE
+	// if(DoingSomething())
+	// 	return TRUE
+	/// Now try to do interesting things
 	/// find us a target, or retrieve our current one, either'll do
 	var/atom/mytarget = PollTarget()
 	/// If we're in the middle of something, do the stuff we're in the middle of
@@ -240,9 +252,29 @@
 			my_target = get_target()
 			if(!target)
 				return FALSE
+	var/coolflags = 0
 	// target locked, now do things
+	/// JK, first check if we're allowed to attack our target
+	if(!AllowedToAttackTarget(my_target))
+		return MoveToTarget()
+	coolflags |= HOSTILE_AI_FLAG_ALLOWED_TO_ATTACK // skip a few chacks later
+	if(!CanSeeTarget(my_target, TRUE))
+		return MoveToTarget()
+	coolflags |= HOSTILE_AI_FLAG_CAN_SEE_TARGET // skip a few chacks later
 	/// first, can we punch em?
-
+	if(COOLDOWN_FINISHED(src, melee_cooldown))
+		if(telegraphs_melee)
+			TelegraphMeleeAttack(target, coolflags)
+		else
+			InitiateMeleeAttack(my_target, coolflags)
+	/// if not, can we shoot em?
+	if(COOLDOWN_FINISHED(src, ranged_cooldown))
+		if(InitiateRangedAttack(my_target, coolflags))
+			if(!can_move_and_shoot) // Allowed to move and shoot on the same turn?
+				return TRUE
+	/// if not, try to get closer
+	if(MoveToTarget())
+		return TRUE
 
 
 
@@ -387,15 +419,13 @@
 			if(Found(A))//Just in case people want to override targetting
 				. = list(A)
 				break
-			if(CanAttack(A))//Can we attack it?
+			if(AllowedToAttackTarget(A))//Can we attack it?
 				. += A
 				continue
 		var/Target = PickTarget(.)
 		GiveTarget(Target)
 		COOLDOWN_START(src, sight_shoot_delay, sight_shoot_delay_time)
 		return Target //We now have a targettte
-
-
 
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
@@ -404,11 +434,9 @@
 		if(Found(A))
 			. = list(A)
 			break
-		if(CanAttack(A))
+		if(AllowedToAttackTarget(A))
 			. += A
 			continue
-
-
 
 /mob/living/simple_animal/hostile/proc/Found(atom/A)//This is here as a potential override to pick a specific targette if available
 	return
@@ -429,7 +457,8 @@
 	return chosen_target
 
 // Please do not add one-off mob AIs here, but override this function for your mob
-/mob/living/simple_animal/hostile/CanAttack(atom/the_target)//Can we actually attack a possible targette?
+/// Returns if we're actually allowed to attack the target
+/mob/living/simple_animal/hostile/AllowedToAttackTarget(atom/the_target)//Can we actually attack a possible targette?
 	if(!the_target || the_target.type == /atom/movable/lighting_object || isturf(the_target)) // bail out on invalids
 		return FALSE
 
@@ -471,7 +500,7 @@
 		if(ismecha(the_target))
 			var/obj/mecha/M = the_target
 			if(M.occupant)//Just so we don't attack empty mechs
-				if(CanAttack(M.occupant))
+				if(AllowedToAttackTarget(M.occupant))
 					return TRUE
 
 		if(istype(the_target, /obj/machinery/porta_turret))
@@ -503,33 +532,205 @@
 		Aggro()
 		return 1
 
-//What we do after closing in
-/mob/living/simple_animal/hostile/proc/MeleeAction(patience = TRUE)
+/////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////........../////////////////////......................
+////////////////////////////////////..........///////////////////////////////////////////
+//// MELEE ATTACKING ///////////////..........///////////////////////////////////////////
+////////////////////////////////////........../////////////////////......................
+///////////////////////////////////////////////////////////////////......................
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/// Do an effect to telegraph that we're gonna punch em
+/mob/living/simple_animal/hostile/proc/TelegraphMeleeAttack(atom/target, hostile_flags = NONE)
+	if(!target)
+		return FALSE
+	if(windup_timer_id) // we're in the middle of scrotiographing an attack, it'll handle it dont worry
+		return FALSE
+	hostile_flags |= HOSTILE_AI_TELEGRAPHING_MELEE
+	if(!PreMeleeAttack(target, hostile_flags))
+		in_melee = FALSE
+		return FALSE
+	var/m_rd = retreat_distance
+	var/m_md = minimum_distance
+	/// also a cooldown, just in case something gets interrupted
+	COOLDOWN_START(src, winding_up_melee, melee_windup_time*2) //Don't increase our retreating distance while winding up
+	retreat_distance = null //Stop retreating
+	minimum_distance = 1 //Stop moving away
+	if(melee_windup_sound)
+		playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
+	// if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
+	// 	my_target = get_target() //Switch targets if we did during our windup.
+	// 	if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+	// 		retreat_distance = m_rd
+	// 		minimum_distance = m_md
+	// 		winding_up_melee = FALSE
+	// 		return my_target.attack_animal(src)
+	// 	else
+	// 		retreat_distance = m_rd
+	// 		minimum_distance = m_md
+	// 		winding_up_melee = FALSE
+	// 		return FALSE
+	// else
+	// 	retreat_distance = m_rd
+	// 	minimum_distance = m_md
+	// 	winding_up_melee = FALSE
+	// 	return FALSE
+	INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
+	windup_timer_id = addtimer(CALLBACK(src, .proc/TelegraphSwingFinish, target, HOSTILE_AI_FLAG_WAS_TELEGRAPHED), melee_windup_time) // see you in a bit!
+	return TRUE
+
+//Just a thing that whiffs if the target either doesnt exist or is out of range
+/mob/living/simple_animal/hostile/proc/TelegraphSwingFinish(atom/my_target, hostile_flags = NONE)
+	if(!my_target)
+		return FALSE
+	if(!InitiateMeleeAttack(my_target, hostile_flags))
+		return Whiff() // whiff!
+
+//Does a whiff
+/mob/living/simple_animal/hostile/proc/Whiff()
+	var/turf/where_to_whiff = get_step(src, dir)
+	if(!isturf(where_to_whiff))
+		return FALSE
+	do_attack_animation(where_to_whiff)
+	playsound(where_to_whiff, "sound/effects/eq_whiff.ogg")
+
+
+/mob/living/simple_animal/hostile/proc/InitiateMeleeAttack(atom/target, hostile_flags = NONE)
+	if(!target)
+		target = get_target()
+	if(!target)
+		return FALSE
+	if(CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_WAS_TELEGRAPHED) || COOLDOWN_FINISHED(src,winding_up_melee))
+		winding_up_melee = FALSE
+		windup_timer_id = 0
+	if(winding_up_melee) // we're in the middle of scrotiographing an attack, it'll handle it dont worry
+		return FALSE // or it been a while
+	/// performs one or more attacks on the target
+	if(!MeleeAttackTargetLoop(target, hostile_flags))
+		return FALSE
+
+
+/// checks if we can attack the thing, then attacks the thing over and over
+/mob/living/simple_animal/hostile/proc/MeleeAttackTargetLoop(atom/target, hostile_flags = NONE)
+	if(!target)
+		return FALSE
+	if(!MeleeAttackChain(target, hostile_flags))
+		return FALSE
 	if(rapid_melee > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/CheckAndAttack)
+		var/datum/callback/cb = CALLBACK(src, .proc/MeleeAttackChain, target)
 		var/delay = SSnpcpool.wait / rapid_melee
 		for(var/i in 1 to rapid_melee)
 			addtimer(cb, (i - 1)*delay)
+	return TRUE
+
+/// okay the ACTUAL proc that does the punching
+/mob/living/simple_animal/hostile/proc/MeleeAttackChain(atom/target, hostile_flags = NONE)
+	if(!target)
+		target = get_target()
+	if(!target)
+		return FALSE
+	if(!PreMeleeAttack(target, hostile_flags))
+		in_melee = FALSE
+		return FALSE
+	if(!MeleeAttackTarget(target, hostile_flags))
+		return FALSE
+	PostMeleeAttack(target, hostile_flags)
+	return TRUE
+
+/// check if we're able to punch em
+/mob/living/simple_animal/hostile/proc/PreMeleeAttack(atom/target, hostile_flags)
+	var/atom/origin = get_origin()
+	if(!origin || !isturf(origin.loc))
+		return FALSE
+	if(!target || !isturf(target.loc))
+		return FALSE
+	if(!CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_ALLOWED_TO_ATTACK))
+		if(!AllowedToAttackTarget(target))
+			return FALSE
+	if(!CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_CAN_SEE_TARGET))
+		if(!CanSeeTarget(target, TRUE))
+			return FALSE // its fine
+	if(!origin.Adjacent(target))
+		return FALSE
+	in_melee = TRUE
+	return TRUE
+
+/mob/living/simple_animal/hostile/proc/MeleeAttackTarget(atom/target)
+	var/atom/my_target = get_target()
+	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
+	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
+		return FALSE
 	else
-		AttackingTarget()
+		. = my_target.attack_animal(src)
 	if(patience)
 		GainPatience()
 
-/mob/living/simple_animal/hostile/proc/CheckAndAttack()
-	var/atom/origin = get_origin()
-	var/atom/my_target = get_target()
-	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
-		AttackingTarget()
+/// Cleaning up after an attack has been made
+/mob/living/simple_animal/hostile/proc/PostMeleeAttack(atom/target, hostile_flags)
+	COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
 
-/mob/living/simple_animal/hostile/proc/MoveToTarget()//Step 5, handle movement between us and our targette
+
+////////////////////////////////////////////////////////////////////
+//// RANGED ATTACKING //////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+/////////////////////.............................................................////
+
+/mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
+	if(ckey)
+		return FALSE
+	if(!check_friendly_fire)
+		return FALSE
+	if(!A)
+		return FALSE
+	for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
+		for(var/mob/living/L in T)
+			if(L == src || L == A)
+				continue
+			if(faction_check_mob(L) && !attack_same)
+				return TRUE
+
+/mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
+	if(!ranged || (!projectiletype && !casingtype))
+		return FALSE
+	if(COOLDOWN_TIMELEFT(src, sight_shoot_delay))
+		return FALSE
+	if(CheckFriendlyFire(A))
+		return
+	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
+	if(rapid > 1)
+		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
+		for(var/i in 1 to rapid)
+			addtimer(cb, (i - 1)*rapid_fire_delay)
+	else
+		Shoot(A)
+		for(var/i in 1 to extra_projectiles)
+			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
+	ThrowSomething(A)
+	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
+	if(sound_after_shooting)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
+	if(projectiletype)
+		if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
+			projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
+	if(casingtype)
+		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
+			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
+
+
+
+
+
+/mob/living/simple_animal/hostile/proc/MoveToTarget(atom/my_target)//Step 5, handle movement between us and our targette
+	if(!my_target)
+		LoseTarget()
+		return FALSE
 	stop_automated_movement = 1
 	if (peaceful == TRUE)
 		LoseTarget()
 		return FALSE
-	if(winding_up_melee)
-		return FALSE
-	var/atom/my_target = get_target()
-	if(!my_target || !CanAttack(my_target) || !CanSeeTarget(my_target, TRUE))
+	// if(winding_up_melee)
+	// 	return FALSE
+	if(!AllowedToAttackTarget(my_target) || !CanSeeTarget(my_target, TRUE))
 		LoseTarget()
 		return FALSE
 	/// by now we've determined that we can see our target and are allowed to attack it, lets go get em
@@ -552,23 +753,23 @@
 	/// roll to randomize this thing... if its an option
 	if(!winding_up_melee && variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
-	if(my_target)
-		if(COOLDOWN_TIMELEFT(src, melee_cooldown))
-			return TRUE
-		COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
-		if(!winding_up_melee && origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
-			MeleeAction()
-		else
-			if(!winding_up_melee && rapid_melee > 1 && target_distance <= melee_queue_distance)
-				MeleeAction(FALSE)
-			in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
-		return TRUE
+	// if(my_target)
+	// 	if(COOLDOWN_TIMELEFT(src, melee_cooldown))
+	// 		return TRUE
+	// 	COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
+	// 	if(!winding_up_melee && origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
+	// 		MeleeAction()
+	// 	else
+	// 		if(!winding_up_melee && rapid_melee > 1 && target_distance <= melee_queue_distance)
+	// 			MeleeAction(FALSE)
+	// 		in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
+	// 	return TRUE
 	if(!FindHidden()) // calls Goto
 		Goto(my_target,move_to_delay,minimum_distance)
 		return TRUE
 	return FALSE
 
-
+// Checks if the target is visible to us
 /mob/living/simple_animal/hostile/proc/CanSeeTarget(atom/my_target, already_targetted)
 	if(!istype(my_target))
 		return FALSE
@@ -616,42 +817,6 @@
 		else if(get_target() != null && prob(40))//No more pulling a mob forever and having a second player attack it, it can switch targets now if it finds a more suitable one
 			FindTarget()
 
-
-/mob/living/simple_animal/hostile/proc/AttackingTarget()
-	var/atom/my_target = get_target()
-	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
-	in_melee = TRUE
-	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
-		return FALSE
-	if(melee_windup_time)
-		var/m_rd = retreat_distance
-		var/m_md = minimum_distance
-		winding_up_melee = TRUE //Don't increase our retreating distance while winding up
-		retreat_distance = null //Stop retreating
-		minimum_distance = 1 //Stop moving away
-		if(melee_windup_sound)
-			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
-		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
-		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
-			my_target = get_target() //Switch targets if we did during our windup.
-			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
-				retreat_distance = m_rd
-				minimum_distance = m_md
-				winding_up_melee = FALSE
-				return my_target.attack_animal(src)
-			else
-				retreat_distance = m_rd
-				minimum_distance = m_md
-				winding_up_melee = FALSE
-				return FALSE
-		else
-			retreat_distance = m_rd
-			minimum_distance = m_md
-			winding_up_melee = FALSE
-			return FALSE
-	else
-		return 	my_target.attack_animal(src)
-
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
 	return
@@ -698,40 +863,6 @@
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				return
 			M.Goto(src,M.move_to_delay,M.minimum_distance)
-
-/mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
-	if(check_friendly_fire && !ckey)
-		for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
-			for(var/mob/living/L in T)
-				if(L == src || L == A)
-					continue
-				if(faction_check_mob(L) && !attack_same)
-					return TRUE
-
-/mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
-	if(COOLDOWN_TIMELEFT(src, sight_shoot_delay))
-		return FALSE
-	if(CheckFriendlyFire(A))
-		return
-	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
-	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
-		for(var/i in 1 to rapid)
-			addtimer(cb, (i - 1)*rapid_fire_delay)
-	else
-		Shoot(A)
-		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
-	ThrowSomething(A)
-	ranged_cooldown = world.time + ranged_cooldown_time
-	if(sound_after_shooting)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
-	if(projectiletype)
-		if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
-			projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
-	if(casingtype)
-		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
-			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
 
 /mob/living/simple_animal/hostile/proc/ThrowSomething(atom/targeted_atom)
 	if(!istype(throw_thing) || !istype(targeted_atom))
@@ -855,20 +986,23 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		for(var/dir in GLOB.cardinals)
 			DestroyObjectsInDirection(dir)
 
-
-/mob/living/simple_animal/hostile/proc/Confined()
-	if()
-
+/// checks if we're contained in something and tries to escape, returns TRUE if we're contained
 /mob/living/simple_animal/hostile/proc/EscapeConfinement()
 	if(buckled)
 		buckled.attack_animal(src)
+		return TRUE
 	var/atom/origin = get_origin()
 	if(!origin)
+		return
+	var/container = origin.loc
+	if(!container)
+		return
+	if(!container.density)
 		return
 	if(!isturf(origin.loc) && origin.loc != null)//Did someone put us in something?
 		var/atom/A = origin.loc
 		A.attack_animal(src)//Bang on it till we get out
-
+		return TRUE
 
 /mob/living/simple_animal/hostile/proc/FindHidden()
 	var/atom/my_target = get_target()
@@ -882,8 +1016,8 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		return 1
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
-	if(ranged && ranged_cooldown <= world.time)
-		GiveTarget(A)
+	if(ranged && COOLDOWN_FINISHED(ranged_cooldown))
+		// GiveTarget(A)
 		OpenFire(A)
 		DelayNextAction()
 	. = ..()
@@ -989,11 +1123,14 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	return GET_WEAKREF(target)
 
 /mob/living/simple_animal/hostile/proc/add_target(new_target)
-	unset_target()
-	if(!new_target)
+	var/datum/weakref/newtarget = WEAKREF(new_target)
+	if(!newtarget || newtarget == target)
 		return
-	target = WEAKREF(new_target)
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
+	unset_target()
+	target = newtarget
+	var/atom/nutarget = get_target()
+	if(nutarget)
+		RegisterSignal(nutarget, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
 
 /mob/living/simple_animal/hostile/proc/queue_unbirth()
 	SSidlenpcpool.add_to_culling(src)
@@ -1099,7 +1236,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	move_to_delay = rand(move_to_delay * 0.5, move_to_delay * 2)
 	auto_fire_delay = rand(auto_fire_delay * 0.8, auto_fire_delay * 1.5)
 	extra_projectiles = rand(extra_projectiles - 1, extra_projectiles + 1)
-	ranged_cooldown_time = rand(ranged_cooldown_time * 0.5, ranged_cooldown_time * 2)
+	ranged_attack_cooldown = rand(ranged_attack_cooldown * 0.5, ranged_attack_cooldown * 2)
 	retreat_distance = rand(0, 10)
 	minimum_distance = rand(0, 10)
 	LoseTarget()

@@ -51,7 +51,7 @@
 	udder = new()
 	. = ..()
 
-/mob/living/simple_animal/hostile/asteroid/gutlunch/CanAttack(atom/the_target) // Gutlunch-specific version of CanAttack to handle stupid stat_exclusive = true crap so we don't have to do it for literally every single simple_animal/hostile except the two that spawn in lavaland
+/mob/living/simple_animal/hostile/asteroid/gutlunch/AllowedToAttackTarget(atom/the_target) // Gutlunch-specific version of AllowedToAttackTarget to handle stupid stat_exclusive = true crap so we don't have to do it for literally every single simple_animal/hostile except the two that spawn in lavaland
 	if(isturf(the_target) || !the_target || the_target.type == /atom/movable/lighting_object) // bail out on invalids
 		return FALSE
 

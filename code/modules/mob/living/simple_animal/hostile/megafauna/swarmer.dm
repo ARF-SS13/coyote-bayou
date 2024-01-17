@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 //This handles viable things to eat/attack
 //Place specific cases of AI derpiness here
 //Most can be left to the automatic Gain/LosePatience() system
-/mob/living/simple_animal/hostile/swarmer/ai/resource/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/swarmer/ai/resource/AllowedToAttackTarget(atom/the_target)
 
 	//SPECIFIC CASES:
 	//Smash fulltile windows before grilles
