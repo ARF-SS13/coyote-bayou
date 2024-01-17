@@ -768,7 +768,7 @@
 	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
 
 /datum/gear/donator/kits/palpapus
-	name = "Huntress Customs"
+	name = "Darth Plapapus Customs"
 	path = /obj/item/storage/box/large/custom_kit/palpapus
 	ckeywhitelist = list("lordpapalus", "Lord_Papalus")
 
@@ -784,7 +784,7 @@
 	new /obj/item/storage/backpack/trekker(src)
 
 /datum/gear/donator/kits/werediggy
-	name = "Huntress Customs"
+	name = "Weredoggo Customs"
 	path = /obj/item/storage/box/large/custom_kit/werediggy // bookmark from JSC
 	ckeywhitelist = list("weredoggo")
 
