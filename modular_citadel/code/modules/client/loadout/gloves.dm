@@ -59,11 +59,10 @@
 	name = "patrol ranger gloves"
 	path = /obj/item/clothing/gloves/patrol
 
-/datum/gear/glvoes/modifpatrolburned
+/datum/gear/gloves/modifpatrolburned
 	name = "wrapped patrol gloves"
 	path = /obj/item/clothing/gloves/patrol/burned
 
-/datum/gear/glvoes/modifpatrol
+/datum/gear/gloves/modifpatrol
 	name = "modified patrol gloves"
 	path = /obj/item/clothing/gloves/modif_patrol
-
