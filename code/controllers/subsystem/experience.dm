@@ -30,7 +30,9 @@ SUBSYSTEM_DEF(experience)
 
 	var/debug = TRUE
 
+	var/load_wave_complete = FALSE
 	var/filesystem_is_okay = FALSE
+	var/testing_filesystem = FALSE
 
 /datum/controller/subsystem/experience/proc/Initialize(timeofday)
 	check_file_system()
@@ -43,7 +45,24 @@ SUBSYSTEM_DEF(experience)
 	to_chat(world, span_announce("\t(Beware the [my_shark]!)"))
 
 /datum/controller/subsystem/experience/proc/fire(resumed)
+	if(!filesystem_is_okay)
+		check_file_system()
+		if(filesystem_is_okay)
+			load_wave(TRUE) // okay we're good to go now!
+		return
 	save_loaded_exp()
+
+/datum/controller/subsystem/experience/proc/proceed_if_ready_or_testing(mykey)
+	if(filesystem_is_okay)
+		return TRUE // we're good to go!
+	/// otherwise check if we should proceed anyway
+	if(!testing_filesystem) // filesystem down and we arent testing? block!
+		return FALSE
+	if(mykey != _XP_DUMMY_CKEY) // not the dummy? block!
+		return FALSE
+	if(mykey == _XP_DUMMY_UID1)
+		return TRUE // dummy 1? proceed!
+	return TRUE // proceed!
 
 /*
  * Runs the initial load of the EXP data for all players
@@ -54,12 +73,29 @@ SUBSYSTEM_DEF(experience)
  * ezclap
  */
 /datum/controller/subsystem/experience/proc/load_wave(forceit)
-	if(!initialized && !forceit)
+	if(load_wave_complete) // already loaded
 		return
-	if(!filesystem_is_okay)
+	if(!proceed_if_ready_or_testing())
 		return // something went wrong with the filesystem, don't load
+	var/list/failured = list()
 	for(var/ck in GLOB.directory) // players
-		load_player(ck)
+		if(!load_player(ck))
+			failured |= ck
+	if(LAZYLEN(failured))
+		to_chat(world, span_userdanger("Something went wrong with loading [LAZYLEN(failured)] EXPs! Contact an admin with this error code: TRICKY-TROUBLE-BUSTER-TROUT"))
+		message_admins("Something went wrong with loading [LAZYLEN(failured)] EXPs! Error code: TRICKY-TROUBLE-BUSTER-TROUT")
+		CRASH("Failed to load EXP files for [LAZYLEN(failured)] players!!!!!!!!!!!! Error code: TRICKY-TROUBLE-BUSTER-TROUT")
+	load_wave_success()
+	return TRUE
+
+/* 
+ * Runs after the initial load of the EXP data for all players
+ * Tells everyone everything is gonna be okay
+ */
+/datum/controller/subsystem/experience/proc/load_wave_success()
+	load_wave_complete = TRUE
+	to_chat(world, span_green("Character data successfully loaded! =3"))
+	message_admins("Character data successfully loaded! =3")
 	return TRUE
 
 /// gets the EXP directory for the character, yeah uhhhh so theres player and character, player holds the various character files, which hold the actual exp data
@@ -131,15 +167,34 @@ SUBSYSTEM_DEF(experience)
 			CRASH("Failed to generate a UID for [mykey]!!!!!!!!!!!! Error code: LONG-TALL-HANDSOME-PURANA")
 	return the_uid // or suffer my curse
 
+/*
+ * Deletes a player's loaded EXP data
+ * Doesnt delete the actual files, just the loaded data
+ */
+/datum/controller/subsystem/experience/proc/delete_player(mykey)
+	if(!mykey)
+		return
+	for(var/uid in all_lvls)
+		var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, uid)
+		if(my_holder.c_key == mykey)
+			all_lvls -= uid
+			qdel(my_holder)
+			to_chat(ckey2client(mykey), span_notice("Local character data deleted! Your saved data has not been touched, and will be loaded again when you log in."))
+	return TRUE
+
 /////////////////////////////////////////////////////
 /// LOADING BLOCK ///////////////////////////////////
 /*
  * Loads the EXP data for a player
  * First is fed something with a prefs datum
  * If there no prefs_uid, they're a new chaaracter! Lets make a new folder for them!
+ * init = TRUE means to load the player anyway, even if the filesystem isnt verified
+ * its so we can load the test character!
  * */
 /datum/controller/subsystem/experience/proc/load_player(mykey, defer, getbackup, only_active = TRUE)
 	if(!mykey)
+		return
+	if(!proceed_if_ready_or_testing(mykey)) // likely just pregame, should be okay after init!
 		return
 	var/ckeydirectory = get_player_directory(mykey, getbackup)
 	if(only_active) // just load the active character
@@ -149,20 +204,28 @@ SUBSYSTEM_DEF(experience)
 		return load_character(mykey, null, defer, getbackup)
 	/// should give us a list in this format:
 	/// var/list/folders = list("dir_uid1/", "dir_uid2/", ...)
+	var/list/failured = list()
 	for(var/uid in folders) // characters
-		load_character(mykey, uid, defer, getbackup)
-
+		if(!load_character(mykey, uid, defer, getbackup))
+			failured |= uid
+	if(LAZYLEN(failured))
+		to_chat(ckey2client(mykey), span_userdanger("Something went wrong with loading [LAZYLEN(failured)] EXPs! Contact an admin with this error code: GRIM-GROWLY-SALMON-WHALE"))
+		message_admins("Something went wrong with loading [LAZYLEN(failured)] EXPs for [mykey]! Error code: GRIM-GROWLY-SALMON-WHALE")
+		CRASH("Failed to load EXP files for [LAZYLEN(failured)] for [mykey] characters!!!!!!!!!!!! Error code: GRIM-GROWLY-SALMON-WHALE")
+	return TRUE
 /*
  * Loads the EXP data for a character
  * Starts a long intricate game of hot potato with your mom
  * */
-/datum/controller/subsystem/experience/proc/load_character(mykey, uid, defer, getbackup)
+/datum/controller/subsystem/experience/proc/load_character(mykey, uid, defer, getbackup, init)
 	if(!mykey)
-		return
-	if(!uid)
+		return TRUE // planned failure
+	if(!proceed_if_ready_or_testing(mykey)) // likely just pregame, should be okay after init!
+		return TRUE // also planned failure
+	if(!uid) // no uid? try and get it
 		uid = initialize_player_xp(mykey)
 	if(!uid)
-		return
+		return TRUE // planned failure
 	to_chat(ckey2client(mykey), span_notice("Loading character data for [P.real_name]..."))
 	var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, uid) // check if its there first
 	if(my_holder)
@@ -171,16 +234,33 @@ SUBSYSTEM_DEF(experience)
 	all_lvls[uid] = my_holder
 	return TRUE
 
+/* 
+ * Run after the preferences are loaded, and we have a character with both a ckey and a uid
+ * Loads the EXP data for the character if needed
+ */
+/datum/controller/subsystem/experience/proc/preferences_loaded(datum/preferences/P)
+	if(!proceed_if_ready_or_testing()) // likely just pregame, should be okay after init!
+		return // itll be loaded with the first wave
+	if(!istype(P, /datum/preferences))
+		return
+	if(!P.parent)
+		return
+	var/myckey = P.parent.ckey // get it while its hot!!
+	var/myuid = P.prefs_uid
+	return load_character(myckey, myuid, FALSE, FALSE)
+
 /////////////////////////////////////////////////////
 /// SAVING BLOCK ////////////////////////////////////
 
 /// Saves All the EXP datas!
 /datum/controller/subsystem/experience/proc/save_loaded_exp()
-	to_chat(world, span_notice("Saving all character data..."))
+	if(!proceed_if_ready_or_testing()) // should never proceed if we're not ready
+		return
+	to_chat(world, span_notice("Saving..."))
 	for(var/ooid in all_lvls)
 		if(!save_character(ooid, TRUE))
 			message_admins("Something went wrong with saving [ooid]'s EXP data! Error code: HIGH-PRICED-LAWYER-SQUIRT")
-	to_chat(world, span_good("All character data successfully saved![prob(5) ? " =3" : ""]"))
+	to_chat(world, span_good("Save complete![prob(5) ? " =3" : ""]"))
 
 /* 
  * Saves a player's EXP data
@@ -189,18 +269,29 @@ SUBSYSTEM_DEF(experience)
 /datum/controller/subsystem/experience/proc/save_player(mykey, soft = TRUE)
 	if(!mykey)
 		return
+	if(!proceed_if_ready_or_testing(my_key)) // likely just pregame, should be okay after init!
+		return
 	var/ckeydirectory = get_player_directory(mykey)
 	var/list/folders = flist(ckeydirectory)
 	if(!LAZYLEN(folders)) // oh they're a new player? lets make a new folder for them!
 		initialize_player_xp(mykey)
 	/// should give us a list in this format:
 	/// var/list/folders = list("dir_uid1/", "dir_uid2/", ...)
+	var/list/failured = list()
 	for(var/uid in folders) // characters
-		save_character(mykey, uid, soft)
+		if(!save_character(mykey, uid, soft))
+			failured |= uid
+	if(LAZYLEN(failured))
+		to_chat(ckey2client(mykey), span_userdanger("Something went wrong with saving [LAZYLEN(failured)] EXPs! Contact an admin with this error code: SHOOBY-DOO-SEA-PONY"))
+		message_admins("Something went wrong with saving [LAZYLEN(failured)] EXPs for [mykey]! Error code: SHOOBY-DOO-SEA-PONY")
+		CRASH("Failed to save EXP files for [LAZYLEN(failured)] for [mykey] characters!!!!!!!!!!!! Error code: SHOOBY-DOO-SEA-PONY")
+	return TRUE
 
 /// Saves a character's EXP data
 /datum/controller/subsystem/experience/proc/save_character(uid, soft = TRUE)
 	if(!uid)
+		return
+	if(!proceed_if_ready_or_testing(uid)) // likely just pregame, should be okay after init!
 		return
 	var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, uid)
 	if(!my_holder)
@@ -237,6 +328,19 @@ SUBSYSTEM_DEF(experience)
 /// The uid associated with the mob, assigned on login / inhabitting of mob
 /mob/var/mob_uid = 0
 /// theres a prefs uid in the prefs, its used to overwrite whatever the mob_uid is
+
+/datum/controller/subsystem/experience/proc/assign_uid(mob/master, uid)
+	if(!master)
+		return
+	if(!uid)
+		return
+	if(!master.client)
+		return
+	var/ckey = master.client?.ckey
+	var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, ckey)
+	if(!my_holder)
+		return
+	my_holder.uid = uid
 
 /* 
  * Takes in a new player and gets them ready for the EXP system!
@@ -324,33 +428,69 @@ SUBSYSTEM_DEF(experience)
 
 /* 
  * Checks the file system for errors
- * Loads a dummy player and checks if its values are correct
+ * Its a multi-stage process! First it checks for a file I created, just to be sure that the file system is working
+ * Then it loads a dummy player and checks if its values are correct
  * Then does a test write to the file system, and checks if it can be read back
  */
 /datum/controller/subsystem/experience/proc/check_file_system()
 	filesystem_is_okay = FALSE // not no more it aint
-	load_player(_XP_DUMMY_CKEY) // say hi to WallyWeasel420DummyDumpy2000, the error checking dummy!
-	/// now, check the values
-	///// TODO: procs to check values in exp, wow
+	testing_filesystem = TRUE
+	if(!file("[_XP_ROOT_PATH]/[_XP_TEST_FILE]")) // check if the file system is working
+		return file_system_failure()
+	var/list/testboot = safe_json_decode(file2text("[_XP_ROOT_PATH]/[_XP_TEST_FILE]"))
+	if(!LAZYLEN(testboot)) // check if the file system is working
+		return file_system_failure()
+	if(!LAZYACCESS(testboot, "TEST"))
+		return file_system_failure()
+	/// okay we can access our own hard disk, great job, we put pants on
+	/// now, check if we can load a dummy player
+	if(!testload_dummy())
+		return file_system_failure()
+	/// okay we can load a dummy player, shirt is offically on
 	/// now, check if we can write to the file system
-	/// take the data of our dummy and package it into a json
-	/// delete the dummy
-	/// write the json to the file system
-	/// read the json back from the file system
-	/// check if the json is the same as the dummy's data
-	/// if it is, we're good to go!
+	if(!testwrite_dummy())
+		return file_system_failure()
+	return file_system_success() // sick
+
+/datum/controller/subsystem/experience/proc/testload_dummy()
+	load_player(GLOB.xp_dummy_data["ckey"], only_active = FALSE) // say hi to WallyWeaselDaSexKing, the error checking dummy!
+	/// now, check the values
+	for(var/uid in GLOB.xp_dummy_data["uids"])
+		var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, uid)
+		if(!my_holder)
+			return FALSE
+		var/my_ckey = my_holder.c_key
+		if(my_ckey != _XP_DUMMY_CKEY)
+			return FALSE
+		var/my_uid = my_holder.uid
+		if(my_uid != uid)
+			return FALSE
+		var/lvltocheck = GLOB.xp_dummy_data["uids"][uid]["testxp"]
+		var/testvalue = GLOB.xp_dummy_data["uids"][uid]["xp"]
+		var/valu = SSexperience.get_xp(my_ckey, my_uid, lvltocheck, XPVAL_TOTAL_XP)
+		if(valu != testvalue)
+			return FALSE
+	/// okay we're good to go!
 	return TRUE
+
+/datum/controller/subsystem/experience/proc/testwrite_dummy()
+	SSexperience.save_player(GLOB.xp_dummy_data["ckey"], FALSE)
+	SSexperience.delete_player(GLOB.xp_dummy_data["ckey"], TRUE) // say bye to WallyWeaselDaSexKing, the error checking dummy!
+	/// now, load the dummy player again
+	return testload_dummy()
 
 /datum/controller/subsystem/experience/proc/file_system_failure()
 	filesystem_is_okay = FALSE
+	testing_filesystem = FALSE
 	to_chat(world, span_userdanger("Something went wrong with the EXP file system! EXP and all related things will be unavailable until this is fixed. Contact an admin with this error code: SUDSY-SOAPY-BATH-PIKE"))
 	message_admins("Something went wrong with the EXP file system! EXP and all related things will be unavailable until this is fixed. Error code: SUDSY-SOAPY-BATH-PIKE")
 	CRASH("Something went wrong with the EXP file system! EXP and all related things will be unavailable until this is fixed. Error code: SUDSY-SOAPY-BATH-PIKE")
 
 /datum/controller/subsystem/experience/proc/file_system_success()
 	filesystem_is_okay = TRUE
-	to_chat(world, span_good("EXP file system loaded successfully! =3"))
-	message_admins("EXP file system loaded successfully! =3")
+	testing_filesystem = FALSE
+	to_chat(world, span_good("XP QC OK! =3"))
+	message_admins("XP QC OK! =3")
 	return TRUE
 
 //////////////////////////
@@ -379,6 +519,10 @@ SUBSYSTEM_DEF(experience)
 	src.c_key = c_key
 	src.uid = uid
 
+/datum/exp_holder/proc/Destroy(force, ...)
+	QDEL_LIST_ASSOC_VAL(lvls)
+	. = ..()
+
 /datum/exp_holder/proc/get_master_file(backup = FALSE)
 	var/r00t = SSexperience.get_character_directory(c_key, uid, backup)
 	return "[r00t][_XP_MASTER_FILENAME]" // /data/exp/current/<ckey>/<uid>/master.json
@@ -394,6 +538,8 @@ SUBSYSTEM_DEF(experience)
 /// Mostly used for defereffding load ///
 
 /datum/exp_holder/proc/load_from_disk(force)
+	if(!SSexperience.filesystem_is_okay) // likely just pregame, should be okay after init!
+		return
 	for(var/xp in lvls)
 		var/datum/exp/my_xp = xp
 		my_xp.load_from_disk(force)
@@ -402,6 +548,8 @@ SUBSYSTEM_DEF(experience)
 /// SAVING BLOCK for holder /////////////
 
 /datum/exp_holder/proc/save_to_disk(soft)
+	if(!SSexperience.filesystem_is_okay) // likely just pregame, should be okay after init!
+		return
 	var/list/failed = list() // you know a proc is good when it starts with a list of failures (oh look you're at the top)
 	for(var/xp in lvls)
 		var/datum/exp/my_xp = xp
@@ -519,6 +667,8 @@ SUBSYSTEM_DEF(experience)
  * Loads the XP data from our file
  * */
 /datum/exp/proc/load_from_disk(force)
+	if(!virgin && !force)
+		return TRUE // We're good for one load, then we're happy
 	var/xppath = get_filepath()
 	if(!file(xppath)) // likely a new character
 		newplayer = TRUE
@@ -583,6 +733,8 @@ SUBSYSTEM_DEF(experience)
 
 /// Saves the XP data to a file
 /datum/exp/proc/save_to_disk(only_progress, soft)
+	if(!SSexperience.filesystem_is_okay) // likely just pregame, should be okay after init!
+		return
 	var/filepath = get_filepath(FALSE)
 	var/backup_filepath = get_filepath(TRUE)
 	if(!should_save(filepath, only_progress, soft))
@@ -633,6 +785,8 @@ SUBSYSTEM_DEF(experience)
 
 /// Test-reads the XP data from a file and compares it to the current data, which should be the same
 /datum/exp/proc/saved_successfully(filepath)
+	if(!SSexperience.filesystem_is_okay) // likely just pregame, should be okay after init!
+		return FALSE // cus it sisnt
 	if(!file(filepath))
 		return FALSE
 	var/list/savedata = safe_json_decode(file2text(filepath))
@@ -753,6 +907,17 @@ SUBSYSTEM_DEF(experience)
 /datum/exp/proc/on_lose_xp(amount, list/data = list())
 	// override me!
 
+/datum/exp/pve
+	name = "PvE"
+	verbing = "Assailing wildlife"
+	readme_file = "pve_readme.txt"
+	kind = XP_PVE
+	max_level = 1000
 
-
+/datum/exp/pvp
+	name = "PvP"
+	verbing = "Hurting people and their feelings"
+	readme_file = "pvp_readme.txt"
+	kind = XP_PVP
+	max_level = 1000
 

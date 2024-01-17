@@ -410,7 +410,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		save_preferences()
 	save_character()		//let's save this new random character so it doesn't keep generating new ones.
 	menuoptions = list()
-	return
+	
+	if(parent)
+		SSexperience.preferences_loaded(src)
+
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='17%'>"
 #define ERP_CATEGORY_ROW "<tr valign='top' width='17%'>"

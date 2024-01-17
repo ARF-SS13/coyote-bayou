@@ -60,6 +60,8 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 	
+	SSexperience.mob_entered(src, client.ckey)
+	
 	switch(client.prefs.kisser)
 		if(KISS_BOYS)
 			SSstatpanels.cached_boykissers |= ckey
