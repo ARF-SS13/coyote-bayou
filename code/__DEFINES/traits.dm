@@ -420,6 +420,8 @@
 #define TRAIT_PUNGAPOWER "pungaful"
 #define TRAIT_NO_SECOND_WIND "no_second_wind"
 
+#define TRAIT_NO_MED_HVY_ARMOR "no_med_heavy_armor"
+
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
 #define TRAIT_SURGERY_HIGH		"highsurgery"

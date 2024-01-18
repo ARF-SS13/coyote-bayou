@@ -1409,3 +1409,17 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		The spirits may be merciful, better hope they are in a good mood!")
 	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
 	locked =  FALSE
+
+/datum/quirk/armor_aversion
+	name = "Armor Aversion"
+	desc = "For a reason or another, you're unable to wear medium or heavy armour"
+	value = -33
+	category = "Functional Quirks"
+	mechanics = "You can't wear medium, heavy or power armor anymore."
+	conflicts = list(
+		/datum/quirk/pa_wear
+	)
+	mob_trait = TRAIT_NO_MED_HVY_ARMOR
+	gain_text = span_boldannounce("You really don't like to feel encumbered.")
+	lose_text = span_notice("You don't mind feeling encumbered too much anymore.")
+	locked =  FALSE

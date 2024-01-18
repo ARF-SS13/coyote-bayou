@@ -597,6 +597,22 @@
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
 	SSevents.holiday_on_join(humanc)
 
+	if(ishuman(humanc))
+		var/mob/living/carbon/human/H = humanc
+		var/obj/item/suit = H.get_item_by_slot(SLOT_WEAR_SUIT)
+		if(HAS_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
+			if( suit.armor.linemelee		> ARMOR_VALUE_LIGHT["linemelee"] || \
+				suit.armor.linebullet		> ARMOR_VALUE_LIGHT["linebullet"] || \
+				suit.armor.linelaser		> ARMOR_VALUE_LIGHT["linelaser"] || \
+				suit.armor.energy			> ARMOR_VALUE_LIGHT["energy"] || \
+				suit.armor.bomb				> ARMOR_VALUE_LIGHT["bomb"] || \
+				suit.armor.magic			> ARMOR_VALUE_LIGHT["magic"] || \
+				suit.armor.wound			> ARMOR_VALUE_LIGHT["wound"] || \
+				suit.armor.damage_threshold	> ARMOR_VALUE_LIGHT["damage_threshold"])
+
+				H.dropItemToGround(suit)
+				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
+
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
 	for(var/C in GLOB.employmentCabinets)
