@@ -769,13 +769,13 @@
 	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
 
 /datum/gear/donator/kits/palpapus
-	name = "Darth Plapapus Customs"
+	name = "Darth Plapappus Customs"
 	path = /obj/item/storage/box/large/custom_kit/palpapus
 	ckeywhitelist = list("lordpapalus", "Lord_Papalus")
 
 /obj/item/storage/box/large/custom_kit/palpapus/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
-	new /obj/item/clothing/suit/armor/harpercoat(src)
+	new /obj/item/clothing/suit/armor/medium/raider/combatduster(src)
 	new /obj/item/clothing/under/f13/eighties(src)
 	new /obj/item/clothing/shoes/f13/rag/pawb(src)
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal(src)
