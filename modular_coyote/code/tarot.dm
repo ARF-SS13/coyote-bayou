@@ -419,6 +419,7 @@
 		i++
 
 /obj/item/hand/dropped(mob/user as mob)
+	..()
 	if(locate(/obj/structure/table, loc))
 		src.update_icon(user.dir)
 	else
