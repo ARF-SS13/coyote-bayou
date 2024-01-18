@@ -2024,3 +2024,11 @@
 	new  /obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/ww1selfloader/smelly(src)
+	
+/datum/gear/donator/kits/trickingtrapster
+	name = "Tarot Box"
+	path = /obj/item/storage/box/large/custom_kit/trickingtrapster
+	ckeywhitelist = list("trickingtrapster")
+
+/obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
+	new /obj/item/tarotdeck(src)
