@@ -100,6 +100,8 @@ SUBSYSTEM_DEF(chat)
 		var/mob/they = sayer
 		if(!they.client)
 			return
+	if(!(messagemode in list(MODE_SAY, MODE_WHISPER, MODE_SING, MODE_ASK, MODE_EXCLAIM, MODE_YELL)))
+		return
 	var/out
 	var/datum/emoticon_bank/E
 	for(var/key in emoticon_cache) // if this gets laggy, lol idk
