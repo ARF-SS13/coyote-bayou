@@ -218,7 +218,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
-	var/requires_training = TRUE
+	var/requires_training = FALSE
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	name = "secondary gear harness"
@@ -4468,7 +4468,7 @@
 	/// Projectiles below this damage will get deflected
 	var/deflect_damage = 20 // blocks handload 9mm, which simplemobs shoot
 	/// If TRUE - it requires PA training trait to be worn
-	var/requires_training = TRUE
+	var/requires_training = FALSE // testing if the PA perk is actually fun or not
 	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
 	/// If TRUE - the suit has been recently affected by EMP blast
@@ -4821,7 +4821,7 @@
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	can_deflect = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = TRUE
+	requires_training = FALSE
 /obj/item/clothing/suit/armor/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor"
 	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
