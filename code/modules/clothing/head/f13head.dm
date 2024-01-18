@@ -94,7 +94,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDESNOUT
-	var/requires_training = TRUE
+	var/requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/dark
 	name = "reinforced combat helmet"
@@ -272,7 +272,7 @@
 	/// Projectiles below this damage will get deflected
 	var/deflect_damage = 18
 	/// If TRUE - it requires PA training trait to be worn
-	var/requires_training = TRUE
+	var/requires_training = FALSE // testing if the PA trait is actually fun or not
 	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
 	/// Path of item that this helmet gets salvaged into
@@ -396,7 +396,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	deflect_damage = 5
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = TRUE
+	requires_training = FALSE // Testing them if they're disable 
 
 /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor Helmet"
