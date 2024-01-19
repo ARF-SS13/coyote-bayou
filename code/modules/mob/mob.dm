@@ -1461,7 +1461,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
 	"Leer - Sneak a peak at their assets.",
-	"React - Want to tell them something."
+	"React - Want to tell them something.",
+	"Touch - Pull their tail."
 	)
 	choices = sortList(choices)
 
@@ -1999,6 +2000,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if("Touch - Grab their hips.")
 			to_chat(A, span_notice("[src] is maybe reaching to <span class='love'>grab your hips?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
 			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Touch - Pull their hair.")
+			to_chat(A, span_notice("[src] is reaching to <span class='love'>pull your tail?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to pull [A]'s tail, maybe they'll notice you trying to be frisky!")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return
