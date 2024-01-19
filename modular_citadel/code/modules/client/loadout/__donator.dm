@@ -275,6 +275,14 @@
 /obj/item/storage/box/large/custom_kit/matter7/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 
+/datum/gear/donator/kits/applewhiskey
+	name = "Huntress Customs Minigun"
+	path = /obj/item/storage/box/large/custom_kit/applewhiskey
+	ckeywhitelist = list("Apple Whisky")
+
+/obj/item/storage/box/large/custom_kit/applewhiskey/PopulateContents()
+	new /obj/item/gun/ballistic/babygun(src)
+
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
 	path = /obj/item/storage/box/large/custom_kit/brimcon
