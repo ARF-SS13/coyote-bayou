@@ -82,7 +82,7 @@
 	icon_state = "combat_hypo"
 	volume = 50
 	ignore_flags = 1 
-	list_reagents = list(/datum/reagent/medicine/stimpak = 50) // 10hp per click. A downgrade from stimmies/epi seperate, but it's refillable. 
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 25, /datum/reagent/medicine/coagulant = 25)
 
 /obj/item/reagent_containers/hypospray/magillitis
 	name = "experimental autoinjector"
@@ -106,7 +106,7 @@
 	ignore_flags = 1 //so you can medipen through hardsuits
 	reagent_flags = NONE
 	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/preservahyde = 3, /datum/reagent/medicine/coagulant = 2)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 5)
 	custom_premium_price = PRICE_ALMOST_EXPENSIVE
 
 /obj/item/reagent_containers/hypospray/medipen/attack(mob/M, mob/user)
