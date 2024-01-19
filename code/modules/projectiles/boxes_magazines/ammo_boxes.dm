@@ -164,6 +164,19 @@
 	randomize_ammo_count = FALSE
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 
+/obj/item/ammo_box/needlercapsule/shotgun
+	name = "Capsule full of crystal needles"
+	icon_state = "needlerbox"
+	desc = "A Box filled with crystal needles"
+	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
+	caliber = list(CALIBER_SHOTGUNNEEDLER)
+	multiple_sprites = 2
+	max_ammo = 24
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"

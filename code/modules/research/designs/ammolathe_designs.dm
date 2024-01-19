@@ -1046,6 +1046,13 @@
 	build_path = /obj/item/ammo_box/shotgun/bean
 	category = list("initial", "Handloaded Ammo")
 
+/datum/design/ammolathe/improvised/needlershotgunbox
+	name = "crystal needler shotgun box"
+	id = "crystal_shotgunbox"
+	materials = list(/datum/material/iron = 9000, /datum/material/blackpowder = 1000)
+	build_path = /obj/item/ammo_box/needlercapsule/shotgun
+	category = list("initial", "Handloaded Ammo")
+
 /datum/design/ammolathe/improvised/rubbershot
 	name = "rubbershot shotgun box"
 	id = "handloader_rubbershot"
