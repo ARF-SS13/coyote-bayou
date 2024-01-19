@@ -1615,6 +1615,14 @@
 	new /obj/item/clothing/under/tribaliris(src)
 	new /obj/item/gun/ballistic/shotgun/s163/thingblessed(src)
 
+/datum/gear/donator/kits/thingpony/petal
+	name = "Petal's pack"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/petal
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/petal/PopulateContents()
+	new /obj/item/clothing/under/poofygreen(src)
+
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
 	path = /obj/item/storage/box/large/custom_kit/tk420634
@@ -2024,7 +2032,7 @@
 	new  /obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/ww1selfloader/smelly(src)
-	
+
 /datum/gear/donator/kits/trickingtrapster
 	name = "Tarot Box"
 	path = /obj/item/storage/box/large/custom_kit/trickingtrapster
