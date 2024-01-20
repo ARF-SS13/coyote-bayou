@@ -152,38 +152,6 @@
 		/datum/reagent/consumable/sugar = 5
 	)
 
-/* awaiting assets + code for completion
-
-/datum/crafting_recipe/food/pemmican
-	name = "Pemmican"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
-		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
-		/obj/item/reagent_containers/food/snacks/tallow = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pemmican
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/crunchymutfruit
-	name = "Crunchy Mutfruit"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/datum/reagent/consumable/sugar = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/tatofries
-	name = "Tato fries"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
-		/obj/item/reagent_containers/food/snacks/butter = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/tatofries
-	subcategory = CAT_WASTEFOOD
-*/
-
 /datum/crafting_recipe/food/mirelurkstew
 	name = "Mirelurk Stew"
 	reqs = list(
@@ -422,3 +390,36 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/rat
 	subcategory = CAT_WASTEFOOD
+
+/// Legacy Content
+
+/* 
+/datum/crafting_recipe/food/pemmican
+	name = "Pemmican"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
+		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
+		/obj/item/reagent_containers/food/snacks/tallow = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pemmican
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/crunchymutfruit
+	name = "Crunchy Mutfruit"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/datum/reagent/consumable/sugar = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/tatofries
+	name = "Tato fries"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/tatofries
+	subcategory = CAT_WASTEFOOD
+*/
