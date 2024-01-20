@@ -668,6 +668,13 @@
 	build_path = /obj/item/ammo_box/a50MGbox
 	category = list("initial", "Intermediate Ammo")
 
+/datum/design/ammolathe/heavyneedler
+	name = "Heavy Ruby needle capsule"
+	id = "hnc"
+	materials = list(/datum/material/iron = 22000, /datum/material/blackpowder = 2200)
+	build_path = /obj/item/ammo_box/needlercapsule/heavy
+	category = list("initial", "Intermediate Ammo")
+
 /datum/design/ammolathe/a14mm
 	name = "14mm FMJ ammo box"
 	id = "a127mm"
