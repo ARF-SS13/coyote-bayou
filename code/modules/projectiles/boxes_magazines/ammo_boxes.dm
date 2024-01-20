@@ -177,6 +177,19 @@
 	randomize_ammo_count = FALSE
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 
+/obj/item/ammo_box/needlercapsule/heavy //compensates 4 whole mags of the needler shoulder mount, requires much more resources to make per box.
+	name = "Capsule full of heavy ruby needles"
+	icon_state = "heavyneedles"
+	desc = "A capsule filled with heavy duty ruby needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
+	caliber = list(CALIBER_HNEEDLE)
+	multiple_sprites = 2
+	max_ammo = 12
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"

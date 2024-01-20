@@ -204,6 +204,12 @@
 	caliber = list(CALIBER_CASELESS)
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/heavyneedler
+	name = "Ruby Cylinder"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
+	caliber = list(CALIBER_HNEEDLE)
+	max_ammo = 3
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev5mm
 	name = "5mm Revolver Cylinder"
 	ammo_type = /obj/item/ammo_casing/m5mm

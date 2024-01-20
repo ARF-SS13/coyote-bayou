@@ -323,7 +323,7 @@
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
-	loot = list(                                                          //dps mag cap
+	loot = list(                                                          //dps(bane) mag cap
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 7,                //281 24
 		/obj/item/gun/ballistic/automatic/concussive = 8,                 //281 8
 		/obj/item/gun/ballistic/automatic/unmcamr = 9,                    //279 4
@@ -335,6 +335,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
 		/obj/item/gun/ballistic/automatic/needlerhmg = 1,                 //243(448) 72
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
+		/obj/item/gun/ballistic/revolver/needlerrifle = 3,                 //220(520) 3
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
@@ -344,7 +345,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 1,        //254 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 3,  //113 12
-
 	)
 
 /// DPS should be 300+ or have some other excellent quality like magazine capacity

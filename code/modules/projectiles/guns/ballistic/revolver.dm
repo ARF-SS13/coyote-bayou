@@ -723,6 +723,29 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 
+// heavy duty needler revolving rifle
+/obj/item/gun/ballistic/revolver/needlerrifle
+	name = "OT-64 Heavy Needler rifle"
+	desc = "A shoulder mounted OT-64 rifle. It was manufactured in Nepal by Latos Systems in collaboration with Nepal anti-armor divisions. It uses a heavy duty red needler round that's on par with the size and length of a 20mm shell. Albeit it doesn't hit hard, interestingly."
+	icon_state = "heavyneedle"
+	item_state = "heavyneedle"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/heavyneedler
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = HMG_RECOIL(2, 1.3)
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
 /* * * * * * * * * * *
  * Hunting revolver
  * Super heavy revolver

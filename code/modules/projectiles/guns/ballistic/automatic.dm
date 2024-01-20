@@ -3593,46 +3593,9 @@
 //MISC//
 ////////
 
-/* * * * * * * * * *
-* Recoiless rifle
-* - Potential for two rounds but always will use a single shot magazine
-* + auto-ejects the casing
-* + T2 buff damage
-* - Long draw time, heavy recoil, heavy slow down, two handed only and only able to be placed on the back
-* * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/recoilessrifle // remove from lootpool in another lootpool. Needs rethinking and probably needs removal.
-	name = "Xototl Recoiless Rifle"
-	desc = "A AT92RR or 'recoiless rifle'. Packing one hell of a punch, this weapon seems to have Aztec like motifs on the grips. This weapon seems extremely bulky and quite heavy to use. But what it makes up for slowness, it makes up for damage."
-	icon_state = "spaag"
-	item_state = "spaag"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/spaagrifle
-	init_mag_type = /obj/item/ammo_box/magazine/spaagrifle/empty
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2.2
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	auto_eject = 1
-	en_bloc = 1
-	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
-	cock_delay = GUN_COCK_RIFLE_BASE
-	draw_time = GUN_DRAW_LONG
-	init_recoil = HMG_RECOIL(4, 4)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
-	can_scope = FALSE
-	can_suppress = FALSE
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-
-
 /obj/item/gun/ballistic/automatic/needlerrifle
-	name = "NR-43 Turán"
-	desc = "A NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.' Sadly the user of this weapon is a big dork."
+	name = "Worn NR-43 Turán"
+	desc = "A old albeit well aged NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.' Sadly the user of this weapon is a big dork."
 	icon_state = "needles"
 	item_state = "needles"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -3643,14 +3606,14 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	draw_time = GUN_DRAW_NORMAL
 	init_recoil = CARBINE_RECOIL (1 , 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slow
 	)
-	zoom_factor = 1.2
+	zoom_factor = 1
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
@@ -3705,6 +3668,33 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast ,
 		/datum/firemode/automatic/rpm400
+	)
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+
+/obj/item/gun/ballistic/automatic/needlersmg
+	name = "Worn S-27 Akula Needler SMG"
+	desc = "A lightweight, albeit old and worn, Akula Needler SMG. A prototype created and supplied to the Kazakhstan by Latos Systems. The gun itself is lightweight, easy to use, low recoil, but unable to take silencers or scopes. The design was a prototype and never took off, rejected in favor of the AK series rifles."
+	icon_state = "needlesmg"
+	item_state = "needlesmg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlessmg
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlessmg
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = SMG_RECOIL (1.2 , 0.9)
+	init_firemodes = list(
+		/datum/firemode/semi_auto,
+		/datum/firemode/automatic/rpm100
 	)
 	can_suppress = FALSE
 	can_bayonet = FALSE

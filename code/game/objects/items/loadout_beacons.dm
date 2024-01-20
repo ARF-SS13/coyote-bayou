@@ -1374,6 +1374,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/needlerrifle(src)
 	new /obj/item/ammo_box/needlercapsule(src)
 
+/obj/item/storage/box/gun/rifle/smgneedle
+	name = "NR-43 Turán rifle case"
+
+/obj/item/storage/box/gun/rifle/needlesmg/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/needlersmg(src)
+	new /obj/item/ammo_box/needlercapsule(src)
+
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
 	name = "LeMat revolver case"
@@ -1999,6 +2006,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/shotneedle
+
+/datum/loadout_box/needlersmg
+	entry_tag = "Worn Akula Needler SMG"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/needlesmg
 
 /datum/loadout_box/varmint
 	entry_tag = "Varmint Rifle"

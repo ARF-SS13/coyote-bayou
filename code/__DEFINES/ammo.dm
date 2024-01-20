@@ -32,6 +32,7 @@
 #define CALIBER_MUSKET_PLASMA "plasma musket packs"
 #define CALIBER_NEEDLE "needles"
 #define CALIBER_SHOTGUNNEEDLER
+#define CALIBER_HNEEDLE "heavyneedle"
 #define CALIBER_MININUKE "mininukes"
 #define CALIBER_ROCKET "rockets"
 #define CALIBER_ROCK "rocks"
