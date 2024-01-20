@@ -614,7 +614,7 @@
 				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
 
 	character.client.is_in_game = 1
-	spawn(30 SECONDS)
+	spawn(5 MINUTES)
 		if(character.client.is_in_game)
 			character.client.is_in_game = 2
 			if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
