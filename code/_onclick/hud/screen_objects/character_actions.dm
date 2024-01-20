@@ -76,10 +76,6 @@
 		else
 			to_chat(L, span_alert("Your hands are full!"))
 
-		var/mob/living/carbon/human/H
-		if(!view(1).Find(H))
-			var/obj/item/I = L.get_active_held_item()
-			I.melee_attack_chain(L, L, params)
 
 /atom/movable/screen/aooc_hud_button
 	name = "AOOC"
