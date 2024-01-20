@@ -73,8 +73,6 @@
 				H.emote("touch")
 			else if(HAS_TRAIT(H, TRAIT_HEAL_TEND))
 				H.emote("tend")
-		else
-			to_chat(H, span_alert("Your hands are full!"))
 
 /atom/movable/screen/triage/DblClick(location,control,params)
 	if(ishuman(usr))
