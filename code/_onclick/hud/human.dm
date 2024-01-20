@@ -366,6 +366,10 @@
 	sleep_hud_button.hud = src
 	infodisplay += sleep_hud_button
 
+	triage = new /atom/movable/screen/triage()
+	triage.hud = src
+	infodisplay += triage
+
 	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
 	aooc_hud_button.hud = src
 	infodisplay += aooc_hud_button
