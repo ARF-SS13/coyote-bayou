@@ -1330,7 +1330,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "aBb" = (
@@ -2706,7 +2706,7 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/artifact/common,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
 "bjb" = (
@@ -3189,6 +3189,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
+"bvj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/red/line,
+/obj/item/artifact/common,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood/reactor)
 "bvz" = (
 /turf/closed/wall/r_wall,
 /turf/closed/wall/r_wall,
@@ -3229,6 +3235,7 @@
 /area/f13/building)
 "bwj" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/leisure)
 "bwy" = (
@@ -4085,7 +4092,7 @@
 	desc = "A robust, thick metal frame used to hold power armor upright during maintenance.";
 	name = "power armor frame"
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/slimecross/consuming/sepia,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -7114,7 +7121,6 @@
 "den" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -8926,6 +8932,7 @@
 /area/f13/bunker)
 "dPn" = (
 /obj/structure/table,
+/obj/item/reagent_containers/food/snacks/fishing/lobster_deluxe,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/leisure)
 "dPA" = (
@@ -9800,6 +9807,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/glass,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "eiM" = (
@@ -10040,7 +10048,7 @@
 /area/f13/bunker)
 "enA" = (
 /obj/structure/lattice/catwalk/clockwork,
-/obj/effect/validball_spawner,
+/obj/item/artifact/rare,
 /turf/open/floor/bronze{
 	name = "floor"
 	},
@@ -11059,6 +11067,14 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
+"eLs" = (
+/obj/structure/table{
+	layer = 2.9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices2nd)
 "eLu" = (
 /obj/structure/bookcase/manuals,
 /turf/open/floor/carpet/red,
@@ -14704,6 +14720,7 @@
 /area/f13/bunker)
 "gpW" = (
 /obj/structure/bodycontainer/crematorium,
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/medical)
 "gqb" = (
@@ -16435,7 +16452,6 @@
 /obj/structure/table/wood{
 	pixel_x = 2
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "hel" = (
@@ -19056,6 +19072,8 @@
 /obj/structure/closet/secure_closet/brig,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -19241,9 +19259,9 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/building)
 "iuI" = (
-/obj/effect/validball_spawner,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
+/obj/structure/statue/uranium/nuke,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood/reactor)
 "iuU" = (
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/fakespace,
@@ -20617,16 +20635,16 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave/tunnelertemple/void)
 "jdS" = (
-/obj/structure/lattice{
-	density = 1
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/obj/structure/table/wood,
-/obj/structure/lattice{
-	density = 1
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
+/turf/open/floor/f13{
+	icon_state = "redrustyfull"
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood/archives)
+/area/f13/brotherhood/armory)
 "jet" = (
 /obj/item/stack/sheet/glass/ten,
 /obj/structure/rack,
@@ -20692,6 +20710,12 @@
 	pixel_x = -12
 	},
 /turf/open/floor/plating/tunnel,
+/area/f13/brotherhood/rnd)
+"jfx" = (
+/obj/structure/table/glass,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/wirecutters/advanced,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "jfB" = (
 /obj/machinery/light{
@@ -22158,7 +22182,7 @@
 /area/f13/brotherhood/archives)
 "jNX" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/obj/effect/validball_spawner,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "jNZ" = (
@@ -22244,7 +22268,7 @@
 	pixel_x = 4;
 	pixel_y = 9
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "jPy" = (
@@ -23096,7 +23120,7 @@
 	desc = "The Brotherhood has released the latest iteration of their advanced table. Designed by Head Knight Envy Sin";
 	name = "Table 3"
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "klE" = (
@@ -24544,7 +24568,7 @@
 /area/f13/building)
 "kQf" = (
 /obj/structure/table,
-/obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -25667,7 +25691,7 @@
 	name = "power armor frame"
 	},
 /obj/effect/decal/cleanable/oil,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/slimecross/chilling/sepia,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -25963,7 +25987,7 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "lzc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_high,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -27561,7 +27585,7 @@
 /area/f13/bunker)
 "mjG" = (
 /obj/effect/decal/cleanable/blood/gibs/human/lizard/torso,
-/obj/effect/validball_spawner,
+/obj/item/artifact/rare,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/archives)
 "mjH" = (
@@ -30074,6 +30098,8 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -30163,10 +30189,15 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "non" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/validball_spawner,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood/operations)
+/obj/structure/bookcase/manuals/engineering{
+	desc = "A collection of scrolls, archives and relics.";
+	name = "Brotherhood Archives"
+	},
+/obj/item/artifact/rare,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/brotherhood/archives)
 "now" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 9
@@ -35224,7 +35255,8 @@
 "pwG" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/weldingtool/hightech,
+/obj/item/screwdriver/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "pwL" = (
@@ -36672,6 +36704,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -38301,7 +38334,7 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Archives"
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -40184,7 +40217,6 @@
 /area/f13/bunker)
 "rAW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/validball_spawner,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "rAX" = (
@@ -42984,6 +43016,7 @@
 /area/f13/building)
 "sOB" = (
 /obj/structure/table/wood/poker,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/leisure)
 "sOE" = (
@@ -43358,7 +43391,7 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
-/obj/item/card/midbounty,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "sYi" = (
@@ -44580,6 +44613,22 @@
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
+"tAK" = (
+/obj/structure/table/reinforced{
+	alpha = 0;
+	desc = "Secure bolting to support the heavy weight of power armor.";
+	name = "frame support bolts"
+	},
+/obj/structure/kitchenspike_frame{
+	anchored = 1;
+	desc = "A robust, thick metal frame used to hold power armor upright during maintenance.";
+	name = "power armor frame"
+	},
+/obj/item/slimecross/charged/sepia,
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/rnd)
 "tBy" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare_weps,
@@ -48562,7 +48611,7 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/artifact/common,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
 "vmk" = (
@@ -48957,6 +49006,7 @@
 	brightness = 3;
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -49812,6 +49862,21 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"vQm" = (
+/obj/structure/bookcase/manuals/research_and_development{
+	allowed_books = list(/obj/item/book,/obj/item/book,/obj/item/storage/book,/obj/item/book,/obj/item/book,/obj/item/book);
+	desc = "A collection of scrolls, archives and relics.";
+	name = "Brotherhood Historical Archives"
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/brotherhood/archives)
 "vQp" = (
 /obj/effect/validball_spawner,
 /turf/open/floor/plating/f13/inside/mountain,
@@ -50007,7 +50072,7 @@
 	pixel_y = 6
 	},
 /obj/structure/fluff/paper/stack,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
 "vWK" = (
@@ -50512,7 +50577,7 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Historical Archives"
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -51329,7 +51394,7 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/slime_cookie/adamantine,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -52725,6 +52790,7 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Historical Archives"
 	},
+/obj/item/artifact/rare,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -54257,7 +54323,7 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Historical Archives"
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -54402,11 +54468,22 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "xWX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
-/area/f13/brotherhood/reactor)
+/obj/structure/table/reinforced{
+	alpha = 0;
+	desc = "Secure bolting to support the heavy weight of power armor.";
+	name = "frame support bolts"
+	},
+/obj/structure/kitchenspike_frame{
+	anchored = 1;
+	desc = "A robust, thick metal frame used to hold power armor upright during maintenance.";
+	name = "power armor frame"
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/item/slimecross/burning/sepia,
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/rnd)
 "xXa" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/structure/spider/stickyweb,
@@ -109799,7 +109876,7 @@ hwR
 hJK
 aLG
 wyr
-lrQ
+xWX
 wGd
 uWw
 hqF
@@ -109814,7 +109891,7 @@ hdQ
 hJK
 mBm
 jaI
-xWX
+wbU
 wcO
 wcO
 wcO
@@ -110071,7 +110148,7 @@ fWq
 hJK
 mBm
 syS
-wbU
+bvj
 wcO
 wcO
 wcO
@@ -110313,7 +110390,7 @@ bGh
 hJK
 lPS
 wGd
-bRw
+tAK
 wyr
 wDl
 wGd
@@ -110584,12 +110661,12 @@ hJK
 gHp
 hJK
 mBm
-bJD
+iuI
 bJD
 bja
 uhq
 uhq
-bJD
+iuI
 mBm
 uIJ
 brJ
@@ -113099,7 +113176,7 @@ gMw
 jlt
 sLB
 vmk
-non
+bJL
 otM
 riL
 bJL
@@ -113381,7 +113458,7 @@ hNI
 eus
 eus
 eus
-iuI
+eus
 eQJ
 sHf
 owt
@@ -113918,7 +113995,7 @@ nnp
 fbg
 hHG
 uLV
-pwG
+jfx
 nnp
 uuZ
 vxU
@@ -115455,14 +115532,14 @@ pVz
 xSD
 vuG
 xim
-xim
+xSD
 sSf
 yhh
 kdT
 qKN
-qKN
-vuG
-xim
+non
+vQm
+xSD
 lix
 eOW
 iVr
@@ -115709,7 +115786,7 @@ rSk
 rSk
 rSk
 pVz
-xSD
+wiF
 smj
 acA
 smj
@@ -115719,7 +115796,7 @@ kdT
 smj
 acA
 smj
-wiF
+xSD
 nmO
 adW
 eOU
@@ -115966,17 +116043,17 @@ yjB
 frw
 rSk
 oFm
-xim
+xSD
 wiF
 qKN
 qKN
 oSt
 viS
 kdT
-xim
-xim
-wiF
-xim
+xSD
+xSD
+xSD
+xSD
 lix
 kpc
 cLE
@@ -116738,7 +116815,7 @@ cOf
 pVz
 pVz
 bga
-jdS
+uPi
 uPi
 cqu
 jdd
@@ -117244,7 +117321,7 @@ cOc
 pVz
 tWO
 qgk
-nto
+eLs
 xSq
 rdr
 eWx
@@ -117971,7 +118048,7 @@ mRS
 wCm
 nao
 jzT
-gMj
+jdS
 aOZ
 hvX
 dle
