@@ -335,7 +335,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
 		/obj/item/gun/ballistic/automatic/needlerhmg = 1,                 //243(448) 72
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
-		/obj/item/gun/ballistic/revolver/needlerrifle = 3                 //220(520) 3
+		/obj/item/gun/ballistic/revolver/needlerrifle = 3,                 //220(520) 3
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
