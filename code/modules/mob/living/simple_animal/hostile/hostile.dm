@@ -142,6 +142,10 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
+	/// stores some flags about the mob's AI, like if it's allowed to attack the target, or if it can see the target
+	/// currently only stores things relevant for a single action
+	var/datum/hostile_blackboard/blackboard
+
 	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
 
 /mob/living/simple_animal/hostile/Initialize(mapload)
@@ -206,6 +210,8 @@
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF) // hard off switch
 		return 0
+	if(!blackboard)
+		blackboard = new()
 	if(incapacitated())
 		return FALSE
 	/// first try to kick our way free of whatever
@@ -221,6 +227,7 @@
 		return ActiveHostile(mytarget)
 	else
 		return SleepyHostile()
+	blackboard.wipe()
 
 
 
@@ -245,6 +252,10 @@
 		return targa
 	return FindTarget(possible_targets)
 
+/* 
+ * This is the main proc for the mob's AI. It's called every time the mob is allowed to do something.
+ * Attempts to punch the target, shoot the target, and move towards the target, in that order.
+ */
 /mob/living/simple_animal/hostile/proc/ActiveHostile(atom/my_target)
 	/// first, do we have a target? if so, good!
 	if(!isatom(my_target))
@@ -252,33 +263,48 @@
 			my_target = get_target()
 			if(!target)
 				return FALSE
-	var/coolflags = 0
-	// target locked, now do things
-	/// JK, first check if we're allowed to attack our target
-	if(!AllowedToAttackTarget(my_target))
-		return MoveToTarget()
-	coolflags |= HOSTILE_AI_FLAG_ALLOWED_TO_ATTACK // skip a few chacks later
-	if(!CanSeeTarget(my_target, TRUE))
-		return MoveToTarget()
-	coolflags |= HOSTILE_AI_FLAG_CAN_SEE_TARGET // skip a few chacks later
+	/// prechecks!
+	var/atom/my_origin = get_origin()
+	UpdateBlackboard(my_target, my_origin)
+	// target locked, blackboard updated, lets zoom
 	/// first, can we punch em?
-	if(COOLDOWN_FINISHED(src, melee_cooldown))
+	if(COOLDOWN_FINISHED(src, melee_cooldown) && blackboard.allowed_to_melee_target)
 		if(telegraphs_melee)
 			TelegraphMeleeAttack(target, coolflags)
 		else
 			InitiateMeleeAttack(my_target, coolflags)
 	/// if not, can we shoot em?
-	if(COOLDOWN_FINISHED(src, ranged_cooldown))
+	if(COOLDOWN_FINISHED(src, ranged_cooldown) && blackboard.allowed_to_shoot_target)
 		if(InitiateRangedAttack(my_target, coolflags))
 			if(!can_move_and_shoot) // Allowed to move and shoot on the same turn?
 				return TRUE
 	/// if not, try to get closer
-	if(MoveToTarget())
+	if(blackboard.allowed_to_chase_target && MoveToTarget())
 		return TRUE
 
-
-
-
+/// generates a precached bitfield of flags about us in relation to the target at this instant
+/mob/living/simple_animal/hostile/proc/UpdateBlackboard(atom/my_target, atom/my_origin = src)
+	if(!my_target)
+		return FALSE
+	if(!blackboard)
+		blackboard = new()
+	blackboard.wipe()
+	if(!my_target)
+		my_target = get_target()
+		if(!my_target)
+			return FALSE
+	blackboard.written = TRUE
+	blackboard.allowed_to_attack = AllowedToAttackTarget(my_target)
+	if(!blackboard.allowed_to_attack) // we're not allowed to attack, so we're not allowed to do anything
+		return
+	/// allowed to attack the target! now, can we see it?
+	blackboard.can_chase_target = CheckChaseDistance(my_target) /// simplified check that assumes that we could see them originally when they were targetted
+	blackboard.has_line_of_sight_to_target = HasLineOfSightTo(my_target)
+	blackboard.is_adjacent_to_target = my_origin.Adjacent(my_target)
+	blackboard.is_far_from_target = !blackboard.is_adjacent_to_target && blackboard.can_chase_target // HA THATS WHY I USED IT!!!!!!!
+	blackboard.allowed_to_shoot_target = blackboard.has_line_of_sight_to_target && (blackboard.is_far_from_target || (can_shoot_in_melee && blackboard.is_adjacent_to_target)) // no muzzle stuffing (unless its a whole wedding cake at our wedding)
+	blackboard.allowed_to_melee_target = blackboard.is_adjacent_to_target
+	/// cached for sanic speed
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
@@ -475,48 +501,47 @@
 			if(!client_in_range)
 				return FALSE
 
-	if(search_objects < 2)
-		if(isliving(the_target))
-			var/mob/living/L = the_target
-			if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
+	if(isliving(the_target))
+		var/mob/living/L = the_target
+		if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
+			return FALSE
+		var/faction_check = !(L in foes) && faction_check_mob(L)
+		if(robust_searching)
+			if(faction_check && !attack_same)
 				return FALSE
-			var/faction_check = !(L in foes) && faction_check_mob(L)
-			if(robust_searching)
-				if(faction_check && !attack_same)
-					return FALSE
-				if(L.stat > stat_attack)
-					return FALSE
-				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
-					return FALSE
-				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
-					return FALSE
-				if(friends[L] > 0 && foes[L] < 1)
-					return FALSE
-			else
-				if((faction_check && !attack_same) || L.stat)
-					return FALSE
-			return TRUE
+			if(L.stat > stat_attack)
+				return FALSE
+			if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
+				return FALSE
+			if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
+				return FALSE
+			if(friends[L] > 0 && foes[L] < 1)
+				return FALSE
+		else
+			if((faction_check && !attack_same) || L.stat)
+				return FALSE
+		return TRUE
 
-		if(ismecha(the_target))
-			var/obj/mecha/M = the_target
-			if(M.occupant)//Just so we don't attack empty mechs
-				if(AllowedToAttackTarget(M.occupant))
-					return TRUE
-
-		if(istype(the_target, /obj/machinery/porta_turret))
-			var/obj/machinery/porta_turret/P = the_target
-			if(P.in_faction(src)) //Don't attack if the turret is in the same faction
-				return FALSE
-			if(P.has_cover &&!P.raised) //Don't attack invincible turrets
-				return FALSE
-			if(P.stat & BROKEN) //Or turrets that are already broken
-				return FALSE
-			return TRUE
-
-		if(istype(the_target, /obj/item/electronic_assembly))
-			var/obj/item/electronic_assembly/O = the_target
-			if(O.combat_circuits)
+	if(ismecha(the_target))
+		var/obj/mecha/M = the_target
+		if(M.occupant)//Just so we don't attack empty mechs
+			if(AllowedToAttackTarget(M.occupant))
 				return TRUE
+
+	if(istype(the_target, /obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = the_target
+		if(P.in_faction(src)) //Don't attack if the turret is in the same faction
+			return FALSE
+		if(P.has_cover &&!P.raised) //Don't attack invincible turrets
+			return FALSE
+		if(P.stat & BROKEN) //Or turrets that are already broken
+			return FALSE
+		return TRUE
+
+	if(istype(the_target, /obj/item/electronic_assembly))
+		var/obj/item/electronic_assembly/O = the_target
+		if(O.combat_circuits)
+			return TRUE
 
 	if(isobj(the_target))
 		if(attack_all_objects || is_type_in_typecache(the_target, wanted_objects))
@@ -594,17 +619,24 @@
 	do_attack_animation(where_to_whiff)
 	playsound(where_to_whiff, "sound/effects/eq_whiff.ogg")
 
-
+/* 
+ * Automated melee attack! This is called by the mob's AI when it wants to punch something.
+ */
 /mob/living/simple_animal/hostile/proc/InitiateMeleeAttack(atom/target, hostile_flags = NONE)
 	if(!target)
 		target = get_target()
 	if(!target)
 		return FALSE
-	if(CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_WAS_TELEGRAPHED) || COOLDOWN_FINISHED(src,winding_up_melee))
-		winding_up_melee = FALSE
-		windup_timer_id = 0
-	if(winding_up_melee) // we're in the middle of scrotiographing an attack, it'll handle it dont worry
-		return FALSE // or it been a while
+	if(!blackboard.written)
+		UpdateBlackboard(target)
+	if(telegraphs winding_up_melee)
+		if(COOLDOWN_FINISHED(src,winding_up_melee)) // we finished!
+			winding_up_melee = FALSE
+			windup_timer_id = 0
+			if(!MeleeAttackTargetLoop(target, hostile_flags))
+				return FALSE
+		else // we're still winding up
+			return FALSE
 	/// performs one or more attacks on the target
 	if(!MeleeAttackTargetLoop(target, hostile_flags))
 		return FALSE
@@ -648,7 +680,7 @@
 		if(!AllowedToAttackTarget(target))
 			return FALSE
 	if(!CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_CAN_SEE_TARGET))
-		if(!CanSeeTarget(target, TRUE))
+		if(!CheckChaseDistance(target, TRUE))
 			return FALSE // its fine
 	if(!origin.Adjacent(target))
 		return FALSE
@@ -675,6 +707,46 @@
 ////////////////////////////////////////////////////////////
 /////////////////////.............................................................////
 
+/// Initiate an automated ranged attack
+/mob/living/simple_animal/hostile/proc/InitiateRangedAttack(atom/target, hostile_flags = NONE)
+	if(!ranged)
+		return FALSE
+	if(!projectiletype && !casingtype)
+		return FALSE
+	if(!target && !ckey)
+		target = get_target()
+		if(!target)
+			return FALSE
+	ShouldRangedAttack(target, hostile_flags)
+	PreRangedAttack(target, hostile_flags)
+	if(!ShootLoop(target, hostile_flags))
+		return FALSE
+	PostRangedAttack(target, hostile_flags)
+	return TRUE
+
+/// First check if we're authorized to do a shoot
+/mob/living/simple_animal/hostile/proc/ShouldRangedAttack(atom/target, hostile_flags)
+	if(!target)
+		return FALSE
+	if(CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_IS_ADJACENT_TO_TARGET))
+		return FALSE
+	else if(CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_IS_FAR_FROM_TARGET))
+		
+	if(!CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_ALLOWED_TO_ATTACK))
+		if(!AllowedToAttackTarget(target))
+			return FALSE
+	if(!CHECK_BITFIELD(hostile_flags, HOSTILE_AI_FLAG_CAN_SEE_TARGET))
+		if(!CheckChaseDistance(target, TRUE))
+			return FALSE // its fine
+	if(!target.Adjacent(get_origin()))
+		return FALSE
+	return TRUE
+
+
+/// what to do before doing a full ranged attack
+
+
+/// no longer really needed, cus bullet pass through friendly mobs, lol
 /mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
 	if(ckey)
 		return FALSE
@@ -730,7 +802,7 @@
 		return FALSE
 	// if(winding_up_melee)
 	// 	return FALSE
-	if(!AllowedToAttackTarget(my_target) || !CanSeeTarget(my_target, TRUE))
+	if(!AllowedToAttackTarget(my_target) || !CheckChaseDistance(my_target, TRUE))
 		LoseTarget()
 		return FALSE
 	/// by now we've determined that we can see our target and are allowed to attack it, lets go get em
@@ -770,17 +842,34 @@
 	return FALSE
 
 // Checks if the target is visible to us
-/mob/living/simple_animal/hostile/proc/CanSeeTarget(atom/my_target, already_targetted)
+/mob/living/simple_animal/hostile/proc/CheckChaseDistance(atom/my_target)
 	if(!istype(my_target))
-		return FALSE
-	if(see_invisible < my_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 	var/turf/T = get_turf(src)
 	if(my_target.z != T.z)
 		return FALSE
-	if(already_targetted && even_robuster_searching) // smart mobs can chase you through walls!
-		return (get_dist(get_turf(src), get_turf(my_target)) <= aggro_vision_range)
-	return (my_target in view(vision_range, get_turf(src)))
+	return (get_dist(get_turf(src), get_turf(my_target)) <= aggro_vision_range)
+
+/mob/living/simple_animal/hostile/proc/HasLineOfSightTo(atom/my_target)
+	if(!istype(my_target))
+		return FALSE
+	if(see_invisible < my_target.invisibility)//Target's invisible to us, forget it
+		return FALSE
+	var/turf/T_me = get_turf(src)
+	if(my_target.z != T_me.z)
+		return FALSE
+	var/turf/T_target = get_turf(my_target) 
+	var/list/turfline = getline(T_me, T_target)
+	for(var/turf/T in turfline)
+		if(!T)
+			continue
+		if(T == T_target)
+			return TRUE
+		if(T == T_me)
+			continue
+		if(T.opacity)
+			return FALSE
+	return TRUE
 
 /mob/living/simple_animal/hostile/proc/Goto(targette, delay, minimum_distance)
 	var/atom/my_target = get_target()
