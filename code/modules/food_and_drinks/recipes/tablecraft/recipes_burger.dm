@@ -1,5 +1,5 @@
-
 // see code/module/crafting/table.dm
+// Visual Reference: Food Old World under crafting
 
 ////////////////////////////////////////////////STANDARD BURGS////////////////////////////////////////////////
 
@@ -225,6 +225,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/chicken
 	subcategory = CAT_BURGER
+
 /datum/crafting_recipe/food/crabburger
 	name = "Crab Burger"
 	reqs = list(
@@ -233,16 +234,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/crab
 	subcategory = CAT_BURGER
-/*
-/datum/crafting_recipe/food/empoweredburger
-	name = "Empowered Burger"
-	reqs = list(
-			/obj/item/stack/sheet/mineral/plasma = 2,
-			/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/empoweredburger
-	subcategory = CAT_BURGER
-*/
+
 /datum/crafting_recipe/food/fivealarmburger
 	name = "Five alarm burger"
 	reqs = list(
@@ -270,45 +262,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/jelly/cherry
 	subcategory = CAT_BURGER
-/*
-/datum/crafting_recipe/food/xenoburger
-	name = "Xeno burger"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/xeno = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/xeno
-	subcategory = CAT_BURGER
 
-////////////MYSTICAL////////////////
-
-/datum/crafting_recipe/food/ghostburger
-	name = "Ghost burger"
-	reqs = list(
-		/obj/item/ectoplasm = 1,
-		/datum/reagent/consumable/sodiumchloride = 2,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/ghost
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/spellburger
-	name = "Spell burger"
-	reqs = list(
-		/obj/item/clothing/head/wizard/fake = 1,
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/spell
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/spellburger2
-	name = "Spell burger"
-	reqs = list(
-		/obj/item/clothing/head/wizard = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/spell
-	subcategory = CAT_BURGER
-*/
 ////////////COLORED BURGERS//////////////
 
 /datum/crafting_recipe/food/redburger
@@ -465,3 +419,54 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/philly_cheesesteak
 	subcategory = CAT_BURGER
+
+/// Legacy Content
+
+/*
+/datum/crafting_recipe/food/empoweredburger
+	name = "Empowered Burger"
+	reqs = list(
+			/obj/item/stack/sheet/mineral/plasma = 2,
+			/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/empoweredburger
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/xenoburger
+	name = "Xeno burger"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/xeno = 1,
+		/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/xeno
+	subcategory = CAT_BURGER
+
+////////////MYSTICAL////////////////
+
+/datum/crafting_recipe/food/ghostburger
+	name = "Ghost burger"
+	reqs = list(
+		/obj/item/ectoplasm = 1,
+		/datum/reagent/consumable/sodiumchloride = 2,
+		/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/ghost
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/spellburger
+	name = "Spell burger"
+	reqs = list(
+		/obj/item/clothing/head/wizard/fake = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/spell
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/spellburger2
+	name = "Spell burger"
+	reqs = list(
+		/obj/item/clothing/head/wizard = 1,
+		/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/spell
+	subcategory = CAT_BURGER
+*/
