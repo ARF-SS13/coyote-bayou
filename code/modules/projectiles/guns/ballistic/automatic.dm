@@ -3693,7 +3693,7 @@
 	draw_time = GUN_DRAW_NORMAL
 	init_recoil = SMG_RECOIL (1.2 , 0.9)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm100
 	)
 	can_suppress = FALSE
