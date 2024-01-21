@@ -617,16 +617,19 @@
 	spawn(5 MINUTES)
 		if(character.client.is_in_game)
 			character.client.is_in_game = 2
-			if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
-				var/obj/item/card/id/selfassign/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
-				to_chat(world, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.assignment] may be snooping around the county."))
-			
-			else if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/pda))
-				var/obj/item/pda/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
-				to_chat(world, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.ownjob] may be snooping around the county.")) 
-			
-			else
-				to_chat(world, span_nicegreen("You hear through the grapevine that [humanc.name] the [rank] may be snooping around the county."))
+
+			for(var/i in GLOB.player_list)
+				if(isliving(i))
+					if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
+						var/obj/item/card/id/selfassign/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.assignment] may be snooping around the county."))
+					
+					else if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/pda))
+						var/obj/item/pda/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.ownjob] may be snooping around the county.")) 
+					
+					else
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [rank] may be snooping around the county."))
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
