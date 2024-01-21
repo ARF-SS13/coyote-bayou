@@ -61,6 +61,7 @@
 	speed = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 32
+	attack_sound = list('modular_citadel/sound/voice/scream_m.ogg', 'modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -80,7 +81,8 @@
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
-	H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 3)
+	H.adjustStaminaLoss(3)
 
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone
@@ -101,6 +103,7 @@
 	obj_damage = 30
 	melee_damage_lower = 18
 	melee_damage_upper = 40
+	attack_sound = list('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg', 'modular_citadel/sound/voice/scream_f3.ogg')
 	vision_range = 9
 	aggro_vision_range = 18
 	retreat_distance = 6
@@ -128,7 +131,6 @@
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
-	H.reagents.add_reagent(/datum/reagent/toxin, 3)
-	H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
-	H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
+	H.adjustStaminaLoss(5)
 
