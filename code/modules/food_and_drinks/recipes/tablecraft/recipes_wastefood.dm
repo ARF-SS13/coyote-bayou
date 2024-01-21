@@ -294,6 +294,18 @@
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
+/datum/crafting_recipe/food/brahminpotpie
+	name = "brahmin potpie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2,
+		/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/brahminpotpie
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+
 /datum/crafting_recipe/food/gecko_kebab
 	name = "gecko kebab"
 	reqs = list(
