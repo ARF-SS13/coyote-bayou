@@ -219,14 +219,14 @@
 	health = 650
 	melee_damage_lower = 20
 	melee_damage_upper = 47
-	extra_projectiles = 2 
+	extra_projectiles = 2
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12
 	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
-	projectiletype = /obj/item/projectile/plasmacarbine
+	projectiletype = /obj/item/projectile/f13plasma/scatter
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
