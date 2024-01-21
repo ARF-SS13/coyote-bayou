@@ -923,7 +923,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, SOUTH)
-			//if(pixel_slide_target_has_help_int)
 			pixel_x = pixel_slide_memory_x
 			pixel_y = pixel_slide_memory_y + 32
 			dir = pixel_slide_memory_dir
