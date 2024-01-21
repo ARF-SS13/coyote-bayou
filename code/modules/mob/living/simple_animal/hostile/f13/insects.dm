@@ -157,7 +157,7 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	projectiletype = /obj/item/projectile/bile
 	projectilesound = 'sound/f13npc/centaur/spit.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	speak_emote = list("skitters")
 	retreat_distance = 5
 	minimum_distance = 7
@@ -333,7 +333,7 @@
 
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
@@ -491,7 +491,7 @@
 	projectilesound = 'sound/f13npc/bloatfly/shoot2.ogg'
 	//sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
 	//sound_after_shooting_delay = 1 SECONDS
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	ranged_cooldown_time = 3 SECONDS
 	variation_list = list(

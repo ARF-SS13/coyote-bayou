@@ -140,7 +140,7 @@
 	minimum_distance = 6
 	speed = 0
 	ranged_cooldown_time = 22
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	stat_attack = 1
 	ranged = TRUE
 	robust_searching = TRUE
@@ -195,7 +195,7 @@
 	ranged_cooldown_time = 30
 	projectiletype = /obj/item/projectile/f13plasma/pistol/adam
 	projectilesound = 'sound/weapons/wave.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	attack_verb_simple = "thrusts"
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -219,7 +219,7 @@
 	health = 650
 	melee_damage_lower = 20
 	melee_damage_upper = 47
-	extra_projectiles = 2 
+	auto_fire_burst_count = 3 
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12

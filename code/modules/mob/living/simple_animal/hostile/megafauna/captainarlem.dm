@@ -21,7 +21,7 @@
 	speed = 1
 	move_to_delay = 8
 	ranged_cooldown_time = 10
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = 1
 	pixel_x = -16

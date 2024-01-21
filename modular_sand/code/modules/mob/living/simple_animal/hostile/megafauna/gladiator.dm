@@ -23,7 +23,7 @@ They deal 35 brute (armor is considered).
 	attack_sound = 'modular_sand/sound/weapons/zweihanderslice.ogg'
 	death_sound = 'modular_sand/sound/effects/gladiatordeathsound.ogg'
 	deathmessage = "gets discombobulated and fucking dies."
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_queue_distance = 2
 	melee_damage_lower = 35
 	melee_damage_upper = 35
@@ -208,21 +208,21 @@ They deal 35 brute (armor is considered).
 	switch(healthpercentage)
 		if(75 to 100)
 			phase = 1
-			rapid_melee = initial(rapid_melee)
+			melee_attacks_per_tick = initial(melee_attacks_per_tick)
 			move_to_delay = initial(move_to_delay)
 			melee_damage_upper = initial(melee_damage_upper)
 			melee_damage_lower = initial(melee_damage_lower)
 		if(30 to 75)
 			phase = 2
 			icon_state = "gladiator2"
-			rapid_melee = 2
+			melee_attacks_per_tick = 2
 			move_to_delay = 2
 			melee_damage_upper = 30
 			melee_damage_lower = 30
 		if(0 to 30)
 			phase = 3
 			icon_state = "gladiator3"
-			rapid_melee = 4
+			melee_attacks_per_tick = 4
 			melee_damage_upper = 25
 			melee_damage_lower = 25
 			move_to_delay = 1.7

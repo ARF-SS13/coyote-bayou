@@ -66,7 +66,7 @@ Difficulty: Medium
 	pixel_x = -32 //Hit box perfectly centered
 	pixel_y = -16
 	move_to_delay = 3
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 10
 	ranged = FALSE
 	del_on_death = 1
@@ -245,7 +245,7 @@ Difficulty: Medium
 	src.move_to_delay = 2
 	src.melee_damage_lower = 25
 	src.melee_damage_upper = 25
-	src.rapid_melee = 3
+	src.melee_attacks_per_tick = 3
 
 //Sets Sif's enraged stats
 /mob/living/simple_animal/hostile/megafauna/sif/proc/enraged()
@@ -259,7 +259,7 @@ Difficulty: Medium
 	src.move_to_delay = 4
 	src.melee_damage_lower = 30
 	src.melee_damage_upper = 30
-	src.rapid_melee = 4
+	src.melee_attacks_per_tick = 4
 	src.dodge_prob = 50
 
 //Chooses a random special
