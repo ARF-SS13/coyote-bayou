@@ -119,7 +119,7 @@
 	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/f13plasma/scatter
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 4
 	minimum_distance = 4
@@ -206,7 +206,7 @@
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
@@ -258,7 +258,7 @@
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
@@ -312,7 +312,7 @@
 	can_ghost_into = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
-	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
+	auto_fire_burst_count = 1 //removed extra projectiles to make these easier to deal with on super lowpop
 	stat_attack = CONSCIOUS
 	ranged = TRUE
 	move_to_delay = 9 //WAY slower than average,
@@ -538,7 +538,7 @@
 	color = "#B85C00"
 	projectilesound = 'sound/magic/fireball.ogg'
 	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/laser

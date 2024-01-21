@@ -166,7 +166,7 @@
 	mob_armor = ARMOR_VALUE_GHOUL_REAVER
 	maxHealth = 50
 	health = 50
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	retreat_distance = 3
 	minimum_distance = 1
 	ranged = TRUE

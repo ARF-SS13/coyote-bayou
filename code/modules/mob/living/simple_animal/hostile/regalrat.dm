@@ -55,7 +55,7 @@
 		coffer.Trigger()
 	return ..()
 
-/mob/living/simple_animal/hostile/regalrat/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/regalrat/AllowedToAttackTarget(atom/the_target)
 	if(istype(the_target,/mob/living/simple_animal))
 		var/mob/living/A = the_target
 		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)
@@ -341,7 +341,7 @@
 		else
 			. += span_warning("This peasant serves a different king! Strike him down!")
 
-/mob/living/simple_animal/hostile/rat/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/rat/AllowedToAttackTarget(atom/the_target)
 	if(istype(the_target,/mob/living/simple_animal))
 		var/mob/living/A = the_target
 		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)

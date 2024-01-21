@@ -22,7 +22,7 @@ Difficulty: Hard
 	aggro_vision_range = 18 // man-eating for a reason
 	speed = 8
 	move_to_delay = 8
-	rapid_melee = 16 // every 1/8 second
+	// melee_attacks_per_tick = 16 // every 1/8 second
 	melee_queue_distance = 20 // as far as possible really, need this because of charging and teleports
 	ranged = TRUE
 	pixel_x = -16

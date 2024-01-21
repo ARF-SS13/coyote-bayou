@@ -67,7 +67,7 @@
 	icon_dead = "chineseassault_dead"
 	maxHealth = 160
 	health = 160
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	loot = list()
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'

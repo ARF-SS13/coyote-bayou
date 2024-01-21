@@ -192,7 +192,7 @@ Featuring:
 				enter_mecha(M)
 				return
 			else
-				if(!CanAttack(M))
+				if(!AllowedToAttackTarget(M))
 					LoseTarget()
 					return
 
@@ -260,16 +260,16 @@ Featuring:
 
 //Yes they actually try and pull this shit
 //~simple animals~
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/AllowedToAttackTarget(atom/the_target)
 	if(ismecha(the_target))
 		var/obj/mecha/M = the_target
 		if(mecha)
-			if(M == mecha || !CanAttack(M.occupant))
+			if(M == mecha || !AllowedToAttackTarget(M.occupant))
 				return 0
 		else //we're not in a mecha, so we check if we can steal it instead.
 			if(is_valid_mecha(M))
 				return 1
-			else if (M.occupant && CanAttack(M.occupant))
+			else if (M.occupant && AllowedToAttackTarget(M.occupant))
 				return 1
 			else
 				return 0

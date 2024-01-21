@@ -103,7 +103,7 @@
 
 
 //We don't attack beekeepers/people dressed as bees//Todo: bee costume
-/mob/living/simple_animal/hostile/poison/bees/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/poison/bees/AllowedToAttackTarget(atom/the_target)
 	. = ..()
 	if(!.)
 		return FALSE

@@ -45,7 +45,7 @@
 	status_flags = CANPUSH
 	del_on_death = 1
 	dodging = TRUE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -169,7 +169,7 @@
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/effect/gibspawner/human)
 	dodging = FALSE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 
 /mob/living/simple_animal/hostile/syndicate/ranged/infiltrator //shuttle loan event
 	projectilesound = 'sound/weapons/gunshot_silenced.ogg'
@@ -196,7 +196,7 @@
 	health = 250
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg
-	rapid = 2
+	auto_fire_burst_count = 2
 	icon_state = "syndicate_smg"
 	icon_living = "syndicate_smg"
 	casingtype = /obj/item/ammo_casing/c45
@@ -227,8 +227,8 @@
 	health = 250
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun
-	rapid = 2
-	rapid_fire_delay = 6
+	auto_fire_burst_count = 2
+	auto_fire_delay = 6
 	minimum_distance = 3
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"

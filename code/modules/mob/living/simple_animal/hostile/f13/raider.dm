@@ -34,7 +34,7 @@
 	/// slots in a list of trash loot
 	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 3.1
 	waddle_amount = 2
@@ -112,7 +112,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
@@ -153,7 +153,7 @@
 	health = 300
 	speed = 2
 	obj_damage = 300
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
@@ -170,14 +170,14 @@
 	health = 240
 	retreat_distance = 1
 	minimum_distance = 2
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS
 	speed = 3.5
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
@@ -204,8 +204,8 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	maxHealth = 150
 	health = 150
-	extra_projectiles = 2
-	rapid_melee = 1
+	auto_fire_burst_count = 3
+	melee_attacks_per_tick = 1
 	waddle_amount = 4
 	waddle_up_time = 2
 	waddle_side_time = 1
@@ -259,7 +259,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	maxHealth = 165
 	health = 165
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	ranged_cooldown_time = 1 SECONDS
 	sight_shoot_delay_time = 0 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
@@ -317,7 +317,7 @@
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
 	health = 200
-	extra_projectiles = 0
+	auto_fire_burst_count = 1
 	retreat_distance = 3
 	minimum_distance = 3
 	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
@@ -367,7 +367,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_METAL_ARMOR
 	maxHealth = 60
 	health = 60
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	speed = 4.5
@@ -398,7 +398,7 @@
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 
 // BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
@@ -410,7 +410,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 125
 	health = 125
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	speed = 4.5
@@ -453,7 +453,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
 	maxHealth = 125
 	health = 125
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -480,7 +480,7 @@
 	loot = list(/obj/item/twohanded/spear)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/raiderrags
@@ -502,7 +502,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 135
 	health = 135
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 15
 	melee_damage_upper = 37
 	loot = list(/obj/item/stack/f13Cash/random/med)
@@ -523,7 +523,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 150
 	health = 150
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 42
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -539,7 +539,7 @@
 	maxHealth = 165
 	health = 165
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 38
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -557,7 +557,7 @@
 	ranged = TRUE
 	retreat_distance = 6
 	minimum_distance = 8
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -600,10 +600,10 @@
 	maxHealth = 165
 	health = 165
 	ranged = TRUE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	retreat_distance = 4
 	minimum_distance = 6
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/shrapnel/simple
@@ -640,7 +640,7 @@
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 1.5
 	waddle_amount = 2
@@ -663,7 +663,7 @@
 	faction = list("raider", "hostile")
 	maxHealth = 85
 	health = 85
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
@@ -699,7 +699,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
@@ -711,7 +711,7 @@
 	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	loot = list(/obj/item/gun/ballistic/shotgun/trench, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 6
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -737,7 +737,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
@@ -749,7 +749,7 @@
 	projectiletype = /obj/item/projectile/bullet/c22
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	loot = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 8
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -775,7 +775,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150
 	health = 150
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
@@ -787,7 +787,7 @@
 	projectiletype = /obj/item/projectile/energy/teslacannon/oasis
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 15 // lol
 	loot = list(/obj/item/gun/energy/laser/auto/oasis, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = 8
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -813,7 +813,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150
 	health = 150
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
@@ -825,7 +825,7 @@
 	projectiletype = /obj/item/projectile/energy/nuclear_particle
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 1
 	loot = list(/obj/item/gun/energy/gammagun, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = 10
 	footstep_type = FOOTSTEP_MOB_SHOE

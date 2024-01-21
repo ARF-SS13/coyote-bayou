@@ -750,7 +750,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		dropItemToGround(head)
 	. = ..()
 
-/mob/living/simple_animal/proc/CanAttack(atom/the_target)
+/mob/living/simple_animal/proc/AllowedToAttackTarget(atom/the_target)
 	if(see_invisible < the_target.invisibility)
 		return FALSE
 	if(ismob(the_target))

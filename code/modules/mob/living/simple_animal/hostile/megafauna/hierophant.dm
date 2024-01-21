@@ -132,7 +132,7 @@ Difficulty: Normal
 	L.dust()
 */
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/megafauna/hierophant/AllowedToAttackTarget(atom/the_target)
 	. = ..()
 	if(istype(the_target, /mob/living/simple_animal/hostile/asteroid/hivelordbrood)) //ignore temporary targets in favor of more permanent targets
 		return FALSE

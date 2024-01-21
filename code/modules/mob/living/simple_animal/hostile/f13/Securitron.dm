@@ -53,7 +53,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
 	ranged_ignores_vision = TRUE
 	attack_verb_simple = "punches"
@@ -132,7 +132,7 @@
 	del_on_death = FALSE
 	melee_damage_lower = 24
 	melee_damage_upper = 55
-	extra_projectiles = 2 //5 projectiles
+	auto_fire_burst_count = 5 //5 projectiles
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 5
 	minimum_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
@@ -190,7 +190,7 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew
 	name = "lil' chew-chew"
 	desc = "An oddly scorched pre-war military robot armed with a deadly gatling laser and covered in thick, oddly blue armor plating, the name Lil' Chew-Chew scratched onto it's front armour crudely, highlighted by small bits of white paint. There seems to be an odd pack on the monstrosity of a sentrie's back, a chute at the bottom of it - there's the most scorch-marks on the robot here, so it's safe to assume this robot is capable of explosions. Better watch out!"
-	extra_projectiles = 6
+	auto_fire_burst_count = 7
 	health = 1000
 	maxHealth = 1000 //CHONK
 	obj_damage = 300
@@ -220,7 +220,7 @@
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag
 	retreat_distance = 0
-	extra_projectiles = 0
+	auto_fire_burst_count = 1
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(SHOTGUN_VOLUME),

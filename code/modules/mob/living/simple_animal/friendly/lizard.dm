@@ -32,7 +32,7 @@
 	. = ..()
 	AddElement(/datum/element/mob_holder, worn_state = "lizard", inv_slots = INV_SLOTBIT_HEAD) //you can hold lizards now.
 
-/mob/living/simple_animal/hostile/lizard/CanAttack(atom/the_target)//Can we actually attack a possible target?
+/mob/living/simple_animal/hostile/lizard/AllowedToAttackTarget(atom/the_target)//Can we actually attack a possible target?
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 	if(is_type_in_typecache(the_target,edibles))

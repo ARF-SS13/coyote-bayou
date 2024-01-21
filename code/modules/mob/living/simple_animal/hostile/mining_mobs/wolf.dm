@@ -17,7 +17,7 @@
 	obj_damage = 15
 	melee_damage_lower = 7.5
 	melee_damage_upper = 7.5
-	rapid_melee = 2 // every second attack
+	melee_attacks_per_tick = 2 // every second attack
 	dodging = TRUE
 	dodge_prob = 50
 	attack_verb_continuous = "bites"

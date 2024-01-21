@@ -271,7 +271,7 @@
 	else
 		return 0
 
-/mob/living/simple_animal/hostile/construct/builder/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/construct/builder/AllowedToAttackTarget(atom/the_target)
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return 0
 	if(Found(the_target) || ..()) //If we Found it or Can_Attack it normally, we Can_Attack it as long as it wasn't invisible

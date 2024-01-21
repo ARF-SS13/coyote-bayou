@@ -55,7 +55,7 @@
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 2
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	ranged_cooldown_time = 2 SECONDS
 	sight_shoot_delay_time = 0.2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -146,7 +146,7 @@
 	check_friendly_fire = 1
 	retreat_distance = 7
 	minimum_distance = 3
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	sight_shoot_delay_time = 0.2 SECONDS
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -326,7 +326,7 @@
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	extra_projectiles = 5
+	auto_fire_burst_count = 7
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
@@ -381,7 +381,7 @@
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	extra_projectiles = 4
+	auto_fire_burst_count = 4
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
