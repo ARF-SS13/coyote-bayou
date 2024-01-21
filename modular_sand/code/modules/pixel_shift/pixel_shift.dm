@@ -2,7 +2,7 @@
 //File not currently in use//
 //                         //
 
-/mob 
+/mob
 	/// If we are in the shifting setting.
 	var/shifting = FALSE
 
