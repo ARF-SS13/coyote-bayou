@@ -19281,6 +19281,11 @@
 	pixel_x = -18;
 	pixel_y = 14
 	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 14
+	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "iyW" = (
@@ -20199,10 +20204,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "iTj" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_east"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/left,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -31613,6 +31616,12 @@
 	icon_state = "horizontaltopborderbottom1"
 	},
 /area/f13/wasteland)
+"nYn" = (
+/obj/structure/chair/right,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/bar/ashdown)
 "nYv" = (
 /obj/structure/simple_door/repaired,
 /obj/effect/decal/cleanable/dirt,
@@ -34266,6 +34275,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/abandoned)
+"peI" = (
+/obj/structure/chair/right{
+	dir = 1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/bar/ashdown)
 "peR" = (
 /obj/item/target,
 /obj/effect/decal/cleanable/dirt,
@@ -43965,6 +43982,14 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"txS" = (
+/obj/structure/chair/left{
+	dir = 1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/bar/ashdown)
 "tyc" = (
 /obj/structure/flora/tree/oak_three,
 /turf/open/indestructible/ground/outside/dirt,
@@ -48386,6 +48411,11 @@
 	pixel_x = -18;
 	pixel_y = 14
 	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 14
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bar/ashdown)
 "vtu" = (
@@ -51555,13 +51585,11 @@
 	},
 /area/f13/wasteland)
 "wVI" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_west"
-	},
 /mob/living/simple_animal/hostile/wolf/playable/rottweiler{
 	faction = list("neutral");
 	name = "Dreams-of-Moonlight"
 	},
+/obj/structure/chair/right,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -112487,11 +112515,11 @@ oEO
 eJW
 wVI
 rVB
-xwj
+txS
 eJW
-iXF
+nYn
 rVB
-xwj
+txS
 eJW
 btP
 eHB
@@ -112744,11 +112772,11 @@ gAb
 eJW
 iTj
 rVB
-gfO
+peI
 gAb
 iTj
 rVB
-gfO
+peI
 eJW
 btP
 iRq
@@ -113256,13 +113284,13 @@ xwj
 eJW
 gAb
 eJW
-iXF
+nYn
 cXM
-xwj
+txS
 eJW
-iXF
+nYn
 cXM
-xwj
+txS
 eJW
 btP
 gRn
@@ -113513,13 +113541,13 @@ gfO
 eJW
 dav
 gAb
-mJr
+iTj
 rVB
-gfO
+peI
 eJW
 iTj
 cXM
-gfO
+peI
 eJW
 btP
 gRn
