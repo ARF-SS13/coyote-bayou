@@ -834,7 +834,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 //-->Pixel sliding on steroids
 /mob
-	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob
+	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob 
 	var/pixel_slide_target_has_help_int = FALSE  //we are going to store here the pixel sliding's target variable, specifically if they are in help intent
 	var/pixel_slide_memory_x    //memory of previous x position before moving
 	var/pixel_slide_memory_y    //memory of previous y position before moving
@@ -854,10 +854,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, EAST)
-			if(pixel_slide_target_has_help_int)
-				pixel_x = pixel_slide_memory_x - 32
+			pixel_x = pixel_slide_memory_x - 32
+			pixel_y = pixel_slide_memory_y
+			dir = pixel_slide_memory_dir
+			if(!pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x
 				pixel_y = pixel_slide_memory_y
-				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -875,10 +877,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, WEST)
-			if(pixel_slide_target_has_help_int)
-				pixel_x = pixel_slide_memory_x + 32
+			pixel_x = pixel_slide_memory_x + 32
+			pixel_y = pixel_slide_memory_y
+			dir = pixel_slide_memory_dir
+			if(!pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x
 				pixel_y = pixel_slide_memory_y
-				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -896,10 +900,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, NORTH)
-			if(pixel_slide_target_has_help_int)
+			pixel_x = pixel_slide_memory_x
+			pixel_y = pixel_slide_memory_y - 32
+			dir = pixel_slide_memory_dir
+			if(!pixel_slide_target_has_help_int)
 				pixel_x = pixel_slide_memory_x
-				pixel_y = pixel_slide_memory_y - 32
-				dir = pixel_slide_memory_dir
+				pixel_y = pixel_slide_memory_y
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -917,10 +923,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, SOUTH)
-			if(pixel_slide_target_has_help_int)
+			pixel_x = pixel_slide_memory_x
+			pixel_y = pixel_slide_memory_y + 32
+			dir = pixel_slide_memory_dir
+			if(!pixel_slide_target_has_help_int)
 				pixel_x = pixel_slide_memory_x
-				pixel_y = pixel_slide_memory_y + 32
-				dir = pixel_slide_memory_dir
+				pixel_y = pixel_slide_memory_y
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
