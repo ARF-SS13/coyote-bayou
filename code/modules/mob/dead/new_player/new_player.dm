@@ -601,14 +601,9 @@
 		var/mob/living/carbon/human/H = humanc
 		var/obj/item/suit = H.get_item_by_slot(SLOT_WEAR_SUIT)
 		if(HAS_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
-			if( suit.armor.linemelee		> ARMOR_VALUE_LIGHT["linemelee"] || \
-				suit.armor.linebullet		> ARMOR_VALUE_LIGHT["linebullet"] || \
-				suit.armor.linelaser		> ARMOR_VALUE_LIGHT["linelaser"] || \
-				suit.armor.energy			> ARMOR_VALUE_LIGHT["energy"] || \
-				suit.armor.bomb				> ARMOR_VALUE_LIGHT["bomb"] || \
-				suit.armor.magic			> ARMOR_VALUE_LIGHT["magic"] || \
-				suit.armor.wound			> ARMOR_VALUE_LIGHT["wound"] || \
-				suit.armor.damage_threshold	> ARMOR_VALUE_LIGHT["damage_threshold"])
+			if( suit.armor.melee	> (ARMOR_AVERSION_THRESHOLD_MELEE) || \
+				suit.armor.bullet	> (ARMOR_AVERSION_THRESHOLD_BULLET) || \
+				suit.armor.laser	> (ARMOR_AVERSION_THRESHOLD_LASER))
 
 				H.dropItemToGround(suit)
 				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
