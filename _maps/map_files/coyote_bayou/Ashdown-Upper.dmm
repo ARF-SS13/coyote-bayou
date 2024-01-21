@@ -1031,6 +1031,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hY" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/ashdown)
 "ia" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -1868,6 +1875,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "ow" = (
@@ -3624,6 +3632,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "AI" = (
@@ -3838,6 +3847,14 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"Cg" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/ashdown)
 "Ch" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
@@ -4084,6 +4101,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "Eh" = (
@@ -4594,6 +4612,13 @@
 	pixel_y = 10
 	},
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
+"HE" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "HG" = (
 /obj/structure/flora/jungle4,
@@ -6075,6 +6100,7 @@
 /obj/structure/flora/junglebush/b,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "Sm" = (
@@ -6107,6 +6133,7 @@
 	alpha = 20
 	},
 /obj/structure/flora/junglebush/b,
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "Sz" = (
@@ -7008,6 +7035,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Yw" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
 "Yz" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -7226,6 +7258,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "ZX" = (
@@ -66791,7 +66824,7 @@ Fu
 hL
 py
 dV
-Cq
+hY
 YI
 MN
 nK
@@ -67309,7 +67342,7 @@ tY
 Fp
 Er
 Zm
-Dz
+Yw
 On
 jT
 jT
@@ -67818,7 +67851,7 @@ mY
 Fu
 hL
 py
-jA
+Cg
 Na
 Zm
 PO
@@ -68080,7 +68113,7 @@ Fl
 Ou
 Er
 Lp
-Dz
+Yw
 On
 eo
 jT
@@ -69610,7 +69643,7 @@ Ym
 tO
 Yf
 uk
-tY
+HE
 kq
 Ee
 Fl
