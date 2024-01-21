@@ -26,19 +26,6 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/burek
 	subcategory = CAT_PIE
 
-/* requires code
-/datum/crafting_recipe/food/brahminpotpie
-	name = "Brahmin potpie"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2,
-		/obj/item/reagent_containers/food/snacks/grown/xander = 1,
-		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pie/brahminpotpie
-	subcategory = CAT_PIE
-*/
-
 ////////////////////////////////////////////SWEETS////////////////////////////////////////////
 
 /datum/crafting_recipe/food/bananacreampie
