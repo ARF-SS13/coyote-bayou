@@ -61,7 +61,19 @@
 	speed = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 32
-	attack_sound = list('modular_citadel/sound/voice/scream_m.ogg', 'modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
+	emote_taunt_sound = list('modular_citadel/sound/voice/scream_m.ogg', 'modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
+	emote_taunt = list(
+		"grunts",
+		"stares",
+		"twitches",
+		"groans",
+		"growls",
+		"laughs eerily",
+		"roars",
+		"screams",
+		"charges"
+		)
+	taunt_chance = 30
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -103,7 +115,19 @@
 	obj_damage = 30
 	melee_damage_lower = 18
 	melee_damage_upper = 40
-	attack_sound = list('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg', 'modular_citadel/sound/voice/scream_f3.ogg')
+	emote_taunt_sound = list('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg', 'modular_citadel/sound/voice/scream_f3.ogg')
+	emote_taunt = list(
+		"grunts",
+		"stares",
+		"twitches",
+		"groans",
+		"growls",
+		"laughs eerily",
+		"roars",
+		"screams",
+		"charges"
+		)
+	taunt_chance = 30
 	vision_range = 9
 	aggro_vision_range = 18
 	retreat_distance = 6
