@@ -68,7 +68,6 @@
 	plantname = "Rainbow Weed"
 	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow
 	icon_grow = "megacannabis-grow"
-	icon_dead = "megacannabis-dead"
 	mutatelist = list(/obj/item/seeds/cannabis/ultimate)
 	reagents_add = list(
 		/datum/reagent/toxin/mindbreaker = 0.15,
@@ -91,7 +90,6 @@
 	plantname = "Deathweed"
 	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/death
 	icon_grow = "blackcannabis-grow"
-	icon_dead = "blackcannabis-dead"
 	mutatelist = list(/obj/item/seeds/cannabis/white)
 	reagents_add = list(
 		/datum/reagent/toxin/cyanide = 0.35,
@@ -116,7 +114,6 @@
 	plantname = "Omega Weed"
 	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
 	icon_grow = "ocannabis-grow"
-	icon_dead = "ocannabis-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/green)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.3,
