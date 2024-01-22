@@ -935,7 +935,6 @@
 	category = CAT_MISC
 	always_available = FALSE
 
-
 /datum/crafting_recipe/plunger
 	name = "Plunger"
 	result = /obj/item/plunger
