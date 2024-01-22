@@ -125,7 +125,10 @@
 
 /datum/emote/living/carbon/lick/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
 		return
 	var/obj/item/hand_item/healable/licker/licky = new(user)
@@ -141,7 +144,10 @@
 
 /datum/emote/living/carbon/touch/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
 		return
 	var/obj/item/hand_item/healable/toucher/touchy = new(user)
@@ -157,7 +163,10 @@
 
 /datum/emote/living/carbon/tend/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
 		return
 	var/obj/item/hand_item/healable/tender/tendy = new(user)
