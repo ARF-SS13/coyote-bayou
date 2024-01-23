@@ -118,7 +118,7 @@
 	turns_per_move = 7
 	poison_type = /datum/reagent/medicine/coagulant
 	poison_per_bite = 7
-	melee_damage_lower = 30
+	melee_damage_lower = 30 //might need tweaking, should be fine for now.
 	melee_damage_upper = 60
 
 //Empress - Large, Durable, and horrifying. Fight in a group!
