@@ -76267,6 +76267,9 @@
 "nIk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/lamp_post/doubles/bent{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2bottom"
 	},
@@ -114772,6 +114775,21 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"wqB" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/lamp_post/doubles/bent{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 4;
+	icon_state = "innerpavement"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "wqF" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/waste{
@@ -142051,7 +142069,7 @@ aHF
 lbO
 rEB
 uGx
-qKq
+wqB
 rEB
 mlY
 rEB
