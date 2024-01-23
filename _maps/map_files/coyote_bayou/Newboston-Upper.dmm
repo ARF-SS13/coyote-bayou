@@ -57,6 +57,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"aw" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "ay" = (
 /obj/structure/barricade/wooden/strong{
 	obj_integrity = 500
@@ -640,6 +648,8 @@
 /area/f13/village)
 "gg" = (
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -804,6 +814,13 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
+"ho" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "hp" = (
 /turf/open/floor/f13{
 	icon_state = "yellowsiding"
@@ -984,6 +1001,18 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"jd" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "jf" = (
 /obj/structure/fluff/railing{
 	dir = 5
@@ -1009,6 +1038,12 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"jn" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
 "jq" = (
@@ -1071,6 +1106,7 @@
 "jS" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/ammo/fiftypercent,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -1607,6 +1643,15 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/city)
+"oy" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "oA" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/f13{
@@ -1766,6 +1811,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
+"pr" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "px" = (
 /obj/structure/fence{
 	dir = 4;
@@ -2473,6 +2526,9 @@
 /area/f13/building)
 "wb" = (
 /obj/structure/table_frame/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2610,6 +2666,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"xk" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "xz" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13/wood,
@@ -3456,6 +3521,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "Et" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/white,
 /area/f13/building)
 "ED" = (
@@ -3956,6 +4025,7 @@
 /area/f13/wasteland)
 "IU" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -4232,6 +4302,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/city)
+"LF" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "LG" = (
 /obj/structure/railing,
 /turf/open/floor/f13{
@@ -4332,6 +4411,9 @@
 /obj/machinery/light/broken{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -4672,6 +4754,25 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/city)
+"Pl" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
+"Pn" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/building)
 "Ps" = (
 /obj/structure/curtain{
 	color = "black";
@@ -5511,10 +5612,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "WB" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -47316,12 +47422,12 @@ SS
 bP
 bP
 Mz
-IU
+oy
 bP
 Mz
-jS
+LF
 bP
-Mz
+jd
 jS
 ek
 tN
@@ -47828,13 +47934,13 @@ ek
 ek
 ek
 ek
+ho
 bP
 bP
 bP
 bP
 bP
-bP
-bP
+pr
 bP
 IU
 ek
@@ -48083,12 +48189,12 @@ tN
 tN
 ek
 PP
-bP
+pr
 Ay
 bP
 bP
 bP
-SL
+aw
 bP
 bP
 bP
@@ -48340,7 +48446,7 @@ tN
 tN
 ek
 Qb
-bP
+pr
 ek
 ek
 ek
@@ -48596,16 +48702,16 @@ tN
 tN
 tN
 ek
-bP
+ho
 Qb
 ek
 Gp
 bP
 bP
-cl
+Pl
 bP
 bP
-bP
+pr
 Qb
 bP
 ek
@@ -48854,7 +48960,7 @@ tN
 tN
 ek
 WB
-bP
+jn
 ek
 ER
 PP
@@ -48864,7 +48970,7 @@ Qb
 bP
 bP
 bP
-bP
+xk
 ek
 tN
 tN
@@ -49115,8 +49221,8 @@ ek
 Ja
 bP
 bP
-bP
-SL
+xk
+aw
 bP
 ek
 ek
@@ -49881,16 +49987,16 @@ tN
 tN
 tN
 ek
-bP
+ho
 bP
 cl
-bP
+ho
 bP
 cl
 SL
 bP
 Qb
-cl
+Pn
 YP
 SL
 ek
@@ -50396,7 +50502,7 @@ tN
 tN
 ek
 dm
-bP
+ho
 Nq
 mL
 JP
