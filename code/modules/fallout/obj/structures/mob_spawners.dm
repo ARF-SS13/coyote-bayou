@@ -175,6 +175,23 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
 
+/obj/structure/nest/lesserspider
+	name = "spider nest"
+	max_mobs = 2
+	spawn_time = 10 SECONDS //creepy fast crawlies
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 3)
+
+/obj/structure/nest/greaterspider
+	name = "empress nest"
+	max_mobs = 1
+	spawn_time = 20 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1)
+
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
@@ -414,12 +431,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list()
 
 /obj/structure/nest/special/remove_nest()
-	return 
+	return
 /obj/structure/nest/special/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration, atom/attacked_by)
 	. = ..()
 	if(.)
 		SEND_SIGNAL(src, COMSIG_SPAWNER_SPAWN_NOW)
-	return 
+	return
 
 //Event Nests
 /obj/structure/nest/zombieghoul
