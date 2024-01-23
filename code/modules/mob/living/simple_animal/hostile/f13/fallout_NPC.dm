@@ -337,7 +337,7 @@
 	)
 
 /mob/living/simple_animal/hostile/bs/paladin
-	name = Tech-Trooper Commander"
+	name = "Tech-Trooper Commander"
 	desc = "A dork equipped with an AER9 and T-51b power armor. The idiots have arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
