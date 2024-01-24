@@ -269,8 +269,8 @@
 /////////////////////
 
 /mob/living/simple_animal/hostile/bs
-	name = "BS"
-	desc = "The brotherhood never fails."
+	name = "Tech-Trooper"
+	desc = "The something another never fails."
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
@@ -303,7 +303,7 @@
 	override_ignore_other_mobs = TRUE
 
 /obj/effect/mob_spawn/human/corpse/bs
-	name = "Brotherhood Knight"
+	name = "Tech-trooper"
 	uniform = /obj/item/clothing/under/syndicate/brotherhood
 	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/combat/swat
@@ -313,8 +313,8 @@
 	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 
 /mob/living/simple_animal/hostile/bs/knight
-	name = "Brotherhood Knight"
-	desc = "A Brotherhood Knight wielding a laser pistol and older issue Brotherhood combat armor."
+	name = "Tech-trooper Leftenant"
+	desc = "A loser wielding a laser pistol and older issue combat armor."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight_dead"
@@ -337,8 +337,8 @@
 	)
 
 /mob/living/simple_animal/hostile/bs/paladin
-	name = "Brotherhood Paladin"
-	desc = "A Paladin equipped with an AER9 and T-51b power armor. The Brotherhood has arrived."
+	name = "Tech-Trooper Commander"
+	desc = "A dork equipped with an AER9 and T-51b power armor. The idiots have arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
 	icon_dead = "bs_paladin_dead"
