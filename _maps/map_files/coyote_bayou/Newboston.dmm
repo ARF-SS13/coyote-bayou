@@ -884,15 +884,6 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/city)
-"aRm" = (
-/obj/structure/closet/bus{
-	pixel_x = -107;
-	pixel_y = -11
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/wasteland)
 "aRQ" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
@@ -8006,10 +7997,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "heV" = (
-/obj/machinery/vending/cola,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain2"
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
 	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "hfj" = (
 /obj/effect/decal/cleanable/glitter/pink,
@@ -13119,11 +13111,13 @@
 	},
 /area/f13/building)
 "loy" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
 	},
-/area/f13/building)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "loC" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
@@ -15369,10 +15363,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "nhf" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
 	},
-/area/f13/building)
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland)
 "nhE" = (
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/knife{
@@ -15687,13 +15685,13 @@
 	},
 /area/f13/wasteland)
 "nwr" = (
-/obj/structure/chair/wood{
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
 	dir = 1
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "nwS" = (
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn,
 /turf/open/indestructible/ground/outside/dirt,
@@ -19187,11 +19185,20 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "qBL" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/lamp_post/doubles/bent{
+	density = 0;
+	dir = 1;
+	pixel_y = -10;
+	pixel_x = -22
 	},
-/area/f13/building)
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - N"
+	},
+/area/f13/wasteland)
 "qBT" = (
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -21426,11 +21433,13 @@
 	},
 /area/f13/building)
 "svz" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 4;
+	light_color = "#FF0000"
 	},
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "svN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/boozeomat,
@@ -22708,10 +22717,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tvw" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 8;
+	light_color = "#FF0000"
 	},
-/area/f13/building)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "tvA" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
@@ -23263,11 +23275,6 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
-	},
-/area/f13/building)
-"tRj" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
 	},
 /area/f13/building)
 "tRl" = (
@@ -28206,11 +28213,6 @@
 "ygV" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/city)
-"yhe" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/building)
 "yhl" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
@@ -34967,7 +34969,7 @@ vzy
 vzy
 vzy
 vzy
-vzy
+heV
 mnD
 mnD
 mnD
@@ -37023,7 +37025,7 @@ mbR
 iiM
 rYM
 iiM
-ngs
+qBL
 mnD
 bWl
 bWl
@@ -37935,10 +37937,10 @@ yde
 tjH
 ylp
 wYh
-tRj
+lez
 dpp
 umw
-tRj
+lez
 gII
 tPQ
 tPQ
@@ -38192,10 +38194,10 @@ yde
 bKl
 kXC
 dpp
-tRj
+lez
 dpp
 umw
-tRj
+lez
 yde
 tPQ
 tPQ
@@ -38449,10 +38451,10 @@ yde
 dpp
 dpp
 dpp
-tRj
+lez
 dpp
 kwx
-nhf
+xLg
 yde
 tPQ
 tPQ
@@ -38706,7 +38708,7 @@ yde
 dMM
 dzW
 dpp
-tRj
+lez
 dpp
 dpp
 lhn
@@ -38960,13 +38962,13 @@ wjZ
 mec
 vzy
 yde
-tRj
-tRj
+lez
+lez
 dpp
 sLZ
-nhf
-tRj
-tRj
+xLg
+lez
+lez
 yde
 tPQ
 tPQ
@@ -39217,12 +39219,12 @@ wjZ
 mec
 vzy
 yde
-tRj
-tRj
+lez
+lez
 dpp
-tRj
-tRj
-tRj
+lez
+lez
+lez
 veE
 yde
 tPQ
@@ -39475,10 +39477,10 @@ mec
 vzy
 yde
 nQM
-tvw
+uTO
 dpp
 thm
-tRj
+lez
 xrl
 shR
 yde
@@ -39687,7 +39689,7 @@ gHK
 gHK
 dfD
 dfD
-dfD
+tvw
 tPQ
 tPQ
 tPQ
@@ -39731,12 +39733,12 @@ uWo
 mec
 vzy
 yde
-tRj
-tRj
+lez
+lez
 lhn
-tRj
-tvw
-tRj
+lez
+uTO
+lez
 sAh
 yde
 tPQ
@@ -39806,7 +39808,7 @@ mQz
 tPQ
 yde
 qSo
-nwr
+dzW
 hwp
 qCt
 hpO
@@ -39989,11 +39991,11 @@ mec
 vzy
 yde
 sLZ
-nhf
+xLg
 dpp
 rCY
-tRj
-tRj
+lez
+lez
 xrl
 yde
 tPQ
@@ -40199,7 +40201,7 @@ gcG
 hRl
 gcG
 gcG
-dfD
+loy
 tPQ
 bNZ
 tPQ
@@ -40245,11 +40247,11 @@ uWo
 mec
 vzy
 gII
-tRj
-tRj
+lez
+lez
 dpp
 dpp
-tRj
+lez
 dpp
 lhn
 yde
@@ -40502,13 +40504,13 @@ uWo
 mec
 vzy
 yde
-tRj
-tRj
-tvw
+lez
+lez
+uTO
 dpp
-nhf
+xLg
 dpp
-tRj
+lez
 yde
 tPQ
 yde
@@ -45250,7 +45252,7 @@ uWo
 mec
 qQj
 dpp
-yhe
+xrl
 lFU
 aMU
 dpp
@@ -45510,7 +45512,7 @@ aMU
 xLg
 tlg
 tMz
-yhe
+xrl
 aMU
 bUq
 inV
@@ -45766,7 +45768,7 @@ sXa
 xLg
 uTO
 aMU
-yhe
+xrl
 xLg
 dpp
 bUq
@@ -48061,7 +48063,7 @@ uWo
 uWo
 mec
 jJq
-qBL
+sLZ
 lez
 tnE
 lez
@@ -48528,7 +48530,7 @@ uWo
 mec
 vzy
 qQj
-yhe
+xrl
 aMU
 aMU
 yiB
@@ -48574,7 +48576,7 @@ hHk
 uWo
 uWo
 mec
-svz
+gII
 lez
 dRN
 dpp
@@ -49098,7 +49100,7 @@ qQj
 fbC
 eAZ
 eAZ
-aRm
+lWa
 hHk
 uWo
 uWo
@@ -49349,7 +49351,7 @@ qQj
 eDc
 lez
 lez
-qBL
+sLZ
 rrV
 qQj
 npu
@@ -49560,7 +49562,7 @@ fcu
 bOu
 iUF
 wst
-yhe
+xrl
 aMU
 dVd
 lWa
@@ -50125,7 +50127,7 @@ cQY
 qQj
 npu
 npu
-heV
+nNm
 lWa
 hHk
 uWo
@@ -55225,7 +55227,7 @@ hKA
 qQj
 xuE
 kwB
-yhe
+xrl
 aMU
 ara
 aMU
@@ -60538,7 +60540,7 @@ vzy
 fuD
 rHb
 fuD
-vzy
+nwr
 vzy
 vzy
 lWa
@@ -62594,7 +62596,7 @@ vzy
 fuD
 fuD
 fuD
-vzy
+nwr
 vzy
 vzy
 vzy
@@ -69386,7 +69388,7 @@ lWa
 hHk
 ekL
 uWo
-mec
+nhf
 avQ
 avQ
 avQ
@@ -71434,7 +71436,7 @@ wSn
 dpp
 lez
 qQj
-qBL
+sLZ
 dpp
 wSn
 qQj
@@ -71950,7 +71952,7 @@ lez
 qQj
 clQ
 pMl
-qBL
+sLZ
 qQj
 oQs
 hwD
@@ -73498,7 +73500,7 @@ kbU
 hHk
 uWo
 uWo
-mec
+nhf
 avQ
 tNh
 emj
@@ -79534,7 +79536,7 @@ uWo
 eWw
 vzy
 tPQ
-qBL
+sLZ
 lez
 hkV
 nuC
@@ -80311,7 +80313,7 @@ qQj
 fLH
 iVg
 lez
-svz
+gII
 ksO
 qEj
 uWo
@@ -80825,7 +80827,7 @@ cQY
 cQY
 dIh
 lez
-svz
+gII
 lWa
 qEj
 uWo
@@ -81401,13 +81403,13 @@ tPQ
 tPQ
 tPQ
 tPQ
-tPQ
+svz
 tPQ
 gIL
 gIL
 tPQ
 tPQ
-tPQ
+svz
 tPQ
 tPQ
 tPQ
@@ -81664,7 +81666,7 @@ gIL
 gIL
 tPQ
 tPQ
-tPQ
+gcG
 tPQ
 tPQ
 tPQ
@@ -81741,7 +81743,7 @@ lWa
 dCJ
 uWo
 uWo
-mec
+nhf
 qQj
 hNm
 qQj
@@ -81918,10 +81920,10 @@ gcG
 gcG
 hWC
 gIL
-uFO
+gIL
 tPQ
 hWC
-tPQ
+gcG
 tPQ
 tPQ
 tPQ
@@ -82432,7 +82434,7 @@ hRl
 gcG
 tPQ
 gIL
-gIL
+uFO
 tPQ
 oxd
 gcG
@@ -84568,7 +84570,7 @@ lWa
 hHk
 uWo
 uYv
-mec
+nhf
 fww
 pEV
 wjO
@@ -85943,7 +85945,7 @@ vNf
 kwB
 txY
 fwG
-yhe
+xrl
 vNf
 aMU
 fUp
@@ -91685,7 +91687,7 @@ ons
 csb
 lez
 hjY
-loy
+veE
 hAM
 lez
 lez
