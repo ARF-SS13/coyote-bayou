@@ -2616,3 +2616,44 @@ datum/job/wasteland/f13dendoctor
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
+
+// Newbie Teacher
+
+/datum/job/wasteland/f13ranger
+	title = "Texarcana Ranger"
+	flag = F13RANGER
+	department_flag = TEACHER
+	faction = FACTION_RANGER
+	total_positions = 3
+	spawn_positions = 3
+	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
+	supervisors = "fate"
+	selection_color = "#228c22"
+
+	outfit = /datum/outfit/job/wasteland/f13wastelander
+
+	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
+
+/datum/outfit/job/wasteland/f13ranger
+	name = "Texarcana Ranger"
+	jobtype = /datum/job/wasteland/f13ranger
+
+	id = /obj/item/card/id/dogtag/ranger
+	ears = /obj/item/radio/headset/headset_town/lawman
+	belt = /obj/item/kit_spawner/waster
+	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/storage/firstaid/ancient = 1, //two to help newbies in trouble. - blue
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		/obj/item/kit_spawner/waster
+		)
