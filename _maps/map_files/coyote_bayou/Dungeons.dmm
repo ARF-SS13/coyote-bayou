@@ -15796,6 +15796,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
+"gPq" = (
+/obj/machinery/recycler,
+/turf/open/floor/plasteel/f13/vault_floor/green,
+/area/f13/building)
 "gPJ" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
@@ -30500,10 +30504,6 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/underground/cave/tunnelertemple/void)
 "nwG" = (
-/obj/machinery/power/am_control_unit{
-	anchored = 1;
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -37620,6 +37620,10 @@
 	},
 /turf/open/water,
 /area/f13/brotherhood/archives)
+"qws" = (
+/obj/machinery/gear_painter,
+/turf/open/floor/plasteel/f13/vault_floor/green,
+/area/f13/building)
 "qwE" = (
 /turf/open/floor/carpet/blue,
 /area/f13/building)
@@ -44652,10 +44656,6 @@
 "tCT" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
-"tDa" = (
-/obj/machinery/gear_painter,
-/turf/open/floor/plasteel/f13/vault_floor/green,
-/area/f13/building)
 "tDc" = (
 /obj/effect/turf_decal/big{
 	dir = 1;
@@ -46681,10 +46681,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
-"uwu" = (
-/obj/machinery/recycler,
-/turf/open/floor/plasteel/f13/vault_floor/green,
-/area/f13/building)
 "uwN" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/tallgrass2,
@@ -50334,7 +50330,6 @@
 /turf/open/floor/wood_worn/wood_worn_dark,
 /area/f13/building)
 "wcO" = (
-/obj/item/am_shielding_container,
 /turf/open/floor/plating,
 /area/f13/brotherhood/reactor)
 "wcT" = (
@@ -112051,7 +112046,7 @@ aEL
 aEL
 aEL
 aEL
-tDa
+qws
 tJn
 pkx
 omN
@@ -112309,7 +112304,7 @@ ltw
 ltw
 aEL
 pkx
-uwu
+gPq
 pkx
 noe
 pLB
