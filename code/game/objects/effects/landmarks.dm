@@ -814,6 +814,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Den Waster"
 	icon_state = "Wastelander"
 
+/obj/effect/landmark/start/f13/wastelander/backstage
+	name = "Backstage Character"
+	icon_state = "Wastelander"
+	color = "#FF0000"
 
 /obj/effect/landmark/start/f13/wastelander/gar
 	name = "Garland City Waster"

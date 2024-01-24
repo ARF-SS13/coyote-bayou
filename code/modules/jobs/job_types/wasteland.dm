@@ -1321,6 +1321,12 @@ Raider
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
+/datum/job/wasteland/f13wastelander/backstage
+	title = "Backstage Character"
+	flag = CBOOCBACKSTAGE
+	faction = FACTION_WASTELAND
+
+
 /datum/job/wasteland/f13wastelander/gar
 	title = "Garland City Waster"
 	flag = F13WASTEGAR

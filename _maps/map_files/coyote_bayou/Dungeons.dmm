@@ -2353,10 +2353,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
 /area/f13/building)
-"bbg" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building)
 "bbn" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -3505,9 +3501,6 @@
 "bCp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
@@ -14701,6 +14694,10 @@
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"goo" = (
+/obj/machinery/recycler,
+/turf/open/floor/plasteel/f13/vault_floor/green,
+/area/f13/building)
 "gox" = (
 /obj/structure/frame/machine,
 /turf/open/floor/f13{
@@ -27754,10 +27751,10 @@
 /turf/open/floor/carpet/purple,
 /area/f13/brotherhood/rnd)
 "moh" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/item/lock_bolt{
 	dir = 1
 	},
+/obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mol" = (
@@ -33158,10 +33155,10 @@
 	},
 /area/f13/underground/cave)
 "oFx" = (
-/obj/machinery/door/airlock,
 /obj/item/lock_bolt{
 	dir = 8
 	},
+/obj/structure/simple_door/room,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building)
 "oFK" = (
@@ -34403,11 +34400,13 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave/tunnelertemple/void)
 "peB" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	icon_state = "floordirty"
+	},
 /area/f13/building)
 "peN" = (
 /obj/structure/easel,
@@ -34611,8 +34610,7 @@
 /turf/open/floor/plasteel/yellow/side,
 /area/f13/vault)
 "pkx" = (
-/obj/structure/ladder,
-/turf/open/floor/plasteel/f13/vault_floor/green,
+/turf/closed/indestructible/f13/matrix,
 /area/f13/building)
 "pkA" = (
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -36528,13 +36526,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "qah" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
+/obj/effect/landmark/start/f13/wastelander/backstage,
+/turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building)
 "qai" = (
 /obj/structure/cable{
@@ -37266,17 +37259,8 @@
 	},
 /area/f13/tunnel)
 "qol" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/tallgrass1,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "qop" = (
 /obj/machinery/shower{
@@ -43452,21 +43436,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
-"sZB" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building)
 "tae" = (
 /obj/structure/table,
 /obj/item/papercutter{
@@ -50719,10 +50688,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "wlC" = (
-/obj/machinery/door/airlock,
 /obj/item/lock_bolt{
 	dir = 1
 	},
+/obj/structure/simple_door/room,
 /turf/open/floor/plasteel/f13/vault_floor/floor{
 	icon_state = "floordirty"
 	},
@@ -91241,7 +91210,7 @@ whv
 whv
 whv
 whv
-sXB
+sME
 sME
 gZb
 ngw
@@ -91498,9 +91467,9 @@ whv
 whv
 whv
 whv
-sXB
 sME
 mVk
+gZb
 qja
 gZb
 hYc
@@ -91755,8 +91724,8 @@ whv
 whv
 whv
 whv
-sXB
 sME
+gZb
 gZb
 gZb
 iaj
@@ -92012,9 +91981,9 @@ whv
 whv
 whv
 whv
-sXB
 sME
 ngw
+gZb
 gZb
 gZb
 qja
@@ -92269,8 +92238,8 @@ whv
 whv
 whv
 whv
-sXB
 sME
+ngw
 gZb
 ngw
 vfE
@@ -92526,7 +92495,7 @@ whv
 whv
 whv
 whv
-sXB
+sME
 sME
 gZb
 hYc
@@ -107679,26 +107648,26 @@ pLB
 pLB
 pLB
 pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
 pLB
 pLB
 pLB
@@ -107936,7 +107905,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 aEL
@@ -107955,7 +107924,7 @@ aEL
 aEL
 aEL
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -108189,11 +108158,11 @@ vtT
 vtT
 vtT
 pLB
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
 aEL
 ijC
 ijC
@@ -108212,7 +108181,7 @@ ijC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -108446,7 +108415,7 @@ pLB
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 aEL
 aEL
@@ -108469,7 +108438,7 @@ plC
 roY
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -108703,7 +108672,7 @@ vtT
 vtT
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -108726,7 +108695,7 @@ gNn
 gXb
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -108960,7 +108929,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 qZl
@@ -108983,7 +108952,7 @@ gNn
 gNn
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -109217,7 +109186,7 @@ pLB
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 vRf
@@ -109241,7 +109210,7 @@ ijC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -109474,7 +109443,7 @@ pLB
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 qZl
@@ -109499,7 +109468,7 @@ fWn
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 vtT
@@ -109731,7 +109700,7 @@ vtT
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 vRf
@@ -109757,7 +109726,7 @@ iQC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 vtT
 vtT
@@ -109988,7 +109957,7 @@ pLB
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 qZl
@@ -110015,7 +109984,7 @@ iQC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -110244,7 +110213,7 @@ pLB
 pLB
 pLB
 vtT
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -110273,7 +110242,7 @@ iQC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -110500,7 +110469,7 @@ pLB
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -110531,7 +110500,7 @@ iQC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -110757,7 +110726,7 @@ pLB
 vtT
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -110788,11 +110757,11 @@ mzx
 cCP
 ijC
 aEL
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
 hOZ
 bCp
 rOW
@@ -111014,7 +110983,7 @@ pLB
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 bPB
@@ -111051,8 +111020,8 @@ aEL
 aEL
 aEL
 omN
-qQL
-peB
+pkx
+pkx
 omN
 pLB
 pLB
@@ -111270,7 +111239,7 @@ pLB
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -111307,9 +111276,9 @@ oYw
 svH
 oYw
 svH
-qQL
-sZB
-bbg
+qah
+qah
+pkx
 omN
 pLB
 pLB
@@ -111526,7 +111495,7 @@ ltw
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -111564,8 +111533,8 @@ svH
 svH
 svH
 svH
-tJn
-tJn
+qah
+qah
 pkx
 omN
 pLB
@@ -111783,7 +111752,7 @@ ltw
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -111821,9 +111790,9 @@ wWa
 lQP
 wWa
 svH
-tJn
-qol
-bbg
+qah
+qah
+pkx
 omN
 pLB
 pLB
@@ -112040,7 +112009,7 @@ ltw
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 toq
@@ -112079,8 +112048,8 @@ aEL
 aEL
 aEL
 omN
-qQL
-peB
+tJn
+pkx
 omN
 pLB
 pLB
@@ -112297,7 +112266,7 @@ ltw
 pLB
 pLB
 vtT
-pLB
+ltw
 aEL
 ijC
 mAw
@@ -112330,14 +112299,14 @@ boV
 oPe
 ijC
 aEL
-pLB
-pLB
-pLB
-pLB
-pLB
-ble
-ble
-qah
+ltw
+ltw
+ltw
+ltw
+ltw
+pkx
+goo
+pkx
 noe
 pLB
 pLB
@@ -112554,7 +112523,7 @@ ltw
 pLB
 vtT
 vtT
-vtT
+ltw
 aEL
 ijC
 ijC
@@ -112587,14 +112556,14 @@ boV
 oPe
 ijC
 aEL
+ltw
 pLB
 pLB
 pLB
 pLB
-pLB
-ble
-ble
-ble
+pkx
+pkx
+pkx
 ble
 pLB
 pLB
@@ -112811,7 +112780,7 @@ ltw
 pLB
 pLB
 vtT
-pLB
+ltw
 aEL
 ijC
 keW
@@ -112844,7 +112813,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -113068,7 +113037,7 @@ ltw
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 fGC
@@ -113101,7 +113070,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -113325,7 +113294,7 @@ ltw
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -113358,7 +113327,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 ble
@@ -113582,7 +113551,7 @@ ltw
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -113615,7 +113584,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 ble
@@ -113840,7 +113809,7 @@ pLB
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -113872,7 +113841,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 ble
 ble
@@ -114098,7 +114067,7 @@ vtT
 vtT
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 sAB
@@ -114129,7 +114098,7 @@ boV
 oPe
 ijC
 aEL
-pLB
+ltw
 pLB
 ble
 ble
@@ -114355,7 +114324,7 @@ pLB
 vtT
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -114386,7 +114355,7 @@ now
 nvt
 ijC
 aEL
-pLB
+ltw
 ble
 ble
 ble
@@ -114612,7 +114581,7 @@ pLB
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -114643,7 +114612,7 @@ wnb
 ijC
 ijC
 aEL
-pLB
+ltw
 ble
 ble
 pLB
@@ -114870,7 +114839,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -114900,7 +114869,7 @@ ijC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -115128,7 +115097,7 @@ vtT
 vtT
 vtT
 vtT
-pLB
+ltw
 aEL
 ijC
 ubw
@@ -115152,12 +115121,12 @@ iyO
 bJJ
 oPe
 ijC
-qgq
+qol
 ijC
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 vtT
 vtT
@@ -115385,7 +115354,7 @@ vtT
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 aYZ
@@ -115414,8 +115383,8 @@ tch
 qeh
 ijC
 aEL
-pLB
-pLB
+ltw
+ltw
 pLB
 pLB
 pLB
@@ -115642,7 +115611,7 @@ pLB
 vtT
 vtT
 vtT
-pLB
+ltw
 aEL
 ijC
 qwE
@@ -115672,7 +115641,7 @@ qeh
 ijC
 aEL
 aEL
-pLB
+ltw
 vtT
 vtT
 vtT
@@ -115899,7 +115868,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 mDW
@@ -115912,14 +115881,14 @@ ijC
 ijC
 ijC
 ijC
-xCK
+peB
 ijC
 ijC
 ijC
 ijC
 ijC
 ijC
-xCK
+peB
 ijC
 ijC
 ijC
@@ -115929,7 +115898,7 @@ qeh
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -116156,7 +116125,7 @@ vtT
 vtT
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 vuC
@@ -116186,7 +116155,7 @@ qQL
 uwn
 ijC
 aEL
-pLB
+ltw
 vtT
 vtT
 pLB
@@ -116413,7 +116382,7 @@ pLB
 pLB
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 kuV
@@ -116443,7 +116412,7 @@ qQL
 pXs
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 vtT
@@ -116670,7 +116639,7 @@ vtT
 vtT
 vtT
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -116700,7 +116669,7 @@ qQL
 vMZ
 ijC
 aEL
-pLB
+ltw
 vtT
 vtT
 pLB
@@ -116927,7 +116896,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 aEL
@@ -116957,7 +116926,7 @@ wBn
 ijC
 ijC
 aEL
-pLB
+ltw
 pLB
 pLB
 vtT
@@ -117184,14 +117153,14 @@ vtT
 vtT
 vtT
 vtT
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
 aEL
 ijC
 cUp
@@ -117214,7 +117183,7 @@ ijC
 ijC
 aEL
 aEL
-pLB
+ltw
 vtT
 vtT
 pLB
@@ -117448,7 +117417,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 ijC
 ijC
@@ -117470,7 +117439,7 @@ aEL
 aEL
 aEL
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -117705,7 +117674,7 @@ pLB
 pLB
 pLB
 pLB
-pLB
+ltw
 aEL
 aEL
 ijC
@@ -117716,18 +117685,18 @@ ijC
 ijC
 aEL
 aEL
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
 pLB
 vtT
 vtT
@@ -117962,8 +117931,8 @@ pLB
 pLB
 pLB
 pLB
-pLB
-pLB
+ltw
+ltw
 aEL
 aEL
 aEL
@@ -117972,7 +117941,7 @@ aEL
 aEL
 aEL
 aEL
-pLB
+ltw
 pLB
 pLB
 pLB
@@ -118221,14 +118190,14 @@ pLB
 pLB
 pLB
 pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
-pLB
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
+ltw
 pLB
 pLB
 pLB
