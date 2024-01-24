@@ -21249,18 +21249,6 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
-"bGk" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
-	},
-/obj/structure/curtain{
-	color = "#c40e0e"
-	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/wood_common,
-/area/f13/bar/nash)
 "bGz" = (
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
@@ -107174,10 +107162,7 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "uDD" = (
-/obj/structure/sign/barsign{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/sign/barsign,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/nash)
 "uDW" = (
@@ -130005,8 +129990,8 @@ ahA
 ahA
 ahA
 ahA
-ahA
-bGk
+mkb
+orQ
 ksL
 txF
 txF
@@ -130263,7 +130248,7 @@ szs
 mkb
 szs
 szs
-orQ
+uDD
 txF
 txF
 txF
@@ -130520,7 +130505,7 @@ oLd
 oLd
 oLd
 nFA
-uDD
+nFA
 wNN
 txF
 txF
