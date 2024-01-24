@@ -7916,7 +7916,9 @@
 /obj/effect/turf_decal/bot_red,
 /obj/structure/debris/v3,
 /obj/structure/debris/v4,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
 /area/f13/brotherhood/armory)
 "dsS" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -16112,7 +16114,7 @@
 /obj/structure/simple_door/bunker{
 	name = "Locker Room"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "gWz" = (
 /obj/effect/decal/cleanable/generic,
@@ -27567,7 +27569,7 @@
 /obj/machinery/door/airlock/grunge{
 	req_access_txt = "120"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/offices1st)
 "mju" = (
 /turf/open/floor/carpet/purple,
@@ -41853,7 +41855,7 @@
 	name = "Scientist's Quarters";
 	req_one_access_txt = "134"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "soL" = (
 /obj/structure/rack,
@@ -46937,7 +46939,9 @@
 /area/f13/tunnel)
 "uCV" = (
 /obj/structure/window/fulltile/store,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/offices2nd)
 "uCW" = (
 /obj/structure/wreck/trash/brokenvendor,

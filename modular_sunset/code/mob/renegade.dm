@@ -362,7 +362,7 @@
 	return 6
 
 // POWER ARMOR VARIANT 2.0
-/mob/living/simple_animal/hostile/renegade/traitor
+/mob/living/simple_animal/hostile/renegade/traitor //while good intentions were there for this mob, it's op. Nerfed it. - Blue
 	name = "Brotherhood of Steel Traitor"
 	desc = "A former Brotherhood of Steel Paladin, now turn coat for the Renegades. You imagine this is who is responsible for the siege."
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
@@ -370,8 +370,8 @@
 	icon_living = "rebound_chosen"
 	icon_dead = "mercenary_ghoul_dead"
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
-	maxHealth = 300
-	health = 300
+	maxHealth = 250
+	health = 250
 	healable = 1
 	melee_damage_lower = 55
 	melee_damage_upper = 60
@@ -381,8 +381,8 @@
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	extra_projectiles = 4
-	ranged_cooldown_time = 2 SECONDS
+	extra_projectiles = 3
+	ranged_cooldown_time = 3 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/beam/laser/laer/hitscan

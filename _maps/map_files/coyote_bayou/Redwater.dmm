@@ -2976,19 +2976,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
-"bfH" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/redwater)
 "bfU" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -4028,7 +4015,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/bars,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "bxf" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -6350,11 +6337,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
-"cmE" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "cmF" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/wasteland{
@@ -9971,7 +9953,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/indestructible/ground/outside/wood,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "dxV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10337,7 +10319,9 @@
 /area/f13/building)
 "dEv" = (
 /obj/structure/simple_door/interior,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "dEw" = (
 /obj/machinery/shower{
@@ -13605,7 +13589,7 @@
 	dir = 2
 	},
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "eMP" = (
 /obj/structure/table,
@@ -19908,7 +19892,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "cafeteria"
+	},
 /area/f13/building)
 "gYp" = (
 /obj/item/stack/ore/iron,
@@ -22249,10 +22235,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
-"hOD" = (
-/obj/structure/simple_door/house,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "hOS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -22456,10 +22438,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
-/area/f13/building)
-"hTD" = (
-/obj/structure/simple_door/glass,
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "hTM" = (
 /obj/item/shovel/spade,
@@ -23172,7 +23150,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "ieD" = (
 /obj/structure/table/wood,
@@ -25166,7 +25144,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "iMb" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -27613,7 +27591,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/bars,
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "jCO" = (
 /obj/structure/car/rubbish4{
@@ -30146,7 +30124,7 @@
 /area/f13/wasteland/redwater)
 "kDc" = (
 /obj/machinery/vending/games,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/city)
 "kDe" = (
 /obj/structure/flora/grass/wasteland,
@@ -30217,7 +30195,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/curtain,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "kEr" = (
 /turf/open/floor/f13{
@@ -31192,14 +31170,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"kWE" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "housewindowbroken"
-	},
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "kXa" = (
 /obj/structure/stone_tile/block{
 	dir = 4;
@@ -31702,7 +31672,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "leP" = (
 /obj/effect/decal/cleanable/dirt{
@@ -32872,7 +32842,7 @@
 /obj/structure/curtain{
 	color = "#5c131b"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "lyj" = (
 /obj/structure/junk/small/tv{
@@ -36320,9 +36290,6 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#6D6D6D"
 	},
-/area/f13/building)
-"mKr" = (
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "mKx" = (
 /obj/item/storage/trash_stack{
@@ -44037,7 +44004,9 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "pEQ" = (
 /obj/machinery/light/small/broken{
@@ -54018,7 +53987,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "tcg" = (
 /obj/structure/fence/wooden{
@@ -60946,7 +60915,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/building)
 "vzq" = (
@@ -62130,10 +62099,6 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/building)
-"vUq" = (
-/obj/structure/simple_door/room,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "vUt" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -63065,7 +63030,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "wmK" = (
 /obj/structure/table/wood,
@@ -65286,7 +65251,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "xbo" = (
 /obj/structure/billboard/cola/pristine,
@@ -66204,7 +66169,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/building)
 "xrP" = (
@@ -66408,7 +66373,7 @@
 /area/f13/building)
 "xvz" = (
 /obj/structure/window/fulltile/wood,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13,
 /area/f13/building)
 "xvD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -68013,7 +67978,7 @@
 /obj/structure/window/fulltile/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "cafeteria"
 	},
 /area/f13/building)
 "yar" = (
@@ -77003,7 +76968,7 @@ kPy
 arS
 dpF
 vbL
-hvb
+fHN
 jKL
 aXu
 jKL
@@ -77260,7 +77225,7 @@ mTI
 gVA
 dpF
 lXu
-yie
+bFR
 jKL
 aXu
 jKL
@@ -77517,7 +77482,7 @@ uZY
 uZY
 kDz
 mCQ
-qIh
+fHN
 jKL
 bLl
 jKL
@@ -77774,7 +77739,7 @@ pvl
 pvl
 rpg
 eVe
-ahX
+bFR
 jKL
 aXu
 jKL
@@ -82650,7 +82615,7 @@ rGB
 tOg
 lGx
 kwK
-bfH
+lPs
 eVe
 bFR
 bFR
@@ -91779,7 +91744,7 @@ bFR
 bFR
 kYJ
 xvz
-hTD
+obV
 obV
 xvz
 rRE
@@ -97761,7 +97726,7 @@ kYp
 ryV
 ryH
 dZe
-hOD
+etI
 uZF
 jMC
 uOz
@@ -99379,7 +99344,7 @@ iRe
 hHh
 aNP
 mEY
-kWE
+hXt
 bFR
 bFR
 bFR
@@ -99636,7 +99601,7 @@ hXt
 jXi
 qJH
 xmr
-cmE
+iRe
 bFR
 bFR
 bFR
@@ -100149,7 +100114,7 @@ bFR
 jXx
 jXi
 mOW
-vUq
+ooG
 mby
 bFR
 bFR
@@ -100835,7 +100800,7 @@ qnn
 (126,1,1) = {"
 peY
 hfG
-hOD
+etI
 ibq
 bEe
 wSM
@@ -101357,7 +101322,7 @@ jXx
 jXx
 eMH
 eMH
-hOD
+etI
 jXx
 jXx
 jXx
@@ -121816,7 +121781,7 @@ jXi
 mrv
 jXx
 jXx
-dEv
+uYW
 jXx
 jXx
 nBR
@@ -132633,7 +132598,7 @@ sHq
 sHq
 sHq
 sHq
-mKr
+jsB
 sHq
 sHq
 sHq

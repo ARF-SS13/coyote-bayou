@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ad" = (
 /obj/machinery/door/airlock/freezer,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/carpet/royalblack,
 /area/f13/city)
 "af" = (
 /obj/structure/bed{
@@ -2539,6 +2539,10 @@
 /obj/structure/legion_extractor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
+"wi" = (
+/obj/machinery/door/airlock/freezer,
+/turf/open/floor/carpet/purple,
+/area/f13/city)
 "wk" = (
 /obj/structure/chair/office/dark,
 /obj/effect/decal/cleanable/dirt,
@@ -5542,6 +5546,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/wasteland)
+"VV" = (
+/obj/machinery/door/airlock/freezer,
+/turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/city)
 "VW" = (
 /turf/open/floor/plasteel/darkpurple/corner{
 	dir = 4
@@ -34915,7 +34923,7 @@ vf
 tV
 tV
 tV
-ad
+VV
 tV
 tV
 Cr
@@ -35429,7 +35437,7 @@ ji
 es
 Ao
 Ao
-ad
+wi
 tV
 tV
 xC
@@ -36971,7 +36979,7 @@ ji
 tV
 tV
 tV
-ad
+VV
 tV
 tV
 Tx
@@ -37485,7 +37493,7 @@ ji
 PD
 tV
 tV
-ad
+VV
 tV
 tV
 MU
@@ -42125,7 +42133,7 @@ tN
 ji
 LD
 tV
-ad
+VV
 tV
 Ps
 rN
@@ -43924,7 +43932,7 @@ ji
 ji
 LD
 tV
-ad
+VV
 tV
 oa
 rN
