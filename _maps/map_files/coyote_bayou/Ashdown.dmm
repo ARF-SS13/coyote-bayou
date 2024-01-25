@@ -4386,6 +4386,19 @@
 	dir = 4
 	},
 /area/f13/wasteland)
+"bZL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bZU" = (
 /obj/item/kirbyplants/dead{
 	desc = "A mummified potted plant.";
@@ -31544,6 +31557,18 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"nVw" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "nVM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/uranium{
@@ -45651,6 +45676,15 @@
 	},
 /area/f13/wasteland/city)
 "ufQ" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - N"
 	},
@@ -87188,7 +87222,7 @@ gMW
 gMW
 gMW
 wWK
-wWK
+nVw
 pUU
 "}
 (128,1,1) = {"
@@ -115715,7 +115749,7 @@ aFQ
 aDY
 uEl
 ppl
-ppl
+bZL
 pUU
 "}
 (239,1,1) = {"

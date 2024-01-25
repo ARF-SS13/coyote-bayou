@@ -2620,7 +2620,7 @@ datum/job/wasteland/f13dendoctor
 // Newbie Teacher
 
 /datum/job/wasteland/f13ranger
-	title = "Texarcana Ranger"
+	title = "Texarkana Ranger"
 	flag = F13TEACHER
 	department_flag = TEACHER
 	faction = FACTION_TEACHER
@@ -2638,7 +2638,7 @@ datum/job/wasteland/f13dendoctor
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
 
 /datum/outfit/job/wasteland/f13ranger
-	name = "Texarcana Ranger"
+	name = "Texarkana Ranger"
 	jobtype = /datum/job/wasteland/f13ranger
 
 	id = /obj/item/card/id/dogtag/ranger
@@ -2653,8 +2653,7 @@ datum/job/wasteland/f13dendoctor
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/firstaid/ancient = 1, //two to help newbies in trouble. - blue
+		/obj/item/storage/firstaid/ancient = 2,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/kit_spawner/waster

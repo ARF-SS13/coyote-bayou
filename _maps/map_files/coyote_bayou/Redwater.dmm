@@ -15333,6 +15333,18 @@
 	name = "stagnant water"
 	},
 /area/f13/building/tribal)
+"fqT" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "fqX" = (
 /obj/structure/fence{
 	dir = 8;
@@ -27190,6 +27202,20 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
+"jtT" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/caves)
 "jub" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -93346,7 +93372,7 @@ qnn
 "}
 (97,1,1) = {"
 peY
-eEP
+jtT
 eEP
 eEP
 eEP
@@ -103626,7 +103652,7 @@ qnn
 "}
 (137,1,1) = {"
 peY
-hfG
+fqT
 xAz
 tRd
 tRd
@@ -110051,7 +110077,7 @@ qnn
 "}
 (162,1,1) = {"
 peY
-hfG
+fqT
 hfG
 hfG
 bFR
@@ -125471,7 +125497,7 @@ qnn
 "}
 (222,1,1) = {"
 peY
-hfG
+fqT
 hfG
 wYc
 hfG

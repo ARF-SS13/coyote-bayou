@@ -56449,6 +56449,20 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"jpG" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To New Boston";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop3"
+	},
+/area/f13/tunnel/northwest)
 "jpH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -57659,6 +57673,18 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/theloop)
+"jFg" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To New Boston";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "jFv" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -77699,6 +77725,18 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"nYX" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To New Boston";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel/northeast)
 "nZd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -81687,6 +81725,18 @@
 /obj/structure/anvil/obtainable/basic,
 /turf/open/floor/plasteel,
 /area/f13/building/workshop/nash)
+"oSc" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Garland City";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "oSe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glitter/blue{
@@ -84445,6 +84495,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"pyL" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To New Boston";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "pyM" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -85023,6 +85085,20 @@
 	icon_state = "outerbordercorner - S"
 	},
 /area/f13/wasteland/city)
+"pFj" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Garland City";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/tunnel/southeast)
 "pFl" = (
 /obj/structure/flora/chomp/bush5{
 	color = "#338833"
@@ -89234,7 +89310,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "qDT" = (
-/turf/closed/indestructible/wood,
+/turf/closed/indestructible/rock,
 /area/f13/building/abandoned)
 "qEc" = (
 /obj/structure/flora/chomp/bones/lbone,
@@ -92543,6 +92619,20 @@
 /obj/structure/table/plasmaglass,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/bar/heaven)
+"rrq" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Redlick";
+	desc = "Walk through these matrix tiles to go to the town on the sign.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/tunnel/southwest)
 "rrw" = (
 /obj/structure/flora/rock/pile/largejungle{
 	icon_state = "bush3"
@@ -113235,8 +113325,8 @@
 	pixel_y = 5;
 	icon = 'modular_coyote/icons/objects/street_signs.dmi';
 	icon_state = "street";
-	name = "Welcome to city of Nash!";
-	desc = "This old sign used by the old world shows the population of the town of Nash, its massively out of date and has been crossed through with black paint.  It now says 'we don't even know' across it.";
+	name = "To New Boston";
+	desc = "Walk through these matrix tiles to go to New Boston.";
 	layer = 6
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -120106,6 +120196,20 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
+"xzX" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Garland City";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/caves)
 "xAa" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -123653,7 +123757,7 @@ aOk
 aOk
 aOk
 aaa
-agP
+jpG
 ano
 ano
 app
@@ -123775,7 +123879,7 @@ iDs
 hFP
 sKE
 aaa
-egE
+rrq
 ayl
 aCb
 aHG
@@ -141318,7 +141422,7 @@ aaa
 "}
 (71,1,1) = {"
 kEE
-aJN
+pyL
 aJN
 aOk
 aOk
@@ -155710,7 +155814,7 @@ kEE
 "}
 (127,1,1) = {"
 kEE
-aaB
+jFg
 aae
 aae
 aae
@@ -183468,7 +183572,7 @@ aaa
 opW
 mlW
 pAP
-pAP
+nYX
 pAP
 mlW
 aaS
@@ -188404,7 +188508,7 @@ blg
 blg
 blg
 bao
-vyG
+xzX
 cdo
 cdo
 cdo
@@ -188443,7 +188547,7 @@ blg
 blg
 blg
 bao
-vyG
+xzX
 cdo
 cdo
 cdo
@@ -188470,7 +188574,7 @@ blg
 blg
 blg
 bao
-vyG
+xzX
 cdo
 cdo
 cdo
@@ -188498,7 +188602,7 @@ blg
 blg
 blg
 bao
-vyG
+xzX
 cdo
 cdo
 cdo
@@ -188530,7 +188634,7 @@ aae
 aae
 aae
 aaa
-arx
+pFj
 ubm
 aud
 aud
@@ -188589,7 +188693,7 @@ aae
 aae
 aae
 aae
-huP
+oSc
 huP
 huP
 huP

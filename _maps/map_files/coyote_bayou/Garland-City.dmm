@@ -4105,6 +4105,18 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/water,
 /area/f13/caves)
+"cXE" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "cXY" = (
 /obj/structure/simple_door/room,
 /obj/item/lock_bolt{
@@ -11640,6 +11652,20 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"isW" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/caves)
 "itq" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -13707,6 +13733,18 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building)
+"jRA" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "jRK" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -19739,6 +19777,20 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
+"nUM" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/caves)
 "nUZ" = (
 /obj/item/clothing/under/f13/police,
 /obj/item/clothing/head/f13/police,
@@ -34940,7 +34992,7 @@ kTa
 kTa
 kTa
 cvw
-dID
+cXE
 dID
 dID
 dID
@@ -35534,7 +35586,7 @@ muO
 muO
 muO
 xnA
-unx
+isW
 rJM
 rUq
 rUq
@@ -35576,7 +35628,7 @@ muO
 muO
 muO
 xnA
-unx
+isW
 rJM
 rUq
 eCo
@@ -35600,7 +35652,7 @@ muO
 muO
 muO
 xnA
-unx
+isW
 rJM
 kWY
 rUq
@@ -35627,7 +35679,7 @@ muO
 muO
 muO
 xnA
-nTR
+jRA
 cba
 cON
 cON
@@ -35918,7 +35970,7 @@ bKW
 ijV
 bKW
 bKW
-xnA
+nUM
 rJM
 kTa
 kTa

@@ -7,7 +7,7 @@
 #define FACTION_OASIS "Town"
 #define FACTION_ENCLAVE "Enclave"
 #define FACTION_WASTELAND "Wastelander"
-#define FACTION_TEACHER "Texarcana Rangers"
+#define FACTION_TEACHER "Texarkana Rangers"
 #define FACTION_RAIDERS "Raiders"
 #define FACTION_TRIBE "Tribe"
 #define FACTION_VAULT "Vault"
