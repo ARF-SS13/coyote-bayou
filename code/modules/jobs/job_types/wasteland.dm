@@ -2624,8 +2624,10 @@ datum/job/wasteland/f13dendoctor
 	flag = F13RANGER
 	department_flag = TEACHER
 	faction = FACTION_RANGER
+	req_admin_notify = 1
 	total_positions = 3
 	spawn_positions = 3
+	exp_requirements = 10080
 	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
 	supervisors = "fate"
 	selection_color = "#228c22"
