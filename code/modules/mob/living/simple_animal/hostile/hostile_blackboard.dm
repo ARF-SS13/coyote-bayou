@@ -1,13 +1,15 @@
 /// Currently moving toward the target, up to their minimum distance
-#define HAI_MOVEMODE_APPROACH 1
+#define HAI_MOVEMODE_APPROACH 1 // oh hai mark
 /// Currently moving away from the target, up to their retreat distance
 #define HAI_MOVEMODE_RETREAT 2
 /// Currently moving toward the target, up to melee range
-#define HAI_MOVEMODE_ATTACK 3
+#define HAI_MOVEMODE_RUSH 3
 /// Currently moving away from the target, up to 5 times their retreat distance
 #define HAI_MOVEMODE_FLEE 4
 /// Currently standing ground
 #define HAI_MOVEMODE_STAND 5
+/// Currently just wandering around
+#define HAI_MOVEMODE_WANDER 6
 
 /// <reference path="../../typings/tsd.d.ts" />
 /// {FILE: /hostile_ai.dm} (C) 2015-2016 Arthur Moore (MooreShark) a part of the /hostile_ai/ package
@@ -34,7 +36,11 @@
 /// Coordinates, strings, and other primitives are good, weak references might be okay, but be careful
 /datum/hostile_blackboard
 	var/in_use // is the blackboard in_use to yet?
-	////// SHORTTERM MEMORY
+
+	//////////////////////////////////////////////////
+	////// SHORTTERM MEMORY //////////////////////////
+	/// We are allowed to move this turn!
+	var/allowed_to_move
 	// allowed_to_attack_target // confirmed verified to be allowed to attack the target
 	var/allowed_to_attack_target 
 	/// confirmed verified to be allowed to punch the target
@@ -55,17 +61,34 @@
 	var/just_move_to_target
 	/// We did a shot this turn!
 	var/shot_was_performed
+	/// Target is the container of our true target
+	var/target_in_something
 
-	////// MIDTERM MEMORY
+	//////////////////////////////////////////////////
+	////// MIDTERM MEMORY ////////////////////////////
 	/// we're locked into doing an attack until...
 	var/attacking_until
 	/// what kind of movement are we doing?
-	var/movement_style = HAI_MOVEMODE_DEFAULT
+	var/movement_style = HAI_MOVEMODE_WANDER
+	/// if we're locked into a movement mode, this is it
+	var/movement_mode_lock
 
+	var/last_attack_time = 0
+
+	/// The coords of wherever we're moving, if anything
+	var/move_to_x
+	var/move_to_y
+	var/move_to_z
+	/// How many turns have we been trying to get there? Used to determine if our pathfinding is bingused
+	var/move_to_attempts = 0
 	/// do we still have the same target as last time?
 	var/retained_target
+	var/in_combat
+	/// Time at which we just give up on our target
+	var/give_up_time = 0
 
-	////// LONGTERM MEMORY
+	//////////////////////////////////////////////////
+	////// LONGTERM MEMORY ///////////////////////////
 	/// fun coords we wanna remember
 	var/targ_x
 	var/targ_y
@@ -75,6 +98,9 @@
 	var/last_met_ckey
 	/// the last time we've met that ckey
 	var/last_met_time
+
+	/// When we're out of combat, try to approach this guy, up to their minimum distance
+	var/datum/weakref/follow_target
 
 /datum/hostile_blackboard/proc/wipe_shortterm()
 	allowed_to_attack_target = null
@@ -86,11 +112,22 @@
 	has_line_of_sight_to_target = null
 	is_busy = null
 	just_move_to_target = null
-	blackboard.in_use = null
+	in_use = null
+	shot_was_performed = null
+	target_in_something = null
 
 /datum/hostile_blackboard/proc/wipe_midterm()
 	attacking_until = 0
-	movement_style = HAI_MOVEMODE_DEFAULT
+	movement_style = HAI_MOVEMODE_WANDER
+	last_attack_time = 0
+	shot_was_performed = null
+
+/datum/hostile_blackboard/proc/wipe_longterm()
+	targ_x = null
+	targ_y = null
+	targ_z = null
+	last_met_ckey = null
+	last_met_time = null
 
 /datum/hostile_blackboard/proc/forget_target()
 	targ_x = null
@@ -113,6 +150,12 @@
 		return
 	return targturf
 
+/datum/hostile_blackboard/proc/set_in_combat()
+	in_combat = TRUE
+
+/datum/hostile_blackboard/proc/set_out_of_combat()
+	in_combat = FALSE
+
 /datum/hostile_blackboard/proc/attack_until(time)
 	COOLDOWN_START(src, attacking_until, time)
 
@@ -128,4 +171,91 @@
 	last_met_ckey = targck
 	last_met_time = world.time
 
+/datum/hostile_blackboard/proc/set_approaching() // or following
+	movement_style = HAI_MOVEMODE_APPROACH
+
+/datum/hostile_blackboard/proc/set_retreating()
+	movement_style = HAI_MOVEMODE_RETREAT
+
+/datum/hostile_blackboard/proc/set_rushing()
+	if(!isnull(movement_mode_lock) && movement_mode_lock != HAI_MOVEMODE_RUSH)
+		return
+	movement_style = HAI_MOVEMODE_RUSH
+	clear_movement_target() // no target means we default to running up to the mob's target
+
+/datum/hostile_blackboard/proc/set_fleeing()
+	if(!isnull(movement_mode_lock) && movement_mode_lock != HAI_MOVEMODE_FLEE)
+		return
+	movement_style = HAI_MOVEMODE_FLEE
+
+/datum/hostile_blackboard/proc/set_standing()
+	movement_style = HAI_MOVEMODE_STAND
+
+/datum/hostile_blackboard/proc/set_wandering()
+	movement_style = HAI_MOVEMODE_WANDER
+	clear_movement_target()
+
+/datum/hostile_blackboard/proc/should_rush()
+	return movement_style == HAI_MOVEMODE_RUSH
+
+/datum/hostile_blackboard/proc/is_engaging()
+	return movement_style == HAI_MOVEMODE_APPROACH || movement_style == HAI_MOVEMODE_RUSH
+
+/datum/hostile_blackboard/proc/is_retreating()
+	return movement_style == HAI_MOVEMODE_RETREAT || movement_style == HAI_MOVEMODE_FLEE
+
+/datum/hostile_blackboard/proc/force_rush()
+	set_rushing()
+	movement_mode_lock = movement_style
+
+/datum/hostile_blackboard/proc/unforce_rush()
+	movement_mode_lock = null
+
+/datum/hostile_blackboard/proc/set_movement_target(atom/there)
+	if(!there)
+		return
+	clear_movement_target()
+	move_to_x = there.x
+	move_to_y = there.y
+	move_to_z = there.z
+	move_to_attempts = 0
+
+/datum/hostile_blackboard/proc/get_movement_target()
+	var/turf/there = locate(move_to_x, move_to_y, move_to_z)
+	if(!there)
+		clear_movement_target()
+		return
+	return there
+
+/datum/hostile_blackboard/proc/clear_movement_target()
+	move_to_x = null
+	move_to_y = null
+	move_to_z = null
+	move_to_attempts = 0
+
+/// Used to both ticking our attempts to move to a target, and whether we should retain the target or get a new one, if any
+/datum/hostile_blackboard/proc/should_retain_target(atom/me)
+	var/turf/there = get_movement_target()
+	if(!there)
+		clear_movement_target()
+		return FALSE
+	if(get_turf(me) == get_turf(there))
+		clear_movement_target()
+		return FALSE // we're there!
+	if(move_to_attempts > 5)
+		clear_movement_target()
+		return FALSE
+	move_to_attempts++
+	return TRUE
+
+/datum/hostile_blackboard/proc/check_pursuit_time()
+	if(!give_up_time)
+		return FALSE
+	if(world.time > give_up_time)
+		give_up_time = 0
+		return TRUE
+	return FALSE
+
+/datum/hostile_blackboard/proc/seen_target(atom/target, gup)
+	give_up_time = world.time + gup
 

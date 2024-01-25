@@ -155,7 +155,7 @@
 	var/atom/my_target = get_target()
 	if(my_target && !stat)
 		update_icons()
-		Goto(my_target, move_to_delay, minimum_distance)
+		Goto(my_target)
 
 /mob/living/simple_animal/hostile/jungle/mook/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()

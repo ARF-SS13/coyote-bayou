@@ -80,7 +80,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/captainarlem/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/captainarlem/Goto(target, delay, approach_distance)
 	if(charging)
 		return
 	..()
@@ -117,7 +117,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/Bump(atom/A)

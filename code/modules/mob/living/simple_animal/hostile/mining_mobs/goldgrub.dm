@@ -53,7 +53,7 @@
 		Aggro()
 		visible_message(span_danger("The [name] tries to flee from [my_target.name]!"))
 		retreat_distance = 10
-		minimum_distance = 10
+		approach_distance = 10
 		if(will_burrow)
 			addtimer(CALLBACK(src, .proc/Burrow), chase_time)
 

@@ -168,7 +168,7 @@
 	maxHealth = 130 
 	health = 130
 	retreat_distance = 2
-	minimum_distance = 1
+	approach_distance = 1
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
@@ -204,7 +204,7 @@
 	sound_after_shooting_delay = 1 SECONDS
 	auto_fire_burst_count = 1
 	retreat_distance = 3
-	minimum_distance = 3
+	approach_distance = 3
 	ranged_cooldown_time = 2 SECONDS
 	loot = list(
 		/obj/item/gun/ballistic/automatic/varmint
@@ -285,7 +285,7 @@
 	attack_sound = "punch"
 	auto_fire_burst_count = 2
 	retreat_distance = 4
-	minimum_distance = 6
+	approach_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
@@ -330,7 +330,7 @@
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	retreat_distance = 5
-	minimum_distance = 7
+	approach_distance = 7
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
@@ -419,7 +419,7 @@
 	if(!charging)
 		return ..()
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rain/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/supermutant/nightkin/rain/Goto(target)
 	if(!charging)
 		..()
 
@@ -450,7 +450,7 @@
 	var/atom/my_target = get_target()
 	if(!my_target)
 		return
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/Bump(atom/A)
 	if(charging)
@@ -491,7 +491,7 @@
 	melee_damage_upper = 60
 	auto_fire_burst_count = 3
 	retreat_distance = 2
-	minimum_distance = 4
+	approach_distance = 4
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/Initialize(mapload)
 	. = ..()

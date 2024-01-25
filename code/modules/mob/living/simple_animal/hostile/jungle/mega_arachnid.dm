@@ -34,11 +34,11 @@
 		var/mob/living/carbon/C = my_target
 		if(!C.legcuffed && C.health < 50)
 			retreat_distance = 9
-			minimum_distance = 9
+			approach_distance = 9
 			alpha = 125
 			return
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	alpha = 255
 
 /mob/living/simple_animal/hostile/jungle/mega_arachnid/Aggro()

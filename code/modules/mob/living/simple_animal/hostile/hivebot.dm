@@ -63,7 +63,7 @@
 	icon_living = "ranged"
 	icon_dead = "ranged"
 	ranged = 1
-	auto_fire_burst_count 3
+	auto_fire_burst_count = 3
 	retreat_distance = 5
 	minimum_distance = 5
 

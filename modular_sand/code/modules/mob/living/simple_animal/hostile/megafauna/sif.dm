@@ -298,7 +298,7 @@ Difficulty: Medium
 	if(charging == FALSE)
 		..()
 
-/mob/living/simple_animal/hostile/megafauna/sif/MoveToTarget(list/possible_targets)
+/mob/living/simple_animal/hostile/megafauna/sif/InitiateMovement(list/possible_targets)
 	if(charging == FALSE)
 		..()
 

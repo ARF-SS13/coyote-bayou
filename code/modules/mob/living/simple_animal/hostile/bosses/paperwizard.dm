@@ -10,7 +10,7 @@
 	icon_state = "paperwizard"
 	ranged = 1
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	minimum_distance = 3
+	approach_distance = 3
 	retreat_distance = 3
 	obj_damage = 0
 	melee_damage_lower = 10
@@ -112,7 +112,7 @@
 			C.say("My craft defines me, you could even say it IS me!")
 		wiz.say("My craft defines me, you could even say it IS me!")
 		wiz.forceMove(get_step(target,pick_n_take(directions)))
-		wiz.minimum_distance = 1 //so he doesn't run away and ruin everything
+		wiz.approach_distance = 1 //so he doesn't run away and ruin everything
 		wiz.retreat_distance = 0
 	else
 		boss.atb.refund(boss_cost)
@@ -125,7 +125,7 @@
 	boss_abilities = list()
 	melee_damage_lower = 1
 	melee_damage_upper = 5
-	minimum_distance = 0
+	approach_distance = 0
 	retreat_distance = 0
 	ranged = 0
 	loot = list()
@@ -135,7 +135,7 @@
 /mob/living/simple_animal/hostile/boss/paper_wizard/copy/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	if(amount > 0) //damage
 		if(original)
-			original.minimum_distance = 3
+			original.approach_distance = 3
 			original.retreat_distance = 3
 			original.copies -= src
 			for(var/c in original.copies)
@@ -152,7 +152,7 @@
 /mob/living/simple_animal/hostile/boss/paper_wizard/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	if(. > 0)//damage
-		minimum_distance = 3
+		approach_distance = 3
 		retreat_distance = 3
 		for(var/copy in copies)
 			qdel(copy)

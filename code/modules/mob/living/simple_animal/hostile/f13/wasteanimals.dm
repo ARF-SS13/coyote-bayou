@@ -33,7 +33,7 @@
 	melee_damage_upper = 12
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 8
 	waddle_amount = 3
@@ -136,7 +136,7 @@
 	is_low_health = TRUE
 	vary = FALSE
 	retreat_distance = 12
-	minimum_distance = 10
+	approach_distance = 10
 
 /// Override this with what should happen when going from low health to high health
 /mob/living/simple_animal/hostile/gecko/make_high_health()
@@ -147,7 +147,7 @@
 	is_low_health = FALSE
 	vary = TRUE
 	retreat_distance = initial(retreat_distance)
-	minimum_distance = initial(minimum_distance)
+	approach_distance = initial(approach_distance)
 
 
 //Fire Geckos//
@@ -176,7 +176,7 @@
 	melee_damage_upper = 12
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 8
 	waddle_amount = 3
@@ -328,7 +328,7 @@
 	melee_damage_upper = 18
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 7
 	waddle_amount = 5
@@ -416,7 +416,7 @@
 	melee_damage_upper = 18
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 9
 	
@@ -481,7 +481,7 @@
 	melee_damage_upper = 24
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 4
 	vision_range = 4
 
@@ -599,7 +599,7 @@
 	retreat_distance = 0
 	//how far they pull back
 	
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7
@@ -682,7 +682,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	retreat_distance = 8
-	minimum_distance = 6
+	approach_distance = 6
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1,
 		/obj/item/stack/sheet/sinew = 1,
@@ -966,7 +966,7 @@
 	melee_damage_upper = 35
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 9
 	vision_range = 8
 	waddle_amount = 5

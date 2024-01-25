@@ -19,7 +19,7 @@
 	melee_damage_upper = 30
 	pixel_x = -16
 	pixel_y = -14
-	minimum_distance = 3
+	approach_distance = 3
 	move_to_delay = 20
 	vision_range = 9
 	aggro_vision_range = 15
@@ -210,7 +210,7 @@
 	var/atom/my_target = get_target()
 	if(my_target && !stat)
 		update_icons()
-		Goto(my_target, move_to_delay, minimum_distance)
+		Goto(my_target)
 
 /mob/living/simple_animal/hostile/jungle/seedling/adjustHealth()
 	. = ..()

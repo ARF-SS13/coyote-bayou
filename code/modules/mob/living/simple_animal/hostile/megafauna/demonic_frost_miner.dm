@@ -147,7 +147,7 @@ Difficulty: Extremely Hard
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/MoveToTarget(list/possible_targets)
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/InitiateMovement(list/possible_targets)
 	if(enraging)
 		return
 	return ..()

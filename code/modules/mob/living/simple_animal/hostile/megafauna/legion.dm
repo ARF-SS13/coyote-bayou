@@ -36,7 +36,7 @@ Difficulty: Medium
 	ranged = 1
 	del_on_death = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	ranged_cooldown_time = 10
 	var/size = 5
 	var/charging = 0
@@ -88,7 +88,7 @@ Difficulty: Medium
 			SpinAnimation(speed = 20, loops = 5)
 			ranged = 0
 			retreat_distance = 0
-			minimum_distance = 0
+			approach_distance = 0
 			speed = 0
 			move_to_delay = 1
 			charging = 1
@@ -97,7 +97,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/legion/proc/reset_charge()
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	speed = 1
 	move_to_delay = 2
 	charging = 0

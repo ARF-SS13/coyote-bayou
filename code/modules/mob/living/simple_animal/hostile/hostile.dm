@@ -74,6 +74,29 @@
 	var/winding_up_melee = FALSE
 	var/windup_timer_id = 0
 
+	/// Every tick we arent rushing in, we have a chance to rush in
+	var/rush_per_tick_prob = 100
+	/// Every tick we arent approaching, and are not rushing, we have a chance to approach
+	var/approach_per_tick_prob = 100
+	/// Every tick we arent retreating, and are not the other two, we have a chance to retreat
+	var/retreat_per_tick_prob = 100
+	/// If we're rushing, and we dont do an attack, we have a chance to stop rushing, with the above probability
+	var/can_leave_rush_mode_without_attacking = FALSE // Can we leave rush mode without attacking?
+
+	var/flees_at_low_health = FALSE // Does this mob run away when it's low on health?
+	var/flee_health_threshold = 0.25 // What percent of health does it run away at?
+
+	var/always_rush_at_low_health = FALSE // Does this mob always rush when it's low on health?
+	var/always_rush_health_threshold = 0.50
+
+	var/retreat_after_melee_attack_prob = 25
+	var/approach_after_ranged_attack_prob = 0
+	var/retreat_after_ranged_attack_prob = 0
+	var/rush_after_ranged_attack_prob = 0
+
+	/// if we havent seen our targt for this long, give up
+	var/pursuit_duration = 10 SECONDS
+
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
 
@@ -93,7 +116,7 @@
 	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/retreat_distance = null
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
-	var/minimum_distance = 1
+	var/approach_distance = 1
 	var/blindfires = FALSE // Will they keep shooting even without a line of sight to the gtarget?
 	var/can_shoot_in_melee = FALSE // Can they shoot in melee?
 
@@ -225,6 +248,8 @@
 	// 	return TRUE
 	/// Now try to do interesting things
 	/// find us a target, or retrieve our current one, either'll do
+	if(blackboard.check_pursuit_time()) // true if its time to give up
+		LoseTarget()
 	var/atom/mytarget = PollTarget()
 	/// If we're in the middle of something, do the stuff we're in the middle of
 	if(mytarget)
@@ -243,7 +268,7 @@
 		var/atom/my_target = get_target()
 		if(my_target && !QDELETED(target) && my_origin && !my_origin.Adjacent(target))
 			DestroyPathToTarget()
-		if(!MoveToTarget())     //if we lose our target
+		if(!InitiateMovement())     //if we lose our target
 			if(AIShouldSleep(possible_targets))	// we try to acquire a new one
 				toggle_ai(AI_IDLE)			// otherwise we go idle
 	consider_despawning()
@@ -270,6 +295,7 @@
 				return FALSE
 	/// prechecks!
 	var/atom/my_origin = get_origin()
+	my_target = FindHidden(my_target, my_origin) // if the target is inside something, target what they're inside instead
 	UpdateBlackboard(my_target, my_origin)
 	// if(blackboard.has_line_of_sight_to_target) // update last seen position! // some day will lead to firing at ur last seen position
 	// 	blackboard.remember_target(my_target) // not today tho~
@@ -277,16 +303,16 @@
 	/// first, can we punch em?
 	if(COOLDOWN_FINISHED(src, melee_cooldown) && blackboard.allowed_to_melee_target)
 		if(telegraphs_melee)
-			TelegraphMeleeAttack(target, coolflags)
+			TelegraphMeleeAttack(my_target)
 		else
-			InitiateMeleeAttack(my_target, coolflags)
+			InitiateMeleeAttack(my_target)
 	/// if not, can we shoot em?
 	if(COOLDOWN_FINISHED(src, ranged_cooldown) && blackboard.allowed_to_shoot_target)
-		InitiateRangedAttack(my_target, coolflags)
+		InitiateRangedAttack(my_target)
 		if(blackboard.shot_was_performed && !can_move_and_shoot)
 			return TRUE
 	/// if not, try to get closer
-	if(InitiateMovement())
+	if(InitiateMovement(my_target))
 		return TRUE
 
 /// generates a precached bitfield of flags about us in relation to the target at this instant
@@ -301,17 +327,23 @@
 		if(!my_target)
 			return FALSE
 	blackboard.in_use = TRUE
-	blackboard.allowed_to_attack = AllowedToAttackTarget(my_target)
-	if(!blackboard.allowed_to_attack) // we're not allowed to attack, so we're not allowed to do anything
-		return
+	blackboard.allowed_to_move = CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)
+	blackboard.allowed_to_attack_target = AllowedToAttackTarget(my_target)
 	/// allowed to attack the target! now, can we see it?
 	blackboard.can_chase_target = CheckChaseDistance(my_target) /// simplified check that assumes that we could see them originally when they were targetted
 	blackboard.has_line_of_sight_to_target = HasLineOfSightTo(my_target)
+	if(blackboard.has_line_of_sight_to_target)
+		blackboard.seen_target(my_target, pursuit_duration)
 	blackboard.is_adjacent_to_target = my_origin.Adjacent(my_target)
 	blackboard.is_far_from_target = !blackboard.is_adjacent_to_target && blackboard.can_chase_target // HA THATS WHY I USED IT!!!!!!!
+	if(!blackboard.allowed_to_attack_target) // we're not allowed to attack, so we're not allowed to do anything
+		blackboard.allowed_to_shoot_target = FALSE
+		blackboard.allowed_to_melee_target = FALSE
+		return
 	blackboard.allowed_to_shoot_target = blackboard.has_line_of_sight_to_target && (blackboard.is_far_from_target || (can_shoot_in_melee && blackboard.is_adjacent_to_target)) // no muzzle stuffing (unless its a whole wedding cake at our wedding)
 	blackboard.allowed_to_melee_target = blackboard.is_adjacent_to_target
 	/// cached for sanic speed
+
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
@@ -499,20 +531,21 @@
 		var/mob/M = the_target
 		if(M.status_flags & GODMODE)
 			return FALSE
-		if(!M.client)
-			var/client_in_range = FALSE
-			for(var/client/C in GLOB.clients)
-				if(get_dist(M, C) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
-					client_in_range = TRUE
-					break
-			if(!client_in_range)
-				return FALSE
 
 	if(isliving(the_target))
 		var/mob/living/L = the_target
 		if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
 			return FALSE
 		var/faction_check = !(L in foes) && faction_check_mob(L)
+		if(!faction_check && !L.client)
+			var/client_in_range = FALSE
+			for(var/client/C in GLOB.clients)
+				var/mob/D = C.mob
+				if(get_dist(M, D) <= SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
+					client_in_range = TRUE
+					break
+			if(!client_in_range)
+				return FALSE
 		if(robust_searching)
 			if(faction_check && !attack_same)
 				return FALSE
@@ -557,6 +590,7 @@
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/GiveTarget(new_target)//Step 4, give us our selected targette
+	LoseTarget()
 	add_target(new_target) // betcha just love these mixed name cases
 	LosePatience() // betcha just wanna marry them
 	if(get_target() != null)
@@ -564,12 +598,35 @@
 		Aggro()
 		return 1
 
+///////////////////////////////////////////////////////////////////////
+////// THINKING ABOUT LIFE CHOICES ///////////////////////////////////
+
+/*
+ * This is the main set of procs for deciding what state to be in!
+ * When a mob does something interesting, think about what it just did or had happen to it, and then decide what to do next.
+ */
+
+/// called after when we successfully punch something
+/mob/living/simple_animal/hostile/proc/ThinkMeleeAttackSuccess(atom/target)
+	blackboard.last_attack_time = world.time
+	if(blackboard.is_attacking()) // Just had a successful attack, roll for running away
+		if(prob(retreat_after_melee_attack_prob))
+			blackboard.set_retreating()
+
+/// called after we shoot at something
+/mob/living/simple_animal/hostile/proc/ThinkRangedAttackSuccess(atom/target)
+	if(blackboard.is_retreating())
+		if(prob(shoot_then_approach_prob))
+			blackboard.set_engaging()
+		else if(prob(shoot_then_rush_prob))
+			blackboard.set_rushing()
+
 /////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////........../////////////////////......................
 ////////////////////////////////////..........///////////////////////////////////////////
-//// MELEE ATTACKING ///////////////..........///////////////////////////////////////////
-////////////////////////////////////........../////////////////////......................
-///////////////////////////////////////////////////////////////////......................
+//// MELEE ATTACKING ///////////////..........//////////DD///////////////////////////////
+////////////////////////////////////..........//////////DD/////////......................
+////////////////////////////////////////////////////////DD/////////......................
 /////////////////////////////////////////////////////////////////////////////////////////
 
 /// Do an effect to telegraph that we're gonna punch em
@@ -583,32 +640,31 @@
 		in_melee = FALSE
 		return FALSE
 	var/m_rd = retreat_distance
-	var/m_md = minimum_distance
+	var/m_md = approach_distance
 	/// also a cooldown, just in case something gets interrupted
 	COOLDOWN_START(src, winding_up_melee, melee_windup_time*2) //Don't increase our retreating distance while winding up
-	retreat_distance = null //Stop retreating
-	minimum_distance = 1 //Stop moving away
+	blackboard.force_rush() // RUSH B
 	if(melee_windup_sound)
 		playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
 	// if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
 	// 	my_target = get_target() //Switch targets if we did during our windup.
 	// 	if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
 	// 		retreat_distance = m_rd
-	// 		minimum_distance = m_md
+	// 		approach_distance = m_md
 	// 		winding_up_melee = FALSE
 	// 		return my_target.attack_animal(src)
 	// 	else
 	// 		retreat_distance = m_rd
-	// 		minimum_distance = m_md
+	// 		approach_distance = m_md
 	// 		winding_up_melee = FALSE
 	// 		return FALSE
 	// else
 	// 	retreat_distance = m_rd
-	// 	minimum_distance = m_md
+	// 	approach_distance = m_md
 	// 	winding_up_melee = FALSE
 	// 	return FALSE
 	INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
-	windup_timer_id = addtimer(CALLBACK(src, .proc/TelegraphSwingFinish, target, HOSTILE_AI_FLAG_WAS_TELEGRAPHED), melee_windup_time) // see you in a bit!
+	windup_timer_id = addtimer(CALLBACK(src, .proc/TelegraphSwingFinish, target), melee_windup_time) // see you in a bit!
 	return TRUE
 
 //Just a thing that whiffs if the target either doesnt exist or is out of range
@@ -616,7 +672,8 @@
 	if(!my_target)
 		return FALSE
 	UpdateBlackboard(my_target)
-	blackboard.force_allowed_to_melee() // 
+	blackboard.force_allowed_to_melee()
+	blackboard.unforce_rush() // okay dont rush b
 	if(!InitiateMeleeAttack(my_target))
 		return Whiff() // whiff!
 
@@ -707,6 +764,7 @@
 /// Cleaning up after an attack has been made
 /mob/living/simple_animal/hostile/proc/PostMeleeAttack(atom/target, hostile_flags)
 	COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
+	ThinkMeleeAttackSuccess(target)
 
 
 ////////////////////////////////////////////////////////////////////
@@ -809,6 +867,7 @@
 
 /mob/living/simple_animal/hostile/proc/PostRangedAttack(atom/target, hostile_flags)
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
+	ThinkRangedAttackSuccess(target)
 	if(sound_after_shooting)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
 	if(projectiletype)
@@ -817,7 +876,6 @@
 	if(casingtype)
 		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
 			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
-
 
 /mob/living/simple_animal/hostile/proc/ThrowSomething(atom/targeted_atom)
 	if(!istype(throw_thing) || !istype(targeted_atom))
@@ -886,24 +944,79 @@
 
 /*
  * Starts or updates some kind of movement action, if possible
+ * A wonderfully multifunctional procm that handles all the stuff that tells the mob to go places
+ * HOW IT WORK:______qdel_list_wrapper
+ * Determine our current movement state, which should have already been set by something previous
+ * The states boil down to twoish states: butt rushing the player, and moving to a set of coordinates
+ * When buttrushing the player, we just use the default stock mob movement code, simple as
+ * Otherwise, we're going to want a set of coordinates to move to, which we'll get from the blackboard
+ * If there's no coordinates to move to, or we've tried too long to get there, or we're more or less *there*, we get new coordinates!
+ * HAI_MOVEMODE_APPROACH and HAI_MOVEMODE_RETREAT try to find a turf at their minimum / retreat distances, respectively
+ * HAI_MOVEMODE_FLEE tries to find a turf that's as far away from the target as possible
+ * HAI_MOVEMODE_WANDER just does the default stock mob wander code
+ * HAI_MOVEMODE_STAND just stands there, menacingly
+ * Annoyingly enough, still uses BYOND's own moving and pathing code, some day we'll actually use our JPS
+ * 
+ * So, this proc. It does all that stuff above
  */
-/mob/living/simple_animal/hostile/proc/InitiateMovement(atom/my_target)//Step 5, handle movement between us and our targette
+
+/mob/living/simple_animal/hostile/proc/InitiateMovement(atom/my_target, force_move_there)//Step 5, handle movement between us and our targette
+	if(!my_target) // active movement needs some sort of targette to know where to run to
+		LoseTarget() // KPAGU
+		return FALSE
+	if(!ShouldMove()) 
+		return FALSE // just dont move
 	
+	// if(ContinueMoving()) // if we're already moving, keep moving
+	// 	return TRUE
 
-
-/mob/living/simple_animal/hostile/proc/MoveToTarget(atom/my_target)//Step 5, handle movement between us and our targette
-	if(!my_target)
-		LoseTarget()
+	var/atom/go_here = my_target // check if we have anywhere interesting to go
+	var/orbit_distance = 0 // how far away we want to be from our targette
+	// if(!go_here || !blackboard.should_retain_target(src))
+	var/rush = blackboard.should_rush()
+	if(force_move_there)
+		rush = FALSE
+	else
+		switch(blackboard.movement_style)
+			if(HAI_MOVEMODE_RUSH)
+				orbit_distance = GetAttackOrbitDistance(my_target)
+				go_here = GetAttackTarget(my_target, orbit_distance)
+			if(HAI_MOVEMODE_APPROACH)
+				orbit_distance = GetApproachOrbitDistance(my_target)
+				go_here = GetApproachTarget(my_target, orbit_distance)
+			if(HAI_MOVEMODE_RETREAT)
+				orbit_distance = GetRetreatOrbitDistance(my_target)
+				go_here = GetRetreatTarget(my_target, orbit_distance)
+			if(HAI_MOVEMODE_FLEE)
+				orbit_distance = GetFleeOrbitDistance(my_target)
+				go_here = GetFleeTarget(my_target, orbit_distance)
+	if(!go_here)
+		LoseTarget() // couldnt find anywhere to go, abort!
 		return FALSE
 	stop_automated_movement = 1
-	if (peaceful == TRUE)
-		LoseTarget()
+	if(rush)
+		return MaintainDistance(go_here, orbit_distance)
+	else
+		return Goto(go_here, move_to_delay, approach_distance) // go to the place
+
+/// tries to keep me at a certain distance from my targette
+/mob/living/simple_animal/hostile/proc/MaintainDistance(atom/my_target, orbit_distance)//Step 5, handle movement between us and our targette
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		return FALSE
+	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+	walk_away(src, my_target, orbit_distance, move_to_delay)
+
+/// makes me to there
+/mob/living/simple_animal/hostile/proc/Goto(atom/targette)
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		return
+	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+	walk_to(src, my_target, approach_distance, delay)
+
+
+
 	// if(winding_up_melee)
 	// 	return FALSE
-	if(!AllowedToAttackTarget(my_target) || !CheckChaseDistance(my_target, TRUE))
-		LoseTarget()
-		return FALSE
 	/// by now we've determined that we can see our target and are allowed to attack it, lets go get em
 	var/atom/origin = get_origin()
 	var/target_distance = get_dist(origin,my_target)
@@ -918,9 +1031,9 @@
 			set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 			walk_away(src,my_target,retreat_distance,move_to_delay)
 		else
-			Goto(my_target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
+			Goto(my_target,move_to_delay,approach_distance) //Otherwise, get to our minimum distance so we chase them
 	else
-		Goto(my_target,move_to_delay,minimum_distance)
+		Goto(my_target,move_to_delay,approach_distance)
 	/// roll to randomize this thing... if its an option
 	if(!winding_up_melee && variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
@@ -936,11 +1049,52 @@
 	// 		in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
 	// 	return TRUE
 	if(!FindHidden()) // calls Goto
-		Goto(my_target,move_to_delay,minimum_distance)
+		Goto(my_target,move_to_delay,approach_distance)
 		return TRUE
 	return FALSE
 
-// Checks if the target is visible to us
+/mob/living/simple_animal/hostile/proc/ShouldMove(atom/my_target)//Step 5, handle movement between us and our targette
+	if(!blackboard.allowed_to_move)
+		return FALSE
+	if (peaceful == TRUE)
+		return FALSE
+	if(!CheckChaseDistance(my_target))
+		return FALSE
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		return FALSE
+	if(blackboard.is_wandering())
+		return FALSE // handled elsewhere
+	return TRUE
+
+/// Are we still moving somewhere?
+// /mob/living/simple_animal/hostile/proc/ContinueMoving()
+// 	return TRUE // todo
+
+/mob/living/simple_animal/hostile/proc/GetAttackTarget(atom/my_target)
+	return FindHidden(my_target) // just attack the targette
+
+/mob/living/simple_animal/hostile/proc/GetAttackOrbitDistance(atom/my_target)
+	return 1 // get up in their face
+
+/mob/living/simple_animal/hostile/proc/GetApproachTarget(atom/my_target)
+	return FindHidden(my_target) // just attack the targette
+
+/mob/living/simple_animal/hostile/proc/GetApproachOrbitDistance(atom/my_target)
+	return approach_distance
+
+/mob/living/simple_animal/hostile/proc/GetRetreatTarget(atom/my_target)
+	return FindHidden(my_target) // just attack the targette
+
+/mob/living/simple_animal/hostile/proc/GetRetreatOrbitDistance(atom/my_target)
+	return retreat_distance
+
+/mob/living/simple_animal/hostile/proc/GetFleeTarget(atom/my_target)
+	return FindHidden(my_target) // just attack the targette
+
+/mob/living/simple_animal/hostile/proc/GetFleeOrbitDistance(atom/my_target)
+	return retreat_distance * 3
+
+/// Checks if we're close enough to our targette to attempt pursuit // a feline fursuit
 /mob/living/simple_animal/hostile/proc/CheckChaseDistance(atom/my_target)
 	if(!istype(my_target))
 		return FALSE
@@ -970,20 +1124,19 @@
 			return FALSE
 	return TRUE
 
-/mob/living/simple_animal/hostile/proc/Goto(targette, delay, minimum_distance)
+
+
+
 	var/atom/my_target = get_target()
 	if(my_target == targette)
 		approaching_target = TRUE
 	else
 		approaching_target = FALSE
-	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
-		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-		walk_to(src, my_target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		if(winding_up_melee)//Stay in melee range for the whole attack
-			minimum_distance = 1
+			approach_distance = 1
 		else
-			minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+			approach_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]))
 		if(prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
 			move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
@@ -1031,6 +1184,10 @@
 	GiveTarget(null)
 	approaching_target = FALSE
 	in_melee = FALSE
+	stop_automated_movement = FALSE
+	blackboard.clear_movement_target()
+	blackboard.wipe_shortterm()
+	blackboard.wipe_midterm()
 	walk(src, 0)
 	LoseAggro()
 
@@ -1050,7 +1207,7 @@
 		if(faction_check_mob(M, TRUE))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				return
-			M.Goto(src,M.move_to_delay,M.minimum_distance)
+			M.Goto(src,M.move_to_delay,M.approach_distance)
 
 /mob/living/simple_animal/hostile/proc/CanSmashTurfs(turf/T)
 	return iswallturf(T) || ismineralturf(T)
@@ -1122,7 +1279,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	var/atom/origin = get_origin()
 	if(!origin)
 		return
-	var/container = origin.loc
+	var/atom/container = origin.loc
 	if(!container)
 		return
 	if(!container.density)
@@ -1132,16 +1289,18 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		A.attack_animal(src)//Bang on it till we get out
 		return TRUE
 
-/mob/living/simple_animal/hostile/proc/FindHidden()
-	var/atom/my_target = get_target()
+/// Checks if our target is inside something, and return either the target or whatever they're in
+/mob/living/simple_animal/hostile/proc/FindHidden(atom/my_target) // used to respect player GBJs
 	if(!my_target)
 		return FALSE
-	if(istype(my_target.loc, /obj/structure/closet) || istype(my_target.loc, /obj/machinery/disposal) || istype(my_target.loc, /obj/machinery/sleeper))
-		var/atom/A = my_target.loc
-		Goto(A,move_to_delay,minimum_distance)
-		if(A.Adjacent(get_origin()))
-			A.attack_animal(src)
-		return 1
+	var/atom/the_holder = my_target.loc
+	if(!the_holder)
+		return my_target // whatever
+	if(isturf(the_holder))
+		return my_target // standing on a turf, a-okay
+	if(the_holder == src) // oh hey there vore, whatcha doing
+		return my_target // punch em in your gut
+	return the_holder // punch the thing they're in
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
 	if(ranged && COOLDOWN_FINISHED(ranged_cooldown))
@@ -1297,7 +1456,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]))
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
-		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+		approach_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 
 /mob/living/simple_animal/hostile/emp_act(severity)
 	. = ..()
@@ -1374,6 +1533,6 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	auto_fire_burst_count = rand(auto_fire_burst_count - 1, auto_fire_burst_count + 1)
 	ranged_attack_cooldown = rand(ranged_attack_cooldown * 0.5, ranged_attack_cooldown * 2)
 	retreat_distance = rand(0, 10)
-	minimum_distance = rand(0, 10)
+	approach_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))

@@ -151,7 +151,7 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/OpenFire()
 	var/atom/my_target = get_target()
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 	if(get_dist(src, my_target) > MINER_DASH_RANGE && dash_cooldown <= world.time)
 		INVOKE_ASYNC(src, .proc/dash, my_target)
 	else

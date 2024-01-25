@@ -82,10 +82,10 @@ Featuring:
 			do_ranged = 1
 			break
 	if(do_ranged)
-		minimum_distance = 5
+		approach_distance = 5
 		ranged = 1
 	else
-		minimum_distance = 1
+		approach_distance = 1
 		ranged = 0
 	wanted_objects = list()
 	search_objects = 0
@@ -111,7 +111,7 @@ Featuring:
 			break
 	search_objects = search_aggressiveness
 	ranged = 0
-	minimum_distance = 1
+	approach_distance = 1
 
 	walk(M,0)//end any lingering movement loops, to prevent the haunted mecha bug
 
@@ -205,7 +205,7 @@ Featuring:
 			for(var/obj/mecha/combat/C in range(src,vision_range))
 				if(is_valid_mecha(C))
 					GiveTarget(C) //Let's nab it!
-					minimum_distance = 1
+					approach_distance = 1
 					ranged = 0
 					break
 		if(mecha)
@@ -289,8 +289,8 @@ Featuring:
 	return ..()
 
 
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/Goto(target, delay, approach_distance)
 	if(mecha)
-		walk_to(mecha, target, minimum_distance, mecha.step_in)
+		walk_to(mecha, target, approach_distance, mecha.step_in)
 	else
 		..()

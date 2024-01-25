@@ -89,7 +89,7 @@
 	F.harm_intent_damage = 0
 	F.throw_message = "is absorbed by the girth of the"
 	F.retreat_distance = null
-	F.minimum_distance = 1
+	F.approach_distance = 1
 	F.move_to_delay = 6
 	F.environment_smash = ENVIRONMENT_SMASH_WALLS
 	F.mob_size = MOB_SIZE_LARGE
@@ -107,7 +107,7 @@
 		harm_intent_damage = 5
 		throw_message = "is avoided by the"
 		retreat_distance = 9
-		minimum_distance = 9
+		approach_distance = 9
 		move_to_delay = 2
 		inflate_cooldown = 4
 		environment_smash = ENVIRONMENT_SMASH_NONE
