@@ -2656,5 +2656,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/firstaid/ancient = 2,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
-		/obj/item/kit_spawner/waster
+		/obj/item/kit_spawner/waster,
+		/obj/item/cool_book/teacherguidebook
 		)
