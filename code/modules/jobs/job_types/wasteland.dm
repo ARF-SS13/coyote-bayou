@@ -2628,6 +2628,7 @@ datum/job/wasteland/f13dendoctor
 	total_positions = 3
 	spawn_positions = 3
 	exp_requirements = 10080
+	exp_type = EXP_TYPE_LIVING
 	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
 	supervisors = "fate"
 	selection_color = "#228c22"

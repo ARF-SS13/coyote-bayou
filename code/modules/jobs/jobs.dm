@@ -247,8 +247,8 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Waster",
 	"Garland City Waster",
 	"Radio Operator",
-	"Backstage Character",
-	"Texarkana Ranger"
+	"Backstage Character"
+	//"Texarkana Ranger"
 ))
 
 GLOBAL_LIST_INIT(redwater_positions, list(
