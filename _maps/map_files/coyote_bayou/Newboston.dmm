@@ -716,6 +716,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"aKV" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "aLe" = (
 /obj/effect/decal/waste{
 	icon_state = "goo11"
@@ -5107,6 +5111,16 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"eFl" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/autolathe/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "eFL" = (
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr9"
@@ -10599,6 +10613,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"jiO" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "jjo" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -11208,10 +11230,6 @@
 /obj/structure/flora/wasteplant/wild_fungus,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"jIy" = (
-/obj/machinery/autolathe,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "jIN" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/window/fulltile/house/broken,
@@ -21972,16 +21990,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
-"sON" = (
-/obj/effect/decal/cleanable/generic,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/obj/machinery/autolathe/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "sPz" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/paper_bin,
@@ -53418,7 +53426,7 @@ wjZ
 uWo
 hKA
 acd
-sON
+eFl
 hUu
 ulJ
 jXL
@@ -53675,7 +53683,7 @@ uYv
 uWo
 mec
 qys
-jIy
+aKV
 jXL
 rOL
 jXL
@@ -56277,7 +56285,7 @@ jxs
 jxs
 jxs
 upt
-vQb
+jiO
 jxs
 jxs
 jxs
@@ -56534,7 +56542,7 @@ jxs
 jxs
 jxs
 yde
-vQb
+jiO
 jxs
 jxs
 fWA
