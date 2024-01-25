@@ -11208,6 +11208,10 @@
 /obj/structure/flora/wasteplant/wild_fungus,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"jIy" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "jIN" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/window/fulltile/house/broken,
@@ -21968,6 +21972,16 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
+"sON" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/autolathe/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "sPz" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/paper_bin,
@@ -53404,8 +53418,8 @@ wjZ
 uWo
 hKA
 acd
-jXL
-jXL
+sON
+hUu
 ulJ
 jXL
 jXL
@@ -53661,7 +53675,7 @@ uYv
 uWo
 mec
 qys
-jXL
+jIy
 jXL
 rOL
 jXL
