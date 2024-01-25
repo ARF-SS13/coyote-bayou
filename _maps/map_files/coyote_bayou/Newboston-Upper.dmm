@@ -135,6 +135,14 @@
 "bf" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
+"bk" = (
+/mob/living/simple_animal/pet/cat/Runtime{
+	attacktext = "bites";
+	desc = "A goofy looking cat with big eyes and a noisy demenor.";
+	name = "Xena"
+	},
+/turf/open/indestructible,
+/area/f13/tcoms)
 "bq" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/cloth/thirty,
@@ -2688,6 +2696,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"wL" = (
+/obj/item/toy/cattoy,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "wM" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -3985,6 +3997,10 @@
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Hj" = (
+/obj/structure/bed/dogbed,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "Hk" = (
 /obj/item/pizzabox{
 	pixel_x = 11;
@@ -5876,6 +5892,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"Xf" = (
+/obj/item/storage/fancy/heart_box{
+	desc = "A heart shaped chocolate box, in memory of Xena.  Fens cat who passed in 2015.  Her mob here has been rescued from ARFS Dallus 1 for 1 from the final version of its map."
+	},
+/turf/open/indestructible,
+/area/f13/tcoms)
 "Xh" = (
 /obj/structure/barricade/wooden/strong{
 	obj_integrity = 500
@@ -70581,9 +70603,9 @@ Yj
 (251,1,1) = {"
 Yj
 Ak
+Qg
 ds
-ds
-ds
+Hj
 Ak
 Yj
 GU
@@ -70839,8 +70861,8 @@ Yj
 Yj
 Ak
 ds
-Qg
 ds
+wL
 Ak
 Yj
 Yj
@@ -71095,8 +71117,8 @@ Yj
 (253,1,1) = {"
 Yj
 Ak
-ds
-ds
+Xf
+bk
 ds
 Ak
 Yj
