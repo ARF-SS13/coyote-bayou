@@ -716,6 +716,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"aKV" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "aLe" = (
 /obj/effect/decal/waste{
 	icon_state = "goo11"
@@ -5107,6 +5111,16 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"eFl" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/autolathe/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "eFL" = (
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr9"
@@ -10595,6 +10609,14 @@
 "jiN" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/simple_door/metal/dirtystore,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
+"jiO" = (
+/obj/structure/stairs{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -53404,8 +53426,8 @@ wjZ
 uWo
 hKA
 acd
-jXL
-jXL
+eFl
+hUu
 ulJ
 jXL
 jXL
@@ -53661,7 +53683,7 @@ uYv
 uWo
 mec
 qys
-jXL
+aKV
 jXL
 rOL
 jXL
@@ -56263,7 +56285,7 @@ jxs
 jxs
 jxs
 upt
-vQb
+jiO
 jxs
 jxs
 jxs
@@ -56520,7 +56542,7 @@ jxs
 jxs
 jxs
 yde
-vQb
+jiO
 jxs
 jxs
 fWA

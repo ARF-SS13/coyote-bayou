@@ -1052,12 +1052,6 @@
 	icon_state = "2-i"
 	},
 /area/f13/city)
-"jj" = (
-/obj/structure/fluff/railing,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
-/area/f13/building)
 "jm" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1190,12 +1184,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ko" = (
-/obj/structure/fluff/railing{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
+/obj/structure/fluff/railing,
+/turf/open/transparent/openspace,
 /area/f13/building)
 "kv" = (
 /obj/effect/spawner/lootdrop/druggie_pill/no_turf,
@@ -2817,12 +2807,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "xL" = (
-/obj/structure/railing/corner{
-	dir = 8
+/obj/structure/fluff/railing{
+	dir = 6
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/building)
 "xR" = (
 /obj/structure/sink{
@@ -34250,8 +34238,8 @@ lK
 Pd
 Pd
 lY
-jj
-di
+lY
+ko
 lY
 lY
 Pd
@@ -34507,8 +34495,8 @@ lY
 lY
 lY
 lY
-jj
-di
+lY
+xL
 lY
 lY
 lY
@@ -34764,8 +34752,8 @@ lY
 lY
 LN
 lY
-xL
-ko
+lY
+lY
 lY
 Gr
 lY
