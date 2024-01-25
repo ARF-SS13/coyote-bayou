@@ -64,7 +64,7 @@
 	volume = 100
 	ignore_flags = 1 // So they can heal their comrades.
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/lesser_syndicate_nanites = 40, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
-
+// bookmark
 /obj/item/reagent_containers/hypospray/combat/omnizine // owned idiot
 	desc = "A modified air-needle autoinjector, used by underfunded support operatives to slowly heal injuries in combat and limp away from a fight."
 	volume = 90
@@ -74,6 +74,15 @@
 	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with experimental medical compounds for rapid healing."
 	volume = 100
 	list_reagents = list(/datum/reagent/medicine/adminordrazine/quantum_heal = 80, /datum/reagent/medicine/synaptizine = 20)
+
+/obj/item/reagent_containers/hypospray/loadout
+	name = "LLX11 stimulant delivery system"
+	desc = "A LapinLattice X11 jet autoinjector stimulant delivery system. A simple press of its activator injects whatever is loaded in the chemical storage into the bloodstream without using a needle. The back of the device has a port for a syringe to load something else into the storage system, be it narcotics or medicines."
+	amount_per_transfer_from_this = 10
+	icon_state = "combat_hypo"
+	volume = 50
+	ignore_flags = 1 
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 25, /datum/reagent/medicine/coagulant = 25)
 
 /obj/item/reagent_containers/hypospray/magillitis
 	name = "experimental autoinjector"
@@ -97,7 +106,7 @@
 	ignore_flags = 1 //so you can medipen through hardsuits
 	reagent_flags = NONE
 	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/preservahyde = 3, /datum/reagent/medicine/coagulant = 2)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 5)
 	custom_premium_price = PRICE_ALMOST_EXPENSIVE
 
 /obj/item/reagent_containers/hypospray/medipen/attack(mob/M, mob/user)
