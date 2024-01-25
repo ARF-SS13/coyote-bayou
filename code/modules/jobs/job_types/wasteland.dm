@@ -2621,9 +2621,9 @@ datum/job/wasteland/f13dendoctor
 
 /datum/job/wasteland/f13ranger
 	title = "Texarcana Ranger"
-	flag = F13RANGER
+	flag = F13TEACHER
 	department_flag = TEACHER
-	faction = FACTION_RANGER
+	faction = FACTION_TEACHER
 	req_admin_notify = 1
 	total_positions = 3
 	spawn_positions = 3
