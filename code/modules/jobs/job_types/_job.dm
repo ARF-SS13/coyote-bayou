@@ -48,7 +48,7 @@
 	var/outfit = null
 	var/plasma_outfit = null //the outfit given to plasmamen
 
-	var/exp_requirements = 0
+	var/exp_requirements = 0 //This is in... minutes?
 
 	var/exp_type = EXP_TYPE_LIVING
 	var/exp_type_department = ""
