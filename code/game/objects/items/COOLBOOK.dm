@@ -36,10 +36,10 @@
 	book_key = "shamanguide"
 
 /obj/item/cool_book/teacherguidebook
-	name = "Fancy Book"
+	name = "Teachers Guide"
 	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'modular_roguetown/items/books.dmi'
-	icon_state = "book4"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book8"
 	color = "#FFD700"
 	book_key = "teacherguidebook"
 

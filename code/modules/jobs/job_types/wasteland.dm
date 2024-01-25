@@ -2632,7 +2632,7 @@ datum/job/wasteland/f13dendoctor
 	supervisors = "fate"
 	selection_color = "#228c22"
 
-	outfit = /datum/outfit/job/wasteland/f13wastelander
+	outfit = /datum/outfit/job/wasteland/f13ranger
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
@@ -2657,5 +2657,5 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/kit_spawner/waster,
-		/obj/item/cool_book/teacherguidebook
+		/obj/item/cool_book/teacherguidebook = 1
 		)
