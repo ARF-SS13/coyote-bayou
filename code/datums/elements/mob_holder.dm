@@ -185,11 +185,11 @@
 	if(!istype(grabber))
 		return
 	carrier = WEAKREF(grabber)
-	RegisterSignal(grabber, COMSIG_MOB_APPLY_DAMAGE, .proc/pass_damage) // OUR APC IS UNDER ATTACK
-	RegisterSignal(grabber, COMSIG_MOB_DEATH, .proc/release) // Oh no im dead
+	RegisterSignal(grabber, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(pass_damage)) // OUR APC IS UNDER ATTACK
+	RegisterSignal(grabber, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead
 	if(!held_mob)
 		return
-	RegisterSignal(held_mob, COMSIG_MOB_DEATH, .proc/release) // Oh no im dead 2
+	RegisterSignal(held_mob, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead 2
 
 /obj/item/clothing/head/mob_holder/dropped(mob/user)
 	. = ..()

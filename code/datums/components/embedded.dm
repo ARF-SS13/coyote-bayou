@@ -326,7 +326,7 @@
 	var/matrix/M = matrix()
 	M.Translate(pixelX, pixelY)
 	overlay.transform = M
-	RegisterSignal(hit,COMSIG_ATOM_UPDATE_OVERLAYS,.proc/apply_overlay)
+	RegisterSignal(hit,COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_overlay))
 	hit.update_icon()
 
 	if(harmful)

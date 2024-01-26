@@ -474,7 +474,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	// 	to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
 	// 	return FALSE // screw energy guns
 	/// if we're here, we loaded something, so lets queue up another cycle
-	addtimer(CALLBACK(src, .proc/gun_loop, user, gunammo), 0.1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(gun_loop), user, gunammo), 0.1 SECONDS)
 	return TRUE
 
 /obj/machinery/autolathe/proc/load_from_bag(mob/user, obj/item/storage/bag/casings/cbag) // BIG BAG, BIG BAG, BIGABIGABIGBAG
@@ -606,14 +606,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	report_card.inserted_something(item)
 	if(report_timer)
 		deltimer(report_timer)
-	report_timer = addtimer(CALLBACK(src, .proc/print_record), 30 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
+	report_timer = addtimer(CALLBACK(src,PROC_REF(print_record)), 30 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
 
 	if(!istype(big_report_card))
 		big_report_card = new()
 	big_report_card.inserted_something(item)
 	if(big_report_timer)
 		deltimer(big_report_timer)
-	big_report_timer = addtimer(CALLBACK(src, .proc/print_big_record), 15 MINUTES, TIMER_STOPPABLE) // save in 4 seconds
+	big_report_timer = addtimer(CALLBACK(src,PROC_REF(print_big_record)), 15 MINUTES, TIMER_STOPPABLE) // save in 4 seconds
 
 /obj/machinery/autolathe/proc/print_record()
 	if(!istype(report_card, /datum/autolathe_loop_returns))
@@ -1052,7 +1052,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	icon_state = icon_state_base
 	wooded = FALSE
 	framed = FALSE
-	RegisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED), .proc/self_destruct)
+	RegisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED),PROC_REF(self_destruct))
 
 /obj/machinery/autolathe/ammo/improvised/proc/self_destruct(disassembled)
 	var/obj/structure/table/T = GET_WEAKREF(mytable)

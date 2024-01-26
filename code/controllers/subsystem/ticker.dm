@@ -202,7 +202,7 @@ SUBSYSTEM_DEF(ticker)
 					for(var/client/C in SSvote.voting)
 						C << browse(null, "window=vote;can_close=0")
 					SSvote.reset()
-				addtimer(CALLBACK(src, .proc/send_midround_tip), 1 MINUTES)//Send out first tip
+				addtimer(CALLBACK(src, PROC_REF(send_midround_tip)), 1 MINUTES)//Send out first tip
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
 				if(start_immediately)
@@ -458,7 +458,7 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
 	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
 	if(isnull(override))
-		addtimer(CALLBACK(src, .proc/send_midround_tip), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+		addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)

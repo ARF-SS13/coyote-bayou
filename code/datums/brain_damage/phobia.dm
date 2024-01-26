@@ -126,7 +126,7 @@
 	owner.stuttering += 5
 	ADD_TRAIT(owner, TRAIT_PHOBIC, TRAIT_GENERIC) // Generic phobia trait for applying general non-mood debuffs to people
 	if(!timer_active)
-		addtimer(CALLBACK(src, .proc/RemoveTrait), 3 MINUTES)
+		addtimer(CALLBACK(src, PROC_REF(RemoveTrait)), 3 MINUTES)
 		timer_active = 1
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "phobia", /datum/mood_event/phobia) //Always apply the phobia mood debuff
 
