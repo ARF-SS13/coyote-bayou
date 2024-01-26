@@ -1175,15 +1175,6 @@
 /obj/machinery/porta_turret/f13/turret_556/burstfire/robot,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"fK" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fL" = (
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -1349,15 +1340,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
-"gD" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "gE" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2896,14 +2878,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
-"og" = (
-/mob/living/simple_animal/hostile/deathclaw/butter{
-	name = "Sand Guardian, Guardian of the Sand";
-	desc = "Poseidon quivers before him.";
-	faction = list("deathclaw","radscorpion")
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "oh" = (
 /obj/machinery/light{
 	dir = 8
@@ -2947,16 +2921,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
-"ov" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ox" = (
 /obj/item/documents/syndicate/mining,
 /obj/structure/table/wood,
@@ -3994,15 +3958,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"tK" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "tL" = (
 /obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4061,17 +4016,6 @@
 /obj/structure/debris/v2,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/wasteland)
-"ue" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "uf" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -4124,13 +4068,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
-"ur" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "us" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4432,21 +4369,6 @@
 /obj/structure/cargocrate,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
-"vV" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "vW" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -4906,15 +4828,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"yk" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "yl" = (
 /obj/structure/door_assembly,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5066,15 +4979,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building)
-"yN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "yO" = (
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
@@ -5802,15 +5706,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
 /area/f13/underground/cave)
-"Cy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Cz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins{
@@ -6060,14 +5955,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
 /area/f13/underground/cave)
-"Du" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Dv" = (
 /obj/structure/sign/warning/fire,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6438,13 +6325,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/underground/cave)
-"Fe" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Ff" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
@@ -7314,13 +7194,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/f13/underground/cave)
-"IM" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "IO" = (
 /obj/structure/table,
 /obj/machinery/light/small{
@@ -8357,10 +8230,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
-"NK" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "NN" = (
 /obj/machinery/vending,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9174,18 +9043,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"RG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "RH" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
 	faction = list("mining","boss","wastebot")
@@ -9789,12 +9646,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
-"UF" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "UH" = (
 /obj/item/trash/raisins,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10484,18 +10335,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
-"Ye" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Yf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/stone,
@@ -10669,18 +10508,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/rust,
 /area/f13/building)
-"YX" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Zc" = (
 /obj/dugpit{
 	alpha = 80;
@@ -10755,17 +10582,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
-"Zx" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ZB" = (
 /obj/machinery/light{
 	dir = 1
@@ -38066,8 +37882,8 @@ jT
 jT
 jT
 jT
-bE
-bE
+jT
+jT
 jT
 jT
 jT
@@ -38322,15 +38138,15 @@ jT
 jT
 jT
 jT
-UF
-Cy
-ue
-wf
-bE
-bE
-bE
-bE
-bE
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 bE
 jT
 jT
@@ -38579,17 +38395,17 @@ jT
 jT
 jT
 jT
-yN
-yk
-vV
-YX
-fK
-Vk
-Vk
-Vk
-Vk
-IM
-wf
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -38835,17 +38651,17 @@ jT
 jT
 jT
 jT
-NK
-wf
 jT
 jT
 jT
 jT
 jT
 jT
-NK
-Cy
-Vk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39092,18 +38908,18 @@ jT
 jT
 jT
 jT
-NK
-tK
 jT
 jT
 jT
 jT
 jT
-Oy
-NK
-tK
-bE
-bE
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39350,8 +39166,6 @@ jT
 jT
 jT
 jT
-ur
-wf
 jT
 jT
 jT
@@ -39360,8 +39174,10 @@ jT
 jT
 jT
 jT
-NK
-wf
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39607,18 +39423,18 @@ jT
 jT
 jT
 jT
-NK
-tK
 jT
 jT
 jT
 jT
 jT
 jT
-bE
-Fe
-Cy
-bE
+jT
+jT
+jT
+jT
+jT
+jT
 bE
 jT
 jT
@@ -39865,16 +39681,16 @@ jT
 lw
 jT
 jT
-RG
-wf
 jT
 jT
 jT
 jT
-NK
-Ye
-gD
-NK
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 wf
@@ -40121,18 +39937,18 @@ jT
 jT
 jT
 jT
-NK
-tK
-jT
-jT
-jT
-Zc
 jT
 jT
 jT
 jT
-wf
-Vk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 Vk
 jT
 jT
@@ -40379,16 +40195,16 @@ jT
 jT
 jT
 jT
-ur
-tK
 jT
 jT
 jT
-bE
-bE
-bE
-bE
-wf
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -40637,14 +40453,14 @@ jT
 jT
 jT
 jT
-ur
-tK
-bE
-yN
-Cy
-Vk
-Vk
-Vk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -40895,9 +40711,9 @@ jT
 jT
 jT
 jT
-Vk
-Vk
-Vk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41396,7 +41212,7 @@ jT
 jT
 jT
 jT
-og
+jT
 jT
 jT
 jT
@@ -42693,10 +42509,10 @@ jT
 jT
 jT
 jT
-rd
-Du
-NK
-ov
+jT
+jT
+jT
+jT
 jT
 kM
 jT
@@ -42947,13 +42763,13 @@ jT
 jT
 jT
 jT
-rd
-jT
-NK
-wf
 jT
 jT
-NK
+jT
+jT
+jT
+jT
+jT
 wf
 jT
 jT
@@ -43203,14 +43019,14 @@ jT
 jT
 jT
 jT
-NK
-wf
-ov
-Du
-wf
 jT
 jT
-NK
+jT
+jT
+jT
+jT
+jT
+jT
 wf
 jT
 jT
@@ -43461,13 +43277,13 @@ jT
 jT
 jT
 jT
-IM
-wf
 jT
 jT
 jT
 jT
-NK
+jT
+jT
+jT
 wf
 jT
 jT
@@ -43718,13 +43534,13 @@ jT
 jT
 jT
 jT
-NK
-wf
 jT
 jT
 jT
 jT
-NK
+jT
+jT
+jT
 wf
 jT
 jT
@@ -43975,13 +43791,13 @@ jT
 jT
 jT
 jT
-NK
-ov
-rd
 jT
 jT
-NK
-fK
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44233,11 +44049,11 @@ jT
 jT
 jT
 jT
-Vk
-IM
-wf
-NK
-fK
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44492,9 +44308,9 @@ jT
 jT
 jT
 jT
-IM
-Zx
-wf
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44750,7 +44566,7 @@ jT
 jT
 jT
 jT
-Vk
+jT
 jT
 jT
 jT
