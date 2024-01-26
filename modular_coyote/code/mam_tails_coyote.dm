@@ -696,3 +696,46 @@
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/tails/mam_tails/roiz
+	name = "Lizard (Large)"
+	icon_state = "roiz"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails/mam_tails/longfluff
+	name = "Long Fluff Tail"
+	icon_state = "longfluff"
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails/mam_tails/bigring
+	name = "Big Ring Tail"
+	icon_state = "bigring"
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails/mam_tails/longstalker
+	name = "Nightstalker (Large)"
+	icon_state = "longstalker"
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails/mam_tails/downhusky
+	name = "Husky - Down"
+	icon_state = "downhusky"
+	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/downhusky
+	name = "Husky - Down"
+	icon_state = "downhusky"
+	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN

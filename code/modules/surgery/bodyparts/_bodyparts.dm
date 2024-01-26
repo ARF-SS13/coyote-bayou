@@ -262,7 +262,7 @@
 	*/
 
 	// what kind of wounds we're gonna roll for, take the greater between brute and burn, then if it's brute, we subdivide based on sharpness
-	var/wounding_type = (brute > burn ? WOUND_BLUNT : WOUND_BURN)
+	var/wounding_type = WOUND_BLUNT// (brute > burn ? WOUND_BLUNT : WOUND_BURN) is the old code here
 	var/wounding_dmg = max(brute, burn)
 	var/mangled_state = get_mangled_state()
 	var/bio_state = owner.get_biological_state()
@@ -302,7 +302,7 @@
 				return
 
 	// now we have our wounding_type and are ready to carry on with wounds and dealing the actual damage
-	
+
 	if(owner && wounding_dmg >= WOUND_MINIMUM_DAMAGE && wound_bonus != CANT_WOUND)
 		check_wounding(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
 
@@ -404,14 +404,17 @@
 			return // robot parts dont get wounded yet
 
 	damage = min(damage * CONFIG_GET(number/wound_damage_multiplier), WOUND_MAX_CONSIDERED_DAMAGE)
-	
+
 	if(HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE))
 		damage *= 1.5
 	if(woundtype == WOUND_BLUNT && HAS_TRAIT(owner, TRAIT_GLASS_BONES))
 		damage *= 1.5
 	if((woundtype in PAPER_SKIN_WOUNDS) && HAS_TRAIT(owner, TRAIT_PAPER_SKIN))
 		damage *= 1.5
-	
+// Coyote Boyou replacement for glass bones & paper skin quirks.
+	if(HAS_TRAIT(owner, TRAIT_EASILY_WOUNDED))
+		damage *= 1.25
+
 	var/base_roll = rand(
 		min(damage * WOUND_DAMAGE_RANDOM_FLOOR_MULT, WOUND_MAX_CONSIDERED_DAMAGE),
 		min(damage * WOUND_DAMAGE_RANDOM_MAX_MULT, WOUND_MAX_CONSIDERED_DAMAGE)
@@ -773,6 +776,9 @@
 
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
+
+	if(source?.IsFeral() || owner?.IsFeral())
+		dmg_overlay_type = null
 
 	if(status == BODYPART_ROBOTIC)
 		dmg_overlay_type = "robotic"
@@ -1446,7 +1452,7 @@
 		if(istype(tat))
 			qdel(tat)
 			tattoos[location] = null
-			return TRUE	
+			return TRUE
 		if(ispath(tat))
 			var/datum/tattoo/tattie = tattoos[location]
 			if(tattie.type == tat)

@@ -19,6 +19,17 @@
 	hide_flag = HIDE_BALLS // for hideflag stuff
 	pornhud_slot = PHUD_BALLS
 
+/obj/item/organ/genital/testicles/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "ballsack"
+	out["BitName"] = "A [lowertext(shape)]."
+	out["BitSize"] = "It is [size] decigrundles in mass!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %[fluid_efficiency] capacity."
+	out["BitEmoji"] = "🍒"
+	return out
+
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())
 		return FALSE
@@ -104,4 +115,25 @@
 /obj/item/organ/genital/testicles/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
 	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "-s" : ""]_[aroused_state]_[layertext]"
 
+/obj/item/organ/genital/testicles/resize_genital(mob/user)
+	var/min_size = BALLS_SIZE_MIN
+	var/max_size = BALLS_SIZE_MAX
+	var/new_length = input(user, "Testicle size in decigrundles:\n([min_size]-[max_size])", "Character Preference") as num|null
+	if(new_length)
+		set_size(clamp(round(new_length), min_size, max_size))
+	. = ..()
 
+/obj/item/organ/genital/testicles/reshape_genital(mob/user)
+	var/new_shape = input(user, "Testicles shape:", "Character Preference") as null|anything in GLOB.balls_shapes_list
+	if(new_shape)
+		shape = new_shape
+	. = ..()
+
+/obj/item/organ/genital/testicles/set_size(new_size)
+	var/new_value = clamp(new_size, BALLS_SIZE_MIN, BALLS_SIZE_MAX)
+	if(new_value == size)
+		return
+	prev_size = size
+	size = CEILING(new_value, 1)
+	update()
+	..()

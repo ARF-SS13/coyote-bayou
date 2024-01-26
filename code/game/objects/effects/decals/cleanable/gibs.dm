@@ -54,6 +54,7 @@
 		for(var/i in 1 to dist)
 			var/obj/effect/decal/cleanable/blood/splatter/splat = new /obj/effect/decal/cleanable/blood/splatter(loc, diseases)
 			splat.transfer_blood_dna(blood_DNA, diseases)
+			QDEL_IN(splat, rand(180, 600) SECONDS)
 			if(!step_to(src, get_step(src, direction), 0))
 				break
 

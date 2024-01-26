@@ -49,6 +49,10 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	/// Electrochromatic ID. Set the first character to ! to replace with a SSmapping generated pseudorandom obfuscated ID for mapping purposes.
 	var/electrochromatic_id
 
+/obj/structure/window/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_GLASS, -10, 5)
+
+
 /obj/structure/window/examine(mob/user)
 	. = ..()
 	if(electrochromatic_status != NOT_ELECTROCHROMATIC)

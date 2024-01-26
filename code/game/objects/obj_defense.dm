@@ -22,6 +22,8 @@
 
 //returns the damage value of the attack after processing the obj's various armor protections
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
+	if(!armor)
+		return damage_amount
 	switch(damage_type)
 		if(BRUTE)
 		if(BURN)
@@ -29,7 +31,7 @@
 			return 0
 	var/armor_protection = 0
 	if(damage_flag)
-		armor_protection = armor.getRating(damage_flag)
+		armor_protection = armor?.getRating(damage_flag)
 	if(armor_protection > 0)		//Only apply weak-against-armor/hollowpoint effects if there actually IS armor.
 		armor_protection = clamp(armor_protection*(1-armour_penetration), 0, 100) //FO13 AP OVERHAUL - just using simple % reduction here instead of full formula
 	return round(damage_amount * (100 - armor_protection)*0.01, DAMAGE_PRECISION)

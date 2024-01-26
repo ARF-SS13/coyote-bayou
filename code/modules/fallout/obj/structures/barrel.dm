@@ -20,6 +20,9 @@
 	light_range = 2
 //	self_weight = 200
 
+/obj/structure/reagent_dispensers/barrel/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /obj/structure/reagent_dispensers/barrel/dangerous/Initialize()
 	. = ..()
 //	AddComponent(/datum/component/radioactive, 100, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.

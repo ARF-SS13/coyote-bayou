@@ -365,7 +365,7 @@
 	return TRUE
 
 /obj/item/stack/tool_use_check(mob/living/user, amount, silent)
-	if(get_amount() > amount)
+	if(get_amount() >= amount)
 		return TRUE
 	if(silent)
 		return FALSE

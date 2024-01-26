@@ -13,6 +13,11 @@
 	path = /obj/item/clothing/suit/hooded/robes/grey
 	cost = 2
 
+/datum/gear/suit/whitemagerobes
+	name = "White Mage Robes"
+	path = /obj/item/clothing/suit/hooded/robes/whitemage
+	cost = 2
+
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
 	path = /obj/item/clothing/suit/hooded/robes
@@ -35,17 +40,17 @@
 
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	path = /obj/item/clothing/suit/chameleon/harness
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/medium
 	name = "medium harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	path = /obj/item/clothing/suit/chameleon/harness/medium
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/heavy
 	name = "heavy harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	path = /obj/item/clothing/suit/chameleon/harness/heavy
 	cost = 1
 
 /datum/gear/suit/labcoat
@@ -197,7 +202,7 @@
 	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-a
+
 /datum/gear/suit/ninja
 	name = "Ninja Suit"
 	path = /obj/item/clothing/suit/armor/light/leather/ninja
@@ -247,15 +252,27 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 0
 
-/datum/gear/suit/flakjack
-	name = "Flak Jacket"
-	path = /obj/item/clothing/suit/armor/outfit/vest/flakjack
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
 /datum/gear/suit/armorkit
 	name = "Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scraparmor
+	name = "slim scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrap
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapalt
+	name = "scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapalt
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapmedium
+	name = "heavy scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapheavy
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -265,12 +282,17 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/lightscout
+	name = "Light Scout Armor"
+	path = /obj/item/clothing/suit/armor/light/leather/lightscoutarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/bronzechestplate
 	name = "Bronze Chestplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-
 
 /datum/gear/suit/leatherarmor
 	name = "Leather Jerkin"
@@ -543,33 +565,21 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/coat/rustedcowboy
+	name = "Rusted Cowboy Outfit"
+	path = /obj/item/clothing/suit/armor/light/duster/rustedcowboy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/coat/armoredbomber
 	name = "armored bomber jacket"
 	path = /obj/item/clothing/suit/armor/light/duster/bomberjacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
-/datum/gear/suit/coat/slimvest
-	name = "light armor vest"
-	path = /obj/item/clothing/suit/armor/medium/vest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
 /datum/gear/suit/coat/chicom
 	name = "Chinese combat armor"
 	path = /obj/item/clothing/suit/armor/medium/combat/chinese
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ncrkevlar
-	name = "Texas militia vest"
-	path = /obj/item/clothing/suit/armor/texaskevlar
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ncrlight
-	name = "Texas militia armor"
-	path = /obj/item/clothing/suit/armor/texaslight
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -652,54 +662,6 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
-/datum/gear/suit/armor/ballisticvest
-	name = "Civilian Ballistic Vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no2
-	name = "6b3 Body Armor"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no3
-	name = "6b45 Body Armor"
-	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 3
-
-/datum/gear/suit/armor/ballisticvest/no4
-	name = "War Press vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no5
-	name = "Ghillie suit"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no6
-	name = "511 PMC Vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no7
-	name = "Police Vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-/datum/gear/suit/armor/ballisticvest/no8
-	name = "Foreign Vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
 /datum/gear/suit/armor/flagcapesclothing
 	name = "Armored Polish flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/flagcapes/poland
@@ -749,7 +711,7 @@ a
 	cost = 1
 
 /datum/gear/suit/armor/flagcapesclothing/tsar
-	name = "Armored Tsaraist flag cape"
+	name = "Armored Tsarist flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
@@ -1044,12 +1006,6 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
-/datum/gear/suit/armor/cyberstuff/cloakmedical
-	name = "Medical cloak"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cmo
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
-	cost = 1
-
 /datum/gear/suit/armor/cyberstuff/cloakengineer
 	name = "Engineering cloak"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/ce
@@ -1085,19 +1041,6 @@ a
 	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/miner
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
-
-/datum/gear/suit/armor/ballisticvest/no9
-	name = "Baily tactical vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
-
-/datum/gear/suit/armor/ballisticvest/no10
-	name = "Medical ballistic vest"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/medvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
 
 /datum/gear/suit/armor/ncrheavy
 	name = "heavy Texas militia armor"
@@ -1142,6 +1085,12 @@ a
 /datum/gear/suit/coat/marlow/masonsuit
 	name = "Vagabond's vest"
 	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
+
+/datum/gear/suit/coat/peacecoat
+	name = "Tattered peace coat"
+	path = /obj/item/clothing/suit/armor/light/duster/peacecoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"
@@ -1232,20 +1181,6 @@ a
 							"Detective",
 							"Barkeep",
 							)
-
-/datum/gear/suit/deputyvest
-	name = "Vault-Sec armor vest"
-	path = /obj/item/clothing/suit/armor/medium/vest/oasis
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-	/*restricted_desc = "Nash Police, Nash Officials"
-	restricted_roles = list("Chief of Police",
-							"Officer",
-							"High Alderperson",
-							"Detective",
-							"Councilperson",
-							"Shopkeeper",
-						)*/
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
@@ -1901,12 +1836,6 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
-/datum/gear/suit/sovietlightvest
-	name = "Soviet Vest"
-	path = /obj/item/clothing/suit/armor/light/vest/russian
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
-
 /datum/gear/suit/crusaderweak
 	name = "Crusader Chainmail w/ Tabard"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
@@ -1919,6 +1848,32 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
 
+//-->Taur saddles
+/datum/gear/suit/taursaddle
+	name = "Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 0
+
+/datum/gear/suit/taursaddle_light
+	name = "Light Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/light
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_medium
+	name = "Medium Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/medium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_heavy
+	name = "Heavy Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/heavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+//<--End of taur saddles
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
@@ -1929,3 +1884,168 @@ a
 // BEGIN_INCLUDE
 // END_INCLUDE
 
+//Ballistic Vests
+
+/datum/gear/suit/coat/slimvest
+	name = "light armor vest"
+	path = /obj/item/clothing/suit/armor/medium/vest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ncrlight
+	name = "Texas militia armor"
+	path = /obj/item/clothing/suit/armor/texaslight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ncrkevlar
+	name = "Texas militia vest"
+	path = /obj/item/clothing/suit/armor/texaskevlar
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/flakjack
+	name = "Flak Jacket"
+	path = /obj/item/clothing/suit/armor/outfit/vest/flakjack
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/sovietlightvest
+	name = "Soviet Vest"
+	path = /obj/item/clothing/suit/armor/light/vest/russian
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/deputyvest
+	name = "Vault-Sec armor vest"
+	path = /obj/item/clothing/suit/armor/medium/vest/oasis
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest
+	name = "Civilian Ballistic Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no2
+	name = "6b3 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no3
+	name = "6b45 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 3
+
+/datum/gear/suit/armor/ballisticvest/no4
+	name = "War Press vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no5
+	name = "Ghillie suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no6
+	name = "511 PMC Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no7
+	name = "Police Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no8
+	name = "Foreign Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no9
+	name = "Baily tactical vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no10
+	name = "Medical ballistic vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/medvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+//Medical Suits
+
+/datum/gear/suit/medical
+	name = "Medical cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cmo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/wintercoat
+	name = "Medical Winter Coat"
+	path = /obj/item/clothing/suit/hooded/wintercoat/medical
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/wintercoat/paramedic
+	name = "Paramedic Winter Coat"
+	path = /obj/item/clothing/suit/hooded/wintercoat/paramedic
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/maid
+	name = "Sexy Maid Outfit"
+	path = /obj/item/clothing/suit/armor/outfit/overalls/sexymaid
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/labcoat
+	name = "Labcoat"
+	path = /obj/item/clothing/suit/toggle/labcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/laboat/paramedic
+	name = "Paramedic Vest"
+	path = /obj/item/clothing/suit/toggle/labcoat/paramedic
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/laboat/emt
+	name = "EMT Vest"
+	path = /obj/item/clothing/suit/toggle/labcoat/emt
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/laboat/depjacket
+	name = "EMT Vest"
+	path = /obj/item/clothing/suit/toggle/labcoat/depjacket/med
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/surgical
+	name = "Surgical Scrubs"
+	path = /obj/item/clothing/suit/hooded/surgical
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/labcoat/emt/red
+	name = "Red EMT Vest"
+	path = /obj/item/clothing/suit/toggle/labcoat/emt/red
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1
+
+/datum/gear/suit/medical/labcoat/emt/highvis
+	name = "High Visibility EMT Vest"
+	path = /obj/item/clothing/suit/toggle/labcoat/emt/highvis
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_MEDICAL
+	cost = 1

@@ -40,6 +40,9 @@
 	linked_organ = null
 	. = ..()
 
+/obj/item/organ/genital/proc/format_for_tgui()
+	return
+
 /obj/item/organ/genital/proc/update_size()
 	return
 
@@ -455,8 +458,7 @@
 //proc to give a player their genitals and stuff when they log in
 /mob/living/carbon/human/proc/give_genitals(clean = FALSE)//clean will remove all pre-existing genitals. proc will then give them any genitals that are enabled in their DNA
 	if(clean)
-		for(var/obj/item/organ/genital/G in internal_organs)
-			qdel(G)
+		destroy_genitals()
 	if (NOGENITALS in dna.species.species_traits)
 		return
 	if(dna.features["has_vag"])
@@ -549,7 +551,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals(signal = TRUE)
-	if(QDELETED(src))
+	if(QDELETED(src) || IsFeral())
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
@@ -662,3 +664,8 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		else if (bellyCheck == FALSE)
 			dna.features["belly_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
 	return TRUE
+
+/// uh hi we're here to reposess your nads
+/mob/living/carbon/human/proc/destroy_genitals()
+	for(var/obj/item/organ/genital/mike_look_down in internal_organs)
+		qdel(mike_look_down)

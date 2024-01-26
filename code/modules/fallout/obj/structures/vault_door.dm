@@ -24,6 +24,9 @@
 	max_integrity = -1
 	integrity_failure = 0
 
+/obj/structure/vault_door/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /obj/structure/vault_door/old
 	name = "\proper ancient Vault blast door"
 	icon_state = "oldclosed"

@@ -47,6 +47,43 @@
 	icon = 'icons/fallout/turfs/f13roadharsh.dmi'
 	icon_state = "outerpavement"
 
+/// Rooftops
+
+/turf/open/floor/plating/f13/outside/roof
+	name = "\proper rooftop"
+	desc = "It's a roof. What more do you want?"
+	icon = 'icons/turf/rooftop.dmi'
+	icon_state = "brick_1"
+
+/turf/open/floor/plating/f13/outside/roof/red
+	icon_state = "brick_r"
+
+/turf/open/floor/plating/f13/outside/roof/blue
+	icon_state = "brick_b"
+
+/turf/open/floor/plating/f13/outside/roof/metal
+	name = "\proper metal roof"
+	icon_state = "rust_1"
+
+/turf/open/floor/plating/f13/outside/roof/metal/verdigris
+	icon_state = "rust_c"
+
+/turf/open/floor/plating/f13/outside/roof/metal/corrugated
+	icon_state = "shingles_1"
+
+/turf/open/floor/plating/f13/outside/roof/metal/corrugated/red
+	icon_state = "shingles_r"
+
+/turf/open/floor/plating/f13/outside/roof/metal/corrugated/green
+	icon_state = "shingles_g"
+
+/turf/open/floor/plating/f13/outside/roof/wood
+	name = "\proper wooden roof"
+	icon_state = "wood_1"
+
+/turf/open/floor/plating/f13/outside/roof/wood/old
+	icon_state = "wood_2"
+
 //GRAVEL INDOORS
 /turf/open/floor/plating/f13/inside/gravel
 	name = "gravel"
@@ -644,3 +681,15 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/circuit/f13_red/off
 	icon_state = "rcircuitoff1"
 	on = FALSE
+
+/turf/open/floor/plasteel/f13/whitemarble
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "lightmarble"
+
+/turf/open/floor/plasteel/f13/darkmarble
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "darkmarble"
+
+/turf/open/floor/plasteel/f13/pizza //Why? Well, why do we do anything
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "pizza"

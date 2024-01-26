@@ -192,7 +192,7 @@
 
 			//play the receiving admin the adminhelp sound (if they have them enabled)
 			if(recipient.prefs.toggles & SOUND_ADMINHELP)
-				SEND_SOUND(recipient, sound('sound/effects/adminhelp.ogg'))
+				SEND_SOUND(recipient, sound('sound/effects/adminnotification.ogg'))
 
 		else
 			if(holder)	//sender is an admin but recipient is not. Do BIG RED TEXT
@@ -214,7 +214,7 @@
 
 
 				//always play non-admin recipients the adminhelp sound
-				SEND_SOUND(recipient, sound('sound/effects/adminhelp.ogg'))
+				SEND_SOUND(recipient, sound('sound/effects/adminnotification.ogg'))
 
 				//AdminPM popup for ApocStation and anybody else who wants to use it. Set it with POPUP_ADMIN_PM in config.txt ~Carn
 				if(CONFIG_GET(flag/popup_admin_pm))
@@ -344,7 +344,7 @@
 
 	window_flash(C, ignorepref = TRUE)
 	//always play non-admin recipients the adminhelp sound
-	SEND_SOUND(C, 'sound/effects/adminhelp.ogg')
+	SEND_SOUND(C, 'sound/effects/adminnotification.ogg')
 
 	// C.externalreplyamount = EXTERNALREPLYCOUNT
 	C.ircreplyamount = EXTERNALREPLYCOUNT

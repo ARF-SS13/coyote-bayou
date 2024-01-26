@@ -313,6 +313,12 @@
 	level = 1
 	component_type = /datum/component/storage/concrete/secret_satchel
 
+/obj/item/storage/backpack/satchel/invisible
+	name = "inconspicuous satchel"
+	desc = "A minimalist satchel designed to fit inside of clothing, directly against the skin."
+	icon_state = "invisible_satchel"
+	icon_state = "invisible_satchel"
+
 /obj/item/storage/backpack/satchel/flat/Initialize()
 	. = ..()
 	SSpersistence.new_secret_satchels += src

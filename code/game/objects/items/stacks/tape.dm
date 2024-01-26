@@ -23,14 +23,6 @@
 	var/endless = FALSE
 	var/apply_time = 30
 
-GLOBAL_LIST_INIT(tape_recipes, list(\
-	new/datum/stack_recipe("sticky arrowhead", /obj/item/stack/arrowhead/sticky, 1, 1, 1 SECONDS),\
-	))
-
-/obj/item/stack/sticky_tape/get_main_recipes()
-	. = ..()
-	. += GLOB.tape_recipes
-
 /obj/item/stack/sticky_tape/afterattack(obj/item/I, mob/living/user)
 	if(!istype(I))
 		return

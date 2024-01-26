@@ -381,6 +381,10 @@
 	O.screen_loc = screen_loc
 	return O
 
+/// Removes an image from a client's `.images`. Useful as a callback.
+/proc/remove_image_from_client(image/image, client/remove_from)
+	remove_from?.images -= image
+
 /proc/remove_images_from_clients(image/I, list/show_to)
 	for(var/client/C in show_to)
 		C.images -= I
@@ -584,18 +588,32 @@
 	)
 	return (is_type_in_list(item, pipe_wire))
 
-// Find a obstruction free turf that's within the range of the center. Can also condition on if it is of a certain area type.
-/proc/find_obstruction_free_location(range, atom/center, area/specific_area)
+/// Find a obstruction free turf that's within the range of the center. Can also condition on if it is of a certain area type.
+/proc/find_obstruction_free_location(range, atom/center, area/specific_area, only_my_area, only_in_view)
 	var/list/turfs = RANGE_TURFS(range, center)
+	var/list/turfs_view = list()
 	var/list/possible_loc = list()
+	var/area/center_area
+	var/turf/L
+	if(only_in_view)
+		L = get_turf(center)
+		for(var/turf/T in view(range, L))
+			turfs_view += T
+	if(only_my_area)
+		center_area = get_area(center)
 	for(var/turf/found_turf in turfs)
 		var/area/turf_area = get_area(found_turf)
-		if(specific_area)	// We check if both the turf is a floor, and that it's actually in the area. // We also want a location that's clear of any obstructions.
-			if(!istype(turf_area, specific_area))
-				continue
-		if(!isspaceturf(found_turf))
-			if(!is_blocked_turf(found_turf))
-				possible_loc.Add(found_turf)
+		if(specific_area && !istype(turf_area, specific_area))	// We check if both the turf is a floor, and that it's actually in the area. // We also want a location that's clear of any obstructions.
+			continue
+		if(only_my_area && !istype(turf_area, center_area))	// We check if both the turf is a floor, and that it's actually in the area. // We also want a location that's clear of any obstructions.
+			continue
+		if(only_in_view && !(found_turf in turfs_view))
+			continue
+		if(isspaceturf(found_turf))
+			continue
+		if(is_blocked_turf(found_turf))
+			continue
+		possible_loc.Add(found_turf)
 	if(possible_loc.len < 1)	// Need at least one free location.
 		return FALSE
 	return pick(possible_loc)

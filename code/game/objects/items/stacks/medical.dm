@@ -134,10 +134,7 @@
 		else
 			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
 			return FALSE
-	var/mob/living/carbon/carbuser
-	if(iscarbon(user))
-		carbuser = user
-	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+	if(needs_reservoir && user && user.heal_reservoir < 1)
 		to_chat(user, span_warning("[too_dry]"))
 		return FALSE
 	if(just_check)
@@ -157,7 +154,7 @@
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
 	if(needs_reservoir)
-		carbuser.heal_reservoir -= 1
+		user.heal_reservoir -= 1
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
 		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
@@ -333,7 +330,7 @@
 /* * * * * * * * * * * * * * * * * * *
  * Proc that heals simplemobs
  * * * * * * * * * * * * * * * * * * */
-/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user, just_check)
+/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/living/user, just_check)
 	if(!isanimal(M))
 		return
 	var/mob/living/simple_animal/critter = M
@@ -352,10 +349,7 @@
 	if (critter.health >= critter.maxHealth)
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
-	var/mob/living/carbon/carbuser
-	if(iscarbon(user))
-		carbuser = user
-	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+	if(needs_reservoir && user && user.heal_reservoir < 1)
 		to_chat(user, span_warning("[too_dry]"))
 		return FALSE
 	if(just_check)
@@ -374,7 +368,7 @@
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	if(needs_reservoir)
-		carbuser.heal_reservoir -= 1
+		user.heal_reservoir -= 1
 	return TRUE
 
 /// Returns if the user is skilled enough to use this thing effectively (unused, currently)

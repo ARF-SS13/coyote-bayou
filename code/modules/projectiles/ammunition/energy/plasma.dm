@@ -7,7 +7,7 @@
 */
 
 /obj/item/ammo_casing/energy/plasma
-	projectile_type = /obj/item/projectile/f13plasma
+	projectile_type = /obj/item/projectile/f13plasma/rifle
 	select_name = "plasma burst"
 	fire_sound = 'sound/f13weapons/plasma_rifle.ogg'
 	e_cost = 2500 // 12 shots
@@ -88,12 +88,32 @@
 /obj/item/ammo_casing/energy/plasma/pistol/eve/caster
 	projectile_type = /obj/item/projectile/f13plasma/pistol/eve/worn
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
-	e_cost = 2500 //should be 5 shots of a stream of 5.
+	e_cost = 675
+
+/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol
+	projectile_type = /obj/item/projectile/f13plasma/pistol/covenant
+	e_cost = 2727 // 11 shots
+	fire_sound = 'sound/f13weapons/haloplasma.ogg'
+
+/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol/screech
+	projectile_type = /obj/item/projectile/f13plasma/pistol/covenant/bane
+	e_cost = 1450
+	fire_sound = 'sound/f13weapons/haloplasma.ogg'
+
+/obj/item/ammo_casing/energy/plasma/pistol/covenantrifle
+	projectile_type = /obj/item/projectile/f13plasma/repeater/covenant
+	e_cost = 1200
+	fire_sound = 'sound/f13weapons/prrifle.ogg'
+
+/obj/item/ammo_casing/energy/plasma/pistol/onirifle
+	projectile_type = /obj/item/projectile/f13plasma/repeater/onibane
+	e_cost = 700
+	fire_sound = 'sound/f13weapons/prrifle.ogg'
 
 /obj/item/ammo_casing/energy/plasma/pistol/caster
-	projectile_type = /obj/item/projectile/f13plasma/pistol
+	projectile_type = /obj/item/projectile/f13plasma/plasmacaster
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
-	e_cost = 1250 //should be double of the eve caster
+	e_cost = 1350 //should be double of the eve caster
 
 /obj/item/ammo_casing/energy/plasma/miner
 	projectile_type = /obj/item/projectile/f13plasma/repeater/mining

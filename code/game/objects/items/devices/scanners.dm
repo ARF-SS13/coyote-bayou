@@ -789,99 +789,100 @@ GENETICS SCANNER
 	return DisplayTimeText(max(1,amount))
 
 /proc/atmosanalyzer_scan(mixture, mob/living/user, atom/target = src, visible = TRUE)
-	var/icon = target
-	if(visible)
-		user.visible_message("[user] has used the analyzer on [icon2html(icon, viewers(user))] [target].", span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
-	to_chat(user, span_boldnotice("Results of analysis of [icon2html(icon, user)] [target]."))
+	to_chat(user, span_alert("ERROR: critical atmospheric failure detected, please send device back for repairs."))
+	// var/icon = target
+	// if(visible)
+	// 	user.visible_message("[user] has used the analyzer on [icon2html(icon, viewers(user))] [target].", span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
+	// to_chat(user, span_boldnotice("Results of analysis of [icon2html(icon, user)] [target]."))
 
-	var/list/airs = islist(mixture) ? mixture : list(mixture)
-	for(var/g in airs)
-		if(airs.len > 1) //not a unary gas mixture
-			to_chat(user, span_boldnotice("Node [airs.Find(g)]"))
-		var/datum/gas_mixture/air_contents = g
+	// var/list/airs = islist(mixture) ? mixture : list(mixture)
+	// for(var/g in airs)
+	// 	if(airs.len > 1) //not a unary gas mixture
+	// 		to_chat(user, span_boldnotice("Node [airs.Find(g)]"))
+	// 	var/datum/gas_mixture/air_contents = g
 
-		var/total_moles = air_contents.total_moles()
-		var/pressure = air_contents.return_pressure()
-		var/volume = air_contents.return_volume() //could just do mixture.volume... but safety, I guess?
-		var/temperature = air_contents.return_temperature()
-		var/cached_scan_results = air_contents.analyzer_results
+	// 	var/total_moles = air_contents.total_moles()
+	// 	var/pressure = air_contents.return_pressure()
+	// 	var/volume = air_contents.return_volume() //could just do mixture.volume... but safety, I guess?
+	// 	var/temperature = air_contents.return_temperature()
+	// 	// var/cached_scan_results = air_contents.analyzer_results
 
-		if(total_moles > 0)
-			to_chat(user, span_notice("Moles: [round(total_moles, 0.01)] mol"))
-			to_chat(user, span_notice("Volume: [volume] L"))
-			to_chat(user, span_notice("Pressure: [round(pressure,0.01)] kPa"))
+	// 	if(total_moles > 0)
+	// 		to_chat(user, span_notice("Moles: [round(total_moles, 0.01)] mol"))
+	// 		to_chat(user, span_notice("Volume: [volume] L"))
+	// 		to_chat(user, span_notice("Pressure: [round(pressure,0.01)] kPa"))
 
-			for(var/id in air_contents.get_gases())
-				if(air_contents.get_moles(id) >= 0.005)
-					var/gas_concentration = air_contents.get_moles(id)/total_moles
-					to_chat(user, span_notice("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)"))
-			to_chat(user, span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)"))
+	// 		for(var/id in air_contents.get_gases())
+	// 			if(air_contents.get_moles(id) >= 0.005)
+	// 				var/gas_concentration = air_contents.get_moles(id)/total_moles
+	// 				to_chat(user, span_notice("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)"))
+	// 		to_chat(user, span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)"))
 
-		else
-			if(airs.len > 1)
-				to_chat(user, span_notice("This node is empty!"))
-			else
-				to_chat(user, span_notice("[target] is empty!"))
+	// 	else
+	// 		if(airs.len > 1)
+	// 			to_chat(user, span_notice("This node is empty!"))
+	// 		else
+	// 			to_chat(user, span_notice("[target] is empty!"))
 
-		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
-			var/instability = round(cached_scan_results["fusion"], 0.01)
-			var/tier = instability2text(instability)
-			to_chat(user, span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place."))
-			to_chat(user, span_notice("Instability of the last fusion reaction: [instability]\n This indicates it was [tier]"))
+		// if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
+		// 	var/instability = round(cached_scan_results["fusion"], 0.01)
+		// 	var/tier = instability2text(instability)
+		// 	to_chat(user, span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place."))
+		// 	to_chat(user, span_notice("Instability of the last fusion reaction: [instability]\n This indicates it was [tier]"))
 	return
 
 /obj/item/analyzer/proc/scan_turf(mob/user, turf/location)
+	to_chat(user, span_alert("ERROR: critical atmospheric failure detected, please send device back for repairs."))
+	// var/datum/gas_mixture/environment = location.return_air()
 
-	var/datum/gas_mixture/environment = location.return_air()
+	// var/pressure = environment.return_pressure()
+	// var/total_moles = environment.total_moles()
+	// // var/cached_scan_results = environment.analyzer_results
 
-	var/pressure = environment.return_pressure()
-	var/total_moles = environment.total_moles()
-	var/cached_scan_results = environment.analyzer_results
+	// to_chat(user, "<span class='info'><B>Results:</B></span>")
+	// if(abs(pressure - ONE_ATMOSPHERE) < 10)
+	// 	to_chat(user, span_info("Pressure: [round(pressure, 0.01)] kPa"))
+	// else
+	// 	to_chat(user, span_alert("Pressure: [round(pressure, 0.01)] kPa"))
+	// if(total_moles)
 
-	to_chat(user, "<span class='info'><B>Results:</B></span>")
-	if(abs(pressure - ONE_ATMOSPHERE) < 10)
-		to_chat(user, span_info("Pressure: [round(pressure, 0.01)] kPa"))
-	else
-		to_chat(user, span_alert("Pressure: [round(pressure, 0.01)] kPa"))
-	if(total_moles)
+	// 	var/o2_concentration = environment.get_moles(GAS_O2)/total_moles
+	// 	var/n2_concentration = environment.get_moles(GAS_N2)/total_moles
+	// 	var/co2_concentration = environment.get_moles(GAS_CO2)/total_moles
+	// 	var/plasma_concentration = environment.get_moles(GAS_PLASMA)/total_moles
 
-		var/o2_concentration = environment.get_moles(GAS_O2)/total_moles
-		var/n2_concentration = environment.get_moles(GAS_N2)/total_moles
-		var/co2_concentration = environment.get_moles(GAS_CO2)/total_moles
-		var/plasma_concentration = environment.get_moles(GAS_PLASMA)/total_moles
+	// 	if(abs(n2_concentration - N2STANDARD) < 20)
+	// 		to_chat(user, span_info("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
+	// 	else
+	// 		to_chat(user, span_alert("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
 
-		if(abs(n2_concentration - N2STANDARD) < 20)
-			to_chat(user, span_info("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
-		else
-			to_chat(user, span_alert("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
+	// 	if(abs(o2_concentration - O2STANDARD) < 2)
+	// 		to_chat(user, span_info("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
+	// 	else
+	// 		to_chat(user, span_alert("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
 
-		if(abs(o2_concentration - O2STANDARD) < 2)
-			to_chat(user, span_info("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
-		else
-			to_chat(user, span_alert("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
+	// 	if(co2_concentration > 0.01)
+	// 		to_chat(user, span_alert("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
+	// 	else
+	// 		to_chat(user, span_info("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
 
-		if(co2_concentration > 0.01)
-			to_chat(user, span_alert("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
-		else
-			to_chat(user, span_info("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
+	// 	if(plasma_concentration > 0.005)
+	// 		to_chat(user, span_alert("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
+	// 	else
+	// 		to_chat(user, span_info("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
 
-		if(plasma_concentration > 0.005)
-			to_chat(user, span_alert("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
-		else
-			to_chat(user, span_info("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
+	// 	for(var/id in environment.get_gases())
+	// 		if(id in GLOB.hardcoded_gases)
+	// 			continue
+	// 		var/gas_concentration = environment.get_moles(id)/total_moles
+	// 		to_chat(user, span_alert("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)"))
+	// 	to_chat(user, span_info("Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)"))
 
-		for(var/id in environment.get_gases())
-			if(id in GLOB.hardcoded_gases)
-				continue
-			var/gas_concentration = environment.get_moles(id)/total_moles
-			to_chat(user, span_alert("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)"))
-		to_chat(user, span_info("Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)"))
-
-		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
-			var/instability = round(cached_scan_results["fusion"], 0.01)
-			var/tier = instability2text(instability)
-			to_chat(user, span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place."))
-			to_chat(user, span_notice("Instability of the last fusion reaction: [instability]\n This indicates it was [tier]."))
+		// if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
+		// 	var/instability = round(cached_scan_results["fusion"], 0.01)
+		// 	var/tier = instability2text(instability)
+		// 	to_chat(user, span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place."))
+		// 	to_chat(user, span_notice("Instability of the last fusion reaction: [instability]\n This indicates it was [tier]."))
 
 /obj/item/analyzer/ranged
 	desc = "A hand-held scanner which uses advanced spectroscopy and infrared readings to analyze gases as a distance. Alt-Click to use the built in barometer function."

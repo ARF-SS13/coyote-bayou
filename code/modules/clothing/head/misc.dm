@@ -779,3 +779,12 @@
 	desc = "A witch hat"
 	icon_state = "nt_witch"
 	item_state = "nt_witch"
+
+/obj/item/clothing/head/hoodcowl
+	name = "Hood cowl"
+	desc = "A dirty, worn-down rag with crudely cut-out eyeholes that barely qualifies as clothing."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "hoodcowl"
+	item_state = "hoodcowl"
+	flags_inv = HIDEHAIR
+	dynamic_hair_suffix = ""

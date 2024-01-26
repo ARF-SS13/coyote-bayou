@@ -278,7 +278,7 @@
 	playsound(loc, soundtoplay, 100, 1)
 
 /obj/item/mine/sound/bwoink
-	soundtoplay = 'sound/effects/adminhelp.ogg'
+	soundtoplay = 'sound/effects/adminnotification.ogg'
 
 /obj/item/mine/emp
 	name = "pulse mine"

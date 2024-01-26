@@ -46,7 +46,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			WF.InheritComponent(slip)
 		if (copy_air)
 			var/turf/open/openTurf = T
-			openTurf.air.copy_from(air)
+			if (openTurf.air)
+				openTurf.air.copy_from(air)
 
 //wrapper for ChangeTurf()s that you want to prevent/affect without overriding ChangeTurf() itself
 /turf/proc/TerraformTurf(path, new_baseturf, flags)
@@ -106,6 +107,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	changing_turf = TRUE
 	qdel(src)	//Just get the side effects and call Destroy
 	var/turf/W = new path(src)
+	if(radiation_turf)
+		W.radiation_turf = radiation_turf
 
 	for(var/i in transferring_comps)
 		W.TakeComponent(i)

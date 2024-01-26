@@ -25,6 +25,10 @@
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_MEDIUM_INSULATION
 
+/obj/structure/mineral_door/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/mineral_door/Initialize()
 	. = ..()
 	initial_state = icon_state
@@ -233,6 +237,9 @@
 	sheetAmount = 10
 	max_integrity = 200
 	rad_insulation = RAD_VERY_LIGHT_INSULATION
+
+/obj/structure/mineral_door/woodrustic/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 /obj/structure/mineral_door/paperframe
 	name = "paper frame door"

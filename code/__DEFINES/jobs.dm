@@ -7,6 +7,7 @@
 #define FACTION_OASIS "Town"
 #define FACTION_ENCLAVE "Enclave"
 #define FACTION_WASTELAND "Wastelander"
+#define FACTION_TEACHER "Texarkana Rangers"
 #define FACTION_RAIDERS "Raiders"
 #define FACTION_TRIBE "Tribe"
 #define FACTION_VAULT "Vault"
@@ -164,6 +165,9 @@
 #define F13CULTLEADER	(1<<8)
 #define F13TRIBAL		(1<<9)
 #define F13RADIOOP		(1<<10)
+#define F13WASTEDEN		(1<<11)
+#define F13WASTEGAR		(1<<12)
+#define CBOOCBACKSTAGE	(1<<13)
 
 #define ENCLAVE			(1<<10)
 
@@ -208,6 +212,10 @@
 
 #define F13MANAGER			(1<<0)
 #define F13CLUBWORKER		(1<<1)
+
+#define TEACHER		(1<<14)
+
+#define F13TEACHER (1<<0)
 
 
 #define JOB_AVAILABLE 0

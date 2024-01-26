@@ -714,19 +714,28 @@ Current Size: [usr.transform.a]<br><br>
 			return
 		
 		if("Resize")
-			var/mob/living/U = usr
+			var/mob/living/carbon/human/U = usr
 			if(!istype(U, /mob/living/carbon/human))
 				return
 
 			if (usr.transform.a == U.transform.e)
 				var/current_size = U.transform.a
 				var/desired_size = input(usr, "Enter desired size in percent", "Choose Size", RESIZE_DEFAULT_SIZE * 100) as num
+
+				var/has_smol_raw = istype(U.has_quirk(/datum/quirk/smol), /datum/quirk/smol)
+				var/has_smol = has_smol_raw ? "yes" : "no"
+				var/smol_desired = input(usr, "Would you like the smol quirk?", "Smol?", has_smol) in list ("yes", "no")
+
+				if (has_smol_raw == TRUE && smol_desired == "no")
+					U.remove_quirk(/datum/quirk/smol)
+				if (has_smol_raw == FALSE && smol_desired == "yes")
+					U.add_quirk(/datum/quirk/smol, FALSE)
 				
 				if(!isnum(desired_size))
 					desired_size = 100
 				var/scaled_size = desired_size / 100
-				var/size_max = CONFIG_GET(number/body_size_max)
-				var/size_min = CONFIG_GET(number/body_size_min)
+				var/size_max = 2
+				var/size_min = 0.25
 				var/size_to_use = clamp(scaled_size, size_min, size_max)
 
 				U.resize = size_to_use / current_size

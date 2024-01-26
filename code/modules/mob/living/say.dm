@@ -208,7 +208,9 @@
 		return
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode, FALSE, source)
-
+	if(client.prefs.color_chat_log)
+		var/sanitizedsaycolor = client.sanitize_chat_color(speaker.get_chat_color())
+		message = color_for_chatlog(message, sanitizedsaycolor, speaker.name)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	return message
 
@@ -328,6 +330,8 @@
 	return null
 
 /mob/living/proc/treat_message(message)
+	if(!LAZYLEN(message))
+		return message
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)
@@ -392,14 +396,10 @@
 /mob/living/say_mod(input, message_mode)
 	. = ..()
 	if(message_mode != MODE_CUSTOM_SAY)
-		if(message_mode == MODE_WHISPER)
-			. = verb_whisper
-		else if(stuttering)
+		if(stuttering)
 			. = "stammers"
 		else if(derpspeech)
 			. = "gibbers"
-		else if(message_mode == MODE_SING)
-			. = verb_sing
 		else if(InCritical())
 			. = "whines"
 

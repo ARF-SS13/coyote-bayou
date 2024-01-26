@@ -78,8 +78,8 @@
 	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/medical
 
 /obj/item/storage/survivalkit/medical/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/loadout(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/charcoal(src)

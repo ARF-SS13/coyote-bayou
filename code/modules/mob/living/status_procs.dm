@@ -579,8 +579,6 @@
 	SSquirks.AddQuirkToMob(src, quirktype, spawn_effects)
 
 /mob/living/proc/remove_quirk(quirktype)
-	if(!HAS_TRAIT(src, quirktype))
-		return
 	SSquirks.RemoveQuirkFromMob(src, quirktype)
 
 /mob/living/proc/has_quirk(quirktype)

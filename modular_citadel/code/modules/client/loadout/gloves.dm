@@ -42,3 +42,27 @@
 /datum/gear/gloves/midnight
 	name = "Midnight gloves"
 	path = /obj/item/clothing/gloves/evening/black
+
+/datum/gear/gloves/evening
+	name = "Eveniing gloves"
+	path = /obj/item/clothing/gloves/evening
+
+/datum/gear/gloves/fingerlessevening
+	name = "fingerless evening gloves"
+	path = /obj/item/clothing/gloves/fingerlessevening
+
+/datum/gear/gloves/fingerlessleather
+	name = "fingerless leather gloves"
+	path = /obj/item/clothing/gloves/f13/leather/fingerless
+
+/datum/gear/gloves/patrol
+	name = "patrol ranger gloves"
+	path = /obj/item/clothing/gloves/patrol
+
+/datum/gear/gloves/modifpatrolburned
+	name = "wrapped patrol gloves"
+	path = /obj/item/clothing/gloves/patrol/burned
+
+/datum/gear/gloves/modifpatrol
+	name = "modified patrol gloves"
+	path = /obj/item/clothing/gloves/modif_patrol

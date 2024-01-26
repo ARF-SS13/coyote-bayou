@@ -7,6 +7,7 @@
 	var/phobia_type
 	var/next_check = 0
 	var/next_scare = 0
+	var/timer_active = 0
 	var/list/trigger_words
 	//instead of cycling every atom, only cycle the relevant types
 	var/list/trigger_mobs
@@ -44,7 +45,7 @@
 	if(is_blind(owner))
 		return
 	if(world.time > next_check && world.time > next_scare)
-		next_check = world.time + 50
+		next_check = world.time + 10 SECONDS
 		var/list/seen_atoms = owner.fov_view(7)
 		var/mirror_seen = 0
 
@@ -98,10 +99,10 @@
 
 		if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
 			addtimer(CALLBACK(src,PROC_REF(freak_out), null, word), 10) //to react AFTER the chat message
-			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_phobia("$1"))
+			//hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_phobia("$1"))
 			break
 
-/datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
+/*/datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
 		return
 	for(var/word in trigger_words)
@@ -109,46 +110,31 @@
 
 		if(findtext(speech_args[SPEECH_MESSAGE], reg))
 			to_chat(owner, span_warning("You can't bring yourself to say the word \"<span class='phobia'>[word]</span>\"!"))
-			speech_args[SPEECH_MESSAGE] = ""
+			speech_args[SPEECH_MESSAGE] = ""*/
 
 /datum/brain_trauma/mild/phobia/proc/freak_out(atom/reason, trigger_word)
-	next_scare = world.time + 120
+	next_scare = world.time + 30 SECONDS
 	if(owner.stat == DEAD)
 		return
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
 	if(reason)
-		to_chat(owner, span_userdanger("Seeing [reason] [message]!"))
+		to_chat(owner, span_danger("Seeing [reason] [message]!"))
 	else if(trigger_word)
-		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!"))
+		to_chat(owner, span_danger("Hearing \"[trigger_word]\" [message]!"))
 	else
-		to_chat(owner, span_userdanger("Something [message]!"))
-	var/reaction = rand(1,5)
-	switch(reaction)
-		if(1)
-			to_chat(owner, span_warning("You break out in a fit of tears!"))
-			//owner.Stun(70)
-			owner.Jitter(8)
-			owner.eye_blurry = 20
-			owner.emote("cry")
-		if(2)
-			owner.emote("scream")
-			owner.Jitter(5)
-			owner.say("AAAAH!!", forced = "phobia")
-			if(reason)
-				owner.pointed(reason)
-		if(3)
-			to_chat(owner, span_warning("You shut your eyes in terror!"))
-			owner.Jitter(5)
-			owner.blind_eyes(10)
-		if(4)
-			owner.dizziness += 10
-			owner.confused += 10
-			owner.Jitter(10)
-			owner.stuttering += 10
-		if(5)
-			to_chat(owner, span_warning("You faint out of shock!"))
-			owner.emote("collapse")
-			owner.Jitter(5)
+		to_chat(owner, span_danger("Something [message]!"))
+	owner.stuttering += 5
+	ADD_TRAIT(owner, TRAIT_PHOBIC, TRAIT_GENERIC) // Generic phobia trait for applying general non-mood debuffs to people
+	if(!timer_active)
+		addtimer(CALLBACK(src, .proc/RemoveTrait), 3 MINUTES)
+		timer_active = 1
+	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "phobia", /datum/mood_event/phobia) //Always apply the phobia mood debuff
+
+/datum/brain_trauma/mild/phobia/proc/RemoveTrait()
+	if(!timer_active)
+		return
+	REMOVE_TRAIT(owner,TRAIT_PHOBIC, TRAIT_GENERIC)
+	timer_active = 0
 
 /datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))

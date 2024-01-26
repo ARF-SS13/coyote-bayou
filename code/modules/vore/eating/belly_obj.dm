@@ -362,7 +362,7 @@
 /// Having things in your belly really slows you down!
 /obj/vore_belly/proc/update_slowdowns()
 	item_slowdown = get_item_slowdown()
-	mob_slowdown = get_mob_slowdown()
+	// mob_slowdown = get_mob_slowdown()
 
 /obj/vore_belly/proc/trigger_slowdown_update()
 	SEND_SIGNAL(owner, COMSIG_VORE_RECALCULATE_SLOWDOWN)
@@ -582,10 +582,10 @@
 	for(var/obj/item/dink in contents)
 		SEND_SIGNAL(dink, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 	/// And if any mobs are inside, get their items too!
-	for(var/mob/living/dork in get_nested_mobs(FALSE))
-		for(var/obj/item/thingy in dork.contents)
-			SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
-			. |= thingy // and I mean *every* fuckin item
+	// for(var/mob/living/dork in get_nested_mobs(FALSE)) // or not!
+	// 	for(var/obj/item/thingy in dork.contents)
+	// 		SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
+	// 		. |= thingy // and I mean *every* fuckin item
 
 /// If allowed, spit up some trash
 /obj/vore_belly/proc/hork_trash(datum/source, obj/item/trashthing)

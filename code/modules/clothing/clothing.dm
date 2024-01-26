@@ -54,7 +54,8 @@
 	//Add a "exclude" string to do the opposite, making it only only species listed that can't wear it.
 	//You append this to clothing objects
 
-
+	/// Additional armor modifiers that are applied to the actual armor value
+	var/armor_tokens = list()
 
 	// How much clothing damage has been dealt to each of the limbs of the clothing, assuming it covers more than one limb
 	var/list/damage_by_parts
@@ -62,17 +63,11 @@
 	var/limb_integrity = 0
 	// How many zones (body parts, not precise) we have disabled so far, for naming purposes
 	var/zones_disabled
-	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/armor_list = list()
-	///These are armor values that protect the wearer from the environment, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/environmental_list = list()
-	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/durability_list = list()
 
 	/// Required tool behavior to salvage the item
 	var/salvage_tool_behavior = TOOL_SAW
 	/// Items that are dropped on salvage; If it's empty - item can't salvaged
-	var/list/salvage_loot = list()
+	var/list/salvage_loot
 
 /obj/item/clothing/Initialize()
 	. = ..()
@@ -80,6 +75,22 @@
 		actions_types += /datum/action/item_action/toggle_voice_box
 	if(ispath(pocket_storage_component_path))
 		LoadComponent(pocket_storage_component_path)
+
+/obj/item/clothing/setup_armor_values()
+	. = ..()
+
+	if(length(armor_tokens) < 1)
+		return // all done!
+	
+	for(var/list/token in armor_tokens)
+		for(var/modifier in token)
+			switch(GLOB.armor_token_operation_legend[modifier])
+				if("MULT")
+					armor[modifier] = round(armor[modifier] * token[modifier], 1)
+				if("ADD")
+					armor[modifier] = max(armor[modifier] + token[modifier], 0)
+				else
+					continue
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
@@ -280,42 +291,9 @@
 			how_cool_are_your_threads += "Adding or removing items from [src] makes no noise.\n"
 		how_cool_are_your_threads += "</span>"
 		. += how_cool_are_your_threads.Join()
-
-	if(LAZYLEN(armor_list))
-		armor_list.Cut()
-	if(armor.melee)
-		armor_list += list("MELEE" = armor.melee)
-	if(armor.bullet)
-		armor_list += list("BULLET" = armor.bullet)
-	if(armor.laser)
-		armor_list += list("LASER" = armor.laser)
-	if(armor.energy)
-		armor_list += list("ENERGY" = armor.energy)
-	if(armor.wound)
-		armor_list += list("WOUND" = armor.wound)
-	if(armor.damage_threshold)
-		armor_list += list("THRESHOLD" = armor.damage_threshold)
-
-	if(LAZYLEN(environmental_list))
-		environmental_list.Cut()
-	if(armor.bio)
-		environmental_list += list("TOXIN" = armor.bio)
-	if(armor.bomb)
-		environmental_list += list("EXPLOSIVE" = armor.bomb)
-	if(armor.rad)
-		environmental_list += list("RADIATION" = armor.rad)
-	if(armor.magic)
-		environmental_list += list("MAGIC" = armor.magic)
-
-	if(LAZYLEN(durability_list))
-		durability_list.Cut()
-	if(armor.fire)
-		durability_list += list("FIRE" = armor.fire)
-	if(armor.acid)
-		durability_list += list("ACID" = armor.acid)
-
-	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
+	if(armor)
+		if(armor.melee || armor.bullet || armor.laser || armor.energy || armor.wound || armor.damage_threshold || armor.bio || armor.bomb || armor.rad || armor.magic || armor.fire || armor.acid) // i can see my house from here
+			. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
 	if(salvage_tool_behavior && LAZYLEN(salvage_loot))
 		. += span_notice("It can be recycled for materials using [salvage_tool_behavior].")
 
@@ -323,6 +301,39 @@
 	. = ..()
 
 	if(href_list["list_armor"])
+		///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/armor_list = list()
+		///These are armor values that protect the wearer from the environment, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/environmental_list = list()
+		///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/durability_list = list()
+		if(armor.melee)
+			armor_list += list("MELEE" = armor.melee)
+		if(armor.bullet)
+			armor_list += list("BULLET" = armor.bullet)
+		if(armor.laser)
+			armor_list += list("LASER" = armor.laser)
+		if(armor.energy)
+			armor_list += list("ENERGY" = armor.energy)
+		if(armor.wound)
+			armor_list += list("WOUND" = armor.wound)
+		if(armor.damage_threshold)
+			armor_list += list("THRESHOLD" = armor.damage_threshold)
+
+		if(armor.bio)
+			environmental_list += list("TOXIN" = armor.bio)
+		if(armor.bomb)
+			environmental_list += list("EXPLOSIVE" = armor.bomb)
+		if(armor.rad)
+			environmental_list += list("RADIATION" = armor.rad)
+		if(armor.magic)
+			environmental_list += list("MAGIC" = armor.magic)
+
+		if(armor.fire)
+			durability_list += list("FIRE" = armor.fire)
+		if(armor.acid)
+			durability_list += list("ACID" = armor.acid)
+
 		var/list/readout = list("<span class='notice'><u><b>PROTECTION CLASSES</u></b>")
 		if(LAZYLEN(armor_list))
 			readout += "\n<b>ARMOR</b>"
@@ -493,7 +504,7 @@ BLIND     // can't see anything
 
 /// The results of salvaging the clothing
 /obj/item/clothing/proc/drop_salvage()
-	if(!salvage_loot.len)
+	if(!LAZYLEN(salvage_loot))
 		return
 	var/atom/dropTurf = drop_location()
 	for(var/drop in salvage_loot)

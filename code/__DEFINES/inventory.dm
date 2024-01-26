@@ -33,7 +33,7 @@
 
 //SLOTS
 #define SLOT_BACK			1
-#define SLOT_WEAR_MASK		2
+#define SLOT_MASK		2
 #define SLOT_HANDCUFFED		3
 #define SLOT_HANDS			4 //wherever you provide a slot for hands you provide SLOT_HANDS
 								//SLOT_HANDS as a slot will pick ANY available hand
@@ -63,7 +63,7 @@
 	switch(slotdefine)
 		if(SLOT_BACK)
 			. = INV_SLOTBIT_BACK
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			. = INV_SLOTBIT_MASK
 		if(SLOT_NECK)
 			. = INV_SLOTBIT_NECK
@@ -93,7 +93,6 @@
 			. = INV_SLOTBIT_BACKPACK
 		if(SLOT_S_STORE)
 			. = INV_SLOTBIT_SUITSTORE
-
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 #define HIDEGLOVES		(1<<0)

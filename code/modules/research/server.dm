@@ -59,16 +59,15 @@
 	produce_heat(. / base_mining_income)
 
 /obj/machinery/rnd/server/proc/get_env_temp()
-	var/datum/gas_mixture/environment = loc.return_air()
-	return environment.return_temperature()
+	return T0C
 
 /obj/machinery/rnd/server/proc/produce_heat(perc)
-	if(!(stat & (NOPOWER|BROKEN))) //Blatently stolen from space heater.
-		var/turf/L = loc
-		if(istype(L))
-			var/datum/gas_mixture/env = L.return_air()
-			env.adjust_heat(heating_power * perc * heat_gen)
-			air_update_turf()
+	// if(!(stat & (NOPOWER|BROKEN))) //Blatently stolen from space heater.
+	// 	var/turf/L = loc
+	// 	if(istype(L))
+	// 		var/datum/gas_mixture/env = L.return_air()
+	// 		env.adjust_heat(heating_power * perc * heat_gen)
+	// 		air_update_turf()
 
 /proc/fix_noid_research_servers()
 	var/list/no_id_servers = list()

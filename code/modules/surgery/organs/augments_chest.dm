@@ -198,9 +198,9 @@
 		return 0
 
 	// Priority 1: use air from environment.
-	var/datum/gas_mixture/environment = T.return_air()
-	if(environment && environment.return_pressure() > 30)
-		return 1
+	// var/datum/gas_mixture/environment = T.return_air()
+	// if(environment && environment.return_pressure() > 30)
+	// 	return 1
 
 	// Priority 2: use plasma from internal plasma storage.
 	// (just in case someone would ever use this implant system to make cyber-alien ops with jetpacks and taser arms)

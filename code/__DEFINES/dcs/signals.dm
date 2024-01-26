@@ -65,7 +65,7 @@
 //from SSatoms InitAtom - Only if the  atom was not deleted or failed initialization
 #define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE "atom_init_success"
 #define COMSIG_PARENT_ATTACKBY "atom_attackby"			        //from base of atom/attackby(): (/obj/item, /mob/living, params)
-	#define COMPONENT_NO_AFTERATTACK 1								//Return this in response if you don't want afterattack to be called
+	#define COMPONENT_NO_AFTERATTACK 2								//Return this in response if you don't want afterattack to be called
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"					//from base of atom/attack_hulk(): (/mob/living/carbon/human)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"				//from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_PARENT_EXAMINE "atom_examine"                    //from base of atom/examine(): (/mob, list/examine_return_text)
@@ -237,6 +237,7 @@
 
 // /mob signals
 #define COMSIG_MOB_CLICKED_SHIFT_ON "mob_shift_click_on"		//from base of /atom/ShiftClick(): (atom/A), for return values, see COMSIG_CLICK_SHIFT
+#define COMSIG_MOB_CTRLSHIFTCLICKON "mob_ctrlshiftclickon"
 #define COMSIG_MOB_FOV_VIEW "mob_visible_atoms"					//from base of /mob/fov_view(): (list/visible_atoms)
 #define COMSIG_MOB_POINTED "mob_pointed"						//from base of /mob/verb/pointed(): (atom/A)
 #define COMSIG_MOB_EXAMINATE "mob_examinate"					//from base of /mob/verb/examinate(): (atom/A), for return values, see COMSIG_CLICK_SHIFT
@@ -369,6 +370,7 @@
 #define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"						// defined twice, in carbon and human's topics, fired when interacting with a valid embedded_object to pull it out (mob/living/carbon/target, /obj/item, /obj/item/bodypart/L)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"		// called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 
+#define COMSIG_CARBON_REAGENT_POST_LIFE "carbon_reagent_post_life" // (datum/source, datum/reagent/R)
 // /mob/living/silicon signals
 #define COMSIG_ROBOT_UPDATE_ICONS "robot_update_icons"			//from base of robot/update_icons(): ()
 
@@ -390,6 +392,7 @@
 #define COMSIG_MACHINE_EJECT_OCCUPANT "eject_occupant"			//from base of obj/machinery/dropContents() (occupant)
 
 // /obj/item signals
+#define COMSIG_PARENT_FORCEFEED "force_feed" // feed an item to a material hopper (obj/item/I, multiplier = 1, del_after)
 #define COMSIG_ITEM_ATTACK "item_attack"						//from base of obj/item/attack(): (/mob/living/target, /mob/living/user)
 #define COMSIG_MOB_APPLY_DAMAGE	"mob_apply_damage"				//from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
 #define COMSIG_ITEM_ATTACK_SELF "item_attack_self"				//from base of obj/item/attack_self(): (/mob)
@@ -427,6 +430,8 @@
 #define COMSIG_CELL_CHECK_CHARGE "cell_check" 					// returns the charge of the cell
 #define COMSIG_CELL_CHECK_CHARGE_PERCENT "cell_check_percent" 	// returns the percent of the cell
 #define COMSIG_ITEM_RECYCLED "item_recycled"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_TABLE_CLICKED_WITH_ITEM "table_click" // (obj/item, obj/structure/table, mob/user, params)
+	#define TABLE_NO_PLACE (1<<0)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
@@ -724,7 +729,20 @@
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened
-#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" // (datum/source, obj/item/thetrash)
+#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" //
+
+#define COMSIG_SPLURT_REQUEST "splurt_request" //
+#define COMSIG_SPLURT_REPLY "splurt_reply" //
+#define COMSIG_SPLURT_IS_SPLURTING "splurt_do" //
+#define COMSIG_SPLURT_CLEAR_FROM_BLACKLIST "COMSIG_SPLURT_CLEAR_FROM_BLACKLIST" //
+#define COMSIG_SPLURT_IS_BLACKLISTED "COMSIG_SPLURT_IS_BLACKLISTED" //
+#define COMSIG_SPLURT_REVOKE "COMSIG_SPLURT_REVOKE" //
+#define COMSIG_SPLURT_INTERACTION_PITCHED "COMSIG_SPLURT_INTERACTION_PITCHED" // (datum/source, mob/living/interactor, mob/living/interactor, datum/interaction/interaction)
+#define COMSIG_SPLURT_INTERACTION_CAUGHT "COMSIG_SPLURT_INTERACTION_CAUGHT" // (datum/source, mob/living/interactee, mob/living/interactee, datum/interaction/interaction)
+#define COMSIG_SPLURT_REMOVE_AUTOPLAPPER "COMSIG_SPLURT_REMOVE_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
+#define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
 
 

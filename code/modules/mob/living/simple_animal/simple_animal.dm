@@ -209,6 +209,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/ignore_other_mobs = TRUE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
 	var/override_ignore_other_mobs = FALSE // If TRUE, it'll ignore the idnore other mobs flag, for mobs that are supposed to be hostile to everything
 
+	///multichance projectile hit behaviour (MCPHB)
+	var/mcphb_arms_hit = FALSE
+	var/mcphb_legs_hit = FALSE
+		
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -406,7 +411,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/list/dat = list()
 		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
-			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 		//Hands
 		for(var/obj/item/I in held_items)
 			if(!(I.item_flags & ABSTRACT))
@@ -431,7 +436,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
 				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
-		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+		//Personality and RP Preferences quirk display
+		dat += get_personality_traits(user)
+		//SPECIAL stats display
+		dat += "[print_special()]"
+		if(client && ((client.inactivity / 10) / 60 > 20)) //20 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
 			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
@@ -488,7 +497,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(health <= 0)
 			death()
 		else
-			set_stat(CONSCIOUS)
+			if(IsSleeping())
+				set_stat(UNCONSCIOUS)
+			else
+				set_stat(CONSCIOUS)
 	med_hud_set_status()
 
 
@@ -633,7 +645,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/atom/Tsec = drop_location()
 		for(var/path in butcher)
 			for(var/i in 1 to butcher[path])
-				new path(Tsec)
+				if(prob(25))
+					new path(Tsec)
 	..()
 
 /mob/living/simple_animal/gib_animation()
@@ -768,7 +781,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)
-		lying = 0
+		lying = FALSE
+		set_resting(FALSE, silent = TRUE, updating = TRUE)//get up, stand up, don't forget your rights
 		. = 1
 		setMovetype(initial(movement_type))
 
@@ -861,7 +875,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 
 	see_invisible = initial(see_invisible)
-	see_in_dark = initial(see_in_dark)
+	if(HAS_TRAIT(src, TRAIT_NIGHT_VISION_GREATER))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE_GREATER, see_in_dark)
+	else if(HAS_TRAIT(src, TRAIT_NIGHT_VISION))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE, see_in_dark)
+	else
+		see_in_dark = initial(see_in_dark)
+		lighting_alpha = initial(lighting_alpha)
 	sight = initial(sight)
 
 	if(client.eye != src)
@@ -1079,6 +1101,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
 		maxHealth = our_health
 		health = our_health
+	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		var/speedpick = pick(variation_list[MOB_VARIED_SPEED])
+		set_varspeed(speedpick)
 	return TRUE
 
 /mob/living/simple_animal/proc/vary_from_list(which_list, weighted_list = FALSE)

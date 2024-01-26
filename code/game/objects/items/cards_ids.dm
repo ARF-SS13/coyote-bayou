@@ -971,6 +971,14 @@
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
 
+/obj/item/card/id/dogtag/ranger
+	name = "ranger's badge"
+	desc = "A silver badge with special engravings to denote ranger status."
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+
 /obj/item/card/id/dogtag/town
 	name = "citizenship permit"
 	desc = "A permit identifying the holder as a citizen of a nearby town."
@@ -1276,16 +1284,12 @@
 /obj/item/card/id/tribetattoo
 	name = "Tattoo of the machine spirits"
 	desc = "A tattoo depicting the five machine spirits in harmony."
-	icon_state = "talisman"
-	item_state = "talisman"
+	icon_state = "tribalID"
+	item_state = "tribalID"
 	assignment = "tribe tattoo"
 	uses_overlays = FALSE
 
 	access = list(ACCESS_TRIBE)
-
-/obj/item/card/id/tribetattoo/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"

@@ -295,6 +295,10 @@
 			return "Southern Wastes - Common"
 		if(Z_LEVEL_REDLICK)
 			return "Northern Wastes - Common"
+		if(Z_LEVEL_NEWBOSTON)
+			return "New Boston - Common"
+		if(Z_LEVEL_NEWBOSTON_UPPER)
+			return "New Boston - Second Story"
 		else
 			return "~!UNKNOWN!~"
 

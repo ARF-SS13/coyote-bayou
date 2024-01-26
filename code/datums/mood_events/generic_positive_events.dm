@@ -266,3 +266,10 @@
 /datum/mood_event/equipped_necklace/wolf
 	description = span_nicegreen("The spirit of a wolf dwells within you.")
 	mood_change = 1
+
+// Lewd positive events
+
+/datum/mood_event/butt_slap
+	description = span_love("Smacking that butt felt extremely satisfying∼!")
+	mood_change = 3
+	timeout = 2 MINUTES

@@ -50,6 +50,17 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	hide_flag = HIDE_BUTT // for hideflag stuff
 	pornhud_slot = PHUD_BUTT
 
+/obj/item/organ/genital/butt/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "butt"
+	out["BitName"] = "A butt."
+	out["BitSize"] = "It is a category-[size]!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %100 capacity."
+	out["BitEmoji"] = "🍑"
+	return out
+
 /obj/item/organ/genital/butt/modify_size(modifier, min = BUTT_SIZE_MIN, max = BUTT_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)
 	if(new_value == cached_size)

@@ -26,7 +26,7 @@
 /obj/item/ammo_casing/a762/sport
 	name = ".308 bullet casing"
 	desc = "A .308 sporting bullet casing."
-	projectile_type = /obj/item/projectile/bullet/a762/sport
+	projectile_type = /obj/item/projectile/bullet/a308/improvised
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(

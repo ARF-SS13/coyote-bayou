@@ -71,16 +71,18 @@ All foods are distributed among various categories. Use common sense.
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
 /obj/item/reagent_containers/food/snacks/add_initial_reagents()
-	if(tastes && tastes.len)
-		if(list_reagents)
-			for(var/rid in list_reagents)
-				var/amount = list_reagents[rid]
-				if(rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin)
-					reagents.add_reagent(rid, amount, tastes.Copy())
-				else
-					reagents.add_reagent(rid, amount)
-	else
-		..()
+	var/list/flavors = SSlistbank.get_tastes(src)
+	if(!LAZYLEN(flavors))
+		return ..()
+	if(!list_reagents)
+		return ..()
+	for(var/rid in list_reagents)
+		var/amount = list_reagents[rid]
+		if(rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin)
+			reagents.add_reagent(rid, amount, flavors.Copy())
+		else
+			reagents.add_reagent(rid, amount)
+	..()
 
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/living/eater)
 	if(!eater)

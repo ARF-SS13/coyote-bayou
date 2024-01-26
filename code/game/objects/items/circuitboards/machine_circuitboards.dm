@@ -1215,6 +1215,10 @@
 		/obj/item/stack/sheet/mineral/wood = 3)
 	tool_behaviour = TOOL_MSRELOADER
 
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TABLE_CLICKED_WITH_ITEM, .proc/apply_to_table)
+
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/examine(mob/user)
 	. = ..()
 	. += "You can put this thing together by:"
@@ -1243,9 +1247,28 @@
 		if(!put_here)
 			to_chat(user, span_alert("There's nowhere around you to put the thing! Try clearing some space."))
 			return
-		var/obj/machinery/autolathe/ammo/improvised/impy = new(put_here)
-		impy.frament()
+		new /obj/machinery/autolathe/ammo/improvised(put_here)
 		qdel(src)
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/proc/apply_to_table(datum/source, obj/structure/table/T, mob/user, params)
+	if(!user || !T)
+		return
+	if(!user.Adjacent(T))
+		return
+	INVOKE_ASYNC(src, .proc/actually_apply_to_table, T, user, params)
+	return TABLE_NO_PLACE
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/proc/actually_apply_to_table(obj/structure/table/T, mob/user, params)
+	if(!user || !T)
+		return
+	if(!do_after(user, 3 SECONDS, TRUE, T, TRUE, allow_movement = TRUE, stay_close = TRUE))
+		to_chat(user, span_alert("You were interrupted!"))
+		return
+	var/obj/machinery/autolathe/ammo/improvised/thebench = new(get_turf(T))
+	thebench.tableize()
+	to_chat(user, span_notice("You set up a reloading bench on [T]!"))
+	qdel(src)
+	return TABLE_NO_PLACE
 
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe Dispenser (Machine Board)"

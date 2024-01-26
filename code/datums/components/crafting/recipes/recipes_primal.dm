@@ -316,7 +316,7 @@
 
 /datum/crafting_recipe/tribalwar/sling
 	name = "Sling"
-	result = /obj/item/gun/ballistic/revolver/sling
+	result = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 	time = 30
 	reqs = list(/obj/item/weaponcrafting/string = 1,
 					/obj/item/stack/sheet/cloth = 1)
@@ -324,7 +324,7 @@
 
 /datum/crafting_recipe/tribalwar/slingstaff
 	name = "Sling Staff"
-	result = /obj/item/gun/ballistic/revolver/sling/staff
+	result = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 	time = 60
 	reqs = list(/obj/item/weaponcrafting/string = 2,
 				/obj/item/stack/sheet/leather = 2,
@@ -432,18 +432,6 @@
 				/obj/item/stack/rods = 2)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
-
-/datum/crafting_recipe/tribalwar/arrowblunt
-	name = "Blunt Arrow (Nonlethal)"
-	result = /obj/item/ammo_casing/caseless/arrow/blunt
-	time = 10
-	reqs = list(
-		/obj/item/stack/sheet/mineral/wood = 1,
-		/obj/item/stack/sheet/cloth = 1
-		)
-	category = CAT_PRIMAL
-	tools = list(TOOL_WORKBENCH)
-	always_available = TRUE
  */
 //MELEE
 

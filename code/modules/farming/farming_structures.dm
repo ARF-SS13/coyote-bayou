@@ -44,7 +44,9 @@
 			if(fruit.wine_flavor)
 				data["tastes"] = list(fruit.wine_flavor = 1)
 			else
-				data["tastes"] = list(fruit.tastes[1] = 1)
+				var/list/flavors = SSlistbank.get_tastes(fruit)
+				var/firstflavor = LAZYACCESS(flavors, 1) || "some kinda fruit"
+				data["tastes"] = list("[firstflavor]" = 1)
 			reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
 		qdel(fruit)
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)

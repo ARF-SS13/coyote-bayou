@@ -1040,7 +1040,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /// PDA SKINS ///
 /datum/component/reskinnable/pda
 	skins = list(
-		"PipBoy 3000",
+		"DataPal",
 		"Medical PDA",
 		"Virology PDA",
 		"Engineering PDA",
@@ -1097,8 +1097,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Handy Neko PDA",
 	)
 /datum/reskin/pda
-	skin = "PipBoy 3000"
-	name = "PipBoy 3000"
+	skin = "Datapal 3000"
+	name = "Datapal 3000"
 	desc = null
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"

@@ -7,3 +7,4 @@
 	glass_icon_state = "heavenskiss"
 	glass_name = "Heaven's Kiss"
 	glass_desc = "A kiss straight from the heavens!"
+

@@ -23,6 +23,17 @@
 	hide_flag = HIDE_PENIS // for hideflag stuff
 	pornhud_slot = PHUD_PENIS
 
+/obj/item/organ/genital/penis/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "penis"
+	out["BitName"] = "A [lowertext(shape)] penis."
+	out["BitSize"] = "It is [length] inches long!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %100 capacity."
+	out["BitEmoji"] = "🍆"
+	return out
+
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
 	if(new_value == length)
@@ -54,14 +65,16 @@
 	switch(rounded_length)
 		if(0 to 6) //If modest size
 			new_size = 1
-		if(7 to 11) //If large
+		if(7 to 12) //If large
 			new_size = 2
-		if(12 to 20) //If massive
+		if(13 to 24) //If massive
 			new_size = 3
-		if(21 to 34) //If massive and due for large effects
-			new_size = 3
-		if(35 to INFINITY) //If comical
-			new_size = 4 //no new sprites for anything larger yet
+		if(25 to 36) //If massive and due for large effects. Tox note here: Inter-stage between massive and enters hyper.
+			new_size = 4
+		if(37 to 48) //If low-tier hyper, enters medium-high tier with only a foot increase
+			new_size = 4
+		if(49 to INFINITY) //If medium-high tier hyper/comical. It becomes a baseball bat!
+			new_size = 5
 	size = new_size
 
 	if(owner)

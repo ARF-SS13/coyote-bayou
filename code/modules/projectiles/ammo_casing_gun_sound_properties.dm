@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(casing_sound_properties)
 
 /datum/ammo_sound_properties/heavy_rifle
 	category = CSP_RIFLE_HEAVY
-	shoot_sound = list('sound/f13weapons/antimaterielfire.ogg')
+	shoot_sound = list('sound/f13weapons/antimaterialfire.ogg')
 	distance_close = RIFLE_HEAVY_RANGE
 	distance_silenced = RIFLE_HEAVY_RANGE
 	distant_sound = RIFLE_HEAVY_DISTANT_SOUND

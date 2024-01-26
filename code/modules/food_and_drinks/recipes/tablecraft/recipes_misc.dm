@@ -279,6 +279,8 @@
 	result = /obj/item/reagent_containers/food/snacks/popcorn/caramel
 	subcategory = CAT_MISCFOOD
 
+/// Legacy Content
+
 /*
 /datum/crafting_recipe/food/melonkeg
 	name ="Melon keg"
@@ -314,6 +316,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/crepe
 	subcategory = CAT_MISCFOOD
+
 /datum/crafting_recipe/food/butterbear //ITS ALIVEEEEEE!
 	name = "Living bear/butter hybrid"
 	reqs = list(

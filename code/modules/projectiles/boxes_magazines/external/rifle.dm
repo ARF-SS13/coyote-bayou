@@ -226,7 +226,48 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/machinegundrummag/empty
+/obj/item/ammo_box/magazine/rifle47mm
+	name = "4.7mm magazine"
+	icon_state = "47mm"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = list(CALIBER_CASELESS)
+	ammo_type = /obj/item/ammo_casing/caseless/g11
+	max_ammo = 35
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/rifle47mm/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/stg
+	name = "Stg-44 magazine chambered in 8mm kurz (.30-06)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "stgmag"
+	caliber = list(CALIBER_3006)
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 30
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/stg/empty
+	start_empty = 1
+
+
+/obj/item/ammo_box/magazine/pzb39magazne
+	name = "Pzb39 Box magazine"
+	icon_state = "pzb39"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = list(CALIBER_50MG)
+	ammo_type = /obj/item/ammo_casing/a50MG
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/pzb39magazine/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m2mm

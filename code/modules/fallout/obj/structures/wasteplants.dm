@@ -37,8 +37,6 @@
 /obj/structure/flora/tree/wasteland/Initialize()
 	. = ..()
 	icon_state = "deadtree_[rand(1,6)]"
-	AddComponent(/datum/component/largetransparency, y_offset = 1)
-
 
 /obj/structure/flora/wasteplant
 	name = "wasteland plant"
@@ -206,7 +204,6 @@ obj/structure/flora/wasteplant/wild_punga
 /obj/structure/flora/tree/joshua/Initialize()
 	. = ..()
 	icon_state = "joshua_[rand(1,4)]"
-	AddComponent(/datum/component/largetransparency, y_offset = 1)
 	if(CHRISTMAS in SSevents.holidays)
 		if(prob(30))
 			icon_state = "joshua_xmas"

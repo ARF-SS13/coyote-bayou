@@ -28,6 +28,9 @@
 	else
 		..()
 
+/obj/structure/closet/crate/secure/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 
 /obj/structure/closet/crate/secure/proc/boom(mob/user)
 	if(user)

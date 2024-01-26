@@ -150,6 +150,21 @@
 	path = /obj/item/clothing/under/f13/bodyguard
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
+/datum/gear/uniform/marauder
+	name = "marauder outfit"
+	path = /obj/item/clothing/under/f13/borderlands/marauder
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/bloodshot
+	name = "bloodshot outfit"
+	path = /obj/item/clothing/under/f13/borderlands/bloodshot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/psycho
+	name = "psycho outfit"
+	path = /obj/item/clothing/under/f13/borderlands/psycho
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
 /datum/gear/uniform/cowboy
 	name = "cowboy outfit, brown"
 	path = /obj/item/clothing/under/f13/cowboyb
@@ -645,11 +660,41 @@
 	path = /obj/item/clothing/under/f13/erpdress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_ESCORT
 
+/datum/gear/uniform/dress/blacktribal
+	name = "black dress"
+	path = /obj/item/clothing/under/dress/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dress/browntribal
+	name = "jute dress"
+	path = /obj/item/clothing/under/dress/brown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
 //Skirts
 
 /datum/gear/uniform/skirt/swept
 	name = "swept skirt"
 	path = /obj/item/clothing/under/dress/skirt/swept
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/flower
+	name = "flower skirt"
+	path = /obj/item/clothing/under/dress/skirt/flower
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/brownstrap
+	name = "jute skirt"
+	path = /obj/item/clothing/under/dress/skirt/brownstrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/gildedblack
+	name = "gilded black skirt"
+	path = /obj/item/clothing/under/dress/skirt/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/gildedbrown
+	name = "gilded jute skirt"
+	path = /obj/item/clothing/under/dress/skirt/brown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
 /datum/gear/uniform/pants
@@ -741,21 +786,30 @@
 	name = "cream sweater"
 	path = /obj/item/clothing/under/sweater
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
 /datum/gear/uniform/sweater/black
 	name = "black sweater"
 	path = /obj/item/clothing/under/sweater/black
+
 /datum/gear/uniform/sweater/blue
 	name = "blue sweater"
 	path = /obj/item/clothing/under/sweater/blue
+
 /datum/gear/uniform/sweater/purple
 	name = "purple sweater"
 	path = /obj/item/clothing/under/sweater/purple
+
 /datum/gear/uniform/sweater/green
 	name = "green sweater"
 	path = /obj/item/clothing/under/sweater/green
+
 /datum/gear/uniform/sweater/red
 	name = "red sweater"
 	path = /obj/item/clothing/under/sweater/red
+
+/datum/gear/uniform/sweater/keyhole
+	name =  "Keyhole Sweater"
+	path = /obj/item/clothing/under/misc/keyholesweater
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"
@@ -3195,18 +3249,6 @@
 	path = /obj/item/clothing/under/dress/coyote/bluedress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/flannel/green
-	name = "Green Flannel"
-	cost = 0
-	path = /obj/item/clothing/under/flannelgreen
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/flannel/red
-	name = "Red Flannel"
-	cost = 0
-	path = /obj/item/clothing/under/flannelred
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/bloodred/pyjama
 	name = "Blood Red Pyjama"
 	cost = 0
@@ -3294,3 +3336,291 @@
 	cost = 0
 	path = /obj/item/clothing/under/dress/coyote/black_skirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//Star trek
+
+/datum/gear/uniform/trek/command
+	name = "command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec
+	name = "operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/next
+	name = "command uniform, alt"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/next
+	name = "operations uniform, alt"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/ent
+	name = "ent command"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/ent
+	name = "ent operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/voy
+	name = "voy command"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/voy
+	name = "voy operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsecds9
+	name = "engineering section unifrom"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/captain
+	name = "orville captain uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/captain
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/engsec
+	name = "orville operations command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/engsec
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv
+	name = "adjutant uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/orv
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/service
+	name = "service uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/orv/service
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil
+	name = "federation utility uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil/trainee
+	name = "federation trainee utility uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil/trainee
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil/service
+	name = "federation service uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil/service
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/Q
+	name = "french marshall's uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/Q
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/kudds
+	name = "Red Flannel"
+	cost = 0
+	path = /obj/item/clothing/under/kuddles/redflannel
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/kudds/blue
+	name = "Blue Flannel"
+	path = /obj/item/clothing/under/kuddles/blueflannel
+
+/datum/gear/uniform/kudds/white
+	name = "White Flannel"
+	path = /obj/item/clothing/under/kuddles/whiteflannel
+
+/datum/gear/uniform/kudds/teal
+	name = "Teal Flannel"
+	path = /obj/item/clothing/under/kuddles/tealflannel
+
+/datum/gear/uniform/kudds/blue
+	name = "Pink Flannel"
+	path = /obj/item/clothing/under/kuddles/pinkflannel
+
+/datum/gear/uniform/kudds/purple
+	name = "Purple Flannel"
+	path = /obj/item/clothing/under/kuddles/purpleflannel
+
+/datum/gear/uniform/kudds/yellow
+	name = "Yellow Flannel"
+	path = /obj/item/clothing/under/kuddles/yellowflannel
+
+/datum/gear/uniform/kudds/orange
+	name = "Orange Flannel"
+	path = /obj/item/clothing/under/kuddles/orangeflannel
+
+/datum/gear/uniform/kudds/green
+	name = "Green Flannel"
+	path = /obj/item/clothing/under/kuddles/greenflannel
+
+/datum/gear/uniform/kudds/rattygreenskirt
+	name = "Ratty Green Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtgreen
+
+/datum/gear/uniform/kudds/rattyyellowskirt
+	name = "Ratty Yellow Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtyellow
+
+/datum/gear/uniform/kudds/rattypinkskirt
+	name = "Ratty Pink Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtpink
+
+/datum/gear/uniform/kudds/rattycyberpunkskirt
+	name = "Ratty Cyberpunk Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtcyberpunk
+
+/datum/gear/uniform/kudds/brownpunkpants
+	name = "Brown Punk Pants"
+	path = /obj/item/clothing/under/kuddles/brownpunkpants
+
+/datum/gear/uniform/kudds/brownpunkpants
+	name = "Brown Punk Pants"
+	path = /obj/item/clothing/under/kuddles/olivecargopunk
+
+/datum/gear/uniform/wasteland/loincloth/sunskirt
+	name = "Green Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/sunskirtgrey
+	name = "Grey scaled Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt_grey
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/halfskirt
+	name = "blue mid-rif skirt"
+	path = /obj/item/clothing/under/half_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+//Medical/Sci
+
+/datum/gear/uniform/trek/medsci
+	name = "medsci uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/ds9
+	name = "medical section unifrom"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/next
+	name = "Med science uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/ent
+	name = "ent medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/voy
+	name = "voy medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/orv/medsci
+	name = "orville medsci command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/nurse
+	name = "Nurse's Suit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/nurse
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/skirt
+	name = "Medical Doctor's Jumpskirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/jumpsuit
+	name = "Medical Doctor's Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic
+	name = "Paramedic Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/red
+	name = "Red Paramedic Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/light
+	name = "Paramedic Jumpsuit Light"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/light
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/jumpskirt
+	name = "Paramedic Jumpskirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/jumpskirt/light
+	name = "Paramedic Jumpskirt light"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/skirt/light
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/costume/maid
+	name = "Maid Costume"
+	cost = 0
+	path = /obj/item/clothing/under/costume/maid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/costume/janimaid
+	name = "Maid Uniform"
+	cost = 0
+	path = /obj/item/clothing/under/janimaid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/doctor/util
+	name = "Medical Utility Uniform"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/util
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL

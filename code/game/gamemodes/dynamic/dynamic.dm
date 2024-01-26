@@ -74,25 +74,25 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/latejoin_injection_cooldown = 0
 
 	/// The minimum time the recurring latejoin ruleset timer is allowed to be.
-	var/latejoin_delay_min = (5 MINUTES)
+	var/latejoin_delay_min = (350 MINUTES)
 
 	/// The maximum time the recurring latejoin ruleset timer is allowed to be.
-	var/latejoin_delay_max = (25 MINUTES)
+	var/latejoin_delay_max = (351 MINUTES)
 
 	/// When world.time is over this number the mode tries to inject a midround ruleset.
 	var/midround_injection_cooldown = 0
 
 	/// The minimum time the recurring midround ruleset timer is allowed to be.
-	var/midround_delay_min = (15 MINUTES)
+	var/midround_delay_min = (351 MINUTES)
 
 	/// The maximum time the recurring midround ruleset timer is allowed to be.
-	var/midround_delay_max = (35 MINUTES)
+	var/midround_delay_max = (352 MINUTES)
 
 	/// If above this threat, increase the chance of injection
-	var/higher_injection_chance_minimum_threat = 70
+	var/higher_injection_chance_minimum_threat = 420634 //kek
 
 	/// The chance of injection increase when above higher_injection_chance_minimum_threat
-	var/higher_injection_chance = 15
+	var/higher_injection_chance = 0
 
 	/// If below this threat, decrease the chance of injection
 	var/lower_injection_chance_minimum_threat = 10
@@ -123,10 +123,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/roundstart_split_curve_width = 1.8
 
 	/// The minimum amount of time for antag random events to be hijacked.
-	var/random_event_hijack_minimum = 10 MINUTES
+	var/random_event_hijack_minimum = 7 HOURS
 
 	/// The maximum amount of time for antag random events to be hijacked.
-	var/random_event_hijack_maximum = 18 MINUTES
+	var/random_event_hijack_maximum = 7 HOURS
 
 	/// A list of recorded "snapshots" of the round, stored in the dynamic.json log
 	var/list/datum/dynamic_snapshot/snapshots
@@ -332,13 +332,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	log_game("DYNAMIC: Dynamic mode parameters for the round:")
 	log_game("DYNAMIC: Centre is [threat_curve_centre], Width is [threat_curve_width], Forced extended is [GLOB.dynamic_forced_extended ? "Enabled" : "Disabled"], No stacking is [GLOB.dynamic_no_stacking ? "Enabled" : "Disabled"].")
 	log_game("DYNAMIC: Stacking limit is [GLOB.dynamic_stacking_limit].")
-	if(GLOB.dynamic_forced_threat_level >= 0)
-		threat_level = round(GLOB.dynamic_forced_threat_level, 0.1)
-	else
-		generate_threat()
-	generate_budgets()
-	set_cooldowns()
-	log_game("DYNAMIC: Dynamic Mode initialized with a Threat Level of... [threat_level]! ([round_start_budget] round start budget)")
+	threat_level = round(0) //haha peepee poopoo ~TK
 	return TRUE
 
 

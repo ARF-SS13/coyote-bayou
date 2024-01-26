@@ -101,6 +101,62 @@
 	user.transfer_ckey(src, FALSE)
 	return TRUE
 
+// SOJOURN SPIDERS
+
+//Emperor - Fast, deadly, and uses clotting medicine as venom
+/mob/living/simple_animal/hostile/poison/giant_spider/emperor
+	name = "emperor spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is huge with long legs with hard chitin plates and glowing nightmarish eyes filled with malign hatred."
+	icon = 'modular_sojourn/icons/mob/spiders/emperor.dmi'
+	icon_state = "spider_emperor"
+	icon_living = "spider_emperor"
+	icon_dead = "spider_emperor-dead"
+	maxHealth = 450
+	health = 450
+	vision_range = 9
+	move_to_delay = 1
+	turns_per_move = 7
+	poison_type = /datum/reagent/medicine/coagulant
+	poison_per_bite = 7
+	melee_damage_lower = 30 //might need tweaking, should be fine for now.
+	melee_damage_upper = 60
+
+//Empress - Large, Durable, and horrifying. Fight in a group!
+/mob/living/simple_animal/hostile/poison/giant_spider/empress
+	name = "reaper spider"
+	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
+	icon = 'modular_sojourn/icons/mob/spiders/empress.dmi'
+	icon_state = "terror_empress"
+	icon_living = "terror_empress"
+	icon_dead = "terror_empress-dead"
+	maxHealth = 750
+	health = 750
+	move_to_delay = 2
+	turns_per_move = 2
+	poison_type = /datum/reagent/medicine/stimulants
+	poison_per_bite = 15
+	melee_damage_lower = 50
+	melee_damage_upper = 80
+
+//Queen - The spooky broodmother. Fear them!
+/mob/living/simple_animal/hostile/poison/giant_spider/queen
+	name = "queen spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
+	icon = 'modular_sojourn/icons/mob/spiders/queen.dmi'
+	icon_state = "spider_queen"
+	icon_living = "spider_queen"
+	icon_dead = "spider_queen-dead"
+	maxHealth = 550
+	health = 550
+	move_to_delay = 4
+	turns_per_move = 7
+	poison_type = /datum/reagent/medicine/epinephrine
+	poison_per_bite = 7
+	melee_damage_lower = 40 //meant to be slightly stronger than emperor due to the beefier size.
+	melee_damage_upper = 70
+
+// END OF SOJOURN SPIDERS
+
 //nursemaids - these create webs and eggs
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."

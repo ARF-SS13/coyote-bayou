@@ -62,6 +62,9 @@
 	if(stat == DEAD)
 		return FALSE
 
+	//Tongue wetness code or something
+	handle_healreservoir()
+
 	//Mutations and radiation
 	handle_mutations_and_radiation()
 
@@ -222,3 +225,21 @@
 	if(gravity >= GRAVITY_DAMAGE_TRESHOLD) //Aka gravity values of 3 or more
 		var/grav_stregth = gravity - GRAVITY_DAMAGE_TRESHOLD
 		adjustBruteLoss(min(grav_stregth,3))
+
+////////////////////////////////
+//RESERVOIR FOR HEALING QUIRKS//
+////////////////////////////////
+
+/mob/living/proc/handle_healreservoir()
+	var/heal_max = 5
+	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
+		heal_max = 25
+	if(heal_reservoir < heal_max)
+		if(iscarbon(src)) //Humans and stuff with stinky reagents
+			if(src.reagents.has_reagent(/datum/reagent/water))
+				heal_reservoir += 0.5
+			else
+				heal_reservoir += 0.25
+		else //Everything else
+			heal_reservoir += (rand(10,50)/100)//0.1 to 0.5
+			heal_reservoir = min(heal_reservoir,heal_max)

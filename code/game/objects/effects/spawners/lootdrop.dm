@@ -20,6 +20,8 @@
 	var/tier_adjusted = FALSE
 	/// Will we be subject to The Loot Snap? If so, what category of snap?
 	var/snap_category
+	/// Should we spread our loot to adjacent tiles? Set to 0 or null to disable.
+	var/fan_out_turfs_range
 
 /obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap, survived_snap)
 	. = ..()
@@ -68,11 +70,21 @@
 		if(!lootdoubles)
 			loot.Remove(lootspawn)
 		if(lootspawn)
-			var/atom/movable/spawned_loot = SpawnTheLootDrop(A, lootspawn)
+			var/atom/movable/spawned_loot
+			if(fan_out_turfs_range > 0 && isturf(A))
+				var/turf/AT = find_obstruction_free_location(fan_out_turfs_range, A)
+				if(isturf(AT))
+					spawned_loot = SpawnTheLootDrop(AT, lootspawn)
+				else
+					spawned_loot = SpawnTheLootDrop(A, lootspawn)
+			else
+				spawned_loot = SpawnTheLootDrop(A, lootspawn)
 			if(islist(listhack))
 				listhack |= spawned_loot
-			if(fan_out_items)
-				spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(tospawn%2)*tospawn/2)*-1)+((tospawn%2)*(tospawn+1)/2*1)
+			if(fan_out_items && isobj(spawned_loot))
+				var/obj/L = spawned_loot
+				L.pixel_x = rand(-12,12)
+				L.pixel_y = rand(-12,12)
 			else
 				if(pixel_x != 0)
 					spawned_loot.pixel_x = pixel_x

@@ -111,14 +111,15 @@
 	-- Works in Emote, Subtle, Say, Whisper and Radio chat. \n\
 	\n\
 	- %text lets you siiiing. \n\
-	-- Only works in non-radio Say. \n\
 	\n\
-	- @ moves your name to that position. \n\
-	-- Only works in Emotes and Subtles. \n\
-	-- Example: Takes a deep breath, @(this becomes your characters name) sure is tired. \n\
+	- @ moves your name to that position in emotes and subtles. \n\
 	\n\
 	- ! at the start of a radio comm to emote over the radio \n\
-	--example: say ;! sneezes! \n\
+
+	\n\
+	We have added the following emoticons to say, add them to the end of your 'say' messages for say verb variation \n\
+	:), :(, :D, ;D, :P, :O, :|, :/, :S, :*, :3, :>, :<, :C, :L, <3, :X, :#, :$,  \n\
+	:@, :^), :&, :!, :?, B^U, :B, :J, >:(, >:D, >:P, >:3, >:O, >:|, >:/, >:S,  \n\
 	"
 //Dan is the best, <3 ~TK
 //put space before the \ so it reads properly

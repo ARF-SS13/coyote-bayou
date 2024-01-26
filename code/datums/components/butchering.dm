@@ -106,9 +106,14 @@
 			butchered_items += new sinew (T)
 		meat.guaranteed_butcher_results.Remove(sinew)
 	for(var/butchered_item in butchered_items)
-		if(isfood(butchered_item))
-			var/obj/item/reagent_containers/food/butchered_meat = butchered_item
-			butchered_meat.food_quality = meat_quality
+		if(isobj(butchered_item))
+			var/obj/O = butchered_item
+			if(isfood(O))
+				var/obj/item/reagent_containers/food/butchered_meat = butchered_item
+				butchered_meat.food_quality = meat_quality
+			if(!O.anchored)
+				O.pixel_x = rand(-14,14)
+				O.pixel_y = rand(-14,14)
 	if(butcher)
 		meat.visible_message(span_notice("[butcher] butchers [meat]."))
 	ButcherEffects(meat)

@@ -38,7 +38,7 @@
 /obj/item/rockitlauncher_pack/process()
 	overheat = max(0, overheat - heat_diffusion)
 
-/obj/item/rockitlauncher_pack/on_attack_hand(mob/living/carbon/user) //Grabbing the "gun"
+/obj/item/rockitlauncher_pack/on_attack_hand(mob/living/user) //Grabbing the "gun"
 	if(src.loc == user)
 		if(!armed)
 			if(user.get_item_by_slot(SLOT_BACK) == src)
@@ -49,6 +49,8 @@
 					return
 				update_icon()
 				user.update_inv_back()
+			else
+				..()
 		else
 			to_chat(user, span_warning("You are already holding the nozzle!"))
 	else
@@ -63,8 +65,8 @@
 	. = ..()
 	if(armed)
 		return
-	if(iscarbon(usr))
-		var/mob/M = usr
+	if(isliving(usr))
+		var/mob/living/M = usr
 
 		if(!over_object)
 			return
@@ -282,8 +284,8 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	var/turf/T = get_target(target, get_turf(src))
 	playsound(src, 'sound/f13weapons/rockitlauncher_fire.ogg', 50, 1)
 	fire_items(T, user)
-	if(ammo_pack.pressureSetting >= 3 && iscarbon(user))
-		var/mob/living/carbon/C = user
+	if(ammo_pack.pressureSetting >= 3 && isliving(user))
+		var/mob/living/C = user
 		C.visible_message(span_warning("[C] is thrown down by the force of the cannon!"), "<span class='userdanger'>[src] slams into your shoulder, knocking you down!")
 		C.DefaultCombatKnockdown(60)
 

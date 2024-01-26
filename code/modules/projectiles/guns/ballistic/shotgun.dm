@@ -406,13 +406,13 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/shotgun/s163
 	name = "S163 Minotaur shotgun"
-	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 6+1 magazine tube capacity alongside a built in small ammo counter"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 3+1 magazine tube capacity alongside a built in small ammo counter"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/mino
 	icon_state = "s163"
 	item_state = "s163"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	can_scope = FALSE
@@ -673,6 +673,23 @@
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
+
+/obj/item/gun/ballistic/shotgun/needles
+	name = "Pz87 pump-action shotgun"
+	desc = "A Pz87 shotgun. Manufactured by Latos Systems in collaboration with the Swiss navy and Remington, this shotgun has a internal 6+1 internal tube capacity. Unlike traditional ballistics, it fires micro-needles. A prototype shotgun that never saw the light of combat and battle."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "needlesg"
+	item_state = "needlesg"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/needler
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	fire_sound = 'sound/f13weapons/needler.ogg'
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
 /* * * * * * * * * * *

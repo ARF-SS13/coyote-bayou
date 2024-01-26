@@ -331,6 +331,7 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
+	/obj/item/tool_upgrade/augment/randomizer = 1,
 //	/obj/item/tool_upgrade/productivity/red_paint = 2
 ))
 
@@ -655,7 +656,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/brush,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/rifle/mag/antimateriel,
+	/obj/item/gun/ballistic/rifle/mag/antimaterial,
 	/obj/item/ammo_box/magazine/amr,
 	/obj/item/gun/ballistic/revolver/m2405,
 	/obj/item/ammo_box/rev308,
@@ -961,6 +962,7 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
+	/obj/item/tool_upgrade/augment/randomizer = 1,
 //	/obj/item/tool_upgrade/productivity/red_paint = 1
 ))
 

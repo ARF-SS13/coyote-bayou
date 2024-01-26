@@ -134,7 +134,7 @@
 				emergency_stop(AM)
 				return
 		else if(isliving(AM))
-			if((obj_flags & EMAGGED)||((!allowed(AM))&&(!ishuman(AM))))
+			if((obj_flags & EMAGGED)||((!allowed(AM))&&(!isliving(AM))))
 				to_eat += crush_living(AM)
 			else
 				emergency_stop(AM)

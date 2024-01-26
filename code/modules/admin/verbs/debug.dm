@@ -875,3 +875,332 @@
 		return
 	if(alert(usr, "Are you absolutely sure you want to reload the configuration from the default path on the disk, wiping any in-round modificatoins?", "Really reset?", "No", "Yes") == "Yes")
 		config.admin_reload()
+
+GLOBAL_LIST_EMPTY(gun_balance_list)
+
+/// Numbers only! The sorting algorithm won't accept text inputs.
+#define GUN_BALANCE_SORTING_TPYES list("dps", "dps_with_bane", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm", "bonus_bane_dam", "loot_chance_%")
+
+GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_guns,
+										/obj/effect/spawner/lootdrop/f13/common_guns,
+										/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+										/obj/effect/spawner/lootdrop/f13/rare_guns,
+										/obj/effect/spawner/lootdrop/f13/common_cowboy,
+										/obj/effect/spawner/lootdrop/f13/uncommon_cowboy,
+										/obj/effect/spawner/lootdrop/f13/rare_cowboy,
+										/obj/effect/spawner/lootdrop/f13/common_energy,
+										/obj/effect/spawner/lootdrop/f13/uncommon_energy,
+										/obj/effect/spawner/lootdrop/f13/rare_energy
+										))
+
+/client/proc/print_gun_debug_information()
+	set category = "Debug"
+	set name = "Gun Debug Info"
+	set desc = "(LAG & MEMORY WARNING) Makes an enormous list of every gun and its stats. Only intended to be used on a local server."
+	
+	if(!check_rights(R_DEBUG))
+		return
+
+	var/safety = alert(usr, "Are you absolutely sure you want to make a giant, laggy, memory-hogging list of every gun's stats? DON'T USE THIS IN A LIVE ROUND. Will create some runtime errors.", "Really do it?", "No", "Yes")
+	if(safety == "No")
+		return
+
+	var/whatdo = "Use Existing List"
+	if(LAZYLEN(GLOB.gun_balance_list))
+		whatdo = input(usr, "A gun balance list already exists, what do???", "Do what to the existing gun list", "Use Existing List") as null|anything in list("Clear it & Cancel", "Use Existing List", "Clear it & Continue")
+		if(whatdo == "Clear it & Cancel")
+			LAZYCLEARLIST(GLOB.gun_balance_list)
+			return
+		if(whatdo == "Clear it & Continue")
+			LAZYCLEARLIST(GLOB.gun_balance_list)
+
+	var/static/prev_loot
+	var/loot_table = input(usr, "Use a specific loot table?", "Loot Table", "All Guns") as null|anything in GLOB.gun_loot_tables+list("All Guns")
+	if(isnull(loot_table))
+		return
+	if(loot_table != prev_loot)
+		LAZYCLEARLIST(GLOB.gun_balance_list)
+
+	var/sorttype = input(usr, "How would you like to sort the list?", "Sorting Type", "dps") as null|anything in GUN_BALANCE_SORTING_TPYES
+	if(isnull(sorttype))
+		return
+
+	log_and_message_admins("[ADMIN_PP(usr)] is generating a huge gun balance list. If this is a live round, kill them and then run Gun-Debug-Info and select \"Clear it & Cancel\" after the safety check.")
+	
+	var/list/all_guns = list()
+	var/list/loot_chances = list()
+	if(loot_table == "All Guns")
+		var/static/list/ballistic_types = list()
+		if(!LAZYLEN(ballistic_types))
+			ballistic_types = subtypesof(/obj/item/gun/ballistic)
+		to_chat(usr, "Found [LAZYLEN(ballistic_types)] ballistic weapons...")
+		var/static/list/energy_types = list()
+		if(!LAZYLEN(energy_types))
+			energy_types = subtypesof(/obj/item/gun/energy)
+		to_chat(usr, "Found [LAZYLEN(energy_types)] energy weapons...")
+		all_guns = ballistic_types + energy_types
+
+	else if(ispath(loot_table, /obj/effect/spawner/lootdrop))
+		var/obj/effect/spawner/lootdrop/ld = new loot_table()
+		var/list/looties = ld.loot
+		if(!LAZYLEN(looties))
+			to_chat("ERROR: [ld]'s loot list was empty!")
+			return
+		var/tot_weight = 0
+		for(var/g in looties)
+			tot_weight += looties[g]
+			all_guns |= g
+		if(tot_weight < 1)
+			to_chat("ERROR: [ld] was skipped because it has no weights!")
+			return
+		for(var/g in looties)
+			loot_chances[g] = (looties[g]/tot_weight)*100//% chance for this specific loot drop
+
+	to_chat(usr, "Processing [LAZYLEN(all_guns)] total weapons...")
+	if(!LAZYLEN(GLOB.gun_balance_list))
+		for(var/gunthing in all_guns)
+			gunthing = new gunthing()//We need to instantiate these guns because many of their stats don't exist until they've Init'd
+			if(istype(gunthing, /obj/item/gun/ballistic))
+				var/obj/item/gun/ballistic/G = gunthing
+				///mean (average) damage
+				var/avg_dam
+				var/min_dam
+				var/max_dam
+				///Most common (mode) damage
+				var/mode_dam
+				var/dam_mult = G.damage_multiplier
+				var/g_dps
+				//Derived from init_mag_type on gun
+				var/obj/item/ammo_box/magazine/mag
+				var/mag_cap
+				var/dam_per_mag
+				var/burst_length_seconds
+				//Derived from magazine
+				var/obj/item/ammo_casing/g_casing
+				//Derived from the casing
+				var/obj/item/projectile/g_bullet
+				//The highest rpm on the weapon divided by 60
+				var/g_rps
+				var/g_draw_time = G.draw_time
+				if(G.init_mag_type)
+					mag = new G.init_mag_type()
+				if(!mag && G.mag_type)
+					mag = new G.mag_type()
+				if(mag)
+					g_casing = new mag.ammo_type()
+					mag_cap = mag.max_ammo
+					g_bullet = new g_casing.projectile_type()
+				if(!g_casing || !g_bullet)
+					to_chat(usr, span_warning("ERROR: [G] ([G.type]) either has no casing, bullet, or magazine defined!"))
+					continue
+				if(isnull(dam_mult))
+					dam_mult = 1
+				//Firing speed
+				var/list/fire_modes = G.firemodes
+				if(!LAZYLEN(fire_modes))
+					G.initialize_firemodes()
+					fire_modes = G.firemodes
+					if(!LAZYLEN(fire_modes))
+						to_chat(usr, span_warning("ERROR: [G] ([G.type]) is missing fire modes and has been skipped."))
+						continue
+				for(var/f in fire_modes)
+					var/datum/firemode/fm = f
+					var/fm_rps = min((fm.get_fire_delay(TRUE)*fm.burst_count)/60, fm.get_fire_delay(TRUE)/60)// rounds per minute / 60 = rounds per second
+					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+						g_rps = fm_rps
+				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
+					var/datum/firemode/fm = fire_modes[1]
+					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+						g_rps = fm_rps
+				//Bullet damage calculations
+				var/list/dam_list = g_bullet.damage_list
+				if(LAZYLEN(dam_list))
+					var/tot_dam = 0 //sum of damage
+					var/tot_weight = 0 //sum of the weights
+					var/chonk = 0 //sum of dam*weight
+					var/mode_w = 0
+					for(var/d in dam_list)
+						var/bdam = (text2num(d)*dam_mult)*g_casing.pellets
+						var/bweight = dam_list[d]
+						tot_dam += bdam
+						tot_weight += bweight
+						chonk += (bdam*bweight)
+						if(bdam > max_dam || isnull(max_dam))
+							max_dam = bdam
+						if(bdam < min_dam || isnull(min_dam))
+							min_dam = bdam
+						if(bweight > mode_w)
+							mode_dam = bdam
+							mode_w = bweight
+					if(tot_dam && chonk)
+						avg_dam = chonk / tot_weight //dividing the weighted sum by the total sum of the weights
+				else
+					var/dd = (initial(g_bullet.damage)*dam_mult)*g_casing.pellets
+					avg_dam = dd
+					min_dam = dd
+					max_dam = dd
+					mode_dam = dd
+				if(!isnull(g_rps) && !isnull(avg_dam))
+					g_dps = avg_dam*g_rps
+				if(avg_dam && mag_cap)
+					dam_per_mag = avg_dam * mag_cap
+				if(mag_cap && g_rps)
+					burst_length_seconds = mag_cap / g_rps
+				GLOB.gun_balance_list[G.type] = list(
+													"name" = G.name,
+													"dps" = g_dps,
+													"dps_with_bane" = (avg_dam+(g_bullet.supereffective_damage*dam_mult)*g_casing.pellets)*g_rps,
+													"rps" = g_rps,
+													"rpm" = g_rps*60,
+													"avg_dam" = avg_dam,
+													"mode_dam" = mode_dam,
+													"bullet" = g_bullet.name,
+													"draw_time_sec" = g_draw_time/10,
+													"mag_capacity" = mag_cap,
+													"burst_length_sec" = burst_length_seconds,
+													"dam_per_mag" = dam_per_mag,
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets,
+													"loot_chance_%" = LAZYLEN(loot_chances) ? loot_chances?[G.type] : 0
+													)
+			//End ballistic code
+
+			////////////////////
+
+			//Start energy code
+			//if(istype(gunthing, /obj/item/gun/energy))
+			else if(istype(gunthing, /obj/item/gun/energy))
+				var/obj/item/gun/energy/G = gunthing
+				var/avg_dam
+				var/min_dam
+				var/max_dam
+				var/mode_dam
+				var/dam_mult = G.damage_multiplier
+				var/g_dps
+				//Derived from init_mag_type on gun
+				var/obj/item/stock_parts/cell/cell = G.cell
+				if(isnull(cell))
+					cell = new G.cell_type()
+				var/cell_max_charge = cell.maxcharge
+				var/charge_per_shot
+				var/g_shot_charge_mult = 1
+				var/shots_per_cell
+				var/dam_per_cell
+				var/burst_length_seconds
+				//Derived from magazine
+				var/obj/item/ammo_casing/g_casing
+				//Derived from the casing
+				var/obj/item/projectile/g_bullet
+				//The highest rpm on the weapon divided by 60
+				var/g_rps
+				var/g_draw_time = G.draw_time
+				if(!LAZYLEN(G.ammo_type))
+					to_chat(usr, span_warning("ERROR: [G] ([G.type]) has no ammo types and has been skipped."))
+					continue
+
+				//Energy Projectile Damage
+				var/mycasing = G.ammo_type[1]//This is probably the right one :)
+				if(!isobj(mycasing))
+					g_casing = new mycasing(G)
+				else
+					g_casing = mycasing
+				g_bullet = new g_casing.projectile_type(G)
+
+				//RPM & RPS
+				var/list/fire_modes = G.firemodes
+				if(!LAZYLEN(fire_modes))
+					G.initialize_firemodes()
+					fire_modes = G.firemodes
+					if(!LAZYLEN(fire_modes))
+						to_chat(usr, span_warning("ERROR: [G] is missing fire modes and has been skipped."))
+						continue
+				for(var/f in fire_modes)
+					var/datum/firemode/fm = f
+					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
+				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
+					var/datum/firemode/fm = fire_modes[1]
+					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
+				charge_per_shot = g_casing.e_cost*(g_shot_charge_mult)
+
+				//Start avg, mode, min, & max calcs
+				if(g_bullet && g_rps)
+					var/list/dam_list = initial(g_bullet.damage_list)
+					if(LAZYLEN(dam_list))
+						var/tot_dam = 0 //sum of damage
+						var/tot_weight = 0 //sum of the weights
+						var/chonk = 0 //sum of dam*weight
+						var/mode_w = 0
+						for(var/d in dam_list)
+							var/bdam = (text2num(d)*dam_mult)*g_casing.pellets
+							var/bweight = dam_list[d]
+							tot_dam += bdam
+							tot_weight += bweight
+							chonk += (bdam*bweight)
+							if(bdam > max_dam || isnull(max_dam))
+								max_dam = bdam
+							if(bdam < min_dam || isnull(min_dam))
+								min_dam = bdam
+							if(bweight > mode_w)
+								mode_dam = bdam
+								mode_w = bweight
+						if(tot_dam && chonk)
+							avg_dam = chonk / tot_weight //dividing the weighted sum by the total sum of the weights
+					else
+						var/dd = (initial(g_bullet.damage)*dam_mult)*g_casing.pellets
+						avg_dam = dd
+						min_dam = dd
+						max_dam = dd
+						mode_dam = dd
+				else
+					to_chat(usr,"ERROR: [G] ([G.type]) either has no bullet, or rps!")
+					continue
+				// Wrapping up
+				if(charge_per_shot > 0)
+					shots_per_cell = cell_max_charge / charge_per_shot
+				else
+					shots_per_cell = 1
+				dam_per_cell = shots_per_cell * avg_dam
+				burst_length_seconds = shots_per_cell / g_rps
+				g_dps = avg_dam * g_rps
+
+				//You made the cut, buddy.
+				GLOB.gun_balance_list[G.type] = list(
+													"name" = G.name,
+													"dps" = g_dps,
+													"dps_with_bane" = (avg_dam+(g_bullet.supereffective_damage*dam_mult)*g_casing.pellets)*g_rps,
+													"rps" = g_rps,
+													"rpm" = g_rps*60,
+													"avg_dam" = avg_dam,
+													"mode_dam" = mode_dam,
+													"bullet" = initial(g_bullet.name),
+													"draw_time_sec" = g_draw_time/10,
+													"mag_capacity" = shots_per_cell,
+													"burst_length_sec" = burst_length_seconds,
+													"dam_per_mag" = dam_per_cell,
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets,
+													"loot_chance_%" = LAZYLEN(loot_chances) ? loot_chances?[G.type] : 0
+													)
+				//End energy weapons
+			else
+				to_chat(usr, span_warning("ERROR: [gunthing] is not a supported weapon type and has been skipped."))
+				continue
+
+	if(LAZYLEN(GLOB.gun_balance_list))
+		to_chat(usr, "Sorting list by [sorttype]...")
+		var/list/sortinglist = list()
+		for(var/gg in GLOB.gun_balance_list)
+			sortinglist[gg] = GLOB.gun_balance_list[gg][sorttype]//Associate the sorting value to the key
+		sortTim(sortinglist, /proc/cmp_numeric_dsc, associative = TRUE)//Sort the DPS associations
+		for(var/gs in sortinglist)//Re-add the other variables
+			sortinglist[gs] = GLOB.gun_balance_list[gs]
+		GLOB.gun_balance_list = LAZYCOPY(sortinglist)//Copy the temporary sorted list into the global list
+	to_chat(usr, "[LAZYLEN(GLOB.gun_balance_list)] weapons sacrificed to the guns balance list!")
+	to_chat(usr, span_notice("Output saved to global list \"gun_balance_list\". To access, press \"Edit\" next to \"Globals\" in your MC tab \
+							and use the search bar. It will also open automatically in 1 second for your convenience, so if it never opens then something broke!"))
+	spawn(10) debug_variables(GLOB.gun_balance_list)
