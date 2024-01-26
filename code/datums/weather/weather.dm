@@ -162,9 +162,8 @@
  */
 /datum/weather/proc/start()
 	if(stage >= MAIN_STAGE)
-		return
-	stage = MAIN_STAGE
-	update_areas()
+		stage = MAIN_STAGE
+		update_areas()
 		alert_players(pick(weather_message_list), weather_sound)	
 	else
 		alert_players(weather_message, weather_sound)
