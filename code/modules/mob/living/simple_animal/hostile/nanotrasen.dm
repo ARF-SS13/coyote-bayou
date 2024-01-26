@@ -43,7 +43,7 @@
 	icon_living = "nanotrasenranged"
 	ranged = 1
 	retreat_distance = 3
-	minimum_distance = 5
+	approach_distance = 5
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911,

@@ -54,7 +54,7 @@
 	healable = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
-	minimum_distance = 2
+	approach_distance = 2
 	auto_fire_burst_count = 3
 	ranged_cooldown_time = 2 SECONDS
 	sight_shoot_delay_time = 0.2 SECONDS
@@ -99,7 +99,7 @@
 	check_friendly_fire = 1
 	obj_damage = 200
 	retreat_distance = 4
-	minimum_distance = 1
+	approach_distance = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
@@ -145,7 +145,7 @@
 	speed = 1.1
 	check_friendly_fire = 1
 	retreat_distance = 7
-	minimum_distance = 3
+	approach_distance = 3
 	auto_fire_burst_count = 3
 	sight_shoot_delay_time = 0.2 SECONDS
 	ranged_cooldown_time = 2 SECONDS
@@ -230,7 +230,7 @@
 	aggro_vision_range = 15
 	check_friendly_fire = 1
 	retreat_distance = 10
-	minimum_distance = 6
+	approach_distance = 6
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/a308/improvised
@@ -275,7 +275,7 @@
 	healable = 1
 	speed = 1
 	check_friendly_fire = 1
-	minimum_distance = 2
+	approach_distance = 2
 	ranged_cooldown_time = 3
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/auto5.ogg'
@@ -321,7 +321,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 	retreat_distance = 3
-	minimum_distance = 1
+	approach_distance = 1
 	ranged = 1
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
@@ -376,7 +376,7 @@
 	melee_damage_lower = 55
 	melee_damage_upper = 60
 	retreat_distance = 4
-	minimum_distance = 2
+	approach_distance = 2
 	ranged = 1
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
@@ -431,7 +431,7 @@
 	healable = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
-	minimum_distance = 8
+	approach_distance = 8
 	sight_shoot_delay_time = 0.2 SECONDS
 	ranged_cooldown_time = 1 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL

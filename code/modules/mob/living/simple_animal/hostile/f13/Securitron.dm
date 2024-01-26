@@ -39,7 +39,7 @@
 	retreat_distance = 2
 	//how far they pull back
 
-	minimum_distance = 5
+	approach_distance = 5
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7
@@ -135,7 +135,7 @@
 	auto_fire_burst_count = 5 //5 projectiles
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 5
-	minimum_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
+	approach_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
 	attack_verb_simple = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
@@ -259,7 +259,7 @@
 	health = 160
 	color = "#B85C00"
 	retreat_distance = null
-	minimum_distance = 1
+	approach_distance = 1
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
 	addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)

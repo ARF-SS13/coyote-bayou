@@ -162,7 +162,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	icon_state = "syndicate_pistol"
 	icon_living = "syndicate_pistol"
 	casingtype = /obj/item/ammo_casing/c10mm
@@ -229,7 +229,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun
 	auto_fire_burst_count = 2
 	auto_fire_delay = 6
-	minimum_distance = 3
+	approach_distance = 3
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
@@ -257,7 +257,7 @@
 ///////////////Misc////////////
 
 /mob/living/simple_animal/hostile/syndicate/civilian
-	minimum_distance = 10
+	approach_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE

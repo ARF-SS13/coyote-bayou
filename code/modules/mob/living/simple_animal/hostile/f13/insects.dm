@@ -22,7 +22,7 @@
 	retreat_distance = 0
 	//how far they pull back
 
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 4 //due to ants poor eyesight
@@ -160,7 +160,7 @@
 	auto_fire_burst_count = 3
 	speak_emote = list("skitters")
 	retreat_distance = 5
-	minimum_distance = 7
+	approach_distance = 7
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -221,7 +221,7 @@
 	retreat_distance = 0
 	//how far they pull back
 
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 4 //due to scorpions poor eyesight
@@ -325,7 +325,7 @@
 	retreat_distance = 3
 	//how far they pull back
 
-	minimum_distance = 1
+	approach_distance = 1
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7 //due to scorpions poor eyesight

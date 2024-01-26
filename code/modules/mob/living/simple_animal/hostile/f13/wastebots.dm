@@ -122,7 +122,7 @@
 	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 4
-	minimum_distance = 4
+	approach_distance = 4
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
@@ -209,7 +209,7 @@
 	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
-	minimum_distance = 2
+	approach_distance = 2
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
@@ -261,7 +261,7 @@
 	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
-	minimum_distance = 2
+	approach_distance = 2
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
@@ -285,9 +285,6 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A brainy robot with lasers."
-
-/mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
-	. = ..()
 
 /mob/living/simple_animal/hostile/handy/robobrain/nsb //NSB + Raider Bunker specific
 	name = "robobrain"
@@ -321,7 +318,7 @@
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
 
-	minimum_distance = 1
+	approach_distance = 1
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7
@@ -547,7 +544,7 @@
 	color = "#B85C00"
 	ranged = TRUE
 	retreat_distance = null
-	minimum_distance = 1
+	approach_distance = 1
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/lasgun
 	projectile_sound_properties = list(

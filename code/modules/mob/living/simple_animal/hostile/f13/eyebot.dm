@@ -43,7 +43,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 2
 	melee_damage_upper = 3
-	minimum_distance = 6
+	approach_distance = 6
 	retreat_distance = 14
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
@@ -200,7 +200,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	minimum_distance = 4
+	approach_distance = 4
 	retreat_distance = 6
 
 /mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)

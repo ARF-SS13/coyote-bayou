@@ -37,7 +37,7 @@
 				/obj/item/gun/ballistic/rifle/mosin)
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	casingtype = /obj/item/ammo_casing/a357
 

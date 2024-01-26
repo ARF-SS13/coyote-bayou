@@ -46,7 +46,7 @@
 	maxHealth = 110
 	health = 110
 	retreat_distance = 4
-	minimum_distance = 6
+	approach_distance = 6
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound =  'sound/f13weapons/ninemil.ogg'
 	projectile_sound_properties = list(
