@@ -823,15 +823,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
-"dV" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "dW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2{
@@ -1077,15 +1068,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"fg" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -1283,15 +1265,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/underground/cave)
-"ge" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "gf" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -1321,13 +1294,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
-"gn" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "go" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 5
@@ -1426,13 +1392,6 @@
 /obj/structure/nest/deathclaw,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
-/area/f13/building)
-"gN" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "gO" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
@@ -1558,12 +1517,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"hy" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "hz" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -1778,15 +1731,6 @@
 	icon_state = "torncarpet1"
 	},
 /area/awaymission/wildwest)
-"ix" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "iy" = (
 /obj/machinery/door/airlock{
 	id_tag = "Unit2";
@@ -2082,9 +2026,6 @@
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
 /area/f13/underground/cave)
 "jK" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
 /obj/dugpit{
 	alpha = 80;
 	icon_state = "mound_medium"
@@ -2136,13 +2077,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/f13/building)
-"jV" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "jX" = (
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
 /area/f13/underground/cave)
@@ -2255,18 +2189,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
-"kC" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo13"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "kD" = (
 /obj/machinery/pipedispenser/disposal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2328,12 +2250,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
-"kU" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "kV" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 6
@@ -2577,15 +2493,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"mf" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "mh" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2667,26 +2574,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/building)
-"mD" = (
-/obj/effect/decal/waste{
-	icon_state = "goo11"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "mE" = (
 /obj/structure/filingcabinet/filingcabinet,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"mF" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "mG" = (
 /mob/living/simple_animal/hostile/faithless{
 	faction = list("hostile","institute");
@@ -2796,27 +2688,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
-"ne" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"ni" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "nk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2829,24 +2700,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/underground/cave)
-"nm" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo13"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"nn" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "wasteland"
-	},
-/area/f13/wasteland)
 "no" = (
 /obj/machinery/computer/arcade,
 /obj/structure/sign/poster{
@@ -2918,15 +2771,6 @@
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
-"nF" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "nH" = (
 /obj/item/trash/raisins,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3034,15 +2878,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
-"oa" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ob" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -3239,12 +3074,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/lava,
 /area/f13/underground/cave)
-"oY" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "pa" = (
 /obj/machinery/telecomms/receiver/preset_left,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3517,9 +3346,6 @@
 	icon_state = "mound_medium"
 	},
 /obj/effect/spawner/lootdrop/f13/rare_energy,
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qx" = (
@@ -4058,18 +3884,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building)
-"tl" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "tm" = (
 /obj/machinery/light{
 	dir = 8
@@ -4223,15 +4037,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
-"tU" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "tW" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -4282,12 +4087,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/underground/cave)
-"uk" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ul" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4384,15 +4183,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt/dark,
 /area/f13/building)
-"uD" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "uE" = (
 /mob/living/carbon/monkey,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4643,9 +4433,6 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
 "vV" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
@@ -5318,15 +5105,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/underground/cave)
-"yV" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "yW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/billboard/robco,
@@ -5367,15 +5145,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"ze" = (
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "zf" = (
 /obj/structure/filingcabinet/filingcabinet,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5492,15 +5261,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"zM" = (
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "zP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -5716,17 +5476,6 @@
 	icon_state = "housewood-dam3"
 	},
 /area/f13/building)
-"AX" = (
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "AY" = (
 /obj/structure/lattice/lava,
 /obj/structure/lattice/lava,
@@ -5755,15 +5504,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
-"Bb" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Bf" = (
 /obj/machinery/telecomms/server/presets/medical,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5786,12 +5526,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
-"Bk" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Bm" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -6134,18 +5868,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/snowed/colder,
 /area/f13/building)
-"CN" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "CQ" = (
 /obj/machinery/vending/boozeomat,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6512,12 +6234,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/f13/building)
-"Eg" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Ej" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -6655,18 +6371,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"EQ" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ER" = (
 /mob/living/simple_animal/hostile/eyebot/reinforced,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -6951,12 +6655,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/building)
-"Gg" = (
-/obj/effect/decal/waste{
-	icon_state = "goo13"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Gh" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -7128,13 +6826,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/underground/cave)
-"GN" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "GO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/trap/fire,
@@ -7245,9 +6936,6 @@
 	},
 /area/f13/building)
 "Hm" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
 /obj/dugpit{
 	alpha = 80;
 	icon_state = "mound_medium"
@@ -7380,12 +7068,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
-"HT" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "HU" = (
 /obj/structure/nest/deathclaw,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7474,13 +7156,6 @@
 	density = 1
 	},
 /turf/closed/wall/rust,
-/area/f13/building)
-"In" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
 /area/f13/building)
 "Io" = (
 /obj/structure/nest/securitron,
@@ -7667,13 +7342,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"IT" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/structure/nest/scorpion,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "IV" = (
 /obj/structure/closet/crate{
 	name = "Gold Crate"
@@ -8175,15 +7843,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/wasteland)
-"Lc" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Ld" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
@@ -8408,15 +8067,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/underground/cave)
-"Mj" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo11"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Ml" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/cocoon,
@@ -8707,12 +8357,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
-"NH" = (
-/obj/effect/decal/waste{
-	icon_state = "goo3"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "NK" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
@@ -8759,13 +8403,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"NW" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "NX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2{
@@ -8960,12 +8597,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/underground/cave)
-"OZ" = (
-/obj/effect/decal/waste{
-	icon_state = "goo9"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Pa" = (
 /obj/machinery/light{
 	dir = 8
@@ -9038,10 +8669,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
-"Py" = (
-/obj/effect/decal/waste,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Pz" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -9528,13 +9155,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
-"Rz" = (
-/obj/effect/decal/waste{
-	icon_state = "goo7"
-	},
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "RC" = (
 /obj/structure/car{
 	dir = 1
@@ -9555,9 +9175,6 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "RG" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
@@ -9586,12 +9203,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/f13,
 /area/f13/building)
-"RL" = (
-/obj/effect/decal/waste{
-	icon_state = "goo7"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "RQ" = (
 /obj/machinery/recharge_station/fullupgrade,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9759,21 +9370,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/building)
-"SG" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "SH" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -9781,15 +9377,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"SI" = (
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "SJ" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/decal/cleanable/dirt,
@@ -9963,16 +9550,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
-"Tw" = (
-/obj/effect/decal/waste{
-	icon_state = "goo6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Tx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -10215,15 +9792,6 @@
 "UF" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"UG" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo13"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -10471,12 +10039,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
-"VR" = (
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "VS" = (
 /obj/structure/car,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10721,15 +10283,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
-"Xj" = (
-/obj/effect/decal/waste{
-	icon_state = "goo7"
-	},
-/obj/item/mine/shrapnel{
-	alpha = 30
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Xm" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/turf_decal/weather/dirt{
@@ -10865,15 +10418,6 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/f13/underground/cave)
-"XL" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "XN" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/eggcluster,
@@ -11021,18 +10565,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/snowed/colder,
 /area/f13/building)
-"Yu" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/dugpit{
-	alpha = 80;
-	icon_state = "mound_medium"
-	},
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Yw" = (
 /obj/structure/bed,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -11069,16 +10601,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
-"YD" = (
-/obj/effect/decal/waste{
-	icon_state = "goo4"
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "YE" = (
 /obj/structure/cargocrate,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11117,17 +10639,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"YO" = (
-/obj/effect/decal/waste{
-	alpha = 0
-	},
-/obj/dugpit{
-	alpha = 80;
-	icon_state = "mound_medium"
-	},
-/obj/effect/spawner/lootdrop/f13/rare_melee,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "YQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden/strong,
@@ -11167,15 +10678,6 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Za" = (
-/obj/effect/decal/waste{
-	icon_state = "goo2"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo4"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -28815,7 +28317,7 @@ ma
 DJ
 fl
 uM
-In
+gF
 gF
 gF
 gF
@@ -30354,7 +29856,7 @@ VQ
 gF
 VQ
 oC
-gN
+oC
 ma
 fl
 ma
@@ -30606,7 +30108,7 @@ fl
 fl
 ma
 gF
-gN
+oC
 gF
 oC
 oC
@@ -30830,7 +30332,7 @@ ma
 ma
 ma
 oC
-gN
+oC
 oC
 ma
 ma
@@ -31122,7 +30624,7 @@ ma
 VQ
 Ot
 oC
-gN
+oC
 oC
 gF
 VQ
@@ -31856,7 +31358,7 @@ rE
 fl
 OL
 VQ
-gN
+oC
 oC
 gF
 gF
@@ -32147,7 +31649,7 @@ Jp
 ma
 Ab
 fl
-nn
+uM
 Cz
 uM
 uM
@@ -32672,7 +32174,7 @@ uM
 nc
 uM
 uM
-nn
+uM
 uM
 uM
 uM
@@ -33180,7 +32682,7 @@ uM
 uM
 uM
 uM
-nn
+uM
 uM
 uM
 uM
@@ -35511,15 +35013,15 @@ jT
 jT
 jT
 jT
-kU
-jT
-kU
 jT
 jT
 jT
 jT
 jT
-Py
+jT
+jT
+jT
+jT
 jT
 Aq
 Aq
@@ -35752,7 +35254,7 @@ uM
 uM
 uM
 Su
-nn
+uM
 uM
 uM
 uM
@@ -35766,15 +35268,15 @@ jT
 jT
 jT
 jT
-kU
-kU
-kU
-Py
-jT
-kU
 jT
 jT
-Gg
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -36017,21 +35519,21 @@ jT
 jT
 jT
 jT
-hy
 jT
 jT
 jT
-kU
 jT
 jT
 jT
-kU
 jT
 jT
 jT
-kU
 jT
-Gg
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -36274,7 +35776,6 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
@@ -36283,11 +35784,12 @@ jT
 jT
 jT
 jT
-kU
 jT
 jT
-kU
-kU
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -36507,14 +36009,6 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
-uk
-Gg
-Gg
 jT
 jT
 jT
@@ -36538,17 +36032,25 @@ jT
 jT
 jT
 jT
-hy
-jT
-kU
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -36764,19 +36266,6 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
-uk
-jT
-jT
-jT
-Gg
-jT
-jT
-hy
 jT
 jT
 jT
@@ -36793,17 +36282,30 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
 jT
 jT
-Py
 jT
 jT
 jT
-Py
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -37005,28 +36507,9 @@ jT
 jT
 jT
 jT
-uk
-uk
-IT
-uk
-uk
 jT
 jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-uk
-uk
-uk
-uk
-uk
-uk
+lw
 jT
 jT
 jT
@@ -37044,7 +36527,6 @@ jT
 jT
 jT
 jT
-kU
 jT
 jT
 jT
@@ -37052,20 +36534,40 @@ jT
 jT
 jT
 jT
-Py
 jT
 jT
 jT
 jT
-Bk
-jT
-jT
-uk
-uk
 jT
 jT
 jT
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -37262,35 +36764,6 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-hy
-uk
-uk
-uk
-IT
-uk
-uk
-jT
-jT
-jT
-jT
-jT
-jT
-Gg
 jT
 jT
 jT
@@ -37305,7 +36778,12 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+lw
 jT
 jT
 jT
@@ -37314,7 +36792,6 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
@@ -37322,7 +36799,32 @@ jT
 jT
 jT
 jT
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -37526,38 +37028,6 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
-uk
-jT
-Eg
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-kU
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-kU
-jT
-jT
-kU
-jT
-jT
-RL
 jT
 jT
 jT
@@ -37568,7 +37038,6 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
@@ -37579,7 +37048,40 @@ jT
 jT
 jT
 jT
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -37783,29 +37285,9 @@ jT
 jT
 jT
 jT
-uk
-uk
-YO
-uk
-uk
-uk
 jT
 jT
-Eg
-jT
-jT
-jT
-jT
-jT
-uk
-uk
-jT
-jT
-hy
-HT
-HT
-jT
-hy
+kM
 jT
 jT
 jT
@@ -37827,16 +37309,36 @@ jT
 jT
 jT
 jT
-hy
 jT
 jT
 jT
-uk
-RL
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 Kr
@@ -38047,30 +37549,6 @@ jT
 jT
 jT
 jT
-kU
-Eg
-Bb
-Eg
-jT
-Eg
-Eg
-Eg
-Eg
-HT
-jT
-jT
-jT
-jT
-jT
-jT
-kU
-Gg
-jT
-jT
-jT
-jT
-jT
-hy
 jT
 jT
 jT
@@ -38079,7 +37557,31 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -38295,10 +37797,6 @@ jT
 jT
 jT
 jT
-kU
-jT
-jT
-kU
 jT
 jT
 jT
@@ -38307,27 +37805,30 @@ jT
 jT
 jT
 jT
-kU
-jT
-jT
-Eg
-Eg
-uk
-uk
 jT
 jT
 jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jK
 jT
 jT
 jT
-kU
 jT
 jT
 jT
@@ -38343,7 +37844,8 @@ jT
 jT
 jT
 jT
-Py
+jT
+jT
 jT
 jT
 jT
@@ -38539,7 +38041,6 @@ jI
 jT
 jT
 jT
-hy
 jT
 jT
 jT
@@ -38547,18 +38048,19 @@ jT
 jT
 jT
 jT
-RL
 jT
 jT
 jT
 jT
-kU
-jT
-kU
 jT
 jT
 jT
-hy
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -38589,7 +38091,7 @@ jT
 jT
 jT
 jT
-RL
+jT
 jT
 jT
 jT
@@ -38799,26 +38301,26 @@ jT
 jT
 jT
 jT
-RL
-RL
-RL
-RL
-RL
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
 SU
 jT
-kU
-jT
-kU
 jT
 jT
 jT
 jT
 jT
 jT
-Gg
+jT
+jT
+jT
+jT
 jT
 UF
 Cy
@@ -38827,21 +38329,12 @@ wf
 bE
 bE
 bE
-ze
-ze
+bE
+bE
 bE
 jT
 jT
 jT
-kU
-jT
-jT
-jT
-jT
-Gg
-jT
-jT
-kU
 jT
 jT
 jT
@@ -38850,7 +38343,16 @@ jT
 jT
 jT
 jT
-RL
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39067,15 +38569,15 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-OZ
-Eg
-RL
-RL
-UG
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 yN
 yk
@@ -39086,19 +38588,10 @@ Vk
 Vk
 Vk
 Vk
-YD
+IM
 wf
 jT
 jT
-kU
-hy
-jT
-jT
-jT
-jT
-HT
-jT
-HT
 jT
 jT
 jT
@@ -39112,7 +38605,16 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39309,34 +38811,34 @@ rE
 jT
 jT
 jT
-uk
-uk
-uk
-jT
-jT
-RL
 jT
 jT
 jT
 jT
-RL
 jT
 jT
 jT
 jT
-uk
-uk
-uk
-OZ
-Eg
-Eg
-RL
-uk
-fg
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 NK
 wf
-Eg
-Eg
+jT
+jT
 jT
 jT
 jT
@@ -39345,31 +38847,31 @@ NK
 Cy
 Vk
 jT
-VR
-jT
-kU
 jT
 jT
 jT
-HT
+jT
+jT
+jT
+jT
 rn
-Gg
-jT
-jT
-jT
-jT
-kU
-kU
-jT
-jT
-kU
 jT
 jT
 jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39566,36 +39068,36 @@ rE
 jT
 jT
 jT
-uk
-uk
-uk
 jT
 jT
 jT
 jT
-Xj
-RL
-RL
 jT
 jT
 jT
-fg
-fg
-uk
-uk
-fg
-OZ
-OZ
-OZ
-Eg
-UG
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 NK
 tK
-Eg
 jT
-uk
-fg
+jT
+jT
+jT
 jT
 Oy
 NK
@@ -39604,23 +39106,6 @@ bE
 bE
 jT
 jT
-kU
-jT
-jT
-HT
-jT
-jT
-Gg
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-mF
-Bk
 jT
 jT
 jT
@@ -39630,7 +39115,24 @@ jT
 jT
 jT
 jT
-hy
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -39823,9 +39325,6 @@ rE
 jT
 jT
 jT
-uk
-uk
-uk
 jT
 jT
 jT
@@ -39836,30 +39335,33 @@ jT
 jT
 jT
 jT
-Mj
-uk
-uk
-uk
-uk
-Eg
-NH
-OZ
-Eg
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 ur
 wf
 jT
-uk
-uk
+jT
+jT
 jT
 jT
 jT
 jT
 jT
 NK
-ge
+wf
 jT
 jT
 jT
@@ -39871,17 +39373,17 @@ jT
 jT
 jT
 jT
-hy
 jT
 jT
-kU
-kU
+jT
+jT
+jT
 qw
 jT
 jT
 jT
 jT
-Bk
+jT
 jT
 jT
 jT
@@ -40066,11 +39568,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -40085,48 +39587,39 @@ jT
 jT
 jT
 jT
-Rz
-RL
+SU
 jT
 jT
 jT
 jT
 jT
-Bk
-uk
-uk
-fg
-uk
-uk
-NH
-OZ
-NH
-NH
-UG
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 NK
-ni
-HT
-uk
-uk
+tK
 jT
 jT
-HT
+jT
+jT
+jT
+jT
 bE
 Fe
 Cy
 bE
 bE
-kU
-jT
-jT
-jT
-jT
-jT
-Gg
-jT
-Bk
 jT
 jT
 jT
@@ -40138,7 +39631,16 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -40323,11 +39825,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -40342,7 +39844,6 @@ jT
 jT
 jT
 jT
-RL
 jT
 jT
 jT
@@ -40354,19 +39855,20 @@ jT
 jT
 jT
 jT
-hy
-NH
-NH
-NH
-NH
-uk
-IT
 jT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
+lw
+jT
+jT
 RG
 wf
-uk
-uk
+jT
+jT
 jT
 jT
 NK
@@ -40376,22 +39878,6 @@ NK
 jT
 jT
 wf
-kU
-jT
-jT
-jT
-hy
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-mF
 jT
 jT
 jT
@@ -40410,7 +39896,23 @@ jT
 jT
 jT
 jT
-hy
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 Kr
@@ -40580,11 +40082,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -40599,10 +40101,10 @@ jT
 jT
 jT
 jT
-RL
 jT
 jT
-dV
+jT
+jT
 jT
 jT
 jT
@@ -40613,32 +40115,25 @@ jT
 jT
 jT
 Hm
-uk
-uk
-uk
-UG
-fg
+jT
+jT
+jT
+jT
+jT
 jT
 NK
 tK
 jT
 jT
-Bk
+jT
 Zc
 jT
 jT
 jT
 jT
 wf
-XL
-XL
-jT
-jT
-kU
-mF
-kU
-jT
-Gg
+Vk
+Vk
 jT
 jT
 jT
@@ -40655,7 +40150,14 @@ jT
 jT
 jT
 jT
-mD
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -40837,11 +40339,11 @@ jT
 jT
 xA
 jT
-GN
-uk
-uk
-uk
-uk
+rn
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -40853,7 +40355,6 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
@@ -40862,16 +40363,17 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
 jT
 jT
 jT
-uk
-uk
-fg
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -40880,22 +40382,13 @@ jT
 ur
 tK
 jT
-Bk
+jT
 jT
 bE
 bE
 bE
-Lc
-ix
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-Gg
+bE
+wf
 jT
 jT
 jT
@@ -40912,7 +40405,16 @@ jT
 jT
 jT
 jT
-mD
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41094,11 +40596,11 @@ jT
 jT
 yC
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 Qr
@@ -41119,43 +40621,43 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
 jT
 jT
 jT
-uk
-fg
-EQ
-jT
-hy
 jT
 jT
-HT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 ur
-tl
-ne
+tK
+bE
 yN
-SG
+Cy
 Vk
 Vk
 Vk
 jT
-Bk
-uD
 jT
 jT
 jT
 jT
 jT
 jT
-nm
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41351,11 +40853,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-oa
-oa
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -41367,37 +40869,35 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
 jT
 jT
-Bk
-jT
-Bk
-jT
-jT
-Bk
 jT
 jT
 jT
 jT
-uk
-uk
-uk
 jT
 jT
 jT
-HT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 Vk
 Vk
 Vk
-HT
-HT
 jT
 jT
 jT
@@ -41406,11 +40906,6 @@ jT
 jT
 jT
 jT
-VR
-jT
-kU
-jT
-kU
 jT
 jT
 jT
@@ -41418,7 +40913,14 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41608,11 +41110,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 rE
@@ -41624,12 +41126,12 @@ jT
 jT
 jT
 jT
-Gg
 jT
 jT
 jT
-kU
-hy
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41640,29 +41142,6 @@ jT
 qd
 jT
 jT
-fg
-uk
-uk
-uk
-fg
-kC
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-hy
-uk
-VR
-jT
-jT
-jT
-jT
-Eg
 jT
 jT
 jT
@@ -41675,11 +41154,34 @@ jT
 jT
 jT
 jT
-mD
-mD
 jT
 jT
-hy
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -41865,11 +41367,11 @@ jT
 jT
 xA
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 IC
@@ -41885,7 +41387,6 @@ jT
 jT
 jT
 jT
-kU
 jT
 jT
 jT
@@ -41893,33 +41394,11 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
 og
 jT
 jT
-Mj
-UG
-uk
-uk
-fg
-uk
-jT
-jT
-jT
-jT
-jT
-jT
-HT
-jT
-jT
-jT
-zM
-uk
-uk
-jT
-jT
-jT
-Eg
 jT
 jT
 jT
@@ -41929,19 +41408,42 @@ jT
 jT
 jT
 jT
-HT
-mD
-jT
-jT
-kU
-Bk
-jT
-Bk
 jT
 jT
 jT
-Bk
-mD
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -42135,14 +41637,6 @@ qg
 rE
 jT
 jT
-hy
-jT
-jT
-jT
-jT
-kU
-jT
-kU
 jT
 jT
 jT
@@ -42154,40 +41648,6 @@ jT
 jT
 jT
 jT
-Mj
-uk
-fg
-uk
-uk
-uk
-fg
-uk
-jT
-jT
-tU
-jT
-HT
-jT
-kU
-VR
-jT
-jT
-oa
-jT
-jT
-Eg
-jT
-jT
-VR
-jT
-jT
-jT
-kU
-mD
-mD
-jT
-mD
-HT
 jT
 jT
 jT
@@ -42197,7 +41657,49 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -42402,31 +41904,31 @@ jT
 jT
 jT
 jT
-kU
-jT
-hy
-jT
-jT
-Bk
-jT
-jT
-jT
-Mj
-uk
-uk
-uk
-uk
-fg
-kC
-yV
-hy
 jT
 jT
 jT
 jT
 jT
 jT
-jV
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+SU
 jT
 jT
 jT
@@ -42662,36 +42164,36 @@ jT
 jT
 jT
 jT
-kU
-jT
-jT
-jT
-jT
-jT
-Mj
-uk
-uk
-uk
-UG
-UG
-uk
-uk
 jT
 jT
 jT
 jT
 jT
 jT
-kU
 jT
 jT
 jT
 jT
 jT
-Eg
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -42916,12 +42418,6 @@ jT
 jT
 jT
 jT
-VR
-jT
-jT
-jT
-jT
-VR
 jT
 jT
 jT
@@ -42931,11 +42427,17 @@ jT
 jT
 jT
 jT
-hy
 jT
 jT
 jT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 rd
 jT
 jT
@@ -42952,7 +42454,7 @@ jT
 jT
 jT
 jT
-mF
+jT
 jT
 jT
 jT
@@ -43179,13 +42681,13 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
-VR
-VR
 jT
-VR
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -43204,11 +42706,6 @@ jT
 jT
 jT
 jT
-kU
-jT
-jT
-jT
-kU
 jT
 jT
 jT
@@ -43218,7 +42715,12 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -43412,7 +42914,7 @@ kA
 gF
 qv
 jT
-hy
+jT
 jT
 rE
 qg
@@ -43436,35 +42938,24 @@ jT
 jT
 jT
 jT
-Bk
-jT
-jT
-VR
 jT
 jT
 jT
 jT
-VR
+jT
+jT
+jT
+jT
+jT
 rd
 jT
 NK
 wf
-Bk
+jT
 jT
 NK
 wf
 jT
-kU
-jT
-jT
-Eg
-jT
-jT
-hy
-jT
-jT
-jT
-VR
 jT
 jT
 jT
@@ -43473,19 +42964,30 @@ jT
 jT
 jT
 jT
-nF
-jT
-jT
-Bk
-kU
-Bk
 jT
 jT
 jT
 jT
 jT
 jT
-mD
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -43684,12 +43186,12 @@ jT
 jT
 jT
 jT
-kU
-jT
-Bk
 jT
 jT
-kU
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -43704,7 +43206,7 @@ jT
 NK
 wf
 ov
-AX
+Du
 wf
 jT
 jT
@@ -43712,14 +43214,6 @@ NK
 wf
 jT
 jT
-kU
-Eg
-kU
-jT
-jT
-kU
-jT
-kU
 jT
 jT
 jT
@@ -43729,7 +43223,15 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -43940,10 +43442,10 @@ jT
 NC
 jT
 jT
-kU
 jT
 jT
-Bk
+jT
+jT
 jT
 jT
 jT
@@ -43960,8 +43462,8 @@ jT
 jT
 jT
 IM
-CN
-VR
+wf
+jT
 jT
 jT
 jT
@@ -43969,11 +43471,6 @@ NK
 wf
 jT
 jT
-Eg
-jT
-jT
-jT
-kU
 jT
 jT
 jT
@@ -43990,7 +43487,6 @@ jT
 jT
 jT
 jT
-kU
 jT
 jT
 jT
@@ -43999,7 +43495,13 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44197,43 +43699,34 @@ jT
 jT
 jT
 jT
-kU
-kU
 jT
 jT
 jT
 jT
 jT
 jT
-VR
-hy
 jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
 jT
 NK
 wf
-Za
+jT
 jT
 jT
 jT
 NK
 wf
 jT
-Eg
-kU
-jT
-jT
-kU
-jT
-jT
-jT
-kU
 jT
 jT
 jT
@@ -44248,7 +43741,16 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44457,7 +43959,7 @@ jT
 jT
 jT
 jT
-Bk
+jT
 jT
 jT
 jT
@@ -44465,9 +43967,9 @@ jT
 jT
 SU
 jT
-kU
 jT
-Bk
+jT
+jT
 jT
 jT
 jT
@@ -44475,25 +43977,20 @@ jT
 jT
 NK
 ov
-Tw
+rd
 jT
-kU
-gn
+jT
+NK
 fK
 jT
 jT
 jT
 jT
 jT
-kU
-jT
-jT
-Yu
 jT
 jT
 jT
-jT
-kU
+TR
 jT
 jT
 jT
@@ -44501,7 +43998,12 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44514,7 +44016,7 @@ jT
 jT
 jT
 jT
-mD
+jT
 jT
 jT
 jT
@@ -44714,7 +44216,6 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
@@ -44730,8 +44231,9 @@ jT
 jT
 jT
 jT
-mF
-mf
+jT
+jT
+Vk
 IM
 wf
 NK
@@ -44741,27 +44243,6 @@ jT
 jT
 jT
 jT
-kU
-kU
-jT
-jT
-jT
-HT
-HT
-HT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-mD
-Bk
-jT
-jT
-Bk
 jT
 jT
 jT
@@ -44778,7 +44259,28 @@ jT
 jT
 jT
 jT
-hy
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -44971,9 +44473,9 @@ jT
 jT
 jT
 jT
-Bk
 jT
-VR
+jT
+jT
 jT
 jT
 jT
@@ -44982,31 +44484,17 @@ jT
 jT
 Zc
 jT
-Bk
-Bk
 jT
-kU
+jT
+jT
+jT
 jT
 jT
 jT
 jT
 IM
 Zx
-ix
-jT
-jT
-jT
-Bk
-jT
-jT
-jT
-hy
-HT
-jT
-jT
-jT
-jT
-kU
+wf
 jT
 jT
 jT
@@ -45027,9 +44515,23 @@ jT
 jT
 jT
 jT
-Bk
 jT
-mD
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -45228,7 +44730,6 @@ jT
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
@@ -45237,15 +44738,16 @@ jT
 jT
 jT
 jT
-kU
-jT
-kU
-kU
 jT
 jT
 jT
 jT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 Vk
@@ -45256,7 +44758,6 @@ jT
 jT
 jT
 jT
-HT
 jT
 jT
 jT
@@ -45264,7 +44765,8 @@ jT
 jT
 jT
 jT
-kU
+jT
+jT
 jT
 jT
 jT
@@ -45489,14 +44991,14 @@ jT
 jT
 jT
 jT
-Eg
-Eg
-Eg
 jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -45743,10 +45245,6 @@ jT
 jT
 jT
 jT
-Bk
-jT
-jT
-Eg
 jT
 jT
 jT
@@ -45760,8 +45258,6 @@ jT
 jT
 jT
 jT
-Bk
-Bk
 jT
 jT
 jT
@@ -45773,7 +45269,13 @@ jT
 jT
 jT
 jT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -46003,10 +45505,6 @@ jT
 jT
 jT
 jT
-Eg
-jT
-jT
-Eg
 jT
 jT
 jT
@@ -46023,12 +45521,16 @@ jT
 jT
 jT
 jT
-HT
 jT
 jT
 jT
 jT
-HT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -46257,23 +45759,10 @@ jT
 jT
 jT
 jT
-Bk
-jT
-jT
-NW
 jT
 jT
 jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-Eg
-HT
+Oy
 jT
 jT
 jT
@@ -46304,7 +45793,20 @@ jT
 jT
 jT
 jT
-Bk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -46479,7 +45981,7 @@ Kr
 Kr
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -46517,24 +46019,6 @@ jT
 jT
 jT
 jT
-Eg
-jT
-jT
-jT
-Eg
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-jT
-HT
-jT
-jT
-jT
-HT
 jT
 jT
 jT
@@ -46546,7 +46030,25 @@ jT
 jT
 jT
 jT
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -46740,7 +46242,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 qv
@@ -46776,15 +46278,6 @@ jT
 jT
 jT
 jT
-Eg
-jT
-jT
-Eg
-jT
-jT
-Eg
-jT
-Eg
 jT
 jT
 jT
@@ -46803,15 +46296,24 @@ jT
 jT
 jT
 jT
-uk
-uk
 jT
 jT
 jT
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -47019,7 +46521,7 @@ rE
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -47034,10 +46536,6 @@ jT
 jT
 jT
 jT
-Eg
-jT
-jT
-Eg
 jT
 jT
 jT
@@ -47048,21 +46546,6 @@ jT
 jT
 jT
 jT
-HT
-jT
-HT
-jT
-jT
-jT
-jT
-jT
-uk
-uk
-uk
-jT
-uk
-uk
-Bk
 jT
 jT
 jT
@@ -47071,8 +46554,27 @@ jT
 jT
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -47298,7 +46800,6 @@ jT
 jT
 jT
 jT
-Eg
 jT
 jT
 jT
@@ -47313,13 +46814,6 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
-jT
-jT
-jT
-Bk
 jT
 jT
 jT
@@ -47328,8 +46822,16 @@ jT
 jT
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -47524,7 +47026,7 @@ lw
 jT
 jT
 jT
-hy
+jT
 jT
 rE
 qg
@@ -47550,7 +47052,6 @@ jT
 jT
 jT
 jT
-Eg
 jT
 jT
 jT
@@ -47570,18 +47071,19 @@ jT
 jT
 jT
 jT
-uk
-uk
-uk
 jT
 jT
 jT
-Bk
 jT
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -47808,10 +47310,6 @@ jT
 jT
 jT
 jT
-Eg
-Eg
-Eg
-Eg
 jT
 jT
 jT
@@ -47837,8 +47335,12 @@ jT
 jT
 jT
 jT
-uk
-uk
+jT
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -48065,8 +47567,8 @@ jT
 jT
 jT
 jT
-Bk
-Bk
+jT
+jT
 jT
 jT
 jT
@@ -48292,7 +47794,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 Oy
 jT
 jT
@@ -48316,7 +47818,7 @@ jT
 jT
 jT
 jT
-Bk
+jT
 jT
 jT
 jT
@@ -48570,7 +48072,7 @@ jT
 jT
 jT
 jT
-Bk
+jT
 jT
 jT
 jT
@@ -49111,7 +48613,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -49868,7 +49370,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -50860,7 +50362,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -52936,7 +52438,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -53165,7 +52667,7 @@ Kr
 Kr
 Kr
 jT
-hy
+jT
 jT
 jT
 jT
@@ -54711,7 +54213,7 @@ Kr
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -55491,7 +54993,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 rE
 qg
@@ -55999,11 +55501,11 @@ Aq
 Aq
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56013,9 +55515,9 @@ qg
 rE
 jT
 jT
-uk
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56256,11 +55758,11 @@ Aq
 Aq
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56270,11 +55772,11 @@ qg
 rE
 jT
 jT
-uk
-uk
-uk
 jT
-hy
+jT
+jT
+jT
+jT
 jT
 Kr
 Kr
@@ -56513,11 +56015,11 @@ Aq
 Aq
 jT
 jT
-uk
-oa
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56527,9 +56029,9 @@ qg
 rE
 jT
 jT
-uk
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56770,11 +56272,11 @@ Aq
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -56784,9 +56286,9 @@ ah
 rE
 jT
 jT
-uk
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57027,11 +56529,11 @@ Aq
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57041,9 +56543,9 @@ qg
 rE
 jT
 jT
-uk
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57284,11 +56786,11 @@ Aq
 jT
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57298,9 +56800,9 @@ qg
 rE
 jT
 jT
-SI
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57541,11 +57043,11 @@ Aq
 Aq
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57555,9 +57057,9 @@ qg
 rE
 jT
 jT
-uk
-uk
-uk
+jT
+jT
+jT
 jT
 jT
 jT
@@ -57798,11 +57300,11 @@ Aq
 Aq
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -58055,11 +57557,11 @@ Aq
 Aq
 jT
 jT
-uk
-uk
-uk
-uk
-uk
+jT
+jT
+jT
+jT
+jT
 jT
 jT
 jT
@@ -58575,7 +58077,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 rE
 qg
@@ -59601,7 +59103,7 @@ Aq
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -60115,7 +59617,7 @@ Aq
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -62440,7 +61942,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 Kr
@@ -63715,7 +63217,7 @@ fi
 Gy
 dx
 jT
-hy
+jT
 jT
 rE
 qg
@@ -65531,7 +65033,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -66809,7 +66311,7 @@ jT
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -67832,7 +67334,7 @@ jT
 Yq
 xL
 xL
-oY
+Yq
 jT
 jT
 jT
@@ -68093,7 +67595,7 @@ Yq
 jT
 jT
 jT
-hy
+jT
 jT
 jT
 jT
@@ -69371,7 +68873,7 @@ TG
 HF
 jT
 jT
-oY
+Yq
 xL
 xL
 Yq
