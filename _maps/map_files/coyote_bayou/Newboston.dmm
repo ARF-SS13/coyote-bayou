@@ -4844,9 +4844,7 @@
 	},
 /area/f13/building)
 "eux" = (
-/obj/machinery/door/unpowered/securedoor{
-	req_access_txt = "131"
-	},
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "euE" = (
@@ -7539,7 +7537,7 @@
 /obj/structure/simple_door/room{
 	req_access_txt = "123"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "gHl" = (
 /turf/closed/indestructible/f13/matrix,
@@ -18120,7 +18118,7 @@
 	},
 /area/f13/wasteland)
 "pAf" = (
-/obj/machinery/door/unpowered/securedoor/legion,
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pAi" = (
@@ -20688,7 +20686,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "rPv" = (
-/obj/machinery/door/unpowered/securedoor/legion,
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rPR" = (
@@ -21394,7 +21392,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "sqV" = (
-/obj/machinery/door/unpowered/securedoor/legion,
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "srh" = (
@@ -21502,7 +21500,10 @@
 	},
 /area/f13/trainstation)
 "swo" = (
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "ncr_garage";
+	name = "Ranger Garage"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -27286,10 +27287,8 @@
 	},
 /area/f13/building)
 "xqI" = (
-/obj/machinery/door/unpowered/securedoor{
-	req_access_txt = "131"
-	},
 /obj/structure/decoration/rag,
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xqN" = (
@@ -28019,10 +28018,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "xXv" = (
-/obj/machinery/door/unpowered/securedoor{
-	req_access_txt = "125"
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/machinery/door/unpowered/securedoor,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "xXE" = (
 /turf/open/indestructible,
@@ -83251,7 +83248,7 @@ gcG
 gcG
 gcG
 mBr
-mBr
+tQk
 mBr
 mBr
 hRl
@@ -86451,7 +86448,7 @@ jZU
 tPQ
 tPQ
 tPQ
-aiB
+lhn
 wAc
 xpl
 mwI
@@ -87716,7 +87713,7 @@ kwB
 qQj
 dGj
 sAR
-aiB
+lhn
 kwB
 kwB
 kwB
@@ -89797,7 +89794,7 @@ gcG
 tPQ
 tPQ
 tPQ
-aiB
+lhn
 kwB
 tWp
 kwB
@@ -90540,7 +90537,7 @@ cQY
 gUO
 kwB
 kwB
-aiB
+lhn
 kwB
 kwB
 gUO
@@ -91306,7 +91303,7 @@ qQj
 cAF
 eCy
 dGj
-aiB
+lhn
 kwB
 gUO
 kwB
@@ -91822,7 +91819,7 @@ cQY
 qQj
 qQj
 qQj
-aiB
+lhn
 qQj
 qQj
 qQj
