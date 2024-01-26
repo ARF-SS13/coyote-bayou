@@ -47,14 +47,16 @@ GLOBAL_PROTECT(exp_to_update)
 	return TRUE
 
 /client/proc/calc_exp_type(exptype)
-	var/list/explist = prefs.exp.Copy()
+	var/list/explist = src.prefs.exp.Copy()
 	var/amount = 0
-	var/list/typelist = GLOB.exp_jobsmap[exptype]
+	var/list/typelistupper = GLOB.exp_jobsmap[exptype]
+	var/list/typelist = typelistupper["titles"]
 	if(!typelist)
 		return -1
-	for(var/job in typelist["titles"])
-		if(job in explist)
-			amount += explist[job]
+	for(var/i = 1, i <= typelist.len, i++)
+		if(exptype == explist[i])
+			amount += explist[explist[i]]
+
 	return amount
 
 /client/proc/get_exp_report()
