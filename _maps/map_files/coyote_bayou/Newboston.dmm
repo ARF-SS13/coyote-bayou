@@ -4844,9 +4844,7 @@
 	},
 /area/f13/building)
 "eux" = (
-/obj/machinery/door/unpowered/securedoor{
-	req_access_txt = "131"
-	},
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "euE" = (
@@ -27289,10 +27287,8 @@
 	},
 /area/f13/building)
 "xqI" = (
-/obj/machinery/door/unpowered/securedoor{
-	req_access_txt = "131"
-	},
 /obj/structure/decoration/rag,
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xqN" = (
