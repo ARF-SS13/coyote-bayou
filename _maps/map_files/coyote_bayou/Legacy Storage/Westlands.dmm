@@ -348,11 +348,12 @@
 /turf/open/floor/plating/ashplanet/wateryrock,
 /area/f13/building)
 "bs" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/vault,
+/turf/open/floor/f13,
 /area/f13/building)
 "bt" = (
 /obj/structure/table/glass,
@@ -617,11 +618,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "cq" = (
-/obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("wastebot")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
+/turf/open/floor/plasteel/vault,
 /area/f13/building)
 "cr" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -644,10 +647,12 @@
 "cu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plating/wooden2{
 	icon_state = "housewood-dam5"
 	},
@@ -659,10 +664,12 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "cx" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "cy" = (
@@ -1375,12 +1382,13 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/underground/cave)
 "fj" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+/mob/living/simple_animal/hostile/poison/giant_spider/queen{
+	light_color = "#739BD0";
+	health = 400;
+	name = "ice queen"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/wasteland)
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "fk" = (
 /obj/machinery/light{
 	dir = 1
@@ -1565,6 +1573,16 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/underground/cave)
+"fS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 4;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
+/turf/open/floor/carpet,
+/area/f13/building)
 "fT" = (
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -1754,11 +1772,13 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "gG" = (
-/mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot","wastebot")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/f13,
 /area/f13/building)
 "gI" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -2273,12 +2293,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "is" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "it" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2{
@@ -2489,14 +2507,12 @@
 	},
 /area/f13/building)
 "iZ" = (
-/mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	desc = "A snarling beast that looks at you with an odd amount of intelligence; it makes odd clacking and clicking noises as it walks, like something metallic inside of it actuates with every step..";
-	faction = list("deathclaw");
-	health = 500;
-	melee_damage_lower = 40;
-	melee_damage_upper = 45
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 4;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "ja" = (
@@ -2699,12 +2715,13 @@
 	},
 /area/f13/building)
 "jG" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+/mob/living/simple_animal/hostile/poison/giant_spider/emperor{
+	light_color = "#739BD0";
+	name = "ice emperor";
+	health = 300
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "jH" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "panelscorched"
@@ -2812,6 +2829,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
+"kc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/plasteel/vault,
 /area/f13/building)
 "kd" = (
 /obj/machinery/computer/telecomms/monitor{
@@ -3190,10 +3216,12 @@
 /area/f13/wasteland)
 "lv" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/carpet,
 /area/f13/building)
 "lw" = (
@@ -3548,11 +3576,6 @@
 "mK" = (
 /turf/closed/mineral/bscrystal/volcanic,
 /area/f13/underground/cave)
-"mL" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot/chew,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/underground/cave)
 "mM" = (
 /obj/machinery/door/poddoor/shutters{
 	id = 507;
@@ -3768,18 +3791,10 @@
 /turf/open/indestructible/ground/outside/dirt/dark,
 /area/f13/building)
 "ny" = (
-/mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	desc = "A snarling beast that looks at you with an odd amount of intelligence; it makes odd clacking and clicking noises as it walks, like something metallic inside of it actuates with every step..";
-	faction = list("deathclaw");
-	health = 500;
-	melee_damage_lower = 40;
-	melee_damage_upper = 45
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/wooden2{
-	icon_state = "housewood-dam5"
-	},
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "nA" = (
 /obj/machinery/hydroponics/constructable/automagic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3835,11 +3850,13 @@
 	},
 /area/f13/underground/cave)
 "nK" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "nL" = (
@@ -4017,13 +4034,12 @@
 	},
 /area/f13/wasteland)
 "om" = (
-/mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	faction = list("deathclaw");
-	health = 500;
-	melee_damage_lower = 40;
-	melee_damage_upper = 45
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 4;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "on" = (
@@ -4094,9 +4110,6 @@
 /area/f13/building)
 "oB" = (
 /obj/structure/filingcabinet,
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
@@ -4355,11 +4368,13 @@
 /area/f13/building)
 "px" = (
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/cocoon,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "py" = (
@@ -4650,6 +4665,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/f13/building)
+"qz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/poison/giant_spider/empress,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "qA" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
@@ -4894,10 +4914,12 @@
 /area/f13/building)
 "rt" = (
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "rv" = (
@@ -5032,10 +5054,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "rS" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "rT" = (
@@ -5069,12 +5093,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "rZ" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/wasteland)
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "sa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5084,10 +5105,12 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "sc" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
 "sd" = (
@@ -5537,12 +5560,14 @@
 /turf/open/floor/plating,
 /area/f13/building)
 "tD" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "tE" = (
@@ -5802,9 +5827,14 @@
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
 "uy" = (
-/mob/living/simple_animal/hostile/handy/gutsy/flamer,
+/obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/vault,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/plasteel/dark,
 /area/f13/building)
 "uz" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6749,10 +6779,12 @@
 	},
 /area/f13/building)
 "yb" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "yc" = (
@@ -7174,11 +7206,13 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "zw" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
 "zx" = (
@@ -7469,6 +7503,15 @@
 /obj/item/toy/eightball,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
+"AE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
+/turf/open/floor/f13,
+/area/f13/building)
 "AF" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/eggcluster,
@@ -7680,10 +7723,12 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "Bo" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
 	},
@@ -7781,12 +7826,14 @@
 	},
 /area/f13/building)
 "BC" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/eggcluster,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "BD" = (
@@ -8537,6 +8584,16 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"DW" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/building)
 "DY" = (
 /obj/item/chair/wood/modern,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9178,11 +9235,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "Gq" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "Gs" = (
@@ -9339,11 +9398,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"GT" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/vault,
-/area/f13/building)
 "GU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9372,12 +9426,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "Ha" = (
-/obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("wastebot")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/rust,
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/empress,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "Hb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9802,12 +9853,9 @@
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
 "Ix" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/vault,
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "Iy" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -10060,10 +10108,12 @@
 	},
 /area/f13/building)
 "Jv" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "Jw" = (
@@ -10329,6 +10379,16 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building)
+"Kq" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/building)
 "Kr" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/underground/cave)
@@ -10354,10 +10414,12 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/f13/building)
 "Kw" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
 "Kx" = (
@@ -10398,10 +10460,12 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "KG" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "KH" = (
@@ -10910,6 +10974,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/wasteland)
+"Mr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/poison/giant_spider/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "Ms" = (
 /obj/structure/wreck/trash/two_tire,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -11141,10 +11210,14 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "Ni" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/underground/cave)
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building)
 "Nj" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating/wooden2,
@@ -11487,6 +11560,17 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"Oz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 4;
+	randomizer_kind = "greater spider";
+	randomizer_tag = "Creepy Crawlers2"
+	},
+/turf/open/floor/plating/wooden2{
+	icon_state = "housewood-dam5"
+	},
+/area/f13/building)
 "OA" = (
 /obj/structure/closet/crate{
 	anchored = 1;
@@ -11707,10 +11791,12 @@
 	},
 /area/f13/building)
 "Pq" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plating/wooden2{
 	icon_state = "torncarpet6"
 	},
@@ -11981,6 +12067,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
+"Qh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/f13,
+/area/f13/building)
 "Qi" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -12113,10 +12208,12 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/underground/cave)
 "QD" = (
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "QE" = (
@@ -12294,11 +12391,13 @@
 /area/f13/building)
 "Rf" = (
 /obj/machinery/light/small,
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/cocoon,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "Rg" = (
@@ -13566,10 +13665,12 @@
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/building)
 "VX" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "VY" = (
@@ -13923,7 +14024,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/building)
 "Xn" = (
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -14041,12 +14142,14 @@
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
 "XJ" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
-	},
 /obj/structure/spider/eggcluster,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "XK" = (
@@ -14165,13 +14268,6 @@
 /obj/structure/rack,
 /obj/item/clothing/head/hardhat/white,
 /turf/open/floor/plating,
-/area/f13/building)
-"Yc" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
 /area/f13/building)
 "Yd" = (
 /obj/machinery/door/airlock/maintenance_hatch,
@@ -14389,13 +14485,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
-"YR" = (
-/mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot","wastebot")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/underground/cave)
 "YT" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -14531,6 +14620,16 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/building)
+"Zy" = (
+/obj/structure/spider/cocoon,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 2;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "Zz" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
@@ -14566,16 +14665,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "ZF" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	faction = list("deathclaw");
-	health = 500;
-	melee_damage_lower = 40;
-	melee_damage_upper = 45
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet,
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/ice,
+/turf/open/indestructible/ground/outside/dirt/bigiceturf,
+/area/f13/underground/cave)
 "ZG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -14636,10 +14728,12 @@
 /area/f13/wasteland)
 "ZQ" = (
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "lesser spider";
+	randomizer_tag = "Creepy Crawlers"
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "ZR" = (
@@ -17115,7 +17209,7 @@ jX
 jX
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -17368,14 +17462,14 @@ Kr
 Kr
 Kr
 jX
+rZ
 jX
 jX
 jX
 jX
 jX
 jX
-jX
-jX
+rZ
 jX
 Kr
 Kr
@@ -17617,7 +17711,7 @@ jX
 jX
 jX
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -17898,17 +17992,7 @@ rP
 rP
 rP
 rP
-rP
-rP
-rP
-rP
-rP
-rP
-Aq
-Aq
-Aq
-Aq
-Aq
+is
 rP
 rP
 rP
@@ -17919,16 +18003,26 @@ Aq
 Aq
 Aq
 Aq
+rP
+rP
+rP
+rP
+rP
 Aq
 Aq
 Aq
 Aq
+Aq
+Aq
+Aq
+Aq
+Aq
 rP
 rP
 rP
 rP
 rP
-rP
+ny
 rP
 rP
 rP
@@ -18103,6 +18197,7 @@ jX
 jX
 jX
 jX
+rZ
 jX
 jX
 jX
@@ -18111,7 +18206,6 @@ jX
 jX
 jX
 jX
-jX
 Kr
 Kr
 Kr
@@ -18129,11 +18223,11 @@ Kr
 Kr
 jX
 jX
+Ix
 jX
 jX
 jX
 jX
-jX
 Kr
 Kr
 Kr
@@ -18203,7 +18297,7 @@ rP
 rP
 rP
 rP
-rP
+is
 rP
 rP
 rP
@@ -18621,7 +18715,7 @@ jX
 Cu
 Cu
 jX
-jX
+Ha
 jX
 jX
 jX
@@ -18937,7 +19031,7 @@ Aq
 Aq
 Aq
 rP
-rP
+ny
 rP
 rP
 rP
@@ -18988,7 +19082,7 @@ Aq
 rP
 rP
 rP
-rP
+ny
 rP
 rP
 rP
@@ -19173,7 +19267,7 @@ rP
 rP
 rP
 rP
-rP
+is
 rP
 rP
 rP
@@ -19417,7 +19511,7 @@ Kr
 Kr
 Kr
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -19453,12 +19547,12 @@ rP
 rP
 rP
 rP
+qz
 rP
 rP
 rP
 rP
 rP
-rP
 Aq
 Aq
 Aq
@@ -19469,7 +19563,7 @@ Aq
 Aq
 Aq
 rP
-rP
+Mr
 rP
 rP
 rP
@@ -19650,7 +19744,7 @@ jX
 jX
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -19660,7 +19754,7 @@ Kr
 Kr
 Kr
 jX
-jX
+ZF
 jX
 jX
 jX
@@ -19728,7 +19822,7 @@ rP
 rP
 rP
 rP
-rP
+ny
 rP
 rP
 rP
@@ -19919,7 +20013,7 @@ Kr
 jX
 jX
 jX
-jX
+rZ
 jX
 jX
 Kr
@@ -20021,8 +20115,8 @@ Ab
 fl
 ma
 VQ
-bs
-nv
+VQ
+Zy
 VQ
 VQ
 fl
@@ -20033,7 +20127,7 @@ pf
 qv
 ES
 Lj
-aN
+Qh
 me
 me
 Lj
@@ -20209,14 +20303,14 @@ Aq
 Aq
 Aq
 rP
-rP
+ny
 rP
 rP
 rP
 Aq
 Aq
 Aq
-rP
+is
 rP
 rP
 Aq
@@ -20482,7 +20576,7 @@ rP
 LV
 LV
 rP
-rP
+ny
 Aq
 Aq
 Aq
@@ -20706,10 +20800,10 @@ jX
 jX
 jX
 jX
+rZ
 jX
 jX
 jX
-jX
 Aq
 Aq
 Aq
@@ -20725,7 +20819,7 @@ rP
 rP
 rP
 rP
-rP
+is
 rP
 Aq
 Aq
@@ -20917,32 +21011,7 @@ ZZ
 ZZ
 Kr
 jX
-jX
-jX
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-jX
-Kr
-Kr
-Kr
-Kr
-Kr
-jX
-jX
-jX
-jX
+ZF
 jX
 Kr
 Kr
@@ -20951,8 +21020,33 @@ Kr
 Kr
 Kr
 Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+jX
+Kr
+Kr
+Kr
+Kr
+Kr
 jX
 jX
+jX
+jX
+jX
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+Kr
+jX
+Ix
 jX
 jX
 Kr
@@ -21024,13 +21118,13 @@ vs
 gF
 wo
 gF
-Ud
+cx
 gF
 gF
 JU
 VQ
 kA
-uP
+KG
 vs
 fl
 fl
@@ -21238,7 +21332,7 @@ Aq
 Aq
 rP
 rP
-rP
+Mr
 rP
 rP
 Aq
@@ -21473,7 +21567,7 @@ Kr
 Kr
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -21733,11 +21827,11 @@ jX
 jX
 jX
 jX
+Ix
 jX
 jX
 jX
 jX
-jX
 Aq
 Aq
 Aq
@@ -21758,7 +21852,7 @@ Aq
 Aq
 Aq
 rP
-Aq
+rP
 Aq
 Aq
 Aq
@@ -22050,7 +22144,7 @@ ma
 ma
 vs
 Hq
-om
+Lj
 Lj
 Zh
 Lj
@@ -22088,7 +22182,7 @@ fl
 pf
 qv
 Lj
-aN
+gG
 Lj
 Lj
 Lj
@@ -22218,7 +22312,7 @@ Kr
 Kr
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -22308,7 +22402,7 @@ ma
 vs
 Hq
 Lj
-Lj
+AE
 Lj
 Lj
 Lj
@@ -22480,20 +22574,6 @@ jX
 jX
 jX
 jX
-Kr
-Kr
-Kr
-Kr
-Kr
-Kr
-jX
-jX
-jX
-jX
-jX
-jX
-jX
-jX
 jX
 Kr
 Kr
@@ -22502,9 +22582,23 @@ Kr
 Kr
 jX
 jX
+Ix
+jX
+jX
+jX
+jX
 jX
 jX
 Kr
+Kr
+Kr
+Kr
+Kr
+jX
+jX
+jX
+jX
+jX
 Kr
 Kr
 Kr
@@ -22526,7 +22620,7 @@ Aq
 Aq
 Aq
 Aq
-Aq
+rP
 rP
 Aq
 Aq
@@ -22558,7 +22652,7 @@ gF
 ZG
 VQ
 oC
-mJ
+Ni
 lC
 VQ
 ma
@@ -22567,7 +22661,7 @@ Lj
 aH
 Zh
 Df
-qx
+gG
 Lj
 vs
 FO
@@ -22717,7 +22811,7 @@ Kr
 jX
 CG
 CG
-jX
+rZ
 jX
 jX
 jX
@@ -22773,7 +22867,7 @@ Aq
 Aq
 rP
 rP
-rP
+is
 rP
 rP
 rP
@@ -22798,13 +22892,13 @@ dZ
 dZ
 dZ
 ma
-aN
+bs
 xg
 aN
 me
 nC
 Lj
-qx
+gG
 Lj
 ma
 Ab
@@ -22990,7 +23084,7 @@ Kr
 jX
 jX
 jX
-jX
+ZF
 jX
 jX
 Kr
@@ -23137,7 +23231,7 @@ fl
 fl
 fl
 fl
-fj
+rS
 fl
 fl
 fl
@@ -23373,8 +23467,8 @@ fl
 pf
 qv
 VQ
-iZ
 VQ
+cq
 VQ
 VQ
 VQ
@@ -23523,7 +23617,7 @@ Kr
 jX
 Kr
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -23547,7 +23641,7 @@ rP
 rP
 LV
 rP
-rP
+qz
 xs
 rP
 rP
@@ -23565,7 +23659,7 @@ Aq
 Aq
 dZ
 Zh
-nC
+gG
 Lj
 dZ
 fl
@@ -24113,7 +24207,7 @@ ma
 ma
 ma
 ma
-jG
+VX
 hp
 ma
 ma
@@ -24123,7 +24217,7 @@ fl
 fl
 fl
 Ie
-Aa
+rS
 fl
 fl
 lu
@@ -24320,7 +24414,7 @@ rP
 rP
 rP
 rP
-rP
+is
 rP
 rP
 Aq
@@ -24431,7 +24525,7 @@ VQ
 WZ
 VQ
 hF
-df
+Gq
 hF
 qv
 Aq
@@ -24519,7 +24613,7 @@ Kr
 Kr
 Kr
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -24530,12 +24624,12 @@ Kr
 jX
 jX
 jX
-jX
+Ha
 jX
 aA
 jX
 jX
-jX
+Kr
 Kr
 Kr
 Kr
@@ -24781,7 +24875,7 @@ jX
 jX
 jX
 Kr
-jX
+Kr
 jX
 jX
 jX
@@ -24805,7 +24899,7 @@ jX
 Kr
 jX
 jX
-jX
+fj
 jX
 Kr
 Kr
@@ -24871,7 +24965,7 @@ gF
 VQ
 VQ
 VQ
-uP
+kc
 VQ
 ma
 fl
@@ -24926,7 +25020,7 @@ FV
 FV
 FV
 gF
-Yc
+cx
 gF
 FV
 qv
@@ -25043,7 +25137,7 @@ Kr
 Kr
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -25198,7 +25292,7 @@ Jp
 Jp
 VQ
 VQ
-uP
+VQ
 hF
 Jp
 gF
@@ -25329,7 +25423,7 @@ jX
 jX
 jX
 jX
-jX
+Ha
 jX
 jX
 jX
@@ -25455,7 +25549,7 @@ vR
 Jp
 gF
 VQ
-uQ
+DW
 hF
 gF
 gF
@@ -25569,7 +25663,7 @@ jX
 jX
 jX
 jX
-jX
+ZF
 jX
 Kr
 Kr
@@ -25840,7 +25934,7 @@ Kr
 Kr
 Kr
 jX
-jX
+rZ
 jX
 Cu
 jX
@@ -25856,7 +25950,7 @@ Aq
 rP
 rP
 rP
-rP
+Mr
 rP
 rP
 Aq
@@ -26101,7 +26195,7 @@ jX
 jX
 Cu
 jX
-jX
+rZ
 jX
 jX
 Kr
@@ -26840,7 +26934,7 @@ Kr
 jX
 jX
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -26893,7 +26987,7 @@ Aq
 ma
 zd
 zd
-yb
+Jv
 Dh
 zd
 zd
@@ -27096,7 +27190,7 @@ Kr
 Kr
 jX
 jX
-jX
+Ix
 jX
 jX
 jX
@@ -27267,7 +27361,7 @@ qv
 me
 Lj
 KW
-Lj
+Qh
 oB
 bw
 Aq
@@ -27344,7 +27438,7 @@ jX
 jX
 tw
 jX
-jX
+Ha
 EK
 jX
 jX
@@ -27695,7 +27789,7 @@ Lj
 aH
 Lj
 Lj
-nC
+Qh
 ma
 fl
 Qr
@@ -27758,7 +27852,7 @@ fl
 fl
 fl
 fl
-fj
+rS
 fl
 fl
 fl
@@ -27775,7 +27869,7 @@ yc
 uP
 VQ
 qv
-Lj
+Qh
 kL
 qv
 Ri
@@ -27906,7 +28000,7 @@ Kr
 Kr
 Kr
 jX
-rP
+Mr
 rP
 rP
 Aq
@@ -28005,7 +28099,7 @@ fl
 Kt
 fl
 Ab
-rS
+fl
 fl
 fl
 fl
@@ -28027,12 +28121,12 @@ hF
 hF
 vR
 VQ
-uP
+kc
 VQ
 VQ
 VQ
 qv
-qx
+Lj
 Lj
 qv
 ZB
@@ -28101,7 +28195,7 @@ Kr
 Kr
 jX
 jX
-jX
+Ix
 jX
 jX
 Kr
@@ -28178,7 +28272,7 @@ gF
 gF
 gF
 VQ
-Ix
+KG
 VQ
 VQ
 Pj
@@ -28263,7 +28357,7 @@ fl
 fl
 fl
 fl
-fl
+rS
 Kt
 fl
 cN
@@ -28638,7 +28732,7 @@ Kr
 Kr
 Kr
 jX
-jX
+jG
 CG
 jX
 jX
@@ -28699,7 +28793,7 @@ VQ
 VQ
 VQ
 VQ
-uP
+KG
 VQ
 ma
 fl
@@ -28997,7 +29091,7 @@ Pl
 Fa
 Pl
 Pl
-Kw
+Pl
 Wn
 Pl
 vZ
@@ -29011,7 +29105,7 @@ ma
 gF
 gF
 gF
-Gq
+Kq
 hF
 VQ
 VQ
@@ -29019,7 +29113,7 @@ ma
 VQ
 VQ
 VQ
-uP
+KG
 gF
 Lj
 Jp
@@ -29101,7 +29195,7 @@ Kr
 jX
 jX
 jX
-jX
+rZ
 jX
 jX
 jX
@@ -29321,7 +29415,7 @@ qx
 Lj
 qv
 Qf
-uP
+KG
 VQ
 ta
 qv
@@ -29400,7 +29494,7 @@ rP
 rP
 rP
 rP
-rP
+Mr
 rP
 rP
 Aq
@@ -29466,7 +29560,7 @@ VQ
 VQ
 VQ
 gF
-is
+cx
 ma
 fl
 fl
@@ -29575,7 +29669,7 @@ Lj
 me
 HZ
 Lj
-qx
+Qh
 qv
 JY
 GW
@@ -29828,7 +29922,7 @@ Lj
 me
 me
 Lj
-kL
+Qh
 me
 me
 Lj
@@ -29896,7 +29990,7 @@ Aq
 Aq
 Aq
 rP
-rP
+is
 rP
 Aq
 Aq
@@ -30062,7 +30156,7 @@ gF
 Jp
 Jp
 vR
-lg
+uy
 hF
 VQ
 kA
@@ -30130,7 +30224,7 @@ rP
 xs
 rP
 rP
-rP
+qz
 im
 rP
 LV
@@ -30281,7 +30375,7 @@ Vo
 aH
 dZ
 GU
-ZF
+GU
 GU
 GU
 hm
@@ -30421,7 +30515,7 @@ Aq
 Aq
 rP
 rP
-rP
+Mr
 rP
 rP
 rP
@@ -30447,7 +30541,7 @@ rP
 rP
 rP
 rP
-rP
+Mr
 rP
 rP
 Aq
@@ -30538,7 +30632,7 @@ jd
 Lj
 RK
 GU
-GU
+fS
 GU
 GU
 ek
@@ -30592,7 +30686,7 @@ fl
 fl
 GI
 fl
-Aa
+rS
 fl
 qv
 gF
@@ -30660,7 +30754,7 @@ Aq
 Aq
 Aq
 rP
-rP
+is
 Aq
 Aq
 Aq
@@ -30799,7 +30893,7 @@ GU
 GU
 GU
 ek
-Aa
+rS
 Xu
 vx
 fl
@@ -30900,7 +30994,7 @@ Aq
 rP
 rP
 rP
-rP
+ny
 rP
 rP
 rP
@@ -31190,31 +31284,31 @@ Aq
 Aq
 rP
 rP
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
+Aq
 rP
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-Aq
-rP
-rP
+Mr
 rP
 rP
 rP
@@ -31367,7 +31461,7 @@ fl
 fl
 qv
 gF
-bs
+KG
 VQ
 VQ
 hq
@@ -31597,7 +31691,7 @@ VQ
 VQ
 gF
 gF
-Ud
+cx
 gF
 ma
 fl
@@ -31997,7 +32091,7 @@ Aq
 Aq
 Aq
 Aq
-rP
+is
 rP
 Tx
 rP
@@ -32036,7 +32130,7 @@ gF
 gF
 VQ
 Lj
-uP
+KG
 ma
 fl
 fl
@@ -32061,7 +32155,7 @@ Uc
 Uc
 Uc
 zR
-Uc
+Oz
 zR
 Uc
 Pl
@@ -32258,7 +32352,7 @@ rP
 rP
 xs
 rP
-jX
+Ix
 jX
 Zw
 Zw
@@ -32315,7 +32409,7 @@ ma
 Pl
 Fa
 Fa
-ny
+Uc
 zR
 Uc
 Uc
@@ -33538,7 +33632,7 @@ Aq
 rP
 rP
 rP
-rP
+is
 rP
 rP
 rP
@@ -33995,7 +34089,7 @@ Aq
 Aq
 rP
 rP
-rP
+Mr
 rP
 rP
 rP
@@ -34182,7 +34276,7 @@ GI
 qv
 VQ
 VQ
-uP
+KG
 gF
 VQ
 qv
@@ -34310,7 +34404,7 @@ Aq
 Aq
 rP
 rP
-rP
+Mr
 rP
 rP
 rP
@@ -34966,7 +35060,7 @@ fl
 fl
 fl
 fl
-Aa
+rS
 fl
 fl
 Aq
@@ -35700,7 +35794,7 @@ gF
 Jp
 Jp
 gF
-is
+cx
 gF
 gF
 ma
@@ -37988,7 +38082,7 @@ Lj
 Ef
 Lj
 Lj
-nC
+Qh
 Lj
 Lj
 me
@@ -38234,7 +38328,7 @@ Jq
 Jq
 Zg
 Jq
-rZ
+rS
 uM
 Cy
 qg
@@ -40528,8 +40622,8 @@ fD
 Lj
 Lj
 Lj
+Qh
 Lj
-nC
 Lj
 Lj
 vm
@@ -41567,7 +41661,7 @@ FR
 zd
 rJ
 zd
-yb
+Jv
 qv
 jT
 Ss
@@ -66999,7 +67093,7 @@ Ld
 Ld
 Ld
 Ld
-YR
+Ld
 Ld
 Kj
 Ld
@@ -67251,7 +67345,7 @@ gF
 gF
 qv
 Ld
-Ni
+Ld
 Ld
 Ld
 Ld
@@ -68024,14 +68118,6 @@ lt
 rf
 fi
 fi
-OY
-fi
-fi
-fi
-fi
-fi
-fi
-OY
 fi
 fi
 fi
@@ -68040,6 +68126,14 @@ fi
 fi
 fi
 OY
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
 fi
 Ld
 Ld
@@ -68812,7 +68906,7 @@ Ld
 Ld
 Ld
 NP
-mL
+Ld
 Ld
 dx
 fF
@@ -69281,18 +69375,18 @@ gF
 gF
 gF
 gF
-Ha
-qv
-eF
-bw
-qv
-qv
 qv
 qv
 eF
 bw
 qv
-GT
+qv
+qv
+qv
+eF
+bw
+qv
+VQ
 VQ
 VQ
 gF
@@ -69548,14 +69642,14 @@ VQ
 VQ
 VQ
 VQ
-cq
+bw
 VQ
 VQ
 VQ
 VQ
 gF
 gF
-gG
+gF
 gF
 gF
 gF
@@ -69795,7 +69889,7 @@ gF
 kA
 gF
 gF
-gG
+gF
 gF
 VQ
 VQ
@@ -70062,7 +70156,7 @@ tj
 VQ
 VQ
 VQ
-cq
+bw
 VQ
 VQ
 VQ
@@ -70097,7 +70191,7 @@ Ld
 Ld
 Ld
 NP
-mL
+Ld
 Ld
 dx
 fF
@@ -70309,7 +70403,7 @@ gF
 gF
 gF
 gF
-cq
+bw
 qv
 JU
 qv
@@ -70320,7 +70414,7 @@ bw
 qv
 qv
 qv
-uy
+VQ
 gF
 gF
 yx
@@ -70585,7 +70679,7 @@ gF
 gF
 gF
 kA
-PR
+gF
 gF
 gF
 kA
@@ -70851,7 +70945,7 @@ gF
 fi
 fi
 fi
-OY
+fi
 pr
 fi
 fi
@@ -70866,7 +70960,7 @@ fi
 fi
 fi
 fi
-OY
+fi
 pr
 Ld
 Ld
@@ -71620,7 +71714,7 @@ gF
 yx
 qv
 Ld
-Ni
+Ld
 Ld
 Ld
 Ld
@@ -72136,7 +72230,7 @@ qv
 Aq
 Aq
 QC
-YR
+Ld
 Ld
 Ld
 ZI
@@ -72382,7 +72476,7 @@ qv
 bw
 bw
 bw
-Ha
+qv
 qv
 qv
 qv
@@ -73180,7 +73274,7 @@ GI
 vs
 vm
 Lj
-HW
+Lj
 Lj
 Lj
 TG
