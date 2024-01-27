@@ -2295,8 +2295,19 @@ GLOBAL_LIST_EMPTY(reskin_list)
 ///   KELPMAGIC STAVES   ///
 /datum/component/reskinnable/staff_kelpmagic
 	skins = list(
+		"Magic Staff",
 		"Shaman Staff",
 	)
+
+/datum/reskin/gun/staff_kelpmagic
+	skin = "Magic Staff"
+	name = "magic staff"
+	desc = "An intricate staff, carried for centuries by the shaman class of the tribe."
+	icon = 'icons/obj/guns/magic.dmi'
+	icon_state = "staffofnothing"
+	item_state = "staff"
+	expected_type = /obj/item/gun
+
 /datum/reskin/gun/staff_kelpmagic/shaman
 	skin = "Shaman Staff"
 	name = "shaman staff"
@@ -2304,6 +2315,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "staff-shaman"
+	item_state = "staff-shaman"
 	expected_type = /obj/item/gun
 
 
