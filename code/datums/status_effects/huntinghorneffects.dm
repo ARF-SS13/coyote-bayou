@@ -102,14 +102,13 @@
 
 /datum/status_effect/music/instaheal/on_apply()
 	. = ..()
-	owner.health += 10
+	owner.heal_ordered_damage(20, list(BRUTE, BURN, TOX, OXY))
 
 
 /datum/status_effect/music/recovery
 	id = "tenacity"
 
 /datum/status_effect/music/recovery/tick()
-	. = ..()
 	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE)
 
 
