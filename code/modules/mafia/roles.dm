@@ -339,7 +339,6 @@
 		RegisterSignal(current_target,COMSIG_MAFIA_CAN_PERFORM_ACTION,PROC_REF(prevent_action))
 
 /datum/mafia_role/lawyer/proc/release(datum/mafia_controller/game)
-	. = ..()
 	if(current_target)
 		UnregisterSignal(current_target, COMSIG_MAFIA_CAN_PERFORM_ACTION)
 		current_target = null
