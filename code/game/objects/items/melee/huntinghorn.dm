@@ -54,9 +54,16 @@
 	UnregisterSignal(src, SIG_ITEM_UNWIELD)
 
 /obj/item/huntinghorn/examine_more()
+	// list songs
 	. = list(span_notice("It could play..."))
 	for(var/datum/huntinghornsong/song in songlist)
 		. += span_notice("A [song.name], which [song.effect_desc]. Notes: [song.notes_to_string()]")
+
+	// explain mechanics
+	. += span_notice("Use in-hand to play like an instrument. Wield it while in combat mode and harm intent to get ready for a real show.")
+	. += span_notice("Then if you use it in-hand, you can choose a note to play or start a performance!")
+	. += span_notice("To get a song ready, play its notes in order. Your chosen note will play when you attack.")
+	. += span_notice("Once at least one song is ready, all you need to do is perform! You'll have to stand still while performing.")
 
 
 /// If we're in combat mode, we can set the note we're playing. Or we can perform!
@@ -231,6 +238,7 @@
 /obj/item/huntinghorn/healing
 	name = "hunting horn - healing"
 	songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
+	color = rgb(0, 145, 0)
 
 
 
@@ -256,6 +264,7 @@
 	var/name = "indescribable song"
 	var/list/required_notes = list(LOW_NOTE, LOW_NOTE, LOW_NOTE)
 	var/datum/status_effect/music/effect = /datum/status_effect/music
+	var/effect_desc = "has a strange and nebulous effect"
 
 /datum/huntinghornsong/proc/check_notes(list/notes)
 	if(notes ~= required_notes)
@@ -326,16 +335,19 @@
 	name = "song of alertness"
 	required_notes = list(MID_NOTE, MID_NOTE, HIGH_NOTE)
 	effect = /datum/status_effect/music/draw_speed
+	effect_desc = "encourages deftness when drawing weapons"
 
 /datum/huntinghornsong/fast_actions
 	name = "song of dexterity"
 	required_notes = list(LOW_NOTE, MID_NOTE, HIGH_NOTE)
 	effect = /datum/status_effect/music/fast_actions
+	effect_desc = "enhances quickness when performing tedious tasks"
 
 /datum/huntinghornsong/stamina_up
 	name = "song of persistence"
 	required_notes = list(HIGH_NOTE, MID_NOTE, HIGH_NOTE)
 	effect = /datum/status_effect/music/stamina_up
+	effect_desc = "boosts stamina"
 
 
 	// HEALING //
@@ -344,16 +356,19 @@
 	name = "song of health"
 	required_notes = list(HIGH_NOTE, HIGH_NOTE, HIGH_NOTE)
 	effect = /datum/status_effect/music/instaheal
+	effect_desc = "gives an instant kick to natural healing"
 
 /datum/huntinghornsong/recovery
 	name = "song of recovery"
 	required_notes = list(LOW_NOTE, MID_NOTE, HIGH_NOTE)
-	effect = /datum/status_effect/music/instaheal
+	effect = /datum/status_effect/music/recovery
+	effect_desc = "encourages the body's healing over time"
 
 /datum/huntinghornsong/maxhp_up
 	name = "song of vigor"
 	required_notes = list(LOW_NOTE, LOW_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/maxhp_up
+	effect_desc = "increases maximum pain tolerance for a time"
 
 #undef HH_WIELD_TIME
 #undef HH_PERFORMANCE_RANGE
