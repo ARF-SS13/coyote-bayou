@@ -244,6 +244,7 @@
 		the_dead[M] = TRUE
 
 	var/eavesdropping
+	
 	var/eavesrendered
 	if(eavesdrop_range)
 		eavesdropping = stars(message)

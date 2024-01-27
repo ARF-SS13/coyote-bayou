@@ -86,7 +86,7 @@ effective or pretty fucking useless.
 		return
 	if(!used)
 		log_combat(user, M, "irradiated", src)
-		var/cooldown = get_cooldown()
+		var/cooldown = get_cooldown()	
 		used = TRUE
 		icon_state = "health1"
 		addtimer(VARSET_CALLBACK(src, used, FALSE), cooldown)

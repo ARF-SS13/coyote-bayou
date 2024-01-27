@@ -175,7 +175,8 @@ All foods are distributed among various categories. Use common sense.
 							M.visible_message(
 								span_notice("[M] unwillingly [eatverb]s \the [src]."), 
 								span_notice("You unwillingly [eatverb] \the [src]."))
-					if((600 * (1 + M.overeatduration / 1000)) to INFINITY)
+					//if((600 * (1 + M.overeatduration / 1000)) to INFINITY) // Had to change this to a const, sorry if it don't work! Can convert it to an if else statemetnt but I'm lazy.
+					if(650 to INFINITY)
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 							M.visible_message(
 								span_notice("[M] gluttonously [eatverb]s \the [src], cramming it down [M.p_their()] throat!"), 
