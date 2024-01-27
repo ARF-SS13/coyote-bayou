@@ -247,13 +247,13 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
-/mob/living/simple_animal/hostile/rat/Initialize()
+/mob/living/simple_animal/hostile/rat/Initialize(mapload)
 	. = ..()
 	if(cheesy)
 		SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/mob_holder, "mouse_gray")
-	if(!is_smol)
+	if(!is_smol && !mapload)
 		do_alert_animation(src)
 		resize = 1.5
 		update_transform()

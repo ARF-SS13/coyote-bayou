@@ -990,7 +990,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		if(ishuman(M))
 			if(!iscultist(M))
 				AH.remove_hud_from(M)
-				addtimer(CALLBACK(GLOBAL_PROC_REF(hudFix), M), duration)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(hudFix), M), duration)
 			var/image/A = image('icons/mob/mob.dmi',M,"cultist", ABOVE_MOB_LAYER)
 			A.override = 1
 			add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/noncult, "human_apoc", A, FALSE)

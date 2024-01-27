@@ -484,14 +484,14 @@
 			//Speak (Forces player to talk)
 			if (lowertext(customTriggers[trigger][1]) == "speak")//trigger2
 				var/saytext = "Your mouth moves on it's own before you can even catch it."
-				addtimer(CALLBACK(GLOBAL_PROC_REF(to_chat), C, span_notice("<i>[saytext]</i>")), 5)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_notice("<i>[saytext]</i>")), 5)
 				addtimer(CALLBACK(C, /atom/movable/proc/say, "[customTriggers[trigger][2]]"), 5)
 				log_reagent("FERMICHEM: MKULTRA: [owner] ckey: [owner.key] has been forced to say: \"[customTriggers[trigger][2]]\" from previous trigger.")
 
 
 			//Echo (repeats message!) allows customisation, but won't display var calls! Defaults to hypnophrase.
 			else if (lowertext(customTriggers[trigger][1]) == "echo")//trigger2
-				addtimer(CALLBACK(GLOBAL_PROC_REF(to_chat), C, "<span class='velvet'><i>[customTriggers[trigger][2]]</i></span>"), 5)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, "<span class='velvet'><i>[customTriggers[trigger][2]]</i></span>"), 5)
 				//(to_chat(owner, "<span class='hypnophrase'><i>[customTriggers[trigger][2]]</i></span>"))//trigger3
 
 			//Shocking truth!
