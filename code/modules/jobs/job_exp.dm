@@ -8,13 +8,13 @@ GLOBAL_PROTECT(exp_to_update)
 		return 0
 	if(!CONFIG_GET(flag/use_exp_tracking))
 		return 0
-	if(!SSdbcore.Connect())
-		return 0
+	// if(!SSdbcore.Connect())
+	// 	return 0
 	if(!exp_requirements || !exp_type)
 		return 0
 	if(!job_is_xp_locked(src.title))
 		return 0
-	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_rights_for(C,R_ADMIN))
+	if(SSjob.debug_admins_are_exempt_from_timelocks && check_rights_for(C,R_ADMIN)) // RARR IM DAN AND I HATE CONFIGSSSS
 		return 0
 	var/isexempt = C.prefs.db_flags & DB_FLAG_EXEMPT
 	if(isexempt)
