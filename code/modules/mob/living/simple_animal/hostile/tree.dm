@@ -56,9 +56,8 @@
 					T.air.adjust_moles(GAS_CO2, -amt)
 					T.atmos_spawn_air("o2=[amt];TEMP=293.15")
 
-/mob/living/simple_animal/hostile/tree/AttackingTarget()
+/mob/living/simple_animal/hostile/tree/PostMeleeAttack(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!iscarbon(my_target))
 		return
 	var/mob/living/carbon/C = my_target

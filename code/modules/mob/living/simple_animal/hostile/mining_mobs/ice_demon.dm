@@ -16,7 +16,7 @@
 	ranged = TRUE
 	ranged_message = "manifests ice"
 	ranged_cooldown_time = 30
-	minimum_distance = 3
+	approach_distance = 3
 	retreat_distance = 3
 	maxHealth = 150
 	health = 150

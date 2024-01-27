@@ -106,10 +106,10 @@
 		return ..()
 
 
-/mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
-	. = ..()
-	var/atom/my_target = get_target()
-	if(!. || !ishuman(my_target))
+/mob/living/simple_animal/hostile/retaliate/goat/MeleeAttackTarget(atom/my_target)
+	if(!ishuman(my_target))
+		return
+	if(!.)
 		return
 	var/mob/living/carbon/human/H = my_target
 	if(!istype(H.dna.species, /datum/species/pod))

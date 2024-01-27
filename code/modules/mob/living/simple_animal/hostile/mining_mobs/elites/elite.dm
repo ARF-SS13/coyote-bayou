@@ -36,8 +36,7 @@
 		attack_action.Grant(src)
 
 //Prevents elites from attacking members of their faction (can't hurt themselves either) and lets them mine rock with an attack despite not being able to smash walls.
-/mob/living/simple_animal/hostile/asteroid/elite/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/asteroid/elite/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/M = my_target
 		if(faction_check_mob(M))

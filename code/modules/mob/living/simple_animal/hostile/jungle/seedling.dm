@@ -109,8 +109,7 @@
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/jungle/seedling/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/jungle/seedling/MeleeAttackTarget(atom/my_target)
 	if(isliving(my_target))
 		if(ranged_cooldown <= world.time && combatant_state == SEEDLING_STATE_NEUTRAL)
 			OpenFire(my_target)

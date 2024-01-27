@@ -31,7 +31,7 @@
 	icon_gib = "magicarp_gib"
 	ranged = 1
 	retreat_distance = 2
-	minimum_distance = 0 //Between shots they can and will close in to nash
+	approach_distance = 0 //Between shots they can and will close in to nash
 	projectiletype = /obj/item/projectile/magic
 	projectilesound = 'sound/weapons/emitter.ogg'
 	maxHealth = 50

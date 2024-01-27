@@ -631,9 +631,8 @@ Difficulty: Very Hard
 	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 	medsensor.add_hud_to(src)
 
-/mob/living/simple_animal/hostile/lightgeist/AttackingTarget()
+/mob/living/simple_animal/hostile/lightgeist/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(isliving(my_target) && my_target != src)
 		var/mob/living/L = my_target
 		if(L.stat != DEAD)

@@ -90,7 +90,7 @@ Difficulty: Medium
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/dragon/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/dragon/MeleeAttackTarget(atom/my_target)
 	if(!swooping)
 		return ..()
 

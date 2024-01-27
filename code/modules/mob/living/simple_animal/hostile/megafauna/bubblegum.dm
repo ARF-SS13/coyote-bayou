@@ -109,7 +109,7 @@ Difficulty: Hard
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/bubblegum/MeleeAttackTarget(atom/my_target)
 	if(charging)
 		return
 	..()

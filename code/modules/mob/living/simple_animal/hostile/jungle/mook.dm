@@ -44,8 +44,7 @@
 	desc = "A deceased primitive. Upon closer inspection, it was suffering from severe cellular degeneration and its garments are machine made..."//Can you guess the twist
 	return ..()
 
-/mob/living/simple_animal/hostile/jungle/mook/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/jungle/mook/MeleeAttackTarget(atom/my_target)
 	if(!isliving(my_target))
 		return ..()
 	if(ranged_cooldown <= world.time && attack_state == MOOK_ATTACK_NEUTRAL)

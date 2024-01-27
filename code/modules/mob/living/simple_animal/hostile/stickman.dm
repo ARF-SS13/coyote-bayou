@@ -33,7 +33,7 @@
 /mob/living/simple_animal/hostile/stickman/ranged
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	icon_state = "stickmanranged"
 	icon_living = "stickmanranged"
 	casingtype = /obj/item/ammo_casing/c10mm

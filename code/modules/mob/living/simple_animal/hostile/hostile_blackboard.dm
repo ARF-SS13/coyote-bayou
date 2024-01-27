@@ -1,15 +1,3 @@
-/// Currently moving toward the target, up to their minimum distance
-#define HAI_MOVEMODE_APPROACH 1 // oh hai mark
-/// Currently moving away from the target, up to their retreat distance
-#define HAI_MOVEMODE_RETREAT 2
-/// Currently moving toward the target, up to melee range
-#define HAI_MOVEMODE_RUSH 3
-/// Currently moving away from the target, up to 5 times their retreat distance
-#define HAI_MOVEMODE_FLEE 4
-/// Currently standing ground
-#define HAI_MOVEMODE_STAND 5
-/// Currently just wandering around
-#define HAI_MOVEMODE_WANDER 6
 
 /// <reference path="../../typings/tsd.d.ts" />
 /// {FILE: /hostile_ai.dm} (C) 2015-2016 Arthur Moore (MooreShark) a part of the /hostile_ai/ package
@@ -61,6 +49,8 @@
 	var/just_move_to_target
 	/// We did a shot this turn!
 	var/shot_was_performed
+	/// We did a punch this turn!
+	var/punch_was_performed
 	/// Target is the container of our true target
 	var/target_in_something
 
@@ -68,12 +58,16 @@
 	////// MIDTERM MEMORY ////////////////////////////
 	/// we're locked into doing an attack until...
 	var/attacking_until
+	/// we're locked into telegraphing an attack until...
+	var/telegraphing_until
 	/// what kind of movement are we doing?
 	var/movement_style = HAI_MOVEMODE_WANDER
 	/// if we're locked into a movement mode, this is it
 	var/movement_mode_lock
-
+	/// when did we last attack?
 	var/last_attack_time = 0
+	/// are we mad at our target, or just told to go there? for whether or not we should respect chase laws (est. 2016)
+	var/mad_at_target
 
 	/// The coords of wherever we're moving, if anything
 	var/move_to_x
@@ -99,6 +93,9 @@
 	/// the last time we've met that ckey
 	var/last_met_time
 
+	/// If a player is in us, just ignore anything that isnt cooldowns
+	var/player_controlled
+
 	/// When we're out of combat, try to approach this guy, up to their minimum distance
 	var/datum/weakref/follow_target
 
@@ -114,6 +111,7 @@
 	just_move_to_target = null
 	in_use = null
 	shot_was_performed = null
+	punch_was_performed = null
 	target_in_something = null
 
 /datum/hostile_blackboard/proc/wipe_midterm()
@@ -121,6 +119,12 @@
 	movement_style = HAI_MOVEMODE_WANDER
 	last_attack_time = 0
 	shot_was_performed = null
+	mad_at_target = null
+	move_to_x = null
+	move_to_y = null
+	move_to_z = null
+	move_to_attempts = 0
+	retained_target = null
 
 /datum/hostile_blackboard/proc/wipe_longterm()
 	targ_x = null
@@ -128,6 +132,8 @@
 	targ_z = null
 	last_met_ckey = null
 	last_met_time = null
+	give_up_time = null
+	follow_target = null
 
 /datum/hostile_blackboard/proc/forget_target()
 	targ_x = null
@@ -150,11 +156,25 @@
 		return
 	return targturf
 
+/datum/hostile_blackboard/proc/target_lost()
+	clear_movement_target()
+	wipe_shortterm()
+	wipe_midterm()
+
 /datum/hostile_blackboard/proc/set_in_combat()
 	in_combat = TRUE
 
 /datum/hostile_blackboard/proc/set_out_of_combat()
 	in_combat = FALSE
+
+/datum/hostile_blackboard/proc/telegraphing_melee_until(time)
+	COOLDOWN_START(src, telegraphing_until, time)
+
+/datum/hostile_blackboard/proc/is_telegraphing_melee()
+	return COOLDOWN_TIMELEFT(src, telegraphing_until)
+
+/datum/hostile_blackboard/proc/finished_telegraphing_melee()
+	telegraphing_until = 0
 
 /datum/hostile_blackboard/proc/attack_until(time)
 	COOLDOWN_START(src, attacking_until, time)
@@ -195,7 +215,7 @@
 	movement_style = HAI_MOVEMODE_WANDER
 	clear_movement_target()
 
-/datum/hostile_blackboard/proc/should_rush()
+/datum/hostile_blackboard/proc/is_rushing()
 	return movement_style == HAI_MOVEMODE_RUSH
 
 /datum/hostile_blackboard/proc/is_engaging()
@@ -204,11 +224,21 @@
 /datum/hostile_blackboard/proc/is_retreating()
 	return movement_style == HAI_MOVEMODE_RETREAT || movement_style == HAI_MOVEMODE_FLEE
 
+/datum/hostile_blackboard/proc/is_wandering()
+	return movement_style == HAI_MOVEMODE_WANDER
+
 /datum/hostile_blackboard/proc/force_rush()
 	set_rushing()
 	movement_mode_lock = movement_style
 
 /datum/hostile_blackboard/proc/unforce_rush()
+	movement_mode_lock = null
+
+/datum/hostile_blackboard/proc/force_flee()
+	set_fleeing()
+	movement_mode_lock = movement_style
+
+/datum/hostile_blackboard/proc/unforce_flee()
 	movement_mode_lock = null
 
 /datum/hostile_blackboard/proc/set_movement_target(atom/there)
@@ -259,3 +289,11 @@
 /datum/hostile_blackboard/proc/seen_target(atom/target, gup)
 	give_up_time = world.time + gup
 
+/datum/hostile_blackboard/proc/melee_thought_performed()
+	punch_was_performed = TRUE
+
+/datum/hostile_blackboard/proc/ranged_thought_performed()
+	shot_was_performed = TRUE
+
+/datum/hostile_blackboard/proc/had_combat_thought()
+	return punch_was_performed || shot_was_performed

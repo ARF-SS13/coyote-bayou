@@ -24,7 +24,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	minimum_distance = 4
+	approach_distance = 4
 	retreat_distance = 7
 	attack_verb_simple = "punches"
 	attack_sound = "punch"

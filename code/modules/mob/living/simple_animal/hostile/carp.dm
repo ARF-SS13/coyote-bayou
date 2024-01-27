@@ -52,9 +52,8 @@
 	if(regen_amount && regen_cooldown < world.time)
 		heal_overall_damage(regen_amount)
 
-/mob/living/simple_animal/hostile/carp/AttackingTarget()
+/mob/living/simple_animal/hostile/carp/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

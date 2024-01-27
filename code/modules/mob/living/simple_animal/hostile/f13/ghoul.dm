@@ -168,7 +168,7 @@
 	health = 50
 	melee_attacks_per_tick = 2
 	retreat_distance = 3
-	minimum_distance = 1
+	approach_distance = 1
 	ranged = TRUE
 	ranged_message = "throws a rock"
 	ranged_cooldown_time = 3 SECONDS
@@ -307,7 +307,7 @@
 	health = 40
 	speed = 2
 	retreat_distance = 4
-	minimum_distance = 4
+	approach_distance = 4
 	ranged_message = "emits radiation"
 	ranged = TRUE
 	projectiletype = /obj/item/projectile/radiation_thing
@@ -352,9 +352,8 @@
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/glowing/AttackingTarget()
+/mob/living/simple_animal/hostile/ghoul/glowing/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -566,9 +565,8 @@
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing/AttackingTarget()
+/mob/living/simple_animal/hostile/ghoul/zombie/glowing/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

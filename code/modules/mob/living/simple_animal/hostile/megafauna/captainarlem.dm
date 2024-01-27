@@ -75,7 +75,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/captainarlem/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/captainarlem/MeleeAttackTarget(atom/my_target)
 	if(charging)
 		return
 	..()

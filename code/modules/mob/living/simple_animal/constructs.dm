@@ -201,9 +201,8 @@
 	var/crit_refund = 50 //5 seconds when putting a targette into critical
 	var/kill_refund = 250 //full refund on kills
 
-/mob/living/simple_animal/hostile/construct/wraith/AttackingTarget() //refund jaunt cooldown when attacking living targets
+/mob/living/simple_animal/hostile/construct/wraith/MeleeAttackTarget(atom/my_target) //refund jaunt cooldown when attacking living targets
 	var/prev_stat
-	var/atom/my_target = get_target()
 	if(isliving(my_target) && !iscultist(my_target))
 		var/mob/living/L = my_target
 		prev_stat = L.stat
@@ -347,8 +346,7 @@
 		if(stored_pulling)
 			start_pulling(stored_pulling, supress_message = TRUE) //drag anything we're pulling through the wall with us by magic
 
-/mob/living/simple_animal/hostile/construct/harvester/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/construct/harvester/MeleeAttackTarget(atom/my_target)
 	if(!iscarbon(my_target))
 		return ..()
 	var/mob/living/carbon/C = my_target

@@ -271,7 +271,7 @@
 	if(dextrous && !ismob(attack_target))
 		return ..()
 	else
-		AttackingTarget()
+		InitiateMeleeAttack(attack_target)
 
 /*
 	New Players:

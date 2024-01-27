@@ -352,7 +352,7 @@
 
 //ATTACKING, BLOCKING, and COUNTERING
 
-/mob/living/simple_animal/hostile/clockwork/marauder/guardian/AttackingTarget()
+/mob/living/simple_animal/hostile/clockwork/marauder/guardian/PreMeleeAttack(atom/my_target)
 	if(is_in_host())
 		return FALSE
 	return ..()

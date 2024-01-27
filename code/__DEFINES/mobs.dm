@@ -579,11 +579,11 @@
 #define MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_RETREAT_DISTANCE_CHANCE = x
 
 /// Varied minimum define
-#define MOB_MINIMUM_DISTANCE "varied_minimum_distance"
+#define MOB_APPROACH_DISTANCE "varied_minimum_distance"
 /// Varied minimum define chance
 #define MOB_MINIMUM_DISTANCE_CHANCE "varied_minimum_distance_chance"
 /// Varied minimum list
-#define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_MINIMUM_DISTANCE = list(x)
+#define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_APPROACH_DISTANCE = list(x)
 /// Varied minimum list chance
 #define MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_MINIMUM_DISTANCE_CHANCE = x
 
@@ -654,4 +654,27 @@
 #define CURRENT_LIVING_ANTAGS	"living_antags_list"
 #define CURRENT_DEAD_PLAYERS	"dead_players_list"
 #define CURRENT_OBSERVERS		"current_observers_list"
+
+/// Currently moving toward the target, up to their minimum distance
+#define HAI_MOVEMODE_APPROACH 1 // oh hai mark
+/// Currently moving away from the target, up to their retreat distance
+#define HAI_MOVEMODE_RETREAT 2
+/// Currently moving toward the target, up to melee range
+#define HAI_MOVEMODE_RUSH 3
+/// Currently moving away from the target, up to 5 times their retreat distance
+#define HAI_MOVEMODE_FLEE 4
+/// Currently standing ground
+#define HAI_MOVEMODE_STAND 5
+/// Currently just wandering around
+#define HAI_MOVEMODE_WANDER 6
+
+/// Telegraph return codes
+/// Abort the melee attack, we are winding up
+#define HAI_TELEGRAPH_ABORT_MELEE 30
+/// Abort the ranged attack, we are winding up
+#define HAI_TELEGRAPH_ABORT_RANGED 31
+/// Proceed with the melee attack, we don't care about winding up
+#define HAI_TELEGRAPH_PROCEED_MELEE 32
+/// Proceed with the ranged attack, we don't care about winding up
+#define HAI_TELEGRAPH_PROCEED_RANGED 33
 

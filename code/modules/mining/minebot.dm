@@ -151,7 +151,7 @@
 	search_objects = 2
 	wander = TRUE
 	ranged = FALSE
-	minimum_distance = 1
+	approach_distance = 1
 	retreat_distance = null
 	icon_state = "mining_drone"
 	to_chat(src, span_info("You are set to collect mode. You can now collect loose ore."))
@@ -163,12 +163,11 @@
 	wander = FALSE
 	ranged = TRUE
 	retreat_distance = 2
-	minimum_distance = 1
+	approach_distance = 1
 	icon_state = "mining_drone_offense"
 	to_chat(src, span_info("You are set to attack mode. You can now attack from range."))
 
-/mob/living/simple_animal/hostile/mining_drone/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/mining_drone/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target, /obj/item/stack/ore) && mode == MINEDRONE_COLLECT)
 		CollectOre()
 		return

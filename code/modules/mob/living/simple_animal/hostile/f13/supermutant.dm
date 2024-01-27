@@ -415,7 +415,7 @@
 	if(!charging)
 		..()
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rain/AttackingTarget()
+/mob/living/simple_animal/hostile/supermutant/nightkin/rain/MeleeAttackTarget(atom/my_target)
 	if(!charging)
 		return ..()
 

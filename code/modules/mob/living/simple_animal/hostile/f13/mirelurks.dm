@@ -21,7 +21,7 @@
 	retreat_distance = 0
 	//how far they pull back
 	
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7

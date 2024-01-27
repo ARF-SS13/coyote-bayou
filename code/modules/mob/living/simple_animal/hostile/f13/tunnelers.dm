@@ -74,9 +74,8 @@
 	..()
 	summon_backup(15)
 
-/mob/living/simple_animal/hostile/trog/tunneler/AttackingTarget()
+/mob/living/simple_animal/hostile/trog/tunneler/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -122,9 +121,8 @@
 	..()
 	summon_backup(15)
 
-/mob/living/simple_animal/hostile/trog/tunneler/blindone/AttackingTarget()
+/mob/living/simple_animal/hostile/trog/tunneler/blindone/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

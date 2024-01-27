@@ -90,8 +90,7 @@
 	else
 		..()
 
-/mob/living/simple_animal/hostile/asteroid/gutlunch/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/asteroid/gutlunch/PostMeleeAttack(atom/my_target)
 	if(is_type_in_typecache(my_target,wanted_objects)) //we eats
 		udder.generateMilk()
 		regenerate_icons()

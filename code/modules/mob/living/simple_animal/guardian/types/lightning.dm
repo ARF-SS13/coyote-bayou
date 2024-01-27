@@ -19,9 +19,8 @@
 	var/list/enemychains = list()
 	var/successfulshocks = 0
 
-/mob/living/simple_animal/hostile/guardian/beam/AttackingTarget()
+/mob/living/simple_animal/hostile/guardian/beam/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(. && isliving(my_target) && my_target != src && my_target != summoner)
 		cleardeletedchains()
 		for(var/chain in enemychains)

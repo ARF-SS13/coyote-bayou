@@ -28,9 +28,8 @@
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 
-/mob/living/simple_animal/hostile/cat_butcherer/AttackingTarget()
+/mob/living/simple_animal/hostile/cat_butcherer/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !prob(35) || !iscarbon(my_target))
 		return
 	var/mob/living/carbon/human/L = my_target

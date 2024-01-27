@@ -29,7 +29,7 @@
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 3
-	minimum_distance = 3
+	approach_distance = 3
 	pass_flags = PASSTABLE
 	loot = list(/obj/item/organ/regenerative_core)
 	var/brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood
@@ -44,7 +44,7 @@
 		A.faction = faction.Copy()
 		ranged_cooldown = world.time + ranged_cooldown_time
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/AttackingTarget()
+/mob/living/simple_animal/hostile/asteroid/hivelord/MeleeAttackTarget(atom/my_target)
 	OpenFire()
 	return TRUE
 

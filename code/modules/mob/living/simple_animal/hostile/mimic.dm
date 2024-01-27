@@ -69,9 +69,8 @@
 	if(.)
 		trigger()
 
-/mob/living/simple_animal/hostile/mimic/crate/AttackingTarget()
+/mob/living/simple_animal/hostile/mimic/crate/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!.)
 		return
 	icon_state = initial(icon_state)
@@ -184,9 +183,8 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 	if(destroy_objects)
 		..()
 
-/mob/living/simple_animal/hostile/mimic/copy/AttackingTarget()
+/mob/living/simple_animal/hostile/mimic/copy/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(knockdown_people && . && prob(15) && iscarbon(my_target))
 		var/mob/living/carbon/C = my_target
 		C.DefaultCombatKnockdown(40)

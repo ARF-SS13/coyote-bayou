@@ -116,9 +116,8 @@
 	. = ..()
 
 
-/mob/living/simple_animal/hostile/venus_human_trap/AttackingTarget()
+/mob/living/simple_animal/hostile/venus_human_trap/PostMeleeAttack(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!isliving(my_target))
 		return
 	var/mob/living/L = my_target

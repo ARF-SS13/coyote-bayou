@@ -260,7 +260,10 @@
 	color = "#B85C00"
 	retreat_distance = null
 	approach_distance = 1
+	var/exploding = FALSE
 
-/mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
+/mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/MeleeAttackTarget(atom/my_target)
+	if(exploding)
+		return
 	addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
 	addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)

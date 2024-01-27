@@ -20,9 +20,8 @@
 		summoner.ExtinguishMob()
 		summoner.adjust_fire_stacks(-20)
 
-/mob/living/simple_animal/hostile/guardian/fire/AttackingTarget()
+/mob/living/simple_animal/hostile/guardian/fire/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(. && ishuman(my_target) && my_target != summoner)
 		new /datum/hallucination/delusion(my_target,TRUE,"custom",200,0, icon_state,icon)
 

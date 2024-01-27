@@ -57,9 +57,8 @@
 	return ..()
 
 
-/mob/living/simple_animal/hostile/illusion/AttackingTarget()
+/mob/living/simple_animal/hostile/illusion/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !isliving(my_target) || !prob(multiply_chance))
 		return
 	var/mob/living/L = my_target
@@ -74,7 +73,7 @@
 
 /mob/living/simple_animal/hostile/illusion/escape
 	retreat_distance = 10
-	minimum_distance = 10
+	approach_distance = 10
 	melee_damage_lower = 0
 	melee_damage_upper = 0
 	speed = -1
@@ -82,5 +81,5 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
 
-/mob/living/simple_animal/hostile/illusion/escape/AttackingTarget()
+/mob/living/simple_animal/hostile/illusion/escape/MeleeAttackTarget(atom/my_target)
 	return FALSE

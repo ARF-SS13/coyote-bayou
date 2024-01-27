@@ -448,9 +448,8 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 		)
 
-/mob/living/simple_animal/hostile/gecko/legacy/alpha/AttackingTarget()
+/mob/living/simple_animal/hostile/gecko/legacy/alpha/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -655,9 +654,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 
-/mob/living/simple_animal/hostile/stalker/AttackingTarget()
+/mob/living/simple_animal/hostile/stalker/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -731,9 +729,8 @@
 	melee_damage_upper = 10
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-/mob/living/simple_animal/hostile/stalker/AttackingTarget()
+/mob/living/simple_animal/hostile/stalker/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

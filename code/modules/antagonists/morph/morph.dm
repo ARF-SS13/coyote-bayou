@@ -189,11 +189,10 @@
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/morph/AttackingTarget()
+/mob/living/simple_animal/hostile/morph/MeleeAttackTarget(atom/my_target)
 	if(morphed && !melee_damage_disguised)
 		to_chat(src, span_warning("You can not attack while disguised!"))
 		return
-	var/atom/my_target = get_target()
 	if(isliving(my_target)) //Eat Corpses to regen health
 		var/mob/living/L = my_target
 		if(L.stat == DEAD)

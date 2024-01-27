@@ -2,9 +2,8 @@
 	var/poison_per_bite = 0
 	var/poison_type = /datum/reagent/toxin
 
-/mob/living/simple_animal/hostile/retaliate/poison/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !isliving(my_target))
 		return
 	var/mob/living/L = my_target
@@ -67,8 +66,7 @@
 	//Filter living mobs (in range mobs) by those we consider enemies (retaliate behaviour)
 	return  living_mobs & actual_enemies
 
-/mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/retaliate/poison/snake/MeleeAttackTarget(atom/my_target)
 	if(!istype(my_target, /mob/living/simple_animal/mouse))
 		return ..()
 	visible_message(span_notice("[name] consumes [my_target] in a single gulp!"), span_notice("You consume [my_target] in a single gulp!"))

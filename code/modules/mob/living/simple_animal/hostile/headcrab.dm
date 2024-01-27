@@ -38,9 +38,8 @@
 					span_danger("We inject our egg into [victim]'s body!"))
 	egg_lain = 1
 
-/mob/living/simple_animal/hostile/headcrab/AttackingTarget()
+/mob/living/simple_animal/hostile/headcrab/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || egg_lain || !iscarbon(my_target) || ismonkey(my_target))
 		return
 	// Changeling egg can survive in aliens!

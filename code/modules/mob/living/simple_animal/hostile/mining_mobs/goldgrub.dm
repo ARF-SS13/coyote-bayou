@@ -57,8 +57,7 @@
 		if(will_burrow)
 			addtimer(CALLBACK(src, .proc/Burrow), chase_time)
 
-/mob/living/simple_animal/hostile/asteroid/goldgrub/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/asteroid/goldgrub/PostMeleeAttack(atom/my_target)
 	if(istype(my_target, /obj/item/stack/ore))
 		EatOre(my_target)
 		return

@@ -538,7 +538,7 @@
 	maxHealth = 5000
 	health = 5000
 	retreat_distance = 1
-	minimum_distance = 1
+	approach_distance = 1
 	aggro_vision_range = 7
 	vision_range = 10
 	is_smol = TRUE

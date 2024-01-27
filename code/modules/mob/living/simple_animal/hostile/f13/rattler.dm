@@ -40,9 +40,8 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 
 
 
-/mob/living/simple_animal/hostile/texas_rattler/AttackingTarget()
+/mob/living/simple_animal/hostile/texas_rattler/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

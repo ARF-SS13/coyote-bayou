@@ -21,9 +21,9 @@
 
 
 
-/mob/living/simple_animal/hostile/guardian/punch/AttackingTarget()
+/mob/living/simple_animal/hostile/guardian/punch/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	if(isliving(get_target()))
+	if(isliving(my_target))
 		say("[battlecry][battlecry][battlecry][battlecry][battlecry][battlecry][battlecry][battlecry][battlecry][battlecry]!!", ignore_spam = TRUE)
 		playsound(loc, src.attack_sound, 50, 1, 1)
 		playsound(loc, src.attack_sound, 50, 1, 1)

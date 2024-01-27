@@ -43,9 +43,9 @@
 	if(.)
 		emote("me", 1, "growls at [.]!")
 
-/mob/living/simple_animal/hostile/shark/AttackingTarget()
+/mob/living/simple_animal/hostile/shark/PostMeleeAttack(atom/my_target)
 	. =..()
-	var/mob/living/carbon/L = .
+	var/mob/living/carbon/L = my_target
 	if(istype(L))
 		if(prob(25))
 			L.DefaultCombatKnockdown(20)
@@ -61,7 +61,7 @@
 	icon_gib = "carp_gib"
 	ranged = 1
 	retreat_distance = 3
-	minimum_distance = 0 //Between shots they can and will close in to nash
+	approach_distance = 0 //Between shots they can and will close in to nash
 	projectiletype = /obj/item/projectile/beam/laser/heavylaser
 	projectilesound = 'sound/weapons/lasercannonfire.ogg'
 	maxHealth = 50

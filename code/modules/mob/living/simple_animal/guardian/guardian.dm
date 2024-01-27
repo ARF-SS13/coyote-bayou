@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 /mob/living/simple_animal/hostile/guardian/proc/is_deployed()
 	return loc != summoner
 
-/mob/living/simple_animal/hostile/guardian/AttackingTarget()
+/mob/living/simple_animal/hostile/guardian/MeleeAttackTarget(atom/my_target)
 	if(!is_deployed())
 		to_chat(src, "<span class='danger'><B>You must be manifested to attack!</span></B>")
 		return FALSE

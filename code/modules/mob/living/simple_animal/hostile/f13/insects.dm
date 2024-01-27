@@ -116,9 +116,8 @@
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/fireant/AttackingTarget()
+/mob/living/simple_animal/hostile/fireant/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -255,9 +254,8 @@
 	death_sound = 'sound/f13npc/scorpion/death.ogg'
 
 
-/mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
+/mob/living/simple_animal/hostile/radscorpion/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -365,9 +363,8 @@
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
 
-/mob/living/simple_animal/hostile/cazador/AttackingTarget()
+/mob/living/simple_animal/hostile/cazador/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

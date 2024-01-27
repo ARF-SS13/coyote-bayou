@@ -31,11 +31,10 @@
 	if(stealthcooldown >= world.time)
 		. += "Stealth Cooldown Remaining: [DisplayTimeText(stealthcooldown - world.time)]"
 
-/mob/living/simple_animal/hostile/guardian/assassin/AttackingTarget()
+/mob/living/simple_animal/hostile/guardian/assassin/MeleeAttackTarget(atom/my_target)
 	. = ..()
 	if(!.)
 		return
-	var/atom/my_target = get_target()
 	if(toggle && (isliving(my_target) || istype(my_target, /obj/structure/window) || istype(my_target, /obj/structure/grille)))
 		ToggleMode(1)
 

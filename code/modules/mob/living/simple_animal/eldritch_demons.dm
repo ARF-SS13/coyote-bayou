@@ -245,11 +245,9 @@
 
 /mob/living/simple_animal/hostile/eldritch/armsy/Shoot(atom/targeted_atom)
 	GiveTarget(targeted_atom)
-	AttackingTarget()
+	MeleeAttackTarget(targeted_atom)
 
-
-/mob/living/simple_animal/hostile/eldritch/armsy/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/eldritch/armsy/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target,/obj/item/bodypart/r_arm) || istype(my_target,/obj/item/bodypart/l_arm))
 		qdel(my_target)
 		heal()
@@ -258,7 +256,7 @@
 		return
 	if(back)
 		back.GiveTarget(my_target)
-		back.AttackingTarget()
+		back.InitiateMeleeAttack(my_target)
 	if(!Adjacent(my_target))
 		return
 	do_attack_animation(my_target)

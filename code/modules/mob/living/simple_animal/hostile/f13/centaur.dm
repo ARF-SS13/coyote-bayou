@@ -31,7 +31,7 @@
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
 
-	minimum_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
+	approach_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7 //Will start attacking within player sight, but gives wiggle room to avoid if moving slow and carefully

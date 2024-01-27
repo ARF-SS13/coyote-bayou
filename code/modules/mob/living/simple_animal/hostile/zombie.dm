@@ -53,9 +53,8 @@
 		QDEL_NULL(corpse)
 	. = ..()
 
-/mob/living/simple_animal/hostile/zombie/AttackingTarget()
+/mob/living/simple_animal/hostile/zombie/PostMeleeAttack(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(. && ishuman(my_target) && prob(infection_chance))
 		try_to_zombie_infect(my_target)
 

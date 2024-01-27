@@ -152,8 +152,7 @@ Difficulty: Normal
 		wander = TRUE
 		did_reset = FALSE
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/megafauna/hierophant/MeleeAttackTarget(atom/my_target)
 	if(!blinking)
 		if(my_target && isliving(my_target))
 			var/mob/living/L = my_target

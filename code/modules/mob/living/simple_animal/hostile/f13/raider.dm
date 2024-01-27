@@ -77,8 +77,7 @@
 /mob/living/simple_animal/hostile/raider/thief/movement_delay()
 	return -2
 
-/mob/living/simple_animal/hostile/raider/thief/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/raider/thief/MeleeAttackTarget(atom/my_target)
 	if(!ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target

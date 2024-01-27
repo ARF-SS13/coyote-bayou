@@ -75,7 +75,7 @@
 	melee_damage_upper = 15
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	projectiletype = /obj/item/projectile/neurotox
 	projectilesound = 'sound/weapons/pierce.ogg'
 
@@ -92,7 +92,7 @@
 	melee_damage_upper = 15
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	move_to_delay = 4
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
 							/obj/item/stack/sheet/animalhide/xeno = 1)
@@ -180,8 +180,7 @@
 	. = ..()
 	AddElement(/datum/element/cleaning)
 
-/mob/living/simple_animal/hostile/alien/maid/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/alien/maid/MeleeAttackTarget(atom/my_target)
 	if(!ismovable(my_target))
 		return
 	if(istype(my_target, /obj/effect/decal/cleanable))
