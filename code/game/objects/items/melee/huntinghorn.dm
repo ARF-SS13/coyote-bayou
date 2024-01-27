@@ -36,11 +36,11 @@
 	// the datum that lets us play the horn like an instrument
 	var/datum/song/huntinghorn/instrument
 	// the type of instrument that the song datum plays
-	var/allowed_instrument_ids = "eguitar"
+	var/instrument_name = "eguitar"
 
 /obj/item/huntinghorn/Initialize()
 	..()
-	instrument = new(src, allowed_instrument_ids)
+	instrument = new(src, instrument_name)
 	RegisterSignal(src, SIG_ITEM_WIELD, .proc/wield_horn)
 	RegisterSignal(src, SIG_ITEM_UNWIELD, .proc/unwield_horn)
 
@@ -179,7 +179,7 @@
 /// actually plays a note. like in your ears.
 /obj/item/huntinghorn/proc/play_audio(mob/user)
 	//instrument.playkey_legacy(rand(1,7), pick("b", "n"), currentnote + 3)
-	var/soundfile = file("sound/runtime/instruments/eguitar/" + pick("A", "B", "C", "D", "E", "F", "G") + pick("b", "n") + num2text(currentnote + 3) + ".ogg")
+	var/soundfile = file("sound/runtime/instruments/[instrument_name]/" + pick("A", "B", "C", "D", "E", "F", "G") + pick("b", "n") + num2text(currentnote + 3) + ".ogg")
 	user.playsound_local(user.loc, soundfile, 75, falloff_distance = HH_PERFORMANCE_RANGE)
 
 
