@@ -61,7 +61,7 @@
 
 	// explain mechanics
 	. += span_notice("Use in-hand to play like an instrument. Wield it while in combat mode and harm intent to get ready for a real show.")
-	. += span_notice("Then if you use it in-hand, you can choose a note to play or start a performance!")
+	. += span_notice("Then if you use it in-hand you can choose a note to play or start a performance!")
 	. += span_notice("To get a song ready, play its notes in order. Your chosen note will play when you attack.")
 	. += span_notice("Once at least one song is ready, all you need to do is perform! You'll have to stand still while performing.")
 
