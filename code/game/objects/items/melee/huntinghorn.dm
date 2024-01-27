@@ -11,6 +11,8 @@
 	lefthand_file = 'icons/mob/inhands/equipment/instruments_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/instruments_righthand.dmi'
 
+	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer to get an idea of its capabilities."
+
 	//weapon stats
 	force = 20
 	throwforce = 20
@@ -34,7 +36,7 @@
 	// the datum that lets us play the horn like an instrument
 	var/datum/song/huntinghorn/instrument
 	// the type of instrument that the song datum plays
-	var/allowed_instrument_ids = "guitar"
+	var/allowed_instrument_ids = "eguitar"
 
 /obj/item/huntinghorn/Initialize()
 	..()
@@ -50,6 +52,12 @@
 	. = ..()
 	UnregisterSignal(src, SIG_ITEM_WIELD)
 	UnregisterSignal(src, SIG_ITEM_UNWIELD)
+
+/obj/item/huntinghorn/examine_more()
+	. = list(span_notice("It could play..."))
+	for(var/datum/huntinghornsong/song in songlist)
+		. += span_notice("A [song.name], which [song.effect_desc]. Notes: [song.notes_to_string()]")
+
 
 /// If we're in combat mode, we can set the note we're playing. Or we can perform!
 /obj/item/huntinghorn/attack_self(mob/user)
@@ -254,6 +262,22 @@
 		return TRUE
 	return FALSE
 
+/datum/huntinghornsong/proc/notes_to_string()
+	. = note_to_string(required_notes[1])
+	. += ", [note_to_string(required_notes[2])]"
+	. += ", [note_to_string(required_notes[3])]"
+
+
+/datum/huntinghornsong/proc/note_to_string(note)
+	switch(note)
+		if(LOW_NOTE)
+			return "low"
+		if(MID_NOTE)
+			return "mid"
+		if(HIGH_NOTE)
+			return "high"
+		else
+			return "what?"
 
 
 	// OFFENSE //
@@ -262,17 +286,19 @@
 	name = "song of strength"
 	required_notes = list(MID_NOTE, MID_NOTE, MID_NOTE)
 	effect = /datum/status_effect/music/attack_up_xs
+	effect_desc = "empowers melee attacks"
 
 /datum/huntinghornsong/speed_up
 	name = "song of agility"
 	required_notes = list(HIGH_NOTE, MID_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/speed_up
+	effect_desc = "encourages quickness"
 
 /datum/huntinghornsong/cooldown_ignore
 	name = "song of ruthlessness"
 	required_notes = list(LOW_NOTE, LOW_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/cooldown_ignore
-
+	effect_desc = "sometimes allows for quick successive melee attacks"
 
 	// DEFENSE //
 
@@ -280,17 +306,19 @@
 	name = "song of endurance"
 	required_notes = list(MID_NOTE, LOW_NOTE, MID_NOTE)
 	effect = /datum/status_effect/music/iron_skin
+	effect_desc = "strengthens resistances"
 
 /datum/huntinghornsong/knockdown_res
 	name = "song of steadiness"
 	required_notes = list(LOW_NOTE, MID_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/knockdown_res
+	effect_desc = "sometimes prevents you from getting knocked on your butt"
 
 /datum/huntinghornsong/divine_blessing
 	name = "song of luck"
 	required_notes = list(HIGH_NOTE, MID_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/divine_blessing
-
+	effect_desc = "sometimes lets you shrug off some of the pain from being hit"
 
 	// UTILITY //
 
