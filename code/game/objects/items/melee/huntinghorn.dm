@@ -200,6 +200,8 @@
 		currentsongs = list()
 		notes = list()
 
+
+
 	/// HUNTING HORN SUBTYPES ///
 	
 // for aggressive melee combat.
@@ -223,6 +225,7 @@
 	songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
 
 
+
 /// THE ACTUAL INSTRUMENT DATUM ///
 
 /datum/song/huntinghorn
@@ -236,6 +239,8 @@
 		return TRUE
 	return FALSE
 
+
+
 /// SONG DATUMS ///
 
 /// this thing stores the required notes as well as the status to apply when played.
@@ -248,6 +253,7 @@
 	if(notes ~= required_notes)
 		return TRUE
 	return FALSE
+
 
 
 	// OFFENSE //
@@ -267,6 +273,7 @@
 	required_notes = list(LOW_NOTE, LOW_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/cooldown_ignore
 
+
 	// DEFENSE //
 
 /datum/huntinghornsong/iron_skin
@@ -284,6 +291,7 @@
 	required_notes = list(HIGH_NOTE, MID_NOTE, LOW_NOTE)
 	effect = /datum/status_effect/music/divine_blessing
 
+
 	// UTILITY //
 
 /datum/huntinghornsong/draw_speed
@@ -300,6 +308,7 @@
 	name = "song of persistence"
 	required_notes = list(HIGH_NOTE, MID_NOTE, HIGH_NOTE)
 	effect = /datum/status_effect/music/stamina_up
+
 
 	// HEALING //
 
