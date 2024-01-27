@@ -2290,6 +2290,28 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	unloaded_empty_state = "scarl-e"
 
+
+////////////////////////////
+///   KELPMAGIC STAVES   ///
+/datum/component/reskinnable/staff_kelpmagic
+	skins = list(
+		"Shaman Staff",
+	)
+/datum/reskin/gun/staff_kelpmagic/shaman
+	skin = "Shaman Staff"
+	name = "shaman staff"
+	desc = "An intricate staff, carried for centuries by the shaman class of the tribe."
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "staff-shaman"
+	expected_type = /obj/item/gun
+
+
+
+
+
+
+
 ////////////////////////////
 /// DEBUG SERVICE RIFLE ///
 /datum/component/reskinnable/service_rifle/debug
