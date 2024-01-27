@@ -37,7 +37,7 @@
 
 /datum/status_effect/music/speed_up/on_apply()
 	. = ..()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/huntinghorn, update = TRUE, "huntinghornspeed")
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/huntinghorn, TRUE, "huntinghornspeed")
 
 /datum/status_effect/music/speed_up/on_remove()
 	. = ..()
@@ -98,11 +98,11 @@
 
 /datum/status_effect/music/instaheal
 	id = "health"
+	duration = 1
 
 /datum/status_effect/music/instaheal/on_apply()
 	. = ..()
 	owner.health += 10
-	owner.remove_status_effect(src)
 
 
 /datum/status_effect/music/recovery
