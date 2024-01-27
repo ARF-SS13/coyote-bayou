@@ -17,6 +17,7 @@
 	force_unwielded = 20
 	force_wielded = 40
 	attack_speed = 1 SECONDS
+	attack_unwieldlyness = 5
 	sharpness = SHARP_NONE
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
@@ -156,6 +157,9 @@
 	for(var/datum/huntinghornsong/song in songlist)
 		if(song.check_notes(notes))
 			add_song_effect(user, song)
+
+	// make sure we go on cooldown.
+	ApplyAttackCooldown(user, target, null)
 
 /// actually plays a note. like in your ears.
 /obj/item/huntinghorn/proc/play_audio(mob/user)
