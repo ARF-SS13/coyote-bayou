@@ -54,8 +54,10 @@
 	UnregisterSignal(src, SIG_ITEM_UNWIELD)
 
 /obj/item/huntinghorn/examine_more()
+	// damage info
+	. = list(span_notice("This thing does [force_unwielded] damage, and [force_wielded] in two hands. You can swing it about [1 SECONDS / attack_speed] times a second."))
 	// list songs
-	. = list(span_notice("It could play..."))
+	. += span_notice("It could play...")
 	for(var/datum/huntinghornsong/song in songlist)
 		. += span_notice("A [song.name], which [song.effect_desc]. Notes: [song.notes_to_string()]")
 
