@@ -173,8 +173,7 @@
 #define F13CULTLEADER	(1<<8)
 #define F13TRIBAL		(1<<9)
 #define F13RADIOOP		(1<<10)
-#define F13WASTEGAR		(1<<12)
-#define CBOOCBACKSTAGE	(1<<13)
+#define CBOOCBACKSTAGE	(1<<11)
 
 #define ENCLAVE			(1<<11)
 
