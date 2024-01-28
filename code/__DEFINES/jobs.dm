@@ -138,7 +138,15 @@
 #define F13PILOT		(1<<14)
 #define NASHCURATOR		(1<<15)
 
-#define VAULT			(1<<7)
+#define DEP_GAR (1<<7)
+
+#define F13WASTEGAR		(1<<0)
+
+#define DEP_DEN (1<<8)
+
+#define F13WASTEDEN		(1<<0)
+
+#define VAULT			(1<<9)
 
 #define F13OVERSEER		(1<<0)
 #define F13HOS			(1<<1)
@@ -150,7 +158,7 @@
 #define F13AI			(1<<7)
 #define F13CYBORG		(1<<8)
 
-#define WASTELAND		(1<<8)
+#define WASTELAND		(1<<10)
 
 #define F13MOBBOSS		(1<<0)
 #define F13ENFORCER		(1<<1)
@@ -165,11 +173,9 @@
 #define F13CULTLEADER	(1<<8)
 #define F13TRIBAL		(1<<9)
 #define F13RADIOOP		(1<<10)
-#define F13WASTEDEN		(1<<11)
-#define F13WASTEGAR		(1<<12)
-#define CBOOCBACKSTAGE	(1<<13)
+#define CBOOCBACKSTAGE	(1<<11)
 
-#define ENCLAVE			(1<<10)
+#define ENCLAVE			(1<<11)
 
 #define F13USLT			(1<<0)
 #define F13USGYSGT		(1<<1)
@@ -179,7 +185,7 @@
 #define F13USPRIVATE	(1<<5)
 #define F13USBDUTY      (1<<6)
 
-#define TRIBAL			(1<<10)
+#define TRIBAL			(1<<12)
 
 #define F13CHIEF		(1<<0)
 #define F13SHAMAN		(1<<1)
@@ -190,7 +196,7 @@
 #define F13GUARDIAN		(1<<6)
 #define F13SPIRITPLEDGED (1<<7)
 
-#define FOLLOWERS		(1<<11)
+#define FOLLOWERS		(1<<13)
 
 #define	F13LEADPRACTITIONER	(1<<0)
 #define	F13PRACTITIONER	(1<<1)
@@ -199,7 +205,7 @@
 #define F13PROFESSOR	(1<<4)
 #define F13LEADPROFESSOR (1<<5)
 
-#define KHAN		(1<<12)
+#define KHAN		(1<<14)
 
 #define F13NOYAN (1<<0)
 #define F13STEWARD (1<<1)
@@ -208,12 +214,12 @@
 #define F13KIPCHAK (1<<4)
 #define F13MANGUDAI (1<<5)
 
-#define HEAVENSNIGHT		(1<<13)
+#define HEAVENSNIGHT		(1<<15)
 
 #define F13MANAGER			(1<<0)
 #define F13CLUBWORKER		(1<<1)
 
-#define TEACHER		(1<<14)
+#define TEACHER		(1<<16)
 
 #define F13TEACHER (1<<0)
 

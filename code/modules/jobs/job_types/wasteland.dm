@@ -1317,7 +1317,7 @@ Raider
 */
 
 /datum/job/wasteland/f13wastelander/den
-	title = "Den Waster"
+	title = "Den Citizen"
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
@@ -1328,7 +1328,7 @@ Raider
 
 
 /datum/job/wasteland/f13wastelander/gar
-	title = "Garland City Waster"
+	title = "Garland Citizen"
 	flag = F13WASTEGAR
 	faction = FACTION_WASTELAND
 
