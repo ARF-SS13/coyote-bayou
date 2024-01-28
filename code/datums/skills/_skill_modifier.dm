@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(potential_mods_per_skill)
 		GLOB.potential_skills_per_mod[target_skills_key] = list(target_skills)
 	else //Should be a list.
 		var/list/T = target_skills
-		T = sortTim(target_skills, /proc/cmp_text_asc) //Sort the list contents alphabetically.
+		T = sortTim(target_skills, GLOBAL_PROC_REF(cmp_text_asc)) //Sort the list contents alphabetically.
 		target_skills_key = T.Join("-")
 		var/list/L = GLOB.potential_skills_per_mod[target_skills_key]
 		if(!L)

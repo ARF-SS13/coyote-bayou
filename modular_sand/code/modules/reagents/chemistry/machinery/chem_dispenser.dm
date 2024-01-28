@@ -5,7 +5,7 @@
 
 /obj/machinery/chem_dispenser/Initialize(mapload)
 	if(upgrade_reagents4)
-		upgrade_reagents4 = sortList(upgrade_reagents4, /proc/cmp_reagents_asc)
+		upgrade_reagents4 = sortList(upgrade_reagents4, GLOBAL_PROC_REF(cmp_reagents_asc))
 	. = ..()
 
 /obj/machinery/chem_dispenser/drinks

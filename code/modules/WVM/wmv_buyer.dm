@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	GLOB.wasteland_vendor_shop_list[trader_key] = list()
 	var/list/donut = list()
 	/// so parents are processed first, and subtype prices have priority
-	var/list/buylist = sortList(buyables_loose, /proc/cmp_typepaths_length_asc)
+	var/list/buylist = sortList(buyables_loose, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff)
@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			donut[thing] = cumfrosting[thing]
 	/// now, prune and process the tight list
 	buylist.Cut()
-	buylist = sortList(buyables_tight, /proc/cmp_typepaths_length_asc)
+	buylist = sortList(buyables_tight, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff, TRUE)

@@ -11,7 +11,7 @@
 		else
 			var/datum/numbered_display/ND = .[I.type]
 			ND.number++
-	. = sortTim(., /proc/cmp_numbered_displays_name_asc, associative = TRUE)
+	. = sortTim(., GLOBAL_PROC_REF(cmp_numbered_displays_name_asc), associative = TRUE)
 
 /**
  * Orients all objects in legacy mode, and returns the objects to show to the user.
