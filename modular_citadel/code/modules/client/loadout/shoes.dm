@@ -188,6 +188,7 @@
 /datum/gear/shoes/cowboy/alt
 	name = "Alt Cowboy Boots"
 	path = /obj/item/clothing/shoes/cowboy/alt
+	cost = 2
 
 /datum/gear/shoes/cowboy/ranger
 	name = "Ranger Cowboy Boots"
