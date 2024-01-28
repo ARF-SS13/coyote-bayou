@@ -464,7 +464,7 @@ Villager
 Hunter
 */
 /datum/job/tribal/f13hunter
-	title = "Hunter"
+	title = "Forager"
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
@@ -474,7 +474,7 @@ Hunter
 	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Spiritual Leader and Harvest Leader for task management."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are a Hunter and lowest ranking villager of the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the Spiritual Leader. While a protector you are also the arm of the tribe in the world, performing tasks from the Spiritual Leaders and Harvest Leaders."
+	description = "You are a Forager and lowest ranking villager of the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the Spiritual Leader. While a protector you are also the arm of the tribe in the world, performing tasks from the Spiritual Leaders and Harvest Leaders."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -513,7 +513,7 @@ Hunter
 
 
 /datum/outfit/job/tribal/f13hunter
-	name = "Hunter"
+	name = "Forager"
 	jobtype = /datum/job/tribal/f13hunter
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
 	belt = /obj/item/kit_spawner/tribal
@@ -606,7 +606,7 @@ Guardian
 	spawn_positions = 3
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All leadership, but the Chief is priority"
-	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
+	description = "A hand chosen Forager with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
 	selection_color = "#006666"
 	exp_requirements = 0
 
