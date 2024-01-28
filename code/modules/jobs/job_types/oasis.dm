@@ -368,7 +368,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13deputy
-	title = "Nash Lawman"
+	title = "Nash Security"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
 	total_positions = 4
