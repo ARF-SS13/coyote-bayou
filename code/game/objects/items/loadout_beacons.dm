@@ -1337,13 +1337,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/famas(src)
 	new /obj/item/ammo_box/a556(src)
 
-/obj/item/storage/box/gun/rifle/shotneedle
-	name = "Pz87 shotgun case"
-
-/obj/item/storage/box/gun/rifle/shotneedle/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/needles(src)
-	new /obj/item/ammo_box/needlercapsule/shotgun(src)
-
 /obj/item/storage/box/gun/rifle/svdgobrr
 	name = "Z34 Rifle case"
 
@@ -1367,19 +1360,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
-/obj/item/storage/box/gun/rifle/needler
-	name = "NR-43 Turán rifle case"
+/obj/item/storage/box/gun/pistol/needler
+	name = "NP-149/40 pistol case"
 
-/obj/item/storage/box/gun/rifle/needler/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/needlerrifle(src)
-	new /obj/item/ammo_box/needlercapsule(src)
-
-/obj/item/storage/box/gun/rifle/smgneedle
-	name = "NR-43 Turán rifle case"
-
-/obj/item/storage/box/gun/rifle/needlesmg/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/needlersmg(src)
-	new /obj/item/ammo_box/needlercapsule(src)
+/obj/item/storage/box/gun/pistol/needler/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/needlerpistol(src)
+	new /obj/item/ammo_box/needlercapsule/handloaded(src)
 
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
@@ -2000,30 +1986,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sportcarbine
 
-
-/datum/loadout_box/needlershotgun
-	entry_tag = "Pz87 shotgun"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/shotneedle
-
-/datum/loadout_box/needlersmg
-	entry_tag = "Worn Akula Needler SMG"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/needlesmg
-
 /datum/loadout_box/varmint
 	entry_tag = "Varmint Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
-
-/datum/loadout_box/needlergobrr
-	entry_tag = "Turan Prototype Needler Rifle"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/needler
 
 /datum/loadout_box/trainer
 	entry_tag = "Training Repeater"
@@ -2353,6 +2320,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/volcanics
+
+/datum/loadout_box/needlergobrr
+	entry_tag = "NP-149/40 Prototype Needler Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/needler
 
 /datum/loadout_box/lematsgobrr
 	entry_tag = "LeMat revolver"
