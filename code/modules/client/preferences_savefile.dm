@@ -930,7 +930,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
+	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 	faved_interactions		= sanitize_islist(faved_interactions, list())
