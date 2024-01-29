@@ -116,10 +116,10 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Bunker Duty",
 
 "Chief",
-"Shaman",
+"Spiritual Leader",
 "Head Hunter",
-"Druid",
-"Hunter",
+"Harvest Leader",
+"Forager",
 
 "Noyan",
 "Steward",
@@ -157,13 +157,15 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"High Alderperson",
 	"Councilperson",
 	"Sheriff",
-	"Deputy",
+	"Nash Security",
 	"Deputy Mayor",
 //	"Farmer",
 //	"Prospector",
 	"Doctor",
 	"Detective",
 	"Banker",
+	"Town Doctor",
+	"Town Scientist",
 	"Texarkana Quartermaster",
 	"Texarkana Trade Worker",
 	"Barkeep",
@@ -171,6 +173,16 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Preacher",
 	"Vertibird Pilot",
 	"Nash Librarian",
+))
+
+//Den Citizenship
+GLOBAL_LIST_INIT(den_positions, list(
+	"Den Citizen",
+))
+
+//Gar Citizenship
+GLOBAL_LIST_INIT(gar_positions, list(
+	"Garland Citizen",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -244,8 +256,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
-	"Den Waster",
-	"Garland City Waster",
 	"Radio Operator",
 	"Backstage Character",
 	"Texarkana Ranger",
@@ -312,11 +322,9 @@ GLOBAL_LIST_INIT(debug_positions, list(
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Senior Doctor",
-	"Town Doctor",
 	"Town Paramedic",
 	"Nurse",
 	"Senior Scientist",
-	"Town Scientist",
 ))
 //Heavens Night
 GLOBAL_LIST_INIT(heavensnight_positions, list(
