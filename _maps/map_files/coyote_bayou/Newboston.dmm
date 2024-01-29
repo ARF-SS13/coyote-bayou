@@ -1437,10 +1437,9 @@
 	},
 /area/f13/building)
 "bso" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
+/obj/structure/table,
+/obj/item/cautery,
+/obj/item/cautery/primitive,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
@@ -6021,12 +6020,12 @@
 	},
 /area/f13/brotherhood)
 "fou" = (
-/obj/structure/table/optable,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/optable/primitive,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "foy" = (
@@ -12222,13 +12221,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kEr" = (
-/obj/structure/table/optable,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/optable/primitive,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kEy" = (
@@ -14766,14 +14765,6 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"mGY" = (
-/obj/structure/table,
-/obj/item/cautery,
-/obj/item/cautery/primitive,
-/turf/open/floor/plasteel/f13{
-	icon_state = "whitebluerustychess"
-	},
 /area/f13/building)
 "mGZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -19107,6 +19098,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
+"qyh" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluerustychess"
+	},
+/area/f13/building)
 "qyi" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23903,7 +23903,6 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "uxy" = (
-/obj/structure/table/optable,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
 	pixel_y = 12
@@ -23911,6 +23910,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/table/optable/primitive,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uxK" = (
@@ -49155,7 +49155,7 @@ vjv
 wXV
 wXV
 ceV
-mGY
+bso
 yde
 npu
 ajM
@@ -50182,7 +50182,7 @@ hCn
 yde
 mzH
 wXV
-bso
+qyh
 olr
 yde
 npu
