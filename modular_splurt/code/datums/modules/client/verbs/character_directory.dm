@@ -1,5 +1,5 @@
 GLOBAL_DATUM(character_directory, /datum/character_directory)
-GLOBAL_LIST_INIT(char_directory_tags, list("Pred", "Pred-Pref", "Prey", "Prey-Pref", "Switch", "Non-Vore", "Unset"))
+GLOBAL_LIST_INIT(char_directory_vore_tags, list("Pred", "Pred-Pref", "Prey", "Prey-Pref", "Switch", "Non-Vore", "Unset"))
 GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP", "Unset"))
 
 /client
@@ -59,20 +59,33 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 
 		// These are the three vars we're trying to find
 		// The approach differs based on the mob the client is controlling
-		var/name = null
-		var/species = null
+		var/ref = REF(C?.mob)
+		var/mob/M = C?.mob
+		if(!M)
+			continue
+		var/name = M.real_name
+		var/thegender = capitalize(M.gender || "Other")
+		var/whokisser = "Unsure"
+		var/species
 		var/ooc_notes = null
 		var/flavor_text = null
 		var/tag
 		var/erptag
 		var/character_ad
-		var/ref = REF(C?.mob)
-		var/mob/M = C?.mob
 		tag = C.prefs.directory_tag || "Unset"
 		erptag = C.prefs.directory_erptag || "Unset"
 		character_ad = C.prefs.directory_ad
-
-		name = M?.real_name
+		if(C) // clients are squirly thing
+			switch(C.prefs.kisser)
+				if(KISS_BOYS)
+					whokisser = "Likes Boys"
+				if(KISS_GIRLS)
+					whokisser = "Likes Girls"
+				if(KISS_ANY)
+					whokisser = "Likes Anyone"
+				if(KISS_NONE)
+					whokisser = "Not Interested"
+		
 		if((isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
 			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
@@ -82,8 +95,10 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		else if(isanimal(M))
 			var/mob/living/simple_animal/SA = M
 			species = initial(SA.name)
+		else
+			species = C.prefs.pref_species
 		if(!species)
-			species = "Resident"
+			species = "[GLOB.megacarp_first_names] [GLOB.megacarp_last_names]"
 		ooc_notes = C.prefs.features["ooc_notes"]
 		flavor_text = C.prefs.features["flavor_text"]
 
@@ -100,7 +115,9 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"erptag" = erptag,
 			"character_ad" = character_ad,
 			"flavor_text" = flavor_text,
-			"ref" = ref
+			"ref" = ref,
+			"gender" = thegender,
+			"whokisser" = whokisser,
 		)))
 
 	data["directory"] = directory_mobs
@@ -121,7 +138,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		if("refresh")
 			// This is primarily to stop malicious users from trying to lag the server by spamming this verb
 			if(!COOLDOWN_FINISHED(user.client, char_directory_cooldown))
-				to_chat(user, "<span class='warning'>Don't spam character directory refresh.</span>")
+				to_chat(user, span_alert("Hold your horses! Its still refreshing!"))
 				return
 			COOLDOWN_START(user.client, char_directory_cooldown, 10)
 			update_static_data(user, ui)
@@ -149,7 +166,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		return
 	switch(action)
 		if ("setTag")
-			var/list/new_tag = input(user, "Pick a new Vore tag for the character directory", "Character Tag") as null|anything in GLOB.char_directory_tags
+			var/list/new_tag = input(user, "Pick a new Vore tag for the character directory", "Character Tag") as null|anything in GLOB.char_directory_vore_tags
 			if(!new_tag)
 				return
 			return set_for_mind_or_prefs(user, action, new_tag)

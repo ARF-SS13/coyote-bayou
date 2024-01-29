@@ -21,7 +21,7 @@ export const CharacterDirectory = (props, context) => {
   const [overwritePrefs, setOverwritePrefs] = useLocalState(context, 'overwritePrefs', prefsOnly);
 
   return (
-    <Window width={640} height={480} resizeable>
+    <Window width={860} height={480} resizeable>
       <Window.Content scrollable>
         {(overlay && <ViewCharacter />) || (
           <Fragment>
@@ -126,9 +126,11 @@ const CharacterDirectoryList = (props, context) => {
       <Table>
         <Table.Row bold>
           <SortButton id="name">Name</SortButton>
+          <SortButton id="gender">Gender</SortButton>
           <SortButton id="species">Species</SortButton>
-          <SortButton id="tag">Vore Tag</SortButton>
-          <SortButton id="erptag">ERP Tag</SortButton>
+          <SortButton id="whokisser">Preference</SortButton>
+          <SortButton id="erptag">Top/Bottom/Switch</SortButton>
+          <SortButton id="tag">Vore Preference</SortButton>
           <Table.Cell collapsing textAlign="right">
             Advertisement
           </Table.Cell>
@@ -143,9 +145,12 @@ const CharacterDirectoryList = (props, context) => {
               <Table.Cell p={1}>
                 {canOrbit ? <Button color={erpTagColor[character.erptag]} icon="ghost" tooltip="Orbit" content={character.name} onClick={() => act("orbit", { ref: character.ref })} /> : character.name}
               </Table.Cell>
+
+              <Table.Cell>{character.gender}</Table.Cell>
               <Table.Cell>{character.species}</Table.Cell>
-              <Table.Cell>{character.tag}</Table.Cell>
+              <Table.Cell>{character.whokisser}</Table.Cell>
               <Table.Cell>{character.erptag}</Table.Cell>
+              <Table.Cell>{character.tag}</Table.Cell>
               <Table.Cell collapsing textAlign="right">
                 <Button
                   onClick={() => setOverlay(character)}
