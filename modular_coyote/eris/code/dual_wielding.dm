@@ -116,7 +116,7 @@
 		if(I.is_dual_wielded || J.is_dual_wielded)
 			dualwield_end(user, I, J)
 
-/obj/item/pickup(mob/living/user)  //temporary fix for a huge issue, you see I love duct tape and wood glue.
+/obj/item/pickup(mob/living/user)  //temporary fix for a huge issue, you see I love duct tape and wood glue.  //haha, this one became literally the skeleton of the entire code, duct tape my ass!
 	..()
 	if(findtext(name," (Dual Wielded)"))
 		is_dual_wielded = FALSE
