@@ -1463,6 +1463,9 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
 
 /datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
