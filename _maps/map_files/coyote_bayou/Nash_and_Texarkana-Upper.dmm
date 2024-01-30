@@ -4058,6 +4058,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "bZh" = (
@@ -4186,7 +4187,6 @@
 	name = "Sparky Appliances shutters";
 	pixel_x = -32
 	},
-/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "cdv" = (
@@ -6722,6 +6722,7 @@
 	layer = 11;
 	name = "Sparky Appliances"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "dwA" = (
@@ -8596,6 +8597,7 @@
 	layer = 11;
 	name = "Sparky Appliances"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "evL" = (
@@ -10534,6 +10536,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "fsV" = (
@@ -13062,6 +13065,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "gDC" = (
@@ -26465,6 +26469,7 @@
 /obj/structure/rack,
 /obj/item/clothing/under/pants/jeans,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "nfv" = (
@@ -29261,8 +29266,8 @@
 	dir = 4
 	},
 /obj/effect/spawner/lootdrop/f13/rare_parts,
-/obj/effect/spawner/lootdrop/f13/uncommon_parts,
-/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "ozM" = (
@@ -33767,6 +33772,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qSA" = (
+/obj/structure/simple_door/house{
+	name = "Sparky Appliances"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building/mall)
 "qTn" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -34785,6 +34799,16 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
+"rsR" = (
+/obj/structure/simple_door/house{
+	name = "New Age Gardening"
+	},
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/mall)
 "rsV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -36380,6 +36404,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "soR" = (
@@ -43026,7 +43051,10 @@
 "vHx" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/structure/closet,
+/obj/structure/closet/anchored,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
@@ -43552,6 +43580,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "vYm" = (
@@ -43763,6 +43792,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/item/seeds/ambrosia/gaia,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -99051,7 +99081,7 @@ aFS
 aFS
 aFS
 aFS
-iar
+qSA
 aFS
 lEQ
 rws
@@ -99059,7 +99089,7 @@ rws
 gJH
 gJH
 gJH
-spG
+rsR
 hBx
 azb
 azb
