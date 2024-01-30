@@ -96,7 +96,7 @@
 	icon_state = "needlerpack"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
 	caliber = list(CALIBER_NEEDLE)
-	max_ammo = 15
+	max_ammo = 35
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
