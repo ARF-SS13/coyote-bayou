@@ -7,7 +7,7 @@ const erpTagColor = {
   'Unset': 'label',
   'Top': 'red',
   'Bottom': 'blue',
-  'Switch': 'yellow',
+  'Switch': 'purple',
   'No ERP': 'black',
 };
 

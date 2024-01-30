@@ -105,6 +105,7 @@
 	var/list/den = list()
 	var/list/garland = list()
 	var/list/heavensnight = list()
+	var/list/bikers = list()
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -163,6 +164,9 @@
 		if(rank in GLOB.gar_positions)
 			garland[name] = rank
 			department = 1
+		if(rank in GLOB.biker_positions)
+			bikers[name] = rank
+			department = 1
 		if(rank in GLOB.heavensnight_positions)
 			heavensnight[name] = rank
 			department = 1
@@ -197,6 +201,11 @@
 		dat += "<tr><th colspan=3>Garland Bridgers</th></tr>"
 		for(var/name in garland)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[garland[name]]</td></tr>"
+			even = !even
+	if(length(bikers))
+		dat += "<tr><th colspan=3>Ashdown</th></tr>"
+		for(var/name in bikers)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bikers[name]]</td></tr>"
 			even = !even
 	// if(length(leg))
 	// 	dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"

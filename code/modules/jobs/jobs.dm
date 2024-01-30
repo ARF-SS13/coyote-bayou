@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Chief",
 "Spiritual Leader",
-"Head Hunter",
+"Head Forager",
 "Harvest Leader",
 "Forager",
 
@@ -303,6 +303,8 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Head Forager",
 	"Druid",
 	"Forager",
+	"Harvest Leader",
+	"Spiritual Leader",
 	"Spirit-Pledged",
 	"Guardian",
 	"Dual Citizen"
@@ -385,7 +387,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
-	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
+	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Forager")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))
