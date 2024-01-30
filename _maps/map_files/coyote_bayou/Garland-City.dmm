@@ -839,6 +839,7 @@
 /obj/item/wirecutters,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1498,6 +1499,7 @@
 /obj/item/screwdriver/power,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -7093,6 +7095,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/wrench,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -8196,6 +8200,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"fVr" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "fVu" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -8258,6 +8272,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16034,6 +16049,17 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"ltj" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "ltn" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/wmelee_low,
@@ -20690,6 +20716,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -21117,6 +21145,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -22928,6 +22958,7 @@
 /obj/item/wirecutters,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -27532,6 +27563,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/geiger_counter,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -28719,6 +28751,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/glass/ten,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -30650,6 +30684,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/glass/ten,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -31306,6 +31342,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/weldingtool,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -32908,6 +32946,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -73629,9 +73668,9 @@ iuh
 dmz
 dmz
 mds
-oBq
+ltj
 waL
-oBq
+fVr
 fEu
 ldh
 tYU
