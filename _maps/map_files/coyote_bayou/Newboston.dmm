@@ -7583,6 +7583,15 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"gMi" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluerustychess"
+	},
+/area/f13/building)
 "gMj" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -14738,7 +14747,7 @@
 /area/f13/building)
 "mFU" = (
 /obj/machinery/door/airlock/security/glass{
-	name = "Specialist Garage";
+	name = "Texarkana Rangers";
 	req_access_txt = "62"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -19098,15 +19107,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
-"qyh" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "whitebluerustychess"
-	},
-/area/f13/building)
 "qyi" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -20981,12 +20981,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "sdS" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Specialist Garage";
-	req_access_txt = "62"
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Texarkana Rangers";
+	req_access_txt = "62"
 	},
 /turf/open/floor/plating/rust,
 /area/f13/ncr)
@@ -50182,7 +50182,7 @@ hCn
 yde
 mzH
 wXV
-qyh
+gMi
 olr
 yde
 npu
