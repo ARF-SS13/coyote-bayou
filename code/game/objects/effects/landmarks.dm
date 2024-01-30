@@ -915,11 +915,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
-	name = "Hunter"
+	name = "Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/Hhunter
-	name = "Head Hunter"
+	name = "Head Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid

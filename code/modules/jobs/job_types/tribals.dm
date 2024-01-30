@@ -221,7 +221,7 @@ Tribal Shaman
 Tribal Hunt Master
 */
 /datum/job/tribal/f13Hhunter
-	title = "Hunt Master"
+	title = "Head Forager"
 	flag = F13HHUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
@@ -257,7 +257,7 @@ Tribal Hunt Master
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 
 /datum/outfit/job/tribal/f13Hhunter
-	name = "Hunter"
+	name = "Head Forager"
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	suit = /obj/item/clothing/suit/hooded/cloak/shunter

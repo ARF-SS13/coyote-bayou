@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Chief",
 "Spiritual Leader",
-"Head Hunter",
+"Head Forager",
 "Harvest Leader",
 "Forager",
 
@@ -300,10 +300,11 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 GLOBAL_LIST_INIT(tribal_positions, list(
 	"Chief",
 	"Shaman",
-	"Head Hunter",
+	"Head Forager",
 	"Druid",
-	"Villager",
-	"Hunter",
+	"Forager",
+	"Harvest Leader",
+	"Spiritual Leader",
 	"Spirit-Pledged",
 	"Guardian",
 	"Dual Citizen"
@@ -332,17 +333,20 @@ GLOBAL_LIST_INIT(heavensnight_positions, list(
 	"Club Worker",
 ))
 
+/// TODO: Take all these horrible string-based roflcopters and have them 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
 	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
-	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
+	// EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
+	"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
@@ -383,7 +387,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
-	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
+	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Forager")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))
