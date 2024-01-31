@@ -945,8 +945,7 @@
 	can_flashlight = FALSE
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/fg42.ogg'
-	cock_sound = 'sound/f13weapons/fg42.ogg'
-
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
 	name = "Boys anti-tank rifle"
