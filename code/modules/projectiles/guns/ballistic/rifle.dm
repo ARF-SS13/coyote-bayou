@@ -920,6 +920,33 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
+
+
+/obj/item/gun/ballistic/rifle/mauserrifle
+	name = "Mauser Model 1871"
+	desc = "A Mauser Model 1871, also known as the Gewehr 71 or Infantry Gewehr 71. A bolt action rifle chambered in 11.7mm(50.cal), this rifle saw service by the German Empire. It was replaced by the Gewehr 88 in 1888 through 1890."
+	icon_state = "m71"
+	item_state = "m71"
+	mag_type = /obj/item/ammo_box/magazine/internal/mausereight
+	init_mag_type = /obj/item/ammo_box/magazine/internal/mausereight
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
+	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = RIFLE_RECOIL (1.4 , 0.9)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/fg42.ogg'
+	cock_sound = 'sound/f13weapons/fg42.ogg'
+
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
 	name = "Boys anti-tank rifle"
