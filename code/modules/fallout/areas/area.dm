@@ -68,10 +68,6 @@
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
 		)
-	ambientmusic = list(
-		AREA_Z_MUSIC(Z_LEVEL_FALLBACK, 'sound/misc/sadtrombone.ogg'),
-		AREA_Z_MUSIC(Z_LEVEL_CENTCOM, 'sound/misc/sadtrombone.ogg'),
-	)
 	grow_chance = 5
 
 /area/f13/wasteland/town
