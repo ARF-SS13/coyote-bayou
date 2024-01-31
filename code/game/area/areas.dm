@@ -306,7 +306,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 /// converts the area music list into an area music list
 /area/proc/initialize_music()
-	if(!islist(ambientmusic))
+	if(!LAZYLEN(ambientmusic))
 		ambientmusic = null
 		return FALSE
 	var/list/muslist = ambientmusic.Copy()
