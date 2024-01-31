@@ -1962,12 +1962,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bCc" = (
-/mob/living/simple_animal/hostile/renegade/meister{
-	extra_projectiles = 0;
-	health = 50;
-	name = "The Great Coomate";
-	move_to_delay = 6
-	},
+/mob/living/simple_animal/hostile/renegade/guardian,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
