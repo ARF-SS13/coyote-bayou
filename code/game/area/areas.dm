@@ -321,6 +321,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if(index == Z_LEVEL_FALLBACK)
 			index = lenf
 			ballback = mussy
+		index = round(clamp(index, 1, LAZYLEN(ambientmusic))) // die
 		ambientmusic[index] = mussy
 	/// and, fill in the blanks
 	for(var/i in 1 to LAZYLEN(ambientmusic))
