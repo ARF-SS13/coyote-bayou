@@ -47,6 +47,9 @@
 	COOLDOWN_DECLARE(area_sound_effect_cooldown)
 	/// minimum time between an area will play its on-enter music
 	COOLDOWN_DECLARE(area_music_cooldown)
+	/// Is are the mob listened to music in areas?
+	var/list/area_musics = list()
+
 		////////////
 		//SECURITY//
 		////////////
