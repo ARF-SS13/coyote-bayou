@@ -1421,6 +1421,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/c10mm(src)
 
+/obj/item/storage/box/gun/rifle/maus71
+	name = "Mauser 71 rifle case"
+
+/obj/item/storage/box/gun/rifle/maus71/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/mauserrifle(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
 
@@ -1973,6 +1980,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
+
+/datum/loadout_box/mauser71gobrr
+	entry_tag = "Mauser 71 Bolt action rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/maus71
 
 /datum/loadout_box/carbine9mm
 	entry_tag = "9mm Carbine"
