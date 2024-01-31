@@ -34,24 +34,24 @@ SUBSYSTEM_DEF(nightcycle)
 	var/current_sun_power = 230
 
 	// Variables for badmining
-	var/sunrise_sun_color = "#ffd1b3"
-	var/sunrise_sun_power = 95
-	var/morning_sun_color = "#fba52b"
-	var/morning_sun_power = 145
-	var/latemorn_sun_color = "#fba52b"
-	var/latemorn_sun_power = 185
-	var/daytime_sun_color = "#faf7cb"
-	var/daytime_sun_power = 215
-	var/afternoon_sun_color = "#faf7cb"
-	var/afternoon_sun_power = 195
-	var/lateafternoon_sun_color = "#faf7cb"
-	var/lateafternoon_sun_power = 175
-	var/sunset_sun_color = "#f5b151"
-	var/sunset_sun_power = 135
-	var/fullsunset_sun_color = "#f37588"
-	var/fullsunset_sun_power = 85
-	var/nighttime_sun_color = "#676b74"
-	var/nighttime_sun_power = 40
+	var/sunrise_sun_color = "#000000"
+	var/sunrise_sun_power = 255
+	var/morning_sun_color = "#000000"
+	var/morning_sun_power = 255
+	var/latemorn_sun_color = "#000000"
+	var/latemorn_sun_power = 255
+	var/daytime_sun_color = "#000000"
+	var/daytime_sun_power = 255
+	var/afternoon_sun_color = "#000000"
+	var/afternoon_sun_power = 255
+	var/lateafternoon_sun_color = "#000000"
+	var/lateafternoon_sun_power = 255
+	var/sunset_sun_color = "#000000"
+	var/sunset_sun_power = 255
+	var/fullsunset_sun_color = "#000000"
+	var/fullsunset_sun_power = 255
+	var/nighttime_sun_color = "#000000"
+	var/nighttime_sun_power = 255
 
 	/// If defined with any number besides null it will determine how long each cycle lasts.
 //	var/custom_cycle_wait = 1600 SECONDS
