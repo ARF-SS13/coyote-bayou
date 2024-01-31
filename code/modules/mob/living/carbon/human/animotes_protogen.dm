@@ -1,7 +1,7 @@
 //-->
 // Protogen screen ANIMOTES
-// Authors: Ekizius (animator), Leonzrygin(coder)  // I'll miss you Eki... I'm sorry that our story ended the way it did...
-// for any issue, contact us!  // Just contact me, Leonzrygin.
+// Authors: Ekizius (animator), Leonzrygin(coder)
+// for any issue, contact us!
 //<--
 
 /proc/fetch_eye_color(mob/living/carbon/human/user)
