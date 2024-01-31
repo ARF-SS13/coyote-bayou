@@ -814,6 +814,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Den Waster"
 	icon_state = "Wastelander"
 
+/obj/effect/landmark/start/f13/wastelander/backstage
+	name = "Backstage Character"
+	icon_state = "Wastelander"
+	color = "#FF0000"
 
 /obj/effect/landmark/start/f13/wastelander/gar
 	name = "Garland City Waster"
@@ -822,6 +826,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/ashdown
 	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/texasranger
+	name = "Texarkana Ranger"
+	icon_state = "Wastelander"
+	color = "#66BBBB"
 
 /obj/effect/landmark/start/f13/raider
 	name = "Outlaw"
@@ -906,11 +915,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
-	name = "Hunter"
+	name = "Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/Hhunter
-	name = "Head Hunter"
+	name = "Head Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid

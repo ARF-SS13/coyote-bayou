@@ -1148,6 +1148,18 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/f13/brahminpotpie
+	name = "Brahmin potpie"
+	icon_state = "brahmin_pot_pie"
+	desc = "A pot pie is a type of pie with a top pie crust, sometimes a bottom pie crust, consisting of flaky pastry This is filled with stewed brahmin tongue"
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/nutriment = 6
+	)
+	tastes = list("pie" = 1, "meat" = 1, "gravy" = 1)
+	bitesize = 4
+	foodtype = GRAIN | MEAT
+
 /obj/item/reagent_containers/food/snacks/f13/gecko_kebab
 	name = "gecko kebab"
 	desc = "Would you like to buy a nice kebab?"

@@ -597,6 +597,35 @@
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
 	SSevents.holiday_on_join(humanc)
 
+	if(ishuman(humanc))
+		var/mob/living/carbon/human/H = humanc
+		var/obj/item/suit = H.get_item_by_slot(SLOT_WEAR_SUIT)
+		if(HAS_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
+			if( suit.armor.melee	> (ARMOR_AVERSION_THRESHOLD_MELEE) || \
+				suit.armor.bullet	> (ARMOR_AVERSION_THRESHOLD_BULLET) || \
+				suit.armor.laser	> (ARMOR_AVERSION_THRESHOLD_LASER))
+
+				H.dropItemToGround(suit)
+				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
+
+	character.client.is_in_game = 1
+	spawn(5 MINUTES)
+		if(character.client.is_in_game)
+			character.client.is_in_game = 2
+
+			for(var/i in GLOB.player_list)
+				if(isliving(i))
+					if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
+						var/obj/item/card/id/selfassign/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.assignment] may be snooping around the county."))
+					
+					else if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/pda))
+						var/obj/item/pda/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.ownjob] may be snooping around the county.")) 
+					
+					else
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [rank] may be snooping around the county."))
+
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
 	for(var/C in GLOB.employmentCabinets)

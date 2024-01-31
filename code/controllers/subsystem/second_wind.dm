@@ -163,12 +163,12 @@ SUBSYSTEM_DEF(secondwind)
 		if(!corpse || currenter != corpse)
 			corpse = currenter
 			ownermob = WEAKREF(corpse)
-			initialize_lives()
+			//initialize_lives()      <--- any feature that makes you switch mobs will make this happen so. i made it not
 	else if(isliving(current))
 		if(!corpse || current != corpse)
 			corpse = current
 			ownermob = WEAKREF(corpse)
-			initialize_lives()
+			//initialize_lives()      <--- same as above
 	if(!corpse)
 		return
 		//CRASH("get_revivable_body for [ownerkey] called with no corpse and no currently played mob! wtf") // turns out disconnected players count, I guess?

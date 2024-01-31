@@ -70,7 +70,6 @@ randomize_human(mob/living/carbon/human/H)
 	update_hair()
 	return 1
 
-
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
 	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
@@ -130,6 +129,34 @@ randomize_human(mob/living/carbon/human/H)
 					new_grad_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_gradients
 					if(new_grad_style)
 						features_override["grad_style"] = new_grad_style
+				
+				if("grad_color_2")
+					var/new_grad_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["grad_color_2"]) as color|null
+					if(new_grad_color)
+						features_override["grad_color_2"] = sanitize_hexcolor(new_grad_color, 6, default = COLOR_ALMOST_BLACK)
+
+				if("grad_style_2")
+					var/new_grad_style
+					new_grad_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_gradients
+					if(new_grad_style)
+						features_override["grad_style_2"] = new_grad_style
+				
+				if("hair_color_2")
+					var/new_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["hair_color_2"]) as color|null
+					if(new_color)
+						features_override["hair_color_2"] = sanitize_hexcolor(new_color, 6, default = COLOR_ALMOST_BLACK)
+
+				if("hair_style_2")
+					var/new_style
+					new_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_styles_list
+					if(new_style)
+						features_override["hair_style_2"] = new_style
+				
+				if("previous_hair_style_2")
+					features_override["hair_style_2"] = previous_list_item(features_override["hair_style_2"], GLOB.hair_styles_list)
+				
+				if("next_hair_style_2")
+					features_override["hair_style_2"] = next_list_item(features_override["hair_style_2"], GLOB.hair_styles_list)
 	..()
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)

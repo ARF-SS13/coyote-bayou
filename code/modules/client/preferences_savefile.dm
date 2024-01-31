@@ -515,6 +515,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"frills" = "None",
 		"deco_wings" = "None",
 		"spines" = "None",
+		"derg_body" = "None",
+		"derg_belly" = "None",
+		"derg_ears" = "None",
+		"derg_mane" = "None",
+		"derg_horns" = "None",
+		"derg_eyes" = "None",
 
 		"legs" = "Plantigrade",
 		"insect_wings" = "Plain",
@@ -695,6 +701,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
+	S["feature_derg_body"]				>> features["derg_body"]
+	S["feature_derg_belly"]				>> features["derg_belly"]
+	S["feature_derg_ears"]				>> features["derg_ears"]
+	S["feature_derg_mane"]				>> features["derg_mane"]
+	S["feature_derg_horns"]				>> features["derg_horns"]
+	S["feature_derg_eyes"]				>> features["derg_eyes"]
 	S["persistent_scars"] 				>> persistent_scars
 	S["scars1"]							>> scars_list["1"]
 	S["scars2"]							>> scars_list["2"]
@@ -855,6 +867,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
+	S["gradient_color_2"]	>> features_override["grad_color_2"] // Hair gradients!
+	S["gradient_style_2"]	>> features_override["grad_style_2"] // Hair gradients electric boogaloo 2!!
+	S["s_hair_color_2"]		>> features_override["hair_color_2"] // Hair color 2
+	S["s_hair_style_2"]		>> features_override["hair_style_2"] // Hair style 2
 	S["typing_indicator_sound"]					>> features_speech["typing_indicator_sound"] // Typing sounds!
 	S["typing_indicator_sound_play"]			>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
 	S["typing_indicator_speed"]					>> features_speech["typing_indicator_speed"]
@@ -914,7 +930,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
+	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 	faved_interactions		= sanitize_islist(faved_interactions, list())
@@ -996,6 +1012,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["insect_fluff"]		= sanitize_inlist(features["insect_fluff"], GLOB.insect_fluffs_list)
 	features["insect_markings"] 	= sanitize_inlist(features["insect_markings"], GLOB.insect_markings_list, "None")
 	features["insect_wings"] 		= sanitize_inlist(features["insect_wings"], GLOB.insect_wings_list)
+	features["derg_body"] 			= sanitize_inlist(features["derg_body"], GLOB.derg_body_list, "Smooth Dragon Body")
+	features["derg_belly"] 			= sanitize_inlist(features["derg_belly"], GLOB.derg_belly_list, "Dragon Under Smooth")
+	features["derg_horns"] 			= sanitize_inlist(features["derg_horns"], GLOB.derg_horn_list)
+	features["derg_mane"] 			= sanitize_inlist(features["derg_mane"], GLOB.derg_mane_list)
+	features["derg_ears"] 			= sanitize_inlist(features["derg_ears"], GLOB.derg_ear_list)
+	features["derg_eyes"] 			= sanitize_inlist(features["derg_eyes"], GLOB.derg_ear_list)
+
 	alt_appearance					= sanitize_inlist(alt_appearance, pref_species.alt_prefixes, "Default")
 
 	var/static/size_min
@@ -1149,6 +1172,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
+	features_override["grad_color_2"]		= sanitize_hexcolor(features_override["grad_color_2"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["grad_style_2"]		= sanitize_inlist(features_override["grad_style_2"], GLOB.hair_gradients, "none")
+
+	features_override["hair_color_2"]	= sanitize_hexcolor(features_override["hair_color_2"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["hair_style_2"]	= sanitize_inlist(features_override["hair_style_2"], GLOB.hair_styles_list, "Bald")
+
 	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_sounds, "Default")//
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
 	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "Speed: Average (2)")
@@ -1269,6 +1298,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
 	WRITE_FILE(S["feature_insect_markings"]			, features["insect_markings"])
 	WRITE_FILE(S["feature_meat"]					, features["meat_type"])
+	WRITE_FILE(S["feature_derg_body"]				, features["derg_body"])
+	WRITE_FILE(S["feature_derg_belly"]				, features["derg_belly"])
+	WRITE_FILE(S["feature_derg_ears"]				, features["derg_ears"])
+	WRITE_FILE(S["feature_derg_mane"]				, features["derg_mane"])
+	WRITE_FILE(S["feature_derg_horns"]				, features["derg_horns"])
+	WRITE_FILE(S["feature_derg_eyes"]				, features["derg_eyes"])
+
 
 	WRITE_FILE(S["feature_has_cock"], features["has_cock"])
 	WRITE_FILE(S["feature_cock_shape"], features["cock_shape"])
@@ -1416,6 +1452,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["gradient_color"]			, features_override["grad_color"])
 	WRITE_FILE(S["gradient_style"]			, features_override["grad_style"])
+
+	WRITE_FILE(S["gradient_color_2"]		, features_override["grad_color_2"])
+	WRITE_FILE(S["gradient_style_2"]		, features_override["grad_style_2"])
+
+	WRITE_FILE(S["s_hair_color_2"]			, features_override["hair_color_2"])
+	WRITE_FILE(S["s_hair_style_2"]			, features_override["hair_style_2"])
 
 	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
 	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])

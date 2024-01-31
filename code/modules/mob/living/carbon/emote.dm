@@ -125,7 +125,10 @@
 
 /datum/emote/living/carbon/lick/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
 		return
 	var/obj/item/hand_item/healable/licker/licky = new(user)
@@ -141,7 +144,10 @@
 
 /datum/emote/living/carbon/touch/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
 		return
 	var/obj/item/hand_item/healable/toucher/touchy = new(user)
@@ -157,7 +163,10 @@
 
 /datum/emote/living/carbon/tend/run_emote(mob/user)
 	. = ..()
-	if(user.get_active_held_item())
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	else if(I)
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
 		return
 	var/obj/item/hand_item/healable/tender/tendy = new(user)
@@ -182,6 +191,22 @@
 		to_chat(user, span_notice("You ready your beans for WAR!!"))
 	else
 		qdel(bean)
+
+/datum/emote/living/carbon/bean_war
+	key = "warbean"
+	key_third_person = "warbeans"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/bean_war/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
+		return
+	var/obj/item/hand_item/beans_war/warbean = new(user)
+	if(user.put_in_active_hand(warbean))
+		to_chat(user, span_notice("You ready your warbeans for REAL WAR!!"))
+	else
+		qdel(warbean)
 
 /datum/emote/living/carbon/cuphand
 	key = "cuphand"

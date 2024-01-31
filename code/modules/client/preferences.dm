@@ -128,6 +128,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/backbag = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/hair_style = "Bald"				//Hair type
+	var/hair_style_2 = "Bald"				//Hair type
 	var/hair_color = "000000"				//Hair color
 	var/facial_hair_style = "Shaved"	//Face hair type
 	var/facial_hair_color = "000000"		//Facial hair color
@@ -169,6 +170,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_snouts" = "None",
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
+		"derg_body" = "Smooth Dragon Body",
+		"derg_belly" = "None",
+		"derg_horns" = "None",
+		"derg_mane" = "None",
+		"derg_ears" = "None",
+		"derg_eyes" = "None",
 		"xenodorsal" = "Standard",
 		"xenohead" = "Standard",
 		"xenotail" = "Xenomorph Tail",
@@ -709,31 +716,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			if(HAIR in pref_species.species_traits)
 				dat += "<h3>Hair</h3>"
-				dat += "<b>Style:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]</a><br>"
+				dat += "<b>Style Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]<br>"
 				dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><br>"
-				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br><BR>"
 
 				// Coyote ADD: Hair gradients
-				dat += "<b>Gradiant:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a><br>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br>"
+				dat += "<b>Gradient Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br><BR>"
 				// Coyote ADD: End
 
-				dat += "<b>Facial Style:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a><br>"
-				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br>"
+				dat += "<b>Style Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style_2;task=input'>[features_override["hair_style_2"]]</a>"
+				dat += "<a href='?_src_=prefs;preference=previous_hair_style_2;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style_2;task=input'>&gt;</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["hair_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_color_2;task=input'>Change</a><br><BR>"
 
-			dat += "<h3>Misc</h3>"
-			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><br>"
-			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><br>"
-			dat += "<b>Background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><br>"
-			dat += "<b>Pixel Offsets</b><br>"
-			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
-			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
-			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><br>"
-			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><br>"
+				dat += "<b>Gradient Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style_2;task=input'>[features_override["grad_style_2"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color_2;task=input'>Change</a><br><BR>"
+
+				dat += "<b>Facial Style:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]<br>"
+				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br><BR>"
 
 			dat += "</td>"
 
@@ -767,6 +773,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(waddle_amount > 0)
 				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
 				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
+			
+			
+			dat += "<h3>Misc</h3>"
+			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><br>"
+			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><br>"
+			dat += "<b>Background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><br>"
+			dat += "<b>Pixel Offsets</b><br>"
+			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
+			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
+			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><br>"
+			
 			dat += "</td>"
 
 			//end column 5 or something
@@ -3106,8 +3124,63 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_dors)
 						features["xenodorsal"] = new_dors
 
+				//Dragon Bodyparts
+				if("derg_body") //dragon main body
+					var/new_body
+					new_body = input(user, "Choose your character's body type:", "Character Preference") as null|anything in GLOB.derg_body_list
+					if(new_body)
+						features["derg_body"] = new_body
+
+				if("derg_belly") //dragon underside
+					var/new_belly
+					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
+					if(new_belly)
+						features["derg_belly"] = new_belly
+
+				if("derg_horns")
+					var/new_horn
+					new_horn = input(user, "Choose your character's horn type:", "Character Preference") as null|anything in GLOB.derg_horn_list
+					if(new_horn)
+						features["derg_horns"] = new_horn
+
+				if("derg_ears")
+					var/new_ears
+					new_ears = input(user, "Choose your character's ear type:", "Character Preference") as null|anything in GLOB.derg_ear_list
+					if(new_ears)
+						features["derg_ears"] = new_ears
+
+				if("derg_mane")
+					var/new_mane
+					new_mane = input(user, "Choose your character's mane type:", "Character Preference") as null|anything in GLOB.derg_mane_list
+					if(new_mane)
+						features["derg_mane"] = new_mane
+
+				if("derg_eyes")
+					var/new_eye
+					new_eye = input(user, "Choose your character's eye type:", "Character Preference") as null|anything in GLOB.derg_eye_list
+					if(new_eye)
+						features["derg_eyes"] = new_eye
+
 				//every single primary/secondary/tertiary colouring done at once
-				if("xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary","xhead_primary","xhead_secondary","xhead_tertiary","tail_primary","tail_secondary","tail_tertiary","insect_markings_primary","insect_markings_secondary","insect_markings_tertiary","insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary","ears_primary","ears_secondary","ears_tertiary","frills_primary","frills_secondary","frills_tertiary","ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary","taur_primary","taur_secondary","taur_tertiary","snout_primary","snout_secondary","snout_tertiary","spines_primary","spines_secondary","spines_tertiary", "mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
+				if(
+				"derg_body_primary","derg_body_secondary","derg_body_tertiary",
+				"derg_belly_primary","derg_belly_secondary","derg_belly_tertiary",
+				"derg_horns_primary","derg_horns_secondary","derg_horns_tertiary",
+				"derg_ears_primary","derg_ears_secondary","derg_ears_tertiary",
+				"derg_mane_primary","derg_mane_secondary","derg_mane_tertiary",
+				"derg_eyes_primary","derg_eyes_secondary","derg_eyes_tertiary",
+				"xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary",
+				"xhead_primary","xhead_secondary","xhead_tertiary",
+				"tail_primary","tail_secondary","tail_tertiary",
+				"insect_markings_primary","insect_markings_secondary","insect_markings_tertiary",
+				"insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary",
+				"ears_primary","ears_secondary","ears_tertiary",
+				"frills_primary","frills_secondary","frills_tertiary",
+				"ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary",
+				"taur_primary","taur_secondary","taur_tertiary",
+				"snout_primary","snout_secondary","snout_tertiary",
+				"spines_primary","spines_secondary","spines_tertiary",
+				"mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
 					var/the_feature = features[href_list["preference"]]
 					if(!the_feature)
 						features[href_list["preference"]] = "FFFFFF"

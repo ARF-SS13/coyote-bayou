@@ -529,7 +529,7 @@
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
-	if(!istype(M))
+	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
@@ -557,6 +557,11 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M) || !CheckAttackCooldown(user, M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"

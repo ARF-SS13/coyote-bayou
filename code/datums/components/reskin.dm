@@ -155,6 +155,9 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	/// the type of thing this thing expects
 	var/expected_type = /obj/item
 
+	var/lefthand_file
+	var/righthand_file
+
 /datum/reskin/New(obj/item/template)
 	if(!isitem(template))
 		return
@@ -173,6 +176,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = template.icon
 	icon_state = template.icon_state
 	item_state = template.item_state
+	lefthand_file = template.lefthand_file
+	righthand_file = template.righthand_file
 	mob_overlay_icon = template.mob_overlay_icon
 	mutantrace_variation = template.mutantrace_variation
 
@@ -190,6 +195,10 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		target.icon_state = icon_state
 	if(!isnull(item_state))
 		target.item_state = item_state
+	if(!isnull(lefthand_file))
+		target.lefthand_file = lefthand_file
+	if(!isnull(righthand_file))
+		target.righthand_file = righthand_file
 	if(!isnull(mob_overlay_icon))
 		target.mob_overlay_icon = mob_overlay_icon
 	if(!isnull(mutantrace_variation))
@@ -2289,6 +2298,33 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	unloaded_chambered_state = "scarl-e"
 	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	unloaded_empty_state = "scarl-e"
+
+
+////////////////////////////
+///   KELPMAGIC STAVES   ///
+/datum/component/reskinnable/staff_kelpmagic
+	skins = list(
+		"Magic Staff",
+		"Shaman Staff",
+	)
+
+/datum/reskin/gun/staff_kelpmagic/shaman
+	skin = "Shaman Staff"
+	name = "shaman staff"
+	desc = "An intricate staff, carried for centuries by the shaman class of the tribe."
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "staff-shaman"
+	item_state = "staff-shaman"
+	expected_type = /obj/item/gun
+
+
+
+
+
+
 
 ////////////////////////////
 /// DEBUG SERVICE RIFLE ///

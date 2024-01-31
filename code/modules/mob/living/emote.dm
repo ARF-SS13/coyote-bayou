@@ -912,6 +912,13 @@
 	sound = 'sound/f13effects/sunsetsounds/moo.ogg'
 
 
+/datum/emote/living/meow
+	key = "meow"
+	key_third_person = "meows"
+	message = "meows!"
+	sound = 'sound/f13effects/meow.ogg'
+
+
 /datum/emote/mrowl
 	key = "mrowl"
 	key_third_person = "mrowls"

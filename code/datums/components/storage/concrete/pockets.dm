@@ -5,6 +5,7 @@
 	max_combined_w_class = STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE * 2
 	max_volume = STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE * 2
 	rustle_sound = TRUE
+	override_flags = ALLOW_ARTIFACT_STUFF
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()

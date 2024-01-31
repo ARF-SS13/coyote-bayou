@@ -100,12 +100,14 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		return try_seal(user, I, I.type, "planks", 1 HOURS)
 
-	if(covered) // allow you to interact only when it's sealed
-		..()
-	else
-		if(user.a_intent == INTENT_HARM)
-			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
-			return
+	..()  //we can destroy them without covering the hole
+
+	// if(covered) // allow you to interact only when it's sealed
+	// 	..()
+	// else
+	// 	if(user.a_intent == INTENT_HARM)
+	// 		to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
+	// 		return
 
 /obj/structure/nest/proc/remove_nest()
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
@@ -172,6 +174,23 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
+
+/obj/structure/nest/lesserspider
+	name = "spider nest"
+	max_mobs = 2
+	spawn_time = 10 SECONDS //creepy fast crawlies
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 3)
+
+/obj/structure/nest/greaterspider
+	name = "empress nest"
+	max_mobs = 1
+	spawn_time = 20 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
@@ -412,12 +431,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list()
 
 /obj/structure/nest/special/remove_nest()
-	return 
+	return
 /obj/structure/nest/special/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration, atom/attacked_by)
 	. = ..()
 	if(.)
 		SEND_SIGNAL(src, COMSIG_SPAWNER_SPAWN_NOW)
-	return 
+	return
 
 //Event Nests
 /obj/structure/nest/zombieghoul

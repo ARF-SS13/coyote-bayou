@@ -18,7 +18,7 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book1"
 	book_key = "hnguide"
-	color = "#ff3388" 
+	color = "#ff3388"
 
 /obj/item/cool_book/druidguide
 	name = "Fancy Book"
@@ -34,6 +34,14 @@
 	icon_state = "book5"
 	color = "#335533"
 	book_key = "shamanguide"
+
+/obj/item/cool_book/teacherguidebook
+	name = "Teachers Guide"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book8"
+	color = "#FFD700"
+	book_key = "teacherguidebook"
 
 /obj/item/cool_book/warriorguide
 	name = "Gecko Skin Book"
@@ -93,7 +101,7 @@
 /obj/item/cool_book/ui_data(mob/user)
 	var/list/data = SScool_books.format_book_for_tgui(book_key, chapter, page)
 	return data
-	
+
 /obj/item/cool_book/ui_act(action, params)
 	if(..())
 		return

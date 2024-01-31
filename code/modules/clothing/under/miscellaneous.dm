@@ -1798,6 +1798,17 @@
 	item_color = "half_skirt"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/poofygreen
+	name = "green poof"
+	desc = "A green poofy skirt with not much to hide chest wise."
+	icon = 'icons/obj/clothing/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/dress.dmi'
+	icon_state = "petal_custom"
+	item_state = "petal_custom"
+	item_color = "petal_custom"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
 
 
 

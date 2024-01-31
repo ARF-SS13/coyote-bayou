@@ -971,6 +971,14 @@
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
 
+/obj/item/card/id/dogtag/ranger
+	name = "ranger's badge"
+	desc = "A silver badge with special engravings to denote ranger status."
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+
 /obj/item/card/id/dogtag/town
 	name = "citizenship permit"
 	desc = "A permit identifying the holder as a citizen of a nearby town."

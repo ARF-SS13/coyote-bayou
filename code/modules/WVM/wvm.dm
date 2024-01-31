@@ -531,7 +531,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/mineral/wasteland_vendor/medical
 	name = "Wasteland Vending Machine - Medical"
-	icon_state = "med_idle"
+	icon_state = "numed_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
@@ -667,7 +667,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/mineral/wasteland_vendor/weapons
 	name = "Wasteland Vending Machine - Weapons"
-	icon_state = "weapon_idle"
+	icon_state = "nuweapon_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										100),
 		new /datum/data/wasteland_equipment("Beretta M93R (9mm)",							/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,			200),
@@ -712,7 +712,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
 	name = "Wasteland Vending Machine - Ammunition"
-	icon_state = "ammo_idle"
+	icon_state = "nuammo_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									20),
 		new /datum/data/wasteland_equipment("9mm Box (45 bullets)",							/obj/item/ammo_box/c9mm,								20),
@@ -836,22 +836,23 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 */
 
 /obj/machinery/mineral/wasteland_vendor/pipboy
-	name = "Wasteland Pip-N-Walk"
-	icon_state = "generic_idle"
+	name = "Nash Vending Machine - Identification"
+	icon_state = "pipboy"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Pip-boy 3000",			/obj/item/pda,																25),
+		new /datum/data/wasteland_equipment("Datapal PDA",			/obj/item/pda,																25),
 		new /datum/data/wasteland_equipment("Reprogrammable ID",	/obj/item/card/id/selfassign,												20),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Reagent Scanner",	/obj/item/cartridge/chemistry,						10),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Health Scanner",	/obj/item/cartridge/medical,						10),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Signaler",	/obj/item/cartridge/signal,								10),
-		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,								10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Reagent Scanner",	/obj/item/cartridge/chemistry,						10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
+		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Pip-boy 3000",			/obj/item/pda,																25),
+		new /datum/data/wasteland_equipment("Datapal PDA",			/obj/item/pda,																25),
 		new /datum/data/wasteland_equipment("Reprogrammable ID",	/obj/item/card/id/selfassign,												20),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Reagent Scanner",	/obj/item/cartridge/chemistry,						10),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Health Scanner",	/obj/item/cartridge/medical,						10),
-		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Signaler",	/obj/item/cartridge/signal,								10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Reagent Scanner",	/obj/item/cartridge/chemistry,						10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
+		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
+		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
@@ -981,7 +982,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/mineral/wasteland_vendor/attachments
 	name = "Wasteland Vending Machine - Armor and Attachments"
-	icon_state = "generic_idle"
+	icon_state = "seller_attachments"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								25),
 		new /datum/data/wasteland_equipment("Radiation Suit Hood",			/obj/item/clothing/head/radiation,								25),
@@ -992,9 +993,11 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
+		new /datum/data/wasteland_equipment("Gold Paint",					/obj/item/gun_upgrade/cosmetic/gold,							80),
+		new /datum/data/wasteland_equipment("Bluespace Paint",				/obj/item/tool_upgrade/augment/randomizer,						50)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								25),
@@ -1006,14 +1009,16 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
+		new /datum/data/wasteland_equipment("Gold Paint",					/obj/item/gun_upgrade/cosmetic/gold,							80),
+		new /datum/data/wasteland_equipment("Bluespace Paint",				/obj/item/tool_upgrade/augment/randomizer,						50)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting
 	name = "Wasteland Vending Machine - Crafting"
-	icon_state = "generic_idle"
+	icon_state = "seller_crafting"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Metal Parts (x5)",					/obj/item/stack/crafting/metalparts/five,							10),
 		new /datum/data/wasteland_equipment("High Quality Metal Parts (x5)",	/obj/item/stack/crafting/goodparts/five,							25),

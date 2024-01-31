@@ -22,6 +22,9 @@
 	/// So you can have a holster only able to hold one gun, but plenty of ammo
 	var/list/quota
 
+	/// Flags that allow/disallow things in/out on a vague, ephemeral basis
+	var/override_flags = NONE
+
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
@@ -502,18 +505,19 @@
 			host.add_fingerprint(M)
 		return FALSE
 	if(!length(can_hold_extra) || !is_type_in_typecache(I, can_hold_extra))
-		if(length(can_hold) && !is_type_in_typecache(I, can_hold))
-			if(!stop_messages)
-				to_chat(M, span_warning("[host] cannot hold [I]!"))
-			return FALSE
-		if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Check for specific items which this container can't hold.
-			if(!stop_messages)
-				to_chat(M, span_warning("[host] cannot hold [I]!"))
-			return FALSE
-		if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS && I.w_class > max_w_class)
-			if(!stop_messages)
-				to_chat(M, span_warning("[I] is too long for [host]!"))
-			return FALSE
+		if(!check_overrides(I))
+			if(length(can_hold) && !is_type_in_typecache(I, can_hold))
+				if(!stop_messages)
+					to_chat(M, span_warning("[host] cannot hold [I]!"))
+				return FALSE
+			if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Check for specific items which this container can't hold.
+				if(!stop_messages)
+					to_chat(M, span_warning("[host] cannot hold [I]!"))
+				return FALSE
+			if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS && I.w_class > max_w_class)
+				if(!stop_messages)
+					to_chat(M, span_warning("[I] is too long for [host]!"))
+				return FALSE
 		// STORAGE LIMITS
 	if(storage_flags & STORAGE_LIMIT_MAX_ITEMS)
 		if(real_location.contents.len >= max_items)
@@ -559,7 +563,7 @@
 /// Has our quota been met?
 /datum/component/storage/proc/check_quota(obj/item/I)
 	if(!LAZYLEN(quota))
-		return
+		return // not enough dogs
 	var/atom/real_location = real_location()
 	var/list/tally = list()
 	for(var/i in quota)
@@ -756,3 +760,12 @@
  */
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
+
+/datum/component/storage/proc/check_overrides(obj/item/I)
+	if(!override_flags)
+		return
+	if(CHECK_BITFIELD(override_flags, ALLOW_ARTIFACT_STUFF))
+		if(istype(I, /obj/item/storage/box/artifactcontainer))
+			return TRUE
+		if(SEND_SIGNAL(I, COMSIG_ITEM_ARTIFACT_EXISTS))
+			return TRUE // cheesed to meet you

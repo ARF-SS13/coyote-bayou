@@ -1587,3 +1587,14 @@
 	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
 		. += ""
 		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+
+/mob/living/verb/handstand()
+	set category = "IC"
+	set name = "Perform Handstand "
+	set desc = "Button that turns your character upside down."
+
+	to_chat(src, span_notice("You try to perform a handstand."))
+	if(do_after(src, 1 SECONDS, target = src))
+		for(var/i in 1 to 180)  //I know this is awful
+			src.tilt_left()

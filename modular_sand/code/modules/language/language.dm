@@ -155,9 +155,17 @@
 	icon_state = "solcommon"
 	restricted = FALSE
 
+/datum/language/modula_sand/serbian
+	name = "Serbian"
+	desc = "A language native to the pre-war slavs of the Balkans. How speakers of it got to Texarkana is anyone's guess."
+	key = "sr"
+	icon_state = "serbian"
+	syllables = list("zdravo", "hvala", "dobro jutro", "dobar dan", "laku noć", "molim", "izvinite", "da", "ne", "kako si?", "ime", "grad", "planina", "reka", "more", "sunce", "mesec", "zvezda", "voće", "povrće", "voda", "vino", "kafa", "čaj", "hleb", "mleko", "sir", "meso", "riba", "ptica", "pas", "mačka", "kuća", "stan", "soba", "krevet", "stolica", "sto", "telefon", "računar", "knjiga", "olovka", "papir", "škola", "univerzitet", "profesor", "učenik", "posao", "novac", "trgovina", "restoran", "putovanje", "avion", "autobus", "voz", "automobil", "bicikl", "pesma", "film", "televizija", "internet", "sport", "fudbal", "košarka", "tenis", "plivanje", "planiranje", "poseta", "zabava", "ljubav", "prijatelj", "porodica", "roditelj", "brat", "sestra", "dečko", "devojka", "venčanje", "rođendan", "sreća", "svetlo", "tama", "boja", "crvena", "plava", "zelena", "žuta", "crna", "bela", "cvet", "drvo", "cveće", "trava", "zemlja", "nebo", "vazduh", "vatra", "led", "toplo", "hladno", "brz", "spor", "visok", "nizak", "dugačak", "kratko", "glasan", "tih", "smešno", "tužno", "lepo", "ružno", "srećan", "tužan")
+
+
 /datum/language/modular_sand/technorussian
-	name = "Technorussian"
-	desc = "Ancient language of Russian colonists, rusted with time and bastardized with technical terms in everyday use."
+	name = LANGUAGE_SPACER
+	desc = "An ancient language used by cosmonaut colonists of various colonized planets during the 2100s. How the language ended up here is beyond anyone's guess. It features a lot of familiar words and phrases."
 	speech_verb = "proclaims"
 	ask_verb = "queries"
 	exclaim_verb = "declares"
@@ -166,8 +174,8 @@
 	space_chance = 70
 	default_priority = 98
 	flags = TONGUELESS_SPEECH
-	syllables = list("zhena", "reb", "kot", "tvoy", "vodka", "blyad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
-					 "re", "be", "nok", "chto", "techno", "kak", "govor", "navernoe", "da", "net", "horosho", "pochemu", "privet","lubov", \
+	syllables = list("zhena", "reb", "kot", "tvoy", "vadka", "byad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
+					 "re", "be", "nok", "chto", "techo", "kak", "govor", "navernoe", "da", "net", "horosho", "pochemu", "pivet","lubov", \
 					 "ebat", "krovat", "stol", "za", "ryad", "ka", "voyna", "dumat", "patroni", "tarakanu", "zdorovie", "day", "dengi", \
 					 "pizdec", "mat", "tvoyu", "suka", "ayblya", "uebok", "sosi", "ebi", "huyar", "trahat", "pizda", "uebu", "zaebal", "zgorela", \
 					 "pizduy", "srat", "naydu", "ubyi", "uebishe", "blyadina", "priebali", "prosrali", "suche", "voituyay", "tupoy", "daun", "churka", \
@@ -177,8 +185,8 @@
 					 "vidimost", "indukciya", "ionizaciya", "laser", "svyaz", "provodka", "atmosfera", "davleniye", "temperatura", \
 					 "obyem", "massa", "scorost", "uskoreniye", "radiaciya", "ves", "neobhodimost", "dokozatelstvo", "teorema", "kipeniye", \
 					 "inovaciya", "proruv", "turbulentnost", "zashita", "pitaniye", "zamukaniye", "korotkoye", "dlennoye", "verticalno", \
-					 "portal", "systema", "electronika", "nigilizm", "anarhizm", "communistu", "tupuye", "sopla", "obshivka", "obtekaemost", \
-					 "dinamica", "statica", "organizacuya", "yeyenet", "radio", "peredacha", "priem", "slushno", "chastota", "gerts", "stantiya", \
-					 "suda", "huyar", "odin", "dva", "tri", "holod", "granata", "ne", "re", "ru", "korabl")
+					 "portal", "systema", "electronika", "nagilizm", "anarhizm", "comustu", "tupuye", "sopla", "obshivka", "obtekaemost", \
+					 "dinamica", "statica", "oganizacuya", "yeyenet", "rayio", "peredacha", "priem", "slushno", "chastota", "gerts", "stantiya", \
+					 "suda", "huyar", "odmin", "dva", "tri", "holod", "grata", "ne", "re", "ru", "korabl")
 	icon_state = "technorussian"
 	restricted = FALSE

@@ -1897,6 +1897,35 @@
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
+/obj/item/gun/ballistic/automatic/slr/stinki
+	name = "Custom Enfield SLR"
+	desc = "A custom self-loading rifle in .308. Semi-auto only."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "slr"
+	item_state = "slr"
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 24
+	knife_y_offset = 21
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 11
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
 /* * * * * * * * * * *
  * M1 Garand Rifle
  * Heavy semi-auto 7.62mm rifle
@@ -2590,6 +2619,20 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/custom
+	name = "R-varlden mock bullpup "
+	desc = "A modified Aug 5mm rifle, it's rate of fire has been altered compared to a stock rifle of it's kind, this one has some alien letters painted in a teal blue on it, with their english counter parts underneath it reading 'Erik CDXCII'"
+	init_recoil = AUTOCARBINE_RECOIL(1.4, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "augc"
+	item_state = "augc"
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
@@ -2805,7 +2848,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m308/ext , /obj/item/ammo_box/magazine/m308/ext/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -2877,7 +2919,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -2975,7 +3016,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
@@ -3178,9 +3218,9 @@
 	name = "WT-550 PDW"
 	desc = "The WT-550 is a Personal Defense Weapon manufactured by West-Tek. Similar to the P90, it was intended to be a concealable weapon able to penetrate body armor. Considering how rare this weapon is, it seems it wasn't very popular."
 	item_state = "m90"
-	icon_state = "WT550"
-	mag_type = /obj/item/ammo_box/magazine/m473/small
-	init_mag_type = /obj/item/ammo_box/magazine/m473/small
+	icon_state = "wt550"
+	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
@@ -3553,46 +3593,9 @@
 //MISC//
 ////////
 
-/* * * * * * * * * *
-* Recoiless rifle
-* - Potential for two rounds but always will use a single shot magazine
-* + auto-ejects the casing
-* + T2 buff damage
-* - Long draw time, heavy recoil, heavy slow down, two handed only and only able to be placed on the back
-* * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/recoilessrifle // remove from lootpool in another lootpool. Needs rethinking and probably needs removal.
-	name = "Xototl Recoiless Rifle"
-	desc = "A AT92RR or 'recoiless rifle'. Packing one hell of a punch, this weapon seems to have Aztec like motifs on the grips. This weapon seems extremely bulky and quite heavy to use. But what it makes up for slowness, it makes up for damage."
-	icon_state = "spaag"
-	item_state = "spaag"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/spaagrifle
-	init_mag_type = /obj/item/ammo_box/magazine/spaagrifle/empty
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2.2
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	auto_eject = 1
-	en_bloc = 1
-	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
-	cock_delay = GUN_COCK_RIFLE_BASE
-	draw_time = GUN_DRAW_LONG
-	init_recoil = HMG_RECOIL(4, 4)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
-	can_scope = FALSE
-	can_suppress = FALSE
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-
-
 /obj/item/gun/ballistic/automatic/needlerrifle
-	name = "NR-43 Turán"
-	desc = "A NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.' Sadly the user of this weapon is a big dork."
+	name = "Worn NR-43 Turán"
+	desc = "A old albeit well aged NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.' Sadly the user of this weapon is a big dork."
 	icon_state = "needles"
 	item_state = "needles"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -3603,14 +3606,14 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	draw_time = GUN_DRAW_NORMAL
 	init_recoil = CARBINE_RECOIL (1 , 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slow
 	)
-	zoom_factor = 1.2
+	zoom_factor = 1
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
@@ -3643,6 +3646,90 @@
 	can_flashlight = FALSE
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/needler.ogg'
+
+
+/obj/item/gun/ballistic/automatic/needlerhmg
+	name = "KF-21 Black Panther Needler LMG"
+	desc = "A heavy 30 pound KF-21 Black Panther LMG. This prototype needler weapon was created by Latos Systems in collaboration with the South Korean government. It fires heavier needle projectiles at the cost of recoil and weight. Let the pink mist blot out the sun."
+	icon_state = "needlelmg"
+	item_state = "needlelmg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_REPEATER
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_LONG
+	init_recoil = HMG_RECOIL (1.4 , 4.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm400
+	)
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+
+/obj/item/gun/ballistic/automatic/needlersmg
+	name = "Worn S-27 Akula Needler SMG"
+	desc = "A lightweight, albeit old and worn, Akula Needler SMG. A prototype created and supplied to the Kazakhstan by Latos Systems. The gun itself is lightweight, easy to use, low recoil, but unable to take silencers or scopes. The design was a prototype and never took off, rejected in favor of the AK series rifles."
+	icon_state = "needlesmg"
+	item_state = "needlesmg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlessmg
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlessmg
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = SMG_RECOIL (1.2 , 0.9)
+	init_firemodes = list(
+		/datum/firemode/semi_auto,
+		/datum/firemode/automatic/rpm100
+	)
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+/obj/item/gun/ballistic/automatic/stg44custom
+	name = "Custom Engraved STG-44"
+	desc = "A customized and engraved STG-44. The STG-44 is a German assault rifle, champered in 8mm kurz, or .30-06 for similiar caliber, it is a striking piece of creation. The wood stock is replaced with proper and sturdy birch wood, the metal engraved with baroque motifs. On the barrel is the name 'Freyja'. Seems this gun is able to have a scope on it alongside supressor."
+	icon_state = "stg"
+	item_state = "stg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/stg
+	init_mag_type = /obj/item/ammo_box/magazine/stg
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_C1
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
+	casing_ejector = TRUE
+	handedness = GUN_EJECTOR_RIGHT
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = CARBINE_RECOIL (1.7 , 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm100
+	)
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/fg42.ogg'
 
 /* * * * * * * * * *
 * TG78 Anti Material Rifle.
