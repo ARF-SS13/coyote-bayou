@@ -1238,7 +1238,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/storage/box/tools/ranching(src)
+	new /obj/item/slimecross/consuming/grey(src)
 
 /datum/gear/donator/kits/prismaticnova2
 	name = "Slime Cookie Kit"
