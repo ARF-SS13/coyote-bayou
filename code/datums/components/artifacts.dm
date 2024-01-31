@@ -883,7 +883,7 @@
 
 /datum/artifact_effect/max_hp_modifier/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_HP_CHANGE)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					hp_change = RANDOM(SSartifacts.health_good_common_max, SSartifacts.health_good_common_min)
@@ -1009,7 +1009,7 @@
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
 	// var/quirk = prob(50) // either a quirk, or a trait!
 	// if(quirk)
-	// 	if(force_buff)
+	// 	if(force_buff || is_buff)
 	switch(rarity)
 		if(ART_RARITY_COMMON)
 			quirk_to_give = pick(SSartifacts.quirks_good_common)
@@ -1149,7 +1149,7 @@
 /datum/artifact_effect/speed
 	kind = ARTMOD_SPEED
 	base_value = 400
-	chance_weight = 1
+	chance_weight = 0 // doesnt actually work................... yet
 	var/multiplicative_slowdown = 0 // more is slower
 	var/my_unique_id = "bingus"
 	var/equip_message = "You feel faster."
@@ -1167,7 +1167,7 @@
 
 /datum/artifact_effect/speed/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_SPEED_ADJUSTMENT)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					multiplicative_slowdown = RANDOM(SSartifacts.speed_good_common_max, SSartifacts.speed_good_common_min)
@@ -1977,12 +1977,12 @@
 		stamina_adjustment = LAZYACCESS(parameters, ARTVAR_STAMINA_ADJUSTMENT)
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)))
 		stamcrit_cooldown = LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)
-	is_buff = (stamina_adjustment > 0)
+	is_buff = (stamina_adjustment <= 0)
 	. = ..()
 
 /datum/artifact_effect/stamina/randomize(rarity, force_buff)
 	if(stamina_adjustment == initial(stamina_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					stamina_adjustment = RANDOM(SSartifacts.stamina_good_common_max, SSartifacts.stamina_good_common_min)
@@ -2104,7 +2104,7 @@
 
 /datum/artifact_effect/radiation/randomize(rarity, force_buff)
 	if(target_radiation == initial(target_radiation))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_radiation = RANDOM(SSartifacts.radiation_target_good_common_min, SSartifacts.radiation_target_good_common_max)
@@ -2205,7 +2205,7 @@
 
 /datum/artifact_effect/blood/randomize(rarity, force_buff)
 	if(target_blood == initial(target_blood))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_blood = RANDOM(SSartifacts.blood_target_good_common_min, SSartifacts.blood_target_good_common_max)
@@ -2309,7 +2309,7 @@
 
 /datum/artifact_effect/feeder/randomize(rarity, force_buff)
 	if(nutrition_adjustment == initial(nutrition_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					nutrition_adjustment = RANDOM(SSartifacts.nutrition_rate_good_common_min, SSartifacts.nutrition_rate_good_common_max)
