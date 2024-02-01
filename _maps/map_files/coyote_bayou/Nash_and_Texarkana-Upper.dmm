@@ -826,6 +826,10 @@
 /area/f13/caves)
 "atz" = (
 /obj/machinery/light/floor,
+/obj/effect/landmark/vertibird{
+	name = "Vertibird Landmark";
+	id = "Mass Fusion Upper Level"
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/massfusion)
 "atR" = (
