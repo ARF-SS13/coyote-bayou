@@ -1432,7 +1432,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "Gewehr 88 rifle case"
 
 /obj/item/storage/box/gun/rifle/gew88/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/gewehr88(src)
+	new /obj/item/gun/ballistic/rifle/gewehr88(src)
 	new /obj/item/ammo_box/a3006box(src)
 
 /obj/item/storage/box/gun/pistol/flintlock
