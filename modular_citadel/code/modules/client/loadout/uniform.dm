@@ -190,6 +190,16 @@
 	path = /obj/item/clothing/under/f13/bdu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/swimsuitskimp
+	name = "German tactical swimsuit"
+	path = /obj/item/clothing/under/f13/ww1swim
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuitskimp/two
+	name = "French tactical swimsuit"
+	path = /obj/item/clothing/under/f13/ww1swim/french
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
 /datum/gear/uniform/bdu/desert
 	name = "desert battle dress uniform"
 	path = /obj/item/clothing/under/f13/dbdu

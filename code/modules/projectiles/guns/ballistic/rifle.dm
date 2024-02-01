@@ -963,7 +963,6 @@
 	init_recoil = RIFLE_RECOIL (1.2 , 0.7)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	en_bloc = 1
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
