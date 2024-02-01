@@ -51,7 +51,7 @@
 		AREA_Z_MUSIC(Z_LEVEL_REDWATER_UPPER, 'sound/ambience/coolloops/swamp.ogg'),
 		AREA_Z_MUSIC(Z_LEVEL_REDLICK, 'sound/ambience/coolloops/swamp.ogg'),
 		AREA_Z_MUSIC(Z_LEVEL_REDLICK_UPPER, 'sound/ambience/coolloops/swamp.ogg'),
-		AREA_Z_MUSIC(Z_LEVEL_GARLAND, 'sound/ambience/coolloops/garland.ogg')
+		AREA_Z_MUSIC(Z_LEVEL_GARLAND, 'sound/ambience/coolloops/garland.ogg'),
 		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON, 'sound/ambience/coolloops/newboston.ogg'),
 		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON_UPPER, 'sound/ambience/coolloops/newboston.ogg'),
 	)
