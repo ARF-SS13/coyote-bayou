@@ -1,15 +1,10 @@
 /datum/design/ammolathe
 	build_type = AMMOLATHE
 	/// Automatically sets the ammo's material cost through Dynamic Stuff~
-	var/autocalc_material_values = TRUE
-
-/datum/design/ammolathe/InitializeMaterials()
-	if(autocalc_material_values)
-		calculate_ammobox_materials()
-	. = ..()
+	autocalc_materials = TRUE
 
 /// spawns some ammo boxes, rips the material data, and then trashes them
-/datum/design/ammolathe/proc/calculate_ammobox_materials()
+/datum/design/ammolathe/AutocalcMaterialCosts()
 	if(!ispath(build_path, /obj/item/ammo_box))
 		return
 	var/list/design_materials = list()
@@ -44,7 +39,7 @@
 	build_path = /obj/item/stack/sheet/metal
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /datum/design/ammolathe/blackpowder
 	name = "Blackpowder"
@@ -53,7 +48,7 @@
 	build_path = /obj/item/stack/ore/blackpowder
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /datum/design/ammolathe/titanium
 	name = "Titanium"
@@ -62,7 +57,7 @@
 	build_path = /obj/item/stack/sheet/mineral/titanium
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /* --Tier 1 Ammo and Magazines-- */
 //Tier 1 Magazines
@@ -831,7 +826,7 @@
 //		materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
 //		build_path = /obj/item/ammo_box/magazine/m2mm
 //		category = list("initial", "Advanced Ammo")
-//		autocalc_material_values = FALSE
+//		autocalc_materials = FALSE
 
 /datum/design/ammolathe/m2mm_rack
 	name = "2mm Gauss Clip"

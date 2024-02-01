@@ -793,6 +793,15 @@
 	build_path = /obj/item/stock_parts/cell/emergency_light
 	category = list("initial", "Electronics")
 
+/datum/design/portable_charger
+	name = "Portable Battery Charger"
+	id = "portable_charger"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000, /datum/material/gold = 4000)
+	build_path = /obj/item/storage/battery_box
+	category = list("initial", "Electronics")
+	autocalc_materials = TRUE // hope it works =3
+
 /datum/design/packageWrap
 	name = "Package Wrapping"
 	id = "packagewrap"
