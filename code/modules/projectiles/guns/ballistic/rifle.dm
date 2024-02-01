@@ -947,7 +947,7 @@
 	fire_sound = 'sound/f13weapons/fg42.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
-/obj/item/gun/ballistic/rifle/mag/gewehr88
+/obj/item/gun/ballistic/rifle/gewehr88
 	name = "Model 1888 commission rifle"
 	desc = "A Model 1888 commission rifle. This rifle interestingly enough has the ability to eject the clip, also seems to require it itself to fire. This specific model was made so it is extra sturdy. It seems to be in perfect condition with freshly new wood varnish!"
 	icon_state = "g88"

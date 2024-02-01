@@ -1479,6 +1479,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Arisaka 38",
 		"Arisaka 99",
 		"Gewehr 71",
+		"Gewehr 88",
 		"Gewehr 98",
 		"Mauser 90",
 		"Mauser 93",
@@ -1641,6 +1642,22 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
+
+/datum/reskin/gun/hunting_rifle/gewehr88
+	skin = "Gewehr 88"
+	name = "Gewehr 88"
+	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2168."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "gewehr88"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	sawn_name = "sawed off Gewehr 88"
+	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 88, and then he invented the Gewehr 88 sawed off. He was a genius."
+	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	sawn_icon_state = "obrez"
 /datum/reskin/gun/hunting_rifle/gewehr98
 	skin = "Gewehr 98"
 	name = "Gewehr 98"
@@ -1656,6 +1673,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
+
 /datum/reskin/gun/hunting_rifle/mauser90
 	skin = "Mauser 90"
 	name = "Mauser 90"
