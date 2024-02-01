@@ -5386,6 +5386,18 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"dRC" = (
+/obj/effect/decal/marking{
+	icon_state = "doublehorizontal"
+	},
+/obj/effect/landmark/vertibird{
+	name = "Vertibird Landmark";
+	id = "Garland - West side"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "dSl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -20518,6 +20530,13 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ouB" = (
+/obj/effect/landmark/vertibird{
+	name = "Vertibird Landmark";
+	id = "Garland  - East Side"
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
 "ovg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -34125,6 +34144,13 @@
 /obj/structure/flora/tree/tall,
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland)
+"xXC" = (
+/obj/effect/landmark/vertibird{
+	name = "Vertibird Landmark";
+	id = "Garland  City"
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "xYo" = (
 /obj/structure/closet/crate/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -39859,7 +39885,7 @@ smg
 ixY
 smg
 smg
-dal
+dRC
 bUi
 snq
 smg
@@ -59319,7 +59345,7 @@ cON
 cON
 cON
 nVG
-cON
+xXC
 cON
 ewm
 cON
@@ -92442,7 +92468,7 @@ iTD
 iTD
 iTD
 iTD
-iTD
+ouB
 iTD
 iTD
 iTD
