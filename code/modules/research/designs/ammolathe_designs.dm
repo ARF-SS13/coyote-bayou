@@ -555,6 +555,13 @@
 	build_path = /obj/item/ammo_box/magazine/m14mmcustom/empty
 	category = list("initial", "Basic Magazines")
 
+/datum/design/ammolathe/patronecartridge
+	name = "empty patrone 88 cartridge (30-06)"
+	id = "p88c"
+	materials = list(/datum/material/iron = 3000)
+	build_path = /obj/item/ammo_box/magazine/geight/empty
+	category = list("initial", "Simple Magazines")
+
 /datum/design/ammolathe/m5mmpistol
 	name = "empty handgun magazine (5mm)"
 	id = "m5mmcustom"

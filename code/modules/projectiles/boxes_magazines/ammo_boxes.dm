@@ -354,6 +354,7 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a45lcbox/improvised
 	name = "bag with reloaded .45 Long Colt bullets"

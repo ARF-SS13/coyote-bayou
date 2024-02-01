@@ -103,7 +103,7 @@
 	multiload = TRUE
 
 /obj/item/ammo_box/magazine/internal/mausereight
-	name = "magazine box filled with needlers"
+	name = "magazine box filled with mauser ammo"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "mauser"
 	ammo_type = /obj/item/ammo_casing/a50MG
