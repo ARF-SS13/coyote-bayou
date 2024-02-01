@@ -2,18 +2,43 @@
 #define BATTERY_BOX_CHARGE_OUT 0
 #define BATTERY_BOX_CHARGE_IN 1
 
+// ECP = 20000
+// SEC = 10000
+// MEC = 40000
+
+#define BATTERY_BOX_RATE_DIVISOR 10
+
+#define BATTERY_BOX_LV_CHARGE_RATE 32 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
+#define BATTERY_BOX_MV_CHARGE_RATE 128 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
+#define BATTERY_BOX_HV_CHARGE_RATE 512 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
+#define BATTERY_BOX_EV_CHARGE_RATE 2048 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
+
+#define BATTERY_BOX_CAP_DIVISOR 10
+
+#define BATTERY_BOX_LV_CAPACITY 10000 / BATTERY_BOX_CAP_DIVISOR // 1000 EU
+#define BATTERY_BOX_MV_CAPACITY 40000 / BATTERY_BOX_CAP_DIVISOR // 4000 EU
+#define BATTERY_BOX_HV_CAPACITY 60000 / BATTERY_BOX_CAP_DIVISOR // 60000 EU
+#define BATTERY_BOX_EV_CAPACITY 1000000 / BATTERY_BOX_CAP_DIVISOR // 1000000 EU
+
 /// just a normal every day portable blender
 /obj/item/storage/battery_box
 	name = "portable charger"
-	desc = "A HellBurn PRO portable battery bank, used to charge your devices on the go."
+	desc = "A HAYO PRO portable battery bank, used to transfer those pesky electrons from one battery to another on the go. \
+		Design courtesy of Rustyville II: Rusty Harder. \nWarning: removing the capacitor will discharge all power stored in the battery bank."
 	icon = 'icons/obj/powerbox.dmi'
 	icon_state = "powerbox"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 	flags_1 = CONDUCT_1 // | HEAR_1
 	custom_price = 2000
 	custom_premium_price = 2000
 	component_type = /datum/component/storage/concrete/box/portable_charger
+	custom_materials = list(
+		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 10,
+		/datum/material/glass = MINERAL_MATERIAL_AMOUNT * 5,
+		/datum/material/plastic = MINERAL_MATERIAL_AMOUNT * 5,
+		/datum/material/gold = MINERAL_MATERIAL_AMOUNT * 2,
+	)
 	/// Handy link to the internal component compartment
 	var/obj/item/storage/box/charger_internals/batbox
 	/// The battery in our batbox
@@ -30,11 +55,17 @@
 	var/active = FALSE
 	/// the last active state
 	var/last_active = FALSE
+	/// rate that charge is transferred in or out
+	/// operates off of IC2's EU system, sorta
+	var/charge_per_tick = 0
 
 /// The blender itself
 /datum/component/storage/concrete/box/portable_charger
-	max_items = 4 // Batbox, switch, and a couple batteries
+	max_items = 5 // Batbox, switch, and 3 batterys
 	max_w_class = WEIGHT_CLASS_SMALL
+	quota = list(
+		/obj/item/gun = 1,
+		) // only one gun can be in the box at a time
 
 /obj/item/storage/battery_box/Initialize()
 	. = ..()
@@ -63,15 +94,34 @@
 	
 /obj/item/storage/battery_box/examine(mob/user)
 	. = ..()
+	. += span_notice("The information panel reads:")
 	if(charge_direction)
-		. += span_notice("It is currently set to charge itself from batteries.")
+		. += span_green("Pulling charge from loaded batteries.")
 	else
-		. += span_notice("It is currently set to charge batteries.")
+		. += span_green("Discharging into loaded batteries.")
 	var/rating = check_part()
-	if(rating)
-		. += span_notice("The capacitor inside will transfer up to [rating * BATTERY_BOX_CHARGE_BASE * 5] EU/s.")
-	else
-		. += span_alert("It needs a capacitor in its internal compartment to run!")
+	switch(rating)
+		if(1) // LV
+			. += span_green("LV BatBox capacitor installed.")
+			. += span_green("\tCapacity: [BATTERY_BOX_LV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_LV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+		if(2) // MV
+			. += span_green("MV CESU capacitor installed.")
+			. += span_green("\tCapacity: [BATTERY_BOX_MV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_MV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+		if(3) // HV
+			. += span_green("HV MFE capacitor installed.")
+			. += span_green("\tCapacity: [BATTERY_BOX_HV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_HV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+		if(4) // EV
+			. += span_green("EV MFSU capacitor installed.")
+			. += span_green("\tCapacity: [BATTERY_BOX_EV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_EV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+		else
+			. += span_alert("WARNING: No capacitor installed!")
+
+/obj/item/storage/battery_box/examine_more()
+	. = list(span_notice("...the heck is a Gibbl?"))
 
 /obj/item/storage/battery_box/process()
 	if(!can_operate())
@@ -85,33 +135,64 @@
 	update_icon()
 
 /obj/item/storage/battery_box/proc/charge_out()
-	var/charge_amount = BATTERY_BOX_CHARGE_BASE * check_part()
+	var/charge_amount = get_charge_rate()
 	var/all_done = TRUE
-	for(var/obj/item/stock_parts/cell/powa in contents)
+	for(var/obj/item/powa in contents)
+		var/obj/item/stock_parts/cell/batt
+		if(istype(powa, /obj/item/stock_parts/cell))
+			batt = powa
+			if(!batt.cancharge)
+				continue
+		else if(istype(powa, /obj/item/gun/energy))
+			var/obj/item/gun/energy/zap = powa
+			if(!zap.can_charge)
+				continue
+			batt = zap.cell
+			if(!batt)
+				continue
+			if(!batt.cancharge)
+				continue
+		if(!batt)
+			continue
 		if(internal_battery.charge <= 0)
 			break
-		if(powa.charge >= powa.maxcharge)
+		if(batt.charge >= batt.maxcharge)
 			continue
 		all_done = FALSE
-		var/true_charge_amount = min(powa.maxcharge - powa.charge, internal_battery.charge, charge_amount)
+		var/true_charge_amount = min(batt.maxcharge - batt.charge, internal_battery.charge, charge_amount)
 		internal_battery.use(true_charge_amount)
-		powa.give(true_charge_amount)
+		batt.give(true_charge_amount)
 	if(all_done)
 		become_inactive()
 	else
 		become_active()
 
 /obj/item/storage/battery_box/proc/charge_in()
-	var/charge_amount = BATTERY_BOX_CHARGE_BASE * check_part()
+	var/charge_amount = get_charge_rate()
 	var/all_done = TRUE
-	for(var/obj/item/stock_parts/cell/powa in contents)
+	for(var/obj/item/powa in contents)
+		var/obj/item/stock_parts/cell/batt
+		if(istype(powa, /obj/item/stock_parts/cell))
+			batt = powa
+			if(!batt.cancharge)
+				continue
+		else if(istype(powa, /obj/item/gun/energy))
+			var/obj/item/gun/energy/zap = powa
+			if(!zap.can_charge)
+				continue
+			batt = zap.cell
+			if(!batt)
+				continue
+			if(!batt.cancharge)
+				continue
+			continue
 		if(internal_battery.charge >= internal_battery.maxcharge)
 			break
-		if(powa.charge <= 0)
+		if(batt.charge <= 0)
 			continue
 		all_done = FALSE
-		var/true_charge_amount = min(powa.charge, internal_battery.maxcharge - internal_battery.charge, charge_amount)
-		powa.use(true_charge_amount)
+		var/true_charge_amount = min(batt.charge, internal_battery.maxcharge - internal_battery.charge, charge_amount)
+		batt.use(true_charge_amount)
 		internal_battery.give(true_charge_amount)
 	if(all_done)
 		become_inactive()
@@ -121,7 +202,6 @@
 /obj/item/storage/battery_box/update_overlays()
 	. = ..()
 	if(!internal_battery)
-		message_admins("Battery box [src] has no internal battery, but is trying to discharge it. Lagg is a dorknob.")
 		return
 	var/left_state = "powerbox_left_[round(internal_battery.charge / internal_battery.maxcharge * 10)]"
 	var/batteries_charge = 0
@@ -191,6 +271,20 @@
 	if(istype(grabby))
 		return grabby.rating
 
+/obj/item/storage/battery_box/proc/get_charge_rate()
+	var/rating = check_part()
+	switch(rating)
+		if(1) // LV
+			return BATTERY_BOX_LV_CHARGE_RATE
+		if(2) // MV
+			return BATTERY_BOX_MV_CHARGE_RATE
+		if(3) // HV
+			return BATTERY_BOX_HV_CHARGE_RATE
+		if(4) // EV
+			return BATTERY_BOX_EV_CHARGE_RATE
+		else
+			return 0
+
 /datum/component/storage/concrete/charger_internals
 	max_items = 3 // battery, persona core, capacitor. Battery cant be removed, so really 1
 	max_w_class = STORAGE_BOX_DEFAULT_MAX_SIZE
@@ -207,10 +301,10 @@
 
 /obj/item/storage/box/charger_internals
 	name = "Internal component compartment"
-	desc = "The internal component compartment of a HellBurn PRO portable charger. It houses the integrated \
+	desc = "The internal component compartment of a HAYO PRO portable charger. It houses the integrated \
 			SeldMleaK battery bank alongside a port for a capacitor. This thing is part of \
 			the HellBurn PRO, and thus can not (and should not) be removed. If it <i>is</i> somehow removed, please call the \
-			DEFCON-1 Existential Security Office at 1-800-IM-CODER when convenient."
+			Rustyville 2: Rusty Harder DEFCON-1 Existential Security Office at 1-800-IM-CODER when convenient."
 	icon = 'icons/obj/powerbox.dmi'
 	icon_state = "powerbox"
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_ALT
@@ -224,8 +318,8 @@
 
 /obj/item/storage/box/charger_internals/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_ENTERED, /atom/proc/update_icon)
-	RegisterSignal(src, COMSIG_ATOM_EXITED, /atom/proc/update_icon)
+	RegisterSignal(src, COMSIG_ATOM_ENTERED, .proc/update_contents)
+	RegisterSignal(src, COMSIG_ATOM_EXITED, .proc/update_contents)
 
 /obj/item/storage/box/charger_internals/PopulateContents()
 	. = ..()
@@ -243,6 +337,52 @@
 		our_home.internal_battery = null
 		our_home.batbox = null
 	. = ..()
+
+/// inserted a thing into the compartment, update the cell if its a capacitor
+/// doesnt spark
+/obj/item/storage/box/charger_internals/proc/update_outputted(datum/source, obj/item/stock_parts/capacitor/cap)
+	SIGNAL_HANDLER
+	update_contents(FALSE)
+
+/// removed a thing from the compartment, update the cell if its a capacitor
+/// sparks like heck
+/obj/item/storage/box/charger_internals/proc/update_inputted(datum/source, obj/item/stock_parts/capacitor/cap)
+	SIGNAL_HANDLER
+	update_contents(TRUE)
+
+/// inserted a thing into the compartment, update the cell if its a capacitor
+/// doesnt spark
+/obj/item/storage/box/charger_internals/proc/update_contents()
+	SIGNAL_HANDLER
+	var/obj/item/stock_parts/capacitor/cap = locate(/obj/item/stock_parts/capacitor) in contents
+	var/obj/item/stock_parts/cell/charger_battery/batterie = locate(/obj/item/stock_parts/cell/charger_battery) in contents
+	var/new_rating = 0
+	if(istype(cap, /obj/item/stock_parts/capacitor))
+		new_rating = cap.rating
+	if(istype(batterie))
+		var/newmax = BATTERY_BOX_LV_CAPACITY
+		switch(round(clamp(new_rating, 1, 4)))
+			if(1) // LV
+				newmax = BATTERY_BOX_LV_CAPACITY
+			if(2) // MV
+				newmax = BATTERY_BOX_MV_CAPACITY
+			if(3) // HV
+				newmax = BATTERY_BOX_HV_CAPACITY
+			if(4) // EV
+				newmax = BATTERY_BOX_EV_CAPACITY
+		batterie.maxcharge = newmax
+		var/difference = newmax - batterie.charge
+		if(difference < 0) // if the new max is less than the current charge, zap!
+			if(difference > -BATTERY_BOX_LV_CAPACITY)
+				do_sparks(1, TRUE, get_turf(src))
+			else if(difference > -BATTERY_BOX_MV_CAPACITY + BATTERY_BOX_LV_CAPACITY)
+				do_sparks(2, TRUE, get_turf(src))
+			else if(difference > -BATTERY_BOX_HV_CAPACITY + BATTERY_BOX_LV_CAPACITY)
+				do_sparks(3, TRUE, get_turf(src))
+			else
+				do_sparks(5, TRUE, get_turf(src))
+		batterie.charge = min(batterie.charge, newmax)
+	update_overlays()
 
 /obj/item/storage/box/charger_internals/update_overlays()
 	. = ..()
@@ -265,7 +405,7 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
-	maxcharge = 900
+	maxcharge = 10000 // base charge
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
 	w_class = WEIGHT_CLASS_SMALL
 	ratingdesc = FALSE
@@ -287,11 +427,7 @@
 
 /obj/item/stock_parts/cell/charger_battery/examine(mob/user)
 	. = ..()
-	. += span_notice("The power meter reads: [span_notice("[charge] / [maxcharge]")] EU.")
-
-
-
-
+	. += span_notice("The power meter reads: [span_notice("[charge / BATTERY_BOX_RATE_DIVISOR] / [maxcharge / BATTERY_BOX_CAP_DIVISOR]")] EU.")
 
 /obj/item/storage/backpack/debug_charger
 	name = "Bag of chargerstuff"
@@ -304,12 +440,8 @@
 	new /obj/item/stock_parts/cell/secborg(src)
 	new /obj/item/stock_parts/cell/secborg(src)
 	new /obj/item/stock_parts/cell/secborg/empty(src)
-	new /obj/item/stock_parts/cell/secborg/empty(src)
-	new /obj/item/stock_parts/capacitor/simple(src)
+	new /obj/item/stock_parts/cell/infinite(src)
 	new /obj/item/stock_parts/capacitor/simple(src)
 	new /obj/item/stock_parts/capacitor/adv(src)
-	new /obj/item/stock_parts/capacitor/adv(src)
 	new /obj/item/stock_parts/capacitor/super(src)
-	new /obj/item/stock_parts/capacitor/super(src)
-	new /obj/item/stock_parts/capacitor/quadratic(src)
 	new /obj/item/stock_parts/capacitor/quadratic(src)
