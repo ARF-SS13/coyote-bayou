@@ -201,6 +201,22 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/ww1swim
+	name = "German Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from Imperial germany, 1917"
+	icon_state = "igss"
+	item_state = "igss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/ww1swim/french
+	name = "French Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from France, 1916"
+	icon_state = "fss"
+	item_state = "fss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
 	name = "Ancient West German Officer uniform"
 	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
