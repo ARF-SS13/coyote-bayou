@@ -1,6 +1,6 @@
 #define BATTERY_BOX_CHARGE_BASE 10
-#define BATTERY_BOX_CHARGE_OUT 0
-#define BATTERY_BOX_CHARGE_IN 1
+#define BATTERY_BOX_CHARGE_OUT 0 // transfer charge from US to THEM
+#define BATTERY_BOX_CHARGE_IN 1 // transfer charge from THEM to US
 
 // ECP = 20000
 // SEC = 10000
@@ -37,7 +37,6 @@
 		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 10,
 		/datum/material/glass = MINERAL_MATERIAL_AMOUNT * 5,
 		/datum/material/plastic = MINERAL_MATERIAL_AMOUNT * 5,
-		/datum/material/gold = MINERAL_MATERIAL_AMOUNT * 2,
 	)
 	/// Handy link to the internal component compartment
 	var/obj/item/storage/box/charger_internals/batbox
@@ -128,40 +127,49 @@
 		become_inactive()
 		update_icon()
 		return
-	if(charge_direction == BATTERY_BOX_CHARGE_OUT)
-		charge_out()
-	else
-		charge_in()
+	transfer_charge()
 	update_icon()
 
-/obj/item/storage/battery_box/proc/charge_out()
+/obj/item/storage/battery_box/proc/get_battery(obj/item/powa, succ)
+	if(!istype(powa, /obj/item/stock_parts/cell) && !istype(powa, /obj/item/gun/energy))
+		return FALSE
+	var/obj/item/stock_parts/cell/batt
+	if(istype(powa, /obj/item/stock_parts/cell))
+		batt = powa
+	else if(istype(powa, /obj/item/gun/energy))
+		var/obj/item/gun/energy/zap = powa
+		if(!zap.can_box_charge)
+			return FALSE
+		batt = zap.cell
+	if(!batt)
+		return FALSE
+	if(batt.charge >= batt.maxcharge)
+		return FALSE
+	/// we can pull charge from a non-chargable battery, but not put charge into it
+	if(!batt.cancharge && !succ)
+		return FALSE
+	return batt
+
+/obj/item/storage/battery_box/proc/transfer_charge()
 	var/charge_amount = get_charge_rate()
 	var/all_done = TRUE
 	for(var/obj/item/powa in contents)
-		var/obj/item/stock_parts/cell/batt
-		if(istype(powa, /obj/item/stock_parts/cell))
-			batt = powa
-			if(!batt.cancharge)
-				continue
-		else if(istype(powa, /obj/item/gun/energy))
-			var/obj/item/gun/energy/zap = powa
-			if(!zap.can_charge)
-				continue
-			batt = zap.cell
-			if(!batt)
-				continue
-			if(!batt.cancharge)
-				continue
-		if(!batt)
-			continue
 		if(internal_battery.charge <= 0)
 			break
-		if(batt.charge >= batt.maxcharge)
+		var/obj/item/stock_parts/cell/battery_to_charge = get_battery(powa)
+		if(!batt)
 			continue
 		all_done = FALSE
-		var/true_charge_amount = min(batt.maxcharge - batt.charge, internal_battery.charge, charge_amount)
-		internal_battery.use(true_charge_amount)
-		batt.give(true_charge_amount)
+		var/true_charge_amount = 0
+		if(charge_direction == BATTERY_BOX_CHARGE_OUT)
+			true_charge_amount = min(internal_battery.charge, batt.maxcharge - batt.charge, charge_amount)
+			internal_battery.use(true_charge_amount)
+			battery_to_charge.give(true_charge_amount)
+		else
+			true_charge_amount = min(battery_to_charge.maxcharge - battery_to_charge.charge, internal_battery.charge, charge_amount)
+			battery_to_charge.use(true_charge_amount)
+			internal_battery.give(true_charge_amount)
+		break // only do one battery at a time
 	if(all_done)
 		become_inactive()
 	else
@@ -172,24 +180,7 @@
 	var/all_done = TRUE
 	for(var/obj/item/powa in contents)
 		var/obj/item/stock_parts/cell/batt
-		if(istype(powa, /obj/item/stock_parts/cell))
-			batt = powa
-			if(!batt.cancharge)
-				continue
-		else if(istype(powa, /obj/item/gun/energy))
-			var/obj/item/gun/energy/zap = powa
-			if(!zap.can_charge)
-				continue
-			batt = zap.cell
-			if(!batt)
-				continue
-			if(!batt.cancharge)
-				continue
-			continue
-		if(internal_battery.charge >= internal_battery.maxcharge)
-			break
-		if(batt.charge <= 0)
-			continue
+		
 		all_done = FALSE
 		var/true_charge_amount = min(batt.charge, internal_battery.maxcharge - internal_battery.charge, charge_amount)
 		batt.use(true_charge_amount)
@@ -223,11 +214,13 @@
 		last_active = active
 	batbox.update_icon()
 
+/// switch from background to foreground processing and hum
 /obj/item/storage/battery_box/proc/become_active()
 	STOP_PROCESSING(SSprocessing, src)
 	START_PROCESSING(SSfastprocess, src)
 	soundloop.start()
 
+/// switch from foreground to background processing and stop humming
 /obj/item/storage/battery_box/proc/become_inactive()
 	STOP_PROCESSING(SSfastprocess, src)
 	START_PROCESSING(SSprocessing, src)
@@ -244,7 +237,7 @@
 	SIGNAL_HANDLER
 	if(!mult)
 		return
-	. = internal_battery.give(internal_battery.maxcharge * 0.1 * mult)
+	. = internal_battery.give(min(internal_battery.maxcharge * 0.1, 100) * mult)
 
 /obj/item/storage/battery_box/proc/charge_percent()
 	SIGNAL_HANDLER
@@ -400,11 +393,12 @@
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/charger_battery
-	name = "PowerMAX integrated battery"
+	name = "integrated Gibbl trap"
 	desc = "A dense powerpack welded into a battery housing. Supposedly holds charge."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
+	start_charged = FALSE
 	maxcharge = 10000 // base charge
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
 	w_class = WEIGHT_CLASS_SMALL
