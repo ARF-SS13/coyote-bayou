@@ -53,7 +53,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	extra_projectiles = 2
+	extra_projectiles = 1
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
 	ranged_ignores_vision = TRUE
 	attack_verb_simple = "punches"
