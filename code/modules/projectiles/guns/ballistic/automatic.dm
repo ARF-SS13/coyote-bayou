@@ -3667,7 +3667,7 @@
 	init_recoil = HMG_RECOIL (1.4 , 4.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast ,
-		/datum/firemode/automatic/rpm400
+		/datum/firemode/automatic/rpm200
 	)
 	can_suppress = FALSE
 	can_bayonet = FALSE
