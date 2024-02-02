@@ -1427,7 +1427,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/weak_of_muscles
 	name = "Weak of Muscles"
 	desc = "For a reason or another, you're unable to lift objects bigger than normal size "
-	value = -45
+	value = -50  //it's really a big drawback
 	category = "Functional Quirks"
 	mechanics = "You're only capable of lifting up objects that have weight class equal or smaller than normal. Anything heavier will be impossible for you to lift up, \
 				with some core item exceptions. (This is a WIP quirk, feel free to ping us if we forgot to whitelist any core item)."
