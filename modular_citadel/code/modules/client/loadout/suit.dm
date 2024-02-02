@@ -1898,6 +1898,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
 	cost = 2
 
+/datum/gear/suit/armor/ww1steeluniversal
+	name = "WW1 Steel armor"
+	path = /obj/item/clothing/suit/armor/medium/ww1trenchbib
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
 /datum/gear/suit/armor/ncrkevlar
 	name = "Texas militia vest"
 	path = /obj/item/clothing/suit/armor/texaskevlar

@@ -2,6 +2,7 @@
 #define MOB_SPAWNER_GHOUL "ghoul"
 #define MOB_SPAWNER_LESSERSPIDER "lesser_spider"
 #define MOB_SPAWNER_GREATERSPIDER "greater_spider"
+#define MOB_SPAWNER_OMEGASPIDER "omega_spider"
 #define MOB_SPAWNER_MIRELURK "mirelurk"
 #define MOB_SPAWNER_BLOATFLY "bloaties"
 #define MOB_SPAWNER_GECKO "gecko"
@@ -260,7 +261,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_RAIDER_MIXED,
-		MOB_SPAWNER_GREATERSPIDER,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_RATTLER
 	)
@@ -362,7 +363,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
-		MOB_SPAWNER_GREATERSPIDER,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO
 	)
 /*
@@ -439,7 +440,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_DEATH
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
-		MOB_SPAWNER_HELLPIG
+		MOB_SPAWNER_HELLPIG,
+		MOB_SPAWNER_OMEGASPIDER
 	)
 
 /// Debug thing (its full of bugs (get it?))
@@ -559,21 +561,43 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 3,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1
+		)
+	num_mobs_to_spawn_hard = 3
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 4,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 2
+		)
+
+// Omega Spiders
+/datum/random_mob_spawner/omegaspider
+	nest_tag = MOB_SPAWNER_OMEGASPIDER
+	nest_name = "emperor nest"
+	nest_desc = "Glowing red eyes are visible inside..."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
+	mob_list_easy = list(
 		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 1
 		)
 	num_mobs_to_spawn_medium = 2
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
 	mob_list_medium = list(
 		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 3,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2
 		)
 	num_mobs_to_spawn_hard = 2
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 3,
-		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1
+		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 4,
 		)
 
 /// Mirelurks

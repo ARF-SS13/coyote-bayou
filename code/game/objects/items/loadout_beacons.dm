@@ -1428,6 +1428,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/rifle/mauserrifle(src)
 	new /obj/item/ammo_box/a50MGbox(src)
 
+/obj/item/storage/box/gun/rifle/gew88
+	name = "Gewehr 88 rifle case"
+
+/obj/item/storage/box/gun/rifle/gew88/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/gewehr88(src)
+	new /obj/item/ammo_box/a3006box(src)
+
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
 
@@ -1986,6 +1993,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/maus71
+
+
+/datum/loadout_box/gewehr88gobrr
+	entry_tag = "Gewehr 88 Bolt action rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/gew88
 
 /datum/loadout_box/carbine9mm
 	entry_tag = "9mm Carbine"

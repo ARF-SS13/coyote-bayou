@@ -3661,13 +3661,13 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_REPEATER
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	draw_time = GUN_DRAW_LONG
 	init_recoil = HMG_RECOIL (1.4 , 4.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast ,
-		/datum/firemode/automatic/rpm400
+		/datum/firemode/automatic/rpm200
 	)
 	can_suppress = FALSE
 	can_bayonet = FALSE

@@ -4875,6 +4875,13 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland/city)
+"clr" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick Mansion";
+	id = "Redlick Mansion"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "clB" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon_parts,
@@ -5442,6 +5449,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
+"cxh" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick - North side";
+	id = "Redlick - North side"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "cxi" = (
 /obj/structure/debris/v2{
 	pixel_x = -10
@@ -28335,6 +28349,13 @@
 	icon_state = "grass2"
 	},
 /area/f13/city)
+"mvq" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick - South side";
+	id = "Redlick - South side"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "mvt" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -57001,7 +57022,7 @@ iKf
 iKf
 mYI
 iKf
-iKf
+cxh
 iKf
 iKf
 iKf
@@ -79820,7 +79841,7 @@ iKf
 iKf
 mYI
 iKf
-iKf
+mvq
 iKf
 mYI
 iKf
@@ -103551,7 +103572,7 @@ iKf
 iKf
 iKf
 iKf
-iKf
+clr
 iKf
 mYI
 mYI

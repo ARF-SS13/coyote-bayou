@@ -883,7 +883,7 @@
 
 /datum/artifact_effect/max_hp_modifier/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_HP_CHANGE)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					hp_change = RANDOM(SSartifacts.health_good_common_max, SSartifacts.health_good_common_min)
@@ -1009,7 +1009,7 @@
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
 	// var/quirk = prob(50) // either a quirk, or a trait!
 	// if(quirk)
-	// 	if(force_buff)
+	// 	if(force_buff || is_buff)
 	switch(rarity)
 		if(ART_RARITY_COMMON)
 			quirk_to_give = pick(SSartifacts.quirks_good_common)
@@ -1149,7 +1149,7 @@
 /datum/artifact_effect/speed
 	kind = ARTMOD_SPEED
 	base_value = 400
-	chance_weight = 1
+	chance_weight = 0 // doesnt actually work................... yet
 	var/multiplicative_slowdown = 0 // more is slower
 	var/my_unique_id = "bingus"
 	var/equip_message = "You feel faster."
@@ -1167,7 +1167,7 @@
 
 /datum/artifact_effect/speed/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_SPEED_ADJUSTMENT)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					multiplicative_slowdown = RANDOM(SSartifacts.speed_good_common_max, SSartifacts.speed_good_common_min)
@@ -1772,18 +1772,15 @@
 	//if(target.health > (target.getMaxHealth() - max_health))
 	//	return
 	var/mult = lag_comp_factor()
-	var/dr = 1
-	var/dt = 0
-	if(!implanted)
-		dr = check_armor(target, armor_flag)
-		// dt = check_dt(target)
+	var/armor_dr = max(check_armor(target, armor_flag) - SSartifacts.heal_armor_dr_threshold, 0)
+	var/dr = (100-min(armor_dr, ARMOR_CAP_DR))/100 // fun fact, this used to accidentally multiply the healing by your armor DR value, so APA would mean it healed you 61x faster, lol
 	if(implanted || !in_desired_slot())
 		mult *= undesirable_mult
 	if(d_brute)
 		if(d_brute > 0)
 			d_brute = -d_brute
 		target.adjustBruteLoss(
-			((d_brute * mult * dr) - dt),
+			(d_brute * mult * dr),
 			TRUE,
 			FALSE,
 		)
@@ -1791,7 +1788,7 @@
 		if(d_burn > 0)
 			d_burn = -d_burn
 		target.adjustFireLoss(
-			((d_burn * mult * dr) - dt),
+			(d_burn * mult * dr),
 			TRUE,
 			FALSE,
 		)
@@ -1799,7 +1796,7 @@
 		if(d_toxin > 0)
 			d_toxin = -d_toxin
 		target.adjustToxLoss(
-			((d_toxin * mult * dr) - dt),
+			(d_toxin * mult * dr),
 			TRUE,
 			FALSE,
 			TRUE
@@ -1808,18 +1805,18 @@
 		if(d_oxy > 0)
 			d_oxy = -d_oxy
 		target.adjustOxyLoss(
-			((d_oxy * mult * dr) - dt),
+			(d_oxy * mult * dr),
 			TRUE,
 		)
 	if(d_clone)
 		if(d_clone > 0)
 			d_clone = -d_clone
 		target.adjustCloneLoss(
-			((d_clone * mult * dr) - dt),
+			(d_clone * mult * dr),
 			TRUE,
 		)
 	if(d_brain)
-		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (((-abs(d_brain) * mult) - dt) * dr))
+		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (-abs(d_brain) * mult * dr))
 
 	last_applied = world.time
 	//send_message(target, LAZYACCESS(dmg_out, 2))
@@ -1955,6 +1952,7 @@
 	if(abs(d_brain) != 0)
 		out += span_green("Heals [abs(d_brain)] brain damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	out += span_notice("Heals at [undesirable_mult]x the rate while stored anywhere else.")
+	out += span_notice("Healing is affected by [armor_flag] armor greater than [SSartifacts.heal_armor_dr_threshold] DR.")
 	descriptions = out
 
 
@@ -1977,12 +1975,12 @@
 		stamina_adjustment = LAZYACCESS(parameters, ARTVAR_STAMINA_ADJUSTMENT)
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)))
 		stamcrit_cooldown = LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)
-	is_buff = (stamina_adjustment > 0)
+	is_buff = (stamina_adjustment <= 0)
 	. = ..()
 
 /datum/artifact_effect/stamina/randomize(rarity, force_buff)
 	if(stamina_adjustment == initial(stamina_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					stamina_adjustment = RANDOM(SSartifacts.stamina_good_common_max, SSartifacts.stamina_good_common_min)
@@ -2094,7 +2092,7 @@
 		if(radz < target_radiation)
 			return
 		var/rad_protection = implanted ? 0 : target.getarmor(BODY_ZONE_CHEST, "rad")
-		target.radiation = max(target.radiation - (radiation_adjustment * mult * (rad_protection*0.01)), 0)
+		target.radiation = max(target.radiation - (radiation_adjustment * mult * ((1-rad_protection)/100)), 0)
 		return TRUE
 	else
 		if(radz > target_radiation)
@@ -2104,7 +2102,7 @@
 
 /datum/artifact_effect/radiation/randomize(rarity, force_buff)
 	if(target_radiation == initial(target_radiation))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_radiation = RANDOM(SSartifacts.radiation_target_good_common_min, SSartifacts.radiation_target_good_common_max)
@@ -2205,7 +2203,7 @@
 
 /datum/artifact_effect/blood/randomize(rarity, force_buff)
 	if(target_blood == initial(target_blood))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_blood = RANDOM(SSartifacts.blood_target_good_common_min, SSartifacts.blood_target_good_common_max)
@@ -2235,9 +2233,9 @@
 /datum/artifact_effect/blood/on_tick(obj/item/master, mob/living/target, obj/item/holder)
 	if(!isliving(target))
 		return
-	var/mult = lag_comp_factor()
 	if(is_buff && !in_desired_slot())
 		return
+	var/mult = lag_comp_factor()
 	var/bloodvol = target.get_blood(TRUE)
 	if(ISABOUTEQUAL(bloodvol, target_blood, blood_adjustment * 2))
 		return TRUE // already where we want it
@@ -2309,7 +2307,7 @@
 
 /datum/artifact_effect/feeder/randomize(rarity, force_buff)
 	if(nutrition_adjustment == initial(nutrition_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					nutrition_adjustment = RANDOM(SSartifacts.nutrition_rate_good_common_min, SSartifacts.nutrition_rate_good_common_max)
