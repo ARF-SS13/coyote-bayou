@@ -181,7 +181,7 @@
 			/// the lesser of: our charge, the charge remaining in their battery, and the charge rate
 			true_charge_amount = min(
 				internal_battery.charge,
-				internal_battery.maxcharge - internal_battery.charge,
+				battery_to_charge.maxcharge - battery_to_charge.charge,
 				charge_amount,
 			)
 			internal_battery.use(true_charge_amount)
