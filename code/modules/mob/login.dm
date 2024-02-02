@@ -74,4 +74,13 @@
 			SSstatpanels.cached_bottoms |= ckey
 		if(TBS_SHOES)
 			SSstatpanels.cached_switches |= ckey
+	switch(client.prefs.gender)
+		if(MALE)
+			SSstatpanels.cached_bois |= ckey
+		if(FEMALE)
+			SSstatpanels.cached_girls |= ckey
+		if(PLURAL)
+			SSstatpanels.cached_them |= ckey
+		else
+			SSstatpanels.cached_herms |= ckey
 

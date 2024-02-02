@@ -14,6 +14,10 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/cached_tops = list()
 	var/list/cached_bottoms = list()
 	var/list/cached_switches = list()
+	var/list/cached_bois = list()
+	var/list/cached_girls = list()
+	var/list/cached_them = list()
+	var/list/cached_herms = list()
 
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
@@ -26,6 +30,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
+			"♂: [LAZYLEN(cached_bois)], ♀: [LAZYLEN(cached_girls)], ⚤: [LAZYLEN(cached_them)]",
 			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_anykissers)]",
 			"Tops: [LAZYLEN(cached_tops)]",
 			"Switches: [LAZYLEN(cached_switches)]",
