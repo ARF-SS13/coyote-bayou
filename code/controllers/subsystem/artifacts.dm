@@ -338,6 +338,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/heal_max_types_uncommon = 2
 	var/heal_max_types_rare = 3
 
+	var/heal_armor_dr_threshold = 22 // light armor gets full heal, anything after that gets reduced
+
 	var/list/traits_good_common = list(
 	)
 
