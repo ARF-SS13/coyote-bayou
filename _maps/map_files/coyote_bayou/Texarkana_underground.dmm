@@ -18504,7 +18504,6 @@
 /area/f13/caves)
 "kcr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/chem_heater,
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
@@ -41892,6 +41891,13 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"ydB" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/vault_floor/green/white,
+/area/f13/building)
 "ydH" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
@@ -43449,7 +43455,7 @@ aae
 hdY
 aDq
 tnx
-scK
+ydB
 noN
 elG
 bOb
