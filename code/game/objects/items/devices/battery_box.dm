@@ -1,30 +1,36 @@
 #define BATTERY_BOX_CHARGE_BASE 10
-#define BATTERY_BOX_CHARGE_OUT 0
-#define BATTERY_BOX_CHARGE_IN 1
+#define BATTERY_BOX_CHARGE_OUT 0 // transfer charge from US to THEM
+#define BATTERY_BOX_CHARGE_IN 1 // transfer charge from THEM to US
 
 // ECP = 20000
 // SEC = 10000
-// MEC = 40000
+// MFC = 40000
 
-#define BATTERY_BOX_RATE_DIVISOR 10
+#define BATTERY_BOX_RATE_DIVISOR 1
 
 #define BATTERY_BOX_LV_CHARGE_RATE 32 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
 #define BATTERY_BOX_MV_CHARGE_RATE 128 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
 #define BATTERY_BOX_HV_CHARGE_RATE 512 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
 #define BATTERY_BOX_EV_CHARGE_RATE 2048 / BATTERY_BOX_RATE_DIVISOR // 20 TPS to 0.2 SPT
 
-#define BATTERY_BOX_CAP_DIVISOR 10
+#define BATTERY_BOX_CAP_DIVISOR 1
 
+/// 1 SEC
 #define BATTERY_BOX_LV_CAPACITY 10000 / BATTERY_BOX_CAP_DIVISOR // 1000 EU
+/// 1 MFC / 2 ECP / 4 SEC
 #define BATTERY_BOX_MV_CAPACITY 40000 / BATTERY_BOX_CAP_DIVISOR // 4000 EU
-#define BATTERY_BOX_HV_CAPACITY 60000 / BATTERY_BOX_CAP_DIVISOR // 60000 EU
-#define BATTERY_BOX_EV_CAPACITY 1000000 / BATTERY_BOX_CAP_DIVISOR // 1000000 EU
+/// 5 MFC / 10 ECP / 20 SEC
+#define BATTERY_BOX_HV_CAPACITY 200000 / BATTERY_BOX_CAP_DIVISOR // 20000 EU
+/// 10 MFC / 20 ECP / 40 SEC
+#define BATTERY_BOX_EV_CAPACITY 400000 / BATTERY_BOX_CAP_DIVISOR // 40000 EU
 
 /// just a normal every day portable blender
 /obj/item/storage/battery_box
 	name = "portable charger"
 	desc = "A HAYO PRO portable battery bank, used to transfer those pesky electrons from one battery to another on the go. \
-		Design courtesy of Rustyville II: Rusty Harder. \nWarning: removing the capacitor will discharge all power stored in the battery bank."
+		Design courtesy of Rustyville II: Rusty Harder. \nWarning: removing the capacitor will vent all the power stored in the battery bank out \
+		into the nebulous fabric of reality, effectively voiding both the power and the warranty. So, try not to do that, unless you're upgrading it, \
+		which you totally can do with higher tier capacitors."
 	icon = 'icons/obj/powerbox.dmi'
 	icon_state = "powerbox"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -37,7 +43,6 @@
 		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 10,
 		/datum/material/glass = MINERAL_MATERIAL_AMOUNT * 5,
 		/datum/material/plastic = MINERAL_MATERIAL_AMOUNT * 5,
-		/datum/material/gold = MINERAL_MATERIAL_AMOUNT * 2,
 	)
 	/// Handy link to the internal component compartment
 	var/obj/item/storage/box/charger_internals/batbox
@@ -102,21 +107,21 @@
 	var/rating = check_part()
 	switch(rating)
 		if(1) // LV
-			. += span_green("LV BatBox capacitor installed.")
-			. += span_green("\tCapacity: [BATTERY_BOX_LV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
-			. += span_green("\tPower transfer rate: [BATTERY_BOX_LV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+			. += span_green("LV BatBox capacitor installed.") // canonically, lapotron crystals store power as pressure, expressed in Gibbl
+			. += span_green("\tCapacity: [BATTERY_BOX_LV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.") // only one person knows what a Gibbl is, and I think they forgot
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_LV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.") // its also the measurement of pollution in gregtech
 		if(2) // MV
 			. += span_green("MV CESU capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_MV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
-			. += span_green("\tPower transfer rate: [BATTERY_BOX_MV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_MV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
 		if(3) // HV
 			. += span_green("HV MFE capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_HV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
-			. += span_green("\tPower transfer rate: [BATTERY_BOX_HV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_HV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
 		if(4) // EV
 			. += span_green("EV MFSU capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_EV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
-			. += span_green("\tPower transfer rate: [BATTERY_BOX_EV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR]EU/t.")
+			. += span_green("\tPower transfer rate: [BATTERY_BOX_EV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
 		else
 			. += span_alert("WARNING: No capacitor installed!")
 
@@ -128,72 +133,70 @@
 		become_inactive()
 		update_icon()
 		return
-	if(charge_direction == BATTERY_BOX_CHARGE_OUT)
-		charge_out()
-	else
-		charge_in()
+	transfer_charge()
 	update_icon()
 
-/obj/item/storage/battery_box/proc/charge_out()
-	var/charge_amount = get_charge_rate()
-	var/all_done = TRUE
-	for(var/obj/item/powa in contents)
-		var/obj/item/stock_parts/cell/batt
-		if(istype(powa, /obj/item/stock_parts/cell))
-			batt = powa
+/obj/item/storage/battery_box/proc/get_battery(obj/item/powa)
+	if(!istype(powa, /obj/item/stock_parts/cell) && !istype(powa, /obj/item/gun/energy))
+		return FALSE
+	var/obj/item/stock_parts/cell/batt
+	if(istype(powa, /obj/item/stock_parts/cell))
+		batt = powa
+	else if(istype(powa, /obj/item/gun/energy))
+		var/obj/item/gun/energy/zap = powa
+		if(!zap.can_box_charge)
+			return FALSE
+		batt = zap.cell
+	if(!batt)
+		return FALSE
+	switch(charge_direction)
+		if(BATTERY_BOX_CHARGE_OUT)
+			if(batt.charge >= batt.maxcharge)
+				return FALSE
+		if(BATTERY_BOX_CHARGE_IN)
+			if(batt.charge <= 0)
+				return FALSE
+			/// we can pull charge from a non-chargable battery, but not put charge into it
 			if(!batt.cancharge)
-				continue
-		else if(istype(powa, /obj/item/gun/energy))
-			var/obj/item/gun/energy/zap = powa
-			if(!zap.can_charge)
-				continue
-			batt = zap.cell
-			if(!batt)
-				continue
-			if(!batt.cancharge)
-				continue
-		if(!batt)
-			continue
-		if(internal_battery.charge <= 0)
-			break
-		if(batt.charge >= batt.maxcharge)
-			continue
-		all_done = FALSE
-		var/true_charge_amount = min(batt.maxcharge - batt.charge, internal_battery.charge, charge_amount)
-		internal_battery.use(true_charge_amount)
-		batt.give(true_charge_amount)
-	if(all_done)
-		become_inactive()
-	else
-		become_active()
+				return FALSE
+	return batt
 
-/obj/item/storage/battery_box/proc/charge_in()
+/obj/item/storage/battery_box/proc/transfer_charge()
 	var/charge_amount = get_charge_rate()
 	var/all_done = TRUE
 	for(var/obj/item/powa in contents)
-		var/obj/item/stock_parts/cell/batt
-		if(istype(powa, /obj/item/stock_parts/cell))
-			batt = powa
-			if(!batt.cancharge)
-				continue
-		else if(istype(powa, /obj/item/gun/energy))
-			var/obj/item/gun/energy/zap = powa
-			if(!zap.can_charge)
-				continue
-			batt = zap.cell
-			if(!batt)
-				continue
-			if(!batt.cancharge)
-				continue
-			continue
-		if(internal_battery.charge >= internal_battery.maxcharge)
-			break
-		if(batt.charge <= 0)
+		switch(charge_direction)
+			if(BATTERY_BOX_CHARGE_OUT)
+				if(internal_battery.charge <= 0)
+					break
+			if(BATTERY_BOX_CHARGE_IN)
+				if(internal_battery.charge >= internal_battery.maxcharge)
+					break
+		var/obj/item/stock_parts/cell/battery_to_charge = get_battery(powa)
+		if(!battery_to_charge)
 			continue
 		all_done = FALSE
-		var/true_charge_amount = min(batt.charge, internal_battery.maxcharge - internal_battery.charge, charge_amount)
-		batt.use(true_charge_amount)
-		internal_battery.give(true_charge_amount)
+		var/true_charge_amount = 0
+		if(charge_direction == BATTERY_BOX_CHARGE_OUT)
+			/// the lesser of: our charge, the charge remaining in their battery, and the charge rate
+			true_charge_amount = min(
+				internal_battery.charge,
+				internal_battery.maxcharge - internal_battery.charge,
+				charge_amount,
+			)
+			internal_battery.use(true_charge_amount)
+			battery_to_charge.give(true_charge_amount)
+			battery_to_charge.update_icon()
+		else
+			/// the lesser of: their charge, our charge remaining, and the charge rate
+			true_charge_amount = min(
+				battery_to_charge.charge,
+				internal_battery.maxcharge - internal_battery.charge,
+				charge_amount,
+			)
+			battery_to_charge.use(true_charge_amount)
+			battery_to_charge.update_icon()
+			internal_battery.give(true_charge_amount)
 	if(all_done)
 		become_inactive()
 	else
@@ -223,11 +226,13 @@
 		last_active = active
 	batbox.update_icon()
 
+/// switch from background to foreground processing and hum
 /obj/item/storage/battery_box/proc/become_active()
 	STOP_PROCESSING(SSprocessing, src)
 	START_PROCESSING(SSfastprocess, src)
 	soundloop.start()
 
+/// switch from foreground to background processing and stop humming
 /obj/item/storage/battery_box/proc/become_inactive()
 	STOP_PROCESSING(SSfastprocess, src)
 	START_PROCESSING(SSprocessing, src)
@@ -244,7 +249,7 @@
 	SIGNAL_HANDLER
 	if(!mult)
 		return
-	. = internal_battery.give(internal_battery.maxcharge * 0.1 * mult)
+	. = internal_battery.give(min(internal_battery.maxcharge * 0.1, 100) * mult)
 
 /obj/item/storage/battery_box/proc/charge_percent()
 	SIGNAL_HANDLER
@@ -400,11 +405,12 @@
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/charger_battery
-	name = "PowerMAX integrated battery"
+	name = "integrated Gibbl trap"
 	desc = "A dense powerpack welded into a battery housing. Supposedly holds charge."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
+	start_charged = FALSE
 	maxcharge = 10000 // base charge
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
 	w_class = WEIGHT_CLASS_SMALL

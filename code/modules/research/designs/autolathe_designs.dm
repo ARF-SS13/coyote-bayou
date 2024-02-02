@@ -559,7 +559,7 @@
 	build_path = /obj/item/storage/portable_chem_mixer
 	category = list("initial", "Medical")
 
-/datum/design/portable_chem_mixer
+/datum/design/portable_chem_blender
 	name = "FOODCO Kitchen Buddy 2000"
 	id = "portable_blender"
 	build_type = AUTOLATHE
@@ -797,7 +797,7 @@
 	name = "Portable Battery Charger"
 	id = "portable_charger"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000, /datum/material/gold = 4000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 3000)
 	build_path = /obj/item/storage/battery_box
 	category = list("initial", "Electronics")
 	autocalc_materials = TRUE // hope it works =3

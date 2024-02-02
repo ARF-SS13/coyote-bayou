@@ -73,6 +73,8 @@ other types of metals and chemistry for reagents).
 
 /// spawns the thing, pulls out all the stuff inside it, tallies up the materials it is, and then does some math to set the cost
 /datum/design/proc/AutocalcMaterialCosts()
+	if(!autocalc_materials)
+		return
 	if(!ispath(build_path, /obj/item)) // currently only supports items
 		return // its fiiiiiine
 	var/obj/item/thing = new build_path()
@@ -95,7 +97,8 @@ other types of metals and chemistry for reagents).
 		counterlist_combine(design_materials, this_thing.custom_materials) // garbage collector, garbage collector, where are you?
 	QDEL_LIST(all_things) // here i am, here i am, go away
 	counterlist_scale(design_materials, SSresearch.autocalc_mult) // how do you do?
-	materials = design_materials // baby shark, doo doo doo doo doo doo doo
+	if(LAZYLEN(design_materials)) // very well, i thank you
+		materials = design_materials // baby shark, doo doo doo doo doo doo doo
 	/// heres a cute shark: <(OvO)>
 
 /datum/design/proc/material_cost_autobalance()

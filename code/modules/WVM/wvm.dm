@@ -732,6 +732,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack",					/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
 		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							20),
 		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						20),
+		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							50),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
 		)
 	highpop_list = list(
