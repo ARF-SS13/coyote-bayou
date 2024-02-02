@@ -114,6 +114,18 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = TRUE
 
+/obj/item/ammo_box/magazine/internal/gewehreight
+	name = "magazine box filled with mauser ammo"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 5
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
 /obj/item/ammo_box/magazine/internal/grenadeshotgun
 	name = "magazine filled with 40mm mike-mikes ouch ouchs"
 	ammo_type = /obj/item/ammo_casing/a40mm/buck

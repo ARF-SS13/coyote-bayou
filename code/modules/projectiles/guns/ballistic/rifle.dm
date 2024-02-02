@@ -952,8 +952,8 @@
 	desc = "A Model 1888 commission rifle. This rifle interestingly enough has the ability to eject the clip, also seems to require it itself to fire. This specific model was made so it is extra sturdy. It seems to be in perfect condition with freshly new wood varnish!"
 	icon_state = "g88"
 	item_state = "g88"
-	mag_type = /obj/item/ammo_box/magazine/geight
-	init_mag_type = /obj/item/ammo_box/magazine/geight
+	mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
+	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
