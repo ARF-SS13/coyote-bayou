@@ -290,3 +290,19 @@
 	return_string += "[number]"
 	return return_string
 
+/// say hi to Cody, a cheaper alternative to copilot that doesnt wither in the presence of fuck
+/// takes in an associted list of keyed numbers, and returns the key with the highest value
+/// i have no idea, but emmet must be a cool guy
+/proc/highest_number_in_ass_list(list/thelist)
+	if(!length(thelist)) // if the list is empty or isnt actually a list
+		return
+	var/highest_number = 0
+	var/highest_key = null // LAZYLEN is just a macro for length(thing), but it can be modified easily later if needed
+	for(var/key in thelist) // good
+		var/value = thelist[key]
+		if(value > highest_number)
+			highest_number = value
+			highest_key = key
+	return highest_key // and done
+
+

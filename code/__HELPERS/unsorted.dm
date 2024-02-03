@@ -1670,7 +1670,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(clientthing)
+/proc/extract_client(clientthing)
 	if(isclient(clientthing))
 		return clientthing
 	if(ismob(clientthing))

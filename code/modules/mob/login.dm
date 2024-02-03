@@ -60,6 +60,8 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 	
+	SSstatpanels.collect_horny_demographic(src)
+
 	switch(client.prefs.kisser)
 		if(KISS_BOYS)
 			SSstatpanels.cached_boykissers |= ckey
@@ -74,4 +76,13 @@
 			SSstatpanels.cached_bottoms |= ckey
 		if(TBS_SHOES)
 			SSstatpanels.cached_switches |= ckey
+	switch(client.prefs.gender)
+		if(MALE)
+			SSstatpanels.cached_bois |= ckey
+		if(FEMALE)
+			SSstatpanels.cached_girls |= ckey
+		if(PLURAL)
+			SSstatpanels.cached_them |= ckey
+		else
+			SSstatpanels.cached_herms |= ckey
 
