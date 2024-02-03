@@ -833,10 +833,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["feature_flavor_text"]		>> features["flavor_text"]
 
 
-	S["silicon_feature_flavor_text"]		>> features["silicon_flavor_text"]
-
+	S["silicon_feature_flavor_text"]	>> features["silicon_flavor_text"]
 	S["feature_ooc_notes"]				>> features["ooc_notes"]
-	S["silicon_flavor_text"] >> features["silicon_flavor_text"]
+	S["feature_flist"]					>> features["flist"]
+	S["silicon_flavor_text"]			>> features["silicon_flavor_text"]
 
 	//gear loadout
 	if(S["loadout"])
@@ -1354,6 +1354,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_womb"], features["has_womb"])
 
 	WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
+
+	WRITE_FILE(S["feature_flist"], features["flist"])
 
 	WRITE_FILE(S["feature_taste"], features["taste"])
 
