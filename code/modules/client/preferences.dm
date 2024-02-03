@@ -231,6 +231,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 		"ooc_notes" = "",
+		"flist" = "",
 		"meat_type" = "Mammalian",
 		"taste" = "something",
 		"body_model" = MALE,
@@ -602,6 +603,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[features["ooc_notes"]]"
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
+
+			//outside link stuff
+			dat += "<h3>Outer hyper-links settings</h3>"
+			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+			var/flist_len = length(features["flist"])
+			if(flist_len <= 40)
+				if(!flist_len)
+					dat += "\[...\]"
+				else
+					dat += "[features["flist"]]"
+			else
+				dat += "[TextPreview(features["flist"])]...<br>"
+
 			//Start Creature Character
 			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
@@ -2632,6 +2646,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["ooc_notes"] = msg
+
+				if("flist")
+					var/link = input(usr, "Set always-visible F-list. Just copy and paste the link you want to use from the browser. Leave it blank to remove the previous link.", "F-list")
+					if(!length(link))
+						features["flist"] = ""
+						to_chat(usr, span_alert("Removed the previous F-list link."))
+					else if(findtext(link, "https://www.f-list.net"))  //we want to avoid malicious links, so let's check if it's actually a valid link first
+						features["flist"] = link
+					else
+						features["flist"] = ""
+						to_chat(usr, span_alert("This is not a correct F-list link!"))
 
 				if("hide_ckey")
 					hide_ckey = !hide_ckey
