@@ -181,6 +181,10 @@ ATTACHMENTS
 	var/allow_quickdraw = FALSE
 	/// This variable is used by crankable laser guns {/obj/item/gun/energy/laser/cranklasergun}
 	var/recharge_queued = 1
+	/// Reload variables
+	var/reload_queued = FALSE
+	/// auto-reload time
+	var/auto_reload_time = 3 SECONDS
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -419,6 +423,7 @@ ATTACHMENTS
 
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
 		shoot_with_empty_chamber(user)
+		gun_panic_reload(user)
 		return
 
 	//Exclude lasertag guns from the TRAIT_CLUMSY check.
@@ -573,6 +578,7 @@ ATTACHMENTS
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)
+		gun_panic_reload(user)
 		return
 	var/time_till_draw = user.AmountWeaponDrawDelay()
 	if(time_till_draw)
@@ -605,6 +611,7 @@ ATTACHMENTS
 			var/casing_sound = chambered.sound_properties
 			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
 				shoot_with_empty_chamber(user)
+				gun_panic_reload(user)
 				update_icon()
 				return
 			else
@@ -614,6 +621,7 @@ ATTACHMENTS
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
 		else
 			shoot_with_empty_chamber(user)
+			gun_panic_reload(user)
 			update_icon()
 			return
 		if(i < burst_size)
@@ -1549,6 +1557,118 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		)
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
+
+//-->this is what I'd like to call the "Panic Reloader :TM:" 
+/obj/item/gun/proc/gun_panic_reload(mob/living/user)
+	if(user.incapacitated())  //well obviously we have to check if the person can even though if they can't it's because they're down... and when you're down you shouldn't be able to pick up objects... ANYWAYS BETTER SAFE THAN SORRY!
+		return
+
+	var/obj/item/equipped_belt = user.get_item_by_slot(SLOT_BELT)
+	var/obj/item/equipped_suit = user.get_item_by_slot(SLOT_WEAR_SUIT)
+	var/obj/item/equipped_pocket_l = user.get_item_by_slot(SLOT_L_STORE)
+	var/obj/item/equipped_pocket_r = user.get_item_by_slot(SLOT_R_STORE)
+	var/obj/item/equipped_neck = user.get_item_by_slot(SLOT_NECK)
+	var/obj/item/equipped_back = user.get_item_by_slot(SLOT_BACK)
+
+	if(istype(src, /obj/item/gun/ballistic/))
+		var/obj/item/ammo_box/magazine/fullest_magazine
+
+		//the following mess is to determine which magazine has the most ammo in it.
+		if(equipped_belt)
+			if(equipped_belt.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_belt.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_belt.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+
+		if(equipped_suit)
+			if(equipped_suit.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_suit.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_suit.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+
+		if(equipped_pocket_l)
+			if(equipped_pocket_l.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_l.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_pocket_l.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+
+		if(equipped_pocket_r)
+			if(equipped_pocket_r.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_r.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_pocket_r.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+
+		if(equipped_neck)
+			if(equipped_neck.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_neck.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_neck.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+
+		if(equipped_back)
+			if(equipped_back.contents)
+				if(isnull(fullest_magazine))
+					for(var/obj/item/ammo_box/magazine/C in equipped_back.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+						fullest_magazine = C
+						break
+
+				for(var/obj/item/ammo_box/magazine/C in equipped_back.contents)
+					if(C.stored_ammo.len >= fullest_magazine.stored_ammo.len)
+						fullest_magazine = C
+		
+		if(!isnull(fullest_magazine))  //in case we actually found a magazine, then do the following
+			if(!reload_queued)
+				reload_queued = TRUE
+				if(do_after(user, auto_reload_time, target = src, allow_movement = TRUE))
+					reload_queued = FALSE
+					attackby(fullest_magazine, user)
+				else
+					reload_queued = FALSE
+
+
+
+
+
+
+
+
+	// if(istype(src, /obj/item/gun/energy/))
+	// 	var/obj/item/stock_parts/cell/magazine_parent
+	// else
+	// 	return
+
+
+
+
+
+
+
+
+
 
 /obj/item/gun/proc/post_modify_projectile(obj/item/projectile/BB)
 	return
