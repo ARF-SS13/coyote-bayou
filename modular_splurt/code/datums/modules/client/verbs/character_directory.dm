@@ -48,7 +48,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			adtext = "Unset"
 		data["personalAdvert"] = adtext
 		var/fucktext = user.client.prefs.features["flist"]
-		else if(!fucktext)
+		if(!fucktext)
 			fucktext = "Unset"
 		data["personalFlist"] = fucktext || "Unset"
 		data["prefsOnly"] = TRUE
