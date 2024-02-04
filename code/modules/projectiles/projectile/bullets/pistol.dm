@@ -261,7 +261,7 @@
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_PISTOL_9MM * 0.5
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM * 0.3
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 

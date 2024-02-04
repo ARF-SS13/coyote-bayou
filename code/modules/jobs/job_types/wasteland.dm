@@ -1317,7 +1317,7 @@ Raider
 */
 
 /datum/job/wasteland/f13wastelander/den
-	title = "Den Waster"
+	title = "Den Citizen"
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
@@ -1328,7 +1328,7 @@ Raider
 
 
 /datum/job/wasteland/f13wastelander/gar
-	title = "Garland City Waster"
+	title = "Garland Citizen"
 	flag = F13WASTEGAR
 	faction = FACTION_WASTELAND
 
@@ -2627,7 +2627,7 @@ datum/job/wasteland/f13dendoctor
 	req_admin_notify = 1
 	total_positions = 3
 	spawn_positions = 3
-	exp_requirements = 10080
+	exp_requirements = 0 //10080
 	exp_type = EXP_TYPE_LIVING
 	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
 	supervisors = "fate"

@@ -811,7 +811,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/wastelander/den
-	name = "Den Waster"
+	name = "Den Citizen"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/wastelander/backstage
@@ -820,7 +820,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	color = "#FF0000"
 
 /obj/effect/landmark/start/f13/wastelander/gar
-	name = "Garland City Waster"
+	name = "Garland Citizen"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/ashdown
@@ -915,11 +915,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
-	name = "Hunter"
+	name = "Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/Hhunter
-	name = "Head Hunter"
+	name = "Head Forager"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid

@@ -116,10 +116,10 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Bunker Duty",
 
 "Chief",
-"Shaman",
-"Head Hunter",
-"Druid",
-"Hunter",
+"Spiritual Leader",
+"Head Forager",
+"Harvest Leader",
+"Forager",
 
 "Noyan",
 "Steward",
@@ -157,13 +157,15 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"High Alderperson",
 	"Councilperson",
 	"Sheriff",
-	"Deputy",
+	"Nash Security",
 	"Deputy Mayor",
 //	"Farmer",
 //	"Prospector",
 	"Doctor",
 	"Detective",
 	"Banker",
+	"Town Doctor",
+	"Town Scientist",
 	"Texarkana Quartermaster",
 	"Texarkana Trade Worker",
 	"Barkeep",
@@ -171,6 +173,16 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Preacher",
 	"Vertibird Pilot",
 	"Nash Librarian",
+))
+
+//Den Citizenship
+GLOBAL_LIST_INIT(den_positions, list(
+	"Den Citizen",
+))
+
+//Gar Citizenship
+GLOBAL_LIST_INIT(gar_positions, list(
+	"Garland Citizen",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -244,11 +256,9 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
-	"Den Waster",
-	"Garland City Waster",
 	"Radio Operator",
-	"Backstage Character"
-	//"Texarkana Ranger"
+	"Backstage Character",
+	"Texarkana Ranger",
 ))
 
 GLOBAL_LIST_INIT(redwater_positions, list(
@@ -290,10 +300,11 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 GLOBAL_LIST_INIT(tribal_positions, list(
 	"Chief",
 	"Shaman",
-	"Head Hunter",
+	"Head Forager",
 	"Druid",
-	"Villager",
-	"Hunter",
+	"Forager",
+	"Harvest Leader",
+	"Spiritual Leader",
 	"Spirit-Pledged",
 	"Guardian",
 	"Dual Citizen"
@@ -312,11 +323,9 @@ GLOBAL_LIST_INIT(debug_positions, list(
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Senior Doctor",
-	"Town Doctor",
 	"Town Paramedic",
 	"Nurse",
 	"Senior Scientist",
-	"Town Scientist",
 ))
 //Heavens Night
 GLOBAL_LIST_INIT(heavensnight_positions, list(
@@ -324,17 +333,20 @@ GLOBAL_LIST_INIT(heavensnight_positions, list(
 	"Club Worker",
 ))
 
+/// TODO: Take all these horrible string-based roflcopters and have them 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
 	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
-	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
+	// EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
+	"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
@@ -344,6 +356,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
+	EXP_TYPE_LIVING = list("titles" = list("Texarkana Ranger")), // all living mobs
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	EXP_TYPE_COMMAND = list("titles" = command_positions),
 	EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
@@ -374,7 +387,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
-	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
+	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Forager")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))

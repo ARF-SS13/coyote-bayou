@@ -1413,7 +1413,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/armor_aversion
 	name = "Armor Aversion"
 	desc = "For a reason or another, you're unable to wear medium or heavy armour"
-	value = -33
+	value = -35
 	category = "Functional Quirks"
 	mechanics = "You can't wear medium, heavy or power armor anymore."
 	conflicts = list(
@@ -1423,3 +1423,18 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_boldannounce("You really don't like to feel encumbered.")
 	lose_text = span_notice("You don't mind feeling encumbered too much anymore.")
 	locked =  FALSE
+
+/datum/quirk/weak_of_muscles
+	name = "Weak of Muscles"
+	desc = "For a reason or another, you're unable to lift objects bigger than normal size "
+	value = -50  //it's really a big drawback
+	category = "Functional Quirks"
+	mechanics = "You're only capable of lifting up objects that have weight class equal or smaller than normal. Anything heavier will be impossible for you to lift up, \
+				with some core item exceptions. (This is a WIP quirk, feel free to ping us if we forgot to whitelist any core item)."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_WEAK_OF_MUSCLES
+	gain_text = span_danger("Your arms feel really tired...")
+	lose_text = span_notice("Your arms are invigorated!")
+	medical_record_text = "Patient has an exceptionally weak muscolar system."
+	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"

@@ -235,7 +235,8 @@
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
-		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 9,         //85(140) 24
+		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
+		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
 		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 10,      //139 15
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20

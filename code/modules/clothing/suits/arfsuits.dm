@@ -2746,6 +2746,21 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
+
+/obj/item/clothing/suit/armor/medium/ww1trenchbib
+	name = "WW1 steel armor"
+	desc = "A World War 1 steel bib that was in use by the sentry units and stationary units of numerous nations and factions. It protected mainly against shrapnel and aerial darts thrown from biplanes. Seems to offer better melee and shrapnel resistance."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	icon_state = "ww1bib"
+	item_state = "ww1bib"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
+	vis_flags = GROIN
+
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
 	name = "6b3 body armor"
 	desc = "A 6b3 plate carrier. This plate carrier saw primary usage in the Russian Army."

@@ -34,6 +34,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
 	/*new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \ very easy to find already*/
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
+	new/datum/stack_recipe("metal tin", /obj/item/storage/wallet/stash, 5), \
 	new/datum/stack_recipe("regular arrowhead", /obj/item/stack/arrowhead, 2, 1, time = 2.5 SECONDS), \
 	new/datum/stack_recipe("bludgeoning arrowhead", /obj/item/stack/arrowhead/bludgeon, 1, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("field arrowhead", /obj/item/stack/arrowhead/field, 1, 1, time = 1 SECONDS), \
@@ -467,7 +468,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("beekeeping hood", /obj/item/clothing/head/beekeeper_head, 2), \
 	new/datum/stack_recipe("beekeeping suit", /obj/item/clothing/suit/beekeeper_suit, 4), \
-	new/datum/stack_recipe("money pouch", /obj/item/storage/wallet/stash, 5), \
+	new/datum/stack_recipe("money pouch", /obj/item/storage/wallet/stash/pouch, 5), \
 	new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12), \
 	null, \
 	new/datum/stack_recipe("19x19 Canvas", /obj/item/canvas/nineteenXnineteen, 4), \

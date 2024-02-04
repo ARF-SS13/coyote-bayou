@@ -84,7 +84,7 @@
 	icon_state = "needlerpack"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
 	caliber = list(CALIBER_NEEDLE)
-	max_ammo = 72
+	max_ammo = 48
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
@@ -96,7 +96,31 @@
 	icon_state = "needlerpack"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
 	caliber = list(CALIBER_NEEDLE)
-	max_ammo = 15
+	max_ammo = 35
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/mausereight
+	name = "magazine box filled with mauser ammo"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/gewehreight
+	name = "magazine box filled with mauser ammo"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 5
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY

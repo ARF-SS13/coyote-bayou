@@ -2583,6 +2583,8 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -3555,7 +3557,7 @@
 "bLU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
-/obj/item/card/lowbounty,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "bLW" = (
@@ -4056,6 +4058,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "bZh" = (
@@ -6221,10 +6224,8 @@
 	},
 /area/f13/building/mall)
 "djj" = (
-/obj/structure/simple_door/house{
-	name = "New Age Gardening"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/obj/structure/nest/protectron,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "djs" = (
 /obj/machinery/workbench/forge,
@@ -6721,6 +6722,7 @@
 	layer = 11;
 	name = "Sparky Appliances"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "dwA" = (
@@ -7139,6 +7141,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"dEC" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/mall)
 "dGr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -8085,6 +8096,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"ehe" = (
+/obj/structure/chair/bench{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/bloatfly{
+	name = "Shotgun";
+	faction = list("neutral")
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "ehs" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -8586,6 +8609,7 @@
 	layer = 11;
 	name = "Sparky Appliances"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "evL" = (
@@ -10524,6 +10548,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "fsV" = (
@@ -11420,10 +11445,6 @@
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/item/seeds/ambrosia/gaia{
-	pixel_x = -16;
-	pixel_y = 5
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
@@ -13056,6 +13077,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "gDC" = (
@@ -14360,7 +14382,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/lighter,
 /obj/effect/spawner/lootdrop/lighter,
-/obj/item/card/lowbounty,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "hkF" = (
@@ -15714,6 +15736,7 @@
 /area/f13/building)
 "hRp" = (
 /obj/structure/table/wood,
+/obj/item/gun/ballistic/shotgun/toy,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -18909,6 +18932,11 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -19909,6 +19937,13 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"jYK" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/protectron,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/mall)
 "jYV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/validball_spawner,
@@ -20096,6 +20131,7 @@
 "kcK" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/glasses/orange,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "kcL" = (
@@ -26446,6 +26482,7 @@
 /obj/structure/rack,
 /obj/item/clothing/under/pants/jeans,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "nfv" = (
@@ -28943,6 +28980,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "oqk" = (
@@ -29240,7 +29278,9 @@
 	color = "#968d87";
 	dir = 4
 	},
-/obj/item/storage/box/stockparts/deluxe,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "ozM" = (
@@ -29650,13 +29690,11 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "oJM" = (
-/obj/structure/simple_door/house{
-	name = "Sparky Appliances"
-	},
 /obj/effect/decal/cleanable/dirt{
-	color = "000000"
+	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/obj/effect/spawner/lootdrop/f13/common_parts,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "oJO" = (
 /obj/structure/chair/office/dark,
@@ -32178,6 +32216,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/gun/ballistic/revolver/single_shotgun,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -32752,6 +32791,8 @@
 	dir = 4
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -33052,10 +33093,18 @@
 /area/f13/building/abandoned)
 "qwt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/machinery/cell_charger{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "qwH" = (
@@ -33745,6 +33794,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qSA" = (
+/obj/structure/simple_door/house{
+	name = "Sparky Appliances"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building/mall)
 "qTn" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -34763,6 +34821,16 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
+"rsR" = (
+/obj/structure/simple_door/house{
+	name = "New Age Gardening"
+	},
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/mall)
 "rsV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -34830,6 +34898,10 @@
 "ruk" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/building/abandoned)
+"rul" = (
+/obj/effect/spawner/lootdrop/f13/common_parts,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building/mall)
 "ruC" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/brick,
@@ -36354,6 +36426,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "soR" = (
@@ -39130,6 +39203,7 @@
 /obj/structure/guncase{
 	anchored = 1
 	},
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -39176,6 +39250,14 @@
 /obj/structure/flora/tree/cactus_alt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"tMr" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/mall)
 "tMV" = (
 /obj/machinery/computer/terminal{
 	dir = 1;
@@ -39233,6 +39315,7 @@
 	anchored = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -40279,11 +40362,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
-	},
+/obj/structure/nest/protectron,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
 "uqu" = (
@@ -40890,6 +40969,16 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
+"uFh" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/building/mall)
 "uFj" = (
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/wood_fancy,
@@ -42984,7 +43073,13 @@
 	},
 /area/f13/wasteland)
 "vHx" = (
-/obj/structure/junk/locker,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/closet/anchored,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "vHC" = (
@@ -43509,6 +43604,7 @@
 	layer = 11;
 	name = "New Age Gardening"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "vYm" = (
@@ -43717,6 +43813,10 @@
 "web" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/seeds/ambrosia/gaia,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -47369,6 +47469,7 @@
 "yby" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "yca" = (
@@ -47504,6 +47605,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"ygH" = (
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
+/area/f13/building/massfusion)
 "ygT" = (
 /obj/structure/flora/burnedbush4,
 /turf/open/indestructible/ground/outside/desert,
@@ -47587,6 +47694,14 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"yhZ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building/mall)
 "yic" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/mop,
@@ -57428,7 +57543,7 @@ tNC
 jxp
 jxp
 aLJ
-aLJ
+ehe
 lmQ
 ejB
 rtZ
@@ -98745,7 +98860,7 @@ rkH
 yby
 edy
 oLW
-fPv
+jYK
 lrP
 sWy
 fIt
@@ -98990,7 +99105,7 @@ aFS
 aFS
 aFS
 aFS
-oJM
+qSA
 aFS
 lEQ
 rws
@@ -98998,7 +99113,7 @@ rws
 gJH
 gJH
 gJH
-djj
+rsR
 hBx
 azb
 azb
@@ -99262,7 +99377,7 @@ tat
 kEP
 kan
 cus
-kMo
+dEC
 kMo
 cmh
 tat
@@ -99504,11 +99619,11 @@ aFS
 wLE
 qbi
 hXy
-fjN
+oJM
 qQy
 ubq
-qQy
-qQy
+djj
+rul
 lhy
 fjN
 aFS
@@ -99521,7 +99636,7 @@ iMX
 rFF
 nfG
 tYC
-fdT
+quP
 fEM
 kMo
 azb
@@ -100024,7 +100139,7 @@ wCm
 fCb
 tqi
 rwy
-wIe
+yhZ
 kDD
 seX
 sim
@@ -100267,7 +100382,7 @@ vqz
 gJH
 nfu
 lvE
-qEL
+tMr
 gis
 lvE
 aAj
@@ -100275,7 +100390,7 @@ aFS
 vHx
 doO
 uFN
-fjN
+oJM
 wIe
 uqr
 bDP
@@ -100292,7 +100407,7 @@ jpE
 sim
 fdT
 sim
-mvt
+uFh
 nfG
 jvp
 aFS
@@ -100538,7 +100653,7 @@ cdv
 xiR
 exw
 eDU
-qQy
+rul
 azb
 vMa
 tat
@@ -100735,7 +100850,7 @@ oDo
 jdm
 ldu
 oDo
-wMt
+ygH
 vNT
 hBn
 oDo

@@ -222,6 +222,16 @@
 	build_path = /obj/item/reagent_containers/chem_pack
 	category = list("Medical Designs")
 
+/datum/design/dna_diskette
+	name = "DNA Data Disk"
+	desc = "A disk for storing genetic information."
+	id = "dna_diskette"
+	build_type = PROTOLATHE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/iron=200, /datum/material/glass=100)
+	build_path = /obj/item/disk/data
+	category = list("Medical Designs")
+
 /datum/design/cloning_disk
 	name = "Cloning Data Disk"
 	desc = "Produce additional disks for storing genetic data."

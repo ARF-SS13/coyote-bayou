@@ -58,7 +58,7 @@
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
 	species_type = "robotic"
-	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
+	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin", "protectron")
 
 /datum/species/synthfurry/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)

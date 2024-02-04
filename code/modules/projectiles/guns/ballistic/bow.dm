@@ -26,6 +26,7 @@
 		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACKPACK
 
 	/// Can this bow link to a quiver?
 	var/can_link_to_quiver = TRUE

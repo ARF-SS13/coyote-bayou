@@ -2955,6 +2955,17 @@
 /obj/structure/flora/grass/coyote/thirteen,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"brH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/abandoned)
 "brN" = (
 /obj/structure/fence/wooden{
 	dir = 8;
@@ -4864,6 +4875,13 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland/city)
+"clr" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick Mansion";
+	id = "Redlick Mansion"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "clB" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon_parts,
@@ -5431,6 +5449,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
+"cxh" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick - North side";
+	id = "Redlick - North side"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "cxi" = (
 /obj/structure/debris/v2{
 	pixel_x = -10
@@ -13806,6 +13831,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	color = "#818181";
 	icon_state = "floorrustysolid"
@@ -14963,6 +14989,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"gyZ" = (
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "gzm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -16195,6 +16227,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	color = "#818181";
 	icon_state = "floorrustysolid"
@@ -17641,6 +17674,15 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/wasteland)
+"hOX" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/abandoned)
 "hOZ" = (
 /obj/structure/spacevine,
 /obj/effect/decal/fakelattice,
@@ -20795,6 +20837,11 @@
 /area/f13/caves)
 "jfH" = (
 /obj/machinery/light,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/structure/closet,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -23941,6 +23988,17 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"kvP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/structure/closet,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building/abandoned)
 "kwg" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/blood,
@@ -26226,6 +26284,12 @@
 /obj/item/chair/wood/modern,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/building/abandoned)
+"lxA" = (
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "lxJ" = (
 /obj/structure/railing{
 	dir = 4
@@ -27310,6 +27374,16 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/city)
+"lXc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/abandoned)
 "lXj" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -28275,6 +28349,13 @@
 	icon_state = "grass2"
 	},
 /area/f13/city)
+"mvq" = (
+/obj/effect/landmark/vertibird{
+	name = "Redlick - South side";
+	id = "Redlick - South side"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "mvt" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -53123,6 +53204,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -55493,7 +55575,7 @@ fXr
 mdq
 dCz
 fgZ
-cPO
+lXc
 wtn
 wtn
 fss
@@ -56010,7 +56092,7 @@ qFW
 nEN
 xyb
 xGu
-udR
+brH
 dij
 dij
 hvy
@@ -56260,7 +56342,7 @@ mvE
 kGu
 jeP
 pAG
-cUM
+hOX
 gzm
 kqw
 lDH
@@ -56940,7 +57022,7 @@ iKf
 iKf
 mYI
 iKf
-iKf
+cxh
 iKf
 iKf
 iKf
@@ -57836,7 +57918,7 @@ mtE
 cUd
 inv
 sdP
-mtE
+kvP
 rap
 uhE
 uhE
@@ -79759,7 +79841,7 @@ iKf
 iKf
 mYI
 iKf
-iKf
+mvq
 iKf
 mYI
 iKf
@@ -82834,7 +82916,7 @@ hgk
 hgk
 hgk
 bRH
-bRH
+gyZ
 hgk
 hgk
 fRi
@@ -83094,7 +83176,7 @@ bRH
 bRH
 bRH
 bRH
-bRH
+lxA
 bRH
 uSf
 gMW
@@ -83860,10 +83942,10 @@ uSf
 hOK
 bRH
 bRH
-bRH
+gyZ
 bRH
 xGx
-bRH
+lxA
 hQO
 bba
 bRH
@@ -84372,13 +84454,13 @@ wWG
 nBc
 oOr
 xYQ
-bRH
+gyZ
 bRH
 hgS
 bRH
 bba
 rrZ
-bRH
+gyZ
 bRH
 pQm
 uSf
@@ -103490,7 +103572,7 @@ iKf
 iKf
 iKf
 iKf
-iKf
+clr
 iKf
 mYI
 mYI

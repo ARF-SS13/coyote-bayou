@@ -40,6 +40,22 @@
 	environment = 19
 	grow_chance = 45
 	weather_tags = list(WEATHER_ALL)
+	ambientmusic = list(
+		//AREA_Z_MUSIC(Z_LEVEL_FALLBACK, 'sound/misc/sadtrombone.ogg'),
+		//AREA_Z_MUSIC(Z_LEVEL_CENTCOM, 'sound/machines/honkbot_evil_laugh.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_UNDERGROUND, 'sound/ambience/coolloops/sewers.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_COMMON, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_LVL2, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_LVL3, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDWATER, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDWATER_UPPER, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDLICK, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDLICK_UPPER, 'sound/ambience/coolloops/swamp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_GARLAND, 'sound/ambience/coolloops/garland.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON, 'sound/ambience/coolloops/newboston.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON_UPPER, 'sound/ambience/coolloops/newboston.ogg'),
+	)
+
 
 /area/f13/wasteland/city
 	name = "City"
@@ -52,7 +68,6 @@
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
 		)
-	ambientmusic = null
 	grow_chance = 5
 
 /area/f13/wasteland/town
@@ -203,6 +218,17 @@
 		/datum/looping_sound/ambient/woodcreak,
 	)
 	weather_tags = null
+
+/area/f13/wasteland/newboston
+	name = "New Boston Wasteland"
+
+/area/f13/wasteland/garlandcity
+	name = "Garland City Wasteland"
+
+/area/f13/wasteland/dungeon
+	name = "Dungeon Wasteland"
+
+
 
 ///////////////
 //C O Y O T E//
@@ -1063,3 +1089,22 @@
 	name = "Great Khan Encampment"
 	icon_state = "tribe"
 	weather_tags = list(WEATHER_ALL)
+
+/area/debug_mussy
+	name = "Musical Hellscape"
+	icon_state = "tribe"
+	ambientmusic = list(
+		AREA_Z_MUSIC(Z_LEVEL_FALLBACK, 'sound/misc/sadtrombone.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_CENTCOM, 'sound/machines/honkbot_evil_laugh.ogg'),
+		// AREA_Z_MUSIC(Z_LEVEL_NASH_UNDERGROUND, 'sound/weapons/bite.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_COMMON, 'sound/weapons/bite.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_LVL2, 'sound/weapons/slap.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NASH_LVL3, 'sound/effects/snap.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDWATER, 'sound/effects/bworp.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDWATER_UPPER, 'honk/sound/emotes/laugh_f1.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDLICK, 'honk/sound/emotes/female_giggle_1.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_REDLICK_UPPER, 'sound/effects/malegiggle1.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_GARLAND, 'sound/weapons/Genhit.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON, 'sound/effects/bamf.ogg'),
+		AREA_Z_MUSIC(Z_LEVEL_NEWBOSTON_UPPER, 'sound/effects/Huuu.ogg'),
+	)

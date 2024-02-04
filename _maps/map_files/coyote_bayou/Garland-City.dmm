@@ -839,6 +839,7 @@
 /obj/item/wirecutters,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1498,6 +1499,7 @@
 /obj/item/screwdriver/power,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5384,6 +5386,18 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"dRC" = (
+/obj/effect/decal/marking{
+	icon_state = "doublehorizontal"
+	},
+/obj/effect/landmark/vertibird{
+	name = "Garland - West side";
+	id = "Garland - West side"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "dSl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7093,6 +7107,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/wrench,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -8196,6 +8212,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"fVr" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "fVu" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -8258,6 +8284,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16034,6 +16061,17 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"ltj" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "ltn" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/wmelee_low,
@@ -20492,6 +20530,13 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ouB" = (
+/obj/effect/landmark/vertibird{
+	name = "Garland  - East Side";
+	id = "Garland  - East Side"
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
 "ovg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -20690,6 +20735,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -21117,6 +21164,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -22928,6 +22977,7 @@
 /obj/item/wirecutters,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -27532,6 +27582,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/geiger_counter,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -28719,6 +28770,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/glass/ten,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -30650,6 +30703,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/glass/ten,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -31306,6 +31361,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/weldingtool,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -32908,6 +32965,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon_parts,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -34085,6 +34143,13 @@
 "xXl" = (
 /obj/structure/flora/tree/tall,
 /turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
+"xXC" = (
+/obj/effect/landmark/vertibird{
+	name = "Garland  City";
+	id = "Garland  City"
+	},
+/turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "xYo" = (
 /obj/structure/closet/crate/wooden,
@@ -39820,7 +39885,7 @@ smg
 ixY
 smg
 smg
-dal
+dRC
 bUi
 snq
 smg
@@ -59280,7 +59345,7 @@ cON
 cON
 cON
 nVG
-cON
+xXC
 cON
 ewm
 cON
@@ -73629,9 +73694,9 @@ iuh
 dmz
 dmz
 mds
-oBq
+ltj
 waL
-oBq
+fVr
 fEu
 ldh
 tYU
@@ -92403,7 +92468,7 @@ iTD
 iTD
 iTD
 iTD
-iTD
+ouB
 iTD
 iTD
 iTD

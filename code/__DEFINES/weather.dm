@@ -15,6 +15,7 @@
 #define Z_LEVEL_NEWBOSTON_UPPER 13
 #define Z_LEVEL_TRANSIT 14
 #define Z_LEVEL_VR 15
+#define Z_LEVEL_FALLBACK 32768 // sadly this means we're limited to 32767 Z levels....
 
 #define ABOVE_GROUND_Z_LEVELS list(\
 	Z_LEVEL_REDLICK_UPPER,\

@@ -2307,6 +2307,10 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/bunker)
+"aZh" = (
+/obj/machinery/chem_master/advanced,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "aZm" = (
 /obj/item/chair,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -3486,6 +3490,7 @@
 "bBD" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "bBZ" = (
@@ -7704,7 +7709,7 @@
 	},
 /area/f13/vault)
 "doQ" = (
-/obj/structure/reagent_dispensers/keg/milk,
+/obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "doY" = (
@@ -8897,6 +8902,10 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
+"dOD" = (
+/obj/machinery/chem_dispenser/fullupgrade,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "dOJ" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/medical.dmi';
@@ -9693,6 +9702,13 @@
 /obj/structure/debris/v1,
 /turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
+"egA" = (
+/obj/structure/table,
+/obj/machinery/recharger,
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/f13/building)
 "egE" = (
 /obj/structure/bed{
 	pixel_y = 7
@@ -9803,6 +9819,7 @@
 	},
 /obj/structure/table/glass,
 /obj/effect/spawner/lootdrop/f13/bounty/med_to_high,
+/obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "eiM" = (
@@ -10457,6 +10474,10 @@
 /turf/open/floor/plasteel/whiteblue/corner{
 	dir = 4
 	},
+/area/f13/building)
+"evG" = (
+/obj/machinery/computer/arcade/battle,
+/turf/open/floor/plasteel/f13/darkmarble,
 /area/f13/building)
 "evO" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -15203,12 +15224,11 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/reagent_containers/syringe/lethal,
-/obj/item/reagent_containers/syringe/lethal,
-/obj/item/reagent_containers/syringe/lethal,
 /obj/structure/rack/shelf_metal{
 	pixel_y = -2
 	},
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes,
 /obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
@@ -17016,6 +17036,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"hrp" = (
+/obj/machinery/computer/arcade/orion_trail,
+/turf/open/floor/plasteel/f13/darkmarble,
+/area/f13/building)
 "hrN" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/f13/wood,
@@ -24627,6 +24651,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/structure/bed,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "kTi" = (
@@ -29818,6 +29843,7 @@
 	},
 /obj/structure/table/glass,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/circuitboard/machine/plantgenes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "nhp" = (
@@ -31150,8 +31176,9 @@
 	},
 /area/f13/brotherhood/reactor)
 "nKD" = (
-/obj/structure/reagent_dispensers/virusfood,
-/turf/closed/wall/r_wall/f13/vault,
+/obj/structure/table/reinforced,
+/obj/item/defibrillator/loaded,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "nKM" = (
 /obj/structure/cable{
@@ -33031,6 +33058,7 @@
 /obj/item/stack/sheet/prewar/five,
 /obj/structure/rack,
 /obj/item/stack/sheet/prewar/five,
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -34571,6 +34599,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood/operations)
+"pjq" = (
+/obj/structure/bed,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "pjC" = (
 /obj/structure/window/reinforced{
 	color = "#000000";
@@ -36419,6 +36451,7 @@
 "pXs" = (
 /obj/machinery/light/small,
 /obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "pXC" = (
@@ -44115,6 +44148,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/effect/landmark/vertibird{
+	name = "???";
+	id = "???"
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "toL" = (
@@ -44847,6 +44884,15 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/rnd)
+"tHD" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/reagent_dispensers/keg/milk,
+/turf/open/floor/plasteel/whiteblue/side{
+	dir = 9
+	},
+/area/f13/building)
 "tHL" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -49521,6 +49567,13 @@
 /obj/machinery/smartfridge/food,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
+"vHJ" = (
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/f13/building)
 "vIe" = (
 /obj/machinery/vending/hydroseeds,
 /obj/machinery/light,
@@ -51492,6 +51545,16 @@
 /area/f13/vault)
 "wBn" = (
 /obj/structure/rack,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "wBo" = (
@@ -108425,8 +108488,8 @@ aEL
 aEL
 aEL
 ijC
-vRf
-mXd
+dOD
+aZh
 shg
 icz
 ijC
@@ -108681,7 +108744,7 @@ ijC
 ijC
 ijC
 ijC
-nKD
+ijC
 vRf
 vRf
 vRf
@@ -109192,7 +109255,7 @@ pLB
 ltw
 aEL
 ijC
-vRf
+pjq
 dvW
 vRf
 vRf
@@ -109706,7 +109769,7 @@ pLB
 ltw
 aEL
 ijC
-vRf
+pjq
 dvW
 vRf
 vRf
@@ -109965,7 +110028,7 @@ aEL
 ijC
 qZl
 fvx
-vRf
+nKD
 ijC
 cNx
 ijC
@@ -112283,7 +112346,7 @@ ryW
 boV
 oPe
 ijC
-lWJ
+tHD
 cPr
 cPr
 cPr
@@ -112299,7 +112362,7 @@ qmr
 tvr
 ryW
 boV
-oPe
+egA
 ijC
 aEL
 ltw
@@ -112556,7 +112619,7 @@ gTZ
 tvr
 ryW
 boV
-oPe
+vHJ
 ijC
 aEL
 ltw
@@ -114345,7 +114408,7 @@ udG
 evx
 hzI
 ijC
-ouE
+evG
 ouE
 ouE
 ouE
@@ -114602,7 +114665,7 @@ ijC
 xbz
 ePS
 ijC
-ouE
+hrp
 ouE
 ouE
 ouE
