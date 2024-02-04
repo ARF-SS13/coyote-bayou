@@ -43,13 +43,11 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		data["personalErpTag"] = user.client.prefs.directory_erptag || "Unset"
 		var/adtext = user.client.prefs.directory_ad
 		if(LAZYLEN(adtext) > 85)
-			adtext = copytext(adtext, 1, 85) + "..."
+			adtext = copytext(adtext, 1, 128) + "..."
 		else if(!adtext)
 			adtext = "Unset"
 		data["personalAdvert"] = adtext
 		var/fucktext = user.client.prefs.features["flist"]
-		if(LAZYLEN(fucktext) > 85)
-			fucktext = copytext(fucktext, 1, 85) + "..."
 		else if(!fucktext)
 			fucktext = "Unset"
 		data["personalFlist"] = fucktext || "Unset"
