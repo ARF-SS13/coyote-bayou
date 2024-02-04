@@ -14,7 +14,14 @@ const erpTagColor = {
 export const CharacterDirectory = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { personalVisibility, personalTag, personalErpTag, prefsOnly, personalAdvert, personalFlist } = data;
+  const {
+    personalVisibility,
+    personalTag,
+    personalErpTag,
+    prefsOnly,
+    personalAdvert,
+    personalFlist,
+  } = data;
   const [overlay, setOverlay] = useLocalState(context, 'overlay', null);
 
   const [overwritePrefs, setOverwritePrefs] = useLocalState(context, 'overwritePrefs', prefsOnly);
@@ -49,7 +56,7 @@ export const CharacterDirectory = (props, context) => {
                       icon={personalVisibility ? "toggle-on" : "toggle-off"}
                       selected={personalVisibility}
                       onClick={() => act('setVisible', { overwrite_prefs: overwritePrefs })}
-                      />
+                    />
                   </Stack.Item>
                   <Stack.Item shrink>
                     Vore Tag:
@@ -60,7 +67,7 @@ export const CharacterDirectory = (props, context) => {
                       selected={personalTag === "Unset"? false : true}
                       content={personalTag}
                       onClick={() => act('setTag', { overwrite_prefs: overwritePrefs })}
-                      />
+                    />
                   </Stack.Item>
                   <Stack.Item shrink>
                     ERP Tag:
@@ -71,7 +78,7 @@ export const CharacterDirectory = (props, context) => {
                       selected={personalErpTag === "Unset"? false : true}
                       content={personalErpTag}
                       onClick={() => act('setErpTag', { overwrite_prefs: overwritePrefs })}
-                      />
+                    />
                   </Stack.Item>
                 </Stack>
               </Box>
@@ -82,7 +89,7 @@ export const CharacterDirectory = (props, context) => {
                     fluid
                     content={personalAdvert}
                     onClick={() => act('editAd', { overwrite_prefs: overwritePrefs })}
-                    />
+                  />
                 </LabeledList.Item>
                 <LabeledList.Item label="F-List Link">
                   <Button
@@ -90,7 +97,7 @@ export const CharacterDirectory = (props, context) => {
                     fluid
                     content={personalFlist}
                     onClick={() => act('editFlist', { overwrite_prefs: overwritePrefs })}
-                    />
+                  />
                 </LabeledList.Item>
               </LabeledList>
             </Section>
@@ -204,10 +211,10 @@ const CharacterDirectoryList = (props, context) => {
                   onClick={() => act("view_flist", { ref: character.ref })}
                   color="transparent"
                   icon="linkify"
-                  disabled = {!character.flist_link}
+                  disabled={!character.flist_link}
                   mr={1}
                   content="Link"
-                  />
+                />
               </Table.Cell>
             </Table.Row>
           ))}
