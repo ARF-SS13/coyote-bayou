@@ -36,6 +36,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	examine_no_preview = _examine_no_preview
 
 	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/show_flavor)
+	RegisterSignal(target, COMSIG_FLIST, .proc/show_flist)
 
 	if(can_edit && ismob(target)) //but only mobs receive the proc/verb for the time being
 		var/mob/M = target
@@ -87,13 +88,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/atom/target = locate(href_list["show_flavor"])
 
 		if(attach_internet_link)
-			if(ishuman(target))
-				var/mob/living/carbon/human/H = target
-				if(alert("This will open the following link '[H.dna.features["flist"]]' in your browser. Are you sure?","Open external link","Yes","No") =="Yes")
-					usr << link(H.dna.features["flist"])
-					return TRUE
-				else
-					return
+			return show_flist(target, usr)
 
 		var/mob/living/L = target
 		var/text = texts_by_atom[target]
@@ -101,6 +96,21 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			usr << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><TITLE>[isliving(target) ? L.get_visible_name() : target.name]</TITLE></HEAD><BODY><TT>[replacetext(texts_by_atom[target], "\n", "<BR>")]</TT></BODY></HTML>", "window=[isliving(target) ? L.get_visible_name() : target.name];size=500x200")
 			onclose(usr, "[target.name]")
 		return TRUE
+
+/datum/element/flavor_text/proc/show_flist(mob/target, mob/reader)
+	if(!ishuman(target))
+		return
+	if(!reader)
+		return
+	INVOKE_ASYNC(src, .proc/actually_show_flist, target, reader)
+	return TRUE
+
+/datum/element/flavor_text/proc/actually_show_flist(mob/living/carbon/human/H, mob/reader)
+	if(alert(reader, "This will open the following link '[H.dna.features["flist"]]' in your browser. Are you sure?","Open external link","Yes","No") =="Yes")
+		reader << link(H.dna.features["flist"])
+		return TRUE
+	else
+		return
 
 /mob/proc/manage_flavor_tests()
 	set name = "Manage Flavor Texts"
