@@ -1563,6 +1563,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	if(user.incapacitated())  //well obviously we have to check if the person can even though if they can't it's because they're down... and when you're down you shouldn't be able to pick up objects... ANYWAYS BETTER SAFE THAN SORRY!
 		return
 
+	//it checks the following storages with this order
 	var/obj/item/equipped_belt = user.get_item_by_slot(SLOT_BELT)
 	var/obj/item/equipped_suit = user.get_item_by_slot(SLOT_WEAR_SUIT)
 	var/obj/item/equipped_pocket_l = user.get_item_by_slot(SLOT_L_STORE)
@@ -1577,7 +1578,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_belt)
 			if(equipped_belt.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_belt.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_belt.contents)
 						fullest_magazine = C
 						break
 
@@ -1588,7 +1589,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_suit)
 			if(equipped_suit.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_suit.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_suit.contents)
 						fullest_magazine = C
 						break
 
@@ -1599,7 +1600,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_pocket_l)
 			if(equipped_pocket_l.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_l.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_l.contents)
 						fullest_magazine = C
 						break
 
@@ -1610,7 +1611,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_pocket_r)
 			if(equipped_pocket_r.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_r.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_pocket_r.contents)
 						fullest_magazine = C
 						break
 
@@ -1621,7 +1622,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_neck)
 			if(equipped_neck.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_neck.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_neck.contents)
 						fullest_magazine = C
 						break
 
@@ -1632,7 +1633,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		if(equipped_back)
 			if(equipped_back.contents)
 				if(isnull(fullest_magazine))
-					for(var/obj/item/ammo_box/magazine/C in equipped_back.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+					for(var/obj/item/ammo_box/magazine/C in equipped_back.contents)
 						fullest_magazine = C
 						break
 
