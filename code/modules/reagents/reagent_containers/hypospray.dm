@@ -236,7 +236,7 @@
 // ---------------------------------
 // MED-X
 
-/obj/item/reagent_containers/hypospray/medipen/medx
+/obj/item/reagent_containers/pill/patch/medx
 	name = "Med-X"
 	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -249,7 +249,7 @@
 // ---------------------------------
 // PSYCHO
 
-/obj/item/reagent_containers/hypospray/medipen/psycho
+/obj/item/reagent_containers/pill/patch/psycho
 	name = "Psycho"
 	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -261,7 +261,7 @@
 // ---------------------------------
 // STEADY
 
-/obj/item/reagent_containers/hypospray/medipen/steady
+/obj/item/reagent_containers/pill/patch/steady
 	name = "Steady"
 	desc = "An inhaler of Steady, a combat drug which provides the user with a steady aim that makes it impossible to miss in sharpshooting. However, it is also highly addictive"
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
