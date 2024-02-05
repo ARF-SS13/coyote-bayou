@@ -594,7 +594,7 @@
 				/obj/item/reagent_containers/medspray/silver_sulf,
 				/obj/item/reagent_containers/medspray/sterilizine,
 				/obj/item/storage/pill_bottle/chem_tin/fixer,
-				/obj/item/reagent_containers/hypospray/medipen/psycho,
+				/obj/item/reagent_containers/pill/patch/psycho,
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug //remove equipment, has nothing on it
@@ -606,10 +606,10 @@
 				/obj/item/reagent_containers/pill/patch/turbo,
 				/obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
-				/obj/item/reagent_containers/hypospray/medipen/medx,
+				/obj/item/reagent_containers/pill/patch/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
-				/obj/item/reagent_containers/hypospray/medipen/steady,
-				/obj/item/reagent_containers/hypospray/medipen/psycho,
+				/obj/item/reagent_containers/pill/patch/steady,
+				/obj/item/reagent_containers/pill/patch/psycho,
 				/obj/item/storage/pill_bottle/chem_tin/mentats,
 				)
 
