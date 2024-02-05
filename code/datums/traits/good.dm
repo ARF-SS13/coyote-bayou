@@ -1517,9 +1517,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
 	desc = "You're better than most people when it comes to carrying people!"
-	value = 14
+	value = 18
 	category = "Medical Quirks"
-	mechanics = "When using the fireman carry, you lift people up at a faster rate."
+	mechanics = "When using the fireman carry you lift people up at a faster rate."
 	conflicts = list(
 		/datum/quirk/quickcarry,
 	)
@@ -1532,9 +1532,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickcarry
 	name = "Quick Carry"
 	desc = "You're exceptionally good when it comes to carrying people!"
-	value = 18
+	value = 14
 	category = "Medical Quirks"
-	mechanics = "When using the fireman carry, you lift people up onto your shoulders at an incredibly faster rate!"
+	mechanics = "When using the fireman carry you lift people up onto your shoulders a bit faster!"
 	conflicts = list(
 		/datum/quirk/quickercarry,
 	)
