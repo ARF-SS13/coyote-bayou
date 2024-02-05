@@ -549,7 +549,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(ismob(target))
 		// message_admins("[key_name_admin(src)] is now orbitting [target.name]")
-		log_world("[key_name(src)] is now orbitting [target.name]")
+		var/mob/M = target
+		log_world("[key_name(src)] is now orbitting [key_name(M)]")
 	orbit(target,orbitsize, FALSE, 20, rot_seg)
 
 /mob/dead/observer/orbit()
