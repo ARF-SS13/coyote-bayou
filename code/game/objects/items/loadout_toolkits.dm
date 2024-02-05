@@ -467,11 +467,11 @@
 	name = "drug stash"
 
 /obj/item/storage/box/tools/drugs/PopulateContents() //moar drumgs
-	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
-	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/reagent_containers/pill/patch/psycho(src)
+	new /obj/item/reagent_containers/pill/patch/psycho(src)
 	new /obj/item/reagent_containers/pill/patch/turbo(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
 	new /obj/item/storage/pill_bottle/chem_tin/buffout(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src) //more than 7 objects, absolutely overflowing with drumgs
 	new /obj/item/reagent_containers/pill/patch/jet(src)

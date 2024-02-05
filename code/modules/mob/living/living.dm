@@ -1221,6 +1221,10 @@
 			amount *= 0.25
 		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
 			amount *= 0.5
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_WEAK))
+			amount *= 1.5
+		else if(HAS_TRAIT(src, TRAIT_100_RAD_WEAK))
+			amount *= 2
 
 	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)

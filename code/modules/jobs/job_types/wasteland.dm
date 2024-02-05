@@ -225,9 +225,9 @@ Raider
 		///obj/item/gun/energy/laser/wattzs = 1,
 		///obj/item/gun/energy/laser/wattz = 1,
 		///obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 3,
+		/obj/item/reagent_containers/pill/patch/psycho = 3,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
 		)
 
 /datum/outfit/loadout/raider_painspike
@@ -904,8 +904,8 @@ Raider
 	name = "Trafficker"
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
+		/obj/item/reagent_containers/pill/patch/psycho = 1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 2,
 	//	/obj/item/storage/belt/shoulderholster/ranger357 = 1,
 		/obj/item/clothing/under/pants/f13/warboy = 1,
@@ -2589,7 +2589,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/powerfist/f13/goliath = 1,
 		/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
 		/obj/item/clothing/head/helmet/f13/raider/arclight = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 2,
+		/obj/item/reagent_containers/pill/patch/psycho = 2,
 		/obj/item/reagent_containers/pill/patch/turbo = 2)
 
 //AMR
