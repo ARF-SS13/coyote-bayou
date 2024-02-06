@@ -1,4 +1,4 @@
-#define HH_WIELD_TIME (2 SECONDS)
+#define HH_WIELD_TIME (3 SECONDS)
 #define HH_PERFORMANCE_RANGE 8 //tiles
 #define LOW_NOTE 1
 #define MID_NOTE 2
@@ -46,7 +46,7 @@
 
 /obj/item/huntinghorn/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=40)
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=40, require_twohands=TRUE)
 
 /obj/item/huntinghorn/Destroy()
 	. = ..()

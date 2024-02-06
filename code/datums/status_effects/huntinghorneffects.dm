@@ -6,6 +6,17 @@
 	duration = HH_STATUS_DEFAULT_DURATION
 	alert_type = /atom/movable/screen/alert/status_effect
 	status_type = STATUS_EFFECT_REFRESH
+	var/associated_trait = null
+
+/datum/status_effect/music/on_apply()
+	. = ..()
+	if(!isnull(associated_trait))
+		ADD_TRAIT(owner, associated_trait, id)
+
+/datum/status_effect/music/on_remove()
+	. = ..()
+	if(!isnull(associated_trait))
+		REMOVE_TRAIT(owner, associated_trait, src)
 
 
 // OFFENSE //
@@ -48,9 +59,11 @@
 	variable = TRUE
 	multiplicative_slowdown = -0.1
 
-
+// check click.dm inside /mob/ClickOn()
 /datum/status_effect/music/cooldown_ignore
 	id = "ruthlessness"
+	associated_trait = TRAIT_HH_COOLDOWN_IGNORE
+
 
 
 
@@ -58,25 +71,28 @@
 
 /datum/status_effect/music/iron_skin
 	id = "endurance"
-
+	associated_trait = TRAIT_HH_IRON_SKIN
 
 /datum/status_effect/music/knockdown_res
 	id = "steadiness"
-
+	associated_trait = TRAIT_HH_KNOCKDOWN_RES
 
 /datum/status_effect/music/divine_blessing
 	id = "luck"
-
+	associated_trait = TRAIT_HH_DIVINE_BLESSING
 
 
 // UTILITY //
 
 /datum/status_effect/music/draw_speed
 	id = "alertness"
-
+	associated_trait = TRAIT_HH_DRAW_SPEED
 
 /datum/status_effect/music/fast_actions
 	id = "dexterity"
+
+/datum/status_effect/music/fast_actions/interact_speed_modifier()
+	return 0.8
 
 
 /datum/status_effect/music/stamina_up
