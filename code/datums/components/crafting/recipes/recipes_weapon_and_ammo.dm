@@ -1,3 +1,68 @@
+// Different Paint!
+
+/datum/crafting_recipe/paint/redreroll
+	name = "Red Paint"
+	result = /obj/item/tool_upgrade/paint/red
+	reqs = list(/obj/item/tool_upgrade/paint/red = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/bluereroll
+	name = "Blue Paint"
+	result = /obj/item/tool_upgrade/paint/blue
+	reqs = list(/obj/item/tool_upgrade/paint/blue = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/yellowreroll
+	name = "Blue Paint"
+	result = /obj/item/tool_upgrade/paint/yellow
+	reqs = list(/obj/item/tool_upgrade/paint/yellow = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/orange
+	name = "Orange Paint"
+	result = /obj/item/tool_upgrade/paint/orange
+	reqs = list(/obj/item/tool_upgrade/paint/red = 1,
+				/obj/item/tool_upgrade/paint/yellow = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/purple
+	name = "Purple Paint"
+	result = /obj/item/tool_upgrade/paint/purple
+	reqs = list(/obj/item/tool_upgrade/paint/red = 1,
+				/obj/item/tool_upgrade/paint/blue = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/green
+	name = "Green Paint"
+	result = /obj/item/tool_upgrade/paint/green
+	reqs = list(/obj/item/tool_upgrade/paint/blue = 1,
+				/obj/item/tool_upgrade/paint/yellow = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/black
+	name = "Black Paint"
+	result = /obj/item/tool_upgrade/paint/black
+	reqs = list(/obj/item/tool_upgrade/paint/red = 1,
+				/obj/item/tool_upgrade/paint/blue = 1,
+				/obj/item/tool_upgrade/paint/yellow = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+// End of Paint!
+
 /datum/crafting_recipe/twohanded/spear
 	name = "Spear"
 	result = /obj/item/twohanded/spear

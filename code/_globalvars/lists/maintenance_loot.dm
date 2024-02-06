@@ -331,8 +331,9 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/augment/randomizer = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 2
+	/obj/item/tool_upgrade/paint/red = 1,
+	/obj/item/tool_upgrade/paint/blue = 1,
+	/obj/item/tool_upgrade/paint/yellow = 1
 ))
 
 GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
@@ -962,8 +963,9 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/augment/randomizer = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 1
+	/obj/item/tool_upgrade/paint/red = 1,
+	/obj/item/tool_upgrade/paint/blue = 1,
+	/obj/item/tool_upgrade/paint/yellow = 1
 ))
 
 GLOBAL_LIST_INIT(loot_attachment_advanced, list(
