@@ -17,7 +17,7 @@
 	subcategory = CAT_PARTS
 
 /datum/crafting_recipe/paint/yellowreroll
-	name = "Blue Paint"
+	name = "Yellow Paint"
 	result = /obj/item/tool_upgrade/paint/yellow
 	reqs = list(/obj/item/tool_upgrade/paint/yellow = 2)
 	time = 5

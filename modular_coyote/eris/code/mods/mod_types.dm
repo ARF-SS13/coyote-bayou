@@ -314,7 +314,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,25) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-25,40) * 0.01,
-		GUN_UPGRADE_MAGUP=1 + rand(-2,5) * 0.01,
+		GUN_UPGRADE_MAGUP=1 + rand(-10,15) * 0.01,
 		UPGRADE_COLOR = "#FF4444"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
@@ -368,7 +368,7 @@
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-15,50) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,15) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-15,50) * 0.01,
-		GUN_UPGRADE_MAGUP=1 + rand(-2,7) * 0.01,
+		GUN_UPGRADE_MAGUP=1 + rand(-5,20) * 0.01,
 		UPGRADE_COLOR = "#FFA500"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
@@ -388,7 +388,7 @@
 		GUN_UPGRADE_RICO_MULT=1 + rand(-50,15) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,15) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-15,50) * 0.01,
-		GUN_UPGRADE_MAGUP=1 + rand(-2,7) * 0.01,
+		GUN_UPGRADE_MAGUP=1 + rand(-5,20) * 0.01,
 		UPGRADE_COLOR = "#8F00FF"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
@@ -425,7 +425,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-60,5) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,60) * 0.01,
-		GUN_UPGRADE_MAGUP=1 + rand(-1,8) * 0.01,
+		GUN_UPGRADE_MAGUP=1 + rand(-5,25) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-60,5) * 0.01,
 		GUN_UPGRADE_CHARGECOST=1 + rand(-60,5) * 0.01,
 		GUN_UPGRADE_RICO_MULT=1 + rand(-60,5) * 0.01,
