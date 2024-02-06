@@ -134,6 +134,10 @@
 /obj/item/huntinghorn/proc/wield_horn(obj/item/this, mob/user)
 	SIGNAL_HANDLER
 
+
+	var/delay = HH_WIELD_TIME
+	if(HAS_TRAIT(user, TRAIT_HH_DRAW_SPEED))
+		delay *= 0.5
 	spawn(HH_WIELD_TIME)
 		if((user.get_active_held_item() == src) && wielded)
 			set_ready_to_play(user, TRUE)
@@ -225,16 +229,19 @@
 /obj/item/huntinghorn/offense
 	name = "hunting horn - offense"
 	songlist = newlist(/datum/huntinghornsong/attack_up_xs, /datum/huntinghornsong/speed_up, /datum/huntinghornsong/cooldown_ignore)
-
+	color = rgb(161, 0, 0)
+	
 // for toughening up your party.
 /obj/item/huntinghorn/defense
 	name = "hunting horn - defense"
 	songlist = newlist(/datum/huntinghornsong/iron_skin, /datum/huntinghornsong/knockdown_res, /datum/huntinghornsong/divine_blessing)
+	color = rgb(0, 17, 252)
 
 // for getting silly with it.
 /obj/item/huntinghorn/utility
 	name = "hunting horn - utility"
 	songlist = newlist(/datum/huntinghornsong/draw_speed, /datum/huntinghornsong/fast_actions, /datum/huntinghornsong/stamina_up)
+	color = rgb(224, 209, 0)
 
 // for keeping everyone in the fight.
 /obj/item/huntinghorn/healing

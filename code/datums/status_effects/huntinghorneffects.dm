@@ -3,6 +3,7 @@
 
 /datum/status_effect/music
 	id = "AAAHH!!!!!! MUSIC!!!!!"
+	var/desc = "This is so fucking scary."
 	duration = HH_STATUS_DEFAULT_DURATION
 	alert_type = /atom/movable/screen/alert/status_effect
 	status_type = STATUS_EFFECT_REFRESH
@@ -12,6 +13,8 @@
 	. = ..()
 	if(!isnull(associated_trait))
 		ADD_TRAIT(owner, associated_trait, id)
+	linked_alert.name = id
+	linked_alert.desc = desc
 
 /datum/status_effect/music/on_remove()
 	. = ..()
@@ -22,7 +25,8 @@
 // OFFENSE //
 
 /datum/status_effect/music/attack_up_xs
-	id = "strength"
+	id = "\proper strength"
+	desc = "You feel empowered."
 	var/had_little_leagues = FALSE
 
 /datum/status_effect/music/attack_up_xs/on_apply()
@@ -44,7 +48,8 @@
 
 
 /datum/status_effect/music/speed_up
-	id = "agility"
+	id = "\proper agility"
+	desc = "You feel light on your feet."
 
 /datum/status_effect/music/speed_up/on_apply()
 	. = ..()
@@ -61,7 +66,8 @@
 
 // check click.dm inside /mob/ClickOn()
 /datum/status_effect/music/cooldown_ignore
-	id = "ruthlessness"
+	id = "\proper ruthlessness"
+	desc = "You feel like really pummelling something."
 	associated_trait = TRAIT_HH_COOLDOWN_IGNORE
 
 
@@ -70,33 +76,39 @@
 // DEFENSE //
 
 /datum/status_effect/music/iron_skin
-	id = "endurance"
+	id = "\proper endurance"
+	desc = "You feel tough."
 	associated_trait = TRAIT_HH_IRON_SKIN
 
 /datum/status_effect/music/knockdown_res
-	id = "steadiness"
+	id = "\proper steadiness"
+	desc = "You feel sturdy."
 	associated_trait = TRAIT_HH_KNOCKDOWN_RES
 
 /datum/status_effect/music/divine_blessing
-	id = "luck"
+	id = "\proper luck"
+	desc = "You feel like you could shrug off some pain."
 	associated_trait = TRAIT_HH_DIVINE_BLESSING
 
 
 // UTILITY //
 
 /datum/status_effect/music/draw_speed
-	id = "alertness"
+	id = "\proper alertness"
+	desc = "You feel like the fastest gun in the west."
 	associated_trait = TRAIT_HH_DRAW_SPEED
 
 /datum/status_effect/music/fast_actions
-	id = "dexterity"
+	id = "\proper dexterity"
+	desc = "You feel like a magician."
 
 /datum/status_effect/music/fast_actions/interact_speed_modifier()
 	return 0.8
 
 
 /datum/status_effect/music/stamina_up
-	id = "persistence"
+	id = "\proper persistence"
+	desc = "You feel like you could do this all day."
 
 /datum/status_effect/music/stamina_up/on_apply()
 	. = ..()
@@ -113,7 +125,8 @@
 // HEALING //
 
 /datum/status_effect/music/instaheal
-	id = "health"
+	id = "\proper health"
+	desc = "YIPPEE!"
 	duration = 1
 
 /datum/status_effect/music/instaheal/on_apply()
@@ -122,14 +135,16 @@
 
 
 /datum/status_effect/music/recovery
-	id = "tenacity"
+	id = "\proper tenacity"
+	desc = "You feel soothed."
 
 /datum/status_effect/music/recovery/tick()
-	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE)
+	owner.heal_overall_damage(brute = 2, burn = 2, only_organic = FALSE)
 
 
 /datum/status_effect/music/maxhp_up
-	id = "vigor"
+	id = "\proper vigor"
+	desc = "You feel hearty."
 
 /datum/status_effect/music/maxhp_up/on_apply()
 	. = ..()
