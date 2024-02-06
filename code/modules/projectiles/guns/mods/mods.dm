@@ -267,6 +267,7 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(10,30) * 0.01,
 		UPGRADE_COLOR = "#FFD700"
 		)
+	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "gold"
 
 //Trash mods, for putting on old guns
