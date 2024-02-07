@@ -871,6 +871,11 @@
 /obj/machinery/light/floor,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"ed" = (
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/f13/wood,
+/area/f13/building/tribal)
 "ei" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -1289,6 +1294,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
+"fW" = (
+/obj/structure/simple_door/wood,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/tribal)
 "fX" = (
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
@@ -1731,14 +1743,6 @@
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
-/area/f13/building/tribal)
-"hK" = (
-/obj/structure/bed/old{
-	pixel_y = 12
-	},
-/obj/structure/bed/old,
-/obj/item/bedsheet/doublesheetbrown,
-/turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "hL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3457,10 +3461,13 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "pk" = (
-/obj/structure/simple_door/wood,
-/obj/structure/decoration/rag,
-/obj/item/lock_bolt,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/barricade/wooden/strong{
+	obj_integrity = 500
+	},
+/obj/structure/curtain{
+	color = "#450159"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "pm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3545,6 +3552,22 @@
 /area/f13/building)
 "pK" = (
 /turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
+"pO" = (
+/obj/structure/rack,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/head/helmet/f13/deathskull,
+/obj/item/clothing/under/f13/female/tribal,
+/obj/item/clothing/under/f13/tribal,
+/obj/item/clothing/under/f13/tribal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "pP" = (
 /turf/open/floor/carpet/purple,
@@ -4962,11 +4985,6 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
-"wF" = (
-/obj/structure/table/wood/settler,
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/f13/wood,
-/area/f13/building/tribal)
 "wJ" = (
 /obj/structure/bookcase,
 /turf/open/floor/f13{
@@ -5306,12 +5324,8 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "yn" = (
-/obj/structure/barricade/wooden/strong{
-	obj_integrity = 500
-	},
-/obj/structure/curtain{
-	color = "#450159"
-	},
+/obj/structure/simple_door/wood,
+/obj/item/lock_bolt,
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "yr" = (
@@ -6939,11 +6953,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/city)
 "EU" = (
-/obj/structure/simple_door/wood,
-/obj/item/lock_bolt{
-	dir = 1
+/obj/structure/bed/old{
+	pixel_y = 12
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/bed/old,
+/obj/item/bedsheet/doublesheetbrown,
+/turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "EV" = (
 /obj/structure/railing{
@@ -7998,6 +8013,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"JJ" = (
+/obj/structure/simple_door/wood,
+/obj/structure/decoration/rag,
+/obj/item/lock_bolt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal)
 "JM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10647,11 +10668,6 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
-"Vp" = (
-/obj/structure/simple_door/wood,
-/obj/item/lock_bolt,
-/turf/open/floor/f13/wood,
-/area/f13/building/tribal)
 "Vq" = (
 /mob/living/simple_animal/hostile/stalker{
 	faction = list("neutral");
@@ -13045,7 +13061,7 @@ Pb
 Pb
 Pb
 Pb
-Vp
+yn
 Pb
 Pb
 SM
@@ -13282,7 +13298,7 @@ jt
 zX
 zL
 zL
-yn
+pk
 Pb
 Pb
 TL
@@ -13563,7 +13579,7 @@ rz
 uk
 Pb
 Pb
-yn
+pk
 Gk
 Yj
 Yj
@@ -13798,10 +13814,10 @@ bo
 oc
 rz
 rz
-yn
+pk
 rz
 rz
-yn
+pk
 rz
 by
 aM
@@ -13811,14 +13827,14 @@ uZ
 aM
 mX
 rz
-yn
+pk
 rz
 rz
-yn
+pk
 rz
 rz
 rz
-yn
+pk
 rz
 rz
 Gk
@@ -15844,7 +15860,7 @@ GU
 GU
 rz
 rz
-yn
+pk
 rz
 rz
 uZ
@@ -17178,7 +17194,7 @@ uZ
 uZ
 uZ
 rz
-yn
+pk
 Xc
 vx
 rz
@@ -17388,7 +17404,7 @@ rz
 Ll
 Pb
 Pb
-yn
+pk
 uZ
 uZ
 uZ
@@ -18157,7 +18173,7 @@ GU
 GU
 rz
 rz
-Ll
+pO
 Pb
 Pb
 Pb
@@ -18419,7 +18435,7 @@ Pb
 Pb
 Pb
 Pb
-yn
+pk
 uZ
 uZ
 uZ
@@ -18702,7 +18718,7 @@ Aj
 uZ
 uZ
 uZ
-pk
+JJ
 Pb
 Pb
 Pb
@@ -18959,7 +18975,7 @@ Aj
 GP
 uZ
 uZ
-yn
+pk
 Pb
 Pb
 KP
@@ -19219,7 +19235,7 @@ uZ
 mX
 Ll
 bL
-hK
+EU
 rz
 uZ
 uZ
@@ -19955,7 +19971,7 @@ GU
 GU
 GU
 KI
-Pb
+Mo
 gO
 TL
 Pb
@@ -20471,7 +20487,7 @@ GU
 mX
 Pb
 jG
-wF
+ed
 Pb
 os
 TL
@@ -20983,7 +20999,7 @@ GU
 GU
 GU
 mX
-Pb
+Mo
 gO
 TL
 Pb
@@ -21015,7 +21031,7 @@ Gz
 uZ
 uZ
 rz
-yn
+pk
 rz
 rz
 rz
@@ -21275,7 +21291,7 @@ rz
 Pb
 Pb
 Pb
-EU
+fW
 uZ
 uZ
 uZ
