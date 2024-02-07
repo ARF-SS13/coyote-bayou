@@ -810,6 +810,16 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
+/obj/effect/landmark/start/f13/wastelander/clubworker
+	name = "Club Worker"
+	icon_state = "Wastelander"
+	color = "#FF9999"
+
+/obj/effect/landmark/start/f13/wastelander/clubmanager
+	name = "Club Manager"
+	icon_state = "Wastelander"
+	color = "#FF9944"
+
 /obj/effect/landmark/start/f13/wastelander/den
 	name = "Den Citizen"
 	icon_state = "Wastelander"
