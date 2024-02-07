@@ -41,8 +41,6 @@
 /obj/item/huntinghorn/Initialize()
 	..()
 	instrument = new(src, instrument_name)
-	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_equip)
-	RegisterSignal(src, COMSIG_ITEM_DROPPED, .proc/on_drop)
 
 /obj/item/huntinghorn/ComponentInitialize()
 	. = ..()
@@ -50,8 +48,6 @@
 
 /obj/item/huntinghorn/Destroy()
 	. = ..()
-	UnregisterSignal(src, COMSIG_ITEM_EQUIPPED)
-	UnregisterSignal(src, COMSIG_ITEM_DROPPED)
 
 /obj/item/huntinghorn/examine_more()
 	// damage info
@@ -131,16 +127,18 @@
 			return
 
 /// When we wield a HH, wait for a delay before starting to record notes.
-/obj/item/huntinghorn/proc/on_equip(obj/item/this, mob/user)
+/obj/item/huntinghorn/pickup(mob/user)
+	. = ..()
 	var/delay = HH_WIELD_TIME
 	if(HAS_TRAIT(user, TRAIT_HH_DRAW_SPEED))
 		delay *= 0.5
-	spawn(HH_WIELD_TIME)
-		if((user.get_active_held_item() == src) && wielded)
+	spawn(delay)
+		if(user.get_active_held_item() == src)
 			set_ready_to_play(user, TRUE)
 
 /// Stop recording notes when we're not wielding the HH anymore.
-/obj/item/huntinghorn/proc/on_drop(obj/item/this, mob/user)
+/obj/item/huntinghorn/dropped(mob/user)
+	. = ..()
 	set_ready_to_play(user, FALSE)
 
 /// Handles the actual setting of readytoplay
