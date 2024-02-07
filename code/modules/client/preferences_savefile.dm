@@ -605,6 +605,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"silicon_flavor_text" = "",
 
 		"ooc_notes" = OOC_NOTE_TEMPLATE,
+		"background_info_notes" = BACKGROUND_INFO_NOTE_TEMPLATE,
 		"meat_type" = "Mammalian",
 		"taste" = "something salty",
 		"body_model" = MALE,
@@ -835,6 +836,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["silicon_feature_flavor_text"]	>> features["silicon_flavor_text"]
 	S["feature_ooc_notes"]				>> features["ooc_notes"]
+	S["feature_background_info_notes"]	>> features["background_info_notes"]
 	S["feature_flist"]					>> features["flist"]
 	S["silicon_flavor_text"]			>> features["silicon_flavor_text"]
 
@@ -1111,6 +1113,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		features["ooc_notes"] = OOC_NOTE_TEMPLATE
 		WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
 
+	features["background_info_notes"]			= copytext(features["background_info_notes"], 1, MAX_FLAVOR_LEN)
+	if(features["background_info_notes"] == "")
+		features["background_info_notes"] = BACKGROUND_INFO_NOTE_TEMPLATE
+		WRITE_FILE(S["feature_background_info_notes"], features["background_info_notes"])
+
 	/// VORE SANITIZATION - tab 4 or suffer
 	vore_smell						= sanitize_integer(vore_smell, 						FALSE, TRUE, initial(vore_smell))
 	master_vore_toggle				= sanitize_integer(master_vore_toggle, 				FALSE, TRUE, initial(master_vore_toggle))
@@ -1354,6 +1361,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_womb"], features["has_womb"])
 
 	WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
+
+	WRITE_FILE(S["feature_background_info_notes"], features["background_info_notes"])
 
 	WRITE_FILE(S["feature_flist"], features["flist"])
 
