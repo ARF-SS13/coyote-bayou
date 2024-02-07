@@ -607,3 +607,15 @@
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_WORKER
 	spawn_thing = /obj/item/storage/box/tools/animal
+
+/datum/loadout_box/hunting_horn
+	entry_tag = "hunting horn"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_ADVENTURE
+	spawn_thing = /obj/item/storage/box/tools/hunting_horn
+
+/obj/item/storage/box/tools/hunting_horn/PopulateContents()
+	new /obj/item/melee/onehanded/knife/hunting(src) //for hunting
+	new /obj/item/huntinghorn(src) //for horn
+	new /obj/item/bikehorn(src) //for HONK
+
