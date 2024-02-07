@@ -2320,8 +2320,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "ko" = (
-/obj/structure/fluff/railing,
-/turf/open/transparent/openspace,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/building)
 "kp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5254,8 +5258,9 @@
 	},
 /area/f13/tribe)
 "xL" = (
-/obj/structure/fluff/railing{
-	dir = 6
+/obj/structure/railing{
+	dir = 6;
+	pixel_y = -4
 	},
 /turf/open/transparent/openspace,
 /area/f13/building)
@@ -39692,8 +39697,8 @@ Pd
 Pd
 lY
 lY
+di
 ko
-lY
 lY
 Pd
 Pd

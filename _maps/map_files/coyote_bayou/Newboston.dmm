@@ -5082,7 +5082,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dxS" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "dyy" = (
@@ -16026,6 +16028,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"kwQ" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "kxz" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/rack,
@@ -21822,6 +21828,13 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"opl" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "opm" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -22104,6 +22117,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"oAN" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "oBS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/deputy,
@@ -37608,9 +37625,9 @@ gcG
 gcG
 gcG
 gcG
-gcG
-gcG
-gcG
+mOz
+mOz
+mOz
 gcG
 gcG
 gcG
@@ -37865,9 +37882,9 @@ gcG
 gcG
 gcG
 gcG
-gcG
-gcG
-gcG
+mOz
+opl
+mOz
 gcG
 gcG
 gcG
@@ -38123,7 +38140,7 @@ gcG
 gcG
 mOz
 mOz
-mOz
+kwQ
 mOz
 mOz
 gcG
@@ -78963,7 +78980,7 @@ nRM
 vTF
 vHb
 maV
-mgE
+oAN
 mgE
 mgE
 oBS
@@ -79220,7 +79237,7 @@ nRM
 vTF
 vHb
 jyY
-mgE
+oAN
 mgE
 mgE
 jjz
