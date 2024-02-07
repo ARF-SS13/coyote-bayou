@@ -315,10 +315,6 @@
 /obj/structure/fence/corner/wooden,
 /turf/open/floor/f13,
 /area/f13/building)
-"ajI" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "ajM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
@@ -2065,6 +2061,12 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland)
+"bvK" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "bvR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -4669,8 +4671,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dll" = (
-/obj/structure/simple_door/metal/store{
-	req_one_access_txt = "135"
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt{
+	dir = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -6837,6 +6840,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
+"eEH" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "eER" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -9281,6 +9291,14 @@
 /obj/structure/wreck/trash/five_tires,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gjx" = (
+/obj/machinery/cardpuncher{
+	pixel_y = 3;
+	pixel_x = -28;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/city)
 "gkl" = (
 /obj/structure/wreck/trash/two_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11626,10 +11644,10 @@
 	},
 /area/f13/building)
 "hQs" = (
-/obj/structure/simple_door/metal/store{
-	req_one_access_txt = "135"
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt{
+	dir = 1
 	},
-/obj/structure/simple_door/tentflap_leather,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "hQP" = (
@@ -13156,13 +13174,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
-"iOK" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "iPg" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2"
@@ -20095,10 +20106,8 @@
 	},
 /area/f13/city)
 "nbY" = (
-/obj/structure/simple_door/metal/store{
-	req_one_access_txt = "135"
-	},
-/obj/structure/simple_door/tentflap_cloth,
+/obj/item/lock_bolt,
+/obj/structure/simple_door/tent,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "nbZ" = (
@@ -26989,6 +26998,7 @@
 	req_one_access_txt = "135"
 	},
 /obj/structure/simple_door/tent,
+/obj/item/lock_bolt,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "rPr" = (
@@ -32754,14 +32764,6 @@
 	icon_state = "pool_tile"
 	},
 /area/f13/building)
-"vAO" = (
-/obj/machinery/cardpuncher{
-	pixel_y = 3;
-	pixel_x = -28;
-	density = 0
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/city)
 "vBe" = (
 /obj/structure/barricade/bars,
 /turf/closed/wall/r_wall,
@@ -34558,6 +34560,10 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"wNR" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "wNU" = (
 /obj/machinery/smartfridge/bottlerack,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -35752,7 +35758,11 @@
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
 "xCL" = (
-/obj/structure/stairs/north,
+/obj/structure/stairs/north{
+	icon_state_override = "rockpile";
+	icon_state = "rockpile";
+	layer = 3
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/tribe)
 "xDL" = (
@@ -36347,6 +36357,9 @@
 /obj/structure/simple_door/tent,
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/lock_bolt{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "xYv" = (
@@ -36563,10 +36576,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"yfo" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "yfs" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
@@ -37891,7 +37900,7 @@ gcG
 gcG
 gcG
 mOz
-iOK
+eEH
 mOz
 gcG
 gcG
@@ -38148,7 +38157,7 @@ gcG
 gcG
 mOz
 mOz
-yfo
+bvK
 mOz
 mOz
 gcG
@@ -68456,7 +68465,7 @@ qEj
 uWo
 mec
 frU
-vAO
+gjx
 ciA
 ciA
 iVg
@@ -78988,7 +78997,7 @@ nRM
 vTF
 vHb
 maV
-ajI
+wNR
 mgE
 mgE
 oBS
@@ -79245,7 +79254,7 @@ nRM
 vTF
 vHb
 jyY
-ajI
+wNR
 mgE
 mgE
 jjz

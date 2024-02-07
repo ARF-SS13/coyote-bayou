@@ -282,14 +282,6 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
-"bd" = (
-/obj/structure/fence/wooden{
-	icon_state = "end_wood"
-	},
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/tribe)
 "bf" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
@@ -2328,13 +2320,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "ko" = (
-/obj/structure/railing{
-	dir = 1
+/obj/structure/fence/wooden{
+	icon_state = "end_wood"
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+/turf/open/floor/grass{
+	color = "#777777"
 	},
-/area/f13/building)
+/area/f13/tribe)
 "kp" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
@@ -2373,15 +2365,6 @@
 "kG" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#999999"
-	},
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/tribe)
-"kI" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/fence/corner/wooden{
-	dir = 1
 	},
 /turf/open/floor/grass{
 	color = "#777777"
@@ -11473,6 +11456,15 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/brotherhood)
+"YL" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "YM" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -11596,6 +11588,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/wasteland)
+"Zm" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "Zn" = (
 /obj/structure/wreck/trash/machinepile,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -28795,8 +28795,8 @@ uZ
 Lj
 uZ
 uZ
-kI
-bd
+YL
+ko
 tN
 tN
 tN
@@ -39721,7 +39721,7 @@ Pd
 lY
 lY
 di
-ko
+Zm
 lY
 Pd
 Pd
