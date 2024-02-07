@@ -71,6 +71,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	var/text = texts_by_atom[target]
 	if(!text)
 		return
+	if(flavor_name == "Background Info Notes" && ishuman(target))  //I really hope nobody sees how I did this, because it's cursed as hell
+		var/mob/living/carbon/human/H = target
+		if(H.dna.features["background_info_notes"] == BACKGROUND_INFO_NOTE_TEMPLATE)
+			return
 	if(examine_no_preview)
 		examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
 		return
