@@ -3072,10 +3072,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
-"cdx" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "cdN" = (
 /obj/structure/debris/v2{
 	pixel_x = -12;
@@ -14764,10 +14760,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/church)
-"jIn" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "jIx" = (
 /obj/structure/flora/wasteplant/wild_fungus,
 /turf/open/indestructible/ground/inside/mountain,
@@ -24490,8 +24482,8 @@
 /obj/item/choice_beacon/box/weapons_common,
 /obj/item/choice_beacon/box/weapons_common,
 /obj/item/choice_beacon/box/weapons_common,
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building/trader)
 "qkb" = (
@@ -25960,6 +25952,10 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood)
+"rgG" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "rgJ" = (
 /obj/structure/debris/v2{
 	opacity = 1
@@ -26976,6 +26972,13 @@
 /obj/item/broom,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rOT" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "rOW" = (
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -31697,13 +31700,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"uPI" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "uPM" = (
 /obj/item/reagent_containers/food/drinks/beer/light,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -35804,6 +35800,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/building/tribal)
+"xFq" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "xFC" = (
 /obj/structure/lamp_post/doubles/bent{
 	density = 0;
@@ -37883,7 +37883,7 @@ gcG
 gcG
 gcG
 mOz
-uPI
+rOT
 mOz
 gcG
 gcG
@@ -38140,7 +38140,7 @@ gcG
 gcG
 mOz
 mOz
-cdx
+xFq
 mOz
 mOz
 gcG
@@ -78980,7 +78980,7 @@ nRM
 vTF
 vHb
 maV
-jIn
+rgG
 mgE
 mgE
 oBS
@@ -79237,7 +79237,7 @@ nRM
 vTF
 vHb
 jyY
-jIn
+rgG
 mgE
 mgE
 jjz
