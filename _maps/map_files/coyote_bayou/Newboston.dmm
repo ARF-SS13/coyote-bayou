@@ -6386,13 +6386,13 @@
 	dir = 8;
 	pixel_y = 39
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = s
-	},
 /obj/structure/sign/directions/science{
 	dir = 4;
 	pixel_y = 23
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = s
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"

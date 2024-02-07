@@ -38,23 +38,7 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	loadout_options = list(
-//	/datum/outfit/loadout/raider_sheriff,
-	/datum/outfit/loadout/raider_sadist,
-//	/datum/outfit/loadout/raider_mobster,
-	/datum/outfit/loadout/raider_tribal,
-	/datum/outfit/loadout/raider_supafly,
-	/datum/outfit/loadout/raider_yankee,
-	/datum/outfit/loadout/raider_blast,
-	/datum/outfit/loadout/raider_painspike,
-	/datum/outfit/loadout/raider_badlands,
-	// /datum/outfit/loadout/raider_smith,
-	/datum/outfit/loadout/raider_vault,
-	/datum/outfit/loadout/raider_ncr,
-	// /datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_bos,
-	/datum/outfit/loadout/quack_doctor
-	)
+	
 
 
 /datum/outfit/job/wasteland/f13raider
