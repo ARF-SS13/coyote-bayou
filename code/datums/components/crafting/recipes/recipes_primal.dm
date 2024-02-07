@@ -562,10 +562,10 @@
 	name = "Light Armored Cloak"
 	result = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	time = 120
-	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
-				/obj/item/stack/sheet/leather = 6,
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 4,
+				/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/stack/sheet/cloth = 5)
+				/obj/item/stack/sheet/cloth = 2)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
