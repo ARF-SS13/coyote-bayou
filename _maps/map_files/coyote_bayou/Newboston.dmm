@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aap" = (
 /obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "aaF" = (
 /obj/machinery/workbench/forge,
@@ -4243,7 +4243,7 @@
 /area/f13/tribe)
 "cUv" = (
 /obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "cUE" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4365,7 +4365,7 @@
 	pixel_y = 18
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "cXj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5259,7 +5259,7 @@
 "dHd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "dHF" = (
 /obj/machinery/workbench,
@@ -5515,7 +5515,7 @@
 	randomizer_tag = "Newb Oston Gaming 2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "dOu" = (
 /obj/structure/nest/randomized{
@@ -7414,7 +7414,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2"
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "eZn" = (
 /obj/effect/decal/cleanable/dirt{
@@ -7623,7 +7623,7 @@
 /area/f13/wasteland)
 "fgh" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/city)
 "fgs" = (
 /obj/structure/nest/randomized{
@@ -8410,7 +8410,7 @@
 	},
 /area/f13/building)
 "fDY" = (
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/city)
 "fFj" = (
 /obj/structure/bed/oldalt,
@@ -9886,7 +9886,7 @@
 	},
 /area/f13/building)
 "gIL" = (
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "gJd" = (
 /obj/structure/flora/wasteplant/wild_xander,
@@ -11179,7 +11179,7 @@
 	randomizer_kind = "trash mobs";
 	randomizer_tag = "Newb Oston Gaming 2"
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "hCn" = (
 /turf/open/floor/plasteel/f13{
@@ -16124,7 +16124,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "kEF" = (
 /obj/structure/rack,
@@ -18799,7 +18799,7 @@
 /area/f13/building)
 "mlN" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "mlP" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews,
@@ -24620,9 +24620,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qrz" = (
-/obj/structure/stairs/north{
-	dir = 8
-	},
+/obj/structure/stairs/west,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "qrE" = (
@@ -29561,7 +29559,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "tuV" = (
 /obj/effect/decal/marking{
@@ -30347,7 +30345,7 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "tVx" = (
 /obj/effect/decal/marking{
@@ -30582,8 +30580,7 @@
 /area/f13/building)
 "ueL" = (
 /turf/open/indestructible/ground/outside/desert,
-/turf/open/floor/plating/f13/inside/gravel,
-/area/f13/city,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "ueX" = (
 /obj/structure/simple_door/interior,
@@ -31322,7 +31319,7 @@
 /area/f13/building)
 "uFO" = (
 /mob/living/simple_animal/hostile/renegade/grunt,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "uFZ" = (
 /obj/structure/table/wood,
@@ -31544,7 +31541,7 @@
 	pixel_y = 25;
 	pixel_x = 16
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "uNx" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -31949,7 +31946,7 @@
 	layer = 4;
 	pixel_y = 40
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "vck" = (
 /obj/structure/table/reinforced,
@@ -32419,11 +32416,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "vsz" = (
-/obj/structure/stairs/north{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/west,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "vsB" = (
@@ -34063,7 +34058,7 @@
 /area/f13/wasteland)
 "wBB" = (
 /obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "wBD" = (
 /obj/structure/decoration/ruins{
@@ -34547,7 +34542,7 @@
 /obj/effect/decal/waste{
 	icon_state = "goo2"
 	},
-/turf/open/floor/plating/f13/inside/gravel,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "wSI" = (
 /obj/effect/decal/cleanable/dirt,
