@@ -837,7 +837,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 */
 
 /obj/machinery/mineral/wasteland_vendor/pipboy
-	name = "Nash Vending Machine - Identification"
+	name = "New Boston Vending Machine - Identification"
 	icon_state = "pipboy"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Datapal PDA",			/obj/item/pda,																25),
@@ -857,7 +857,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
-	name = "Nash Vending Machine - Money Exchanger"
+	name = "New Boston Vending Machine - Money Exchanger"
 	desc = "An automated machine that exhanges copper coins for more valuable ones. However, it takes a 10% cut."
 	icon_state = "liberationstation_idle"
 	prize_list = list(

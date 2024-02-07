@@ -157,7 +157,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"High Alderperson",
 	"Councilperson",
 	"Sheriff",
-	"Nash Security",
+	"New Boston Security",
 	"Deputy Mayor",
 //	"Farmer",
 //	"Prospector",
@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Preacher",
 	"Vertibird Pilot",
-	"Nash Librarian",
+	"New Boston Librarian",
 ))
 
 //Den Citizenship
@@ -344,7 +344,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
 	"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
