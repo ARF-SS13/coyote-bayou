@@ -41,6 +41,7 @@
 	name = "\proper road"
 	desc = "A stretch of road."
 	icon = 'icons/turf/f13road.dmi'
+	footstep = FOOTSTEP_ROAD
 	icon_state = "outermiddle"
 
 /turf/open/floor/plating/f13/outside/road/harsh
