@@ -620,5 +620,5 @@
 	new /obj/item/huntinghorn/defense(src) //for horn
 	new /obj/item/huntinghorn/utility(src) //for horn
 	new /obj/item/huntinghorn/healing(src) //for horn
-	new /obj/item/bikehorn(src) //for HONK
+	new /obj/item/bikehorn(src) //for HONK 
 
