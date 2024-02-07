@@ -1214,7 +1214,7 @@
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
-	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
+	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the local tribe."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST
@@ -2695,7 +2695,7 @@
 
 /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	name = "heavy tribal armor"
-	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
+	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the local tribe."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
@@ -3276,7 +3276,7 @@
 	item_state = "vest_follower"
 
 /obj/item/clothing/suit/armor/medium/vest/town
-	name = "Nash flak vest"
+	name = "New Boston flak vest"
 	desc = "A refurbished flak vest, repaired by the Nash Police Department. The ballistic nylon has a much tougher weave, but it still will not take acid or most high-powered rounds."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -3426,7 +3426,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
-	name = "Nash steel breastplate"
+	name = "New Boston steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like Nash citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'

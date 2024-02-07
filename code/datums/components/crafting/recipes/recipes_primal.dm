@@ -506,23 +506,22 @@
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/lighttribe
-	name = "Light Tribal Plates"
+	name = "Light Tribal Armor"
 	result = /obj/item/clothing/suit/armor/light/tribal/strips
-	time = 600
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/cloth = 5)
+	time = 75
+	reqs = list(/obj/item/stack/sheet/leather = 3)
 	category = CAT_PRIMAL
-	tools = list(TOOL_FORGE)
+	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/heavytribe
-	name = "Heavy Tribal Plates"
+	name = "Heavy Tribal Armor"
 	result = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
-	time = 600
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/cloth = 5)
+	time = 300
+	reqs = list(/obj/item/stack/sheet/bone = 8,
+				/obj/item/stack/sheet/leather = 1)
 	category = CAT_PRIMAL
-	tools = list(TOOL_FORGE)
+	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/goliathcloak
