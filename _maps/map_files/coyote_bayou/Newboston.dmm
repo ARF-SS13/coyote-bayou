@@ -409,6 +409,11 @@
 /area/f13/building)
 "anx" = (
 /obj/structure/fence/wooden,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12;
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/cave)
 "anR" = (
@@ -1194,7 +1199,10 @@
 	},
 /area/f13/wasteland)
 "aQG" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/stone_tile/slab{
+	color = "#997777"
+	},
+/obj/structure/fence/wooden,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/cave)
 "aRi" = (
@@ -4032,6 +4040,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"cLF" = (
+/obj/structure/stone_tile/surrounding_tile{
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "cMv" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -5959,6 +5973,10 @@
 /obj/structure/furnace{
 	light_range = 3
 	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "eeu" = (
@@ -6677,6 +6695,9 @@
 	color = "#43392c";
 	icon_state = "rockpile";
 	layer = 2.4;
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -7559,6 +7580,10 @@
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
+"fdN" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
 "fef" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Crimson Caravan Backroom";
@@ -7942,6 +7967,10 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/tcoms)
+"frm" = (
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "frp" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "bosloadingbay";
@@ -9486,6 +9515,16 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"grO" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1;
+	pixel_y = -16
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = -6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "gsl" = (
 /obj/structure/table/reinforced,
 /obj/item/phone,
@@ -10808,16 +10847,15 @@
 	},
 /area/f13/building)
 "hps" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 49;
-	layer = 5
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = -16
 	},
-/obj/structure/stone_tile/slab{
-	color = "#997777"
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
 "hpt" = (
 /turf/open/floor/f13,
@@ -11609,6 +11647,10 @@
 /mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hSs" = (
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "hSu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -12230,6 +12272,14 @@
 	},
 /turf/open/floor/f13,
 /area/f13/brotherhood)
+"ilF" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "imM" = (
 /obj/machinery/jukebox,
 /turf/open/floor/plasteel/f13{
@@ -18941,6 +18991,15 @@
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"mrl" = (
+/obj/structure/fence/wooden,
+/obj/structure/destructible/tribal_torch/lit{
+	layer = 3;
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/cave)
 "mrn" = (
 /mob/living/simple_animal/hostile/bloatfly,
 /obj/effect/decal/cleanable/dirt,
@@ -19133,7 +19192,10 @@
 	density = 0;
 	max_integrity = 9999
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/cave)
 "mzc" = (
 /obj/structure/closet/crate/large,
@@ -21450,6 +21512,12 @@
 /obj/structure/weightlifter,
 /turf/open/floor/f13,
 /area/f13/building)
+"oew" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "ofr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
@@ -21964,6 +22032,13 @@
 /obj/effect/spawner/lootdrop/bedsheet,
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"oxD" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8;
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "oxR" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old,
@@ -22817,7 +22892,10 @@
 /area/f13/building)
 "peC" = (
 /obj/structure/barricade/wooden,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
 "peH" = (
@@ -27017,9 +27095,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rVg" = (
-/obj/machinery/light/floor,
-/turf/open/floor/f13/wood,
-/area/f13/city)
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "rVr" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plasteel/f13{
@@ -27449,6 +27527,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
+"shc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "shf" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -27529,6 +27614,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"sjm" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/cave)
 "sjF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -28461,6 +28552,18 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"sMi" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "sMx" = (
 /obj/structure/railing{
 	dir = 8
@@ -29261,6 +29364,16 @@
 /obj/machinery/space_heater,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"tmF" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = -6
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "tmR" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt,
@@ -31822,6 +31935,10 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"uYJ" = (
+/obj/structure/glowshroom/shadowshroom,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "uZh" = (
 /obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt,
@@ -33500,6 +33617,15 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
+"wgf" = (
+/obj/structure/destructible/tribal_torch/lit{
+	layer = 3;
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/structure/fence/wooden,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/cave)
 "wgH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -34376,6 +34502,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"wNc" = (
+/obj/structure/glowshroom,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "wNg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -34791,6 +34921,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"xcw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/trash,
+/obj/machinery/light/floor,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "xdd" = (
 /obj/structure/table,
 /obj/item/trash/sosjerky,
@@ -34859,13 +34995,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xen" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 73;
-	layer = 5
-	},
-/turf/open/floor/plasteel/cult,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal/cave)
 "xeu" = (
 /obj/structure/table/wood,
@@ -35002,6 +35132,10 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
+"xhH" = (
+/obj/structure/stone_tile/block,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/cave)
 "xhQ" = (
 /obj/structure/closet/crate/freezer/blood,
 /obj/effect/decal/cleanable/dirt,
@@ -38218,7 +38352,7 @@ hTW
 rvy
 fbp
 hTW
-hTW
+frm
 gcG
 gcG
 hRl
@@ -40286,7 +40420,7 @@ qrT
 jwO
 qrT
 jwO
-sUi
+hTW
 hTW
 hTW
 mOz
@@ -40545,7 +40679,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+rVg
 mOz
 noh
 hTW
@@ -40781,7 +40915,7 @@ hTW
 rvy
 hTW
 hTW
-hTW
+uFG
 rvy
 hTW
 hTW
@@ -41329,7 +41463,7 @@ hTW
 hTW
 hTW
 sea
-hTW
+rVg
 xQu
 tNE
 eYb
@@ -41826,11 +41960,11 @@ hRl
 gcG
 gcG
 gcG
+bAD
 hTW
 hTW
 hTW
-hTW
-hTW
+rVg
 gcG
 hRl
 gcG
@@ -41843,7 +41977,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+rVg
 xQu
 kAN
 qZz
@@ -42344,7 +42478,7 @@ hTW
 hTW
 hTW
 gxV
-sUi
+hTW
 gcG
 gcG
 gcG
@@ -43113,7 +43247,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+sUi
 hTW
 hTW
 gcG
@@ -43363,6 +43497,7 @@ gcG
 gcG
 gcG
 gcG
+bAD
 hTW
 hTW
 hTW
@@ -43370,7 +43505,6 @@ hTW
 hTW
 hTW
 hTW
-rvy
 hTW
 hTW
 gcG
@@ -43859,7 +43993,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+uFG
 hTW
 hTW
 hTW
@@ -44392,16 +44526,16 @@ gcG
 mOz
 nwa
 dLc
-aQG
+nwa
 hTW
 hTW
 hTW
 hTW
 hTW
 hTW
-sUi
 hTW
 hTW
+rVg
 gcG
 xQu
 roI
@@ -44655,7 +44789,7 @@ hTW
 hTW
 hTW
 hTW
-rvy
+hTW
 hTW
 hTW
 hTW
@@ -44905,8 +45039,8 @@ mOz
 mOz
 mOz
 anx
-dLc
-nwa
+aQG
+mrl
 hTW
 hTW
 hTW
@@ -45161,7 +45295,7 @@ fAZ
 hTW
 hTW
 mOz
-hps
+dLc
 nwa
 dLc
 hTW
@@ -45418,13 +45552,13 @@ nDS
 hTW
 hTW
 dPw
-xen
+nwa
 dLc
 nwa
+xen
 hTW
 hTW
-hTW
-hTW
+sUi
 hTW
 hTW
 hTW
@@ -45675,12 +45809,12 @@ eBI
 hTW
 hTW
 mOz
-hps
+dLc
 nwa
 dLc
 hTW
+xen
 hTW
-sUi
 hTW
 hTW
 hTW
@@ -45933,15 +46067,15 @@ vBL
 mOz
 kLz
 anx
-dLc
-nwa
+aQG
+wgf
+hTW
+hTW
+xen
 hTW
 hTW
 hTW
 hTW
-hTW
-gxV
-sUi
 hTW
 gcG
 gcG
@@ -46195,8 +46329,8 @@ dLc
 hTW
 hTW
 hTW
+xen
 hTW
-rvy
 hTW
 hTW
 gcG
@@ -46425,7 +46559,7 @@ gcG
 gcG
 hTW
 bYm
-hTW
+uFG
 gcG
 gcG
 hRl
@@ -46448,12 +46582,12 @@ mOz
 mOz
 mOz
 dLc
-aQG
+nwa
 hTW
 hTW
+sUi
 hTW
-hTW
-hTW
+xen
 hTW
 hTW
 gcG
@@ -46710,7 +46844,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+xen
 hTW
 hTW
 gcG
@@ -46968,7 +47102,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+xen
 hTW
 xxz
 gcG
@@ -47225,7 +47359,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+xen
 hTW
 hTW
 hTW
@@ -47483,8 +47617,8 @@ hTW
 gcG
 bAD
 hTW
-hTW
-hTW
+xen
+xen
 hTW
 hTW
 gcG
@@ -47742,7 +47876,7 @@ gcG
 hTW
 hTW
 hTW
-hTW
+xen
 hTW
 xxz
 gcG
@@ -47966,7 +48100,7 @@ gcG
 gcG
 gcG
 hTW
-hTW
+uFG
 gcG
 gcG
 gcG
@@ -48000,13 +48134,13 @@ gcG
 hTW
 hTW
 hTW
+gIL
 dfD
 dfD
-dfD
 tPQ
 tPQ
 tPQ
-tPQ
+pft
 tPQ
 tPQ
 tPQ
@@ -48241,7 +48375,7 @@ hTW
 hTW
 fbp
 rvy
-hTW
+frm
 gcG
 gcG
 hRl
@@ -48258,7 +48392,7 @@ gcG
 gcG
 bAD
 dfD
-dfD
+gIL
 tPQ
 tPQ
 tPQ
@@ -49289,7 +49423,7 @@ tPQ
 tPQ
 gIL
 tPQ
-tPQ
+pft
 tPQ
 tPQ
 tPQ
@@ -49541,7 +49675,7 @@ gcG
 gcG
 tPQ
 tPQ
-gIL
+fdN
 tPQ
 tPQ
 gIL
@@ -50032,7 +50166,7 @@ hRl
 gcG
 gcG
 gcG
-hTW
+frm
 gcG
 gcG
 gcG
@@ -50535,7 +50669,7 @@ gcG
 gcG
 gcG
 gcG
-hTW
+uYJ
 gcG
 gcG
 gcG
@@ -50790,12 +50924,12 @@ hRl
 gcG
 gcG
 gcG
+gxV
 hTW
 hTW
 hTW
 hTW
-hTW
-hTW
+gxV
 gcG
 gcG
 gcG
@@ -51046,14 +51180,14 @@ hRl
 hRl
 gcG
 gcG
+gxV
+hTW
 hTW
 hTW
 hTW
 hTW
 hTW
 gxV
-hTW
-hTW
 gcG
 gcG
 hRl
@@ -51305,7 +51439,7 @@ gcG
 gcG
 gcG
 gcG
-hTW
+wNc
 hTW
 hTW
 hTW
@@ -51561,12 +51695,12 @@ hRl
 gcG
 gcG
 gcG
+uYJ
 hTW
 hTW
 hTW
 hTW
-hTW
-hTW
+uYJ
 gcG
 gcG
 gcG
@@ -51818,13 +51952,13 @@ hRl
 gcG
 gcG
 hTW
+tmF
+hps
+ilF
+oxD
 hTW
 hTW
-gxV
-hTW
-dmL
-hTW
-hTW
+wNc
 gcG
 gcG
 gcG
@@ -52073,10 +52207,10 @@ hRl
 hRl
 hRl
 gcG
+wNc
 hTW
 hTW
-hTW
-hTW
+xhH
 myL
 hTW
 hTW
@@ -52333,8 +52467,8 @@ gcG
 gcG
 hTW
 hTW
-hTW
-hTW
+xhH
+sjm
 hTW
 hTW
 hTW
@@ -52588,12 +52722,12 @@ hRl
 hRl
 gcG
 gcG
-hTW
-hTW
-hTW
-hTW
-hTW
-hTW
+uYJ
+grO
+shc
+sMi
+cLF
+uYJ
 gcG
 gcG
 gcG
@@ -52849,7 +52983,7 @@ gcG
 hTW
 hTW
 hTW
-hTW
+wNc
 gcG
 gcG
 gcG
@@ -55670,7 +55804,7 @@ hRl
 (75,1,1) = {"
 hRl
 hRl
-gcG
+hRl
 hRl
 hRl
 gcG
@@ -65756,7 +65890,7 @@ eet
 tJH
 bOw
 taz
-taz
+oew
 taz
 gBA
 iNm
@@ -66526,8 +66660,8 @@ phw
 nbV
 taz
 taz
-cqs
-rVg
+xcw
+taz
 taz
 cqs
 cUd
@@ -67297,8 +67431,8 @@ wnf
 qPo
 taz
 aBY
-aBY
-rVg
+keO
+taz
 xXp
 aBY
 nnK
@@ -68068,8 +68202,8 @@ jef
 qZx
 aBY
 hxo
-aBY
 keO
+aBY
 taz
 taz
 kVi
@@ -68585,7 +68719,7 @@ aBY
 taz
 taz
 cqs
-taz
+hSs
 iNm
 tHN
 fuD

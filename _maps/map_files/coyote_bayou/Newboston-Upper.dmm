@@ -1823,7 +1823,7 @@
 	pixel_x = -2;
 	pixel_y = -6
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "ie" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2267,7 +2267,12 @@
 	icon_state = "skin";
 	pixel_x = 8
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8;
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "kk" = (
 /obj/machinery/photocopier,
@@ -2382,7 +2387,7 @@
 /area/f13/building)
 "kW" = (
 /obj/machinery/workbench,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "kY" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -3877,7 +3882,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/item/reagent_containers/glass/bucket,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "rw" = (
 /turf/open/floor/plating/f13/outside/roof/metal/verdigris,
@@ -4322,7 +4327,7 @@
 /obj/structure/rack,
 /obj/item/twohanded/fireaxe/bmprsword,
 /obj/item/twohanded/fireaxe/bmprsword,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "uh" = (
 /obj/structure/chair/right{
@@ -4446,7 +4451,7 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "uC" = (
 /obj/machinery/hydroponics/soil{
@@ -5092,7 +5097,7 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/structure/anvil/obtainable/basic,
 /obj/item/melee/smith/hammer/premade,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "xc" = (
 /obj/machinery/light/floor,
@@ -6148,7 +6153,7 @@
 "BG" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/structure/furnace,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "BH" = (
 /obj/item/gun/ballistic/shotgun/trench{
@@ -7965,7 +7970,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Js" = (
 /obj/effect/turf_decal/stripes/line{
@@ -8560,7 +8565,7 @@
 /obj/item/wrench/basic,
 /obj/item/wirecutters/basic,
 /obj/item/weldingtool/basic,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Mf" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -8619,7 +8624,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/rods/twentyfive,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Mt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8901,7 +8906,7 @@
 /obj/structure/rack,
 /obj/item/storage/backpack/spearquiver/empty,
 /obj/item/storage/backpack/spearquiver/empty,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "NR" = (
 /obj/effect/turf_decal/big{
@@ -9320,6 +9325,9 @@
 	dir = 8
 	},
 /area/f13/city)
+"PB" = (
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tribal)
 "PC" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -9863,7 +9871,12 @@
 	icon_state = "skin";
 	pixel_x = -8
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8;
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Sd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10541,7 +10554,7 @@
 /area/f13/building/hospital/clinic/nash)
 "UP" = (
 /obj/machinery/smartfridge/drying_rack,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "UQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11192,7 +11205,7 @@
 /obj/structure/rack,
 /obj/item/twohanded/spear,
 /obj/item/twohanded/spear,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "XQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11239,7 +11252,7 @@
 /obj/structure/rack,
 /obj/item/storage/bag/tribe_quiver/light,
 /obj/item/storage/bag/tribe_quiver/light,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Yd" = (
 /obj/structure/pondlily_small,
@@ -11319,7 +11332,7 @@
 /obj/item/flashlight/lantern,
 /obj/item/flashlight/lantern,
 /obj/item/flashlight/lantern,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Yw" = (
 /obj/structure/toilet{
@@ -11490,7 +11503,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "Zh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22287,8 +22300,8 @@ GU
 GU
 GU
 mX
-tD
-tD
+PB
+PB
 Yb
 NQ
 Zg
@@ -22545,10 +22558,10 @@ rz
 rz
 rz
 Jr
-tD
-tD
-tD
-tD
+PB
+PB
+PB
+PB
 ki
 uZ
 uZ
@@ -22801,11 +22814,11 @@ cg
 Pb
 Pb
 Wb
-tD
-tD
-tD
-tD
-tD
+PB
+PB
+PB
+PB
+PB
 Sc
 uZ
 uZ
@@ -23059,9 +23072,9 @@ Pb
 Pb
 KI
 Yv
-tD
-tD
-tD
+PB
+PB
+PB
 wY
 rz
 uZ
@@ -23316,9 +23329,9 @@ Pb
 Pb
 mX
 Mr
-tD
-tD
-tD
+PB
+PB
+PB
 rv
 rz
 uZ
@@ -23573,9 +23586,9 @@ Pb
 Pb
 mX
 Me
-tD
-tD
-tD
+PB
+PB
+PB
 id
 rz
 uZ
@@ -23830,9 +23843,9 @@ uk
 fl
 mX
 kW
-tD
-tD
-tD
+PB
+PB
+PB
 BG
 rz
 uZ
@@ -24087,10 +24100,10 @@ rz
 rz
 KI
 Jr
-tD
-tD
-tD
-tD
+PB
+PB
+PB
+PB
 ki
 uZ
 uZ
@@ -24343,11 +24356,11 @@ GU
 GU
 GU
 mX
-tD
-tD
-tD
-tD
-tD
+PB
+PB
+PB
+PB
+PB
 Sc
 uZ
 uZ
@@ -24600,7 +24613,7 @@ GU
 GU
 GU
 mX
-tD
+PB
 UP
 uf
 XN
