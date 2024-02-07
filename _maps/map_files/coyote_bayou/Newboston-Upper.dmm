@@ -282,6 +282,14 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
+"bd" = (
+/obj/structure/fence/wooden{
+	icon_state = "end_wood"
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "bf" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
@@ -2365,6 +2373,15 @@
 "kG" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#999999"
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/tribe)
+"kI" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/fence/corner/wooden{
+	dir = 1
 	},
 /turf/open/floor/grass{
 	color = "#777777"
@@ -6522,6 +6539,9 @@
 "CU" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
 /turf/open/floor/grass{
 	color = "#777777"
 	},
@@ -8722,6 +8742,9 @@
 "MH" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
 /turf/open/floor/grass{
 	color = "#777777"
 	},
@@ -28772,8 +28795,8 @@ uZ
 Lj
 uZ
 uZ
-uQ
-uZ
+kI
+bd
 tN
 tN
 tN
@@ -29029,7 +29052,7 @@ uZ
 uZ
 uZ
 CU
-uZ
+ia
 tN
 tN
 tN
@@ -29285,7 +29308,7 @@ uZ
 iF
 uZ
 MH
-uZ
+ia
 tN
 tN
 tN
@@ -29540,8 +29563,8 @@ uZ
 uZ
 uZ
 uZ
-uZ
-uZ
+aM
+ia
 tN
 tN
 tN
@@ -29797,7 +29820,7 @@ uQ
 km
 uQ
 uQ
-aM
+QJ
 tN
 tN
 tN
@@ -30308,8 +30331,8 @@ GU
 GU
 GU
 uZ
-uZ
-uZ
+aM
+LH
 ia
 tN
 tN

@@ -315,6 +315,10 @@
 /obj/structure/fence/corner/wooden,
 /turf/open/floor/f13,
 /area/f13/building)
+"ajI" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "ajM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
@@ -13152,6 +13156,13 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"iOK" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "iPg" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2"
@@ -25952,10 +25963,6 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood)
-"rgG" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "rgJ" = (
 /obj/structure/debris/v2{
 	opacity = 1
@@ -26972,13 +26979,6 @@
 /obj/item/broom,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"rOT" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "rOW" = (
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -32754,6 +32754,14 @@
 	icon_state = "pool_tile"
 	},
 /area/f13/building)
+"vAO" = (
+/obj/machinery/cardpuncher{
+	pixel_y = 3;
+	pixel_x = -28;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/city)
 "vBe" = (
 /obj/structure/barricade/bars,
 /turf/closed/wall/r_wall,
@@ -35800,10 +35808,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/building/tribal)
-"xFq" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "xFC" = (
 /obj/structure/lamp_post/doubles/bent{
 	density = 0;
@@ -36559,6 +36563,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"yfo" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "yfs" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
@@ -37883,7 +37891,7 @@ gcG
 gcG
 gcG
 mOz
-rOT
+iOK
 mOz
 gcG
 gcG
@@ -38140,7 +38148,7 @@ gcG
 gcG
 mOz
 mOz
-xFq
+yfo
 mOz
 mOz
 gcG
@@ -68448,7 +68456,7 @@ qEj
 uWo
 mec
 frU
-ciA
+vAO
 ciA
 ciA
 iVg
@@ -78980,7 +78988,7 @@ nRM
 vTF
 vHb
 maV
-rgG
+ajI
 mgE
 mgE
 oBS
@@ -79237,7 +79245,7 @@ nRM
 vTF
 vHb
 jyY
-rgG
+ajI
 mgE
 mgE
 jjz
