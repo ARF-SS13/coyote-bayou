@@ -1,7 +1,7 @@
 // Different Paint!
 
 /datum/crafting_recipe/paint/redreroll
-	name = "Red Paint"
+	name = "Re-roll Red Paint"
 	result = /obj/item/tool_upgrade/paint/red
 	reqs = list(/obj/item/tool_upgrade/paint/red = 2)
 	time = 5
@@ -9,7 +9,7 @@
 	subcategory = CAT_PARTS
 
 /datum/crafting_recipe/paint/bluereroll
-	name = "Blue Paint"
+	name = "Re-roll Blue Paint"
 	result = /obj/item/tool_upgrade/paint/blue
 	reqs = list(/obj/item/tool_upgrade/paint/blue = 2)
 	time = 5
@@ -17,9 +17,33 @@
 	subcategory = CAT_PARTS
 
 /datum/crafting_recipe/paint/yellowreroll
-	name = "Yellow Paint"
+	name = "Re-roll Yellow Paint"
 	result = /obj/item/tool_upgrade/paint/yellow
 	reqs = list(/obj/item/tool_upgrade/paint/yellow = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/orangereroll
+	name = "Re-roll Orange Paint"
+	result = /obj/item/tool_upgrade/paint/orange
+	reqs = list(/obj/item/tool_upgrade/paint/orange = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/purplereroll
+	name = "Re-roll Purple Paint"
+	result = /obj/item/tool_upgrade/paint/purple
+	reqs = list(/obj/item/tool_upgrade/paint/purple = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/greenreroll
+	name = "Re-roll Green Paint"
+	result = /obj/item/tool_upgrade/paint/green
+	reqs = list(/obj/item/tool_upgrade/paint/green = 2)
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
@@ -54,9 +78,9 @@
 /datum/crafting_recipe/paint/black
 	name = "Black Paint"
 	result = /obj/item/tool_upgrade/paint/black
-	reqs = list(/obj/item/tool_upgrade/paint/red = 1,
-				/obj/item/tool_upgrade/paint/blue = 1,
-				/obj/item/tool_upgrade/paint/yellow = 1)
+	reqs = list(/obj/item/tool_upgrade/paint/orange = 1,
+				/obj/item/tool_upgrade/paint/purple = 1,
+				/obj/item/tool_upgrade/paint/green = 1)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
