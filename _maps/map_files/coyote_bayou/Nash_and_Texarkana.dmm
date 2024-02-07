@@ -978,6 +978,18 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
+"aej" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/nash/theloop)
 "aek" = (
 /obj/structure/table,
 /obj/item/flashlight/lantern,
@@ -1675,33 +1687,6 @@
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"ahk" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
-"ahl" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "aho" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -2277,6 +2262,19 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
+"ajt" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft0"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "aju" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/mug/coco,
@@ -4791,6 +4789,20 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/store)
+"atr" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "ats" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -5104,6 +5116,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/store)
+"auo" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "auq" = (
 /obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
@@ -5901,18 +5926,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/tunnel/southwest)
-"awX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/nash/theloop)
 "awY" = (
 /obj/effect/spawner/lootdrop/low_tools,
 /obj/structure/rack/shelf_metal{
@@ -6495,6 +6508,19 @@
 	icon_state = "outerpavement - N"
 	},
 /area/f13/wasteland)
+"azt" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "azu" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -7482,19 +7508,6 @@
 	icon_state = "rubble"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"aCJ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "aCK" = (
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn,
 /turf/open/indestructible/ground/outside/dirt,
@@ -9540,19 +9553,6 @@
 	icon_state = "outermaincornerinner - W"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"aJI" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "aJJ" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowdestroyed"
@@ -13410,6 +13410,23 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
+"aWK" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "aWL" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
@@ -13577,6 +13594,19 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/coyote/nash/massfus/sidebuilding)
+"aXF" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderlefttop"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "aXH" = (
 /obj/machinery/power/terminal{
 	dir = 8;
@@ -13896,20 +13926,6 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/ruins)
-"aZn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "aZr" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -13967,6 +13983,19 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"aZG" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright2"
+	},
+/area/f13/wasteland/city)
 "aZH" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /obj/effect/turf_decal/weather/dirt{
@@ -14209,6 +14238,19 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"baZ" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright3"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "bba" = (
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/outside/dirt,
@@ -14379,6 +14421,21 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"bbZ" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/structure/flora/grass/coyote/one,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "bca" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -14403,19 +14460,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/abandoned)
-"bcr" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "bct" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -14640,19 +14684,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
-"bdn" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright3"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "bdo" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -15504,21 +15535,6 @@
 /obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
-"bgo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "bgp" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -15684,6 +15700,19 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
+"bhh" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain2bottom"
+	},
+/area/f13/wasteland/city)
 "bhk" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -15784,6 +15813,19 @@
 	icon_state = "verticalleftborderright2"
 	},
 /area/f13/wasteland/city/nash/suburbs)
+"bhE" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright2top"
+	},
+/area/f13/wasteland/city)
 "bhF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16966,19 +17008,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ruins)
-"bmQ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "bmW" = (
 /obj/structure/bookcase,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -18063,19 +18092,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"buU" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "bve" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
@@ -18407,6 +18423,28 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
+"bxV" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "bxW" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -18444,19 +18482,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
-"byg" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "byh" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/f13{
@@ -18897,20 +18922,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/coyote/nash/museum/groundfloor)
-"bCx" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "bCy" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/item/storage/box/prisoner,
@@ -19133,6 +19144,20 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/city/nash/theloop)
+"bEW" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city/nash/theloop)
 "bEY" = (
@@ -19874,20 +19899,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/building)
-"bOQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
-	},
-/area/f13/wasteland/city)
 "bOY" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -20421,6 +20432,19 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"bXh" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	icon_state = "verticalinnermainbottom"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "bXx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
@@ -21102,6 +21126,21 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/ruins)
+"cgO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "cgR" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
@@ -21675,20 +21714,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
-"clx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "cly" = (
 /obj/structure/tires/two,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -22695,24 +22720,6 @@
 	icon_state = "outerpavement - W"
 	},
 /area/f13/wasteland)
-"csd" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "csf" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbrokenvertical"
@@ -23073,19 +23080,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building/abandoned)
-"cuT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland/city/nash/theloop)
 "cuU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -23695,20 +23689,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
-"cDf" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 1;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "cDr" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23930,17 +23910,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"cGt" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/suburbs)
 "cGz" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{
@@ -24297,6 +24266,8 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "cLg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -24305,9 +24276,7 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderlefttop"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/theloop)
 "cLj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -24652,6 +24621,20 @@
 	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"cQa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "cQb" = (
 /obj/structure/table/wood,
 /obj/item/binoculars,
@@ -25252,6 +25235,20 @@
 	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/building/abandoned)
+"cXY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "cXZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
@@ -25262,21 +25259,6 @@
 "cYd" = (
 /obj/structure/tires,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"cYw" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cYE" = (
@@ -25664,19 +25646,6 @@
 /obj/structure/flora/tree/thick_tree,
 /turf/open/indestructible/ground/outside/desert,
 /area/debug_mussy)
-"deq" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2bottom"
-	},
-/area/f13/wasteland/city)
 "der" = (
 /obj/structure/chair/right,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -26357,19 +26326,6 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland/city/nash/suburbs)
-"dnZ" = (
-/obj/structure/flora/grass/coyote/one,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "doa" = (
 /obj/structure/filingcabinet{
 	pixel_x = 10
@@ -26990,19 +26946,6 @@
 "dwG" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/debug_mussy)
-"dwT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/nash/theloop)
 "dxc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -27104,6 +27047,19 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/lobby)
+"dyB" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "dyN" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/inside/dirt,
@@ -27242,6 +27198,11 @@
 	icon_state = "innermaincornerouter - W"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"dBD" = (
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "cross1"
+	},
+/area/f13/wasteland)
 "dBH" = (
 /obj/structure/filingcabinet{
 	pixel_x = 12;
@@ -27333,6 +27294,21 @@
 	name = "tile"
 	},
 /area/f13/building/abandoned)
+"dCK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop2"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "dCV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cabinet/anchored,
@@ -27348,6 +27324,20 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
+"dDs" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dDt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -27596,6 +27586,19 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"dGz" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft0"
+	},
+/area/f13/wasteland/city)
 "dGK" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6";
@@ -27846,20 +27849,6 @@
 /obj/structure/sink/deep_water,
 /turf/open/water,
 /area/f13/wasteland)
-"dJr" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/city/nash/downtown)
 "dJB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -28922,6 +28911,20 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"dZI" = (
+/obj/machinery/vending/cola/random,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain1"
+	},
+/area/f13/wasteland/city)
 "dZM" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -29275,6 +29278,19 @@
 	icon_state = "horizontalbottombordertop1"
 	},
 /area/f13/wasteland/city)
+"eeV" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "efg" = (
 /turf/open/floor/f13/wood,
 /area/f13/building/sewers)
@@ -29393,15 +29409,6 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/building/abandoned)
-"ehf" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland)
 "ehj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -29679,20 +29686,6 @@
 	icon_state = "horizontalbottombordertopright"
 	},
 /area/f13/wasteland/city)
-"elO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/roaddirt{
-	icon_state = "innerpavementcorner"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "elP" = (
 /obj/item/bedsheet{
 	icon_state = "sheetbrown"
@@ -29806,19 +29799,6 @@
 "emJ" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/wasteland/massfusion)
-"emK" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom2"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "emO" = (
 /obj/structure/bonfire/prelit,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30268,6 +30248,21 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"esN" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "esY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerpavement - S"
@@ -30569,27 +30564,8 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/museum/groundfloor)
-"ewx" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "ewI" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -30598,10 +30574,10 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop3"
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain2"
 	},
-/area/f13/wasteland/city/nash/suburbs)
+/area/f13/wasteland/city)
 "ewJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -30745,6 +30721,20 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"eyz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "eyF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -31097,6 +31087,19 @@
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"eEA" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "eEC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -31156,20 +31159,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city/nash/theloop)
-"eFw" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "eFx" = (
 /obj/machinery/iv_drip,
 /obj/structure/decoration/clock/old/active{
@@ -31666,23 +31655,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
-"eMe" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "eMh" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -32620,20 +32592,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/ruins)
-"eZj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "eZp" = (
 /obj/structure/rack,
 /obj/item/storage/pill_bottle/chem_tin/radx,
@@ -32664,21 +32622,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"eZw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop2"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "eZD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -32821,20 +32764,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
-"fbl" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "fbu" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -33099,20 +33028,6 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/city)
-"feN" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "feV" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt,
@@ -34103,20 +34018,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"fuv" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fuB" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War wall made of solid concrete.";
@@ -34296,19 +34197,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/theloop)
-"fwF" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "fwI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -34420,30 +34308,6 @@
 	icon_state = "wide-broken1"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
-"fye" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
-	},
-/area/f13/wasteland/city/nash/downtown)
-"fyh" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/downtown)
 "fyt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -34564,6 +34428,19 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building/abandoned)
+"fzB" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland)
 "fzE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -34863,20 +34740,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/workshop)
-"fDR" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "fDS" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbroken"
@@ -35072,6 +34935,19 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/sidebuilding)
+"fGc" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "fGd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
@@ -35296,25 +35172,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
-"fJC" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "fJH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -36391,19 +36248,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/caves)
-"fVZ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "fWe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -36627,6 +36471,7 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "fZN" = (
+/obj/structure/spacevine,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -36635,8 +36480,10 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland/city/nash/theloop)
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "fZP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
@@ -38913,6 +38760,10 @@
 	},
 /area/f13/building/coyote/nash/cornerdiner)
 "gFz" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -38921,10 +38772,12 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright2"
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
 	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
+/area/f13/wasteland)
 "gFA" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -39000,20 +38853,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
-"gGr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/nash/theloop)
 "gGt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom1"
@@ -41076,23 +40915,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"hkC" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "hkG" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -41950,6 +41772,25 @@
 /obj/structure/sign/departments/chemistry,
 /turf/closed/wall/f13/store,
 /area/f13/building/hospital)
+"hxZ" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "hyc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42551,19 +42392,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/wall/mineral/concrete/blastproof,
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
-"hGn" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/roaddirt{
-	icon_state = "verticalinnermainbottom"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "hGo" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/dirt{
@@ -42954,20 +42782,6 @@
 	name = "dirty floor"
 	},
 /area/f13/bar/heaven)
-"hLJ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 4;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "hLL" = (
 /obj/structure/chair/comfy/beige{
 	dir = 4
@@ -43079,6 +42893,23 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"hNE" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "hNF" = (
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -43185,20 +43016,6 @@
 	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"hPg" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "hPC" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
@@ -43270,6 +43087,19 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
+"hQz" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom2"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "hQB" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -43521,6 +43351,19 @@
 	icon_state = "verticalinnermainbottom"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"hTx" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "hTy" = (
 /obj/structure/flora/chomp/shrub5,
 /turf/open/indestructible/ground/outside/desert,
@@ -43642,6 +43485,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"hUK" = (
+/obj/structure/fence,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/building/trainstation)
 "hUO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -44581,6 +44428,19 @@
 /obj/item/instrument/trumpet,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
+"igT" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2right"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "igU" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/molerat,
@@ -45402,6 +45262,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"irB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	icon_state = "innerpavementcorner"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "irN" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -45674,6 +45548,20 @@
 	color = "#779999"
 	},
 /area/f13/bar/heaven)
+"ivi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/theloop)
 "ivj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -47667,6 +47555,19 @@
 	icon_state = "outerpavement - E"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"iTc" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "iTe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/trash,
@@ -47934,6 +47835,19 @@
 	icon_state = "outerpavement - N"
 	},
 /area/f13/wasteland)
+"iXn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/theloop)
 "iXo" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -48308,6 +48222,19 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"jcv" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "jcz" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -48742,6 +48669,25 @@
 	icon_state = "outermaincornerinner - E"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"jjw" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "jjy" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -50271,6 +50217,19 @@
 	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
+"jHA" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "jHI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -51520,20 +51479,6 @@
 	icon_state = "horizontalbottombordertopright"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"jYb" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "jYk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/coyote/one,
@@ -52500,19 +52445,6 @@
 /obj/structure/flora/grass/coyote/twentyone,
 /turf/open/indestructible/ground/outside/desert,
 /area/debug_mussy)
-"kmB" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright2top"
-	},
-/area/f13/wasteland/city)
 "kmF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fermenting_barrel,
@@ -53072,19 +53004,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
-"ktq" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ktr" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -54014,6 +53933,16 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"kFF" = (
+/obj/structure/chair/stool{
+	dir = 1;
+	icon_state = "bench"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "kFI" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -55029,6 +54958,19 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
+"kTH" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "kTR" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
@@ -57320,17 +57262,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
-"lyB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "lyG" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -57986,21 +57917,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/vault,
 /area/f13/building/abandoned)
-"lGI" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "lGP" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
@@ -58712,19 +58628,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"lQZ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "lRa" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
@@ -58743,6 +58646,17 @@
 "lRe" = (
 /turf/closed/wall/f13/store,
 /area/f13/building/trainstation)
+"lRi" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city/nash/theloop)
 "lRp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/bin/trashbin{
@@ -58924,20 +58838,6 @@
 	light_color = null;
 	color = "#FFBB77";
 	name = "the watering hole"
-	},
-/area/f13/wasteland/city/nash/theloop)
-"lTY" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 8;
-	icon_state = "innerpavement"
 	},
 /area/f13/wasteland/city/nash/theloop)
 "lUg" = (
@@ -59340,19 +59240,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"lYC" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright3"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "lYQ" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/f13{
@@ -59483,18 +59370,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"maw" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "max" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -59649,27 +59524,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"mco" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
 /area/f13/wasteland)
 "mcp" = (
 /obj/structure/car/rubbish2,
@@ -60770,6 +60624,20 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland/city)
+"mpO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop2"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "mpP" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/wall/f13/wood,
@@ -60816,6 +60684,17 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"mqk" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city)
 "mqq" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -61563,20 +61442,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
-"mzK" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "mzM" = (
 /obj/structure/simple_door/metal/fence{
 	dir = 2
@@ -61714,19 +61579,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/coyote/nash/mall/groundfloor)
-"mBC" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright2"
-	},
-/area/f13/wasteland/city)
 "mBF" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -61837,6 +61689,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/theloop)
 "mDG" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -61845,10 +61703,12 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
 	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
+/area/f13/wasteland)
 "mDO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -62652,6 +62512,19 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland)
+"mPq" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "mPr" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -62843,6 +62716,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
+"mSZ" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "mTc" = (
 /obj/item/newspaper,
 /obj/effect/decal/cleanable/dirt,
@@ -64089,17 +63975,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"njb" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/theloop)
 "njc" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -65355,6 +65230,17 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"nyU" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city/nash/suburbs)
 "nzb" = (
 /obj/structure/simple_door/tent,
 /obj/structure/decoration/rag,
@@ -66168,17 +66054,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ruins)
-"nJP" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "nJQ" = (
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/massfusion/entrance)
@@ -66285,6 +66160,21 @@
 "nLx" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"nLH" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "nLL" = (
 /obj/structure/sign/painting/library{
 	pixel_y = 32
@@ -66305,6 +66195,20 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
+"nLW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2right"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "nMf" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -66359,6 +66263,21 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
+/area/f13/wasteland)
+"nMu" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nMz" = (
 /obj/structure/flora/chomp/thicket0,
@@ -66440,6 +66359,17 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"nNM" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "nNO" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -66627,19 +66557,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/ruins)
-"nQb" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/theloop)
 "nQc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -66906,19 +66823,6 @@
 	icon_state = "redmark"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
-"nTR" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/wasteland/city)
 "nTY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -67418,19 +67322,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city)
-"oaM" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "oaR" = (
 /obj/structure/junk/drawer,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -67471,21 +67362,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"obv" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
-	},
-/obj/structure/flora/grass/coyote/one,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "obz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bookcase,
@@ -67684,6 +67560,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/low_chance,
 /area/f13/building/abandoned)
+"oer" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "oex" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -67779,6 +67673,19 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
+"ofJ" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop3"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "ofK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/house,
@@ -67896,19 +67803,6 @@
 /obj/structure/flora/twig3,
 /turf/open/indestructible/ground/outside/desert,
 /area/debug_mussy)
-"ogY" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland)
 "ohe" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/spacevine,
@@ -68761,20 +68655,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
-"otQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "otW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -68998,6 +68878,18 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"owz" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "owM" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
@@ -69225,20 +69117,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
-"ozV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "ozY" = (
 /obj/structure/billboard/powerlines1,
 /obj/structure/billboard/powerlines2{
@@ -70750,6 +70628,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building/coyote/nash/school/groundfloor)
+"oSH" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "oSO" = (
 /obj/structure/flora/chomp/thicket6,
 /turf/open/indestructible/ground/outside/desert,
@@ -70800,17 +70692,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city/nash/downtown)
-"oTM" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "oTQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -70837,6 +70718,26 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"oUq" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
 /area/f13/wasteland)
 "oUv" = (
 /obj/structure/displaycase,
@@ -71151,28 +71052,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
-"oYh" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "oYp" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -71505,6 +71384,19 @@
 /obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"pdj" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "pdm" = (
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
@@ -71668,10 +71560,8 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pgA" = (
-/obj/structure/flora/chomp/bush2{
-	color = "#224422"
-	},
+"pgF" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -71680,8 +71570,10 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain1"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "pgK" = (
 /obj/structure/bookcase,
 /obj/effect/validball_spawner,
@@ -71725,21 +71617,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
-"phG" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "phH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -72335,6 +72212,19 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"poX" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "ppe" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -73983,19 +73873,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"pLg" = (
-/obj/structure/flora/tree/tall,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "pLk" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks,
@@ -74512,6 +74389,20 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland/city)
+"pTi" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 4;
+	icon_state = "innerpavement"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "pTl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepile,
@@ -74561,25 +74452,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pTI" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "pTT" = (
 /obj/effect/turf_decal/bot_red,
 /obj/effect/decal/cleanable/dirt,
@@ -74621,25 +74493,6 @@
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city)
-"pUD" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
-	},
-/area/f13/wasteland)
 "pUF" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -74873,6 +74726,23 @@
 	icon_state = "innermaincornerinner - S"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"pYL" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "pZn" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13{
@@ -75850,6 +75720,19 @@
 	icon_state = "verticaloutermain2top"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"qmy" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city/nash/theloop)
 "qmz" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -76710,20 +76593,6 @@
 	icon_state = "verticaloutermain2"
 	},
 /area/f13/underground/cave/coyote/antmound)
-"qyQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop2"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "qyR" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -77224,20 +77093,6 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
-"qFJ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "qFO" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/gravel,
@@ -78074,6 +77929,20 @@
 /obj/structure/tires/five,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/nash/downtown)
+"qRq" = (
+/obj/structure/flora/tree/tall{
+	icon_state = "tree_2"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "qRw" = (
 /obj/item/mine/shrapnel,
 /turf/open/indestructible/ground/outside/road{
@@ -79003,6 +78872,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"rdC" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland/city/nash/downtown)
 "rdD" = (
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/suburbs)
@@ -79396,12 +79279,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"rjL" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "rjU" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerinner - S"
@@ -79742,6 +79619,17 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"rpi" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "rpj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -80168,6 +80056,24 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"rvy" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "rvG" = (
 /obj/structure/table,
 /obj/item/storage/box/cups,
@@ -80280,6 +80186,20 @@
 	icon_state = "wasteland33"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"rxV" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "rya" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -80821,19 +80741,6 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
-"rFW" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "rFY" = (
 /obj/structure/flora/grass/coyote/one,
 /obj/structure/nest/gecko,
@@ -81134,6 +81041,17 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"rLT" = (
+/obj/docking_port/stationary{
+	area_type = /area/f13/wasteland;
+	dir = 4;
+	height = 6;
+	id = "emergency_home";
+	name = "BoxStation emergency evac bay";
+	width = 25
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "rLZ" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -81421,6 +81339,19 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"rRa" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright2"
+	},
+/area/f13/wasteland/city)
 "rRd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -82495,16 +82426,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
-"sfm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland)
 "sfn" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerinner - W"
@@ -82515,6 +82436,20 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"sfs" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
 "sfu" = (
 /obj/effect/overlay/junk/shower{
 	dir = 1
@@ -82740,11 +82675,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
-"sim" = (
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "cross1"
-	},
-/area/f13/wasteland)
 "siq" = (
 /obj/structure/barricade/tentleatheredge,
 /obj/structure/fence/wooden{
@@ -83925,24 +83855,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/ruins)
-"syO" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "syP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal{
@@ -84210,20 +84122,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft3"
 	},
-/area/f13/wasteland/city/nash/theloop)
-"sCb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
 "sCg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -85606,19 +85504,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building/coyote/nash/grocery/southloop)
-"sTY" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright2"
-	},
-/area/f13/wasteland/city)
 "sUg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -85698,20 +85583,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"sUI" = (
-/obj/machinery/vending/cola/random,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain1"
-	},
-/area/f13/wasteland/city)
 "sUK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -86451,6 +86322,20 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/tunnel,
 /area/f13/wasteland/city)
+"tfx" = (
+/obj/structure/flora/chomp/bush2{
+	color = "#224422"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "tfD" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2right"
@@ -86506,6 +86391,19 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"tgy" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "tgF" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood/house,
@@ -87921,6 +87819,20 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
+"tyd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "tyj" = (
 /obj/structure/cargocrate,
 /obj/effect/decal/cleanable/dirt,
@@ -88545,6 +88457,21 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"tEq" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "tEu" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -89408,19 +89335,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"tPX" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2bottom"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "tQa" = (
 /obj/structure/closet/cardboard,
 /obj/item/storage/briefcase,
@@ -89624,18 +89538,13 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
 "tSp" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "tSw" = (
@@ -90116,7 +90025,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "tYN" = (
-/obj/structure/spacevine,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -90125,7 +90033,9 @@
 	pixel_x = -1;
 	opacity = 1
 	},
-/turf/open/indestructible/ground/outside/gravel,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "tYU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -91124,6 +91034,21 @@
 	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/building/hospital)
+"ups" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "upx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/campfire,
@@ -91453,21 +91378,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/theloop)
-"uvY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
-	},
-/area/f13/wasteland/city/nash/suburbs)
 "uwd" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -92000,19 +91910,6 @@
 /obj/structure/fence/wooden,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"uCb" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "uCh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
@@ -92331,23 +92228,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
-"uHa" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "uHk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -92616,6 +92496,19 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
+"uKz" = (
+/obj/structure/flora/tree/tall,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "uKF" = (
 /obj/structure/camera_assembly{
 	dir = 5
@@ -92830,6 +92723,20 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/workshop)
+"uMY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2right"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "uNa" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -93768,6 +93675,34 @@
 	icon_state = "innermaincornerinner - W"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"vcq" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"vcH" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 8;
+	icon_state = "innerpavement"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "vcP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -93817,18 +93752,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/coyote/nash/grocery/southloop)
-"vdk" = (
-/obj/structure/car/rubbish3,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "vdo" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -95785,6 +95708,20 @@
 	icon_state = "verticalinnermainbottom"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"vGi" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 1;
+	icon_state = "innerpavement"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "vGj" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road{
@@ -95860,20 +95797,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
-"vHr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "vHw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -96253,6 +96176,19 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland)
+"vMR" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft2bottom"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "vMS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -96593,6 +96529,15 @@
 	opacity = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"vQI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
 /area/f13/wasteland)
 "vQL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -97420,6 +97365,18 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/nash/theloop)
+"wdE" = (
+/obj/structure/car/rubbish3,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "wdO" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/cobweb,
@@ -97635,6 +97592,18 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"whb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/theloop)
 "whh" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/dirt,
@@ -97913,19 +97882,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
-"wkl" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "wkp" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/validball_spawner,
@@ -98073,6 +98029,17 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"wme" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland/city/nash/downtown)
 "wml" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -98681,17 +98648,6 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
-"wta" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city)
 "wtC" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{
@@ -98704,6 +98660,18 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"wub" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
 "wuu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -99414,6 +99382,17 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland)
+"wDA" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/nash/theloop)
 "wDE" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticalcorroded"
@@ -99523,11 +99502,35 @@
 	icon_state = "verticaloutermain0"
 	},
 /area/f13/wasteland)
+"wER" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop2"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "wEX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"wEY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "wFb" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 9
@@ -99972,6 +99975,19 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"wLR" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "wLS" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs/human/body,
@@ -100398,6 +100414,21 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/workshop)
+"wRm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland/city/nash/suburbs)
 "wRD" = (
 /obj/item/toy/beach_ball/holoball{
 	pixel_x = 10;
@@ -100734,18 +100765,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building/abandoned)
-"wXa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland/city/nash/theloop)
 "wXh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine{
@@ -101270,6 +101289,20 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/bar/heaven)
+"xdV" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/nash/theloop)
 "xdW" = (
 /obj/structure/stairs/east{
 	color = "#A47449";
@@ -101541,6 +101574,20 @@
 	icon_state = "horizontalbottomborderbottom2right"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"xgP" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "xgX" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
@@ -101694,6 +101741,19 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/city)
+"xiO" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright3"
+	},
+/area/f13/wasteland/city/nash/redriverdepotroad)
 "xiU" = (
 /obj/structure/flora/grass/coyote/twentyone,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -102362,10 +102422,8 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
 "xtU" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/grass/coyote/one,
+/obj/structure/spacevine,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -102864,19 +102922,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building/abandoned)
-"xzQ" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "xzR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/randomized{
@@ -103940,6 +103985,20 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"xOW" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_y = 0;
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "xOZ" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -104398,20 +104457,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"xUm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain1"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "xUp" = (
 /obj/structure/fence/wooden,
 /turf/open/floor/f13/wood,
@@ -104855,19 +104900,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/sidebuilding)
-"ybq" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop2"
-	},
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "ybs" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -105345,19 +105377,6 @@
 	icon_state = "rubbleslab"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"yhd" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "fog";
-	pixel_y = 0;
-	pixel_x = -1;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "yhg" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -112998,113 +113017,113 @@ pth
 pIQ
 jia
 cwI
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
 fur
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-ehf
-ehf
-ehf
-sfm
-sfm
-ehf
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+vQI
+vQI
+vQI
+tSp
+tSp
+vQI
 gOV
-ehf
-sfm
-ehf
-ehf
+vQI
+tSp
+vQI
+vQI
 cPR
-sfm
-sfm
-sfm
-sfm
-sfm
+tSp
+tSp
+tSp
+tSp
+tSp
 qYk
-sfm
-ehf
-ehf
-ehf
-ehf
-ehf
-sfm
-sfm
-sfm
+tSp
+vQI
+vQI
+vQI
+vQI
+vQI
+tSp
+tSp
+tSp
 qYk
-sfm
-sfm
-sfm
-sfm
-ehf
+tSp
+tSp
+tSp
+tSp
+vQI
 qYk
-sfm
-sfm
-ehf
-sfm
-sfm
+tSp
+tSp
+vQI
+tSp
+tSp
 gbh
 gbh
-ehf
-ehf
+vQI
+vQI
 qYk
 fur
-ehf
+vQI
 qYk
-sfm
-ehf
-ehf
-sfm
-ehf
+tSp
+vQI
+vQI
+tSp
+vQI
 sUt
-ehf
-ehf
-sfm
-ehf
-sfm
-ehf
-ehf
-sfm
-ehf
+vQI
+vQI
+tSp
+vQI
+tSp
+vQI
+vQI
+tSp
+vQI
 hiA
-ehf
-sfm
+vQI
+tSp
 cPR
-sfm
-ehf
-ehf
+tSp
+vQI
+vQI
 skm
 skm
 skm
@@ -113340,7 +113359,7 @@ nvn
 kDp
 kDp
 kDp
-sim
+dBD
 cJf
 ids
 nvn
@@ -113597,8 +113616,8 @@ nvn
 nvn
 nvn
 nvn
-sim
-sim
+dBD
+dBD
 nvn
 nvn
 nvn
@@ -113854,8 +113873,8 @@ nvn
 nvn
 nvn
 nvn
-sim
-sim
+dBD
+dBD
 nvn
 nvn
 nvn
@@ -114048,7 +114067,7 @@ tnZ
 tnZ
 tnZ
 tnZ
-ogY
+fzB
 tnZ
 tnZ
 tnZ
@@ -114080,7 +114099,7 @@ tnZ
 tnZ
 tnZ
 tnZ
-ogY
+fzB
 tnZ
 tnZ
 tnZ
@@ -114126,7 +114145,7 @@ tnZ
 tnZ
 tnZ
 tnZ
-ogY
+fzB
 tnZ
 tnZ
 tnZ
@@ -117363,7 +117382,7 @@ hQE
 euo
 jpF
 dab
-lQZ
+poX
 dVD
 pLv
 kCN
@@ -117876,7 +117895,7 @@ ady
 pGA
 nzo
 jpF
-oTM
+rpi
 kgm
 dVD
 pLv
@@ -118132,7 +118151,7 @@ hzN
 eNJ
 xDt
 nzo
-mDG
+hTx
 tqw
 yfM
 ogt
@@ -118389,7 +118408,7 @@ xOD
 aOk
 cqJ
 nzo
-mDG
+hTx
 mlK
 kgm
 ogt
@@ -121735,7 +121754,7 @@ ksa
 cjm
 utr
 pLv
-fwF
+tYN
 fKr
 aOk
 xfv
@@ -121990,8 +122009,8 @@ xHI
 skx
 dab
 nMS
-fDR
-uCb
+fZN
+eeV
 jUR
 vdc
 aOk
@@ -122246,7 +122265,7 @@ uiW
 lPG
 nBb
 yfM
-ahl
+oSH
 rnu
 pLv
 jUR
@@ -122305,7 +122324,7 @@ vpN
 qrZ
 jgz
 koI
-hPg
+sfs
 aOk
 aOk
 aOk
@@ -122500,10 +122519,10 @@ skx
 fDX
 pUp
 iQJ
-xUm
+pgF
 tLb
-nJP
-tYN
+nNM
+owz
 dVD
 vhw
 mWD
@@ -122757,7 +122776,7 @@ avd
 xrG
 nEJ
 nEJ
-buU
+ajt
 pXT
 yfM
 feA
@@ -122826,7 +122845,7 @@ aOk
 fxm
 lgl
 www
-lyB
+wEY
 uEl
 fCt
 bEw
@@ -122838,7 +122857,7 @@ aOk
 aOk
 cAf
 fvD
-lyB
+wEY
 uEl
 fCt
 chP
@@ -123011,8 +123030,8 @@ quW
 iaI
 iax
 quW
-gFz
-bdn
+auo
+xiO
 nwI
 nwI
 axk
@@ -123095,7 +123114,7 @@ iAq
 aOk
 cAf
 wVT
-lyB
+wEY
 kZr
 fCt
 fCt
@@ -123609,7 +123628,7 @@ kSE
 dfo
 lfZ
 lfZ
-pTI
+hxZ
 kma
 qAg
 sfa
@@ -124108,7 +124127,7 @@ aOk
 iAq
 mst
 aOk
-pgA
+tfx
 vOV
 aOk
 hrz
@@ -124366,7 +124385,7 @@ tjQ
 vDO
 uba
 sxV
-hLJ
+pTi
 bca
 kec
 kec
@@ -124381,7 +124400,7 @@ liI
 cSB
 rZV
 sHM
-elO
+irB
 fuC
 fuC
 fuC
@@ -124623,7 +124642,7 @@ mWp
 pVC
 tFX
 jXG
-cLg
+aXF
 fTs
 ymg
 xhh
@@ -124651,7 +124670,7 @@ kGz
 olS
 fLw
 tpK
-tPX
+vMR
 olS
 olS
 tpK
@@ -124936,7 +124955,7 @@ qVj
 qVj
 bhD
 rdD
-sim
+dBD
 url
 oQJ
 tAg
@@ -125138,7 +125157,7 @@ bzM
 oGj
 qWC
 ttL
-nQb
+qmy
 vPa
 dEv
 wUx
@@ -125154,7 +125173,7 @@ gdQ
 rWZ
 qQF
 ptR
-cuT
+iXn
 axJ
 cet
 lFL
@@ -125351,7 +125370,7 @@ aOk
 cFK
 biO
 aOk
-cYw
+ups
 etg
 xFZ
 cFK
@@ -125412,7 +125431,7 @@ eCN
 mSq
 hYi
 geb
-rFW
+mSZ
 xuD
 qnu
 rdD
@@ -125450,7 +125469,7 @@ nRW
 jHR
 bjw
 oRC
-sim
+dBD
 sXv
 url
 aYW
@@ -125588,7 +125607,7 @@ vuZ
 jpF
 skx
 kgm
-ybq
+fGc
 pLv
 jUR
 vdc
@@ -125614,7 +125633,7 @@ cFK
 mOW
 uag
 mOW
-eFw
+vcq
 etg
 cFK
 cnn
@@ -125669,7 +125688,7 @@ dDK
 pTp
 gqQ
 tpt
-lYC
+baZ
 jGe
 hGB
 aZb
@@ -125677,7 +125696,7 @@ hGB
 qUO
 nIK
 nIK
-fVZ
+tgy
 nIK
 nIK
 nIK
@@ -125871,7 +125890,7 @@ dkt
 cFK
 cFK
 aOk
-jYb
+atr
 iAq
 cFK
 hru
@@ -125926,7 +125945,7 @@ rZV
 nhX
 hua
 vyq
-lTY
+vcH
 txG
 jVS
 jVS
@@ -126101,7 +126120,7 @@ mlQ
 vuZ
 jpF
 lHn
-lQZ
+poX
 dVD
 pLv
 lcc
@@ -126357,7 +126376,7 @@ fPb
 ePz
 bLa
 jWw
-nJP
+nNM
 lrM
 ogt
 xNa
@@ -126378,7 +126397,7 @@ aOk
 aOk
 aOk
 lWu
-jYb
+atr
 xFZ
 vDc
 cFK
@@ -126441,7 +126460,7 @@ rZV
 uYT
 rWW
 fYd
-csd
+rvy
 uWB
 vlL
 aOk
@@ -126614,7 +126633,7 @@ fPb
 fwg
 dgQ
 tQh
-fbl
+rxV
 jIv
 lOJ
 pGh
@@ -126664,7 +126683,7 @@ nHY
 cFK
 tMc
 dkt
-bCx
+xgP
 tMc
 www
 asx
@@ -126698,7 +126717,7 @@ rZV
 tFE
 lTR
 bRH
-lGI
+esN
 bEw
 pgt
 mkA
@@ -126920,7 +126939,7 @@ aOk
 rCm
 etg
 aOk
-pLg
+uKz
 aOk
 aOk
 www
@@ -127127,7 +127146,7 @@ iRP
 mlQ
 uYp
 lcc
-byg
+wER
 dab
 lrM
 skx
@@ -127155,7 +127174,7 @@ etg
 jJH
 rVk
 biO
-eMe
+hNE
 oVf
 oMY
 aOk
@@ -127177,7 +127196,7 @@ ksB
 aOk
 xGe
 ial
-aJI
+wLR
 lKm
 esG
 byG
@@ -127187,7 +127206,7 @@ mvE
 hVd
 fCt
 gFp
-fJC
+gFz
 jVL
 rZV
 oMv
@@ -127411,7 +127430,7 @@ aOk
 etg
 bhm
 vDc
-maw
+wub
 bun
 aOk
 cFK
@@ -127434,7 +127453,7 @@ aOk
 aOk
 aOk
 etg
-ktq
+pdj
 aOk
 aOk
 www
@@ -127445,7 +127464,7 @@ baB
 fCt
 jYB
 bbp
-gGr
+xdV
 tBZ
 rZV
 rZV
@@ -127668,7 +127687,7 @@ jLf
 jLf
 etg
 cFK
-maw
+wub
 aOk
 aOk
 cFK
@@ -127703,7 +127722,7 @@ avc
 rak
 lXS
 rVN
-awX
+aej
 rZV
 rZV
 rFd
@@ -127985,7 +128004,7 @@ biO
 aOk
 aOk
 aOk
-dnZ
+xtU
 cAf
 vIk
 eFb
@@ -128153,7 +128172,7 @@ auH
 aoF
 tUq
 lcc
-ahk
+iTc
 awL
 axm
 xsn
@@ -128409,7 +128428,7 @@ iRP
 iRP
 iRP
 tUq
-oaM
+jHA
 tVm
 lcc
 qxv
@@ -128476,7 +128495,7 @@ rZV
 www
 tUP
 kgI
-mco
+mDG
 nrX
 wLq
 aOk
@@ -128498,7 +128517,7 @@ tiw
 fby
 qUP
 qpQ
-jYb
+atr
 bjb
 mOW
 mbb
@@ -128666,7 +128685,7 @@ jIR
 pxa
 tOa
 lyY
-oaM
+jHA
 tVm
 lcc
 nPg
@@ -128734,8 +128753,8 @@ byG
 opb
 aWD
 eqK
-tSp
-pUD
+tEq
+jjw
 sFS
 nOB
 lFQ
@@ -128754,7 +128773,7 @@ aOk
 fgT
 bem
 lbF
-oYh
+bxV
 tIR
 rCm
 cyJ
@@ -128956,7 +128975,7 @@ aOk
 cFK
 jvx
 aOk
-vdk
+wdE
 aOk
 aOk
 cFK
@@ -128992,7 +129011,7 @@ acD
 acD
 mdr
 xew
-ewx
+oUq
 pgt
 aOk
 aOk
@@ -129011,7 +129030,7 @@ bgx
 nHY
 ksB
 acD
-fuv
+xOW
 aOk
 etg
 dPQ
@@ -129212,7 +129231,7 @@ fuC
 fuC
 aWC
 fuC
-hLJ
+pTi
 aHH
 fuC
 fuC
@@ -129232,7 +129251,7 @@ fuC
 fuC
 fuC
 wjm
-dwT
+cLg
 qCN
 rZV
 tBZ
@@ -129268,7 +129287,7 @@ aOk
 cFK
 kqs
 cFK
-mzK
+qRq
 aOk
 aOk
 etg
@@ -129690,7 +129709,7 @@ uBb
 rAL
 rgI
 uXF
-kmB
+bhE
 xmT
 nGT
 uBb
@@ -129724,7 +129743,7 @@ dTx
 axJ
 biY
 lWn
-aCJ
+azt
 lWn
 oDN
 pOY
@@ -129802,7 +129821,7 @@ crY
 tpP
 eOw
 kWD
-uvY
+wRm
 tRD
 pzG
 uLw
@@ -129949,7 +129968,7 @@ sxj
 isl
 gRP
 isl
-bOQ
+ewI
 cWn
 bOa
 bDA
@@ -130002,7 +130021,7 @@ ttL
 wUx
 sfi
 wfC
-hGn
+bXh
 tBZ
 tBZ
 vfU
@@ -130207,7 +130226,7 @@ uKe
 tHQ
 tHQ
 tHQ
-wta
+mqk
 oUZ
 lbB
 tvt
@@ -130237,7 +130256,7 @@ dyf
 cMu
 wUx
 erx
-rFW
+mSZ
 maj
 rfV
 aHn
@@ -130259,7 +130278,7 @@ nAN
 nAN
 kpC
 geb
-hGn
+bXh
 tBZ
 tBZ
 tBZ
@@ -130299,7 +130318,7 @@ bpP
 fCt
 psD
 uba
-obv
+bbZ
 bjb
 aOk
 iUU
@@ -130316,7 +130335,7 @@ bdQ
 bcW
 dJB
 bUq
-ozV
+uMY
 ptg
 tGZ
 dwt
@@ -130328,12 +130347,12 @@ bZY
 nHY
 nHY
 tof
-phG
+nLH
 aOk
 cAf
 aOk
 ngu
-ewI
+ofJ
 bUq
 tOk
 scQ
@@ -130345,7 +130364,7 @@ xSy
 pSA
 cZq
 cYE
-cGt
+nyU
 jzT
 enA
 qIV
@@ -130465,7 +130484,7 @@ htz
 iWY
 htz
 nfe
-sTY
+aZG
 xkK
 iWY
 fxP
@@ -130493,7 +130512,7 @@ qhp
 skn
 tpt
 kVX
-otQ
+eyz
 tpt
 wUx
 upd
@@ -130515,8 +130534,8 @@ tQQ
 wUx
 tpt
 upd
-lYC
-hGn
+baZ
+bXh
 qCN
 rZV
 rZV
@@ -130574,7 +130593,7 @@ bcE
 eOw
 mQT
 ubQ
-eZj
+tyd
 xcu
 cxT
 aOk
@@ -130582,8 +130601,8 @@ hkV
 cFK
 etg
 lEr
-qFJ
-qFJ
+dDs
+dDs
 jLf
 jLf
 iAq
@@ -130723,7 +130742,7 @@ hmN
 pvq
 atd
 eHn
-sUI
+dZI
 iDt
 wEq
 hfQ
@@ -130748,8 +130767,8 @@ jKg
 jKg
 wxF
 qkH
-xzQ
-xzQ
+kTH
+kTH
 nIX
 nIX
 aGB
@@ -130811,7 +130830,7 @@ gFp
 gFp
 cfA
 aYQ
-syO
+oer
 biO
 mOW
 hrz
@@ -130858,7 +130877,7 @@ oPF
 iUG
 nIK
 nIK
-fVZ
+tgy
 nIK
 rdD
 nIK
@@ -131067,7 +131086,7 @@ bem
 qpQ
 gyv
 aYQ
-uHa
+aWK
 biO
 biO
 qWu
@@ -131088,8 +131107,8 @@ hCc
 eOw
 kWD
 oIy
-eZw
-aZn
+dCK
+cQa
 tgZ
 vKg
 cFK
@@ -131240,8 +131259,8 @@ avU
 hmN
 hmN
 mrv
-emK
-sCb
+hQz
+ivi
 bto
 lZM
 hIB
@@ -131322,8 +131341,8 @@ ovE
 rfD
 aOk
 bgC
-xtU
-xtU
+nMu
+nMu
 nHY
 dkt
 hrz
@@ -131347,7 +131366,7 @@ kWD
 cUT
 tRD
 fHm
-cDf
+vGi
 hkV
 cFK
 clo
@@ -131499,7 +131518,7 @@ kNV
 xgw
 lBj
 wUx
-qyQ
+mpO
 lox
 vnq
 rTG
@@ -131577,8 +131596,8 @@ biO
 bun
 oNw
 mOW
-hkC
-hkC
+pYL
+pYL
 etg
 etg
 rfD
@@ -131757,7 +131776,7 @@ pcG
 mfD
 nOy
 chZ
-bcr
+dyB
 ndf
 tQV
 qWD
@@ -131833,7 +131852,7 @@ kBz
 lbF
 biO
 aOk
-wkl
+eEA
 jqr
 iti
 vQv
@@ -132784,7 +132803,7 @@ kax
 pAJ
 axH
 eaY
-feN
+bEW
 xsu
 xmT
 axI
@@ -133041,7 +133060,7 @@ dwl
 lWn
 gul
 qdP
-bgo
+cgO
 yeR
 tte
 xUV
@@ -133554,7 +133573,7 @@ nAO
 oUZ
 gRI
 wUx
-wXa
+whb
 krE
 nCh
 uXF
@@ -133811,7 +133830,7 @@ nfe
 xkK
 sQS
 gQR
-fZN
+wDA
 bLR
 wMm
 ndf
@@ -134068,7 +134087,7 @@ cuO
 cuO
 wEq
 gQR
-vHr
+nLW
 jje
 nGx
 hIB
@@ -134325,7 +134344,7 @@ awn
 awM
 hEX
 gQR
-njb
+lRi
 dUV
 nGx
 hgG
@@ -134582,7 +134601,7 @@ awn
 awM
 syi
 gQR
-yhd
+igT
 fJV
 sUy
 sgj
@@ -134839,7 +134858,7 @@ awn
 awM
 syi
 gQR
-clx
+cXY
 wYQ
 sUy
 vnq
@@ -135353,7 +135372,7 @@ awM
 awM
 pcG
 mfD
-bmQ
+mPq
 wUx
 lox
 kbi
@@ -135634,7 +135653,7 @@ xfv
 xfv
 ckx
 kPa
-dJr
+rdC
 cnn
 sJn
 sJn
@@ -136130,7 +136149,7 @@ biY
 rAL
 rAL
 rAL
-mBC
+rRa
 eqV
 rAL
 rAL
@@ -136147,7 +136166,7 @@ aFu
 kCU
 dqH
 hlc
-fyh
+wme
 kPa
 aGH
 jyM
@@ -136389,7 +136408,7 @@ uXF
 tHQ
 aAp
 eAj
-deq
+bhh
 sxj
 eWG
 dPc
@@ -136647,8 +136666,8 @@ oUZ
 fam
 uXF
 oUZ
-nTR
-nTR
+dGz
+dGz
 bEx
 bEx
 mBs
@@ -137164,7 +137183,7 @@ cgE
 uXF
 uwI
 gVf
-fyh
+wme
 gVf
 gVf
 gVf
@@ -137422,8 +137441,8 @@ cgE
 fDn
 gVf
 gOL
-fye
-fye
+jcv
+jcv
 dPc
 gTO
 tkp
@@ -167431,16 +167450,16 @@ jxM
 jxM
 jxM
 jxM
+hUK
+hUK
+hUK
+hUK
+hUK
+hUK
 lRe
+vFy
 lRe
-lRe
-lRe
-lRe
-lRe
-lRe
-lRe
-lRe
-lRe
+hUK
 lRe
 lRe
 tbn
@@ -167692,9 +167711,9 @@ esY
 rVd
 rVd
 rVd
-rjL
+rVd
 agX
-aiF
+kFF
 rVd
 izI
 aiF
@@ -168977,11 +168996,11 @@ xLC
 gOG
 odm
 xLC
-sYy
+xLC
 odm
 odm
 xLC
-xLC
+rLT
 xLC
 dgy
 dgy
@@ -169236,7 +169255,7 @@ acI
 acI
 acI
 acI
-acI
+uFl
 acI
 acI
 acI
