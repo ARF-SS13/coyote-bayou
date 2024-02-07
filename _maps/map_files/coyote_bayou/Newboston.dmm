@@ -3072,6 +3072,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
+"cdx" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "cdN" = (
 /obj/structure/debris/v2{
 	pixel_x = -12;
@@ -14760,6 +14764,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/church)
+"jIn" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "jIx" = (
 /obj/structure/flora/wasteplant/wild_fungus,
 /turf/open/indestructible/ground/inside/mountain,
@@ -16028,10 +16036,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"kwQ" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "kxz" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/rack,
@@ -21828,13 +21832,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"opl" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "opm" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -22117,10 +22114,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"oAN" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "oBS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/deputy,
@@ -31704,6 +31697,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"uPI" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "uPM" = (
 /obj/item/reagent_containers/food/drinks/beer/light,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -37883,7 +37883,7 @@ gcG
 gcG
 gcG
 mOz
-opl
+uPI
 mOz
 gcG
 gcG
@@ -38140,7 +38140,7 @@ gcG
 gcG
 mOz
 mOz
-kwQ
+cdx
 mOz
 mOz
 gcG
@@ -71308,6 +71308,10 @@ rmv
 frU
 fuD
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 wBB
 gIL
 aSQ
@@ -71322,10 +71326,6 @@ tPQ
 tPQ
 gIL
 gIL
-tPQ
-tPQ
-tPQ
-tPQ
 tPQ
 mQz
 tPQ
@@ -71565,6 +71565,10 @@ rmv
 frU
 fuD
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 gIL
 tPQ
 cQY
@@ -71579,10 +71583,6 @@ cQY
 tPQ
 gIL
 gIL
-tPQ
-tPQ
-tPQ
-tPQ
 tPQ
 mQz
 tPQ
@@ -71822,6 +71822,10 @@ rmv
 frU
 fuD
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 gIL
 tPQ
 bLR
@@ -71836,10 +71840,6 @@ bLR
 tPQ
 gIL
 gIL
-tPQ
-tPQ
-tPQ
-tPQ
 tPQ
 mQz
 tPQ
@@ -72079,6 +72079,10 @@ rmv
 frU
 fuD
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 gIL
 gIL
 cQY
@@ -72093,10 +72097,6 @@ cQY
 tPQ
 gIL
 gIL
-tPQ
-tPQ
-tPQ
-tPQ
 tPQ
 lsR
 tPQ
@@ -72337,6 +72337,10 @@ frU
 fuD
 tPQ
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 gIL
 aUg
 miw
@@ -72349,10 +72353,6 @@ ddB
 aUg
 gIL
 gIL
-tPQ
-tPQ
-tPQ
-tPQ
 tPQ
 mQz
 tPQ
@@ -72594,6 +72594,10 @@ frU
 fuD
 tPQ
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 gIL
 aUg
 tzl
@@ -72607,10 +72611,6 @@ aUg
 gIL
 tPQ
 tPQ
-tPQ
-tPQ
-tPQ
-mQz
 tPQ
 tPQ
 mQz
@@ -72852,6 +72852,10 @@ fuD
 tPQ
 tPQ
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 cQY
 wWW
 bvr
@@ -72864,10 +72868,6 @@ cQY
 tPQ
 tPQ
 tPQ
-tPQ
-tPQ
-tPQ
-mQz
 tPQ
 tPQ
 tPQ
@@ -73109,6 +73109,10 @@ fuD
 tPQ
 tPQ
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 bLR
 mTe
 atg
@@ -73121,10 +73125,6 @@ bLR
 tPQ
 tPQ
 tPQ
-tPQ
-mQz
-tPQ
-mQz
 tPQ
 mQz
 tPQ
@@ -73366,6 +73366,10 @@ fuD
 tPQ
 tPQ
 tPQ
+tPQ
+tPQ
+tPQ
+tPQ
 cQY
 jut
 atg
@@ -73378,10 +73382,6 @@ cQY
 tPQ
 tPQ
 vgw
-tPQ
-mQz
-mQz
-mQz
 tPQ
 tPQ
 tPQ
@@ -73623,20 +73623,20 @@ fuD
 tPQ
 tPQ
 tPQ
-cQY
-cQY
-cQY
-cQY
-cQY
-cQY
-cQY
-cQY
-cQY
-mQz
-mQz
-mQz
-mQz
 tPQ
+tPQ
+tPQ
+tPQ
+cQY
+cQY
+cQY
+cQY
+cQY
+cQY
+cQY
+cQY
+cQY
+mQz
 mQz
 mQz
 tPQ
@@ -78980,7 +78980,7 @@ nRM
 vTF
 vHb
 maV
-oAN
+jIn
 mgE
 mgE
 oBS
@@ -79237,7 +79237,7 @@ nRM
 vTF
 vHb
 jyY
-oAN
+jIn
 mgE
 mgE
 jjz
