@@ -1628,6 +1628,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
+"bgh" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "bgo" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2061,12 +2068,6 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland)
-"bvK" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy{
-	color = "#A47449"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "bvR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -6840,13 +6841,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
-"eEH" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "eER" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -9291,14 +9285,6 @@
 /obj/structure/wreck/trash/five_tires,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"gjx" = (
-/obj/machinery/cardpuncher{
-	pixel_y = 3;
-	pixel_x = -28;
-	density = 0
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/city)
 "gkl" = (
 /obj/structure/wreck/trash/two_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -14703,6 +14689,14 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
+"jET" = (
+/obj/machinery/cardpuncher{
+	pixel_y = 3;
+	pixel_x = -28;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/city)
 "jFa" = (
 /obj/structure/closet/wardrobe,
 /obj/item/reagent_containers/glass/bottle/epinephrine,
@@ -15599,7 +15593,7 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "kht" = (
-/obj/effect/fake_stairs/north,
+/obj/structure/stairs/north,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "khD" = (
@@ -21101,6 +21095,12 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
+"nOL" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "nOM" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21908,6 +21908,10 @@
 	icon_state = "horizontaltopbordertop3"
 	},
 /area/f13/wasteland)
+"osd" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "ose" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -34560,10 +34564,6 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
-"wNR" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "wNU" = (
 /obj/machinery/smartfridge/bottlerack,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -37900,7 +37900,7 @@ gcG
 gcG
 gcG
 mOz
-eEH
+bgh
 mOz
 gcG
 gcG
@@ -38157,7 +38157,7 @@ gcG
 gcG
 mOz
 mOz
-bvK
+nOL
 mOz
 mOz
 gcG
@@ -68465,7 +68465,7 @@ qEj
 uWo
 mec
 frU
-gjx
+jET
 ciA
 ciA
 iVg
@@ -78997,7 +78997,7 @@ nRM
 vTF
 vHb
 maV
-wNR
+osd
 mgE
 mgE
 oBS
@@ -79254,7 +79254,7 @@ nRM
 vTF
 vHb
 jyY
-wNR
+osd
 mgE
 mgE
 jjz
