@@ -264,7 +264,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 GLOBAL_LIST_INIT(tunnelrats_positions, list(
 	//"Redwater Slave",
 	//"Outlaw",
-	"Tunnel Rats Churl",
+	"Tunnel Rats Churl"
 	//"Tunnel Rats Strongarm"
 	//"Redwater Overboss",
 ))
@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	 "Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
