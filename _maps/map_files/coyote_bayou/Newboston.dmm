@@ -1628,13 +1628,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
-"bgh" = (
-/obj/structure/ladder/unbreakable{
-	id = "andybase";
-	height = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "bgo" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -3611,6 +3604,14 @@
 /area/f13/building/trader)
 "cwC" = (
 /obj/structure/simple_door/metal/store,
+/turf/open/floor/f13/wood,
+/area/f13/city)
+"cwG" = (
+/obj/machinery/mineral/wasteland_trader{
+	pixel_x = 1;
+	pixel_y = -1;
+	density = 0
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "cwJ" = (
@@ -9097,6 +9098,13 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"gbL" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "gbX" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13{
@@ -14689,14 +14697,6 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
-"jET" = (
-/obj/machinery/cardpuncher{
-	pixel_y = 3;
-	pixel_x = -28;
-	density = 0
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/city)
 "jFa" = (
 /obj/structure/closet/wardrobe,
 /obj/item/reagent_containers/glass/bottle/epinephrine,
@@ -18408,6 +18408,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"lVw" = (
+/obj/machinery/cardpuncher{
+	pixel_y = 3;
+	pixel_x = -28;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/city)
 "lVZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19319,6 +19327,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"mBd" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "mBg" = (
 /obj/structure/table/wood,
 /obj/structure/table/wood,
@@ -20066,6 +20080,10 @@
 /obj/effect/spawner/lootdrop/bedsheet,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"naM" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "naQ" = (
 /obj/structure/table/wood/settler,
 /obj/item/toy/clockwork_watch,
@@ -21095,12 +21113,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
-"nOL" = (
-/obj/machinery/door/airlock/ckey/highsecurity/andy{
-	color = "#A47449"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal/cave)
 "nOM" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21908,10 +21920,6 @@
 	icon_state = "horizontaltopbordertop3"
 	},
 /area/f13/wasteland)
-"osd" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "ose" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -37900,7 +37908,7 @@ gcG
 gcG
 gcG
 mOz
-bgh
+gbL
 mOz
 gcG
 gcG
@@ -38157,7 +38165,7 @@ gcG
 gcG
 mOz
 mOz
-nOL
+mBd
 mOz
 mOz
 gcG
@@ -66181,7 +66189,7 @@ taz
 dsn
 taz
 gBA
-rmv
+cwG
 frU
 fuD
 tPQ
@@ -68465,7 +68473,7 @@ qEj
 uWo
 mec
 frU
-jET
+lVw
 ciA
 ciA
 iVg
@@ -78997,7 +79005,7 @@ nRM
 vTF
 vHb
 maV
-osd
+naM
 mgE
 mgE
 oBS
@@ -79254,7 +79262,7 @@ nRM
 vTF
 vHb
 jyY
-osd
+naM
 mgE
 mgE
 jjz
