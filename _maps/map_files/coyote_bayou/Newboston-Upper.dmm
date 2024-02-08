@@ -230,6 +230,14 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"aO" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "aQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -2340,6 +2348,15 @@
 /obj/machinery/vending/wardrobe/chem_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"kt" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "ku" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
@@ -4692,6 +4709,11 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/building)
+"vl" = (
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland)
 "vn" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -8376,7 +8398,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/tribe)
+/area/f13/wasteland)
 "Ll" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/wayfarer,
@@ -10721,7 +10743,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/tribe)
+/area/f13/wasteland)
 "Vq" = (
 /mob/living/simple_animal/hostile/stalker{
 	faction = list("neutral");
@@ -11456,15 +11478,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/brotherhood)
-"YL" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/fence/corner/wooden{
-	dir = 1
-	},
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/tribe)
 "YM" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -11588,14 +11601,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/wasteland)
-"Zm" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
-/area/f13/building)
 "Zn" = (
 /obj/structure/wreck/trash/machinepile,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -28534,9 +28539,9 @@ GU
 uZ
 uZ
 uZ
-uZ
+vl
 Vo
-uZ
+vl
 iF
 uZ
 Ri
@@ -28791,11 +28796,11 @@ GU
 uZ
 uZ
 iF
-uZ
+vl
 Lj
+vl
 uZ
-uZ
-YL
+kt
 ko
 tN
 tN
@@ -29048,9 +29053,9 @@ GU
 uZ
 uZ
 uZ
-uZ
-uZ
-uZ
+vl
+vl
+vl
 CU
 ia
 tN
@@ -39721,7 +39726,7 @@ Pd
 lY
 lY
 di
-Zm
+aO
 lY
 Pd
 Pd
