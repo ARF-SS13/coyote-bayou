@@ -294,6 +294,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/building)
+"aiU" = (
+/obj/structure/stairs,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "aiV" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -4833,6 +4837,14 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"dow" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "doB" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -18357,12 +18369,9 @@
 	},
 /area/f13/building)
 "lSE" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/city)
+/obj/structure/barricade/wooden/strong,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lSO" = (
 /obj/structure/mirror{
 	pixel_y = 32
@@ -21577,6 +21586,12 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/library)
+"obW" = (
+/obj/item/reagent_containers/spray/cleaner,
+/obj/structure/rack/shelf_metal,
+/obj/item/broom,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "ocl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21818,7 +21833,7 @@
 "omk" = (
 /obj/structure/stairs/south,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/city)
+/area/f13/wasteland)
 "oms" = (
 /obj/structure/closet/crate/grave,
 /obj/structure/fence/wooden{
@@ -30565,7 +30580,9 @@
 /area/f13/building)
 "tWw" = (
 /obj/structure/table/wood/settler,
-/obj/machinery/chem_dispenser/drinks/beer,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "tWM" = (
@@ -32035,6 +32052,12 @@
 	},
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/chem_cartridge/simple{
+	pixel_x = -5
+	},
+/obj/item/stock_parts/chem_cartridge/simple{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "vaH" = (
@@ -33645,7 +33668,9 @@
 /area/f13/wasteland)
 "wfp" = (
 /obj/structure/table/wood/settler,
-/obj/machinery/chem_dispenser/drinks,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "wfu" = (
@@ -34423,7 +34448,7 @@
 "wGH" = (
 /obj/structure/stairs/south,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/city)
+/area/f13/wasteland)
 "wGQ" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -60297,10 +60322,10 @@ fDY
 fDY
 oPE
 frU
-eWR
+aiU
 frU
-nDh
-nDh
+lSE
+lSE
 ueL
 xlf
 taz
@@ -65983,7 +66008,7 @@ bOw
 taz
 jzg
 taz
-gBA
+obW
 iNm
 frU
 fuD
@@ -66493,9 +66518,9 @@ fSU
 vlD
 qex
 taz
-xXp
+dow
+wss
 taz
-dsn
 taz
 taz
 euz
@@ -66750,9 +66775,9 @@ trK
 phw
 nbV
 taz
+aBY
 taz
-wss
-taz
+auL
 taz
 cqs
 cUd
@@ -67007,9 +67032,9 @@ lFy
 phw
 qPo
 taz
-lNy
 taz
-auL
+taz
+dsn
 aBY
 aBY
 swX
@@ -67265,8 +67290,8 @@ phw
 qPo
 aBY
 lNy
+keO
 taz
-dsn
 taz
 aBY
 krc
@@ -67522,8 +67547,8 @@ wnf
 qPo
 taz
 aBY
-keO
-taz
+aBY
+oVR
 xXp
 aBY
 nnK
@@ -67778,9 +67803,9 @@ qnB
 wnf
 qPo
 taz
-lSE
-aBY
-oVR
+taz
+taz
+lNy
 taz
 taz
 nEX
@@ -68035,9 +68060,9 @@ cNK
 wKZ
 qPo
 aBY
-taz
-taz
-lNy
+hxo
+keO
+aBY
 xXp
 xXp
 gln
@@ -68292,9 +68317,9 @@ iNm
 jef
 qZx
 aBY
-hxo
-keO
 aBY
+taz
+aLe
 taz
 taz
 kVi
@@ -68549,9 +68574,9 @@ hRM
 iNm
 iNm
 taz
-lNy
 taz
-aLe
+taz
+taz
 taz
 taz
 lLp
