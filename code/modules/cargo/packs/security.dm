@@ -68,17 +68,20 @@
 
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
-	desc = "One set of advanced armor, and rarely something better."
+	desc = "Three sets of advanced armor, choice pick of most scavengers."
 	cost = 5000
-	num_contained = 1
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor)
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/armorrare
+	name = "Armor - Rare"
+	desc = "One set of rare armor, the wasteland's premium in protection."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/nvgpack
