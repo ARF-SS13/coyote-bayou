@@ -513,7 +513,7 @@
 /datum/supply_pack/security/weapon_plus_unique
 	name = "Weapons - Rare Premium"
 	desc = "A single weapon of incredible rarity. There's no telling what was packed into this crate"
-	cost = 15000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
+	cost = 10000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/very_rare
