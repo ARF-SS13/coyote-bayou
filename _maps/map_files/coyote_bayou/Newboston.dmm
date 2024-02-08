@@ -9893,6 +9893,9 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"gFf" = (
+/turf/open/floor/plasteel/cult,
+/area/f13/wasteland)
 "gFW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood{
@@ -10240,6 +10243,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/city)
+"gTN" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal/cave)
 "gTX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
@@ -13673,6 +13682,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"jam" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/caves)
 "jan" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -40538,7 +40555,7 @@ qrT
 jwO
 hTW
 hTW
-hTW
+rdO
 mOz
 rdO
 hTW
@@ -40795,7 +40812,7 @@ hTW
 hTW
 hTW
 hTW
-xSo
+gTN
 mOz
 noh
 hTW
@@ -41052,7 +41069,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+rdO
 sRP
 noh
 hTW
@@ -41309,7 +41326,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+rdO
 mOz
 lrP
 hTW
@@ -41566,7 +41583,7 @@ hTW
 hTW
 hTW
 vBL
-hTW
+rdO
 mOz
 rdO
 hTW
@@ -41821,9 +41838,9 @@ gcG
 gcG
 hTW
 hTW
+nwa
 hTW
-hTW
-hTW
+rdO
 pOy
 gcG
 hTW
@@ -42591,7 +42608,7 @@ lQh
 gcG
 hTW
 hTW
-hTW
+nwa
 hTW
 gxV
 hTW
@@ -43363,7 +43380,7 @@ hTW
 hTW
 hTW
 hTW
-sUi
+hTW
 hTW
 hTW
 gcG
@@ -43620,7 +43637,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+sUi
 hTW
 hTW
 gcG
@@ -43877,7 +43894,7 @@ gcG
 fUR
 hTW
 hTW
-hTW
+nwa
 hTW
 gxV
 hTW
@@ -44904,7 +44921,7 @@ hTW
 hTW
 hTW
 hTW
-hTW
+nwa
 hTW
 hTW
 hTW
@@ -45160,7 +45177,7 @@ vRA
 hTW
 hTW
 hTW
-hTW
+sUi
 hTW
 hTW
 hTW
@@ -45673,8 +45690,8 @@ dLc
 nwa
 hTW
 hTW
+nwa
 hTW
-sUi
 hTW
 hTW
 hTW
@@ -46702,7 +46719,7 @@ nwa
 hTW
 hTW
 sUi
-hTW
+nwa
 hTW
 hTW
 hTW
@@ -46963,7 +46980,7 @@ hTW
 hTW
 hTW
 hTW
-gcG
+jam
 gcG
 gcG
 gcG
@@ -47221,7 +47238,7 @@ hTW
 hTW
 hTW
 xxz
-gcG
+jam
 gcG
 gcG
 gcG
@@ -47475,11 +47492,11 @@ hTW
 hTW
 hTW
 hTW
+nwa
 hTW
 hTW
 hTW
-hTW
-gcG
+jam
 gcG
 hRl
 hRl
@@ -47730,14 +47747,14 @@ nwa
 hTW
 uFG
 hTW
-gcG
+jam
 bAD
 hTW
 hTW
 hTW
+nwa
 hTW
-hTW
-gcG
+jam
 gcG
 gcG
 gcG
@@ -47988,14 +48005,14 @@ gcG
 gcG
 gcG
 gcG
-gcG
+jam
 hTW
 hTW
 hTW
 hTW
 hTW
 xxz
-gcG
+jam
 gcG
 tPQ
 tPQ
@@ -48246,11 +48263,11 @@ gcG
 gcG
 gcG
 gcG
-gcG
+jam
 hTW
 hTW
 hTW
-dfD
+gFf
 dfD
 dfD
 tPQ
@@ -48504,8 +48521,8 @@ gcG
 gcG
 gcG
 gcG
-gcG
-gcG
+jam
+jam
 bAD
 dfD
 dfD
@@ -48763,7 +48780,7 @@ gcG
 gcG
 hRl
 gcG
-gcG
+jam
 dfD
 tPQ
 bNZ
