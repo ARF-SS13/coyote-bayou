@@ -1829,6 +1829,10 @@
 	pixel_x = 7;
 	pixel_y = 7
 	},
+/obj/item/stock_parts/chem_cartridge/simple,
+/obj/item/stock_parts/chem_cartridge/simple{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "bpC" = (
@@ -24281,6 +24285,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"qam" = (
+/obj/machinery/processor,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/city)
 "qav" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/lights/bulbs,
@@ -75180,7 +75188,7 @@ rmv
 qnq
 eNj
 eNj
-eNj
+qam
 rmv
 iNm
 bLz
