@@ -1600,6 +1600,39 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"bfa" = (
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -1;
+	pixel_y = 12
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 15
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 15
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "bff" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
@@ -13160,6 +13193,9 @@
 	req_access_txt = 139
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/lock_bolt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "iNY" = (
@@ -27479,6 +27515,9 @@
 /obj/structure/simple_door/house{
 	req_access_txt = 139
 	},
+/obj/item/lock_bolt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "ser" = (
@@ -35269,6 +35308,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
+"xlf" = (
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "xlh" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light/small{
@@ -55857,7 +55901,7 @@ hRl
 gcG
 gcG
 gcG
-tPQ
+bfa
 tPQ
 tPQ
 tPQ
@@ -56113,7 +56157,7 @@ gcG
 gcG
 gcG
 gcG
-tPQ
+bfa
 tPQ
 tPQ
 tPQ
@@ -60258,7 +60302,7 @@ frU
 nDh
 nDh
 ueL
-cRr
+xlf
 taz
 ulR
 xXp
@@ -61286,7 +61330,7 @@ gIL
 vgw
 tPQ
 tPQ
-cRr
+xlf
 taz
 ulR
 xXp
@@ -62571,7 +62615,7 @@ gIL
 tPQ
 tPQ
 mQz
-cRr
+xlf
 xXp
 taz
 aBY

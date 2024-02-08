@@ -497,6 +497,19 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
+"cj" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/structure/sink/deep_water{
+	pixel_y = 3;
+	pixel_x = 2
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "cl" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -6441,6 +6454,9 @@
 	},
 /turf/open/floor/wood_fancy,
 /area/f13/building)
+"Cy" = (
+/turf/closed/mineral/random/low_chance,
+/area/f13/tribe)
 "CA" = (
 /obj/structure/chair/office/dark,
 /mob/living/simple_animal/hostile/supermutant/nightkin{
@@ -8472,12 +8488,16 @@
 	},
 /area/f13/building)
 "Lz" = (
-/obj/structure/barricade/wooden/strong,
-/obj/structure/curtain{
-	color = "#363636";
-	layer = 5
+/obj/structure/barricade/bars,
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/floor/wood_common,
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/building/tribal)
 "LC" = (
 /obj/structure/wreck/trash/machinepile{
@@ -11274,6 +11294,9 @@
 /obj/item/twohanded/spear,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
+"XP" = (
+/turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
 "XQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/science/glass{
@@ -16510,7 +16533,7 @@ rz
 pQ
 pK
 pj
-Lz
+rz
 GU
 GU
 GU
@@ -24684,8 +24707,8 @@ GU
 GU
 GU
 mX
-tD
 UP
+cj
 uf
 XN
 uB
@@ -24942,7 +24965,7 @@ GU
 GU
 rz
 rz
-rz
+Lz
 rz
 rz
 rz
@@ -25200,7 +25223,7 @@ GU
 GU
 GU
 GU
-hw
+Cy
 uZ
 uZ
 uZ
@@ -25457,7 +25480,7 @@ GU
 GU
 GU
 GU
-GP
+Cy
 uZ
 uZ
 uZ
@@ -30843,13 +30866,13 @@ Yj
 "}
 (75,1,1) = {"
 Yj
-GU
-GU
-GU
-GU
-GU
-GU
-GU
+XP
+XP
+XP
+XP
+XP
+XP
+XP
 tN
 tN
 tN
@@ -31100,13 +31123,13 @@ Yj
 "}
 (76,1,1) = {"
 Yj
-GU
-GU
-GU
-GU
-GU
-GU
-GU
+XP
+XP
+XP
+XP
+XP
+XP
+tN
 tN
 tN
 tN
