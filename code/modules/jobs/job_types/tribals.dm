@@ -126,7 +126,6 @@ Tribal Chief
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
@@ -265,11 +264,9 @@ Tribal Hunt Master
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/kit_spawner/tribal = 1,
 		/obj/item/cool_book/warriorguide = 1
@@ -288,7 +285,7 @@ Druid
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Chief"
-	enforces = "The ways of the Sulphur River  spirits."
+	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	description = "You are a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
 	selection_color = "#006666"
@@ -336,7 +333,6 @@ Druid
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
@@ -408,11 +404,9 @@ Villager
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
-		/obj/item/flashlight/flare/torch=1,
 		/obj/item/cool_book/villagerguide = 1
 	)
 
@@ -420,7 +414,6 @@ Villager
 	name = "Gatherer"
 	backpack_contents = list(
 		///obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/storage/bag/plants=1,
 		/obj/item/scythe=1,
@@ -484,8 +477,9 @@ Hunter
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
-		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
+		/datum/outfit/loadout/ranged,
+		/datum/outfit/loadout/melee,
+		/datum/outfit/loadout/healer,
 	)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -524,33 +518,37 @@ Hunter
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/storage/box/tools/ranching =1,
-		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
-		/obj/item/warpaint_bowl=1,
-		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1,
 		/obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/loadout/ranged
-	name = "Marksman"
+	name = "Archer"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/bow/composite = 1,
 		/obj/item/storage/bag/tribe_quiver/light/full/flint = 1,
-		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
-		/obj/item/reagent_containers/pill/healingpowder = 1,
 	)
 
 /datum/outfit/loadout/melee
-	name = "Frontline"
+	name = "Militia"
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/bone = 1,
-		///obj/item/binoculars = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/binoculars = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 2,
-		/obj/item/reagent_containers/pill/healingpowder = 2,
-		///obj/item/twohanded/spear/bonespear/deathclaw = 1,
+		/obj/item/hatchet/war_axe = 1,
+	)
+
+/datum/outfit/loadout/healer
+	name = "Healer"
+	backpack_contents = list(
+		/obj/item/melee/onehanded/knife/ritualdagger = 1,
+		/obj/item/stack/medical/gauze = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 3,
+		/obj/item/reagent_containers/glass/mortar = 1,
+		/obj/item/pestle=1,
+		/obj/item/healthanalyzer/tribal = 1
 	)
 
 /*
@@ -637,9 +635,7 @@ Guardian
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/reagent_containers/pill/healingpowder=2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1,
 		/obj/item/cool_book/warriorguide = 1
 	)
@@ -690,8 +686,6 @@ Guardian
 	shoes = /obj/item/clothing/shoes/sandal
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/healingpowder = 1,
-		/obj/item/warpaint_bowl = 1,
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools = 1,
 		/obj/item/cool_book/villagerguide = 1
