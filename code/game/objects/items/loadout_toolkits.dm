@@ -616,6 +616,9 @@
 
 /obj/item/storage/box/tools/hunting_horn/PopulateContents()
 	new /obj/item/melee/onehanded/knife/hunting(src) //for hunting
-	new /obj/item/huntinghorn(src) //for horn
-	new /obj/item/bikehorn(src) //for HONK
+	new /obj/item/huntinghorn/offense(src) //for horn
+	new /obj/item/huntinghorn/defense(src) //for horn
+	new /obj/item/huntinghorn/utility(src) //for horn
+	new /obj/item/huntinghorn/healing(src) //for horn
+	new /obj/item/bikehorn(src) //for HONK 
 
