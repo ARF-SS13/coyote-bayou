@@ -1779,13 +1779,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
-"hf" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
-/turf/open/floor/plating/f13/outside/roof/red,
-/area/f13/wasteland)
 "hh" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -6654,6 +6647,13 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
+"Bw" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/plating/f13/outside/roof/red,
+/area/f13/wasteland)
 "Bz" = (
 /obj/structure/railing{
 	dir = 4;
@@ -39501,7 +39501,7 @@ GU
 tN
 tN
 tN
-tN
+qV
 qV
 qV
 qV
@@ -39758,7 +39758,7 @@ GU
 tN
 tN
 tN
-tN
+qV
 qV
 qV
 qV
@@ -40015,7 +40015,7 @@ GU
 tN
 tN
 tN
-tN
+qV
 qV
 qV
 qV
@@ -40327,8 +40327,8 @@ Fj
 Fj
 Fj
 Fj
-hf
-hf
+Bw
+Bw
 hp
 Fb
 Fb
