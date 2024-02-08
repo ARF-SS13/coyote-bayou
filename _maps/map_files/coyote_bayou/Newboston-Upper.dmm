@@ -1779,6 +1779,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
+"hf" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/plating/f13/outside/roof/red,
+/area/f13/wasteland)
 "hh" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -1833,7 +1840,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/plating/f13/outside/roof/red,
 /area/f13/wasteland)
 "hr" = (
 /obj/structure/railing,
@@ -40063,9 +40070,9 @@ tN
 tN
 tN
 tN
-tN
-tN
-tN
+Fb
+Fb
+Fb
 Fb
 Fb
 Fb
@@ -40320,8 +40327,8 @@ Fj
 Fj
 Fj
 Fj
-Fj
-Fj
+hf
+hf
 hp
 Fb
 Fb
@@ -40837,11 +40844,11 @@ kY
 eV
 Cd
 iS
-tN
-tN
-tN
-tN
-hr
+Fb
+Fb
+Fb
+Fb
+Fo
 OT
 OT
 gz
@@ -41094,11 +41101,11 @@ gP
 az
 Cd
 iS
-tN
-tN
-tN
-tN
-hr
+Fb
+Fb
+Fb
+Fb
+Fo
 OT
 OT
 gz
@@ -41350,7 +41357,7 @@ ZP
 uu
 ec
 Cd
-NE
+iS
 qV
 qV
 qV

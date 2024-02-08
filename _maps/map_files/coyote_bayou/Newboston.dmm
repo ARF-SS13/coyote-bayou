@@ -997,10 +997,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"aIJ" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "aKd" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -4110,6 +4106,11 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"cLU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "cMv" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -6228,7 +6229,7 @@
 	region = "Nash's bar"
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/city)
 "ejp" = (
 /obj/structure/rack,
 /obj/item/electropack/shockcollar,
@@ -8269,7 +8270,7 @@
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/city)
 "fxb" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -14406,6 +14407,10 @@
 /obj/structure/stacklifter,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"juE" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "juW" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "First Bank of Nash";
@@ -19446,7 +19451,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/city)
 "mCH" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/outside/road{
@@ -21279,6 +21284,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"nQU" = (
+/obj/structure/table/wood/settler,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "nRd" = (
 /obj/structure/stone_tile/block,
 /obj/effect/decal/cleanable/glitter/pink,
@@ -26570,6 +26579,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"ryk" = (
+/obj/structure/wreck/trash/one_tire{
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "ryl" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
 /obj/item/clothing/shoes/laceup,
@@ -31632,7 +31647,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/city)
 "uJe" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
@@ -31688,6 +31703,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house/clean,
 /area/f13/building)
+"uKI" = (
+/obj/structure/campfire/barrel,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "uKX" = (
 /obj/effect/spawner/lootdrop/f13/trash,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -33288,6 +33307,15 @@
 /obj/machinery/photocopier,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
+"vRd" = (
+/obj/structure/chair/bench,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
+"vRs" = (
+/obj/structure/chair/bench,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "vRA" = (
 /obj/structure/fence/wooden,
 /obj/structure/destructible/tribal_torch/lit{
@@ -36341,6 +36369,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/brotherhood)
+"xUT" = (
+/obj/structure/wreck/trash/halftire,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "xVc" = (
 /obj/structure/bonfire,
 /obj/effect/decal/cleanable/dirt,
@@ -57741,7 +57774,7 @@ hRl
 uBn
 eHy
 uUl
-aIJ
+juE
 fyF
 tPQ
 tPQ
@@ -57998,7 +58031,7 @@ hRl
 uBn
 eHy
 eHy
-aIJ
+juE
 lQh
 tPQ
 tPQ
@@ -58255,7 +58288,7 @@ hRl
 uBn
 eHy
 eHy
-aIJ
+juE
 lQh
 lQh
 lQh
@@ -58512,7 +58545,7 @@ hRl
 uBn
 eHy
 eHy
-aIJ
+juE
 lQh
 lQh
 lQh
@@ -64731,15 +64764,15 @@ uWo
 hKA
 ksO
 tPQ
-vum
-sZu
+ryk
+uKI
 eiW
-sdV
-tPQ
-fWl
-xgN
-bFB
-tPQ
+xUT
+oPE
+vRd
+nQU
+vRs
+oPE
 wHr
 aXR
 taz
@@ -64988,15 +65021,15 @@ uYv
 mec
 ksO
 tPQ
-mQz
-tPQ
-tPQ
-mQz
-tPQ
-fWl
-xgN
-fWl
-mQz
+qei
+oPE
+oPE
+qei
+oPE
+vRd
+nQU
+vRd
+qei
 wHr
 vNN
 taz
@@ -65245,15 +65278,15 @@ uWo
 hKA
 ksO
 dVq
-tPQ
-tPQ
-mQz
-tPQ
-tPQ
-tPQ
-tPQ
-tPQ
-dVq
+oPE
+oPE
+qei
+oPE
+oPE
+oPE
+oPE
+oPE
+cLU
 ogc
 cni
 eYt
@@ -65503,14 +65536,14 @@ hKA
 ksO
 mQz
 uJb
-tPQ
-sdV
-tPQ
-vum
-tPQ
-tPQ
-tPQ
-mQz
+oPE
+xUT
+oPE
+ryk
+oPE
+oPE
+oPE
+qei
 mql
 fHC
 fHC
@@ -65759,12 +65792,12 @@ uYv
 mec
 lhV
 tPQ
-mQz
-mQz
-tPQ
-mQz
-tPQ
-tPQ
+qei
+qei
+oPE
+qei
+oPE
+oPE
 rmv
 rvM
 vdt
@@ -66016,12 +66049,12 @@ uYv
 hKA
 ksO
 tPQ
-mQz
-fWl
-xgN
+qei
+vRd
+nQU
 mCq
-dVq
-mQz
+cLU
+qei
 iNm
 eet
 tJH
@@ -66273,10 +66306,10 @@ uYv
 hKA
 ksO
 mQz
-tPQ
-fWl
+oPE
+vRd
 fwY
-bFB
+vRs
 iNm
 rmv
 rmv
