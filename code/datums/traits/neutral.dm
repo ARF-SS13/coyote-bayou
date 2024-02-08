@@ -625,7 +625,7 @@
 	human_only = FALSE
 
 /datum/quirk/smol
-	name = "Smol!"
+	name = "Scoopable!"
 	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, carrying you around is just pretty dang easy."
 	value = 0
 	category = "Lifepath Quirks"

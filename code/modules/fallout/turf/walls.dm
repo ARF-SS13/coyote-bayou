@@ -339,6 +339,12 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
 	else
 		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
+	
+	if(departing_mob.client.is_in_game >= 1)
+		// if(departing_mob.client.is_in_game == 2)
+		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
+		departing_mob.client.is_in_game = 0
+	
 	departing_mob.despawn()
 
 

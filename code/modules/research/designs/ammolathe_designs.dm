@@ -1,15 +1,10 @@
 /datum/design/ammolathe
 	build_type = AMMOLATHE
 	/// Automatically sets the ammo's material cost through Dynamic Stuff~
-	var/autocalc_material_values = TRUE
-
-/datum/design/ammolathe/InitializeMaterials()
-	if(autocalc_material_values)
-		calculate_ammobox_materials()
-	. = ..()
+	autocalc_materials = TRUE
 
 /// spawns some ammo boxes, rips the material data, and then trashes them
-/datum/design/ammolathe/proc/calculate_ammobox_materials()
+/datum/design/ammolathe/AutocalcMaterialCosts()
 	if(!ispath(build_path, /obj/item/ammo_box))
 		return
 	var/list/design_materials = list()
@@ -44,7 +39,7 @@
 	build_path = /obj/item/stack/sheet/metal
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /datum/design/ammolathe/blackpowder
 	name = "Blackpowder"
@@ -53,7 +48,7 @@
 	build_path = /obj/item/stack/ore/blackpowder
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /datum/design/ammolathe/titanium
 	name = "Titanium"
@@ -62,7 +57,7 @@
 	build_path = /obj/item/stack/sheet/mineral/titanium
 	category = list("initial", "Materials")
 	maxstack = 50
-	autocalc_material_values = FALSE
+	autocalc_materials = FALSE
 
 /* --Tier 1 Ammo and Magazines-- */
 //Tier 1 Magazines
@@ -487,6 +482,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Simple Ammo")
 
+
 /datum/design/ammolathe/a762rubber
 	name = ".308 rubber ammo box"
 	id = "a762_lathe_rubber"
@@ -553,6 +549,13 @@
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/magazine/m14mmcustom/empty
 	category = list("initial", "Basic Magazines")
+
+/datum/design/ammolathe/patronecartridge
+	name = "empty patrone 88 cartridge (30-06)"
+	id = "p88c"
+	materials = list(/datum/material/iron = 3000)
+	build_path = /obj/item/ammo_box/magazine/geight/empty
+	category = list("initial", "Simple Magazines")
 
 /datum/design/ammolathe/m5mmpistol
 	name = "empty handgun magazine (5mm)"
@@ -665,6 +668,13 @@
 	id = "a50mg"
 	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/a50MGbox
+	category = list("initial", "Intermediate Ammo")
+
+/datum/design/ammolathe/heavyneedler
+	name = "Heavy Ruby needle capsule"
+	id = "hnc"
+	materials = list(/datum/material/iron = 22000, /datum/material/blackpowder = 2200)
+	build_path = /obj/item/ammo_box/needlercapsule/heavy
 	category = list("initial", "Intermediate Ammo")
 
 /datum/design/ammolathe/a14mm
@@ -823,7 +833,7 @@
 //		materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
 //		build_path = /obj/item/ammo_box/magazine/m2mm
 //		category = list("initial", "Advanced Ammo")
-//		autocalc_material_values = FALSE
+//		autocalc_materials = FALSE
 
 /datum/design/ammolathe/m2mm_rack
 	name = "2mm Gauss Clip"
@@ -924,6 +934,13 @@
 	id = "handloader_m22rubber"
 	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/m22/rubber
+	category = list("initial", "Handloaded Ammo")
+
+/datum/design/ammolathe/needlercapsule/handloaded
+	name = "Capsule full of jade needle ammo"
+	id = "needlerhandloadedcapsule"
+	build_path = /obj/item/ammo_box/needlercapsule/handloaded
+	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Handloaded Ammo")
 
 /datum/design/ammolathe/improvised/a9mmfmj
@@ -1036,6 +1053,13 @@
 	id = "handloader_beanbag"
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/shotgun/bean
+	category = list("initial", "Handloaded Ammo")
+
+/datum/design/ammolathe/improvised/needlershotgunbox
+	name = "crystal needler shotgun box"
+	id = "crystal_shotgunbox"
+	materials = list(/datum/material/iron = 9000, /datum/material/blackpowder = 1000)
+	build_path = /obj/item/ammo_box/needlercapsule/shotgun
 	category = list("initial", "Handloaded Ammo")
 
 /datum/design/ammolathe/improvised/rubbershot

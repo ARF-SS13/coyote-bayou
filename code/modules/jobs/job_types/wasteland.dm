@@ -225,9 +225,9 @@ Raider
 		///obj/item/gun/energy/laser/wattzs = 1,
 		///obj/item/gun/energy/laser/wattz = 1,
 		///obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 3,
+		/obj/item/reagent_containers/pill/patch/psycho = 3,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
 		)
 
 /datum/outfit/loadout/raider_painspike
@@ -904,8 +904,8 @@ Raider
 	name = "Trafficker"
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
+		/obj/item/reagent_containers/pill/patch/psycho = 1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 2,
 	//	/obj/item/storage/belt/shoulderholster/ranger357 = 1,
 		/obj/item/clothing/under/pants/f13/warboy = 1,
@@ -1317,12 +1317,18 @@ Raider
 */
 
 /datum/job/wasteland/f13wastelander/den
-	title = "Den Waster"
+	title = "Den Citizen"
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
+/datum/job/wasteland/f13wastelander/backstage
+	title = "Backstage Character"
+	flag = CBOOCBACKSTAGE
+	faction = FACTION_WASTELAND
+
+
 /datum/job/wasteland/f13wastelander/gar
-	title = "Garland City Waster"
+	title = "Garland Citizen"
 	flag = F13WASTEGAR
 	faction = FACTION_WASTELAND
 
@@ -2583,7 +2589,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/powerfist/f13/goliath = 1,
 		/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
 		/obj/item/clothing/head/helmet/f13/raider/arclight = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 2,
+		/obj/item/reagent_containers/pill/patch/psycho = 2,
 		/obj/item/reagent_containers/pill/patch/turbo = 2)
 
 //AMR
@@ -2610,3 +2616,47 @@ datum/job/wasteland/f13dendoctor
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
+
+// Newbie Teacher
+
+/datum/job/wasteland/f13ranger
+	title = "Texarkana Ranger"
+	flag = F13TEACHER
+	department_flag = TEACHER
+	faction = FACTION_TEACHER
+	req_admin_notify = 1
+	total_positions = 3
+	spawn_positions = 3
+	exp_requirements = 0 //10080
+	exp_type = EXP_TYPE_LIVING
+	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
+	supervisors = "fate"
+	selection_color = "#228c22"
+
+	outfit = /datum/outfit/job/wasteland/f13ranger
+
+	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
+
+/datum/outfit/job/wasteland/f13ranger
+	name = "Texarkana Ranger"
+	jobtype = /datum/job/wasteland/f13ranger
+
+	id = /obj/item/card/id/dogtag/ranger
+	ears = /obj/item/radio/headset/headset_town/lawman
+	belt = /obj/item/kit_spawner/waster
+	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/firstaid/ancient = 2,
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		/obj/item/kit_spawner/waster,
+		/obj/item/cool_book/teacherguidebook = 1
+		)

@@ -460,7 +460,7 @@
 				"NCR Scout", "NCR Scout Sergeant", "NCR Scout Lieutenant",
 				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
 				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler", "Vertibird Pilot", "Nash Librarian",
-				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Hunter", "Chief", "Shaman", "Villager", "Hunter")
+				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Forager", "Chief", "Shaman", "Villager", "Harvest Leader", "Spiritual Leader", "Forager")
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs() + list("Prisoner")

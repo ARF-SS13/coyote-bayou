@@ -235,7 +235,8 @@
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
-		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 9,         //85(140) 24
+		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
+		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
 		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 10,      //139 15
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
@@ -323,7 +324,7 @@
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
-	loot = list(                                                          //dps mag cap
+	loot = list(                                                          //dps(bane) mag cap
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 7,                //281 24
 		/obj/item/gun/ballistic/automatic/concussive = 8,                 //281 8
 		/obj/item/gun/ballistic/automatic/unmcamr = 9,                    //279 4
@@ -333,7 +334,9 @@
 		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                    //265 20
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
+		/obj/item/gun/ballistic/automatic/needlerhmg = 1,                 //243(448) 72
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
+		/obj/item/gun/ballistic/revolver/needlerrifle = 3,                 //220(520) 3
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
@@ -343,7 +346,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 1,        //254 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 3,  //113 12
-
 	)
 
 /// DPS should be 300+ or have some other excellent quality like magazine capacity
@@ -882,9 +884,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
 		/obj/item/reagent_containers/pill/patch/jet = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
+		/obj/item/reagent_containers/pill/patch/steady = 1,
+		/obj/item/reagent_containers/pill/patch/psycho = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 	)
 
@@ -893,9 +895,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -911,9 +913,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -1221,11 +1223,12 @@
 /obj/effect/spawner/lootdrop/f13/trash_mods
 	name = "trash attachments"
 	loot = list(
-		/obj/item/tool_upgrade/productivity/red_paint = 1,
+		/obj/item/tool_upgrade/paint/red = 1,
+		/obj/item/tool_upgrade/paint/blue = 1,
+		/obj/item/tool_upgrade/paint/yellow = 1,
 		/obj/item/tool_upgrade/refinement/laserguide = 1,
 		/obj/item/tool_upgrade/reinforcement/heatsink = 1,
 		/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-		/obj/item/tool_upgrade/augment/randomizer = 1,
 		/obj/item/gun_upgrade/cosmetic/gold = 1,
 		/obj/item/gun_upgrade/trigger/boom = 1,
 

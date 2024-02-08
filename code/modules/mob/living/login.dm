@@ -26,3 +26,5 @@
 	if(ranged_ability)
 		ranged_ability.add_ranged_ability(src, span_notice("You currently have <b>[ranged_ability]</b> active!"))
 	hud_client_check()
+
+	SSstatpanels.collect_horny_demographic(src)

@@ -69,6 +69,7 @@
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"					//from base of atom/attack_hulk(): (/mob/living/carbon/human)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"				//from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_PARENT_EXAMINE "atom_examine"                    //from base of atom/examine(): (/mob, list/examine_return_text)
+#define COMSIG_FLIST "flist" // mob/examined, mob/examiner
 ///from base of atom/get_examine_name(): (/mob, list/overrides)
 #define COMSIG_ATOM_GET_EXAMINE_NAME "atom_examine_name"
 #define COMSIG_PARENT_EXAMINE_MORE "atom_examine_more"                    ///from base of atom/examine_more(): (/mob)
@@ -440,6 +441,9 @@
 #define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
 #define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
 #define COMSIG_GET_UPGRADES "get_upgrades"						//from /atom/refresh_upgrades(): (/src) Called to get the upgrades of the /src
+
+#define SIG_ITEM_WIELD "item_wield"								//from /obj/item/wield(): (src, mob/usr)
+#define SIG_ITEM_UNWIELD "item_unwield"							//from /obj/item/unwield(): (src, mob/usr)
 
 #define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)

@@ -1,5 +1,7 @@
 
 // see code/module/crafting/table.dm
+// This recipes is currently under recipes_pie.dm
+
 
 //////////////////////////////////FRUITS/////////////////////////////////////////
 /*
@@ -11,8 +13,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/applepie
 	subcategory = CAT_PIE
-
-
 
 /datum/crafting_recipe/food/bananacreampie
 	name = "Banana cream pie"
@@ -81,8 +81,6 @@
 	subcategory = CAT_PIE
 
 //////////OTHER PIES/////////
-
-
 
 /datum/crafting_recipe/food/baklava
 	name = "Baklava pie"
@@ -157,11 +155,6 @@
 	subcategory = CAT_PIE
 
 //////////////TARTS//////////////
-
-
-
-
-
 
 /datum/crafting_recipe/food/berrytart
 	name = "Berry tart"

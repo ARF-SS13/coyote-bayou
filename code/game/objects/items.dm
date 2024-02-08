@@ -1282,3 +1282,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
 	. = ..()
+
+/obj/item/MouseDrop(mob/over, src_location, over_location)
+	var/mob/living/L = usr
+	if((L != over) && (isliving(over)))
+		var/mob/living/target = over
+		L.do_give(target)
+	return ..()

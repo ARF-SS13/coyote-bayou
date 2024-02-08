@@ -27,6 +27,7 @@
 	/// The index of the ammo_types/firemodes which we're using right now !! has NOTHING to do with the gun's actual firemode
 	var/current_firemode_index = 1
 	var/can_charge = 1 //Can it be charged in a recharger?
+	var/can_box_charge = TRUE // can it be charged in a box recharger?
 	var/can_remove = 1 //Can the cell itself be removed and replaced?
 	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
 	var/charge_sections = 4

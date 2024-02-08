@@ -661,8 +661,8 @@
 	simple_icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_width = 32
 	icon_dead_suffix = "_dead"
-	icon_rest_suffix = ""
-	rotate_on_lying = TRUE
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
 	roundstart = TRUE
 	liked_food = MEAT | RAW
 	default_color = "FFFFFF"
@@ -941,15 +941,6 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/maid
 	race = /datum/species/feral/xeno/maid
-
-/datum/species/feral/werewolf/rogue
-	name = "Black Werewolf"
-	id = "were"
-	simple_icon = 'modular_roguetown/mob/monster/werewolf.dmi'
-	icon_width = 32
-	roundstart = TRUE
-/mob/living/carbon/human/species/werewolfrogue
-	race = /datum/species/feral/werewolf/rogue
 
 //tgmc aliens
 /datum/species/feral/xeno/beetle

@@ -834,7 +834,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 //-->Pixel sliding on steroids
 /mob
-	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob
+	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob 
 	var/pixel_slide_target_has_help_int = FALSE  //we are going to store here the pixel sliding's target variable, specifically if they are in help intent
 	var/pixel_slide_memory_x    //memory of previous x position before moving
 	var/pixel_slide_memory_y    //memory of previous y position before moving
@@ -1438,6 +1438,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Touch - Poke their breast.",
 	"Touch - Poke their tummy.",
 	"Touch - Poke their thigh.",
+	"Touch - Grab their hips.",
 	"Touch - Put a finger over their mouth.",
 	"React - Dare them to 'make you' do something.",
 	"Leer - Stare defiantly.",
@@ -1460,7 +1461,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
 	"Leer - Sneak a peak at their assets.",
-	"React - Want to tell them something."
+	"React - Want to tell them something.",
+	"Touch - Pull their tail."
 	)
 	choices = sortList(choices)
 
@@ -1993,6 +1995,16 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if("React - Want to tell them something.")
 			to_chat(A, span_notice("[src] maybe just <span class='love'>wants to tell you something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
 			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Touch - Grab their hips.")
+			to_chat(A, span_notice("[src] is maybe reaching to <span class='love'>grab your hips?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Touch - Pull their hair.")
+			to_chat(A, span_notice("[src] is reaching to <span class='love'>pull your tail?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to pull [A]'s tail, maybe they'll notice you trying to be frisky!")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return

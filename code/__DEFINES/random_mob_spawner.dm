@@ -1,5 +1,8 @@
 /// Mob spawner kind IDs
 #define MOB_SPAWNER_GHOUL "ghoul"
+#define MOB_SPAWNER_LESSERSPIDER "lesser_spider"
+#define MOB_SPAWNER_GREATERSPIDER "greater_spider"
+#define MOB_SPAWNER_OMEGASPIDER "omega_spider"
 #define MOB_SPAWNER_MIRELURK "mirelurk"
 #define MOB_SPAWNER_BLOATFLY "bloaties"
 #define MOB_SPAWNER_GECKO "gecko"
@@ -125,6 +128,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ALL
 	group_list = list(
 		MOB_SPAWNER_GHOUL,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
 		MOB_SPAWNER_GECKO,
@@ -184,6 +188,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_LOW
 	group_list = list(
 		MOB_SPAWNER_GHOUL,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
 		MOB_SPAWNER_GECKO,
@@ -198,6 +203,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_MID
 	group_list = list(
 		MOB_SPAWNER_GHOUL,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_ROBOT_DOMESTIC,
@@ -225,6 +231,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_RAIDER_MIXED,
 		MOB_SPAWNER_TUNNELLER,
 		MOB_SPAWNER_SPORECARRIER,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_WANAMINGO
 	)
 
@@ -239,6 +246,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_RAIDER_RANGED,
 		MOB_SPAWNER_RAIDER_MIXED,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_RATTLER
 	)
@@ -253,6 +261,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_RAIDER_MIXED,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_RATTLER
 	)
@@ -283,6 +292,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ANIMALS_TRASH
 	group_list = list(
 		MOB_SPAWNER_BLOATFLY,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_GECKO,
 		MOB_SPAWNER_BLOATFLY_AND_GECKO,
 		MOB_SPAWNER_MOLERAT,
@@ -295,6 +305,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_GECKO,
 		MOB_SPAWNER_BLOATFLY_AND_GECKO,
 		MOB_SPAWNER_MOLERAT,
@@ -320,6 +331,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ANIMALS_HIGH
 	group_list = list(
 		MOB_SPAWNER_CENTAUR,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_SCORPIONS,
@@ -335,6 +347,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ANIMALS_HIGHER
 	group_list = list(
 		MOB_SPAWNER_CENTAUR,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_NIGHTSTALKER,
@@ -350,6 +363,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO
 	)
 /*
@@ -374,6 +388,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_GECKO,
 		MOB_SPAWNER_BLOATFLY_AND_GECKO,
 		MOB_SPAWNER_MOLERAT,
@@ -386,6 +401,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_MID
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_SCORPIONS,
 		MOB_SPAWNER_ANT,
@@ -397,6 +413,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_HIGH
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_SCORPIONS,
@@ -412,6 +429,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_HIGHER
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
+		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_YAOGUAI
@@ -422,7 +440,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_DEATH
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
-		MOB_SPAWNER_HELLPIG
+		MOB_SPAWNER_HELLPIG,
+		MOB_SPAWNER_OMEGASPIDER
 	)
 
 /// Debug thing (its full of bugs (get it?))
@@ -500,6 +519,85 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		/mob/living/simple_animal/hostile/ghoul = 5,
 		/mob/living/simple_animal/hostile/ghoul/reaver = 10,
 		/mob/living/simple_animal/hostile/ghoul/glowing = 5
+		)
+
+// Lesser Spiders
+/datum/random_mob_spawner/lesserspider
+	nest_tag = MOB_SPAWNER_LESSERSPIDER
+	nest_name = "spider nest"
+	nest_desc = "Creepy and covered with webs...weird?"
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 2
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 5,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 2
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 3,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 5,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 3
+		)
+	num_mobs_to_spawn_hard = 3
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 3,
+		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 5,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 3
+		)
+
+// Greater Spiders
+/datum/random_mob_spawner/greaterspider
+	nest_tag = MOB_SPAWNER_GREATERSPIDER
+	nest_name = "reaper nest"
+	nest_desc = "Tiny eggs surrounded by durable webs are visible..."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 3,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1
+		)
+	num_mobs_to_spawn_hard = 3
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 4,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 2
+		)
+
+// Omega Spiders
+/datum/random_mob_spawner/omegaspider
+	nest_tag = MOB_SPAWNER_OMEGASPIDER
+	nest_name = "emperor nest"
+	nest_desc = "Glowing red eyes are visible inside..."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2,
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 3,
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 4,
 		)
 
 /// Mirelurks

@@ -1360,7 +1360,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
 		H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
 
-	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
+	//The fuking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	else 
 		if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
 			if(H.overeatduration < 100)
@@ -1382,9 +1382,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!H.insanelycomfy)
 			to_chat(H, span_notice("You feel comfy."))
 			H.insanelycomfy = TRUE
+			for(var/mob/living/somone in range(1, H))
+				if(somone == H)
+					continue
+				if(!somone.client)
+					continue
+				SSstatpanels.discard_horny_demographic(H) // If we're comfy with someone, its likely that they are fucking each other
+				break // And the horny demographic thing is to get people who arent fucking to find people to fuck, so if theyre fucking, remove them from the list of people lookin to fuck
 	else if(H.insanelycomfy)
 		to_chat(H, span_notice("You no longer feel comfy."))
 		H.insanelycomfy = FALSE
+		SSstatpanels.collect_horny_demographic(H)
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER) && !H.insanelycomfy)

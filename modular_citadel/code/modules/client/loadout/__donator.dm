@@ -267,6 +267,21 @@
 	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
+/datum/gear/donator/kits/matter7
+	name = "A Box for the Smelly Circuit Sergal"
+	path = /obj/item/storage/box/large/custom_kit/matter7
+	ckeywhitelist = list("Matter7")
+
+/obj/item/storage/box/large/custom_kit/matter7/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
+
+/datum/gear/donator/kits/applewhiskey
+	name = "Huntress Customs Minigun"
+	path = /obj/item/storage/box/large/custom_kit/applewhiskey
+	ckeywhitelist = list("Apple Whisky")
+
+/obj/item/storage/box/large/custom_kit/applewhiskey/PopulateContents()
+	new /obj/item/gun/ballistic/babygun(src)
 
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
@@ -755,11 +770,38 @@
 
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
-	path = /obj/item/storage/box/large/custom_kit/jaeger
+	path = /obj/item/storage/box/large/custom_kit/jaeger // bookmark from JSC
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/hebe(src)
+	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
+
+/datum/gear/donator/kits/palpapus
+	name = "Darth Plapappus Customs"
+	path = /obj/item/storage/box/large/custom_kit/palpapus
+	ckeywhitelist = list("lordpapalus", "Lord_Papalus")
+
+/obj/item/storage/box/large/custom_kit/palpapus/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
+	new /obj/item/clothing/suit/armor/medium/raider/combatduster(src)
+	new /obj/item/clothing/under/f13/eighties(src)
+	new /obj/item/clothing/shoes/f13/rag/pawb(src)
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal(src)
+	new /obj/item/kit_spawner/tools(src)
+	new /obj/item/clothing/gloves/f13/military(src)
+	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
+	new /obj/item/storage/backpack/trekker(src)
+
+/datum/gear/donator/kits/werediggy
+	name = "Weredoggo Customs"
+	path = /obj/item/storage/box/large/custom_kit/werediggy // bookmark from JSC
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/werediggy/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/peach(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+	new /obj/item/seeds/grass/fairy(src)
+	new /obj/item/storage/daki(src)
 
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
@@ -1196,7 +1238,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/storage/box/tools/ranching(src)
+	new /obj/item/slimecross/consuming/grey(src)
 
 /datum/gear/donator/kits/prismaticnova2
 	name = "Slime Cookie Kit"
@@ -1413,6 +1455,20 @@
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
+
+/datum/gear/donator/kits/seermankhajiit00last
+	name = "The Finale"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00last
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit00last/PopulateContents()
+	new /obj/item/ammo_box/a3006box(src)
+	new /obj/item/ammo_box/magazine/stg(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/stg44custom(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
+
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00new
@@ -1566,6 +1622,14 @@
 /obj/item/storage/box/large/custom_kit/thingpony/iris/PopulateContents()
 	new /obj/item/clothing/under/tribaliris(src)
 	new /obj/item/gun/ballistic/shotgun/s163/thingblessed(src)
+
+/datum/gear/donator/kits/thingpony/petal
+	name = "Petal's pack"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/petal
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/petal/PopulateContents()
+	new /obj/item/clothing/under/poofygreen(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
@@ -1976,3 +2040,11 @@
 	new  /obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly(src)
 	new  /obj/item/gun/ballistic/automatic/ww1selfloader/smelly(src)
+
+/datum/gear/donator/kits/trickingtrapster
+	name = "Tarot Box"
+	path = /obj/item/storage/box/large/custom_kit/trickingtrapster
+	ckeywhitelist = list("trickingtrapster")
+
+/obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
+	new /obj/item/tarotdeck(src)

@@ -81,7 +81,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/wrench(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
-	new /obj/item/analyzer(src)
+//	new /obj/item/analyzer(src)		// Coyote Bayou Edit, due to disabled atmos, analyzers are useless.
+	new /obj/item/multitool(src)	// Coyote Bayou Edit, no need to gatekeep the multitool?
 	new /obj/item/wirecutters(src)
 
 /obj/item/storage/toolbox/mechanical/old
