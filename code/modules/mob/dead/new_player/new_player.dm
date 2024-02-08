@@ -598,14 +598,11 @@
 	SSevents.holiday_on_join(humanc)
 
 	if(ishuman(humanc))
-		var/mob/living/carbon/human/H = humanc
-		var/obj/item/suit = H.get_item_by_slot(SLOT_WEAR_SUIT)
-		if(HAS_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
-			if(list(ARMOR_CLOTHING_MEDIUM, ARMOR_CLOTHING_HEAVY,
-			ARMOR_CLOTHING_SALVAGE, ARMOR_CLOTHING_PA))
-
-				H.dropItemToGround(suit)
-				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
+		var/obj/item/clothing/suit/wornsuit = humanc.get_item_by_slot(SLOT_WEAR_SUIT)
+		if(HAS_TRAIT(humanc, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
+			if(wornsuit.armor_tier_desc in list(ARMOR_CLOTHING_MEDIUM, ARMOR_CLOTHING_HEAVY, ARMOR_CLOTHING_SALVAGE, ARMOR_CLOTHING_PA))
+				humanc.dropItemToGround(wornsuit)
+				to_chat(humanc, span_danger("You can't wear [wornsuit], it's too heavy!"))
 
 	character.client.is_in_game = 1
 	spawn(5 MINUTES)
