@@ -155,14 +155,6 @@
 	result = /obj/item/shovel/serrated
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/punji_sticks
-	name = "Punji stick Trap"
-	time = 30
-	reqs = list(
-			/obj/item/stack/sheet/mineral/bamboo = 5)
-	result = /obj/structure/punji_sticks
-	category = CAT_PRIMAL
-
 /datum/crafting_recipe/wickerdoll
 	name = "Wicker Doll"
 	time = 15
