@@ -3,7 +3,7 @@
 	desc = "A basic wooden fence meant to prevent people like you either in or out of somewhere."
 	icon = 'modular_coyote/icons/objects/structures/wooden_fence.dmi'
 	icon_state = "fence"
-	layer = BELOW_OBJ_LAYER // I think this is the default but lets be safe?
+	layer = 4.1
 	resistance_flags = FLAMMABLE
 	flags_1 = ON_BORDER_1
 	/// If we randomize our icon on spawning
