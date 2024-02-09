@@ -1687,6 +1687,19 @@
 /obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
+
+/datum/gear/donator/kits/twitchysw
+	name = "The Avian"
+	path = /obj/item/storage/box/large/custom_kit/twitchysw
+	ckeywhitelist = list("TwitchySw")
+
+
+/obj/item/storage/box/large/custom_kit/twitchysw/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/asvalcustom(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/gun/ballistic/revolver/hunting/custom(src)
+	new /obj/item/ammo_box/c4570box(src)
+
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
