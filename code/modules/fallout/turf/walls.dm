@@ -321,9 +321,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	update_icon()
 	var/dat
 	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], simple animal [departing_mob.type], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else
