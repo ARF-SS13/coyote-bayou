@@ -231,6 +231,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 		"ooc_notes" = "",
+		"background_info_notes" = "",
 		"flist" = "",
 		"meat_type" = "Mammalian",
 		"taste" = "something",
@@ -598,11 +599,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/ooc_notes_len = length(features["ooc_notes"])
 			if(ooc_notes_len <= 40)
 				if(!ooc_notes_len)
-					dat += "\[...\]"
+					dat += "\[...\]<br>"
 				else
-					dat += "[features["ooc_notes"]]"
+					dat += "[features["ooc_notes"]]<br>"
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
+
+			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+			var/background_info_notes_len = length(features["background_info_notes"])
+			if(background_info_notes_len <= 40)
+				if(!background_info_notes_len)
+					dat += "\[...\]<br>"
+				else
+					dat += "[features["background_info_notes"]]<br>"
+			else
+				dat += "[TextPreview(features["background_info_notes"])]...<br>"
 
 			//outside link stuff
 			dat += "<h3>Outer hyper-links settings</h3>"
@@ -2646,6 +2657,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["ooc_notes"] = msg
+				
+				if("background_info_notes")
+					var/msg = stripped_multiline_input(usr, "Set always-visible character's background!", "Background Info Notes", html_decode(features["background_info_notes"]), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						features["background_info_notes"] = msg
 
 				if("flist")
 					var/link = input(usr, "Set always-visible F-list. Just copy and paste the link you want to use from the browser. Leave it blank to remove the previous link.", "F-list")

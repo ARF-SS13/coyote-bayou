@@ -551,6 +551,13 @@
 #define TRAIT_SPACEWALK "spacewalk"
 #define RADX_TRAIT "trait_from_rad-x"
 
+/// HUNTING HORNS! check huntinghorneffects.dm and huntinghorn.dm
+#define TRAIT_HH_COOLDOWN_IGNORE "horn_cooldown"
+#define TRAIT_HH_IRON_SKIN "horn_iron_skin"
+#define TRAIT_HH_KNOCKDOWN_RES "horn_kd_res"
+#define TRAIT_HH_DIVINE_BLESSING "horn_divine"
+#define TRAIT_HH_DRAW_SPEED "horn_draw_speed"
+
 //important_recursive_contents traits
 /*
  * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.

@@ -92,6 +92,7 @@
 #define GUN_MECHANISM "misc slot"
 #define GUN_GRIP "grip slot"
 #define GUN_COSMETIC "cosmetic slot"
+#define GUN_PAINTABLE "paint slot"
 
 //Whitelist Tag defines
 #define GUN_SILENCABLE "silencable"

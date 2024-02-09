@@ -68,17 +68,20 @@
 
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
-	desc = "One set of advanced armor, and rarely something better."
+	desc = "Three sets of advanced armor, choice pick of most scavengers."
 	cost = 5000
-	num_contained = 1
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor)
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/armorrare
+	name = "Armor - Rare"
+	desc = "One set of rare armor, the wasteland's premium in protection."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/nvgpack
@@ -510,7 +513,7 @@
 /datum/supply_pack/security/weapon_plus_unique
 	name = "Weapons - Rare Premium"
 	desc = "A single weapon of incredible rarity. There's no telling what was packed into this crate"
-	cost = 15000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
+	cost = 10000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/very_rare
