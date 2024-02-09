@@ -53,6 +53,8 @@ SUBSYSTEM_DEF(overlays)
 			COMPILE_OVERLAYS(A)
 			STAT_STOP_STOPWATCH
 			STAT_LOG_ENTRY(stats, A.type)
+			UNSETEMPTY(A.add_overlays)
+			UNSETEMPTY(A.remove_overlays)
 		if(mc_check)
 			if(MC_TICK_CHECK)
 				break
@@ -124,6 +126,9 @@ SUBSYSTEM_DEF(overlays)
 	//If not already queued for work and there are overlays to remove
 	if(NOT_QUEUED_ALREADY && remove_overlays.len)
 		QUEUE_FOR_COMPILE
+	else
+		UNSETEMPTY(remove_overlays)
+		UNSETEMPTY(add_overlays)
 
 /atom/proc/cut_overlay(list/overlays)
 	if(!overlays)
@@ -142,6 +147,8 @@ SUBSYSTEM_DEF(overlays)
 	//If not already queued and there is work to be done
 	if(NOT_QUEUED_ALREADY && (fa_len != a_len || fr_len != r_len))
 		QUEUE_FOR_COMPILE
+	else
+		UNSETEMPTY(remove_overlays)
 	UNSETEMPTY(add_overlays)
 
 /atom/proc/add_overlay(list/overlays)
@@ -157,6 +164,8 @@ SUBSYSTEM_DEF(overlays)
 	var/fa_len = add_overlays.len
 	if(NOT_QUEUED_ALREADY && fa_len != a_len)
 		QUEUE_FOR_COMPILE
+	else
+		UNSETEMPTY(add_overlays)
 
 /atom/proc/copy_overlays(atom/other, cut_old)	//copys our_overlays from another atom
 	if(!other)
