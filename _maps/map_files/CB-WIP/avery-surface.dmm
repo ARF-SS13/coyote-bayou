@@ -371,6 +371,9 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
+"kl" = (
+/turf/closed/indestructible/riveted,
+/area/f13/tcoms)
 "kx" = (
 /obj/structure/flora/tree/cherryblossom4,
 /turf/open/indestructible/ground/outside/dirt,
@@ -586,9 +589,6 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
-"qD" = (
-/turf/closed/indestructible/riveted,
-/area/f13/tcoms)
 "qJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -1131,6 +1131,10 @@
 /obj/structure/fireplace,
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
+"CF" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "CV" = (
 /obj/structure/fireplace,
 /obj/structure/rug/mat{
@@ -1265,9 +1269,6 @@
 	name = "rough asphalt"
 	},
 /area/f13/wasteland)
-"FP" = (
-/turf/open/indestructible,
-/area/f13/tcoms)
 "FS" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/wood_fancy,
@@ -1598,10 +1599,6 @@
 	},
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
-"Oe" = (
-/obj/machinery/telecomms/relay/preset/telecomms,
-/turf/open/indestructible,
-/area/f13/tcoms)
 "Om" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -1846,6 +1843,9 @@
 /obj/structure/chair/comfy/beige,
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
+"RY" = (
+/turf/open/indestructible,
+/area/f13/tcoms)
 "Sb" = (
 /obj/structure/chair/sofa/right{
 	pixel_y = 8
@@ -2792,11 +2792,11 @@ Wy
 Wy
 Wy
 Wy
-qD
-qD
-qD
-qD
-qD
+kl
+kl
+kl
+kl
+kl
 bV
 "}
 (3,1,1) = {"
@@ -3049,11 +3049,11 @@ Wy
 Wy
 Wy
 Wy
-qD
-FP
-FP
-FP
-qD
+kl
+RY
+RY
+RY
+kl
 bV
 "}
 (4,1,1) = {"
@@ -3306,11 +3306,11 @@ Wy
 Wy
 Wy
 Wy
-qD
-FP
-Oe
-FP
-qD
+kl
+RY
+CF
+RY
+kl
 bV
 "}
 (5,1,1) = {"
@@ -3563,11 +3563,11 @@ Wy
 Wy
 Wy
 Wy
-qD
-FP
-FP
-FP
-qD
+kl
+RY
+RY
+RY
+kl
 bV
 "}
 (6,1,1) = {"
@@ -3820,11 +3820,11 @@ Wy
 Wy
 Wy
 Wy
-qD
-qD
-qD
-qD
-qD
+kl
+kl
+kl
+kl
+kl
 bV
 "}
 (7,1,1) = {"
