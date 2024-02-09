@@ -772,6 +772,25 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/obj/item/gun/ballistic/revolver/hunting/custom
+	name = "Deireadh le ceantar revolver"
+	desc = "A scopable double action revolver chambered in 45-70. It seems custom made and fairly weaker than its original counterpart."
+	icon_state = "hunting_revolver"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	scope_state = "revolver_scope"
+	scope_x_offset = 9
+	scope_y_offset = 20
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
 /obj/item/gun/ballistic/revolver/derringer4570
 	name = ".45-70 derringer"
 	desc = "An overcompensating little gun that offers a high degree of precision firepower in a tiny package, if you can handle the recoil"
