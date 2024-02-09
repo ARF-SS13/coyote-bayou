@@ -878,3 +878,20 @@
 
 /obj/structure/chair/right/proc/GetOverlay()
 	return mutable_appearance('icons/obj/chairs.dmi', "booth_rightend_overlay")
+
+// Modern TG Chairs
+/obj/structure/chair/metal
+	name = "metal chair"
+	icon_state = "chair_metal"
+	item_chair = /obj/item/chair/metal // if null it can't be picked up
+
+/obj/item/chair/metal
+	name = "metal chair"
+	desc = "A basic yet sturdy chair made from metal."
+	icon_state = "chair_metal_toppled"
+	item_state = "chair"
+	max_integrity = 70
+	hitsound = 'sound/weapons/genhit1.ogg'
+	origin_type = /obj/structure/chair/metal
+	custom_materials = null
+	break_chance = 50
