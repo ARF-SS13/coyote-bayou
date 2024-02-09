@@ -605,6 +605,9 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/f13/wasteland)
+"ys" = (
+/turf/closed/indestructible/riveted,
+/area/f13/tcoms)
 "yu" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8;
@@ -1051,6 +1054,10 @@
 "RB" = (
 /turf/closed/indestructible/f13/matrix/transition,
 /area/f13/wasteland)
+"RO" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "RR" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/curtain{
@@ -1096,6 +1103,9 @@
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/wasteland)
+"Tq" = (
+/turf/open/indestructible,
+/area/f13/tcoms)
 "Ts" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1745,11 +1755,11 @@ tV
 tV
 tV
 tV
-tV
-tV
-tV
-tV
-tV
+ys
+ys
+ys
+ys
+ys
 ZU
 "}
 (3,1,1) = {"
@@ -2002,11 +2012,11 @@ tV
 tV
 tV
 tV
-tV
-tV
-tV
-tV
-tV
+ys
+Tq
+Tq
+Tq
+ys
 ZU
 "}
 (4,1,1) = {"
@@ -2259,11 +2269,11 @@ tV
 tV
 tV
 tV
-tV
-tV
-tV
-tV
-tV
+ys
+Tq
+RO
+Tq
+ys
 ZU
 "}
 (5,1,1) = {"
@@ -2516,11 +2526,11 @@ tV
 tV
 tV
 tV
-tV
-tV
-tV
-tV
-tV
+ys
+Tq
+Tq
+Tq
+ys
 ZU
 "}
 (6,1,1) = {"
@@ -2773,11 +2783,11 @@ tV
 tV
 tV
 tV
-tV
-tV
-tV
-tV
-tV
+ys
+ys
+ys
+ys
+ys
 ZU
 "}
 (7,1,1) = {"

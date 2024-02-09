@@ -586,6 +586,9 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
+"qD" = (
+/turf/closed/indestructible/riveted,
+/area/f13/tcoms)
 "qJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -1262,6 +1265,9 @@
 	name = "rough asphalt"
 	},
 /area/f13/wasteland)
+"FP" = (
+/turf/open/indestructible,
+/area/f13/tcoms)
 "FS" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/wood_fancy,
@@ -1592,6 +1598,10 @@
 	},
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
+"Oe" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "Om" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -2782,11 +2792,11 @@ Wy
 Wy
 Wy
 Wy
-Wy
-Wy
-Wy
-Wy
-Wy
+qD
+qD
+qD
+qD
+qD
 bV
 "}
 (3,1,1) = {"
@@ -3039,11 +3049,11 @@ Wy
 Wy
 Wy
 Wy
-Wy
-Wy
-Wy
-Wy
-Wy
+qD
+FP
+FP
+FP
+qD
 bV
 "}
 (4,1,1) = {"
@@ -3296,11 +3306,11 @@ Wy
 Wy
 Wy
 Wy
-Wy
-Wy
-Wy
-Wy
-Wy
+qD
+FP
+Oe
+FP
+qD
 bV
 "}
 (5,1,1) = {"
@@ -3553,11 +3563,11 @@ Wy
 Wy
 Wy
 Wy
-Wy
-Wy
-Wy
-Wy
-Wy
+qD
+FP
+FP
+FP
+qD
 bV
 "}
 (6,1,1) = {"
@@ -3810,11 +3820,11 @@ Wy
 Wy
 Wy
 Wy
-Wy
-Wy
-Wy
-Wy
-Wy
+qD
+qD
+qD
+qD
+qD
 bV
 "}
 (7,1,1) = {"
