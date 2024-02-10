@@ -422,14 +422,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_biker
 
 /obj/item/radio/headset/headset_town
-	name = "Nash radio headset"
+	name = "New Boston radio headset"
 	desc = "This is used by the town of Nash.\
 		\nTo access the Nash channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_town/lawman
-	name = "Nash sheriff radio headset"
+	name = "New Boston sheriff radio headset"
 	desc = "This is used by Nash's local sheriff force. Protects ears from flashbangs.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash sheriff channel, use :l."
@@ -439,14 +439,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_town/lawman
 
 /obj/item/radio/headset/headset_town/commerce
-	name = "Nash commerce radio headset"
+	name = "New Boston commerce radio headset"
 	desc = "This is used by Nash's small business owners.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash commerce channel, use :j."
 	keyslot = new /obj/item/encryptionkey/headset_town/commerce
 
 /obj/item/radio/headset/headset_town/mayor
-	name = "Nash mayoral radio headset"
+	name = "New Boston mayoral radio headset"
 	desc = "This is used by Nash's mayor (and secretary). Protects ears from flashbangs.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash mayor channel, use :y.\
@@ -458,7 +458,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_town/mayor
 
 /obj/item/radio/headset/headset_town/medical
-	name = "Nash medical radio headset"
+	name = "New Boston medical radio headset"
 	desc = "This is used by Nash's medical folk.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the medical channel, use :m"

@@ -548,7 +548,7 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
-	/*restricted_desc = "Nash PD, Nash officials"
+	/*restricted_desc = "New Boston PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"High Alderperson",

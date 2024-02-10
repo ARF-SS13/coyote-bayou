@@ -298,6 +298,8 @@
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 33
+	force_unwielded = 33
+	force_wielded = 33
 
 /obj/item/melee/smith/unarmed/claws
 	name = "scrap claws"

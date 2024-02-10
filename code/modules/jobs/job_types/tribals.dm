@@ -648,7 +648,7 @@ Guardian
 	total_positions = 10
 	spawn_positions = 10
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "Nash's laws and all tribe members aside from other villagers"
+	supervisors = "New Boston's laws and all tribe members aside from other villagers"
 	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#006666"
 	exp_requirements = 0
