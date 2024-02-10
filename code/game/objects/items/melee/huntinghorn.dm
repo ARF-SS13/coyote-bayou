@@ -206,7 +206,7 @@
 			// and play the audio.
 			var/sound/performsound = sound('sound/huntinghorn/guitarrifshort.wav')
 			performsound.volume = 50
-			for(var/mob/living/L in range(src, HH_PERFORMANCE_RANGE))
+			for(var/mob/living/L in range(HH_PERFORMANCE_RANGE, user))
 				if(L.client)
 					L.apply_status_effect(song.effect)
 					L << performsound
