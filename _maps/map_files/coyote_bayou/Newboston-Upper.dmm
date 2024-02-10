@@ -187,6 +187,31 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
+"aK" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8
+	},
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = -10
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_x = -15
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_x = 13
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#B7ABAB";
+	footstep = "dirt";
+	name = "rocky dirt"
+	},
+/area/f13/building/tribal)
 "aM" = (
 /obj/structure/fence/corner/wooden{
 	dir = 1
@@ -409,6 +434,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
+"bO" = (
+/obj/structure/spacevine{
+	color = "#225522"
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/caves)
 "bP" = (
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
@@ -1383,6 +1416,12 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"fP" = (
+/obj/structure/closet/cabinet/anchored{
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "fR" = (
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/table/reinforced,
@@ -2038,6 +2077,12 @@
 	dir = 4
 	},
 /area/f13/building)
+"ip" = (
+/obj/structure/spacevine,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/caves)
 "iq" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -3419,6 +3464,10 @@
 /obj/effect/spawner/bundle/costume/plaguedoctor,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
+"og" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "oj" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
@@ -5841,9 +5890,13 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "yn" = (
-/obj/structure/simple_door/wood,
-/obj/item/lock_bolt,
-/turf/open/floor/f13/wood,
+/obj/structure/spacevine{
+	color = "#225522"
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
 /area/f13/building/tribal)
 "yp" = (
 /obj/structure/fence/wooden{
@@ -6524,6 +6577,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"AM" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "AN" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -9292,6 +9351,17 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"LQ" = (
+/obj/structure/table/wood,
+/obj/item/clothing/mask/cigarette/pipe,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	light_color = "#f4e3b0"
+	},
+/obj/item/key,
+/obj/item/lock_construct,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "LR" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -9616,18 +9686,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple/corner,
 /area/f13/building)
 "Ng" = (
-/obj/structure/decoration/rag,
-/obj/structure/decoration/rag{
-	icon_state = "skin";
-	pixel_x = 8
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 8;
-	density = 0
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal)
+/area/f13/caves)
 "Ni" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/artifactcontainer/metal,
@@ -9700,6 +9762,10 @@
 /obj/structure/decoration/rag{
 	icon_state = "skin";
 	pixel_x = -8
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin";
+	pixel_y = -2
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
@@ -13151,11 +13217,11 @@ GU
 GU
 GU
 GU
-GU
-GU
-GU
-GU
-GU
+bO
+bO
+Ng
+Ng
+ip
 GU
 Yj
 Yj
@@ -13409,9 +13475,9 @@ rz
 rz
 rz
 rz
-rz
-rz
-rz
+aK
+LQ
+Qi
 rz
 GU
 GU
@@ -13665,10 +13731,10 @@ vX
 vX
 fp
 SM
-rz
-EJ
-Pb
-TL
+og
+pK
+pK
+pK
 rz
 GU
 GU
@@ -13923,10 +13989,10 @@ vX
 fp
 Pb
 rz
-Pb
-Pb
-TL
-rz
+Jh
+pK
+fO
+vx
 Gk
 GU
 GU
@@ -14180,9 +14246,9 @@ Pb
 Pb
 Pb
 yn
-Pb
-Pb
-SM
+pQ
+pK
+pj
 rz
 Gk
 GU
@@ -14436,10 +14502,10 @@ Pb
 Pb
 Pb
 Pb
-rz
-Pb
-Pb
-KP
+bI
+fP
+pK
+AM
 rz
 Gk
 Yj
@@ -14693,11 +14759,11 @@ Ox
 TL
 Pb
 HF
+bI
+pY
+pK
+pK
 rz
-uk
-Pb
-Pb
-pk
 Gk
 Yj
 Yj
@@ -14952,7 +15018,7 @@ pk
 rz
 rz
 rz
-pk
+rz
 rz
 rz
 Gk
@@ -15209,7 +15275,7 @@ sO
 sO
 sO
 sO
-vV
+sO
 sO
 sO
 sO
@@ -23667,7 +23733,7 @@ tD
 tD
 tD
 tD
-Ng
+ki
 uZ
 uZ
 uZ
