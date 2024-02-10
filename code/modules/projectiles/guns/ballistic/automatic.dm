@@ -2633,6 +2633,26 @@
 	icon_state = "augc"
 	item_state = "augc"
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/asvalcustom
+	name = "Custom 'Cold Whisper'Assault Carbine "
+	desc = "A modified 9mm AS-VAL assault carbine. Rechambered to be in 5mm, this rifle fires much slower than its little, but older, brother which is in 9mm. The gun seems custom built and produced for someone."
+	init_recoil = AUTOCARBINE_RECOIL(1.3, 1.1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "vss"
+	item_state = "vss"
+	silenced = TRUE
+	can_scope = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
