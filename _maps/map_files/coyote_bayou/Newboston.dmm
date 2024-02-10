@@ -6174,7 +6174,7 @@
 	},
 /area/f13/building)
 "egN" = (
-/obj/structure/window/fulltile/house,
+/obj/structure/barricade/wooden/strong,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -21685,10 +21685,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nZK" = (
-/obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -25618,6 +25618,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qHX" = (
+/obj/structure/barricade/wooden/strong,
+/obj/structure/barricade/wooden/planks,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/city)
 "qIc" = (
 /obj/structure/closet/anchored,
 /obj/item/clothing/head/f13/police,
@@ -28524,8 +28531,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
 "sBH" = (
-/obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
+/obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -32424,7 +32432,8 @@
 /area/f13/building)
 "vdt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/window/fulltile/house,
+/obj/structure/barricade/wooden/planks,
+/obj/structure/barricade/wooden/strong,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "vdR" = (
@@ -67585,7 +67594,7 @@ tPQ
 rcY
 tPQ
 tPQ
-egN
+qHX
 qgK
 phw
 qPo
@@ -67842,7 +67851,7 @@ mQz
 mQz
 tPQ
 tPQ
-egN
+qHX
 nbh
 wnf
 qPo
@@ -68099,7 +68108,7 @@ mQz
 tPQ
 tPQ
 tPQ
-egN
+qHX
 qnB
 wnf
 qPo
