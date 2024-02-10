@@ -153,7 +153,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(5,20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(10,25) * 0.01,
 		GUN_UPGRADE_RECOIL_1H=1 + rand(80,120) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(10,35) * 0.01
 //		GUN_UPGRADE_FIRE_DELAY_MULT = 1.25,
@@ -393,7 +393,7 @@
 
 /obj/item/tool_upgrade/paint/green
 	name = "green paint"
-	desc = " Orange paint combines the effects of blue and yellow for a more pronounced paint quality."
+	desc = " Green paint combines the effects of blue and yellow for a more pronounced paint quality."
 	icon_state = "green_paint"
 
 /obj/item/tool_upgrade/paint/green/New()

@@ -1763,7 +1763,7 @@ Mayor
 	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
 	backpack_contents = list(
 		/obj/item/clothing/suit/hooded/surgical = 1,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
+		/obj/item/hypospray/mkii/CMO = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 	)
 
