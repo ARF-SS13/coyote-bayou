@@ -25296,9 +25296,6 @@
 	icon_state = "verticalinnermain2bottom"
 	},
 /area/f13/wasteland/city/nash/suburbs)
-"cYJ" = (
-/turf/open/floor/plasteel/airless/white,
-/area/f13/building/abandoned)
 "cYN" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -52938,18 +52935,6 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/city/nash/theloop)
-"kpF" = (
-/obj/structure/ladder/unbreakable{
-	icon_state = "manhole_open";
-	height = 2;
-	id = "toxbeachfun"
-	},
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/plasteel/airless/white,
-/area/f13/building/abandoned)
 "kpO" = (
 /obj/structure/fluff/beach_umbrella/security,
 /obj/structure/chair/comfy/plywood{
@@ -69049,10 +69034,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city/nash/suburbs)
-"osL" = (
-/obj/machinery/door/airlock/ckey/highsecurity/tox,
-/turf/open/floor/plasteel/airless/white,
-/area/f13/building/abandoned)
 "osY" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -77516,9 +77497,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
-"qDT" = (
-/turf/closed/indestructible/rock,
-/area/f13/building/abandoned)
 "qEc" = (
 /obj/structure/flora/chomp/bones/lbone,
 /turf/open/indestructible/ground/outside/desert,
@@ -129141,7 +129119,7 @@ eVs
 iZj
 aae
 aae
-aae
+aak
 aae
 aaa
 "}
@@ -129397,9 +129375,9 @@ oGK
 jEY
 iZj
 iZj
-qDT
-qDT
-qDT
+aae
+aak
+aae
 aaa
 "}
 (90,1,1) = {"
@@ -129654,9 +129632,9 @@ sDH
 eVs
 tNH
 iZj
-qDT
-kpF
-qDT
+aae
+aak
+aae
 aaa
 "}
 (91,1,1) = {"
@@ -129911,9 +129889,9 @@ hmC
 xks
 fRb
 iZj
-qDT
-cYJ
-qDT
+aae
+aak
+aae
 aaa
 "}
 (92,1,1) = {"
@@ -130168,9 +130146,9 @@ iZj
 iZj
 iZj
 iZj
-qDT
-cYJ
-qDT
+aae
+aak
+aae
 aaa
 "}
 (93,1,1) = {"
@@ -130425,9 +130403,9 @@ aae
 aae
 aae
 aae
-qDT
-osL
-qDT
+aae
+aak
+aae
 aaa
 "}
 (94,1,1) = {"
@@ -130683,7 +130661,7 @@ aak
 aak
 aak
 aak
-aae
+aak
 aae
 aaa
 "}

@@ -15804,6 +15804,17 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"jOM" = (
+/obj/structure/ladder/unbreakable{
+	icon_state = "manhole_open";
+	height = 2;
+	id = "toxbeachfun"
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "jON" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13{
@@ -17051,6 +17062,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"kBW" = (
+/obj/machinery/door/airlock/ckey/highsecurity/tox{
+	color = "#AA336A"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "kCb" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -72447,7 +72464,7 @@ iqa
 iqa
 iqa
 hRl
-hRl
+gcG
 hRl
 gcG
 gcG
@@ -72703,9 +72720,9 @@ hiW
 wHT
 gcG
 gcG
-gcG
-gcG
-gcG
+hRl
+kBW
+hRl
 gcG
 gcG
 gcG
@@ -72960,9 +72977,9 @@ whF
 vBe
 gcG
 gcG
-gcG
-gcG
-gcG
+hRl
+jOM
+hRl
 gcG
 gcG
 gcG
@@ -73217,9 +73234,9 @@ fUC
 uzI
 gcG
 gcG
-gcG
-gcG
-gcG
+hRl
+hRl
+hRl
 gcG
 gcG
 gcG
