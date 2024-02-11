@@ -13,6 +13,9 @@
 
 	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer to get an idea of its capabilities."
 
+	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
+	w_class = WEIGHT_CLASS_BULKY
+
 	//weapon stats
 	force = 20
 	throwforce = 20
