@@ -121,7 +121,7 @@
 	if(run_special(user, target, params))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
-		return TRUE
+		return
 
 /datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
 	if(!user || !target)
