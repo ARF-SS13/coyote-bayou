@@ -53,7 +53,7 @@
 	/// last time we ticked the charge bar
 	var/last_charge_tick = 0
 	/// the sound it plays when its empty and starts to charge
-	var/charge_sound = "sound/weapons/energy_discharged.ogg"
+	var/charge_begin_sound = "sound/weapons/energy_chargestart.ogg"
 	/// the soundloop it plays when its charging
 	var/datum/looping_sound/charge_loop = /datum/looping_sound/energy_charging
 	/// the sound it plays when its alllllll done!
@@ -69,7 +69,7 @@
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
-		cell.use(round(cell.charge * severity/100))
+		cell?.use(round(cell.charge * severity/100))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
 		update_icon()
@@ -96,6 +96,8 @@
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
+		if(ispath(charge_loop))
+			charge_loop = new(list(src), FALSE)
 	update_icon()
 
 /obj/item/gun/energy/Destroy()
@@ -128,12 +130,16 @@
 	tick_selfcharge()
 
 /obj/item/gun/energy/proc/has_enough_charge_to_fire()
-	if(!cell || cell.charge <= 0)
+	if(!cell || QDELETED(cell) || cell.charge <= 0)
 		return FALSE
-	var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
+	return cell.charge >= shotcost()
+
+/obj/item/gun/energy/proc/shotcost()
+	var/obj/item/ammo_casing/energy/AC = chambered || ammo_type[current_firemode_index]
 	if(!AC)
-		return FALSE
-	return cell.charge >= AC.e_cost * get_charge_cost_mult()
+		return INFINITY // no shooting!
+	return AC.e_cost * get_charge_cost_mult()
+
 
 
 	// if(cell?.charge < cell.maxcharge)
@@ -152,8 +158,7 @@
 	// 	update_icon()
 
 /obj/item/gun/energy/can_shoot()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-	return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
+	return has_enough_charge_to_fire()
 
 /obj/item/gun/energy/recharge_newshot(no_cyborg_drain)
 	if (!ammo_type || !cell)
@@ -162,9 +167,8 @@
 		if(iscyborg(loc))
 			var/mob/living/silicon/robot/R = loc
 			if(R.cell)
-				var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index] //Necessary to find cost of shot
-				if(R.cell.use(shot.e_cost * get_charge_cost_mult())) 		//Take power from the borg...
-					cell.give(shot.e_cost * get_charge_cost_mult())	//... to recharge the shot
+				if(R.cell.use(shotcost())) 		//Take power from the borg...
+					cell.give(shotcost())	//... to recharge the shot
 					. = TRUE
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
@@ -176,8 +180,7 @@
 
 /obj/item/gun/energy/process_chamber()
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
-		var/obj/item/ammo_casing/energy/shot = chambered
-		cell.use(shot.e_cost * get_charge_cost_mult())//... drain the cell cell
+		cell.use(shotcost())//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	if(!recharge_newshot()) //try to charge a new shot
 		initiate_selfcharge()
@@ -192,8 +195,9 @@
 	selfcharge_paused = FALSE
 	cell.charge = 0
 	charge_duration_remaining = self_recharge_duration
-	if(charge_sound)
-		playsound(src, charge_sound, 35, TRUE)
+	last_charge_tick = world.time // prevent wierd race conditions that would instanly charge the gonne
+	if(charge_begin_sound)
+		playsound(src, charge_begin_sound, 80, TRUE)
 	if(istype(charge_loop))
 		charge_loop.start()
 	update_icon()
@@ -224,7 +228,7 @@
 	cell.charge = cell.maxcharge
 	charge_duration_remaining = 0
 	if(charge_finished_sound)
-		playsound(src, charge_finished_sound, 35, TRUE)
+		playsound(src, charge_finished_sound, 75, TRUE)
 	if(istype(charge_loop))
 		charge_loop.stop()
 	update_icon()
@@ -424,19 +428,19 @@
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
 
 /obj/item/gun/energy/altafterattack(atom/target, mob/user, proximity_flags, params)
@@ -508,7 +512,7 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	var/c_mult = get_charge_cost_mult()
 	data["has_magazine"] = !!cell
-	data["charge_cost"] = shot?.e_cost * c_mult || 0
+	data["charge_cost"] = shot?.e_cost * c_mult || 0 // shotcost() would return infinity in various cases
 	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
 	data["magazine_name"] = cell ? cell.name : "Unknown" // Its a magazine you silly goose
 	if(cell)
