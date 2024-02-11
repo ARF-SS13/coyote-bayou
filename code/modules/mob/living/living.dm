@@ -1570,10 +1570,7 @@
 //Coyote Add
 /mob/living/proc/despawn()
 	SSwho.KillCustoms(ckey, "despawned")
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)

@@ -461,8 +461,8 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 5
-	spawn_positions = 2
+	total_positions = -1
+	spawn_positions = -1
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Spiritual Leader and Harvest Leader for task management."
 	enforces = "The ways of the Sulphur River spirits."
@@ -559,8 +559,8 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = -1
+	spawn_positions = -1
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
@@ -645,10 +645,10 @@ Guardian
 	flag = F13VILLAGER
 	department_flag = TRIBAL | DEP_OASIS
 	faction = FACTION_TRIBE
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = -1
+	spawn_positions = -1
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "Nash's laws and all tribe members aside from other villagers"
+	supervisors = "New Boston's laws and all tribe members aside from other villagers"
 	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#006666"
 	exp_requirements = 0

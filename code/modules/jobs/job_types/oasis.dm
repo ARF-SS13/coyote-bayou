@@ -12,7 +12,7 @@ here's a tip, go search DEFINES/access.dm
 
 // Headsets for everyone!!
 /datum/outfit/job/den
-	name = "Nash Default Template"
+	name = "New Boston Default Template"
 	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/kit_spawner/waster
 	id = /obj/item/card/id/dogtag/town
@@ -40,7 +40,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = "Nash"
+	supervisors = "New Boston"
 	description = "You are the civil leader of the Town of Nash. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
@@ -368,11 +368,11 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13deputy
-	title = "Nash Security"
+	title = "New Boston Security"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "Your best Judgement"
 	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
 //	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
@@ -435,7 +435,7 @@ Mayor
 	//	)
 
 /datum/outfit/loadout/police
-	name = "Nash PD"
+	name = "New Boston PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
@@ -491,7 +491,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Nash laws"
+	supervisors = "New Boston laws"
 	description = "You are a farmer living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
 	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
@@ -771,8 +771,8 @@ Mayor
 	title = "Barkeep"
 	flag = F13BARKEEP
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the free market and Nash's Laws"
 	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest. Speak to the farmers for fresh produce!"
 	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
@@ -859,7 +859,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = -1
 	spawn_positions =-1
-	supervisors = "Nash's laws"
+	supervisors = "New Boston's laws"
 	description = "You are a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
@@ -1135,7 +1135,7 @@ Mayor
 	title = "Banker"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	total_positions = 1
+	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Mayor"
 	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Nash, but perhaps deal-making will take you into other alliances."
@@ -1214,12 +1214,12 @@ Mayor
 //Nash Curator
 
 /datum/job/oasis/nashcurator
-	title = "Nash Librarian"
+	title = "New Boston Librarian"
 	flag = NASHCURATOR
 	department_flag = DEP_OASIS
-	total_positions = 1
+	total_positions = 0
 	spawn_positions = 1
-	supervisors = "Nash's laws"
+	supervisors = "New Boston's laws"
 	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
 	selection_color = "#dcba97"
 
@@ -1236,7 +1236,7 @@ Mayor
 	)
 
 /datum/outfit/job/den/nashcurator
-	name = "Nash Librarian"
+	name = "New Boston Librarian"
 	jobtype = /datum/job/oasis/nashcurator
 	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town
@@ -1369,8 +1369,8 @@ Mayor
 	title = "Texarkana Trade Worker"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the free market and Nash's laws"
 	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
@@ -1478,9 +1478,9 @@ Mayor
 	title = "Vertibird Pilot"
 	flag = F13PILOT
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "Nash's laws"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "New Boston's laws"
 	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
 
@@ -1582,8 +1582,8 @@ Mayor
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
@@ -1684,8 +1684,8 @@ Mayor
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement. Assuming they're around."
 	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."

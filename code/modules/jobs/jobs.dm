@@ -157,7 +157,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"High Alderperson",
 	"Councilperson",
 	"Sheriff",
-	"Nash Security",
+	"New Boston Security",
 	"Deputy Mayor",
 //	"Farmer",
 //	"Prospector",
@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Preacher",
 	"Vertibird Pilot",
-	"Nash Librarian",
+	"New Boston Librarian",
 ))
 
 //Den Citizenship
@@ -261,12 +261,12 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Texarkana Ranger",
 ))
 
-GLOBAL_LIST_INIT(redwater_positions, list(
-	"Redwater Slave",
-	"Outlaw",
-	"Redwater Resident",
-	"Redwater Watcher",
-	"Redwater Overboss",
+GLOBAL_LIST_INIT(tunnelrats_positions, list(
+	//"Redwater Slave",
+	//"Outlaw",
+	"Tunnel Rats Churl"
+	//"Tunnel Rats Strongarm"
+	//"Redwater Overboss",
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
@@ -344,7 +344,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
 	"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	// "Redwater" = list("jobs" = redwater_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

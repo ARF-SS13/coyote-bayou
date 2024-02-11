@@ -1168,7 +1168,7 @@
 	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
-	restricted_desc = "Nash"
+	restricted_desc = "New Boston"
 	restricted_roles = list("High Alderperson",
 							"Councilperson",
 							"Sheriff",

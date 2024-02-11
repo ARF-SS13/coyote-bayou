@@ -775,7 +775,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/nashcurator
-	name = "Nash Librarian"
+	name = "New Boston Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/dendoc
@@ -809,6 +809,16 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/wastelander
 	name = "Wastelander"
 	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/wastelander/clubworker
+	name = "Club Worker"
+	icon_state = "Wastelander"
+	color = "#FF9999"
+
+/obj/effect/landmark/start/f13/wastelander/clubmanager
+	name = "Club Manager"
+	icon_state = "Wastelander"
+	color = "#FF9944"
 
 /obj/effect/landmark/start/f13/wastelander/den
 	name = "Den Citizen"
@@ -952,7 +962,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard
-	name = "Nash Paramedic"
+	name = "New Boston Paramedic"
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer

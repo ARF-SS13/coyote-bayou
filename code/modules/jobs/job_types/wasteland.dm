@@ -38,23 +38,7 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	loadout_options = list(
-//	/datum/outfit/loadout/raider_sheriff,
-	/datum/outfit/loadout/raider_sadist,
-//	/datum/outfit/loadout/raider_mobster,
-	/datum/outfit/loadout/raider_tribal,
-	/datum/outfit/loadout/raider_supafly,
-	/datum/outfit/loadout/raider_yankee,
-	/datum/outfit/loadout/raider_blast,
-	/datum/outfit/loadout/raider_painspike,
-	/datum/outfit/loadout/raider_badlands,
-	// /datum/outfit/loadout/raider_smith,
-	/datum/outfit/loadout/raider_vault,
-	/datum/outfit/loadout/raider_ncr,
-	// /datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_bos,
-	/datum/outfit/loadout/quack_doctor
-	)
+
 
 
 /datum/outfit/job/wasteland/f13raider
@@ -344,16 +328,16 @@ Raider
 		)
 
 /datum/job/wasteland/f13raider/watcher
-	title = "Redwater Watcher"
+	title = "Tunnel Rats Strongarm"
 	flag = F13RAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 10
-	spawn_positions = 10
-	description = "You are an Redwater Watcher - the choice of why is up to you. You have taken up the responsibility to protect and supervise the town of Redwater to ensure that the slaves do not escape and are productive, as well as to protect the towns assets and make sure it has what it needs to thrive. You are only to leave town briefly to gather resources in order to expand and improve upon the current design. Assist the outbound outlaws who venture out for big gains, and protect them if they come home followed by angry victims. Beware, life is cheap in Redwater."
-	supervisors = "The Overboss runs the town, and you are responsible for making sure the town maintains a relative peace and order so that more nasty business can occur. Try to work with other outlaws rather than against them unless there is good reason not to"
+	total_positions = -1
+	spawn_positions = -1
+	description = "You are an Tunnel Rat Strongarm - the choice of why is up to you. You have taken up the responsibility to protect and supervise the underground remnants of the town of Nash."
+	supervisors = "Whoever you feel like following."
 	selection_color = "#df80af"
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
@@ -376,16 +360,7 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	loadout_options = list(
-	/datum/outfit/loadout/raider_sheriff,
-	/datum/outfit/loadout/raider_mobster,
-	/datum/outfit/loadout/raider_slavekeeper,
-	/datum/outfit/loadout/raider_sawbones,
-	/datum/outfit/loadout/unethical_practitioner,
-	/datum/outfit/loadout/redwater_maintainer,
-	/datum/outfit/loadout/nefarious_conman,
-	/datum/outfit/loadout/demonness
-	)
+
 
 /datum/outfit/job/wasteland/f13raider/watcher
 	name = "Redwater Watcher"
@@ -533,6 +508,7 @@ Raider
 	//	/obj/item/ammo_box/magazine/greasegun = 2
 		)
 
+/*
 /datum/outfit/loadout/raider_slavekeeper
 	name = "Slavekeeper"
 	belt = /obj/item/storage/belt/bandolier
@@ -552,6 +528,7 @@ Raider
 		/obj/item/restraints/legcuffs = 1,
 		/obj/item/storage/belt/shoulderholster = 1,
 		)
+*/
 
 /datum/outfit/loadout/raider_sawbones
 	name = "Sawbones"
@@ -587,7 +564,7 @@ Raider
 		/obj/item/clothing/accessory/pocketprotector/full = 1,
 		)
 
-/datum/outfit/loadout/redwater_maintainer
+/datum/outfit/loadout/tunnelrat_maintainer
 	name = "Maintainer"
 	suit = /obj/item/clothing/suit/armor/medium/vest/kevlar
 	head = /obj/item/clothing/head/welding/weldingfire
@@ -641,21 +618,21 @@ Raider
 		)
 
 /datum/job/wasteland/f13raider/resident
-	title = "Redwater Resident"
+	title = "Tunnel Rats Churl"
 	flag = F13RAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 10
-	spawn_positions = 10
-	description = "You are a Redwater Resident - the choice of why is up to you. You are a squatter who has taken it upon themselves to call Redwater home and be a part of their ecosystem without responsibility. You are not a slave as you have built a good reputation for yourself, however you are not immune from consequences."
-	supervisors = "The Overboss and the Watchers"
+	total_positions = -1
+	spawn_positions = -1
+	description = "You are a resident of the leftover sewer system facility under the now atomicaly flattened city of Nash. Lifes rough on the edges."
+	supervisors = "Maybe a strongarm, maybe not.  Your call."
 	selection_color = "#df80af"
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
-	outfit = /datum/outfit/job/wasteland/f13raider/resident
+	outfit = /datum/outfit/job/wasteland/f13wastelander
 
 	access = list()
 	minimal_access = list()
@@ -673,26 +650,15 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	loadout_options = list(
-		/datum/outfit/loadout/tribal_drifter,
-		/datum/outfit/loadout/fish_wrangler,
-		/datum/outfit/loadout/tapster,
-		/datum/outfit/loadout/hospitalier,
-		/datum/outfit/loadout/shepherd,
-		/datum/outfit/loadout/fieldhand,
-		/datum/outfit/loadout/mole,
-		/datum/outfit/loadout/seductress,
-		/datum/outfit/loadout/pilferer,
-		/datum/outfit/loadout/trafficker
-	)
+
 
 /datum/outfit/job/wasteland/f13raider/resident
-	name = "Redwater Resident"
+	name = "Tunnel Rats Resident"
 	jobtype = /datum/job/wasteland/f13raider/resident
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider/civvy
+	belt = /obj/item/kit_spawner/waster
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -1377,8 +1343,8 @@ Raider
 
 /datum/job/wasteland/f13wastelander/ashdown
 	title = "Ashdown Citizen"
-	total_positions = 25
-	spawn_positions = 25
+	total_positions = -1
+	spawn_positions = -1
 	outfit = /datum/outfit/job/wasteland/ashdown
 
 /datum/outfit/job/wasteland/ashdown
@@ -1452,7 +1418,7 @@ Raider
 	flag = F13PREACHER
 	department_flag = DEP_OASIS
 	total_positions = 3
-	spawn_positions = 1
+	spawn_positions = 3
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
@@ -2375,12 +2341,12 @@ datum/job/wasteland/f13dendoctor
 /////////////////
 
 //Redwater Slave
-/datum/job/wasteland/f13redwaterslave
+/datum/job/wasteland/f13redwaterslave // ???
 	title = "Redwater Slave"
 	flag = F13LEGIONSLAVE
 	faction = FACTION_WASTELAND
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the slavers in Redwater, or your personal owner."
 	description = "Either you were captured by the Redwater slavers, or born into servitude.  Either way your life has been one of being treated as property to another human since the explosive collar was fitted to your neck.  Freedom feels like a dream long gone, hidden behind the fear of the signaler that would cause your head to sail off in an arc.  Despite that you've found a place in their society, and are a protected commodity.  Be you a field worker, sex slave, or pack mule.  The good news is, as long as you serve a purpose then you'll probably get to live, and being alive means a chance to escape."
 	selection_color = "#dcba97"
@@ -2460,7 +2426,7 @@ datum/job/wasteland/f13dendoctor
 
 //Sex
 /datum/outfit/loadout/sex
-	name = "Domestic Slave"
+	name = "Escort"
 	backpack_contents = list(
 		///obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1,
@@ -2475,14 +2441,14 @@ datum/job/wasteland/f13dendoctor
 
 //Redwater Resident Spawn Point code
 /obj/effect/landmark/start/redwateresident
-	name = "Redwater Resident"
+	name = "Tunnel Rats Churl"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
 
 //Redwater Watcher Spawn Point code
 /obj/effect/landmark/start/redwaterwatcher
-	name = "Redwater Watcher"
+	name = "Tunnel Rats Strongarm"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
@@ -2509,7 +2475,7 @@ datum/job/wasteland/f13dendoctor
 			/datum/outfit/loadout/overbossranged, //moni + drugs
 	)
 
-	outfit = /datum/outfit/job/wasteland/f13raider/overboss
+	outfit = /datum/outfit/job/wasteland/f13wastelander
 
 
 /datum/outfit/job/wasteland/f13raider/overboss
