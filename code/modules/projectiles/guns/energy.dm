@@ -42,6 +42,23 @@
 	/// set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
 	var/selfchargerate = 3 SECONDS 
 
+	/// did we start selfcharging???
+	var/selfcharge_initiated = FALSE
+	/// is the selfcharge paused???
+	var/selfcharge_paused = FALSE
+	/// When your lazergun runs out of batteries, how long till it can be used?
+	var/self_recharge_duration = 1 MINUTES
+	/// how much longer do we have to waaaaaait?
+	var/charge_duration_remaining = 0
+	/// last time we ticked the charge bar
+	var/last_charge_tick = 0
+	/// the sound it plays when its empty and starts to charge
+	var/charge_sound = "sound/weapons/energy_discharged.ogg"
+	/// the soundloop it plays when its charging
+	var/datum/looping_sound/charge_loop = /datum/looping_sound/energy_charging
+	/// the sound it plays when its alllllll done!
+	var/charge_finished_sound = "sound/weapons/energy_recharged.ogg"
+
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
 	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
@@ -97,22 +114,42 @@
 	. = ..()
 	if(!right_click_overridden)
 		. += span_notice("Right click in combat mode to switch modes.")
+	if(charge_duration_remaining)
+		. += span_notice("Currently recharging! Should be ready in about [DisplayTimeText(charge_duration_remaining)].")
 
 /obj/item/gun/energy/process()
-	if(selfcharge && cell?.charge < cell.maxcharge)
-		if(selfcharge == EGUN_SELFCHARGE_BORG)
-			var/atom/owner = loc
-			if(istype(owner, /obj/item/robot_module))
-				owner = owner.loc
-			if(!iscyborg(owner))
-				return
-			var/mob/living/silicon/robot/R = owner
-			if(!R.cell?.use(100))
-				return
-		cell.give(cell.maxcharge / max(selfchargerate, 0.01))
-		if(!chambered) //if empty chamber we try to charge a new shot
-			recharge_newshot(TRUE)
-		update_icon()
+	if(!selfcharge)
+		return // all done!
+	if(!cell)
+		return // also all done
+	if(has_enough_charge_to_fire())
+		abort_selfcharge()
+		return // gun can shoot, maybe
+	tick_selfcharge()
+
+/obj/item/gun/energy/proc/has_enough_charge_to_fire()
+	if(!cell || cell.charge <= 0)
+		return FALSE
+	var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
+	if(!AC)
+		return FALSE
+	return cell.charge >= AC.e_cost * get_charge_cost_mult()
+
+
+	// if(cell?.charge < cell.maxcharge)
+	// 	if(selfcharge == EGUN_SELFCHARGE_BORG)
+	// 		var/atom/owner = loc
+	// 		if(istype(owner, /obj/item/robot_module))
+	// 			owner = owner.loc
+	// 		if(!iscyborg(owner))
+	// 			return
+	// 		var/mob/living/silicon/robot/R = owner
+	// 		if(!R.cell?.use(100))
+	// 			return
+	// 	cell.give(cell.maxcharge / max(selfchargerate, 0.01))
+	// 	if(!chambered) //if empty chamber we try to charge a new shot
+	// 		recharge_newshot(TRUE)
+	// 	update_icon()
 
 /obj/item/gun/energy/can_shoot()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
@@ -128,9 +165,11 @@
 				var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index] //Necessary to find cost of shot
 				if(R.cell.use(shot.e_cost * get_charge_cost_mult())) 		//Take power from the borg...
 					cell.give(shot.e_cost * get_charge_cost_mult())	//... to recharge the shot
+					. = TRUE
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
-		if(cell.charge >= AC.e_cost * get_charge_cost_mult()) //if there's enough power in the cell cell...
+		if(has_enough_charge_to_fire()) //if there's enough power in the cell cell...
+			. = TRUE
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
@@ -140,7 +179,85 @@
 		var/obj/item/ammo_casing/energy/shot = chambered
 		cell.use(shot.e_cost * get_charge_cost_mult())//... drain the cell cell
 	chambered = null //either way, released the prepared shot
-	recharge_newshot() //try to charge a new shot
+	if(!recharge_newshot()) //try to charge a new shot
+		initiate_selfcharge()
+		return
+
+/obj/item/gun/energy/proc/initiate_selfcharge()
+	if(!selfcharge || selfcharge_initiated || selfcharge_paused)
+		return
+	if(!cell)
+		return
+	selfcharge_initiated = TRUE
+	selfcharge_paused = FALSE
+	cell.charge = 0
+	charge_duration_remaining = self_recharge_duration
+	if(charge_sound)
+		playsound(src, charge_sound, 35, TRUE)
+	if(istype(charge_loop))
+		charge_loop.start()
+	update_icon()
+	return TRUE
+
+/obj/item/gun/energy/proc/tick_selfcharge()
+	if(!selfcharge)
+		abort_selfcharge()
+		return
+	if(!selfcharge_initiated)
+		return initiate_selfcharge()
+	var/time_elapsed = world.time - last_charge_tick
+	last_charge_tick = world.time
+	if(!cell || selfcharge_paused)
+		return
+	var/external_mult = SEND_SIGNAL(loc, COMSIG_ENERGY_GUN_SELFCHARGE_TICK, src) || 1
+	charge_duration_remaining -= time_elapsed * external_mult
+	update_icon()
+	if(charge_duration_remaining <= 0)
+		finish_self_charge()
+		return
+
+/obj/item/gun/energy/proc/finish_self_charge()
+	if(!cell)
+		return
+	selfcharge_initiated = FALSE
+	selfcharge_paused = FALSE
+	cell.charge = cell.maxcharge
+	charge_duration_remaining = 0
+	if(charge_finished_sound)
+		playsound(src, charge_finished_sound, 35, TRUE)
+	if(istype(charge_loop))
+		charge_loop.stop()
+	update_icon()
+
+/// battery fell out while self-charging, hold off on doing stuff
+/obj/item/gun/energy/proc/pause_selfcharge()
+	if(!selfcharge ||!selfcharge_initiated)
+		return
+	selfcharge_paused = TRUE
+	if(istype(charge_loop))
+		charge_loop.stop()
+
+/obj/item/gun/energy/proc/abort_selfcharge()
+	if(istype(charge_loop))
+		charge_loop.stop()
+	selfcharge_initiated = FALSE
+	selfcharge_paused = FALSE
+	charge_duration_remaining = 0
+	update_icon()
+
+/obj/item/gun/energy/proc/resume_or_initiate_selfcharge()
+	if(!selfcharge || !selfcharge_initiated)
+		return
+	if(!selfcharge_paused)
+		if(has_enough_charge_to_fire())
+			return
+		initiate_selfcharge()
+		return
+	selfcharge_paused = FALSE
+	if(istype(charge_loop))
+		charge_loop.start()
+	last_charge_tick = world.time // no skipping!
+	update_icon()
 
 /obj/item/gun/energy/do_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(!chambered && can_shoot())
@@ -353,6 +470,7 @@
 		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
 		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 	cell = null
+	pause_selfcharge()
 	update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user)
@@ -369,6 +487,7 @@
 		if (!cell && istype(AM, cell_type))
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
+				resume_or_initiate_selfcharge()
 				to_chat(user, span_notice("You load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
