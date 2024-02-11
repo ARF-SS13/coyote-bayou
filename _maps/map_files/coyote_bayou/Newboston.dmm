@@ -1175,12 +1175,14 @@
 	},
 /area/f13/building/library)
 "aOS" = (
-/obj/structure/window/fulltile/wood_window,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13wood{
-	icon_state = "wood2"
+/obj/structure/chair/right{
+	dir = 4
 	},
-/area/f13/building)
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "aPw" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
@@ -2421,6 +2423,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"bFQ" = (
+/obj/structure/chair/left{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "bGs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -11982,6 +11993,16 @@
 /obj/item/clothing/suit/chaplain/nun,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hVF" = (
+/obj/structure/chair/right{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "hWh" = (
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/floor/fakespace,
@@ -13859,7 +13880,7 @@
 	icon_state = "room"
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "jdo" = (
 /obj/machinery/autolathe/ammo,
@@ -17781,6 +17802,13 @@
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lwG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "lwH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/darkbrown/side{
@@ -23896,6 +23924,7 @@
 /obj/structure/chair/left{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -29846,6 +29875,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"tsj" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "tso" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/weather/dirt{
@@ -44766,9 +44801,9 @@ dVq
 tPQ
 tPQ
 eXv
-gan
+bFQ
 nTc
-qEy
+aOS
 pyw
 pyw
 eXv
@@ -45794,11 +45829,11 @@ tPQ
 mQz
 tPQ
 eXv
+tsj
 pyw
 pyw
 pyw
-pyw
-pyw
+tsj
 xOF
 pyw
 pyw
@@ -46566,10 +46601,10 @@ tPQ
 tPQ
 eXv
 pyw
-rrw
+lwG
 rrw
 pyw
-pyw
+tsj
 xOF
 pyw
 pyw
@@ -47337,7 +47372,7 @@ tPQ
 tPQ
 eXv
 pyw
-pyw
+kfd
 gNz
 rrw
 rrw
@@ -47593,13 +47628,13 @@ tPQ
 tPQ
 tPQ
 xOF
-gXY
+hVF
 hNp
 wXk
 pyw
 pyw
 eXv
-pyw
+tsj
 pyw
 pyw
 xOF
@@ -58235,7 +58270,7 @@ hHk
 apj
 uYv
 eWw
-aOS
+vSW
 hvj
 aMU
 aMU
@@ -58492,7 +58527,7 @@ hHk
 uYv
 wnw
 eWw
-kFi
+rtG
 pne
 iCJ
 pYX
@@ -58749,7 +58784,7 @@ hHk
 uYv
 uYv
 eWw
-hNm
+ssj
 aMU
 aMU
 aoT
@@ -59520,7 +59555,7 @@ hHk
 xEr
 wjZ
 mec
-ovU
+tvA
 kwB
 aMU
 jLf
