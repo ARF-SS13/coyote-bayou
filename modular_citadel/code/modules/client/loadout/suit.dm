@@ -288,6 +288,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/tribal_robe
+	name = "Heavy Tribal Robe"
+	path = /obj/item/clothing/suit/armor/light/tribal/robe
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/bronzechestplate
 	name = "Bronze Chestplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
