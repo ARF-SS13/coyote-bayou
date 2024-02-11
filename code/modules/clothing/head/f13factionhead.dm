@@ -1174,6 +1174,46 @@ obj/item/clothing/head/f13/army/beret
 	icon_state = "state_trooper"
 	item_state = "state_trooper"
 
+// Unaligned Tribal
+/obj/item/clothing/head/helmet/f13/skull_helmet
+	name = "skull mask"
+	desc = "A tribal skull-mask adorned with decorative feathers and... are those real antler-horns? <span class='bold'>Ctrl + Shift to customise!</span>"
+	icon_state = "skullmask1"
+	item_state = "skullmask1"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+	var/is_hair_hidden = FALSE
+
+/obj/item/clothing/head/helmet/f13/skull_helmet/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Skull_Antler" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask1"),
+			"Skull_Redfeather" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask2"),
+			"Skull_Bluefeather" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask3"),
+			"Safe" = image(icon = 'icons/radials/radial_buttons.dmi', icon_state = "safe"),
+			"Danger" = image(icon = 'icons/radials/radial_buttons.dmi', icon_state = "danger"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Skull_Antler")
+			icon_state = "skullmask1"
+			balloon_alert(user, "Switched to Default")
+			update_icon()
+		if("Skull_Redfeather")
+			icon_state = "skullmask2"
+			balloon_alert(user, "Switched to Redfeather")
+			update_icon()
+		if("Skull_Bluefeather")
+			icon_state = "skullmask3"
+			balloon_alert(user, "Switched to Bluefeather")
+			update_icon()
+		if("Safe")
+			flags_inv -= HIDEFACE
+			balloon_alert(user, "Revealing Identity!")
+		if("Danger")
+			flags_inv += HIDEFACE
+			balloon_alert(user, "Concealing Identity!")
+		else
+			return
+
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
