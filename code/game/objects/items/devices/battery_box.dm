@@ -90,6 +90,7 @@
 	RegisterSignal(src, COMSIG_CELL_CHECK_CHARGE_PERCENT, .proc/charge_percent)
 	RegisterSignal(src, COMSIG_ATOM_ENTERED, /atom/proc/update_icon)
 	RegisterSignal(src, COMSIG_ATOM_EXITED, /atom/proc/update_icon)
+	RegisterSignal(src, COMSIG_ENERGY_GUN_SELFCHARGE_TICK, .proc/get_selfcharge_mult)
 
 /obj/item/storage/battery_box/PopulateContents()
 	. = ..()
@@ -110,18 +111,22 @@
 			. += span_green("LV BatBox capacitor installed.") // canonically, lapotron crystals store power as pressure, expressed in Gibbl
 			. += span_green("\tCapacity: [BATTERY_BOX_LV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.") // only one person knows what a Gibbl is, and I think they forgot
 			. += span_green("\tPower transfer rate: [BATTERY_BOX_LV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.") // its also the measurement of pollution in gregtech
+			. += span_green("\tAssists self-charging cells and blasters to charge 1.25x faster.")
 		if(2) // MV
 			. += span_green("MV CESU capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_MV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
 			. += span_green("\tPower transfer rate: [BATTERY_BOX_MV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
+			. += span_green("\tAssists self-charging cells and blasters to charge 1.50x faster.")
 		if(3) // HV
 			. += span_green("HV MFE capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_HV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
 			. += span_green("\tPower transfer rate: [BATTERY_BOX_HV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
+			. += span_green("\tAssists self-charging cells and blasters to charge 1.75x faster.")
 		if(4) // EV
 			. += span_green("EV MFSU capacitor installed.")
 			. += span_green("\tCapacity: [BATTERY_BOX_EV_CAPACITY * BATTERY_BOX_CAP_DIVISOR] Gibbl.")
 			. += span_green("\tPower transfer rate: [BATTERY_BOX_EV_CHARGE_RATE * BATTERY_BOX_RATE_DIVISOR] EU/t.")
+			. += span_green("\tAssists self-charging cells and blasters to charge 2.50x faster.")
 		else
 			. += span_alert("WARNING: No capacitor installed!")
 
@@ -148,6 +153,8 @@
 			return FALSE
 		batt = zap.cell
 	if(!batt)
+		return FALSE
+	if(batt.self_recharge) // thats handled differently
 		return FALSE
 	switch(charge_direction)
 		if(BATTERY_BOX_CHARGE_OUT)
@@ -289,6 +296,20 @@
 			return BATTERY_BOX_EV_CHARGE_RATE
 		else
 			return 0
+
+/obj/item/storage/battery_box/proc/get_selfcharge_mult()
+	var/rating = check_part()
+	switch(rating)
+		if(1) // LV
+			return 1.25
+		if(2) // MV
+			return 1.50
+		if(3) // HV
+			return 1.75
+		if(4) // EV
+			return 2.50
+		else
+			return 1
 
 /datum/component/storage/concrete/charger_internals
 	max_items = 3 // battery, persona core, capacitor. Battery cant be removed, so really 1
