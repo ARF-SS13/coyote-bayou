@@ -1175,9 +1175,6 @@
 	},
 /area/f13/building/library)
 "aOS" = (
-/obj/structure/chair/right{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -2423,15 +2420,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"bFQ" = (
-/obj/structure/chair/left{
-	dir = 4
-	},
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/trainstation)
 "bGs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -5374,6 +5362,16 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"dGW" = (
+/obj/structure/chair/right{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "dHd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5887,6 +5885,15 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood)
+"dXx" = (
+/obj/structure/chair/right{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "dXH" = (
 /obj/structure/cross,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -11993,16 +12000,6 @@
 /obj/item/clothing/suit/chaplain/nun,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hVF" = (
-/obj/structure/chair/right{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/trainstation)
 "hWh" = (
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/floor/fakespace,
@@ -17802,13 +17799,6 @@
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"lwG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/trainstation)
 "lwH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/darkbrown/side{
@@ -26974,6 +26964,15 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"rHn" = (
+/obj/structure/chair/left{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "rHv" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -29875,12 +29874,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
-"tsj" = (
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/trainstation)
 "tso" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/weather/dirt{
@@ -32175,6 +32168,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"uUY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/trainstation)
 "uVs" = (
 /obj/structure/chair/pew{
 	dir = 1
@@ -44801,9 +44801,9 @@ dVq
 tPQ
 tPQ
 eXv
-bFQ
+rHn
 nTc
-aOS
+dXx
 pyw
 pyw
 eXv
@@ -45829,11 +45829,11 @@ tPQ
 mQz
 tPQ
 eXv
-tsj
+aOS
 pyw
 pyw
 pyw
-tsj
+aOS
 xOF
 pyw
 pyw
@@ -46601,10 +46601,10 @@ tPQ
 tPQ
 eXv
 pyw
-lwG
+uUY
 rrw
 pyw
-tsj
+aOS
 xOF
 pyw
 pyw
@@ -47628,13 +47628,13 @@ tPQ
 tPQ
 tPQ
 xOF
-hVF
+dGW
 hNp
 wXk
 pyw
 pyw
 eXv
-tsj
+aOS
 pyw
 pyw
 xOF
