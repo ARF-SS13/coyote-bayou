@@ -1730,6 +1730,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Rats and mice share their faction with you, meaning they won't do anything about you or care at all that you exist."
 	conflicts = list(
 		/datum/quirk/ratmaster,
+		/datum/quirk/ratphobia,
 	)
 	mob_trait = TRAIT_BEASTFRIEND_RAT
 	gain_text = span_notice("Rats are friends!")
@@ -1756,6 +1757,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky."
 	conflicts = list(
 		/datum/quirk/ratfriend,
+		/datum/quirk/ratphobia,
 	)
 	mob_trait = TRAIT_BEASTMASTER_RAT
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
@@ -1765,7 +1767,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/obj/effect/proc_holder/mob_common/taming_mobs/rat/tame
 	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/rat/gather
 	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/rat/moveto
-	var/obj/effect/proc_holder/mob_common/make_nest/mouse/mouses
+	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/make
+	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
 // Damn this action button code structure
 
 /datum/quirk/ratmaster/add()
@@ -1777,8 +1780,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	H.AddAbility(gather)
 	moveto = new
 	H.AddAbility(moveto)
-	mouses = new
-	H.AddAbility(mouses)
+	make = new
+	H.AddAbility(make)
+	clear = new
+	H.AddAbility(clear)
 
 /datum/quirk/ratmaster/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1790,8 +1795,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
-		H.RemoveAbility(mouses)
-		QDEL_NULL(mouses)
+		H.RemoveAbility(make)
+		QDEL_NULL(make)
+		H.RemoveAbility(clear)
+		QDEL_NULL(clear)
 
 /datum/quirk/critterfriend
 	name = "Beast Friend - Small Critters"

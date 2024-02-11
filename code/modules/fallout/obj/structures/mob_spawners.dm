@@ -258,6 +258,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 7 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
 
+/obj/structure/nest/rat/tame
+	name = "imprinted rat nest"
+	desc = "An artifical-looking nest full of less-than-evil squeakers."
+	color = "#91fdac"
+	mob_types = list(
+		/mob/living/simple_animal/hostile/rat/frien = 9,
+		/mob/living/simple_animal/hostile/rat/skitter/curious = 1
+	)
+
 /obj/structure/nest/mouse
 	name = "mouse nest"
 	max_mobs = 6
