@@ -38,7 +38,7 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	
+
 
 
 /datum/outfit/job/wasteland/f13raider
@@ -650,7 +650,7 @@ Raider
 			/datum/job/wasteland/f13raider,
 		),
 	)
-	
+
 
 /datum/outfit/job/wasteland/f13raider/resident
 	name = "Tunnel Rats Resident"
@@ -1343,8 +1343,8 @@ Raider
 
 /datum/job/wasteland/f13wastelander/ashdown
 	title = "Ashdown Citizen"
-	total_positions = 25
-	spawn_positions = 25
+	total_positions = -1
+	spawn_positions = -1
 	outfit = /datum/outfit/job/wasteland/ashdown
 
 /datum/outfit/job/wasteland/ashdown
@@ -1418,7 +1418,7 @@ Raider
 	flag = F13PREACHER
 	department_flag = DEP_OASIS
 	total_positions = 3
-	spawn_positions = 1
+	spawn_positions = 3
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
@@ -2341,12 +2341,12 @@ datum/job/wasteland/f13dendoctor
 /////////////////
 
 //Redwater Slave
-/datum/job/wasteland/f13redwaterslave
+/datum/job/wasteland/f13redwaterslave // ???
 	title = "Redwater Slave"
 	flag = F13LEGIONSLAVE
 	faction = FACTION_WASTELAND
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the slavers in Redwater, or your personal owner."
 	description = "Either you were captured by the Redwater slavers, or born into servitude.  Either way your life has been one of being treated as property to another human since the explosive collar was fitted to your neck.  Freedom feels like a dream long gone, hidden behind the fear of the signaler that would cause your head to sail off in an arc.  Despite that you've found a place in their society, and are a protected commodity.  Be you a field worker, sex slave, or pack mule.  The good news is, as long as you serve a purpose then you'll probably get to live, and being alive means a chance to escape."
 	selection_color = "#dcba97"

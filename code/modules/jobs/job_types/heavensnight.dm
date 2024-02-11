@@ -126,8 +126,8 @@
 	head_announce = list("Security")
 	faction = FACTION_CLUB
 	social_faction = FACTION_CLUB
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = -1
+	spawn_positions = -1
 	description = "You are the manager for the Heavens Night club, you ensure the workings of the club are in order."
 	supervisors = "Yourself and your customers!"
 	selection_color = "#df80af"
