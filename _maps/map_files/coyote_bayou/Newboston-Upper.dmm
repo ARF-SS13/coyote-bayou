@@ -5829,6 +5829,9 @@
 /obj/structure/curtain{
 	open = 0
 	},
+/obj/machinery/shower{
+	pixel_y = 27
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/city)
 "wY" = (
@@ -11762,10 +11765,11 @@
 	},
 /area/f13/building)
 "TG" = (
+/obj/structure/railing,
 /obj/structure/railing{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plating/f13/outside/roof/metal,
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "TH" = (
 /obj/structure/spacevine{
@@ -12692,12 +12696,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"Xt" = (
-/obj/structure/railing{
-	dir = 9
-	},
-/turf/open/floor/plating/f13/outside/roof/metal,
-/area/f13/wasteland)
 "Xu" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -13305,12 +13303,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
-"ZH" = (
-/obj/structure/railing{
-	dir = 10
-	},
-/turf/open/floor/plating/f13/outside/roof/red,
-/area/f13/wasteland)
 "ZJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/coyote/darkwoodwall,
@@ -28364,7 +28356,7 @@ Yj
 "}
 (59,1,1) = {"
 Yj
-Yj
+GU
 GU
 GU
 GU
@@ -28621,7 +28613,7 @@ Yj
 "}
 (60,1,1) = {"
 Yj
-Yj
+GU
 GU
 GU
 GU
@@ -39694,15 +39686,15 @@ GU
 GU
 us
 Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-GU
-GU
-us
-us
+ji
+ji
+ji
+ji
+ji
+ji
+ji
+ji
+ji
 us
 GU
 Fb
@@ -39951,15 +39943,15 @@ GU
 us
 GU
 Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-GU
-GU
-GU
-us
+ji
+wX
+hh
+ET
+ji
+cy
+WO
+tV
+ji
 GU
 Fb
 Fb
@@ -40208,16 +40200,16 @@ GU
 GU
 GU
 Fb
+ji
+tV
+tV
+tV
+VV
+tV
+tV
+Cr
+rN
 Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-GU
-GU
-GU
-GU
 Fb
 Fb
 Fb
@@ -40465,15 +40457,15 @@ Fb
 Fb
 Fb
 Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-Fb
-GU
+ji
+ji
+ji
+ji
+ji
+Pu
+WZ
+Vm
+rN
 Fb
 Fb
 Fb
@@ -40719,20 +40711,20 @@ EV
 Fb
 Fb
 Fb
-iT
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
-Cv
+Fb
+Fb
+Fb
+ji
+es
+xg
+Ao
+wi
+tV
+tV
+xC
+rN
+Fb
+Fb
 Fb
 Fb
 GU
@@ -40976,21 +40968,21 @@ Fb
 Fb
 Fb
 Fb
-Fo
-Ed
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-cw
+Fb
+Fb
+Fb
+ji
+TO
+Ao
+ji
+ji
+tV
+tV
+qv
+ji
+Cv
+Cv
+Fb
 GU
 GU
 GU
@@ -41233,18 +41225,18 @@ GU
 Fb
 Fb
 Fb
-Fo
-OT
-tN
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
+Fb
+Fb
+Fb
+ji
+If
+Ao
+ji
+TI
+VW
+GG
+VW
+bH
 OT
 OT
 cw
@@ -41490,20 +41482,20 @@ GU
 GU
 Fb
 Fb
-Fo
+Fb
+Fb
+Fb
+ji
+hC
+Ao
+ji
+cz
+PZ
+LK
+hW
+ji
 OT
-OT
-OT
-Xt
-TG
-FP
-FP
-FP
-FP
-FP
-ZH
-Bd
-Bd
+tN
 cw
 Fb
 GU
@@ -41748,8 +41740,8 @@ GU
 Fb
 Fb
 Fb
-FP
-FP
+Fb
+Fb
 ji
 ji
 ji
@@ -41760,7 +41752,7 @@ ji
 ji
 ji
 OT
-OT
+tN
 cw
 Fb
 GU
@@ -52560,13 +52552,13 @@ GU
 GU
 oS
 ji
-tN
-tN
-tN
-tN
-tN
-tN
-hr
+Ws
+Ws
+Ws
+Ws
+Ws
+Ws
+TG
 Bd
 Bd
 BJ
