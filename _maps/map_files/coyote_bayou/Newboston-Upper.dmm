@@ -381,10 +381,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"bH" = (
-/obj/machinery/door/airlock/silver/glass,
-/turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/city)
 "bI" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -5166,8 +5162,11 @@
 	},
 /area/f13/building)
 "vC" = (
-/obj/machinery/door/airlock/silver/glass,
-/turf/open/floor/plasteel/dark,
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/f13/city)
 "vE" = (
 /obj/machinery/door/poddoor/preopen{
@@ -12306,11 +12305,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
-"XR" = (
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/wasteland)
 "XS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
@@ -41215,8 +41209,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 ji
 ji
@@ -41472,8 +41466,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 wX
 hh
@@ -41729,8 +41723,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 tV
 tV
@@ -41986,8 +41980,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 ji
 ji
@@ -42243,8 +42237,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 es
 xg
@@ -42500,8 +42494,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 TO
 Ao
@@ -42757,8 +42751,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 If
 Ao
@@ -42767,7 +42761,7 @@ TI
 VW
 GG
 VW
-bH
+vC
 OT
 OT
 gz
@@ -43014,8 +43008,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 hC
 Ao
@@ -43271,8 +43265,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 ji
 ji
@@ -43528,8 +43522,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 wX
 hh
@@ -43785,8 +43779,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 tV
 tV
@@ -44042,8 +44036,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 ji
 ji
@@ -44299,8 +44293,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 PD
 WO
@@ -44556,8 +44550,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 qP
 tV
@@ -44813,8 +44807,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 um
 tV
@@ -45070,8 +45064,8 @@ tN
 tN
 tN
 tN
-XR
-XR
+ji
+ji
 ji
 mf
 tV
