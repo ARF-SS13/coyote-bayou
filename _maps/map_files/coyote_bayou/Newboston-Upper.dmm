@@ -381,16 +381,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"bG" = (
-/obj/structure/rack,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/xander,
-/obj/item/seeds/xander,
-/obj/item/seeds/aloe,
-/obj/item/seeds/aloe,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/tribal)
 "bH" = (
 /obj/machinery/door/airlock/silver/glass,
 /turf/open/floor/plasteel/f13/vault_floor/red,
@@ -3231,6 +3221,12 @@
 /area/f13/building/tribal)
 "nl" = (
 /obj/machinery/smartfridge/bottlerack/seedbin/primitive,
+/obj/item/seeds/aloe,
+/obj/item/seeds/aloe,
+/obj/item/seeds/xander,
+/obj/item/seeds/xander,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/poppy/broc,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
 "nm" = (
@@ -23742,7 +23738,7 @@ uZ
 uZ
 uZ
 Np
-bG
+tD
 tD
 tD
 tD
