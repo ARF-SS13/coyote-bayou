@@ -392,18 +392,18 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? No current restrictions on observing, you can spawn in as normal.","Player Setup","Yes","No")
+	// var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? No current restrictions on observing, you can spawn in as normal.","Player Setup","Yes","No")
 
-	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
+	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
 		return FALSE
 
-	if(client.holder && check_rights(R_STEALTH, 0))
-		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
-		if(do_stealth == "Yes")
-			client.stealth()
+	// if(client.holder && check_rights(R_STEALTH, 0))
+	// 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	// 	if(do_stealth == "Yes")
+	// 		client.stealth()
 
 	var/mob/dead/observer/observer = new()
 	spawning = TRUE
