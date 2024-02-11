@@ -1744,6 +1744,13 @@
 	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland)
+"biL" = (
+/obj/structure/bedsheetbin/towel,
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/bamboo/fourtysix{
+	icon_state = "mat-21"
+	},
+/area/f13/building)
 "biO" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -20774,6 +20781,14 @@
 /obj/structure/sign/poster/official/fruit_bowl{
 	pixel_y = 37
 	},
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = -9;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/bar/nash)
 "njw" = (
@@ -20945,13 +20960,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"nqK" = (
-/obj/structure/bedsheetbin/towel,
-/obj/structure/table/wood,
-/turf/open/indestructible/ground/bamboo/fourtysix{
-	icon_state = "mat-21"
-	},
-/area/f13/building)
 "nqV" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
@@ -74816,7 +74824,7 @@ fJf
 fJf
 fJf
 fJf
-nqK
+biL
 upt
 eZo
 jkw
