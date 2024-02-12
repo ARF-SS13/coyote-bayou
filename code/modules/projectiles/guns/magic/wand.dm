@@ -87,13 +87,16 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/resurrection
-	name = "Stick of healing"
-	desc = "This wand uses healing magics to heal and revive. They are rarely utilized within the Wizard Federation for some reason."
+	name = "cursed wand of greater transfusion"
+	desc = "This wand uses healing magics to heal and revive, albeit at a massive cost to the user. \n\
+		It'll happily devour your body and store the life force within it, but its just as happy to deliver it to someone else."
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	fire_sound = 'sound/magic/staff_healing.ogg'
 	icon_state = "revivewand"
 	max_charges = 1 //10, 5, 5, 4
-	recharge_rate = 30 MINUTES
+	drain_duration_per_charge = 30 MINUTES
+	blood_drain_per_charge = BLOOD_VOLUME_NORMAL * 1.5 // more than a person's worth of blood
+	hunger_drain_per_charge = NUTRITION_LEVEL_FAT * 2 // oh yeah if someone without blood or hunger holds this, theyre fuckin dead
 
 /obj/item/gun/magic/wand/resurrection/zap_self(mob/living/user)
 	..()
@@ -251,7 +254,8 @@
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	max_charges = 15
-	recharge_rate = 20 SECONDS
+	drain_duration_per_charge = 20 SECONDS
+	hunger_drain_per_charge = 100
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
@@ -276,7 +280,8 @@
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	max_charges = 10
-	recharge_rate = 10 SECONDS
+	drain_duration_per_charge = 10 SECONDS
+	hunger_drain_per_charge = 100
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
@@ -298,7 +303,9 @@
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	max_charges = 25
-	recharge_rate = 10 SECONDS
+	drain_duration_per_charge = 10 SECONDS
+	hunger_drain_per_charge = 25
+	blood_drain_per_charge = 5 // not much, but it'll add up
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
@@ -325,11 +332,13 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
 	max_charges = 30
-	recharge_rate = 6 SECONDS
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
 	)
+	drain_duration_per_charge = 6 SECONDS
+	hunger_drain_per_charge = 10
+	blood_drain_per_charge = 3 // not much, but it'll add up
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks
 		projectile_type = /obj/item/projectile/magic/kelpmagic/sparks
@@ -374,6 +383,9 @@
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
 	max_charges = 8
 	recharge_rate = 20 SECONDS
+	drain_duration_per_charge = 20 SECONDS
+	hunger_drain_per_charge = 100
+	blood_drain_per_charge = 10
 
 /obj/item/ammo_casing/magic/kelpmagic/firebolt
 		projectile_type = /obj/item/projectile/magic/kelpmagic/firebolt
@@ -394,12 +406,19 @@
 
 /obj/item/gun/magic/wand/kelpmagic/healwand
 	name = "wand of mending"
-	desc = "With a silver core and a casing of gold, this wand visibly channels the energies of life itself. It can let loose bolts that heal all forms of damage, though it's less efficent than alchemy and cannot heal the wand's wielder."
+	desc = "With a silver core and a casing of gold, this wand visibly channels the energies of life itself. Specifically, yours! \
+		It will drain the health of nearby creatures to charge itself, able to deliver twice that amount as healing. \
+		It also won't heal the wielder due to its prudish nature."
 	icon_state = "mendwand"
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 30 SECONDS
+	drain_duration_per_charge = 20 SECONDS
+	hunger_drain_per_charge = 200
+	blood_drain_per_charge = 25
+	brute_drain_per_charge = 7
+	burn_drain_per_charge = 5
+	toxin_drain_per_charge = 10
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand

@@ -344,7 +344,7 @@ SUBSYSTEM_DEF(secondwind)
 				total_damage--
 	master.adjustBruteLoss(-brute_heal, TRUE, include_roboparts = TRUE)
 	master.adjustFireLoss(-burn_heal, TRUE, include_roboparts = TRUE)
-	master.adjustToxLoss(-tox_heal, force_be_heal = TRUE)
+	master.adjustToxLoss(-tox_heal, ignore_toxin_lover = TRUE)
 	master.adjustOxyLoss(-oxy_heal)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
 	

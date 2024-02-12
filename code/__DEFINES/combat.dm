@@ -1371,3 +1371,6 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define MATCHLOCK_MINIMUSKET_PREFIRE_STD 0.4 SECONDS
 #define MATCHLOCK_MUSKET_PREFIRE_STD 0.5 SECONDS
 #define MATCHLOCK_BOMBARD_PREFIRE_STD 0.8 SECONDS
+
+/// Magic, snort snort
+/// Magic gun costs Hunger to charge
