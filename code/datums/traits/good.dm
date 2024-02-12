@@ -1752,7 +1752,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Beast Master - Rats"
 	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
 	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
-	value = 18
+	value = 22
 	category = "Critter Quirks"
 	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky."
 	conflicts = list(
