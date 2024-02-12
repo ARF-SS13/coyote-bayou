@@ -32,6 +32,7 @@
 					<span class='nicegreen'>Radiation heals you slowly.</span> \
 					<span class='warning'>You are terrible at melee</span> and innately slower than humans. You also cannot go into critical condition-ever. You will keep shambling forward until you are <span class='danger'>dead.</span>"
 
+/*
 //Ghouls have weak limbs.
 /datum/species/ghoul/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
@@ -121,7 +122,7 @@
 		H.apply_status_effect(/datum/status_effect/ghoulheal)
 	else
 		H.remove_status_effect(/datum/status_effect/ghoulheal)
-
+*/
 
 
 /*/datum/species/ghoul/glowing
