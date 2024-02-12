@@ -5497,9 +5497,6 @@
 	color = "#A47449";
 	dir = 1
 	},
-/obj/structure/railing{
-	dir = 4
-	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "vS" = (
@@ -9519,6 +9516,13 @@
 	dir = 8
 	},
 /area/f13/building)
+"Ld" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/plating/f13/outside/roof/red,
+/area/f13/wasteland)
 "Le" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepiletwo{
@@ -36109,9 +36113,9 @@ AI
 oZ
 mD
 vO
-Ws
-Ws
-Ws
+tN
+tN
+tN
 tN
 tN
 tN
@@ -36365,7 +36369,7 @@ aN
 kY
 eV
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
@@ -36622,7 +36626,7 @@ In
 gP
 az
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
@@ -36879,7 +36883,7 @@ ZP
 uu
 ec
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
@@ -37136,7 +37140,7 @@ Ls
 IX
 rQ
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
@@ -37393,7 +37397,7 @@ Ho
 Ho
 RT
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
@@ -37650,7 +37654,7 @@ eV
 eV
 eV
 Cd
-Fb
+Ld
 Fb
 Fb
 Fb
