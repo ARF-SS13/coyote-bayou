@@ -219,6 +219,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	force = 15
+	backstab_multiplier = 1.8
 	throwforce = 0
 	wound_bonus = 4
 	sharpness = SHARP_POINTY
@@ -260,6 +261,7 @@
 /obj/item/hand_item/biter/creature
 	force = 25
 	force_wielded = 30
+	
 
 /obj/item/hand_item/biter/big
 	name = "Big Biter"
@@ -316,6 +318,7 @@
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	force = 15
+	backstab_multiplier = 1.8
 	throwforce = 0
 	wound_bonus = 4
 	sharpness = SHARP_EDGED
@@ -429,6 +432,7 @@
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 40
+	backstab_multiplier = 1.5
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
@@ -474,6 +478,7 @@
 	icon_state = "proboscis"
 	w_class = WEIGHT_CLASS_TINY
 	force = 15
+	backstab_multiplier = 1.8
 	attack_speed = CLICK_CD_MELEE * 0.7
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
@@ -544,6 +549,7 @@
 	hitsound = "sound/effects/attackblob.ogg"
 	force = 6
 	force_wielded = 10
+	backstab_multiplier = 3 //OBLITERATE THEM, BOYKISSER. ~TK
 	throwforce = 0
 	attack_speed = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -573,6 +579,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	force = 15
+	backstab_multiplier = 1.8
 	throwforce = 0
 	wound_bonus = 4
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -590,6 +597,7 @@
 	desc = "A basic cantrip that allows the caster to inflict nasty shocks on touch"
 	item_flags = ABSTRACT | DROPDEL
 	force = 30
+	backstab_multiplier = 1.6
 	hitsound = 'sound/weapons/sear.ogg'
 	damtype = BURN
 	attack_verb = list("seared", "zapped", "fried", "shocked")
