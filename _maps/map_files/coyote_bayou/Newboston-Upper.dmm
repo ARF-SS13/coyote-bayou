@@ -358,7 +358,7 @@
 "bw" = (
 /obj/structure/bed,
 /turf/open/floor/carpet/red,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "bx" = (
 /obj/structure/railing{
 	dir = 10
@@ -771,7 +771,7 @@
 "dn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/coyote/oldwood,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "dr" = (
 /obj/machinery/light{
 	dir = 8
@@ -1156,7 +1156,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "ff" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1396,7 +1396,7 @@
 /area/f13/building/tribal)
 "ga" = (
 /turf/open/floor/carpet/red,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "gb" = (
 /obj/structure/chair/bench{
 	dir = 8
@@ -2737,9 +2737,6 @@
 /obj/machinery/workbench,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
-"kX" = (
-/turf/closed/wall/f13/coyote/oldwood,
-/area/f13/wasteland)
 "kY" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 4;
@@ -6006,7 +6003,7 @@
 	pixel_x = 28
 	},
 /turf/closed/wall/f13/coyote/oldwood,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "xt" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
@@ -8975,7 +8972,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "Iy" = (
 /obj/item/hemostat/tribal,
 /obj/item/retractor/tribal,
@@ -9528,7 +9525,7 @@
 	density = 0
 	},
 /turf/open/floor/carpet/red,
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/nash)
 "KK" = (
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 4;
@@ -38032,9 +38029,9 @@ lT
 MT
 vo
 dn
-kX
-kX
-kX
+vo
+vo
+vo
 Fb
 Fb
 Fb
@@ -38291,7 +38288,7 @@ pa
 Iu
 ga
 fa
-kX
+vo
 Fb
 Fb
 Fb
@@ -38548,7 +38545,7 @@ vo
 ga
 ga
 bw
-kX
+vo
 Fb
 Fb
 GU
@@ -38805,7 +38802,7 @@ Gi
 KJ
 ga
 xs
-kX
+vo
 Fb
 Fb
 us
@@ -39059,10 +39056,10 @@ XL
 PI
 WM
 vo
-kX
-kX
-kX
-kX
+vo
+vo
+vo
+vo
 Fb
 Fb
 GU
