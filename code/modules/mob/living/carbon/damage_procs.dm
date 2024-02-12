@@ -102,9 +102,9 @@
 		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
 
-/mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, ignore_toxin_lover)
-	if(HAS_TRAIT(src, TRAIT_TOXINLOVER) && !ignore_toxin_lover) //damage becomes healing and healing becomes damage
-		if(!forced)
+/mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, force_be_heal)
+	if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
+		if(!forced && !force_be_heal)
 			amount = -amount
 		if(amount > 0)
 			blood_volume -= 3 * amount		//5x was too much, this is punishing enough.

@@ -600,7 +600,7 @@ ATTACHMENTS
 	var/sprd = SSrecoil.get_offset(user) /// its still *added* with each shot, so the next burst will be higher
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
-		if(chambered && can_shoot())
+		if(chambered)
 			LAZYOR(GLOB.gun2projectile["[type]"], "[chambered.type]")
 			before_firing(target,user)
 			var/BB = chambered.BB

@@ -206,7 +206,7 @@
 /mob/living/proc/getToxLoss()
 	return toxloss
 
-/mob/living/proc/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, ignore_toxin_lover)
+/mob/living/proc/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, force_be_heal)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_TOXINIMMUNE))

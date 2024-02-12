@@ -197,9 +197,6 @@
 		/datum/firemode/burst/three/fast,
 		/datum/firemode/semi_auto
 	)
-	drain_duration_per_charge = 10 SECONDS
-	hunger_drain_per_charge = 10
-	blood_drain_per_charge = 1
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/advanced
@@ -227,10 +224,6 @@
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
-	drain_duration_per_charge = 27 SECONDS
-	hunger_drain_per_charge = 400
-	blood_drain_per_charge = 100
-	burn_drain_per_charge = 25
 
 //Baby Fireball//
 /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
@@ -239,13 +232,10 @@
 	desc = "A simple staff topped with a cracked ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
 	icon_state = "firestaff"
 	max_charges = 1
-	recharge_rate = 60 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	recharge_rate = 10 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
-	drain_duration_per_charge = 10 SECONDS
-	hunger_drain_per_charge = 500
-	blood_drain_per_charge = 150
 
 
 /****************/
@@ -264,9 +254,6 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	drain_duration_per_charge = 30 SECONDS
-	hunger_drain_per_charge = 50
-	blood_drain_per_charge = 5
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
 		projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/thunder
@@ -289,12 +276,7 @@
 	icon_state = "medstaff"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
-	drain_duration_per_charge = 30 SECONDS
-	hunger_drain_per_charge = 200
-	blood_drain_per_charge = 25
-	brute_drain_per_charge = 7
-	burn_drain_per_charge = 5
-	toxin_drain_per_charge = 10
+	recharge_rate = 30 SECONDS
 
 /****************/
 //Upgraded Staff of Healing//
@@ -334,9 +316,6 @@
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
 	)
-	drain_duration_per_charge = 6 SECONDS
-	hunger_drain_per_charge = 20
-	blood_drain_per_charge = 2
 
 /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	projectile_type = /obj/item/projectile/magic/kelpmagic/acidspray
