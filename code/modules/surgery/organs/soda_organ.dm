@@ -143,7 +143,7 @@
 			convert_banked_to(SODIEHEAL_KIND_TOX, healamt)
 		if(banked_tox > 0)
 			var/healby = min(banked_tox, healamt)
-			owner.adjustToxLoss(-healby, force_be_heal = TRUE) // toxin lovers suffer (cutely)
+			owner.adjustToxLoss(-healby, ignore_toxin_lover = TRUE) // toxin lovers suffer (cutely)
 			banked_tox = max(banked_tox - healby, 0)
 			return SODIEHEAL_KIND_TOX | is_now_depleted(SODIEHEAL_KIND_TOX)
 	var/their_burn = owner.getFireLoss(FALSE)
