@@ -130,6 +130,7 @@
 	wielded_icon = "boneaxe2"
 	force_unwielded = 25
 	force_wielded = 40
+	backstab_multiplier = 1.3
 	attack_speed = CLICK_CD_MELEE * 1.1 //8.8
 
 /obj/item/twohanded/fireaxe/boneaxe/afterattack(atom/A, mob/living/user, proximity)
@@ -199,6 +200,7 @@
 	wielded_icon = "spear-metal2"
 	force_unwielded = 13
 	force_wielded = 32
+	backstab_multiplier = 1.5
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -280,6 +282,7 @@
 	force = 25
 	force_unwielded = 25
 	force_wielded = 40
+	backstab_multiplier = 1.5
 
 // Scrap spear		Keywords: Damage 17/28, Reach, Throw bonus
 /obj/item/twohanded/spear/scrapspear
@@ -293,6 +296,7 @@
 	force = 17
 	force_unwielded = 17
 	force_wielded = 28
+	backstab_multiplier = 2 //FILL THAT NICHE YOUNG TIKTAALIK
 
 // Bone Spear		Keywords: TRIBAL, Damage 21/36, Armor-piercing +0.2, Reach
 /obj/item/twohanded/spear/bonespear
@@ -310,6 +314,7 @@
 	wielded_icon = "spear-bone2"
 	force_unwielded = 21
 	force_wielded = 36
+	backstab_multiplier = 1.5
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 // Deathclaw Spear		Keywords: TRIBAL, Damage 22/48, Armor-piercing +0.3, Reach
@@ -323,6 +328,7 @@
 	wielded_icon = "spear-claw2"
 	force_unwielded = 22
 	force_wielded = 48
+	backstab_multiplier = 1.5
 
 // Deathclaw Spear-Axe		Keywords: TRIBAL, Damage 25/30, Armor-piercing +0.25, Reach, Wound Bonus
 /obj/item/twohanded/spearaxe
@@ -345,6 +351,7 @@
 	force = 20
 	force_unwielded = 25
 	force_wielded = 30
+	backstab_multiplier = 1.5
 	attack_speed = CLICK_CD_MELEE * 0.85 // 6.8
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
@@ -367,6 +374,7 @@
 	wielded_icon = "baseball2"
 	force_unwielded = 25
 	force_wielded = 38
+	backstab_multiplier = 2 //It's a force of nature.
 	attack_speed = CLICK_CD_MELEE //8. swing as fast as one-handed weapons, and do more damage, but with the inconvenience of worse storage.
 
 // Spiked Baseball Bat		Keywords: Damage 26/40, Damage bonus Stamina, Sharp
@@ -418,6 +426,7 @@
 	force = 22
 	force_unwielded = 22
 	force_wielded = 32
+	backstab_multiplier = 1.5 //hole in one
 
 /obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -529,6 +538,7 @@
 	slot_flags_on = null
 	force = 28
 	force_on = 55
+	backstab_multiplier = 1.3
 	throwforce = 15
 	throwforce_on = 30
 	attack_speed = CLICK_CD_MELEE
@@ -552,6 +562,7 @@
 	wielded_icon = "hammer-super2"
 	force_unwielded = 25
 	force_wielded = 68
+	backstab_multiplier = 1.3
 
 /obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -585,6 +596,7 @@
 	wielded_icon = "hammer-rocket2"
 	force_unwielded = 20
 	force_wielded = 56
+	backstab_multiplier = 1.6
 
 /obj/item/twohanded/sledgehammer/rockethammer/ComponentInitialize()
 	. = ..()
@@ -636,6 +648,7 @@
 	wielded_icon = "hammer-atom2"
 	force_unwielded = 25
 	force_wielded = 55
+	backstab_multiplier = 2.0 //no one expects the nuclear inquisition
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -656,6 +669,7 @@
 	wielded_icon = "hammer-war2"
 	force_unwielded = 34
 	force_wielded = 55
+	backstab_multiplier = 1.3
 	attack_speed = CLICK_CD_MELEE
 
 // Shaman staff				Keywords: Damage 15/30, Big stamina damage buff
@@ -669,6 +683,7 @@
 	wielded_icon = "staff-shaman2"
 	force_unwielded = 15
 	force_wielded = 30
+	backstab_multiplier = 1.5 //I swear to god I will turn Delta into fish stew. ~Tulki, 2223
 	attack_speed = 8
 
 /obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user)
@@ -731,6 +746,7 @@
 	wielded_icon = "chainsaw2"
 	force_unwielded = 8
 	force_wielded = 55
+	backstab_multiplier = 1.5 //rib n ter 
 
 /obj/item/twohanded/chainsaw/ComponentInitialize()
 	. = ..()
@@ -763,6 +779,7 @@
 	item_state = "steelsaw"
 	icon_prefix = "steelsaw"
 	force = 4
+	backstab_multiplier = 1.5
 	toolspeed = 0.5
 	wound_bonus = 20
 	bare_wound_bonus = 20
