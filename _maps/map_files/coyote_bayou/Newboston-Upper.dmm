@@ -355,6 +355,10 @@
 /obj/machinery/workbench/advanced,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
+"bw" = (
+/obj/structure/bed,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "bx" = (
 /obj/structure/railing{
 	dir = 10
@@ -764,6 +768,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"dn" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/wasteland)
 "dr" = (
 /obj/machinery/light{
 	dir = 8
@@ -1143,6 +1151,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/city)
+"fa" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "ff" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1380,6 +1394,9 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
+"ga" = (
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "gb" = (
 /obj/structure/chair/bench{
 	dir = 8
@@ -2720,6 +2737,9 @@
 /obj/machinery/workbench,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
+"kX" = (
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/wasteland)
 "kY" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 4;
@@ -5444,6 +5464,9 @@
 	},
 /turf/open/floor/f13,
 /area/f13/brotherhood)
+"vo" = (
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/building/hospital/clinic/nash)
 "vr" = (
 /obj/structure/dresser,
 /turf/open/floor/wood_common{
@@ -5976,6 +5999,14 @@
 /obj/structure/chair/comfy/teal,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
+"xs" = (
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/toy/plush/marblefox,
+/obj/structure/sign/painting/library{
+	pixel_x = 28
+	},
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/wasteland)
 "xt" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
@@ -8386,6 +8417,11 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
+"Gi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/building/hospital/clinic/nash)
 "Gk" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tribe)
@@ -8932,6 +8968,14 @@
 /obj/item/stack/sheet/cloth/ten,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
+"Iu" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "Iy" = (
 /obj/item/hemostat/tribal,
 /obj/item/retractor/tribal,
@@ -9478,6 +9522,13 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"KJ" = (
+/obj/structure/closet/crate/bin{
+	pixel_y = 3;
+	density = 0
+	},
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "KK" = (
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 4;
@@ -37979,11 +38030,11 @@ WF
 bD
 lT
 MT
-Jo
-Fb
-Fb
-Fb
-Fb
+vo
+dn
+kX
+kX
+kX
 Fb
 Fb
 Fb
@@ -38236,11 +38287,11 @@ Ev
 WF
 Ev
 qn
-Jo
-Fb
-Fb
-Fb
-Fb
+pa
+Iu
+ga
+fa
+kX
 Fb
 Fb
 Fb
@@ -38493,11 +38544,11 @@ Wm
 Wm
 Wm
 vS
-Jo
-Fb
-Fb
-Fb
-Fb
+vo
+ga
+ga
+bw
+kX
 Fb
 Fb
 GU
@@ -38750,11 +38801,11 @@ QH
 bq
 Wm
 PI
-Jo
-Fb
-Fb
-Fb
-Fb
+Gi
+KJ
+ga
+xs
+kX
 Fb
 Fb
 us
@@ -39007,11 +39058,11 @@ XL
 XL
 PI
 WM
-Jo
-Fb
-Fb
-Fb
-Fb
+vo
+kX
+kX
+kX
+kX
 Fb
 Fb
 GU

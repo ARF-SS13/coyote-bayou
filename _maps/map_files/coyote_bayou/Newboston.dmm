@@ -1429,10 +1429,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+	dir = 5
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/city)
@@ -1839,10 +1836,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "boV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor{
-	pixel_y = 0;
-	pixel_x = -15
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_x = -8;
+	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
@@ -1854,12 +1851,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bpA" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy{
-	pixel_x = -7;
-	pixel_y = 19;
-	density = 0
+/obj/structure/furnace{
+	pixel_x = -2;
+	pixel_y = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/cobble/corner{
+	dir = 1
+	},
 /area/f13/building/workshop/nash)
 "bpC" = (
 /obj/structure/table/wood,
@@ -2171,11 +2169,11 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "bzN" = (
-/obj/structure/chair/office{
-	dir = 4
+/obj/machinery/autolathe{
+	pixel_y = 8
 	},
-/turf/open/floor/carpet/red,
-/area/f13/building/hospital/clinic/nash)
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "bzW" = (
 /obj/structure/simple_door/metal/fence/wooden,
 /turf/open/indestructible/ground/inside/dirt,
@@ -2588,11 +2586,13 @@
 	},
 /area/f13/city)
 "bKT" = (
-/obj/machinery/autolathe/ammo/unlocked{
-	pixel_y = 20;
-	pixel_x = -3;
-	density = 0
+/obj/structure/rack/shelf_metal{
+	pixel_y = 3;
+	pixel_x = -2
 	},
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "bLe" = (
@@ -3773,14 +3773,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "cxm" = (
-/obj/structure/closet/crate/bin{
-	pixel_y = 3;
-	density = 0
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/red,
-/area/f13/building/hospital/clinic/nash)
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/city)
 "cxD" = (
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
@@ -5009,7 +5007,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dow" = (
-/turf/closed/wall/f13/tunnel,
+/obj/machinery/mineral/wasteland_vendor/ammo{
+	pixel_y = 8
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "doB" = (
 /obj/structure/table/wood/settler,
@@ -6637,6 +6638,7 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "epr" = (
@@ -9280,12 +9282,13 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "fTT" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin{
+	pixel_y = 3;
+	density = 0
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "fUk" = (
 /turf/open/floor/f13{
@@ -12285,7 +12288,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal{
-	pixel_y = -4
+	pixel_y = -2;
+	pixel_x = 3
 	},
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -12799,9 +12803,11 @@
 	},
 /area/f13/building)
 "icJ" = (
-/obj/structure/bed,
-/turf/open/floor/carpet/red,
-/area/f13/building/hospital/clinic/nash)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/city)
 "icK" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -12872,6 +12878,13 @@
 "ifw" = (
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/church)
+"ifN" = (
+/obj/structure/reagent_dispensers/barrel/explosive{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/turf/open/indestructible/cobble/corner,
+/area/f13/building/workshop/nash)
 "ifO" = (
 /obj/structure/flora/grass/wasteland,
 /turf/open/indestructible/ground/outside/dirt,
@@ -15015,10 +15028,13 @@
 	},
 /area/f13/building/tribal)
 "jtS" = (
-/obj/machinery/mineral/wasteland_vendor/ammo{
-	pixel_y = 19;
-	pixel_x = -2;
-	density = 0
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/workbench{
+	pixel_y = 8
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_y = 12
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
@@ -16353,13 +16369,7 @@
 	},
 /area/f13/building)
 "kjL" = (
-/obj/structure/reagent_dispensers/barrel/explosive{
-	pixel_x = 3;
-	pixel_y = 12
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/cobble/side{
-	icon_state = "cobble_corner";
+/turf/open/indestructible/cobble/corner{
 	dir = 4
 	},
 /area/f13/building/workshop/nash)
@@ -18526,6 +18536,12 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"lBZ" = (
+/obj/machinery/autolathe/ammo/unlocked{
+	pixel_y = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "lCj" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
@@ -20238,9 +20254,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "mII" = (
-/obj/machinery/light/floor{
-	pixel_x = -17
-	},
+/obj/machinery/light/floor,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "mJg" = (
@@ -20805,8 +20819,11 @@
 /area/f13/ncr)
 "nbh" = (
 /obj/machinery/gear_painter{
-	pixel_x = -15;
-	pixel_y = 19
+	pixel_y = 8
+	},
+/obj/structure/filingcabinet{
+	pixel_x = -14;
+	pixel_y = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
@@ -22141,7 +22158,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
 "nTH" = (
-/obj/structure/pondlily_small,
+/obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/city)
 "nTI" = (
@@ -22292,13 +22309,15 @@
 	},
 /area/f13/building)
 "nYg" = (
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/toy/plush/marblefox,
-/obj/structure/sign/painting/library{
-	pixel_x = 28
+/obj/structure/anvil/obtainable/basic{
+	pixel_x = -6;
+	pixel_y = 12;
+	density = 0
 	},
-/turf/closed/wall/f13/coyote/oldwood,
-/area/f13/building/hospital/clinic/nash)
+/turf/open/indestructible/cobble/corner{
+	dir = 4
+	},
+/area/f13/building/workshop/nash)
 "nYv" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -22353,11 +22372,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nZK" = (
-/obj/machinery/mineral/wasteland_vendor/weapons{
-	pixel_y = 19;
-	pixel_x = 1;
-	density = 0
+/obj/structure/rack/shelf_metal{
+	pixel_x = -2;
+	pixel_y = -1
 	},
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "nZL" = (
@@ -24545,19 +24565,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "pxG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/workbench{
-	pixel_x = -7;
-	pixel_y = 20;
-	density = 0
-	},
-/obj/structure/filingcabinet{
-	pixel_x = 13;
-	pixel_y = 20;
-	density = 0
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/workshop/nash)
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/city)
 "pxJ" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
@@ -26076,10 +26086,6 @@
 "qye" = (
 /obj/machinery/light{
 	light_color = "#e8eaff"
-	},
-/obj/structure/closet/crate/bin{
-	pixel_y = 3;
-	density = 0
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
@@ -27686,8 +27692,15 @@
 	},
 /area/f13/wasteland)
 "rxK" = (
-/turf/open/floor/carpet/red,
-/area/f13/building/hospital/clinic/nash)
+/obj/structure/rack/shelf_metal{
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "rxO" = (
 /obj/structure/wreck/trash/two_tire{
 	density = 0
@@ -29521,10 +29534,10 @@
 /area/f13/tunnel)
 "sCG" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
+	dir = 5
 	},
 /obj/effect/turf_decal/weather/dirt{
-	dir = 1
+	dir = 6
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/city)
@@ -31453,10 +31466,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tJH" = (
-/obj/machinery/autolathe{
-	pixel_y = 20;
-	pixel_x = 2;
-	density = 0
+/obj/machinery/mineral/wasteland_vendor/weapons{
+	pixel_y = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
@@ -32714,11 +32725,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "uAy" = (
-/obj/machinery/light/floor{
-	pixel_y = 0;
-	pixel_x = -20
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "uAH" = (
@@ -33038,6 +33046,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house/clean,
 /area/f13/building)
+"uKH" = (
+/obj/structure/rack/shelf_metal{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "uKI" = (
 /obj/structure/sink/well{
 	pixel_y = -4;
@@ -34490,6 +34508,16 @@
 "vMp" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"vMM" = (
+/obj/machinery/mineral/wasteland_vendor/pipboy{
+	pixel_y = 8
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "vMN" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/dirt,
@@ -35985,21 +36013,15 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/caveofforever)
 "wKZ" = (
-/obj/structure/furnace{
-	light_range = 3;
-	pixel_y = 20;
-	pixel_x = 16;
-	density = 0
+/obj/structure/rack/shelf_metal{
+	pixel_x = -3
 	},
-/obj/structure/anvil/obtainable/basic{
-	pixel_x = -10;
-	pixel_y = 14;
-	density = 0
+/obj/item/melee/smith/hammer/premade,
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_x = -8
 	},
-/turf/open/indestructible/cobble/side{
-	icon_state = "cobble_corner";
-	dir = 8
-	},
+/turf/open/indestructible/cobble,
 /area/f13/building/workshop/nash)
 "wLd" = (
 /obj/structure/reagent_dispensers/compostbin,
@@ -61658,14 +61680,14 @@ frU
 frU
 frU
 frU
-dow
-dow
-dow
-dow
-dow
-dow
-dow
-dow
+frU
+frU
+frU
+frU
+frU
+frU
+frU
+frU
 ixi
 jkw
 euz
@@ -61910,11 +61932,11 @@ oPE
 oPE
 oPE
 oPE
-sCG
-vsv
+icJ
 vsv
 vsv
 tZM
+jdI
 jHn
 jdI
 jdI
@@ -62169,17 +62191,17 @@ qCp
 qCp
 qCp
 lDM
-vsv
-vsv
-vsv
+nTH
+pxG
 jdI
+bpA
 wKZ
-xlf
+nYg
 aST
 aST
 xlf
 xlf
-xlf
+boV
 ixi
 nRM
 rtr
@@ -62427,9 +62449,9 @@ tuf
 qCp
 aYt
 ghg
-vsv
-vsv
+pxG
 jHn
+ifN
 kjL
 xlf
 xlf
@@ -62684,12 +62706,12 @@ cmo
 qCp
 qCp
 qCp
-lDM
-nTH
+cxm
 jHn
-bKT
+lBZ
 xlf
-pXu
+xlf
+rxK
 pXu
 tza
 aRi
@@ -62942,9 +62964,9 @@ vsz
 qrz
 cgZ
 sCG
-ghg
 jHn
-pxG
+jtS
+xlf
 xlf
 aST
 aST
@@ -63198,14 +63220,14 @@ iGr
 lje
 bVd
 qCp
-cgZ
-qCp
+oPE
 jHn
-tJH
+bzN
 xlf
-pXu
-pXu
-tza
+xlf
+uKH
+bKT
+nZK
 aRi
 xlf
 eZo
@@ -63454,11 +63476,11 @@ pte
 sYT
 sYT
 uKX
-mEG
-fTT
-bzN
+qCp
+oPE
 jHn
-nZK
+tJH
+xlf
 aST
 xlf
 uAy
@@ -63707,15 +63729,15 @@ vUF
 oUB
 qCp
 qCp
-mEG
-tPe
 hne
+tPe
+mEG
 qCp
 qCp
-rxK
-icJ
+oPE
 jHn
-jtS
+dow
+xlf
 aST
 cBv
 xkz
@@ -63964,15 +63986,15 @@ qCp
 qCp
 qCp
 vXj
-pdw
+fTT
 oYY
 qye
 qCp
-cxm
-rxK
-nYg
+oPE
+oPE
 jdI
-bpA
+vMM
+xlf
 xlf
 xlf
 xlf
@@ -64225,14 +64247,14 @@ oXv
 sHF
 pdw
 qCp
-qCp
-qCp
-qCp
+oPE
+oPE
 jdI
 nbh
 xlf
 xlf
-aST
+xlf
+uAy
 xlf
 aST
 gng
@@ -64484,12 +64506,12 @@ sHF
 cgZ
 sIw
 oPE
-oPE
 jHn
 pVO
 xlf
+xlf
 aST
-boV
+aST
 lvG
 epo
 jHn
