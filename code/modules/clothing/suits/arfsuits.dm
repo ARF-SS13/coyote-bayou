@@ -1810,6 +1810,32 @@
 	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
 
+/obj/item/clothing/suit/armor/light/duster/goner/alt
+	name = "dev-patched brown trenchcoat"
+	desc = "A non-existent ugly trenchcoat."
+	icon_state = "goner_suitb"
+	item_state = "duster"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/red
+	name = "red-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with red linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_r"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/green
+	name = "green-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with green linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_g"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/blue
+	name = "blue-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with blue linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_b"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/yellow
+	name = "yellow-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with yellow linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_y"
+
 /obj/item/clothing/suit/armor/light/duster/russian_coat
 	name = "russian battle coat"
 	desc = "Used in extremly cold fronts, made out of real bears."

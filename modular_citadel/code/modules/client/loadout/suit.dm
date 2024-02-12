@@ -1223,6 +1223,22 @@
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
+/datum/gear/suit/goner_red/alt
+	name = "brown drab trenchcoat, red"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/red
+
+/datum/gear/suit/goner_green/alt
+	name = "brown drab trenchcoat, green"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/green
+
+/datum/gear/suit/goner_blue/alt
+	name = "brown drab trenchcoat, blue"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/blue
+
+/datum/gear/suit/goner_yellow/alt
+	name = "brown drab trenchcoat, yellow"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/yellow
+
 /datum/gear/suit/rain_coat
 	name = "Commonwealth sniper rain coat"
 	path = /obj/item/clothing/suit/rain_coat
