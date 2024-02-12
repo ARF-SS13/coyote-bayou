@@ -438,6 +438,9 @@
 						continue
 					hit_this.attackby(master, user, null, damage)
 
+	// i'm sure nothing bad will happen if i let people run afterattack on every mob they hit using these components.
+	master.afterattack(hit_this, user, TRUE, null)
+
 /datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target)
 	if(!user || !target)
 		return
