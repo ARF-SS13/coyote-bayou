@@ -172,7 +172,8 @@
 		if(allmobs || (M.type in who_to_check))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				continue
-			M.Goto(user,M.move_to_delay,1)
+			//M.Goto(user,M.move_to_delay,1)
+			walk_to(M, user, 1, M.move_to_delay)
 			M.do_alert_animation(M)
 	return TRUE
 
@@ -263,7 +264,8 @@
 		if(allmobs || (M.type in who_to_check))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				continue
-			M.Goto(target,M.move_to_delay,1)
+			//M.Goto(target,M.move_to_delay,1)
+			walk_to(M, target, 1, M.move_to_delay)
 			M.do_alert_animation(M)
 	remove_ranged_ability()
 	return TRUE
