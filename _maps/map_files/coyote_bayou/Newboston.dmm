@@ -16201,10 +16201,9 @@
 	},
 /area/f13/building)
 "kdo" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/ticket_machine{
+	pixel_y = 27
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -34755,10 +34754,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vSr" = (
-/obj/machinery/light{
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
