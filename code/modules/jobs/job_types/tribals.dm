@@ -128,6 +128,7 @@ Tribal Chief
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/kit_spawner/tribal = 1,
 		/obj/item/cool_book/chiefguide = 1
@@ -189,6 +190,7 @@ Tribal Shaman
 		/obj/item/smelling_salts/wayfarer=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
@@ -265,6 +267,7 @@ Tribal Hunt Master
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/lantern = 1,
@@ -334,6 +337,7 @@ Druid
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
@@ -519,6 +523,7 @@ Hunter
 	backpack_contents = list(
 		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/cool_book/warriorguide = 1
 	)
@@ -589,6 +594,7 @@ Spirit-Pledged
 	belt = /obj/item/kit_spawner/tribal
 	backpack_contents = list(
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign)
 
 /*
@@ -633,6 +639,7 @@ Guardian
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
@@ -687,7 +694,7 @@ Guardian
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/villagerguide = 1
 	)
 
