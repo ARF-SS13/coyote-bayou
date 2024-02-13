@@ -6,7 +6,7 @@
 	item_state = "bow"
 	weapon_class = null
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACKPACK
+	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 	draw_time = GUN_DRAW_QUICK
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	mag_type = /obj/item/ammo_box/magazine/internal/bow

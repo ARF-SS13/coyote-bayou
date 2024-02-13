@@ -1180,8 +1180,9 @@ obj/item/clothing/head/f13/army/beret
 	desc = "A tribal skull-mask adorned with decorative feathers and... are those real antler-horns? <span class='bold'>Ctrl + Shift to customise!</span>"
 	icon_state = "skullmask1"
 	item_state = "skullmask1"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	var/is_hair_hidden = FALSE
+	pocket_storage_component_path = null
 
 /obj/item/clothing/head/helmet/f13/skull_helmet/CtrlShiftClick(mob/user)
 	var/static/list/choices = list(
@@ -1196,15 +1197,12 @@ obj/item/clothing/head/f13/army/beret
 		if("Skull_Antler")
 			icon_state = "skullmask1"
 			balloon_alert(user, "Switched to Default")
-			update_icon()
 		if("Skull_Redfeather")
 			icon_state = "skullmask2"
 			balloon_alert(user, "Switched to Redfeather")
-			update_icon()
 		if("Skull_Bluefeather")
 			icon_state = "skullmask3"
 			balloon_alert(user, "Switched to Bluefeather")
-			update_icon()
 		if("Safe")
 			flags_inv -= HIDEFACE
 			balloon_alert(user, "Revealing Identity!")
