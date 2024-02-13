@@ -7882,6 +7882,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"faq" = (
+/obj/machinery/ticket_machine{
+	pixel_y = 27
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/building/trader)
 "faw" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -74273,7 +74279,7 @@ peg
 peg
 peg
 peg
-peg
+faq
 peg
 peg
 peg
