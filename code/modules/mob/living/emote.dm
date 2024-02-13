@@ -60,7 +60,7 @@
 
 /datum/emote/living/collapse
 	key = "collapse"
-	key_third_person = "collapse"
+	key_third_person = "collapses"
 	message = "collapses!"
 	message_param = "collapses from %t!" // Because I like to *collapse cringe "collapses from cringe!"
 	emote_type = EMOTE_AUDIBLE
