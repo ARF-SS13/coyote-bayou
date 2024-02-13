@@ -913,7 +913,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/shaman
-	name = "Shaman"
+	name = "Spiritual Leader"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/villager
@@ -933,7 +933,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid
-	name = "Druid"
+	name = "Harvest Leader"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/spiritpledged

@@ -13,6 +13,9 @@
 
 	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer to get an idea of its capabilities."
 
+	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_SUITSTORE
+	w_class = WEIGHT_CLASS_BULKY
+
 	//weapon stats
 	force = 20
 	throwforce = 20
@@ -153,7 +156,7 @@
 	currentsongs.Cut()
 	notes.Cut()
 
-/obj/item/huntinghorn/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+/obj/item/huntinghorn/pre_attack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	// only if we're ready to play a note
 	if(!readytoplay || !CheckAttackCooldown(user, target))

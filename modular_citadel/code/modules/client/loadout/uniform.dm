@@ -1653,28 +1653,44 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
 /datum/gear/uniform/goner_red
-	name = "utility uniform, red"
+	name = "quasimilitary green uniform, red"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_green
-	name = "utility uniform, green"
+	name = "quasimilitary green uniform, green"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/green
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_blue
-	name = "utility uniform, blue"
+	name = "quasimilitary green uniform, blue"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_yellow
-	name = "utility uniform, yellow"
+	name = "quasimilitary green uniform, yellow"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/goner_red/alt
+	name = "quasimilitary brown uniform, red"
+	path = /obj/item/clothing/under/f13/goner/alt/red
+
+/datum/gear/uniform/goner_green/alt
+	name = "quasimilitary brown uniform, green"
+	path = /obj/item/clothing/under/f13/goner/alt/green
+
+/datum/gear/uniform/goner_blue/alt
+	name = "quasimilitary brown uniform, blue"
+	path = /obj/item/clothing/under/f13/goner/alt/blue
+
+/datum/gear/uniform/goner_yellow/alt
+	name = "quasimilitary brown uniform, yellow"
+	path = /obj/item/clothing/under/f13/goner/alt/yellow
 
 /datum/gear/uniform/clown
 	name = "Clown suit"

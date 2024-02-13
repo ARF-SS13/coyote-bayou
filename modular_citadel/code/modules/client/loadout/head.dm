@@ -861,6 +861,11 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
+/datum/gear/head/skullmask
+	name = "Tribal Skull-Mask"
+	path = /obj/item/clothing/head/helmet/f13/skull_helmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 /datum/gear/head/steelm1
 	name = "M1 Helmet "
