@@ -1193,6 +1193,7 @@
 	item_color = "khan_uniform"
 	var/uniformtoggled = FALSE
 	body_parts_hidden = GROIN|LEGS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/khan/biker
 	name = "rough ridin' jeans"
@@ -1299,6 +1300,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"

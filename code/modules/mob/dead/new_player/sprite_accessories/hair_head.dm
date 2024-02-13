@@ -435,7 +435,7 @@
 
 /datum/sprite_accessory/hair/long5
 	name = "Long Hair 5"
-	icon_state = "hair_longer5"
+	icon_state = "hair_long5"
 
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"
