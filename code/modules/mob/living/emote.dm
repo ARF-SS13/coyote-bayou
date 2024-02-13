@@ -62,6 +62,7 @@
 	key = "collapse"
 	key_third_person = "collapses"
 	message = "collapses!"
+	message_param = "collapses from %t!" // Because I like to *collapse cringe "collapses from cringe!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/collapse/run_emote(mob/user, params)
@@ -170,6 +171,7 @@
 	key_third_person = "faints"
 	message = "faints."
 	message_param = "faints from %t."
+	stat_allowed = UNCONSCIOUS //So people can use faint to quickly slam the ability even if they are unconscious
 
 /datum/emote/living/faint/run_emote(mob/user, params)
 	. = ..()
@@ -177,6 +179,7 @@
 		var/mob/living/L = user
 		L.SetSleeping(200)
 
+/* Colfer edit: Trying to get *faint emote to work by removing duplicate datum (THIS HASNT BEEN TESTED, I dont know what this can effect by changing it)
 /datum/emote/living/faint
 	key = "collapse"
 	key_third_person = "collapse"
@@ -188,7 +191,7 @@
 	if(. && isliving(user))
 		var/mob/living/L = user
 		L.SetSleeping(20)
-
+*/
 
 /* Fortuna edit: flapping your wings disabled
 /datum/emote/living/flap
