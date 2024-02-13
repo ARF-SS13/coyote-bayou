@@ -2093,3 +2093,55 @@ datum/emote/living/gecker
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_coyote/sound/verbs/mow.ogg'
 
+datum/emote/living/yip
+	key = "yip"
+	key_third_person = "yips"
+	message = "yips!"
+	sound = 'modular_splurt/sound/voice/yip.ogg'
+
+/datum/emote/living/woof
+	key = "woof"
+	key_third_person = "woofs"
+	message = "woofs!"
+	sound = 'modular_splurt/sound/voice/woof.ogg'
+
+/datum/emote/living/woof/alt
+	key = "woof2"
+	key_third_person = "woofs2"
+	sound = 'modular_splurt/sound/voice/woof2.ogg'
+
+/datum/emote/living/whine
+	key = "whine"
+	key_third_person = "whines"
+	message = "whines..."
+	sound = 'modular_splurt/sound/voice/whine.ogg'
+
+/datum/emote/living/coo
+	key = "coo"
+	key_third_person = "coos"
+	message = "coos."
+	sound = 'modular_splurt/sound/voice/coo.ogg'
+
+/datum/emote/living/hoot
+	key = "hoot"
+	key_third_person = "hoots"
+	message = "hoots!"
+	sound = 'modular_splurt/sound/voice/hoot.ogg'
+
+/datum/emote/living/hiss2 // Since normal hiss is tied to the Xenomorph Race (i think?)
+	key = "hiss2"
+	key_third_person = "hisses2"
+	message = "let out a short hiss!"
+	sound = 'modular_citadel/sound/voice/hiss.ogg'
+
+/datum/emote/living/bark2
+	key = "bark2"
+	key_third_person = "barks2"
+	message = "barks!"
+
+/datum/emote/living/bark2/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // the glyph of power
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'modular_citadel/sound/voice/bark1.ogg', 33, 1), playsound(C, 'modular_citadel/sound/voice/bark2.ogg', 33, 1))
