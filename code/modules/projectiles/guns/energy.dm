@@ -53,11 +53,15 @@
 	/// last time we ticked the charge bar
 	var/last_charge_tick = 0
 	/// the sound it plays when its empty and starts to charge
-	var/charge_begin_sound = "sound/weapons/energy_chargestart.ogg"
+	var/charge_begin_sound = 'sound/weapons/energy_startcharge.ogg'
 	/// the soundloop it plays when its charging
 	var/datum/looping_sound/charge_loop = /datum/looping_sound/energy_charging
 	/// the sound it plays when its alllllll done!
-	var/charge_finished_sound = "sound/weapons/energy_recharged.ogg"
+	var/charge_finished_sound = 'sound/weapons/energy_chargedone_ding.ogg'
+	/// the sound it plays when you make it selfcharge cus you altclicked it
+	var/charge_selfcharge_sound = 'sound/weapons/energy_manualcharge.ogg'
+
+	var/my_chargebar
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -97,7 +101,7 @@
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
 		if(ispath(charge_loop))
-			charge_loop = new(list(src), FALSE)
+			charge_loop = new charge_loop(list(src), FALSE)
 	update_icon()
 
 /obj/item/gun/energy/Destroy()
@@ -116,6 +120,8 @@
 	. = ..()
 	if(!right_click_overridden)
 		. += span_notice("Right click in combat mode to switch modes.")
+	if(selfcharge && !selfcharge_initiated && !can_remove)
+		. += span_notice("Alt-Click to force-initiate a self-charge cycle. This will drain the cell beforehand!")
 	if(charge_duration_remaining)
 		. += span_notice("Currently recharging! Should be ready in about [DisplayTimeText(charge_duration_remaining)].")
 
@@ -124,10 +130,28 @@
 		return // all done!
 	if(!cell)
 		return // also all done
-	if(has_enough_charge_to_fire())
-		abort_selfcharge()
-		return // gun can shoot, maybe
+	// if(has_enough_charge_to_fire())
+	// 	abort_selfcharge()
+	// 	return // gun can shoot, maybe
 	tick_selfcharge()
+
+/obj/item/gun/energy/proc/trigger_selfcharge(mob/user)
+	if(selfcharge_initiated)
+		to_chat(user, span_alert("[src]'s self-charge cycle cannot be stopped!!!"))
+		return
+	if(!selfcharge)
+		to_chat(user, span_alert("[src] does not have self-charging enabled!"))
+		return
+	if(!cell)
+		to_chat(user, span_alert("[src] does not have a cell!"))
+		return
+	to_chat(user, span_notice("[src]'s self-charging cycle initiated! Please wait..."))
+	var/suppress_charge_sound = FALSE
+	if(charge_selfcharge_sound)
+		playsound(src, charge_selfcharge_sound, 50, 1)
+		suppress_charge_sound = TRUE
+	initiate_selfcharge(suppress_charge_sound)
+	return TRUE
 
 /obj/item/gun/energy/proc/has_enough_charge_to_fire()
 	if(!cell || QDELETED(cell) || cell.charge <= 0)
@@ -186,7 +210,7 @@
 		initiate_selfcharge()
 		return
 
-/obj/item/gun/energy/proc/initiate_selfcharge()
+/obj/item/gun/energy/proc/initiate_selfcharge(silent)
 	if(!selfcharge || selfcharge_initiated || selfcharge_paused)
 		return
 	if(!cell)
@@ -196,10 +220,13 @@
 	cell.charge = 0
 	charge_duration_remaining = self_recharge_duration
 	last_charge_tick = world.time // prevent wierd race conditions that would instanly charge the gonne
-	if(charge_begin_sound)
+	if(!silent && charge_begin_sound)
 		playsound(src, charge_begin_sound, 80, TRUE)
 	if(istype(charge_loop))
 		charge_loop.start()
+	if(my_chargebar)
+		SSprogress_bars.remove_bar(my_chargebar)
+	my_chargebar = SSprogress_bars.add_bar(src, list(), charge_duration_remaining, FALSE, FALSE)
 	update_icon()
 	return TRUE
 
@@ -208,7 +235,9 @@
 		abort_selfcharge()
 		return
 	if(!selfcharge_initiated)
-		return initiate_selfcharge()
+		if(cell && cell.charge < shotcost())
+			initiate_selfcharge()
+		return
 	var/time_elapsed = world.time - last_charge_tick
 	last_charge_tick = world.time
 	if(!cell || selfcharge_paused)
@@ -219,6 +248,8 @@
 	if(charge_duration_remaining <= 0)
 		finish_self_charge()
 		return
+	if(my_chargebar)
+		SSprogress_bars.update_bar(my_chargebar, self_recharge_duration - charge_duration_remaining)
 
 /obj/item/gun/energy/proc/finish_self_charge()
 	if(!cell)
@@ -231,6 +262,9 @@
 		playsound(src, charge_finished_sound, 75, TRUE)
 	if(istype(charge_loop))
 		charge_loop.stop()
+	if(my_chargebar)
+		SSprogress_bars.remove_bar(my_chargebar)
+		my_chargebar = 0
 	update_icon()
 
 /// battery fell out while self-charging, hold off on doing stuff
@@ -462,7 +496,10 @@
 		if(sounds_and_words)
 			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
-	if(can_remove == 0)
+	if(can_remove == FALSE)
+		if(selfcharge)
+			trigger_selfcharge(user)
+			return
 		if(sounds_and_words)
 			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 		return
