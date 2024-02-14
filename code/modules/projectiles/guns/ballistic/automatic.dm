@@ -3085,7 +3085,10 @@
 	name = "L1A1"
 	desc = "The L1A1 Self-Loading Rifle, The standard issue rifle of All Commonwealth Nations."
 	icon_state = "l1a1"
-	item_state = "slr"
+	item_state = "l1a1"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE

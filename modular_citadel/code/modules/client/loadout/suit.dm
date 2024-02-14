@@ -958,6 +958,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/thegreatwargear/oldschoolagain
+	name = "Anglo greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trench/latewar
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/kubancossack
 	name = "Black winter greatcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat

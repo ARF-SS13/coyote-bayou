@@ -1890,7 +1890,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	skin = "P-14"
 	name = "P-14"
 	desc = "A bolt-action rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "p14"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1944,7 +1944,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	skin = "Number 4"
 	name = "Number 4"
 	desc = "A bolt-action rifle. The fourth rifle ever made."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "no_4"
 	item_state = "308"
 	mob_overlay_icon = null

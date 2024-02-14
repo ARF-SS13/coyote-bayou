@@ -93,7 +93,7 @@
 		SOUND_LOOP_ENTRY('sound/weapons/energy_chargeloop.ogg', 2.8 SECONDS, 1), 
 		)
 	mid_length = 2.8 SECONDS
-	volume = 35
+	volume = 50
 
 /datum/looping_sound/musket_fuse
 	mid_sounds = list(

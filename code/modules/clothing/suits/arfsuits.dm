@@ -599,6 +599,14 @@
 	icon_state = "britishtrench"
 	item_state = "britishtrench"
 
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trench/latewar
+	name = "Anglo trench coat"
+	desc = "A Anglo trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "britishtrenchlate"
+	item_state = "britishtrenchlate"
+
 /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
 	name = "Grey trench raider coat."
 	desc = "A trench coat that is quite comfortable to wear."
