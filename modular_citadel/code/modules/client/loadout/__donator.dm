@@ -1359,9 +1359,8 @@
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/box/hobo_tox(src)
+	new /obj/item/clothing/under/f13/ww1custom(src)
 	new /obj/item/gun/ballistic/automatic/fnfal/ak47/custom(src)
-	new /obj/item/pet_carrier/paws(src)
-	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/SilencedMP5A5
@@ -1432,6 +1431,8 @@
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/pet_carrier/paws(src)
+	new /obj/item/pet_carrier/fluffy(src)
 
 
 /datum/gear/donator/kits/seermankhajiit00last

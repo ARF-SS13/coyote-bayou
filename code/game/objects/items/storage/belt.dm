@@ -857,8 +857,8 @@
 /obj/item/storage/belt/bandolier/boer_band
 	name = " Boar War Leather Band"
 	desc = "An old style of bandolier used by primarily those who ride upon horses. Used in the boer war."
-	icon_state = "boer_band"
-	item_state = "boer_band"
+	icon_state = "boer"
+	item_state = "boer"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
