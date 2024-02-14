@@ -7882,12 +7882,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"faq" = (
-/obj/machinery/ticket_machine{
-	pixel_y = 27
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/building/trader)
 "faw" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -16207,8 +16201,9 @@
 	},
 /area/f13/building)
 "kdo" = (
-/obj/machinery/ticket_machine{
-	pixel_y = 27
+/obj/machinery/cardpuncher{
+	pixel_y = 27;
+	layer = 3.6
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -74279,7 +74274,7 @@ peg
 peg
 peg
 peg
-faq
+peg
 peg
 peg
 peg
