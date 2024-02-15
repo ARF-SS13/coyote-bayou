@@ -218,7 +218,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
-	var/requires_training = TRUE
+	var/requires_training = FALSE
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	name = "secondary gear harness"
@@ -598,6 +598,14 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "britishtrench"
 	item_state = "britishtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trench/latewar
+	name = "Anglo trench coat"
+	desc = "A Anglo trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "britishtrenchlate"
+	item_state = "britishtrenchlate"
 
 /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
 	name = "Grey trench raider coat."
@@ -1214,7 +1222,7 @@
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
-	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
+	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the local tribe."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST
@@ -1809,6 +1817,32 @@
 	name = "yellow-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt
+	name = "dev-patched brown trenchcoat"
+	desc = "A non-existent ugly trenchcoat."
+	icon_state = "goner_suitb"
+	item_state = "duster"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/red
+	name = "red-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with red linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_r"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/green
+	name = "green-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with green linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_g"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/blue
+	name = "blue-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with blue linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_b"
+
+/obj/item/clothing/suit/armor/light/duster/goner/alt/yellow
+	name = "yellow-patched brown trenchcoat"
+	desc = "A rather crude looking, brown trenchcoat with yellow linings and arm patches.<br>Guess war can be ugly too."
+	icon_state = "goner_suitb_y"
 
 /obj/item/clothing/suit/armor/light/duster/russian_coat
 	name = "russian battle coat"
@@ -2695,7 +2729,7 @@
 
 /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	name = "heavy tribal armor"
-	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
+	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the local tribe."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
@@ -2744,6 +2778,21 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
+	vis_flags = GROIN
+
+
+/obj/item/clothing/suit/armor/medium/ww1trenchbib
+	name = "WW1 steel armor"
+	desc = "A World War 1 steel bib that was in use by the sentry units and stationary units of numerous nations and factions. It protected mainly against shrapnel and aerial darts thrown from biplanes. Seems to offer better melee and shrapnel resistance."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	icon_state = "ww1bib"
+	item_state = "ww1bib"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
@@ -3261,7 +3310,7 @@
 	item_state = "vest_follower"
 
 /obj/item/clothing/suit/armor/medium/vest/town
-	name = "Nash flak vest"
+	name = "New Boston flak vest"
 	desc = "A refurbished flak vest, repaired by the Nash Police Department. The ballistic nylon has a much tougher weave, but it still will not take acid or most high-powered rounds."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -3411,7 +3460,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
-	name = "Nash steel breastplate"
+	name = "New Boston steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like Nash citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -4468,7 +4517,7 @@
 	/// Projectiles below this damage will get deflected
 	var/deflect_damage = 20 // blocks handload 9mm, which simplemobs shoot
 	/// If TRUE - it requires PA training trait to be worn
-	var/requires_training = TRUE
+	var/requires_training = FALSE // testing if the PA perk is actually fun or not
 	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
 	/// If TRUE - the suit has been recently affected by EMP blast
@@ -4821,7 +4870,7 @@
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	can_deflect = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = TRUE
+	requires_training = FALSE
 /obj/item/clothing/suit/armor/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor"
 	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."

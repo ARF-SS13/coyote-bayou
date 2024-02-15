@@ -143,3 +143,40 @@
 /obj/item/gun/ballistic/minigunbal5mm/dropped(mob/living/user)
 	. = ..()
 	ammo_pack.attach_gun(user)
+
+/obj/item/gun/ballistic/babygun
+	name = "CZ53 personal microgun"
+	desc = "Boasting an extreme rate of fire, the Rockwell CZ53 personal minigun is the perfect weapon for suppressing fire, if this one wasn't converted into .22! Hehehehe..."
+	icon = 'icons/obj/guns/minigun.dmi'
+	icon_state = "minigunbal_spin"
+	item_state = "minigun"
+	weapon_class = WEAPON_CLASS_RIFLE
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FASTEST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T7
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HMG_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100
+	)
+	
+	slot_flags = null
+	w_class = WEIGHT_CLASS_HUGE
+	automatic = 1
+	weapon_weight = GUN_TWO_HAND_ONLY
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/minigunbal5mm
+	casing_ejector = TRUE
+	item_flags = SLOWS_WHILE_IN_HAND
+
+/obj/item/ammo_box/magazine/internal/minigunbal5mm
+	name = "minigun ammo pack"
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 60

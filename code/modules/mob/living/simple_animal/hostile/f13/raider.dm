@@ -822,7 +822,7 @@
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/energy/nuclear_particle
+	projectiletype = /obj/item/projectile/energy/nuclear_particle/cultist
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
 	extra_projectiles = 1

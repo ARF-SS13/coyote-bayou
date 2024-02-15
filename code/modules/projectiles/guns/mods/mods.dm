@@ -87,7 +87,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(15,45) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(25,55) * 0.01,
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
@@ -267,6 +267,7 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(10,30) * 0.01,
 		UPGRADE_COLOR = "#FFD700"
 		)
+	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "gold"
 
 //Trash mods, for putting on old guns
@@ -369,7 +370,6 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
 
 /obj/item/gun_upgrade/barrel/better
@@ -399,7 +399,6 @@
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(5,25) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
@@ -416,7 +415,6 @@
 		GUN_UPGRADE_RECOIL_1H=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MECHANISM
 
 /obj/item/gun_upgrade/scope/better
@@ -431,7 +429,6 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_ZOOM = 2,
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_SCOPE
 
 // 	 EXPERIMENTAL WEAPON MODS

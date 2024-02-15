@@ -288,6 +288,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/tribal_robe
+	name = "Heavy Tribal Robe"
+	path = /obj/item/clothing/suit/armor/light/tribal/robe
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/bronzechestplate
 	name = "Bronze Chestplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
@@ -952,6 +958,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/thegreatwargear/oldschoolagain
+	name = "Anglo greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trench/latewar
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/kubancossack
 	name = "Black winter greatcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat
@@ -1168,7 +1180,7 @@
 	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
-	restricted_desc = "Nash"
+	restricted_desc = "New Boston"
 	restricted_roles = list("High Alderperson",
 							"Councilperson",
 							"Sheriff",
@@ -1216,6 +1228,22 @@
 	path = /obj/item/clothing/suit/armor/light/duster/goner/yellow
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+
+/datum/gear/suit/goner_red/alt
+	name = "brown drab trenchcoat, red"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/red
+
+/datum/gear/suit/goner_green/alt
+	name = "brown drab trenchcoat, green"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/green
+
+/datum/gear/suit/goner_blue/alt
+	name = "brown drab trenchcoat, blue"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/blue
+
+/datum/gear/suit/goner_yellow/alt
+	name = "brown drab trenchcoat, yellow"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/alt/yellow
 
 /datum/gear/suit/rain_coat
 	name = "Commonwealth sniper rain coat"
@@ -1895,6 +1923,12 @@
 /datum/gear/suit/armor/ncrlight
 	name = "Texas militia armor"
 	path = /obj/item/clothing/suit/armor/texaslight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
+/datum/gear/suit/armor/ww1steeluniversal
+	name = "WW1 Steel armor"
+	path = /obj/item/clothing/suit/armor/medium/ww1trenchbib
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
 	cost = 2
 

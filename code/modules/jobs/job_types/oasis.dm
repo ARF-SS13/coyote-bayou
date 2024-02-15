@@ -12,7 +12,7 @@ here's a tip, go search DEFINES/access.dm
 
 // Headsets for everyone!!
 /datum/outfit/job/den
-	name = "Nash Default Template"
+	name = "New Boston Default Template"
 	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/kit_spawner/waster
 	id = /obj/item/card/id/dogtag/town
@@ -40,7 +40,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = "Nash"
+	supervisors = "New Boston"
 	description = "You are the civil leader of the Town of Nash. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
@@ -201,6 +201,7 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1
 		)
 
@@ -255,7 +256,7 @@ Mayor
 	flag = F13SHERIFF
 	department_flag = DEP_OASIS
 	head_announce = list("Security")
-	total_positions = 1
+	total_positions = 0
 	spawn_positions = 1
 	supervisors = "The Mayor"
 	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
@@ -368,14 +369,14 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13deputy
-	title = "Deputy"
+	title = "New Boston Security"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
-	supervisors = "The Sheriff"
-	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
-	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Your best Judgement"
+	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
+//	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 0
@@ -414,6 +415,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
@@ -435,7 +437,7 @@ Mayor
 	//	)
 
 /datum/outfit/loadout/police
-	name = "Nash PD"
+	name = "New Boston PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
@@ -491,7 +493,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Nash laws"
+	supervisors = "New Boston laws"
 	description = "You are a farmer living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
 	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
@@ -771,8 +773,8 @@ Mayor
 	title = "Barkeep"
 	flag = F13BARKEEP
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the free market and Nash's Laws"
 	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest. Speak to the farmers for fresh produce!"
 	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
@@ -814,6 +816,7 @@ Mayor
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
@@ -859,7 +862,7 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = -1
 	spawn_positions =-1
-	supervisors = "Nash's laws"
+	supervisors = "New Boston's laws"
 	description = "You are a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
@@ -1080,7 +1083,7 @@ Mayor
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	total_positions = 1
+	total_positions = 0
 	spawn_positions = 1
 	supervisors = "paying clients and Nash's laws"
 	selection_color = "#dcba97"
@@ -1135,7 +1138,7 @@ Mayor
 	title = "Banker"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	total_positions = 1
+	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Mayor"
 	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Nash, but perhaps deal-making will take you into other alliances."
@@ -1165,6 +1168,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/banker = 1)
 
@@ -1214,12 +1218,12 @@ Mayor
 //Nash Curator
 
 /datum/job/oasis/nashcurator
-	title = "Nash Librarian"
+	title = "New Boston Librarian"
 	flag = NASHCURATOR
 	department_flag = DEP_OASIS
-	total_positions = 1
+	total_positions = 0
 	spawn_positions = 1
-	supervisors = "Nash's laws"
+	supervisors = "New Boston's laws"
 	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
 	selection_color = "#dcba97"
 
@@ -1236,7 +1240,7 @@ Mayor
 	)
 
 /datum/outfit/job/den/nashcurator
-	name = "Nash Librarian"
+	name = "New Boston Librarian"
 	jobtype = /datum/job/oasis/nashcurator
 	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town
@@ -1273,7 +1277,7 @@ Mayor
 	title = "Texarkana Quartermaster"
 	flag = F13QUARTERMASTER
 	department_flag = DEP_OASIS
-	total_positions = 1
+	total_positions = 0
 	spawn_positions = 1
 	supervisors = "the free market and Nash's laws"
 	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
@@ -1369,8 +1373,8 @@ Mayor
 	title = "Texarkana Trade Worker"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the free market and Nash's laws"
 	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
@@ -1411,6 +1415,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
 /datum/outfit/loadout/energy_specialist
@@ -1463,6 +1468,9 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
 
 /datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -1475,9 +1483,9 @@ Mayor
 	title = "Vertibird Pilot"
 	flag = F13PILOT
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "Nash's laws"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "New Boston's laws"
 	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
 
@@ -1512,6 +1520,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/follower/guard,
@@ -1571,3 +1580,228 @@ Mayor
 	/obj/item/pinpointer/crew = 1,
 	/obj/item/sensor_device = 1
 		)
+
+// Professor
+
+/datum/job/oasis/f13Professor
+	title = "Town Scientist"
+	flag = F13PRACTITIONER
+	department_flag = FOLLOWERS
+	faction = "Followers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#FFDDFF"
+	exp_requirements = 0
+	exp_type = EXP_TYPE_FOLLOWERS
+
+	outfit = /datum/outfit/job/den/f13Professor
+	loadout_options = list(
+	/datum/outfit/loadout/environmental_scientist,
+	/datum/outfit/loadout/medical_specialist
+	)
+
+	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
+
+/datum/outfit/job/den/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_toolset)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_surgical)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_janitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_service)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_nutriment)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
+
+/datum/outfit/job/den/f13Professor
+	name = "Town Scientist"
+	jobtype = /datum/job/oasis/f13Professor
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel/tox
+	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	uniform = /obj/item/clothing/under/f13/followers
+	suit= /obj/item/clothing/suit/toggle/labcoat/followers
+	belt = /obj/item/kit_spawner/follower/scientist
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/pda = 1,
+		/obj/item/storage/firstaid/ancient=1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		)
+
+/datum/outfit/loadout/environmental_scientist
+	name =	"Environmental Scientist"
+	neck = /obj/item/clothing/neck/apron/labor
+	gloves = /obj/item/clothing/gloves/botanic_leather
+	backpack_contents = list(
+		/obj/item/book/manual/advice_farming = 1,
+		/obj/item/circuitboard/machine/hydroponics = 6,
+		/obj/item/storage/bag/plants/portaseeder = 1,
+	)
+
+/datum/outfit/loadout/medical_specialist
+	name =	"Medical Specialist"
+	neck = /obj/item/clothing/neck/stethoscope
+	gloves = /obj/item/clothing/gloves/color/latex
+	backpack_contents = list(
+		/obj/item/healthanalyzer/advanced = 1,
+		/obj/item/circuitboard/machine/bloodbankgen = 1,
+		/obj/item/gun/syringe/dart = 1,
+		/obj/item/reagent_containers/syringe/dart = 3,
+	)
+
+
+// Practitioner
+
+/datum/job/oasis/f13practitioner
+	title = "Town Doctor"
+	flag = F13PRACTITIONER
+	department_flag = FOLLOWERS
+	faction = "Followers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement. Assuming they're around."
+	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#FFDDFF"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/f13practitioner
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis/f13practitioner,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis/f13practitioner,
+		),
+	)
+
+	loadout_options = list(
+	/datum/outfit/loadout/physician,
+	/datum/outfit/loadout/pharmacist,
+	/datum/outfit/loadout/paramedic,
+	/datum/outfit/loadout/medical_researcher,
+	)
+
+/datum/outfit/job/den/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
+
+/datum/outfit/job/den/f13practitioner
+	name =	"Town Doctor"
+	jobtype =	/datum/job/oasis/f13practitioner
+	uniform =	/obj/item/clothing/under/f13/followers
+	id =	/obj/item/card/id/silver
+	chemwhiz =	TRUE
+	backpack =	/obj/item/storage/backpack/medic
+	belt = /obj/item/kit_spawner/follower/doctor
+	satchel =	/obj/item/storage/backpack/satchel/med
+	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/reagent_containers/medspray/synthflesh = 1,
+		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+	)
+
+/datum/outfit/loadout/physician
+	name =	"Emergency Physician"
+	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
+	mask =	/obj/item/clothing/mask/surgical
+	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/clothing/suit/hooded/surgical = 1,
+		/obj/item/hypospray/mkii/CMO = 1,
+		/obj/item/healthanalyzer/advanced = 1,
+	)
+
+/datum/outfit/loadout/pharmacist
+	name =	"Pharmacist"
+	suit =	/obj/item/clothing/suit/toggle/labcoat/chemist
+	gloves =	/obj/item/clothing/gloves/color/latex
+	glasses =	/obj/item/clothing/glasses/science
+	backpack_contents = list(
+		/obj/item/flashlight/pen = 1,
+		/obj/item/pda/chemist = 1,
+	)
+
+/datum/outfit/loadout/paramedic
+	name =	"Paramedic"
+	head =	/obj/item/clothing/head/soft/emt
+	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
+	belt =	/obj/item/storage/belt/medical
+	backpack_contents = list(
+		/obj/item/reagent_containers/medspray/synthflesh = 2,
+		/obj/item/pda/medical = 1,
+		/obj/item/healthanalyzer=1,
+	)
+
+/datum/outfit/loadout/medical_researcher
+	name =	"Medical Researcher"
+	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
+	backpack_contents = list(
+		/obj/item/clothing/accessory/pocketprotector/full = 1,
+		/obj/item/folder/white = 1,
+		/obj/item/pda/medical = 1,
+		/obj/item/healthanalyzer/advanced = 1,
+		/obj/item/book/granter/trait/techno = 1,)

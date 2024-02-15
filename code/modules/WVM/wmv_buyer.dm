@@ -33,8 +33,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/reagent_containers/hypospray = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 3,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 3,
+		/obj/item/reagent_containers/pill/patch/medx = 3,
+		/obj/item/reagent_containers/pill/patch/steady = 3,
 		/obj/item/reagent_containers/pill/patch/jet =3,
 		/obj/item/reagent_containers/pill/patch/turbo =3,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 3,
@@ -801,7 +801,7 @@ Fence
 */
 
 /obj/machinery/mineral/wasteland_trader/bountyticket
-	name = "Nash Bounty Ticket Machine"
+	name = "New Boston Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(

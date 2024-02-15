@@ -23,18 +23,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/icecreamsandwich
 	subcategory = CAT_ICE
-/*
-/datum/crafting_recipe/food/honkdae
-	name ="Honkdae"
-	reqs = list(
-		/datum/reagent/consumable/cream = 5,
-		/obj/item/clothing/mask/gas/clown_hat = 1,
-		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
-		/obj/item/reagent_containers/food/snacks/icecream = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/honkdae
-*/
+
 /datum/crafting_recipe/food/icecreamsandwich
 	name = "Icecream sandwich"
 	reqs = list(
@@ -192,7 +181,6 @@
 	result = /obj/item/reagent_containers/food/snacks/snowcones/pineapple
 	subcategory = CAT_ICE
 
-/*
 /datum/crafting_recipe/food/pwrgame_sc
 	name = "Pwrgame snowcone"
 	reqs = list(
@@ -202,7 +190,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
 	subcategory = CAT_ICE
-*/
+
 /datum/crafting_recipe/food/rainbow_sc
 	name = "Rainbow snowcone"
 	reqs = list(
@@ -232,3 +220,18 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/sunset
 	subcategory = CAT_ICE
+
+/// Legacy Content
+
+/*
+/datum/crafting_recipe/food/honkdae
+	name ="Honkdae"
+	reqs = list(
+		/datum/reagent/consumable/cream = 5,
+		/obj/item/clothing/mask/gas/clown_hat = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,
+		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
+		/obj/item/reagent_containers/food/snacks/icecream = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/honkdae
+*/

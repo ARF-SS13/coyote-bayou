@@ -47,6 +47,9 @@
 	COOLDOWN_DECLARE(area_sound_effect_cooldown)
 	/// minimum time between an area will play its on-enter music
 	COOLDOWN_DECLARE(area_music_cooldown)
+	/// Is are the mob listened to music in areas?
+	var/list/area_musics = list()
+
 		////////////
 		//SECURITY//
 		////////////
@@ -185,3 +188,7 @@
 	/// ckeys of mobs we'd like to see the genitals of
 	var/list/genital_exceptions = list()
 	var/ahelpspam = FALSE
+
+	///has the mob joined the game
+	var/is_in_game = 0  //this variable has 3 states 0, 1, 2
+

@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(job)
 
 	var/overflow_role = "Wastelander" //CHANGE
 
+	var/debug_admins_are_exempt_from_timelocks = FALSE
+
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
 /datum/controller/subsystem/job/Initialize(timeofday)
