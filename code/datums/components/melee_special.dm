@@ -118,12 +118,14 @@
 	if(!COOLDOWN_FINISHED(src, fuckin_fuck))
 		return
 	COOLDOWN_START(src, fuckin_fuck, 0.5 SECONDS)
-	if(run_special(user, target, params))
+	var/list/paramslist = params2list(params)
+	var/angle = paramslist["angle"]
+	if(run_special(user, target, params, angle))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
 		return
 
-/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
+/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params, angle = null)
 	if(!user || !target)
 		return
 	if(!check_intent(user))
@@ -132,11 +134,12 @@
 	if(inrange)
 		if(!isturf(target))
 			return
-	var/angle_go = mouse_angle_from_client(user.client)
-	var/list/hit_tiles = get_turfs_in_range(user, target, angle_go)
+	if(isnull(angle))
+		angle = mouse_angle_from_client(user.client)
+	var/list/hit_tiles = get_turfs_in_range(user, target, angle)
 	if(!LAZYLEN(hit_tiles))
 		return
-	cool_effect(hit_tiles, user, target)
+	cool_effect(hit_tiles, user, target, angle)
 	var/list/hit_atoms = select_atoms_to_hit(user, hit_tiles, target_mode)
 	if(!LAZYLEN(hit_atoms))
 		return
@@ -171,11 +174,13 @@
 		return TRUE
 	return (user.a_intent in intent_flags)
 
-/datum/component/weapon_special/proc/get_turfs_in_range(mob/user, atom/target, angle_go = 0)
+/datum/component/weapon_special/proc/get_turfs_in_range(mob/user, atom/target, angle = null)
 	if(!user)
 		return
+	if(!angle)
+		angle = mouse_angle_from_client(user.client)
 	if(!target)
-		target = client_mouse_angle2turf(user.client, get_turf(user))
+		target = get_turf_in_angle(angle, get_turf(user), 10)
 	if(debug)
 		INVOKE_ASYNC(src, .proc/debug_highlight, target)
 	if(target && max_distance < 2 && user.can_reach(target, reach = max_distance))
@@ -196,16 +201,17 @@
 		INVOKE_ASYNC(src, .proc/debug_highlight_line, user, line_of_turfs, target)
 	return line_of_turfs
 
-/datum/component/weapon_special/proc/sim_punch_laser(mob/user)
+/datum/component/weapon_special/proc/sim_punch_laser(mob/user, angle = null)
 	if(!user)
 		return
 	if(!user.client)
 		return
-	var/angle_go = mouse_angle_from_client(user.client)
+	if(isnull(angle))
+		angle = mouse_angle_from_client(user.client)
 	if(!punch_laser)
 		punch_laser = new()
 	punch_laser.initialize_location(user.x, user.y, user.z, 0, 0)
-	punch_laser.initialize_trajectory(4, angle_go) // 8 steps per tile!
+	punch_laser.initialize_trajectory(4, angle) // 8 steps per tile!
 	var/list/output_turfs = list()
 	var/steps = (max_distance * 8) + 1
 	output_turfs |= punch_laser.return_turf()

@@ -109,6 +109,8 @@
 		if(WEST)
 			xdiff = -1
 
+	var/params = "angle=[turn(direction, 0)]"
+
 	//let's find someone to kill.
 	var/turf/crimescene = locate(murderer.x + xdiff, murderer.y + ydiff, murderer.z)
 	var/mob/living/victim = locate(crimescene)
@@ -118,7 +120,7 @@
 
 		//so no victim?
 		if(!istype(victim))
-			murderer.ClickOn(crimescene)
+			murderer.ClickOn(crimescene, params)
 			return
-	murderer.ClickOn(victim)
+	murderer.ClickOn(victim, params)
 	return
