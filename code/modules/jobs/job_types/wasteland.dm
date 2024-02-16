@@ -1316,7 +1316,7 @@ Raider
 	name = "Radio Operator"
 	jobtype = /datum/job/wasteland/f13radioop
 	id =	/obj/item/card/id/silver
-	ears = null
+	ears = /obj/item/radio/headset
 	belt = /obj/item/kit_spawner/waster
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare

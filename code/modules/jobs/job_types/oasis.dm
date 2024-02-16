@@ -201,6 +201,7 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1
 		)
 
@@ -414,6 +415,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
@@ -814,6 +816,7 @@ Mayor
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
@@ -1165,6 +1168,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/banker = 1)
 
@@ -1411,6 +1415,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
 /datum/outfit/loadout/energy_specialist
@@ -1515,6 +1520,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/follower/guard,
@@ -1650,6 +1656,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
@@ -1749,6 +1756,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
