@@ -96,20 +96,25 @@
 	murderer.a_intent_change(INTENT_HARM)
 	murderer.setDir(direction)
 
-	//get offsets from the direction
+	//get offsets and angle from the direction
 	var/xdiff = 0
 	var/ydiff = 0
+	var/angle = 0
 	switch(direction)
 		if(NORTH)
 			ydiff = 1
+			angle = 0
 		if(SOUTH)
 			ydiff = -1
+			angle = 180
 		if(EAST)
 			xdiff = 1
+			angle = 90
 		if(WEST)
 			xdiff = -1
+			angle = 270
 
-	var/params = "angle=[turn(direction, 0)]"
+	var/params = "angle=[angle]"
 
 	//let's find someone to kill.
 	var/turf/crimescene = locate(murderer.x + xdiff, murderer.y + ydiff, murderer.z)

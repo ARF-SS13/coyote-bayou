@@ -119,7 +119,7 @@
 		return
 	COOLDOWN_START(src, fuckin_fuck, 0.5 SECONDS)
 	var/list/paramslist = params2list(params)
-	var/angle = paramslist["angle"]
+	var/angle = text2num(paramslist["angle"])
 	if(run_special(user, target, params, angle))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
@@ -177,7 +177,7 @@
 /datum/component/weapon_special/proc/get_turfs_in_range(mob/user, atom/target, angle = null)
 	if(!user)
 		return
-	if(!angle)
+	if(isnull(angle))
 		angle = mouse_angle_from_client(user.client)
 	if(!target)
 		target = get_turf_in_angle(angle, get_turf(user), 10)
@@ -193,7 +193,7 @@
 	//	return // cool
 	//var/turf/furthest_reachable_tile = user.euclidian_reach(far_target, max_distance, REACH_ATTACK) // dunno what it does, but someone clever made it, probably
 	// Now we have our destination turf, now we just need all the tiles between us and that turf
-	var/list/line_of_turfs = sim_punch_laser(user) // matt mcmuscles said it once and i liked it uwu
+	var/list/line_of_turfs = sim_punch_laser(user, angle) // matt mcmuscles said it once and i liked it uwu
 	//var/list/line_of_turfs = getline(get_turf(user), furthest_reachable_tile) // line of turfs starting at the user and ending at the turf at the edge of our range
 	if(!LAZYLEN(line_of_turfs)) // ^ hopefully in the right order
 		return // cool
@@ -447,7 +447,7 @@
 	// i'm sure nothing bad will happen if i let people run afterattack on every mob they hit using these components.
 	master.afterattack(hit_this, user, TRUE, null)
 
-/datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target)
+/datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target, angle = null)
 	if(!user || !target)
 		return
 	playsound(get_turf(LAZYACCESS(hit_tiles, 1)), "sound/weapons/swoosh.ogg", 80, TRUE)
@@ -459,7 +459,8 @@
 	if(line_effect)
 		if(!user.client)
 			return
-		var/angle = mouse_angle_from_client(user?.client)
+		if(isnull(angle))
+			angle = mouse_angle_from_client(user?.client)
 		SSeffects.do_effect(EFFECT_LINE_EFFECT, user, target, angle, max_distance * 32)
 
 /datum/component/weapon_special/proc/debug_highlight(atom/target, clr = "#00FF00")
