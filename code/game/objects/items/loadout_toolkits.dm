@@ -222,6 +222,12 @@
 	entry_class = LOADOUT_CAT_OTHER
 	spawn_thing = /obj/item/storage/box/tools/wealth
 
+/datum/loadout_box/archeology
+	entry_tag = "archeologist"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_OTHER
+	spawn_thing = /obj/item/storage/belt/xenoarch/full
+
 /obj/item/storage/box/tools/guns
 	name = "weapon collection"
 
