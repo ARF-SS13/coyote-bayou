@@ -546,9 +546,6 @@
 	pixel_x = 1;
 	layer = 3
 	},
-/obj/structure/fence/wooden{
-	icon_state = "end_wood"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
 "cu" = (
@@ -2867,9 +2864,11 @@
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
 "li" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/chicken{
-	name = "Too-Fat-to-Fly"
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
@@ -3639,6 +3638,12 @@
 /obj/effect/spawner/bundle/costume/plaguedoctor,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
+"of" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/tribe)
 "oj" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
@@ -4350,12 +4355,13 @@
 	},
 /area/f13/building)
 "qT" = (
-/obj/structure/fence/corner/wooden{
-	dir = 1
-	},
-/obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = 5;
+	pixel_x = 1;
+	layer = 3
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
@@ -4729,14 +4735,13 @@
 	dir = 8;
 	icon_state = "post_wood"
 	},
-/obj/structure/spacevine{
-	color = "#225522"
-	},
-/obj/structure/flora/ausbushes/ywflowers{
-	randomize_xy = 0
-	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = 5;
+	pixel_x = 1;
+	layer = 3
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
@@ -5771,9 +5776,8 @@
 /turf/open/floor/engine,
 /area/f13/building)
 "ww" = (
-/mob/living/simple_animal/cow/brahmin{
-	name = "Eats-the-Hay"
-	},
+/obj/structure/flora/ausbushes/fullgrass,
+/mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
 "wx" = (
@@ -6056,12 +6060,11 @@
 /turf/open/floor/wood_common,
 /area/f13/building/tribal)
 "xB" = (
-/obj/structure/fence/wooden,
-/obj/structure/spacevine{
-	color = "#225522"
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
-/obj/structure/flora/ausbushes/brflowers{
-	randomize_xy = 0
+/obj/structure/simple_door/metal/fence/wooden{
+	dir = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tribe)
@@ -8255,6 +8258,7 @@
 /obj/item/seeds/aloe,
 /obj/item/seeds/agave,
 /obj/machinery/smartfridge/bottlerack/seedbin,
+/obj/item/seeds/soya,
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "Fr" = (
@@ -8342,6 +8346,13 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/city/newboston)
+"FM" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/mob/living/simple_animal/cow/brahmin{
+	name = "Eats-the-Hay"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/tribe)
 "FO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/office/dark{
@@ -9464,6 +9475,18 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"Kd" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_y = 4
+	},
+/obj/machinery/hydroponics/soil{
+	mutmod = 0;
+	name = "ancient fertile soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/tribe)
 "Kf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
@@ -12184,6 +12207,12 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Uq" = (
+/mob/living/simple_animal/chicken{
+	name = "Too-Fat-to-Fly"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/tribe)
 "Us" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -18589,11 +18618,11 @@ GY
 GY
 GY
 ct
-xB
-Ky
-XB
-XB
-XB
+GY
+GY
+GY
+GY
+GY
 qT
 zL
 fQ
@@ -18840,18 +18869,18 @@ Bj
 Mf
 GY
 Vg
-GY
+Vg
+Vg
+Vg
 Vg
 GY
-Vg
 GY
-uC
 GY
-Qx
-li
-ww
-lU
-UZ
+GY
+GY
+GY
+GY
+of
 WI
 Dh
 HU
@@ -19097,18 +19126,18 @@ Qx
 GY
 LL
 Vg
-GY
+Vg
+uC
+Vg
 Vg
 GY
-Vg
 GY
-Vg
 GY
-Ye
-Ad
 GY
-kA
-yp
+GY
+GY
+GY
+of
 zL
 Mp
 ay
@@ -19354,18 +19383,18 @@ Qx
 GY
 GY
 Vg
-GY
-Vg
-GY
-Vg
-GY
 uC
+uC
+uC
+Vg
 GY
-KG
-YR
 GY
-FF
-KG
+GY
+Ky
+XB
+XB
+XB
+li
 Sp
 kK
 cM
@@ -19611,18 +19640,18 @@ Qx
 IW
 GY
 Vg
-GY
+Vg
+uC
+Vg
 Vg
 GY
-Vg
-GY
-Vg
-GY
-KG
 GY
 GY
-Ie
-UZ
+Ye
+Ad
+GY
+kA
+yp
 zL
 kK
 ay
@@ -19868,18 +19897,18 @@ Au
 IW
 TE
 Vg
-TE
+Kd
+Vg
+Kd
 Vg
 TE
-Vg
-TE
-uC
-TE
-Au
-XH
-Ad
 GY
-UZ
+TE
+KG
+YR
+Uq
+FF
+KG
 zL
 kK
 mX
@@ -20132,11 +20161,11 @@ Pb
 fZ
 Pb
 fZ
-Qx
-Rw
-lU
-Ad
-UZ
+KG
+GY
+GY
+Ie
+xB
 zL
 kK
 rz
@@ -20389,10 +20418,10 @@ Pb
 Pb
 Pb
 Pb
-Qx
+Au
+XH
+FM
 GY
-GY
-YR
 UZ
 zL
 kK
@@ -20646,10 +20675,10 @@ Pb
 Pb
 Pb
 Pb
-Au
-GY
-GY
-Ad
+Qx
+Rw
+lU
+ww
 sB
 zL
 tK
@@ -48164,7 +48193,6 @@ OT
 OT
 OT
 OT
-
 we
 OT
 gz
