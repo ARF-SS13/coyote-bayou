@@ -270,9 +270,9 @@
 /area/f13/tribe)
 "bc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/window/fulltile/store,
-/obj/structure/barricade/bars,
-/turf/open/floor/plasteel/f13/vault_floor/green/white,
+/obj/structure/table/wood/settler,
+/obj/structure/barricade/barswindow,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "be" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -322,9 +322,17 @@
 /turf/open/indestructible,
 /area/f13/tcoms)
 "bm" = (
-/obj/structure/window/fulltile/store,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
-/turf/open/floor/plasteel/f13/vault_floor/green/white,
+/obj/structure/barricade/bars,
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining11"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 8
+	},
 /area/f13/building)
 "bo" = (
 /obj/structure/fence/corner/wooden{
@@ -817,10 +825,6 @@
 /area/f13/building)
 "dE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/science/glass{
-	req_one_access_txt = null;
-	name = "Research & Development"
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "mining11"
 	},
@@ -2172,20 +2176,6 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
-"iy" = (
-/obj/effect/fake_stairs/north,
-/obj/structure/railing{
-	dir = 8;
-	layer = 3.1
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 4
-	},
-/area/f13/building)
 "iz" = (
 /obj/structure/chair/folding{
 	dir = 8
@@ -2250,18 +2240,22 @@
 /obj/effect/landmark/start/f13/druid,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
-"iM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/fake_stairs/north,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "iT" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
 /area/f13/wasteland/city/newboston)
 "iU" = (
-/obj/effect/fake_stairs/north,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/bars,
+/obj/structure/barricade/bars,
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining11"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 4
+	},
 /area/f13/building)
 "iV" = (
 /obj/structure/curtain{
@@ -2711,13 +2705,14 @@
 	},
 /area/f13/tribe)
 "kM" = (
-/obj/structure/railing{
-	dir = 4;
-	layer = 3.1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+/obj/structure/rack,
+/obj/machinery/light{
 	dir = 8
+	},
+/obj/item/storage/belt/xenoarch/full,
+/obj/item/storage/belt/xenoarch/full,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/white/side{
+	dir = 4
 	},
 /area/f13/building)
 "kN" = (
@@ -3705,18 +3700,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/tribal)
 "ou" = (
-/obj/effect/fake_stairs/north,
-/obj/structure/railing{
-	dir = 4;
-	layer = 3.1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 8
+/obj/structure/rack,
+/obj/item/storage/belt/xenoarch/full,
+/obj/item/storage/belt/xenoarch/full,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/white/side{
+	dir = 4
 	},
 /area/f13/building)
 "ov" = (
@@ -3825,9 +3813,6 @@
 "oN" = (
 /obj/structure/rack,
 /obj/item/pickaxe/drill,
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/white/corner{
 	dir = 4
 	},
@@ -3907,17 +3892,6 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/side{
-	dir = 8
-	},
-/area/f13/building)
-"pf" = (
-/obj/structure/railing{
-	dir = 4;
-	layer = 3.1
-	},
-/obj/effect/fake_stairs/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 8
 	},
 /area/f13/building)
@@ -4766,12 +4740,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
 "sN" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 3.1
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/white/side{
 	dir = 4
 	},
 /area/f13/building)
@@ -7138,16 +7111,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
-"Bz" = (
-/obj/structure/railing{
-	dir = 4;
-	layer = 3.1
-	},
-/obj/effect/fake_stairs/north,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 8
-	},
-/area/f13/building)
 "BA" = (
 /obj/structure/flora/rock/pile/largejungle{
 	layer = 3.2;
@@ -7913,13 +7876,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic/nash)
 "Ej" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 3.1
-	},
-/obj/effect/fake_stairs/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/white/side{
 	dir = 4
 	},
 /area/f13/building)
@@ -9963,15 +9921,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/wasteland)
-"LU" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 3.1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 4
-	},
-/area/f13/building)
 "LX" = (
 /obj/structure/window/fulltile/store,
 /obj/structure/barricade/bars,
@@ -10344,20 +10293,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 1
-	},
-/area/f13/building)
-"Nk" = (
-/obj/structure/railing{
-	dir = 4;
-	layer = 3.1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 8
 	},
 /area/f13/building)
 "Nm" = (
@@ -11823,7 +11758,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic/nash)
 "Td" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/white/side{
 	dir = 4
 	},
@@ -13163,20 +13097,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
-"Yu" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 3.1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 4
-	},
-/area/f13/building)
 "Yv" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight/lantern,
@@ -13346,15 +13266,6 @@
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
-/area/f13/building)
-"Za" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/settler,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "Zd" = (
 /obj/structure/railing{
@@ -13664,9 +13575,6 @@
 "ZX" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/white/corner,
 /area/f13/building)
 "ZY" = (
@@ -47362,11 +47270,11 @@ sC
 sC
 YF
 YF
-GU
-GU
-GU
-GU
-GU
+sC
+sC
+yK
+sC
+YF
 GU
 GU
 uT
@@ -47619,11 +47527,11 @@ wf
 fv
 TF
 sC
-GU
-GU
-GU
-GU
-GU
+kM
+Td
+Td
+sN
+YF
 GU
 GU
 GU
@@ -47876,10 +47784,10 @@ LZ
 aF
 Le
 zf
-sC
-sC
-yK
-sC
+ou
+Td
+Td
+Ej
 ek
 qF
 qF
@@ -48908,7 +48816,7 @@ KR
 gr
 qo
 OB
-KR
+iU
 bU
 jp
 yD
@@ -49422,7 +49330,7 @@ OU
 Kg
 IP
 Pm
-OU
+bm
 gp
 Zj
 iv
@@ -49678,7 +49586,7 @@ Pz
 yK
 yK
 yK
-Lm
+bc
 Lm
 CS
 kE
@@ -49935,7 +49843,7 @@ KN
 Nv
 rk
 br
-Za
+br
 Nv
 ss
 fg
@@ -50691,12 +50599,12 @@ GU
 GU
 GU
 GU
-Yg
+GU
 zf
 yK
-bc
+yK
 Yg
-bm
+yK
 sC
 yK
 BW
@@ -50948,14 +50856,14 @@ GU
 GU
 GU
 GU
-OW
-Ej
-Yu
-LU
-Ej
-sN
-sN
-iy
+GU
+GU
+GU
+GU
+GU
+GU
+GU
+sC
 rE
 QK
 Br
@@ -51205,14 +51113,14 @@ GU
 GU
 GU
 GU
-ek
-iM
-Th
-Th
-iU
-Th
-up
-iU
+GU
+GU
+GU
+GU
+GU
+GU
+GU
+YF
 up
 up
 Th
@@ -51462,14 +51370,14 @@ GU
 GU
 GU
 GU
-ek
-Bz
-Nk
-kM
-pf
-kM
-kM
-ou
+GU
+GU
+GU
+GU
+GU
+GU
+GU
+YF
 Uc
 Th
 EX
@@ -52002,7 +51910,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -52259,7 +52167,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -52517,7 +52425,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -52774,7 +52682,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -53031,7 +52939,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -53289,7 +53197,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 oS
@@ -53546,7 +53454,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 oS
@@ -58166,7 +58074,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -58423,7 +58331,7 @@ GU
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -58679,7 +58587,7 @@ us
 GU
 GU
 GU
-GU
+us
 GU
 GU
 GU
@@ -58935,7 +58843,7 @@ GU
 us
 GU
 GU
-GU
+us
 GU
 GU
 GU
