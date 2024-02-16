@@ -161,6 +161,11 @@
 	path = /obj/item/storage/backpack/old
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 
+/datum/gear/backpack/backpack/chameleon
+	name = "chameleon backpack"
+	path = /obj/item/storage/backpack/chameleon
+	cost = 0
+
 /datum/gear/backpack/backpack/duffel
 	name = "duffelbag"
 	path = /obj/item/storage/backpack/duffelbag
@@ -205,6 +210,7 @@
 /datum/gear/backpack/coinpouch
 	name = "coin pouch"
 	path = /obj/item/storage/wallet/stash/pouch
+	cost = 1
 
 /datum/gear/backpack/backpack/snailshell
 	name = "snail shell"
@@ -652,10 +658,12 @@
 /datum/gear/backpack/chestpatch
 	name = "generic patch (chest)"
 	path = /obj/item/clothing/accessory/patch
+	cost = 0
 
 /datum/gear/backpack/armpatch
 	name = "generic patch (arm)"
 	path = /obj/item/clothing/accessory/patch/arm
+	cost = 0
 
 /datum/gear/backpack/headphones
 	name = "Headphones"
@@ -677,19 +685,21 @@
 	path = /obj/item/card/id/rusted/fadedvaultid
 	cost = 0
 
+/*Since everyone starts with one
 /datum/gear/backpack/pipboy
 	name = "Pipboy"
 	path = /obj/item/pda
 	cost = 2
 
-/datum/gear/backpack/id
-	name = "Reprogramable ID"
-	path =  /obj/item/card/id/selfassign
-	cost = 1
-
 /datum/gear/backpack/headset
 	name = "headset"
 	path = /obj/item/radio/headset
+	cost = 1
+*/
+
+/datum/gear/backpack/id
+	name = "Reprogramable ID"
+	path =  /obj/item/card/id/selfassign
 	cost = 1
 
 /datum/gear/backpack/twocolorcollar

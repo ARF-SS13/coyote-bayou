@@ -5,8 +5,8 @@
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
 	exp_type = EXP_TYPE_LIVING
-	total_positions = 10 // supposedly whitelisted, no worries here
-	spawn_positions = 10
+	total_positions = -1 // supposedly whitelisted, no worries here
+	spawn_positions = -1
 	outfit = /datum/outfit/job/biker
 
 
@@ -42,6 +42,7 @@
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools = 1,
 		/obj/item/cool_book/ashdowncit = 1

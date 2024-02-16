@@ -132,3 +132,40 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/horns/teppi
+	name = "Teppi horns"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "teppi"
+
+
+/datum/sprite_accessory/horns/antlerswide
+	name = "wide antlers"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "antlerswide"
+
+
+/datum/sprite_accessory/horns/jackalope
+	name = "jackalope horns"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "jackalope"
+
+
+/datum/sprite_accessory/horns/antlers2
+	name = "Antlers 2"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "antlers"
+
+
+/datum/sprite_accessory/horns/impala
+	name = "Impala"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "impala"
+
+
+/datum/sprite_accessory/horns/bigimpala
+	name = "Impala (big)"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "bigimpala"
+
+

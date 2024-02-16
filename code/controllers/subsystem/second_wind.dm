@@ -163,12 +163,12 @@ SUBSYSTEM_DEF(secondwind)
 		if(!corpse || currenter != corpse)
 			corpse = currenter
 			ownermob = WEAKREF(corpse)
-			initialize_lives()
+			//initialize_lives()      <--- any feature that makes you switch mobs will make this happen so. i made it not
 	else if(isliving(current))
 		if(!corpse || current != corpse)
 			corpse = current
 			ownermob = WEAKREF(corpse)
-			initialize_lives()
+			//initialize_lives()      <--- same as above
 	if(!corpse)
 		return
 		//CRASH("get_revivable_body for [ownerkey] called with no corpse and no currently played mob! wtf") // turns out disconnected players count, I guess?
@@ -276,7 +276,7 @@ SUBSYSTEM_DEF(secondwind)
 	if(!isliving(master))
 		return
 	var/datum/reagents/master_reagents = master.reagents
-	var/toxinlover = is_toxin_lover(master)
+	// var/toxinlover = is_toxin_lover(master)
 	var/is_robot = isrobotic(master)
 	var/mob/ghost = master.get_ghost()
 	if(ghost)
@@ -295,6 +295,7 @@ SUBSYSTEM_DEF(secondwind)
 	master_reagents.remove_all(999) // First purge all their reagents
 	master.adjustOxyLoss(-999)
 	master.adjust_fire_stacks(-20)
+	master.radiation = 0
 	var/my_brute = master.getBruteLoss()
 	var/my_burn = master.getFireLoss()
 	var/my_tox = master.getToxLoss()
@@ -302,8 +303,8 @@ SUBSYSTEM_DEF(secondwind)
 	if(is_robot)
 		my_brute += ((my_tox * 0.5) + (my_oxy * 0.5)) // shouldnt happen, but just in case
 		my_burn += ((my_tox * 0.5) + (my_oxy * 0.5)) // shouldnt happen, but just in case
-		master.adjustToxLoss(-my_tox, TOX)
-		master.adjustOxyLoss(-my_oxy, TOX)
+		master.adjustToxLoss(-my_tox, TRUE)
+		master.adjustOxyLoss(-my_oxy, TRUE)
 		my_tox = 0
 	var/total_damage = my_brute + my_burn + my_tox + my_oxy
 	var/brute_heal = 0
@@ -341,43 +342,43 @@ SUBSYSTEM_DEF(secondwind)
 				my_oxy--
 				oxy_heal++
 				total_damage--
-	master.adjustBruteLoss(-brute_heal)
-	master.adjustFireLoss(-burn_heal)
-	master.adjustToxLoss(-tox_heal)
+	master.adjustBruteLoss(-brute_heal, TRUE, include_roboparts = TRUE)
+	master.adjustFireLoss(-burn_heal, TRUE, include_roboparts = TRUE)
+	master.adjustToxLoss(-tox_heal, force_be_heal = TRUE)
 	master.adjustOxyLoss(-oxy_heal)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
 	
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,            25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,             25)
-	if(toxinlover)
-		master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin_lover,  25)
-		master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage/toxin_lover, 25)
-	else
-		master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,        25)
-		master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,   25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,        25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,   25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,              25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,          25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          50)
-
-	if(ishuman(master))
-		var/mob/living/carbon/human/humaster = master
-		var/obj/item/stack/medical/gauze/second_wind/bandie = new()
-		for(var/obj/item/bodypart/limb in humaster.bodyparts)
-			limb.apply_gauze_to_limb(bandie)
-		qdel(bandie)
+	if(iscarbon(master))
+		var/mob/living/carbon/carbaster = master
+		QDEL_LIST(carbaster.all_wounds)
+		if(ishuman(master))
+			var/mob/living/carbon/human/humaster = carbaster
+			var/obj/item/stack/medical/gauze/second_wind/bandie = new()
+			for(var/obj/item/bodypart/limb in humaster.bodyparts)
+				limb.apply_gauze_to_limb(bandie)
+				limb.bleed_dam = 0
+			qdel(bandie)
 
 	/// should be enough to get them up
 	master.revive(FALSE, FALSE, TRUE)
 	if(master.stat == DEAD) // huh, still dead
 		BODY_PLAYED
 		to_chat(played, span_alert("Something went wrong and you're still dead!"))
-		master.apply_damages(
+		//No reason to damage the mob more if it can't be revived.
+		/*master.apply_damages(
 			brute = brute_heal,
 			burn = burn_heal,
 			tox = tox_heal,
-		)
+		)*/
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return

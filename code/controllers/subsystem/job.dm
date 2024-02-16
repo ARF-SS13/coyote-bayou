@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(job)
 
 	var/overflow_role = "Wastelander" //CHANGE
 
+	var/debug_admins_are_exempt_from_timelocks = FALSE
+
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
 /datum/controller/subsystem/job/Initialize(timeofday)
@@ -696,7 +698,7 @@ SUBSYSTEM_DEF(job)
 
 #define DISPLACEABLE_SLOTS list(\
 	SLOT_BACK,\
-	SLOT_WEAR_MASK,\
+	SLOT_MASK,\
 	SLOT_GLASSES,\
 	SLOT_GLOVES,\
 	SLOT_NECK,\

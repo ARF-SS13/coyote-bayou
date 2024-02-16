@@ -62,6 +62,7 @@
 	key = "collapse"
 	key_third_person = "collapses"
 	message = "collapses!"
+	message_param = "collapses from %t!" // Because I like to *collapse cringe "collapses from cringe!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/collapse/run_emote(mob/user, params)
@@ -170,6 +171,7 @@
 	key_third_person = "faints"
 	message = "faints."
 	message_param = "faints from %t."
+	stat_allowed = UNCONSCIOUS //So people can use faint to quickly slam the ability even if they are unconscious
 
 /datum/emote/living/faint/run_emote(mob/user, params)
 	. = ..()
@@ -177,6 +179,7 @@
 		var/mob/living/L = user
 		L.SetSleeping(200)
 
+/* Colfer edit: Trying to get *faint emote to work by removing duplicate datum (THIS HASNT BEEN TESTED, I dont know what this can effect by changing it)
 /datum/emote/living/faint
 	key = "collapse"
 	key_third_person = "collapse"
@@ -188,7 +191,7 @@
 	if(. && isliving(user))
 		var/mob/living/L = user
 		L.SetSleeping(20)
-
+*/
 
 /* Fortuna edit: flapping your wings disabled
 /datum/emote/living/flap
@@ -427,6 +430,14 @@
 	message = "nibbles on something."
 	message_param = "nibbles on %t."
 
+/datum/emote/living/oof
+	key = "oof"
+	key_third_person = "oofs"
+	message = "makes pained sounds."
+	message_param = "makes pained sounds at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/oof.ogg'
+
 /datum/emote/living/fenfrantic
 	key = "fenfrantic"
 	key_third_person = "geckers frantically!"
@@ -643,6 +654,12 @@
 	key_third_person = "waves"
 	message = "waves."
 	message_param = "waves at %t."
+
+/datum/emote/living/squint
+	key = "squint"
+	key_third_person = "squints"
+	message = "squints."
+	message_param = "squints at %t."
 
 /datum/emote/living/whimper
 	key = "whimper"
@@ -896,6 +913,13 @@
 	key_third_person = "moos"
 	message = "moos."
 	sound = 'sound/f13effects/sunsetsounds/moo.ogg'
+
+
+/datum/emote/living/meow
+	key = "meow"
+	key_third_person = "meows"
+	message = "meows!"
+	sound = 'sound/f13effects/meow.ogg'
 
 
 /datum/emote/mrowl
@@ -1230,7 +1254,16 @@
 	key_third_person = "merps"
 	message = "let out a merp!"
 	sound = 'sound/f13effects/sunsetsounds/merp.ogg'
-
+/datum/emote/mar
+	key = "mar"
+	key_third_person = "mars"
+	message = "lets out a mar!"
+	sound = 'sound/f13effects/sunsetsounds/mar.ogg'
+/datum/emote/wurble
+	key = "wurble"
+	key_third_person = "wurbles"
+	message = "wurbles contentedly."
+	sound = 'sound/f13effects/sunsetsounds/wurble.ogg'
 /datum/emote/squeak
 	key = "squeak"
 	key_third_person = "squeaks"
@@ -1245,7 +1278,7 @@
 
 /datum/emote/blep
 	key = "blep"
-	key_third_person = "bleps thier tongue out!"
+	key_third_person = "bleps their tongue out!"
 	message = "bleps their tongue out!"
 
 /datum/emote/eyeclean
@@ -1471,6 +1504,7 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dex",
 		"speed",
 		"speediness",
+		"initiative",
 		"athleticism",
 		"acrobatics",
 		"escape",
@@ -1763,6 +1797,33 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			blind_message = message_second)
 		user.emote_for_ghost_sight(message_second)
 
+/datum/emote/living/special/rollfor
+	key = "rollfor"
+
+/datum/emote/help
+	key = "helpme"
+	key_third_person = "yells for help!"
+	message = "says, \"Help!\""
+
+/datum/emote/medic
+	key = "medic"
+	key_third_person = "yells for a medic!"
+	message = "says, \"Medic!\""
+
+/datum/emote/healerhere
+	key = "healer"
+	key_third_person = "is clearly offering their services as a healer!"
+	message = "says, \"Healer for hire!\""
+
+/datum/emote/holdstill
+	key = "hold"
+	key_third_person = "is trying to get someone to hold still!"
+	message = "says, \"Hold up!\""
+
+/datum/emote/pullback
+	key = "pullback"
+	key_third_person = "is trying to get everyone to pull back!"
+	message = "says, \"Pull back!\""
 
 
 //Fenny Adds Flirtatious Fucking Emotes For Furries//
@@ -1976,5 +2037,114 @@ datum/emote/living/flirt/oopstouch
 	message_param = "<span class='love'>accidently brushes against</span> %t, <span class='love'>oops!</span>"
 
 
+//Bubber Theft :)//
 
 
+datum/emote/living/chirp
+	key = "chirp"
+	key_third_person = "chirps"
+	message = "chirps!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/chirp.ogg'
+
+datum/emote/living/caw
+	key = "caw"
+	key_third_person = "caws"
+	message = "caws!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/caw.ogg'
+
+datum/emote/living/caw2
+	key = "caw2"
+	key_third_person = "caws twice"
+	message = "caws twice!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/caw2.ogg'
+
+datum/emote/living/mrrp //you play like a cat
+	key = "mrrp"
+	key_third_person = "mrrps"
+	message = "mrrps!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/mrrp.ogg'
+
+datum/emote/living/fpurr
+	key = "fpurr"
+	key_third_person = "purrs!"
+	message = "purrs!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/fox_purr.ogg'
+
+datum/emote/living/prbt //all tesh players will love me
+	key = "prbt"
+	key_third_person = "prbts!"
+	message = "prbts!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/prbt.ogg'
+
+datum/emote/living/gecker
+	key = "gecker"
+	key_third_person = "geckers"
+	message = "geckers!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/foxgecker.ogg'
+
+	datum/emote/living/mow //cat looking ass playing brick game looking ass cat i swear to god I'm taking you to the vet merek
+	key = "mow"
+	key_third_person = "mows like an insane cat."
+	message = "mows!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/mow.ogg'
+
+datum/emote/living/yip
+	key = "yip"
+	key_third_person = "yips"
+	message = "yips!"
+	sound = 'modular_splurt/sound/voice/yip.ogg'
+
+/datum/emote/living/woof
+	key = "woof"
+	key_third_person = "woofs"
+	message = "woofs!"
+	sound = 'modular_splurt/sound/voice/woof.ogg'
+
+/datum/emote/living/woof/alt
+	key = "woof2"
+	key_third_person = "woofs2"
+	sound = 'modular_splurt/sound/voice/woof2.ogg'
+
+/datum/emote/living/whine
+	key = "whine"
+	key_third_person = "whines"
+	message = "whines..."
+	sound = 'modular_splurt/sound/voice/whine.ogg'
+
+/datum/emote/living/coo
+	key = "coo"
+	key_third_person = "coos"
+	message = "coos."
+	sound = 'modular_splurt/sound/voice/coo.ogg'
+
+/datum/emote/living/hoot
+	key = "hoot"
+	key_third_person = "hoots"
+	message = "hoots!"
+	sound = 'modular_splurt/sound/voice/hoot.ogg'
+
+/datum/emote/living/hiss2 // Since normal hiss is tied to the Xenomorph Race (i think?)
+	key = "hiss2"
+	key_third_person = "hisses2"
+	message = "let out a short hiss!"
+	sound = 'modular_citadel/sound/voice/hiss.ogg'
+
+/datum/emote/living/bark2
+	key = "bark2"
+	key_third_person = "barks2"
+	message = "barks!"
+
+/datum/emote/living/bark2/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // the glyph of power
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'modular_citadel/sound/voice/bark1.ogg', 33, 1), playsound(C, 'modular_citadel/sound/voice/bark2.ogg', 33, 1))

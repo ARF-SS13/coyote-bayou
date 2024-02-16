@@ -22,7 +22,7 @@
 	var/replace_spent_rounds = 0
 	var/multiload = 1
 	var/fixed_mag = FALSE
-	var/unloadable = FALSE
+	var/unloadable = FALSE // UNLOADABLE MEANS NOT UNLOADABLE? WHAT A COUNTRY
 	/// Can this magazine have its caliber changed?
 	var/can_change_caliber = FALSE
 	var/caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
@@ -35,6 +35,7 @@
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
+	var/supposedly_a_problem = 0
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
@@ -188,6 +189,9 @@
 	if(istype(A, /obj/item/ammo_box/))
 		if(load_from_box(A, user, silent))
 			return TRUE
+	if(COOLDOWN_FINISHED(src, supposedly_a_problem) && istype(A, /obj/item/gun))
+		COOLDOWN_START(src, supposedly_a_problem, 1) // just a brief thing so that the game has time to load the thing before you try to load the thing again, thanks automatics
+		return A.attackby(src, user, params, silent, replace_spent)
 
 /obj/item/ammo_box/proc/load_from_box(obj/item/ammo_box/other_ammobox, mob/user, silent)
 	if(!istype(other_ammobox, /obj/item/ammo_box))
@@ -340,16 +344,23 @@
 			to_chat(user, span_alert("\The [src] is already hot! Quick, put a casing in there!"))
 
 /obj/item/ammo_box/attack_self(mob/user)
-	var/obj/item/ammo_casing/A = get_round()
-	if (unloadable == TRUE)
+	pop_casing(user)
+
+/obj/item/ammo_box/proc/pop_casing(mob/user, to_ground, silent)
+	if(unloadable)
 		to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
-	else
-		if(A)
-			if(!user.put_in_hands(A))
-				A.bounce_away(FALSE, NONE)
-			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
-			to_chat(user, span_notice("You remove a round from \the [src]!"))
-			update_icon()
+		return FALSE
+	var/obj/item/ammo_casing/A = get_round()
+	if(!A)
+		to_chat(user, span_alert("There's nothing in \the [src]!"))
+		return FALSE
+	if(to_ground || !user.put_in_hands(A))
+		A.bounce_away(FALSE, NONE)
+	playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
+	if(!silent)
+		to_chat(user, span_notice("You remove a round from \the [src]!"))
+	update_icon()
+	return A
 
 /obj/item/ammo_box/update_icon()
 	. = ..()

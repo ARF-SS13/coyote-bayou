@@ -14,21 +14,16 @@
 	var/obj/item/J = get_inactive_held_item()
 	if(!I)
 		return
-	else if(I && J)  //Dual wielding starts here, see {dual_wielding.dm}
+	else if(I && J && I.wielded == FALSE)  //Dual wielding starts here, see {dual_wielding.dm}
 		if(I.force != 0 || J.force != 0)  //at least one of these two item needs to be dangerous
-			if(	(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED) || \
-				(I.w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED))
-				attempt_dual_wield(usr, I, J, DUAL_WIELDING_AGILE_FORCE)  //actually initiate dual wielding! 
-				return
-			if(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
-				attempt_dual_wield(usr, I, J, DUAL_WIELDING_ENCUMBERED_FORCE)  //actually initiate dual wielding! but for wielding 2 swords we are doing less damage
-				return
-
+			attempt_dual_wield(usr, I, J, min(I.dual_wielded_mult, J.dual_wielded_mult))  //actually initiate dual wielding! uses the worst damage multiplier between your two weapons
+			return
 	I.attempt_wield(src)
 
 /obj/item/proc/unwield(mob/living/user)
 	if(!wielded || !user)
 		return
+	SEND_SIGNAL(src, SIG_ITEM_UNWIELD, user)	//added by CASEYGUNGEON 1/14/2024. fuck the twohanded component
 	wielded = FALSE
 	if(force_unwielded)
 		force = force_unwielded
@@ -66,6 +61,7 @@
 	if(!user.dropItemToGround(other_item, force=FALSE)) //If you cannot remove the item in your hand, don't try and wield.
 		to_chat(user, span_notice("You cannot seem to drop the item in your other hand!"))
 		return
+	SEND_SIGNAL(src, SIG_ITEM_WIELD, user)	//added by CASEYGUNGEON 1/14/2024. fuck the twohanded component
 	wielded = TRUE
 	if(force_wielded)
 		force = force_wielded

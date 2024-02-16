@@ -28,6 +28,9 @@ GLOBAL_PROTECT(href_token)
 
 	var/deadmined
 
+	/// if set to anything non-null, will make the admin see invisible objects, shrimple as
+	var/see_invis_override
+
 /datum/admins/New(datum/admin_rank/R, ckey, force_active = FALSE, protected)
 	if(IsAdminAdvancedProcCall())
 		var/msg = " has tried to elevate permissions!"
@@ -150,6 +153,11 @@ GLOBAL_PROTECT(href_token)
 
 /datum/admins/vv_edit_var(var_name, var_value)
 	return FALSE //nice try trialmin
+
+/datum/admins/proc/ghostsight_or(or_else_what)
+	if(!isnull(see_invis_override))
+		return see_invis_override
+	return or_else_what
 
 
 /proc/check_rights(rights_required, show_msg=1)

@@ -338,7 +338,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	// excess power into GLOB.CELLRATE energy units when charging cells.
 	// With the current configuration of wait=20 and CELLRATE=0.002, this
 	// means that one unit is 1 kJ.
-	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE
+	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE // GLOB.CELLULITE
 	if (units < 1000) // Less than a kJ
 		return "[round(units, 0.1)] J"
 	else if (units < 1000000) // Less than a MJ
@@ -1670,7 +1670,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(clientthing)
+/proc/extract_client(clientthing)
 	if(isclient(clientthing))
 		return clientthing
 	if(ismob(clientthing))
@@ -1730,12 +1730,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return mobby.client.prefs
 	if(istext(something))
 		if(!(something in GLOB.directory))
-			CRASH("extract_prefs() was given a ckey that wasn't in the directory. This is a bug, please report it.")
+			return
+			// CRASH("extract_prefs() was given a ckey that wasn't in the directory. This is a bug, please report it.")
 		var/client/clont = LAZYACCESS(GLOB.directory, something)
 		if(!clont)
 			return // probably... disconnected? v0v
 		return clont.prefs
-	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+	// CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Takes in a mob, client, or even prefs, and returns their ckey
 /proc/extract_ckey(something) // one way or another, im getting your ckey (to break)
@@ -1750,7 +1751,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(ismob(something))
 		var/mob/mobby = something
 		return mobby.ckey
-	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+	// CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Makes a gaussian distribution, returning a positive integer
 /proc/GaussianReacharound(mean, stddev, min, max)

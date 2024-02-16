@@ -12,6 +12,10 @@
 		#include "map_files/coyote_bayou/Redwater.dmm"
 		#include "map_files/coyote_bayou/Redwater-Upper.dmm"
 		#include "map_files/coyote_bayou/Ashdown.dmm"
+		#include "map_files/coyote_bayou/Ashdown-Upper.dmm"
+		#include "map_files/coyote_bayou/Garland-City.dmm"
+		#include "map_files/coyote_bayou/Newboston.dmm"
+		#include "map_files/coyote_bayou/Newboston-Upper.dmm"
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif

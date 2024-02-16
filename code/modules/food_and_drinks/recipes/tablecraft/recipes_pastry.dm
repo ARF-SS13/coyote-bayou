@@ -74,6 +74,17 @@
 	result = /obj/item/reagent_containers/food/snacks/sugarcookie
 	subcategory = CAT_PASTRY
 
+/datum/crafting_recipe/food/oreocookie
+	time = 15
+	name = "Oreo cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/oreocookie
+	subcategory = CAT_PASTRY
+
 ////////////////////////////////////////////////WAFFLES AND PANCAKES////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/waffles
@@ -214,7 +225,7 @@
 		/obj/item/reagent_containers/food/snacks/egg = 2,
 		/datum/reagent/consumable/coco = 5,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5
+		/datum/reagent/consumable/peanut_butter = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/brownie_sheet_peanut
 	subcategory = CAT_PASTRY
@@ -223,11 +234,11 @@
 	name = "Crunchy peanut butter tart"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5,
+		/datum/reagent/consumable/peanut_butter = 5,
 		/datum/reagent/consumable/cream = 5,
 	)
 	result = /obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
-	category = CAT_PASTRY
+	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/moth_cheese_cakes
 	name = "Ælorölen (Cheesecake balls)"
@@ -239,4 +250,31 @@
 		/datum/reagent/consumable/honey = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
-	category = CAT_PASTRY
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/candiedapple
+	name = "Candied apple"
+	reqs = list(/datum/reagent/water = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/candiedapple
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/chocolatestrawberry
+	name = "Chocolate Strawberry"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/grown/strawberry  = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/chocolatestrawberry
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/honeybar
+	name = "Honey nut bar"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/oat = 1,
+		/datum/reagent/consumable/honey = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/honeybar
+	subcategory = CAT_PASTRY

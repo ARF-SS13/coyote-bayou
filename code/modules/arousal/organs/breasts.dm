@@ -66,6 +66,23 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 		prev_size = cached_size
 	return ..()
 
+/obj/item/organ/genital/breasts/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "boobs"
+	switch(lowertext(shape))
+		if("udders")
+			out["BitName"] = "A set of udders."
+		if("pair")
+			out["BitName"] = "A pair of breasts."
+		else
+			out["BitName"] = "A [shape]-set of breasts."
+	out["BitSize"] = "They are a [uppertext(size)]-cup."
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = !!aroused_state
+	out["BitExtra"] = "Operating at %100 capacity."
+	out["BitEmoji"] = "🐄"
+	return out
+
 /obj/item/organ/genital/breasts/update_appearance()
 	. = ..()
 	var/lowershape = lowertext(shape)

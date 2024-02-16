@@ -6,9 +6,9 @@
 	cost = 200
 	unit_name = "chems (low)"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
-	/obj/item/reagent_containers/hypospray/medipen/medx,
+	/obj/item/reagent_containers/pill/patch/medx,
 	/obj/item/reagent_containers/blood/radaway,
-	/obj/item/reagent_containers/hypospray/medipen/steady,
+	/obj/item/reagent_containers/pill/patch/steady,
 	/obj/item/storage/pill_bottle/chem_tin/mentats,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -50,6 +50,7 @@
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
 		/obj/item/gun/ballistic/rifle/mosin/mini,
+		/obj/item/gun/energy/laser/tg/scrap,
 		)
 
 /datum/export/item/commongun
@@ -103,8 +104,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/cowboy,
 		/obj/item/gun/ballistic/revolver/caravan_shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
-		/obj/item/gun/ballistic/bow/lightxbow,
-		/obj/item/gun/ballistic/bow/recurvebow,
+		/obj/item/gun/ballistic/bow/modern,
 		)
 
 /datum/export/item/uncommongun
@@ -114,7 +114,7 @@
 		/obj/item/gun/ballistic/automatic/smg/american180,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2,
-		/obj/item/gun/ballistic/automatic/smg/mp5,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder,
 		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/ballistic/automatic/service,
@@ -142,8 +142,6 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
 		/obj/item/gun/ballistic/bow/longbow,
-		/obj/item/gun/ballistic/bow/crossbow,
-		/obj/item/gun/ballistic/bow/compositebow,
 		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22,
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
@@ -158,6 +156,8 @@
 		/obj/item/gun/energy/laser/retro,
 		/obj/item/gun/ballistic/revolver/grenadelauncher,
 		/obj/item/gun/ballistic/shotgun/grenade,
+		/obj/item/gun/energy/laser/tg/carbine,
+		/obj/item/gun/energy/laser/tg/rifle,
 		)
 
 /datum/export/item/raregun
@@ -186,7 +186,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/pistol14,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
 		/obj/item/gun/ballistic/rifle/mag/boys,
-		/obj/item/gun/ballistic/rifle/mag/antimateriel,
+		/obj/item/gun/ballistic/rifle/mag/antimaterial,
 		/obj/item/gun/ballistic/shotgun/police,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
@@ -220,6 +220,9 @@
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
 		/obj/item/gun/magic/,
+		/obj/item/gun/energy/laser/tg/rifle/heavy,
+		/obj/item/gun/energy/laser/tg/rifle/auto,
+		/obj/item/gun/energy/laser/tg/recharger,
 		)
 
 /datum/export/item/uniquegun
@@ -263,6 +266,9 @@
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+		/obj/item/gun/energy/laser/tg/particlecannon,
+		/obj/item/gun/energy/laser/xcomufolaser,
+		/obj/item/gun/energy/laser/LaserAK,
 	)
 
 /datum/export/item/melee
@@ -287,7 +293,6 @@
 		/obj/item/clothing/head/helmet/f13/combat/mk2,
 		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
 		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
 		/obj/item/clothing/suit/armor/medium/odst,

@@ -75,7 +75,7 @@ There are several things that need to be remembered:
 	remove_overlay(BODY_LAYER)
 	dna.species.handle_body(src)
 	..()
-	if(update_genitals)
+	if(update_genitals && !IsFeral())
 		update_genitals()
 
 /mob/living/carbon/human/update_fire()
@@ -127,10 +127,11 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += w_uniform
 		update_observer_view(w_uniform,1)
+		if(IsFeral())
+			return
 
 		if(wear_suit && (wear_suit.flags_inv & HIDEJUMPSUIT))
 			return
-
 
 		var/target_overlay = U.icon_state
 		if(U.adjusted == ALT_STYLE)
@@ -172,6 +173,8 @@ There are several things that need to be remembered:
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_WEAR_ID]
 		inv.update_icon()
 
+
+
 	var/mutable_appearance/id_overlay = overlays_standing[ID_LAYER]
 
 	if(wear_id)
@@ -179,6 +182,8 @@ There are several things that need to be remembered:
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += wear_id
 		update_observer_view(wear_id)
+		if(IsFeral())
+			return
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
 		id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', override_state = wear_id.item_state)
@@ -195,8 +200,8 @@ There are several things that need to be remembered:
 	if(client && hud_used && hud_used.inv_slots[SLOT_GLOVES])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_GLOVES]
 		inv.update_icon()
-
-	if(!gloves && bloody_hands)
+	
+	if(!gloves && bloody_hands && !IsFeral())
 		var/mutable_appearance/bloody_overlay = mutable_appearance('icons/effects/blood.dmi', "bloodyhands", -GLOVES_LAYER, color = blood_DNA_to_color())
 		if(get_num_arms(FALSE) < 2)
 			if(has_left_hand(FALSE))
@@ -206,18 +211,21 @@ There are several things that need to be remembered:
 
 		overlays_standing[GLOVES_LAYER] = bloody_overlay
 
-	var/mutable_appearance/gloves_overlay = overlays_standing[GLOVES_LAYER]
 	if(gloves)
 		gloves.screen_loc = ui_gloves
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)
 				client.screen += gloves
 		update_observer_view(gloves,1)
+
+	var/mutable_appearance/gloves_overlay = overlays_standing[GLOVES_LAYER]
+	if(!IsFeral() && gloves)
 		overlays_standing[GLOVES_LAYER] = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi')
 		gloves_overlay = overlays_standing[GLOVES_LAYER]
 		if(OFFSET_GLOVES in dna.species.offset_features)
 			gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
 			gloves_overlay.pixel_y += dna.species.offset_features[OFFSET_GLOVES][2]
+
 	overlays_standing[GLOVES_LAYER] = gloves_overlay
 	apply_overlay(GLOVES_LAYER)
 
@@ -238,14 +246,15 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)			//if the inventory is open ...
 				client.screen += glasses				//Either way, add the item to the HUD
 		update_observer_view(glasses,1)
-		if(!(head && (head.flags_inv & HIDEEYES)) && !(wear_mask && (wear_mask.flags_inv & HIDEEYES)))
-			overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', override_state = glasses.icon_state)
-		var/mutable_appearance/glasses_overlay = overlays_standing[GLASSES_LAYER]
-		if(glasses_overlay)
-			if(OFFSET_GLASSES in dna.species.offset_features)
-				glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
-				glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
-			overlays_standing[GLASSES_LAYER] = glasses_overlay
+		if(!IsFeral())
+			if(!(head && (head.flags_inv & HIDEEYES)) && !(wear_mask && (wear_mask.flags_inv & HIDEEYES)))
+				overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', override_state = glasses.icon_state)
+			var/mutable_appearance/glasses_overlay = overlays_standing[GLASSES_LAYER]
+			if(glasses_overlay)
+				if(OFFSET_GLASSES in dna.species.offset_features)
+					glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
+					glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
+				overlays_standing[GLASSES_LAYER] = glasses_overlay
 	apply_overlay(GLASSES_LAYER)
 
 
@@ -265,6 +274,9 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += ears					//add it to the client's screen
 		update_observer_view(ears,1)
+
+		if(IsFeral())
+			return
 
 		overlays_standing[EARS_LAYER] = ears.build_worn_icon(default_layer = EARS_LAYER, default_icon_file = 'icons/mob/ears.dmi')
 		var/mutable_appearance/ears_overlay = overlays_standing[EARS_LAYER]
@@ -297,7 +309,8 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += shoes					//add it to client's screen
 		update_observer_view(shoes,1)
-
+		if(IsFeral())
+			return
 		var/alt_icon = S.mob_overlay_icon || 'icons/mob/clothing/feet.dmi'
 		var/variation_flag = NONE
 		if((DIGITIGRADE in dna.species.species_traits) && S.mutantrace_variation & STYLE_DIGITIGRADE && !(S.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
@@ -324,6 +337,8 @@ There are several things that need to be remembered:
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += s_store
 		update_observer_view(s_store)
+		if(IsFeral())
+			return
 		var/t_state = s_store.item_state
 		if(!t_state)
 			t_state = s_store.icon_state
@@ -333,6 +348,8 @@ There are several things that need to be remembered:
 			s_store_overlay.pixel_x += dna.species.offset_features[OFFSET_S_STORE][1]
 			s_store_overlay.pixel_y += dna.species.offset_features[OFFSET_S_STORE][2]
 		overlays_standing[SUIT_STORE_LAYER] = s_store_overlay
+	if(IsFeral())
+		return
 	apply_overlay(SUIT_STORE_LAYER)
 
 
@@ -353,6 +370,8 @@ There are several things that need to be remembered:
 				client.screen += head
 		update_observer_view(head,1)
 		remove_overlay(HEAD_LAYER)
+		if(IsFeral())
+			return
 		var/obj/item/clothing/head/H = head
 		var/alt_icon = H.mob_overlay_icon || 'icons/mob/clothing/head.dmi'
 		var/muzzled = FALSE
@@ -387,6 +406,8 @@ There are several things that need to be remembered:
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += belt
 		update_observer_view(belt)
+		if(IsFeral())
+			return
 
 		overlays_standing[BELT_LAYER] = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/mob/clothing/belt.dmi')
 		var/mutable_appearance/belt_overlay = overlays_standing[BELT_LAYER]
@@ -411,6 +432,8 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += wear_suit
 		update_observer_view(wear_suit,1)
+		if(IsFeral())
+			return
 
 		var/worn_icon = wear_suit.mob_overlay_icon || 'icons/mob/clothing/suit.dmi'
 		var/worn_state = wear_suit.icon_state
@@ -491,7 +514,7 @@ There are several things that need to be remembered:
 		return
 
 	if(client && hud_used)
-		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_WEAR_MASK]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_MASK]
 		inv.update_icon()
 
 	if(wear_mask)
@@ -500,6 +523,8 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += wear_mask
 		update_observer_view(wear_mask,1)
+		if(IsFeral())
+			return
 		var/obj/item/clothing/mask/M = wear_mask
 		remove_overlay(FACEMASK_LAYER)
 		var/alt_icon = M.mob_overlay_icon || 'icons/mob/clothing/mask.dmi'
@@ -677,21 +702,30 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	. = "[dna.species.mutant_bodyparts["limbs_id"]]"
 	. += "[dna.features["color_scheme"]]"
 
-	if(dna.check_mutation(HULK))
-		. += "-coloured-hulk"
-	else if(dna.species.use_skintones)
-		. += "-coloured-[skin_tone]"
-	else if(dna.species.fixed_mut_color)
-		. += "-coloured-[dna.species.fixed_mut_color]"
-	else if(dna.features["mcolor"])
-		. += "-coloured-[dna.features["mcolor"]]-[dna.features["mcolor2"]]-[dna.features["mcolor3"]]"
+	var/is_feral = FALSE
+	var/alt_appearance
+	if(IsFeral())
+		is_feral = TRUE
+		if(client?.prefs?.alt_appearance in dna.species.alt_prefixes)
+			alt_appearance = dna.species.alt_prefixes[client?.prefs?.alt_appearance]
+
+	if(!IsFeral())
+		if(dna.check_mutation(HULK))
+			. += "-coloured-hulk"
+		else if(dna.species.use_skintones)
+			. += "-coloured-[skin_tone]"
+		else if(dna.species.fixed_mut_color)
+			. += "-coloured-[dna.species.fixed_mut_color]"
+		else if(dna.features["mcolor"])
+			. += "-coloured-[dna.features["mcolor"]]-[dna.features["mcolor2"]]-[dna.features["mcolor3"]]"
+		else
+			. += "-not_coloured"
 	else
 		. += "-not_coloured"
-
 	. += "-[dna.features["body_model"]]"
 
 	var/is_taur = FALSE
-	if(dna.species.mutant_bodyparts["taur"])
+	if(dna.species.mutant_bodyparts["taur"] && !is_feral)
 		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
 		if(T?.hide_legs)
 			is_taur = TRUE
@@ -699,7 +733,7 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	var/static/list/leg_day = typecacheof(list(/obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg))
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
-		if(is_taur && leg_day[BP.type])
+		if((is_taur && leg_day[BP.type]) || is_feral)
 			continue
 
 		. += "-[BP.body_zone]"
@@ -720,7 +754,12 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 		else
 			. += "-no_marking"
 
-	if(HAS_TRAIT(src, TRAIT_HUSK))
+	if(is_feral)
+		. += "-feral"
+		if(alt_appearance)
+			. += "-[alt_appearance]"
+
+	else if(HAS_TRAIT(src, TRAIT_HUSK))
 		. += "-husk"
 
 /mob/living/carbon/human/load_limb_from_cache()
@@ -762,7 +801,7 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	add_overlay(HD.get_limb_icon())
 	update_damage_overlays()
 
-	if(HD && !(HAS_TRAIT(src, TRAIT_HUSK)))
+	if(HD && !(HAS_TRAIT(src, TRAIT_HUSK)) && !IsFeral())
 		// lipstick
 		if(lip_style && (LIPS in dna.species.species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[lip_style]", -BODY_LAYER)

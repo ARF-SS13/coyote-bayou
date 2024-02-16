@@ -256,6 +256,48 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/banditmask
+	name = "bandit mask"
+	path = /obj/item/clothing/head/helmet/blbandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/psychomask
+	name = "psycho mask"
+	path = /obj/item/clothing/head/helmet/blpsycho
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/bandithelm
+	name = "bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/bandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/vbandithelm
+	name = "looter bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditv
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/stripedbandithelm
+	name = "striped bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditstripe
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/merchelm
+	name = "merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/merc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/promerchelm
+	name = "professional merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/promerc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/unmchelmetwinter
 	name = "Winterized UNMC helmet"
 	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
@@ -506,7 +548,7 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
-	/*restricted_desc = "Nash PD, Nash officials"
+	/*restricted_desc = "New Boston PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"High Alderperson",
@@ -819,6 +861,11 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
+/datum/gear/head/skullmask
+	name = "Tribal Skull-Mask"
+	path = /obj/item/clothing/head/helmet/f13/skull_helmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 /datum/gear/head/steelm1
 	name = "M1 Helmet "
@@ -891,6 +938,37 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/spartanhelmetsthree
 	name = "M-87 'EVA' assault helmet 'Patriot'"
 	path = /obj/item/clothing/head/evaspartan3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetfour
+	name = "M-87 'Odin' assault helmet 'Icebreaker'"
+	path = /obj/item/clothing/head/gungnirspartan2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetfive
+	name = "M-87 'Odin' assault helmet"
+	path = /obj/item/clothing/head/gungnirspartan
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/odsthelmet
+	name = "M-87 UNMC DropTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+
+/datum/gear/head/odsthelmet2
+	name = "M-87 Luchtmobiele Brigade assault helmet"
+	path = /obj/item/clothing/head/droptrooper/ice
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/odsthelmet3
+	name = "M-87 HellTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper/special
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
@@ -1392,4 +1470,6 @@ datum/gear/head/steelpot_bandolier
 	name = "blue witch hat"
 	path = /obj/item/clothing/head/nt_witch
 
-
+/datum/gear/head/hoodcowl
+	name = "Hood cowl"
+	path= /obj/item/clothing/head/hoodcowl

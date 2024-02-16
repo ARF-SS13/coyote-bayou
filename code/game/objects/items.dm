@@ -188,6 +188,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// Reskinnable component
 	var/reskinnable_component
 
+	/// New variable for backstab multiplier
+	var/backstab_multiplier = 1.15 
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -222,6 +225,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!special_transform && transform != initial(transform))
 		special_transform = transform
 
+	/// CB Dual Wielding
+	if(force != 0)
+		if(w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_AGILE_FORCE
+		else if(w_class >= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_ENCUMBERED_FORCE
+
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
 	if(ismob(loc))
@@ -229,7 +239,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
-	return ..()
+	..()
+	moveToNullspace()
+	return QDEL_HINT_LETMELIVE
 
 /obj/item/ComponentInitialize()
 	. = ..()
@@ -347,16 +359,27 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(href_list["list_melee"])
+		var/DamMult = 1
+		if(material_flags & MATERIAL_AFFECT_STATISTICS && istype(custom_materials[1], /datum/material))
+			var/datum/material/MyMat = custom_materials[1]
+			if(MyMat.strength_modifier)
+				DamMult = MyMat.strength_modifier
+		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
+		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
+		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
+		var/InitialAS = initial(attack_speed)
+
+		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [force_unwielded]"
-			readout += "\nTWO HANDED [force_wielded]"
-			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult]"
+			readout += "\nONE HANDED [InitialFUW] | (DPS [round(InitialFUW * (10/InitialAS), 0.1)])"
+			readout += "\nTWO HANDED [InitialFW] | (DPS [round(InitialFW * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialFUW * dual_wielded_mult] | (DPS [round((InitialFUW * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		else
-			readout += "\nDAMAGE [force]"
-			readout += "\nDUAL WIELD [force*dual_wielded_mult]"
-		readout += "\nTHROW DAMAGE [throwforce]"
-		readout += "\nATTACKS / SECOND [10 / attack_speed]"
+			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+		readout += "\nTHROW DAMAGE [(throwforce + throwforce_bonus) * DamMult]"
+		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"
 
@@ -861,7 +884,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(ismob(location))
 		var/mob/M = location
 		var/success = FALSE
-		if(src == M.get_item_by_slot(SLOT_WEAR_MASK))
+		if(src == M.get_item_by_slot(SLOT_MASK))
 			success = TRUE
 		if(success)
 			location = get_turf(M)
@@ -1252,3 +1275,17 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/refresh_upgrades()
 	return
 
+/obj/item/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
+	// Check if the user is behind the target
+	if(get_dir(user, M) == M.dir && isliving(M))
+		damage_multiplier = backstab_multiplier // Apply the backstab multiplier
+		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
+		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
+	. = ..()
+
+/obj/item/MouseDrop(mob/over, src_location, over_location)
+	var/mob/living/L = usr
+	if((L != over) && (isliving(over)))
+		var/mob/living/target = over
+		L.do_give(target)
+	return ..()

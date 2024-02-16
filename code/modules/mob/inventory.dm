@@ -386,7 +386,7 @@
 		slot_priority = list( \
 			SLOT_BACK, SLOT_WEAR_ID,\
 			SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
-			SLOT_WEAR_MASK, SLOT_HEAD, SLOT_NECK,\
+			SLOT_MASK, SLOT_HEAD, SLOT_NECK,\
 			SLOT_SHOES, SLOT_GLOVES,\
 			SLOT_EARS, SLOT_GLASSES,\
 			SLOT_BELT, SLOT_S_STORE,\
@@ -446,6 +446,7 @@
 			return TRUE
 
 	to_chat(M, span_warning("You are unable to equip that!"))
+	usr.playsound_local(usr.loc, 'sound/weapons/bite.ogg', 100, 0)
 	return FALSE
 
 //-->

@@ -82,6 +82,10 @@
 	name = "hip holster"
 	path = /obj/item/storage/belt/legholster
 
+/datum/gear/belt/legholster/throwing
+	name = "garter rig"
+	path = /obj/item/storage/belt/legholster/throwing
+
 /datum/gear/belt/sword/twin
 	name = "twin sheath" //for hemidicks
 	path = /obj/item/storage/belt/sword/twin
@@ -91,11 +95,15 @@
 	path = /obj/item/storage/belt/sabre/heavy
 
 /datum/gear/belt/webbing/burma
-	name = "burma webbing"
+	name = "Pattern 37 webbing"
 	path = /obj/item/storage/belt/military/commonwealth_brit
 
+/datum/gear/belt/webbing/burma/oldschoolonceagain
+	name = "1908 pattern webbing"
+	path = /obj/item/storage/belt/military/commonwealth_brit/oldschool
+
 /datum/gear/belt/leather/boer
-	name = "leather bandolier"
+	name = "Boer War leather bandolier"
 	path = /obj/item/storage/belt/bandolier/boer_band
 
 /datum/gear/belt/webbing/french

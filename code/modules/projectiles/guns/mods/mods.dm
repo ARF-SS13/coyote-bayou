@@ -18,8 +18,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_BIPOD = TRUE,
-		GUN_UPGRADE_RECOIL_1H = 2,
-		GUN_UPGRADE_RECOIL_2H = 0.75,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(90,120) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-15,-40) * 0.01
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
 
@@ -35,10 +35,10 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
-		GUN_UPGRADE_MUZZLEFLASH = 0.8,
+		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_DAMAGE_PLUS = -0.1,
-		GUN_UPGRADE_RECOIL_1H = 1.2,
-		GUN_UPGRADE_RECOIL_2H = 0.9,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(15,30) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-5,-25) * 0.01
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
@@ -53,7 +53,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-5,-25) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-5,-20) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -68,10 +69,10 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	//	GUN_UPGRADE_PEN_MULT = 0.2,
-		GUN_UPGRADE_RICO_MULT = 5,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.4,
-		GUN_UPGRADE_RECOIL_1H = 1.5,
-		GUN_UPGRADE_RECOIL_2H = 1.5,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-10,-60) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(15,50) * 0.01,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(10,30) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(5,15) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -86,10 +87,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.25,
-		GUN_UPGRADE_RECOIL_1H = 2.5,
-		GUN_UPGRADE_RECOIL_2H = 2.0,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(25,55) * 0.01,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
 		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -108,10 +109,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-25) * 0.01,
 		GUN_UPGRADE_FORCESAFETY = FALSE,
-		GUN_UPGRADE_RECOIL_1H = 1.3,
-		GUN_UPGRADE_RECOIL_2H = 1.3,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,35) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,35) * 0.01
 		)
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -225,8 +226,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = 2,
-		GUN_UPGRADE_RECOIL_2H = 0.9,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(90,110) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-5,-30) * 0.01,
 		GUN_UPGRADE_ZOOM = 1.2,
 		)
 	I.gun_loc_tag = GUN_SCOPE
@@ -241,8 +242,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = 1.2,
-		GUN_UPGRADE_RECOIL_2H = 0.8,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(15,25) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_ZOOM = 2,
 		)
 	I.gun_loc_tag = GUN_SCOPE
@@ -259,10 +260,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_GILDED = TRUE
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-20,-50) * 0.01,
+		//GUN_UPGRADE_PROJ_SPEED_MULT = 1.25,
+		//GUN_UPGRADE_OFFSET = 3,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(10,30) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(10,30) * 0.01,
+		UPGRADE_COLOR = "#FFD700"
 		)
-	I.gun_loc_tag = GUN_COSMETIC
-	I.req_gun_tags = list(GUN_GILDABLE)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "gold"
 
 //Trash mods, for putting on old guns
 
@@ -277,7 +283,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = rand(8,30) * 0.1,
 		GUN_UPGRADE_RECOIL_2H = rand(8,30) * 0.1,
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18) * 0.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18) * 0.1
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -296,7 +302,7 @@
 		GUN_UPGRADE_PEN_MULT = rand(0.8,1.2),
 		GUN_UPGRADE_DAMAGE_MULT = rand(0.8,1.2),
 		GUN_UPGRADE_RECOIL_1H = rand(0.8,1.2),
-		GUN_UPGRADE_RECOIL_2H = rand(0.8,1.2),
+		GUN_UPGRADE_RECOIL_2H = rand(0.8,1.2)
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_BARREL
@@ -315,7 +321,7 @@
 		GUN_UPGRADE_PROJ_SPEED_MULT = rand(8,10)*0.1,
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_RECOIL_1H = 1.3,
-		GUN_UPGRADE_RECOIL_2H = 1.1,
+		GUN_UPGRADE_RECOIL_2H = 1.1
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MUZZLE
@@ -331,7 +337,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = rand(5, 20)*0.1,
-		GUN_UPGRADE_RECOIL_2H = rand(5, 20)*0.1,
+		GUN_UPGRADE_RECOIL_2H = rand(5, 20)*0.1
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MECHANISM
@@ -362,9 +368,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
 
 /obj/item/gun_upgrade/barrel/better
@@ -376,8 +381,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(20,50) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -392,9 +397,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.1
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(5,25) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
@@ -408,10 +412,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = 0.8,
-		GUN_UPGRADE_RECOIL_2H = 0.8,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-15,-40) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MECHANISM
 
 /obj/item/gun_upgrade/scope/better
@@ -423,9 +426,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_ZOOM = 2,
 	)
-	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_SCOPE
 
 // 	 EXPERIMENTAL WEAPON MODS
@@ -442,9 +445,12 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		//GUN_UPGRADE_PEN_MULT = 1.2,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5
-		)
+		GUN_UPGRADE_RECOIL_1H=1 + rand(140,160) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(45,55) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(150,250) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(45,55) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(20,35) * 0.01
+	)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
@@ -458,11 +464,12 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = 2.5,
-		GUN_UPGRADE_RECOIL_2H = 2.0,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_DAMAGE_MULT = 1.25)
-	//GUN_UPGRADE_CHARGECOST = 1.5)
+		GUN_UPGRADE_RECOIL_1H=1 + rand(125,175) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(70,120) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(40,70) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(20,40) * 0.01
+		//GUN_UPGRADE_CHARGECOST = 1.5
+	)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
@@ -476,12 +483,13 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL_1H = 1.5,
-	GUN_UPGRADE_RECOIL_2H = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 0.8,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 0.6)
-	//GUN_UPGRADE_CHARGECOST = 0.65)
-	//GUN_UPGRADE_FULLAUTO = TRUE)
+		GUN_UPGRADE_RECOIL_1H=1 + rand(40,60) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(15,30) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,-30) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-25,-60) * 0.01
+		//GUN_UPGRADE_CHARGECOST = 0.65
+		//GUN_UPGRADE_FULLAUTO = TRUE
+	)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 

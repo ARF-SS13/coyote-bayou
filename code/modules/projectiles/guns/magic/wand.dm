@@ -233,9 +233,9 @@
 	name = "template projectile"
 	icon_state = "arcane_barrage"
 	damage = 0
-	damage_type = BURN
 	nodamage = 0
-	flag = "magic"
+	damage_type = BURN // Determines the health damage type; BRUTE, BURN, OXY, TOX.
+	flag = "magic"  // "magic" ignores all armor, "laser" checks laser, "bullet" is bullet, "energy" is plasma
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	recoil = BULLET_RECOIL_LASER
@@ -263,7 +263,7 @@
 	damage_low = 10
 	damage_high = 30
 	damage_type = BURN
-	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+	flag = "laser"
 
 /****************/
 //Improvised Zapper//
@@ -399,7 +399,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 60 SECONDS
+	recharge_rate = 30 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand

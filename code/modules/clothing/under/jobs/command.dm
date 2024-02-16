@@ -7,7 +7,7 @@
 	random_sensor = FALSE
 
 /obj/item/clothing/under/rank/captain/pilot
-	desc = "A blue jumpsuit with gold markings. One shoulder stripe reads \"Nash\" while the other reads \"Pilot\"."
+	desc = "A blue jumpsuit with gold markings. One shoulder stripe reads \"New Boston\" while the other reads \"Pilot\"."
 	name = "pilot's jumpsuit"
 	mutantrace_variation = STYLE_DIGITIGRADE
 

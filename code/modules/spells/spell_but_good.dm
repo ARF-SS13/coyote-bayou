@@ -23,7 +23,7 @@
 		to_chat(owner, span_phobia("The spell tried to reference an invalid spell index! Panic, and call 1-800-IMC-ODER!"))
 		return
 	var/mob/living/living_owner = owner
-	if(issimpleanimalmob(owner))
+	if(isanimal(owner))
 		var/mob/living/simple_animal/simple_owner = owner
 		if(!simple_owner.dextrous)
 			to_chat(simple_owner, span_alert("You're not dextrous enough to use this!"))

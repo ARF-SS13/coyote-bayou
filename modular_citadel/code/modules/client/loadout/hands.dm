@@ -76,7 +76,57 @@
 /datum/gear/hands/zippolighter
 	name = "zippo lighter"
 	path = /obj/item/lighter
-	cost = 2
+	cost = 1
+
+/datum/gear/hands/zippolighter/fusion
+	name = "fusion zippo"
+	path = /obj/item/lighter/fusion
+	cost = 1
+
+/datum/gear/hands/zippolighter/royalgold
+	name = "royal zippo"
+	path = /obj/item/lighter/royalgold
+	cost = 1
+
+/datum/gear/hands/zippolighter/iconic
+	name = "iconic zippo"
+	path = /obj/item/lighter/iconic
+	cost = 1
+
+/datum/gear/hands/zippolighter/ian
+	name = "ian zippo"
+	path = /obj/item/lighter/ian
+	cost = 1
+
+/datum/gear/hands/zippolighter/holy
+	name = "holy zippo"
+	path = /obj/item/lighter/holy
+	cost = 1
+
+/datum/gear/hands/zippolighter/fox
+	name = "fox zippo"
+	path = /obj/item/lighter/fox
+	cost = 1
+
+/datum/gear/hands/zippolighter/rainbow
+	name = "rainbow zippo"
+	path = /obj/item/lighter/rainbow
+	cost = 1
+
+/datum/gear/hands/zippolighter/heart
+	name = "heart zippo"
+	path = /obj/item/lighter/heart
+	cost = 1
+
+/datum/gear/hands/zippolighter/moff
+	name = "moff zippo"
+	path = /obj/item/lighter/moff
+	cost = 1
+
+/datum/gear/hands/zippolighter/bullet
+	name = "Bullet zippo"
+	path = /obj/item/lighter/bullet
+	cost = 1
 
 /datum/gear/hands/bible
 	name = "Bible"
@@ -239,12 +289,10 @@
 	path = /obj/item/shield/coyote/chimalli
 	cost = 2
 
-
 /datum/gear/hands/shield/owlshield
 	name = "Owl Shield"
 	path = /obj/item/shield/coyote/owlshield
 	cost = 2
-
 
 /datum/gear/hands/shield/pegasusshield
 	name = "Pegasus Shield"
@@ -260,3 +308,13 @@
 	name = "Iron Crusader Shield"
 	path = /obj/item/shield/coyote/crusader
 	cost = 2
+
+/datum/gear/hands/defib/carbattery
+	name = "Primitive Defib"
+	path = /obj/item/defibrillator/primitive
+	cost = 2
+
+/datum/gear/hands/bedroll
+	name = "bedroll"
+	path = /obj/item/roller/bedroll
+	cost = 1

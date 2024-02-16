@@ -225,12 +225,12 @@
 
 /obj/effect/proc_holder/spell/targeted/olfaction/cast(list/targets, mob/living/user = usr)
 	//can we sniff? is there miasma in the air?
-	var/datum/gas_mixture/air = user.loc.return_air()
+	// var/datum/gas_mixture/air = user.loc.return_air()
 
-	if(air.get_moles(GAS_MIASMA))
-		user.adjust_disgust(sensitivity * 45)
-		to_chat(user, span_warning("With your overly sensitive nose, you get a whiff of stench and feel sick! Try moving to a cleaner area!"))
-		return
+	// if(air.get_moles(GAS_MIASMA))
+	// 	user.adjust_disgust(sensitivity * 45)
+	// 	to_chat(user, span_warning("With your overly sensitive nose, you get a whiff of stench and feel sick! Try moving to a cleaner area!"))
+	// 	return
 
 	var/atom/sniffed = user.get_active_held_item()
 	if(sniffed)

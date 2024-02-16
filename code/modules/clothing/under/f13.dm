@@ -201,6 +201,31 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/ww1swim
+	name = "German Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from Imperial germany, 1917"
+	icon_state = "igss"
+	item_state = "igss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/ww1swim/french
+	name = "French Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from France, 1916"
+	icon_state = "fss"
+	item_state = "fss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/ww1custom
+	name = "Decorated White Army Officer uniform"
+	desc = "A decorated uniform. There's three medals and a cross on the right side of the chest. This cleanly pressed and very formal uniform seems to have a tag on the tunic's interior, it reads 'Night Z. 1921'. It seems to be quite an old uniform."
+	icon_state = "nightoutfit"
+	item_state = "nightoutfit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
 	name = "Ancient West German Officer uniform"
 	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
@@ -1177,6 +1202,7 @@
 	item_color = "khan_uniform"
 	var/uniformtoggled = FALSE
 	body_parts_hidden = GROIN|LEGS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/khan/biker
 	name = "rough ridin' jeans"
@@ -1283,6 +1309,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"
@@ -1768,6 +1795,7 @@
 	name = "worn blue jumpsuit"
 	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
 	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
@@ -2419,3 +2447,31 @@
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+
+// Rin's commisioned uniforms
+
+/obj/item/clothing/under/f13/borderlands
+	name = "borderlands template"
+	desc = "Something has gone terribly wrong if you're seeing this. Call a coder!"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform.dmi'
+	can_adjust = FALSE
+	mutantrace_variation = NONE
+
+/obj/item/clothing/under/f13/borderlands/marauder
+	name = "marauder outfit"
+	desc = "A snappy navy blue shirt paired with blood red pants. Stylish, yet comfortable, wear perfect for any thug."
+	icon_state = "marauder"
+	item_state = "marauder"
+
+/obj/item/clothing/under/f13/borderlands/bloodshot
+	name = "bloodshot outfit"
+	desc = "A light blue shirt paired with tank khaki pants makes for an intimidating outfit. Well, no, it doesn't. At least it looks nice?"
+	icon_state = "bloodshot"
+	item_state = "bloodshot"
+
+/obj/item/clothing/under/f13/borderlands/psycho
+	name = "psycho outfit"
+	desc = "It's just a pair of bright orange pants. What kind of maniac would run around just wearing these?"
+	icon_state = "psycho"
+	item_state = "psycho"

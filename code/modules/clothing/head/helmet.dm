@@ -383,39 +383,146 @@
 	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. "
 	icon_state = "eva"
 	item_state = "eva"
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
 	armor = ARMOR_VALUE_MEDIUM
 	dog_fashion = null
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDESNOUT
+	flags_inv = HIDESNOUT | HIDEHAIR
 
 /obj/item/clothing/head/evaspartan2
 	name = "M-87 'EVA' assault helmet 'Icebreaker' "
 	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. This one has a winter-polarized coating."
 	icon_state = "eva2"
 	item_state = "eva2"
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
 	armor = ARMOR_VALUE_MEDIUM
 	dog_fashion = null
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDESNOUT
+	flags_inv = HIDESNOUT | HIDEHAIR
 
 /obj/item/clothing/head/evaspartan3
 	name = "M-87 'EVA' assault helmet 'Leo Patriot' "
 	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. This one has a Leo Armaments paint scheme to it."
 	icon_state = "eva3"
 	item_state = "eva3"
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
 	armor = ARMOR_VALUE_MEDIUM
 	dog_fashion = null
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDESNOUT
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+
+/obj/item/clothing/head/gungnirspartan
+	name = "M-87 'Odin' assault helmet"
+	desc = "An assault helmet produced by Leo Armaments. The helmet has a facial attachment is akin to the sniper plates one would find in WW1 trenches. The facial plate comes with a camera that can allow one to see through the faceplate. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments."
+	icon_state = "gungnir"
+	item_state = "gungnir"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+/obj/item/clothing/head/gungnirspartan2
+	name = "M-87 'Odin' assault helmet 'Icebreaker' "
+	desc = "An assault helmet produced by Leo Armaments. The helmet has a facial attachment is akin to the sniper plates one would find in WW1 trenches. The facial plate comes with a camera that can allow one to see through the faceplate. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. This one comes in a artic finish."
+	icon_state = "gungnir2"
+	item_state = "gungnir2"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+
+/obj/item/clothing/head/droptrooper
+	name = "M-87 UNMC DropTrooper assault helmet"
+	desc = "An assault helmet produced by Leo Armaments. The helmet is esteemed and well known amongst Drop Troopers of the UNMC. Heavily favored for its reliable nature and downright sleek nature. It's quite the modular helmet and eventually became the baseline for the M-87 Assault Helmet modular system. The helmet is nicknamed 'Drop Trooper's best friend' by some branches of the UNMC."
+	icon_state = "odst"
+	item_state = "odst"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+/obj/item/clothing/head/droptrooper/ice
+	name = "M-87 Luchtmobiele Brigade assault helmet"
+	desc = "An assault helmet produced by Leo Armaments. The helmet is esteemed and well known amongst Drop Troopers of the UNMC. However, this helmet seems to have been upgraded to fit and be equipped with Mark XI assault armor. It retains the same appearance, but dons but a stripe and polar finish. It seems it was made in collaboration between the Royal Netherlands military and Leo Armaments."
+	icon_state = "odst3"
+	item_state = "odst3"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+/obj/item/clothing/head/droptrooper/special
+	name = "M-87 HellTrooper assault helmet"
+	desc = "An assault helmet produced by Leo Armaments. The helmet is esteemed and well known amongst Drop Troopers of the UNMC. However, this helmet seems to have been upgraded to fit and be equipped with Mark XI assault armor. It retains the same appearance, but dons but a stripe and Leo Armaments. finish. It seems it was made in collaboration between the UNMC special forces and Leo Armaments."
+	icon_state = "odst3"
+	item_state = "odst3"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+/obj/item/clothing/head/droptrooper/arghelmet
+	name = "ARG ATLAS Helmet"
+	desc = "ATLAS, meaning Armor - Tactical Lead Assault Suite, is an extensively modified and reinforced rendition of the M-87 'Thor' helmet. This helmet includes a primitive target-acquisition program designed to help the user both deal with threats to themselves and their ward, simple user biometrics, omni-directional internal speakers for more situational awareness, ballistic reinforcements to the visor, extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."
+	icon_state = "argmkvi"
+	item_state = "argmkvi"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
+/obj/item/clothing/head/droptrooper/custompahelmet
+	name = "Custom fitted MidWestern B.O.S helmet"
+	desc = "A custom fitted B.O.S themed helmet. Fitted to resemble that of medium ballistic helmets."
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+	var/requires_training = FALSE
+
+/obj/item/clothing/head/droptrooper/arghelmet/two
+	name = "ARG ARES Helmet"
+	desc = "ARES, meaning Armor - Research Enhancement Suite, is an extensively modified and computerized rendition of the M-87 'Odin' assault helmet. An additional camera has been added to the faceplate to give the user better depth perception, as well as the ability to broadcast video feed through encrypted channels. The heads-up display within the helmet now includes simple user biometrics and an analysis mode, giving real-time updates concerning objects and creatures in view of the cameras. It has extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."
+	icon_state = "arggungnir"
+	item_state = "arggungnir"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
 
 /obj/item/clothing/head/kevlarhelmet/steelfrench
 	name = "French Adrian helmet"
@@ -633,8 +740,8 @@
 	icon_state = "unmch"
 	item_state = "unmch"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -643,8 +750,8 @@
 	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	icon_state = "custominfil"
 	item_state = "custominfil"
 
@@ -662,8 +769,8 @@
 	icon_state = "rhazhelm"
 	item_state = "rhazhelm"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_ENV_T4) 
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -673,8 +780,8 @@
 	icon_state = "usainfilhelm"
 	item_state = "usainfilhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -684,8 +791,8 @@
 	icon_state = "chinastealthhelm"
 	item_state = "chinastealthhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -695,10 +802,68 @@
 	icon_state = "unmcwh"
 	item_state = "unmcwh"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 , ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/blbandit
+	name = "bandit mask"
+	desc = "A modified hockey mask sporting an in-built set of goggles."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "banditmask"
+	item_state = "banditmask"
+	flags_inv = HIDESNOUT
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/head/helmet/blpsycho
+	name = "psycho mask"
+	desc = "A hockey mask with an upside down, golden 'V' painted on the front."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "psychomask"
+	item_state = "psychomask"
+	flags_inv = HIDESNOUT
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/head/helmet/borderlandshelm
+	name = "borderlands helmet template"
+	desc = "If you're seeing this, something has gone horribly wrong."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEMASK | HIDEEYES | HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
+	armor = ARMOR_VALUE_MEDIUM
+
+/obj/item/clothing/head/helmet/borderlandshelm/bandit
+	name = "bandit helmet"
+	desc = "A standard helmet that entirely covers the wearer's head. This one comes in a deep red and navy blue."
+	icon_state = "bandithelm"
+	item_state = "bandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/banditv
+	name = "looter bandit helmet"
+	desc = "A red and blue helmet sporting an upside down, silver 'V' on the front."
+	icon_state = "vbandithelm"
+	item_state = "vbandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/banditstripe
+	name = "striped bandit helmet"
+	desc = "A red and blue helmet with a silver stripe running down the center."
+	icon_state = "stripebandithelm"
+	item_state = "stripebandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/merc
+	name = "mercenary helmet"
+	desc = "A professional-looking helmet that completely covers the head."
+	icon_state = "merchelm"
+	item_state = "merchelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/promerc
+	name = "professional mercenary helmet"
+	desc = "A tactical-looking, matte black helmet -- complete with red visors!"
+	icon_state = "promerchelm"
+	item_state = "promerchelm"
 
 /obj/item/clothing/head/helmet/bluetaghelm
 	name = "blue laser tag helmet"

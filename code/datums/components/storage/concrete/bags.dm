@@ -72,6 +72,16 @@
 	can_hold = typecacheof(list(/obj/item/ammo_casing))
 	cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
 
+/datum/component/storage/concrete/bag/casing/get_quickempty_list()
+	var/list/insides = contents()
+	var/list/empties = list()
+	for(var/obj/item/ammo_casing/AC in insides)
+		if(!AC.BB)
+			empties += AC
+	if(LAZYLEN(empties))
+		return empties
+	return insides
+
 /// Quiver
 /datum/component/storage/concrete/bag/quiver
 	max_items = STORAGE_QUIVER_MAX_ITEMS
@@ -83,9 +93,13 @@
 
 /datum/component/storage/concrete/bag/quiver/Initialize()
 	. = ..()
-	can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	can_hold = typecacheof(list(
+		/obj/item/ammo_casing/caseless/arrow,
+		/obj/item/arrow_shaft,
+		/obj/item/stack/arrowhead,
+	))
 
-/datum/component/storage/concrete/bag/light_quiver //12 tiny arrows, 6 small, 4 normal
+/datum/component/storage/concrete/bag/quiver/light_quiver //12 tiny arrows, 6 small, 4 normal
 	max_items = STORAGE_QUIVER_LIGHT_MAX_ITEMS
 	max_w_class = STORAGE_QUIVER_LIGHT_MAX_SIZE
 	max_combined_w_class = STORAGE_QUIVER_LIGHT_TOTAL_SPACE
@@ -93,7 +107,7 @@
 	display_numerical_stacking = TRUE
 	limited_random_access = FALSE
 
-/datum/component/storage/concrete/bag/heavy_quiver //lots o arrows
+/datum/component/storage/concrete/bag/quiver/heavy_quiver //lots o arrows
 	max_items = STORAGE_QUIVER_HEAVY_MAX_ITEMS
 	max_w_class = STORAGE_QUIVER_HEAVY_MAX_SIZE
 	max_combined_w_class = STORAGE_QUIVER_HEAVY_TOTAL_SPACE

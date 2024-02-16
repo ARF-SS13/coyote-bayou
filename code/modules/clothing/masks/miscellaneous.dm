@@ -252,7 +252,7 @@
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_WEAR_MASK) == src))
+		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_MASK) == src))
 			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
 			return
 	if(slot_flags & INV_SLOTBIT_HEAD)
@@ -401,18 +401,21 @@
 
 //NCR Facewrap
 
-/obj/item/clothing/mask/ncr_facewrap
+/obj/item/clothing/mask/ncr_facewrap 
 	name = "desert facewrap"
 	desc = "A facewrap commonly employed by NCR troops in desert environments."
 	icon_state = "ncr_facewrap"
 	w_class = WEIGHT_CLASS_TINY
-	flags_inv = HIDEFACE
+	flags_inv = HIDEMASK|HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEMASK|HIDEFACE
 	visor_flags_cover = MASKCOVERSMOUTH
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.01
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 	actions_types = list(/datum/action/item_action/adjust)
+
+
 
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
@@ -493,3 +496,15 @@
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/kitsune
+	name = "kitsune mask"
+	desc = "A mask made of plastic and paint."
+	icon_state = "whitekitsunemask"
+	item_state = "whitekitsunemask"
+
+/obj/item/clothing/mask/kitsune/black
+	name = "kitsune mask - black"
+	desc = "A mask made of plastic and paint."
+	icon_state = "blackkitsunemask"
+	item_state = "blackkitsunemask"

@@ -10,8 +10,13 @@
 /obj/effect/decal/cleanable/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
 	LAZYINITLIST(blood_DNA) //Kinda needed
-	if (random_icon_states && (icon_state == initial(icon_state)) && length(random_icon_states) > 0)
-		icon_state = pick(random_icon_states)
+	SSlistbank.catalogue_cleanable_states(src, random_icon_states)
+	if(LAZYLEN(random_icon_states))
+		random_icon_states.Cut()
+		random_icon_states = null
+	var/list/my_images = SSlistbank.get_cleanable_states(src)
+	if (my_images && (icon_state == initial(icon_state)) && length(my_images) > 0)
+		icon_state = pick(my_images)
 	create_reagents(300, NONE, NO_REAGENTS_VALUE)
 	/*if(loc && isturf(loc))
 		for(var/obj/effect/decal/cleanable/C in loc)
@@ -76,7 +81,7 @@
 
 
 //Add "bloodiness" of this blood's type, to the human's shoes
-//This is on /cleanable because fuck this ancient mess
+//This is on /cleanable because fork this ancient mess
 /obj/effect/decal/cleanable/proc/on_entered(atom/movable/O)
 	SIGNAL_HANDLER
 	if(ishuman(O))

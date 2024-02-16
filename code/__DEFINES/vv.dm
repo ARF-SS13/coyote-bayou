@@ -22,6 +22,7 @@
 #define VV_TEXT_LOCATE "Custom Reference Locate"
 #define VV_PROCCALL_RETVAL "Return Value of Proccall"
 #define VV_HK_WEAKREF_RESOLVE "weakref_resolve"
+#define VV_COLOR_MATRIX "Color Matrix"
 
 #define VV_MSG_MARKED "<br><font size='1' color='red'><b>Marked Object</b></font>"
 #define VV_MSG_EDITED "<br><font size='1' color='red'><b>Var Edited</b></font>"
@@ -94,6 +95,7 @@
 #define VV_HK_TRIGGER_EMP "empulse"
 #define VV_HK_TRIGGER_EXPLOSION "explode"
 #define VV_HK_AUTO_RENAME "auto_rename"
+#define VV_HK_EDIT_COLOR_MATRIX "edit_color_matrix"
 
 // /obj
 #define VV_HK_OSAY "osay"

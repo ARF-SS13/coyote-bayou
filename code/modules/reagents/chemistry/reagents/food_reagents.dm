@@ -25,7 +25,7 @@
 		current_cycle++
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
-	holder?.remove_reagent(type, metabolization_rate)
+	..()
 	if (canbrew)
 		if (holder?.has_reagent(/datum/reagent/medicine/spaceacillin))
 			return
@@ -296,7 +296,8 @@
 		if(isopenturf(T))
 			var/turf/open/OT = T
 			OT.MakeSlippery(wet_setting=TURF_WET_ICE, min_wet_time=100, wet_time_to_add=reac_volume SECONDS) // Is less effective in high pressure/high heat capacity environments. More effective in low pressure.
-			OT.air.set_temperature(OT.air.return_temperature() - MOLES_CELLSTANDARD*100*reac_volume/OT.air.heat_capacity()) // reduces environment temperature by 5K per unit.
+			if (OT.air)
+				OT.air.set_temperature(OT.air.return_temperature() - MOLES_CELLSTANDARD*100*reac_volume/OT.air.heat_capacity()) // reduces environment temperature by 5K per unit.
 
 /datum/reagent/consumable/condensedcapsaicin
 	name = "Condensed Capsaicin"
@@ -399,7 +400,7 @@
 	taste_description = "flowers"
 
 /datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REM, 0)
 	..()
 
 /datum/reagent/consumable/xanderjuice
@@ -422,7 +423,7 @@
 	taste_description = "plants"
 
 /datum/reagent/consumable/agavejuice/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.5*REM, 0)
 	..()
 
 /datum/reagent/consumable/ferajuice
@@ -434,7 +435,7 @@
 
 /datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
 	if(M.health > 20)
-		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-1*REM, 0)
 	..()
 
 /datum/reagent/consumable/daturajuice
@@ -473,7 +474,7 @@
 	taste_description = "nuts"
 
 /datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.5*REM, 0)
 	..()
 
 /datum/reagent/consumable/tato_juice
@@ -636,12 +637,12 @@
 	if (!istype(T))
 		return
 	T.MakeSlippery(TURF_WET_LUBE, min_wet_time = 10 SECONDS, wet_time_to_add = reac_volume*2 SECONDS)
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot)
-		var/datum/gas_mixture/lowertemp = T.return_air()
-		lowertemp.set_temperature(max( min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
-		lowertemp.react(src)
-		qdel(hotspot)
+	// var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
+	// if(hotspot)
+	// 	var/datum/gas_mixture/lowertemp = T.return_air()
+	// 	lowertemp.set_temperature(max( min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
+	// 	lowertemp.react(src)
+	// 	qdel(hotspot)
 
 /datum/reagent/consumable/enzyme
 	name = "Universal Enzyme"

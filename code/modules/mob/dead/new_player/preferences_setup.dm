@@ -43,6 +43,7 @@
 
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy()
+	mannequin.cut_overlays()  //this line needs to stay here to cut out all genitals showing up in the character preview
 	// Apply the Dummy's preview background first so we properly layer everything else on top of it.
 	mannequin.add_overlay(mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', bgstate, layer = SPACE_LAYER))
 	copy_to(mannequin, initial_spawn = TRUE)
@@ -56,8 +57,8 @@
 			previewJob.equip(mannequin, TRUE, preference_source = parent)
 
 	mannequin.regenerate_icons()
-
 	COMPILE_OVERLAYS(mannequin)
+
 	parent.show_character_previews(new /mutable_appearance(mannequin))
 	SSdummy.return_dummy(mannequin)
 

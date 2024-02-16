@@ -62,18 +62,42 @@
 
 /obj/structure/simple_door/examine(mob/user)
 	. = ..()
+	if(padlock)
+		. += span_notice("Ctrl-Click [src] to try and lock/unlock the padlock.")
 	if(deadbolt)
 		. += span_notice("Alt-Click [src] from \the [dir2text(deadbolt.dir)] to use the bolt lock.")
 
 /obj/structure/simple_door/AltClick(mob/user)
 	. = ..()
-	if(deadbolt && isliving(user) && Adjacent(user) && !user.incapacitated())
-		if(get_dir(src,user) != deadbolt.dir)
-			to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
-		else
-			deadbolt.ToggleLock(user)
-			do_squish(0.9,0.9,0.25 SECONDS)
-			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
+	if(isliving(user) && istype(deadbolt))
+		var/mob/living/L = user
+		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
+			if(get_dir(src,user) != deadbolt.dir)
+				to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
+			else
+				deadbolt.ToggleLock(user)
+				do_squish(0.9,0.9,0.25 SECONDS)
+				playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
+
+/obj/structure/simple_door/CtrlClick(mob/user)
+	. = ..()
+	if(isliving(user) && istype(padlock))
+		var/mob/living/L = user
+		if(L?.mobility_flags & MOBILITY_USE && L.Adjacent(src))
+			var/obj/item/key/K
+			var/foundit
+			for(var/maybekey in L) //Search two layers deep for a matching key
+				if(istype(maybekey, /obj/item/key))
+					K = maybekey
+				else for(var/maybekey2 in maybekey)
+					if(istype(maybekey2, /obj/item/key))
+						K = maybekey2
+				if(K?.lock_data == padlock?.lock_data)
+					attackby(K, L)
+					foundit = TRUE
+					break
+			if(!foundit) //We can't find it :(
+				to_chat(L, span_warning("You can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
@@ -332,6 +356,9 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
+obj/structure/simple_door/house/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
 // cleaned and repainted white
 /obj/structure/simple_door/house/clean
 	icon_state = "houseclean"
@@ -344,12 +371,17 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 /obj/structure/simple_door/interior
 	icon_state = "interior"
 	door_type = "interior"
 	can_disasemble = 1
 	can_have_lock = TRUE
+
+/obj/structure/simple_door/interior/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 //Example wide doors with terrible sprites but you get the idea
 /obj/structure/simple_door/twowide_example
@@ -378,6 +410,9 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/room/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
 /obj/structure/simple_door/room/dirty
 	icon_state = "room_d"
 	door_type = "room_d"
@@ -390,6 +425,8 @@
 	door_type = "room_repaired"
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/repaired/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 // ---------------------------------------------
 //	TENT FLAPS
@@ -438,6 +475,10 @@
 	close_sound = "sound/f13machines/doorstore_close.ogg"
 	explosion_block = 1.5
 	material_count = 5
+	can_have_lock = TRUE
+
+/obj/structure/simple_door/metal/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
 
 /obj/structure/simple_door/metal/iron
 	name = "iron door"
@@ -468,6 +509,9 @@
 	door_type = "dirtyglass"
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/dirtyglass/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_GLASS, -10, 5)
+
 /obj/structure/simple_door/brokenglass
 	name = "shattered glass door"
 	desc = "It still opens and closes."
@@ -477,6 +521,9 @@
 	base_opacity = FALSE
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/brokenglass/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
 /obj/structure/simple_door/glass
 	desc = "The glass is quite clean, someone took care of this door."
 	icon_state = "glass"
@@ -485,12 +532,17 @@
 	base_opacity = FALSE
 	can_have_lock = TRUE
 
+/obj/structure/simple_door/glass/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_GLASS, -10, 5)
 
 /obj/structure/simple_door/metal/dirtystore
 	desc = "A metal door with dirty glass, you can't see a thing behind it."
 	icon_state = "dirtystore"
 	door_type = "dirtystore"
 	can_have_lock = TRUE
+
+/obj/structure/simple_door/metal/dirtystore/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_GLASS, -10, 5)
 
 /obj/structure/simple_door/metal/store
 	icon_state = "store"
@@ -561,6 +613,9 @@
 	opening_time = 30
 	closing_time = 20
 
+/obj/structure/simple_door/blast/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /obj/structure/simple_door/bunker
 	name = "airlock"
 	desc = "An olive green painted airlock.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
@@ -570,6 +625,9 @@
 	open_sound = "sound/f13machines/doorairlock_open.ogg"
 	close_sound = "sound/f13machines/doorairlock_close.ogg"
 	explosion_block = 5
+
+/obj/structure/simple_door/bunker/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
 
 /obj/structure/simple_door/bunker/glass
 	desc = "A olive green painted armored door with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an elecrtic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."

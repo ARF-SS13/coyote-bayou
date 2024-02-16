@@ -281,7 +281,11 @@
 /proc/trim(text, max_length)
 	if(max_length)
 		text = copytext_char(text, 1, max_length)
+	#if DM_VERSION >= 515
+	return trimtext(text)
+	#else
 	return trim_left(trim_right(text))
+	#endif
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t as text)
@@ -347,6 +351,10 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 GLOBAL_LIST_INIT(hex_muted, list("0","1","2","3"))
 GLOBAL_LIST_INIT(hex_muted2, list("2","3"))
 GLOBAL_LIST_INIT(hex_muted3, list("0","2"))
+/// Random hex digit between 6 and 9
+GLOBAL_LIST_INIT(hex_6to9, list("6","7","8","9"))
+/// Random hex digit from 6 to c
+GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 /proc/random_string(length, list/characters)
 	. = ""
 	for(var/i=1, i<=length, i++)
@@ -841,3 +849,36 @@ GLOBAL_LIST_INIT(hex_muted3, list("0","2"))
 	if(prob(15))
 		corrupted_text += pick(corruption_options)
 	return corrupted_text
+
+///Adds alternating colors to a string based on the delimiter. start_odd should be 1 or 0
+/proc/alternating_color_span(text,color,delimiter,start_odd)
+	var/list/splitmsg = splittext(html_decode(text), delimiter)
+	var/initlen = splitmsg.len
+	if(initlen < 2)
+		if(start_odd)
+			return span_color(text, color)
+		else
+			return text
+
+	var/idx = 1
+	var/msgedit = ""
+
+	for(var/section in splitmsg)
+		if(idx % 2 != start_odd)
+			msgedit += section
+			idx++
+			continue
+		msgedit += span_color("\"[section]\"", color)
+		idx++
+
+	return msgedit
+
+///change text color of keywords in a string.
+/proc/color_keyword(text, color, keyword)
+	return replacetext(text, keyword, span_color(keyword, color))
+
+///does both of above, for chat log coloring of player messages.
+/proc/color_for_chatlog(text, color, name)
+	var/out = color_keyword(text, color, name)
+	out = alternating_color_span(out, color, "\"", FALSE)
+	return out

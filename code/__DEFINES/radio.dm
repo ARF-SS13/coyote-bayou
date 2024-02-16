@@ -69,7 +69,7 @@
 #define RADIO_KEY_ENCLAVE "z"
 #define RADIO_TOKEN_ENCLAVE ":z"
 
-#define RADIO_CHANNEL_TOWN "Nash"
+#define RADIO_CHANNEL_TOWN "New Boston"
 #define RADIO_KEY_TOWN "f"
 #define RADIO_TOKEN_TOWN ":f"
 
@@ -237,6 +237,11 @@
 #define MODE_MONKEY "monkeyhive"
 
 #define MODE_SING "%"
+
+#define MODE_SAY "say"
+#define MODE_ASK "ask"
+#define MODE_EXCLAIM "exclaim"
+#define MODE_YELL "yell"
 
 GLOBAL_LIST_INIT(radiochannels, list(
 	RADIO_CHANNEL_COMMON = FREQ_COMMON,

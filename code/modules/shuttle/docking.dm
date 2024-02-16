@@ -209,5 +209,5 @@
 	var/list/turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to length(turfs))
 		var/turf/open/T = turfs[i]
-		if(istype(T))
+		if(istype(T) && T.air)
 			T.air.copy_from_turf(T)

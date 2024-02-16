@@ -132,6 +132,9 @@
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
 			if(!(. & NO_AUTO_CLICKDELAY_HANDLING) && ismob(A))
+				// from huntinghorn.dm and huntinghorneffects.dm
+				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(20))
+					return
 				DelayNextAction(CLICK_CD_MELEE)
 			return
 
@@ -161,6 +164,9 @@
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
 			if(!(. & NO_AUTO_CLICKDELAY_HANDLING) && ismob(A))
+				// from huntinghorn.dm and huntinghorneffects.dm
+				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(20))
+					return
 				DelayNextAction(CLICK_CD_MELEE)
 			return
 	else
@@ -354,8 +360,10 @@
 	Unused except for AI
 */
 /mob/proc/CtrlShiftClickOn(atom/A)
+	. = SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT, A)
+	if(. & COMSIG_MOB_CANCEL_CLICKON)
+		return
 	A.CtrlShiftClick(src)
-	return
 
 /mob/proc/ShiftMiddleClickOn(atom/A)
 	src.pointed(A)

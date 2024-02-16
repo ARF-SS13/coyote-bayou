@@ -25,6 +25,8 @@
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
 	unbreakable = 0
 
+/turf/closed/wall/f13/ruins/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
 
 /turf/closed/wall/f13/wood
 	name = "wooden wall"
@@ -39,7 +41,10 @@
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
 	girder_type = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+
+/turf/closed/wall/f13/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
@@ -222,6 +227,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
+/turf/closed/wall/r_wall/f13vault/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 //Sunset custom walls
 
 /turf/closed/wall/f13/sunset/brick_small
@@ -313,9 +321,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	update_icon()
 	var/dat
 	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], simple animal [departing_mob.type], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else
@@ -331,6 +339,12 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
 	else
 		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
+	
+	if(departing_mob.client.is_in_game >= 1)
+		// if(departing_mob.client.is_in_game == 2)
+		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
+		departing_mob.client.is_in_game = 0
+	
 	departing_mob.despawn()
 
 

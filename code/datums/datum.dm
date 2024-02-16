@@ -75,6 +75,9 @@
 	//var/last_find_references = 0
 #endif
 
+	/// for list cataloguery, will be a number between 1 and 1000000 if its supposed to have unique list entries
+	var/thing_id
+
 /**
  * Called when a href for this datum is clicked
  *

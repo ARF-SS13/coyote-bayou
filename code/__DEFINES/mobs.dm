@@ -44,11 +44,11 @@
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
-#define BLOOD_REFILL_NUTRITION_FAT 5 // Eat a lot for quicker blood regen!
+#define BLOOD_REFILL_NUTRITION_FAT 3 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 3
+#define BLOOD_REFILL_NUTRITION_FULL 2.5
 /// Nutrition spent for being well fed
-#define BLOOD_REFILL_NUTRITION_WELL_FED 2
+#define BLOOD_REFILL_NUTRITION_WELL_FED 1.5
 /// Nutrition spent for being fed
 #define BLOOD_REFILL_NUTRITION_FED 1
 /// Nutrition spent for being hungie
@@ -198,6 +198,7 @@
 #define MOB_REPTILE		(1 << 8)
 #define MOB_SPIRIT		(1 << 9)
 #define MOB_INORGANIC 	(1 << 10)
+#define MOB_FERAL		(1 << 11)
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
@@ -218,6 +219,7 @@
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
+#define FERAL_BODYPART "feral"
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
 // Health/damage defines for carbon mobs
@@ -435,13 +437,19 @@
 #define PIXELSHIFT_MIN		-12	//more shifted you can be
 #define PIXELSHIFT_MAX		12	//most shifted you can be
 #define AGE_MIN				18	//youngest a character can be //CITADEL EDIT - 17 --> 18
-#define AGE_MAX				85	//oldest a character can be
+#define AGE_MAX				999999999	// If I see one fucking loli dragon I am fucking exploding you people.
 #define WIZARD_AGE_MIN		30	//youngest a wizard can be
 #define APPRENTICE_AGE_MIN	29	//youngest an apprentice can be
 #define SHOES_SLOWDOWN		0	//How much shoes slow you down by default. Negative values speed you up
 #define SHOES_SPEED_SLIGHT  SHOES_SLOWDOWN - 1 // slightest speed boost to movement
 #define POCKET_STRIP_DELAY			40	//time taken (in deciseconds) to search somebody's pockets
 #define DOOR_CRUSH_DAMAGE	15	//the amount of damage that airlocks deal when they crush you
+#define WADDLE_MIN		0//waddling animation min/maxes for character creation
+#define WADDLE_MAX		6
+#define UP_WADDLE_MIN	0
+#define UP_WADDLE_MAX	3
+#define SIDE_WADDLE_MIN	0
+#define SIDE_WADDLE_MAX	4
 
 #define	HUNGER_FACTOR		0.1	//factor at which mob nutrition decreases
 #define	ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases
@@ -554,7 +562,7 @@
 /// Varied speed list
 #define MOB_SPEED_LIST(x...) MOB_VARIED_SPEED = list(x)
 /// Varied speed list chance
-#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED = x
+#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED_CHANCE = x
 
 /// Varied health define
 #define MOB_VARIED_HEALTH "varied_health"

@@ -231,6 +231,10 @@
 	name = "Dreadlocks"
 	icon_state = "hair_dreads"
 
+/datum/sprite_accessory/hair/dreadlocksalt
+	name = "Dreadlocks Alt"
+	icon_state = "hair_dreadsalt"
+
 /datum/sprite_accessory/hair/drillhair
 	name = "Drill Hair"
 	icon_state = "hair_drillhair"
@@ -429,6 +433,10 @@
 	name = "Long Hair 4"
 	icon_state = "hair_longeralt"
 
+/datum/sprite_accessory/hair/long5
+	name = "Long Hair 5"
+	icon_state = "hair_long5"
+
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"
 	icon_state = "hair_longovereye"
@@ -501,6 +509,10 @@
 /datum/sprite_accessory/hair/newyou
 	name = "New You"
 	icon_state = "hair_newyou"
+
+/datum/sprite_accessory/hair/newyoualt
+	name = "New You alt"
+	icon_state = "hair_newyoualt"
 
 /datum/sprite_accessory/hair/nia
 	name = "Nia"
@@ -643,6 +655,10 @@
 /datum/sprite_accessory/hair/spikytail
 	name = "Ponytail (Spiky)"
 	icon_state = "hair_spikyponytail"
+
+/datum/sprite_accessory/hair/spikytailalt
+	name = "Ponytail (Spiky) alt"
+	icon_state = "hair_spikyponytailalt"
 
 /datum/sprite_accessory/hair/supernova
 	name = "Supernova"
@@ -846,6 +862,11 @@
 	name = "Volaju"
 	icon_state = "hair_volaju"
 
+
+/datum/sprite_accessory/hair/volajualt
+	name = "Volaju (ears)"
+	icon_state = "hair_volajualt"
+
 /datum/sprite_accessory/hair/volajupompless
 	name = "Volaju (Alt)"
 	icon_state = "hair_volajupompless"
@@ -1013,6 +1034,10 @@
 /datum/sprite_accessory/hair/astolfo
 	name = "Astolfo"
 	icon_state = "hair_astolfo"
+
+/datum/sprite_accessory/hair/astolfonobow
+	name = "Astolfo - No Bow"
+	icon_state = "hair_astolfonobow"
 
 /datum/sprite_accessory/hair/afropuffdouble
 	name = "Afro Puff Double"

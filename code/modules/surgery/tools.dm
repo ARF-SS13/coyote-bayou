@@ -111,6 +111,12 @@
 		return
 	return ..()
 
+/obj/item/cautery/primitive
+	name = "primitive cautery"
+	desc = "A welding device tuned down to cauterize wounds. Not very precise."
+	icon_state = "cautery_primitive"
+	toolspeed = 1.5
+
 /obj/item/cautery/augment
 	name = "cautery"
 	desc = "A heated element that cauterizes wounds."

@@ -43,3 +43,5 @@
 #define WEIGHT_CLASS_HUGE     5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
+
+#define ALLOW_ARTIFACT_STUFF (1 << 0)

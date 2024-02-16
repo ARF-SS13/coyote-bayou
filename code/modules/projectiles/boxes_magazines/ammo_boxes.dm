@@ -135,6 +135,61 @@
 	desc = "A box of .22 ratshot rounds."
 	ammo_type = /obj/item/ammo_casing/a22/ratshot
 
+
+//needle ammo
+
+/obj/item/ammo_box/needlercapsule
+	name = "Capsule full of needles"
+	icon_state = "needlecapsule"
+	desc = "A capsule filled to the brim with needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	multiple_sprites = 2
+	max_ammo = 72
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
+/obj/item/ammo_box/needlercapsule/handloaded
+	name = "Capsule full of jade needles"
+	icon_state = "needleimprov"
+	desc = "A capsule filled to the brim with needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/improvised
+	caliber = list(CALIBER_NEEDLE)
+	multiple_sprites = 2
+	max_ammo = 72
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
+/obj/item/ammo_box/needlercapsule/shotgun
+	name = "Capsule full of crystal needles"
+	icon_state = "needlerbox"
+	desc = "A Box filled with crystal needles"
+	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
+	caliber = list(CALIBER_SHOTGUNNEEDLER)
+	multiple_sprites = 2
+	max_ammo = 24
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
+/obj/item/ammo_box/needlercapsule/heavy //compensates 4 whole mags of the needler shoulder mount, requires much more resources to make per box.
+	name = "Capsule full of heavy ruby needles"
+	icon_state = "heavyneedles"
+	desc = "A capsule filled with heavy duty ruby needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
+	caliber = list(CALIBER_HNEEDLE)
+	multiple_sprites = 2
+	max_ammo = 12
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -272,7 +327,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_44)
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 20
+	max_ammo = 21
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
@@ -299,6 +354,7 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a45lcbox/improvised
 	name = "bag with reloaded .45 Long Colt bullets"
@@ -1080,7 +1136,7 @@
 
 //.50 BMG
 /obj/item/ammo_box/a50MG
-	name = "anti-materiel ammo rack (.50MG)"
+	name = "anti-material ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
@@ -1092,7 +1148,7 @@
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a50MG/incendiary
-	name = "anti-materiel incendiary ammo rack (.50MG)"
+	name = "anti-material incendiary ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead... and also on fire."
 	icon_state = "50in"
 	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
@@ -1101,7 +1157,7 @@
 
 
 /obj/item/ammo_box/a50MG/explosive
-	name = "anti-materiel explosive ammo rack (.50MG)"
+	name = "anti-material explosive ammo rack (.50MG)"
 	desc = "5 rounds of explosive .50 MG. More then enough to kill anything that moves."
 	icon_state = "50ex"
 	ammo_type = /obj/item/ammo_casing/a50MG/explosive
@@ -1109,14 +1165,14 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_box/a50MG/penetrator
-	name = "anti-materiel penetrator ammo rack (.50MG)"
+	name = "anti-material penetrator ammo rack (.50MG)"
 	desc = "5 rounds of penetrator .50 MG, when you really want something dead and it's on the other side of a wall."
 	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
 	icon_state = "50ap"
 
 /*
 /obj/item/ammo_box/a50MG/uraniumtipped
-	name = "anti-materiel uranium-tipped ammo rack (.50MG)"
+	name = "anti-material uranium-tipped ammo rack (.50MG)"
 	desc = "5 rounds of uranium-tipped .50 MG, when you really want something to remember what it was like back in '77.'"
 	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
 	icon_state = "50ap"
@@ -1142,7 +1198,7 @@
 
 /*
 /obj/item/ammo_box/a50MG/AP
-	name = "anti-materiel armor piercing ammo rack (.50MG)"
+	name = "anti-material armor piercing ammo rack (.50MG)"
 	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
 	icon_state = "50ap"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP

@@ -1,2427 +1,280 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ap" = (
-/obj/structure/table,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"ax" = (
-/obj/structure/junk/small/table,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"aS" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_prickly{
-	pixel_y = 6
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"aT" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain3"
-	},
-/area/f13/wasteland)
-"aU" = (
-/obj/structure/closet/cabinet,
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"bf" = (
-/obj/structure/sign/departments/medbay,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"bF" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"cc" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"ch" = (
-/obj/structure/junk/micro,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"ci" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 4;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland)
-"cl" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"cr" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/computer/terminal{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "cy" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"cz" = (
-/obj/machinery/deepfryer,
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
+/obj/structure/table/booth,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "cC" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"cU" = (
-/obj/structure/kitchenspike,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/structure/closet/cabinet,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "cV" = (
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
-"cW" = (
-/obj/structure/car/rubbish1,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland)
-"cY" = (
-/obj/structure/dresser,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"dj" = (
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "dx" = (
-/obj/structure/table/wood/fancy,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"dV" = (
-/obj/structure/chair/comfy{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"dZ" = (
-/obj/structure/fence,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"el" = (
-/obj/structure/bed,
-/turf/open/floor/f13/wood,
+/obj/structure/table/wood,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "ex" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/vending/bigredvend,
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	dir = 4;
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
+/obj/structure/bed{
+	pixel_y = 12
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/obj/structure/bed,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "ez" = (
-/obj/machinery/smartfridge/bottlerack/grownbin,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"eD" = (
-/obj/machinery/processor,
-/obj/machinery/light/broken{
-	dir = 8
+/obj/structure/chair/sofa/right{
+	dir = 1
 	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "eF" = (
-/obj/structure/chair/left{
-	dir = 1
+/obj/structure/campfire/stove{
+	pixel_y = 10
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"eK" = (
-/obj/machinery/vending/cola/space_up,
-/obj/machinery/light/broken{
-	dir = 4
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "eQ" = (
-/obj/machinery/light/small,
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"ff" = (
-/obj/machinery/vending/cola/starkist,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"fj" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
+/obj/structure/closet/crate/footchest,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "fm" = (
-/obj/structure/fence/door,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"fp" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"fs" = (
-/obj/structure/bookcase,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"fw" = (
-/obj/structure/chair/wood,
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	dir = 1;
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"fx" = (
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"fz" = (
-/obj/structure/decoration/clock/old/active,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"fH" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"fL" = (
-/obj/machinery/iv_drip{
-	pixel_y = 15
-	},
-/obj/structure/closet/crate/freezer/blood{
-	anchored = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"fS" = (
-/obj/structure/chair/f13chair1{
-	pixel_x = -3
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"fW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"gk" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
+/obj/structure/closet/cabinet,
+/turf/open/floor/carpet/royalblue,
 /area/f13/wasteland)
 "gn" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"go" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/window{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redmark"
-	},
-/area/f13/wasteland)
-"gq" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"gt" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"gv" = (
-/obj/effect/overlay/junk/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"gz" = (
-/obj/structure/decoration/clock/old/active,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"gY" = (
-/obj/structure/junk/small,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"ha" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/structure/closet/crate/wooden,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "hl" = (
-/obj/structure/bed,
-/obj/machinery/light/small/broken{
-	dir = 4
+/obj/structure/chair/booth{
+	dir = 8
 	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"hv" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"hx" = (
-/obj/effect/overlay/junk/sink{
-	pixel_y = 15
-	},
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"hD" = (
-/obj/structure/sink/well{
-	pixel_y = -26
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"hF" = (
-/obj/structure/rack,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"hI" = (
-/obj/structure/table/wood,
-/obj/machinery/recharger{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"hL" = (
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"ii" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "ij" = (
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"iu" = (
-/obj/structure/junk/small/table,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "iC" = (
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/area/f13/wasteland)
-"iF" = (
-/obj/structure/junk/small/bed2,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"iI" = (
-/obj/structure/chair/sofa/right{
-	color = "#475340"
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"jb" = (
-/obj/structure/closet/fridge,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"ji" = (
-/obj/machinery/light/small/broken,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "jL" = (
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"jQ" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain2top"
-	},
-/area/f13/wasteland)
-"jR" = (
-/obj/structure/sink/kitchen{
-	dir = 8;
-	pixel_x = 12
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"kg" = (
-/obj/machinery/light/small{
+/obj/structure/chair/booth{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"kh" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 10;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland)
-"ki" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_yucca{
-	pixel_y = 7
-	},
-/obj/machinery/light/small,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"kk" = (
-/obj/machinery/vending/dinnerware,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"km" = (
-/obj/structure/table/booth,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"kA" = (
-/obj/structure/reagent_dispensers/compostbin,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"kM" = (
-/obj/machinery/smartfridge/bottlerack/gardentool,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"kW" = (
-/obj/effect/overlay/junk/toilet{
-	dir = 4;
-	layer = 2.9
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "ld" = (
-/obj/structure/junk/drawer{
-	pixel_y = 10
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"lu" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -10
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"lU" = (
-/obj/machinery/light/small/broken{
+/obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"lW" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"lY" = (
-/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+	icon_state = "oakfloor1"
 	},
-/area/f13/wasteland)
-"mh" = (
-/obj/structure/junk/small/table,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
-	},
-/area/f13/wasteland)
-"mF" = (
-/obj/item/bedsheet/medical{
-	dir = 1
-	},
-/obj/structure/bed,
-/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "mK" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"mN" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_xander{
-	pixel_y = 0
-	},
 /obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"mO" = (
-/obj/structure/dresser,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"mZ" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redmark"
-	},
-/area/f13/wasteland)
-"nb" = (
-/obj/machinery/shower{
 	dir = 8
 	},
-/obj/structure/decoration/vent,
-/obj/structure/curtain,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/structure/table/booth,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
-"nf" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"ni" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"nn" = (
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"nu" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"nv" = (
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"nI" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"nZ" = (
-/obj/structure/table,
-/obj/machinery/processor/chopping_block,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"oe" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 8;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland)
-"oM" = (
-/obj/machinery/biogenerator,
+"pm" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"oX" = (
-/obj/structure/closet/crate{
-	anchored = 1;
-	can_be_unanchored = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"pm" = (
-/obj/structure/curtain,
-/obj/effect/overlay/junk/shower{
-	dir = 1
-	},
-/obj/structure/decoration/vent/rusty{
-	desc = "It's very old and rusty.";
-	name = "rusty grate";
-	pixel_x = -2;
-	pixel_y = -3
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"pu" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"pB" = (
-/obj/structure/decoration/clock/old/active,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"pO" = (
-/obj/structure/closet/fridge,
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "qq" = (
-/obj/structure/junk/small/bed,
+/obj/structure/chair/booth,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/wasteland)
-"qu" = (
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"qK" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain2"
-	},
-/area/f13/wasteland)
-"qV" = (
-/obj/structure/filingcabinet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"rk" = (
-/obj/structure/closet/fridge,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"rA" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "rC" = (
-/obj/structure/simple_door/house,
-/turf/open/floor/wood_common,
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/turf/open/floor/carpet/royalblue,
 /area/f13/wasteland)
 "rH" = (
-/obj/structure/table/wood/fancy,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"rV" = (
-/obj/structure/decoration/clock{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"sc" = (
-/obj/machinery/reagentgrinder,
 /obj/structure/table,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "sg" = (
 /turf/open/floor/carpet/black,
 /area/f13/wasteland)
-"sA" = (
-/obj/machinery/hydroponics/soil/orange,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"sC" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"sI" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"sJ" = (
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"sN" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"sR" = (
-/obj/machinery/smartfridge/bottlerack/gardentool,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
-	},
-/area/f13/wasteland)
-"sT" = (
-/obj/structure/junk/cabinet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"sY" = (
-/obj/structure/closet/fridge/standard{
-	anchored = 1
-	},
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	dir = 1;
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"tb" = (
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"te" = (
-/obj/structure/dresser{
-	pixel_y = 10
-	},
-/obj/structure/mirror{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"tw" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"tA" = (
-/obj/structure/window/fulltile/ruins,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
-"tI" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_coyote{
-	pixel_y = 7;
-	pixel_x = -1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"tR" = (
-/obj/structure/table/wood,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"tT" = (
-/obj/structure/table,
-/obj/machinery/processor/chopping_block,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"tX" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/wasteland)
-"um" = (
-/obj/structure/chair/right{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"up" = (
-/obj/structure/curtain,
-/obj/structure/decoration/vent,
-/obj/machinery/shower{
-	pixel_y = 18
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"ux" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 6;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland)
-"uB" = (
-/obj/structure/table,
-/obj/structure/bedsheetbin/towel,
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"uF" = (
-/obj/structure/junk/cabinet{
-	pixel_y = 10
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/wasteland)
-"uI" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"uJ" = (
-/obj/structure/chair/stool/retro/backed{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"uS" = (
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"uT" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"uX" = (
-/obj/structure/table/booth,
-/obj/machinery/chem_dispenser/drinks{
-	dir = 8;
-	pixel_x = -8
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"uY" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 10
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"uZ" = (
-/obj/structure/window/fulltile/ruins{
-	icon_state = "ruinswindowvertical"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
-"vb" = (
-/obj/structure/table/wood,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"vg" = (
-/obj/structure/chair/comfy,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"vi" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"vk" = (
-/obj/structure/table/wood,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"vC" = (
-/obj/item/bedsheet/medical{
-	dir = 1;
-	pixel_y = 15
-	},
-/obj/structure/bed{
-	pixel_y = 15
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"vN" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"vU" = (
-/obj/structure/guncase{
-	pixel_y = 10
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "vZ" = (
-/obj/structure/closet/cabinet,
-/obj/machinery/light/small/broken{
-	dir = 1
+/obj/structure/campfire/stove{
+	pixel_y = 10;
+	pixel_x = -9
 	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"wc" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_pinyon{
-	pixel_y = 7;
-	pixel_x = -1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"wi" = (
-/obj/structure/legion_extractor,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
-	},
-/area/f13/wasteland)
-"wk" = (
-/obj/structure/chair/sofa/left{
-	color = "#475340"
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"wu" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"wx" = (
-/obj/structure/junk/small/tv,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"wz" = (
-/obj/machinery/smartfridge/bottlerack,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"wD" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical"
-	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "wF" = (
-/obj/structure/closet/fridge,
-/obj/machinery/light/small/broken{
-	dir = 1
+/obj/structure/closet/crate/wicker,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"wJ" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/rack,
-/turf/open/floor/wood_common,
 /area/f13/wasteland)
 "wP" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 23
-	},
-/obj/structure/table/optable,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"wQ" = (
-/obj/structure/fence/corner{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"wX" = (
-/obj/machinery/light/broken{
+/obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"xa" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"xb" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/wasteland)
-"xf" = (
-/turf/open/floor/plasteel/f13/vault_floor/blue,
+/turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "xv" = (
 /obj/structure/bed{
-	pixel_y = 15
+	pixel_y = 12
 	},
 /obj/structure/bed,
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/effect/spawner/lootdrop/bedsheet{
-	pixel_y = 16
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"xA" = (
-/obj/structure/closet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"xE" = (
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/obj/structure/mirror{
-	pixel_y = 32
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"xH" = (
-/obj/structure/closet/crate,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"xN" = (
-/obj/machinery/light/small,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"xR" = (
-/obj/structure/chair/sofa/right{
-	color = "#475340";
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"yb" = (
-/obj/structure/sink/well,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"yc" = (
-/obj/structure/decoration/vent,
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"yd" = (
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"yn" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bookcase,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "yu" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"yv" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/item/clothing/under/pants/f13/ghoul,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"yC" = (
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/obj/structure/mirror{
-	pixel_y = 30
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"yF" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "yH" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"yI" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"yM" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "yO" = (
-/obj/structure/chair,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"yU" = (
-/obj/machinery/smartfridge/bottlerack/grownbin,
-/obj/machinery/light/broken{
-	pixel_x = 16
+/obj/structure/chair/booth{
+	dir = 4
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland)
-"yV" = (
-/obj/structure/table/wood,
-/obj/machinery/microwave,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"yW" = (
-/obj/machinery/smartfridge/bottlerack,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
+	icon_state = "oakfloor1"
 	},
-/area/f13/wasteland)
-"yZ" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"zk" = (
-/obj/structure/closet/crate/bin{
-	pixel_y = 10
-	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"zl" = (
-/obj/structure/fence,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"zm" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"zq" = (
-/obj/machinery/smartfridge/bottlerack/seedbin{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/structure/legion_extractor{
-	pixel_x = 13;
-	pixel_y = 8
-	},
-/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "zE" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"zQ" = (
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"zT" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"zW" = (
-/obj/structure/fence,
-/obj/structure/fence/corner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"zZ" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Am" = (
-/obj/structure/chair/right,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"Av" = (
-/obj/structure/decoration/clock/old{
-	pixel_y = 32
-	},
-/obj/structure/table/wood/settler,
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"AE" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"AG" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland)
-"AI" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
-	},
-/area/f13/wasteland)
-"AK" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"Bj" = (
-/obj/structure/barricade/bars,
-/obj/structure/window/fulltile/ruins,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"Br" = (
-/obj/machinery/light/small,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Bu" = (
-/obj/item/kirbyplants/dead{
-	desc = "It doesn't look very healthy...";
-	name = "Dead potted plant";
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"By" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/vending/cola,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"BB" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland)
-"BN" = (
-/obj/machinery/vending/medical,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"BR" = (
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
-/area/f13/wasteland)
 "Cb" = (
-/obj/structure/simple_door/house,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Cc" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Cd" = (
-/obj/structure/wreck/car/bike{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland)
-"Cm" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"Co" = (
-/obj/structure/window/fulltile/ruins{
-	icon_state = "ruinswindowvertical"
-	},
-/turf/open/floor/plating/rust,
-/area/f13/wasteland)
-"Cq" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
-	},
-/area/f13/wasteland)
-"Cr" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
+/obj/structure/curtain{
+	color = "#363636"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
 "Cu" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/wasteland)
-"CA" = (
-/obj/structure/simple_door/glass,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
-"CD" = (
-/obj/structure/window/fulltile/house,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"CL" = (
-/obj/structure/bed,
-/obj/effect/spawner/lootdrop/bedsheet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"CM" = (
-/obj/effect/overlay/junk/sink{
-	dir = 4;
-	pixel_x = 12
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"CN" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"CU" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/terminal{
-	termtag = "Business"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"CY" = (
-/obj/structure/table/wood/settler,
-/obj/item/flashlight/lamp,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Da" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"Dr" = (
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/obj/structure/mirror{
-	pixel_y = 30
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"Dt" = (
-/obj/effect/overlay/junk/toilet{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"DI" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"DJ" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "DM" = (
-/obj/structure/closet/crate/bin,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"DN" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/obj/structure/closet/cabinet,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "DU" = (
-/obj/structure/junk/micro,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"DV" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
-	},
-/area/f13/wasteland)
-"DY" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Et" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"EF" = (
-/obj/machinery/deepfryer,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"EP" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"EQ" = (
-/obj/structure/bed/old,
-/obj/effect/spawner/lootdrop/bedsheet,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Fg" = (
-/obj/structure/table,
-/obj/machinery/microwave,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Fu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bookcase,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"FI" = (
-/obj/machinery/hydroponics/soil,
-/obj/machinery/light/broken{
-	dir = 4;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"FQ" = (
-/obj/structure/junk/drawer,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Gh" = (
-/obj/machinery/smartfridge/bottlerack/seedbin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
-	},
-/area/f13/wasteland)
-"Gl" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Gr" = (
-/obj/structure/junk/drawer{
-	pixel_y = 10
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Gy" = (
-/obj/structure/chair/sofa{
-	color = "#475340"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"GM" = (
-/obj/structure/simple_door/room,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"GV" = (
-/obj/structure/toilet{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue,
-/area/f13/wasteland)
-"Hd" = (
-/obj/structure/closet/fridge,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"Ho" = (
-/obj/structure/closet/cabinet/anchored{
-	pixel_y = 10
-	},
-/obj/structure/decoration/clock/old/active{
-	pixel_y = 30
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Hq" = (
-/obj/structure/rack,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Hz" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"HA" = (
-/obj/structure/decoration/clock{
-	pixel_y = 21
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"HB" = (
-/obj/machinery/workbench,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"HM" = (
-/obj/machinery/hydroponics/soil,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube-burned";
-	light_color = "#e8eaff"
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
-"HV" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"HY" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/royalblue,
 /area/f13/wasteland)
 "Ia" = (
-/obj/machinery/light/small/broken,
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Ie" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"Ih" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"Ii" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"Iw" = (
-/obj/structure/barricade/bars,
-/obj/structure/window/fulltile/ruins{
-	icon_state = "ruinswindowvertical"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"Ix" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"IE" = (
-/obj/structure/bed,
-/obj/item/bedsheet{
-	icon_state = "sheetblue"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"IK" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"IL" = (
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"IX" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
-"IY" = (
-/obj/structure/sign/departments/examroom{
-	pixel_x = 32
-	},
-/obj/structure/table,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
+/turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "IZ" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Jd" = (
-/obj/structure/closet/crate/bin,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Jg" = (
-/obj/structure/chair/f13chair1{
-	pixel_x = -10
-	},
-/obj/structure/chair/f13chair1{
-	pixel_x = 10
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"Jk" = (
 /obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/chair/folding{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Jn" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Jo" = (
-/obj/structure/bed/mattress/pregame,
-/obj/effect/spawner/lootdrop/bedsheet,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+	icon_state = "oakfloor1"
 	},
-/area/f13/wasteland)
-"Jw" = (
-/obj/structure/chair/left{
-	dir = 1
-	},
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"JA" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"JD" = (
-/obj/structure/window/fulltile/ruins,
-/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "JN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
-"Ke" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Kr" = (
-/obj/machinery/autolathe,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"KA" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain3"
-	},
-/area/f13/wasteland)
-"KG" = (
-/obj/structure/closet/cabinet,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"KI" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"KJ" = (
-/obj/structure/sink{
-	dir = 1;
-	pixel_y = 16
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"KU" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"KW" = (
-/obj/structure/table,
-/obj/machinery/processor/chopping_block,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"KX" = (
-/obj/machinery/workbench/forge,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Lh" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "Lq" = (
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Lu" = (
-/obj/structure/chair/wood{
-	dir = 4
+/obj/structure/fireplace{
+	pixel_x = 0
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+	icon_state = "oakfloor1"
 	},
-/area/f13/wasteland)
-"LO" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"LT" = (
-/obj/structure/chair/wood,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"LW" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Mp" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Mz" = (
-/obj/structure/dresser,
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"MC" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
-	},
-/area/f13/wasteland)
-"MF" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/terminal{
-	dir = 8
-	},
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"MH" = (
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	dir = 8;
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"MO" = (
-/obj/item/kirbyplants,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/wasteland)
 "MW" = (
-/obj/structure/closet/cabinet,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Ng" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"Nk" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"NA" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland)
-"NO" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"NT" = (
-/obj/structure/sink{
-	dir = 1;
-	pixel_y = 25
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"NU" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"NW" = (
 /obj/machinery/light/small{
-	brightness = 3;
 	dir = 8
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "Od" = (
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
-"Ok" = (
-/obj/structure/closet/crate/trashcart{
-	pixel_y = 15
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland)
-"Oy" = (
-/obj/structure/reagent_dispensers/compostbin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain1"
-	},
-/area/f13/wasteland)
-"OC" = (
-/obj/structure/table,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"OE" = (
-/obj/item/bedsheet/medical{
-	pixel_y = 15
-	},
-/obj/structure/bed{
-	pixel_y = 15
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"OL" = (
-/obj/structure/chair/sofa/left{
-	color = "#475340";
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"OP" = (
-/obj/machinery/light/small,
+/obj/structure/chair/folding,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
+	icon_state = "oakfloor1"
 	},
-/area/f13/wasteland)
-"OR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/obj/structure/mirror{
-	pixel_y = 30
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"OU" = (
-/obj/structure/chair/sofa{
-	color = "#475340";
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"Pc" = (
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"Pi" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"Pn" = (
-/obj/item/kirbyplants,
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/wasteland)
 "Ps" = (
-/obj/structure/chair/wood{
-	dir = 8
+/obj/machinery/microwave/gas_stove{
+	pixel_y = 16
 	},
-/turf/open/floor/wood_common,
+/obj/structure/rug/mat{
+	layer = 0.1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "PC" = (
-/obj/structure/chair/wood,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"PE" = (
-/obj/structure/sink/well{
-	pixel_y = -5
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"PN" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/machinery/light/small,
-/obj/structure/flora/wasteplant/wild_broc{
-	pixel_y = 7
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"PS" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/computer/terminal{
-	pixel_y = 3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Qa" = (
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"Qf" = (
-/obj/structure/table/wood/settler,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Qo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bookcase,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Qv" = (
-/obj/structure/junk/drawer{
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/wasteland)
-"Qx" = (
-/obj/structure/table/wood,
-/obj/machinery/microwave,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"QE" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"QL" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"QN" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"Re" = (
-/obj/structure/junk/locker,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Ro" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"RL" = (
-/obj/structure/chair/left,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"RZ" = (
-/obj/machinery/seed_extractor,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Sa" = (
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Ss" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/wasteland)
-"St" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Sv" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_datura{
-	pixel_y = 6
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"SL" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"SV" = (
-/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
-/area/f13/wasteland)
-"SX" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Tf" = (
-/obj/structure/table/wood,
-/obj/machinery/light/small,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Tg" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 8;
-	icon_state = "innerpavementcorner"
-	},
-/area/f13/wasteland)
-"Tj" = (
-/obj/structure/chair/stool{
-	dir = 4;
-	icon_state = "bench"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Tw" = (
-/obj/structure/simple_door/wood,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
-	},
-/area/f13/wasteland)
-"TS" = (
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland)
 "TU" = (
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"TZ" = (
-/turf/open/indestructible/ground/outside/roaddirt{
-	icon_state = "innerpavementcorner"
+/obj/structure/curtain{
+	color = "#4B724F";
+	layer = 5
 	},
-/area/f13/wasteland)
-"Uy" = (
-/obj/structure/junk/small/bed,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
-	},
-/area/f13/wasteland)
-"UA" = (
-/obj/machinery/vending/cigarette,
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland)
-"UM" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain2bottom"
-	},
-/area/f13/wasteland)
-"UN" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"UQ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/wasteland)
-"UR" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/obj/structure/decoration/clock{
-	pixel_y = 30
-	},
+/obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"UV" = (
-/obj/structure/closet/fridge/meat{
-	anchored = 1
-	},
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"Vd" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain1"
-	},
-/area/f13/wasteland)
-"Ve" = (
-/obj/machinery/light,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Vh" = (
-/obj/structure/bed,
-/obj/effect/spawner/lootdrop/bedsheet,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"Vn" = (
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Vx" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"VF" = (
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/wasteplant/wild_horsenettle{
-	pixel_y = 8;
-	pixel_x = -1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"VL" = (
-/obj/structure/decoration/clock{
-	pixel_y = 30
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"VN" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/wasteland)
-"VP" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland)
-"VV" = (
-/obj/structure/closet/cabinet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Wf" = (
-/obj/structure/fence/corner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Wp" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/wasteland)
-"Ws" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
-	},
-/area/f13/wasteland)
-"Wu" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"WB" = (
-/obj/structure/chair/stool{
-	dir = 8;
-	icon_state = "bench"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"WE" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"WK" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"WR" = (
-/turf/closed/indestructible/f13/matrix/transition,
 /area/f13/wasteland)
 "WV" = (
-/obj/machinery/light/small{
+/obj/structure/chair/sofa/left{
 	dir = 1
 	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"WX" = (
-/obj/structure/bookcase,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
-"WZ" = (
-/obj/structure/bed/mattress/pregame,
-/obj/effect/spawner/lootdrop/bedsheet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Xe" = (
-/obj/structure/toilet{
-	dir = 8
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Xq" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Xx" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"XA" = (
-/obj/structure/table/booth,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/wasteland)
-"XG" = (
-/obj/structure/fermenting_barrel,
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland)
-"XI" = (
-/obj/machinery/jukebox,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "XJ" = (
-/obj/structure/kitchenspike,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"Ya" = (
-/obj/structure/fence/corner,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Yc" = (
-/obj/structure/window/fulltile/ruins,
-/turf/open/floor/plating/rust,
-/area/f13/wasteland)
-"Yk" = (
-/obj/structure/kitchenspike,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Yl" = (
-/obj/structure/simple_door/house,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/wasteland)
-"Yt" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/table/wood,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "Yv" = (
-/turf/open/indestructible/ground/outside/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
 /area/f13/wasteland)
 "Yz" = (
-/obj/structure/fence{
-	dir = 4
+/obj/structure/bed{
+	pixel_y = 12
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"YH" = (
-/obj/machinery/smartfridge/bottlerack/gardentool,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain1"
+/obj/item/bedsheet/random{
+	pixel_y = 12
 	},
-/area/f13/wasteland)
-"YM" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"YW" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Zi" = (
-/obj/structure/window/fulltile/wood,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Zn" = (
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"Zu" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 10
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"ZE" = (
-/obj/structure/junk/cabinet{
-	pixel_y = 10
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"ZG" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/carpet/black,
-/area/f13/wasteland)
-"ZM" = (
-/obj/structure/junk/small/table,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/floor/carpet/royalblue,
 /area/f13/wasteland)
 
 (1,1,1) = {"
@@ -2683,36 +536,36 @@ Cu
 "}
 (2,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -2940,36 +793,36 @@ Cu
 "}
 (3,1,1) = {"
 Cu
-Yv
-Wf
-zl
-zl
-zl
-zl
-zl
-zl
-wQ
-Yv
-Yv
-TU
-AG
-IX
-NA
-TU
-Yv
-WR
-Yv
-TU
-TU
-TU
-TU
-TU
-SX
-SX
-TU
-TU
-Yv
-WR
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -3197,36 +1050,36 @@ Cu
 "}
 (4,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
+yH
+cV
+yO
+MW
+wF
+JN
+yH
+cV
 fm
 Yv
-Yv
-TU
-AG
-IX
-cW
-TU
-Yv
-WR
-Yv
-TU
-xE
-iC
-DJ
-Sa
-jb
-Jn
-yV
-SX
-Yv
-WR
+fm
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -3454,36 +1307,36 @@ Cu
 "}
 (5,1,1) = {"
 Cu
-Yv
+yH
+cV
+cy
+ij
+sg
+zE
+yH
+cV
 Yz
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yz
-TU
+DU
 rC
-TU
-AG
-IX
-NA
-TU
-Yv
-WR
-Yv
-TU
-Xe
-Ro
-Od
-NT
-Sa
-Sa
-Jn
-SX
-Yv
-WR
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -3711,36 +1564,36 @@ Cu
 "}
 (6,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-TU
-TU
-vi
-TU
-TU
+yH
+cV
+hl
 ij
-KU
-Ok
-IX
-Cd
+ij
 TU
-Yv
-WR
-Yv
-TU
-TU
-TU
-TU
-UR
-Sa
-Sa
-Sa
-SX
-Yv
-WR
+yH
+cV
+cV
+Cb
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -3968,36 +1821,36 @@ Cu
 "}
 (7,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
+yH
+cV
+eF
+ij
+ij
 TU
-OR
-iC
+yH
+cV
 Lq
-mK
+ij
 WV
-rC
-AG
-IX
-NA
 TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-TU
-Jn
-yZ
-Sa
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -4225,36 +2078,36 @@ Cu
 "}
 (8,1,1) = {"
 Cu
-Yv
-TU
-TU
+yH
+cV
+cV
 Cb
-TU
-TU
-qu
-cC
-nb
-mK
+cV
+cV
+yH
+cV
 ij
+ij
+ez
 TU
-TU
-TU
-TU
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-SX
-Sa
-Sa
-Sa
-Sa
-xa
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -4482,36 +2335,36 @@ Cu
 "}
 (9,1,1) = {"
 Cu
-Yv
-TU
+yH
+cV
 DM
-iC
+yu
 XJ
-Od
-Od
-LO
-Od
+cV
+yH
+cV
 Od
 ij
-Od
-Vh
 ij
-Vh
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-TU
-Od
-Od
-DJ
-TU
-TU
-Yv
-WR
+zE
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -4739,36 +2592,36 @@ Cu
 "}
 (10,1,1) = {"
 Cu
-Yv
-gq
+yH
+cV
 gn
 iC
-iC
-LO
-ij
-ij
-ij
-ij
-ij
-Od
-sI
-ij
-oX
-zm
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-SX
-mO
-VV
-Sa
-TU
-Yv
-Yv
-WR
+ex
+cV
+yH
+cV
+rH
+IZ
+wF
+JN
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -4996,36 +2849,36 @@ Cu
 "}
 (11,1,1) = {"
 Cu
-Yv
-TU
-gn
-iC
-gn
-Od
-Nk
-Nk
-sg
-ij
-ij
-LO
-ij
-ij
-ij
-zm
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-DJ
-Sa
-Sa
-Sa
-SX
-Yv
-Yv
-WR
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -5253,36 +3106,36 @@ Cu
 "}
 (12,1,1) = {"
 Cu
-Yv
-gq
-Gl
-iC
-gn
-Od
-Av
-ZG
-cl
-ij
-wz
-Od
-oX
-ij
-oX
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-TU
-Sa
-Sa
-dV
-SX
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -5510,36 +3363,36 @@ Cu
 "}
 (13,1,1) = {"
 Cu
-Yv
-TU
-wF
-jR
-vb
-Od
-EP
-EP
-sg
-ij
-uT
-Od
-Vh
-QL
-Vh
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-SX
-IE
-HY
-Jn
-TU
-Yv
-Yv
-WR
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -5767,36 +3620,36 @@ Cu
 "}
 (14,1,1) = {"
 Cu
-Yv
-TU
+yH
+cV
+qq
 mK
-mK
-mK
-Od
-DY
-ij
-ij
-ij
+jL
+JN
+yH
+cV
 Ia
-mK
-CN
-CN
-CN
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-TU
-TU
-TU
-TU
-TU
-Yv
-Yv
-WR
+wP
+Ia
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -6024,36 +3877,36 @@ Cu
 "}
 (15,1,1) = {"
 Cu
-Yv
-TU
-UN
-ij
-ij
-LO
+yH
+cV
 ij
 ij
 ij
-ij
-uT
-mK
-Hq
-ij
-Hq
-TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+zE
+yH
+cV
+Ia
+Ia
+Ia
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -6281,36 +4134,36 @@ Cu
 "}
 (16,1,1) = {"
 Cu
-Yv
-TU
+yH
+cV
 rH
 ij
-WX
-Od
-Mz
-sg
-sg
 ij
-wz
-mK
-wJ
-ij
-Hq
-zm
-Yv
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+TU
+yH
+cV
+cV
+Cb
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -6538,34 +4391,34 @@ Cu
 "}
 (17,1,1) = {"
 Cu
-Yv
-hv
+yH
+cV
 Ps
 ij
 eQ
-Od
-iI
-ZG
-OL
-ij
-ij
-LO
-ij
-ij
-Hq
 TU
-Yv
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+cV
+ij
+ij
+ij
+TU
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -6795,34 +4648,34 @@ Cu
 "}
 (18,1,1) = {"
 Cu
-Yv
-hv
+yH
+cV
+cV
+Cb
+cV
+cV
+yH
+cV
 ij
 ij
-Ps
-Od
-Gy
-ZG
-OU
 ij
-Qo
-mK
-Hq
-ij
-Hq
 TU
-Yv
-WR
-Yv
-TU
-TU
-SX
-TU
-SX
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -7052,34 +4905,34 @@ Cu
 "}
 (19,1,1) = {"
 Cu
-Yv
-TU
+yH
+cV
 vZ
+PC
+cC
+cV
+yH
+cV
 ij
 ij
-Od
-wk
-ZG
-xR
-ij
-WX
-mK
-kg
-ij
-Hq
-TU
-Yv
-WR
-Yv
-TU
-bF
-Sa
-TS
-Sa
-Sa
-DJ
-Yv
-WR
+sg
+zE
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -7309,34 +5162,34 @@ Cu
 "}
 (20,1,1) = {"
 Cu
-Yv
-TU
+yH
+cV
 xv
-ij
+pm
 dx
-Od
-aU
-sg
-sg
+cV
+yH
+cV
 ij
-Fu
-mK
-Hq
+ld
 ij
-Hq
-TU
-Yv
-WR
-Yv
-SX
-Sa
-Sa
-Sa
-hF
-hF
-TU
-Yv
-WR
+JN
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -7566,34 +5419,34 @@ Cu
 "}
 (21,1,1) = {"
 Cu
-Yv
-TU
-KU
-KU
-KU
-TU
-TU
-Lh
-Lh
-Lh
-TU
-TU
-TU
-zm
-TU
-TU
-Yv
-WR
-Yv
-TU
-HA
-Sa
-Sa
-Sa
-Sa
-TU
-Yv
-WR
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+cV
+cV
+cV
+cV
+cV
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -7823,34 +5676,34 @@ Cu
 "}
 (22,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
-Yv
-SX
-Sa
-Jn
-Sa
-hF
-hF
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -8080,34 +5933,34 @@ Cu
 "}
 (23,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-Yv
-TU
-yO
-vk
-Sa
-Sa
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -8337,34 +6190,34 @@ Cu
 "}
 (24,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
-WR
-Yv
-TU
-TU
-TU
-DJ
-TU
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -8594,34 +6447,34 @@ Cu
 "}
 (25,1,1) = {"
 Cu
-Yv
-TU
-Co
-Co
-Co
-Co
-Co
-Co
-Co
-Co
-TU
-zl
-zl
-zl
-zW
-Yv
-WR
-WR
-Yv
-TU
-Sa
-Sa
-Sa
-TU
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -8851,34 +6704,34 @@ Cu
 "}
 (26,1,1) = {"
 Cu
-Yv
-Yc
-Yt
-Yv
-Yt
-Yv
-Yv
-Yt
-Yv
-Yt
-Yc
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-SX
-Sa
-yv
-Sa
-SX
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -9108,34 +6961,34 @@ Cu
 "}
 (27,1,1) = {"
 Cu
-Yv
-Yc
-Yt
-Yv
-Yt
-Yv
-yb
-Yt
-Yv
-Yt
-Yc
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-TU
-bF
-MF
-qV
-TU
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -9365,34 +7218,34 @@ Cu
 "}
 (28,1,1) = {"
 Cu
-Yv
-Yc
-Yt
-Yv
-Yt
-Yv
-Yv
-Yt
-Yv
-Yt
-Yc
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-TU
-TU
-TU
-TU
-TU
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -9622,34 +7475,34 @@ Cu
 "}
 (29,1,1) = {"
 Cu
-Yv
-Yc
-Yt
-Yv
-Yt
-Yv
-Yv
-Yt
-Yv
-Yt
-Yc
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -9879,37 +7732,37 @@ Cu
 "}
 (30,1,1) = {"
 Cu
-Yv
-TU
-KU
-KU
-Ng
-pu
-pu
-Ng
-KU
-KU
-TU
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -10136,37 +7989,37 @@ Cu
 "}
 (31,1,1) = {"
 Cu
-Yv
-TU
-Ws
-TS
-sR
-tX
-Sa
-Sa
-TS
-Sa
-Wu
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -10393,37 +8246,37 @@ Cu
 "}
 (32,1,1) = {"
 Cu
-Yv
-TU
-tX
-Sa
-Sa
-Sa
-Sa
-Ws
-Sa
-Ws
-TU
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-TU
-TU
-TU
-wD
-TU
-TU
-TU
-xa
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -10650,37 +8503,37 @@ Cu
 "}
 (33,1,1) = {"
 Cu
-Yv
-TU
-hF
-hF
-hF
-hF
-uI
-ZM
-Sa
-sT
-TU
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
-WR
-Yv
-TU
-uI
-CY
-VV
-Sa
-DJ
-Sa
-Sa
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -10907,37 +8760,37 @@ Cu
 "}
 (34,1,1) = {"
 Cu
-Yv
-TU
-mK
-mK
-CN
-Od
-TU
-TU
-xa
-TU
-TU
-TU
-SX
-TU
-TU
-Yv
-WR
-WR
-Yv
-TU
-KI
-Sa
-Sa
-Sa
-Od
-VV
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -11164,37 +9017,37 @@ Cu
 "}
 (35,1,1) = {"
 Cu
-Yv
-SX
-yd
-Et
-Et
-yd
-mK
-mh
-xb
-mK
-vU
-MH
-iF
-qq
-KU
-Yv
-WR
-WR
-Yv
-TU
-el
-hl
-uI
-Sa
-Od
-vg
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -11421,37 +9274,37 @@ Cu
 "}
 (36,1,1) = {"
 Cu
-Yv
-SX
-yd
-ax
-Et
-yd
-mK
-uI
-Sa
-DJ
-Sa
-Sa
-Ws
-zZ
-KU
-Yv
-WR
-WR
-Yv
-TU
-TU
-lW
-TU
-Sa
-Od
-uI
-uI
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -11678,37 +9531,37 @@ Cu
 "}
 (37,1,1) = {"
 Cu
-Yv
-SX
-yd
-yd
-yd
-yd
-DJ
-Sa
-ji
-CN
-ZE
-xb
-Sa
-zZ
-KU
-Yv
-WR
-WR
-Yv
-TU
-xE
-WK
-TU
-DJ
-TU
-gz
-Od
-DJ
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -11935,37 +9788,37 @@ Cu
 "}
 (38,1,1) = {"
 Cu
-Yv
-TU
-zk
-yd
-yd
-jL
-pB
-Sa
-Sa
-Od
-Gr
-HV
-Sa
-qq
-TU
-Yv
-WR
-WR
-Yv
-TU
-Xe
-lU
-DJ
-Sa
-TU
-fH
-Sa
-Sa
-DN
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -12192,37 +10045,37 @@ Cu
 "}
 (39,1,1) = {"
 Cu
-Yv
-TU
-Hd
-yd
-yd
-EF
-Od
-Jd
-Sa
-mK
-CN
-CN
-DJ
-CN
-TU
-Yv
-WR
-WR
-Yv
-TU
-TU
-TU
-TU
-DJ
-TU
-uI
-yZ
-xN
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -12449,37 +10302,37 @@ Cu
 "}
 (40,1,1) = {"
 Cu
-Yv
-TU
-Ih
-yd
-yd
-Cm
-TU
-SX
-xa
-TU
-KU
-yC
-yd
-MO
-TU
-Yv
-WR
-WR
-Yv
-Yz
-zT
-xH
-zT
-fx
-SX
-uI
-yZ
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -12706,37 +10559,37 @@ Cu
 "}
 (41,1,1) = {"
 Cu
-Yv
-TU
-Cm
-nZ
-sc
-DU
-TU
-jQ
-qK
-UM
-KU
-IL
-Wp
-yc
-TU
-Yv
-WR
-WR
-Yv
-Yz
-fx
-fx
-fx
-fx
-SX
-KI
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -12963,37 +10816,37 @@ Cu
 "}
 (42,1,1) = {"
 Cu
-Yv
-TU
-TU
-SX
-SX
-TU
-TU
-jQ
-aT
-UM
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
-WR
-Yv
-Yz
-zT
-fx
-zT
-wu
-TU
-lW
-jb
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -13220,37 +11073,37 @@ Cu
 "}
 (43,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
-WR
-Yv
-Ya
-zl
-zl
-zl
-zl
-zl
-lW
-TU
-TU
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -13477,37 +11330,37 @@ Cu
 "}
 (44,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -13734,40 +11587,40 @@ Cu
 "}
 (45,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -13991,40 +11844,40 @@ Cu
 "}
 (46,1,1) = {"
 Cu
-Yv
-TU
-TU
-wD
-wD
-TU
-TU
-TU
-xa
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -14248,40 +12101,40 @@ Cu
 "}
 (47,1,1) = {"
 Cu
-Yv
-TU
-Sa
-tX
-Sa
-Sa
-Sa
-xa
-Sa
-TU
-Sa
-fH
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yv
-TU
-SX
-SX
-TU
-TU
-TU
-TU
-lW
-TU
-SX
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -14505,40 +12358,40 @@ Cu
 "}
 (48,1,1) = {"
 Cu
-Yv
-SX
-LT
-Jn
-yZ
-Sa
-dj
-TU
-Sa
-TS
-tX
-Sa
-SX
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yv
-SX
-uI
-yZ
-TS
-lu
-uI
-jb
-Od
-PS
-yZ
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -14762,40 +12615,40 @@ Cu
 "}
 (49,1,1) = {"
 Cu
-Yv
-TU
-fw
-Jn
-yZ
-Sa
-yM
-TU
-Sa
-Sa
-iu
-Sa
-SX
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yv
-SX
-uI
-yZ
-Sa
-Sa
-Sa
-Sa
-Od
-YW
-yF
-Sa
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -15019,40 +12872,40 @@ Cu
 "}
 (50,1,1) = {"
 Cu
-Yv
-SX
-LT
-Jn
-yZ
-Sa
-Jn
-TU
-Sa
-Sa
-wx
-Sa
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-TU
-TU
-TU
-TU
-Od
-Od
-Od
-DJ
-Od
-Od
-Od
-DJ
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -15276,40 +13129,40 @@ Cu
 "}
 (51,1,1) = {"
 Cu
-Yv
-TU
-Sa
-Sa
-Sa
-Sa
-xb
-TU
-Re
-Sa
-Sa
-xb
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yz
-Qf
-Qf
-TU
-xE
-WK
-Od
-Sa
-Sa
-Sa
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -15533,40 +13386,40 @@ Cu
 "}
 (52,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-nf
-TU
-TU
-TU
-TU
-MC
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yz
-Yt
-Yv
-lW
-Xe
-lU
-DJ
-Sa
-Sa
-Sa
-Sa
-Sa
-xa
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -15790,40 +13643,40 @@ Cu
 "}
 (53,1,1) = {"
 Cu
-Yv
-Yv
-Ix
-iC
-iC
-yu
-iC
-TU
-iF
-Sa
-gY
-sT
-SX
-Yv
-WR
 yH
 yH
-WR
-Yv
-Xx
-Yt
-Yv
-TU
-TU
-TU
-TU
-Sa
-LT
-uI
-Sa
-hF
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -16047,40 +13900,40 @@ Cu
 "}
 (54,1,1) = {"
 Cu
-Yv
-Yv
-Ix
-iC
-iC
-iC
-iC
-TU
-iu
-Sa
-Sa
-Sa
-SX
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yz
-Yt
-Yv
-Yv
-Yv
-Yv
-DJ
-Sa
-Sa
-uI
-yF
-hF
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -16304,40 +14157,40 @@ Cu
 "}
 (55,1,1) = {"
 Cu
-Yv
-Yv
-TU
-Fg
-Vn
-Vn
-IZ
-TU
-yF
-Sa
-xb
-FQ
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Ya
-zl
-zl
-zl
-dZ
-zl
-TU
-SX
-fz
-TU
-TU
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -16561,40 +14414,40 @@ Cu
 "}
 (56,1,1) = {"
 Cu
-Yv
-Yv
-TU
-TU
-nu
-nu
-TU
-TU
-TU
-SX
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -16818,40 +14671,40 @@ Cu
 "}
 (57,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -17075,38 +14928,38 @@ Cu
 "}
 (58,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -17332,38 +15185,38 @@ Cu
 "}
 (59,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-TU
-xa
-TU
-SX
-TU
-TU
-TU
-SX
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -17589,38 +15442,38 @@ Cu
 "}
 (60,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-VV
-Sa
-Sa
-Sa
-Sa
-DJ
-Sa
-Sa
-VV
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -17846,38 +15699,38 @@ Cu
 "}
 (61,1,1) = {"
 Cu
-Yv
-JD
-BR
-BR
-BR
-BR
-BR
-JD
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-Sa
-Sa
-Sa
-Sa
-Od
-Sa
-LT
-cr
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -18103,38 +15956,38 @@ Cu
 "}
 (62,1,1) = {"
 Cu
-Yv
-JD
-BR
-BR
-BR
-BR
-BR
-JD
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-IK
-uI
-yZ
-Sa
-gz
-gk
-Sa
-uI
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -18360,38 +16213,38 @@ Cu
 "}
 (63,1,1) = {"
 Cu
-Yv
-JD
-BR
-BR
-BR
-BR
-rA
-xa
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Od
-Od
-Od
-Od
-Sa
-Od
-Sa
-Sa
-el
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -18617,38 +16470,38 @@ Cu
 "}
 (64,1,1) = {"
 Cu
-Yv
-JD
-kM
-oM
-RZ
-UQ
-hL
-JD
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-jb
-Sa
-lu
-Sa
-Sa
-Od
-VV
-TU
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -18874,38 +16727,38 @@ Cu
 "}
 (65,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-pu
-TU
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-Sa
-Sa
-Sa
-Sa
-TU
-lW
-TU
-fx
-Yz
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -19131,38 +16984,38 @@ Cu
 "}
 (66,1,1) = {"
 Cu
-Yv
-TU
-Vn
-ap
-SL
-nI
-yn
-Od
-gv
-kW
-Bu
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-PC
-uI
-yZ
-Sa
-DJ
-fx
-fx
-zT
-Yz
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -19388,38 +17241,38 @@ Cu
 "}
 (67,1,1) = {"
 Cu
-Yv
-Ix
-ch
-iC
-iC
-nI
-Sa
-ni
-iC
-iC
-nn
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-GM
-Ie
-Od
-Od
-TU
-TU
-fx
-zT
-fx
-Yz
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -19645,38 +17498,38 @@ Cu
 "}
 (68,1,1) = {"
 Cu
-Yv
-TU
-rk
-iC
-iC
-Sa
-Sa
-Od
-ld
-iC
-pm
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-TS
-Sa
-VV
-lW
-fx
-zT
-fx
-zT
-Yz
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -19902,38 +17755,38 @@ Cu
 "}
 (69,1,1) = {"
 Cu
-Yv
-TU
-OC
-iC
-iC
-mh
-Tf
-Od
-Od
-Od
-Od
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-TU
-TU
-TU
-lW
-TU
-zl
-zl
-zl
-zl
-Ya
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -20159,38 +18012,38 @@ Cu
 "}
 (70,1,1) = {"
 Cu
-Yv
-TU
-Gl
-iC
-iC
-Sa
-xb
-Od
-uF
-nI
-Uy
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -20416,38 +18269,38 @@ Cu
 "}
 (71,1,1) = {"
 Cu
-Yv
-Ix
-Vn
-iC
-iC
-Sa
-Sa
-DJ
-Sa
-nI
-ii
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -20673,36 +18526,36 @@ Cu
 "}
 (72,1,1) = {"
 Cu
-Yv
-TU
-ha
-tT
-CM
-Sa
-yW
-Od
-Qv
-Sa
-iu
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -20930,36 +18783,36 @@ Cu
 "}
 (73,1,1) = {"
 Cu
-Yv
-TU
-TU
-Ix
-TU
-xa
-TU
-TU
-TU
-SX
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-TU
-SX
-SX
-TU
-TU
-lW
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -21187,36 +19040,36 @@ Cu
 "}
 (74,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-VV
-uI
-uI
-fs
-Ie
-Sa
-VV
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -21444,36 +19297,36 @@ Cu
 "}
 (75,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
-WR
-Yv
-lW
-Sa
-Sa
-KI
-Sa
-DJ
-yF
-fs
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -21701,36 +19554,36 @@ Cu
 "}
 (76,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Sa
-Sa
-Sa
-Sa
-Od
-Od
-Od
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -21958,36 +19811,36 @@ Cu
 "}
 (77,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-cV
-cV
-cV
-cV
-cV
-cV
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-yF
-el
-Sa
-Sa
-DJ
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -22215,36 +20068,36 @@ Cu
 "}
 (78,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-cV
-CL
-Jk
-cV
-Jn
-HB
-Jk
-Kr
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Od
-gz
-Od
-DJ
-Od
-Sa
-Sa
-xa
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -22472,36 +20325,36 @@ Cu
 "}
 (79,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-cV
-VV
-Sa
-zE
-Sa
-Sa
-Sa
-Sa
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-cU
-Sa
-Sa
-Sa
-Od
-Sa
-Sa
-SX
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -22729,36 +20582,36 @@ Cu
 "}
 (80,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-cV
-cV
-KX
-Sa
-Sa
-Sa
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-Yk
-Sa
-Sa
-Sa
-Od
-IK
-VV
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -22986,36 +20839,36 @@ Cu
 "}
 (81,1,1) = {"
 Cu
-Yv
-cV
-hF
-Sa
-Sa
-Sa
-cV
-Sa
-Sa
-Sa
-Sa
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -23243,36 +21096,36 @@ Cu
 "}
 (82,1,1) = {"
 Cu
-Yv
-zE
-Sa
-Sa
-Sa
-Sa
-zE
-Sa
-Sa
-HV
-Sa
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -23500,36 +21353,36 @@ Cu
 "}
 (83,1,1) = {"
 Cu
-Yv
-cV
-hF
-hF
-tR
-Jn
-cV
-cV
-cV
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -23757,24 +21610,24 @@ Cu
 "}
 (84,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-cV
-cV
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -24014,24 +21867,24 @@ Cu
 "}
 (85,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -24271,24 +22124,24 @@ Cu
 "}
 (86,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -24528,24 +22381,24 @@ Cu
 "}
 (87,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -24785,24 +22638,24 @@ Cu
 "}
 (88,1,1) = {"
 Cu
-Yv
-cV
-uZ
-uZ
-cV
-uZ
-uZ
-cV
-BB
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -25042,24 +22895,24 @@ Cu
 "}
 (89,1,1) = {"
 Cu
-Yv
-tA
-zT
-zT
-HM
-zT
-zT
-cV
-VP
-YH
-XG
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -25299,24 +23152,24 @@ Cu
 "}
 (90,1,1) = {"
 Cu
-Yv
-tA
-hD
-fx
-TZ
-ci
-ci
-ux
-Vd
-KA
-yU
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -25556,24 +23409,24 @@ Cu
 "}
 (91,1,1) = {"
 Cu
-Yv
-tA
-fx
-fx
-Tg
-oe
-oe
-kh
-Vd
-KA
-Oy
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -25813,24 +23666,24 @@ Cu
 "}
 (92,1,1) = {"
 Cu
-Yv
-tA
-zT
-zT
-FI
-zT
-zT
-cV
-wi
-DV
-Gh
-cV
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -26070,24 +23923,24 @@ Cu
 "}
 (93,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-TU
-KU
-TU
-TU
-AI
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -26327,24 +24180,24 @@ Cu
 "}
 (94,1,1) = {"
 Cu
-Yv
-TU
-QN
-gt
-sJ
-cy
-cy
-sJ
-eD
-tb
-kk
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -26584,24 +24437,24 @@ Cu
 "}
 (95,1,1) = {"
 Cu
-Yv
-TU
-UV
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-sJ
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -26841,24 +24694,24 @@ Cu
 "}
 (96,1,1) = {"
 Cu
-Yv
-TU
-sY
-tb
-KW
-sJ
-fW
-fW
-sJ
-tb
-cz
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -27098,24 +24951,24 @@ Cu
 "}
 (97,1,1) = {"
 Cu
-Yv
-TU
-tb
-Da
-tb
-tb
-Pi
-Pi
-tb
-Da
-tb
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -27355,24 +25208,24 @@ Cu
 "}
 (98,1,1) = {"
 Cu
-Yv
-TU
-mZ
-KU
-XA
-XA
-uX
-XA
-XA
-KU
-go
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -27612,24 +25465,24 @@ Cu
 "}
 (99,1,1) = {"
 Cu
-Yv
-Bj
-zQ
-wX
-uJ
-uJ
-zQ
-uJ
-uJ
-wX
-zQ
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -27869,24 +25722,24 @@ Cu
 "}
 (100,1,1) = {"
 Cu
-Yv
-Bj
-XI
-zQ
-zQ
-zQ
-zQ
-zQ
-zQ
-zQ
-UA
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -28126,24 +25979,24 @@ Cu
 "}
 (101,1,1) = {"
 Cu
-Yv
-Bj
-Am
-km
-eF
-By
-zQ
-ff
-Am
-km
-Jw
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -28383,24 +26236,24 @@ Cu
 "}
 (102,1,1) = {"
 Cu
-Yv
-Bj
-RL
-km
-um
-ex
-zQ
-eK
-RL
-km
-um
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -28640,24 +26493,24 @@ Cu
 "}
 (103,1,1) = {"
 Cu
-Yv
-TU
-Iw
-Iw
-Iw
-TU
-NO
-TU
-Iw
-Iw
-Iw
-TU
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -28897,24 +26750,24 @@ Cu
 "}
 (104,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -29154,24 +27007,24 @@ Cu
 "}
 (105,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -29411,24 +27264,24 @@ Cu
 "}
 (106,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -29668,24 +27521,24 @@ Cu
 "}
 (107,1,1) = {"
 Cu
-Yv
-Wf
-zl
-zl
-zl
-zl
-TU
-SX
-SX
-SX
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -29925,24 +27778,24 @@ Cu
 "}
 (108,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-Yv
-SX
-Jn
-Jn
-yV
-SX
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -30182,24 +28035,24 @@ Cu
 "}
 (109,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Hz
-Yv
-Yv
-SX
-jb
-Sa
-Sa
-SX
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -30439,24 +28292,24 @@ Cu
 "}
 (110,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-Yv
-TU
-Jn
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -30696,24 +28549,24 @@ Cu
 "}
 (111,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-Yv
-TU
-Sa
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -30953,24 +28806,24 @@ Cu
 "}
 (112,1,1) = {"
 Cu
-Yv
-Yz
-Yv
-Yv
-Yv
-Yv
-xa
-Sa
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -31210,24 +29063,24 @@ Cu
 "}
 (113,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-TU
-TU
-Jd
-Sa
-fH
-SX
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -31467,24 +29320,24 @@ Cu
 "}
 (114,1,1) = {"
 Cu
-Yv
-TU
-xE
-WK
-Od
-hF
-DJ
-Sa
-Sa
-Jn
-SX
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -31724,24 +29577,24 @@ Cu
 "}
 (115,1,1) = {"
 Cu
-Yv
-TU
-Xe
-iC
-Od
-hF
-DJ
-Sa
-Sa
-KI
-SX
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -31981,24 +29834,24 @@ Cu
 "}
 (116,1,1) = {"
 Cu
-Yv
-TU
-Od
-DJ
-Od
-Od
-Od
-VL
-Sa
-fs
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -32238,24 +30091,24 @@ Cu
 "}
 (117,1,1) = {"
 Cu
-Yv
-TU
-xA
-Sa
-xA
-mO
-yI
-Sa
-Sa
-fs
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -32495,24 +30348,24 @@ Cu
 "}
 (118,1,1) = {"
 Cu
-Yv
-TU
-Sa
-Sa
-Sa
-Sa
-DJ
-Sa
-Sa
-Sa
-DJ
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -32752,24 +30605,24 @@ Cu
 "}
 (119,1,1) = {"
 Cu
-Yv
-TU
-CL
-CL
-CL
-CL
-yI
-Sa
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -33009,24 +30862,24 @@ Cu
 "}
 (120,1,1) = {"
 Cu
-Yv
-TU
-TU
-SX
-SX
-TU
-TU
-SX
-SX
-SX
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -33266,24 +31119,24 @@ Cu
 "}
 (121,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -33523,24 +31376,24 @@ Cu
 "}
 (122,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -33780,24 +31633,24 @@ Cu
 "}
 (123,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -34037,24 +31890,24 @@ Cu
 "}
 (124,1,1) = {"
 Cu
-Yv
-TU
-SX
-SX
-SX
-TU
-zl
-zl
-zl
-zl
-wQ
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -34294,24 +32147,24 @@ Cu
 "}
 (125,1,1) = {"
 Cu
-Yv
-SX
-gn
-gn
-Qx
-SX
-Yv
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -34551,24 +32404,24 @@ Cu
 "}
 (126,1,1) = {"
 Cu
-Yv
-SX
-iC
-iC
-rk
-SX
-Yv
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -34808,24 +32661,24 @@ Cu
 "}
 (127,1,1) = {"
 Cu
-Yv
-TU
-uY
-iC
-iC
-TU
-Yv
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -35065,24 +32918,24 @@ Cu
 "}
 (128,1,1) = {"
 Cu
-Yv
-TU
-Od
-Od
-DJ
-TU
-Yv
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -35322,24 +33175,24 @@ Cu
 "}
 (129,1,1) = {"
 Cu
-Yv
-TU
-VL
-Sa
-Sa
-xa
-Yv
-Yv
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -35579,24 +33432,24 @@ Cu
 "}
 (130,1,1) = {"
 Cu
-Yv
-SX
-fH
-Sa
-Sa
-TU
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -35836,24 +33689,24 @@ Cu
 "}
 (131,1,1) = {"
 Cu
-Yv
-SX
-Jn
-yZ
-Sa
-DJ
-hF
-TU
-xE
-WK
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -36093,24 +33946,24 @@ Cu
 "}
 (132,1,1) = {"
 Cu
-Yv
-SX
-Jn
-yZ
-Sa
-DJ
-hF
-TU
-iC
-Xe
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -36350,24 +34203,24 @@ Cu
 "}
 (133,1,1) = {"
 Cu
-Yv
-TU
-KI
-Sa
-Sa
-TU
-TU
-TU
-DJ
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -36607,24 +34460,24 @@ Cu
 "}
 (134,1,1) = {"
 Cu
-Yv
-TU
-Sa
-Sa
-Sa
-TU
-xA
-mO
-Sa
-xA
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -36864,24 +34717,24 @@ Cu
 "}
 (135,1,1) = {"
 Cu
-Yv
-xa
-Sa
-Sa
-Sa
-DJ
-Sa
-Sa
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -37121,24 +34974,24 @@ Cu
 "}
 (136,1,1) = {"
 Cu
-Yv
-TU
-Jn
-hI
-Sa
-TU
-CL
-Sa
-Sa
-CL
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -37378,24 +35231,24 @@ Cu
 "}
 (137,1,1) = {"
 Cu
-Yv
-TU
-SX
-SX
-SX
-TU
-TU
-SX
-SX
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -37635,24 +35488,24 @@ Cu
 "}
 (138,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -37892,24 +35745,24 @@ Cu
 "}
 (139,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -38149,24 +36002,24 @@ Cu
 "}
 (140,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -38406,24 +36259,24 @@ Cu
 "}
 (141,1,1) = {"
 Cu
-Yv
-Yv
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -38663,24 +36516,24 @@ Cu
 "}
 (142,1,1) = {"
 Cu
-Yv
-TU
-TU
-rV
-Sa
-yO
-Jn
-Sa
-Tj
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -38920,24 +36773,24 @@ Cu
 "}
 (143,1,1) = {"
 Cu
-Yv
-SX
-HY
-NU
-Sa
-Sa
-Jn
-Sa
-WB
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -39177,24 +37030,24 @@ Cu
 "}
 (144,1,1) = {"
 Cu
-Yv
-SX
-CU
-Sa
-Sa
-qV
-TU
-gk
-Sa
-xa
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -39434,24 +37287,24 @@ Cu
 "}
 (145,1,1) = {"
 Cu
-Yv
-TU
-TU
-gk
-Sa
-Sa
-DJ
-Sa
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -39691,24 +37544,24 @@ Cu
 "}
 (146,1,1) = {"
 Cu
-Yv
-Yv
-TU
-TU
-SX
-TU
-TU
-TU
-DJ
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -39948,24 +37801,24 @@ Cu
 "}
 (147,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-TU
-xA
-Sa
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -40205,24 +38058,24 @@ Cu
 "}
 (148,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-DJ
-Sa
-yF
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -40462,24 +38315,24 @@ Cu
 "}
 (149,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -40719,24 +38572,24 @@ Cu
 "}
 (150,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -40976,24 +38829,24 @@ Cu
 "}
 (151,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -41233,24 +39086,24 @@ Cu
 "}
 (152,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -41490,24 +39343,24 @@ Cu
 "}
 (153,1,1) = {"
 Cu
-Yv
-Ss
-cV
-JN
-cV
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -41747,24 +39600,24 @@ Cu
 "}
 (154,1,1) = {"
 Cu
-Yv
-JN
-KG
-cY
-cV
-cV
-QE
-YM
-cV
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -42004,24 +39857,24 @@ Cu
 "}
 (155,1,1) = {"
 Cu
-Yv
-YM
-ij
-Br
-JN
-ij
-ij
-fp
-cV
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -42261,24 +40114,24 @@ Cu
 "}
 (156,1,1) = {"
 Cu
-Yv
-JN
-Vh
-ij
-QE
-ij
-ij
-Ps
-JN
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -42518,24 +40371,24 @@ Cu
 "}
 (157,1,1) = {"
 Cu
-Yv
-cV
-Ss
-JN
-cV
-KJ
-ij
-Ve
-cV
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -42775,24 +40628,24 @@ Cu
 "}
 (158,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-JN
-pO
-fp
-Ke
-JN
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -43032,24 +40885,24 @@ Cu
 "}
 (159,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-cV
-JN
-YM
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -43289,24 +41142,24 @@ Cu
 "}
 (160,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -43546,24 +41399,24 @@ Cu
 "}
 (161,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -43803,24 +41656,24 @@ Cu
 "}
 (162,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -44060,24 +41913,24 @@ Cu
 "}
 (163,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-bf
-fj
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -44317,24 +42170,24 @@ Cu
 "}
 (164,1,1) = {"
 Cu
-Yv
-TU
-vC
-mF
-KU
-BN
-SV
-Pn
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -44574,24 +42427,24 @@ Cu
 "}
 (165,1,1) = {"
 Cu
-Yv
-AK
-Sa
-ji
-KU
-Jg
-SV
-uS
-Ii
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -44831,24 +42684,24 @@ Cu
 "}
 (166,1,1) = {"
 Cu
-Yv
-TU
-te
-Sa
-KU
-fS
-SV
-SV
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -45088,24 +42941,24 @@ Cu
 "}
 (167,1,1) = {"
 Cu
-Yv
-TU
-Ho
-Sa
-DJ
-SV
-SV
-SV
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -45345,24 +43198,24 @@ Cu
 "}
 (168,1,1) = {"
 Cu
-Yv
-SX
-Sa
-ji
-vN
-JA
-SV
-SV
-CD
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -45602,24 +43455,24 @@ Cu
 "}
 (169,1,1) = {"
 Cu
-Yv
-TU
-OE
-Sa
-vN
-IY
-JA
-nv
-KU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -45859,24 +43712,24 @@ Cu
 "}
 (170,1,1) = {"
 Cu
-Yv
-TU
-KU
-DJ
-vN
-vN
-vN
-VN
-KU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -46116,24 +43969,24 @@ Cu
 "}
 (171,1,1) = {"
 Cu
-Yv
-TU
-Dr
-xf
-GV
-vN
-fL
-Qa
-KU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -46373,24 +44226,24 @@ Cu
 "}
 (172,1,1) = {"
 Cu
-Yv
-TU
-KU
-xf
-uB
-KU
-wP
-Pc
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -46630,24 +44483,24 @@ Cu
 "}
 (173,1,1) = {"
 Cu
-Yv
-TU
-up
-xf
-sC
-KU
-sN
-sN
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -46887,24 +44740,24 @@ Cu
 "}
 (174,1,1) = {"
 Cu
-Yv
-TU
-TU
-tw
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -47144,24 +44997,24 @@ Cu
 "}
 (175,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -47401,24 +45254,24 @@ Cu
 "}
 (176,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -47658,16 +45511,6 @@ Cu
 "}
 (177,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -47675,7 +45518,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -47915,16 +45768,6 @@ Cu
 "}
 (178,1,1) = {"
 Cu
-Yv
-cV
-cV
-Zi
-CA
-Zi
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -47932,7 +45775,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -48172,16 +46025,6 @@ Cu
 "}
 (179,1,1) = {"
 Cu
-Yv
-cV
-Sv
-Sa
-Sa
-Sa
-ki
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -48189,7 +46032,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -48429,16 +46282,6 @@ Cu
 "}
 (180,1,1) = {"
 Cu
-Yv
-Zi
-zq
-Sa
-sA
-Sa
-Xq
-Zi
-Yv
-WR
 yH
 yH
 yH
@@ -48446,7 +46289,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -48686,16 +46539,6 @@ Cu
 "}
 (181,1,1) = {"
 Cu
-Yv
-Zi
-VF
-Sa
-zT
-Sa
-aS
-Zi
-Yv
-WR
 yH
 yH
 yH
@@ -48703,7 +46546,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -48943,16 +46796,6 @@ Cu
 "}
 (182,1,1) = {"
 Cu
-Yv
-Zi
-kA
-Sa
-zT
-Sa
-Xq
-Zi
-Yv
-WR
 yH
 yH
 yH
@@ -48960,7 +46803,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -49200,16 +47053,6 @@ Cu
 "}
 (183,1,1) = {"
 Cu
-Yv
-Zi
-wc
-Sa
-zT
-Sa
-tI
-Zi
-Yv
-WR
 yH
 yH
 yH
@@ -49217,7 +47060,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -49457,16 +47310,6 @@ Cu
 "}
 (184,1,1) = {"
 Cu
-Yv
-Zi
-kM
-Sa
-zT
-Sa
-ez
-Zi
-Yv
-WR
 yH
 yH
 yH
@@ -49474,7 +47317,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -49714,16 +47567,6 @@ Cu
 "}
 (185,1,1) = {"
 Cu
-Yv
-cV
-mN
-Sa
-Zu
-Sa
-PN
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -49731,7 +47574,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -49971,16 +47824,6 @@ Cu
 "}
 (186,1,1) = {"
 Cu
-Yv
-cV
-JN
-Zi
-Zi
-Zi
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -49988,7 +47831,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -50228,16 +48081,6 @@ Cu
 "}
 (187,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -50245,7 +48088,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -50485,16 +48338,6 @@ Cu
 "}
 (188,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -50502,7 +48345,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -50742,16 +48595,6 @@ Cu
 "}
 (189,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -50759,7 +48602,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -50999,16 +48852,6 @@ Cu
 "}
 (190,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -51016,7 +48859,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -51256,16 +49109,6 @@ Cu
 "}
 (191,1,1) = {"
 Cu
-Yv
-cV
-MW
-LW
-cV
-LW
-MW
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -51273,7 +49116,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -51513,16 +49366,6 @@ Cu
 "}
 (192,1,1) = {"
 Cu
-Yv
-DI
-EQ
-zZ
-cV
-zZ
-EQ
-DI
-Yv
-WR
 yH
 yH
 yH
@@ -51530,7 +49373,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -51770,16 +49623,6 @@ Cu
 "}
 (193,1,1) = {"
 Cu
-Yv
-cV
-zZ
-zZ
-cV
-Yl
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -51787,7 +49630,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -52027,16 +49880,6 @@ Cu
 "}
 (194,1,1) = {"
 Cu
-Yv
-cV
-zZ
-zZ
-Yl
-zZ
-Cr
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -52044,7 +49887,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -52284,16 +50137,6 @@ Cu
 "}
 (195,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-zZ
-Lu
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -52301,7 +50144,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -52541,16 +50394,6 @@ Cu
 "}
 (196,1,1) = {"
 Cu
-Yv
-DI
-iC
-Mp
-Cb
-zZ
-lY
-DI
-Yv
-WR
 yH
 yH
 yH
@@ -52558,7 +50401,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -52798,16 +50651,6 @@ Cu
 "}
 (197,1,1) = {"
 Cu
-Yv
-cV
-hx
-Dt
-cV
-zZ
-St
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -52815,7 +50658,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -53055,16 +50908,6 @@ Cu
 "}
 (198,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-Yl
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -53072,7 +50915,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -53312,16 +51165,6 @@ Cu
 "}
 (199,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -53329,7 +51172,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -53569,16 +51422,6 @@ Cu
 "}
 (200,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -53586,7 +51429,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -53826,16 +51679,6 @@ Cu
 "}
 (201,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -53843,7 +51686,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -54083,16 +51936,6 @@ Cu
 "}
 (202,1,1) = {"
 Cu
-Yv
-cV
-cV
-Tw
-cV
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -54100,7 +51943,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -54340,16 +52193,6 @@ Cu
 "}
 (203,1,1) = {"
 Cu
-Yv
-cV
-Jn
-Sa
-Sa
-Sa
-WZ
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -54357,7 +52200,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -54597,16 +52450,6 @@ Cu
 "}
 (204,1,1) = {"
 Cu
-Yv
-cV
-Jo
-Sa
-Cq
-Sa
-OP
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -54614,7 +52457,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -54854,16 +52707,6 @@ Cu
 "}
 (205,1,1) = {"
 Cu
-Yv
-cV
-Vx
-Sa
-WZ
-tX
-Sa
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -54871,7 +52714,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -55111,16 +52964,6 @@ Cu
 "}
 (206,1,1) = {"
 Cu
-Yv
-cV
-WZ
-Sa
-Sa
-Sa
-WZ
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -55128,7 +52971,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -55368,16 +53221,6 @@ Cu
 "}
 (207,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -55385,7 +53228,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -55625,16 +53478,6 @@ Cu
 "}
 (208,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -55642,7 +53485,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -55882,16 +53735,6 @@ Cu
 "}
 (209,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -55899,7 +53742,17 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -56139,15 +53992,6 @@ Cu
 "}
 (210,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -56156,7 +54000,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -56396,15 +54249,6 @@ Cu
 "}
 (211,1,1) = {"
 Cu
-Yv
-cV
-cV
-cV
-cV
-cV
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -56413,7 +54257,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -56653,15 +54506,6 @@ Cu
 "}
 (212,1,1) = {"
 Cu
-Yv
-cV
-KG
-NW
-cY
-cV
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -56670,7 +54514,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -56910,15 +54763,6 @@ Cu
 "}
 (213,1,1) = {"
 Cu
-Yv
-cV
-Vh
-ij
-ij
-YM
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -56927,7 +54771,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -57167,15 +55020,6 @@ Cu
 "}
 (214,1,1) = {"
 Cu
-Yv
-JN
-cV
-QE
-JN
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -57184,7 +55028,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -57424,15 +55277,6 @@ Cu
 "}
 (215,1,1) = {"
 Cu
-Yv
-JN
-WX
-ij
-AE
-pO
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -57441,7 +55285,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -57681,15 +55534,6 @@ Cu
 "}
 (216,1,1) = {"
 Cu
-Yv
-cV
-UN
-ij
-ij
-ij
-QE
-Yv
-WR
 yH
 yH
 yH
@@ -57698,7 +55542,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -57938,15 +55791,6 @@ Cu
 "}
 (217,1,1) = {"
 Cu
-Yv
-cV
-WE
-ij
-ij
-Ke
-YM
-Yv
-WR
 yH
 yH
 yH
@@ -57955,7 +55799,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -58195,15 +56048,6 @@ Cu
 "}
 (218,1,1) = {"
 Cu
-Yv
-cV
-Ps
-ij
-fp
-fp
-JN
-Yv
-WR
 yH
 yH
 yH
@@ -58212,7 +56056,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -58452,15 +56305,6 @@ Cu
 "}
 (219,1,1) = {"
 Cu
-Yv
-cV
-JN
-YM
-YM
-cV
-JN
-Yv
-WR
 yH
 yH
 yH
@@ -58469,7 +56313,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -58709,15 +56562,6 @@ Cu
 "}
 (220,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -58726,7 +56570,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -58966,15 +56819,6 @@ Cu
 "}
 (221,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -58983,7 +56827,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -59223,15 +57076,6 @@ Cu
 "}
 (222,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -59240,7 +57084,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -59480,15 +57333,6 @@ Cu
 "}
 (223,1,1) = {"
 Cu
-Yv
-cV
-YM
-QE
-YM
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -59497,7 +57341,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -59737,15 +57590,6 @@ Cu
 "}
 (224,1,1) = {"
 Cu
-Yv
-cV
-UN
-ij
-ij
-Ke
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -59754,7 +57598,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -59994,15 +57847,6 @@ Cu
 "}
 (225,1,1) = {"
 Cu
-Yv
-cV
-WE
-ij
-ij
-fp
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -60011,7 +57855,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -60251,15 +58104,6 @@ Cu
 "}
 (226,1,1) = {"
 Cu
-Yv
-cV
-Ps
-ij
-Cc
-pO
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -60268,7 +58112,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -60508,15 +58361,6 @@ Cu
 "}
 (227,1,1) = {"
 Cu
-Yv
-cV
-cV
-QE
-cV
-cV
-cV
-Yv
-WR
 yH
 yH
 yH
@@ -60525,7 +58369,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -60765,15 +58618,6 @@ Cu
 "}
 (228,1,1) = {"
 Cu
-Yv
-cV
-WV
-ij
-cV
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -60782,7 +58626,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -61022,15 +58875,6 @@ Cu
 "}
 (229,1,1) = {"
 Cu
-Yv
-cV
-Vh
-KG
-cV
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -61039,7 +58883,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -61279,15 +59132,6 @@ Cu
 "}
 (230,1,1) = {"
 Cu
-Yv
-cV
-YM
-cV
-cV
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -61296,7 +59140,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -61536,15 +59389,6 @@ Cu
 "}
 (231,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -61553,7 +59397,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -61793,15 +59646,6 @@ Cu
 "}
 (232,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -61810,7 +59654,16 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -62050,14 +59903,6 @@ Cu
 "}
 (233,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -62067,7 +59912,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -62307,14 +60160,6 @@ Cu
 "}
 (234,1,1) = {"
 Cu
-Yv
-TU
-TU
-TU
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
@@ -62324,7 +60169,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -62564,14 +60417,6 @@ Cu
 "}
 (235,1,1) = {"
 Cu
-Yv
-TU
-Sa
-TS
-Zn
-TU
-Yv
-WR
 yH
 yH
 yH
@@ -62581,7 +60426,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -62821,14 +60674,6 @@ Cu
 "}
 (236,1,1) = {"
 Cu
-Yv
-SX
-Jn
-Sa
-Jn
-SX
-Yv
-WR
 yH
 yH
 yH
@@ -62838,7 +60683,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -63078,14 +60931,6 @@ Cu
 "}
 (237,1,1) = {"
 Cu
-Yv
-SX
-Jn
-Sa
-Jn
-SX
-Yv
-WR
 yH
 yH
 yH
@@ -63095,7 +60940,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -63335,14 +61188,6 @@ Cu
 "}
 (238,1,1) = {"
 Cu
-Yv
-TU
-Sa
-Sa
-kM
-TU
-Yv
-WR
 yH
 yH
 yH
@@ -63352,7 +61197,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -63592,14 +61445,6 @@ Cu
 "}
 (239,1,1) = {"
 Cu
-Yv
-TU
-TU
-xa
-TU
-TU
-Yv
-WR
 yH
 yH
 yH
@@ -63609,7 +61454,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -63849,14 +61702,6 @@ Cu
 "}
 (240,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -63866,7 +61711,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -64106,14 +61959,6 @@ Cu
 "}
 (241,1,1) = {"
 Cu
-Yv
-cc
-Yv
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -64123,7 +61968,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -64363,14 +62216,6 @@ Cu
 "}
 (242,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -64380,7 +62225,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -64620,14 +62473,6 @@ Cu
 "}
 (243,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-PE
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -64637,7 +62482,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -64877,14 +62730,6 @@ Cu
 "}
 (244,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-Yv
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -64894,7 +62739,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -65134,14 +62987,6 @@ Cu
 "}
 (245,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -65151,7 +62996,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -65391,14 +63244,6 @@ Cu
 "}
 (246,1,1) = {"
 Cu
-Yv
-cc
-Yv
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -65408,7 +63253,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -65648,14 +63501,6 @@ Cu
 "}
 (247,1,1) = {"
 Cu
-Yv
-Yz
-Yt
-Yv
-Yt
-Yz
-Yv
-WR
 yH
 yH
 yH
@@ -65665,7 +63510,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -65905,14 +63758,6 @@ Cu
 "}
 (248,1,1) = {"
 Cu
-Yv
-TU
-vN
-TU
-vN
-KU
-Yv
-WR
 yH
 yH
 yH
@@ -65922,7 +63767,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -66162,14 +64015,6 @@ Cu
 "}
 (249,1,1) = {"
 Cu
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-Yv
-WR
 yH
 yH
 yH
@@ -66179,7 +64024,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -66419,14 +64272,6 @@ Cu
 "}
 (250,1,1) = {"
 Cu
-WR
-WR
-WR
-WR
-WR
-WR
-WR
-WR
 yH
 yH
 yH
@@ -66436,7 +64281,15 @@ yH
 yH
 yH
 yH
-WR
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
+yH
 yH
 yH
 yH
@@ -66693,7 +64546,7 @@ yH
 yH
 yH
 yH
-WR
+yH
 yH
 yH
 yH
@@ -66950,7 +64803,7 @@ yH
 yH
 yH
 yH
-WR
+yH
 yH
 yH
 yH
@@ -67207,7 +65060,7 @@ yH
 yH
 yH
 yH
-WR
+yH
 yH
 yH
 yH
@@ -67464,7 +65317,7 @@ yH
 yH
 yH
 yH
-WR
+yH
 yH
 yH
 yH

@@ -1,4 +1,6 @@
 /mob/living/Initialize()
+	add_verb(src, /mob/living/verb/subtle)
+	add_verb(src, /mob/living/verb/subtler)
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
@@ -1219,6 +1221,10 @@
 			amount *= 0.25
 		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
 			amount *= 0.5
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_WEAK))
+			amount *= 1.5
+		else if(HAS_TRAIT(src, TRAIT_100_RAD_WEAK))
+			amount *= 2
 
 	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
@@ -1564,10 +1570,7 @@
 //Coyote Add
 /mob/living/proc/despawn()
 	SSwho.KillCustoms(ckey, "despawned")
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)
@@ -1579,3 +1582,20 @@
 	set desc = "Switch sharp/fuzzy scaling for current mob."
 	appearance_flags ^= PIXEL_SCALE
 	fuzzy = !fuzzy
+
+/mob/living/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+
+/mob/living/verb/handstand()
+	set category = "IC"
+	set name = "Perform Handstand "
+	set desc = "Button that turns your character upside down."
+
+	to_chat(src, span_notice("You try to perform a handstand."))
+	if(do_after(src, 1 SECONDS, target = src))
+		for(var/i in 1 to 180)  //I know this is awful
+			src.tilt_left()

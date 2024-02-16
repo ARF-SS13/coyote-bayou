@@ -78,6 +78,9 @@
 				if(isturf(loc))
 					if(directions.len)
 						gib.streak(directions)
+				if(!mapload)
+					var/deltime = rand(180, 600)
+					QDEL_IN(gib, deltime SECONDS)
 
 	return INITIALIZE_HINT_QDEL
 

@@ -432,7 +432,8 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	if (isnum(cached_player_age) && cached_player_age == -1) //first connection
 		if (nnpa >= 0)
 			message_admins("New user: [key_name_admin(src)] is connecting here for the first time.")
-			to_chat(world, "<font size='4' color='purple'>A new player is connecting for the first time, greet them in OOC/NEWBIE!  Lets get them set up!</font>")
+			spawn(2 MINUTES) //leo is feasting on my balls and liver ~TK, he said it was bones but it was defo balls
+				to_chat(world, "<font size='4' color='purple'>A new player is connecting for the first time, greet them in OOC/NEWBIE!  Lets get them set up!</font>")
 			if (CONFIG_GET(flag/irc_first_connection_alert))
 				send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
 	else if (isnum(cached_player_age) && cached_player_age < nnpa)
@@ -990,6 +991,14 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		"sounds/f13weapons/",
 		"sounds/creatures/",
 		"sounds/voice/",
+		"sounds/ambience",
+		"sounds/f13",
+		"sounds/f13ambience",
+		"sounds/effects",
+		"sounds/f13items",
+		"sounds/f13music",
+		"sounds/weapons",
+		"sounds/block_parry",
 	)
 	for(var/folder in fucking_sound_folders)
 		GLOB.every_fucking_sound_file |= pathwalk(folder)
@@ -1137,6 +1146,23 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		var/datum/verbs/menu/menuitem = GLOB.menulist[thing]
 		if (menuitem)
 			menuitem.Load_checked(src)
+
+///Make sure chat text color has enough contrast against the client's background color
+/client/proc/sanitize_chat_color(color)
+	var/bgcolor = src.prefs.chatbgcolor
+	var/bglum = rgb2num(bgcolor, COLORSPACE_HSL)[3]
+	var/colorHSL = rgb2num(color, COLORSPACE_HSL)
+	var/colorlum = colorHSL[3]
+	var/lumdiff = colorlum - bglum
+
+	if(bglum < 50 && lumdiff < 25)
+		colorlum = min(bglum + 25, 100)
+	else if(bglum >= 50 && lumdiff > -25)
+		colorlum = max(bglum - 25, 0)
+	else
+		return color
+
+	return rgb(colorHSL[1], colorHSL[2], colorlum, , COLORSPACE_HSL)
 
 /* 
 /client/proc/checkGonadDistaste(flag)

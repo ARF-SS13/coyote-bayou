@@ -274,3 +274,19 @@
 /obj/structure/bed/mattress/pregame/New()
 	..()
 	icon_state = "mattress[rand(0,5)]"
+
+/obj/structure/bed/roller/bedroll
+	name = "bedroll"
+	icon = 'icons/obj/rollerbed.dmi'
+	icon_state = "bedroll"
+	anchored = FALSE
+	resistance_flags = NONE
+	foldabletype = /obj/item/roller/bedroll
+	use_directionals = FALSE
+
+/obj/item/roller/bedroll
+	name = "rolled bedroll"
+	desc = "A collapsed bedroll that can be carried around."
+	icon = 'icons/obj/rollerbed.dmi'
+	icon_state = "bedrollrolled"
+	w_class = WEIGHT_CLASS_SMALL // So you don't have to struggle with it! Besides, bedrolls can get pretty small.

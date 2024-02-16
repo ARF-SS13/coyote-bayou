@@ -217,7 +217,7 @@
 	return air_contents.remove_ratio(ratio)
 
 /obj/item/tank/return_air()
-	return air_contents
+	// return air_contents
 
 // /obj/item/tank/return_analyzable_air()
 // 	return air_contents

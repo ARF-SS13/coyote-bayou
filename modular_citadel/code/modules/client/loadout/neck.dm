@@ -49,6 +49,10 @@
 	name = "grey cloak"
 	path = /obj/item/clothing/neck/mantle/gray
 
+/datum/gear/neck/mantle/red
+	name = "red cloak"
+	path = /obj/item/clothing/neck/mantle/red
+
 /datum/gear/neck/mantle/ragged
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged
@@ -133,6 +137,63 @@
 /datum/gear/neck/scarf/desertscarf
 	name = "desert scarf"
 	path = /obj/item/clothing/neck/scarf/cptpatriot
+
+/datum/gear/neck/scarf/laika
+	name = "Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika
+	cost = 2 // because it has a holster in it
+
+/datum/gear/neck/scarf/laika/redder
+	name = "Blood Red Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/redder
+
+/datum/gear/neck/scarf/laika/blue
+	name = "Blue Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/blue
+
+/datum/gear/neck/scarf/laika/bluer
+	name = "Vibrant Blue Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/bluer
+
+/datum/gear/neck/scarf/laika/cyan
+	name = "Cyan Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/cyan
+
+/datum/gear/neck/scarf/laika/tan
+	name = "Tactical Coyote Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/tan
+
+/datum/gear/neck/scarf/laika/brown
+	name = "Brown Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/brown
+
+/datum/gear/neck/scarf/laika/yellow
+	name = "Yellow Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/yellow
+
+/datum/gear/neck/scarf/laika/olive
+	name = "Tactical OD Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/olive
+
+/datum/gear/neck/scarf/laika/white
+	name = "White Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/white
+
+/datum/gear/neck/scarf/laika/black
+	name = "Black Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/black
+
+/datum/gear/neck/scarf/laika/tricolor
+	name = "Tricolor Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/tricolor
+
+/datum/gear/neck/scarf/laika/starspangledbanner
+	name = "Star Spangled Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/starspangledbanner
+
+/datum/gear/neck/scarf/laika/striped
+	name = "Striped Scarf-Cape w/ Holster"
+	path = /obj/item/clothing/neck/laika/striped
 
 /datum/gear/neck/medolier
 	name = "medolier"

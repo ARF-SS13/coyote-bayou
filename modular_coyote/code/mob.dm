@@ -21,8 +21,7 @@
 	emote_taunt_sound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = list('sound/f13npc/hellpig/hellpigdead.ogg',)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 8)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 12, /obj/item/stack/sheet/bone = 7, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 8)
 	butcher_difficulty = 1
 
 /mob/living/simple_animal/hostile/hellpig/Initialize()
@@ -461,6 +460,8 @@
 	. = ..()
 	recenter_wide_sprite()
 
+//Start Advanced Mobs//
+
 /mob/living/simple_animal/advanced/tenderclawmale
 	name = "male tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
@@ -500,27 +501,8 @@
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
-	health = 150
-	maxHealth = 150
-
-//Actual chooseable mouse colors
-
-/mob/living/simple_animal/advanced/mousewhite
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_white"
-
-/mob/living/simple_animal/advanced/mousegray
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_gray"
-
-/mob/living/simple_animal/advanced/mousebrown
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_brown"
-
 
 //The simple version of the dog borgs.
-
-
 /mob/living/simple_animal/advanced/blade//Yes they are pokemon, shut.
 	name = "blade borg"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
@@ -728,51 +710,47 @@
 
 //raptor mobs from virgo
 
-/* All advanced mobs need to have dead and resting sprites equal to "[icon_living]_rest"
-// Fix these before uncommenting them.
-
 /mob/living/simple_animal/advanced/purpleraptor
 	name = "purple raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorpurple"
 	icon_living = "raptorpurple"
 	icon_dead = "raptorpurple_dead"
 
 /mob/living/simple_animal/advanced/greenraptor
 	name = "green raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorgreen"
 	icon_living = "raptorgreen"
 	icon_dead = "raptorgreen_dead"
 
 /mob/living/simple_animal/advanced/redraptor
 	name = "red raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorred"
 	icon_living = "raptorred"
 	icon_dead = "raptorred_dead"
 
 /mob/living/simple_animal/advanced/blueraptor
 	name = "blue raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorblue"
 	icon_living = "raptorblue"
 	icon_dead = "raptorblue_dead"
 
 /mob/living/simple_animal/advanced/blackraptor
 	name = "black raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorblack"
 	icon_living = "raptorblack"
 	icon_dead = "raptorblack_dead"
 
 /mob/living/simple_animal/advanced/whiteraptor
 	name = "white raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorwhite"
 	icon_living = "raptorwhite"
 	icon_dead = "raptorwhite_dead"
-*/
 
 /mob/living/simple_animal/advanced/bat
 	name = "bat"
@@ -780,3 +758,482 @@
 	icon_state = "bat"
 	icon_living = "bat"
 	icon_dead = "bat_dead"
+
+/mob/living/simple_animal/advanced/cat
+	name = "Cat"
+	icon = 'icons/mob/pets.dmi'
+	icon_state = "cat2"
+	icon_living = "cat2"
+	icon_dead = "cat2_dead"
+
+
+//More Virgo mobs
+//Big wolfs
+/mob/living/simple_animal/advanced/bigwolf
+	name = "big wolf - black"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "blackwolf"
+	icon_living = "blackwolf"
+	icon_dead = "blackwolf_dead"
+
+/mob/living/simple_animal/advanced/bigwolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+/mob/living/simple_animal/advanced/sifwolf
+	name = "big wolf - silver"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "sifwolf"
+	icon_living = "sifwolf"
+	icon_dead = "sifwolf_dead"
+
+/mob/living/simple_animal/advanced/sifwolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+/mob/living/simple_animal/advanced/whitewolf
+	name = "big wolf - white"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "whitewolf"
+	icon_living = "whitewolf"
+	icon_dead = "whitewolf_dead"
+
+/mob/living/simple_animal/advanced/whitewolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+//Leopardmanders
+
+/mob/living/simple_animal/advanced/leopardmander
+	name = "leopardmander -blue"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander_blue"
+	icon_living = "leopardmander_blue"
+	icon_dead = "leopardmander_blue_dead"
+
+/mob/living/simple_animal/advanced/leopardmander/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+/mob/living/simple_animal/advanced/leopardmanderwhite
+	name = "leopardmander - white"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander"
+	icon_living = "leopardmander"
+	icon_dead = "leopardmander_dead"
+
+/mob/living/simple_animal/advanced/leopardmanderwhite/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+/mob/living/simple_animal/advanced/leopardmanderexotic
+	name = "leopardmander - exotic"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander_exotic"
+	icon_living = "leopardmander_exotic"
+	icon_dead = "leopardmander_exotic_dead"
+
+/mob/living/simple_animal/advanced/leopardmanderexotic/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
+
+/mob/living/simple_animal/advanced/gecko
+	name = "gecko"
+	desc = "A large mutated reptile with sharp teeth."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_villager
+	name = "gecko villager"
+	desc = "A large mutated reptile that has learned the basics of tool usage."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_villager"
+	icon_living = "gekko_tribe_villager"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_leader
+	name = "gecko leader"
+	desc = "A large mutated reptile that has learned the basics of checks and balances."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_leader"
+	icon_living = "gekko_tribe_leader"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_shaman
+	name = "gecko shaman"
+	desc = "A large mutated reptile that has learned the basics of magic."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_shaman"
+	icon_living = "gekko_tribe_shaman"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/molerat
+	name = "molerat"
+	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "molerat"
+	icon_living = "molerat"
+	icon_dead = "molerat_dead"
+
+/mob/living/simple_animal/advanced/dog
+	name = "dog"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "dog_feral"
+	icon_living = "dog_feral"
+	icon_dead = "dog_feral_dead"
+
+/mob/living/simple_animal/advanced/rottweiler
+	name = "rottweiler"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "rottweiler"
+	icon_living = "rottweiler"
+	icon_dead = "rottweiler_dead"
+
+/mob/living/simple_animal/advanced/labretriever
+	name = "labrador retriever"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "tippen"
+	icon_living = "tippen"
+	icon_dead = "tippen_dead"
+
+/mob/living/simple_animal/advanced/shepherd
+	name = "shepherd"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "shepherd"
+	icon_living = "shepherd"
+	icon_dead = "shepherd_dead"
+
+/mob/living/simple_animal/advanced/wolf
+	name = "wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "wolf"
+	icon_living = "wolf"
+	icon_dead = "wolf_dead"
+
+/mob/living/simple_animal/advanced/direwolf
+	name = "white dire wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "direwolf"
+	icon_living = "direwolf"
+	icon_dead = "direwolf_dead"
+
+/mob/living/simple_animal/advanced/hyotie
+	name = "hyotie"
+	desc = "Some kind of mix of otie and hyena."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "andrews"
+	icon_living = "andrews"
+	icon_dead = "andrews_dead"
+
+/mob/living/simple_animal/advanced/direwolf_black
+	name = "black direwolf"
+	desc = "Some kind of big black dog."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "rykka"
+	icon_living = "rykka"
+	icon_dead = "rykka_dead"
+
+/mob/living/simple_animal/advanced/hellhound
+	name = "hellound"
+	desc = "It's a fire doggo from hell."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhound"
+	icon_living = "hellhound"
+	icon_dead = "hellhound_dead"
+
+/mob/living/simple_animal/advanced/hellhound_greater
+	name = "greater hellound"
+	desc = "It's a fire doggo from hell."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhoundgreater"
+	icon_living = "hellhoundgreater"
+	icon_dead = "hellhound_dead"
+
+/mob/living/simple_animal/advanced/rabbit
+	name = "bunny"
+	desc = "Hoppity hop, easter is on it's way."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "bunny"
+	icon_living = "bunny"
+	icon_dead = "bunny_dead"
+
+/mob/living/simple_animal/advanced/yaoguai
+	name = "tamed Yaoguai"
+	desc = "Some kind of big black dog."
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
+	icon_state = "yaoguai"
+	icon_living = "yaoguai"
+	icon_dead = "yaoguai_dead"
+
+//By request, xenomorphs
+/mob/living/simple_animal/advanced/xeno
+	name = "Xenomorph Drone"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "aliend"
+	icon_living = "aliend"
+	icon_dead = "aliend_dead"
+
+/mob/living/simple_animal/advanced/xenos
+	name = "Xenomorph Sentry"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "alienq"
+	icon_living = "alienq"
+	icon_dead = "alienq_dead"
+
+/mob/living/simple_animal/advanced/xenoh
+	name = "Xenomorph Hunter"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "alienh"
+	icon_living = "alienh"
+	icon_dead = "alienh_dead"
+
+/mob/living/simple_animal/advanced/xenop
+	name = "Xenomorph Protector"
+	desc = "Don't tell Riply..."
+	icon = 'icons/mob/alienqueen.dmi'
+	icon_state = "alienp"
+	icon_living = "alienp"
+	icon_dead = "alienp_dead"
+
+/mob/living/simple_animal/advanced/xenoq
+	name = "Xenomorph Queen"
+	desc = "Don't tell Riply..."
+	icon = 'icons/mob/alienqueen.dmi'
+	icon_state = "alienq"
+	icon_living = "alienq"
+	icon_dead = "alienq_dead"
+
+/mob/living/simple_animal/advanced/xenoq/Initialize()
+    .=..()
+    resize = 0.7
+    update_transform()
+
+/mob/living/simple_animal/advanced/mousegrey
+	name = "grey mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_gray"
+	icon_living = "mouse_gray"
+	icon_dead = "mouse_gray_dead"
+
+/mob/living/simple_animal/advanced/mousebrown
+	name = "brown mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_brown"
+	icon_living = "mouse_brown"
+	icon_dead = "mouse_brown_dead"
+
+/mob/living/simple_animal/advanced/mousewhite
+	name = "white mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_white"
+	icon_living = "mouse_white"
+	icon_dead = "mouse_white_dead"
+
+/mob/living/simple_animal/advanced/opossum
+	name = "opossum"
+	desc = "It's an opossum, a small scavenging marsupial."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "possum"
+	icon_living = "possum"
+	icon_dead = "possum_dead"
+
+/mob/living/simple_animal/advanced/greensnake
+	name = "green snake"
+	desc = "A slithering, noodle-like thing with a mouth."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "snake"
+	icon_living = "snake"
+	icon_dead = "snake_dead"
+
+/mob/living/simple_animal/advanced/bee
+	name = "bee"
+	desc = "Bee yourself!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "bumbles"
+	icon_living = "bumbles"
+	icon_dead = "bumbles_dead"
+
+/mob/living/simple_animal/advanced/sophisticatedgorilla
+	name = "sophisticated gorilla"
+	desc = "The leg muscles!"
+	icon = 'icons/mob/gorilla.dmi'
+	icon_state = "standing"
+	icon_living = "standing"
+	icon_dead = "standing_dead"
+
+/mob/living/simple_animal/advanced/gorilla
+	name = "gorilla"
+	desc = "The muscles!"
+	icon = 'icons/mob/gorilla.dmi'
+	icon_state = "crawling"
+	icon_living = "crawling"
+	icon_dead = "crawling_dead"
+
+/mob/living/simple_animal/advanced/mothroach
+	name = "mothroach"
+	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
+
+/mob/living/simple_animal/advanced/bat
+	name = "bat"
+	desc = "Try not to go batty"
+	icon = 'modular_coyote/icons/mob/bat.dmi'
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+
+/mob/living/simple_animal/advanced/parrot
+	name = "parrot"
+	desc = "SQUAAAAWK!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "parrot"
+	icon_living = "parrot"
+	icon_dead = "parrot_dead"
+
+/mob/living/simple_animal/advanced/purpledc
+	name = "purple cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "pur"
+	icon_living = "pur"
+	icon_dead = "pur_dead"
+
+/mob/living/simple_animal/advanced/whitedc
+	name = "white cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "whi"
+	icon_living = "whi"
+	icon_dead = "whi_dead"
+
+/mob/living/simple_animal/advanced/reddc
+	name = "red cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "red"
+	icon_living = "red"
+	icon_dead = "red_dead"
+
+/mob/living/simple_animal/advanced/grydc
+	name = "grey cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "gry"
+	icon_living = "gry"
+	icon_dead = "gry_dead"
+
+/mob/living/simple_animal/advanced/brodc
+	name = "brown cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "bro"
+	icon_living = "bro"
+	icon_dead = "bro_dead"
+
+/mob/living/simple_animal/advanced/hubdc
+	name = "black cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "hub"
+	icon_living = "hub"
+	icon_dead = "hub_dead"
+
+/mob/living/simple_animal/advanced/maidclaw
+	name = "maid deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "maidclaw"
+	icon_living = "maidclaw"
+	icon_dead = "maidclaw_dead"
+
+/mob/living/simple_animal/advanced/queenclaw
+	name = "Queen deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "deathclaw_queen"
+	icon_living = "deathclaw_queen"
+	icon_dead = "deathclaw_queen_dead"
+
+
+
+//End Advanced Mobs//
+
+// Start Pets //
+
+/mob/living/simple_animal/pet/mothroach
+	name = "mothroach"
+	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
+	var/held_icon = "mothroach"
+
+/mob/living/simple_animal/pet/mothroach/tox
+	name = "Fluffy"
+	desc = "A adorably fluffy mothroach. This moth roach seems to have a collar on its neck, the tag reading 'Fluffy Mckit. If found, return to Tox Mckit'. What a fluffy fella!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
+	speak = list("Squee","Squeak-squeak-squeak","squeak","Chitters","Momf")
+	speak_emote = list("chitters", "squeaks")
+	emote_hear = list("chitters.", "squeaks")
+	emote_see = list("tilts its head", "flutters its wings" , "does a little dance")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "punts"
+	response_harm_simple = "punt"
+	maxHealth = 200
+	health = 200
+	mob_armor = ARMOR_VALUE_LIGHT
+	healable = 1
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	harm_intent_damage = 2
+	melee_damage_lower = 2
+	melee_damage_upper = 5
+	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
+	held_items = list(null, null)
+	healable = 1
+
+/mob/living/simple_animal/pet/pony
+	name = "pony"
+	desc = "A cute fluffy pony"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "pony"
+	icon_living = "pony"
+	icon_dead = "pony_dead"
+
+

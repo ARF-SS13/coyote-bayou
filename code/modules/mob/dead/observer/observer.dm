@@ -310,6 +310,9 @@ Works together with spawning an observer, noted above.
 	if(penalize)
 		if(src.timeofdeath == 0)
 			ghost.timeofdeath = world.time
+	if(!check_rights_for(src.client, R_ADMIN))
+		message_admins("[key_name(src)] is now a ghost.")
+		log_world("[key_name(src)] is now a ghost.")
 	return ghost
 
 /*
@@ -544,6 +547,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		else //Circular
 			rot_seg = 36 //360/10 bby, smooth enough aproximation of a circle
 
+	if(ismob(target))
+		// message_admins("[key_name_admin(src)] is now orbitting [target.name]")
+		var/mob/M = target
+		log_world("[key_name(src)] is now orbitting [key_name(M)]")
 	orbit(target,orbitsize, FALSE, 20, rot_seg)
 
 /mob/dead/observer/orbit()
