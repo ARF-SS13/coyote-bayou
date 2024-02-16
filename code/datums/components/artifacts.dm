@@ -1767,14 +1767,13 @@
 /datum/artifact_effect/passive_damage/healer/on_tick(obj/item/master, mob/living/target, obj/item/holder)
 	if(!isliving(target))
 		return
-	if(target.health < min_health)
-		return
+	last_applied = world.time
 	//if(target.health > (target.getMaxHealth() - max_health))
 	//	return
 	var/mult = lag_comp_factor()
 	var/armor_dr = max(check_armor(target, armor_flag) - SSartifacts.heal_armor_dr_threshold, 0)
 	var/dr = (100-min(armor_dr, ARMOR_CAP_DR))/100 // fun fact, this used to accidentally multiply the healing by your armor DR value, so APA would mean it healed you 61x faster, lol
-	if(implanted || !in_desired_slot())
+	if(implanted || !in_desired_slot() || target.health < min_health)
 		mult *= undesirable_mult
 	if(d_brute)
 		if(d_brute > 0)
@@ -1818,7 +1817,6 @@
 	if(d_brain)
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (-abs(d_brain) * mult * dr))
 
-	last_applied = world.time
 	//send_message(target, LAZYACCESS(dmg_out, 2))
 	return TRUE
 
@@ -2011,7 +2009,7 @@
 	else
 		if(!in_desired_slot())
 			return
-	target.adjustStaminaLossBuffered(stamina_adjustment)
+	target.adjustStaminaLoss(stamina_adjustment)
 	return TRUE
 
 /datum/artifact_effect/stamina/get_magnitude()
