@@ -303,6 +303,7 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
+		/obj/item/gun/ballistic/rifle/antique/tankgun = 5,                  //168
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
 		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
 		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
