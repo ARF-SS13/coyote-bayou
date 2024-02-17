@@ -1,5 +1,5 @@
 GLOBAL_LIST_INIT(bas_artifact,list(	
-									/obj/effect/spawner/lootdrop/f13/common = 1,
+									/obj/effect/spawner/lootdrop/f13/uncommon = 1,
 									))
 
 GLOBAL_LIST_INIT(adv_artifact,list(	
