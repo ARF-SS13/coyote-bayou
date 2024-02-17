@@ -85,6 +85,8 @@ SUBSYSTEM_DEF(research)
 	/obj/item/artifact/unique/perfection           = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	/obj/item/artifact/unique/penance              = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	/obj/item/artifact/unique/bubble               = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	//   -   Other (rocks, doodads, etc)
+	/obj/item/strangerock                          = list(TECHWEB_POINT_TYPE_GENERIC = 3750),
 	//   -   Slime Extracts!   - Basics
 	/obj/item/slime_extract/grey                   = list(TECHWEB_POINT_TYPE_GENERIC = 500),
 	/obj/item/slime_extract/metal                  = list(TECHWEB_POINT_TYPE_GENERIC = 750),
