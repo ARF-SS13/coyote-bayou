@@ -154,25 +154,25 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"High Alderperson",
-	"Councilperson",
+	//"High Alderperson",
+	//"Councilperson",
 	"Sheriff",
 	"New Boston Security",
-	"Deputy Mayor",
-//	"Farmer",
-//	"Prospector",
-	"Doctor",
-	"Detective",
-	"Banker",
+	//"Deputy Mayor",
+	//"Farmer",
+	//"Prospector",
+	//"Doctor",
+	//"Detective",
+	//"Guild Banker",
 	"Town Doctor",
 	"Town Scientist",
-	"Texarkana Quartermaster",
-	"Texarkana Trade Worker",
+	//"Texarkana Quartermaster",
+	"Guild Worker",
 	"Barkeep",
 	"Citizen",
-	"Preacher",
+	//"Preacher",
 	"Vertibird Pilot",
-	"New Boston Librarian",
+	//"New Boston Librarian",
 ))
 
 //Den Citizenship
