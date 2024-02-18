@@ -29,6 +29,28 @@
 		user.visible_message(span_notice("[user] waggles [src] at [target]."), span_notice("You waggle [src] at [target]."))
 	return TRUE
 
+///Special throw_impact for hats to frisbee hats at people to place them on their heads.
+/obj/item/toy/tennis/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	. = ..()
+	///if the thrown object's target zone isn't the head
+	if(thrownthing.target_zone != BODY_ZONE_HEAD)
+		return
+	if(!iscarbon(hit_atom))
+		return
+	var/mob/living/carbon/H = hit_atom
+	if(H.equip_to_slot_if_possible(src, SLOT_HEAD, FALSE, TRUE))
+		H.visible_message(span_notice("[src] lands neatly on [H]'s head!"), span_notice("[src] lands perfectly onto your head!"))
+	else if(H.equip_to_slot_if_possible(src, SLOT_NECK, FALSE, TRUE))
+		H.visible_message(span_notice("[src] lands neatly on [H]'s neck!"), span_notice("[src] lands perfectly onto your neck!"))
+	else if(H.equip_to_slot_if_possible(src, SLOT_EARS, FALSE, TRUE))
+		H.visible_message(span_notice("[src] lands neatly on [H]'s ears!"), span_notice("[src] lands perfectly onto your ears!"))
+	else if(prob(1))
+		H.visible_message(span_alert("[src] bounces off of [H]'s maldspot!"), span_alert("[src] bounces off of your maldspot!"))
+	else
+		H.visible_message(span_alert("[src] bounces off of [H]'s forehead!"), span_alert("[src] bounces off of your forehead!"))
+	return // I miss the days of else if chains
+
+
 /obj/item/toy/tennis/rainbow
 	name = "pseudo-euclidean interdimensional tennis sphere"
 	desc = "A tennis ball from another plane of existance. Really groovy."
