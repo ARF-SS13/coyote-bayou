@@ -998,12 +998,6 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "eF" = (
-/obj/machinery/button/door{
-	id = "bankvault";
-	name = "bank vault button";
-	pixel_y = -27;
-	req_one_access_txt = "52"
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -5944,14 +5938,9 @@
 	autoclose = "TRUE";
 	layer = 2;
 	max_integrity = 1000;
-	name = "Bighorn Vault";
+	name = "New Boston Trade Guild Vault";
 	normal_integrity = 800;
-	req_one_access_txt = "52"
-	},
-/obj/machinery/door/poddoor/ert{
-	id = "bankvault";
-	layer = 3;
-	name = "Vault Blast Door"
+	req_one_access_txt = "34"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/bank)
