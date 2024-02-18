@@ -865,8 +865,17 @@
 	},
 /area/f13/building/coyote/nash/massfus/workshop)
 "adF" = (
-/turf/closed/wall/f13/tunnel,
-/area/f13/tunnel/northwest)
+/obj/effect/decal/marking{
+	icon_state = "dottedverticaldegraded"
+	},
+/mob/living/simple_animal/hostile/hellpig{
+	color = "#FF11AA";
+	name = "Pinkus the Pork Chopest"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "adG" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War supermart wall made of reinforced concrete.";
@@ -1620,11 +1629,6 @@
 	icon_state = "outermaincornerinner - W"
 	},
 /area/f13/wasteland/city)
-"agP" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop3"
-	},
-/area/f13/tunnel/northwest)
 "agR" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -2529,11 +2533,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"akv" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/tunnel/northwest)
 "akw" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -3205,11 +3204,6 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/f13/ruins)
-"ano" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/tunnel/northwest)
 "anp" = (
 /obj/machinery/teleport/station{
 	name = "power unit"
@@ -3700,11 +3694,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"app" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right"
-	},
-/area/f13/tunnel/northwest)
 "aps" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -4229,11 +4218,6 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"art" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/tunnel/northwest)
 "aru" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel/southeast)
@@ -30888,9 +30872,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/vault,
 /area/f13/ruins)
-"ezB" = (
-/turf/closed/indestructible/f13/matrix/transition,
-/area/f13/tunnel/northwest)
 "ezF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
@@ -49313,19 +49294,9 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "jpG" = (
-/obj/structure/sign/crosswalk{
-	pixel_x = 7;
-	pixel_y = 5;
-	icon = 'modular_coyote/icons/objects/street_signs.dmi';
-	icon_state = "street";
-	name = "To New Boston";
-	desc = "Walk through these matrix tiles to go to New Boston.";
-	layer = 6
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop3"
-	},
-/area/f13/tunnel/northwest)
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/closed/indestructible/rock,
+/area/f13/wasteland)
 "jpH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -87141,9 +87112,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"tjG" = (
-/turf/closed/wall/f13/tunnel,
-/area/f13/wasteland/city/nash/redriverdepotroad)
 "tjQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -106577,11 +106545,11 @@ aaa
 aaa
 aaa
 aaa
-ezB
-ezB
-ezB
-ezB
-ezB
+aaa
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -106832,18 +106800,18 @@ vkY
 vkY
 aOk
 aOk
-aOk
 aaa
-jpG
-ano
-ano
-app
-art
-aaa
-aOk
-aOk
-aOk
-aOk
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aOk
 aOk
 aOk
@@ -107089,17 +107057,17 @@ pQW
 vkY
 aOk
 aOk
-aOk
 aaa
-agP
-ano
-ano
-app
-art
-aaa
-aOk
-aOk
-aOk
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aOk
 aOk
 aOk
@@ -107346,16 +107314,16 @@ pQW
 vkY
 aOk
 aOk
-aOk
-adF
-agP
-akv
-ano
-app
-art
-adF
-aOk
-aOk
+aaa
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aOk
 aOk
 aOk
@@ -107603,16 +107571,16 @@ aon
 vkY
 aOk
 aOk
-hkV
-adF
-agP
-akv
-ano
-app
-art
-adF
-aOk
-aOk
+jpG
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aOk
 aOk
 aOk
@@ -107861,14 +107829,14 @@ aOk
 aOk
 aOk
 aOk
-tjG
-xgX
-dab
-yfM
-pth
-pLv
-tjG
-aOk
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aOk
 aOk
 aOk
@@ -123124,10 +123092,10 @@ aOk
 aOk
 aOk
 aHF
-xhg
-xhg
-xhg
-xhg
+ebk
+ebk
+ebk
+ebk
 vXx
 vXx
 cFK
@@ -166512,7 +166480,7 @@ pqc
 kvh
 auj
 aPM
-ayD
+adF
 pzB
 wUx
 hIz
