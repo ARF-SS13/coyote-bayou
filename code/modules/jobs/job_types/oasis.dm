@@ -41,7 +41,7 @@ Mayor
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "New Boston"
-	description = "You are the civil leader of the Town of Nash. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
+	description = "You are the civil leader of the Town of New Boston. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
@@ -158,8 +158,8 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "your constituents, your greed, and realpolitik"
-	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place as one of the Deputy Mayors of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, or don't.  They'll probably only shoot you some."
-	enforces = "You serve as the de-facto leader of Nash, but you have very little actual power. Good luck with that!"
+	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place as one of the Deputy Mayors of New Boston. Keep the town running smoothly; help your constituents without stepping on their toes, or don't.  They'll probably only shoot you some."
+	enforces = "You serve as the de-facto leader of New Boston, but you have very little actual power. Good luck with that!"
 	selection_color = "#d7b088"
 	exp_requirements = 0
 
@@ -259,8 +259,8 @@ Mayor
 	total_positions = 0
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
-	enforces = "You are the stand-in leader of Nash if a Mayor or Secretary does not exist."
+	description = "You are the civil enforcer of New Boston, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave New Bostonundefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
+	enforces = "You are the stand-in leader of New Bostonif a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 0
 
@@ -375,8 +375,8 @@ Mayor
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "Your best Judgement"
-	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
-//	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
+	description = "You are a loyal protector of New Boston, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave New Bostonundefended, and don't let its people die out."
+//	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of New Bostonif a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 0
@@ -494,7 +494,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "New Boston laws"
-	description = "You are a farmer living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
+	description = "You are a farmer living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
 	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
 
@@ -577,7 +577,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "The Mayor"
-	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Nash understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
+	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of New Bostonunderstands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
 	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
 	selection_color = "#dcba97"
 
@@ -668,7 +668,7 @@ Mayor
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "The Mayor"
-	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Nash. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
+	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of New Boston. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
 	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
 
@@ -775,9 +775,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the free market and Nash's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest. Speak to the farmers for fresh produce!"
-	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
+	supervisors = "the free market and New Boston's Laws"
+	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
+	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -863,7 +863,7 @@ Mayor
 	total_positions = -1
 	spawn_positions =-1
 	supervisors = "New Boston's laws"
-	description = "You are a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	description = "You are a citizen living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -1085,7 +1085,7 @@ Mayor
 	flag = F13DETECTIVE
 	total_positions = 0
 	spawn_positions = 1
-	supervisors = "paying clients and Nash's laws"
+	supervisors = "paying clients and New Boston's laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 
@@ -1135,13 +1135,13 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13banker
-	title = "Banker"
+	title = "Guild Banker"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Nash, but perhaps deal-making will take you into other alliances."
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
@@ -1152,8 +1152,8 @@ Mayor
 	/datum/outfit/loadout/investor
 	)
 
-	access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
-	minimal_access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 
 /datum/outfit/job/den/f13banker
 	name = "Banker"
@@ -1215,8 +1215,9 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
-//Nash Curator
+//New BostonCurator
 
+/*
 /datum/job/oasis/nashcurator
 	title = "New Boston Librarian"
 	flag = NASHCURATOR
@@ -1224,7 +1225,7 @@ Mayor
 	total_positions = 0
 	spawn_positions = 1
 	supervisors = "New Boston's laws"
-	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
+	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/nashcurator
@@ -1279,9 +1280,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 0
 	spawn_positions = 1
-	supervisors = "the free market and Nash's laws"
+	supervisors = "the free market and New Boston's laws"
 	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
-	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
+	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 0
 
@@ -1367,17 +1368,18 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+*/
 
 //The Trade Workers
 /datum/job/oasis/f13shopkeeper
-	title = "Texarkana Trade Worker"
+	title = "Guild Worker"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the free market and Nash's laws"
-	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
-	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
+	supervisors = "the free market."
+	description = "You are one of the many workers who live in the city of New Boston. Working with the town council you have rented out a space in the shop for you to make your living."
+	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 0
 
