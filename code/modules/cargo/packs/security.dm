@@ -920,7 +920,7 @@
 /datum/supply_pack/security/weaponname
 	name = ""
 	desc = ""
-	cost = weapon dps 2x
+	cost = weapon dps 2x, add a zero at the end
 	num_contained = 1
 	contains = list(/obj/item/clothing/glasses/night/prescription)
 	crate_name = "select weapon crate"
@@ -1014,7 +1014,7 @@
 	contains = list(/obj/item/gun/ballistic/revolver/shotpistol)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/10mmsmg
+/datum/supply_pack/security/tenmmsmg
 	name = "10mm Submissive Machine Gun"
 	desc = "A big chunky monkey fucking typewriter of an SMG. Good for bashing people to death when you inevitably run out of ammo because it was too heavy for you to carry."
 	cost = 6300
@@ -1062,7 +1062,6 @@
 	contains = list(/obj/item/gun/ballistic/automatic/m1919)
 	crate_name = "select weapon crate"
 
-
 /datum/supply_pack/security/pancorjackhammer
 	name = "Pancor Jackhammer"
 	desc = "You're not making Ian proud right now."
@@ -1079,7 +1078,7 @@
 	contains = list(/obj/item/gun/ballistic/automatic/smg/p90)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/14mmsmg
+/datum/supply_pack/security/fourteenmilsmg
 	name = "14mm SMG"
 	desc = "Listen, we know why you're here but you don't have to hate your wrists in character as much as out of character."
 	cost = 6300
