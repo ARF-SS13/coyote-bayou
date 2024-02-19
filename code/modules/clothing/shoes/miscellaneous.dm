@@ -5,6 +5,18 @@
 	name = "mime shoes"
 	icon_state = "mime"
 
+/obj/item/clothing/shoes/cowboy/alt
+	name = "Cowboy Boots, alt"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_alt"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+	strip_delay = 70
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	lace_time = 12 SECONDS
+
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
@@ -568,11 +580,6 @@
 	desc = "Long woolen leg wraps used sense the first world war"
 	icon_state = "putt"
 	mutantrace_variation = STYLE_DIGITIGRADE
-
-/obj/item/clothing/shoes/cowboy/alt
-	name = "Cowboy Boots, alt"
-	desc = "A set of cowboy boots. Yeehaw!"
-	icon_state = "cowboy_alt"
 
 /obj/item/clothing/shoes/cowboy/ranger
 	name = "Ranger Cowboy"

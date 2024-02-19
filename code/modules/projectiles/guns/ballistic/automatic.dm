@@ -2633,6 +2633,26 @@
 	icon_state = "augc"
 	item_state = "augc"
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/asvalcustom
+	name = "Custom 'Cold Whisper'Assault Carbine "
+	desc = "A modified 9mm AS-VAL assault carbine. Rechambered to be in 5mm, this rifle fires much slower than its little, but older, brother which is in 9mm. The gun seems custom built and produced for someone."
+	init_recoil = AUTOCARBINE_RECOIL(1.3, 1.1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "vss"
+	item_state = "vss"
+	silenced = TRUE
+	can_scope = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
@@ -3065,7 +3085,10 @@
 	name = "L1A1"
 	desc = "The L1A1 Self-Loading Rifle, The standard issue rifle of All Commonwealth Nations."
 	icon_state = "l1a1"
-	item_state = "slr"
+	item_state = "l1a1"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -3661,13 +3684,13 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_REPEATER
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	draw_time = GUN_DRAW_LONG
 	init_recoil = HMG_RECOIL (1.4 , 4.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast ,
-		/datum/firemode/automatic/rpm400
+		/datum/firemode/automatic/rpm200
 	)
 	can_suppress = FALSE
 	can_bayonet = FALSE

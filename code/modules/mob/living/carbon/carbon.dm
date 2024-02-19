@@ -940,6 +940,9 @@
 
 	if(see_override)
 		see_invisible = see_override
+	if(client?.holder)
+		see_invisible = client.holder.ghostsight_or(see_invisible) //can't see ghosts through cameras
+
 	. = ..()
 
 

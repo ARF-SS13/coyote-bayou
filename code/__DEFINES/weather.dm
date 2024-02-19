@@ -15,6 +15,7 @@
 #define Z_LEVEL_NEWBOSTON_UPPER 13
 #define Z_LEVEL_TRANSIT 14
 #define Z_LEVEL_VR 15
+#define Z_LEVEL_FALLBACK 32768 // sadly this means we're limited to 32767 Z levels....
 
 #define ABOVE_GROUND_Z_LEVELS list(\
 	Z_LEVEL_REDLICK_UPPER,\
@@ -73,10 +74,10 @@
 GLOBAL_LIST_INIT(z2name, list(
 	"[Z_LEVEL_CENTCOM]" = "CentCom",
 	"[Z_LEVEL_DUNGEON]" = "Dungeon",
-	"[Z_LEVEL_NASH_UNDERGROUND]" = "Nash Underground",
-	"[Z_LEVEL_NASH_COMMON]" = "Nash Common",
-	"[Z_LEVEL_NASH_LVL2]" = "Nash Lvl 2",
-	"[Z_LEVEL_NASH_LVL3]" = "Nash Lvl 3",
+	"[Z_LEVEL_NASH_UNDERGROUND]" = "New Boston Underground",
+	"[Z_LEVEL_NASH_COMMON]" = "New Boston Common",
+	"[Z_LEVEL_NASH_LVL2]" = "New Boston Lvl 2",
+	"[Z_LEVEL_NASH_LVL3]" = "New Boston Lvl 3",
 	"[Z_LEVEL_REDWATER]" = "Redwater",
 	"[Z_LEVEL_REDWATER_UPPER]" = "Redwater Upper",
 	"[Z_LEVEL_REDLICK]" = "Redlick",

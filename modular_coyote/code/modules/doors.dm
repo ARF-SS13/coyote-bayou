@@ -7,10 +7,11 @@
 	icon = 'icons/obj/doors/airlocks/highsec/highsec.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/highsec/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_highsecurity
-	explosion_block = 2
-	normal_integrity = 500
+	explosion_block = 100
+	max_integrity = 10000
 	security_level = 1
 	damage_deflection = 38
+	obj_flags = INDESTRUCTIBLE
 
 /obj/machinery/door/airlock/ckey/highsecurity/andy
 	req_one_ckey = list("andyman105", "dameonowen", "dwagin", "foxyrose", "thingpony", "brimcon", "aldrictalvalin", "dwaggy90", "roguenoob")
@@ -27,7 +28,7 @@
 	return 0		//Otherwise, deny access.
 
 /obj/machinery/door/airlock/ckey/highsecurity/tox
-	req_one_ckey = list("seermankhajiit00", "darknova92", "deadwolf411")
+	req_one_ckey = list("seermankhajiit00", "darknova92", "deadwolf411", "kathrinbailey")
 
 /obj/machinery/door/airlock/ckey/allowed(mob/M)
 	if(locked)

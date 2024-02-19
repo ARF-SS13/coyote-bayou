@@ -255,6 +255,28 @@
 	start_empty = 1
 
 
+/obj/item/ammo_box/magazine/geight
+	name = "patrone 88 cartridge (30-06)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "3006"
+	caliber = list(CALIBER_3006)
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 5
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/geight/update_icon()
+	..()
+	if (ammo_count() >= 5)
+		icon_state = "3006-5"
+	else
+		icon_state = "3006-[ammo_count()]"
+
+/obj/item/ammo_box/magazine/geight/empty
+	start_empty = 1
+
+
 /obj/item/ammo_box/magazine/pzb39magazne
 	name = "Pzb39 Box magazine"
 	icon_state = "pzb39"

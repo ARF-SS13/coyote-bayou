@@ -82,11 +82,10 @@
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 1500
+	cost = 250
 	material_id = /datum/material/adamantine
 	message = "cm3 of pre-war ingots"
-	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
-	/obj/item/ingot/adamantine)
+	export_types = list(/obj/item/ingot/adamantine, /obj/item/stack/sheet/mineral/adamantine)
 
 /*
 /datum/export/material/prewar
@@ -97,7 +96,7 @@
 */
 
 /datum/export/material/mythril
-	cost = 600
+	cost = 100
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
 	export_types = list(/obj/item/ingot/mythril)

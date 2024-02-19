@@ -86,30 +86,6 @@
 	//I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
 	I.prefix = "ergonomic"
 
-/obj/item/tool_upgrade/productivity/red_paint
-	name = "red paint"
-	desc = "Do red tools really work faster or is the effect purely psychological? Needless to say, you can't strip it off once applied. Ye'z boyz kin' put in on ya shootahz too!"
-	icon_state = "paint_red"
-
-/obj/item/tool_upgrade/productivity/red_paint/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	/*I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.20,
-	UPGRADE_PRECISION = -10,
-	UPGRADE_COLOR = "#FF4444"
-	)*/
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-20) * 0.01,
-		//GUN_UPGRADE_PROJ_SPEED_MULT = 1.25,
-		//GUN_UPGRADE_OFFSET = 3,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(25,75) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(25,75) * 0.01,
-		UPGRADE_COLOR = "#FF4444"
-	)
-	I.prefix = "red"
-	//I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
-
 //Enhances power tools majorly, but also increases costs
 /obj/item/tool_upgrade/productivity/motor
 	name = "high power motor"
@@ -177,7 +153,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(5,20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(10,25) * 0.01,
 		GUN_UPGRADE_RECOIL_1H=1 + rand(80,120) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(10,35) * 0.01
 //		GUN_UPGRADE_FIRE_DELAY_MULT = 1.25,
@@ -324,21 +300,135 @@
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
-/obj/item/tool_upgrade/augment/randomizer
-	name = "Bluespace Paint"
-	desc = "A mysterious blue and ever shifting liquid paint. Anything that it's put on seems to meld and change instantly to be better...or worse!"
-	icon_state = "randomizer"
+// Paint: For Modifying specific traits
+//_____________________________________
 
-/obj/item/tool_upgrade/augment/randomizer/New()
+/obj/item/tool_upgrade/paint/red
+	name = "red paint"
+	desc = "Red paint increases the guns overall speed in its abilities, and magazine size, or makes it worse."
+	icon_state = "paint_red"
+
+/obj/item/tool_upgrade/paint/red/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-35,45) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-35,45) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-35,45) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-35,45) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-15,25) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-35,45) * 0.01,
-		UPGRADE_COLOR = "#59788E"
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-15,50) * 0.01,
+		UPGRADE_COLOR = "#FF4444"
 	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "red"
+
+/obj/item/tool_upgrade/paint/blue
+	name = "blue paint"
+	desc = "Blue paint reduces recoil and increases ricochet, while also reducing charge cost of a laser gun, or makes it worse."
+	icon_state = "blue_paint"
+
+/obj/item/tool_upgrade/paint/blue/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-40,25) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-40,25) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-40,25) * 0.01,
+		UPGRADE_COLOR = "#00356b"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "blue"
+
+/obj/item/tool_upgrade/paint/yellow
+	name = "yellow paint"
+	desc = "Yellow paint reduces movement delay and recoil, while increasing gun damage, or makes them worse."
+	icon_state = "yellow_paint"
+
+/obj/item/tool_upgrade/paint/yellow/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-70,-50) * 0.01,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-40,25) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-25,40) * 0.01,
+		UPGRADE_COLOR = "#FFFF00"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "yellow"
+
+/obj/item/tool_upgrade/paint/orange
+	name = "orange paint"
+	desc = "Orange paint combines the effects of red and yellow for a more pronounced paint quality."
+	icon_state = "orange_paint"
+
+/obj/item/tool_upgrade/paint/orange/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-85,-65) * 0.01,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,50) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,50) * 0.01,
+		UPGRADE_COLOR = "#FFA500"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "orange"
+
+/obj/item/tool_upgrade/paint/purple
+	name = "purple paint"
+	desc = " Purple paint combines the effects of red and blue for a more pronounced paint quality."
+	icon_state = "violet_paint"
+
+/obj/item/tool_upgrade/paint/purple/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,10) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,50) * 0.01,
+		UPGRADE_COLOR = "#8F00FF"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "purple"
+
+/obj/item/tool_upgrade/paint/green
+	name = "green paint"
+	desc = " Green paint combines the effects of blue and yellow for a more pronounced paint quality."
+	icon_state = "green_paint"
+
+/obj/item/tool_upgrade/paint/green/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-80,-60) * 0.01,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-15,50) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-50,15) * 0.01,
+		UPGRADE_COLOR = "#007958"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "green"
+
+/obj/item/tool_upgrade/paint/black
+	name = "black paint"
+	desc = "A combination of all three main colors. This makes a paint that has a maximized chance of being perfect."
+	icon_state = "black_paint"
+
+/obj/item/tool_upgrade/paint/black/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-65,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,65) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-65,5) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-65,5) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-65,5) * 0.01,
+		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-90,-70) * 0.01,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-65,5) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-5,65) * 0.01,
+		UPGRADE_COLOR = "#000000"
+	)
+	I.gun_loc_tag = GUN_PAINTABLE
+	I.prefix = "black"

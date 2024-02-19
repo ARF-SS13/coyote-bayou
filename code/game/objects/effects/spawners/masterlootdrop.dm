@@ -235,7 +235,8 @@
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
-		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 9,         //85(140) 24
+		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
+		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
 		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 10,      //139 15
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
@@ -302,6 +303,7 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
+		/obj/item/gun/ballistic/rifle/antique/tankgun = 5,                  //168
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
 		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
 		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
@@ -883,9 +885,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
 		/obj/item/reagent_containers/pill/patch/jet = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
+		/obj/item/reagent_containers/pill/patch/steady = 1,
+		/obj/item/reagent_containers/pill/patch/psycho = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 	)
 
@@ -894,9 +896,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -912,9 +914,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -1222,11 +1224,12 @@
 /obj/effect/spawner/lootdrop/f13/trash_mods
 	name = "trash attachments"
 	loot = list(
-		/obj/item/tool_upgrade/productivity/red_paint = 1,
+		/obj/item/tool_upgrade/paint/red = 1,
+		/obj/item/tool_upgrade/paint/blue = 1,
+		/obj/item/tool_upgrade/paint/yellow = 1,
 		/obj/item/tool_upgrade/refinement/laserguide = 1,
 		/obj/item/tool_upgrade/reinforcement/heatsink = 1,
 		/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-		/obj/item/tool_upgrade/augment/randomizer = 1,
 		/obj/item/gun_upgrade/cosmetic/gold = 1,
 		/obj/item/gun_upgrade/trigger/boom = 1,
 

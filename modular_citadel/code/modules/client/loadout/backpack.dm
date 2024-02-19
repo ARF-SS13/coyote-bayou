@@ -658,10 +658,12 @@
 /datum/gear/backpack/chestpatch
 	name = "generic patch (chest)"
 	path = /obj/item/clothing/accessory/patch
+	cost = 0
 
 /datum/gear/backpack/armpatch
 	name = "generic patch (arm)"
 	path = /obj/item/clothing/accessory/patch/arm
+	cost = 0
 
 /datum/gear/backpack/headphones
 	name = "Headphones"

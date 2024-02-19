@@ -121,7 +121,7 @@
 	if(run_special(user, target, params))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
-		return TRUE
+		return
 
 /datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
 	if(!user || !target)
@@ -437,6 +437,9 @@
 					if(!damage)
 						continue
 					hit_this.attackby(master, user, null, damage)
+
+	// i'm sure nothing bad will happen if i let people run afterattack on every mob they hit using these components.
+	master.afterattack(hit_this, user, TRUE, null)
 
 /datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target)
 	if(!user || !target)

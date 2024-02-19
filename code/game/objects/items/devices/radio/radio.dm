@@ -498,7 +498,7 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "a rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
+	desc = "A rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone

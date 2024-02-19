@@ -459,6 +459,7 @@
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
 	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof(src)
+	new /obj/item/reagent_containers/food/drinks/flask/tech(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 
@@ -791,17 +792,6 @@
 	new /obj/item/clothing/gloves/f13/military(src)
 	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
 	new /obj/item/storage/backpack/trekker(src)
-
-/datum/gear/donator/kits/werediggy
-	name = "Weredoggo Customs"
-	path = /obj/item/storage/box/large/custom_kit/werediggy // bookmark from JSC
-	ckeywhitelist = list("weredoggo")
-
-/obj/item/storage/box/large/custom_kit/werediggy/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/peach(src)
-	new /obj/item/gun/energy/laser/auto/oasis(src)
-	new /obj/item/seeds/grass/fairy(src)
-	new /obj/item/storage/daki(src)
 
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
@@ -1238,7 +1228,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/storage/box/tools/ranching(src)
+	new /obj/item/slimecross/consuming/grey(src)
 
 /datum/gear/donator/kits/prismaticnova2
 	name = "Slime Cookie Kit"
@@ -1262,18 +1252,6 @@
 	new /obj/item/card/id/dogtag/prismaticnova(src)
 	new /obj/item/gun/ballistic/automatic/needlerrifle/custom(src)
 	new /obj/item/ammo_box/needlercapsule(src)
-
-/datum/gear/donator/kits/prismaticnova4
-	name = "Trueshot's Kit"
-	path = /obj/item/storage/box/large/custom_kit/prismaticnova4
-	ckeywhitelist = list("prismaticnova")
-
-/obj/item/storage/box/large/custom_kit/prismaticnova4/PopulateContents()
-//	new /obj/item/gun/ballistic/bow/gold(src)
-	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-	new /obj/item/smelling_salts/wayfarer(src)
-	new /obj/item/reagent_containers/pill/fiery_purgative(src)
-	new /obj/item/reagent_containers/pill/antivenom(src)
 
 // Q
 
@@ -1381,9 +1359,8 @@
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/box/hobo_tox(src)
+	new /obj/item/clothing/under/f13/ww1custom(src)
 	new /obj/item/gun/ballistic/automatic/fnfal/ak47/custom(src)
-	new /obj/item/pet_carrier/paws(src)
-	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/SilencedMP5A5
@@ -1439,6 +1416,8 @@
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/gun/ballistic/rifle/antique/tankgun/custom(src)
+	new /obj/item/ammo_box/a50MGbox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
@@ -1454,6 +1433,8 @@
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/pet_carrier/paws(src)
+	new /obj/item/pet_carrier/fluffy(src)
 
 
 /datum/gear/donator/kits/seermankhajiit00last
@@ -1687,6 +1668,19 @@
 /obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
+
+/datum/gear/donator/kits/twitchysw
+	name = "The Avian"
+	path = /obj/item/storage/box/large/custom_kit/twitchysw
+	ckeywhitelist = list("TwitchySw")
+
+
+/obj/item/storage/box/large/custom_kit/twitchysw/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/asvalcustom(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/gun/ballistic/revolver/hunting/custom(src)
+	new /obj/item/ammo_box/c4570box(src)
+
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
@@ -1820,11 +1814,29 @@
 	new /obj/item/storage/bag/plants(src)
 
 /datum/gear/donator/kits/weredoggo
-	name = "BBQ Fun"
+	name = "Weredoggo Customs"
 	path = /obj/item/storage/box/large/custom_kit/weredoggo
 	ckeywhitelist = list("weredoggo")
 
 /obj/item/storage/box/large/custom_kit/weredoggo/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/peach(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+
+/datum/gear/donator/kits/weredoggo2
+	name = "Cloth Supply Cache"
+	path = /obj/item/storage/box/large/custom_kit/weredoggo2
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/weredoggo2/PopulateContents()
+	new /obj/item/stack/sheet/cloth/ten(src)
+	new /obj/item/toy/crayon/spraycan(src)
+
+/datum/gear/donator/kits/weredoggo3
+	name = "BBQ Fun"
+	path = /obj/item/storage/box/large/custom_kit/weredoggo3
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/weredoggo3/PopulateContents()
 	new /obj/item/reagent_containers/food/condiment/bbqsauce(src)
 	new /obj/item/storage/box/hug(src)
 	new /obj/item/pen/edagger(src)

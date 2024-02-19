@@ -1153,6 +1153,8 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
+	plane = FLOOR_PLANE
+	layer = BELOW_OPEN_DOOR_LAYER
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"

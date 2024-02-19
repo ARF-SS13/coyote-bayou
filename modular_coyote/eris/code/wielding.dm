@@ -23,6 +23,7 @@
 /obj/item/proc/unwield(mob/living/user)
 	if(!wielded || !user)
 		return
+	SEND_SIGNAL(src, SIG_ITEM_UNWIELD, user)	//added by CASEYGUNGEON 1/14/2024. fuck the twohanded component
 	wielded = FALSE
 	if(force_unwielded)
 		force = force_unwielded
@@ -60,6 +61,7 @@
 	if(!user.dropItemToGround(other_item, force=FALSE)) //If you cannot remove the item in your hand, don't try and wield.
 		to_chat(user, span_notice("You cannot seem to drop the item in your other hand!"))
 		return
+	SEND_SIGNAL(src, SIG_ITEM_WIELD, user)	//added by CASEYGUNGEON 1/14/2024. fuck the twohanded component
 	wielded = TRUE
 	if(force_wielded)
 		force = force_wielded

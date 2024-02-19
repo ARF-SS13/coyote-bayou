@@ -1413,7 +1413,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/armor_aversion
 	name = "Armor Aversion"
 	desc = "For a reason or another, you're unable to wear medium or heavy armour"
-	value = -33
+	value = -35
 	category = "Functional Quirks"
 	mechanics = "You can't wear medium, heavy or power armor anymore."
 	conflicts = list(
@@ -1422,4 +1422,138 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_NO_MED_HVY_ARMOR
 	gain_text = span_boldannounce("You really don't like to feel encumbered.")
 	lose_text = span_notice("You don't mind feeling encumbered too much anymore.")
+	locked =  FALSE
+
+/datum/quirk/weak_of_muscles
+	name = "Weak of Muscles"
+	desc = "For a reason or another, you're unable to lift objects bigger than normal size "
+	value = -50  //it's really a big drawback
+	category = "Functional Quirks"
+	mechanics = "You're only capable of lifting up objects that have weight class equal or smaller than normal. Anything heavier will be impossible for you to lift up, \
+				with some core item exceptions. (This is a WIP quirk, feel free to ping us if we forgot to whitelist any core item)."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_WEAK_OF_MUSCLES
+	gain_text = span_danger("Your arms feel really tired...")
+	lose_text = span_notice("Your arms are invigorated!")
+	medical_record_text = "Patient has an exceptionally weak muscolar system."
+	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"
+/datum/quirk/bruteweak
+	name = "Brute Weakness, Minor"
+	desc = "You're weaker to physical trauma than others."
+	mob_trait = TRAIT_BRUTEWEAK
+	value = -22
+	category = "Health Quirks"
+	mechanics = "You take 10% more brute damage."
+	conflicts = list(
+		/datum/quirk/bruteresist,
+		/datum/quirk/bruteresistmajor,
+		/datum/quirk/bruteweakmajor
+		)
+
+/datum/quirk/bruteweak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1.1
+
+/datum/quirk/bruteweak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1
+
+/datum/quirk/bruteweakmajor
+	name = "Brute Weakness, Major"
+	desc = "You're even weaker to physical trauma than others. Paper tiger!"
+	mob_trait = TRAIT_BRUTEWEAKMAJOR
+	value = -44
+	category = "Health Quirks"
+	mechanics = "You take 20% more brute damage."
+	conflicts = list(
+		/datum/quirk/bruteresist,
+		/datum/quirk/bruteresistmajor,
+		/datum/quirk/bruteweak
+		)
+
+/datum/quirk/bruteweakmajor/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1.2
+
+/datum/quirk/bruteweakmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1
+
+/datum/quirk/burnweak
+	name = "Burn Weakness, Minor"
+	desc = "You're weaker to burns than others."
+	mob_trait = TRAIT_BURNWEAK
+	value = -22
+	category = "Health Quirks"
+	mechanics = "You take 10% more burn damage."
+	conflicts = list(
+		/datum/quirk/burnresist,
+		/datum/quirk/burnresistmajor,
+		/datum/quirk/burnweakmajor
+)
+
+/datum/quirk/burnweak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1.1
+
+/datum/quirk/burnweak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1
+
+/datum/quirk/burnweakmajor
+	name = "Burn Weakness, Major"
+	desc = "You're even weaker to burns than others. Your skin is kindling!"
+	mob_trait = TRAIT_BURNWEAKMAJOR
+	value = -44
+	category = "Health Quirks"
+	mechanics = "You take 20% more burn damage."
+	conflicts = list(
+		/datum/quirk/burnresist,
+		/datum/quirk/burnresistmajor,
+		/datum/quirk/burnweak
+)
+
+/datum/quirk/burnweakmajor/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1.2
+
+/datum/quirk/burnweakmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1
+
+/datum/quirk/radweakmajor
+	name = "Radiation Weakness, Major"
+	desc = "Gieger Counter? Better pack one. Seriously"
+	value = -55
+	category = "Radiation Quirks"
+	mechanics = "You absorb 100% more radiation."
+	conflicts = list(
+		/datum/quirk/radimmunesorta,
+		/datum/quirk/radimmuneish,
+		/datum/quirk/radweak
+	)
+	mob_trait = TRAIT_100_RAD_WEAK
+	locked =  FALSE
+
+/datum/quirk/radweak
+	name = "Radiation Weakness, Minor"
+	desc = "You more likely to die than get superpowers from radiation."
+	value = -22
+	category = "Radiation Quirks"
+	mechanics = "You absorb 50% more radiation"
+	conflicts = list(
+		/datum/quirk/radimmunesorta,
+		/datum/quirk/radimmuneish,
+		/datum/quirk/radweakmajor
+	)
+	mob_trait = TRAIT_50_RAD_WEAK
 	locked =  FALSE

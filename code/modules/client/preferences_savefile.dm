@@ -605,6 +605,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"silicon_flavor_text" = "",
 
 		"ooc_notes" = OOC_NOTE_TEMPLATE,
+		"background_info_notes" = BACKGROUND_INFO_NOTE_TEMPLATE,
 		"meat_type" = "Mammalian",
 		"taste" = "something salty",
 		"body_model" = MALE,
@@ -833,10 +834,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["feature_flavor_text"]		>> features["flavor_text"]
 
 
-	S["silicon_feature_flavor_text"]		>> features["silicon_flavor_text"]
-
+	S["silicon_feature_flavor_text"]	>> features["silicon_flavor_text"]
 	S["feature_ooc_notes"]				>> features["ooc_notes"]
-	S["silicon_flavor_text"] >> features["silicon_flavor_text"]
+	S["feature_background_info_notes"]	>> features["background_info_notes"]
+	S["feature_flist"]					>> features["flist"]
+	S["silicon_flavor_text"]			>> features["silicon_flavor_text"]
 
 	//gear loadout
 	if(S["loadout"])
@@ -930,7 +932,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
+	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 	faved_interactions		= sanitize_islist(faved_interactions, list())
@@ -1110,6 +1112,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(features["ooc_notes"] == "")
 		features["ooc_notes"] = OOC_NOTE_TEMPLATE
 		WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
+
+	features["background_info_notes"]			= copytext(features["background_info_notes"], 1, MAX_FLAVOR_LEN)
+	if(features["background_info_notes"] == "")
+		features["background_info_notes"] = BACKGROUND_INFO_NOTE_TEMPLATE
+		WRITE_FILE(S["feature_background_info_notes"], features["background_info_notes"])
 
 	/// VORE SANITIZATION - tab 4 or suffer
 	vore_smell						= sanitize_integer(vore_smell, 						FALSE, TRUE, initial(vore_smell))
@@ -1354,6 +1361,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_womb"], features["has_womb"])
 
 	WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
+
+	WRITE_FILE(S["feature_background_info_notes"], features["background_info_notes"])
+
+	WRITE_FILE(S["feature_flist"], features["flist"])
 
 	WRITE_FILE(S["feature_taste"], features["taste"])
 

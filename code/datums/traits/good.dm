@@ -1456,6 +1456,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "You only absorb 25% of all radiation."
 	conflicts = list(
 		/datum/quirk/radimmunesorta,
+		/datum/quirk/radweakmajor,
+		/datum/quirk/radweak
 	)
 	mob_trait = TRAIT_75_RAD_RESIST
 	gain_text = span_notice("You've decided that radiation is an afterthought.")
@@ -1471,6 +1473,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "You only absorb half of all radiation."
 	conflicts = list(
 		/datum/quirk/radimmuneish,
+		/datum/quirk/radweakmajor,
+		/datum/quirk/radweak
 	)
 	mob_trait = TRAIT_50_RAD_RESIST
 	gain_text = span_notice("You've decided radiation has a weaker effect on you.")
@@ -1513,9 +1517,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
 	desc = "You're better than most people when it comes to carrying people!"
-	value = 14
+	value = 18
 	category = "Medical Quirks"
-	mechanics = "When using the fireman carry, you lift people up at a faster rate."
+	mechanics = "When using the fireman carry you lift people up at a faster rate."
 	conflicts = list(
 		/datum/quirk/quickcarry,
 	)
@@ -1528,9 +1532,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickcarry
 	name = "Quick Carry"
 	desc = "You're exceptionally good when it comes to carrying people!"
-	value = 18
+	value = 14
 	category = "Medical Quirks"
-	mechanics = "When using the fireman carry, you lift people up onto your shoulders at an incredibly faster rate!"
+	mechanics = "When using the fireman carry you lift people up onto your shoulders a bit faster!"
 	conflicts = list(
 		/datum/quirk/quickercarry,
 	)
@@ -1726,6 +1730,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Rats and mice share their faction with you, meaning they won't do anything about you or care at all that you exist."
 	conflicts = list(
 		/datum/quirk/ratmaster,
+		/datum/quirk/ratphobia,
 	)
 	mob_trait = TRAIT_BEASTFRIEND_RAT
 	gain_text = span_notice("Rats are friends!")
@@ -1747,11 +1752,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Beast Master - Rats"
 	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
 	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
-	value = 18
+	value = 22
 	category = "Critter Quirks"
 	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky."
 	conflicts = list(
 		/datum/quirk/ratfriend,
+		/datum/quirk/ratphobia,
 	)
 	mob_trait = TRAIT_BEASTMASTER_RAT
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
@@ -1761,7 +1767,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/obj/effect/proc_holder/mob_common/taming_mobs/rat/tame
 	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/rat/gather
 	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/rat/moveto
-	var/obj/effect/proc_holder/mob_common/make_nest/mouse/mouses
+	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/make
+	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
 // Damn this action button code structure
 
 /datum/quirk/ratmaster/add()
@@ -1773,8 +1780,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	H.AddAbility(gather)
 	moveto = new
 	H.AddAbility(moveto)
-	mouses = new
-	H.AddAbility(mouses)
+	make = new
+	H.AddAbility(make)
+	clear = new
+	H.AddAbility(clear)
 
 /datum/quirk/ratmaster/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1786,8 +1795,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
-		H.RemoveAbility(mouses)
-		QDEL_NULL(mouses)
+		H.RemoveAbility(make)
+		QDEL_NULL(make)
+		H.RemoveAbility(clear)
+		QDEL_NULL(clear)
 
 /datum/quirk/critterfriend
 	name = "Beast Friend - Small Critters"
@@ -2208,12 +2219,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/telepathy
 	name = "Innate Telepathy"
 	desc = "You innately have the ability to project your thoughts directly into the minds of others."
-	value = 12 //A good chunk of the cost of being mute, if you decide to take both. Mostly an RP quick as well, so somewhat cheap. You have to pay 1 of your 6 good quirk slots for it.
+	value = 0 
 	category = "Magic Quirks"
 	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
-	conflicts = list(
-
-					)
+	conflicts = list(/datum/quirk/mute) // Negligibly useful quirk shouldnt cost points or slots, but also shouldnt make a big negative into free points. Also you can get telepathy through genetics, which is easier now.
 	mob_trait = TRAIT_TELEPATHY
 	gain_text = span_notice("You suddenly don't feel the need to talk out loud anymore.")
 	lose_text = span_danger("Talking out loud suddenly feels like a much better idea.")
@@ -2676,3 +2685,95 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
 	if(H)
 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
+
+/datum/quirk/bruteresist
+	name = "Brute Resist, Minor"
+	desc = "You're more resistant to physical trauma than others."
+	mob_trait = TRAIT_BRUTERESIST
+	value = 22
+	category = "Health Quirks"
+	mechanics = "You take 10% less brute damage."
+	conflicts = list(
+		/datum/quirk/bruteresistmajor,
+		/datum/quirk/bruteweak,
+		/datum/quirk/bruteweakmajor
+)
+
+/datum/quirk/bruteresist/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 0.9
+
+/datum/quirk/bruteresist/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1
+
+/datum/quirk/bruteresistmajor
+	name = "Brute Resist, Major"
+	desc = "You're even more resistant to physical trauma than others. You've got skin of steel!"
+	mob_trait = TRAIT_BRUTERESISTMAJOR
+	value = 44
+	category = "Health Quirks"
+	mechanics = "You take 20% less brute damage."
+	conflicts = list(
+		/datum/quirk/bruteresist,
+		/datum/quirk/bruteweak,
+		/datum/quirk/bruteweakmajor
+)
+
+/datum/quirk/bruteresistmajor/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 0.8
+
+/datum/quirk/bruteresistmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1
+
+/datum/quirk/burnresist
+	name = "Burn Resist, Minor"
+	desc = "You're more resistant to burns than others."
+	mob_trait = TRAIT_BURNRESIST
+	value = 22
+	category = "Health Quirks"
+	mechanics = "You take 10% less burn damage."
+	conflicts = list(
+		/datum/quirk/burnresistmajor,
+		/datum/quirk/burnweak,
+		/datum/quirk/burnweakmajor
+)
+
+/datum/quirk/burnresist/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 0.9
+
+/datum/quirk/burnresist/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1
+
+/datum/quirk/burnresistmajor
+	name = "Burn Resist, Major"
+	desc = "You're even more resistant to burns than others. Your skin is insulated!"
+	mob_trait = TRAIT_BURNRESISTMAJOR
+	value = 44
+	category = "Health Quirks"
+	mechanics = "You take 20% less burn damage."
+	conflicts = list(
+		/datum/quirk/burnresist,
+		/datum/quirk/burnweak,
+		/datum/quirk/burnweakmajor
+)
+
+/datum/quirk/burnresistmajor/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 0.8
+
+/datum/quirk/burnresistmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1

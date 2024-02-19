@@ -338,7 +338,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	// excess power into GLOB.CELLRATE energy units when charging cells.
 	// With the current configuration of wait=20 and CELLRATE=0.002, this
 	// means that one unit is 1 kJ.
-	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE
+	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE // GLOB.CELLULITE
 	if (units < 1000) // Less than a kJ
 		return "[round(units, 0.1)] J"
 	else if (units < 1000000) // Less than a MJ
@@ -1670,7 +1670,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(clientthing)
+/proc/extract_client(clientthing)
 	if(isclient(clientthing))
 		return clientthing
 	if(ismob(clientthing))

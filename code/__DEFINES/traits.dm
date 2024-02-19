@@ -102,6 +102,7 @@
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM			"pacifism"
 #define TRAIT_PACIFISM_LESSER	"lesserpacifism"
+#define TRAIT_WEAK_OF_MUSCLES	"weak of muscles"
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
@@ -126,6 +127,16 @@
 #define TRAIT_RADIMMUNE			"rad_immunity"
 #define TRAIT_75_RAD_RESIST		"big_rad_resist"
 #define TRAIT_50_RAD_RESIST		"some_rad_resist"
+#define TRAIT_50_RAD_WEAK		"some_rad_weakness"
+#define TRAIT_100_RAD_WEAK		"big_rad_weakness"
+#define TRAIT_BRUTERESIST		"brute_resist_minor"
+#define TRAIT_BRUTERESISTMAJOR	"brute_resist_major"
+#define TRAIT_BRUTEWEAK			"brute_weak_minor"
+#define TRAIT_BRUTEWEAKMAJOR	"brute_weak_major"
+#define TRAIT_BURNRESIST		"burn_resist_minor"
+#define TRAIT_BURNRESISTMAJOR	"burn_resist_major"
+#define TRAIT_BURNWEAK			"burn_weak_minor"
+#define TRAIT_BURNWEAKMAJOR		"burn_weak_major"
 #define TRAIT_GENELESS			"geneless"
 #define TRAIT_VIRUSIMMUNE		"virus_immunity"
 #define TRAIT_PIERCEIMMUNE		"pierce_immunity"
@@ -539,6 +550,13 @@
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define TRAIT_SPACEWALK "spacewalk"
 #define RADX_TRAIT "trait_from_rad-x"
+
+/// HUNTING HORNS! check huntinghorneffects.dm and huntinghorn.dm
+#define TRAIT_HH_COOLDOWN_IGNORE "horn_cooldown"
+#define TRAIT_HH_IRON_SKIN "horn_iron_skin"
+#define TRAIT_HH_KNOCKDOWN_RES "horn_kd_res"
+#define TRAIT_HH_DIVINE_BLESSING "horn_divine"
+#define TRAIT_HH_DRAW_SPEED "horn_draw_speed"
 
 //important_recursive_contents traits
 /*

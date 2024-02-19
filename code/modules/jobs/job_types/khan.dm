@@ -142,7 +142,7 @@
 		/obj/item/book/granter/trait/techno = 1)
 
 /datum/outfit/loadout/hunter
-	name = "Hunter"
+	name = "Forager"
 	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	belt = /obj/item/storage/belt/bandolier
 	backpack_contents = list(

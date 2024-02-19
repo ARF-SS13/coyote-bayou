@@ -687,6 +687,12 @@
 		patient = null
 		return FALSE
 
+// Primitive Surgery Table
+/obj/structure/table/optable/primitive
+	name = "butchers table"
+	desc = "Used for painful, primitive medical procedures."
+	icon_state = "optable_primitive"
+
 /*
  * Racks
  */
