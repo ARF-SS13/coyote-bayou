@@ -226,6 +226,7 @@
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
 	w_class = WEIGHT_CLASS_TINY
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
@@ -2068,7 +2069,7 @@
 	icon_state = "scrapheavy"
 	item_state = "scrapheavy"
 
-/obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+/obj/item/clothing/suit/armor/light/leather/lightscoutarmor
 	name = "light scout armor"
 	desc = "A makeshift set of pauldrons made of leather and scrap metal. It offers minimal protection, but is pretty light."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
