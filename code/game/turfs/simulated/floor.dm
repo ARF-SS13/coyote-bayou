@@ -45,7 +45,7 @@
 					"basalt","basalt_dug",
 					"basalt0","basalt1","basalt2","basalt3","basalt4",
 					"basalt5","basalt6","basalt7","basalt8","basalt9","basalt10","basalt11","basalt12",
-					"oldburning","light-on-r","light-on-y","light-on-g","light-on-b", "wood", "carpetsymbol", "carpetstar",
+					"oldburning","light-on-r","light-on-y","light-on-g","light-on-b", "wood",
 					"carpetcorner", "carpetside", "carpet", "arcade", "ironsand1", "ironsand2", "ironsand3", "ironsand4", "ironsand5",
 					"ironsand6", "ironsand7", "ironsand8", "ironsand9", "ironsand10", "ironsand11",
 					"ironsand12", "ironsand13", "ironsand14", "ironsand15",
@@ -130,7 +130,7 @@
 /turf/open/floor/burn_tile()
 	if(broken || burnt)
 		return
-	if(burnt_states.len)
+	if(LAZYLEN(burnt_states))
 		icon_state = pick(burnt_states)
 	else
 		icon_state = pick(broken_states)

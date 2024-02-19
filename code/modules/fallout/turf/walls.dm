@@ -9,6 +9,7 @@
 /turf/closed/wall/f13/ReplaceWithLattice()
 	ChangeTurf(baseturfs)
 
+/*
 /turf/closed/wall/f13/ruins
 	name = "ruins"
 	desc = "All what has left from the good old days."  //What is this fucking english? ~TK
@@ -17,7 +18,7 @@
 	icon_type_smooth = "ruins"
 	hardness = 70
 	explosion_block = 2
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	//	disasemblable = 0
 	girder_type = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
@@ -35,7 +36,7 @@
 	icon_state = "wood0"
 	icon_type_smooth = "wood"
 	hardness = 60
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
@@ -105,7 +106,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "interior0"
 	icon_type_smooth = "interior"
 	hardness = 10
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
 
 /turf/closed/wall/f13/store
@@ -115,7 +116,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "store"
 	icon_type_smooth = "store"
 	hardness = 80
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
@@ -130,7 +131,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "tent"
 	hardness = 10
 	unbreakable = 0
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
@@ -144,7 +145,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "scrap0"
 	icon_type_smooth = "scrap"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -179,7 +180,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	//	disasemblable = 0
 	girder_type = 0
@@ -193,7 +194,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "tunnel0"
 	icon_type_smooth = "tunnel"
 	hardness = 100
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
@@ -207,7 +208,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "vault"
 	hardness = 130
 	explosion_block = 5
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 /turf/closed/wall/r_wall/f13
@@ -224,7 +225,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "vaultrwall"
 	hardness = 230
 	explosion_block = 5
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 /turf/closed/wall/r_wall/f13vault/add_debris_element()
@@ -239,7 +240,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "brick0"
 	icon_type_smooth = "brick"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -251,7 +252,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "brick0"
 	icon_type_smooth = "brick"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -263,11 +264,11 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "brick0"
 	icon_type_smooth = "brick"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
+*/
 //Fallout 13 indestructible walls
 
 /turf/closed/indestructible/f13

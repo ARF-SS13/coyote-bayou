@@ -50,10 +50,12 @@
 	name = "Glass floor"
 	desc = "Dont jump on it, or do, I'm not your mom."
 	icon = 'icons/turf/floors/glass.dmi'
-	icon_state = "floor_glass"
-	smooth = SMOOTH_MORE
+	icon_state = "glass-0"
+	base_icon_state = "glass"
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_TRANSPARENT_GLASS)
+	canSmoothWith = list(SMOOTH_GROUP_FLOOR_TRANSPARENT_GLASS)
 	var/floor_tile = /obj/item/stack/sheet/glass
-	canSmoothWith = list(/turf/open/transparent/glass, /turf/open/transparent/glass/reinforced)
 	footstep = FOOTSTEP_PLATING
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
@@ -84,6 +86,8 @@
 	name = "Reinforced glass floor"
 	desc = "Do jump on it, it can take it."
 	icon = 'icons/turf/floors/reinf_glass.dmi'
+	icon_state = "reinf_glass-0"
+	base_icon_state = "reinf_glass"
 	floor_tile = /obj/item/stack/sheet/rglass
 
 /turf/open/transparent/glass/reinforced/wrench_act(mob/living/user, obj/item/I)

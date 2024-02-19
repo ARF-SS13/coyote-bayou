@@ -77,7 +77,8 @@
 	 */
 	var/list/important_recursive_contents
 
-
+	///Used for the calculate_adjacencies proc for icon smoothing.
+	var/can_be_unanchored = FALSE
 
 /atom/movable/Initialize(mapload)
 	. = ..()
@@ -384,34 +385,24 @@
 		//Restore air flow if we were blocking it (movables with ATMOS_PASS_PROC will need to do this manually if necessary)
 		if(((CanAtmosPass == ATMOS_PASS_DENSITY && density) || CanAtmosPass == ATMOS_PASS_NO) && isturf(loc))
 			CanAtmosPass = ATMOS_PASS_YES
-			air_update_turf(TRUE, FALSE)
+			air_update_turf(TRUE)
 		loc.handle_atom_del(src)
-
-	if(opacity)
-		RemoveElement(/datum/element/light_blocking)
 
 	invisibility = INVISIBILITY_ABSTRACT
 
 	if(pulledby)
 		pulledby.stop_pulling()
-	if(pulling)
-		stop_pulling()
 
 	if(orbiting)
 		orbiting.end_orbit(src)
 		orbiting = null
 
-	if(move_packet)
-		if(!QDELETED(move_packet))
-			qdel(move_packet)
-		move_packet = null
-
-	LAZYCLEARLIST(client_mobs_in_contents)
-
 	. = ..()
 
 	for(var/movable_content in contents)
 		qdel(movable_content)
+
+	LAZYCLEARLIST(client_mobs_in_contents)
 
 	moveToNullspace()
 

@@ -17,9 +17,11 @@
 	flags_1 = NODECONSTRUCT_1
 	canSmoothWith = list(/obj/structure/table/booth)
 
+/*
 /obj/structure/table/booth/Initialize()
 	canSmoothWith += subtypesof(/turf/closed/wall/f13/wood) + subtypesof(/obj/structure/window/fulltile)
 	. = ..()
+*/
 
 /obj/structure/table/booth/deconstruction_hints(mob/user)
 	return span_notice("The top is panelled together and could likely be taken apart with a crowbar.")
@@ -42,7 +44,7 @@
 	anchored = TRUE
 	framestack = /obj/item/stack/sheet/mineral/wood
 	buildstack = /obj/item/stack/sheet/cloth
-	smooth = SMOOTH_FALSE
+	smoothing_flags = NONE
 
 /obj/structure/table/snooker/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))
