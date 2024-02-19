@@ -9083,9 +9083,8 @@
 	},
 /area/f13/building)
 "fvZ" = (
-/obj/structure/mirror,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/coyote/oldwood,
+/obj/structure/stairs/west,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "fwi" = (
 /obj/effect/decal/cleanable/dirt{
@@ -9411,13 +9410,8 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/tribe)
 "fDQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "fDY" = (
 /turf/open/indestructible/ground/outside/gravel,
@@ -9913,17 +9907,6 @@
 /obj/structure/chair/bench,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"fWu" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/structure/decoration/vent,
-/obj/item/soap/deluxe,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building)
 "fWA" = (
 /obj/item/storage/backpack/satchel/explorer,
 /obj/effect/spawner/lootdrop/trash,
@@ -10252,6 +10235,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/cabinet/anchored,
 /obj/effect/spawner/lootdrop/clothing_middle,
+/obj/item/lockpick_set,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -15310,6 +15294,9 @@
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife/butcher,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -24403,9 +24390,14 @@
 /area/f13/wasteland)
 "oIV" = (
 /obj/structure/bed/wooden,
-/obj/item/bedsheet/gondola,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/bedsheet{
+	icon_state = "sheetgondola"
+	},
+/obj/item/bedsheet{
+	icon_state = "sheetgondola"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oJg" = (
@@ -27337,6 +27329,7 @@
 /obj/structure/chair/sofa{
 	dir = 1
 	},
+/obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qtL" = (
@@ -31545,13 +31538,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"sMa" = (
-/obj/structure/simple_door/interior,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building)
 "sMx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -32204,6 +32190,9 @@
 "tgn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/dresser,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tgv" = (
@@ -33468,6 +33457,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/north{
+	icon_state_override = "rockpile";
+	icon_state = "rockpile";
+	color = "#43392c";
+	layer = 3;
+	name = "climbable rubble"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tQw" = (
@@ -36703,15 +36699,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"vUc" = (
-/obj/structure/toilet{
-	pixel_y = 13
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building)
 "vUt" = (
 /obj/item/storage/box/ingredients/carnivore,
 /obj/item/storage/box/ingredients/carnivore,
@@ -37330,15 +37317,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
 "wpm" = (
-/obj/structure/sink{
-	dir = 1;
-	pixel_y = 15
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/effect/fake_stairs/west,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "wqx" = (
 /obj/structure/billboard/powerlines2{
@@ -64947,8 +64927,8 @@ wEQ
 vxt
 umI
 sZG
-sMa
 sZG
+uAa
 yde
 tPQ
 tPQ
@@ -65204,7 +65184,7 @@ baI
 vxt
 ndf
 sZG
-vxt
+fvZ
 fDQ
 yde
 tPQ
@@ -65460,9 +65440,9 @@ mDP
 aoo
 vxt
 iYY
-fvZ
+sZG
 wpm
-vxt
+uAa
 acS
 tPQ
 tPQ
@@ -65718,8 +65698,8 @@ jeU
 uVv
 hcA
 sZG
-vUc
-fWu
+uAa
+nNC
 yde
 tPQ
 tPQ
