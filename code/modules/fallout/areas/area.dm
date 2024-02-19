@@ -228,7 +228,90 @@
 /area/f13/wasteland/dungeon
 	name = "Dungeon Wasteland"
 
+/area/f13/wasteland/city/newboston
+	name = "New Boston"
+	icon_state = "newboston"
+	weather_tags = list()
+// Weather-proof!
 
+/area/f13/wasteland/city/newboston/outdoors
+	name = "New Boston Streets"
+	icon_state = "newboston"
+
+/area/f13/wasteland/city/newboston/house
+	name = "New Boston Housing"
+	icon_state = "house"
+
+/area/f13/wasteland/city/newboston/farm
+	name = "New Boston Farm"
+	icon_state = "farm"
+	ambientsounds = list(
+		AREA_SOUND('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/dog_distant_2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_3.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_4.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_5.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_6.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_7.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_8.ogg', 10 SECONDS))
+
+/area/f13/wasteland/city/newboston/bar
+	name = "New Boston Bar"
+	icon_state = "alcohol"
+
+/area/f13/wasteland/city/newboston/bank
+	name = "New Boston Bank"
+	icon_state = "bank"
+
+/area/f13/wasteland/city/newboston/sauna
+	name = "New Boston Sauna"
+	icon_state = "house1"
+
+/area/f13/wasteland/city/newboston/chapel
+	name = "New Boston Chapel"
+	icon_state = "chapel1"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/building/church,
+		)
+
+/area/f13/wasteland/city/newboston/library
+	name = "New Boston Library"
+	icon_state = "library"
+
+
+
+// Believe it or not, light switches are tied to areas, so...
+/area/f13/wasteland/city/newboston/house/cabin_one
+	icon_state = "sleep1"
+
+/area/f13/wasteland/city/newboston/house/cabin_two
+	icon_state = "sleep2"
+
+/area/f13/wasteland/city/newboston/house/cabin_three
+	icon_state = "sleep3"
+
+/area/f13/wasteland/city/newboston/house/cabin_four
+	icon_state = "sleep4"
+
+/area/f13/wasteland/city/newboston/house/cabin_five
+	icon_state = "sleep5"
+
+/area/f13/wasteland/city/newboston/house/cabin_six
+	icon_state = "sleep6"
+
+/area/f13/wasteland/city/newboston/house/cabin_seven
+	icon_state = "sleep7"
+
+/area/f13/wasteland/city/newboston/house/cabin_eight
+	icon_state = "sleep8"
+
+/area/f13/wasteland/city/newboston/house/cabin_nine
+	icon_state = "sleep9"
 
 ///////////////
 //C O Y O T E//

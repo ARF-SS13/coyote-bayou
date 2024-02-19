@@ -106,7 +106,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/store
 	name = "store wall"
@@ -120,7 +120,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
@@ -184,7 +184,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
