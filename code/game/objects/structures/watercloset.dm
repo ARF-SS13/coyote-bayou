@@ -853,7 +853,7 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 		var/mob/living/L = user
 		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
 			if(get_dir(src,user) != dir)
-				balloon_alert(user, "You can only open the from \the [dir2text(dir)]! ")
+				balloon_alert(user, "You can only open the [src] from \the [dir2text(dir)]! ")
 			else
 				playsound(loc, 'sound/effects/curtain.ogg', 50, 1)
 				toggle()
