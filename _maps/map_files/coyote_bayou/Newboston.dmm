@@ -1968,20 +1968,6 @@
 /area/f13/wasteland)
 "biT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/directions/science{
-	icon_state = "direction_supply";
-	dir = 1;
-	pixel_y = 39;
-	layer = 4
-	},
-/obj/structure/sign/directions/science{
-	dir = 4;
-	pixel_y = 24
-	},
-/obj/structure/sign/directions/medical{
-	dir = 8;
-	pixel_y = 31
-	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "bjl" = (
@@ -21902,15 +21888,10 @@
 /area/f13/building/tribal/cave)
 "mOw" = (
 /obj/machinery/light/small{
-	dir = 8
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "mOz" = (
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
@@ -30931,7 +30912,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "sgW" = (
-/obj/machinery/light/floor,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "sgX" = (
@@ -34318,6 +34302,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
+"uei" = (
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/nash)
 "uek" = (
 /obj/structure/chair/stool/f13stool{
 	icon_state = "bench_center";
@@ -37405,15 +37393,6 @@
 /area/f13/building)
 "vZX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/directions/medical{
-	dir = 8;
-	pixel_y = 31
-	},
-/obj/structure/sign/directions/science{
-	icon_state = "direction_supply";
-	dir = 8;
-	pixel_y = 39
-	},
 /obj/structure/sign/directions/science{
 	dir = 4;
 	pixel_y = 23
@@ -37423,6 +37402,16 @@
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333"
+	},
+/obj/structure/sign/directions/medical{
+	dir = 1;
+	pixel_y = 31
+	},
+/obj/structure/sign/directions/science{
+	icon_state = "direction_supply";
+	dir = 1;
+	pixel_y = 39;
+	layer = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -67746,8 +67735,8 @@ qhp
 oVy
 qCp
 dNH
-sgW
-sgW
+dNH
+dNH
 tbo
 qCp
 iqa
@@ -67996,16 +67985,16 @@ aST
 xlf
 aST
 xlf
-xlf
+uei
 qCp
 qCp
 mHJ
 qCp
 gHl
+mOw
 dNH
 dNH
-dNH
-tbo
+sgW
 tPo
 wAj
 vNr
@@ -68254,7 +68243,7 @@ gIm
 gIm
 bKF
 gIm
-mOw
+ajZ
 gIm
 gIm
 gIm
@@ -70576,7 +70565,7 @@ xly
 iPO
 ptA
 iPO
-iPO
+tRA
 kIY
 omk
 kIY
@@ -70833,7 +70822,7 @@ xiY
 sGF
 iPO
 iPO
-iPO
+tRA
 vzp
 vDv
 ybW
