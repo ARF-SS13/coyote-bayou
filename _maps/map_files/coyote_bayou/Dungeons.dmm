@@ -1565,7 +1565,7 @@
 /obj/structure/table/reinforced,
 /obj/item/nanite_remote,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "aHJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -28152,7 +28152,7 @@
 "mxb" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "mxf" = (
 /obj/structure/table{
 	layer = 2.9
@@ -29439,7 +29439,7 @@
 /obj/structure/rack,
 /obj/item/circuitboard/machine/public_nanite_chamber,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "mYI" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/f13/leather,
@@ -30245,7 +30245,7 @@
 	height = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "now" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 9
@@ -31781,7 +31781,7 @@
 "nYv" = (
 /obj/machinery/nanite_programmer,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "nYJ" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -32219,7 +32219,7 @@
 /obj/structure/table/reinforced,
 /obj/item/nanite_scanner,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "ojT" = (
 /obj/machinery/computer/vertibird_console,
 /turf/open/floor/engine,
@@ -33452,7 +33452,7 @@
 "oJu" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "oJG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -34509,9 +34509,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
-"pfv" = (
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
 "pfF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -35154,11 +35151,6 @@
 /mob/living/simple_animal/hostile/vault/dweller/dweller1,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"psC" = (
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/underground/cave)
 "psY" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/decal/cleanable/greenglow,
@@ -35456,7 +35448,7 @@
 	name = "Storage Equipment"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "pyZ" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-22"
@@ -40354,7 +40346,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/disks_nanite,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "rDl" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/blood/drip,
@@ -40803,7 +40795,7 @@
 	light_color = "#e8eaff"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "rOB" = (
 /obj/structure/fluff/railing{
 	density = 0;
@@ -46342,7 +46334,7 @@
 "ulU" = (
 /obj/machinery/nanite_chamber,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "ulV" = (
 /mob/living/simple_animal/hostile/vault/dweller/dweller3,
 /turf/open/floor/f13/wood,
@@ -50240,7 +50232,7 @@
 "vYs" = (
 /obj/machinery/nanite_program_hub,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "vYB" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 1;
@@ -53938,7 +53930,7 @@
 "xIE" = (
 /obj/machinery/computer/nanite_cloud_controller,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/underground/cave)
+/area/f13/building)
 "xIH" = (
 /obj/structure/bed/old,
 /obj/machinery/light/small{
@@ -95489,11 +95481,11 @@ ctX
 ctX
 ctX
 whv
-psC
-psC
-psC
-psC
-psC
+aEL
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv
@@ -95746,11 +95738,11 @@ ctX
 whv
 whv
 whv
-psC
+aEL
 nYv
 rOk
 ulU
-psC
+aEL
 whv
 whv
 whv
@@ -96003,11 +95995,11 @@ ctX
 whv
 whv
 whv
-psC
-pfv
-pfv
-pfv
-psC
+aEL
+gPJ
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -96260,11 +96252,11 @@ whv
 whv
 whv
 whv
-psC
+aEL
 vYs
 oJu
-pfv
-psC
+gPJ
+aEL
 whv
 whv
 whv
@@ -96513,15 +96505,15 @@ hSe
 oaX
 ctX
 whv
-psC
-psC
-psC
-psC
-psC
+aEL
+aEL
+aEL
+aEL
+aEL
 xIE
-pfv
-pfv
-psC
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -96770,15 +96762,15 @@ nbh
 hSe
 ctX
 whv
-psC
-pfv
+aEL
+gPJ
 mYd
-pfv
+gPJ
 mxb
-pfv
-pfv
-pfv
-psC
+gPJ
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -97027,15 +97019,15 @@ gtl
 gtl
 ctX
 whv
-psC
+aEL
 not
 oJu
-pfv
+gPJ
 pyT
-pfv
+gPJ
 oJu
 ojP
-psC
+aEL
 whv
 whv
 whv
@@ -97284,15 +97276,15 @@ aal
 vlk
 ctX
 whv
-psC
-pfv
+aEL
+gPJ
 mYd
-pfv
+gPJ
 mxb
-pfv
+gPJ
 rCO
 aHG
-psC
+aEL
 whv
 whv
 whv
@@ -97541,15 +97533,15 @@ jKM
 bNE
 ctX
 whv
-psC
-psC
-psC
-psC
-psC
-psC
-psC
-psC
-psC
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv
