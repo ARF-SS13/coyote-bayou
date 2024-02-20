@@ -12983,15 +12983,12 @@
 	},
 /area/f13/building)
 "hHN" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/item/stack/sheet/metal/fifty,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
+/obj/structure/ladder/unbreakable{
+	name = "Ladder";
+	id = "nanitelab";
+	icon_state = "manhole_open";
+	height = 2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/building)
 "hHP" = (
@@ -33530,10 +33527,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"tDT" = (
-/obj/structure/decoration/vent/rusty,
-/turf/closed/wall/f13/coyote/oldwood,
-/area/f13/building/trader)
 "tEa" = (
 /obj/structure/mirror{
 	pixel_x = -32
@@ -73905,7 +73898,7 @@ gmg
 gmg
 gmg
 gmg
-tDT
+gao
 vsz
 whF
 hvy
