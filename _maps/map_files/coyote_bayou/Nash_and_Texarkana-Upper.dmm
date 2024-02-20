@@ -293,10 +293,8 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "agm" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "agA" = (
 /obj/item/reagent_containers/food/drinks/beer,
@@ -408,12 +406,16 @@
 /turf/open/transparent/openspace,
 /area/f13/building/abandoned)
 "amX" = (
-/obj/structure/table/reinforced,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
-/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet,
+/obj/item/mop,
+/obj/item/soap,
+/obj/item/storage/bag/trash,
+/obj/item/reagent_containers/glass/bucket/plastic,
+/obj/machinery/light,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "anv" = (
@@ -1462,11 +1464,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "aVZ" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowleft"
+/obj/machinery/reagentgrinder{
+	pixel_y = 7
 	},
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "aWq" = (
@@ -1707,7 +1710,7 @@
 /obj/machinery/vending/cola/red,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "beC" = (
@@ -1983,10 +1986,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bpz" = (
-/obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/donut/jelly/caramel,
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "bpP" = (
@@ -2699,11 +2702,20 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "bNL" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowright"
-	},
+/obj/structure/closet/fridge,
+/obj/effect/decal/cleanable/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/food/condiment/soymilk,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "bNT" = (
@@ -3102,8 +3114,13 @@
 /obj/structure/sign/poster/contraband/donut_corp{
 	pixel_x = 32
 	},
+/obj/structure/sink/greyscale{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = 12
+	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "ccJ" = (
@@ -4078,8 +4095,9 @@
 /area/f13/building/mall)
 "cLD" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/coffee,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "cLK" = (
@@ -4307,10 +4325,8 @@
 /turf/open/floor/wood_common,
 /area/f13/caves)
 "cUY" = (
-/obj/structure/window/fulltile/store,
-/turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
-	},
+/obj/structure/spacevine,
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "cVc" = (
 /obj/structure/railing/corner,
@@ -4606,9 +4622,13 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "dfD" = (
-/obj/structure/chair/stool/retro,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/pet/dog/pug{
+	name = "Otto von Dogmark"
+	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "dfR" = (
@@ -6316,13 +6336,8 @@
 /area/f13/wasteland)
 "ehZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sink/greyscale{
-	dir = 4;
-	pixel_y = 10;
-	pixel_x = 12
-	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "eiz" = (
@@ -8237,14 +8252,14 @@
 	},
 /area/f13/building/mall)
 "fwT" = (
-/obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
 /obj/item/storage/fancy/donut_box,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "fxl" = (
@@ -9408,7 +9423,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "giL" = (
@@ -9673,11 +9688,14 @@
 	},
 /area/f13/caves)
 "gpq" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowvertical"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
 	},
-/turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
 	},
 /area/f13/building)
 "gpE" = (
@@ -11253,21 +11271,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "hnO" = (
-/obj/structure/closet/fridge,
-/obj/effect/decal/cleanable/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
-	},
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "hnP" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12568,7 +12572,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "igw" = (
@@ -12889,7 +12893,6 @@
 	},
 /area/f13/building/mall)
 "iqt" = (
-/obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
@@ -12897,8 +12900,9 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "iqu" = (
@@ -13450,11 +13454,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "iJk" = (
-/obj/structure/table/booth,
-/obj/machinery/light/floor,
-/obj/item/reagent_containers/food/snacks/donut/choco,
+/obj/structure/chair/left,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "iJF" = (
@@ -15383,9 +15386,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "jTa" = (
-/obj/machinery/processor,
+/obj/structure/rack,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "jTp" = (
@@ -15652,10 +15655,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "kcn" = (
-/obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/janitorialcart,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "kcK" = (
@@ -16694,13 +16697,12 @@
 	},
 /area/f13/building/mall)
 "kES" = (
-/obj/structure/table/booth,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor,
-/obj/item/reagent_containers/food/snacks/donut/caramel,
-/obj/item/reagent_containers/food/snacks/donut/meat,
+/obj/structure/chair/right{
+	dir = 1
+	},
+/obj/machinery/light,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "kET" = (
@@ -16735,10 +16737,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "kFo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/janitorialcart,
+/obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife,
+/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet,
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "kFD" = (
@@ -17407,14 +17411,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"lbc" = (
-/obj/effect/decal/cleanable/flour,
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/matcha,
-/turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
-	},
-/area/f13/building)
 "lbg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -18063,10 +18059,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "lyA" = (
-/obj/structure/chair/stool/retro,
-/obj/effect/decal/cleanable/cobweb,
+/obj/structure/chair/right,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "lyP" = (
@@ -19088,9 +19084,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "men" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/table/booth,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "meK" = (
@@ -19972,14 +19969,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "mHN" = (
-/obj/item/storage/box/drinkingglasses,
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/item/storage/box/drinkingglasses,
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "mIa" = (
@@ -20994,7 +20988,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "nkA" = (
@@ -21126,11 +21120,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nof" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowtop"
+/obj/machinery/door/window{
+	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "noP" = (
@@ -22572,10 +22566,13 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "ogS" = (
-/obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/processor,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "ogV" = (
@@ -22895,11 +22892,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "otX" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowbottom"
-	},
+/obj/machinery/microwave/stove,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "ouR" = (
@@ -24239,7 +24234,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "psK" = (
@@ -25758,7 +25753,6 @@
 	},
 /area/f13/building/abandoned)
 "qqe" = (
-/obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
@@ -25766,8 +25760,9 @@
 	dir = 4;
 	termtag = "Public"
 	},
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "qql" = (
@@ -26193,7 +26188,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "qEi" = (
@@ -27158,7 +27153,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "rmv" = (
@@ -28235,10 +28230,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "sbk" = (
-/obj/structure/chair/stool/retro,
+/obj/structure/chair/left{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "sby" = (
@@ -30137,16 +30134,11 @@
 	},
 /area/f13/building/mall)
 "trg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet,
-/obj/item/mop,
-/obj/item/soap,
-/obj/item/storage/bag/trash,
-/obj/item/reagent_containers/glass/bucket/plastic,
-/obj/machinery/light,
+/obj/effect/decal/cleanable/flour,
+/obj/item/reagent_containers/food/snacks/donut/matcha,
+/obj/structure/table/booth,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "tsD" = (
@@ -30639,7 +30631,7 @@
 /obj/structure/closet/crate/bin/trashbin,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "tIF" = (
@@ -36350,7 +36342,7 @@
 /area/f13/building)
 "xDk" = (
 /turf/open/floor/f13{
-	icon_state = "whiteyellowdirtychess2"
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "xDu" = (
@@ -75415,14 +75407,14 @@ mHc
 wtB
 wtB
 hqF
-ixY
-nof
-gpq
-otX
-ixY
-men
-ixY
-ixY
+hnO
+taH
+taH
+taH
+hnO
+puH
+hnO
+hnO
 oQZ
 vjd
 oez
@@ -75672,14 +75664,14 @@ bHQ
 iCH
 wtB
 iCH
-aVZ
+lnp
 lyA
-cLD
+men
 sbk
-cLD
-cLD
+ehZ
+ehZ
 bew
-ixY
+hnO
 duL
 vzN
 oez
@@ -75929,14 +75921,14 @@ iCH
 eZA
 wtB
 sqL
-cUY
+lnp
 iJk
-rmt
+men
 kES
-cLD
+ehZ
 rmt
 qDJ
-ixY
+hnO
 oez
 oez
 oez
@@ -76186,14 +76178,14 @@ iCH
 iCH
 wtB
 iCH
-cUY
-dfD
+lnp
 rmt
-sbk
+rmt
+rmt
 xDk
 igv
 njR
-ixY
+hnO
 gDZ
 gDZ
 gDZ
@@ -76443,14 +76435,14 @@ iCH
 iCH
 wtB
 iCH
-cUY
+lnp
+ehZ
+ehZ
+ehZ
 xDk
+ehZ
 cLD
-cLD
-xDk
-cLD
-cLD
-ixY
+hnO
 akk
 nHf
 hyz
@@ -76700,14 +76692,14 @@ iCH
 aRh
 wtB
 iCH
-bNL
-cLD
-cLD
-cLD
+lnp
+ehZ
+ehZ
+ehZ
 xDk
 xDk
 tIx
-ixY
+hnO
 nlQ
 hyz
 txV
@@ -76957,14 +76949,14 @@ iCH
 iCH
 wtB
 iCH
-dIW
+cUY
 fwT
 iqt
 bpz
 qqe
-xDk
-ixY
-ixY
+nof
+hnO
+hnO
 lja
 hyz
 hyz
@@ -77214,14 +77206,14 @@ iCH
 iCH
 wtB
 fqF
-ixY
+hnO
 mHN
-cLD
+xDk
 psI
 xDk
 rmt
 trg
-ixY
+hnO
 vRL
 jXS
 jXS
@@ -77471,14 +77463,14 @@ iCH
 sDd
 wtB
 fqF
-ixY
+hnO
 ogS
 ccE
+xDk
 rmt
-cLD
-cLD
+xDk
 kFo
-ixY
+hnO
 vkf
 hyz
 jXS
@@ -77728,14 +77720,14 @@ iCH
 iCH
 wtB
 iCH
-ixY
-ixY
-ixY
-ixY
-ixY
-men
-ixY
-ixY
+hnO
+hnO
+hnO
+otX
+aVZ
+ehZ
+bNL
+hnO
 sqM
 hyz
 hyz
@@ -77987,12 +77979,12 @@ wtB
 iCH
 sgY
 iCH
-ixY
-lbc
-rmt
-cLD
 hnO
-ixY
+hnO
+agm
+gpq
+hnO
+hnO
 eRx
 jXS
 hyz
@@ -78244,12 +78236,12 @@ wtB
 wtB
 wtB
 iCH
-ixY
-agm
-rmt
-cLD
+hnO
+jTa
+dfD
+ehZ
 amX
-ixY
+hnO
 urX
 ipE
 ipE
@@ -78501,12 +78493,12 @@ iCH
 iCH
 wtB
 jYx
-ixY
+hnO
 jTa
 ehZ
 giJ
 kcn
-ixY
+hnO
 aqg
 ipE
 uBg
@@ -78757,13 +78749,13 @@ gDZ
 iCH
 haD
 wtB
-gDZ
-ixY
-ixY
-dIW
-dIW
-ixY
-ixY
+hnO
+hnO
+hnO
+cUY
+cUY
+hnO
+hnO
 gDZ
 hyz
 hyz
