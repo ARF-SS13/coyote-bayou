@@ -1982,12 +1982,7 @@
 	dir = 8;
 	pixel_y = 31
 	},
-/obj/structure/chair/bench{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	color = "#883300"
-	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "bjl" = (
 /obj/structure/billboard/powerlines2{
@@ -13257,13 +13252,6 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
-"hOE" = (
-/obj/structure/railing{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "hOO" = (
 /obj/structure/debris/v4,
 /turf/closed/wall/f13/coyote/oldwood,
@@ -20119,15 +20107,14 @@
 	},
 /area/f13/building)
 "lKQ" = (
-/obj/structure/chair/bench{
-	dir = 1
-	},
 /obj/structure/sign/flag_arkansas{
 	pixel_y = 28
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	color = "#888888"
+/obj/structure/railing{
+	dir = 4;
+	pixel_y = -8
 	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "lLd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26008,12 +25995,6 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland)
-"psX" = (
-/obj/structure/railing{
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "pth" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -27352,21 +27333,14 @@
 	},
 /area/f13/building)
 "qlW" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/chair/bench{
-	dir = 1
-	},
 /obj/structure/sign/flag_texas{
 	pixel_y = 31
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	color = "#888888"
+/obj/structure/railing{
+	dir = 8;
+	pixel_y = -6
 	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "qmj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -33841,13 +33815,6 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
-"tMS" = (
-/obj/structure/railing{
-	color = null;
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "tMX" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/cowboyb,
@@ -69847,11 +69814,11 @@ rYw
 qxf
 tRA
 qlW
-kIY
-psX
 rXa
 lYg
 vDv
+bCw
+kIY
 vqW
 wbp
 nRM
@@ -70104,11 +70071,11 @@ ofN
 uLk
 tRA
 biT
-bCw
-hOE
 icC
 mrr
 aAv
+kIY
+bCw
 wze
 wbp
 klQ
@@ -70361,10 +70328,10 @@ ptA
 pfT
 tRA
 lKQ
-kIY
-tMS
 xLO
 fnt
+kIY
+bCw
 kIY
 vqW
 wbp

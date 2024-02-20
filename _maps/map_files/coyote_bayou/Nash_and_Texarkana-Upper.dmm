@@ -9693,9 +9693,8 @@
 /obj/item/lock_bolt{
 	dir = 4
 	},
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/turf/open/floor/f13{
+	icon_state = "neutraldirtychess"
 	},
 /area/f13/building)
 "gpE" = (
@@ -35143,6 +35142,12 @@
 	},
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
+"wOx" = (
+/obj/structure/simple_door/wood/alt/window,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
 /area/f13/building)
 "wOA" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -75412,7 +75417,7 @@ taH
 taH
 taH
 hnO
-puH
+wOx
 hnO
 hnO
 oQZ
