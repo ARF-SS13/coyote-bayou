@@ -206,7 +206,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/oldcolor = color
 	color = RUNE_COLOR_DARKRED
 	var/mob/living/L = pick(myriad_targets)
-	var/is_clock = is_servant_of_ratvar(L)
+//	var/is_clock = is_servant_of_ratvar(L)
 
 	var/mob/living/F = invokers[1]
 	var/datum/antagonist/cult/C = F.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
@@ -777,8 +777,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 					to_chat(L, span_userdanger("[I] suddenly burns hotly before returning to normal!"))
 				continue
 			to_chat(L, span_cultlarge("Your blood boils in your veins!"))
-			if(is_servant_of_ratvar(L))
-				to_chat(L, span_userdanger("You feel an unholy darkness dimming the Justiciar's light!"))
+/*			if(is_servant_of_ratvar(L))
+				to_chat(L, span_userdanger("You feel an unholy darkness dimming the Justiciar's light!"))*/
 	animate(src, color = "#FCB56D", time = 4)
 	sleep(4)
 	if(QDELETED(src))
@@ -804,8 +804,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 			if(L.anti_magic_check(chargecost = 0))
 				continue
 			L.take_overall_damage(tick_damage*multiplier, tick_damage*multiplier)
-			if(is_servant_of_ratvar(L))
-				L.adjustStaminaLoss(tick_damage*0.5)
+/*			if(is_servant_of_ratvar(L))
+				L.adjustStaminaLoss(tick_damage*0.5)*/
 
 //Rite of Spectral Manifestation: Summons a ghost on top of the rune as a cultist human with no items. User must stand on the rune at all times, and takes damage for each summoned ghost.
 /obj/effect/rune/manifest

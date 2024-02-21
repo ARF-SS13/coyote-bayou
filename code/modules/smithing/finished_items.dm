@@ -267,7 +267,7 @@
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
-			H.dna.species.punchdamagehigh += force + 8 
+			H.dna.species.punchdamagehigh += force + 8
 			H.dna.species.punchdamagelow += force + 8
 			H.dna.species.attack_sound = hitsound
 			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
@@ -387,7 +387,7 @@
 		return eyestab(M,user)
 	else
 		return ..()
-	
+
 /obj/item/melee/smith/dagger/bowie
 	name = "sharpblade"
 	icon_state = "bowie_smith"
@@ -644,7 +644,7 @@
 
 
 // Good throwing, thats about it (27, 40)
-/obj/item/melee/smith/javelin 
+/obj/item/melee/smith/javelin
 	name = "rebar throwing spike"
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
@@ -703,7 +703,7 @@
 		return
 	..()
 
-/obj/item/melee/smith/hammer/ratvar
+/*/obj/item/melee/smith/hammer/ratvar
 	name = "brass hammer"
 	custom_materials = list(/datum/material/bronze = 12000)
 	desc = "A brass hammer inscribed with... writing? You can't read it."
@@ -720,7 +720,7 @@
 		else
 			user.adjustBruteLoss(rand(force/2,force))
 		return
-	..()
+	..()*/
 
 /obj/item/melee/smith/hammer/debug
 	name = "debugging hammer"

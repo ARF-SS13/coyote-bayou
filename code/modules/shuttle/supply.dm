@@ -15,8 +15,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/effect/mob_spawn,
 		/obj/effect/hierophant,
 		/obj/structure/receiving_pad,
-		/obj/effect/clockwork/spatial_gateway,
-		/obj/structure/destructible/clockwork/powered/clockwork_obelisk,
+//		/obj/effect/clockwork/spatial_gateway,
+//		/obj/structure/destructible/clockwork/powered/clockwork_obelisk,
 		/obj/item/warp_cube,
 		/obj/machinery/rnd/production/protolathe, //print tracking beacons, send shuttle
 		/obj/machinery/autolathe, //same
@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 		var/atom/oldloc = leave_behind[victim]
 		victim.forceMove(oldloc)
 
-/obj/docking_port/mobile/supply/proc/check_blacklist(areaInstances, list/typecache)
+/*/obj/docking_port/mobile/supply/proc/check_blacklist(areaInstances, list/typecache)
 	for(var/place in areaInstances)
 		var/area/shuttle/shuttle_area = place
 		for(var/trf in shuttle_area)
@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 					var/obj/structure/closet/c = a
 					if(c.eigen_teleport == TRUE)
 						return FALSE
-	return TRUE
+	return TRUE*/
 
 /obj/docking_port/mobile/supply/request(obj/docking_port/stationary/S)
 	if(mode != SHUTTLE_IDLE)

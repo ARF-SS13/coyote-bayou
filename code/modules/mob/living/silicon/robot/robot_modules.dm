@@ -187,9 +187,9 @@
 	if(R.emagged)
 		for(var/obj/item/I in emag_modules)
 			add_module(I, FALSE, FALSE)
-	if(is_servant_of_ratvar(R))
+/*	if(is_servant_of_ratvar(R))
 		for(var/obj/item/I in ratvar_modules)
-			add_module(I, FALSE, FALSE)
+			add_module(I, FALSE, FALSE)*/
 	for(var/obj/item/I in added_modules)
 		add_module(I, FALSE, FALSE)
 	for(var/i in held_modules)
@@ -284,12 +284,12 @@
 		/obj/item/soap/nanotrasen,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/transforming/plasmacutter/sword/cyborg)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg,
 		/obj/item/clockwork/weapon/ratvarian_spear,
 		/obj/item/clockwork/replica_fabricator/cyborg)
 	moduleselect_icon = "standard"
-	hat_offset = -3
+	hat_offset = -3*/
 
 /obj/item/robot_module/medical
 	name = "Medical"
@@ -372,9 +372,9 @@
 		/obj/item/stack/tile/plasteel/cyborg,
 		/obj/item/stack/cable_coil/cyborg)
 	emag_modules = list(/obj/item/borg/stun)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/engineer,
-		/obj/item/clockwork/replica_fabricator/cyborg)
+		/obj/item/clockwork/replica_fabricator/cyborg)*/
 	cyborg_base_icon = "engineer"
 	moduleselect_icon = "engineer"
 	magpulsing = TRUE
@@ -408,8 +408,8 @@
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
-	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+//	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+//		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "sec"
 	moduleselect_icon = "security"
 	hat_offset = 3
@@ -627,7 +627,7 @@
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/miner,
-		/obj/item/clockwork/weapon/ratvarian_spear,
+//		/obj/item/clockwork/weapon/ratvarian_spear,
 		/obj/item/borg/sight/xray/truesight_lens)
 	cyborg_base_icon = "miner"
 	moduleselect_icon = "miner"
@@ -666,8 +666,8 @@
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
-	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+//	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+//		/obj/item/clockwork/weapon/ratvarian_spear)
 	borghealth = 300
 	cyborg_base_icon = "gutsy"
 	moduleselect_icon = "standard"
@@ -685,8 +685,8 @@
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
-	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+//	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+//		/obj/item/clockwork/weapon/ratvarian_spear)
 	borghealth = 450 //Assaultron health
 	cyborg_base_icon = "assaultron"
 	moduleselect_icon = "security"
@@ -732,9 +732,9 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 		/obj/item/melee/unarmed/punchdagger/cyborg
 		)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+		/obj/item/clockwork/weapon/ratvarian_spear)*/
 	cyborg_base_icon = "assaultron_sase"
 
 /obj/item/robot_module/syndicate
@@ -750,9 +750,9 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 		/obj/item/crowbar/cyborg,
 		/obj/item/pinpointer/syndicate_cyborg)
 
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/security,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+		/obj/item/clockwork/weapon/ratvarian_spear)*/
 	cyborg_base_icon = "synd_sec"
 	moduleselect_icon = "malf"
 	hat_offset = 3
@@ -827,9 +827,9 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 		/obj/item/borg_chameleon,
 		)
 
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 	/obj/item/clockwork/slab/cyborg/engineer,
-	/obj/item/clockwork/replica_fabricator/cyborg)
+	/obj/item/clockwork/replica_fabricator/cyborg)*/
 
 	cyborg_base_icon = "synd_engi"
 	moduleselect_icon = "malf"

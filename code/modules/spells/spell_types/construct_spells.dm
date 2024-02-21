@@ -44,7 +44,7 @@
 	summon_type = list(/turf/open/floor/engine/cult)
 	action_icon = 'icons/mob/actions/actions_cult.dmi'
 	action_icon_state = "floorconstruct"
-	action_background_icon_state = "bg_cult"
+	action_background_icon_state = "bg_cult"*/
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/wall

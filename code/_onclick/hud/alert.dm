@@ -445,7 +445,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	animate(src, transform = final, time = 5, loop = 0)
 
 
-
+/*
 // CLOCKCULT
 /atom/movable/screen/alert/clockwork
 	alerttooltipstyle = "clockcult"
@@ -484,7 +484,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		textlist += "<b>[DisplayPower(get_clockwork_power())] / [DisplayPower(MAX_CLOCKWORK_POWER)]</b> power available for use."
 		desc = textlist.Join()
 	..()
-
+*/
 //GUARDIANS
 
 /atom/movable/screen/alert/cancharge

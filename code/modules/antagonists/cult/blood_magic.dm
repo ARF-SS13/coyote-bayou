@@ -314,8 +314,8 @@
 			R.reveal()
 		for(var/obj/structure/destructible/cult/S in range(6,owner))
 			S.reveal()
-		for(var/turf/open/floor/engine/cult/T  in range(6,owner))
-			T.realappearance.alpha = initial(T.realappearance.alpha)
+/*		for(var/turf/open/floor/engine/cult/T  in range(6,owner))
+			T.realappearance.alpha = initial(T.realappearance.alpha)*/
 		for(var/obj/machinery/door/airlock/cult/AL in range(6, owner))
 			AL.reveal()
 		revealing = FALSE

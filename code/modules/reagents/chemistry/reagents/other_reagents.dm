@@ -389,8 +389,8 @@
 	. = ..()
 	ADD_TRAIT(L, TRAIT_HOLY, type)
 
-	if(is_servant_of_ratvar(L))
-		to_chat(L, span_userdanger("A fog spreads through your mind, purging the Justiciar's influence!"))
+/*	if(is_servant_of_ratvar(L))
+		to_chat(L, span_userdanger("A fog spreads through your mind, purging the Justiciar's influence!"))*/
 	else if(iscultist(L))
 		to_chat(L, span_userdanger("A fog spreads through your mind, weakening your connection to the veil and purging Nar-sie's influence"))
 
@@ -426,7 +426,7 @@
 				M.Unconscious(120)
 				to_chat(M, "<span class='cultlarge'>[pick("Your blood is your bond - you are nothing without it", "Do not forget your place", \
 				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour your meager life!")].</span>")
-		else if(is_servant_of_ratvar(M) && prob(8))
+/*		else if(is_servant_of_ratvar(M) && prob(8))
 			switch(pick("speech", "message", "emote"))
 				if("speech")
 					clockwork_say(M, "...[text2ratvar(pick("Engine... your light grows dark...", "Where are you, master?", "He lies rusting in Error...", "Purge all untruths and... and... something..."))]")
@@ -446,7 +446,7 @@
 			holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
 			return
 	holder.remove_reagent(type, 0.4)	//fixed consumption to prevent balancing going out of whack
-
+*/
 /datum/reagent/water/holywater/reaction_turf(turf/T, reac_volume)
 	..()
 	if(!istype(T))
@@ -527,7 +527,7 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/fuel/holyoil/on_mob_life(mob/living/carbon/M)
-	if(is_servant_of_ratvar(M))
+/*	if(is_servant_of_ratvar(M))
 		M.drowsyness = max(M.drowsyness-5, 0)
 		M.AdjustUnconscious(-60 * effect_mult, FALSE)
 		M.AdjustAllImmobility(-30 * effect_mult, FALSE)
@@ -536,7 +536,7 @@
 		M.adjustToxLoss(-5 * effect_mult, FALSE, TRUE)
 		M.adjustOxyLoss(-3 * effect_mult, FALSE)
 		M.adjustBruteLoss(-3 * effect_mult, FALSE)
-		M.adjustFireLoss(-5 * effect_mult, FALSE)
+		M.adjustFireLoss(-5 * effect_mult, FALSE)*/
 	if(iscultist(M))
 		M.AdjustUnconscious(1 * effect_mult, FALSE)
 		M.AdjustAllImmobility(10 * effect_mult, FALSE)

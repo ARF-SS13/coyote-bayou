@@ -294,7 +294,7 @@
 
 			SSticker.mode.remove_antag_for_borging(BM.mind)
 			if(!istype(M.laws, /datum/ai_laws/ratvar))
-				remove_servant_of_ratvar(BM, TRUE)
+/*				remove_servant_of_ratvar(BM, TRUE)*/
 			BM.mind.transfer_to(O)
 
 			if(O.mind && O.mind.special_role)
