@@ -467,7 +467,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
-				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, 
+				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -524,12 +524,12 @@
 //////////////
 
 /mob/living/simple_animal/hostile/radroach
-	name = "radroach"
+	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
-	icon = 'icons/fallout/mobs/animals/insects.dmi'
-	icon_state = "radroach"
-	icon_living = "radroach"
-	icon_dead = "radroach_dead"
+	icon = 'modular_coyote/icons/mob/pillbug.dmi'
+	icon_state = "pillbug"
+	icon_living = "pillbug"
+	icon_dead = "pillbug_dead"
 	icon_gib = "radroach_gib"
 	can_ghost_into = TRUE
 	waddle_amount = 1

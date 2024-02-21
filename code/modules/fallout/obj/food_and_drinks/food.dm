@@ -236,7 +236,7 @@
 	desc = "A dog steak does not look attractive, but some people eat worse things when it comes to survival.<br>What did you expect from roasted dog?"
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
-	name = "radroach steak"
+	name = "mutant pillbug steak"
 	desc = "A off-color radroach steak.<br>you could have sworn you saw it still twitch."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "moth_steak"
