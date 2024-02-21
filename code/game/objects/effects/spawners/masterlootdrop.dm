@@ -353,6 +353,7 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
+		/obj/item/gun/ballistic/rifle/leespeedster = 5,                 //911 5
 		/obj/item/gun/ballistic/automatic/autopipe/special = 10,        //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 5,        //426 7

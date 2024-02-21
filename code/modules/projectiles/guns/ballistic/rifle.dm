@@ -537,6 +537,28 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+//lee speed
+/obj/item/gun/ballistic/rifle/leespeedster
+	name = "Lee Einfield 'Speed' rifle."
+	desc = "A modified Lee Enfield with a shorten mag capacity but high stopping power. The bolt is greased and well made, even lighter which allows for faster operation of the rifle. It lacks the bayonet lug."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "speed"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/speedinglee
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_bayonet = FALSE
+	cock_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
+
 /obj/item/gun/ballistic/rifle/mosin/mini
 	name = "Mini-mosin"
 	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
