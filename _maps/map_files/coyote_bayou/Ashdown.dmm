@@ -9505,6 +9505,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"egv" = (
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13{
+	icon_state = "yellowrustychess"
+	},
+/area/f13/building)
 "egB" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/flora/junglebush,
@@ -21532,7 +21539,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	color = "#818181";
 	icon_state = "floorrustysolid"
@@ -45302,10 +45309,11 @@
 /area/f13/building/abandoned)
 "tXj" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/pillbottles,
 /obj/machinery/light/broken{
 	dir = 8
 	},
+/obj/machinery/cell_charger,
+/obj/item/storage/box/pillbottles,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -72480,7 +72488,7 @@ ipL
 uSf
 aZh
 qLB
-wsL
+egv
 gWt
 rJI
 lVe
