@@ -17,7 +17,7 @@
 	var/list/datum/nanite_program/protocol/protocols = list() ///Separate list of protocol programs, to avoid looping through the whole programs list when checking for conflicts
 	var/start_time = 0 ///Timestamp to when the nanites were first inserted in the host
 	var/stealth = FALSE //if TRUE, does not appear on HUDs and health scans
-	var/diagnostics = TRUE //if TRUE, displays program list when scanned by nanite scanners
+	var/diagnostics = FALSE //if TRUE, displays program list when scanned by nanite scanners
 
 /datum/component/nanites/Initialize(amount = 100, cloud = 0)
 	if(!isliving(parent) && !istype(parent, /datum/nanite_cloud_backup))
