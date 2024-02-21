@@ -1,11 +1,13 @@
+#define HARMONIC_REGEN_BOOST 0.1
+
 /datum/component/nanites
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
 	var/mob/living/host_mob
-	var/nanite_volume = 50		//amount of nanites in the system, used as fuel for nanite programs
-	var/max_nanites = 250		//maximum amount of nanites in the system
+	var/nanite_volume = 100		//amount of nanites in the system, used as fuel for nanite programs
+	var/max_nanites = 500		//maximum amount of nanites in the system
 	var/regen_rate = 0.5		//nanites generated per second
-	var/safety_threshold = 25	//how low nanites will get before they stop processing/triggering
+	var/safety_threshold = 50	//how low nanites will get before they stop processing/triggering
 	var/cloud_id = 0 			//0 if not connected to the cloud, 1-100 to set a determined cloud backup to draw from
 	var/cloud_active = TRUE		//if false, won't sync to the cloud
 	var/next_sync = 0
@@ -15,7 +17,7 @@
 	var/list/datum/nanite_program/protocol/protocols = list() ///Separate list of protocol programs, to avoid looping through the whole programs list when checking for conflicts
 	var/start_time = 0 ///Timestamp to when the nanites were first inserted in the host
 	var/stealth = FALSE //if TRUE, does not appear on HUDs and health scans
-	var/diagnostics = TRUE //if TRUE, displays program list when scanned by nanite scanners
+	var/diagnostics = FALSE //if TRUE, displays program list when scanned by nanite scanners
 
 /datum/component/nanites/Initialize(amount = 100, cloud = 0)
 	if(!isliving(parent) && !istype(parent, /datum/nanite_cloud_backup))
@@ -109,6 +111,7 @@
 
 /datum/component/nanites/process()
 	adjust_nanites(null, regen_rate)
+	adjust_nanites(null, (regen_rate + (SSresearch.science_tech.researched_nodes["nanite_harmonic"] ? HARMONIC_REGEN_BOOST : 0)))
 	add_research()
 	for(var/X in programs)
 		var/datum/nanite_program/NP = X
@@ -325,7 +328,7 @@
 /datum/component/nanites/proc/nanite_ui_data(datum/source, list/data, scan_level)
 	data["has_nanites"] = TRUE
 	data["nanite_volume"] = nanite_volume
-	data["regen_rate"] = regen_rate
+	data["regen_rate"] = regen_rate + (SSresearch.science_tech.researched_nodes["nanite_harmonic"] ? HARMONIC_REGEN_BOOST : 0)
 	data["safety_threshold"] = safety_threshold
 	data["cloud_id"] = cloud_id
 	data["cloud_active"] = cloud_active
@@ -378,3 +381,5 @@
 		id++
 		mob_programs += list(mob_program)
 	data["mob_programs"] = mob_programs
+
+#undef HARMONIC_REGEN_BOOST
