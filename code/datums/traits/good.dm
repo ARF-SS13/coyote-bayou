@@ -1954,7 +1954,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 
 /datum/quirk/mantisblade
-	name = "cybernetic arm blader"
+	name = "Cybernetic Arm Blader"
 	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblades with the *armblade verb."
 
 	value = 32
