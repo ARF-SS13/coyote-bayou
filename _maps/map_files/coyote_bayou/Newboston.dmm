@@ -13462,7 +13462,7 @@
 	name = "counter shutters";
 	id = "bankdeskshutters"
 	},
-/obj/machinery/ticket_machine{
+/obj/machinery/cardpuncher{
 	pixel_y = 24
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
@@ -35657,6 +35657,12 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"vfp" = (
+/obj/machinery/mineral/equipment_vendor,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "vft" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -74907,7 +74913,7 @@ bzW
 sKy
 uMI
 hRg
-mdh
+vfp
 klQ
 rHb
 rLl
