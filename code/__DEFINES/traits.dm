@@ -184,6 +184,7 @@
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
 #define TRAIT_ARMBLADE			"Arm Blade"
+#define TRAIT_CYBERKNIFE		"Cyber Blade"
 #define TRAIT_ARMTENT			"Tentacle Arm"
 #define TRAIT_TAILPLAY			"Tail Player"
 #define TRAIT_TAILWHIP			"Tail Whipper"
