@@ -11,6 +11,21 @@
 						"relay_nanites", "monitoring_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","red_diag_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
+/datum/techweb_node/nanite_protocol_storage
+	id = "nanite_protocol_storage"
+	display_name = "Nanite Storage Protocols"
+	prereq_ids = list("nanite_base","adv_robotics")
+	design_ids = list("hive_nanites","zip_nanites","free_range_nanites","unsafe_storage_nanites")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/nanite_protocol_replication
+	id = "nanite_protocol_replication"
+	display_name = "Nanite Replication Protocols"
+	prereq_ids = list("nanite_base","adv_robotics")
+	design_ids = list("kickstart_nanites","factory_nanites","pyramid_nanites","offline_nanites")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+
 /datum/techweb_node/nanite_smart
 	id = "nanite_smart"
 	display_name = "Smart Nanite Programming"
