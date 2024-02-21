@@ -319,9 +319,9 @@
 		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+		/obj/item/clockwork/weapon/ratvarian_spear)*/
 	cyborg_base_icon = "medical"
 	moduleselect_icon = "medical"
 	hat_offset = 3
@@ -457,9 +457,9 @@
 		/obj/item/megaphone,
 		/obj/item/borg/projectile_dampen)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/peace/hacked)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/peacekeeper,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+		/obj/item/clockwork/weapon/ratvarian_spear)*/
 	cyborg_base_icon = "peace"
 	moduleselect_icon = "standard"
 	borghealth = 300
@@ -546,8 +546,8 @@
 		/obj/item/holosign_creator,
 		/obj/item/reagent_containers/spray/cyborg_drying)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
-	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,
-		/obj/item/borg/sight/xray/truesight_lens)
+/*	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,
+		/obj/item/borg/sight/xray/truesight_lens)*/
 	moduleselect_icon = "service"
 	hat_offset = 0
 	clean_on_move = TRUE
@@ -625,10 +625,10 @@
 		/obj/item/destTagger,
 		/obj/item/stack/packageWrap)
 	emag_modules = list(/obj/item/borg/stun)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/miner,
-//		/obj/item/clockwork/weapon/ratvarian_spear,
-		/obj/item/borg/sight/xray/truesight_lens)
+		/obj/item/clockwork/weapon/ratvarian_spear,
+		/obj/item/borg/sight/xray/truesight_lens)*/
 	cyborg_base_icon = "miner"
 	moduleselect_icon = "miner"
 	hat_offset = 0
@@ -791,9 +791,9 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/gun/medbeam,
 		/obj/item/organ_storage)
-	ratvar_modules = list(
+/*	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
-		/obj/item/clockwork/weapon/ratvarian_spear)
+		/obj/item/clockwork/weapon/ratvarian_spear)*/
 	cyborg_base_icon = "synd_medical"
 	moduleselect_icon = "malf"
 	hat_offset = 3
