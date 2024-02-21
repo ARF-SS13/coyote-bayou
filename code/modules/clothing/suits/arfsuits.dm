@@ -4879,7 +4879,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/fluff/wolf
 	name = "Hardened Combat Carapace"
-	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple "43rd" Was labeled with a sword stabbing through it. On the chest embrassened was "Kas-" the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
+	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
 	icon_state = "wolfsquad"
 	item_state = "wolfsquad"
 	mutantrace_variation = STYLE_DIGITIGRADE
