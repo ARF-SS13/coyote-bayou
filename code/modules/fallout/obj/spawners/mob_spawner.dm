@@ -17,7 +17,7 @@
 	mob_type = /mob/living/simple_animal/hostile/gecko
 
 /obj/effect/mob_spawner/molerat
-	name = "molerats spawner"
+	name = "giant rats spawner"
 	mob_type = /mob/living/simple_animal/hostile/molerat
 
 /obj/effect/mob_spawner/cazador
