@@ -984,6 +984,12 @@
 	message = "growls like a cougar!"
 	sound = 'sound/f13effects/sunsetsounds/cougar.ogg'
 
+/datum/emote/halt
+	key = "halt"
+	key_third_person = "tells everyone to halt"
+	message = "tells everyone to halt!"
+	sound = 'sound/f13effects/sunsetsounds/oblivionguard.ogg'
+
 /datum/emote/trumpet
 	key = "trumpet"
 	key_third_person = "trumpets"
@@ -2096,16 +2102,18 @@ datum/emote/living/gecker
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_coyote/sound/verbs/mow.ogg'
 
-datum/emote/living/yip
+/datum/emote/living/yip
 	key = "yip"
 	key_third_person = "yips"
 	message = "yips!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/yip.ogg'
 
 /datum/emote/living/woof
 	key = "woof"
 	key_third_person = "woofs"
 	message = "woofs!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/woof.ogg'
 
 /datum/emote/living/woof/alt
@@ -2117,30 +2125,35 @@ datum/emote/living/yip
 	key = "whine"
 	key_third_person = "whines"
 	message = "whines..."
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/whine.ogg'
 
 /datum/emote/living/coo
 	key = "coo"
 	key_third_person = "coos"
 	message = "coos."
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/coo.ogg'
 
 /datum/emote/living/hoot
 	key = "hoot"
 	key_third_person = "hoots"
 	message = "hoots!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/hoot.ogg'
 
 /datum/emote/living/hiss2 // Since normal hiss is tied to the Xenomorph Race (i think?)
 	key = "hiss2"
 	key_third_person = "hisses2"
 	message = "let out a short hiss!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_citadel/sound/voice/hiss.ogg'
 
 /datum/emote/living/bark2
 	key = "bark2"
 	key_third_person = "barks2"
 	message = "barks!"
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/bark2/run_emote(mob/user, params) //Player triggers the emote
 	. = ..() // the glyph of power
@@ -2148,3 +2161,9 @@ datum/emote/living/yip
 		var/mob/living/carbon/C = user
 		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
 			pick(playsound(C, 'modular_citadel/sound/voice/bark1.ogg', 33, 1), playsound(C, 'modular_citadel/sound/voice/bark2.ogg', 33, 1))
+
+/datum/emote/living/headtilt
+	key = "tilt"
+	key_third_person = "tilts"
+	message = "tilts their head."
+	message_param = "tilts their head at %t."

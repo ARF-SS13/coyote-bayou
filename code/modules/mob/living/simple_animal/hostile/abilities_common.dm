@@ -21,6 +21,11 @@
 		/mob/living/simple_animal/hostile/eyebot)
 
 // Separate defines for taming and control, else use above.
+#define TAME_RATS_ALLOWED list(\
+		/mob/living/simple_animal/hostile/rat,\
+		/mob/living/simple_animal/hostile/rat/skitter,\
+		/mob/living/simple_animal/hostile/molerat)
+
 #define TAME_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/stalker,\
 		/mob/living/simple_animal/hostile/stalkeryoung,\
@@ -453,7 +458,7 @@
 /obj/effect/proc_holder/mob_common/taming_mobs/rat
 	name = "Tame - Rats"
 	desc = "Try to make rats and mice docile. Melee range."
-	allowed_mobs = RTS_RATS_ALLOWED
+	allowed_mobs = TAME_RATS_ALLOWED
 
 /obj/effect/proc_holder/mob_common/taming_mobs/small_critter
 	name = "Tame - Small Critters"

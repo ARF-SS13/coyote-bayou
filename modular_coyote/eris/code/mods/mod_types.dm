@@ -155,9 +155,8 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(10,25) * 0.01,
 		GUN_UPGRADE_RECOIL_1H=1 + rand(80,120) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(10,35) * 0.01
-//		GUN_UPGRADE_FIRE_DELAY_MULT = 1.25,
-	/*	GUN_UPGRADE_CHARGECOST = 1.25	*/
+		GUN_UPGRADE_RECOIL_2H=1 + rand(10,35) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(15,25) * 0.01
 	)
 	I.prefix = "boosted"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -292,10 +291,10 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H=1 + rand(-5,-20) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-5,-20) * 0.01,
-		//GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(8,15) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-20) * 0.01,
-		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-5,-20) * 0.01
-		//GUN_UPGRADE_CHARGECOST = 0.9
+		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-5,-20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-15,-8) * 0.01
 	)
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
