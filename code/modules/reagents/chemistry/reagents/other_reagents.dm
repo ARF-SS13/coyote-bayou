@@ -389,10 +389,12 @@
 	. = ..()
 	ADD_TRAIT(L, TRAIT_HOLY, type)
 
-/*	if(is_servant_of_ratvar(L))
+/*
+	if(is_servant_of_ratvar(L))
 		to_chat(L, span_userdanger("A fog spreads through your mind, purging the Justiciar's influence!"))
-	else if(iscultist(L))*/
+	else if(iscultist(L)) 
 		to_chat(L, span_userdanger("A fog spreads through your mind, weakening your connection to the veil and purging Nar-sie's influence"))
+*/
 /datum/reagent/water/holywater/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_HOLY, type)
 	if(iscultist(L))

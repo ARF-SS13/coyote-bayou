@@ -31,7 +31,7 @@
 /datum/species/synth/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	..()
 	assume_disguise(old_species, H)
-	RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
+	// RegisterSignal(H, COMSIG_MOB_SAY, .proc/handle_speech)
 
 /datum/species/synth/on_species_loss(mob/living/carbon/human/H)
 	. = ..()
@@ -112,10 +112,12 @@
 	else
 		return ..()
 
+/* 
 /datum/species/synth/proc/handle_speech(datum/source, list/speech_args)
 	if (isliving(source)) // yeah it's gonna be living but just to be clean
 		var/mob/living/L = source
 		if(fake_species && L.health > disguise_fail_health)
 			switch (fake_species.type)
-/*				if (/datum/species/golem/clockwork)
-					speech_args[SPEECH_SPANS] |= SPAN_ROBOT*/
+				if (/datum/species/golem/clockwork)
+					speech_args[SPEECH_SPANS] |= SPAN_ROBOT
+ */

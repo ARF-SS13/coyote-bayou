@@ -164,7 +164,8 @@
 					log_admin("[key_name(usr)] started a clockwork cult.")
 				else
 					message_admins("[key_name_admin(usr)] tried to start a clockwork cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a clockwork cult.")*/
+					log_admin("[key_name(usr)] failed to start a clockwork cult.")
+*/
 			if("revenant")
 				if(src.makeRevenant())
 					message_admins("[key_name(usr)] created a revenant.")

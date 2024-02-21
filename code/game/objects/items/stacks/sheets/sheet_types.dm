@@ -766,7 +766,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	new /obj/item/stack/sheet/runed_metal(loc, amount)
 	qdel(src)
 
-/*/obj/item/stack/tile/brass/attack_self(mob/living/user)
+/*
+/obj/item/stack/tile/brass/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user))
 		to_chat(user, span_danger("[src] seems far too fragile and rigid to build with.")) //haha that's because it's actually replicant alloy you DUMMY
 		return
@@ -778,7 +779,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 
 /obj/item/stack/tile/brass/fifty
 	amount = 50
-	merge_type = /obj/item/stack/tile/brass*/
+	merge_type = /obj/item/stack/tile/brass
+*/
 
 /*
  * Bronze
