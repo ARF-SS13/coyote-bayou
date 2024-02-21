@@ -431,6 +431,28 @@
 	else
 		qdel(blade)
 
+//cybernetic blade placeholder(?)
+/datum/emote/living/carbon/cyberarm
+	key = "cyberarmblade"
+	key_third_person = "draws an arm blade!"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/cyberarm/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to use your blade!"))
+		return
+	var/which_blade_to_spawn
+	if(HAS_TRAIT(user, TRAIT_CYBERKNIFE))
+		which_blade_to_spawn = /obj/item/hand_item/arm_blade/mutation/cyber
+	else 
+		to_chat(user, span_notice("You ain't got no arm blades!"))
+	var/obj/item/hand_item/arm_blade/mutation/cyber/blade = new which_blade_to_spawn(user) 
+	if(user.put_in_active_hand(blade))
+		to_chat(user, span_notice("You get your blades ready to slice!"))
+	else
+		qdel(blade)
+
 //arm tentacle mutation//
 /datum/emote/living/carbon/tentarm
 	key = "tentarm"
