@@ -984,6 +984,12 @@
 	message = "growls like a cougar!"
 	sound = 'sound/f13effects/sunsetsounds/cougar.ogg'
 
+/datum/emote/halt
+	key = "halt"
+	key_third_person = "tells everyone to halt"
+	message = "tells everyone to halt!"
+	sound = 'sound/f13effects/sunsetsounds/oblivionguard.ogg'
+
 /datum/emote/trumpet
 	key = "trumpet"
 	key_third_person = "trumpets"
