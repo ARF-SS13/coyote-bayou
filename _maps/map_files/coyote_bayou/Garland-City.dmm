@@ -4286,6 +4286,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"dcq" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "dcs" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -4939,6 +4946,13 @@
 "dDo" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
+	},
+/area/f13/building)
+"dDO" = (
+/obj/structure/table/wood,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
 	},
 /area/f13/building)
 "dEg" = (
@@ -20749,6 +20763,7 @@
 /area/f13/wasteland)
 "oBO" = (
 /obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -20973,6 +20988,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -27405,6 +27421,14 @@
 	name = "vines"
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"tpw" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "tpO" = (
 /obj/machinery/light/small{
@@ -43218,7 +43242,7 @@ iga
 iBr
 mHS
 wMm
-eiM
+dDO
 snE
 glj
 qfA
@@ -55323,7 +55347,7 @@ oGl
 oGl
 oGl
 cnJ
-gAo
+tpw
 oGl
 uPg
 oGl
@@ -83151,7 +83175,7 @@ tvr
 hkD
 rmR
 jYi
-quf
+dcq
 cYg
 pPN
 rmR

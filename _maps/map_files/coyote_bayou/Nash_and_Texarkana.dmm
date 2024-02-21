@@ -1330,12 +1330,12 @@
 /turf/open/floor/wood_common,
 /area/f13/ruins)
 "afG" = (
-/obj/item/weldingtool,
 /obj/structure/table/reinforced,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -12166,6 +12166,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
 "aSq" = (
@@ -37626,6 +37627,7 @@
 "gpM" = (
 /obj/structure/table,
 /obj/machinery/light,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -49675,6 +49677,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/f13/vault_floor/red/white/side{
 	dir = 4
 	},
@@ -67901,6 +67904,7 @@
 "odF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "odG" = (
@@ -96830,6 +96834,14 @@
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
+/area/f13/ruins)
+"vNd" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
 /area/f13/ruins)
 "vNj" = (
 /obj/structure/flora/grass/wasteland{
@@ -150283,7 +150295,7 @@ ddC
 gAg
 aoJ
 nOG
-cJm
+vNd
 azI
 kFN
 kOS
