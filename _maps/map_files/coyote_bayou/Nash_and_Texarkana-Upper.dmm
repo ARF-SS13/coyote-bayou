@@ -9869,7 +9869,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "gkm" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/medicine,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -11454,7 +11453,6 @@
 	},
 /area/f13/building/mall)
 "hfH" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/barman_recipes,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -20490,7 +20488,6 @@
 	},
 /area/f13/building)
 "mvo" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/circuitry,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
@@ -24111,7 +24108,6 @@
 	},
 /area/f13/wasteland)
 "oAZ" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/cooking_to_serve_man,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -26662,7 +26658,6 @@
 	},
 /area/f13/building/abandoned)
 "qeV" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/nuka_recipes,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -27424,19 +27419,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
-"qCg" = (
-/obj/structure/window/fulltile/ruins{
-	icon_state = "ruinswindowvertical";
-	},
-/obj/structure/decoration/rag{
-	icon_state = "skin";
-	layer = 3.4
-	},
-/obj/structure/decoration/rag{
-	layer = 3.4
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/building)
 "qCs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
@@ -28108,17 +28090,6 @@
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"rek" = (
-/obj/machinery/door/window/clockwork{
-	dir = 2
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
 /area/f13/building)
 "rey" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -32856,10 +32827,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
-"ueB" = (
-/obj/effect/temp_visual/steam,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "ueM" = (
 /obj/structure/simple_door/house,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -38641,7 +38608,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "xMK" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/chemistry,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -71858,7 +71824,7 @@ vje
 vje
 vje
 vje
-ueB
+oez
 oez
 oez
 oez
@@ -72115,8 +72081,8 @@ iRb
 icJ
 aFK
 evM
-ueB
-ueB
+oez
+oez
 oez
 oez
 oez
@@ -72372,7 +72338,7 @@ icJ
 qYc
 qls
 vje
-ueB
+oez
 oez
 wYG
 wYG
@@ -74155,7 +74121,7 @@ nEF
 jZu
 rRJ
 fpm
-rek
+rRJ
 oxM
 oxM
 oxM
@@ -80843,7 +80809,7 @@ aSi
 gDZ
 dIn
 dIn
-qCg
+dIn
 rwS
 iCH
 txf

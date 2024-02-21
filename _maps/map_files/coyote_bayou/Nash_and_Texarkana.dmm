@@ -1450,11 +1450,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ruins)
-"afX" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "afY" = (
 /obj/structure/table/wood,
 /obj/item/storage/backpack/satchel/leather,
@@ -5700,10 +5695,6 @@
 /obj/item/clothing/shoes/f13/diesel/alt,
 /turf/open/floor/f13/wood,
 /area/f13/store)
-"awm" = (
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "awn" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5844,16 +5835,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland/city)
-"awN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
 "awO" = (
 /obj/structure/table/rolling,
 /obj/item/trash/tray{
@@ -30101,7 +30082,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "eoZ" = (
@@ -73914,7 +73894,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pFd" = (
@@ -77394,16 +77373,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
-"qCG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/chomp/thicket2{
-	color = "#224422"
-	},
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "qCJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -148412,7 +148381,7 @@ tMc
 kFs
 kFs
 aOk
-awm
+aOk
 mgs
 aae
 aae
@@ -148672,7 +148641,7 @@ aOk
 www
 pFa
 yhg
-awN
+yhg
 nhS
 asS
 aae
@@ -148928,7 +148897,7 @@ kFs
 okJ
 aOk
 acD
-qCG
+lDH
 aON
 eoV
 uba
@@ -149189,7 +149158,7 @@ cFK
 cFK
 acD
 etg
-afX
+kFs
 aOk
 aOk
 aae
@@ -149444,7 +149413,7 @@ cFK
 aOk
 gxt
 cFK
-awm
+aOk
 hrz
 wOt
 aOk
