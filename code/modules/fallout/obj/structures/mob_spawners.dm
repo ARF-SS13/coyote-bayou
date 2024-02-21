@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/radscorpion/black = 5)
 
 /obj/structure/nest/radroach
-	name = "radroach nest"
+	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 15)

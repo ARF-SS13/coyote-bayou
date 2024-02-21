@@ -683,7 +683,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 /// Roachie~
 /datum/random_mob_spawner/roach
 	nest_tag = MOB_SPAWNER_ROACH
-	nest_name = "radroach mass"
+	nest_name = "mutant pillbug mass"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
@@ -794,7 +794,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 /// Molerats
 /datum/random_mob_spawner/molerat
 	nest_tag = MOB_SPAWNER_MOLERAT
-	nest_name = "molerat nest"
+	nest_name = "giant rat nest"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
