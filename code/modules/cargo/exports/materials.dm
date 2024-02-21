@@ -191,7 +191,7 @@
 /datum/export/material/molerathide
 	cost = 100
 	message = " "
-	unit_name = "molerat hide"
+	unit_name = "giant rat hide"
 	material_id = /datum/material/molerathide
 	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
 

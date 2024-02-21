@@ -417,7 +417,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	sheet_type = /obj/item/stack/sheet/animalhide/gecko
 
 /datum/material/molerathide
-	name = "molerat leather"
+	name = "Giant rat leather"
 	desc = "A common leather, akin to old pigskin."
 	sheet_type = /obj/item/stack/sheet/animalhide/molerat
 

@@ -439,7 +439,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
-
+	new /obj/item/clothing/suit/armor/power_armor/fluff/wolf(src)
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
@@ -1341,17 +1341,18 @@
 	new /obj/item/melee/onehanded/machete/spatha(src)
 
 /datum/gear/donator/kits/seermankhajiit00
-	name = "The Latos MK XI"
+	name = "The FallhlífVeiðimaður"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/gun/ballistic/automatic/fg42tox(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/ammo_box/magazine/fallschirm(src)
+	new /obj/item/ammo_box/magazine/fallschirm(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/ammo_box/a3006box(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
