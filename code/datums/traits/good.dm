@@ -1750,11 +1750,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/ratmaster
 	name = "Beast Master - Rats"
-	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
-	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
+	desc = "Whenever by psychic means or not, you gained ability to summon and control the rats of Wasteland (except giant ones).\
+	<br>You also able to tame wild ones. This will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
 	value = 22
 	category = "Critter Quirks"
-	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky."
+	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky.\
+	<br><font color='#ff2929ff'>If you want to control giant rats, you will need Beast Master - Small Critters.</font>" // Why this sounds like DLC talk
 	conflicts = list(
 		/datum/quirk/ratfriend,
 		/datum/quirk/ratphobia,
@@ -1827,11 +1828,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/crittermaster
 	name = "Beast Master - Small Critters"
-	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and molerats (last ones will be initially hostile and needs to be tamed).\
+	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
 	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can also be tamed, but not controlled."
 	value = 34
 	category = "Critter Quirks"
-	mechanics = "You can tame and order around roaches, geckos (not all of the full variety pack though) and molerats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
+	mechanics = "You can tame and order around roaches, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
 	conflicts = list(
 		/datum/quirk/critterfriend,
 	)
