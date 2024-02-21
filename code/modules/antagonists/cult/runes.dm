@@ -212,17 +212,17 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/datum/antagonist/cult/C = F.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
 	var/datum/team/cult/Cult_team = C.cult_team
 	var/is_convertable = is_convertable_to_cult(L,C.cult_team)
-	if(L.stat != DEAD && (is_clock || is_convertable))
+	if(L.stat != DEAD && ( is_convertable))
 		invocation = "Mah'weyh pleggh at e'ntrath."
 		..()
-		if(is_clock)
+/*		if(is_clock)
 			L.visible_message(span_warning("[L]'s eyes glow a defiant yellow!"), \
 			"<span class='cultlarge'>\"Stop resisting. You <i>will</i> be mi-\"</span>\n\
 			<span class='large_brass'>\"Give up and you will feel pain unlike anything you've ever felt!\"</span>")
 			L.DefaultCombatKnockdown(80)
 		else if(is_convertable)
 			do_convert(L, invokers)
-	else
+	else*/
 		invocation = "Barhah hra zar'garis."
 		..()
 		do_sacrifice(L, invokers)

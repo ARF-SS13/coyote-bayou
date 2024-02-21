@@ -30,11 +30,11 @@
 
 /turf/open/indestructible/reebe_void/spawning/lattices/Initialize(mapload)
 	. = ..()
-	if(mapload)
+/*	if(mapload)
 		if(prob(2.5))
 			new /obj/structure/lattice/catwalk/clockwork(src)
 		else if(prob(5))
-			new /obj/structure/lattice/clockwork(src)
+			new /obj/structure/lattice/clockwork(src)*/
 
 /turf/open/indestructible/reebe_void/Enter(atom/movable/AM, atom/old_loc)
 	if(!..())

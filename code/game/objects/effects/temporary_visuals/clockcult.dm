@@ -121,8 +121,8 @@
 	var/hit_amount = 0
 	var/turf/T = get_turf(src)
 	for(var/mob/living/L in T)
-		if(is_servant_of_ratvar(L))
-			continue
+/*		if(is_servant_of_ratvar(L))
+			continue*/
 		var/obj/item/I = L.anti_magic_check()
 		if(I)
 			L.visible_message(span_warning("Strange energy flows into [L]'s [I.name]!"), \
