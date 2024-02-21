@@ -1952,6 +1952,21 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient appears to possess a knife, somehow."
 	human_only = FALSE
 
+
+/datum/quirk/mantisblade
+	name = "cybernetic arm blader"
+	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblades with the *armblade verb."
+
+	value = 32
+	category = "Mutant Quirks"
+	mechanics = "Your arm can turn into a horrifying cyberblade"
+	conflicts = list()
+	mob_trait = TRAIT_CYBERKNIFE
+	gain_text = span_notice("You feel as your arm is heavier...")
+	lose_text = span_danger("Your arm feels lighter...")
+	medical_record_text = "Patient appears to possess a cybernetic armblade."
+	human_only = FALSE
+
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
