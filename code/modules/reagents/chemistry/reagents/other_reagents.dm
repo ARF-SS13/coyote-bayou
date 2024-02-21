@@ -1945,6 +1945,7 @@
 	taste_description = "oil"
 	ghoulfriendly = TRUE
 
+/*
 /datum/reagent/oil/on_mob_metabolize_synth(mob/living/L)
 	..()
 	L.show_message(span_green("Your joints feel lubricated!"))
@@ -1954,6 +1955,7 @@
 	L.show_message(span_alert("Your joints run out of extra lubricant."))
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
 	..()
+*/ //sugma
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
