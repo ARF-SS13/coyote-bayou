@@ -821,7 +821,7 @@
 	icon = 'modular_coyote/icons/mob/rat.dmi'
 	icon_state = "rat"
 	icon_living = "rat"
-	icon_dead = "rat_ead"
+	icon_dead = "rat_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	can_ghost_into = TRUE
 	speak_chance = 0
