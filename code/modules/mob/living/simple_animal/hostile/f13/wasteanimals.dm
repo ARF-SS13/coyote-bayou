@@ -125,7 +125,7 @@
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
-	
+
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	melee_damage_lower *= 0.5
@@ -280,7 +280,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET * 0.35
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -390,8 +390,8 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	
-	
+
+
 /mob/living/simple_animal/hostile/gecko/legacy/alpha
 	name = "alpha newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way. This one's drooling a lot and looks sort of tired."
@@ -419,7 +419,7 @@
 	minimum_distance = 0
 	aggro_vision_range = 7
 	vision_range = 9
-	
+
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -598,7 +598,7 @@
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -663,7 +663,7 @@
 	var/mob/living/carbon/human/H = my_target
 	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
-/mob/living/simple_animal/hostile/stalker/playable/legion				
+/mob/living/simple_animal/hostile/stalker/playable/legion
 	name = "legionstalker"
 	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
 	icon_state = "nightstalker-legion"
@@ -816,18 +816,18 @@
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
-	name = "molerat"
-	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "molerat"
-	icon_living = "molerat"
-	icon_dead = "molerat_dead"
+	name = "giant rat"
+	desc = "A large mutated rat that finds its way everywhere. Common in caves and underground areas."
+	icon = 'modular_coyote/icons/mob/rat.dmi'
+	icon_state = "rat"
+	icon_living = "rat"
+	icon_dead = "rat_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
-						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, 
+						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2,
 						/obj/item/stack/sheet/sinew = 1,
 						/obj/item/stack/sheet/animalhide/molerat = 1,
 						/obj/item/stack/sheet/bone = 1)
@@ -846,7 +846,7 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
-	
+
 	faction = list("hostile", "gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -1016,7 +1016,7 @@
 	)
 	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
 	desc_short = "What a terrifying bird."
-	
+
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),

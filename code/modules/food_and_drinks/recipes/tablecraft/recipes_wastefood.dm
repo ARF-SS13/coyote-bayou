@@ -49,7 +49,7 @@
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/moleratstew
-	name = "Molerat Stew"
+	name = "Giant Rat Stew"
 	reqs = list(
 		/datum/reagent/consumable/ethanol/beer = 10,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 1,
@@ -348,7 +348,7 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/steak
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
-	
+
 /datum/crafting_recipe/food/imitation_bcm
 	name = "Imitation BlamCo Mac and Cheese"
 	reqs = list(
@@ -370,8 +370,8 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/canned/porknbeans
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
-	
-	
+
+
 /////////////////
 //Sewer Food.  //
 /////////////////
@@ -405,7 +405,7 @@
 
 /// Legacy Content
 
-/* 
+/*
 /datum/crafting_recipe/food/pemmican
 	name = "Pemmican"
 	reqs = list(
