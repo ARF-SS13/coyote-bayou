@@ -1561,6 +1561,11 @@
 /obj/item/clothing/under/f13/rag,
 /turf/open/floor/plating,
 /area/f13/bunker)
+"aHG" = (
+/obj/structure/table/reinforced,
+/obj/item/nanite_remote,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "aHJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -28144,6 +28149,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
+"mxb" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "mxf" = (
 /obj/structure/table{
 	layer = 2.9
@@ -29426,6 +29435,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
+"mYd" = (
+/obj/structure/rack,
+/obj/item/circuitboard/machine/public_nanite_chamber,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "mYI" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/f13/leather,
@@ -30223,6 +30237,15 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood/archives)
+"not" = (
+/obj/structure/ladder/unbreakable{
+	name = "Ladder";
+	id = "nanitelab";
+	icon_state = "ladder10";
+	height = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "now" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 9
@@ -31755,6 +31778,10 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/leisure)
+"nYv" = (
+/obj/machinery/nanite_programmer,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "nYJ" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -32188,6 +32215,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"ojP" = (
+/obj/structure/table/reinforced,
+/obj/item/nanite_scanner,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "ojT" = (
 /obj/machinery/computer/vertibird_console,
 /turf/open/floor/engine,
@@ -33417,6 +33449,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
+"oJu" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "oJG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -35406,6 +35442,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/enclavehelipad)
+"pyT" = (
+/obj/machinery/door/airlock/science/glass{
+	req_one_access_txt = "136";
+	name = "Storage Equipment"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "pyZ" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-22"
@@ -40299,6 +40342,11 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
+"rCO" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/disks_nanite,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "rDl" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/blood/drip,
@@ -40738,6 +40786,16 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/offices2nd)
+"rOk" = (
+/obj/machinery/computer/nanite_chamber_control{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "rOB" = (
 /obj/structure/fluff/railing{
 	density = 0;
@@ -46273,6 +46331,10 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/armory)
+"ulU" = (
+/obj/machinery/nanite_chamber,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "ulV" = (
 /mob/living/simple_animal/hostile/vault/dweller/dweller3,
 /turf/open/floor/f13/wood,
@@ -50167,6 +50229,10 @@
 "vYk" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/vault)
+"vYs" = (
+/obj/machinery/nanite_program_hub,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "vYB" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 1;
@@ -53861,6 +53927,10 @@
 "xIt" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
+"xIE" = (
+/obj/machinery/computer/nanite_cloud_controller,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "xIH" = (
 /obj/structure/bed/old,
 /obj/machinery/light/small{
@@ -95411,11 +95481,11 @@ ctX
 ctX
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv
@@ -95668,11 +95738,11 @@ ctX
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+nYv
+rOk
+ulU
+aEL
 whv
 whv
 whv
@@ -95925,11 +95995,11 @@ ctX
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+gPJ
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -96182,11 +96252,11 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+vYs
+oJu
+gPJ
+aEL
 whv
 whv
 whv
@@ -96435,15 +96505,15 @@ hSe
 oaX
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+aEL
+aEL
+aEL
+xIE
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -96692,15 +96762,15 @@ nbh
 hSe
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+gPJ
+mYd
+gPJ
+mxb
+gPJ
+gPJ
+gPJ
+aEL
 whv
 whv
 whv
@@ -96949,15 +97019,15 @@ gtl
 gtl
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+not
+oJu
+gPJ
+pyT
+gPJ
+oJu
+ojP
+aEL
 whv
 whv
 whv
@@ -97206,15 +97276,15 @@ aal
 vlk
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+gPJ
+mYd
+gPJ
+mxb
+gPJ
+rCO
+aHG
+aEL
 whv
 whv
 whv
@@ -97463,15 +97533,15 @@ jKM
 bNE
 ctX
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv

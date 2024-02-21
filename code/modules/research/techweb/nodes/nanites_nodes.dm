@@ -1,6 +1,6 @@
 
 /////////////////////////Nanites/////////////////////////
-/*
+
 /datum/techweb_node/nanite_base
 	id = "nanite_base"
 	display_name = "Basic Nanite Programming"
@@ -49,7 +49,7 @@
 	display_name = "Synaptic Nanite Programming"
 	description = "Nanite programs affecting mind and thoughts."
 	prereq_ids = list("nanite_neural","neural_programming")
-	design_ids = list("mindshield_nanites", "pacifying_nanites", "blinding_nanites", "sleep_nanites", "mute_nanites", "speech_nanites","hallucination_nanites")
+	design_ids = list("mindshield_nanites", "blinding_nanites", "sleep_nanites", "mute_nanites", "speech_nanites","hallucination_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/nanite_harmonic
@@ -75,4 +75,4 @@
 	prereq_ids = list("nanite_harmonic", "alientech")
 	design_ids = list("spreading_nanites","mindcontrol_nanites","mitosis_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
-*/
+
