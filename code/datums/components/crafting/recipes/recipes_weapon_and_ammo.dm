@@ -48,6 +48,14 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 
+/datum/crafting_recipe/paint/blackreroll
+	name = "Re-roll Black Paint"
+	result = /obj/item/tool_upgrade/paint/black
+	reqs = list(/obj/item/tool_upgrade/paint/black = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
 /datum/crafting_recipe/paint/orange
 	name = "Orange Paint"
 	result = /obj/item/tool_upgrade/paint/orange

@@ -251,7 +251,7 @@
 
 /obj/item/gun_upgrade/cosmetic
 
-/obj/item/gun_upgrade/cosmetic/gold
+/*/obj/item/gun_upgrade/cosmetic/gold
 	name = "Pot of gold paint"
 	desc = "A small pot of gold paint, for the kingpin in your life."
 	icon_state = "gold_pot"
@@ -268,7 +268,7 @@
 		UPGRADE_COLOR = "#FFD700"
 		)
 	I.gun_loc_tag = GUN_PAINTABLE
-	I.prefix = "gold"
+	I.prefix = "gold"*/
 
 //Trash mods, for putting on old guns
 
