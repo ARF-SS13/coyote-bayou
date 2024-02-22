@@ -61,7 +61,7 @@
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
-	
+
 	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
 	var/melee_windup_time = 0.3 SECONDS
 	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
@@ -173,7 +173,7 @@
 		return FALSE
 	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return FALSE
-	
+
 	if(is_low_health && health > (maxHealth * low_health_threshold)) // no longer low health
 		make_high_health()
 		return TRUE
@@ -237,7 +237,7 @@
 		if(!lonely_timer_id)
 			return
 		deltimer(lonely_timer_id)
-		lonely_timer_id = null	
+		lonely_timer_id = null
 		unqueue_unbirth()
 
 /mob/living/simple_animal/hostile/proc/consider_despawning()
@@ -262,7 +262,7 @@
 /mob/living/simple_animal/hostile/become_the_mob(mob/user)
 	if(lonely_timer_id)
 		deltimer(lonely_timer_id)
-		lonely_timer_id = null	
+		lonely_timer_id = null
 	unqueue_unbirth()
 	. = ..()
 
@@ -322,7 +322,7 @@
 	if(!search_objects)
 		. = hearers(vision_range, origin) - src //Remove self
 
-		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden,/obj/item/electronic_assembly))
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/item/electronic_assembly))
 
 		for(var/HM in typecache_filter_list(range(vision_range, origin), hostile_machines))
 			CHECK_TICK
@@ -480,7 +480,7 @@
 /mob/living/simple_animal/hostile/proc/CheckAndAttack()
 	var/atom/origin = get_origin()
 	var/atom/my_target = get_target()
-	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
+	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())
 		AttackingTarget()
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our targette
@@ -722,8 +722,8 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
-			vary = FALSE, 
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE],
+			vary = FALSE,
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.factionize(faction)
@@ -740,8 +740,8 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
-			vary = FALSE, 
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE],
+			vary = FALSE,
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		P.starting = startloc
@@ -881,7 +881,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/GainPatience()
 	if(QDELETED(src))
 		return
-	
+
 	if(lose_patience_timeout)
 		LosePatience()
 		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
@@ -895,7 +895,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/LoseSearchObjects()
 	if(QDELETED(src))
 		return
-	
+
 	search_objects = 0
 	deltimer(search_objects_timer_id)
 	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
@@ -917,14 +917,14 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
 		toggle_ai(AI_Z_OFF)
 		return
-	
+
 	tlist = ListTargetsLazy(T.z)
 
 	if(AIStatus == AI_IDLE && tlist.len)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden))
+	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 	. = list()
 	for (var/I in SSmobs.clients_by_zlevel[_Z])
 		var/mob/M = I

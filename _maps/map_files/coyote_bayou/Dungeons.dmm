@@ -10064,7 +10064,6 @@
 	},
 /area/f13/bunker)
 "enA" = (
-/obj/structure/lattice/catwalk/clockwork,
 /obj/item/artifact/rare,
 /turf/open/floor/bronze{
 	name = "floor"
@@ -11184,10 +11183,6 @@
 /area/f13/bunker)
 "eNx" = (
 /mob/living/simple_animal/hostile/renegade/soldier,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "eNB" = (
 /obj/machinery/light/small{
@@ -12181,7 +12176,6 @@
 	},
 /area/f13/brotherhood/dorms)
 "fkn" = (
-/obj/structure/destructible/clockwork/wall_gear,
 /obj/item/projectile/magic/change,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
@@ -13343,10 +13337,6 @@
 	pixel_x = 7;
 	pixel_y = 13
 	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "fKb" = (
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -14316,10 +14306,6 @@
 	name = "temple wall"
 	},
 /area/f13/underground/cave/tunnelertemple/void)
-"gfJ" = (
-/obj/structure/destructible/clockwork/wall_gear,
-/turf/closed/indestructible/f13vaultrusted,
-/area/f13/brotherhood/mining)
 "gfM" = (
 /obj/structure/stone_tile/surrounding,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -16217,7 +16203,6 @@
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "gXZ" = (
-/obj/structure/table/reinforced/brass,
 /obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -20689,7 +20674,6 @@
 	},
 /area/f13/building)
 "jew" = (
-/obj/structure/destructible/clockwork/wall_gear,
 /obj/item/projectile/magic/animate,
 /turf/closed/wall/f13/wood,
 /area/f13/brotherhood/rnd)
@@ -22389,10 +22373,6 @@
 /area/f13/building)
 "jTc" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "jTl" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -24618,7 +24598,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "kQt" = (
-/obj/structure/table/reinforced/brass,
 /obj/machinery/button{
 	id = "Protectrons";
 	name = "Protectrons button"
@@ -28656,7 +28635,6 @@
 	},
 /area/f13/building)
 "mHk" = (
-/obj/structure/destructible/clockwork/wall_gear,
 /obj/machinery/light/floor,
 /obj/effect/temp_visual/impact_effect/blue_laser,
 /obj/effect/decal/cleanable/glitter/blue,
@@ -30394,10 +30372,6 @@
 /obj/item/candle{
 	pixel_x = 7;
 	pixel_y = 7
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
 	},
 /area/f13/brotherhood/rnd)
 "nsS" = (
@@ -32301,10 +32275,6 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "okM" = (
 /obj/structure/chair{
@@ -32495,7 +32465,6 @@
 	},
 /area/f13/brotherhood/rnd)
 "oqo" = (
-/obj/structure/table/reinforced/brass,
 /obj/machinery/button{
 	id = "office";
 	name = "Overseer office button"
@@ -32911,7 +32880,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "oAi" = (
-/obj/structure/table/reinforced/brass,
 /obj/machinery/button{
 	id = "reactor";
 	name = "Reactor block button"
@@ -35276,7 +35244,6 @@
 	},
 /area/f13/brotherhood/operations)
 "pvH" = (
-/obj/structure/destructible/clockwork/wall_gear,
 /obj/item/projectile/magic/animate{
 	layer = 2.5;
 	name = "weird light"
@@ -35682,10 +35649,6 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker/bighornbunker)
 "pEV" = (
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "pFg" = (
 /obj/structure/chair{
@@ -36049,9 +36012,6 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operations)
 "pNc" = (
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_x = -32
-	},
 /obj/item/projectile/magic/animate{
 	pixel_x = -32
 	},
@@ -37772,10 +37732,6 @@
 	pixel_y = 13
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "qyc" = (
 /obj/structure/showcase/horrific_experiment{
@@ -40192,7 +40148,6 @@
 /turf/open/floor/wood_worn/wood_worn_dark,
 /area/f13/building)
 "rzh" = (
-/obj/structure/table/reinforced/brass,
 /obj/machinery/button{
 	id = "Armory";
 	name = "Armory button"
@@ -40766,10 +40721,6 @@
 	pixel_x = -7
 	},
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "rOh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41044,9 +40995,6 @@
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
 "rTn" = (
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_x = 32
-	},
 /obj/item/projectile/magic/animate{
 	pixel_x = 32
 	},
@@ -47438,7 +47386,6 @@
 	},
 /area/f13/bunker)
 "uKP" = (
-/obj/structure/table/reinforced/brass,
 /obj/machinery/button{
 	id = "vent";
 	name = "Vent block button"
@@ -50352,7 +50299,6 @@
 	},
 /area/f13/brotherhood/operations)
 "wbm" = (
-/obj/structure/lattice/catwalk/clockwork,
 /turf/open/floor/bronze{
 	name = "floor"
 	},
@@ -52400,10 +52346,6 @@
 	pixel_x = 7
 	},
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
 /area/f13/brotherhood/rnd)
 "wWq" = (
 /obj/structure/spider/stickyweb,
@@ -117465,7 +117407,7 @@ aCz
 bfX
 bfX
 aCz
-gfJ
+aCz
 iBK
 opF
 plO
@@ -118236,7 +118178,7 @@ aCz
 aCz
 aCz
 aCz
-gfJ
+aCz
 iBK
 opF
 plO

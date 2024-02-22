@@ -436,7 +436,7 @@
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/roundstart/clockcult
+/*/datum/dynamic_ruleset/roundstart/clockcult
 	name = "Clock Cult"
 	antag_flag = ROLE_SERVANT_OF_RATVAR
 	antag_datum = /datum/antagonist/clockcult
@@ -483,7 +483,7 @@
 		SSticker.news_report = CLOCK_SUMMON
 	else
 		SSticker.mode_result = "loss - servants failed their objective (summon ratvar)"
-		SSticker.news_report = CULT_FAILURE
+		SSticker.news_report = CULT_FAILURE*/
 
 // Admin only rulesets. The threat requirement is 101 so it is not possible to roll them.
 

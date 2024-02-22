@@ -54,10 +54,10 @@
 	qdel(src)
 	new /obj/structure/table/wood(A)
 
-/obj/structure/table/ratvar_act()
+/*/obj/structure/table/ratvar_act()
 	var/atom/A = loc
 	qdel(src)
-	new /obj/structure/table/reinforced/brass(A)
+	new /obj/structure/table/reinforced/brass(A)*/
 
 /obj/structure/table/attack_paw(mob/user)
 	return attack_hand(user)
@@ -597,7 +597,7 @@
 	else
 		. = ..()
 
-/obj/structure/table/reinforced/brass
+/*/obj/structure/table/reinforced/brass
 	name = "brass table"
 	desc = "A solid, slightly beveled brass table."
 	icon = 'icons/obj/smooth_structures/brass_table.dmi'
@@ -631,7 +631,7 @@
 		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
 
 /obj/structure/table/reinforced/brass/ratvar_act()
-	obj_integrity = max_integrity
+	obj_integrity = max_integrity*/
 
 /obj/structure/table/bronze
 	name = "bronze table"
@@ -640,7 +640,7 @@
 	icon_state = "brass_table"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	buildstack = /obj/item/stack/sheet/bronze
-	canSmoothWith = list(/obj/structure/table/reinforced/brass, /obj/structure/table/bronze)
+	canSmoothWith = list(/obj/structure/table/bronze)
 
 /obj/structure/table/bronze/tablelimbsmash(mob/living/user, mob/living/pushed_mob)
 	..()

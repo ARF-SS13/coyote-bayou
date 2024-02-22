@@ -158,13 +158,14 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create an abductor team. Unfortunatly there were not enough candidates available.")
 					log_admin("[key_name(usr)] failed to create an abductor team.")
-			if("clockcult")
+/*			if("clockcult")
 				if(src.makeClockCult())
 					message_admins("[key_name(usr)] started a clockwork cult.")
 					log_admin("[key_name(usr)] started a clockwork cult.")
 				else
 					message_admins("[key_name_admin(usr)] tried to start a clockwork cult. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to start a clockwork cult.")
+*/
 			if("revenant")
 				if(src.makeRevenant())
 					message_admins("[key_name(usr)] created a revenant.")
@@ -3172,7 +3173,7 @@
 			list("ckey" = ckey)
 		)
 		if(!query_remove_mentor.warn_execute())
-			return		
+			return
 		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // stops the adminip error for now ~ w~
 		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
 		// 	VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},

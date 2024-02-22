@@ -525,12 +525,12 @@
 	if(status_flags & GODMODE || QDELETED(src))
 		return
 
-	if(is_servant_of_ratvar(src) && !stat)
+/*	if(is_servant_of_ratvar(src) && !stat)
 		to_chat(src, span_userdanger("You resist Nar'Sie's influence... but not all of it. <i>Run!</i>"))
 		adjustBruteLoss(35)
 		if(src && reagents)
 			reagents.add_reagent(/datum/reagent/toxin/heparin, 5)
-		return FALSE
+		return FALSE*/
 	if(GLOB.cult_narsie && GLOB.cult_narsie.souls_needed[src])
 		GLOB.cult_narsie.souls_needed -= src
 		GLOB.cult_narsie.souls += 1
@@ -554,14 +554,14 @@
 	return TRUE
 
 
-/mob/living/ratvar_act()
+/*/mob/living/ratvar_act()
 	if(status_flags & GODMODE)
 		return
 	if(stat != DEAD && !is_servant_of_ratvar(src))
 		to_chat(src, span_userdanger("A blinding light boils you alive! <i>Run!</i>"))
 		adjust_fire_stacks(20)
 		IgniteMob()
-		return FALSE
+		return FALSE*/
 
 
 //called when the mob receives a bright flash

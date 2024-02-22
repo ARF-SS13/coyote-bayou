@@ -44,7 +44,7 @@
 		data["can_hack"] = TRUE
 
 	data["can_convert"] = FALSE
-	if(isAI(user) && is_servant_of_ratvar(user))
+	if(isAI(user))
 		data["can_convert"] = TRUE
 
 	data["cyborgs"] = list()
@@ -61,7 +61,7 @@
 			module = R.module ? "[R.module.name] Module" : "No Module Detected",
 			synchronization = R.connected_ai,
 			emagged =  R.emagged,
-			servant = is_servant_of_ratvar(R),
+//			servant = is_servant_of_ratvar(R),
 			ref = REF(R)
 		)
 		data["cyborgs"] += list(cyborg_data)
@@ -118,13 +118,13 @@
 					log_game("[key_name(usr)] emagged [key_name(R)] using robotic console!")
 					message_admins("[ADMIN_LOOKUPFLW(usr)] emagged cyborg [key_name_admin(R)] using robotic console!")
 					R.SetEmagged(TRUE)
-		if("convert")
+/*		if("convert")
 			if(isAI(usr) && is_servant_of_ratvar(usr))
 				var/mob/living/silicon/robot/R = locate(params["ref"]) in GLOB.silicon_mobs
 				if(istype(R) && !is_servant_of_ratvar(R) && R.connected_ai == usr)
 					log_game("[key_name(usr)] converted [key_name(R)] using robotic console!")
 					message_admins("[ADMIN_LOOKUPFLW(usr)] converted cyborg [key_name_admin(R)] using robotic console!")
-					add_servant_of_ratvar(R)
+					add_servant_of_ratvar(R)*/
 		if("killdrone")
 			if(allowed(usr))
 				var/mob/living/simple_animal/drone/D = locate(params["ref"]) in GLOB.mob_list
