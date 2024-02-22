@@ -1332,8 +1332,8 @@
 /datum/supply_pack/security/ultrarifle
 	name = "Ultracite AER Laser Rifle"
 	desc = "The most efficient brick of them all. Shoots pretty good. Uses the very rare Ultracite MFC."
-	cost = weapon dps 2x, add a zero at the end
-	num_contained = 2500
+	cost = 2500
+	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/ultra_rifle)
 	crate_name = "select weapon crate"
 
