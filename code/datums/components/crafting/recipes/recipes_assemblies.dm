@@ -276,7 +276,7 @@
 	result = /obj/effect/spawner/lootdrop/f13/trash
 	reqs = list() // This should mean it requires nothing to craft, right?
 	tools = list()
-	time = 12 SECONDS //Beast master can do the same thing in 10, added a little since beastmasters have a 30 sec cooldown when using this ability
+	time = 6 SECONDS //Beast master can do the same thing in 10, lowered from 12 initally because this is its singular gimmick
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -296,12 +296,12 @@
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
 	result = /obj/effect/spawner/lootdrop/f13/common
-	time = 26 SECONDS
+	time = 14 SECONDS
 
 /datum/crafting_recipe/trashloot/uncommon
 	name = "Slowly dig uncommon loot"
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
-	time = 58 SECONDS
+	time = 35 SECONDS
 
 /*
 /datum/crafting_recipe/msgterminal
