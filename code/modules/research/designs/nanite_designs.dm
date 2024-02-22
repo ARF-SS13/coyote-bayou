@@ -109,7 +109,7 @@
 	id = "emp_nanites"
 	program_type = /datum/nanite_program/emp
 	category = list("Utility Nanites")
-
+/*
 /datum/design/nanites/spreading
 	name = "Infective Exo-Locomotion"
 	desc = "The nanites gain the ability to survive for brief periods outside of the human body, as well as the ability to start new colonies without an integration process; \
@@ -124,7 +124,7 @@
 	id = "nanite_sting_nanites"
 	program_type = /datum/nanite_program/nanite_sting
 	category = list("Utility Nanites")
-
+*/
 /datum/design/nanites/mitosis
 	name = "Mitosis"
 	desc = "The nanites gain the ability to self-replicate, using bluespace to power the process, instead of drawing from a template. This rapidly speeds up the replication rate,\

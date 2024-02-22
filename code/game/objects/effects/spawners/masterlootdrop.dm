@@ -515,7 +515,6 @@
 
 		//others
 		/obj/item/gun/energy/laser/complianceregulator = 5,         //330(690) 16 nonlethal
-		/obj/item/gun/energy/laser/scatter/nonlethal = 5,           //132 20 Nonlethal
 
 		//magic
 		/obj/item/gun/magic/wand/kelpmagic/firebolt = 2,
