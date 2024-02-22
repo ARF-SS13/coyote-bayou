@@ -291,6 +291,7 @@
     if(!parent)
          return
     parent.visible_message(span_notice("[parent] digs up some stuff!")
+	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
 
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
