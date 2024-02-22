@@ -433,7 +433,7 @@
 
 //cybernetic blade placeholder(?)
 /datum/emote/living/carbon/cyberarm
-	key = "cyberarmblade"
+	key = "cyber"
 	key_third_person = "draws an arm blade!"
 	restraint_check = TRUE
 
