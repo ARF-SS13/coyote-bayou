@@ -276,7 +276,7 @@
 	result = /obj/effect/spawner/lootdrop/f13/trash
 	reqs = list() // This should mean it requires nothing to craft, right?
 	tools = list()
-	time = 15
+	time = 12 SECONDS //Beast master can do the same thing in 10, added a little since beastmasters have a 30 sec cooldown when using this ability
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -284,19 +284,23 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_TREASURE_HUNTER))
-			user.visible_message(span_notice("[src] begins digging something up."))
 			return TRUE
 	return FALSE
+
+/datum/crafting_recipe/trashloot/on_finished(atom/a, atom/parent)
+    if(!parent)
+         return
+    parent.visible_message(span_notice("[parent] digs up some stuff!")
 
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
 	result = /obj/effect/spawner/lootdrop/f13/common
-	time = 30
+	time = 26 SECONDS
 
 /datum/crafting_recipe/trashloot/uncommon
 	name = "Slowly dig uncommon loot"
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
-	time = 80
+	time = 58 SECONDS
 
 /*
 /datum/crafting_recipe/msgterminal
