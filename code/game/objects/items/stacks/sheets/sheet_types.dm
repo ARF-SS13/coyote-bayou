@@ -153,9 +153,9 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	tableVariant = /obj/structure/table
 	material_type = /datum/material/iron
 
-/obj/item/stack/sheet/metal/ratvar_act()
+/*/obj/item/stack/sheet/metal/ratvar_act()
 	new /obj/item/stack/tile/brass(loc, amount)
-	qdel(src)
+	qdel(src)*/
 
 /obj/item/stack/sheet/metal/narsie_act()
 	new /obj/item/stack/sheet/runed_metal(loc, amount)
@@ -681,9 +681,9 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	grind_results = list(/datum/reagent/iron = 5, /datum/reagent/blood = 15)
 	material_type = /datum/material/runedmetal
 
-/obj/item/stack/sheet/runed_metal/ratvar_act()
+/*/obj/item/stack/sheet/runed_metal/ratvar_act()
 	new /obj/item/stack/tile/brass(loc, amount)
-	qdel(src)
+	qdel(src) */
 
 /obj/item/stack/sheet/runed_metal/attack_self(mob/living/user)
 	if(!iscultist(user))

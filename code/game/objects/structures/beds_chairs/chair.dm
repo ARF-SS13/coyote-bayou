@@ -72,10 +72,10 @@
 	W.setDir(dir)
 	qdel(src)
 
-/obj/structure/chair/ratvar_act()
+/*/obj/structure/chair/ratvar_act()
 	var/obj/structure/chair/brass/B = new(get_turf(src))
 	B.setDir(dir)
-	qdel(src)
+	qdel(src) */
 
 /obj/structure/chair/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/wrench) && !(flags_1&NODECONSTRUCT_1))
@@ -621,13 +621,13 @@
 //Brass & Bronze stools!//
 //////////////////////////
 
-/obj/structure/chair/stool/bar/brass
+/* /obj/structure/chair/stool/bar/brass
 	name = "brass bar stool"
 	desc = "A brass bar stool with red silk for a pillow."
 	icon_state = "barbrass"
 	item_chair = /obj/item/chair/stool/bar/brass
 	buildstacktype = /obj/item/stack/tile/brass
-	buildstackamount = 1
+	buildstackamount = 1 */
 
 /obj/structure/chair/stool/bar/bronze
 	name = "bronze bar stool"
@@ -637,13 +637,13 @@
 	buildstacktype = /obj/item/stack/sheet/bronze
 	buildstackamount = 1
 
-/obj/structure/chair/stool/brass
+/*/obj/structure/chair/stool/brass
 	name = "brass stool"
 	desc = "A brass stool with a silk top for comfort."
 	icon_state = "stoolbrass"
 	item_chair = /obj/item/chair/stool/brass
 	buildstacktype = /obj/item/stack/tile/brass
-	buildstackamount = 1
+	buildstackamount = 1 */
 
 /obj/structure/chair/stool/bronze
 	name = "bronze stool"
@@ -653,7 +653,7 @@
 	buildstacktype = /obj/item/stack/sheet/bronze
 	buildstackamount = 1
 
-/obj/item/chair/stool/brass
+/*/obj/item/chair/stool/brass
 	name = "brass stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stoolbrass_toppled"
@@ -666,7 +666,7 @@
 	icon_state = "barbrass_toppled"
 	item_state = "stoolbrass_bar"
 	origin_type = /obj/structure/chair/stool/bar/brass
-
+*/
 /obj/item/chair/stool/bronze
 	name = "bronze stool"
 	icon = 'icons/obj/chairs.dmi'
@@ -700,7 +700,7 @@
 	icon_state = "chairold"
 	item_chair = null
 
-/obj/structure/chair/brass
+/*/obj/structure/chair/brass
 	name = "brass chair"
 	desc = "A spinny chair made of brass. It looks uncomfortable."
 	icon = 'icons/obj/chairs.dmi'
@@ -736,7 +736,7 @@
 		user.visible_message(span_notice("[user] stops [src]'s uncontrollable spinning."), \
 		span_notice("You grab [src] and stop its wild spinning."))
 		STOP_PROCESSING(SSfastprocess, src)
-	return TRUE
+	return TRUE */
 
 /obj/structure/chair/bronze
 	name = "brass chair"
