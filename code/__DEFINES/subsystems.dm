@@ -86,7 +86,8 @@
 #define INIT_ORDER_RESEARCH			75
 #define INIT_ORDER_EVENTS			70
 #define INIT_ORDER_JOBS				65
-#define INIT_ORDER_QUIRKS			60
+#define INIT_ORDER_QUIRKS			61
+#define INIT_ORDER_FLIRT			60
 #define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
 #define INIT_ORDER_TICKER			55
 #define INIT_ORDER_INSTRUMENTS		53
