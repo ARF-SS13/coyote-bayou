@@ -4877,11 +4877,19 @@
 	icon_state = "arroyoapa"
 	item_state = "arroyoapa"
 
-/obj/item/clothing/suit/armor/power_armor/fluff/wolf
+/obj/item/clothing/suit/armor/heavy/wolf
 	name = "Hardened Combat Carapace"
 	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
 	icon_state = "wolfsquad"
 	item_state = "wolfsquad"
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
+	can_deflect = FALSE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	requires_training = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/armor/power_armor/fluff/pappavol
