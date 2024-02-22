@@ -1476,7 +1476,7 @@
 /datum/supply_pack/security/weaponname
 	name = "Disabler RCW"
 	desc = "For when you want to throw a rave and knock everybody out."
-	cost = weapon dps 2x, add a zero at the end
-	num_contained = 2000
+	cost = 2000
+	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/stunrcw)
 	crate_name = "select weapon crate"
