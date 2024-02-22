@@ -760,7 +760,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 /obj/structure/window/plastitanium/pirate/unanchored
 	anchored = FALSE
 
-/obj/structure/window/reinforced/clockwork
+/*/obj/structure/window/reinforced/clockwork
 	name = "brass window"
 	desc = "A paper-thin pane of translucent yet reinforced brass."
 	icon = 'icons/obj/smooth_structures/clockwork_window.dmi'
@@ -826,7 +826,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 /obj/structure/window/reinforced/clockwork/Initialize(mapload, direct)
 	made_glow = TRUE
 	new /obj/effect/temp_visual/ratvar/window(get_turf(src))
-	return ..()
+	return ..()*/
 
 
 /obj/structure/window/reinforced/clockwork/fulltile/unanchored

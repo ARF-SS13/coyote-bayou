@@ -536,7 +536,7 @@
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	return ..()
 
-/datum/species/golem/clockwork
+/*/datum/species/golem/clockwork
 	name = "Clockwork Golem"
 	id = "clockwork golem"
 	say_mod = "clicks"
@@ -591,7 +591,7 @@
 	dangerous_existence = TRUE
 	random_eligible = FALSE
 	info_text = "<span class='bold alloy'>As a </span><span class='bold brass'>Clockwork Golem Servant</span><span class='bold alloy'>, you are faster than other types of golems, and are capable of using guns.</span>" //warcult golems leave a corpse
-
+*/
 /datum/species/golem/cloth
 	name = "Cloth Golem"
 	id = "cloth golem"

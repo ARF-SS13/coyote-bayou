@@ -206,23 +206,23 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/oldcolor = color
 	color = RUNE_COLOR_DARKRED
 	var/mob/living/L = pick(myriad_targets)
-	var/is_clock = is_servant_of_ratvar(L)
+//	var/is_clock = is_servant_of_ratvar(L)
 
 	var/mob/living/F = invokers[1]
 	var/datum/antagonist/cult/C = F.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
 	var/datum/team/cult/Cult_team = C.cult_team
 	var/is_convertable = is_convertable_to_cult(L,C.cult_team)
-	if(L.stat != DEAD && (is_clock || is_convertable))
+	if(L.stat != DEAD && ( is_convertable))
 		invocation = "Mah'weyh pleggh at e'ntrath."
 		..()
-		if(is_clock)
+/*		if(is_clock)
 			L.visible_message(span_warning("[L]'s eyes glow a defiant yellow!"), \
 			"<span class='cultlarge'>\"Stop resisting. You <i>will</i> be mi-\"</span>\n\
 			<span class='large_brass'>\"Give up and you will feel pain unlike anything you've ever felt!\"</span>")
 			L.DefaultCombatKnockdown(80)
 		else if(is_convertable)
 			do_convert(L, invokers)
-	else
+	else*/
 		invocation = "Barhah hra zar'garis."
 		..()
 		do_sacrifice(L, invokers)
@@ -777,8 +777,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 					to_chat(L, span_userdanger("[I] suddenly burns hotly before returning to normal!"))
 				continue
 			to_chat(L, span_cultlarge("Your blood boils in your veins!"))
-			if(is_servant_of_ratvar(L))
-				to_chat(L, span_userdanger("You feel an unholy darkness dimming the Justiciar's light!"))
+/*			if(is_servant_of_ratvar(L))
+				to_chat(L, span_userdanger("You feel an unholy darkness dimming the Justiciar's light!"))*/
 	animate(src, color = "#FCB56D", time = 4)
 	sleep(4)
 	if(QDELETED(src))
@@ -804,8 +804,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 			if(L.anti_magic_check(chargecost = 0))
 				continue
 			L.take_overall_damage(tick_damage*multiplier, tick_damage*multiplier)
-			if(is_servant_of_ratvar(L))
-				L.adjustStaminaLoss(tick_damage*0.5)
+/*			if(is_servant_of_ratvar(L))
+				L.adjustStaminaLoss(tick_damage*0.5)*/
 
 //Rite of Spectral Manifestation: Summons a ghost on top of the rune as a cultist human with no items. User must stand on the rune at all times, and takes damage for each summoned ghost.
 /obj/effect/rune/manifest

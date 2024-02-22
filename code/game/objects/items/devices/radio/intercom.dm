@@ -16,7 +16,7 @@
 /obj/item/radio/intercom/unscrewed
 	unfastened = TRUE
 
-/obj/item/radio/intercom/ratvar
+/*/obj/item/radio/intercom/ratvar
 	name = "hierophant intercom"
 	desc = "A modified intercom that uses the Hierophant network instead of subspace tech. Can listen to and broadcast on any frequency."
 	icon_state = "intercom_ratvar"
@@ -35,7 +35,7 @@
 	else
 		invisibility = initial(invisibility)
 		alpha = initial(alpha)
-	..()
+	..()*/
 
 /obj/item/radio/intercom/Initialize(mapload, ndir, building)
 	. = ..()
