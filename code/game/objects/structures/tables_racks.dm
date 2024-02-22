@@ -712,6 +712,9 @@
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 
+/obj/structure/rack/shelf_wood/modern
+	icon_state = "shelf_wood_modern"
+
 /obj/structure/rack
 	name = "rack"
 	desc = "Different from the Medieval version."
@@ -731,6 +734,11 @@
 	name = "metal shelf"
 	desc = "Metal shelf."
 	icon_state = "shelf"
+
+/obj/structure/rack/shelf_metal/modern
+	name = "metal shelf"
+	desc = "Metal shelf."
+	icon_state = "shelf_modern"
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()
