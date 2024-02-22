@@ -290,7 +290,7 @@
 /datum/crafting_recipe/trashloot/on_finished(atom/a, atom/parent)
 	if(!parent)
 		return
-	parent.visible_message(span_notice("[parent] digs up some stuff!")
+	parent.visible_message(span_notice("[parent] digs up some stuff!"))
 	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
 
 /datum/crafting_recipe/trashloot/common
