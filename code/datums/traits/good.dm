@@ -460,6 +460,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
+/datum/quirk/treasurehunter 
+	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
+	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
+	value = 22
+	category = "Lifepath Quirks"
+	mechanics = "Allows you to craft loot spawners for free in the misc catagory, at the cost of time."
+	conflicts = list(
+
+	)
+	mob_trait = TRAIT_TREASURE_HUNTER
+	gain_text = span_notice("You really feel like digging.")
+	lose_text = span_notice("You really don't feel like digging.")
+	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
+	human_only = FALSE
+
+
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
