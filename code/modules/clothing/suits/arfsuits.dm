@@ -4887,9 +4887,6 @@
 	armor = ARMOR_VALUE_HEAVY
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
 	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
-	can_deflect = FALSE
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/armor/power_armor/fluff/pappavol
