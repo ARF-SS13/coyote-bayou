@@ -301,7 +301,7 @@
 /datum/crafting_recipe/trashloot/uncommon
 	name = "Slowly dig uncommon loot"
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
-	time = 35 SECONDS
+	time = 20 SECONDS
 
 /*
 /datum/crafting_recipe/msgterminal
