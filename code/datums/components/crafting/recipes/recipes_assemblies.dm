@@ -271,6 +271,33 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/trashloot
+	name = "Quickly dig up trash"
+	result = /obj/effect/spawner/lootdrop/f13/trash
+	reqs = list() // This should mean it requires nothing to craft, right?
+	tools = list()
+	time = 15
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/trashloot/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_TREASURE_HUNTER))
+			user.visible_message(span_notice("[src] begins digging something up."))
+			return TRUE
+	return FALSE
+
+/datum/crafting_recipe/trashloot/common
+	name = "Dig up common loot"
+	result = /obj/effect/spawner/lootdrop/f13/common
+	time = 30
+
+/datum/crafting_recipe/trashloot/uncommon
+	name = "Slowly dig uncommon loot"
+	result = /obj/effect/spawner/lootdrop/f13/uncommon
+	time = 80
+
 /*
 /datum/crafting_recipe/msgterminal
 	name = "Communications terminal"
