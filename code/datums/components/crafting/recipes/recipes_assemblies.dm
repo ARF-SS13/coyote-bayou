@@ -278,13 +278,13 @@
 	tools = list()
 	time = 15
 	subcategory = CAT_MISCELLANEOUS
-	catagory = CAT_MISC
+	category = CAT_MISC
 
 /datum/crafting_recipe/trashloot/check_requirements(mob/user, list/collected_requirements)
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_TREASURE_HUNTER))
-			visible_message(span_notice("[src] begins digging something up."))
+			user.visible_message(span_notice("[src] begins digging something up."))
 			return TRUE
 	return FALSE
 
