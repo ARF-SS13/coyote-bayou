@@ -211,6 +211,7 @@
 #define TRAIT_SOH				"soh"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
+#define TRAIT_TREASURE_HUNTER 	"treasurehunter"
 #define TRAIT_SIXTHSENSE		"sixthsense"
 #define TRAIT_DISSECTED			"dissected"
 #define TRAIT_FEARLESS			"fearless"
