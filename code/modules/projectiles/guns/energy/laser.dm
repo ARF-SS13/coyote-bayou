@@ -714,6 +714,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
 /obj/item/gun/energy/laser/scatter/laserbuss
 	name = "Laserbuss"
 	desc = "A questionably-designed tribeam laser rifle that has been modified to feature a dense array of emitters and scatter lenses."
