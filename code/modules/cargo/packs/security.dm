@@ -1324,8 +1324,8 @@
 /datum/supply_pack/security/aer14
 	name = "AER-14 Laser Rifle"
 	desc = "An even more efficient brick. Shoots much better."
-	cost = "weapon dps 2x, add a zero at the end"
-	num_contained = 2100
+	cost = 2100
+	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/aer14)
 	crate_name = "select weapon crate"
 
