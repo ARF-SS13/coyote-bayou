@@ -439,7 +439,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
-	new /obj/item/clothing/suit/armor/heavy/wolf(src)
+	new /obj/item/clothing/suit/armor/medium/wolf(src)
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
