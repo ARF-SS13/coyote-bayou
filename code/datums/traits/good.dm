@@ -460,6 +460,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
+/datum/quirk/treasurehunter 
+	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
+	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
+	value = 22
+	category = "Lifepath Quirks"
+	mechanics = "Allows you to craft loot spawners for free in the misc catagory, at the cost of time."
+	conflicts = list(
+
+	)
+	mob_trait = TRAIT_TREASURE_HUNTER
+	gain_text = span_notice("You really feel like digging.")
+	lose_text = span_notice("You really don't feel like digging.")
+	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
+	human_only = FALSE
+
+
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
@@ -1806,7 +1822,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You're basically a disney princess when it comes to some of the lesser critters of the swamplands."
 	value = 14
 	category = "Critter Quirks"
-	mechanics = "Specifically roaches, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
+	mechanics = "Specifically pillbugs, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
 	conflicts = list(
 		/datum/quirk/crittermaster,
 	)
@@ -1828,11 +1844,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/crittermaster
 	name = "Beast Master - Small Critters"
-	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
+	desc = "Whenever by psychic means or not, you gained ability to control pillbugs, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
 	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can also be tamed, but not controlled."
 	value = 34
 	category = "Critter Quirks"
-	mechanics = "You can tame and order around roaches, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
+	mechanics = "You can tame and order around pillbugs, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
 	conflicts = list(
 		/datum/quirk/critterfriend,
 	)
