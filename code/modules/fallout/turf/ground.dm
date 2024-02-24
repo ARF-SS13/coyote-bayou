@@ -361,8 +361,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 /turf/open/indestructible/ground/outside/dirt/Initialize()
 	. = ..()
 	if(icon_state == "dirtfull")
-		var/MM = text2num(time2text(world.timeofday, "MM"))
-		if(MM == 12 || MM == 1 || MM == 2)
+		if(SSweather.snowy_time)
 			name = "snow"
 			icon = 'icons/fallout/turfs/dirt.dmi'
 			icon_state = "snow[rand(0,12)]"
