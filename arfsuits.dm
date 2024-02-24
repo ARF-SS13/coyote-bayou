@@ -2068,7 +2068,7 @@
 	icon_state = "scrapheavy"
 	item_state = "scrapheavy"
 
-/obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+/obj/item/clothing/suit/armor/light/leather/lightscoutarmor
 	name = "light scout armor"
 	desc = "A makeshift set of pauldrons made of leather and scrap metal. It offers minimal protection, but is pretty light."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
@@ -2996,20 +2996,6 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 
-/obj/item/clothing/suit/armor/medium/wolf
-	name = "Hardened Combat Carapace"
-	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
-	icon_state = "wolfsquad"
-	item_state = "wolfsquad"
-	icon = 'icons/fallout/clothing/armored_power.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
-	armor = ARMOR_VALUE_HEAVY
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
-	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
-	mutantrace_variation = STYLE_DIGITIGRADE
-	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
-
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
 	name = "Leo Armaments MARK XI armor 'Patriot'"
 	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit. This one has the armor coated in a Leo Armaments colored finish."
@@ -3183,6 +3169,21 @@
 	armor = ARMOR_VALUE_SALVAGE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/nv
+	name = "Futuristic Armor Plating"
+	desc = "A set of jet black armor plating that seems to be build to attach to the frame of a synthetic. It feels like these plates weigh a ton and seems to have a triangle with a tip facing downward, with 3 pairs of spikes jutting from the sides toward where the nape would typically be on a normal person. The insides of these plates seem to be absolutely caked in both dried and fresh blood as well."
+	icon_state = "nvodst"
+	item_state = "nvodst"
+	equip_delay_self = 60
+	equip_delay_other = 60
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -4890,6 +4891,18 @@
 	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
 	icon_state = "arroyoapa"
 	item_state = "arroyoapa"
+
+/obj/item/clothing/suit/armor/heavy/wolf
+	name = "Hardened Combat Carapace"
+	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
+	icon_state = "wolfsquad"
+	item_state = "wolfsquad"
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/armor/power_armor/fluff/pappavol
 	name = "Decaying Power Armor"
