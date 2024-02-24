@@ -22820,10 +22820,10 @@
 	},
 /area/f13/building/tribal/cave)
 "mOJ" = (
-/obj/effect/fake_stairs/east,
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/structure/stairs/east,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "mOY" = (
@@ -23546,10 +23546,10 @@
 	},
 /area/f13/caves)
 "nmP" = (
-/obj/structure/stairs/east,
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/effect/fake_stairs/east,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "nmR" = (
