@@ -361,14 +361,14 @@
 			species.disliked_food &= ~MEAT
 
 /datum/quirk/hydra
-	name = "Hydra Heads"
-	desc = "You are a tri-headed creature, or maybe you just have multiple personalities."
+	name = "Multiple Identities"
+	desc = "You have multiple identities voices, names, or you are a multi-headed creature."
 	value = 0
 	category = "Lifepath Quirks"
-	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which personality is speaking."
+	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which will be your character name and voice."
 	conflicts = list()
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = span_notice("You hear two other voices inside of your head(s).")
+	gain_text = span_notice("You hear other voices inside of your head(s).")
 	lose_text = span_danger("All of your minds become singular.")
 	medical_record_text = "Patient has multiple heads and personalities affixed to their body."
 
@@ -398,7 +398,7 @@
 /datum/action/innate/hydrareset/Activate()
 	var/mob/living/carbon/human/hydra = owner
 	hydra.real_name = hydra.name_archive
-	hydra.visible_message(span_notice("[hydra.name] pushes all three heads forwards; they seem to be talking as a collective."), \
+	hydra.visible_message(span_notice("[hydra.name] speaks with multiple familiar voices overlapping eachother."), \
 							span_notice("You are now talking as [hydra.name_archive]!"), ignored_mobs=owner)
 
 /datum/action/innate/hydra/Activate() //I hate this but its needed
@@ -406,7 +406,7 @@
 	var/list/names = splittext(hydra.name_archive,"-")
 	var/selhead = input("Who would you like to speak as?","Heads:") in names
 	hydra.real_name = selhead
-	hydra.visible_message(span_notice("[hydra.name] pulls the rest of their heads back; and puts [selhead]'s forward."), \
+	hydra.visible_message(span_notice("[hydra.name] alters their portrayed identity, appearing as [selhead] instead."), \
 							span_notice("You are now talking as [selhead]!"), ignored_mobs=owner)
 
 /datum/quirk/sheltered
