@@ -22,6 +22,11 @@ SUBSYSTEM_DEF(chat)
 	/// list of flirt ckey things so that we can store their target or something
 	/// format: list("flirterckey" = "targetckey")
 	var/list/active_flirters = list()
+	/// list of flirters who flirted so we can prevent spum
+	/// format: list("flirterckey" = 21049190587190581)
+	var/list/flirt_cooldowns = list()
+	/// how long between flirts can we flirt
+	var/flirt_cooldown_time = 5 SECONDS
 
 /datum/controller/subsystem/chat/Initialize(start_timeofday)
 	setup_emoticon_cache()
@@ -210,40 +215,50 @@ SUBSYSTEM_DEF(chat)
 		return
 	if(!flirter.client)
 		return
-	var/target_ckey = LAZYACCESS(active_flirters, flirter.ckey)
-	if(!target_ckey)
+	var/TargetCkey = LAZYACCESS(active_flirters, flirter.ckey)
+	if(!TargetCkey)
 		return
-	return ckey2mob(target_ckey)
+	return ckey2mob(TargetCkey)
 
 /// YES IM BLOWING CHAT'S TGUI LOAD ON FLIRTING, FIGHT ME
 /datum/controller/subsystem/chat/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Flirt")
+		ui = new(user, src, "FlirtyFlirty")
 		ui.open()
 
 /// just holds the reader's target, if any
 /datum/controller/subsystem/chat/ui_data(mob/user)
 	var/list/data = list()
 	var/mob/living/heart = get_flirt_target(user)
-	data["flirt_target"] = heart? heart.name : "Nobody in particular"
+	data["DP"] = SSquirks.dp
+	data["FlirterCkey"] = user ? user.ckey : "AAAGOOD" // nulls are falsy
+	data["FlirterName"] = user ? user.name : "Some Dope"
+	data["TargetName"] = heart ? heart.name : "Nobody in particular"
+	data["TargetCkey"] heart ? heart.ckey : "AAAGOOD" // nulls are falsy
 	return data
 
 /// holds the whole enchilada
 /datum/controller/subsystem/chat/ui_static_data(mob/user)
 	var/list/static_data = list()
-	static_data |= flirt_for_tgui
+	static_data["AllFlirts"] = flirt_for_tgui
 	return static_data
 
 /datum/controller/subsystem/chat/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
+	var/mob/living/flirter = ckey2mob(params["FlirterCkey"])
+	if(!flirter)
+		return // nobody flirted
+	if(action == "remove_flirt_target")
+		return remove_flirt_target(flirter)
 	var/datum/flirt/F = LAZYACCESS(flirts, params["flirt_key"])
 	if(!F)
 		return TRUE // no flirt found
-	var/mob/living/flirter = ckey2mob(params["flirter_ckey"])
-	if(!flirter)
-		return // nobody flirted
-	var/mob/living/target = ckey2mob(params["flirttarget_ckey"])
+	if(LAZYACCESS(flirt_cooldowns, flirter.ckey) < world.time)
+		to_chat(flirter, span_warning("Hold your horses! You're still working on that last flirt!"))
+		return
+	flirt_cooldowns[flirter.ckey] = world.time + flirt_cooldown_time
+	var/mob/living/target = ckey2mob(params["TargetCkey"])
 	var/give_item = !!target // no target, give them an item to flirt at someone with
 	switch(action)
 		if("do_directed_flirt")
@@ -254,9 +269,11 @@ SUBSYSTEM_DEF(chat)
 		if("do_aoe_flirt")
 			return F.flirt_aoe(flirter)
 
+/datum/controller/subsystem/chat/ui_state(mob/user)
+	return GLOB.always_state
+
 /datum/controller/subsystem/chat/proc/can_usr_flirt_with_this(atom/A)
-	var/mob/flirter = usr // fight me
-	if(!isliving(usr)) 
+	if(!isliving(usr)) // fight me
 		to_chat(usr, span_hypnophrase("Touch grass, you ghostly fucker. Spawn in to swap spit with them."))
 		return
 	if(isanimal(A) && !A.client)
@@ -279,7 +296,27 @@ SUBSYSTEM_DEF(chat)
 	if(!SSchat.can_usr_flirt_with_this(A))
 		return
 	to_chat(src, span_notice("You get ready to flirt with [A]. What will you do?"))
+	to_chat(src, span_notice("HOW TO USE: Click on the emote you want to use, and it'll direct a flirtatious message toward them! That's it! \
+		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
+	SSchat.add_flirt_target(src, A)
 	SSchat.ui_interact(src)
+
+/datum/emote/living/flirtlord
+	key = "flirt"
+	no_message = TRUE // we'll handle it from here =3
+
+/datum/emote/living/flirtlord/run_emote(mob/user, params) //Player triggers the emote
+	if(isdead(user))
+		to_chat(user, span_warning("Nobody is interested in your cold dead heart, try rising from the grave with a fistful of flowers, should impress someone."))
+		return
+	if(user.stat == DEAD)
+		to_chat(user, span_warning("You've got better things to do than flirt, such as being dead."))
+		return
+	to_chat(user, span_notice("You get ready to flirt. What will you do? And who with?"))
+	to_chat(user, span_notice("HOW TO USE: Click on the emote you want to use, and it'll give you a thing in your hand! Just click on whoever you want to send a flirtatious message to, or just use it in hand to send a message to everyone nearby. That's it! \
+		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
+	SSchat.ui_interact(user)
+
 
 /datum/emoticon_bank
 	var/key = ""
@@ -552,9 +589,9 @@ SUBSYSTEM_DEF(chat)
 
 /// turns this thing into a differentiated flort
 /datum/flirt/proc/get_flirty(list/json_flirt)
-	key = LAZYACCESS(json_flirt["key"])
+	key = LAZYACCESS(json_flirt["key"]) // LETS GET WARTY
 	if(!key)
-		return
+		return // LETS GET NORMAL
 	flirtname = LAZYACCESS(json_flirt["name"]) || "Loveletter to Coderbus"
 	flirtdesc = LAZYACCESS(json_flirt["desc"]) || "Send them a cute little letter asking if they'd like to file a bug report with you!"
 	flirticon = LAZYACCESS(json_flirt["icon"]) || "icons/mob/actions.dmi"
@@ -641,7 +678,7 @@ SUBSYSTEM_DEF(chat)
 ///////////////////////////////////////////////////
 //// FLIRT ITEM ///////////////////////////////////
 /obj/item/hand_item/flirter
-	name = "Flirtification Device"
+	name = "Flirtation Device" // in the event of a crash, your hand can be used as a flirtation device
 	desc = "This thing is used to flirt with people! Or it would if it initialized properly. Oops."
 	icon = 'icons/obj/flirt.dmi'
 	icon_state = "flirt"
