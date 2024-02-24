@@ -843,6 +843,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
 
+/datum/gear/suit/armor/hellarmors
+	name = "Democratic EA-5 armor"
+	path = /obj/item/clothing/suit/armor/medium/helldiver
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
+
 /datum/gear/suit/armor/spartanarmorstwo
 	name = "Leo Armaments MARK XI armor 'Icebreaker'"
 	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor2

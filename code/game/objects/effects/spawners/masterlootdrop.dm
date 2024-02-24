@@ -307,6 +307,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
 		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
 		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
+		/obj/item/gun/ballistic/automatic/democracy = 5,                     //151 20
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 8,                 //beanbags 8
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 7,        //97 8 multicaliber, deceiving stats
 
