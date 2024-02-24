@@ -161,12 +161,12 @@
 		if(rank in GLOB.den_positions)
 			den[name] = rank
 			department = 1
-		if(rank in GLOB.gar_positions)
-			garland[name] = rank
-			department = 1
-		if(rank in GLOB.biker_positions)
-			bikers[name] = rank
-			department = 1
+		//if(rank in GLOB.gar_positions)
+		//	garland[name] = rank
+		//	department = 1
+		//if(rank in GLOB.biker_positions)
+		//	bikers[name] = rank
+		//	department = 1
 		if(rank in GLOB.heavensnight_positions)
 			heavensnight[name] = rank
 			department = 1
