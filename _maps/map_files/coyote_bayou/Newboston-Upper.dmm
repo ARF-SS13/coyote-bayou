@@ -421,9 +421,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/heaven)
 "bi" = (
 /obj/structure/chair/wood/wings{
@@ -3261,7 +3259,6 @@
 /obj/machinery/light/small{
 	color = "#FFC0CB";
 	light_color = "#FFC0CB";
-	pixel_x = -13;
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4449,13 +4446,12 @@
 	},
 /area/f13/building)
 "mG" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
-/area/f13/bar/heaven)
+/obj/structure/table,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "mH" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -4654,7 +4650,9 @@
 /obj/machinery/light/small{
 	dir = 4;
 	color = "#FFC0CB";
-	light_color = "#FFC0CB"
+	light_color = "#FFC0CB";
+	pixel_y = 5;
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bar/heaven)
@@ -4691,8 +4689,6 @@
 /area/f13/tribe)
 "ni" = (
 /obj/machinery/light,
-/obj/structure/table,
-/obj/machinery/microwave,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "nj" = (
@@ -6256,11 +6252,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/machinery/door/poddoor/gate/preopen{
-	id = "hngate";
-	name = "outpost gate2";
-	pixel_x = -16
-	},
 /obj/effect/step_trigger/player_choice_log{
 	title = "Welcome to Heavens Night.";
 	question = "Welcome to Heavens Night, this club is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
@@ -6738,13 +6729,7 @@
 /turf/open/floor/engine,
 /area/f13/building)
 "tj" = (
-/obj/effect/turf_decal/trimline/neutral{
-	color = "#000000";
-	icon_state = "trimline_fill"
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/heaven)
 "tk" = (
 /obj/structure/rack,
@@ -6887,14 +6872,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam"
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/heaven)
 "tG" = (
 /obj/structure/table,
@@ -7956,6 +7934,11 @@
 /obj/machinery/grill,
 /turf/open/floor/plating/f13/outside/roof/metal,
 /area/f13/wasteland/city/newboston/outdoors)
+"wD" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "wE" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -8229,6 +8212,9 @@
 /obj/item/defibrillator/primitive,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"xq" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
 "xr" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
@@ -12274,6 +12260,15 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"IC" = (
+/obj/structure/table,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/clothing/neck/stethoscope,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "ID" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -12680,14 +12675,19 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland/city/newboston/house/cabin_three)
 "JG" = (
-/obj/machinery/light/small{
-	color = "#FFC0CB";
-	light_color = "#FFC0CB";
-	pixel_y = 0;
-	pixel_x = 14
+/obj/structure/table,
+/obj/item/storage/pill_bottle/chem_tin/mentats,
+/obj/item/storage/pill_bottle/chem_tin/mentats/berry,
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape,
+/obj/item/storage/pill_bottle/chem_tin/mentats/orange,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "JH" = (
 /obj/structure/rack/shelf_wood/modern,
 /obj/item/book/granter/crafting_recipe/blueprint/smg10mm,
@@ -16968,9 +16968,7 @@
 /area/f13/building)
 "VZ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/heaven)
 "Wa" = (
 /obj/structure/table/wood/settler,
@@ -17816,7 +17814,9 @@
 /obj/machinery/light/small{
 	color = "#FFC0CB";
 	dir = 8;
-	light_color = "#FFC0CB"
+	light_color = "#FFC0CB";
+	pixel_y = 4;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -38721,7 +38721,7 @@ tN
 tN
 tN
 tN
-tN
+xq
 tN
 tN
 tN
@@ -40009,16 +40009,16 @@ tN
 tN
 tN
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+TC
+WY
+Rn
+Rn
+TC
+WY
+WY
+WY
+WY
+TC
 tN
 tN
 tN
@@ -40266,16 +40266,16 @@ tN
 tN
 tN
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+TC
+xU
+vN
+So
+bg
+Tb
+zp
+zp
+kF
+TC
 tN
 tN
 tN
@@ -40511,27 +40511,27 @@ tN
 tN
 tN
 tN
-pI
+tj
 bh
 bh
 bh
-pI
-pI
-pI
-pI
-pI
-pI
+tj
+tj
+tj
+tj
+tj
+tj
 tN
 tN
-TC
-WY
-Rn
-Rn
-TC
-WY
-WY
-WY
-WY
+nZ
+kP
+mz
+df
+wp
+lA
+HK
+RP
+zW
 TC
 tN
 tN
@@ -40768,7 +40768,7 @@ GU
 tN
 tN
 tN
-pI
+tj
 RM
 ol
 ej
@@ -40777,18 +40777,18 @@ VI
 kn
 TQ
 cJ
-pI
+tj
 tN
-tN
+GU
 TC
-xU
-vN
-So
-bg
-Tb
-zp
-zp
-kF
+EI
+Ei
+wp
+wp
+EV
+dX
+dX
+dX
 TC
 tN
 tN
@@ -41025,7 +41025,7 @@ En
 ZK
 aC
 pM
-pI
+tj
 hg
 ys
 OY
@@ -41034,18 +41034,18 @@ Ke
 bM
 SI
 Bx
-pI
+tj
 tN
-tN
-nZ
-kP
-mz
-df
+GU
+TC
 wp
-lA
-HK
-RP
-zW
+wp
+PC
+dh
+EV
+dX
+dX
+dX
 TC
 tN
 tN
@@ -41282,7 +41282,7 @@ En
 RL
 Eo
 lL
-pI
+tj
 mE
 ys
 aa
@@ -41291,18 +41291,18 @@ Zm
 kC
 ob
 wf
-pI
-GU
+tj
 GU
 TC
-EI
-Ei
-wp
-wp
-EV
-dX
-dX
-dX
+TC
+pa
+TC
+Zx
+ZJ
+TC
+ZJ
+Zx
+ZJ
 TC
 ZJ
 Rn
@@ -41539,27 +41539,27 @@ En
 WW
 ic
 lL
-pI
-pI
+tj
+tj
 gD
-pI
-pI
+tj
+tj
 YG
-pI
-pI
-pI
-pI
-GU
+tj
+tj
+tj
+tj
 GU
 TC
-wp
-wp
-PC
-dh
-EV
-dX
-dX
-dX
+ks
+oN
+FA
+Wm
+MT
+XL
+Mb
+SO
+XT
 TC
 dn
 ga
@@ -41796,27 +41796,27 @@ qF
 lL
 lL
 lL
-pI
+tj
 Ux
 Ux
-pI
+tj
 Sq
 pc
 Bv
 pI
 rE
-pI
+tj
 GU
 TC
-TC
-pa
-TC
-Zx
-ZJ
-TC
-ZJ
-Zx
-ZJ
+xM
+oN
+IY
+Ev
+as
+fn
+hU
+iz
+dt
 TC
 ga
 ga
@@ -42062,18 +42062,18 @@ CV
 hm
 qN
 OY
-pI
+tj
 GU
 TC
-ks
+GI
 oN
-FA
+ch
 Wm
-MT
-XL
-Mb
-SO
-WF
+Wm
+Wm
+Wm
+PI
+Wm
 pa
 ga
 ga
@@ -42307,10 +42307,10 @@ Yj
 GU
 qF
 qF
-JG
+jo
 tj
-pI
-pI
+tj
+tj
 OY
 aL
 tW
@@ -42319,18 +42319,18 @@ WX
 Hy
 eG
 Uc
-mG
+tF
 GU
 TC
-xM
-oN
-IY
-Ev
-as
-fn
-hU
-iz
-dt
+TC
+DS
+TC
+JG
+WF
+PI
+WF
+WF
+ni
 TC
 ZJ
 TC
@@ -42576,17 +42576,17 @@ CV
 Hy
 Kk
 ot
-pI
+tj
 GU
 TC
-GI
-oN
-ch
+bD
+Su
+Zx
+IC
 Wm
+mx
 Wm
-Wm
-Wm
-PI
+wD
 Wm
 pa
 py
@@ -42833,18 +42833,18 @@ AW
 cs
 cB
 HA
-pI
+tj
 GU
 TC
-TC
-DS
-TC
+Fe
+mt
+dG
+mG
 Wm
-WF
-PI
-WF
-WF
-XT
+dG
+cP
+Zz
+TC
 TC
 ga
 ga
@@ -43080,9 +43080,9 @@ GU
 xx
 jo
 tF
-pI
+tj
 VZ
-pI
+tj
 sM
 HA
 ot
@@ -43090,18 +43090,18 @@ OY
 ot
 ot
 OY
-pI
+tj
 GU
 TC
-bD
-Su
-Zx
-Wm
-Wm
-Wm
-Wm
-mx
-ni
+pC
+Qn
+TC
+UI
+MS
+dG
+dK
+dK
+dK
 TC
 gv
 ga
@@ -43339,7 +43339,7 @@ xx
 Yy
 Ab
 xx
-pI
+tj
 VG
 Hw
 uT
@@ -43347,18 +43347,18 @@ uT
 Sd
 nf
 FY
-pI
+tj
 GU
 TC
-Fe
-mt
-dG
-Wm
-Wm
-dG
-cP
-Zz
 TC
+TC
+TC
+TC
+TC
+TC
+dK
+dK
+dK
 TC
 TC
 eK
@@ -43596,7 +43596,7 @@ xx
 xx
 xx
 xx
-pI
+tj
 yj
 MG
 lZ
@@ -43604,15 +43604,15 @@ ud
 MG
 RB
 OY
-pI
+tj
 GU
-TC
-pC
-Qn
-TC
-UI
-MS
-dG
+GU
+GU
+GU
+GU
+GU
+GU
+GU
 dK
 dK
 dK
@@ -43853,7 +43853,7 @@ xx
 xx
 xx
 xx
-pI
+tj
 YF
 Op
 YE
@@ -43861,15 +43861,15 @@ kM
 LZ
 NA
 ot
-pI
+tj
 GU
-TC
-TC
-TC
-TC
-TC
-TC
-TC
+GU
+GU
+GU
+GU
+GU
+GU
+GU
 dK
 dK
 dK
@@ -44110,7 +44110,7 @@ GU
 xx
 xx
 xx
-pI
+tj
 YE
 Op
 Op
@@ -44118,7 +44118,7 @@ Op
 YE
 YE
 vD
-pI
+tj
 GU
 GU
 GU
@@ -44367,7 +44367,7 @@ GU
 xx
 xx
 xx
-pI
+tj
 zw
 IL
 Io
@@ -44375,7 +44375,7 @@ ef
 qt
 ws
 OY
-pI
+tj
 GU
 GU
 GU
@@ -44624,15 +44624,15 @@ GU
 xx
 xx
 xx
-pI
-pI
-pI
-pI
-pI
-pI
-pI
+tj
+tj
+tj
+tj
+tj
+tj
+tj
 zD
-pI
+tj
 GU
 GU
 qF
@@ -44881,7 +44881,7 @@ Xt
 ME
 EY
 vp
-pI
+tj
 ka
 dS
 dS
@@ -44889,7 +44889,7 @@ dS
 jI
 dS
 jI
-pI
+tj
 GU
 qF
 qF
@@ -45138,7 +45138,7 @@ Xt
 ES
 EY
 cf
-pI
+tj
 TJ
 WD
 tk
@@ -45146,7 +45146,7 @@ Kg
 XS
 CC
 BR
-pI
+tj
 GU
 qF
 qF
@@ -45395,15 +45395,15 @@ GU
 GU
 qF
 Yj
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
+tj
+tj
+tj
+tj
+tj
+tj
+tj
+tj
+tj
 GU
 qF
 um
@@ -51056,7 +51056,7 @@ GU
 GU
 GU
 GU
-Ap
+qF
 qF
 qF
 qF
@@ -51313,7 +51313,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -51570,7 +51570,7 @@ us
 us
 us
 GU
-GU
+qF
 GU
 GU
 GU
@@ -51827,7 +51827,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -52084,7 +52084,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -52341,7 +52341,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -52598,7 +52598,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -52855,7 +52855,7 @@ GU
 us
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -53112,7 +53112,7 @@ us
 us
 GU
 GU
-GU
+qF
 GU
 GU
 GU
@@ -53369,7 +53369,7 @@ GU
 GU
 GU
 GU
-GU
+qF
 GU
 GU
 GU
