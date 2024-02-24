@@ -3126,6 +3126,31 @@
 	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/fg42.ogg'
 
+
+
+/obj/item/gun/ballistic/automatic/democracy
+	name = "M36 'Justice' battle rifle"
+	desc = "A M36 battle rifle, nicknamed 'Justice' by the company that produced it. Manufactured by an American division of Leo Armaments, which was quite patriotic. This rfle is chambered in .308. It seems to have a slow RPM and fast semi-automatic"
+	icon_state = "m36"
+	item_state = "m36"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1.8, 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto ,
+		/datum/firemode/automatic/rpm100
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
  * Baseline 7.62 autorifle
