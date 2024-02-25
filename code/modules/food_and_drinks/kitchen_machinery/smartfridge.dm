@@ -867,3 +867,26 @@
 		/obj/item/reagent_containers/food/condiment/cherryjelly = 1,
 		/obj/item/reagent_containers/food/condiment/peanut_butter = 1,
 		/obj/item/reagent_containers/food/condiment/mayonnaise = 1)
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable
+	name = "crafted shop shelf"
+	desc = "A handmade shop shelf, looks pretty robust. Has a blank sign in the center to be written on with a pen."
+	max_n_of_items = 20
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable
+	chance_initial_contents = list(
+
+)
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
+	new /obj/item/stack/sheet/metal(drop_location(), 15)
+	..()
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable/accept_check(obj/item/O)
+	if(istype(O, /obj/item/clothing/head/mob_holder))
+		return FALSE
+	if(istype(O, /obj/item/storage))
+		return FALSE
+
+	if(O)
+		return TRUE
+	return FALSE

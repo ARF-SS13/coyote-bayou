@@ -508,6 +508,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
+		"blood_color" = "",
 		"ears" = "None",
 
 		"wings" = "None",
@@ -699,6 +700,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_insect_fluff"]			>> features["insect_fluff"]
 	S["feature_insect_markings"]		>> features["insect_markings"]
 	S["feature_horns_color"]			>> features["horns_color"]
+	S["feature_blood_color"]			>> features["blood_color"]
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
@@ -997,6 +999,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		skin_tone					= sanitize_inlist(skin_tone, GLOB.skin_tones - GLOB.nonstandard_skin_tones, initial(skin_tone))
 
 	features["horns_color"]			= sanitize_hexcolor(features["horns_color"], 6, FALSE, "85615a")
+	if(!isnull(features["blood_color"]) && features["blood_color"] != "")
+		//if(features["blood_color"] == "rainbow")
+		features["blood_color"]			= sanitize_hexcolor(features["blood_color"], 6, FALSE, "900000")
 	features["wings_color"]			= sanitize_hexcolor(features["wings_color"], 6, FALSE, "FFFFFF")
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
 	jumpsuit_style					= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
@@ -1300,6 +1305,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]				, features["legs"])
 	WRITE_FILE(S["feature_deco_wings"]				, features["deco_wings"])
 	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
+	WRITE_FILE(S["feature_blood_color"]				, features["blood_color"])
 	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
 	WRITE_FILE(S["feature_insect_wings"]			, features["insect_wings"])
 	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])

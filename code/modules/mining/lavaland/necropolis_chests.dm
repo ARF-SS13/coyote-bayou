@@ -1103,7 +1103,7 @@
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
 	//new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/old(src)
 	//new /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old(src)
-	new /obj/item/cult_bastard(src)
+	//new /obj/item/cult_bastard(src)
 	new /obj/item/clothing/head/culthood(src)
 	new /obj/item/clothing/suit/cultrobes(src)
 	new /obj/item/reagent_containers/food/snacks/f13/bubblegum (src)
@@ -1192,7 +1192,7 @@
 	// var/random_crystal = pick(choices)
 	// new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
-	new /obj/item/clothing/glasses/godeye(src)
+	//new /obj/item/clothing/glasses/godeye(src)
 
 /obj/structure/closet/crate/necropolis/colossus/crusher
 	name = "angelic colossus chest"

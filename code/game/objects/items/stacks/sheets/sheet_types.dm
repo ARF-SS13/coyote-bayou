@@ -91,6 +91,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("shelf parts", /obj/item/rack_parts), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("shop shelf", /obj/machinery/smartfridge/bottlerack/lootshelf/craftable, 15, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 30, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \

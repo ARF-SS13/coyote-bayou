@@ -545,9 +545,11 @@
 	var/blood_id = get_blood_id()
 	if(!(blood_id in GLOB.blood_reagent_types))
 		return
+	var/list/blood_data = get_blood_data()
 	var/list/blood_dna = list()
 	if(dna)
-		blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		//blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		blood_dna["color"] = blood_data["bloodcolor"]
 		blood_dna[dna.unique_enzymes] = dna.blood_type
 	else
 		blood_dna["color"] = BLOOD_COLOR_HUMAN
