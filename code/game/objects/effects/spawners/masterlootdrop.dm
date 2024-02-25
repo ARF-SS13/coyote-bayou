@@ -819,7 +819,6 @@
 /obj/effect/spawner/lootdrop/f13/common_medicine
 	name = "common medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 4,
@@ -834,7 +833,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine
 	name = "uncommon medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
+		/obj/item/reagent_containers/pill/bitterdrink = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 10,
 		/obj/item/reagent_containers/blood/radaway = 10,
@@ -852,8 +851,8 @@
 /obj/effect/spawner/lootdrop/f13/rare_medicine
 	name = "rare medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 10,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 4,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 		/obj/item/stack/medical/gauze/adv = 10,
 		/obj/item/stack/medical/suture/medicated/five = 4,
 		/obj/item/stack/medical/mesh/advanced/five = 4,
