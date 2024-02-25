@@ -16,6 +16,11 @@
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "dirt_side"
 
+/obj/effect/turf_decal/weather/dirtcorner
+	name = "dirt siding"
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "dirt_corner"
+
 /obj/effect/turf_decal/weather/sand
 	name = "sand siding"
 	icon = 'icons/misc/beach.dmi'
@@ -23,3 +28,13 @@
 
 /obj/effect/turf_decal/weather/sand/light
 	icon_state = "lightsand_side"
+
+/obj/effect/turf_decal/weather/autumnleaves
+	name = "Autumn Leaves"
+	icon = 'modular_coyote/icons/turfs/flowersleaves.dmi'
+	icon_state = "autumn-overlay1"
+
+/obj/effect/turf_decal/weather/springflowers
+	name = "Autumn Leaves"
+	icon = 'modular_coyote/icons/turfs/flowersleaves.dmi'
+	icon_state = "spring-overlay1"

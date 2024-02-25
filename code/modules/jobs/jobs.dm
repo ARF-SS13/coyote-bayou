@@ -181,9 +181,9 @@ GLOBAL_LIST_INIT(den_positions, list(
 ))
 
 //Gar Citizenship
-GLOBAL_LIST_INIT(gar_positions, list(
-	"Garland Citizen",
-))
+//GLOBAL_LIST_INIT(gar_positions, list(
+//	"Garland Citizen",
+//))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
 	"Legate",
@@ -310,11 +310,12 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Dual Citizen"
 ))
 //bikrs
-GLOBAL_LIST_INIT(biker_positions, list(
-	"Overbiker",
-	"Hells Nomad",
-	"Ashdown Citizen",
-))
+//GLOBAL_LIST_INIT(biker_positions, list(
+	//"Overbiker",
+	//"Hells Nomad",
+	//"Ashdown Citizen",
+//))
+
 //bikrs
 GLOBAL_LIST_INIT(debug_positions, list(
 	"oh my u shouldnt see this uwu~",
@@ -346,10 +347,10 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
-	"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
+	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
-	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
+	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
 	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
@@ -381,7 +382,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_CLUB = list("titles" = heavensnight_positions),
 	EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	EXP_TYPE_TRIBAL = list("titles" = tribal_positions),
-	EXP_TYPE_BIKER = list("titles" = biker_positions),
+	//EXP_TYPE_BIKER = list("titles" = biker_positions),
 	"debug" = list("titles" = debug_positions),
 	EXP_TYPE_RANGER = list("titles" = list("NCR Veteran Ranger","NCR Ranger")),
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),

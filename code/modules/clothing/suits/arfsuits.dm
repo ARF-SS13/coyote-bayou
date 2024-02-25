@@ -623,79 +623,6 @@
 	icon_state = "frenchtrench"
 	item_state = "frenchtrench"
 
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
-	name = "Ancient West german greatcoat"
-	desc = "A trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "krieg"
-	item_state = "krieg"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
-	name = "Ancient Medical West german greatcoat"
-	desc = "A trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "mkrieg"
-	item_state = "mkrieg"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
-	name = "Ancient West German Officer greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "Kriegissar"
-	item_state = "Kriegissar"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
-	name = "Ancient Officer's American greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "40kofficer"
-	item_state = "40kofficer"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
-	name = "Ancient Officer's greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "ancientofficer"
-	item_state = "ancientofficer"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/techpriesting
-	name = "Cyber priest outfit."
-	desc = "A trench coat that's all cyber themed!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "cyberpriest"
-	item_state = "cyberpriest"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/cyberpriesting
-	name = "Cyber-pyscho priest outfit."
-	desc = "A trench coat that's all cyber themed! Comes with some helping hands."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "tecpriest"
-	item_state = "tecpriest"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/fanaticalpriest
-	name = "Town crier outfit."
-	desc = "A trench coat that screams 'listen to my words, hear me!'. Comes with some recipts wax stamped to it!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "acolytecoat"
-	item_state = "acolytecoat"
-
-/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/urmandoutfit
-	name = "Ancient West German fanatic outfit."
-	desc = "A trench coat that once belonged to a fanatical person. Who or what did they worship? Who knows. All one knows is, it's a good piece of clothing for those wanting to showcase their more hear-ye side of life!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "fanatic"
-	item_state = "fanatic"
-
-
 /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
 	name = "Padded Soviet jacket"
 	desc = "A padded and well made Soviet jacket. Useful for the winter, but doesn't offer much protection against bullets or really any form of punishment. Compliments any soldier belonging to the Motherland. A wise soldier once said 'As long as Mother Russia has enemies, I will answer her call...'."
@@ -1493,6 +1420,83 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
+
+//////////////////////
+// WARHAMMER LIGHT //
+/////////////////////
+// more sexy, even more protection.
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits
+	name = "Ancient West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "krieg"
+	item_state = "krieg"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/medical
+	name = "Ancient Medical West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "mkrieg"
+	item_state = "mkrieg"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/officer
+	name = "Ancient West German Officer greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "Kriegissar"
+	item_state = "Kriegissar"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/americanofficer
+	name = "Ancient Officer's American greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "40kofficer"
+	item_state = "40kofficer"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/genericofficer
+	name = "Ancient Officer's greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ancientofficer"
+	item_state = "ancientofficer"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/techpriesting
+	name = "Cyber priest outfit."
+	desc = "A trench coat that's all cyber themed!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "cyberpriest"
+	item_state = "cyberpriest"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/cyberpriesting
+	name = "Cyber-pyscho priest outfit."
+	desc = "A trench coat that's all cyber themed! Comes with some helping hands."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "tecpriest"
+	item_state = "tecpriest"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/fanaticalpriest
+	name = "Town crier outfit."
+	desc = "A trench coat that screams 'listen to my words, hear me!'. Comes with some recipts wax stamped to it!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "acolytecoat"
+	item_state = "acolytecoat"
+
+/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/urmandoutfit
+	name = "Ancient West German fanatic outfit."
+	desc = "A trench coat that once belonged to a fanatical person. Who or what did they worship? Who knows. All one knows is, it's a good piece of clothing for those wanting to showcase their more hear-ye side of life!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "fanatic"
+	item_state = "fanatic"
 
 //////////////////
 // LIGHT RAIDER //
@@ -2996,6 +3000,22 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 
+/obj/item/clothing/suit/armor/medium/helldiver
+	name = "Democratic EA-5 assault armor"
+	desc = "A black and yellow colored set of armor. There is a skull isignia directly on the chest plate. This armor was manufactured by America in the late 2220s. Used for troopers sent out to explore hostile xenoplanets. Its official name is EA-5 exoarmor. "
+	icon_state = "helldiver"
+	item_state = "helldiver"
+	equip_delay_self = 3
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	anthro_mob_worn_overlay = 'icons/fallout/onmob/clothes/armor_medium_digi.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/suit/armor/medium/wolf
 	name = "Hardened Combat Carapace"
 	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
@@ -3006,7 +3026,7 @@
 	armor = ARMOR_VALUE_HEAVY
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 

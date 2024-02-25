@@ -536,11 +536,12 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
+		new /datum/data/wasteland_equipment("Basic Bandages",				/obj/item/stack/medical/gauze/improvised,							30),
+		new /datum/data/wasteland_equipment("Basic Stitches",				/obj/item/stack/medical/suture/emergency/fifteen,					30),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
-		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			120),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator/primitive,									150),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							300),
 		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
 		)
@@ -548,13 +549,46 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
+		new /datum/data/wasteland_equipment("Basic Bandages",				/obj/item/stack/medical/gauze/improvised,							30),
+		new /datum/data/wasteland_equipment("Basic Stitches",				/obj/item/stack/medical/suture/emergency/fifteen,					30),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
-		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			120),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator/primitive,									150),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							300),
 		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/supermedical
+	name = "Clinic Vending Machine - Medical"
+	icon_state = "numed_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						5),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							15),
+		new /datum/data/wasteland_equipment("Standard Bandages",			/obj/item/stack/medical/gauze,										15),
+		new /datum/data/wasteland_equipment("Standard Stitches",			/obj/item/stack/medical/suture,										15),
+		new /datum/data/wasteland_equipment("Healing Powder Pack",			/obj/item/storage/box/medicine/powder5,								15),
+		new /datum/data/wasteland_equipment("Bitter Drink Pack",			/obj/item/storage/box/medicine/bitterdrink5,						20),
+		new /datum/data/wasteland_equipment("Stimpak Pack",					/obj/item/storage/box/medicine/stimpaks/stimpaks5,					30),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator,											75),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						5),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							15),
+		new /datum/data/wasteland_equipment("Standard Bandages",			/obj/item/stack/medical/gauze,										15),
+		new /datum/data/wasteland_equipment("Standard Stitches",			/obj/item/stack/medical/suture,										15),
+		new /datum/data/wasteland_equipment("Healing Powder Pack",			/obj/item/storage/box/medicine/powder5,								15),
+		new /datum/data/wasteland_equipment("Bitter Drink Pack",			/obj/item/storage/box/medicine/bitterdrink5,						20),
+		new /datum/data/wasteland_equipment("Stimpak Pack",					/obj/item/storage/box/medicine/stimpaks/stimpaks5,					30),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator,											75),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
