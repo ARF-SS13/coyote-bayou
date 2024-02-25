@@ -876,7 +876,7 @@
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/accept_check(obj/item/O)
 	if(istype(O, /obj/item/clothing/head/mob_holder))
 		return FALSE
-    
+
 	if(O)
 		return TRUE
 	return FALSE
