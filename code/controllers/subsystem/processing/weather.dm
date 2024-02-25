@@ -25,6 +25,9 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	/// Format: list("key" = /datum/looping_sound)
 	var/list/sound_rocks = list()
 
+	var/is_snowy = FALSE
+	var/snowy_override = FALSE // set to a non-null to override the snowy setting
+
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..() //Active weather is handled by . = ..() processing subsystem base fire().
 	if(COOLDOWN_FINISHED(src, wind_change_cooldown))
@@ -40,13 +43,22 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	weather_queued = TRUE // weather'll set this to FALSE when it ends
 
 /datum/controller/subsystem/processing/weather/Initialize(start_timeofday)
+	is_snowy = is_it_snowy()
 	for(var/V in subtypesof(/datum/weather))
 		var/datum/weather/W = V
 		var/probability = initial(W.probability)
 		// any weather with a probability set may occur at random
 		if (probability)
 			weather_rolls[W] = probability
-	return ..()
+	. = ..()
+	if(is_snowy)
+		to_chat(world, span_boldnotice("Brr! It's snowing!"))
+
+/datum/controller/subsystem/processing/weather/proc/is_it_snowy()
+	if(!isnull(snowy_override))
+		return
+	var/MM = text2num(time2text(world.timeofday, "MM"))
+	return (MM == 12 || MM == 1 || MM == 2)
 
 /datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, duration)
 	if (istext(weather_datum_type))
