@@ -508,7 +508,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
-		"blood_color" = "900000",
+		"blood_color" = "",
 		"ears" = "None",
 
 		"wings" = "None",
@@ -999,7 +999,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		skin_tone					= sanitize_inlist(skin_tone, GLOB.skin_tones - GLOB.nonstandard_skin_tones, initial(skin_tone))
 
 	features["horns_color"]			= sanitize_hexcolor(features["horns_color"], 6, FALSE, "85615a")
-	if(features["blood_color"] != "rainbow")
+	if(!isnull(features["blood_color"]) && features["blood_color"] != "")
+		//if(features["blood_color"] == "rainbow")
 		features["blood_color"]			= sanitize_hexcolor(features["blood_color"], 6, FALSE, "900000")
 	features["wings_color"]			= sanitize_hexcolor(features["wings_color"], 6, FALSE, "FFFFFF")
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))

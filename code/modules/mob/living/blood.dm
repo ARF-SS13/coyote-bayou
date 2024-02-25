@@ -371,7 +371,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 		blood_data["blood_DNA"] = dna.unique_enzymes
 		blood_data["bloodcolor"] = dna.species.exotic_blood_color
-		if(client && client.prefs.features["blood_color"] != "")
+		if(client)
 			if(isnull(client.prefs.features["blood_color"]) || client.prefs.features["blood_color"] == "")
 				return
 			blood_data["bloodcolor"] = client.prefs.features["blood_color"]
