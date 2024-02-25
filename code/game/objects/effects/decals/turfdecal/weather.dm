@@ -28,3 +28,13 @@
 
 /obj/effect/turf_decal/weather/sand/light
 	icon_state = "lightsand_side"
+
+/obj/effect/turf_decal/weather/autumnleaves
+	name = "Autumn Leaves"
+	icon = 'modular_coyote/icons/turfs/flowersleaves.dmi'
+	icon_state = "autumn-overlay1"
+
+/obj/effect/turf_decal/weather/springflowers
+	name = "Autumn Leaves"
+	icon = 'modular_coyote/icons/turfs/flowersleaves.dmi'
+	icon_state = "spring-overlay1"
