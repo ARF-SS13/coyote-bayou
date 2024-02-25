@@ -164,13 +164,8 @@ SUBSYSTEM_DEF(chat)
 
 /datum/controller/subsystem/chat/proc/build_flirt_datums()
 	flirts = list()
-	var/list/jsonafex = safe_json_decode(file2text("strings/flirts.json"))
-	if(!LAZYLEN(jsonafex))
-		return
-	for(var/list/flirtz in jsonafex)
-		if(!LAZYACCESS(flirtz, "key"))
-			continue
-		new /datum/flirt(flirtz) // it knows what to do
+	for(var/flt in substypesof(/datum/flirt))
+		var/datum/flirt/F = new flt() // it knows what its do
 
 /datum/controller/subsystem/chat/proc/run_directed_flirt(mob/living/flirter, mob/living/target, flirtkey)
 	if(!istype(flirter) ||!istype(target) || !flirtkey)
@@ -235,7 +230,7 @@ SUBSYSTEM_DEF(chat)
 	data["FlirterCkey"] = user ? user.ckey : "AAAGOOD" // nulls are falsy
 	data["FlirterName"] = user ? user.name : "Some Dope"
 	data["TargetName"] = heart ? heart.name : "Nobody in particular"
-	data["TargetCkey"] heart ? heart.ckey : "AAAGOOD" // nulls are falsy
+	data["TargetCkey"] = heart ? heart.ckey : "AAAGOOD" // nulls are falsy
 	return data
 
 /// holds the whole enchilada
@@ -249,9 +244,9 @@ SUBSYSTEM_DEF(chat)
 	var/mob/living/flirter = ckey2mob(params["FlirterCkey"])
 	if(!flirter)
 		return // nobody flirted
-	if(action == "remove_flirt_target")
+	if(action == "RemoveFlirtTarget")
 		return remove_flirt_target(flirter)
-	var/datum/flirt/F = LAZYACCESS(flirts, params["flirt_key"])
+	var/datum/flirt/F = LAZYACCESS(flirts, params["FlirtKey"])
 	if(!F)
 		return TRUE // no flirt found
 	if(LAZYACCESS(flirt_cooldowns, flirter.ckey) < world.time)
@@ -261,18 +256,18 @@ SUBSYSTEM_DEF(chat)
 	var/mob/living/target = ckey2mob(params["TargetCkey"])
 	var/give_item = !!target // no target, give them an item to flirt at someone with
 	switch(action)
-		if("do_directed_flirt")
+		if("DoDirectedFlirt")
 			if(give_item)
-				return F.give_item(flirter, target)
+				return F.give_flirter(flirter, target)
 			else
 				return F.flirt_directed(flirter, target)
-		if("do_aoe_flirt")
+		if("DoAOEFlirt")
 			return F.flirt_aoe(flirter)
 
 /datum/controller/subsystem/chat/ui_state(mob/user)
 	return GLOB.always_state
 
-/datum/controller/subsystem/chat/proc/can_usr_flirt_with_this(atom/A)
+/datum/controller/subsystem/chat/proc/can_usr_flirt_with_this(mob/A)
 	if(!isliving(usr)) // fight me
 		to_chat(usr, span_hypnophrase("Touch grass, you ghostly fucker. Spawn in to swap spit with them."))
 		return
@@ -592,20 +587,20 @@ SUBSYSTEM_DEF(chat)
 	key = LAZYACCESS(json_flirt["key"]) // LETS GET WARTY
 	if(!key)
 		return // LETS GET NORMAL
-	flirtname = LAZYACCESS(json_flirt["name"]) || "Loveletter to Coderbus"
-	flirtdesc = LAZYACCESS(json_flirt["desc"]) || "Send them a cute little letter asking if they'd like to file a bug report with you!"
-	flirticon = LAZYACCESS(json_flirt["icon"]) || "icons/mob/actions.dmi"
-	flirticon_state = LAZYACCESS(json_flirt["icon_state"]) || "velvet_chords"
-	give_message = LAZYACCESS(json_flirt["give_message"]) || "You get out your GitHub issues!"
-	give_message_span = LAZYACCESS(json_flirt["give_message_span"]) || "love"
-	self_message = LAZYACCESS(json_flirt["self_message"]) || "You ask %TARGET% if they'd like to file a bug report with you!"
-	self_message_span = LAZYACCESS(json_flirt["self_message_span"]) || "love"
-	target_message = LAZYACCESS(json_flirt["target_message"]) || "You notice %FLIRTER% asking if they'd like to file a bug report with you!"
-	target_message_span = LAZYACCESS(json_flirt["target_message_span"]) || "love"
-	aoe_message = LAZYACCESS(json_flirt["aoe_message"]) || "" // this one can be null and a-okay
-	aoe_message_span = LAZYACCESS(json_flirt["aoe_message_span"]) || "love"
-	category = LAZYACCESS(json_flirt["category"]) || "I need a category!! uwu"
-	sound_to_do = LAZYACCESS(json_flirt["sound_to_do"]) || "" // this one can also be null and a-okay
+	flirtname = LAZYACCESS(json_flirt, "name") || "Loveletter to Coderbus"
+	flirtdesc = LAZYACCESS(json_flirt, "desc") || "Send them a cute little letter asking if they'd like to file a bug report with you!"
+	flirticon = LAZYACCESS(json_flirt, "icon") || "icons/mob/actions.dmi"
+	flirticon_state = LAZYACCESS(json_flirt, "icon_state") || "velvet_chords"
+	give_message = LAZYACCESS(json_flirt, "give_message") || "You get out your GitHub issues!"
+	give_message_span = LAZYACCESS(json_flirt, "give_message_span") || "love"
+	self_message = LAZYACCESS(json_flirt, "self_message") || "You ask %TARGET% if they'd like to file a bug report with you!"
+	self_message_span = LAZYACCESS(json_flirt, "self_message_span") || "love"
+	target_message = LAZYACCESS(json_flirt, "target_message") || "You notice %FLIRTER% asking if they'd like to file a bug report with you!"
+	target_message_span = LAZYACCESS(json_flirt, "target_message_span") || "love"
+	aoe_message = LAZYACCESS(json_flirt, "aoe_message") || "" // this one can be null and a-okay
+	aoe_message_span = LAZYACCESS(json_flirt, "aoe_message_span") || "love"
+	category = LAZYACCESS(json_flirt, "category") || "I need a category!! uwu"
+	sound_to_do = LAZYACCESS(json_flirt, "sound_to_do") || "" // this one can also be null and a-okay
 	return TRUE
 
 
@@ -706,9 +701,9 @@ SUBSYSTEM_DEF(chat)
 
 /obj/item/hand_item/flirter/attack_self(mob/user)
 	. = STOP_ATTACK_PROC_CHAIN // never let this thing hit anyone ever for any ever anytime
-	if(!isliving(A))
+	if(!isliving(user))
 		return
-	if(!SSchat.run_aoe_flirt(user, A, flirtkey))
+	if(!SSchat.run_aoe_flirt(user, user, flirtkey))
 		return
 	qdel(src)
 
