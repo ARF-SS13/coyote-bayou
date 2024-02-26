@@ -1773,3 +1773,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /proc/GaussianRangePicker(min, max, mean, stddev)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
+
+/proc/is_color(in)
+	. = FALSE
+	if(!istext(in))
+		return
+	var/len = length(in)
+	if(len != 3 && len != 6)
+		return
+	var/badcharacters = regex(@"[^\d\la-fA-F]")
+	if(findtext(in, badcharacters))
+		return
+	. = TRUE
