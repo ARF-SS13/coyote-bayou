@@ -1774,14 +1774,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
 
-/proc/is_color(in)
+/// makes sure input is text, either 3 or 6 characters, and only contains digits and the letters a-f (case insensitive)
+/proc/is_color(str)
 	. = FALSE
-	if(!istext(in))
+	if(!istext(str)) // is it text?
 		return
-	var/len = length(in)
-	if(len != 3 && len != 6)
+	var/len = length(str)
+	if(len != 3 && len != 6) // is it 3 or 6 chars?
 		return
 	var/badcharacters = regex(@"[^\da-fA-F]")
-	if(findtext(in, badcharacters))
+	if(findtext(str, badcharacters)) // is it actually a hexcode?
 		return
 	. = TRUE
