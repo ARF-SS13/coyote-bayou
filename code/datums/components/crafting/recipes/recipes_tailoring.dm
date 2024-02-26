@@ -320,6 +320,108 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
+///////////////
+//Power Armor//
+///////////////
+
+/datum/crafting_recipe/pa_t45b
+	name = "T-45b Power Armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/ingot/iron = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_t45b_raider
+	name = "powered scrap suit"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/ingot/iron = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_t45b_hotrod
+	name = "Refurbished T-45b Hotrod power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux,
+				/obj/item/ingot/plasma = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_t45d
+	name = "T-45d power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45d
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/sheet/prewar = 10,
+				/obj/item/ingot/silver = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_t51b
+	name = "T-51b power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t51b
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/sheet/prewar = 5,
+				/obj/item/ingot/gold = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_t51b_hardened
+	name = "Hardened T-51b power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t51b/hardened
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/sheet/prewar = 15,
+				/obj/item/ingot/titanium = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_excavator
+	name = "excavator power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/excavator
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/sheet/prewar = 15,
+				/obj/item/ingot/uranium = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_advanced
+	name = "advanced power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/advanced
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/ingot/diamond = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/pa_advanced_x02
+	name = "Enclave power armor"
+	result = /obj/item/clothing/suit/armor/power_armor/advanced/x02
+	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/ingot/mythril = 1)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
 ///////////
 //HELMETS//
 ///////////
