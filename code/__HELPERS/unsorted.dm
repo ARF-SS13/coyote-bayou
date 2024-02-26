@@ -1781,7 +1781,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/len = length(in)
 	if(len != 3 && len != 6)
 		return
-	var/badcharacters = regex(@"[^\d\la-fA-F]")
+	var/badcharacters = regex(@"[^\da-fA-F]")
 	if(findtext(in, badcharacters))
 		return
 	. = TRUE
