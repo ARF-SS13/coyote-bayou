@@ -663,7 +663,9 @@
 	return TRUE
 
 /atom/proc/blood_DNA_to_color()
-	return (blood_DNA && blood_DNA["color"]) || BLOOD_COLOR_HUMAN
+	if(blood_DNA && is_color(blood_DNA["color"]))
+		return blood_DNA["color"]
+	return BLOOD_COLOR_HUMAN
 
 /atom/proc/clean_blood()
 	. = blood_DNA? TRUE : FALSE
