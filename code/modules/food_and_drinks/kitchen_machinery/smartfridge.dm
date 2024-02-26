@@ -879,7 +879,6 @@
 )
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
 	new /obj/item/stack/sheet/metal(drop_location(), 15)
-	..()
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/accept_check(obj/item/O)
 	if(istype(O, /obj/item/clothing/head/mob_holder))
