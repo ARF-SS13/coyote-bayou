@@ -23,11 +23,11 @@ GLOBAL_LIST_INIT(personality_quirks, list(
 	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         span_greenannounce("⛑"), TRAIT_RPFOCUSED),
 	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, span_greenannounce("💀"), TRAIT_RPFOCUSED),
 	
-	PERSONALITY_TRAIT(TRAIT_PVEFOC,           span_danger("✌️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_PVPFOC,           span_danger("🔥"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_OOCAPP,           span_danger("☎️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_COMBATSWITCH,     span_danger("🌎"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_SHY,              span_danger("😔"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_PVEFOC,           span_danger("✌️"), ),
+	PERSONALITY_TRAIT(TRAIT_PVPFOC,           span_danger("🔥"), ),
+	PERSONALITY_TRAIT(TRAIT_OOCAPP,           span_danger("☎️"), ),
+	PERSONALITY_TRAIT(TRAIT_COMBATSWITCH,     span_danger("🌎"), ),
+	PERSONALITY_TRAIT(TRAIT_SHY,              span_danger("😔"), ),
 
 	PERSONALITY_TRAIT(TRAIT_ADV_ER,           span_binarysay("♞"), TRAIT_ADV_SEEKER),
 	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          span_binarysay("💑"), TRAIT_ADV_SEEKER),
@@ -61,11 +61,11 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	TRAIT_RPLIGHT = 				 span_greenannounce("They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach."),
 	TRAIT_RPSCRUBS = 				 span_greenannounce("They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs."),
 	TRAIT_RPDAYSOFOURLIVES =		 span_greenannounce("They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera."),
-	TRAIT_PVEFOC =							span_danger("This player prefers PVE scenarios. Don't force them into PVP")
-	TRAIT_PVPFOC =							span_danger("This player prefers PVP scenarios. ")
-	TRAIT_OOCAPP =							span_danger("This players prefers to be approached over L/OOC.")
-	TRAIT_COMBATSWITCH =					span_danger("This player is happy to do PVP or PVE gameplay")
-	TRAIT_SHY =								span_danger("They are a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?")
+	TRAIT_PVEFOC =							span_danger("This player prefers PVE scenarios. Don't force them into PVP"),
+	TRAIT_PVPFOC =							span_danger("This player prefers PVP scenarios. "),
+	TRAIT_OOCAPP =							span_danger("This players prefers to be approached over L/OOC."),
+	TRAIT_COMBATSWITCH =					span_danger("This player is happy to do PVP or PVE gameplay"),
+	TRAIT_SHY =								span_danger("They are a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?"),
 	TRAIT_ADV_ER = 					 	 span_binarysay("They look like the adventuring sort."),
 	TRAIT_ADV_LFG =					 	 span_binarysay("They look like they'd like to have someone adventure with them, maybe you should ask?"),
 	TRAIT_ADV_SOLO = 				 	 span_binarysay("They don't look like they'd want anyone to adventure with right now."),
