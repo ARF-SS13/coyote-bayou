@@ -252,7 +252,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -1402,7 +1401,6 @@
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -3
 	},
 /turf/open/floor/f13{
@@ -2031,9 +2029,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bpP" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
 /area/f13/caves)
 "bpQ" = (
@@ -2307,7 +2303,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -2744,7 +2739,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -7755,9 +7749,7 @@
 	},
 /area/f13/building)
 "dno" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
 /area/f13/caves)
@@ -8831,9 +8823,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/tunnel)
 "dXc" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
@@ -10538,7 +10528,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -12330,7 +12319,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -14837,7 +14825,6 @@
 "hRS" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/spacevine,
-/turf/open/floor/clockwork/reebe,
 /area/f13/caves)
 "hSt" = (
 /obj/structure/chair/bench,
@@ -14989,7 +14976,6 @@
 /area/f13/caves)
 "hWG" = (
 /obj/structure/chair/wood{
-	icon_state = "wooden_chair_settler";
 	pixel_y = -1
 	},
 /turf/open/floor/f13/wood{
@@ -15846,7 +15832,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -19105,7 +19090,6 @@
 "kzs" = (
 /obj/structure/chair/wood{
 	dir = 8;
-	icon_state = "wooden_chair_settler";
 	pixel_x = -8
 	},
 /turf/open/floor/f13/wood{
@@ -20085,7 +20069,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/spacevine{
@@ -20243,7 +20226,6 @@
 	},
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
 	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
@@ -22063,7 +22045,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/machinery/light{
@@ -22122,7 +22103,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -22484,7 +22464,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -22760,7 +22739,6 @@
 "mDH" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 4;
 	pixel_y = -2
 	},
@@ -22892,7 +22870,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -25205,7 +25182,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/water,
@@ -27381,9 +27357,7 @@
 "pvh" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/brushwood,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
 /area/f13/caves)
@@ -27573,7 +27547,6 @@
 "pAe" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 4;
 	pixel_y = -2
 	},
@@ -32101,7 +32074,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 4;
 	pixel_y = -2
 	},
@@ -32419,7 +32391,6 @@
 "srU" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 4;
 	pixel_y = -2
 	},
@@ -32676,7 +32647,6 @@
 /area/f13/building)
 "szZ" = (
 /obj/structure/stone_tile/slab,
-/turf/open/floor/clockwork/reebe,
 /area/f13/caves)
 "sAi" = (
 /obj/effect/decal/cleanable/glass,
@@ -34851,7 +34821,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -35316,7 +35285,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -35597,7 +35565,6 @@
 "ulg" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 4;
 	pixel_y = -2
 	},
@@ -36034,7 +36001,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -36873,7 +36839,6 @@
 "vcW" = (
 /obj/structure/chair/wood{
 	dir = 4;
-	icon_state = "wooden_chair_settler";
 	pixel_x = -8
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -38248,7 +38213,6 @@
 	name = "Cat-Slug Village"
 	},
 /obj/structure/stone_tile/slab,
-/turf/open/floor/clockwork/reebe,
 /area/f13/caves)
 "vYc" = (
 /obj/structure/table/wood/bar,
@@ -39895,7 +39859,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/machinery/shower{
@@ -41126,7 +41089,6 @@
 "xHb" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/glitter/blue,
-/turf/open/floor/clockwork/reebe,
 /area/f13/caves)
 "xHk" = (
 /obj/structure/simple_door/house,
