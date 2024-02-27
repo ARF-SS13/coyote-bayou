@@ -18666,6 +18666,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/trainstation)
+"kfu" = (
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = -16
+	},
+/obj/structure/fence/wooden{
+	pixel_x = 13;
+	density = 0;
+	layer = 4.26;
+	plane = -3;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "kfv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -30625,6 +30638,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"qRi" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/tribal)
 "qRl" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -32484,13 +32500,9 @@
 	},
 /area/f13/wasteland)
 "rRD" = (
-/obj/structure/fence/wooden{
-	icon_state = "end_wood";
-	pixel_x = 12;
-	density = 0
-	},
+/obj/structure/railing/wood/post,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/area/f13/building/tribal)
 "rRL" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -37031,13 +37043,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ujT" = (
+/obj/structure/railing/wood/post,
 /obj/structure/fence/wooden{
-	icon_state = "end_wood";
-	pixel_x = 12;
-	density = 0
+	pixel_x = -14;
+	density = 0;
+	layer = 4.27;
+	plane = -3
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "ukm" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -58014,8 +58028,8 @@ gcG
 gcG
 gcG
 gcG
-mBr
-rRD
+tPQ
+tPQ
 tPQ
 tPQ
 tPQ
@@ -58784,9 +58798,9 @@ tPQ
 tPQ
 tPQ
 tPQ
-ujT
 tPQ
-ujT
+tPQ
+tPQ
 tPQ
 tPQ
 tPQ
@@ -59292,9 +59306,9 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
+qRi
+qRi
+ujT
 tPQ
 tPQ
 tPQ
@@ -59548,10 +59562,10 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
-tPQ
+qRi
+qRi
+qRi
+rRD
 tPQ
 tPQ
 tPQ
@@ -59804,11 +59818,11 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
-tPQ
-tPQ
+kfu
+qRi
+qRi
+qRi
+rRD
 tPQ
 tPQ
 ucj
