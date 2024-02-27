@@ -883,6 +883,10 @@
 		return FALSE
 	if(istype(O, /obj/item/storage))
 		return FALSE
+	if(istype(O, obj/item/pen))
+		return FALSE
+	if(istype(O, /obj/item/toy/crayon/spraycan)) //Theres probably a better way to do this
+		return FALSE
 
 	if(O)
 		return TRUE
