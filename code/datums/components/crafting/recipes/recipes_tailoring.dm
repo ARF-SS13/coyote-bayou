@@ -326,101 +326,182 @@ datum/crafting_recipe/combathazardhood // sec biohood
 
 /datum/crafting_recipe/pa_t45b
 	name = "T-45b Power Armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t45b
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/ingot/iron = 1)
+	result = /obj/item/storage/box/armor/t45b
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/ingot/iron = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t45b
+	name = "T-45b PA"
+
+/obj/item/storage/box/armor/t45b/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45b(src)
+	new /obj/item/clothing/suit/armor/power_armor/t45b(src)
 
 /datum/crafting_recipe/pa_t45b_raider
 	name = "powered scrap suit"
-	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/advanced_crafting_components/alloys = 1,
-				/obj/item/ingot/iron = 1)
+	result = /obj/item/storage/box/armor/t45b_raider
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/ingot/iron = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t45b_raider
+	name = "T-45b Raider PA"
+
+/obj/item/storage/box/armor/t45b_raider/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider(src)
+	new /obj/item/clothing/suit/armor/power_armor/t45b/raider(src)
 
 /datum/crafting_recipe/pa_t45b_hotrod
 	name = "Refurbished T-45b Hotrod power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t45b/hotrod
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/advanced_crafting_components/lenses = 1,
-				/obj/item/advanced_crafting_components/flux,
-				/obj/item/ingot/plasma = 1)
+	result = /obj/item/storage/box/armor/t45b_hotrod
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/advanced_crafting_components/lenses = 2,
+				/obj/item/advanced_crafting_components/flux = 2,
+				/obj/item/ingot/plasma = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t45b_hotrod
+	name = "T-45b Hotrod PA"
+
+/obj/item/storage/box/armor/t45b_hotrod/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod(src)
+	new /obj/item/clothing/suit/armor/power_armor/t45b/hotrod(src)
 
 /datum/crafting_recipe/pa_t45d
 	name = "T-45d power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t45d
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/sheet/prewar = 10,
-				/obj/item/ingot/silver = 1)
+	result = /obj/item/storage/box/armor/t45d
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/ingot/silver = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t45d
+	name = "T-45d PA"
+
+/obj/item/storage/box/armor/t45d/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45d(src)
+	new /obj/item/clothing/suit/armor/power_armor/t45d(src)
 
 /datum/crafting_recipe/pa_t51b
 	name = "T-51b power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t51b
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/stack/sheet/prewar = 5,
-				/obj/item/ingot/gold = 1)
+	result = /obj/item/storage/box/armor/t51b
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/stack/sheet/prewar = 15,
+				/obj/item/ingot/gold = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t51b
+	name = "T-51b PA"
+
+/obj/item/storage/box/armor/t51b/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t51b(src)
+	new /obj/item/clothing/suit/armor/power_armor/t51b(src)
 
 /datum/crafting_recipe/pa_t51b_hardened
 	name = "Hardened T-51b power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t51b/hardened
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/stack/sheet/prewar = 15,
-				/obj/item/ingot/titanium = 1)
+	result = /obj/item/storage/box/armor/t51b_hardened
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/ingot/titanium = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/t51b_hardened
+	name = "Hardened T-51b PA"
+
+/obj/item/storage/box/armor/t51b_hardened/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/t51b(src)
+	new /obj/item/clothing/suit/armor/power_armor/t51b/hardened(src)
 
 /datum/crafting_recipe/pa_excavator
 	name = "excavator power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/excavator
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/stack/sheet/prewar = 15,
-				/obj/item/ingot/uranium = 1)
+	result = /obj/item/storage/box/armor/pa_excavator
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/metalparts = 40,
+				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/ingot/uranium = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/pa_excavator
+	name = "excavator power armor"
+
+/obj/item/storage/box/armor/pa_excavator/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/excavator(src)
+	new /obj/item/clothing/suit/armor/power_armor/excavator(src)
 
 /datum/crafting_recipe/pa_advanced
 	name = "advanced power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/advanced
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/goodparts = 10,
-				/obj/item/advanced_crafting_components/alloys = 1,
-				/obj/item/ingot/diamond = 1)
+	result = /obj/item/storage/box/armor/pa_advanced
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/goodparts = 25,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/ingot/diamond = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/obj/item/storage/box/armor/pa_advanced
+	name = "advanced power armor"
+
+/obj/item/storage/box/armor/pa_advanced/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/advanced(src)
+	new /obj/item/clothing/suit/armor/power_armor/advanced(src)
+
 /datum/crafting_recipe/pa_advanced_x02
 	name = "Enclave power armor"
-	result = /obj/item/clothing/suit/armor/power_armor/advanced/x02
-	reqs = list(/obj/item/stack/crafting/electronicparts = 15,
-				/obj/item/stack/crafting/goodparts = 10,
-				/obj/item/advanced_crafting_components/alloys = 1,
+	result = /obj/item/storage/box/armor/pa_advanced_x02
+	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
+				/obj/item/stack/cable_coil = 20,
+				/obj/item/stack/crafting/goodparts = 25,
+				/obj/item/advanced_crafting_components/alloys = 3,
 				/obj/item/ingot/mythril = 1)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/obj/item/storage/box/armor/pa_advanced_x02
+	name = "enclave power armor"
+
+/obj/item/storage/box/armor/pa_advanced_x02/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet(src)
+	new /obj/item/clothing/suit/armor/power_armor/advanced/x02(src)
 
 ///////////
 //HELMETS//
