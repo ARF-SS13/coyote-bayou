@@ -569,7 +569,6 @@
 
 /obj/machinery/smartfridge/bottlerack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 //god, don't just put the procs, at least put a return there!
 /obj/machinery/smartfridge/bottlerack/RefreshParts()
