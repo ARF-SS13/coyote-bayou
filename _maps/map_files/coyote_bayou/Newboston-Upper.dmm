@@ -967,10 +967,11 @@
 /area/f13/brotherhood)
 "cE" = (
 /obj/structure/campfire/wallfire{
-	pixel_y = 29;
 	color = "#645A55"
 	},
-/turf/open/floor/plasteel/cult,
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
+	},
 /area/f13/building/tribal)
 "cF" = (
 /obj/machinery/light/small{
@@ -1441,6 +1442,9 @@
 /obj/structure/necropolis_gate{
 	desc = "A massive stone gateway with a very heavy stone door.";
 	name = "village gate"
+	},
+/obj/structure/campfire/wallfire{
+	color = "#645A55"
 	},
 /turf/closed/indestructible/riveted/boss{
 	name = "ancient wall"
@@ -19169,7 +19173,6 @@
 "XP" = (
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/caves)
@@ -20833,20 +20836,20 @@ HU
 HU
 HU
 rz
-rz
-by
+cE
+HU
 Qi
 vx
-rz
-by
+cE
+HU
 Qi
 rz
-rz
-by
+cE
+HU
 Qi
 vx
-rz
-by
+cE
+HU
 Qi
 rz
 rz
@@ -28775,7 +28778,7 @@ Yj
 (35,1,1) = {"
 Yj
 dU
-cE
+pK
 JN
 Mo
 cx
