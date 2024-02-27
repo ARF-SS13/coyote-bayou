@@ -969,7 +969,6 @@
 /obj/structure/flora/branch_broken,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -1871,7 +1870,6 @@
 /obj/structure/flora/branch,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -5214,7 +5212,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -6916,7 +6913,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -7017,11 +7013,11 @@
 	},
 /area/f13/building)
 "dUS" = (
+/obj/effect/landmark/start/f13/wastelander/clubmanager,
 /obj/machinery/conveyor_switch{
 	pixel_y = 22;
 	id = "spawn2"
 	},
-/obj/effect/landmark/start/f13/banker,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "dUX" = (
@@ -8052,7 +8048,6 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -10280,7 +10275,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -11775,7 +11769,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -13335,7 +13328,6 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -15009,7 +15001,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -15405,7 +15396,6 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -15718,7 +15708,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -16249,7 +16238,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -20341,7 +20329,6 @@
 /obj/structure/flora/timber,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -22266,7 +22253,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -23504,7 +23490,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/building/tribal/cave)
@@ -23791,7 +23776,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -24897,7 +24881,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -25899,7 +25882,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/building/tribal/cave)
@@ -26341,11 +26323,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
-"ovU" = (
-/obj/structure/simple_door/interior,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "ovX" = (
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/f13{
@@ -26444,7 +26421,6 @@
 /obj/structure/flora/brushwood,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -26724,7 +26700,6 @@
 "oLs" = (
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -26957,7 +26932,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -27141,7 +27115,6 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -27250,7 +27223,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -30726,7 +30698,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -31885,7 +31856,6 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -35452,7 +35422,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -35772,7 +35741,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -35877,7 +35845,6 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -35933,7 +35900,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/building/tribal/cave)
@@ -36616,7 +36582,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -38581,7 +38546,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -38774,7 +38738,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -38861,7 +38824,6 @@
 /obj/structure/flora/brushwoodalt,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -39427,12 +39389,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/f13/building/trader)
-"vEt" = (
-/obj/structure/simple_door/interior,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "vEF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/overlay/junk/toilet{
@@ -43057,7 +43013,6 @@
 	},
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -43347,7 +43302,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
-	dir = 1;
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
@@ -68666,10 +68620,10 @@ mec
 yde
 ePD
 aMU
-nij
+wYh
 aMU
 cWt
-vEt
+pMq
 kwB
 dpM
 yde
@@ -69183,7 +69137,7 @@ aMU
 cWt
 cWt
 aMU
-ovU
+tvA
 iZF
 fSf
 yde
@@ -69306,7 +69260,7 @@ hRl
 (98,1,1) = {"
 uBn
 eYS
-dUS
+mke
 vRd
 hzj
 pll
@@ -71105,7 +71059,7 @@ blS
 (105,1,1) = {"
 hRl
 kmZ
-rEK
+dUS
 sQo
 iqu
 sbq

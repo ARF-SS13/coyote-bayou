@@ -5342,6 +5342,15 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
+"nL" = (
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "nM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5999,6 +6008,18 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
+"pv" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "py" = (
 /obj/machinery/light{
 	dir = 8
@@ -6151,6 +6172,7 @@
 /obj/item/seeds/agave,
 /obj/item/seeds/agave,
 /obj/item/seeds/punga,
+/obj/item/seeds/bee_balm,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "pM" = (
@@ -8007,10 +8029,10 @@
 /obj/structure/barricade/wooden/strong{
 	obj_integrity = 500
 	},
-/obj/structure/curtain{
+/obj/structure/decoration/rag,
+/obj/structure/curtain/directional/south{
 	color = "#450159"
 	},
-/obj/structure/decoration/rag,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -9186,6 +9208,22 @@
 /obj/machinery/vending/wardrobe/science_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"xN" = (
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/yeast,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/structure/closet/cabinet/anchored,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "xP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/secure/safe{
@@ -11025,14 +11063,17 @@
 	},
 /area/f13/bar/heaven)
 "CE" = (
-/obj/structure/flora/tree/jungle/small{
-	color = "#999999"
+/obj/structure/barricade/wooden/strong{
+	obj_integrity = 500
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+/obj/structure/decoration/rag,
+/obj/structure/curtain/directional/north{
+	color = "#450159"
 	},
-/area/f13/tribe)
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "CF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -12179,9 +12220,6 @@
 /obj/item/pestle{
 	pixel_x = 5;
 	pixel_y = -3
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -17432,19 +17470,9 @@
 	},
 /area/f13/building)
 "TE" = (
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/yeast,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/structure/closet/cabinet/anchored,
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
+/obj/structure/stone_tile/slab,
+/obj/structure/bonfire/dense/prelit/grill,
+/turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "TF" = (
 /turf/open/floor/carpet/arcade,
@@ -18004,11 +18032,14 @@
 	},
 /area/f13/building/tribal)
 "UT" = (
-/obj/structure/flora/twig3,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/civ/grass3{
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
 	},
 /area/f13/tribe)
@@ -19623,7 +19654,8 @@
 "YY" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 12;
+	plane = -3
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
@@ -24404,8 +24436,8 @@ rz
 rz
 rz
 rz
-Yj
-zy
+rz
+rz
 pl
 DH
 uf
@@ -24658,11 +24690,11 @@ rz
 wT
 CY
 Fy
+nL
+la
 la
 xd
 jv
-DH
-KG
 qT
 qT
 WC
@@ -24917,9 +24949,9 @@ HU
 HU
 HU
 HU
-uC
-NX
-IE
+HU
+HU
+CE
 Ar
 UG
 lU
@@ -25170,14 +25202,14 @@ Cy
 Jw
 rz
 Vg
+HU
 YU
 nz
 YU
+HU
 oY
 rz
-ee
-Mp
-Mp
+UT
 Mp
 Mp
 XC
@@ -25427,13 +25459,13 @@ Cy
 bb
 sA
 HU
+HU
 cx
-yJ
+TE
 rS
 HU
+HU
 Xg
-hy
-hy
 hy
 hy
 hy
@@ -25684,14 +25716,14 @@ Cy
 Jw
 rz
 Vg
+HU
 YU
 yi
 YU
+HU
 oY
 rz
-BK
-Ki
-Ki
+pv
 Ki
 Ki
 nq
@@ -25945,9 +25977,9 @@ HU
 HU
 HU
 HU
-uC
-fD
-ju
+HU
+HU
+CE
 fD
 GQ
 wA
@@ -26199,13 +26231,13 @@ bb
 rz
 Vy
 Ir
+Ir
 nk
+la
 KD
-TE
+xN
 rz
-qT
-qT
-CE
+DH
 KG
 uy
 Cy
@@ -26460,8 +26492,8 @@ rz
 rz
 rz
 rz
-UT
-IE
+rz
+rz
 UG
 Ar
 li
