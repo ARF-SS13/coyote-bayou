@@ -18709,6 +18709,16 @@
 	dir = 1
 	},
 /area/f13/building)
+"kgJ" = (
+/obj/structure/railing/wood/post,
+/obj/structure/fence/wooden{
+	pixel_x = -14;
+	density = 0;
+	layer = 4.27;
+	plane = -3
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/tribal)
 "kgN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy,
@@ -32484,13 +32494,9 @@
 	},
 /area/f13/wasteland)
 "rRD" = (
-/obj/structure/fence/wooden{
-	icon_state = "end_wood";
-	pixel_x = 12;
-	density = 0
-	},
+/obj/structure/railing/wood/post,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/area/f13/building/tribal)
 "rRL" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -33407,6 +33413,19 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood)
+"spw" = (
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = -16
+	},
+/obj/structure/fence/wooden{
+	pixel_x = 13;
+	density = 0;
+	layer = 4.26;
+	plane = -3;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "spz" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -37031,13 +37050,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ujT" = (
-/obj/structure/fence/wooden{
-	icon_state = "end_wood";
-	pixel_x = 12;
-	density = 0
-	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "ukm" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -58014,8 +58028,8 @@ gcG
 gcG
 gcG
 gcG
-mBr
-rRD
+tPQ
+tPQ
 tPQ
 tPQ
 tPQ
@@ -58784,9 +58798,9 @@ tPQ
 tPQ
 tPQ
 tPQ
-ujT
 tPQ
-ujT
+tPQ
+tPQ
 tPQ
 tPQ
 tPQ
@@ -59292,9 +59306,9 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
+ujT
+ujT
+kgJ
 tPQ
 tPQ
 tPQ
@@ -59548,10 +59562,10 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
-tPQ
+ujT
+ujT
+ujT
+rRD
 tPQ
 tPQ
 tPQ
@@ -59804,11 +59818,11 @@ gcG
 gcG
 gcG
 gcG
-tPQ
-tPQ
-tPQ
-tPQ
-tPQ
+spw
+ujT
+ujT
+ujT
+rRD
 tPQ
 tPQ
 ucj
