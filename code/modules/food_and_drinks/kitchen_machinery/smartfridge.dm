@@ -569,7 +569,6 @@
 
 /obj/machinery/smartfridge/bottlerack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 //god, don't just put the procs, at least put a return there!
 /obj/machinery/smartfridge/bottlerack/RefreshParts()
@@ -874,9 +873,8 @@
 	max_n_of_items = 20
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable
-	chance_initial_contents = list(
+	chance_initial_contents = list()
 
-)
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
 	new /obj/item/stack/sheet/metal(drop_location(), 15)
 
