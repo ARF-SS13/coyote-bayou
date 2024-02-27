@@ -493,6 +493,16 @@
 	message_param = "scowls at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/spark
+	key = "spark"
+	key_third_person = "sparks"
+	message = "emits a bunch of sparks!"
+	message_param = "emits a bunch of sparks because of %t!"
+
+/datum/emote/living/spark/run_emote(mob/user, params)
+	..()
+	do_fake_sparks(5,FALSE,user)
+
 /datum/emote/living/shake
 	key = "shake"
 	key_third_person = "shakes"
