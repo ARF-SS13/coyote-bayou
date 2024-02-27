@@ -873,9 +873,8 @@
 	max_n_of_items = 20
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable
-	chance_initial_contents = list(
+	chance_initial_contents = list()
 
-)
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
 	new /obj/item/stack/sheet/metal(drop_location(), 15)
 
