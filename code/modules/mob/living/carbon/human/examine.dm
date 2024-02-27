@@ -23,11 +23,11 @@ GLOBAL_LIST_INIT(personality_quirks, list(
 	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         span_greenannounce("⛑"), TRAIT_RPFOCUSED),
 	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, span_greenannounce("💀"), TRAIT_RPFOCUSED),
 	
-	PERSONALITY_TRAIT(TRAIT_PVEFOC,           span_danger("✌️"), ),
-	PERSONALITY_TRAIT(TRAIT_PVPFOC,           span_danger("🔥"), ),
-	PERSONALITY_TRAIT(TRAIT_OOCAPP,           span_danger("☎️"), ),
-	PERSONALITY_TRAIT(TRAIT_COMBATSWITCH,     span_danger("🌎"), ),
-	PERSONALITY_TRAIT(TRAIT_SHY,              span_danger("😔"), ),
+	PERSONALITY_TRAIT(TRAIT_PVEFOC,           span_danger("✌️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_PVPFOC,           span_danger("🔥"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_OOCAPP,           span_danger("☎️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER), //It needs all this, otherwise people wont see it
+	PERSONALITY_TRAIT(TRAIT_COMBATSWITCH,     span_danger("🌎"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_SHY,              span_danger("😔"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
 
 	PERSONALITY_TRAIT(TRAIT_ADV_ER,           span_binarysay("♞"), TRAIT_ADV_SEEKER),
 	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          span_binarysay("💑"), TRAIT_ADV_SEEKER),
