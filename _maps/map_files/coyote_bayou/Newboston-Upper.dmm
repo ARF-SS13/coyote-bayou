@@ -19623,7 +19623,8 @@
 "YY" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 12;
+	plane = -3
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
