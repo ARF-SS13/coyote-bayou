@@ -18666,6 +18666,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/trainstation)
+"kfu" = (
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = -16
+	},
+/obj/structure/fence/wooden{
+	pixel_x = 13;
+	density = 0;
+	layer = 4.26;
+	plane = -3;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "kfv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -18709,16 +18722,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"kgJ" = (
-/obj/structure/railing/wood/post,
-/obj/structure/fence/wooden{
-	pixel_x = -14;
-	density = 0;
-	layer = 4.27;
-	plane = -3
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/tribal)
 "kgN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy,
@@ -30635,6 +30638,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"qRi" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/tribal)
 "qRl" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -33413,19 +33419,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood)
-"spw" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = -16
-	},
-/obj/structure/fence/wooden{
-	pixel_x = 13;
-	density = 0;
-	layer = 4.26;
-	plane = -3;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "spz" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -37050,6 +37043,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ujT" = (
+/obj/structure/railing/wood/post,
+/obj/structure/fence/wooden{
+	pixel_x = -14;
+	density = 0;
+	layer = 4.27;
+	plane = -3
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/tribal)
 "ukm" = (
@@ -59306,9 +59306,9 @@ gcG
 gcG
 gcG
 gcG
+qRi
+qRi
 ujT
-ujT
-kgJ
 tPQ
 tPQ
 tPQ
@@ -59562,9 +59562,9 @@ gcG
 gcG
 gcG
 gcG
-ujT
-ujT
-ujT
+qRi
+qRi
+qRi
 rRD
 tPQ
 tPQ
@@ -59818,10 +59818,10 @@ gcG
 gcG
 gcG
 gcG
-spw
-ujT
-ujT
-ujT
+kfu
+qRi
+qRi
+qRi
 rRD
 tPQ
 tPQ
