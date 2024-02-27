@@ -885,7 +885,7 @@
 		return FALSE
 	if(istype(O, obj/item/pen))
 		return FALSE
-	if(istype(O, /obj/item/toy/crayon/spraycan)) //Theres probably a better way to do this
+	if(istype(O, /obj/item/toy/crayon/spraycan)) //Theres probably a better way to do this, I tried testing other ways, but this works
 		return FALSE
 
 	if(O)
