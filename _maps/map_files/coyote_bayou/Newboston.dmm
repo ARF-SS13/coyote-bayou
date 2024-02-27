@@ -3513,9 +3513,9 @@
 /area/f13/building)
 "bYl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/securedoor{
-	name = "Science";
-	req_access_txt = null
+/obj/machinery/door/airlock/science/glass{
+	req_one_access_txt = "136";
+	name = "RnD Lab"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
@@ -33628,9 +33628,9 @@
 	},
 /area/f13/building/workshop/nash)
 "swF" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Science";
-	req_access_txt = null
+/obj/machinery/door/airlock/science/glass{
+	req_one_access_txt = "136";
+	name = "Science"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
