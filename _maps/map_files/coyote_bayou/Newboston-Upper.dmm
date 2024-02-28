@@ -803,10 +803,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "cg" = (
-/obj/machinery/smartfridge/drying_rack,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "ch" = (
@@ -1537,10 +1538,9 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "dP" = (
-/obj/item/stack/rods/twentyfive,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/cloth/ten,
-/obj/structure/table/wood/settler,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "dQ" = (
@@ -2322,13 +2322,15 @@
 	},
 /area/f13/tribe)
 "fJ" = (
-/obj/structure/rack,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "fK" = (
@@ -4322,6 +4324,9 @@
 	pixel_y = 12
 	},
 /obj/structure/rack,
+/obj/item/stack/rods/twentyfive,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/cloth/ten,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "kJ" = (
@@ -6924,6 +6929,10 @@
 "rg" = (
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland/city/newboston/house/cabin_seven)
+"rh" = (
+/obj/structure/stone_tile/surrounding_tile,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "ri" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/doublesheetrd,
@@ -8469,15 +8478,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uX" = (
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/structure/rack,
+/obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uY" = (
@@ -17099,6 +17100,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"QC" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "QD" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -19390,15 +19397,8 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "Ww" = (
-/obj/structure/decoration/rag,
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 8;
-	density = 0
-	},
-/obj/structure/decoration/rag{
-	icon_state = "skin";
-	pixel_y = -2
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -31397,7 +31397,7 @@ Yj
 GU
 mX
 Pj
-Qm
+Mo
 Pj
 ZV
 an
@@ -31653,11 +31653,11 @@ Yj
 Yj
 GU
 mX
-fJ
+Qm
 pK
-pK
+dP
 FT
-pK
+QC
 pK
 Ou
 qT
@@ -31916,7 +31916,7 @@ Jf
 Fa
 vX
 pK
-Ww
+Xc
 NX
 kt
 li
@@ -32167,7 +32167,7 @@ Yj
 Yj
 GU
 mX
-fT
+fJ
 pK
 Jf
 Jh
@@ -32938,7 +32938,7 @@ Yj
 Yj
 GU
 mX
-dP
+fT
 pK
 Jf
 pU
@@ -33452,11 +33452,11 @@ Yj
 Yj
 GU
 mX
-uX
+Qm
 pK
-pK
+Ww
 sp
-pK
+rh
 pK
 Xc
 Xy
@@ -33709,11 +33709,11 @@ Yj
 Yj
 GU
 mX
-Pj
-Qm
-mH
-cg
+uX
 DZ
+Pj
+cg
+mH
 It
 ik
 qT
@@ -33965,7 +33965,7 @@ Yj
 (52,1,1) = {"
 Yj
 GU
-rz
+mX
 rz
 rz
 rz
