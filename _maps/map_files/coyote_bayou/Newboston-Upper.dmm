@@ -244,7 +244,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "aH" = (
@@ -263,14 +264,20 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "aJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "aL" = (
@@ -732,7 +739,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "bW" = (
@@ -845,7 +853,10 @@
 	layer = 3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "ck" = (
@@ -954,7 +965,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "cp" = (
@@ -1168,7 +1182,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "cO" = (
@@ -1236,7 +1253,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "cV" = (
@@ -1307,7 +1327,10 @@
 "dg" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "dh" = (
@@ -1365,7 +1388,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "dp" = (
@@ -1471,7 +1495,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "dG" = (
@@ -1489,7 +1516,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "dI" = (
@@ -1504,7 +1534,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "dJ" = (
@@ -1778,7 +1811,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "eq" = (
@@ -1865,7 +1901,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "eA" = (
@@ -2018,7 +2057,10 @@
 	pixel_x = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "eZ" = (
@@ -2224,7 +2266,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "fy" = (
@@ -2245,7 +2288,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "fz" = (
@@ -2259,7 +2305,10 @@
 "fA" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "fB" = (
@@ -2276,7 +2325,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "fF" = (
@@ -2291,7 +2343,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "fH" = (
@@ -2316,13 +2371,20 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "fJ" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "fK" = (
@@ -2360,7 +2422,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "fQ" = (
@@ -2501,7 +2566,10 @@
 	},
 /obj/item/storage/belt/utility/gardener,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ga" = (
@@ -2718,7 +2786,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "gH" = (
@@ -2785,7 +2854,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "gP" = (
@@ -2945,7 +3015,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "hg" = (
@@ -2996,7 +3069,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "hm" = (
@@ -3080,7 +3156,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "hu" = (
@@ -3104,7 +3183,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "hx" = (
@@ -3185,7 +3267,10 @@
 	dir = 10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "hN" = (
@@ -3221,7 +3306,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "hS" = (
@@ -3236,7 +3322,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "hT" = (
@@ -3296,7 +3383,10 @@
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ie" = (
@@ -3315,7 +3405,10 @@
 	pixel_x = 16
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ig" = (
@@ -3365,7 +3458,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "iq" = (
@@ -3407,7 +3501,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "iu" = (
@@ -3440,7 +3535,10 @@
 	plane = -3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "iz" = (
@@ -3533,7 +3631,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "iK" = (
@@ -3798,7 +3899,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "jv" = (
@@ -3929,7 +4033,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "jG" = (
@@ -4008,7 +4113,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "jQ" = (
@@ -4132,7 +4240,10 @@
 	pixel_x = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "kk" = (
@@ -4164,7 +4275,10 @@
 	pixel_y = 12
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "kn" = (
@@ -4199,7 +4313,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "kp" = (
@@ -4216,7 +4333,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ku" = (
@@ -4331,7 +4451,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "kL" = (
@@ -4548,7 +4671,10 @@
 	dir = 6
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "lj" = (
@@ -4594,7 +4720,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "lr" = (
@@ -4641,7 +4768,10 @@
 "ly" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "lz" = (
@@ -4744,7 +4874,10 @@
 	dir = 6
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "lN" = (
@@ -4770,7 +4903,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "lO" = (
@@ -4799,7 +4935,10 @@
 	dir = 6
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "lW" = (
@@ -4867,7 +5006,10 @@
 "md" = (
 /obj/structure/easel,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "me" = (
@@ -5002,7 +5144,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "mt" = (
@@ -5229,7 +5374,10 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "mR" = (
@@ -5307,7 +5455,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "na" = (
@@ -5402,9 +5553,7 @@
 	},
 /area/f13/building/tribal)
 "nl" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_y = 13
-	},
+/obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5;
 	color = "#777777"
@@ -5415,7 +5564,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "nm" = (
@@ -5484,7 +5634,10 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "nu" = (
@@ -5530,7 +5683,10 @@
 "nA" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "nB" = (
@@ -5555,7 +5711,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "nD" = (
@@ -5569,7 +5728,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "nE" = (
@@ -5700,7 +5860,10 @@
 /obj/structure/flora/tallgrass3,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "nW" = (
@@ -5981,7 +6144,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "oH" = (
@@ -6013,7 +6179,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "oK" = (
@@ -6030,7 +6197,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "oM" = (
@@ -6179,7 +6349,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "pi" = (
@@ -6197,7 +6368,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/caves)
 "pk" = (
@@ -6208,7 +6382,10 @@
 "pl" = (
 /obj/structure/flora/tallgrass3,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "pm" = (
@@ -6429,7 +6606,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "pP" = (
@@ -6491,7 +6669,10 @@
 	},
 /obj/effect/turf_decal/weather/dirtcorner,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "pZ" = (
@@ -6527,14 +6708,20 @@
 	},
 /obj/effect/turf_decal/weather/dirtcorner,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "qe" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "qf" = (
@@ -6576,7 +6763,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "qk" = (
@@ -6756,7 +6944,10 @@
 	},
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "qL" = (
@@ -6816,7 +7007,10 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "qT" = (
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "qU" = (
@@ -7091,7 +7285,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "rJ" = (
@@ -7271,7 +7468,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "sf" = (
@@ -7418,7 +7618,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "sA" = (
@@ -7447,7 +7648,10 @@
 	pixel_y = 12
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/caves)
 "sC" = (
@@ -7653,7 +7857,10 @@
 	dir = 9
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ta" = (
@@ -7781,7 +7988,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "tm" = (
@@ -7803,7 +8013,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/caves)
 "tn" = (
@@ -7841,7 +8054,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "tt" = (
@@ -7927,7 +8143,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "tD" = (
@@ -7970,7 +8187,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "tL" = (
@@ -7982,7 +8200,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "tN" = (
@@ -8060,7 +8281,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "tY" = (
@@ -8096,7 +8320,10 @@
 "uf" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "ug" = (
@@ -8222,7 +8449,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "uu" = (
@@ -8282,14 +8512,20 @@
 	name = "Egg Basket"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "uy" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "uz" = (
@@ -8464,15 +8700,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uX" = (
-/obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uY" = (
@@ -8787,7 +9015,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "vT" = (
@@ -8804,7 +9033,10 @@
 	name = "Eats-the-Hay"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "vV" = (
@@ -8929,7 +9161,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "wn" = (
@@ -8950,7 +9185,10 @@
 	pixel_x = 16
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "wp" = (
@@ -9047,7 +9285,10 @@
 	dir = 10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "wB" = (
@@ -9121,7 +9362,10 @@
 	},
 /obj/structure/flora/tallgrass3,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "wL" = (
@@ -9184,7 +9428,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "wV" = (
@@ -9387,7 +9634,10 @@
 	plane = -3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "xr" = (
@@ -9695,7 +9945,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "yo" = (
@@ -9709,7 +9962,10 @@
 	color = "#999999"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "yq" = (
@@ -9953,7 +10209,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zb" = (
@@ -9992,7 +10251,10 @@
 "zh" = (
 /obj/structure/flora/stump,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zj" = (
@@ -10022,7 +10284,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "zn" = (
@@ -10048,7 +10311,10 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zs" = (
@@ -10070,7 +10336,10 @@
 	},
 /obj/effect/turf_decal/weather/dirtcorner,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zw" = (
@@ -10098,7 +10367,10 @@
 "zy" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zz" = (
@@ -10286,7 +10558,10 @@
 	},
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "zT" = (
@@ -10386,7 +10661,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ae" = (
@@ -10442,7 +10720,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ak" = (
@@ -10481,7 +10762,10 @@
 	layer = 3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "An" = (
@@ -10512,7 +10796,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "At" = (
@@ -10544,7 +10831,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Aw" = (
@@ -10575,6 +10865,10 @@
 	color = "#779999"
 	},
 /area/f13/bar/heaven)
+"AB" = (
+/obj/structure/stone_tile/surrounding_tile,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "AC" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -10683,7 +10977,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "AP" = (
@@ -10713,7 +11008,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "AT" = (
@@ -10804,7 +11100,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Bd" = (
@@ -10860,7 +11159,10 @@
 	plane = -3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Bk" = (
@@ -10868,7 +11170,10 @@
 	dir = 10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Bl" = (
@@ -11176,7 +11481,10 @@
 "Ca" = (
 /obj/structure/flora/twig2,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Cc" = (
@@ -11300,7 +11608,10 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Cq" = (
@@ -11357,7 +11668,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Cx" = (
@@ -11657,7 +11971,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Dk" = (
@@ -11811,7 +12128,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "DA" = (
@@ -11834,7 +12154,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "DF" = (
@@ -11856,7 +12179,10 @@
 "DH" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "DI" = (
@@ -11884,7 +12210,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "DN" = (
@@ -12211,7 +12540,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ey" = (
@@ -12282,7 +12614,10 @@
 	dir = 10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "EG" = (
@@ -12376,7 +12711,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "EX" = (
@@ -12408,7 +12746,10 @@
 	color = "#413527"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Fa" = (
@@ -12465,7 +12806,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Fh" = (
@@ -12520,7 +12864,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "Fo" = (
@@ -12564,7 +12909,10 @@
 "Fx" = (
 /obj/structure/flora/twig3,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Fy" = (
@@ -12608,7 +12956,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "FE" = (
@@ -12625,7 +12976,10 @@
 	color = "#999999"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "FG" = (
@@ -12820,7 +13174,10 @@
 	layer = 3
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Gg" = (
@@ -12974,7 +13331,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "GB" = (
@@ -13061,7 +13421,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "GN" = (
@@ -13098,7 +13459,10 @@
 	pixel_x = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "GQ" = (
@@ -13107,7 +13471,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "GR" = (
@@ -13192,7 +13559,10 @@
 	pixel_y = 12
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Hc" = (
@@ -13208,7 +13578,10 @@
 /obj/structure/flora/ausbushes/leafybush,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "He" = (
@@ -13252,7 +13625,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Hj" = (
@@ -13353,7 +13729,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Hw" = (
@@ -13456,7 +13835,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "HM" = (
@@ -13482,7 +13864,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "HQ" = (
@@ -13594,7 +13979,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ib" = (
@@ -13608,7 +13996,10 @@
 /obj/effect/turf_decal/weather/springflowers,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ie" = (
@@ -13667,7 +14058,10 @@
 	pixel_x = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ij" = (
@@ -13827,7 +14221,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "IC" = (
@@ -13852,7 +14249,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "IF" = (
@@ -14109,7 +14509,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Jn" = (
@@ -14118,7 +14521,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Jp" = (
@@ -14158,7 +14564,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Js" = (
@@ -14341,7 +14750,10 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "JL" = (
@@ -14395,7 +14807,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "JV" = (
@@ -14544,7 +14957,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Kp" = (
@@ -14723,13 +15139,19 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "KG" = (
 /obj/effect/turf_decal/weather/springflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "KH" = (
@@ -14784,7 +15206,10 @@
 "KP" = (
 /obj/structure/chair/stool/retro/black,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "KQ" = (
@@ -15182,7 +15607,10 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Mb" = (
@@ -15335,7 +15763,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "My" = (
@@ -15580,7 +16009,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "MZ" = (
@@ -15772,7 +16204,10 @@
 	},
 /obj/effect/turf_decal/weather/dirtcorner,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "No" = (
@@ -15805,7 +16240,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ns" = (
@@ -15858,7 +16296,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Ny" = (
@@ -15981,7 +16422,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "NR" = (
@@ -16044,7 +16486,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "NY" = (
@@ -16109,7 +16554,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "Oi" = (
@@ -16253,7 +16699,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "OC" = (
@@ -16302,6 +16751,12 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland/city/newboston/house/cabin_three)
+"OK" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "OL" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -16330,7 +16785,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "OO" = (
@@ -16450,7 +16908,10 @@
 	dir = 9
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Pb" = (
@@ -16469,7 +16930,10 @@
 	},
 /obj/structure/flora/wild_plant/flower/pink_three,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Pd" = (
@@ -16555,7 +17019,10 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Pp" = (
@@ -16573,7 +17040,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ps" = (
@@ -16920,7 +17390,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "Qb" = (
@@ -17019,7 +17490,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Qs" = (
@@ -17039,7 +17513,10 @@
 	dir = 10
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Qw" = (
@@ -17215,7 +17692,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ra" = (
@@ -17283,7 +17763,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Rj" = (
@@ -17316,7 +17799,10 @@
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Rn" = (
@@ -17367,7 +17853,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Rr" = (
@@ -17457,7 +17946,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "RI" = (
@@ -17466,7 +17958,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "RJ" = (
@@ -17565,7 +18060,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "RV" = (
@@ -17659,7 +18155,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Sd" = (
@@ -17715,7 +18214,10 @@
 	dir = 9
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Sm" = (
@@ -17738,7 +18240,10 @@
 	dir = 9
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Sq" = (
@@ -17777,7 +18282,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "St" = (
@@ -17947,7 +18453,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "SR" = (
@@ -17987,7 +18496,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "SW" = (
@@ -18051,10 +18563,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"Tg" = (
-/obj/structure/stone_tile/surrounding_tile,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -18483,7 +18991,10 @@
 "Ug" = (
 /obj/structure/stone_tile/center,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Uh" = (
@@ -18537,7 +19048,10 @@
 "Us" = (
 /obj/structure/flora/twig4,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Ut" = (
@@ -18626,7 +19140,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "UH" = (
@@ -18685,7 +19202,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "UQ" = (
@@ -18708,7 +19228,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "UR" = (
@@ -18991,7 +19514,10 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Vy" = (
@@ -19008,7 +19534,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "VA" = (
@@ -19087,7 +19614,10 @@
 	pixel_y = 12
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "VK" = (
@@ -19098,7 +19628,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "VM" = (
@@ -19234,7 +19765,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Wd" = (
@@ -19452,7 +19986,10 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "WD" = (
@@ -19591,7 +20128,10 @@
 	name = "milk bucket"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "WW" = (
@@ -19687,7 +20227,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "Xi" = (
@@ -19804,7 +20345,10 @@
 "Xy" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "Xz" = (
@@ -19815,7 +20359,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "XA" = (
@@ -19944,7 +20489,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "XP" = (
@@ -20032,9 +20580,7 @@
 	},
 /area/f13/building)
 "Ya" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_y = 13
-	},
+/obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9;
 	color = "#777777"
@@ -20046,7 +20592,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "Yb" = (
@@ -20113,10 +20660,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"Ym" = (
-/obj/machinery/smartfridge/drying_rack,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "Yn" = (
 /obj/structure/table/wood,
 /obj/item/candle/infinite{
@@ -20278,7 +20821,10 @@
 	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "YC" = (
@@ -20395,7 +20941,8 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
-	name = "cobblestone"
+	name = "cobblestone";
+	footstep = "road"
 	},
 /area/f13/tribe)
 "YS" = (
@@ -20442,14 +20989,20 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "YX" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/tribe)
 "YY" = (
@@ -20540,7 +21093,10 @@
 	randomize_xy = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777"
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
 	},
 /area/f13/building/tribal)
 "Zl" = (
@@ -31645,7 +32201,7 @@ Qm
 pK
 dP
 FT
-fJ
+OK
 pK
 Ou
 qT
@@ -32155,7 +32711,7 @@ Yj
 Yj
 GU
 mX
-uX
+fJ
 pK
 Jf
 Jh
@@ -33444,7 +34000,7 @@ Qm
 pK
 Ww
 sp
-Tg
+AB
 pK
 Xc
 Xy
@@ -33697,7 +34253,7 @@ Yj
 Yj
 GU
 mX
-Ym
+uX
 DZ
 Pj
 cg
