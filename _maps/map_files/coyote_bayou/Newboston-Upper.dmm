@@ -431,7 +431,7 @@
 	dir = 5;
 	color = "#413527"
 	},
-/turf/open/indestructible/ground/outside/water,
+/turf/open/water,
 /area/f13/building/tribal)
 "bf" = (
 /turf/closed/wall/f13/wood/interior,
@@ -798,7 +798,7 @@
 	dir = 4;
 	color = "#413527"
 	},
-/turf/open/indestructible/ground/outside/water,
+/turf/open/water,
 /area/f13/building/tribal)
 "cf" = (
 /obj/machinery/light/small{
@@ -1020,9 +1020,7 @@
 	color = "#695E56"
 	},
 /obj/structure/pondlily_big,
-/turf/open/indestructible/ground/outside/water{
-	name = "spring water"
-	},
+/turf/open/water,
 /area/f13/building/tribal/cave)
 "cu" = (
 /obj/item/storage/box/cups,
@@ -2191,7 +2189,7 @@
 	pixel_y = 19
 	},
 /obj/structure/pondlily_big,
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -2522,7 +2520,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "fX" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -2612,7 +2610,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "gj" = (
 /obj/structure/spacevine,
 /turf/closed/mineral/random/low_chance,
@@ -4809,7 +4807,7 @@
 	pixel_y = 12
 	},
 /obj/structure/chair/bench,
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -7321,7 +7319,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "rS" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/surrounding_tile{
@@ -7788,25 +7786,23 @@
 /obj/structure/flora/ausbushes/ppflowers{
 	randomize_xy = 0
 	},
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
 "sV" = (
-/obj/structure/necropolis_gate{
-	desc = "A massive stone gateway with a very heavy stone door.";
-	name = "village gate";
-	icon_state = "gate_dais";
-	pixel_y = -9;
-	layer = 1
+/obj/structure/campfire/wallfire{
+	color = "#645A55";
+	plane = -3
 	},
 /obj/structure/necropolis_gate{
 	desc = "A massive stone gateway with a very heavy stone door.";
 	name = "village gate";
-	icon_state = "gate_blocker";
-	pixel_y = -10
+	mouse_opacity = 0
 	},
-/turf/open/floor/plasteel/cult,
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
+	},
 /area/f13/building/tribal)
 "sW" = (
 /obj/effect/decal/cleanable/generic,
@@ -8195,7 +8191,7 @@
 /obj/structure/flora/ausbushes/ppflowers{
 	randomize_xy = 0
 	},
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -9200,7 +9196,7 @@
 /area/f13/bar/heaven)
 "wt" = (
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -9649,7 +9645,7 @@
 	dir = 6
 	},
 /obj/structure/pondlily_small,
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -10609,7 +10605,7 @@
 	pixel_y = 7;
 	randomize_xy = 0
 	},
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -11892,7 +11888,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "Dd" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -11924,9 +11920,7 @@
 	color = "#695E56"
 	},
 /obj/structure/pondlily_small,
-/turf/open/indestructible/ground/outside/water{
-	name = "spring water"
-	},
+/turf/open/water,
 /area/f13/building/tribal/cave)
 "Di" = (
 /obj/effect/turf_decal/siding/wood,
@@ -12039,7 +12033,7 @@
 "Dt" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/pondlily_small,
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -12311,7 +12305,7 @@
 	pixel_y = 3;
 	pixel_x = 2
 	},
-/turf/open/indestructible/ground/outside/water{
+/turf/open/water{
 	name = "spring water"
 	},
 /area/f13/building/tribal)
@@ -14572,7 +14566,8 @@
 /area/f13/tribe)
 "Jy" = (
 /obj/structure/stone_tile/block{
-	pixel_x = 17
+	pixel_x = 17;
+	plane = -3
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -15291,7 +15286,7 @@
 	dir = 8;
 	light_color = "#f4e3b0"
 	},
-/turf/open/indestructible/ground/outside/water,
+/turf/open/water,
 /area/f13/building/tribal)
 "Lj" = (
 /obj/structure/table/wood,
@@ -17675,9 +17670,7 @@
 	pixel_y = 3;
 	pixel_x = 2
 	},
-/turf/open/indestructible/ground/outside/water{
-	name = "spring water"
-	},
+/turf/open/water,
 /area/f13/building/tribal/cave)
 "Rd" = (
 /obj/item/storage/box/gloves,
@@ -17946,7 +17939,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "RL" = (
 /obj/structure/table/plasmaglass,
 /obj/effect/decal/cleanable/dirt,
@@ -18386,7 +18379,7 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "spring water"
 	},
-/area/f13/caves)
+/area/f13/tribe)
 "SL" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/f13{
@@ -19289,7 +19282,8 @@
 /area/f13/bar/heaven)
 "Vb" = (
 /obj/structure/stone_tile/block{
-	pixel_x = -17
+	pixel_x = -17;
+	plane = -3
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -30098,8 +30092,8 @@ Yj
 "}
 (35,1,1) = {"
 Yj
-cE
 sV
+pK
 JN
 Mo
 cx
