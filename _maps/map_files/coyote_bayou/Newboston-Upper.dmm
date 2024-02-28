@@ -1051,9 +1051,7 @@
 /obj/structure/spacevine{
 	opacity = 1
 	},
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "cA" = (
 /obj/structure/disposalpipe/segment,
@@ -2322,15 +2320,9 @@
 	},
 /area/f13/tribe)
 "fJ" = (
-/obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "fK" = (
@@ -4569,9 +4561,7 @@
 /area/f13/wasteland)
 "lk" = (
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "ll" = (
 /obj/structure/window/fulltile/wood,
@@ -6929,10 +6919,6 @@
 "rg" = (
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland/city/newboston/house/cabin_seven)
-"rh" = (
-/obj/structure/stone_tile/surrounding_tile,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "ri" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/doublesheetrd,
@@ -8478,7 +8464,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uX" = (
-/obj/machinery/smartfridge/drying_rack,
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uY" = (
@@ -9079,9 +9073,7 @@
 	pixel_y = 12
 	},
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "wF" = (
 /obj/machinery/light/small{
@@ -15627,9 +15619,7 @@
 	},
 /obj/item/reagent_containers/rag/towel/random,
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "Nc" = (
 /obj/structure/fence/wooden{
@@ -16740,9 +16730,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "PE" = (
 /obj/structure/railing{
@@ -17100,12 +17088,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"QC" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "QD" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -18069,6 +18051,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Tg" = (
+/obj/structure/stone_tile/surrounding_tile,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -19551,9 +19537,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/plasteel/f13/stone/rugged{
-	icon = s
-	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "WP" = (
 /obj/structure/bookshelf{
@@ -20129,6 +20113,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"Ym" = (
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "Yn" = (
 /obj/structure/table/wood,
 /obj/item/candle/infinite{
@@ -31657,7 +31645,7 @@ Qm
 pK
 dP
 FT
-QC
+fJ
 pK
 Ou
 qT
@@ -32167,7 +32155,7 @@ Yj
 Yj
 GU
 mX
-fJ
+uX
 pK
 Jf
 Jh
@@ -33456,7 +33444,7 @@ Qm
 pK
 Ww
 sp
-rh
+Tg
 pK
 Xc
 Xy
@@ -33709,7 +33697,7 @@ Yj
 Yj
 GU
 mX
-uX
+Ym
 DZ
 Pj
 cg
