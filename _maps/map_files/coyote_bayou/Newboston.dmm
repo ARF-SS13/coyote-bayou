@@ -2144,6 +2144,16 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/city)
+"bjk" = (
+/obj/machinery/vending/bigredvend{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -2
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland)
 "bjl" = (
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr25";
@@ -2564,12 +2574,17 @@
 	},
 /area/f13/wasteland)
 "bxY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+/obj/machinery/vending/cola/space_up{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -11
 	},
+/obj/machinery/vending/cola/starkist{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "byb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3795,10 +3810,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston/outdoors)
 "ciG" = (
-/obj/machinery/vending/nukacolavend,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
+/obj/machinery/vending/cola{
+	pixel_y = 19;
+	density = 0
 	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "cji" = (
 /obj/structure/car/rubbish2,
@@ -4520,9 +4536,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
 "cBE" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/machinery/mineral/wasteland_vendor/special{
+	pixel_y = 19;
+	density = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "cBK" = (
@@ -5820,10 +5839,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "doO" = (
-/obj/structure/closet/athletic_mixed,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/bigredvend{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -2
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dpg" = (
@@ -10618,7 +10638,11 @@
 	},
 /area/f13/building)
 "fTK" = (
-/obj/machinery/vending/nukacolavend,
+/obj/machinery/vending/bigredvend{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -2
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "fTP" = (
@@ -13129,6 +13153,21 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"hpp" = (
+/obj/machinery/vending/cola/space_up{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -11
+	},
+/obj/machinery/vending/cola/starkist{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland)
 "hps" = (
 /obj/structure/stone_tile/surrounding_tile{
 	pixel_y = 16
@@ -14181,9 +14220,12 @@
 	},
 /area/f13/wasteland)
 "hSc" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/machinery/mineral/wasteland_vendor/medical{
+	pixel_y = 19;
+	density = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "hSh" = (
@@ -16796,9 +16838,12 @@
 	},
 /area/f13/wasteland)
 "jkV" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/machinery/mineral/wasteland_vendor/weapons{
+	pixel_y = 19;
+	density = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "jlc" = (
@@ -18415,6 +18460,16 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building)
+"keN" = (
+/obj/machinery/vending/bigredvend{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -2
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland)
 "kfa" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -18430,6 +18485,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/trainstation)
+"kfu" = (
+/obj/machinery/vending/bigredvend{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -2
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "kfv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19023,6 +19088,21 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"kxv" = (
+/obj/machinery/vending/cola/space_up{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -11
+	},
+/obj/machinery/vending/cola/starkist{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "kxw" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -29689,15 +29769,15 @@
 	},
 /area/f13/wasteland)
 "qEK" = (
-/obj/machinery/vending/bigredvend{
-	pixel_y = 22;
-	density = 0;
-	pixel_x = 15
-	},
 /obj/machinery/vending/dinnerware{
 	pixel_y = 23;
 	pixel_x = -7;
 	density = 0
+	},
+/obj/machinery/vending/snack{
+	density = 0;
+	pixel_y = 22;
+	pixel_x = 16
 	},
 /turf/open/floor/wood_common,
 /area/f13/city)
@@ -30568,12 +30648,14 @@
 	},
 /area/f13/wasteland)
 "rgt" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "storewindowleft"
+/obj/machinery/vending/cola{
+	pixel_y = 19;
+	density = 0
 	},
-/turf/open/floor/f13,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland)
 "rgF" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -30587,6 +30669,15 @@
 	opacity = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"rgU" = (
+/obj/machinery/vending/cola{
+	pixel_y = 19;
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
 /area/f13/wasteland)
 "rhb" = (
 /obj/structure/bonfire,
@@ -33336,6 +33427,19 @@
 	color = "#999999"
 	},
 /area/f13/tunnel)
+"sCI" = (
+/obj/machinery/vending/cola/space_up{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -11
+	},
+/obj/machinery/vending/cola/starkist{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "sCW" = (
 /obj/structure/debris/v4,
 /obj/structure/wreck/trash/three_barrels,
@@ -35907,13 +36011,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tTG" = (
-/obj/machinery/vending/snack{
-	density = 0;
-	pixel_y = 22;
-	pixel_x = 6
+/obj/machinery/vending/cola{
+	pixel_y = 19;
+	density = 0
 	},
-/turf/open/floor/wood_common,
-/area/f13/city)
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "tTN" = (
 /obj/effect/decal/cleanable/blood/gibs/human,
 /turf/open/floor/f13{
@@ -36808,6 +36913,21 @@
 "uyV" = (
 /obj/structure/fence{
 	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland)
+"uyY" = (
+/obj/machinery/vending/cola/space_up{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = -11
+	},
+/obj/machinery/vending/cola/starkist{
+	pixel_y = 19;
+	density = 0;
+	pixel_x = 8
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -39473,12 +39593,11 @@
 	},
 /area/f13/building)
 "wbi" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "storewindowright"
+/obj/machinery/vending/cola{
+	pixel_y = 19;
+	density = 0
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "wbm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -52948,7 +53067,7 @@ awO
 opN
 rNp
 yde
-nJd
+ksO
 aZE
 uWd
 iir
@@ -53205,7 +53324,7 @@ upt
 cut
 qla
 upt
-lWa
+rgt
 aZE
 top
 iir
@@ -53239,7 +53358,7 @@ avQ
 kyE
 uWd
 uyV
-vzy
+ciG
 lWa
 aZE
 uWd
@@ -53462,7 +53581,7 @@ utR
 lez
 mpz
 yde
-lWa
+hpp
 aZE
 uWd
 oXA
@@ -53496,7 +53615,7 @@ tLk
 kyE
 uWd
 uyV
-vzy
+bxY
 lWa
 aZE
 uWd
@@ -53719,7 +53838,7 @@ iAw
 lez
 lez
 yde
-ksO
+keN
 aZE
 uWd
 iir
@@ -53753,7 +53872,7 @@ llI
 avQ
 gPf
 uyV
-vzy
+fTK
 lWa
 apj
 uWd
@@ -63166,7 +63285,7 @@ fwG
 vWL
 dUZ
 fwG
-hKA
+rgU
 fuV
 aZE
 uWd
@@ -63423,7 +63542,7 @@ cjV
 dGj
 vMp
 fob
-hKA
+uyY
 fuV
 aZE
 uWd
@@ -63680,7 +63799,7 @@ tQn
 dGj
 sAR
 vNf
-mec
+bjk
 fuV
 aZE
 uWd
@@ -65870,7 +65989,7 @@ iaL
 ceV
 kRO
 upt
-fTK
+ciG
 ank
 brd
 hRl
@@ -66127,7 +66246,7 @@ btX
 kXc
 lFl
 cdu
-npu
+bxY
 xVh
 pNP
 hRl
@@ -66384,7 +66503,7 @@ yde
 yde
 yde
 upt
-npu
+fTK
 ank
 ank
 hRl
@@ -70901,28 +71020,28 @@ uWd
 uWd
 mec
 rDZ
-mbW
-mKV
-mKV
-mKV
-mKV
-mKV
-mbW
-mbW
-mKV
-mKV
-mbW
-mKV
-bxY
-mKV
-mbW
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
+wJj
+iWw
+iWw
+iWw
+iWw
+iWw
+wJj
+wJj
+iWw
+iWw
+wJj
+iWw
+gww
+iWw
+wJj
+iWw
+iWw
+iWw
+iWw
+iWw
+iWw
+iWw
 mKV
 lWa
 aZE
@@ -71157,7 +71276,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 yde
 upt
 yde
@@ -71180,7 +71299,7 @@ iCp
 yde
 yde
 yde
-mKV
+mec
 lWa
 mxS
 hpI
@@ -71414,7 +71533,7 @@ aZE
 leN
 leN
 mec
-mKV
+lWa
 yde
 wWV
 dGI
@@ -71437,7 +71556,7 @@ jxs
 pqT
 jxs
 mHo
-mbW
+hKA
 lWa
 aZE
 hpI
@@ -71671,7 +71790,7 @@ aZE
 uWd
 top
 mec
-mKV
+lWa
 mHo
 eDu
 jxs
@@ -71694,7 +71813,7 @@ jxs
 jxs
 jxs
 bqQ
-mbW
+hKA
 ksO
 aZE
 hpI
@@ -71928,7 +72047,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 mHo
 jxs
 eDu
@@ -71951,7 +72070,7 @@ jxs
 aWg
 jxs
 yde
-mbW
+hKA
 lWa
 aZE
 hpI
@@ -72185,7 +72304,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 upt
 ulg
 aRD
@@ -72208,7 +72327,7 @@ osB
 eeI
 fgK
 upt
-mKV
+mec
 ksO
 aZE
 hpI
@@ -72442,7 +72561,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 yde
 yde
 yde
@@ -72465,7 +72584,7 @@ yde
 yde
 yde
 upt
-mbW
+hKA
 llm
 aZE
 hpI
@@ -72700,12 +72819,12 @@ uWd
 top
 mec
 mKV
-mKV
-mKV
-mKV
-mKV
-mbW
-mKV
+jgL
+jgL
+jgL
+jgL
+dAy
+qSS
 yde
 abz
 jxs
@@ -72962,7 +73081,7 @@ mKV
 mKV
 mKV
 rDZ
-mKV
+lWa
 upt
 jxs
 iAI
@@ -73493,7 +73612,7 @@ yde
 nBl
 yde
 cdu
-mbW
+rgU
 ksO
 aZE
 cJW
@@ -73733,7 +73852,7 @@ mbW
 mKV
 rDZ
 mKV
-mKV
+lWa
 yde
 iAI
 tTN
@@ -73750,7 +73869,7 @@ eDu
 eDu
 eDu
 yde
-mKV
+uyY
 lWa
 mxS
 hpI
@@ -73876,7 +73995,7 @@ iCv
 ogc
 cxm
 vOY
-tTG
+qez
 qez
 voN
 xCx
@@ -73985,12 +74104,12 @@ uWd
 uWd
 hKA
 mKV
-mKV
-mbW
-rDZ
-mbW
-mbW
-mKV
+iWw
+wJj
+fPt
+wJj
+wJj
+eFO
 upt
 grD
 peN
@@ -74007,7 +74126,7 @@ jxs
 hVw
 xjr
 cdu
-mbW
+bjk
 ksO
 apj
 hpI
@@ -74241,7 +74360,7 @@ aZE
 top
 top
 mec
-mbW
+ksO
 upt
 upt
 yde
@@ -74264,7 +74383,7 @@ jxs
 hVw
 hVw
 yde
-mKV
+mec
 lWa
 aZE
 hpI
@@ -74498,7 +74617,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 yde
 mUf
 dGI
@@ -74521,7 +74640,7 @@ jxs
 eDu
 jxs
 fzN
-mKV
+mec
 lWa
 aZE
 hpI
@@ -74755,7 +74874,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 fzN
 jxs
 jxs
@@ -74778,7 +74897,7 @@ eDu
 eDu
 jxs
 kwJ
-mKV
+mec
 lWa
 aZE
 hpI
@@ -74914,7 +75033,7 @@ vPX
 vPX
 xOu
 fVx
-mdh
+tTG
 klQ
 rHb
 rce
@@ -75012,7 +75131,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 fzN
 jxs
 jxs
@@ -75035,7 +75154,7 @@ eDu
 hVw
 hVw
 yde
-mbW
+hKA
 lWa
 aZE
 hpI
@@ -75171,7 +75290,7 @@ xyl
 xyl
 sUQ
 fVx
-mdh
+kxv
 klQ
 rHb
 rce
@@ -75269,7 +75388,7 @@ aZE
 uWd
 uWd
 mec
-mKV
+lWa
 yde
 ulg
 kJC
@@ -75292,7 +75411,7 @@ jxs
 rqp
 gPH
 yde
-mKV
+mec
 lWa
 aZE
 cJW
@@ -75428,7 +75547,7 @@ vPX
 vPX
 srI
 fVx
-mdh
+kfu
 lUl
 aqT
 rce
@@ -75526,7 +75645,7 @@ aZE
 uWd
 uWd
 mec
-mbW
+ksO
 yde
 yde
 yde
@@ -75549,7 +75668,7 @@ iCp
 upt
 yde
 yde
-mKV
+mec
 lWa
 aZE
 hpI
@@ -75784,28 +75903,28 @@ uWd
 uWd
 mec
 mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mbW
-mKV
-mKV
-mKV
-mbW
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
-mKV
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+dAy
+jgL
+jgL
+jgL
+dAy
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
+jgL
 mKV
 lWa
 aZE
@@ -82183,7 +82302,7 @@ yde
 yde
 yde
 yde
-brd
+ciG
 vzy
 lWa
 aZE
@@ -82440,7 +82559,7 @@ xph
 tET
 oqQ
 yde
-vzy
+bxY
 vzy
 lWa
 aZE
@@ -82697,7 +82816,7 @@ sge
 hSt
 sge
 yde
-brd
+fTK
 vzy
 lWa
 aZE
@@ -86657,7 +86776,7 @@ uWd
 mec
 brd
 yde
-aMU
+wbi
 oVo
 cWt
 nQv
@@ -86914,7 +87033,7 @@ uWd
 mec
 brd
 yde
-aMU
+sCI
 aMU
 aMU
 aMU
@@ -93538,8 +93657,8 @@ ctX
 hpt
 oen
 hpt
-rgt
-hqc
+kXK
+bxY
 ksO
 aZE
 uWd
@@ -93795,8 +93914,8 @@ ctX
 hpt
 oen
 hpt
-wbi
-npu
+hQS
+fTK
 ksO
 mxS
 leN
