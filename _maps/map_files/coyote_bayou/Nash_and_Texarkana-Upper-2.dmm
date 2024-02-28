@@ -1147,7 +1147,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood_common,
@@ -2620,11 +2620,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "mv" = (
-/obj/structure/table/wood/club,
 /obj/item/binoculars,
 /obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
-	pixel_y = 14
+	pixel_y = 14;
+	burning = 0
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "mw" = (
@@ -3048,7 +3049,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "oE" = (
-/obj/structure/chair/wood/wings,
+/obj/structure/chair/wood,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "oF" = (
@@ -4462,7 +4463,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vG" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -6796,13 +6797,13 @@
 /area/f13/building)
 "GM" = (
 /obj/structure/railing{
-	color = "#A47449"
-	},
-/obj/structure/railing{
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -6957,7 +6958,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "HJ" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/wood_common,
@@ -7586,10 +7587,10 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/machinery/light/floor,
+/obj/structure/chair/wood{
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "KM" = (
@@ -7839,9 +7840,10 @@
 	},
 /area/f13/building)
 "LP" = (
-/obj/structure/table/wood/club,
+/obj/structure/table/wood,
 /obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
-	pixel_y = 14
+	pixel_y = 14;
+	burning = 0
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -8011,7 +8013,7 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -10890,7 +10892,7 @@
 	},
 /area/f13/building/massfusion)
 "ZZ" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood_common,
