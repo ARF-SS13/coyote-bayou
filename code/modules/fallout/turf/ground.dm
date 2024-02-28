@@ -562,6 +562,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "cave"
 	icon_state = "rockfloor1"
 	icon = 'icons/fallout/turfs/mining.dmi'
+	footstep = FOOTSTEP_SAND
 //	allowed_plants = list(/obj/item/seeds/glow)
 //	step_sounds = list("human" = "erikafootsteps")
 
@@ -654,6 +655,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "road"
 	icon_state = "innermiddle"
 	icon = 'icons/fallout/turfs/asphaltdirt.dmi'
+	footstep = FOOTSTEP_ROAD
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalkdirt
