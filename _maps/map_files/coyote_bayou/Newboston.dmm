@@ -2695,7 +2695,7 @@
 "bAD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
@@ -4537,7 +4537,7 @@
 "cAF" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4650,7 +4650,7 @@
 "cCM" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -7399,7 +7399,7 @@
 "eem" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -7497,7 +7497,7 @@
 "egG" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/dirtcorner{
 	dir = 8
@@ -9313,7 +9313,7 @@
 "ffh" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/cave)
@@ -9649,7 +9649,7 @@
 "fou" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/optable/primitive,
@@ -10377,7 +10377,7 @@
 "fFk" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/sink{
 	pixel_y = 19
@@ -10573,7 +10573,7 @@
 "fNJ" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
@@ -14151,7 +14151,7 @@
 "hLB" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -19517,7 +19517,7 @@
 "kEr" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
@@ -20371,10 +20371,11 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "lax" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 15
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "laF" = (
@@ -27374,7 +27375,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
@@ -33361,7 +33362,7 @@
 "snp" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -36442,7 +36443,7 @@
 /obj/machinery/microwave/stove,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -36823,7 +36824,7 @@
 "uhn" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/debris/v2{
 	opacity = 1
@@ -36966,7 +36967,7 @@
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal/cave)
@@ -37364,7 +37365,7 @@
 "uxy" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
@@ -38733,7 +38734,7 @@
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
@@ -39582,7 +39583,7 @@
 "vNd" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
@@ -40172,7 +40173,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -40887,7 +40888,7 @@
 "wxL" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -43790,7 +43791,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"

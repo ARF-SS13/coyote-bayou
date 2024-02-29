@@ -349,7 +349,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -494,9 +494,7 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "bo" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /obj/structure/flora/chomp/potplant2{
 	pixel_x = -3
 	},
@@ -679,8 +677,7 @@
 	density = 0
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -774,7 +771,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -847,8 +844,7 @@
 	randomize_xy = 0
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -1379,7 +1375,8 @@
 	color = "#695E56"
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 1
+	alpha = 1;
+	name = "invis"
 	},
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1445,7 +1442,7 @@
 	pixel_x = 14;
 	pixel_y = 19;
 	density = 0;
-	layer = 4.26;
+	layer = 4;
 	plane = -3
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -1719,7 +1716,7 @@
 "ee" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -1754,7 +1751,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -3345,10 +3342,7 @@
 	},
 /area/f13/building/tribal)
 "ib" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	pixel_x = 14;
-	pixel_y = 27
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ic" = (
@@ -3571,7 +3565,6 @@
 	},
 /obj/structure/railing/wood{
 	dir = 8;
-	layer = 4.26;
 	pixel_x = -1
 	},
 /turf/open/transparent/openspace,
@@ -4183,6 +4176,20 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"kd" = (
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = 3
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/turf/open/indestructible/ground/outside/water/running{
+	name = "tribe river";
+	color = "#A1BFFF"
+	},
+/area/f13/tribe)
 "ke" = (
 /obj/structure/chalkboard,
 /turf/open/floor/f13{
@@ -4250,7 +4257,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -4411,7 +4418,7 @@
 "kH" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/rack,
 /obj/item/stack/rods/twentyfive,
@@ -4519,13 +4526,6 @@
 	color = "#779999"
 	},
 /area/f13/ncr)
-"kW" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	pixel_x = -14;
-	pixel_y = 27
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "kY" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 4;
@@ -4753,8 +4753,7 @@
 /area/f13/tribe)
 "lz" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -4804,7 +4803,7 @@
 /obj/structure/decoration/rag,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/chair/bench,
 /turf/open/water{
@@ -5316,8 +5315,7 @@
 	pixel_y = -12
 	},
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -5338,17 +5336,16 @@
 /obj/structure/flora/ausbushes/pointybush{
 	randomize_xy = 0
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12;
-	layer = 3
-	},
 /obj/structure/flora/ausbushes/sparsegrass{
 	randomize_xy = 0
 	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = -10
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -5600,7 +5597,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/flora/ausbushes/genericbush{
 	randomize_xy = 0
@@ -6133,7 +6130,7 @@
 /obj/structure/rack,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -6445,7 +6442,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -6788,7 +6785,7 @@
 /obj/structure/dresser,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/item/warpaint_bowl{
 	pixel_y = 11
@@ -7026,7 +7023,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -7432,8 +7429,7 @@
 /area/f13/wasteland/city/newboston/house/cabin_one)
 "se" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -7545,8 +7541,7 @@
 /area/f13/building)
 "su" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/civ/woodalt{
@@ -7615,7 +7610,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -9284,7 +9279,7 @@
 "wE" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/f13/stone/rugged,
@@ -9588,14 +9583,9 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "xq" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	pixel_x = -13;
-	pixel_y = 32
-	},
 /obj/structure/flora/wasteplant/fever_blossom,
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -9908,8 +9898,7 @@
 	pixel_x = 13
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/structure/flora/ausbushes/pointybush{
 	randomize_xy = 0
@@ -10568,8 +10557,7 @@
 /area/f13/building/hospital/clinic/nash)
 "zX" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/indestructible/ground/outside/civ/woodalt{
@@ -10626,8 +10614,7 @@
 "Ad" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -10730,9 +10717,7 @@
 /obj/structure/flora/ausbushes/lavendergrass{
 	randomize_xy = 0
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
 	barefootstep = "grass";
@@ -10875,7 +10860,7 @@
 "AF" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -11145,9 +11130,7 @@
 "Bl" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	pixel_x = 1;
-	pixel_y = 16;
-	plane = -3;
-	layer = 4.26
+	pixel_y = 16
 	},
 /obj/structure/railing/wood/post{
 	pixel_y = -8
@@ -11320,7 +11303,7 @@
 "BK" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -11383,9 +11366,7 @@
 	},
 /area/f13/bar/heaven)
 "BS" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
@@ -11994,7 +11975,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -12316,8 +12297,7 @@
 	},
 /obj/structure/railing/wood/post{
 	dir = 1;
-	pixel_y = 26;
-	layer = 4.26
+	pixel_y = 26
 	},
 /turf/open/floor/wood_common/wood_common_light{
 	color = "#766E65";
@@ -13133,9 +13113,7 @@
 /obj/structure/flora/ausbushes/lavendergrass{
 	randomize_xy = 0
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
 	barefootstep = "grass";
@@ -13335,9 +13313,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/house/cabin_three)
 "GH" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
@@ -13518,7 +13494,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -14105,13 +14081,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/house/cabin_six)
-"Ir" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "Is" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -14525,8 +14494,7 @@
 	pixel_x = 13
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/structure/flora/ausbushes/sparsegrass{
 	randomize_xy = 0
@@ -15513,7 +15481,7 @@
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/structure/reagent_dispensers/compostbin{
 	pixel_y = 5;
@@ -15716,7 +15684,7 @@
 "Mv" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building/tribal)
@@ -15820,7 +15788,7 @@
 "MH" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -16115,7 +16083,7 @@
 "Ng" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -16859,8 +16827,7 @@
 "Pa" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/structure/fence/wooden{
 	pixel_x = -14;
@@ -17113,8 +17080,7 @@
 /obj/machinery/smartfridge/bottlerack/seedbin,
 /obj/item/seeds/soya,
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -17159,8 +17125,7 @@
 /area/f13/building/hospital/clinic/nash)
 "PD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -18313,7 +18278,7 @@
 "SD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /obj/machinery/gear_painter,
 /obj/effect/turf_decal/weather/dirt{
@@ -18663,9 +18628,7 @@
 	pixel_y = 6
 	},
 /obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/cult,
 /area/f13/tribe)
 "TA" = (
@@ -18735,9 +18698,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "TL" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 3
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "TM" = (
@@ -18997,9 +18958,7 @@
 	dir = 8
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	plane = -3;
-	layer = 4.25
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -19203,13 +19162,11 @@
 /area/f13/wasteland)
 "US" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /obj/structure/legion_extractor,
 /obj/structure/railing/wood/post{
-	pixel_x = -14;
-	layer = 4.26
+	pixel_x = -14
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -19221,7 +19178,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -19268,8 +19225,7 @@
 	pixel_y = 14
 	},
 /obj/structure/railing/wood{
-	dir = 8;
-	layer = 4.26
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -19333,7 +19289,7 @@
 "Vg" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -19571,7 +19527,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -19798,7 +19754,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
@@ -20143,22 +20099,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"Xe" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = 3
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	plane = -3;
-	layer = 4.27;
-	pixel_y = 4
-	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	color = "#A1BFFF"
-	},
-/area/f13/tribe)
 "Xf" = (
 /obj/item/storage/fancy/heart_box{
 	desc = "A heart shaped chocolate box, in memory of Xena.  Fens cat who passed in 2015.  Her mob here has been rescued from ARFS Dallus 1 for 1 from the final version of its map."
@@ -20375,9 +20315,7 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	pixel_x = 1;
-	pixel_y = 14;
-	plane = -3;
-	layer = 4.26
+	pixel_y = 14
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -20961,8 +20899,7 @@
 "YY" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_y = 12;
-	plane = -3
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
@@ -21316,8 +21253,7 @@
 "ZV" = (
 /obj/structure/loom,
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -23934,7 +23870,7 @@ cm
 KJ
 KJ
 KJ
-Xe
+kd
 Ec
 Bl
 KJ
@@ -23945,7 +23881,7 @@ KJ
 KJ
 KJ
 KJ
-Xe
+kd
 Ec
 Bl
 KJ
@@ -23959,7 +23895,7 @@ KJ
 KJ
 KJ
 KJ
-Xe
+kd
 Ec
 Bl
 KJ
@@ -26755,7 +26691,7 @@ rz
 Ks
 oY
 rz
-Ir
+MH
 rz
 pL
 oc
@@ -27783,7 +27719,7 @@ rz
 Iy
 EU
 rz
-Ir
+MH
 rz
 nw
 pK
@@ -29343,7 +29279,7 @@ hR
 Wi
 nq
 hy
-hy
+hz
 Gq
 rz
 rz
@@ -30885,7 +30821,7 @@ io
 yB
 XC
 hy
-hy
+Se
 kw
 bI
 rz
@@ -36783,7 +36719,7 @@ Dz
 GP
 Bc
 Rg
-kW
+qF
 GU
 GU
 GU
