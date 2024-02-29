@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	desc = "A pre-War supermart wall made of reinforced concrete. This one looks newly built"
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	icon_state = "supermart"
-	icon_type_smooth = "supermart"
+//	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
 	smoothing_flags = SMOOTH_CORNERS

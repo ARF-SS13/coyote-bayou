@@ -131,7 +131,7 @@
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	hardness = 70
 	explosion_block = 0
-	smoothing_flags = SMOOTH_NONE
+	smoothing_flags = SMOOTH_BITMASK
 	//canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
 
 /turf/closed/wall/mineral/wood/New()

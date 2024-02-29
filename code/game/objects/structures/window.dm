@@ -32,6 +32,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	resistance_flags = ACID_PROOF
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	CanAtmosPass = ATMOS_PASS_PROC
+	var/mutable_appearance/crack_overlay
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
@@ -492,17 +493,20 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 //merges adjacent full-tile windows into one
 /obj/structure/window/update_overlays()
 	. = ..()
-	if(QDELETED(src) || !fulltile)
-		return
-	var/ratio = obj_integrity / max_integrity
-	ratio = CEILING(ratio*4, 1) * 25
+	if(!QDELETED(src))
+		if(!fulltile)
+			return
+		var/ratio = obj_integrity / max_integrity
+		ratio = CEILING(ratio*4, 1) * 25
 
 		if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH(src)
+			QUEUE_SMOOTH(src)
 
-	if(ratio > 75)
-		return
-	. += mutable_appearance('icons/obj/structures.dmi', "damage[ratio]", -(layer+0.1))
+		cut_overlay(crack_overlay)
+		if(ratio > 75)
+			return
+		crack_overlay = mutable_appearance('icons/obj/structures.dmi', "damage[ratio]", -(layer+0.1))
+		. += crack_overlay
 
 /obj/structure/window/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 
@@ -829,7 +833,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 
 /obj/structure/window/reinforced/clockwork/fulltile
 	icon_state = "clockwork_window"
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
@@ -953,6 +957,6 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	icon = 'icons/obj/wood_window.dmi'
 	icon_state = "housewindow"
 	density = TRUE
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = null
 	level = 3
 	glass_amount = 2

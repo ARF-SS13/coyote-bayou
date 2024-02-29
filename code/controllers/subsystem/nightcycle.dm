@@ -222,10 +222,10 @@ SUBSYSTEM_DEF(nightcycle)
 	var/new_junction = NONE
 	for(var/direction in GLOB.cardinals) //Cardinal case first.
 		SUNLIGHT_ADJ_IN_DIR(src, new_junction, direction, direction)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHWEST, NORTHWEST_JUNCTION)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHEAST, NORTHEAST_JUNCTION)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHWEST, "NORTHWEST_JUNCTION")	//This used to be a bitfield but icon smoothing redefined the define into these strings.
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHEAST, "NORTHEAST_JUNCTION")	//NE (1>>4), SE (1>>5), SW (1>>6), NW (1>>7) respectively.
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHWEST, "SOUTHWEST_JUNCTION")	//See Fortune 13 #5 and TGstation #53906 for this is probably broken.
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHEAST, "SOUTHEAST_JUNCTION")
 	if(new_junction == border_neighbors)
 		return // No change.
 	if(!isnull(border_neighbors)) // Different and non-null, there was a change.
