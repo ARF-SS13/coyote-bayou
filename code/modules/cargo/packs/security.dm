@@ -1473,10 +1473,42 @@
 	contains = list(/obj/item/gun/energy/laser/scatter/nonlethal)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/weaponname
+/datum/supply_pack/security/disablerrcw
 	name = "Disabler RCW"
 	desc = "For when you want to throw a rave and knock everybody out."
 	cost = 2000
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/stunrcw)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/compact14mmrifle
+	name = "Compact 14mm Rifle"
+	desc = "Oh yeah, compact alright."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/compact14mmrifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/alr15
+	name = "ALR-15 Rifle"
+	desc = "It's an assault rifle all right."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/service/alr)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ak74u
+	name = "AK-74U Assault Rifle"
+	desc = "It's like a baby AK."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/aksmol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/buntline
+	name = "Colt Buntline Revolver"
+	desc = "Put bluntly, its a bit of long for a wheel gat."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/buntline)
 	crate_name = "select weapon crate"
