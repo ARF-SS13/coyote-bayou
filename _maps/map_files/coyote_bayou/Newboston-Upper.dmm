@@ -677,8 +677,7 @@
 	density = 0
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -845,8 +844,7 @@
 	randomize_xy = 0
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -1308,26 +1306,6 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/city/newboston/outdoors)
-"dc" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	pixel_x = 1;
-	pixel_y = 16;
-	layer = 4.26
-	},
-/obj/structure/railing/wood/post{
-	pixel_y = -8
-	},
-/obj/structure/railing/wood{
-	pixel_y = -12
-	},
-/obj/structure/railing/wood/post{
-	pixel_y = -12
-	},
-/turf/open/floor/wood_common/wood_common_light{
-	color = "#766E65";
-	name = "bridge"
-	},
-/area/f13/tribe)
 "de" = (
 /obj/structure/railing,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1397,7 +1375,8 @@
 	color = "#695E56"
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	layer = 1
+	alpha = 1;
+	name = "invis"
 	},
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -3363,10 +3342,7 @@
 	},
 /area/f13/building/tribal)
 "ib" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	pixel_x = 14;
-	pixel_y = 27
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ic" = (
@@ -5360,17 +5336,16 @@
 /obj/structure/flora/ausbushes/pointybush{
 	randomize_xy = 0
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12;
-	layer = 3
-	},
 /obj/structure/flora/ausbushes/sparsegrass{
 	randomize_xy = 0
 	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = -10
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
@@ -9923,8 +9898,7 @@
 	pixel_x = 13
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/structure/flora/ausbushes/pointybush{
 	randomize_xy = 0
@@ -14107,13 +14081,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/house/cabin_six)
-"Ir" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "Is" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -14527,8 +14494,7 @@
 	pixel_x = 13
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/structure/flora/ausbushes/sparsegrass{
 	randomize_xy = 0
@@ -17159,8 +17125,7 @@
 /area/f13/building/hospital/clinic/nash)
 "PD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -20134,21 +20099,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"Xe" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = 3
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	layer = 4.27;
-	pixel_y = 4
-	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	color = "#A1BFFF"
-	},
-/area/f13/tribe)
 "Xf" = (
 /obj/item/storage/fancy/heart_box{
 	desc = "A heart shaped chocolate box, in memory of Xena.  Fens cat who passed in 2015.  Her mob here has been rescued from ARFS Dallus 1 for 1 from the final version of its map."
@@ -21303,8 +21253,7 @@
 "ZV" = (
 /obj/structure/loom,
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	layer = 3
+	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -23932,9 +23881,9 @@ KJ
 KJ
 KJ
 KJ
-Xe
+kd
 Ec
-dc
+Bl
 KJ
 KJ
 KJ
@@ -23946,9 +23895,9 @@ KJ
 KJ
 KJ
 KJ
-Xe
+kd
 Ec
-dc
+Bl
 KJ
 KJ
 KJ
@@ -26742,7 +26691,7 @@ rz
 Ks
 oY
 rz
-Ir
+MH
 rz
 pL
 oc
@@ -27770,7 +27719,7 @@ rz
 Iy
 EU
 rz
-Ir
+MH
 rz
 nw
 pK
@@ -29330,7 +29279,7 @@ hR
 Wi
 nq
 hy
-hy
+hz
 Gq
 rz
 rz
@@ -30872,7 +30821,7 @@ io
 yB
 XC
 hy
-hy
+Se
 kw
 bI
 rz
