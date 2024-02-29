@@ -325,7 +325,7 @@ datum/crafting_recipe/combathazardhood // sec biohood
 ///////////////
 
 /datum/crafting_recipe/pa_t45b
-	name = "T-45b Power Armor"
+	name = "Power Armor Exo-Skeleton"
 	result = /obj/item/storage/box/armor/t45b
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
@@ -334,10 +334,10 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t45b
-	name = "T-45b PA"
+	name = "PA Exo-Skeleton"
 
 /obj/item/storage/box/armor/t45b/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45b(src)
@@ -350,11 +350,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
 				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/iron = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t45b_raider
 	name = "T-45b Raider PA"
@@ -371,11 +373,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/crafting/metalparts = 40,
 				/obj/item/advanced_crafting_components/lenses = 2,
 				/obj/item/advanced_crafting_components/flux = 2,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/plasma = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t45b_hotrod
 	name = "T-45b Hotrod PA"
@@ -390,11 +394,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/silver = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t45d
 	name = "T-45d PA"
@@ -410,11 +416,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
 				/obj/item/stack/sheet/prewar = 15,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/gold = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t51b
 	name = "T-51b PA"
@@ -430,11 +438,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
 				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/titanium = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/t51b_hardened
 	name = "Hardened T-51b PA"
@@ -450,11 +460,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
 				/obj/item/stack/sheet/prewar = 30,
-				/obj/item/ingot/uranium = 2)
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
+				/obj/item/ingot/diamond = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/pa_excavator
 	name = "excavator power armor"
@@ -470,11 +482,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/goodparts = 25,
 				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/diamond = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/pa_advanced
 	name = "advanced power armor"
@@ -490,11 +504,13 @@ datum/crafting_recipe/combathazardhood // sec biohood
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/goodparts = 25,
 				/obj/item/advanced_crafting_components/alloys = 3,
+				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/mythril = 1)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
 	time = 50
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_PARMOR
 
 /obj/item/storage/box/armor/pa_advanced_x02
 	name = "enclave power armor"

@@ -113,6 +113,7 @@
 // #define CAT_BOTTLE "Bottling"
 #define CAT_GENCLOTHES "Wardrobe"
 #define CAT_ARMOR "Armor"
+#define CAT_PARMOR "Power Armor"
 //#define CAT_BELTS	"Belts"
 //#define CAT_GENCLOTHES	"Wasteland Clothing"
 //#define CAT_SHOES "Shoes"

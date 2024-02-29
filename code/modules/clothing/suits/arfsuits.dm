@@ -4918,8 +4918,8 @@
 	item_state = "pappavolarmor"
 
 /obj/item/clothing/suit/armor/power_armor/t45b
-	name = "Refurbished T-45b power armor"
-	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
+	name = "Power Armor Exo-Skeleton"
+	desc = "A set of power armor with the metallic outer workings removed, fit for any form of addition to make a proper set of power armor!"
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE

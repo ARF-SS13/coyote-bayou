@@ -1550,15 +1550,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
-"aWq" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
-/area/f13/caves)
 "aWu" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -11225,12 +11216,12 @@
 /area/f13/building/hospital)
 "hhi" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/club,
 /obj/item/reagent_containers/food/condiment/saltshaker,
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 4;
 	pixel_y = 8
 	},
+/obj/structure/table/booth,
 /turf/open/floor/carpet,
 /area/f13/building)
 "hhy" = (
@@ -12050,15 +12041,6 @@
 /area/f13/wasteland)
 "hFx" = (
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
-"hFG" = (
-/obj/machinery/hydroponics/soil,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
 /area/f13/caves)
 "hGb" = (
 /obj/structure/bed/old,
@@ -14498,12 +14480,12 @@
 	},
 /area/f13/building/mall)
 "jgn" = (
-/obj/structure/table/wood/club,
 /obj/item/reagent_containers/food/condiment/saltshaker,
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 4;
 	pixel_y = 8
 	},
+/obj/structure/table/booth,
 /turf/open/floor/carpet,
 /area/f13/building)
 "jgF" = (
@@ -14584,7 +14566,6 @@
 /area/f13/building)
 "jiQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/club,
 /obj/item/reagent_containers/food/condiment/ketchup{
 	pixel_y = 14;
 	pixel_x = 14
@@ -14593,6 +14574,7 @@
 	pixel_x = 14;
 	pixel_y = 7
 	},
+/obj/structure/table/booth,
 /turf/open/floor/carpet,
 /area/f13/building)
 "jjT" = (
@@ -18891,17 +18873,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
-"lJE" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
-/obj/machinery/hydroponics/soil,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 10
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
-/area/f13/caves)
 "lKe" = (
 /obj/structure/simple_door/house{
 	name = "Knowledge King"
@@ -19249,9 +19220,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "lWj" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /turf/open/indestructible/ground/outside/dirt/light{
 	color = "#826547"
 	},
@@ -21331,13 +21299,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "neM" = (
-/obj/machinery/hydroponics/soil{
-	pixel_y = 11
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
+/obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt/light{
 	color = "#826547"
 	},
@@ -24298,18 +24260,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"oSM" = (
-/obj/machinery/hydroponics/soil{
-	pixel_y = 11
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
-/area/f13/caves)
 "oSO" = (
 /obj/structure/flora/tree/oak_five,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -25085,18 +25035,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"pxj" = (
-/obj/machinery/hydroponics/soil{
-	pixel_y = 11
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
-/area/f13/caves)
 "pxo" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/dirt{
@@ -30938,16 +30876,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/caves)
-"trg" = (
-/obj/machinery/hydroponics/soil,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
-/area/f13/caves)
 "tsD" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -33004,16 +32932,6 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
-"uJn" = (
-/obj/machinery/hydroponics/soil,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 10
-	},
-/turf/open/indestructible/ground/outside/dirt/light{
-	color = "#826547"
-	},
 /area/f13/caves)
 "uJY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -79160,11 +79078,11 @@ mbu
 mbu
 iRb
 iRb
-oSM
-uJn
+neM
+neM
 ifb
-oSM
-lJE
+neM
+neM
 mdU
 qUc
 ajn
@@ -79418,10 +79336,10 @@ vje
 iRb
 iRb
 neM
-hFG
+neM
 jUf
 neM
-hFG
+neM
 rmH
 wCP
 jsq
@@ -79675,10 +79593,10 @@ oez
 iRb
 iRb
 neM
-hFG
+neM
 ifb
 neM
-hFG
+neM
 mTz
 wCP
 yaC
@@ -79934,8 +79852,8 @@ iRb
 neM
 lWj
 pEx
-aWq
-hFG
+lWj
+neM
 mTz
 wCP
 gDZ
@@ -80189,10 +80107,10 @@ oez
 oez
 iRb
 neM
-hFG
+neM
 ifb
 neM
-hFG
+neM
 qUR
 pLU
 gDZ
@@ -80446,10 +80364,10 @@ oez
 oez
 iRb
 neM
-hFG
+neM
 jUf
 neM
-hFG
+neM
 qHi
 pLU
 rwS
@@ -80702,11 +80620,11 @@ oez
 oez
 iRb
 iRb
-pxj
-trg
+neM
+neM
 ifb
-pxj
-trg
+neM
+neM
 qHi
 pLU
 gDZ

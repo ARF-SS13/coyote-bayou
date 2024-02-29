@@ -1120,8 +1120,7 @@
 "eP" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/easel,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1148,7 +1147,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood_common,
@@ -2018,8 +2017,7 @@
 "js" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/easel,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2337,8 +2335,7 @@
 "la" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/table/wood{
 	density = 0
@@ -2441,8 +2438,7 @@
 "lE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -2624,11 +2620,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "mv" = (
-/obj/structure/table/wood/club,
 /obj/item/binoculars,
-/obj/structure/campfire/wallcandle{
-	pixel_y = 14
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
+	pixel_y = 14;
+	burning = 0
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "mw" = (
@@ -2898,7 +2895,6 @@
 "nR" = (
 /obj/structure/barricade/wooden/planks{
 	density = 0;
-	pixel_y = 0;
 	pixel_x = 7
 	},
 /obj/structure/barricade/wooden/planks{
@@ -3053,7 +3049,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "oE" = (
-/obj/structure/chair/wood/wings,
+/obj/structure/chair/wood,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "oF" = (
@@ -3779,8 +3775,7 @@
 /area/f13/caves)
 "sn" = (
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "ss" = (
@@ -4468,7 +4463,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vG" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -4538,14 +4533,6 @@
 	},
 /turf/open/floor/carpet/arcade,
 /area/f13/building)
-"vR" = (
-/obj/structure/fence{
-	icon_state = "end";
-	pixel_x = -18;
-	pixel_y = 0
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "vT" = (
 /obj/machinery/light{
 	dir = 8
@@ -5167,12 +5154,10 @@
 /area/f13/caves)
 "yY" = (
 /obj/structure/railing{
-	dir = 6;
-	layer = 4.1
+	dir = 6
 	},
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "yZ" = (
@@ -5281,8 +5266,7 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "zz" = (
@@ -5962,8 +5946,7 @@
 "De" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/chair/bench{
 	dir = 8
@@ -5978,8 +5961,7 @@
 "Dh" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/chair/bench{
 	dir = 8
@@ -6670,8 +6652,7 @@
 /area/f13/wasteland)
 "Gc" = (
 /obj/structure/sign/poster/prewar/poster73{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /obj/structure/sink/greyscale{
 	dir = 1
@@ -6816,13 +6797,13 @@
 /area/f13/building)
 "GM" = (
 /obj/structure/railing{
-	color = "#A47449"
-	},
-/obj/structure/railing{
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -6977,16 +6958,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "HJ" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
-"HM" = (
-/obj/structure/railing/corner{
-	color = null
-	},
-/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "HN" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -7046,8 +7021,7 @@
 "HZ" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7278,8 +7252,7 @@
 "Jf" = (
 /obj/structure/spacevine,
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "Jh" = (
@@ -7551,7 +7524,6 @@
 /area/f13/caves)
 "Kv" = (
 /obj/structure/railing{
-	color = null;
 	dir = 5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
@@ -7615,10 +7587,10 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/chair/wood/wings{
+/obj/machinery/light/floor,
+/obj/structure/chair/wood{
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "KM" = (
@@ -7776,7 +7748,6 @@
 /area/f13/building)
 "Lw" = (
 /obj/structure/railing{
-	color = null;
 	dir = 9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
@@ -7818,9 +7789,7 @@
 /obj/item/toy/beach_ball{
 	pixel_x = 17
 	},
-/obj/structure/fluff/beach_umbrella{
-	pixel_y = 0
-	},
+/obj/structure/fluff/beach_umbrella,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "LH" = (
@@ -7871,9 +7840,10 @@
 	},
 /area/f13/building)
 "LP" = (
-/obj/structure/table/wood/club,
-/obj/structure/campfire/wallcandle{
-	pixel_y = 14
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
+	pixel_y = 14;
+	burning = 0
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -8043,7 +8013,7 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -8385,9 +8355,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "NT" = (
-/obj/structure/railing{
-	layer = 4.1
-	},
+/obj/structure/railing,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "NV" = (
@@ -8593,9 +8561,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Pk" = (
-/obj/machinery/computer/message_monitor{
-	dir = 2
-	},
+/obj/machinery/computer/message_monitor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/monitorkey,
@@ -8612,8 +8578,7 @@
 "Pn" = (
 /obj/structure/fence{
 	icon_state = "end";
-	pixel_x = -18;
-	pixel_y = 0
+	pixel_x = -18
 	},
 /obj/structure/fence{
 	icon_state = "end";
@@ -9808,8 +9773,7 @@
 "UB" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "UF" = (
@@ -10405,8 +10369,7 @@
 "XA" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/table/wood{
 	density = 0
@@ -10420,8 +10383,7 @@
 	pixel_y = 9
 	},
 /obj/item/toy/crayon/spraycan{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -10930,7 +10892,7 @@
 	},
 /area/f13/building/massfusion)
 "ZZ" = (
-/obj/structure/chair/wood/wings{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood_common,
@@ -53997,11 +53959,11 @@ Xj
 KI
 wJ
 Pn
-vR
-vR
-vR
-vR
-vR
+UZ
+UZ
+UZ
+UZ
+UZ
 hm
 hm
 hm
@@ -61126,7 +61088,7 @@ hm
 hm
 hm
 hm
-HM
+jj
 WA
 WA
 WA

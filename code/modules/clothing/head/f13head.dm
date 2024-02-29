@@ -412,8 +412,8 @@
 	flags_inv = HIDESNOUT
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
-	name = "Refurbished T-45b helmet"
-	desc = "It's a refurbished T-45b power armor helmet."
+	name = "Power Armor Helmet Exo-Skeleton"
+	desc = "The helmet of a power armors exo-skeleton."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = ARMOR_VALUE_SALVAGE

@@ -764,8 +764,6 @@
 	M.update_damage_hud()
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(10))
 		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
 		to_chat(M, span_warning("[pain_message]"))
@@ -775,8 +773,6 @@
 	M.adjustStaminaLoss(10, 0)
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(5))
 		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
 		to_chat(M, span_notice("[pain_message]"))

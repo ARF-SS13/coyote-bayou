@@ -144,7 +144,6 @@
 	desc = "Marks property and prevents accidents."
 	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "straight_wood"
-	layer = WALL_OBJ_LAYER
 
 /obj/structure/railing/wood/underlayer
 	layer = BELOW_MOB_LAYER
@@ -174,7 +173,6 @@
 	desc = "A waist high handrail, perhaps you could climb over it."
 	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "handrail_y"
-	layer = WALL_OBJ_LAYER
 
 /obj/structure/railing/handrail/underlayer
 	layer = BELOW_MOB_LAYER
