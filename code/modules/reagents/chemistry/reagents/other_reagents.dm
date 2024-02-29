@@ -3,6 +3,7 @@
 	name = "Blood"
 	value = REAGENT_VALUE_UNCOMMON // $$$ blood ""donations"" $$$
 	color = BLOOD_COLOR_HUMAN // rgb: 200, 0, 0
+	var/rainbow = FALSE // rainbow color blood!
 	description = "Blood from some creature."
 	metabolization_rate = 5 //fast rate so it disappears fast.
 	taste_description = "iron"
@@ -89,7 +90,10 @@
 /datum/reagent/blood/on_new(list/data)
 	if(istype(data))
 		SetViruses(src, data)
-		color = data["bloodcolor"]
+		if(data["bloodcolor"] == "rainbow")
+			rainbow = TRUE
+		else
+			color = data["bloodcolor"]
 		if(data["blood_type"] == "SY")
 			name = "Synthetic Blood"
 			taste_description = "oil"
