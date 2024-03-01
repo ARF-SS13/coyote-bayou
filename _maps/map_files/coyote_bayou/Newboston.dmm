@@ -10595,7 +10595,9 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors)
 "fAk" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -12960,8 +12962,10 @@
 /area/f13/building)
 "gQz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor,
 /obj/machinery/ore_silo,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/side,
 /area/f13/building)
 "gQZ" = (
@@ -13640,9 +13644,11 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/machinery/light/floor,
 /obj/item/stock_parts/matter_bin,
 /obj/item/stock_parts/manipulator,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/corner,
 /area/f13/building)
 "hix" = (
@@ -13787,8 +13793,10 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/machinery/light/floor,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/side{
 	dir = 4
 	},
@@ -16171,8 +16179,10 @@
 /obj/item/storage/box/monkeycubes,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/machinery/light/floor,
 /obj/structure/rack,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/corner{
 	dir = 8
 	},
@@ -19957,14 +19967,12 @@
 /area/f13/village)
 "kuU" = (
 /obj/effect/turf_decal/weather/dirt,
-/obj/structure/table{
-	icon_state = "nv_metal_round";
-	icon = 'icons/obj/structures.dmi';
-	pixel_y = 10
-	},
 /obj/structure/fluff/beach_umbrella/science{
 	pixel_y = 27;
 	pixel_x = -4
+	},
+/obj/structure/table/booth{
+	pixel_y = 12
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -21772,7 +21780,9 @@
 /area/f13/building/trader)
 "lsq" = (
 /obj/structure/stairs/north,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "lsR" = (
@@ -24480,10 +24490,12 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/machinery/light/floor,
 /obj/item/stock_parts/manipulator,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/grenade/clusterbuster/cleaner,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/building)
 "mTj" = (
@@ -25543,13 +25555,14 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "nyo" = (
-/obj/machinery/light/floor,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/item/stock_parts/matter_bin,
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/item/stack/sheet/plastic/five,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/corner{
 	dir = 8
 	},
@@ -30435,10 +30448,12 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor,
 /obj/item/stock_parts/matter_bin,
 /obj/item/stock_parts/matter_bin,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/building)
 "qnZ" = (
@@ -31861,6 +31876,16 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"qXZ" = (
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = -16
+	},
+/obj/machinery/light{
+	icon_state = "lantern-blue"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/caveofforever)
 "qYb" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/caves)
@@ -33339,10 +33364,12 @@
 /obj/item/storage/box/monkeycubes,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor,
 /obj/item/stock_parts/manipulator,
 /obj/item/stock_parts/manipulator,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/machinery/light/floor{
+	plane = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/corner{
 	dir = 8;
 	icon_state = "yellowdirtychess"
@@ -48078,7 +48105,7 @@ hTW
 hRl
 qrT
 nyQ
-wKF
+qXZ
 wKF
 wKF
 kWg

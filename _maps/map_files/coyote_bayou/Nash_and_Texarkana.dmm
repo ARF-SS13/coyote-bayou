@@ -5588,6 +5588,9 @@
 	},
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/light{
+	icon_state = "lamp"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -54279,7 +54282,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "kRc" = (
-/obj/structure/simple_door/metal/fence,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kRz" = (
@@ -76364,7 +76368,9 @@
 	},
 /area/f13/building/hospital)
 "qGu" = (
-/obj/structure/closet/crate/large,
+/obj/structure/simple_door/metal/fence{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qGx" = (
@@ -77033,6 +77039,7 @@
 "qPG" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qPH" = (
@@ -104218,6 +104225,9 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"ygh" = (
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/ruins)
 "ygi" = (
 /obj/structure/flora/chomp/bush5{
 	color = "#338833"
@@ -142192,12 +142202,12 @@ aOk
 aOk
 hrz
 aOk
-vsR
-rkl
-rkl
-rkl
-bbo
-nMB
+aOk
+aOk
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -142449,14 +142459,14 @@ aOk
 aOk
 fcb
 cFK
-rkl
-hBx
-hUJ
-rkl
-etg
 aOk
 aOk
-biO
+vsR
+rkl
+rkl
+rkl
+bbo
+aae
 aae
 aaa
 aae
@@ -142706,14 +142716,14 @@ lhb
 aOk
 cFK
 cFK
-qQY
-bOb
-sMT
+aOk
+aOk
 rkl
-biO
+hBx
+hUJ
+rkl
 aOk
-aOk
-aOk
+nMB
 aae
 aaa
 aae
@@ -142963,12 +142973,12 @@ aOk
 aOk
 fcb
 puj
-uFx
-uqJ
-kVl
-vhp
 aOk
 aOk
+qQY
+bOb
+sMT
+rkl
 bun
 mOW
 aae
@@ -143219,13 +143229,13 @@ aOk
 bun
 biO
 biO
-cFK
+kRc
+aOk
+aOk
 uFx
-mFo
-fAT
-rkl
-aOk
-aOk
+uqJ
+kVl
+vhp
 aOk
 aOk
 aae
@@ -143477,12 +143487,12 @@ aOk
 aOk
 cFK
 xuy
-hwj
-rkl
-rkl
-vsR
 aOk
-gxt
+aOk
+uFx
+mFo
+fAT
+rkl
 boC
 aOk
 aae
@@ -143736,12 +143746,12 @@ oYp
 aOk
 puj
 aOk
-qGu
-hyv
+hwj
+rkl
+rkl
+vsR
 aOk
-aOk
-aOk
-aOk
+gxt
 aae
 aae
 aae
@@ -143993,8 +144003,8 @@ cFK
 cFK
 nHY
 etg
+qGu
 aOk
-kRc
 aOk
 aOk
 aOk
@@ -144030,13 +144040,13 @@ aae
 aaB
 aaB
 xfv
-xfv
+ygh
 xfv
 xfv
 ckx
 xfv
 aae
-drf
+asS
 drf
 drf
 drf
