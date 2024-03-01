@@ -4842,8 +4842,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "dpB" = (
-/turf/open/floor/plating/snowed/colder,
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	icon_state = "oldlamp";
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "dpQ" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/ground/inside/mountain,
@@ -11741,6 +11747,17 @@
 /obj/item/trash/boritos,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"hzM" = (
+/obj/machinery/light/sign{
+	icon_state = "oldcockinn";
+	pixel_y = 19
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/stage_bottom,
+/area/f13/wasteland)
 "hAf" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/f13{
@@ -17674,13 +17691,13 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2;
 	dir = 4
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -17862,10 +17879,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "lgs" = (
-/obj/machinery/light/sign{
-	icon_state = "oldcockinn"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/plasteel/stage_bottom,
 /area/f13/wasteland)
 "lgC" = (
 /turf/open/floor/f13/wood{
@@ -18827,6 +18845,10 @@
 /area/f13/wasteland)
 "lOK" = (
 /obj/effect/turf_decal/weather/dirt,
+/obj/machinery/light/sign{
+	icon_state = "oldcockinn";
+	pixel_y = -31
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
 "lOV" = (
@@ -23570,12 +23592,12 @@
 "oFf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -25887,13 +25909,13 @@
 "qgG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2;
 	dir = 8
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -26216,12 +26238,12 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 7
 	},
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -26771,15 +26793,15 @@
 /area/f13/building/massfusion)
 "qLq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2
 	},
 /obj/machinery/microwave{
 	pixel_y = 5
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -26824,6 +26846,11 @@
 	color = "#11ff11"
 	},
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"qNn" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/cave/signright,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qNV" = (
 /obj/structure/bookcase,
@@ -27390,10 +27417,12 @@
 "rhW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood{
-	layer = 1;
+	layer = 2.5;
 	alpha = 1
 	},
-/obj/structure/wood_counter/bend,
+/obj/structure/wood_counter/bend{
+	layer = 2
+	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -31668,12 +31697,12 @@
 "tZo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/chem_dispenser/drinks,
-/obj/structure/table/wood{
-	layer = 1;
-	alpha = 1
-	},
 /obj/structure/wood_counter{
 	layer = 2
+	},
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -75037,7 +75066,7 @@ oez
 oez
 oez
 oez
-dpB
+vje
 vje
 vje
 vje
@@ -75550,12 +75579,12 @@ oez
 oez
 oez
 oez
-mbu
-mbu
-mbu
-mbu
 oez
 oez
+vje
+vje
+vje
+vje
 vje
 vje
 omN
@@ -75807,14 +75836,14 @@ oez
 oez
 oez
 oez
+oez
+oez
 mbu
 mbu
 mbu
 mbu
 oez
-oez
-oez
-oez
+vje
 mBe
 oOB
 xsB
@@ -76064,12 +76093,12 @@ oez
 oez
 oez
 oez
-mbu
-mbu
-mbu
-mbu
 oez
 oez
+mbu
+mbu
+mbu
+mbu
 oez
 oez
 mBe
@@ -76321,12 +76350,12 @@ oez
 oez
 oez
 oez
-mbu
-mbu
-mbu
-mbu
 oez
 oez
+mbu
+mbu
+mbu
+mbu
 oez
 oez
 mBe
@@ -76578,12 +76607,12 @@ oez
 oez
 oez
 oez
-mbu
-mbu
-mbu
-mbu
 oez
 oez
+mbu
+mbu
+mbu
+mbu
 oez
 oez
 mBe
@@ -76835,12 +76864,12 @@ oez
 oez
 oez
 oez
-mbu
-mbu
-mbu
-mbu
 oez
 oez
+mbu
+mbu
+mbu
+mbu
 oez
 oez
 mBe
@@ -79431,7 +79460,7 @@ dIn
 dIn
 rwS
 iCH
-psI
+hzM
 uAQ
 gDZ
 gDZ
@@ -79687,8 +79716,8 @@ qET
 jBT
 iOf
 gDZ
+iCH
 lgs
-psI
 wCP
 xTA
 dZt
@@ -79936,7 +79965,7 @@ neM
 qHi
 pLU
 rwS
-oxM
+dpB
 nof
 sxH
 gDZ
@@ -79945,7 +79974,7 @@ fBs
 vgG
 gDZ
 iCH
-psI
+qNn
 kLW
 qvv
 qvv

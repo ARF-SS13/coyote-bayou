@@ -2144,11 +2144,30 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/wasteland/city/newboston/house/cabin_two)
 "fg" = (
-/obj/structure/clothes{
-	pixel_y = 19
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 3;
+	plane = -14
 	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland/city/newboston/outdoors)
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -6;
+	plane = -14
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -2;
+	plane = -14
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/clothes{
+	pixel_x = 31
+	},
+/turf/open/floor/wood_fancy/wood_fancy_light,
+/area/f13/wasteland/city/newboston/house/cabin_one)
 "fh" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/ladder/unbreakable{
@@ -9516,9 +9535,14 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/building)
 "wz" = (
-/obj/structure/clothes,
-/turf/open/transparent/openspace,
-/area/f13/wasteland/city/newboston/house/cabin_one)
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/clothes{
+	pixel_x = 31
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland/city/newboston/outdoors)
 "wA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/destructible/tribal_torch/lit{
@@ -48705,7 +48729,7 @@ WM
 WM
 QV
 oW
-xm
+wz
 xm
 xm
 xm
@@ -48954,7 +48978,7 @@ Qk
 cR
 cR
 TM
-cR
+fg
 cR
 Yu
 Wu
@@ -48963,7 +48987,7 @@ bd
 Qk
 jX
 Zh
-fg
+Zh
 Zh
 Zh
 jp
@@ -49211,7 +49235,7 @@ Ap
 Fd
 Fd
 Fd
-wz
+Fd
 Fd
 Qk
 JE
