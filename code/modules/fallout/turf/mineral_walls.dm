@@ -5,7 +5,7 @@
 //	var/last_event = 0
 //	var/active = null
 	canSmoothWith = null
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_BITMASK
 	weak_wall = TRUE
 
 /turf/closed/wall/mineral/gold

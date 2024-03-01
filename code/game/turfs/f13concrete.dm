@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	explosion_block = 2
 	smoothing_flags = SMOOTH_CORNERS
 	sheet_type = /obj/item/stack/sheet/mineral/concrete
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/mineral/concrete, /turf/closed/wall,)
 
 /turf/closed/wall/mineral/concrete/blastproof
 	name = "fortified supermart wall"
@@ -242,7 +242,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	desc = "A pre-War store wall made of solid concrete. This one looks newly built."
 	icon = 'icons/turf/walls/f13store.dmi'
 	icon_state = "store"
-	icon_type_smooth = "store"
+//	icon_type_smooth = "store"
 	hardness = 80
 	smoothing_flags = SMOOTH_CORNERS
 	girder_type = /obj/structure/barricade/concrete

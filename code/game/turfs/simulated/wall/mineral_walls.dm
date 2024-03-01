@@ -14,7 +14,7 @@
 	icon_state = "brickwall"
 	hardness = 150
 	sheet_type = /obj/item/stack/sheet/mineral/brick
-	canSmoothWith = list(/turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick)
+	canSmoothWith = list(/turf/closed/wall/mineral/brick)
 
 /turf/closed/wall/mineral/gold
 	name = "gold wall"

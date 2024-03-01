@@ -233,7 +233,7 @@
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
 	var/drop_amount = 3
-
+/*
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
 		if(isfloorturf(loc) || isplatingturf(loc))
@@ -330,7 +330,7 @@
 			to_chat(user, span_warning("You can only build the structure on a solid floor!"))
 	else
 		return ..()
-
+*/
 /obj/structure/barricade/wooden/proc/check_menu(mob/living/user, obj/item/I)
 	if(!istype(user))
 		return FALSE
