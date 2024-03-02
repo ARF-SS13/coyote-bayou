@@ -875,6 +875,11 @@
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
 	. = ..()
 
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	.=..()
+	resize = 0.5
+	update_transform()
+
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"
 	desc = "A big green radioactive cube creature, it jiggles with menacing wiggles and is making some sort of goofy face at you."

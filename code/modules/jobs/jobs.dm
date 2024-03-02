@@ -328,6 +328,15 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Nurse",
 	"Senior Scientist",
 ))
+
+GLOBAL_LIST_INIT(guild_positions, list(
+	"Guild Librarian",
+	"Guild Medic",
+	"Guild Shopkeeper",
+	"Guild Bartender",
+	"Guild Knight"
+))
+
 //Heavens Night
 GLOBAL_LIST_INIT(heavensnight_positions, list(
 	"Club Manager",
@@ -347,6 +356,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
+	"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
@@ -373,6 +383,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
 	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
+	EXP_TYPE_GUILD = list("titles" = guild_positions ),
 	EXP_TYPE_LEGION = list("titles" = legion_positions),
 	EXP_TYPE_NCR = list("titles" = ncr_positions),
 	EXP_TYPE_VAULT = list("titles" = vault_positions),
