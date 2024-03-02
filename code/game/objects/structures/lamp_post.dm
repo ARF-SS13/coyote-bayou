@@ -58,3 +58,8 @@
 
 /obj/effect/lamp_post/traffic_light/blinking
 	icon_state = "traffic-light-south-blinking"
+
+/obj/structure/lamp_post/biglamp
+	icon = 'icons/obj/lightingbig.dmi'
+	icon_state = "big-lamp"
+
