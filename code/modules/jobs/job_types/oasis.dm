@@ -769,93 +769,6 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
-/datum/job/oasis/f13barkeep
-	title = "Barkeep"
-	flag = F13BARKEEP
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the free market and New Boston's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
-	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13barkeep
-
-	loadout_options = list(
-	/datum/outfit/loadout/rugged,
-	/datum/outfit/loadout/frontier,
-	/datum/outfit/loadout/richmantender,
-	/datum/outfit/loadout/diner)
-
-	access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-
-/datum/outfit/job/den/f13barkeep
-	name = "Barkeep"
-	jobtype = /datum/job/oasis/f13barkeep
-	uniform = /obj/item/clothing/under/f13/bartenderalt
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie/barkeep
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	backpack = /obj/item/storage/backpack/satchel/leather
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-	//	/obj/item/ammo_box/shotgun/bean = 2,
-		/obj/item/book/manual/nuka_recipes = 1,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
-		)
-
-/datum/outfit/loadout/rugged
-	name = "Rugged"
-	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	uniform = /obj/item/clothing/under/f13/cowboyb
-	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
-	gloves = /obj/item/clothing/gloves/color/brown
-	shoes = /obj/item/clothing/shoes/f13/brownie
-
-/datum/outfit/loadout/frontier
-	name = "Frontier"
-	head = /obj/item/clothing/head/bowler
-	mask = /obj/item/clothing/mask/fakemoustache
-	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-
-/datum/outfit/loadout/richmantender
-	name = "Fancy"
-	head = /obj/item/clothing/head/fedora
-	glasses = /obj/item/clothing/glasses/sunglasses
-	uniform = /obj/item/clothing/under/rank/bartender
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	neck = /obj/item/clothing/neck/tie/black
-
-/datum/outfit/loadout/diner
-	name = "Diner"
-	glasses = /obj/item/clothing/glasses/orange
-	uniform = /obj/item/clothing/under/f13/brahminf
-	neck = /obj/item/clothing/neck/apron/chef
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-
-/*--------------------------------------------------------------*/
 /datum/job/oasis/f13settler
 	title = "Citizen"
 	flag = F13SETTLER
@@ -1215,64 +1128,7 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
-//New BostonCurator
-
 /*
-/datum/job/oasis/nashcurator
-	title = "New Boston Librarian"
-	flag = NASHCURATOR
-	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 1
-	supervisors = "New Boston's laws"
-	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/nashcurator
-	access = list(ACCESS_BAR)
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-/datum/outfit/job/den/nashcurator
-	name = "New Boston Librarian"
-	jobtype = /datum/job/oasis/nashcurator
-	belt = /obj/item/kit_spawner/townie
-	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/settler
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda = 1,
-		/obj/item/pen/fountain/captain,
-		/obj/item/kit_spawner/tools,
-		/obj/item/export_scanner,
-		/obj/item/key/displaycase,
-		)
-
-/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/gentlesuit,
-		/obj/item/clothing/under/f13/formal,
-		/obj/item/clothing/under/f13/spring,
-		/obj/item/clothing/under/f13/relaxedwear,
-		/obj/item/clothing/under/f13/machinist,
-		/obj/item/clothing/under/f13/brahminf,
-		/obj/item/clothing/under/f13/cowboyb,
-		/obj/item/clothing/under/f13/cowboyg,
-		/obj/item/clothing/under/f13/cowboyt)
-
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
 	title = "Texarkana Quartermaster"
@@ -1370,114 +1226,7 @@ Mayor
 		return
 */
 
-//The Trade Workers
-/datum/job/oasis/f13shopkeeper
-	title = "Guild Worker"
-	flag = F13SHOPKEEPER
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the free market."
-	description = "You are one of the many workers who live in the city of New Boston. Working with the town council you have rented out a space in the shop for you to make your living."
-	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
-	selection_color = "#dcba97"
-	exp_requirements = 0
 
-	loadout_options = list(
-	/datum/outfit/loadout/energy_specialist,
-	/datum/outfit/loadout/ballistic_specialist,
-	/datum/outfit/loadout/jackofall_specialist
-	)
-
-	outfit = /datum/outfit/job/den/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-/datum/outfit/job/den/f13shopkeeper
-	name = "Shopkeeper"
-	jobtype = /datum/job/oasis/f13shopkeeper
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie
-	uniform = /obj/item/clothing/under/f13/roving
-	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	gloves = /obj/item/clothing/gloves/fingerless
-	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/glowstick
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(
-		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
-		/obj/item/storage/pill_bottle/chem_tin/radx)
-
-/datum/outfit/loadout/energy_specialist
-	name = "Energy Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1
-	)
-
-/datum/outfit/loadout/ballistic_specialist
-	name = "Ballistic Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
-	)
-
-/datum/outfit/loadout/jackofall_specialist
-	name = "Jack-Of-All Trade"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
-	)
-
-/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
-
-/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
 
 
 //pilot job, bare basics rn, but we can add as needed
@@ -1686,13 +1435,124 @@ Mayor
 	)
 
 
-// Practitioner
+// Guild Adventurers
 
+//Guild Worker
+
+/datum/job/oasis/f13shopkeeper
+	title = "Guild Shopkeeper"
+	flag = GUILDSHOPKEEP
+	department_flag = GUILD
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the free market."
+	description = "You are one of the many workers who live in the city of New Boston. Working with the town council you have rented out a space in the shop for you to make your living."
+	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
+	selection_color = "#dcba97"
+	exp_requirements = 0
+
+	loadout_options = list(
+	/datum/outfit/loadout/energy_specialist,
+	/datum/outfit/loadout/ballistic_specialist,
+	/datum/outfit/loadout/jackofall_specialist
+	)
+
+	outfit = /datum/outfit/job/den/f13shopkeeper
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/f13shopkeeper
+	name = "Shopkeeper"
+	jobtype = /datum/job/oasis/f13shopkeeper
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/commerce
+	belt = /obj/item/kit_spawner/townie
+	uniform = /obj/item/clothing/under/f13/roving
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	gloves = /obj/item/clothing/gloves/fingerless
+	l_pocket = /obj/item/storage/wallet/stash/high
+	r_pocket = /obj/item/flashlight/glowstick
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/storage/pill_bottle/chem_tin/radx)
+
+/datum/outfit/loadout/energy_specialist
+	name = "Energy Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1
+	)
+
+/datum/outfit/loadout/ballistic_specialist
+	name = "Ballistic Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
+	)
+
+/datum/outfit/loadout/jackofall_specialist
+	name = "Jack-Of-All Trade"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
+	)
+
+/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
+
+/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+//Guild Medic
 /datum/job/oasis/f13practitioner
-	title = "Town Doctor"
-	flag = F13PRACTITIONER
-	department_flag = FOLLOWERS
-	faction = "Followers"
+	title = "Guild Medic"
+	flag = GUILDMEDIC
+	department_flag = GUILD
+	faction = "Guild"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement. Assuming they're around."
@@ -1702,6 +1562,8 @@ Mayor
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13practitioner
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis/f13practitioner,
@@ -1746,7 +1608,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 
 /datum/outfit/job/den/f13practitioner
-	name =	"Town Doctor"
+	name =	"Guild Medic"
 	jobtype =	/datum/job/oasis/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
 	id =	/obj/item/card/id/silver
@@ -1807,3 +1669,317 @@ Mayor
 		/obj/item/pda/medical = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/book/granter/trait/techno = 1,)
+
+//GUILD BANKER
+
+/datum/job/oasis/f13banker
+	title = "Guild Banker"
+	flag = GUILDBANKER
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "The Mayor"
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
+	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
+	selection_color = "#dcba97"
+	outfit = /datum/outfit/job/den/f13banker
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+	loadout_options = list(
+	/datum/outfit/loadout/classy,
+	/datum/outfit/loadout/loanshark,
+	/datum/outfit/loadout/investor
+	)
+
+/datum/outfit/job/den/f13banker
+	name = "Banker"
+	jobtype = /datum/job/oasis/f13banker
+	belt = /obj/item/kit_spawner/townie/mayor
+
+	uniform = /obj/item/clothing/under/lawyer/blacksuit
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/headset_town/commerce
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		/obj/item/pda = 1,
+		/obj/item/storage/wallet/stash/banker = 1)
+
+/datum/outfit/loadout/classy
+	name = "Classy"
+	head = /obj/item/clothing/head/collectable/tophat
+	glasses = /obj/item/clothing/glasses/monocle
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	suit = /obj/item/clothing/suit/armor/outfit/jacket/banker
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/cane=1,
+		///obj/item/storage/belt/shoulderholster/ranger45 =1,
+		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
+		/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
+		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1,
+		/obj/item/lighter/gold = 1
+		)
+
+/datum/outfit/loadout/loanshark
+	name = "Loanshark"
+	glasses = /obj/item/clothing/glasses/orange
+	mask = /obj/item/clothing/mask/cigarette/cigar
+	suit = /obj/item/clothing/suit/armor/outfit/vest
+	uniform = /obj/item/clothing/under/f13/sleazeball
+	shoes = /obj/item/clothing/shoes/sandal
+	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
+		/obj/item/storage/box/matches=1,
+		///obj/item/gun/ballistic/automatic/smg/mini_uzi=1,
+		/obj/item/instrument/violin/golden = 1
+		)
+
+/datum/outfit/loadout/investor
+	name = "Investor"
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
+	uniform = /obj/item/clothing/under/f13/bennys
+	gloves = /obj/item/clothing/gloves/fingerless
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
+		/obj/item/storage/box/matches=1,
+		/obj/item/ingot/gold = 1,
+		///obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1
+		)
+
+//Guild Librarian
+
+/datum/job/oasis/nashcurator
+	title = "Guild Librarian"
+	flag = GUILDLIBRARIAN
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "New Boston's laws"
+	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/nashcurator
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/nashcurator
+	name = "New Boston Librarian"
+	jobtype = /datum/job/oasis/nashcurator
+	belt = /obj/item/kit_spawner/townie
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/folder/white = 1,
+		/obj/item/pda = 1,
+		/obj/item/pen/fountain/captain,
+		/obj/item/kit_spawner/tools,
+		/obj/item/export_scanner,
+		/obj/item/key/displaycase,
+		)
+
+/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
+
+//Guild Bartender
+
+/datum/job/oasis/f13barkeep
+	title = "Guild Bartender"
+	flag = GUILDBARTEND
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the free market and New Boston's Laws"
+	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
+	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/f13barkeep
+
+	loadout_options = list(
+	/datum/outfit/loadout/rugged,
+	/datum/outfit/loadout/frontier,
+	/datum/outfit/loadout/richmantender,
+	/datum/outfit/loadout/diner)
+
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+
+/datum/outfit/job/den/f13barkeep
+	name = "Barkeep"
+	jobtype = /datum/job/oasis/f13barkeep
+	uniform = /obj/item/clothing/under/f13/bartenderalt
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/commerce
+	belt = /obj/item/kit_spawner/townie/barkeep
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	backpack = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/mid = 1,
+	//	/obj/item/ammo_box/shotgun/bean = 2,
+		/obj/item/book/manual/nuka_recipes = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
+		)
+
+/datum/outfit/loadout/rugged
+	name = "Rugged"
+	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
+	uniform = /obj/item/clothing/under/f13/cowboyb
+	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
+	gloves = /obj/item/clothing/gloves/color/brown
+	shoes = /obj/item/clothing/shoes/f13/brownie
+
+/datum/outfit/loadout/frontier
+	name = "Frontier"
+	head = /obj/item/clothing/head/bowler
+	mask = /obj/item/clothing/mask/fakemoustache
+	uniform = /obj/item/clothing/under/f13/westender
+	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
+	gloves = /obj/item/clothing/gloves/fingerless
+	shoes = /obj/item/clothing/shoes/f13/fancy
+
+/datum/outfit/loadout/richmantender
+	name = "Fancy"
+	head = /obj/item/clothing/head/fedora
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/rank/bartender
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
+	gloves = /obj/item/clothing/gloves/fingerless
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	neck = /obj/item/clothing/neck/tie/black
+
+/datum/outfit/loadout/diner
+	name = "Diner"
+	glasses = /obj/item/clothing/glasses/orange
+	uniform = /obj/item/clothing/under/f13/brahminf
+	neck = /obj/item/clothing/neck/apron/chef
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/f13/military/ncr
+
+//Guild Knight
+
+/datum/job/followers/f13followerguard
+	title = "Guild Knight"
+	flag = GUILDKNIGHT
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
+	description = "You are one of the towns Paramedics.  Your job is to prepare parties to go out and try and help those in need that can't make it to the hospital on their own. Be that shooting your way to them or seeking them out with a rescue party."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#FFDDFF"
+
+	outfit = /datum/outfit/job/followers/f13followerguard
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+	loadout_options = list(
+	/datum/outfit/loadout/thelaw,
+	/datum/outfit/loadout/thechief,
+	/datum/outfit/loadout/thedictator
+	)
+
+	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
+	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
+
+/datum/outfit/job/followers/f13followerguard
+	name =	"Knight"
+	jobtype =	/datum/job/followers/f13followerguard
+	belt = /obj/item/kit_spawner/follower/guard
+	id =	/obj/item/card/id/silver
+	uniform =	/obj/item/clothing/under/f13/bodyguard
+	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
+	head =	/obj/item/clothing/head/helmet/riot/vaultsec
+	glasses =	/obj/item/clothing/glasses/sunglasses
+	shoes =	/obj/item/clothing/shoes/combat
+	l_pocket =	/obj/item/storage/belt/shoulderholster
+	backpack =	/obj/item/storage/backpack/explorer
+	satchel =	/obj/item/storage/backpack/satchel/explorer
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
+		/obj/item/flashlight/seclite = 1,
+		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/storage/belt/army/followers = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+	)
+
+/datum/outfit/loadout/thelaw
+	name = "The Law Man"
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
+	head = /obj/item/clothing/head/f13/town/sheriff
+	uniform = /obj/item/clothing/under/f13/police/formal
+	neck = /obj/item/storage/belt/shoulderholster
+	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
+	shoes = /obj/item/clothing/shoes/f13/military/plated
+
+	backpack_contents = list(
+	/obj/item/ammo_box/tube/c4570 = 3,
+	/obj/item/gun_upgrade/scope/watchman = 1
+	)
+
+/datum/outfit/loadout/thechief
+	name = "The Chief"
+	uniform = /obj/item/clothing/under/f13/police/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
+	head = /obj/item/clothing/head/f13/town/chief
+	neck = /obj/item/storage/belt/shoulderholster/ranger45
+	shoes = /obj/item/clothing/shoes/combat
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
+	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1,
+	/obj/item/ammo_box/shotgun/buck = 2
+	)
+
+/datum/outfit/loadout/thedictator
+	name = "The Dictator"
+	uniform = /obj/item/clothing/under/f13/police/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
+	r_hand = /obj/item/gun/energy/laser/scatter
+	backpack_contents = list(/obj/item/stock_parts/cell/ammo/mfc = 1,
+	)
