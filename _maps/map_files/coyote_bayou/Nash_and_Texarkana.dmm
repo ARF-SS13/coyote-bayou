@@ -5588,6 +5588,9 @@
 	},
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/light{
+	icon_state = "lamp"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -26082,6 +26085,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
+"dmf" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/ruins)
 "dmi" = (
 /obj/structure/car/rubbish1,
 /obj/effect/decal/waste{
@@ -44164,6 +44173,10 @@
 	pixel_x = -1;
 	opacity = 1
 	},
+/obj/structure/decoration/vent{
+	icon = 'icons/obj/structures.dmi';
+	icon_state = "manhole_closed"
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2right"
 	},
@@ -45139,7 +45152,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/wasteland/city)
+/area/f13/ruins)
 "ito" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -54269,7 +54282,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "kRc" = (
-/obj/structure/simple_door/metal/fence,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kRz" = (
@@ -56432,6 +56446,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/coyote/nash/museum/groundfloor)
+"luj" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/ruins)
 "lul" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -61112,6 +61132,10 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland)
+"mDA" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/ruins)
 "mDD" = (
 /obj/structure/flora/chomp/thicket2{
 	color = "#224422"
@@ -76344,7 +76368,9 @@
 	},
 /area/f13/building/hospital)
 "qGu" = (
-/obj/structure/closet/crate/large,
+/obj/structure/simple_door/metal/fence{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qGx" = (
@@ -77013,6 +77039,7 @@
 "qPG" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qPH" = (
@@ -80218,6 +80245,15 @@
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"rLN" = (
+/obj/structure/decoration/vent{
+	icon = 'icons/obj/structures.dmi';
+	icon_state = "manhole_closed"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain1"
+	},
+/area/f13/wasteland/city)
 "rLR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1"
@@ -81126,6 +81162,13 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland)
+"rYN" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/ruins)
 "rYR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
@@ -104182,6 +104225,9 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"ygh" = (
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/ruins)
 "ygi" = (
 /obj/structure/flora/chomp/bush5{
 	color = "#338833"
@@ -128836,7 +128882,7 @@ sxj
 sxj
 isl
 gRP
-isl
+rLN
 ewI
 cWn
 bOa
@@ -140650,10 +140696,10 @@ aae
 iLS
 aqd
 iLS
-fit
-fit
-fit
-fit
+rer
+rer
+rer
+rer
 fit
 drf
 fit
@@ -140907,10 +140953,10 @@ aae
 iLS
 iLS
 iLS
-fit
-gIw
-gIw
-xMz
+rer
+oUP
+oUP
+rYN
 lIp
 xMz
 dUB
@@ -141164,9 +141210,9 @@ aae
 aae
 aae
 abV
-gIw
-gIw
-gIw
+oUP
+oUP
+oUP
 itk
 fit
 fit
@@ -141421,10 +141467,10 @@ aae
 aaB
 aaB
 abV
-gIw
-aWO
-xMz
-drf
+oUP
+dmf
+rYN
+mDA
 iLS
 iLS
 iLS
@@ -141678,10 +141724,10 @@ ali
 aaB
 aae
 aae
-fit
-fit
-dUB
-drf
+rer
+rer
+luj
+mDA
 iLS
 atn
 atN
@@ -141936,9 +141982,9 @@ aaB
 aaB
 aae
 aae
-fit
-fit
-fit
+rer
+rer
+rer
 iLS
 ftT
 bJE
@@ -142156,12 +142202,12 @@ aOk
 aOk
 hrz
 aOk
-vsR
-rkl
-rkl
-rkl
-bbo
-nMB
+aOk
+aOk
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -142193,9 +142239,9 @@ aae
 aaY
 aaB
 aae
-fit
-fit
-fit
+rer
+rer
+rer
 iLS
 vJP
 atO
@@ -142413,14 +142459,14 @@ aOk
 aOk
 fcb
 cFK
-rkl
-hBx
-hUJ
-rkl
-etg
 aOk
 aOk
-biO
+vsR
+rkl
+rkl
+rkl
+bbo
+aae
 aae
 aaa
 aae
@@ -142450,8 +142496,8 @@ aak
 aak
 aaB
 aae
-fit
-fit
+rer
+rer
 hja
 iLS
 ain
@@ -142670,14 +142716,14 @@ lhb
 aOk
 cFK
 cFK
-qQY
-bOb
-sMT
+aOk
+aOk
 rkl
-biO
+hBx
+hUJ
+rkl
 aOk
-aOk
-aOk
+nMB
 aae
 aaa
 aae
@@ -142927,12 +142973,12 @@ aOk
 aOk
 fcb
 puj
-uFx
-uqJ
-kVl
-vhp
 aOk
 aOk
+qQY
+bOb
+sMT
+rkl
 bun
 mOW
 aae
@@ -143183,13 +143229,13 @@ aOk
 bun
 biO
 biO
-cFK
+kRc
+aOk
+aOk
 uFx
-mFo
-fAT
-rkl
-aOk
-aOk
+uqJ
+kVl
+vhp
 aOk
 aOk
 aae
@@ -143441,12 +143487,12 @@ aOk
 aOk
 cFK
 xuy
-hwj
-rkl
-rkl
-vsR
 aOk
-gxt
+aOk
+uFx
+mFo
+fAT
+rkl
 boC
 aOk
 aae
@@ -143700,12 +143746,12 @@ oYp
 aOk
 puj
 aOk
-qGu
-hyv
+hwj
+rkl
+rkl
+vsR
 aOk
-aOk
-aOk
-aOk
+gxt
 aae
 aae
 aae
@@ -143957,8 +144003,8 @@ cFK
 cFK
 nHY
 etg
+qGu
 aOk
-kRc
 aOk
 aOk
 aOk
@@ -143994,13 +144040,13 @@ aae
 aaB
 aaB
 xfv
-xfv
+ygh
 xfv
 xfv
 ckx
 xfv
 aae
-drf
+asS
 drf
 drf
 drf
