@@ -9,6 +9,77 @@
 "aL" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"bb" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 12
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 12
+	},
+/obj/machinery/shower{
+	pixel_y = 16;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"bD" = (
+/obj/structure/pool/ladder{
+	dir = 2;
+	pixel_y = 15
+	},
+/turf/open/pool,
+/area/f13/wasteland)
+"bL" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "bO" = (
 /obj/structure/fluff/beach_umbrella/cap,
 /obj/item/reagent_containers/rag/towel/random,
@@ -23,6 +94,12 @@
 /area/f13/wasteland)
 "cn" = (
 /turf/closed/indestructible/wood,
+/area/f13/wasteland)
+"cr" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/turf/open/pool,
 /area/f13/wasteland)
 "cB" = (
 /obj/structure/flora/chomp/palmuria1,
@@ -48,6 +125,44 @@
 /obj/effect/overlay/coconut,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"dU" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 1;
+	layer = 4.9
+	},
+/obj/machinery/shower{
+	dir = 4;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "ep" = (
 /obj/structure/fluff/beach_umbrella,
 /turf/open/floor/plating/beach/sand,
@@ -55,6 +170,22 @@
 "eW" = (
 /obj/structure/hammock_kbraid_s,
 /turf/open/floor/plating/beach/sand,
+/area/f13/wasteland)
+"fd" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "fV" = (
 /obj/structure/fluff/beach_umbrella/security,
@@ -76,6 +207,46 @@
 	dir = 8
 	},
 /turf/open/floor/plating/beach/sand,
+/area/f13/wasteland)
+"gJ" = (
+/obj/structure/toilet{
+	pixel_y = 1;
+	pixel_x = 4;
+	dir = 8
+	},
+/obj/structure/toilet_paper{
+	pixel_y = 18;
+	pixel_x = 2
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"hi" = (
+/obj/structure/chair/bench,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"hl" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "hn" = (
 /obj/effect/turf_decal/weather/dirtcorner{
@@ -113,6 +284,12 @@
 /obj/item/flashlight/oldlamp,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"je" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 6
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "jf" = (
 /obj/structure/bridgefull{
 	icon_state = "fountain"
@@ -128,6 +305,58 @@
 /obj/item/toy/beach_ball,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"jQ" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/obj/structure/pool/ladder{
+	dir = 2;
+	pixel_y = 14
+	},
+/turf/open/pool,
+/area/f13/wasteland)
+"jY" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"kp" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"lk" = (
+/obj/structure/mineral_door/paperframe{
+	name = "bathrooms"
+	},
+/turf/closed/wall/f13/coyote/tavern_wall,
+/area/f13/wasteland)
+"ls" = (
+/turf/open/pool,
+/area/f13/wasteland)
 "lI" = (
 /obj/structure/flora/chomp/palmy2{
 	pixel_y = -2;
@@ -136,6 +365,42 @@
 /obj/structure/flora/tree/chomp/palmtreeb1,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"mv" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"na" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 6
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "np" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -143,18 +408,37 @@
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
+"nt" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 4
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "nu" = (
 /obj/structure/simple_door/twowide_example,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"nv" = (
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "nC" = (
 /obj/structure/chair/comfy/plywood,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"oi" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 5
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "oD" = (
 /turf/open/floor/plating/beach/coastline_t{
 	dir = 4
 	},
+/area/f13/wasteland)
+"oY" = (
+/obj/machinery/door/airlock/glass_large,
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "pg" = (
 /obj/structure/chair/bench,
@@ -183,6 +467,19 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"pL" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 8
+	},
+/obj/item/toy/poolnoodle,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"qV" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 9
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "rc" = (
 /obj/machinery/door/airlock/wood/glass,
 /turf/open/indestructible/ground/outside/civ/thatch1,
@@ -195,6 +492,13 @@
 /obj/structure/flora/tree/chomp/palmtreech,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"rP" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 8
+	},
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "ss" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -205,6 +509,13 @@
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
+"sO" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "sQ" = (
 /obj/structure/railing/wooden_fencing{
 	dir = 8
@@ -214,6 +525,10 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating/beach/sand,
+/area/f13/wasteland)
+"sS" = (
+/obj/effect/turf_decal/weather/splineplain,
+/turf/open/pool,
 /area/f13/wasteland)
 "tc" = (
 /obj/structure/table/wood,
@@ -231,6 +546,43 @@
 /obj/structure/flora/chomp/palmuria,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"tB" = (
+/obj/structure/pool/ladder{
+	dir = 2;
+	pixel_y = 15
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"tG" = (
+/obj/structure/table/glass,
+/obj/item/clothing/shoes/f13/swimfins,
+/obj/item/clothing/shoes/f13/swimfins,
+/obj/item/clothing/shoes/f13/swimfins,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"tR" = (
+/obj/structure/chair/bench{
+	pixel_y = 14
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"tT" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 10
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "tW" = (
 /obj/structure/table/plasmaglass{
 	color = "5F9EA0"
@@ -241,6 +593,10 @@
 	},
 /obj/item/reagent_containers/food/drinks/shaker,
 /turf/open/indestructible/ground/outside/civ/thatch1,
+/area/f13/wasteland)
+"uf" = (
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "uP" = (
 /obj/structure/fence/wooden{
@@ -256,12 +612,55 @@
 "uY" = (
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner,
 /area/f13/wasteland)
+"uZ" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 1;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "vo" = (
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = 13
 	},
 /turf/open/indestructible/ground/outside/civ/thatch1,
+/area/f13/wasteland)
+"vz" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-10"
+	},
+/obj/structure/towel_rack{
+	pixel_y = 29
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "wc" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -277,6 +676,95 @@
 "wn" = (
 /turf/open/floor/plating/beach/coastline_t,
 /area/f13/wasteland)
+"ww" = (
+/obj/structure/table/glass,
+/obj/item/clothing/under/shorts/black{
+	pixel_y = 9;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/black{
+	pixel_y = 9;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/black{
+	pixel_y = 9;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/blue{
+	pixel_y = 9
+	},
+/obj/item/clothing/under/shorts/blue{
+	pixel_y = 9
+	},
+/obj/item/clothing/under/shorts/blue{
+	pixel_y = 9
+	},
+/obj/item/clothing/under/shorts/blue{
+	pixel_y = 9
+	},
+/obj/item/clothing/under/shorts/green{
+	pixel_y = 9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/shorts/green{
+	pixel_y = 9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/shorts/green{
+	pixel_y = 9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/shorts/green{
+	pixel_y = 9;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/shorts/grey{
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/grey{
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/grey{
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/grey{
+	pixel_x = -8
+	},
+/obj/item/clothing/under/shorts/polychromic,
+/obj/item/clothing/under/shorts/polychromic,
+/obj/item/clothing/under/shorts/polychromic,
+/obj/item/clothing/under/shorts/polychromic,
+/obj/item/clothing/under/shorts/polychromic,
+/obj/item/clothing/under/shorts/purple{
+	pixel_x = 8
+	},
+/obj/item/clothing/under/shorts/purple{
+	pixel_x = 8
+	},
+/obj/item/clothing/under/shorts/purple{
+	pixel_x = 8
+	},
+/obj/item/clothing/under/shorts/purple{
+	pixel_x = 8
+	},
+/obj/item/clothing/under/shorts/red{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/shorts/red{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/shorts/red{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/shorts/red{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "wy" = (
 /obj/structure/flora/chomp/potplant1{
 	pixel_y = 21;
@@ -290,6 +778,40 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
+/area/f13/wasteland)
+"wD" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 8;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "wU" = (
 /obj/structure/flora/chomp/palmy2,
@@ -307,9 +829,52 @@
 /obj/structure/curtain/directional/east,
 /turf/open/floor/plating/f13,
 /area/f13/wasteland)
+"xj" = (
+/obj/effect/turf_decal/weather/splineplain,
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "xk" = (
 /obj/structure/fluff/beach_umbrella/science,
 /turf/open/floor/plating/beach/sand,
+/area/f13/wasteland)
+"xm" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 8;
+	layer = 4.9
+	},
+/obj/machinery/shower{
+	pixel_y = 16;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "xv" = (
 /obj/structure/railing/wooden_fencing{
@@ -334,6 +899,120 @@
 /obj/effect/overlay/coconut,
 /turf/open/floor/plating/beach/sand,
 /area/f13/wasteland)
+"yh" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 1
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"yv" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	pixel_y = 16;
+	layer = 4.9
+	},
+/obj/machinery/shower{
+	dir = 4;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"zc" = (
+/obj/structure/table/glass,
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 9;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 9;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 9;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 9;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/f13/ww1swim/french{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/f13/ww1swim/french{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/f13/ww1swim/french{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/f13/ww1swim{
+	pixel_y = -3;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/f13/ww1swim{
+	pixel_y = -3;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/f13/ww1swim{
+	pixel_y = -3;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/f13/ww1swim{
+	pixel_y = -3;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/green,
+/obj/item/clothing/under/swimsuit/green,
+/obj/item/clothing/under/swimsuit/green,
+/obj/item/clothing/under/swimsuit/green,
+/obj/item/clothing/under/swimsuit/green,
+/obj/item/clothing/under/shorts/polychromic,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "zx" = (
 /obj/structure/flora/chomp/potplant0{
 	pixel_y = 13;
@@ -344,6 +1023,13 @@
 	pixel_x = 13
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"Ae" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-10"
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Ah" = (
 /obj/structure/flora/tree/chomp/spalmtree4,
@@ -358,6 +1044,10 @@
 	pixel_x = -16
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
+/area/f13/wasteland)
+"Be" = (
+/obj/structure/dresser,
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Cd" = (
 /obj/structure/rack/shelf_metal/modern,
@@ -437,6 +1127,75 @@
 /obj/item/clothing/shoes/f13/swimfins,
 /obj/item/clothing/shoes/f13/swimfins,
 /turf/open/indestructible/ground/outside/civ/thatch1,
+/area/f13/wasteland)
+"Ce" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 9
+	},
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Ct" = (
+/obj/item/kirbyplants/random{
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/outside/civ/grass0,
+/area/f13/wasteland)
+"Cx" = (
+/obj/effect/turf_decal/weather/splineplain,
+/obj/structure/table/wood,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"CB" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 8;
+	layer = 4.9
+	},
+/obj/machinery/shower{
+	dir = 1;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"De" = (
+/obj/structure/mineral_door/paperframe{
+	name = "hot tub"
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Dv" = (
 /obj/effect/turf_decal/weather/dirtcorner{
@@ -524,6 +1283,13 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"Ez" = (
+/obj/effect/turf_decal/weather/splineplain,
+/obj/structure/table/wood,
+/obj/structure/bedsheetbin/towel,
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "EB" = (
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
@@ -554,6 +1320,10 @@
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
+"FB" = (
+/obj/structure/curtain/directional/north,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "FJ" = (
 /obj/structure/curtain,
 /turf/open/indestructible/ground/outside/civ/thatch1,
@@ -567,6 +1337,12 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"Gw" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "GG" = (
 /obj/structure/flora/tree/chomp/mpalmtreeb,
@@ -590,6 +1366,10 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"Hn" = (
+/obj/structure/pool/Rboard,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "Id" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -603,6 +1383,20 @@
 /area/f13/wasteland)
 "Ie" = (
 /turf/closed/indestructible/rock,
+/area/f13/wasteland)
+"In" = (
+/obj/structure/mineral_door/paperframe{
+	name = "changing rooms"
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Ix" = (
+/obj/item/reagent_containers/rag/towel/random,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"IN" = (
+/obj/structure/chair/comfy/plywood,
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Jf" = (
 /obj/effect/fake_stairs/south{
@@ -625,6 +1419,24 @@
 /area/f13/wasteland)
 "JF" = (
 /turf/closed/wall/f13/coyote/tavern_wall,
+/area/f13/wasteland)
+"JY" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Kl" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/rag/towel/random,
+/obj/item/reagent_containers/rag/towel/random,
+/obj/item/reagent_containers/rag/towel/random,
+/obj/item/reagent_containers/rag/towel/random,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Kp" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 5
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Ku" = (
 /obj/structure/table/plasmaglass{
@@ -704,6 +1516,14 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"KZ" = (
+/obj/machinery/light/floor,
+/obj/structure/table/wood,
+/obj/item/soap/nanotrasen,
+/obj/item/soap/nanotrasen,
+/obj/item/soap/nanotrasen,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "Li" = (
 /obj/effect/turf_decal/weather/dirtcorner{
 	dir = 8;
@@ -711,12 +1531,39 @@
 	},
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
+"Lj" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 8
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "Lq" = (
 /obj/structure/chair/sofa{
 	dir = 1;
 	color = null
 	},
 /turf/open/indestructible/ground/stellercarpet/fourty,
+/area/f13/wasteland)
+"LY" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "Mx" = (
 /obj/structure/grille,
@@ -729,6 +1576,81 @@
 	dir = 6
 	},
 /area/f13/wasteland)
+"MW" = (
+/obj/structure/sink/cupboard,
+/obj/structure/mirror/alt{
+	pixel_y = 33
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Nb" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 4;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"Ol" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	pixel_y = 16;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "OB" = (
 /obj/structure/chair/sofa{
 	color = null;
@@ -736,11 +1658,73 @@
 	},
 /turf/open/indestructible/ground/stellercarpet/fourtyfour,
 /area/f13/wasteland)
+"OF" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "OG" = (
 /obj/structure/stairs/north{
 	color = "#967969"
 	},
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"OQ" = (
+/obj/structure/table/glass,
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 13;
+	pixel_x = -4
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 13;
+	pixel_x = -4
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 13;
+	pixel_x = -4
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 12;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 12;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 12;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/swimsuit/white{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/item/clothing/under/swimsuit/white{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = 9
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "Ph" = (
 /obj/structure/fluff/beach_umbrella/science{
@@ -748,6 +1732,51 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/beach/sand,
+/area/f13/wasteland)
+"Pp" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
+"PI" = (
+/obj/structure/toilet{
+	pixel_x = 4;
+	dir = 8
+	},
+/obj/structure/toilet_paper{
+	pixel_y = 18;
+	pixel_x = 2
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"PR" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "PV" = (
 /turf/open/floor/plating/beach/sand,
@@ -794,6 +1823,13 @@
 	},
 /turf/open/indestructible/ground/outside/civ/thatch1,
 /area/f13/wasteland)
+"RW" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 4
+	},
+/obj/structure/pool/Lboard,
+/turf/open/pool,
+/area/f13/wasteland)
 "Sa" = (
 /obj/machinery/light{
 	dir = 8
@@ -819,6 +1855,19 @@
 	},
 /turf/open/indestructible/ground/stellercarpet/sixteen,
 /area/f13/wasteland)
+"SV" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 9
+	},
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Ua" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-18"
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
 "Ur" = (
 /obj/structure/junk/small/prewartv,
 /turf/open/indestructible/ground/outside/civ/woodalt,
@@ -832,6 +1881,17 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"UU" = (
+/obj/effect/turf_decal/weather/splineplain,
+/turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"VO" = (
+/obj/structure/mineral_door/paperframe,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/wasteland)
 "VU" = (
 /obj/structure/chair/sofa/left{
@@ -852,6 +1912,33 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"WW" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_x = 19
+	},
+/obj/machinery/shower{
+	dir = 8;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "Xd" = (
 /obj/structure/fluff/beach_umbrella,
 /obj/item/reagent_containers/rag/towel/random,
@@ -867,9 +1954,35 @@
 /obj/structure/hammock_kbraid_s,
 /turf/open/floor/plating/beach/coastline_t,
 /area/f13/wasteland)
+"Ys" = (
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 10
+	},
+/turf/open/pool,
+/area/f13/wasteland)
 "Zc" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/indestructible/ground/outside/civ/thatch1,
+/area/f13/wasteland)
+"Zw" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland)
 "ZU" = (
 /obj/item/toy/beach_ball,
@@ -1186,27 +2299,27 @@ Ie
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -1335,30 +2448,30 @@ aL
 Ie
 "}
 (4,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -1487,30 +2600,30 @@ aL
 Ie
 "}
 (5,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -1639,41 +2752,41 @@ aL
 Ie
 "}
 (6,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -1791,41 +2904,41 @@ aL
 Ie
 "}
 (7,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -1943,41 +3056,41 @@ aL
 Ie
 "}
 (8,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2095,41 +3208,41 @@ aL
 Ie
 "}
 (9,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2247,41 +3360,41 @@ aL
 Ie
 "}
 (10,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+Ce
+rP
+rP
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+tT
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2399,41 +3512,41 @@ aL
 Ie
 "}
 (11,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+sO
+nv
+nv
+PR
+nv
+nv
+PR
+nv
+nv
+PR
+nv
+nv
+PR
+nv
+nv
+nv
+UU
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2551,41 +3664,41 @@ aL
 Ie
 "}
 (12,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+sO
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+UU
+JF
+Ae
+Ez
+bL
+kp
+kp
+Zw
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2703,41 +3816,41 @@ aL
 Ie
 "}
 (13,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+nv
+qV
+Lj
+Lj
+Lj
+Lj
+Lj
+Lj
+Lj
+Ys
+nv
+nv
+nv
+UU
+JF
+nv
+xj
+hl
+Zw
+Zw
+Zw
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -2855,41 +3968,41 @@ aL
 Ie
 "}
 (14,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+qV
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+Ys
+nv
+nv
+UU
+De
+nv
+UU
+hl
+Zw
+Zw
+LY
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3007,41 +4120,41 @@ aL
 Ie
 "}
 (15,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+IN
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+nv
+xj
+hl
+Zw
+Pp
+Zw
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3159,41 +4272,41 @@ aL
 Ie
 "}
 (16,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+Ua
+Cx
+fd
+Zw
+Zw
+Zw
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3311,41 +4424,41 @@ aL
 Ie
 "}
 (17,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3463,41 +4576,41 @@ aL
 Ie
 "}
 (18,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+IN
+nv
+cr
+ls
+ls
+ls
+SV
+pL
+tT
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3615,41 +4728,41 @@ aL
 Ie
 "}
 (19,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+jQ
+ls
+ls
+ls
+yh
+Ix
+UU
+bD
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3767,41 +4880,41 @@ aL
 Ie
 "}
 (20,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+cr
+ls
+ls
+ls
+Kp
+jY
+na
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -3919,41 +5032,41 @@ aL
 Ie
 "}
 (21,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+IN
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+oY
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4071,41 +5184,41 @@ aL
 Ie
 "}
 (22,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+nv
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4223,41 +5336,41 @@ aL
 Ie
 "}
 (23,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+cr
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+sS
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4375,41 +5488,41 @@ aL
 Ie
 "}
 (24,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+IN
+nv
+oi
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+je
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4527,41 +5640,41 @@ aL
 Ie
 "}
 (25,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+nv
+oi
+nt
+nt
+nt
+RW
+nt
+nt
+nt
+je
+nv
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4679,41 +5792,41 @@ aL
 Ie
 "}
 (26,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+Hn
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4831,41 +5944,41 @@ aL
 Ie
 "}
 (27,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+yh
+nv
+nv
+Gw
+nv
+nv
+Gw
+nv
+nv
+Gw
+nv
+nv
+Gw
+nv
+nv
+nv
+UU
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -4983,41 +6096,41 @@ aL
 Ie
 "}
 (28,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+Kp
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+na
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5135,41 +6248,41 @@ aL
 Ie
 "}
 (29,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+JF
+JF
+lk
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+In
+JF
+JF
+JF
+JF
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5287,41 +6400,41 @@ aL
 Ie
 "}
 (30,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+MW
+JY
+nv
+Kl
+KZ
+JF
+EB
+JF
+tR
+FB
+nv
+nv
+nv
+nv
+nv
+OQ
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5439,41 +6552,41 @@ aL
 Ie
 "}
 (31,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+vz
+nv
+nv
+nv
+uf
+JF
+EB
+JF
+JF
+JF
+nv
+hi
+nv
+hi
+nv
+zc
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5591,41 +6704,41 @@ aL
 Ie
 "}
 (32,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+MW
+JY
+nv
+nv
+JY
+JF
+EB
+JF
+tR
+FB
+nv
+hi
+nv
+hi
+nv
+ww
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5743,41 +6856,41 @@ aL
 Ie
 "}
 (33,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+JF
+JF
+VO
+JF
+VO
+JF
+EB
+JF
+JF
+JF
+nv
+JY
+nv
+JY
+nv
+tG
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -5895,41 +7008,41 @@ aL
 Ie
 "}
 (34,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+gJ
+JF
+PI
+JF
+EB
+JF
+tR
+FB
+nv
+hi
+nv
+hi
+nv
+Be
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -6047,41 +7160,41 @@ aL
 Ie
 "}
 (35,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+JF
+JF
+JF
+JF
+EB
+JF
+JF
+JF
+nv
+hi
+nv
+hi
+nv
+nv
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -6199,41 +7312,41 @@ aL
 Ie
 "}
 (36,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+Ct
+JF
+tR
+FB
+nv
+nv
+nv
+nv
+nv
+nv
+JF
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
 aL
 aL
 aL
@@ -6351,30 +7464,30 @@ aL
 Ie
 "}
 (37,1,1) = {"
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
+JF
 aL
 aL
 aL
@@ -7118,11 +8231,11 @@ aL
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
+yv
+Nb
+Nb
+Nb
+dU
 aL
 aL
 aL
@@ -7270,11 +8383,11 @@ aL
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
+bb
+mv
+mv
+mv
+uZ
 aL
 aL
 aL
@@ -7422,11 +8535,11 @@ aL
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
+tB
+mv
+mv
+mv
+uZ
 aL
 aL
 aL
@@ -7574,11 +8687,11 @@ aL
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
+Ol
+mv
+mv
+mv
+uZ
 aL
 aL
 aL
@@ -7726,11 +8839,11 @@ aL
 aL
 aL
 aL
-aL
-aL
-aL
-aL
-aL
+xm
+WW
+wD
+wD
+CB
 aL
 aL
 aL
