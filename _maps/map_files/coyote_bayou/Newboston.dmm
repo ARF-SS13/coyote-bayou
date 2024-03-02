@@ -36983,13 +36983,16 @@
 	opacity = 1
 	},
 /obj/machinery/computer/communications{
-	name = "quest console";
+	name = "quest console - not quite working edition";
 	req_access = null
 	},
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_x = 6;
 	pixel_y = 4
+	},
+/obj/structure/barricade/wooden{
+	name = "machinery under repair lock out boards"
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
