@@ -2164,7 +2164,8 @@
 	dir = 4
 	},
 /obj/structure/clothes{
-	pixel_x = 31
+	pixel_x = 31;
+	anchored = 1
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland/city/newboston/house/cabin_one)
@@ -9539,7 +9540,8 @@
 	dir = 4
 	},
 /obj/structure/clothes{
-	pixel_x = 31
+	pixel_x = 31;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston/outdoors)
