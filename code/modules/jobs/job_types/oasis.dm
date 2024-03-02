@@ -1923,8 +1923,6 @@ Mayor
 	/datum/outfit/loadout/thedictator
 	)
 
-	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 
 /datum/outfit/job/followers/f13followerguard
 	name =	"Knight"
