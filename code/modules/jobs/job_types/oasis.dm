@@ -1906,7 +1906,7 @@ Mayor
 	flag = GUILDKNIGHT
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = 0
+	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
 	description = "You are one of the towns Paramedics.  Your job is to prepare parties to go out and try and help those in need that can't make it to the hospital on their own. Be that shooting your way to them or seeking them out with a rescue party."
@@ -1914,7 +1914,8 @@ Mayor
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard
-
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
