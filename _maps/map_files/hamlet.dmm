@@ -15,6 +15,17 @@
 	},
 /turf/open/pool,
 /area/f13/wasteland)
+"bH" = (
+/obj/structure/lamp_post/biglamp{
+	pixel_x = -2
+	},
+/obj/effect/turf_decal/weather/springflowers,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/grass0,
+/area/f13/wasteland)
 "bO" = (
 /obj/structure/fluff/beach_umbrella/cap,
 /obj/item/reagent_containers/rag/towel/random,
@@ -1732,6 +1743,17 @@
 /obj/effect/turf_decal/weather/splineplain,
 /obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/freezer,
+/area/f13/wasteland)
+"Ts" = (
+/obj/structure/lamp_post/biglamp{
+	pixel_x = -2
+	},
+/obj/effect/turf_decal/weather/springflowers,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
 "TN" = (
 /obj/machinery/door/airlock/glass_large,
@@ -4954,14 +4976,14 @@ nv
 nv
 wH
 JF
-EB
-EB
-EB
-EB
-EB
-EB
-EB
-EB
+wC
+wC
+wC
+Ts
+wC
+wC
+wC
+wC
 EB
 EB
 aL
@@ -5410,14 +5432,14 @@ nv
 nv
 wH
 JF
-EB
-EB
-EB
-EB
-EB
-EB
-EB
-EB
+ih
+ih
+ih
+bH
+ih
+ih
+ih
+ih
 EB
 EB
 aL
