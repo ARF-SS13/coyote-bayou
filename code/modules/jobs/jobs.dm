@@ -163,7 +163,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	//"Prospector",
 	//"Doctor",
 	//"Detective",
-	//"Guild Banker",
+	//"Guild Financier",
 	"Town Doctor",
 	"Town Scientist",
 	//"Texarkana Quartermaster",
@@ -330,11 +330,12 @@ GLOBAL_LIST_INIT(followers_positions, list(
 ))
 
 GLOBAL_LIST_INIT(guild_positions, list(
-	"Guild Librarian",
-	"Guild Medic",
+	"Guild Cataloger",
+	"Guild Healer",
 	"Guild Shopkeeper",
-	"Guild Bartender",
-	"Guild Knight"
+	"Guild Kitcheneer",
+	"Guild Knight",
+	"Guild Financier"
 ))
 
 //Heavens Night
