@@ -814,7 +814,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "ce" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
@@ -822,10 +822,6 @@
 	},
 /turf/open/water,
 /area/f13/building/tribal)
-"cf" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "cg" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
@@ -1333,12 +1329,6 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/city/newboston/outdoors)
-"dd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/f13/caves)
 "de" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -3460,12 +3450,6 @@
 "hT" = (
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland)
-"hU" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/caves)
 "hV" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3516,7 +3500,7 @@
 	req_one_access_txt = null
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/caves)
+/area/f13/building)
 "id" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -3689,7 +3673,7 @@
 "iz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "iA" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -5100,7 +5084,6 @@
 /area/f13/building)
 "lL" = (
 /obj/structure/chair/sofa/corp/left{
-	dir = 2;
 	color = "pink"
 	},
 /turf/open/floor/wood_common{
@@ -6634,7 +6617,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "pg" = (
 /obj/item/weapon/copperpot2,
 /obj/item/weapon/copperpot,
@@ -7633,7 +7616,7 @@
 	network = list("ss13","rd")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side,
-/area/f13/caves)
+/area/f13/building)
 "rF" = (
 /obj/structure/railing{
 	dir = 6
@@ -7784,7 +7767,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "rX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/flashlight/oldlamp{
@@ -9251,7 +9234,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/caves)
+/area/f13/building)
 "vk" = (
 /obj/structure/toilet,
 /turf/open/floor/plasteel/f13{
@@ -9287,11 +9270,6 @@
 	color = "#888888"
 	},
 /area/f13/building/tribal)
-"vp" = (
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
-/area/f13/caves)
 "vq" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/dirt,
@@ -10233,7 +10211,7 @@
 "xF" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio99"
+	id = "xenobiolockdown"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
@@ -11491,7 +11469,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "AM" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -11893,7 +11871,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "BJ" = (
 /obj/structure/railing{
 	dir = 6
@@ -12072,7 +12050,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "Ch" = (
 /mob/living/simple_animal/hostile/raider/ranged,
 /turf/open/floor/f13{
@@ -13136,7 +13114,7 @@
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/caves)
+/area/f13/building)
 "Ew" = (
 /obj/structure/closet/l3closet/scientist,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -13413,15 +13391,6 @@
 	},
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland)
-"Fd" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/delivery,
-/obj/machinery/light/floor,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/caves)
 "Fe" = (
 /obj/structure/mirror{
 	dir = 8;
@@ -13630,7 +13599,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "FF" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#999999"
@@ -14846,7 +14815,6 @@
 "Ir" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 1;
-	pixel_y = 0;
 	color = "brown"
 	},
 /turf/open/floor/wood_common,
@@ -15358,7 +15326,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/slime_extract/grey,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "Jy" = (
 /obj/structure/stone_tile/block{
 	pixel_x = 17;
@@ -19449,9 +19417,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
-"SI" = (
-/turf/closed/mineral/random/low_chance,
-/area/f13/building)
 "SJ" = (
 /obj/structure/anvil/obtainable/basic,
 /obj/item/melee/smith/hammer/premade,
@@ -19826,9 +19791,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"TM" = (
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "TN" = (
 /obj/structure/wreck/trash/machinepile,
 /turf/open/floor/f13{
@@ -21245,7 +21207,6 @@
 /area/f13/tribe)
 "WW" = (
 /obj/structure/chair/sofa/corp/right{
-	dir = 2;
 	color = "pink"
 	},
 /turf/open/floor/wood_common{
@@ -21279,11 +21240,6 @@
 /obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"Xa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
-/area/f13/caves)
 "Xc" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -21305,7 +21261,7 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/f13/caves)
+/area/f13/building)
 "Xf" = (
 /obj/item/storage/fancy/heart_box{
 	desc = "A heart shaped chocolate box, in memory of Xena.  Fens cat who passed in 2015.  Her mob here has been rescued from ARFS Dallus 1 for 1 from the final version of its map."
@@ -22377,14 +22333,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
-"ZK" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/f13/caves)
 "ZL" = (
 /obj/structure/barricade/wooden/planks{
 	density = 0;
@@ -59828,12 +59776,12 @@ qF
 qF
 qF
 qF
-TM
-TM
-TM
-TM
-TM
-TM
+qF
+qF
+qF
+qF
+qF
+qF
 GU
 GU
 GU
@@ -60081,16 +60029,16 @@ qF
 qF
 qF
 qF
-TM
-TM
-TM
-TM
-TM
-TM
-cf
-TM
-TM
-TM
+qF
+qF
+qF
+qF
+qF
+qF
+Qw
+qF
+qF
+qF
 GU
 GU
 GU
@@ -60338,16 +60286,16 @@ qF
 qF
 qF
 qF
-SI
-SI
-SI
-SI
-TM
-TM
-TM
-TM
-TM
-TM
+GU
+GU
+GU
+GU
+qF
+qF
+qF
+qF
+qF
+qF
 GU
 GU
 GU
@@ -60595,19 +60543,19 @@ qF
 qF
 qF
 GU
-SI
-SI
-SI
-SI
+GU
+GU
+GU
+GU
 IQ
 xF
 xF
 xF
 xF
 IQ
-SI
-SI
-SI
+GU
+GU
+GU
 tN
 tN
 tN
@@ -60862,9 +60810,9 @@ IQ
 zE
 di
 IQ
-SI
-SI
-SI
+GU
+GU
+GU
 us
 GU
 GU
@@ -61119,9 +61067,9 @@ IQ
 Nj
 di
 IQ
-SI
-SI
-SI
+GU
+GU
+GU
 us
 GU
 GU
@@ -61880,7 +61828,7 @@ qF
 qF
 qF
 qF
-SO
+IQ
 rO
 jA
 nN
@@ -62137,7 +62085,7 @@ qF
 qF
 qF
 GU
-SO
+IQ
 PY
 DT
 WQ
@@ -62394,7 +62342,7 @@ GU
 GU
 GU
 GU
-SO
+IQ
 IQ
 IQ
 IQ
@@ -63680,18 +63628,18 @@ GU
 GU
 GU
 GU
-SO
-ZK
+IQ
+Ij
 Jx
 FE
 Ev
-Xa
-vp
-Fd
+Ai
+zE
+yQ
 rW
 AL
 Xd
-SO
+IQ
 GU
 GU
 GU
@@ -63937,18 +63885,18 @@ GU
 GU
 GU
 GU
-SO
+IQ
 iz
 cd
 pf
 vj
 rE
-vp
+zE
 ic
 Cg
-dd
+bs
 BI
-SO
+IQ
 GU
 GU
 GU
@@ -64194,18 +64142,18 @@ GU
 GU
 GU
 GU
-SO
-SO
-SO
-SO
-SO
-hU
-SO
-SO
-SO
-SO
-SO
-SO
+IQ
+IQ
+IQ
+IQ
+IQ
+CR
+IQ
+IQ
+IQ
+IQ
+IQ
+IQ
 Yj
 Yj
 Yj
