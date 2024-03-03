@@ -80,16 +80,31 @@ export const FlirtyFlirty = (props, context) => {
 const FlirtHelp = (props, context) => {
   const { act, data } = useBackend(context);
 
+  const BodyStylePro = {
+    'background-color': 'rgba(255, 255, 255, 0.1)',
+    'border-radius': '10px',
+    'padding': '0.5rem',
+  };
+
+  const BodyStyleMid = {
+    'background-color': 'rgba(255, 255, 255, 0.1)',
+    'border-radius': '10px',
+    'padding': '0.5rem',
+  };
+
+  const BodyStyleWarning = {
+    'background-color': 'rgba(255, 255, 255, 0.1)',
+    'border-radius': '10px',
+    'padding': '0.5rem',
+  };
+
   return (
     <>
       <Box
         p="0.5rem"
         my="0.5rem"
         textAlign="center"
-        style={{
-          'background-color': 'rgba(255, 255, 255, 0.1)',
-          'border-radius': '10px',
-        }}
+        style={BodyStylePro}
         width="100%">
         <Box
           fontSize="18px"
@@ -102,24 +117,54 @@ const FlirtHelp = (props, context) => {
             By Dank Elly the Fox
         </Box>
       </Box>
-      <Box
-        style={{
-          'border-radius': '10px',
-          'background-color': 'rgba(255, 255, 255, 0.1)',
-          'padding': '0.5rem',
-        }}
-        >
+      <Box style={BodyStylePro}>
         So lets say you see someone you want to get to know a bit better. Maybe
         they're a hot lil critter, or just a really cool person. Problem is,
         you gotta get their attention! Sure, you can just go up to them and
         blurt out your name, but <i>augh</i>, what do you say, what do you
-        <i>do</i>? Easy. You flirt with them! But how?AAAAAAAAA
-      </Box>
-      <Box>
+        <i>do</i>? Easy. You flirt with them! But how?
+        <br/>
+        <br/>
         Flirts are pre-packaged sets of actions that are sent between you and
-        a person with whom you want to interact.
+        whomever you're interested in meeting. They're low-risk and to the point,
+        perfect for getting to know someone new.
+        <br/>
+        <br/>
+        To perform a Flirt, just press one of the Flirt buttons on the main page.
+        This will do one of two things, depending on if you have a target or not.
+        <br/>
+        <br/>
+        If you have a target, it will just perform the flirt on them.
+        <br/>
+        <br/>
+        If you don't, it will spawn you a Flirt Item. You can click on someone
+        with this item, and it will perform the flirt on them at any range, or
+        you can click on it in-hand to broadcast a non-specific version of the
+        Flirt to everyone nearby.
+        <br/>
+        <br/>
+        So, targetting! If you want to target someone, just click the button
+        in the upper half of the window, can't miss it! When you do this, if you
+        don't have a target, it will spawn you a Flirt Targetter, and with that,
+        just click someone to target them.
+        <br/>
+        <br/>
+        If you do have a target, clicking this button will clear your target.
+        Your target is also cleared after you perform a flirt on them.
+        <br/>
+        <br/>
+        You can <i>also</i> right-click someone and click "Flirt with" to target
+        them and open this window. You can also use the *flirt emote to open
+        this window, though it won't target anyone by default.
       </Box>
-    </>
+      <Box style={BodyStyleWarning}>
+        <b>Keep in mind</b>:
+      <Box style={BodyStylePro}>
+        Read their OOC notes first and respect their preferences! Basically don't
+        be a creep... unless they want that =3
+      </Box>
+    </Box>
+  </>
   );
 }
 
@@ -135,11 +180,7 @@ const FlirtHeaderThings = (props, context) => {
 
   const HasTarget = TargetName !== "AAABAD";
   const TargNameReal = HasTarget ? TargetName : "No one";
-  const HelpText = "HOW2USE: enmiu" + <br /> + "sdaff"
-  const [
-    HelpMode,
-    setHelpMode,
-  ] = useLocalState(context, 'HelpMode', false);
+  const HelpText = "How do I flirt?";
 
   return (
     <Flex direction="row">
@@ -148,7 +189,10 @@ const FlirtHeaderThings = (props, context) => {
           Your next flirt will be sent to:
           <Button
             content={TargNameReal}
-            onClick={() => act('ClearFlirtTarget', {
+            onClick={() => act((
+              HasTarget
+              ? 'ClearFlirtTarget'
+              : 'GiveFlirtTargetItem'), {
               'ReturnFlirterCkey': FlirterCkey,
               'ReturnTargetCkey': TargetCkey,
             })} />

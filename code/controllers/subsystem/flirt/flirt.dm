@@ -13,9 +13,11 @@
 	/// displayed to the flirted self
 	var/self_message = "You flirt with %TARGET%! How sweet."
 	var/self_message_span = "love" // check them out in spans.dm!
+	var/self_message_advice = "Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"
 	/// displayed to the flirted target
 	var/target_message = "You notice %FLIRTER% flirting with you! How sweet."
 	var/target_message_span = "love"
+	var/target_message_advice = "Maybe give them a little emote back?"
 	/// displayed when you use the emote item in hand to broadcast a general flirt
 	var/aoe_message
 	var/aoe_message_span
@@ -25,6 +27,11 @@
 	var/list/categories = list("Misc")
 	/// sound it makes to us bolth
 	var/sound_to_do // = "sound/items/bikehorn.ogg"
+
+	/// if the Flirt is expecting a greenlight action, have it have them autotarget u
+	var/requests_reply = RUE
+	/// text sent to em when u use a Flort asking a request
+	var/reply_request_text = span_notice("Use *flirt and use one of the options in the Accept or a Decline categories to accept or decline their advances!")
 
 	var/debug = FALSE
 
@@ -70,6 +77,10 @@
 	/// dooesnt support pronouns cus idk
 	to_chat(flirter, msg_to_me)
 	to_chat(target, msg_to_you)
+	if(requests_reply)
+		SSchat.add_flirt_target(target, flirter)
+		to_chat(target, reply_request_text)
+	tell_ghosting_admins(flirter, target)
 	return TRUE
 
 /datum/flirt/proc/flirt_aoe(mob/living/flirter)
@@ -81,18 +92,21 @@
 		msg_to_everyone,
 		blind_message = msg_to_everyone, // love is blind
 	)
+	tell_ghosting_admins(flirter, null)
 	return TRUE
 
 /datum/flirt/proc/format_directed_selfmessage(flirter, target)
 	var/msg = "<span class='[self_message_span]'>[self_message]</span>"
 	msg = replacetextEx(msg, "%TARGET%", "[target]")
 	msg = replacetextEx(msg, "%FLIRTER%", "[flirter]")
+	msg = "[msg] [self_message_advice]"
 	return msg
 
 /datum/flirt/proc/format_directed_targetmessage(flirter, target)
 	var/msg = "<span class='[target_message_span]'>[target_message]</span>"
 	msg = replacetextEx(msg, "%TARGET%", "[target]")
 	msg = replacetextEx(msg, "%FLIRTER%", "[flirter]")
+	msg = "[msg] [target_message_advice]"
 	return msg
 
 /datum/flirt/proc/format_aoemessage(flirter)
@@ -143,6 +157,22 @@
 		to_chat(previewer, span_notice("This flirt doesn't have a sound to play, sorry!"))
 		return
 	previewer.playsound_local(get_turf(previewer), sound_to_do, 75, FALSE, FALSE)
+
+/datum/flirt/proc/tell_ghosting_admins(mob/living/flirter, mob/living/target)
+	log_emote("[flirter]([flirter.ckey]) used flirt [flirtname] to [target?target.ckey:"everyone around em"].")
+	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
+	for(var/mob/ghost as anything in GLOB.dead_mob_list)
+		if(QDELETED(ghost))
+			continue
+		if(!ghost.client || isnewplayer(ghost))
+			continue
+		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
+			continue
+		if(client && client.ckey && (client.ckey in ghost.client.prefs.aghost_squelches)) // We cannot assume they have a client.
+			continue
+		if(!check_rights_for(ghost.client, R_ADMIN))
+			continue
+		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, flirter)] flirted [flirtname] at [target?FOLLOW_LINK(ghost, target):"everyone around em"]</span>")
 
 /datum/flirt/proc/format_for_tgui()
 	var/list/data = list()
