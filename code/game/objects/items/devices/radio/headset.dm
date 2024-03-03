@@ -445,6 +445,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		\nTo access the Nash commerce channel, use :j."
 	keyslot = new /obj/item/encryptionkey/headset_town/commerce
 
+/obj/item/radio/headset/headset_town/guild
+	name = "New Boston guild radio headset"
+	desc = "This is used by Nash's small business owners.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash Guild channel, use :g."
+	keyslot = new /obj/item/encryptionkey/headset_town/guild
+
 /obj/item/radio/headset/headset_town/mayor
 	name = "New Boston mayoral radio headset"
 	desc = "This is used by Nash's mayor (and secretary). Protects ears from flashbangs.\
