@@ -66,7 +66,7 @@
 	if(bag)
 		. += "bloodbag-input"
 		if(bag.reagents.total_volume)
-			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "input-reagent")
+			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "input-reagent", color = mix_color_from_reagents(bag.reagents.reagent_list))
 
 			var/percent = round((bag.reagents.total_volume / bag.volume) * 100)
 			switch(percent)
@@ -85,13 +85,12 @@
 				if(91 to INFINITY)
 					filling_overlay.icon_state = "input-reagent100"
 
-			filling_overlay.color = list(mix_color_from_reagents(bag.reagents.reagent_list))
 			. += filling_overlay
 
 	if(outbag)
 		. += "bloodbag-output"
 		if(outbag.reagents.total_volume)
-			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "output-reagent")
+			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "output-reagent", color = mix_color_from_reagents(outbag.reagents.reagent_list))
 
 			var/percent = round((outbag.reagents.total_volume / outbag.volume) * 100)
 			switch(percent)
@@ -110,7 +109,6 @@
 				if(91 to INFINITY)
 					filling_overlay.icon_state = "output-reagent100"
 
-			filling_overlay.color = list(mix_color_from_reagents(outbag.reagents.reagent_list))
 			. += filling_overlay
 
 /obj/machinery/bloodbankgen/process()
