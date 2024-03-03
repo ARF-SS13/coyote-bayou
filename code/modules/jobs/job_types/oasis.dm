@@ -1700,7 +1700,7 @@ Mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/headset_town/commerce
+	ears = /obj/item/radio/headset/headset_town/guild
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
@@ -1783,6 +1783,7 @@ Mayor
 	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
+	ears = /obj/item/radio/headset/headset_town/guild
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	r_pocket = /obj/item/flashlight/flare
@@ -1829,8 +1830,7 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
 	/datum/outfit/loadout/frontier,
-	/datum/outfit/loadout/richmantender,
-	/datum/outfit/loadout/diner)
+	/datum/outfit/loadout/richmantender)
 
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -1849,7 +1849,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13barkeep
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
+	ears = /obj/item/radio/headset/headset_town/guild
 	belt = /obj/item/kit_spawner/townie/barkeep
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -1891,6 +1891,57 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	neck = /obj/item/clothing/neck/tie/black
 
+//Guild Chef
+
+/datum/job/oasis/f13barkeep
+	title = "Guild Chef"
+	flag = GUILDCHEF
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the free market and New Boston's Laws"
+	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
+	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/f13barkeep
+
+	loadout_options = list(
+	/datum/outfit/loadout/diner,
+	/datum/outfit/loadout/grower,
+	)
+
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/f13barkeep
+	name = "Chef"
+	jobtype = /datum/job/oasis/f13barkeep
+	uniform = /obj/item/clothing/under/f13/bartenderalt
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/guild
+	belt = /obj/item/kit_spawner/townie/barkeep
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	backpack = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/ammo_box/shotgun/bean = 2,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
+		)
+
 /datum/outfit/loadout/diner
 	name = "Diner"
 	glasses = /obj/item/clothing/glasses/orange
@@ -1898,6 +1949,35 @@ Mayor
 	neck = /obj/item/clothing/neck/apron/chef
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
+
+	backpack_contents = list(
+	/obj/item/storage/box/ingredients/wildcard = 1,
+	/obj/item/storage/box/ingredients/fiesta = 1,
+	/obj/item/storage/box/ingredients/italian = 1,
+	/obj/item/storage/box/ingredients/vegetarian = 1,
+	/obj/item/storage/box/ingredients/american = 1,
+	/obj/item/storage/box/ingredients/fruity = 1,
+	/obj/item/storage/box/ingredients/sweets = 1,
+	/obj/item/storage/box/ingredients/delights = 1,
+	/obj/item/storage/box/ingredients/grains = 1,
+	/obj/item/storage/box/ingredients/carnivore = 1,
+	/obj/item/storage/box/ingredients/exotic = 1,
+	/obj/item/storage/box/ingredients/sushi = 1
+	)
+
+/datum/outfit/loadout/grower
+	name = "Produce Harvester"
+	glasses = /obj/item/clothing/glasses/orange
+	uniform = /obj/item/clothing/under/f13/brahminf
+	neck = /obj/item/clothing/neck/apron/chef
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/f13/military/ncr
+
+	backpack_contents = list(
+	/obj/item/circuitboard/machine/seed_extractor = 1,
+	/obj/item/circuitboard/machine/biogenerator
+	)
+
 
 //Guild Knight
 
@@ -1930,6 +2010,7 @@ Mayor
 	belt = /obj/item/kit_spawner/follower/guard
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
+	ears = /obj/item/radio/headset/headset_town/guild
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
@@ -1942,10 +2023,11 @@ Mayor
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
-		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/thelaw
