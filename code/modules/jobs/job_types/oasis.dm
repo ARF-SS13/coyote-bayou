@@ -1048,7 +1048,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13banker
-	title = "Guild Banker"
+	title = "Guild Financier"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
 	total_positions = 2
@@ -1547,9 +1547,9 @@ Mayor
 	if(visualsOnly)
 		return
 
-//Guild Medic
+//Guild Healer
 /datum/job/oasis/f13practitioner
-	title = "Guild Medic"
+	title = "Guild Healer"
 	flag = GUILDMEDIC
 	department_flag = GUILD
 	faction = "Guild"
@@ -1608,7 +1608,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 
 /datum/outfit/job/den/f13practitioner
-	name =	"Guild Medic"
+	name =	"Guild Healer"
 	jobtype =	/datum/job/oasis/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
 	id =	/obj/item/card/id/silver
@@ -1670,10 +1670,10 @@ Mayor
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/book/granter/trait/techno = 1,)
 
-//GUILD BANKER
+//Guild Financier
 
 /datum/job/oasis/f13banker
-	title = "Guild Banker"
+	title = "Guild Financier"
 	flag = GUILDBANKER
 	department_flag = GUILD
 	faction = "Guild"
@@ -1752,10 +1752,10 @@ Mayor
 		///obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1
 		)
 
-//Guild Librarian
+//Guild Cataloger
 
 /datum/job/oasis/nashcurator
-	title = "Guild Librarian"
+	title = "Guild Cataloger"
 	flag = GUILDLIBRARIAN
 	department_flag = GUILD
 	faction = "Guild"
@@ -1814,7 +1814,7 @@ Mayor
 //Guild Bartender
 
 /datum/job/oasis/f13barkeep
-	title = "Guild Bartender"
+	title = "Guild Kitcheneer"
 	flag = GUILDBARTEND
 	department_flag = GUILD
 	faction = "Guild"

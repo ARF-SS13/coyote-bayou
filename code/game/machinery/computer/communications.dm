@@ -49,9 +49,9 @@
 		return
 	if(!usr.canUseTopic(src, !issilicon(usr)))
 		return
-	if(!is_station_level(z) && !is_reserved_level(z)) //Can only use in transit and on SS13
-		to_chat(usr, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
-		return
+	//if(!is_station_level(z) && !is_reserved_level(z)) //Can only use in transit and on SS13
+	//	to_chat(usr, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
+	//	return
 	usr.set_machine(src)
 
 

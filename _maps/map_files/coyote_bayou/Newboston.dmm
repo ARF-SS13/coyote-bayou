@@ -8857,19 +8857,6 @@
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"eNj" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	color = "#222222";
-	opacity = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	color = "#222222";
-	opacity = 1
-	},
-/turf/open/floor/carpet/green,
-/area/f13/building/trader)
 "eNy" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -13884,19 +13871,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
 /area/f13/wasteland)
-"hvy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal{
-	pixel_y = 21
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1";
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/turf/open/floor/carpet/green,
-/area/f13/building/trader)
 "hwp" = (
 /obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood{
@@ -15090,15 +15064,8 @@
 	},
 /area/f13/building)
 "icC" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	color = "#222222";
-	opacity = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	color = "#222222";
-	opacity = 1
+/obj/item/kirbyplants/random{
+	pixel_y = 16
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
@@ -15155,10 +15122,20 @@
 /turf/open/indestructible/ground/bamboo/tatamiblack,
 /area/f13/wasteland/city/newboston/sauna)
 "iep" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/light/floor,
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/bar)
+/obj/structure/window/reinforced{
+	dir = 1;
+	color = "#222222";
+	opacity = 1
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/structure/barricade/wooden,
+/obj/effect/overlay/junk/telescreen,
+/turf/open/floor/wood_fancy/wood_fancy_light,
+/area/f13/building/trader)
 "ieq" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -16409,6 +16386,11 @@
 /obj/item/choice_beacon/pet/mountable,
 /obj/machinery/cell_charger,
 /obj/machinery/cell_charger,
+/obj/structure/window/reinforced{
+	dir = 2;
+	color = "#222222";
+	opacity = 1
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "iOd" = (
@@ -23841,19 +23823,9 @@
 /area/f13/wasteland)
 "mPB" = (
 /obj/item/storage/bag/money{
-	pixel_y = 14;
-	pixel_x = 33;
+	pixel_y = 1;
+	pixel_x = 32;
 	color = "#f3f233"
-	},
-/obj/structure/sign/bank{
-	layer = 4.1;
-	pixel_y = -4;
-	pixel_x = 32
-	},
-/obj/machinery/vending/coffee,
-/obj/structure/railing{
-	dir = 1;
-	color = "#bb3333"
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/trader)
@@ -25768,15 +25740,6 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
-"nTH" = (
-/obj/structure/rack/shelf_metal,
-/obj/structure/window/reinforced{
-	dir = 2;
-	color = "#222222";
-	opacity = 1
-	},
-/turf/open/floor/wood_fancy/wood_fancy_light,
-/area/f13/building/trader)
 "nTI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26354,7 +26317,13 @@
 "omk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/jukebox{
-	pixel_y = 21;
+	pixel_y = 20;
+	density = 0;
+	pixel_x = 10
+	},
+/obj/machinery/vending/coffee{
+	pixel_y = 20;
+	pixel_x = -13;
 	density = 0
 	},
 /turf/open/floor/wood_common,
@@ -35564,7 +35533,7 @@
 "tjm" = (
 /obj/machinery/vending/dinnerware{
 	pixel_y = 20;
-	pixel_x = 6;
+	pixel_x = 9;
 	density = 0
 	},
 /turf/open/floor/wood_common,
@@ -36967,21 +36936,18 @@
 	},
 /area/f13/building)
 "tSy" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	color = "#222222";
-	opacity = 1
-	},
-/obj/machinery/computer/communications{
-	name = "quest console";
-	req_access = null
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal{
+	pixel_y = 21;
+	density = 0
 	},
 /obj/machinery/light/small{
-	dir = 4;
-	pixel_x = 6;
+	dir = 8;
+	light_color = "#d8b1b1";
+	pixel_x = -6;
 	pixel_y = 4
 	},
-/turf/open/floor/wood_fancy/wood_fancy_light,
+/turf/open/floor/carpet/green,
 /area/f13/building/trader)
 "tSI" = (
 /obj/structure/window/fulltile/house,
@@ -40002,13 +39968,13 @@
 "vDv" = (
 /obj/machinery/vending/cola{
 	pixel_y = 21;
-	pixel_x = -8;
+	pixel_x = -1;
 	density = 0
 	},
 /obj/machinery/vending/snack{
 	density = 0;
 	pixel_y = 20;
-	pixel_x = 15
+	pixel_x = 20
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
@@ -73595,8 +73561,8 @@ qfR
 qfR
 qfR
 dRJ
-qfR
-qfR
+mPB
+dQO
 qfR
 qfR
 fTf
@@ -73609,10 +73575,10 @@ fTf
 jgf
 kGv
 qez
-iep
+qez
 qez
 nZa
-iep
+qez
 biT
 biT
 vxh
@@ -73852,9 +73818,9 @@ nkj
 qTx
 bjr
 nQu
-mPB
-dQO
-qfR
+gao
+gOo
+nVE
 cZU
 boV
 boV
@@ -74110,8 +74076,8 @@ afx
 sWl
 rki
 gao
-gOo
-nVE
+cmo
+iXY
 gao
 jxT
 gXv
@@ -74367,7 +74333,7 @@ wMb
 gHl
 xVz
 gao
-cmo
+eEr
 iXY
 gao
 cKP
@@ -74622,9 +74588,9 @@ iXY
 iXY
 lsj
 iXY
-gLd
-gao
-eEr
+iXY
+hsR
+jMc
 iXY
 qjw
 uIt
@@ -74879,10 +74845,10 @@ iXY
 iXY
 iXY
 iXY
-iXY
-hsR
-jMc
-iXY
+gLd
+gao
+gao
+eUA
 gao
 qCp
 qCp
@@ -75138,9 +75104,9 @@ iXY
 iXY
 gLd
 gao
-gao
-eUA
-gao
+tSy
+rvM
+rvM
 qCp
 bDj
 sYT
@@ -75395,7 +75361,7 @@ lsj
 iXY
 abR
 gao
-hvy
+mHJ
 rvM
 isg
 qCp
@@ -75651,9 +75617,9 @@ iXY
 iXY
 iXY
 iOa
-gao
-mHJ
-rvM
+toG
+aMZ
+vEc
 rvM
 qCp
 evI
@@ -75908,9 +75874,9 @@ iXY
 iXY
 iXY
 tHN
-toG
-aMZ
-vEc
+iep
+bSa
+yer
 rvM
 qCp
 qQB
@@ -76164,10 +76130,10 @@ iXY
 iXY
 lsj
 iXY
-nTH
-tSy
-bSa
-yer
+gyr
+gao
+rvM
+rvM
 rvM
 qCp
 qCp
@@ -76423,9 +76389,9 @@ iXY
 iXY
 cSq
 gao
-eNj
-eNj
-eNj
+gao
+gao
+eUA
 qCp
 uIt
 uIt
@@ -76681,8 +76647,8 @@ iXY
 hNR
 gao
 icC
-icC
-icC
+iXY
+iXY
 kVi
 uIt
 uIt
