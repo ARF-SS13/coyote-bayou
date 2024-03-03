@@ -1626,7 +1626,6 @@ Mayor
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/cool_book/guildguide = 1
 	)
