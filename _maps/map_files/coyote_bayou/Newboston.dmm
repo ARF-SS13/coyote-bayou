@@ -10096,16 +10096,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
-"fsW" = (
-/obj/structure/fluff/rails{
-	dir = 1
-	},
-/obj/machinery/door/airlock/engineering/glass{
-	color = "#ff6433";
-	req_one_access_txt = "34"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/building/trader)
 "ftd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -36983,16 +36973,13 @@
 	opacity = 1
 	},
 /obj/machinery/computer/communications{
-	name = "quest console - not quite working edition";
+	name = "quest console";
 	req_access = null
 	},
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_x = 6;
 	pixel_y = 4
-	},
-/obj/structure/barricade/wooden{
-	name = "machinery under repair lock out boards"
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
@@ -79263,7 +79250,7 @@ iaR
 iaR
 iaR
 iaR
-fsW
+iaR
 iaR
 iaR
 iaR
