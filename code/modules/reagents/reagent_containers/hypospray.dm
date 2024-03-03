@@ -200,6 +200,8 @@
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_epipack"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
 	amount_per_transfer_from_this = 15
 	volume = 15
