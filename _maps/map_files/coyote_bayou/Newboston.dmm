@@ -40354,10 +40354,6 @@
 	pixel_x = -13;
 	pixel_y = 13
 	},
-/obj/item/trash/candle{
-	pixel_x = 1;
-	pixel_y = 4
-	},
 /obj/item/trash/plate{
 	pixel_x = -10;
 	pixel_y = 9
@@ -40367,7 +40363,9 @@
 	pixel_x = -5;
 	pixel_y = 11
 	},
-/obj/effect/spawner/lootdrop/f13/common,
+/obj/item/cool_book/warandpeace{
+	pixel_x = 7
+	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/library)
 "vRd" = (
