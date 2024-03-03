@@ -1501,7 +1501,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 32
+	value = 14
 	category = "Food Quirks"
 	mechanics = "Your hunger never goes down, simple as that."
 	conflicts = list( //any of the eating quirks
