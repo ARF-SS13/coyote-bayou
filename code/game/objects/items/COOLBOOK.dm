@@ -76,6 +76,14 @@
 	color = "#CC3333"
 	book_key = "ashcitguide"
 
+/obj/item/cool_book/guildguide
+	name = "Guild Guidebook"
+	desc = "Thats a guidebook for the Adventurers Guild!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "guildguide"
+	color = "#f89b06"
+
 /obj/item/cool_book/Initialize()
 	. = ..()
 	bookify()

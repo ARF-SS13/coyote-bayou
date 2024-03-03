@@ -1445,9 +1445,9 @@ Mayor
 	department_flag = GUILD
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the free market."
-	description = "You are one of the many workers who live in the city of New Boston. Working with the town council you have rented out a space in the shop for you to make your living."
-	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#dcba97"
 	exp_requirements = 0
 
@@ -1486,7 +1486,9 @@ Mayor
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
-		/obj/item/storage/pill_bottle/chem_tin/radx)
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/cool_book/guildguide = 1
+		)
 
 /datum/outfit/loadout/energy_specialist
 	name = "Energy Specialist"
@@ -1555,9 +1557,9 @@ Mayor
 	faction = "Guild"
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement. Assuming they're around."
-	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#FFDDFF"
 	exp_requirements = 0
 
@@ -1626,6 +1628,7 @@ Mayor
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/cool_book/guildguide = 1
 	)
 
 /datum/outfit/loadout/physician
@@ -1677,11 +1680,11 @@ Mayor
 	flag = GUILDBANKER
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
-	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -1708,7 +1711,9 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
-		/obj/item/storage/wallet/stash/banker = 1)
+		/obj/item/storage/wallet/stash/banker = 1,
+		/obj/item/cool_book/guildguide = 1
+		)
 
 /datum/outfit/loadout/classy
 	name = "Classy"
@@ -1759,9 +1764,11 @@ Mayor
 	flag = GUILDLIBRARIAN
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "New Boston's laws"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
 	selection_color = "#dcba97"
 
@@ -1796,6 +1803,7 @@ Mayor
 		/obj/item/kit_spawner/tools,
 		/obj/item/export_scanner,
 		/obj/item/key/displaycase,
+		/obj/item/cool_book/guildguide = 1
 		)
 
 /datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
@@ -1820,9 +1828,9 @@ Mayor
 	faction = "Guild"
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the free market and New Boston's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
-	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -1861,7 +1869,8 @@ Mayor
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1,
+		/obj/item/cool_book/guildguide = 1
 		)
 
 /datum/outfit/loadout/rugged
@@ -1986,11 +1995,11 @@ Mayor
 	flag = GUILDKNIGHT
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
-	description = "You are one of the towns Paramedics.  Your job is to prepare parties to go out and try and help those in need that can't make it to the hospital on their own. Be that shooting your way to them or seeking them out with a rescue party."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard
@@ -2028,6 +2037,7 @@ Mayor
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
+		/obj/item/cool_book/guildguide = 1
 	)
 
 /datum/outfit/loadout/thelaw
