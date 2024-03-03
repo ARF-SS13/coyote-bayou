@@ -1354,7 +1354,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 ////////////
 
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H)
-	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
+	if(HAS_TRAIT(H, TRAIT_NOHUNGER))
+		H.set_nutrition(NUTRITION_LEVEL_FED - 1)
 		return //hunger is for BABIES
 
 	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
