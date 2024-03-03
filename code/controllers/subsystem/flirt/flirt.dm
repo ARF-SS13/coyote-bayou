@@ -159,7 +159,7 @@
 	previewer.playsound_local(get_turf(previewer), sound_to_do, 75, FALSE, FALSE)
 
 /datum/flirt/proc/tell_ghosting_admins(mob/living/flirter, mob/living/target)
-	log_emote("[flirter]([flirter.ckey]) used flirt [flirtname] to [target?target.ckey:"everyone around em"].")
+	log_emote("[flirter]([flirter.ckey]) used flirt [flirtname] to [target ? target.ckey : "everyone around em"].")
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
 		if(QDELETED(ghost))
