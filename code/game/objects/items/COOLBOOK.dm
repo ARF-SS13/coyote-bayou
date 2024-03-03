@@ -94,7 +94,7 @@
 	force = 30
 	force_wielded = 45
 	force_unwielded = 30
-	force_throw = 35
+	throwforce = 35
 
 /obj/item/cool_book/Initialize()
 	. = ..()
