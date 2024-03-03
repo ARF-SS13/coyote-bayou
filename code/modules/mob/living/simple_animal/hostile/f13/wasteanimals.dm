@@ -877,7 +877,7 @@
 
 /mob/living/simple_animal/hostile/molerat/Initialize()
 	.=..()
-	resize = 0.5
+	resize = 0.8
 	update_transform()
 
 /mob/living/simple_animal/hostile/gelcube
