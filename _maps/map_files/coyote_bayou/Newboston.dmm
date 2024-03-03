@@ -15536,13 +15536,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"isg" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/carpet/green,
-/area/f13/building/trader)
 "isv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/securitron,
@@ -17452,10 +17445,6 @@
 /area/f13/wasteland)
 "jnu" = (
 /obj/effect/turf_decal/vg_decals/numbers/three,
-/obj/machinery/computer/communications{
-	name = "quest console";
-	req_access = null
-	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "jnB" = (
@@ -30485,13 +30474,10 @@
 	},
 /area/f13/wasteland)
 "qEK" = (
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/structure/curtain/directional/east{
 	color = "#845f58"
 	},
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland/city/newboston/bar)
 "qEL" = (
@@ -75361,7 +75347,7 @@ abR
 gao
 mHJ
 rvM
-isg
+rvM
 qCp
 iUQ
 sYT
