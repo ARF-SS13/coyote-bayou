@@ -206,7 +206,7 @@
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash guild channel, use :g"
 	icon_state = "cypherkey"
-	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_TOWN_COMMERCE = 1)
+	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_TOWN_GUILD = 1)
 
 /obj/item/encryptionkey/headset_town/medical
 	name = "New Boston medical radio encryption key"
