@@ -577,6 +577,29 @@
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	desc_short = "One of countless bugs that move in gross hordes."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	var/retreat_message_said = FALSE
+
+/mob/living/simple_animal/hostile/radroach/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.9)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] skitters away from [my_target] like a lunatic!"))
+		retreat_message_said = TRUE
+	retreat_distance = 8
+
+/mob/living/simple_animal/hostile/radroach/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.115)
+	visible_message(span_danger("The [name] bandages itself!"))
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 30, 1, ignore_walls = TRUE)
+	retreat_message_said = FALSE
+
 
 /mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter

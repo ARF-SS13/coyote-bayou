@@ -12,6 +12,8 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	retreat_distance = 2
+	minimum_distance = 1
 	speed = 1
 	maxHealth = 80
 	health = 80
@@ -46,9 +48,9 @@
 		return
 	if(get_target())
 		return
-	adjustHealth(-maxHealth*0.225)
+	adjustHealth(-maxHealth*0.115)
 	visible_message(span_danger("The [name] bandages itself!"))
-	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 30, 1, ignore_walls = TRUE)
 	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/chinese/Aggro()
@@ -67,8 +69,8 @@
 	ranged = 1
 	maxHealth = 110
 	health = 110
-	retreat_distance = 4
-	minimum_distance = 6
+	retreat_distance = 3
+	minimum_distance = 2
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound =  'sound/f13weapons/ninemil.ogg'
 	projectile_sound_properties = list(
