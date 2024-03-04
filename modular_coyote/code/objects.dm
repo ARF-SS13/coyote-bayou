@@ -1155,6 +1155,7 @@
 	icon_state = "carpet"
 	plane = -15
 	layer = BELOW_OPEN_DOOR_LAYER
+	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"
