@@ -29,28 +29,10 @@
 	faction = list("pirate")
 	light_system = MOVABLE_LIGHT
 	light_range = 2
-	var/retreat_message_said = FALSE
-
-/mob/living/simple_animal/hostile/pirate/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	. = ..()
-	if(stat == DEAD || health > maxHealth*0.1)
-		retreat_distance = initial(retreat_distance)
-		return
-	var/atom/my_target = get_target()
-	if(!retreat_message_said && my_target)
-		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
-		retreat_message_said = TRUE
-	retreat_distance = 30
-
-/mob/living/simple_animal/hostile/pirate/BiologicalLife(seconds, times_fired)
-	if(!(. = ..()))
-		return
-	if(get_target())
-		return
-	adjustHealth(-maxHealth*0.115)
-	visible_message(span_danger("The [name] bandages itself!"))
-	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 30, 1, ignore_walls = TRUE)
-	retreat_message_said = FALSE
+	retreat_health_percent = 0.1
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 10
 
 /mob/living/simple_animal/hostile/pirate/melee
 	name = "Pirate Swashbuckler"
