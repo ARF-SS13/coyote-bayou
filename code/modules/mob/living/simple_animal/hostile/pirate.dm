@@ -49,7 +49,7 @@
 		return
 	adjustHealth(-maxHealth*0.115)
 	visible_message(span_danger("The [name] bandages itself!"))
-	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 30, 1, ignore_walls = TRUE)
 	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/pirate/melee
