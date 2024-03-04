@@ -44,7 +44,7 @@
 		return
 	if(get_target())
 		return
-	adjustHealth(-maxHealth*0.025)
+	adjustHealth(-maxHealth*0.225)
 	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/russian/ranged

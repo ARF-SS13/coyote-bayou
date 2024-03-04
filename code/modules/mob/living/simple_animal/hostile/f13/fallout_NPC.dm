@@ -35,6 +35,25 @@
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
 
+/mob/living/simple_animal/hostile/vault/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.1)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 30
+
+/mob/living/simple_animal/hostile/vault/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.225)
+	retreat_message_said = FALSE
+
 /obj/effect/mob_spawn/human/corpse/vault
 	name = "Vault Dweller"
 	gloves = /obj/item/pda
