@@ -30,28 +30,11 @@
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	tastes = list("people" = 1, "dust" = 2)
-	var/retreat_message_said = FALSE
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.99
+	heal_per_life = 0.115
+	tactical_retreat = 10
 
-/mob/living/simple_animal/hostile/chinese/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	. = ..()
-	if(stat == DEAD || health > maxHealth*0.1)
-		retreat_distance = initial(retreat_distance)
-		return
-	var/atom/my_target = get_target()
-	if(!retreat_message_said && my_target)
-		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
-		retreat_message_said = TRUE
-	retreat_distance = 30
-
-/mob/living/simple_animal/hostile/chinese/BiologicalLife(seconds, times_fired)
-	if(!(. = ..()))
-		return
-	if(get_target())
-		return
-	adjustHealth(-maxHealth*0.115)
-	visible_message(span_danger("The [name] bandages itself!"))
-	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 30, 1, ignore_walls = TRUE)
-	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/chinese/Aggro()
 	. = ..()
