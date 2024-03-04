@@ -678,7 +678,7 @@
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 35
 	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
-	ixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
 
 /obj/item/projectile/beam/laser/rcw //RCW
 	name = "rapidfire beam"
