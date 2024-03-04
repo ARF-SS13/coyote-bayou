@@ -43,7 +43,7 @@
 
 /mob/living/simple_animal/hostile/renegade/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(stat == DEAD || health > maxHealth*0.4)
+	if(stat == DEAD || health > maxHealth*0.5)
 		retreat_distance = initial(retreat_distance)
 		return
 	var/atom/my_target = get_target()
