@@ -15,14 +15,14 @@
 	icon_dead = "seedling_dead"
 	maxHealth = 100
 	health = 100
-	melee_damage_lower = 30
+	melee_damage_lower = 15
 	melee_damage_upper = 30
 	pixel_x = -16
 	pixel_y = -14
 	minimum_distance = 3
 	move_to_delay = 20
 	vision_range = 9
-	aggro_vision_range = 15
+	aggro_vision_range = 9
 	ranged = TRUE
 	ranged_cooldown_time = 10
 	projectiletype = /obj/item/projectile/seedling

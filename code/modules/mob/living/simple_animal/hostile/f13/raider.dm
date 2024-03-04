@@ -48,6 +48,28 @@
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
+	var/retreat_message_said = FALSE
+
+/mob/living/simple_animal/hostile/raider/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.1)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 30
+
+/mob/living/simple_animal/hostile/raider/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.225)
+	visible_message(span_danger("The [name] bandages itself!"))
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
+	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/raider/Initialize()
 	. = ..()
@@ -195,6 +217,17 @@
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
 
+/mob/living/simple_animal/hostile/raider/ranged/legendary/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.5)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to pull back and gain space from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 15
+
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
 	name = "Raider Boss"
@@ -212,7 +245,7 @@
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
 	speed = 3.5
-	projectiletype = /obj/item/projectile/bullet/c10mm/improvised
+	projectiletype = /obj/item/projectile/bullet/c10mm/improvised/simple
 	loot = list(/obj/item/gun/ballistic/automatic/smg/smg10mm, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
@@ -234,6 +267,18 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.5)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to pull back and gain space from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 15
+
 
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
@@ -561,7 +606,7 @@
 	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/op
+	projectiletype = /obj/item/projectile/bullet/c45/improvised
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
