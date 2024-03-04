@@ -29,6 +29,7 @@
 	faction = list("pirate")
 	light_system = MOVABLE_LIGHT
 	light_range = 2
+	var/retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/pirate/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

@@ -46,6 +46,7 @@
 	del_on_death = 0
 	dodging = TRUE
 	rapid_melee = 2
+	var/retreat_message_said = FALSE
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 

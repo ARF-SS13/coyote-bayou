@@ -25,7 +25,7 @@
 	faction = list("russian")
 	status_flags = CANPUSH
 	del_on_death = 0
-
+	var/retreat_message_said = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/russian/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
