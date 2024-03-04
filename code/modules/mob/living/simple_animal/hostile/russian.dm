@@ -28,6 +28,24 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+/mob/living/simple_animal/hostile/russian/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.1)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 30
+
+/mob/living/simple_animal/hostile/russian/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.025)
+	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"

@@ -38,16 +38,35 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list()
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 15
+	//atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	//unsuitable_atmos_damage = 15
 	faction = list(ROLE_SYNDICATE)
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = 1
+	del_on_death = 0
 	dodging = TRUE
 	rapid_melee = 2
 
 	footstep_type = FOOTSTEP_MOB_SHOE
+
+/mob/living/simple_animal/hostile/syndicate/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.1)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 30
+
+/mob/living/simple_animal/hostile/syndicate/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.025)
+	retreat_message_said = FALSE
 
 ///////////////Melee////////////
 
@@ -79,7 +98,6 @@
 	sharpness = SHARP_EDGED
 	icon_state = "syndicate_knife"
 	icon_living = "syndicate_knife"
-	loot = list(/obj/effect/gibspawner/human)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -161,13 +179,12 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged
 	ranged = 1
-	retreat_distance = 5
-	minimum_distance = 5
+	retreat_distance = 3
+	minimum_distance = 4
 	icon_state = "syndicate_pistol"
 	icon_living = "syndicate_pistol"
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	loot = list(/obj/effect/gibspawner/human)
 	dodging = FALSE
 	rapid_melee = 1
 
@@ -240,7 +257,7 @@
 	name = "Syndicate Commando"
 	maxHealth = 170
 	health = 170
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	//atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	//minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
