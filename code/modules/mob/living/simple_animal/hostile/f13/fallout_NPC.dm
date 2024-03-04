@@ -54,6 +54,7 @@
 		return
 	adjustHealth(-maxHealth*0.225)
 	visible_message(span_danger("The [name] bandages itself!"))
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
 	retreat_message_said = FALSE
 
 /obj/effect/mob_spawn/human/corpse/vault
@@ -248,6 +249,7 @@
 		return
 	adjustHealth(-maxHealth*0.225)
 	visible_message(span_danger("The [name] bandages itself!"))
+	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
 	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/enclave/scientist/Aggro()
