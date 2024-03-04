@@ -197,6 +197,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 25 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2)
 
+/obj/structure/nest/mook
+	name = "mook den"
+	max_mobs = 1
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/jungle/mook = 2)
+
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1

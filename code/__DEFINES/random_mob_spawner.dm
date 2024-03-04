@@ -9,6 +9,7 @@
 #define MOB_SPAWNER_BLOATFLY_AND_GECKO "buzz_and_snap"
 #define MOB_SPAWNER_MOLERAT "molerats"
 #define MOB_SPAWNER_ROACH "roachies"
+#define MOB_SPAWNER_MOOK "Wanderers"
 #define MOB_SPAWNER_ROBOT_DOMESTIC "domestic_robots" // handies and protectrons
 #define MOB_SPAWNER_ROBOT_SECURITY "security_robots" // securitrons, sentrybots
 #define MOB_SPAWNER_ROBOT_MILITARY "military_robots" // gutsies, sentrybots, assbots
@@ -224,6 +225,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_ROBOT_SECURITY,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_SCORPIONS,
+		MOB_SPAWNER_MOOK,
 		MOB_SPAWNER_ANT,
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_RAIDER_MELEE,
@@ -813,6 +815,31 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_QUICKEST
 	mob_list_hard = list(
 		/mob/living/simple_animal/hostile/molerat = 20
+		)
+
+/// Mook
+
+/datum/random_mob_spawner/mook
+	nest_tag = MOB_SPAWNER_MOOK
+	nest_name = "wanderer den"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 1
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 3,
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 5
 		)
 
 /// Cazadores
