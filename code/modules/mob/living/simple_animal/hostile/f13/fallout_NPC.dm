@@ -34,6 +34,7 @@
 	despawns_when_lonely = FALSE
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
+	var/retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/vault/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -226,6 +227,31 @@
 		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
+	var/retreat_message_said = FALSE
+
+/mob/living/simple_animal/hostile/enclave/scientist/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.1)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 30
+
+/mob/living/simple_animal/hostile/enclave/scientist/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	if(get_target())
+		return
+	adjustHealth(-maxHealth*0.225)
+	retreat_message_said = FALSE
+
+/mob/living/simple_animal/hostile/enclave/scientist/Aggro()
+	..()
+	summon_backup(15)
+	say("Intruder!!") 
 
 // Enclave Armored Infantry
 /mob/living/simple_animal/hostile/enclave/soldier
@@ -611,8 +637,8 @@
 ////////////////
 
 /mob/living/simple_animal/hostile/tribe
-	name = "Wayfarer Hunter"
-	desc = "A hunter of the wayfarer tribe, wielding a glaive."
+	name = "Lost Ones Hunter"
+	desc = "A Lost ones hunter, once part of the Sulphur Bottom tribe these lunatics have fallen to canibalism and baser instincts."
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
@@ -636,7 +662,7 @@
 	a_intent = INTENT_HARM
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
-	speak = list("For our kin!", "This will be a good hunt.", "The gods look upon me today.")
+	speak = list("Blood, blood, blood, blood!", "You'll make a fine stew!", "Perish interloper!")
 	speak_emote = list("says")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
