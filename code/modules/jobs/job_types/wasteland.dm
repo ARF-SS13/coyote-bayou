@@ -1351,7 +1351,6 @@ Raider
 	name = "Ashdown Citizen"
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
-	ears = /obj/item/radio/headset/headset_ashdown
 	belt = /obj/item/kit_spawner/waster
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
