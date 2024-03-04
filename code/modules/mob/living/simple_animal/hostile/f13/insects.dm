@@ -588,7 +588,7 @@
 	if(!retreat_message_said && my_target)
 		visible_message(span_danger("The [name] skitters away from [my_target] like a lunatic!"))
 		retreat_message_said = TRUE
-	retreat_distance = 20
+	retreat_distance = 8
 
 /mob/living/simple_animal/hostile/radroach/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
