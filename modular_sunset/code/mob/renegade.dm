@@ -35,11 +35,6 @@
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	var/retreat_message_said = FALSE
 
-/mob/living/simple_animal/hostile/renegade/Aggro()
-	..()
-	summon_backup(10)
-	say("Target spotted!")
-
 	
 
 /mob/living/simple_animal/hostile/renegade/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
@@ -62,6 +57,12 @@
 	visible_message(span_danger("The [name] bandages itself!"))
 	playsound(get_turf(src), 'sound/items/tendingwounds.ogg', 100, 1, ignore_walls = TRUE)
 	retreat_message_said = FALSE
+
+/mob/living/simple_animal/hostile/renegade/Aggro()
+	..()
+	summon_backup(10)
+	say("Target spotted!")
+
 
 // LIGHT RANGED VARIANT
 /mob/living/simple_animal/hostile/renegade/grunt
