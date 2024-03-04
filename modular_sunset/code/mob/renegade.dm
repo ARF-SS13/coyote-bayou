@@ -33,13 +33,14 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 	loot = list(/obj/item/stack/f13Cash/random/med)
+	var/retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
 	summon_backup(10)
 	say("Target spotted!")
 
-	var/retreat_message_said = FALSE
+	
 
 /mob/living/simple_animal/hostile/renegade/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
