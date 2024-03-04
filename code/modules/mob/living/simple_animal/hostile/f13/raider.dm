@@ -217,6 +217,17 @@
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
 
+/mob/living/simple_animal/hostile/raider/ranged/legendary/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.5)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to pull back and gain space from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 15
+
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
 	name = "Raider Boss"
@@ -256,6 +267,18 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(stat == DEAD || health > maxHealth*0.5)
+		retreat_distance = initial(retreat_distance)
+		return
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to pull back and gain space from [my_target]!"))
+		retreat_message_said = TRUE
+	retreat_distance = 15
+
 
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
