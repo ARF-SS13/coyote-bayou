@@ -116,7 +116,7 @@
 
 /obj/machinery/telecomms/server/presets/bos
 	id = "BOS Server"
-	freq_listening = list(FREQ_ASHDOWN)
+	freq_listening = list(FREQ_GUILD)
 	autolinkers = list("bos")
 
 /obj/machinery/telecomms/server/presets/enclave
