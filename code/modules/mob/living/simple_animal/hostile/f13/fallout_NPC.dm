@@ -53,6 +53,7 @@
 	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.225)
+	visible_message(span_danger("The [name] bandages itself!"))
 	retreat_message_said = FALSE
 
 /obj/effect/mob_spawn/human/corpse/vault
@@ -246,6 +247,7 @@
 	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.225)
+	visible_message(span_danger("The [name] bandages itself!"))
 	retreat_message_said = FALSE
 
 /mob/living/simple_animal/hostile/enclave/scientist/Aggro()
