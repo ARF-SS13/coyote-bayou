@@ -53,6 +53,7 @@
 	name = "4.6x30mm bullet"
 	damage = 5
 	stamina = 30
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM * 0.3
 
 ///toy memes///
 
