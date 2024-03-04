@@ -199,9 +199,45 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 
 /obj/structure/nest/mook
 	name = "mook den"
-	max_mobs = 1
+	max_mobs = 2
 	spawn_time = 10 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/jungle/mook = 2)
+
+/obj/structure/nest/hivebot
+	name = "hivebot datacreator"
+	max_mobs = 3
+	spawn_time = 5 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/hivebot = 3,
+					/mob/living/simple_animal/hostile/hivebot/range = 3,
+					/mob/living/simple_animal/hostile/hivebot/rapid = 3,
+					/mob/living/simple_animal/hostile/hivebot/strong = 3)
+
+/obj/structure/nest/pirate
+	name = "pirate hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/pirate/melee = 2,
+					/mob/living/simple_animal/hostile/pirate/ranged = 2)
+
+/obj/structure/nest/russian
+	name = "russian hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/russian/ranged = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/mosin = 2, 
+					/mob/living/simple_animal/hostile/russian/ranged/trooper = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/officer = 2)
+
+/obj/structure/nest/syndicate
+	name = "syndicate hideout"
+	max_mobs = 2
+	spawn_time = 15 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/syndicate/melee/sword/space = 2,
+					/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
+					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
