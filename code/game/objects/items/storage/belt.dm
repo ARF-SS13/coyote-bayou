@@ -299,7 +299,7 @@
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/army/followers
-	name = "follower belt"
+	name = "guild knight belt"
 	desc = "A thoughtful belt for holding things like guns."
 	icon_state = "grenadebeltold"
 	item_state = "security"

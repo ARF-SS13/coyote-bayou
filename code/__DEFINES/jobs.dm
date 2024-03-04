@@ -212,8 +212,9 @@
 #define GUILDBANKER		(1<<1)
 #define GUILDMEDIC		(1<<2)
 #define GUILDBARTEND	(1<<3)
-#define GUILDLIBRARIAN	(1<<4)
-#define GUILDKNIGHT		(1<<5)
+#define GUILDCHEF		(1<<4)
+#define GUILDLIBRARIAN	(1<<5)
+#define GUILDKNIGHT		(1<<6)
 
 #define KHAN		(1<<15)
 

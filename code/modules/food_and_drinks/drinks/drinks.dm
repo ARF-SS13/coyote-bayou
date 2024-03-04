@@ -301,8 +301,7 @@
 /obj/item/reagent_containers/food/drinks/mug/on_reagent_change(changetype)
 	cut_overlays()
 	if(reagents.total_volume)
-		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay")
-		MA.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay", color = mix_color_from_reagents(reagents.reagent_list))
 		add_overlay(MA)
 	else
 		icon_state = "tea_empty"
