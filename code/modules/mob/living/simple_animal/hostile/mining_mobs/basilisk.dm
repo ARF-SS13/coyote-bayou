@@ -38,7 +38,7 @@
 /obj/item/projectile/temp/basilisk
 	name = "freezing blast"
 	icon_state = "ice_2"
-	damage = 0
+	damage = 25
 	damage_type = BURN
 	nodamage = 1
 	flag = "energy"
