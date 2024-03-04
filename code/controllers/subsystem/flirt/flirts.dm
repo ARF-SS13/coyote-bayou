@@ -57,7 +57,7 @@
 	aoe_message = "%FLIRTER% doesn't <i>seem</i> interested! Not yet, at least."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals") // yes its an approval
+	categories = list("Reactions", "Approvals", "Coy") // yes its an approval
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -76,7 +76,7 @@
 	aoe_message = "%FLIRTER% doesn't <i>seem</i> interested! Not yet, at least."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals") // yes its an approval
+	categories = list("Reactions", "Approvals", "Coy") // yes its an approval
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -114,7 +114,7 @@
 	aoe_message = "%FLIRTER's eyes begin to <span class='love'>wander</span> toward everyone nearby!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions")
+	categories = list("Actions", "Expressions", "Facial", "Lewd")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
