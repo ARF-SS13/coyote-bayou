@@ -2029,12 +2029,10 @@ Mayor
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
 		/obj/item/cool_book/guildguide = 1
 	)
