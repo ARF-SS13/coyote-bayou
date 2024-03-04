@@ -1451,12 +1451,6 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 0
 
-	loadout_options = list(
-	/datum/outfit/loadout/energy_specialist,
-	/datum/outfit/loadout/ballistic_specialist,
-	/datum/outfit/loadout/jackofall_specialist
-	)
-
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -1473,43 +1467,19 @@ Mayor
 	name = "Shopkeeper"
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
+	ears = /obj/item/radio/headset/headset_town/guild
 	belt = /obj/item/kit_spawner/townie
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	gloves = /obj/item/clothing/gloves/fingerless
+	gloves = /obj/item/pda
 	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/glowstick
-	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
-		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
-		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/box/guild/uniform,
 		/obj/item/cool_book/guildguide = 1
 		)
-
-/datum/outfit/loadout/energy_specialist
-	name = "Energy Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1
-	)
-
-/datum/outfit/loadout/ballistic_specialist
-	name = "Ballistic Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
-	)
-
-/datum/outfit/loadout/jackofall_specialist
-	name = "Jack-Of-All Trade"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
-	)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -1575,13 +1545,6 @@ Mayor
 		),
 	)
 
-	loadout_options = list(
-	/datum/outfit/loadout/physician,
-	/datum/outfit/loadout/pharmacist,
-	/datum/outfit/loadout/paramedic,
-	/datum/outfit/loadout/medical_researcher,
-	)
-
 /datum/outfit/job/den/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -1613,64 +1576,21 @@ Mayor
 	name =	"Guild Healer"
 	jobtype =	/datum/job/oasis/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_town/guild
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
 	belt = /obj/item/kit_spawner/follower/doctor
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
+	r_pocket = /obj/item/storage/survivalkit/medical/follower
 	backpack_contents = list(
-		/obj/item/storage/survivalkit/medical/follower = 1,
-		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/storage/box/guild/uniform,
 		/obj/item/cool_book/guildguide = 1
 	)
-
-/datum/outfit/loadout/physician
-	name =	"Emergency Physician"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
-	mask =	/obj/item/clothing/mask/surgical
-	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
-	backpack_contents = list(
-		/obj/item/clothing/suit/hooded/surgical = 1,
-		/obj/item/hypospray/mkii/CMO = 1,
-		/obj/item/healthanalyzer/advanced = 1,
-	)
-
-/datum/outfit/loadout/pharmacist
-	name =	"Pharmacist"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/chemist
-	gloves =	/obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/science
-	backpack_contents = list(
-		/obj/item/flashlight/pen = 1,
-		/obj/item/pda/chemist = 1,
-	)
-
-/datum/outfit/loadout/paramedic
-	name =	"Paramedic"
-	head =	/obj/item/clothing/head/soft/emt
-	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
-	belt =	/obj/item/storage/belt/medical
-	backpack_contents = list(
-		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer=1,
-	)
-
-/datum/outfit/loadout/medical_researcher
-	name =	"Medical Researcher"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
-	backpack_contents = list(
-		/obj/item/clothing/accessory/pocketprotector/full = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/book/granter/trait/techno = 1,)
 
 //Guild Financier
 
@@ -1689,71 +1609,22 @@ Mayor
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
-	loadout_options = list(
-	/datum/outfit/loadout/classy,
-	/datum/outfit/loadout/loanshark,
-	/datum/outfit/loadout/investor
-	)
-
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
 	belt = /obj/item/kit_spawner/townie/mayor
-
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town/guild
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
+	gloves = /obj/item/pda
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
-		/obj/item/pda = 1,
+		/obj/item/storage/box/guild/uniform,
 		/obj/item/storage/wallet/stash/banker = 1,
 		/obj/item/cool_book/guildguide = 1
-		)
-
-/datum/outfit/loadout/classy
-	name = "Classy"
-	head = /obj/item/clothing/head/collectable/tophat
-	glasses = /obj/item/clothing/glasses/monocle
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/armor/outfit/jacket/banker
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(/obj/item/cane=1,
-		///obj/item/storage/belt/shoulderholster/ranger45 =1,
-		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-		/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1,
-		/obj/item/lighter/gold = 1
-		)
-
-/datum/outfit/loadout/loanshark
-	name = "Loanshark"
-	glasses = /obj/item/clothing/glasses/orange
-	mask = /obj/item/clothing/mask/cigarette/cigar
-	suit = /obj/item/clothing/suit/armor/outfit/vest
-	uniform = /obj/item/clothing/under/f13/sleazeball
-	shoes = /obj/item/clothing/shoes/sandal
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-		/obj/item/storage/box/matches=1,
-		///obj/item/gun/ballistic/automatic/smg/mini_uzi=1,
-		/obj/item/instrument/violin/golden = 1
-		)
-
-/datum/outfit/loadout/investor
-	name = "Investor"
-	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	uniform = /obj/item/clothing/under/f13/bennys
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-		/obj/item/storage/box/matches=1,
-		/obj/item/ingot/gold = 1,
-		///obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1
 		)
 
 //Guild Cataloger
@@ -1792,16 +1663,11 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/guild
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
+	gloves = /obj/item/pda
+	r_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda = 1,
-		/obj/item/pen/fountain/captain,
+		/obj/item/storage/box/guild/uniform,
 		/obj/item/kit_spawner/tools,
-		/obj/item/export_scanner,
-		/obj/item/key/displaycase,
 		/obj/item/cool_book/guildguide = 1
 		)
 
@@ -1835,9 +1701,8 @@ Mayor
 	outfit = /datum/outfit/job/den/f13barkeep
 
 	loadout_options = list(
-	/datum/outfit/loadout/rugged,
-	/datum/outfit/loadout/frontier,
-	/datum/outfit/loadout/richmantender)
+	/datum/outfit/loadout/diner
+	)
 
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -1860,103 +1725,18 @@ Mayor
 	belt = /obj/item/kit_spawner/townie/barkeep
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-	//	/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/pda = 1,
+		/obj/item/storage/box/guild/uniform,
 		/obj/item/kit_spawner/tools,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1,
 		/obj/item/cool_book/guildguide = 1
-		)
-
-/datum/outfit/loadout/rugged
-	name = "Rugged"
-	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	uniform = /obj/item/clothing/under/f13/cowboyb
-	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
-	gloves = /obj/item/clothing/gloves/color/brown
-	shoes = /obj/item/clothing/shoes/f13/brownie
-
-/datum/outfit/loadout/frontier
-	name = "Frontier"
-	head = /obj/item/clothing/head/bowler
-	mask = /obj/item/clothing/mask/fakemoustache
-	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-
-/datum/outfit/loadout/richmantender
-	name = "Fancy"
-	head = /obj/item/clothing/head/fedora
-	glasses = /obj/item/clothing/glasses/sunglasses
-	uniform = /obj/item/clothing/under/rank/bartender
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	neck = /obj/item/clothing/neck/tie/black
-
-//Guild Chef
-
-/datum/job/oasis/f13barkeep
-	title = "Guild Chef"
-	flag = GUILDCHEF
-	department_flag = GUILD
-	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the free market and New Boston's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in New Bostoncan get some food, drink and rest. Speak to the farmers for fresh produce!"
-	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of New Boston."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13barkeep
-
-	loadout_options = list(
-	/datum/outfit/loadout/diner,
-	/datum/outfit/loadout/grower,
-	)
-
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-/datum/outfit/job/den/f13barkeep
-	name = "Chef"
-	jobtype = /datum/job/oasis/f13barkeep
-	uniform = /obj/item/clothing/under/f13/bartenderalt
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/kit_spawner/townie/barkeep
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	backpack = /obj/item/storage/backpack/satchel/leather
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/ammo_box/shotgun/bean = 2,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
 /datum/outfit/loadout/diner
 	name = "Diner"
-	glasses = /obj/item/clothing/glasses/orange
-	uniform = /obj/item/clothing/under/f13/brahminf
 	neck = /obj/item/clothing/neck/apron/chef
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
 
 	backpack_contents = list(
 	/obj/item/storage/box/ingredients/wildcard = 1,
@@ -1972,20 +1752,6 @@ Mayor
 	/obj/item/storage/box/ingredients/exotic = 1,
 	/obj/item/storage/box/ingredients/sushi = 1
 	)
-
-/datum/outfit/loadout/grower
-	name = "Produce Harvester"
-	glasses = /obj/item/clothing/glasses/orange
-	uniform = /obj/item/clothing/under/f13/brahminf
-	neck = /obj/item/clothing/neck/apron/chef
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-
-	backpack_contents = list(
-	/obj/item/circuitboard/machine/seed_extractor = 1,
-	/obj/item/circuitboard/machine/biogenerator
-	)
-
 
 //Guild Knight
 
@@ -2005,68 +1771,36 @@ Mayor
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
-	loadout_options = list(
-	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/thechief,
-	/datum/outfit/loadout/thedictator
-	)
-
-
 /datum/outfit/job/followers/f13followerguard
 	name =	"Knight"
 	jobtype =	/datum/job/followers/f13followerguard
-	belt = /obj/item/kit_spawner/follower/guard
+	belt = /obj/item/kit_spawner/waster
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	ears = /obj/item/radio/headset/headset_town/guild
-	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
-	head =	/obj/item/clothing/head/helmet/riot/vaultsec
-	glasses =	/obj/item/clothing/glasses/sunglasses
+	suit =	/obj/item/clothing/suit/armor/medium/combat/chinese
+	head =	/obj/item/clothing/head/beret
 	shoes =	/obj/item/clothing/shoes/combat
-	l_pocket =	/obj/item/storage/belt/shoulderholster
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
+	r_pocket = /obj/item/megaphone/sec
 	backpack_contents = list(
-		/obj/item/pda = 1,
-		/obj/item/storage/survivalkit/medical/follower = 1,
-		/obj/item/flashlight/seclite = 1,
-		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/belt/army/followers = 1,
-		/obj/item/cool_book/guildguide = 1
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/cool_book/guildguide = 1,
+		/obj/item/kit_spawner/waster
 	)
 
-/datum/outfit/loadout/thelaw
-	name = "The Law Man"
-	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
-	head = /obj/item/clothing/head/f13/town/sheriff
-	uniform = /obj/item/clothing/under/f13/police/formal
-	neck = /obj/item/storage/belt/shoulderholster
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
-	shoes = /obj/item/clothing/shoes/f13/military/plated
+//Guild Uniforms
 
-	backpack_contents = list(
-	/obj/item/ammo_box/tube/c4570 = 3,
-	/obj/item/gun_upgrade/scope/watchman = 1
-	)
+/obj/item/storage/box/guild/uniform
+	name = "Formal Guild Uniforms"
 
-/datum/outfit/loadout/thechief
-	name = "The Chief"
-	uniform = /obj/item/clothing/under/f13/police/chief
-	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
-	head = /obj/item/clothing/head/f13/town/chief
-	neck = /obj/item/storage/belt/shoulderholster/ranger45
-	shoes = /obj/item/clothing/shoes/combat
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
-	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1,
-	/obj/item/ammo_box/shotgun/buck = 2
-	)
-
-/datum/outfit/loadout/thedictator
-	name = "The Dictator"
-	uniform = /obj/item/clothing/under/f13/police/chief
-	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
-	r_hand = /obj/item/gun/energy/laser/scatter
-	backpack_contents = list(/obj/item/stock_parts/cell/ammo/mfc = 1,
-	)
+/obj/item/storage/box/guild/uniform/PopulateContents()
+	new /obj/item/clothing/under/dress/skirt/red(src)
+	new /datum/gear/uniform/medievalgarnment3(src)
+	new /datum/gear/shoes/cowboy/alt(src)
+	new /datum/gear/belt/fannypack(src)
+	new /datum/gear/gloves/modifpatrol(src)
+	new /datum/gear/head/britishtricornetwo(src)
