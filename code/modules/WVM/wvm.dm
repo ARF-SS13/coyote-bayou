@@ -776,7 +776,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							50),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
 		new /datum/data/wasteland_equipment(".50 MG Box (12 GFBs)",							/obj/item/ammo_box/a50MGbox,							15),
-		new /datum/data/wasteland_equipment("46x40 mike mikes (like four point nine) 		/obj/item/ammo_box/a40mm, 								15), 
+		new /datum/data/wasteland_equipment("46x40 mike mikes (like four point nine)", 		/obj/item/ammo_box/a40mm, 								15),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									15),
