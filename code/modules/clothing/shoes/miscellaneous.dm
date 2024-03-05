@@ -597,3 +597,26 @@
 	desc = "These shoes are made for quacking, and thats just what they'll do."
 	icon_state = "ducky"
 	item_state = "ducky"
+
+/obj/item/clothing/shoes/meown_shoes
+	name = "meown shoes"
+	desc = "The adorable sound they make when you walk will mean making friends is more likely."
+	icon_state = "meown_shoes"
+//	squeak_sound = list('sound/effects/footstep/meowstep1.ogg'=1) //mew mew mew mew
+
+/obj/item/clothing/shoes/moffers
+	name = "moffers"
+	desc = "No moths were harmed in the making of these slippers."
+	icon_state = "moffers"
+//	squeak_sound = list('sound/voice/moth/scream_moth.ogg'=1) //like sweet music to my ears
+
+/obj/item/clothing/shoes/jackbros
+	name = "frosty boots"
+	desc = "For when you're stepping on up to the plate."
+	icon_state = "JackFrostShoes"
+
+
+/obj/item/clothing/shoes/saints
+	name = "saints sneakers"
+	desc = "Officially branded Saints sneakers. Incredibly valuable!"
+	icon_state = "saints_shoes"

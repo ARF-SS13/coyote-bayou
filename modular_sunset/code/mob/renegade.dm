@@ -33,6 +33,10 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 	loot = list(/obj/item/stack/f13Cash/random/med)
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()

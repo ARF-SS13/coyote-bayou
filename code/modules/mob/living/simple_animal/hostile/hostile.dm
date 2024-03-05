@@ -110,6 +110,21 @@
 
 	var/peaceful = FALSE //Determines if mob is actively looking to attack something, regardless if hostile by default to the target or not
 
+	//Tactical Retreat Code//
+	//tactical retreat and heal vars.  These exist to give mobs a breakpoint to cut and run from combat. 
+	//Once they have disengaged they will heal up. While they can't return to combat at least they'll be prepped for the next player push.
+	var/retreat_health_percent = 0 //.25 = 25% health remaining
+	var/max_heal_amount = 0 //how much the mob heals up to when its triggered its low health tactical retreat
+	var/heal_per_life = 0 //how much per life tick the mob heals, %. 0.25 is 25%.
+	var/tactical_retreat = 0 //Distance in tiles the mob retreats in a panic
+	var/retreat_message_said = FALSE 
+	var/actual_retreat_message = "The %NAME tries to flee from %TARGET!"
+	var/max_healing_ability = 0 //In decimal percent, 1 = 100%
+	var/healing_message = "The %NAME is trying to heal itself!"
+	var/healing_sound = 'sound/items/tendingwounds.ogg' // 
+	var/healing_volume = 30
+
+
 //These vars activate certain things on the mob depending on what it hears
 	var/attack_phrase = "" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
 	var/peace_phrase = "" //Makes the mob become peaceful (if it wasn't beforehand) upon hearing
@@ -163,6 +178,7 @@
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
+	tacticalhealing() // just had to put the procs where they would be run yeh, should work now, should be it, probably ye
 	queue_naptime()
 	check_health()
 
@@ -568,6 +584,8 @@
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	if(!ckey && !stat && search_objects < 3 && . > 0)//Not unconscious, and we don't ignore mobs
+		if(amount > 0)
+			tacticalretreat()
 		if(peaceful == TRUE)
 			peaceful = FALSE
 		if(search_objects)//Turn off item searching and ignore whatever item we were looking at, we're more concerned with fight or flight
@@ -1064,3 +1082,32 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	minimum_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))
+
+// 
+
+/mob/living/simple_animal/hostile/proc/tacticalretreat() 
+	if(!tactical_retreat) // if we're not tactically retreating,
+		return // dont!
+	if(stat == DEAD || (health / maxHealth) < retreat_health_percent) // If I ain't dead, and my max health percent is less than my retreat health percent then...
+		retreat_distance = initial(retreat_distance) // I look at my original mob retreat distance
+		return //With that sniffed then I look to see if.
+	var/atom/my_target = get_target() //Do I have a target?????
+	if(!retreat_message_said && my_target) //If I haven't said my retreat message and I definitely don't have a target
+		var/msg = actual_retreat_message // Then play my retreat message
+		msg = replacetext(msg, "%NAME", name) //with my name
+		msg = replacetext(msg, "%TARGET", my_target.name) // and the targets name
+		visible_message(span_danger(msg)) // in it.
+		retreat_message_said = TRUE //I've officially said my retreat message
+	retreat_distance = tactical_retreat // then make my retreat distance my tactical retreat distance
+	//Now I run like hell until my health is higher than my health/max health retreat percent.
+
+//Tactical Healing Code
+//                                                              V these can go too
+/mob/living/simple_animal/hostile/proc/tacticalhealing() // Every life tick, my hostile ass is going to...
+	if(!heal_per_life || health > max_healing_ability || get_target()) //Then I check my heal per life var to see if my health isn't greater than my max healing ability and I do NOT have a target then
+		return // I do a lil dance and
+	adjustHealth(-heal_per_life*maxHealth) //heal this much per life tick, negative is giving me health back. I guess you could make a mob bleed out by having it do positive adjust health?
+	visible_message(span_danger(replacetext(healing_message, "%NAME", name))) // almost, take a look at how the retreatcode's message is handled
+	playsound(get_turf(src), healing_sound, healing_volume, 1, ignore_walls = TRUE)
+	retreat_message_said = FALSE
+

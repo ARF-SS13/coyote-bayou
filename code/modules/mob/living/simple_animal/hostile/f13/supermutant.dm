@@ -74,6 +74,11 @@
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	ignore_other_mobs = TRUE // gentle giants that respect the inhabitants of the wastes. Cept for players
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 10
+
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE

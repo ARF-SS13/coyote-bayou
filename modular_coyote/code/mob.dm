@@ -860,6 +860,8 @@
 	icon_living = "gekko_tribe_villager"
 	icon_dead = "gekko_dead"
 
+
+ 
 /mob/living/simple_animal/advanced/gecko_leader
 	name = "gecko leader"
 	desc = "A large mutated reptile that has learned the basics of checks and balances."
