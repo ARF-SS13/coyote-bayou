@@ -727,12 +727,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							20),
 		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						20),
 		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						20),
-		new /datum/data/wasteland_equipment("Shoddy Energy Cell",							/obj/item/stock_parts/cell/ammo/ec/bad,					20),
-		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell",						/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
-		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack",					/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
+		new /datum/data/wasteland_equipment("Energy Cell",									/obj/item/stock_parts/cell/ammo/ec/bad,					20),
+		new /datum/data/wasteland_equipment("Microfusion Cell",								/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
+		new /datum/data/wasteland_equipment("Electron Charge Pack",							/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
 		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							20),
 		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						20),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment(".50 MG Box (12 GFBs)",							/obj/item/ammo_box/a50MGbox,							20),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									20),
@@ -748,12 +749,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							20),
 		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						20),
 		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						20),
-		new /datum/data/wasteland_equipment("Shoddy Energy Cell (1/2 cap SEC)",				/obj/item/stock_parts/cell/ammo/ec/bad,					20),
-		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
-		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",	/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
+		new /datum/data/wasteland_equipment("Energy Cell",									/obj/item/stock_parts/cell/ammo/ec/bad,					20),
+		new /datum/data/wasteland_equipment("Microfusion Cell",								/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
+		new /datum/data/wasteland_equipment("Electron Charge Pack",							/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
 		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							20),
 		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						20),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment(".50 MG Box (12 GFBs)",							/obj/item/ammo_box/a50MGbox,							20),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
