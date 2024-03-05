@@ -1255,6 +1255,7 @@
 		/obj/item/gun_upgrade/scope/killer = 1,
 		/obj/item/gun_upgrade/mechanism/better = 1,
 		/obj/item/gun_upgrade/barrel/excruciator = 1,
+		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/tool_upgrade/reinforcement/guard = 1,
 		/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	)
@@ -1265,7 +1266,6 @@
 	loot = list(
 		/obj/item/gun_upgrade/barrel/blender = 1,
 		/obj/item/gun_upgrade/trigger/better = 1,
-		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/gun_upgrade/muzzle/better = 1,
 		/obj/item/gun_upgrade/scope/better = 1,
 		/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
