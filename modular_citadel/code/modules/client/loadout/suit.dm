@@ -38,6 +38,12 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	cost = 0
 
+/datum/gear/suit/suit_gear_harness/drip
+	name = "drip harness"
+	path = /obj/item/clothing/suit/chameleon/dripharness
+	cost = 1
+
+
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
 	path = /obj/item/clothing/suit/chameleon/harness
