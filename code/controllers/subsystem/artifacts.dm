@@ -100,21 +100,12 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/list/rare_suffixes = list()
 
 	var/list/artifactible_items = list(
-		/obj/item/toy/tennis,
-		/obj/item/toy/gun,
-		/obj/item/toy/sword,
-		/obj/item/toy/talking,
-		/obj/item/toy/clockwork_watch,
-		/obj/item/toy/toy_dagger,
-		/obj/item/toy/toy_xeno,
-		/obj/item/toy/cattoy,
-		// /obj/item/toy/figure,
-		/obj/item/toy/seashell,
+		/obj/item/toy,
 		/obj/item/trash,
 		/obj/item/taster,
-		/obj/item/candle,
+		// /obj/item/candle, // ironically next to impossible to see
 		/obj/item/extinguisher/mini,
-		/obj/item/toy/plush/carpplushie,
+		/* /obj/item/toy/plush/carpplushie,
 		/obj/item/toy/plush/bubbleplush,
 		/obj/item/toy/plush/narplush/hugbox,
 		/obj/item/toy/plush/lizardplushie,
@@ -134,12 +125,22 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/toy/plush/mammal/fox,
 		/obj/item/toy/plush/mammal/fox/fuzzy,
 		/obj/item/toy/plush/catgirl/fermis,
-		/obj/item/toy/plush/hairball,
+		/obj/item/toy/plush/hairball, */
 		/obj/item/laser_pointer,
 		/obj/item/healthanalyzer,
+		/obj/item/pda,
+		/obj/item/dice,
+		/obj/item/latexballon,
+		/obj/item/organ, // totally not a horrible horrible idea
+		/obj/item/weapon/dvd,
+		/obj/item/fishy,
+		/obj/item/binoculars,
+		/obj/item/laser_pointer,
+		/obj/item/cardboard_cutout,
+		/obj/item/flashlight,
 	)
+
 	var/list/unartifactible_items = list(
-		/obj/item/candle/tribal_torch,
 		/obj/item/toy/plush/mammal/fox/squishfox, // its too powerful
 	)
 	//These specific items, but not their subtypes, are not allowed
