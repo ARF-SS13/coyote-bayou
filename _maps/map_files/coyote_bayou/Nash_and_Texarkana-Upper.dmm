@@ -962,6 +962,9 @@
 /obj/structure/closet/crate/trashcart{
 	pixel_y = 12
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aFq" = (
@@ -6686,11 +6689,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#a1a1a1"
-	},
-/area/f13/caves)
-"etE" = (
-/turf/open/indestructible/ground/outside/water/running{
-	dir = 8
 	},
 /area/f13/caves)
 "etK" = (
@@ -17183,10 +17181,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "kFo" = (
-/turf/open/indestructible/ground/outside/water/running{
-	dir = 4
-	},
-/area/f13/caves)
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/building)
 "kFD" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/indestructible/ground/outside/roof,
@@ -17747,10 +17744,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/caves)
-"kVE" = (
-/obj/machinery/smartfridge/drying_rack,
-/turf/open/indestructible/ground/outside/civ/woodalt,
-/area/f13/building)
 "kWS" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/metal/fifty,
@@ -27504,15 +27497,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qYc" = (
-/obj/item/reagent_containers/glass/bucket/wood,
-/obj/machinery/smartfridge/bottlerack/gardentool,
-/obj/item/storage/bag/plants,
-/obj/item/shovel/spade,
-/obj/item/cultivator,
-/obj/item/cultivator/rake,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	color = "#d7d7d7"
-	},
+/obj/machinery/smartfridge/bottlerack/seedbin,
+/turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "qYp" = (
 /obj/effect/decal/cleanable/dirt{
@@ -28606,10 +28592,6 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"rGz" = (
-/obj/machinery/smartfridge/bottlerack/grownbin,
-/turf/open/indestructible/ground/outside/civ/woodalt,
-/area/f13/building)
 "rGR" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -30996,13 +30978,26 @@
 /turf/open/floor/plating/dirt,
 /area/f13/wasteland)
 "tpg" = (
-/obj/structure/railing{
-	color = "#A47449";
-	density = 0;
-	dir = 1
+/obj/machinery/smartfridge/bottlerack/gardentool{
+	pixel_x = 32
 	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/obj/item/cultivator/rake{
+	pixel_x = 32
+	},
+/obj/item/cultivator{
+	pixel_x = 32
+	},
+/obj/item/shovel/spade{
+	pixel_x = 32
+	},
+/obj/item/storage/bag/plants{
+	pixel_x = 32
+	},
+/obj/item/reagent_containers/glass/bucket/wood{
+	pixel_x = 32
+	},
+/turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/building)
 "tpK" = (
 /turf/closed/wall/f13/store,
 /area/f13/building)
@@ -33333,6 +33328,9 @@
 "uLi" = (
 /obj/machinery/washing_machine,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -38606,7 +38604,7 @@
 	light_color = "#706891";
 	pixel_y = 6
 	},
-/obj/machinery/smartfridge/bottlerack/seedbin,
+/obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "ygx" = (
@@ -66602,7 +66600,7 @@ hFx
 hFx
 lEN
 hFx
-vje
+hFx
 vje
 vje
 oez
@@ -66858,7 +66856,7 @@ iRb
 iRb
 iRb
 iRb
-hFx
+iRb
 hFx
 hFx
 vje
@@ -67110,11 +67108,11 @@ oez
 oez
 iRb
 iRb
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
 iRb
 iRb
 hFx
@@ -67366,13 +67364,13 @@ oez
 oez
 oez
 iRb
-vje
-vje
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
+vje
+vje
 iRb
 iRb
 iRb
@@ -67623,13 +67621,13 @@ oez
 oez
 oez
 iRb
-vje
-vje
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
+vje
+vje
 iRb
 iRb
 iRb
@@ -67880,13 +67878,13 @@ oez
 oez
 oez
 iRb
-vje
-vje
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
+vje
+vje
 iRb
 iRb
 iRb
@@ -68137,13 +68135,13 @@ oez
 oez
 oez
 iRb
-vje
-vje
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
+vje
+vje
 iRb
 iRb
 iRb
@@ -68395,11 +68393,11 @@ oez
 oez
 iRb
 iRb
-vje
-vje
-vje
-vje
 iRb
+vje
+vje
+vje
+vje
 iRb
 iRb
 iRb
@@ -68655,12 +68653,12 @@ iRb
 iRb
 iRb
 vje
+vje
 iRb
 iRb
 iRb
-puH
-puH
-kFo
+iRb
+iRb
 ezo
 dvV
 dLu
@@ -68912,11 +68910,11 @@ gDZ
 gDZ
 iRb
 vje
-iRb
+vje
 iRb
 puH
-etE
-iRb
+puH
+puH
 oez
 oez
 oez
@@ -69424,7 +69422,7 @@ txV
 ohN
 dIW
 gDZ
-iBy
+kFo
 gyT
 gyT
 icJ
@@ -69681,7 +69679,7 @@ vBN
 txV
 mHN
 gDZ
-rGz
+iBy
 gyT
 gyT
 icJ
@@ -70195,7 +70193,7 @@ jRu
 gDZ
 gDZ
 gDZ
-qob
+qYc
 gyT
 gyT
 icJ
@@ -70452,7 +70450,7 @@ gJP
 jaq
 vsz
 gDZ
-kVE
+qob
 gyT
 gyT
 urX
@@ -70966,7 +70964,7 @@ gJP
 gJP
 jyL
 gDZ
-vYo
+kFo
 gyT
 gyT
 urX
@@ -71480,8 +71478,8 @@ wUY
 gJP
 tWa
 gDZ
-qYc
-gyT
+vYo
+tpg
 gyT
 icJ
 qNW
@@ -82799,7 +82797,7 @@ hqQ
 kES
 tcy
 pte
-tpg
+odJ
 oez
 oez
 oez

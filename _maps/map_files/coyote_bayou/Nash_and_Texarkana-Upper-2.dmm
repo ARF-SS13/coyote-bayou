@@ -3529,7 +3529,8 @@
 /area/f13/building/hospital)
 "nZ" = (
 /obj/structure/easel{
-	plane = -2
+	plane = -2;
+	density = 0
 	},
 /obj/structure/chair/stool/retro/black{
 	pixel_y = 12
@@ -3926,6 +3927,10 @@
 /obj/item/instrument/accordion,
 /obj/machinery/light/floor{
 	plane = -6
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 5
 	},
 /turf/open/floor/wood_worn{
 	color = "#6F4F40"
@@ -4473,6 +4478,14 @@
 "rI" = (
 /obj/structure/table/wood/bar,
 /obj/item/pickaxe,
+/obj/item/flashlight/lantern{
+	icon_state = "lantern-on";
+	layer = 2.8;
+	light_on = 1;
+	on = 1;
+	pixel_x = -5;
+	pixel_y = 15
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rJ" = (
@@ -5193,6 +5206,10 @@
 	pixel_y = 34;
 	pixel_x = -16
 	},
+/obj/structure/towel_rack{
+	pixel_y = 31;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	color = "#ADDEBA"
 	},
@@ -5641,6 +5658,10 @@
 /obj/item/instrument/guitar,
 /obj/machinery/light/floor{
 	plane = -6
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/floor/wood_worn{
 	color = "#6F4F40"
@@ -6218,6 +6239,10 @@
 /obj/item/instrument/saxophone,
 /obj/machinery/light/floor{
 	plane = -6
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 9
 	},
 /turf/open/floor/wood_worn{
 	color = "#6F4F40"
@@ -9476,10 +9501,6 @@
 	},
 /area/f13/wasteland)
 "Ly" = (
-/obj/structure/towel_rack{
-	pixel_x = -32;
-	pixel_y = 18
-	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -10646,6 +10667,10 @@
 /obj/structure/toilet_paper{
 	pixel_x = -25;
 	pixel_y = 14
+	},
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	color = "#ADDEBA"
@@ -12696,10 +12721,6 @@
 	},
 /obj/structure/curtain/directional/south{
 	color = "#4B724F"
-	},
-/obj/structure/table/wood{
-	density = 0;
-	alpha = 1
 	},
 /turf/open/floor/wood_worn{
 	color = "#FDF2C3"
@@ -46672,7 +46693,7 @@ ed
 jk
 Qi
 FS
-jk
+FS
 FS
 FS
 ed
