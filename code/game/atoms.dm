@@ -545,9 +545,11 @@
 	var/blood_id = get_blood_id()
 	if(!(blood_id in GLOB.blood_reagent_types))
 		return
+	var/list/blood_data = get_blood_data()
 	var/list/blood_dna = list()
 	if(dna)
-		blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		//blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		blood_dna["color"] = blood_data["bloodcolor"]
 		blood_dna[dna.unique_enzymes] = dna.blood_type
 	else
 		blood_dna["color"] = BLOOD_COLOR_HUMAN
@@ -571,6 +573,10 @@
 		blood_DNA["color"] = new_blood_dna["color"]
 		changed = TRUE
 	else
+		if(blood_DNA["color"] == "rainbow" || new_blood_dna["color"] == "rainbow")
+			changed = blood_DNA["color"] == "rainbow"
+			blood_DNA["color"] = "rainbow"
+			return changed
 		var/old = blood_DNA["color"]
 		blood_DNA["color"] = BlendRGB(blood_DNA["color"], new_blood_dna["color"])
 		changed = old != blood_DNA["color"]
@@ -591,8 +597,11 @@
 			return
 		if(!blood_DNA["color"])
 			blood_DNA["color"] = blood_dna["color"]
-		else
-			blood_DNA["color"] = BlendRGB(blood_DNA["color"], blood_dna["color"])
+			return
+		if(blood_DNA["color"] == "rainbow" || blood_DNA["color"] == "rainbow")
+			blood_DNA["color"] = "rainbow"
+			return
+		blood_DNA["color"] = BlendRGB(blood_DNA["color"], blood_dna["color"])
 
 //to add blood from a mob onto something, and transfer their dna info
 /atom/proc/add_mob_blood(mob/living/M)
@@ -661,7 +670,9 @@
 	return TRUE
 
 /atom/proc/blood_DNA_to_color()
-	return (blood_DNA && blood_DNA["color"]) || BLOOD_COLOR_HUMAN
+	if(blood_DNA && !isnull(blood_DNA["color"]))
+		return blood_DNA["color"]
+	return BLOOD_COLOR_HUMAN
 
 /atom/proc/clean_blood()
 	. = blood_DNA? TRUE : FALSE

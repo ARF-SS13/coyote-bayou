@@ -216,8 +216,9 @@
 		user.update_inv_hands()
 
 	// if the item requires two handed drop the item on unwield
-	if(require_twohands)
-		user.dropItemToGround(parent, force=TRUE)
+	//		^ what are you talking about? you cant even unwield these things. im commenting this crap out.
+	//if(require_twohands)		
+	//	user.dropItemToGround(parent, force=TRUE)
 
 	// Show message if requested
 	if(show_message)

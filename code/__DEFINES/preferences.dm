@@ -73,7 +73,7 @@
 #define EXP_TYPE_ANTAG			"Antag"
 #define EXP_TYPE_SPECIAL		"Special"
 #define EXP_TYPE_GHOST			"Ghost"
-#define EXP_TYPE_BIKER			"Ashdown Overlook"
+//#define EXP_TYPE_BIKER			"Ashdown Overlook"
 #define EXP_TYPE_ADMIN			"Admin"
 //f13 stuff
 #define EXP_TYPE_FALLOUT		"Fallout"
@@ -89,7 +89,7 @@
 #define EXP_TYPE_SCRIBE         "Scribe"
 #define EXP_TYPE_DECANUS        "Decanus"
 #define EXP_TYPE_TRIBAL			"Tribal"
-#define EXP_TYPE_FOLLOWERS		"Nash Clinic"
+#define EXP_TYPE_FOLLOWERS		"New Boston Clinic"
 #define EXP_TYPE_OUTLAW			"Outlaw"
 #define EXP_TYPE_KHAN			"Great Khans"
 #define EXP_TYPE_CLUB			"Heavens Night"

@@ -36,7 +36,7 @@
 	set desc = "Visit Github"
 	set hidden = 1
 	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
-	var/githuburl = CONFIG_GET(string/githuburl)
+	var/githuburl = CONFIG_GET(string/githuburl) 
 	if(githuburl)
 		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return

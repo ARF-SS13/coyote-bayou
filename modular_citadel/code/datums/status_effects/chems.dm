@@ -590,8 +590,8 @@
 	//cultists are already brainwashed by their god
 	if(iscultist(owner))
 		deltaResist *= 1.3
-	else if (is_servant_of_ratvar(owner))
-		deltaResist *= 1.3
+/*	else if (is_servant_of_ratvar(owner))
+		deltaResist *= 1.3*/
 	//antags should be able to resist, so they can do their other objectives. This chem does frustrate them, but they've all the tools to break free when an oportunity presents itself.
 	else if (owner.mind.assigned_role in GLOB.antagonists)
 		deltaResist *= 1.2

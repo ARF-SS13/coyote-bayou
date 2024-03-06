@@ -102,6 +102,8 @@ ATTACHMENTS
 	var/mutable_appearance/knife_overlay
 	var/bayonet_state = "bayonetstraight"
 
+	var/can_paint = TRUE
+
 	var/can_scope = FALSE
 	var/mutable_appearance/scope_overlay
 	var/scope_state = "scope"
@@ -232,7 +234,7 @@ ATTACHMENTS
 		if(!ispath(init_firemodes[i], /datum/firemode))
 			init_firemodes.Cut(i, i+1)
 
-	
+
 	if(!LAZYLEN(init_firemodes)) // Nothing passed the filter
 		init_firemodes = list(/datum/firemode/semi_auto) // good enough
 
@@ -522,7 +524,7 @@ ATTACHMENTS
 	if (automatic == 1)
 		return busy_action || firing
 
-/* 
+/*
  * So here is the list of proc calls that happen when you fire a gun:
  * You click on something with a gun in your hand
  * The game calls ClickOn() on the gun
@@ -922,11 +924,11 @@ ATTACHMENTS
 		current_recoil = 0
 	else if(current_recoil_cooldown_time > 0) // no zero divides plz
 		current_recoil *= (current_recoil_schedule - current_time) / current_recoil_cooldown_time // Partial recoil cooldown
-	
+
 	/// Calculate a new spread, basically recoil to spread, clamped
 	var/new_spread = 0
 	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, current_recoil)
-	
+
 	/// Set a new time to clear recoil
 	recoil_cooldown_schedule = world.time + recoil_cooldown_time
 
@@ -1066,7 +1068,7 @@ ATTACHMENTS
 		zoom_out_amt = zoom_amt + 1
 	else
 		zoom_out_amt = world.view
-	
+
 	zoom(user)
 
 	if(safety)
@@ -1244,6 +1246,8 @@ ATTACHMENTS
 		gun_tags |= GUN_SCOPE
 	if(can_suppress)
 		gun_tags |= GUN_SILENCABLE
+	if(can_paint)
+		gun_tags |= GUN_PAINTABLE
 	//if(!get_sharpness())
 	//	gun_tags |= SLOT_BAYONET
 
@@ -1358,7 +1362,7 @@ ATTACHMENTS
 /obj/item/gun/proc/misfire_hurt_user(mob/living/user, extra_hurt)
 	if(!user || !isliving(user))
 		return FALSE
-	
+
 	var/is_pow = extra_hurt > 1.5 ? TRUE : FALSE
 	extra_hurt = clamp(extra_hurt, 1, 2.5) // lets not literally kill whoever's using this thing
 
@@ -1505,7 +1509,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 /obj/item/gun/proc/misfire_dump_ammo(mob/user, dump_harder)
 	if(!user)
 		return FALSE
-	
+
 	var/obj/item/thing_2_yeet
 	/// subtypes that do everything differnt suuuuuuuck
 	if(istype(src, /obj/item/gun/energy))
@@ -1538,7 +1542,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 /obj/item/gun/proc/misfire_yeet_gun(mob/user, throw_harder)
 	if(!user)
 		return FALSE
-	
+
 	user.dropItemToGround(src)
 	var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6) * throw_harder, 3 * throw_harder)
 	if(!isturf(throw_it_here))

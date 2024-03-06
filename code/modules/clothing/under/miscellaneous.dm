@@ -1574,6 +1574,7 @@
 	item_state = "loincloth"
 	item_color = "loincloth"
 	can_adjust = FALSE
+	w_class = WEIGHT_CLASS_SMALL
 
 // Bayou Stuff - started by Kelprunner
 

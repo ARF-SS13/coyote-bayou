@@ -301,8 +301,7 @@
 /obj/item/reagent_containers/food/drinks/mug/on_reagent_change(changetype)
 	cut_overlays()
 	if(reagents.total_volume)
-		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay")
-		MA.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay", color = mix_color_from_reagents(reagents.reagent_list))
 		add_overlay(MA)
 	else
 		icon_state = "tea_empty"
@@ -486,6 +485,12 @@
 	desc = "The detective's only true friend."
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
+
+/obj/item/reagent_containers/food/drinks/flask/tech
+	name = "High-tech Canteen"
+	desc = "A rather technical looking drinking vessel made of a polymer housing for the general shape, it is reminiscent of a water canteen. It faintly hums as the metallic refrigeration kicks in to keep the contents cold. It is woven with a carbon fiber mesh at places to also help with this, and to offer some grip. The initials J.N. are marked on the underside of the vessel."
+	icon_state = "techcanteen"
+	list_reagents = list(/datum/reagent/water = 60)
 
 /obj/item/reagent_containers/food/drinks/britcup
 	name = "cup"

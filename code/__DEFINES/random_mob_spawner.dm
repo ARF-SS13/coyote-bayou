@@ -2,12 +2,18 @@
 #define MOB_SPAWNER_GHOUL "ghoul"
 #define MOB_SPAWNER_LESSERSPIDER "lesser_spider"
 #define MOB_SPAWNER_GREATERSPIDER "greater_spider"
+#define MOB_SPAWNER_OMEGASPIDER "omega_spider"
 #define MOB_SPAWNER_MIRELURK "mirelurk"
 #define MOB_SPAWNER_BLOATFLY "bloaties"
 #define MOB_SPAWNER_GECKO "gecko"
 #define MOB_SPAWNER_BLOATFLY_AND_GECKO "buzz_and_snap"
 #define MOB_SPAWNER_MOLERAT "molerats"
 #define MOB_SPAWNER_ROACH "roachies"
+#define MOB_SPAWNER_MOOK "Wanderers"
+#define MOB_SPAWNER_HIVEBOT "Hivebots"
+#define MOB_SPAWNER_PIRATE "Pirates"
+#define MOB_SPAWNER_RUSSIAN "Russians"
+#define MOB_SPAWNER_SYNDICATE "Syndicate"
 #define MOB_SPAWNER_ROBOT_DOMESTIC "domestic_robots" // handies and protectrons
 #define MOB_SPAWNER_ROBOT_SECURITY "security_robots" // securitrons, sentrybots
 #define MOB_SPAWNER_ROBOT_MILITARY "military_robots" // gutsies, sentrybots, assbots
@@ -148,6 +154,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_RAIDER_MELEE,
 		MOB_SPAWNER_RAIDER_RANGED,
+		MOB_SPAWNER_PIRATE,
+		MOB_SPAWNER_RUSSIAN,
 		MOB_SPAWNER_RAIDER_MIXED,
 		MOB_SPAWNER_TUNNELLER,
 		MOB_SPAWNER_SPORECARRIER,
@@ -169,7 +177,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ROBOT_HIGH
 	group_list = list(
 		MOB_SPAWNER_ROBOT_SECURITY,
-		MOB_SPAWNER_ROBOT_MILITARY
+		MOB_SPAWNER_ROBOT_MILITARY,
+		MOB_SPAWNER_HIVEBOT
 	)
 
 /// all trash mobs
@@ -206,6 +215,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_ROBOT_DOMESTIC,
+		MOB_SPAWNER_HIVEBOT,
 		MOB_SPAWNER_SCORPIONS,
 		MOB_SPAWNER_ANT,
 		MOB_SPAWNER_RAIDER_MELEE,
@@ -223,10 +233,12 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_ROBOT_SECURITY,
 		MOB_SPAWNER_CAZADOR,
 		MOB_SPAWNER_SCORPIONS,
+		MOB_SPAWNER_MOOK,
 		MOB_SPAWNER_ANT,
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_RAIDER_MELEE,
 		MOB_SPAWNER_RAIDER_RANGED,
+		MOB_SPAWNER_SYNDICATE,
 		MOB_SPAWNER_RAIDER_MIXED,
 		MOB_SPAWNER_TUNNELLER,
 		MOB_SPAWNER_SPORECARRIER,
@@ -245,6 +257,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_RAIDER_RANGED,
 		MOB_SPAWNER_RAIDER_MIXED,
+		MOB_SPAWNER_SYNDICATE,
 		MOB_SPAWNER_GREATERSPIDER,
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_RATTLER
@@ -260,7 +273,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_RAIDER_MIXED,
-		MOB_SPAWNER_GREATERSPIDER,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_RATTLER
 	)
@@ -270,7 +283,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_RAIDER_LOW
 	group_list = list(
 		MOB_SPAWNER_RAIDER_MELEE,
-		MOB_SPAWNER_RAIDER_MIXED
+		MOB_SPAWNER_RAIDER_MIXED,
+		MOB_SPAWNER_PIRATE
 	)
 
 /// High level raiders
@@ -278,7 +292,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_RAIDER_HIGH
 	group_list = list(
 		MOB_SPAWNER_RAIDER_RANGED,
-		MOB_SPAWNER_RAIDER_MIXED
+		MOB_SPAWNER_RAIDER_MIXED,
+		MOB_SPAWNER_SYNDICATE
 	)
 
 /*
@@ -362,7 +377,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
 		MOB_SPAWNER_HELLPIG,
-		MOB_SPAWNER_GREATERSPIDER,
+		MOB_SPAWNER_OMEGASPIDER,
 		MOB_SPAWNER_WANAMINGO
 	)
 /*
@@ -439,7 +454,8 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_SWAMPLIFE_DEATH
 	group_list = list(
 		MOB_SPAWNER_DEATHCLAW,
-		MOB_SPAWNER_HELLPIG
+		MOB_SPAWNER_HELLPIG,
+		MOB_SPAWNER_OMEGASPIDER
 	)
 
 /// Debug thing (its full of bugs (get it?))
@@ -559,21 +575,43 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 3,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1
+		)
+	num_mobs_to_spawn_hard = 3
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 4,
+		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 2
+		)
+
+// Omega Spiders
+/datum/random_mob_spawner/omegaspider
+	nest_tag = MOB_SPAWNER_OMEGASPIDER
+	nest_name = "emperor nest"
+	nest_desc = "Glowing red eyes are visible inside..."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
+	mob_list_easy = list(
 		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 1
 		)
 	num_mobs_to_spawn_medium = 2
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
 	mob_list_medium = list(
 		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 3,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2
 		)
 	num_mobs_to_spawn_hard = 2
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2,
-		/mob/living/simple_animal/hostile/poison/giant_spider/queen = 3,
-		/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1
+		/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 4,
 		)
 
 /// Mirelurks
@@ -659,7 +697,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 /// Roachie~
 /datum/random_mob_spawner/roach
 	nest_tag = MOB_SPAWNER_ROACH
-	nest_name = "radroach mass"
+	nest_name = "mutant pillbug mass"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
@@ -770,7 +808,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 /// Molerats
 /datum/random_mob_spawner/molerat
 	nest_tag = MOB_SPAWNER_MOLERAT
-	nest_name = "molerat nest"
+	nest_name = "giant rat nest"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
@@ -789,6 +827,136 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_QUICKEST
 	mob_list_hard = list(
 		/mob/living/simple_animal/hostile/molerat = 20
+		)
+
+/// Mook
+
+/datum/random_mob_spawner/mook
+	nest_tag = MOB_SPAWNER_MOOK
+	nest_name = "wanderer den"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 1
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 3,
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/jungle/mook = 5
+		)
+
+/// Hivebots
+/datum/random_mob_spawner/hivebot
+	nest_tag = MOB_SPAWNER_HIVEBOT
+	nest_name = "hivebot datacreator"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 3
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/hivebot = 5
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/hivebot = 3,
+		/mob/living/simple_animal/hostile/hivebot/range = 3
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/hivebot/rapid = 3,
+		/mob/living/simple_animal/hostile/hivebot/strong = 5
+		)
+
+/// Pirates
+/datum/random_mob_spawner/pirate
+	nest_tag = MOB_SPAWNER_PIRATE
+	nest_name = "pirate hideout"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 3
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/pirate/melee = 5
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/pirate/melee = 2,
+		/mob/living/simple_animal/hostile/pirate/ranged = 3
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/pirate/ranged = 5,
+		)
+
+/// Russians
+/datum/random_mob_spawner/russian
+	nest_tag = MOB_SPAWNER_RUSSIAN
+	nest_name = "russian hideout"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/russian/ranged = 3,
+		/mob/living/simple_animal/hostile/russian/ranged/trooper = 1
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/russian/ranged = 2,
+		/mob/living/simple_animal/hostile/russian/ranged/mosin = 1
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/russian/ranged/officer = 3,
+		/mob/living/simple_animal/hostile/russian/ranged/mosin = 3
+		)
+
+/// Syndicate
+/datum/random_mob_spawner/syndicate
+	nest_tag = MOB_SPAWNER_SYNDICATE
+	nest_name = "syndicate hideout"
+	nest_desc = "A gross hole in the ground with monsters in it."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 2
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/syndicate/melee/sword/space = 2,
+		/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper = 1
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/syndicate/ranged/smg/space = 2,
+		/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper = 1
+		)
+	num_mobs_to_spawn_hard = 1
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space = 2,
+		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper = 1
 		)
 
 /// Cazadores

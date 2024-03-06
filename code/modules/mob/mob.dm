@@ -854,12 +854,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, EAST)
-			pixel_x = pixel_slide_memory_x - 32
-			pixel_y = pixel_slide_memory_y
-			dir = pixel_slide_memory_dir
-			if(!pixel_slide_target_has_help_int)
-				pixel_x = pixel_slide_memory_x
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x - 32
 				pixel_y = pixel_slide_memory_y
+				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -877,12 +875,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, WEST)
-			pixel_x = pixel_slide_memory_x + 32
-			pixel_y = pixel_slide_memory_y
-			dir = pixel_slide_memory_dir
-			if(!pixel_slide_target_has_help_int)
-				pixel_x = pixel_slide_memory_x
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x + 32
 				pixel_y = pixel_slide_memory_y
+				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -900,12 +896,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, NORTH)
-			pixel_x = pixel_slide_memory_x
-			pixel_y = pixel_slide_memory_y - 32
-			dir = pixel_slide_memory_dir
-			if(!pixel_slide_target_has_help_int)
+			if(pixel_slide_target_has_help_int)
 				pixel_x = pixel_slide_memory_x
-				pixel_y = pixel_slide_memory_y
+				pixel_y = pixel_slide_memory_y - 32
+				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
@@ -923,12 +917,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			pixel_slide_memory_y = pixel_y
 			pixel_slide_memory_dir = dir
 			step(src, SOUTH)
-			pixel_x = pixel_slide_memory_x
-			pixel_y = pixel_slide_memory_y + 32
-			dir = pixel_slide_memory_dir
-			if(!pixel_slide_target_has_help_int)
+			if(pixel_slide_target_has_help_int)
 				pixel_x = pixel_slide_memory_x
-				pixel_y = pixel_slide_memory_y
+				pixel_y = pixel_slide_memory_y + 32
+				dir = pixel_slide_memory_dir
 			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 

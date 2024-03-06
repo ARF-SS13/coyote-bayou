@@ -583,6 +583,17 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	icon_state = "kobold"
 	item_state = "kobold"
 
+/obj/item/toy/plush/lizardplushie/kobold/scrip
+	name = "Oobie Biddilets, Devourer of Markets, he who ate all the union scrip like the fat kobold he is plushie"
+	desc = "Oh he knows what he did. You can thank him for this."
+	icon_state = "kobold"
+	item_state = "kobold"
+
+/obj/item/toy/plush/lizardplushie/kobold/scrip/Initialize(mapload, set_snowflake_id)
+	. = ..()
+	transform *= 3
+	special_transform = transform
+
 /obj/item/toy/plush/nukeplushie
 	name = "operative plushie"
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."

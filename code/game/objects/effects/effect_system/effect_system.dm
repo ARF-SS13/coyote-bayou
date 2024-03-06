@@ -11,6 +11,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	pass_flags = PASSTABLE | PASSGRILLE
 	anchored = TRUE
+	plane = MOB_PLANE //Patches all partical effects including spark to render over mobs
 
 /obj/effect/particle_effect/Initialize()
 	. = ..()

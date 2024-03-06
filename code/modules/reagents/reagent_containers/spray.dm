@@ -80,7 +80,10 @@
 		puff_reagent_left = 1
 	else
 		reagents.trans_to(D, amount_per_transfer_from_this, 1/range)
-	D.color = mix_color_from_reagents(D.reagents.reagent_list)
+	var/mix_color = mix_color_from_reagents(D.reagents.reagent_list)
+	if(mix_color == "rainbow")
+		mix_color = "#ffffff"
+	D.color = mix_color
 	var/turf/T = get_turf(src)
 	if(!T)
 		return

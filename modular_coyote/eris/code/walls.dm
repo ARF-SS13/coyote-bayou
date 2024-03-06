@@ -8,7 +8,18 @@
 	smooth = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/coyote/darkwoodwall, /turf/closed/wall)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/coyote/darkwoodwall,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/f13/coyote/fortress_brick
 	name = "fortress brickwall"
@@ -20,8 +31,18 @@
 	smooth = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/coyote/fortress_brick, /turf/closed/wall)
-
+	canSmoothWith = list(
+	/turf/closed/wall/f13/coyote/fortress_brick,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/f13/coyote/tavern_wall
 	name = "tavern wall"
@@ -33,7 +54,18 @@
 	smooth = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/coyote/tavern_wall, /obj/structure/window/fulltile/wood, /turf/closed/wall)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/coyote/tavern_wall,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/f13/coyote/oldwood
 	name = "old wood wall"
@@ -45,4 +77,15 @@
 	smooth = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/coyote/oldwood, /turf/closed/wall)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/coyote/oldwood,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)

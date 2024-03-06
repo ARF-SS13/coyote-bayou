@@ -124,7 +124,7 @@
 //////////////////////////
 //Fenny losing his mind//
 ////////////////////////
-
+/*
 /datum/weather/rain/fog/nashdown_event //I'm totally not using weather as a makeshift randomized event creator, shut up cactus.  This system already works.
 	probability = 100
 
@@ -228,3 +228,4 @@
 	//The fog is quiet. It knows that it is quiet because of the way it is.
 	sound_ao_type = null
 	sound_ai_type = null
+*/

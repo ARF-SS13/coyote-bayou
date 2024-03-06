@@ -58,6 +58,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text/carbon, _name = "Flavor Text", _save_key = "flavor_text")
 	AddElement(/datum/element/flavor_text, "", "Set Pose/Leave OOC Message", "This should be used only for things pertaining to the current round!")
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
+	AddElement(/datum/element/flavor_text, _name = "Background Info Notes", _addendum = "Put information about your character's background!", _always_show = TRUE, _save_key = "background_info_notes", _examine_no_preview = TRUE)
+	AddElement(/datum/element/flavor_text, _name = "F-list link", _always_show = FALSE, _save_key = "flist", _examine_no_preview = TRUE, _attach_internet_link = TRUE)
 	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS,PROC_REF(signal_update_genitals))
 
 /mob/living/carbon/human/Destroy()
@@ -240,10 +242,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)
@@ -355,7 +354,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if(!LAZYLEN(tattoo_words))
 			to_chat(usr, span_alert("You can't seem to make anything out on [src]!"))
 			return
-		to_chat(usr, span_notice("[jointext(tattoo_words, "<br>")]"))		
+		to_chat(usr, span_notice("[jointext(tattoo_words, "<br>")]"))
 
 ///////HUDs///////
 	if(href_list["hud"])
@@ -657,7 +656,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 // I see athens, I see greece, I see src's /datum/sprite_accessory/underwear/bottom/briefs
 /mob/living/carbon/human/proc/show_underwear_panel()
 	var/list/dat = list()
-	dat += {"<a 
+	dat += {"<a
 				class='clicky'
 				href='
 					?src=[REF(src)];
@@ -673,17 +672,17 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "<tr class='undies_row'>"
 	dat += "<td class='undies_cell'>"
 	dat += "<div class='undies_label'>Topwear</div>"
-	dat += {"<a 
-				class='undies_link' 
+	dat += {"<a
+				class='undies_link'
 				href='
 					?src=[REF(src)];
 					action=shirt'>
 						[undershirt]
 			</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[shirt_color]' 
+					background-color:#[shirt_color]'
 				href='
 					?src=[REF(src)];
 					action=shirt_color'>
@@ -693,17 +692,17 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "</tr><tr class='undies_row'>"
 	dat += "<td class='undies_cell'>"
 	dat += "<div class='undies_label'>Bottomwear</div>"
-	dat += {"<a 
-				class='undies_link' 
+	dat += {"<a
+				class='undies_link'
 				href='
 					?src=[REF(src)];
 					action=undies'>
 						[underwear]
 			</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[undie_color]' 
+					background-color:#[undie_color]'
 				href='
 					?src=[REF(src)];
 					action=undies_color'>
@@ -713,24 +712,24 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "</tr><tr class='undies_row'>"
 	dat += {"<td class='undies_cell'>
 				<div class='undies_label'>Legwear</div>
-				<a 
-					class='undies_link' 
+				<a
+					class='undies_link'
 					href='
 						?src=[REF(src)];
 						action=socks'>
 							[socks]
 				</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[socks_color]' 
+					background-color:#[socks_color]'
 				href='
 					?src=[REF(src)];
 					action=socks_color'>
 						[socks_color]
 			</a>"}
 	var/datum/preferences/P = client?.prefs
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				href='
 					?src=[REF(src)];
@@ -749,7 +748,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 /mob/living/carbon/human/proc/show_genital_hide_panel()
 	var/list/dat = list()
-	dat += {"<a 
+	dat += {"<a
 				class='clicky'
 				href='
 					?src=[REF(src)];
@@ -761,8 +760,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "<tr class='talign'><td class='talign'>"
 	dat += "<div class='gen_container'>"
 	dat += "<div class='gen_setting_name'>See Bellies:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -770,8 +769,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BELLY) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Butts:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -779,8 +778,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BUTT) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Breasts:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -788,8 +787,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BOOBS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Vaginas:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -797,8 +796,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_VAG) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Penises:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -806,8 +805,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_PENIS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Balls:</div>" // GET UR FUCKIN BURGER
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -816,8 +815,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Visibility Whitelist:</div>" // BURGER TIME
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=change_genital_whitelist'>
@@ -825,8 +824,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Apply Changes:</div>" // BURGER TIME
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=update_every_fucking_crotch'>
@@ -1517,11 +1516,11 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 /mob/living/carbon/human/species/golem/durathread
 	race = /datum/species/golem/durathread
 
-/mob/living/carbon/human/species/golem/clockwork
+/*/mob/living/carbon/human/species/golem/clockwork
 	race = /datum/species/golem/clockwork
 
 /mob/living/carbon/human/species/golem/clockwork/no_scrap
-	race = /datum/species/golem/clockwork/no_scrap
+	race = /datum/species/golem/clockwork/no_scrap*/
 
 /mob/living/carbon/human/species/jelly
 	race = /datum/species/jelly

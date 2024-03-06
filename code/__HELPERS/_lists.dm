@@ -19,7 +19,7 @@
 #define LAZYISIN(L, V) L ? (V in L) : FALSE
 #define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= length(L) ? L[I] : null) : L[I]) : null)
 #define LAZYSET(L, K, V) if(!L) { L = list(); } L[K] = V;
-#define LAZYLEN(L) length(L)
+#define LAZYLEN(L) length(L) // this! rturns the length of a list, yeah!
 #define LAZYLENGTHEN(L, I) if(!L) { L = list(); } L.len = (L.len < I ? I : L.len); // Thats a hose lengthener -- you need one!
 //Sets a list to null
 #define LAZYNULL(L) L = null

@@ -54,10 +54,10 @@
 	qdel(src)
 	new /obj/structure/table/wood(A)
 
-/obj/structure/table/ratvar_act()
+/*/obj/structure/table/ratvar_act()
 	var/atom/A = loc
 	qdel(src)
-	new /obj/structure/table/reinforced/brass(A)
+	new /obj/structure/table/reinforced/brass(A)*/
 
 /obj/structure/table/attack_paw(mob/user)
 	return attack_hand(user)
@@ -597,7 +597,7 @@
 	else
 		. = ..()
 
-/obj/structure/table/reinforced/brass
+/*/obj/structure/table/reinforced/brass
 	name = "brass table"
 	desc = "A solid, slightly beveled brass table."
 	icon = 'icons/obj/smooth_structures/brass_table.dmi'
@@ -631,7 +631,7 @@
 		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
 
 /obj/structure/table/reinforced/brass/ratvar_act()
-	obj_integrity = max_integrity
+	obj_integrity = max_integrity*/
 
 /obj/structure/table/bronze
 	name = "bronze table"
@@ -640,7 +640,7 @@
 	icon_state = "brass_table"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	buildstack = /obj/item/stack/sheet/bronze
-	canSmoothWith = list(/obj/structure/table/reinforced/brass, /obj/structure/table/bronze)
+	canSmoothWith = list(/obj/structure/table/bronze)
 
 /obj/structure/table/bronze/tablelimbsmash(mob/living/user, mob/living/pushed_mob)
 	..()
@@ -687,6 +687,12 @@
 		patient = null
 		return FALSE
 
+// Primitive Surgery Table
+/obj/structure/table/optable/primitive
+	name = "butchers table"
+	desc = "Used for painful, primitive medical procedures."
+	icon_state = "optable_primitive"
+
 /*
  * Racks
  */
@@ -705,6 +711,9 @@
 	max_integrity = 30
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
+
+/obj/structure/rack/shelf_wood/modern
+	icon_state = "shelf_wood_modern"
 
 /obj/structure/rack
 	name = "rack"
@@ -725,6 +734,11 @@
 	name = "metal shelf"
 	desc = "Metal shelf."
 	icon_state = "shelf"
+
+/obj/structure/rack/shelf_metal/modern
+	name = "metal shelf"
+	desc = "Metal shelf."
+	icon_state = "shelf_modern"
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()

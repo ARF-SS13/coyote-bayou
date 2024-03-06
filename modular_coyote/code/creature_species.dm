@@ -661,8 +661,8 @@
 	simple_icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_width = 32
 	icon_dead_suffix = "_dead"
-	icon_rest_suffix = ""
-	rotate_on_lying = TRUE
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
 	roundstart = TRUE
 	liked_food = MEAT | RAW
 	default_color = "FFFFFF"

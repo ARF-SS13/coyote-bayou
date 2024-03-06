@@ -1153,6 +1153,9 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
+	plane = -15
+	layer = BELOW_OPEN_DOOR_LAYER
+	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"
@@ -1876,3 +1879,34 @@
 	name = "Blessed Gecko-Slayer"
 	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
 
+//Haybale
+
+/obj/structure/haybale
+	name = "haybale"
+	desc = "Don't toss a needle in it!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "haybale"
+
+/obj/structure/clothes
+	name = "clothing line"
+	desc = "Hang up your clothes!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "clothesline"
+
+/obj/structure/bridgefull
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_full"
+
+/obj/structure/bridgeupper
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_upper"
+
+/obj/structure/bridgelower
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_lower"

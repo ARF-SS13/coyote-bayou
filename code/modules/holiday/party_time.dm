@@ -36,7 +36,7 @@
 	return "The air around you starts to feel oddly festive. Might want to hang around town!"
 
 /datum/holiday/weekly/potluck/on_join_game(mob/living/newbie)
-	to_chat(newbie, span_greenannounce("Looks like Nash (and Ashdown too!) is throwing a party in the bar! Might be a great way to meet some people and make some friends! Or at the very least get some free food!"))
+	to_chat(newbie, span_greenannounce("Looks like New Boston, Ashdown, and the Den are throwing a party in the bar! Might be a great way to meet some people and make some friends! Or at the very least get some free food!"))
 
 /datum/holiday/weekly/potluck/process()
 	if(all_done)

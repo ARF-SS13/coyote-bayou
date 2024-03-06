@@ -459,7 +459,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	can_ghost_into = TRUE
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
-	RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL,PROC_REF(set_ghost_timeout))
+	// RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL,PROC_REF(set_ghost_timeout))
 	if(istype(user))
 		lazarused = TRUE
 		lazarused_by = WEAKREF(user)
@@ -890,6 +890,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/atom/A = client.eye
 		if(A.update_remote_sight(src)) //returns 1 if we override all other sight updates.
 			return
+	if(client?.holder)
+		see_invisible = client.holder.ghostsight_or(see_invisible) //can't see ghosts through cameras
 	sync_lighting_plane_alpha()
 
 /mob/living/simple_animal/get_idcard(hand_first = TRUE)

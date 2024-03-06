@@ -331,7 +331,7 @@
 			return 0
 	return ..()
 
-/datum/action/item_action/clock
+/*/datum/action/item_action/clock
 	icon_icon = 'icons/mob/actions/actions_clockcult.dmi'
 	background_icon_state = "bg_clock"
 	buttontooltipstyle = "clockcult"
@@ -364,7 +364,7 @@
 	desc = "If you're seeing this, file a bug report."
 	use_target_appearance = FALSE
 	var/scripture_index = 0 //the index of the scripture we're associated with
-
+*/
 /datum/action/item_action/toggle_helmet_flashlight
 	name = "Toggle Helmet Flashlight"
 

@@ -150,7 +150,7 @@
 /mob/living/simple_animal/drone/gib()
 	dust()
 
-/mob/living/simple_animal/drone/ratvar_act()
+/*/mob/living/simple_animal/drone/ratvar_act()
 	if(status_flags & GODMODE)
 		return
 
@@ -164,7 +164,7 @@
 		mind.transfer_to(R, 1)
 	else
 		transfer_ckey(R)
-	qdel(src)
+	qdel(src)*/
 
 
 /mob/living/simple_animal/drone/examine(mob/user)

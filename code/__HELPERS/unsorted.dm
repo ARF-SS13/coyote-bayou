@@ -338,7 +338,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	// excess power into GLOB.CELLRATE energy units when charging cells.
 	// With the current configuration of wait=20 and CELLRATE=0.002, this
 	// means that one unit is 1 kJ.
-	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE
+	units *= SSmachines.wait * 0.1 / GLOB.CELLRATE // GLOB.CELLULITE
 	if (units < 1000) // Less than a kJ
 		return "[round(units, 0.1)] J"
 	else if (units < 1000000) // Less than a MJ
@@ -1351,11 +1351,11 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	usr = temp
 
 //Returns a list of all servants of Ratvar and observers.
-/proc/servants_and_ghosts()
+/*/proc/servants_and_ghosts()
 	. = list()
 	for(var/V in GLOB.player_list)
 		if(is_servant_of_ratvar(V) || isobserver(V))
-			. += V
+			. += V*/
 
 /**
  * NAMEOF: Compile time checked variable name to string conversion
@@ -1683,7 +1683,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(clientthing)
+/proc/extract_client(clientthing)
 	if(isclient(clientthing))
 		return clientthing
 	if(ismob(clientthing))
@@ -1786,3 +1786,16 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /proc/GaussianRangePicker(min, max, mean, stddev)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
+
+/// makes sure input is text, either 3 or 6 characters, and only contains digits and the letters a-f (case insensitive)
+/proc/is_color(str)
+	. = FALSE
+	if(!istext(str)) // is it text?
+		return
+	var/len = length(str)
+	if(len != 3 && len != 6) // is it 3 or 6 chars?
+		return
+	var/badcharacters = regex(@"[^\da-fA-F]")
+	if(findtext(str, badcharacters)) // is it actually a hexcode?
+		return
+	. = TRUE

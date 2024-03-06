@@ -537,7 +537,7 @@
 	desc = "A modified mr. gutsy, equipped with a more precise flamer, ditching it's plasma weaponry."
 	color = "#B85C00"
 	projectilesound = 'sound/magic/fireball.ogg'
-	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	projectiletype = /obj/item/projectile/incendiary/flamethrower
 	extra_projectiles = 1
 	can_ghost_into = FALSE
 

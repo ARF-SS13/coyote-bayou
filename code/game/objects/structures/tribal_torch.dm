@@ -2,6 +2,7 @@
 	name = "tribal torch"
 	desc = "A standing torch, used to provide light in dark environments."
 	density = FALSE
+	plane = MOB_PLANE
 	anchored = TRUE
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "torch_unlit"
@@ -102,6 +103,7 @@
 
 /obj/structure/destructible/tribal_torch/wall
 	icon_state = "wall_torch_unlit"
+	layer = WALL_OBJ_LAYER
 
 /obj/structure/destructible/tribal_torch/wall/update_icon()
 	. = ..()

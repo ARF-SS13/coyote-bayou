@@ -199,6 +199,7 @@
 #define MOB_SPIRIT		(1 << 9)
 #define MOB_INORGANIC 	(1 << 10)
 #define MOB_FERAL		(1 << 11)
+#define MOB_SYNTH		(1 << 12)
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
@@ -437,7 +438,7 @@
 #define PIXELSHIFT_MIN		-12	//more shifted you can be
 #define PIXELSHIFT_MAX		12	//most shifted you can be
 #define AGE_MIN				18	//youngest a character can be //CITADEL EDIT - 17 --> 18
-#define AGE_MAX				85	//oldest a character can be
+#define AGE_MAX				999999999	// If I see one fucking loli dragon I am fucking exploding you people.
 #define WIZARD_AGE_MIN		30	//youngest a wizard can be
 #define APPRENTICE_AGE_MIN	29	//youngest an apprentice can be
 #define SHOES_SLOWDOWN		0	//How much shoes slow you down by default. Negative values speed you up

@@ -542,8 +542,7 @@
 /obj/item/reagent_containers/glass/woodmug/update_overlays()
 	. = ..()
 	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state)
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state, color = mix_color_from_reagents(reagents.reagent_list))
 		. += filling
 
 /obj/item/reagent_containers/glass/woodmug/stone

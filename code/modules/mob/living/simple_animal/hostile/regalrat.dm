@@ -285,7 +285,7 @@
 	minimum_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
-	faction = list("rat", "rat-friend", "neutral")
+	faction = list("neutral")
 	is_smol = TRUE
 
 	variation_list = list(
@@ -319,6 +319,24 @@
 	call_backup = null
 	send_mobs = null
 	make_a_nest = null
+	. = ..()
+
+// Pied Piper of Texarkana
+/mob/living/simple_animal/hostile/rat/frien
+	name = "imprinted rat"
+	desc = "It's a dubious rodent of unusual breed, rumored to be raised by some rat lords to be less evil... But still have anger issues from time to time."
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	speak = list("Squeak!", "SQUUEEAAAAK!!", "Squeak?")
+	speak_emote = list("squeaks")
+	emote_hear = list("Squeaks.")
+	emote_see = list("charges around in a circle.", "stands on its hind legs.")
+	color = "#91fdac"
+	desc_short = "Squeaky squeak!"
+	faction = list("neutral")
+
+/mob/living/simple_animal/hostile/rat/frien/become_the_mob(mob/user)
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat/tame
 	. = ..()
 
 /mob/living/simple_animal/hostile/rat/Destroy()

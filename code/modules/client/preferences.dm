@@ -152,6 +152,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
+		"blood_color" = "",
 		"ears" = "None",
 		"wings" = "None",
 		"wings_color" = "FFF",
@@ -231,6 +232,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 		"ooc_notes" = "",
+		"background_info_notes" = "",
+		"flist" = "",
 		"meat_type" = "Mammalian",
 		"taste" = "something",
 		"body_model" = MALE,
@@ -597,11 +600,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/ooc_notes_len = length(features["ooc_notes"])
 			if(ooc_notes_len <= 40)
 				if(!ooc_notes_len)
-					dat += "\[...\]"
+					dat += "\[...\]<br>"
 				else
-					dat += "[features["ooc_notes"]]"
+					dat += "[features["ooc_notes"]]<br>"
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
+
+			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+			var/background_info_notes_len = length(features["background_info_notes"])
+			if(background_info_notes_len <= 40)
+				if(!background_info_notes_len)
+					dat += "\[...\]<br>"
+				else
+					dat += "[features["background_info_notes"]]<br>"
+			else
+				dat += "[TextPreview(features["background_info_notes"])]...<br>"
+
+			//outside link stuff
+			dat += "<h3>Outer hyper-links settings</h3>"
+			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+			var/flist_len = length(features["flist"])
+			if(flist_len <= 40)
+				if(!flist_len)
+					dat += "\[...\]"
+				else
+					dat += "[features["flist"]]"
+			else
+				dat += "[TextPreview(features["flist"])]...<br>"
+
 			//Start Creature Character
 			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
@@ -778,6 +804,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h3>Misc</h3>"
 			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><br>"
 			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><br>"
+			dat += "<b>Blood Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=blood_color;task=input;background-color: #[features["blood_color"]]'>#[features["blood_color"]]</span></a><br>"
+			dat += "<a href='?_src_=prefs;preference=reset_blood_color;task=input'>Reset Blood Color</A><BR>"
+			dat += "<a href='?_src_=prefs;preference=rainbow_blood_color;task=input'>Rainbow Blood Color</A><BR>"
 			dat += "<b>Background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><br>"
 			dat += "<b>Pixel Offsets</b><br>"
 			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
@@ -2632,6 +2661,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["ooc_notes"] = msg
+				
+				if("background_info_notes")
+					var/msg = stripped_multiline_input(usr, "Set always-visible character's background!", "Background Info Notes", html_decode(features["background_info_notes"]), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						features["background_info_notes"] = msg
+
+				if("flist")
+					var/link = input(usr, "Set always-visible F-list. Just copy and paste the link you want to use from the browser. Leave it blank to remove the previous link.", "F-list")
+					if(!length(link))
+						features["flist"] = ""
+						to_chat(usr, span_alert("Removed the previous F-list link."))
+					else if(findtext(link, "https://www.f-list.net"))  //we want to avoid malicious links, so let's check if it's actually a valid link first
+						features["flist"] = link
+					else
+						features["flist"] = ""
+						to_chat(usr, span_alert("This is not a correct F-list link!"))
 
 				if("hide_ckey")
 					hide_ckey = !hide_ckey
@@ -2974,6 +3019,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
 
+				if("blood_color")
+					var/new_color
+					new_color = input(user, "Choose your character's blood color", "#"+features["blood_color"]) as color|null
+					if(!isnull(new_color))
+						features["blood_color"] = sanitize_hexcolor(new_color, 6)
+					//else
+						//var/rainbow = alert(user, "Do you want rainbow blood?", "Hi!", "Yes", "No")
+						//if(rainbow == "Yes")
+						//	features["blood_color"] = "rainbow"
+				if("reset_blood_color")
+					features["blood_color"] = ""
+				if("rainbow_blood_color")
+					features["blood_color"] = "rainbow"
 				if("wings")
 					var/new_wings
 					new_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.r_wings_list

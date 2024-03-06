@@ -17,9 +17,11 @@
 	var/move_me = TRUE
 	var/in_use = FALSE // To avoid message spam
 	var/timetouse = 15
+	var/base_icon_state = ""
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
+	base_icon_state = icon_state
 	if (up)
 		src.up = up
 		up.down = src
@@ -29,6 +31,18 @@
 		down.up = src
 		down.update_icon()
 	return INITIALIZE_HINT_LATELOAD
+
+/obj/structure/ladder/unbreakable/door_teleport
+	name = "Beth-Esda Style Door"
+	icon = 'icons/fallout/structures/doors.dmi'
+	icon_state = "room"
+
+/obj/structure/ladder/unbreakable/door_teleport/update_icon()
+	icon_state = base_icon_state
+	return
+/obj/structure/ladder/unbreakable/door_teleport/update_icon_state()
+	icon_state = base_icon_state
+	return
 
 /obj/structure/ladder/Destroy(force)
 	if ((resistance_flags & INDESTRUCTIBLE) && !force)

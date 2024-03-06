@@ -830,3 +830,30 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 				playsound(loc, 'sound/weapons/tap.ogg', 50, 1)
 		if(BURN)
 			playsound(loc, 'sound/items/welder.ogg', 80, 1)
+
+/obj/structure/curtain/directional
+	color = "#363636"
+	alpha = 255
+	desc = "A curtain that you can only open from one side."
+
+/obj/structure/curtain/directional/north
+	dir = NORTH
+
+/obj/structure/curtain/directional/south
+	dir = SOUTH
+
+/obj/structure/curtain/directional/east
+	dir = EAST
+
+/obj/structure/curtain/directional/west
+	dir = WEST
+
+/obj/structure/curtain/directional/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
+			if(get_dir(src,user) != dir)
+				balloon_alert(user, "You can only open the [src] from \the [dir2text(dir)]! ")
+			else
+				playsound(loc, 'sound/effects/curtain.ogg', 50, 1)
+				toggle()

@@ -54,10 +54,10 @@
 			return FALSE
 		if(POWER_REQ_ALL)
 			return !T || !A || ((!A.powered(EQUIP) || isspaceturf(T)) && !is_type_in_list(loc, list(/obj/item, /obj/mecha)))
-		if(POWER_REQ_CLOCKCULT)
+/*		if(POWER_REQ_CLOCKCULT)
 			for(var/obj/effect/clockwork/sigil/transmission/ST in range(src, SIGIL_ACCESS_RANGE))
 				return FALSE
-			return !T || !A || (!istype(T, /turf/open/floor/clockwork) && (!A.powered(EQUIP) || isspaceturf(T)) && !is_type_in_list(loc, list(/obj/item, /obj/mecha)))
+			return !T || !A || ((!A.powered(EQUIP) || isspaceturf(T)) && !is_type_in_list(loc, list(/obj/item, /obj/mecha)))*/
 
 /mob/living/silicon/ai/updatehealth()
 	if(status_flags & GODMODE)
@@ -91,6 +91,8 @@
 
 	if(see_override)
 		see_invisible = see_override
+	if(client?.holder)
+		see_invisible = client.holder.ghostsight_or(see_invisible) //can't see ghosts through cameras
 	sync_lighting_plane_alpha()
 
 
