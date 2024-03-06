@@ -673,7 +673,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			return
 	var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 	var/sound/S = sound(music_to_play, repeat = TRUE, wait = 0, volume = 25, channel = CHANNEL_AMBIENT_MUSIC)
-	addtimer(CALLBACK(src, PROF_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
 	COOLDOWN_START(L.client, area_music_cooldown, music_to_play[SL_FILE_LENGTH] + sound_delay)
 
 /area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)
