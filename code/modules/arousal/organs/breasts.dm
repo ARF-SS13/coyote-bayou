@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 		return
 	if(new_value == cached_size)
 		return
-	new_value = clamp(new_value, 0, 20)
+	new_value = clamp(new_value, 0, 19)
 	prev_size = cached_size
 	cached_size = new_value
 	update()
