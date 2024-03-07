@@ -94,6 +94,11 @@
 
 /datum/supplykit_item/longarms
 	category = "longarms"
+	cost = 20
+
+/datum/supplykit_item/revolvers
+	category = "revolvers"
+	cost = 20
 
 /datum/supplykit_item/ammo
 	category = "Ammunition"

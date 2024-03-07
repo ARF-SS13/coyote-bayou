@@ -21,6 +21,35 @@
 	name = "dynamite stick"
 	desc = "A single stick of explosion funtimes."
 	item = /obj/item/grenade/f13/dynamite
+	cost = 5
+
+/datum/supplykit_item/explosives/dynamitebox
+	name = "dynamite crate"
+	desc = "A box with seven sticks of dynamite for additional explosion funtimes."
+	item = /obj/item/storage/box/dynamite_box
+	cost = 25
+
+/datum/supplykit_item/explosives/coffeebomb
+	name = "coffeepot bomb"
+	desc = "A jury-rigged explosive consisting of kitchen appliances and gunpowder."
+	item = /obj/item/grenade/homemade/coffeepotbomb
 	cost = 10
 
+/datum/supplykit_item/explosives/flashbang
+	name = "flashbang grenade"
+	desc = "A loud and proud bangy boy, for annoying friends and enemies alike."
+	item = /obj/item/grenade/flashbang
+	cost = 5
+
+/datum/supplykit_item/explosives/plastic
+	name = "plastic explosives"
+	desc = "A timed demolition charge for hard breaches."
+	item = /obj/item/grenade/plastic
+	cost = 15
+
+/datum/supplykit_item/explosives/emp
+	name = "EMP grenade"
+	desc = "A grenade designed to fry electronic circuits"
+	item = /obj/item/grenade/empgrenade
+	cost = 15
 

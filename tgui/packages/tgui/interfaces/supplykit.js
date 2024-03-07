@@ -100,7 +100,7 @@ export const GenericSupplykit = (props, context) => {
           {items.length === 0 && (
             <NoticeBox>
               {searchText.length === 0
-                ? 'No items in this category.'
+                ? 'No items in this category!'
                 : 'No results found.'}
             </NoticeBox>
           )}
