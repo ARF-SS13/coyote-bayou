@@ -508,7 +508,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 /// Ghouls
 /datum/random_mob_spawner/ghoul
 	nest_tag = MOB_SPAWNER_GHOUL
-	nest_name = "ghoul pit"
+	nest_name = "trolloc pit"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT

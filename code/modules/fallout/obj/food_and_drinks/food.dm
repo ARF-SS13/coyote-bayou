@@ -194,7 +194,7 @@
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
-	name = "ghoul meat"
+	name = "trolloc meat"
 	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
 	icon_state = "flymeat"
 	list_reagents = list(

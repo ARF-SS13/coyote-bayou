@@ -97,7 +97,7 @@
 		//todo: add negative wound resistance to all parts when wounds is merged (zombies are physically weak in terms of limbs)
 
 /datum/species/zombie/infectious/ghoul
-	name = "Ravenous Ghoul"
+	name = "Ravenous Trolloc"
 	id = "ghoulzombies"
 	limbs_id = "ghoul"
 	say_mod = "rasps"

@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	cut_overlays()
 
 /obj/structure/nest/ghoul
-	name = "ghoul nest"
+	name = "trolloc nest"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
@@ -496,7 +496,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 
 //Event Nests
 /obj/structure/nest/zombieghoul
-	name = "ravenous ghoul nest"
+	name = "ravenous trolloc nest"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul/zombie = 5,
 					/mob/living/simple_animal/hostile/ghoul/zombie/reaver = 3,

@@ -23,8 +23,8 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 */
 
 /mob/living/simple_animal/hostile/ghoulrotter
-	name = "rotting ghoul"
-	desc = "A bloated ghoul that has lost its mind and become aggressive."
+	name = "rotting trolloc"
+	desc = "A bloated trolloc that has lost its mind and become aggressive."
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "ghoulrotter"
 	icon_living = "ghoulrotter"

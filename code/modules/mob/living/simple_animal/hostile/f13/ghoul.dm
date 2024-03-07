@@ -4,8 +4,8 @@
 
 //Base Ghoul
 /mob/living/simple_animal/hostile/ghoul
-	name = "feral ghoul"
-	desc = "A ghoul that has lost its mind and become aggressive."
+	name = "feral trolloc"
+	desc = "An aggressive amalgamation of man and beast."
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "feralghoul"
 	icon_living = "feralghoul"
@@ -156,8 +156,8 @@
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
-	name = "feral ghoul reaver"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	name = "feral trolloc reaver"
+	desc = "An aggressive amalgamation of man and beast. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
@@ -208,28 +208,28 @@
 	summon_backup(10)
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr
-	name = "feral ghoul soldier"
-	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	name = "feral trolloc soldier"
+	desc = "A former US Army combatant, now mutated and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "plated feral ghoul soldier"
-	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	name = "plated feral trolloc soldier"
+	desc = "A former US Army combatant, now mutated and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
-	name = "feral ghoul officer"
-	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	name = "feral trolloc officer"
+	desc = "A former US Army officer, now mutated and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	speed = 3
 	can_ghost_into = FALSE
 
 //Cold Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/coldferal
-	name = "cold ghoul feral"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	name = "cold trolloc feral"
+	desc = "An aggressive amalgamation of man and beast. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "cold_feral"
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
@@ -246,8 +246,8 @@
 
 //Frozen Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
-	name = "frozen ghoul reaver"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	name = "frozen trolloc reaver"
+	desc = "An aggressive amalgamation of man and beast. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
@@ -264,8 +264,8 @@
 
 //Legendary Ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
-	name = "legendary ghoul"
-	desc = "A ghoul that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
+	name = "legendary trolloc"
+	desc = "An aggressive amalgamation of man and beast. This one has exceptionally large, bulging muscles. It looks quite strong."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
@@ -296,8 +296,8 @@
 
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
-	name = "glowing feral ghoul"
-	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	name = "irradiated feral trolloc"
+	desc = "A feral trolloc that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
@@ -370,8 +370,8 @@
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier
-	name = "ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	name = "trolloc soldier"
+	desc = "Have you ever seen a living trolloc before?<br>trollocs are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "soldier_ghoul"
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
@@ -386,8 +386,8 @@
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
-	name = "armored ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	name = "armored trolloc soldier"
+	desc = "Have you ever seen a living trolloc before?<br>trollocs are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "soldier_ghoul_a"
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
@@ -401,8 +401,8 @@
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
-	name = "scorched ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	name = "scorched trolloc soldier"
+	desc = "Have you ever seen a living trolloc before?<br>trollocs are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_m"
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
@@ -435,8 +435,8 @@
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
-	name = "Ranged Ghoul Soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	name = "Ranged trolloc Soldier"
+	desc = "Have you ever seen a living trolloc before?<br>trollocs are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
@@ -504,8 +504,8 @@
 
 //Halloween Event Ghouls
 /mob/living/simple_animal/hostile/ghoul/zombie
-	name = "ravenous feral ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat."
+	name = "ravenous feral trolloc"
+	desc = "A ferocious feral trolloc, hungry for human meat."
 	faction = list("ghoul")
 	stat_attack = CONSCIOUS
 	can_ghost_into = FALSE
@@ -521,8 +521,8 @@
 		try_to_ghoul_zombie_infect(H)*/
 
 /mob/living/simple_animal/hostile/ghoul/zombie/reaver
-	name = "ravenous feral ghoul reaver"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
+	name = "ravenous feral trolloc reaver"
+	desc = "A ferocious feral trolloc, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
@@ -537,8 +537,8 @@
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing
-	name = "ravenous glowing feral ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	name = "ravenous irradiated feral trolloc"
+	desc = "A ferocious feral trolloc, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
@@ -575,8 +575,8 @@
 	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/zombie/legendary
-	name = "legendary ravenous ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one has exceptionally large, bulging muscles. It looks quite strong."
+	name = "legendary ravenous trolloc"
+	desc = "A ferocious feral trolloc, hungry for human meat. This one has exceptionally large, bulging muscles. It looks quite strong."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
