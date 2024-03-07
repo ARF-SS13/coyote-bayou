@@ -1799,8 +1799,8 @@ Mayor
 
 /obj/item/storage/box/guild/uniform/PopulateContents()
 	new /obj/item/clothing/under/dress/skirt/red(src)
-	new /datum/gear/uniform/medievalgarnment3(src)
-	new /datum/gear/shoes/cowboy/alt(src)
-	new /datum/gear/belt/fannypack(src)
-	new /datum/gear/gloves/modifpatrol(src)
-	new /datum/gear/head/britishtricornetwo(src)
+	new /obj/item/clothing/under/f13/medievalgerman3(src)
+	new /obj/item/clothing/shoes/cowboy/alt(src)
+	new /obj/item/storage/belt/fannypack(src)
+	new /obj/item/clothing/gloves/modif_patrol(src)
+	new /obj/item/clothing/head/coyote/britishtricornetwo(src)
