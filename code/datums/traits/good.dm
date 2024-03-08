@@ -2690,7 +2690,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
-/datum/package/creatureofthenightlesser/on_spawn()
+/datum/quirk/package/creatureofthenightlesser/on_spawn()
 	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightlesser/remove()
