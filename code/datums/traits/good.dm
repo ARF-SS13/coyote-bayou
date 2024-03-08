@@ -2685,14 +2685,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient claims they can see in the dark."
 	human_only = FALSE
 
-/datum/package/creatureofthenightlesser/on_spawn()
-	quirk_holder.update_sight()
-
 /datum/quirk/package/creatureofthenightlesser/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
+/datum/package/creatureofthenightlesser/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightlesser/remove()
 	var/mob/living/carbon/human/H = quirk_holder
