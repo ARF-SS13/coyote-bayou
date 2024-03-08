@@ -115,6 +115,8 @@
 	desc = "A box containing 4 rounds of 40mm buckshot ammunition."
 	item = /obj/item/ammo_box/a40mm/buck
 
-
-
+/datum/supplykit_item/ammo/needlercapsule
+	name = "Needler Capsule"
+	desc = "A capsule full of needles for an exotic gun."
+	item = /obj/item/ammo_box/needlercapsule
 

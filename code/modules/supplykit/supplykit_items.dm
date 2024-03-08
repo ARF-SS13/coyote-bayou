@@ -84,39 +84,37 @@
 	Failure to comply may result in the new categories being listed at the bottom of the UI.
 */
 
+/*
 /datum/supplykit_item/holiday
 	category = "Holiday"
-
-/datum/supplykit_item/bundles
-	category = "Bundles"
-	surplus = 0
-	cant_discount = TRUE
+*/
 
 /datum/supplykit_item/longarms
-	category = "longarms"
+	category = "Longarms"
+	cost = 20
+
+/datum/supplykit_item/handguns
+	category = "Handguns"
 	cost = 20
 
 /datum/supplykit_item/revolvers
-	category = "revolvers"
+	category = "Revolvers"
+	cost = 20
+
+/datum/supplykit_item/pipeguns
+	category = "Pipe Guns"
 	cost = 20
 
 /datum/supplykit_item/ammo
 	category = "Ammunition"
 	surplus = 40
 
+/datum/supplykit_item/ammospec
+	category = "Special Ammunition"
+	surplus = 20
+
 /datum/supplykit_item/explosives
 	category = "Explosives"
-
-/datum/supplykit_item/support
-	category = "Support"
-	surplus = 0
-
-/datum/supplykit_item/suits
-	category = "Clothing"
-	surplus = 40
-
-/datum/supplykit_item/gadgets
-	category = "Gadgets"
 
 /datum/supplykit_item/role_restricted
 	category = "Role-Restricted"

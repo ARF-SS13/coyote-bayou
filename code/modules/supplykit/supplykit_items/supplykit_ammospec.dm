@@ -153,5 +153,9 @@
 	desc = "A box containing 15 rounds of 4.73mm crubber ammunition."
 	item = /obj/item/ammo_box/m473/rubber
 
-
+/datum/supplykit_item/ammospec/needlercapsule
+	name = "handcrafted needler capsule"
+	desc = "A capsule full of handcrafted needles for an exotic weapon."
+	item = /obj/item/ammo_box/needlercapsule/handloaded
+	cost = 5
 
