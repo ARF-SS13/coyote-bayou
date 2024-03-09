@@ -86,7 +86,7 @@
 		if(!SA_owner.resting)
 			SA_owner.lay_down()
 		SA_owner.eye_blind += 2
-
+	SEND_SIGNAL(owner, COMSIG_MOB_WENT_TO_SLEEP, src)
 
 /datum/status_effect/incapacitating/sleeping/Destroy()
 	carbon_owner = null
@@ -94,6 +94,7 @@
 	if(SA_owner)//Automatically stand back up.
 		SA_owner.lay_down()
 	SA_owner = null
+	SEND_SIGNAL(owner, COMSIG_MOB_WOKE_UP, src)
 	return ..()
 
 /datum/status_effect/incapacitating/sleeping/tick()

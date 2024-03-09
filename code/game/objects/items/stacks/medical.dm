@@ -731,8 +731,7 @@
 	self_delay = 80
 	other_delay = 60
 	heal_mobs = 40
-	heal_brute = 3
-	heal_burn = 3
+	hurt_brute = 0.5
 	heal_per_tick = SUTURE_MEDICAL_HEAL_OVER_TIME
 	//heal_over_time_per_tick = SUTURE_MEDICAL_HEAL_RATE
 	covering_lifespan = SUTURE_GOOD_MAX_DURATION

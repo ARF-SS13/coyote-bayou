@@ -1163,14 +1163,16 @@
 /**
  * bandage_heal() applies some healing to the limb based on the bandage applied there
  */
-/obj/item/bodypart/proc/bandage_heal()
+/obj/item/bodypart/proc/bandage_heal(hungerless = FALSE)
 	if(!current_gauze)
 		return
 	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
 		return
+	if(!is_damaged())
+		return // dont eat all their lunch
 	var/heal_amt = current_gauze.heal_per_tick
 	var/bleed_healing = current_gauze.bandage_power * (istype(current_suture) ? SUTURE_AND_BANDAGE_BONUS : 1)
-	covering_heal_nutrition_mod(bleed_healing, heal_amt)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt, hungerless)
 
 	/* else if(!current_gauze.told_owner_its_out_of_juice)
 		to_chat(owner, span_warning("You feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
@@ -1300,14 +1302,16 @@
 /**
  * suture_heal() applies some healing to the limb based on the suture applied there
  */
-/obj/item/bodypart/proc/suture_heal()
+/obj/item/bodypart/proc/suture_heal(hungerless = FALSE)
 	if(!current_suture)
 		return
 	if(!istype(current_suture, /obj/item/stack/medical/suture))
 		return
+	if(!is_damaged())
+		return // dont eat all their lunch
 	var/heal_amt = current_suture.heal_per_tick
 	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
-	covering_heal_nutrition_mod(bleed_healing, heal_amt)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt, hungerless)
 
 /**
  * damage_suture() simply damages the suture on the limb, reducing its HP
@@ -1363,7 +1367,7 @@
  * Arguments:
  * * bleed_heal - amount to heal bleed_dam, before nutrition modifiers
  */
-/obj/item/bodypart/proc/covering_heal_nutrition_mod(bleed_heal, damage_heal)
+/obj/item/bodypart/proc/covering_heal_nutrition_mod(bleed_heal, damage_heal, hungerless)
 	if(!is_damaged())
 		return FALSE // no damage, so dont spend any nutrition
 
@@ -1384,12 +1388,14 @@
 
 		if(bleed_heal && bleed_nutrition_bonus && bleed_dam)
 			bleed_heal *= bleed_nutrition_bonus
-			owner.adjust_nutrition(-(bleed_heal * WOUND_HEAL_NUTRITION_COST)) // Only charge for the extra
+			if(!hungerless)
+				owner.adjust_nutrition(-(bleed_heal * WOUND_HEAL_NUTRITION_COST)) // Only charge for the extra
 			bleed_heal = round(max(bleed_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
 
 		if(damage_heal && damage_nutrition_bonus && (brute_dam || burn_dam))
 			damage_heal *= damage_nutrition_bonus
-			owner.adjust_nutrition(-(damage_heal * DAMAGE_HEAL_NUTRITION_COST))
+			if(!hungerless)
+				owner.adjust_nutrition(-(damage_heal * DAMAGE_HEAL_NUTRITION_COST))
 			damage_heal = round(max(damage_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
 
 	heal_damage(damage_heal, damage_heal, damage_heal, FALSE, TRUE, TRUE, bleed_heal)
