@@ -46,7 +46,7 @@
 	density = 0
 	var/has_plod = TRUE
 	var/produce
-	var/timer = 5000 //50 seconds
+	var/timer = 4 SECONDS
 
 /obj/structure/flora/wasteplant/Destroy()
 	if(LAZYLEN(contents))
@@ -68,8 +68,7 @@
 		to_chat(user, span_notice("You pluck [product] from [src]."))
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
-		timer = initial(timer) + rand(-100,100) //add some variability
-		addtimer(CALLBACK(src,PROC_REF(regrow),timer)) //Set up the timer properly
+		addtimer(CALLBACK(src,PROC_REF(regrow)),timer) //Set up the timer properly
 	update_icon()
 
 /obj/structure/flora/wasteplant/proc/regrow()
