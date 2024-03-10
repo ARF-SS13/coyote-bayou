@@ -733,6 +733,16 @@
 	item_state = "redtaghelm"
 	// Offer about the same protection as a hardhat.
 	dog_fashion = null
+/obj/item/clothing/head/helmet/nvodst_helm
+	name = "Futuristic Helmet"
+	desc = "A jet black full faced helmet that has a red stripe running down the top of it. It seems to have slots on the top of it for antennas."
+	icon_state = "nvodst_helm"
+	item_state = "nvodst_helm"
+	flags_inv = HIDEHAIR|HIDEMASK|HIDEEYES
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list (ARMOR_MODIFIER_UP_ENV_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
 
 /obj/item/clothing/head/helmet/unmchelmet
 	name = "Standard issue UNMC helmet"
