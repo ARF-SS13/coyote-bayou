@@ -46,7 +46,7 @@
 	density = 0
 	var/has_plod = TRUE
 	var/produce
-	var/timer = 4 SECONDS
+	var/timer = 30 SECONDS
 
 /obj/structure/flora/wasteplant/Destroy()
 	if(LAZYLEN(contents))
