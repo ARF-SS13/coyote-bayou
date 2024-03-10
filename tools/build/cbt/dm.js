@@ -86,6 +86,8 @@ const dm = async (dmeFile, options = {}) => {
   const { defines } = options;
   if (defines && defines.length > 0) {
     await Juke.exec(dmPath, [...defines.map(def => `-D${def}`), dmeFile]);
+  } else {
+    await Juke.exec(dmPath, [dmeFile]);
   }
 };
 
