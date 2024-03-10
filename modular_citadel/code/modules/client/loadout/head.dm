@@ -473,7 +473,7 @@
 							"NCR Trooper",
 						)*/
 
-datum/gear/head/steelpot_bandolier
+/datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS

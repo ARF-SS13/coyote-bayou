@@ -107,19 +107,19 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	var/coords = atom2coords(parent)
 	GLOB.nest_spawn_points -= coords // im here! honest
 
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
-	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
-	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/coverme)
-	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/uncoverme)
-	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
-	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING,PROC_REF(nest_destroyed))
+	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC,PROC_REF(on_attack_generic))
+	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,PROC_REF(coverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,PROC_REF(uncoverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB,PROC_REF(unbirth_mob))
+	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS,PROC_REF(has_spawner))
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
 		if(nest.spawned_by_ckey)
 			am_special = TRUE
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
-		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
+		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
 	// if(SSspawners.use_turf_registration)
 	// 	register_turfs()
 	// else
@@ -137,8 +137,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 // /datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
 // 	my_turfs |= atom2coords(trip)
-// 	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
-// 	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
+//	RegisterSignal(trip, COMSIG_ATOM_ENTERED,PROC_REF(turf_trip))
+//	RegisterSignal(trip, COMSIG_TURF_CHANGE,PROC_REF(turf_changed))
 // 	if(SSspawners.debug_spawner_turfs && debug_color)
 // 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
 

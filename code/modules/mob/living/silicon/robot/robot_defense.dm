@@ -127,7 +127,7 @@
 		ResetModule()
 		return TRUE
 
-	INVOKE_ASYNC(src, .proc/beep_boop_rogue_bot, user)
+	INVOKE_ASYNC(src,PROC_REF(beep_boop_rogue_bot), user)
 	return TRUE
 
 /mob/living/silicon/robot/proc/beep_boop_rogue_bot(mob/user)

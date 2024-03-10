@@ -202,7 +202,7 @@ SUBSYSTEM_DEF(ticker)
 					for(var/client/C in SSvote.voting)
 						C << browse(null, "window=vote;can_close=0")
 					SSvote.reset()
-				addtimer(CALLBACK(src, .proc/send_midround_tip), 1 MINUTES)//Send out first tip
+				addtimer(CALLBACK(src, PROC_REF(send_midround_tip)), 1 MINUTES)//Send out first tip
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
 				if(start_immediately)
@@ -418,7 +418,7 @@ SUBSYSTEM_DEF(ticker)
 			livings += living
 
 	if(livings.len)
-		addtimer(CALLBACK(src, .proc/release_characters, livings), 30, TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(src,PROC_REF(release_characters), livings), 30, TIMER_CLIENT_TIME)
 
 	SSmatchmaking.matchmake()
 
@@ -458,7 +458,7 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
 	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
 	if(isnull(override))
-		addtimer(CALLBACK(src, .proc/send_midround_tip), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+		addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)
@@ -497,7 +497,7 @@ SUBSYSTEM_DEF(ticker)
 	if (!prob((world.time/600)*CONFIG_GET(number/maprotatechancedelta)) && CONFIG_GET(flag/tgstyle_maprotation))
 		return
 	if(CONFIG_GET(flag/tgstyle_maprotation))
-		INVOKE_ASYNC(SSmapping, /datum/controller/subsystem/mapping/.proc/maprotate)
+		INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping/,maprotate))
 	else
 		var/vote_type = CONFIG_GET(string/map_vote_type)
 		switch(vote_type)
@@ -660,7 +660,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(player.ready == PLAYER_READY_TO_OBSERVE && player.mind)
 			//Break chain since this has a sleep input in it
-			addtimer(CALLBACK(player, /mob/dead/new_player.proc/make_me_an_observer), 1)
+			addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/dead/new_player,make_me_an_observer)), 1)
 
 /datum/controller/subsystem/ticker/proc/load_mode()
 	var/mode = trim(file2text("data/mode.txt"))

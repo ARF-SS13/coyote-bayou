@@ -112,7 +112,7 @@
 	list_reagents = list(/datum/reagent/consumable/nukaberry = 50)
 	foodtype = NUKA
 
-obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	name = "Cosmic Float"
 	list_reagents = list(/datum/reagent/consumable/nukafloat = 50)
 	foodtype = NUKA

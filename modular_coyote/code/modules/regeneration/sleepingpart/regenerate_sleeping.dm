@@ -27,7 +27,7 @@
 /datum/component/sleeping_regeneration/RegisterWithParent()
 	. = ..()
 	var/mob/living/M = parent
-	RegisterSignal(M, COMSIG_MOB_SLEEPING, .proc/OnSleep)
+	RegisterSignal(M, COMSIG_MOB_SLEEPING,PROC_REF(OnSleep))
 
 // We need to unregister it from calling when the component is removed, this is just because it can be a permanent/stacking effect. We dont want that.
 /datum/component/sleeping_regeneration/UnregisterFromParent()

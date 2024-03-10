@@ -39,7 +39,7 @@
 	coffer.Grant(src)
 	riot = new /datum/action/cooldown/riot
 	riot.Grant(src)
-	INVOKE_ASYNC(src, .proc/get_player)
+	INVOKE_ASYNC(src,PROC_REF(get_player))
 
 /mob/living/simple_animal/hostile/regalrat/proc/get_player()
 	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the Royal Rat, cheesey be his crown?", ROLE_SENTIENCE, null, FALSE, 100, POLL_IGNORE_SENTIENCE_POTION)
@@ -247,13 +247,13 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
-/mob/living/simple_animal/hostile/rat/Initialize()
+/mob/living/simple_animal/hostile/rat/Initialize(mapload)
 	. = ..()
 	if(cheesy)
 		SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/mob_holder, "mouse_gray")
-	if(!is_smol)
+	if(!is_smol && !mapload)
 		do_alert_animation(src)
 		resize = 1.5
 		update_transform()
@@ -399,4 +399,4 @@
 
 /mob/living/simple_animal/hostile/rat/skitter/curious/frenly/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(death)), 50 SECONDS)

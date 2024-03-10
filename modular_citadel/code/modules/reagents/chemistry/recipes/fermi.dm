@@ -349,7 +349,7 @@
 	RateUpLim 		= 15
 	FermiChem 		= TRUE
 
-datum/chemical_reaction/fermi/eigenstate
+/datum/chemical_reaction/fermi/eigenstate
 	name = "Eigenstasium"
 	id = /datum/reagent/fermi/eigenstate
 	results = list(/datum/reagent/fermi/eigenstate = 1)

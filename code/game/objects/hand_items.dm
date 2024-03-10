@@ -116,7 +116,7 @@
 
 /obj/item/hand_item/healable/licker/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_LICK_RETURN, .proc/start_licking)
+	RegisterSignal(src, COMSIG_LICK_RETURN,PROC_REF(start_licking))
 
 /obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
 	var/list/lick_words = get_lick_words(user)

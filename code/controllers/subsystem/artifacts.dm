@@ -500,7 +500,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/controller/subsystem/processing/artifacts/fire(resumed = 0)
 	if(prob(spawn_chance))
-		INVOKE_ASYNC(src, .proc/spawn_random_artifact)
+		INVOKE_ASYNC(src,PROC_REF(spawn_random_artifact))
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -745,7 +745,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 			rare_artifacts |= WEAKREF(thing)
 
 /datum/controller/subsystem/processing/artifacts/proc/sig_reg(obj/item/thing)
-	RegisterSignal(thing, COMSIG_PARENT_PREQDELETED, .proc/artifact_deleted, TRUE)
+	RegisterSignal(thing, COMSIG_PARENT_PREQDELETED,PROC_REF(artifact_deleted), TRUE)
 
 /datum/controller/subsystem/processing/artifacts/proc/artifact_deleted(obj/item/thing)
 	if(!isitem(thing))

@@ -17,7 +17,7 @@
 	if(!moving)
 		moving = TRUE
 		flick("wellwheel-filling", src)
-		addtimer(CALLBACK(src, .proc/Reset), using_time)
+		addtimer(CALLBACK(src,PROC_REF(Reset)), using_time)
 		return
 
 /obj/structure/sink/well/proc/Reset()

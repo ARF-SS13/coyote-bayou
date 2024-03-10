@@ -1170,4 +1170,17 @@
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
 
+/datum/species/feral/femdigo
+	name = "Female Wendigo"
+	id = "femdigo"
+	simple_icon = 'icons/mob/wendigo.dmi'
+	icon_width = 32
+	rotate_on_lying = TRUE
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_r"
+	
+/mob/living/carbon/human/species/femdigo
+	race = /datum/species/feral/femdigo
+
 //End Other//

@@ -1503,7 +1503,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
 			to_chat(H, span_danger("Your hair starts to fall out in clumps..."))
-			addtimer(CALLBACK(src, .proc/go_bald, H), 50)
+			addtimer(CALLBACK(src,PROC_REF(go_bald), H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -1752,7 +1752,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					// for(var/i in 1 to 3)
 					// 	vol *= 0.75
 					// 	dist = round(dist*0.75)
-					// 	addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
+					// 	addtimer(CALLBACK(src,PROC_REF(bootysmack), get_turf(target), vol, dist), time)
 					// 	time += 0.5 SECONDS
 					target.adjustStaminaLoss(25)
 					user.visible_message(

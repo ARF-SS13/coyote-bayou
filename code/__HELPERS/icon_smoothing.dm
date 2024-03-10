@@ -436,5 +436,5 @@
 				junction |= cdir
 				break
 
-atom/proc/relative(custom_junction = junction)
+/atom/proc/relative(custom_junction = junction)
 	icon_state = "[src.icon_type_smooth][custom_junction]"

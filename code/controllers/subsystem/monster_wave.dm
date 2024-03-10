@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(monster_wave)
 	if(prob(chance_of_fire))
 		return // It fires, fuck you lmfaooo
 	successful_firing++
-	addtimer(CALLBACK(src, .proc/spawn_monsterwave), 10 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(spawn_monsterwave)), 10 SECONDS)
 	for(var/M in GLOB.player_list)
 		to_chat(M, span_notice("You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font>"))
 

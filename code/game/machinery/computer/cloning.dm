@@ -315,7 +315,7 @@
 		say("Initiating scan...")
 		var/prev_locked = scanner.locked
 		scanner.locked = TRUE
-		addtimer(CALLBACK(src, .proc/finish_scan, scanner.occupant, prev_locked), 2 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(finish_scan), scanner.occupant, prev_locked), 2 SECONDS)
 		. = TRUE
 
 		//No locking an open scanner.

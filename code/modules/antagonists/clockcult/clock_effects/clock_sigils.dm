@@ -19,7 +19,7 @@
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -60,7 +60,7 @@
 						L.visible_message(span_warning("[L]'s [I.name] [resist_string], protecting [L.p_them()] from [src]'s effects!"), \
 						span_userdanger("Your [I.name] [resist_string], protecting you!"))
 					return
-				INVOKE_ASYNC(src, .proc/sigil_effects, L)
+				INVOKE_ASYNC(src,PROC_REF(sigil_effects), L)
 
 /obj/effect/clockwork/sigil/proc/sigil_effects(mob/living/L)
 
@@ -242,7 +242,7 @@
 	if(!cyborg_checks(cyborg))
 		return
 	to_chat(cyborg, span_brass("You start to charge from the [sigil_name]..."))
-	if(!do_after(cyborg, 50, target = src, extra_checks = CALLBACK(src, .proc/cyborg_checks, cyborg, TRUE)))
+	if(!do_after(cyborg, 50, target = src, extra_checks = CALLBACK(src,PROC_REF(cyborg_checks), cyborg, TRUE)))
 		return
 	var/giving_power = min(FLOOR(cyborg.cell.maxcharge - cyborg.cell.charge, MIN_CLOCKCULT_POWER), get_clockwork_power()) //give the borg either all our power or their missing power floored to MIN_CLOCKCULT_POWER
 	if(adjust_clockwork_power(-giving_power))

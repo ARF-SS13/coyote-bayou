@@ -313,7 +313,7 @@
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -328,10 +328,10 @@
 	// If there was already mist, and the shower was turned off (or made cold): remove the existing mist in 25 sec
 	var/obj/effect/mist/mist = locate() in loc
 	if(!mist && on && watertemp != "freezing")
-		addtimer(CALLBACK(src, .proc/make_mist), 5 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(make_mist)), 5 SECONDS)
 
 	if(mist && (!on || watertemp == "freezing"))
-		addtimer(CALLBACK(src, .proc/clear_mist), 25 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(clear_mist)), 25 SECONDS)
 
 /obj/machinery/shower/proc/make_mist()
 	var/obj/effect/mist/mist = locate() in loc
@@ -355,7 +355,7 @@
 
 /obj/machinery/shower/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/handle_enter, AM)
+	INVOKE_ASYNC(src,PROC_REF(handle_enter), AM)
 
 /proc/wash_obj(obj/O)
 	if(isobj(O))
@@ -378,7 +378,7 @@
 				qdel(E)
 
 ///Washes a mob as if it were under a shower or rain. Shower object is optional
-proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
+/proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 	if(!isliving(L))
 		return FALSE
 	SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)

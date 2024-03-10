@@ -111,8 +111,8 @@
 	. = ..()
 	
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_exit,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
+		COMSIG_ATOM_EXITED =PROC_REF(on_exit),
 
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)

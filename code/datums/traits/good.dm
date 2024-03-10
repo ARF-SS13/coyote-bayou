@@ -2637,7 +2637,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
 /datum/quirk/package/creatureofthenightgreater
-	name = " Creature of the Night - Greater"
+	name = "Creature of the Night - Greater"
 	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
 	value = 100
 	category = "Quirk Packages"
@@ -2646,18 +2646,24 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/hard_yards,
 		/datum/quirk/night_vision_greater,
 		/datum/quirk/package/creatureofthenightlesser
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION_GREATER
 	gain_text = span_notice("Your night hunting instincts enhance!")
 	lose_text = span_notice("Your night hunting instincts fade away.")
+	medical_record_text = "Patient claims that they have night vision."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightgreater/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
 
+/datum/quirk/package/creatureofthenightgreater/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightgreater/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 		REMOVE_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
@@ -2672,18 +2678,24 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/night_vision,
 		/datum/quirk/soft_yards,
 		/datum/quirk/package/creatureofthenightgreater
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("You feel more attuned in darker places.")
 	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
+	medical_record_text = "Patient claims they can see in the dark."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightlesser/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
+/datum/quirk/package/creatureofthenightlesser/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightlesser/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")

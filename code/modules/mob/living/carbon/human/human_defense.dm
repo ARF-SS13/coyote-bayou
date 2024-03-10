@@ -823,27 +823,27 @@
 			var/msg = span_notice("[src]'s [LB.name] is ")
 			var/list/damage_words = list()
 			if(brutedamage || burndamage || bleeddamage)
-				switch(brutedamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_brute_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_brute_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_brute_msg
-				switch(burndamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_burn_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_burn_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_burn_msg
-				switch(bleeddamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_bleed_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_bleed_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_bleed_msg
+				if(brutedamage < limb_max_damage * 0.4)
+					damage_words += LB.light_brute_msg
+				else if(brutedamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_brute_msg
+				else
+					damage_words += LB.heavy_brute_msg
+				
+				if(burndamage < limb_max_damage * 0.4)
+					damage_words += LB.light_burn_msg
+				else if(burndamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_burn_msg
+				else
+					damage_words += LB.heavy_burn_msg
+
+				if(bleeddamage < limb_max_damage * 0.4)
+					damage_words += LB.light_bleed_msg
+				else if(bleeddamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_bleed_msg
+				else
+					damage_words += LB.heavy_bleed_msg
+
 				msg += span_alert(english_list(damage_words))
 			else
 				msg += span_green("intact")
@@ -870,16 +870,17 @@
 			message_bandage += "It is coated with "
 			var/bandaid_max_time = initial(LB.current_gauze.covering_lifespan)
 			var/bandaid_time = LB.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
+
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
-					message_bandage += "fresh "
-				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
-					message_bandage += "slightly worn "
-				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
-					message_bandage += "badly worn "
-				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
-					message_bandage += "nearly ruined "
+			if(bandaid_time > bandaid_max_time * BANDAGE_GOODLIFE_DURATION)
+				message_bandage += "fresh "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_MIDLIFE_DURATION)
+				message_bandage += "slightly worn "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_ENDLIFE_DURATION)
+				message_bandage += "badly worn "
+			else
+				message_bandage += "nearly ruined "
+
 			message_bandage += "[LB.current_gauze.name]"
 			if(has_bleed_wounds)
 				message_bandage += span_warning(" covering a bleeding wound! ")
@@ -893,16 +894,17 @@
 			message_suture += "It is stitched up with "
 			var/bandaid_max_time = initial(LB.current_suture.covering_lifespan)
 			var/bandaid_time = LB.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
+
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
-					message_suture += "sturdy "
-				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
-					message_suture += "slightly frayed "
-				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
-					message_suture += "badly frayed "
-				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
-					message_suture += "nearly popped "
+			if(bandaid_time > bandaid_max_time * SUTURE_GOODLIFE_DURATION)
+				message_suture += "sturdy "
+			else if(bandaid_time > bandaid_max_time * SUTURE_MIDLIFE_DURATION)
+				message_suture += "slightly frayed "
+			else if(bandaid_time > bandaid_max_time * SUTURE_ENDLIFE_DURATION)
+				message_suture += "badly frayed "
+			else
+				message_suture += "nearly popped "
+			
 			message_suture += "[LB.current_suture.name]"
 			if(has_bleed_wounds)
 				message_suture += span_warning(" closing a bleeding wound! ")
@@ -953,27 +955,26 @@
 			var/msg = "[src]'s [LB.name] is "
 			var/list/damage_words = list()
 			if(brutedamage || burndamage || bleeddamage)
-				switch(brutedamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_brute_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_brute_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_brute_msg
-				switch(burndamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_burn_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_burn_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_burn_msg
-				switch(bleeddamage)
-					if(1 to (limb_max_damage*0.4))
-						damage_words += LB.light_bleed_msg
-					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
-						damage_words += LB.medium_bleed_msg
-					if((limb_max_damage*0.8) to INFINITY)
-						damage_words += LB.heavy_bleed_msg
+				if(brutedamage < limb_max_damage * 0.4)
+					damage_words += LB.light_brute_msg
+				else if(brutedamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_brute_msg
+				else
+					damage_words += LB.heavy_brute_msg
+				
+				if(burndamage < limb_max_damage * 0.4)
+					damage_words += LB.light_burn_msg
+				else if(burndamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_burn_msg
+				else
+					damage_words += LB.heavy_burn_msg
+
+				if(bleeddamage < limb_max_damage * 0.4)
+					damage_words += LB.light_bleed_msg
+				else if(bleeddamage < limb_max_damage * 0.8)
+					damage_words += LB.medium_bleed_msg
+				else
+					damage_words += LB.heavy_bleed_msg
 				msg += english_list(damage_words)
 			else
 				msg += "intact"
@@ -1000,16 +1001,17 @@
 			message_bandage += "It is coated with "
 			var/bandaid_max_time = initial(LB.current_gauze.covering_lifespan)
 			var/bandaid_time = LB.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
+			
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
-					message_bandage += "fresh "
-				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
-					message_bandage += "slightly worn "
-				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
-					message_bandage += "badly worn "
-				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
-					message_bandage += "nearly ruined "
+			if(bandaid_time > bandaid_max_time * BANDAGE_GOODLIFE_DURATION)
+				message_bandage += "fresh "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_MIDLIFE_DURATION)
+				message_bandage += "slightly worn "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_ENDLIFE_DURATION)
+				message_bandage += "badly worn "
+			else
+				message_bandage += "nearly ruined "
+			
 			message_bandage += "[LB.current_gauze.name]"
 			if(has_bleed_wounds)
 				message_bandage += span_warning(" covering a bleeding wound! ")
@@ -1023,16 +1025,17 @@
 			message_suture += "It is stitched up with "
 			var/bandaid_max_time = initial(LB.current_suture.covering_lifespan)
 			var/bandaid_time = LB.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
+			
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
-					message_suture += "sturdy "
-				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
-					message_suture += "slightly frayed "
-				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
-					message_suture += "badly frayed "
-				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
-					message_suture += "nearly popped "
+			if(bandaid_time > bandaid_max_time * SUTURE_GOODLIFE_DURATION)
+				message_suture += "sturdy "
+			else if(bandaid_time > bandaid_max_time * SUTURE_MIDLIFE_DURATION)
+				message_suture += "slightly frayed "
+			else if(bandaid_time > bandaid_max_time * SUTURE_ENDLIFE_DURATION)
+				message_suture += "badly frayed "
+			else
+				message_suture += "nearly popped "
+			
 			message_suture += "[LB.current_suture.name]"
 			if(has_bleed_wounds)
 				message_suture += span_warning(" closing a bleeding wound! ")

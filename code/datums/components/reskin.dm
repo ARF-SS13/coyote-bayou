@@ -30,10 +30,10 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	if(LAZYLEN(skin_override))
 		skins = skin_override.Copy()
 	initialize_skins()
-	RegisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT), .proc/open_skin_picker)
-	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE), .proc/is_reskinnable)
-	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN), .proc/update_skin)
-	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN), .proc/get_current_skin)
+	RegisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT),PROC_REF(open_skin_picker))
+	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE),PROC_REF(is_reskinnable))
+	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN),PROC_REF(update_skin))
+	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN),PROC_REF(get_current_skin))
 
 /datum/component/reskinnable/UnregisterFromParent()
 	skins = null
@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		init_skins_if_they_havent_yet()
 	if(!can_reskin(src, user))
 		return
-	INVOKE_ASYNC(src, .proc/actually_open_skin_picker, user)
+	INVOKE_ASYNC(src,PROC_REF(actually_open_skin_picker), user)
 
 /datum/component/reskinnable/proc/actually_open_skin_picker(mob/user)
 	var/obj/item/master = parent
@@ -78,7 +78,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		if(!the_icon)
 			the_icon = my_original_skin.icon
 		skinnies["[skine.skin]"] = skine.get_preview_image(master)
-	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src, .proc/can_reskin, src, user), radius = 40, require_near = TRUE, ultradense = (LAZYLEN(skins) > 7))
+	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src,PROC_REF(can_reskin), src, user), radius = 40, require_near = TRUE, ultradense = (LAZYLEN(skins) > 7))
 	if(!choice)
 		return FALSE
 	if(QDELETED(master))
