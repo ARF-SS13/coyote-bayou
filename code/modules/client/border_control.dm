@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(borderControlFile, new /savefile("data/bordercontrol.db"))
 GLOBAL_VAR_INIT(whitelistLoaded, 0)
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_ModeToText(var/mode)
+/proc/BC_ModeToText(var/mode)
 	switch(mode)
 		if(BORDER_CONTROL_DISABLED)
 			return "Disabled"
@@ -18,7 +18,7 @@ proc/BC_ModeToText(var/mode)
 			return "Enforced"
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_IsKeyAllowedToConnect(var/key)
+/proc/BC_IsKeyAllowedToConnect(var/key)
 	key = ckey(key)
 
 	var/borderControlMode = CONFIG_GET(number/border_control)
@@ -34,7 +34,7 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 		return BC_IsKeyWhitelisted(key)
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_IsKeyWhitelisted(var/key)
+/proc/BC_IsKeyWhitelisted(var/key)
 	key = ckey(key)
 
 	if(!GLOB.whitelistLoaded)
@@ -63,7 +63,7 @@ proc/BC_IsKeyWhitelisted(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_WhitelistKey(var/key)
+/proc/BC_WhitelistKey(var/key)
 	var/keyAsCkey = ckey(key)
 
 	if(!GLOB.whitelistLoaded)
@@ -105,7 +105,7 @@ proc/BC_WhitelistKey(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_RemoveKey(var/key)
+/proc/BC_RemoveKey(var/key)
 	key = ckey(key)
 
 	if(!LAZYISIN(GLOB.whitelistedCkeys, key))
@@ -179,7 +179,7 @@ proc/BC_RemoveKey(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_SaveWhitelist()
+/proc/BC_SaveWhitelist()
 	if(!GLOB.whitelistedCkeys)
 		return 0
 

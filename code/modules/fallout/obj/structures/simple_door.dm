@@ -356,7 +356,7 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
-obj/structure/simple_door/house/add_debris_element()
+/obj/structure/simple_door/house/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 // cleaned and repainted white

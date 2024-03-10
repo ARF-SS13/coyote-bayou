@@ -256,7 +256,7 @@
 	tool_behaviour = TOOL_RITUAL
 	toolspeed = 1
 
-obj/item/melee/onehanded/knife/switchblade
+/obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
@@ -859,7 +859,7 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-obj/item/melee/unarmed/punchdagger/cyborg
+/obj/item/melee/unarmed/punchdagger/cyborg
 	name = "assaultron claws"
 	desc = "Razor sharp blades embedded into the grippers of an assaultron. Sharp."
 	icon_state = "tiger_claw"

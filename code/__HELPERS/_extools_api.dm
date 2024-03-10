@@ -32,3 +32,6 @@ GLOBAL_LIST_EMPTY(auxtools_initialized)
 		LIBCALL(LIB,"auxtools_shutdown")();\
 		GLOB.auxtools_initialized[LIB] = FALSE;\
 	}\
+
+/proc/enable_debugging()
+	CRASH("Auxtools not found")

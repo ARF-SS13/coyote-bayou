@@ -262,7 +262,7 @@
 	return ..()
 
 //Bulletproof riot shield
-obj/item/shield/riot/bullet_proof
+/obj/item/shield/riot/bullet_proof
 	name = "bullet resistant shield"
 	desc = "Kevlar coated surface makes this riot shield a lot better for blocking projectiles."
 	icon_state = "shield_bulletproof"
