@@ -67,7 +67,8 @@ export const findCacheRoot = async () => {
 
 const onCacheRootFound = cacheRoot => {
   logger.log(`found cache at '${cacheRoot}'`);
-  // Plant a dummy browser window file, we'll be using this to avoid world topic. For byond 514.
+  // Plant a dummy browser window file,
+  // we'll be using this to avoid world topic. For byond 514.
   fs.closeSync(fs.openSync(cacheRoot + '/dummy', 'w'));
 };
 
