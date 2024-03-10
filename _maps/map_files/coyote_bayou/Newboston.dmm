@@ -829,15 +829,18 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
 "avu" = (
-/obj/structure/sign/departments/examroom{
-	pixel_y = 2;
-	pixel_x = 29
+/obj/machinery/door/airlock/engineering/glass{
+	color = "#ff6433";
+	req_one_access_txt = "138"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 0
 	},
-/area/f13/building/hospital/clinic/nash)
+/turf/open/floor/wood_common{
+	color = "#CECECE"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "avv" = (
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -4751,7 +4754,7 @@
 	pixel_y = 7
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon_artifacts{
-	loot = list(/obj/item/blueprint/research = 50, /obj/item/flashlight/seclite = 50);
+	loot = list(/obj/item/blueprint/research=50,/obj/item/flashlight/seclite=50);
 	name = "50 percent research spawner"
 	},
 /obj/item/broom,
@@ -9398,19 +9401,19 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eYm" = (
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 4
+/obj/machinery/door/airlock/engineering/glass{
+	color = "#ff6433";
+	req_one_access_txt = "138"
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 0
 	},
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 4
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/wasteland/city/newboston/bar)
+/area/f13/building/hospital/clinic/nash)
 "eYt" = (
 /obj/machinery/smartfridge/food,
 /turf/closed/wall/rust,
@@ -20554,6 +20557,10 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
+/obj/structure/sign/departments/examroom{
+	pixel_y = 2;
+	pixel_x = 29
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/hospital/clinic/nash)
 "kNZ" = (
@@ -28735,8 +28742,12 @@
 	color = "#ff6433";
 	req_one_access_txt = "138"
 	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 0
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
-/area/f13/caves)
+/area/f13/building/hospital/clinic/nash)
 "ptW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/royalblack,
@@ -44548,8 +44559,13 @@
 	color = "#ff6433";
 	req_one_access_txt = "138"
 	},
-/turf/open/floor/wood_common{
-	color = "#CECECE"
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
 	},
 /area/f13/wasteland/city/newboston/library)
 "xGw" = (
@@ -77476,15 +77492,15 @@ iXY
 kVi
 uIt
 uIt
-tCv
-avu
+uIt
+uIt
 kNU
 uIt
 uIt
 uIt
 pZk
 bEN
-eYm
+lzk
 aLL
 vOY
 sPL
@@ -77736,12 +77752,12 @@ qCp
 qCp
 qCp
 qCp
+eYm
 qCp
-kVi
 qCp
 vOY
 vOY
-vOY
+avu
 vOY
 vOY
 vOY
