@@ -9,6 +9,9 @@
 	var/hidden_underwear = FALSE
 	var/hidden_undershirt = FALSE
 	var/hidden_socks = FALSE
+	var/underwear_oversuit = FALSE
+	var/undershirt_oversuit = FALSE
+	var/socks_oversuit = FALSE
 
 //Mob procs
 /mob/living/carbon/human/verb/underwear_toggle()

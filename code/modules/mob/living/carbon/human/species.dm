@@ -645,6 +645,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.remove_overlay(BODY_LAYER)
 	H.remove_overlay(UNDERWEAR_LAYER)
 	H.remove_overlay(UNDERWEAR_OVERHANDS_LAYER)
+	H.remove_overlay(UNDERWEAR_OVERCLOTHES_LAYER)
+	H.remove_overlay(UNDERWEAR_OVERSUIT_LAYER)
 
 	var/list/standing = list()
 	// creature characters don't need to do all this work, just display their icon.
@@ -716,6 +718,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
 	var/list/standing_overdies = list()
+	var/list/standing_veryoverdies = list()
+	var/list/standing_evenmoreveryoverdies = list()
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
 		var/overhands
@@ -728,54 +732,88 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/datum/sprite_accessory/taur/TA
 		if(mutant_bodyparts["taur"] && H.dna.features["taur"])
 			TA = GLOB.taur_list[H.dna.features["taur"]]
+		/////////////////////////// SOCKS ///////////////////////////
 		if(!(TA?.hide_legs) && H.socks && !H.hidden_socks && H.get_num_legs(FALSE) >= 2)
 			if(H.saved_socks)
 				H.socks = H.saved_socks
 				H.saved_socks = ""
 			var/datum/sprite_accessory/underwear/socks/S = GLOB.socks_list[H.socks]
 			if(S)
+				var/put_it_here_instead = layer_to_put_it_on
+				if(H.socks_oversuit)
+					if(H.socks_oversuit == UNDERWEAR_OVER_UNIFORM)
+						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
+					else if(H.socks_oversuit == UNDERWEAR_OVER_SUIT)
+						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/digilegs = ((DIGITIGRADE in species_traits) && S.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -layer_to_put_it_on)
+				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -put_it_here_instead)
 				if(S.has_color)
 					MA.color = "#[H.socks_color]"
-				if(overhands)
+				if(H.socks_oversuit == UNDERWEAR_OVER_UNIFORM)
+					standing_veryoverdies += MA
+				else if(H.socks_oversuit == UNDERWEAR_OVER_SUIT)
+					standing_evenmoreveryoverdies += MA
+				else if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
 
+		/////////////////////////// UNDERPANTIIES ///////////////////////////
 		if(H.underwear && !H.hidden_underwear)
 			if(H.saved_underwear)
 				H.underwear = H.saved_underwear
 				H.saved_underwear = ""
 			var/datum/sprite_accessory/underwear/bottom/B = GLOB.underwear_list[H.underwear]
 			if(B)
+				var/put_it_here_instead = layer_to_put_it_on
+				if(H.underwear_oversuit)
+					if(H.underwear_oversuit == UNDERWEAR_OVER_UNIFORM)
+						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
+					else if(H.underwear_oversuit == UNDERWEAR_OVER_SUIT)
+						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/digilegs = ((DIGITIGRADE in species_traits) && B.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -layer_to_put_it_on)
+				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -put_it_here_instead)
 				if(B.has_color)
 					MA.color = "#[H.undie_color]"
-				if(overhands)
+				if(H.underwear_oversuit == UNDERWEAR_OVER_UNIFORM)
+					standing_veryoverdies += MA
+				else if(H.underwear_oversuit == UNDERWEAR_OVER_SUIT)
+					standing_evenmoreveryoverdies += MA
+				else if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
 
+		/////////////////////////// SHIRT ///////////////////////////
 		if(H.undershirt && !H.hidden_undershirt)
 			if(H.saved_undershirt)
 				H.undershirt = H.saved_undershirt
 				H.saved_undershirt = ""
 			var/datum/sprite_accessory/underwear/top/T = GLOB.undershirt_list[H.undershirt]
 			if(T)
+				var/put_it_here_instead = layer_to_put_it_on
+				if(H.undershirt_oversuit)
+					if(H.undershirt_oversuit == UNDERWEAR_OVER_UNIFORM)
+						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
+					else if(H.undershirt_oversuit == UNDERWEAR_OVER_SUIT)
+						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/state = "[T.icon_state][((DIGITIGRADE in species_traits) && T.has_digitigrade) ? "_d" : ""]"
 				var/mutable_appearance/MA
 				if(T.use_sex_mask && H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
-					MA = wear_alpha_masked_version(state, T.icon, layer_to_put_it_on, FEMALE_UNIFORM_TOP)
+					MA = wear_alpha_masked_version(state, T.icon, put_it_here_instead, FEMALE_UNIFORM_TOP)
 				else
-					MA = mutable_appearance(T.icon, state, -layer_to_put_it_on)
+					MA = mutable_appearance(T.icon, state, -put_it_here_instead)
 				if(T.has_color)
 					MA.color = "#[H.shirt_color]"
-				if(overhands)
+				if(H.undershirt_oversuit == UNDERWEAR_OVER_UNIFORM)
+					standing_veryoverdies += MA
+				else if(H.undershirt_oversuit == UNDERWEAR_OVER_SUIT)
+					standing_evenmoreveryoverdies += MA
+				else if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
+
 
 	//Warpaint and tattoos
 	if(H.warpaint && !H.IsFeral())
@@ -787,9 +825,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies
 	H.overlays_standing[UNDERWEAR_OVERHANDS_LAYER] = standing_overdies
+	H.overlays_standing[UNDERWEAR_OVERCLOTHES_LAYER] = standing_veryoverdies
+	H.overlays_standing[UNDERWEAR_OVERSUIT_LAYER] = standing_evenmoreveryoverdies
 
 	H.apply_overlay(UNDERWEAR_LAYER)
 	H.apply_overlay(UNDERWEAR_OVERHANDS_LAYER)
+	H.apply_overlay(UNDERWEAR_OVERCLOTHES_LAYER)
+	H.apply_overlay(UNDERWEAR_OVERSUIT_LAYER)
 	H.apply_overlay(BODY_LAYER)
 	handle_mutant_bodyparts(H)
 

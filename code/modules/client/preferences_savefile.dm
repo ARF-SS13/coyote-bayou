@@ -883,6 +883,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
 	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
+	S["undershirt_overclothes"]	>> undershirt_overclothes // Underwear over hands!
+	S["undies_overclothes"]		>> undies_overclothes // Underwear over hands!
+	S["socks_overclothes"]		>> socks_overclothes // Underwear over hands!
 
 	S["whoflags"]	>> whoflags // WHo!
 
@@ -956,6 +959,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 	underwear_overhands	= sanitize_integer(underwear_overhands, 0, 1, initial(underwear_overhands))
+	undershirt_overclothes	= sanitize_integer(undershirt_overclothes, 0, 2, initial(undershirt_overclothes))
+	undies_overclothes	= sanitize_integer(undies_overclothes, 0, 2, initial(undies_overclothes))
+	socks_overclothes	= sanitize_integer(socks_overclothes, 0, 2, initial(socks_overclothes))
 
 	hair_style					= sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -1505,6 +1511,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 	WRITE_FILE(S["allow_trash_messages"]			, safe_json_encode(allow_trash_messages))
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["undershirt_overclothes"]			, undershirt_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["undies_overclothes"]				, undies_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["socks_overclothes"]				, socks_overclothes) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
 	//Character directory

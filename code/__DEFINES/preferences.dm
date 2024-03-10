@@ -126,6 +126,11 @@
 #define KISS_DEFAULT KISS_NONE
 #define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_ANY,KISS_NONE)
 
+GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "Over Suit"))
+#define UNDERWEAR_UNDER_CLOTHES 0
+#define UNDERWEAR_OVER_UNIFORM 1
+#define UNDERWEAR_OVER_SUIT 2
+
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
 

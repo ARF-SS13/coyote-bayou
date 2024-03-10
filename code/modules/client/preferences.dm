@@ -118,6 +118,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/faved_interactions = list() // list of stringed type paths
 	var/list/saved_plappers = list() // to do: this
 	//Sandstorm CHANGES END
+	var/preview_hide_undies = FALSE
+	var/undershirt_overclothes = UNDERWEAR_UNDER_CLOTHES
+	var/undies_overclothes = UNDERWEAR_UNDER_CLOTHES
+	var/socks_overclothes = UNDERWEAR_UNDER_CLOTHES
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
@@ -767,6 +771,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br><BR>"
 
+			dat += "<b>Show/hide Undies:</b><br>"
+			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_undie_preview;task=input'>[preview_hide_undies ? "Hidden" : "Visible"]<br>"
+
 			dat += "</td>"
 
 			dat += APPEARANCE_CATEGORY_COLUMN
@@ -1168,6 +1175,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								task=input'>
 									\t#[shirt_color]
 							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=undershirt_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, undershirt_overclothes + 1)]
+							</a>"}
 					dat += "</td>"
 					dat += "<td class='undies_cell'>"
 					dat += "<div class='undies_label'>Bottomwear</div>"
@@ -1189,6 +1204,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								task=input'>
 									\t#[undie_color]
 							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=undies_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, undies_overclothes + 1)]
+							</a>"}
 					dat += "</td>"
 					dat += {"<td class='undies_cell'>
 								<div class='undies_label'>Legwear</div>
@@ -1209,6 +1232,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								preference=socks_color;
 								task=input'>
 									\t#[socks_color]
+							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=socks_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, socks_overclothes + 1)]
 							</a>"}
 					dat += "</td>"
 					dat += "</tr>"
@@ -1255,6 +1286,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								class='undies_link'>
 									Cuteness: 100%
 								</a>"}
+					dat += "</td>"
+					dat += "</tr>"
+					dat += "<tr>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>Hide Undies In Preview</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=underwear_hands'>
+										[preview_hide_undies ? "Hidden" : "Visible"]
+							</a>"}
 					dat += "</td>"
 					dat += "</tr>"
 					dat += "</table>"
@@ -2776,6 +2819,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(n_socks_color)
 						socks_color = sanitize_hexcolor(n_socks_color, 6)
 
+				if("undershirt_overclothes")
+					undershirt_overclothes = undershirt_overclothes+1
+					if(undershirt_overclothes > UNDERWEAR_OVER_SUIT)
+						undershirt_overclothes = UNDERWEAR_UNDER_CLOTHES
+
+				if("undies_overclothes")
+					undies_overclothes = undies_overclothes+1
+					if(undies_overclothes > UNDERWEAR_OVER_SUIT)
+						undies_overclothes = UNDERWEAR_UNDER_CLOTHES
+
+				if("socks_overclothes")
+					socks_overclothes = socks_overclothes+1
+					if(socks_overclothes > UNDERWEAR_OVER_SUIT)
+						socks_overclothes = UNDERWEAR_UNDER_CLOTHES
+
 				if("eyes")
 					var/new_eyes = input(user, "Choose your character's eye colour:", "Character Preference","#"+left_eye_color) as color|null
 					if(new_eyes)
@@ -3586,6 +3644,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
 						side_waddle_time = new_side_waddle_time
 				
+				if("toggle_undie_preview")
+					TOGGLE_VAR(preview_hide_undies)
+
 				if("creature_body_size")
 					var/min = CONFIG_GET(number/body_size_min)
 					var/max = CONFIG_GET(number/body_size_max)
@@ -4130,7 +4191,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	ShowChoices(user)
 	return 1
 
-/datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
+/datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE, sans_underpants)
 	if(be_random_name)
 		real_name = pref_species.random_name(gender)
 
@@ -4179,6 +4240,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.facial_hair_style = facial_hair_style
 	character.underwear = underwear
 
+	if(sans_underpants) // hey its my favorite character, sans underpants
+		character.hidden_undershirt = FALSE
+		character.hidden_underwear = FALSE
+		character.hidden_socks = FALSE
+
 	character.saved_underwear = underwear
 	character.undershirt = undershirt
 	character.saved_undershirt = undershirt
@@ -4187,6 +4253,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.undie_color = undie_color
 	character.shirt_color = shirt_color
 	character.socks_color = socks_color
+	character.underwear_oversuit = undies_overclothes
+	character.undershirt_oversuit = undershirt_overclothes
+	character.socks_oversuit = socks_overclothes
 
 	var/datum/species/chosen_species
 	if(!roundstart_checks || (pref_species.id in GLOB.roundstart_races))
