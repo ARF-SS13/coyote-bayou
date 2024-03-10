@@ -378,7 +378,7 @@
 				qdel(E)
 
 ///Washes a mob as if it were under a shower or rain. Shower object is optional
-proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
+/proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 	if(!isliving(L))
 		return FALSE
 	SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)

@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 	appearance_flags = RESET_COLOR | TILE_BOUND | PIXEL_SCALE
 	layer = ABOVE_FLY_LAYER
 
-mob/proc/toggle_typing_indicator()
+/mob/proc/toggle_typing_indicator()
 	if(!typing_indicator_current && typing_indicator_enabled)
 		display_typing_indicator()
 	else

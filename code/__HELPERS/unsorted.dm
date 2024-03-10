@@ -24,7 +24,7 @@ Location where the teleport begins, target that will teleport, distance to go, d
 Random error in tile placement x, error in tile placement y, and block offset.
 Block offset tells the proc how to place the box. Behind teleport location, relative to starting location, forward, etc.
 Negative values for offset are accepted, think of it in relation to North, -x is west, -y is south. Error defaults to positive.
-Turf and target are separate in case you want to teleport some distance from a turf the target is not standing on or something.
+/turf and target are separate in case you want to teleport some distance from a turf the target is not standing on or something.
 */
 
 	var/dirx = 0//Generic location finding variable.
@@ -1075,7 +1075,7 @@ rough example of the "cone" made by the 3 dirs checked
 	return closest_atom
 
 
-proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
+/proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
 	if (value == FALSE) //nothing should be calling us with a number, so this is safe
 		value = input("Enter type to find (blank for all, cancel to cancel)", "Search for type") as null|text
 		if (isnull(value))
