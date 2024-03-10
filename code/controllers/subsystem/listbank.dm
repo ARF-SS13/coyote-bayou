@@ -342,7 +342,7 @@ SUBSYSTEM_DEF(listbank)
 	for(var/entry in aaa_debug_list_tally)
 		var/datum/list_tally/LT = LAZYACCESS(aaa_debug_list_tally, entry)
 		rawtallies += LT
-	rawtallies = sortTim(rawtallies.Copy(), /proc/cmp_list_tally_dec)
+	rawtallies = sortTim(rawtallies.Copy(), GLOBAL_PROC_REF(cmp_list_tally_dec))
 	var/list/tallies = list()
 	for(var/i in 1 to num2get)
 		var/datum/list_tally/LT = LAZYACCESS(rawtallies, i)

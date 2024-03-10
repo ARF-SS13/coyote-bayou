@@ -38,7 +38,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		return FALSE
 	var/datum/weather/W = pickweight(weather_rolls)
 	var/randTime = rand(WEATHER_WAIT_MIN, WEATHER_WAIT_MAX)
-	timerid = addtimer(CALLBACK(src, .proc/run_weather, W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE | TIMER_STOPPABLE) //Around 25-30 minutes between weathers
+	timerid = addtimer(CALLBACK(src,PROC_REF(run_weather), W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE | TIMER_STOPPABLE) //Around 25-30 minutes between weathers
 	next_hit_by_zlevel = world.time + randTime + initial(W.telegraph_duration)
 	weather_queued = TRUE // weather'll set this to FALSE when it ends
 

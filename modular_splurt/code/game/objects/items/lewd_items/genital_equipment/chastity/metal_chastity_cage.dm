@@ -13,7 +13,7 @@
 	. = ..()
 
 	var/mob/living/carbon/human/H = equipment.get_wearer()
-	RegisterSignal(H, COMSIG_MOVABLE_MOVED, .proc/on_move)
+	RegisterSignal(H, COMSIG_MOVABLE_MOVED,PROC_REF(on_move))
 
 	skin_overlay = mutable_appearance(icon, "worn_[icon_state]_[cage_sprite]_skin", skin_overlay_layer)
 	skin_overlay.color = G.color

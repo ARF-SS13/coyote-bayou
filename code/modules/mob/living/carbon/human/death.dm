@@ -51,7 +51,7 @@
 	if(SSticker.HasRoundStarted())
 		SSblackbox.ReportDeath(src)
 	if(is_devil(src))
-		INVOKE_ASYNC(is_devil(src), /datum/antagonist/devil.proc/beginResurrectionCheck, src)
+		INVOKE_ASYNC(is_devil(src), TYPE_PROC_REF(/datum/antagonist/devil,beginResurrectionCheck), src)
 
 /mob/living/carbon/human/proc/makeSkeleton()
 	ADD_TRAIT(src, TRAIT_DISFIGURED, TRAIT_GENERIC)

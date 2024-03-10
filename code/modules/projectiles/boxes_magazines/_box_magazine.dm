@@ -55,8 +55,8 @@
 
 /obj/item/ammo_box/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_load))
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_load))
 
 /// An aheal, but for ammo boxes
 /obj/item/ammo_box/proc/admin_load()

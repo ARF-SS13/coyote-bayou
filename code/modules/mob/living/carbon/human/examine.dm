@@ -268,15 +268,14 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			var/bandaid_max_time = initial(BP.current_gauze.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
-					msg += "fresh "
-				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
-					msg += "slightly worn "
-				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
-					msg += "badly worn "
-				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
-					msg += "nearly ruined "
+			if(bandaid_time > bandaid_max_time * BANDAGE_GOODLIFE_DURATION)
+				msg += "fresh "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_MIDLIFE_DURATION)
+				msg += "slightly worn "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_ENDLIFE_DURATION)
+				msg += "badly worn "
+			else
+				msg += "nearly ruined "
 			msg += "[BP.current_gauze.name]"
 			if(has_bleed_wounds)
 				msg += span_warning(" covering a bleeding wound!\n")
@@ -288,15 +287,14 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			var/bandaid_max_time = initial(BP.current_suture.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
-					msg += "sturdy "
-				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
-					msg += "slightly frayed "
-				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
-					msg += "badly frayed "
-				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
-					msg += "nearly popped "
+			if(bandaid_time > bandaid_max_time * SUTURE_GOODLIFE_DURATION)
+				msg += "sturdy "
+			else if(bandaid_time > bandaid_max_time * SUTURE_MIDLIFE_DURATION)
+				msg += "slightly frayed "
+			else if(bandaid_time > bandaid_max_time * SUTURE_ENDLIFE_DURATION)
+				msg += "badly frayed "
+			else
+				msg += "nearly popped "
 			msg += "[BP.current_suture.name]"
 			if(has_bleed_wounds)
 				msg += span_warning(" covering a bleeding wound!\n")

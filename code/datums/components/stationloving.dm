@@ -20,11 +20,11 @@
 /datum/component/stationloving/Initialize(inform_admins = FALSE, allow_death = FALSE, put_somewhere_random = TRUE, allowed_z = VALIDBALL_Z_LEVELS)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_MOVABLE_Z_CHANGED), .proc/check_in_bounds)
-	RegisterSignal(parent, list(COMSIG_MOVABLE_SECLUDED_LOCATION), .proc/relocate)
-	RegisterSignal(parent, list(COMSIG_PARENT_PREQDELETED), .proc/check_deletion)
-	RegisterSignal(parent, list(COMSIG_ITEM_IMBUE_SOUL), .proc/check_soul_imbue)
-	RegisterSignal(parent, list(COMSIG_ITEM_PROCESS), .proc/record_position)
+	RegisterSignal(parent, list(COMSIG_MOVABLE_Z_CHANGED),PROC_REF(check_in_bounds))
+	RegisterSignal(parent, list(COMSIG_MOVABLE_SECLUDED_LOCATION),PROC_REF(relocate))
+	RegisterSignal(parent, list(COMSIG_PARENT_PREQDELETED),PROC_REF(check_deletion))
+	RegisterSignal(parent, list(COMSIG_ITEM_IMBUE_SOUL),PROC_REF(check_soul_imbue))
+	RegisterSignal(parent, list(COMSIG_ITEM_PROCESS),PROC_REF(record_position))
 	src.allowed_z = allowed_z
 	src.put_somewhere_random = put_somewhere_random
 	if(!put_somewhere_random)

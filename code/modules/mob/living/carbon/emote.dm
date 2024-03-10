@@ -506,7 +506,7 @@
 		hasPickedUp = TRUE
 		damageMult = rock.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, rock_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice hefty throwing rock!"))
@@ -546,7 +546,7 @@
 		hasPickedUp = TRUE
 		damageMult = brick.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, brick_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice weighty brick!"))
@@ -589,7 +589,7 @@
 			hasPickedUp = TRUE
 			damageMult = snowball.throwforce
 			if(!timerEnabled)
-				addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+				addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 				timerEnabled = TRUE
 			COOLDOWN_START(src, snowball_cooldown, 2.5 SECONDS)
 			to_chat(user, span_notice("You pack together a nice round snowball!"))

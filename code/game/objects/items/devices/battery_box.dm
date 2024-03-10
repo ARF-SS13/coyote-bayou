@@ -85,9 +85,9 @@
 
 /obj/item/storage/battery_box/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_BUTTON_CLICK, .proc/toggle_charge_direction)
-	RegisterSignal(src, COMSIG_ITEM_RECHARGE, .proc/charge_me)
-	RegisterSignal(src, COMSIG_CELL_CHECK_CHARGE_PERCENT, .proc/charge_percent)
+	RegisterSignal(src, COMSIG_BUTTON_CLICK,PROC_REF(toggle_charge_direction))
+	RegisterSignal(src, COMSIG_ITEM_RECHARGE,PROC_REF(charge_me))
+	RegisterSignal(src, COMSIG_CELL_CHECK_CHARGE_PERCENT,PROC_REF(charge_percent))
 	RegisterSignal(src, COMSIG_ATOM_ENTERED, /atom/proc/update_icon)
 	RegisterSignal(src, COMSIG_ATOM_EXITED, /atom/proc/update_icon)
 	RegisterSignal(src, COMSIG_ENERGY_GUN_SELFCHARGE_TICK, .proc/get_selfcharge_mult)

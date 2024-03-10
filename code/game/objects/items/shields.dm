@@ -262,7 +262,7 @@
 	return ..()
 
 //Bulletproof riot shield
-obj/item/shield/riot/bullet_proof
+/obj/item/shield/riot/bullet_proof
 	name = "bullet resistant shield"
 	desc = "Kevlar coated surface makes this riot shield a lot better for blocking projectiles."
 	icon_state = "shield_bulletproof"
@@ -536,7 +536,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 /obj/item/shield/riot/implant/Moved()
 	. = ..()
 	if(istype(loc, /obj/item/organ/cyberimp/arm/shield))
-		recharge_timerid = addtimer(CALLBACK(src, .proc/recharge), recharge_delay, flags = TIMER_STOPPABLE)
+		recharge_timerid = addtimer(CALLBACK(src,PROC_REF(recharge)), recharge_delay, flags = TIMER_STOPPABLE)
 	else		//extending
 		if(recharge_timerid)
 			deltimer(recharge_timerid)

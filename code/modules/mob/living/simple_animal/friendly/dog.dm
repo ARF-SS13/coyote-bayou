@@ -254,7 +254,7 @@
 /mob/living/simple_animal/pet/dog/corgi/proc/place_on_head(obj/item/item_to_add, mob/user)
 
 	if(istype(item_to_add, /obj/item/grenade/plastic)) // last thing he ever wears, I guess
-		INVOKE_ASYNC(item_to_add, /obj/item.proc/afterattack, src,user,1)
+		INVOKE_ASYNC(item_to_add, TYPE_PROC_REF(/obj/item,afterattack), src,user,1)
 		return
 
 	if(inventory_head)
@@ -460,7 +460,7 @@
 
 		if(prob(1))
 			emote("me", EMOTE_VISIBLE, pick("dances around.","chases its tail!"))
-			INVOKE_ASYNC(GLOBAL_PROC, .proc/dance_rotate, src, null, TRUE)
+			INVOKE_ASYNC(GLOBAL_PROC_REF(dance_rotate), src, null, TRUE)
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/narsie_act()
 	playsound(src, 'sound/magic/demon_dies.ogg', 75, TRUE)

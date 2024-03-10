@@ -44,25 +44,25 @@
 /datum/component/artifact/Initialize(rarity = ART_RARITY_COMMON)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS, .proc/get_effects)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS, .proc/hi)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE, .proc/make_unique)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED, .proc/is_identified)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT, .proc/add_effect)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, .proc/read_parameters)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE, .proc/finalize)
-	RegisterSignal(parent, COMSIG_ITEM_WELLABLE, .proc/tabulate_wellability)
-	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/update_everything)
-	// RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
-	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/on_microwave) //c:
-	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME, .proc/get_name)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/get_description)
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS,PROC_REF(get_effects))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS,PROC_REF(hi))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE,PROC_REF(make_unique))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED,PROC_REF(is_identified))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT,PROC_REF(add_effect))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS,PROC_REF(read_parameters))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE,PROC_REF(finalize))
+	RegisterSignal(parent, COMSIG_ITEM_WELLABLE,PROC_REF(tabulate_wellability))
+	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(update_everything))
+	// RegisterSignal(parent, COMSIG_ITEM_CLICKED,PROC_REF(on_clicked))
+	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(on_microwave)) //c:
+	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME,PROC_REF(get_name))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE,PROC_REF(get_description))
 	src.rarity = rarity
 
 /// Runs the artifact's main loop. starts when touched by a mob, stops when it doesnt have anything to do
 /datum/component/artifact/process()
-	INVOKE_ASYNC(src, .proc/mainloop)
+	INVOKE_ASYNC(src,PROC_REF(mainloop))
 
 /datum/component/artifact/proc/mainloop(force_flags)
 	ART_MASTER
@@ -181,8 +181,8 @@
 
 /datum/component/artifact/proc/register_mob_signals(mob/living/newbie)
 	return // todo: this
-	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE, .proc/on_mob_damage)
-	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD, .proc/on_bleed)
+	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(on_mob_damage))
+	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD,PROC_REF(on_bleed))
 
 /datum/component/artifact/proc/unregister_mob_signals(mob/living/current)
 	return // todo: this
@@ -394,7 +394,7 @@
 	ART_MASTER
 	update_color()
 	//update_scanner_name()
-	INVOKE_ASYNC(src, .proc/floatycool)
+	INVOKE_ASYNC(src,PROC_REF(floatycool))
 
 /datum/component/artifact/proc/floatycool()
 	fade_in()
@@ -544,7 +544,7 @@
 	my_parent = WEAKREF(parent)
 	apply_parameters(parameters)
 	generate_trait()
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, .proc/on_effect_deleted, TRUE)
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED,PROC_REF(on_effect_deleted), TRUE)
 
 /datum/artifact_effect/Del()
 	cleanup(TRUE)

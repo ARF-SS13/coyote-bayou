@@ -18,7 +18,7 @@
 
 /obj/structure/destructible/tribal_torch/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/smooch_fire)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(smooch_fire))
 
 /obj/structure/destructible/tribal_torch/Destroy()
 	. = ..()
@@ -84,10 +84,10 @@
 		flicker(rand(1, 4)) // 0.1 to 0.4 seconds
 
 /obj/structure/destructible/tribal_torch/proc/flicker(duration)
-	addtimer(CALLBACK(src, .proc/unflicker, light_range), duration)
+	addtimer(CALLBACK(src,PROC_REF(unflicker), light_range), duration)
 	set_light(light_range - rand(1, 2))
 	flickering = TRUE
-	addtimer(CALLBACK(src, .proc/unflicker), duration)
+	addtimer(CALLBACK(src,PROC_REF(unflicker)), duration)
 
 /obj/structure/destructible/tribal_torch/proc/unflicker(new_range)
 	set_light(new_range)

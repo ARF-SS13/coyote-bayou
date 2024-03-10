@@ -42,7 +42,7 @@
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_icon()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_battery)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(lick_battery))
 
 /obj/item/stock_parts/cell/Destroy()
 	STOP_PROCESSING(SSobj, src)

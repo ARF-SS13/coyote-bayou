@@ -91,7 +91,7 @@
 
 /obj/item/organ/sodie_organ/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = TRUE)
 	. = ..()
-	RegisterSignal(M, COMSIG_CARBON_REAGENT_POST_LIFE, .proc/bank_sauce)
+	RegisterSignal(M, COMSIG_CARBON_REAGENT_POST_LIFE,PROC_REF(bank_sauce))
 
 /obj/item/organ/sodie_organ/Remove(special = FALSE)
 	UnregisterSignal(owner, COMSIG_CARBON_REAGENT_POST_LIFE)

@@ -35,8 +35,8 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	save_key = _save_key
 	examine_no_preview = _examine_no_preview
 
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/show_flavor)
-	RegisterSignal(target, COMSIG_FLIST, .proc/show_flist)
+	RegisterSignal(target, COMSIG_PARENT_EXAMINE,PROC_REF(show_flavor))
+	RegisterSignal(target, COMSIG_FLIST,PROC_REF(show_flist))
 
 	if(can_edit && ismob(target)) //but only mobs receive the proc/verb for the time being
 		var/mob/M = target
@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		M.verbs |= /mob/proc/manage_flavor_tests
 
 	if(save_key && ishuman(target))
-		RegisterSignal(target, COMSIG_HUMAN_PREFS_COPIED_TO, .proc/update_prefs_flavor_text)
+		RegisterSignal(target, COMSIG_HUMAN_PREFS_COPIED_TO,PROC_REF(update_prefs_flavor_text))
 
 /datum/element/flavor_text/Detach(atom/A)
 	. = ..()
@@ -106,7 +106,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		return
 	if(!reader)
 		return
-	INVOKE_ASYNC(src, .proc/actually_show_flist, target, reader)
+	INVOKE_ASYNC(src, PROC_REF(actually_show_flist), target, reader)
 	return TRUE
 
 /datum/element/flavor_text/proc/actually_show_flist(mob/living/carbon/human/H, mob/reader)
@@ -168,11 +168,11 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	. = ..()
 	if(. == ELEMENT_INCOMPATIBLE)
 		return
-	RegisterSignal(target, COMSIG_CARBON_IDENTITY_TRANSFERRED_TO, .proc/update_dna_flavor_text)
-	RegisterSignal(target, COMSIG_MOB_ANTAG_ON_GAIN, .proc/on_antag_gain)
+	RegisterSignal(target, COMSIG_CARBON_IDENTITY_TRANSFERRED_TO,PROC_REF(update_dna_flavor_text))
+	RegisterSignal(target, COMSIG_MOB_ANTAG_ON_GAIN,PROC_REF(on_antag_gain))
 	if(ishuman(target))
-		RegisterSignal(target, COMSIG_HUMAN_HARDSET_DNA, .proc/update_dna_flavor_text)
-		RegisterSignal(target, COMSIG_HUMAN_ON_RANDOMIZE, .proc/unset_flavor)
+		RegisterSignal(target, COMSIG_HUMAN_HARDSET_DNA,PROC_REF(update_dna_flavor_text))
+		RegisterSignal(target, COMSIG_HUMAN_ON_RANDOMIZE,PROC_REF(unset_flavor))
 
 /datum/element/flavor_text/carbon/Detach(mob/living/carbon/C)
 	. = ..()

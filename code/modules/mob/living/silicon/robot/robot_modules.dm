@@ -207,7 +207,7 @@
 	R.module = RM
 	R.update_module_innate()
 	RM.rebuild_modules()
-	INVOKE_ASYNC(RM, .proc/do_transform_animation)
+	INVOKE_ASYNC(RM,PROC_REF(do_transform_animation))
 	R.maxHealth = borghealth
 	R.health = min(borghealth, R.health)
 	qdel(src)
@@ -334,7 +334,7 @@
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical")
 		)
 		med_icons = sortList(med_icons)
-	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(med_borg_icon)
 		if("Default")
 			cyborg_base_icon = "medical"
@@ -388,7 +388,7 @@
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer")
 		)
 		engi_icons = sortList(engi_icons)
-	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(engi_borg_icon)
 		if("Default")
 			cyborg_base_icon = "engineer"
@@ -427,7 +427,7 @@
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "sec"),
 		)
 		sec_icons = sortList(sec_icons)
-	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(sec_borg_icon)
 		if("Default")
 			cyborg_base_icon = "sec"
@@ -475,7 +475,7 @@
 	var/static/list/peace_icons = sortList(list(
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "peace")
 		))
-	var/peace_borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/peace_borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(peace_borg_icon)
 		if("Default")
 			cyborg_base_icon = "peace"
@@ -580,7 +580,7 @@
 		"(Service) Can" = image(icon = 'icons/mob/robots.dmi', icon_state = "kent"),
 		"(Service) Tophat" = image(icon = 'icons/mob/robots.dmi', icon_state = "tophat"),
 		)
-	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(service_robot_icon)
 		if("(Service) Waitress")
 			cyborg_base_icon = "service_f"
@@ -641,7 +641,7 @@
 		"Lavaland" = image(icon = 'icons/mob/robots.dmi', icon_state = "miner"),
 		"Asteroid" = image(icon = 'icons/mob/robots.dmi', icon_state = "minerOLD")
 		)
-	var/mining_borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/mining_borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(mining_borg_icon)
 		if("Lavaland")
 			cyborg_base_icon = "miner"
@@ -697,7 +697,7 @@
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction += "wastebots" //So other assaultrons don't gank you for existing.
 
-obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
+/obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 	..()
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction -= "wastebots" //Removes the faction if the module is removed.

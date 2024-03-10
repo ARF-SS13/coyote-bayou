@@ -226,8 +226,8 @@
 
 /obj/item/crucible/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(unwield))
 
 /obj/item/crucible/ComponentInitialize()
 	. = ..()
@@ -637,7 +637,7 @@
 /obj/item/clothing/accessory/lavawalk/ComponentInitialize()
 	. = ..()
 	lavawalk = new(src)
-	RegisterSignal(lavawalk, COMSIG_ACTION_TRIGGER, .proc/activate)
+	RegisterSignal(lavawalk, COMSIG_ACTION_TRIGGER,PROC_REF(activate))
 
 /obj/item/clothing/accessory/lavawalk/Destroy()
 	. = ..()
@@ -673,7 +673,7 @@
 		//L.balloon_alert(L, "activated")
 		ADD_TRAIT(L, TRAIT_ASHSTORM_IMMUNE, src)
 		ADD_TRAIT(L, TRAIT_LAVA_IMMUNE, src)
-		timer = addtimer(CALLBACK(src, .proc/reset_user, L), effectduration)
+		timer = addtimer(CALLBACK(src,PROC_REF(reset_user), L), effectduration)
 		action.StartCooldown()
 
 /obj/item/clothing/accessory/lavawalk/proc/reset_user(mob/living/user)

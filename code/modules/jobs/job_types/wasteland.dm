@@ -1729,7 +1729,7 @@ Raider
 		DM.add_member(H)
 		H.gang = DM
 
-datum/job/wasteland/f13dendoctor
+/datum/job/wasteland/f13dendoctor
 	title = "Den Doctor"
 	flag = F13DENDOCTOR
 	faction = FACTION_WASTELAND

@@ -82,9 +82,9 @@
 	var/delayRespond = rand(2,4) SECONDS
 	var/delayAnim = delayRespond + rand(1,2) SECONDS
 	var/delayQuery = delayAnim + 1.5 SECONDS
-	addtimer(CALLBACK(src, .proc/respond), delayRespond)
-	addtimer(CALLBACK(src, .proc/arrive), delayAnim)
-	addtimer(CALLBACK(src, .proc/queryCaller), delayQuery)
+	addtimer(CALLBACK(src,PROC_REF(respond)), delayRespond)
+	addtimer(CALLBACK(src,PROC_REF(arrive)), delayAnim)
+	addtimer(CALLBACK(src,PROC_REF(queryCaller)), delayQuery)
 
 /obj/effect/mailbird/proc/respond()
 	playsound(src.loc, 'modular_coyote/sound/mobsounds/crowrespond.ogg', 50, FALSE) //Magic numbers bad. Oh well. 50 is volume (average) and FALSE is for whether or not playsound should go through walls.
@@ -152,7 +152,7 @@
 		qdel(src)
 		return
 	component.unsetTarget()
-	addtimer(CALLBACK(src, .proc/deliver), rand(60, 90) SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(deliver)), rand(60, 90) SECONDS)
 
 /obj/effect/mailbird/proc/deliver()
 	icon_state = "crow-glide"
@@ -176,7 +176,7 @@
 	component.changeTarget(following)
 	pixel_y = 60
 	pixel_x = -100
-	addtimer(CALLBACK(src, .proc/dropAndLeave, success), 0.5 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(dropAndLeave), success), 0.5 SECONDS)
 	playsound(src.loc, 'modular_coyote/sound/mobsounds/crowrespond.ogg', 50, FALSE)
 	animate(src, pixel_y = 30, pixel_x = 0, time = 0.5 SECONDS, flags = ANIMATION_PARALLEL)
 	animate(src, alpha = 255, time = 0.1 SECONDS, flags = ANIMATION_PARALLEL)
@@ -187,7 +187,7 @@
 		to_chat(following, span_info("A crow swoops in and gently deposits \a [mail] at your feet."))
 	else
 		to_chat(following, span_warning("The crow returns \the [mail], unable to find someone to deliver to."))
-	addtimer(CALLBACK(src, .proc/fadeAway), 0.4 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(fadeAway)), 0.4 SECONDS)
 	animate(src, pixel_y = 60, pixel_x = 100, time = 0.5 SECONDS)
 
 /obj/effect/mailbird/proc/fadeAway()
@@ -206,7 +206,7 @@
 		return COMPONENT_INCOMPATIBLE
 
 	target = newTarget
-	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/move_react)
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED,PROC_REF(move_react))
 
 /datum/component/mailbird_movement/proc/unsetTarget()
 	UnregisterSignal(target, COMSIG_MOVABLE_MOVED)
@@ -217,7 +217,7 @@
 		return COMPONENT_INCOMPATIBLE
 	unsetTarget()
 	target = newTarget
-	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/move_react)
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED,PROC_REF(move_react))
 
 /datum/component/mailbird_movement/proc/move_react(atom/moved, atom/oldloc, direction)
 	var/atom/movable/A = parent

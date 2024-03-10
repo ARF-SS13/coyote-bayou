@@ -403,7 +403,7 @@
 
 	var/list/things = src_object.contents()
 	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, TRUE)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, my_bar)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage,mass_remove_from_storage), src, things, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 

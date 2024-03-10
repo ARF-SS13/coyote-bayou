@@ -411,7 +411,7 @@
 
 //Bone Dancers
 
-datum/crafting_recipe/tribalwar/bone
+/datum/crafting_recipe/tribalwar/bone
 	category = CAT_PRIMAL
 	always_available = FALSE
 

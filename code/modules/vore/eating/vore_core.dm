@@ -34,31 +34,31 @@
 /datum/component/vore/Initialize()
 	if(!SSvore.should_have_vore(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN), .proc/setup_vore)
-	RegisterSignal(parent, list(COMSIG_VORE_SAVE_PREFS), .proc/save_prefs)
-	RegisterSignal(parent, list(COMSIG_VORE_LOAD_PREFS), .proc/load_prefs)
-	RegisterSignal(parent, list(COMSIG_VORE_ABSORBED_STATE), .proc/absorbed_state)
-	RegisterSignal(parent, list(COMSIG_VORE_ADD_BELLY), .proc/add_belly)
-	RegisterSignal(parent, list(COMSIG_VORE_REMOVE_BELLY), .proc/remove_belly)
-	RegisterSignal(parent, list(COMSIG_VORE_GET_BELLIES), .proc/get_bellies)
-	RegisterSignal(parent, list(COMSIG_VORE_HAS_BELLIES), .proc/has_belly)
-	RegisterSignal(parent, list(COMSIG_VORE_VERIFY_BELLY), .proc/verify_belly)
-	RegisterSignal(parent, list(COMSIG_VORE_SET_SELECTED_BELLY), .proc/select_belly)
-	RegisterSignal(parent, list(COMSIG_VORE_SWAP_BELLY_INDEX), .proc/swap_belly_index)
-	RegisterSignal(parent, list(COMSIG_VORE_DO_VORE), .proc/vore_attack)
-	RegisterSignal(parent, list(COMSIG_VORE_SNIFF_LIVING), .proc/sniff_mob)
-	RegisterSignal(parent, list(COMSIG_VORE_UPDATE_PANEL), .proc/update_vore_panel)
-	RegisterSignal(parent, list(COMSIG_VORE_TOGGLE_VOREMODE), .proc/toggle_voremode)
-	RegisterSignal(parent, list(COMSIG_VORE_GET_VOREMODE), .proc/get_voremode)
-	RegisterSignal(parent, list(COMSIG_VORE_CAN_EAT), .proc/can_eat)
-	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_EATEN), .proc/can_be_eaten)
-	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_FED_PREY), .proc/can_be_fed_prey)
-	RegisterSignal(parent, list(COMSIG_VORE_RECALCULATE_SLOWDOWN), .proc/update_slowdowns)
-	RegisterSignal(parent, list(COMSIG_VORE_CHECK_EDIBILITY), .proc/can_eat_item)
-	RegisterSignal(parent, list(COMSIG_VORE_DO_MESSAGE), .proc/do_voremessage)
-	RegisterSignal(parent, list(COMSIG_VORE_EXISTS), .proc/setup_vore)
-	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE), .proc/examine_bellies)
-	RegisterSignal(parent, list(COMSIG_MOB_DEATH), .proc/you_died) // casual
+	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN),PROC_REF(setup_vore))
+	RegisterSignal(parent, list(COMSIG_VORE_SAVE_PREFS),PROC_REF(save_prefs))
+	RegisterSignal(parent, list(COMSIG_VORE_LOAD_PREFS),PROC_REF(load_prefs))
+	RegisterSignal(parent, list(COMSIG_VORE_ABSORBED_STATE),PROC_REF(absorbed_state))
+	RegisterSignal(parent, list(COMSIG_VORE_ADD_BELLY),PROC_REF(add_belly))
+	RegisterSignal(parent, list(COMSIG_VORE_REMOVE_BELLY),PROC_REF(remove_belly))
+	RegisterSignal(parent, list(COMSIG_VORE_GET_BELLIES),PROC_REF(get_bellies))
+	RegisterSignal(parent, list(COMSIG_VORE_HAS_BELLIES),PROC_REF(has_belly))
+	RegisterSignal(parent, list(COMSIG_VORE_VERIFY_BELLY),PROC_REF(verify_belly))
+	RegisterSignal(parent, list(COMSIG_VORE_SET_SELECTED_BELLY),PROC_REF(select_belly))
+	RegisterSignal(parent, list(COMSIG_VORE_SWAP_BELLY_INDEX),PROC_REF(swap_belly_index))
+	RegisterSignal(parent, list(COMSIG_VORE_DO_VORE),PROC_REF(vore_attack))
+	RegisterSignal(parent, list(COMSIG_VORE_SNIFF_LIVING),PROC_REF(sniff_mob))
+	RegisterSignal(parent, list(COMSIG_VORE_UPDATE_PANEL),PROC_REF(update_vore_panel))
+	RegisterSignal(parent, list(COMSIG_VORE_TOGGLE_VOREMODE),PROC_REF(toggle_voremode))
+	RegisterSignal(parent, list(COMSIG_VORE_GET_VOREMODE),PROC_REF(get_voremode))
+	RegisterSignal(parent, list(COMSIG_VORE_CAN_EAT),PROC_REF(can_eat))
+	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_EATEN),PROC_REF(can_be_eaten))
+	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_FED_PREY),PROC_REF(can_be_fed_prey))
+	RegisterSignal(parent, list(COMSIG_VORE_RECALCULATE_SLOWDOWN),PROC_REF(update_slowdowns))
+	RegisterSignal(parent, list(COMSIG_VORE_CHECK_EDIBILITY),PROC_REF(can_eat_item))
+	RegisterSignal(parent, list(COMSIG_VORE_DO_MESSAGE),PROC_REF(do_voremessage))
+	RegisterSignal(parent, list(COMSIG_VORE_EXISTS),PROC_REF(setup_vore))
+	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE),PROC_REF(examine_bellies))
+	RegisterSignal(parent, list(COMSIG_MOB_DEATH),PROC_REF(you_died)) // casual
 	START_PROCESSING(SSvore, src)
 	if(isliving(parent))
 		var/mob/living/master = parent
@@ -214,7 +214,7 @@
 	SEND_SIGNAL(master, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
 
 /datum/component/vore/proc/add_belly(mob/living/source, obj/vore_belly/gut)
-	RegisterSignal(gut, list(COMSIG_VORE_UPDATE_PANEL), .proc/update_vore_panel)
+	RegisterSignal(gut, list(COMSIG_VORE_UPDATE_PANEL),PROC_REF(update_vore_panel))
 	vore_organs |= gut
 
 /datum/component/vore/proc/remove_belly(mob/living/source, obj/vore_belly/gut)
@@ -390,7 +390,7 @@
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_BE_FED_PREY))
 				to_chat(master, span_alert("[living_pred] would prefer not to be fed!"))
 				return FALSE // they cont want to eat em
-			INVOKE_ASYNC(src, .proc/feed_prey_to_predator, living_pred, movable_prey)
+			INVOKE_ASYNC(src,PROC_REF(feed_prey_to_predator), living_pred, movable_prey)
 		if(VORETYPE_FEED_US_TO_PRED)
 			if(!master.Adjacent(living_pred))
 				to_chat(master, span_alert("You are too far away from [living_pred]!"))
@@ -408,7 +408,7 @@
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_BE_FED_PREY))
 				to_chat(master, span_alert("[living_pred] would prefer not to be fed prey!"))
 				return FALSE // they cont want to eat em
-			INVOKE_ASYNC(src, .proc/feed_self_to_other, living_pred)
+			INVOKE_ASYNC(src,PROC_REF(feed_self_to_other), living_pred)
 		if(VORETYPE_EAT_PREY)
 			if(!master.Adjacent(movable_prey))
 				to_chat(master, span_alert("You are too far away from [movable_prey]!"))
@@ -423,7 +423,7 @@
 			if(!can_eat()) // just in case
 				to_chat(master, span_alert("You can't eat [movable_prey] right now!"))
 				return FALSE
-			INVOKE_ASYNC(src, .proc/devour_prey, movable_prey)
+			INVOKE_ASYNC(src,PROC_REF(devour_prey), movable_prey)
 	return TRUE
 
 /datum/component/vore/proc/devour_prey(atom/movable/movable_prey)
@@ -622,7 +622,7 @@
 				to_chat(probably_master, span_alert("Okay! See you on the other side!"))
 				qdel(master)
 			else
-				INVOKE_ASYNC(src, .proc/you_died)
+				INVOKE_ASYNC(src,PROC_REF(you_died))
 		if("Fall out")
 			to_chat(probably_master, span_alert("Ejecting your corpse!"))
 			SEND_SIGNAL(master.loc, COMSIG_BELLY_EXPEL_SPECIFIC, master)
