@@ -109,7 +109,7 @@
 		set_frequency(frequency)
 
 	if(closeOtherId != null)
-		addtimer(CALLBACK(.proc/update_other_id), 5)
+		addtimer(CALLBACK(PROC_REF(update_other_id)), 5)
 	if(glass)
 		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_METAL)
@@ -1071,9 +1071,9 @@
 			if(!axe.wielded)
 				to_chat(user, span_warning("You need to be wielding \the [axe] to do that!"))
 				return
-			INVOKE_ASYNC(src, (density ? .proc/open :PROC_REF(close)), 2)
+			INVOKE_ASYNC(src, (density ? PROC_REF(open) :PROC_REF(close)), 2)
 		else
-			INVOKE_ASYNC(src, (density ? .proc/open :PROC_REF(close)), 2)
+			INVOKE_ASYNC(src, (density ? PROC_REF(open) :PROC_REF(close)), 2)
 
 	if(istype(I, /obj/item/crowbar/power))
 		if(hasPower() && isElectrified())

@@ -106,7 +106,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		return
 	if(!reader)
 		return
-	INVOKE_ASYNC(src, .proc/actually_show_flist, target, reader)
+	INVOKE_ASYNC(src, PROC_REF(actually_show_flist), target, reader)
 	return TRUE
 
 /datum/element/flavor_text/proc/actually_show_flist(mob/living/carbon/human/H, mob/reader)

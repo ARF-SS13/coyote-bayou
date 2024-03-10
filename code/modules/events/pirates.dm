@@ -222,7 +222,7 @@
 	. = ..()
 	if(. == DOCKING_SUCCESS && !is_reserved_level(new_dock.z))
 		engines_cooling = TRUE
-		addtimer(CALLBACK(src,.proc/reset_cooldown),engine_cooldown,TIMER_UNIQUE)
+		addtimer(CALLBACK(src,PROC_REF(reset_cooldown)),engine_cooldown,TIMER_UNIQUE)
 
 /obj/docking_port/mobile/pirate/proc/reset_cooldown()
 	engines_cooling = FALSE
@@ -420,7 +420,7 @@
 	status_report = "Sending..."
 	pad.visible_message(span_notice("[pad] starts charging up."))
 	pad.icon_state = pad.warmup_state
-	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
+	sending_timer = addtimer(CALLBACK(src,PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/piratepad_control/proc/stop_sending()
 	if(!sending)
