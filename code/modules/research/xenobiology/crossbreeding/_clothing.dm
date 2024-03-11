@@ -97,8 +97,8 @@ Slimecrossing Armor
 		new /obj/structure/light_prism(get_turf(owner), glasses.glasses_color)
 
 /obj/item/clothing/head/peaceflower
-	name = "heroine bud"
-	desc = "An extremely addictive flower, full of peace magic."
+	name = "entrancing bud"
+	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn."
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "peaceflower"
 	item_state = "peaceflower"
