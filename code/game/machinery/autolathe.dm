@@ -47,10 +47,10 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/DRM = 0 //determines if DRM is active, preventing you from making ammo
 
 	/// If someone is loop-feeding us, let em know what they put in when it stops looping
-	var/datum/autolathe_loop_returns/report_card
-	var/report_timer
-	var/datum/autolathe_loop_returns/big_report_card
-	var/big_report_timer
+//	var/datum/autolathe_loop_returns/report_card
+//	var/report_timer
+//	var/datum/autolathe_loop_returns/big_report_card
+//	var/big_report_timer
 
 	var/datum/techweb/specialized/autounlocking/stored_research = /datum/techweb/specialized/autounlocking/autolathe
 	var/list/categories = list(
@@ -81,12 +81,12 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
-	QDEL_NULL(report_card)
-	QDEL_NULL(big_report_card)
-	if(report_timer)
-		deltimer(report_timer)
-	if(big_report_timer)
-		deltimer(big_report_timer)
+//	QDEL_NULL(report_card)
+//	QDEL_NULL(big_report_card)
+//	if(report_timer)
+//		deltimer(report_timer)
+//	if(big_report_timer)
+//		deltimer(big_report_timer)
 	return ..()
 
 /obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
@@ -600,7 +600,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 /obj/machinery/autolathe/proc/update_record(obj/item/item)
 	if(!istype(item, /obj/item))
 		return FALSE
-
+/*
 	if(!istype(report_card))
 		report_card = new()
 	report_card.inserted_something(item)
@@ -630,7 +630,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	playsound(src, 'sound/machines/printer_thermal.ogg', 50, 1)
 	big_report_card.output_report(src)
 	QDEL_NULL(big_report_card)
-
+*/
 /obj/machinery/autolathe/hacked/Initialize()
 	. = ..()
 	adjust_hacked(TRUE)
@@ -1113,7 +1113,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		if(!total_mats["[mat]"])
 			total_mats["[mat]"] = 0
 		total_mats["[mat]"] += thing.custom_materials[mat]
-
+/*
 /datum/autolathe_loop_returns/proc/should_output_report(obj/machinery/autolathe/lathe)
 	var/stuff_recycled = 0
 	for(var/thing in things_inserted)
@@ -1169,4 +1169,4 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	msg_out += "<center>- END REPORT -</center><br>"
 	msg_out += "<hr><br>"
 	return msg_out.Join()
-
+*/
