@@ -1029,8 +1029,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "aFK" = (
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
 /obj/item/reagent_containers/food/condiment/milk,
 /obj/item/reagent_containers/food/condiment/milk,
 /obj/item/reagent_containers/food/condiment/soymilk,
@@ -1571,7 +1569,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aWZ" = (
-/obj/structure/closet/ammunitionlocker,
+/obj/structure/closet,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#e4e4e4"
 	},
@@ -6258,6 +6256,9 @@
 "edZ" = (
 /obj/machinery/microwave/stove,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -11410,6 +11411,9 @@
 /obj/item/mop,
 /obj/item/storage/bag/trash,
 /obj/structure/closet/anchored,
+/obj/item/stack/sheet/cardboard,
+/obj/item/stack/sheet/cardboard,
+/obj/item/stack/sheet/cardboard,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -11768,6 +11772,9 @@
 /obj/structure/wood_counter{
 	layer = 2;
 	dir = 8
+	},
+/obj/machinery/processor/chopping_block{
+	pixel_y = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -15991,6 +15998,8 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/yeast,
 /obj/structure/closet/cabinet,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -16469,16 +16478,13 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "ktc" = (
-/obj/structure/closet,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/obj/item/storage/keys_set,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	color = "#e4e4e4"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/deployable_barricade/wooden,
+/obj/structure/railing{
+	color = "#A47449"
 	},
-/area/f13/building)
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "ktl" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -17181,7 +17187,14 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "kFo" = (
-/obj/structure/table/wood,
+/obj/machinery/smartfridge/bottlerack/gardentool,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/item/shovel/spade,
+/obj/item/cultivator,
+/obj/item/cultivator/rake,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "kFD" = (
@@ -18544,10 +18557,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "lyo" = (
-/obj/structure/guncase/shotgun,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/guncase,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#e4e4e4"
 	},
@@ -20957,9 +20970,16 @@
 	},
 /area/f13/wasteland)
 "mSx" = (
-/obj/structure/closet/crate/bin,
-/obj/machinery/light,
+/obj/structure/table/wood{
+	layer = 2.5;
+	alpha = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/wood_counter{
+	layer = 2;
+	dir = 1
+	},
+/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -21519,6 +21539,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"nin" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/f13{
+	icon_state = "redrustyfull"
+	},
+/area/f13/building)
 "nis" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -22031,8 +22058,8 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "nxF" = (
-/obj/structure/closet/crate/trashcart,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "nxN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30978,25 +31005,8 @@
 /turf/open/floor/plating/dirt,
 /area/f13/wasteland)
 "tpg" = (
-/obj/machinery/smartfridge/bottlerack/gardentool{
-	pixel_x = 32
-	},
-/obj/item/cultivator/rake{
-	pixel_x = 32
-	},
-/obj/item/cultivator{
-	pixel_x = 32
-	},
-/obj/item/shovel/spade{
-	pixel_x = 32
-	},
-/obj/item/storage/bag/plants{
-	pixel_x = 32
-	},
-/obj/item/reagent_containers/glass/bucket/wood{
-	pixel_x = 32
-	},
-/turf/open/indestructible/ground/outside/civ/woodalt,
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tpK" = (
 /turf/closed/wall/f13/store,
@@ -31280,21 +31290,18 @@
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building)
 "tyE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/wood_counter{
+	layer = 2
+	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
 	},
-/obj/structure/wood_counter{
-	layer = 2
+/obj/structure/sink/kitchen{
+	pixel_y = 19;
+	layer = 1.9
 	},
-/obj/machinery/processor/chopping_block{
-	pixel_y = 8
-	},
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#706891"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -33947,6 +33954,7 @@
 	color = "#A47449";
 	dir = 10
 	},
+/obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vgh" = (
@@ -35210,14 +35218,13 @@
 	layer = 2.5;
 	alpha = 1
 	},
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 8
-	},
 /obj/machinery/reagentgrinder,
-/obj/machinery/light,
 /obj/structure/window{
 	dir = 4
+	},
+/obj/structure/wood_counter/bend{
+	layer = 2;
+	dir = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -37990,14 +37997,6 @@
 /obj/structure/barricade/wooden/planks{
 	density = 0;
 	pixel_y = 3
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -12
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 9
 	},
 /obj/machinery/light/floor{
 	plane = -6
@@ -67107,8 +67106,8 @@ oez
 oez
 oez
 iRb
-iRb
-iRb
+vje
+vje
 vje
 vje
 vje
@@ -67364,7 +67363,7 @@ oez
 oez
 oez
 iRb
-iRb
+vje
 vje
 vje
 vje
@@ -67621,15 +67620,15 @@ oez
 oez
 oez
 iRb
-iRb
 vje
 vje
 vje
 vje
 vje
 vje
-iRb
-iRb
+vje
+vje
+vje
 iRb
 pIT
 sII
@@ -67878,15 +67877,15 @@ oez
 oez
 oez
 iRb
-iRb
 vje
 vje
 vje
 vje
 vje
 vje
-iRb
-iRb
+vje
+vje
+vje
 iRb
 pIT
 dEn
@@ -68135,15 +68134,15 @@ oez
 oez
 oez
 iRb
-iRb
 vje
 vje
 vje
 vje
 vje
 vje
-iRb
-iRb
+vje
+vje
+vje
 iRb
 pIT
 vTj
@@ -68392,15 +68391,15 @@ oez
 oez
 oez
 iRb
-iRb
-iRb
 vje
 vje
 vje
 vje
-iRb
-iRb
-iRb
+vje
+vje
+vje
+vje
+vje
 iRb
 pIT
 rjU
@@ -68649,15 +68648,15 @@ oez
 oez
 iRb
 iRb
-iRb
-iRb
-iRb
 vje
 vje
-iRb
-iRb
-iRb
-iRb
+vje
+vje
+vje
+vje
+vje
+vje
+vje
 iRb
 ezo
 dvV
@@ -68908,10 +68907,10 @@ gDZ
 gDZ
 gDZ
 gDZ
-iRb
 vje
 vje
-iRb
+vje
+vje
 puH
 puH
 puH
@@ -70964,7 +70963,7 @@ gJP
 gJP
 jyL
 gDZ
-kFo
+nxF
 gyT
 gyT
 urX
@@ -71479,7 +71478,7 @@ gJP
 tWa
 gDZ
 vYo
-tpg
+gyT
 gyT
 icJ
 qNW
@@ -71995,10 +71994,10 @@ qls
 kcn
 jUW
 gDZ
-iRb
+vje
 kFd
-iRb
-iRb
+vje
+vje
 gIf
 dST
 xVO
@@ -72252,11 +72251,11 @@ bNL
 bNL
 lnA
 gDZ
-iRb
-iRb
-iRb
-iRb
-gIf
+vje
+vje
+vje
+vje
+gnu
 tre
 xVO
 xVO
@@ -72512,8 +72511,8 @@ gDZ
 gDZ
 gDZ
 gDZ
-iRb
-gIf
+vje
+gnu
 tre
 xVO
 tcm
@@ -73281,7 +73280,7 @@ bNL
 bNL
 bNL
 bNL
-bNL
+nin
 gDZ
 xhv
 dze
@@ -76884,7 +76883,7 @@ gDZ
 gDZ
 oQZ
 kTF
-kTF
+ktc
 oez
 oez
 wss
@@ -77141,7 +77140,7 @@ bew
 gDZ
 kTF
 kTF
-kTF
+ktc
 oez
 oez
 wss
@@ -77398,7 +77397,7 @@ kDC
 gDZ
 xJi
 kTF
-kTF
+ktc
 oez
 oez
 oez
@@ -77877,10 +77876,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+mbu
+mbu
+mbu
+mbu
 oez
 oez
 omN
@@ -78429,7 +78428,7 @@ gGq
 nJE
 gDZ
 chl
-kWS
+tpg
 cqK
 drt
 chl
@@ -79459,7 +79458,7 @@ aoR
 chl
 ovM
 cqK
-nxF
+kWS
 chl
 iCH
 iCH
@@ -84086,7 +84085,7 @@ pIV
 ajQ
 lyo
 aWZ
-ktc
+aWZ
 uOV
 tSG
 chl
@@ -87171,7 +87170,7 @@ rQP
 pIT
 pIT
 rQP
-oez
+rQP
 oez
 oez
 oez
@@ -87428,7 +87427,7 @@ rQP
 rQP
 rQP
 rQP
-oez
+rQP
 oez
 oez
 oez
