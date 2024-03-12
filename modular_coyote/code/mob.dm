@@ -1202,6 +1202,7 @@
 	icon_state = "assaultronstandard"
 	icon_living = "assaultronstandard"
 	icon_dead = "assaultronstandard_dead"
+	rotate_on_lying = TRUE
 
 //End Advanced Mobs//
 
