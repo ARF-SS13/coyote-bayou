@@ -375,7 +375,6 @@
 #define CSP_PISTOL_44 "44"
 #define CSP_FLINTLOCK "flintlock"
 #define CSP_PISTOL_14MM "14mm"
-#define CSP_PISTOL_577NE "577ne"
 #define CSP_RIFLE_LIGHT "lightrifle"
 #define CSP_RIFLE_MEDIUM "mediumrifle"
 #define CSP_RIFLE_HEAVY "heavyrifle"

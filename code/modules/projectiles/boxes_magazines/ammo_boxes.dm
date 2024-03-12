@@ -663,19 +663,6 @@
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 	multiple_sprites = 3
 
-//577 Nitro Express
-/obj/item/ammo_box/ne577
-	name = "ammo box (.577 Nitro Express)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "577box"
-	multiple_sprites = 2
-	caliber = list(CALIBER_577NE)
-	ammo_type = /obj/item/ammo_casing/ne577
-	max_ammo = 20
-	w_class = WEIGHT_CLASS_SMALL
-	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
-	randomize_ammo_count = FALSE
-
 //Misc.
 /obj/item/ammo_box/m473
 	name = "ammo box (4.73mm caseless)"

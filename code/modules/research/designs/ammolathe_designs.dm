@@ -690,13 +690,6 @@
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
 	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/ne577
-	name = ".577 Nitro Express ammo box"
-	id = "ne577"
-	build_path = /obj/item/ammo_box/ne577
-	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
-
 /*/datum/design/ammolathe/a45op
 	name = ".45 ACP +P ammo box"
 	id = "a45op"

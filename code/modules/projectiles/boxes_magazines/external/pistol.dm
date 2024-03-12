@@ -279,11 +279,11 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/ne577
-	name = "handgun magazine for 577 Nitro Express"
+	name = "handgun magazine for 577 Nitro Express, made to use 14mm rounds instead."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "577ne"
-	ammo_type = /obj/item/ammo_casing/ne577
-	caliber = list(CALIBER_577NE)
+	ammo_type = /obj/item/ammo_casing/p14mm
+	caliber = list(CALIBER_14MM)
 	max_ammo = 5
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
