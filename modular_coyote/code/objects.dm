@@ -1910,3 +1910,39 @@
 	desc = "Get over it"
 	icon = 'modular_coyote/icons/objects/bridge.dmi'
 	icon_state = "bridge_lower"
+
+/obj/structure/playstation
+	name = "Playstation"
+	icon_state = "ps"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/playstationcontroller
+	name = "Playstation with controllers"
+	icon_state = "pscontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snescontroller
+	name = "Super Nintendo with Controllers"
+	icon_state = "snescontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snes
+	name = "Super Nintendo"
+	icon_state = "snes"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/item/toy/gameboy
+	name = "Gameboy"
+	desc = "A handheld gaming system!"
+	icon = 'modular_coyote/icons/items/items.dmi'
+	icon_state = "gameboy"
+
+/obj/structure/flatscreen
+	name = "Flatscreen TV"
+	icon_state = "flatscreen"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
