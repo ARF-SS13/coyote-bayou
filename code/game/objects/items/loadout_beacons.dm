@@ -1367,13 +1367,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/crimsondeath/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath(src)
 	new /obj/item/ammo_box/ne577(src)
+	new /obj/item/ammo_box/ne577(src)
 	new /obj/item/ammo_box/magazine/ne577(src)
-
+	new /obj/item/ammo_box/magazine/ne577(src)
+	new /obj/item/ammo_box/magazine/ne577(src)
 /obj/item/storage/box/gun/pistol/p577
+//not included in starter kits because it's meant to be rare.
 	name = ".577 Nitro Express pistol case"
 	desc = "Packed with a super heavy pistol."
 
-/obj/item/storage/box/gun/pistol/crimsondeath/PopulateContents()
+/obj/item/storage/box/gun/pistol/p577/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/p577(src)
 	new /obj/item/ammo_box/ne577(src)
 	new /obj/item/ammo_box/magazine/ne577(src)

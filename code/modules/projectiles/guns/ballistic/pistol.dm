@@ -1084,7 +1084,7 @@
 	name = "NT .577 Nitro Express Superheavy Pistol"
 	desc = "A super heavy pistol chambered in .577 Nitro Express, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age."
 	icon_state = "p577"
-	item_state = "p577"
+	item_state = "pistolchrome"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1106,7 +1106,6 @@
 	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
 	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
 	icon_state = "crimsondeath"
-	item_state = "crimsondeath"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(2.1, 2.3)
 
