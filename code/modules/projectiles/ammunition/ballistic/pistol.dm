@@ -125,19 +125,6 @@
 	fire_power = CASING_POWER_HEAVIER_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_577NE
 
-/obj/item/ammo_casing/ne577/improvised
-	name = "shoddy .577 Nitro Express casing"
-	desc = "A handloaded .577 Nitro Express casing."
-	caliber = CALIBER_577NE
-	projectile_type = /obj/item/projectile/bullet/ne577
-	material_class = BULLET_IS_HEAVY_PISTOL
-	casing_quality = BULLET_IS_HANDLOAD
-	custom_materials = list(
-		/datum/material/iron = (MATS_PISTOL_HEAVY_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_HEAVY_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
-		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
-	fire_power = CASING_POWER_HEAVIER_PISTOL * CASING_POWER_MOD_HANDLOAD
-
-
 /*
 /obj/item/ammo_casing/p14mm/uraniumtipped
 	name = "14mm uranium-tipped bullet casing"

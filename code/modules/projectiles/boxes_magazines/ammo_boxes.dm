@@ -676,13 +676,6 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/ne577/improvised
-	name = "bag with reloaded .577 Nitro Express bullets"
-	icon_state = "improvshotbag"
-	max_ammo = 25
-	ammo_type = /obj/item/ammo_casing/p14mm/improvised
-	multiple_sprites = 3
-
 //Misc.
 /obj/item/ammo_box/m473
 	name = "ammo box (4.73mm caseless)"

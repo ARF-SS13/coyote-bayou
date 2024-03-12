@@ -1081,7 +1081,7 @@
 * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/p577
-	name = "NT .577 Nitro Express Superheavy Pistol"
+	name = "NT P-577 Superheavy Pistol"
 	desc = "A super heavy pistol chambered in .577 Nitro Express, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age."
 	icon_state = "p577"
 	item_state = "pistolchrome"
@@ -1093,7 +1093,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(2.3, 2.5)
+	init_recoil = HANDGUN_RECOIL(2.4, 2.6)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slowest
 	)
@@ -1107,7 +1107,7 @@
 	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
 	icon_state = "crimsondeath"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(2.1, 2.3)
+	init_recoil = HANDGUN_RECOIL(2.2, 2.4)
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"

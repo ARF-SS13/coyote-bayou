@@ -1093,14 +1093,14 @@
 /* 577ne fmj
  * DAMAGE: 65
  * STAMIN: idk im bad at math
- * RECOIL: 4
+ * RECOIL: 6
  * WOUNDS: 30 (i think)
  * WNAKED: 30 (1 mult so i guess same)
  */
 /obj/item/projectile/bullet/ne577
-	name = "577ne FMJ bullet"
+	name = ".577 Nitro Express bullet"
 	damage = BULLET_DAMAGE_PISTOL_577NE
-	damage_list = list("59" = 5, "61" = 5, "63" = 60, "68" = 15, "65" = 15, "68" = 10)
+	damage_list = list("67" = 5, "69" = 5, "71" = 60, "73" = 15, "75" = 15, "73" = 10)
 	stamina = BULLET_STAMINA_PISTOL_577NE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_577NE
@@ -1111,29 +1111,6 @@
 
 	pixels_per_second = BULLET_SPEED_PISTOL_577NE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
-/* 577ne handloaded
- * DAMAGE: less
- * STAMIN: lesser
- * RECOIL: 4
- * WOUNDS: 20 (i think)
- * WNAKED: 20 (1 mult so i guess same)
- */
-/obj/item/projectile/bullet/ne577/improvised
-	name = "handloaded 577ne bullet"
-	damage = BULLET_DAMAGE_PISTOL_577NE_HANDLOAD
-	damage_list = list("30" = 5, "35" = 5, "45" = 60, "52" = 10, "58" = 10, "60" = 10)
-	stamina = BULLET_STAMINA_PISTOL_577NE
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_577NE_HANDLOAD
-
-	wound_bonus = BULLET_WOUND_PISTOL_577NE_HANDLOAD
-	bare_wound_bonus = BULLET_WOUND_PISTOL_577NE_NAKED_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-
-	pixels_per_second = BULLET_SPEED_PISTOL_577NE_HANDLOAD
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
 
 //////////////////////
 //SPECIAL AMMO TYPES//
