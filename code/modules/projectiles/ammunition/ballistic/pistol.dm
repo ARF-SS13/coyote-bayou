@@ -115,8 +115,8 @@
 //.577 Nitro Express
 /obj/item/ammo_casing/ne577
 	name = ".577 Nitro Express bullet casing"
-	desc = "A .577 Nitro Express bullet casing."
-	caliber = CALIBER_577NE
+	desc = "A .577 Nitro Express bullet casing. Works as 14mm and other way around."
+	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/ne577
 	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
@@ -127,8 +127,8 @@
 
 /obj/item/ammo_casing/ne577/improvised
 	name = "shoddy .577 Nitro Express casing"
-	desc = "A handloaded .577 Nitro Express casing."
-	caliber = CALIBER_577NE
+	desc = "A handloaded .577 Nitro Express casing. Works as 14mm and other way around."
+	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/ne577
 	material_class = BULLET_IS_HEAVY_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
