@@ -21,14 +21,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	ckeywhitelist = list("midgetdragon")
 
-// Time, blood and sweat donor?
-/datum/gear/donator/kits/crimsonquiver
-	name = "Crimson Death Bundle"
-	restricted_desc = "Ckey Required"
-	path = /obj/item/storage/box/gun/pistol/crimsondeath
-	category = LOADOUT_CATEGORY_DONATOR
-	ckeywhitelist = list("crimsonquiver")
-
 // SUNSET EDIT
 
 /datum/gear/donator/exoticjazz

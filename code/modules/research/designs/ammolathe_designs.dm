@@ -693,7 +693,7 @@
 /datum/design/ammolathe/ne577
 	name = ".577 Nitro Express ammo box"
 	id = "ne577"
-	build_path = /obj/item/ammo_box/m14mm
+	build_path = /obj/item/ammo_box/ne577
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
 	category = list("initial", "Intermediate Ammo")
 

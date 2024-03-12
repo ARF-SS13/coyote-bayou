@@ -2052,3 +2052,11 @@
 
 /obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
 	new /obj/item/tarotdeck(src)
+
+// Time, blood and sweat donor?
+/datum/gear/donator/kits/crimsonquiver
+	name = "Crimson Death Bundle"
+	restricted_desc = "Ckey Required"
+	path = /obj/item/storage/box/gun/pistol/crimsondeath
+	category = LOADOUT_CATEGORY_DONATOR
+	ckeywhitelist = list("crimsonquiver")
