@@ -1199,6 +1199,7 @@
 	name = "Modified Assaultron"
 	desc = "Why is it so thick?"
 	icon = 'icons/mob/splurtbot.dmi'
+	rotate_on_lying = TRUE
 	icon_state = "assaultronstandard"
 	icon_living = "assaultronstandard"
 	icon_dead = "assaultronstandard_dead"
