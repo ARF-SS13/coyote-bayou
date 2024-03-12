@@ -243,10 +243,13 @@ GLOBAL_LIST(topic_status_cache)
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
 		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
 	else
+		log_world("Rebooting world...")
 		to_chat(world, span_boldannounce("Rebooting world..."))
 		Master.Shutdown()	//run SS shutdowns
 
+	log_world("TGS Reboot Started")
 	TgsReboot()
+	log_world("TGS Reboot Complete")
 
 	#ifdef UNIT_TESTS
 	FinishTestRun()
@@ -270,10 +273,12 @@ GLOBAL_LIST(topic_status_cache)
 					do_hard_reboot = FALSE
 
 		if(do_hard_reboot)
+			log_game("World hard rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 			log_world("World hard rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 			shutdown_logging() // See comment below.
 			TgsEndProcess()
 
+	log_game("World rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 	log_world("World rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
 	//AUXTOOLS_SHUTDOWN(AUXMOS)
