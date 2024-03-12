@@ -667,7 +667,7 @@
 /obj/item/ammo_box/ne577
 	name = "ammo box (.577 Nitro Express)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "577nebox"
+	icon_state = "577box"
 	multiple_sprites = 2
 	caliber = list(CALIBER_577NE)
 	ammo_type = /obj/item/ammo_casing/ne577

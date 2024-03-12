@@ -542,6 +542,12 @@
 	build_path = /obj/item/ammo_box/magazine/m14mm/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/m577ne
+	name = "empty handgun magazine (.577 Nitro Express)"
+	id = "ne577"
+	materials = list(/datum/material/iron = 6000)
+	build_path = /obj/item/ammo_box/magazine/ne577/empty
+	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/m14mmcustommagazine
 	name = "empty P-36 magazine (14mm)"
@@ -683,6 +689,14 @@
 	build_path = /obj/item/ammo_box/m14mm
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
 	category = list("initial", "Intermediate Ammo")
+
+/datum/design/ammolathe/ne577
+	name = ".577 Nitro Express ammo box"
+	id = "ne577"
+	build_path = /obj/item/ammo_box/m14mm
+	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
+	category = list("initial", "Intermediate Ammo")
+
 
 /*/datum/design/ammolathe/a45op
 	name = ".45 ACP +P ammo box"

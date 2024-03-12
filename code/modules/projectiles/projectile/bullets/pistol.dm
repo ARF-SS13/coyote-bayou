@@ -1091,7 +1091,7 @@
  * * * * * * * */
 
 /* 577ne fmj
- * DAMAGE: 70
+ * DAMAGE: 65
  * STAMIN: idk im bad at math
  * RECOIL: 4
  * WOUNDS: 30 (i think)
@@ -1099,8 +1099,8 @@
  */
 /obj/item/projectile/bullet/ne577
 	name = "577ne FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_577NE //50, gott damn
-	damage_list = list("62" = 5, "64" = 5, "66" = 60, "68" = 15, "70" = 15, "74" = 10)
+	damage = BULLET_DAMAGE_PISTOL_577NE
+	damage_list = list("59" = 5, "61" = 5, "63" = 60, "68" = 15, "65" = 15, "68" = 10)
 	stamina = BULLET_STAMINA_PISTOL_577NE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_577NE

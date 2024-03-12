@@ -147,6 +147,9 @@
 /datum/firemode/semi_auto/slower
 	shoot_delay_default = GUN_FIRE_DELAY_SLOWER
 
+/datum/firemode/semi_auto/slowest
+	shoot_delay_default = GUN_FIRE_DELAY_SLOWEST
+
 /datum/firemode/automatic
 	name = "Fully Automatic"
 	desc = "Spray and pray."

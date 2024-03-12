@@ -140,6 +140,9 @@ GLOBAL_LIST_EMPTY(casing_sound_properties)
 /datum/ammo_sound_properties/heavy_pistol/m14mm
 	category = CSP_PISTOL_14MM
 
+/datum/ammo_sound_properties/heavy_pistol/ne577
+	category = CSP_PISTOL_577NE
+
 /datum/ammo_sound_properties/light_rifle
 	category = CSP_RIFLE_LIGHT
 	shoot_sound = list('sound/f13weapons/varmint_rifle.ogg')

@@ -123,7 +123,7 @@
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVIER_PISTOL * CASING_POWER_MOD_SURPLUS
-	sound_properties = CSP_PISTOL_14MM
+	sound_properties = CSP_PISTOL_577NE
 
 /obj/item/ammo_casing/ne577/improvised
 	name = "shoddy .577 Nitro Express casing"

@@ -289,6 +289,9 @@
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
+/obj/item/ammo_box/magazine/ne577/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m14mmcustom/empty
 	start_empty = 1
 

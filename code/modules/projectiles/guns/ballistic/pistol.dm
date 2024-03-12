@@ -1069,22 +1069,22 @@
 	can_suppress = TRUE
 
 /* * * * * * * * * * * *
-* NT Kitsunemimi -Crimson Death- Heavy Pistol
-* Custom gun for VideNoir
-* Based off a gun in mud of the player, inspired by the Malorian arms 3516 from Cyberpunk.
+* 577 pistol
+* features custom gun for VideNoir
+* Based off a gun in mud game of videnoir, basically Malorian arms 3516 from Cyberpunk but with changes and mods.
 * works for a base for heaviest pistols
 * New sound file
-* Frontal mag
-* 577 Nitro Express, bigger than your dick size.
-* integrated attachments to reduce the recoil that would be unusable to a less unusable level.
+* Frontal mag, gun animations, empty mag animated.
+* .577 Nitro Express, bigger than your dick size.
+* 'integrated' attachments to reduce the recoil that would be unusable to a less unusable level.
+* even slower fire rate.
 * * * * * * * * * * * * */
 
-//Custom pistol for a player, see above.
-/obj/item/gun/ballistic/automatic/pistol/crimsondeath
-	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
-	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
-	icon_state = "crimsondeath"
-	item_state = "crimsondeath"
+/obj/item/gun/ballistic/automatic/pistol/p577
+	name = "NT .577 Nitro Express Superheavy Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age."
+	icon_state = "p577"
+	item_state = "p577"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1092,14 +1092,23 @@
 	mag_type = /obj/item/ammo_box/magazine/ne577
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.8, 2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(2.3, 2.5)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/slowest
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/crimsondeath.ogg'
+
+//Custom pistol for a player, see above.
+/obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath
+	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
+	icon_state = "crimsondeath"
+	item_state = "crimsondeath"
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(2.1, 2.3)
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"

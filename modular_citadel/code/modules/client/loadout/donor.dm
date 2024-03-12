@@ -1,7 +1,8 @@
 /datum/gear/donator/kits/mrmannstealthsuit
 	name = "Stealth Suit Bundle"
 	path = /obj/item/storage/box/large/custom_kit/mrmannstealthsuit
-	category = LOADOUT_CATEGORY_DONATOR
+	category = LOADOUT_CATEGORY_UNIFORM
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	ckeywhitelist = list("plaugewalker")
 
 /obj/item/storage/box/large/custom_kit/mrmannstealthsuit
@@ -16,12 +17,14 @@
 /datum/gear/donator/kits/midgetdragonvest
 	name = "Great Beat Vest Bundle"
 	path = /obj/item/clothing/under/f13/bearvest
-	category = LOADOUT_CATEGORY_DONATOR
+	category = LOADOUT_CATEGORY_UNIFORM
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	ckeywhitelist = list("midgetdragon")
 
 // Time, blood and sweat donor?
 /datum/gear/donator/kits/crimsonquiver
-	name = "Crimson Death Heavy Pistol"
+	name = "Crimson Death Bundle"
+	restricted_desc = "Ckey Required"
 	path = /obj/item/storage/box/gun/pistol/crimsondeath
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("crimsonquiver")
