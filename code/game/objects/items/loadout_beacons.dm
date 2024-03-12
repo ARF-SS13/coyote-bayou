@@ -1360,6 +1360,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
+/obj/item/storage/box/gun/pistol/crimsondeath
+	name = "Kitsunemimi Crimson Death pistol case"
+
+/obj/item/storage/box/gun/pistol/crimsondeath/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/crimsondeath(src)
+	new /obj/item/ammo_box/ne577(src)
+	new /obj/item/ammo_box/magazine/ne577(src)
+
 /obj/item/storage/box/gun/pistol/needler
 	name = "NP-149/40 pistol case"
 
@@ -2417,6 +2425,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/cyberpunks
+
+/datum/loadout_box/crimsondeath
+	entry_tag = "Kitsunemimi Heavy Pistol"
+	entry_flags = LOADOUT_FLAG_PREMIUM
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/crimsondeath
 
 /datum/loadout_box/borchardt
 	entry_tag = "9mm Borchardt"

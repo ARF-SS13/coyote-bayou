@@ -188,6 +188,7 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/magazine/m45,
 	/obj/item/ammo_box/magazine/m44,
 	/obj/item/ammo_box/magazine/m14mm,
+	/obj/item/ammo_box/magazine/ne577,
 	/obj/item/ammo_box/magazine/m10mm/rifle,
 	/obj/item/ammo_box/magazine/autopipe,
 	/obj/item/ammo_box/magazine/m556/rifle/small,

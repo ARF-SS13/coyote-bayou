@@ -1068,6 +1068,38 @@
 	can_scope = FALSE
 	can_suppress = TRUE
 
+/* * * * * * * * * * * *
+* NT Kitsunemimi -Crimson Death- Heavy Pistol
+* Custom gun for VideNoir
+* Based off a gun in mud of the player, inspired by the Malorian arms 3516 from Cyberpunk.
+* works for a base for heaviest pistols
+* New sound file
+* Frontal mag
+* 577 Nitro Express, bigger than your dick size.
+* integrated attachments to reduce the recoil that would be unusable to a less unusable level.
+* * * * * * * * * * * * */
+
+//Custom pistol for a player, see above.
+/obj/item/gun/ballistic/automatic/pistol/crimsondeath
+	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
+	icon_state = "crimsondeath"
+	item_state = "crimsondeath"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/ne577
+	mag_type = /obj/item/ammo_box/magazine/ne577
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.8, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/crimsondeath.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"
