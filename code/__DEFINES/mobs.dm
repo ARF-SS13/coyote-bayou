@@ -646,6 +646,16 @@
 #define PHUD_SHIRT "GENITAL_HUD_SHIRT"
 #define PHUD_PANTS "GENITAL_HUD_PANTS"
 #define PHUD_SOCKS "GENITAL_HUD_SOCKS"
+#define GENITAL_LAYER_OFFSET 0.1  // keep genitals close to the body
+#define SOCKS_LAYER_OFFSET 0.2   // undies go over genitals (sometimes)
+#define PANTS_LAYER_OFFSET 0.21   // undies go over genitals (sometimes)
+#define SHIRT_LAYER_OFFSET 0.22   // undies go over genitals (sometimes)
+#define WINGS_LAYER_OFFSET 0.3    // wings go over undies and genitals
+#define TAIL_LAYER_OFFSET 0.4     // Tail on the outermost of everything
+#define MUTANT_PORNHUD_WINGS "wings","wingsopen","deco_wings","insect_wings","insect_fluff"
+#define MUTANT_PORNHUD_TAIL "tail", "tailwag", "mam_tail", "mam_tail_animated", "tail_lizard", "tail_human", "spines" ,"waggingtail_human" ,"waggingtail_lizard" ,"waggingspines" ,"mam_waggingtail", "xenotail"
+
+#define MUTANT_PORNHUD_PARTS MUTANT_PORNHUD_TAIL, MUTANT_PORNHUD_WINGS // WHY YES WE DO NEED 5 SEPARATE tails THAT ARE IDENTICAL< WHY DO YOU ASK??
 //Gremlins
 #define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again
 #define NPC_TAMPER_ACT_NOMSG  2 //Don't produce a visible message

@@ -599,7 +599,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)
 				undershirt = new_shirt
-				saved_undershirt = new_shirt
 				show_message(span_notice("You put on a new [new_shirt]!"))
 				update_body(TRUE)
 			else
@@ -614,11 +613,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("shirt_toggle")
+			toggle_undies_visibility(PHUD_SHIRT)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("shirt_oversuit")
+			undershirt_oversuit = undershirt_oversuit+1
+			if(undershirt_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				undershirt_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 		if("undies")
 			var/new_undies = input(usr, "Select some new undies!", "Changing") as null|anything in GLOB.underwear_list
 			if(new_undies)
 				underwear = new_undies
-				saved_underwear = new_undies
 				show_message(span_notice("You put on a new pair of [new_undies]!"))
 				update_body(TRUE)
 			else
@@ -633,11 +641,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("undies_toggle")
+			toggle_undies_visibility(PHUD_PANTS)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("undies_oversuit")
+			underwear_oversuit = underwear_oversuit+1
+			if(underwear_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				underwear_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 		if("socks")
 			var/new_sox = input(usr, "Select some socks!", "Changing") as null|anything in GLOB.socks_list
 			if(new_sox)
 				socks = new_sox
-				saved_socks = new_sox
 				show_message(span_notice("You put on a new pair of [new_sox]!"))
 				update_body(TRUE)
 			else
@@ -652,10 +669,21 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("socks_toggle")
+			toggle_undies_visibility(PHUD_SOCKS)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("socks_oversuit")
+			socks_oversuit = socks_oversuit+1
+			if(socks_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				socks_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 
 // I see athens, I see greece, I see src's /datum/sprite_accessory/underwear/bottom/briefs
 /mob/living/carbon/human/proc/show_underwear_panel()
 	var/list/dat = list()
+	var/datum/preferences/P = client?.prefs
 	dat += {"<a
 				class='clicky'
 				href='
@@ -688,6 +716,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					action=shirt_color'>
 					[shirt_color]
 			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=shirt_toggle'>
+					[hidden_undershirt ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=shirt_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, undershirt_oversuit + 1)]
+			</a>"}
 	dat += "</td>"
 	dat += "</tr><tr class='undies_row'>"
 	dat += "<td class='undies_cell'>"
@@ -707,6 +749,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=undies_color'>
 						[undie_color]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=undies_toggle'>
+					[hidden_underwear ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=undies_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, underwear_oversuit + 1)]
 			</a>"}
 	dat += "</td>"
 	dat += "</tr><tr class='undies_row'>"
@@ -728,7 +784,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					action=socks_color'>
 						[socks_color]
 			</a>"}
-	var/datum/preferences/P = client?.prefs
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=socks_toggle'>
+					[hidden_socks ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=socks_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, socks_oversuit + 1)]
+			</a>"}
 	dat += {"<a
 				class='undies_link'
 				href='
@@ -736,6 +805,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					action=toggle_underoverhand'>
 						Worn [P?.underwear_overhands ? "over" : "under"] your hands
 			</a>"}
+	dat += "<hr>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
