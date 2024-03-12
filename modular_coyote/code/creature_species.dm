@@ -1184,3 +1184,65 @@
 	race = /datum/species/feral/femdigo
 
 //End Other//
+
+//Start Synthetic Creatures//
+/datum/species/adapted
+	name = "REPORT THIS AS A BUG"
+	//The id is the living and standing icon state of the creature.
+	simple_icon = 'icons/mob/splurtbot.dmi'
+	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
+	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = ""
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOTRANSSTING,EYECOLOR,ROBOTIC_LIMBS,NO_DNA_COPY,NOEYES,CAN_SCAR,LIPS,)
+	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,TRAIT_NO_PROCESS_FOOD,)
+	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST|MOB_SYNTH
+	//Just robo looking parts.
+	mutant_heart = /obj/item/organ/heart/ipc
+	mutantlungs = /obj/item/organ/lungs/ipc
+	mutantliver = /obj/item/organ/liver/ipc
+	mutantstomach = /obj/item/organ/stomach/ipc
+	mutanteyes = /obj/item/organ/eyes/ipc
+	mutantears = /obj/item/organ/ears/ipc
+	mutanttongue = /obj/item/organ/tongue/robot/ipc
+	mutant_brain = /obj/item/organ/brain/ipc
+	icon_width = 32
+	roundstart = FALSE
+	footstep_type = FOOTSTEP_MOB_CLAW
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
+	rotate_on_lying = TRUE
+	damage_overlay_type = null
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	exotic_bloodtype = "S"
+	exotic_blood_color = BLOOD_COLOR_OIL
+
+/datum/species/adapted/thicktron_standard
+	name = "Adapted Assaultron"
+	id = "assaultronstandard"
+	roundstart = TRUE
+/mob/living/carbon/human/species/thicktron_standard
+	race = /datum/species/adapted/thicktron_standard
+
+//get in the mech, shinji
+/datum/species/adapted/mechs
+	name = "REPORT THIS AS A BUG"
+	simple_icon = 'icons/mecha/mecha.dmi'
+	icon_dead_suffix = "-broken"
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	roundstart = FALSE
+
+/datum/species/adapted/mechs/gygax
+	name = "Adapted Gygax"
+	id = "gygax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gygax	
+	race = /datum/species/adapted/mechs/gygax
+	
+//End Synthetic Creatures
