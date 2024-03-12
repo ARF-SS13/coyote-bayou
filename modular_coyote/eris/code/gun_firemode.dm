@@ -198,7 +198,7 @@
 	fire_type_default = GUN_FIREMODE_AUTO
 	shoot_delay_default = GUN_FIRE_RATE_200
 
-datum/firemode/automatic/rpm250
+/datum/firemode/automatic/rpm250
 	name = "Fully Automatic"
 	desc = "Automatic - 250 RPM."
 	fire_type_default = GUN_FIREMODE_AUTO

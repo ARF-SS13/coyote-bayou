@@ -73,7 +73,7 @@
 
 /obj/item/stack/f13Cash/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED, .proc/dingaling)
+	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED,PROC_REF(dingaling))
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)

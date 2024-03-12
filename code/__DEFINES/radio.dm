@@ -228,8 +228,8 @@
 #define MODE_HOLOPAD "holopad"
 
 #define MODE_CHANGELING "changeling"
-#define MODE_KEY_CHANGELING "g"
-#define MODE_TOKEN_CHANGELING ":g"
+#define MODE_KEY_CHANGELING "a"
+#define MODE_TOKEN_CHANGELING ":a"
 
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"

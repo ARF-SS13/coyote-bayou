@@ -943,7 +943,7 @@
 			L.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 
 
-datum/status_effect/pacify
+/datum/status_effect/pacify
 	id = "pacify"
 	status_type = STATUS_EFFECT_REPLACE
 	tick_interval = 1
@@ -986,7 +986,7 @@ datum/status_effect/pacify
 	. = ..()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR,PROC_REF(hypnotize))
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
 	owner.visible_message("[stun ? span_warning("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
@@ -1014,8 +1014,8 @@ datum/status_effect/pacify
 	var/mob/living/carbon/C = owner
 	var/hypnomsg = uncostumize_say(hearing_args[HEARING_RAW_MESSAGE], hearing_args[HEARING_MESSAGE_MODE])
 	C.cure_trauma_type(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY) //clear previous hypnosis
-	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnomsg), 10)
-	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon,gain_trauma), /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnomsg), 10)
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living,Stun), 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
 
 /datum/status_effect/spasms

@@ -61,7 +61,7 @@
 				playsound(get_turf(src), "sparks", 40, 1)
 				if(cell && cell.charge)
 					U.electrocute_act(fork_damage,src)
-				addtimer(CALLBACK(src,.proc/spew_contents), rand(5,15))
+				addtimer(CALLBACK(src,PROC_REF(spew_contents)), rand(5,15))
 				is_toasting = 0
 				return
 
@@ -85,7 +85,7 @@
 		if(user.transferItemToLoc(W, src))
 			U.visible_message(span_notice("[user] slides [W] smoothly into [src]."), span_notice("You slide [W] smoothly into [src]."))
 			is_toasting = 1
-			addtimer(CALLBACK(src,.proc/toasterize),toast_time)
+			addtimer(CALLBACK(src,PROC_REF(toasterize)),toast_time)
 			return
 
 	to_chat(user, span_warning("Try as you might, you can't get [W] to fit into [src]."))

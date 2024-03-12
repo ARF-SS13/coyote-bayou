@@ -151,7 +151,7 @@
 	icon_state = "udders"
 	name = "Udders"
 
-/datum/sprite_accessory/breasts/pair_round
+/datum/sprite_accessory/breasts/pairround
 	icon_state = "pairround"
 	name = "Pair(round)"
 

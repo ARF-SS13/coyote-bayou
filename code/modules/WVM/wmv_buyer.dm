@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	GLOB.wasteland_vendor_shop_list[trader_key] = list()
 	var/list/donut = list()
 	/// so parents are processed first, and subtype prices have priority
-	var/list/buylist = sortList(buyables_loose, /proc/cmp_typepaths_length_asc)
+	var/list/buylist = sortList(buyables_loose, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff)
@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			donut[thing] = cumfrosting[thing]
 	/// now, prune and process the tight list
 	buylist.Cut()
-	buylist = sortList(buyables_tight, /proc/cmp_typepaths_length_asc)
+	buylist = sortList(buyables_tight, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff, TRUE)
@@ -455,7 +455,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		if(istype(thingy, /obj/item/button))
 			continue
 		if(appraise_item(thingy, TRUE))
-			INVOKE_ASYNC(src, .proc/sell_loop_start)
+			INVOKE_ASYNC(src,PROC_REF(sell_loop_start))
 			return TRUE
 	say("There's nothing to sell!")
 
@@ -484,7 +484,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
-	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
+	sales_timer = addtimer(CALLBACK(src,PROC_REF(sell_loop_end), thing2sell), time2sell, TIMER_STOPPABLE)
 
 /obj/machinery/mineral/wasteland_trader/proc/sell_loop_end(obj/item/I)
 	if(!I)

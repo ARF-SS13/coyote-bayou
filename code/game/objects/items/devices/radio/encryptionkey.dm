@@ -201,7 +201,7 @@
 	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_TOWN_COMMERCE = 1)
 
 /obj/item/encryptionkey/headset_town/guild
-	name = "New Boston commercial guild encryption key"
+	name = "New Boston guild encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash guild channel, use :g"

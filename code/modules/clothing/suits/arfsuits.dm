@@ -2100,7 +2100,7 @@
 	icon_state = "taursaddle"
 	item_state = "taursaddle"
 	mutantrace_variation = STYLE_ALL_TAURIC
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/saddlebag
 ////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/suit/armor/taursaddle/light
@@ -2116,7 +2116,6 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
-	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
@@ -2136,7 +2135,6 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
-	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
@@ -2152,7 +2150,6 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
-	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_HEAVY
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
@@ -4850,7 +4847,7 @@
 			emped = TRUE
 			slowdown += induced_slowdown
 			L.update_equipment_speed_mods()
-			addtimer(CALLBACK(src, .proc/end_emp_effect, induced_slowdown), 50)
+			addtimer(CALLBACK(src,PROC_REF(end_emp_effect), induced_slowdown), 50)
 	return
 
 /obj/item/clothing/suit/armor/power_armor/proc/end_emp_effect(slowdown_induced)

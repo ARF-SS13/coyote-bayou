@@ -440,7 +440,7 @@
 	. = ..()
 	if(.)
 		update()
-		RegisterSignal(owner, COMSIG_MOB_DEATH, .proc/update_appearance)
+		RegisterSignal(owner, COMSIG_MOB_DEATH,PROC_REF(update_appearance))
 		if(genital_visflags & GENITAL_ALWAYS_VISIBLE)
 			owner.exposed_genitals += src
 

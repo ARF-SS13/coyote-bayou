@@ -473,7 +473,7 @@
 							"NCR Trooper",
 						)*/
 
-datum/gear/head/steelpot_bandolier
+/datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
@@ -1298,6 +1298,11 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/harebell
 	name = "harebell"
 	path = /obj/item/reagent_containers/food/snacks/grown/harebell
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/peaceflower
+	name = "peaceflower"
+	path = /obj/item/clothing/head/peaceflower //This is a xenobiology product that makes the wearer a pacifist, and unable to take off the flower without help, looks very pretty tho.
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
 /datum/gear/head/sunflower

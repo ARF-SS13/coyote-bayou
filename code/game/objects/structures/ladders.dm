@@ -118,18 +118,18 @@
 		if(UP)
 			peeker.reset_perspective(up.loc)
 			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
-				RegisterSignal(up, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+				RegisterSignal(up, COMSIG_CLICK,PROC_REF(on_connected_ladder_clicked))
 		if(DOWN)
 			peeker.reset_perspective(down.loc)
 			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
-				RegisterSignal(down, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+				RegisterSignal(down, COMSIG_CLICK,PROC_REF(on_connected_ladder_clicked))
 		else
 			return
 
 	LAZYADDASSOC(ladder_watchers, "[peek_dir]", peeker)
-	RegisterSignal(peeker, COMSIG_MOVABLE_MOVED, .proc/on_peeker_move)
+	RegisterSignal(peeker, COMSIG_MOVABLE_MOVED,PROC_REF(on_peeker_move))
 	// This is the closest thing this codebase has to an incapacitation signal.
-	RegisterSignal(peeker, COMSIG_DISABLE_COMBAT_MODE, .proc/stop_peeking)
+	RegisterSignal(peeker, COMSIG_DISABLE_COMBAT_MODE,PROC_REF(stop_peeking))
 
 
 /obj/structure/ladder/proc/on_peeker_move(mob/source)
@@ -238,7 +238,7 @@
 	if(!LAZYLEN(tool_list))
 		to_chat(user, span_warning("Well that's awkward, [src] couldn't generate a menu! This is probably a bug, please call 1-800-IMCODER"))
 		return
-	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src,PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if (!is_ghost && !in_range(src, user))
 		return  // nice try
 	switch(result)

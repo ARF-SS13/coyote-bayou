@@ -118,7 +118,7 @@
 /////////////////
 //Squirm Lewdly//
 ////////////////
-datum/interaction/lewd/self/lewd_squirm
+/datum/interaction/lewd/self/lewd_squirm
 	description = "Self/Crotch - Squirm lewdly."
 
 	require_user_hands = TRUE //True or false, you have to have hands to do whatever this action is.
@@ -142,7 +142,7 @@ datum/interaction/lewd/self/lewd_squirm
 ////////////////////
 //Dirty Talk - Soft//
 ////////////////////
-datum/interaction/lewd/self/dirtytalksoft
+/datum/interaction/lewd/self/dirtytalksoft
 	description = "Self/Crotch - Talk dirty (tame)."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -188,7 +188,7 @@ datum/interaction/lewd/self/dirtytalksoft
 /////////////////
 //Rub Clit//
 ////////////////
-datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+/datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
 	description = "Self/Crotch - Rub your clitoris." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
 	// Self/Partner for the left hand side.
 	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
@@ -224,7 +224,7 @@ datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what
 /////////////////
 //Jerk Hard/////
 ////////////////
-datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+/datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
 	description = "Self/Crotch - Jerk yourself off hard." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
 	// Self/Partner for the left hand side.
 	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
@@ -265,7 +265,7 @@ datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just wha
 //////////////////////////
 //Play with own nips/////
 ////////////////////////
-datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+/datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
 	description = "Self/Crotch - Play with your nipples." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
 	// Self/Partner for the left hand side.
 	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
@@ -307,7 +307,7 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 //////////////////////////
 //Autofellate/////
 ////////////////////////
-datum/interaction/lewd/self/autofellate
+/datum/interaction/lewd/self/autofellate
 	description = "Self/Crotch - Suck yourself off."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap

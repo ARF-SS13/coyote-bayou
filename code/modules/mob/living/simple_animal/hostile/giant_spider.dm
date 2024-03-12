@@ -446,7 +446,6 @@
 	name = "Wrap"
 	panel = "Spider"
 	active = FALSE
-	datum/action/spell_action/action = null
 	desc = "Wrap something or someone in a cocoon. If it's a living being, you'll also consume them, allowing you to lay eggs."
 	ranged_mousepointer = 'icons/effects/wrap_target.dmi'
 	action_icon = 'icons/mob/actions/actions_animal.dmi'
@@ -491,7 +490,7 @@
 		if(target_atom.anchored)
 			return
 		user.cocoon_target = target_atom
-		INVOKE_ASYNC(user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse/.proc/cocoon)
+		INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living/simple_animal/hostile/poison/giant_spider/nurse/,cocoon))
 		remove_ranged_ability()
 		return TRUE
 

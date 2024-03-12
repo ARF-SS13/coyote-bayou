@@ -11,7 +11,7 @@
 		else
 			var/datum/numbered_display/ND = .[I.type]
 			ND.number++
-	. = sortTim(., /proc/cmp_numbered_displays_name_asc, associative = TRUE)
+	. = sortTim(., GLOBAL_PROC_REF(cmp_numbered_displays_name_asc), associative = TRUE)
 
 /**
  * Orients all objects in legacy mode, and returns the objects to show to the user.
@@ -289,7 +289,7 @@
 	else if(current_maxscreensize)
 		maxallowedscreensize = current_maxscreensize
 	// we got screen size, register signal
-	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_logout, override = TRUE)
+	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT,PROC_REF(on_logout), override = TRUE)
 	if(M.active_storage != src)
 		if(M.active_storage)
 			M.active_storage.ui_hide(M)

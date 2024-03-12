@@ -131,7 +131,7 @@
 			qdel(src)
 			return
 	update_icon()
-	addtimer(CALLBACK(src, .proc/cyborg_recharge, user), 80)
+	addtimer(CALLBACK(src,PROC_REF(cyborg_recharge), user), 80)
 
 /obj/item/reagent_containers/hypospray/medipen/proc/cyborg_recharge(mob/living/silicon/robot/user)
 	if(!reagents.total_volume && iscyborg(user))
@@ -508,7 +508,7 @@
 
 /obj/item/hypospray/mkii/afterattack(atom/target, mob/user, proximity)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/attempt_inject, target, user, proximity)
+	INVOKE_ASYNC(src,PROC_REF(attempt_inject), target, user, proximity)
 
 /obj/item/hypospray/mkii/proc/attempt_inject(atom/target, mob/user, proximity)
 	if(!vial || !proximity || !isliving(target))

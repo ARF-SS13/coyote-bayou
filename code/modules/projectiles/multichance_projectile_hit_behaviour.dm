@@ -63,7 +63,7 @@
 					if(prob(PROB_ARMS_HIT+firer_crit_shot_add))
 						if(!T.mcphb_arms_hit)
 							to_chat(firer, span_green("The [P] hits [T] on their arm, making it jitter and forcing it to move inconsistently!"))
-							INVOKE_ASYNC(T, /mob.proc/emote, "me", EMOTE_VISIBLE, "'s arms jitter in pain!")
+							INVOKE_ASYNC(T, TYPE_PROC_REF(/mob,emote), "me", EMOTE_VISIBLE, "'s arms jitter in pain!")
 							T.mcphb_arms_hit = TRUE  //arms got hit, so for a while don't do damage 
 							T.melee_damage_lower *= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
 							T.melee_damage_upper *= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
@@ -104,7 +104,7 @@
 					if(prob(PROB_LEGS_HIT+firer_crit_shot_add))
 						if(!T.mcphb_legs_hit)
 							to_chat(firer, span_green("The [P] hits [T] on their legs, forcing them to trudge along!"))
-							INVOKE_ASYNC(T, /mob.proc/emote, "me", EMOTE_VISIBLE, "'s legs jitter in pain!")
+							INVOKE_ASYNC(T, TYPE_PROC_REF(/mob,emote), "me", EMOTE_VISIBLE, "'s legs jitter in pain!")
 							T.mcphb_legs_hit = TRUE
 							T.move_to_delay *= SPEED_MULT_LEGS_HIT
 

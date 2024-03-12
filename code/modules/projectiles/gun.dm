@@ -267,8 +267,8 @@ ATTACHMENTS
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_fill_gun)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_fill_gun)
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_fill_gun))
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_fill_gun))
 
 /obj/item/gun/proc/admin_fill_gun()
 	return
@@ -465,7 +465,7 @@ ATTACHMENTS
 			else if(G.can_trigger_gun(user))
 				loop_counter++
 				var/stam_cost = G.getstamcost(user)
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, stam_cost), loop_counter)
+				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun,process_fire), target, user, TRUE, params, null, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
 
@@ -841,7 +841,7 @@ ATTACHMENTS
 		user.client.change_view(zoom_out_amt)
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
-		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
 		user.visible_message(span_notice("[user] looks down the scope of [src]."), span_notice("You look down the scope of [src]."))
 	else
@@ -851,7 +851,7 @@ ATTACHMENTS
 		user.client.pixel_y = 0
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.visible_message(span_notice("[user] looks up from the scope of [src]."), span_notice("You look up from the scope of [src]."))
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(on_walk)) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
 /obj/item/gun/proc/on_walk(mob/living/user)
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)

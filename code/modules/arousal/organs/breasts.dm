@@ -77,6 +77,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			out["BitName"] = "A set of udders."
 		if("pair")
 			out["BitName"] = "A pair of breasts."
+		if("pairround")
+			out["BitName"] = "A pair of breasts."
 		else
 			out["BitName"] = "A [shape]-set of breasts."
 	out["BitSize"] = "They are a [uppertext(size)]-cup."
@@ -91,6 +93,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	var/lowershape = lowertext(shape)
 	switch(lowershape)
 		if("pair")
+			desc = "You see a pair of breasts."
+		if("pairround")
 			desc = "You see a pair of breasts."
 		if("quad")
 			desc = "You see two pairs of breast, one just under the other."
