@@ -11,6 +11,7 @@
 #define CALIBER_9MM "9mm rounds"
 #define CALIBER_10MM "10mm rounds"
 #define CALIBER_14MM "14mm rounds"
+#define CALIBER_577NE ".577 nitro express rounds"
 //#define CALIBER_38 ".38 special rounds"
 #define CALIBER_357 ".357 magnum rounds"
 #define CALIBER_44 ".44 magnum rounds"
@@ -125,6 +126,7 @@ GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_45ACP,
 	CALIBER_4570,
 	CALIBER_50MG,
+	CALIBER_577NE,
 	CALIBER_40MM,
 	CALIBER_FOAM,
 	CALIBER_MUSKET_BALL,

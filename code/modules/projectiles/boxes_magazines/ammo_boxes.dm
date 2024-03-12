@@ -646,7 +646,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_14MM)
 	ammo_type = /obj/item/ammo_casing/p14mm
-	max_ammo = 20
+	max_ammo = 18
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
@@ -659,18 +659,17 @@
 /obj/item/ammo_box/m14mm/improvised
 	name = "bag with reloaded 14mm bullets"
 	icon_state = "improvshotbag"
-	max_ammo = 25
+	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 	multiple_sprites = 3
 
 //577 Nitro Express
 /obj/item/ammo_box/ne577
 	name = "ammo box (.577 Nitro Express)"
-	desc = "ammo box of .577 Nitro Express, can be used as 14mm or other way around."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "577box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_14MM)
+	caliber = list(CALIBER_577NE)
 	ammo_type = /obj/item/ammo_casing/ne577
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
@@ -679,7 +678,6 @@
 
 /obj/item/ammo_box/ne577/improvised
 	name = "bag with reloaded .577 Nitro Express bullets"
-	desc = "ammo bag of .577 Nitro Express, can be used as 14mm or other way around."
 	icon_state = "improvshotbag"
 	max_ammo = 25
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised

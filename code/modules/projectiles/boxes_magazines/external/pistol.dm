@@ -283,7 +283,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "577ne"
 	ammo_type = /obj/item/ammo_casing/ne577
-	caliber = list(CALIBER_14MM)
+	caliber = list(CALIBER_577NE)
 	max_ammo = 5
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
