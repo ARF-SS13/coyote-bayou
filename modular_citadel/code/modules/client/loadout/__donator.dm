@@ -46,14 +46,6 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
-/datum/gear/donator/prismaticnova
-	name = "Slime Cookie Recipe Book"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/book/granter/crafting_recipe/slimecookie
-	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("prismaticnova")
-	cost = 0
-
 /obj/item/clothing/mask/surgical/sloaff
 	name = "rusty muzzle"
 	desc = "A rusted steel muzzle. It’s covered in scratches."
@@ -1231,16 +1223,15 @@
 	new /obj/item/slimecross/consuming/grey(src)
 
 /datum/gear/donator/kits/prismaticnova2
-	name = "Slime Cookie Kit"
+	name = "Pharmaceutical Scientist Essentials"
 	path = /obj/item/storage/box/large/custom_kit/prismaticnova2
 	ckeywhitelist = list("prismaticnova")
 
 /obj/item/storage/box/large/custom_kit/prismaticnova2/PopulateContents()
-	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
-	new /obj/item/lighter/slime(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
+	new /obj/item/lighter/royalgold(src)
+	new /obj/item/reagent_containers/pill/redambrosia(src)
+	new /obj/item/stack/medical/mesh/aloe(src)
+	new /obj/item/reagent_containers/pill/antirad_plus(src)
 
 /datum/gear/donator/kits/prismaticnova3
 	name = "Military Pilot Kit"
