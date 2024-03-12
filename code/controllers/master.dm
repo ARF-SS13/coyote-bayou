@@ -124,8 +124,10 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_init))
 	reverseRange(subsystems)
 	for(var/datum/controller/subsystem/ss in subsystems)
+		log_game("Shutting down [ss.name] subsystem...")
 		log_world("Shutting down [ss.name] subsystem...")
 		ss.Shutdown()
+	log_game("Shutdown complete")
 	log_world("Shutdown complete")
 
 // Returns 1 if we created a new mc, 0 if we couldn't due to a recent restart,
