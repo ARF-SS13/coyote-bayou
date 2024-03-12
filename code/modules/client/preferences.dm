@@ -1125,7 +1125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "You dont seem to have any movable genitals!"
 					dat += "<tr>"
-					dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
+					dat += "<td colspan='4' class='genital_name'>Hide Undies In Preview</td>"
 					/* var/genital_shirtlayer
 					if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 						genital_shirtlayer = "Over Underwear"
@@ -1133,8 +1133,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						genital_shirtlayer = "Over Clothes"
 					else
 						genital_shirtlayer = "Under Underwear" */
+					dat += {"<td class='coverage_on'>
+							<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=toggle_undie_preview';
+									task=input'>
+										[preview_hide_undies ? "Hidden" : "Visible"]
+							</a>
+						</td>"}
 
-					dat += {"<td colspan='3' class='coverage_on'>
+					dat += {"<td colspan='1' class='coverage_on'>
 							Over Clothes
 							</td>"}
 					dat += {"<td class='coverage_on'>
@@ -1295,7 +1305,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								class='undies_link' 
 								href='
 									?_src_=prefs;
-									preference=underwear_hands'>
+									preference=toggle_undie_preview'>
 										[preview_hide_undies ? "Hidden" : "Visible"]
 							</a>"}
 					dat += "</td>"
@@ -1838,6 +1848,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						task=input'>
 							[features["[feature_key]_size"]][size_flavor]
 				</a>"}
+	deet += "<div class='gen_setting_name'>Hide Undies In Preview</div>"
+	deet += {"<a 
+				class='clicky' 
+				href='
+					?_src_=prefs;
+					task=input;
+					preference=toggle_undie_preview'>
+						[preview_hide_undies ? "Hidden" : "Visible"]
+			</a>"}
 	deet += "</div>"
 	deet += "</td>"
 	deet += "</tr>"
@@ -2397,6 +2416,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				DISABLE_BITFIELD(features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING)
 				ENABLE_BITFIELD(features[nadlet], new_bit)
 			features["genital_visibility_flags"] = new_bit
+	if(href_list["preference"] == "toggle_undie_preview")
+		TOGGLE_VAR(preview_hide_undies)
 
 	if(href_list["preference"] == "genital_hide")
 		var/hideit = text2num(href_list["hideflag"])
@@ -2821,17 +2842,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("undershirt_overclothes")
 					undershirt_overclothes = undershirt_overclothes+1
-					if(undershirt_overclothes > UNDERWEAR_OVER_SUIT)
+					if(undershirt_overclothes > UNDERWEAR_OVER_EVERYTHING)
 						undershirt_overclothes = UNDERWEAR_UNDER_CLOTHES
 
 				if("undies_overclothes")
 					undies_overclothes = undies_overclothes+1
-					if(undies_overclothes > UNDERWEAR_OVER_SUIT)
+					if(undies_overclothes > UNDERWEAR_OVER_EVERYTHING)
 						undies_overclothes = UNDERWEAR_UNDER_CLOTHES
 
 				if("socks_overclothes")
 					socks_overclothes = socks_overclothes+1
-					if(socks_overclothes > UNDERWEAR_OVER_SUIT)
+					if(socks_overclothes > UNDERWEAR_OVER_EVERYTHING)
 						socks_overclothes = UNDERWEAR_UNDER_CLOTHES
 
 				if("eyes")
@@ -3644,9 +3665,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
 						side_waddle_time = new_side_waddle_time
 				
-				if("toggle_undie_preview")
-					TOGGLE_VAR(preview_hide_undies)
-
 				if("creature_body_size")
 					var/min = CONFIG_GET(number/body_size_min)
 					var/max = CONFIG_GET(number/body_size_max)
@@ -4240,10 +4258,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.facial_hair_style = facial_hair_style
 	character.underwear = underwear
 
-	if(sans_underpants) // hey its my favorite character, sans underpants
-		character.hidden_undershirt = FALSE
-		character.hidden_underwear = FALSE
-		character.hidden_socks = FALSE
+	character.hidden_undershirt = sans_underpants // hey its my favorite character, sans underpants
+	character.hidden_underwear = sans_underpants
+	character.hidden_socks = sans_underpants
 
 	character.saved_underwear = underwear
 	character.undershirt = undershirt

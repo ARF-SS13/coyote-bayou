@@ -614,12 +614,12 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
 		if("shirt_toggle")
-			TOGGLE_VAR(hidden_undershirt)
+			toggle_undies_visibility(PHUD_SHIRT)
 			update_body(TRUE)
 			show_underwear_panel()
 		if("shirt_oversuit")
 			undershirt_oversuit = undershirt_oversuit+1
-			if(undershirt_oversuit > UNDERWEAR_OVER_SUIT)
+			if(undershirt_oversuit > UNDERWEAR_OVER_EVERYTHING)
 				undershirt_oversuit = UNDERWEAR_UNDER_CLOTHES
 			update_body(TRUE)
 			show_underwear_panel()
@@ -642,12 +642,12 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
 		if("undies_toggle")
-			TOGGLE_VAR(hidden_underwear)
+			toggle_undies_visibility(PHUD_PANTS)
 			update_body(TRUE)
 			show_underwear_panel()
 		if("undies_oversuit")
 			underwear_oversuit = underwear_oversuit+1
-			if(underwear_oversuit > UNDERWEAR_OVER_SUIT)
+			if(underwear_oversuit > UNDERWEAR_OVER_EVERYTHING)
 				underwear_oversuit = UNDERWEAR_UNDER_CLOTHES
 			update_body(TRUE)
 			show_underwear_panel()
@@ -670,12 +670,12 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
 		if("socks_toggle")
-			TOGGLE_VAR(hidden_socks)
+			toggle_undies_visibility(PHUD_SOCKS)
 			update_body(TRUE)
 			show_underwear_panel()
 		if("socks_oversuit")
 			socks_oversuit = socks_oversuit+1
-			if(socks_oversuit > UNDERWEAR_OVER_SUIT)
+			if(socks_oversuit > UNDERWEAR_OVER_EVERYTHING)
 				socks_oversuit = UNDERWEAR_UNDER_CLOTHES
 			update_body(TRUE)
 			show_underwear_panel()
@@ -805,6 +805,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					action=toggle_underoverhand'>
 						Worn [P?.underwear_overhands ? "over" : "under"] your hands
 			</a>"}
+	dat += "<hr>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"

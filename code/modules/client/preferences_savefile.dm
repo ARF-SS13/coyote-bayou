@@ -959,9 +959,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 	underwear_overhands	= sanitize_integer(underwear_overhands, 0, 1, initial(underwear_overhands))
-	undershirt_overclothes	= sanitize_integer(undershirt_overclothes, 0, 2, initial(undershirt_overclothes))
-	undies_overclothes	= sanitize_integer(undies_overclothes, 0, 2, initial(undies_overclothes))
-	socks_overclothes	= sanitize_integer(socks_overclothes, 0, 2, initial(socks_overclothes))
+	undershirt_overclothes	= sanitize_integer(undershirt_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undershirt_overclothes))
+	undies_overclothes	= sanitize_integer(undies_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undies_overclothes))
+	socks_overclothes	= sanitize_integer(socks_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(socks_overclothes))
 
 	hair_style					= sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
