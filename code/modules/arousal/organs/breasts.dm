@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			out["BitName"] = "A pair of breasts."
 		else
 			out["BitName"] = "A [shape]-set of breasts."
-	out["BitSize"] = "They are a [uppertext(size)]-cup."
+	out["BitSize"] = "They are \a [uppertext(size)]-cup."
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = !!aroused_state
 	out["BitExtra"] = "Operating at %100 capacity."
@@ -104,8 +104,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			desc = "You see a set of crotch milkers, they are udderly fantastic!"
 		else
 			desc = "You see some breasts, they seem to be quite exotic."
-	if(size == "impossible")
-		desc = "You see [pick(GLOB.massive_breast_descriptors)]. Their volume is way beyond cupsize now, measuring in about [round(cached_size * 2)]cm in diameter."
+	if(size in list("huge", "massive", "giga", "impossible"))
+		desc += "\nThey are [pick(GLOB.massive_breast_descriptors)], far beyond any conventional measurement!"
 	else
 		if (size == "flat")
 			desc += " They're very small and flatchested, however."
