@@ -34,8 +34,8 @@ export const FlirtyFlirty = (props, context) => {
   return (
     <Window
       theme="ntos"
-      width={450}
-      height={300}
+      width={640}
+      height={480}
       resizable>
       <Window.Content>
         <Stack fill vertical>
@@ -244,7 +244,7 @@ const FlirtSearchBar = (props, context) => {
         width="15em"
         placeholder={FillerText}
         value={SearchTerm}
-        onInput={(e, value) => {
+        onChange={(e, value) => {
           Searchificate(sanitizeText(value), context);
         }} />
     </Box>
@@ -434,9 +434,9 @@ const FlirtButton = (props, context) => {
           px="0.5rem"
           py="0.5rem"
           mx="0.1rem"
-          style={{
-            'background-image': 'linear-gradient(#222244, #444466, #444466, #222244)',
-          }}
+          // style={{
+          //   'background-image': 'linear-gradient(#222244, #444466, #444466, #222244)',
+          // }}
           textColor={TextColor}
           backgroundColor={BGColor}
           tooltip={FlirtDesc}

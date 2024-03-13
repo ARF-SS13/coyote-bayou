@@ -29,7 +29,7 @@
 	var/sound_to_do // = "sound/items/bikehorn.ogg"
 
 	/// if the Flirt is expecting a greenlight action, have it have them autotarget u
-	var/requests_reply = RUE
+	var/requests_reply = TRUE
 	/// text sent to em when u use a Flort asking a request
 	var/reply_request_text = span_notice("Use *flirt and use one of the options in the Accept or a Decline categories to accept or decline their advances!")
 
@@ -159,7 +159,9 @@
 	previewer.playsound_local(get_turf(previewer), sound_to_do, 75, FALSE, FALSE)
 
 /datum/flirt/proc/tell_ghosting_admins(mob/living/flirter, mob/living/target)
-	log_emote("[flirter]([flirter.ckey]) used flirt [flirtname] to [target ? target.ckey : "everyone around em"].")
+	if(!flirter)
+		return
+	log_emote("[ADMIN_LOOKUPFLW(flirter)] used flirt [flirtname] to [target ? ADMIN_LOOKUPFLW(target) : "everyone around em"].")
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
 		if(QDELETED(ghost))
@@ -168,11 +170,11 @@
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 			continue
-		if(client && client.ckey && (client.ckey in ghost.client.prefs.aghost_squelches)) // We cannot assume they have a client.
+		if(flirter.client && flirter.client.ckey && (flirter.client.ckey in ghost.client.prefs.aghost_squelches)) // We cannot assume they have a client.
 			continue
 		if(!check_rights_for(ghost.client, R_ADMIN))
 			continue
-		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, flirter)] flirted [flirtname] at [target?FOLLOW_LINK(ghost, target):"everyone around em"]</span>")
+		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, flirter)] flirted '[flirtname]' at [target?FOLLOW_LINK(ghost, target):"everyone around em"]</span>")
 
 /datum/flirt/proc/format_for_tgui()
 	var/list/data = list()

@@ -57,7 +57,7 @@
 	aoe_message = "%FLIRTER% doesn't <i>seem</i> interested! Not yet, at least."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals", "Coy") // yes its an approval
+	categories = list("Reactions", "Approvals", "Coy", "Tsundere") // yes its an approval
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -114,7 +114,7 @@
 	aoe_message = "%FLIRTER's eyes begin to <span class='love'>wander</span> toward everyone nearby!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Lewd")
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -129,10 +129,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "You notice %FLIRTER% <span class='love'>start to blush at you</span>! Doesn't look like they can help it~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER <span class='love'>blushes</span>!"
+	aoe_message = "%FLIRTER% <span class='love'>blushes</span>!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Self", "Coy", "Cute")
+	categories = list("Actions", "Expressions", "Facial", "Self", "Coy", "Cute", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -147,7 +147,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% leans in nice and close, then tries to <span class='love'>gives you a deep sniff</span>!"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to sniffs the air!"
+	aoe_message = "%FLIRTER% tries to sniffs the air!"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Nearby", "Facial", "Lewd")
@@ -165,10 +165,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to give you a <span class='love'>pinch</span>! Ow, maybe! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to pinches someone!"
+	aoe_message = "%FLIRTER% tries to pinches someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile")
+	categories = list("Actions", "Nearby", "Tactile", "Tsundere")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -183,7 +183,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>caress you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to caress someone!"
+	aoe_message = "%FLIRTER% tries to caress someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Cute")
@@ -201,10 +201,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>brush against you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to brush against someone!"
+	aoe_message = "%FLIRTER% tries to brush against someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "\"Accidental\"")
+	categories = list("Actions", "Nearby", "Tactile", "\"Accidental\"", "Coy")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -220,10 +220,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>grope you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to grope someone!"
+	aoe_message = "%FLIRTER% tries to grope someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Forward", "Lewd")
+	categories = list("Actions", "Nearby", "Tactile", "Top", "Lewd", "Boobchest", "Bulge")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -238,10 +238,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>booty grope you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to booty grope someone!"
+	aoe_message = "%FLIRTER% tries to booty grope someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Lewd")
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Lewd", "Top", "Butt")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -256,10 +256,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>grope your side</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER tries to grope someone's side!"
+	aoe_message = "%FLIRTER% tries to grope someone's side!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Upper Body", "Tactile")
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -274,10 +274,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>make a kissy face at you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe making a kissy face at someone!"
+	aoe_message = "%FLIRTER% is maybe making a kissy face at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Expressions", "Smooches", "Facial", "Self", "Cute")
+	categories = list("Expressions", "Smooches", "Facial", "Cute")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -292,10 +292,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>lure you in to kiss them</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to get someone to kiss them!"
+	aoe_message = "%FLIRTER% is maybe trying to get someone to kiss them!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Smooches", "Facial", "Self")
+	categories = list("Actions", "Nearby", "Smooches", "Facial")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -310,10 +310,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>wink at you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe winking at someone!"
+	aoe_message = "%FLIRTER% is maybe winking at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Expressions", "Facial", "Self", "Cute")
+	categories = list("Actions", "Nearby", "Expressions", "Facial", "Cute")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -328,10 +328,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>waggle a finger at you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe waggling a finger at someone!"
+	aoe_message = "%FLIRTER% is maybe waggling a finger at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Gestures", "Coy", "Cute")
+	categories = list("Actions", "Expressions", "Gestures", "Coy", "Cute", "Tsundere")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -346,10 +346,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>lean their weight against you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe leaning on someone!"
+	aoe_message = "%FLIRTER% is maybe leaning on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile")
+	categories = list("Actions", "Nearby", "Tactile", "Cute", "Coy")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -364,10 +364,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>snuggle up close with you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe snuggling up close with someone!"
+	aoe_message = "%FLIRTER% is maybe snuggling up close with someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Cute")
+	categories = list("Actions", "Nearby", "Tactile", "Cute", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -382,7 +382,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>press a kiss into your cheek</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe planting a cheek kiss on someone!"
+	aoe_message = "%FLIRTER% is maybe planting a cheek kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Nearby", "Smooches", "Facial", "Cute")
@@ -400,10 +400,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>press their mouth to yours, they're trying to give you a full blown kiss</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe planting a deep kiss on someone!"
+	aoe_message = "%FLIRTER% is maybe planting a deep kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Smooches", "Facial", "Lewd")
+	categories = list("Actions", "Nearby", "Smooches", "Facial", "Lewd", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -418,7 +418,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>press a soft kiss onto your lips</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe planting a soft kiss on someone!"
+	aoe_message = "%FLIRTER% is maybe planting a soft kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Nearby", "Smooches", "Facial", "Cute")
@@ -436,10 +436,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>smile at you subtly</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe giving someone a subtle smile!"
+	aoe_message = "%FLIRTER% is maybe giving someone a subtle smile!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Coy", "Cute")
+	categories = list("Actions", "Expressions", "Facial", "Coy", "Cute", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -454,7 +454,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% tries to <span class='love'>smile at you provocatively</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe giving someone a provocative smile!"
+	aoe_message = "%FLIRTER% is maybe giving someone a provocative smile!"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Expressions", "Facial", "Lewd")
@@ -472,10 +472,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>playing with their hair while watching you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe playing with their hair?"
+	aoe_message = "%FLIRTER% is maybe playing with their hair?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Self", "Coy", "Cute")
+	categories = list("Actions", "Expressions", "Hair", "Self", "Coy", "Cute", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -490,10 +490,28 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>biting their lower lip</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe biting their lower lip?"
+	aoe_message = "%FLIRTER% is maybe biting their lower lip?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Self", "Coy", "Cute", "Bite")
+	categories = list("Actions", "Expressions", "Facial", "Self", "Coy", "Cute", "Bites", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/yummy_broob
+	flirtname = "Bite them on the boob (or chest)"
+	flirtdesc = "Sink your teeth into those teats (or chest)!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to chomp down on someone's boob (or chest)."
+	give_message_span = "notice"
+	self_message = "You try to <span class='love'>bite %TARGET%'s boob (or chest)</span>, that'll get their attention!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>chomping down on one of your boobs (or chest)!</span>! They seem frisky~"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% looks kinda hungry."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Upper Body", "Boobchest", "Coy", "Lewd", "Bites", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -508,10 +526,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>giving you the most obvious side eye this side of the sahara</span>! They seem frisky.  Or maybe just thirsty~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe side eyeing hard at someone?"
+	aoe_message = "%FLIRTER% is maybe side eyeing hard at someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expressions", "Facial", "Coy")
+	categories = list("Actions", "Expressions", "Facial", "Coy", "Tsundere", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -526,10 +544,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to press their rump into you</span>! They seem frisky~ Or maybe you should collect their insurance information?"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe playing rump attack with someone?"
+	aoe_message = "%FLIRTER% is maybe playing rump attack with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Upper Body", "Lewd")
+	categories = list("Actions", "Nearby", "Tactile", "Lower Body", "Lewd", "Butt")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -544,7 +562,7 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to touch you and make it seem like an accident</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe playing touch and go with someone?"
+	aoe_message = "%FLIRTER% is maybe playing touch and go with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
 	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Coy", "\"Accidental\"") // lewd AND coy? =3
@@ -562,10 +580,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to bite your ear</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe playing touch and go with someone?"
+	aoe_message = "%FLIRTER% is maybe playing touch and go with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Facial", "Lewd", "Bite") // lewd AND coy? =3
+	categories = list("Actions", "Nearby", "Facial", "Lewd", "Bites") // lewd AND coy? =3
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -580,10 +598,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to nuzzle into your neck</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe being a nuzzle creature with someone?"
+	aoe_message = "%FLIRTER% is maybe being a nuzzle creature with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Facial", "Coy", "Cute")
+	categories = list("Actions", "Nearby", "Facial", "Coy", "Cute", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -598,10 +616,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to bite into your neck</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to chew on someones neck!"
+	aoe_message = "%FLIRTER% is maybe trying to chew on someones neck!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Facial", "Bite")
+	categories = list("Actions", "Nearby", "Facial", "Bites", "Tsundere", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -616,10 +634,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to hold your hand</span>! How scandalous!"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to hold someones hand!"
+	aoe_message = "%FLIRTER% is maybe trying to hold someones hand!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Cute", "Illegal")
+	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Cute", "Illegal", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -634,10 +652,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to fondle your chest</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to fondle someones chest!"
+	aoe_message = "%FLIRTER% is maybe trying to fondle someones chest!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Upper Body", "Lewd")
+	categories = list("Actions", "Nearby", "Tactile", "Upper Body", "Lewd", "Boobchest")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -652,10 +670,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab you by the crotch</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to crotchfondle someone!"
+	aoe_message = "%FLIRTER% is maybe trying to crotchfondle someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Lower Body", "Lewd")
+	categories = list("Actions", "Nearby", "Tactile", "Lower Body", "Lewd", "Top", "Bulge")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -670,10 +688,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to rub your crotch</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to crotchrub someone!"
+	aoe_message = "%FLIRTER% is maybe trying to crotchrub someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Lower Body", "Lewd")
+	categories = list("Actions", "Nearby", "Tactile", "Lower Body", "Lewd", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -688,10 +706,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>staring at you like they're awestruck</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to stare at someone!"
+	aoe_message = "%FLIRTER% is maybe trying to stare at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expression", "Facial", "Lewd", "Coy", "\"Accidental\"")
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Coy", "\"Accidental\"", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -706,10 +724,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>having a hard time looking at you.  They may be awestruck</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to stare at nobody really obviously!"
+	aoe_message = "%FLIRTER% is maybe trying to stare at nobody really obviously!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expression", "Facial", "Coy", "Cute")
+	categories = list("Actions", "Expressions", "Facial", "Coy", "Cute", "Tsundere", "Bottom")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -724,10 +742,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>staring at your assets like they want a slice of you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe trying to memorize the shape of something on somebody!"
+	aoe_message = "%FLIRTER% is maybe trying to memorize the shape of something on somebody!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expression", "Facial", "Lewd")
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Top", "Boobchest", "Bulge")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -742,10 +760,10 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>trying to pick pocket you or feel you up?</span> Probably feel you up. They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe not so good at pickpocketing people!"
+	aoe_message = "%FLIRTER% is maybe not so good at pickpocketing people!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Tactile", "Coy", "\"Accidental\"", "Illegal")
+	categories = list("Actions", "Nearby", "Tactile", "Coy", "\"Accidental\"", "Illegal", "Lewd", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -760,18 +778,12 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>raising an eyebrow at you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe maybe eyeballing someone funny!"
+	aoe_message = "%FLIRTER% is maybe maybe eyeballing someone funny!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Expression", "Facial", "Coy")
+	categories = list("Actions", "Expressions", "Facial", "Coy")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
-
-		if("React - Loom over them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>loom over you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to loom over [A], maybe they'll care about it.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
 
 /datum/flirt/loom_over_them
 	flirtname = "Loom over them"
@@ -784,336 +796,1125 @@
 	self_message_span = "notice" // check them out in spans.dm!
 	target_message = "%FLIRTER% is maybe <span class='love'>looming over you</span>! They seem frisky~"
 	target_message_span = "notice"
-	aoe_message = "%FLIRTER is maybe maybe looming over someone!"
+	aoe_message = "%FLIRTER% is maybe maybe looming over someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Actions", "Nearby", "Expression")
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Top")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
-		if("Leer - Pay them more attention.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>maybe pay you a bit too much attention?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pay [A] more attention, maybe they'll notice you care about them specifically.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Sneer at them.")
-			to_chat(A, span_notice("[src] is maybe <span class='love'>giving you the stink eye but... it feels off?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You sneer at [A] but don't really mean it. Tsundere moment.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Shove them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>shove you playfully.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You playfully shove [A] but don't really mean it. Tsundere moment.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Squeeze them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>give you a BIG hug.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to give [A] a big hug, because you like them more.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Play with their hair.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>play with your hair.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to play with [A]\'s' hair, maybe they'll let you?")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Check them for wounds.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>check if you're hurt a little too closely.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to check [A] over, for wounds.  Not because you just want to look at them.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Corner them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>corner you against something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to corner [A] against something, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Grab their wrist.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your wrist.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to grab [A]\'s wrist, if they let you maybe.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Appear more demure to them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>appear more submissive.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to make yourself appear more submissive for [A], hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Bend over for them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>bend over and get your attention.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to bend over and get [A] to look at your behind, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Look heroic for them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>look cool specifically for you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pose a bit and look good for [A], hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Look like you need their help.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>look like they need your help.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to look like you need [A]\'s help, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Grab their arm.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your arm.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to grab [A]\'s arm, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Pull their hair.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>pull your hair.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s hair, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Grab their belt.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your belt or pants.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s to you by the belt or pants, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Squish your breasts together.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention with their cleavage.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention to you by making your cleavage super obvious, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Fold your arms under your breasts.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by framing their cleavage with an arm under it.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention to you by making your cleavage super obvious, hopefully they pay attention.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Draw attention to your breasts.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by doing something with their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention to you breasts super obvious.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Play with your nipples sneakily.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by playing with their nipples sneakily.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention by playing with your own nipples sneakily.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Play with your nipples openly.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by playing with their nipples openly.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention by playing with your own nipples openly.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Mouth an object.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by mouthing an object.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention by mouthing an object, maybe you should clarify what that object is?")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Tongue in cheek.")
-			to_chat(A, span_notice("[src] is trying to make you notice when they <span class='love'>press their tongue into their cheek coyly.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention by pretending to perform oral.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Whine needily.")
-			to_chat(A, span_notice("[src] is trying to make you notice when they <span class='love'>whine needily at them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pull [A]\'s attention by whining like a bitch in heat.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Touch their cheek.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>touch your cheek.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to touch [A]\'s cheek.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Pet them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>pet you affectionately.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to pet [A]\'s head.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Sooth them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>soothe you by giving touches.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to softly sooth [A] over with soft touches.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Rub your thighs together.")
-			to_chat(A, span_notice("[src] is maybe <span class='love'>rubbing their thighs together as they look at you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You rub your thighs together while looking at [A], hopefully they notice how they excite you.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Try to hide your arousal.")
-			to_chat(A, span_notice("[src] is maybe <span class='love'>trying to hide that you have a serious sexual effect on them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try, and possibly fail, at hiding how much [A] is having an effect on your desire.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Touch your hand to your bosom.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>put their hand to their chest, did someting about you cause that?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You reflexively put your hand to your chest because [A] is just too much for you to handle.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Arms akimbo.")
-			to_chat(A, span_notice("[src] might be looking at you <span class='love'>with their hands on their hips, and elbows out. Judgey.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You put your hands to your hips and stick your elbows out, judging [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Press your breasts against them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>press their breasts against you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to push your breasts agianst [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Press your crotch against them.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>press their crotch against you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to push your crotch up against [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Grind on their lap.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>grind against your lap.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to grind against [A]\'s lap.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Poke their nose.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>poke your nose cutely, boop even.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly boop [A]\'s nose.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Poke their Chest.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>poke your chest to get your attention.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly poke [A]\'s chest.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Poke their breast.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>poke your breast to get your attention.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly poke [A]\'s breast.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Poke their tummy.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>poke your tummy to get your attention.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly poke [A]\'s tummy.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Poke their thigh.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>poke your thigh to get your attention.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly poke [A]\'s thigh.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Put a finger over their mouth.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>put a finger in front of your mouth to hush you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to make [A] hush by putting a finger over their mouth.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Dare them to 'make you' do something.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly mouthed the words \"Make me.\" at you under their breath.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly demand that [A] makes you do something.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Stare defiantly.")
-			to_chat(A, span_notice("[src] might be looking at you <span class='love'with open, and sexually tense, defiance.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You stare at [A] defiantly, daring them to do something about it.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Ask them to touch you.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly asked for you to touch them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly ask that [A] touches you.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Ask them to take you.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly asked for you to take them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly ask that [A] takes you.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Ask them to kiss you.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly asked for you to kiss them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly ask that [A] kisses you.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Verbally let them know you want them.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly informed you that they \"want\" you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly inform [A] that you want them.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Verbally let them know you need them.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>quietly informed you that they \"need\" you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You quietly inform [A] that you need them.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Flutter your eyelashes at them.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>fluttered their eyelashes at you cutely.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You cutely flutter your eyelashes at [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Tickle their nose with your tail.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>tickle your nose with their tail.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly tickle [A]\'s nose with your tail.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Lose your breath.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>lost their breath looking at you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You gently lose your breath from looking at [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Heave your bosom.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>heaved, their bosom lifting towards you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You heave your bosom at [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Grin deviously.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>grinned at you deviously.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You grin deviously at [A].")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Stare at their crotch.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>stared at your crotch.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You stare at [A]\'s crotch.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Lick your lips.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>licked their lips while looking at you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you lick your lips.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Purse your lips.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>pursed their lips thoughtfully while looking at you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you purse your lips thoughtfully.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Shake from their touch.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>shook a little when you touched them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you shake from their previous touching.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Shudder from overstimulation.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>shuddered. Something you did might have overstimulated them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you shudder from something they did.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Gasp from something they did.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>gasped. Something you did might have had an effect on them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you gasp from something they did.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Moan at them.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>moaned quietly. Something you did might have had an effect on them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you moan quietly from something they did.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Lid your eyes and watch them.")
-			to_chat(A, span_notice("[src] is maybe <span class='love'>watching you behind their lidded eyes.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to watch [A] with your eyes lidded.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Leer - Sneak a peak at their assets.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>sneak a peak at your assets.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to look at [A]\'s assets without getting spotted.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Put their HAND between your breasts.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>put your HAND between their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly place [A]\'s hand between your breasts.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Put their HEAD between your breasts.")
-			to_chat(A, span_notice("[src] is trying to <span class='love'>put your HEAD between their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to coyly place [A]\'s HEAD between your breasts.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("React - Want to tell them something.")
-			to_chat(A, span_notice("[src] maybe just <span class='love'>wants to tell you something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Grab their hips.")
-			to_chat(A, span_notice("[src] is maybe reaching to <span class='love'>grab your hips?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-		if("Touch - Pull their hair.")
-			to_chat(A, span_notice("[src] is reaching to <span class='love'>pull your tail?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to pull [A]'s tail, maybe they'll notice you trying to be frisky!")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
-			return
+/datum/flirt/pay_them_attention
+	flirtname = "Pay them more attention than normal"
+	flirtdesc = "You just can't help it, your eyes just don't want to pull away from them!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to ULTRA watch someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really watching</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>paying you way too much attention</span>! They seem frisky~"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe really paying attention to someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Coy", "\"Accidental\"", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/sneed_at_them
+	flirtname = "Snear at someone"
+	flirtdesc = "Ugh, they're so awful, you can't help but snear at them. They're so below you."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to snear at someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really snearing at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>snearing at you</span>?  Maybe they need to be put in their place because they seem frisky~"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe snearing at someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Coy", "Tsundere")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/shove_them
+	flirtname = "Shove someone"
+	flirtdesc = "Baka!  You can't STAND them, push them over and assert your dominance!! (submissive)"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to shove someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really trying to shove</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to shove you</span>?  Maybe they need to be put in their place because they seem frisky~"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to shove someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Top", "Tsundere")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/squeeze_them_like_a_ketchup_bottle
+	flirtname = "Squeeze them"
+	flirtdesc = "Maybe its cute agression, maybe they just seem squishable. But you're gonna mush them like a squishmallow!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to squeeze someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really trying to squeeze</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to squeeze you</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to squeeze someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Cute")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/play_with_their_hair
+	flirtname = "Play with their hair"
+	flirtdesc = "Okay, its a bit possessive, but you just wanna play with their hair. Is that so bad?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to play with someones hair!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really trying to play with the hair of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to play with your hair</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to play with someone's hair!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Hair", "Facial", "Tactile", "Coy", "Cute")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/tick_check
+	flirtname = "Check them for wounds"
+	flirtdesc = "Ohmygosh, how are they NOT hurt, maybe I can take a closer look...?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to look someone over for hurts!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are really looking over the possible wounds of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>checking your possible hurts out a little too closely</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to see if someones hurt a bit too hard!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Tactile", "Coy")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/kabedon
+	flirtname = "Corner them"
+	flirtdesc = "If you just put your arm over them against the wall then maybe they can't get away...?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to corner someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>are trying to corner</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to corner you to stop an escape</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to corner somebody for kisses!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/dont_go_please
+	flirtname = "Grab their wrist"
+	flirtdesc = "If you just grab their wrist they'll have to listen!!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to grab someone by the wrist!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to grab the wrist of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab your wrist</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to grab someones wrist!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Tactile", "Lewd", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/uwu_notice_me_senpai
+	flirtname = "Appear more demure for the"
+	flirtdesc = "I'll just act submissive, they like submissive, right? I hope they do..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to act more submissive for someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to act more submissive for</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to act really submissive for you</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to act really submissive!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Expressions", "Nearby", "Upper Body", "Tactile", "Coy", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/time_to_break_in_the_kitchen_counter
+	flirtname = "Bend them over"
+	flirtdesc = "Just grab them and bend them over, it's not that hard you caveman."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to bend someone over!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to bend over</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to bend you over</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to bend somebody over!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Top", "Butt")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/big_muscles_himbo_moment
+	flirtname = "Look heroic for them"
+	flirtdesc = "With armor this shiny and muscles this big there's no way they won't think I'm cool if I flex..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to flex and look cool!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to flex and look cool for</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to flex and look like a hero for you</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to look cool for someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Expressions", "Upper Body", "Poses", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/am_baby
+	flirtname = "Need help from them"
+	flirtdesc = "Augh, this is just so complicated. I bet they could help though..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to really flub what you're doing!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>absolutely fail to do something in hopes that you're noticed by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>failing at some task on purpose to get your attention</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe a bit more clumsy than makes sense!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Coy", "Cute", "Bottom", "Tsundere")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/grabby_hands
+	flirtname = "Grab their arm"
+	flirtdesc = "No you don't, you aren't getting away from me!!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to grab someone by the arm!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try like crazy to grab the arm of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab your arm</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe a bit more clumsy than makes sense!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Tactile", "Tsundere", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/hair_puller
+	flirtname = "Pull their hair"
+	flirtdesc = "This'll get their attention for sure."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to grab someone's hair and pull!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try grab and pull the hair of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab your hair and pull it</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to pull someones hair!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Hair", "Tactile", "Top", "Tsundere")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/grab_belt
+	flirtname = "Grab their belt"
+	flirtdesc = "Surely you can't be move obvious than this...`"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to grab someone's belt and try to pull them to you."
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try grab and pull the belt of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab your belt and pull you up against them</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to pull someones belt!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/melon_mush
+	flirtname = "Squish your breasts together"
+	flirtdesc = "They're fun to play with, but this'll probably get their attention pretty quick!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to squeeze your own tits together for a show!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>squeeze your tits together, hopefully gaining the attention of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to squish their cleavage together to get your attention</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to smush their own boobs together!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Upper Body", "Tactile", "Self", "Lewd", "Cute", "Top", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/ooooo_youre_in_trouble
+	flirtname = "Cross your arms under your bosom"
+	flirtdesc = "This will surely make it clear how upset you are at them, try sniffing and pulling your braid if you have one. Works every time."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to cross your arms under your breasts!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>cross your arms under your bosom, trying to make sure your displeasure is known by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to cross their arms under their breasts to look upset, but all it does is frame them better</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to look cross at someone!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Upper Body", "Gestures", "Self", "Cute", "Top", "Tsundere", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/look_what_i_got
+	flirtname = "Draw attention to your breasts"
+	flirtdesc = "One way or another, be it by finger, look or touch, I can surely get them to notice my breasts!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to make someone look at your tits!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>do something in hopes of getting your breasts to be the focus of attention for</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to get you to pay attention to their breasts one way or another</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to get themselves checked out!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Upper Body", "Expressions", "Self", "Lewd", "Cute", "Top", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/sneaky_nipple_stuff
+	flirtname = "Let them catch you playing with a nipple"
+	flirtdesc = "Oops, did I just let them see me pinch myself?  How could I make such a simple mistake?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to pinch your own nipple and get caught!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>slide two fingers to one of your nipples, pinching it sneakily in hopes of being spotted by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>pinching their own nipple and making sure you notice</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to rearrange their top?"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Upper Body", "Self", "Lewd", "Subby", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/obvious_nipple_stuff
+	flirtname = "Play with your nipples openly"
+	flirtdesc = "Damnit, I can't stop myself. They're just so sensitive..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to pinch your own nipple or nipples and get caught!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>slide two fingers to one of your nipples, pinching it super obviously in hopes of being spotted by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>pinching their own nipples and making sure you notice</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to play with their nipples openly!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Upper Body", "Self", "Lewd", "Top", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/oral_fixation_at_work
+	flirtname = "Mouth an object"
+	flirtdesc = "Fidgety today, my mouth just keeps watering. At least I have this pen to nibble on."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to suck on, or nibble, an object!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>start licking and sucking on some object. Maybe it will draw the attention of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>applying their oral fixation on something to get your attention</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to nibble an object to death!"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Facial", "Gestures", "Self", "Cute", "Lewd", "\"Accidental\"", "Coy", "Top", "Tsundere")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/tongue_in_cheek
+	flirtname = "Push your tongue into your cheek"
+	flirtdesc = "I'll push my tongue into my cheek, maybe they'll understand THAT."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to push your tongue into your cheek!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>push your tongue into your cheek, implying a lot for</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>sticking their tongue in their cheek to imply something</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe trying to get some food out of their teeth?"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Facial", "Gestures", "Self", "Lewd", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/whine_like_a_bitch
+	flirtname = "Whine for their attention"
+	flirtdesc = "Oh GOSH, they're just so- oh my gosh- augh- I just want to- shl;kgds-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to whine your brains out!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to let out a whine for attention at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>whining at you needily</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe hurt?"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Self", "Cute", "Lewd", "Coy", "Bottom" /* , "Fucking annoying" */)
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/touch_their_cheek
+	flirtname = "Touch their cheek"
+	flirtdesc = "If I just give them a soft touch maybe they'll be okay."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to touch someones cheek!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to touch the cheek of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to touch your cheek</span>? A bit frisky, innit?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is looking if someone has something in their eye?"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Facial", "Tactile", "Cute", "Coy", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/pet_them
+	flirtname = "Pet them"
+	flirtdesc = "Aww, they're so cute."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to pet someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to pet</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to pet you</span>? How patronizing!!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is petting someone like a dog."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Tactile", "Cute", "Top", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/soothe_them
+	flirtname = "Soothe them"
+	flirtdesc = "Shh, calm down now."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to soothe someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to soothe</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to soothe you with soft noises</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is making soft noises."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Cute", "Coy", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/thighs_grater
+	flirtname = "Rub your thighs together"
+	flirtdesc = "Mmmf, I gotta find somewhere private if they keep this up..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to rub your thighs together!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to sneakily rub your thighs together because of the stuff being done by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>rubbing their thighs together because of what you've been doing</span>? How frisky."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is trying to get comfy."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Tactile", "Gestures", "Self", "Lower Body", "Lewd", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/hide_your_shame
+	flirtname = "Hide your arousal"
+	flirtdesc = "I've totally lost control, but maybe I can hide it from them..."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to try (and fail) to hide how turned on you are!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to shift and squirm, hiding just how down bad you are for</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to hide just how turned on they are</span>? How cute."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is obviously uncomfortable."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Self", "Cute", "Lewd", "Bottom", "Boobchest", "Bulge")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/hand_to_breast
+	flirtname = "Put a hand on your own breasts"
+	flirtdesc = "Oh dear, that really took the air out of me, if only I could fan myself off too."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to put a hand to your chest."
+	give_message_span = "notice"
+	self_message = "You <span class='love'>put a hand to your own breasts, whatever happened to make you do this has you flustered and its all the fault of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>putting a hand to their own breast to hide how much you've flustered them</span>? How cute."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe a bit overheated."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Self", "Lewd", "Cute", "Bottom", "Upper Body", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/arms_akimbo
+	flirtname = "Put your hands on your hips"
+	flirtdesc = "Ooooh, that creature!  I'll show them!!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to put put your hands on your hips!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>put your hands to your hips to show your displeasure with</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>puffing up and putting their hands to their hips to fluff up and look bigger</span>? How cute."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is maybe a bit angry."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Self", "Gestures", "Top", "Upper Body")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/breast_interception
+	flirtname = "Push your breasts against them"
+	flirtdesc = "Enough games, I'll just put my tits DIRECTLY on them. There's no way they can ignore THAT."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to put put your breasts directly on or against someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>put your breasts directly on or against</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>pushing their breasts against you to get your attention</span>? How cute."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% isn't interested in personal space."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Gestures", "Tactile", "Lewd", "Top", "Boobchest", "Upper Body")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/crotch_interception
+	flirtname = "Push your crotch against them"
+	flirtdesc = "Enough games, I'll just put my crotch DIRECTLY on them. There's no way they can ignore THAT."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to put put your crotch directly on or against someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>put your crotch directly on or against</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>pushing their crotch against you to get your attention</span>? How lewd."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% isn't interested in personal space."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Gestures", "Self", "Tactile", "Lewd", "Top", "Bulge", "Lower Body")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/grind_on_them_mmo_style
+	flirtname = "Grind on their lap"
+	flirtdesc = "This seat is lumpy. Maybe if I just squirm on it some?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to roll your hips and press your backside down against someones lap!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to grind against the lap of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>grinding against your lap</span>? How lewd!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% isn't very comfortable where they're sitting."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Lewd", "Coy", "Top", "Bottom", "Butt", "Bulge")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/boopersnooter
+	flirtname = "Poke their nose"
+	flirtdesc = "Aww that cute little button of a nose, I just can't help myself-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to poke the nose of somebody!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to boop the nose of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to boop your snoot</span>? AAAAA!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is probably not trying to pick someone elses nose."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Facial", "Tactile", "Coy", "Illegal", "Cute", "Top", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/poke_their_chest
+	flirtname = "Poke their chest"
+	flirtdesc = "I'm going to poke them and THAT will get their attention!!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to poke the chest of somebody!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to poke the chest of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to poke your chest</span>? Okay?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% maybe has an issue with someones outfit."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Coy", "Tsundere", "Cute", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/poke_their_breast
+	flirtname = "Poke their breast"
+	flirtdesc = "Squishy. Jiggly. Bouncy. Round. I just can't not-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to poke somebodies tit!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to poke the breast of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to poke your breast</span>? Whoa!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% probably didn't just poke someones tit."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Lewd", "Coy", "Cute", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/poke_their_tummy
+	flirtname = "Poke their tummy"
+	flirtdesc = "Rotund. Squishy. Jiggly. Bouncy. Round. Tight or flabby. I just can't not-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to poke somebodies stomach!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to poke the stomach of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to poke your stomach</span>? Whoa!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% probably didn't just poke someones belly."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Facial", "Tactile", "Lewd", "Coy", "Tsundere", "\"Accidental\"", "Illegal", "Cute", "Top", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/poke_their_thigh
+	flirtname = "Poke their thigh"
+	flirtdesc = "Melon destroying. Juicy. Well muscled. Shapely.  I have to-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to poke somebodies stomach!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to poke the stomach of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to poke your thigh</span>? Whoa!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% probably didn't just poke someones thigh."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Lewd", "Coy", "Tsundere", "\"Accidental\"", "Illegal", "Cute", "Hair", "Top", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/shush_em
+	flirtname = "Put a finger over their mouth"
+	flirtdesc = "Shshsh, no more words, only us!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to try and silence someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to put your finger over their mouth and silence</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to put a finger over your mouth to quiet you</span>? Whoa!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% probably didn't just hush someone."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Facial", "Tactile", "Lewd", "Coy", "Tsundere", "Cute", "Top", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/you_wont_no_balls_having_ass_fucker_you_cant
+	flirtname = "Tell them to 'make' you do something"
+	flirtdesc = "They're too much of a big baby to order you around! They couldn't make you do anything!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to brat out!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to tell</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>saying 'make me' at you</span>? Wait a minute here!"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% probably didn't just grow demon horns."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Gestures", "Tsundere", "\"Accidental\"", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/stare_at_them
+	flirtname = "Stare defiantly at them"
+	flirtdesc = "Whatever. I won't do what they say, I'll stand my ground!!"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to have a staring contest with someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to stare a hole through</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>staring a hole through you defiantly</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% isn't blinking much."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Tsundere", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/touch_me_uwu
+	flirtname = "Beg them to touch you"
+	flirtdesc = "asjklfdgh- I can't- please- please- please just- just touch me-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to beg to be touched!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to beg to be touched by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>begging you with all their might to touch them</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is blathering a bit."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Self", "Lewd", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/take_me_now_you_fool
+	flirtname = "Ask to be taken"
+	flirtdesc = "I can't do this anymore, maybe if I just debase myself and ask-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to flat out ask to be taken!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to form the words to get taken by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to get you to just flat out take them</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is blathering a lot."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Self", "Lewd", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/ask_for_kiss
+	flirtname = "Ask to be kissed"
+	flirtdesc = "It's just a kiss, how could it end up like this?"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to flat out ask to be kissed!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to form the words to get kissed by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to get you to just flat out kiss them</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is blathering a lot."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Expressions", "Gestures", "Facial", "Cute", "Top", "Bottom", "Smooches")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/make_it_crytal_clear
+	flirtname = "Let them know you want them"
+	flirtdesc = "I hate these games, I'm just going to tell them what I want-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to flat out tell someone that you want them!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to form the words to make it clear you want</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to get you to just flat out kiss them</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is blathering a lot."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Gestures", "Lewd", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/eyelash_attack
+	flirtname = "Flutter your eyelashes at them"
+	flirtdesc = "I'm just gonna look oh so innocent real fast-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to flutter your eyelashes at someone!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to flutter your lashes at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to coyly flutter their lashes at you</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% maybe has something in their eye?"
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/tail_to_nose
+	flirtname = "Boop their nose with your tail"
+	flirtdesc = "I'll use tail whip-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to push your tail under someones nose!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to push your tail under the nose of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to push their tail up under your nose</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is being a little clumsy with their tail."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Facial", "Tactile", "Tail", "Lewd", "Coy", "Illegal", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/asthma
+	flirtname = "Lose your breath from them"
+	flirtdesc = "Oh- ah- uh- I can't-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You breath is ready to catch!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>breath tries to catch while looking at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>losing their breath looking at you</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% might need a breather."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Gestures", "Self", "Coy", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/earthquake
+	flirtname = "Heave your bosom"
+	flirtdesc = "Why you- you wretched creature- I'll-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare to heave your breasts as a show of displeasure!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>heave your breasts in a displeasured manner towards</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>heav</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% stretches a bit."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Gestures", "Upper Body", "Lewd", "Top", "Tsunddere", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/grin_deviously
+	flirtname = "Grin at them deviously"
+	flirtdesc = "Oh man, if I can just- and take that off them- and put them-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare to give your most devious grin!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to flash your most lecherious smile at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>grinning at you way too deviously</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% flashes a winning smile at someone."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/crotch_stare
+	flirtname = "Stare at their crotch"
+	flirtdesc = "It's just right there- I could just reach out- oh- I want that-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare to try not to get caught (lie) staring at someones crotch!"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>stare directly at the crotch of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>staring directly at your crotch</span>? Are they drooling a little?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% seems lost in thought."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Lower Body", "Facial", "Lewd", "Bottom", "Bulge")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/lick_your_lips
+	flirtname = "Lick your lips"
+	flirtdesc = "Oh my gosh, delicious- I just want to put them in my mouth-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You just about can't stop yourself from licking your lips at this point-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try not to get caught licking your lips while looking at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>licking their lips when they look at you</span>? Are they drooling a little?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% could maybe use a snack."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/purse_your_lips
+	flirtname = "Purse your lips"
+	flirtdesc = "Gosh, they're so frustrating- I'm going to pout-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You just about can't stop yourself from pushing your lips together and pouting-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>push your lips together and pout at</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>pursing their lips together and pouting at you</span>? Kissable?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% could maybe use some chapstick."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Coy", "Tsundere", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/shake_from_touch
+	flirtname = "Shake from their touch"
+	flirtdesc = "They're so electric- I can't-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You just about can't stop yourself from shivering from a touch you just recieved-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>shiver at the touch of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>shivering from the touch you just gave them</span>?  Cute"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% looks a bit cold."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Gestures", "Self", "Lewd", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/gasp_from_touch
+	flirtname = "Gasp from their touch"
+	flirtdesc = "Their touch- I can't breath-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You just about can't breath after recieving the touch you just got-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>gasp from the touch of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>gasping from whatever you just did to them</span>?  Cute"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% looks a little surprised."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Self", "Lewd", "Cute", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/moan_at_them
+	flirtname = "Moan at them"
+	flirtdesc = "It's too much- I can't stop myself from making noise- oh gosh-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You try to stop the moan, but you're probably going to fail-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>moan from the action that was just done by</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>moaning because of something you just did</span>?  Cute"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% yawned."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Self", "Lewd", "Bottom")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/eyeballing_you_boi
+	flirtname = "Lid your eyes and watch them"
+	flirtdesc = "What... are they up to?  I better keep an eye on them."
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "Your eyelids droop and you begin to prepare to watch someone closely-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>lid your eyes and watch</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>just started giving you bedroom eyes and watching you like a hawk</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% looks a little eepy." //sl is optional
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Coy", "Tsundere", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/sneaky_peaky
+	flirtname = "Sneak a peak at the goods"
+	flirtdesc = "Whoa- that's- oh boy I hope they don't catch me looking. (lie)"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare to sneak a peak at someone nearby-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to sneak a peak at something that belongs to</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to sneak a peak at you. Something about you has clearly roused their attention</span>."
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% looks distracted."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Expressions", "Facial", "Lewd", "Coy", "Top")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/take_them_in_hand
+	flirtname = "Capture their hand between your breasts"
+	flirtdesc = "Oh, they're just so sweet, maybe I can just hold their hand and-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You get ready to snatch someones hand and hold it to your breasts-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to grab the hand of %TARGET% and put it between your breasts</span>!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to take your hand and bury it against their chest</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% seems a bit fidgety."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Tactile", "Lewd", "Top", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/head_to_boob
+	flirtname = "Place their head on your chest"
+	flirtdesc = "Surely I can make them feel better with a little closeness-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare to put their hea"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>attempt to place %TARGET%'s head to your chest!</span>"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to rest your head on their chest</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is snuggling with someone."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Upper Body", "Facial", "Tactile", "Lewd", "Top", "Boobchest")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/grab_their_hips
+	flirtname = "Grab their hips"
+	flirtdesc = "Stop squirming- come here- I swear I'm going to-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare mentally to grab someone by the hips-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to grab the hips of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab you by the hips</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is trying to touch someone."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Lewd", "Cute", "Top", "Butt")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE
+
+/datum/flirt/pull_their_tail
+	flirtname = "Pull their tail"
+	flirtdesc = "I'm gonna yank the mess out of that if I can grab it-"
+	flirticon = 'icons/obj/in_hands.dmi'
+	flirticon_state = "blushfox"
+	give_message = "You prepare mentally to grab someone by the tail-"
+	give_message_span = "notice"
+	self_message = "You <span class='love'>try to grab the tail of</span> %TARGET%!"
+	self_message_span = "notice" // check them out in spans.dm!
+	target_message = "%FLIRTER% is maybe <span class='love'>trying to grab you by the tail</span>?"
+	target_message_span = "notice"
+	aoe_message = "%FLIRTER% is trying to touch someones tail."
+	aoe_message_span = "notice"
+	aoe_range = 1
+	categories = list("Actions", "Nearby", "Lower Body", "Tactile", "Lewd", "Tsundere", "Illegal", "Cute", "Top", "Bottom", "Tail")
+	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
+	requests_reply = TRUE

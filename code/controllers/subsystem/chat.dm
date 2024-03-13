@@ -172,6 +172,7 @@ SUBSYSTEM_DEF(chat)
 	if(!ui)
 		ui = new(user, src, "FlirtyFlirty")
 		ui.open()
+		ui.set_autoupdate(FALSE)
 
 /// just holds the reader's target, if any
 /datum/controller/subsystem/chat/ui_data(mob/user)
