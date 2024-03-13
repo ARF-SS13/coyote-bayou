@@ -1367,6 +1367,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/needlerpistol(src)
 	new /obj/item/ammo_box/needlercapsule/handloaded(src)
 
+
 /obj/item/storage/box/gun/pistol/nineshotrevolver
 	name = "LeMat revolver case"
 
