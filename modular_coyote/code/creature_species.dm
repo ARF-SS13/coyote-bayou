@@ -1195,8 +1195,8 @@
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = ""
-	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOTRANSSTING,EYECOLOR,ROBOTIC_LIMBS,NO_DNA_COPY,NOEYES,CAN_SCAR,LIPS,)
-	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,TRAIT_NO_PROCESS_FOOD,)
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOTRANSSTING,EYECOLOR,ROBOTIC_LIMBS,NO_DNA_COPY,NOEYES,LIPS,)
+	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_RADIMMUNE,TRAIT_NOBREATH,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST|MOB_SYNTH
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
@@ -1218,10 +1218,22 @@
 	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
 	rotate_on_lying = TRUE
 	damage_overlay_type = null
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
 	exotic_bloodtype = "S"
 	exotic_blood_color = BLOOD_COLOR_OIL
+	species_type = "robotic" // It was just missing this little thing, I found it in ipc.dm. Hopefully this stops mechs from bleeding/getting wounds
+
+/datum/species/adapted/handle_mutations_and_radiation(mob/living/carbon/human/H)
+	return TRUE
+
+/datum/species/adapted/spec_life(mob/living/carbon/human/H)
+	if(H.nutrition < NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.nutrition > NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.losebreath != 0)
+		H.losebreath = 0 // just in case
+	if(H.toxloss)
+		H.adjustToxLoss(-H.toxloss)
 
 /datum/species/adapted/thicktron_standard
 	name = "Adapted Assaultron"
