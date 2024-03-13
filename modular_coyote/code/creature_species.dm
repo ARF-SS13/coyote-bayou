@@ -1232,7 +1232,7 @@
 
 /datum/species/adapted/thicktron_medical
 	name = "Adapted Meditron"
-	simple_icon = 'robots.dmi'
+	simple_icon = 'icons/mob/robots.dmi'
 	id = "assaultron_sase"
 	roundstart = TRUE
 /mob/living/carbon/human/species/thicktron_medical
@@ -1240,7 +1240,7 @@
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
-	simple_icon = 'icons/mob/raptorborg.dmi'
+	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	roundstart = FALSE
 	rotate_on_lying = FALSE
 	icon_width = 64
@@ -1332,48 +1332,56 @@
 /mob/living/carbon/human/species/gygax	
 	race = /datum/species/adapted/mechs/gygax
 
+/datum/species/adapted/mechs/ripley
 	name = "Adapted Ripley"
 	id = "ripley"
 	roundstart = TRUE
 /mob/living/carbon/human/species/ripley	
 	race = /datum/species/adapted/mechs/ripley
 
+/datum/species/adapted/mechs/marauder
 	name = "Adapted Marauder"
 	id = "marauder"
 	roundstart = TRUE
 /mob/living/carbon/human/species/marauder	
 	race = /datum/species/adapted/mechs/marauder
 
+/datum/species/adapted/mechs/serph
 	name = "Adapted Seraph"
 	id = "seraph"
 	roundstart = TRUE
 /mob/living/carbon/human/species/seraph	
 	race = /datum/species/adapted/mechs/seraph
 
+/datum/species/adapted/mechs/phazon
 	name = "Adapted Phazon"
 	id = "phazon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/phazon
 	race = /datum/species/adapted/mechs/phazon //This one is for you, Nioha
 
+/datum/species/adapted/mechs/mauler
 	name = "Adapted Mauler"
 	id = "mauler"
 	roundstart = TRUE
 /mob/living/carbon/human/species/mauler
 	race = /datum/species/adapted/mechs/mauler
 
+/datum/species/adapted/mechs/odysseus
 	name = "Adapted Odysseus"
 	id = "odysseus"
 	roundstart = TRUE
 /mob/living/carbon/human/species/odysseus
 	race = /datum/species/adapted/mechs/odysseus
 
+/datum/species/adapted/mechs/durand
 	name = "Adapted Durand"
 	id = "durand"
 	roundstart = TRUE
 /mob/living/carbon/human/species/durand
 	race = /datum/species/adapted/mechs/durand
 
+/datum/species/adapted/mechs/medigax
 	name = "Adapted Medigax"
 	id = "medigax"
 	roundstart = TRUE
