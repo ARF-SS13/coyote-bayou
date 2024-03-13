@@ -2055,14 +2055,11 @@
 
 // Time, blood and sweat donor?
 /datum/gear/donator/kits/crimsonquiver
-	name = "Crimson Death Bundle"
+	name = "Crimson Death Pistol Bundle"
 	restricted_desc = "Ckey Required"
 	path = /obj/item/storage/box/large/custom_kit/crimsondeath
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("crimsonquiver")
-
-	name = "Kitsunemimi Crimson Death pistol case"
-	desc = "Packed with an unique signature super heavy pistol for a special snowflake of a specific fiery red kitsune girl."
 
 /obj/item/storage/box/large/custom_kit/crimsondeath/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath(src)

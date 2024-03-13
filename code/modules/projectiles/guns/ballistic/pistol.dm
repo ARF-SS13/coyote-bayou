@@ -1092,7 +1092,7 @@
 	mag_type = /obj/item/ammo_box/magazine/ne577
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	init_recoil = HANDGUN_RECOIL(2.4, 2.6)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slowest
@@ -1106,7 +1106,7 @@
 	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
 	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
 	icon_state = "crimsondeath"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T6
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	init_recoil = HANDGUN_RECOIL(2.2, 2.4)
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
