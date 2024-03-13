@@ -139,6 +139,8 @@ SUBSYSTEM_DEF(chat)
 /datum/controller/subsystem/chat/proc/flirt_occurred(mob/living/flirter, mob/living/target)
 	add_flirt_target(flirter, target) // flirter FLIRTED with target
 	add_flirt_recipient(flirter, target) // target WAS FLIRTED BY flirter
+	ui_interact(flirter)
+	ui_interact(target)
 
 /datum/controller/subsystem/chat/proc/add_flirt_target(mob/living/flirter, mob/living/target)
 	if(!istype(flirter) ||!istype(target))

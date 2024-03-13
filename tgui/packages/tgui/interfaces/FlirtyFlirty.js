@@ -197,7 +197,7 @@ const FlirtHeaderThings = (props, context) => {
               'ReturnTargetCkey': TargetCkey,
             })} />
         </Box>
-        <Box textAlign="left" fontSize="14px" color="label">
+        {/* <Box textAlign="left" fontSize="14px" color="label">
           <Button
             content={FlirtedNameReal}
             onClick={() => act(( 'ClearFlirtRecipient'), {
@@ -205,7 +205,7 @@ const FlirtHeaderThings = (props, context) => {
               'ReturnTargetCkey': TargetCkey,
             })} />
             last flirted with you!
-        </Box>
+        </Box> */}
       </Flex.Item>
       <Flex.Item shrink={0}>
         <Button
