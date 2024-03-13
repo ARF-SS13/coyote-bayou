@@ -161,6 +161,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isconstruct(A) (istype(A, /mob/living/simple_animal/hostile/construct))
 
 #define ismegafauna(A) (istype(A, /mob/living/simple_animal/hostile/megafauna))
+#define isdummy(A) (istype(A, /mob/living/carbon/human/dummy))
 
 //Misc mobs
 #define isobserver(A) (istype(A, /mob/dead/observer))

@@ -941,3 +941,13 @@
 		return maybelist
 	return list(maybelist)
 
+/// Used to have a var automagically swap between a list of options
+/// returns the next option (or the first if its the end)
+/proc/rotate_vars(current, list/options)
+	if(!current || !LAZYLEN(options))
+		return
+	var/varpos = options.Find(current)
+	if(!varpos)
+		return options
+	var/next = WRAP(varpos + 1, 1, LAZYLEN(options))
+	return LAZYACCESS(options, next)

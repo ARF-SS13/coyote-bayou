@@ -616,7 +616,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			//gross_image.layer = -layer_to_put_it
 			genital_overlay.loc = src
 			gross_image.loc = src
-			gross_image.layer = (position == "BEHIND") ? layer-1 : layer+1 // idfk
+			gross_image.layer = SSpornhud.get_layer(src, nad.pornhud_slot, position)
 			// and then add it to the genital_sprites layer list thing
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()

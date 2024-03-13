@@ -106,7 +106,15 @@ SUBSYSTEM_DEF(pornhud)
 	var/datum/genital_images/GI = get_genital_datum(flusher)
 	if(!GI)
 		return
-	GI.flush_genitals()
+	GI.flush_undies()
+
+/datum/controller/subsystem/pornhud/proc/flush_accessories(mob/living/carbon/human/flusher)
+	if(!ishuman(flusher))
+		return
+	var/datum/genital_images/GI = get_genital_datum(flusher)
+	if(!GI)
+		return
+	GI.flush_accessories()
 
 /datum/controller/subsystem/pornhud/proc/update_visibility(mob/living/carbon/human/dork, part, on_off)
 	if(!ishuman(dork))
@@ -115,6 +123,25 @@ SUBSYSTEM_DEF(pornhud)
 	if(!GI)
 		return
 	GI.update_visibility(part, on_off)
+
+/datum/controller/subsystem/pornhud/proc/get_layer(mob/living/carbon/human/dork, kind, position)
+	if(!ishuman(dork))
+		return MOB_LAYER
+	var/layer_out = dork.layer
+	switch(kind)
+		if(PHUD_BUTT,PHUD_BOOB,PHUD_PENIS,PHUD_BALLS,PHUD_VAG,PHUD_BELLY)
+			layer_out += (GENITAL_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+		if(PHUD_SHIRT)
+			layer_out += (SHIRT_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+		if(PHUD_PANTS)
+			layer_out += (PANTS_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+		if(PHUD_SOCKS)
+			layer_out += (SOCKS_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+		if(MUTANT_PORNHUD_TAIL)
+			layer_out += (WINGS_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+		if(MUTANT_PORNHUD_WINGS)
+			layer_out += (TAIL_LAYER_OFFSET * (position == "BEHIND" ? -1 : 1))
+	return layer_out
 
 /datum/controller/subsystem/pornhud/proc/generate_key(mob/living/carbon/human/newnadhaver)
 	if(!ishuman(newnadhaver))
@@ -162,19 +189,19 @@ SUBSYSTEM_DEF(pornhud)
 	var/belly_visible
 
 	var/list/tail = list() // nice and suggestive
-	var/tail_visible
+	var/tail_visible = TRUE
 
 	var/list/wings = list() // dingo wings
-	var/wings_visible
+	var/wings_visible = TRUE
 
 	var/image/undershirt
-	var/shirt_visible
+	var/shirt_visible = TRUE
 
 	var/image/underpants
-	var/underpants_visible
+	var/underpants_visible = TRUE
 
 	var/image/socks
-	var/socks_visible
+	var/socks_visible = TRUE
 
 	/// if this is true, the player has changed their appearance since the last time we updated
 	var/has_changed
@@ -188,6 +215,9 @@ SUBSYSTEM_DEF(pornhud)
 /datum/genital_images/New(mob/living/carbon/human/newowner)
 	. = ..()
 	owner = WEAKREF(newowner)
+	shirt_visible = !newowner.hidden_undershirt
+	underpants_visible = !newowner.hidden_underwear
+	socks_visible = !newowner.hidden_socks
 
 /// is this player whitelisted?
 /// if so, they can see genitals even if they're hidden
@@ -345,6 +375,8 @@ SUBSYSTEM_DEF(pornhud)
 	for(var/imglayer in imgs)
 		seer.client.images += imgs[imglayer]
 
+/// The main proc that compiles and dispatches images
+/// WE are showing THESE to SOMEONE ELSE
 /datum/genital_images/proc/get_all_images(datum/preferences/P)
 	if(!P)
 		return
@@ -376,12 +408,21 @@ SUBSYSTEM_DEF(pornhud)
 					all_images += belly
 	if(tail && tail_visible)
 		all_images += tail
+	if(wings && wings_visible)
+		all_images += wings
+	if(socks && socks_visible)
+		all_images += socks
+	if(underpants && underpants_visible)
+		all_images += underpants
+	if(undershirt && shirt_visible)
+		all_images += undershirt
 	var/list/imgsformatted = list()
 	for(var/image/I in all_images)
 		var/image/flat = imgsformatted["[I.layer]"]
 		if(!flat)
 			flat = image('icons/mob/hud.dmi', myowner, "")
 			flat.appearance_flags = RESET_COLOR|RESET_TRANSFORM
+			flat.layer = I.layer
 			imgsformatted["[I.layer]"] = flat
 		flat.overlays += I
 	cache_images(imgsformatted)
@@ -399,11 +440,21 @@ SUBSYSTEM_DEF(pornhud)
 		set_changed()
 	return TRUE
 
-/datum/genital_images/proc/flush_undies()
-	cache_images(get_all_images())
+/datum/genital_images/proc/flush_undies() // thats how you get a clog, dummy
+	var/changed = LAZYLEN(undershirt) || LAZYLEN(underpants) || LAZYLEN(socks)
 	undershirt = null
 	underpants = null
 	socks = null
+	if(changed)
+		set_changed()
+	return TRUE
+
+/datum/genital_images/proc/flush_accessories() // bye bye, car keys!
+	var/changed = LAZYLEN(wings) || LAZYLEN(tail)
+	wings = null
+	tail = null
+	if(changed)
+		set_changed()
 	return TRUE
 
 /datum/genital_images/proc/set_changed()

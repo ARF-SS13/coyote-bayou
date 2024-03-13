@@ -18111,6 +18111,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"bvM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "bvS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -24351,6 +24357,10 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
+"cNF" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "cNO" = (
 /obj/structure/flora/chomp/boulder,
 /turf/open/indestructible/ground/outside/desert,
@@ -25937,6 +25947,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/abandoned)
+"diS" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city)
 "diW" = (
 /obj/machinery/chem_master/primitive,
 /obj/effect/decal/cleanable/dirt{
@@ -34803,6 +34817,12 @@
 	},
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
+"fFr" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city)
 "fFx" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
@@ -42102,6 +42122,15 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"hEb" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "hEg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -44077,6 +44106,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/coyote/nash/firestation)
+"ieg" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "iej" = (
 /obj/structure/closet/secure_closet/goodies{
 	anchorable = 0;
@@ -57119,6 +57157,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lAX" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city)
 "lBg" = (
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
@@ -57899,6 +57943,13 @@
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lLn" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "lLu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -61434,6 +61485,9 @@
 /obj/machinery/light/small{
 	dir = 1;
 	light_color = "red"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
@@ -67904,6 +67958,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ooW" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city)
 "ooY" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -72226,6 +72295,11 @@
 	name = "the watering hole"
 	},
 /area/f13/building/sewers)
+"puM" = (
+/obj/structure/barricade/wooden,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "pva" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
@@ -73531,6 +73605,12 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"pLO" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "pLP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -85567,6 +85647,12 @@
 	icon_state = "verticalleftborderrighttop"
 	},
 /area/f13/wasteland/massfusion/entrance)
+"sZV" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "sZX" = (
 /obj/structure/rack/shelf_metal{
 	dir = 4
@@ -100413,6 +100499,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"wYM" = (
+/obj/structure/barricade/wooden,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/ruins)
 "wYQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -141357,16 +141450,16 @@ iLS
 aqd
 iLS
 mDA
-aaH
-aaH
+jOV
+jOV
 mDA
 mDX
 fit
 fit
-fit
+hvb
 fit
 eDZ
-fou
+jwf
 fou
 fou
 nGw
@@ -141613,18 +141706,18 @@ aae
 iLS
 iLS
 iLS
-aaH
-lzz
-lzz
+wYM
+pLO
+cNF
 rYN
 lIp
-tHQ
-tHQ
+fFr
+diS
 lIp
-tHQ
-tHQ
+jMz
+lAX
 lIp
-fit
+nGM
 fit
 lmE
 syi
@@ -141872,17 +141965,17 @@ aae
 aae
 lPa
 rYN
-lzz
+lLn
 rYN
-tHQ
+ooW
 lIp
-tHQ
-tHQ
-tHQ
+jMz
+oEN
+diS
 lIp
 lIp
 lIp
-fit
+ios
 lmE
 syi
 rjg
@@ -142128,8 +142221,8 @@ aaB
 aae
 aae
 mDA
-lzz
-lzz
+sZV
+bvM
 mDA
 iLS
 iLS
@@ -142385,7 +142478,7 @@ aaB
 aae
 aae
 mDA
-lzz
+bvM
 rYN
 aaH
 iLS
@@ -142641,9 +142734,9 @@ aaB
 aaB
 aae
 aae
-jOV
+puM
 rYN
-lzz
+hEb
 aaH
 iLS
 ftT
@@ -142899,7 +142992,7 @@ aaY
 aaB
 aae
 jOV
-lzz
+ieg
 dBl
 mDA
 iLS

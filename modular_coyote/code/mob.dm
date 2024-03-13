@@ -867,7 +867,7 @@
 	icon_dead = "gekko_dead"
 
 
- 
+
 /mob/living/simple_animal/advanced/gecko_leader
 	name = "gecko leader"
 	desc = "A large mutated reptile that has learned the basics of checks and balances."
@@ -1199,6 +1199,7 @@
 	name = "Modified Assaultron"
 	desc = "Why is it so thick?"
 	icon = 'icons/mob/splurtbot.dmi'
+	rotate_on_lying = TRUE
 	icon_state = "assaultronstandard"
 	icon_living = "assaultronstandard"
 	icon_dead = "assaultronstandard_dead"
@@ -1258,5 +1259,14 @@
 	icon_state = "pony"
 	icon_living = "pony"
 	icon_dead = "pony_dead"
+
+/mob/living/simple_animal/pet/giraffe
+	name = "giraffe"
+	desc = "A long necked goat"
+	icon = 'modular_coyote/icons/mob/giraffe.dmi'
+	icon_state = "giraffe"
+	icon_living = "giraffe"
+	icon_dead = "giraffe_dead"
+
 
 

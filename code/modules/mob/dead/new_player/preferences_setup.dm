@@ -45,8 +45,10 @@
 	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy()
 	mannequin.cut_overlays()  //this line needs to stay here to cut out all genitals showing up in the character preview
 	// Apply the Dummy's preview background first so we properly layer everything else on top of it.
-	mannequin.add_overlay(mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', bgstate, layer = SPACE_LAYER))
-	copy_to(mannequin, initial_spawn = TRUE)
+	var/image/the_floor = image('modular_citadel/icons/ui/backgrounds.dmi', mannequin, bgstate, layer = SPACE_LAYER)
+	the_floor.appearance_flags |= (RESET_TRANSFORM | KEEP_APART)
+	mannequin.add_overlay(the_floor)
+	copy_to(mannequin, initial_spawn = TRUE, sans_underpants = preview_hide_undies)
 
 	if(current_tab == LOADOUT_TAB)
 		//give it its loadout if not on the appearance tab
