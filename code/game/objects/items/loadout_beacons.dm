@@ -2417,12 +2417,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/cyberpunks
 
-/datum/loadout_box/crimsondeath
-	entry_tag = "Kitsunemimi Heavy Pistol"
-	entry_flags = LOADOUT_FLAG_PREMIUM
-	entry_class = LOADOUT_CAT_PISTOL
-	spawn_thing = /obj/item/storage/box/gun/pistol/crimsondeath
-
 /datum/loadout_box/borchardt
 	entry_tag = "9mm Borchardt"
 	entry_flags = LOADOUT_FLAG_WASTER
