@@ -1240,7 +1240,7 @@
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
-	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	simple_icon = 'icons/mob/raptorborg.dmi'
 	roundstart = FALSE
 	rotate_on_lying = FALSE
 	icon_width = 64
