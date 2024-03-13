@@ -2057,6 +2057,17 @@
 /datum/gear/donator/kits/crimsonquiver
 	name = "Crimson Death Bundle"
 	restricted_desc = "Ckey Required"
-	path = /obj/item/storage/box/gun/pistol/crimsondeath
+	path = /obj/item/storage/box/large/custom_kit/crimsondeath
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("crimsonquiver")
+
+	name = "Kitsunemimi Crimson Death pistol case"
+	desc = "Packed with an unique signature super heavy pistol for a special snowflake of a specific fiery red kitsune girl."
+
+/obj/item/storage/box/large/custom_kit/crimsondeath/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/ammo_box/magazine/ne577(src)
+	new /obj/item/ammo_box/magazine/ne577(src)
+	new /obj/item/ammo_box/magazine/ne577(src)

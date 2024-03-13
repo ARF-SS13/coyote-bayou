@@ -543,9 +543,9 @@
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/m577ne
-	name = "empty handgun magazine (.577 Nitro Express)"
+	name = "empty P-577 magazine (14mm)"
 	id = "ne577"
-	materials = list(/datum/material/iron = 6000)
+	materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
 	build_path = /obj/item/ammo_box/magazine/ne577/empty
 	category = list("initial", "Intermediate Magazines")
 
