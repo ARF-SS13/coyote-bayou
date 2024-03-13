@@ -1196,7 +1196,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 		var/list/sortinglist = list()
 		for(var/gg in GLOB.gun_balance_list)
 			sortinglist[gg] = GLOB.gun_balance_list[gg][sorttype]//Associate the sorting value to the key
-		sortTim(sortinglist, /proc/cmp_numeric_dsc, associative = TRUE)//Sort the DPS associations
+		sortTim(sortinglist, GLOBAL_PROC_REF(cmp_numeric_dsc), associative = TRUE)//Sort the DPS associations
 		for(var/gs in sortinglist)//Re-add the other variables
 			sortinglist[gs] = GLOB.gun_balance_list[gs]
 		GLOB.gun_balance_list = LAZYCOPY(sortinglist)//Copy the temporary sorted list into the global list

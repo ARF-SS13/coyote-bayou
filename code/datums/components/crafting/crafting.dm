@@ -1,6 +1,6 @@
 /datum/component/personal_crafting/Initialize()
 	if(ismob(parent))
-		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN, .proc/create_mob_button)
+		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN,PROC_REF(create_mob_button))
 
 /datum/component/personal_crafting/proc/create_mob_button(mob/user, client/CL)
 	var/datum/hud/H = user.hud_used
@@ -8,7 +8,7 @@
 	C.icon = H.ui_style
 	H.static_inventory += C
 	CL.screen += C
-	RegisterSignal(C, COMSIG_CLICK, .proc/component_ui_interact)
+	RegisterSignal(C, COMSIG_CLICK,PROC_REF(component_ui_interact))
 
 /datum/component/personal_crafting
 	var/busy
@@ -212,6 +212,7 @@
 			var/list/parts = del_reqs(R, a)
 			var/atom/movable/I = new R.result (get_turf(a.loc))
 			I.CheckParts(parts, R)
+			R.on_finished(a, parent)
 			if(send_feedback)
 				SSblackbox.record_feedback("tally", "object_crafted", 1, I.type)
 			return I //Send the item back to whatever called this proc so it can handle whatever it wants to do with the new item

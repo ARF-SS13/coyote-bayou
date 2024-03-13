@@ -29,6 +29,8 @@
 	reagents.add_reagent(get_random_reagent_id(), 15)
 
 	var/color = mix_color_from_reagents(reagents.reagent_list)
+	if(color == "rainbow")
+		color = "#ffffff"
 	add_atom_colour(color, FIXED_COLOUR_PRIORITY)
 
 /obj/item/reagent_containers/food/snacks/egg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)

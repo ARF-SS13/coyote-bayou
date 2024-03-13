@@ -111,8 +111,8 @@
 /mob/living/simple_animal/hostile/securitron/death()
 	do_sparks(3, TRUE, src)
 	for(var/i in 1 to 3)
-		addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(do_death_beep)), i * 1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(self_destruct)), 4 SECONDS)
 	return ..()
 
 /mob/living/simple_animal/hostile/securitron/Aggro()
@@ -262,5 +262,5 @@
 	minimum_distance = 1
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
-	addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(do_death_beep)), 1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(self_destruct)), 2 SECONDS)

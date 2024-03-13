@@ -11,6 +11,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	pass_flags = PASSTABLE | PASSGRILLE
 	anchored = TRUE
+	plane = MOB_PLANE //Patches all partical effects including spark to render over mobs
 
 /obj/effect/particle_effect/Initialize()
 	. = ..()
@@ -53,7 +54,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	for(var/i in 1 to number)
 		if(total_effects > 20)
 			return
-		// INVOKE_ASYNC(src, .proc/generate_effect) // STOP FUCKING ASYNCING
+		// INVOKE_ASYNC(src,PROC_REF(generate_effect)) // STOP FUCKING ASYNCING
 		generate_effect()
 
 
@@ -77,7 +78,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		sleep(5)
 		step(E,direction)
 	if(!QDELETED(src))
-		addtimer(CALLBACK(src, .proc/decrement_total_effect), 20)
+		addtimer(CALLBACK(src,PROC_REF(decrement_total_effect)), 20)
 */
 /datum/effect_system/proc/generate_effect()
 	if(holder)
@@ -93,7 +94,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	var/step_delay = 5
 
 	var/datum/move_loop/loop = SSmove_manager.move(effect, direction, step_delay, timeout = step_delay * step_amt, priority = MOVEMENT_ABOVE_SPACE_PRIORITY)
-	RegisterSignal(loop, COMSIG_PARENT_QDELETING, .proc/decrement_total_effect)
+	RegisterSignal(loop, COMSIG_PARENT_QDELETING,PROC_REF(decrement_total_effect))
 
 /datum/effect_system/proc/decrement_total_effect()
 	total_effects--

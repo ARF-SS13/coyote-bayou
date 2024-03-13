@@ -1153,8 +1153,9 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
-	plane = FLOOR_PLANE
+	plane = -15
 	layer = BELOW_OPEN_DOOR_LAYER
+	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"
@@ -1878,3 +1879,70 @@
 	name = "Blessed Gecko-Slayer"
 	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
 
+//Haybale
+
+/obj/structure/haybale
+	name = "haybale"
+	desc = "Don't toss a needle in it!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "haybale"
+
+/obj/structure/clothes
+	name = "clothing line"
+	desc = "Hang up your clothes!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "clothesline"
+
+/obj/structure/bridgefull
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_full"
+
+/obj/structure/bridgeupper
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_upper"
+
+/obj/structure/bridgelower
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_lower"
+
+/obj/structure/playstation
+	name = "Playstation"
+	icon_state = "ps"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/playstationcontroller
+	name = "Playstation with controllers"
+	icon_state = "pscontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snescontroller
+	name = "Super Nintendo with Controllers"
+	icon_state = "snescontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snes
+	name = "Super Nintendo"
+	icon_state = "snes"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/item/toy/gameboy
+	name = "Gameboy"
+	desc = "A handheld gaming system!"
+	icon = 'modular_coyote/icons/items/items.dmi'
+	icon_state = "gameboy"
+
+/obj/structure/flatscreen
+	name = "Flatscreen TV"
+	icon_state = "flatscreen"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0

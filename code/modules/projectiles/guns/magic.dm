@@ -71,7 +71,7 @@
 		return FALSE // Already full
 	soundloop.start()
 	charge_start_message()
-	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
+	charge_timer = addtimer(CALLBACK(src,PROC_REF(charge)), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/magic/proc/charge()
 	recharge_newshot()
@@ -83,7 +83,7 @@
 		return FALSE
 	charges++
 	charge_partial_message()
-	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
+	charge_timer = addtimer(CALLBACK(src,PROC_REF(charge)), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/magic/proc/charge_full_message()
 	audible_message("[src] lets out a satisfied hum and falls quiet.")

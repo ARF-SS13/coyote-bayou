@@ -460,6 +460,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
+/datum/quirk/treasurehunter 
+	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
+	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
+	value = 22
+	category = "Lifepath Quirks"
+	mechanics = "Allows you to craft loot spawners for free in the misc catagory, at the cost of time."
+	conflicts = list(
+
+	)
+	mob_trait = TRAIT_TREASURE_HUNTER
+	gain_text = span_notice("You really feel like digging.")
+	lose_text = span_notice("You really don't feel like digging.")
+	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
+	human_only = FALSE
+
+
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
@@ -1485,7 +1501,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 32
+	value = 14
 	category = "Food Quirks"
 	mechanics = "Your hunger never goes down, simple as that."
 	conflicts = list( //any of the eating quirks
@@ -1806,7 +1822,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You're basically a disney princess when it comes to some of the lesser critters of the swamplands."
 	value = 14
 	category = "Critter Quirks"
-	mechanics = "Specifically roaches, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
+	mechanics = "Specifically pillbugs, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
 	conflicts = list(
 		/datum/quirk/crittermaster,
 	)
@@ -1828,11 +1844,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/crittermaster
 	name = "Beast Master - Small Critters"
-	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
+	desc = "Whenever by psychic means or not, you gained ability to control pillbugs, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
 	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can also be tamed, but not controlled."
 	value = 34
 	category = "Critter Quirks"
-	mechanics = "You can tame and order around roaches, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
+	mechanics = "You can tame and order around pillbugs, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
 	conflicts = list(
 		/datum/quirk/critterfriend,
 	)
@@ -1955,7 +1971,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/mantisblade
 	name = "Cybernetic Arm Blader"
-	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblades with the *armblade verb."
+	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblade with the *cyber verb."
 
 	value = 32
 	category = "Mutant Quirks"
@@ -2621,7 +2637,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
 /datum/quirk/package/creatureofthenightgreater
-	name = " Creature of the Night - Greater"
+	name = "Creature of the Night - Greater"
 	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
 	value = 100
 	category = "Quirk Packages"
@@ -2630,18 +2646,24 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/hard_yards,
 		/datum/quirk/night_vision_greater,
 		/datum/quirk/package/creatureofthenightlesser
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION_GREATER
 	gain_text = span_notice("Your night hunting instincts enhance!")
 	lose_text = span_notice("Your night hunting instincts fade away.")
+	medical_record_text = "Patient claims that they have night vision."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightgreater/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
 
+/datum/quirk/package/creatureofthenightgreater/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightgreater/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 		REMOVE_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
@@ -2656,18 +2678,24 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/night_vision,
 		/datum/quirk/soft_yards,
 		/datum/quirk/package/creatureofthenightgreater
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("You feel more attuned in darker places.")
 	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
+	medical_record_text = "Patient claims they can see in the dark."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightlesser/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
+/datum/quirk/package/creatureofthenightlesser/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightlesser/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")

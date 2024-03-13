@@ -1526,7 +1526,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 					var/shots_this_limb = 0
 					for(var/t in shuffle(open_adj_turfs))
 						var/turf/iter_turf = t
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/firing_squad, dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
+						addtimer(CALLBACK(usr, GLOBAL_PROC_REF(firing_squad), dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
 						delay_counter += delay_per_shot
 						shots_this_limb++
 						if(shots_this_limb > shots_per_limb_per_rep)

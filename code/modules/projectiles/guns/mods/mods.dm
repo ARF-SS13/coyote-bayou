@@ -381,8 +381,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(20,50) * 0.01
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(25,45) * 0.01,
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)

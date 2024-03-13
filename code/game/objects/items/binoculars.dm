@@ -13,7 +13,7 @@
 
 /obj/item/binoculars/wield(mob/living/user)
 	. = ..()
-	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 	listeningTo = user
 	user.visible_message(span_notice("[user] holds [src] up to [user.p_their()] eyes."), span_notice("You hold [src] up to your eyes."))
 	item_state = "binoculars_wielded"

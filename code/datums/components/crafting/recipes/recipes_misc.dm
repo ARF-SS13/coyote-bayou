@@ -407,7 +407,7 @@
 	name = "Picket Sign"
 	result = /obj/item/picket_sign
 	reqs = list(/obj/item/stack/rods = 1,
-				/obj/item/stack/sheet/cardboard = 2)
+				/obj/item/stack/sheet/mineral/wood = 2)
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

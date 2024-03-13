@@ -119,6 +119,10 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
+/mob/living/simple_animal/hostile/gecko/Aggro()
+	..()
+	summon_backup(15)
+	say("𐎧𐎤𐎫𐎯!!") // https://lingojam.com/Eng-Cuneiform  In this case they're just calling for help.
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
@@ -764,8 +768,6 @@
 	M.update_damage_hud()
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(10))
 		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
 		to_chat(M, span_warning("[pain_message]"))
@@ -775,8 +777,6 @@
 	M.adjustStaminaLoss(10, 0)
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(5))
 		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
 		to_chat(M, span_notice("[pain_message]"))
@@ -878,6 +878,11 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
 	. = ..()
+
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	.=..()
+	resize = 0.8
+	update_transform()
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"

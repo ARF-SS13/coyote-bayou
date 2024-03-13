@@ -23,7 +23,7 @@
 	GLOB.shuttle_caller_list -= src
 	SSshuttle.autoEvac()
 
-	INVOKE_ASYNC(src, .proc/ShutOffDoomsdayDevice)
+	INVOKE_ASYNC(src,PROC_REF(ShutOffDoomsdayDevice))
 
 	if(explosive)
 		spawn(10)

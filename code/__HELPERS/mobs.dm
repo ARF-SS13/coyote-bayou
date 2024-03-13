@@ -175,6 +175,7 @@
 		"snout"				= pick(GLOB.snouts_list),
 		"horns"				= "None",
 		"horns_color"		= "85615a",
+		"blood_color"		= "",
 		"ears"				= "None",
 		"frills"			= pick(GLOB.frills_list),
 		"spines"			= pick(GLOB.spines_list),

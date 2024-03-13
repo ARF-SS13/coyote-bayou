@@ -269,3 +269,10 @@
 	. = ..()
 	can_hold = GLOB.ammobelt_allowed
 	can_hold |= GLOB.gunbelt_allowed
+
+/// Saddle-bags
+/datum/component/storage/concrete/pockets/saddlebag
+	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
