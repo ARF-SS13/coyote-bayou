@@ -646,7 +646,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_14MM)
 	ammo_type = /obj/item/ammo_casing/p14mm
-	max_ammo = 20
+	max_ammo = 18
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
@@ -659,7 +659,7 @@
 /obj/item/ammo_box/m14mm/improvised
 	name = "bag with reloaded 14mm bullets"
 	icon_state = "improvshotbag"
-	max_ammo = 25
+	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 	multiple_sprites = 3
 
