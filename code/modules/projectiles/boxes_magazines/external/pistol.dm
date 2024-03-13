@@ -280,7 +280,7 @@
 
 /obj/item/ammo_box/magazine/ne577
 	name = "handgun magazine for P-577"
- desc = "A handgun magazine for .577 Nitro Express, works with 14mm instead."
+	desc = "A handgun magazine for .577 Nitro Express, works with 14mm instead."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "577ne"
 	ammo_type = /obj/item/ammo_casing/p14mm
