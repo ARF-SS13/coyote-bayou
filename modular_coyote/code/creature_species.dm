@@ -1240,7 +1240,7 @@
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
-	simple_icon = 'icons/mob/raptorborg.dmi'
+	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	roundstart = FALSE
 	rotate_on_lying = FALSE
 	icon_width = 64
@@ -1346,7 +1346,7 @@
 /mob/living/carbon/human/species/marauder	
 	race = /datum/species/adapted/mechs/marauder
 
-/datum/species/adapted/mechs/serph
+/datum/species/adapted/mechs/seraph
 	name = "Adapted Seraph"
 	id = "seraph"
 	roundstart = TRUE
