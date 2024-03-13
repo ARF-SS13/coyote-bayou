@@ -512,6 +512,25 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
+/datum/techweb_node/basic_crafting
+	id = "basic_crafting"
+	display_name = "Basic Weapon Crafting Parts"
+	description = "Parts are a general foundation building block for success."
+	prereq_ids = list("engineering", "high_efficiency")
+	design_ids = list("metal_parts", "good_parts", "electronic_parts")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
+/datum/techweb_node/adv_crafting
+	id = "adv_crafting"
+	display_name = "Advanced Weapon Crafting Parts"
+	description = "Our parts break the laws in many different regions!"
+	prereq_ids = list("adv_engi", "future_parts")
+	design_ids = list("flux_capacitor", "focused_lens", "conductor_coil","adv_receiver", "weapon_assembly", "super_alloy")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	export_price = 5000
+
+
 /*
 /datum/techweb_node/electric_weapons
 	id = "electronic_weapons"
