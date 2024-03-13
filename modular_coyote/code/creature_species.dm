@@ -1196,7 +1196,7 @@
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = ""
 	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOTRANSSTING,EYECOLOR,ROBOTIC_LIMBS,NO_DNA_COPY,NOEYES,LIPS,)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_RADIMMUNE,TRAIT_NOBREATH,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,)
+	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_RADIMMUNE,TRAIT_NOBREATH,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST|MOB_SYNTH
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
@@ -1220,6 +1220,7 @@
 	damage_overlay_type = null
 	exotic_bloodtype = "S"
 	exotic_blood_color = BLOOD_COLOR_OIL
+	species_type = "robotic" // It was just missing this little thing, I found it in ipc.dm. Hopefully this stops mechs from bleeding/getting wounds
 
 /datum/species/adapted/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return TRUE
