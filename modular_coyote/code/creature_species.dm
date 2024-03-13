@@ -1252,70 +1252,70 @@
 	id = "secraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/secraptor
-	race = /datum/species/adapted/secraptor
+	race = /datum/species/adapted/raptorborg/secraptor
 
 /datum/species/adapted/raptorborg/sciraptor
 	name = "Adapted Sciraptor"
 	id = "sciraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/sciraptor
-	race = /datum/species/adapted/sciraptor
+	race = /datum/species/adapted/raptorborg/sciraptor
 
 /datum/species/adapted/raptorborg/medraptor
 	name = "Adapted Medraptor"
 	id = "medraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/medraptor
-	race = /datum/species/adapted/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
 
 /datum/species/adapted/raptorborg/medraptor
 	name = "Adapted Medraptor"
 	id = "medraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/medraptor
-	race = /datum/species/adapted/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
 
 /datum/species/adapted/raptorborg/engiraptor
 	name = "Adapted Engiraptor"
 	id = "engiraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/engiraptor
-	race = /datum/species/adapted/engiraptor
+	race = /datum/species/adapted/raptorborg/engiraptor
 
 /datum/species/adapted/raptorborg/mineraptor
 	name = "Adapted Mineraptor"
 	id = "mineraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/mineraptor
-	race = /datum/species/adapted/mineraptor
+	race = /datum/species/adapted/raptorborg/mineraptor
 
 /datum/species/adapted/raptorborg/traumaraptor
 	name = "Adapted Traumaraptor"
 	id = "traumaraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/traumaraptor
-	race = /datum/species/adapted/traumaraptor
+	race = /datum/species/adapted/raptorborg/traumaraptor
 
 /datum/species/adapted/raptorborg/janiraptor
 	name = "Adapted Janiraptor"
 	id = "janiraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/janiraptor
-	race = /datum/species/adapted/janiraptor
+	race = /datum/species/adapted/raptorborg/janiraptor
 
 /datum/species/adapted/raptorborg/serviraptor
 	name = "Adapted Serviraptor"
 	id = "serviraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/serviraptor
-	race = /datum/species/adapted/serviraptor
+	race = /datum/species/adapted/raptorborg/serviraptor
 
 /datum/species/adapted/raptorborg/fancyraptor
 	name = "Adapted Fancyraptor"
 	id = "fancyraptor"
 	roundstart = TRUE
 /mob/living/carbon/human/species/fancyraptor
-	race = /datum/species/adapted/fancyraptor
+	race = /datum/species/adapted/raptorborg/fancyraptor
 
 //get in the mech, shinji
 /datum/species/adapted/mechs
