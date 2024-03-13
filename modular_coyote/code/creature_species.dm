@@ -1224,7 +1224,7 @@
 /datum/species/adapted/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return TRUE
 
-/datum/species/adapted(mob/living/carbon/human/H)
+/datum/species/adapted/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
