@@ -35,7 +35,7 @@ export const FlirtyFlirty = (props, context) => {
     <Window
       theme="ntos"
       width={640}
-      height={480}
+      height={550}
       resizable>
       <Window.Content>
         <Stack fill vertical>
@@ -371,9 +371,7 @@ const FlirtJizz = (props, context) => {
 
   const FilteredAllFlirts = GetFlirtsInCategory(SelectedCategory, context);
 
-  const Paginate = SearchTerm !== '' || SelectedCategory === AllCategories[0]
-    ? true
-    : false;
+  const Paginate = true;
   const ShowRange = Paginate ? [CurrentPage * FlirtsPerPage - FlirtsPerPage, CurrentPage * FlirtsPerPage] : [0, FilteredAllFlirts.length];
   const ShowFlirts = FilteredAllFlirts.slice(ShowRange[0], ShowRange[1]);
 
@@ -548,9 +546,9 @@ const FlirtPageBar = (props, context) => {
     setSelectedCategory,
   ] = useLocalState(context, 'SelectedCategory', AllFlirts);
 
-  if (SearchTerm === '' && SelectedCategory !== AllCategories[0]) {
-    return (<Box />);
-  }
+  // if (SearchTerm === '' && SelectedCategory !== AllCategories[0]) {
+  //   return (<Box />);
+  // }
   const Cat2Use = SearchTerm ? AllFlirts[0] : SelectedCategory;
   const FilteredAllFlirts = GetFlirtsInCategory(Cat2Use, context);
 
