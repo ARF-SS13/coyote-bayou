@@ -25,6 +25,8 @@ SUBSYSTEM_DEF(chat)
 	/// list of flirt ckey things so that we can store their target or something
 	/// format: list("flirterckey" = "targetckey")
 	var/list/active_flirters = list()
+	/// format: list("targetckey" = "flirterckey")
+	var/list/active_flirtees = list()
 	/// list of flirters who flirted so we can prevent spum
 	/// format: list("flirterckey" = 21049190587190581)
 	var/list/flirt_cooldowns = list()
@@ -134,6 +136,10 @@ SUBSYSTEM_DEF(chat)
 		return
 	return flirt.flirt_aoe(flirter)
 
+/datum/controller/subsystem/chat/proc/flirt_occurred(mob/living/flirter, mob/living/target)
+	add_flirt_target(flirter, target) // flirter FLIRTED with target
+	add_flirt_recipient(flirter, target) // target WAS FLIRTED BY flirter
+
 /datum/controller/subsystem/chat/proc/add_flirt_target(mob/living/flirter, mob/living/target)
 	if(!istype(flirter) ||!istype(target))
 		return
@@ -166,6 +172,38 @@ SUBSYSTEM_DEF(chat)
 		return
 	return ckey2mob(TargetCkey)
 
+/datum/controller/subsystem/chat/proc/add_flirt_recipient(mob/living/flirter, mob/living/recipient)
+	if(!istype(flirter) ||!istype(recipient))
+		return
+	if(!flirter.ckey ||!recipient.ckey)
+		return
+	if(!flirter.client ||!recipient.client)
+		return
+	active_flirtees[recipient.ckey] = flirter.ckey
+	return TRUE
+
+/datum/controller/subsystem/chat/proc/remove_flirt_recipient(mob/living/flirter)
+	if(!istype(flirter))
+		return
+	if(!flirter.ckey)
+		return
+	if(!flirter.client)
+		return
+	active_flirtees -= flirter.ckey
+	return TRUE
+
+/datum/controller/subsystem/chat/proc/get_flirt_recipient(mob/living/flirter)
+	if(!istype(flirter))
+		return
+	if(!flirter.ckey)
+		return
+	if(!flirter.client)
+		return
+	var/TargetCkey = LAZYACCESS(active_flirtees, flirter.ckey)
+	if(!TargetCkey)
+		return
+	return ckey2mob(TargetCkey)
+
 /// YES IM BLOWING CHAT'S TGUI LOAD ON FLIRTING, FIGHT ME
 /datum/controller/subsystem/chat/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -178,11 +216,16 @@ SUBSYSTEM_DEF(chat)
 /datum/controller/subsystem/chat/ui_data(mob/user)
 	var/list/data = list()
 	var/mob/living/heart = get_flirt_target(user)
+	var/mob/living/hearted = get_flirt_recipient(user)
 	data["DP"] = SSquirks.dp
 	data["FlirterCkey"] = user ? user.ckey : "AAAGOOD" // nulls are falsy
 	data["FlirterName"] = user ? user.name : "Some Dope"
+	/// who WE last flirted with
 	data["TargetCkey"] = heart ? heart.ckey : "AAAGOOD" // balls are nullsy
 	data["TargetName"] = heart ? heart.name : "AAABAD"
+	/// who last flirted with US
+	data["LastFlirtedByCkey"] = hearted ? hearted.ckey : "AAAGOOD" // balls are nullsy
+	data["LastFlirtedByName"] = hearted ? hearted.name : "AAABAD"
 	return data
 
 /// holds the whole enchilada
@@ -219,11 +262,7 @@ SUBSYSTEM_DEF(chat)
 			if(LAZYACCESS(flirt_cooldowns, flirter.ckey) < world.time)
 				to_chat(flirter, span_warning("Hold your horses! You're still working on that last flirt!"))
 				return
-			remove_flirt_target(flirter)
-			if(isliving(target))
-				return F.flirt_directed(flirter, target)
-			else
-				return F.give_flirter(flirter, target)
+			return F.give_flirter(flirter, target)
 
 /datum/controller/subsystem/chat/ui_state(mob/user)
 	return GLOB.always_state

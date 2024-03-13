@@ -176,26 +176,35 @@ const FlirtHeaderThings = (props, context) => {
     FlirterCkey,
     TargetName,
     TargetCkey,
+    FlirtedName,
   } = data;
 
   const HasTarget = TargetName !== "AAABAD";
-  const TargNameReal = HasTarget ? TargetName : "No one";
+  const HasFlirted = TargetName !== "AAABAD";
+  const TargNameReal = HasTarget ? TargetName : "No one (yet!)";
+  const FlirtedNameReal = HasFlirted ? FlirtedName : "No one (yet!)";
   const HelpText = "How do I flirt?";
 
   return (
     <Flex direction="row">
       <Flex.Item grow={1}>
         <Box textAlign="left" fontSize="14px" color="label">
-          Your next flirt will be sent to:
+          You last flirted with:
           <Button
             content={TargNameReal}
-            onClick={() => act((
-              HasTarget
-              ? 'ClearFlirtTarget'
-              : 'GiveFlirtTargetItem'), {
+            onClick={() => act(( 'ClearFlirtTarget'), {
               'ReturnFlirterCkey': FlirterCkey,
               'ReturnTargetCkey': TargetCkey,
             })} />
+        </Box>
+        <Box textAlign="left" fontSize="14px" color="label">
+          <Button
+            content={FlirtedNameReal}
+            onClick={() => act(( 'ClearFlirtRecipient'), {
+              'ReturnFlirterCkey': FlirterCkey,
+              'ReturnTargetCkey': TargetCkey,
+            })} />
+            last flirted with you!
         </Box>
       </Flex.Item>
       <Flex.Item shrink={0}>

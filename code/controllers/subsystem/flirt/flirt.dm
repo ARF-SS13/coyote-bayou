@@ -77,9 +77,9 @@
 	/// dooesnt support pronouns cus idk
 	to_chat(flirter, msg_to_me)
 	to_chat(target, msg_to_you)
-	if(requests_reply)
-		SSchat.add_flirt_target(target, flirter)
-		to_chat(target, reply_request_text)
+	do_sound_at(flirter)
+	do_sound_at(target)
+	SSchat.flirt_occurred(flirter, target)
 	tell_ghosting_admins(flirter, target)
 	return TRUE
 
@@ -136,6 +136,7 @@
 /datum/flirt/proc/preview_flirt(mob/living/previewer)
 	if(!previewer)
 		return
+	to_chat(previewer, span_notice("<br>"))
 	to_chat(previewer, span_notice("Here is a preview for [flirtname]!"))
 	to_chat(previewer, span_notice("When directed at someone, you will see:"))
 	to_chat(previewer, "[format_directed_selfmessage(previewer.name, "Cutiepants")]")
@@ -148,6 +149,7 @@
 		to_chat(previewer, span_notice("This flirt doesn't have a specific AoE message, so it will not do anything when directed at everyone."))
 	if(sound_to_do)
 		to_chat(previewer, span_notice("This flirt also makes a sound that'll be heard by just you and whoever you direct this at! Click the sound test button to hear it."))
+	to_chat(previewer, span_notice("<br>"))
 	return TRUE
 
 /datum/flirt/proc/preview_sound(mob/living/previewer)
@@ -156,7 +158,10 @@
 	if(!sound_to_do)
 		to_chat(previewer, span_notice("This flirt doesn't have a sound to play, sorry!"))
 		return
-	previewer.playsound_local(get_turf(previewer), sound_to_do, 75, FALSE, FALSE)
+	do_sound_at(previewer)
+
+/datum/flirt/proc/do_sound_at(mob/living/sounder)
+	sounder.playsound_local(get_turf(sounder), sound_to_do, 100, FALSE, FALSE)
 
 /datum/flirt/proc/tell_ghosting_admins(mob/living/flirter, mob/living/target)
 	if(!flirter)
@@ -174,7 +179,7 @@
 			continue
 		if(!check_rights_for(ghost.client, R_ADMIN))
 			continue
-		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, flirter)] flirted '[flirtname]' at [target?FOLLOW_LINK(ghost, target):"everyone around em"]</span>")
+		ghost.show_message("<span class='emote'>[ADMIN_LOOKUPFLW(flirter)] flirted '[flirtname]' at [target ? ADMIN_LOOKUPFLW(target) : "everyone around em"]</span>")
 
 /datum/flirt/proc/format_for_tgui()
 	var/list/data = list()
