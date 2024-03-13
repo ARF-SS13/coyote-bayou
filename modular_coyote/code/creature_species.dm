@@ -1230,6 +1230,93 @@
 /mob/living/carbon/human/species/thicktron_standard
 	race = /datum/species/adapted/thicktron_standard
 
+/datum/species/adapted/thicktron_medical
+	name = "Adapted Meditron"
+	simple_icon = 'icons/mob/robots.dmi'
+	id = "assaultron_sase"
+	roundstart = TRUE
+/mob/living/carbon/human/species/thicktron_medical
+	race = /datum/species/adapted/thicktron_medical
+
+/datum/species/adapted/raptorborg
+	name = "REPORT THIS AS A BUG"
+	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	roundstart = FALSE
+	rotate_on_lying = FALSE
+	icon_width = 64
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/raptorborg/secraptor
+	name = "Adapted Secraptor"
+	id = "secraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/secraptor
+	race = /datum/species/adapted/raptorborg/secraptor
+
+/datum/species/adapted/raptorborg/sciraptor
+	name = "Adapted Sciraptor"
+	id = "sciraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/sciraptor
+	race = /datum/species/adapted/raptorborg/sciraptor
+
+/datum/species/adapted/raptorborg/medraptor
+	name = "Adapted Medraptor"
+	id = "medraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
+
+/datum/species/adapted/raptorborg/medraptor
+	name = "Adapted Medraptor"
+	id = "medraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
+
+/datum/species/adapted/raptorborg/engiraptor
+	name = "Adapted Engiraptor"
+	id = "engiraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/engiraptor
+	race = /datum/species/adapted/raptorborg/engiraptor
+
+/datum/species/adapted/raptorborg/mineraptor
+	name = "Adapted Mineraptor"
+	id = "mineraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mineraptor
+	race = /datum/species/adapted/raptorborg/mineraptor
+
+/datum/species/adapted/raptorborg/traumaraptor
+	name = "Adapted Traumaraptor"
+	id = "traumaraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/traumaraptor
+	race = /datum/species/adapted/raptorborg/traumaraptor
+
+/datum/species/adapted/raptorborg/janiraptor
+	name = "Adapted Janiraptor"
+	id = "janiraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/janiraptor
+	race = /datum/species/adapted/raptorborg/janiraptor
+
+/datum/species/adapted/raptorborg/serviraptor
+	name = "Adapted Serviraptor"
+	id = "serviraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/serviraptor
+	race = /datum/species/adapted/raptorborg/serviraptor
+
+/datum/species/adapted/raptorborg/fancyraptor
+	name = "Adapted Fancyraptor"
+	id = "fancyraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/fancyraptor
+	race = /datum/species/adapted/raptorborg/fancyraptor
+
 //get in the mech, shinji
 /datum/species/adapted/mechs
 	name = "REPORT THIS AS A BUG"
@@ -1244,5 +1331,62 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/gygax	
 	race = /datum/species/adapted/mechs/gygax
+
+/datum/species/adapted/mechs/ripley
+	name = "Adapted Ripley"
+	id = "ripley"
+	roundstart = TRUE
+/mob/living/carbon/human/species/ripley	
+	race = /datum/species/adapted/mechs/ripley
+
+/datum/species/adapted/mechs/marauder
+	name = "Adapted Marauder"
+	id = "marauder"
+	roundstart = TRUE
+/mob/living/carbon/human/species/marauder	
+	race = /datum/species/adapted/mechs/marauder
+
+/datum/species/adapted/mechs/seraph
+	name = "Adapted Seraph"
+	id = "seraph"
+	roundstart = TRUE
+/mob/living/carbon/human/species/seraph	
+	race = /datum/species/adapted/mechs/seraph
+
+/datum/species/adapted/mechs/phazon
+	name = "Adapted Phazon"
+	id = "phazon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/phazon
+	race = /datum/species/adapted/mechs/phazon //This one is for you, Nioha
+
+/datum/species/adapted/mechs/mauler
+	name = "Adapted Mauler"
+	id = "mauler"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mauler
+	race = /datum/species/adapted/mechs/mauler
+
+/datum/species/adapted/mechs/odysseus
+	name = "Adapted Odysseus"
+	id = "odysseus"
+	roundstart = TRUE
+/mob/living/carbon/human/species/odysseus
+	race = /datum/species/adapted/mechs/odysseus
+
+/datum/species/adapted/mechs/durand
+	name = "Adapted Durand"
+	id = "durand"
+	roundstart = TRUE
+/mob/living/carbon/human/species/durand
+	race = /datum/species/adapted/mechs/durand
+
+/datum/species/adapted/mechs/medigax
+	name = "Adapted Medigax"
+	id = "medigax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medigax
+	race = /datum/species/adapted/mechs/medigax
+
 
 //End Synthetic Creatures
