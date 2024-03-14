@@ -1237,7 +1237,7 @@
 		H.adjustToxLoss(-H.toxloss)
 
 /datum/species/adapted/thicktron_standard
-	name = "Adapted Assaultron"
+	name = "Adapted Assaultron(modified)"
 	id = "assaultronstandard"
 	roundstart = TRUE
 /mob/living/carbon/human/species/thicktron_standard
@@ -1248,12 +1248,19 @@
 	simple_icon = 'icons/mob/robots.dmi'
 	roundstart = FALSE
 
+/datum/species/adapted/simplebot/handy
+	name = "Adapted Handy Unit"
+	id = "robot"
+	roundstart = TRUE
+/mob/living/carbon/human/species/handy
+	race = /datum/species/adapted/simplebot/handy
+
 /datum/species/adapted/simplebot/assaultron_med
 	name = "Adapted Meditron"
 	id = "assaultron_sase"
 	roundstart = TRUE
 /mob/living/carbon/human/species/assaultron_med
-	race = /datum/species/adapted/assaultron_med
+	race = /datum/species/adapted/simplebot/assaultron_med
 
 /datum/species/adapted/simplebot/robobrain
 	name = "Adapted Robobrain"
