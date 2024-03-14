@@ -1190,6 +1190,7 @@
 	name = "REPORT THIS AS A BUG"
 	//The id is the living and standing icon state of the creature.
 	simple_icon = 'icons/mob/splurtbot.dmi'
+	say_mod = "beeps"
 	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
@@ -1236,19 +1237,38 @@
 		H.adjustToxLoss(-H.toxloss)
 
 /datum/species/adapted/thicktron_standard
-	name = "Adapted Assaultron"
+	name = "Adapted Assaultron(modified)"
 	id = "assaultronstandard"
 	roundstart = TRUE
 /mob/living/carbon/human/species/thicktron_standard
 	race = /datum/species/adapted/thicktron_standard
 
-/datum/species/adapted/thicktron_medical
-	name = "Adapted Meditron"
+/datum/species/adapted/simplebot
+	name = "REPORT THIS AS A BUG"
 	simple_icon = 'icons/mob/robots.dmi'
+	roundstart = FALSE
+
+/datum/species/adapted/simplebot/handy
+	name = "Adapted Handy Unit"
+	id = "robot"
+	roundstart = TRUE
+/mob/living/carbon/human/species/handy
+	race = /datum/species/adapted/simplebot/handy
+
+/datum/species/adapted/simplebot/assaultron_med
+	name = "Adapted Meditron"
 	id = "assaultron_sase"
 	roundstart = TRUE
-/mob/living/carbon/human/species/thicktron_medical
-	race = /datum/species/adapted/thicktron_medical
+/mob/living/carbon/human/species/assaultron_med
+	race = /datum/species/adapted/simplebot/assaultron_med
+
+/datum/species/adapted/simplebot/robobrain
+	name = "Adapted Robobrain"
+	id = "robobrain"
+	icon_dead_suffix = "_d"
+	roundstart = TRUE
+/mob/living/carbon/human/species/robobrain
+	race = /datum/species/adapted/simplebot/robobrain
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
