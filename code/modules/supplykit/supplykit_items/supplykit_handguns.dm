@@ -122,6 +122,11 @@
 	desc = "A futuristic pistol that takes 5 round magazines of 14mm magnum."
 	item = /obj/item/gun/ballistic/automatic/pistol/ticon
 
+/datum/supplykit_item/handguns/p577
+	name = "P-577 Assult pistol"
+	desc = "A stylish anti-tank pistol that takes 5 round magazines of 14mm magnum."
+	item = /obj/item/gun/ballistic/automatic/pistol/p577
+
 /datum/supplykit_item/handguns/volcanic
 	name = "Volcanic Pistol"
 	desc = "A single action pistol in .45acp, with a 6 round internal magazine."

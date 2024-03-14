@@ -74,6 +74,11 @@
 	desc = "A 5 round magazine for the P-36 assault pistol."
 	item = /obj/item/ammo_box/magazine/m14mmcustom
 
+/datum/supplykit_item/magazines/p577
+	name = "14mm P-577 Magazine"
+	desc = "A 5 round magazine for the P-577 Superheavy pistol."
+	item = /obj/item/ammo_box/magazine/ne577
+
 /datum/supplykit_item/magazines/m556short
 	name = "5.56 Short Magazine"
 	desc = "A tiny 10 round magazine for 5.56 rifles."
