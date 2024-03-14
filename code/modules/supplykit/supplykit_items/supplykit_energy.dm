@@ -94,14 +94,20 @@
 
 /datum/supplykit_item/energy/tgcarbine
 	name = "Laser Carbine"
-	desc = "A small laser carbine with an internal self charging battery."
+	desc = "A small laser carbine with an unremovable battery, doesnt self charge."
 	item = /obj/item/gun/energy/laser/tg/carbine
-	cost = 40
+	cost = 20
 
 /datum/supplykit_item/energy/tgpistol
 	name = "Miniature Laser Pistol"
-	desc = "A compact laser pistol with an internal self charging battery."
+	desc = "A compact laser pistol with an unremovable battery, doesnt self charge."
 	item = /obj/item/gun/energy/laser/tg/carbine/pistol
+	cost = 20
+
+/datum/supplykit_item/energy/covpistol
+	name = "Covenant Plasma Pistol"
+	desc = "An alien looking plasma pistol with an internal self charging battery."
+	item = /obj/item/gun/energy/laser/plasma/covpistol
 	cost = 40
 
 /datum/supplykit_item/energy/plasmarifle
@@ -126,3 +132,8 @@
 	desc = "An old Military laser pistol with high rate of fire. takes EC."
 	item = /obj/item/gun/energy/laser/pistol/worn
 
+/datum/supplykit_item/energy/portacharger
+	name = "Portable Recharger"
+	desc = "A normal size recharger box for recharging powercells and E-Pistols"
+	item = /obj/item/storage/battery_box
+	cost = 40
