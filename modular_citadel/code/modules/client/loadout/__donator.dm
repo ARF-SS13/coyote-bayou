@@ -2062,9 +2062,11 @@
 	ckeywhitelist = list("crimsonquiver")
 
 /obj/item/storage/box/large/custom_kit/crimsondeath/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath(src)
+	//for some reason the gun starts empty, so does the mags??
+	new /obj/item/gun/ballistic/automatic/pistol/p500/crimsondeath(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/ne577(src)
 	new /obj/item/ammo_box/magazine/ne577(src)
 	new /obj/item/ammo_box/magazine/ne577(src)
+	new /obj/item/iconmodkit/p577(src) //used to convert the p577 to look like crimsondeath if ever acquired.

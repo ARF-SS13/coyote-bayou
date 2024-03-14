@@ -222,6 +222,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 2,               //74 (102)    1
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 2,                     //43          1
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 2,                   //40          4
+		/obj/item/gun/ballistic/automatic/pistol/p500 = 2,						//64		  5			i dont know about this man this should not be in here.
 	)
 
 /// DPS should be 100-150 ish
@@ -344,6 +345,7 @@
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
 
 		//wildcards and sidearms
+		/obj/item/gun/ballistic/automatic/pistol/p500/p577 = 3,				//129 5
 		/obj/item/gun/ballistic/rifle/mag/antimaterial = 3,               //152 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 1,        //254 1

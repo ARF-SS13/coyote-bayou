@@ -279,7 +279,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/ne577
-	name = "handgun magazine for P-577"
+	name = "handgun magazine for P-500"
 	desc = "A handgun magazine for .577 Nitro Express, works with 14mm instead."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "577ne"

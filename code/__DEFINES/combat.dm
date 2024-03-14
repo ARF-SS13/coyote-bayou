@@ -1005,6 +1005,13 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_EXTRA_DAMAGE_T4 1.35
 #define GUN_EXTRA_DAMAGE_T5 1.50
 #define GUN_EXTRA_DAMAGE_T6 1.75 // :^) ~Fenny
+#define GUN_EXTRA_DAMAGE_T7 1.90 // even fennier
+#define GUN_EXTRA_DAMAGE_T8 2 // mega fenny and it goes worse from here
+#define GUN_EXTRA_DAMAGE_T9 2.25
+#define GUN_EXTRA_DAMAGE_T10 2.50 //just use another ammo type jesus fuc-
+#define GUN_EXTRA_DAMAGE_T11 3
+#define GUN_EXTRA_DAMAGE_T12 3.50
+#define GUN_EXTRA_DAMAGE_T14 4
 
 /// Also multiplies the gun's projectile damage, but so it does less damage
 #define GUN_LESS_DAMAGE_T1 0.90

@@ -122,10 +122,10 @@
 	desc = "A futuristic pistol that takes 5 round magazines of 14mm magnum."
 	item = /obj/item/gun/ballistic/automatic/pistol/ticon
 
-/datum/supplykit_item/handguns/p577
-	name = "P-577 Assult pistol"
+/datum/supplykit_item/handguns/p500
+	name = "P-500 Superheavy pistol"
 	desc = "A stylish slow firing anti-tank pistol that takes 5 round magazines of 14mm magnum."
-	item = /obj/item/gun/ballistic/automatic/pistol/p577
+	item = /obj/item/gun/ballistic/automatic/pistol/p500
 
 /datum/supplykit_item/handguns/volcanic
 	name = "Volcanic Pistol"

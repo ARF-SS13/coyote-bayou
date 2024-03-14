@@ -629,14 +629,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/ammo_box/m44box(src)
 
-/obj/item/storage/box/gun/premium/p577
-	name = "P-577 pistol case"
-
-/obj/item/storage/box/gun/pemium/p577/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/p577(src)
-	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/ammo_box/magazine/ne577(src)
-
 /// Long guns
 
 /obj/item/storage/box/gun/rifle
@@ -1851,12 +1843,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_LAWMAN
 	entry_class = LOADOUT_CAT_LAWMAN
 	spawn_thing = /obj/item/storage/box/gun/premium/desert_ranger
-
-/datum/loadout_box/p577
-	entry_tag = "P-577 Superheavy Pistol"
-	entry_flags = LOADOUT_FLAG_PREMIUM
-	entry_class = LOADOUT_CAT_PREMIUM
-	spawn_thing = /obj/item/storage/box/gun/premium/p577
 
 
 /// Lawman guns

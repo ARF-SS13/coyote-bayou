@@ -1068,45 +1068,6 @@
 	can_scope = FALSE
 	can_suppress = TRUE
 
-/* * * * * * * * * * * *
-* 577 pistol
-* features custom gun for VideNoir
-* Based off a gun in mud game of videnoir, basically Malorian arms 3516 from Cyberpunk but with changes and mods.
-* works for a base for heaviest pistols
-* New sound file
-* Frontal mag, gun animations, empty mag animated.
-* .577 Nitro Express except it's a lie now
-* 'integrated' attachments to reduce the recoil that would be unusable to a less unusable level.
-* even slower fire rate.
-* * * * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/pistol/p577
-	name = "NT P-577 Superheavy Pistol"
-	desc = "A super heavy pistol chambered in .577 Nitro Express but rechambered to use 14mm, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age."
-	icon_state = "p577"
-	item_state = "pistolchrome"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	init_mag_type = /obj/item/ammo_box/magazine/ne577
-	mag_type = /obj/item/ammo_box/magazine/ne577
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	init_recoil = HANDGUN_RECOIL(2.4, 2.6)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slowest
-	)
-	can_scope = FALSE
-	can_suppress = FALSE
-	fire_sound = 'sound/f13weapons/crimsondeath.ogg'
-
-//Custom pistol for a player, see above.
-/obj/item/gun/ballistic/automatic/pistol/p577/crimsondeath
-	name = "NT Kitsunemimi -Crimson Death- .577NE Pistol"
-	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
-	icon_state = "crimsondeath"
-
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"
 	desc = "A NP-149/40 pistol. This unique and odd prototype of a pistol was manufactured by Latos Systems before the way. It uses a peculiar type of ammunition. The ammo itself, when inserted, somehow turns into a set of pink glowing needles. How does Latos Systems do it? Who knows!"
@@ -1153,6 +1114,62 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+/* * * * * * * * * * * *
+* 577 pistol
+* features custom gun for VideNoir
+* Based off a gun in mud game of videnoir, basically Malorian arms 3516 from Cyberpunk but with changes and mods.
+* works for a base for heaviest pistols
+* New sound file
+* Frontal mag, gun animations, empty mag animated.
+* .577 Nitro Express except it's a lie now
+* 'integrated' attachments to reduce the recoil that would be unusable to a less unusable level.
+* even slower fire rate.
+* * * * * * * * * * * * */
+
+//loadout version
+/obj/item/gun/ballistic/automatic/pistol/p500
+	name = "NT P-500 Superheavy Pistol"
+	desc = "A super heavy pistol chambered in 14mm, it has a strange red logo of nine tails at the slide aswell. You will most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol."
+	icon_state = "p500"
+	item_state = "pistolchrome"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/ne577
+	mag_type = /obj/item/ammo_box/magazine/ne577
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //60 dps
+	//(Just remove the ability to akimbo this if that becomes a thing in the future and allow one handing it?)
+	init_recoil = HANDGUN_RECOIL(4.0, 2.2) //mom said we got akimbo at home, akimbo at home: 
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slowest
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/crimsondeath.ogg'
+
+//for premium shop
+/obj/item/gun/ballistic/automatic/pistol/p500/p577
+	name = "NT P-577 Superheavy Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express but rechambered to use 14mm for easier resupplying, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. Looks to be a recent version just before the war, Limited production."
+	icon_state = "p577"
+	damage_multiplier = GUN_EXTRA_DAMAGE_T10 // 129dps, less than AMR i guess it's fair but auto pistols at rare out dps this so idk.
+	
+	init_recoil = HANDGUN_RECOIL(4.4, 2.4)
+
+//Custom skins etc
+/obj/item/gun/ballistic/automatic/pistol/p500/crimsondeath
+	name = "NT P-500 Kitsunemimi -Crimson Death- .577NE Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
+	icon_state = "crimsondeath"
+
+//for modkit
+/obj/item/gun/ballistic/automatic/pistol/p500/p577/crimsondeath
+	name = "NT P-577 Kitsunemimi -Crimson Death- .577NE Pistol"
+	desc = "A super heavy pistol chambered in .577 Nitro Express, laser engraved 'Crimson Death' to the side and it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight and holographic sight built in, you most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. This strange high tech, expensive pistol does not seem from this age, it has a name inscribed to it 'Elizabeth Decker'."
+	icon_state = "cd577"
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
