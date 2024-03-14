@@ -105,6 +105,7 @@
 		/obj/item/gun/ballistic/revolver/caravan_shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
 		/obj/item/gun/ballistic/bow/modern,
+		/obj/item/gun/ballistic/automatic/pistol/p500,
 		)
 
 /datum/export/item/uncommongun
@@ -182,7 +183,6 @@
 		/obj/item/gun/ballistic/automatic/type93,
 		/obj/item/gun/ballistic/automatic/lsw,
 		/obj/item/gun/ballistic/automatic/pistol/deagle,
-		/obj/item/gun/ballistic/automatic/pistol/p500,
 		/obj/item/gun/ballistic/automatic/pistol/automag,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
@@ -224,6 +224,7 @@
 		/obj/item/gun/energy/laser/tg/rifle/heavy,
 		/obj/item/gun/energy/laser/tg/rifle/auto,
 		/obj/item/gun/energy/laser/tg/recharger,
+		/obj/item/gun/ballistic/automatic/pistol/p500/p577,
 		)
 
 /datum/export/item/uniquegun
@@ -270,6 +271,8 @@
 		/obj/item/gun/energy/laser/tg/particlecannon,
 		/obj/item/gun/energy/laser/xcomufolaser,
 		/obj/item/gun/energy/laser/LaserAK,
+		/obj/item/gun/ballistic/automatic/pistol/p500/p577/crimsondeath,
+		/obj/item/gun/ballistic/automatic/pistol/p500/crimsondeath,
 	)
 
 /datum/export/item/melee

@@ -1512,3 +1512,11 @@
 	num_contained = 1
 	contains = list(/obj/item/gun/ballistic/revolver/buntline)
 	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/p577
+	name = "14mm P-577 Anti Tank Pistol"
+	desc = "A slow firing, stylish anti-tank pistol."
+	cost = 4500
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/p577)
+	crate_name = "select weapon crate"
