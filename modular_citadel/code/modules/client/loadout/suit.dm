@@ -38,6 +38,12 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	cost = 0
 
+/datum/gear/suit/suit_gear_harness/drip
+	name = "drip harness"
+	path = /obj/item/clothing/suit/chameleon/dripharness
+	cost = 1
+
+
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
 	path = /obj/item/clothing/suit/chameleon/harness
@@ -791,25 +797,25 @@
 
 /datum/gear/suit/armor/warhammerk
 	name = "Ancient West german greatcoat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/medicalkrieg
 	name = "Ancient Medical West german greatcoat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/medical
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/officerkrieg
 	name = "Ancient West german Officer greatcoat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/officer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/officeramerican
 	name = "Ancient American officer greatcoat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/americanofficer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
@@ -827,7 +833,7 @@
 
 /datum/gear/suit/armor/warhammerk/officergenerics
 	name = "Armored generic officer coat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/genericofficer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
@@ -842,6 +848,12 @@
 	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
+
+/datum/gear/suit/armor/hellarmors
+	name = "Democratic EA-5 armor"
+	path = /obj/item/clothing/suit/armor/medium/helldiver
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_BALLISTICVEST
+	cost = 2
 
 /datum/gear/suit/armor/spartanarmorstwo
 	name = "Leo Armaments MARK XI armor 'Icebreaker'"
@@ -888,25 +900,25 @@
 
 /datum/gear/suit/armor/warhammerk/cyberpunks
 	name = "Cyber-priest robes"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/techpriesting
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/techpriesting
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/cyberpsychosis
 	name = "Cyber-psycho robes"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/cyberpriesting
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/cyberpriesting
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/townsnowflake
 	name = "Town crier coat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/fanaticalpriest
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/fanaticalpriest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
 /datum/gear/suit/armor/warhammerk/kriegfanatical
 	name = "Fanatical ancient West german coat"
-	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/urmandoutfit
+	path = /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/urmandoutfit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 

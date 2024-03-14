@@ -1,7 +1,7 @@
 /area/f13/ambientlighting/LateInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_EXIT_AREA, .proc/HandleExitLighting)
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/HandleEnterLighting)
+	RegisterSignal(src, COMSIG_EXIT_AREA,PROC_REF(HandleExitLighting))
+	RegisterSignal(src, COMSIG_ENTER_AREA,PROC_REF(HandleEnterLighting))
 
 /area/f13/ambientlighting/proc/HandleExitLighting(datum/source, mob/user)
 	if(!iscarbon(user))

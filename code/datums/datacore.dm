@@ -100,6 +100,7 @@
 	var/list/ncr = list()
 	var/list/vault = list()
 	var/list/clinic = list()
+	var/list/guild = list()
 	var/list/tribe = list()
 	var/list/waster = list()
 	var/list/den = list()
@@ -149,6 +150,9 @@
 		if(rank in GLOB.followers_positions)
 			clinic[name] = rank
 			department = 1
+		if(rank in GLOB.guild_positions)
+			guild[name] = rank
+			department = 1
 		if(rank in GLOB.tribal_positions)
 			tribe[name] = rank
 			department = 1
@@ -161,12 +165,12 @@
 		if(rank in GLOB.den_positions)
 			den[name] = rank
 			department = 1
-		if(rank in GLOB.gar_positions)
-			garland[name] = rank
-			department = 1
-		if(rank in GLOB.biker_positions)
-			bikers[name] = rank
-			department = 1
+		//if(rank in GLOB.gar_positions)
+		//	garland[name] = rank
+		//	department = 1
+		//if(rank in GLOB.biker_positions)
+		//	bikers[name] = rank
+		//	department = 1
 		if(rank in GLOB.heavensnight_positions)
 			heavensnight[name] = rank
 			department = 1
@@ -221,6 +225,11 @@
 		dat += "<tr><th colspan=3>Nash Clinic</th></tr>"
 		for(var/name in clinic)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[clinic[name]]</td></tr>"
+			even = !even
+	if(length(guild))
+		dat += "<tr><th colspan=3>Adventurers Guild</th></tr>"
+		for(var/name in guild)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[guild[name]]</td></tr>"
 			even = !even
 	if(length(tribe))
 		dat += "<tr><th colspan=3>Sulphur-Bottom Tribe</th></tr>"

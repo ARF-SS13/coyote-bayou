@@ -99,7 +99,7 @@
 			continue
 		GLOB.uplink_items += path
 	//(sub)typesof entries are listed by the order they are loaded in the code, so we'll have to rearrange them here.
-	GLOB.uplink_items = sortList(GLOB.uplink_items, /proc/cmp_uplink_items_dsc)
+	GLOB.uplink_items = sortList(GLOB.uplink_items, GLOBAL_PROC_REF(cmp_uplink_items_dsc))
 
 	//supplykit items
 	for(var/path in subtypesof(/datum/supplykit_item))
@@ -113,7 +113,7 @@
 
 	init_subtypes(/datum/crafting_recipe, GLOB.crafting_recipes)
 
-	INVOKE_ASYNC(GLOBAL_PROC, .proc/init_ref_coin_values) //so the current procedure doesn't sleep because of UNTIL()
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(init_ref_coin_values)) //so the current procedure doesn't sleep because of UNTIL()
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.

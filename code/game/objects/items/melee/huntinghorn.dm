@@ -81,7 +81,7 @@
 				"performance" = image(icon = 'icons/misc/mark.dmi', icon_state = "X"),
 			),
 			"huntinghornradial",
-			CALLBACK(src, .proc/radial_check, user),
+			CALLBACK(src, PROC_REF(radial_check), user),
 			radius = 42,
 			require_near = TRUE,
 			tooltips = TRUE,

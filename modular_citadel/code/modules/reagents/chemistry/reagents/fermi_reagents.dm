@@ -59,7 +59,7 @@
 	N.nanite_volume += -10*cached_purity
 	..()
 
-datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
+/datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 	for(var/active_obj in react_objs)
 		if(O == active_obj)
 			return

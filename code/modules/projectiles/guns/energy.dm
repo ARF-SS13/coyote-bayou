@@ -47,7 +47,7 @@
 	/// is the selfcharge paused???
 	var/selfcharge_paused = FALSE
 	/// When your lazergun runs out of batteries, how long till it can be used?
-	var/self_recharge_duration = 1 MINUTES
+	var/self_recharge_duration = 8 SECONDS
 	/// how much longer do we have to waaaaaait?
 	var/charge_duration_remaining = 0
 	/// last time we ticked the charge bar

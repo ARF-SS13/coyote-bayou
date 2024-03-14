@@ -467,7 +467,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
-				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, 
+				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -524,12 +524,12 @@
 //////////////
 
 /mob/living/simple_animal/hostile/radroach
-	name = "radroach"
+	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
-	icon = 'icons/fallout/mobs/animals/insects.dmi'
-	icon_state = "radroach"
-	icon_living = "radroach"
-	icon_dead = "radroach_dead"
+	icon = 'modular_coyote/icons/mob/pillbug.dmi'
+	icon_state = "pillbug"
+	icon_living = "pillbug"
+	icon_dead = "pillbug_dead"
 	icon_gib = "radroach_gib"
 	can_ghost_into = TRUE
 	waddle_amount = 1
@@ -568,8 +568,8 @@
 		MOB_HEALTH_LIST(10, 30, 1),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-		MOB_MINIMUM_DISTANCE_LIST(0, 1, 1),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2, 3), //teehee ~TK <3
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
 
 	emote_taunt_sound = list('sound/creatures/radroach_chitter.ogg',)
@@ -577,6 +577,12 @@
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	desc_short = "One of countless bugs that move in gross hordes."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	retreat_health_percent = 0.99
+	max_heal_amount = 0.9
+	heal_per_life = 0.115 // just about!
+	tactical_retreat = 9
+	actual_retreat_message = "The %NAME skitters away from %TARGET like a lunatic!"
+	healing_message = "The %NAME bandages itself!" // ye, oh easily, thats why I love procs~
 
 /mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter

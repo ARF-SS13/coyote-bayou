@@ -136,7 +136,7 @@
 	contains = list(/obj/item/book/granter/crafting_recipe/blueprint/r84)
 
 /datum/supply_pack/skillbooks/service
-	name = "Blueprint - "
+	name = "Blueprint - Service Rifle"
 	desc = "Schematics of a quality weapon for a quality customer."
 	cost = 2500
 	contains = list(/obj/item/book/granter/crafting_recipe/blueprint/service)

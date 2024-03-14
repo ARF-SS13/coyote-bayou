@@ -32,7 +32,7 @@
 	if(cull_spawners(mapload, block_tier_swap, survived_snap))
 		return INITIALIZE_HINT_NORMAL
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
-		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
+		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(spawn_the_stuff))
 		return INITIALIZE_HINT_NORMAL // have fun!
 	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL

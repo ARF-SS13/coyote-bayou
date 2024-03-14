@@ -356,7 +356,7 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
-obj/structure/simple_door/house/add_debris_element()
+/obj/structure/simple_door/house/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 // cleaned and repainted white
@@ -636,3 +636,77 @@ obj/structure/simple_door/house/add_debris_element()
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?
 	opacity = FALSE
 	base_opacity = FALSE
+
+//Doors from Civ13
+
+/obj/structure/simple_door/civ
+	icon_state = "base"
+	door_type = "base"
+	icon = 'modular_coyote/icons/turfs/material_doors.dmi'
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = TRUE
+
+/obj/structure/simple_door/civ/gate
+	name = "gate"
+	icon_state = "gate"
+	door_type = "gate"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/sandgate
+	name = "sandstone gate"
+	icon_state = "sgate"
+	door_type = "sgate"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/saloon
+	name = "Saloon"
+	icon_state = "saloon"
+	door_type = "saloon"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/storedoor
+	name = "Store Door"
+	icon_state = "storedoor"
+	door_type = "storedoor"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/shoji
+	name = "shoji"
+	icon_state = "shoji"
+	door_type = "shoji"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/cell
+	name = "cell"
+	icon_state = "cell"
+	door_type = "cell"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/cellwooden
+	name = "wooden cell"
+	icon_state = "woodcell"
+	door_type = "woodcell"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE

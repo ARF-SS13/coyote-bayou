@@ -116,7 +116,7 @@
 
 /obj/item/hand_item/healable/licker/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_LICK_RETURN, .proc/start_licking)
+	RegisterSignal(src, COMSIG_LICK_RETURN,PROC_REF(start_licking))
 
 /obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
 	var/list/lick_words = get_lick_words(user)
@@ -427,6 +427,29 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "arm_blade"
 	item_state = "arm_blade"
+	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
+	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
+	w_class = WEIGHT_CLASS_HUGE
+	force = 40
+	backstab_multiplier = 1.5
+	throwforce = 0 //Just to be on the safe side
+	throw_range = 0
+	throw_speed = 0
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
+	wound_bonus = 0
+	bare_wound_bonus = 20
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/arm_blade/mutation/cyber
+	name = "Cyber blade"
+	desc = "A advanced cybernetic blade made out of numerous materials that cleaves through people as a hot knife through butter."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "cyber_blade"
+	item_state = "cyber_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL

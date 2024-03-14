@@ -98,7 +98,7 @@
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "i")
 
 		if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
-			addtimer(CALLBACK(src, .proc/freak_out, null, word), 10) //to react AFTER the chat message
+			addtimer(CALLBACK(src,PROC_REF(freak_out), null, word), 10) //to react AFTER the chat message
 			//hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_phobia("$1"))
 			break
 
@@ -126,7 +126,7 @@
 	owner.stuttering += 5
 	ADD_TRAIT(owner, TRAIT_PHOBIC, TRAIT_GENERIC) // Generic phobia trait for applying general non-mood debuffs to people
 	if(!timer_active)
-		addtimer(CALLBACK(src, .proc/RemoveTrait), 3 MINUTES)
+		addtimer(CALLBACK(src, PROC_REF(RemoveTrait)), 3 MINUTES)
 		timer_active = 1
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "phobia", /datum/mood_event/phobia) //Always apply the phobia mood debuff
 

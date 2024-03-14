@@ -56,7 +56,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/update_preferences(current_version, savefile/S)
 	if(current_version < 37)	//If you remove this, remove force_reset_keybindings() too.
 		force_reset_keybindings_direct(TRUE)
-		addtimer(CALLBACK(src, .proc/force_reset_keybindings), 30)	//No mob available when this is run, timer allows user choice.
+		addtimer(CALLBACK(src,PROC_REF(force_reset_keybindings)), 30)	//No mob available when this is run, timer allows user choice.
 
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
@@ -508,6 +508,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
+		"blood_color" = "",
 		"ears" = "None",
 
 		"wings" = "None",
@@ -699,6 +700,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_insect_fluff"]			>> features["insect_fluff"]
 	S["feature_insect_markings"]		>> features["insect_markings"]
 	S["feature_horns_color"]			>> features["horns_color"]
+	S["feature_blood_color"]			>> features["blood_color"]
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
@@ -881,6 +883,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
 	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
+	S["undershirt_overclothes"]	>> undershirt_overclothes // Underwear over hands!
+	S["undies_overclothes"]		>> undies_overclothes // Underwear over hands!
+	S["socks_overclothes"]		>> socks_overclothes // Underwear over hands!
 
 	S["whoflags"]	>> whoflags // WHo!
 
@@ -954,6 +959,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 	underwear_overhands	= sanitize_integer(underwear_overhands, 0, 1, initial(underwear_overhands))
+	undershirt_overclothes	= sanitize_integer(undershirt_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undershirt_overclothes))
+	undies_overclothes	= sanitize_integer(undies_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undies_overclothes))
+	socks_overclothes	= sanitize_integer(socks_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(socks_overclothes))
 
 	hair_style					= sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -997,6 +1005,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		skin_tone					= sanitize_inlist(skin_tone, GLOB.skin_tones - GLOB.nonstandard_skin_tones, initial(skin_tone))
 
 	features["horns_color"]			= sanitize_hexcolor(features["horns_color"], 6, FALSE, "85615a")
+	if(!isnull(features["blood_color"]) && features["blood_color"] != "")
+		//if(features["blood_color"] == "rainbow")
+		features["blood_color"]			= sanitize_hexcolor(features["blood_color"], 6, FALSE, "900000")
 	features["wings_color"]			= sanitize_hexcolor(features["wings_color"], 6, FALSE, "FFFFFF")
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
 	jumpsuit_style					= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
@@ -1300,6 +1311,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]				, features["legs"])
 	WRITE_FILE(S["feature_deco_wings"]				, features["deco_wings"])
 	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
+	WRITE_FILE(S["feature_blood_color"]				, features["blood_color"])
 	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
 	WRITE_FILE(S["feature_insect_wings"]			, features["insect_wings"])
 	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
@@ -1499,6 +1511,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 	WRITE_FILE(S["allow_trash_messages"]			, safe_json_encode(allow_trash_messages))
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["undershirt_overclothes"]			, undershirt_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["undies_overclothes"]				, undies_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["socks_overclothes"]				, socks_overclothes) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
 	//Character directory

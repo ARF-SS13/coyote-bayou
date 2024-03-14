@@ -84,8 +84,8 @@
 	)
 	rarity = 30 //These are some pretty good plants right here
 	genes = list()
-	weed_rate = 4
-	weed_chance = 100
+	weed_rate = 2
+	weed_chance = 40
 
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia
 	name = "ambrosia gaia branch"

@@ -1306,7 +1306,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 
 // Slavemaster
 
-datum/job/CaesarsLegion/Legionnaire/f13slavemaster
+/datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	title = "Legion Slavemaster"
 	flag = F13SLAVEMASTER
 	total_positions = 1

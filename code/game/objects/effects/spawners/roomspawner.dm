@@ -22,7 +22,7 @@
 		if(istype(template, /datum/map_template/random_room) && room_height == template.template_height && room_width == template.template_width)
 			if(!template.spawned)
 				template.spawned = TRUE
-				addtimer(CALLBACK(src, /obj/effect/spawner/room.proc/LateSpawn), 600)
+				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/effect/spawner/room,LateSpawn)), 600)
 				break
 		template = null
 	if(!template)

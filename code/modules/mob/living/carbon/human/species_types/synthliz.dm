@@ -25,7 +25,7 @@
 		TRAIT_VIRUSIMMUNE,
 		TRAIT_MUTATION_STASIS,
 		)
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_REPTILE|MOB_BEAST
+	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_REPTILE|MOB_BEAST|MOB_SYNTH
 	mutant_bodyparts = list(
 		"ipc_antenna" = "Synthetic Lizard - Antennae",
 		"mam_tail" = "Synthetic Lizard",

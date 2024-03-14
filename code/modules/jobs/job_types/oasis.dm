@@ -41,7 +41,7 @@ Mayor
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "New Boston"
-	description = "You are the civil leader of the Town of Nash. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
+	description = "You are the civil leader of the Town of New Boston. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
@@ -158,8 +158,8 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "your constituents, your greed, and realpolitik"
-	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place as one of the Deputy Mayors of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, or don't.  They'll probably only shoot you some."
-	enforces = "You serve as the de-facto leader of Nash, but you have very little actual power. Good luck with that!"
+	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place as one of the Deputy Mayors of New Boston. Keep the town running smoothly; help your constituents without stepping on their toes, or don't.  They'll probably only shoot you some."
+	enforces = "You serve as the de-facto leader of New Boston, but you have very little actual power. Good luck with that!"
 	selection_color = "#d7b088"
 	exp_requirements = 0
 
@@ -258,8 +258,8 @@ Mayor
 	total_positions = 0
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
-	enforces = "You are the stand-in leader of Nash if a Mayor or Secretary does not exist."
+	description = "You are the civil enforcer of New Boston, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave New Bostonundefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
+	enforces = "You are the stand-in leader of New Bostonif a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 0
 
@@ -374,8 +374,8 @@ Mayor
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "Your best Judgement"
-	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
-//	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
+	description = "You are a loyal protector of New Boston, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave New Bostonundefended, and don't let its people die out."
+//	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of New Bostonif a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 0
@@ -492,7 +492,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "New Boston laws"
-	description = "You are a farmer living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
+	description = "You are a farmer living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
 	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
 
@@ -575,7 +575,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "The Mayor"
-	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Nash understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
+	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of New Bostonunderstands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
 	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
 	selection_color = "#dcba97"
 
@@ -666,7 +666,7 @@ Mayor
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "The Mayor"
-	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Nash. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
+	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of New Boston. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
 	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
 /*
@@ -767,92 +767,6 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
-/datum/job/oasis/f13barkeep
-	title = "Barkeep"
-	flag = F13BARKEEP
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the free market and Nash's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest. Speak to the farmers for fresh produce!"
-	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13barkeep
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/rugged,
-	/datum/outfit/loadout/frontier,
-	/datum/outfit/loadout/richmantender,
-	/datum/outfit/loadout/diner)
-*/
-	access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-
-/datum/outfit/job/den/f13barkeep
-	name = "Barkeep"
-	jobtype = /datum/job/oasis/f13barkeep
-	uniform = /obj/item/clothing/under/f13/bartenderalt
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/supplykit
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	backpack = /obj/item/storage/backpack/satchel/leather
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-	//	/obj/item/ammo_box/shotgun/bean = 2,
-		/obj/item/book/manual/nuka_recipes = 1,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/pda = 1,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
-		)
-
-/datum/outfit/loadout/rugged
-	name = "Rugged"
-	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	uniform = /obj/item/clothing/under/f13/cowboyb
-	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
-	gloves = /obj/item/clothing/gloves/color/brown
-	shoes = /obj/item/clothing/shoes/f13/brownie
-
-/datum/outfit/loadout/frontier
-	name = "Frontier"
-	head = /obj/item/clothing/head/bowler
-	mask = /obj/item/clothing/mask/fakemoustache
-	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-
-/datum/outfit/loadout/richmantender
-	name = "Fancy"
-	head = /obj/item/clothing/head/fedora
-	glasses = /obj/item/clothing/glasses/sunglasses
-	uniform = /obj/item/clothing/under/rank/bartender
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	neck = /obj/item/clothing/neck/tie/black
-
-/datum/outfit/loadout/diner
-	name = "Diner"
-	glasses = /obj/item/clothing/glasses/orange
-	uniform = /obj/item/clothing/under/f13/brahminf
-	neck = /obj/item/clothing/neck/apron/chef
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-
-/*--------------------------------------------------------------*/
 /datum/job/oasis/f13settler
 	title = "Citizen"
 	flag = F13SETTLER
@@ -860,7 +774,7 @@ Mayor
 	total_positions = -1
 	spawn_positions =-1
 	supervisors = "New Boston's laws"
-	description = "You are a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	description = "You are a citizen living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -1080,7 +994,7 @@ Mayor
 	flag = F13DETECTIVE
 	total_positions = 0
 	spawn_positions = 1
-	supervisors = "paying clients and Nash's laws"
+	supervisors = "paying clients and New Boston's laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 
@@ -1130,13 +1044,13 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13banker
-	title = "Banker"
+	title = "Guild Financier"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Nash, but perhaps deal-making will take you into other alliances."
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
@@ -1146,9 +1060,9 @@ Mayor
 	/datum/outfit/loadout/loanshark,
 	/datum/outfit/loadout/investor
 	)
-*/
-	access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
-	minimal_access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
+
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 
 /datum/outfit/job/den/f13banker
 	name = "Banker"
@@ -1209,62 +1123,7 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
-//Nash Curator
-
-/datum/job/oasis/nashcurator
-	title = "New Boston Librarian"
-	flag = NASHCURATOR
-	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 1
-	supervisors = "New Boston's laws"
-	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/nashcurator
-	access = list(ACCESS_BAR)
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-/datum/outfit/job/den/nashcurator
-	name = "New Boston Librarian"
-	jobtype = /datum/job/oasis/nashcurator
-	belt = /obj/item/supplykit
-	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/settler
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda = 1,
-		/obj/item/pen/fountain/captain,
-		/obj/item/export_scanner,
-		/obj/item/key/displaycase,
-		)
-
-/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/gentlesuit,
-		/obj/item/clothing/under/f13/formal,
-		/obj/item/clothing/under/f13/spring,
-		/obj/item/clothing/under/f13/relaxedwear,
-		/obj/item/clothing/under/f13/machinist,
-		/obj/item/clothing/under/f13/brahminf,
-		/obj/item/clothing/under/f13/cowboyb,
-		/obj/item/clothing/under/f13/cowboyg,
-		/obj/item/clothing/under/f13/cowboyt)
-
+/*
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
 	title = "Texarkana Quartermaster"
@@ -1272,9 +1131,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 0
 	spawn_positions = 1
-	supervisors = "the free market and Nash's laws"
+	supervisors = "the free market and New Boston's laws"
 	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
-	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
+	enforces = "The New Bostonstore is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 0
 /*
@@ -1360,114 +1219,9 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
-
-//The Trade Workers
-/datum/job/oasis/f13shopkeeper
-	title = "Texarkana Trade Worker"
-	flag = F13SHOPKEEPER
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the free market and Nash's laws"
-	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
-	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
-	selection_color = "#dcba97"
-	exp_requirements = 0
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/energy_specialist,
-	/datum/outfit/loadout/ballistic_specialist,
-	/datum/outfit/loadout/jackofall_specialist
-	)
 */
-	outfit = /datum/outfit/job/den/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
 
-/datum/outfit/job/den/f13shopkeeper
-	name = "Shopkeeper"
-	jobtype = /datum/job/oasis/f13shopkeeper
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/supplykit
-	uniform = /obj/item/clothing/under/f13/roving
-	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	gloves = /obj/item/clothing/gloves/fingerless
-	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/glowstick
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(
-		/obj/item/pda = 1,
-		/obj/item/storage/pill_bottle/chem_tin/radx)
 
-/datum/outfit/loadout/energy_specialist
-	name = "Energy Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1
-	)
-
-/datum/outfit/loadout/ballistic_specialist
-	name = "Ballistic Specialist"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
-	)
-
-/datum/outfit/loadout/jackofall_specialist
-	name = "Jack-Of-All Trade"
-	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
-	)
-
-/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
-
-/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
 
 
 //pilot job, bare basics rn, but we can add as needed
@@ -1674,22 +1428,107 @@ Mayor
 	)
 
 
-// Practitioner
+// Guild Adventurers
 
-/datum/job/oasis/f13practitioner
-	title = "Town Doctor"
-	flag = F13PRACTITIONER
-	department_flag = FOLLOWERS
-	faction = "Followers"
+//Guild Worker
+
+/datum/job/oasis/f13shopkeeper
+	title = "Guild Shopkeeper"
+	flag = GUILDSHOPKEEP
+	department_flag = GUILD
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement. Assuming they're around."
-	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
+	selection_color = "#dcba97"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/f13shopkeeper
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/f13shopkeeper
+	name = "Shopkeeper"
+	jobtype = /datum/job/oasis/f13shopkeeper
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/guild
+	belt = /obj/item/kit_spawner/townie
+	uniform = /obj/item/clothing/under/f13/roving
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/high
+	backpack_contents = list(
+		/obj/item/kit_spawner/tools,
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/cool_book/guildguide = 1
+		)
+
+/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
+
+/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+//Guild Healer
+/datum/job/oasis/f13practitioner
+	title = "Guild Healer"
+	flag = GUILDMEDIC
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
 	selection_color = "#FFDDFF"
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13practitioner
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis/f13practitioner,
@@ -1698,14 +1537,7 @@ Mayor
 			/datum/job/oasis/f13practitioner,
 		),
 	)
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/physician,
-	/datum/outfit/loadout/pharmacist,
-	/datum/outfit/loadout/paramedic,
-	/datum/outfit/loadout/medical_researcher,
-	)
-*/
+
 /datum/outfit/job/den/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -1734,63 +1566,234 @@ Mayor
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 
 /datum/outfit/job/den/f13practitioner
-	name =	"Town Doctor"
+	name =	"Guild Healer"
 	jobtype =	/datum/job/oasis/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_town/guild
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
 	belt = /obj/item/supplykit
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
+	r_pocket = /obj/item/storage/survivalkit/medical/follower
 	backpack_contents = list(
-		/obj/item/storage/survivalkit/medical/follower = 1,
-		/obj/item/pda = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/cool_book/guildguide = 1
 	)
 
-/datum/outfit/loadout/physician
-	name =	"Emergency Physician"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
-	mask =	/obj/item/clothing/mask/surgical
-	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
+//Guild Financier
+
+/datum/job/oasis/f13banker
+	title = "Guild Financier"
+	flag = GUILDBANKER
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
+	selection_color = "#dcba97"
+	outfit = /datum/outfit/job/den/f13banker
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+/datum/outfit/job/den/f13banker
+	name = "Banker"
+	jobtype = /datum/job/oasis/f13banker
+	belt = /obj/item/kit_spawner/townie/mayor
+	uniform = /obj/item/clothing/under/lawyer/blacksuit
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/headset_town/guild
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+	gloves = /obj/item/pda
 	backpack_contents = list(
-		/obj/item/clothing/suit/hooded/surgical = 1,
-		/obj/item/hypospray/mkii/CMO = 1,
-		/obj/item/healthanalyzer/advanced = 1,
+		/obj/item/kit_spawner/tools,
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/storage/wallet/stash/banker = 1,
+		/obj/item/cool_book/guildguide = 1
+		)
+
+//Guild Cataloger
+
+/datum/job/oasis/nashcurator
+	title = "Guild Cataloger"
+	flag = GUILDLIBRARIAN
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
+	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/nashcurator
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
 	)
 
-/datum/outfit/loadout/pharmacist
-	name =	"Pharmacist"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/chemist
-	gloves =	/obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/science
+/datum/outfit/job/den/nashcurator
+	name = "New Boston Librarian"
+	jobtype = /datum/job/oasis/nashcurator
+	belt = /obj/item/kit_spawner/townie
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	ears = /obj/item/radio/headset/headset_town/guild
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	gloves = /obj/item/pda
+	r_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/flashlight/pen = 1,
-		/obj/item/pda/chemist = 1,
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/kit_spawner/tools,
+		/obj/item/cool_book/guildguide = 1
+		)
+
+/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
+
+//Guild Bartender
+
+/datum/job/oasis/f13barkeep
+	title = "Guild Kitcheneer"
+	flag = GUILDBARTEND
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/f13barkeep
+
+	loadout_options = list(
+	/datum/outfit/loadout/diner
 	)
 
-/datum/outfit/loadout/paramedic
-	name =	"Paramedic"
-	head =	/obj/item/clothing/head/soft/emt
-	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
-	belt =	/obj/item/storage/belt/medical
-	backpack_contents = list(
-		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer=1,
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
 	)
 
-/datum/outfit/loadout/medical_researcher
-	name =	"Medical Researcher"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
+
+/datum/outfit/job/den/f13barkeep
+	name = "Barkeep"
+	jobtype = /datum/job/oasis/f13barkeep
+	uniform = /obj/item/clothing/under/f13/bartenderalt
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/guild
+	belt = /obj/item/kit_spawner/townie/barkeep
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	backpack = /obj/item/storage/backpack/satchel/leather
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/clothing/accessory/pocketprotector/full = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/book/granter/trait/techno = 1,)
+		/obj/item/book/manual/nuka_recipes = 1,
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/kit_spawner/tools,
+		/obj/item/cool_book/guildguide = 1
+		)
+
+/datum/outfit/loadout/diner
+	name = "Diner"
+	neck = /obj/item/clothing/neck/apron/chef
+
+	backpack_contents = list(
+	/obj/item/storage/box/ingredients/wildcard = 1,
+	/obj/item/storage/box/ingredients/fiesta = 1,
+	/obj/item/storage/box/ingredients/italian = 1,
+	/obj/item/storage/box/ingredients/vegetarian = 1,
+	/obj/item/storage/box/ingredients/american = 1,
+	/obj/item/storage/box/ingredients/fruity = 1,
+	/obj/item/storage/box/ingredients/sweets = 1,
+	/obj/item/storage/box/ingredients/delights = 1,
+	/obj/item/storage/box/ingredients/grains = 1,
+	/obj/item/storage/box/ingredients/carnivore = 1,
+	/obj/item/storage/box/ingredients/exotic = 1,
+	/obj/item/storage/box/ingredients/sushi = 1
+	)
+
+//Guild Knight
+
+/datum/job/followers/f13followerguard
+	title = "Guild Knight"
+	flag = GUILDKNIGHT
+	department_flag = GUILD
+	faction = "Guild"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "the Adventurers Guild."
+	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	enforces = "Check your guidebook"
+	selection_color = "#FFDDFF"
+
+	outfit = /datum/outfit/job/followers/f13followerguard
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+/datum/outfit/job/followers/f13followerguard
+	name =	"Knight"
+	jobtype =	/datum/job/followers/f13followerguard
+	belt = /obj/item/kit_spawner/waster
+	id =	/obj/item/card/id/silver
+	uniform =	/obj/item/clothing/under/f13/bodyguard
+	ears = /obj/item/radio/headset/headset_town/guild
+	suit =	/obj/item/clothing/suit/armor/medium/combat/chinese
+	head =	/obj/item/clothing/head/beret
+	shoes =	/obj/item/clothing/shoes/combat
+	backpack =	/obj/item/storage/backpack/explorer
+	satchel =	/obj/item/storage/backpack/satchel/explorer
+	gloves = /obj/item/pda
+	l_pocket = /obj/item/storage/wallet/stash/mid
+	r_pocket = /obj/item/megaphone/sec
+	backpack_contents = list(
+		/obj/item/storage/box/guild/uniform,
+		/obj/item/cool_book/guildguide = 1,
+		/obj/item/kit_spawner/waster
+	)
+
+//Guild Uniforms
+
+/obj/item/storage/box/guild/uniform
+	name = "Formal Guild Uniforms"
+
+/obj/item/storage/box/guild/uniform/PopulateContents()
+	new /obj/item/clothing/under/dress/skirt/red(src)
+	new /obj/item/clothing/under/f13/medievalgerman3(src)
+	new /obj/item/clothing/shoes/cowboy/alt(src)
+	new /obj/item/storage/belt/fannypack(src)
+	new /obj/item/clothing/gloves/modif_patrol(src)
+	new /obj/item/clothing/head/coyote/britishtricornetwo(src)

@@ -17,3 +17,4 @@
 	throw_range = 10
 	custom_materials = list(/datum/material/iron = 12000)	// Six sheets, the same as an ingot.
 	hitsound = 'sound/weapons/bladeslice_heavy.ogg'
+	weapon_special_component = /datum/component/weapon_special/single_turf

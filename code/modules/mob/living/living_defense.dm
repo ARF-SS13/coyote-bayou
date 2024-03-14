@@ -525,22 +525,22 @@
 	if(status_flags & GODMODE || QDELETED(src))
 		return
 
-	if(is_servant_of_ratvar(src) && !stat)
+/*	if(is_servant_of_ratvar(src) && !stat)
 		to_chat(src, span_userdanger("You resist Nar'Sie's influence... but not all of it. <i>Run!</i>"))
 		adjustBruteLoss(35)
 		if(src && reagents)
 			reagents.add_reagent(/datum/reagent/toxin/heparin, 5)
-		return FALSE
+		return FALSE*/
 	if(GLOB.cult_narsie && GLOB.cult_narsie.souls_needed[src])
 		GLOB.cult_narsie.souls_needed -= src
 		GLOB.cult_narsie.souls += 1
 		if((GLOB.cult_narsie.souls == GLOB.cult_narsie.soul_goal) && (GLOB.cult_narsie.resolved == FALSE))
 			GLOB.cult_narsie.resolved = TRUE
 			sound_to_playing_players('sound/machines/alarm.ogg')
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/cult_ending_helper, 1), 120)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/ending_helper), 270)
+			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(cult_ending_helper), 1), 120)
+			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(ending_helper)), 270)
 	if(client)
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/makeNewConstruct, /mob/living/simple_animal/hostile/construct/harvester, src, null, TRUE) // must pass keyword args explicitly
+		INVOKE_ASYNC(GLOBAL_PROC_REF(makeNewConstruct), /mob/living/simple_animal/hostile/construct/harvester, src, null, TRUE) // must pass keyword args explicitly
 	else
 		switch(rand(1, 6))
 			if(1)
@@ -554,21 +554,21 @@
 	return TRUE
 
 
-/mob/living/ratvar_act()
+/*/mob/living/ratvar_act()
 	if(status_flags & GODMODE)
 		return
 	if(stat != DEAD && !is_servant_of_ratvar(src))
 		to_chat(src, span_userdanger("A blinding light boils you alive! <i>Run!</i>"))
 		adjust_fire_stacks(20)
 		IgniteMob()
-		return FALSE
+		return FALSE*/
 
 
 //called when the mob receives a bright flash
 /mob/living/proc/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash)
 	if(get_eye_protection() < intensity && (override_blindness_check || !(HAS_TRAIT(src, TRAIT_BLIND))))
 		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, .proc/clear_fullscreen, "flash", 25), 25)
+		addtimer(CALLBACK(src,PROC_REF(clear_fullscreen), "flash", 25), 25)
 		return TRUE
 	return FALSE
 

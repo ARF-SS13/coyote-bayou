@@ -91,6 +91,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("shelf parts", /obj/item/rack_parts), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("shop shelf", /obj/machinery/smartfridge/bottlerack/lootshelf/craftable, 15, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 30, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
@@ -153,9 +154,9 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	tableVariant = /obj/structure/table
 	material_type = /datum/material/iron
 
-/obj/item/stack/sheet/metal/ratvar_act()
+/*/obj/item/stack/sheet/metal/ratvar_act()
 	new /obj/item/stack/tile/brass(loc, amount)
-	qdel(src)
+	qdel(src)*/
 
 /obj/item/stack/sheet/metal/narsie_act()
 	new /obj/item/stack/sheet/runed_metal(loc, amount)
@@ -681,9 +682,9 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	grind_results = list(/datum/reagent/iron = 5, /datum/reagent/blood = 15)
 	material_type = /datum/material/runedmetal
 
-/obj/item/stack/sheet/runed_metal/ratvar_act()
+/*/obj/item/stack/sheet/runed_metal/ratvar_act()
 	new /obj/item/stack/tile/brass(loc, amount)
-	qdel(src)
+	qdel(src) */
 
 /obj/item/stack/sheet/runed_metal/attack_self(mob/living/user)
 	if(!iscultist(user))
@@ -712,7 +713,7 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 /*
  * Brass
  */
-GLOBAL_LIST_INIT(brass_recipes, list ( \
+/*GLOBAL_LIST_INIT(brass_recipes, list ( \
 	new/datum/stack_recipe("wall gear", /obj/structure/destructible/clockwork/wall_gear, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("brass pinion airlock", /obj/machinery/door/airlock/clockwork, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
@@ -742,9 +743,9 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 	new/datum/stack_recipe("brass flask", /obj/item/reagent_containers/food/drinks/bottle/holyoil/empty), \
 	new/datum/stack_recipe("brass smith's hammer", /obj/item/melee/smith/hammer/ratvar, 6), \
 	new/datum/stack_recipe("brass ingot", /obj/item/ingot/ratvar, 6, time = 100), \
-))
+))*/
 
-/obj/item/stack/tile/brass
+/*/obj/item/stack/tile/brass
 	name = "brass"
 	desc = "Sheets made out of brass."
 	singular_name = "brass sheet"
@@ -766,11 +767,12 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 	new /obj/item/stack/sheet/runed_metal(loc, amount)
 	qdel(src)
 
+/*
 /obj/item/stack/tile/brass/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user))
 		to_chat(user, span_danger("[src] seems far too fragile and rigid to build with.")) //haha that's because it's actually replicant alloy you DUMMY
 		return
-	..()
+	..()*/
 
 /obj/item/stack/tile/brass/get_main_recipes()
 	. = ..()
@@ -779,6 +781,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 /obj/item/stack/tile/brass/fifty
 	amount = 50
 	merge_type = /obj/item/stack/tile/brass
+*/
 
 /*
  * Bronze
@@ -819,10 +822,10 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	tableVariant = /obj/structure/table/bronze
 	material_type = /datum/material/bronze
 
-/obj/item/stack/sheet/bronze/attack_self(mob/living/user)
+/*/obj/item/stack/sheet/bronze/attack_self(mob/living/user)
 	if(is_servant_of_ratvar(user)) //still lets them build with it, just gives a message
 		to_chat(user, span_danger("Wha... what is this cheap imitation crap? This isn't brass at all!"))
-	..()
+	..()*/
 
 /obj/item/stack/sheet/bronze/get_main_recipes()
 	. = ..()

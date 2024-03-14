@@ -236,7 +236,7 @@ GLOBAL_LIST_EMPTY(sacred_well_items)
 	if(debug)
 		say("cooldown started!!")
 	set_light(1, -1, "#f9ff48")
-	addtimer(CALLBACK(src, .proc/end_cooldown), 1.5 MINUTES)
+	addtimer(CALLBACK(src,PROC_REF(end_cooldown)), 1.5 MINUTES)
 
 /obj/structure/sacredwell/proc/end_cooldown() //might need to fiddle w/ this......
 	if(debug)

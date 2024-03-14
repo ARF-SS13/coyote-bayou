@@ -11,7 +11,7 @@
 	layer = HIGH_TURF_LAYER
 	var/turf/open/indestructible/ground/outside/desert/parent
 
-obj/dugpit/New(lnk)
+/obj/dugpit/New(lnk)
 	..()
 	parent = lnk
 

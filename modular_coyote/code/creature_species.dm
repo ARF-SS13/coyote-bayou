@@ -1170,4 +1170,255 @@
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
 
+/datum/species/feral/femdigo
+	name = "Female Wendigo"
+	id = "femdigo"
+	simple_icon = 'icons/mob/wendigo.dmi'
+	icon_width = 32
+	rotate_on_lying = TRUE
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_r"
+	
+/mob/living/carbon/human/species/femdigo
+	race = /datum/species/feral/femdigo
+
 //End Other//
+
+//Start Synthetic Creatures//
+/datum/species/adapted
+	name = "REPORT THIS AS A BUG"
+	//The id is the living and standing icon state of the creature.
+	simple_icon = 'icons/mob/splurtbot.dmi'
+	say_mod = "beeps"
+	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
+	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = ""
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOTRANSSTING,EYECOLOR,ROBOTIC_LIMBS,NO_DNA_COPY,NOEYES,LIPS,)
+	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_RADIMMUNE,TRAIT_NOBREATH,TRAIT_CLONEIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_MUTATION_STASIS,)
+	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST|MOB_SYNTH
+	//Just robo looking parts.
+	mutant_heart = /obj/item/organ/heart/ipc
+	mutantlungs = /obj/item/organ/lungs/ipc
+	mutantliver = /obj/item/organ/liver/ipc
+	mutantstomach = /obj/item/organ/stomach/ipc
+	mutanteyes = /obj/item/organ/eyes/ipc
+	mutantears = /obj/item/organ/ears/ipc
+	mutanttongue = /obj/item/organ/tongue/robot/ipc
+	mutant_brain = /obj/item/organ/brain/ipc
+	icon_width = 32
+	roundstart = FALSE
+	footstep_type = FOOTSTEP_MOB_CLAW
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
+	rotate_on_lying = TRUE
+	damage_overlay_type = null
+	exotic_bloodtype = "S"
+	exotic_blood_color = BLOOD_COLOR_OIL
+	species_type = "robotic" // It was just missing this little thing, I found it in ipc.dm. Hopefully this stops mechs from bleeding/getting wounds
+
+/datum/species/adapted/handle_mutations_and_radiation(mob/living/carbon/human/H)
+	return TRUE
+
+/datum/species/adapted/spec_life(mob/living/carbon/human/H)
+	if(H.nutrition < NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.nutrition > NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.losebreath != 0)
+		H.losebreath = 0 // just in case
+	if(H.toxloss)
+		H.adjustToxLoss(-H.toxloss)
+
+/datum/species/adapted/thicktron_standard
+	name = "Adapted Assaultron(modified)"
+	id = "assaultronstandard"
+	roundstart = TRUE
+/mob/living/carbon/human/species/thicktron_standard
+	race = /datum/species/adapted/thicktron_standard
+
+/datum/species/adapted/simplebot
+	name = "REPORT THIS AS A BUG"
+	simple_icon = 'icons/mob/robots.dmi'
+	roundstart = FALSE
+
+/datum/species/adapted/simplebot/handy
+	name = "Adapted Handy Unit"
+	id = "robot"
+	roundstart = TRUE
+/mob/living/carbon/human/species/handy
+	race = /datum/species/adapted/simplebot/handy
+
+/datum/species/adapted/simplebot/assaultron_med
+	name = "Adapted Meditron"
+	id = "assaultron_sase"
+	roundstart = TRUE
+/mob/living/carbon/human/species/assaultron_med
+	race = /datum/species/adapted/simplebot/assaultron_med
+
+/datum/species/adapted/simplebot/robobrain
+	name = "Adapted Robobrain"
+	id = "robobrain"
+	icon_dead_suffix = "_d"
+	roundstart = TRUE
+/mob/living/carbon/human/species/robobrain
+	race = /datum/species/adapted/simplebot/robobrain
+
+/datum/species/adapted/raptorborg
+	name = "REPORT THIS AS A BUG"
+	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	roundstart = FALSE
+	rotate_on_lying = FALSE
+	icon_width = 64
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/raptorborg/secraptor
+	name = "Adapted Secraptor"
+	id = "secraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/secraptor
+	race = /datum/species/adapted/raptorborg/secraptor
+
+/datum/species/adapted/raptorborg/sciraptor
+	name = "Adapted Sciraptor"
+	id = "sciraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/sciraptor
+	race = /datum/species/adapted/raptorborg/sciraptor
+
+/datum/species/adapted/raptorborg/medraptor
+	name = "Adapted Medraptor"
+	id = "medraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
+
+/datum/species/adapted/raptorborg/medraptor
+	name = "Adapted Medraptor"
+	id = "medraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medraptor
+	race = /datum/species/adapted/raptorborg/medraptor
+
+/datum/species/adapted/raptorborg/engiraptor
+	name = "Adapted Engiraptor"
+	id = "engiraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/engiraptor
+	race = /datum/species/adapted/raptorborg/engiraptor
+
+/datum/species/adapted/raptorborg/mineraptor
+	name = "Adapted Mineraptor"
+	id = "mineraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mineraptor
+	race = /datum/species/adapted/raptorborg/mineraptor
+
+/datum/species/adapted/raptorborg/traumaraptor
+	name = "Adapted Traumaraptor"
+	id = "traumaraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/traumaraptor
+	race = /datum/species/adapted/raptorborg/traumaraptor
+
+/datum/species/adapted/raptorborg/janiraptor
+	name = "Adapted Janiraptor"
+	id = "janiraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/janiraptor
+	race = /datum/species/adapted/raptorborg/janiraptor
+
+/datum/species/adapted/raptorborg/serviraptor
+	name = "Adapted Serviraptor"
+	id = "serviraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/serviraptor
+	race = /datum/species/adapted/raptorborg/serviraptor
+
+/datum/species/adapted/raptorborg/fancyraptor
+	name = "Adapted Fancyraptor"
+	id = "fancyraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/fancyraptor
+	race = /datum/species/adapted/raptorborg/fancyraptor
+
+//get in the mech, shinji
+/datum/species/adapted/mechs
+	name = "REPORT THIS AS A BUG"
+	simple_icon = 'icons/mecha/mecha.dmi'
+	icon_dead_suffix = "-broken"
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	roundstart = FALSE
+
+/datum/species/adapted/mechs/gygax
+	name = "Adapted Gygax"
+	id = "gygax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gygax	
+	race = /datum/species/adapted/mechs/gygax
+
+/datum/species/adapted/mechs/ripley
+	name = "Adapted Ripley"
+	id = "ripley"
+	roundstart = TRUE
+/mob/living/carbon/human/species/ripley	
+	race = /datum/species/adapted/mechs/ripley
+
+/datum/species/adapted/mechs/marauder
+	name = "Adapted Marauder"
+	id = "marauder"
+	roundstart = TRUE
+/mob/living/carbon/human/species/marauder	
+	race = /datum/species/adapted/mechs/marauder
+
+/datum/species/adapted/mechs/seraph
+	name = "Adapted Seraph"
+	id = "seraph"
+	roundstart = TRUE
+/mob/living/carbon/human/species/seraph	
+	race = /datum/species/adapted/mechs/seraph
+
+/datum/species/adapted/mechs/phazon
+	name = "Adapted Phazon"
+	id = "phazon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/phazon
+	race = /datum/species/adapted/mechs/phazon //This one is for you, Nioha
+
+/datum/species/adapted/mechs/mauler
+	name = "Adapted Mauler"
+	id = "mauler"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mauler
+	race = /datum/species/adapted/mechs/mauler
+
+/datum/species/adapted/mechs/odysseus
+	name = "Adapted Odysseus"
+	id = "odysseus"
+	roundstart = TRUE
+/mob/living/carbon/human/species/odysseus
+	race = /datum/species/adapted/mechs/odysseus
+
+/datum/species/adapted/mechs/durand
+	name = "Adapted Durand"
+	id = "durand"
+	roundstart = TRUE
+/mob/living/carbon/human/species/durand
+	race = /datum/species/adapted/mechs/durand
+
+/datum/species/adapted/mechs/medigax
+	name = "Adapted Medigax"
+	id = "medigax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/medigax
+	race = /datum/species/adapted/mechs/medigax
+
+
+//End Synthetic Creatures

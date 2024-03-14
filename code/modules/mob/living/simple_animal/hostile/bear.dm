@@ -108,7 +108,7 @@
 		to_chat(user, span_info("You strap the armor plating to [A] and sharpen [A.p_their()] claws with the nail filer. This was a great idea."))
 		qdel(src)
 
-mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Several functions used from it.
+/mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Several functions used from it.
 	name = "Terrygold"
 	icon_state = "butterbear"
 	icon_living = "butterbear"
@@ -153,7 +153,7 @@ mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Seve
 		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
-mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some attacks by the butter bear slip those who dare cross its path.
+/mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some attacks by the butter bear slip those who dare cross its path.
 	var/atom/my_target = get_target()
 	if(!isliving(my_target))
 		return

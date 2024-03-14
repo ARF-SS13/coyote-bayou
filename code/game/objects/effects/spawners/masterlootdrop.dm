@@ -303,9 +303,11 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
+		/obj/item/gun/ballistic/rifle/antique/tankgun = 5,                  //168
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
 		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
 		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
+		/obj/item/gun/ballistic/automatic/democracy = 5,                     //151 20
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 8,                 //beanbags 8
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 7,        //97 8 multicaliber, deceiving stats
 
@@ -352,6 +354,7 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
+		/obj/item/gun/ballistic/rifle/leespeedster = 5,                 //911 5
 		/obj/item/gun/ballistic/automatic/autopipe/special = 10,        //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 5,        //426 7
@@ -513,7 +516,6 @@
 
 		//others
 		/obj/item/gun/energy/laser/complianceregulator = 5,         //330(690) 16 nonlethal
-		/obj/item/gun/energy/laser/scatter/nonlethal = 5,           //132 20 Nonlethal
 
 		//magic
 		/obj/item/gun/magic/wand/kelpmagic/firebolt = 2,
@@ -817,7 +819,6 @@
 /obj/effect/spawner/lootdrop/f13/common_medicine
 	name = "common medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 4,
@@ -832,7 +833,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine
 	name = "uncommon medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
+		/obj/item/reagent_containers/pill/bitterdrink = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 10,
 		/obj/item/reagent_containers/blood/radaway = 10,
@@ -850,8 +851,8 @@
 /obj/effect/spawner/lootdrop/f13/rare_medicine
 	name = "rare medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 10,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 4,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 		/obj/item/stack/medical/gauze/adv = 10,
 		/obj/item/stack/medical/suture/medicated/five = 4,
 		/obj/item/stack/medical/mesh/advanced/five = 4,
@@ -1229,7 +1230,7 @@
 		/obj/item/tool_upgrade/refinement/laserguide = 1,
 		/obj/item/tool_upgrade/reinforcement/heatsink = 1,
 		/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-		/obj/item/gun_upgrade/cosmetic/gold = 1,
+//		/obj/item/gun_upgrade/cosmetic/gold = 1,
 		/obj/item/gun_upgrade/trigger/boom = 1,
 
 	)
@@ -1254,6 +1255,7 @@
 		/obj/item/gun_upgrade/scope/killer = 1,
 		/obj/item/gun_upgrade/mechanism/better = 1,
 		/obj/item/gun_upgrade/barrel/excruciator = 1,
+		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/tool_upgrade/reinforcement/guard = 1,
 		/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	)
@@ -1264,7 +1266,6 @@
 	loot = list(
 		/obj/item/gun_upgrade/barrel/blender = 1,
 		/obj/item/gun_upgrade/trigger/better = 1,
-		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/gun_upgrade/muzzle/better = 1,
 		/obj/item/gun_upgrade/scope/better = 1,
 		/obj/item/gun_upgrade/mechanism/battery_shunt = 1,

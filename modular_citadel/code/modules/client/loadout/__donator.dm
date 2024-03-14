@@ -46,14 +46,6 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
-/datum/gear/donator/prismaticnova
-	name = "Slime Cookie Recipe Book"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/book/granter/crafting_recipe/slimecookie
-	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("prismaticnova")
-	cost = 0
-
 /obj/item/clothing/mask/surgical/sloaff
 	name = "rusty muzzle"
 	desc = "A rusted steel muzzle. It’s covered in scratches."
@@ -439,7 +431,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
-
+	new /obj/item/clothing/suit/armor/medium/wolf(src)
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
@@ -1231,16 +1223,15 @@
 	new /obj/item/slimecross/consuming/grey(src)
 
 /datum/gear/donator/kits/prismaticnova2
-	name = "Slime Cookie Kit"
+	name = "Pharmaceutical Scientist Essentials"
 	path = /obj/item/storage/box/large/custom_kit/prismaticnova2
 	ckeywhitelist = list("prismaticnova")
 
 /obj/item/storage/box/large/custom_kit/prismaticnova2/PopulateContents()
-	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
-	new /obj/item/lighter/slime(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
+	new /obj/item/lighter/royalgold(src)
+	new /obj/item/reagent_containers/pill/redambrosia(src)
+	new /obj/item/stack/medical/mesh/aloe(src)
+	new /obj/item/reagent_containers/pill/antirad_plus(src)
 
 /datum/gear/donator/kits/prismaticnova3
 	name = "Military Pilot Kit"
@@ -1341,17 +1332,18 @@
 	new /obj/item/melee/onehanded/machete/spatha(src)
 
 /datum/gear/donator/kits/seermankhajiit00
-	name = "The Latos MK XI"
+	name = "The FallhlífVeiðimaður"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/gun/ballistic/automatic/fg42tox(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/ammo_box/magazine/fallschirm(src)
+	new /obj/item/ammo_box/magazine/fallschirm(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/ammo_box/a3006box(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
@@ -1416,6 +1408,8 @@
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/gun/ballistic/rifle/antique/tankgun/custom(src)
+	new /obj/item/ammo_box/a50MGbox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
