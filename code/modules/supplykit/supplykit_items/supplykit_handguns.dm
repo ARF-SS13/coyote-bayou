@@ -124,7 +124,7 @@
 
 /datum/supplykit_item/handguns/p577
 	name = "P-577 Assult pistol"
-	desc = "A stylish anti-tank pistol that takes 5 round magazines of 14mm magnum."
+	desc = "A stylish slow firing anti-tank pistol that takes 5 round magazines of 14mm magnum."
 	item = /obj/item/gun/ballistic/automatic/pistol/p577
 
 /datum/supplykit_item/handguns/volcanic
