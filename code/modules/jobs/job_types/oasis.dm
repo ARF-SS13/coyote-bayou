@@ -349,7 +349,8 @@ Mayor
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/trainshot = 1,
 		/obj/item/gun/energy/laser/auto/oasis = 1,
-		)*/
+		)
+*/
 
 /*
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -591,11 +592,11 @@ Mayor
 			/datum/job/oasis,
 		),
 	)
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/engineer,
 	/datum/outfit/loadout/miner,)
-
+*/
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
 	jobtype = /datum/job/oasis/f13prospector
@@ -1060,7 +1061,7 @@ Mayor
 	/datum/outfit/loadout/loanshark,
 	/datum/outfit/loadout/investor
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 
@@ -1461,7 +1462,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
@@ -1469,7 +1470,6 @@ Mayor
 	gloves = /obj/item/pda
 	l_pocket = /obj/item/storage/wallet/stash/high
 	backpack_contents = list(
-		/obj/item/kit_spawner/tools,
 		/obj/item/storage/box/guild/uniform,
 		/obj/item/cool_book/guildguide = 1
 		)
@@ -1580,7 +1580,6 @@ Mayor
 	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/storage/survivalkit/medical/follower
 	backpack_contents = list(
-		/obj/item/kit_spawner/tools,
 		/obj/item/storage/box/guild/uniform,
 		/obj/item/cool_book/guildguide = 1
 	)
@@ -1605,7 +1604,7 @@ Mayor
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/kit_spawner/townie/mayor
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town/guild
@@ -1614,7 +1613,6 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	gloves = /obj/item/pda
 	backpack_contents = list(
-		/obj/item/kit_spawner/tools,
 		/obj/item/storage/box/guild/uniform,
 		/obj/item/storage/wallet/stash/banker = 1,
 		/obj/item/cool_book/guildguide = 1
@@ -1650,7 +1648,7 @@ Mayor
 /datum/outfit/job/den/nashcurator
 	name = "New Boston Librarian"
 	jobtype = /datum/job/oasis/nashcurator
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	ears = /obj/item/radio/headset/headset_town/guild
@@ -1660,7 +1658,6 @@ Mayor
 	r_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
 		/obj/item/storage/box/guild/uniform,
-		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/guildguide = 1
 		)
 
@@ -1692,11 +1689,11 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/diner
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	matchmaking_allowed = list(
@@ -1715,7 +1712,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/kit_spawner/townie/barkeep
+	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	gloves = /obj/item/pda
@@ -1723,7 +1720,6 @@ Mayor
 	backpack_contents = list(
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/storage/box/guild/uniform,
-		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/guildguide = 1
 		)
 
@@ -1767,7 +1763,7 @@ Mayor
 /datum/outfit/job/followers/f13followerguard
 	name =	"Knight"
 	jobtype =	/datum/job/followers/f13followerguard
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	ears = /obj/item/radio/headset/headset_town/guild
@@ -1782,7 +1778,6 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/box/guild/uniform,
 		/obj/item/cool_book/guildguide = 1,
-		/obj/item/kit_spawner/waster
 	)
 
 //Guild Uniforms
