@@ -663,6 +663,7 @@
 	icon_state = "dress"
 	item_state = "dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/dressshortsleeve
 	name = "colorable dress"
@@ -670,6 +671,7 @@
 	icon_state = "shortsleeve_dress"
 	item_state = "shortsleeve_dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/evening_gown
 	name = "colorable dress"
@@ -677,6 +679,7 @@
 	icon_state = "evening_gown"
 	item_state = "evening_gown"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/open_shoulder_dress
 	name = "colorable dress"
@@ -684,6 +687,7 @@
 	icon_state = "open_shoulder_dress"
 	item_state = "open_shoulder_dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/asymm_dress
 	name = "colorable dress"
@@ -691,6 +695,7 @@
 	icon_state = "asymm_dress"
 	item_state = "asymm_dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/tea_dress
 	name = "colorable dress"
@@ -698,6 +703,7 @@
 	icon_state = "tea_dress"
 	item_state = "tea_dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/under/aurora/longsleeve_dress
 	name = "colorable dress"
@@ -705,3 +711,4 @@
 	icon_state = "longsleeve_dress"
 	item_state = "longsleeve_dress"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
