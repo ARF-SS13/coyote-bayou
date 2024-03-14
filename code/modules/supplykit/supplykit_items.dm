@@ -2,7 +2,19 @@
 	var/list/filtered_supplykit_items = GLOB.supplykit_categories.Copy() // list of supplykit categories without associated values.
 	var/list/sale_items = list()
 
+	var/list/rest_of_them = GLOB.supplykit_items.Copy()
+	var/list/important_ones = list()
+
 	for(var/path in GLOB.supplykit_items)
+		var/datum/supplykit_item/sukit = path
+		if(initial(sukit.important) == TRUE)
+			rest_of_them -= path
+			important_ones += path
+
+	/// stacks rest of them under important_ones
+	important_ones += rest_of_them
+
+	for(var/path in important_ones)
 		var/datum/supplykit_item/I = new path
 		if (I.restricted && !allow_restricted)
 			continue
@@ -13,7 +25,7 @@
 		if(I.limited_stock < 0 && !I.cant_discount && I.item && I.cost > 1)
 			sale_items += I
 	if(allow_sales)
-		for(var/i in 1 to 3)
+		for(var/i in 1 to 10)
 			var/datum/supplykit_item/I = pick_n_take(sale_items)
 			var/datum/supplykit_item/A = new I.type
 			var/discount = A.get_discount()
@@ -47,6 +59,7 @@
 	var/desc = "item description"
 	var/item = null // Path to the item to spawn.
 	var/cost = 0
+	var/important = FALSE //for putting an entry at the top of the page
 	var/surplus = 100 // Chance of being included in the surplus crate.
 	var/cant_discount = FALSE
 	var/limited_stock = -1 //Setting this above zero limits how many times this item can be bought by the same person in a round, -1 is unlimited
@@ -89,6 +102,9 @@
 	category = "Holiday"
 */
 
+/datum/supplykit_item/misc
+	category = "Misc Gear"
+
 /datum/supplykit_item/longarms
 	category = "Longarms"
 	cost = 20
@@ -101,13 +117,18 @@
 	category = "Revolvers"
 	cost = 20
 
-/datum/supplykit_item/pipeguns
+/datum/supplykit_item/improvised
 	category = "Pipe Guns"
-	cost = 20
+	cost = 10
+
+/datum/supplykit_item/magazines
+	category = "Magazines"
+	cost = 10
 
 /datum/supplykit_item/ammo
 	category = "Ammunition"
 	surplus = 40
+	cost = 10
 
 /datum/supplykit_item/ammospec
 	category = "Special Ammunition"
@@ -116,11 +137,50 @@
 /datum/supplykit_item/explosives
 	category = "Explosives"
 
-/datum/supplykit_item/role_restricted
-	category = "Role-Restricted"
-	surplus = 0
-	cant_discount = TRUE
+/datum/supplykit_item/blackpowder
+	category = "Blackpowder"
+	cost = 20
+
+/datum/supplykit_item/magic
+	category = "Magic Weapons"
+	cost = 20
+
+/datum/supplykit_item/energy
+	category = "Energy Weapons"
+	cost = 20
+
+/datum/supplykit_item/meleesmall
+	category = "One handed Melee"
+	cost = 20
+
+/datum/supplykit_item/meleebig
+	category = "Two handed Melee"
+	cost = 20
+
+/datum/supplykit_item/shields
+	category = "Shields"
+	cost = 20
+	surplus = 20
+
+/datum/supplykit_item/animals
+	category = "Plants & Animals"
+
+/datum/supplykit_item/salvage
+	category = "Mining & Salvage"
+
+/datum/supplykit_item/tools
+	category = "General Tools"
+
+/datum/supplykit_item/tech
+	category = "Technology"
+
+/datum/supplykit_item/medical
+	category = "Medical"
+
+/datum/supplykit_item/materials
+	category = "Materials"
 
 //Discounts (dynamically filled above)
 /datum/supplykit_item/discounts
 	category = "Discounted Gear"
+

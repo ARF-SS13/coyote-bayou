@@ -53,3 +53,9 @@
 	item = /obj/item/grenade/empgrenade
 	cost = 15
 
+/datum/supplykit_item/explosives/smoke
+	name = "Smoke Grenade"
+	desc = "A grenade that produces a big cloud of smoke, for making clean getaways."
+	item = /obj/item/grenade/smokebomb
+	cost = 5
+

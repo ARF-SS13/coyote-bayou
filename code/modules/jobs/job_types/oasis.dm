@@ -14,7 +14,7 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den
 	name = "New Boston Default Template"
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -58,14 +58,14 @@ Mayor
 			/datum/job/oasis
 		)
 	)
-
+/*
 	loadout_options = list(
 		/datum/outfit/loadout/mayoral,
 		/datum/outfit/loadout/dictator,
 		/datum/outfit/loadout/firstcitizen,
 		/datum/outfit/loadout/highroller
 		)
-
+*/
 
 /*
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -89,7 +89,7 @@ Mayor
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/kit_spawner/townie/mayor
+	belt = /obj/item/supplykit
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/seclite
@@ -165,12 +165,12 @@ Mayor
 
 
 	outfit = /datum/outfit/job/den/f13secretary
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/pr,
 	/datum/outfit/loadout/pw
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 	matchmaking_allowed = list(
@@ -186,7 +186,7 @@ Mayor
 	name = "Councilperson"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
-	belt = /obj/item/kit_spawner/townie/mayor
+	belt = /obj/item/supplykit
 	ears = /obj/item/radio/headset/headset_town/mayor
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
@@ -201,7 +201,6 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1
 		)
 
@@ -265,13 +264,13 @@ Mayor
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13sheriff
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
 	/datum/outfit/loadout/thechief,
 	/datum/outfit/loadout/thedictator
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
 	matchmaking_allowed = list(
@@ -287,7 +286,7 @@ Mayor
 	name = "Sheriff"
 	jobtype = /datum/job/oasis/f13sheriff
 	id = /obj/item/card/id/dogtag/sheriff
-	belt = /obj/item/kit_spawner/lawman/sheriff
+	belt = /obj/item/supplykit
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -380,14 +379,14 @@ Mayor
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 0
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
 	/datum/outfit/loadout/police,
 	/datum/outfit/loadout/swat,
 	/datum/outfit/loadout/energy,
 	)
-
+*/
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -407,7 +406,7 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/kit_spawner/lawman
+	belt = /obj/item/supplykit
 	suit_store = /obj/item/storage/belt/legholster
 	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/flare
@@ -415,7 +414,6 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
@@ -510,12 +508,12 @@ Mayor
 			/datum/job/oasis,
 		),
 	)
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/abiotic,
 	/datum/outfit/loadout/pomologist,
 	/datum/outfit/loadout/zany,)
-
+*/
 /datum/outfit/job/den/f13farmer
 	name = "Farmer"
 	jobtype = /datum/job/oasis/f13farmer
@@ -671,13 +669,13 @@ Mayor
 	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Nash. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
 	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/rescueranger,
 	/datum/outfit/loadout/stitcher,
 	/datum/outfit/loadout/mixer,
 	/datum/outfit/loadout/holidaydoc)
-
+*/
 	outfit = /datum/outfit/job/den/f13dendoc
 	access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING, ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING, ACCESS_FOLLOWER)
@@ -694,7 +692,7 @@ Mayor
 	name = "Doctor"
 	jobtype = /datum/job/oasis/f13dendoc
 	chemwhiz = TRUE
-	belt = /obj/item/kit_spawner/townie/doctor
+	belt = /obj/item/supplykit
 	ears = /obj/item/radio/headset/headset_town/medical
 	uniform = /obj/item/clothing/under/f13/medic
 	neck = /obj/item/clothing/neck/stethoscope
@@ -781,13 +779,13 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
 	/datum/outfit/loadout/frontier,
 	/datum/outfit/loadout/richmantender,
 	/datum/outfit/loadout/diner)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	matchmaking_allowed = list(
@@ -806,7 +804,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie/barkeep
+	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
@@ -816,7 +814,6 @@ Mayor
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
@@ -894,8 +891,7 @@ Mayor
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
-	belt = /obj/item/kit_spawner/townie
-	//suit_store = /obj/item/kit_spawner/tools //suit store not workin for some reason
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -905,7 +901,6 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		///obj/item/melee/onehanded/knife/hunting = 1 //you already got a knife
 		)
 
@@ -1109,7 +1104,7 @@ Mayor
 /datum/outfit/job/oasis/f13detective
 	name = "Detective"
 	jobtype = /datum/job/oasis/f13detective
-	belt = /obj/item/kit_spawner/lawman
+	belt = /obj/item/supplykit
 	suit = /obj/item/clothing/suit/det_suit/grey
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
@@ -1145,20 +1140,20 @@ Mayor
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
 	/datum/outfit/loadout/loanshark,
 	/datum/outfit/loadout/investor
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
 
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/kit_spawner/townie/mayor
+	belt = /obj/item/supplykit
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
@@ -1168,7 +1163,6 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/banker = 1)
 
@@ -1242,7 +1236,7 @@ Mayor
 /datum/outfit/job/den/nashcurator
 	name = "New Boston Librarian"
 	jobtype = /datum/job/oasis/nashcurator
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -1254,7 +1248,6 @@ Mayor
 		/obj/item/folder/white = 1,
 		/obj/item/pda = 1,
 		/obj/item/pen/fountain/captain,
-		/obj/item/kit_spawner/tools,
 		/obj/item/export_scanner,
 		/obj/item/key/displaycase,
 		)
@@ -1284,12 +1277,12 @@ Mayor
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 0
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/laser_master,
 	/datum/outfit/loadout/ballistic_master
 	)
-
+*/
 	outfit = /datum/outfit/job/den/f13quartermaster
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
@@ -1307,7 +1300,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13quartermaster
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
@@ -1380,13 +1373,13 @@ Mayor
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 0
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/energy_specialist,
 	/datum/outfit/loadout/ballistic_specialist,
 	/datum/outfit/loadout/jackofall_specialist
 	)
-
+*/
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
@@ -1404,7 +1397,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
@@ -1415,7 +1408,6 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
 /datum/outfit/loadout/energy_specialist
@@ -1488,13 +1480,13 @@ Mayor
 	supervisors = "New Boston's laws"
 	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/pilotformal,
 	/datum/outfit/loadout/pilotshock,
 	/datum/outfit/loadout/flightsurgeon,
 	/datum/outfit/loadout/pilotparamed)
-
+*/
 	outfit = /datum/outfit/job/den/f13pilot
 
 	access = list(ACCESS_BAR, ACCESS_EVA)
@@ -1512,7 +1504,7 @@ Mayor
 /datum/outfit/job/den/f13pilot
 	name = "Vertibird Pilot"
 	jobtype = /datum/job/oasis/f13pilot
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -1520,10 +1512,8 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/follower/guard,
 		)
 
 /datum/outfit/job/den/f13pilot/pre_equip(mob/living/carbon/human/H)
@@ -1598,11 +1588,12 @@ Mayor
 	exp_type = EXP_TYPE_FOLLOWERS
 
 	outfit = /datum/outfit/job/den/f13Professor
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/environmental_scientist,
 	/datum/outfit/loadout/medical_specialist
 	)
-
+*/
 	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
 	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
 
@@ -1649,14 +1640,13 @@ Mayor
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	uniform = /obj/item/clothing/under/f13/followers
 	suit= /obj/item/clothing/suit/toggle/labcoat/followers
-	belt = /obj/item/kit_spawner/follower/scientist
+	belt = /obj/item/supplykit
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
@@ -1708,14 +1698,14 @@ Mayor
 			/datum/job/oasis/f13practitioner,
 		),
 	)
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/physician,
 	/datum/outfit/loadout/pharmacist,
 	/datum/outfit/loadout/paramedic,
 	/datum/outfit/loadout/medical_researcher,
 	)
-
+*/
 /datum/outfit/job/den/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -1750,13 +1740,12 @@ Mayor
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
-	belt = /obj/item/kit_spawner/follower/doctor
+	belt = /obj/item/supplykit
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,

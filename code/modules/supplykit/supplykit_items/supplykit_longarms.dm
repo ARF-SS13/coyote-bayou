@@ -39,7 +39,7 @@
 
 /datum/supplykit_item/longarms/cowboy
 	name = "Cowboy Repeater"
-	desc = "A classic lever action rifle chambered in .357 magnum."
+	desc = "A classic lever action rifle chambered in .357 magnum, with a 12 round tube magazine."
 	item = /obj/item/gun/ballistic/rifle/repeater/cowboy
 
 /datum/supplykit_item/longarms/delisle
@@ -49,7 +49,7 @@
 
 /datum/supplykit_item/longarms/famas
 	name = "Famas Rifle"
-	desc = "A European bullpup assault rifle, chambered in 5.56."
+	desc = "A European bullpup assault rifle, chambered in 5.56 with 20 round magazines."
 	item = /obj/item/gun/ballistic/automatic/famas
 
 /datum/supplykit_item/longarms/gewehr88
