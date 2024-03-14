@@ -46,7 +46,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -367,7 +367,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider/watcher
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider/doctor
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -658,7 +658,7 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -946,8 +946,7 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
-	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -959,7 +958,6 @@ Raider
 		///obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/radio/headset
 		)
@@ -1317,7 +1315,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13radioop
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1327,7 +1325,6 @@ Raider
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/clothing/mask/chameleon
 		)
@@ -1351,7 +1348,7 @@ Raider
 	name = "Ashdown Citizen"
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1362,7 +1359,6 @@ Raider
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/ashdowncit = 1
 		)
 
@@ -1423,13 +1419,13 @@ Raider
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/oasis/f13preacher
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
 	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
 	/datum/outfit/loadout/cleanser		//Just some bombs.
 	)
-
+*/
 	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts <--I'm doing something about it now!
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
@@ -1581,7 +1577,7 @@ Raider
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/preacher
+	belt = /obj/item/supplykit
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -1836,12 +1832,12 @@ Raider
 	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante
-
+/*
 	loadout_options = list(
 							/datum/outfit/loadout/desert_ranger,
 							/datum/outfit/loadout/bounty_hunter,
 							/datum/outfit/loadout/retired_ranger)
-
+*/
 
 /datum/outfit/job/wasteland/f13vigilante
 	name = "Vigilante"
@@ -1859,7 +1855,7 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=4,
 		/obj/item/reagent_containers/pill/radx=1,
 		/obj/item/restraints/handcuffs=2,
-		/obj/item/kit_spawner/waster = 1,
+		/obj/item/supplykit = 1,
 )
 
 /*
@@ -1956,7 +1952,7 @@ Raider
 
 	access = list()
 	minimal_access = list()
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/brawler,
 	/datum/outfit/loadout/spearman,
@@ -1980,7 +1976,7 @@ Raider
 	/datum/outfit/loadout/rustwalkersshaman,
 	/datum/outfit/loadout/bonedancerexile
 	)
-
+*/
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -2042,7 +2038,7 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/tribal/farlands
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -2058,7 +2054,7 @@ Raider
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/melee/onehanded/knife/bone = 1
 		)
-
+/*
 //Generic Tribals
 /datum/outfit/loadout/brawler
 	name = "Far-Lands Mounted Warrior"
@@ -2334,6 +2330,7 @@ Raider
 		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
 	)
+*/
 
 /////////////////
 ////Redwater/////
@@ -2351,13 +2348,14 @@ Raider
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/loadout/redwaterslave
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/worker,	//Fields or the bar, this is just a generic workman/woman.
 	/datum/outfit/loadout/pack,		//pack mule slave
 	/datum/outfit/loadout/entertainer, //Dancer or musicion slave
 	/datum/outfit/loadout/sex			//p obvs fam
 	)
+*/
 
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
@@ -2468,11 +2466,13 @@ Raider
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
+/*
 	loadout_options = list(
 			/datum/outfit/loadout/overbossmelee,	//goliath
 			/datum/outfit/loadout/overbossamr,		//AMR
 			/datum/outfit/loadout/overbossranged, //moni + drugs
 	)
+*/
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
@@ -2488,7 +2488,7 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/military
-	belt = /obj/item/kit_spawner/raider/boss
+	belt = /obj/item/supplykit
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
@@ -2609,8 +2609,7 @@ Raider
 
 	id = /obj/item/card/id/dogtag/ranger
 	ears = /obj/item/radio/headset/headset_town/lawman
-	belt = /obj/item/kit_spawner/waster
-	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -2621,7 +2620,5 @@ Raider
 		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient = 2,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
-		/obj/item/kit_spawner/waster,
 		/obj/item/cool_book/teacherguidebook = 1
 		)
