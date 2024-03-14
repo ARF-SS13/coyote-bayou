@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 /datum/outfit/job/tribal/
 	name = "Tribal"
 	jobtype = /datum/job/tribal/
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack = /obj/item/storage/backpack/explorer
@@ -128,9 +128,8 @@ Tribal Chief
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
-		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/supplykit = 1,
 		/obj/item/cool_book/chiefguide = 1
 	)
 
@@ -156,10 +155,12 @@ Tribal Shaman
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
-
+/*
 	loadout_options = list(
 		/datum/outfit/loadout/seeker, //Seeker
 	)
+*/
+
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/mentor = list(
 			/datum/job/tribal/f13druid,
@@ -180,7 +181,7 @@ Tribal Shaman
 /datum/outfit/job/tribal/f13shaman
 	name = "Spiritual Leader"
 	jobtype = /datum/job/tribal/f13shaman
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/tribe
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -190,7 +191,6 @@ Tribal Shaman
 		/obj/item/smelling_salts/wayfarer=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
@@ -267,11 +267,10 @@ Tribal Hunt Master
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/lantern = 1,
-		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/supplykit = 1,
 		/obj/item/cool_book/warriorguide = 1
 	)
 
@@ -328,7 +327,7 @@ Druid
 	name = "Harvest Leader"
 	jobtype = /datum/job/tribal/f13druid
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/wayfarer/acolyte
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -337,7 +336,6 @@ Druid
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
@@ -367,12 +365,13 @@ Villager
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
-
+/*
 	loadout_options = list(
 		/datum/outfit/loadout/gatherer, //Bone Spear, Bone Knife, Healing powder
 		/datum/outfit/loadout/mender,	//Ritual dagger, Improvized gauze, Healing powders, Mortar
 		/datum/outfit/loadout/craftsman, //Crude tools
 	)
+*/
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/tribal,
@@ -401,7 +400,7 @@ Villager
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -479,12 +478,13 @@ Hunter
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
-
+/*
 	loadout_options = list(
 		/datum/outfit/loadout/ranged,
 		/datum/outfit/loadout/melee,
 		/datum/outfit/loadout/healer,
 	)
+*/
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/tribal,
@@ -514,7 +514,7 @@ Hunter
 	name = "Forager"
 	jobtype = /datum/job/tribal/f13hunter
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -523,7 +523,6 @@ Hunter
 	backpack_contents = list(
 		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/cool_book/warriorguide = 1
 	)
@@ -591,10 +590,9 @@ Spirit-Pledged
 	jobtype = /datum/job/tribal/f13spiritpledged
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	id = /obj/item/card/id/tribetattoo
-	belt = /obj/item/kit_spawner/tribal
+	belt = /obj/item/supplykit
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign)
 
 /*
@@ -639,7 +637,6 @@ Guardian
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
@@ -687,14 +684,13 @@ Guardian
 /datum/outfit/job/den/f13dualcitizen
 	name = "Dual Citizen"
 	jobtype = /datum/job/tribal/f13dualcitizen
-	belt = /obj/item/kit_spawner/townie
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/villagerguide = 1
 	)
 
