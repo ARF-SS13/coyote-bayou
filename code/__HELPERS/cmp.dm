@@ -98,6 +98,9 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 /proc/cmp_uplink_items_dsc(datum/uplink_item/A, datum/uplink_item/B)
 	return sorttext(initial(B.name), initial(A.name))
 
+/proc/cmp_supplykit_items_dsc(datum/supplykit_item/A, datum/supplykit_item/B)
+	return sorttext(initial(B.name), initial(A.name))
+
 /proc/cmp_numbered_displays_name_asc(datum/numbered_display/A, datum/numbered_display/B)
 	return sorttext(A.sample_object.name, B.sample_object.name)
 
