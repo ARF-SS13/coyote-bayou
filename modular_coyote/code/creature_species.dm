@@ -1270,7 +1270,7 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
-/datum/species/adpated/simplebot/swarmer
+/datum/species/adapted/simplebot/swarmer
 	name = "Adapted Swarmer"
 	simple_icon = 'icons/mob/playerswarmer.dmi'
 	id = "swarmer"
