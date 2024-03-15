@@ -1277,6 +1277,9 @@
 	roundstart = TRUE
 	alt_prefixes = list("Ranged" = "ranged_", "Melee" = "melee_")
 	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "-rest"
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
 
