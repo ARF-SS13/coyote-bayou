@@ -271,8 +271,6 @@
 		/obj/item/gun/energy/laser/tg/particlecannon,
 		/obj/item/gun/energy/laser/xcomufolaser,
 		/obj/item/gun/energy/laser/LaserAK,
-		/obj/item/gun/ballistic/automatic/pistol/p500/p577/crimsondeath,
-		/obj/item/gun/ballistic/automatic/pistol/p500/crimsondeath,
 	)
 
 /datum/export/item/melee
