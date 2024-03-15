@@ -222,7 +222,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 2,               //74 (102)    1
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 2,                     //43          1
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 2,                   //40          4
-		/obj/item/gun/ballistic/automatic/pistol/p500 = 2,						//64		  5			i dont know about this man this should not be in here.
+//		/obj/item/gun/ballistic/automatic/pistol/p500 = 2,						//64		  5			i dont know about this man this should not be in here.
 	)
 
 /// DPS should be 100-150 ish
