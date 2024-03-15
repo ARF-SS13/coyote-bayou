@@ -1481,10 +1481,7 @@
 /turf/open/indestructible,
 /area/f13/tcoms)
 "dt" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bar/heaven)
 "du" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans,
@@ -5212,14 +5209,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"lL" = (
-/obj/structure/chair/sofa/corp/left{
-	color = "pink"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar/heaven)
 "lM" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -12122,15 +12111,23 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Bx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444";
-	pixel_x = -16;
-	pixel_y = -8
+/obj/structure/toilet_paper{
+	pixel_y = 16;
+	pixel_x = -8
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/mirror{
+	pixel_y = 32;
+	pixel_x = 7
 	},
+/obj/structure/sink{
+	dir = 1;
+	pixel_y = 24;
+	pixel_x = 7
+	},
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bar/heaven)
 "By" = (
 /obj/structure/railing{
@@ -13446,13 +13443,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Eo" = (
-/obj/structure/curtain{
-	color = "#c40e0e";
-	alpha = 255
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/bar/heaven)
 "Ep" = (
 /turf/open/indestructible/ground/outside/desert{
@@ -21797,12 +21789,15 @@
 	},
 /area/f13/tribe)
 "WW" = (
-/obj/structure/chair/sofa/corp/right{
-	color = "pink"
+/obj/structure/decoration/vent{
+	name = "drain";
+	layer = 2.0
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/item/reagent_containers/rag/towel/random,
+/obj/machinery/shower{
+	pixel_y = 17
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bar/heaven)
 "WX" = (
 /obj/structure/railing/dancing_pole{
@@ -45998,10 +45993,10 @@ Yj
 Yj
 GU
 qF
+qF
 tj
-Eo
-Eo
-Eo
+tj
+tj
 tj
 VL
 Ux
@@ -46255,9 +46250,9 @@ Yj
 Yj
 GU
 qF
+qF
 tj
 WW
-OY
 dt
 tj
 Ux
@@ -46512,11 +46507,11 @@ Yj
 Yj
 GU
 qF
+qF
 tj
-lL
 Bx
-OY
-AA
+dt
+Eo
 OY
 aL
 tW
@@ -46769,7 +46764,7 @@ Yj
 Yj
 GU
 qF
-tj
+qF
 tj
 tj
 tj
