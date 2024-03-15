@@ -1080,6 +1080,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ballistichelmets/fiend
+	name = "Fiend Helmet"
+	path = /obj/item/clothing/head/helmet/f13/fiend
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 //Hat hats
 /datum/gear/head/yellowtricorne
 	name = "Yellow Tricorne"

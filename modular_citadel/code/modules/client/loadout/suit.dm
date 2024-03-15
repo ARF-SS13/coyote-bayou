@@ -1842,6 +1842,11 @@
 	path = /obj/item/clothing/suit/aurora/abbasi_carrier
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
+/datum/gear/suit/aurora/lighttribal
+	name = "Tribal Armor"
+	path = /obj/item/clothing/suit/armor/light/tribal
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+
 /datum/gear/suit/aurora/freedomcoat
 	name = "Freedom Coat"
 	path = /obj/item/clothing/suit/toggle/labcoat/aurora/freedom_coat
