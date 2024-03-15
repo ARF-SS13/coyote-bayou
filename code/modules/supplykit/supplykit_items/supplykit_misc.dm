@@ -20,7 +20,7 @@
 /datum/supplykit_item/misc/copper
 	name = "Copper Coin"
 	desc = "A single copper coin. chump change, really."
-	item = /obj/item/stack/f13Cash
+	item = /obj/item/stack/f13Cash/caps
 	cost = 1
 	important = TRUE
 
