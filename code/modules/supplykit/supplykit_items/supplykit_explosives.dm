@@ -45,7 +45,7 @@
 	name = "plastic explosives"
 	desc = "A timed demolition charge for hard breaches."
 	item = /obj/item/grenade/plastic
-	cost = 15
+	cost = 30
 
 /datum/supplykit_item/explosives/emp
 	name = "EMP grenade"
