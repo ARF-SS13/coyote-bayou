@@ -13,5 +13,5 @@
 /obj/item/stack/supplytoken/five
 	amount = 5
 
-/obj/item/stack/supplytokenj/twenty
+/obj/item/stack/supplytoken/twenty
 	amount = 20
