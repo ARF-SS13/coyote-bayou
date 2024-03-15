@@ -3650,3 +3650,51 @@
 	cost = 0
 	path = /obj/item/clothing/under/rank/medical/doctor/util
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/aurora/dress
+	name = "Colorable dress"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dressshortsleeve
+	name = "Short Sleeve dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/dressshortsleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dressshortsleeve
+	name = "Short Sleeve dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/dressshortsleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/eveningdress
+	name = "Evening Dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/evening_gown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/openshoulderdress
+	name = "open shoulder dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/open_shoulder_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/asymmdress
+	name = "asymm dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/asymm_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/teadress
+	name = "tea dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/tea_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/longsleevedress
+	name = "long sleeve dress, colorable"
+	cost = 0
+	path = /obj/item/clothing/under/aurora/longsleeve_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
