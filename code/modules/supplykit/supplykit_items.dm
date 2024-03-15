@@ -133,6 +133,7 @@
 /datum/supplykit_item/ammospec
 	category = "Special Ammunition"
 	surplus = 20
+	cost = 5
 
 /datum/supplykit_item/explosives
 	category = "Explosives"
