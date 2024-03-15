@@ -1155,7 +1155,7 @@
 	name = "NT P-577 Superheavy Pistol"
 	desc = "A super heavy pistol chambered in .577 Nitro Express but rechambered to use 14mm for easier resupplying, it has a strange red logo of nine tails at the slide aswell. It has an integrated laser sight. You most likely want to have a cybernetic arm to lessen the risk of having your arm torn off on shooting this pistol. Looks to be a recent version just before the war, Limited production."
 	icon_state = "p577"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T10 // 129dps, less than AMR i guess it's fair but auto pistols at rare out dps this so idk.
+	damage_multiplier = GUN_EXTRA_DAMAGE_T10 // 129dps, less than other rares i guess it's fair tho for a pistol with single shots?
 	
 	init_recoil = HANDGUN_RECOIL(4.4, 2.4)
 
