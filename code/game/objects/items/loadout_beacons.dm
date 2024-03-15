@@ -545,6 +545,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/c9mm(src)
 
+/obj/item/storage/box/gun/premium/p577 //uhh premium gun, Should this be here? maybe?
+	name = "P-577 case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/premium/p577/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/p500/p577(src)
+	new /obj/item/ammo_box/magazine/p500(src)
+	new /obj/item/ammo_box/m14mm(src)
 /obj/item/storage/box/gun/premium/automatic //beretta m93r, but keeping the naming scheme I got
 	name = "Beretta M93R case" //might be stronk, might need to not take greasegun mags, will see
 
@@ -1358,6 +1366,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/ticon(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
+
+/obj/item/storage/box/gun/premium/p500 //uhh premium gun, Should this be here? maybe?
+	name = "P-500 case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/premium/p500/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/p500(src)
+	new /obj/item/ammo_box/magazine/p500(src)
+	new /obj/item/ammo_box/m14mm(src)
 
 /obj/item/storage/box/gun/pistol/needler
 	name = "NP-149/40 pistol case"
