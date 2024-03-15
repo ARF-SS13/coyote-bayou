@@ -29,7 +29,7 @@
 	if(A.type == requireditem)
 		if(user)
 			if(typetochangeto)
-				user.visible_message(span_bolddanger("This action will reset your item, remove all attachments etc or they will be lost."))
+				user.visible_message(span_danger("This action will reset your item, remove all attachments etc or they will be lost!!!"))
 			user.visible_message(span_notice("[user] starts applying [parent] to [A]"), span_notice("You start applying \the [parent] to \the [A]"))
 			var/obj/item/I = parent
 			if(!I.use_tool(user = user, target =  A, delay = WORKTIME_FAST))
