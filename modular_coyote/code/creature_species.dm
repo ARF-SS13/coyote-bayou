@@ -1270,19 +1270,30 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
+/datum/species/adpated/simplebot/swarmer
+	name = "Adapted Swarmer"
+	simple_icon = 'icons/mob/playerswarmer.dmi'
+	id = "swarmer"
+	roundstart = TRUE
+	alt_prefixes = list("Ranged" = "ranged_", "Melee" = "melee_")
+	icon_dead_suffix = "_dead"
+/mob/living/carbon/human/species/swarmer
+	race = /datum/species/adapted/simplebot/swarmer
+
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
-	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	simple_icon = 'modular_coyote/icons/mob/newraptorborg.dmi'
 	roundstart = FALSE
 	rotate_on_lying = FALSE
 	icon_width = 64
-	icon_rest_suffix = "_rest"
+	icon_rest_suffix = "-rest"
 	icon_dead_suffix = "-wreck"
 
 /datum/species/adapted/raptorborg/secraptor
 	name = "Adapted Secraptor"
 	id = "secraptor"
 	roundstart = TRUE
+	alt_prefixes = list("White Sec" = "white_")
 /mob/living/carbon/human/species/secraptor
 	race = /datum/species/adapted/raptorborg/secraptor
 
@@ -1300,12 +1311,13 @@
 /mob/living/carbon/human/species/medraptor
 	race = /datum/species/adapted/raptorborg/medraptor
 
-/datum/species/adapted/raptorborg/medraptor
-	name = "Adapted Medraptor"
-	id = "medraptor"
+/datum/species/adapted/raptorborg/syndiraptor
+	name = "Adapted Syndiraptor"
+	id = "syndiraptor"
 	roundstart = TRUE
-/mob/living/carbon/human/species/medraptor
-	race = /datum/species/adapted/raptorborg/medraptor
+	alt_prefixes = list("Medical" = "medi_", "Mech" = "mech_")
+/mob/living/carbon/human/species/syndiraptor
+	race = /datum/species/adapted/raptorborg/syndiraptor
 
 /datum/species/adapted/raptorborg/engiraptor
 	name = "Adapted Engiraptor"
@@ -1314,6 +1326,13 @@
 /mob/living/carbon/human/species/engiraptor
 	race = /datum/species/adapted/raptorborg/engiraptor
 
+/datum/species/adapted/raptorborg/energyraptor
+	name = "Adapted Energyraptor"
+	id = "energyraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/energyraptor
+	race = /datum/species/adapted/raptorborg/energyraptor
+
 /datum/species/adapted/raptorborg/mineraptor
 	name = "Adapted Mineraptor"
 	id = "mineraptor"
@@ -1321,12 +1340,12 @@
 /mob/living/carbon/human/species/mineraptor
 	race = /datum/species/adapted/raptorborg/mineraptor
 
-/datum/species/adapted/raptorborg/traumaraptor
-	name = "Adapted Traumaraptor"
-	id = "traumaraptor"
+/datum/species/adapted/raptorborg/churchraptor
+	name = "Adapted Churchraptor"
+	id = "churchraptor"
 	roundstart = TRUE
-/mob/living/carbon/human/species/traumaraptor
-	race = /datum/species/adapted/raptorborg/traumaraptor
+/mob/living/carbon/human/species/churchraptor
+	race = /datum/species/adapted/raptorborg/churchraptor
 
 /datum/species/adapted/raptorborg/janiraptor
 	name = "Adapted Janiraptor"
@@ -1349,6 +1368,13 @@
 /mob/living/carbon/human/species/fancyraptor
 	race = /datum/species/adapted/raptorborg/fancyraptor
 
+/datum/species/adapted/raptorborg/wreckraptor
+	name = "Adapted Wreckedraptor"
+	id = "wreckraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/wreckraptor
+	race = /datum/species/adapted/raptorborg/wreckraptor
+
 //get in the mech, shinji
 /datum/species/adapted/mechs
 	name = "REPORT THIS AS A BUG"
@@ -1363,6 +1389,13 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/gygax	
 	race = /datum/species/adapted/mechs/gygax
+
+/datum/species/adapted/mechs/darkgygax
+	name = "Adapted Darkgygax"
+	id = "darkgygax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/darkgygax
+	race = /datum/species/adapted/mechs/darkgygax
 
 /datum/species/adapted/mechs/ripley
 	name = "Adapted Ripley"
