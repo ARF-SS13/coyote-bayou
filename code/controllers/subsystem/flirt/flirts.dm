@@ -38,7 +38,7 @@
 	aoe_message = "%FLIRTER% approves!"
 	aoe_message_span = "good"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals")
+	categories = list("Clarification")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = FALSE
 
@@ -57,7 +57,7 @@
 	aoe_message = "%FLIRTER% doesn't <i>seem</i> interested! Not yet, at least."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals", "Tsundere") // yes its an approval
+	categories = list("Clarification") 
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -76,7 +76,7 @@
 	aoe_message = "%FLIRTER% doesn't <i>seem</i> interested! Not yet, at least."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Reactions", "Approvals") // yes its an approval
+	categories = list("Ranged Flirts") // yes its an approval
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -95,7 +95,7 @@
 	aoe_message = "%FLIRTER% declines!"
 	aoe_message_span = "alert"
 	aoe_range = 1
-	categories = list("Reactions", "Declines")
+	categories = list("Clarification")
 	sound_to_do = 'sound/effects/boowomp.ogg'
 	requests_reply = FALSE
 
@@ -114,7 +114,7 @@
 	aoe_message = "%FLIRTER's eyes begin to <span class='love'>wander</span> toward everyone nearby!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -132,7 +132,7 @@
 	aoe_message = "%FLIRTER% <span class='love'>blushes</span>!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -150,7 +150,7 @@
 	aoe_message = "%FLIRTER% tries to sniffs the air!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -168,7 +168,7 @@
 	aoe_message = "%FLIRTER% tries to pinches someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Tsundere")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -186,7 +186,7 @@
 	aoe_message = "%FLIRTER% tries to caress someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -204,7 +204,7 @@
 	aoe_message = "%FLIRTER% tries to brush against someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -223,7 +223,7 @@
 	aoe_message = "%FLIRTER% tries to grope someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top", "Lewd")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -241,7 +241,7 @@
 	aoe_message = "%FLIRTER% tries to booty grope someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -259,7 +259,7 @@
 	aoe_message = "%FLIRTER% tries to grope someone's side!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -277,7 +277,7 @@
 	aoe_message = "%FLIRTER% is maybe making a kissy face at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -295,7 +295,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to get someone to kiss them!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Facial")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -313,7 +313,7 @@
 	aoe_message = "%FLIRTER% is maybe winking at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -331,7 +331,7 @@
 	aoe_message = "%FLIRTER% is maybe waggling a finger at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Tsundere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -349,7 +349,7 @@
 	aoe_message = "%FLIRTER% is maybe leaning on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -367,7 +367,7 @@
 	aoe_message = "%FLIRTER% is maybe snuggling up close with someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -385,7 +385,7 @@
 	aoe_message = "%FLIRTER% is maybe planting a cheek kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -403,7 +403,7 @@
 	aoe_message = "%FLIRTER% is maybe planting a deep kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -421,7 +421,7 @@
 	aoe_message = "%FLIRTER% is maybe planting a soft kiss on someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -439,7 +439,7 @@
 	aoe_message = "%FLIRTER% is maybe giving someone a subtle smile!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -457,7 +457,7 @@
 	aoe_message = "%FLIRTER% is maybe giving someone a provocative smile!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -475,7 +475,7 @@
 	aoe_message = "%FLIRTER% is maybe playing with their hair?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Hair", "Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -493,7 +493,7 @@
 	aoe_message = "%FLIRTER% is maybe biting their lower lip?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Bites", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -511,7 +511,7 @@
 	aoe_message = "%FLIRTER% looks kinda hungry."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Lewd", "Bites", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -529,7 +529,7 @@
 	aoe_message = "%FLIRTER% is maybe side eyeing hard at someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Tsundere", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -547,7 +547,7 @@
 	aoe_message = "%FLIRTER% is maybe playing rump attack with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -565,7 +565,7 @@
 	aoe_message = "%FLIRTER% is maybe playing touch and go with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd") // lewd AND coy? =3
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -583,7 +583,7 @@
 	aoe_message = "%FLIRTER% is maybe playing touch and go with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Bites") // lewd AND coy? =3
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -601,7 +601,7 @@
 	aoe_message = "%FLIRTER% is maybe being a nuzzle creature with someone?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -619,7 +619,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to chew on someones neck!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Bites", "Tsundere", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -637,7 +637,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to hold someones hand!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -655,7 +655,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to fondle someones chest!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -673,7 +673,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to crotchfondle someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -691,7 +691,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to crotchrub someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -709,7 +709,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to stare at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -727,7 +727,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to stare at nobody really obviously!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Cute", "Tsundere", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -745,7 +745,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to memorize the shape of something on somebody!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -763,7 +763,7 @@
 	aoe_message = "%FLIRTER% is maybe not so good at pickpocketing people!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -781,7 +781,7 @@
 	aoe_message = "%FLIRTER% is maybe maybe eyeballing someone funny!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -799,7 +799,7 @@
 	aoe_message = "%FLIRTER% is maybe maybe looming over someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -817,7 +817,7 @@
 	aoe_message = "%FLIRTER% is maybe really paying attention to someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -835,7 +835,7 @@
 	aoe_message = "%FLIRTER% is maybe snearing at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Tsundere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -853,7 +853,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to shove someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top", "Tsundere")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -871,7 +871,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to squeeze someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -889,7 +889,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to play with someone's hair!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -907,7 +907,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to see if someones hurt a bit too hard!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -925,7 +925,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to corner somebody for kisses!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -943,7 +943,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to grab someones wrist!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -961,7 +961,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to act really submissive!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -979,7 +979,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to bend somebody over!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -997,7 +997,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to look cool for someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1015,7 +1015,7 @@
 	aoe_message = "%FLIRTER% is maybe a bit more clumsy than makes sense!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Bottom", "Tsundere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1033,7 +1033,7 @@
 	aoe_message = "%FLIRTER% is maybe a bit more clumsy than makes sense!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Tsundere", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1051,7 +1051,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to pull someones hair!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top", "Tsundere")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1069,7 +1069,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to pull someones belt!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1087,7 +1087,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to smush their own boobs together!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Cute", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1105,7 +1105,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to look cross at someone!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Top", "Tsundere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1123,7 +1123,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to get themselves checked out!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Cute", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1141,7 +1141,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to rearrange their top?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1159,7 +1159,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to play with their nipples openly!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1177,7 +1177,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to nibble an object to death!"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Lewd", "Top", "Tsundere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1195,7 +1195,7 @@
 	aoe_message = "%FLIRTER% is maybe trying to get some food out of their teeth?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1213,7 +1213,7 @@
 	aoe_message = "%FLIRTER% is maybe hurt?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Lewd", "Bottom" /* , "Fucking annoying" */)
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1231,7 +1231,7 @@
 	aoe_message = "%FLIRTER% is looking if someone has something in their eye?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1249,7 +1249,7 @@
 	aoe_message = "%FLIRTER% is petting someone like a dog."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1267,7 +1267,7 @@
 	aoe_message = "%FLIRTER% is making soft noises."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1285,7 +1285,7 @@
 	aoe_message = "%FLIRTER% is trying to get comfy."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1303,7 +1303,7 @@
 	aoe_message = "%FLIRTER% is obviously uncomfortable."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1321,7 +1321,7 @@
 	aoe_message = "%FLIRTER% is maybe a bit overheated."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1339,7 +1339,7 @@
 	aoe_message = "%FLIRTER% is maybe a bit angry."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1357,7 +1357,7 @@
 	aoe_message = "%FLIRTER% isn't interested in personal space."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1375,7 +1375,7 @@
 	aoe_message = "%FLIRTER% isn't interested in personal space."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1393,7 +1393,7 @@
 	aoe_message = "%FLIRTER% isn't very comfortable where they're sitting."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1411,7 +1411,7 @@
 	aoe_message = "%FLIRTER% is probably not trying to pick someone elses nose."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1429,7 +1429,7 @@
 	aoe_message = "%FLIRTER% maybe has an issue with someones outfit."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Tsundere", "Cute", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1447,7 +1447,7 @@
 	aoe_message = "%FLIRTER% probably didn't just poke someones tit."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Cute", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1465,7 +1465,7 @@
 	aoe_message = "%FLIRTER% probably didn't just poke someones belly."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Tsundere", "Cute", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1483,7 +1483,7 @@
 	aoe_message = "%FLIRTER% probably didn't just poke someones thigh."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Tsundere", "Cute", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1501,7 +1501,7 @@
 	aoe_message = "%FLIRTER% probably didn't just hush someone."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Tsundere", "Cute", "Top", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1519,7 +1519,7 @@
 	aoe_message = "%FLIRTER% probably didn't just grow demon horns."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Tsundere", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1537,7 +1537,7 @@
 	aoe_message = "%FLIRTER% isn't blinking much."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Tsundere", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1555,7 +1555,7 @@
 	aoe_message = "%FLIRTER% is blathering a bit."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1573,7 +1573,7 @@
 	aoe_message = "%FLIRTER% is blathering a lot."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1591,7 +1591,7 @@
 	aoe_message = "%FLIRTER% is blathering a lot."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Cute", "Top", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1609,7 +1609,7 @@
 	aoe_message = "%FLIRTER% is blathering a lot."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1627,7 +1627,7 @@
 	aoe_message = "%FLIRTER% maybe has something in their eye?"
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1645,7 +1645,7 @@
 	aoe_message = "%FLIRTER% is being a little clumsy with their tail."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Tail", "Lewd", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1663,7 +1663,7 @@
 	aoe_message = "%FLIRTER% might need a breather."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1681,7 +1681,7 @@
 	aoe_message = "%FLIRTER% stretches a bit."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top", "Tsunddere")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1699,7 +1699,7 @@
 	aoe_message = "%FLIRTER% flashes a winning smile at someone."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1717,7 +1717,7 @@
 	aoe_message = "%FLIRTER% seems lost in thought."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1735,7 +1735,7 @@
 	aoe_message = "%FLIRTER% could maybe use a snack."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1753,7 +1753,7 @@
 	aoe_message = "%FLIRTER% could maybe use some chapstick."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Coy", "Tsundere", "Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1771,7 +1771,7 @@
 	aoe_message = "%FLIRTER% looks a bit cold."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Cute", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1789,7 +1789,7 @@
 	aoe_message = "%FLIRTER% looks a little surprised."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Cute", "Bottom")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1807,7 +1807,7 @@
 	aoe_message = "%FLIRTER% yawned."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Bottom")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1825,7 +1825,7 @@
 	aoe_message = "%FLIRTER% looks a little eepy." //sl is optional
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Tsundere", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1843,7 +1843,7 @@
 	aoe_message = "%FLIRTER% looks distracted."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Lewd", "Top")
+	categories = list("Ranged Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1861,7 +1861,7 @@
 	aoe_message = "%FLIRTER% seems a bit fidgety."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1879,7 +1879,7 @@
 	aoe_message = "%FLIRTER% is snuggling with someone."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1897,7 +1897,7 @@
 	aoe_message = "%FLIRTER% is trying to touch someone."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Cute", "Top")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
 
@@ -1915,6 +1915,6 @@
 	aoe_message = "%FLIRTER% is trying to touch someones tail."
 	aoe_message_span = "notice"
 	aoe_range = 1
-	categories = list("Nearby", "Lewd", "Tsundere", "Cute", "Top", "Bottom", "Tail")
+	categories = list("Close Flirts")
 	sound_to_do = 'sound/f13effects/sunsetsounds/blush.ogg'
 	requests_reply = TRUE
