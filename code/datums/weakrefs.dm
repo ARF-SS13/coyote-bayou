@@ -55,6 +55,8 @@
  * This is also a good rule of thumb to avoid circular references, such as the
  * chew toy example. A circular reference that doesn't clean itself up properly
  * will always hard delete.
+ * 
+ * Course you could just leave the TV on forever and skip the hard delete altogether
  */
 /datum/weakref
 	var/reference
