@@ -173,9 +173,9 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/get_revivable_body()
 	hardcore = FALSE
 	var/mob/corpse = GET_WEAKREF(ownermob)
-	var/mob/current = get_currently_played_mob() // should always be *something*
-	if(!current) // though turns out it might not???
-		return // i guess??????
+	var/mob/current = get_currently_played_mob()
+	if(!current) // They're disconnected!
+		return // Wait till they get back
 	var/mob/currenter = current?.mind?.current
 	if(isliving(currenter))
 		if(!corpse || currenter != corpse)
@@ -223,24 +223,28 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/say_grace() // and also set it too
 	grace_freebie = TRUE
 	BODY_PLAYED
-	switch(graces)
-		if(0)
-			to_chat(played, span_green("You died again? That sucks."))
-		if(1)
-			to_chat(played, span_green("Impressive!"))
-		if(2)
-			to_chat(played, span_green("Hi again! So, when you head back in, try to get away from whatever killed you."))
-		if(3)
-			to_chat(played, span_green("Is everything alright? Protip: Blood loss will seriously kill you."))
-		if(4)
-			to_chat(played, span_green("Seriously, is everything alright? Protip: The Meister will seriously kill you."))
-		if(5)
-			to_chat(played, span_green("I agree, dying is fun. Protip: Spider poison will seriously kill you."))
-		else
-			to_chat(played, span_green("Death never had any meaning, and this is why! Death is fun as heck!"))
+	if(prob(1))
+		to_chat(played, span_green("Back when Army of Two first came out, me and my college roommates, suitemates, were all way too into Halo 3 to really care. I didn't even think Army of Two was on my radar in 2008. My college suitemates would sneak into my room while I wasn't there and play Halo 3 without my permission, on my Xbox, but more importantly, they would look at my DVD collection. I had like 215 DVDs in alphabetical order and they would play a cruel joke where they would move two random titles in different places and see how long it would take me to notice. Yeah, I know that says a lot more about me than it does about them, but I could tell every time that was the joke. I would just scan briefly over my DVDs everyday and see if they had taken one was usually the issue wasn't-I wasn't checking to see if they put them out of order, I was checking because they would turn up MISSING. And then I would track them down and find someone across the hallway who borrowed one without asking and what do you know! The DVD is missing from inside of its jewel case! Where did it go? No one knows. Oh I found it, it's in two pieces now. No, I'm not still angry about that."))
+	else
+		switch(graces)
+			if(0)
+				to_chat(played, span_green("You died again? That sucks."))
+			if(1)
+				to_chat(played, span_green("Hi again! So, when you head back in, try to get away from whatever killed you."))
+			if(2)
+				to_chat(played, span_green("Just couldn't stay away, could you? Protip: Blood loss will seriously kill you."))
+			if(3)
+				to_chat(played, span_green("Is everything alright? Protip: Radiation will seriously kill you."))
+			if(4)
+				to_chat(played, span_green("Seriously, is everything alright? Protip: The Meister will seriously kill you."))
+			if(5)
+				to_chat(played, span_green("I agree, dying is fun. Protip: Spider poison will seriously kill you."))
+			else
+				to_chat(played, span_green("Death never had any meaning, and this is why! Death is fun as heck!"))
 	to_chat(played, span_greentext("Have a free life, for dying so quickly!"))
 	graces++
-	one_up() // good enuf
+	one_up(TRUE) // good enuf
+	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
 
 /// does stuff while you're alive (or dead)
 /datum/second_wind/proc/process_sw(time_shift)
