@@ -18,6 +18,7 @@
 #define SW_ERROR_RUNTIMED       (1 << 13)
 #define SW_ERROR_DEAD_DELAYED   (1 << 14)
 #define SW_ERROR_HARDCORE       (1 << 15)
+#define SW_ERROR_NO_ERROR_GRACE (1 << 16) // there isnt an error, GRACE
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -28,6 +29,7 @@
 #define SW_I_DIED_BEFORE          (1 << 2)
 #define SW_FULL_LIFE_CONSEQUENCES (1 << 3)
 #define SW_HC                     (1 << 4)
+#define SW_GRACE_PERIOD           (1 << 5)
 
 /// Yeah this is gonna be important later
 SUBSYSTEM_DEF(secondwind)
@@ -45,16 +47,19 @@ SUBSYSTEM_DEF(secondwind)
 	var/allow_third_wind = TRUE
 	var/master_toggle = TRUE
 
+	var/grace_duration = 5 MINUTES // good enough
+
 	var/used_a_second_wind = 0
 	var/died_at_least_once = 0
 	var/third_winded_folk = 0
 	var/full_life_consequences = 0
 	var/hardcores = 0
+	var/graces = 0
 
 	var/last_life_tick = 0
 
 /datum/controller/subsystem/secondwind/stat_entry(msg)
-	msg = "#:[LAZYLEN(second_winders)]-F:[full_life_consequences]-D:[died_at_least_once]-SW:[used_a_second_wind]-TW:[third_winded_folk]-HC:[hardcores]-C:[round(cost,0.005)]"
+	msg = "#:[LAZYLEN(second_winders)] - F:[full_life_consequences] - D:[died_at_least_once] - SW:[used_a_second_wind] - TW:[third_winded_folk] - HC:[hardcores] - G:[graces] - C:[round(cost,0.005)]"
 	return ..()
 
 /datum/controller/subsystem/secondwind/Initialize(start_timeofday)
@@ -70,12 +75,13 @@ SUBSYSTEM_DEF(secondwind)
 	third_winded_folk = 0
 	full_life_consequences = 0
 	hardcores = 0
+	graces = 0
 	for(var/mob_key in second_winders)
 		var/datum/second_wind/my_wind = second_winders[mob_key]
 		if(!my_wind)
 			second_winders -= mob_key
 			continue
-		var/stats = my_wind.living_tick(adustment)
+		var/stats = my_wind.process_sw(adustment)
 		if(CHECK_BITFIELD(stats, SW_AM_THIRD_WINDED))
 			third_winded_folk++
 		if(CHECK_BITFIELD(stats, SW_I_SECOND_WINDED))
@@ -86,6 +92,7 @@ SUBSYSTEM_DEF(secondwind)
 			full_life_consequences++
 		if(CHECK_BITFIELD(stats, SW_HC))
 			hardcores++
+		graces += my_wind.graces
 	last_life_tick = world.time
 
 /datum/controller/subsystem/secondwind/proc/show_menu_to(client_mob_or_ckey)
@@ -146,6 +153,17 @@ SUBSYSTEM_DEF(secondwind)
 	var/times_second_winded = 0
 	var/times_died = 0
 
+	/// time you rezzed so we know if ur gonna grace it
+	var/last_revive = 0
+	/// time you died, for reasons
+	var/last_death = 0
+
+	var/grace_freebie = FALSE
+
+	var/graces = 0
+
+	var/too_late_for_grace = TRUE // i mean we ahvent died yet
+
 /datum/second_wind/New(new_key)
 	ownerkey = new_key
 	SSsecondwind.second_winders[ownerkey] = src
@@ -191,9 +209,41 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/i_died()
 	death_meter = 0
 	life_meter = 0
+	last_death = world.time
 	times_died++
+	if(check_grace())
+		say_grace() // our further what which in heven please blush this freast unwhich you bestowed upom we
 
-/datum/second_wind/proc/living_tick(time_shift)
+/datum/second_wind/proc/check_grace()
+	if(!last_revive || !last_death)
+		return FALSE
+	var/time_alive = abs(last_revive - last_death)
+	return time_alive <= SSsecondwind.grace_duration
+
+/datum/second_wind/proc/say_grace() // and also set it too
+	grace_freebie = TRUE
+	BODY_PLAYED
+	switch(graces)
+		if(0)
+			to_chat(played, span_green("You died again? That sucks."))
+		if(1)
+			to_chat(played, span_green("Impressive!"))
+		if(2)
+			to_chat(played, span_green("Hi again! So, when you head back in, try to get away from whatever killed you."))
+		if(3)
+			to_chat(played, span_green("Is everything alright? Protip: Blood loss will seriously kill you."))
+		if(4)
+			to_chat(played, span_green("Seriously, is everything alright? Protip: The Meister will seriously kill you."))
+		if(5)
+			to_chat(played, span_green("I agree, dying is fun. Protip: Spider poison will seriously kill you."))
+		else
+			to_chat(played, span_green("Death never had any meaning, and this is why! Death is fun as heck!"))
+	to_chat(played, span_greentext("Have a free life, for dying so quickly!"))
+	graces++
+	one_up() // good enuf
+
+/// does stuff while you're alive (or dead)
+/datum/second_wind/proc/process_sw(time_shift)
 	. = get_stats()
 	if(third_winded)
 		return
@@ -206,9 +256,12 @@ SUBSYSTEM_DEF(secondwind)
 	if(master.stat == DEAD)
 		death_meter += time_shift
 		return
-	else
-		death_meter = 0
-		life_meter += time_shift
+	death_meter = 0
+	life_meter += time_shift
+	if(!too_late_for_grace && ((world.time - last_revive) > SSsecondwind.grace_duration))
+		too_late_for_grace = TRUE
+		BODY_PLAYED
+		to_chat(played, span_alert("The strange buzzing inside fades."))
 	if(life_meter > SSsecondwind.life_cooldown)
 		one_up()
 		life_meter = 0
@@ -233,6 +286,7 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	BODY_PLAYED
 	to_chat(played, span_greentext("You feel a renewed warmth inside! Seems like you've gotten yourself a second wind!"))
+	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
 
 /datum/second_wind/proc/attempt_revival(freebie)
 	BODY_PLAYED
@@ -267,6 +321,7 @@ SUBSYSTEM_DEF(secondwind)
 			return
 	if(!revive_me())
 		return
+	last_revive = world.time // so we can check if we died just after reviving
 	spend_life(freebie)
 
 /datum/second_wind/proc/revive_me()
@@ -275,17 +330,17 @@ SUBSYSTEM_DEF(secondwind)
 	FLOOR_MASTER
 	if(!isliving(master))
 		return
+	BODY_PLAYED
 	var/datum/reagents/master_reagents = master.reagents
 	// var/toxinlover = is_toxin_lover(master)
 	var/is_robot = isrobotic(master)
 	var/mob/ghost = master.get_ghost()
 	if(ghost)
+		to_chat(played, span_greentext("You feel drawn back into your body!"))
 		ghost.client?.change_view(CONFIG_GET(string/default_view))
 		ghost.transfer_ckey(ghost.mind.current, FALSE)
 		SStgui.on_transfer(src, ghost.mind.current) // Transfer NanoUIs.
 		ghost.mind?.current?.client?.init_verbs()
-		to_chat(master, span_greentext("You feel drawn back into your body!"))
-		master.playsound_local(get_turf(src), "sound/effects/ghost_succ.ogg")
 	if(isanimal(master))
 		master.revive(TRUE, TRUE, TRUE) // heck it, simplemobs get a rez
 		playsound(get_turf(master), "sound/effects/molly_revived.ogg", 100, TRUE)
@@ -347,6 +402,7 @@ SUBSYSTEM_DEF(secondwind)
 	master.adjustToxLoss(-tox_heal, force_be_heal = TRUE)
 	master.adjustOxyLoss(-oxy_heal)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
+	master.blood_volume = max(BLOOD_VOLUME_SAFE, master.blood_volume)
 	
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,            25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,             25)
@@ -354,8 +410,8 @@ SUBSYSTEM_DEF(secondwind)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,   25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,              25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,          25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
+	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
+	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          50)
 	if(iscarbon(master))
 		var/mob/living/carbon/carbaster = master
@@ -371,7 +427,6 @@ SUBSYSTEM_DEF(secondwind)
 	/// should be enough to get them up
 	master.revive(FALSE, FALSE, TRUE)
 	if(master.stat == DEAD) // huh, still dead
-		BODY_PLAYED
 		to_chat(played, span_alert("Something went wrong and you're still dead!"))
 		//No reason to damage the mob more if it can't be revived.
 		/*master.apply_damages(
@@ -382,9 +437,12 @@ SUBSYSTEM_DEF(secondwind)
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return
+	played.playsound_local(played, "sound/effects/ghost_succ.ogg", respect_deafness = FALSE)
 	playsound(get_turf(master), "sound/effects/molly_revived.ogg", 75)
+	played.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 50, respect_deafness = FALSE)
 	master.emote("scrungy", forced = TRUE)
 	times_second_winded++
+	too_late_for_grace = FALSE
 	return TRUE
 
 /datum/second_wind/proc/spend_life(free_life)
