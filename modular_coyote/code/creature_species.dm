@@ -1300,7 +1300,7 @@
 	name = "REPORT THIS AS A BUGGY"
 	simple_icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	roundstart = FALSE
-	rotating_on_lying = FALSE
+	rotate_on_lying = FALSE
 	icon_width = 62
 	icon_rest_suffix = "_rest"
 	icon_dead_suffix = "-wreck"
