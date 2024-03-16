@@ -771,7 +771,7 @@
 
 /datum/species/feral/otie
 	name = "Feral Otie"
-	id = "andrews"
+	id = "otie"
 	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
 	icon_width = 64
 	icon_dead_suffix = "-dead"
