@@ -769,6 +769,19 @@
 /mob/living/carbon/human/species/hyotie
 	race = /datum/species/feral/hyotie
 
+/datum/species/feral/otie
+	name = "Feral Otie"
+	id = "andrews"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Collared Otie" = "c_", "Security Otie" = "s_", "Security Hyotie" = "sech_", "Hyotie" = "h_")
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otie
+	race = /datum/species/feral/otie
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
@@ -1282,6 +1295,78 @@
 	attack_sound = 'sound/weapons/sear.ogg'
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
+
+/datum/species/adapted/dogborg
+	name = "REPORT THIS AS A BUGGY"
+	simple_icon = 'modular_coyote/icons/mob/dogborg.dmi'
+	roundstart = FALSE
+	rotating_on_lying = FALSE
+	icon_width = 62
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/dogborg/sechound
+	name = "Adapted Sechound"
+	id = "valesec"
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/sechound
+	race = /datum/species/adapted/dogborg/sechound
+
+/datum/species/adapted/dogborg/medihound
+	name = "Adapted Medhound"
+	id = "valemed"
+	alt_prefixes = list("Light" = "light_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/medihound
+	race = /datum/species/adapted/dogborg/medihound
+
+/datum/species/adapted/dogborg/scrubpup
+	name = "Adapted Scrubhound"
+	id = "scrubpup"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scrubpup
+	race = /datum/species/adapted/dogborg/scrubpup
+
+/datum/species/adapted/dogborg/engihound
+	name = "Adapted Engihound"
+	id = "valeeng"
+	alt_prefixes = list("Blocky" = "pupdozer_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/engihound
+	race = /datum/species/adapted/dogborg/engihound
+
+/datum/species/adapted/dogborg/minehound
+	name = "Adapted Minehound"
+	id = "valemine"
+	roundstart = TRUE
+/mob/living/carbon/human/species/minehound
+	race = /datum/species/adapted/dogborg/minehound
+
+/datum/species/adapted/dogborg/scihound
+	name = "Adapted Scihound"
+	id = "valesci"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scihound
+	race = /datum/species/adapted/dogborg/scihound
+
+/datum/species/adapted/dogborg/servihound
+	name = "Adapted Servihound"
+	id = "valeserv"
+	alt_prefixes = list("Blocky" = "blocky_" "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/servihound
+	race = /datum/species/adapted/dogborg/servihound
+
+/datum/species/adapted/dogborg/badboi
+	name = "Adapted Corrupted Hound"
+	id = "badboi"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	alt_prefixes = list("Girly" = "pretty_")
+	icon_dead_suffix = "-dead"
+	roundstart = TRUE
+/mob/living/carbon/human/species/badboi
+	race = /datum/species/adapted/dogborg/badboi
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
