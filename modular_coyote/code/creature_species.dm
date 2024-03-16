@@ -1353,7 +1353,7 @@
 /datum/species/adapted/dogborg/servihound
 	name = "Adapted Servihound"
 	id = "valeserv"
-	alt_prefixes = list("Blocky" = "blocky_" "Dark" = "dark_")
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
 	roundstart = TRUE
 /mob/living/carbon/human/species/servihound
 	race = /datum/species/adapted/dogborg/servihound
