@@ -111,7 +111,7 @@ Difficulty: Medium
 		return
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + ranged_cooldown_time
-	if(!client)
+	if(client)
 		return
 	if(prob(15 + anger_modifier))
 		if(health < maxHealth/2)
