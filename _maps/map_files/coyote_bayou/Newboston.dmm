@@ -21830,11 +21830,8 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "lsq" = (
-/obj/structure/stairs/north,
-/obj/machinery/light/floor{
-	plane = -6
-	},
-/turf/open/indestructible/ground/outside/desert,
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
 "lsR" = (
 /obj/structure/flora/grass/wasteland{
@@ -23238,8 +23235,6 @@
 /area/f13/building/abandoned)
 "miw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/hydroponics/constructable,
-/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/side{
 	dir = 8
 	},
@@ -25265,7 +25260,7 @@
 /area/f13/caves)
 "nnK" = (
 /obj/structure/stairs/north,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13/vault_floor/purple/side,
 /area/f13/building)
 "nnS" = (
 /obj/structure/chair/pew/right,
@@ -28160,7 +28155,8 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
 "oVR" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/machinery/hydroponics/constructable,
+/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/corner{
 	dir = 1
 	},
@@ -82249,7 +82245,7 @@ qNK
 jKC
 gah
 jRP
-tBH
+lsq
 eYt
 kGP
 sKy
@@ -84565,7 +84561,7 @@ qNK
 qNK
 qNK
 qNK
-lsq
+nnK
 sHQ
 bLR
 jkD

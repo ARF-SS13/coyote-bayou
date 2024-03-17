@@ -228,3 +228,4 @@
 	covers_groin = TRUE
 	covers_chest = TRUE
 	covers_belly = TRUE
+	has_digitigrade = TRUE
