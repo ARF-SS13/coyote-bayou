@@ -769,6 +769,19 @@
 /mob/living/carbon/human/species/hyotie
 	race = /datum/species/feral/hyotie
 
+/datum/species/feral/otie
+	name = "Feral Otie"
+	id = "otie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Collared Otie" = "c_", "Security Otie" = "s_", "Security Hyotie" = "sech_", "Hyotie" = "h_")
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otie
+	race = /datum/species/feral/otie
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
@@ -1270,19 +1283,105 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
+/datum/species/adapted/simplebot/swarmer
+	name = "Adapted Swarmer"
+	simple_icon = 'icons/mob/playerswarmer.dmi'
+	id = "swarmer"
+	roundstart = TRUE
+	alt_prefixes = list("Ranged" = "ranged_", "Melee" = "melee_")
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "-rest"
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
+/mob/living/carbon/human/species/swarmer
+	race = /datum/species/adapted/simplebot/swarmer
+
+/datum/species/adapted/dogborg
+	name = "REPORT THIS AS A BUGGY"
+	simple_icon = 'modular_coyote/icons/mob/dogborg.dmi'
+	roundstart = FALSE
+	rotate_on_lying = FALSE
+	icon_width = 62
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/dogborg/sechound
+	name = "Adapted Sechound"
+	id = "valesec"
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/sechound
+	race = /datum/species/adapted/dogborg/sechound
+
+/datum/species/adapted/dogborg/medihound
+	name = "Adapted Medhound"
+	id = "valemed"
+	alt_prefixes = list("Light" = "light_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/medihound
+	race = /datum/species/adapted/dogborg/medihound
+
+/datum/species/adapted/dogborg/scrubpup
+	name = "Adapted Scrubhound"
+	id = "scrubpup"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scrubpup
+	race = /datum/species/adapted/dogborg/scrubpup
+
+/datum/species/adapted/dogborg/engihound
+	name = "Adapted Engihound"
+	id = "valeeng"
+	alt_prefixes = list("Blocky" = "pupdozer_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/engihound
+	race = /datum/species/adapted/dogborg/engihound
+
+/datum/species/adapted/dogborg/minehound
+	name = "Adapted Minehound"
+	id = "valemine"
+	roundstart = TRUE
+/mob/living/carbon/human/species/minehound
+	race = /datum/species/adapted/dogborg/minehound
+
+/datum/species/adapted/dogborg/scihound
+	name = "Adapted Scihound"
+	id = "valesci"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scihound
+	race = /datum/species/adapted/dogborg/scihound
+
+/datum/species/adapted/dogborg/servihound
+	name = "Adapted Servihound"
+	id = "valeserv"
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/servihound
+	race = /datum/species/adapted/dogborg/servihound
+
+/datum/species/adapted/dogborg/badboi
+	name = "Adapted Corrupted Hound"
+	id = "badboi"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	alt_prefixes = list("Girly" = "pretty_")
+	icon_dead_suffix = "-dead"
+	roundstart = TRUE
+/mob/living/carbon/human/species/badboi
+	race = /datum/species/adapted/dogborg/badboi
+
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
-	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	simple_icon = 'modular_coyote/icons/mob/newraptorborg.dmi'
 	roundstart = FALSE
 	rotate_on_lying = FALSE
 	icon_width = 64
-	icon_rest_suffix = "_rest"
+	icon_rest_suffix = "-rest"
 	icon_dead_suffix = "-wreck"
 
 /datum/species/adapted/raptorborg/secraptor
 	name = "Adapted Secraptor"
 	id = "secraptor"
 	roundstart = TRUE
+	alt_prefixes = list("White Sec" = "white_")
 /mob/living/carbon/human/species/secraptor
 	race = /datum/species/adapted/raptorborg/secraptor
 
@@ -1300,12 +1399,13 @@
 /mob/living/carbon/human/species/medraptor
 	race = /datum/species/adapted/raptorborg/medraptor
 
-/datum/species/adapted/raptorborg/medraptor
-	name = "Adapted Medraptor"
-	id = "medraptor"
+/datum/species/adapted/raptorborg/syndiraptor
+	name = "Adapted Syndiraptor"
+	id = "syndiraptor"
 	roundstart = TRUE
-/mob/living/carbon/human/species/medraptor
-	race = /datum/species/adapted/raptorborg/medraptor
+	alt_prefixes = list("Medical" = "medi_", "Mech" = "mech_")
+/mob/living/carbon/human/species/syndiraptor
+	race = /datum/species/adapted/raptorborg/syndiraptor
 
 /datum/species/adapted/raptorborg/engiraptor
 	name = "Adapted Engiraptor"
@@ -1314,6 +1414,13 @@
 /mob/living/carbon/human/species/engiraptor
 	race = /datum/species/adapted/raptorborg/engiraptor
 
+/datum/species/adapted/raptorborg/energyraptor
+	name = "Adapted Energyraptor"
+	id = "energyraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/energyraptor
+	race = /datum/species/adapted/raptorborg/energyraptor
+
 /datum/species/adapted/raptorborg/mineraptor
 	name = "Adapted Mineraptor"
 	id = "mineraptor"
@@ -1321,12 +1428,12 @@
 /mob/living/carbon/human/species/mineraptor
 	race = /datum/species/adapted/raptorborg/mineraptor
 
-/datum/species/adapted/raptorborg/traumaraptor
-	name = "Adapted Traumaraptor"
-	id = "traumaraptor"
+/datum/species/adapted/raptorborg/churchraptor
+	name = "Adapted Churchraptor"
+	id = "churchraptor"
 	roundstart = TRUE
-/mob/living/carbon/human/species/traumaraptor
-	race = /datum/species/adapted/raptorborg/traumaraptor
+/mob/living/carbon/human/species/churchraptor
+	race = /datum/species/adapted/raptorborg/churchraptor
 
 /datum/species/adapted/raptorborg/janiraptor
 	name = "Adapted Janiraptor"
@@ -1349,6 +1456,13 @@
 /mob/living/carbon/human/species/fancyraptor
 	race = /datum/species/adapted/raptorborg/fancyraptor
 
+/datum/species/adapted/raptorborg/wreckraptor
+	name = "Adapted Wreckedraptor"
+	id = "wreckraptor"
+	roundstart = TRUE
+/mob/living/carbon/human/species/wreckraptor
+	race = /datum/species/adapted/raptorborg/wreckraptor
+
 //get in the mech, shinji
 /datum/species/adapted/mechs
 	name = "REPORT THIS AS A BUG"
@@ -1363,6 +1477,13 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/gygax	
 	race = /datum/species/adapted/mechs/gygax
+
+/datum/species/adapted/mechs/darkgygax
+	name = "Adapted Darkgygax"
+	id = "darkgygax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/darkgygax
+	race = /datum/species/adapted/mechs/darkgygax
 
 /datum/species/adapted/mechs/ripley
 	name = "Adapted Ripley"

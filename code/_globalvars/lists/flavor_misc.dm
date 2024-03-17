@@ -410,6 +410,8 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"double4",
 	"cyclops",
 	"shadekin",
+	"large",
+	"large(offset)",
 	"heterochromic-eyeshadow",
 	"heterochromic-eyebrow",
 	"heterochromic-raccoon",

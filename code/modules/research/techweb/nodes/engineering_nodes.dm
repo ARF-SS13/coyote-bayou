@@ -45,6 +45,24 @@
 	design_ids = list("smes", "super_cell", "hyper_cell", "super_capacitor", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 
+/////////////////////////Crafting Parts/////////////////////////
+
+/datum/techweb_node/low_quality_parts
+	id = "low_crafting"
+	display_name = "Basic Weapon Crafting Parts"
+	description = "Parts are a general foundation building block for success."
+	prereq_ids = list("engineering", "high_efficiency", "datatheory")
+	design_ids = list("metal_parts", "good_parts", "electronic_parts")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/high_quality_parts
+	id = "high_crafting"
+	display_name = "Advanced Weapon Crafting Parts"
+	description = "Our parts break the laws in many different regions!"
+	prereq_ids = list("adv_engi", "adv_bluespace", "adv_datatheory")
+	design_ids = list("flux_capacitor", "focused_lens", "conductor_coil","adv_receiver", "weapon_assembly", "super_alloy")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+
 /*
 /datum/techweb_node/basic_meteor_defense
 	id = "basic_meteor_defense"

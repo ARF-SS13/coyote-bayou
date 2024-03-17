@@ -58,7 +58,7 @@
 	item = /obj/item/stack/sheet/prewar/five
 	cost = 5
 
-/datum/supplykit_item/materials/
+/datum/supplykit_item/materials/glass
 	name = "Glass Sheets"
 	desc = "Fifty glass sheets, for making windows and tools."
 	item = /obj/item/stack/sheet/glass/fifty
