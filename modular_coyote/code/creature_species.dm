@@ -776,7 +776,7 @@
 	icon_width = 64
 	icon_dead_suffix = "-dead"
 	icon_rest_suffix = "_rest"
-	alt_prefixes = list("Collared Otie" = "c_", "Security Otie" = "s_", "Security Hyotie" = "sech_", "Hyotie" = "h_")
+	alt_prefixes = list("Collared Otie" = "c_", "Security Otie" = "s_", "Security Hyotie" = "sech_", "Hyotie" = "h_", "Fat Otie" = "fat_")
 	roundstart = TRUE
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/otie
@@ -789,7 +789,7 @@
 	icon_width = 64
 	icon_dead_suffix = "-dead"
 	icon_rest_suffix = "_rest"
-	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Security Scrotie" = "sech_", "Scrotie" = "h_", "Fun Sized" = "cup_", "Fun Sized Security" = "scup_")
+	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Fat Scrotie" = "fat_", "Fyrotie" = "h_", "Fun Sized" = "cup_", "Fun Sized Security" = "scup_")
 	roundstart = TRUE
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/scrotie
