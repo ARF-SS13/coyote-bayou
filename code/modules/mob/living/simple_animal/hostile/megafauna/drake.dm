@@ -51,8 +51,8 @@ Difficulty: Medium
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	speak_emote = list("roars")
-	melee_damage_lower = 40
-	melee_damage_upper = 40
+	melee_damage_lower = 50
+	melee_damage_upper = 100
 	speed = 1
 	move_to_delay = 5
 	ranged = 1
@@ -141,6 +141,7 @@ Difficulty: Medium
 	for(var/d in GLOB.cardinals)
 		INVOKE_ASYNC(src,PROC_REF(fire_wall), d)
 
+/*
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_wall(dir)
 	var/list/hit_things = list(src)
 	var/turf/E = get_edge_target_turf(src, dir)
@@ -160,6 +161,7 @@ Difficulty: Medium
 			hit_things += L
 		previousturf = J
 		sleep(1)
+*/
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/triple_swoop()
 	swoop_attack(swoop_duration = 30)
