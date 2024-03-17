@@ -179,7 +179,7 @@
 			continue
 		if(!check_rights_for(ghost.client, R_ADMIN))
 			continue
-		ghost.show_message("<span class='emote'>[ADMIN_LOOKUPFLW(flirter)] flirted '[flirtname]' at [target ? ADMIN_LOOKUPFLW(target) : "everyone around em"]</span>")
+		ghost.show_message(span_adminnotice("[ADMIN_LOOKUPFLW(flirter)] flirted '[flirtname]' at [target ? ADMIN_LOOKUPFLW(target) : "everyone around em"]"))
 
 /datum/flirt/proc/format_for_tgui()
 	var/list/data = list()

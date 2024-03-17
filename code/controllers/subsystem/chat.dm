@@ -140,7 +140,7 @@ SUBSYSTEM_DEF(chat)
 	add_flirt_target(flirter, target) // flirter FLIRTED with target
 	add_flirt_recipient(flirter, target) // target WAS FLIRTED BY flirter
 	ui_interact(flirter)
-	ui_interact(target)
+	// ui_interact(target)
 
 /datum/controller/subsystem/chat/proc/add_flirt_target(mob/living/flirter, mob/living/target)
 	if(!istype(flirter) ||!istype(target))
@@ -302,9 +302,9 @@ SUBSYSTEM_DEF(chat)
 		else
 			to_chat(usr, span_hypnophrase("They're not in the right mood for flirting."))
 		return
-	if(A == usr)
-		to_chat(usr, span_hypnophrase("You take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
-		return
+	// if(A == usr)
+	// 	to_chat(usr, span_hypnophrase("You take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
+	// 	return
 	return TRUE
 
 /mob/verb/check_out(mob/A as mob in view())
