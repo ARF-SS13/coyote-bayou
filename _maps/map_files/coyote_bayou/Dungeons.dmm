@@ -578,7 +578,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "alD" = (
-/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "alF" = (
@@ -1554,25 +1554,16 @@
 	},
 /area/f13/brotherhood/armory)
 "aGY" = (
-/obj/item/seeds/tower/steel,
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
+/obj/machinery/button/door{
+	id = "finalbossblue";
+	name = "shutters button";
+	pixel_y = 30;
+	light_color = "#0000FF";
+	light_power = 40;
+	light_range = 4
 	},
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave/tunnelertemple/void)
 "aHo" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2293,12 +2284,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "aYc" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "hell"
+/mob/living/simple_animal/hostile/megafauna/dragon{
+	color = "#DD4444";
+	name = "Lord Nagafen"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "aYA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2748,9 +2739,16 @@
 	},
 /area/f13/brotherhood/dorms)
 "bjg" = (
-/obj/item/card/kingbounty,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "bjl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3720,9 +3718,9 @@
 /area/f13/brotherhood/armory)
 "bIR" = (
 /obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossred";
+	id = "finalbossblue";
 	max_integrity = 1000000;
-	color = "#FF0000"
+	color = "#0000FF"
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -3830,13 +3828,16 @@
 	},
 /area/f13/building)
 "bLq" = (
-/obj/machinery/door/poddoor/shutters/old{
+/obj/machinery/button/door{
 	id = "finalbossgreen";
-	max_integrity = 1000000;
-	color = "#00FF00"
+	name = "shutters button";
+	pixel_y = 30;
+	light_color = "#00FF00";
+	light_power = 40;
+	light_range = 4
 	},
 /turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/area/f13/building)
 "bLB" = (
 /obj/machinery/light{
 	dir = 1;
@@ -6017,7 +6018,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "cHh" = (
-/obj/structure/fluff/drake_statue,
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossred";
+	max_integrity = 1000000;
+	color = "#FF0000"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "cHw" = (
@@ -6787,13 +6792,6 @@
 /obj/effect/landmark/start/f13/vaultdweller,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"cWf" = (
-/obj/structure/barricade/wooden/strong,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "cWB" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/clothing/suit/armor/reactive/tesla,
@@ -6826,11 +6824,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "cWW" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossteal";
-	max_integrity = 1000000;
-	color = "#00FFFF"
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
 	},
+/obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "cWY" = (
@@ -8745,13 +8744,10 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "dLC" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
+/mob/living/simple_animal/hostile/megafauna/dragon{
+	name = "Lady Vox";
+	color = "#4444DD"
 	},
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "dLF" = (
@@ -8947,12 +8943,7 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
 "dPk" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
-	},
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/closet,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "dPn" = (
@@ -9755,16 +9746,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
 "egI" = (
-/obj/machinery/button/door{
-	id = "finalbossgreen";
-	name = "shutters button";
-	pixel_y = 30;
-	light_color = "#00FF00";
-	light_power = 40;
-	light_range = 4
-	},
+/obj/item/coin/diamond,
 /turf/open/floor/plasteel/cult,
-/area/f13/building)
+/area/f13/underground/cave)
 "egQ" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -13710,10 +13694,6 @@
 	icon_state = "bluedirtyfull"
 	},
 /area/f13/building)
-"fSZ" = (
-/obj/structure/closet,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "fTd" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew,
 /turf/open/floor/plating/f13/inside/mountain{
@@ -14289,18 +14269,16 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "gfa" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossgreen";
-	max_integrity = 1000000;
-	color = "#00FF00"
+/obj/machinery/button/door{
+	id = "finalbossred";
+	name = "shutters button";
+	pixel_y = 30;
+	light_color = "#FF0000";
+	light_power = 40;
+	light_range = 4
 	},
-/obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossgreen";
-	max_integrity = 1000000;
-	color = "#00FF00"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/turf/open/indestructible/necropolis,
+/area/f13/building)
 "gfp" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
@@ -14960,18 +14938,6 @@
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
-/area/f13/bunker)
-"guS" = (
-/obj/machinery/button/door{
-	id = "finalbossyellow";
-	name = "shutters button";
-	pixel_y = 0;
-	light_color = "#FFFF00";
-	light_power = 40;
-	light_range = 4;
-	pixel_x = -23
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "guV" = (
 /obj/item/radio/intercom{
@@ -17295,11 +17261,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "hwS" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	color = "#FF5588"
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossyellow";
+	max_integrity = 1000000;
+	color = "#FFFF00"
 	},
 /turf/open/floor/plasteel/cult,
-/area/f13/underground/cave/tunnelertemple/void)
+/area/f13/underground/cave)
 "hxm" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -18065,16 +18033,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "hPB" = (
-/obj/machinery/button/door{
-	id = "finalbossblue";
-	name = "shutters button";
-	pixel_y = 30;
-	light_color = "#0000FF";
-	light_power = 40;
-	light_range = 4
+/obj/structure/spider/stickyweb,
+/obj/structure/nest/protectron{
+	max_mobs = 1
 	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave/tunnelertemple/void)
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
+	},
+/area/f13/bunker)
 "hPQ" = (
 /obj/structure/chair/left{
 	dir = 8
@@ -18387,13 +18353,6 @@
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
-"hYe" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "finalbossladder"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "hYl" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -19864,25 +19823,15 @@
 	},
 /area/f13/bunker)
 "iJQ" = (
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
-	},
+/obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "iJR" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -22733,14 +22682,8 @@
 	},
 /area/f13/bunker)
 "kbv" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/validball,
+/obj/structure/sacrificealtar,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "kbB" = (
@@ -23757,10 +23700,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "kxa" = (
-/mob/living/simple_animal/hostile/megafauna/dragon{
-	name = "Lady Vox";
-	color = "#4444DD"
-	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "kxi" = (
@@ -24254,6 +24194,26 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"kIi" = (
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "kIj" = (
 /obj/machinery/light{
 	dir = 8
@@ -24897,15 +24857,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
 "kXs" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
-	},
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "finalbossladder"
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -25385,10 +25339,6 @@
 	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood/mining)
-"lip" = (
-/mob/living/simple_animal/hostile/megafauna/hierophant,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
 "lix" = (
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/archives)
@@ -25497,10 +25447,6 @@
 /obj/item/storage/bag/trash,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/mob/living/simple_animal/hostile/megafauna/dragon{
-	name = "Lady Vox";
-	color = "#4444DD"
-	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -26187,6 +26133,12 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
+"lAK" = (
+/mob/living/simple_animal/hostile/asteroid/elite/pandora,
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
+/area/f13/building)
 "lAU" = (
 /obj/structure/chair/right,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -27327,7 +27279,11 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/rnd)
 "maW" = (
-/obj/item/coin/diamond,
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossgreen";
+	max_integrity = 1000000;
+	color = "#00FF00"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "mbc" = (
@@ -27809,8 +27765,12 @@
 	},
 /area/f13/building)
 "mnp" = (
-/obj/effect/decal/remains/human,
-/obj/item/coin/gold,
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "mnx" = (
@@ -29087,7 +29047,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "mOM" = (
-/obj/item/reagent_containers/pill/fiery_purgative,
+/obj/effect/decal/remains/human,
+/obj/item/coin/gold,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "mOY" = (
@@ -29450,13 +29411,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "mWP" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossyellow";
-	max_integrity = 1000000;
-	color = "#FFFF00"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/obj/item/card/kingbounty,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/bunker)
 "mWV" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -30167,22 +30124,16 @@
 	},
 /area/f13/brotherhood/dorms)
 "nlj" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
-	},
-/obj/effect/decal/remains/human,
+/obj/structure/fluff/drake_statue,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "nlm" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/area/f13/bunker)
 "nlD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -31741,9 +31692,25 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "nVb" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/guidance,
-/turf/closed/indestructible/rock,
-/area/f13/underground/cave)
+/obj/item/seeds/tower/steel,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "nVJ" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker/bighornbunker)
@@ -31996,13 +31963,9 @@
 /turf/open/water,
 /area/f13/brotherhood/rnd)
 "obT" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "finalbossblue";
-	max_integrity = 1000000;
-	color = "#0000FF"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/mob/living/simple_animal/hostile/megafauna/hierophant,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/bunker)
 "obW" = (
 /obj/structure/sign/poster/prewar/poster75,
 /turf/closed/wall/r_wall,
@@ -33671,12 +33634,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "oNk" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
 	},
-/obj/structure/obstacle/old_locked_door,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "oNA" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -35250,13 +35219,16 @@
 	},
 /area/f13/building)
 "pta" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/nest/protectron{
-	max_mobs = 1
+/obj/machinery/button/door{
+	id = "finalbossyellow";
+	name = "shutters button";
+	pixel_y = 0;
+	light_color = "#FFFF00";
+	light_power = 40;
+	light_range = 4;
+	pixel_x = -23
 	},
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "pte" = (
 /obj/machinery/light/small{
@@ -35915,10 +35887,12 @@
 /turf/closed/mineral/random/low_chance/underground,
 /area/f13/building)
 "pIc" = (
-/obj/item/validball,
-/obj/structure/sacrificealtar,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "hell"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building)
 "pIs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -35987,6 +35961,13 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave/tunnelertemple)
+"pJi" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "pJs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -36926,15 +36907,6 @@
 /obj/effect/spawner/lootdrop/cig_packs,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"qeH" = (
-/obj/item/stack/f13Cash/random/banker{
-	light_power = 5;
-	light_range = 2;
-	light_color = "#FFD700"
-	},
-/obj/item/coin/gold,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "qeR" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -39848,16 +39820,9 @@
 /turf/open/floor/plasteel/white/corner,
 /area/f13/building)
 "roW" = (
-/obj/machinery/button/door{
-	id = "finalbossred";
-	name = "shutters button";
-	pixel_y = 30;
-	light_color = "#FF0000";
-	light_power = 40;
-	light_range = 4
-	},
-/turf/open/indestructible/necropolis,
-/area/f13/building)
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "roY" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
@@ -41045,13 +41010,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "rQy" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
+	},
+/obj/item/coin/gold,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "rQL" = (
@@ -43224,7 +43188,11 @@
 	},
 /area/f13/building)
 "sOL" = (
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossteal";
+	max_integrity = 1000000;
+	color = "#00FFFF"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "sOV" = (
@@ -44705,11 +44673,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "txZ" = (
-/mob/living/simple_animal/hostile/asteroid/elite/pandora,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossgreen";
+	max_integrity = 1000000;
+	color = "#00FF00"
 	},
-/area/f13/building)
+/obj/machinery/door/poddoor/shutters/old{
+	id = "finalbossgreen";
+	max_integrity = 1000000;
+	color = "#00FF00"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "tyi" = (
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
@@ -45571,7 +45546,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
 "tTg" = (
-/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "tTk" = (
@@ -47544,6 +47523,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
+"uLo" = (
+/obj/item/reagent_containers/pill/fiery_purgative,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "uLt" = (
 /obj/structure/chair/office/light,
 /obj/effect/landmark/start/f13/vaultscientist,
@@ -50753,6 +50736,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
+"whJ" = (
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
+	color = "#FF5588"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave/tunnelertemple/void)
 "whY" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -51520,10 +51509,13 @@
 	},
 /area/f13/building)
 "wyk" = (
-/mob/living/simple_animal/hostile/megafauna/dragon{
-	color = "#DD4444";
-	name = "Lord Nagafen"
+/obj/item/stack/f13Cash/random/banker{
+	light_power = 5;
+	light_range = 2;
+	light_color = "#FFD700"
 	},
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "wyr" = (
@@ -72132,7 +72124,7 @@ auq
 pEe
 fEN
 rLB
-egI
+bLq
 nLk
 nLk
 rLB
@@ -78185,7 +78177,7 @@ jsr
 tBy
 rvr
 vtT
-nVb
+whv
 whv
 whv
 whv
@@ -84420,7 +84412,7 @@ whv
 whv
 whv
 rvr
-txZ
+lAK
 aPi
 mgM
 gOr
@@ -84880,7 +84872,7 @@ tIZ
 qlU
 qlU
 qlU
-hwS
+whJ
 qlU
 qlU
 pal
@@ -85396,7 +85388,7 @@ qlU
 vOy
 qlU
 vOy
-hPB
+aGY
 qlU
 trR
 vOy
@@ -87615,8 +87607,8 @@ whv
 whv
 whv
 sME
-aGY
-iJQ
+nVb
+kIi
 sME
 whv
 whv
@@ -88128,7 +88120,7 @@ gZb
 gZb
 gZb
 gZb
-guS
+pta
 gZb
 gZb
 gZb
@@ -88644,7 +88636,7 @@ gZb
 ngw
 gZb
 gZb
-lip
+obT
 gZb
 ngw
 gZb
@@ -89671,7 +89663,7 @@ gZb
 gZb
 ngw
 gZb
-bjg
+mWP
 lDc
 hYc
 gIw
@@ -91110,9 +91102,9 @@ smz
 poH
 poH
 poH
-nlm
-dPk
-nlm
+tTg
+mnp
+tTg
 poH
 poH
 poH
@@ -91366,16 +91358,16 @@ whv
 smz
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 tXH
@@ -91388,8 +91380,8 @@ poH
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
@@ -91622,40 +91614,40 @@ whv
 whv
 smz
 poH
-nlm
-nlm
-nlm
-nlm
-nlm
+tTg
+tTg
+tTg
+tTg
+tTg
 poH
 poH
-dPk
-nlm
+mnp
+tTg
 poH
 poH
-maW
-poH
-tXH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-nlm
-poH
-nlm
-nlm
-poH
-poH
-poH
-poH
+egI
 poH
 tXH
-nlm
-nlm
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+tTg
+poH
+tTg
+tTg
+poH
+poH
+poH
+poH
+poH
+tXH
+tTg
+tTg
 poH
 poH
 smz
@@ -91879,40 +91871,40 @@ whv
 whv
 smz
 poH
-nlm
-dPk
-nlm
+tTg
+mnp
+tTg
 poH
 poH
 poH
 poH
-kXs
-nlm
-nlm
+oNk
+tTg
+tTg
 poH
 poH
 poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
 smz
 poH
 poH
-sOL
+kxa
 poH
-nlm
-nlm
-nlm
-nlm
-nlm
+tTg
+tTg
+tTg
+tTg
+tTg
 tXH
 tXH
 poH
-nlj
+cWW
 poH
 poH
 smz
@@ -92136,14 +92128,14 @@ whv
 whv
 smz
 poH
-nlm
+tTg
 poH
 poH
 smz
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
@@ -92151,26 +92143,26 @@ smz
 smz
 poH
 poH
-sOL
-nlm
+kxa
+tTg
 poH
 smz
 smz
-rQy
-alD
+iJQ
+roW
 poH
 poH
 poH
 poH
 poH
 poH
-sOL
+kxa
 poH
 tXH
 poH
 poH
-alD
-nlm
+roW
+tTg
 poH
 smz
 whv
@@ -92397,37 +92389,37 @@ poH
 poH
 poH
 poH
-maW
+egI
 poH
-nlm
-nlm
-dPk
+tTg
+tTg
+mnp
 poH
-maW
+egI
 smz
-kbv
+bjg
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
 poH
-alD
+roW
 poH
 poH
-smz
-smz
 smz
 smz
+smz
+smz
 poH
 poH
 poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 smz
 whv
@@ -92499,7 +92491,7 @@ ctX
 ctX
 ctX
 ctX
-cWf
+nlm
 vyp
 ctX
 ctX
@@ -92657,22 +92649,22 @@ smz
 poH
 poH
 poH
-nlm
-nlm
-poH
-poH
-poH
-poH
 tTg
-poH
-nlm
-nlm
-poH
+tTg
 poH
 poH
 poH
 poH
 alD
+poH
+tTg
+tTg
+poH
+poH
+poH
+poH
+poH
+roW
 poH
 poH
 poH
@@ -92683,7 +92675,7 @@ poH
 poH
 smz
 poH
-alD
+roW
 poH
 poH
 smz
@@ -92907,29 +92899,29 @@ whv
 whv
 smz
 poH
-sOL
+kxa
 poH
 poH
 poH
 poH
 poH
 poH
-nlm
-nlm
-nlm
-poH
-poH
-alD
-alD
-nlm
-nlm
-poH
-poH
-poH
-sOL
+tTg
+tTg
 tTg
 poH
+poH
+roW
+roW
+tTg
+tTg
+poH
+poH
+poH
+kxa
 alD
+poH
+roW
 poH
 tXH
 tXH
@@ -93172,11 +93164,11 @@ poH
 smz
 poH
 poH
-nlm
-nlm
-nlm
-alD
-alD
+tTg
+tTg
+tTg
+roW
+roW
 poH
 poH
 poH
@@ -93189,16 +93181,16 @@ poH
 poH
 tXH
 poH
-nlm
+tTg
 poH
-nlm
+tTg
 poH
-alD
+roW
 poH
 poH
 poH
-sOL
-alD
+kxa
+roW
 poH
 smz
 whv
@@ -93428,11 +93420,11 @@ poH
 poH
 smz
 poH
-maW
+egI
 poH
 poH
 poH
-alD
+roW
 poH
 poH
 tXH
@@ -93443,13 +93435,13 @@ smz
 poH
 poH
 poH
-sOL
+kxa
 poH
 poH
 poH
 poH
-nlm
-alD
+tTg
+roW
 poH
 smz
 poH
@@ -93683,12 +93675,12 @@ poH
 poH
 poH
 smz
-fSZ
+dPk
+alD
 tTg
-nlm
-nlm
+tTg
 poH
-sOL
+kxa
 poH
 poH
 poH
@@ -93698,14 +93690,14 @@ tXH
 poH
 smz
 smz
-rQy
+iJQ
 poH
 poH
-nlm
-nlm
-nlm
-dPk
-nlj
+tTg
+tTg
+tTg
+mnp
+cWW
 poH
 poH
 smz
@@ -93941,15 +93933,15 @@ poH
 poH
 poH
 poH
-dPk
-nlm
+mnp
+tTg
 poH
 poH
 poH
 poH
-nlm
-nlm
-nlm
+tTg
+tTg
+tTg
 poH
 poH
 poH
@@ -93960,9 +93952,9 @@ poH
 poH
 poH
 poH
-nlm
-alD
-mnp
+tTg
+roW
+mOM
 poH
 poH
 poH
@@ -94197,35 +94189,35 @@ poH
 smz
 poH
 poH
-kxa
-nlm
+dLC
+tTg
 poH
 poH
 poH
 poH
-maW
+egI
 poH
-poH
-poH
-nlm
-nlm
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-tXH
-tXH
 poH
 poH
 tTg
+tTg
 poH
-nlm
-dPk
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+tXH
+tXH
+poH
+poH
+alD
+poH
+tTg
+mnp
 tXH
 poH
 smz
@@ -94454,24 +94446,24 @@ poH
 smz
 poH
 poH
-nlm
-poH
-poH
-poH
-smz
-kbv
-poH
-poH
-tXH
-poH
-poH
-nlm
-nlm
-poH
 tTg
 poH
 poH
 poH
+smz
+bjg
+poH
+poH
+tXH
+poH
+poH
+tTg
+tTg
+poH
+alD
+poH
+poH
+poH
 poH
 tXH
 poH
@@ -94481,7 +94473,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 tXH
 poH
@@ -94710,8 +94702,8 @@ poH
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 smz
 smz
@@ -94723,7 +94715,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
@@ -94734,7 +94726,7 @@ poH
 poH
 poH
 poH
-dPk
+mnp
 poH
 poH
 poH
@@ -94969,8 +94961,8 @@ poH
 poH
 poH
 poH
-nlm
-maW
+tTg
+egI
 poH
 poH
 poH
@@ -94981,7 +94973,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
@@ -94989,9 +94981,9 @@ poH
 poH
 poH
 poH
-nlm
-kXs
-nlm
+tTg
+oNk
+tTg
 poH
 poH
 poH
@@ -95223,11 +95215,11 @@ poH
 poH
 poH
 poH
-kXs
-kXs
+oNk
+oNk
 poH
-nlm
-maW
+tTg
+egI
 poH
 poH
 poH
@@ -95245,8 +95237,8 @@ poH
 smz
 smz
 poH
-nlm
-kXs
+tTg
+oNk
 poH
 poH
 poH
@@ -95479,36 +95471,36 @@ smz
 poH
 poH
 poH
-nlm
-dPk
-kXs
-nlm
-poH
-poH
-sOL
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-smz
-smz
-smz
-poH
-poH
-poH
-poH
-kXs
-poH
-poH
-poH
+tTg
+mnp
+oNk
 tTg
 poH
 poH
+kxa
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+smz
+smz
+smz
+poH
+poH
+poH
+poH
+oNk
+poH
+poH
+poH
+alD
+poH
+poH
 poH
 smz
 poH
@@ -95524,7 +95516,7 @@ smz
 smz
 smz
 smz
-cHh
+nlj
 poH
 poH
 smz
@@ -95736,30 +95728,30 @@ smz
 poH
 poH
 poH
-nlm
-poH
 tTg
 poH
+alD
 poH
 poH
 poH
 poH
-maW
+poH
+egI
+alD
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
 tTg
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-nlm
-dPk
+mnp
 poH
 poH
 poH
@@ -95770,15 +95762,15 @@ poH
 smz
 poH
 poH
-cWW
-mWP
-bLq
+sOL
+hwS
+maW
+cHh
+sOL
+hwS
 bIR
-cWW
-mWP
-obT
-bLq
-bIR
+maW
+cHh
 poH
 poH
 poH
@@ -95993,10 +95985,18 @@ smz
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
-nlm
+tTg
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+roW
 poH
 poH
 poH
@@ -96005,42 +96005,34 @@ poH
 poH
 poH
 alD
-poH
-poH
-poH
-poH
-poH
 poH
 poH
 tTg
 poH
 poH
-nlm
-poH
-poH
 smz
 poH
 poH
-alD
+roW
 poH
 poH
 poH
 poH
-mOM
-cWW
-mWP
-gfa
+uLo
+sOL
+hwS
+txZ
+cHh
+sOL
+hwS
 bIR
-cWW
-mWP
-obT
-gfa
-bIR
+txZ
+cHh
 poH
 poH
 poH
 poH
-hYe
+kXs
 smz
 whv
 whv
@@ -96252,47 +96244,47 @@ poH
 poH
 poH
 poH
-alD
-nlm
+roW
+tTg
 poH
+egI
+poH
+smz
+kbv
+poH
+poH
+poH
+roW
+poH
+tTg
+mnp
+poH
+poH
+poH
+poH
+poH
+poH
+tTg
+poH
+poH
+smz
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+sOL
+hwS
 maW
-poH
-smz
-pIc
-poH
-poH
-poH
-alD
-poH
-nlm
-dPk
-poH
-poH
-poH
-poH
-poH
-poH
-nlm
-poH
-poH
-smz
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-cWW
-mWP
-bLq
+cHh
+sOL
+hwS
 bIR
-cWW
-mWP
-obT
-bLq
-bIR
+maW
+cHh
 poH
 poH
 poH
@@ -96510,7 +96502,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
@@ -96519,40 +96511,40 @@ poH
 poH
 poH
 poH
-alD
-nlm
-nlm
-nlm
-nlm
+roW
+tTg
+tTg
+tTg
+tTg
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
 poH
 smz
-kbv
+bjg
 poH
+cWW
+tTg
+tXH
+tXH
+poH
+kxa
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
 nlj
-nlm
-tXH
-tXH
-poH
-sOL
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-smz
-cHh
 poH
 poH
 smz
@@ -96766,8 +96758,8 @@ poH
 poH
 poH
 poH
-nlm
-dPk
+tTg
+mnp
 poH
 poH
 poH
@@ -96775,25 +96767,25 @@ poH
 poH
 poH
 poH
-nlm
-nlj
+tTg
+cWW
 poH
 poH
 poH
 poH
 poH
 poH
-nlm
-nlm
-sOL
+tTg
+tTg
+kxa
 poH
 smz
 poH
 poH
-nlm
-nlj
+tTg
+cWW
 poH
-qeH
+rQy
 poH
 poH
 poH
@@ -97022,32 +97014,32 @@ poH
 poH
 smz
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
 poH
-maW
+egI
 poH
 poH
-dPk
-nlm
-poH
-poH
-poH
+mnp
+tTg
 poH
 poH
 poH
 poH
 poH
-nlj
-nlm
+poH
+poH
+poH
+cWW
+tTg
 poH
 smz
 poH
 poH
-dLC
+wyk
 poH
 poH
 poH
@@ -97287,8 +97279,8 @@ smz
 smz
 smz
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
@@ -97303,8 +97295,8 @@ poH
 poH
 poH
 poH
-nlj
-alD
+cWW
+roW
 poH
 poH
 poH
@@ -97537,9 +97529,9 @@ poH
 poH
 poH
 poH
-tTg
-poH
 alD
+poH
+roW
 poH
 poH
 poH
@@ -97555,18 +97547,18 @@ poH
 tXH
 poH
 poH
-alD
-wyk
+roW
+aYc
 poH
 poH
-alD
-nlm
+roW
+tTg
 poH
 poH
 smz
 poH
 poH
-tTg
+alD
 poH
 poH
 smz
@@ -97794,6 +97786,25 @@ poH
 poH
 poH
 poH
+alD
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+smz
+iJQ
+poH
+poH
+tTg
+tTg
+cWW
 tTg
 poH
 poH
@@ -97801,31 +97812,12 @@ poH
 poH
 poH
 poH
-poH
-poH
-poH
-poH
-poH
-smz
-rQy
-poH
-poH
-nlm
-nlm
-nlj
-nlm
-poH
-poH
-poH
-poH
-poH
-poH
 smz
 poH
 poH
 poH
 poH
-alD
+roW
 smz
 whv
 whv
@@ -98049,31 +98041,31 @@ smz
 smz
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 smz
-alD
+roW
 poH
-nlm
-nlm
-nlm
-poH
-poH
-maW
+tTg
+tTg
+tTg
 poH
 poH
+egI
 poH
 poH
 poH
 poH
-nlm
 poH
-alD
-nlm
-nlm
 poH
-sOL
+tTg
+poH
+roW
+tTg
+tTg
+poH
+kxa
 poH
 poH
 poH
@@ -98082,7 +98074,7 @@ poH
 poH
 poH
 poH
-alD
+roW
 smz
 whv
 whv
@@ -98306,26 +98298,26 @@ smz
 smz
 poH
 poH
-nlm
+tTg
 poH
 poH
 smz
 poH
-alD
-poH
-nlm
-nlm
-nlm
-poH
-poH
-poH
-poH
-poH
-poH
+roW
 poH
 tTg
+tTg
+tTg
 poH
-sOL
+poH
+poH
+poH
+poH
+poH
+poH
+alD
+poH
+kxa
 poH
 poH
 tXH
@@ -98562,40 +98554,40 @@ whv
 smz
 poH
 poH
-nlm
-dPk
-nlm
-poH
-poH
-smz
-rQy
-poH
-poH
-poH
-nlm
-nlm
-poH
-maW
-poH
-alD
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-tXH
-poH
+tTg
+mnp
 tTg
 poH
 poH
 smz
+iJQ
+poH
+poH
+poH
+tTg
+tTg
+poH
+egI
+poH
+roW
+poH
+poH
+poH
+poH
+poH
 poH
 poH
 tXH
-nlm
+poH
 alD
+poH
+poH
+smz
+poH
+poH
+tXH
+tTg
+roW
 poH
 smz
 whv
@@ -98820,8 +98812,8 @@ smz
 poH
 poH
 poH
-kXs
-nlm
+oNk
+tTg
 poH
 poH
 poH
@@ -98829,17 +98821,13 @@ smz
 smz
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
-alD
-dPk
-poH
-poH
-poH
-poH
+roW
+mnp
 poH
 poH
 poH
@@ -98851,7 +98839,11 @@ poH
 poH
 poH
 poH
-nlm
+poH
+poH
+poH
+poH
+tTg
 poH
 poH
 smz
@@ -99077,22 +99069,22 @@ smz
 poH
 poH
 poH
-nlm
-nlm
-kXs
-kXs
+tTg
+tTg
+oNk
+oNk
 poH
 poH
 poH
 poH
-nlm
-dPk
-nlm
+tTg
+mnp
+tTg
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 tXH
@@ -99108,7 +99100,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 smz
@@ -99337,24 +99329,24 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
 poH
-nlm
+tTg
 poH
-nlm
-nlm
-nlm
-nlm
-poH
-poH
+tTg
+tTg
+tTg
+tTg
 poH
 poH
 poH
 poH
-alD
+poH
+poH
+roW
 poH
 poH
 poH
@@ -99364,8 +99356,8 @@ smz
 poH
 tXH
 poH
-alD
-nlm
+roW
+tTg
 poH
 poH
 smz
@@ -99601,7 +99593,7 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
 poH
@@ -99615,14 +99607,14 @@ poH
 poH
 tXH
 poH
-dPk
+mnp
 poH
 poH
 poH
 poH
 poH
-sOL
-nlm
+kxa
+tTg
 poH
 poH
 smz
@@ -99861,7 +99853,7 @@ poH
 poH
 poH
 poH
-maW
+egI
 poH
 poH
 poH
@@ -99872,13 +99864,13 @@ poH
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
@@ -100103,16 +100095,11 @@ whv
 whv
 smz
 poH
-nlm
-sOL
+tTg
+kxa
 poH
 poH
 smz
-poH
-poH
-poH
-tTg
-poH
 poH
 poH
 poH
@@ -100121,6 +100108,11 @@ poH
 poH
 poH
 poH
+roW
+poH
+poH
+poH
+poH
 poH
 poH
 poH
@@ -100130,11 +100122,11 @@ poH
 poH
 poH
 poH
-nlm
+tTg
 poH
 poH
-nlm
-nlm
+tTg
+tTg
 poH
 poH
 poH
@@ -100360,25 +100352,25 @@ whv
 whv
 smz
 poH
-kXs
-kXs
-nlm
+oNk
+oNk
+tTg
 poH
 poH
 smz
 poH
 poH
 poH
-sOL
+kxa
 poH
 poH
 poH
 poH
 poH
-sOL
+kxa
 poH
 poH
-maW
+egI
 poH
 poH
 poH
@@ -100617,31 +100609,13 @@ whv
 whv
 smz
 poH
-nlm
-nlm
-nlm
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
-poH
+tTg
+tTg
 tTg
 poH
 poH
 poH
 poH
-sOL
 poH
 poH
 poH
@@ -100651,7 +100625,25 @@ poH
 poH
 poH
 poH
-sOL
+poH
+poH
+poH
+alD
+poH
+poH
+poH
+poH
+kxa
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+poH
+kxa
 poH
 smz
 whv
@@ -105349,7 +105341,7 @@ whv
 whv
 sVf
 iYI
-pta
+hPB
 pcD
 ctX
 vnP
@@ -107556,7 +107548,7 @@ ltw
 pHT
 ble
 ble
-aYc
+pIc
 ble
 ble
 ble
@@ -116162,7 +116154,7 @@ whv
 whv
 whv
 kdK
-roW
+gfa
 imX
 xlS
 vvK
@@ -117344,7 +117336,7 @@ bVY
 flr
 riC
 riC
-oNk
+pJi
 ojf
 ojf
 ojf
@@ -117613,7 +117605,7 @@ ojf
 gBR
 ojf
 toL
-oNk
+pJi
 toL
 toL
 toL
