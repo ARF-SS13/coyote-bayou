@@ -1074,7 +1074,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/raider/ranged,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "cw" = (
@@ -5392,10 +5391,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "mh" = (
-/mob/living/simple_animal/hostile/raider/baseball,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 8"
 	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "mi" = (
 /obj/machinery/camera{
@@ -5515,14 +5516,15 @@
 	},
 /area/f13/tribe)
 "mt" = (
-/obj/structure/railing{
-	dir = 1
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/protectron{
+	layer = 3;
+	name = "towel boy pod";
+	pixel_y = 20
 	},
-/mob/living/simple_animal/hostile/raider/ranged,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
-	},
-/area/f13/building)
+/turf/open/floor/plating/f13/outside/road,
+/area/f13/brotherhood)
 "mu" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -7772,9 +7774,13 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "ry" = (
-/mob/living/simple_animal/hostile/raider/ranged,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
+/obj/structure/nest/protectron{
+	layer = 3;
+	name = "towel boy pod";
+	pixel_y = 20
+	},
+/turf/open/floor/f13,
+/area/f13/brotherhood)
 "rz" = (
 /turf/closed/indestructible/riveted/boss{
 	name = "ancient wall"
@@ -10270,9 +10276,10 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "xi" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant/varmint{
-	faction = list("hostile","raider");
-	name = "Raider Supermutant"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 8"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -12526,6 +12533,11 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 8"
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "Cu" = (
@@ -14050,7 +14062,6 @@
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "FH" = (
@@ -24882,7 +24893,7 @@ tJ
 mk
 dJ
 nH
-qO
+ry
 dr
 VT
 nH
@@ -25139,7 +25150,7 @@ tJ
 VE
 dJ
 nH
-qO
+ry
 AD
 Zo
 nH
@@ -25928,7 +25939,7 @@ VT
 VT
 BB
 tJ
-zo
+mt
 SH
 zo
 zo
@@ -27719,7 +27730,7 @@ iu
 qO
 iu
 tJ
-qO
+ry
 qO
 vn
 vn
@@ -30816,7 +30827,7 @@ CN
 UK
 UK
 nH
-qO
+ry
 qO
 qO
 qO
@@ -31073,7 +31084,7 @@ UK
 UK
 UK
 nH
-qO
+ry
 qO
 qO
 qO
@@ -51744,9 +51755,9 @@ mA
 DN
 dB
 Ft
-mh
-VR
 Lg
+VR
+xi
 VR
 xr
 wP
@@ -52005,7 +52016,7 @@ Lg
 Lg
 wB
 wB
-xi
+Lg
 AU
 tN
 tN
@@ -52519,7 +52530,7 @@ tT
 Lg
 di
 di
-mt
+vQ
 wP
 tN
 tN
@@ -54055,7 +54066,7 @@ JB
 wP
 Be
 wP
-ry
+Sx
 Sx
 Sx
 Je
@@ -54314,7 +54325,7 @@ AK
 br
 Sx
 Sx
-Sx
+mh
 Sx
 qE
 eq
