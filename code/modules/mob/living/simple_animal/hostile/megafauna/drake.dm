@@ -111,20 +111,19 @@ Difficulty: Medium
 		return
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + ranged_cooldown_time
-
-	if(prob(15 + anger_modifier) && !client)
+	if(!client)
+		return
+	if(prob(15 + anger_modifier))
 		if(health < maxHealth/2)
 			INVOKE_ASYNC(src,PROC_REF(swoop_attack), TRUE, null, 50)
 		else
 			fire_rain()
 
-	else if(prob(10+anger_modifier) && !client)
+	else
 		if(health > maxHealth/2)
 			INVOKE_ASYNC(src,PROC_REF(swoop_attack))
 		else
 			INVOKE_ASYNC(src,PROC_REF(triple_swoop))
-	else
-		fire_walls()
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_rain()
 	var/atom/my_target = get_target()
@@ -135,13 +134,13 @@ Difficulty: Medium
 		if(prob(11))
 			new /obj/effect/temp_visual/target(turf)
 
+/*
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_walls()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)
 
 	for(var/d in GLOB.cardinals)
 		INVOKE_ASYNC(src,PROC_REF(fire_wall), d)
 
-/*
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_wall(dir)
 	var/list/hit_things = list(src)
 	var/turf/E = get_edge_target_turf(src, dir)
