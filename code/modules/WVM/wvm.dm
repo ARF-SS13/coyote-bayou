@@ -1071,7 +1071,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
 		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/bronze,								10), // you can literally print this shit en masse with cable coils and sheets
 		new /datum/data/wasteland_equipment("Rose Steel x1",					/obj/item/ingot/mythril,							100),
-		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/adamantine,							150),
+		new /datum/data/wasteland_equipment("Ultrasteel x1",					/obj/item/ingot/adamantine,							150),
 		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
 		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
 		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
