@@ -1268,5 +1268,30 @@
 	icon_living = "giraffe"
 	icon_dead = "giraffe_dead"
 
+/mob/living/simple_animal/advanced/kirin
+	name = "teal kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "teal_kirin"
+	icon_living = "teal_kirin"
+	icon_dead = "teal_kirin_dead"
+
+/mob/living/simple_animal/advanced/kirin/white
+	name = "white kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "white_kirin"
+	icon_living = "white_kirin"
+	icon_dead = "white_kirin_dead"
+
+/mob/living/simple_animal/advanced/kirin/purple
+	name = "purple kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "purple_kirin"
+	icon_living = "purple_kirin"
+	icon_dead = "purple_kirin_dead"
+
+
 
 
