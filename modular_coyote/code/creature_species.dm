@@ -1301,7 +1301,7 @@
 	id = "sentrybot"
 	icon_rest_suffix = "_rest"
 	rotate_on_lying = FALSE
-	simple_icon = 'icons/fallout/mobs/wasterobots.dmi'
+	simple_icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	roundstart = TRUE
 /mob/living/carbon/human/species/sentrybot
 	race = /datum/species/adapted/simplebot/sentrybot
