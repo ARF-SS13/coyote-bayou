@@ -789,7 +789,7 @@
 	icon_width = 64
 	icon_dead_suffix = "-dead"
 	icon_rest_suffix = "_rest"
-	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Security Scrotie" = "sech_", "Scrotie" = "h_")
+	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Security Scrotie" = "sech_", "Scrotie" = "h_" "Fun Sized" = "cup_")
 	roundstart = TRUE
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/scrotie
