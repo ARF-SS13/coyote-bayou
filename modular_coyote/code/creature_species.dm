@@ -782,6 +782,19 @@
 /mob/living/carbon/human/species/otie
 	race = /datum/species/feral/otie
 
+/datum/species/feral/scrotie
+	name = "Feral Scrotie"
+	id = "scrotie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Security Scrotie" = "sech_", "Scrotie" = "h_", "Fun Sized" = "cup_")
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/scrotie
+	race = /datum/species/feral/scrotie
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
@@ -1282,6 +1295,16 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
+
+/datum/species/adapted/simplebot/sentrybot
+	name = "Adapted sentrybot"
+	id = "sentrybot"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	simple_icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
+	roundstart = TRUE
+/mob/living/carbon/human/species/sentrybot
+	race = /datum/species/adapted/simplebot/sentrybot
 
 /datum/species/adapted/simplebot/swarmer
 	name = "Adapted Swarmer"
