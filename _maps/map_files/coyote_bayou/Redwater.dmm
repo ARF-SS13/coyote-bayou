@@ -19933,13 +19933,13 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "gYS" = (
-/obj/structure/bonfire/prelit{
-	pixel_y = 5
-	},
 /obj/structure/stone_tile/surrounding/burnt,
-/obj/item/stack/rods,
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "hell"
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#B7ABAB";
