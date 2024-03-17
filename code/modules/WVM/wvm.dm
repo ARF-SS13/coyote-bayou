@@ -1049,26 +1049,58 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/traderspecial
-	name = "Union Vending Machine - Scrip Exchanger"
-	desc = "An automated machine that exchanges currency for union backed tender."
+	name = "Union Vending Machine - Matvend"
+	desc = "An automated machine that exchanges currency for raw materials."
 	icon_state = "trade_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
-		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
+		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/bronze,								10), // you can literally print this shit en masse with cable coils and sheets
+		new /datum/data/wasteland_equipment("Rose Steel x1",					/obj/item/ingot/mythril,							100),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/adamantine,			150),
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
-		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
+		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/bronze,								10), // you can literally print this shit en masse with cable coils and sheets
+		new /datum/data/wasteland_equipment("Rose Steel x1",					/obj/item/ingot/mythril,							100),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/adamantine,			150),
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -1092,7 +1124,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/attachments
-	name = "Wasteland Vending Machine - Discount Armor and Attachments"
+	name = "Wasteland Vending Machine - Discount Armor and Better Attachments"
 	icon_state = "seller_attachments"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								20),
@@ -1100,15 +1132,23 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						40),
 		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					40),
 		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							20),
-		new /datum/data/wasteland_equipment("Old Scope",					/obj/item/gun_upgrade/scope/watchman,							40),
-		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				40),
+		new /datum/data/wasteland_equipment("Super-Silencer",				/obj/item/gun_upgrade/muzzle/better,							40),
+		new /datum/data/wasteland_equipment("Modern Scope",					/obj/item/gun_upgrade/scope/killer,								40),
+		new /datum/data/wasteland_equipment("Super Ergonomic Grip",			/obj/item/tool_upgrade/refinement/stabilized_grip,				40),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					40),
-		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					40),
-		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					40),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							40),
+		new /datum/data/wasteland_equipment("Pre-Cataclysm Trigger",		/obj/item/gun_upgrade/trigger/better,							40),
+		new /datum/data/wasteland_equipment("Jet-Cooling Rig",				/obj/item/tool_upgrade/reinforcement/plasmablock,				40),
+		new /datum/data/wasteland_equipment("Fusion Overdrive Chip",		/obj/item/gun_upgrade/mechanism/battery_shunt,					40),
+		new /datum/data/wasteland_equipment("Nano-Forged Barrel",			/obj/item/gun_upgrade/barrel/better,							40),
+		new /datum/data/wasteland_equipment("Integrate-able Railgun",		/obj/item/gun_upgrade/barrel/mag_accel,							40),
+		new /datum/data/wasteland_equipment("Aluminum Crystal Lens",		/obj/item/gun_upgrade/barrel/excruciator,						40),
+		new /datum/data/wasteland_equipment("Breeding capacitor Chip",		/obj/item/gun_upgrade/mechanism/overdrive,						40),
+		new /datum/data/wasteland_equipment("Feeding Port Lubrication",		/obj/item/gun_upgrade/mechanism/weintraub,						40),
+		new /datum/data/wasteland_equipment("Jailbroken ChatGPT v69",		/obj/item/tool_upgrade/augment/ai_tool,							40),
 		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								80),
 		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								80),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							80)
+		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							80),
+		new /datum/data/wasteland_equipment("Dark Grey Paint",				/obj/item/tool_upgrade/paint/black,								500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								20),
@@ -1116,15 +1156,23 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						40),
 		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					40),
 		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							20),
-		new /datum/data/wasteland_equipment("Old Scope",					/obj/item/gun_upgrade/scope/watchman,							40),
-		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				40),
+		new /datum/data/wasteland_equipment("Super-Silencer",				/obj/item/gun_upgrade/muzzle/better,							40),
+		new /datum/data/wasteland_equipment("Modern Scope",					/obj/item/gun_upgrade/scope/killer,								40),
+		new /datum/data/wasteland_equipment("Super Ergonomic Grip",			/obj/item/tool_upgrade/refinement/stabilized_grip,				40),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					40),
-		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					40),
-		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					40),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							40),
+		new /datum/data/wasteland_equipment("Pre-Cataclysm Trigger",		/obj/item/gun_upgrade/trigger/better,							40),
+		new /datum/data/wasteland_equipment("Jet-Cooling Rig",				/obj/item/tool_upgrade/reinforcement/plasmablock,				40),
+		new /datum/data/wasteland_equipment("Fusion Overdrive Chip",		/obj/item/gun_upgrade/mechanism/battery_shunt,					40),
+		new /datum/data/wasteland_equipment("Nano-Forged Barrel",			/obj/item/gun_upgrade/barrel/better,							40),
+		new /datum/data/wasteland_equipment("Integrate-able Railgun",		/obj/item/gun_upgrade/barrel/mag_accel,							40),
+		new /datum/data/wasteland_equipment("Aluminum Crystal Lens",		/obj/item/gun_upgrade/barrel/excruciator,						40),
+		new /datum/data/wasteland_equipment("Breeding capacitor Chip",		/obj/item/gun_upgrade/mechanism/overdrive,						40),
+		new /datum/data/wasteland_equipment("Feeding Port Lubrication",		/obj/item/gun_upgrade/mechanism/weintraub,						40),
+		new /datum/data/wasteland_equipment("Jailbroken ChatGPT v69",		/obj/item/tool_upgrade/augment/ai_tool,							40),
 		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								80),
 		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								80),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							80)
+		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							80),
+		new /datum/data/wasteland_equipment("Dark Grey Paint",				/obj/item/tool_upgrade/paint/black,								500),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/badattachments
