@@ -78,7 +78,7 @@ const CargoStatus = (props, context) => {
   } = data;
   return (
     <Section
-      title="Cargo"
+      title="Cargo (All prices in Copper Coins - $)"
       buttons={(
         <Box inline bold>
           <AnimatedNumber
@@ -191,9 +191,9 @@ export const CargoCatalog = (props, context) => {
                         id: pack.id,
                       })}>
                       {formatMoney(self_paid && !pack.goody
-                        ? Math.round(pack.cost * 1.1)
-                        : pack.cost)}
-                      {' cr'}
+                        ? Math.round((pack.cost * 1.1) / 10)
+                        : (pack.cost / 10))}
+                      {' $'}
                     </Button>
                   </Table.Cell>
                 </Table.Row>
@@ -247,7 +247,7 @@ const CargoRequests = (props, context) => {
                 <i>{request.reason}</i>
               </Table.Cell>
               <Table.Cell collapsing textAlign="right">
-                {formatMoney(request.cost)} cr
+                {formatMoney((request.cost / 10))} $
               </Table.Cell>
               {!requestonly && (
                 <Table.Cell collapsing>
@@ -279,7 +279,7 @@ const CargoCartButtons = (props, context) => {
     requestonly,
   } = data;
   const cart = data.cart || [];
-  const total = cart.reduce((total, entry) => total + entry.cost, 0);
+  const total = (cart.reduce((total, entry) => total + entry.cost, 0) / 10);
   if (requestonly) {
     return null;
   }
@@ -290,7 +290,7 @@ const CargoCartButtons = (props, context) => {
         {cart.length === 1 && '1 item'}
         {cart.length >= 2 && cart.length + ' items'}
         {' '}
-        {total > 0 && `(${formatMoney(total)} cr)`}
+        {total > 0 && `(${formatMoney(total)} $)`}
       </Box>
       <Button
         icon="times"
@@ -339,7 +339,7 @@ const CargoCart = (props, context) => {
                 )}
               </Table.Cell>
               <Table.Cell collapsing textAlign="right">
-                {formatMoney(entry.cost)} cr
+                {formatMoney((entry.cost) / 10)} $
               </Table.Cell>
               <Table.Cell collapsing>
                 <Button
