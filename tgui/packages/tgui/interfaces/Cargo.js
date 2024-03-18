@@ -212,6 +212,7 @@ const CargoRequests = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     requestonly,
+    CoinUnit,
   } = data;
   const requests = data.requests || [];
   // Labeled list reimplementation to squeeze extra columns out of it
