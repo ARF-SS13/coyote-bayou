@@ -279,7 +279,7 @@ const CargoCartButtons = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     requestonly,
-    CoinUnit
+    CoinUnit,
   } = data;
   const cart = data.cart || [];
   const total = cart.reduce((total, entry) => total + entry.cost, 0);
