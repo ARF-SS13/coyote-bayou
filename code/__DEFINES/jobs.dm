@@ -12,6 +12,7 @@
 #define FACTION_TRIBE "Tribe"
 #define FACTION_VAULT "Vault"
 #define FACTION_FOLLOWERS "Followers"
+#define FACTION_GUILD "Guild"
 #define FACTION_KHAN "Great Khans"
 #define FACTION_BIKER "Hells Nomads"
 #define FACTION_CLUB "Heavens Night"
@@ -205,7 +206,17 @@
 #define F13PROFESSOR	(1<<4)
 #define F13LEADPROFESSOR (1<<5)
 
-#define KHAN		(1<<14)
+#define GUILD			(1<<14)
+
+#define GUILDSHOPKEEP	(1<<0)
+#define GUILDBANKER		(1<<1)
+#define GUILDMEDIC		(1<<2)
+#define GUILDBARTEND	(1<<3)
+#define GUILDCHEF		(1<<4)
+#define GUILDLIBRARIAN	(1<<5)
+#define GUILDKNIGHT		(1<<6)
+
+#define KHAN		(1<<15)
 
 #define F13NOYAN (1<<0)
 #define F13STEWARD (1<<1)
@@ -214,12 +225,12 @@
 #define F13KIPCHAK (1<<4)
 #define F13MANGUDAI (1<<5)
 
-#define HEAVENSNIGHT		(1<<15)
+#define HEAVENSNIGHT		(1<<16)
 
 #define F13MANAGER			(1<<0)
 #define F13CLUBWORKER		(1<<1)
 
-#define TEACHER		(1<<16)
+#define TEACHER		(1<<17)
 
 #define F13TEACHER (1<<0)
 

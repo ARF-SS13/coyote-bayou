@@ -330,7 +330,8 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/toy,
 	/obj/item/cult_bastard,
 	/obj/item/shield,
-	/obj/item/storage/backpack/satchel
+	/obj/item/storage/backpack/satchel,
+	/obj/item/huntinghorn
 	)))
 
 /// Things allowed in a toolbelt

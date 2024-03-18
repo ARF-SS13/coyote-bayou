@@ -14,12 +14,14 @@
 	key = "bootup"
 	key_third_person = "whirrs up their on board memory."
 	message = "whirrs up their on board memory."
+	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/bootup.ogg'
 
 /datum/emote/living/carbon/beeper7
 	key = "beeper7"
 	key_third_person = "pings!"
 	message = "pings!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
 
 /datum/emote/living/carbon/blink_r
@@ -431,6 +433,28 @@
 	else
 		qdel(blade)
 
+//cybernetic blade placeholder(?)
+/datum/emote/living/carbon/cyberarm
+	key = "cyber"
+	key_third_person = "draws an arm blade!"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/cyberarm/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to use your blade!"))
+		return
+	var/which_blade_to_spawn
+	if(HAS_TRAIT(user, TRAIT_CYBERKNIFE))
+		which_blade_to_spawn = /obj/item/hand_item/arm_blade/mutation/cyber
+	else 
+		to_chat(user, span_notice("You ain't got no arm blades!"))
+	var/obj/item/hand_item/arm_blade/mutation/cyber/blade = new which_blade_to_spawn(user) 
+	if(user.put_in_active_hand(blade))
+		to_chat(user, span_notice("You get your blades ready to slice!"))
+	else
+		qdel(blade)
+
 //arm tentacle mutation//
 /datum/emote/living/carbon/tentarm
 	key = "tentarm"
@@ -482,7 +506,7 @@
 		hasPickedUp = TRUE
 		damageMult = rock.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, rock_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice hefty throwing rock!"))
@@ -522,7 +546,7 @@
 		hasPickedUp = TRUE
 		damageMult = brick.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, brick_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice weighty brick!"))
@@ -565,7 +589,7 @@
 			hasPickedUp = TRUE
 			damageMult = snowball.throwforce
 			if(!timerEnabled)
-				addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+				addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 				timerEnabled = TRUE
 			COOLDOWN_START(src, snowball_cooldown, 2.5 SECONDS)
 			to_chat(user, span_notice("You pack together a nice round snowball!"))
@@ -605,6 +629,7 @@
 /datum/emote/living/carbon/tsk
 	key = "tsk"
 	message = "tsks audibly."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/braidpull
 	key = "braidpull"
@@ -625,6 +650,7 @@
 /datum/emote/living/carbon/tongueclick
 	key = "tongueclick"
 	message = "clicks their tongue as if annoyed."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/kneel
 	key = "kneel"
@@ -633,10 +659,12 @@
 /datum/emote/living/carbon/snicker
 	key = "snicker"
 	message = "snickers quietly to themselves."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/huff
 	key = "huff"
 	message = "huffs loudly, exhausted or exasperated. Who knows."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/wait
 	key = "wait"

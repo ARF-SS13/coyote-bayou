@@ -561,6 +561,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = TRUE
 	zoom_factor = 1.1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
@@ -714,6 +715,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
 /obj/item/gun/energy/laser/scatter/laserbuss
 	name = "Laserbuss"
 	desc = "A questionably-designed tribeam laser rifle that has been modified to feature a dense array of emitters and scatter lenses."

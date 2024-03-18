@@ -32,49 +32,51 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 
 //Human Overlays Indexes/////////
 //"LOTS OF CIT CHANGES HERE. BE CAREFUL WHEN UPSTREAM ADDS MORE LAYERS" said the downstream, bottomly
-#define MUTATIONS_LAYER							43	//mutations. Tk headglows, cold resistance glow, etc
-#define GENITALS_BEHIND_LAYER					42	//The behind portion of genitals, mostly for north-facing sprites being behind everything. Not used by butts!
-#define BODY_BEHIND_LAYER						41	//certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LAYER							40	//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define MARKING_LAYER							39	//Matrixed body markings because clashing with snouts?
-#define ARMS_PART_LAYER							37	//the arms themselves
-#define MARKING_LAYER_ARMS						36	//Markings that should show up over a butt, like arms
-#define BODY_ADJ_LAYER							35	//certain mutantrace features (snout, body markings) that must appear above the body parts
-#define GENITAL_UNDER_UNDERWEAR_MID_LAYER 		34	// Genitals set to be visible over everything else
-#define GENITAL_UNDER_UNDERWEAR_FRONT_LAYER 	33	// Genitals set to be visible over everything else
-#define UNDERWEAR_LAYER							32	//underwear, undershirts, socks
-#define BODY_LAYER								31	//eyes, lips(makeup)
-#define BODY_ADJ_UPPER_LAYER					30	//Taur lowernesses
-#define FRONT_MUTATIONS_LAYER					29	//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER							28	//damage indicators (cuts and burns)
-#define GENITAL_OVER_UNDERWEAR_MID_LAYER 		27	// Genitals set to be visible over everything else
-#define GENITAL_OVER_UNDERWEAR_FRONT_LAYER 		26	// Genitals set to be visible over everything else
-#define GENITALS_FRONT_LAYER					25	//Genitals that go over the body, but under the hands and arms
-#define UNIFORM_LAYER							24
-#define HANDS_PART_LAYER						23	//Hands
-#define UNDERWEAR_OVERHANDS_LAYER				22  //fuckyoufuck
-#define ID_LAYER								21
-#define SHOES_LAYER								20
-#define GLOVES_LAYER							19
-#define EARS_LAYER								18
-#define SUIT_LAYER								17
-#define GLASSES_LAYER							16
-#define BELT_LAYER								15	//Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_STORE_LAYER						14
-#define NECK_LAYER								13
-#define BACK_LAYER								12
-#define GENITAL_OVER_CLOTHES_MID_LAYER 			11	// Genitals set to be visible over everything else
-#define GENITAL_OVER_CLOTHES_FRONT_LAYER 		10	// Genitals set to be visible over everything else
-#define HAIR_LAYER								9	//TODO: make part of head layer?
-#define HORNS_LAYER								8
-#define FACEMASK_LAYER							7
-#define HEAD_LAYER								6
-#define HANDCUFF_LAYER							5
-#define LEGCUFF_LAYER							4
-#define HANDS_LAYER								3
-#define BODY_FRONT_LAYER						2
-#define FIRE_LAYER								1	//If you're on fire
-#define TOTAL_LAYERS							43	//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define MUTATIONS_LAYER                     45	//mutations. Tk headglows, cold resistance glow, etc
+#define GENITALS_BEHIND_LAYER               44	//The behind portion of genitals, mostly for north-facing sprites being behind everything. Not used by butts!
+#define BODY_BEHIND_LAYER                   43	//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER                     42	//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define MARKING_LAYER                       41	//Matrixed body markings because clashing with snouts?
+#define ARMS_PART_LAYER                     39	//the arms themselves
+#define MARKING_LAYER_ARMS                  38	//Markings that should show up over a butt, like arms
+#define BODY_ADJ_LAYER                      37	//certain mutantrace features (snout, body markings) that must appear above the body parts
+#define GENITAL_UNDER_UNDERWEAR_MID_LAYER   36	// Genitals set to be visible over everything else
+#define GENITAL_UNDER_UNDERWEAR_FRONT_LAYER 35	// Genitals set to be visible over everything else
+#define UNDERWEAR_LAYER                     34	//underwear, undershirts, socks
+#define BODY_LAYER                          33	//eyes, lips(makeup)
+#define BODY_ADJ_UPPER_LAYER                32	//Taur lowernesses
+#define FRONT_MUTATIONS_LAYER               31	//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER                        30	//damage indicators (cuts and burns)
+#define GENITAL_OVER_UNDERWEAR_MID_LAYER    29	// Genitals set to be visible over everything else
+#define GENITAL_OVER_UNDERWEAR_FRONT_LAYER  28	// Genitals set to be visible over everything else
+#define GENITALS_FRONT_LAYER                27	//Genitals that go over the body, but under the hands and arms
+#define UNIFORM_LAYER                       26
+#define HANDS_PART_LAYER                    25	//Hands
+#define UNDERWEAR_OVERHANDS_LAYER           24  //fuckyoufuck
+#define ID_LAYER                            23
+#define SHOES_LAYER                         22
+#define GLOVES_LAYER                        21
+#define EARS_LAYER                          20
+#define UNDERWEAR_OVERCLOTHES_LAYER         19
+#define SUIT_LAYER                          18
+#define GLASSES_LAYER                       17
+#define BELT_LAYER                          16	//Possible make this an overlay of somethign required to wear a belt?
+#define SUIT_STORE_LAYER                    15
+#define NECK_LAYER                          14
+#define BACK_LAYER                          13
+#define GENITAL_OVER_CLOTHES_MID_LAYER      12	// Genitals set to be visible over everything else
+#define GENITAL_OVER_CLOTHES_FRONT_LAYER    11	// Genitals set to be visible over everything else
+#define HAIR_LAYER                          10	//TODO: make part of head layer?
+#define HORNS_LAYER                         9
+#define FACEMASK_LAYER                      8
+#define HEAD_LAYER                          7
+#define UNDERWEAR_OVERSUIT_LAYER            6
+#define HANDCUFF_LAYER                      5
+#define LEGCUFF_LAYER                       4
+#define HANDS_LAYER                         3
+#define BODY_FRONT_LAYER                    2
+#define FIRE_LAYER                          1	//If you're on fire
+#define TOTAL_LAYERS                        45	//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
@@ -501,6 +503,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 
 #define VOMIT_TOXIC 1
 #define VOMIT_PURPLE 2
+#define VOMIT_NANITE 3
 
 // possible bitflag return values of intercept_zImpact(atom/movable/AM, levels = 1) calls
 #define FALL_INTERCEPTED		(1<<0) //Stops the movable from falling further and crashing on the ground

@@ -411,7 +411,7 @@
 
 //Bone Dancers
 
-datum/crafting_recipe/tribalwar/bone
+/datum/crafting_recipe/tribalwar/bone
 	category = CAT_PRIMAL
 	always_available = FALSE
 
@@ -555,7 +555,7 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/tool_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
@@ -566,7 +566,7 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
 				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/tool_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 

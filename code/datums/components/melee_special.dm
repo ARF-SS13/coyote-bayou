@@ -101,7 +101,7 @@
 
 /datum/component/weapon_special/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACKCHAIN, .proc/item_attackchain)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACKCHAIN,PROC_REF(item_attackchain))
 
 /datum/component/weapon_special/UnregisterFromParent()
 	. = ..()
@@ -121,7 +121,7 @@
 	if(run_special(user, target, params))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
-		return TRUE
+		return
 
 /datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
 	if(!user || !target)
@@ -177,7 +177,7 @@
 	if(!target)
 		target = client_mouse_angle2turf(user.client, get_turf(user))
 	if(debug)
-		INVOKE_ASYNC(src, .proc/debug_highlight, target)
+		INVOKE_ASYNC(src,PROC_REF(debug_highlight), target)
 	if(target && max_distance < 2 && user.can_reach(target, reach = max_distance))
 		return list(get_turf(target)) // we're close enough to just hit the target
 	// okay we clicked something out of range, so we need to find the turf at the edge of our range in the direction we clicked
@@ -193,7 +193,7 @@
 	if(!LAZYLEN(line_of_turfs)) // ^ hopefully in the right order
 		return // cool
 	if(debug)
-		INVOKE_ASYNC(src, .proc/debug_highlight_line, user, line_of_turfs, target)
+		INVOKE_ASYNC(src,PROC_REF(debug_highlight_line), user, line_of_turfs, target)
 	return line_of_turfs
 
 /datum/component/weapon_special/proc/sim_punch_laser(mob/user)
@@ -278,7 +278,7 @@
 				var/list/out = list("[just_one]" = atomstuff[just_one])
 				if(debug)
 					for(var/atom/movable/AM in out)
-						INVOKE_ASYNC(src, .proc/debug_highlight_atom, AM, "#0000FF")
+						INVOKE_ASYNC(src,PROC_REF(debug_highlight_atom), AM, "#0000FF")
 				return out
 		if(WS_FURTHEST_POPULATED_TILE)
 			atomstuff = sort_list(atomstuff, cmp=/proc/cmp_text_dsc)
@@ -286,18 +286,18 @@
 				var/list/out = list("[just_one]" = atomstuff[just_one])
 				if(debug)
 					for(var/atom/movable/AM in out)
-						INVOKE_ASYNC(src, .proc/debug_highlight_atom, AM, "#0000FF")
+						INVOKE_ASYNC(src,PROC_REF(debug_highlight_atom), AM, "#0000FF")
 				return out
 		if(WS_RANDOM_POPULATED_TILE)
 			var/just_one = pick(atomstuff)
 			var/list/out = list("[just_one]" = atomstuff[just_one])
 			if(debug)
 				for(var/atom/movable/AM in out)
-					INVOKE_ASYNC(src, .proc/debug_highlight_atom, AM, "#0000FF")
+					INVOKE_ASYNC(src,PROC_REF(debug_highlight_atom), AM, "#0000FF")
 			return out
 	if(debug)
 		for(var/atom/movable/AM in atomstuff)
-			INVOKE_ASYNC(src, .proc/debug_highlight_atom, AM, "#0000FF")
+			INVOKE_ASYNC(src,PROC_REF(debug_highlight_atom), AM, "#0000FF")
 	return atomstuff
 
 /datum/component/weapon_special/proc/get_atoms_on_turf(turf/turfhere, mob/user)
@@ -398,7 +398,7 @@
 	WEAPON_MASTER
 	var/d_zone = user.zone_selected
 	if(debug)
-		INVOKE_ASYNC(src, .proc/debug_highlight_atom, hit_this, "#ff0000")
+		INVOKE_ASYNC(src,PROC_REF(debug_highlight_atom), hit_this, "#ff0000")
 	for(var/dmge in damage_list)
 		if(QDELETED(hit_this))
 			return
@@ -437,6 +437,9 @@
 					if(!damage)
 						continue
 					hit_this.attackby(master, user, null, damage)
+
+	// i'm sure nothing bad will happen if i let people run afterattack on every mob they hit using these components.
+	master.afterattack(hit_this, user, TRUE, null)
 
 /datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target)
 	if(!user || !target)

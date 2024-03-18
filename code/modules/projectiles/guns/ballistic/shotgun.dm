@@ -684,7 +684,7 @@
 	icon_state = "needlesg"
 	item_state = "needlesg"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/needler
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

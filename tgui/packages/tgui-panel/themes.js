@@ -82,7 +82,7 @@ export const setClientTheme = name => {
     });
   }
   if (name === 'dark') {
-    Byond.winset({
+    return Byond.winset({
       // Main windows
       'infowindow.background-color': COLOR_DARK_BG,
       'infowindow.text-color': COLOR_DARK_TEXT,

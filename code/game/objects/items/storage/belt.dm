@@ -299,7 +299,7 @@
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/army/followers
-	name = "follower belt"
+	name = "guild knight belt"
 	desc = "A thoughtful belt for holding things like guns."
 	icon_state = "grenadebeltold"
 	item_state = "security"
@@ -839,20 +839,32 @@
 //NCR Ranger's stuff
 
 /obj/item/storage/belt/military/commonwealth_brit
-	name = "burma webbing"
+	name = "Pattern 37 webbing"
 	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
-	icon_state = "brit_webbing"
-	item_state = "brit_webbing"
+	icon_state = "brit_web"
+	item_state = "brit_web"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+
+/obj/item/storage/belt/military/commonwealth_brit/oldschool
+	name = "Pattern 1908 webbing"
+	desc = "A versatile chest rig, this one seems to be used in the great war by Great Britain and the commonwealth."
+	icon_state = "brit_webww1"
+	item_state = "brit_webww1"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
 /obj/item/storage/belt/bandolier/boer_band
-	name = "leather bandolier"
-	desc = "An old style of bandolier used by primarily those who ride upon horses."
-	icon_state = "boer_band"
-	item_state = "boer_band"
+	name = " Boar War Leather Band"
+	desc = "An old style of bandolier used by primarily those who ride upon horses. Used in the boer war."
+	icon_state = "boer"
+	item_state = "boer"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
 /obj/item/storage/belt/military/french_webbing
 	name = "french webbing"
-	desc = "A versailles chest rig, this one seems to be used in long bread enviroments and such"
+	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
 	icon_state = "french_webbing"
 	item_state = "french_webbing"
 

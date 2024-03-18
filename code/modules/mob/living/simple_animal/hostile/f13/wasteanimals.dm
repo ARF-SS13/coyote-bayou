@@ -119,13 +119,17 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
+/mob/living/simple_animal/hostile/gecko/Aggro()
+	..()
+	summon_backup(15)
+	say("𐎧𐎤𐎫𐎯!!") // https://lingojam.com/Eng-Cuneiform  In this case they're just calling for help.
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
-	
+
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	melee_damage_lower *= 0.5
@@ -280,7 +284,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET * 0.35
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -390,8 +394,8 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	
-	
+
+
 /mob/living/simple_animal/hostile/gecko/legacy/alpha
 	name = "alpha newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way. This one's drooling a lot and looks sort of tired."
@@ -419,7 +423,7 @@
 	minimum_distance = 0
 	aggro_vision_range = 7
 	vision_range = 9
-	
+
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -598,7 +602,7 @@
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -663,7 +667,7 @@
 	var/mob/living/carbon/human/H = my_target
 	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
-/mob/living/simple_animal/hostile/stalker/playable/legion				
+/mob/living/simple_animal/hostile/stalker/playable/legion
 	name = "legionstalker"
 	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
 	icon_state = "nightstalker-legion"
@@ -764,8 +768,6 @@
 	M.update_damage_hud()
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(10))
 		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
 		to_chat(M, span_warning("[pain_message]"))
@@ -775,8 +777,6 @@
 	M.adjustStaminaLoss(10, 0)
 	if (M.eye_blurry < 5)
 		M.adjust_blurriness(1)
-	if (M.confused < 20)
-		M.confused += 3
 	if(prob(5))
 		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
 		to_chat(M, span_notice("[pain_message]"))
@@ -816,18 +816,18 @@
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
-	name = "molerat"
-	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "molerat"
-	icon_living = "molerat"
-	icon_dead = "molerat_dead"
+	name = "giant rat"
+	desc = "A large mutated rat that finds its way everywhere. Common in caves and underground areas."
+	icon = 'modular_coyote/icons/mob/rat.dmi'
+	icon_state = "rat"
+	icon_living = "rat"
+	icon_dead = "rat_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
-						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, 
+						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2,
 						/obj/item/stack/sheet/sinew = 1,
 						/obj/item/stack/sheet/animalhide/molerat = 1,
 						/obj/item/stack/sheet/bone = 1)
@@ -846,8 +846,8 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
-	
-	faction = list("hostile", "gecko")
+
+	faction = list("hostile", "gecko", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -878,6 +878,11 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
 	. = ..()
+
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	.=..()
+	resize = 0.8
+	update_transform()
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"
@@ -1016,7 +1021,7 @@
 	)
 	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
 	desc_short = "What a terrifying bird."
-	
+
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),

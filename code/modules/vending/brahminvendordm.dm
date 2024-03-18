@@ -68,7 +68,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	COOLDOWN_START(src, clickyclick, 4 SECONDS)
 	playsound(src, 'sound/machines/keyboard_beep.ogg', 40, ignore_walls = TRUE)
 	user.show_message(span_notice("You press one or more buttons on the uplink..."))
-	addtimer(CALLBACK(src, .proc/claim_beacon, user), 3 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(claim_beacon), user), 3 SECONDS)
 
 /obj/item/brahmin_beacon/proc/claim_beacon(mob/user)
 	if(!GLOB.orbital_cow_catapult_ready)
@@ -84,9 +84,9 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	playsound(src, 'sound/machines/fuckedup_fax.ogg', 80, ignore_walls = TRUE)
 	if(in_range(src, user))
 		user.show_message(span_notice("...and the uplink starts making noises like it's doing something!"))
-	addtimer(CALLBACK(src, .proc/drop_cow, user), 7.5 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(drop_cow), user), 7.5 SECONDS)
 	addtimer(VARSET_CALLBACK(GLOB, orbital_cow_catapult_ready, TRUE), COW_CANNON_RELOAD_DELAY)
-	addtimer(CALLBACK(src, .proc/reset_beacon), COW_CANNON_RELOAD_DELAY)
+	addtimer(CALLBACK(src,PROC_REF(reset_beacon)), COW_CANNON_RELOAD_DELAY)
 
 /obj/item/brahmin_beacon/proc/drop_cow(mob/user)
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()
@@ -109,7 +109,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	var/turf/hereiam = get_turf(src)
 	hereiam.visible_message(span_userdanger("[src] starts beeping furiously! HIT THE DECK!"))
 	new /obj/effect/abstract/DPtarget(get_turf(src), pod)
-	addtimer(CALLBACK(src, .proc/reset_beacon), 7.5 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(reset_beacon)), 7.5 SECONDS)
 
 /obj/item/brahmin_beacon/proc/reset_beacon(mob/user)
 	delivering_cow = FALSE
@@ -120,6 +120,6 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	if(beeps_left-- < 0)
 		beeps_left = initial(beeps_left)
 		return
-	addtimer(CALLBACK(src, .proc/beep_loop), 0.2 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(beep_loop)), 0.2 SECONDS)
 
 #undef COW_CANNON_RELOAD_DELAY

@@ -81,7 +81,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/wrench(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
-	new /obj/item/analyzer(src)
+//	new /obj/item/analyzer(src)		// Coyote Bayou Edit, due to disabled atmos, analyzers are useless.
+	new /obj/item/multitool(src)	// Coyote Bayou Edit, no need to gatekeep the multitool?
 	new /obj/item/wirecutters(src)
 
 /obj/item/storage/toolbox/mechanical/old
@@ -154,7 +155,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/wirecutters(src)
 	new /obj/item/multitool(src)
 
-/obj/item/storage/toolbox/brass
+/*/obj/item/storage/toolbox/brass
 	name = "brass box"
 	desc = "A huge brass box with several indentations in its surface."
 	icon_state = "brassbox"
@@ -194,7 +195,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 
 /obj/item/storage/toolbox/brass/prefilled/ratvar/admin
 	slab_type = /obj/item/clockwork/slab/debug
-	fabricator_type = /obj/item/clockwork/replica_fabricator/scarab/debug
+	fabricator_type = /obj/item/clockwork/replica_fabricator/scarab/debug*/
 
 /obj/item/storage/toolbox/plastitanium
 	name = "plastitanium toolbox"

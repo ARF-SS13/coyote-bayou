@@ -159,7 +159,7 @@
 
 /obj/structure/barricade/security/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/deploy), deploy_time)
+	addtimer(CALLBACK(src,PROC_REF(deploy)), deploy_time)
 
 /obj/structure/barricade/security/proc/deploy()
 	icon_state = "barrier1"
@@ -243,7 +243,7 @@
 						"Interior Wall" = image(icon = 'icons/fallout/turfs/walls/interior.dmi', icon_state = "interior0"),
 						"House Wall" = image(icon = 'icons/fallout/turfs/walls/house.dmi', icon_state = "house0")
 					)
-					var/chosen_wall = show_radial_menu(user, src, walls, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					var/chosen_wall = show_radial_menu(user, src, walls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user, I))
 						return
 					switch(chosen_wall)
@@ -277,7 +277,7 @@
 						"House Window" = image(icon = 'icons/obj/wood_window.dmi', icon_state = "housewindow"),
 						"Wood Framed Window" = image(icon = 'icons/obj/wood_window.dmi', icon_state = "woodwindow")
 					)
-					var/chosen_window = show_radial_menu(user, src, windows, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					var/chosen_window = show_radial_menu(user, src, windows, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user, I))
 						return
 					switch(chosen_window)
@@ -304,7 +304,7 @@
 						"Tent Wall" = image(icon = 'icons/fallout/turfs/walls/tent.dmi', icon_state = "tent0"),
 						"Tent Flaps" = image(icon = 'icons/fallout/structures/doors.dmi', icon_state = "tent")
 					)
-					var/chosen_tent = show_radial_menu(user, src, tentwalls, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					var/chosen_tent = show_radial_menu(user, src, tentwalls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user, I))
 						return
 					switch(chosen_tent)

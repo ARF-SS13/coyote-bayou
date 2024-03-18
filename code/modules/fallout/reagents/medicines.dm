@@ -1,4 +1,4 @@
-/* 
+/*
  * Stimpak Juice
  * Initial insta-heal
  * Some lingering heal over time
@@ -74,7 +74,7 @@
 		. = TRUE
 		..()
 
-/* 
+/*
  * Super Stimpak Juice
  * Initial insta-heal
  * Fixes up cuts like a weaker sanguirite
@@ -128,7 +128,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4*REM)
 	if((M.getOrganLoss(ORGAN_SLOT_HEART) >= 20*REM) && prob(8))
 		var/superstim_od_message = pick(
-			"You feel like someone punched you in the chest, but from the inside.", 
+			"You feel like someone punched you in the chest, but from the inside.",
 			"You breathe heavily, yet still feel winded.",
 			"Your heart stops for a moment.",
 			"You feel an agonizing shudder in your chest.")
@@ -171,7 +171,7 @@
 	..()
 	. = TRUE
 
-/* 
+/*
  * Healing Powder
  * Bicaridine and Kelotane, in one chem
  * Heals either brute or burn, whichever's higher
@@ -202,7 +202,7 @@
 	. = TRUE
 	..()
 
-/* 
+/*
  * Healing Poultice
  * Heals both brute and burn
  * Seals up cuts
@@ -241,7 +241,7 @@
 	M.adjustToxLoss(4)
 	if((M.getToxLoss() >= 30) && prob(8))
 		var/poultice_od_message = pick(
-			"Burning red streaks form on your skin.", 
+			"Burning red streaks form on your skin.",
 			"You feel a searing pain shoot through your skin.",
 			"You feel like your blood's been replaced with acid. It burns.")
 		to_chat(M, span_notice("[poultice_od_message]"))
@@ -344,7 +344,7 @@
 	color = "#6D6374"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 25
-	addiction_threshold = 15
+	addiction_threshold = 16
 	var/od_strikes = 0 // So we dont get roflstomped by a sudden massive dose of medx
 	var/od_next_strike = 0 // there's a cool down between strikes, to give the user time to purge this stuff
 	var/od_strike_cooldown = 6 SECONDS
@@ -670,7 +670,7 @@
 		var/datum/reagent/R = A
 		if(R != src)
 			M.reagents.remove_reagent(R.type,3)
-	
+
 	M.disgust = max(M.disgust, 100) // instant violent pain
 	M.Dizzy(5*REM)
 	M.Jitter(5*REM)

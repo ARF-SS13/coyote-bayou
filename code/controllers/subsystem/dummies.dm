@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	// 	if(COOLDOWN_FINISHED(dummy, unuse_timer))
 	// 		unregister_dummy(dummy)
 	// 		qdel(dummy)
-	capture_snapshot_of_players()
+	//capture_snapshot_of_players() surprise, it doesnt work
 
 /datum/controller/subsystem/dummy/proc/get_a_dummy()
 	var/mob/living/carbon/human/dummy/D

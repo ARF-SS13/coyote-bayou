@@ -3541,7 +3541,7 @@
 /obj/item/storage/box/masks,
 /obj/item/lighter,
 /obj/item/storage/box/pillbottles,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4163,7 +4163,7 @@
 /area/f13/wasteland)
 "cZc" = (
 /obj/structure/bed/old,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_y = 32
 	},
@@ -4284,6 +4284,13 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
+"dcq" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
 "dcs" = (
@@ -4939,6 +4946,13 @@
 "dDo" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
+	},
+/area/f13/building)
+"dDO" = (
+/obj/structure/table/wood,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
 	},
 /area/f13/building)
 "dEg" = (
@@ -11484,6 +11498,19 @@
 /obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
+"imh" = (
+/obj/effect/validball_spawner,
+/obj/machinery/button/door{
+	id = "finalbossteal";
+	name = "shutters button";
+	pixel_y = 0;
+	light_color = "#00FFFF";
+	light_power = 40;
+	light_range = 4;
+	pixel_x = -23
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
 "imj" = (
 /obj/structure/fence,
 /obj/structure/spacevine{
@@ -12460,7 +12487,7 @@
 /area/f13/city)
 "iTc" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -20749,6 +20776,7 @@
 /area/f13/wasteland)
 "oBO" = (
 /obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -20973,6 +21001,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -27405,6 +27434,14 @@
 	name = "vines"
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"tpw" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/cell_charger,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "tpO" = (
 /obj/machinery/light/small{
@@ -43218,7 +43255,7 @@ iga
 iBr
 mHS
 wMm
-eiM
+dDO
 snE
 glj
 qfA
@@ -55323,7 +55360,7 @@ oGl
 oGl
 oGl
 cnJ
-gAo
+tpw
 oGl
 uPg
 oGl
@@ -83151,7 +83188,7 @@ tvr
 hkD
 rmR
 jYi
-quf
+dcq
 cYg
 pPN
 rmR
@@ -97554,7 +97591,7 @@ cvw
 kTa
 kTa
 kTa
-kTa
+vBf
 eyA
 eyA
 kTa
@@ -97811,7 +97848,7 @@ kTa
 kTa
 kTa
 eyA
-eyA
+vBf
 kTa
 kTa
 kTa
@@ -98068,7 +98105,7 @@ kTa
 eyA
 kTa
 kTa
-kTa
+vBf
 riw
 wbL
 riw
@@ -98325,7 +98362,7 @@ eyA
 kTa
 kTa
 kTa
-wbL
+imh
 riw
 wbL
 xPZ

@@ -46,7 +46,7 @@
 	density = 0
 	var/has_plod = TRUE
 	var/produce
-	var/timer = 5000 //50 seconds
+	var/timer = 30 SECONDS
 
 /obj/structure/flora/wasteplant/Destroy()
 	if(LAZYLEN(contents))
@@ -68,8 +68,7 @@
 		to_chat(user, span_notice("You pluck [product] from [src]."))
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
-		timer = initial(timer) + rand(-100,100) //add some variability
-		addtimer(CALLBACK(src, .proc/regrow),timer) //Set up the timer properly
+		addtimer(CALLBACK(src,PROC_REF(regrow)),timer) //Set up the timer properly
 	update_icon()
 
 /obj/structure/flora/wasteplant/proc/regrow()
@@ -136,7 +135,7 @@
 	desc = "The sacred datura root, useful as an anesthetic for surgery and in healing salves, as well as for rites of passage rituals and ceremonies"
 	produce = /obj/item/reagent_containers/food/snacks/grown/datura
 
-obj/structure/flora/wasteplant/wild_punga
+/obj/structure/flora/wasteplant/wild_punga
 	name = "wild punga"
 	icon_state = "wild_punga"
 	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin."

@@ -217,6 +217,15 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+
+/obj/item/clothing/under/f13/ww1custom
+	name = "Decorated White Army Officer uniform"
+	desc = "A decorated uniform. There's three medals and a cross on the right side of the chest. This cleanly pressed and very formal uniform seems to have a tag on the tunic's interior, it reads 'Night Z. 1921'. It seems to be quite an old uniform."
+	icon_state = "nightoutfit"
+	item_state = "nightoutfit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
 	name = "Ancient West German Officer uniform"
 	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
@@ -1193,6 +1202,7 @@
 	item_color = "khan_uniform"
 	var/uniformtoggled = FALSE
 	body_parts_hidden = GROIN|LEGS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/khan/biker
 	name = "rough ridin' jeans"
@@ -1299,6 +1309,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"

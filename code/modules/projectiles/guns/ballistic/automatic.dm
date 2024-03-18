@@ -2633,6 +2633,26 @@
 	icon_state = "augc"
 	item_state = "augc"
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/asvalcustom
+	name = "Custom 'Cold Whisper'Assault Carbine "
+	desc = "A modified 9mm AS-VAL assault carbine. Rechambered to be in 5mm, this rifle fires much slower than its little, but older, brother which is in 9mm. The gun seems custom built and produced for someone."
+	init_recoil = AUTOCARBINE_RECOIL(1.3, 1.1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "vss"
+	item_state = "vss"
+	silenced = TRUE
+	can_scope = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
@@ -3065,7 +3085,10 @@
 	name = "L1A1"
 	desc = "The L1A1 Self-Loading Rifle, The standard issue rifle of All Commonwealth Nations."
 	icon_state = "l1a1"
-	item_state = "slr"
+	item_state = "l1a1"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -3080,20 +3103,20 @@
 //custom gun
 /obj/item/gun/ballistic/automatic/fg42tox
 	name = "Custom FG-42 rifle"
-	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope!The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope! The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
 	icon_state = "fg42"
 	item_state = "fg42"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	mag_type = /obj/item/ammo_box/magazine/fallschirm
+	init_mag_type = /obj/item/ammo_box/magazine/fallschirm
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	init_recoil = CARBINE_RECOIL(1.2, 1.3)
+	damage_multiplier = GUN_LESS_DAMAGE_C1
+	init_recoil = CARBINE_RECOIL(1, 0.9)
 	init_firemodes = list(
-		/datum/firemode/semi_auto ,
+		/datum/firemode/semi_auto/fast ,
 		/datum/firemode/automatic/rpm100
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -3102,6 +3125,31 @@
 	can_bayonet = FALSE
 	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/fg42.ogg'
+
+
+
+/obj/item/gun/ballistic/automatic/democracy
+	name = "M36 'Justice' battle rifle"
+	desc = "A M36 battle rifle, nicknamed 'Justice' by the company that produced it. Manufactured by an American division of Leo Armaments, which was quite patriotic. This rfle is chambered in .308. It seems to have a slow RPM and fast semi-automatic"
+	icon_state = "m36"
+	item_state = "m36"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1.8, 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto ,
+		/datum/firemode/automatic/rpm100
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle

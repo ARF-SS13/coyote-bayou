@@ -149,7 +149,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/image/overlay_image = image(icon, icon_state = cover_state)
 	add_overlay(overlay_image)
 	if(timer)
-		addtimer(CALLBACK(src, .proc/do_unseal), timer)
+		addtimer(CALLBACK(src,PROC_REF(do_unseal)), timer)
 
 /obj/structure/nest/proc/try_unseal(mob/user = null, obj/item/I = null)
 	if(!istype(user))
@@ -197,6 +197,48 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 25 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2)
 
+/obj/structure/nest/mook
+	name = "mook den"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/jungle/mook = 2)
+
+/obj/structure/nest/hivebot
+	name = "hivebot datacreator"
+	max_mobs = 3
+	spawn_time = 5 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/hivebot = 3,
+					/mob/living/simple_animal/hostile/hivebot/range = 3,
+					/mob/living/simple_animal/hostile/hivebot/rapid = 3,
+					/mob/living/simple_animal/hostile/hivebot/strong = 3)
+
+/obj/structure/nest/pirate
+	name = "pirate hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/pirate/melee = 2,
+					/mob/living/simple_animal/hostile/pirate/ranged = 2)
+
+/obj/structure/nest/russian
+	name = "russian hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/russian/ranged = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/mosin = 2, 
+					/mob/living/simple_animal/hostile/russian/ranged/trooper = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/officer = 2)
+
+/obj/structure/nest/syndicate
+	name = "syndicate hideout"
+	max_mobs = 2
+	spawn_time = 15 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/syndicate/melee/sword/space = 2,
+					/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
+					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper)
+
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
@@ -216,7 +258,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/radscorpion/black = 5)
 
 /obj/structure/nest/radroach
-	name = "radroach nest"
+	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 15)
@@ -257,6 +299,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 6
 	spawn_time = 7 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
+
+/obj/structure/nest/rat/tame
+	name = "imprinted rat nest"
+	desc = "An artifical-looking nest full of less-than-evil squeakers."
+	color = "#91fdac"
+	mob_types = list(
+		/mob/living/simple_animal/hostile/rat/frien = 9,
+		/mob/living/simple_animal/hostile/rat/skitter/curious = 1
+	)
 
 /obj/structure/nest/mouse
 	name = "mouse nest"
