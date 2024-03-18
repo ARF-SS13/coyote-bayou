@@ -145,3 +145,9 @@
 	desc = "A device that blocks radio signals, in case you need that."
 	item = /obj/item/jammer
 	cost = 5
+
+/datum/supplykit_item/misc/explosivecollar
+	name = "Explosive Collar"
+	desc = "The infamous explosive collar, detonates the poor victim's head upon triggering."
+	item = obj/electropack/shockcollar/explosive
+	cost = 10

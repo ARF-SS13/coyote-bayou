@@ -117,3 +117,9 @@
 	desc = "A hypodermic needle, used for efficient application of chemicals."
 	item = /obj/item/reagent_containers/syringe
 	cost = 1
+
+/datum/supplykit_item/tech/Signaler
+	name = "Signaler"
+	desc = "A device for remotely sending radio signals."
+	item = /obj/item/assembly/signaler
+	cost = 1
