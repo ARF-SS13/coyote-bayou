@@ -1272,6 +1272,7 @@
 /datum/species/adapted/advancedcyber
 	name = "Adapted Advanced Cybernetic"
 	id = "mna"
+	simple_icon = 'modular_coyote/icons/mob/MNA.dmi'
 	icon_dead_suffix = "-wreck"
 	icon_rest_suffix = "-rest"
 	roundstart = TRUE
