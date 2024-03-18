@@ -1417,28 +1417,28 @@
 	id = "otiee"
 	roundstart = TRUE
 /mob/living/carbon/human/species/otiee
-	race = /datum/species/adapted/dogborg/otiee
+	race = /datum/species/adapted/dogborg/otieborg/otiee
 
 /datum/species/adapted/dogborg/otieborg/otiej
 	name = "Janitor Otieborg"
 	id = "otiej"
 	roundstart = TRUE
 /mob/living/carbon/human/species/otiej
-	race = /datum/species/adapted/dogborg/otiej
+	race = /datum/species/adapted/dogborg/otieborg/otiej
 
 /datum/species/adapted/dogborg/otieborg/otiec
 	name = "Cargo Otieborg"
 	id = "otiec"
 	roundstart = TRUE
 /mob/living/carbon/human/species/otiec
-	race = /datum/species/adapted/dogborg/otiec
+	race = /datum/species/adapted/dogborg/otieborg/otiec
 
 /datum/species/adapted/dogborg/otieborg/oties
 	name = "Security Otieborg"
 	id = "oties"
 	roundstart = TRUE
 /mob/living/carbon/human/species/oties
-	race = /datum/species/adapted/dogborg/oties
+	race = /datum/species/adapted/dogborg/otieborg/oties
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
@@ -1549,42 +1549,42 @@
 	id = "drakesec"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakesec
-	race = /datum/species/adapted/raptorborg/drakesec
+	race = /datum/species/adapted/drakeborg/drakesec
 
 /datum/species/adapted/drakeborg/drakemed 
 	name = "Adapted Med Drake"
 	id = "drakemed"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakemed 
-	race = /datum/species/adapted/raptorborg/drakemed
+	race = /datum/species/adapted/drakeborg/drakemed
 
 /datum/species/adapted/drakeborg/drakeeng 
 	name = "Adapted Eng Drake"
 	id = "drakeeng"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakeeng 
-	race = /datum/species/adapted/raptorborg/drakeeng
+	race = /datum/species/adapted/drakeborg/drakeeng 
 
 /datum/species/adapted/drakeborg/drakemine
 	name = "Adapted Mine Drake"
 	id = "drakemine"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakemine 
-	race = /datum/species/adapted/raptorborg/drakemine
+	race = /datum/species/adapted/drakeborg/drakemine
 
 /datum/species/adapted/drakeborg/drakesci
 	name = "Adapted Sci Drake"
 	id = "drakesci"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakesci
-	race = /datum/species/adapted/raptorborg/drakesci
+	race = /datum/species/adapted/drakeborg/drakesci
 
 /datum/species/adapted/drakeborg/drakejanit
 	name = "Adapted Janitor Drake"
 	id = "drakejanit"
 	roundstart = TRUE
 /mob/living/carbon/human/species/drakejanit
-	race = /datum/species/adapted/raptorborg/drakejanit
+	race = /datum/species/adapted/drakeborg/drakejanit
 
 
 //get in the mech, shinji
