@@ -72,11 +72,15 @@ SUBSYSTEM_DEF(shuttle)
 	var/where_from = "parts unknown"
 	var/where_to = "parts also unknown"
 
+	var/currency_unit = "$"
+	var/boring_units_only = TRUE
+
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
 	train_name = get_train_name()
 	where_from = get_where_from()
 	where_to = get_where_from()
+	currency_unit = get_currency_unit()
 
 	for(var/pack in subtypesof(/datum/supply_pack))
 		var/datum/supply_pack/P = new pack()
@@ -705,6 +709,26 @@ SUBSYSTEM_DEF(shuttle)
 		"The Well of Souls",
 	)
 	return "[pick(town_names)]"
+
+/datum/controller/subsystem/shuttle/proc/get_currency_unit()
+	if(boring_units_only)
+		return "$"
+	var/list/units = list(
+		"$",
+		"C",
+		"©",
+		"§",
+		"¶",
+		"¤",
+		"☺",
+		"☻",
+		"☼",
+		"♥",
+		"♫",
+		"♪",
+		"≡",
+	)
+	return "[pick(units)]"
 
 /datum/controller/subsystem/shuttle/proc/get_train_name()
 	if(prob(3))
