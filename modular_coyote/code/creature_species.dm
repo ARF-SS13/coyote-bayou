@@ -1269,6 +1269,15 @@
 /mob/living/carbon/human/species/thicktron_standard
 	race = /datum/species/adapted/thicktron_standard
 
+/datum/species/adapted/advancedcyber
+	name = "Adapted Advanced Cybernetic"
+	id = "mna"
+	icon_dead_suffix = "-wreck"
+	icon_rest_suffix = "-rest"
+	roundstart = TRUE
+/mob/living/carbon/human/species/advancedcyber
+	race = /datum/species/adapted/advancedcyber
+
 /datum/species/adapted/simplebot
 	name = "REPORT THIS AS A BUG"
 	simple_icon = 'icons/mob/robots.dmi'
