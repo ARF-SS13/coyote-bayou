@@ -5,6 +5,7 @@
 	var/inform_admins = FALSE
 	var/disallow_soul_imbue = TRUE
 	var/allow_death = FALSE
+	var/ignore_z_level = FALSE
 
 	/// Just dunk the thing somewhere random if it goes out of its zone
 	var/put_somewhere_random = TRUE
@@ -17,7 +18,7 @@
 	/// Turf record cooldown
 	COOLDOWN_DECLARE(turf_record_cooldown)
 
-/datum/component/stationloving/Initialize(inform_admins = FALSE, allow_death = FALSE, put_somewhere_random = TRUE, allowed_z = VALIDBALL_Z_LEVELS)
+/datum/component/stationloving/Initialize(inform_admins = FALSE, allow_death = FALSE, put_somewhere_random = TRUE, allowed_z = VALIDBALL_Z_LEVELS, ignore_z = FALSE)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, list(COMSIG_MOVABLE_Z_CHANGED),PROC_REF(check_in_bounds))
@@ -31,6 +32,7 @@
 		record_position() // may as well
 	src.inform_admins = inform_admins
 	src.allow_death = allow_death
+	src.ignore_z_level = ignore_z
 	check_in_bounds() // Just in case something is being created outside of station/centcom
 
 /datum/component/stationloving/InheritComponent(datum/component/stationloving/newc, original, inform_admins, allow_death)
@@ -58,9 +60,11 @@
 /datum/component/stationloving/proc/is_turf_okay_to_use(turf/right_here)
 	if(right_here.density)
 		return FALSE
-	if(!(right_here.z in allowed_z))
-		return FALSE
 	if(right_here in put_it_here) // new turfs only
+		return FALSE
+	if(ignore_z_level)
+		return TRUE
+	if(!(right_here.z in allowed_z))
 		return FALSE
 	return TRUE
 
@@ -115,6 +119,8 @@
 	return disallow_soul_imbue
 
 /datum/component/stationloving/proc/in_bounds()
+	if(ignore_z_level)
+		return TRUE
 	var/static/list/allowed_shuttles = typecacheof(list(/area/shuttle/syndicate, /area/shuttle/escape, /area/shuttle/pod_1, /area/shuttle/pod_2, /area/shuttle/pod_3, /area/shuttle/pod_4))
 	var/turf/T = get_turf(parent)
 	if (!T)

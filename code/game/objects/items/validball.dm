@@ -27,12 +27,14 @@
 /obj/item/validball/Initialize()
 	. = ..()
 	register_vb_datum()
-	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)
 	SSvalidball.valid_balls |= src
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
+
+/obj/item/validball/proc/roundstartify()
+	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)
 
 /obj/item/validball/proc/register_vb_datum()
 	var/datum/validball_data_report/vb_datum = new
@@ -424,6 +426,7 @@
 	if(isturf(right_here) && isatom(spawn_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
 		var/obj/item/validball/thenewvb = new the_thing(spawn_here)
+		thenewvb.roundstartify()
 		return thenewvb
 	return FALSE
 

@@ -11498,6 +11498,19 @@
 /obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
+"imh" = (
+/obj/effect/validball_spawner,
+/obj/machinery/button/door{
+	id = "finalbossteal";
+	name = "shutters button";
+	pixel_y = 0;
+	light_color = "#00FFFF";
+	light_power = 40;
+	light_range = 4;
+	pixel_x = -23
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
 "imj" = (
 /obj/structure/fence,
 /obj/structure/spacevine{
@@ -97578,7 +97591,7 @@ cvw
 kTa
 kTa
 kTa
-kTa
+vBf
 eyA
 eyA
 kTa
@@ -97835,7 +97848,7 @@ kTa
 kTa
 kTa
 eyA
-eyA
+vBf
 kTa
 kTa
 kTa
@@ -98092,7 +98105,7 @@ kTa
 eyA
 kTa
 kTa
-kTa
+vBf
 riw
 wbL
 riw
@@ -98349,7 +98362,7 @@ eyA
 kTa
 kTa
 kTa
-wbL
+imh
 riw
 wbL
 xPZ

@@ -769,6 +769,32 @@
 /mob/living/carbon/human/species/hyotie
 	race = /datum/species/feral/hyotie
 
+/datum/species/feral/otie
+	name = "Feral Otie"
+	id = "otie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Collared Otie" = "c_", "Security Otie" = "s_", "Security Hyotie" = "sech_", "Hyotie" = "h_", "Fat Otie" = "fat_")
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otie
+	race = /datum/species/feral/otie
+
+/datum/species/feral/scrotie
+	name = "Feral Scrotie"
+	id = "scrotie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Collared Scrotie" = "c_", "Security Scrotie" = "s_", "Fat Scrotie" = "fat_", "Fyrotie" = "h_", "Fun Sized" = "cup_", "Fun Sized Security" = "scup_")
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/scrotie
+	race = /datum/species/feral/scrotie
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
@@ -1270,6 +1296,16 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
+/datum/species/adapted/simplebot/sentrybot
+	name = "Adapted sentrybot"
+	id = "sentrybot"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	simple_icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
+	roundstart = TRUE
+/mob/living/carbon/human/species/sentrybot
+	race = /datum/species/adapted/simplebot/sentrybot
+
 /datum/species/adapted/simplebot/swarmer
 	name = "Adapted Swarmer"
 	simple_icon = 'icons/mob/playerswarmer.dmi'
@@ -1282,6 +1318,127 @@
 	attack_sound = 'sound/weapons/sear.ogg'
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
+
+/datum/species/adapted/simplebot/probe
+	name = "Adapted Probe"
+	simple_icon = 'icons/obj/mining.dmi'
+	id = "constructiondrone"
+	roundstart = TRUE
+	icon_dead_suffix = "-wreck"
+	icon_rest_suffix = "_off"
+	rotate_on_lying = FALSE
+	footstep_type = FOOTSTEP_MOB_CRAWL
+/mob/living/carbon/human/species/probe
+	race = /datum/species/adapted/simplebot/probe
+
+// Lets just seperate all the feral robot animal robots from the pure, normal robots this time that totally arent thicc
+
+/datum/species/adapted/dogborg
+	name = "REPORT THIS AS A BUGGY"
+	simple_icon = 'modular_coyote/icons/mob/dogborg.dmi'
+	roundstart = FALSE
+	rotate_on_lying = FALSE
+	icon_width = 62
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/dogborg/sechound
+	name = "Adapted Sechound"
+	id = "valesec"
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/sechound
+	race = /datum/species/adapted/dogborg/sechound
+
+/datum/species/adapted/dogborg/medihound
+	name = "Adapted Medhound"
+	id = "valemed"
+	alt_prefixes = list("Light" = "light_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/medihound
+	race = /datum/species/adapted/dogborg/medihound
+
+/datum/species/adapted/dogborg/scrubpup
+	name = "Adapted Scrubhound"
+	id = "scrubpup"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scrubpup
+	race = /datum/species/adapted/dogborg/scrubpup
+
+/datum/species/adapted/dogborg/engihound
+	name = "Adapted Engihound"
+	id = "valeeng"
+	alt_prefixes = list("Blocky" = "pupdozer_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/engihound
+	race = /datum/species/adapted/dogborg/engihound
+
+/datum/species/adapted/dogborg/minehound
+	name = "Adapted Minehound"
+	id = "valemine"
+	roundstart = TRUE
+/mob/living/carbon/human/species/minehound
+	race = /datum/species/adapted/dogborg/minehound
+
+/datum/species/adapted/dogborg/scihound
+	name = "Adapted Scihound"
+	id = "valesci"
+	roundstart = TRUE
+/mob/living/carbon/human/species/scihound
+	race = /datum/species/adapted/dogborg/scihound
+
+/datum/species/adapted/dogborg/servihound
+	name = "Adapted Servihound"
+	id = "valeserv"
+	alt_prefixes = list("Blocky" = "blocky_", "Dark" = "dark_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/servihound
+	race = /datum/species/adapted/dogborg/servihound
+
+/datum/species/adapted/dogborg/badboi
+	name = "Adapted Corrupted Hound"
+	id = "badboi"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	alt_prefixes = list("Girly" = "pretty_")
+	icon_dead_suffix = "-dead"
+	roundstart = TRUE
+/mob/living/carbon/human/species/badboi
+	race = /datum/species/adapted/dogborg/badboi
+
+/datum/species/adapted/dogborg/otieborg
+	name = "Fenny please be nice to them"
+	simple_icon = 'modular_splurt/icons/mob/widerobot.dmi'
+	icon_rest_suffix = "-rest"
+	icon_dead_suffix = "-wreck"
+	roundstart = FALSE
+
+/datum/species/adapted/dogborg/otieborg/otiee
+	name = "Engineering Otieborg"
+	id = "otiee"
+	roundstart = TRUE
+/mob/living/carbon/human/species/otiee
+	race = /datum/species/adapted/dogborg/otieborg/otiee
+
+/datum/species/adapted/dogborg/otieborg/otiej
+	name = "Janitor Otieborg"
+	id = "otiej"
+	roundstart = TRUE
+/mob/living/carbon/human/species/otiej
+	race = /datum/species/adapted/dogborg/otieborg/otiej
+
+/datum/species/adapted/dogborg/otieborg/otiec
+	name = "Cargo Otieborg"
+	id = "otiec"
+	roundstart = TRUE
+/mob/living/carbon/human/species/otiec
+	race = /datum/species/adapted/dogborg/otieborg/otiec
+
+/datum/species/adapted/dogborg/otieborg/oties
+	name = "Security Otieborg"
+	id = "oties"
+	roundstart = TRUE
+/mob/living/carbon/human/species/oties
+	race = /datum/species/adapted/dogborg/otieborg/oties
 
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
@@ -1377,6 +1534,58 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/wreckraptor
 	race = /datum/species/adapted/raptorborg/wreckraptor
+
+/datum/species/adapted/drakeborg
+	name = "REPORT THIS AS A BUGGY"
+	simple_icon = 'modular_coyote/code/drakeborgs/drakeborg_vr.dmi'
+	roundstart = FALSE
+	rotate_on_lying = FALSE
+	icon_width = 64
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/drakeborg/drakesec //haha more like adapted/drakeborg/drakesex am I right
+	name = "Adapted Sec Drake"
+	id = "drakesec"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakesec
+	race = /datum/species/adapted/drakeborg/drakesec
+
+/datum/species/adapted/drakeborg/drakemed 
+	name = "Adapted Med Drake"
+	id = "drakemed"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakemed 
+	race = /datum/species/adapted/drakeborg/drakemed
+
+/datum/species/adapted/drakeborg/drakeeng 
+	name = "Adapted Eng Drake"
+	id = "drakeeng"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakeeng 
+	race = /datum/species/adapted/drakeborg/drakeeng 
+
+/datum/species/adapted/drakeborg/drakemine
+	name = "Adapted Mine Drake"
+	id = "drakemine"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakemine 
+	race = /datum/species/adapted/drakeborg/drakemine
+
+/datum/species/adapted/drakeborg/drakesci
+	name = "Adapted Sci Drake"
+	id = "drakesci"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakesci
+	race = /datum/species/adapted/drakeborg/drakesci
+
+/datum/species/adapted/drakeborg/drakejanit
+	name = "Adapted Janitor Drake"
+	id = "drakejanit"
+	roundstart = TRUE
+/mob/living/carbon/human/species/drakejanit
+	race = /datum/species/adapted/drakeborg/drakejanit
+
 
 //get in the mech, shinji
 /datum/species/adapted/mechs
