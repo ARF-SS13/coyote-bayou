@@ -59,7 +59,7 @@
 	low_health_threshold = 0.5
 	ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
 	variation_list = list(
-		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 3, 3),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 1),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(65),
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
