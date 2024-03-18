@@ -444,6 +444,14 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/naturalcardboard
+	name = "Hand-Pressed Cardboard"
+	time = 45
+	reqs = list(/datum/reagent/water = 50, /datum/reagent/ash = 20, /obj/item/stack/sheet/mineral/wood = 1)
+	result = /obj/item/stack/sheet/cardboard/five // Pressed paper gives you 25 paper, which is 5 paper bags, this is equivilent in terms of storage size
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
 	result = /obj/item/electropack/shockcollar
