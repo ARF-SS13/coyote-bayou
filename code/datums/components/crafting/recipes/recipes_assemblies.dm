@@ -293,6 +293,7 @@
 	parent.visible_message(span_notice("[parent] digs up some stuff!"))
 	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
 
+/*
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
 	reqs = list(/obj/item/pickaxe = 1)  // so you at least have to put SOMETHING in
@@ -304,12 +305,9 @@
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
 	reqs = list(/obj/item/pickaxe/drill = 1) // so you at least have to put SOMETHING in
 	time = 60 SECONDS 
+*/
 
-/datum/crafting_recipe/trashloot/common/rock
-	name = "Dig up a Strange Rock"
-	reqs = list() // for free 
-	result = /obj/item/strangerock // but you're not given a loot spawner
-	time = 5 SECONDS
+// if you can give me a valid reason just to be able to spawn free shit besides unicorn horn arguments, do let me know 
 
 /*
 /datum/crafting_recipe/msgterminal
