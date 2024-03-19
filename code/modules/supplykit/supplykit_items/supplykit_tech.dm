@@ -51,7 +51,7 @@
 	item = /obj/item/stock_parts/chem_cartridge/crafted
 	cost = 5
 
-/datum/supplykit_item/tech/
+/datum/supplykit_item/tech/grinder
 	name = "Grinder Circuit"
 	desc = "The zappy bits required for a grinder, used to mix foods and grind up plants and objects."
 	item = /obj/item/circuitboard/machine/reagentgrinder
