@@ -301,6 +301,7 @@
 /datum/crafting_recipe/trashloot/uncommon
 	name = "Slowly dig uncommon loot"
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
+	reqs = list(/obj/item/pickaxe/drill) // so you at least have to put SOMETHING in
 	time = 20 SECONDS
 
 /*
