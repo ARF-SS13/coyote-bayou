@@ -652,6 +652,9 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 /obj/item/stack/sheet/cardboard/twenty
 	amount = 20
 
+/obj/item/stack/sheet/cardboard/five
+	amount = 5
+
 /*
  * Runed Metal
  */

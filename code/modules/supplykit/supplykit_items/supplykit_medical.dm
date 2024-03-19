@@ -88,7 +88,7 @@
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpak
 	cost = 15
 
-/datum/supplykit_item/medical/
+/datum/supplykit_item/medical/glucose
 	name = "Glucose Injector"
 	desc = "An injector full of sugar, for replenishing nutrition and blood supply, which together aid in wound healing."
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpak/glucose

@@ -70,7 +70,7 @@
 	item = /obj/item/stack/sheet/leather/five
 	cost = 5
 
-/datum/supplykit_item/materials/
+/datum/supplykit_item/materials/titanium
 	name = "Titanium Sheets"
 	desc = "twenty five sturdy sheets for advanced construction."
 	item = /obj/item/stack/sheet/mineral/titanium/twentyfive
