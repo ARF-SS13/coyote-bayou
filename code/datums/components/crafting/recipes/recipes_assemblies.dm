@@ -309,6 +309,12 @@
 
 // if you can give me a valid reason just to be able to spawn free shit besides unicorn horn arguments, do let me know 
 
+/datum/crafting_recipe/trashloot/rock
+	name = "Excavate a strange rock"
+	result = /obj/item/strangerock
+	reqs = list(/obj/item/pickaxe = 1) // so you at least have to put SOMETHING in
+	time = 60 SECONDS 
+
 /*
 /datum/crafting_recipe/msgterminal
 	name = "Communications terminal"
