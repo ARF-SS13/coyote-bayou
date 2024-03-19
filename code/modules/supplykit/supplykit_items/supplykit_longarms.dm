@@ -97,7 +97,7 @@
 	desc = "An civilian semi-auto variant of the multicaliber SMG, able to take many 9mm, 10mm, .45, and .22 magazines."
 	item = /obj/item/gun/ballistic/automatic/smg/sidewinder/worn
 
-/datum/supplykit_item/longarms/
+/datum/supplykit_item/longarms/minotaur
 	name = "S163 Minotaur"
 	desc = "A semiautomatic 12 gauge shotgun with a light, 3 round tube magazine."
 	item = /obj/item/gun/ballistic/shotgun/s163
@@ -112,7 +112,7 @@
 	desc = "A futuristic 10mm carbine that takes 12 and 24 round magazines"
 	item = /obj/item/gun/ballistic/automatic/m1carbine/covcarbine
 
-/datum/supplykit_item/longarms/
+/datum/supplykit_item/longarms/trainer
 	name = "Training Repeater"
 	desc = "A .22 lever action plinking rifle, with a 20 round tube magazine."
 	item = /obj/item/gun/ballistic/rifle/repeater/trainer
