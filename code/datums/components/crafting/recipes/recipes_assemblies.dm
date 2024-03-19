@@ -295,14 +295,21 @@
 
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
+	reqs = list(/obj/item/pickaxe = 1)  // so you at least have to put SOMETHING in
 	result = /obj/effect/spawner/lootdrop/f13/common
-	time = 14 SECONDS
+	time = 30 SECONDS
 
 /datum/crafting_recipe/trashloot/uncommon
 	name = "Slowly dig uncommon loot"
 	result = /obj/effect/spawner/lootdrop/f13/uncommon
-	reqs = list(/obj/item/pickaxe/drill) // so you at least have to put SOMETHING in
-	time = 20 SECONDS
+	reqs = list(/obj/item/pickaxe/drill = 1) // so you at least have to put SOMETHING in
+	time = 60 SECONDS 
+
+/datum/crafting_recipe/trashloot/common/rock
+	name = "Dig up a Strange Rock"
+	reqs = list() // for free 
+	result = /obj/item/strangerock // but you're not given a loot spawner
+	time = 5 SECONDS
 
 /*
 /datum/crafting_recipe/msgterminal
