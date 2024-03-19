@@ -31,6 +31,8 @@
 #define CALIBER_MUSKET_LASER "laser musket packs"
 #define CALIBER_MUSKET_PLASMA "plasma musket packs"
 #define CALIBER_NEEDLE "needles"
+#define CALIBER_SHOTGUNNEEDLER
+#define CALIBER_HNEEDLE "heavyneedle"
 #define CALIBER_MININUKE "mininukes"
 #define CALIBER_ROCKET "rockets"
 #define CALIBER_ROCK "rocks"
@@ -211,7 +213,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_SHOTGUN_BOX (MATS_BOX_BASE * 1)
 
 /// Magazines!
-#define MATS_MAGAZINE_BASE 4000
+#define MATS_MAGAZINE_BASE 2000
 
 #define MATS_SMALL_PISTOL_MAGAZINE (MATS_MAGAZINE_BASE * 0.5)
 #define MATS_MEDIUM_PISTOL_MAGAZINE (MATS_MAGAZINE_BASE * 1)

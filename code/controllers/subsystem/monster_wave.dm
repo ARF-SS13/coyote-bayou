@@ -1,9 +1,9 @@
 SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
-	wait = 5 MINUTES //change to either 30 MINUTES or 1 HOURS
+	wait = 30 SECONDS //change to either 30 MINUTES or 1 HOURS
 	var/successful_firing = 0
-	var/allowed_firings = 90
-	var/chance_of_fire = 95 //Fuck you, people need mobs to shoot! -TK
+	var/allowed_firings = 9000
+	var/chance_of_fire = 100 //Fuck you, people need mobs to shoot! -TK
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(monster_wave)
 
 /datum/controller/subsystem/monster_wave/fire(resumed = 0)
 	if(times_fired <= 0)
-		message_admins("The Monster Wave has fired the first time. Next fire (in an hour) will spawn a monster pit.")
+		message_admins("The Monster Wave has fired the first time. Next fire (in 30 sececonds) will spawn a monster pit.")
 		log_game("The Monster Wave has fired the first time. Next fire (in an hour) will spawn a monster pit.")
 		return
 	if(successful_firing >= allowed_firings)
@@ -22,14 +22,14 @@ SUBSYSTEM_DEF(monster_wave)
 		can_fire = FALSE
 		return
 	if(prob(chance_of_fire))
-		return // 50/50 chance for it to either fire or not fire
+		return // It fires, fuck you lmfaooo
 	successful_firing++
-	addtimer(CALLBACK(src, .proc/spawn_monsterwave), 10 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(spawn_monsterwave)), 10 SECONDS)
 	for(var/M in GLOB.player_list)
 		to_chat(M, span_notice("You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font>"))
 
 /datum/controller/subsystem/monster_wave/proc/spawn_monsterwave()
-	var/pick_unfortune = pick("Ghoul", /*"Deathclaw",*/ "Radscorpion", "Fireant", "Molerat", "Mirelurk", "Gecko", "Cazador", "Wolf")
+	var/pick_unfortune = pick("Ghoul", /*"Deathclaw",*/ "Radscorpion", "Fireant", "Giantrat", "Mirelurk", "Gecko", "Cazador", "Wolf")
 	switch(pick_unfortune)
 		if("Ghoul")
 			ghoul_wave()
@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(monster_wave)
 			radscorpion_wave()
 		if("Fireant")
 			fireant_wave()
-		if("Molerat")
+		if("Giantrat")
 			molerat_wave()
 		if("Mirelurk")
 			mirelurk_wave()

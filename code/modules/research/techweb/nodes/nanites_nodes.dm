@@ -1,6 +1,6 @@
 
 /////////////////////////Nanites/////////////////////////
-/*
+
 /datum/techweb_node/nanite_base
 	id = "nanite_base"
 	display_name = "Basic Nanite Programming"
@@ -8,7 +8,21 @@
 	prereq_ids = list("datatheory","robotics")
 	design_ids = list("nanite_disk","nanite_remote","nanite_comm_remote","nanite_scanner",\
 						"nanite_chamber","public_nanite_chamber","nanite_chamber_control","nanite_programmer","nanite_program_hub","nanite_cloud_control",\
-						"relay_nanites", "monitoring_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","red_diag_nanites")
+						"relay_nanites", "monitoring_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","debugging_nanites")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/nanite_protocol_storage
+	id = "nanite_protocol_storage"
+	display_name = "Nanite Storage Protocols"
+	prereq_ids = list("nanite_base","adv_robotics")
+	design_ids = list("hive_nanites","zip_nanites","free_range_nanites","unsafe_storage_nanites")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/nanite_protocol_replication
+	id = "nanite_protocol_replication"
+	display_name = "Nanite Replication Protocols"
+	prereq_ids = list("nanite_base","adv_robotics")
+	design_ids = list("kickstart_nanites","factory_nanites","pyramid_nanites","offline_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/nanite_smart
@@ -49,7 +63,7 @@
 	display_name = "Synaptic Nanite Programming"
 	description = "Nanite programs affecting mind and thoughts."
 	prereq_ids = list("nanite_neural","neural_programming")
-	design_ids = list("mindshield_nanites", "pacifying_nanites", "blinding_nanites", "sleep_nanites", "mute_nanites", "speech_nanites","hallucination_nanites")
+	design_ids = list("mindshield_nanites", "blinding_nanites", "sleep_nanites", "mute_nanites", "speech_nanites","hallucination_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/nanite_harmonic
@@ -73,6 +87,6 @@
 	display_name = "Hazard Nanite Programs"
 	description = "Extremely advanced Nanite programs with the potential of being extremely dangerous."
 	prereq_ids = list("nanite_harmonic", "alientech")
-	design_ids = list("spreading_nanites","mindcontrol_nanites","mitosis_nanites")
+	design_ids = list("mindcontrol_nanites","mitosis_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
-*/
+

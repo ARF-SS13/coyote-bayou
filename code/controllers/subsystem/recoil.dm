@@ -185,9 +185,14 @@ SUBSYSTEM_DEF(recoil)
 		if(HAS_TRAIT(shotter,TRAIT_NEARSIGHT)) //Yes.
 			my_angle *= 2 //You're much less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
 		if(HAS_TRAIT(shotter,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-			my_angle *= 3//This is cripplingly bad. Trust me.
+			my_angle *= 3 //This is cripplingly bad. Trust me.
+		if(HAS_TRAIT(shotter,TRAIT_LIGHT_SENSITIVITY)) // Light hurts!
+			my_angle *= 4 // Pack tactics wont save your aim here.
 		if(HAS_TRAIT(shotter,TRAIT_FEV)) //You really shouldn't try this at home.
 			my_angle *= 5 //YOU AINT HITTING SHIT BROTHA. REALLY.
+		if(HAS_TRAIT(shotter,TRAIT_PHOBIC)) // Panicking!
+			my_angle *= 6 // RUN OR SHOOT?!?1
+
 	return round(clamp(my_angle, 0, recoil_max_spread), 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////

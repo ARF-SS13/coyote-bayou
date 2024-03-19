@@ -473,7 +473,7 @@
 							"NCR Trooper",
 						)*/
 
-datum/gear/head/steelpot_bandolier
+/datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
@@ -548,7 +548,7 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
-	/*restricted_desc = "Nash PD, Nash officials"
+	/*restricted_desc = "New Boston PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"High Alderperson",
@@ -861,6 +861,11 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
+/datum/gear/head/skullmask
+	name = "Tribal Skull-Mask"
+	path = /obj/item/clothing/head/helmet/f13/skull_helmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 /datum/gear/head/steelm1
 	name = "M1 Helmet "
@@ -1072,6 +1077,12 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/ballistichelmets/number10
 	name = "MK6 Helmet"
 	path = /obj/item/clothing/head/kevlarhelmet/ukhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/fiend
+	name = "Fiend Helmet"
+	path = /obj/item/clothing/head/helmet/f13/fiend
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
@@ -1295,6 +1306,11 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/reagent_containers/food/snacks/grown/harebell
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
+/datum/gear/head/peaceflower
+	name = "peaceflower"
+	path = /obj/item/clothing/head/peaceflower //This is a xenobiology product that makes the wearer a pacifist, and unable to take off the flower without help, looks very pretty tho.
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
 /datum/gear/head/sunflower
 	name = "sun flower"
 	path = /obj/item/grown/sunflower
@@ -1465,4 +1481,6 @@ datum/gear/head/steelpot_bandolier
 	name = "blue witch hat"
 	path = /obj/item/clothing/head/nt_witch
 
-
+/datum/gear/head/hoodcowl
+	name = "Hood cowl"
+	path= /obj/item/clothing/head/hoodcowl

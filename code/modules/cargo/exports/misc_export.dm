@@ -6,9 +6,9 @@
 	cost = 200
 	unit_name = "chems (low)"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
-	/obj/item/reagent_containers/hypospray/medipen/medx,
+	/obj/item/reagent_containers/pill/patch/medx,
 	/obj/item/reagent_containers/blood/radaway,
-	/obj/item/reagent_containers/hypospray/medipen/steady,
+	/obj/item/reagent_containers/pill/patch/steady,
 	/obj/item/storage/pill_bottle/chem_tin/mentats,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -293,7 +293,6 @@
 		/obj/item/clothing/head/helmet/f13/combat/mk2,
 		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
 		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
 		/obj/item/clothing/suit/armor/medium/odst,

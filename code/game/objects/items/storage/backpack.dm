@@ -313,6 +313,12 @@
 	level = 1
 	component_type = /datum/component/storage/concrete/secret_satchel
 
+/obj/item/storage/backpack/satchel/invisible
+	name = "inconspicuous satchel"
+	desc = "A minimalist satchel designed to fit inside of clothing, directly against the skin."
+	icon_state = "invisible_satchel"
+	icon_state = "invisible_satchel"
+
 /obj/item/storage/backpack/satchel/flat/Initialize()
 	. = ..()
 	SSpersistence.new_secret_satchels += src
@@ -631,10 +637,10 @@
 	new /obj/item/watertank/op(src)
 	new /obj/item/scalpel(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
 	new /obj/item/grenade/syndieminibomb(src)
 
-obj/item/storage/backpack/duffelbag/syndie/shredderbundle
+/obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A large duffel bag containing two CX Shredders, some magazines, an elite hardsuit, and a chest rig."
 
 /obj/item/storage/backpack/duffelbag/syndie/shredderbundle/PopulateContents()

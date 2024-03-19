@@ -54,6 +54,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_rc_emotes = TRUE
 	///Whether to apply mobs' runechat color to the chat log as well
 	var/color_chat_log = TRUE
+	///Keeping track of chat bg color
+	var/chatbgcolor = "#131313"
 
 	var/list/aghost_squelches = list()
 
@@ -116,6 +118,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/faved_interactions = list() // list of stringed type paths
 	var/list/saved_plappers = list() // to do: this
 	//Sandstorm CHANGES END
+	var/preview_hide_undies = FALSE
+	var/undershirt_overclothes = UNDERWEAR_UNDER_CLOTHES
+	var/undies_overclothes = UNDERWEAR_UNDER_CLOTHES
+	var/socks_overclothes = UNDERWEAR_UNDER_CLOTHES
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
@@ -126,6 +132,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/backbag = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/hair_style = "Bald"				//Hair type
+	var/hair_style_2 = "Bald"				//Hair type
 	var/hair_color = "000000"				//Hair color
 	var/facial_hair_style = "Shaved"	//Face hair type
 	var/facial_hair_color = "000000"		//Facial hair color
@@ -149,6 +156,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
+		"blood_color" = "",
 		"ears" = "None",
 		"wings" = "None",
 		"wings_color" = "FFF",
@@ -167,6 +175,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_snouts" = "None",
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
+		"derg_body" = "Smooth Dragon Body",
+		"derg_belly" = "None",
+		"derg_horns" = "None",
+		"derg_mane" = "None",
+		"derg_ears" = "None",
+		"derg_eyes" = "None",
 		"xenodorsal" = "Standard",
 		"xenohead" = "Standard",
 		"xenotail" = "Xenomorph Tail",
@@ -222,6 +236,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 		"ooc_notes" = "",
+		"background_info_notes" = "",
+		"flist" = "",
 		"meat_type" = "Mammalian",
 		"taste" = "something",
 		"body_model" = MALE,
@@ -373,6 +389,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/New(client/C)
 	parent = C
+
+	spawn(0)
+		if(C)
+			chatbgcolor = winget(C, "statbrowser", "background-color")
+			if(chatbgcolor == "none")
+				chatbgcolor = "#ffffff"
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
@@ -582,11 +604,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/ooc_notes_len = length(features["ooc_notes"])
 			if(ooc_notes_len <= 40)
 				if(!ooc_notes_len)
-					dat += "\[...\]"
+					dat += "\[...\]<br>"
 				else
-					dat += "[features["ooc_notes"]]"
+					dat += "[features["ooc_notes"]]<br>"
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
+
+			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+			var/background_info_notes_len = length(features["background_info_notes"])
+			if(background_info_notes_len <= 40)
+				if(!background_info_notes_len)
+					dat += "\[...\]<br>"
+				else
+					dat += "[features["background_info_notes"]]<br>"
+			else
+				dat += "[TextPreview(features["background_info_notes"])]...<br>"
+
+			//outside link stuff
+			dat += "<h3>Outer hyper-links settings</h3>"
+			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+			var/flist_len = length(features["flist"])
+			if(flist_len <= 40)
+				if(!flist_len)
+					dat += "\[...\]"
+				else
+					dat += "[features["flist"]]"
+			else
+				dat += "[TextPreview(features["flist"])]...<br>"
+
 			//Start Creature Character
 			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
@@ -701,31 +746,33 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			if(HAIR in pref_species.species_traits)
 				dat += "<h3>Hair</h3>"
-				dat += "<b>Style:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]</a><br>"
+				dat += "<b>Style Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]<br>"
 				dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><br>"
-				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br><BR>"
 
 				// Coyote ADD: Hair gradients
-				dat += "<b>Gradiant:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a><br>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br>"
+				dat += "<b>Gradient Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br><BR>"
 				// Coyote ADD: End
 
-				dat += "<b>Facial Style:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a><br>"
-				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br>"
+				dat += "<b>Style Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style_2;task=input'>[features_override["hair_style_2"]]</a>"
+				dat += "<a href='?_src_=prefs;preference=previous_hair_style_2;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style_2;task=input'>&gt;</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["hair_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_color_2;task=input'>Change</a><br><BR>"
 
-			dat += "<h3>Misc</h3>"
-			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><br>"
-			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><br>"
-			dat += "<b>Background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><br>"
-			dat += "<b>Pixel Offsets</b><br>"
-			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
-			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
-			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><br>"
-			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><br>"
+				dat += "<b>Gradient Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style_2;task=input'>[features_override["grad_style_2"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color_2;task=input'>Change</a><br><BR>"
+
+				dat += "<b>Facial Style:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]<br>"
+				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br><BR>"
+
+			dat += "<b>Show/hide Undies:</b><br>"
+			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_undie_preview;task=input'>[preview_hide_undies ? "Hidden" : "Visible"]<br>"
 
 			dat += "</td>"
 
@@ -759,6 +806,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(waddle_amount > 0)
 				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
 				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
+			
+			
+			dat += "<h3>Misc</h3>"
+			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><br>"
+			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><br>"
+			dat += "<b>Blood Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=blood_color;task=input;background-color: #[features["blood_color"]]'>#[features["blood_color"]]</span></a><br>"
+			dat += "<a href='?_src_=prefs;preference=reset_blood_color;task=input'>Reset Blood Color</A><BR>"
+			dat += "<a href='?_src_=prefs;preference=rainbow_blood_color;task=input'>Rainbow Blood Color</A><BR>"
+			dat += "<b>Background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><br>"
+			dat += "<b>Pixel Offsets</b><br>"
+			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
+			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
+			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><br>"
+			
 			dat += "</td>"
 
 			//end column 5 or something
@@ -1063,7 +1125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "You dont seem to have any movable genitals!"
 					dat += "<tr>"
-					dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
+					dat += "<td colspan='4' class='genital_name'>Hide Undies In Preview</td>"
 					/* var/genital_shirtlayer
 					if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 						genital_shirtlayer = "Over Underwear"
@@ -1071,8 +1133,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						genital_shirtlayer = "Over Clothes"
 					else
 						genital_shirtlayer = "Under Underwear" */
+					dat += {"<td class='coverage_on'>
+							<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=toggle_undie_preview';
+									task=input'>
+										[preview_hide_undies ? "Hidden" : "Visible"]
+							</a>
+						</td>"}
 
-					dat += {"<td colspan='3' class='coverage_on'>
+					dat += {"<td colspan='1' class='coverage_on'>
 							Over Clothes
 							</td>"}
 					dat += {"<td class='coverage_on'>
@@ -1113,6 +1185,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								task=input'>
 									\t#[shirt_color]
 							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=undershirt_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, undershirt_overclothes + 1)]
+							</a>"}
 					dat += "</td>"
 					dat += "<td class='undies_cell'>"
 					dat += "<div class='undies_label'>Bottomwear</div>"
@@ -1134,6 +1214,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								task=input'>
 									\t#[undie_color]
 							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=undies_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, undies_overclothes + 1)]
+							</a>"}
 					dat += "</td>"
 					dat += {"<td class='undies_cell'>
 								<div class='undies_label'>Legwear</div>
@@ -1154,6 +1242,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								preference=socks_color;
 								task=input'>
 									\t#[socks_color]
+							</a>"}
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=socks_overclothes;
+									task=input'>
+										[LAZYACCESS(GLOB.undie_position_strings, socks_overclothes + 1)]
 							</a>"}
 					dat += "</td>"
 					dat += "</tr>"
@@ -1200,6 +1296,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								class='undies_link'>
 									Cuteness: 100%
 								</a>"}
+					dat += "</td>"
+					dat += "</tr>"
+					dat += "<tr>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>Hide Undies In Preview</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=toggle_undie_preview'>
+										[preview_hide_undies ? "Hidden" : "Visible"]
+							</a>"}
 					dat += "</td>"
 					dat += "</tr>"
 					dat += "</table>"
@@ -1740,6 +1848,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						task=input'>
 							[features["[feature_key]_size"]][size_flavor]
 				</a>"}
+	deet += "<div class='gen_setting_name'>Hide Undies In Preview</div>"
+	deet += {"<a 
+				class='clicky' 
+				href='
+					?_src_=prefs;
+					task=input;
+					preference=toggle_undie_preview'>
+						[preview_hide_undies ? "Hidden" : "Visible"]
+			</a>"}
 	deet += "</div>"
 	deet += "</td>"
 	deet += "</tr>"
@@ -1959,7 +2076,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sortList(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 			if(job.total_positions == 0)
 				continue
 
@@ -2299,6 +2416,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				DISABLE_BITFIELD(features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING)
 				ENABLE_BITFIELD(features[nadlet], new_bit)
 			features["genital_visibility_flags"] = new_bit
+	if(href_list["preference"] == "toggle_undie_preview")
+		TOGGLE_VAR(preview_hide_undies)
 
 	if(href_list["preference"] == "genital_hide")
 		var/hideit = text2num(href_list["hideflag"])
@@ -2560,13 +2679,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 				if("pixel_x")
-					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					var/newx = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
 					if(newx)
 						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_x = 0
 				if("pixel_y")
-					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					var/newy = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
 					if(newy)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
@@ -2606,6 +2725,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["ooc_notes"] = msg
+				
+				if("background_info_notes")
+					var/msg = stripped_multiline_input(usr, "Set always-visible character's background!", "Background Info Notes", html_decode(features["background_info_notes"]), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						features["background_info_notes"] = msg
+
+				if("flist")
+					var/link = input(usr, "Set always-visible F-list. Just copy and paste the link you want to use from the browser. Leave it blank to remove the previous link.", "F-list")
+					if(!length(link))
+						features["flist"] = ""
+						to_chat(usr, span_alert("Removed the previous F-list link."))
+					else if(findtext(link, "https://www.f-list.net"))  //we want to avoid malicious links, so let's check if it's actually a valid link first
+						features["flist"] = link
+					else
+						features["flist"] = ""
+						to_chat(usr, span_alert("This is not a correct F-list link!"))
 
 				if("hide_ckey")
 					hide_ckey = !hide_ckey
@@ -2704,6 +2839,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/n_socks_color = input(user, "Choose your socks' color.", "Character Preference", "#[socks_color]") as color|null
 					if(n_socks_color)
 						socks_color = sanitize_hexcolor(n_socks_color, 6)
+
+				if("undershirt_overclothes")
+					undershirt_overclothes = undershirt_overclothes+1
+					if(undershirt_overclothes > UNDERWEAR_OVER_EVERYTHING)
+						undershirt_overclothes = UNDERWEAR_UNDER_CLOTHES
+
+				if("undies_overclothes")
+					undies_overclothes = undies_overclothes+1
+					if(undies_overclothes > UNDERWEAR_OVER_EVERYTHING)
+						undies_overclothes = UNDERWEAR_UNDER_CLOTHES
+
+				if("socks_overclothes")
+					socks_overclothes = socks_overclothes+1
+					if(socks_overclothes > UNDERWEAR_OVER_EVERYTHING)
+						socks_overclothes = UNDERWEAR_UNDER_CLOTHES
 
 				if("eyes")
 					var/new_eyes = input(user, "Choose your character's eye colour:", "Character Preference","#"+left_eye_color) as color|null
@@ -2948,6 +3098,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
 
+				if("blood_color")
+					var/new_color
+					new_color = input(user, "Choose your character's blood color", "#"+features["blood_color"]) as color|null
+					if(!isnull(new_color))
+						features["blood_color"] = sanitize_hexcolor(new_color, 6)
+					//else
+						//var/rainbow = alert(user, "Do you want rainbow blood?", "Hi!", "Yes", "No")
+						//if(rainbow == "Yes")
+						//	features["blood_color"] = "rainbow"
+				if("reset_blood_color")
+					features["blood_color"] = ""
+				if("rainbow_blood_color")
+					features["blood_color"] = "rainbow"
 				if("wings")
 					var/new_wings
 					new_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.r_wings_list
@@ -3098,8 +3261,63 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_dors)
 						features["xenodorsal"] = new_dors
 
+				//Dragon Bodyparts
+				if("derg_body") //dragon main body
+					var/new_body
+					new_body = input(user, "Choose your character's body type:", "Character Preference") as null|anything in GLOB.derg_body_list
+					if(new_body)
+						features["derg_body"] = new_body
+
+				if("derg_belly") //dragon underside
+					var/new_belly
+					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
+					if(new_belly)
+						features["derg_belly"] = new_belly
+
+				if("derg_horns")
+					var/new_horn
+					new_horn = input(user, "Choose your character's horn type:", "Character Preference") as null|anything in GLOB.derg_horn_list
+					if(new_horn)
+						features["derg_horns"] = new_horn
+
+				if("derg_ears")
+					var/new_ears
+					new_ears = input(user, "Choose your character's ear type:", "Character Preference") as null|anything in GLOB.derg_ear_list
+					if(new_ears)
+						features["derg_ears"] = new_ears
+
+				if("derg_mane")
+					var/new_mane
+					new_mane = input(user, "Choose your character's mane type:", "Character Preference") as null|anything in GLOB.derg_mane_list
+					if(new_mane)
+						features["derg_mane"] = new_mane
+
+				if("derg_eyes")
+					var/new_eye
+					new_eye = input(user, "Choose your character's eye type:", "Character Preference") as null|anything in GLOB.derg_eye_list
+					if(new_eye)
+						features["derg_eyes"] = new_eye
+
 				//every single primary/secondary/tertiary colouring done at once
-				if("xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary","xhead_primary","xhead_secondary","xhead_tertiary","tail_primary","tail_secondary","tail_tertiary","insect_markings_primary","insect_markings_secondary","insect_markings_tertiary","insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary","ears_primary","ears_secondary","ears_tertiary","frills_primary","frills_secondary","frills_tertiary","ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary","taur_primary","taur_secondary","taur_tertiary","snout_primary","snout_secondary","snout_tertiary","spines_primary","spines_secondary","spines_tertiary", "mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
+				if(
+				"derg_body_primary","derg_body_secondary","derg_body_tertiary",
+				"derg_belly_primary","derg_belly_secondary","derg_belly_tertiary",
+				"derg_horns_primary","derg_horns_secondary","derg_horns_tertiary",
+				"derg_ears_primary","derg_ears_secondary","derg_ears_tertiary",
+				"derg_mane_primary","derg_mane_secondary","derg_mane_tertiary",
+				"derg_eyes_primary","derg_eyes_secondary","derg_eyes_tertiary",
+				"xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary",
+				"xhead_primary","xhead_secondary","xhead_tertiary",
+				"tail_primary","tail_secondary","tail_tertiary",
+				"insect_markings_primary","insect_markings_secondary","insect_markings_tertiary",
+				"insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary",
+				"ears_primary","ears_secondary","ears_tertiary",
+				"frills_primary","frills_secondary","frills_tertiary",
+				"ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary",
+				"taur_primary","taur_secondary","taur_tertiary",
+				"snout_primary","snout_secondary","snout_tertiary",
+				"spines_primary","spines_secondary","spines_tertiary",
+				"mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
 					var/the_feature = features[href_list["preference"]]
 					if(!the_feature)
 						features[href_list["preference"]] = "FFFFFF"
@@ -3991,7 +4209,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	ShowChoices(user)
 	return 1
 
-/datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
+/datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE, sans_underpants)
 	if(be_random_name)
 		real_name = pref_species.random_name(gender)
 
@@ -4040,6 +4258,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.facial_hair_style = facial_hair_style
 	character.underwear = underwear
 
+	character.hidden_undershirt = sans_underpants // hey its my favorite character, sans underpants
+	character.hidden_underwear = sans_underpants
+	character.hidden_socks = sans_underpants
+
 	character.saved_underwear = underwear
 	character.undershirt = undershirt
 	character.saved_undershirt = undershirt
@@ -4048,6 +4270,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.undie_color = undie_color
 	character.shirt_color = shirt_color
 	character.socks_color = socks_color
+	character.underwear_oversuit = undies_overclothes
+	character.undershirt_oversuit = undershirt_overclothes
+	character.socks_oversuit = socks_overclothes
 
 	var/datum/species/chosen_species
 	if(!roundstart_checks || (pref_species.id in GLOB.roundstart_races))

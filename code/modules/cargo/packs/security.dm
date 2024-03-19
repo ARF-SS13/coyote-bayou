@@ -68,17 +68,20 @@
 
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
-	desc = "One set of advanced armor, and rarely something better."
+	desc = "Three sets of advanced armor, choice pick of most scavengers."
 	cost = 5000
-	num_contained = 1
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor)
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/armorrare
+	name = "Armor - Rare"
+	desc = "One set of rare armor, the wasteland's premium in protection."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/nvgpack
@@ -501,12 +504,21 @@
 	cost = 5000
 	num_contained = 3
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
 		)
 	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/weapon_plus_unique
+	name = "Weapons - Rare Premium"
+	desc = "A single weapon of incredible rarity. There's no telling what was packed into this crate"
+	cost = 10000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
+	num_contained = 1
+	contains = list(
+		/obj/effect/spawner/lootdrop/f13/very_rare
+		)
+	crate_name = "Premium weapon crate"
 
 /datum/supply_pack/security/wands // Wands
 	name = "Magic - Wands"
@@ -742,16 +754,6 @@
 	crate_name = "Rare weapon crate"
 */
 
-/* /datum/supply_pack/security/weapon_unique
-	name = "Weapons - Premium"
-	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 50000
-	num_contained = 1
-	contains = list(
-		/obj/effect/spawner/lootdrop/f13/weapon/unique
-)
-	crate_name = "Premium weapon crate" */
-
 /*needs reworked
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
@@ -910,3 +912,603 @@
 					)
 	crate_name = "gun grab-bag crate"
 */
+
+//Fenny goes absolutely batshit insane and adds a bunch of weapons to the shop
+//Gun cargo?  More like gun.  Gun.  I guess.  Fuck off.
+
+/*
+/datum/supply_pack/security/weaponname
+	name = ""
+	desc = ""
+	cost = weapon dps 2x, add a zero at the end
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night/prescription)
+	crate_name = "select weapon crate"
+	*/
+
+/datum/supply_pack/security/fatman
+	name = "Fatman"
+	desc = "Its a fatman.  It blows shit way the fuck up."
+	cost = 140000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/fatman)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/nightops
+	name = "M22 Night Ops SMG"
+	desc = "An SMG of all time."
+	cost = 8600
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/m22)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/bozar
+	name = "Bozar"
+	desc = "It's a sniper rifle. It's a machine gun. It's overpowered."
+	cost = 7400
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/bozar)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/greasegun
+	name = "M3A1 Greasegun"
+	desc = "Smearing people off sidewalks since 1942."
+	cost = 7200
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/greasegun)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/asval
+	name = "AS-VAL Supressed Rifle"
+	desc = "No, Artyom.  You are the zone."
+	cost = 6800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/vss)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/autorevolver
+	name = "Auto-Revolver"
+	desc = "It's like a single action army if the single action army was an ma deuce."
+	cost = 6600
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/colt357/auto)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/webley
+	name = "Webley Revolver"
+	desc = "These reproduction Webley revolvers are of the highest quality.  Buy 4.  Trust me."
+	cost = 6600
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/police/webley)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/carlgustaf
+	name = "10mm Carl Gustaf"
+	desc = "Did Carl ever come in other calibers?  Where are the Swedes these days?"
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/cg45)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/widowmaker
+	name = "Winchester Widowmaker"
+	desc = "It has widowmaker in the name.  It doesn't come edgier than this, hombre."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/widowmaker)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/shotpistol
+	name = "Hand Shotgun"
+	desc = "Versus a butt shotgun.  Where else are you supposed to hold this damn thing?"
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/shotpistol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/shotpistol
+	name = "Hand Shotgun"
+	desc = "Versus a butt shotgun.  Where else are you supposed to hold this damn thing?"
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/shotpistol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tenmmsmg
+	name = "10mm Submissive Machine Gun"
+	desc = "A big chunky monkey fucking typewriter of an SMG. Good for bashing people to death when you inevitably run out of ammo because it was too heavy for you to carry."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/smg10mm)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/r91
+	name = "R91 Assault Rifle"
+	desc = "A devisive weapon of war. Purists will say it shouldn't exist because Dr. House didn't want Sneezer to lose in Old Vegas.  Or something.  I don't know."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/assault_rifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/maria
+	name = "9mm Maria"
+	desc = "A blessed pistol, forged in the fires of Gondor or something."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/ninemil/maria)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/mp5sd
+	name = "MP-5 SD"
+	desc = "An MP-5 of curious ancestry."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/mp5sd)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/bren
+	name = "Bren Gun"
+	desc = "We're going to Brazil, get in."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/bren)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/m1919
+	name = "M1919 Machine Gun"
+	desc = "You know you will never look as cool as the guys in Soldier of Fortune, no matter how much you try."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/m1919)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/pancorjackhammer
+	name = "Pancor Jackhammer"
+	desc = "You're not making Ian proud right now."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/shotgun/pancor)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/p90
+	name = "FN P90c"
+	desc = "We can never go back to 2002, but Counter Strike will live in our hearts forever."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/p90)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/fourteenmilsmg
+	name = "14mm SMG"
+	desc = "Listen, we know why you're here but you don't have to hate your wrists in character as much as out of character."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/smg14)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ppsh41
+	name = "PPSH-41"
+	desc = "FPS Russia moment."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/ppsh)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ppsh41
+	name = "PPSH-41"
+	desc = "FPS Russia moment."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/ppsh)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/r84lmg
+	name = "R84 Light Machine Gun"
+	desc = "Yep.  It's a gun."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/r84)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/lsw
+	name = "Light Support Weapon"
+	desc = "A tool of war that is neither light, nor supportive.  It is a weapon though.  Thank god."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/lsw)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ch47assrifle
+	name = "4.7mm Chinese Assault Rifle"
+	desc = "Well above average in caliber, we assure you."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/rifle47mm/china)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tommygun
+	name = "Thomspon SMG"
+	desc = "You're either gangster or a paratrooper.  Which is it?"
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/tommygun)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/amr
+	name = "Anti-Material Rifle"
+	desc = "As opposed to Pro-material rifles?"
+	cost = 5000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/rifle/mag/antimaterial)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/mac10
+	name = "Ingram Model 10"
+	desc = "Okay, maybe you are an operator."
+	cost = 4400
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/heavyneedlerifle
+	name = "OT-64 Heavy Needler Rifle"
+	desc = "The bane of anyone not wearing light armor or the simple minded."
+	cost = 4400
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/needlerrifle)
+	crate_name = "select weapon crate"
+
+// eguns below here. Note that eguns are weird and have stuff that might affect their value, such as getting more/less shots per battery or doing plasma damage.
+/*
+/datum/supply_pack/security/weaponname
+	name = ""
+	desc = ""
+	cost = weapon dps 2x, add a zero at the end
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night/prescription)
+	crate_name = "select weapon crate"
+	*/
+
+/datum/supply_pack/security/tgcarbine
+	name = "TG Carbine"
+	desc = "The basic Trident Gammaworks blaster carbine."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/carbine)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgpistol
+	name = "TG Blaster Pistol"
+	desc = "A more compact version of the TG carbine. Talk about a pocket protector."
+	cost = 1800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/carbine/pistol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgspamlaser
+	name = "TG Repeating Blaster"
+	desc = "Maximum capacity, minimum power."
+	cost = 1000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/spamlaser)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgrifle
+	name = "TG Laser Rifle"
+	desc = "A MKII Trident Gammaworks Laser Rifle. Useful if you don't have room for extra ammo cells, but suffers in longer adventures."
+	cost = 2500
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/rifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgheavyrifle
+	name = "TG Heavy Laser Rifle"
+	desc = "A heavier variant of the MKII Laser Rifle. Fewer shots but each one hits much harder."
+	cost = 1800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/rifle/heavy)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgautorifle
+	name = "TG Tactical Laser"
+	desc = "The successor to the MKII Laser Rifle. Better in almost every way."
+	cost = 3800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/rifle/auto)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgnukerifle
+	name = "TG Nuclear Rifle"
+	desc = "Self-charging, powerful, and it irradiates your enemies! Just don't get hit with an EMP or you'll start to glow."
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tgnukepistol
+	name = "TG Nuclear Pistol"
+	desc = "For when you want a nuclear reactor in a holster instead of on your back."
+	cost = 2500
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/weaponname
+	name = "TG Particle Cannon"
+	desc = "Five shots. More than enough to kill anything that moves."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/tg/particlecannon)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/aep7
+	name = "AEP-7 Laser Pistol"
+	desc = "For a brick, it shoots pretty good."
+	cost = 1600
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/pistol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/aer9
+	name = "AER-9 Laser Rifle"
+	desc = "For a bigger brick, it shoots pretty good."
+	cost = 1600
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/aer9)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/plaspistol
+	name = "Plasma Pistol"
+	desc = "Compact and deadly. Just not quiet."
+	cost = 1760
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/plasma/pistol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/plasrifle
+	name = "Plasma Rifle"
+	desc = "Less compact, but just as deadly. Still not quiet."
+	cost = 1800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/plasma)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/aer12
+	name = "AER-12 Laser Rifle"
+	desc = "A more efficient brick. Shoots slightly better."
+	cost = 1800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/aer12)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/wattz1ks
+	name = "Wattz 1000s Laser Pistol"
+	desc = "For when you prefer accuracy by volume and death of a thousand cuts. Or burns, as the case may be."
+	cost = 1660
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/wattzs)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/gammagun
+	name = "Gamma Gun"
+	desc = "For when you want to really ruin somebody's day."
+	cost = 660
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/gammagun)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ionrifle
+	name = "Ion Rifle"
+	desc = "The perfect counter to robots or other energy guns. Big, bulky, and power efficient."
+	cost = 2200
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/ionrifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ioncarbine
+	name = "Ion Carbine"
+	desc = "The perfect counter to robots or other energy guns. Medium, compact(ish), and sort of power efficient."
+	cost = 2200
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/ionrifle/carbine)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ionpistol
+	name = "Ion Pulse Pistol"
+	desc = "The perfect counter to robots or other energy guns. Identical to the carbine in size, but less power efficient. At least it's cheaper."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/ionrifle/compact)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/aer14
+	name = "AER-14 Laser Rifle"
+	desc = "An even more efficient brick. Shoots much better."
+	cost = 2100
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/aer14)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ultrarifle
+	name = "Ultracite AER Laser Rifle"
+	desc = "The most efficient brick of them all. Shoots pretty good. Uses the very rare Ultracite MFC."
+	cost = 2500
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/ultra_rifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/laer
+	name = "LAER Laser Rifle"
+	desc = "An unusual brick. Damage is incredibly variable."
+	cost = 2260
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/laer)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/wattz2k
+	name = "Wattz 2000 Laser Rifle"
+	desc = "It's more of a laser sniper, honestly."
+	cost = 2600
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/wattz2k)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/wattz2ke
+	name = "Wattz 2000e Laser Rifle"
+	desc = "More shots, less power. It's more of a DMR, honestly."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/wattz2k/extended)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/wattz2ks
+	name = "Wattz 2000 Sport Edition"
+	desc = "The bougie version of the Wattz 2k. Not quite as strong, but it's self-charging."
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/wattz2ks)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/retrolas
+	name = "Retro Laser Pistol"
+	desc = "An ultra-compact and incredibly powerful laser pistol. So small, it might even fit in your boot!"
+	cost = 2100
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/retro)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/laserbuss
+	name = "Laser Blunderbuss"
+	desc = "It's just as insane as it sounds. Careful you don't lose a hand shooting it!"
+	cost = 4260
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/scatter/laserbuss)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/compactrcw
+	name = "Compact RCW"
+	desc = "For when you want to put on a rave that kills people. Minimally effective against all forms of armor, but hyper-lethal otherwise."
+	cost = 3800
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/auto)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/rcw
+	name = "Laser RCW"
+	desc = "For when you want to put on a rave that kills people. Only slightly less effective against armor."
+	cost = 4000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/rcw)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/badlands
+	name = "Badlands AEP-7"
+	desc = "A smaller brick that shoots twice as good."
+	cost = 3340
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/badlands)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/weaponname
+	name = "Plasma Pistol Eve"
+	desc = "An upgraded plasma pistol. Compact and extra deadly."
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/plasma/pistol/eve)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/weaponname
+	name = "Plasma Pistol Adam"
+	desc = "An upgraded plasma pistol. Less compact and even more deadly."
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/plasma/pistol/adam)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ak470
+	name = "Kalashnikov 470"
+	desc = "The original soviet special. Self charging and quite powerful, though incredibly difficult to control. For the union!"
+	cost = 5000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/LaserAK)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ak740
+	name = "Kalashnikov 740"
+	desc = "The successor to the AK470. While it shoots and charges faster, it loses a lot of punch in the process. For the union!"
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/LaserAK/worn)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ebowbig
+	name = "Energy Crossbow"
+	desc = "One shot, one kill. More often than not, anyway. Bonus, it's self-charging!"
+	cost = 4200
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/kinetic_accelerator/crossbow/large)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ebow
+	name = "Compact Energy Crossbow"
+	desc = "One shot, not... Quite one kill. At least it has infinite ammo?"
+	cost = 2200
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/kinetic_accelerator/crossbow)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/compreg
+	name = "Compliance Regulator Laser Pistol"
+	desc = "For a brick, it stuns pretty good."
+	cost = 1500
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/complianceregulator)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tribeamstun
+	name = "Tribeam Disabler Rifle"
+	desc = "For a brick, it stuns three times as good."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/scatter/nonlethal)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/disablerrcw
+	name = "Disabler RCW"
+	desc = "For when you want to throw a rave and knock everybody out."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/energy/laser/stunrcw)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/compact14mmrifle
+	name = "Compact 14mm Rifle"
+	desc = "Oh yeah, compact alright."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/compact14mmrifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/alr15
+	name = "ALR-15 Rifle"
+	desc = "It's an assault rifle all right."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/service/alr)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ak74u
+	name = "AK-74U Assault Rifle"
+	desc = "It's like a baby AK."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/aksmol)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/buntline
+	name = "Colt Buntline Revolver"
+	desc = "Put bluntly, its a bit of long for a wheel gat."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/buntline)
+	crate_name = "select weapon crate"

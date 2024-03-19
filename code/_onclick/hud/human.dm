@@ -366,6 +366,10 @@
 	sleep_hud_button.hud = src
 	infodisplay += sleep_hud_button
 
+	triage = new /atom/movable/screen/triage()
+	triage.hud = src
+	infodisplay += triage
+
 	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
 	aooc_hud_button.hud = src
 	infodisplay += aooc_hud_button
@@ -548,3 +552,25 @@
 	else
 		client.screen -= hud_used.hotkeybuttons
 		hud_used.hotkey_ui_hidden = TRUE
+
+
+/mob/living/carbon/human/verb/change_hairstyle()
+	set category = "IC"
+	set name = "Change Hairstyle"
+	set desc = "This allows to change the hairstyle of your character."
+
+	var/new_style = input(src, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
+
+	if(new_style)  //if we selected a new hairstyle then make the player wait some time and in the meantime play a cool combing sound.
+		playsound(src, 'sound/effects/combing_hair.ogg', 30, 1)
+		if(do_after(src, 3 SECONDS, target = src))
+			src.hair_style = new_style
+			src.update_hair()
+	
+	new_style = input(src, "Select the second hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
+
+	if(new_style)  //if we selected a new hairstyle then make the player wait some time and in the meantime play a cool combing sound.
+		playsound(src, 'sound/effects/combing_hair.ogg', 30, 1)
+		if(do_after(src, 3 SECONDS, target = src))
+			src.dna.features["hair_style_2"] = new_style
+			src.update_hair()

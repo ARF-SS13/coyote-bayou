@@ -73,8 +73,8 @@
 	else
 		to_chat(pLapper, span_notice("First action recorded! Perform it again to start looping that action!"))
 		plap_listening = TRUE
-		RegisterSignal(pLapper, COMSIG_SPLURT_INTERACTION_PITCHED, .proc/check_finalized) // quietly wait for anotehr plap of our kind
-		plap_ignore_timer = addtimer(CALLBACK(src, .proc/give_up), SSinteractions.max_autoplap_interval, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
+		RegisterSignal(pLapper, COMSIG_SPLURT_INTERACTION_PITCHED,PROC_REF(check_finalized)) // quietly wait for anotehr plap of our kind
+		plap_ignore_timer = addtimer(CALLBACK(src,PROC_REF(give_up)), SSinteractions.max_autoplap_interval, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
 	SEND_SIGNAL(pLapper, COMSIG_SPLURT_ADD_AUTOPLAPPER, src)
 
 /datum/autoplapper/Destroy(force, ...)

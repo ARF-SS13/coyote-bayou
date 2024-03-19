@@ -73,8 +73,8 @@
 
 /obj/item/melee/smith/twohand/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
 
 /obj/item/melee/smith/twohand/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
@@ -267,7 +267,7 @@
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
-			H.dna.species.punchdamagehigh += force + 8 
+			H.dna.species.punchdamagehigh += force + 8
 			H.dna.species.punchdamagelow += force + 8
 			H.dna.species.attack_sound = hitsound
 			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
@@ -298,6 +298,8 @@
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 33
+	force_unwielded = 33
+	force_wielded = 33
 
 /obj/item/melee/smith/unarmed/claws
 	name = "scrap claws"
@@ -385,7 +387,7 @@
 		return eyestab(M,user)
 	else
 		return ..()
-	
+
 /obj/item/melee/smith/dagger/bowie
 	name = "sharpblade"
 	icon_state = "bowie_smith"
@@ -619,6 +621,10 @@
 	icon_state = "lance_smith"
 	icon_prefix = "lance_smith"
 	overlay_state = "shaft_lance"
+	force = 28
+	block_chance = 8
+	force_wielded = 56
+	force_unwielded = 28
 	attack_speed = CLICK_CD_MELEE
 
 /obj/item/melee/smith/twohand/spear/trident
@@ -638,7 +644,7 @@
 
 
 // Good throwing, thats about it (27, 40)
-/obj/item/melee/smith/javelin 
+/obj/item/melee/smith/javelin
 	name = "rebar throwing spike"
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
@@ -697,7 +703,7 @@
 		return
 	..()
 
-/obj/item/melee/smith/hammer/ratvar
+/*/obj/item/melee/smith/hammer/ratvar
 	name = "brass hammer"
 	custom_materials = list(/datum/material/bronze = 12000)
 	desc = "A brass hammer inscribed with... writing? You can't read it."
@@ -714,7 +720,7 @@
 		else
 			user.adjustBruteLoss(rand(force/2,force))
 		return
-	..()
+	..()*/
 
 /obj/item/melee/smith/hammer/debug
 	name = "debugging hammer"

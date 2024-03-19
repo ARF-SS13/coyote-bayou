@@ -670,9 +670,9 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
-	weapon_class = WEAPON_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1 // to keep this loot revolver competitive
 	init_recoil = HMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -680,6 +680,71 @@
 	can_scope = FALSE
 	can_suppress = FALSE
 	can_bayonet = FALSE
+
+//4.7mm revolver. 6 shots, caseless ammo and shy extra damage. Spawn gun, fires faster
+/obj/item/gun/ballistic/revolver/revolver47mm
+	name = "4.7mm revolver 2190 edition."
+	desc = "A odd 6-cylinder 4.7mm caseless revolver. The cylinder is square-ish in nature while the revolver is a shy bit more heavy. Seems to hit about average, but fires slowly due to a heavy trigger and hammer."
+	icon_state = "47rev"
+	item_state = "lucky"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev47mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+//5mm revolver. More ammo than 4.7mm at 7 shots a cylinder, hits harder but fires slower. spawn gun
+/obj/item/gun/ballistic/revolver/revolver5mm
+	name = "5mm break-action revolver"
+	desc = "A 7-cylinder 5mm break action revolver. The revolver seems to be average in appearance. It also has a bit of a heavy trigger, affecting firerate!"
+	icon_state = "5rev"
+	item_state = "model29"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev5mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	init_recoil = HANDGUN_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+// heavy duty needler revolving rifle
+/obj/item/gun/ballistic/revolver/needlerrifle
+	name = "OT-64 Heavy Needler rifle"
+	desc = "A shoulder mounted OT-64 rifle. It was manufactured in Nepal by Latos Systems in collaboration with Nepal anti-armor divisions. It uses a heavy duty red needler round that's on par with the size and length of a 20mm shell. Albeit it doesn't hit hard, interestingly."
+	icon_state = "heavyneedle"
+	item_state = "heavyneedle"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/heavyneedler
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = HMG_RECOIL(2, 1.3)
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+	fire_sound = 'sound/f13weapons/needler.ogg'
 
 /* * * * * * * * * * *
  * Hunting revolver
@@ -696,6 +761,25 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	scope_state = "revolver_scope"
+	scope_x_offset = 9
+	scope_y_offset = 20
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/gun/ballistic/revolver/hunting/custom
+	name = "Deireadh le ceantar revolver"
+	desc = "A scopable double action revolver chambered in 45-70. It seems custom made and fairly weaker than its original counterpart."
+	icon_state = "hunting_revolver"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T3
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -861,7 +945,7 @@
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	weapon_class = WEAPON_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC

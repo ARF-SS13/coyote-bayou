@@ -48,8 +48,12 @@
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
+	retreat_health_percent = 0.1
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
 
-/mob/living/simple_animal/hostile/raider/Initialize()
+/mob/living/simple_animal/hostile/raider/Initialize() // I dont, but, you can
 	. = ..()
 	if(random_trash_loot)
 		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
@@ -121,6 +125,7 @@
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	speed = 4.5
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/med)
@@ -150,7 +155,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 300
 	health = 300
-	speed = 1.2
+	speed = 2
 	obj_damage = 300
 	rapid_melee = 1
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
@@ -173,6 +178,7 @@
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS
+	speed = 3.5
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
@@ -192,6 +198,10 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
@@ -209,7 +219,8 @@
 	waddle_side_time = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/bullet/c10mm/improvised
+	speed = 3.5
+	projectiletype = /obj/item/projectile/bullet/c10mm/improvised/simple
 	loot = list(/obj/item/gun/ballistic/automatic/smg/smg10mm, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
@@ -231,6 +242,12 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
+
+
 
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
@@ -367,6 +384,7 @@
 	rapid_melee = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	speed = 4.5
 	projectiletype = /obj/item/projectile/bullet/c45/simple
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2, /obj/item/stack/f13Cash/random/med)
@@ -409,7 +427,10 @@
 	rapid_melee = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	speed = 4.5
+	retreat_distance = 2 //retreat this far
+	minimum_distance = 3 //if within this distance
+	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/medium/combat/rusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 5
@@ -551,9 +572,10 @@
 	retreat_distance = 6
 	minimum_distance = 8
 	rapid_melee = 1
+	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/op
+	projectiletype = /obj/item/projectile/bullet/c45/improvised
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
@@ -814,7 +836,7 @@
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/energy/nuclear_particle
+	projectiletype = /obj/item/projectile/energy/nuclear_particle/cultist
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
 	extra_projectiles = 1

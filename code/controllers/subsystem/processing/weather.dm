@@ -9,6 +9,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	flags = SS_BACKGROUND
 	wait = 10
 	runlevels = RUNLEVEL_GAME
+	init_order = INIT_ORDER_WEATHER // should be before atoms are initted, cus snow
 	var/list/eligible_zlevels = ABOVE_GROUND_Z_LEVELS // 4 through 8, its 4 through 8, fuck you its 4 through 8
 	var/list/weather_rolls = list()
 	var/next_hit_by_zlevel //Used by barometers to know when the next storm is coming
@@ -24,6 +25,8 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	/// all the sound emitter datums available
 	/// Format: list("key" = /datum/looping_sound)
 	var/list/sound_rocks = list()
+	var/snowy_time = FALSE
+	var/force_snow_state = FALSE // set to a non null to make it snowy or not
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..() //Active weather is handled by . = ..() processing subsystem base fire().
@@ -35,18 +38,26 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		return FALSE
 	var/datum/weather/W = pickweight(weather_rolls)
 	var/randTime = rand(WEATHER_WAIT_MIN, WEATHER_WAIT_MAX)
-	timerid = addtimer(CALLBACK(src, .proc/run_weather, W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE | TIMER_STOPPABLE) //Around 25-30 minutes between weathers
+	timerid = addtimer(CALLBACK(src,PROC_REF(run_weather), W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE | TIMER_STOPPABLE) //Around 25-30 minutes between weathers
 	next_hit_by_zlevel = world.time + randTime + initial(W.telegraph_duration)
 	weather_queued = TRUE // weather'll set this to FALSE when it ends
 
 /datum/controller/subsystem/processing/weather/Initialize(start_timeofday)
+	if(!isnull(force_snow_state))
+		snowy_time = force_snow_state
+	else
+		var/MM = text2num(time2text(world.timeofday, "MM"))
+		if(MM == 12 || MM == 1 || MM == 2)
+			snowy_time = TRUE
 	for(var/V in subtypesof(/datum/weather))
 		var/datum/weather/W = V
 		var/probability = initial(W.probability)
 		// any weather with a probability set may occur at random
 		if (probability)
 			weather_rolls[W] = probability
-	return ..()
+	. = ..()
+	if(snowy_time)
+		to_chat(world, span_boldnotice("Brr! Chilly weather today!"))
 
 /datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, duration)
 	if (istext(weather_datum_type))

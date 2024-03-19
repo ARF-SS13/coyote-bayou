@@ -18,10 +18,9 @@
 	Sources:
 	http://www.sttmedia.com/syllablefrequency-english
 	http://www.chinahighlights.com/travelguide/learning-chinese/pinyin-syllables.htm
-*/______qdel_list_wrapper(list/L)
-	. = ..()
+*/
 
-	//New list generated with chatgpt sounding 'vaguely' like english.  Better than it sounding way too much like chinese, lol
+//New list generated with chatgpt sounding 'vaguely' like english.  Better than it sounding way too much like chinese, lol
 /datum/language/common/syllables = list(
 "a",
 "zib",
@@ -253,6 +252,8 @@
 #define LANGUAGE_BIRDSONG "Birdsong Language"
 #define LANGUAGE_RABBIT "Rabbit Language"
 #define LANGUAGE_INSECT "Insect Language"
+#define LANGUAGE_OLDCOMMONNORSE "fictional norse language"
+#define LANGUAGE_SPACER "Fictional Russian language"
 
 /datum/language/pokemon
 	name = LANGUAGE_POKEMON
@@ -306,6 +307,55 @@
 	key = "T"
 	icon_state = "cheese"
 	syllables = list ("grr", "gah", "woof", "arf", "arra", "rah", "wor", "sarg")
+
+//scandanavian. Icelandic, Norway, etc etc. A mix of languages to make one fictional one.
+/datum/language/fictionalnorse
+	name = LANGUAGE_OLDCOMMONNORSE
+	desc = "A combination of a few germanic and norse languages. Used in the 2100s as a new and recent language between the Scandinavian countries of the old world."
+	speech_verb = "says"
+	syllables = list("errð", "rréö", "klúþk", "háðlofmifáéng", "arálúbitae", "stueþming", "infélðming", "jávéþa", "asølo", "chåsørr", "sanæ", "elomøt", "Bluidd", "hvorre", "javoot", "pånseelo", "hanso",
+		"sårrð", "ånð", "detðrk", "attalof", "nåbð", "göð", "brað", "inteð", "tyckaeð", "omð", "närð",
+		"tvåsa", "måerð", "dag", "sjäk", "viið", "vuð", "eilso", "tunf", "käyt", "teherrok", "vähake",
+		"heighð", "huelf", "soðklok", "äsðple", "tenð", "jað", "heust", "sturf", "uhrkree", "könokree", "wekree", "hönsð")
+	whisper_verb = "whispers"
+	key = "G"
+	icon_state = "combinednorse"
+	icon = 'icons/misc/language.dmi'
+
+/datum/language/technorussian
+	name = LANGUAGE_SPACER
+	desc = "An ancient language used by cosmonaut colonists of various colonized planets during the 2100s. How the language ended up here is beyond anyone's guess."
+	icon_state = "oldrussian"
+	icon = 'icons/misc/language.dmi'
+	speech_verb = "proclaims"
+	ask_verb = "queries"
+	exclaim_verb = "declares"
+	whisper_verb = "hushes"
+	key = "2"
+	space_chance = 70
+	default_priority = 98
+	syllables = list("zhena", "reb", "kot", "tvoy", "vadka", "byad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
+	"re", "be", "nok", "chto", "techo", "kak", "govor", "navernoe", "da", "net", "horosho", "pochemu", "pivet","lubov", \
+	"ebat", "krovat", "stol", "za", "ryad", "ka", "voyna", "dumat", "patroni", "tarakanu", "zdorovie", "day", "dengi", \
+	"pizdec", "mat", "tvoyu", "suka", "ayblya", "uebok", "sosi", "ebi", "huyar", "trahat", "pizda", "uebu", "zaebal", "zgorela", \
+	"pizduy", "srat", "naydu", "ubyi", "uebishe", "blyadina", "priebali", "prosrali", "suche", "voituyay", "tupoy", "daun", "churka", \
+	"nelez", "sovershenstvo", "viju", "stradaniye", "smusl", "spaseniye", "pomosh", "zvezdu", "kosmos", "pokorim", "lublu", "bereza",  \
+	"zashishu", "luna", "planeta", "voshod", "mercaet", "smeshno", "razum", "trud", "mucheniya", "chudo", "borba", "sudba", "svoboda", \
+	"provodimost", "inicializaciya", "compilaciya", "izolaciya", "teplootdacha", "izlucheniye", "osnasheniye", \
+	"vidimost", "indukciya", "ionizaciya", "laser", "svyaz", "provodka", "atmosfera", "davleniye", "temperatura", \
+	"obyem", "massa", "scorost", "uskoreniye", "radiaciya", "ves", "neobhodimost", "dokozatelstvo", "teorema", "kipeniye", \
+	"inovaciya", "proruv", "turbulentnost", "zashita", "pitaniye", "zamukaniye", "korotkoye", "dlennoye", "verticalno", \
+	"portal", "systema", "electronika", "nagilizm", "anarhizm", "comustu", "tupuye", "sopla", "obshivka", "obtekaemost", \
+	"dinamica", "statica", "oganizacuya", "yeyenet", "rayio", "peredacha", "priem", "slushno", "chastota", "gerts", "stantiya", \
+	"suda", "huyar", "odmin", "dva", "tri", "holod", "grata", "ne", "re", "ru", "korabl")
+
+/datum/language/serbian
+	name = "Serbian"
+	desc = "A language native to the pre-war slavs of the Balkans. How speakers of it got to Texarkana is anyone's guess."
+	key = "sr"
+	icon_state = "serbian"
+	syllables = list("zdravo", "hvala", "dobro jutro", "dobar dan", "laku noć", "molim", "izvinite", "da", "ne", "kako si?", "ime", "grad", "planina", "reka", "more", "sunce", "mesec", "zvezda", "voće", "povrće", "voda", "vino", "kafa", "čaj", "hleb", "mleko", "sir", "meso", "riba", "ptica", "pas", "mačka", "kuća", "stan", "soba", "krevet", "stolica", "sto", "telefon", "računar", "knjiga", "olovka", "papir", "škola", "univerzitet", "profesor", "učenik", "posao", "novac", "trgovina", "restoran", "putovanje", "avion", "autobus", "voz", "automobil", "bicikl", "pesma", "film", "televizija", "internet", "sport", "fudbal", "košarka", "tenis", "plivanje", "planiranje", "poseta", "zabava", "ljubav", "prijatelj", "porodica", "roditelj", "brat", "sestra", "dečko", "devojka", "venčanje", "rođendan", "sreća", "svetlo", "tama", "boja", "crvena", "plava", "zelena", "žuta", "crna", "bela", "cvet", "drvo", "cveće", "trava", "zemlja", "nebo", "vazduh", "vatra", "led", "toplo", "hladno", "brz", "spor", "visok", "nizak", "dugačak", "kratko", "glasan", "tih", "smešno", "tužno", "lepo", "ružno", "srećan", "tužan")
+
 
 //Mouse
 

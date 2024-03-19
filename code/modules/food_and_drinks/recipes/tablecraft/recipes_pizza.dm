@@ -1,8 +1,8 @@
 
 // see code/module/crafting/table.dm
+// This recipe list in currently under recipes_burger.dm
 
 ////////////////////////////////////////////////PIZZA!!!////////////////////////////////////////////////
-
 
 /*
 /datum/crafting_recipe/food/pineapplepizza

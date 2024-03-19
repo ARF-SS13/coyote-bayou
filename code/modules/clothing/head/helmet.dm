@@ -509,7 +509,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDESNOUT | HIDEHAIR
-	var/requires_training = TRUE
+	var/requires_training = FALSE
 
 /obj/item/clothing/head/droptrooper/arghelmet/two
 	name = "ARG ARES Helmet"

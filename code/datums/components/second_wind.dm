@@ -10,10 +10,10 @@
 /datum/component/second_wind/Initialize()
 	if(!ismob(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN), .proc/update_ckey)
-	RegisterSignal(parent, list(COMSIG_SECOND_WIND), .proc/open_revive_menu)
-	RegisterSignal(parent, list(COMSIG_SECOND_WIND_GRANT), .proc/grant_second_wind)
-	RegisterSignal(parent, list(COMSIG_LIVING_BIOLOGICAL_LIFE), .proc/check_living)
+	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN),PROC_REF(update_ckey))
+	RegisterSignal(parent, list(COMSIG_SECOND_WIND),PROC_REF(open_revive_menu))
+	RegisterSignal(parent, list(COMSIG_SECOND_WIND_GRANT),PROC_REF(grant_second_wind))
+	RegisterSignal(parent, list(COMSIG_LIVING_BIOLOGICAL_LIFE),PROC_REF(check_living))
 
 /datum/component/second_wind/proc/update_ckey(mob/my_mob, client/logged_in)
 	if(!isclient(logged_in))

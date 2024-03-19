@@ -254,7 +254,7 @@
 		var/turf/T = get_turf(body)
 		new /obj/effect/ctf/ammo(T)
 		recently_dead_ckeys += body.ckey
-		addtimer(CALLBACK(src, .proc/clear_cooldown, body.ckey), respawn_cooldown, TIMER_UNIQUE)
+		addtimer(CALLBACK(src,PROC_REF(clear_cooldown), body.ckey), respawn_cooldown, TIMER_UNIQUE)
 		body.dust()
 
 /obj/machinery/capture_the_flag/proc/clear_cooldown(ckey)
@@ -385,7 +385,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/ctf_floor_vanish, src), 1)
+	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(ctf_floor_vanish), src), 1)
 
 /obj/item/ammo_casing/a50/ctf
 	projectile_type = /obj/item/projectile/bullet/ctf
@@ -405,14 +405,14 @@
 
 /obj/item/gun/ballistic/automatic/laser/ctf/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/ctf_floor_vanish, src), 1)
+	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(ctf_floor_vanish), src), 1)
 
 /obj/item/ammo_box/magazine/recharge/ctf
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf
 
 /obj/item/ammo_box/magazine/recharge/ctf/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/ctf_floor_vanish, src), 1)
+	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(ctf_floor_vanish), src), 1)
 
 /obj/item/ammo_casing/caseless/laser/ctf
 	projectile_type = /obj/item/projectile/beam/ctf
@@ -477,7 +477,7 @@
 
 /obj/item/claymore/ctf/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/ctf_floor_vanish, src), 1)
+	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(ctf_floor_vanish), src), 1)
 
 /datum/outfit/ctf
 	name = "CTF"
@@ -610,7 +610,7 @@
 /obj/effect/ctf/ammo/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

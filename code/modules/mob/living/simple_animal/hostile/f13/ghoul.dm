@@ -120,7 +120,7 @@
 	
 	variation_list = list(
 		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
-		MOB_SPEED_LIST(2.3, 2.5, 2.8, 2.9, 3.0),
+		MOB_SPEED_LIST(3.0, 3.2, 3.6, 3.8, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
 		MOB_HEALTH_LIST(30, 35, 40, 40, 40, 40, 41),
 		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
@@ -185,7 +185,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
-		MOB_SPEED_LIST(2.5, 2.6, 2.7, 2.8, 2.9),
+		MOB_SPEED_LIST(3.6, 3.8, 4, 4.2, 4.4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
 		MOB_HEALTH_LIST(41, 45, 50, 50, 50, 50, 51),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 1),
@@ -325,7 +325,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
-		MOB_SPEED_LIST(2.6, 2.7, 2.8, 2.9),
+		MOB_SPEED_LIST(3.0, 3.2, 3.6, 3.8, 4, 4.2),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
 		MOB_HEALTH_LIST(38, 40, 42, 44),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 4),
@@ -422,6 +422,16 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 	loot_drop_amount = 4
+	variation_list = list(
+		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
+		MOB_SPEED_LIST(3.6, 3.8, 4, 4.2, 4.4),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
+		MOB_HEALTH_LIST(30, 35, 40, 40, 40, 40, 41),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10)
+	)
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
@@ -451,6 +461,16 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 	loot_drop_amount = 5
+	variation_list = list(
+		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
+		MOB_SPEED_LIST(3.6, 3.8, 4, 4.2, 4.4),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
+		MOB_HEALTH_LIST(30, 35, 40, 40, 40, 40, 41),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10)
+	)
 
 //Sunset mob of some sort?
 /mob/living/simple_animal/hostile/ghoul/wyomingghost

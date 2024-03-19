@@ -73,6 +73,38 @@
 	matrixed_sections = MATRIX_ALL
 //<--
 
+//-->Pointy protogen snouts
+//Spriter: sampletex
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen_beak
+	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MUTCOLORS
+	name = "Protogen with Beak - Snout"
+	icon_state = "proto_beak_basic"
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen_beak/protogen_under
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen with Beak - Snout Under"
+	icon_state = "proto_beak_under"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen_beak/protogen_tert
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen with Beak - Snout Tertiary"
+	icon_state = "proto_beak_tert"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen_beak/protogen_tertunder
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen with Beak - Snout Tertiary Under"
+	icon_state = "proto_beak_tertunder"
+	matrixed_sections = MATRIX_ALL
+
+//<--
+
 //Synth body markings
 /datum/sprite_accessory/mam_body_markings/synthliz/synthliz_pecs
 	icon = 'icons/mob/mam/citadel/synthliz_body_markings.dmi'

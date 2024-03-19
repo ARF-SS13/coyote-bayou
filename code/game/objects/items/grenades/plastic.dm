@@ -25,7 +25,7 @@
 	plastic_overlay = mutable_appearance(icon, "[item_state]2", HIGH_OBJ_LAYER)
 	var/static/list/loc_connections = list(
 
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -66,7 +66,7 @@
 		if(!QDELETED(target))
 			location = get_turf(target)
 			target.cut_overlay(plastic_overlay)
-			UnregisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/add_plastic_overlay)
+			UnregisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS,PROC_REF(add_plastic_overlay))
 			if(!ismob(target) || full_damage_on_mobs)
 				target.ex_act(EXPLODE_HEAVY, target)
 	else
@@ -89,7 +89,7 @@
 /obj/item/grenade/plastic/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
 	if(nadeassembly)
-		INVOKE_ASYNC(nadeassembly, .proc/on_entered, AM)
+		INVOKE_ASYNC(nadeassembly,PROC_REF(on_entered), AM)
 
 /obj/item/grenade/plastic/on_found(mob/finder)
 	if(nadeassembly)
@@ -133,11 +133,11 @@
 				I.embedding["embed_chance"] = 0
 				I.updateEmbedding()
 
-		RegisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/add_plastic_overlay)
+		RegisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS,PROC_REF(add_plastic_overlay))
 		target.update_icon()
 		if(!nadeassembly)
 			to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
-			addtimer(CALLBACK(src, .proc/prime), det_time*10)
+			addtimer(CALLBACK(src,PROC_REF(prime)), det_time*10)
 		else
 			qdel(src)	//How?
 

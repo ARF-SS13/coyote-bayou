@@ -986,6 +986,12 @@
 	icon = 'icons/obj/plushies_big.dmi'
 	icon_state = "registeel"
 
+/obj/item/toy/plush/braixen
+	name = "braixen plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "braixen"
+
 
 
 
@@ -1129,26 +1135,42 @@
 
 //Rugs
 
+/obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
+	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
+		user.visible_message("[user] begins cutting the [src] apart.", \
+				span_notice("You begin cutting the [src] into strips."), \
+				span_italic("You hear faint sounds of ripping cloth."))
+		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/stack/sheet/cloth (drop_location(), 10)
+		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		qdel(src)
+		return TRUE
+
 /obj/structure/rug/carpet
-	name = "run carpet"
+	name = "black and red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
+	plane = -15
+	layer = BELOW_OPEN_DOOR_LAYER
+	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
-	name = "run carpet"
+	name = "royal purple run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet2"
 
 /obj/structure/rug/carpet3
-	name = "run carpet"
+	name = "red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet3"
 
 /obj/structure/rug/carpet4
-	name = "run carpet"
+	name = "turquoise run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet4"
@@ -1468,6 +1490,13 @@
 	name = "sports car"
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
 	icon_state = "sportscar"
+
+/obj/vehicle/sealed/car/caddy
+	name = "Personal full sized luxury SUV"
+	desc = "a refitted, redone, customized, and restored old relic of the early 2000s. This full sized luxury SUV comes with state of the art infotainment while also containing all the settings and whatnot one would find in such a vehicle."
+	icon_state = "caddy"
+	key_type = /obj/item/key/security
+	icon = 'icons/fallout/vehicles/medium_vehicles.dmi'
 
 /obj/vehicle/sealed/car/jeep
 	name = "jeep"
@@ -1850,3 +1879,70 @@
 	name = "Blessed Gecko-Slayer"
 	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
 
+//Haybale
+
+/obj/structure/haybale
+	name = "haybale"
+	desc = "Don't toss a needle in it!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "haybale"
+
+/obj/structure/clothes
+	name = "clothing line"
+	desc = "Hang up your clothes!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "clothesline"
+
+/obj/structure/bridgefull
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_full"
+
+/obj/structure/bridgeupper
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_upper"
+
+/obj/structure/bridgelower
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_lower"
+
+/obj/structure/playstation
+	name = "Playstation"
+	icon_state = "ps"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/playstationcontroller
+	name = "Playstation with controllers"
+	icon_state = "pscontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snescontroller
+	name = "Super Nintendo with Controllers"
+	icon_state = "snescontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snes
+	name = "Super Nintendo"
+	icon_state = "snes"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/item/toy/gameboy
+	name = "Gameboy"
+	desc = "A handheld gaming system!"
+	icon = 'modular_coyote/icons/items/items.dmi'
+	icon_state = "gameboy"
+
+/obj/structure/flatscreen
+	name = "Flatscreen TV"
+	icon_state = "flatscreen"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0

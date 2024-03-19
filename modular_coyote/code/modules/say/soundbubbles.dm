@@ -273,6 +273,6 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 						features_speech["typing_indicator_max_words_spoken"] = new_input
 	..()
 
-/datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
+/datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE, sans_underpants = FALSE)
 	features += features_speech
 	..()

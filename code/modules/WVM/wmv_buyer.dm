@@ -33,8 +33,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/reagent_containers/hypospray = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 3,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 3,
+		/obj/item/reagent_containers/pill/patch/medx = 3,
+		/obj/item/reagent_containers/pill/patch/steady = 3,
 		/obj/item/reagent_containers/pill/patch/jet =3,
 		/obj/item/reagent_containers/pill/patch/turbo =3,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 3,
@@ -123,6 +123,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
 		// magic shit:tm:
 		/obj/item/gun/magic/ = 15,
+		// weapon mods
+		/obj/item/tool_upgrade/ = 5,
+		/obj/item/gun_upgrade/ = 5,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
@@ -277,7 +280,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	GLOB.wasteland_vendor_shop_list[trader_key] = list()
 	var/list/donut = list()
 	/// so parents are processed first, and subtype prices have priority
-	var/list/buylist = sortList(buyables_loose, /proc/cmp_typepaths_length_asc)
+	var/list/buylist = sortList(buyables_loose, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff)
@@ -286,7 +289,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			donut[thing] = cumfrosting[thing]
 	/// now, prune and process the tight list
 	buylist.Cut()
-	buylist = sortList(buyables_tight, /proc/cmp_typepaths_length_asc)
+	buylist = sortList(buyables_tight, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff, TRUE)
@@ -347,6 +350,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Salvaged Power Armor: 30¢<br>"
 	dat += "Power Armor: 75¢<br>"
 	dat += "Melee Weapons: 10¢<br>"
+	dat += "Weapon Mods: 5¢<br>"
 	dat += "<br>"
 	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 75¢<br>"
@@ -451,7 +455,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		if(istype(thingy, /obj/item/button))
 			continue
 		if(appraise_item(thingy, TRUE))
-			INVOKE_ASYNC(src, .proc/sell_loop_start)
+			INVOKE_ASYNC(src,PROC_REF(sell_loop_start))
 			return TRUE
 	say("There's nothing to sell!")
 
@@ -480,7 +484,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
-	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
+	sales_timer = addtimer(CALLBACK(src,PROC_REF(sell_loop_end), thing2sell), time2sell, TIMER_STOPPABLE)
 
 /obj/machinery/mineral/wasteland_trader/proc/sell_loop_end(obj/item/I)
 	if(!I)
@@ -797,7 +801,7 @@ Fence
 */
 
 /obj/machinery/mineral/wasteland_trader/bountyticket
-	name = "Nash Bounty Ticket Machine"
+	name = "New Boston Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(

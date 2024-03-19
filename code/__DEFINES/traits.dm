@@ -102,6 +102,7 @@
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM			"pacifism"
 #define TRAIT_PACIFISM_LESSER	"lesserpacifism"
+#define TRAIT_WEAK_OF_MUSCLES	"weak of muscles"
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
@@ -126,6 +127,16 @@
 #define TRAIT_RADIMMUNE			"rad_immunity"
 #define TRAIT_75_RAD_RESIST		"big_rad_resist"
 #define TRAIT_50_RAD_RESIST		"some_rad_resist"
+#define TRAIT_50_RAD_WEAK		"some_rad_weakness"
+#define TRAIT_100_RAD_WEAK		"big_rad_weakness"
+#define TRAIT_BRUTERESIST		"brute_resist_minor"
+#define TRAIT_BRUTERESISTMAJOR	"brute_resist_major"
+#define TRAIT_BRUTEWEAK			"brute_weak_minor"
+#define TRAIT_BRUTEWEAKMAJOR	"brute_weak_major"
+#define TRAIT_BURNRESIST		"burn_resist_minor"
+#define TRAIT_BURNRESISTMAJOR	"burn_resist_major"
+#define TRAIT_BURNWEAK			"burn_weak_minor"
+#define TRAIT_BURNWEAKMAJOR		"burn_weak_major"
 #define TRAIT_GENELESS			"geneless"
 #define TRAIT_VIRUSIMMUNE		"virus_immunity"
 #define TRAIT_PIERCEIMMUNE		"pierce_immunity"
@@ -173,6 +184,7 @@
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
 #define TRAIT_ARMBLADE			"Arm Blade"
+#define TRAIT_CYBERKNIFE		"Cyber Blade"
 #define TRAIT_ARMTENT			"Tentacle Arm"
 #define TRAIT_TAILPLAY			"Tail Player"
 #define TRAIT_TAILWHIP			"Tail Whipper"
@@ -196,8 +208,10 @@
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
 #define TRAIT_NUKA_LOVER		"nukalover"
+#define TRAIT_SOH				"soh"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
+#define TRAIT_TREASURE_HUNTER 	"treasurehunter"
 #define TRAIT_SIXTHSENSE		"sixthsense"
 #define TRAIT_DISSECTED			"dissected"
 #define TRAIT_FEARLESS			"fearless"
@@ -208,6 +222,7 @@
 #define TRAIT_ROBOTPHOBIA		"robotphobia"
 #define TRAIT_BIRDPHOBIA		"birdphobia"
 #define TRAIT_DOGPHOBIA			"dogphobia"
+#define TRAIT_ALIENPHOBIA		"alienphobia"
 #define TRAIT_BONERPHOBIA		"skelephobia"
 #define TRAIT_MASKPHOBIA		"maskphobia"
 #define TRAIT_DOCTORPHOBIA		"doctorphobia"
@@ -219,6 +234,7 @@
 #define TRAIT_ROBOT				"robots"
 #define TRAIT_BIRD				"birds"
 #define TRAIT_DOG				"dogs"
+#define TRAIT_ALIEN				"aliens"
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
@@ -267,6 +283,8 @@
 #define TRAIT_FREERUNNING		"freerunning"
 #define TRAIT_SKITTISH			"skittish"
 #define TRAIT_POOR_AIM			"poor_aim"
+#define	TRAIT_LIGHT_SENSITIVITY			"light_sensitivity"
+#define	TRAIT_PHOBIC			"trait_phobic"
 #define TRAIT_CRIT_SHOT		"crit_shot" //Crits are cool, but have you ever critted 3 times in a row?
 #define SPREAD_CONTROL		"spread_control"
 #define TRAIT_PROSOPAGNOSIA		"prosopagnosia"
@@ -415,6 +433,8 @@
 #define TRAIT_PUNGAPOWER "pungaful"
 #define TRAIT_NO_SECOND_WIND "no_second_wind"
 
+#define TRAIT_NO_MED_HVY_ARMOR "no_med_heavy_armor"
+
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
 #define TRAIT_SURGERY_HIGH		"highsurgery"
@@ -533,6 +553,13 @@
 #define TRAIT_SPACEWALK "spacewalk"
 #define RADX_TRAIT "trait_from_rad-x"
 
+/// HUNTING HORNS! check huntinghorneffects.dm and huntinghorn.dm
+#define TRAIT_HH_COOLDOWN_IGNORE "horn_cooldown"
+#define TRAIT_HH_IRON_SKIN "horn_iron_skin"
+#define TRAIT_HH_KNOCKDOWN_RES "horn_kd_res"
+#define TRAIT_HH_DIVINE_BLESSING "horn_divine"
+#define TRAIT_HH_DRAW_SPEED "horn_draw_speed"
+
 //important_recursive_contents traits
 /*
  * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.
@@ -560,3 +587,7 @@
 
 #define QUIRK_STATISTICS_DIRECTORY "data/quirk_stats/round_"
 #define QUIRK_PLAYER2FILENAME(ckey, playername) "[ckey]_[playername]_is_cool.json" // my code my filenames
+
+GLOBAL_LIST_INIT(quirk2name, list(
+	
+))

@@ -520,16 +520,16 @@
 /mob/living/simple_animal/advanced/k9
 	name = "k9"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "k9"
-	icon_living = "k9"
-	icon_dead = "k9-wreck"
+	icon_state = "blocky_valesec"
+	icon_living = "blocky_valesec"
+	icon_dead = "blocky_valesec-wreck"
 
 /mob/living/simple_animal/advanced/medihound
 	name = "medihound"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "medihound"
-	icon_living = "medihound"
-	icon_dead = "medihound-wreck"
+	icon_state = "light_valemed"
+	icon_living = "light_valemed"
+	icon_dead = "light_valemed-wreck"
 
 /mob/living/simple_animal/advanced/k69
 	name = "k69"
@@ -569,23 +569,23 @@
 /mob/living/simple_animal/advanced/medihounddark
 	name = "medical hound dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "medihounddark"
-	icon_living = "medihounddark"
-	icon_dead = "medihounddark-wreck"
+	icon_state = "dark_valemed"
+	icon_living = "dark_valemed"
+	icon_dead = "dark_valemed-wreck"
 
 /mob/living/simple_animal/advanced/pupdozer
 	name = "pupdozer"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "pupdozer"
-	icon_living = "pupdozer"
-	icon_dead = "pupdozer-wreck"
+	icon_state = "pupdozer_valeeng"
+	icon_living = "pupdozer_valeeng"
+	icon_dead = "pupdozer_valeeng-wreck"
 
 /mob/living/simple_animal/advanced/k9dark
 	name = "k9 dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "k9dark"
-	icon_living = "k9dark"
-	icon_dead = "k9dark-wreck"
+	icon_state = "dark_valesec"
+	icon_living = "dark_valesec"
+	icon_dead = "dark_valesec-wreck"
 
 /mob/living/simple_animal/advanced/valemed
 	name = "vale med"
@@ -625,9 +625,9 @@
 /mob/living/simple_animal/advanced/k50
 	name = "k50"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "k50"
-	icon_living = "k50"
-	icon_dead = "k50-wreck"
+	icon_state = "blocky_valeserv"
+	icon_living = "blocky_valeserv"
+	icon_dead = "blocky_valeserv-wreck"
 
 /mob/living/simple_animal/advanced/valeserv
 	name = "vale serv"
@@ -639,9 +639,9 @@
 /mob/living/simple_animal/advanced/valeservdark
 	name = "vale serv dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
-	icon_state = "valeservdark"
-	icon_living = "valeservdark"
-	icon_dead = "valeservdark-wreck"
+	icon_state = "dark_valeserv"
+	icon_living = "dark_valeserv"
+	icon_dead = "dark_valeserv-wreck"
 
 
 //Raptor borgs from Virgo
@@ -760,12 +760,18 @@
 	icon_dead = "bat_dead"
 
 /mob/living/simple_animal/advanced/cat
-	name = "Cat"
+	name = "cat"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
 	icon_dead = "cat2_dead"
 
+/mob/living/simple_animal/advanced/bighorn
+	name = "bighorner"
+	icon = 'icons/fallout/mobs/animals/farmanimals.dmi'
+	icon_state = "bighorner"
+	icon_living = "bighorner"
+	icon_dead = "bighorner_dead"
 
 //More Virgo mobs
 //Big wolfs
@@ -859,6 +865,8 @@
 	icon_state = "gekko_tribe_villager"
 	icon_living = "gekko_tribe_villager"
 	icon_dead = "gekko_dead"
+
+
 
 /mob/living/simple_animal/advanced/gecko_leader
 	name = "gecko leader"
@@ -1178,7 +1186,23 @@
 	icon_living = "deathclaw_queen"
 	icon_dead = "deathclaw_queen_dead"
 
+//splurt mobs
+/mob/living/simple_animal/advanced/femdigo
+	name = "Female Wendigo"
+	desc = "A curse, Or perhaps a blessing."
+	icon = 'icons/mob/wendigo.dmi'
+	icon_state = "femdigo"
+	icon_living = "femdigo"
+	icon_dead = "femdigo_dead"
 
+/mob/living/simple_animal/advanced/thicktron_s
+	name = "Modified Assaultron"
+	desc = "Why is it so thick?"
+	icon = 'icons/mob/splurtbot.dmi'
+	rotate_on_lying = TRUE
+	icon_state = "assaultronstandard"
+	icon_living = "assaultronstandard"
+	icon_dead = "assaultronstandard_dead"
 
 //End Advanced Mobs//
 
@@ -1235,5 +1259,39 @@
 	icon_state = "pony"
 	icon_living = "pony"
 	icon_dead = "pony_dead"
+
+/mob/living/simple_animal/pet/giraffe
+	name = "giraffe"
+	desc = "A long necked goat"
+	icon = 'modular_coyote/icons/mob/giraffe.dmi'
+	icon_state = "giraffe"
+	icon_living = "giraffe"
+	icon_dead = "giraffe_dead"
+
+/mob/living/simple_animal/advanced/kirin
+	name = "teal kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "teal_kirin"
+	icon_living = "teal_kirin"
+	icon_dead = "teal_kirin_dead"
+
+/mob/living/simple_animal/advanced/kirin/white
+	name = "white kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "white_kirin"
+	icon_living = "white_kirin"
+	icon_dead = "white_kirin_dead"
+
+/mob/living/simple_animal/advanced/kirin/purple
+	name = "purple kirin"
+	desc = "A mythical type of creature."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "purple_kirin"
+	icon_living = "purple_kirin"
+	icon_dead = "purple_kirin_dead"
+
+
 
 

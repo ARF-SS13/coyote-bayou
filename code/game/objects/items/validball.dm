@@ -27,12 +27,14 @@
 /obj/item/validball/Initialize()
 	. = ..()
 	register_vb_datum()
-	addtimer(CALLBACK(src, .proc/activate_the_validball), autoreveal_time)
 	SSvalidball.valid_balls |= src
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
+
+/obj/item/validball/proc/roundstartify()
+	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)
 
 /obj/item/validball/proc/register_vb_datum()
 	var/datum/validball_data_report/vb_datum = new
@@ -178,7 +180,7 @@
 	user.show_message("You press the SCAN button, and [src] lets out an excited beep!")
 	say(span_robot("Scanning for anomalous signals, please wait."))
 	currently_scanning = TRUE
-	addtimer(CALLBACK(src, .proc/read_scan_ping, user), scan_time)
+	addtimer(CALLBACK(src,PROC_REF(read_scan_ping), user), scan_time)
 
 /obj/item/pinpointer/validball_finder/proc/read_scan_ping()
 	if(!isweakref(scan_turf))
@@ -295,6 +297,10 @@
 			return "Southern Wastes - Common"
 		if(Z_LEVEL_REDLICK)
 			return "Northern Wastes - Common"
+		if(Z_LEVEL_NEWBOSTON)
+			return "New Boston - Common"
+		if(Z_LEVEL_NEWBOSTON_UPPER)
+			return "New Boston - Second Story"
 		else
 			return "~!UNKNOWN!~"
 
@@ -420,6 +426,7 @@
 	if(isturf(right_here) && isatom(spawn_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
 		var/obj/item/validball/thenewvb = new the_thing(spawn_here)
+		thenewvb.roundstartify()
 		return thenewvb
 	return FALSE
 

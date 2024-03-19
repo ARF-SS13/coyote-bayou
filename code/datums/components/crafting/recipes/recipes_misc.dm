@@ -407,7 +407,7 @@
 	name = "Picket Sign"
 	result = /obj/item/picket_sign
 	reqs = list(/obj/item/stack/rods = 1,
-				/obj/item/stack/sheet/cardboard = 2)
+				/obj/item/stack/sheet/mineral/wood = 2)
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -444,59 +444,13 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-/*
-/datum/crafting_recipe/electrochromatic_kit
-	name = "Electrochromatic Kit"
-	result = /obj/item/electronics/electrochromatic_kit
-	reqs = list(/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 5
-	subcategory = CAT_TOOL
-	category = CAT_MISC
-	always_available = FALSE
-
-/datum/crafting_recipe/heretic/codex
-	name = "Codex Cicatrix"
-	result = /obj/item/forbidden_book
-	tools = list(/obj/item/pen)
-	reqs = list(/obj/item/paper = 5,
-				/obj/item/organ/eyes = 1,
-				/obj/item/organ/heart = 1,
-				/obj/item/stack/sheet/animalhide/human = 1)
-	time = 150
+/datum/crafting_recipe/naturalcardboard
+	name = "Hand-Pressed Cardboard"
+	time = 45
+	reqs = list(/datum/reagent/water = 50, /datum/reagent/ash = 20, /obj/item/stack/sheet/mineral/wood = 1)
+	result = /obj/item/stack/sheet/cardboard/five // Pressed paper gives you 25 paper, which is 5 paper bags, this is equivilent in terms of storage size
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-	always_available = FALSE
-
-
-/datum/crafting_recipe/plunger
-	name = "Plunger"
-	result = /obj/item/plunger
-	time = 1
-	reqs = list(/obj/item/stack/sheet/plastic = 1,
-				/obj/item/stack/sheet/mineral/wood = 1)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/rcl
-	name = "Makeshift Rapid Cable Layer"
-	result = /obj/item/rcl/ghetto
-	time = 40
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
-	reqs = list(/obj/item/stack/sheet/metal = 15)
-	subcategory = CAT_TOOL
-	category = CAT_MISC
-
-/datum/crafting_recipe/command_banner
-	name = "Command Banner"
-	result = /obj/item/banner/command/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/captain/parade = 1)
-	subcategory = CAT_FURNITURE
-	category = CAT_MISC
-
-*/
 
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
@@ -540,6 +494,36 @@
 	result = /obj/item/reagent_containers/glass/bucket/wateringcan
 	reqs = list(/obj/item/stack/sheet/metal = 1, /obj/item/stack/sheet/plastic = 1)
 	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/mixedbouquet
+	name = "Mixed bouquet"
+	result = /obj/item/bouquet
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily =2,
+				/obj/item/grown/sunflower = 2,
+				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 2)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/sunbouquet
+	name = "Sunflower bouquet"
+	result = /obj/item/bouquet/sunflower
+	reqs = list(/obj/item/grown/sunflower = 6)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/poppybouquet
+	name = "Poppy bouquet"
+	result = /obj/item/bouquet/poppy
+	reqs = list (/obj/item/reagent_containers/food/snacks/grown/poppy = 6)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rosebouquet
+	name = "Rose bouquet"
+	result = /obj/item/bouquet/rose
+	reqs = list(/obj/item/grown/rose = 6)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -931,3 +915,59 @@
 		/datum/material/sand  = 1,
 		)
 	subcategory = CAT_MISCELLANEOUS
+
+
+/// Graveyard / Not Used
+
+/*
+/datum/crafting_recipe/electrochromatic_kit
+	name = "Electrochromatic Kit"
+	result = /obj/item/electronics/electrochromatic_kit
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/cable_coil = 1)
+	time = 5
+	subcategory = CAT_TOOL
+	category = CAT_MISC
+	always_available = FALSE
+
+/datum/crafting_recipe/heretic/codex
+	name = "Codex Cicatrix"
+	result = /obj/item/forbidden_book
+	tools = list(/obj/item/pen)
+	reqs = list(/obj/item/paper = 5,
+				/obj/item/organ/eyes = 1,
+				/obj/item/organ/heart = 1,
+				/obj/item/stack/sheet/animalhide/human = 1)
+	time = 150
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	always_available = FALSE
+
+/datum/crafting_recipe/plunger
+	name = "Plunger"
+	result = /obj/item/plunger
+	time = 1
+	reqs = list(/obj/item/stack/sheet/plastic = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_MISC
+	subcategory = CAT_TOOL
+
+/datum/crafting_recipe/rcl
+	name = "Makeshift Rapid Cable Layer"
+	result = /obj/item/rcl/ghetto
+	time = 40
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
+	subcategory = CAT_TOOL
+	category = CAT_MISC
+
+/datum/crafting_recipe/command_banner
+	name = "Command Banner"
+	result = /obj/item/banner/command/mundane
+	time = 40
+	reqs = list(/obj/item/stack/rods = 2,
+				/obj/item/clothing/under/rank/captain/parade = 1)
+	subcategory = CAT_FURNITURE
+	category = CAT_MISC
+
+*/

@@ -184,6 +184,14 @@
 		/obj/effect/spawner/lootdrop/f13/rare_melee = 30,
 		/obj/effect/spawner/lootdrop/f13/rare_energy = 30,
 		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps = 20
+	)
+
+/obj/effect/spawner/lootdrop/f13/very_rare
+	name = "very rare weapons"
+	loot = list(
+		/obj/effect/spawner/lootdrop/f13/very_rare_guns = 50, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/very_rare_energy = 50,
 	)
 
 ///////////////////////////////
@@ -202,7 +210,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,                   //78          4
 		/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol = 10,      // 78         20          *
 		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 8,               // 66         25
-		
+
 		//Single shot or meme weapons
 		/obj/item/gun/ballistic/revolver/hobo/piperifle = 2,                    //136         1
 //		/obj/item/gun/flintlock/musket/jezail = 3,                              //131         1
@@ -221,13 +229,14 @@
 /obj/effect/spawner/lootdrop/f13/common_guns
 	name = "common guns"
 	loot = list(                                                            // dps	mag cap     *staple
-		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20	
+		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 5,                 //151 32
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 6,            //151 10
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
-		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 9,         //85(140) 24
+		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
+		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
 		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 10,      //139 15
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
@@ -251,7 +260,7 @@
 		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 8,   //102 20
 		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 6,       //90 30
 		//sidearms
-		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7 
+		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
@@ -265,12 +274,12 @@
 	name = "uncommon guns"
 	loot = list(
 		//primary weapon candidates                                         //dps mag cap
-		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//265 24
-		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                      //265 20
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,         //249 20
-		/obj/item/gun/ballistic/automatic/autopipe = 10,                    //244 18
-		/obj/item/gun/ballistic/automatic/r84 = 10,                         //241 60
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
+		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
+		/obj/item/gun/ballistic/automatic/r84 = 9,                          //241 60
+		/obj/item/gun/ballistic/automatic/rifle47mm/china = 10,            //240.73 35
 		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 10,               //234 36
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//234 24
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
 		/obj/item/gun/ballistic/automatic/r93 = 10,                         //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
@@ -284,6 +293,7 @@
 		/obj/item/gun/ballistic/automatic/service/alr = 10,                 //199 20
 		/obj/item/gun/ballistic/automatic/marksman = 10,                    //199 20
 		/obj/item/gun/ballistic/automatic/aksmol = 10,                      //199 20
+		/obj/item/gun/ballistic/automatic/rifle47mm = 10,                    //196.25 35
 		/obj/item/gun/ballistic/automatic/sportcarbine = 10,                //186 32
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,              //181 20
 		/obj/item/gun/ballistic/automatic/service = 5,                      //181 20
@@ -293,14 +303,15 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
-		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 9,  //157 30
-		/obj/item/gun/ballistic/automatic/famas/pristine = 8,               //154 20
-		/obj/item/gun/ballistic/automatic/rpd = 7,                          //152 40
-		/obj/item/gun/ballistic/automatic/shotgun/riot = 5,                 //beanbags 8
+		/obj/item/gun/ballistic/rifle/antique/tankgun = 5,                  //168
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
+		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
+		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
+		/obj/item/gun/ballistic/automatic/democracy = 5,                     //151 20
+		/obj/item/gun/ballistic/automatic/shotgun/riot = 8,                 //beanbags 8
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 7,        //97 8 multicaliber, deceiving stats
 
 		//sidearms
-		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 2,          //254 1
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 3, 	//252 15
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 1,            //208 12
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 3,                  //198 12
@@ -315,16 +326,19 @@
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
-	loot = list(                                                          //dps mag cap
+	loot = list(                                                          //dps(bane) mag cap
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 7,                //281 24
 		/obj/item/gun/ballistic/automatic/concussive = 8,                 //281 8
 		/obj/item/gun/ballistic/automatic/unmcamr = 9,                    //279 4
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
 		/obj/item/gun/ballistic/automatic/m1919 = 10,                     //276 80
+		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                    //265 20
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
+		/obj/item/gun/ballistic/automatic/needlerhmg = 1,                 //243(448) 72
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
+		/obj/item/gun/ballistic/revolver/needlerrifle = 3,                 //220(520) 3
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
@@ -332,14 +346,15 @@
 		//wildcards and sidearms
 		/obj/item/gun/ballistic/rifle/mag/antimaterial = 3,               //152 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 1,        //254 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 3,  //113 12
-
 	)
 
 /// DPS should be 300+ or have some other excellent quality like magazine capacity
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
+		/obj/item/gun/ballistic/rifle/leespeedster = 5,                 //911 5
 		/obj/item/gun/ballistic/automatic/autopipe/special = 10,        //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 5,        //426 7
@@ -446,20 +461,27 @@
 ///energy weapon spawners///
 ////////////////////////////
 
+
+/// Note: Energy guns are weird. Please try and consider unique features (self recharging, shots per battery, Plasma/EMP, etc) along with DPS.
 /// DPS should be 100 or less ish
 /// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
 
-		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90 20
-		/obj/item/gun/energy/laser/aer12 = 10,              //90 20
-		/obj/item/gun/energy/laser/plasma/pistol = 10,      //88 10
-		/obj/item/gun/energy/laser/wattzs = 10,             //83 30
-		/obj/item/gun/energy/laser/pistol = 10,             //80 25
-		/obj/item/gun/energy/laser/aer9 = 10,               //80 20
-		/obj/item/gun/energy/laser/plasma = 10,             //80 12
+		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25 internal cell
+		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/pistol = 10,             //80  25
+		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
+		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50  125 internal cell
+
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/laser/plasma/pistol = 8,      //88 10 plasma
+		/obj/item/gun/energy/laser/plasma = 8,             //80 12 plasma
+		/obj/item/gun/energy/laser/aer12 = 8,              //90 20 efficient
+		/obj/item/gun/energy/laser/wattzs = 8,             //83 30 efficient
+		/obj/item/gun/energy/gammagun = 8,                 //62 25 rad damage
 	)
 
 /// DPS should be <= 150 ish
@@ -468,32 +490,32 @@
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
 		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
-		/obj/item/gun/energy/laser/LaserAK/worn = 10,               //133 30
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
-		/obj/item/gun/energy/laser/wattz2k = 10,                    //130 12
-		/obj/item/gun/energy/ionrifle = 10,                         //107 15
-		/obj/item/gun/energy/laser/wattz2ks = 10,                   //113 25
-		/obj/item/gun/energy/laser/laer = 10,                       //113 16
-		/obj/item/gun/energy/ionrifle/carbine = 10,                 //107 12
-		/obj/item/gun/energy/ionrifle/compact = 10,                 //107 10
+		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
+		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
+		/obj/item/gun/energy/ionrifle/carbine = 10,                 //107 12 EMP
+		/obj/item/gun/energy/ionrifle/compact = 10,                 //107 10 EMP
 		/obj/item/gun/energy/laser/aer14 = 10,                      //105 25
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 10, //100 24 self recharge
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,       //100 16 self recharge
-		/obj/item/gun/energy/laser/tg/recharger = 10,               //100 16 self recharge
-		/obj/item/gun/energy/laser/plasma/carbine = 10,             //100 20
-		/obj/item/gun/energy/laser/plasma/glock = 10,               //100 16
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,           //100 16
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
-		/obj/item/gun/energy/laser/retro = 5,                       //100 8 //Spawns with the worst power cell, but isn't bad
-		/obj/item/gun/energy/laser/plasma/bouncy = 1,               //93 20
-		/obj/item/gun/energy/laser/solar = 10,                      //90 16
-		/obj/item/gun/energy/laser/wattz/recharger = 1,             //83 20
-		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80 40
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80 24
+		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
+		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
+		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40 internal cell
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
+		/obj/item/gun/energy/laser/wattz/magneto = 8,              //87  16 efficient
+		/obj/item/gun/energy/laser/wattz2ks = 1,                   //113 25 AP, self recharge
+		/obj/item/gun/energy/laser/wattz/recharger = 5,            //83  20 recharger pistol, has fast recharge
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 8, //100 24 self recharge, EMP weakness, rad damage
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,      //100 16 self recharge, EMP weakness, rad damage
+		/obj/item/gun/energy/laser/tg/recharger = 7,               //100 16 self recharge
+		/obj/item/gun/energy/laser/LaserAK/worn = 8,               //133 30 self recharge
+		/obj/item/gun/energy/laser/solar = 8,                      //90  16 self recharge
+		/obj/item/gun/energy/laser/plasma/bouncy = 1,              //93  20 plasma, bouncy shots
 
 		//others
 		/obj/item/gun/energy/laser/complianceregulator = 5,         //330(690) 16 nonlethal
-		/obj/item/gun/energy/laser/scatter/nonlethal = 5,           //132 20 Nonlethal
 
 		//magic
 		/obj/item/gun/magic/wand/kelpmagic/firebolt = 2,
@@ -508,16 +530,18 @@
 	loot = list(                                                    //dps magcap
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
-		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60
-		/obj/item/gun/energy/laser/LaserAK = 10,                    //200 30
+		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80  24 internal cell
+		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
-		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 10,     //100 1
 
 		//sidearms
-		/obj/item/gun/energy/laser/plasma/pistol/eve = 5,           //150 10
-		/obj/item/gun/energy/laser/plasma/pistol/adam = 5,          //138 8
+		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
+		/obj/item/gun/energy/laser/plasma/pistol/adam = 8,          //138 8  plasma
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5,     //100 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/LaserAK = 5,                    //200 30 self charge
 
 		//magic
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 2,
@@ -529,9 +553,11 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/scatter/nonlethal = 10,            //132(276) 20 insane for pve wtf
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 10, //200 1
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,           //225 4
+		/obj/item/gun/energy/laser/scatter/nonlethal = 500,            //132(276) 20 insane for pve wtf
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500, //200 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,           //225 4
+		/obj/item/gun/medbeam/magic = 400,                             //000 inf medbeam
+		/obj/item/minigunpack = 1,                                     //??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
 	)
 
 ///////////////////////////
@@ -607,7 +633,7 @@
 		/obj/item/twohanded/sledgehammer/rockethammer = 10,
 		/obj/item/twohanded/thermic_lance = 10,
 		// /obj/item/melee/transforming/plasmacutter/sword = 5, // Commenting it out until its sprite is fixed.
-		
+
 		//uniques
 		/obj/item/melee/powerfist/f13/satfist = 5,
 		/obj/item/melee/unarmed/powerfist/goliath = 5,
@@ -621,32 +647,6 @@
 		/obj/item/dualsaber/hypereutactic = 5,
 	)
 
-//////////////////////////
-///unique weapon spawns///
-//////////////////////////
-
-/obj/effect/spawner/lootdrop/f13/common_unique
-	name = "common unique"
-	loot = list(
-	)
-
-/obj/effect/spawner/lootdrop/f13/uncommon_unique
-	name = "uncommon unique"
-	loot = list(
-		// /obj/item/gun/ballistic/automatic/recoilessrifle = 1, //Will ask community on ideas of a revamped recoiless rifle. Needs a complete overhaul of its niche abilities.
-		// /obj/item/gun/ballistic/automatic/m1garand/republicspride = 10, // Commenting out until its sprite is fixed.
-	)
-
-/obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
-	name = "rare unique"
-	loot = list(
-//		/obj/item/gun/ballistic/automatic/m72 = 4, //31 10 beyond trash tier
-	)
-
-/obj/effect/spawner/lootdrop/f13/very_rare_unique
-	name = "very rare unique"
-	loot = list(
-	)
 
 ////////////////////////////
 ///magazine ammo spawners///		each tier reflects the type of guns available in this tier
@@ -819,7 +819,6 @@
 /obj/effect/spawner/lootdrop/f13/common_medicine
 	name = "common medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 4,
@@ -834,7 +833,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine
 	name = "uncommon medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
+		/obj/item/reagent_containers/pill/bitterdrink = 10,
 		/obj/item/stack/medical/gauze = 10,
 		/obj/item/stack/medical/suture/five = 10,
 		/obj/item/reagent_containers/blood/radaway = 10,
@@ -852,8 +851,8 @@
 /obj/effect/spawner/lootdrop/f13/rare_medicine
 	name = "rare medicines"
 	loot = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 10,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 10,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 4,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 		/obj/item/stack/medical/gauze/adv = 10,
 		/obj/item/stack/medical/suture/medicated/five = 4,
 		/obj/item/stack/medical/mesh/advanced/five = 4,
@@ -886,9 +885,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
 		/obj/item/reagent_containers/pill/patch/jet = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/pill/patch/medx = 1,
+		/obj/item/reagent_containers/pill/patch/steady = 1,
+		/obj/item/reagent_containers/pill/patch/psycho = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 	)
 
@@ -897,9 +896,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -915,9 +914,9 @@
 	loot = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 		/obj/item/reagent_containers/pill/patch/jet = 10,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 4,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 4,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 4,
+		/obj/item/reagent_containers/pill/patch/medx = 4,
+		/obj/item/reagent_containers/pill/patch/steady = 4,
+		/obj/item/reagent_containers/pill/patch/psycho = 4,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 4,
 		/obj/item/reagent_containers/pill/patch/turbo = 4,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 4,
@@ -1017,7 +1016,6 @@
 		/obj/effect/spawner/bundle/f13/armor/riot = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 20,
 		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
@@ -1027,6 +1025,7 @@
 		/obj/item/clothing/suit/armor/medium/odstlead = 1,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
 		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 20
 	)
 
 //////////////////
@@ -1225,10 +1224,13 @@
 /obj/effect/spawner/lootdrop/f13/trash_mods
 	name = "trash attachments"
 	loot = list(
-		/obj/item/tool_upgrade/productivity/red_paint = 1,
+		/obj/item/tool_upgrade/paint/red = 1,
+		/obj/item/tool_upgrade/paint/blue = 1,
+		/obj/item/tool_upgrade/paint/yellow = 1,
 		/obj/item/tool_upgrade/refinement/laserguide = 1,
 		/obj/item/tool_upgrade/reinforcement/heatsink = 1,
 		/obj/item/gun_upgrade/trigger/raidertrigger = 1,
+//		/obj/item/gun_upgrade/cosmetic/gold = 1,
 		/obj/item/gun_upgrade/trigger/boom = 1,
 
 	)
@@ -1253,6 +1255,7 @@
 		/obj/item/gun_upgrade/scope/killer = 1,
 		/obj/item/gun_upgrade/mechanism/better = 1,
 		/obj/item/gun_upgrade/barrel/excruciator = 1,
+		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/tool_upgrade/reinforcement/guard = 1,
 		/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	)
@@ -1263,7 +1266,6 @@
 	loot = list(
 		/obj/item/gun_upgrade/barrel/blender = 1,
 		/obj/item/gun_upgrade/trigger/better = 1,
-		/obj/item/gun_upgrade/barrel/better = 1,
 		/obj/item/gun_upgrade/muzzle/better = 1,
 		/obj/item/gun_upgrade/scope/better = 1,
 		/obj/item/gun_upgrade/mechanism/battery_shunt = 1,

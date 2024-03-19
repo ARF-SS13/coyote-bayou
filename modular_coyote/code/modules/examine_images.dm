@@ -6,10 +6,13 @@ GLOBAL_LIST_INIT(pfp_filehost_prefix, list(
 									"catbox.moe" 	= "https://files.catbox.moe/",
 									"gyazo.com" 	= "https://i.gyazo.com/",
 ))
-GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
-									"catbox.moe" 	= ".png",
-									"gyazo.com" 	= ".png",
+GLOBAL_LIST_INIT(pfp_filehost_safe_suffixes, list(
+									".png",
+									".jpg"
 ))
+#define SUFFIX_LENGTH 4
+#define LEGACY_PREFIX ".png"
+
 // To future devs, don't bother trying to add Discord or Imgur to these lists as they don't allow external embeds
 
 
@@ -62,15 +65,13 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 	if(!(host in GLOB.pfp_filehosts))//you dun guffed up bucko
 		return 0
 	var/startURL = GLOB.pfp_filehost_prefix[host]
-	var/endURL = GLOB.pfp_filehost_suffix[host]
 
 	var/result = 1
 
 	if(!findtext(url, startURL, 1, length(startURL) + 1))
 		result = 0
 
-	var/offset = (length(url) + 1) - (length(endURL) + 2)
-	if(!findtext(url, endURL, offset))
+	if(!(copytext(url, -SUFFIX_LENGTH) in GLOB.pfp_filehost_safe_suffixes))
 		result = 0
 	
 	return result
@@ -80,9 +81,10 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 	if(!(host in GLOB.pfp_filehosts))
 		return ""
 	var/prefix = GLOB.pfp_filehost_prefix[host]
-	var/suffix = GLOB.pfp_filehost_suffix[host]
 
-	var/result = prefix + imageText + suffix
+	var/result = prefix + imageText
+	if (!(copytext(result, -SUFFIX_LENGTH) in GLOB.pfp_filehost_safe_suffixes))
+		result += LEGACY_PREFIX // Because Fenny is asking me to break legacy shit
 	return result
 
 /// Removes the prefix and suffix from the url, pretty much to make sure things are safe if things go bad, idk.
@@ -90,12 +92,8 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 	if(!(host in GLOB.pfp_filehosts))
 		return ""
 	var/prefix = GLOB.pfp_filehost_prefix[host]
-	var/suffix = GLOB.pfp_filehost_suffix[host]
 
 	var/output = copytext(url, (length(prefix) + 1)) // Removes the beggining of the url.
-
-	var/offset = length(output) - length(suffix)
-	output = copytext(output, 1, offset + 1) // Removes the .png on the end.
 
 	return output
 
@@ -201,12 +199,12 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 					else//you pressed Cancel
 						maybedeleteme = TRUE
 					if(pfphost && pfphost != "")
-						var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+						var/input = stripped_input(usr,"Right click a .png or .jpg image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
 						if(input && pfphost != "" && !isnull(pfphost))
 							if(SanitizePfpLink(input, pfphost))
 								profilePicture = StorePfpLink(input, pfphost)
 							else
-								to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
+								to_chat(usr, span_warning("Link is incorrect. Right click a .png or .jpg image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
 						else
 							maybedeleteme = TRUE
 					if(maybedeleteme)
@@ -223,12 +221,12 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 						creature_pfphost = ""
 						maybedeleteme = TRUE
 					if(creature_pfphost && creature_pfphost != "")
-						var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+						var/input = stripped_input(usr,"Right click a .png or .jpg image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
 						if(input && creature_pfphost != "" && !isnull(creature_pfphost))
 							if(SanitizePfpLink(input, creature_pfphost))
 								creature_profilepic = StorePfpLink(input, creature_pfphost)
 							else
-								to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
+								to_chat(usr, span_warning("Link is incorrect. Right click a .png or .jpg image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
 						else
 							maybedeleteme = TRUE
 					if(maybedeleteme)

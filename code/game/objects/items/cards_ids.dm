@@ -25,7 +25,7 @@
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
 
 /obj/item/card/proc/tabulate_value()
 	return 0
@@ -970,6 +970,14 @@
 	assignment = "badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
+
+/obj/item/card/id/dogtag/ranger
+	name = "ranger's badge"
+	desc = "A silver badge with special engravings to denote ranger status."
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /obj/item/card/id/dogtag/town
 	name = "citizenship permit"

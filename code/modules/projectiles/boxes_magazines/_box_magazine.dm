@@ -35,6 +35,7 @@
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
+	var/supposedly_a_problem = 0
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
@@ -54,8 +55,8 @@
 
 /obj/item/ammo_box/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_load))
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_load))
 
 /// An aheal, but for ammo boxes
 /obj/item/ammo_box/proc/admin_load()
@@ -188,6 +189,9 @@
 	if(istype(A, /obj/item/ammo_box/))
 		if(load_from_box(A, user, silent))
 			return TRUE
+	if(COOLDOWN_FINISHED(src, supposedly_a_problem) && istype(A, /obj/item/gun))
+		COOLDOWN_START(src, supposedly_a_problem, 1) // just a brief thing so that the game has time to load the thing before you try to load the thing again, thanks automatics
+		return A.attackby(src, user, params, silent, replace_spent)
 
 /obj/item/ammo_box/proc/load_from_box(obj/item/ammo_box/other_ammobox, mob/user, silent)
 	if(!istype(other_ammobox, /obj/item/ammo_box))

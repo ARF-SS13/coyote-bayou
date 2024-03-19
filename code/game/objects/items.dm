@@ -793,7 +793,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, messy_throw = TRUE)
 	set_thrownby(thrower)
-	callback = CALLBACK(src, .proc/after_throw, callback, (spin && messy_throw)) //replace their callback with our own
+	callback = CALLBACK(src,PROC_REF(after_throw), callback, (spin && messy_throw)) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
 
 /obj/item/proc/set_thrownby(new_thrownby)
@@ -801,7 +801,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		UnregisterSignal(thrownby, COMSIG_PARENT_QDELETING)
 	thrownby = new_thrownby
 	if(thrownby)
-		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING, .proc/thrownby_deleted)
+		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING,PROC_REF(thrownby_deleted))
 
 /obj/item/proc/thrownby_deleted(datum/source)
 	SIGNAL_HANDLER
@@ -982,7 +982,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if((item_flags & IN_INVENTORY) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr
-		tip_timer = addtimer(CALLBACK(src, .proc/openTip, location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
+		tip_timer = addtimer(CALLBACK(src,PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 
 /obj/item/MouseExited(location,control,params)
 	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_EXIT, location, control, params)
@@ -1010,7 +1010,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			delay = user.mind.item_action_skills_mod(src, delay, skill_difficulty, SKILL_USE_TOOL, null, FALSE)
 
 		// Create a callback with checks that would be called every tick by do_after.
-		var/datum/callback/tool_check = CALLBACK(src, .proc/tool_check_callback, user, amount, extra_checks)
+		var/datum/callback/tool_check = CALLBACK(src,PROC_REF(tool_check_callback), user, amount, extra_checks)
 
 		if(ismob(target))
 			if(!do_mob(user, target, delay, extra_checks=tool_check))
@@ -1282,3 +1282,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
 	. = ..()
+
+/obj/item/MouseDrop(mob/over, src_location, over_location)
+	var/mob/living/L = usr
+	if((L != over) && (isliving(over)))
+		var/mob/living/target = over
+		L.do_give(target)
+	return ..()

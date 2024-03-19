@@ -131,8 +131,8 @@
 
 /mob/living/simple_animal/nest_spawn_hole_guy/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/no_attack_pls)
-	RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE, .proc/im_hit)
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(no_attack_pls))
+	RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(im_hit))
 
 /mob/living/simple_animal/nest_spawn_hole_guy/update_overlays()
 	. = ..()
@@ -285,8 +285,10 @@
 
 GLOBAL_LIST_INIT(totally_not_carp, list(
 	/obj/structure/nest/ghoul = 8,
+	/obj/structure/nest/lesserspider = 5,
 	/obj/structure/nest/deathclaw = 3,
 	/obj/structure/nest/deathclaw/mother = 1,
+	/obj/structure/nest/greaterspider = 3,
 	/obj/structure/nest/scorpion = 3,
 	/obj/structure/nest/radroach = 5,
 	/obj/structure/nest/fireant = 3,

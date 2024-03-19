@@ -80,3 +80,59 @@
 //Chemical reaction flags, for determining reaction specialties
 #define REACTION_CLEAR_IMPURE       (1<<0)  //Convert into impure/pure on reaction completion
 #define REACTION_CLEAR_INVERSE      (1<<1)  //Convert into inverse on reaction completion when purity is low enough
+
+/// now a bunch of stuff for sodie pops!
+#define SODIE_TIER_1 1
+#define SODIE_TIER_2 2
+#define SODIE_TIER_3 3
+#define SODIE_TIER_4 4
+#define SODIE_TIER_5 5
+#define SODIE_TIER_MAX SODIE_TIER_5
+#define SODIE_HEALRANK_NONE 0
+#define SODIE_HEALRANK_LOW 0.5
+#define SODIE_HEALRANK_MED 1
+#define SODIE_HEALRANK_HIGH 1.5
+#define SODIE_HEALRANK_HIGHER 2
+#define SODIE_HEALRANK_HIGHEST 2.5
+#define SODIE_HEALRANK_MAX SODIE_HEALRANK_HIGH
+
+#define SODIE_BRUTE_COEFF 0.5
+#define SODIE_BRUTE(tier, rank) (SODIE_BRUTE_COEFF * tier * rank)
+#define SODIE_BURN_COEFF 0.5
+#define SODIE_BURN(tier, rank) (SODIE_BURN_COEFF * tier * rank)
+#define SODIE_TOXIN_COEFF 1
+#define SODIE_TOXIN(tier, rank) (SODIE_TOXIN_COEFF * tier * rank)
+#define SODIE_OXY_COEFF 1
+#define SODIE_OXY(tier, rank) (SODIE_OXY_COEFF * tier * rank)
+#define SODIE_BRAIN_COEFF 1.5
+#define SODIE_BRAIN(tier, rank) (SODIE_BRAIN_COEFF * tier * rank)
+
+///// OKAY HERES HOW THE WHOLE SODIE TIERING STHING WORKS
+// All sodie heals start at med heal rank in all categories
+// Base sodies are tier 1,
+
+// Sodies made from a simple mixture that's easy to make,
+// These are tier 2
+
+// Sodies made from a mixture that's a bit harder to make, 
+// Such as needing multiple steps or an upgraded machine
+// These are tier 3
+
+// Sodies made from a mixture that's even harder to make,
+// Or are somewhat dangerous to drink a lot of
+// These are tier 4
+
+// Sodies made from a mixture that's very hard to make,
+// Or are very dangerous to drink a lot of
+// These are tier 5
+
+// there are a few sodies: Cosmic, Vim, Sunset, Balls, and Atomic Red
+// Vim favors brute heals, cus its invigorating and toughens the guts
+// Sunset favors burn heals, cus its hecka refreshing
+// Cosmic cola favors toxin heals, cus its a bit radioactive
+// Balls favors oxygen and brain heals, cus got guarana for days
+// Atomic Red has a higher base heal rank, cus I put a lot of effort into making it and you're gonna drink it
+// Alcohol drinks have low or no toxin heals, but higher brute/burn heals
+// Fruity drinks have low or no brute/burn heals, but higher toxin heals, cus they're good for you
+
+

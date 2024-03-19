@@ -314,7 +314,6 @@
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = TRUE
-	pixels_per_second = TILES_TO_PIXELS(50)
 
 //Securitrons Beam
 /obj/item/projectile/beam/laser/pistol/ultraweak
@@ -631,6 +630,7 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 35
+	damage_type = BURN
 	damage_list = list( "34" = 30, "35" = 50, "50" = 20)
 	wound_bonus = 70 //being hit with plasma is horrific
 
@@ -658,6 +658,15 @@
 	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
 	light_color = LIGHT_COLOR_RED
 
+/obj/item/projectile/f13plasma/pistol/adam/simple //Adam
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	icon_state = "adam"
+	damage = 55
+	damage_list = list( "54" = 30, "55" = 50, "70" = 20)
+	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
+	light_color = LIGHT_COLOR_RED
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
+
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30
 
@@ -669,6 +678,7 @@
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 35
 	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
 
 /obj/item/projectile/beam/laser/rcw //RCW
 	name = "rapidfire beam"
@@ -990,6 +1000,12 @@
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
+
+/obj/item/projectile/beam/laser/tg/spam //ultra weak but spammy, duh
+	name = "blaster bolt"
+	damage = 10
+	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 //Laser AK projectiles
 /obj/item/projectile/beam/laser/tg/kalashheavy

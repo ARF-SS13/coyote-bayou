@@ -3,7 +3,7 @@
 	add_verb(src, /mob/living/verb/subtler)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -485,12 +485,12 @@
 		return
 	else
 		src.reset_perspective(T)
-		RegisterSignal(src, COMSIG_MOB_CLIENT_CHANGE_VIEW, .proc/stop_looking_up) //no binos/scops
-		RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_KNOCKDOWN, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_PARALYZE, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_UNCONSCIOUS, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_SLEEP, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_MOB_CLIENT_CHANGE_VIEW,PROC_REF(stop_looking_up)) //no binos/scops
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_KNOCKDOWN,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_PARALYZE,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_UNCONSCIOUS,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_SLEEP,PROC_REF(stop_looking_up))
 
 /mob/living/proc/stop_looking_up()
 	reset_perspective(null)
@@ -923,7 +923,7 @@
 	else
 		throw_alert("gravity", /atom/movable/screen/alert/weightless)
 	if(!override && !is_flying())
-		INVOKE_ASYNC(src, /atom/movable.proc/float, !has_gravity)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable,float), !has_gravity)
 
 /mob/living/float(on)
 	if(throwing)
@@ -1221,6 +1221,10 @@
 			amount *= 0.25
 		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
 			amount *= 0.5
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_WEAK))
+			amount *= 1.5
+		else if(HAS_TRAIT(src, TRAIT_100_RAD_WEAK))
+			amount *= 2
 
 	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
@@ -1566,10 +1570,7 @@
 //Coyote Add
 /mob/living/proc/despawn()
 	SSwho.KillCustoms(ckey, "despawned")
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)
@@ -1587,3 +1588,14 @@
 	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
 		. += ""
 		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+
+/mob/living/verb/handstand()
+	set category = "IC"
+	set name = "Perform Handstand "
+	set desc = "Button that turns your character upside down."
+
+	to_chat(src, span_notice("You try to perform a handstand."))
+	if(do_after(src, 1 SECONDS, target = src))
+		for(var/i in 1 to 180)  //I know this is awful
+			src.tilt_left()

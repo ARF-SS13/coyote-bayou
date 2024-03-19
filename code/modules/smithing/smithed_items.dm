@@ -103,9 +103,9 @@
 /obj/item/ingot/bronze
 	custom_materials = list(/datum/material/bronze=12000)
 
-/obj/item/ingot/ratvar
+/* /obj/item/ingot/ratvar
 	custom_materials = list(/datum/material/brass=12000)
-	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking."
+	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking." */
 
 /obj/item/ingot/bone
 	custom_materials = list(/datum/material/bone=12000)

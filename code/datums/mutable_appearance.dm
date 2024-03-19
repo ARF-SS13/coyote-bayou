@@ -16,5 +16,8 @@
 	MA.icon_state = icon_state
 	MA.layer = layer
 	MA.plane = plane
+	if(color == "rainbow")
+		MA.filters = filter(type="layer", x=rand(-16,16), y=0, icon='icons/effects/rainbow_gradient.dmi', blend_mode=BLEND_MULTIPLY)
+		return MA
 	MA.color = color
 	return MA

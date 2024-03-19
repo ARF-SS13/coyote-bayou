@@ -23,8 +23,8 @@
 	src.proctype = proctype
 	src.escape_on_find = escape_on_find
 
-	RegisterSignal(target, COMSIG_CLICK_ALT, .proc/mob_try_pickup, override = TRUE)
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/on_examine, override = TRUE)
+	RegisterSignal(target, COMSIG_CLICK_ALT,PROC_REF(mob_try_pickup), override = TRUE)
+	RegisterSignal(target, COMSIG_PARENT_EXAMINE,PROC_REF(on_examine), override = TRUE)
 
 /datum/element/mob_holder/Detach(datum/source, force)
 	. = ..()
@@ -33,7 +33,7 @@
 
 /datum/element/mob_holder/proc/on_examine(mob/living/source, mob/user, list/examine_list)
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder))
-		examine_list += span_notice("Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>!")
+		examine_list += span_notice("Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>! Maybe check in LOOC before just doing so though.")
 
 /datum/element/mob_holder/proc/mob_try_pickup(mob/living/source, mob/user)
 	if(!user.Adjacent(source) || user.incapacitated())
@@ -94,6 +94,10 @@
 	var/escape_on_find
 	/// the mob that picked us up!
 	var/datum/weakref/carrier
+	force = 25
+	force_wielded = 35
+	force_unwielded = 25
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/target, worn_state, alt_worn, right_hand, left_hand, slots = NONE)
 	. = ..()
@@ -114,11 +118,11 @@
 
 /obj/item/clothing/head/mob_holder/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_VORE_ATOM_DEVOURED, .proc/release_into_belly)
-	RegisterSignal(src, COMSIG_VORE_CAN_EAT, .proc/relay_caneat)
-	RegisterSignal(src, COMSIG_VORE_CAN_BE_EATEN, .proc/relay_can_be_eaten)
-	RegisterSignal(src, COMSIG_VORE_CAN_BE_FED_PREY, .proc/relay_can_be_fed)
-	RegisterSignal(src, COMSIG_VORE_SNIFF_LIVING, .proc/relay_sniff)
+	RegisterSignal(src, COMSIG_VORE_ATOM_DEVOURED,PROC_REF(release_into_belly))
+	RegisterSignal(src, COMSIG_VORE_CAN_EAT,PROC_REF(relay_caneat))
+	RegisterSignal(src, COMSIG_VORE_CAN_BE_EATEN,PROC_REF(relay_can_be_eaten))
+	RegisterSignal(src, COMSIG_VORE_CAN_BE_FED_PREY,PROC_REF(relay_can_be_fed))
+	RegisterSignal(src, COMSIG_VORE_SNIFF_LIVING,PROC_REF(relay_sniff))
 
 /obj/item/clothing/head/mob_holder/proc/relay_caneat()
 	return SEND_SIGNAL(held_mob, COMSIG_VORE_CAN_EAT)
@@ -185,11 +189,11 @@
 	if(!istype(grabber))
 		return
 	carrier = WEAKREF(grabber)
-	RegisterSignal(grabber, COMSIG_MOB_APPLY_DAMAGE, .proc/pass_damage) // OUR APC IS UNDER ATTACK
-	RegisterSignal(grabber, COMSIG_MOB_DEATH, .proc/release) // Oh no im dead
+	RegisterSignal(grabber, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(pass_damage)) // OUR APC IS UNDER ATTACK
+	RegisterSignal(grabber, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead
 	if(!held_mob)
 		return
-	RegisterSignal(held_mob, COMSIG_MOB_DEATH, .proc/release) // Oh no im dead 2
+	RegisterSignal(held_mob, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead 2
 
 /obj/item/clothing/head/mob_holder/dropped(mob/user)
 	. = ..()
@@ -203,7 +207,8 @@
 		L.forceMove(istype(here) && here != held_mob ? here : get_turf(L))
 		L.reset_perspective()
 		L.setDir(SOUTH)
-		L.SetAllImmobility(5 SECONDS, TRUE, TRUE)
+		if(!L.is_monophobia_pet)  //if it's a pet, don't stun it
+			L.SetAllImmobility(5 SECONDS, TRUE, TRUE)
 	if(!QDELETED(src))
 		qdel(src)
 

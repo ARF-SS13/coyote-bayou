@@ -230,7 +230,7 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language)
+	INVOKE_ASYNC(src,PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
@@ -307,7 +307,7 @@
 
 	// Non-subspace radios will check in a couple of seconds, and if the signal
 	// was never received, send a mundane broadcast (no headsets).
-	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
+	addtimer(CALLBACK(src,PROC_REF(backup_transmission), signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
@@ -498,7 +498,7 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "a rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
+	desc = "A rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone

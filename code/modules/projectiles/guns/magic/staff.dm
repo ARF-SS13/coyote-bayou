@@ -158,6 +158,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+	reskinnable_component = /datum/component/reskinnable/staff_kelpmagic
 	// NOTE: max_charges is the number of shots, recharge_rate is time to recharge a single charge.
 
 /* This segment is commented out because the original template is over in wand.dm; this is here just for ease of reference
@@ -219,10 +220,23 @@
 	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
 	icon_state = "firestaff"
 	max_charges = 1
-	recharge_rate = 120 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	recharge_rate = 27 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
+
+//Baby Fireball//
+/obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
+	name = "low power staff of fireball"
+	color = "#44FF00"
+	desc = "A simple staff topped with a cracked ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
+	icon_state = "firestaff"
+	max_charges = 1
+	recharge_rate = 10 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	slowdown = 1
+	fire_sound = 'sound/magic/fireball.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
+
 
 /****************/
 //Staff of Lightning//

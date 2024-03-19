@@ -199,6 +199,7 @@
 #define MOB_SPIRIT		(1 << 9)
 #define MOB_INORGANIC 	(1 << 10)
 #define MOB_FERAL		(1 << 11)
+#define MOB_SYNTH		(1 << 12)
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
@@ -437,7 +438,7 @@
 #define PIXELSHIFT_MIN		-12	//more shifted you can be
 #define PIXELSHIFT_MAX		12	//most shifted you can be
 #define AGE_MIN				18	//youngest a character can be //CITADEL EDIT - 17 --> 18
-#define AGE_MAX				85	//oldest a character can be
+#define AGE_MAX				999999999	// If I see one fucking loli dragon I am fucking exploding you people.
 #define WIZARD_AGE_MIN		30	//youngest a wizard can be
 #define APPRENTICE_AGE_MIN	29	//youngest an apprentice can be
 #define SHOES_SLOWDOWN		0	//How much shoes slow you down by default. Negative values speed you up
@@ -645,6 +646,16 @@
 #define PHUD_SHIRT "GENITAL_HUD_SHIRT"
 #define PHUD_PANTS "GENITAL_HUD_PANTS"
 #define PHUD_SOCKS "GENITAL_HUD_SOCKS"
+#define GENITAL_LAYER_OFFSET 0.1  // keep genitals close to the body
+#define SOCKS_LAYER_OFFSET 0.2   // undies go over genitals (sometimes)
+#define PANTS_LAYER_OFFSET 0.21   // undies go over genitals (sometimes)
+#define SHIRT_LAYER_OFFSET 0.22   // undies go over genitals (sometimes)
+#define WINGS_LAYER_OFFSET 0.3    // wings go over undies and genitals
+#define TAIL_LAYER_OFFSET 0.4     // Tail on the outermost of everything
+#define MUTANT_PORNHUD_WINGS "wings","wingsopen","deco_wings","insect_wings","insect_fluff"
+#define MUTANT_PORNHUD_TAIL "tail", "tailwag", "mam_tail", "mam_tail_animated", "tail_lizard", "tail_human", "spines" ,"waggingtail_human" ,"waggingtail_lizard" ,"waggingspines" ,"mam_waggingtail", "xenotail"
+
+#define MUTANT_PORNHUD_PARTS MUTANT_PORNHUD_TAIL, MUTANT_PORNHUD_WINGS // WHY YES WE DO NEED 5 SEPARATE tails THAT ARE IDENTICAL< WHY DO YOU ASK??
 //Gremlins
 #define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again
 #define NPC_TAMPER_ACT_NOMSG  2 //Don't produce a visible message

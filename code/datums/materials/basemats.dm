@@ -294,7 +294,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = -0.15
 	texture_layer_icon_state = "runed"
 
-/datum/material/brass
+/*/datum/material/brass
 	name = "brass"
 	desc = "Tybel gb-Ratvar"
 	color = "#917010"
@@ -304,6 +304,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.75
 	armor_modifiers = list("melee" = 1.4, "bullet" = 1.4, "laser" = 0, "energy" = 0, "bomb" = 1.4, "bio" = 1.2, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5) //But it has.. a few problems that can't easily be compensated for.
 	beauty_modifier = 0.3 //It really beats the cold plain plating of the station, doesn't it?
+*/
 
 /datum/material/bronze
 	name = "black bronze"
@@ -417,7 +418,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	sheet_type = /obj/item/stack/sheet/animalhide/gecko
 
 /datum/material/molerathide
-	name = "molerat leather"
+	name = "Giant rat leather"
 	desc = "A common leather, akin to old pigskin."
 	sheet_type = /obj/item/stack/sheet/animalhide/molerat
 

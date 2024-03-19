@@ -46,7 +46,7 @@
 	debris_velocity = _debris_velocity
 	debris_amount = _debris_amount
 	debris_scale = _debris_scale
-	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT,.proc/register_for_impact)
+	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT, PROC_REF(register_for_impact))
 
 /datum/element/debris/Detach(datum/source, force)
 	. = ..()
@@ -55,7 +55,7 @@
 /datum/element/debris/proc/register_for_impact(datum/source, what_should_be_a_projectile) // WHY DOES THIS NOT FUCKING WORK, WHY CAN I NOT JUST FUCKING TELL THIS WHAT THE VARIABLE TYPE IS HERE
 	SIGNAL_HANDLER
 	var/obj/item/projectile/proj = what_should_be_a_projectile
-	INVOKE_ASYNC(src, .proc/on_impact, source, proj)
+	INVOKE_ASYNC(src, PROC_REF(on_impact), source, proj)
 
 /datum/element/debris/proc/on_impact(datum/source, obj/item/projectile/P)
 	var/angle = round(Get_Angle(P.starting, source), 1)
@@ -79,7 +79,7 @@
 		debris_visuals.particles.spawning = debris_amount
 		debris_visuals.particles.scale = debris_scale
 	smoke_visuals.layer = ABOVE_OBJ_LAYER + 0.01
-	addtimer(CALLBACK(src, .proc/remove_ping, src, smoke_visuals, debris_visuals), 0.7 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(remove_ping), src, smoke_visuals, debris_visuals), 0.7 SECONDS)
 
 /datum/element/debris/proc/remove_ping(hit, obj/effect/abstract/particle_holder/smoke_visuals, obj/effect/abstract/particle_holder/debris_visuals)
 	QDEL_NULL(smoke_visuals)

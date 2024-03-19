@@ -72,7 +72,7 @@
 /obj/item/gun/energy/laser/retro //lets see if these changes don't break horribly
 	name ="retro laser gun"
 	icon_state = "retro"
-	desc = "A compact laser gun in a stylish old Design. its smooth edges make it perfect for fitting in a boot."
+	desc = "A classic and compact laser gun. Powerful and compact, it'll fit anywhere from a pocket to a boot. The design, however, means it's less efficient than other energy handguns."
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -281,7 +281,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
-	selfchargerate = 20
+	selfchargerate = 2 SECONDS
 	icon_state = "rechargerpistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
@@ -405,7 +405,7 @@
 	can_charge = 0
 	can_remove = 0 // If it self-charges, you can't remove it.
 	selfcharge = 1
-	selfchargerate = 20 // X*2 seconds to refill the cell
+	selfchargerate = 2 SECONDS // X*20 seconds to refill the cell
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 	weapon_class = WEAPON_CLASS_SMALL
@@ -561,6 +561,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = TRUE
 	zoom_factor = 1.1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
@@ -626,7 +627,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
-	selfchargerate = 20
+	selfchargerate = 2 SECONDS
 
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -714,6 +715,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
 /obj/item/gun/energy/laser/scatter/laserbuss
 	name = "Laserbuss"
 	desc = "A questionably-designed tribeam laser rifle that has been modified to feature a dense array of emitters and scatter lenses."
@@ -848,9 +850,31 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+// Laser AKM
+/obj/item/gun/energy/laser/LaserAK
+	name = "Kalashnikov 470"
+	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
+	icon_state = "LaserAK"
+	item_state = null
+	selfchargerate = 6 SECONDS
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashheavy)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = LASER_AUTORIFLE_RECOIL(1.5, 1)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
 //Gatling Laser
-
-
 //The ammo/gun is stored in a back slot item
 /obj/item/minigunpack
 	name = "backpack power source"
@@ -943,6 +967,7 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	flags_1 = CONDUCT_1
+	can_charge = 0 // Fixes a bug where you can stick the gun in a recharger but magically pull it out, letting you infinitely charge the weapon on the go
 	slot_flags = null
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -954,6 +979,7 @@
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpack/ammo_pack
 	init_firemodes = list(
+		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm300
 	)
 	init_recoil = HMG_RECOIL(1, 1)
@@ -1018,6 +1044,7 @@
 	can_charge = 1
 	can_flashlight = 0
 	can_scope = TRUE
+	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -1152,7 +1179,7 @@
 	can_flashlight = 0
 	can_scope = FALSE
 	selfcharge = 1
-	selfchargerate = 25
+	selfchargerate = 2.5 SECONDS
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
 /* * * * * *
@@ -1168,7 +1195,7 @@
 	icon_state = "nucpistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear)
-	selfchargerate = 20
+	selfchargerate = 2 SECONDS
 	var/fail_tick = 0
 	var/fail_chance = 0
 
@@ -1234,7 +1261,7 @@
 	flight_y_offset = 10
 	can_scope = TRUE
 	selfcharge = 1
-	selfchargerate = 25
+	selfchargerate = 2.5 SECONDS
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/two,
@@ -1263,6 +1290,28 @@
 	)
 
 /* * * * * *
+ * TG Not-Calico
+ * Compact RCW but TG blaster style, and not so compact
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/spamlaser
+	name = "repeating blaster"
+	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
+	icon_state = "spamlaser"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	can_flashlight = 0
+	can_scope = FALSE
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/spam)
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
+/* * * * * *
  * XCOM UFO Defense Lasrifle
  * Self-charging RNG heavy gun
  * Unique
@@ -1285,7 +1334,7 @@
 	can_remove = 0
 	max_upgrades = 0  //The gun is too unstable to mod
 	selfcharge = 1
-	selfchargerate = 5
+	selfchargerate = 0.5 SECONDS
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 		/datum/firemode/burst/three/slower
@@ -1374,35 +1423,12 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
-/obj/item/gun/energy/laser/LaserAK
-	name = "Kalashnikov 470"
-	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
-	can_remove = 0
-	can_charge = 0
-	selfcharge = 1
-	icon_state = "LaserAK"
-	item_state = null
-	selfchargerate = 40
-	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashheavy)
-	ammo_x_offset = 4
-	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
-	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	init_recoil = LASER_AUTORIFLE_RECOIL(1.5, 1)
-	init_firemodes = list(
-	/datum/firemode/automatic/rpm150,
-	/datum/firemode/semi_auto,
-	)
-
-//Generic Laser AK, also loot
+//Generic Laser AK; is also loot
 /obj/item/gun/energy/laser/LaserAK/worn
 	name = "Kalashnikov 740"
 	desc = "An attempt by the Soviet Union to update the AK470's design for the modern era. While it's easier to control and recharges quicker, most users lament the loss in firepower."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashlight)
-	selfchargerate = 25
+	selfchargerate = 3.2 SECONDS
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm200,
 	/datum/firemode/semi_auto,
@@ -1419,7 +1445,7 @@
 	name = "prototype nuclear rifle"
 	desc = "A surviving prototype of the CDC's PANDORA-model nuclear laser rifle. The reactor in the foregrip seems dim, though still functional. It looks like there used to be a label above the grip, but it's long since been torn off."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn)
-	selfchargerate = 30
+	selfchargerate = 3 SECONDS
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 //// BETA /// Obsolete

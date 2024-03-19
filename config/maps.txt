@@ -14,11 +14,11 @@ Format:
 endmap
 
 map pahrump-everything
-	adminonly
+	default
 endmap
 
 map pahrump-only
-    default
+    adminonly
 endmap
 
 map pahrump-garland
@@ -42,5 +42,9 @@ map pahrump-rocksprings-garland
 endmap
 
 map pahrump-rocksprings-redriver
+    adminonly
+endmap
+
+map pahrump-newboston
     adminonly
 endmap

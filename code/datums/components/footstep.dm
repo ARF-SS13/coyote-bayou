@@ -32,7 +32,7 @@
 		if(FOOTSTEP_MOB_HUMAN)
 			if(!ishuman(parent))
 				return COMPONENT_INCOMPATIBLE
-			RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_humanstep)
+			RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(play_humanstep))
 			return
 		if(FOOTSTEP_MOB_CLAW)
 			footstep_sounds = GLOB.clawfootstep
@@ -48,7 +48,7 @@
 			footstep_sounds = 'sound/effects/footstep/crawl1.ogg'
 		if(FOOTSTEP_MOB_HOOF)
 			footstep_sounds = 'modular_coyote/sound/mobsounds/horsestep.ogg'
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_simplestep) //Note that this doesn't get called for humans.
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
 /datum/component/footstep/proc/prepare_step()
@@ -140,9 +140,16 @@
 				playsound(T, 'sound/effects/footstep/crawl1.ogg', 50 * volume)
 				return
 		special = TRUE
-	else
-		var/feetCover = (H.wear_suit && (H.wear_suit.body_parts_covered & FEET)) || (H.w_uniform && (H.w_uniform.body_parts_covered & FEET) || (H.shoes && (H.shoes.body_parts_covered & FEET)))
-		if(feetCover) //are we wearing shoes
+	if(!special)
+		var/obj/feetCover
+		//Clothes are like onions, which are like ogres, which are green, and you know what else is green? This comment.
+		if(H?.wear_suit?.body_parts_covered & FEET)
+			feetCover = H.wear_suit
+		else if(H?.w_uniform?.body_parts_covered & FEET)
+			feetCover = H.w_uniform
+		else if(H?.shoes?.body_parts_covered & FEET)
+			feetCover = H.shoes
+		if(feetCover && !HAS_TRAIT_FROM(feetCover, TRAIT_NODROP, FEET_REPLACEMENT_TRAIT)) //are we wearing "shoes" that aren't feet replacers, whatever that means
 			playsound(T, pick(GLOB.footstep[T.footstep][1]),
 				GLOB.footstep[T.footstep][2] * volume,
 				TRUE,
@@ -158,6 +165,7 @@
 			TRUE,
 			L[turf_footstep][3] + e_range,
 			ignore_walls = TRUE)
+
 //fortuna edit. power armor sound check proc
 /datum/component/footstep/proc/powerarmorcheck()
 	var/mob/living/carbon/human/P = parent

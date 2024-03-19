@@ -68,8 +68,7 @@
 
 #define GRASS_SPONTANEOUS 		  	2
 #define GRASS_WEIGHT			  	8
-/// Percent chance to spawn a medicinal plant instead of a regular grass, bush, etc.
-#define MEDICINAL_PLANT_CHANCE		10
+#define RAND_PLANT_CHANCE			50
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
@@ -95,14 +94,12 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	/obj/structure/flora/wasteplant/fever_blossom = 10,
 	))
 
-GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
+GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/grass/wasteland = 150,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
 	/obj/structure/flora/brushwoodalt = 1,
-	/obj/structure/flora/tree/med_pine = 7,
-	/obj/structure/flora/tree/med_pine_dead = 7,
 	/obj/structure/flora/grass/coyote/one = 1,
 	/obj/structure/flora/grass/coyote/two = 1,
 	/obj/structure/flora/grass/coyote/three = 1,
@@ -148,6 +145,14 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	/obj/structure/flora/ausbushes/pointybush = 2,
 	/obj/structure/flora/ausbushes/leafybush = 2,
 	/obj/structure/flora/ausbushes/fernybush = 2,
+	/obj/structure/flora/burnedtree1 = 2,
+	/obj/structure/flora/burnedtree2 = 2,
+	/obj/structure/flora/burnedtree5 = 2,
+	))
+
+GLOBAL_LIST_INIT(tree_plant_list, list(
+	/obj/structure/flora/tree/jungle = 15,
+	/obj/structure/flora/tree/jungle/small = 15,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
 	/obj/structure/flora/tree_stump = 5,
@@ -158,12 +163,15 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	/obj/structure/flora/tree/oak_three = 5,
 	/obj/structure/flora/tree/oak_four = 5,
 	/obj/structure/flora/tree/oak_five = 5,
-	/obj/structure/flora/burnedtree1 = 2,
-	/obj/structure/flora/burnedtree2 = 2,
-	/obj/structure/flora/burnedtree5 = 2,
-	/obj/structure/flora/tree/jungle = 25,
-	/obj/structure/flora/tree/jungle/small = 25,
+	/obj/structure/flora/tree/med_pine = 7,
+	/obj/structure/flora/tree/med_pine_dead = 7,
 	))
+
+GLOBAL_LIST_INIT(plant_type_weighted, list(
+	"grass" = 50,
+	"medicinal" = 10,
+	"tree" = 10,
+))
 
 /turf/open/indestructible/ground/outside/dirthole
 	name = "Dirt hole"
@@ -353,8 +361,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 /turf/open/indestructible/ground/outside/dirt/Initialize()
 	. = ..()
 	if(icon_state == "dirtfull")
-		var/MM = text2num(time2text(world.timeofday, "MM"))
-		if(MM == 12 || MM == 1 || MM == 2)
+		if(SSweather.snowy_time)
 			name = "snow"
 			icon = 'icons/fallout/turfs/dirt.dmi'
 			icon_state = "snow[rand(0,12)]"
@@ -555,6 +562,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "cave"
 	icon_state = "rockfloor1"
 	icon = 'icons/fallout/turfs/mining.dmi'
+	footstep = FOOTSTEP_SAND
 //	allowed_plants = list(/obj/item/seeds/glow)
 //	step_sounds = list("human" = "erikafootsteps")
 
@@ -647,6 +655,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "road"
 	icon_state = "innermiddle"
 	icon = 'icons/fallout/turfs/asphaltdirt.dmi'
+	footstep = FOOTSTEP_ROAD
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalkdirt

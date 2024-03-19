@@ -550,7 +550,7 @@ CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
 ## 0 Disables Border Control
 ## 1 Puts Border Control into 'learning mode' and will have it automatically whitelist new connections
 ## 2 Puts Border Control into 'enforcing mode' and will have it deny connections that are not already whitelisted.
-BORDER_CONTROL 2
+BORDER_CONTROL 0
 
 ## Image Previews used for examining humans!
 ## _P stands for prefix, and _S stands for suffix.

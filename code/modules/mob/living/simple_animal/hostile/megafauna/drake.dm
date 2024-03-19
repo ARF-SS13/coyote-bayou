@@ -51,8 +51,8 @@ Difficulty: Medium
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	speak_emote = list("roars")
-	melee_damage_lower = 40
-	melee_damage_upper = 40
+	melee_damage_lower = 50
+	melee_damage_upper = 100
 	speed = 1
 	move_to_delay = 5
 	ranged = 1
@@ -111,20 +111,19 @@ Difficulty: Medium
 		return
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + ranged_cooldown_time
-
-	if(prob(15 + anger_modifier) && !client)
+	if(client)
+		return
+	if(prob(15 + anger_modifier))
 		if(health < maxHealth/2)
-			INVOKE_ASYNC(src, .proc/swoop_attack, TRUE, null, 50)
+			INVOKE_ASYNC(src,PROC_REF(swoop_attack), TRUE, null, 50)
 		else
 			fire_rain()
 
-	else if(prob(10+anger_modifier) && !client)
-		if(health > maxHealth/2)
-			INVOKE_ASYNC(src, .proc/swoop_attack)
-		else
-			INVOKE_ASYNC(src, .proc/triple_swoop)
 	else
-		fire_walls()
+		if(health > maxHealth/2)
+			INVOKE_ASYNC(src,PROC_REF(swoop_attack))
+		else
+			INVOKE_ASYNC(src,PROC_REF(triple_swoop))
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_rain()
 	var/atom/my_target = get_target()
@@ -135,11 +134,12 @@ Difficulty: Medium
 		if(prob(11))
 			new /obj/effect/temp_visual/target(turf)
 
+/*
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_walls()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)
 
 	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/fire_wall, d)
+		INVOKE_ASYNC(src,PROC_REF(fire_wall), d)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_wall(dir)
 	var/list/hit_things = list(src)
@@ -160,6 +160,7 @@ Difficulty: Medium
 			hit_things += L
 		previousturf = J
 		sleep(1)
+*/
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/triple_swoop()
 	swoop_attack(swoop_duration = 30)
@@ -314,7 +315,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/target/Initialize(mapload, list/flame_hit)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, flame_hit)
+	INVOKE_ASYNC(src,PROC_REF(fall), flame_hit)
 
 /obj/effect/temp_visual/target/proc/fall(list/flame_hit)
 	var/turf/T = get_turf(src)
@@ -360,7 +361,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/flight, negative)
+	INVOKE_ASYNC(src,PROC_REF(flight), negative)
 
 /obj/effect/temp_visual/dragon_flight/proc/flight(negative)
 	if(negative)

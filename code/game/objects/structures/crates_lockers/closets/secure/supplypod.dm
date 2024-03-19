@@ -38,7 +38,7 @@
 		SupplyOrder = SO//uses Supply Order passed from expressconsole into BDPtarget
 	else
 		other_delivery = SO//if the object is not a supply order, we force the object in the pod
-	addtimer(CALLBACK(src, .proc/open), 30)//open 3seconds after appearing
+	addtimer(CALLBACK(src,PROC_REF(open)), 30)//open 3seconds after appearing
 
 /obj/structure/closet/supplypod/update_icon()
 	cut_overlays()
@@ -63,7 +63,7 @@
 	update_icon()
 	playsound(src, open_sound, 15, 1, -3)
 	if(istype(src,/obj/structure/closet/supplypod/bluespacepod))
-		addtimer(CALLBACK(src, .proc/sparks), 30)//if bluespace, then 3 seconds after opening, make some sparks and delete
+		addtimer(CALLBACK(src,PROC_REF(sparks)), 30)//if bluespace, then 3 seconds after opening, make some sparks and delete
 
 /obj/structure/closet/supplypod/proc/sparks()//sparks cant be called from addtimer
 	do_sparks(5, TRUE, src)
@@ -115,12 +115,12 @@
 		if(POD_CENTCOM)			//Admin smite, even faster.
 			delayTime = 5//speedy delivery
 
-	addtimer(CALLBACK(src, .proc/beginLaunch, SO, podID), delayTime)//standard pods take 3 seconds to come in, bluespace pods take 1.5
+	addtimer(CALLBACK(src,PROC_REF(beginLaunch), SO, podID), delayTime)//standard pods take 3 seconds to come in, bluespace pods take 1.5
 
 /obj/effect/DPtarget/proc/beginLaunch(SO, podID)
 	fallingPod = new /obj/effect/temp_visual/DPfall(drop_location(), podID)
 	animate(fallingPod, pixel_z = 0, time = 3, easing = LINEAR_EASING)//make and animate a falling pod
-	addtimer(CALLBACK(src, .proc/endLaunch, SO, podID), 3, TIMER_CLIENT_TIME)//fall 0.3seconds
+	addtimer(CALLBACK(src,PROC_REF(endLaunch), SO, podID), 3, TIMER_CLIENT_TIME)//fall 0.3seconds
 
 /obj/effect/DPtarget/proc/endLaunch(SO, podID)
 	if(podID == POD_STANDARD)

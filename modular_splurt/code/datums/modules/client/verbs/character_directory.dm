@@ -1,5 +1,5 @@
 GLOBAL_DATUM(character_directory, /datum/character_directory)
-GLOBAL_LIST_INIT(char_directory_tags, list("Pred", "Pred-Pref", "Prey", "Prey-Pref", "Switch", "Non-Vore", "Unset"))
+GLOBAL_LIST_INIT(char_directory_vore_tags, list("Pred", "Pred-Pref", "Prey", "Prey-Pref", "Switch", "Non-Vore", "Unset"))
 GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP", "Unset"))
 
 /client
@@ -41,6 +41,16 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		data["personalVisibility"] = user.client.prefs.show_in_directory
 		data["personalTag"] = user.client.prefs.directory_tag || "Unset"
 		data["personalErpTag"] = user.client.prefs.directory_erptag || "Unset"
+		var/adtext = user.client.prefs.directory_ad
+		if(LAZYLEN(adtext) > 85)
+			adtext = copytext(adtext, 1, 128) + "..."
+		else if(!adtext)
+			adtext = "Unset"
+		data["personalAdvert"] = adtext
+		var/fucktext = user.client.prefs.features["flist"]
+		if(!fucktext)
+			fucktext = "Unset"
+		data["personalFlist"] = fucktext || "Unset"
 		data["prefsOnly"] = TRUE
 
 	data["canOrbit"] = isobserver(user)
@@ -59,22 +69,40 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 
 		// These are the three vars we're trying to find
 		// The approach differs based on the mob the client is controlling
-		var/name = null
-		var/species = null
-		var/ooc_notes = null
-		var/flavor_text = null
-		var/tag
-		var/erptag
-		var/character_ad
 		var/ref = REF(C?.mob)
 		var/mob/M = C?.mob
+		if(!M)
+			continue
+		var/name = C.prefs.real_name || M.real_name || M.name
+		var/thegender = capitalize(C.prefs.gender || M.gender || "Other")
+		var/whokisser = "Unsure"
+		var/species
+		var/ooc_notes = null
+		var/flavor_text = null
+		var/tag = "Unset"
+		var/erptag = "Unset"
+		var/character_ad = "Unset"
+		var/fucklist = "Unset"
 		tag = C.prefs.directory_tag || "Unset"
 		erptag = C.prefs.directory_erptag || "Unset"
 		character_ad = C.prefs.directory_ad
-
-		name = M?.real_name
+		if(C) // clients are squirly thing
+			switch(C.prefs.kisser)
+				if(KISS_BOYS)
+					whokisser = "Likes Boys"
+				if(KISS_GIRLS)
+					whokisser = "Likes Girls"
+				if(KISS_ANY)
+					whokisser = "Likes Anyone"
+				if(KISS_NONE)
+					whokisser = "Not Interested"
+		
 		if((isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
 			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+		// It's okay if we fail to find OOC notes and flavor text
+		// But if we can't find the name, they must be using a non-compatible mob type currently.
+		if(!name)
+			continue
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
@@ -82,15 +110,14 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		else if(isanimal(M))
 			var/mob/living/simple_animal/SA = M
 			species = initial(SA.name)
+		else
+			species = C.prefs.pref_species
 		if(!species)
-			species = "Resident"
+			species = "[GLOB.megacarp_first_names] [GLOB.megacarp_last_names]"
 		ooc_notes = C.prefs.features["ooc_notes"]
 		flavor_text = C.prefs.features["flavor_text"]
 
-		// It's okay if we fail to find OOC notes and flavor text
-		// But if we can't find the name, they must be using a non-compatible mob type currently.
-		if(!name)
-			continue
+		fucklist = C.prefs.features["flist"] || FALSE
 
 		directory_mobs.Add(list(list(
 			"name" = name,
@@ -100,7 +127,10 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"erptag" = erptag,
 			"character_ad" = character_ad,
 			"flavor_text" = flavor_text,
-			"ref" = ref
+			"ref" = ref,
+			"gender" = thegender,
+			"whokisser" = whokisser,
+			"flist" = fucklist,
 		)))
 
 	data["directory"] = directory_mobs
@@ -121,7 +151,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		if("refresh")
 			// This is primarily to stop malicious users from trying to lag the server by spamming this verb
 			if(!COOLDOWN_FINISHED(user.client, char_directory_cooldown))
-				to_chat(user, "<span class='warning'>Don't spam character directory refresh.</span>")
+				to_chat(user, span_alert("Hold your horses! Its still refreshing!"))
 				return
 			COOLDOWN_START(user.client, char_directory_cooldown, 10)
 			update_static_data(user, ui)
@@ -135,6 +165,12 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			ghost.ManualFollow(poi)
 			ghost.reset_perspective(null)
 			return TRUE
+		if("view_flist")
+			var/ref = params["ref"]
+			var/atom/movable/poi = (locate(ref) in GLOB.mob_list) || (locate(ref) in GLOB.poi_list)
+			if (poi == null)
+				return TRUE
+			return SEND_SIGNAL(poi, COMSIG_FLIST, user)
 		else
 			return check_for_mind_or_prefs(user, action, params["overwrite_prefs"])
 
@@ -149,7 +185,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		return
 	switch(action)
 		if ("setTag")
-			var/list/new_tag = input(user, "Pick a new Vore tag for the character directory", "Character Tag") as null|anything in GLOB.char_directory_tags
+			var/list/new_tag = input(user, "Pick a new Vore tag for the character directory", "Character Tag") as null|anything in GLOB.char_directory_vore_tags
 			if(!new_tag)
 				return
 			return set_for_mind_or_prefs(user, action, new_tag)
@@ -169,6 +205,13 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 				to_chat(user, span_notice("Okay! Your ad has not been changed!"))
 				return
 			return set_for_mind_or_prefs(user, action, new_ad)
+		if ("editFlist")
+			var/current_flist = user.client.prefs.features["flist"]
+			var/new_flist = stripped_input(user, "Change your character flist", "Character Flist", current_flist, 256) // flist links are less than 256 characters, right?
+			if(isnull(new_flist))
+				to_chat(user, span_notice("Okay! Your flist has not been changed!"))
+				return
+			return set_for_mind_or_prefs(user, action, new_flist)
 		else
 			to_chat(user, span_warning("You can only make temporary changes while in game"))
 
@@ -187,6 +230,16 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			P.show_in_directory = new_value
 		if ("editAd")
 			P.directory_ad = new_value
+		if ("editFlist")
+			if(!length(new_value))
+				P.features["flist"] = ""
+				to_chat(usr, span_alert("Removed the previous F-list link."))
+			else if(findtext(new_value, "https://www.f-list.net"))  //we want to avoid malicious links, so let's check if it's actually a valid link first
+				P.features["flist"] = new_value
+				to_chat(usr, span_green("F-list link added!"))
+			else
+				P.features["flist"] = ""
+				to_chat(usr, span_alert("This is not a correct F-list link!"))
 	P.save_character()
 	return TRUE
 

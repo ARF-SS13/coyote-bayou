@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(radturf)
 
 /// the irradiated tile got changed and its component deleted, check back in a split second and apply a new one there
 /datum/controller/subsystem/radturf/proc/tile_got_changed(turf_coords, list/puddles, new_rads)
-	addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, 5), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
+	addtimer(CALLBACK(src,PROC_REF(add_radtile), turf_coords, puddles, new_rads, 5), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
 
 /datum/controller/subsystem/radturf/proc/add_radtile(turf_coords, list/puddles, new_rads, tries = 5)
 	if(new_rads <= 0) // idk
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(radturf)
 	/// the new turf either doesnt exist, or is still being replaced, check back in another split second
 	if(!new_turf || QDELETED(new_turf))
 		if(tries)
-			addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, tries - 1), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
+			addtimer(CALLBACK(src,PROC_REF(add_radtile), turf_coords, puddles, new_rads, tries - 1), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
 		return // okay fine, there's a hole to nothing right here, fucking, cool.
 	// the component itself will figure out of its puddles are still good or not at some point, not our concern
 	if(SEND_SIGNAL(new_turf, COMSIG_TURF_CHECK_RADIATION)) // okay check if there's still a component there first

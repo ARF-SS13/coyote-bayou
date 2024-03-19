@@ -73,7 +73,7 @@
 #define EXP_TYPE_ANTAG			"Antag"
 #define EXP_TYPE_SPECIAL		"Special"
 #define EXP_TYPE_GHOST			"Ghost"
-#define EXP_TYPE_BIKER			"Ashdown Overlook"
+//#define EXP_TYPE_BIKER			"Ashdown Overlook"
 #define EXP_TYPE_ADMIN			"Admin"
 //f13 stuff
 #define EXP_TYPE_FALLOUT		"Fallout"
@@ -89,7 +89,7 @@
 #define EXP_TYPE_SCRIBE         "Scribe"
 #define EXP_TYPE_DECANUS        "Decanus"
 #define EXP_TYPE_TRIBAL			"Tribal"
-#define EXP_TYPE_FOLLOWERS		"Nash Clinic"
+#define EXP_TYPE_FOLLOWERS		"New Boston Clinic"
 #define EXP_TYPE_OUTLAW			"Outlaw"
 #define EXP_TYPE_KHAN			"Great Khans"
 #define EXP_TYPE_CLUB			"Heavens Night"
@@ -125,6 +125,12 @@
 #define KISS_NONE "I don't kiss!"
 #define KISS_DEFAULT KISS_NONE
 #define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_ANY,KISS_NONE)
+
+GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "Over Suit", "Over EVERYTHING"))
+#define UNDERWEAR_UNDER_CLOTHES 0
+#define UNDERWEAR_OVER_UNIFORM 1
+#define UNDERWEAR_OVER_SUIT 2
+#define UNDERWEAR_OVER_EVERYTHING 3
 
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)

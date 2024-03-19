@@ -363,24 +363,32 @@
 		M.visible_message(span_warning("[M] tips over [src]."),
 			span_notice("You tip over [src]."))
 		to_chat(src, span_userdanger("You are tipped over by [M]!"))
-		DefaultCombatKnockdown(60,ignore_canknockdown = TRUE)
+		DefaultCombatKnockdown(30, ignore_canknockdown = TRUE)
 		icon_state = icon_dead
-		spawn(rand(20,50))
-			if(!stat && M)
+
+		spawn(rand(40, 60))
+			if(!stat)
+				icon = initial(icon)
 				icon_state = icon_living
-				var/external
-				var/internal
-				switch(pick(1,2,3,4))
-					if(1,2,3)
-						var/text = pick("imploringly.", "pleadingly.",
-							"with a resigned expression.")
-						external = "[src] looks at [M] [text]"
-						internal = "You look at [M] [text]"
-					if(4)
-						external = "[src] seems resigned to its fate."
-						internal = "You resign yourself to your fate."
-				visible_message(span_notice("[external]"),
-					span_revennotice("[internal]"))
+				density = initial(density)
+				lying = FALSE
+				set_resting(FALSE, silent = TRUE, updating = TRUE)
+				setMovetype(initial(movement_type))
+
+				if(M)
+					var/external
+					var/internal
+					switch(pick(1,2,3,4))
+						if(1,2,3)
+							var/text = pick("imploringly.", "pleadingly.",
+								"with a resigned expression.")
+							external = "[src] looks at [M] [text]"
+							internal = "You look at [M] [text]"
+						if(4)
+							external = "[src] seems resigned to its fate."
+							internal = "You resign yourself to your fate."
+					visible_message(span_notice("[external]"),
+						span_revennotice("[internal]"))
 	else
 		..()
 
@@ -896,6 +904,14 @@
 		/obj/structure/tires/two = 1
 		)
 	butcher_difficulty = 5
+
+/mob/living/simple_animal/cow/brahmin/motorbike/tractor //fast as fuck boiii-- costs welding fuel
+	name = "tractor"
+	desc = "A tractor! Is it a John Deer? Or a Kubota?" //I don't care. ~gob
+	icon = 'modular_coyote/icons/mob/tractor.dmi'
+	icon_state = "tractor"
+	icon_living = "tractor"
+	icon_dead = "tractor_dead"
 
 //Horse
 
@@ -1579,7 +1595,7 @@
 
 /mob/living/simple_animal/cow/brahmin/cow/Initialize()
 	.=..()
-	resize = 0.85
+	resize = 0.7
 	update_transform()
 
 /mob/living/simple_animal/cow/brahmin/cow/tan

@@ -90,6 +90,14 @@
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"acA" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#B7ABAB";
+	footstep = "dirt";
+	name = "rocky dirt"
+	},
+/area/f13/wasteland/redwater)
 "acL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -989,11 +997,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -1072,6 +1080,14 @@
 /obj/effect/spawner/lootdrop/f13/trash,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
+"aws" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "awx" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -1302,6 +1318,10 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
+"aBX" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/building)
 "aCi" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -1737,6 +1757,12 @@
 	icon_state = "cobble"
 	},
 /area/f13/building)
+"aLh" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "aLp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/butter_churn,
@@ -1749,6 +1775,11 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"aLs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "aLv" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -2945,19 +2976,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
-"bfH" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/redwater)
 "bfU" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -3274,6 +3292,11 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
+"bly" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "blC" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -3603,6 +3626,11 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/building)
+"brO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "brQ" = (
 /obj/machinery/light,
@@ -3987,7 +4015,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/bars,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "bxf" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -4908,6 +4936,7 @@
 /obj/item/kirbyplants/dead{
 	pixel_y = 15
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bMK" = (
@@ -5420,11 +5449,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "bXs" = (
-/obj/effect/decal/fakelattice,
-/mob/living/simple_animal/hostile/deathclaw/mother,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "bXx" = (
 /obj/structure/barricade/wooden/planks/pregame,
@@ -6310,11 +6337,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
-"cmE" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "cmF" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/wasteland{
@@ -6433,6 +6455,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"cop" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/building/tribal/cave)
 "cor" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -7916,6 +7944,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cNK" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "cOc" = (
 /obj/structure/decoration/rag,
 /obj/structure/spacevine,
@@ -7973,6 +8008,11 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland/town)
+"cON" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "cOP" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/gravel{
@@ -8042,6 +8082,13 @@
 	icon_state = "verticalrightborderright2bottom"
 	},
 /area/f13/wasteland/redwater)
+"cPN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "cPS" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/dirt{
@@ -9228,6 +9275,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
+"dly" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/caves)
 "dlG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9365,6 +9420,11 @@
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland/redwater)
+"dnN" = (
+/obj/effect/decal/remains/human,
+/obj/effect/validball_spawner,
+/turf/open/water,
+/area/f13/building)
 "dnW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9600,6 +9660,10 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland/redwater)
+"dsi" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "dsp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/bin/trashbin,
@@ -9664,6 +9728,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"dtq" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building/tribal)
 "dtv" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -9885,7 +9953,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/indestructible/ground/outside/wood,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "dxV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10133,6 +10201,14 @@
 	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
+"dCp" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/building)
 "dCt" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -10243,7 +10319,9 @@
 /area/f13/building)
 "dEv" = (
 /obj/structure/simple_door/interior,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "dEw" = (
 /obj/machinery/shower{
@@ -10490,6 +10568,13 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
+	},
+/area/f13/building)
+"dHQ" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13{
+	dir = 1;
+	icon_state = "greenrusty"
 	},
 /area/f13/building)
 "dIi" = (
@@ -10792,6 +10877,10 @@
 	icon_state = "outerborder - W"
 	},
 /area/f13/wasteland/redwater)
+"dQv" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/building)
 "dQz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -12392,6 +12481,7 @@
 /obj/structure/chair/wood{
 	dir = 1
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "erT" = (
@@ -12502,6 +12592,11 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"etW" = (
+/obj/effect/turf_decal/huge,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/redwater)
 "etX" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -12891,6 +12986,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/water,
 /area/f13/building)
+"eCD" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/bar,
+/area/f13/building/abandoned)
 "eCP" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13490,7 +13589,7 @@
 	dir = 2
 	},
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "eMP" = (
 /obj/structure/table,
@@ -14522,6 +14621,13 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
+"fci" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "fcv" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -14631,6 +14737,17 @@
 "fgj" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor1-old"
+	},
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
+	faction = list("raider");
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
@@ -14787,7 +14904,15 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
+"fiP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/redwater)
 "fiQ" = (
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
@@ -15157,6 +15282,12 @@
 /mob/living/simple_animal/hostile/gecko/tribal,
 /turf/open/floor/f13,
 /area/f13/building)
+"fqx" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/redwater)
 "fqz" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/cloth/ten,
@@ -15202,6 +15333,18 @@
 	name = "stagnant water"
 	},
 /area/f13/building/tribal)
+"fqT" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "fqX" = (
 /obj/structure/fence{
 	dir = 8;
@@ -15356,6 +15499,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -15479,6 +15623,17 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"fwM" = (
+/obj/structure/stairs/west{
+	icon = 'icons/turf/f13road.dmi';
+	icon_state = "crossborderroundmid";
+	name = "Upwards Road"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "crossborderroundmid"
+	},
+/area/f13/wasteland/redwater)
 "fwX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -15673,6 +15828,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/redwater)
+"fAF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/bar)
 "fAQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -16092,6 +16254,7 @@
 /area/f13/wasteland/town)
 "fIR" = (
 /obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -17020,6 +17183,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/redwater)
+"gbz" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/building)
 "gbH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/wmelee_middle,
@@ -17365,6 +17535,10 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
+"gic" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building/abandoned)
 "gif" = (
 /obj/structure/chair{
 	dir = 1
@@ -17684,6 +17858,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"gnT" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "god" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -17920,6 +18098,10 @@
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"grf" = (
+/obj/effect/validball_spawner,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "grh" = (
 /obj/structure/car,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -18886,6 +19068,12 @@
 /obj/structure/legion_extractor,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"gIu" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "crossborderroundmid"
+	},
+/area/f13/wasteland/redwater)
 "gIx" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -19604,6 +19792,7 @@
 "gWa" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/cell_charger,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "gWc" = (
@@ -19622,11 +19811,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -19717,7 +19906,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "cafeteria"
+	},
 /area/f13/building)
 "gYp" = (
 /obj/item/stack/ore/iron,
@@ -19742,13 +19933,13 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "gYS" = (
-/obj/structure/bonfire/prelit{
-	pixel_y = 5
-	},
 /obj/structure/stone_tile/surrounding/burnt,
-/obj/item/stack/rods,
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "hell"
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#B7ABAB";
@@ -19981,6 +20172,26 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/caves)
+"hdJ" = (
+/obj/machinery/hydroponics/soil{
+	color = "#9c9c9c";
+	pixel_y = 10
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#6D6D6D"
+	},
+/area/f13/building)
+"hdN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "hdU" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/jungle,
@@ -20975,6 +21186,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"htX" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "hud" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21297,7 +21512,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -22035,10 +22249,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
-"hOD" = (
-/obj/structure/simple_door/house,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "hOS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -22242,10 +22452,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
-/area/f13/building)
-"hTD" = (
-/obj/structure/simple_door/glass,
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "hTM" = (
 /obj/item/shovel/spade,
@@ -22958,7 +23164,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "ieD" = (
 /obj/structure/table/wood,
@@ -23069,6 +23275,10 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"ign" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "igB" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -23652,6 +23862,11 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
+"irs" = (
+/obj/structure/table/reinforced,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "irx" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
@@ -23964,6 +24179,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"ixo" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet/red,
+/area/f13/building/abandoned)
 "ixs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -23995,6 +24214,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"iyb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/caves)
 "iyc" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -24320,6 +24546,7 @@
 /area/f13/building)
 "iBx" = (
 /obj/structure/closet/fridge,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iBJ" = (
@@ -24735,6 +24962,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -24852,6 +25080,10 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"iKv" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/town)
 "iKZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -24926,7 +25158,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "iMb" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -25135,7 +25367,6 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/validball_spawner,
-/obj/item/card/midbounty,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "iPf" = (
@@ -25452,6 +25683,16 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor,
 /obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/carpet,
+/area/f13/building)
+"iUM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	color = "#d9c4b9";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
 /area/f13/building)
 "iUP" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -26289,6 +26530,12 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building)
+"jkc" = (
+/mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
+	},
+/area/f13/building)
 "jkd" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -26957,6 +27204,20 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
+"jtT" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "To Nash";
+	desc = "Walk through these matrix tiles to go to New Boston.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/caves)
 "jub" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -27358,7 +27619,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/bars,
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "jCO" = (
 /obj/structure/car/rubbish4{
@@ -29315,6 +29576,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "kqp" = (
+/obj/effect/validball_spawner,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -29849,6 +30111,7 @@
 	dir = 4
 	},
 /obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "kCq" = (
@@ -29890,7 +30153,7 @@
 /area/f13/wasteland/redwater)
 "kDc" = (
 /obj/machinery/vending/games,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/city)
 "kDe" = (
 /obj/structure/flora/grass/wasteland,
@@ -29961,7 +30224,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/curtain,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "kEr" = (
 /turf/open/floor/f13{
@@ -30311,11 +30574,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -30660,6 +30923,7 @@
 /obj/structure/rack,
 /obj/item/stack/rods/ten,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "kSD" = (
@@ -30934,14 +31198,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
-/area/f13/building)
-"kWE" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "housewindowbroken"
-	},
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "kXa" = (
 /obj/structure/stone_tile/block{
@@ -31445,7 +31701,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "leP" = (
 /obj/effect/decal/cleanable/dirt{
@@ -32211,6 +32467,10 @@
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"lrX" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet,
+/area/f13/building/abandoned)
 "lrY" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -32611,7 +32871,7 @@
 /obj/structure/curtain{
 	color = "#5c131b"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "lyj" = (
 /obj/structure/junk/small/tv{
@@ -33218,12 +33478,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "lJN" = (
-/obj/structure/table/wood/junk,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/item/card/lowbounty,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/building)
+/obj/effect/validball_spawner,
+/turf/closed/mineral/random/high_chance,
+/area/f13/caves)
 "lJS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/processor,
@@ -34451,6 +34708,11 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"mfx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/building)
 "mfy" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/dirt,
@@ -34487,6 +34749,11 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
+"mgw" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
 "mgR" = (
 /obj/structure/table,
@@ -34598,6 +34865,15 @@
 	dir = 8
 	},
 /turf/open/floor/wood_common,
+/area/f13/building)
+"miZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	color = "#d9c4b9";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
 /area/f13/building)
 "mjd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -35921,6 +36197,13 @@
 	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
+"mIr" = (
+/obj/effect/decal/cleanable/blood/gibs/down{
+	icon_state = "gib3-old"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "mIt" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -36036,9 +36319,6 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#6D6D6D"
 	},
-/area/f13/building)
-"mKr" = (
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "mKx" = (
 /obj/item/storage/trash_stack{
@@ -36531,6 +36811,10 @@
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/f13/wood,
 /area/f13/desert)
+"mUS" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland/redwater)
 "mUX" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/grass/jungle,
@@ -36787,6 +37071,7 @@
 /area/f13/caves)
 "nbv" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -36954,13 +37239,7 @@
 	},
 /area/f13/building)
 "nfr" = (
-/obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
-	damage_deflection = 28;
-	max_integrity = 400;
-	obj_integrity = 400;
-	req_access_txt = "123"
-	},
+/obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nft" = (
@@ -37161,6 +37440,13 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"njo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
 "njK" = (
@@ -37604,6 +37890,19 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"nsp" = (
+/obj/machinery/hydroponics/soil{
+	color = "#9c9c9c";
+	mutmod = 0;
+	name = "ancient fertile soil";
+	pixel_y = 10;
+	yieldmod = 1.3
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#6D6D6D"
+	},
+/area/f13/wasteland/redwater)
 "nsy" = (
 /obj/structure/wreck/trash/machinepiletwo{
 	pixel_x = 2;
@@ -37915,6 +38214,7 @@
 	},
 /obj/effect/validball_spawner,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
 	},
@@ -38278,6 +38578,10 @@
 	},
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/redwater)
+"nGD" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/redwater)
 "nGF" = (
 /obj/effect/decal/cleanable/dirt{
@@ -38714,6 +39018,10 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"nPE" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/building)
 "nPI" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -38978,6 +39286,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/lowbounty,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - W"
 	},
@@ -40404,6 +40713,12 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland/redwater)
+"otQ" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/building/tribal/cave)
 "oud" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -40756,7 +41071,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
-/obj/item/card/lowbounty,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
 "ozX" = (
@@ -41219,6 +41533,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"oHC" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "oHS" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -42219,6 +42540,10 @@
 /obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/redwater)
+"pbf" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "pbE" = (
 /obj/structure/chair/f13chair2,
 /obj/effect/decal/cleanable/dirt,
@@ -42722,6 +43047,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -43457,6 +43783,10 @@
 /obj/effect/spawner/lootdrop/f13/seedspawner,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
+"pAe" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "pAf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -43473,6 +43803,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"pAw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "pAE" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
@@ -43596,6 +43932,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "pDm" = (
@@ -43690,7 +44027,9 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "pEQ" = (
 /obj/machinery/light/small/broken{
@@ -44514,6 +44853,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"pVD" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "pVE" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -44527,6 +44873,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -44846,6 +45193,7 @@
 "qcB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "qcJ" = (
@@ -44858,6 +45206,10 @@
 	color = "#c1ac99";
 	icon_state = "floorrustysolid"
 	},
+/area/f13/building)
+"qcX" = (
+/obj/effect/validball_spawner,
+/turf/open/water,
 /area/f13/building)
 "qdd" = (
 /obj/structure/flora/grass/wasteland{
@@ -46361,6 +46713,10 @@
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
+"qFM" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/wasteland/redwater)
 "qFR" = (
 /obj/structure/simple_door/repaired,
 /turf/open/floor/wood_common,
@@ -46648,6 +47004,17 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"qLl" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	color = "#c1ac99";
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "qLn" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -46886,6 +47253,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
 "qOD" = (
@@ -48125,6 +48493,11 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"riE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/redwater)
 "riH" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -48505,6 +48878,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -49916,11 +50290,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -50374,6 +50748,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/cell_charger,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "rVf" = (
@@ -51234,6 +51609,21 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
+"siy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/building)
+"siF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "siL" = (
 /obj/machinery/smoke_machine{
 	name = "generator mechanism"
@@ -52560,6 +52950,12 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/grass,
 /area/f13/wasteland/redwater)
+"sHi" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "redrustyfull"
+	},
+/area/f13/building/abandoned)
 "sHj" = (
 /obj/structure/fence/wooden{
 	dir = 1
@@ -52818,6 +53214,10 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
+"sMc" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "sMt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
@@ -53050,11 +53450,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -53611,7 +54011,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "tcg" = (
 /obj/structure/fence/wooden{
@@ -53668,10 +54068,10 @@
 /area/f13/bar)
 "tdn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/card/lowbounty,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland/redwater)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bar)
 "tdr" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/turf_decal/weather/dirt{
@@ -53801,6 +54201,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "tgd" = (
@@ -54785,6 +55186,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "txM" = (
@@ -54817,6 +55219,11 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
+"txS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/bar)
 "tya" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -55042,6 +55449,16 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland/town)
+"tCc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	color = "#c1ac99";
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "tCg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -55326,6 +55743,13 @@
 /obj/structure/punji_sticks,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"tHs" = (
+/obj/effect/decal/cleanable/blood/gibs/down{
+	icon_state = "gib3-old"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building/abandoned)
 "tHx" = (
 /turf/open/water,
 /area/f13/building/tribal/cave)
@@ -55451,11 +55875,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -55854,7 +56278,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/item/card/midbounty,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "tSw" = (
@@ -55869,11 +56292,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -57089,11 +57512,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -58450,6 +58873,14 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building)
+"uMV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/building)
 "uNj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/pew/left,
@@ -59121,6 +59552,12 @@
 /obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uZi" = (
+/obj/structure/closet/crate,
+/obj/item/card/lowbounty,
+/obj/item/card/lowbounty,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/building)
 "uZn" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -59571,6 +60008,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
+"vhD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "vhF" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 8
@@ -59788,6 +60232,7 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -60494,7 +60939,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/building)
 "vzq" = (
@@ -60639,6 +61084,13 @@
 	name = "rocky dirt"
 	},
 /area/f13/building)
+"vBK" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "vBP" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/rock/pile/largejungle{
@@ -61113,6 +61565,13 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"vJO" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "vKa" = (
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
@@ -61182,6 +61641,7 @@
 "vKU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "vKV" = (
@@ -61351,6 +61811,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"vOh" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/redwater)
 "vOt" = (
 /obj/machinery/light{
 	bulb_colour = "#BC8F8F";
@@ -61659,10 +62123,6 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/building)
-"vUq" = (
-/obj/structure/simple_door/room,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "vUt" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -61758,6 +62218,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/redwater)
+"vWN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "vWT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sink{
@@ -62586,7 +63054,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "wmK" = (
 /obj/structure/table/wood,
@@ -63306,6 +63774,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -63991,11 +64460,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -64030,6 +64499,12 @@
 /obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"wLV" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/building)
 "wLY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -64453,6 +64928,12 @@
 	name = "rocky dirt"
 	},
 /area/f13/building)
+"wUR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "wWb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
@@ -64794,7 +65275,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "xbo" = (
 /obj/structure/billboard/cola/pristine,
@@ -65347,11 +65828,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -65423,6 +65904,10 @@
 /obj/structure/table,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building/abandoned)
+"xmy" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland/redwater)
 "xmZ" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -65708,7 +66193,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/building)
 "xrP" = (
@@ -65912,13 +66397,14 @@
 /area/f13/building)
 "xvz" = (
 /obj/structure/window/fulltile/wood,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13,
 /area/f13/building)
 "xvD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin{
 	pixel_y = 10
 	},
+/obj/effect/validball_spawner,
 /obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
@@ -66512,6 +66998,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
@@ -67296,6 +67783,11 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"xUT" = (
+/obj/structure/flora/grass/wasteland,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/town)
 "xUY" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/turf_decal/weather/dirt{
@@ -67315,6 +67807,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -67509,7 +68002,7 @@
 /obj/structure/window/fulltile/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "cafeteria"
 	},
 /area/f13/building)
 "yar" = (
@@ -67790,6 +68283,7 @@
 /obj/structure/closet/fridge/standard,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -69605,7 +70099,7 @@ gyz
 gVo
 vGd
 gVo
-gVo
+aBX
 gVo
 vGd
 qrR
@@ -70492,7 +70986,7 @@ tfq
 tfq
 flv
 kbc
-ecv
+pVD
 mni
 qgJ
 sgP
@@ -70533,7 +71027,7 @@ bFR
 bFR
 ybw
 gvD
-jXi
+htX
 ios
 cjS
 ybw
@@ -70799,7 +71293,7 @@ nQD
 sui
 wCi
 wdu
-rjJ
+lrV
 oxh
 hTy
 rjJ
@@ -70995,7 +71489,7 @@ aYN
 flv
 tuP
 eZW
-gBR
+mUS
 gBR
 gBR
 kgg
@@ -71276,7 +71770,7 @@ vCc
 hEn
 onU
 vyk
-rGG
+pbf
 neB
 onU
 aQn
@@ -71352,7 +71846,7 @@ ntj
 wpF
 pmu
 vCM
-oDR
+ign
 pmu
 fiQ
 lEO
@@ -71409,7 +71903,7 @@ pCD
 gVo
 geW
 lGl
-gVo
+aBX
 gVo
 hYi
 fhX
@@ -71784,7 +72278,7 @@ bna
 iol
 mIt
 kuO
-tuP
+mgw
 qgI
 lnG
 ngd
@@ -71910,7 +72404,7 @@ kHC
 uwg
 axx
 uwm
-kMz
+dnN
 omd
 tqa
 tqa
@@ -72119,7 +72613,7 @@ xCc
 gsI
 dJs
 wSG
-ntj
+sHi
 eun
 kBL
 tpt
@@ -72168,7 +72662,7 @@ aXu
 hjR
 uwm
 dYA
-omd
+qcX
 omd
 omd
 omd
@@ -72368,7 +72862,7 @@ fHN
 eRe
 xqx
 ikG
-oDR
+ign
 edD
 xvV
 oDR
@@ -72437,7 +72931,7 @@ axx
 qQS
 nAa
 gVo
-gVo
+aBX
 gVo
 lJU
 mXP
@@ -73361,7 +73855,7 @@ vPL
 ggy
 wyp
 sui
-jXi
+htX
 aAu
 jLh
 flv
@@ -73463,7 +73957,7 @@ vvp
 bFR
 jlO
 gVo
-gVo
+aBX
 gVo
 gVo
 gVo
@@ -73578,7 +74072,7 @@ xOk
 dKh
 asY
 xOk
-xOk
+dtq
 tPi
 jJn
 set
@@ -73657,7 +74151,7 @@ riI
 baj
 baj
 xwL
-xwL
+ixo
 xwL
 baj
 xwL
@@ -74358,7 +74852,7 @@ kXg
 oGH
 dKh
 jJn
-xOk
+dtq
 usN
 jYR
 ggj
@@ -74389,7 +74883,7 @@ fLu
 hbd
 sui
 wLx
-jXi
+htX
 jXi
 dIi
 kbP
@@ -75009,7 +75503,7 @@ hYi
 fjN
 gRJ
 gRJ
-jwc
+wLV
 arZ
 hYi
 fhX
@@ -75416,7 +75910,7 @@ sui
 qcw
 jXi
 jXi
-jXi
+htX
 bYx
 dZy
 jLh
@@ -75885,7 +76379,7 @@ kIO
 ete
 flv
 flv
-flv
+vOh
 flv
 ete
 flv
@@ -76148,7 +76642,7 @@ ete
 ete
 flv
 flv
-flv
+vOh
 flv
 xLa
 oJm
@@ -76498,7 +76992,7 @@ kPy
 arS
 dpF
 vbL
-hvb
+fHN
 jKL
 aXu
 jKL
@@ -76671,7 +77165,7 @@ dBJ
 eBM
 tmJ
 gor
-flv
+vOh
 ehi
 ajO
 vhG
@@ -76755,7 +77249,7 @@ mTI
 gVA
 dpF
 lXu
-yie
+bFR
 jKL
 aXu
 jKL
@@ -77012,7 +77506,7 @@ uZY
 uZY
 kDz
 mCQ
-qIh
+fHN
 jKL
 bLl
 jKL
@@ -77269,7 +77763,7 @@ pvl
 pvl
 rpg
 eVe
-ahX
+bFR
 jKL
 aXu
 jKL
@@ -77596,7 +78090,7 @@ jnN
 eCU
 bHR
 bHR
-bHR
+tCc
 bHR
 dUy
 aSs
@@ -77697,7 +78191,7 @@ pOg
 bct
 dBJ
 eBM
-tmJ
+nsp
 ecc
 tuP
 tgX
@@ -77866,7 +78360,7 @@ kVB
 jnN
 aOH
 bHR
-jnN
+qLl
 jnN
 rQE
 jnN
@@ -78118,7 +78612,7 @@ aSs
 bHR
 tVB
 xUr
-bHR
+tCc
 hVi
 bHR
 sEg
@@ -79152,7 +79646,7 @@ bHR
 oBx
 bHR
 rWr
-bHR
+tCc
 jnN
 dcm
 bHR
@@ -79862,7 +80356,7 @@ jqJ
 jqJ
 okA
 aAD
-vRo
+tHs
 okA
 jqJ
 goE
@@ -79917,7 +80411,7 @@ osO
 raY
 cjC
 bHR
-bHR
+tCc
 nlj
 cDh
 wUf
@@ -80114,7 +80608,7 @@ bDv
 aAD
 ejp
 njb
-aAD
+gic
 ilx
 pzf
 vwz
@@ -80422,7 +80916,7 @@ bHR
 cjC
 oBx
 bHR
-bHR
+tCc
 jZR
 bHR
 sEg
@@ -80436,7 +80930,7 @@ jnN
 iFh
 wUf
 cuF
-jnN
+qLl
 jnN
 jnN
 bHR
@@ -80626,7 +81120,7 @@ jqJ
 jqJ
 jqJ
 tYG
-aAD
+gic
 jqJ
 jqJ
 jqJ
@@ -81130,7 +81624,7 @@ jqJ
 eGt
 oyS
 njb
-aAD
+gic
 aAD
 bDv
 dhm
@@ -81653,7 +82147,7 @@ jqJ
 aAD
 aAD
 ibR
-aAD
+gic
 aAD
 uNG
 aAD
@@ -82145,7 +82639,7 @@ rGB
 tOg
 lGx
 kwK
-bfH
+lPs
 eVe
 bFR
 bFR
@@ -82573,7 +83067,7 @@ ecv
 pOS
 flv
 flv
-flv
+vOh
 lGx
 eVe
 tNZ
@@ -82937,12 +83431,12 @@ dbz
 aAD
 mIQ
 aAD
-aAD
+gic
 aAD
 rxx
 aAD
-aAD
-aAD
+gic
+gic
 mIQ
 aAD
 ojz
@@ -83079,7 +83573,7 @@ xOk
 flv
 kuO
 flv
-tuP
+mgw
 bMZ
 oas
 oas
@@ -84229,7 +84723,7 @@ aqV
 aqV
 gyX
 umK
-suU
+eCD
 xyp
 jqJ
 aAD
@@ -84369,13 +84863,13 @@ hmn
 cwP
 oas
 oas
-oas
+acA
 cOe
 mvJ
 xrQ
 ete
 flv
-ete
+mIr
 flv
 flv
 ugP
@@ -84493,7 +84987,7 @@ aAD
 lur
 cqm
 cqm
-cqm
+lrX
 cqm
 uGd
 jqJ
@@ -85397,7 +85891,7 @@ flv
 flv
 flv
 vYa
-flv
+vOh
 flv
 flv
 kIO
@@ -88283,7 +88777,7 @@ cMg
 pfE
 aUH
 tYN
-wEd
+njo
 lzr
 bFR
 fHN
@@ -90847,9 +91341,9 @@ xWj
 sfZ
 qUV
 nNT
+aLs
 gll
-gll
-tdn
+lKN
 flv
 hIF
 jqS
@@ -91274,7 +91768,7 @@ bFR
 bFR
 kYJ
 xvz
-hTD
+obV
 obV
 xvz
 rRE
@@ -91621,7 +92115,7 @@ hni
 gNx
 tlt
 qYB
-hni
+xmy
 lKN
 jqS
 jUG
@@ -92876,7 +93370,7 @@ qnn
 "}
 (97,1,1) = {"
 peY
-eEP
+jtT
 eEP
 eEP
 eEP
@@ -93266,7 +93760,7 @@ eWG
 xIN
 wLv
 xIN
-xIN
+cop
 xIN
 xIN
 wqK
@@ -93770,7 +94264,7 @@ nZj
 sSG
 xIN
 rEL
-xIN
+cop
 xIN
 xIN
 sBE
@@ -95833,7 +96327,7 @@ tIj
 tIj
 bMP
 xIN
-wqK
+otQ
 xIN
 nZj
 cRl
@@ -97256,7 +97750,7 @@ kYp
 ryV
 ryH
 dZe
-hOD
+etI
 uZF
 jMC
 uOz
@@ -97275,7 +97769,7 @@ liN
 dmM
 rfQ
 fAQ
-dzx
+fqx
 fAQ
 kMA
 jqS
@@ -97528,7 +98022,7 @@ fqX
 qgS
 fAQ
 qgA
-fAQ
+fiP
 oeZ
 sfN
 fAQ
@@ -98874,7 +99368,7 @@ iRe
 hHh
 aNP
 mEY
-kWE
+hXt
 bFR
 bFR
 bFR
@@ -99131,7 +99625,7 @@ hXt
 jXi
 qJH
 xmr
-cmE
+iRe
 bFR
 bFR
 bFR
@@ -99644,7 +100138,7 @@ bFR
 jXx
 jXi
 mOW
-vUq
+ooG
 mby
 bFR
 bFR
@@ -99845,7 +100339,7 @@ dJS
 alu
 sQj
 sCc
-dJS
+nPE
 dLj
 kLa
 tLA
@@ -100075,7 +100569,7 @@ qnn
 tRd
 pST
 bHW
-evS
+fPh
 wSM
 mOW
 mhH
@@ -100302,7 +100796,7 @@ bIJ
 pQD
 nuH
 tQG
-hlM
+uMV
 kjF
 ooq
 sQn
@@ -100330,7 +100824,7 @@ qnn
 (126,1,1) = {"
 peY
 hfG
-hOD
+etI
 ibq
 bEe
 wSM
@@ -100611,7 +101105,7 @@ chf
 tss
 pim
 pLk
-lJN
+pLk
 jGV
 hvS
 iCW
@@ -100804,7 +101298,7 @@ nzq
 pCk
 nuH
 puM
-wEa
+gbz
 kjF
 fhL
 pQD
@@ -100852,7 +101346,7 @@ jXx
 jXx
 eMH
 eMH
-hOD
+etI
 jXx
 jXx
 jXx
@@ -101123,7 +101617,7 @@ bFR
 bFR
 chf
 tss
-dJS
+umi
 ryA
 uMa
 dLj
@@ -101380,7 +101874,7 @@ bFR
 fHN
 chf
 tss
-dJS
+uZi
 fgj
 dJS
 dJS
@@ -101582,7 +102076,7 @@ sbE
 xFm
 bIJ
 hTB
-nuH
+dHQ
 puM
 pQD
 kjF
@@ -101621,10 +102115,10 @@ jFW
 pff
 etI
 tOg
-tfq
+cNK
 tfq
 flv
-flv
+vOh
 tfq
 wnG
 uFu
@@ -101835,7 +102329,7 @@ gVI
 soi
 nuH
 puM
-hlM
+uMV
 uTi
 jbf
 hTB
@@ -103156,7 +103650,7 @@ qnn
 "}
 (137,1,1) = {"
 peY
-hfG
+fqT
 xAz
 tRd
 tRd
@@ -104914,7 +105408,7 @@ mHw
 mHw
 qFc
 xmj
-jqD
+siy
 nQM
 nQM
 nQM
@@ -105175,7 +105669,7 @@ tMW
 jqD
 jqD
 mHw
-mHw
+dCp
 tss
 tRd
 tRd
@@ -106201,7 +106695,7 @@ hHJ
 vSm
 bbX
 mHw
-mHw
+dCp
 jqD
 mHw
 tss
@@ -109581,7 +110075,7 @@ qnn
 "}
 (162,1,1) = {"
 peY
-hfG
+fqT
 hfG
 hfG
 bFR
@@ -110835,7 +111329,7 @@ mDn
 pME
 qWV
 ydU
-anP
+iyb
 taB
 wfo
 mUC
@@ -111086,7 +111580,7 @@ dFA
 kRF
 nmb
 tYD
-anP
+iyb
 ceT
 bCs
 nCr
@@ -111599,7 +112093,7 @@ bCs
 kRF
 bCs
 bCs
-vgY
+dly
 nMW
 bCs
 bCs
@@ -113147,7 +113641,7 @@ anP
 mcp
 gGw
 nCr
-anP
+iyb
 qJf
 hgo
 wfo
@@ -114016,7 +114510,7 @@ jFW
 dUT
 hba
 ufd
-ibq
+gnT
 hud
 uvh
 bFR
@@ -114770,7 +115264,7 @@ wbH
 hIT
 vKK
 bOT
-iNU
+miZ
 iNU
 srY
 vKK
@@ -115541,7 +116035,7 @@ jMn
 ufN
 iNU
 qMv
-ufN
+iUM
 ufN
 lYC
 ufN
@@ -115826,7 +116320,7 @@ iOx
 nla
 mby
 dUT
-mKp
+hdJ
 mKp
 mKp
 cYj
@@ -116075,7 +116569,7 @@ cya
 qRj
 cya
 gCf
-dLA
+pAw
 ibq
 put
 jUE
@@ -116570,7 +117064,7 @@ lIO
 uDs
 iNU
 pvI
-iNU
+miZ
 ufN
 ruy
 ufN
@@ -116742,7 +117236,7 @@ bFR
 bFR
 bFR
 bFR
-wgx
+vJO
 bFR
 rzm
 bFR
@@ -117582,7 +118076,7 @@ xxk
 oca
 oca
 jft
-rkD
+fAF
 eAO
 oca
 mUk
@@ -117746,7 +118240,7 @@ bFR
 bFR
 oiu
 rMJ
-wgx
+vJO
 uVV
 bFR
 bFR
@@ -118003,7 +118497,7 @@ nQD
 nQD
 nQD
 bFR
-bFR
+pAe
 wgx
 bFR
 bFR
@@ -118019,7 +118513,7 @@ bFR
 bFR
 bFR
 bFR
-bFR
+pAe
 bFR
 pjA
 bFR
@@ -118626,7 +119120,7 @@ bkk
 jFW
 gUm
 cAi
-tTW
+vWN
 gqt
 dtw
 vaI
@@ -118806,7 +119300,7 @@ wgx
 gTA
 bFR
 bFR
-bFR
+pAe
 pDr
 bFR
 bFR
@@ -119119,7 +119613,7 @@ qsQ
 rHd
 hqL
 mic
-mic
+txS
 aUT
 cdj
 fVx
@@ -119152,7 +119646,7 @@ kog
 oJx
 xcL
 roJ
-uRR
+xUT
 tJp
 nvu
 jxk
@@ -119420,12 +119914,12 @@ qxU
 hJX
 pIp
 gDM
-pJP
+mfx
 rMD
 vrk
 gxJ
 ibq
-jFW
+brO
 ibq
 ibq
 jSq
@@ -119651,11 +120145,11 @@ gNy
 pcv
 rRy
 liS
-rQG
+fci
 fml
 asv
 nDt
-jFW
+brO
 xbR
 vKK
 gXc
@@ -119664,7 +120158,7 @@ jzp
 uiR
 wLY
 uRR
-xcL
+iKv
 aZs
 xcL
 gmy
@@ -120711,7 +121205,7 @@ hZj
 eGa
 bFO
 vly
-mLa
+cON
 cly
 bSp
 uOJ
@@ -121179,7 +121673,7 @@ dUT
 rHd
 rsL
 slc
-dlP
+tdn
 rHd
 ftj
 fNt
@@ -121311,7 +121805,7 @@ jXi
 mrv
 jXx
 jXx
-dEv
+uYW
 jXx
 jXx
 nBR
@@ -121993,7 +122487,7 @@ eie
 hwr
 clg
 clg
-suA
+siF
 nWr
 xVI
 qDt
@@ -122667,7 +123161,7 @@ uPW
 oSy
 xYs
 fEt
-huo
+dsi
 huo
 uPW
 iEG
@@ -122880,7 +123374,7 @@ bFR
 bFR
 bFR
 ljo
-bFR
+pAe
 bFR
 bFR
 sui
@@ -122902,7 +123396,7 @@ bFR
 bFR
 sui
 sui
-ppe
+cPN
 ppe
 swa
 sui
@@ -123007,7 +123501,7 @@ wkj
 wCP
 kcm
 xLv
-evS
+fPh
 aqd
 rrJ
 evS
@@ -123187,7 +123681,7 @@ uPW
 huo
 jiH
 kAD
-kAD
+irs
 azl
 huo
 xYs
@@ -124146,7 +124640,7 @@ tRd
 tRd
 eWw
 sVY
-hgo
+sMc
 sCK
 tRd
 tRd
@@ -124183,7 +124677,7 @@ dqs
 fgv
 pmK
 nQY
-rZy
+wUR
 kTt
 lsj
 wFP
@@ -124192,7 +124686,7 @@ dJP
 xDz
 auB
 xat
-xat
+sON
 sso
 izj
 bFR
@@ -124388,13 +124882,13 @@ eWw
 tRd
 tRd
 hgo
+sMc
 hgo
-hgo
 tRd
 tRd
-eWw
-tRd
-tRd
+lJN
+grf
+grf
 tRd
 tRd
 tRd
@@ -124449,7 +124943,7 @@ dTe
 rZy
 bFB
 xat
-xat
+sON
 cfs
 izj
 bFR
@@ -124563,7 +125057,7 @@ wUG
 cya
 bbj
 orY
-mLa
+cON
 yct
 ifi
 fCa
@@ -124647,10 +125141,10 @@ tRd
 tWJ
 hgo
 tRd
-eWw
-tRd
-tRd
-tRd
+lJN
+grf
+grf
+grf
 eWw
 eWw
 tRd
@@ -124689,17 +125183,17 @@ bFR
 cOz
 aZE
 xrQ
-flv
+vOh
 hnM
 ycp
 pmK
 pmK
 tRk
-pmK
+bly
 qhT
 rZy
 dYy
-rZy
+wUR
 qhT
 lsj
 uDP
@@ -124904,10 +125398,10 @@ hgo
 hgo
 tRd
 eWw
+grf
 tRd
 tRd
-tRd
-hgo
+sMc
 sVY
 tRd
 tRd
@@ -125001,7 +125495,7 @@ qnn
 "}
 (222,1,1) = {"
 peY
-hfG
+fqT
 hfG
 wYc
 hfG
@@ -125751,7 +126245,7 @@ xZo
 bLr
 esn
 esn
-shN
+nGD
 bMm
 dqY
 dqY
@@ -125881,7 +126375,7 @@ bFR
 bFR
 jXx
 kYI
-tGk
+oHC
 aNh
 jXx
 bFR
@@ -125980,7 +126474,7 @@ rez
 jwy
 bLf
 xrQ
-hnM
+vBK
 dOo
 xrQ
 flv
@@ -126014,7 +126508,7 @@ xZo
 dqY
 xZo
 bLr
-esn
+riE
 esn
 cQz
 bMm
@@ -126178,7 +126672,7 @@ jXx
 eWw
 taY
 sVY
-hgo
+sMc
 fsG
 tRd
 tRd
@@ -126444,7 +126938,7 @@ tRd
 tRd
 eWw
 tRd
-hgo
+sMc
 tRd
 eWw
 tRd
@@ -126531,7 +127025,7 @@ hxl
 shN
 esn
 jdO
-bMm
+etW
 huo
 huo
 xSV
@@ -126711,7 +127205,7 @@ tRd
 tRd
 eWw
 tRd
-hgo
+sMc
 hgo
 hgo
 hgo
@@ -126781,7 +127275,7 @@ shN
 esn
 shN
 wJz
-xZo
+qFM
 xZo
 uQG
 shN
@@ -126861,7 +127355,7 @@ qfR
 xup
 txi
 tGk
-jFW
+brO
 isB
 iHw
 hVk
@@ -127778,10 +128272,10 @@ smj
 hxy
 don
 hxy
-flv
+vOh
 flv
 hxy
-flv
+vOh
 hnM
 nqy
 osE
@@ -128066,7 +128560,7 @@ xuI
 uim
 gKE
 apl
-oSy
+jkc
 oSy
 xYs
 iPo
@@ -128323,7 +128817,7 @@ xuI
 wcd
 xjx
 apl
-oSy
+jkc
 oSy
 xYs
 iPo
@@ -128331,7 +128825,7 @@ iPo
 xYs
 fUe
 dMt
-huo
+dsi
 huo
 hIq
 xYs
@@ -128717,7 +129211,7 @@ din
 din
 bFR
 eIQ
-aEv
+dQv
 hzz
 lTT
 wNd
@@ -128837,7 +129331,7 @@ huo
 dRh
 xuI
 xYs
-bXs
+lkc
 oSy
 xYs
 iPo
@@ -129615,9 +130109,9 @@ iPo
 iPo
 xYs
 fZy
-xuI
+bXs
 gkX
-xuI
+bXs
 fZy
 xYs
 kzG
@@ -130212,7 +130706,7 @@ pqN
 pEa
 ksH
 yhx
-yhx
+aws
 jMY
 xzJ
 xzq
@@ -130517,7 +131011,7 @@ bFR
 din
 ocT
 qqa
-qqa
+fwM
 qqa
 qqa
 bgV
@@ -130616,7 +131110,7 @@ bFR
 bFR
 uVV
 iOK
-bFR
+pAe
 cOz
 oiu
 bFR
@@ -130725,10 +131219,10 @@ bul
 sjU
 pEa
 ksH
-iwh
+hdN
 jMY
 jMY
-kRH
+aLh
 kRH
 tfK
 jrY
@@ -131208,7 +131702,7 @@ jXx
 bkQ
 iZH
 ccB
-mLa
+cON
 bFe
 gqx
 dUT
@@ -131240,7 +131734,7 @@ brH
 kRH
 iwh
 rVH
-jMY
+vhD
 yhx
 icR
 xzq
@@ -131491,7 +131985,7 @@ kRH
 gOU
 jMY
 vis
-jMY
+vhD
 kRH
 mfo
 tfK
@@ -131544,7 +132038,7 @@ bFR
 bFR
 pvT
 ben
-fBK
+gIu
 fBK
 fBK
 wxi
@@ -131742,7 +132236,7 @@ lRv
 bGf
 aSN
 sAw
-yhx
+aws
 lXT
 wHN
 gOU
@@ -131755,7 +132249,7 @@ brT
 gJh
 dGy
 bFn
-jMY
+vhD
 icR
 cpj
 oTs
@@ -131886,7 +132380,7 @@ oiu
 oiu
 bFR
 bFR
-bFR
+pAe
 bFR
 bFR
 bFR
@@ -132128,7 +132622,7 @@ sHq
 sHq
 sHq
 sHq
-mKr
+jsB
 sHq
 sHq
 sHq

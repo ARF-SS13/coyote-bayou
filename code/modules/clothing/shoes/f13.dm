@@ -25,9 +25,10 @@
 	desc = "For one reason or another your feet are too tough to need shoes. Or maybe you're just very agile. Who knows."
 	icon_state = "pawb" //uwu//
 	item_state = "pawb"
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	can_be_tied	= FALSE
 	rad_flags = RAD_NO_CONTAMINATE
+	item_flags = ABSTRACT
 
 /obj/item/clothing/shoes/f13/rag/pawb/Initialize()
 	. = ..()

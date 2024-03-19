@@ -834,7 +834,7 @@
 	desc = "A dusty winter coat hood."
 	icon_state = "winterhood_miner"
 
-/obj/item/clothing/suit/hooded/wintercoat/ratvar
+/*/obj/item/clothing/suit/hooded/wintercoat/ratvar
 	name = "ratvarian winter coat"
 	desc = "A brass-plated button up winter coat. Instead of a zipper tab, it has a brass cog with a tiny red gemstone inset."
 	icon_state = "coatratvar"
@@ -859,7 +859,7 @@
 		user.dropItemToGround(src)
 		to_chat(user,span_large_brass("\"Amusing that you think you are fit to wear this.\""))
 		to_chat(user,span_userdanger("Your skin burns where the coat touched your skin!"))
-		user.adjustFireLoss(rand(10,16))
+		user.adjustFireLoss(rand(10,16))*/
 
 /obj/item/clothing/suit/hooded/wintercoat/narsie
 	name = "narsian winter coat"
@@ -885,12 +885,12 @@
 	desc = "A black winter hood full of whispering secrets that only She shall ever know."
 	icon_state = "winterhood_narsie"
 
-/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake
+/*/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake
 	name = "brass winter coat"
 	desc = "A brass-plated button up winter coat. Instead of a zipper tab, it has a brass cog with a tiny red piece of plastic as an inset."
 	icon_state = "coatratvar"
 	item_state = "coatratvar"
-	real = FALSE
+	real = FALSE*/
 
 /obj/item/clothing/suit/hooded/wintercoat/narsie/fake
 	name = "runed winter coat"
@@ -1468,7 +1468,7 @@
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 
-	
+
 /obj/item/clothing/suit/civ13/coat/sidebuttonjacket
 	name = "Overcoat - Tan with sidebuttons"
 	desc = "Bro, why are you wearing this in humid ass east Texas?"

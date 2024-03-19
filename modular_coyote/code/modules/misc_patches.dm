@@ -14,7 +14,7 @@
 
 /obj/item/reagent_containers/food/drinks/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/LapDrink)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(LapDrink))
 
 
 /obj/item/reagent_containers/food/drinks/Destroy()

@@ -85,20 +85,8 @@ const dm = async (dmeFile, options = {}) => {
   // Compile
   const { defines } = options;
   if (defines && defines.length > 0) {
-    const injectedContent = defines
-      .map(x => `#define ${x}\n`)
-      .join('');
-    fs.writeFileSync(`${dmeBaseName}.mdme`, injectedContent);
-    const dmeContent = fs.readFileSync(`${dmeBaseName}.dme`);
-    fs.appendFileSync(`${dmeBaseName}.mdme`, dmeContent);
-    await Juke.exec(dmPath, [`${dmeBaseName}.mdme`]);
-    fs.writeFileSync(`${dmeBaseName}.dmb`, fs.readFileSync(`${dmeBaseName}.mdme.dmb`));
-    fs.writeFileSync(`${dmeBaseName}.rsc`, fs.readFileSync(`${dmeBaseName}.mdme.rsc`));
-    fs.unlinkSync(`${dmeBaseName}.mdme.dmb`);
-    fs.unlinkSync(`${dmeBaseName}.mdme.rsc`);
-    fs.unlinkSync(`${dmeBaseName}.mdme`);
-  }
-  else {
+    await Juke.exec(dmPath, [...defines.map(def => `-D${def}`), dmeFile]);
+  } else {
     await Juke.exec(dmPath, [dmeFile]);
   }
 };

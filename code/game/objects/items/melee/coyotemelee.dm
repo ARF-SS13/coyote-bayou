@@ -32,6 +32,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
 	force = 25
+	backstab_multiplier = 1.3
 	force_unwielded = 25
 	force_wielded = 47
 	throwforce = 23
@@ -56,6 +57,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
+	backstab_multiplier = 1.6 //I mean, it's a harpoon.  Aren't they kind of MADE for stabbing fat things in the back?
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -79,6 +81,7 @@
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38
+	backstab_multiplier = 1.4
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -102,6 +105,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 28
+	backstab_multiplier = 1.5
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -125,6 +129,7 @@
 	force = 15
 	force_unwielded = 15
 	force_wielded = 22
+	backstab_multiplier = 2
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
@@ -148,6 +153,7 @@
 	force = 25
 	force_unwielded = 25
 	force_wielded = 35
+	backstab_multiplier = 1.5
 	throwforce = 30
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -171,6 +177,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 28
+	backstab_multiplier = 1.5
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -195,6 +202,7 @@
 	force = 28
 	force_unwielded = 28
 	force_wielded = 35
+	backstab_multiplier = 1.4
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -218,6 +226,7 @@
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 55
+	backstab_multiplier = 2 //Very rewarding backstab smash attack
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -241,6 +250,7 @@
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 55
+	backstab_multiplier = 2 //Very rewarding backstab smash attack
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -264,6 +274,7 @@
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 65
+	backstab_multiplier = 1.7 //Very rewarding backstab smash attack
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -285,6 +296,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 25
+	backstab_multiplier = 1.5
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -312,6 +324,7 @@
 	force = 25
 	force_unwielded = 25
 	force_wielded = 40
+	backstab_multiplier = 1.3 //klonk
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -335,6 +348,7 @@
 	force = 28
 	force_unwielded = 28
 	force_wielded = 35
+	backstab_multiplier = 1.4
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -377,6 +391,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
+	backstab_multiplier = 1.3
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -400,6 +415,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
+	backstab_multiplier = 1.3
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -424,6 +440,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
+	backstab_multiplier = 1.3
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -448,6 +465,7 @@
 	force = 18
 	force_unwielded = 18
 	force_wielded = 35
+	backstab_multiplier = 1.3
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -471,6 +489,7 @@
 	force = 20
 	force_unwielded = 20
 	force_wielded = 30
+	backstab_multiplier = 1.6 //sharp,,,
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -493,6 +512,7 @@
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38
+	backstab_multiplier = 1.4
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -516,6 +536,7 @@
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
+	backstab_multiplier = 2 //I swear to god I will make quarterstaff meta real ~TK
 	throwforce = 15
 	wound_bonus = 15
 	stam_dmg = 30
@@ -529,7 +550,7 @@
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
-	if(!istype(M))
+	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
@@ -557,6 +578,11 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M) || !CheckAttackCooldown(user, M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"
@@ -571,6 +597,7 @@
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38
+	backstab_multiplier = 1.4
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -640,6 +667,7 @@
 	force = 5
 	force_unwielded = 5
 	force_wielded = 10
+	backstab_multiplier = 478 //get sat on, idiot ~TK
 	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
 /obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)

@@ -218,10 +218,10 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/reagent_containers/pill/patch/turbo = 1,
 	/obj/item/reagent_containers/pill/healingpowder = 10,
 	/obj/item/reagent_containers/pill/stimulant = 1,
-	/obj/item/reagent_containers/hypospray/medipen/medx = 5,
+	/obj/item/reagent_containers/pill/patch/medx = 5,
 	/obj/item/storage/pill_bottle/chem_tin/buffout = 5,
-	/obj/item/reagent_containers/hypospray/medipen/steady = 5,
-	/obj/item/reagent_containers/hypospray/medipen/psycho = 5,
+	/obj/item/reagent_containers/pill/patch/steady = 5,
+	/obj/item/reagent_containers/pill/patch/psycho = 5,
 	/obj/item/storage/pill_bottle/chem_tin/mentats = 5,
 	/obj/item/storage/pill_bottle/chem_tin/mentats/grape = 1,
 	/obj/item/storage/pill_bottle/chem_tin/mentats/orange = 1,
@@ -331,7 +331,9 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 2
+	/obj/item/tool_upgrade/paint/red = 1,
+	/obj/item/tool_upgrade/paint/blue = 1,
+	/obj/item/tool_upgrade/paint/yellow = 1
 ))
 
 GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
@@ -492,8 +494,8 @@ GLOBAL_LIST_INIT(loot_medical_drug, list(
 	/obj/item/reagent_containers/pill/patch/turbo,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/reagent_containers/pill/stimulant,
-	/obj/item/reagent_containers/hypospray/medipen/medx,
-	/obj/item/reagent_containers/hypospray/medipen/steady
+	/obj/item/reagent_containers/pill/patch/medx,
+	/obj/item/reagent_containers/pill/patch/steady
 ))
 
 GLOBAL_LIST_INIT(loot_t1_melee, list(
@@ -961,7 +963,9 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 1
+	/obj/item/tool_upgrade/paint/red = 1,
+	/obj/item/tool_upgrade/paint/blue = 1,
+	/obj/item/tool_upgrade/paint/yellow = 1
 ))
 
 GLOBAL_LIST_INIT(loot_attachment_advanced, list(
