@@ -897,7 +897,7 @@
 	idlesound = list()
 	food_types = list(/obj/item/reagent_containers/food/snacks/welding_fuel)
 	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
-	datum/reagent/milk_reagent = /datum/reagent/fuel
+	milk_reagent = /datum/reagent/fuel
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
 		/obj/item/stack/sheet/metal/ten = 1,
