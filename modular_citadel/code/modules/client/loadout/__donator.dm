@@ -450,10 +450,10 @@
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof(src)
 	new /obj/item/reagent_containers/food/drinks/flask/tech(src)
-	new /obj/item/gun/energy/laser/aer9(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
@@ -908,16 +908,6 @@
 /obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
 	new /obj/item/clothing/head/helmet/knight/f13/metal(src)
 	new /obj/item/gun/energy/mmlbuster(src)
-
-/datum/gear/donator/kits/luxyleatherhat
-	name = "NV"
-	path = /obj/item/storage/box/large/custom_kit/luxyleatherhat
-	ckeywhitelist = list("luxyleatherhat")
-
-/obj/item/storage/box/large/custom_kit/luxyleatherhat/PopulateContents()
-	new /obj/item/gun/energy/laser/aer9(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
 
 /datum/gear/donator/kits/lowpowermia
 	name = "Gunslinger Kit"
@@ -2062,3 +2052,22 @@
 
 /obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
 	new /obj/item/tarotdeck(src)
+
+/obj/item/toy/tennis/custom
+	name = "parental red tennis ball of parenthood"
+
+/datum/gear/donator/kits/nocturnalfoxboi
+	name = "ball box"
+	path = /obj/item/storage/box/large/custom_kit/nocturnalfoxboi
+	ckeywhitelist = list("nocturnalfoxboi")
+
+/obj/item/storage/box/large/custom_kit/nocturnalfoxboi/PopulateContents()
+	new /obj/item/toy/tennis/custom(src)
+
+/datum/gear/donator/kits/everfire
+	name = "helmet"
+	path = /obj/item/storage/box/large/custom_kit/everfire
+	ckeywhitelist = list("everfire")
+
+/obj/item/storage/box/large/custom_kit/everfire/PopulateContents()
+	new /obj/item/clothing/head/helmet/riot(src)
