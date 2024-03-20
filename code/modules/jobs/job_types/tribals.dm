@@ -196,6 +196,7 @@ Tribal Shaman
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
 		/obj/item/cool_book/shamanguide = 1,
 		/obj/item/healthanalyzer/tribal = 1
+		/obj/item/scrying = 1
 	)
 
 
