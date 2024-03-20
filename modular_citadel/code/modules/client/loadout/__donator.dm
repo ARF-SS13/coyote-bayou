@@ -2055,6 +2055,7 @@
 
 /obj/item/toy/tennis/custom
 	name = "parental red tennis ball of parenthood"
+	icon = "tennis_red"
 
 /datum/gear/donator/kits/nocturnalfoxboi
 	name = "ball box"
