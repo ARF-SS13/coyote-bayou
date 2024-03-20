@@ -31,7 +31,7 @@
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
+	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS, TRUE)
 
 /obj/item/validball/proc/roundstartify()
 	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)
