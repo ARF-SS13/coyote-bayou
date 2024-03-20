@@ -16,3 +16,10 @@
 	icon = 'icons/fallout/objects/furniture/junk.dmi'
 	icon_state = "junk_cabinet"
 	loot_type = LOOT_CLOTHES
+
+/obj/structure/lootable/house/television
+	name = "television"
+	desc = "I wonder what's on these days?"
+	icon = 'icons/fallout/objects/furniture/junk.dmi'
+	icon_state = "junk_tv"
+	loot_type = LOOT_ELECTRICAL

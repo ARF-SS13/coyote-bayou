@@ -1,3 +1,48 @@
+//Tiers of loot
+///Trash tier
+#define LOOT_TIER_LOWEST 1
+///Common tier
+#define LOOT_TIER_LOW 2
+///Uncommon tier
+#define LOOT_TIER_MID 3
+///Rare tier
+#define LOOT_TIER_HIGH 4
+///Very Rare tier
+#define LOOT_TIER_HIGHEST 5
+
+
+//Types of loot
+//trash
+#define LOOT_TRASH "trash"
+//military
+#define LOOT_AMMO "ammo"
+#define LOOT_ARMOR "armor"
+#define LOOT_WEAPONS "weapons" //A combination of guns and melee weapons
+#define LOOT_GUNS "guns" //Just gun-type weapons
+#define LOOT_BALLISTIC "ballistic guns"
+#define LOOT_LASERS "energy guns"
+#define LOOT_MELEE "melee"
+//household
+#define LOOT_KITCHEN "kitchen"
+#define LOOT_CLOTHES "clothes"
+//farm
+#define LOOT_FARM "farm" //Farming tools, cowboy weapons and clothes
+#define LOOT_PLANTS "plants" //Seeds, grown stuff, fertilizer, water, etc.
+//job specific
+#define LOOT_MECHANIC "mechanic" //mostly tools
+#define LOOT_ELECTRICAL "electrical" //circuit boards, batteries, wires, etc. Things you could find in consumer electronics like televisions and fridges
+#define LOOT_SCIENCE "science" //gadgets and gizmos, futuristic stuff, research materials
+//medical
+#define LOOT_FIRSTAID "first aid"
+#define LOOT_SURGERY "surgery"
+//others
+#define LOOT_CONVENIENCE_STORE "convenience store"
+#define LOOT_CHURCH "church"
+#define LOOT_SCHOOL "school"
+#define LOOT_HOBO "hobo"
+#define LOOT_ORE "ore" //abandoned ore boxes
+#define LOOT_HIDDEN_STASH "hidden stash" //Could be anything
+
 /// These are things in the world that a player could click on to pull loot out of. Lets more than one person loot a place rather than having static loot everywhere.
 /obj/structure/lootable
 	anchored = TRUE //Always keep this as TRUE
@@ -163,46 +208,6 @@
 		else
 			return 'sound/f13effects/loot_trash.ogg'
 
-///Trash
-#define LOOT_TIER_LOWEST 1
-///Common
-#define LOOT_TIER_LOW 2
-///Uncommon
-#define LOOT_TIER_MID 3
-///Rare
-#define LOOT_TIER_HIGH 4
-///Very Rare
-#define LOOT_TIER_HIGHEST 5
-
-//trash
-#define LOOT_TRASH "trash"
-//military
-#define LOOT_AMMO "ammo"
-#define LOOT_ARMOR "armor"
-#define LOOT_WEAPONS "weapons" //A combination of guns and melee weapons
-#define LOOT_GUNS "guns" //Just gun-type weapons
-#define LOOT_BALLISTIC "ballistic guns"
-#define LOOT_LASERS "energy guns"
-#define LOOT_MELEE "melee"
-//household
-#define LOOT_KITCHEN "kitchen"
-#define LOOT_CLOTHES "clothes"
-//farm
-#define LOOT_FARM "farm" //Farming tools, cowboy weapons and clothes
-#define LOOT_PLANTS "plants" //Seeds, grown stuff, fertilizer, water, etc.
-//job specific
-#define LOOT_MECHANIC "mechanic" //mostly tools
-#define LOOT_SCIENCE "science" //gadgets and gizmos, futuristic stuff, research materials
-//medical
-#define LOOT_FIRSTAID "first aid"
-#define LOOT_SURGERY "surgery"
-//others
-#define LOOT_CONVENIENCE_STORE "convenience store"
-#define LOOT_CHURCH "church"
-#define LOOT_SCHOOL "school"
-#define LOOT_HOBO "hobo"
-#define LOOT_ORE "ore" //abandoned ore boxes
-#define LOOT_HIDDEN_STASH "hidden stash" //Could be anything
 
 GLOBAL_LIST_INIT(trash_loot_tiers, list(
 	LOOT_TIER_LOWEST = list(/obj/effect/spawner/lootdrop/f13/trash = 25),
@@ -215,5 +220,5 @@ GLOBAL_LIST_INIT(trash_loot_tiers, list(
 GLOBAL_LIST_INIT(lootable_types, list(
 	LOOT_AMMO = GLOB.ammo_loot_tiers,
 	LOOT_TRASH = GLOB.trash_loot_tiers,
-	LOOT_CLOTHES = GLOB.clothes_loot_tiers,
+//	LOOT_CLOTHES = GLOB.clothes_loot_tiers,
 ))
