@@ -329,7 +329,9 @@
 			var/mob/living/livinghere = atomhere
 			if(CHECK_BITFIELD(target_flags, WS_TARGET_IGNORE_DEAD) && livinghere.stat == DEAD)
 				continue
-			if(CHECK_BITFIELD(target_flags, WS_TARGET_IGNORE_FRIENDLIES) && user.faction_check_mob(livinghere))
+			if((CHECK_BITFIELD(target_flags, WS_TARGET_IGNORE_FRIENDLIES) || get_turf(livinghere) == get_turf(user)) && user.faction_check_mob(livinghere))
+				continue
+			if(livinghere == user.buckled)
 				continue
 			. |= livinghere
 
