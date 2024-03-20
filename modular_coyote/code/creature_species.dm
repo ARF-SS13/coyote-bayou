@@ -1275,6 +1275,7 @@
 	simple_icon = 'modular_coyote/icons/mob/MNA.dmi'
 	icon_dead_suffix = "-wreck"
 	icon_rest_suffix = "-rest"
+	rotate_on_lying = FALSE
 	roundstart = TRUE
 /mob/living/carbon/human/species/advancedcyber
 	race = /datum/species/adapted/advancedcyber
@@ -1307,7 +1308,7 @@
 	race = /datum/species/adapted/simplebot/robobrain
 
 /datum/species/adapted/simplebot/sentrybot
-	name = "Adapted sentrybot"
+	name = "Adapted Sentrybot"
 	id = "sentrybot"
 	icon_rest_suffix = "_rest"
 	rotate_on_lying = FALSE
