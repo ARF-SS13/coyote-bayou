@@ -18442,7 +18442,7 @@
 	light_range = 2;
 	light_color = "#FFD700"
 	},
-/obj/structure/nest/gecko,
+/obj/structure/nest/gecko/boss,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/dragon_boss)
 "iar" = (
@@ -37084,7 +37084,6 @@
 	},
 /area/f13/building)
 "qja" = (
-/obj/item/validball,
 /obj/structure/sacrificealtar,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/dragon_boss)
@@ -50945,6 +50944,11 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
+"wmS" = (
+/obj/effect/decal/remains/human,
+/obj/structure/nest/gecko/boss,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/dragon_boss)
 "wnb" = (
 /turf/open/floor/plasteel/white/corner{
 	dir = 1
@@ -51456,8 +51460,7 @@
 	},
 /area/f13/building)
 "wyk" = (
-/obj/effect/spawner/lootdrop/f13/rare_artifacts,
-/obj/structure/nest/gecko,
+/obj/structure/nest/gecko/boss,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/dragon_boss)
 "wyr" = (
@@ -91299,7 +91302,7 @@ whv
 whv
 smz
 eAi
-gsn
+eAi
 vYd
 vYd
 eAi
@@ -91317,7 +91320,7 @@ eAi
 iYB
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -91332,7 +91335,7 @@ eAi
 eAi
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 smz
@@ -91558,13 +91561,13 @@ smz
 eAi
 vYd
 vYd
-vYd
+iaj
 vYd
 vYd
 eAi
 eAi
 uAX
-vYd
+iaj
 eAi
 eAi
 kgu
@@ -91573,7 +91576,7 @@ iYB
 eAi
 eAi
 eAi
-eAi
+wyk
 eAi
 eAi
 eAi
@@ -91581,7 +91584,7 @@ eAi
 vYd
 eAi
 vYd
-vYd
+iaj
 eAi
 eAi
 eAi
@@ -91847,7 +91850,7 @@ iYB
 iYB
 eAi
 aYc
-eAi
+wyk
 eAi
 smz
 whv
@@ -92589,7 +92592,7 @@ eAi
 eAi
 smz
 eAi
-gsn
+eAi
 eAi
 vYd
 vYd
@@ -92600,8 +92603,8 @@ eAi
 nlm
 eAi
 vYd
-iaj
-gsn
+vYd
+eAi
 eAi
 eAi
 eAi
@@ -92845,13 +92848,13 @@ wqu
 eAi
 eAi
 eAi
-gsn
 eAi
 eAi
+eAi
 vYd
 vYd
 vYd
-gsn
+eAi
 eAi
 sOE
 sOE
@@ -93108,7 +93111,7 @@ eAi
 eAi
 vYd
 vYd
-vYd
+iaj
 sOE
 sOE
 eAi
@@ -93376,10 +93379,10 @@ smz
 smz
 eAi
 eAi
-gsn
+eAi
 wqu
 eAi
-eAi
+wyk
 eAi
 eAi
 vYd
@@ -93612,7 +93615,7 @@ whv
 whv
 smz
 eAi
-eAi
+wyk
 eAi
 eAi
 eAi
@@ -93645,7 +93648,7 @@ eAi
 smz
 eAi
 eAi
-eAi
+wyk
 eAi
 eAi
 smz
@@ -94133,7 +94136,7 @@ eAi
 eAi
 pIc
 vYd
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -94142,7 +94145,7 @@ eAi
 eAi
 eAi
 vYd
-vYd
+iaj
 eAi
 eAi
 eAi
@@ -94157,7 +94160,7 @@ iYB
 eAi
 eAi
 nlm
-gsn
+eAi
 vYd
 uAX
 iYB
@@ -94409,7 +94412,7 @@ eAi
 eAi
 iYB
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -94640,7 +94643,7 @@ whv
 whv
 smz
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -94656,7 +94659,7 @@ eAi
 eAi
 eAi
 eAi
-gsn
+eAi
 vYd
 eAi
 eAi
@@ -95164,7 +95167,7 @@ vYd
 kgu
 eAi
 eAi
-eAi
+wyk
 eAi
 eAi
 eAi
@@ -95438,11 +95441,11 @@ eAi
 eAi
 egI
 eAi
-gsn
+eAi
 eAi
 nlm
 eAi
-eAi
+wyk
 eAi
 smz
 eAi
@@ -95668,7 +95671,7 @@ whv
 whv
 smz
 eAi
-eAi
+wyk
 eAi
 vYd
 eAi
@@ -95680,7 +95683,6 @@ eAi
 eAi
 kgu
 nlm
-gsn
 eAi
 eAi
 eAi
@@ -95692,7 +95694,8 @@ eAi
 eAi
 eAi
 eAi
-vYd
+eAi
+iaj
 uAX
 eAi
 eAi
@@ -95929,7 +95932,7 @@ eAi
 eAi
 vYd
 vYd
-gsn
+eAi
 vYd
 eAi
 eAi
@@ -96202,7 +96205,7 @@ vYd
 uAX
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -96213,7 +96216,7 @@ smz
 eAi
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -96439,7 +96442,7 @@ whv
 whv
 smz
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -96455,7 +96458,7 @@ eAi
 eAi
 sOE
 vYd
-vYd
+iaj
 vYd
 vYd
 eAi
@@ -96706,7 +96709,7 @@ eAi
 eAi
 eAi
 eAi
-eAi
+wyk
 eAi
 eAi
 vYd
@@ -96970,7 +96973,7 @@ vYd
 eAi
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -97242,7 +97245,7 @@ sOE
 eAi
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -97469,7 +97472,7 @@ smz
 eAi
 eAi
 eAi
-eAi
+wyk
 eAi
 nlm
 eAi
@@ -97757,7 +97760,7 @@ eAi
 smz
 eAi
 eAi
-eAi
+wyk
 eAi
 sOE
 smz
@@ -98006,7 +98009,7 @@ eAi
 sOE
 vYd
 vYd
-eAi
+wyk
 wqu
 eAi
 eAi
@@ -98272,7 +98275,7 @@ eAi
 eAi
 iYB
 eAi
-gsn
+eAi
 eAi
 smz
 whv
@@ -98768,7 +98771,7 @@ vYd
 eAi
 eAi
 eAi
-sOE
+wmS
 uAX
 eAi
 eAi
@@ -99040,7 +99043,7 @@ eAi
 smz
 eAi
 eAi
-gsn
+eAi
 eAi
 vYd
 eAi
@@ -99266,7 +99269,7 @@ whv
 whv
 smz
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -99524,6 +99527,7 @@ whv
 smz
 eAi
 eAi
+wyk
 eAi
 eAi
 eAi
@@ -99532,8 +99536,7 @@ eAi
 eAi
 eAi
 eAi
-eAi
-eAi
+wyk
 eAi
 vYd
 eAi
@@ -99546,7 +99549,7 @@ eAi
 eAi
 eAi
 eAi
-gsn
+eAi
 iYB
 eAi
 uAX
@@ -99787,7 +99790,7 @@ smz
 eAi
 eAi
 eAi
-gsn
+eAi
 eAi
 eAi
 eAi
@@ -100049,7 +100052,7 @@ nlm
 eAi
 eAi
 eAi
-gsn
+eAi
 sOE
 eAi
 eAi
@@ -100063,7 +100066,7 @@ smz
 eAi
 eAi
 eAi
-eAi
+wyk
 vYd
 eAi
 eAi
@@ -100313,7 +100316,6 @@ wqu
 eAi
 eAi
 kgu
-gsn
 eAi
 eAi
 eAi
@@ -100322,11 +100324,12 @@ eAi
 eAi
 eAi
 eAi
-gsn
 eAi
 eAi
 eAi
 eAi
+eAi
+wyk
 eAi
 eAi
 eAi
@@ -100567,11 +100570,11 @@ eAi
 eAi
 eAi
 eAi
-eAi
-eAi
-eAi
 wyk
-gsn
+eAi
+eAi
+eAi
+eAi
 eAi
 eAi
 eAi
