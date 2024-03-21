@@ -486,24 +486,24 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 
 /turf/open/indestructible/ground/outside/water/Entered(atom/movable/AM, atom/oldloc)
 	. = ..()
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You get drenched in water!"))
+	// if(istype(AM, /mob/living))
+	// 	var/mob/living/L = AM
+	// 	L.update_water()
+	// 	if(L.check_submerged() <= 0)
+	// 		return
+	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
+	// 		to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 
-/turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
-	. = ..()	
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You climb out of \the [src]."))
+// /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
+// 	. = ..()	
+// 	if(istype(AM, /mob/living))
+// 		var/mob/living/L = AM
+// 		L.update_water()
+// 		if(L.check_submerged() <= 0)
+// 			return
+// 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
+// 			to_chat(L, span_warning("You climb out of \the [src]."))
 
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
