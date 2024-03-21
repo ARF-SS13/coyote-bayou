@@ -1338,7 +1338,7 @@ Mayor
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	description = "You are a Reclaimer Researcher. As a Reclaimer it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#a94aa9"
 	exp_requirements = 0
@@ -1352,30 +1352,7 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_toolset)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_surgical)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_janitor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_service)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_nutriment)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
@@ -1391,18 +1368,198 @@ Mayor
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	uniform = /obj/item/clothing/under/f13/followers
 	ears = /obj/item/radio/headset/headset_sci
-	suit= /obj/item/clothing/suit/toggle/labcoat/followers
+	suit = /obj/item/clothing/suit/toggle/labcoat/followers
 	belt = /obj/item/supplykit
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
-		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
-		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		)
+
+//Archeologist
+
+/datum/job/oasis/recresearcher/archeologist
+	title = "Reclaimer Archeologist"
+	flag = RECARCHEOLOGIST
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#a94aa9"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/recresearcher/archeologist
+
+/datum/outfit/job/den/recresearcher/archeologist
+	name = "Reclaimer Archeologist"
+	jobtype = /datum/job/oasis/recresearcher/archeologist
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel
+	duffelbag =	/obj/item/storage/backpack/duffelbag
+	uniform = /obj/item/clothing/under/f13/doctor
+	ears = /obj/item/radio/headset/headset_sci
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/bag/strangerock = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/supplykit
+		)
+
+//Slimeologist
+
+/datum/job/oasis/recresearcher/slimeologist
+	title = "Reclaimer Slimeologist"
+	flag = RECSLIMEOLOGIST
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#a94aa9"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/recresearcher/slimeologist
+
+/datum/outfit/job/den/recresearcher/slimeologist
+	name = "Reclaimer Slimeologist"
+	jobtype = /datum/job/oasis/recresearcher/slimeologist
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel
+	duffelbag =	/obj/item/storage/backpack/duffelbag
+	uniform = /obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_sci
+	belt = /obj/item/storage/belt/xenoarch/full
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
+		/obj/item/supplykit
+		)
+
+//Mechanic
+
+/datum/job/oasis/recresearcher/mechanic
+	title = "Reclaimer Mechanic"
+	flag = RECMECHANIC
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#a94aa9"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/recresearcher/mechanic
+
+/datum/outfit/job/den/recresearcher/mechanic
+	name = "Reclaimer Mechanic"
+	jobtype = /datum/job/oasis/recresearcher/mechanic
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel
+	duffelbag =	/obj/item/storage/backpack/duffelbag
+	uniform = /obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_sci
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/pda = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/supplykit
+		)
+
+//Nanite Specialist
+
+/datum/job/oasis/recresearcher/nanspec
+	title = "Reclaimer Nanite Specialist"
+	flag = RECNANSPEC
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#a94aa9"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/recresearcher/nanspec
+
+/datum/outfit/job/den/recresearcher/nanspec
+	name = "Reclaimer Nanite Specialist"
+	jobtype = /datum/job/oasis/recresearcher/nanspec
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel
+	duffelbag =	/obj/item/storage/backpack/duffelbag
+	uniform = /obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_sci
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/supplykit
+		)
+
+//Reclaimer Guard
+
+/datum/job/oasis/recresearcher/guard
+	title = "Reclaimer Guard"
+	flag = RECGUARD
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#a94aa9"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/recresearcher/guard
+
+/datum/outfit/job/den/recresearcher/guard
+	name = "Reclaimer Guard"
+	jobtype = /datum/job/oasis/recresearcher/guard
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel
+	duffelbag =	/obj/item/storage/backpack/duffelbag
+	uniform = /obj/item/clothing/under/pants/camo
+	suit = /obj/item/clothing/suit/armor/texaslight
+	ears = /obj/item/radio/headset/headset_sci
+	id = /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/science
+	chemwhiz = TRUE
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/supplykit
+		)
+
+
+////////             //   //       ////////
+//         //   //        //       //      //
+//  ////   //   //   //   //       //      //
+//    //   //   //   //   //       //     //
+////////   ///////   //   ///////  ////////
 
 
 // Guild Adventurers
