@@ -182,7 +182,9 @@
 /obj/item/huntinghorn/proc/play_audio(mob/user)
 	//instrument.playkey_legacy(rand(1,7), pick("b", "n"), currentnote + 3)
 	var/soundfile = file("sound/runtime/instruments/[instrument_name]/" + pick("A", "B", "C", "D", "E", "F", "G") + pick("b", "n") + num2text(currentnote + 3) + ".ogg")
-	user.playsound_local(user.loc, soundfile, 75, falloff_distance = HH_PERFORMANCE_RANGE)
+	for(var/mob/living/L in range(HH_PERFORMANCE_RANGE, user))
+		if(L.client?.prefs.toggles & SOUND_HUNTINGHORN)
+			L.playsound_local(user.loc, soundfile, 75, falloff_distance = HH_PERFORMANCE_RANGE)
 
 
 
@@ -212,7 +214,8 @@
 			for(var/mob/living/L in range(HH_PERFORMANCE_RANGE, user))
 				if(L.client)
 					L.apply_status_effect(song.effect)
-					L << performsound
+					if(L.client.prefs.toggles & SOUND_HUNTINGHORN)
+						L << performsound
 		// it begins anew.
 		currentsongs = list()
 		notes = list()
