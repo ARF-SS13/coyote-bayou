@@ -564,16 +564,7 @@
 	randomize_xy = 0;
 	pixel_y = -17
 	},
-/turf/open/floor/plating/ashplanet/wateryrock{
-	icon = 'icons/fallout/turfs/ground.dmi';
-	icon_state = "riverwateruhh";
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water";
-	name = "moving river water";
-	desc = "Shallow river water."
-	},
+/turf/open/indestructible/ground/outside/water/running,
 /area/f13/caves)
 "arl" = (
 /obj/structure/flora/grass/coyote/four,
@@ -934,9 +925,8 @@
 	name = "egg basket";
 	desc = "A basket for carrying eggs!"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "aCS" = (
@@ -2735,9 +2725,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "bNL" = (
@@ -3284,9 +3273,8 @@
 /mob/living/simple_animal/cow/brahmin/cow/tan{
 	name = "Bonnie"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "chl" = (
@@ -4733,15 +4721,6 @@
 "djU" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/abandoned)
-"dks" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0"
-	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
-/area/f13/building)
 "dkH" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -5528,13 +5507,19 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dDR" = (
-/obj/effect/turf_decal/weather/dirtcorner{
-	color = "#FFE3B0"
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -2
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -7
 	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 3
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "dEd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5671,10 +5656,7 @@
 /obj/machinery/light/small{
 	pixel_x = 16
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "dIX" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -10281,9 +10263,8 @@
 /obj/structure/fermenting_barrel{
 	pixel_y = 4
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "gyT" = (
@@ -12737,10 +12718,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#413527"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "idL" = (
 /obj/machinery/autolathe/ammo/unlocked,
@@ -13047,13 +13025,8 @@
 	name = "wooden post";
 	pixel_x = -12
 	},
-/obj/effect/turf_decal/weather/dirtcorner{
-	color = "#FFE3B0";
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "iok" = (
@@ -14654,13 +14627,10 @@
 /area/f13/building)
 "jhe" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0";
-	dir = 1
+	dir = 1;
+	color = "#E0B69F"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "jhl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -15775,7 +15745,9 @@
 /area/f13/building)
 "jRu" = (
 /obj/structure/simple_door/room,
-/turf/open/indestructible/ground/outside/dirt/light,
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
+	},
 /area/f13/building)
 "jRW" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16136,18 +16108,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "kda" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating/ashplanet/wateryrock{
-	icon = 'icons/fallout/turfs/ground.dmi';
-	icon_state = "riverwateruhh";
-	dir = 8;
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water";
-	name = "moving river water";
-	desc = "Shallow river water."
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -2
 	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -7
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 3
+	},
+/turf/open/floor/wood_common/wood_common_light,
 /area/f13/building)
 "kdf" = (
 /obj/structure/flora/grass/coyote/five,
@@ -16399,12 +16372,6 @@
 /obj/machinery/mineral/wasteland_vendor/badattachments,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
-"klY" = (
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
 /area/f13/building)
 "kmf" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -17375,16 +17342,6 @@
 	},
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"kHz" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0";
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
 /area/f13/building)
 "kHO" = (
 /obj/structure/table/reinforced{
@@ -19325,9 +19282,8 @@
 /area/f13/building/hospital)
 "lSW" = (
 /mob/living/simple_animal/chicken,
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "lTi" = (
@@ -20559,25 +20515,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"mDx" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#413527"
-	},
-/obj/structure/railing/wood{
-	dir = 8
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	layer = 3;
-	name = "wooden post";
-	pixel_x = -12
-	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
-/area/f13/building)
 "mDF" = (
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -20655,16 +20592,8 @@
 	icon_state = "skin";
 	opacity = 1
 	},
-/turf/open/floor/plating/ashplanet/wateryrock{
-	icon = 'icons/fallout/turfs/ground.dmi';
-	icon_state = "riverwateruhh";
-	dir = 8;
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water";
-	name = "moving river water";
-	desc = "Shallow river water."
+/turf/open/indestructible/ground/outside/water/running{
+	dir = 8
 	},
 /area/f13/building)
 "mGk" = (
@@ -20710,13 +20639,10 @@
 /area/f13/building)
 "mHN" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0";
-	dir = 4
+	dir = 4;
+	color = "#E0B69F"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "mIa" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -23497,10 +23423,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "ohN" = (
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "oiY" = (
 /obj/structure/flora/tallgrass2,
@@ -23849,15 +23772,11 @@
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland)
 "owp" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0"
-	},
 /mob/living/simple_animal/cow/brahmin/cow{
 	name = "Belle"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "owq" = (
@@ -25303,16 +25222,7 @@
 	randomize_xy = 0;
 	pixel_x = 2
 	},
-/turf/open/floor/plating/ashplanet/wateryrock{
-	icon = 'icons/fallout/turfs/ground.dmi';
-	icon_state = "riverwateruhh";
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water";
-	name = "moving river water";
-	desc = "Shallow river water."
-	},
+/turf/open/indestructible/ground/outside/water/running,
 /area/f13/caves)
 "puJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -26170,16 +26080,7 @@
 	pixel_y = 17;
 	pixel_x = -3
 	},
-/turf/open/floor/plating/ashplanet/wateryrock{
-	icon = 'icons/fallout/turfs/ground.dmi';
-	icon_state = "riverwateruhh";
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water";
-	name = "moving river water";
-	desc = "Shallow river water."
-	},
+/turf/open/indestructible/ground/outside/water/running,
 /area/f13/caves)
 "pUK" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -27248,9 +27149,8 @@
 /obj/structure/closet/crate/wicker{
 	anchored = 1
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "qAE" = (
@@ -30016,10 +29916,7 @@
 /area/f13/building/hospital)
 "sxH" = (
 /obj/structure/haybale,
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "syf" = (
 /obj/structure/simple_door/metal/dirtystore{
@@ -31544,13 +31441,10 @@
 /area/f13/wasteland)
 "txV" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0";
-	dir = 5
+	dir = 5;
+	color = "#E0B69F"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/savannah.dmi';
-	icon_state = "savannahcenter"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/building)
 "tyg" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -33050,10 +32944,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#413527"
 	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
-	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "usf" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -34883,16 +34774,8 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "vBN" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#FFE3B0";
-	dir = 10
-	},
-/obj/effect/turf_decal/weather/dirtcorner{
-	color = "#FFE3B0"
-	},
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "vBT" = (
@@ -36069,9 +35952,8 @@
 	pixel_x = -12
 	},
 /obj/structure/table/wood,
-/turf/open/indestructible/ground/inside/mountain{
-	icon = 'icons/fallout/turfs/dirt.dmi';
-	icon_state = "dirt_light"
+/turf/open/floor/plating/dirt{
+	color = "#E0B69F"
 	},
 /area/f13/building)
 "wnW" = (
@@ -69232,7 +69114,7 @@ gDZ
 wnU
 gxD
 aCR
-mDx
+inU
 inU
 gDZ
 gDZ
@@ -69487,9 +69369,9 @@ enE
 iRb
 gDZ
 qAd
-klY
+vBN
 lSW
-klY
+vBN
 owp
 jhe
 ohN
@@ -69745,9 +69627,9 @@ iRb
 gDZ
 jts
 lSW
-klY
-klY
-dks
+vBN
+vBN
+vBN
 txV
 ohN
 dIW
@@ -70001,10 +69883,10 @@ enE
 iRb
 gDZ
 eLR
-klY
-klY
+vBN
+vBN
 chh
-dDR
+vBN
 vBN
 txV
 mHN
@@ -70258,13 +70140,13 @@ enE
 iRb
 gDZ
 gej
-klY
-klY
-klY
+vBN
+vBN
+vBN
 bNE
-dDR
-kHz
-kHz
+vBN
+vBN
+vBN
 gDZ
 ygu
 gyT
@@ -71812,7 +71694,7 @@ vYo
 gyT
 gyT
 icJ
-kda
+dDR
 icJ
 lnp
 oez

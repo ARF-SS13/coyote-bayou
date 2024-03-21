@@ -395,6 +395,24 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/big = 2
 		)
 
+/obj/structure/nest/gecko/boss
+	name = "kobold eggs"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "nest_gecko"
+	desc = "Where theres a big sexy dragon couple, there are bound to be big sexy kobolds. Look at em now!"
+	max_mobs = 3
+	spawn_text = "crawls out from the"
+	spawnsound = 'sound/misc/crack.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko = 4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 2,
+		/mob/living/simple_animal/hostile/gecko/fire = 1,
+		/mob/living/simple_animal/hostile/gecko/legacy = 3,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
+		/mob/living/simple_animal/hostile/gecko/big = 2
+		)
+
 /obj/structure/nest/gecko/tribal
 	name = "gecko tribal campsite"
 	icon = 'icons/fallout/objects/furniture/heating.dmi'

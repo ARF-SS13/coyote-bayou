@@ -1220,7 +1220,7 @@
 /datum/supply_pack/security/tgnukerifle
 	name = "TG Nuclear Rifle"
 	desc = "Self-charging, powerful, and it irradiates your enemies! Just don't get hit with an EMP or you'll start to glow."
-	cost = 3000
+	cost = 5000 // 2 be increased
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle)
 	crate_name = "select weapon crate"
@@ -1228,7 +1228,7 @@
 /datum/supply_pack/security/tgnukepistol
 	name = "TG Nuclear Pistol"
 	desc = "For when you want a nuclear reactor in a holster instead of on your back."
-	cost = 2500
+	cost = 1500
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear)
 	crate_name = "select weapon crate"
@@ -1364,7 +1364,7 @@
 /datum/supply_pack/security/wattz2ks
 	name = "Wattz 2000 Sport Edition"
 	desc = "The bougie version of the Wattz 2k. Not quite as strong, but it's self-charging."
-	cost = 3000
+	cost = 5000 
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/wattz2ks)
 	crate_name = "select weapon crate"
@@ -1424,11 +1424,12 @@
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/plasma/pistol/adam)
 	crate_name = "select weapon crate"
-
+// the below is getting a rework
+/*
 /datum/supply_pack/security/ak470
 	name = "Kalashnikov 470"
 	desc = "The original soviet special. Self charging and quite powerful, though incredibly difficult to control. For the union!"
-	cost = 5000
+	cost = 25000 // 
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/LaserAK)
 	crate_name = "select weapon crate"
@@ -1436,10 +1437,11 @@
 /datum/supply_pack/security/ak740
 	name = "Kalashnikov 740"
 	desc = "The successor to the AK470. While it shoots and charges faster, it loses a lot of punch in the process. For the union!"
-	cost = 3000
+	cost = 15000 // 5x'd
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/LaserAK/worn)
 	crate_name = "select weapon crate"
+*/
 
 /datum/supply_pack/security/ebowbig
 	name = "Energy Crossbow"
