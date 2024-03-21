@@ -54,7 +54,7 @@ Difficulty: Medium
 	melee_damage_lower = 50
 	melee_damage_upper = 100
 	speed = 1
-	move_to_delay = 5
+	move_to_delay = 3
 	ranged = 1
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
@@ -68,6 +68,7 @@ Difficulty: Medium
 	death_sound = 'sound/magic/demon_dies.ogg'
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/drake()
 
+	faction = list("Nagafen", "Vox")
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/megafauna/dragon/Initialize()
