@@ -134,7 +134,7 @@
 	. = ..()
 	var/delay = HH_WIELD_TIME
 	if(HAS_TRAIT(user, TRAIT_HH_DRAW_SPEED))
-		delay *= 0.5
+		delay *= 0.1
 	spawn(delay)
 		if(user.get_active_held_item() == src)
 			set_ready_to_play(user, TRUE)
