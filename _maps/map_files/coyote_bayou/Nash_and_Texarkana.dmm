@@ -40755,7 +40755,7 @@
 /obj/structure/stairs/south{
 	color = "grey"
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/plating/dirt,
 /area/f13/wasteland/city)
 "hjs" = (
 /obj/structure/flora/chomp/bones/lskull,
@@ -42128,6 +42128,12 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/ruins)
@@ -61119,6 +61125,11 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"myC" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plating/dirt,
+/area/f13/caves)
 "myG" = (
 /obj/structure/junk/drawer{
 	pixel_y = 10
@@ -142480,7 +142491,7 @@ aae
 mDA
 bvM
 rYN
-aaH
+mDA
 iLS
 atn
 atN
@@ -142993,8 +143004,8 @@ aaB
 aae
 jOV
 ieg
-dBl
-mDA
+rYN
+aaH
 iLS
 vJP
 atO
@@ -143250,8 +143261,8 @@ aaB
 aae
 mDA
 rYN
-rYN
-hja
+dBl
+mDA
 iLS
 ain
 gHJ
@@ -143506,9 +143517,9 @@ aak
 aaB
 aae
 aae
-aaB
-aae
-aae
+rYN
+lIp
+hja
 iLS
 ftT
 byx
@@ -143762,10 +143773,10 @@ aak
 aae
 aaB
 aaB
-abV
-ulY
-aae
-aae
+myC
+rYN
+lIp
+hja
 iLS
 iLS
 iLS
@@ -144017,9 +144028,9 @@ iZj
 aae
 aae
 aae
-aae
 aak
 aaB
+aae
 aae
 aae
 aae
@@ -144275,7 +144286,7 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aaB
 aae
 aae

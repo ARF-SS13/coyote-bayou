@@ -1787,6 +1787,14 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
 
+/// takes in fuckin anything and outputs if its a player
+/proc/isplayer(imput)
+	if(istext(imput))
+		return !!LAZYACCESS(GLOB.directory, imput)
+	if(ismob(imput))
+		var/mob/M = imput
+		return !!(M.client || LAZYACCESS(GLOB.directory, M.ckey))
+
 /// makes sure input is text, either 3 or 6 characters, and only contains digits and the letters a-f (case insensitive)
 /proc/is_color(str)
 	. = FALSE
