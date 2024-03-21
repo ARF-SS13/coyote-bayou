@@ -329,6 +329,15 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Senior Scientist",
 ))
 
+GLOBAL_LIST_INIT(reclaimer_positions, list(
+	"Reclaimer Archeologist",
+	"Reclaimer Slimeologist",
+	"Reclaimer Researcher",
+	"Reclaimer Mechanic",
+	"Reclaimer Nanite Specialist",
+	"Reclaimer Guard"
+))
+
 GLOBAL_LIST_INIT(guild_positions, list(
 	"Guild Cataloger",
 	"Guild Healer",
@@ -357,6 +366,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
+	"Reclaimers" = list("jobs" = reclaimer_positions, "color" = "#a43dd4"),
 	"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
@@ -384,6 +394,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
 	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
+	EXP_TYPE_RECLAIMER = list("titles" = reclaimer_positions ),
 	EXP_TYPE_GUILD = list("titles" = guild_positions ),
 	EXP_TYPE_LEGION = list("titles" = legion_positions),
 	EXP_TYPE_NCR = list("titles" = ncr_positions),

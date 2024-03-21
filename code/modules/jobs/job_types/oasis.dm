@@ -1326,33 +1326,29 @@ Mayor
 	/obj/item/sensor_device = 1
 		)
 
-// Professor
+// Reclaimers
 
-/datum/job/oasis/f13Professor
-	title = "Town Scientist"
-	flag = F13PRACTITIONER
-	department_flag = FOLLOWERS
-	faction = "Followers"
+//Researcher
+
+/datum/job/oasis/recresearcher
+	title = "Reclaimer Researcher"
+	flag = RECRESEARCHER
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#FFDDFF"
+	selection_color = "#a94aa9"
 	exp_requirements = 0
-	exp_type = EXP_TYPE_FOLLOWERS
 
-	outfit = /datum/outfit/job/den/f13Professor
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/environmental_scientist,
-	/datum/outfit/loadout/medical_specialist
-	)
-*/
+	outfit = /datum/outfit/job/den/recresearcher
+
 	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
 	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
 
-/datum/outfit/job/den/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/den/recresearcher/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -1387,13 +1383,14 @@ Mayor
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
 
-/datum/outfit/job/den/f13Professor
-	name = "Town Scientist"
-	jobtype = /datum/job/oasis/f13Professor
+/datum/outfit/job/den/recresearcher
+	name = "Reclaimer Researcher"
+	jobtype = /datum/job/oasis/recresearcher
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel/tox
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	uniform = /obj/item/clothing/under/f13/followers
+	ears = /obj/item/radio/headset/headset_sci
 	suit= /obj/item/clothing/suit/toggle/labcoat/followers
 	belt = /obj/item/supplykit
 	id = /obj/item/card/id/silver
@@ -1406,27 +1403,6 @@ Mayor
 		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		)
-
-/datum/outfit/loadout/environmental_scientist
-	name =	"Environmental Scientist"
-	neck = /obj/item/clothing/neck/apron/labor
-	gloves = /obj/item/clothing/gloves/botanic_leather
-	backpack_contents = list(
-		/obj/item/book/manual/advice_farming = 1,
-		/obj/item/circuitboard/machine/hydroponics = 6,
-		/obj/item/storage/bag/plants/portaseeder = 1,
-	)
-
-/datum/outfit/loadout/medical_specialist
-	name =	"Medical Specialist"
-	neck = /obj/item/clothing/neck/stethoscope
-	gloves = /obj/item/clothing/gloves/color/latex
-	backpack_contents = list(
-		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/circuitboard/machine/bloodbankgen = 1,
-		/obj/item/gun/syringe/dart = 1,
-		/obj/item/reagent_containers/syringe/dart = 3,
-	)
 
 
 // Guild Adventurers
