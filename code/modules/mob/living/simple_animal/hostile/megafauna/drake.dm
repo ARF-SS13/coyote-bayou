@@ -56,6 +56,10 @@ Difficulty: Medium
 	speed = 1
 	move_to_delay = 3
 	ranged = 1
+	projectilesound = 'sound/weapons/mmlbuster.ogg'
+	projectiletype = /obj/item/projectile/f13plasma/scatter/dragon
+	extra_projectiles = 1
+	ranged = TRUE
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
@@ -427,3 +431,11 @@ Difficulty: Medium
 			hit_list += M
 			M.take_damage(45, BRUTE, "melee", 1)
 		sleep(1.5)
+
+/obj/item/projectile/f13plasma/scatter/dragon
+	damage = 50
+	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.25
+	wound_bonus = 50
+	color = "#FF0000"
+
