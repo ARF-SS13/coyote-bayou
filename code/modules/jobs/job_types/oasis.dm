@@ -1403,6 +1403,7 @@ Mayor
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
 	uniform = /obj/item/clothing/under/f13/doctor
+	belt = /obj/item/storage/belt/xenoarch/full
 	ears = /obj/item/radio/headset/headset_sci
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
@@ -1439,7 +1440,6 @@ Mayor
 	duffelbag =	/obj/item/storage/backpack/duffelbag
 	uniform = /obj/item/clothing/under/f13/followers
 	ears = /obj/item/radio/headset/headset_sci
-	belt = /obj/item/storage/belt/xenoarch/full
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
@@ -1515,6 +1515,7 @@ Mayor
 	chemwhiz = TRUE
 	backpack_contents = list(
 		/obj/item/pda = 1,
+		/obj/item/nanite_scanner,
 		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/supplykit
 		)
