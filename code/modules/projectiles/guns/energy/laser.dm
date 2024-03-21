@@ -1256,6 +1256,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
+	max_upgrades = 1 // dedicated slot for your black paint or whatever
 	can_flashlight = 1
 	flight_x_offset = 20
 	flight_y_offset = 10
