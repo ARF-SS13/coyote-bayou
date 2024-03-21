@@ -118,7 +118,7 @@
 
 /datum/supplykit_item/energy/repeater
 	name = "Repeating Blaster"
-	desc = "A rapidfire energy blaster with an internal self charging battery"
+	desc = "A rapidfire energy blaster with an internal battery"
 	item = /obj/item/gun/energy/laser/tg/spamlaser
 	cost = 40
 

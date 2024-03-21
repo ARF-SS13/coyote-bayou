@@ -510,7 +510,7 @@
 		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 8, //100 24 self recharge, EMP weakness, rad damage
 		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,      //100 16 self recharge, EMP weakness, rad damage
 		/obj/item/gun/energy/laser/tg/recharger = 7,               //100 16 self recharge
-		/obj/item/gun/energy/laser/LaserAK/worn = 8,               //133 30 self recharge
+	//	/obj/item/gun/energy/laser/LaserAK/worn = 8,               //133 30 self recharge
 		/obj/item/gun/energy/laser/solar = 8,                      //90  16 self recharge
 		/obj/item/gun/energy/laser/plasma/bouncy = 1,              //93  20 plasma, bouncy shots
 
@@ -541,7 +541,7 @@
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5,     //100 1 self charge, EMP immune
-		/obj/item/gun/energy/laser/LaserAK = 5,                    //200 30 self charge
+	//	/obj/item/gun/energy/laser/LaserAK = 5,                    //200 30 self charge
 
 		//magic
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 2,
