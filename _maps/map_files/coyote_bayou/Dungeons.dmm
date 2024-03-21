@@ -21168,6 +21168,11 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"joK" = (
+/obj/effect/decal/remains/human,
+/obj/structure/nest/gecko/boss,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/dragon_boss)
 "joL" = (
 /obj/structure/table/wood/fancy/monochrome,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -37085,6 +37090,9 @@
 /area/f13/building)
 "qja" = (
 /obj/structure/sacrificealtar,
+/obj/item/fishy/goldfish{
+	name = "Phinigel Autropos"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/dragon_boss)
 "qjc" = (
@@ -50944,11 +50952,6 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
-"wmS" = (
-/obj/effect/decal/remains/human,
-/obj/structure/nest/gecko/boss,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/dragon_boss)
 "wnb" = (
 /turf/open/floor/plasteel/white/corner{
 	dir = 1
@@ -98771,7 +98774,7 @@ vYd
 eAi
 eAi
 eAi
-wmS
+joK
 uAX
 eAi
 eAi
