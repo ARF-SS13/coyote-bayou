@@ -1173,6 +1173,11 @@
 	icon_state = "tribe"
 	weather_tags = list(WEATHER_ALL)
 
+/area/f13/dragon_boss
+	name = "Nagavox's Lair"
+	icon_state = "tribe"
+	outdoors = TRUE
+
 /area/debug_mussy
 	name = "Musical Hellscape"
 	icon_state = "tribe"
