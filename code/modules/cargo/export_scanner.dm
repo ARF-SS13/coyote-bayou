@@ -46,7 +46,7 @@
 			// var/scrip_conv = initial(scrip.cost)
 			var/copper_conv = initial(copper.cost)
 			
-			to_chat(user, span_notice("Scanned [O], value: <b>[price]</b> credits / <b>[price / copper_conv]</b> copper [O.contents.len ? "(contents included)" : ""]."))
+			to_chat(user, span_notice("Scanned [O], value: <b>[price / copper_conv]</b> copper [O.contents.len ? "(contents included)" : ""]."))
 		else
 			to_chat(user, span_warning("Scanned [O], no export value."))
 		if(bounty_ship_item_and_contents(O, dry_run=TRUE))

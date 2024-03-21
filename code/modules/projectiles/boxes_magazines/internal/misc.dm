@@ -39,7 +39,7 @@
 	name = "brick launcher chamber"
 	ammo_type = /obj/item/ammo_casing/caseless/brick
 	caliber = list(CALIBER_BRICK)
-	max_ammo = 1
+	max_ammo = 3
 	can_change_caliber = FALSE
 
 // BETA STUFF // Obsolete

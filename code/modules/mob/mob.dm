@@ -1345,7 +1345,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	\n\
 	- On the off chance that you DO find out someone is using your advance to stir pointless OOC drama please ahelp and let us know, don't assume we're aware. \n\
 	"
-
+/* 
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
 	set category = "IC"
@@ -2008,7 +2008,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return
-
+ */
 
 
 

@@ -2052,3 +2052,23 @@
 
 /obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
 	new /obj/item/tarotdeck(src)
+
+/obj/item/toy/tennis/custom
+	name = "parental red tennis ball of parenthood"
+	icon_state = "tennis_red"
+
+/datum/gear/donator/kits/nocturnalfoxboi
+	name = "ball box"
+	path = /obj/item/storage/box/large/custom_kit/nocturnalfoxboi
+	ckeywhitelist = list("nocturnalfoxboi")
+
+/obj/item/storage/box/large/custom_kit/nocturnalfoxboi/PopulateContents()
+	new /obj/item/toy/tennis/custom(src)
+
+/datum/gear/donator/kits/everfire
+	name = "helmet"
+	path = /obj/item/storage/box/large/custom_kit/everfire
+	ckeywhitelist = list("everfire")
+
+/obj/item/storage/box/large/custom_kit/everfire/PopulateContents()
+	new /obj/item/clothing/head/helmet/riot(src)
