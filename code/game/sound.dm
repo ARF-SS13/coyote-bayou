@@ -36,13 +36,14 @@
 	var/turf/below_turf = SSmapping.get_turf_below(turf_source)
 
 	if(!ignore_walls) //these sounds don't carry through walls
-		listeners = listeners & hearers(maxdistance,turf_source)
+
+		listeners = filtered_listeners(listeners, maxdistance, turf_source)
 
 		if(above_turf && istransparentturf(above_turf))
-			listeners += hearers(maxdistance,above_turf)
+			listeners += filtered_listeners(SSmobs.clients_by_zlevel[above_turf.z], maxdistance, above_turf)
 
 		if(below_turf && istransparentturf(turf_source))
-			listeners += hearers(maxdistance,below_turf)
+			listeners += filtered_listeners(SSmobs.clients_by_zlevel[below_turf.z], maxdistance, below_turf)
 
 	else
 		if(above_turf && istransparentturf(above_turf))
@@ -192,6 +193,15 @@
 		if(ismob(m) && !isnewplayer(m))
 			var/mob/M = m
 			M.playsound_local(M, null, volume, vary, frequency, falloff, channel, pressure_affected, S)
+
+/proc/filtered_listeners(list/listening, dist, originturf)
+	if(!LAZYLEN(listening))
+		return list()
+	var/list/hearye = view(dist, originturf)
+	for(var/mob/hearer as anything in listening)
+		if(!(get_turf(hearer) in hearye))
+			listening -= hearer
+	return listening
 
 /mob/proc/stop_sound_channel(chan)
 	SEND_SOUND(src, sound(null, repeat = 0, wait = 0, channel = chan))
