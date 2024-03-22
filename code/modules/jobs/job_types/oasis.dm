@@ -1403,8 +1403,8 @@ Mayor
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
 	uniform = /obj/item/clothing/under/f13/doctor
-	belt = /obj/item/storage/belt/xenoarch/full
 	ears = /obj/item/radio/headset/headset_sci
+	belt = /obj/item/storage/belt/xenoarch/full
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
@@ -1544,8 +1544,8 @@ Mayor
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
 	uniform = /obj/item/clothing/under/pants/camo
-	suit = /obj/item/clothing/suit/armor/texaslight
 	ears = /obj/item/radio/headset/headset_sci
+	suit = /obj/item/clothing/suit/armor/texaslight
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
