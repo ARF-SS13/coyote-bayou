@@ -75,7 +75,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/gold = 400, /datum/material/plasma = 600, /datum/material/bluespace = 1000)
 	construction_time=100
-	build_path = /obj/item/stock_parts/cell/high/slime
+	build_path = /obj/item/stock_parts/cell/high/slime/hypercharged
 	category = list("Misc","Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
