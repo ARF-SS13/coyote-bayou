@@ -946,6 +946,7 @@
 	simple_icon = 'icons/mob/alienqueen.dmi'
 	icon_width = 64
 	roundstart = TRUE
+	alt_prefixes = list("TGMC Praetorian" = "tgmc_")
 /mob/living/carbon/human/species/alienp
 	race = /datum/species/feral/xeno/praetorian
 
@@ -998,6 +999,76 @@
 	icon_width = 64
 /mob/living/carbon/human/species/crusher
 	race = /datum/species/feral/xeno/crusher
+
+/datum/species/feral/xeno/behemoth
+	name = "Feral Xenomorph Behemoth"
+	id = "xeno_behemoth"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/behemoth.dmi'
+	icon_width = 96
+/mob/living/carbon/human/species/behemoth
+	race = /datum/species/feral/xeno/behemoth
+
+/datum/species/feral/xeno/boiler
+	name = "Feral Xenomorph Boiler"
+	id = "xeno_boiler"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/boiler.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/boiler
+	race = /datum/species/feral/xeno/boiler
+
+/datum/species/feral/xeno/puppeteer
+	name = "Feral Xenomorph Puppeteer"
+	id = "xeno_puppeteer"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/puppeteer.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/puppeteer
+	race = /datum/species/feral/xeno/puppeteer
+
+/datum/species/feral/xeno/carrier
+	name = "Feral Xenomorph Carrier"
+	id = "xeno_carrier"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/carrier.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/carrier
+	race = /datum/species/feral/xeno/carrier
+
+/datum/species/feral/xeno/ravager
+	name = "Feral Xenomorph Ravager"
+	id = "xeno_ravager"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/ravager.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/ravager
+	race = /datum/species/feral/xeno/ravager
+
+/datum/species/feral/xeno/gorger
+	name = "Feral Xenomorph Gorger"
+	id = "xeno_gorger"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/gorger.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/gorger
+	race = /datum/species/feral/xeno/gorger
+
+/datum/species/feral/xeno/hivelord
+	name = "Feral Xenomorph Hivelord"
+	id = "xeno_hivelord"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/hivelord.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/hivelord
+	race = /datum/species/feral/xeno/hivelord
 
 /datum/species/feral/xeno/defender
 	name = "Feral Xenomorph Defender"
