@@ -1377,6 +1377,7 @@ Mayor
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 //Archeologist
@@ -1412,7 +1413,8 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/strangerock = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 //Slimeologist
@@ -1447,7 +1449,8 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 //Mechanic
@@ -1482,7 +1485,8 @@ Mayor
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 //Nanite Specialist
@@ -1517,7 +1521,8 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/nanite_scanner,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 //Reclaimer Guard
@@ -1552,7 +1557,8 @@ Mayor
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/cool_book/reclaimerguide
 		)
 
 
