@@ -4,56 +4,56 @@
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "tintobush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/tinto
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/tinto
 
 /obj/structure/flora/wasteplant/berrybush/amar
 	name = "amar berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "amarbush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/amar
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/amar
 
 /obj/structure/flora/wasteplant/berrybush/azul
 	name = "azul berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "azulbush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/azul
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/azul
 
 /obj/structure/flora/wasteplant/berrybush/majo
 	name = "majo berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "majobush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/majo
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/majo
 
 /obj/structure/flora/wasteplant/berrybush/narco
 	name = "narco berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "narcobush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/narco
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/narco
 
 /obj/structure/flora/wasteplant/berrybush/zelenyy
 	name = "zelenyy berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "zelenyybush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/zelenyy
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/zelenyy
 
 /obj/structure/flora/wasteplant/berrybush/marron
 	name = "marron berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "marronbush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/marron
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/marron
 
 /obj/structure/flora/wasteplant/berrybush/corcairghorm
 	name = "corcairghorm berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "corcairghormbush"
 	desc = "A berry bush"
-	produce = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/corcairghorm
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/corcairghorm
 
 //The Berries
 
