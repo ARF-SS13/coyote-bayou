@@ -6322,6 +6322,12 @@
 "dtm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/caution{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/big{
+	dir = 6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 9
 	},
@@ -20362,6 +20368,16 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"kGa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mech_bay_recharge_port,
+/obj/effect/turf_decal/big{
+	dir = 9
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "kGv" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood_common,
@@ -33099,6 +33115,16 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"rBV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mech_bay_recharge_port,
+/obj/effect/turf_decal/big{
+	dir = 10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "rBY" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -37745,6 +37771,19 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"tPm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/caution{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/big{
+	dir = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 9
+	},
+/area/f13/building)
 "tPo" = (
 /obj/structure/sign/departments/medbay,
 /turf/closed/wall/f13/coyote/oldwood,
@@ -41356,7 +41395,13 @@
 	},
 /area/f13/building)
 "vOc" = (
-/obj/machinery/chem_master,
+/obj/machinery/chem_master{
+	pixel_y = 8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/siding/yellow/end{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
 "vOg" = (
@@ -81467,8 +81512,8 @@ tBH
 sJj
 bLR
 fHm
-umG
-sXH
+kGa
+rBV
 sKy
 qNK
 qnW
@@ -81724,7 +81769,7 @@ tBH
 fsE
 bLR
 nku
-umG
+tPm
 dtm
 fjt
 swF
