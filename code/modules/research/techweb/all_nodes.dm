@@ -530,6 +530,24 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
+/datum/techweb_node/basic_selfcharge
+	id = "basic_selfcharge"
+	display_name = "Basic Self-Charging Technology"
+	description = "Self-Charging cells are a general foundation building block for success."
+	prereq_ids = list("bluespace_power", "alientech")
+	design_ids = list("selfcharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 9500
+
+/datum/techweb_node/adv_selfcharge
+	id = "adv_selfcharge"
+	display_name = "Advanced Self-Charging Technology"
+	description = "Our Self-Charging cells break the laws in many different regions!"
+	prereq_ids = list("selfcharge_power")
+	design_ids = list("hypercharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+	export_price = 12000
+
 
 /*
 /datum/techweb_node/electric_weapons

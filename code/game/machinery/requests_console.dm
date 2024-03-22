@@ -368,8 +368,8 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				radio_freq = FREQ_COMMAND
 			if("medbay")
 				radio_freq = FREQ_MEDICAL
-			if("science")
-				radio_freq = FREQ_SCIENCE
+			if("reclaimer")
+				radio_freq = FREQ_RECLAIMER
 			if("engineering")
 				radio_freq = FREQ_ENGINEERING
 			if("security")
