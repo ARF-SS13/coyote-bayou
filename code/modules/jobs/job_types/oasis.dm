@@ -1369,7 +1369,6 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/followers
 	ears = /obj/item/radio/headset/headset_sci
 	suit = /obj/item/clothing/suit/toggle/labcoat/followers
-	belt = /obj/item/supplykit
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
@@ -1377,6 +1376,7 @@ Mayor
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
