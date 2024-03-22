@@ -6127,6 +6127,8 @@
 /area/f13/building)
 "dor" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recresearcher,
+/obj/effect/landmark/start/f13/followersscientist/recresearcher,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - S"
 	},
@@ -6319,13 +6321,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"dtm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 9
-	},
-/area/f13/building)
 "dtB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -6463,6 +6458,12 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"dwQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recslimeologist,
+/obj/effect/landmark/start/f13/followersscientist/recslimeologist,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/city/newboston/outdoors)
 "dxi" = (
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt,
@@ -13755,6 +13756,14 @@
 	icon_state = "verticaloutermain2bottom"
 	},
 /area/f13/wasteland)
+"hiZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recnanspec,
+/obj/effect/landmark/start/f13/followersscientist/recnanspec,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "hjf" = (
 /obj/structure/window/fulltile/house/broken,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -29387,6 +29396,13 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
+"pFU" = (
+/obj/effect/landmark/start/f13/followersscientist/recmechanic,
+/obj/effect/landmark/start/f13/followersscientist/recmechanic,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "pGe" = (
 /obj/structure/rack,
 /obj/item/clothing/head/beanie/red,
@@ -29406,6 +29422,11 @@
 /obj/item/clothing/head/f13/hairband,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"pGm" = (
+/obj/effect/landmark/start/f13/followersscientist/recarcheologist,
+/obj/effect/landmark/start/f13/followersscientist/recarcheologist,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/city/newboston/outdoors)
 "pGE" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/decal/cleanable/dirt,
@@ -33099,6 +33120,13 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"rBV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mech_bay_recharge_port,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "rBY" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -37745,6 +37773,16 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"tPm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/caution{
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 9
+	},
+/area/f13/building)
 "tPo" = (
 /obj/structure/sign/departments/medbay,
 /turf/closed/wall/f13/coyote/oldwood,
@@ -40076,6 +40114,8 @@
 /area/f13/building)
 "veJ" = (
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/landmark/start/f13/followersscientist/recguard,
+/obj/effect/landmark/start/f13/followersscientist/recguard,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "veP" = (
@@ -41356,7 +41396,13 @@
 	},
 /area/f13/building)
 "vOc" = (
-/obj/machinery/chem_master,
+/obj/machinery/chem_master{
+	pixel_y = 8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/siding/yellow/end{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
 "vOg" = (
@@ -72963,7 +73009,7 @@ hRl
 kmZ
 dUS
 sQo
-iqu
+dwQ
 sbq
 hVc
 tKS
@@ -73477,7 +73523,7 @@ hRl
 bzu
 rEK
 veJ
-nRM
+hiZ
 nxO
 nxO
 nxO
@@ -73733,8 +73779,8 @@ vqy
 hRl
 gao
 vIQ
-jqA
-klQ
+pGm
+pFU
 brC
 brC
 brC
@@ -81467,8 +81513,8 @@ tBH
 sJj
 bLR
 fHm
-umG
-sXH
+rBV
+rBV
 sKy
 qNK
 qnW
@@ -81724,8 +81770,8 @@ tBH
 fsE
 bLR
 nku
-umG
-dtm
+tPm
+tPm
 fjt
 swF
 szu

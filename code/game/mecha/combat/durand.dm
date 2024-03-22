@@ -9,13 +9,12 @@
 	icon_state = "durand"
 	step_in = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	armor = ARMOR_VALUE_PA
+	max_integrity = 500
+	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 30000
 	infra_luminosity = 8
-	force = 30
+	force = 45
 	canstrafe = TRUE
-	step_energy_drain = 40
 	internal_damage_threshold = 20
 	wreckage = /obj/structure/mecha_wreckage/durand
 
