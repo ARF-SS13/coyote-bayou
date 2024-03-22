@@ -7,7 +7,6 @@
 	max_integrity = 250
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
-	step_energy_drain = 6
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
 	. = ..()
