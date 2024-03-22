@@ -32,6 +32,22 @@
 	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
+/datum/techweb_node/selfcharge_power
+	id = "selfcharge_power"
+	display_name = "Self-Charging Technology"
+	description = "The power of infinite!"
+	prereq_ids = list("bluespace_power", "alientech")
+	design_ids = list("selfcharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+
+/datum/techweb_node/hypercharge_power
+	id = "hypercharge_power"
+	display_name = "Hyper-Charging Technology"
+	description = "The power of infinite time two!"
+	prereq_ids = list("selfcharge_power")
+	design_ids = list("hypercharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+
 /*8
 /datum/techweb_node/bluespace_holding
 	id = "bluespace_holding"

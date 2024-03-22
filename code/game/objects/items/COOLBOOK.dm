@@ -84,6 +84,14 @@
 	book_key = "guildguide"
 	color = "#f89b06"
 
+/obj/item/cool_book/reclaimerguide
+	name = "Reclaimer Guidebook"
+	desc = "Thats a guidebook for the Reclaimers!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "reclaimerguide"
+	color = "#9999F6"
+
 /obj/item/cool_book/warandpeace
 	name = "War And Peace, Book One"
 	desc = "Thats literally just a copy of War and Peace..."
