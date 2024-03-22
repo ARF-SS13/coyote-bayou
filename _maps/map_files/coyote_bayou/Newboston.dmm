@@ -6127,6 +6127,8 @@
 /area/f13/building)
 "dor" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recresearcher,
+/obj/effect/landmark/start/f13/followersscientist/recresearcher,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - S"
 	},
@@ -6469,6 +6471,12 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"dwQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recslimeologist,
+/obj/effect/landmark/start/f13/followersscientist/recslimeologist,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/city/newboston/outdoors)
 "dxi" = (
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt,
@@ -13761,6 +13769,14 @@
 	icon_state = "verticaloutermain2bottom"
 	},
 /area/f13/wasteland)
+"hiZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersscientist/recnanspec,
+/obj/effect/landmark/start/f13/followersscientist/recnanspec,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "hjf" = (
 /obj/structure/window/fulltile/house/broken,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -29403,6 +29419,13 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
+"pFU" = (
+/obj/effect/landmark/start/f13/followersscientist/recmechanic,
+/obj/effect/landmark/start/f13/followersscientist/recmechanic,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "pGe" = (
 /obj/structure/rack,
 /obj/item/clothing/head/beanie/red,
@@ -29422,6 +29445,11 @@
 /obj/item/clothing/head/f13/hairband,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"pGm" = (
+/obj/effect/landmark/start/f13/followersscientist/recarcheologist,
+/obj/effect/landmark/start/f13/followersscientist/recarcheologist,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/city/newboston/outdoors)
 "pGE" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/decal/cleanable/dirt,
@@ -40115,6 +40143,8 @@
 /area/f13/building)
 "veJ" = (
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/landmark/start/f13/followersscientist/recguard,
+/obj/effect/landmark/start/f13/followersscientist/recguard,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "veP" = (
@@ -73008,7 +73038,7 @@ hRl
 kmZ
 dUS
 sQo
-iqu
+dwQ
 sbq
 hVc
 tKS
@@ -73522,7 +73552,7 @@ hRl
 bzu
 rEK
 veJ
-nRM
+hiZ
 nxO
 nxO
 nxO
@@ -73778,8 +73808,8 @@ vqy
 hRl
 gao
 vIQ
-jqA
-klQ
+pGm
+pFU
 brC
 brC
 brC
