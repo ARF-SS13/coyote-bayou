@@ -909,16 +909,6 @@
 	new /obj/item/clothing/head/helmet/knight/f13/metal(src)
 	new /obj/item/gun/energy/mmlbuster(src)
 
-/datum/gear/donator/kits/luxyleatherhat
-	name = "NV"
-	path = /obj/item/storage/box/large/custom_kit/luxyleatherhat
-	ckeywhitelist = list("luxyleatherhat")
-
-/obj/item/storage/box/large/custom_kit/luxyleatherhat/PopulateContents()
-	new /obj/item/gun/energy/laser/aer9(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
-	new /obj/item/stock_parts/cell/ammo/mfc(src)
-
 /datum/gear/donator/kits/lowpowermia
 	name = "Gunslinger Kit"
 	path = /obj/item/storage/box/large/custom_kit/lowpowermia
@@ -943,6 +933,17 @@
 	new /obj/item/clothing/under/f13/recon(src)
 	new /obj/item/clothing/accessory/bos/paladin(src)
 	new /obj/item/clothing/head/droptrooper/custompahelmet(src)
+
+/datum/gear/donator/kits/luxyleatherhat
+	name = "NV"
+	path = /obj/item/storage/box/large/custom_kit/luxyleatherhat
+	ckeywhitelist = list("luxyleatherhat")
+
+/obj/item/storage/box/large/custom_kit/luxyleatherhat/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
 // M
 
 /datum/gear/donator/kits/mathiel
@@ -2062,3 +2063,23 @@
 
 /obj/item/storage/box/large/custom_kit/trickingtrapster/PopulateContents()
 	new /obj/item/tarotdeck(src)
+
+/obj/item/toy/tennis/custom
+	name = "parental red tennis ball of parenthood"
+	icon_state = "tennis_red"
+
+/datum/gear/donator/kits/nocturnalfoxboi
+	name = "ball box"
+	path = /obj/item/storage/box/large/custom_kit/nocturnalfoxboi
+	ckeywhitelist = list("nocturnalfoxboi")
+
+/obj/item/storage/box/large/custom_kit/nocturnalfoxboi/PopulateContents()
+	new /obj/item/toy/tennis/custom(src)
+
+/datum/gear/donator/kits/everfire
+	name = "helmet"
+	path = /obj/item/storage/box/large/custom_kit/everfire
+	ckeywhitelist = list("everfire")
+
+/obj/item/storage/box/large/custom_kit/everfire/PopulateContents()
+	new /obj/item/clothing/head/helmet/riot(src)

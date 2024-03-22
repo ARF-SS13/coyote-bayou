@@ -59,6 +59,9 @@
 /obj/ex_act(severity, target)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
+	if(resistance_flags & BLAST_RESISTANT)
+		target = null
+		severity--
 	..() //contents explosion
 	if(target == src)
 		obj_integrity = 0
