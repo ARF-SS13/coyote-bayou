@@ -6321,19 +6321,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"dtm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/caution{
-	pixel_x = -6
-	},
-/obj/effect/turf_decal/big{
-	dir = 6
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 9
-	},
-/area/f13/building)
 "dtB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -20384,16 +20371,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
-"kGa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/mech_bay_recharge_port,
-/obj/effect/turf_decal/big{
-	dir = 9
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "kGv" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood_common,
@@ -33148,9 +33125,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mech_bay_recharge_port,
-/obj/effect/turf_decal/big{
-	dir = 10
-	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "rBY" = (
@@ -37804,9 +37778,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/caution{
 	pixel_x = -6
-	},
-/obj/effect/turf_decal/big{
-	dir = 5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 9
@@ -81542,7 +81513,7 @@ tBH
 sJj
 bLR
 fHm
-kGa
+rBV
 rBV
 sKy
 qNK
@@ -81800,7 +81771,7 @@ fsE
 bLR
 nku
 tPm
-dtm
+tPm
 fjt
 swF
 szu
