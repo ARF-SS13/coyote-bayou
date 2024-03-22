@@ -52,7 +52,7 @@
 /obj/item/encryptionkey/headset_sci
 	name = "reclaimer radio encryption key"
 	icon_state = "sci_cypherkey"
-	channels = list(RADIO_CHANNEL_RECLAIMER = 1)
+	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_RECLAIMER = 1)
 
 /obj/item/encryptionkey/headset_medsci
 	name = "medical research radio encryption key"
