@@ -23,7 +23,7 @@
 	desc = "Exosuit"
 	icon = 'icons/mecha/mecha.dmi'
 	density = TRUE //Dense. To raise the heat.
-	opacity = 1 ///opaque. Menacing.
+	opacity = 0 ///opaque. Menacing.
 //	anchored = TRUE //no pulling around.
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	layer = BELOW_MOB_LAYER//icon draw layer
@@ -37,8 +37,8 @@
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = SOUTH //What direction will the mech face when entered/powered on? Defaults to South.
 	var/normal_step_energy_drain = 10 //How much energy the mech will consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
-	var/step_energy_drain = 10
-	var/melee_energy_drain = 15
+	var/step_energy_drain = 0
+	var/melee_energy_drain = 0
 	var/overload_step_energy_drain_min = 100
 	max_integrity = 300 //max_integrity is base health
 	move_force = MOVE_FORCE_VERY_STRONG

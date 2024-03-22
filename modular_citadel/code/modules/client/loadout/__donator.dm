@@ -450,10 +450,10 @@
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof(src)
 	new /obj/item/reagent_containers/food/drinks/flask/tech(src)
-	new /obj/item/ammo_box/m5mmbox(src)
-	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
@@ -933,6 +933,17 @@
 	new /obj/item/clothing/under/f13/recon(src)
 	new /obj/item/clothing/accessory/bos/paladin(src)
 	new /obj/item/clothing/head/droptrooper/custompahelmet(src)
+
+/datum/gear/donator/kits/luxyleatherhat
+	name = "NV"
+	path = /obj/item/storage/box/large/custom_kit/luxyleatherhat
+	ckeywhitelist = list("luxyleatherhat")
+
+/obj/item/storage/box/large/custom_kit/luxyleatherhat/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
 // M
 
 /datum/gear/donator/kits/mathiel

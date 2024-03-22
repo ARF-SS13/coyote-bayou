@@ -12,15 +12,12 @@
 	name = "steam";
 	pixel_x = 19
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -90,8 +87,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -428,9 +425,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/ashplanet/rocky{
-	icon_state = "rock2"
-	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bD" = (
 /obj/structure/sink{
@@ -1198,8 +1193,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -1260,15 +1255,12 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /obj/effect/decal/cleanable/glitter/pink,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -1736,8 +1728,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -1780,8 +1772,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -1985,8 +1977,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -2474,8 +2466,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -3086,10 +3078,7 @@
 /obj/structure/glowshroom{
 	color = "green"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/turf/open/floor/plating/ashplanet/wateryrock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lp" = (
 /obj/structure/closet/crate/wicker,
@@ -3311,12 +3300,6 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
-"md" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/floor/plating/ashplanet/wateryrock,
-/area/f13/caves)
 "me" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/validball_spawner,
@@ -3440,8 +3423,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -3703,11 +3686,10 @@
 	},
 /area/f13/wasteland)
 "nu" = (
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
 	},
-/turf/open/floor/plating/ashplanet/wateryrock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "nx" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3992,14 +3974,11 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -4805,14 +4784,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
-"rq" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/turf/open/floor/plating/ashplanet/rocky{
-	icon_state = "rock2"
-	},
-/area/f13/caves)
 "rt" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -5372,15 +5343,12 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -5582,12 +5550,7 @@
 	pixel_y = 20;
 	randomize_xy = 0
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/floor/plating/ashplanet/rocky{
-	icon_state = "rock2"
-	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "us" = (
 /obj/structure/simple_door/metal/fence/wooden{
@@ -5764,14 +5727,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"uN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/floor/plating/ashplanet/rocky{
-	icon_state = "rock2"
-	},
-/area/f13/caves)
 "uO" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#4F3528";
@@ -6293,12 +6248,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"wN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "wO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/indestructible/rock{
@@ -6697,8 +6646,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -7057,9 +7006,6 @@
 	},
 /area/f13/wasteland)
 "zt" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
@@ -7067,7 +7013,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/turf/open/floor/plating/ashplanet/wateryrock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "zx" = (
 /obj/structure/railing{
@@ -7156,8 +7102,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -7359,9 +7305,6 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
-"AD" = (
-/turf/open/floor/plating/ashplanet/wateryrock,
-/area/f13/caves)
 "AE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/prewar/poster81{
@@ -7502,15 +7445,11 @@
 	name = "steam";
 	pixel_y = 16
 	},
-/obj/effect/mist{
-	name = "steam";
-	pixel_x = 15
-	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -7972,8 +7911,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -8450,8 +8389,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -9169,14 +9108,11 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -9677,8 +9613,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -9799,8 +9735,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -9935,16 +9871,12 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam";
-	pixel_y = 16
-	},
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -10349,8 +10281,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -11071,8 +11003,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -11349,8 +11281,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -11448,9 +11380,6 @@
 /area/f13/caves)
 "Pt" = (
 /obj/structure/flora/chomp/shrub4,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Pv" = (
@@ -11574,8 +11503,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -11853,10 +11782,7 @@
 /area/f13/building)
 "QJ" = (
 /obj/structure/flora/chomp/potplant2,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/turf/open/floor/plating/ashplanet/wateryrock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "QL" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11983,14 +11909,11 @@
 	name = "steam";
 	pixel_x = 19
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -12024,8 +11947,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -12625,15 +12548,12 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam"
-	},
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -13048,11 +12968,6 @@
 	name = "air"
 	},
 /area/f13/wasteland)
-"UC" = (
-/turf/open/floor/plating/ashplanet/rocky{
-	icon_state = "rock2"
-	},
-/area/f13/caves)
 "UD" = (
 /obj/structure/table/wood{
 	density = 0
@@ -13193,9 +13108,6 @@
 /obj/structure/chair/bench{
 	dir = 4;
 	pixel_x = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -13958,16 +13870,12 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/obj/effect/mist{
-	name = "steam";
-	pixel_y = 16
-	},
 /obj/effect/decal/cleanable/glitter/white,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -14218,8 +14126,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -14436,7 +14344,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
-/turf/open/floor/plating/ashplanet/wateryrock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "YZ" = (
 /obj/structure/spacevine{
@@ -14470,8 +14378,8 @@
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
-	light_range = 3;
-	light_power = 3;
+	light_range = 2;
+	light_power = 2;
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
@@ -49686,9 +49594,9 @@ ed
 ed
 jk
 ur
-UC
-UC
-AD
+FS
+FS
+FS
 ln
 jk
 jk
@@ -49943,10 +49851,10 @@ ed
 ed
 jk
 Pt
-md
-uN
-rq
-wN
+FS
+FS
+FS
+FS
 Ft
 Zp
 jk
