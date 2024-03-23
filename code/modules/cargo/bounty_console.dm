@@ -1,8 +1,8 @@
 #define PRINTER_TIMEOUT 10
 
 /obj/machinery/computer/bounty
-	name = "\improper US Government bounty console"
-	desc = "Used to check and claim bounties offered by Nanotrasen"
+	name = "\improper Guild Quest Reward Console"
+	desc = "Used to check and claim bounties offered by the Guild."
 	icon_screen = "bounty"
 	circuit = /obj/item/circuitboard/computer/bounty
 	light_color = "#E2853D"//orange
@@ -22,7 +22,7 @@
 
 /obj/item/paper/bounty_printout/Initialize()
 	. = ..()
-	info = "<h2>Nanotrasen Cargo Bounties</h2></br>"
+	info = "<h2>Guild Cargo Bounties</h2></br>"
 	update_icon()
 
 	for(var/datum/bounty/B in GLOB.bounties_list)
