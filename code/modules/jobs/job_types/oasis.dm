@@ -1376,7 +1376,6 @@ Mayor
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
@@ -1413,7 +1412,6 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/strangerock = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
@@ -1449,7 +1447,6 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
@@ -1485,7 +1482,6 @@ Mayor
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
@@ -1521,7 +1517,6 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/nanite_scanner,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
@@ -1557,7 +1552,6 @@ Mayor
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
-		/obj/item/supplykit,
 		/obj/item/cool_book/reclaimerguide
 		)
 
