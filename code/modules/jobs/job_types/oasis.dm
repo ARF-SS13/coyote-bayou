@@ -1404,7 +1404,6 @@ Mayor
 	duffelbag =	/obj/item/storage/backpack/duffelbag
 	uniform = /obj/item/clothing/under/f13/doctor
 	ears = /obj/item/radio/headset/headset_sci
-	belt = /obj/item/storage/belt/xenoarch/full
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
@@ -1412,6 +1411,7 @@ Mayor
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/strangerock = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/storage/belt/xenoarch/full,
 		/obj/item/cool_book/reclaimerguide
 		)
 
