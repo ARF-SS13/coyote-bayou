@@ -2,7 +2,7 @@
 	name = "\improper APLU \"Ripley\""
 	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	icon_state = "ripley"
-	step_in = 3 //Move speed, lower is faster.
+	step_in = 2.5 //Move speed, lower is faster.
 	force = 40
 	max_temperature = 20000
 	max_integrity = 400
@@ -12,6 +12,7 @@
 	var/list/cargo = new
 	var/cargo_capacity = 15
 	var/hides = 0
+	canstrafe = TRUE
 
 /obj/mecha/working/ripley/go_out()
 	..()
@@ -51,7 +52,7 @@
 	desc = "Raider Ripley"
 	name = "\improper Raider Ripley"
 	icon_state = "deathripley"
-	step_in = 2
+	step_in = 1.8
 	force = 60
 	max_temperature = 100000
 	max_integrity = 550
