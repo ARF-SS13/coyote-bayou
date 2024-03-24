@@ -7,7 +7,7 @@
 	name = "\improper Durand"
 	desc = "An aging combat exosuit utilized by the Vault-Tec corporation. A pre-War design, developed by Vault-Tec to combat post-War threats. It seems to have an experimental shield projector installed to minimize damage to the exosuit."
 	icon_state = "durand"
-	step_in = 4
+	step_in = 2.5
 	dir_in = 1 //Facing North.
 	max_integrity = 500
 	armor = ARMOR_VALUE_HEAVY
