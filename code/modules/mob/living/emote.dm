@@ -1790,6 +1790,47 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			"How could someone mess up so badly?",
 			"The game was rigged from the start."))))
 
+/mob/living/verb/emote_special_str()
+	set name = "Roll Strength"
+	set desc = "Roll for bicep circumfrence."
+	set category = "Roleplaying"
+	emote("special_strength")
+
+/mob/living/verb/emote_special_per()
+	set name = "Roll Perception"
+	set desc = "Roll for eyeball circumfrence."
+	set category = "Roleplaying"
+	emote("special_perception")
+
+/mob/living/verb/emote_special_end()
+	set name = "Roll Endurance"
+	set desc = "Roll for heart circumfrence."
+	set category = "Roleplaying"
+	emote("special_endurance")
+
+/mob/living/verb/emote_special_cha()
+	set name = "Roll Charisma"
+	set desc = "Roll for beauty circumfrence."
+	set category = "Roleplaying"
+	emote("special_charisma")
+
+/mob/living/verb/emote_special_int()
+	set name = "Roll Intelligence"
+	set desc = "Roll for brain circumfrence."
+	set category = "Roleplaying"
+	emote("special_intelligence")
+
+/mob/living/verb/emote_special_agi()
+	set name = "Roll Agility"
+	set desc = "Roll for wiggly circumfrence."
+	set category = "Roleplaying"
+	emote("special_agility")
+
+/mob/living/verb/emote_special_luc()
+	set name = "Roll Luck"
+	set desc = "Roll for some sort of circumfrence."
+	set category = "Roleplaying"
+	emote("special_luck")
 
 /datum/emote/living/special
 	key = "special"
@@ -1845,7 +1886,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		return FALSE
 
 	var/special_noun = null
-	var/special_phrase_input = special_override ? special_override : lowertext(params)
+	var/special_phrase_input = special_override ? lowertext(special_override) : lowertext(params)
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
@@ -1889,6 +1930,8 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		self_message = message_first,
 		blind_message = message_first)
 	user.emote_for_ghost_sight(message_first)
+
+	playsound(get_turf(user), 'sound/effects/statroll.ogg', 75, TRUE)
 
 	spawn(special_delay)
 		if(!user)
