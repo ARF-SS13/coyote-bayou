@@ -17,9 +17,8 @@
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 	var/datum/action/innate/slime_change/slime_change	//CIT CHANGE
-	liked_food = TOXIC | MEAT
-	disliked_food = null
-	toxic_food = ANTITOXIC
+	liked_food = FRUIT | MEAT
+	disliked_food = TOXIC
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
