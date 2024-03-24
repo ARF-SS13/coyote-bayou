@@ -1424,6 +1424,18 @@
 	icon_rest_suffix = "_rest"
 	icon_dead_suffix = "-wreck"
 
+/datum/species/adapted/dogborg/zoid
+	name = "Adapted Zoid"
+	id = "zoid"
+	simple_icon = 'modular_coyote/icons/mob/zoids.dmi'
+	roundstart = TRUE
+	alt_prefixes = list("Zaber" = "zaber_")
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "_dead"
+/mob/living/carbon/human/species/zoid
+	race = /datum/species/adapted/dogborg/zoid
+
 /datum/species/adapted/dogborg/sechound
 	name = "Adapted Sechound"
 	id = "valesec"
