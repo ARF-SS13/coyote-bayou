@@ -1425,10 +1425,10 @@
 	icon_dead_suffix = "-wreck"
 
 /datum/species/adapted/dogborg/zoid
-	name = "Zoid"
+	name = "Adapted Zoid"
+	id = "zoid"
 	simple_icon = 'modular_coyote/icons/mob/zoids.dmi'
 	roundstart = TRUE
-	rotate_on_lying = FALSE
 	alt_prefixes = list("Zaber" = "zaber_")
 	icon_width = 32
 	icon_rest_suffix = "_rest"
