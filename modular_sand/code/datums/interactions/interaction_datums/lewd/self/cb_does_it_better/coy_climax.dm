@@ -238,16 +238,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {softly, warmly, lovingly} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with, filling their mouth with} {spunk, seed, cum}."
+		"XU_NAME {softly, warmly, lovingly} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with} {spunk, seed, cum}."
 	)
 	disarm_messages = list(
-		"XU_NAME {eagerly, needily, happily} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with, filling their mouth with} {spunk, seed, cum}."
+		"XU_NAME {eagerly, needily, happily} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with} {spunk, seed, cum}."
 	)
 	grab_messages = list(
-		"XU_NAME {deeply, fully, possessively} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with, filling their mouth with} {spunk, seed, cum}."
+		"XU_NAME {deeply, fully, possessively} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with} {spunk, seed, cum}."
 	)
 	harm_messages = list(
-		"XU_NAME {aggressively, viciously} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with, filling their mouth with} {spunk, seed, cum}."
+		"XU_NAME {aggressively, viciously} {spunks inside, creampies, tries to breed} XT_NAME's {butt, booty, donut, rear end, rump}, {painting the inside of it with} {spunk, seed, cum}."
 	)
 
 	simple_sounds = list(
@@ -321,7 +321,7 @@
 //	Squirt on lap///
 //////////////
 /datum/interaction/lewd/partner/mutual/lap_squirt
-	description = "Self/Climax - Squirt on their chest."
+	description = "Self/Climax - Squirt on their lap."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
