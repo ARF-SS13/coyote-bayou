@@ -414,7 +414,7 @@
 		if(M.status_flags & GODMODE)
 			return FALSE
 		if(!M.client)
-			if(!debug_disable_mob_ceasefire)
+			if(!SSmobs.debug_disable_mob_ceasefire)
 				var/client_in_range = FALSE
 				for(var/client/C in GLOB.clients)
 					if(!C.mob)
