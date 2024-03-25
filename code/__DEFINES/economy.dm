@@ -58,3 +58,22 @@
 #define PRICE_SUPER_STIM       120 // Super Stimpak
 #define PRICE_RESEARCH         200 // Research Documents
 #define PRICE_RESEARCH_PLUS    700 // More Expensive Research Documents
+
+#define QUEST_DIFFICULTY_EASY 1
+#define QUEST_DIFFICULTY_MED 2
+#define QUEST_DIFFICULTY_HARD 3
+#define QUEST_DIFFICULTY_CBT 4
+
+#define QUEST_FULFILL_ALL 1
+#define QUEST_FULFILL_ANY 2
+#define QUEST_FULFILL_HALF 3
+
+#define QUEST_TURNIN_RETURN_QUEST_COMPLETE 15
+
+/// Increasing difficulty causes an increase in the number of things per quota that need filled.
+#define QDF_MORE_TURNINS (1 << 0)
+/// Increasing difficulty causes an increase in the number of quotas that need filled.
+#define QDF_MORE_FILLED (1 << 1)
+
+
+

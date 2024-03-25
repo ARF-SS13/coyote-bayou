@@ -15,7 +15,7 @@ export const CargoBountyConsole = (props, context) => {
       resizable>
       <Window.Content scrollable>
         <Section
-          title={<BountyHeader />}
+        title="Guild Quest Board"
           buttons={(
             <Button
               icon="print"

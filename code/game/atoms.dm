@@ -97,6 +97,8 @@
 
 	/// What does this creature taste like?
 	var/list/tastes
+	/// When something is turned in for a quest, it'll give it a tag so it can only be turned in once per player
+	var/quest_tag
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation

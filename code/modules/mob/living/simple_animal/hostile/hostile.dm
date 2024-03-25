@@ -174,7 +174,7 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(prob(1) && world.time-timeofdeath > 3 MINUTES)//give players enough time to finish their fights and butcher the real way
+		if(prob(1) && world.time-timeofdeath > 3 MINUTES && !SSeconomy.is_part_of_a_quest(src))//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
