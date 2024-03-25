@@ -297,7 +297,7 @@
 		GUN_UPGRADE_CHARGECOST=1 + rand(-15,-8) * 0.01
 	)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.req_fuel_cell = null
 
 // Paint: For Modifying specific traits
 //_____________________________________
