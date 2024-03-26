@@ -1405,7 +1405,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					else
 						buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)*/
 				else
-					buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)
+					buckle_mob(target, TRUE, TRUE, FALSE, 0, 0, FALSE)
 		else
 			visible_message(span_warning("[target] fails to climb onto [src]!"))
 	else
