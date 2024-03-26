@@ -629,6 +629,18 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.pa_repair
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
+/datum/quirk/crafty
+	name = "Crafty"
+	desc = "You are able to craft without the necessities provided by a traditional workbench."
+	value = 1
+	category = "Lifepath Quirks"
+	mechanics = "You do not need a workbench or alchemy table when crafting."
+	human_only = FALSE
+/datum/quirk/crafty/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
+
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
 	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
