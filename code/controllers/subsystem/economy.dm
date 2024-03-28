@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(economy)
-	name = "Economy"
+	name = "AAAAEconomy"
 	wait = 15 MINUTES
 	init_order = INIT_ORDER_ECONOMY
 	runlevels = RUNLEVEL_GAME
@@ -89,6 +89,7 @@ SUBSYSTEM_DEF(economy)
 
 	var/list/quest_console_paths = list()
 
+	var/quest_debug = TRUE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -194,12 +195,18 @@ SUBSYSTEM_DEF(economy)
 	if(LAZYLEN(all_quests))
 		setup_quests()
 	QDEL_LIST_ASSOC_VAL(quest_pool)
+	if(quest_debug)
+		roll_for_quests(all_quests, LAZYLEN(all_quests))
+		alert_devices()
+		return
 	var/list/easy = list()
 	var/list/medium = list()
 	var/list/hard = list()
 	var/list/cbt = list()
 	for(var/qpath in all_quests)
 		var/datum/bounty/B = LAZYACCESS(all_quests, qpath)
+		if(!B.should_be_completable())
+			continue // Mingus Matt is ded
 		switch(B.difficulty)
 			if(QUEST_DIFFICULTY_EASY)
 				easy[B] = B.weight
@@ -210,21 +217,28 @@ SUBSYSTEM_DEF(economy)
 			if(QUEST_DIFFICULTY_CBT)
 				cbt[B] = B.weight
 	if(LAZYLEN(easy))
-		roll_for_quests(easy, easy_quests)
+		roll_for_quests(easy, LAZYLEN(easy))
 	if(LAZYLEN(medium))
-		roll_for_quests(medium, medium_quests)
+		roll_for_quests(medium, LAZYLEN(medium))
 	if(LAZYLEN(hard))
-		roll_for_quests(hard, hard_quests)
+		roll_for_quests(hard, LAZYLEN(hard))
 	if(LAZYLEN(cbt))
-		roll_for_quests(cbt, cbt_quests)
+		roll_for_quests(cbt, LAZYLEN(cbt))
 	alert_devices()
 
 /datum/controller/subsystem/economy/proc/roll_for_quests(list/questlist, howmany)
-	for(var/i in 1 to howmany)
-		if(!LAZYLEN(questlist))
-			break
-		var/datum/bounty/B = pickweight_n_take(questlist)
+	var/list/weighty = list()
+	for(var/wid in questlist)
+		var/datum/bounty/B = LAZYACCESS(questlist, wid)
 		if(B)
+			weighty[B] = B.weight
+	for(var/i in 1 to howmany)
+		if(!LAZYLEN(weighty))
+			break
+		var/datum/bounty/B = pickweight(weighty)
+		if(B)
+			if(!B.candupe)
+				weighty -= B
 			var/datum/bounty/B2 = new B.type()
 			quest_pool[B2.uid] = B2
 
@@ -248,13 +262,13 @@ SUBSYSTEM_DEF(economy)
 	return QL.add_active_quest(B, TRUE)
 
 /// removes an active quest
-/datum/controller/subsystem/economy/proc/remove_active_quest(datum/bounty/B, mob/user, loud = TRUE)
+/datum/controller/subsystem/economy/proc/remove_active_quest(datum/bounty/B, mob/user, loud = TRUE, system_handled)
 	if(!user)
 		return FALSE
 	var/datum/quest_book/QL = get_quest_book(user)
 	if(!QL)
 		return FALSE
-	return QL.remove_active_quest(B)
+	return QL.remove_active_quest(B, loud, system_handled)
 
 /datum/controller/subsystem/economy/proc/activate_quest(datum/bounty/B)
 	active_quests[B.uid] = B
@@ -329,7 +343,7 @@ SUBSYSTEM_DEF(economy)
 		searchit = quest_pool
 	return LAZYACCESS(searchit, uid)
 
-/datum/controller/subsystem/economy/proc/cleanup_deleting_quest(datum/bounty/B)
+/datum/controller/subsystem/economy/proc/cleanup_deleting_quest(datum/bounty/B, system_handled)
 	if(istext(B))
 		B = LAZYACCESS(quest_pool, B)
 	if(!B)
@@ -338,8 +352,7 @@ SUBSYSTEM_DEF(economy)
 	quest_pool -= B.uid
 	for(var/k in quest_books)
 		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		QL.remove_active_quest(B)
-		QL.QW.quest_destroyed()
+		QL.remove_active_quest(B, system_handled)
 
 /datum/controller/subsystem/economy/proc/is_part_of_a_quest(atom/thing)
 	if(!thing)
@@ -550,6 +563,7 @@ SUBSYSTEM_DEF(economy)
 	/// list of unique(ish) IDs of things that have been turned in
 	var/list/things_turned_in = list() // THINGS IVE SHOVED UP ME ARSE
 	var/datum/quest_window/QW
+	var/printer_cooldown = 0
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -572,7 +586,7 @@ SUBSYSTEM_DEF(economy)
 		if(loud)
 			to_chat(user, span_alert("That quest isn't available anymore!"))
 		return FALSE
-	if(!can_take_quest(user, B, TRUE))
+	if(!can_take_quest(B, TRUE))
 		return FALSE
 	/// quest is go!!
 	var/datum/bounty/B2 = new B.type()
@@ -602,7 +616,7 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	return TRUE
 
-/datum/quest_book/proc/remove_active_quest(datum/bounty/B, loud = TRUE)
+/datum/quest_book/proc/remove_active_quest(datum/bounty/B, loud = TRUE, system_handled)
 	var/mob/user = ckey2mob(ckey)
 	if(istext(B))
 		B = LAZYACCESS(active_quests, B)
@@ -610,14 +624,15 @@ SUBSYSTEM_DEF(economy)
 		if(loud)
 			to_chat(user, span_alert("That quest doesn't exist!"))
 		return FALSE
-	SSeconomy.deactivate_quest(B)
 	if(!LAZYACCESS(active_quests, B.uid))
 		if(loud)
 			to_chat(user, span_alert("You're not doing that quest!"))
 		return FALSE
 	active_quests -= B.uid
 	QW.quest_destroyed(B, TRUE)
-	qdel(B)
+	if(!system_handled)
+		SSeconomy.deactivate_quest(B)
+		qdel(B)
 	return TRUE
 
 /datum/quest_book/proc/turn_something_in(atom/thing)
@@ -706,7 +721,7 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "CargoBountyConsole") // Nothing to do with Cargo, bounties, or consoles. Enjoy
+		ui = new(user, src, "CargoBountyConsole") // It has nothing to do with Cargo, it has nothing to do with bounties, it has everything to do with hurting
 		ui.open()
 
 /datum/quest_book/ui_state(mob/user)
@@ -735,13 +750,16 @@ SUBSYSTEM_DEF(economy)
 	data["BankedPoints"] = unclaimed_points
 	data["HighestBankedPoints"] = overall_banked
 	data["GlobalHighestBanked"] = SSeconomy.highest_banked
+	data["CurrencyUnit"] = SSeconomy.currency_unit
+	data["CurrencyName"] = SSeconomy.currency_name
+	data["CurrencyNamePlural"] = SSeconomy.currency_name_plural
 	return data
 
 /datum/quest_book/ui_act(action,params)
 	if(..())
 		return
 	var/mob/user = usr
-	switch(action) // lets bounce these commands back and forth between us and the subsystem, just so they get dizzy
+	switch(action) // lets bounce these commands back and forth between us and the subsystem, just so they get good and dizzy
 		if("AcceptQuest")
 			SSeconomy.add_active_quest(SSeconomy.get_quest_by_uid(params["BountyUID"]), src, user)
 			return TRUE
@@ -751,10 +769,16 @@ SUBSYSTEM_DEF(economy)
 		if("FinishQuest")
 			SSeconomy.finish_quest(LAZYACCESS(active_quests, params["BountyUID"]), src, user)
 			return TRUE
-		if("GiveClaimer")
-			SSeconomy.give_claimer(user, GET_WEAKREF(last_used))
+		if("CashOut")
+			dispense_reward()
 			return TRUE
-		if("ViewQuest")
+		if("ToggleBeep")
+			TOGGLE_VAR(beep_on_update)
+			return TRUE
+		if("GetScanner")
+			give_scanner()
+			return TRUE
+		if("OpenQuest")
 			var/datum/bounty/B
 			if(params["QuestIsMine"])
 				B = LAZYACCESS(active_quests, params["BountyUID"])
@@ -762,6 +786,12 @@ SUBSYSTEM_DEF(economy)
 				B = SSeconomy.get_quest_by_uid(params["BountyUID"])
 			if(B)
 				show_quest(B)
+
+/datum/quest_book/proc/give_scanner()
+	var/mob/user = ckey2mob(ckey)
+	if(!user)
+		return
+	SSeconomy.give_claimer(user)
 
 /datum/quest_book/proc/show_quest(datum/bounty/B)
 	if(!B)
@@ -783,8 +813,21 @@ SUBSYSTEM_DEF(economy)
 	QR.assign_value(payment, 1.15, "#[random_color()]")
 	if(doer)
 		doer.put_in_hands(QR)
+	playsound(doer, 'sound/machines/printer_press.ogg', 40, TRUE)
 	return TRUE
 
+/datum/quest_book/proc/print_quest(datum/bounty/B)
+	var/mob/doer = ckey2mob(ckey)
+	if(!doer)
+		return FALSE
+	to_chat(doer, span_alert("Could not establish connection to FoxEye Wireless Printer. Contact your Guild webmaster for assistance."))
+	// if(printer_cooldown > world.time)
+	// 	to_chat(doer, span_alert("The printer is still refilling its inkwell."))
+	// 	return FALSE
+	// B.print_quest(doer)
+	// printer_cooldown = world.time + 5 SECONDS
+
+/////////////////////////////////////////////////////////////////////
 /// cute little thing that'll pop out a window of the selected quest
 /datum/quest_window
 	var/datum/quest_book/parent
@@ -830,7 +873,26 @@ SUBSYSTEM_DEF(economy)
 		return data
 	return B.get_tgui(user)
 
-
+/datum/quest_window/ui_act(action,params)
+	if(..())
+		return
+	var/mob/user = usr
+	switch(action)
+		if("AcceptQuest")
+			SSeconomy.add_active_quest(SSeconomy.get_quest_by_uid(params["BountyUID"]), src, user)
+			return TRUE
+		if("CancelQuest")
+			SSeconomy.remove_active_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), src, user)
+			return TRUE
+		if("FinishQuest")
+			SSeconomy.finish_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), src, user)
+			return TRUE
+		if("GiveScanner")
+			parent.give_scanner()
+			return TRUE
+		if("PrintQuest")
+			parent.print_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), src, user)
+			return TRUE
 
 
 /////////////////////////////////////////////////
@@ -883,7 +945,7 @@ SUBSYSTEM_DEF(economy)
 /// A device that can be used to claim items for quests
 /obj/item/hand_item/quest_scanner
 	name = "quest scanner"
-	desc = "A handy little modified zorcher used to bend the fabric of reality and deliver specific things related to quests to parts unknown. \
+	desc = "A handy little modified zorcher used by independant Guild contractors to bend the fabric of reality and deliver specific quest related things to parts unknown. \
 		\n\n HOW TO USE: \
 		\nClick this thing onto something, and if it is part of a Quest, it'll try to claim it.\
 		\nClick a floor or container and it'll try to find the first valid thing to send, if any."
@@ -892,7 +954,7 @@ SUBSYSTEM_DEF(economy)
 	item_state = "radio"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	item_flags = NOBLUDGEON
+	item_flags = NOBLUDGEON | DROPDEL | ABSTRACT | HAND_ITEM
 	w_class = WEIGHT_CLASS_NO_INVENTORY
 
 /obj/item/hand_item/quest_scanner/afterattack(obj/O, mob/user, proximity)
@@ -922,7 +984,7 @@ SUBSYSTEM_DEF(economy)
 			break
 	if(found_something)
 		playsound(user, 'sound/machines/terminal_select.ogg', 65, TRUE)
-		to_chat(user, span_notice("The Claimer beeps and lights up! It's found something!"))
+		to_chat(user, span_notice("The Scanner beeps and lights up! It's found something!"))
 	else
 		playsound(user, 'sound/machines/terminal_prompt_confirm.ogg', 65, TRUE)
-		to_chat(user, span_notice("The Claimer couldn't find anything!"))
+		to_chat(user, span_notice("The Scanner couldn't find anything!"))

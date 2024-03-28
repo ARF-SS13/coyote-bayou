@@ -75,5 +75,7 @@
 /// Increasing difficulty causes an increase in the number of quotas that need filled.
 #define QDF_MORE_FILLED (1 << 1)
 
-
+#define BOUNTY_QUOTA_ITEMS (1 << 0)
+#define BOUNTY_QUOTA_MOBS (1 << 1)
+#define BOUNTY_QUOTA_DEAD (1 << 2)
 

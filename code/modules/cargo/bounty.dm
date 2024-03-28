@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 	/// The chance of this bounty being picked
 	var/weight = 1
+	var/candupe = TRUE
 
 	var/uid = "Bingus"
 	var/assigned_ckey
@@ -168,6 +169,20 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	do_sparks(2, TRUE, get_turf(A))
 	QDEL_IN(A, 2 SECONDS)
 
+/// If the quest has mobs that might not exist anymore, this will return FALSE.
+/datum/bounty/proc/should_be_completable()
+	var/list/mobs = list()
+	for(var/datum/bounty_quota/BQ in wanted_things)
+		for(var/pat in BQ.paths)
+			if(ispath(pat, /mob/living))
+				mobs |= pat
+	if(!LAZYLEN(mobs))
+		return TRUE // no mobs to check, items are typically everywhere
+	for(var/mobpath in mobs)
+		if(SSmobs.is_extinct(mobpath))
+			return FALSE // last chance to see-- oh, oh well
+	return TRUE
+
 /datum/bounty/proc/is_complete()
 	if(is_templarte)
 		return FALSE
@@ -273,12 +288,19 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	data["QuestDesc"] = description
 	data["QuestDifficulty"] = difficulty
 	data["QuestInfo"] = get_wanted_info()
-	data["QuestReward"] = reward_string()
+	data["QuestReward"] = get_reward()
 	data["QuestTaken"] = is_templarte && !!LAZYACCESS(QL.active_quests, uid)
 	data["QuestAcceptible"] = QL.can_take_quest(user, src, FALSE)
 	data["QuestComplete"] = is_complete()
 	data["QuestIsTemplarte"] = is_templarte
 	data["QuestUID"] = uid
+	var/compelted_objectives = 0
+	for(var/datum/bounty_quota/BQ in wanted_things)
+		if(BQ.IsCompleted())
+			++compelted_objectives
+	data["QuestObjectivesComplete"] = compelted_objectives
+	data["QuestObjectivesTotal"] = LAZYLEN(wanted_things)
+	data["CurrencyUnit"] = SSeconomy.currency_unit
 	return data
 
 /datum/bounty/proc/mark_high_priority(scale_reward = 2)
@@ -305,8 +327,12 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/mobs_must_be_dead = TRUE
 	var/delete_thing = TRUE
 	var/claimdelay = 2 SECONDS
+	var/quota_contents
+	var/paths_get_subtypes = FALSE
+	var/paths_excludes_type = FALSE
+	var/pick_this_many
 
-/datum/bounty_quota/New(name, info, paths, needed_amount)
+/datum/bounty_quota/New(name, info, paths, needed_amount, pick_this_many, mobs_must_be_dead = TRUE, delete_thing = TRUE)
 	if(!isnull(name))
 		src.name = name
 	if(!isnull(info))
@@ -315,12 +341,36 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		src.paths = paths
 	if(!isnull(needed_amount))
 		src.needed_amount = needed_amount
-	if(auto_generate_info)
+	if(!isnull(pick_this_many))
+		src.pick_this_many = pick_this_many
+	src.mobs_must_be_dead = mobs_must_be_dead
+	src.delete_thing = delete_thing
+	setzup()
+
+/datum/bounty_quota/proc/setzup()
+	if(paths_get_subtypes)
+		var/list/nupaths = list()
+		for(var/pat in paths)
+			if(ispath(pat))
+				nupaths |= subtypesof(pat)
+			if(!paths_excludes_type)
+				nupaths |= pat
+		paths = nupaths.Copy()
+	if(pick_this_many > 0)
+		var/num_to_pick = clamp(pick_this_many, 1, LAZYLEN(paths))
+		var/list/thepaths = src.paths.Copy()
+		paths.Cut()
+		for(var/i in 1 to num_to_pick)
+			var/pick = pick(thepaths)
+			thepaths -= pick
+			paths |= pick
+	if(auto_generate_info || isnull(info))
 		AutoGen()
 	GottaBeDead()
 	GonnaDelete()
 
 /datum/bounty_quota/proc/AutoGen()
+	// SSeconomy.autogenerate_info(src)
 	if(info)
 		return // already set
 	var/list/msgs = list()
@@ -361,6 +411,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		var/mob/living/L = thing
 		if(L.stat != DEAD)
 			return FALSE
+	return IsValidThing(thing)
+
+/datum/bounty_quota/proc/IsValidThing(atom/thing)
+	if(!isatom(thing))
+		return
 	for(var/pat in paths)
 		if(thing.type == pat)
 			return TRUE
@@ -379,95 +434,113 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty_quota/proc/get_tgui_slug()
 	var/list/data = list()
-	data["EntryName"] = name
-	data["EntryInfo"] = info
-	data["EntryNeeded"] = needed_amount
-	data["EntryGotten"] = gotten_amount
-	data["EntryComplete"] = IsCompleted()
-	data["EntryMobsMustBeDead"] = mobs_must_be_dead
-	data["EntryDeleteThing"] = delete_thing
+	data["QuotaName"] = name
+	data["QuotaInfo"] = info
+	data["QuotaNeeded"] = needed_amount
+	data["QuotaGotten"] = gotten_amount
+	data["QuotaComplete"] = IsCompleted()
+	data["QuotaMobsMustBeDead"] = mobs_must_be_dead
+	data["QuotaDeleteThing"] = delete_thing
+	data["QuotaContents"] = get_quota_contents()
 	return data
+
+/datum/bounty_quota/proc/get_quota_contents()
+	if(!isnull(quota_contents))
+		return quota_contents
+	var/stuff = NONE
+	for(var/pat in paths)
+		if(ispath(pat, /obj/item))
+			stuff |= BOUNTY_QUOTA_ITEMS
+		if(ispath(pat, /mob/living))
+			stuff |= BOUNTY_QUOTA_MOBS
+			if(mobs_must_be_dead)
+				stuff |= BOUNTY_QUOTA_DEAD
+	quota_contents = stuff
+	return stuff
+
+
+
 
 // This proc is called when the shuttle docks at CentCom.
 // It handles items shipped for bounties.
 /proc/bounty_ship_item_and_contents(atom/movable/AM, dry_run=FALSE)
-	if(!GLOB.bounties_list.len)
-		setup_bounties()
+	// if(!GLOB.bounties_list.len)
+	// 	setup_bounties()
 
-	var/list/matched_one = FALSE
-	for(var/thing in reverseRange(AM.GetAllContents()))
-		var/matched_this = FALSE
-		for(var/datum/bounty/B in GLOB.bounties_list)
-			if(B.applies_to(thing))
-				matched_one = TRUE
-				matched_this = TRUE
-				if(!dry_run)
-					B.ship(thing)
-		if(!dry_run && matched_this)
-			qdel(thing)
-	return matched_one
+	// var/list/matched_one = FALSE
+	// for(var/thing in reverseRange(AM.GetAllContents()))
+	// 	var/matched_this = FALSE
+	// 	for(var/datum/bounty/B in GLOB.bounties_list)
+	// 		if(B.applies_to(thing))
+	// 			matched_one = TRUE
+	// 			matched_this = TRUE
+	// 			if(!dry_run)
+	// 				B.ship(thing)
+	// 	if(!dry_run && matched_this)
+	// 		qdel(thing)
+	// return matched_one
 
 // Returns FALSE if the bounty is incompatible with the current bounties.
 /proc/try_add_bounty(datum/bounty/new_bounty)
-	if(!new_bounty || !new_bounty.name || !new_bounty.description)
-		return FALSE
-	for(var/i in GLOB.bounties_list)
-		var/datum/bounty/B = i
-		if(!B.compatible_with(new_bounty) || !new_bounty.compatible_with(B))
-			return FALSE
-	GLOB.bounties_list += new_bounty
-	return TRUE
+	// if(!new_bounty || !new_bounty.name || !new_bounty.description)
+	// 	return FALSE
+	// for(var/i in GLOB.bounties_list)
+	// 	var/datum/bounty/B = i
+	// 	if(!B.compatible_with(new_bounty) || !new_bounty.compatible_with(B))
+	// 		return FALSE
+	// GLOB.bounties_list += new_bounty
+	// return TRUE
 
 // Returns a new bounty of random type, but does not add it to GLOB.bounties_list.
 /proc/random_bounty()
-	switch(rand(1, 2))
-		if(1)
-			var/subtype = pick(subtypesof(/datum/bounty/item/chef))
-			return new subtype
-		if(2)
-			var/subtype = pick(subtypesof(/datum/bounty/item/chef))
-			return new subtype
+	// switch(rand(1, 2))
+	// 	if(1)
+	// 		var/subtype = pick(subtypesof(/datum/bounty/item/chef))
+	// 		return new subtype
+	// 	if(2)
+	// 		var/subtype = pick(subtypesof(/datum/bounty/item/chef))
+	// 		return new subtype
 
 // Called lazily at startup to populate GLOB.bounties_list with random bounties.
 /proc/setup_bounties()
 
-	var/pick // instead of creating it a bunch let's go ahead and toss it here, we know we're going to use it for dynamics and subtypes!
+	// var/pick // instead of creating it a bunch let's go ahead and toss it here, we know we're going to use it for dynamics and subtypes!
 
-	/********************************Subtype Gens********************************/
-	var/list/easy_add_list_subtypes = list(/datum/bounty/item/chef = 2,)
+	// /********************************Subtype Gens********************************/
+	// var/list/easy_add_list_subtypes = list(/datum/bounty/item/chef = 2,)
 
-	for(var/the_type in easy_add_list_subtypes)
-		for(var/i in 1 to easy_add_list_subtypes[the_type])
-			pick = pick(subtypesof(the_type))
-			try_add_bounty(new pick)
+	// for(var/the_type in easy_add_list_subtypes)
+	// 	for(var/i in 1 to easy_add_list_subtypes[the_type])
+	// 		pick = pick(subtypesof(the_type))
+	// 		try_add_bounty(new pick)
 
-	/********************************Strict Type Gens********************************/
-	var/list/easy_add_list_strict_types = list(/datum/bounty/item/chef = 1,
-											/datum/bounty/item/chef = 1,
-											/datum/bounty/item/chef = 1)
+	// /********************************Strict Type Gens********************************/
+	// var/list/easy_add_list_strict_types = list(/datum/bounty/item/chef = 1,
+	// 										/datum/bounty/item/chef = 1,
+	// 										/datum/bounty/item/chef = 1)
 
-	for(var/the_strict_type in easy_add_list_strict_types)
-		for(var/i in 1 to easy_add_list_strict_types[the_strict_type])
-			try_add_bounty(new the_strict_type)
+	// for(var/the_strict_type in easy_add_list_strict_types)
+	// 	for(var/i in 1 to easy_add_list_strict_types[the_strict_type])
+	// 		try_add_bounty(new the_strict_type)
 
-	/********************************Dynamic Gens********************************/
+	// /********************************Dynamic Gens********************************/
 
-	for(var/i in 0 to 1)
-		if(prob(50))
-			pick = pick(subtypesof(/datum/bounty/item/chef))
-		else
-			pick = pick(subtypesof(/datum/bounty/item/chef))
-		try_add_bounty(new pick)
+	// for(var/i in 0 to 1)
+	// 	if(prob(50))
+	// 		pick = pick(subtypesof(/datum/bounty/item/chef))
+	// 	else
+	// 		pick = pick(subtypesof(/datum/bounty/item/chef))
+	// 	try_add_bounty(new pick)
 
-	/********************************Cutoff for Non-Low Priority Bounties********************************/
-	var/datum/bounty/B = pick(GLOB.bounties_list)
-	B.mark_high_priority()
+	// /********************************Cutoff for Non-Low Priority Bounties********************************/
+	// var/datum/bounty/B = pick(GLOB.bounties_list)
+	// B.mark_high_priority()
 
-	/********************************Low Priority Gens********************************/
-	var/list/low_priority_strict_type_list = list(/datum/bounty/item/chef)
+	// /********************************Low Priority Gens********************************/
+	// var/list/low_priority_strict_type_list = list(/datum/bounty/item/chef)
 
-	for(var/low_priority_bounty in low_priority_strict_type_list)
-		try_add_bounty(new low_priority_bounty)
+	// for(var/low_priority_bounty in low_priority_strict_type_list)
+	// 	try_add_bounty(new low_priority_bounty)
 
 /proc/completed_bounty_count()
 	var/count = 0
