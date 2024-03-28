@@ -40,9 +40,6 @@
 	//Was this item rotated? if so, how much? (only working with Edit Vars verb for now)
 	var/is_tilted
 
-	/// Was this item 
-	var/was_looted = FALSE
-
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("anchored")
