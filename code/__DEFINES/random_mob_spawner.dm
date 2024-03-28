@@ -80,6 +80,10 @@
 #define MOB_SPAWNER_KIND_ROBOT_LOW "low level robots"
 #define MOB_SPAWNER_KIND_ROBOT_HIGH "high level robots"
 
+/// spiders
+#define MOB_SPAWNER_KIND_SPIDER_LOW "lesser spider"
+#define MOB_SPAWNER_KIND_SPIDER_HIGH "greater spider"
+
 /// mostly for dungeons
 #define MOB_SPAWNER_KIND_TRASH "trash mobs"
 #define MOB_SPAWNER_KIND_LOW "low level mobs"
@@ -181,6 +185,20 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_HIVEBOT
 	)
 
+/// low level spiders
+/datum/random_mob_spawner_group/spider_low
+	group_tag = MOB_SPAWNER_KIND_SPIDER_LOW
+	group_list = list(
+		MOB_SPAWNER_LESSERSPIDER
+	)
+
+/// high level spiders
+/datum/random_mob_spawner_group/spider_high
+	group_tag = MOB_SPAWNER_KIND_SPIDER_HIGH
+	group_list = list(
+		MOB_SPAWNER_GREATERSPIDER
+	)
+
 /// all trash mobs
 /datum/random_mob_spawner_group/all_trash
 	group_tag = MOB_SPAWNER_KIND_TRASH
@@ -196,7 +214,6 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_LOW
 	group_list = list(
 		MOB_SPAWNER_GHOUL,
-		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
 		MOB_SPAWNER_GECKO,
@@ -306,7 +323,6 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_tag = MOB_SPAWNER_KIND_ANIMALS_TRASH
 	group_list = list(
 		MOB_SPAWNER_BLOATFLY,
-		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_GECKO,
 		MOB_SPAWNER_BLOATFLY_AND_GECKO,
 		MOB_SPAWNER_MOLERAT,
@@ -319,7 +335,6 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_BLOATFLY,
-		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_GECKO,
 		MOB_SPAWNER_BLOATFLY_AND_GECKO,
 		MOB_SPAWNER_MOLERAT,
@@ -334,6 +349,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	group_list = list(
 		MOB_SPAWNER_MIRELURK,
 		MOB_SPAWNER_CAZADOR,
+		MOB_SPAWNER_LESSERSPIDER,
 		MOB_SPAWNER_ANT,
 		MOB_SPAWNER_SCORPIONS,
 		MOB_SPAWNER_NIGHTSTALKER,
