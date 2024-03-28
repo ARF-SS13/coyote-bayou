@@ -3398,9 +3398,16 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bQl" = (
-/obj/machinery/autolathe/ammo,
-/obj/item/stack/ore/blackpowder/fifty,
-/obj/item/stack/ore/blackpowder/fifty,
+/obj/machinery/autolathe/ammo{
+	pixel_y = 17;
+	density = 0
+	},
+/obj/item/stack/ore/blackpowder/fifty{
+	pixel_y = 20
+	},
+/obj/item/stack/ore/blackpowder/fifty{
+	pixel_y = 17
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "bQD" = (
@@ -4314,7 +4321,10 @@
 /obj/item/advanced_crafting_components/flux,
 /obj/item/advanced_crafting_components/lenses,
 /obj/item/advanced_crafting_components/receiver,
-/obj/machinery/workbench/advanced,
+/obj/machinery/workbench/advanced{
+	pixel_y = 16;
+	density = 0
+	},
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
@@ -10353,6 +10363,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"fsu" = (
+/obj/structure/table/wood,
+/obj/machinery/photocopier,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/open/floor/carpet/green,
+/area/f13/building/trader)
 "fsE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -15470,19 +15490,8 @@
 /turf/open/indestructible/ground/bamboo/tatamiblack,
 /area/f13/wasteland/city/newboston/sauna)
 "iep" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	color = "#222222";
-	opacity = 1
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/structure/barricade/wooden,
-/obj/effect/overlay/junk/telescreen,
-/turf/open/floor/wood_fancy/wood_fancy_light,
+/obj/machinery/light/small,
+/turf/open/floor/carpet/green,
 /area/f13/building/trader)
 "ieq" = (
 /obj/item/storage/trash_stack,
@@ -16167,11 +16176,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "iyT" = (
-/obj/machinery/status_display/supply{
-	pixel_y = 28;
-	layer = 6
+/obj/machinery/autolathe{
+	pixel_y = 16;
+	density = 0
 	},
-/obj/machinery/autolathe,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "iyV" = (
@@ -16771,10 +16779,6 @@
 /obj/item/choice_beacon/pet/mountable,
 /obj/machinery/cell_charger,
 /obj/machinery/cell_charger,
-/obj/structure/window/reinforced{
-	color = "#222222";
-	opacity = 1
-	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "iOd" = (
@@ -21525,7 +21529,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "lje" = (
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/machinery/mineral/wasteland_vendor/attachments{
+	pixel_y = 17;
+	density = 0
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "ljl" = (
@@ -24117,10 +24124,23 @@
 	},
 /area/f13/building)
 "mHJ" = (
-/obj/structure/chair/office{
-	dir = 4
+/obj/structure/table/wood,
+/obj/structure/barricade/bars{
+	layer = 3.5;
+	dir = 8
 	},
-/turf/open/floor/carpet/green,
+/obj/machinery/door/poddoor/shutters{
+	id = "countershutters";
+	name = "counter shutters";
+	req_one_access_txt = null
+	},
+/obj/machinery/status_display/supply{
+	pixel_y = 28;
+	layer = 6
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building/trader)
 "mHP" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -24441,6 +24461,10 @@
 	pixel_y = 1;
 	pixel_x = 32;
 	color = "#f3f233"
+	},
+/obj/machinery/computer/bounty{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/trader)
@@ -25095,7 +25119,10 @@
 /area/f13/wasteland)
 "nhV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/machinery/mineral/wasteland_vendor/ammo{
+	pixel_y = 17;
+	density = 0
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "nhZ" = (
@@ -26978,7 +27005,10 @@
 	},
 /area/f13/building)
 "okY" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
+/obj/machinery/mineral/wasteland_vendor/traderspecial{
+	pixel_y = 16;
+	density = 0
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "olr" = (
@@ -36682,18 +36712,9 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "toG" = (
-/obj/structure/table/wood,
-/obj/machinery/photocopier,
-/obj/structure/window/reinforced{
-	dir = 1;
-	color = "#222222";
-	opacity = 1
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1";
-	pixel_x = -6;
-	pixel_y = 4
+/obj/machinery/computer/bounty{
+	pixel_y = 12;
+	density = 0
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
@@ -37474,10 +37495,6 @@
 /obj/item/export_scanner,
 /obj/item/export_scanner,
 /obj/item/export_scanner,
-/obj/structure/window/reinforced{
-	color = "#222222";
-	opacity = 1
-	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/trader)
 "tHR" = (
@@ -37948,16 +37965,13 @@
 	},
 /area/f13/building)
 "tSy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal{
-	pixel_y = 21;
-	density = 0
+/obj/structure/chair/office{
+	dir = 4
 	},
 /obj/machinery/light/small{
 	dir = 8;
-	light_color = "#d8b1b1";
 	pixel_x = -6;
-	pixel_y = 4
+	pixel_y = 3
 	},
 /turf/open/floor/carpet/green,
 /area/f13/building/trader)
@@ -75320,7 +75334,7 @@ hRl
 (114,1,1) = {"
 hRl
 gao
-rki
+mHJ
 xSo
 afx
 afx
@@ -76612,8 +76626,8 @@ lsj
 iXY
 abR
 gao
-mHJ
-rvM
+aMZ
+vEc
 rvM
 qCp
 iUQ
@@ -76868,10 +76882,10 @@ iXY
 iXY
 iXY
 iOa
-toG
-aMZ
-vEc
-rvM
+gao
+bSa
+yer
+iep
 qCp
 evI
 sYT
@@ -77119,15 +77133,15 @@ hRl
 (121,1,1) = {"
 hRl
 gao
-gyr
+toG
 iXY
 iXY
 iXY
 iXY
 tHN
-iep
-bSa
-yer
+gao
+rvM
+rvM
 rvM
 qCp
 qQB
@@ -77383,7 +77397,7 @@ lsj
 iXY
 gyr
 gao
-rvM
+fsu
 rvM
 rvM
 qCp

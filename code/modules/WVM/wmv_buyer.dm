@@ -407,14 +407,14 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if("[I.type]" == last_appraised)
 		silent = TRUE
 	last_appraised = "[I.type]"
-	if(!GLOB.wasteland_vendor_shop_list[trader_key][I.type])
+	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type] || (SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE) / 10) // get value, get paid
+	if(!final_price)
 		if(!looping)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = silent)
 		return FALSE
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type]
 	if(!looping)
 		say("I'll give you [final_price] copper per [I]!", just_chat = silent)
-	return TRUE
+	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
 	var/was_locked = islocked()
@@ -470,7 +470,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Nothing to sell!")
 		abort()
 		return
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][thing2sell.type]
+	var/final_price = appraise_item(thing2sell)
 	if(!final_price)
 		say("Nope, don't want that [thing2sell]!")
 		yeet_thing(thing2sell)
@@ -496,7 +496,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Hey, where'd my [I] go?")
 		abort()
 		return
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type]
+	var/final_price = appraise_item(I)
 	if(!final_price)
 		say("Nope, don't want that [I]!")
 		yeet_thing(I)
@@ -509,7 +509,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(fractional || prob(2))
 		generate_fortune(fractional || rand(1,10)) // no more only-bad fortunes for everyone
 	var/storedcaps = payout(final_price)
-	say("Sold [I] for [final_price] Edisons, bringing the total to [storedcaps] copper!")
+	var/currencie = final_price > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	say("Sold [I] for [final_price] [currencie], bringing the total to [storedcaps] copper!")
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -523,6 +524,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(yote.loc != src)
 		return
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, yote, get_turf(src), TRUE)
+	yote.forceMove(get_turf(src)) // juuuuuust in case
 	var/atom/lucky_target
 	var/list/throw_at_ables = list()
 	for(var/mob/oops in view(7, src))
@@ -743,9 +745,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			continue
 		if(istype(thingy, /obj/item/stack/f13Cash))
 			continue
-		if(appraise_item(thingy, TRUE))
-			return thingy
-	return
+		return thingy
+	// 	if(appraise_item(thingy, TRUE))
+	// return
 
 
 /*

@@ -10,6 +10,9 @@ SUBSYSTEM_DEF(mobs)
 	var/static/list/cubemonkeys = list()
 	var/static/list/cheeserats = list()
 
+	/// List of all mobs that are currently in some way alive and not dead (despawned counts too)
+	var/list/mob_tally = list()
+
 	var/there_is_no_escape = FALSE // there is escape
 	var/debug_no_icon_2_html = FALSE
 
@@ -48,3 +51,58 @@ SUBSYSTEM_DEF(mobs)
 			GLOB.mob_living_list.Remove(L)
 		if (MC_TICK_CHECK)
 			return
+
+/datum/controller/subsystem/mobs/proc/mob_spawned(mob/living/mob)
+	if(!mob)
+		return
+	var/datum/mob_tally/tally = get_mob_tally(mob)
+	if(!tally)
+		return
+	tally.mob_spawned(mob)
+
+/datum/controller/subsystem/mobs/proc/mob_despawned(mob/living/mob)
+	if(!mob)
+		return
+	var/datum/mob_tally/tally = get_mob_tally(mob)
+	if(!tally)
+		return
+	tally.mob_despawned(mob)
+
+/datum/controller/subsystem/mobs/proc/get_mob_tally(mob/living/mob)
+	if(ismob(mob))
+		mob = mob.type
+	var/datum/mob_tally/tally = LAZYACCESS(mob_tally, mob)
+	if(!tally)
+		tally = new /datum/mob_tally(mob.type)
+		mob_tally[mob.type] = tally
+	return tally
+
+/datum/controller/subsystem/mobs/proc/is_extinct(mobpath)
+	if(!mobpath)
+		return FALSE
+	var/datum/mob_tally/tally = get_mob_tally(mobpath)
+	if(!tally)
+		return FALSE
+	return tally.num_in_play < 1
+
+////////////////////mob tally////////////////////
+/datum/mob_tally
+	var/mob/living/mymob
+	var/num_in_play = 0
+
+/datum/mob_tally/New(mob/living/mymob)
+	src.mymob = mymob
+
+/datum/mob_tally/proc/mob_spawned(mob/living/mob)
+	if(!mob || !istype(mob, mymob))
+		return
+	num_in_play++
+
+/datum/mob_tally/proc/mob_despawned(mob/living/mob)
+	if(!mob || !istype(mob, mymob))
+		return
+	num_in_play--
+	if(num_in_play < 0)
+		message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
+		num_in_play = 0
+
