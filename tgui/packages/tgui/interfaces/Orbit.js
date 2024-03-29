@@ -82,7 +82,6 @@ export const Orbit = (props, context) => {
   const {
     alive,
     antagonists,
-    dead,
     ghosts,
     misc,
     npcs,
