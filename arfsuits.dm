@@ -2668,7 +2668,7 @@
 	desc = "A suit made from gleaming insect chitin. The glittering black scales are remarkably resistant to hostile environments, except cold."
 	icon = 'icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "insect"
+	icon_state = "insect_armor"
 	item_state = "insect"
 	flags_inv = HIDEJUMPSUIT
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
