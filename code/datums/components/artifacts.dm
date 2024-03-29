@@ -2392,8 +2392,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_POCKET | INV_SLOTBIT_BACKPACK | INV_SLOTBIT_SUITSTORE
 	foldable = FALSE
-	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/lead = 20)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
 	component_type = /datum/component/storage/concrete/box/artifact
 
 /obj/item/storage/box/artifactcontainer/ComponentInitialize()
@@ -2477,7 +2477,7 @@
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
 		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
-		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.5
 		)
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 
