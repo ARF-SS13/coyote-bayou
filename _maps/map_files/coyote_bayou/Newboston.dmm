@@ -847,8 +847,7 @@
 	req_one_access_txt = "138"
 	},
 /obj/structure/curtain{
-	color = "#5c131b";
-	pixel_y = 0
+	color = "#5c131b"
 	},
 /turf/open/floor/wood_common{
 	color = "#CECECE"
@@ -1353,6 +1352,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aJu" = (
+/obj/structure/fluff/blocker,
+/obj/structure/ladder/unbreakable/door_teleport{
+	desc = "The entrance to Red Rocket!";
+	id = "Redrocket";
+	name = "Red Rocket";
+	layer = 5.1;
+	opacity = 1;
+	pixel_x = 16;
+	pixel_y = -8
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "aJR" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -9487,8 +9499,7 @@
 	req_one_access_txt = "138"
 	},
 /obj/structure/curtain{
-	color = "#5c131b";
-	pixel_y = 0
+	color = "#5c131b"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
@@ -23197,6 +23208,14 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"mhx" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland)
 "mhK" = (
 /obj/structure/chair/f13chair2{
 	dir = 8
@@ -28986,8 +29005,7 @@
 	req_one_access_txt = "138"
 	},
 /obj/structure/curtain{
-	color = "#5c131b";
-	pixel_y = 0
+	color = "#5c131b"
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/hospital/clinic/nash)
@@ -40869,17 +40887,6 @@
 	name = "Red Rocket";
 	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
 	},
-/obj/structure/ladder/unbreakable{
-	desc = "The entrance to Red Rocket!";
-	height = 2;
-	id = "Redrocket";
-	name = "Red Rocket Entrance";
-	pixel_y = 25;
-	pixel_x = 16;
-	layer = 5;
-	icon = 'icons/fallout/structures/doors.dmi';
-	icon_state = "room"
-	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "vxf" = (
@@ -44966,8 +44973,7 @@
 	req_one_access_txt = "138"
 	},
 /obj/structure/curtain{
-	color = "#5c131b";
-	pixel_y = 0
+	color = "#5c131b"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
@@ -75425,7 +75431,7 @@ kpi
 vNO
 vJc
 vzy
-lWa
+mhx
 mxS
 uWd
 leN
@@ -106580,7 +106586,7 @@ vzy
 lCf
 fAY
 fBS
-fAY
+aJu
 vwz
 vzy
 lWa
