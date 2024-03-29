@@ -2393,6 +2393,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
 	conflicts = list(
 		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/flimsy,
 		/datum/quirk/veryflimsy
