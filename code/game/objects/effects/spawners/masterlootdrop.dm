@@ -1197,7 +1197,6 @@
 		/obj/item/stack/sheet/mineral/silver/twentyfive = 1,
 		/obj/item/stack/sheet/bronze/thirty = 1,
 		/obj/item/stack/rods/scaffold/ten = 1,
-		/obj/item/stack/sheet/lead/ten = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_mats
