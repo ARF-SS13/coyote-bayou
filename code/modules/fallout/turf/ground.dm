@@ -156,6 +156,11 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/wasteplant/berrybush/zelenyy = 2,
 	/obj/structure/flora/wasteplant/berrybush/marron = 2,
 	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
+	/obj/structure/flora/wasteplant/sunflower = 2,
+	/obj/structure/flora/wasteplant/rose = 2,
+	/obj/structure/flora/wasteplant/lily = 2,
+	/obj/structure/flora/wasteplant/forgetmenot = 2,
+	/obj/structure/flora/wasteplant/geranium =2
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
