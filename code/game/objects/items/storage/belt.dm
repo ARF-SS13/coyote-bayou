@@ -82,11 +82,11 @@
 	desc = "Holds a collection of simple tools."
 
 /obj/item/storage/belt/utility/waster/PopulateContents()
-	new /obj/item/crowbar(src)
-	new /obj/item/wrench(src)
-	new /obj/item/screwdriver/basic(src)
-	new /obj/item/weldingtool/basic(src)
-	new /obj/item/wirecutters/basic(src)
+	new /obj/item/crowbar/crude(src)
+	new /obj/item/wrench/crude(src)
+	new /obj/item/screwdriver/crude(src)
+	new /obj/item/weldingtool/crude(src)
+	new /obj/item/wirecutters/crude(src)
 	new /obj/item/stack/cable_coil(src,30,pick("yellow","orange"))
 
 // Forgemaster toolbelt (made to make the old chainsaw 2h component bearable, phase out unless needed, wasteland toobelt should suffice)
@@ -95,11 +95,11 @@
 	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
 
 /obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
-	new /obj/item/crowbar(src)
-	new /obj/item/wrench(src)
-	new /obj/item/screwdriver/basic(src)
-	new /obj/item/weldingtool/basic(src)
-	new /obj/item/wirecutters/basic(src)
+	new /obj/item/crowbar/crude(src)
+	new /obj/item/wrench/crude(src)
+	new /obj/item/screwdriver/crude(src)
+	new /obj/item/weldingtool/crude(src)
+	new /obj/item/wirecutters/crude(src)
 	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
@@ -215,7 +215,7 @@
 	new /obj/item/handsaw(src)
 	new /obj/item/retractor(src)
 	new /obj/item/hemostat(src)
-	new /obj/item/weldingtool/basic(src)
+	new /obj/item/weldingtool(src)
 	new /obj/item/bonesetter(src)
 
 //////////////////

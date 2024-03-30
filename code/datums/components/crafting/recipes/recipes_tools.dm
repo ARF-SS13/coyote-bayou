@@ -62,7 +62,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_ASSEM
 	subcategory = CAT_TOOLS
-*/
 
 /datum/crafting_recipe/basicwire
 	name = "Basic Cutters"
@@ -108,6 +107,7 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+*/
 
 /datum/crafting_recipe/lockpick_basic
 	name = "Beginner Lockpick Set"
