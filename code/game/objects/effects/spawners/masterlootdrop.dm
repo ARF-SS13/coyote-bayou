@@ -234,6 +234,7 @@
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 6,            //151 10
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
+		/obj/item/gun/ballistic/automatic/smg/american180/dp27 = 1,			//150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
 		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
 		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
@@ -241,6 +242,8 @@
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 10,          //135 32        *
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22 = 4, 		//135 32
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh = 2,			//135 32
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 10,              //132 30
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 10,              //126 15
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 10,    //121 16
@@ -318,6 +321,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/sig = 3,                   //180 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 3,      //168 15
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 3,              //150 16
+		/obj/item/gun/ballistic/automatic/pistol/pistol22/val = 1,			//150 16
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 1,     //143 7
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 3,          //138 8
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 1,              //130 7
@@ -455,6 +459,7 @@
 		/obj/item/gun/ballistic/revolver/thatgun = 10,                            //207 5
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,                       //186 97
 		/obj/item/gun/ballistic/automatic/lewis = 10,                             //186 47
+		/obj/item/gun/ballistic/automatic/lewis/dp27 = 10,							//186 47
 	)
 
 ////////////////////////////

@@ -150,6 +150,18 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
+/obj/item/gun/ballistic/automatic/smg/american180/dp27
+	name = "Mini DP-27"
+	desc = "A tiny replica DP-27, with a .22 pan magazine."
+	icon = 'modular_coyote/icons/objects/mgs.dmi'
+	icon_state = "dp"
+	silenced = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/american180/dp27/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
+
 /obj/item/gun/ballistic/automatic/smg/american180/b180
 	name = "American 18-bee"
 	desc = "They used to call the gun a swarm of angry bees. In this case, it's literal."
@@ -402,6 +414,25 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22
+	name = ".22 MP5"
+	desc = "A commercial version of the MP5 chambered in .22LR."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "mp5"
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh
+	name = "Mini PPSh"
+	desc = "A tiny replica SMG, fed from .22 magazines. It's so small!"
+	icon_state = "pps"
+	item_state = "uzi"
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
 
 //tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
@@ -3377,6 +3408,18 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
+
+/obj/item/gun/ballistic/automatic/lewis/dp27
+	name = "DP-27"
+	desc = "An old Soviet light machinegun with a high capacity pan magazine."
+	icon = 'modular_coyote/icons/objects/mgs.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "dp"
+	item_state = "R84"
+	mag_type = /obj/item/ammo_box/magazine/lewis/l47
+	init_mag_type = /obj/item/ammo_box/magazine/lewis/l47
+
 
 //less damage than the M1919, but more compact magazines that hold more
 /obj/item/gun/ballistic/automatic/lewis/lanoe
