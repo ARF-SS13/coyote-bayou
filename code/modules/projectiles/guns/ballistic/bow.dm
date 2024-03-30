@@ -224,6 +224,17 @@
 	item_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 
+/obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow
+	name = "Marksman Crossbow"
+	desc = "A compact crossbow with a precision scope."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "xbow"
+	item_state = "xbow"
+	trigger_guard = TRIGGER_GUARD_NONE
+	can_scope = FALSE
+	zoom_factor = 1.5
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
 	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"	//temporary fix

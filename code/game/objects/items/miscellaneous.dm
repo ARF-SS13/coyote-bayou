@@ -372,6 +372,7 @@
 	desc = "Contains your choice of weapon inside!"
 	var/static/list/weapon_list = list(
 		"American 180" = /obj/item/gun/ballistic/automatic/smg/american180,
+		"Mini DP-27" = /obj/item/gun/ballistic/automatic/smg/american180/dp27,
 		"10mm SMG" = /obj/item/gun/ballistic/automatic/smg/smg10mm,
 		"M2 carbine" = /obj/item/gun/ballistic/automatic/m1carbine/m2,
 		"MP5-SD" = /obj/item/gun/ballistic/automatic/smg/mp5sd,

@@ -576,12 +576,6 @@
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 	new /obj/item/stack/marker_beacon/thirty(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby(src)
-	new /obj/item/ammo_box/magazine/m9mm(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/gun/ballistic/revolver/shotpistol(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
-	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/storage/survivalkit/combat/empty(src)
 
 /datum/gear/donator/kits/fuzlet2
@@ -590,7 +584,6 @@
 	ckeywhitelist = list("fuzlet")
 
 /obj/item/storage/box/large/custom_kit/fuzlet2/PopulateContents()
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
 	new /obj/item/storage/survivalkit/triple(src)
 	new /obj/item/storage/bag/trash/sack(src)
 
@@ -1757,8 +1750,7 @@
 	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark2/PopulateContents()
-	//new /obj/item/gun/ballistic/bow/xbow(src)
-	new /obj/item/gun/ballistic/bow/lightxbow(src)
+	new /obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)
@@ -2083,3 +2075,20 @@
 
 /obj/item/storage/box/large/custom_kit/everfire/PopulateContents()
 	new /obj/item/clothing/head/helmet/riot(src)
+
+/datum/gear/donator/kits/hallow96
+	name = "small ott box"
+	path = /obj/item/storage/box/large/custom_kit/hallow96
+	ckeywhitelist = list("hallow96")
+
+/obj/item/storage/box/large/custom_kit/hallow96/PopulateContents()
+	new /obj/item/clothing/under/kuddles/rattyskirtgreen(src)
+	new /obj/item/seeds/poppy/lily(src)
+	new /obj/item/seeds/sunflower(src)
+	new /obj/item/reagent_containers/glass/waterskin(src)
+	new /obj/item/clothing/suit/armor/outfit/flagcapes/unitedkingdom(src)
+	new /obj/item/bedsheet/britishflag(src)
+	new /obj/item/card/fuzzy_license(src)
+	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
+	new /obj/item/gun/ballistic/revolver/police(src)
+	new /obj/item/ammo_box/a357(src)
