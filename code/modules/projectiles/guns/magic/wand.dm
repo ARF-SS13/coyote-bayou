@@ -260,8 +260,8 @@
 	name = "weak arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 15
-	damage_low = 10
-	damage_high = 30
+	damage_low = 15
+	damage_high = 34
 	damage_type = BURN
 	flag = "laser"
 
