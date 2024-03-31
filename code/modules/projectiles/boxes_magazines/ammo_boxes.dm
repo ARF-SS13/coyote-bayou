@@ -536,7 +536,7 @@
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "ammobox"
+	icon_state = "3006box"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
 	ammo_type = /obj/item/ammo_casing/a3006
@@ -667,7 +667,7 @@
 /obj/item/ammo_box/m473
 	name = "ammo box (4.73mm caseless)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "ammobox"
+	icon_state = "47box"
 	caliber = list(CALIBER_CASELESS)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
