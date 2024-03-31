@@ -265,14 +265,14 @@ Negative values for offset are accepted, think of it in relation to North, -x is
 	var/list/pois = list()
 	var/admeme = check_rights(R_ADMIN, FALSE)
 	for(var/mob/M in mobs)
-		if(skip_mindless && !M.mind)
+		if(skip_mindless && (!M.mind && !M.ckey))
 			if(!isbot(M) && !iscameramob(M) && !ismegafauna(M))
 				continue
 		if(!admeme && M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
 		var/name = avoid_assoc_duplicate_keys(M.name, namecounts)
-		//if(!admeme && (isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
-		//	name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+		if(!admeme && (isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
+			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
 		if(M.real_name && M.real_name != M.name)
 			name += " \[[M.real_name]\]"
