@@ -235,7 +235,7 @@
 	recharge_rate = 10 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
+	ammo_type = /obj/item/projectile/magic/aoe/fireball/lowpower
 
 
 /****************/
@@ -324,8 +324,8 @@
 	name = "acid spray"
 	icon_state = "toxin"
 	damage = 12
-	damage_low = 5
-	damage_high = 20
+	damage_low = 15
+	damage_high = 55
 	damage_type = BURN
 	flag = "laser"
 
