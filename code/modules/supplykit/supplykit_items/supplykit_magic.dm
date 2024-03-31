@@ -15,6 +15,11 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
+/datum/supplykit_item/magic/nullrod
+	name = "Nullrod"
+	desc = "A nullrod, can also be turned into other powerful holy weapons. Like a blocking blue staff, or healing prayer bead"
+	item = /obj/item/nullrod
+	cost = 40
 
 /datum/supplykit_item/magic/shockwand
 	name = "Improvised Rod of Sparks"
