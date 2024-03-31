@@ -992,6 +992,12 @@
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "braixen"
 
+/obj/item/toy/plush/otter
+	name = "otter plush"
+	desc = "You otta love it!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "otter"
+
 
 
 
