@@ -310,7 +310,7 @@
 	icon_state = "acidstaff"
 	fire_sound = 'sound/f13npc/centaur/spit.ogg'
 	max_charges = 60 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
-	recharge_rate = 6 SECONDS
+	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -325,7 +325,9 @@
 	icon_state = "toxin"
 	damage = 12
 	damage_low = 15
-	damage_high = 55
+	damage_high = 50 //Reduced the damage slightly, because now it has supereffective
 	damage_type = BURN
 	flag = "laser"
+	supereffective_damage = 5 //This should make it deal 5 damage regardless of armor
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
