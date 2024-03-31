@@ -536,7 +536,7 @@
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "3006box"
+	icon_state = "30box"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
 	ammo_type = /obj/item/ammo_casing/a3006
