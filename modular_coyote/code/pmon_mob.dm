@@ -311,6 +311,14 @@
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/advanced/furret/shiny
+	name = "shiny furret"
+	icon_state = "furret_shiny"
+	icon_living = "furret_shiny"
+	icon_dead = "furret_shiny_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+
 /mob/living/simple_animal/advanced/gallade
 	name = "gallade"
 	icon_state = "gallade"
