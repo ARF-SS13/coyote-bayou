@@ -310,7 +310,7 @@
 	icon_state = "acidstaff"
 	fire_sound = 'sound/f13npc/centaur/spit.ogg'
 	max_charges = 60 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
-	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
+	recharge_rate = 3.5 SECONDS //The acid staff is now a minigun for magic users, with worse damage
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
