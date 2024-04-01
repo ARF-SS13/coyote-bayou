@@ -358,13 +358,8 @@
 	desc = "Simply holding this staff fills you with a sense of unease. Ephemeral ooze gathers at the tip before dripping and falling to nothing. When unleashed, it looses a spray of vile acid to rapidly eat away at anything it touches."
 	icon_state = "acidstaff"
 	fire_sound = 'sound/f13npc/centaur/spit.ogg'
-<<<<<<< HEAD
-	max_charges = 60 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
-	recharge_rate = 3.5 SECONDS //The acid staff is now a minigun for magic users, with worse damage
-=======
 	max_charges = 40 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
-	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
->>>>>>> 9a50645edef57efb581e02072657461ec556101f
+	recharge_rate = 3.5 SECONDS //The acid staff is now a minigun for magic users, with worse damage
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
