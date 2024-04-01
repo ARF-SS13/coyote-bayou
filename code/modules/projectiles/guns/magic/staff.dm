@@ -235,7 +235,7 @@
 	recharge_rate = 10 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
-	ammo_type = /obj/item/projectile/magic/aoe/fireball/lowpower
+	ammo_type = /obj/item/ammo_casing/magic/fireball/lowpower
 
 
 /****************/
@@ -264,6 +264,29 @@
 	damage = 60
 	damage_low = 40
 	damage_high = 70
+
+/obj/item/gun/magic/staff/kelpmagic/lightning/lowpower
+	name = "low power staff of lightning"
+	desc = "The entire staff hums and crackles with power.  Barely contained."
+	icon_state = "lightningstaff"
+	color = "#FFFF33"
+	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
+	max_charges = 4
+	recharge_rate = 8 SECONDS
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder/lowpower
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/sparks/thunder/lowpower
+		projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/thunder/lowpower
+
+/obj/item/projectile/magic/kelpmagic/sparks/thunder/lowpower
+	name = "low power lightning bolt"
+	flag = "laser" 
+	damage = 40
+	damage_low = 40
+	damage_high = 60
 
 /****************/
 //Staff of Healing//
@@ -299,6 +322,32 @@
 	is_kelpwand = TRUE
 	pin = /obj/item/firing_pin/magic
 
+/obj/item/gun/medbeam/magic/lowpower
+	name = "lesser staff of healing"
+	desc = "Through apprenticeship of arcane alchemy, this staff has been brought to some form of power... And yet it still can't heal the wielder. Don't cross the streams!"
+	icon = 'icons/obj/guns/magic.dmi'
+	color = "#BBEE33"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	icon_state = "medstaff"
+	item_state = "staff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
+	is_kelpwand = TRUE
+	pin = /obj/item/firing_pin/magic
+
+/obj/item/gun/medbeam/magic/lowpower/on_beam_tick(mob/living/target)
+	if(target.health != target.maxHealth)
+		new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
+	target.adjustBruteLoss(-1, include_roboparts = TRUE)
+	target.adjustFireLoss(-1, include_roboparts = TRUE)
+	target.adjustToxLoss(-1, forced = TRUE)
+	target.adjustOxyLoss(-1)
+	return
+
 /****************/
 //Staff of Acid//
 //OH GOD, IT'S EVERYWHERE - SMG adjacent/
@@ -309,8 +358,13 @@
 	desc = "Simply holding this staff fills you with a sense of unease. Ephemeral ooze gathers at the tip before dripping and falling to nothing. When unleashed, it looses a spray of vile acid to rapidly eat away at anything it touches."
 	icon_state = "acidstaff"
 	fire_sound = 'sound/f13npc/centaur/spit.ogg'
+<<<<<<< HEAD
 	max_charges = 60 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
 	recharge_rate = 3.5 SECONDS //The acid staff is now a minigun for magic users, with worse damage
+=======
+	max_charges = 40 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
+	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
+>>>>>>> 9a50645edef57efb581e02072657461ec556101f
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -330,4 +384,18 @@
 	flag = "laser"
 	supereffective_damage = 5 //This should make it deal 5 damage regardless of armor
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/gun/magic/staff/kelpmagic/acidstaff/lowpower
+	name = "low power staff of acid"
+	desc = "Simply holding this staff fills you with a sense of unease. Ephemeral ooze gathers at the tip before dripping and falling to nothing. When unleashed, it looses a spray of vile acid to rapidly eat away at anything it touches."
+	icon_state = "acidstaff"
+	color = "#33BBFF"
+	fire_sound = 'sound/f13npc/centaur/spit.ogg'
+	max_charges = 10 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
+	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
 
