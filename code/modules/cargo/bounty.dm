@@ -3,11 +3,18 @@ GLOBAL_LIST_EMPTY(bounties_list)
 /datum/bounty
 	var/name
 	var/description
-	var/base_reward = 1000 // In credits.
-	var/medium_reward_bonus = 100 // In credits.
-	var/hard_reward_bonus = 300 // In credits.
-	var/CBT_reward_bonus = 500 // In credits.
+	var/base_reward =         50 COINS // In credits.
+	var/medium_reward_bonus = 10 COINS // In credits.
+	var/hard_reward_bonus =   30 COINS // In credits.
+	var/CBT_reward_bonus =    50 COINS // In credits.
 
+	/// Which questgivers can give this quest? for flavor purposes
+	/// format: list(QUESTGIVER_GUILD, QUESTGIVER_GRAGG, etc)
+	var/list/flavor_questgivers = list()
+	/// Gets the right kind of quest kind flavor from the questgiver
+	var/flavor_kind
+	/// Our focus, if any. Try to keep it a path to a type
+	var/flavor_focus
 
 	var/paid_out = FALSE
 	var/completed = FALSE
@@ -25,7 +32,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 	var/request_mode = QUEST_FULFILL_ALL
 
-	/// A list of new/datum/bounty_quota(name, stuff, etc) with a number for how much of that it wants
+	/// A list of /datum/bounty_quota that will be loaded into wanted_things
+	var/list/init_wanteds = list()
 	var/list/wanted_things = list()
 
 	/// The difficulty of the quest. This is used to determine how many of the wanted things need to be turned in.
@@ -59,8 +67,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	)
 
 // Displayed on bounty UI screen.
-/datum/bounty/New()
+/datum/bounty/New(diffi)
 	. = ..()
+	if(isnum(diffi))
+		set_difficulty(diffi)
+	create_quotas()
 	if(!is_valid_bounty())
 		stack_trace("[src.type] is not a valid bounty! Error code: THICC-FLUFFY-SERGAL-SPINE")
 		qdel(src)
@@ -81,26 +92,61 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	uid += "[rand(1000, 9999)]"
 
 /datum/bounty/proc/set_difficulty(difficulty)
-	src.difficulty = clamp(difficulty, QUEST_DIFFICULTY_EASY, QUEST_DIFFICULTY_CBT)
+	src.difficulty = difficulty
 	for(var/datum/bounty_quota/BQ in wanted_things)
+		if(isnum(BQ.difficulty))
+			if(!CHECK_BITFIELD(difficulty, BQ.difficulty))
+				wanted_things -= BQ
+				qdel(BQ)
+				continue
 		BQ.recalculate_difficulty(difficulty, difficulty_flags)
-	if(CHECK_BITFIELD(difficulty_flags, QDF_MORE_FILLED))
-		switch(difficulty)
-			if(QUEST_DIFFICULTY_EASY)
-				request_mode = QUEST_FULFILL_ANY
-			if(QUEST_DIFFICULTY_MED)
-				request_mode = QUEST_FULFILL_HALF
-			else
-				request_mode = QUEST_FULFILL_ALL
+	// if(CHECK_BITFIELD(difficulty_flags, QDF_MORE_FILLED))
+	// 	switch(difficulty)
+	// 		if(QUEST_DIFFICULTY_EASY)
+	// 			request_mode = QUEST_FULFILL_ANY
+	// 		if(QUEST_DIFFICULTY_MED)
+	// 			request_mode = QUEST_FULFILL_HALF
+	// 		else
+	// 			request_mode = QUEST_FULFILL_ALL
 
 /datum/bounty/proc/copy_bounty(datum/bounty/from)
-	set_difficulty(from.difficulty)
 	uid = from.uid
+	name = from.name
+	description = from.description
+	for(var/datum/bounty_quota/myBQ in wanted_things)
+		for(var/datum/bounty_quota/themBQ in from.wanted_things)
+			if(myBQ.name == themBQ.name) // close enough approximation
+				myBQ.needed_amount = themBQ.needed_amount
+				myBQ.gotten_amount = themBQ.gotten_amount
+				myBQ.auto_generate_info = themBQ.auto_generate_info
+				myBQ.mobs_must_be_dead = themBQ.mobs_must_be_dead
+				myBQ.delete_thing = themBQ.delete_thing
+				myBQ.claimdelay = themBQ.claimdelay
+				myBQ.quota_contents = themBQ.quota_contents
+				myBQ.paths_get_subtypes = themBQ.paths_get_subtypes
+				myBQ.paths_includes_root = themBQ.paths_includes_root
+				myBQ.pick_this_many = themBQ.pick_this_many
+				myBQ.difficulty = themBQ.difficulty
+
+/datum/bounty/proc/create_quotas(allofem)
+	QDEL_LIST(wanted_things)
+	for(var/i in init_wanteds)
+		var/datum/bounty_quota/BQ = i
+		var/its_difficulty = initial(BQ.difficulty)
+		if(!allofem && !isnull(difficulty) && !isnull(its_difficulty))
+			if(!CHECK_BITFIELD(difficulty, its_difficulty))
+				continue
+		wanted_things += new BQ(src)
+	if(!LAZYLEN(wanted_things))
+		return create_quotas(TRUE) // thats it, you're all added
 
 /datum/bounty/proc/assign_to(mob/assi)
 	if(!assi)
 		return
 	assigned_ckey = assi.ckey
+
+/datum/bounty/proc/Flavorize()
+	// SSeconomy.flavor_quest(src)
 
 // Displayed on bounty UI screen.
 /datum/bounty/proc/completion_string()
@@ -146,26 +192,25 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return
 	if(!BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || is_complete())
 		return
-	playsound(get_turf(thing), 'sound/effects/booboobee.ogg')
+	playsound(get_turf(thing), 'sound/effects/booboobee.ogg', 75)
 	if(!do_after(user, BQ.claimdelay, TRUE, thing, TRUE, public_progbar = TRUE))
 		return
 	if(!user || QDELETED(thing) || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || !user)
 		return
 	SSeconomy.turned_something_in(thing, BQ)
-	playsound(get_turf(thing), 'sound/effects/bleeblee.ogg')
+	BQ.Claim(thing, user)
+	playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
 	if(BQ.delete_thing)
 		FancyDelete(thing)
 
 /datum/bounty/proc/FancyDelete(atom/A)
 	if(!A)
 		return
-	playsound(get_turf(A), 'sound/effects/claim_thing.ogg')
-	var/matrix/original = matrix(A.transform)
+	playsound(get_turf(A), 'sound/effects/claim_thing.ogg', 75)
 	var/matrix/M = A.transform.Scale(1, 3)
 	animate(A, transform = M, pixel_y = 32, time = 10, alpha = 50, easing = CIRCULAR_EASING, flags=ANIMATION_PARALLEL)
 	M.Scale(0,4)
 	animate(transform = M, time = 5, color = "#1111ff", alpha = 0, easing = CIRCULAR_EASING)
-	animate(transform = original, time = 5, color = "#ffffff", alpha = 255, pixel_y = 0, easing = ELASTIC_EASING)
 	do_sparks(2, TRUE, get_turf(A))
 	QDEL_IN(A, 2 SECONDS)
 
@@ -178,25 +223,27 @@ GLOBAL_LIST_EMPTY(bounties_list)
 				mobs |= pat
 	if(!LAZYLEN(mobs))
 		return TRUE // no mobs to check, items are typically everywhere
+	if(SSeconomy.debug_ignore_extinction)
+		return TRUE
 	for(var/mobpath in mobs)
-		if(SSmobs.is_extinct(mobpath))
-			return FALSE // last chance to see-- oh, oh well
-	return TRUE
+		if(!SSmobs.is_extinct(mobpath))
+			return TRUE // last chance to see em!
+	return FALSE
 
 /datum/bounty/proc/is_complete()
 	if(is_templarte)
 		return FALSE
 	if(completed)
 		return TRUE
-	var/needed_wins = 1
+	var/needed_wins = LAZYLEN(wanted_things)
 	var/wins = 0
-	switch(request_mode)
-		if(QUEST_FULFILL_ALL)
-			needed_wins = LAZYLEN(wanted_things)
-		if(QUEST_FULFILL_ANY)
-			needed_wins = 1
-		if(QUEST_FULFILL_HALF)
-			needed_wins = round(LAZYLEN(wanted_things) / 2)
+	// switch(request_mode)
+	// 	if(QUEST_FULFILL_ALL)
+	// 		needed_wins = LAZYLEN(wanted_things)
+	// 	if(QUEST_FULFILL_ANY)
+	// 		needed_wins = 1
+	// 	if(QUEST_FULFILL_HALF)
+	// 		needed_wins = round(LAZYLEN(wanted_things) / 2)
 	for(var/datum/bounty_quota/BQ in wanted_things)
 		wins += BQ.IsCompleted()
 	if(wins >= needed_wins)
@@ -211,9 +258,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	if(paid_out)
 		to_chat(claimant, span_alert("That quest has already paid out!"))
 		return FALSE
-	paid_out = TRUE
 	var/payment = get_reward()
-	SSeconomy.adjust_funds(claimant)
+	if(!SSeconomy.adjust_funds(claimant, payment, src))
+		to_chat(claimant, span_alert("Something went wrong with the payment processor! Try again later!"))
+		return FALSE
+	paid_out = TRUE
 	good_job(claimant, payment)
 	return payment
 
@@ -245,8 +294,9 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			payment += hard_reward_bonus
 		if(QUEST_DIFFICULTY_CBT)
 			payment += CBT_reward_bonus
+	for(var/datum/bounty_quota/BQ in wanted_things)
+		payment += BQ.GetPrize(difficulty)
 	return payment
-
 
 /datum/bounty/proc/phrase_congrats(mob/doer)
 	var/doername = doer ? "[uppertext(doer.real_name)]" : "RELPH"
@@ -259,6 +309,12 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/payment = get_reward()
 	var/msg = "You have been awarded [span_green("[payment / 10] [SSeconomy.currency_name_plural]")]!"
 	return "[msg]"
+
+// If an item sent in the cargo shuttle can satisfy the bounty.
+/datum/bounty/proc/get_quota_by_uid(quota_uid)
+	for(var/datum/bounty_quota/BQ in wanted_things)
+		if(BQ.bq_uid == quota_uid)
+			return BQ
 
 // If an item sent in the cargo shuttle can satisfy the bounty.
 /datum/bounty/proc/applies_to(obj/O)
@@ -289,8 +345,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	data["QuestDifficulty"] = difficulty
 	data["QuestInfo"] = get_wanted_info()
 	data["QuestReward"] = get_reward()
-	data["QuestTaken"] = is_templarte && !!LAZYACCESS(QL.active_quests, uid)
-	data["QuestAcceptible"] = QL.can_take_quest(user, src, FALSE)
+	data["QuestTaken"] = !!LAZYACCESS(QL.active_quests, uid)
+	data["QuestAcceptible"] = QL.can_take_quest(src, FALSE)
 	data["QuestComplete"] = is_complete()
 	data["QuestIsTemplarte"] = is_templarte
 	data["QuestUID"] = uid
@@ -315,48 +371,83 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		out |= BQ.get_paths()
 	return out
 
-//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 //////////// THE THINGS THIS THING WANTS
 /datum/bounty_quota
+	/// The name of this quota
 	var/name
+	/// Optional flavor text that goes with the expected items
+	var/flavor
+	/// auto-generated (or not) info as to what this thing wants
 	var/info
+	/// The paths to things that this thing wants
 	var/list/paths = list()
+	var/list/paths_exclude = list()
+	/// How many we need
 	var/needed_amount = 1
+	/// How many we've gotten
 	var/gotten_amount = 0
+	/// the intended difficulty to spawn, leave null for any
+	var/difficulty
+	/// If this is true, the info will be auto-generated - keep true, unless you're doing something fancy
 	var/auto_generate_info = TRUE
+	/// If this is true, and mobs are part of the bounty, they must be dead
 	var/mobs_must_be_dead = TRUE
+	/// If this is true, claimed things will be fancily deleted
 	var/delete_thing = TRUE
+	/// How long it takes to submit a thing for this thing
 	var/claimdelay = 2 SECONDS
+	/// A cached list of all the stuff we want, for quick access
 	var/quota_contents
+	/// If this is true, the paths will be expanded to include subtypes
 	var/paths_get_subtypes = FALSE
-	var/paths_excludes_type = FALSE
+	/// If this is true, the paths will be expanded to include the root type
+	var/paths_includes_root = TRUE
+	/// If this is greater than 0, it will pick this many paths from the list
 	var/pick_this_many
 
-/datum/bounty_quota/New(name, info, paths, needed_amount, pick_this_many, mobs_must_be_dead = TRUE, delete_thing = TRUE)
-	if(!isnull(name))
-		src.name = name
-	if(!isnull(info))
-		src.info = info
-	if(islist(paths))
-		src.paths = paths
-	if(!isnull(needed_amount))
-		src.needed_amount = needed_amount
-	if(!isnull(pick_this_many))
-		src.pick_this_many = pick_this_many
-	src.mobs_must_be_dead = mobs_must_be_dead
-	src.delete_thing = delete_thing
+	var/price_per_thing = 1
+	var/easy_multiplier = 1
+	var/medium_multiplier = 1
+	var/hard_multiplier = 1
+	var/CBT_multiplier = 1
+	var/prize = 0
+
+	var/bq_uid = 0
+
+/datum/bounty_quota/New()
+	// if(islist(paths))
+	// 	src.paths = paths
+	// if(!isnull(needed_amount))
+	// 	src.needed_amount = needed_amount
+	// if(!isnull(pick_this_many))
+	// 	src.pick_this_many = pick_this_many
+	// src.mobs_must_be_dead = mobs_must_be_dead
+	// src.delete_thing = delete_thing
 	setzup()
 
 /datum/bounty_quota/proc/setzup()
+	bq_uid = "[world.time]-[rand(1000, 9999)]-[rand(1000, 9999)]"
 	if(paths_get_subtypes)
 		var/list/nupaths = list()
 		for(var/pat in paths)
 			if(ispath(pat))
 				nupaths |= subtypesof(pat)
-			if(!paths_excludes_type)
+			if(paths_includes_root)
 				nupaths |= pat
+		for(var/peat in paths_exclude)
+			var/list/paths2not = typesof(peat)
+			nupaths -= paths2not
 		paths = nupaths.Copy()
-	if(pick_this_many > 0)
+	if(LAZYLEN(paths) > 1 && pick_this_many > 0)
 		var/num_to_pick = clamp(pick_this_many, 1, LAZYLEN(paths))
 		var/list/thepaths = src.paths.Copy()
 		paths.Cut()
@@ -364,23 +455,71 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			var/pick = pick(thepaths)
 			thepaths -= pick
 			paths |= pick
-	if(auto_generate_info || isnull(info))
+	if(auto_generate_info)
 		AutoGen()
-	GottaBeDead()
-	GonnaDelete()
 
 /datum/bounty_quota/proc/AutoGen()
 	// SSeconomy.autogenerate_info(src)
-	if(info)
-		return // already set
 	var/list/msgs = list()
+	if(NERF())  //nerd
+		msgs += "Warning: This quest is not even remotely fair."
 	msgs += "Accepts:"
 	for(var/pat in paths)
-		if(!ispath(pat))
+		if(!ispath(pat, /atom))
 			continue
 		var/atom/thing = pat
-		msgs += "[FOURSPACES]- [initial(thing.name)]"
+		var/toadd = "[FOURSPACES]- [initial(thing.name)]"
+		if(toadd in msgs)
+			continue
+		msgs += toadd
 	info = msgs.Join("<br />")
+	GottaBeDead()
+	GonnaDelete()
+	AutoGenName()
+
+/datum/bounty_quota/proc/AutoGenName()
+	if(name)
+		return
+	var/theverb = "Scan"
+	if(ContainsMobs())
+		if(mobs_must_be_dead)
+			theverb = "Kill and Scan"
+		else
+			theverb = "Scan"
+	else
+		if(delete_thing)
+			theverb = "Scan and Deliver"
+		else
+			theverb = "Tag"
+	var/fuzzyamount = "a"
+	if(needed_amount > 1)
+		fuzzyamount = "some"
+	var/kind = "things"
+	var/atom/pat = pick(paths)
+	kind = "[initial(pat.name)]\s"
+	name = "[theverb] [fuzzyamount] [kind]"
+
+/datum/bounty_quota/proc/NERF()
+	return (difficulty == QUEST_DIFFICULTY_CBT && needed_amount > 1)
+
+/datum/bounty_quota/proc/GetPrize(difficulty)
+	var/prize = price_per_thing * needed_amount
+	switch(difficulty)
+		if(QUEST_DIFFICULTY_EASY)
+			prize *= easy_multiplier
+		if(QUEST_DIFFICULTY_MED)
+			prize *= medium_multiplier
+		if(QUEST_DIFFICULTY_HARD)
+			prize *= hard_multiplier
+		if(QUEST_DIFFICULTY_CBT)
+			prize *= CBT_multiplier
+	return prize
+
+/datum/bounty_quota/proc/ContainsMobs()
+	for(var/pat in paths)
+		if(ispath(pat, /mob/living))
+			return TRUE
+	return FALSE
 
 /datum/bounty_quota/proc/GottaBeDead()
 	if(!mobs_must_be_dead)
@@ -388,13 +527,19 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	for(var/pat in paths)
 		if(!ispath(pat, /mob/living))
 			continue
-		info += "<br />Note: Living creatures must be dead before they can be claimed!"
+		info += "<br />Note: Living creatures must be dead before they can be scanned!"
 		return
 	mobs_must_be_dead = FALSE
 
 /datum/bounty_quota/proc/GonnaDelete()
 	if(delete_thing)
-		info += "<br />Note: Claimed things will be teleported offsite!"
+		info += "<br />Note: Scanned things will be teleported offsite!"
+
+/datum/bounty_quota/proc/Claim(atom/thing, mob/user)
+	if(IsCompleted())
+		return FALSE
+	gotten_amount += 1
+	return TRUE
 
 /datum/bounty_quota/proc/CanTurnThisIn(atom/thing, mob/user)
 	if(!user)
@@ -442,6 +587,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	data["QuotaMobsMustBeDead"] = mobs_must_be_dead
 	data["QuotaDeleteThing"] = delete_thing
 	data["QuotaContents"] = get_quota_contents()
+	data["QuotaUID"] = bq_uid
+	data["ImCoder"] = SSeconomy.debug_objectives
 	return data
 
 /datum/bounty_quota/proc/get_quota_contents()

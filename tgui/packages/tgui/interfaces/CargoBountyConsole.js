@@ -1,13 +1,29 @@
-import { useBackend, useLocalState } from '../backend';
+import {
+  useBackend,
+  useLocalState
+} from '../backend';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  Tooltip,
+  Section,
+  LabeledList,
+  Stack,
+  Table,
+  Tabs,
+  Icon,
+} from '../components';
 import { toFixed } from 'common/math';
-import { multiline } from 'common/string';
-import { AnimatedNumber, Box, Button, Tooltip, Section, LabeledList, Stack } from '../components';
-import { formatMoney } from '../format';
+import {
+  formatMoney,
+  formatTime,
+} from '../format';
 import { Window } from '../layouts';
 
 /*
   SO HERES HOWS THIS GONNA GO DOWN
-  Two main panels, one on top, one on the bottom, splut by a horizontal line
+  Two main tabs
   Top panel has the list of your taken quests
     Top Panel Toolbar!
       Left side has your name and total active quests
@@ -54,6 +70,8 @@ import { Window } from '../layouts';
     QuestAcceptible
     QuestComplete
     QuestIsTemplarte
+    QuestObjectivesComplete
+    QuestObjectivesTotal
     QuestUID
   QuestQuota related
     QuotaName
@@ -69,109 +87,371 @@ import { Window } from '../layouts';
 /// it also turns into a readme file!
 export const CargoBountyConsole = (props, context) => {
   const { act, data } = useBackend(context);
+  const{
+    QuestCount,
+    QuestMax,
+  } = data;
 
+  // Active Quests is 1, Available Quests is 2, readme is 3
   const [
-    ReadmeMode,
-    setReadmeMode,
-  ] = useLocalState(context, 'ReadmeMode', false);
+    SelectedTab,
+    setSelectedTab,
+  ] = useLocalState(context, 'SelectedTab', 1);
+
+  const ActiveQuestsTitle = `Active Quests (${QuestCount}/${QuestMax})`;
+
 
   return (
     <Window
-      width={600}
-      height={700}
+      width={640}
+      height={480}
       title="Adventurer's Guild Quest Console"
       theme="ntos"
       resizable>
-      <Window.Content fitted>
-        {ReadmeMode ? (
-          <ReadmePanel />
-        ) : (
-          <Stack fill vertical>
-            <Stack.Item shrink={1} basis="50%">
-              <PersonalPanel /> {/* The QuestPool stuff */}
-            </Stack.Item>
-            <Stack.Item grow={1} basis="50%">
-              <PoolPanel /> {/* The YourQuests stuff */}
-            </Stack.Item>
-          </Stack>
-        )}
+      <Window.Content
+        style={{
+          "background-image": "url('../../assets/bg-hornysex.png')",
+          "background-size": "fill",
+        }}>
+        <Stack fill vertical>
+          <Stack.Item>
+            <TopToolbar />
+          </Stack.Item>
+          <Stack.Item>
+          <Tabs
+        fluid>
+        <Tabs.Tab
+          selected={SelectedTab === 1}
+          onClick={() => setSelectedTab(1)}>
+            {ActiveQuestsTitle}
+        </Tabs.Tab>
+        <Tabs.Tab
+          selected={SelectedTab === 2}
+          onClick={() => setSelectedTab(2)}>
+            Available Quests
+        </Tabs.Tab>
+        <Tabs.Tab
+          selected={SelectedTab === 3}
+          onClick={() => setSelectedTab(3)}>
+            Finished Quests
+        </Tabs.Tab>
+        <Tabs.Tab
+          textAlign="center"
+          selected={SelectedTab === 4}
+          onClick={() => setSelectedTab(4)}>
+            <Icon
+              name="question-circle"
+              color="green"
+              size={1.5} />
+        </Tabs.Tab>
+      </Tabs>
+          </Stack.Item>
+          <Stack.Item grow shrink>
+            <Section fill scrollable>
+              <MainWindow />
+            </Section>
+          </Stack.Item>
+          <Stack.Item>
+            <BottomToolbar />
+          </Stack.Item>
+        </Stack>
       </Window.Content>
     </Window>
   );
 }
 
-const PersonalPanel = (props, context) => {
+/// Common top toolbar for both panels
+const TopToolbar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     UserName,
-  } = data;
+    BankedPoints,
+    GlobalHighestCompleted,
+    GlobalHighestBanked,
+    GlobalQuestsCompleted,
+    QuestsCompleted,
+    HighestBankedPoints,
+    GlobalTotalEarned,
+    CurrencyUnit,
+  } = data; // needs more gravy
+
+  const TopEarnerColor = HighestBankedPoints >= GlobalHighestBanked ? "gold" : "label";
+  const TopQuesterColor = QuestsCompleted >= GlobalHighestCompleted ? "gold" : "label";
+
+  const YourQuestsTooltip = "You have completed " + QuestsCompleted + " quests this round" + QuestsCompleted >= GlobalHighestCompleted ? ", making you the top quester this round! =3" : "!";
+  const TopQuestsTooltip = "The top quester this round has completed " + GlobalHighestCompleted + " quests!" + QuestsCompleted >= GlobalHighestCompleted ? " And that quester is you! =3" : "";
+  const TotalQuestsTooltip = GlobalQuestsCompleted + " quests have been completed this round!";
+
+  const YourCashTooltip = "You have earned " + formatMoney(HighestBankedPoints / 10) + CurrencyUnit + "this round" + HighestBankedPoints >= GlobalHighestBanked ? ", making you the top earner this round! =3" : "!";
+  const TopCashTooltip = "The top earner this round has earned " + formatMoney(GlobalHighestBanked / 10) + CurrencyUnit + "!" + HighestBankedPoints >= GlobalHighestBanked ? " And that earner is you! =3" : "";
+  const TotalCashTooltip = "A total of " + formatMoney(GlobalTotalEarned / 10) + CurrencyUnit + " has been earned this round!";
+
+  const LeaderboardLavelFontSize = "10px";
+  const LeaderboardValueFontSize = "12px";
 
   return (
-    <Section height="100%">
-      <Stack fill vertical>
-        <Stack.Item>
-          <Section
-            title={"Welcome, " + UserName + "!"}
-            fill
-            fitted
-            buttons={
-              <Box
-                inline>
-                <YourCash />
-                <ReadMeButton />
-              </Box>
-            }>
-            <Stack fill>
-              <Stack.Item grow={1}>
-                <QuestCounter />
-              </Stack.Item>
-              <Stack.Item shrink={1}>
-                <ButtonThatGivesPlayerAScanner />
-              </Stack.Item>
-            </Stack>
-          </Section>
-        </Stack.Item> {/* End of Top Panel Toolbar */}
-        {/* needs to fill the rest of the space, no matter how little stuff is there */}
-        <Stack.Item grow={1}>
-          <QuestList Mine={true} />
-        </Stack.Item>
-      </Stack>
-    </Section>
-  );
-}
-
-const PoolPanel = (props, context) => {
-  const { act, data } = useBackend(context);
-
-  return (
-    <Section height="100%">
-      <Stack fill vertical>
-        <Stack.Item shrink={1}>
-          <Stack fill>
-            <Stack.Item grow={1}>
-              <Section>
-                <Box inline>
-                  <BeepOnUpdateButton />
-                  <TimeToNextQuest />
-                  bingus
-                </Box>
-              </Section>
+    <Section
+      title={`Welcome, ${UserName}!`}
+      buttons={
+        <YourCash />
+      }>
+      {/* Leaderboard stuff */}
+      <Stack fill>
+        <Stack.Item basis="50%"> {/* Quest Completions */}
+          <Stack fill vertical>
+            <Stack.Item>
+              <Tooltip tooltip={YourQuestsTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Completed Quests
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color={TopQuesterColor}
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={QuestsCompleted}
+                        color={TopQuesterColor}
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
             </Stack.Item>
-            <Stack.Item shrink={1}>
-              <LeaderBoard />
+            <Stack.Item>
+              <Tooltip tooltip={TopQuestsTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Top Quester
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color={TopQuesterColor}
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={GlobalHighestCompleted}
+                        color={TopQuesterColor}
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
+            </Stack.Item>
+            <Stack.Item>
+              <Tooltip tooltip={TotalQuestsTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Total Quested
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color="label"
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={GlobalQuestsCompleted}
+                        color="label"
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
             </Stack.Item>
           </Stack>
-        </Stack.Item> {/* End of Top Panel Toolbar */}
-        <Stack.Item shrink={1}>
-          <Section height="100%" overflowY="hidden">
-            <QuestList Mine={false} />
-          </Section>
+        </Stack.Item>
+        <Stack.Item basis="50%"> {/* Cash Earned */}
+          <Stack fill vertical>
+            <Stack.Item>
+              <Tooltip tooltip={YourCashTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Cash Earned
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color={TopEarnerColor}
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={HighestBankedPoints / 10}
+                        format={value => formatMoney(value) + "" + CurrencyUnit}
+                        color={TopEarnerColor}
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
+            </Stack.Item>
+            <Stack.Item>
+              <Tooltip tooltip={TopCashTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Top Earner
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color={TopEarnerColor}
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={GlobalHighestBanked / 10}
+                        format={value => formatMoney(value) + "" + CurrencyUnit}
+                        color={TopEarnerColor}
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
+            </Stack.Item>
+            <Stack.Item>
+              <Tooltip tooltip={TotalCashTooltip}>
+                <Stack fill>
+                  <Stack.Item grow={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardLavelFontSize}>
+                      Total Earned
+                    </Box>
+                  </Stack.Item>
+                  <Stack.Item shrink={1}>
+                    <Box
+                      inline
+                      fontSize={LeaderboardValueFontSize}
+                      color="label"
+                      fontWeight="bold">
+                      <AnimatedNumber
+                        initial={0}
+                        value={GlobalHighestBanked / 10}
+                        format={value => formatMoney(value) + "" + CurrencyUnit}
+                        color="label"
+                      />
+                    </Box>
+                  </Stack.Item>
+                </Stack>
+              </Tooltip>
+            </Stack.Item>
+          </Stack>
         </Stack.Item>
       </Stack>
     </Section>
   );
 }
 
+/// The main window! either your quests or the available quests
+const MainWindow = (props, context) => { // main screen turn on
+  const { act, data } = useBackend(context);
+  // Active Quests is 1, Available Quests is 2, readme is 3
+  const [
+    SelectedTab,
+    setSelectedTab,
+  ] = useLocalState(context, 'SelectedTab', 1);
+
+
+  return (
+    <>
+        {SelectedTab === 1 && (
+          <QuestList WhichOne={1} />
+        )}
+        {SelectedTab === 2 && (
+          <QuestList WhichOne={2} />
+        )}
+        {SelectedTab === 3 && (
+          <QuestList WhichOne={3} />
+        )}
+        {SelectedTab === 4 && (
+          <ReadMe />
+        )}
+    </>
+  );
+}
+
+/// The bottom toolbar for the main window
+const BottomToolbar = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    TimeToNext,
+    BeepOnUpdate,
+  } = data;
+
+  const BeepToggleIcon = BeepOnUpdate ? "volume-up" : "volume-mute";
+  const BeepToggleColor = BeepOnUpdate ? "green" : "label";
+  const BeepToggleTip = BeepOnUpdate
+    ? "You will be alerted when the quest pool updates!"
+    : "You will NOT be alerted when the quest pool updates!";
+
+  const CoolNumber = (
+    <AnimatedNumber
+      initial={0}
+      value={TimeToNext}
+      format={value => formatTime(value)}
+      fontSize="16px"
+      color="label"
+    />
+  );
+
+  return (
+    <Section fill>
+      <Stack fill>
+        <Stack.Item basis="50%">
+          <Stack fill>
+            <Stack.Item shrink={1}>
+              <Button
+                icon={BeepToggleIcon}
+                iconColor={BeepToggleColor}
+                iconSize={2}
+                tooltip={BeepToggleTip}
+                onClick={() => act('ToggleBeep')} />
+            </Stack.Item>
+            <Stack.Item grow={1}>
+              <Box
+                inline
+                fontSize="14px"
+                textAlign="center">
+                {"Refresh in: "}
+                {CoolNumber}
+              </Box>
+            </Stack.Item>
+          </Stack>
+        </Stack.Item>
+        <Stack.Item basis="50%">
+          <ButtonThatGivesPlayerAScanner />
+        </Stack.Item>
+      </Stack>
+    </Section>
+  );
+}
 
 /// This is a big cute list of quest cards
 /// can be either your quests or the available quests
@@ -180,28 +460,37 @@ const QuestList = (props, context) => {
   const {
     AllQuests = [],
     MyQuests = [],
+    MyFinished = [],
   } = data;
 
-  const Quests = props.Mine ? MyQuests : AllQuests;
+  const Quests =
+    props.WhichOne === 1
+      ? MyQuests
+      : props.WhichOne === 2
+        ? AllQuests
+        : props.WhichOne === 3
+          ? MyFinished
+          : [];
+
   const IsEmpty = Quests.length === 0;
   const WhyItEmpty = props.Mine ? "You have no active quests!" : "There are no quests available!";
 
   return (
-    <>
-    {IsEmpty ? (
-      <Box>
-        {WhyItEmpty}
-      </Box>
-    ) : (
-      <Box> {/* Quest */}
-        {Quests.map(QuestEntry => (
-            <QuestCard
-              key={QuestEntry.QuestUID}
-              Quest={QuestEntry}/>
-        ))}
-      </Box>
-    )}
-    </>
+    <Section>
+      {IsEmpty ? (
+        <Box>
+          {WhyItEmpty}
+        </Box>
+      ) : (
+        <Box> {/* Quest */}
+          {Quests.map(QuestEntry => (
+              <QuestCard
+                key={QuestEntry.QuestUID}
+                Quest={QuestEntry}/>
+          ))}
+        </Box>
+      )}
+    </Section>
   );
 }
 
@@ -222,12 +511,15 @@ const QuestCard = (props, context) => {
     QuestTaken,
     QuestAcceptible,
     QuestComplete,
+    QuestObjectivesComplete,
+    QuestObjectivesTotal,
     QuestIsTemplarte,
     QuestUID,
     CurrencyUnit = "₡",
   } = props.Quest;
 
   // templarte is quest pool, not active quest
+  const IsDisabled = QuestIsTemplarte && QuestTaken;
   const IsComplete = QuestComplete;
   const IsTaken = QuestTaken;
   const IsTemplarte = QuestIsTemplarte;
@@ -264,29 +556,36 @@ const QuestCard = (props, context) => {
       ? "green"
       : QuestDifficulty === 2
         ? "blue"
-        : QuestDifficulty === 3
-          ? "red"
-          : "gold";
+        : QuestDifficulty === 4
+          ? "gold"
+          : QuestDifficulty === 8
+            ? "orange"
+            : "orange";
   const DiffIcon =
     QuestDifficulty === 1
-      ? "fas fa-face-grin-wink"
+      ? "grin-wink"
       : QuestDifficulty === 2
-        ? "fas fa-face-frown-open"
-        : QuestDifficulty === 3
-          ? "fas fa-face-flushed"
-          : "fas fa-face-dizzy";
+        ? "frown-open"
+        : QuestDifficulty === 4
+          ? "flushed"
+          : QuestDifficulty === 8
+            ? "dizzy"
+            : "dizzy";
   const DiffiTooltip =
     QuestDifficulty === 1
       ? "This is an Easy quest!"
       : QuestDifficulty === 2
         ? "This is a Medium quest!"
-        : QuestDifficulty === 3
+        : QuestDifficulty === 4
           ? "This is a Hard quest!"
-          : "This is a CBT quest!";
+          : QuestDifficulty === 8
+            ? "This is a CBT quest!"
+            : "This quest is too much for you!";
 
   const CuteDiffi = (
     <Button
       icon={DiffIcon}
+      iconSize={1.5}
       iconColor={DiffiColor}
       tooltip={DiffiTooltip}
       color="transparent" />
@@ -294,49 +593,66 @@ const QuestCard = (props, context) => {
 
   const RewardDisplay = `${formatMoney(QuestReward / 10)} ${CurrencyUnit}`;
   const CanTakeThisQuest = QuestAcceptible && !IsTaken && !IsTemplarte;
-  const TooTip = "Click for more information!";
   /// truncates the description to 100 characters
   /// but only if QuestDesc isnt null
   const ShorterDesc = QuestDesc && QuestDesc.length > 150
     ? QuestDesc.substring(0, 150) + "..."
     : QuestDesc;
+  const TooTip = "" + ShorterDesc+ "\n\nClick for more information!";
 
+  const Pingus = IsTemplarte
+    ? IsTaken
+      ? "TAKEN"
+      : "INFO"
+    : IsComplete
+      ? "DONE"
+      : `${QuestObjectivesComplete}/${QuestObjectivesTotal}`;
+
+  /// Should all fit in a single line
   return (
     <Button
       width="100%"
       tooltip={TooTip}
+      disabled={IsDisabled}
       color={CuteColor}
-      icon={CuteIcon}
-      iconColor={CuteIconColor}
-      iconPosition={CuteIconPosition}
+      p={0.5}
       onClick={() => act('OpenQuest', {
         BountyUID: QuestUID,
         QuestIsMine: IsTaken,
         })}>
-      <Section
-        title={QuestName}
-        width="100%"
-        buttons={
-        <Stack fill>
-          <Stack.Item grow={1}>
-            <Box
-              inline
-              fontSize="16px"
-              textColor={DiffiColor}
-              fontWeight="bold"
-              color="label">
-              {RewardDisplay}
-            </Box>
-          </Stack.Item>
-          <Stack.Item shrink={1}>
-            {CuteDiffi}
-          </Stack.Item>
-        </Stack>
-      }>
-        <Box>
-          {ShorterDesc}
-        </Box>
-      </Section>
+      <Stack fill>
+        <Stack.Item shrink={1}>
+          <Icon
+            name={CuteIcon}
+            size={1.5}
+            color={CuteIconColor} />
+          {CuteDiffi}
+        </Stack.Item>
+        <Stack.Item grow={1}>
+          <Box
+            inline
+            fontSize="14px">
+            {QuestName}
+          </Box>
+        </Stack.Item>
+        <Stack.Item shrink={1}>
+          <Box
+            inline
+            textAlign="right"
+            fontSize="14px"
+            textColor="green">
+            {RewardDisplay}
+          </Box>
+        </Stack.Item>
+        <Stack.Item basis="10%">
+          <Box
+            inline
+            fontSize="14px"
+            color={CuteColor}>
+            {Pingus}
+          </Box>
+        </Stack.Item>
+      </Stack>
     </Button>
   );
 }
@@ -356,7 +672,7 @@ const YourCash = (props, context) => {
     + CurrencyUnit
     + " this round!"
   const HighestTip = IsGlobalHighest ? "You are the highest earner this round!" : "";
-  const TotalTip = `${HighestTip} ${OverallTip}`;
+  const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!";
 
   return (
     <Button
@@ -369,7 +685,7 @@ const YourCash = (props, context) => {
       <AnimatedNumber
         initial={0}
         value={ActualCash} // we dont do cents here!
-        format={value => formatMoney(value) + ` ${CurrencyUnit}`}
+        format={value => formatMoney(value) + "" + CurrencyUnit}
         fontSize="16px"
         fontWeight="bold"
         color={IsGlobalHighest ? "gold" : "green"}
@@ -378,60 +694,13 @@ const YourCash = (props, context) => {
   );
 }
 
-const ReadMeButton = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [
-    ReadmeMode,
-    setReadmeMode,
-  ] = useLocalState(context, 'ReadmeMode', false);
-  const ReadMeTip = ReadmeMode ? "Go back to questing" : "What the heck is all this?";
+const ReadMe = (props, context) => {
   return (
-    <Button
-      icon="info-circle"
-      iconColor="Green"
-      tooltip={ReadMeTip}
-      onClick={() => setReadmeMode(!ReadmeMode)} />
-  );
-}
-
-/// This is how many quests you currently have activee
-const QuestCounter = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    QuestCount,
-    QuestMax,
-    QuestsCompleted,
-    GlobalHighestCompleted,
-  } = data;
-
-  const IsTopQuester = QuestsCompleted >= GlobalHighestCompleted;
-  const QuestTip = "You have completed " + QuestsCompleted + " quests this round!";
-  const GlobalTip = IsTopQuester ? "You are the top quester this round!" : "";
-  const TotalTip = `${GlobalTip} ${QuestTip}`
-
-  return (
-    <Button
-      width="100%"
-      tooltip={TotalTip}
-      color="transparent"
-      icon="check-circle"
-      iconColor="Green"
-      iconPosition="right">
-      <AnimatedNumber
-        initial={0}
-        value={QuestCount}
-        fontSize="16px"
-        fontWeight="bold"
-        color={QuestCount >= QuestMax ? "blue" : "green"}
-      />
-      <Box
-        inline
-        textColor="label"
-        fontWeight="bold"
-        fontSize="16px">
-        {" / " + QuestMax}
+    <Section>
+      <Box>
+        COMING SOON: how to use this darn thing =3
       </Box>
-    </Button>
+    </Section>
   );
 }
 
@@ -443,117 +712,14 @@ const ButtonThatGivesPlayerAScanner = (props, context) => {
   return (
     <Button
       icon="search"
+      fluid
+      fitted
       iconColor="label"
       color="green"
       tooltip="Get you a turnin scanner!"
       onClick={() => act('GetScanner')}>
-      Scanner
+      Turn Stuff In!
     </Button>
-  );
-}
-
-const TimeToNextQuest = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    TimeToNext,
-  } = data;
-
-  return (
-    <Tooltip
-      width="100px"
-      tooltip="Time to next quest refresh!"
-      color="transparent"
-      icon="clock">
-      {TimeToNext}
-    </Tooltip>
-  );
-}
-
-const BeepOnUpdateButton = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    BeepOnUpdate,
-    CurrencyUnit,
-  } = data;
-
-  const BeepIcon = BeepOnUpdate ? "fas fa-volume-high" : "fas fa-volume-xmark";
-  const BeepColor = BeepOnUpdate ? "green" : "label";
-  const BeepTip = BeepOnUpdate
-    ? "You'll be alerted when the quest pool updates!"
-    : "You wont be alerted when the quest pool updates!";
-
-  return (
-    <Button
-      icon={BeepIcon}
-      iconColor={BeepColor}
-      tooltip={BeepTip}
-      onClick={() => act('ToggleBeep')} />
-  );
-}
-
-const LeaderBoard = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    UserName,
-    GlobalHighestCompleted,
-    GlobalHighestBanked,
-    GlobalQuestsCompleted,
-    QuestsCompleted,
-    HighestBankedPoints,
-    CurrencyUnit,
-  } = data;
-
-  const TopEarnerColor = HighestBankedPoints >= GlobalHighestBanked ? "gold" : "label";
-  const TopQuesterColor = QuestsCompleted >= GlobalHighestCompleted ? "gold" : "label";
-
-
-  return (
-    <Box
-      inline
-      fontSize="8px"
-      fill
-      fitted>
-      <LabeledList>
-        <LabeledList.Item
-          label="Top Earner"
-          buttons={
-            <AnimatedNumber
-              initial={0}
-              value={toFixed(HighestBankedPoints / 10, 0)}
-              format={value => formatMoney(value) + ` ${CurrencyUnit}`}
-              color={TopEarnerColor}
-            />
-          }/>
-        <LabeledList.Item
-          label="Total Earned"
-          buttons={
-            <AnimatedNumber
-              initial={0}
-              value={GlobalHighestBanked / 10}
-              format={value => formatMoney(value) + ` ${CurrencyUnit}`}
-              color="label"
-            />
-          }/>
-        <LabeledList.Item
-          label="Top Quester"
-          buttons={
-            <AnimatedNumber
-              initial={0}
-              value={GlobalQuestsCompleted}
-              color={TopQuesterColor}
-            />
-          }/>
-        <LabeledList.Item
-          label="Total Quests"
-          buttons={
-            <AnimatedNumber
-              initial={0}
-              value={GlobalHighestCompleted}
-              color="label"
-            />
-          }/>
-      </LabeledList>
-    </Box>
   );
 }
 

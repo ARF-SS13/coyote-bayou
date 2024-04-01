@@ -327,7 +327,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		switch (mode)
 			if (0)
-				dat += "<h2><center>=======FOXEYE DATAPAL v2.2=======</center></h2>"
+				dat += "<h2><center>=======GEKKERTEC DATAPAL v2.2=======</center></h2>"
 				dat += "Owner: [owner], [ownjob]<br>"
 				dat += "ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]</a><br>"
 				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update DataPal Info" : ""]</a><br><br>"

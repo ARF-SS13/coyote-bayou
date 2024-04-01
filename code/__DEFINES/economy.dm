@@ -59,10 +59,10 @@
 #define PRICE_RESEARCH         200 // Research Documents
 #define PRICE_RESEARCH_PLUS    700 // More Expensive Research Documents
 
-#define QUEST_DIFFICULTY_EASY 1
-#define QUEST_DIFFICULTY_MED 2
-#define QUEST_DIFFICULTY_HARD 3
-#define QUEST_DIFFICULTY_CBT 4
+#define QUEST_DIFFICULTY_EASY (1 << 0)
+#define QUEST_DIFFICULTY_MED (1 << 1)
+#define QUEST_DIFFICULTY_HARD (1 << 2)
+#define QUEST_DIFFICULTY_CBT (1 << 3)
 
 #define QUEST_FULFILL_ALL 1
 #define QUEST_FULFILL_ANY 2
@@ -78,4 +78,15 @@
 #define BOUNTY_QUOTA_ITEMS (1 << 0)
 #define BOUNTY_QUOTA_MOBS (1 << 1)
 #define BOUNTY_QUOTA_DEAD (1 << 2)
+
+/// Credits to Coins
+#define COINS * 10
+
+#define QUEST_KIND_KILL_MOBS "kill mob"
+#define QUEST_KIND_SCAN_MOBS "scan mob"
+#define QUEST_KIND_COLLECT_ITEMS "collect item"
+#define QUEST_KIND_SCAN_MACHINE "scan machine"
+
+
+
 

@@ -413,7 +413,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = silent)
 		return FALSE
 	if(!looping)
-		say("I'll give you [final_price] copper per [I]!", just_chat = silent)
+		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
+		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = silent)
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -510,7 +511,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		generate_fortune(fractional || rand(1,10)) // no more only-bad fortunes for everyone
 	var/storedcaps = payout(final_price)
 	var/currencie = final_price > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	say("Sold [I] for [final_price] [currencie], bringing the total to [storedcaps] copper!")
+	var/currencei = storedcaps > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	say("Sold [I] for [final_price] [currencie], bringing the total to [storedcaps] [currencei]!")
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()

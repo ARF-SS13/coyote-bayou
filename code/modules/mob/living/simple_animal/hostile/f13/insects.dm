@@ -301,7 +301,7 @@
 	speed = 1.35
 	maxHealth = 110
 	health = 110
-	move_to_delay = 4
+	move_to_delay = 2
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /////////////

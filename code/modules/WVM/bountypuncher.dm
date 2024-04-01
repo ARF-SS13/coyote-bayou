@@ -24,7 +24,7 @@
 	if(!thecard.punch(user))
 		to_chat(user, span_alert("That's already been punched! You're free to toss that thing onto the train."))
 		return
-	var/payout = round(SEND_SIGNAL(thecard, COMSIG_ATOM_GET_VALUE) / 10)
+	var/payout = thecard.punchbonus
 	if(payout)
 		new /obj/item/stack/f13Cash(get_turf(src), payout)
 	else

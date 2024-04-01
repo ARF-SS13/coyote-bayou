@@ -48,23 +48,34 @@
 	difficulty_flags = NONE
 
 /datum/bounty/debug_3
+	name = "Five Deathclaw Steaks"
 	base_reward = 1000 // In credits.
 	medium_reward_bonus = 100 // In credits.
 	hard_reward_bonus = 300 // In credits.
 	CBT_reward_bonus = 500 // In credits.
-	weight = 1
+	weight = 10
 	request_mode = QUEST_FULFILL_ALL
 	wanted_things = list(
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
-		new /datum/bounty_quota/literally_any_item(),
+		new /datum/bounty_quota/deathclaw_steak(5),
 	)
 	difficulty = QUEST_DIFFICULTY_EASY
 	difficulty_flags = NONE
+
+
+/datum/bounty_quota/deathclaw_steak
+	name = "Deliver some deathclaw steaks"
+	info = "Can accept any type of deathclaw steak."
+	paths = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
+	)
+	needed_amount = 1
+	auto_generate_info = TRUE
+	pick_this_many = 1
+	paths_get_subtypes = TRUE
+
+/datum/bounty_quota/deathclaw_steak/setzup()
+	. = ..()
+	needed_amount = rand(1, 25)
 
 /datum/bounty_quota/monkeys
 	name = "Deliver dead monkeys"
