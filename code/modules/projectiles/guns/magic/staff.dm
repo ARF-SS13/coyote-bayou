@@ -299,7 +299,7 @@
 	icon_state = "medstaff"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
-	recharge_rate = 30 SECONDS
+	recharge_rate = 4 SECONDS // This makes it a higher ammo, slower recharging version of the wand, instead of just being completely inferior to the wand
 
 /****************/
 //Upgraded Staff of Healing//
@@ -359,7 +359,7 @@
 	icon_state = "acidstaff"
 	fire_sound = 'sound/f13npc/centaur/spit.ogg'
 	max_charges = 40 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
-	recharge_rate = 4 SECONDS //The acid staff is now a minigun for magic users, with worse damage
+	recharge_rate = 3.5 SECONDS //The acid staff is now a minigun for magic users, with worse damage
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
