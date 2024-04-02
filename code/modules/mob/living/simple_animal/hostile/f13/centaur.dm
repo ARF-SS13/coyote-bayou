@@ -22,6 +22,9 @@
 	ranged = TRUE
 	wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_CRAWL
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE

@@ -62,6 +62,9 @@
 	blood_volume = 0
 	decompose = FALSE
 	tastes = list("dirt" = 1, "sand" = 1, "metal?" = 1)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -108,6 +111,9 @@
 	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
 	. = ..()
@@ -170,6 +176,9 @@
 	var/spawn_time = 30 SECONDS
 	var/spawn_text = "hatches from"
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
@@ -247,6 +256,9 @@
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	emote_taunt = list("snips")
 
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
@@ -364,6 +376,9 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/cazador/AttackingTarget()
 	. = ..()
@@ -504,6 +519,9 @@
 	)
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/bloatfly/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -535,7 +553,9 @@
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1
-
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	speed = 1
 	maxHealth = 20
 	health = 20

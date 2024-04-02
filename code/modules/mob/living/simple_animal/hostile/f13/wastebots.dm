@@ -47,6 +47,9 @@
 	waddle_side_time = 1
 	send_mobs = null
 	call_backup = null
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	emote_taunt_sound = list(
 		'sound/f13npc/handy/taunt1.ogg',
@@ -163,6 +166,9 @@
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
 	desc_short = "A gutsy robot with a plasma gun."
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
@@ -263,11 +269,9 @@
 	retreat_distance = 2
 	minimum_distance = 2
 	check_friendly_fire = TRUE
-	loot = list(
-		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
 	emote_taunt_sound = null
@@ -310,6 +314,9 @@
 	health = 100
 	speed = 4
 	can_ghost_into = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
@@ -492,6 +499,9 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 45
 	environment_smash = 2 //can smash walls
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 	attack_verb_simple = "grinds their claws on"
 	faction = list("wastebot")
 	loot = list(
