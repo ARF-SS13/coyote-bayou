@@ -25,9 +25,9 @@
 
 	/// PRICES ARE IN TENTHS OF A COPPER (cus cargo uses credits, even tho it doesnt look like it)
 	/// How much the card is worth
-	var/saleprice = 10
+	var/saleprice = COINS_TO_CREDITS(10)
 	/// How much the puncher gives out for free
-	var/punchbonus = 20
+	var/punchbonus = COINS_TO_CREDITS(20)
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
@@ -1417,8 +1417,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-	saleprice = 1125
-	punchbonus = 325 // total of 1500
+	saleprice = COINS_TO_CREDITS(1120)
+	punchbonus = COINS_TO_CREDITS(320) // total of 1500
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1432,8 +1432,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-	saleprice = 2250
-	punchbonus = 560 // total of a lot
+	saleprice = COINS_TO_CREDITS(225)
+	punchbonus = COINS_TO_CREDITS(56) // total of a lot
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1447,8 +1447,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-	saleprice = 4500
-	punchbonus = 750 // total of a lot
+	saleprice = COINS_TO_CREDITS(450)
+	punchbonus = COINS_TO_CREDITS(75) // total of a lot
 
 /obj/item/card/kingbounty
 	name = "King's Bounty Ticket"
@@ -1462,6 +1462,6 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-	saleprice = 9000
-	punchbonus = 1500 // total of a lot
+	saleprice = COINS_TO_CREDITS(900)
+	punchbonus = COINS_TO_CREDITS(150) // total of a lot
 
