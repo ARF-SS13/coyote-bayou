@@ -274,7 +274,7 @@ Negative values for offset are accepted, think of it in relation to North, -x is
 		var/shark = FALSE
 		if(!admeme)
 			if(ckey(M.real_name) == ckey(M.ckey) || ckey(M.name) == ckey(M.ckey))
-				if(!(strings("super_special_ultra_instinct.json", "[ckey(M.name)]", TRUE) || strings("super_special_ultra_instinct.json", "[ckey(M.real_name)]", TRUE)))
+				if(!(strings("data/super_special_ultra_instinct.json", "[ckey(M.name)]", TRUE, TRUE) || strings("data/super_special_ultra_instinct.json", "[ckey(M.real_name)]", TRUE, TRUE)))
 					shark = TRUE
 					name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
