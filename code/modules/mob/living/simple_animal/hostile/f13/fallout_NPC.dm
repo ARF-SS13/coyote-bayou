@@ -38,6 +38,9 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /obj/effect/mob_spawn/human/corpse/vault
@@ -155,6 +158,9 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	harm_intent_damage = 8
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
@@ -240,6 +246,9 @@
 	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/f13plasma/scatter
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	projectile_sound_properties = list(
@@ -315,6 +324,9 @@
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Tech-trooper"
@@ -337,6 +349,9 @@
 	loot = list()
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
 	projectilesound = 'sound/f13weapons/aep7fire.ogg'
 	projectile_sound_properties = list(
@@ -363,6 +378,9 @@
 	health = 480
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
 	projectilesound = 'sound/f13weapons/aer9fire.ogg'
 	projectile_sound_properties = list(
