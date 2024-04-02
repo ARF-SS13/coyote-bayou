@@ -830,7 +830,7 @@
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "thirtycalbox"
+	icon_state = "box30"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
 	ammo_type = /obj/item/ammo_casing/a3006
@@ -1041,7 +1041,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 60
+	max_ammo = 100
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
