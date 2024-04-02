@@ -65,7 +65,7 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
 	despawns_when_lonely = FALSE
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -162,7 +162,7 @@
 	color_mad = rgb(113, 105, 100)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 
@@ -397,7 +397,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 
@@ -421,7 +421,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 10
 	loot_amount_random = TRUE
 
