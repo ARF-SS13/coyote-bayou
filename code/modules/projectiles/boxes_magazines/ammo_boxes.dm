@@ -1041,7 +1041,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 100
+	max_ammo = 60
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
