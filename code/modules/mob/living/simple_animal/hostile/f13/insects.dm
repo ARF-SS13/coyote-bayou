@@ -144,7 +144,7 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
 	butcher_difficulty = 1.5
-	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10), /obj/effect/gibspawner/larva
+	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10, /obj/effect/gibspawner/larva)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
