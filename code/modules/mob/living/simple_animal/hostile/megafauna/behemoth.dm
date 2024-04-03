@@ -29,6 +29,9 @@
 	attack_verb_simple = "slams"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	weather_immunities = list("snow")
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	speak_emote = list("roars")
 	attack_action_types = list(/datum/action/innate/megafauna_attack/heavy_stomp,
 							   /datum/action/innate/megafauna_attack/disorienting_scream)
