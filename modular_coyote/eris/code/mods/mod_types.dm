@@ -390,7 +390,7 @@
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "purple"
 
-/obj/item/tool_upgrade/paint/green
+/obj/item/tool_upgrade/paint/green //yellow + blue
 	name = "green paint"
 	desc = " Green paint combines the effects of blue and yellow for a more pronounced paint quality."
 	icon_state = "green_paint"
@@ -399,18 +399,17 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-80,-60) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-50,15) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,40) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-50,15) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-35,8) * 0.01,
-		GUN_UPGRADE_RICO_MULT=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-35,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
 		UPGRADE_COLOR = "#007958"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "green"
 
-/obj/item/tool_upgrade/paint/black
+/obj/item/tool_upgrade/paint/black //yellow + blue + red
 	name = "black paint"
 	desc = "A combination of all three main colors. This makes a paint that has a maximized chance of being perfect."
 	icon_state = "black_paint"
@@ -419,14 +418,14 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-45,3) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,65) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-45,3) * 0.01,
-		GUN_UPGRADE_RICO_MULT=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-90,-70) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-3,45) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-35,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,44) * 0.01,
 		UPGRADE_COLOR = "#000000"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
