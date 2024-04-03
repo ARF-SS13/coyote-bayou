@@ -14,6 +14,7 @@
 	CBT_reward_bonus =    COINS_TO_CREDITS(30)
 	flavor_kind = QUEST_KIND_KILL_MOBS
 	candupe = FALSE
+	respect_extinction = TRUE
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -172,7 +173,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // Molerats
-
 /datum/bounty/kill/molerats
 	name = "Slay some Molerats"
 	description = "Molerats are everywhere! I'll pay you to kill some of them."
@@ -220,7 +220,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // Scorpins
-
 /datum/bounty/kill/scorpins
 	name = "Slay some Scorpins"
 	description = "Scorpins are everywhere! I'll pay you to kill some of them."
@@ -274,7 +273,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // Roachy pillbugs
-
 /datum/bounty/kill/roachypillbugs
 	name = "Slay some Roachy Pillbugs"
 	description = "Roachy Pillbugs are everywhere! I'll pay you to kill some of them."
@@ -372,7 +370,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // ants
-
 /datum/bounty/kill/ants
 	name = "Slay some Ants"
 	description = "Ants are everywhere! I'll pay you to kill some of them."
@@ -421,7 +418,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // supermutants
-
 /datum/bounty/kill/supermutants
 	name = "Slay some Supermutants"
 	description = "Supermutants are everywhere! I'll pay you to kill some of them."
@@ -470,7 +466,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // bloatflys
-
 /datum/bounty/kill/bloatflys
 	name = "Slay some Bloatflys"
 	description = "Bloatflys are everywhere! I'll pay you to kill some of them."
@@ -518,7 +513,6 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // hellpigs
-
 /datum/bounty/kill/hellpigs
 	name = "Slay some Hellpigs"
 	description = "Hellpigs are everywhere! I'll pay you to kill some of them."
@@ -530,7 +524,7 @@
 		/datum/bounty_quota/hellpig/hard,
 		/datum/bounty_quota/hellpig/CBT,
 	)
-	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
 ///// HELLPIG QUOTAS /////
 /datum/bounty_quota/hellpig
@@ -562,4 +556,571 @@
 /datum/bounty_quota/hellpig/CBT
 	needed_amount = 10
 	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Centaurs
+/datum/bounty/kill/centaurs
+	name = "Slay some Centaurs"
+	description = "Centaurs are gross! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/centaur
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/centaur/easy,
+		/datum/bounty_quota/centaur/medium,
+		/datum/bounty_quota/centaur/hard,
+		/datum/bounty_quota/centaur/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// CENTAUR QUOTAS /////
+/datum/bounty_quota/centaur
+	name = "Kill some Centaurs"
+	paths = list(
+		/mob/living/simple_animal/hostile/centaur,
+	)
+	needed_amount = 5
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(8)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/centaur/easy
+	needed_amount = 5
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/centaur/medium
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/centaur/hard
+	needed_amount = 15
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/centaur/CBT
+	needed_amount = 50 // are there even that many?
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Raiders
+/datum/bounty/kill/raiders
+	name = "Slay some Raiders"
+	description = "Those lousy functionally immortal humans are making life miserable! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/raider
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/raider/easy,
+		/datum/bounty_quota/raider/medium,
+		/datum/bounty_quota/raider/hard,
+		/datum/bounty_quota/raider/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// RAIDER QUOTAS /////
+/datum/bounty_quota/raider
+	name = "Kill some Raiders"
+	paths = list(
+		/mob/living/simple_animal/hostile/raider,
+	)
+	needed_amount = 5
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(8)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/raider/easy
+	needed_amount = 5
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/raider/medium
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/raider/hard
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/raider/CBT
+	needed_amount = 50
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Deathclaws
+/datum/bounty/kill/deathclaws
+	name = "Slay some Deathclaws"
+	description = "Deathclaws are scary and mean! (and honestly kinda tasty) I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/deathclaw
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/deathclaw/easy,
+		/datum/bounty_quota/deathclaw/medium,
+		/datum/bounty_quota/deathclaw/hard,
+		/datum/bounty_quota/deathclaw/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// DEATHCLAW QUOTAS /////
+/datum/bounty_quota/deathclaw
+	name = "Kill some Deathclaws"
+	paths = list(
+		/mob/living/simple_animal/hostile/deathclaw,
+	)
+	needed_amount = 2
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(15)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/deathclaw/easy
+	needed_amount = 2
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/deathclaw/medium
+	needed_amount = 4
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/deathclaw/hard
+	needed_amount = 6
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/deathclaw/CBT
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_CBT // the CBT part is actually finding 20 of em
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Enclave Hellions
+/datum/bounty/kill/enclavehellions
+	name = "Slay some Enclavers"
+	description = "The Cyber-Enclave think they're so good with their plasma blasters and power armor! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/enclave
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/enclavehellion/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_CBT
+
+///// ENCLAVEHELLION QUOTAS /////
+/datum/bounty_quota/enclavehellion
+	name = "Kill some Enclave Hellions"
+	flavor = "Fair warning, they're tough. They love their plasma weapons and power armor. And no, they won't share either with you, no matter how hard you try."
+	paths = list(
+		/mob/living/simple_animal/hostile/enclave,
+	)
+	needed_amount = 20
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(20)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/enclavehellion/CBT
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Civilian robots // the lower level ones
+/datum/bounty/kill/civilianrobots
+	name = "Scrap some Civilian Robots"
+	description = "Civilian robots are everywhere! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/eyebot
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/civilianrobot/easy,
+		/datum/bounty_quota/civilianrobot/medium,
+		/datum/bounty_quota/civilianrobot/hard,
+		/datum/bounty_quota/civilianrobot/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// CIVILIANROBOT QUOTAS /////
+/datum/bounty_quota/civilianrobot
+	name = "Scrap some Civilian Robots"
+	flavor = "Not to be confused with the curvy furry lizard robot people around town, they're *our* civilian robots."
+	paths = list(
+		/mob/living/simple_animal/hostile/eyebot,
+		/mob/living/simple_animal/pet/dog/eyebot,
+		/mob/living/simple_animal/hostile/handy,
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/civilianrobot/easy
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/civilianrobot/medium
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/civilianrobot/hard
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/civilianrobot/CBT
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Military robots // the higher level ones
+/datum/bounty/kill/militaryrobots
+	name = "Scrap some Military Robots"
+	description = "Military robots are everywhere! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/securitron
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/militaryrobot/easy,
+		/datum/bounty_quota/militaryrobot/medium,
+		/datum/bounty_quota/militaryrobot/hard,
+		/datum/bounty_quota/militaryrobot/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// MILITARYROBOT QUOTAS /////
+/datum/bounty_quota/militaryrobot
+	name = "Scrap some Military Robots"
+	flavor = "They're tougher than the civilian robots, but they're still just robots. They're not even furry."
+	paths = list(
+		/mob/living/simple_animal/hostile/hivebot,
+		/mob/living/simple_animal/hostile/securitron,
+		/mob/living/simple_animal/hostile/synth,
+		/mob/living/simple_animal/hostile/handy,
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(10)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/militaryrobot/easy
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/militaryrobot/medium
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/militaryrobot/hard
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/militaryrobot/CBT
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// cute lizards
+/datum/bounty/kill/cutelizards
+	name = "KILL CUTE LIZARDS"
+	description = "CUTE LIZARDS MUST DIE"
+	flavor_focus = /mob/living/simple_animal/hostile/lizard
+	weight = 0.05
+	init_wanteds = list(
+		/datum/bounty_quota/cutelizard,
+	)
+	difficulty = QUEST_DIFFICULTY_CBT
+
+///// CUTELIZARD QUOTAS /////
+/datum/bounty_quota/cutelizard
+	name = "KILL CUTE LIZARDS"
+	flavor = "CUTE LIZARDS MUST DIE"
+	paths = list(
+		/mob/living/simple_animal/hostile/lizard,
+	)
+	needed_amount = 1
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5000)
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// crabs
+/datum/bounty/kill/crabs
+	name = "Slay some Crabs"
+	description = "Crabs are delicious! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/mirelurk
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/crab/easy,
+		/datum/bounty_quota/crab/medium,
+		/datum/bounty_quota/crab/hard,
+		/datum/bounty_quota/crab/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// CRAB QUOTAS /////
+/datum/bounty_quota/crab
+	name = "Kill some Crabs"
+	flavor = "No, yours don't count."
+	paths = list(
+		/mob/living/simple_animal/hostile/mirelurk,
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/crab/easy
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/crab/medium
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/crab/hard
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/crab/CBT
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+//squish that dan// Huge Spiders
+/datum/bounty/kill/hugespider
+	name = "Squish some Huge Spiders"
+	description = "Huge Spiders are spiders! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/poison/giant_spider
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/hugespider/easy,
+		/datum/bounty_quota/hugespider/medium,
+		/datum/bounty_quota/hugespider/hard,
+		/datum/bounty_quota/hugespider/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// HUGESPIDER QUOTAS /////
+/datum/bounty_quota/hugespider
+	name = "Kill some Huge Spiders"
+	flavor = "They're big, they're hairy, they're spiders. What more do you need to know?"
+	paths = list(
+		/mob/living/simple_animal/hostile/poison/giant_spider,
+	)
+	needed_amount = 5
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/hugespider/easy
+	needed_amount = 5
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/hugespider/medium
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/hugespider/hard
+	needed_amount = 15
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/hugespider/CBT
+	needed_amount = 50
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+//Renegades
+/datum/bounty/kill/renegades
+	name = "Slay some Renegades"
+	description = "Renegades are dangerous! I'll pay you to kill some of them."
+	flavor_focus = /mob/living/simple_animal/hostile/renegade
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/renegade/hard,
+		/datum/bounty_quota/renegade/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// RENEGADE QUOTAS /////
+/datum/bounty_quota/renegade
+	name = "Kill some Renegades"
+	flavor = "Careful. Be careful. They're dangerous, so be careful."
+	paths = list(
+		/mob/living/simple_animal/hostile/renegade,
+	)
+	needed_amount = 5
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(15)
+	hard_multiplier = 1
+	CBT_multiplier = 2
+
+/datum/bounty_quota/renegade/hard
+	needed_amount = 5
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/renegade/CBT
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Grab bag
+/datum/bounty/kill/grabbag
+	name = "Kill some goats or frogs or snakes or something"
+	description = "I don't know, just kill some stuff."
+	flavor_focus = /mob/living/simple_animal/hostile
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/grabbag/easy,
+		/datum/bounty_quota/grabbag/medium,
+		/datum/bounty_quota/grabbag/hard,
+		/datum/bounty_quota/grabbag/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// GRABBAG QUOTAS /////
+/datum/bounty_quota/grabbag
+	name = "Kill some random stuff"
+	flavor = "I don't know, just kill some stuff."
+	paths = list(
+		/mob/living/simple_animal/hostile/retaliate,
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 4
+
+/datum/bounty_quota/grabbag/easy
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/grabbag/medium
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/grabbag/hard
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/grabbag/CBT
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_CBT
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+// Super Grab Bag
+/datum/bounty/kill/supergrabbag_easy
+	name = "Scavenger Hunt"
+	description = "Put your hunter skills to the test! Track down one specific creature and kill it."
+	flavor_focus = /mob/living/simple_animal/hostile
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/supergrabbag,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY
+	candupe = TRUE
+
+/datum/bounty/kill/supergrabbag_medium
+	name = "Super Scavenger Hunt"
+	description = "Put your hunter skills to the test! Track down two specific creatures and kill them."
+	flavor_focus = /mob/living/simple_animal/hostile
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+	)
+	difficulty = QUEST_DIFFICULTY_MED
+	candupe = TRUE
+
+/datum/bounty/kill/supergrabbag_hard
+	name = "Ultra Scavenger Hunt"
+	description = "Put your hunter skills to the test! Track down four specific creatures and kill them."
+	flavor_focus = /mob/living/simple_animal/hostile
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+	)
+	difficulty = QUEST_DIFFICULTY_HARD
+	candupe = TRUE
+
+/datum/bounty/kill/supergrabbag_CBT
+	name = "Super Ultra Mega Impossible Scavenger Hunt"
+	description = "Put your hunter skills to the test! Track down TEN specific creatures and kill them. Not for the faint of heart.<br/><br/>Disclaimer: The following thing has been confirmed (somewhat) to exist in some killable form at the time of posting."
+	flavor_focus = /mob/living/simple_animal/hostile
+	weight = 1
+	init_wanteds = list(
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag, // welcome to CBT
+	)
+	difficulty = QUEST_DIFFICULTY_CBT
+	candupe = TRUE
+
+///// SUPERGRABBAG QUOTA /////
+//// this one is special /////
+/datum/bounty_quota/supergrabbag
+	name = "Hunt Down the Free Dev"
+	flavor = "DISCLAIMER: The following thing has been confirmed (somewhat) to exist (in some form) at the time of posting. If you can't seem to find it, maybe someone else got it first!"
+	paths = list()
+	needed_amount = 1
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(50)
+	easy_multiplier = 1
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 5 // 2500 for finding 10 randomass things? sure
+	difficulty = null // valid for all difficulties
+
+/datum/bounty_quota/supergrabbag/GetPaths()
+	if(is_copy)
+		return
+	var/list/potentials = SSmobs.get_existing_mob_paths(/mob/living/simple_animal/hostile)
+	if(!LAZYLEN(potentials)) // unlikely but hey
+		paths = list(/mob/living/carbon/human) // YOU
+		return
+	var/mob/living/simple_animal/hostile/thing = pick(potentials)
+	name = initial(thing.name)
+	paths = list(pick(thing)) // guaranteed fresh at time of baking
 

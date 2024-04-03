@@ -16,6 +16,10 @@ SUBSYSTEM_DEF(atoms)
 
 	var/list/BadInitializeCalls = list()
 
+	/// Ginormous hell tally of all the types of atoms in existence.
+	/// FORMAT: list(/type = amount)
+	var/list/everything = list()
+
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
 	to_chat(world, span_boldannounce("Initializing Genetics..."))
@@ -170,6 +174,15 @@ SUBSYSTEM_DEF(atoms)
 		InitializeAtoms()
 	old_initialized = SSatoms.old_initialized
 	BadInitializeCalls = SSatoms.BadInitializeCalls
+
+/datum/controller/subsystem/atoms/proc/GetExistingAtomsOfPath(atom/A)
+	if(isatom(A))
+		A = A.type
+	var/list/atoms = list()
+	for(var/B in everything)
+		if(ispath(B, A))
+			atoms |= B
+	return atoms // yeah, suck it, performance and ram
 
 /datum/controller/subsystem/atoms/proc/setupGenetics()
 	var/list/mutations = subtypesof(/datum/mutation/human)

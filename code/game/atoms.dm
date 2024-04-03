@@ -149,6 +149,7 @@
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
+	SSatoms.everything[type]++
 
 	InitTastes()
 
@@ -171,6 +172,7 @@
 		// QDEL_NULL(tastes)
 
 /atom/Destroy()
+	SSatoms.everything[type]--
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
 			var/datum/atom_hud/alternate_appearance/AA = alternate_appearances[K]

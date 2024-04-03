@@ -5,6 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
+	a_intent = INTENT_HARM // I LOVE PLAYING THE SCOOTER DANCE WITH PROTECTRONS
 	var/datum/weakref/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.

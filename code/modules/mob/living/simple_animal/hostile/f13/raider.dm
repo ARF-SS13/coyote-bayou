@@ -205,7 +205,8 @@
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
-	name = "Raider Boss"
+	name = "Machinegun Martha"
+	gender = FEMALE
 	icon_state = "raiderboss"
 	icon_living = "raiderboss"
 	icon_dead = "raiderboss_dead"
@@ -246,9 +247,6 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 30
-
-
-
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),

@@ -5,13 +5,14 @@ SUBSYSTEM_DEF(economy)
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 5
 	var/budget_pool = 35000
-	var/list/department_accounts = list(ACCOUNT_CIV = ACCOUNT_CIV_NAME,
-										ACCOUNT_ENG = ACCOUNT_ENG_NAME,
-										ACCOUNT_SCI = ACCOUNT_SCI_NAME,
-										ACCOUNT_MED = ACCOUNT_MED_NAME,
-										ACCOUNT_SRV = ACCOUNT_SRV_NAME,
-										ACCOUNT_CAR = ACCOUNT_CAR_NAME,
-										ACCOUNT_SEC = ACCOUNT_SEC_NAME)
+	var/list/department_accounts = list(
+		ACCOUNT_CIV = ACCOUNT_CIV_NAME,
+		ACCOUNT_ENG = ACCOUNT_ENG_NAME,
+		ACCOUNT_SCI = ACCOUNT_SCI_NAME,
+		ACCOUNT_MED = ACCOUNT_MED_NAME,
+		ACCOUNT_SRV = ACCOUNT_SRV_NAME,
+		ACCOUNT_CAR = ACCOUNT_CAR_NAME,
+		ACCOUNT_SEC = ACCOUNT_SEC_NAME)
 	var/list/generated_accounts = list()
 	var/full_ancap = FALSE // Enables extra money charges for things that normally would be free, such as sleepers/cryo/cloning.
 							//Take care when enabling, as players will NOT respond well if the economy is set up for low cash flows.
@@ -20,31 +21,32 @@ SUBSYSTEM_DEF(economy)
 	var/monster_bounty = 150
 	var/mood_bounty = 100
 	var/techweb_bounty = 250
-	var/slime_bounty = list("grey" = 10,
-							// tier 1
-							"orange" = 100,
-							"metal" = 100,
-							"blue" = 100,
-							"purple" = 100,
-							// tier 2
-							"dark purple" = 500,
-							"dark blue" = 500,
-							"green" = 500,
-							"silver" = 500,
-							"gold" = 500,
-							"yellow" = 500,
-							"red" = 500,
-							"pink" = 500,
-							// tier 3
-							"cerulean" = 750,
-							"sepia" = 750,
-							"bluespace" = 750,
-							"pyrite" = 750,
-							"light pink" = 750,
-							"oil" = 750,
-							"adamantine" = 750,
-							// tier 4
-							"rainbow" = 1000)
+	var/slime_bounty = list(
+		"grey" = 10,
+		// tier 1
+		"orange" = 100,
+		"metal" = 100,
+		"blue" = 100,
+		"purple" = 100,
+		// tier 2
+		"dark purple" = 500,
+		"dark blue" = 500,
+		"green" = 500,
+		"silver" = 500,
+		"gold" = 500,
+		"yellow" = 500,
+		"red" = 500,
+		"pink" = 500,
+		// tier 3
+		"cerulean" = 750,
+		"sepia" = 750,
+		"bluespace" = 750,
+		"pyrite" = 750,
+		"light pink" = 750,
+		"oil" = 750,
+		"adamantine" = 750,
+		// tier 4
+		"rainbow" = 1000)
 	var/list/bank_accounts = list() //List of normal accounts (not department accounts)
 	var/list/dep_cards = list()
 
@@ -89,9 +91,9 @@ SUBSYSTEM_DEF(economy)
 
 	var/list/quest_console_paths = list()
 
-	var/easy_quest_count = 2
-	var/medium_quest_count = 2
-	var/hard_quest_count = 2
+	var/easy_quest_count = 7
+	var/medium_quest_count = 5
+	var/hard_quest_count = 3
 	var/cbt_quest_count = 2
 
 	var/debug_quests = FALSE
@@ -125,28 +127,25 @@ SUBSYSTEM_DEF(economy)
 	//disabled payday
 
 /datum/controller/subsystem/economy/proc/setup_currency()
-	if(boring_units_only && prob(99.5))
+	var/list/units = list(
+		"$", "C", "©", "§", "¶", "¤", "☺", "☻", "☼", "♥", "♫", "♪", "≡", "∞", "√", "∑", "∆", "∫", 
+		"∏", "∂", "∀", "∃", "∅", "∇", "∈", "∉", "∋", "∌", "∍", "∎", "∏", "∐", "∑", "∓", "∔", 
+		"∘", "∙", "√", "∛", "∜", "∝", "∞", "∟", "∠", "∡", "∢", "∤", "∥", "∦", "∧", "∩", "∫", "∬", 
+		"∭", "∮", "∯", "∰", "∱", "∲", "∳", "∴", "∵", "∷", "∸", "∹", "∺", "∻", "∽", "∾", "∿", 
+		"≀", "≁", "≂", "≃", "≄", "≅", "≆", "≇", "≈", "≉", "≊", "≋", "≌", "≍", "≎", "≏", "≐", "≑", 
+		"≒", "≓", "≔", "≕", "≖", "≗", "≘", "≙", "≚", "≛", "≜", "≝", "≞", "≟", "≠", "≡", "≢", "≣", 
+		"≤", "≥", "≦", "≧", "≨", "≩", "≪", "≫", "≬", "≭", "≮", "≯", "≰", "≱", "≲", "≳", "≴", "≵", 
+		"≶", "≷", "≸", "≹", "≺")
+	if(boring_units_only && prob(99))
 		currency_name = "Copper"
 		currency_name_plural = "Coppers"
-		currency_unit = "$"
+		if(prob(95))
+			currency_unit = "₡"
+		else
+			currency_unit = pick(units)
 		return ":/"
-	var/list/units = list(
-		"$",
-		"C",
-		"©",
-		"§",
-		"¶",
-		"¤",
-		"☺",
-		"☻",
-		"☼",
-		"♥",
-		"♫",
-		"♪",
-		"≡",
-	)
 	currency_unit = "[pick(units)]"
-	var/s33d = rand(1,10)
+	var/s33d = rand(1,12)
 	switch(s33d)
 		if(1)
 			currency_name = "Simoleon"
@@ -188,7 +187,14 @@ SUBSYSTEM_DEF(economy)
 			currency_name = "Capsule"
 			currency_name_plural = "Capsules"
 			currency_unit = "♥"
-
+		if(11)
+			currency_name = "Buck"
+			currency_name_plural = "Bucks"
+			currency_unit = "$"
+		if(12)
+			currency_name = "Dollar"
+			currency_name_plural = "Dollars"
+			currency_unit = "$"
 
 /datum/controller/subsystem/economy/proc/setup_quests()
 	if(LAZYLEN(all_quests))
@@ -580,6 +586,7 @@ SUBSYSTEM_DEF(economy)
 	var/list/paystubs = list()
 	var/datum/quest_window/QW
 	var/printer_cooldown = 0
+	var/claim_on_kill = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -607,8 +614,7 @@ SUBSYSTEM_DEF(economy)
 	if(!can_take_quest(B, TRUE))
 		return FALSE
 	/// quest is go!!
-	var/datum/bounty/B2 = new B.type(B.difficulty)
-	B2.copy_bounty(B)
+	var/datum/bounty/B2 = new B.type(B.difficulty, B)
 	B2.assign_to(user)
 	active_quests[B.uid] = B2
 	SSeconomy.activate_quest(B)
@@ -804,22 +810,25 @@ SUBSYSTEM_DEF(economy)
 	switch(action) // lets bounce these commands back and forth between us and the subsystem, just so they get good and dizzy
 		if("AcceptQuest")
 			SSeconomy.add_active_quest(SSeconomy.get_quest_by_uid(params["BountyUID"]), src, user)
-			return TRUE
+			. = TRUE
 		if("CancelQuest")
 			SSeconomy.remove_active_quest(LAZYACCESS(active_quests, params["BountyUID"]), src, user)
-			return TRUE
+			. = TRUE
 		if("FinishQuest")
 			SSeconomy.finish_quest(LAZYACCESS(active_quests, params["BountyUID"]), src, user)
-			return TRUE
+			. = TRUE
 		if("CashOut")
 			dispense_reward()
-			return TRUE
+			. = TRUE
 		if("ToggleBeep")
 			TOGGLE_VAR(beep_on_update)
-			return TRUE
+			. = TRUE
 		if("GetScanner")
 			give_scanner()
-			return TRUE
+			. = TRUE
+		if("ToggleClaimOnKill")
+			TOGGLE_VAR(claim_on_kill)
+			. = TRUE
 		if("OpenQuest")
 			var/datum/bounty/B
 			if(params["QuestIsMine"])
@@ -831,18 +840,20 @@ SUBSYSTEM_DEF(economy)
 		if("DebugGiveObjectivePoint")
 			if(!SSeconomy.debug_quests)
 				to_chat(user, span_alert("You can't do that! You've gotta set debug_quests to TRUE in the economy subsystem first! =3"))
-				return
+				. = FALSE
 			var/datum/bounty/B = LAZYACCESS(active_quests, params["BountyUID"])
 			if(!B)
 				to_chat(user, span_alert("That quest doesn't exist!"))
-				return
+				. = FALSE
 			var/datum/bounty_quota/BQ = B.get_quota_by_uid(params["QuotaUID"])
 			if(!BQ)
 				to_chat(user, span_alert("That objective doesn't exist!"))
-				return
+				. = FALSE
 			BQ.Claim()
 			to_chat(user, span_notice("Added 1 to objective '[BQ.name]'"))
-			return TRUE
+			. = TRUE
+	if(.)
+		playsound(user, "terminal_type", 50, TRUE)
 
 /datum/quest_book/proc/give_scanner()
 	var/mob/user = ckey2mob(ckey)
@@ -864,6 +875,8 @@ SUBSYSTEM_DEF(economy)
 	if(!doer)
 		return FALSE
 	if(unclaimed_points < 1)
+		playsound(doer, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(doer, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
 		return FALSE
 	var/payment = unclaimed_points
 	unclaimed_points = 0
@@ -878,6 +891,7 @@ SUBSYSTEM_DEF(economy)
 	var/mob/doer = ckey2mob(ckey)
 	if(!doer)
 		return FALSE
+	playsound(doer, 'sound/machines/dash.ogg', 75, TRUE)
 	to_chat(doer, span_alert("Could not establish connection to FoxEye Wireless Printer. Contact your Guild webmaster for assistance."))
 	// if(printer_cooldown > world.time)
 	// 	to_chat(doer, span_alert("The printer is still refilling its inkwell."))
@@ -1022,10 +1036,7 @@ SUBSYSTEM_DEF(economy)
 /// A device that can be used to claim items for quests
 /obj/item/hand_item/quest_scanner
 	name = "quest scanner"
-	desc = "A handy little modified zorcher used by independant Guild contractors to bend the fabric of reality and deliver specific quest related things to parts unknown. \
-		\n\n HOW TO USE: \
-		\nClick this thing onto something, and if it is part of a Quest, it'll try to claim it.\
-		\nClick a floor or container and it'll try to find the first valid thing to send, if any."
+	desc = "A handy little modified zorcher used by independant Guild contractors to bend the fabric of reality and deliver specific quest related things to parts unknown."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "export_scanner"
 	item_state = "radio"
@@ -1034,12 +1045,29 @@ SUBSYSTEM_DEF(economy)
 	item_flags = NOBLUDGEON | DROPDEL | ABSTRACT | HAND_ITEM
 	w_class = WEIGHT_CLASS_NO_INVENTORY
 	var/ping_cooldown = 0
+	var/being_used = FALSE
+
+/obj/item/hand_item/quest_scanner/examine(mob/user)
+	. = ..()
+	var/list/readme = list()
+	readme += span_notice("This is a Quest Scanner! It is how you turn in things for quests.")
+	readme += span_notice("To use it, simply click on the thing you want to turn in.")
+	readme += span_notice("If that something is part of any of your quests, it will attempt to turn it in.")
+	readme += span_notice("You can click the ground under a pile of things, and it will attempt to turn in anything questable in that pile.")
+	readme += span_notice("If you're having trouble finding something to turn in, you can use the 'Ping' ability to scan the area for questable things.")
+	readme += span_notice("To do this, just use it in your hand, and it will highlight anything you can turn in.")
+	readme += span_notice("You can get one of these from the Quest Board with a button press, or by typing *scanner in the chat.")
 
 /obj/item/hand_item/quest_scanner/afterattack(atom/O, mob/user, proximity)
 	. = ..()
 	if(!istype(O) || !proximity)
 		return
+	if(being_used)
+		to_chat(user, span_alert("Your [src] is still doing something!"))
+		return
+	being_used = TRUE
 	SSeconomy.attempt_turnin(O, user)
+	being_used = FALSE
 
 /obj/item/hand_item/quest_scanner/attack_self(mob/user)
 	. = ..()

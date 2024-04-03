@@ -85,6 +85,19 @@ SUBSYSTEM_DEF(mobs)
 		return FALSE
 	return tally.num_in_play < 1
 
+/datum/controller/subsystem/mobs/proc/get_existing_mob_paths(mob/mobpath)
+	var/list/candidates = list()
+	for(var/mpath in mob_tally)
+		if(!ispath(mpath, mobpath))
+			continue
+		var/datum/mob_tally/tally = get_mob_tally(mpath)
+		if(!tally)
+			continue
+		if(tally.num_in_play < 1)
+			continue
+		candidates |= mpath
+	return candidates
+
 ////////////////////mob tally////////////////////
 /datum/mob_tally
 	var/mob/living/mymob

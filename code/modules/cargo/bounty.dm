@@ -24,6 +24,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	/// The chance of this bounty being picked
 	var/weight = 1
 	var/candupe = TRUE
+	var/respect_extinction = TRUE
 
 	var/uid = "Bingus"
 	var/assigned_ckey
@@ -67,11 +68,14 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	)
 
 // Displayed on bounty UI screen.
-/datum/bounty/New(diffi)
+/datum/bounty/New(diffi, datum/bounty/from)
 	. = ..()
+	if(istype(from))
+		copy_bounty(from)
+		return
 	if(isnum(diffi))
 		set_difficulty(diffi)
-	create_quotas()
+	create_quotas(FALSE)
 	if(!is_valid_bounty())
 		stack_trace("[src.type] is not a valid bounty! Error code: THICC-FLUFFY-SERGAL-SPINE")
 		qdel(src)
@@ -113,20 +117,13 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	uid = from.uid
 	name = from.name
 	description = from.description
-	for(var/datum/bounty_quota/myBQ in wanted_things)
-		for(var/datum/bounty_quota/themBQ in from.wanted_things)
-			if(myBQ.name == themBQ.name) // close enough approximation
-				myBQ.needed_amount = themBQ.needed_amount
-				myBQ.gotten_amount = themBQ.gotten_amount
-				myBQ.auto_generate_info = themBQ.auto_generate_info
-				myBQ.mobs_must_be_dead = themBQ.mobs_must_be_dead
-				myBQ.delete_thing = themBQ.delete_thing
-				myBQ.claimdelay = themBQ.claimdelay
-				myBQ.quota_contents = themBQ.quota_contents
-				myBQ.paths_get_subtypes = themBQ.paths_get_subtypes
-				myBQ.paths_includes_root = themBQ.paths_includes_root
-				myBQ.pick_this_many = themBQ.pick_this_many
-				myBQ.difficulty = themBQ.difficulty
+	difficulty = from.difficulty
+
+	for(var/i in 1 to LAZYLEN(from.wanted_things))
+		var/datum/bounty_quota/BQ = from.wanted_things[i]
+		if(!BQ)
+			continue
+		wanted_things += new BQ.blank_path(BQ)
 
 /datum/bounty/proc/create_quotas(allofem)
 	QDEL_LIST(wanted_things)
@@ -216,6 +213,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /// If the quest has mobs that might not exist anymore, this will return FALSE.
 /datum/bounty/proc/should_be_completable()
+	if(SSeconomy.debug_ignore_extinction || !respect_extinction)
+		return TRUE
 	var/list/mobs = list()
 	for(var/datum/bounty_quota/BQ in wanted_things)
 		for(var/pat in BQ.paths)
@@ -223,8 +222,6 @@ GLOBAL_LIST_EMPTY(bounties_list)
 				mobs |= pat
 	if(!LAZYLEN(mobs))
 		return TRUE // no mobs to check, items are typically everywhere
-	if(SSeconomy.debug_ignore_extinction)
-		return TRUE
 	for(var/mobpath in mobs)
 		if(!SSmobs.is_extinct(mobpath))
 			return TRUE // last chance to see em!
@@ -371,15 +368,15 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		out |= BQ.get_paths()
 	return out
 
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////// THE THINGS THIS THING WANTS
 /datum/bounty_quota
 	/// The name of this quota
@@ -393,6 +390,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/list/paths_exclude = list()
 	/// How many we need
 	var/needed_amount = 1
+	/// if set, will pick a number between needed_amount and this for the needed amount. should be higher than needed_amount, but I understand if you dont want to do that
+	var/needed_max
 	/// How many we've gotten
 	var/gotten_amount = 0
 	/// the intended difficulty to spawn, leave null for any
@@ -419,23 +418,55 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/medium_multiplier = 1
 	var/hard_multiplier = 1
 	var/CBT_multiplier = 1
-	var/prize = 0
 
 	var/bq_uid = 0
+	var/is_copy
+	var/post_copy_flags = NONE
+	/// 
+	var/datum/bounty_quota/blank_path = /datum/bounty_quota
 
-/datum/bounty_quota/New()
-	// if(islist(paths))
-	// 	src.paths = paths
-	// if(!isnull(needed_amount))
-	// 	src.needed_amount = needed_amount
-	// if(!isnull(pick_this_many))
-	// 	src.pick_this_many = pick_this_many
-	// src.mobs_must_be_dead = mobs_must_be_dead
-	// src.delete_thing = delete_thing
-	setzup()
+/datum/bounty_quota/New(datum/bounty_quota/copy_source)
+	setzup(copy_source)
 
-/datum/bounty_quota/proc/setzup()
+/datum/bounty_quota/proc/setzup(datum/bounty_quota/copy_source)
+	if(istype(copy_source))
+		CopyFrom(copy_source)
+		return
+	GenerateUID()
+	GetPaths()
+	if(auto_generate_info)
+		AutoGen()
+
+/datum/bounty_quota/proc/CopyFrom(datum/bounty_quota/copy_source)
+	name =                copy_source.name
+	flavor =              copy_source.flavor
+	info =                copy_source.info
+	needed_amount =       copy_source.needed_amount
+	needed_max =          copy_source.needed_max
+	paths =               copy_source.paths
+	paths_exclude =       copy_source.paths_exclude
+	difficulty =          copy_source.difficulty
+	auto_generate_info =  copy_source.auto_generate_info
+	mobs_must_be_dead =   copy_source.mobs_must_be_dead
+	delete_thing =        copy_source.delete_thing
+	claimdelay =          copy_source.claimdelay
+	paths_get_subtypes =  copy_source.paths_get_subtypes
+	paths_includes_root = copy_source.paths_includes_root
+	pick_this_many =      copy_source.pick_this_many
+	price_per_thing =     copy_source.price_per_thing
+	easy_multiplier =     copy_source.easy_multiplier
+	medium_multiplier =   copy_source.medium_multiplier
+	hard_multiplier =     copy_source.hard_multiplier
+	CBT_multiplier =      copy_source.CBT_multiplier
+	is_copy =             TRUE
+	GenerateUID()
+
+
+
+/datum/bounty_quota/proc/GenerateUID()
 	bq_uid = "[world.time]-[rand(1000, 9999)]-[rand(1000, 9999)]"
+
+/datum/bounty_quota/proc/GetPaths()
 	if(paths_get_subtypes)
 		var/list/nupaths = list()
 		for(var/pat in paths)
@@ -455,8 +486,6 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			var/pick = pick(thepaths)
 			thepaths -= pick
 			paths |= pick
-	if(auto_generate_info)
-		AutoGen()
 
 /datum/bounty_quota/proc/AutoGen()
 	// SSeconomy.autogenerate_info(src)
