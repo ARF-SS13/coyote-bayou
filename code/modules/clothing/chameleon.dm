@@ -325,7 +325,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	chameleon_action.chameleon_name = "Suit"
 	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
-
+/*
 /obj/item/clothing/suit/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
@@ -335,7 +335,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 /obj/item/clothing/suit/chameleon/broken/Initialize()
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
-
+*/
 /obj/item/clothing/suit/chameleon/dripharness
 	name = "drip armor harness"
 	desc = "It can be whatever you want, and can go on your neck. Double up on armor drip."
