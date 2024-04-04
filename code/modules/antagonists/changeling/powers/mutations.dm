@@ -265,7 +265,7 @@
 	flags_1 = NONE
 	w_class = WEIGHT_CLASS_HUGE
 	ammo_type = /obj/item/ammo_casing/magic/tentacle
-	fire_sound = 'sound/effects/splat.ogg'
+	fire_sound = 'sound/weapons/whipgrab.ogg'
 	force = 0
 	max_charges = 1
 	fire_delay = 1
@@ -312,7 +312,7 @@
 	name = "tentacle"
 	icon_state = "tentacle_end"
 	pass_flags = PASSTABLE
-	damage = 5
+	damage = 0
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'
