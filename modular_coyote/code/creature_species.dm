@@ -802,6 +802,32 @@
 /mob/living/carbon/human/species/scrotie
 	race = /datum/species/feral/scrotie
 
+/datum/species/feral/otiepede
+	name = "Feral Otiepede"
+	id = "otiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otiepede
+	race = /datum/species/feral/otiepede
+
+/datum/species/feral/scrotiepede
+	name = "Feral Scrotiepede"
+	id = "scrotiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/scrotiepede
+	race = /datum/species/feral/scrotiepede
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
