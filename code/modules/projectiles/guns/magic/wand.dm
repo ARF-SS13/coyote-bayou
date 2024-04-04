@@ -336,9 +336,9 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
-	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
-	damage_low = 5
-	damage_high = 15
+	damage = 15 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
+	damage_low = 10
+	damage_high = 20
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"
@@ -357,7 +357,7 @@
 	impact_light_intensity = 8
 	impact_light_range = 3.75
 	impact_light_color_override = LIGHT_COLOR_BLUE
-	supereffective_damage = 10
+	supereffective_damage = 15
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
