@@ -1154,8 +1154,8 @@
 
 /datum/design/ammolathe/improvised/a47crate
 	name = "4.7mm caseless crate"
-	id = "handloader_a50mgcrate"
-	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
+	id = "a47crate"
+	materials = list(/datum/material/iron = 150000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473/crate
 	category = list("initial", "Handloaded Ammo")
 
