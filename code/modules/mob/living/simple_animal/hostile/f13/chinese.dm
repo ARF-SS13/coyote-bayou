@@ -34,6 +34,9 @@
 	max_heal_amount = 0.99
 	heal_per_life = 0.115
 	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/chinese/Aggro()

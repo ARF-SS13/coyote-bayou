@@ -30,6 +30,9 @@
 	heal_per_life = 0.115
 	tactical_retreat = 10
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/russian/ranged
