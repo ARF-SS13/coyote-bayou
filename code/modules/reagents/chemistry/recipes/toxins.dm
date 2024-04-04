@@ -81,13 +81,13 @@
 	id = /datum/reagent/toxin/zombiepowder
 	results = list(/datum/reagent/toxin/zombiepowder = 2)
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5, /datum/reagent/medicine/morphine = 5, /datum/reagent/copper = 5)
-*/ // instant KO reagent?? hello?? this is a balance nightmare, you can just sneak this into anyone's food or use our WONDERFUL LLX11 to instantly knock them out 
+
 /datum/chemical_reaction/ghoulpowder
 	name = "Ghoul Powder"
 	id = /datum/reagent/toxin/ghoulpowder
 	results = list(/datum/reagent/toxin/ghoulpowder = 2)
 	required_reagents = list(/datum/reagent/toxin/zombiepowder = 1, /datum/reagent/medicine/epinephrine = 1)
-
+*/ // instant KO reagent?? hello?? this is a balance nightmare, you can just sneak this into anyone's food or use our WONDERFUL LLX11 to instantly knock them out 
 /datum/chemical_reaction/mindbreaker
 	name = "Mindbreaker Toxin"
 	id = /datum/reagent/toxin/mindbreaker
