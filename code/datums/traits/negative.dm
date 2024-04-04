@@ -1398,9 +1398,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Hardcore"
 	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
 		and the only way you'll be able to live again is if someone finds and revives your body or a spirit takes mercy on you!"
-	value = -11
+	value = -34
 	category = "Lifepath Quirks"
-	mechanics = "You lose access to the Second Wind function."
+	mechanics = "You lose access to the Second Wind function. This is important there's almost never medical staff. Treat lightly, waster."
 	conflicts = list(
 
 	)
