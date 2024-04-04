@@ -25,7 +25,6 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list()
 	unsuitable_atmos_damage = 15
 	faction = list("vault", "city")
 	check_friendly_fire = 1
@@ -38,6 +37,9 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /obj/effect/mob_spawn/human/corpse/vault
@@ -92,7 +94,6 @@
 	health = 160
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
@@ -155,6 +156,9 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	harm_intent_damage = 8
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
@@ -194,7 +198,6 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
-	loot = list()
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	ranged_cooldown_time = 30
@@ -237,9 +240,11 @@
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12
-	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/f13plasma/scatter
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	projectile_sound_properties = list(
@@ -306,7 +311,6 @@
 	attack_verb_simple = "pistol-whips"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list()
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
@@ -315,6 +319,9 @@
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Tech-trooper"
@@ -334,9 +341,11 @@
 	icon_dead = "bs_knight_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
 	projectilesound = 'sound/f13weapons/aep7fire.ogg'
 	projectile_sound_properties = list(
@@ -358,11 +367,13 @@
 	icon_dead = "bs_paladin_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	maxHealth = 480
 	health = 480
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
 	projectilesound = 'sound/f13weapons/aer9fire.ogg'
 	projectile_sound_properties = list(
@@ -572,7 +583,6 @@
 	icon_gib = "gib"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	maxHealth = 180
 	health = 180
 	healable = 1

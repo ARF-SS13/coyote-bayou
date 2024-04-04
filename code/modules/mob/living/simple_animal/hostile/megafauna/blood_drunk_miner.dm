@@ -32,6 +32,7 @@ Difficulty: Medium
 	light_color = "#E4C7C5"
 	movement_type = GROUND
 	speak_emote = list("roars")
+	faction = list("raider")
 	speed = 1
 	move_to_delay = 2
 	projectiletype = /obj/item/projectile/kinetic/miner
