@@ -133,15 +133,15 @@
 	)
 	price_per_thing = COINS_TO_CREDITS(200)
 
-/datum/bounty/kill_boss/project99
-	name = "Dethrone Lady Vox and Lord Nagafen"
-	description = "Ever since our worlds collided and the Sleeper slain, Lady Vox and Lord Nagafen have been plotting to breed a new Spectral Dragon \
-		and reshape these lands in their image. An image that does not include us. The."
-	flavor_focus = /mob/living/simple_animal/hostile/supermutant/legendary
-	weight = 1
-	request_mode = QUEST_FULFILL_ALL
-	init_wanteds = list(/datum/bounty_quota/kill_boss/legendary_supermutant)
-	difficulty = QUEST_DIFFICULTY_GUARANTEED | QUEST_DIFFICULTY_CBT // HELL YEAH GUARANTEED CBT
+// /datum/bounty/kill_boss/project99
+// 	name = "Dethrone Lady Vox and Lord Nagafen"
+// 	description = "Ever since our worlds collided and the Sleeper slain, Lady Vox and Lord Nagafen have been plotting to breed a new Spectral Dragon \
+// 		and reshape these lands in their image. An image that does not include us. The."
+// 	flavor_focus = /mob/living/simple_animal/hostile/supermutant/legendary
+// 	weight = 1
+// 	request_mode = QUEST_FULFILL_ALL
+// 	init_wanteds = list(/datum/bounty_quota/kill_boss/legendary_supermutant)
+// 	difficulty = QUEST_DIFFICULTY_GUARANTEED | QUEST_DIFFICULTY_CBT // HELL YEAH GUARANTEED CBT
 
 
 
