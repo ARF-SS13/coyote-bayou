@@ -815,6 +815,19 @@
 /mob/living/carbon/human/species/otiepede
 	race = /datum/species/feral/otiepede
 
+/datum/species/feral/snotiepede
+	name = "Feral Snotie"
+	id = "snotie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/snotie
+	race = /datum/species/feral/snotie
+
 /datum/species/feral/scrotiepede
 	name = "Feral Scrotiepede"
 	id = "scrotiepede"
