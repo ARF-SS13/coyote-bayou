@@ -233,6 +233,13 @@
 /mob/living/carbon/human/species/furret
 	race = /datum/species/feral/pokemon/furret
 
+/datum/species/feral/pokemon/furret/shiny
+	name = "Feral Shiny Furret"
+	id = "furret_shiny"
+	roundstart = TRUE
+/mob/living/carbon/human/species/furret
+	race = /datum/species/feral/pokemon/furret
+
 /datum/species/feral/pokemon/gallade
 	name = "Feral Gallade"
 	id = "gallade"
@@ -1276,7 +1283,7 @@
 	roundstart = TRUE
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_r"
-	
+
 /mob/living/carbon/human/species/femdigo
 	race = /datum/species/feral/femdigo
 
@@ -1423,6 +1430,18 @@
 	icon_width = 62
 	icon_rest_suffix = "_rest"
 	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/dogborg/zoid
+	name = "Adapted Zoid"
+	id = "zoid"
+	simple_icon = 'modular_coyote/icons/mob/zoids.dmi'
+	roundstart = TRUE
+	alt_prefixes = list("Zaber" = "zaber_")
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "_dead"
+/mob/living/carbon/human/species/zoid
+	race = /datum/species/adapted/dogborg/zoid
 
 /datum/species/adapted/dogborg/sechound
 	name = "Adapted Sechound"
@@ -1633,25 +1652,25 @@
 /mob/living/carbon/human/species/drakesec
 	race = /datum/species/adapted/drakeborg/drakesec
 
-/datum/species/adapted/drakeborg/drakemed 
+/datum/species/adapted/drakeborg/drakemed
 	name = "Adapted Med Drake"
 	id = "drakemed"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemed 
+/mob/living/carbon/human/species/drakemed
 	race = /datum/species/adapted/drakeborg/drakemed
 
-/datum/species/adapted/drakeborg/drakeeng 
+/datum/species/adapted/drakeborg/drakeeng
 	name = "Adapted Eng Drake"
 	id = "drakeeng"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakeeng 
-	race = /datum/species/adapted/drakeborg/drakeeng 
+/mob/living/carbon/human/species/drakeeng
+	race = /datum/species/adapted/drakeborg/drakeeng
 
 /datum/species/adapted/drakeborg/drakemine
 	name = "Adapted Mine Drake"
 	id = "drakemine"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemine 
+/mob/living/carbon/human/species/drakemine
 	race = /datum/species/adapted/drakeborg/drakemine
 
 /datum/species/adapted/drakeborg/drakesci
@@ -1681,7 +1700,7 @@
 	name = "Adapted Gygax"
 	id = "gygax"
 	roundstart = TRUE
-/mob/living/carbon/human/species/gygax	
+/mob/living/carbon/human/species/gygax
 	race = /datum/species/adapted/mechs/gygax
 
 /datum/species/adapted/mechs/darkgygax
@@ -1695,21 +1714,21 @@
 	name = "Adapted Ripley"
 	id = "ripley"
 	roundstart = TRUE
-/mob/living/carbon/human/species/ripley	
+/mob/living/carbon/human/species/ripley
 	race = /datum/species/adapted/mechs/ripley
 
 /datum/species/adapted/mechs/marauder
 	name = "Adapted Marauder"
 	id = "marauder"
 	roundstart = TRUE
-/mob/living/carbon/human/species/marauder	
+/mob/living/carbon/human/species/marauder
 	race = /datum/species/adapted/mechs/marauder
 
 /datum/species/adapted/mechs/seraph
 	name = "Adapted Seraph"
 	id = "seraph"
 	roundstart = TRUE
-/mob/living/carbon/human/species/seraph	
+/mob/living/carbon/human/species/seraph
 	race = /datum/species/adapted/mechs/seraph
 
 /datum/species/adapted/mechs/phazon

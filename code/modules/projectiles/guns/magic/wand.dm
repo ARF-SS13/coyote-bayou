@@ -250,8 +250,8 @@
 	desc = "An extremely basic wand carved from bone, and topped with a roughly hewn crystal. Good for begginers, and handling vermin, but not much else."
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
-	max_charges = 15
-	recharge_rate = 20 SECONDS
+	max_charges = 3
+	recharge_rate = 2 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
@@ -260,8 +260,8 @@
 	name = "weak arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 15
-	damage_low = 10
-	damage_high = 30
+	damage_low = 25
+	damage_high = 35
 	damage_type = BURN
 	flag = "laser"
 
@@ -275,8 +275,8 @@
 	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
-	max_charges = 10
-	recharge_rate = 10 SECONDS
+	max_charges = 3
+	recharge_rate = 2 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
@@ -297,8 +297,8 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	max_charges = 25
-	recharge_rate = 10 SECONDS
+	max_charges = 6
+	recharge_rate = 2 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
@@ -307,8 +307,8 @@
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 20
-	damage_low = 10
-	damage_high = 30
+	damage_low = 35
+	damage_high = 45
 	damage_type = BURN
 	flag = "laser"
 
@@ -324,8 +324,8 @@
 	icon_state = "lightningrod"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
-	max_charges = 30
-	recharge_rate = 6 SECONDS
+	max_charges = 6
+	recharge_rate = 2 SECONDS
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
@@ -372,8 +372,8 @@
 	icon_state = "fireboltwand"
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
-	max_charges = 8
-	recharge_rate = 20 SECONDS
+	max_charges = 3
+	recharge_rate = 4 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/firebolt
 		projectile_type = /obj/item/projectile/magic/kelpmagic/firebolt
@@ -399,7 +399,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 30 SECONDS
+	recharge_rate = 3 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand

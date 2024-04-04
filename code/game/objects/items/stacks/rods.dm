@@ -138,8 +138,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 		/datum/material/plastic = (MINERAL_MATERIAL_AMOUNT * 1),
 		/datum/material/bronze = (MINERAL_MATERIAL_AMOUNT * 1),
 		/datum/material/plasma = (MINERAL_MATERIAL_AMOUNT * 0.5),
-		/datum/material/titanium = (MINERAL_MATERIAL_AMOUNT * 0.5),
-		/datum/material/lead = (MINERAL_MATERIAL_AMOUNT * 0.5)
+		/datum/material/titanium = (MINERAL_MATERIAL_AMOUNT * 0.5)
 		)
 	max_amount = 100
 	resistance_flags = FIRE_PROOF | LAVA_PROOF

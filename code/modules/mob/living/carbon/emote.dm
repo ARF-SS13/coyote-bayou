@@ -760,3 +760,123 @@
 		to_chat(user, span_notice("You're ready to make it clear to others what it is you REALLY want!"))
 	else
 		qdel(dtf)
+
+/datum/emote/living/carbon/intentlfg
+	key = "intentlfg"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentlfg/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/looking/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmelee
+	key = "intentmelee"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmelee/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/melee/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentranged
+	key = "intentranged"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentranged/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/ranged/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentnewplayer
+	key = "intentnewbie"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentnewplayer/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/newbsprout/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmentor
+	key = "intentmentor"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmentor/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/mentorcrown/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentsupport
+	key = "intentsupport"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentsupport/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/healer/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentpvp
+	key = "intentpvp"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intentpvp/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/pvpindicator/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intenttank
+	key = "intenttank"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intenttank/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/tank/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)

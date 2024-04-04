@@ -148,6 +148,19 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/burnedtree1 = 2,
 	/obj/structure/flora/burnedtree2 = 2,
 	/obj/structure/flora/burnedtree5 = 2,
+	/obj/structure/flora/wasteplant/berrybush/tinto = 2,
+	/obj/structure/flora/wasteplant/berrybush/amar = 2,
+	/obj/structure/flora/wasteplant/berrybush/azul = 2,
+	/obj/structure/flora/wasteplant/berrybush/majo = 2,
+	/obj/structure/flora/wasteplant/berrybush/narco = 2,
+	/obj/structure/flora/wasteplant/berrybush/zelenyy = 2,
+	/obj/structure/flora/wasteplant/berrybush/marron = 2,
+	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
+	/obj/structure/flora/wasteplant/sunflower = 2,
+	/obj/structure/flora/wasteplant/rose = 2,
+	/obj/structure/flora/wasteplant/lily = 2,
+	/obj/structure/flora/wasteplant/forgetmenot = 2,
+	/obj/structure/flora/wasteplant/geranium =2
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
@@ -496,7 +509,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	AM.water_act(5)
 
 // /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
-// 	. = ..()	
+// 	. = ..()
 // 	if(istype(AM, /mob/living))
 // 		var/mob/living/L = AM
 // 		L.update_water()

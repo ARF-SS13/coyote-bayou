@@ -789,7 +789,7 @@
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
 	damage = 36
-	damage_list = list( "34" = 25, "36" = 40, "38" = 25)
+	damage_list = list( "34" = 25, "36" = 50, "38" = 25)
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray

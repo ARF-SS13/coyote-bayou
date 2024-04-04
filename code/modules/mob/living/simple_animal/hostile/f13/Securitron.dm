@@ -75,6 +75,9 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
@@ -163,11 +166,7 @@
 		'sound/f13npc/sentry/idle4.ogg'
 		)
 	var/warned = FALSE
-	loot = list(
-		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/five,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
-		)
+
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -178,6 +177,13 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon,
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/item/stack/crafting/electronicparts/five,
+		/obj/item/stock_parts/cell/ammo/mfc/recycled,
+		/obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/Life()
 	..()
@@ -199,6 +205,9 @@
 	color = "#75FFE2"
 	aggro_vision_range = 15
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 //cannot self-harm with it's explosion spam
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 10
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)

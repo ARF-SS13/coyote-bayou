@@ -18,7 +18,7 @@
 		UPGRADE_HEALTH_THRESHOLD = 10
 		)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01, 
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(15,40) * 0.01,
 		UPGRADE_BULK = 1
 	)
@@ -58,7 +58,7 @@
 		UPGRADE_FUELCOST_MULT = 1.05
 		)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-30,-60) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-25,-45) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(30,60) * 0.01
 	)
 	I.prefix = "plasma-cooled"
@@ -109,7 +109,7 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(35,60) * 0.01,
 		//GUN_UPGRADE_DAMAGE_MULT = 1.15,
 		GUN_UPGRADE_PEN_MULT=1 + rand(10,30) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-20,-55) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-18,-50) * 0.01, // 55 / 2 = 27.5 but I don't know if it'll break because it saw a decimal
 		GUN_UPGRADE_MUZZLEFLASH=1 + rand(35,60) * 0.01,
 	/*	GUN_UPGRADE_CHARGECOST = 1.25,	*/
 		UPGRADE_BULK = 1
@@ -153,7 +153,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(10,25) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(7,20) * 0.01, // halving 
 		GUN_UPGRADE_RECOIL_1H=1 + rand(80,120) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(10,35) * 0.01,
 		GUN_UPGRADE_CHARGECOST=1 + rand(15,25) * 0.01
@@ -239,7 +239,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-35) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,-15) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-5,-20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-4,-18) * 0.01,
 		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_RECOIL_1H=1 + rand(-5,-20) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-5,-35) * 0.01
@@ -291,13 +291,13 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H=1 + rand(-5,-20) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-5,-20) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(8,15) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(11,21) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-7,-28) * 0.01,
 		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-5,-20) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-15,-8) * 0.01
+		GUN_UPGRADE_CHARGECOST=1 + rand(-21,-11) * 0.01
 	)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.req_fuel_cell = null
 
 // Paint: For Modifying specific traits
 //_____________________________________
@@ -311,7 +311,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-35,10) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-15,50) * 0.01,
 		UPGRADE_COLOR = "#FF4444"
 	)
@@ -328,7 +328,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_2H=1 + rand(-40,25) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-40,25) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-28,17) * 0.01,
 		GUN_UPGRADE_RICO_MULT=1 + rand(-40,25) * 0.01,
 		UPGRADE_COLOR = "#00356b"
 	)
@@ -346,13 +346,13 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-70,-50) * 0.01,
 		GUN_UPGRADE_RECOIL_1H=1 + rand(-40,25) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-25,40) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-20,34) * 0.01,
 		UPGRADE_COLOR = "#FFFF00"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "yellow"
 
-/obj/item/tool_upgrade/paint/orange
+/obj/item/tool_upgrade/paint/orange //red + yellow
 	name = "orange paint"
 	desc = "Orange paint combines the effects of red and yellow for a more pronounced paint quality."
 	icon_state = "orange_paint"
@@ -361,17 +361,17 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-85,-65) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,50) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,50) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-75,-55) * 0.01,
+		GUN_UPGRADE_RECOIL_1H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-14,40) * 0.01,
 		UPGRADE_COLOR = "#FFA500"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "orange"
 
-/obj/item/tool_upgrade/paint/purple
+/obj/item/tool_upgrade/paint/purple //blue + red
 	name = "purple paint"
 	desc = " Purple paint combines the effects of red and blue for a more pronounced paint quality."
 	icon_state = "violet_paint"
@@ -380,17 +380,17 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_RICO_MULT=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-50,10) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,50) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-35,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-45,20) * 0.01,
 		UPGRADE_COLOR = "#8F00FF"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "purple"
 
-/obj/item/tool_upgrade/paint/green
+/obj/item/tool_upgrade/paint/green //yellow + blue
 	name = "green paint"
 	desc = " Green paint combines the effects of blue and yellow for a more pronounced paint quality."
 	icon_state = "green_paint"
@@ -399,18 +399,17 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-80,-60) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-50,15) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-15,50) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-50,15) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-50,15) * 0.01,
-		GUN_UPGRADE_RICO_MULT=1 + rand(-50,15) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-35,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
 		UPGRADE_COLOR = "#007958"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "green"
 
-/obj/item/tool_upgrade/paint/black
+/obj/item/tool_upgrade/paint/black //yellow + blue + red
 	name = "black paint"
 	desc = "A combination of all three main colors. This makes a paint that has a maximized chance of being perfect."
 	icon_state = "black_paint"
@@ -419,14 +418,14 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,65) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_RICO_MULT=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_MOVE_DELAY_MULT=1 + rand(-90,-70) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(-65,5) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-5,65) * 0.01,
+		GUN_UPGRADE_RECOIL_2H=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_CHARGECOST=1 + rand(-35,10) * 0.01,
+		GUN_UPGRADE_RICO_MULT=1 + rand(-45,20) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,44) * 0.01,
 		UPGRADE_COLOR = "#000000"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE

@@ -78,6 +78,9 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/generic/animal)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/supermutant/playable
@@ -184,7 +187,8 @@
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
 		/obj/item/ammo_box/shotgun/improvised,
-		/obj/item/gun/ballistic/revolver/widowmaker
+		/obj/item/gun/ballistic/revolver/widowmaker,
+		/obj/effect/gibspawner/generic/animal
 		)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
@@ -212,7 +216,8 @@
 	minimum_distance = 3
 	ranged_cooldown_time = 2 SECONDS
 	loot = list(
-		/obj/item/gun/ballistic/automatic/varmint
+		/obj/item/gun/ballistic/automatic/varmint,
+		/obj/effect/gibspawner/generic/animal
 		)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
@@ -259,6 +264,9 @@
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/generic/animal)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/Aggro()
 	..()
@@ -293,7 +301,7 @@
 	minimum_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
+	loot = list(/obj/item/ammo_box/magazine/m556/rifle, /obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -338,7 +346,7 @@
 	minimum_distance = 7
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
-	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
+	loot = list(/obj/item/stock_parts/cell/ammo/mfc, /obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),

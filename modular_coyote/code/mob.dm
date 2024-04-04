@@ -23,6 +23,9 @@
 	death_sound = list('sound/f13npc/hellpig/hellpigdead.ogg',)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 12, /obj/item/stack/sheet/bone = 7, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 8)
 	butcher_difficulty = 1
+	speak_chance = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 4
 
 /mob/living/simple_animal/hostile/hellpig/Initialize()
 	. = ..()

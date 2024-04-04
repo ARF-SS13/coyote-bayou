@@ -629,6 +629,18 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.pa_repair
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
+/datum/quirk/crafty
+	name = "Crafty"
+	desc = "You are able to craft without the necessities provided by a traditional workbench."
+	value = 25
+	category = "Lifepath Quirks"
+	mechanics = "You do not need a workbench or alchemy table when crafting."
+	human_only = FALSE
+/datum/quirk/crafty/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
+
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
 	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
@@ -2381,6 +2393,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
 	conflicts = list(
 		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/flimsy,
 		/datum/quirk/veryflimsy
@@ -2699,6 +2712,48 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+/datum/quirk/package/tinkerer
+	name = "Tinker-er"
+	desc = "You are able to craft without a traditional workbench, as well as craft more and gain more from salvage"
+	value = 85
+	category = "Quirk Packages"
+	mechanics = "You don't need a workbench or alchemy table when crafting, get more recipes, and gain 1-3 more from salvaging"
+	human_only = FALSE
+	conflicts = list(
+		/datum/quirk/tribal,
+		/datum/quirk/dumb,
+		/datum/quirk/luddite,
+		/datum/quirk/primitive,
+		/datum/quirk/technophreak,
+		/datum/quirk/crafty
+		)
+	mob_trait = TRAIT_TECHNOPHREAK
+
+/datum/quirk/package/tinkerer/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
+
+/datum/quirk/package/tinkerer/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.tier_three_parts
+	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
+
+/datum/quirk/package/tinkerer/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.tier_three_parts
+		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/package/generalmedicalpractitioner
 	name = "General Medical Practitioner"

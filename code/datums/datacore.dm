@@ -196,7 +196,7 @@
 	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 	// 		even = !even
 	if(length(nash))
-		dat += "<tr><th colspan=3>Nash</th></tr>"
+		dat += "<tr><th colspan=3>New Boston</th></tr>"
 		for(var/name in nash)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[nash[name]]</td></tr>"
 			even = !even

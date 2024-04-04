@@ -10,7 +10,7 @@
 
 /obj/item/gun_upgrade/underbarrel/bipod
 	name = "bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun's weight, making it unwieldy unless braced."
 	icon_state = "bipod"
 
 /obj/item/gun_upgrade/underbarrel/bipod/New()
@@ -87,7 +87,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(25,45) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(17,28) * 0.01,
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01, // This can stack with the Heatsink. Makes the jet-cooled one practically required.
@@ -368,7 +368,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-15,-40) * 0.01
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-10,-28) * 0.01
 	)
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -381,10 +381,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(25,45) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(17,31) * 0.01,
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(28,42) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -451,7 +451,7 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(45,55) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(150,250) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(45,55) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT=1 + rand(20,35) * 0.01
+		GUN_UPGRADE_DAMAGE_MULT=1 + rand(14,26) * 0.01
 	)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -489,7 +489,7 @@
 		GUN_UPGRADE_RECOIL_2H=1 + rand(15,30) * 0.01,
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,-30) * 0.01,
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-25,-60) * 0.01,
-		GUN_UPGRADE_CHARGECOST=1 + rand(-70,-60) * 0.01
+		GUN_UPGRADE_CHARGECOST=1 + rand(-56,-42) * 0.01
 	)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM

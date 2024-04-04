@@ -2747,7 +2747,6 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/glass = 2,
 		/obj/item/stack/ore/iron = 2,
-		/obj/item/stack/ore/lead = 1,
 		/obj/item/stack/ore/titanium = 2)
 
 /obj/effect/spawner/lootdrop/f13/bounty
