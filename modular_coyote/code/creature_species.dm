@@ -815,7 +815,7 @@
 /mob/living/carbon/human/species/otiepede
 	race = /datum/species/feral/otiepede
 
-/datum/species/feral/snotiepede
+/datum/species/feral/snotie
 	name = "Feral Snotie"
 	id = "snotie"
 	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
