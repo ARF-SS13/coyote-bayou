@@ -173,18 +173,19 @@ const TopToolbar = (props, context) => {
     HighestBankedPoints,
     GlobalTotalEarned,
     CurrencyUnit,
+    Toots,
   } = data; // needs more gravy
 
   const TopEarnerColor = HighestBankedPoints >= GlobalHighestBanked ? "gold" : "label";
   const TopQuesterColor = QuestsCompleted >= GlobalHighestCompleted ? "gold" : "label";
 
-  const YourQuestsTooltip = "You have completed " + QuestsCompleted + " quests this round" + QuestsCompleted >= GlobalHighestCompleted ? ", making you the top quester this round! =3" : "!";
-  const TopQuestsTooltip = "The top quester this round has completed " + GlobalHighestCompleted + " quests!" + QuestsCompleted >= GlobalHighestCompleted ? " And that quester is you! =3" : "";
-  const TotalQuestsTooltip = GlobalQuestsCompleted + " quests have been completed this round!";
+  const YourQuestsTooltip = Toots.TTyourquests;
+  const TopQuestsTooltip = Toots.TTtopquests;
+  const TotalQuestsTooltip = Toots.TTglobalquests;
 
-  const YourCashTooltip = "You have earned " + formatMoney(HighestBankedPoints / 10) + CurrencyUnit + "this round" + HighestBankedPoints >= GlobalHighestBanked ? ", making you the top earner this round! =3" : "!";
-  const TopCashTooltip = "The top earner this round has earned " + formatMoney(GlobalHighestBanked / 10) + CurrencyUnit + "!" + HighestBankedPoints >= GlobalHighestBanked ? " And that earner is you! =3" : "";
-  const TotalCashTooltip = "A total of " + formatMoney(GlobalTotalEarned / 10) + CurrencyUnit + " has been earned this round!";
+  const YourCashTooltip = Toots.TTyourbanked;
+  const TopCashTooltip = Toots.TTtopbanked;
+  const TotalCashTooltip = Toots.TTglobalbanked;
 
   const LeaderboardLavelFontSize = "10px";
   const LeaderboardValueFontSize = "12px";
@@ -591,22 +592,18 @@ const QuestCard = (props, context) => {
       color="transparent" />
   );
 
-  const RewardDisplay = `${formatMoney(QuestReward / 10)} ${CurrencyUnit}`;
-  const CanTakeThisQuest = QuestAcceptible && !IsTaken && !IsTemplarte;
+  const RewardDisplay = `${formatMoney(QuestReward / 10)}${CurrencyUnit}`;
+  const CanTakeThisQuest = QuestAcceptible && !IsTaken && IsTemplarte;
   /// truncates the description to 100 characters
   /// but only if QuestDesc isnt null
   const ShorterDesc = QuestDesc && QuestDesc.length > 150
     ? QuestDesc.substring(0, 150) + "..."
     : QuestDesc;
-  const TooTip = "" + ShorterDesc+ "\n\nClick for more information!";
+  const TooTip = "" + ShorterDesc + " -- Click for more information!";
 
   const Pingus = IsTemplarte
-    ? IsTaken
-      ? "TAKEN"
-      : "INFO"
-    : IsComplete
-      ? "DONE"
-      : `${QuestObjectivesComplete}/${QuestObjectivesTotal}`;
+    ? ""
+    : `${QuestObjectivesComplete}/${QuestObjectivesTotal}`;
 
   /// Should all fit in a single line
   return (
@@ -622,10 +619,10 @@ const QuestCard = (props, context) => {
         })}>
       <Stack fill>
         <Stack.Item shrink={1}>
-          <Icon
+          {/* <Icon
             name={CuteIcon}
             size={1.5}
-            color={CuteIconColor} />
+            color={CuteIconColor} /> */}
           {CuteDiffi}
         </Stack.Item>
         <Stack.Item grow={1}>

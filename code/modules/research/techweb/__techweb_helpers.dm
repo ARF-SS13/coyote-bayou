@@ -17,6 +17,7 @@
 /proc/techweb_item_point_check(obj/item/I)
 	if(SSresearch.techweb_point_items[I.type])
 		return SSresearch.techweb_point_items[I.type]
+	return SEND_SIGNAL(I, COMSIG_ITEM_GET_RESEARCH_POINTS)
 
 /proc/techweb_point_display_generic(pointlist)
 	var/list/ret = list()

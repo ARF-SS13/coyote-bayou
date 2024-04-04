@@ -1047,6 +1047,7 @@
 	weight = 1
 	init_wanteds = list(
 		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY
 	candupe = TRUE
@@ -1059,6 +1060,7 @@
 	init_wanteds = list(
 		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,
+		/datum/bounty_quota/supergrabbag,
 	)
 	difficulty = QUEST_DIFFICULTY_MED
 	candupe = TRUE
@@ -1069,6 +1071,7 @@
 	flavor_focus = /mob/living/simple_animal/hostile
 	weight = 1
 	init_wanteds = list(
+		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,

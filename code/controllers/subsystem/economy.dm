@@ -711,6 +711,7 @@ SUBSYSTEM_DEF(economy)
 	quest_done(B)
 	SSeconomy.deactivate_quest(B) // just so they get good and dizzy
 	remove_active_quest(B, FALSE, TRUE)
+	playsound(user, 'sound/effects/quest_cashout.ogg', 40, TRUE)
 	return TRUE
 
 /datum/quest_book/proc/quest_done(datum/bounty/B)
@@ -801,6 +802,30 @@ SUBSYSTEM_DEF(economy)
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	data["CurrencyName"] = SSeconomy.currency_name
 	data["CurrencyNamePlural"] = SSeconomy.currency_name_plural
+	var/list/toots = list()
+	toots["TTyourquests"] = "You have completed [LAZYLEN(finished_quests)] quests this round"
+	if(LAZYLEN(finished_quests) >= SSeconomy.highest_completed)
+		toots["TTyourquests"] += ", making you the top quester this round! Nice job =3"
+	else
+		toots["TTyourquests"] += "."
+	toots["TTtopquests"] = "The top quester this round has completed [SSeconomy.highest_completed] quests"
+	if(LAZYLEN(finished_quests) >= SSeconomy.highest_completed)
+		toots["TTtopquests"] += ", and that top quester is you! Keep it up =3"
+	else
+		toots["TTtopquests"] += "."
+	toots["TTglobalquests"] = "In total, [SSeconomy.total_completed] quests have been completed this round."
+	toots["TTyourbanked"] = "You have earned [round(overall_banked / 10)] [SSeconomy.currency_name_plural] this round"
+	if(overall_banked >= SSeconomy.highest_banked)
+		toots["TTyourbanked"] += ", making you the top earner this round! Nice job =3"
+	else
+		toots["TTyourbanked"] += "."
+	toots["TTtopbanked"] = "The top earner this round has earned [round(SSeconomy.highest_banked / 10)] [SSeconomy.currency_name_plural]"
+	if(overall_banked >= SSeconomy.highest_banked)
+		toots["TTtopbanked"] += ", and that top earner is you! Keep it up =3"
+	else
+		toots["TTtopbanked"] += "."
+	toots["TTglobalbanked"] = "In total, [SSeconomy.total_banked] [SSeconomy.currency_name_plural] have been earned this round."
+	data["Toots"] = toots
 	return data
 
 /datum/quest_book/ui_act(action,params)
@@ -953,20 +978,21 @@ SUBSYSTEM_DEF(economy)
 	switch(action)
 		if("AcceptQuest")
 			SSeconomy.add_active_quest(SSeconomy.get_quest_by_uid(params["BountyUID"]), user, TRUE)
-			return TRUE
+			. = TRUE
 		if("CancelQuest")
 			SSeconomy.remove_active_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), user, TRUE)
-			return TRUE
+			. = TRUE
 		if("FinishQuest")
 			SSeconomy.finish_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), user, TRUE)
-			return TRUE
+			. = TRUE
 		if("GiveScanner")
 			parent.give_scanner()
-			return TRUE
+			. = TRUE
 		if("PrintQuest")
 			parent.print_quest(LAZYACCESS(parent.active_quests, params["BountyUID"]), src, user)
-			return TRUE
+			. = TRUE
 		if("DebugGiveObjectivePoint")
+			playsound(user, "terminal_type", 50, TRUE)
 			if(!SSeconomy.debug_objectives)
 				to_chat(user, span_alert("You can't do that! You've gotta set debug_objectives to TRUE in the economy subsystem first! =3"))
 				return
@@ -981,6 +1007,8 @@ SUBSYSTEM_DEF(economy)
 			BQ.Claim()
 			to_chat(user, span_notice("Added 1 to objective '[BQ.name]'"))
 			return TRUE
+	if(.)
+		playsound(user, "terminal_type", 50, TRUE)
 
 
 /////////////////////////////////////////////////

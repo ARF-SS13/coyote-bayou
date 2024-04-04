@@ -46,17 +46,9 @@
 	name = "Urban Exploration"
 	description = "They say you can tell a lot about a person by what they throw away. I say you can tell a lot about a person by what they leave lying around. I need you to bring me some trash. The more the better."
 	flavor_focus = /obj/item
-	weight = 1
-	request_mode = QUEST_FULFILL_ANY
+	weight = 10
+	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
-		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 	)
@@ -66,10 +58,9 @@
 	name = "Urban Excavation"
 	description = "They say you can tell a lot about a person by what they throw away. I say you can tell a lot about a person by what they leave lying around. I need you to bring me some trash. The more the better."
 	flavor_focus = /obj/item
-	weight = 1
-	request_mode = QUEST_FULFILL_ANY
+	weight = 10
+	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
-		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
@@ -80,9 +71,12 @@
 	name = "Urban Expedition"
 	description = "They say you can tell a lot about a person by what they throw away. I say you can tell a lot about a person by what they leave lying around. I need you to bring me some trash. The more the better."
 	flavor_focus = /obj/item
-	weight = 1
-	request_mode = QUEST_FULFILL_ANY
+	weight = 10
+	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
@@ -93,9 +87,17 @@
 	name = "Urban Excoriation"
 	description = "They say you can tell a lot about a person by what they throw away. I say you can tell a lot about a person by what they leave lying around. I need you to bring me some trash. The more the better."
 	flavor_focus = /obj/item
-	weight = 1
+	weight = 10
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
+		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 		/datum/bounty_quota/random_items,
 	)
@@ -104,14 +106,14 @@
 /datum/bounty_quota/random_items
 	name = "Get some (thing)"
 	paths = list()
-	needed_amount = 10
+	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(3)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
-	CBT_multiplier = 3
+	CBT_multiplier = 5
 
 /datum/bounty_quota/random_items/GetPaths()
 	if(is_copy)

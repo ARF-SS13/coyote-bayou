@@ -464,6 +464,7 @@
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
+#define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 
 /// Artifact/effect signals
 #define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)

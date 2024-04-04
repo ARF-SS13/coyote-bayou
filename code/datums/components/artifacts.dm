@@ -53,6 +53,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE,PROC_REF(finalize))
 	RegisterSignal(parent, COMSIG_ITEM_WELLABLE,PROC_REF(tabulate_wellability))
 	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
+	RegisterSignal(parent, COMSIG_ITEM_GET_RESEARCH_POINTS,PROC_REF(tabulate_research))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(update_everything))
 	// RegisterSignal(parent, COMSIG_ITEM_CLICKED,PROC_REF(on_clicked))
 	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(on_microwave)) //c:
@@ -243,6 +244,10 @@
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
 	return (tabulate_value() * 0.8)
+
+/datum/component/artifact/proc/tabulate_research()
+	SIGNAL_HANDLER
+	return (tabulate_value() * 10)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER

@@ -454,6 +454,9 @@
 				. += span_notice("It has [reagents.total_volume] unit\s left.")
 			else
 				. += span_danger("It's empty.")
+	var/itworth = techweb_item_point_check(src)
+	if(itworth > 0)
+		. += span_green("You figure a scientist would love to have this thing!")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

@@ -94,8 +94,8 @@ export const QuestWindow = (props, context) => {
 
   const WindoHight =
     150 // TopText
-    + (QuestDesc ? QuestDesc.length / 50 : 50) * 50 // 50px per 50 characters
-    + (QuestObjectivesTotal * 50) // 50px per quota
+    + (QuestDesc ? QuestDesc.length / 50 : 1) * 50 // 50px per 50 characters
+    + (QuestObjectivesTotal * 20) // 50px per quota
     + 100; // BottomBar
 
   return (

@@ -32,9 +32,13 @@
 /obj/item/card/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
+	RegisterSignal(src, COMSIG_ITEM_GET_RESEARCH_POINTS,PROC_REF(tabulate_research))
 
 /obj/item/card/proc/tabulate_value()
 	return saleprice
+
+/obj/item/card/proc/tabulate_research()
+	return saleprice * 5
 
 /obj/item/card/proc/punch(mob/living/user)
 	if(!punchable)

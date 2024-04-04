@@ -180,9 +180,6 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			break
 	if(!claimed_thing)
 		return FALSE
-	if(is_complete())
-		to_chat(claimant, span_greentext("'[name]' complete!"))
-		to_chat(claimant, span_green("Claim your reward in the Quest Book!"))
 
 /datum/bounty/proc/actually_turn_in_thing(atom/thing, mob/user, datum/bounty_quota/BQ)
 	if(!thing || !user || !BQ)
@@ -196,7 +193,15 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return
 	SSeconomy.turned_something_in(thing, BQ)
 	BQ.Claim(thing, user)
-	playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
+	if(is_complete())
+		to_chat(user, span_greentext("'[name]' completed!"))
+		to_chat(user, span_green("Claim your reward in the Quest Book!"))
+		playsound(get_turf(thing), 'sound/effects/quest_complete.ogg', 75)
+	else if(BQ.IsCompleted())
+		to_chat(user, span_green("Objective '[BQ.name]' complete!"))
+		playsound(get_turf(thing), 'sound/effects/objective_complete.ogg', 75)
+	else
+		playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
 	if(BQ.delete_thing)
 		FancyDelete(thing)
 
