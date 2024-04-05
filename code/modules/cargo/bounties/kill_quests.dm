@@ -8,7 +8,7 @@
  *  */
 
 /datum/bounty/kill
-	base_reward =         COINS_TO_CREDITS(20)
+	base_reward =         COINS_TO_CREDITS(50)
 	medium_reward_bonus = COINS_TO_CREDITS(10)
 	hard_reward_bonus =   COINS_TO_CREDITS(20)
 	CBT_reward_bonus =    COINS_TO_CREDITS(30)
@@ -1107,11 +1107,11 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(50)
+	price_per_thing = COINS_TO_CREDITS(200)
 	easy_multiplier = 1
-	medium_multiplier = 2
-	hard_multiplier = 3
-	CBT_multiplier = 5 // 2500 for finding 10 randomass things? sure
+	medium_multiplier = 1
+	hard_multiplier = 2
+	CBT_multiplier = 2 // 2500 for finding 10 randomass things? sure
 	difficulty = null // valid for all difficulties
 
 /datum/bounty_quota/supergrabbag/GetPaths()

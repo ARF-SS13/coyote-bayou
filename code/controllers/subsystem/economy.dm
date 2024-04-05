@@ -70,11 +70,10 @@ SUBSYSTEM_DEF(economy)
 	var/list/all_quests = list()
 	/// All the publically-available quests!
 	var/list/quest_pool = list() // quest pool! quest pool! quest pool!
-	var/easy_quests = 4
-	var/medium_quests = 3
-	var/hard_quests = 2
-	var/cbt_quests = 1
-
+	var/easy_quests = 0
+	var/medium_quests = 0
+	var/hard_quests = 0
+	var/cbt_quests = 0
 	var/max_quests = 5
 
 	var/total_completed = 0
@@ -97,10 +96,10 @@ SUBSYSTEM_DEF(economy)
 
 	var/list/quest_console_paths = list()
 
-	var/easy_quest_count = 7
-	var/medium_quest_count = 5
-	var/hard_quest_count = 3
-	var/cbt_quest_count = 2
+	var/easy_quest_count = 5
+	var/medium_quest_count = 4
+	var/hard_quest_count = 2
+	var/cbt_quest_count = 1
 
 	var/static_spam = 0
 
@@ -108,6 +107,7 @@ SUBSYSTEM_DEF(economy)
 	var/debug_objectives = TRUE
 	var/debug_ignore_extinction = FALSE
 	var/debug_include_laggy_item_quests = FALSE
+	var/debug_ignore_historical_round_number_check = TRUE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -826,23 +826,24 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(quester)
 	if(!P)
 		return
-	if(!LAZYLEN(P.saved_finished_quests))
-		return
+	virgin = FALSE
 	for(var/list/questy in P.saved_finished_quests)
+		if(!LAZYACCESS(questy, "VALID"))
+			P.saved_finished_quests -= questy
+			continue
 		var/datum/finished_quest/FQ = new /datum/finished_quest()
 		FQ.deserialize_from_list(questy)
 		finished_quests += FQ
 	sort_by_roundid()
-	virgin = FALSE
 
 /datum/quest_book/proc/sort_by_roundid()
 	var/list/my_finished = sortTim(finished_quests.Copy(), /proc/cmp_sort_finished_quest_by_roundid_or_time_completed)
 	finished_quests = my_finished.Copy()
 
 /proc/cmp_sort_finished_quest_by_roundid_or_time_completed(datum/finished_quest/A, datum/finished_quest/B)
-	var/result = B.quest_round_id - A.quest_round_id
+	var/result = text2num(B.quest_round_id) - text2num(A.quest_round_id)
 	if(result == 0)
-		result = B.quest_time_completed - A.quest_time_completed
+		result = text2num(B.quest_time_completed) - text2num(A.quest_time_completed)
 	return result
 
 /datum/quest_book/proc/update_lifetime_total()
@@ -890,13 +891,14 @@ SUBSYSTEM_DEF(economy)
 	return (thing.quest_tag in things_turned_in)
 
 /datum/quest_book/proc/questpool_updated()
-	if(!beep_on_update)
-		return
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
 	update_owner_data(user)
 	update_static_data(user)
+	update_lifetime_total()
+	if(!beep_on_update)
+		return
 	var/atom/thing = SSeconomy.get_plausible_quest_console(user)
 	if(!thing)
 		thing = user
@@ -933,7 +935,7 @@ SUBSYSTEM_DEF(economy)
 		mybounties += list(B2.get_tgui(user))
 	var/list/quest_history = list()
 	for(var/datum/finished_quest/B3 in finished_quests)
-		if(B3.quest_round_id == GLOB.round_id)
+		if(!SSeconomy.debug_ignore_historical_round_number_check && text2num(B3.quest_round_id) == GLOB.round_id)
 			continue
 		quest_history += list(B3.tgui_slug(user))
 	var/list/recent_finished = list()
@@ -1001,6 +1003,7 @@ SUBSYSTEM_DEF(economy)
 	if(..())
 		return
 	var/mob/user = usr
+	update_static_data(user)
 	switch(action) // lets bounce these commands back and forth between us and the subsystem, just so they get good and dizzy
 		if("AcceptQuest")
 			SSeconomy.add_active_quest(SSeconomy.get_quest_by_uid(params["BountyUID"]), src, user)
@@ -1084,6 +1087,7 @@ SUBSYSTEM_DEF(economy)
 		user.put_in_hands(QR)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
 	update_static_data(user)
+	update_lifetime_total()
 	return TRUE
 
 /datum/quest_book/proc/get_historical_banked()
@@ -1213,7 +1217,7 @@ SUBSYSTEM_DEF(economy)
 	quest_name = B.name
 	quest_description = B.description
 	quest_time_completed = world.time
-	quest_round_id = GLOB.round_id
+	quest_round_id = text2num(GLOB.round_id)
 	quest_difficulty = B.difficulty
 	quest_rewarded = B.get_reward()
 	listify_objectives(B)
@@ -1228,11 +1232,12 @@ SUBSYSTEM_DEF(economy)
 	output[QF_QUEST_TYPE]             = quest_type
 	output[QF_QUEST_NAME]             = quest_name
 	output[QF_QUEST_DESCRIPTION]      = quest_description
-	output[QF_QUEST_TIME_COMPLETED]   = quest_time_completed
-	output[QF_QUEST_ROUND_ID]         = quest_round_id
-	output[QF_QUEST_DIFFICULTY]       = quest_difficulty
-	output[QF_QUEST_REWARDED]         = quest_rewarded
+	output[QF_QUEST_TIME_COMPLETED]   = text2num(quest_time_completed)
+	output[QF_QUEST_ROUND_ID]         = text2num(quest_round_id)
+	output[QF_QUEST_DIFFICULTY]       = text2num(quest_difficulty)
+	output[QF_QUEST_REWARDED]         = text2num(quest_rewarded)
 	output[QF_OBJECTIVES]             = objectives
+	output["VALID"]                   = TRUE // everyone is valid under the toolbox
 	return output
 
 /datum/finished_quest/proc/serialize_to_json()
@@ -1250,10 +1255,10 @@ SUBSYSTEM_DEF(economy)
 	quest_type            = listin[QF_QUEST_TYPE]
 	quest_name            = listin[QF_QUEST_NAME]
 	quest_description     = listin[QF_QUEST_DESCRIPTION]
-	quest_time_completed  = listin[QF_QUEST_TIME_COMPLETED]
-	quest_round_id        = listin[QF_QUEST_ROUND_ID]
-	quest_difficulty      = listin[QF_QUEST_DIFFICULTY]
-	quest_rewarded        = listin[QF_QUEST_REWARDED]
+	quest_time_completed  = text2num(listin[QF_QUEST_TIME_COMPLETED])
+	quest_round_id        = text2num(listin[QF_QUEST_ROUND_ID])
+	quest_difficulty      = text2num(listin[QF_QUEST_DIFFICULTY])
+	quest_rewarded        = text2num(listin[QF_QUEST_REWARDED])
 	objectives            = listin[QF_OBJECTIVES]
 	return TRUE
 

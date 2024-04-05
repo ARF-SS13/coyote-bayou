@@ -123,23 +123,35 @@ export const CargoBountyConsole = (props, context) => {
         fluid>
         <Tabs.Tab
           selected={SelectedTab === 1}
-          onClick={() => setSelectedTab(1)}>
+          onClick={() => {
+            setSelectedTab(1);
+            act('JustUpdate');
+            }}>
             {ActiveQuestsTitle}
         </Tabs.Tab>
         <Tabs.Tab
           selected={SelectedTab === 2}
-          onClick={() => setSelectedTab(2)}>
+          onClick={() => {
+            setSelectedTab(2);
+            act('JustUpdate');
+            }}>
             Available Quests
         </Tabs.Tab>
         <Tabs.Tab
           selected={SelectedTab === 3}
-          onClick={() => setSelectedTab(3)}>
+          onClick={() => {
+            setSelectedTab(3);
+            act('JustUpdate');
+            }}>
             Finished Quests
         </Tabs.Tab>
         <Tabs.Tab
           textAlign="center"
           selected={SelectedTab === 4}
-          onClick={() => setSelectedTab(4)}>
+          onClick={() => {
+            setSelectedTab(4);
+            act('JustUpdate');
+            }}>
             <Icon
               name="question-circle"
               color="green"
@@ -721,23 +733,14 @@ const HistoryPanel = (props, context) => {
 
 /*
   VARS FOR HISTORY CARD
-    qf_quester_name
-    qf_quest_type
-    qf_quest_name
-    qf_quest_description
-    qf_quest_time_completed
-    qf_quest_round_id
-    qf_quest_difficulty
-    qf_quest_rewarded
-    qf_objectives
-  VARS FOR HISTORY CARD OBJECTIVES
-    qfbq_name
-    qfbq_flavor
-    qfbq_info
-    qfbq_needed_amount
-    qfbq_gotten_amount
-    qfbq_difficulty
-    qfbq_price_per_thing
+    FinQuester
+    FinQuestName
+    FinQuestDescription
+    FinQuestTime
+    FinQuestRound
+    FinQuestDifficulty
+    FinQuestReward
+    FinQuestObjectives
 */
 
 /// A card for the quest history panel
@@ -745,42 +748,46 @@ const HistoryPanel = (props, context) => {
 const HistoryCard = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    qf_quest_name = "Untitled Quest",
-    qf_quest_rewarded = 0,
-    qf_quest_difficulty = 1,
-    qf_objectives = [],
+    FinQuester = "RELPH",
+    FinQuestName = "Untitled Quest",
+    FinQuestDescription = "Top Secret!",
+    FinQuestTime = 0,
+    FinQuestRound = 0,
+    FinQuestDifficulty = 1,
+    FinQuestReward = 0,
+    FinQuestObjectives = [],
     CurrencyUnit = "₡",
   } = props.Quest;
 
-  const RewardDisplay = `${CurrencyUnit}${formatMoney(qf_quest_rewarded / 10)}`;
+  const RewardDisplay = `${CurrencyUnit}${formatMoney(FinQuestReward / 10)}`;
   const DiffiColor =
-    qf_quest_difficulty === 1
+    FinQuestDifficulty === 1
       ? "green"
-      : qf_quest_difficulty === 2
+      : FinQuestDifficulty === 2
         ? "blue"
-        : qf_quest_difficulty === 4
+        : FinQuestDifficulty === 4
           ? "gold"
-          : qf_quest_difficulty === 8
+          : FinQuestDifficulty === 8
             ? "orange"
             : "orange";
   const DiffIcon =
-    qf_quest_difficulty === 1
+    FinQuestDifficulty === 1
       ? "grin-wink"
-      : qf_quest_difficulty === 2
+      : FinQuestDifficulty === 2
         ? "frown-open"
-        : qf_quest_difficulty === 4
+        : FinQuestDifficulty === 4
           ? "flushed"
-          : qf_quest_difficulty === 8
+          : FinQuestDifficulty === 8
             ? "dizzy"
             : "dizzy";
   const DiffiTooltip =
-    qf_quest_difficulty === 1
+    FinQuestDifficulty === 1
       ? "This was an Easy quest!"
-      : qf_quest_difficulty === 2
+      : FinQuestDifficulty === 2
         ? "This was a Medium quest!"
-        : qf_quest_difficulty === 4
+        : FinQuestDifficulty === 4
           ? "This was a Hard quest!"
-          : qf_quest_difficulty === 8
+          : FinQuestDifficulty === 8
             ? "This was a CBT quest!"
             : "This was a quest of all time!";
 
@@ -812,7 +819,7 @@ const HistoryCard = (props, context) => {
               <Box
                 inline
                 fontSize="10px">
-                {qf_quest_name}
+                {FinQuestName}
               </Box>
             </Stack.Item>
             <Stack.Item shrink={1}>
@@ -824,11 +831,19 @@ const HistoryCard = (props, context) => {
                 {RewardDisplay}
               </Box>
             </Stack.Item>
+            <Stack.Item shrink={1}>
+              <Box
+                inline
+                fontSize="10px"
+                textColor="label">
+                {`:R-${FinQuestRound}`}
+              </Box>
+            </Stack.Item>
           </Stack>
         </Stack.Item>
         <Stack.Item>
           <LabeledList>
-            {qf_objectives.map(Objective => (
+            {FinQuestObjectives.map(Objective => (
               <ObjectiveCard
                 key={Objective.qfbq_name}
                 Objective={Objective}/>
