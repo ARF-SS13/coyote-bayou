@@ -709,6 +709,7 @@ const HistoryPanel = (props, context) => {
   const {
     QuestHistory = [], // this has a different format to normal quests
   } = data;
+  let Keykey = 0;
 
   const IsEmpty = QuestHistory.length === 0;
   const WhyItEmpty = "You haven't completed any quests... before today, that is!";
@@ -722,7 +723,8 @@ const HistoryPanel = (props, context) => {
         <Box>
           {QuestHistory.map(QuestEntry => (
             <HistoryCard
-              key={QuestEntry.QuestUID}
+              keyfixer={Keykey++}
+              key={Keykey}
               Quest={QuestEntry}/>
           ))}
         </Box>
@@ -800,6 +802,7 @@ const HistoryCard = (props, context) => {
       color="transparent" />
   );
   const PaleBlue = "#f0f8ff"; // AliceBlue
+  let Keytwo = 0;
 
   return (
     <Box
@@ -845,7 +848,7 @@ const HistoryCard = (props, context) => {
           <LabeledList>
             {FinQuestObjectives.map(Objective => (
               <ObjectiveCard
-                key={Objective.qfbq_name}
+                key={Keytwo++}
                 Objective={Objective}/>
             ))}
           </LabeledList>
