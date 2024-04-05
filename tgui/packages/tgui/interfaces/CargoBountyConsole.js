@@ -262,7 +262,7 @@ const TopToolbar = (props, context) => {
           <Stack fill vertical>
             <Stack.Item>
               <LeaderTip
-                TName="Completed Quests (Recent)"
+                TName="Completed Quests (Today)"
                 Tip={YourQuestsTooltip}
                 Gold={Toots.AmTopQuester}
                 Value={QuestsCompleted} />
@@ -276,7 +276,7 @@ const TopToolbar = (props, context) => {
             </Stack.Item>
             <Stack.Item>
               <LeaderTip
-                TName="Top Quester (Recent)"
+                TName="Top Quester"
                 Tip={TopQuestsTooltip}
                 Gold={Toots.AmTopQuester}
                 Value={GlobalHighestCompleted} />
@@ -297,7 +297,7 @@ const TopToolbar = (props, context) => {
                 TName="Earnings (Recent)"
                 Tip={YourBankedTooltip}
                 Gold={Toots.AmTopEarner}
-                Value={`${CurrencyUnit} ${formatMoney(BankedPoints / 10)}`} />
+                Value={`${CurrencyUnit} ${formatMoney(OverallBankedPoints / 10)}`} />
             </Stack.Item>
             <Stack.Item>
               <LeaderTip
@@ -308,7 +308,7 @@ const TopToolbar = (props, context) => {
             </Stack.Item>
             <Stack.Item>
               <LeaderTip
-                TName="Top Earner (Recent)"
+                TName="Top Earner"
                 Tip={TopBankedTooltip}
                 Gold={Toots.AmTopEarner}
                 Value={`${CurrencyUnit} ${formatMoney(GlobalHighestBanked / 10)}`} />

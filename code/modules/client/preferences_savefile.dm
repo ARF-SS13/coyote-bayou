@@ -943,15 +943,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			message_admins("Failed to generate a quester id for [parent.ckey]!!!")
 		WRITE_FILE(S["quester_uid"], saved_quid)
 	S["quester_uid"] >> quester_uid
-	S["finished_quests"] >> finished_quests
+	var/helicopter_precum
+	S["saved_finished_quests"] >> helicopter_precum
+	saved_finished_quests = safe_json_decode(helicopter_precum)
 
 	//sanitize data
-	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
-	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
-	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
-	faved_interactions		= sanitize_islist(faved_interactions, list())
-	finished_quests		= sanitize_islist(finished_quests, list())
+	show_in_directory     = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag         = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
+	directory_erptag      = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad          = strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions    = sanitize_islist(faved_interactions, list())
+	saved_finished_quests = sanitize_islist(saved_finished_quests, list())
 
 	//Sanitize
 
@@ -1540,6 +1542,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
+	if(LAZYLEN(saved_finished_quests))
+		WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
 
 	return 1
 

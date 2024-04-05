@@ -102,9 +102,11 @@ SUBSYSTEM_DEF(economy)
 	var/hard_quest_count = 3
 	var/cbt_quest_count = 2
 
-	var/debug_quests = FALSE
+	var/static_spam = 0
+
+	var/debug_quests = TRUE
 	var/debug_objectives = TRUE
-	var/debug_ignore_extinction = TRUE
+	var/debug_ignore_extinction = FALSE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -143,10 +145,10 @@ SUBSYSTEM_DEF(economy)
 		"≒", "≓", "≔", "≕", "≖", "≗", "≘", "≙", "≚", "≛", "≜", "≝", "≞", "≟", "≠", "≡", "≢", "≣", 
 		"≤", "≥", "≦", "≧", "≨", "≩", "≪", "≫", "≬", "≭", "≮", "≯", "≰", "≱", "≲", "≳", "≴", "≵", 
 		"≶", "≷", "≸", "≹", "≺")
-	if(boring_units_only && prob(99))
+	if(boring_units_only && prob(95))
 		currency_name = "Copper"
 		currency_name_plural = "Coppers"
-		if(prob(95))
+		if(prob(85))
 			currency_unit = "₡"
 		else
 			currency_unit = pick(units)
@@ -341,8 +343,8 @@ SUBSYSTEM_DEF(economy)
 	var/highest_completed_uid = ""
 	for(var/k in quest_books)
 		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		if(QL.finished_this_round > highest_completed)
-			highest_completed = QL.finished_this_round
+		if(LAZYLEN(QL.finished_this_round) > highest_completed)
+			highest_completed = LAZYLEN(QL.finished_this_round)
 			highest_completed_uid = QL.q_uid
 	return LAZYACCESS(quest_books, highest_completed_uid)
 
@@ -355,7 +357,6 @@ SUBSYSTEM_DEF(economy)
 			highest_banked = QL.overall_banked
 			highest_banked_uid = QL.q_uid
 	return LAZYACCESS(quest_books, highest_banked_uid)
-
 
 /datum/controller/subsystem/economy/proc/update_quest_statistics()
 	highest_banked = 0
@@ -370,29 +371,37 @@ SUBSYSTEM_DEF(economy)
 	historical_highest_completed_uid = ""
 	historical_highest_banked = 0
 	historical_highest_banked_uid = ""
-
+	var/updatem = FALSE
+	if(COOLDOWN_FINISHED(src, static_spam))
+		updatem = TRUE
+		COOLDOWN_START(src, static_spam, 2 SECONDS)
 	for(var/k in quest_books)
 		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
 		total_banked += QL.overall_banked
 		total_completed += LAZYLEN(QL.finished_this_round)
+		/// compare how much they earned this round to the highest
 		if(QL.overall_banked > highest_banked)
 			highest_banked = QL.overall_banked
 			highest_banked_uid = QL.q_uid
+		/// compare how many they completed this round to the highest
 		if(LAZYLEN(QL.finished_this_round) > highest_completed)
 			highest_completed = LAZYLEN(QL.finished_this_round)
 			highest_completed_uid = QL.q_uid
+		/// compare how many quest they've completed throughout all time to the highest
 		if(LAZYLEN(QL.finished_quests) > historical_highest_completed)
 			historical_highest_completed = LAZYLEN(QL.finished_quests)
 			historical_highest_completed_uid = QL.q_uid
+		/// compare how much they've earned throughout all time to the highest
 		if(QL.get_historical_banked() > historical_highest_banked)
 			historical_highest_banked = QL.get_historical_banked()
 			historical_highest_banked_uid = QL.q_uid
-		for(var/uid in QL.finished_this_round)
-			var/datum/finished_quest/FQ = LAZYACCESS(QL.finished_this_round, uid)
-			if(FQ.quest_rewarded > most_valuable_quest)
-				most_valuable_quest = FQ.quest_rewarded
-				most_valuable_quest_uid = QL.q_uid
-				// todo: cross round persistent leaderboards
+		// for(var/datum/finished_quest/FQ in QL.finished_quests)
+		// 	if(FQ.value > most_valuable_quest)
+		// 		most_valuable_quest = FQ.value
+		// 		most_valuable_quest_uid = FQ.quest_uid
+		if(updatem)
+			QL.update_pls = TRUE
+	
 
 /datum/controller/subsystem/economy/proc/get_quest_by_uid(uid, list/searchthis)
 	var/list/searchit
@@ -425,14 +434,6 @@ SUBSYSTEM_DEF(economy)
 	if(!QL)
 		return
 	QL.have_they_done_this_quest_before(B)
-
-/datum/controller/subsystem/economy/proc/complete_quest(mob/completer, datum/bounty/B)
-	if(!completer || !completer)
-		return
-	var/datum/quest_book/QL = get_quest_book(completer)
-	if(!QL)
-		return
-	QL.quest_done(B)
 
 /datum/controller/subsystem/economy/proc/extract_quid(something)
 	if(!something)
@@ -505,10 +506,6 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/attempt_turnin(atom/thing, mob/user)
 	if(!thing || !user)
 		return
-	if(!user.Adjacent(thing))
-		if(user)
-			to_chat(user, span_alert("That thing is too far away!"))
-		return FALSE
 	var/datum/quest_book/QL = get_quest_book(user)
 	return QL.turn_something_in(thing)
 
@@ -653,6 +650,7 @@ SUBSYSTEM_DEF(economy)
 	var/claim_on_kill = FALSE
 	var/virgin = TRUE
 	var/list/finished_this_round = list()
+	var/update_pls = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -668,6 +666,7 @@ SUBSYSTEM_DEF(economy)
 	if(!LAZYACCESS(SSeconomy.quest_books, q_uid))
 		SSeconomy.quest_books[q_uid] = src
 	update_owner_data(quester)
+	/// who lives in a pineapple under the sea?
 	load_player_finished_quests(quester)
 
 /datum/quest_book/Destroy(force, ...)
@@ -689,6 +688,9 @@ SUBSYSTEM_DEF(economy)
 			return
 	ownername = quester.real_name
 	ownerjob = quester.job
+	if(update_pls) // not a bad place for it tbh
+		update_pls = FALSE
+		update_static_data(quester)
 
 /datum/quest_book/proc/add_active_quest(datum/bounty/B, loud = TRUE)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -765,7 +767,7 @@ SUBSYSTEM_DEF(economy)
 	update_owner_data(user)
 	if(!COOLDOWN_FINISHED(src, turnin_cooldown))
 		return FALSE
-	COOLDOWN_START(src, turnin_cooldown, 1 SECONDS)
+	COOLDOWN_START(src, turnin_cooldown, 0.5 SECONDS)
 	var/list/stuff = list()
 	if(isturf(thing))
 		stuff |= get_all_in_turf(thing)
@@ -803,6 +805,7 @@ SUBSYSTEM_DEF(economy)
 	quest_done(B)
 	SSeconomy.deactivate_quest(B) // just so they get good and dizzy
 	remove_active_quest(B, FALSE, TRUE)
+	update_lifetime_total()
 	playsound(user, 'sound/effects/quest_cashout.ogg', 40, TRUE)
 	return TRUE
 
@@ -811,7 +814,6 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	finished_quests |= new /datum/finished_quest(B)
 	finished_this_round[B.uid] = B
-	update_lifetime_total()
 
 /datum/quest_book/proc/load_player_finished_quests(mob/quester)
 	if(!quester)
@@ -819,11 +821,9 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(quester)
 	if(!P)
 		return
-	var/quest_json = P.finished_quests
-	var/list/quests = safe_json_decode(quest_json)
-	if(!LAZYLEN(quests))
+	if(!LAZYLEN(P.saved_finished_quests))
 		return
-	for(var/list/questy in quests)
+	for(var/list/questy in P.saved_finished_quests)
 		var/datum/finished_quest/FQ = new /datum/finished_quest()
 		FQ.deserialize_from_list(questy)
 		finished_quests += FQ
@@ -850,15 +850,17 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return
-	P.finished_quests = serialize_finished_quests_to_json()
+	if(LAZYLEN(finished_quests) < LAZYLEN(P.saved_finished_quests)) // we somehow have less quests than are saved (which cannot happen!!!!)
+		return // ab0r7
+	P.saved_finished_quests = serialize_finished_quests_to_list()
 	P.save_character()
 
-/datum/quest_book/proc/serialize_finished_quests_to_json()
+/datum/quest_book/proc/serialize_finished_quests_to_list()
 	var/list/quests = list()
 	sort_by_roundid()
 	for(var/datum/finished_quest/FQ in finished_quests)
 		quests += list(FQ.serialize_to_list())
-	return safe_json_encode(quests)
+	return quests
 
 /datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
 	if(!amount)
@@ -889,6 +891,7 @@ SUBSYSTEM_DEF(economy)
 	if(!user)
 		return
 	update_owner_data(user)
+	update_static_data(user)
 	var/atom/thing = SSeconomy.get_plausible_quest_console(user)
 	if(!thing)
 		thing = user
@@ -913,7 +916,7 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/ui_state(mob/user)
 	return GLOB.quest_book_state
 
-/datum/quest_book/ui_data(mob/user)
+/datum/quest_book/ui_static_data(mob/user)
 	var/list/data = list()
 	var/list/bountyinfo = list()
 	for(var/uid in SSeconomy.quest_pool)
@@ -937,23 +940,23 @@ SUBSYSTEM_DEF(economy)
 	data["MyQuests"] = mybounties
 	data["QuestHistory"] = quest_history
 	data["MyFinished"] = recent_finished
-	data["TimeToNext"] = SSeconomy.update_when(TRUE)
+
 	data["BeepOnUpdate"] = beep_on_update
 	data["QuestCount"] = LAZYLEN(active_quests)
 	data["QuestMax"] = SSeconomy.max_quests
 	
-	data["QuestsCompleted"] = LAZYLEN(finished_quests)
-	data["QuestHistoryCount"] = LAZYLEN(quest_history)
-	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
+	data["QuestsCompleted"] = LAZYLEN(recent_finished)
+	data["QuestHistoryCount"] = LAZYLEN(finished_quests)
 	data["GlobalQuestsCompleted"] = SSeconomy.total_completed
 	data["GlobalHighestCompleted"] = SSeconomy.highest_completed
+	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
 
 	data["BankedPoints"] = unclaimed_points
 	data["HistoricalBankedPoints"] = get_historical_banked()
-	data["GlobalHistoricalBanked"] = SSeconomy.historical_highest_banked
 	data["OverallBankedPoints"] = overall_banked
 	data["GlobalHighestBanked"] = SSeconomy.highest_banked
 	data["GlobalTotalEarned"] = SSeconomy.total_banked
+	data["GlobalHistoricalBanked"] = SSeconomy.historical_highest_banked
 
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	data["CurrencyName"] = SSeconomy.currency_name
@@ -982,6 +985,11 @@ SUBSYSTEM_DEF(economy)
 	toots["TTglobalbanked"] = "In total, [SSeconomy.total_banked] [SSeconomy.currency_name_plural] have been earned this period."
 
 	data["Toots"] = toots
+	return data
+
+/datum/quest_book/ui_data(mob/user)
+	var/list/data = list()
+	data["TimeToNext"] = SSeconomy.update_when(TRUE)
 	return data
 
 /datum/quest_book/ui_act(action,params)
@@ -1050,6 +1058,7 @@ SUBSYSTEM_DEF(economy)
 	if(!user)
 		return
 	update_owner_data(user)
+	update_static_data(user)
 	var/its_mine = LAZYACCESS(active_quests, B.uid) && !B.is_templarte
 	QW.show_quest_window(user, B, its_mine)
 
@@ -1069,6 +1078,7 @@ SUBSYSTEM_DEF(economy)
 	if(user)
 		user.put_in_hands(QR)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
+	update_static_data(user)
 	return TRUE
 
 /datum/quest_book/proc/get_historical_banked()

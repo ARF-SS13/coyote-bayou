@@ -143,10 +143,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
+	var/kisser = KISS_DEFAULT // Kiss this (     Y     )
 	/// which quester UID we're using
 	var/quester_uid
-	var/list/finished_quests = list()
+	var/saved_finished_quests = list()
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"

@@ -205,12 +205,22 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		to_chat(user, span_green("Claim your reward in the Quest Book!"))
 		playsound(get_turf(thing), 'sound/effects/quest_complete.ogg', 75)
 	else if(BQ.IsCompleted())
-		to_chat(user, span_green("Objective '[BQ.name]' complete!"))
+		var/number_complete = 0
+		for(var/datum/bounty_quota/Bcue in wanted_things)
+			if(Bcue.IsCompleted())
+				++number_complete
+		to_chat(user, span_green("Objective '[BQ.name]' complete! ([number_complete] / [LAZYLEN(wanted_things)])"))
 		playsound(get_turf(thing), 'sound/effects/objective_complete.ogg', 75)
 	else
+		to_chat(user, span_green("You turned in a '[thing]'! ([BQ.gotten_amount] / [BQ.needed_amount])"))
 		playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
 	if(BQ.delete_thing)
 		FancyDelete(thing)
+	else
+		var/image/I = image('icons/effects/effects.dmi', thing, "shield-flash-longer", thing.layer+1)
+		I.color = "#00FF00"
+		flick_overlay_view(I, thing, 8)
+
 
 /obj/effect/temp_visual/glowy_outline/stationary
 	name = "something questable!"
@@ -223,26 +233,25 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		var/mutable_appearance/looks = new(thing)
 		var/mutable_appearance/looks2 = new(thing)
 		appearance = looks
+		looks2.alpha = 10
 		filters += filter(type = "outline", size = 1, color = "#00FF00")
 		filters += filter(type = "alpha", icon = looks2, flags = MASK_INVERSE)
-	var/matrix/topsize = transform.Scale(1.2)
-	var/matrix/bottomsize = transform.Scale(1)
+	var/matrix/topsize = transform.Scale(1.5)
+	var/matrix/bottomsize = transform.Scale(1.2)
 	alpha=150
 	animate(
 		src,
-		time=1 SECONDS,
+		time=0.5 SECONDS,
 		transform=topsize,
 		loop = TRUE,
-		easing = SINE_EASING
+		easing = CIRCULAR_EASING
 	)
 	animate(
-		time=1 SECONDS,
+		time=0.5 SECONDS,
 		transform=bottomsize,
 		loop = TRUE,
-		easing = SINE_EASING
+		easing = CIRCULAR_EASING
 	)
-
-
 
 /datum/bounty/proc/FancyDelete(atom/A)
 	if(!A)
@@ -252,7 +261,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	animate(A, transform = M, pixel_y = 32, time = 10, alpha = 50, easing = CIRCULAR_EASING, flags=ANIMATION_PARALLEL)
 	M.Scale(0,4)
 	animate(transform = M, time = 5, color = "#1111ff", alpha = 0, easing = CIRCULAR_EASING)
-	do_sparks(2, TRUE, get_turf(A))
+	do_sparks(2, TRUE, get_turf(A), spark_path = /datum/effect_system/spark_spread/quantum)
 	QDEL_IN(A, 2 SECONDS)
 
 /// If the quest has mobs that might not exist anymore, this will return FALSE.
