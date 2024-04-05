@@ -480,7 +480,10 @@ SUBSYSTEM_DEF(economy)
 	var/list/all_their_stuff = get_all_in_turf(user)
 	for(var/atom/thing in all_their_stuff)
 		if(istype(thing, /obj/item/hand_item/quest_scanner))
-			to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]!"))
+			if(user.put_in_hands(thing))
+				to_chat(user, span_notice("You get out the Claimer!"))
+			else
+				to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]! You'd get it out, but your hands are full!"))
 			return
 	if(user.get_active_held_item() && user.get_inactive_held_item())
 		if(prob(1))
@@ -716,6 +719,7 @@ SUBSYSTEM_DEF(economy)
 	if(loud)
 		to_chat(user, span_green("Quest '[B2.name]' accepted!"))
 	update_owner_data(user)
+	update_static_data(user)
 	return TRUE
 
 /datum/quest_book/proc/can_take_quest(datum/bounty/B, loud = TRUE)
@@ -761,6 +765,7 @@ SUBSYSTEM_DEF(economy)
 	if(!was_finished)
 		qdel(B)
 	update_owner_data(user)
+	update_static_data(user)
 	return TRUE
 
 /datum/quest_book/proc/turn_something_in(atom/thing)
@@ -782,6 +787,7 @@ SUBSYSTEM_DEF(economy)
 		if(Turnin(thingy,user,TRUE))
 			return TRUE
 	update_owner_data(user)
+	update_static_data(user)
 	return FALSE
 
 /datum/quest_book/proc/Turnin(atom/thing, mob/user,loud)
@@ -1069,6 +1075,7 @@ SUBSYSTEM_DEF(economy)
 	update_static_data(user)
 	var/its_mine = LAZYACCESS(active_quests, B.uid) && !B.is_templarte
 	QW.show_quest_window(user, B, its_mine)
+	update_static_data(user)
 
 /datum/quest_book/proc/dispense_reward()
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -1086,8 +1093,8 @@ SUBSYSTEM_DEF(economy)
 	if(user)
 		user.put_in_hands(QR)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
-	update_static_data(user)
 	update_lifetime_total()
+	update_static_data(user)
 	return TRUE
 
 /datum/quest_book/proc/get_historical_banked()
@@ -1192,9 +1199,8 @@ SUBSYSTEM_DEF(economy)
 			BQ.Claim()
 			to_chat(user, span_notice("Added 1 to objective '[BQ.name]'"))
 			return TRUE
-	if(.)
-		playsound(user, "terminal_type", 50, TRUE)
-
+	playsound(user, "terminal_type", 50, TRUE)
+	parent.update_static_data(user)
 
 /////////////////////////////////////////////////
 /// FINISHED QUEST /////////////////////////////
@@ -1348,10 +1354,11 @@ SUBSYSTEM_DEF(economy)
 	item_state = "radio"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	item_flags = NOBLUDGEON | PERSONAL_ITEM
+	item_flags = PERSONAL_ITEM
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = INV_SLOTBIT_ANYWHERE
 	max_reach = 7
+	force = 0
 	var/ping_cooldown = 0
 	var/being_used = FALSE
 
@@ -1370,15 +1377,15 @@ SUBSYSTEM_DEF(economy)
 	readme += span_notice("To do this, just use it in your hand, and it will highlight anything you can turn in.")
 	readme += span_notice("You can get one of these from the Quest Board with a button press, or by pressing the green SCAN-ER button on your HUD.")
 
-/obj/item/hand_item/quest_scanner/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
+/obj/item/hand_item/quest_scanner/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(!istype(A))
+	if(!istype(target))
 		return
 	if(being_used)
 		to_chat(user, span_alert("Your [src] is still doing something!"))
 		return
 	// being_used = TRUE
-	SSeconomy.attempt_turnin(A, user)
+	SSeconomy.attempt_turnin(target, user)
 	// being_used = FALSE
 
 /obj/item/hand_item/quest_scanner/attack_self(mob/user)

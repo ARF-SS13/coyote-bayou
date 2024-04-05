@@ -456,6 +456,7 @@ const QuestList = (props, context) => {
           {Quests.map(QuestEntry => (
               <QuestCard
                 key={QuestEntry.QuestUID}
+                WhichOne={props.WhichOne}
                 Quest={QuestEntry}/>
           ))}
           <HistoryPanel />
@@ -486,6 +487,7 @@ const QuestCard = (props, context) => {
     QuestObjectivesTotal,
     QuestIsTemplarte,
     QuestUID,
+    WhichOne,
     CurrencyUnit = "₡",
   } = props.Quest;
 
@@ -571,9 +573,9 @@ const QuestCard = (props, context) => {
     : QuestDesc;
   const TooTip = "" + ShorterDesc + " -- Click for more information!";
 
-  const Pingus = IsTemplarte
-    ? ""
-    : `${QuestObjectivesComplete}/${QuestObjectivesTotal}`;
+  const Pingus = WhichOne === 1
+    ? `${QuestObjectivesComplete}/${QuestObjectivesTotal}`
+    : "";
 
   /// Should all fit in a single line
   return (
@@ -714,7 +716,8 @@ const HistoryPanel = (props, context) => {
   const IsEmpty = QuestHistory.length === 0;
   const WhyItEmpty = "You haven't completed any quests... before today, that is!";
   return (
-    <Section>
+    <Section
+      title="Quest History">
       {IsEmpty ? (
         <Box>
           {WhyItEmpty}
@@ -794,12 +797,10 @@ const HistoryCard = (props, context) => {
             : "This was a quest of all time!";
 
   const CuteDiffi = (
-    <Button
-      icon={DiffIcon}
-      iconSize={1.5}
-      iconColor={DiffiColor}
-      tooltip={DiffiTooltip}
-      color="transparent" />
+    <Icon
+      name={DiffIcon}
+      size={1.5}
+      color={DiffiColor}/>
   );
   const PaleBlue = "#f0f8ff"; // AliceBlue
   let Keytwo = 0;
@@ -807,7 +808,7 @@ const HistoryCard = (props, context) => {
   return (
     <Box
       p={1}
-      color={PaleBlue}>
+      backgroundColor={PaleBlue}>
       <Stack fill vertical>
         <Stack.Item shrink={1}>
           <Stack fill>
@@ -844,15 +845,13 @@ const HistoryCard = (props, context) => {
             </Stack.Item>
           </Stack>
         </Stack.Item>
-        <Stack.Item>
-          <LabeledList>
-            {FinQuestObjectives.map(Objective => (
+          {FinQuestObjectives.map(Objective => (
+            <Stack.Item>
               <ObjectiveCard
                 key={Keytwo++}
                 Objective={Objective}/>
-            ))}
-          </LabeledList>
-        </Stack.Item>
+              </Stack.Item>
+          ))}
       </Stack>
     </Box>
   );
@@ -875,26 +874,9 @@ const ObjectiveCard = (props, context) => {
   const ObjectiveColor = "green"; // "label
 
   return (
-    <LabeledList.Item>
-      <Stack fill>
-        <Stack.Item grow={1}>
-          <Box
-            inline
-            fontSize="8px">
-            {NameDesplay}
-          </Box>
-        </Stack.Item>
-        <Stack.Item shrink={1}>
-          <Box
-            inline
-            textAlign="right"
-            fontSize="8px"
-            textColor={ObjectiveColor}>
-            {RewardDisplay}
-          </Box>
-        </Stack.Item>
-      </Stack>
-    </LabeledList.Item>
+    <Box p={0.3} color="#f0f8ff">
+      {`${NameDesplay} - ${RewardDisplay} x ${qfbq_needed_amount}`}
+    </Box>
   );
 }
 
