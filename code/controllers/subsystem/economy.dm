@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(economy)
-	name = "AAAAEconomy"
-	wait = 3 MINUTES
+	name = "QuestEconomy"
+	wait = 15 MINUTES
 	init_order = INIT_ORDER_ECONOMY
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 5
