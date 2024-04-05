@@ -1,6 +1,7 @@
+/* eslint-disable */
 import {
   useBackend,
-  useLocalState
+  useLocalState,
 } from '../backend';
 import {
   AnimatedNumber,
@@ -12,6 +13,7 @@ import {
   Stack,
   Flex,
   Table,
+  Fragment,
   Tabs,
   Icon,
 } from '../components';
@@ -86,10 +88,10 @@ import { multiline } from '../../common/string';
 */
 
 
-/// it also turns into a readme file!
+// / it also turns into a readme file!
 export const CargoBountyConsole = (props, context) => {
   const { act, data } = useBackend(context);
-  const{
+  const {
     QuestCount,
     QuestMax,
   } = data;
@@ -120,45 +122,45 @@ export const CargoBountyConsole = (props, context) => {
             <TopToolbar />
           </Stack.Item>
           <Stack.Item>
-          <Tabs
-        fluid>
-        <Tabs.Tab
-          selected={SelectedTab === 1}
-          onClick={() => {
-            setSelectedTab(1);
-            act('JustUpdate');
-            }}>
-            {ActiveQuestsTitle}
-        </Tabs.Tab>
-        <Tabs.Tab
-          selected={SelectedTab === 2}
-          onClick={() => {
-            setSelectedTab(2);
-            act('JustUpdate');
-            }}>
-            Available Quests
-        </Tabs.Tab>
-        <Tabs.Tab
-          selected={SelectedTab === 3}
-          onClick={() => {
-            setSelectedTab(3);
-            act('JustUpdate');
-            }}>
-            Finished Quests
-        </Tabs.Tab>
-        <Tabs.Tab
-          textAlign="center"
-          selected={SelectedTab === 4}
-          onClick={() => {
-            setSelectedTab(4);
-            act('JustUpdate');
-            }}>
-            <Icon
-              name="question-circle"
-              color="green"
-              size={1.5} />
-        </Tabs.Tab>
-      </Tabs>
+            <Tabs
+              fluid>
+              <Tabs.Tab
+                selected={SelectedTab === 1}
+                onClick={() => {
+                  setSelectedTab(1);
+                  act('JustUpdate');
+                }}>
+                {ActiveQuestsTitle}
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={SelectedTab === 2}
+                onClick={() => {
+                  setSelectedTab(2);
+                  act('JustUpdate');
+                }}>
+                Available Quests
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={SelectedTab === 3}
+                onClick={() => {
+                  setSelectedTab(3);
+                  act('JustUpdate');
+                }}>
+                Finished Quests
+              </Tabs.Tab>
+              <Tabs.Tab
+                textAlign="center"
+                selected={SelectedTab === 4}
+                onClick={() => {
+                  setSelectedTab(4);
+                  act('JustUpdate');
+                }}>
+                <Icon
+                  name="question-circle"
+                  color="green"
+                  size={1.5} />
+              </Tabs.Tab>
+            </Tabs>
           </Stack.Item>
           <Stack.Item grow shrink>
             <Section fill scrollable>
@@ -172,10 +174,10 @@ export const CargoBountyConsole = (props, context) => {
       </Window.Content>
     </Window>
   );
-}
+};
 
-/// a leaderboard entry!
-/// has a name, a value, and a tooltip, and if the number should be gold
+// / a leaderboard entry!
+// / has a name, a value, and a tooltip, and if the number should be gold
 const LeaderTip = (props) => {
   const {
     TName,
@@ -196,10 +198,10 @@ const LeaderTip = (props) => {
           <Box
             inline
             fontSize="10px">
-              <Icon
-                name="star"
-                size={0.85}
-                color={Gold ? "gold" : "label"} />
+            <Icon
+              name="star"
+              size={0.85}
+              color={Gold ? "gold" : "label"} />
             {TName}
           </Box>
         </Stack.Item>
@@ -215,9 +217,9 @@ const LeaderTip = (props) => {
       </Stack>
     </Button>
   );
-}
+};
 
-/// Common top toolbar for both panels
+// / Common top toolbar for both panels
 const TopToolbar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -237,7 +239,7 @@ const TopToolbar = (props, context) => {
     Toots,
   } = data; // needs more gravy
 
-/*
+  /*
   Toots.AmTopQuester
   Toots.AmTopEarner
   Toots.AmTopQuesterHistorical
@@ -247,14 +249,14 @@ const TopToolbar = (props, context) => {
   const YourQuestsTooltip = Toots.TTyourquests;
   const TopQuestsTooltip = Toots.TTtopquests;
   const YourHistoricalQuestsTooltip = Toots.TThistoricalquests;
-  const TopHistoricalQuestsTooltip = Toots.TTtophistoricalquests
-  const GlobalQuestsTooltip = Toots.TTglobalquests
+  const TopHistoricalQuestsTooltip = Toots.TTtophistoricalquests;
+  const GlobalQuestsTooltip = Toots.TTglobalquests;
 
-  const YourBankedTooltip = Toots.TTyourbanked
-  const TopBankedTooltip = Toots.TTtopbanked
-  const YourHistoricalBankedTooltip = Toots.TThistoricalbanked
-  const TopHistoricalBankedTooltip = Toots.TTtophistoricalbanked
-  const GlobalBankedTooltip = Toots.TTglobalbanked
+  const YourBankedTooltip = Toots.TTyourbanked;
+  const TopBankedTooltip = Toots.TTtopbanked;
+  const YourHistoricalBankedTooltip = Toots.TThistoricalbanked;
+  const TopHistoricalBankedTooltip = Toots.TTtophistoricalbanked;
+  const GlobalBankedTooltip = Toots.TTglobalbanked;
 
   const LeaderboardLavelFontSize = "10px";
   const LeaderboardValueFontSize = "12px";
@@ -334,9 +336,9 @@ const TopToolbar = (props, context) => {
       </Stack>
     </Section>
   );
-}
+};
 
-/// The main window! either your quests or the available quests
+// / The main window! either your quests or the available quests
 const MainWindow = (props, context) => { // main screen turn on
   const { act, data } = useBackend(context);
   // Active Quests is 1, Available Quests is 2, readme is 3
@@ -348,23 +350,23 @@ const MainWindow = (props, context) => { // main screen turn on
 
   return (
     <>
-        {SelectedTab === 1 && (
-          <QuestList WhichOne={1} />
-        )}
-        {SelectedTab === 2 && (
-          <QuestList WhichOne={2} />
-        )}
-        {SelectedTab === 3 && (
-          <QuestList WhichOne={3} />
-        )}
-        {SelectedTab === 4 && (
-          <ReadMe />
-        )}
+      {SelectedTab === 1 && (
+        <QuestList WhichOne={1} />
+      )}
+      {SelectedTab === 2 && (
+        <QuestList WhichOne={2} />
+      )}
+      {SelectedTab === 3 && (
+        <QuestList WhichOne={3} />
+      )}
+      {SelectedTab === 4 && (
+        <ReadMe />
+      )}
     </>
   );
-}
+};
 
-/// The bottom toolbar for the main window
+// / The bottom toolbar for the main window
 const BottomToolbar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -416,10 +418,10 @@ const BottomToolbar = (props, context) => {
       </Stack>
     </Section>
   );
-}
+};
 
-/// This is a big cute list of quest cards
-/// can be either your quests or the available quests
+// / This is a big cute list of quest cards
+// / can be either your quests or the available quests
 const QuestList = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -428,8 +430,8 @@ const QuestList = (props, context) => {
     MyFinished = [],
   } = data;
 
-  const Quests =
-    props.WhichOne === 1
+  const Quests
+    = props.WhichOne === 1
       ? MyQuests
       : props.WhichOne === 2
         ? AllQuests
@@ -448,26 +450,26 @@ const QuestList = (props, context) => {
 
   return (
     <Section>
-        {WhyItEmpty}
-        {/* Quest */}
-        {Quests.map(QuestEntry => (
-            <QuestCard
-              key={QuestEntry.QuestUID}
-              WhichOne={props.WhichOne}
-              Quest={QuestEntry}/>
-        ))}
-        <HistoryPanel />
+      {/* {WhyItEmpty} */}
+      {/* Quest */}
+      {Quests.map(QuestEntry => (
+        <QuestCard
+          key={QuestEntry.QuestUID}
+          WhichOne={props.WhichOne}
+          Quest={QuestEntry} />
+      ))}
+      <HistoryPanel />
     </Section>
   );
-}
+};
 
-/// A quest card! holds all the need-knows of the quest
-/// is a big fancy button that opens the quest in a new window
-/// contains:
-///   Quest Name
-///   Quest Description
-///   Quest Reward
-///   Quest Difficulty
+// / A quest card! holds all the need-knows of the quest
+// / is a big fancy button that opens the quest in a new window
+// / contains:
+// /   Quest Name
+// /   Quest Description
+// /   Quest Reward
+// /   Quest Difficulty
 const QuestCard = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -515,12 +517,12 @@ const QuestCard = (props, context) => {
       ? "green"
       : "blue";
 
-  //#define QUEST_DIFFICULTY_EASY 1
-  //#define QUEST_DIFFICULTY_MED 2
-  //#define QUEST_DIFFICULTY_HARD 3
-  //#define QUEST_DIFFICULTY_CBT 4
-  const DiffiColor =
-    QuestDifficulty === 1
+  // #define QUEST_DIFFICULTY_EASY 1
+  // #define QUEST_DIFFICULTY_MED 2
+  // #define QUEST_DIFFICULTY_HARD 3
+  // #define QUEST_DIFFICULTY_CBT 4
+  const DiffiColor
+    = QuestDifficulty === 1
       ? "green"
       : QuestDifficulty === 2
         ? "blue"
@@ -529,8 +531,8 @@ const QuestCard = (props, context) => {
           : QuestDifficulty === 8
             ? "orange"
             : "orange";
-  const DiffIcon =
-    QuestDifficulty === 1
+  const DiffIcon
+    = QuestDifficulty === 1
       ? "grin-wink"
       : QuestDifficulty === 2
         ? "meh"
@@ -539,8 +541,8 @@ const QuestCard = (props, context) => {
           : QuestDifficulty === 8
             ? "tired"
             : "tired";
-  const DiffiTooltip =
-    QuestDifficulty === 1
+  const DiffiTooltip
+    = QuestDifficulty === 1
       ? "This is an Easy quest!"
       : QuestDifficulty === 2
         ? "This is a Medium quest!"
@@ -561,8 +563,8 @@ const QuestCard = (props, context) => {
 
   const RewardDisplay = `${CurrencyUnit} ${formatMoney(QuestReward / 10)}`;
   const CanTakeThisQuest = QuestAcceptible && !IsTaken && IsTemplarte;
-  /// truncates the description to 100 characters
-  /// but only if QuestDesc isnt null
+  // / truncates the description to 100 characters
+  // / but only if QuestDesc isnt null
   const ShorterDesc = QuestDesc && QuestDesc.length > 150
     ? QuestDesc.substring(0, 150) + "..."
     : QuestDesc;
@@ -572,7 +574,7 @@ const QuestCard = (props, context) => {
     ? `${QuestObjectivesComplete}/${QuestObjectivesTotal}`
     : "";
 
-  /// Should all fit in a single line
+  // / Should all fit in a single line
   return (
     <Button
       width="100%"
@@ -583,7 +585,7 @@ const QuestCard = (props, context) => {
       onClick={() => act('OpenQuest', {
         BountyUID: QuestUID,
         QuestIsMine: IsTaken,
-        })}>
+      })}>
       <Stack fill>
         <Stack.Item shrink={1}>
           {/* <Icon
@@ -617,7 +619,7 @@ const QuestCard = (props, context) => {
       </Stack>
     </Button>
   );
-}
+};
 
 const YourCash = (props, context) => {
   const { act, data } = useBackend(context);
@@ -627,12 +629,12 @@ const YourCash = (props, context) => {
     GlobalHighestBanked = 0,
     CurrencyUnit = "₡",
   } = data;
-  const ActualCash = toFixed(BankedPoints / 10, 0)
+  const ActualCash = toFixed(BankedPoints / 10, 0);
   const IsGlobalHighest = OverallBankedPoints >= GlobalHighestBanked;
   const OverallTip = "You have earned "
     + CurrencyUnit
     + formatMoney(ActualCash)
-    + " this round!"
+    + " this round!";
   const HighestTip = IsGlobalHighest ? "You are the highest earner this round!" : "";
   const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!";
 
@@ -655,7 +657,7 @@ const YourCash = (props, context) => {
       />
     </Button>
   );
-}
+};
 
 const ReadMe = (props, context) => {
   const { act, data } = useBackend(context);
@@ -670,11 +672,11 @@ const ReadMe = (props, context) => {
 
     </Section>
   );
-}
+};
 
-/// just a simple button that gives the player a scanner
-/// the scanner is an item that you use to turn in things for quests
-/// fancy!
+// / just a simple button that gives the player a scanner
+// / the scanner is an item that you use to turn in things for quests
+// / fancy!
 const ButtonThatGivesPlayerAScanner = (props, context) => {
   const { act, data } = useBackend(context);
   return (
@@ -689,9 +691,9 @@ const ButtonThatGivesPlayerAScanner = (props, context) => {
       Turn Stuff In!
     </Button>
   );
-}
+};
 
-/// The quest history panel, for  quests finished in previous rounds
+// / The quest history panel, for  quests finished in previous rounds
 const HistoryPanel = (props, context) => {
   const { act, data } = useBackend(context);
   const [
@@ -700,7 +702,7 @@ const HistoryPanel = (props, context) => {
   ] = useLocalState(context, 'SelectedTab', 1);
 
   if (SelectedTab !== 3) {
-    return <Fragment />;
+    return <Box />;
   }
 
   const {
@@ -718,22 +720,21 @@ const HistoryPanel = (props, context) => {
           {WhyItEmpty}
         </Box>
       ) : (
-        <Flex wrap={true}>
+        <Flex wrap justify="center">
           {QuestHistory.map(QuestEntry => (
             <Flex.Item
-              grow={1}
-              basis="45%">
+              key={Keykey++}
+              basis="40%">
               <HistoryCard
-                keyfixer={Keykey++}
                 key={Keykey}
-                Quest={QuestEntry}/>
+                Quest={QuestEntry} />
             </Flex.Item>
           ))}
         </Flex>
       )}
     </Section>
   );
-}
+};
 
 /*
   VARS FOR HISTORY CARD
@@ -747,8 +748,8 @@ const HistoryPanel = (props, context) => {
     FinQuestObjectives
 */
 
-/// A card for the quest history panel
-/// Mush simpler, is not even a button!
+// / A card for the quest history panel
+// / Mush simpler, is not even a button!
 const HistoryCard = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -764,8 +765,8 @@ const HistoryCard = (props, context) => {
   } = props.Quest;
 
   const RewardDisplay = `${CurrencyUnit}${formatMoney(FinQuestReward / 10)}`;
-  const DiffiColor =
-    FinQuestDifficulty === 1
+  const DiffiColor
+    = FinQuestDifficulty === 1
       ? "green"
       : FinQuestDifficulty === 2
         ? "blue"
@@ -774,8 +775,8 @@ const HistoryCard = (props, context) => {
           : FinQuestDifficulty === 8
             ? "orange"
             : "orange";
-  const DiffIcon =
-    FinQuestDifficulty === 1
+  const DiffIcon
+    = FinQuestDifficulty === 1
       ? "grin-wink"
       : FinQuestDifficulty === 2
         ? "meh"
@@ -784,8 +785,8 @@ const HistoryCard = (props, context) => {
           : FinQuestDifficulty === 8
             ? "tired"
             : "tired";
-  const DiffiTooltip =
-    FinQuestDifficulty === 1
+  const DiffiTooltip
+    = FinQuestDifficulty === 1
       ? "This was an Easy quest!"
       : FinQuestDifficulty === 2
         ? "This was a Medium quest!"
@@ -799,7 +800,7 @@ const HistoryCard = (props, context) => {
     <Icon
       name={DiffIcon}
       size={1.5}
-      color={DiffiColor}/>
+      color={DiffiColor} />
   );
   const PaleBlue = "#f0f8ff";
   let Keytwo = 0;
@@ -813,6 +814,7 @@ const HistoryCard = (props, context) => {
             <Stack.Item grow={1}>
               <Box
                 inline
+                textAlign={"left"}
                 fontSize="10px">
                 {CuteDiffi}
               </Box>
@@ -843,7 +845,7 @@ const HistoryCard = (props, context) => {
             </Stack.Item>
           </Stack>
         </Stack.Item>
-          {/* {FinQuestObjectives.map(Objective => (
+        {/* {FinQuestObjectives.map(Objective => (
             <Stack.Item>
               <ObjectiveCard
                 key={Keytwo++}
@@ -853,10 +855,10 @@ const HistoryCard = (props, context) => {
       </Stack>
     </Box>
   );
-}
+};
 
-/// A card for the quest history panel
-/// Mush simpler, is not even a button!
+// / A card for the quest history panel
+// / Mush simpler, is not even a button!
 const ObjectiveCard = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -876,6 +878,6 @@ const ObjectiveCard = (props, context) => {
       {`${NameDesplay} - ${RewardDisplay} x ${qfbq_needed_amount}`}
     </Box>
   );
-}
+};
 
 

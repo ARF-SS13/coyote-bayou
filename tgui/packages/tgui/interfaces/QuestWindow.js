@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useBackend, useLocalState } from '../backend';
 import { toFixed } from 'common/math';
 import { multiline } from 'common/string';
@@ -64,7 +65,7 @@ import { sanitizeText } from '../sanitize';
 */
 
 
-/// it also turns into a readme file!
+// / it also turns into a readme file!
 export const QuestWindow = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -92,8 +93,8 @@ export const QuestWindow = (props, context) => {
     15: "Nightmare But Open A Bug Report",
   }[QuestDifficulty];
 
-  const WindoHight =
-    150 // TopText
+  const WindoHight
+    = 150 // TopText
     + (QuestDesc ? QuestDesc.length / 50 : 1) * 50 // 50px per 50 characters
     + (QuestObjectivesTotal * 20) // 50px per quota
     + 100; // BottomBar
@@ -115,19 +116,19 @@ export const QuestWindow = (props, context) => {
             No selected quest!
           </NoticeBox> // this is a lie
         ) || (
-        <Stack fill vertical>
-          <Stack.Item shrink>
-            <TopText />
-          </Stack.Item>
-          <Stack.Item grow shrink>
-            <Section fill scrollable>
-              <QuestObjectiveList />
-            </Section>
-          </Stack.Item>
-          <Stack.Item>
-            <BottomBar />
-          </Stack.Item>
-        </Stack>
+          <Stack fill vertical>
+            <Stack.Item shrink>
+              <TopText />
+            </Stack.Item>
+            <Stack.Item grow shrink>
+              <Section fill scrollable>
+                <QuestObjectiveList />
+              </Section>
+            </Stack.Item>
+            <Stack.Item>
+              <BottomBar />
+            </Stack.Item>
+          </Stack>
         )}
       </Window.Content>
     </Window>
@@ -249,7 +250,7 @@ const QuestObjectiveList = (props, context) => {
   );
 };
 
-/// A cool slug of a quest objective!
+// / A cool slug of a quest objective!
 const QuestObjectiveEntry = (props, context) => {
   const { data, act } = useBackend(context);
   const { QUO } = props;
@@ -271,15 +272,15 @@ const QuestObjectiveEntry = (props, context) => {
 
   const QuotaAmountColor = QuotaComplete ? "good" : "label";
   const QuotaAmount = `${QuotaGotten}/${QuotaNeeded}`;
-  const QuotaIcon = () =>{
+  const QuotaIcon = () => {
     if (QuotaComplete) {
-      return "circle-check"
+      return "circle-check";
     } else if (QuotaGotten < QuotaNeeded) {
-      return "circle-half-stroke"
+      return "circle-half-stroke";
     } else {
-      return "circle"
+      return "circle";
     }
-  }
+  };
   const QuotaIconColor = QuotaComplete ? "good" : "label";
   const QuotaIconTooltip = QuotaComplete ? "Complete" : "Incomplete";
 
@@ -328,10 +329,10 @@ const QuestObjectiveEntry = (props, context) => {
             QuotaUID: QuotaUID,
             BountyUID: UID,
           })} />
-          );
+      );
     }
     return <Fragment />;
-  }
+  };
 
   return (
     <>
@@ -389,7 +390,7 @@ const BottomBar = (props, context) => {
       </Stack>
     </Section>
   );
-}
+};
 
 // Accept or Scan button
 const AcceptOrScan = (props, context) => {
@@ -427,7 +428,7 @@ const AcceptOrScan = (props, context) => {
     );
   }
   return <Fragment />;
-}
+};
 
 // Cancel button
 const CancelMaybe = (props, context) => {
@@ -458,7 +459,7 @@ const CancelMaybe = (props, context) => {
     );
   }
   return <Fragment />;
-}
+};
 
 // The readme file
 const HelpText = (props, context) => {
@@ -507,7 +508,7 @@ const HelpText = (props, context) => {
       </NoticeBox>
     </Box>
   );
-}
+};
 
 
 

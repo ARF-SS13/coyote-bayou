@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(economy)
 	var/static_spam = 0
 
 	var/debug_quests = FALSE
-	var/debug_objectives = TRUE
+	var/debug_objectives = FALSE
 	var/debug_ignore_extinction = FALSE
 	var/debug_include_laggy_item_quests = FALSE
 	var/debug_ignore_historical_round_number_check = TRUE
@@ -942,7 +942,7 @@ SUBSYSTEM_DEF(economy)
 		mybounties += list(B2.get_tgui(user))
 	var/list/quest_history = list()
 	for(var/datum/finished_quest/B3 in finished_quests)
-		if(!SSeconomy.debug_ignore_historical_round_number_check && text2num(B3.quest_round_id) == GLOB.round_id)
+		if(!SSeconomy.debug_ignore_historical_round_number_check && text2num(B3.quest_round_id) == text2num(GLOB.round_id))
 			continue
 		quest_history += list(B3.tgui_slug(user))
 	var/list/recent_finished = list()
