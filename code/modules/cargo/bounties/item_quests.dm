@@ -79,6 +79,7 @@
 		/datum/bounty_quota/random_items,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY
+	is_laggy_as_hell = TRUE
 
 /datum/bounty/item/trash_medium
 	name = "Urban Excavation"
@@ -92,6 +93,7 @@
 		/datum/bounty_quota/random_items,
 	)
 	difficulty = QUEST_DIFFICULTY_MED
+	is_laggy_as_hell = TRUE
 
 /datum/bounty/item/trash_hard
 	name = "Urban Expedition"
@@ -108,6 +110,7 @@
 		/datum/bounty_quota/random_items,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD
+	is_laggy_as_hell = TRUE
 
 /datum/bounty/item/trash_CBT
 	name = "Urban Excoriation"
@@ -128,6 +131,7 @@
 		/datum/bounty_quota/random_items,
 	)
 	difficulty = QUEST_DIFFICULTY_CBT
+	is_laggy_as_hell = TRUE
 
 /datum/bounty_quota/random_items
 	name = "Get some (thing)"

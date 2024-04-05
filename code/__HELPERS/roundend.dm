@@ -510,7 +510,7 @@
 	var/list/report_lines = list()
 	report_lines += span_header("Top Quester: [span_greentext("[QR.top_quester_name], the [QR.top_quester_job]!")]")
 	report_lines += span_header("They completed [span_greentext("[QR.top_quester_total]")] quests! Wow!")
-	report_lines += span_header("Overall, [span_greentext(QR.total_quests)] quests were completed! So many!")
+	report_lines += span_header("Overall, [span_greentext("[QR.total_quests]")] quests were completed! So many!")
 
 	report_lines += "<hr>"
 	report_lines += span_header("Top Earner: ") + span_greentext("[QR.top_earner_name], the [QR.top_earner_job]!")

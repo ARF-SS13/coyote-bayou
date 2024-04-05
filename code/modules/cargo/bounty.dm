@@ -41,6 +41,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/difficulty = QUEST_DIFFICULTY_EASY
 	/// How should difficulties be handled?
 	var/difficulty_flags = NONE
+	var/is_laggy_as_hell = FALSE
 
 	var/list/congrats_phrases = list(
 		"Well done",

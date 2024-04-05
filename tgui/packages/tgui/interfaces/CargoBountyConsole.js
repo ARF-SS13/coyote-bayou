@@ -196,11 +196,7 @@ const LeaderTip = (props) => {
             fontSize="12px"
             color={Gold ? "gold" : "label"}
             fontWeight="bold">
-            <AnimatedNumber
-              initial={0}
-              value={Value}
-              color={Gold ? "gold" : "label"}
-            />
+            {Value}
           </Box>
         </Stack.Item>
       </Stack>
@@ -370,13 +366,11 @@ const BottomToolbar = (props, context) => {
     : "You will NOT be alerted when the quest pool updates!";
 
   const CoolNumber = (
-    <AnimatedNumber
-      initial={0}
-      value={TimeToNext}
-      format={value => formatTime(value)}
+    <Box inline
       fontSize="16px"
-      color="label"
-    />
+      color="label" >
+      {formatTime(value)}
+    </Box>
   );
 
   return (
@@ -604,8 +598,6 @@ const QuestCard = (props, context) => {
             textColor="green">
             {RewardDisplay}
           </Box>
-        </Stack.Item>
-        <Stack.Item basis="10%">
           <Box
             inline
             fontSize="14px"

@@ -176,13 +176,15 @@ SUBSYSTEM_DEF(atoms)
 	BadInitializeCalls = SSatoms.BadInitializeCalls
 
 /datum/controller/subsystem/atoms/proc/GetExistingAtomsOfPath(atom/A)
-	if(isatom(A))
-		A = A.type
+	if(isatom(A)) // HEY VSAUCE, DANNY HERE, I AM STANDING IN FRONT OF THE WORST PROC IVE EVER MADE
+		A = A.type // OR IS IT?
 	var/list/atoms = list()
 	for(var/B in everything)
-		if(ispath(B, A))
+		if(LAZYACCESS(everything, B) < 1)
+			continue
+		if(ispath(B, A)) // NAH ITS PRETTY BAD
 			atoms |= B
-	return atoms // yeah, suck it, performance and ram
+	return atoms
 
 /datum/controller/subsystem/atoms/proc/setupGenetics()
 	var/list/mutations = subtypesof(/datum/mutation/human)

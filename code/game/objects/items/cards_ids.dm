@@ -38,7 +38,7 @@
 	return saleprice
 
 /obj/item/card/proc/tabulate_research()
-	return saleprice * 10
+	return saleprice * 5
 
 /obj/item/card/proc/punch(mob/living/user)
 	if(!punchable)

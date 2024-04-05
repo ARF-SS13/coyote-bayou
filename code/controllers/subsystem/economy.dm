@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(economy)
 	var/list/all_quests = list()
 	/// All the publically-available quests!
 	var/list/quest_pool = list() // quest pool! quest pool! quest pool!
-	var/easy_quests = 5
+	var/easy_quests = 4
 	var/medium_quests = 3
 	var/hard_quests = 2
 	var/cbt_quests = 1
@@ -104,9 +104,10 @@ SUBSYSTEM_DEF(economy)
 
 	var/static_spam = 0
 
-	var/debug_quests = TRUE
+	var/debug_quests = FALSE
 	var/debug_objectives = TRUE
 	var/debug_ignore_extinction = FALSE
+	var/debug_include_laggy_item_quests = FALSE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -224,6 +225,8 @@ SUBSYSTEM_DEF(economy)
 		var/list/quist = list()
 		for(var/thingtype in all_quests)
 			var/datum/bounty/B = LAZYACCESS(all_quests, thingtype)
+			if(B.is_laggy_as_hell && !debug_include_laggy_item_quests)
+				continue
 			quist[B] = B.weight
 		roll_for_quests(quist, LAZYLEN(quist))
 		alert_devices()
@@ -236,6 +239,8 @@ SUBSYSTEM_DEF(economy)
 		var/datum/bounty/B = LAZYACCESS(all_quests, qpath)
 		if(!B.should_be_completable())
 			continue // Mingus Matt is ded
+		if(B.is_laggy_as_hell && !debug_include_laggy_item_quests)
+			continue
 		if(CHECK_BITFIELD(B.difficulty, QUEST_DIFFICULTY_EASY))
 			easy[B] = B.weight
 		if(CHECK_BITFIELD(B.difficulty, QUEST_DIFFICULTY_MED))
@@ -1363,7 +1368,6 @@ SUBSYSTEM_DEF(economy)
 	. = ..()
 	if(!istype(A))
 		return
-	. = STOP_ATTACK_PROC_CHAIN
 	if(being_used)
 		to_chat(user, span_alert("Your [src] is still doing something!"))
 		return
