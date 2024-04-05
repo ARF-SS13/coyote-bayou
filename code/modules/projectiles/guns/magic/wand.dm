@@ -281,8 +281,8 @@
 	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
-	max_charges = 4
-	recharge_rate = 2 SECONDS
+	max_charges = 3
+	recharge_rate = 1 SECONDS // It used to fire 3 shots, this just makes it a bit like how it was before
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300
 	)
@@ -304,7 +304,6 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	added_spread = 50
 	max_charges = 2
 	recharge_rate = 6 SECONDS
 	init_firemodes = list(
