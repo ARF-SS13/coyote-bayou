@@ -187,8 +187,15 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	if(!BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || is_complete())
 		return
 	playsound(get_turf(thing), 'sound/effects/booboobee.ogg', 75)
+	var/datum/beam/bean = user.Beam(thing, icon_state = "g_beam", time = BQ.claimdelay)
+	var/obj/effect/temp_visual/glowy_outline/stationary/cool = new(thing)
 	if(!do_after(user, BQ.claimdelay, TRUE, thing, TRUE, public_progbar = TRUE))
+		qdel(cool)
+		if(bean)
+			bean.End(TRUE)
 		return
+	bean.End(TRUE)
+	qdel(cool)
 	if(!user || QDELETED(thing) || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || !user)
 		return
 	SSeconomy.turned_something_in(thing, BQ)
@@ -204,6 +211,38 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
 	if(BQ.delete_thing)
 		FancyDelete(thing)
+
+/obj/effect/temp_visual/glowy_outline/stationary
+	name = "something questable!"
+	desc = "Oh hey! That thing can be turned in for a quest! Neat!"
+	icon_state = "medi_holo"
+	duration = 10 SECONDS
+
+/obj/effect/temp_visual/glowy_outline/stationary/cool_stuff(atom/thing)
+	if(thing)
+		var/mutable_appearance/looks = new(thing)
+		var/mutable_appearance/looks2 = new(thing)
+		appearance = looks
+		filters += filter(type = "outline", size = 1, color = "#00FF00")
+		filters += filter(type = "alpha", icon = looks2, flags = MASK_INVERSE)
+	var/matrix/topsize = transform.Scale(1.2)
+	var/matrix/bottomsize = transform.Scale(1)
+	alpha=150
+	animate(
+		src,
+		time=1 SECONDS,
+		transform=topsize,
+		loop = TRUE,
+		easing = SINE_EASING
+	)
+	animate(
+		time=1 SECONDS,
+		transform=bottomsize,
+		loop = TRUE,
+		easing = SINE_EASING
+	)
+
+
 
 /datum/bounty/proc/FancyDelete(atom/A)
 	if(!A)

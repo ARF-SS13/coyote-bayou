@@ -18,6 +18,32 @@
 	flavor_kind = QUEST_KIND_COLLECT_ITEMS
 	candupe = TRUE
 
+/datum/bounty/item/validball
+	name = "Scan the Mysterious Keycard"
+	description = "I've heard rumors of an anomalous keycard with untold powers. Powers that have yet to be told, cus nobody's really sure what it does. \
+		Find it and scan it for me, will you?"
+	flavor_focus = /obj/item/validball
+	weight = 1
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/validball,
+	)
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/validball
+	name = "Mysterious Keycard"
+	flavor = "Why do they call it a key card when you card in the key card and card key card out the key card?"
+	paths = list(
+		/obj/item/validball,
+	)
+	needed_amount = 1
+	price_per_thing = COINS_TO_CREDITS(200)
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 3
+	delete_thing = FALSE // It doesnt delete well, so, yeah
+
 /datum/bounty/item/blackbox
 	name = "Black Box"
 	description = "The Junkers off in Mass Fusion have been collecting black boxes from the wrecks of transdimensional ships. Apparently they contain a lot of valuable data. Go steal one for me."

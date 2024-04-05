@@ -1398,6 +1398,9 @@ SUBSYSTEM_DEF(economy)
 
 /obj/effect/temp_visual/glowy_outline/Initialize(mapload, atom/thing)
 	. = ..()
+	cool_stuff(thing)
+
+/obj/effect/temp_visual/glowy_outline/proc/cool_stuff(atom/thing)
 	if(thing)
 		var/mutable_appearance/looks = new(thing)
 		appearance = looks
