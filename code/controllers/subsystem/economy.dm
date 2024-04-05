@@ -79,13 +79,19 @@ SUBSYSTEM_DEF(economy)
 
 	var/total_completed = 0
 	var/highest_completed = 0
+	var/highest_completed_uid = ""
+	var/historical_highest_completed = 0
+	var/historical_highest_completed_uid = ""
+
 	var/most_valuable_quest = 0
+	var/most_valuable_quest_uid = ""
+
 	var/total_banked = 0
 	var/highest_banked = 0
+	var/highest_banked_uid = ""
+	var/historical_highest_banked = 0
+	var/historical_highest_banked_uid = ""
 
-	var/highest_banked_ckey = ""
-	var/highest_completed_ckey = ""
-	var/most_valuable_quest_ckey = ""
 
 	var/list/used_tags = list()
 
@@ -112,7 +118,8 @@ SUBSYSTEM_DEF(economy)
 	refresh_quest_pool()
 	init_quest_consoles()
 	. = ..()
-	to_chat(world, span_boldannounce("Added [LAZYLEN(all_quests)] quests! :D"))
+	spawn(5 SECONDS)
+		to_chat(world, span_boldannounce("Added [LAZYLEN(all_quests)] quests! :D"))
 
 /datum/controller/subsystem/economy/fire(resumed = 0)
 	refresh_quest_pool()
@@ -329,30 +336,62 @@ SUBSYSTEM_DEF(economy)
 		return
 	return QL.adjust_funds(amount, payer)
 
+/datum/controller/subsystem/economy/proc/get_top_quester_quest_book()
+	var/highest_completed = 0
+	var/highest_completed_uid = ""
+	for(var/k in quest_books)
+		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
+		if(QL.finished_this_round > highest_completed)
+			highest_completed = QL.finished_this_round
+			highest_completed_uid = QL.q_uid
+	return LAZYACCESS(quest_books, highest_completed_uid)
+
+/datum/controller/subsystem/economy/proc/get_top_earner_quest_book()
+	var/highest_banked = 0
+	var/highest_banked_uid = ""
+	for(var/k in quest_books)
+		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
+		if(QL.overall_banked > highest_banked)
+			highest_banked = QL.overall_banked
+			highest_banked_uid = QL.q_uid
+	return LAZYACCESS(quest_books, highest_banked_uid)
+
+
 /datum/controller/subsystem/economy/proc/update_quest_statistics()
 	highest_banked = 0
-	highest_banked_ckey = ""
+	highest_banked_uid = ""
 	highest_completed = 0
-	highest_completed_ckey = ""
+	highest_completed_uid = ""
 	total_banked = 0
 	total_completed = 0
 	most_valuable_quest = 0
-	most_valuable_quest_ckey = ""
+	most_valuable_quest_uid = ""
+	historical_highest_completed = 0
+	historical_highest_completed_uid = ""
+	historical_highest_banked = 0
+	historical_highest_banked_uid = ""
+
 	for(var/k in quest_books)
 		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
 		total_banked += QL.overall_banked
-		total_completed += LAZYLEN(QL.finished_quests)
+		total_completed += LAZYLEN(QL.finished_this_round)
 		if(QL.overall_banked > highest_banked)
 			highest_banked = QL.overall_banked
-			highest_banked_ckey = QL.ckey
-		if(LAZYLEN(QL.finished_quests) > highest_completed)
-			highest_completed = LAZYLEN(QL.finished_quests)
-			highest_completed_ckey = QL.ckey
-		for(var/uid in QL.finished_quests)
-			var/datum/finished_quest/FQ = LAZYACCESS(QL.finished_quests, uid)
+			highest_banked_uid = QL.q_uid
+		if(LAZYLEN(QL.finished_this_round) > highest_completed)
+			highest_completed = LAZYLEN(QL.finished_this_round)
+			highest_completed_uid = QL.q_uid
+		if(LAZYLEN(QL.finished_quests) > historical_highest_completed)
+			historical_highest_completed = LAZYLEN(QL.finished_quests)
+			historical_highest_completed_uid = QL.q_uid
+		if(QL.get_historical_banked() > historical_highest_banked)
+			historical_highest_banked = QL.get_historical_banked()
+			historical_highest_banked_uid = QL.q_uid
+		for(var/uid in QL.finished_this_round)
+			var/datum/finished_quest/FQ = LAZYACCESS(QL.finished_this_round, uid)
 			if(FQ.quest_rewarded > most_valuable_quest)
 				most_valuable_quest = FQ.quest_rewarded
-				most_valuable_quest_ckey = QL.ckey
+				most_valuable_quest_uid = QL.q_uid
 				// todo: cross round persistent leaderboards
 
 /datum/controller/subsystem/economy/proc/get_quest_by_uid(uid, list/searchthis)
@@ -380,40 +419,63 @@ SUBSYSTEM_DEF(economy)
 	return LAZYACCESS(quest_things, thing.type)
 
 /datum/controller/subsystem/economy/proc/check_quest_repeat(mob/completer, datum/bounty/B)
-	if(!completer || !completer.ckey)
+	if(!completer || !completer.client)
 		return
-	var/datum/quest_book/QL = get_quest_book(completer.ckey)
+	var/datum/quest_book/QL = get_quest_book(completer)
 	if(!QL)
 		return
 	QL.have_they_done_this_quest_before(B)
 
 /datum/controller/subsystem/economy/proc/complete_quest(mob/completer, datum/bounty/B)
-	if(!completer || !completer.ckey)
+	if(!completer || !completer)
 		return
-	var/datum/quest_book/QL = get_quest_book(completer.ckey)
+	var/datum/quest_book/QL = get_quest_book(completer)
 	if(!QL)
 		return
 	QL.quest_done(B)
 
-/datum/controller/subsystem/economy/proc/get_quest_book(mob/completer)
-	if(!completer || !completer.ckey)
+/datum/controller/subsystem/economy/proc/extract_quid(something)
+	if(!something)
 		return
-	var/datum/quest_book/QL = LAZYACCESS(quest_books, completer.ckey)
+	var/datum/preferences/P = extract_prefs(something)
+	if(P)
+		return P.quester_uid
+
+/datum/controller/subsystem/economy/proc/quid2mob(q_uid)
+	for(var/client/plr in GLOB.clients)
+		if(!plr.mob)
+			continue // shouldnt ever ever happen but idk
+		var/datum/preferences/P = extract_prefs(plr)
+		if(P && P.quester_uid == q_uid)
+			return plr.mob
+
+/datum/controller/subsystem/economy/proc/get_quest_book(mob/completer)
+	if(!completer)
+		return
+	var/datum/preferences/P = extract_prefs(completer)
+	if(!P)
+		return
+	var/datum/quest_book/QL = LAZYACCESS(quest_books, P.quester_uid)
 	if(!QL)
 		QL = new(completer)
 	return QL
 
 /datum/controller/subsystem/economy/proc/open_quest_console(mob/user, atom/thing)
-	if(!user || !thing)
+	if(!user)
 		return
 	var/datum/quest_book/QL = get_quest_book(user)
 	if(!QL)
 		return
-	QL.open_console(thing, user)
+	QL.open_console(user)
 
 /datum/controller/subsystem/economy/proc/give_claimer(mob/user, atom/base)
 	if(!user)
 		return
+	var/list/all_their_stuff = get_all_in_turf(user)
+	for(var/atom/thing in all_their_stuff)
+		if(istype(thing, /obj/item/hand_item/quest_scanner))
+			to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]!"))
+			return
 	if(user.get_active_held_item() && user.get_inactive_held_item())
 		if(prob(1))
 			to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
@@ -569,7 +631,9 @@ SUBSYSTEM_DEF(economy)
 		D.adjust_money(min(civ_cash, MAX_GRANT_CIV))
 
 /datum/quest_book
-	var/ckey
+	var/q_uid
+	var/ownername = "RELPH"
+	var/ownerjob = "RELPHER"
 	var/list/finished_quests = list()
 	var/list/active_quests = list()
 	/// weakref to the last thing the player used to interact with the quest system
@@ -587,24 +651,48 @@ SUBSYSTEM_DEF(economy)
 	var/datum/quest_window/QW
 	var/printer_cooldown = 0
 	var/claim_on_kill = FALSE
+	var/virgin = TRUE
+	var/list/finished_this_round = list()
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
 	if(!quester)
 		qdel(src)
-	ckey = quester.ckey
+		return
+	var/datum/preferences/P = extract_prefs(quester)
+	if(!P)
+		qdel(src)
+		return
+	q_uid = P.quester_uid
 	QW = new(src)
-	if(!LAZYACCESS(SSeconomy.quest_books, ckey))
-		SSeconomy.quest_books[ckey] = src
+	if(!LAZYACCESS(SSeconomy.quest_books, q_uid))
+		SSeconomy.quest_books[q_uid] = src
+	update_owner_data(quester)
+	load_player_finished_quests(quester)
 
 /datum/quest_book/Destroy(force, ...)
 	if(QW)
 		QDEL_NULL(QW)
+	SSeconomy.quest_books -= q_uid
 	last_used = null
 	. = ..()
 
+/datum/quest_book/proc/update_owner_data(mob/quester)
+	if(!isliving(quester))
+		ownername = "Tad Ghostle"
+		ownerjob = "Repairman"
+		return
+	if(ckey(quester.real_name) == ckey(quester.ckey) || ckey(quester.name) == ckey(quester.ckey))
+		if(!(strings("data/super_special_ultra_instinct.json", "[ckey(quester.name)]", TRUE, TRUE) || strings("data/super_special_ultra_instinct.json", "[ckey(quester.real_name)]", TRUE, TRUE)))
+			ownername = safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+			ownerjob = "Cowshark"
+			return
+	ownername = quester.real_name
+	ownerjob = quester.job
+
 /datum/quest_book/proc/add_active_quest(datum/bounty/B, loud = TRUE)
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	update_owner_data(user)
 	if(istext(B))
 		B = SSeconomy.get_quest_by_uid(B)
 	if(!B)
@@ -626,7 +714,8 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/proc/can_take_quest(datum/bounty/B, loud = TRUE)
 	if(!B)
 		return FALSE
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	update_owner_data(user)
 	if(LAZYLEN(active_quests) >= SSeconomy.max_quests)
 		if(loud)
 			to_chat(user, span_alert("You've got plenty enough active quests as it is!"))
@@ -642,7 +731,8 @@ SUBSYSTEM_DEF(economy)
 	return TRUE
 
 /datum/quest_book/proc/remove_active_quest(datum/bounty/B, loud = TRUE, was_finished)
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	update_owner_data(user)
 	if(istext(B))
 		B = LAZYACCESS(active_quests, B)
 	if(!istype(B))
@@ -669,9 +759,10 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/proc/turn_something_in(atom/thing)
 	if(!thing)
 		return FALSE
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
+	update_owner_data(user)
 	if(!COOLDOWN_FINISHED(src, turnin_cooldown))
 		return FALSE
 	COOLDOWN_START(src, turnin_cooldown, 1 SECONDS)
@@ -697,9 +788,10 @@ SUBSYSTEM_DEF(economy)
 		B = LAZYACCESS(active_quests, B)
 	if(!B)
 		return FALSE
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return FALSE
+	update_owner_data(user)
 	if(!B.is_complete())
 		if(loud)
 			to_chat(user, span_alert("That quest still has things it needs!"))
@@ -717,7 +809,56 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/proc/quest_done(datum/bounty/B)
 	if(!B)
 		return FALSE
-	finished_quests[B.uid] = B
+	finished_quests |= new /datum/finished_quest(B)
+	finished_this_round[B.uid] = B
+	update_lifetime_total()
+
+/datum/quest_book/proc/load_player_finished_quests(mob/quester)
+	if(!quester)
+		return
+	var/datum/preferences/P = extract_prefs(quester)
+	if(!P)
+		return
+	var/quest_json = P.finished_quests
+	var/list/quests = safe_json_decode(quest_json)
+	if(!LAZYLEN(quests))
+		return
+	for(var/list/questy in quests)
+		var/datum/finished_quest/FQ = new /datum/finished_quest()
+		FQ.deserialize_from_list(questy)
+		finished_quests += FQ
+	sort_by_roundid()
+	virgin = FALSE
+
+/datum/quest_book/proc/sort_by_roundid()
+	var/list/my_finished = sortTim(finished_quests.Copy(), /proc/cmp_sort_finished_quest_by_roundid_or_time_completed)
+	finished_quests = my_finished.Copy()
+
+/proc/cmp_sort_finished_quest_by_roundid_or_time_completed(datum/finished_quest/A, datum/finished_quest/B)
+	var/result = B.quest_round_id - A.quest_round_id
+	if(result == 0)
+		result = B.quest_time_completed - A.quest_time_completed
+	return result
+
+/datum/quest_book/proc/update_lifetime_total()
+	if(virgin)
+		return // they havent loaded in yet!
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return // iether doesnt exist or isnt connected
+	update_owner_data(user)
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return
+	P.finished_quests = serialize_finished_quests_to_json()
+	P.save_character()
+
+/datum/quest_book/proc/serialize_finished_quests_to_json()
+	var/list/quests = list()
+	sort_by_roundid()
+	for(var/datum/finished_quest/FQ in finished_quests)
+		quests += list(FQ.serialize_to_list())
+	return safe_json_encode(quests)
 
 /datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
 	if(!amount)
@@ -733,7 +874,8 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/proc/have_they_done_this_quest_before(datum/bounty/B)
 	if(!B)
 		return FALSE
-	return LAZYACCESS(finished_quests, B.uid)
+	return LAZYACCESS(finished_this_round, B.uid)
+	// todo: quests that you cann only ever take once, as, like, story quests or something
 
 /datum/quest_book/proc/have_they_submitted_this_thing_before(atom/thing)
 	if(!thing || !thing.quest_tag)
@@ -743,9 +885,10 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/proc/questpool_updated()
 	if(!beep_on_update)
 		return
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
+	update_owner_data(user)
 	var/atom/thing = SSeconomy.get_plausible_quest_console(user)
 	if(!thing)
 		thing = user
@@ -758,7 +901,7 @@ SUBSYSTEM_DEF(economy)
 		out |= B.get_quest_paths()
 	return out
 
-/datum/quest_book/proc/open_console(atom/thing, mob/user)
+/datum/quest_book/proc/open_console(mob/user)
 	ui_interact(user) // @TalkingCactus: I'm not sure what this is supposed to do, but it's not doing anything right now.
 
 /datum/quest_book/ui_interact(mob/user, datum/tgui/ui)
@@ -780,51 +923,64 @@ SUBSYSTEM_DEF(economy)
 	for(var/uid2 in active_quests)
 		var/datum/bounty/B2 = LAZYACCESS(active_quests, uid2)
 		mybounties += list(B2.get_tgui(user))
-	var/list/myfinished = list()
-	for(var/uid3 in finished_quests)
-		var/datum/bounty/B3 = LAZYACCESS(finished_quests, uid3)
-		myfinished += list(B3.get_tgui(user))
+	var/list/quest_history = list()
+	for(var/datum/finished_quest/B3 in finished_quests)
+		if(B3.quest_round_id == GLOB.round_id)
+			continue
+		quest_history += list(B3.tgui_slug(user))
+	var/list/recent_finished = list()
+	for(var/uid3 in finished_this_round)
+		var/datum/bounty/B3 = LAZYACCESS(finished_this_round, uid3)
+		recent_finished += list(B3.get_tgui(user))
 	data["UserName"] = user ? user.real_name : "RELPH"
 	data["AllQuests"] = bountyinfo
 	data["MyQuests"] = mybounties
-	data["MyFinished"] = myfinished
+	data["QuestHistory"] = quest_history
+	data["MyFinished"] = recent_finished
 	data["TimeToNext"] = SSeconomy.update_when(TRUE)
 	data["BeepOnUpdate"] = beep_on_update
 	data["QuestCount"] = LAZYLEN(active_quests)
 	data["QuestMax"] = SSeconomy.max_quests
+	
 	data["QuestsCompleted"] = LAZYLEN(finished_quests)
+	data["QuestHistoryCount"] = LAZYLEN(quest_history)
+	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
 	data["GlobalQuestsCompleted"] = SSeconomy.total_completed
 	data["GlobalHighestCompleted"] = SSeconomy.highest_completed
+
 	data["BankedPoints"] = unclaimed_points
-	data["HighestBankedPoints"] = overall_banked
+	data["HistoricalBankedPoints"] = get_historical_banked()
+	data["GlobalHistoricalBanked"] = SSeconomy.historical_highest_banked
+	data["OverallBankedPoints"] = overall_banked
 	data["GlobalHighestBanked"] = SSeconomy.highest_banked
 	data["GlobalTotalEarned"] = SSeconomy.total_banked
+
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	data["CurrencyName"] = SSeconomy.currency_name
 	data["CurrencyNamePlural"] = SSeconomy.currency_name_plural
+	data["ReadmeText"] = QUEST_BOOK_README
 	var/list/toots = list()
-	toots["TTyourquests"] = "You have completed [LAZYLEN(finished_quests)] quests this round"
-	if(LAZYLEN(finished_quests) >= SSeconomy.highest_completed)
-		toots["TTyourquests"] += ", making you the top quester this round! Nice job =3"
-	else
-		toots["TTyourquests"] += "."
-	toots["TTtopquests"] = "The top quester this round has completed [SSeconomy.highest_completed] quests"
-	if(LAZYLEN(finished_quests) >= SSeconomy.highest_completed)
-		toots["TTtopquests"] += ", and that top quester is you! Keep it up =3"
-	else
-		toots["TTtopquests"] += "."
-	toots["TTglobalquests"] = "In total, [SSeconomy.total_completed] quests have been completed this round."
-	toots["TTyourbanked"] = "You have earned [round(overall_banked / 10)] [SSeconomy.currency_name_plural] this round"
-	if(overall_banked >= SSeconomy.highest_banked)
-		toots["TTyourbanked"] += ", making you the top earner this round! Nice job =3"
-	else
-		toots["TTyourbanked"] += "."
-	toots["TTtopbanked"] = "The top earner this round has earned [round(SSeconomy.highest_banked / 10)] [SSeconomy.currency_name_plural]"
-	if(overall_banked >= SSeconomy.highest_banked)
-		toots["TTtopbanked"] += ", and that top earner is you! Keep it up =3"
-	else
-		toots["TTtopbanked"] += "."
-	toots["TTglobalbanked"] = "In total, [SSeconomy.total_banked] [SSeconomy.currency_name_plural] have been earned this round."
+	var/am_top_quester = (LAZYLEN(finished_this_round) >= SSeconomy.highest_completed)
+	var/am_top_earner = (overall_banked >= SSeconomy.highest_banked)
+	var/am_top_quester_historical = (LAZYLEN(finished_quests) >= SSeconomy.historical_highest_completed)
+	var/am_top_earner_historical = (get_historical_banked() >= SSeconomy.historical_highest_banked)
+	toots["AmTopQuester"] = am_top_quester
+	toots["AmTopEarner"] = am_top_earner
+	toots["AmTopQuesterHistorical"] = am_top_quester_historical
+	toots["AmTopEarnerHistorical"] = am_top_earner_historical
+
+	toots["TTyourquests"] = "You have completed [LAZYLEN(finished_quests)] quests this period[am_top_quester ? ", making you the top quester this period! Nice job =3" : "."]"
+	toots["TTtopquests"] = "The top quester this period has completed [SSeconomy.highest_completed] quests[am_top_quester ? ", and that top quester is you! Keep it up =3" : "."]"
+	toots["TThistoricalquests"] = "Since the beginning of time, you have completed [LAZYLEN(finished_quests)] quests[am_top_quester_historical ? ", making you the top quester of all time (at least compared to everyone present)! Nice job =3" : "."]"
+	toots["TTtophistoricalquests"] = "The top quester of all time has completed [SSeconomy.historical_highest_completed] quests[am_top_quester_historical ? ", and that top quester is you! Keep it up =3" : "."]"
+	toots["TTglobalquests"] = "In total, [SSeconomy.total_completed] quests have been completed this period."
+
+	toots["TTyourbanked"] = "You have earned [round(overall_banked / 10)] [SSeconomy.currency_name_plural] this period[am_top_earner ? ", making you the top earner this period! Nice job =3" : "."]"
+	toots["TTtopbanked"] = "The top earner this period has earned [round(SSeconomy.highest_banked / 10)] [SSeconomy.currency_name_plural][am_top_earner ? ", and that top earner is you! Keep it up =3" : "."]"
+	toots["TThistoricalbanked"] = "Since the beginning of time, you have earned [get_historical_banked() / 10] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", making you the top earner of all time (at least compared to everyone present)! Nice job =3" : "."]"
+	toots["TTtophistoricalbanked"] = "The top earner of all time has earned [SSeconomy.historical_highest_banked / 10] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", and that top earner is you! Keep it up =3" : "."]"
+	toots["TTglobalbanked"] = "In total, [SSeconomy.total_banked] [SSeconomy.currency_name_plural] have been earned this period."
+
 	data["Toots"] = toots
 	return data
 
@@ -881,47 +1037,57 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, "terminal_type", 50, TRUE)
 
 /datum/quest_book/proc/give_scanner()
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
+	update_owner_data(user)
 	SSeconomy.give_claimer(user)
 
 /datum/quest_book/proc/show_quest(datum/bounty/B)
 	if(!B)
 		return
-	var/mob/user = ckey2mob(ckey)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
+	update_owner_data(user)
 	var/its_mine = LAZYACCESS(active_quests, B.uid) && !B.is_templarte
 	QW.show_quest_window(user, B, its_mine)
 
 /datum/quest_book/proc/dispense_reward()
-	var/mob/doer = ckey2mob(ckey)
-	if(!doer)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
 		return FALSE
+	update_owner_data(user)
 	if(unclaimed_points < 1)
-		playsound(doer, 'sound/machines/dash.ogg', 75, TRUE)
-		to_chat(doer, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
 		return FALSE
 	var/payment = unclaimed_points
 	unclaimed_points = 0
-	var/obj/item/card/quest_reward/QR = new(get_turf(doer))
+	var/obj/item/card/quest_reward/QR = new(get_turf(user))
 	QR.assign_value(payment, 1.15, "#[random_color()]")
-	if(doer)
-		doer.put_in_hands(QR)
-	playsound(doer, 'sound/machines/printer_press.ogg', 40, TRUE)
+	if(user)
+		user.put_in_hands(QR)
+	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
 	return TRUE
 
+/datum/quest_book/proc/get_historical_banked()
+	var/total = 0
+	for(var/datum/finished_quest/FQ in finished_quests)
+		total += FQ.quest_rewarded
+	return round(total)
+
 /datum/quest_book/proc/print_quest(datum/bounty/B)
-	var/mob/doer = ckey2mob(ckey)
-	if(!doer)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
 		return FALSE
-	playsound(doer, 'sound/machines/dash.ogg', 75, TRUE)
-	to_chat(doer, span_alert("Could not establish connection to FoxEye Wireless Printer. Contact your Guild webmaster for assistance."))
+	update_owner_data(user)
+	playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+	to_chat(user, span_alert("Could not establish connection to FoxEye Wireless Printer. Contact your Guild webmaster for assistance."))
 	// if(printer_cooldown > world.time)
-	// 	to_chat(doer, span_alert("The printer is still refilling its inkwell."))
+	// 	to_chat(user, span_alert("The printer is still refilling its inkwell."))
 	// 	return FALSE
-	// B.print_quest(doer)
+	// B.print_quest(user)
 	// printer_cooldown = world.time + 5 SECONDS
 
 /////////////////////////////////////////////////////////////////////
@@ -1016,20 +1182,109 @@ SUBSYSTEM_DEF(economy)
 /// A record of a quest that has been completed
 /// Cus I haaaaate huge lists
 /datum/finished_quest
-	var/quest_uid
+	var/quester_name
 	var/quest_type
+	var/quest_name
+	var/quest_description
 	var/quest_time_completed
+	var/quest_round_id
 	var/quest_difficulty
 	var/quest_rewarded
-	var/datum/bounty/my_bounty
+	var/list/objectives = list()
 
-/datum/finished_quest/New(datum/bounty/B)
-	quest_uid = B.uid
+/datum/finished_quest/New(datum/bounty/B, mob/finisher)
+	quester_name = finisher ? finisher.real_name : "RELPH"
 	quest_type = B.type
+	quest_name = B.name
+	quest_description = B.description
 	quest_time_completed = world.time
+	quest_round_id = GLOB.round_id
 	quest_difficulty = B.difficulty
 	quest_rewarded = B.get_reward()
-	my_bounty = B
+	listify_objectives(B)
+
+/datum/finished_quest/proc/listify_objectives(datum/bounty/B)
+	for(var/datum/bounty_quota/BQ in B.wanted_things)
+		objectives += list(BQ.listify())
+	
+/datum/finished_quest/proc/serialize_to_list()
+	var/list/output = list()
+	output[QF_QUESTER_NAME]           = quester_name
+	output[QF_QUEST_TYPE]             = quest_type
+	output[QF_QUEST_NAME]             = quest_name
+	output[QF_QUEST_DESCRIPTION]      = quest_description
+	output[QF_QUEST_TIME_COMPLETED]   = quest_time_completed
+	output[QF_QUEST_ROUND_ID]         = quest_round_id
+	output[QF_QUEST_DIFFICULTY]       = quest_difficulty
+	output[QF_QUEST_REWARDED]         = quest_rewarded
+	output[QF_OBJECTIVES]             = objectives
+	return output
+
+/datum/finished_quest/proc/serialize_to_json()
+	var/list/output = serialize_to_list()
+	var/jason = safe_json_encode(output)
+	return jason
+
+/datum/finished_quest/proc/deserialize_from_json(jason)
+	var/output = safe_json_decode(jason)
+	deserialize_from_list(output)
+	return TRUE
+
+/datum/finished_quest/proc/deserialize_from_list(list/listin)
+	quester_name          = listin[QF_QUESTER_NAME]
+	quest_type            = listin[QF_QUEST_TYPE]
+	quest_name            = listin[QF_QUEST_NAME]
+	quest_description     = listin[QF_QUEST_DESCRIPTION]
+	quest_time_completed  = listin[QF_QUEST_TIME_COMPLETED]
+	quest_round_id        = listin[QF_QUEST_ROUND_ID]
+	quest_difficulty      = listin[QF_QUEST_DIFFICULTY]
+	quest_rewarded        = listin[QF_QUEST_REWARDED]
+	objectives            = listin[QF_OBJECTIVES]
+	return TRUE
+
+/datum/finished_quest/proc/tgui_slug()
+	var/list/output = list()
+	output["FinQuester"]           = quester_name
+	output["FinQuestName"]         = quest_name
+	// output["FinQuestDescription"]  = quest_description
+	output["FinQuestTime"]         = quest_time_completed
+	output["FinQuestRound"]        = quest_round_id
+	output["FinQuestDifficulty"]   = quest_difficulty
+	output["FinQuestReward"]       = quest_rewarded
+	output["FinQuestObjectives"]   = list(objectives)
+
+/// output quest report for the end of round window
+/datum/quest_report
+	var/top_quester_name = "Tad Ghostle"
+	var/top_quester_job = "Repairman"
+	var/top_quester_total = 0
+
+	var/top_earner_name = "RELPH"
+	var/top_earner_job = "RELPH"
+	var/top_earner_total = 0
+
+	var/total_quests = 0
+	var/total_earned = 0
+
+	var/currency_unit = ":("
+
+/datum/quest_report/New()
+	. = ..()
+	SSeconomy.update_quest_statistics()
+	var/datum/quest_book/top_q = SSeconomy.get_top_quester_quest_book()
+	var/datum/quest_book/top_e = SSeconomy.get_top_earner_quest_book()
+	if(top_q)
+		top_quester_name = top_q.ownername
+		top_quester_job = top_q.ownerjob
+		top_quester_total = LAZYLEN(top_q.finished_this_round)
+	if(top_e)
+		top_earner_name = top_e.ownername
+		top_earner_job = top_e.ownerjob
+		top_earner_total = top_e.overall_banked
+	total_quests = SSeconomy.total_completed
+	total_earned = SSeconomy.total_banked
+	currency_unit = SSeconomy.currency_unit
+
 
 /////////////////////////////////////////////////
 /// QUEST REWARD CARD //////////////////////////
@@ -1047,16 +1302,18 @@ SUBSYSTEM_DEF(economy)
 	saleprice = round(price)
 	punchbonus = round((price * mult) - price)
 	add_atom_colour(coler, FIXED_COLOUR_PRIORITY)
-	name = "Guild Quest voucher - [saleprice / 10] [SSeconomy.currency_unit]"
+	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [saleprice / 10] [SSeconomy.currency_unit], but you'll get a [punchbonus / 10] [SSeconomy.currency_unit] reward if you get it punched!"
+		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit], but you'll get a [punchbonus / 10] [SSeconomy.currency_unit] reward if you get it punched! \
+		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 
 /obj/item/card/quest_reward/punch()
 	if(!..())
 		return
-	name = "Guild Quest voucher - [saleprice / 10] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
+	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [saleprice / 10] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward."
+		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
+		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 	return TRUE
 
 //////////////////////////////////////////////////////
@@ -1070,10 +1327,15 @@ SUBSYSTEM_DEF(economy)
 	item_state = "radio"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	item_flags = NOBLUDGEON | DROPDEL | ABSTRACT | HAND_ITEM
-	w_class = WEIGHT_CLASS_NO_INVENTORY
+	item_flags = NOBLUDGEON | PERSONAL_ITEM
+	w_class = WEIGHT_CLASS_TINY
+	slot_flags = INV_SLOTBIT_ANYWHERE
 	var/ping_cooldown = 0
 	var/being_used = FALSE
+
+/obj/item/hand_item/quest_scanner/Initialize(mapload)
+	. = ..()
+	REMOVE_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
 
 /obj/item/hand_item/quest_scanner/examine(mob/user)
 	. = ..()
@@ -1093,9 +1355,9 @@ SUBSYSTEM_DEF(economy)
 	if(being_used)
 		to_chat(user, span_alert("Your [src] is still doing something!"))
 		return
-	being_used = TRUE
+	// being_used = TRUE
 	SSeconomy.attempt_turnin(O, user)
-	being_used = FALSE
+	// being_used = FALSE
 
 /obj/item/hand_item/quest_scanner/attack_self(mob/user)
 	. = ..()
@@ -1107,13 +1369,13 @@ SUBSYSTEM_DEF(economy)
 	if(!COOLDOWN_FINISHED(src, ping_cooldown))
 		to_chat(user, span_alert("Your [src] is still processing all that data!"))
 		return
-	COOLDOWN_START(src, ping_cooldown, 3 SECONDS)
+	COOLDOWN_START(src, ping_cooldown, 1 SECONDS)
 	var/datum/quest_book/QL = SSeconomy.get_quest_book(user)
 	if(!QL)
 		return
 	var/found_something = FALSE
 	var/list/cacheotypes = QL.get_quest_paths()
-	for(var/turf/T in view(3, user))
+	for(var/turf/T in view(7, user))
 		for(var/atom/movable/thing in T)
 			if(!is_type_in_typecache(thing, cacheotypes))
 				continue
@@ -1121,10 +1383,10 @@ SUBSYSTEM_DEF(economy)
 			new /obj/effect/temp_visual/glowy_outline(get_turf(thing), thing)
 			break
 	if(found_something)
-		playsound(user, 'sound/machines/terminal_select.ogg', 65, TRUE)
+		playsound(user, 'sound/machines/twobeep.ogg', 65, TRUE)
 		to_chat(user, span_notice("The Scanner beeps and lights up! It's found something!"))
 	else
-		playsound(user, 'sound/machines/terminal_prompt_confirm.ogg', 65, TRUE)
+		playsound(user, 'sound/machines/terminal_error.ogg', 65, TRUE)
 		to_chat(user, span_notice("The Scanner couldn't find anything!"))
 
 /obj/effect/temp_visual/glowy_outline

@@ -250,6 +250,18 @@
 	using.hud = src
 	hotkeybuttons += using
 
+	using = new /atom/movable/screen/questbook()
+	// using.icon = ui_style
+	using.screen_loc = ui_questbook
+	using.hud = src
+	hotkeybuttons += using
+
+	using = new /atom/movable/screen/scannerpls()
+	// using.icon = ui_style
+	using.screen_loc = ui_questscanner
+	using.hud = src
+	hotkeybuttons += using
+
 	using = new /atom/movable/screen/rest()
 	using.icon = ui_style
 	using.screen_loc = ui_pull_resist

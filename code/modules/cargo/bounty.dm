@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/respect_extinction = TRUE
 
 	var/uid = "Bingus"
-	var/assigned_ckey
+	var/assigned_q_uid
 
 	var/is_templarte = FALSE
 
@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 /datum/bounty/proc/assign_to(mob/assi)
 	if(!assi)
 		return
-	assigned_ckey = assi.ckey
+	assigned_q_uid = SSeconomy.extract_quid(assi) // this is
 
 /datum/bounty/proc/Flavorize()
 	// SSeconomy.flavor_quest(src)
@@ -254,7 +254,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty/proc/payout(mob/claimant)
 	if(!claimant)
-		claimant = ckey2mob(assigned_ckey)
+		claimant = SSeconomy.quid2mob(assigned_q_uid)
 		if(!claimant)
 			return FALSE
 	if(paid_out)
@@ -604,6 +604,18 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty_quota/proc/recalculate_difficulty(difficulty)
 	return // todo: your mom
+
+/// converts all the useful info into a list for saving
+/datum/bounty_quota/proc/listify()
+	var/list/serial = list()
+	serial[QFBQ_NAME] = name
+	// serial[QFBQ_FLAVOR] = flavor
+	// serial[QFBQ_INFO] = info
+	serial[QFBQ_NEEDED_AMOUNT] = needed_amount
+	serial[QFBQ_GOTTEN_AMOUNT] = gotten_amount
+	serial[QFBQ_DIFFICULTY] = difficulty
+	serial[QFBQ_PRICE_PER_THING] = price_per_thing
+	return serial
 
 /datum/bounty_quota/proc/get_paths()
 	var/list/outer = list()

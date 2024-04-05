@@ -934,6 +934,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
 
+	/// Test if they have a saved quid, if not, generate one.
+	var/saved_quid
+	S["quester_uid"] >> saved_quid
+	if(!istext(saved_quid)) // no saved quid, generate one
+		saved_quid = generate_quester_id()
+		if(!istext(saved_quid)) // failed to generate a quid, just use a default
+			message_admins("Failed to generate a quester id for [parent.ckey]!!!")
+		WRITE_FILE(S["quester_uid"], saved_quid)
+	S["quester_uid"] >> quester_uid
+	S["finished_quests"] >> finished_quests
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
@@ -941,6 +951,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 	faved_interactions		= sanitize_islist(faved_interactions, list())
+	finished_quests		= sanitize_islist(finished_quests, list())
 
 	//Sanitize
 

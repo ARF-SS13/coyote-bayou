@@ -98,3 +98,95 @@ High Tier - 15cp/1.5sp (spiders, renegades, boss raiders, protectrons etc )
 Rare - 20cp/2sp (basic deathclaws, hellpigs, securitrons)
 Unique - 50cp/5sp (mango mat, the other fruit guys, etc)
 */
+
+/// Finished quest JSON toqens, for serializzation purposes
+
+#define QF_QUESTER_NAME         "qf_quester_name"
+#define QF_QUEST_TYPE           "qf_quest_type"
+#define QF_QUEST_NAME           "qf_quest_name"
+#define QF_QUEST_DESCRIPTION    "qf_quest_description"
+#define QF_QUEST_TIME_COMPLETED "qf_quest_time_completed"
+#define QF_QUEST_ROUND_ID       "qf_quest_round_id"
+#define QF_QUEST_DIFFICULTY     "qf_quest_difficulty"
+#define QF_QUEST_REWARDED       "qf_quest_rewarded"
+#define QF_OBJECTIVES           "qf_objectives"
+
+#define QFBQ_NAME            "qfbq_name"
+#define QFBQ_FLAVOR          "qfbq_flavor"
+#define QFBQ_INFO            "qfbq_info"
+#define QFBQ_NEEDED_AMOUNT   "qfbq_needed_amount"
+#define QFBQ_GOTTEN_AMOUNT   "qfbq_gotten_amount"
+#define QFBQ_DIFFICULTY      "qfbq_difficulty"
+#define QFBQ_PRICE_PER_THING "qfbq_price_per_thing"
+
+#define QUEST_BOOK_README "\
+	C:/README.txt<br /> \
+	=================<br /> \
+	Welcome to the Adventurer's Guild Quest Console, helping connect our \
+	shattered world through the power of quests! Now partnered with \
+	Gekkertec, we are now able to offer a wider variety of quests on a \
+	wider variety of platforms running FoxEye 1.0 or higher.<br /> \
+	<br /> \
+	This console is your one-stop shop for all things quest-related. You can \
+	take on quests, complete them, and earn rewards for your efforts. You can \
+	also see how you stack up against your fellow adventurers and earn the \
+	title of Top Earner or Top Quester!<br /> \
+	<br /> \
+	At the top of the console, you'll see your username. Please verify that \
+	this is in fact you, and if it's not, please contact your local system \
+	administrator. To the right, you'll see the unclaimed balance for your \
+	work. If this number is greater than 0, you can tap the button to print \
+	out a voucher for your earnings, good for use at any participating \
+	Adventurer's Guild location. For a list of participating locations, \
+	please consult the Adventurer's Guild website.<br /> \
+	<br /> \
+	Below your username, you'll see your region's Quest Statistics. The \
+	left-hand side of the panel lists information relating to the quests \
+	completed in this Adventure Cycle. The top number is the number of quests \
+	you've completed, the number in the middle is the highest number of \
+	quests completed by any adventurer in this cycle, and the bottom number \
+	is the total number of quests completed by all adventurers in this cycle.<br /> \
+	<br /> \
+	The right-hand side of the panel lists information relating to the \
+	rewards earned in this Adventure Cycle. The top number is the total \
+	amount of your region's currency you've earned this cycle, the middle \
+	number is the highest amount of currency earned by any adventurer in this \
+	cycle, and the bottom number is the total amount of currency earned by \
+	all adventurers in this cycle.<br /> \
+	<br /> \
+	Below the Quest Statistics panel, you'll see the Quest Console. This \
+	panel is divided into three tabs: Active Quests, Available Quests, and \
+	Finished Quests. The Active Quests tab lists all the quests you have \
+	currently accepted. The Available Quests tab lists all the quests \
+	available to your region. The Finished Quests tab lists all the quests \
+	you have completed in this cycle.<br /> \
+	<br /> \
+	Each quest card in the Active Quests and Available Quests tabs lists, \
+	from left to right, the quest's difficulty, name, and reward. The quest's \
+	difficulty is a rough indicator of the recommended dedication for this \
+	quest, as opposed to the actual skill required to do it, and often \
+	comes with a higher reward for higher difficulties. To see more information, \
+	and to accept or complete the quest, simply tap the card. If you are \
+	unable to accept a quest, it will be greyed out.<br /> \
+	<br /> \
+	At the bottom of the console, you'll see a timer counting down to the \
+	next batch of available quests. If you'd like to be alerted when the \
+	quests refresh, you can tap the speaker icon to toggle the alert on or \
+	off. To the right, you'll see a button to retrieve a Quest Scanner.<br /> \
+	<br /> \
+	The Quest Scanner is your key to interacting with your quests. To use \
+	it, simply use the scanner on the item, creature, or device you want \
+	to submit, and if it corresponds to a quest objective, it will attempt \
+	to turn it in. The Quest Scanner also comes with an active Quest \
+	Detector, which if you use it in hand, will highlight all quest \
+	relevant objects within a 7 meter radius.<br /> \
+	<br /> \
+	If you have any questions, comments, or concerns, please contact your \
+	local system administrator. Thank you for using the Adventurer's Guild \
+	Quest Console, making whats left of the world a better place, one quest \
+	at a time.<br /> \
+	<br /> \
+	- The Adventurer's Guild \
+	<br /> \
+	=================<br /> \
+	END OF FILE<br />"

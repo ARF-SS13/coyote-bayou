@@ -24,9 +24,9 @@
 	if(!thecard.punch(user))
 		to_chat(user, span_alert("That's already been punched! You're free to toss that thing onto the train."))
 		return
-	var/payout = (CREDITS_TO_COINS(thecard.punchbonus))
+	var/payout = round(CREDITS_TO_COINS(thecard.punchbonus))
 	if(payout)
-		new /obj/item/stack/f13Cash(get_turf(src), payout)
+		new /obj/item/stack/f13Cash/caps(get_turf(src), payout)
 	else
 		new /obj/item/stack/f13Cash/random/bankerticket(get_turf(src))
 	playsound(get_turf(src), 'sound/machines/card_punch.ogg', 50, 1)

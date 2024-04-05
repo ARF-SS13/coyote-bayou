@@ -46,7 +46,7 @@
 	name = "Urban Exploration"
 	description = "They say you can tell a lot about a person by what they throw away. I say you can tell a lot about a person by what they leave lying around. I need you to bring me some trash. The more the better."
 	flavor_focus = /obj/item
-	weight = 10
+	weight = 1
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/random_items,

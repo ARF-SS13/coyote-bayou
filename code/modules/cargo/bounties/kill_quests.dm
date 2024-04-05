@@ -86,9 +86,10 @@
 
 ///// RAT QUOTAS /////
 /datum/bounty_quota/rat
-	name = "Kill some Rats"
+	name = "Kill some Cute little mice"
 	paths = list(
 		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/mouse,
 	)
 	needed_amount = 20
 	paths_get_subtypes = TRUE
@@ -174,8 +175,8 @@
 /////////////////////////////////////////////
 // Molerats
 /datum/bounty/kill/molerats
-	name = "Slay some Molerats"
-	description = "Molerats are everywhere! I'll pay you to kill some of them."
+	name = "Slay some GIANT RATS!"
+	description = "GIANT RATS are everywhere! I'll pay you to kill some of them."
 	flavor_focus = /mob/living/simple_animal/hostile/molerat
 	weight = 1
 	init_wanteds = list(
@@ -188,29 +189,29 @@
 
 ///// MOLERAT QUOTAS /////
 /datum/bounty_quota/molerat
-	name = "Kill some Molerats"
+	name = "Kill some GIANT RATS"
 	paths = list(
 		/mob/living/simple_animal/hostile/molerat,
 	)
-	needed_amount = 25
+	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(1)
+	price_per_thing = COINS_TO_CREDITS(3)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
 	CBT_multiplier = 4
 
 /datum/bounty_quota/molerat/easy
-	needed_amount = 25
+	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_EASY
 
 /datum/bounty_quota/molerat/medium
-	needed_amount = 35
+	needed_amount = 25
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/molerat/hard
-	needed_amount = 50
+	needed_amount = 30
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/molerat/CBT
@@ -242,7 +243,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(4)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -292,25 +293,25 @@
 	paths = list(
 		/mob/living/simple_animal/hostile/radroach,
 	)
-	needed_amount = 40
+	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(1)
+	price_per_thing = COINS_TO_CREDITS(2)
 	easy_multiplier = 1
-	medium_multiplier = 1.5
-	hard_multiplier = 2
-	CBT_multiplier = 2.5
+	medium_multiplier = 2
+	hard_multiplier = 3
+	CBT_multiplier = 5
 
 /datum/bounty_quota/roachypillbug/easy
-	needed_amount = 20
+	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_EASY
 
 /datum/bounty_quota/roachypillbug/medium
-	needed_amount = 40
+	needed_amount = 25
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/roachypillbug/hard
-	needed_amount = 60
+	needed_amount = 40
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/roachypillbug/CBT
@@ -342,7 +343,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(3)
+	price_per_thing = COINS_TO_CREDITS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -355,17 +356,14 @@
 /datum/bounty_quota/ghoul/medium
 	needed_amount = 10
 	difficulty = QUEST_DIFFICULTY_MED
-	paths_includes_root = FALSE // just the big ghouls
 
 /datum/bounty_quota/ghoul/hard
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
-	paths_includes_root = FALSE // just the big ghouls
 
 /datum/bounty_quota/ghoul/CBT
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
-	paths_includes_root = FALSE // just the big ghouls
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -393,7 +391,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(4)
+	price_per_thing = COINS_TO_CREDITS(6)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -441,7 +439,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(8)
+	price_per_thing = COINS_TO_CREDITS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -488,7 +486,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(1)
+	price_per_thing = COINS_TO_CREDITS(4)
 	easy_multiplier = 1
 	medium_multiplier = 1
 	hard_multiplier = 2
@@ -535,7 +533,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(15)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -629,7 +627,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(8)
+	price_per_thing = COINS_TO_CREDITS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -676,7 +674,7 @@
 	needed_amount = 2
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(15)
+	price_per_thing = COINS_TO_CREDITS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -721,7 +719,7 @@
 	needed_amount = 20
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(20)
+	price_per_thing = COINS_TO_CREDITS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -759,22 +757,22 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5)
+	price_per_thing = COINS_TO_CREDITS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
 	CBT_multiplier = 4
 
 /datum/bounty_quota/civilianrobot/easy
-	needed_amount = 10
+	needed_amount = 5
 	difficulty = QUEST_DIFFICULTY_EASY
 
 /datum/bounty_quota/civilianrobot/medium
-	needed_amount = 20
+	needed_amount = 10
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/civilianrobot/hard
-	needed_amount = 30
+	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/civilianrobot/CBT
@@ -810,7 +808,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(10)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -839,7 +837,7 @@
 	name = "KILL CUTE LIZARDS"
 	description = "CUTE LIZARDS MUST DIE"
 	flavor_focus = /mob/living/simple_animal/hostile/lizard
-	weight = 0.05
+	weight = 0.1
 	init_wanteds = list(
 		/datum/bounty_quota/cutelizard,
 	)
@@ -894,11 +892,11 @@
 	difficulty = QUEST_DIFFICULTY_EASY
 
 /datum/bounty_quota/crab/medium
-	needed_amount = 20
+	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/crab/hard
-	needed_amount = 30
+	needed_amount = 25
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/crab/CBT
@@ -931,7 +929,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5)
+	price_per_thing = COINS_TO_CREDITS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3

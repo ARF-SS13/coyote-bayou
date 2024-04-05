@@ -20,6 +20,7 @@ import {
   formatTime,
 } from '../format';
 import { Window } from '../layouts';
+import { multiline } from '../../common/string';
 
 /*
   SO HERES HOWS THIS GONNA GO DOWN
@@ -56,7 +57,7 @@ import { Window } from '../layouts';
     QuestMax
     QuestsCompleted
     BankedPoints
-    HighestBankedPoints
+    OverallBankedPoints
     GlobalQuestsCompleted
     GlobalHighestCompleted
     GlobalHighestBanked
@@ -160,32 +161,91 @@ export const CargoBountyConsole = (props, context) => {
   );
 }
 
+/// a leaderboard entry!
+/// has a name, a value, and a tooltip, and if the number should be gold
+const LeaderTip = (props) => {
+  const {
+    TName,
+    Tip,
+    Gold,
+    Value,
+  } = props;
+
+  return (
+    <Button
+      m={-1}
+      p={-1}
+      width="75%"
+      color="#f0f8ff"
+      tooltip={Tip}>
+      <Stack fill>
+        <Stack.Item grow={1}>
+          <Box
+            inline
+            fontSize="10px">
+              <Icon
+                name="star"
+                size={0.85}
+                color={Gold ? "gold" : "label"} />
+            {TName}
+          </Box>
+        </Stack.Item>
+        <Stack.Item shrink={1}>
+          <Box
+            inline
+            fontSize="12px"
+            color={Gold ? "gold" : "label"}
+            fontWeight="bold">
+            <AnimatedNumber
+              initial={0}
+              value={Value}
+              color={Gold ? "gold" : "label"}
+            />
+          </Box>
+        </Stack.Item>
+      </Stack>
+    </Button>
+  );
+}
+
 /// Common top toolbar for both panels
 const TopToolbar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     UserName,
-    BankedPoints,
-    GlobalHighestCompleted,
-    GlobalHighestBanked,
-    GlobalQuestsCompleted,
-    QuestsCompleted,
-    HighestBankedPoints,
-    GlobalTotalEarned,
     CurrencyUnit,
+    QuestsCompleted,
+    QuestHistoryCount,
+    GlobalHistoricalQuestsCompleted,
+    GlobalQuestsCompleted,
+    GlobalHighestCompleted,
+    BankedPoints,
+    HistoricalBankedPoints,
+    GlobalHistoricalBanked,
+    OverallBankedPoints,
+    GlobalHighestBanked,
+    GlobalTotalEarned,
     Toots,
   } = data; // needs more gravy
 
-  const TopEarnerColor = HighestBankedPoints >= GlobalHighestBanked ? "gold" : "label";
-  const TopQuesterColor = QuestsCompleted >= GlobalHighestCompleted ? "gold" : "label";
+/*
+  Toots.AmTopQuester
+  Toots.AmTopEarner
+  Toots.AmTopQuesterHistorical
+  Toots.AmTopEarnerHistorical
+*/
 
   const YourQuestsTooltip = Toots.TTyourquests;
   const TopQuestsTooltip = Toots.TTtopquests;
-  const TotalQuestsTooltip = Toots.TTglobalquests;
+  const YourHistoricalQuestsTooltip = Toots.TThistoricalquests;
+  const TopHistoricalQuestsTooltip = Toots.TTtophistoricalquests
+  const GlobalQuestsTooltip = Toots.TTglobalquests
 
-  const YourCashTooltip = Toots.TTyourbanked;
-  const TopCashTooltip = Toots.TTtopbanked;
-  const TotalCashTooltip = Toots.TTglobalbanked;
+  const YourBankedTooltip = Toots.TTyourbanked
+  const TopBankedTooltip = Toots.TTtopbanked
+  const YourHistoricalBankedTooltip = Toots.TThistoricalbanked
+  const TopHistoricalBankedTooltip = Toots.TTtophistoricalbanked
+  const GlobalBankedTooltip = Toots.TTglobalbanked
 
   const LeaderboardLavelFontSize = "10px";
   const LeaderboardValueFontSize = "12px";
@@ -201,167 +261,64 @@ const TopToolbar = (props, context) => {
         <Stack.Item basis="50%"> {/* Quest Completions */}
           <Stack fill vertical>
             <Stack.Item>
-              <Tooltip tooltip={YourQuestsTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Completed Quests
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color={TopQuesterColor}
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={QuestsCompleted}
-                        color={TopQuesterColor}
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Completed Quests (Recent)"
+                Tip={YourQuestsTooltip}
+                Gold={Toots.AmTopQuester}
+                Value={QuestsCompleted} />
             </Stack.Item>
             <Stack.Item>
-              <Tooltip tooltip={TopQuestsTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Top Quester
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color={TopQuesterColor}
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={GlobalHighestCompleted}
-                        color={TopQuesterColor}
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Completed Quests (All Time)"
+                Tip={YourHistoricalQuestsTooltip}
+                Gold={false}
+                Value={QuestHistoryCount} />
             </Stack.Item>
             <Stack.Item>
-              <Tooltip tooltip={TotalQuestsTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Total Quested
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color="label"
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={GlobalQuestsCompleted}
-                        color="label"
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Top Quester (Recent)"
+                Tip={TopQuestsTooltip}
+                Gold={Toots.AmTopQuester}
+                Value={GlobalHighestCompleted} />
+            </Stack.Item>
+            <Stack.Item>
+              <LeaderTip
+                TName="Global Completed Quests"
+                Tip={GlobalQuestsTooltip}
+                Gold={false}
+                Value={GlobalQuestsCompleted} />
             </Stack.Item>
           </Stack>
         </Stack.Item>
         <Stack.Item basis="50%"> {/* Cash Earned */}
           <Stack fill vertical>
             <Stack.Item>
-              <Tooltip tooltip={YourCashTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Cash Earned
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color={TopEarnerColor}
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={HighestBankedPoints / 10}
-                        format={value => formatMoney(value) + "" + CurrencyUnit}
-                        color={TopEarnerColor}
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Earnings (Recent)"
+                Tip={YourBankedTooltip}
+                Gold={Toots.AmTopEarner}
+                Value={`${CurrencyUnit} ${formatMoney(BankedPoints / 10)}`} />
             </Stack.Item>
             <Stack.Item>
-              <Tooltip tooltip={TopCashTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Top Earner
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color={TopEarnerColor}
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={GlobalHighestBanked / 10}
-                        format={value => formatMoney(value) + "" + CurrencyUnit}
-                        color={TopEarnerColor}
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Earnings (All Time)"
+                Tip={YourHistoricalBankedTooltip}
+                Gold={false}
+                Value={`${CurrencyUnit} ${formatMoney(HistoricalBankedPoints / 10)}`} />
             </Stack.Item>
             <Stack.Item>
-              <Tooltip tooltip={TotalCashTooltip}>
-                <Stack fill>
-                  <Stack.Item grow={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardLavelFontSize}>
-                      Total Earned
-                    </Box>
-                  </Stack.Item>
-                  <Stack.Item shrink={1}>
-                    <Box
-                      inline
-                      fontSize={LeaderboardValueFontSize}
-                      color="label"
-                      fontWeight="bold">
-                      <AnimatedNumber
-                        initial={0}
-                        value={GlobalHighestBanked / 10}
-                        format={value => formatMoney(value) + "" + CurrencyUnit}
-                        color="label"
-                      />
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Tooltip>
+              <LeaderTip
+                TName="Top Earner (Recent)"
+                Tip={TopBankedTooltip}
+                Gold={Toots.AmTopEarner}
+                Value={`${CurrencyUnit} ${formatMoney(GlobalHighestBanked / 10)}`} />
+            </Stack.Item>
+            <Stack.Item>
+              <LeaderTip
+                TName="Global Earnings"
+                Tip={GlobalBankedTooltip}
+                Gold={false}
+                Value={`${CurrencyUnit} ${formatMoney(GlobalTotalEarned / 10)}`} />
             </Stack.Item>
           </Stack>
         </Stack.Item>
@@ -474,7 +431,13 @@ const QuestList = (props, context) => {
           : [];
 
   const IsEmpty = Quests.length === 0;
-  const WhyItEmpty = props.Mine ? "You have no active quests!" : "There are no quests available!";
+  const WhyItEmpty = props.WhichOne === 1
+    ? "You have no active quests!"
+    : props.WhichOne === 2
+      ? "There are no quests available!"
+      : props.WhichOne === 3
+        ? "You have not completed any quests!"
+        : "You have no quests!";
 
   return (
     <Section>
@@ -489,6 +452,7 @@ const QuestList = (props, context) => {
                 key={QuestEntry.QuestUID}
                 Quest={QuestEntry}/>
           ))}
+          <HistoryPanel />
         </Box>
       )}
     </Section>
@@ -592,7 +556,7 @@ const QuestCard = (props, context) => {
       color="transparent" />
   );
 
-  const RewardDisplay = `${formatMoney(QuestReward / 10)}${CurrencyUnit}`;
+  const RewardDisplay = `${CurrencyUnit} ${formatMoney(QuestReward / 10)}`;
   const CanTakeThisQuest = QuestAcceptible && !IsTaken && IsTemplarte;
   /// truncates the description to 100 characters
   /// but only if QuestDesc isnt null
@@ -658,15 +622,15 @@ const YourCash = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     BankedPoints = 0,
-    HighestBankedPoints = 0,
+    OverallBankedPoints = 0,
     GlobalHighestBanked = 0,
     CurrencyUnit = "₡",
   } = data;
   const ActualCash = toFixed(BankedPoints / 10, 0)
-  const IsGlobalHighest = HighestBankedPoints >= GlobalHighestBanked;
+  const IsGlobalHighest = OverallBankedPoints >= GlobalHighestBanked;
   const OverallTip = "You have earned "
-    + formatMoney(ActualCash)
     + CurrencyUnit
+    + formatMoney(ActualCash)
     + " this round!"
   const HighestTip = IsGlobalHighest ? "You are the highest earner this round!" : "";
   const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!";
@@ -677,12 +641,13 @@ const YourCash = (props, context) => {
       tooltip={TotalTip}
       icon={IsGlobalHighest ? "star" : ""}
       iconColor="gold"
-      iconPosition="right"
+      iconPosition="left"
       onClick={() => act('CashOut')}>
+      {CurrencyUnit + " "}
       <AnimatedNumber
         initial={0}
         value={ActualCash} // we dont do cents here!
-        format={value => formatMoney(value) + "" + CurrencyUnit}
+        format={value => `${formatMoney(value)}`}
         fontSize="16px"
         fontWeight="bold"
         color={IsGlobalHighest ? "gold" : "green"}
@@ -692,11 +657,16 @@ const YourCash = (props, context) => {
 }
 
 const ReadMe = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    ReadmeText = "bemis is a big ol' dummy!",
+  } = data;
   return (
     <Section>
-      <Box>
-        COMING SOON: how to use this darn thing =3
-      </Box>
+      <Box
+        dangerouslySetInnerHTML={{ __html: ReadmeText }}
+      />
+
     </Section>
   );
 }
@@ -720,5 +690,202 @@ const ButtonThatGivesPlayerAScanner = (props, context) => {
   );
 }
 
+/// The quest history panel, for  quests finished in previous rounds
+const HistoryPanel = (props, context) => {
+  const { act, data } = useBackend(context);
+  const [
+    SelectedTab,
+    setSelectedTab,
+  ] = useLocalState(context, 'SelectedTab', 1);
+
+  if (SelectedTab !== 3) {
+    return <Fragment />;
+  }
+
+  const {
+    QuestHistory = [], // this has a different format to normal quests
+  } = data;
+
+  const IsEmpty = QuestHistory.length === 0;
+  const WhyItEmpty = "You haven't completed any quests... before today, that is!";
+  return (
+    <Section>
+      {IsEmpty ? (
+        <Box>
+          {WhyItEmpty}
+        </Box>
+      ) : (
+        <Box>
+          {QuestHistory.map(QuestEntry => (
+            <HistoryCard
+              key={QuestEntry.QuestUID}
+              Quest={QuestEntry}/>
+          ))}
+        </Box>
+      )}
+    </Section>
+  );
+}
+
+/*
+  VARS FOR HISTORY CARD
+    qf_quester_name
+    qf_quest_type
+    qf_quest_name
+    qf_quest_description
+    qf_quest_time_completed
+    qf_quest_round_id
+    qf_quest_difficulty
+    qf_quest_rewarded
+    qf_objectives
+  VARS FOR HISTORY CARD OBJECTIVES
+    qfbq_name
+    qfbq_flavor
+    qfbq_info
+    qfbq_needed_amount
+    qfbq_gotten_amount
+    qfbq_difficulty
+    qfbq_price_per_thing
+*/
+
+/// A card for the quest history panel
+/// Mush simpler, is not even a button!
+const HistoryCard = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    qf_quest_name = "Untitled Quest",
+    qf_quest_rewarded = 0,
+    qf_quest_difficulty = 1,
+    qf_objectives = [],
+    CurrencyUnit = "₡",
+  } = props.Quest;
+
+  const RewardDisplay = `${CurrencyUnit}${formatMoney(qf_quest_rewarded / 10)}`;
+  const DiffiColor =
+    qf_quest_difficulty === 1
+      ? "green"
+      : qf_quest_difficulty === 2
+        ? "blue"
+        : qf_quest_difficulty === 4
+          ? "gold"
+          : qf_quest_difficulty === 8
+            ? "orange"
+            : "orange";
+  const DiffIcon =
+    qf_quest_difficulty === 1
+      ? "grin-wink"
+      : qf_quest_difficulty === 2
+        ? "frown-open"
+        : qf_quest_difficulty === 4
+          ? "flushed"
+          : qf_quest_difficulty === 8
+            ? "dizzy"
+            : "dizzy";
+  const DiffiTooltip =
+    qf_quest_difficulty === 1
+      ? "This was an Easy quest!"
+      : qf_quest_difficulty === 2
+        ? "This was a Medium quest!"
+        : qf_quest_difficulty === 4
+          ? "This was a Hard quest!"
+          : qf_quest_difficulty === 8
+            ? "This was a CBT quest!"
+            : "This was a quest of all time!";
+
+  const CuteDiffi = (
+    <Button
+      icon={DiffIcon}
+      iconSize={1.5}
+      iconColor={DiffiColor}
+      tooltip={DiffiTooltip}
+      color="transparent" />
+  );
+  const PaleBlue = "#f0f8ff"; // AliceBlue
+
+  return (
+    <Box
+      p={1}
+      color={PaleBlue}>
+      <Stack fill vertical>
+        <Stack.Item shrink={1}>
+          <Stack fill>
+            <Stack.Item grow={1}>
+              <Box
+                inline
+                fontSize="10px">
+                {CuteDiffi}
+              </Box>
+            </Stack.Item>
+            <Stack.Item grow={1}>
+              <Box
+                inline
+                fontSize="10px">
+                {qf_quest_name}
+              </Box>
+            </Stack.Item>
+            <Stack.Item shrink={1}>
+              <Box
+                inline
+                textAlign="right"
+                fontSize="10px"
+                textColor="green">
+                {RewardDisplay}
+              </Box>
+            </Stack.Item>
+          </Stack>
+        </Stack.Item>
+        <Stack.Item>
+          <LabeledList>
+            {qf_objectives.map(Objective => (
+              <ObjectiveCard
+                key={Objective.qfbq_name}
+                Objective={Objective}/>
+            ))}
+          </LabeledList>
+        </Stack.Item>
+      </Stack>
+    </Box>
+  );
+}
+
+/// A card for the quest history panel
+/// Mush simpler, is not even a button!
+const ObjectiveCard = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    qfbq_name = "Untitled Objective",
+    qfbq_gotten_amount = 0,
+    qfbq_needed_amount = 1,
+    qfbq_price_per_thing = 0,
+    CurrencyUnit = "₡",
+  } = props.Objective;
+
+  const RewardDisplay = `${CurrencyUnit}${formatMoney(qfbq_price_per_thing / 10)}`;
+  const NameDesplay = `${qfbq_name} - ${qfbq_gotten_amount}/${qfbq_needed_amount}`;
+  const ObjectiveColor = "green"; // "label
+
+  return (
+    <LabeledList.Item>
+      <Stack fill>
+        <Stack.Item grow={1}>
+          <Box
+            inline
+            fontSize="8px">
+            {NameDesplay}
+          </Box>
+        </Stack.Item>
+        <Stack.Item shrink={1}>
+          <Box
+            inline
+            textAlign="right"
+            fontSize="8px"
+            textColor={ObjectiveColor}>
+            {RewardDisplay}
+          </Box>
+        </Stack.Item>
+      </Stack>
+    </LabeledList.Item>
+  );
+}
 
 

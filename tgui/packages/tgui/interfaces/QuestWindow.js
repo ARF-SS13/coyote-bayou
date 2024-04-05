@@ -164,11 +164,11 @@ const TopText = (props, context) => {
                 format={value => formatMoney(value / 10) + ` ${CurrencyUnit}`}
                 color="good" />
             </Stack.Item>
-            <Stack.Item>
+            {/* <Stack.Item>
               <Button
                 icon="info"
                 onClick={() => setReadmeMode(!ReadmeMode)} />
-            </Stack.Item>
+            </Stack.Item> */}
           </Stack>
         </Box>
       )}>
@@ -451,7 +451,7 @@ const CancelMaybe = (props, context) => {
 
   if (IsTaken) {
     return (
-      <Button
+      <Button.Confirm
         icon="times"
         content="Cancel"
         onClick={() => act("CancelQuest", { BountyUID: QuestUID })} />
@@ -462,56 +462,48 @@ const CancelMaybe = (props, context) => {
 
 // The readme file
 const HelpText = (props, context) => {
-  const { data, act } = useBackend(context);
-
   return (
     <Box>
       <NoticeBox>
-        <Box>
-          <b>Quest Readme</b>
-        </Box>
-        <Box>
-          <b>Quests</b> are a way to earn money and experience by completing tasks.
-        </Box>
-        <Box>
-          <b>Objectives</b> are the tasks you need to complete to finish a quest.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quota</b> is the name of the task.
-        </Box>
-        <Box>
-          <b>Amount</b> is how many of the task you need to complete.
-        </Box>
-        <Box>
-          <b>Info</b> is a description of the task.
-        </Box>
-        <Box>
-          <b>Complete</b> is whether or not you have completed the task.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
-        <Box>
-          <b>Quotas</b> are the individual parts of an objective.
-        </Box>
+        {multiline(`
+          C:/README_questwindow.txt\n
+          =================\n
+          Welcome to the Adventurer's Guild Quest Information Panel!\n
+          =================\n
+          This panel displays information about a quest you have selected.
+          The top panel displays the quest's name, description, and reward.
+          The bottom panel displays the quest's objectives and your progress.\n
+          =================\n
+          Quest Objectives\n
+          -----------------\n
+          Each quest has a number of objectives you must complete to finish it.
+          The objectives are displayed in the bottom panel as a list of cards.
+          Each card displays the name of the objective, the amount you have
+          completed, and the amount you need to complete. Tap on a card to view
+          more information about the objective, such as which objects are valid
+          for the objective, and if scanning the object will teleport it off to
+          the quest giver.\n
+          =================\n
+          Accepting and Canceling Quests\n
+          ------------------------------\n
+          If you have not accepted a quest, you can do so by tapping the "Accept"
+          button in the bottom toolbar, but only if you have an open quest slot.
+          If you have accepted a quest, you can cancel it by tapping the "Cancel"
+          button in the bottom toolbar. Cancelling a quest will remove it from
+          your quest log and delete any progress you have made on it, so be
+          careful!\n
+          =================\n
+          Completing Quests\n
+          -----------------\n
+          Once you have completed all the objectives for a quest, you can finish
+          it by tapping the "Finish" button in the bottom toolbar. Finishing a
+          quest will move the quest to your completed quests log and credit your
+          account with the quest's reward.\n
+          =================\n
+          Good luck, adventurer!
+          =================\n
+          END OF FILE
+        `)}
       </NoticeBox>
     </Box>
   );
