@@ -955,23 +955,6 @@ SUBSYSTEM_DEF(economy)
 	data["QuestHistory"] = quest_history
 	data["MyFinished"] = recent_finished
 
-	data["BeepOnUpdate"] = beep_on_update
-	data["QuestCount"] = LAZYLEN(active_quests)
-	data["QuestMax"] = SSeconomy.max_quests
-	
-	data["QuestsCompleted"] = LAZYLEN(recent_finished)
-	data["QuestHistoryCount"] = LAZYLEN(finished_quests)
-	data["GlobalQuestsCompleted"] = SSeconomy.total_completed
-	data["GlobalHighestCompleted"] = SSeconomy.highest_completed
-	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
-
-	data["BankedPoints"] = unclaimed_points
-	data["HistoricalBankedPoints"] = get_historical_banked()
-	data["OverallBankedPoints"] = overall_banked
-	data["GlobalHighestBanked"] = SSeconomy.highest_banked
-	data["GlobalTotalEarned"] = SSeconomy.total_banked
-	data["GlobalHistoricalBanked"] = SSeconomy.historical_highest_banked
-
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	data["CurrencyName"] = SSeconomy.currency_name
 	data["CurrencyNamePlural"] = SSeconomy.currency_name_plural
@@ -1004,6 +987,22 @@ SUBSYSTEM_DEF(economy)
 /datum/quest_book/ui_data(mob/user)
 	var/list/data = list()
 	data["TimeToNext"] = SSeconomy.update_when(TRUE)
+	data["BeepOnUpdate"] = beep_on_update
+	data["QuestCount"] = LAZYLEN(active_quests)
+	data["QuestMax"] = SSeconomy.max_quests
+	
+	data["QuestsCompleted"] = LAZYLEN(finished_this_round)
+	data["QuestHistoryCount"] = LAZYLEN(finished_quests)
+	data["GlobalQuestsCompleted"] = SSeconomy.total_completed
+	data["GlobalHighestCompleted"] = SSeconomy.highest_completed
+	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
+
+	data["BankedPoints"] = unclaimed_points
+	data["HistoricalBankedPoints"] = get_historical_banked()
+	data["OverallBankedPoints"] = overall_banked
+	data["GlobalHighestBanked"] = SSeconomy.highest_banked
+	data["GlobalTotalEarned"] = SSeconomy.total_banked
+	data["GlobalHistoricalBanked"] = SSeconomy.historical_highest_banked
 	return data
 
 /datum/quest_book/ui_act(action,params)

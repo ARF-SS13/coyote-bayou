@@ -718,7 +718,7 @@ const HistoryPanel = (props, context) => {
           {WhyItEmpty}
         </Box>
       ) : (
-        <Flex>
+        <Flex wrap={true}>
           {QuestHistory.map(QuestEntry => (
             <Flex.Item
               grow={1}
@@ -843,13 +843,13 @@ const HistoryCard = (props, context) => {
             </Stack.Item>
           </Stack>
         </Stack.Item>
-          {FinQuestObjectives.map(Objective => (
+          {/* {FinQuestObjectives.map(Objective => (
             <Stack.Item>
               <ObjectiveCard
                 key={Keytwo++}
                 Objective={Objective}/>
               </Stack.Item>
-          ))}
+          ))} */}
       </Stack>
     </Box>
   );
