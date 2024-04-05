@@ -369,7 +369,7 @@ const BottomToolbar = (props, context) => {
     <Box inline
       fontSize="16px"
       color="label" >
-      {formatTime(value)}
+      {formatTime(TimeToNext)}
     </Box>
   );
 
