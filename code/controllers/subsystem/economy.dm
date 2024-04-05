@@ -699,7 +699,6 @@ SUBSYSTEM_DEF(economy)
 
 /datum/quest_book/proc/add_active_quest(datum/bounty/B, loud = TRUE)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
-	update_owner_data(user)
 	if(istext(B))
 		B = SSeconomy.get_quest_by_uid(B)
 	if(!B)
@@ -716,6 +715,7 @@ SUBSYSTEM_DEF(economy)
 	QW.show_quest_window(user, B2, TRUE) // QOL #3690 - swap viewing quest window when you accept a quest
 	if(loud)
 		to_chat(user, span_green("Quest '[B2.name]' accepted!"))
+	update_owner_data(user)
 	return TRUE
 
 /datum/quest_book/proc/can_take_quest(datum/bounty/B, loud = TRUE)
@@ -739,7 +739,6 @@ SUBSYSTEM_DEF(economy)
 
 /datum/quest_book/proc/remove_active_quest(datum/bounty/B, loud = TRUE, was_finished)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
-	update_owner_data(user)
 	if(istext(B))
 		B = LAZYACCESS(active_quests, B)
 	if(!istype(B))
@@ -761,6 +760,7 @@ SUBSYSTEM_DEF(economy)
 	SSeconomy.deactivate_quest(B)
 	if(!was_finished)
 		qdel(B)
+	update_owner_data(user)
 	return TRUE
 
 /datum/quest_book/proc/turn_something_in(atom/thing)
@@ -769,7 +769,6 @@ SUBSYSTEM_DEF(economy)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
-	update_owner_data(user)
 	if(!COOLDOWN_FINISHED(src, turnin_cooldown))
 		return FALSE
 	COOLDOWN_START(src, turnin_cooldown, 0.5 SECONDS)
@@ -782,6 +781,7 @@ SUBSYSTEM_DEF(economy)
 	for(var/atom/thingy in stuff)
 		if(Turnin(thingy,user,TRUE))
 			return TRUE
+	update_owner_data(user)
 	return FALSE
 
 /datum/quest_book/proc/Turnin(atom/thing, mob/user,loud)
@@ -1362,7 +1362,7 @@ SUBSYSTEM_DEF(economy)
 	readme += span_notice("You can click the ground under a pile of things, and it will attempt to turn in anything questable in that pile.")
 	readme += span_notice("If you're having trouble finding something to turn in, you can use the 'Ping' ability to scan the area for questable things.")
 	readme += span_notice("To do this, just use it in your hand, and it will highlight anything you can turn in.")
-	readme += span_notice("You can get one of these from the Quest Board with a button press, or by typing *scanner in the chat.")
+	readme += span_notice("You can get one of these from the Quest Board with a button press, or by pressing the green SCAN-ER button on your HUD.")
 
 /obj/item/hand_item/quest_scanner/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
