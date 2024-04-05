@@ -5,7 +5,7 @@
  * Created on September 1, 2012, 1:00 PM
  * 
  * This file contains quests that require the player to kill a certain number of a certain monster.
- *  */
+ * */
 
 /datum/bounty/kill
 	base_reward =         COINS_TO_CREDITS(50)
@@ -54,10 +54,6 @@
 
 /datum/bounty_quota/gecko/medium // no newts
 	needed_amount = 10
-	paths_exclude = list(
-		/mob/living/simple_animal/hostile/gecko/legacy,
-	)
-	paths_includes_root = FALSE
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/gecko/hard
@@ -107,7 +103,6 @@
 /datum/bounty_quota/rat/medium
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_MED
-	paths_get_subtypes = FALSE // just the big rats
 
 /datum/bounty_quota/rat/hard
 	needed_amount = 30
