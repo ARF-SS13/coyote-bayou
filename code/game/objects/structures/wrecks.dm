@@ -11,8 +11,9 @@
 	icon = 'icons/obj/vehicles/medium_vehicles.dmi'
 	icon_state = "derelict"
 	bound_width = 64
-	var/uses_left = 2
-	var/in_use = FALSE
+	max_stuff = 8
+	base_stuff = 4
+	can_salvage = TRUE
 
 /obj/structure/wreck/car/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -21,6 +22,8 @@
 	name = "wrecked motorcycle"
 	desc = "An old pre-war motorcycle, rusted and destroyed with age and weathering."
 	icon_state = "rust_light_no_wheels"
+	max_stuff = 4
+	base_stuff = 2
 
 /obj/structure/wreck/bus
 	name = "wrecked bus"
@@ -28,9 +31,11 @@
 	bound_width = 192
 	bound_height = 64
 	icon = 'icons/obj/vehicles/bus1.dmi'
-	var/uses_left = 4
-	var/in_use = FALSE
+	max_stuff = 12
+	base_stuff = 6
+	can_salvage = TRUE
 
+/*
 /obj/structure/wreck/bus/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
 
@@ -69,6 +74,7 @@
 	if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
 		visible_message("[src] falls apart, the final components having been removed.")
 		qdel(src)
+*/
 
 /obj/structure/wreck/bus/blue
 	icon_state = "blue"
@@ -102,7 +108,6 @@
 	icon_state = "bus1"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented1
 	name = "wrecked bus"
@@ -111,7 +116,6 @@
 	icon_state = "bus2"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented2
 	name = "wrecked bus"
@@ -120,7 +124,6 @@
 	icon_state = "bus3"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented3
 	name = "wrecked bus"
@@ -129,7 +132,6 @@
 	icon_state = "bus4"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented4
 	name = "wrecked bus"
@@ -138,7 +140,6 @@
 	icon_state = "bus5"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented5
 	name = "wrecked bus"
@@ -147,7 +148,6 @@
 	icon_state = "bus6"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented6
 	name = "wrecked bus"
@@ -157,7 +157,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented7
 	name = "wrecked bus"
@@ -166,7 +165,6 @@
 	icon_state = "bus8"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented8
 	name = "wrecked bus"
@@ -175,7 +173,6 @@
 	icon_state = "bus9"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented9
 	name = "wrecked bus"
@@ -184,7 +181,6 @@
 	icon_state = "bus10"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented10
 	name = "wrecked bus"
@@ -193,7 +189,6 @@
 	icon_state = "bus11"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented11
 	name = "wrecked bus"
@@ -202,7 +197,6 @@
 	icon_state = "bus12"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented12
 	name = "wrecked bus"
@@ -211,7 +205,6 @@
 	icon_state = "bus13"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented13
 	name = "wrecked bus"
@@ -221,7 +214,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented14
 	name = "wrecked bus"
@@ -231,7 +223,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented15
 	name = "wrecked bus"
@@ -241,7 +232,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented16
 	name = "wrecked bus"
@@ -251,7 +241,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented17
 	name = "wrecked bus"
@@ -261,7 +250,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented18
 	name = "wrecked bus"
@@ -271,7 +259,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented19
 	name = "wrecked bus"
@@ -281,7 +268,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented20
 	name = "wrecked bus"
@@ -291,7 +277,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/trash/five_tires
 	name = "tire pile"
@@ -300,6 +285,9 @@
 	icon_state = "five_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/two_tire
 	name = "tires"
@@ -308,6 +296,9 @@
 	icon_state = "two_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/one_tire
 	name = "tire"
@@ -316,6 +307,9 @@
 	icon_state = "one_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/halftire
 	name = "buried tire"
@@ -334,6 +328,9 @@
 	icon_state = "four_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/three_barrels
 	name = "barrels"
@@ -342,6 +339,9 @@
 	icon_state = "three_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/two_barrels
 	name = "barrels"
@@ -350,6 +350,9 @@
 	icon_state = "two_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/one_barrel
 	name = "barrel"
@@ -358,6 +361,9 @@
 	icon_state = "one_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/engine
 	name = "engine"
@@ -366,6 +372,9 @@
 	icon_state = "engine"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/autoshaft
 	name = "automobile shaft"
@@ -376,6 +385,9 @@
 	bound_height = 32
 	density = 0
 	layer = TURF_LAYER
+	max_stuff = 2
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/bus_door
 	name = "bus door"
@@ -386,6 +398,9 @@
 	bound_height = 32
 	density = 0
 	layer = TURF_LAYER
+	max_stuff = 1
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/secway
 	name = "broken secway"
@@ -394,6 +409,9 @@
 	icon_state = "secwaybroke"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 1
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/brokenvendor
 	name = "broken vendor"
@@ -402,6 +420,9 @@
 	icon_state = "technical_pile3"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 6
+	base_stuff = 3
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/machinepile
 	name = "broken machinery"
@@ -410,6 +431,9 @@
 	icon_state = "technical_pile1"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 6
+	base_stuff = 3
+	can_salvage = TRUE
 
 /obj/structure/wreck/trash/machinepiletwo
 	name = "broken machinery"
@@ -418,3 +442,6 @@
 	icon_state = "technical_pile2"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 6
+	base_stuff = 3
+	can_salvage = TRUE

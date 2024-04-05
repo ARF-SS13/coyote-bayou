@@ -12,10 +12,12 @@
 	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
 	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
 
+	var/made_stuff = 0
+
 	var/max_stuff = 8
 	var/base_stuff = 4
-	var/made_stuff = 0
 	var/can_salvage = FALSE
+
 	var/list/using_this = list()
 	var/disassembly_duration = 5 SECONDS
 	layer = BELOW_OBJ_LAYER
@@ -178,7 +180,16 @@
 		var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
 		user.visible_message("[user] slices through a [fake_dismantle][welder_akimbo ? " with both their welders at once!" : "."]")
 		made_stuff++
-		new /obj/item/salvage/high(usr_turf)
+		var/scrap_amount = rand(1,4)						//controls basic scrap amount
+		for(var/i1 in 1 to scrap_amount)
+			new /obj/item/salvage/low(usr_turf)
+		if(prob(30))										//controls chance of advanced scrap
+			new /obj/item/salvage/high(usr_turf)
+		if(prob(5))											//controls chance of high quality tool
+			new /obj/item/salvage/tool(usr_turf)
+		var/trash_amount = rand(1,3)						//controls trash amount
+		for(var/i2 in 1 to (1+trash_amount))
+			new /obj/effect/spawner/lootdrop/f13/trash(usr_turf)
 		if(!free_spin(user, I))
 			return its_dead(user, I)
 	using_this-= user.ckey
@@ -195,7 +206,7 @@
 	if(made_stuff >= base_stuff)
 		var/chance_for_extra = 15
 		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			chance_for_extra += 25
+			chance_for_extra += 50
 		if(made_stuff < max_stuff && prob(chance_for_extra))
 			to_chat(user, span_green("Your expert salvaging sense lets you spot a bit more usable scrap!"))
 			return TRUE

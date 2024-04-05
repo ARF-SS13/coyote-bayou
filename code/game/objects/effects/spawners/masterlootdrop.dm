@@ -1432,6 +1432,15 @@
 		/obj/item/reagent_containers/glass/beaker/noreact = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/flashlight/lamp = 1,
+		/obj/item/weldingtool/hightech = 1,
+		/obj/item/crowbar/hightech = 1,
+		/obj/item/crowbar/hightech = 1,
+		/obj/item/screwdriver/hightech = 1,
+		/obj/item/screwdriver/hightech = 1,
+		/obj/item/wrench/hightech = 1,
+		/obj/item/wrench/hightech = 1,
+		/obj/item/wirecutters/hightech = 1,
+		/obj/item/wirecutters/hightech = 1,
 	)
 
 ////////////////////
