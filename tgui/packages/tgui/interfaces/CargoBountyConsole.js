@@ -10,6 +10,7 @@ import {
   Section,
   LabeledList,
   Stack,
+  Flex,
   Table,
   Tabs,
   Icon,
@@ -447,21 +448,15 @@ const QuestList = (props, context) => {
 
   return (
     <Section>
-      {IsEmpty ? (
-        <Box>
-          {WhyItEmpty}
-        </Box>
-      ) : (
-        <Box> {/* Quest */}
-          {Quests.map(QuestEntry => (
-              <QuestCard
-                key={QuestEntry.QuestUID}
-                WhichOne={props.WhichOne}
-                Quest={QuestEntry}/>
-          ))}
-          <HistoryPanel />
-        </Box>
-      )}
+        {WhyItEmpty}
+        {/* Quest */}
+        {Quests.map(QuestEntry => (
+            <QuestCard
+              key={QuestEntry.QuestUID}
+              WhichOne={props.WhichOne}
+              Quest={QuestEntry}/>
+        ))}
+        <HistoryPanel />
     </Section>
   );
 }
@@ -723,14 +718,18 @@ const HistoryPanel = (props, context) => {
           {WhyItEmpty}
         </Box>
       ) : (
-        <Box>
+        <Flex>
           {QuestHistory.map(QuestEntry => (
-            <HistoryCard
-              keyfixer={Keykey++}
-              key={Keykey}
-              Quest={QuestEntry}/>
+            <Flex.Item
+              grow={1}
+              basis="45%">
+              <HistoryCard
+                keyfixer={Keykey++}
+                key={Keykey}
+                Quest={QuestEntry}/>
+            </Flex.Item>
           ))}
-        </Box>
+        </Flex>
       )}
     </Section>
   );
@@ -802,13 +801,12 @@ const HistoryCard = (props, context) => {
       size={1.5}
       color={DiffiColor}/>
   );
-  const PaleBlue = "#f0f8ff"; // AliceBlue
+  const PaleBlue = "#f0f8ff";
   let Keytwo = 0;
 
   return (
     <Box
-      p={1}
-      backgroundColor={PaleBlue}>
+      p={1}>
       <Stack fill vertical>
         <Stack.Item shrink={1}>
           <Stack fill>

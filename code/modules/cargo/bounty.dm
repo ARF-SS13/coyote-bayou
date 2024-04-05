@@ -629,8 +629,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return
 	if(!thing)
 		return FALSE
-	if(!thing.Adjacent(user))
-		return FALSE
+	// if(!thing.Adjacent(user))
+	// 	return FALSE
 	if(IsCompleted())
 		return FALSE
 	if(SSeconomy.check_duplicate_submissions(thing, user))
