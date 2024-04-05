@@ -250,11 +250,17 @@
 	desc = "An extremely basic wand carved from bone, and topped with a roughly hewn crystal. Good for begginers, and handling vermin, but not much else."
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
-	max_charges = 3
-	recharge_rate = 2 SECONDS
+	max_charges = 1
+	recharge_rate = 6 SECONDS
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
+
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
+	pellets = 6 //I've fucked with this for 4 hours straight, there is no variable that lets you make shotgun spread, variation does nothing, add_spread does nothing
+// Dont be like me, Don't try to make this a shotgun with a spread degree higher than 1 degree, you simply cant
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/weak
 	name = "weak arcane bolt"
@@ -275,13 +281,14 @@
 	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
-	max_charges = 3
+	max_charges = 4
 	recharge_rate = 2 SECONDS
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
-	pellets = 3
-	variance = 100
 
 /obj/item/projectile/magic/kelpmagic/sparks/weak
 	supereffective_damage = null
@@ -297,11 +304,16 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	max_charges = 6
-	recharge_rate = 2 SECONDS
+	added_spread = 50
+	max_charges = 2
+	recharge_rate = 6 SECONDS
+	init_firemodes = list(
+	/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/average
 	name = "arcane bolt"
@@ -327,8 +339,7 @@
 	max_charges = 4
 	recharge_rate = 2 SECONDS
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/automatic/rpm300
 	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks
