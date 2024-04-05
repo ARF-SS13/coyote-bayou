@@ -1049,8 +1049,7 @@ SUBSYSTEM_DEF(economy)
 			BQ.Claim()
 			to_chat(user, span_notice("Added 1 to objective '[BQ.name]'"))
 			. = TRUE
-	if(.)
-		playsound(user, "terminal_type", 50, TRUE)
+	playsound(user, "terminal_type", 50, TRUE)
 
 /datum/quest_book/proc/give_scanner()
 	var/mob/user = SSeconomy.quid2mob(q_uid)
