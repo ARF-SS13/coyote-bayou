@@ -720,7 +720,7 @@ const HistoryPanel = (props, context) => {
           {WhyItEmpty}
         </Box>
       ) : (
-        <Flex wrap justify="center">
+        <Flex wrap justify="space-evenly">
           {QuestHistory.map(QuestEntry => (
             <Flex.Item
               key={Keykey++}
