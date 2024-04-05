@@ -811,6 +811,7 @@ SUBSYSTEM_DEF(economy)
 	SSeconomy.deactivate_quest(B) // just so they get good and dizzy
 	remove_active_quest(B, FALSE, TRUE)
 	update_lifetime_total()
+	update_static_data(user)
 	playsound(user, 'sound/effects/quest_cashout.ogg', 40, TRUE)
 	return TRUE
 
@@ -1271,6 +1272,7 @@ SUBSYSTEM_DEF(economy)
 	output["FinQuestDifficulty"]   = quest_difficulty
 	output["FinQuestReward"]       = quest_rewarded
 	output["FinQuestObjectives"]   = list(objectives)
+	return output
 
 /// output quest report for the end of round window
 /datum/quest_report

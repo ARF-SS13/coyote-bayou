@@ -536,12 +536,12 @@ const QuestCard = (props, context) => {
     QuestDifficulty === 1
       ? "grin-wink"
       : QuestDifficulty === 2
-        ? "frown-open"
+        ? "meh"
         : QuestDifficulty === 4
           ? "flushed"
           : QuestDifficulty === 8
-            ? "dizzy"
-            : "dizzy";
+            ? "tired"
+            : "tired";
   const DiffiTooltip =
     QuestDifficulty === 1
       ? "This is an Easy quest!"
@@ -776,12 +776,12 @@ const HistoryCard = (props, context) => {
     FinQuestDifficulty === 1
       ? "grin-wink"
       : FinQuestDifficulty === 2
-        ? "frown-open"
+        ? "meh"
         : FinQuestDifficulty === 4
           ? "flushed"
           : FinQuestDifficulty === 8
-            ? "dizzy"
-            : "dizzy";
+            ? "tired"
+            : "tired";
   const DiffiTooltip =
     FinQuestDifficulty === 1
       ? "This was an Easy quest!"
