@@ -297,7 +297,6 @@
 		GUN_UPGRADE_CHARGECOST=1 + rand(-21,-11) * 0.01
 	)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = null
 
 // Paint: For Modifying specific traits
 //_____________________________________
@@ -409,7 +408,7 @@
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "green"
 
-/obj/item/tool_upgrade/paint/black //yellow + blue + red
+/obj/item/tool_upgrade/paint/black //green + purple + orange
 	name = "black paint"
 	desc = "A combination of all three main colors. This makes a paint that has a maximized chance of being perfect."
 	icon_state = "black_paint"
@@ -426,7 +425,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-40,5) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-10,55) * 0.01,
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,44) * 0.01,
-		UPGRADE_COLOR = "#000000"
+		UPGRADE_COLOR = "#505050"
 	)
 	I.gun_loc_tag = GUN_PAINTABLE
 	I.prefix = "black"

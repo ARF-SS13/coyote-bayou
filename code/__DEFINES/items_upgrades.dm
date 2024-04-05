@@ -98,6 +98,7 @@
 #define GUN_SILENCABLE "silencable"
 #define GUN_PROJECTILE "projectile firing"
 #define GUN_ENERGY "energy firing"
+#define GUN_MAGIC "magic using"
 #define GUN_LASER "laser firing"
 #define GUN_REVOLVER "revolver"
 #define GUN_INTERNAL_MAG "internal mag"

@@ -36,7 +36,6 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-15,-40) * 0.01,
-		GUN_UPGRADE_DAMAGE_PLUS = -0.1,
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(15,30) * 0.01,
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(-5,-25) * 0.01
 		)
