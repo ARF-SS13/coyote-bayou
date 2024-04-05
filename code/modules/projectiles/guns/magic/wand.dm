@@ -324,7 +324,7 @@
 	icon_state = "lightningrod"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
-	max_charges = 6
+	max_charges = 4
 	recharge_rate = 2 SECONDS
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
