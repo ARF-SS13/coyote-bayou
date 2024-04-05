@@ -539,7 +539,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		A.Remove(user)
 	if(item_flags & DROPDEL)
 		qdel(src)
-	if(item_flags & PERSONAL_ITEM && !recursive_loc_search(loc, user))
+	if(item_flags & PERSONAL_ITEM && !recursive_loc_search(src, user))
 		qdel(src)
 	item_flags &= ~IN_INVENTORY
 	if(SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user) & COMPONENT_DROPPED_RELOCATION)

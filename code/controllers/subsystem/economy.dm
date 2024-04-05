@@ -1330,6 +1330,7 @@ SUBSYSTEM_DEF(economy)
 	item_flags = NOBLUDGEON | PERSONAL_ITEM
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = INV_SLOTBIT_ANYWHERE
+	max_reach = 7
 	var/ping_cooldown = 0
 	var/being_used = FALSE
 
@@ -1348,15 +1349,16 @@ SUBSYSTEM_DEF(economy)
 	readme += span_notice("To do this, just use it in your hand, and it will highlight anything you can turn in.")
 	readme += span_notice("You can get one of these from the Quest Board with a button press, or by typing *scanner in the chat.")
 
-/obj/item/hand_item/quest_scanner/afterattack(atom/O, mob/user, proximity)
+/obj/item/hand_item/quest_scanner/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
-	if(!istype(O) || !proximity)
+	if(!istype(A))
 		return
+	. = STOP_ATTACK_PROC_CHAIN
 	if(being_used)
 		to_chat(user, span_alert("Your [src] is still doing something!"))
 		return
 	// being_used = TRUE
-	SSeconomy.attempt_turnin(O, user)
+	SSeconomy.attempt_turnin(A, user)
 	// being_used = FALSE
 
 /obj/item/hand_item/quest_scanner/attack_self(mob/user)
