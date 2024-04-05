@@ -876,6 +876,10 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
 
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
