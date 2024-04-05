@@ -247,7 +247,7 @@
 
 /datum/component/artifact/proc/tabulate_research()
 	SIGNAL_HANDLER
-	return (tabulate_value() * 10)
+	return (tabulate_value() * 30)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER
