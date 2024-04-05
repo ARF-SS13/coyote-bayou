@@ -9,7 +9,8 @@ import { Button } from './Button';
 
 /*
  * Simple component that is a clickable element that swaps between two states.
- * Has two params: OpenContent and ClosedContent, which are rendered based on the state.
+ * Has two params:
+ * OpenContent and ClosedContent, which are rendered based on the state.
   *
   * Example:
   * <ToggleBox
