@@ -930,8 +930,6 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return // they broke everything
-	if(!LAZYLEN(P.saved_active_quests))
-		return // no quests to load
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
