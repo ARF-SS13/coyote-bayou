@@ -367,7 +367,7 @@
 	impact_light_intensity = 8
 	impact_light_range = 3.75
 	impact_light_color_override = LIGHT_COLOR_BLUE
-	supereffective_damage = 15
+	supereffective_damage = 10
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
