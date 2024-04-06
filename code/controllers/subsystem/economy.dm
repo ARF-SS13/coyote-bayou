@@ -1081,9 +1081,9 @@ SUBSYSTEM_DEF(economy)
 
 	toots["TTyourbanked"] = "You have earned [round(overall_banked / 10)] [SSeconomy.currency_name_plural] this period[am_top_earner ? ", making you the top earner this period! Nice job =3" : "."]"
 	toots["TTtopbanked"] = "The top earner this period has earned [round(SSeconomy.highest_banked / 10)] [SSeconomy.currency_name_plural][am_top_earner ? ", and that top earner is you! Keep it up =3" : "."]"
-	toots["TThistoricalbanked"] = "Since the beginning of time, you have earned [get_historical_banked() / 10] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", making you the top earner of all time (at least compared to everyone present)! Nice job =3" : "."]"
-	toots["TTtophistoricalbanked"] = "The top earner of all time has earned [SSeconomy.historical_highest_banked / 10] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", and that top earner is you! Keep it up =3" : "."]"
-	toots["TTglobalbanked"] = "In total, [SSeconomy.total_banked] [SSeconomy.currency_name_plural] have been earned this period."
+	toots["TThistoricalbanked"] = "Since the beginning of time, you have earned [round(get_historical_banked() / 10)] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", making you the top earner of all time (at least compared to everyone present)! Nice job =3" : "."]"
+	toots["TTtophistoricalbanked"] = "The top earner of all time has earned [round(SSeconomy.historical_highest_banked / 10)] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", and that top earner is you! Keep it up =3" : "."]"
+	toots["TTglobalbanked"] = "In total, [round(SSeconomy.total_banked / 10)] [SSeconomy.currency_name_plural] have been earned this period."
 
 	data["Toots"] = toots
 	return data

@@ -1421,8 +1421,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-	saleprice = COINS_TO_CREDITS(1120)
-	punchbonus = COINS_TO_CREDITS(320) // total of 1500
+	saleprice = COINS_TO_CREDITS(120)
+	punchbonus = COINS_TO_CREDITS(40)
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"

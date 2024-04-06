@@ -708,7 +708,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		gib(FALSE, FALSE, TRUE)
 
 /mob/living/simple_animal/gib()
-	butcher_me(null, TRUE)
+	butcher_me(null, null, 0, 25, TRUE, FALSE)
 	..()
 
 /mob/living/simple_animal/gib_animation()

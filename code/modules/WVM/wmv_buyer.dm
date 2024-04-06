@@ -400,21 +400,21 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	appraise_item(I)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user)
 
-/obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, looping)
+/obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, silent)
 	if(!I)
 		return
-	var/silent
+	var/quiet
 	if("[I.type]" == last_appraised)
-		silent = TRUE
+		quiet = TRUE
 	last_appraised = "[I.type]"
 	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
-		if(!looping)
-			say("I'll give you absolutely nothing for \the [I]!", just_chat = silent)
+		if(!silent)
+			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
-	if(!looping)
+	if(!silent)
 		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
-		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = silent)
+		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = quiet)
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -471,7 +471,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Nothing to sell!")
 		abort()
 		return
-	var/final_price = appraise_item(thing2sell)
+	var/final_price = appraise_item(thing2sell, TRUE)
 	if(!final_price)
 		say("Nope, don't want that [thing2sell]!")
 		yeet_thing(thing2sell)
@@ -497,7 +497,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Hey, where'd my [I] go?")
 		abort()
 		return
-	var/final_price = appraise_item(I)
+	var/final_price = appraise_item(I, FALSE)
 	if(!final_price)
 		say("Nope, don't want that [I]!")
 		yeet_thing(I)
@@ -535,7 +535,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		lucky_target = pick(throw_at_ables)
 	else
 		lucky_target = get_ranged_target_turf(src, pick(GLOB.alldirs), rand(1,5), 5)
-	yote.throw_at(lucky_target, 20, 1, src)
+	yote.throw_at(lucky_target, 20, 1)
 
 /obj/machinery/mineral/wasteland_trader/proc/payout(caps)
 	var/obj/item/stack/f13Cash/caps/C
