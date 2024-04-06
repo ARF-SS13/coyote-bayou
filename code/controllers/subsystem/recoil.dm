@@ -705,7 +705,6 @@ SUBSYSTEM_DEF(recoil)
 	new /obj/item/storage/debug_box/ammo_ballistic_1(src)
 	new /obj/item/storage/debug_box/guns_energy_1(src)
 	new /obj/item/storage/debug_box/ammo_energy_1(src)
-	new /obj/item/storage/debug_box/gun_mods_recoil(src)
 	new /obj/item/storage/debug_box/tools(src)
 
 /obj/item/storage/debug_box/guns_ballistic_1
