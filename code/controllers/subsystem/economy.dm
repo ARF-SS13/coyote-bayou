@@ -943,6 +943,8 @@ SUBSYSTEM_DEF(economy)
 			message_admins("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
 			CRASH("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
 		active_quests[B.uid] = B
+		SSeconomy.activate_quest(B)
+		B.assign_to(user)
 	double_virgin = FALSE
 	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests from your save file! =3"))
 	return TRUE
@@ -977,8 +979,8 @@ SUBSYSTEM_DEF(economy)
 	COOLDOWN_START(src, save_cooldown, 1 SECONDS)
 	if(!COOLDOWN_FINISHED(src, save_spam_cooldown))
 		return
-	COOLDOWN_START(src, save_spam_cooldown, 5 SECONDS)
-	to_chat(user, span_green("Updating saved quest data... DONE!"))
+	COOLDOWN_START(src, save_spam_cooldown, 15 SECONDS)
+	to_chat(user, span_green("Quest data saved!"))
 
 
 /datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
