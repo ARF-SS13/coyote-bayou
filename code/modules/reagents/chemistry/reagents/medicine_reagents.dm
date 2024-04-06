@@ -106,16 +106,15 @@
 	description = "Heals maximum strength when heavily injured, barely any otherwise."
 	reagent_state = LIQUID
 	color = "#e650c0"
-	overdose_threshold = 60
 	taste_description = "grossness"
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
 	switch(M.getBruteLoss())
 		if(-INFINITY to 50)
-			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
+			M.adjustBruteLoss(-2*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
 		if(50 to 75)
-			M.adjustBruteLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
+			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
 			M.adjustBruteLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
@@ -123,9 +122,9 @@
 
 	switch(M.getFireLoss())
 		if(-INFINITY to 50)
-			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
+			M.adjustFireLoss(-2*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
 		if(50 to 75)
-			M.adjustFireLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
+			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
 			M.adjustFireLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
@@ -133,9 +132,9 @@
 
 	switch(M.getToxLoss())
 		if(-INFINITY to 50)
-			M.adjustToxLoss(-1*REM, 0) //below 50 Toxin, it heals at full strength
+			M.adjustToxLoss(-2*REM, 0) //below 50 Toxin, it heals at full strength
 		if(50 to 75)
-			M.adjustToxLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustToxLoss(-1*REM, 0) //between 50 and 75, its at half strength
 		else
 			M.adjustToxLoss(-0.1*REM, 0) //Otherwise it barely heals anything
 	..()
