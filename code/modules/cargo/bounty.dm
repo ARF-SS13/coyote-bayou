@@ -460,11 +460,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	respect_extinction       = text2num(serial[QFB_RESPECT_EXTINCTION])
 	uid                      = "[rand(1000, 9999)]-[rand(1000, 9999)]-[rand(1000, 9999)]-[rand(1000, 9999)]"
 	request_mode             = text2num(serial[QFB_REQUEST_MODE])
-	var/list/preinit_wanteds = safe_json_decode(serial[QFB_INIT_WANTEDS])
+	var/list/preinit_wanteds = serial[QFB_INIT_WANTEDS]
 	init_wanteds.Cut()
 	for(var/ser in preinit_wanteds)
 		init_wanteds += ispath(ser) ? ser : text2path(ser)
-	var/list/prewanted_things = safe_json_decode(serial[QFB_WANTED_THINGS])
+	var/list/prewanted_things = serial[QFB_WANTED_THINGS]
 	for(var/list/ser in prewanted_things)
 		var/datum/bounty_quota/BQ = new /datum/bounty_quota(null, TRUE)
 		if(!BQ.deserialize_from_list(ser))
@@ -783,11 +783,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	mobs_must_be_dead = text2num(serial[QFBQ_MOBS_MUST_BE_DEAD])
 	delete_thing      = text2num(serial[QFBQ_DELETE_THING])
 	claimdelay        = text2num(serial[QFBQ_CLAIMDELAY])
-	var/list/prepaths = safe_json_decode(serial[QFBQ_PATHS])
+	var/list/prepaths = serial[QFBQ_PATHS]
 	paths.Cut()
 	for(var/pat in prepaths)
 		paths |= ispath(pat) ? pat : text2path(pat)
-	var/list/prepaths_exclude = safe_json_decode(serial[QFBQ_PATHS_EXCLUDE])
+	var/list/prepaths_exclude = serial[QFBQ_PATHS_EXCLUDE]
 	paths_exclude.Cut()
 	for(var/pat in prepaths_exclude)
 		paths_exclude |= ispath(pat) ? pat : text2path(pat)
