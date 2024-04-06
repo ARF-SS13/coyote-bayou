@@ -658,7 +658,7 @@
 
 /datum/emote/living/carbon/snicker
 	key = "snicker"
-	message = "snickers quietly to themselves."
+	message = "snickers quietly to themself."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/huff
