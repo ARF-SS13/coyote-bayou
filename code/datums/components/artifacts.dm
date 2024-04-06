@@ -239,11 +239,11 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(total_value, 25)
+	return round(CREDITS_TO_COINS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
-	return (tabulate_value() * 0.8)
+	return (tabulate_value() * 0.4)
 
 /datum/component/artifact/proc/tabulate_research()
 	SIGNAL_HANDLER
@@ -766,7 +766,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = abs(base_value * get_magnitude() * 4)
+	value = abs(base_value * get_magnitude())
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
