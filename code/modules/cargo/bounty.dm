@@ -36,6 +36,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	/// A list of /datum/bounty_quota that will be loaded into wanted_things
 	var/list/init_wanteds = list()
 	var/list/wanted_things = list()
+	var/nerfed = FALSE
 
 	/// The difficulty of the quest. This is used to determine how many of the wanted things need to be turned in.
 	var/difficulty = QUEST_DIFFICULTY_EASY
@@ -105,6 +106,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 				qdel(BQ)
 				continue
 		BQ.recalculate_difficulty(difficulty, difficulty_flags)
+		if(!nerfed && BQ.NERF())
+			description += "<br />Warning: This quest is not even remotely fair, and should only be attempted by someone with a lot of time to kill. Cus seriously, look at those objectives, what the heck."
+			nerfed = TRUE
+
 	// if(CHECK_BITFIELD(difficulty_flags, QDF_MORE_FILLED))
 	// 	switch(difficulty)
 	// 		if(QUEST_DIFFICULTY_EASY)
@@ -119,6 +124,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	name = from.name
 	description = from.description
 	difficulty = from.difficulty
+	nerfed = from.nerfed
 
 	for(var/i in 1 to LAZYLEN(from.wanted_things))
 		var/datum/bounty_quota/BQ = from.wanted_things[i]
