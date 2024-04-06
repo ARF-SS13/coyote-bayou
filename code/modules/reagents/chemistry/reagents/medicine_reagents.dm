@@ -106,7 +106,6 @@
 	description = "Heals maximum strength when heavily injured, barely any otherwise."
 	reagent_state = LIQUID
 	color = "#e650c0"
-	overdose_threshold = 60
 	taste_description = "grossness"
 	synth_metabolism_use_human = TRUE
 

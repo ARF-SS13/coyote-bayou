@@ -707,7 +707,7 @@
 
 	praying = TRUE
 	if(do_after(user, 100, target = M)) //I made their time to cast about 5x longer, which isnt much still.
-		M.reagents?.add_reagent(/datum/reagent/water/holywater, 5)
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Makes it heal more if your injured, less if your not
 		M.reagents?.add_reagent(/datum/reagent/medicine/radaway, 5) //I would also add some wound healing personally, but I think this is good enough
 		to_chat(M, span_notice("[user]'s prayer to [deity_name] has eased your pain!"))
 		M.adjustToxLoss(-20, TRUE, TRUE)
