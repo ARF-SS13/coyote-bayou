@@ -664,7 +664,7 @@
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")
-	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_BELT // its a necklace lol
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK | INV_SLOTBIT_BELT // its a necklace lol
 	var/praying = FALSE
 	var/deity_name = "Giex" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
 

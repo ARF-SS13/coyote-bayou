@@ -63,7 +63,7 @@
 	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/shoulderholster
-	name = "Shoulder Holster"
+	name = "Standard Holster"
 	result = /obj/item/storage/belt/shoulderholster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/crafting/metalparts = 2,
