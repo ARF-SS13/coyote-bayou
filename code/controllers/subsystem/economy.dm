@@ -814,28 +814,17 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	COOLDOWN_START(src, turnin_cooldown, 0.2 SECONDS)
 	var/list/stuff = list()
-	if(isturf(thing))
-		stuff |= get_all_in_turf(thing)
-	else
+	if(ismovable(thing)) // try to grab the thing clicked first
 		stuff |= thing
 		stuff |= thing.contents // warning, may extract nuts
+	stuff |= get_all_in_turf(thing)
 	for(var/atom/thingy in stuff)
-		. |= Turnin(thingy,user,TRUE)
+		for(var/uid in active_quests)
+			var/datum/bounty/B = LAZYACCESS(active_quests, uid)
+			if(B.attempt_turn_in(thingy,user,TRUE))
+				. = TRUE
 	update_owner_data(user)
 	update_static_data(user)
-
-/datum/quest_book/proc/Turnin(atom/thing, mob/user,loud)
-	var/list/valid_salads = list()
-	for(var/uid in active_quests)
-		var/datum/bounty/B = LAZYACCESS(active_quests, uid)
-		if(B.attempt_turn_in(thing,user,loud,TRUE))
-			valid_salads += B
-	if(!LAZYLEN(valid_salads))
-		return FALSE
-	. = TRUE
-	/// actually turn in everything at once!!!
-	for(var/datum/bounty/B in valid_salads)
-		INVOKE_ASYNC(B, TYPE_PROC_REF(/datum/bounty,attempt_turn_in), thing, user, loud, FALSE)
 
 /datum/quest_book/proc/finish_quest(datum/bounty/B, loud = TRUE)
 	if(istext(B))

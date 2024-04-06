@@ -186,31 +186,26 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		if(!claimant || !BQ.CanTurnThisIn(thing, claimant) || BQ.IsCompleted())
 			continue
 		if(SSeconomy.is_duplicate_submission(claimant, thing, BQ))
-			if(loud)
-				was_a_dupe = TRUE
+			was_a_dupe = TRUE
 			continue
-		if(just_check)
-			return TRUE
-		claimed_thing = actually_turn_in_thing(thing, claimant, BQ)
-	if(!claimed_thing)
-		if(was_a_dupe)
-			to_chat(claimant, span_alert("You've already turned in a '[thing]' for this quest!"))
-		return FALSE
-	return TRUE
+		return actually_turn_in_thing(thing, claimant, BQ)
+	if(was_a_dupe)
+		to_chat(claimant, span_alert("You've already turned in a '[thing]' for this quest!"))
+	return FALSE
 
 /datum/bounty/proc/actually_turn_in_thing(atom/thing, mob/user, datum/bounty_quota/BQ)
 	if(!thing || !user || !BQ)
 		return
 	playsound(get_turf(thing), 'sound/effects/booboobee.ogg', 75)
 	var/datum/beam/bean = user.Beam(thing, icon_state = "g_beam", time = BQ.claimdelay)
-	var/obj/effect/temp_visual/glowy_outline/stationary/cool = new(thing)
+	glowify(thing)
 	if(!do_after(user, BQ.claimdelay, TRUE, thing, TRUE, public_progbar = TRUE, stay_close = FALSE))
-		qdel(cool)
+		unglowify(thing)
 		if(bean)
 			bean.End(TRUE)
 		return
+	unglowify(thing)
 	bean.End(TRUE)
-	qdel(cool)
 	if(!user || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(user, thing, BQ) || !user)
 		return
 	. = TRUE
@@ -239,38 +234,6 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		I.color = "#00FF00"
 		flick_overlay_view(I, thing, 8)
 
-
-/obj/effect/temp_visual/glowy_outline/stationary
-	name = "something questable!"
-	desc = "Oh hey! That thing can be turned in for a quest! Neat!"
-	icon_state = "medi_holo"
-	duration = 10 SECONDS
-
-/obj/effect/temp_visual/glowy_outline/stationary/cool_stuff(atom/thing)
-	if(thing)
-		var/mutable_appearance/looks = new(thing)
-		var/mutable_appearance/looks2 = new(thing)
-		appearance = looks
-		looks2.alpha = 10
-		filters += filter(type = "outline", size = 1, color = "#00FF00")
-		filters += filter(type = "alpha", icon = looks2, flags = MASK_INVERSE)
-	var/matrix/topsize = transform.Scale(1.5)
-	var/matrix/bottomsize = transform.Scale(1.2)
-	alpha=150
-	animate(
-		src,
-		time=0.5 SECONDS,
-		transform=topsize,
-		loop = TRUE,
-		easing = CIRCULAR_EASING
-	)
-	animate(
-		time=0.5 SECONDS,
-		transform=bottomsize,
-		loop = TRUE,
-		easing = CIRCULAR_EASING
-	)
-
 /datum/bounty/proc/FancyDelete(atom/A)
 	if(!A)
 		return
@@ -281,6 +244,16 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	animate(transform = M, time = 5, color = "#1111ff", alpha = 0, easing = CIRCULAR_EASING)
 	do_sparks(2, TRUE, get_turf(A), spark_path = /datum/effect_system/spark_spread/quantum)
 	QDEL_IN(A, 2 SECONDS)
+
+/datum/bounty/proc/glowify(atom/A)
+	if(!A)
+		return
+	A.add_filter("cool_outline",1, list("type"="outline", "size"=1, "color"= "#00FF00"))
+
+/datum/bounty/proc/unglowify(atom/A)
+	if(!A)
+		return
+	A.remove_filter("cool_outline")
 
 /// If the quest has mobs that might not exist anymore, this will return FALSE.
 /datum/bounty/proc/should_be_completable()
