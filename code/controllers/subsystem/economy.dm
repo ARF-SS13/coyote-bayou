@@ -525,10 +525,12 @@ SUBSYSTEM_DEF(economy)
 	var/datum/quest_book/QB = get_quest_book(user)
 	if(!QB)
 		return FALSE
-	var/list/my_turnins = LAZYACCESS(thing.quest_tag, QB.q_uid)
-	if(!LAZYLEN(my_turnins))
-		return FALSE
-	return LAZYACCESS(my_turnins, BQ.bq_uid)
+	var/user_uid = QB.q_uid
+	for(var/datum/quest_tag_data/QTD in thing.quest_tag)
+		if(QTD.quid != user_uid)
+			continue
+		if(QTD.did_they_do_it(BQ.bq_uid, user_uid))
+			return TRUE
 
 /datum/controller/subsystem/economy/proc/mark_quest_submission(atom/thing, mob/living/user, datum/bounty_quota/BQ)
 	if(!thing || !BQ || !BQ)

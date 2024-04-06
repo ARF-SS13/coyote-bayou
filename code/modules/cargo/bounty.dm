@@ -231,6 +231,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		to_chat(user, span_green("You turned in a '[thing]'! ([BQ.gotten_amount] / [BQ.needed_amount])"))
 		playsound(get_turf(thing), 'sound/effects/bleeblee.ogg', 75)
 	if(BQ.delete_thing)
+		if(prob(0.1))
+			thing.audible_message("[thing] goes to brazil :)")
 		FancyDelete(thing)
 	else
 		var/image/I = image('icons/effects/effects.dmi', thing, "shield-flash-longer", thing.layer+1)
