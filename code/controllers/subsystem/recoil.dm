@@ -803,33 +803,6 @@ SUBSYSTEM_DEF(recoil)
 	new /obj/item/stock_parts/cell/ammo/mfc(src)
 	new /obj/item/stock_parts/cell/ammo/mfc(src)
 
-/obj/item/storage/debug_box/gun_mods_recoil
-	name = "Debug Gun Mods"
-	desc = "A box of debug gun mods for devs to test weapon mods, recoil, etc!"
-
-/obj/item/storage/debug_box/gun_mods_recoil/PopulateContents()
-	. = ..()
-	new /obj/item/gun_upgrade/underbarrel/bipod(src)
-	new /obj/item/gun_upgrade/underbarrel/bipod(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
-	new /obj/item/gun_upgrade/barrel/excruciator(src)
-	new /obj/item/gun_upgrade/barrel/excruciator(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
-	new /obj/item/gun_upgrade/scope/killer(src)
-	new /obj/item/gun_upgrade/scope/killer(src)
-	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
-	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
-	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
-	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
-	new /obj/item/tool_upgrade/augment/ai_tool(src)
-	new /obj/item/tool_upgrade/augment/ai_tool(src)
-	new /obj/item/tool_upgrade/refinement/vibcompensator(src)
-	new /obj/item/tool_upgrade/refinement/laserguide(src)
-	new /obj/item/tool_upgrade/productivity/booster(src)
-	new /obj/item/tool_upgrade/productivity/motor(src)
-
 /obj/item/storage/debug_box/tools
 	name = "Debug Tools"
 	desc = "A box of debug tools for devs to test stuff!"
