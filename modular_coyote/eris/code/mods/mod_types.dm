@@ -4,6 +4,13 @@
 // 	 REINFORCEMENT: REDUCES TOOL DEGRADATION
 //------------------------------------------------
 
+// THIS IS ALL LEGACY CODE
+// SEE: MODS.DM AT THE BOTTOM FOR THE NEW SYSTEM
+// LOVE YOU - JAEGER
+
+
+
+/*
 //Heatsink can be attached to any tool that uses fuel or power
 /obj/item/tool_upgrade/reinforcement/heatsink
 	name = "heatsink"
