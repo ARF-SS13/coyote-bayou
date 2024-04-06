@@ -356,6 +356,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(infight_check))
+	RegisterSignal(src, COMSIG_SIMPLE_ANIMAL_BUTCHER,PROC_REF(butcher_me))
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -639,18 +640,71 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		adjustHealth(unsuitable_atmos_damage)
 */
 
+/mob/living/simple_animal/proc/butcher_me(datum/source, mob/butcherer, bonus_modifier, effectiveness, gibbed, loud = TRUE)
+	if(!butcherer)
+		return
+	if(!butcher_results && !guaranteed_butcher_results)
+		return
+	if(already_butchered)
+		return
+	already_butchered = TRUE
+
+	if(butcherer && HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+		effectiveness *= 2
+	var/chance_to_drop_butchered_thing = effectiveness / max(butcher_difficulty, 0.01)
+	var/bonus_chance = max(0, (chance_to_drop_butchered_thing - 100) + bonus_modifier) //so 125 total effectiveness = 25% extra chance
+	var/meat_quality = 50 + (chance_to_drop_butchered_thing/10) //increases through quality of butchering tool, and through if it was butchered in the kitchen or not
+
+	var/said_fail = FALSE
+	var/turf/T = drop_location()
+	var/list/butchered_items = list()
+	for(var/V in butcher_results)
+		var/obj/rando_bits = V
+		var/amount = butcher_results[rando_bits]
+		for(var/_i in 1 to amount)
+			if(!prob(chance_to_drop_butchered_thing))
+				if(butcherer && loud && !said_fail)
+					said_fail = TRUE
+					to_chat(butcherer, span_warning("You fail to harvest some of the [initial(rando_bits.name)] from [src]."))
+			else if(prob(bonus_chance))
+				if(butcherer && loud)
+					to_chat(butcherer, span_info("You harvest some extra [initial(rando_bits.name)] from [src]!"))
+				for(var/i in 1 to 2)
+					butchered_items += new rando_bits (T)
+				if(HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+					if(butcherer)
+						to_chat(butcherer, span_info("Your advanced trapping knowledge allows you to harvest extra [initial(rando_bits.name)] from [src]!"))
+					for(var/i in 1 to 2)
+						butchered_items += new rando_bits (T)
+			else
+				butchered_items += new rando_bits (T)
+		butcher_results.Remove(rando_bits) //in case you want to, say, have it drop its results on gib
+
+	for(var/V in guaranteed_butcher_results)
+		var/obj/guaranteed_bits = V
+		var/amount = guaranteed_butcher_results[guaranteed_bits]
+		for(var/i in 1 to amount)
+			butchered_items += new guaranteed_bits (T)
+		guaranteed_butcher_results.Remove(guaranteed_bits)
+
+	for(var/butchered_item in butchered_items)
+		if(isobj(butchered_item))
+			var/obj/O = butchered_item
+			if(isfood(O))
+				var/obj/item/reagent_containers/food/butchered_meat = butchered_item
+				butchered_meat.food_quality = meat_quality
+			if(!O.anchored)
+				O.pixel_x = rand(-14,14)
+				O.pixel_y = rand(-14,14)
+
+	if(butcherer && loud)
+		visible_message(span_notice("[butcherer] butchers [src]."))
+	harvest(butcherer)
+	if(!gibbed)
+		gib(FALSE, FALSE, TRUE)
+
 /mob/living/simple_animal/gib()
-	if(butcher_results || guaranteed_butcher_results)
-		var/list/butcher = list()
-		if(butcher_results)
-			butcher += butcher_results
-		if(guaranteed_butcher_results)
-			butcher += guaranteed_butcher_results
-		var/atom/Tsec = drop_location()
-		for(var/path in butcher)
-			for(var/i in 1 to butcher[path])
-				if(prob(25))
-					new path(Tsec)
+	butcher_me(null, TRUE)
 	..()
 
 /mob/living/simple_animal/gib_animation()
