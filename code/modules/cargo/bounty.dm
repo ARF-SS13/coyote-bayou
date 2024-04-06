@@ -180,7 +180,6 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return FALSE
 	if(is_complete())
 		return FALSE
-	var/claimed_thing = FALSE
 	var/was_a_dupe = FALSE
 	for(var/datum/bounty_quota/BQ in wanted_things) // mooooom take me to bairy queeeen
 		if(!claimant || !BQ.CanTurnThisIn(thing, claimant) || BQ.IsCompleted())

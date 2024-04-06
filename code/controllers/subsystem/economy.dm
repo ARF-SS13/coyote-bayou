@@ -813,18 +813,22 @@ SUBSYSTEM_DEF(economy)
 	if(!COOLDOWN_FINISHED(src, turnin_cooldown))
 		return FALSE
 	COOLDOWN_START(src, turnin_cooldown, 0.2 SECONDS)
+	var/turf/here = get_turf(user) // just so moving will interrupt it
 	var/list/stuff = list()
 	if(ismovable(thing)) // try to grab the thing clicked first
 		stuff |= thing
 		stuff |= thing.contents // warning, may extract nuts
 	stuff |= get_all_in_turf(thing)
-	for(var/atom/thingy in stuff)
-		for(var/uid in active_quests)
-			var/datum/bounty/B = LAZYACCESS(active_quests, uid)
-			if(B.attempt_turn_in(thingy,user,TRUE))
-				. = TRUE
+	mainloop:
+		for(var/atom/thingy in stuff)
+			for(var/uid in active_quests)
+				var/datum/bounty/B = LAZYACCESS(active_quests, uid)
+				if(B.attempt_turn_in(thingy,user,TRUE))
+					. = TRUE
+				update_static_data(user)
+				if(get_turf(user) != here)
+					break mainloop // maybe THIS labeled break will survive more than 1 commit
 	update_owner_data(user)
-	update_static_data(user)
 
 /datum/quest_book/proc/finish_quest(datum/bounty/B, loud = TRUE)
 	if(istext(B))

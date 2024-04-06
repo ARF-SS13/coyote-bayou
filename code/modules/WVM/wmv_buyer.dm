@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if("[I.type]" == last_appraised)
 		silent = TRUE
 	last_appraised = "[I.type]"
-	var/final_price = (CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)) / 1.5) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
+	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
 		if(!looping)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = silent)
