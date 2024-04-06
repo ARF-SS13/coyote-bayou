@@ -284,26 +284,26 @@ SUBSYSTEM_DEF(economy)
 
 /datum/controller/subsystem/economy/proc/alert_devices()
 	for(var/kcey in quest_books)
-		var/datum/quest_book/QL = LAZYACCESS(quest_books, kcey)
-		QL.questpool_updated()
+		var/datum/quest_book/QB = LAZYACCESS(quest_books, kcey)
+		QB.questpool_updated()
 
 /// gives a local copy of a quest to a player's device........ if they can handle it!!
 /datum/controller/subsystem/economy/proc/add_active_quest(datum/bounty/B, mob/user, loud = TRUE)
 	if(!user)
 		return FALSE
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return FALSE
-	return QL.add_active_quest(B, TRUE)
+	return QB.add_active_quest(B, TRUE)
 
 /// removes an active quest
 /datum/controller/subsystem/economy/proc/remove_active_quest(datum/bounty/B, mob/user, loud = TRUE, system_handled)
 	if(!user)
 		return FALSE
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return FALSE
-	return QL.remove_active_quest(B, loud, system_handled)
+	return QB.remove_active_quest(B, loud, system_handled)
 
 /datum/controller/subsystem/economy/proc/activate_quest(datum/bounty/B)
 	active_quests[B.uid] = B
@@ -329,38 +329,38 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/finish_quest(datum/bounty/B, mob/user, loud = TRUE)
 	if(!B || !user)
 		return FALSE
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return FALSE
-	. = QL.finish_quest(B, TRUE)
+	. = QB.finish_quest(B, TRUE)
 	update_quest_statistics()
 
 /datum/controller/subsystem/economy/proc/adjust_funds(mob/user, amount, datum/bounty/payer)
 	if(!user || !amount)
 		return
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return
-	return QL.adjust_funds(amount, payer)
+	return QB.adjust_funds(amount, payer)
 
 /datum/controller/subsystem/economy/proc/get_top_quester_quest_book()
 	var/highest_completed = 0
 	var/highest_completed_uid = ""
 	for(var/k in quest_books)
-		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		if(LAZYLEN(QL.finished_this_round) > highest_completed)
-			highest_completed = LAZYLEN(QL.finished_this_round)
-			highest_completed_uid = QL.q_uid
+		var/datum/quest_book/QB = LAZYACCESS(quest_books, k)
+		if(LAZYLEN(QB.finished_this_round) > highest_completed)
+			highest_completed = LAZYLEN(QB.finished_this_round)
+			highest_completed_uid = QB.q_uid
 	return LAZYACCESS(quest_books, highest_completed_uid)
 
 /datum/controller/subsystem/economy/proc/get_top_earner_quest_book()
 	var/highest_banked = 0
 	var/highest_banked_uid = ""
 	for(var/k in quest_books)
-		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		if(QL.overall_banked > highest_banked)
-			highest_banked = QL.overall_banked
-			highest_banked_uid = QL.q_uid
+		var/datum/quest_book/QB = LAZYACCESS(quest_books, k)
+		if(QB.overall_banked > highest_banked)
+			highest_banked = QB.overall_banked
+			highest_banked_uid = QB.q_uid
 	return LAZYACCESS(quest_books, highest_banked_uid)
 
 /datum/controller/subsystem/economy/proc/update_quest_statistics()
@@ -381,31 +381,31 @@ SUBSYSTEM_DEF(economy)
 		updatem = TRUE
 		COOLDOWN_START(src, static_spam, 2 SECONDS)
 	for(var/k in quest_books)
-		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		total_banked += QL.overall_banked
-		total_completed += LAZYLEN(QL.finished_this_round)
+		var/datum/quest_book/QB = LAZYACCESS(quest_books, k)
+		total_banked += QB.overall_banked
+		total_completed += LAZYLEN(QB.finished_this_round)
 		/// compare how much they earned this round to the highest
-		if(QL.overall_banked > highest_banked)
-			highest_banked = QL.overall_banked
-			highest_banked_uid = QL.q_uid
+		if(QB.overall_banked > highest_banked)
+			highest_banked = QB.overall_banked
+			highest_banked_uid = QB.q_uid
 		/// compare how many they completed this round to the highest
-		if(LAZYLEN(QL.finished_this_round) > highest_completed)
-			highest_completed = LAZYLEN(QL.finished_this_round)
-			highest_completed_uid = QL.q_uid
+		if(LAZYLEN(QB.finished_this_round) > highest_completed)
+			highest_completed = LAZYLEN(QB.finished_this_round)
+			highest_completed_uid = QB.q_uid
 		/// compare how many quest they've completed throughout all time to the highest
-		if(LAZYLEN(QL.finished_quests) > historical_highest_completed)
-			historical_highest_completed = LAZYLEN(QL.finished_quests)
-			historical_highest_completed_uid = QL.q_uid
+		if(LAZYLEN(QB.finished_quests) > historical_highest_completed)
+			historical_highest_completed = LAZYLEN(QB.finished_quests)
+			historical_highest_completed_uid = QB.q_uid
 		/// compare how much they've earned throughout all time to the highest
-		if(QL.get_historical_banked() > historical_highest_banked)
-			historical_highest_banked = QL.get_historical_banked()
-			historical_highest_banked_uid = QL.q_uid
-		// for(var/datum/finished_quest/FQ in QL.finished_quests)
+		if(QB.get_historical_banked() > historical_highest_banked)
+			historical_highest_banked = QB.get_historical_banked()
+			historical_highest_banked_uid = QB.q_uid
+		// for(var/datum/finished_quest/FQ in QB.finished_quests)
 		// 	if(FQ.value > most_valuable_quest)
 		// 		most_valuable_quest = FQ.value
 		// 		most_valuable_quest_uid = FQ.quest_uid
 		if(updatem)
-			QL.update_pls = TRUE
+			QB.update_pls = TRUE
 	
 
 /datum/controller/subsystem/economy/proc/get_quest_by_uid(uid, list/searchthis)
@@ -424,8 +424,8 @@ SUBSYSTEM_DEF(economy)
 	deactivate_quest(B)
 	quest_pool -= B.uid
 	for(var/k in quest_books)
-		var/datum/quest_book/QL = LAZYACCESS(quest_books, k)
-		QL.remove_active_quest(B, FALSE, system_handled)
+		var/datum/quest_book/QB = LAZYACCESS(quest_books, k)
+		QB.remove_active_quest(B, FALSE, system_handled)
 
 /datum/controller/subsystem/economy/proc/is_part_of_a_quest(atom/thing)
 	if(!thing)
@@ -435,10 +435,10 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/check_quest_repeat(mob/completer, datum/bounty/B)
 	if(!completer || !completer.client)
 		return
-	var/datum/quest_book/QL = get_quest_book(completer)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(completer)
+	if(!QB)
 		return
-	QL.have_they_done_this_quest_before(B)
+	QB.have_they_done_this_quest_before(B)
 
 /datum/controller/subsystem/economy/proc/extract_quid(something)
 	if(!something)
@@ -461,18 +461,18 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(completer)
 	if(!P)
 		return
-	var/datum/quest_book/QL = LAZYACCESS(quest_books, P.quester_uid)
-	if(!QL)
-		QL = new(completer)
-	return QL
+	var/datum/quest_book/QB = LAZYACCESS(quest_books, P.quester_uid)
+	if(!QB)
+		QB = new(completer)
+	return QB
 
 /datum/controller/subsystem/economy/proc/open_quest_console(mob/user, atom/thing)
 	if(!user)
 		return
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return
-	QL.open_console(user)
+	QB.open_console(user)
 
 /datum/controller/subsystem/economy/proc/give_claimer(mob/user, atom/base)
 	if(!user)
@@ -501,8 +501,8 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/find_claimerable_source(mob/user)
 	if(!user)
 		return
-	var/datum/quest_book/QL = get_quest_book(user)
-	var/atom/thing = GET_WEAKREF(QL.last_used)
+	var/datum/quest_book/QB = get_quest_book(user)
+	var/atom/thing = GET_WEAKREF(QB.last_used)
 	if(thing && thing.Adjacent(user))
 		return thing
 	var/list/everything_in_mob = get_all_in_turf(get_turf(user))
@@ -514,30 +514,63 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/attempt_turnin(atom/thing, mob/user)
 	if(!thing || !user)
 		return
-	var/datum/quest_book/QL = get_quest_book(user)
-	return QL.turn_something_in(thing)
+	var/datum/quest_book/QB = get_quest_book(user)
+	return QB.turn_something_in(thing)
 
-/datum/controller/subsystem/economy/proc/check_duplicate_submissions(atom/thing, mob/user)
-	if(!thing || !user)
+/datum/controller/subsystem/economy/proc/is_duplicate_submission(atom/thing, mob/user, datum/bounty_quota/BQ)
+	if(!thing || !user || !BQ)
 		return FALSE
-	var/datum/quest_book/QL = get_quest_book(user)
-	if(!QL)
+	if(!LAZYLEN(thing.quest_tag))
+		return FALSE // nobody's even touched it, sadge
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!QB)
 		return FALSE
-	return QL.have_they_submitted_this_thing_before(thing)
+	var/list/my_turnins = LAZYACCESS(thing.quest_tag, QB.q_uid)
+	if(!LAZYLEN(my_turnins))
+		return FALSE
+	return LAZYACCESS(my_turnins, BQ.bq_uid)
 
-/datum/controller/subsystem/economy/proc/turned_something_in(atom/thing, datum/quest_book/QB)
-	if(!thing || !QB)
+/datum/controller/subsystem/economy/proc/mark_quest_submission(atom/thing, mob/living/user, datum/bounty_quota/BQ)
+	if(!thing || !BQ || !BQ)
 		return
-	SSeconomy.assign_quest_tag(thing)
-	return thing
+	var/datum/quest_book/QB = get_quest_book(user)
+	if(!BQ)
+		return
+	var/user_uid = QB.q_uid
+	for(var/datum/quest_tag_data/QTD in thing.quest_tag)
+		if(QTD.quid != user_uid)
+			continue
+		if(QTD.did_they_do_it(BQ.bq_uid, user_uid))
+			return FALSE
+		QTD.add_bq_uid(BQ.bq_uid, user_uid)
+		return TRUE
+	/// didnt find one, lets make one
+	var/datum/quest_tag_data/QTD = new(user_uid)
+	QTD.add_bq_uid(BQ.bq_uid, user_uid)
+	thing.quest_tag |= QTD
+	return TRUE
 
-/datum/controller/subsystem/economy/proc/assign_quest_tag(atom/thing)
-	if(!thing)
+//// datum used to hold information as to who did what to who now
+/datum/quest_tag_data
+	var/quid
+	var/list/bqoids = list()
+
+/datum/quest_tag_data/New(quid)
+	. = ..()
+	if(!quid)
+		qdel(src)
 		return
-	var/skulltag = round(world.time)
-	while(skulltag in used_tags)
-		skulltag++
-	thing.quest_tag = skulltag
+	src.quid = quid
+
+/datum/quest_tag_data/proc/add_bq_uid(bquid, their_quid)
+	if(!bquid || their_quid != quid)
+		return
+	bqoids[bquid] = TRUE
+
+/datum/quest_tag_data/proc/did_they_do_it(bquid, their_quid)
+	if(!bquid || their_quid != quid)
+		return FALSE
+	return LAZYACCESS(bqoids, bquid)
 
 /datum/controller/subsystem/economy/proc/get_plausible_quest_console(mob/person)
 	var/list/everything = get_all_in_turf(get_turf(person))
@@ -776,7 +809,7 @@ SUBSYSTEM_DEF(economy)
 		return
 	if(!COOLDOWN_FINISHED(src, turnin_cooldown))
 		return FALSE
-	COOLDOWN_START(src, turnin_cooldown, 0.5 SECONDS)
+	COOLDOWN_START(src, turnin_cooldown, 0.2 SECONDS)
 	var/list/stuff = list()
 	if(isturf(thing))
 		stuff |= get_all_in_turf(thing)
@@ -784,17 +817,22 @@ SUBSYSTEM_DEF(economy)
 		stuff |= thing
 		stuff |= thing.contents // warning, may extract nuts
 	for(var/atom/thingy in stuff)
-		if(Turnin(thingy,user,TRUE))
-			return TRUE
+		. |= Turnin(thingy,user,TRUE)
 	update_owner_data(user)
 	update_static_data(user)
-	return FALSE
 
 /datum/quest_book/proc/Turnin(atom/thing, mob/user,loud)
+	var/list/valid_salads = list()
 	for(var/uid in active_quests)
 		var/datum/bounty/B = LAZYACCESS(active_quests, uid)
-		if(B.attempt_turn_in(thing,user,loud))
-			return TRUE
+		if(B.attempt_turn_in(thing,user,loud,TRUE))
+			valid_salads += B
+	if(!LAZYLEN(valid_salads))
+		return FALSE
+	. = TRUE
+	/// actually turn in everything at once!!!
+	for(var/datum/bounty/B in valid_salads)
+		INVOKE_ASYNC(B, TYPE_PROC_REF(/datum/bounty,attempt_turn_in), thing, user, loud, FALSE)
 
 /datum/quest_book/proc/finish_quest(datum/bounty/B, loud = TRUE)
 	if(istext(B))
@@ -891,11 +929,6 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	return LAZYACCESS(finished_this_round, B.uid)
 	// todo: quests that you cann only ever take once, as, like, story quests or something
-
-/datum/quest_book/proc/have_they_submitted_this_thing_before(atom/thing)
-	if(!thing || !thing.quest_tag)
-		return FALSE
-	return (thing.quest_tag in things_turned_in)
 
 /datum/quest_book/proc/questpool_updated()
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -1397,11 +1430,11 @@ SUBSYSTEM_DEF(economy)
 		to_chat(user, span_alert("Your [src] is still processing all that data!"))
 		return
 	COOLDOWN_START(src, ping_cooldown, 1 SECONDS)
-	var/datum/quest_book/QL = SSeconomy.get_quest_book(user)
-	if(!QL)
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(user)
+	if(!QB)
 		return
 	var/found_something = FALSE
-	var/list/cacheotypes = QL.get_quest_paths()
+	var/list/cacheotypes = QB.get_quest_paths()
 	for(var/turf/T in view(7, user))
 		for(var/atom/movable/thing in T)
 			if(!is_type_in_typecache(thing, cacheotypes))

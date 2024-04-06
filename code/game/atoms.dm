@@ -98,7 +98,9 @@
 	/// What does this creature taste like?
 	var/list/tastes
 	/// When something is turned in for a quest, it'll give it a tag so it can only be turned in once per player
-	var/quest_tag
+	var/list/quest_tag
+	/// Override the deletion of this atom for quests
+	var/important
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -190,6 +192,8 @@
 
 	QDEL_NULL(light)
 
+	if(LAZYLEN(quest_tag))
+		QDEL_LIST(quest_tag)
 	return ..()
 
 /**

@@ -175,23 +175,24 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	return SSeconomy.check_quest_repeat(wanter, src)
 
 // Called when the claim button is clicked. Override to provide fancy rewards.
-/datum/bounty/proc/attempt_turn_in(atom/thing, mob/claimant, loud)
+/datum/bounty/proc/attempt_turn_in(atom/thing, mob/claimant, loud, just_check)
 	if(!thing || !claimant || !thing)
 		return FALSE
 	if(is_complete())
 		return FALSE
 	var/claimed_thing = FALSE
 	for(var/datum/bounty_quota/BQ in wanted_things) // mooooom take me to bairy queeeen
-		if(BQ.CanTurnThisIn(thing, claimant))
-			claimed_thing = actually_turn_in_thing(thing, claimant, BQ)
-			break
+		if(!claimant || !BQ.CanTurnThisIn(thing, claimant) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(claimant, thing, BQ))
+			return
+		if(just_check)
+			return TRUE
+		claimed_thing = actually_turn_in_thing(thing, claimant, BQ)
+		. = TRUE
 	if(!claimed_thing)
 		return FALSE
 
 /datum/bounty/proc/actually_turn_in_thing(atom/thing, mob/user, datum/bounty_quota/BQ)
 	if(!thing || !user || !BQ)
-		return
-	if(!BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || is_complete())
 		return
 	playsound(get_turf(thing), 'sound/effects/booboobee.ogg', 75)
 	var/datum/beam/bean = user.Beam(thing, icon_state = "g_beam", time = BQ.claimdelay)
@@ -203,9 +204,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return
 	bean.End(TRUE)
 	qdel(cool)
-	if(!user || QDELETED(thing) || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.check_duplicate_submissions(user, thing) || !user)
+	if(!user || QDELETED(thing) || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(user, thing, BQ) || !user)
 		return
-	SSeconomy.turned_something_in(thing, BQ)
+	. = TRUE
+	SSeconomy.mark_quest_submission(thing, user, BQ)
 	BQ.Claim(thing, user)
 	if(is_complete())
 		to_chat(user, span_greentext("'[name]' completed!"))
@@ -524,7 +526,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 
 /datum/bounty_quota/proc/GenerateUID()
-	bq_uid = "[world.time]-[rand(1000, 9999)]-[rand(1000, 9999)]"
+	bq_uid = "[world.time]-[rand(1000, 9999)]-[rand(1000, 9999)]-[rand(1000, 9999)]"
 
 /datum/bounty_quota/proc/GetPaths()
 	if(paths_get_subtypes)
@@ -639,9 +641,9 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	// 	return FALSE
 	if(IsCompleted())
 		return FALSE
-	if(SSeconomy.check_duplicate_submissions(thing, user))
+	if(SSeconomy.is_duplicate_submission(thing, user, src))
 		return FALSE
-	if(isliving(thing))
+	if(isliving(thing) && mobs_must_be_dead)
 		var/mob/living/L = thing
 		if(L.stat != DEAD)
 			return FALSE
