@@ -971,7 +971,7 @@ SUBSYSTEM_DEF(economy)
 		save_package[QB_SAVE_QUEST_TYPE] = "[B.type]" // this is the type of the quest
 		save_package[QB_SAVE_QUEST_DATA] = presave.Copy() // this is the data of the quest
 		save_package["VALID"] = TRUE
-		to_save += list(presave)
+		to_save += list(save_package)
 	P.saved_active_quests = to_save.Copy()
 	. = P.save_character()
 	COOLDOWN_START(src, save_cooldown, 1 SECONDS)
