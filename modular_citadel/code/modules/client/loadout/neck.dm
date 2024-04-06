@@ -208,7 +208,7 @@
 /datum/gear/neck/shoulderholster
 	name = "standard holster"
 	path = /obj/item/storage/belt/shoulderholster
-	cost = 2
+	cost = 1
 
 /datum/gear/belt/sword
 	name = "sword sheath"
