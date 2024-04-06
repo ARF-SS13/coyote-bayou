@@ -43,6 +43,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	/// How should difficulties be handled?
 	var/difficulty_flags = NONE
 	var/is_laggy_as_hell = FALSE
+	var/deserialization_complete = FALSE
 
 	var/list/congrats_phrases = list(
 		"Well done",
@@ -70,8 +71,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	)
 
 // Displayed on bounty UI screen.
-/datum/bounty/New(diffi, datum/bounty/from)
+/datum/bounty/New(diffi, datum/bounty/from, saveloaded)
 	. = ..()
+	if(saveloaded)
+		return // awaiting external intialization
 	if(istype(from))
 		copy_bounty(from)
 		return
@@ -93,8 +96,8 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty/proc/assign_uid()
 	uid = ""
-	uid += "[world.time]-"
 	uid += "[type]-"
+	uid += "[round(world.time)]-"
 	uid += "[rand(1000, 9999)]"
 
 /datum/bounty/proc/set_difficulty(difficulty)
@@ -399,6 +402,84 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	return data
 
+/// converts everything to a save-friendly list
+/datum/bounty/proc/serialize_to_list()
+	var/list/serial = list()
+	serial[QFB_NAME]                = name
+	serial[QFB_DESCRIPTION]         = description
+	serial[QFB_BASE_REWARD]         = base_reward
+	serial[QFB_MEDIUM_REWARD_BONUS] = medium_reward_bonus
+	serial[QFB_HARD_REWARD_BONUS]   = hard_reward_bonus
+	serial[QFB_CBT_REWARD_BONUS]    = CBT_reward_bonus
+	serial[QFB_FLAVOR_QUESTGIVERS]  = flavor_questgivers.Copy()
+	serial[QFB_FLAVOR_KIND]         = flavor_kind
+	serial[QFB_FLAVOR_FOCUS]        = flavor_focus
+	serial[QFB_PAID_OUT]            = paid_out
+	serial[QFB_COMPLETED]           = completed
+	serial[QFB_CLAIMED]             = claimed
+	serial[QFB_HIGH_PRIORITY]       = high_priority
+	serial[QFB_WEIGHT]              = weight
+	serial[QFB_CANDUPE]             = candupe
+	serial[QFB_RESPECT_EXTINCTION]  = respect_extinction
+	serial[QFB_UID]                 = uid
+	serial[QFB_REQUEST_MODE]        = request_mode
+	serial[QFB_INIT_WANTEDS]        = init_wanteds.Copy()
+	serial[QFB_WANTED_THINGS]       = list()
+	for(var/datum/bounty_quota/BQ in wanted_things)
+		serial[QFB_WANTED_THINGS] += list(BQ.serialize_to_list())
+	serial[QFB_NERFED]                 = nerfed
+	serial[QFB_DIFFICULTY]             = difficulty
+	serial[QFB_DIFFICULTY_FLAGS]       = difficulty_flags
+	serial[QFB_IS_LAGGY_AS_HELL]       = is_laggy_as_hell
+	serial[QFB_CONGRATS_PHRASES]       = congrats_phrases.Copy()
+	serial[QFB_ACCOMPLISHMENT_PHRASES] = accomplishment_phrases.Copy()
+	serial["VALID"] = TRUE
+	return serial
+
+/// converts the above list into a functionally identical bounty to the one it describes
+/datum/bounty/proc/deserialize_from_list(list/serial)
+	if(!serial["VALID"])
+		return
+	/// first, clear out anything that might still be in the wanted_things list
+	QDEL_LIST(wanted_things) // ez
+	name                     = serial[QFB_NAME]
+	description              = serial[QFB_DESCRIPTION]
+	base_reward              = text2num(serial[QFB_BASE_REWARD])
+	medium_reward_bonus      = text2num(serial[QFB_MEDIUM_REWARD_BONUS])
+	hard_reward_bonus        = text2num(serial[QFB_HARD_REWARD_BONUS])
+	CBT_reward_bonus         = text2num(serial[QFB_CBT_REWARD_BONUS])
+	flavor_questgivers       = safe_json_decode(serial[QFB_FLAVOR_QUESTGIVERS])
+	flavor_kind              = serial[QFB_FLAVOR_KIND]
+	flavor_focus             = serial[QFB_FLAVOR_FOCUS]
+	paid_out                 = text2num(serial[QFB_PAID_OUT])
+	completed                = text2num(serial[QFB_COMPLETED])
+	claimed                  = text2num(serial[QFB_CLAIMED])
+	high_priority            = text2num(serial[QFB_HIGH_PRIORITY])
+	weight                   = text2num(serial[QFB_WEIGHT])
+	candupe                  = text2num(serial[QFB_CANDUPE])
+	respect_extinction       = text2num(serial[QFB_RESPECT_EXTINCTION])
+	uid                      = "[rand(1000, 9999)]-[rand(1000, 9999)]-[rand(1000, 9999)]-[rand(1000, 9999)]"
+	request_mode             = text2num(serial[QFB_REQUEST_MODE])
+	var/list/preinit_wanteds = safe_json_decode(serial[QFB_INIT_WANTEDS])
+	init_wanteds.Cut()
+	for(var/ser in preinit_wanteds)
+		init_wanteds += ispath(ser) ? ser : text2path(ser)
+	var/list/prewanted_things = safe_json_decode(serial[QFB_WANTED_THINGS])
+	for(var/list/ser in prewanted_things)
+		var/datum/bounty_quota/BQ = new /datum/bounty_quota(null, TRUE)
+		if(!BQ.deserialize_from_list(ser))
+			message_admins("Failed to deserialize bounty quota! Error code: SOCK-MONKEY-SPAGHETTI-NOODLE")
+			continue
+		wanted_things += BQ
+	nerfed                   = text2num(serial[QFB_NERFED])
+	difficulty               = text2num(serial[QFB_DIFFICULTY])
+	difficulty_flags         = text2num(serial[QFB_DIFFICULTY_FLAGS])
+	is_laggy_as_hell         = text2num(serial[QFB_IS_LAGGY_AS_HELL])
+	congrats_phrases         = serial[QFB_CONGRATS_PHRASES]
+	accomplishment_phrases   = serial[QFB_ACCOMPLISHMENT_PHRASES]
+	deserialization_complete = serial["VALID"]
+	return deserialization_complete
+
 /datum/bounty/proc/mark_high_priority(scale_reward = 2)
 	// if(high_priority)
 	// 	return
@@ -465,10 +546,13 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/bq_uid = 0
 	var/is_copy
 	var/post_copy_flags = NONE
+	var/deserialization_complete = FALSE
 	/// 
 	var/datum/bounty_quota/blank_path = /datum/bounty_quota
 
-/datum/bounty_quota/New(datum/bounty_quota/copy_source)
+/datum/bounty_quota/New(datum/bounty_quota/copy_source, halt)
+	if(halt)
+		return // awaiting external intialization
 	setzup(copy_source)
 
 /datum/bounty_quota/proc/setzup(datum/bounty_quota/copy_source)
@@ -654,6 +738,65 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	serial[QFBQ_DIFFICULTY] = difficulty
 	serial[QFBQ_PRICE_PER_THING] = price_per_thing
 	return serial
+
+/// converts all the useful info into an even more detailed list for saving, cus we gotta be careful to the dot
+/datum/bounty_quota/proc/serialize_to_list()
+	var/list/serial = list()
+	serial[QFBQ_NAME]              = name
+	serial[QFBQ_FLAVOR]            = flavor
+	serial[QFBQ_INFO]              = info
+	serial[QFBQ_NEEDED_AMOUNT]     = needed_amount
+	serial[QFBQ_GOTTEN_AMOUNT]     = gotten_amount
+	serial[QFBQ_DIFFICULTY]        = difficulty
+	serial[QFBQ_PRICE_PER_THING]   = price_per_thing
+	serial[QFBQ_EASY_MULTIPLIER]   = easy_multiplier
+	serial[QFBQ_MEDIUM_MULTIPLIER] = medium_multiplier
+	serial[QFBQ_HARD_MULTIPLIER]   = hard_multiplier
+	serial[QFBQ_CBT_MULTIPLIER]    = CBT_multiplier
+	serial[QFBQ_MOBS_MUST_BE_DEAD] = mobs_must_be_dead
+	serial[QFBQ_DELETE_THING]      = delete_thing
+	serial[QFBQ_CLAIMDELAY]        = claimdelay
+	serial[QFBQ_PATHS]             = paths.Copy()
+	serial[QFBQ_PATHS_EXCLUDE]     = paths_exclude.Copy()
+	serial[QFBQ_PICK_THIS_MANY]    = pick_this_many
+	serial[QFBQ_BQ_UID]            = bq_uid
+	serial[QFBQ_IS_COPY]           = is_copy
+	serial[QFBQ_POST_COPY_FLAGS]   = post_copy_flags
+	serial["VALID"] = TRUE
+	return serial
+
+/// Converts the above list into a functionally identical bounty_quota to the one it describes
+/datum/bounty_quota/proc/deserialize_from_list(list/serial)
+	if(!serial["VALID"])
+		return
+	name              = serial[QFBQ_NAME]
+	flavor            = serial[QFBQ_FLAVOR]
+	info              = serial[QFBQ_INFO]
+	needed_amount     = text2num(serial[QFBQ_NEEDED_AMOUNT])
+	gotten_amount     = text2num(serial[QFBQ_GOTTEN_AMOUNT])
+	difficulty        = text2num(serial[QFBQ_DIFFICULTY])
+	price_per_thing   = text2num(serial[QFBQ_PRICE_PER_THING])
+	easy_multiplier   = text2num(serial[QFBQ_EASY_MULTIPLIER])
+	medium_multiplier = text2num(serial[QFBQ_MEDIUM_MULTIPLIER])
+	hard_multiplier   = text2num(serial[QFBQ_HARD_MULTIPLIER])
+	CBT_multiplier    = text2num(serial[QFBQ_CBT_MULTIPLIER])
+	mobs_must_be_dead = text2num(serial[QFBQ_MOBS_MUST_BE_DEAD])
+	delete_thing      = text2num(serial[QFBQ_DELETE_THING])
+	claimdelay        = text2num(serial[QFBQ_CLAIMDELAY])
+	var/list/prepaths = safe_json_decode(serial[QFBQ_PATHS])
+	paths.Cut()
+	for(var/pat in prepaths)
+		paths |= ispath(pat) ? pat : text2path(pat)
+	var/list/prepaths_exclude = safe_json_decode(serial[QFBQ_PATHS_EXCLUDE])
+	paths_exclude.Cut()
+	for(var/pat in prepaths_exclude)
+		paths_exclude |= ispath(pat) ? pat : text2path(pat)
+	pick_this_many    = serial[QFBQ_PICK_THIS_MANY]
+	bq_uid            = serial[QFBQ_BQ_UID]
+	is_copy           = text2num(serial[QFBQ_IS_COPY])
+	post_copy_flags   = text2num(serial[QFBQ_POST_COPY_FLAGS])
+	deserialization_complete = text2num(serial["VALID"])
+	return deserialization_complete
 
 /datum/bounty_quota/proc/get_paths()
 	var/list/outer = list()

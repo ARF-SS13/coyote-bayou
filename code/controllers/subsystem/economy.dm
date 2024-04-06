@@ -695,6 +695,10 @@ SUBSYSTEM_DEF(economy)
 	var/virgin = TRUE
 	var/list/finished_this_round = list()
 	var/update_pls = FALSE
+	var/save_cooldown = 0 // just so we dont clobber the hard drive
+	var/double_virgin = TRUE
+	var/queued_save = FALSE
+	var/save_spam_cooldown = 0
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -712,6 +716,8 @@ SUBSYSTEM_DEF(economy)
 	update_owner_data(quester)
 	/// who lives in a pineapple under the sea?
 	load_player_finished_quests(quester)
+	/// who loves his brainwashing and always wants more?
+	load_player_active_quests(quester)
 
 /datum/quest_book/Destroy(force, ...)
 	if(QW)
@@ -756,6 +762,7 @@ SUBSYSTEM_DEF(economy)
 		to_chat(user, span_green("Quest '[B2.name]' accepted!"))
 	update_owner_data(user)
 	update_static_data(user)
+	sync_active_quests_with_save()
 	return TRUE
 
 /datum/quest_book/proc/can_take_quest(datum/bounty/B, loud = TRUE)
@@ -800,6 +807,7 @@ SUBSYSTEM_DEF(economy)
 	SSeconomy.deactivate_quest(B)
 	if(!was_finished)
 		qdel(B)
+	sync_active_quests_with_save()
 	update_owner_data(user)
 	update_static_data(user)
 	return TRUE
@@ -827,6 +835,7 @@ SUBSYSTEM_DEF(economy)
 				update_static_data(user)
 				if(get_turf(user) != here)
 					break mainloop // maybe THIS labeled break will survive more than 1 commit
+	sync_active_quests_with_save()
 	update_owner_data(user)
 
 /datum/quest_book/proc/finish_quest(datum/bounty/B, loud = TRUE)
@@ -849,7 +858,7 @@ SUBSYSTEM_DEF(economy)
 	quest_done(B)
 	SSeconomy.deactivate_quest(B) // just so they get good and dizzy
 	remove_active_quest(B, FALSE, TRUE)
-	update_lifetime_total()
+	update_lifetime_total(TRUE)
 	update_static_data(user)
 	playsound(user, 'sound/effects/quest_cashout.ogg', 40, TRUE)
 	return TRUE
@@ -886,7 +895,7 @@ SUBSYSTEM_DEF(economy)
 		result = text2num(B.quest_time_completed) - text2num(A.quest_time_completed)
 	return result
 
-/datum/quest_book/proc/update_lifetime_total()
+/datum/quest_book/proc/update_lifetime_total(sync_active_too)
 	if(virgin)
 		return // they havent loaded in yet!
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -899,7 +908,10 @@ SUBSYSTEM_DEF(economy)
 	if(LAZYLEN(finished_quests) < LAZYLEN(P.saved_finished_quests)) // we somehow have less quests than are saved (which cannot happen!!!!)
 		return // ab0r7
 	P.saved_finished_quests = serialize_finished_quests_to_list()
-	P.save_character()
+	if(sync_active_too)
+		if(sync_active_quests_with_save())
+			return
+	P.save_character() // backup plan
 
 /datum/quest_book/proc/serialize_finished_quests_to_list()
 	var/list/quests = list()
@@ -907,6 +919,69 @@ SUBSYSTEM_DEF(economy)
 	for(var/datum/finished_quest/FQ in finished_quests)
 		quests += list(FQ.serialize_to_list())
 	return quests
+
+/// builds quests from the saved ones in a player's save, if any
+/datum/quest_book/proc/load_player_active_quests()
+	if(!double_virgin)
+		return // already took a hot load
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return // they dont exist or arent connected
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return // they broke everything
+	if(!LAZYLEN(P.saved_active_quests))
+		return // no quests to load
+	var/list/savequests = P.saved_active_quests.Copy()
+	for(var/list/questy in savequests)
+		if(!LAZYACCESS(questy, "VALID"))
+			message_admins("Quest Book: Quest loading for [user.ckey] encourntered an invalid save chunk! This is bad! It means they couldnt load their active quests!")
+			P.saved_active_quests -= questy
+			continue
+		var/datum/bounty/B = text2path(questy[QB_SAVE_QUEST_TYPE])
+		B = new B(null, TRUE) // prevents it from generating anything
+		var/succeedful = B.deserialize_from_list(questy[QB_SAVE_QUEST_DATA])
+		if(!succeedful)
+			message_admins("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
+			CRASH("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
+		active_quests[B.uid] = B
+	double_virgin = FALSE
+	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests from your save file! =3"))
+	return TRUE
+
+/// Save all the active quests to the save, overwriting whatever's in there
+/datum/quest_book/proc/sync_active_quests_with_save()
+	if(double_virgin)
+		return // we havent gotten our user's load yer!
+	if(!COOLDOWN_FINISHED(src, save_cooldown))
+		queued_save = TRUE
+		return FALSE
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return FALSE
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return FALSE
+	var/list/to_save = list()
+	for(var/uid in active_quests)
+		var/datum/bounty/B = LAZYACCESS(active_quests, uid)
+		var/list/presave = B.serialize_to_list()
+		if(!LAZYACCESS(presave, "VALID"))
+			message_admins("Quest Book: Quest serialization for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt save their active quests!")
+			CRASH("Quest Book: Quest serialization for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt save their active quests!")
+		var/list/save_package = list()
+		save_package[QB_SAVE_QUEST_TYPE] = "[B.type]" // this is the type of the quest
+		save_package[QB_SAVE_QUEST_DATA] = presave.Copy() // this is the data of the quest
+		save_package["VALID"] = TRUE
+		to_save += list(presave)
+	P.saved_active_quests = to_save.Copy()
+	. = P.save_character()
+	COOLDOWN_START(src, save_cooldown, 1 SECONDS)
+	if(COOLDOWN_FINISHED(src, save_spam_cooldown))
+		return
+	COOLDOWN_START(src, save_spam_cooldown, 5 SECONDS)
+	to_chat(user, span_green("Updating saved quest data... DONE!"))
+
 
 /datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
 	if(!amount)
@@ -932,6 +1007,7 @@ SUBSYSTEM_DEF(economy)
 	update_owner_data(user)
 	update_static_data(user)
 	update_lifetime_total()
+	sync_active_quests_with_save()
 	if(!beep_on_update)
 		return
 	var/atom/thing = SSeconomy.get_plausible_quest_console(user)
@@ -1084,6 +1160,9 @@ SUBSYSTEM_DEF(economy)
 			to_chat(user, span_notice("Added 1 to objective '[BQ.name]'"))
 			. = TRUE
 	playsound(user, "terminal_type", 50, TRUE)
+	if(queued_save) // as good a heartbeat as any
+		sync_active_quests_with_save()
+		queued_save = FALSE
 
 /datum/quest_book/proc/give_scanner()
 	var/mob/user = SSeconomy.quid2mob(q_uid)
