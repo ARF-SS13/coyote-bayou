@@ -70,6 +70,12 @@
 	name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 
+/datum/gear/neck/chameleon
+	name = "chameleon neckpiece"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/chameleon
+	cost = 0
+
 /datum/gear/neck/blacktie
 	name = "black tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL

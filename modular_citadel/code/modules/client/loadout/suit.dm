@@ -43,7 +43,6 @@
 	path = /obj/item/clothing/suit/chameleon/dripharness
 	cost = 1
 
-
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
 	path = /obj/item/clothing/suit/chameleon/harness

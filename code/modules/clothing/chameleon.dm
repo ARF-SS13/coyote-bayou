@@ -498,7 +498,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/clothing/head/changeling, only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/head/chameleon/emp_act(severity)
+/*/obj/item/clothing/head/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -506,7 +506,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 
 /obj/item/clothing/head/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 /obj/item/clothing/head/chameleon/drone
 	// The camohat, I mean, holographic hat projection, is part of the
