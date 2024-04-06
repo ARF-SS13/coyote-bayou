@@ -356,7 +356,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(infight_check))
-	RegisterSignal(src, COMSIG_SIMPLE_ANIMAL_BUTCHER,PROC_REF(butcher_me))
+	RegisterSignal(src, COMSIG_ATOM_BUTCHER,PROC_REF(butcher_me))
+	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -639,6 +640,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
 */
+
+/mob/living/simple_animal/proc/can_butcher()
+	return !already_butchered
 
 /mob/living/simple_animal/proc/butcher_me(datum/source, mob/butcherer, bonus_modifier, effectiveness, gibbed, loud = TRUE)
 	if(!butcherer)

@@ -227,7 +227,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	else
 		to_chat(user, span_green("You turned in a '[thing]'! ([BQ.gotten_amount] / [BQ.needed_amount])"))
 		playsound(get_turf(user), 'sound/effects/bleeblee.ogg', 75)
-	SEND_SIGNAL(thing, COMSIG_SIMPLE_ANIMAL_BUTCHER, user, 70, 0, FALSE)
+	SEND_SIGNAL(thing, COMSIG_ATOM_BUTCHER, user, 70, 0, TRUE, FALSE)
 	if(BQ.delete_thing)
 		if(prob(0.1))
 			thing.audible_message("[thing] goes to brazil :)")
