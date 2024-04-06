@@ -470,10 +470,10 @@
 	if(upgrade_loc.item_upgrades.len && C.tool_behaviour == TOOL_SCREWDRIVER)
 		var/list/possibles = upgrade_loc.item_upgrades.Copy()
 		possibles += "Cancel"
-		var/obj/item/gun_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
+		var/obj/item/item_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if(toremove == "Cancel")
 			return 1
-		var/datum/component/gun_upgrade/IU = toremove.GetComponent(/datum/component/gun_upgrade)
+		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
 		if(IU.removable == FALSE)
 			to_chat(user, span_danger("\the [toremove] seems to be fused with the [upgrade_loc]"))
 		else
@@ -486,8 +486,8 @@
 				return 1
 	return 0
 
-/obj/item/gun_upgrade
-	name = "tool upgrade"
+/obj/item/item_upgrade
+	name = "upgrade"
 	icon = 'modular_coyote/eris/icons/mods.dmi'
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL

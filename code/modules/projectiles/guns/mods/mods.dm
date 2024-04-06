@@ -15,7 +15,7 @@
 	desc = "Uses bnuy coiling to increase the exit velocity of a metal projectile. It's kind of awful due to the bnuyness, though."
 	icon_state = "Weintraub"
 
-/obj/item/gun_upgrade/example/example/ComponentInitialize()
+/obj/item/gun_upgrade/example/example/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -36,7 +36,7 @@
 	desc = "It's a heavier barrel that will increase the stress tolerances that can go into your ammo. In nerd terms it makes your bullets hit harder."
 	icon_state = "forged_barrel"
 
-/obj/item/gun_upgrade/barrelone/ComponentInitialize()
+/obj/item/gun_upgrade/barrelone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -50,7 +50,7 @@
 	desc = "A heavier barrel combined with a magnetic accelerator to not only increase the stress tolerances on the barrel, but also send the bullet traveling faster using coilgun tech. The highest this can roll is 20%"
 	icon_state = "penetrator"
 
-/obj/item/gun_upgrade/barreltwo/ComponentInitialize()
+/obj/item/gun_upgrade/barreltwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -64,7 +64,7 @@
 	desc = "A titanium-plasteel barrel combined with an uber-tuned mag accelerator to not only increase the stress tolerances on the barrel, but also send the bullet traveling faster using coilgun tech. The highest this can roll is 30%"
 	icon_state = "gauss"
 
-/obj/item/gun_upgrade/barrelthree/ComponentInitialize()
+/obj/item/gun_upgrade/barrelthree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -78,7 +78,7 @@
 	desc = "A set of fittings and inserts to upgrade an energy gun's power pumping ability. In nerd terms, it makes plasma and lasers burn harder."
 	icon_state = "hydraulic"
 
-/obj/item/gun_upgrade/chipone/ComponentInitialize()
+/obj/item/gun_upgrade/chipone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -92,7 +92,7 @@
 	desc = "A device that shunts unwanted weapon features like 'safeties' to increase power output. The highest this can roll is 20%"
 	icon_state = "booster"
 
-/obj/item/gun_upgrade/chiptwo/ComponentInitialize()
+/obj/item/gun_upgrade/chiptwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -106,7 +106,7 @@
 	desc = "A miniature sized fusion reactor that (kind of) safely dumps extra energy into the system to increase damage. The highest this can roll is 30%"
 	icon_state = "gauss"
 
-/obj/item/gun_upgrade/chipthree/ComponentInitialize()
+/obj/item/gun_upgrade/chipthree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -122,7 +122,7 @@
 	desc = "A thin rubber mesh grip to enhance your one handed firing ability. It's faded and sun worn."
 	icon_state = "rubbermesh"
 
-/obj/item/gun_upgrade/gripone/ComponentInitialize()
+/obj/item/gun_upgrade/gripone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -136,7 +136,7 @@
 	desc = "A thick and grippy rubber mesh to enhance your one handed firing ability. This one is pristine, and features stipling. The highest this can roll is 35%."
 	icon_state = "stabilizing"
 
-/obj/item/gun_upgrade/griptwo/ComponentInitialize()
+/obj/item/gun_upgrade/griptwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -150,7 +150,7 @@
 	desc = "A thin and SUPER grippy metamaterial mesh to enhance your one handed firing ability. Oh my god! It even has a watermark... The highest this can roll is 50%."
 	icon_state = "stabilizing"
 
-/obj/item/gun_upgrade/gripthree/ComponentInitialize()
+/obj/item/gun_upgrade/gripthree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -166,7 +166,7 @@
 	desc = "A muzzle device that vents gun gasses horizontally to decrease muzzle rise. In nerd terms, it reduces recoil."
 	icon_state = "ported_barrel"
 
-/obj/item/gun_upgrade/muzzleone/ComponentInitialize()
+/obj/item/gun_upgrade/muzzleone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -181,7 +181,7 @@
 	desc = "An enhanced muzzle device that vents gun gasses in all directions but down to decrease muzzle rise. In nerd terms, it significantly reduces recoil. The highest this can roll is 35%."
 	icon_state = "compensatedbarrel"
 
-/obj/item/gun_upgrade/muzzletwo/ComponentInitialize()
+/obj/item/gun_upgrade/muzzletwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -196,7 +196,7 @@
 	desc = "A powerful muzzle device that uses science-y non-sense to decrease muzzle rise. In nerd terms, it significantly reduces recoil. The highest this can roll is 50%."
 	icon_state = "compensatedbarrel"
 
-/obj/item/gun_upgrade/muzzletwo/ComponentInitialize()
+/obj/item/gun_upgrade/muzzletwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -214,7 +214,7 @@
 	desc = "An enhanced trigger for competition shooting. Features enhanced firerate, and lighter pulls."
 	icon_state = "danger_zone"
 
-/obj/item/gun_upgrade/triggerone/ComponentInitialize()
+/obj/item/gun_upgrade/triggerone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -228,7 +228,7 @@
 	desc = "A military fielded enhanced trigger for easier pulls and enhanced firerate. The highest this can roll is 35%."
 	icon_state = "cop_block"
 
-/obj/item/gun_upgrade/triggertwo/ComponentInitialize()
+/obj/item/gun_upgrade/triggertwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -242,7 +242,7 @@
 	desc = "An in-development high tech product that signifcantly reduces the weight needed to pull the trigger to send a fresh slug down range. The highest this can roll is 50%."
 	icon_state = "dna_lock"
 
-/obj/item/gun_upgrade/triggerthree/ComponentInitialize()
+/obj/item/gun_upgrade/triggerthree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -258,7 +258,7 @@
 	desc = "A holographic reticle projected and housed inside a weathering polymer. It works fine due to the rugged construction, but the glass is a little cracked."
 	icon_state = "reflex"
 
-/obj/item/gun_upgrade/sightone/ComponentInitialize()
+/obj/item/gun_upgrade/sightone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -272,7 +272,7 @@
 	desc = "An old fashioned scope. Possibly pre-cataclysm, it's amazing that it's still dialed in. The max that this can roll is 2."
 	icon_state = "watchman"
 
-/obj/item/gun_upgrade/sighttwo/ComponentInitialize()
+/obj/item/gun_upgrade/sighttwo/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -286,7 +286,7 @@
 	desc = "A smart scope- the height of old-world technology. It would give you a perfect zero after every shot, taking in weather conditions and the curvature of the earth to boot. Sadly, the technology that did this isn't around anymore, and it serves purely as a really good scope. The max that the zoom can roll is 3x."
 	icon_state = "killer"
 
-/obj/item/gun_upgrade/sightthree/ComponentInitialize()
+/obj/item/gun_upgrade/sightthree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -302,7 +302,7 @@
 	desc = "Red paint increases the guns overall speed in its abilities, and magazine size, or makes it worse."
 	icon_state = "paint_red"
 
-/obj/item/gun_upgrade/paint/red/ComponentInitialize()
+/obj/item/gun_upgrade/paint/red/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -318,7 +318,7 @@
 	desc = "Blue paint reduces recoil and increases ricochet, while also reducing charge cost of a laser gun, or makes it worse."
 	icon_state = "blue_paint"
 
-/obj/item/gun_upgrade/paint/blue/ComponentInitialize()
+/obj/item/gun_upgrade/paint/blue/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -335,7 +335,7 @@
 	desc = "Yellow paint reduces movement delay and recoil, while increasing gun damage, or makes them worse."
 	icon_state = "yellow_paint"
 
-/obj/item/gun_upgrade/paint/yellow/ComponentInitialize()
+/obj/item/gun_upgrade/paint/yellow/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -352,7 +352,7 @@
 	desc = "Orange paint combines the effects of red and yellow for a more pronounced paint quality."
 	icon_state = "orange_paint"
 
-/obj/item/gun_upgrade/paint/orange/ComponentInitialize()
+/obj/item/gun_upgrade/paint/orange/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -371,7 +371,7 @@
 	desc = " Purple paint combines the effects of red and blue for a more pronounced paint quality."
 	icon_state = "violet_paint"
 
-/obj/item/gun_upgrade/paint/purple/ComponentInitialize()
+/obj/item/gun_upgrade/paint/purple/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -390,7 +390,7 @@
 	desc = " Green paint combines the effects of blue and yellow for a more pronounced paint quality."
 	icon_state = "green_paint"
 
-/obj/item/gun_upgrade/paint/green/ComponentInitialize()
+/obj/item/gun_upgrade/paint/green/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -409,7 +409,7 @@
 	desc = "A combination of all three main colors. This makes a paint that has a maximized chance of being perfect."
 	icon_state = "black_paint"
 
-/obj/item/gun_upgrade/paint/black/ComponentInitialize()
+/obj/item/gun_upgrade/paint/black/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
