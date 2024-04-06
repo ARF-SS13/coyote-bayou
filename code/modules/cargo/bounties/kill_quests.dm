@@ -602,7 +602,7 @@
 // Raiders
 /datum/bounty/kill/raiders
 	name = "Slay some Raiders"
-	description = "Those lousy functionally immortal humans are making life miserable! I'll pay you to kill some of them."
+	description = "Those lousy functionally immortal humans are making life miserable! I'll pay you to kill some of them. But not the super-duper ones, like Mango Matt, Blueberry Bates, or any of the other super-duper raiders. Just the regular ones."
 	flavor_focus = /mob/living/simple_animal/hostile/raider
 	weight = 1
 	init_wanteds = list(
@@ -616,8 +616,12 @@
 ///// RAIDER QUOTAS /////
 /datum/bounty_quota/raider
 	name = "Kill some Raiders"
+	flavor = "But not Mango Matt, Blueberry Bates, or any of the other super-duper raiders. Just the regular ones."
 	paths = list(
 		/mob/living/simple_animal/hostile/raider,
+	)
+	paths_exclude = list(
+		/mob/living/simple_animal/hostile/raider/ranged/boss,
 	)
 	needed_amount = 5
 	paths_get_subtypes = TRUE
@@ -966,6 +970,9 @@
 	flavor = "Careful. Be careful. They're dangerous, so be careful."
 	paths = list(
 		/mob/living/simple_animal/hostile/renegade,
+	)
+	paths_exclude = list(
+		/mob/living/simple_animal/hostile/renegade/meister,
 	)
 	needed_amount = 5
 	paths_get_subtypes = TRUE

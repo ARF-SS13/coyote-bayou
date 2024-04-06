@@ -21,6 +21,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/icon_dead = ""
 	///We only try to show a gibbing animation if this exists.
 	var/icon_gib = null
+	/// color to colorize the dead sprite, if it should be different from the living sprite
+	var/color_dead = null
 
 	var/list/speak = list()
 	///Emotes while speaking IE: Ian [emote], [text] -- Ian barks, "WOOF!". Spoken text is generated from the speak variable.
@@ -30,6 +32,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/list/emote_hear = list()
 	///Unlike speak_emote, the list of things in this variable only show by themselves with no spoken text. IE: Ian barks, Ian yaps.
 	var/list/emote_see = list()
+
+	var/bombs_can_gib_me = TRUE
 
 	var/turns_per_move = 1
 	var/turns_since_move = 0
@@ -720,6 +724,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
 
+	if(color_dead)
+		add_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
@@ -778,6 +784,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/revive(full_heal = 0, admin_revive = 0)
 	if(..()) //successfully ressuscitated from death
+		if(color_dead)
+			remove_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)

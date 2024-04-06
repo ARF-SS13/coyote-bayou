@@ -116,6 +116,6 @@ SUBSYSTEM_DEF(mobs)
 		return
 	num_in_play--
 	if(num_in_play < 0)
-		message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
+		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
 		num_in_play = 0
 

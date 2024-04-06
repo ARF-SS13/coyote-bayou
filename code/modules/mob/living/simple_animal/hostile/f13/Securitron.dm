@@ -29,7 +29,8 @@
 	response_harm_simple = "hits"
 	robust_searching = TRUE
 	blood_volume = 0
-	del_on_death = TRUE
+	bombs_can_gib_me = FALSE
+	// del_on_death = TRUE
 	healable = FALSE
 	faction = list("wastebot")
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
@@ -109,7 +110,11 @@
 	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
-	explosion(src,1,2,4,4)
+	explosion(get_turf(src),1,2,4,4)
+
+/mob/living/simple_animal/hostile/securitron/ex_act(severity, target, origin)
+	. = ..()
+	
 
 /mob/living/simple_animal/hostile/securitron/death()
 	do_sparks(3, TRUE, src)
