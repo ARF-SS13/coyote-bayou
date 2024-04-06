@@ -17,7 +17,7 @@
 
 /datum/gear/gloves/chameleon
 	name = "chameleon gloves"
-	/obj/item/clothing/gloves/chameleon
+	path = /obj/item/clothing/gloves/chameleon
 	cost = 0
 
 /datum/gear/gloves/brown

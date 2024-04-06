@@ -10,7 +10,7 @@
 
 /datum/gear/head/chameleon
 	name = "chameleon hat"
-	/obj/item/clothing/head/chameleon
+	path = /obj/item/clothing/head/chameleon
 	cost = 0
 
 /datum/gear/head/beanie
