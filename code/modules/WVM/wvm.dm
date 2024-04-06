@@ -1151,28 +1151,6 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Dark Grey Paint",				/obj/item/tool_upgrade/paint/black,								500),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								20),
-		new /datum/data/wasteland_equipment("Radiation Suit Hood",			/obj/item/clothing/head/radiation,								20),
-		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						40),
-		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					40),
-		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							20),
-		new /datum/data/wasteland_equipment("Pre-Cataclysm Barrel",			/obj/item/gun_upgrade/muzzle/better,							40),
-		new /datum/data/wasteland_equipment("Pre-Cataclysm Scope",			/obj/item/gun_upgrade/scope/killer,								40),
-		new /datum/data/wasteland_equipment("Super Ergonomic Grip",			/obj/item/tool_upgrade/refinement/stabilized_grip,				40),
-		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					40),
-		new /datum/data/wasteland_equipment("Pre-Cataclysm Trigger",		/obj/item/gun_upgrade/trigger/better,							40),
-		new /datum/data/wasteland_equipment("Plasma Block",					/obj/item/tool_upgrade/reinforcement/plasmablock,				40),
-		new /datum/data/wasteland_equipment("Fusion Overdrive Chip",		/obj/item/gun_upgrade/mechanism/battery_shunt,					40),
-		new /datum/data/wasteland_equipment("Nano-Forged Barrel",			/obj/item/gun_upgrade/barrel/better,							40),
-		new /datum/data/wasteland_equipment("Integrate-able Railgun",		/obj/item/gun_upgrade/barrel/mag_accel,							40),
-		new /datum/data/wasteland_equipment("GigaLens",						/obj/item/gun_upgrade/barrel/excruciator,						40),
-		new /datum/data/wasteland_equipment("Battery Shunt",				/obj/item/gun_upgrade/mechanism/overdrive,						40),
-		new /datum/data/wasteland_equipment("Auto-switch",					/obj/item/gun_upgrade/mechanism/weintraub,						40),
-		new /datum/data/wasteland_equipment("ZAX AI",						/obj/item/tool_upgrade/augment/ai_tool,							40),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								80),
-		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								80),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							80),
-		new /datum/data/wasteland_equipment("Dark Grey Paint",				/obj/item/tool_upgrade/paint/black,								500),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/badattachments
@@ -1196,20 +1174,6 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							200)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								50),
-		new /datum/data/wasteland_equipment("Radiation Suit Hood",			/obj/item/clothing/head/radiation,								50),
-		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						100),
-		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					100),
-		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							40),
-		new /datum/data/wasteland_equipment("Old Scope",					/obj/item/gun_upgrade/scope/watchman,							120),
-		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				120),
-		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					120),
-		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					120),
-		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					120),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							120),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								200),
-		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								200),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							200)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting
