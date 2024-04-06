@@ -32,11 +32,13 @@
 	waddle_amount = 5
 	waddle_up_time = 1
 	waddle_side_time = 1
-	loot = list(/obj/item/stack/f13Cash/random/med)
 	retreat_health_percent = 0.5
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 30
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
@@ -65,7 +67,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911)
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/effect/gibspawner/human)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -108,11 +110,6 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
-	loot = list(
-		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/common_bombs,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mats
-		)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -156,10 +153,6 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
-	loot = list(
-		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mags
-		)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -180,6 +173,9 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 //MEDIUM MELEE VARIANT
 /mob/living/simple_animal/hostile/renegade/defender
@@ -200,11 +196,6 @@
 	attack_verb_simple = "bashes"
 	attack_sound = 'sound/weapons/slam.ogg'
 	a_intent = INTENT_HARM
-	loot = list(
-		//obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-		/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-		/obj/effect/spawner/lootdrop/f13/ncr_c_ration
-		)
 	emote_taunt = list("bashes their shield with the mace")
 	robust_searching = TRUE
 	speak = list(
@@ -216,6 +207,9 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 //HEAVY RANGED VARIANT
 /mob/living/simple_animal/hostile/renegade/drifter
@@ -242,7 +236,8 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/gun/ballistic/rifle/hunting,
-		/obj/effect/spawner/lootdrop/f13/uncommon_armor
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+		/obj/effect/gibspawner/human
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -264,6 +259,9 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 // HEAVY SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/guardian
@@ -284,12 +282,9 @@
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	loot = list(
-		/obj/item/gun/ballistic/shotgun/trench,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mags,
-		/obj/item/stack/f13Cash/random/low,
-		/obj/item/clothing/suit/armor/medium/vest/breastplate/light
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -336,12 +331,9 @@
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	loot = list(
-		/obj/item/book/granter/trait/pa_wear,
-		/obj/item/stack/f13Cash/random/high,
-		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/stack/sheet/plasteel/five
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 8
+	loot_amount_random = TRUE
 	speak = list(
 		"POWER TO THE ARMOR!",
 		"I AM GOING TO BREAK YOU IN HALF!",
@@ -391,13 +383,9 @@
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/beam/laser/laer/hitscan
 	projectilesound = 'sound/f13weapons/laerfire.ogg'
-	loot = list(
-		/obj/item/book/granter/trait/pa_wear,
-		/obj/item/stack/f13Cash/random/high,
-		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/stack/sheet/plasteel/five,
-		/obj/effect/spawner/lootdrop/f13/rare_armor
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	speak = list(
 		"Death to the Brotherhood!",
 		"Loyalty doesn't feed my family's bellies!",
@@ -451,11 +439,9 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
-	loot = list(
-		/obj/effect/spawner/lootdrop/f13/common_medicine,
-		/obj/item/gun/ballistic/revolver/m29,
-		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
-
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_HEAVY_VOLUME),

@@ -458,7 +458,7 @@
 	id = "tele_shield"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 4000, /datum/material/silver = 300, /datum/material/titanium = 200)
-	build_path = /obj/item/shield/riot
+	build_path = /obj/item/shield/riot/tele
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

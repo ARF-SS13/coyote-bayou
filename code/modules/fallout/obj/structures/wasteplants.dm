@@ -213,3 +213,33 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "cactus"
 	log_amount = 2
+
+/obj/structure/flora/wasteplant/sunflower
+	name = "sunflower"
+	icon_state = "sunflower"
+	desc = "It's always sunny in Phil- oh wait. Different movie."
+	produce = /obj/item/grown/sunflower
+
+/obj/structure/flora/wasteplant/rose
+	name = "roses"
+	icon_state = "rose"
+	desc = "Careful not to prick yourself."
+	produce = /obj/item/grown/rose
+
+/obj/structure/flora/wasteplant/lily
+	name = "lily"
+	icon_state = "lily"
+	desc = "But where's James?"
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
+
+/obj/structure/flora/wasteplant/forgetmenot
+	name = "forget me not"
+	icon_state = "forget_me_not"
+	desc = "Better not forget these flowers"
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
+
+/obj/structure/flora/wasteplant/geranium
+	name = "geranium"
+	icon_state = "geranium"
+	desc = "These might just have germs."
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium

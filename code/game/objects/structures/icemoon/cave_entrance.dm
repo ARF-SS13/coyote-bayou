@@ -4,8 +4,7 @@ GLOBAL_LIST_INIT(ore_probability, list(/obj/item/stack/ore/uranium = 50,
 									   /obj/item/stack/ore/silver = 50,
 									   /obj/item/stack/ore/gold = 50,
 									   /obj/item/stack/ore/diamond = 25,
-									   /obj/item/stack/ore/titanium = 75,
-									   /obj/item/stack/ore/lead = 80))
+									   /obj/item/stack/ore/titanium = 75))
 
 /obj/structure/spawner/ice_moon
 	name = "cave entrance"

@@ -325,7 +325,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	chameleon_action.chameleon_name = "Suit"
 	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
-
+/*
 /obj/item/clothing/suit/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
@@ -335,7 +335,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 /obj/item/clothing/suit/chameleon/broken/Initialize()
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
-
+*/
 /obj/item/clothing/suit/chameleon/dripharness
 	name = "drip armor harness"
 	desc = "It can be whatever you want, and can go on your neck. Double up on armor drip."
@@ -371,9 +371,11 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BOMB_T1)
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 
@@ -387,8 +389,10 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENERGY_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BOMB_T2, ARMOR_MODIFIER_UP_DT_T1)
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
 
@@ -398,8 +402,10 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENERGY_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BOMB_T2, ARMOR_MODIFIER_UP_DT_T2)
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	stiffness = HEAVY_STIFFNESS
 

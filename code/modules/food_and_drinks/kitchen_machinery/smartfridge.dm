@@ -870,13 +870,13 @@
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable
 	name = "crafted shop shelf"
 	desc = "A handmade shop shelf, looks pretty robust. Has a blank sign in the center to be written on with a pen."
-	max_n_of_items = 20
+	max_n_of_items = 75
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable
 	chance_initial_contents = list()
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
-	new /obj/item/stack/sheet/metal(drop_location(), 15)
+	new /obj/item/stack/sheet/metal(drop_location(), 5)
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable/accept_check(obj/item/O)
 	if(istype(O, /obj/item/clothing/head/mob_holder))

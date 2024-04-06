@@ -19,8 +19,18 @@
 
 /datum/supplykit_item/longarms/smg22
 	name = ".22 Uzi"
-	desc = "A lightweight submachinegun with trivial recoil and cheap ammunition."
+	desc = "A lightweight submachinegun with trivial recoil and cheap ammunition. Takes 16 and 32 round .22 magazines."
 	item = /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22
+
+/datum/supplykit_item/longarms/mp22
+	name = ".22 MP5"
+	desc = "A commercial version of the MP5 chambered in .22LR. Takes 16 and 32 round magazines."
+	item = /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22
+
+/datum/supplykit_item/longarms/pp22
+	name = "Mini PPSh"
+	desc = "A miniature model of a PPSh-41 chambered in .22LR. Takes 16 and 32 round magazines."
+	item = /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh
 
 /datum/supplykit_item/longarms/carbine9mm
 	name = "9mm Carbine"

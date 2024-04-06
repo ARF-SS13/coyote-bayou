@@ -62,7 +62,9 @@ Difficulty: Medium
 	ranged = TRUE
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
-	loot = list(/obj/structure/closet/crate/necropolis/dragon)
+	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30, /obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/swoop_cooldown = 0

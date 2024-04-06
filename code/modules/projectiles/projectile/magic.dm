@@ -563,10 +563,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-3) //HEALS
+		M.adjustBruteLoss(-3, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-10)
-		M.adjustFireLoss(-1)
-		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
+		M.adjustFireLoss(-1, include_roboparts = TRUE)
+		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -585,10 +585,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-1) //HEALS
+		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-10)
-		M.adjustFireLoss(-3)
-		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
+		M.adjustFireLoss(-3, include_roboparts = TRUE)
+		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -607,10 +607,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-1) //HEALS
+		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-50)
-		M.adjustFireLoss(-1)
-		M.adjustToxLoss(-5, TRUE) //heals TOXINLOVERs
+		M.adjustFireLoss(-1, include_roboparts = TRUE)
+		M.adjustToxLoss(-5, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-25)
 		M.adjustStaminaLoss(-50)
 		return
@@ -630,10 +630,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-15) //HEALS
+		M.adjustBruteLoss(-15, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-20)
-		M.adjustFireLoss(-10)
-		M.adjustToxLoss(-20, TRUE) //heals TOXINLOVERs
+		M.adjustFireLoss(-15, include_roboparts = TRUE) // Effective on robots and people with prosthetics now
+		M.adjustToxLoss(-20, TRUE, FALSE) //heals TOXINLOVERs (It should actually do that now)
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return

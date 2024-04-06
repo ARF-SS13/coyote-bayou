@@ -1398,9 +1398,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Hardcore"
 	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
 		and the only way you'll be able to live again is if someone finds and revives your body or a spirit takes mercy on you!"
-	value = -11
+	value = -34
 	category = "Lifepath Quirks"
-	mechanics = "You lose access to the Second Wind function."
+	mechanics = "You lose access to the Second Wind function. This is important there's almost never medical staff. Tread lightly, waster."
 	conflicts = list(
 
 	)
@@ -1556,4 +1556,19 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/radweakmajor
 	)
 	mob_trait = TRAIT_50_RAD_WEAK
+	locked =  FALSE
+
+/datum/quirk/toxinlover
+	name = "Toxinlover"
+	desc = "Your biology is hyperadapted to toxins to the point where you process them the opposite of any normal organic, \
+		however most healing magic and chemicals will quickly kill you or drain your blood. This is not a system reccomended for magic users."
+	value = -34
+	category = "Health Quirks"
+	mechanics = "You heal and regenerate toxin damage from toxic chemicals, but are harmed by anything that would normally fix toxin damage. With the existance of mages and the hunting horn, this is a burden to bare."
+	conflicts = list(
+
+	)
+	mob_trait = TRAIT_TOXINLOVER
+	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an exact inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages.")
+	lose_text = span_notice("You are now operating under normal toxin damage systems.")
 	locked =  FALSE
