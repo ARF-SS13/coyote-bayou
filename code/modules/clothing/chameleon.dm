@@ -356,6 +356,16 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	armor = 0
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = 0
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/suit/chameleon/harness/second_gear_harness
+	name = "secondary gear harness"
+	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
+	icon_state = "gear_harness"
+	item_state = "gear_harness"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tier_desc = ARMOR_CLOTHING_DESC
 
 /obj/item/clothing/suit/chameleon/harness
 	name = "light harness"
@@ -378,6 +388,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BOMB_T1)
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/suit/chameleon/harness/medium
 	name = "medium harness"
@@ -427,7 +438,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/clothing/glasses/changeling, only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/glasses/chameleon/emp_act(severity)
+/*/obj/item/clothing/glasses/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -435,7 +446,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 
 /obj/item/clothing/glasses/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon)
 	desc = "These gloves will protect the wearer from electric shock."
@@ -459,7 +470,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon/insulated)
 	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/gloves, /obj/item/clothing/gloves/color, /obj/item/clothing/gloves/changeling), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/gloves/chameleon/emp_act(severity)
+/*/obj/item/clothing/gloves/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -467,7 +478,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon/insulated)
 
 /obj/item/clothing/gloves/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 	name = "grey cap"
@@ -487,7 +498,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/clothing/head/changeling, only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/head/chameleon/emp_act(severity)
+/*/obj/item/clothing/head/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -495,7 +506,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 
 /obj/item/clothing/head/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 /obj/item/clothing/head/chameleon/drone
 	// The camohat, I mean, holographic hat projection, is part of the
@@ -537,7 +548,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/clothing/mask/changeling, only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/mask/chameleon/emp_act(severity)
+/*/obj/item/clothing/mask/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -545,7 +556,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 
 /obj/item/clothing/mask/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 /obj/item/clothing/mask/chameleon/attack_self(mob/user)
 	voice_change = !voice_change
@@ -588,11 +599,11 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/shoes/chameleon)
 	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/clothing/shoes/changeling, only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/shoes/chameleon/emp_act(severity)
+/*/obj/item/clothing/shoes/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	chameleon_action.emp_randomise()
+	chameleon_action.emp_randomise()*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/shoes/chameleon/noslip)
 	name = "black shoes"
@@ -600,9 +611,9 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/shoes/chameleon/noslip)
 	desc = "A pair of black shoes."
 	clothing_flags = NOSLIP
 
-/obj/item/clothing/shoes/chameleon/noslip/broken/Initialize()
+/*/obj/item/clothing/shoes/chameleon/noslip/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/backpack/chameleon)
 	name = "backpack"
@@ -615,7 +626,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/backpack/chameleon)
 	chameleon_action.chameleon_name = "Backpack"
 	chameleon_action.initialize_disguises()
 
-/obj/item/storage/backpack/chameleon/emp_act(severity)
+/*/obj/item/storage/backpack/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -623,7 +634,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/backpack/chameleon)
 
 /obj/item/storage/backpack/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/belt/chameleon)
 	name = "toolbelt"
@@ -643,7 +654,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/belt/chameleon)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.silent = TRUE
 
-/obj/item/storage/belt/chameleon/emp_act(severity)
+/*/obj/item/storage/belt/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -651,7 +662,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/storage/belt/chameleon)
 
 /obj/item/storage/belt/chameleon/broken/Initialize()
 	. = ..()
-	chameleon_action.emp_randomise(INFINITY)
+	chameleon_action.emp_randomise(INFINITY)*/
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/radio/headset/chameleon)
 	name = "radio headset"
@@ -728,8 +739,8 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/neck/cloak/chameleon)
 	chameleon_action.chameleon_name = "Cloak"
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/neck/cloak/chameleon/emp_act(severity)
+/*/obj/item/clothing/neck/cloak/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	chameleon_action.emp_randomise()
+	chameleon_action.emp_randomise()*/

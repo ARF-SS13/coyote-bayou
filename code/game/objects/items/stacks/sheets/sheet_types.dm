@@ -413,7 +413,12 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 // Cloth
 
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
-	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
+	new/datum/stack_recipe("custom backpack", /obj/item/storage/backpack/chameleon, 4), \
+	new/datum/stack_recipe("custom jumpsuit", /obj/item/clothing/under/chameleon, 5), \
+	new/datum/stack_recipe("custom gloves", /obj/item/clothing/gloves/chameleon, 5), \
+	new/datum/stack_recipe("custom shoes", /obj/item/clothing/shoes/chameleon, 5), \
+	new/datum/stack_recipe("custom neck cloak", /obj/item/clothing/neck/cloak/chameleon, 5), \
+	new/datum/stack_recipe("custom hat", /obj/item/clothing/head/chameleon, 5), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
 	null, \
 	new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4), \
