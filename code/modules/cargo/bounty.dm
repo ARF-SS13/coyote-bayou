@@ -181,15 +181,22 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	if(is_complete())
 		return FALSE
 	var/claimed_thing = FALSE
+	var/was_a_dupe = FALSE
 	for(var/datum/bounty_quota/BQ in wanted_things) // mooooom take me to bairy queeeen
-		if(!claimant || !BQ.CanTurnThisIn(thing, claimant) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(claimant, thing, BQ))
-			return
+		if(!claimant || !BQ.CanTurnThisIn(thing, claimant) || BQ.IsCompleted())
+			continue
+		if(SSeconomy.is_duplicate_submission(claimant, thing, BQ))
+			if(loud)
+				was_a_dupe = TRUE
+			continue
 		if(just_check)
 			return TRUE
 		claimed_thing = actually_turn_in_thing(thing, claimant, BQ)
-		. = TRUE
 	if(!claimed_thing)
+		if(was_a_dupe)
+			to_chat(claimant, span_alert("You've already turned in a '[thing]' for this quest!"))
 		return FALSE
+	return TRUE
 
 /datum/bounty/proc/actually_turn_in_thing(atom/thing, mob/user, datum/bounty_quota/BQ)
 	if(!thing || !user || !BQ)
@@ -204,7 +211,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		return
 	bean.End(TRUE)
 	qdel(cool)
-	if(!user || QDELETED(thing) || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(user, thing, BQ) || !user)
+	if(!user || !BQ.CanTurnThisIn(thing, user) || BQ.IsCompleted() || SSeconomy.is_duplicate_submission(user, thing, BQ) || !user)
 		return
 	. = TRUE
 	SSeconomy.mark_quest_submission(thing, user, BQ)

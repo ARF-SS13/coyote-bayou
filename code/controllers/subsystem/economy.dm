@@ -547,6 +547,7 @@ SUBSYSTEM_DEF(economy)
 	/// didnt find one, lets make one
 	var/datum/quest_tag_data/QTD = new(user_uid)
 	QTD.add_bq_uid(BQ.bq_uid, user_uid)
+	LAZYINITLIST(thing.quest_tag)
 	thing.quest_tag |= QTD
 	return TRUE
 
@@ -1250,6 +1251,8 @@ SUBSYSTEM_DEF(economy)
 	var/list/objectives = list()
 
 /datum/finished_quest/New(datum/bounty/B, mob/finisher)
+	if(!istype(B) && !istype(finisher))
+		return // oh we're being loaded from a save, nice
 	quester_name = finisher ? finisher.real_name : "RELPH"
 	quest_type = B.type
 	quest_name = B.name
