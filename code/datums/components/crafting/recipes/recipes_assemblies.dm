@@ -352,7 +352,7 @@
 /datum/crafting_recipe/sand
 	name = "Crush rocks"
 	result = /obj/item/stack/ore/glass/three
-	reqs = list(/obj/item/ammo_casing/caseless/rocks = 3)
+	reqs = list(/obj/item/ammo_casing/caseless/rock = 3)
 	time = 15
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
