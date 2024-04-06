@@ -1519,10 +1519,10 @@ SUBSYSTEM_DEF(economy)
 			new /obj/effect/temp_visual/glowy_outline(get_turf(thing), thing)
 			break
 	if(found_something)
-		playsound(user, 'sound/machines/twobeep.ogg', 65, TRUE)
+		playsound(user, 'sound/machines/twobeep.ogg', 55, TRUE)
 		to_chat(user, span_notice("The Scanner beeps and lights up! It's found something!"))
 	else
-		playsound(user, 'sound/machines/terminal_error.ogg', 65, TRUE)
+		playsound(user, 'sound/machines/terminal_error.ogg', 45, TRUE)
 		to_chat(user, span_notice("The Scanner couldn't find anything!"))
 
 /obj/effect/temp_visual/glowy_outline
