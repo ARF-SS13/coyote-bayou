@@ -975,7 +975,7 @@ SUBSYSTEM_DEF(economy)
 	P.saved_active_quests = to_save.Copy()
 	. = P.save_character()
 	COOLDOWN_START(src, save_cooldown, 1 SECONDS)
-	if(COOLDOWN_FINISHED(src, save_spam_cooldown))
+	if(!COOLDOWN_FINISHED(src, save_spam_cooldown))
 		return
 	COOLDOWN_START(src, save_spam_cooldown, 5 SECONDS)
 	to_chat(user, span_green("Updating saved quest data... DONE!"))
