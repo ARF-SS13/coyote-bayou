@@ -8,7 +8,7 @@
 	icon = 'icons/mob/hivebot.dmi'
 	icon_state = "basic"
 	icon_living = "basic"
-	icon_dead = "hive_dead"
+	icon_dead = "hivedead"
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
 	health = 50
@@ -52,7 +52,7 @@
 	desc = "An armed robot that does not seem pleased to meet you."
 	icon_state = "ranged"
 	icon_living = "ranged"
-	icon_dead = "hive_dead"
+	icon_dead = "hivedead"
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
@@ -61,7 +61,7 @@
 	name = "gunner hivebot"
 	icon_state = "ranged"
 	icon_living = "ranged"
-	icon_dead = "hive_dead"
+	icon_dead = "hivedead"
 	ranged = 1
 	rapid = 3
 	retreat_distance = 5
@@ -71,7 +71,7 @@
 	name = "engineering hivebot"
 	icon_state = "EngBot"
 	icon_living = "EngBot"
-	icon_dead = "hive_dead"
+	icon_dead = "hivedead"
 	desc = "A strange engineering robot that does not seem pleased to meet you."
 	health = 75
 	maxHealth = 75
@@ -80,7 +80,7 @@
 	name = "elite hivebot"
 	icon_state = "strong"
 	icon_living = "strong"
-	icon_dead = "hive_dead"
+	icon_dead = "hivedead"
 	desc = "A heavily armed and armored robot that does not seem pleased to meet you."
 	health = 100
 	maxHealth = 100
