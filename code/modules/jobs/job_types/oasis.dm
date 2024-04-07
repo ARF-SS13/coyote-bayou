@@ -1048,8 +1048,8 @@ Mayor
 	title = "Guild Financier"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Mayor"
 	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
@@ -1725,8 +1725,8 @@ Mayor
 	flag = GUILDBANKER
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
@@ -1883,8 +1883,8 @@ Mayor
 	flag = GUILDKNIGHT
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
