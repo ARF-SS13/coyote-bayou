@@ -5,6 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
+	a_intent = INTENT_HARM // I LOVE PLAYING THE SCOOTER DANCE WITH PROTECTRONS
 	var/datum/weakref/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.
@@ -143,12 +144,17 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
+	/// Makes it so the mob tally doesnt count this thing as being deleted when its just sleeping
+	var/went_to_sleep = FALSE
+
 	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
 
-/mob/living/simple_animal/hostile/Initialize(mapload)
+/mob/living/simple_animal/hostile/Initialize(mapload, nest_spawned)
 	. = ..()
 	set_origin(src)
 	wanted_objects = typecacheof(wanted_objects)
+	if(nest_spawned != "TOPHEAVY-KOBOLD")
+		SSmobs.mob_spawned(src)
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
@@ -161,6 +167,8 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(!went_to_sleep)
+		SSmobs.mob_despawned(src)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
@@ -174,7 +182,7 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(prob(1) && world.time-timeofdeath > 3 MINUTES)//give players enough time to finish their fights and butcher the real way
+		if(decompose && prob(1) && world.time-timeofdeath > 3 MINUTES && !SSeconomy.is_part_of_a_quest(src))//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
@@ -991,6 +999,7 @@
 		my_home = RESOLVEWEAKREF(nest)
 	if(!my_home)
 		my_home = new/obj/structure/nest/special(get_turf(src))
+	went_to_sleep = TRUE
 	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
 
 /mob/living/simple_animal/hostile/setup_variations()

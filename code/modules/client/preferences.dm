@@ -143,7 +143,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
+	var/kisser = KISS_DEFAULT // Kiss this (     Y     )
+	/// which quester UID we're using
+	var/quester_uid
+	/// rough approximations of the character's finished quests
+	var/list/saved_finished_quests = list()
+	/// tight list of the character's active quests
+	var/list/saved_active_quests = list()
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -470,8 +476,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 
-			dat += "<center><h2>Occupation Choices</h2>"
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
+			dat += "<center><h2>Quest Board UID</h2>"
+			dat += "[quester_uid]</center>"
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center>"
 				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
@@ -4457,6 +4463,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			if(L[slot] < MAX_FREE_PER_CAT)
 				return TRUE */
+
+/datum/preferences/proc/generate_quester_id()
+	var/list/new_quid = list()
+	new_quid += ckey(parent.ckey)
+	new_quid += ckey(safepick(GLOB.ing_verbs) || "cranberry")
+	new_quid += ckey(safepick(GLOB.adverbs) || "cranberry")
+	new_quid += ckey("[rand(1000,9999)]")
+	new_quid += ckey("[rand(1000,9999)]")
+	return new_quid.Join("-")
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]

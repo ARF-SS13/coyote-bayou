@@ -24,6 +24,7 @@
 #define INV_SLOTBIT_HANDS			(1<<14)
 #define INV_SLOTBIT_BACKPACK		(1<<15)
 #define INV_SLOTBIT_SUITSTORE		(1<<16)
+#define INV_SLOTBIT_ANYWHERE		ALL
 
 //A list of the variable names of all slots people can equip things in. This is used to massively reduce code complexity when checking all slots
 #define ALL_EQUIP_SLOTS list("w_uniform", "wear_suit", "back", "belt", "gloves", "shoes", "head", "wear_mask", "wear_neck", "ears", \

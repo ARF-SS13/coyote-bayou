@@ -934,13 +934,31 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
 
+	/// Test if they have a saved quid, if not, generate one.
+	var/saved_quid
+	S["quester_uid"] >> saved_quid
+	if(!istext(saved_quid)) // no saved quid, generate one
+		saved_quid = generate_quester_id()
+		if(!istext(saved_quid)) // failed to generate a quid, just use a default
+			message_admins("Failed to generate a quester id for [parent.ckey]!!!")
+		WRITE_FILE(S["quester_uid"], saved_quid)
+	S["quester_uid"] >> quester_uid
+	var/helicopter_precum
+	S["saved_finished_quests"] >> helicopter_precum
+	saved_finished_quests = safe_json_decode(helicopter_precum)
+
+	var/helicopter_postcum
+	S["saved_active_quests"] >> helicopter_postcum
+	saved_active_quests = safe_json_decode(helicopter_postcum)
 
 	//sanitize data
-	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
-	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
-	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
-	faved_interactions		= sanitize_islist(faved_interactions, list())
+	show_in_directory     = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag         = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
+	directory_erptag      = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad          = strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions    = sanitize_islist(faved_interactions, list())
+	saved_finished_quests = sanitize_islist(saved_finished_quests, list())
+	saved_active_quests   = sanitize_islist(saved_active_quests, list())
 
 	//Sanitize
 
@@ -1514,7 +1532,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["undershirt_overclothes"]			, undershirt_overclothes) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["undies_overclothes"]				, undies_overclothes) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["socks_overclothes"]				, socks_overclothes) // not vore, dont worry its not eating anyones hands
-	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
+	WRITE_FILE(S["whoflags"]						, whoflags) // might actually be vore
 
 	//Character directory
 	WRITE_FILE(S["show_in_directory"], show_in_directory)
@@ -1529,6 +1547,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
+	if(LAZYLEN(saved_finished_quests))
+		WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
+	WRITE_FILE(S["saved_active_quests"], safe_json_encode(saved_active_quests))
 
 	return 1
 
