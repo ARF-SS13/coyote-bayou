@@ -29,7 +29,8 @@
 	response_harm_simple = "hits"
 	robust_searching = TRUE
 	blood_volume = 0
-	del_on_death = TRUE
+	bombs_can_gib_me = FALSE
+	// del_on_death = TRUE
 	healable = FALSE
 	faction = list("wastebot")
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
@@ -78,6 +79,12 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
+	var/explodes_on_death = FALSE
+	var/ex_devastate = 1
+	var/ex_heavy = 2
+	var/ex_light = 4
+	var/ex_flash = 4
+	var/ex_flames = 6
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
@@ -109,13 +116,25 @@
 	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
-	explosion(src,1,2,4,4)
+	explosion(
+		get_turf(src),
+		ex_devastate,
+		ex_heavy,
+		ex_light,
+		ex_flash,
+		flame_range = ex_flames
+		)
+
+/mob/living/simple_animal/hostile/securitron/ex_act(severity, target, origin)
+	. = ..()
+	
 
 /mob/living/simple_animal/hostile/securitron/death()
 	do_sparks(3, TRUE, src)
-	for(var/i in 1 to 3)
-		addtimer(CALLBACK(src,PROC_REF(do_death_beep)), i * 1 SECONDS)
-	addtimer(CALLBACK(src,PROC_REF(self_destruct)), 4 SECONDS)
+	if(explodes_on_death)
+		for(var/i in 1 to 3)
+			addtimer(CALLBACK(src,PROC_REF(do_death_beep)), i * 1 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(self_destruct)), 4 SECONDS)
 	return ..()
 
 /mob/living/simple_animal/hostile/securitron/Aggro()
@@ -166,6 +185,7 @@
 		'sound/f13npc/sentry/idle4.ogg'
 		)
 	var/warned = FALSE
+	explodes_on_death = TRUE
 
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),

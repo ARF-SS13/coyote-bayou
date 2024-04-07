@@ -250,6 +250,18 @@
 	using.hud = src
 	hotkeybuttons += using
 
+	using = new /atom/movable/screen/questbook()
+	// using.icon = ui_style
+	using.screen_loc = ui_questbook
+	using.hud = src
+	hotkeybuttons += using
+
+	using = new /atom/movable/screen/scannerpls()
+	// using.icon = ui_style
+	using.screen_loc = ui_questscanner
+	using.hud = src
+	hotkeybuttons += using
+
 	using = new /atom/movable/screen/rest()
 	using.icon = ui_style
 	using.screen_loc = ui_pull_resist
@@ -386,7 +398,7 @@
 	pull_icon.icon = ui_style
 	pull_icon.hud = src
 	pull_icon.update_icon()
-	pull_icon.screen_loc = ui_pull_resist
+	pull_icon.screen_loc = ui_pull_stop
 	static_inventory += pull_icon
 
 	lingchemdisplay = new /atom/movable/screen/ling/chems()

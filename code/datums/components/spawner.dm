@@ -382,7 +382,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		if(!chosen_mob)
 			qdel(P) // clearly, out of mobs. shouldnt get here
 			return
-		L = new chosen_mob(get_turf(P))
+		L = new chosen_mob(get_turf(P), "TOPHEAVY-KOBOLD")
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs |= WEAKREF(L)
 		L.nest = WEAKREF(P) // Neither really own each other, its all purely for record keeping
@@ -485,6 +485,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		start_spawning()
 		// nobody'll know the difference~
 	qdel(despawn_me)
+	return TRUE
 
 /// If anything asks if we have a spawner, we say yes.
 /datum/component/spawner/proc/has_spawner()

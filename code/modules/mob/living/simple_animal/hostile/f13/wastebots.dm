@@ -12,7 +12,7 @@
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "handy"
 	icon_living = "handy"
-	icon_dead = "robot_dead"
+	icon_dead = "securitron_dead" // look better
 	speed = 2
 	can_ghost_into = TRUE
 	gender = NEUTER
@@ -38,7 +38,7 @@
 	faction = list("wastebot")
 	speak_emote = list("states")
 	gold_core_spawnable = HOSTILE_SPAWN
-	del_on_death = TRUE
+	// del_on_death = TRUE
 	deathmessage = "blows apart!"
 	taunt_chance = 30
 	blood_volume = 0
@@ -112,7 +112,8 @@
 	desc = "A pre-war combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
-	icon_dead = "robot_dead"
+	icon_dead = "securitron_dead"
+	color_dead = "#467049"
 	can_ghost_into = FALSE
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100
@@ -492,7 +493,8 @@
 	icon_state = "assaultron"
 	icon_living = "assaultron"
 	gender = FEMALE //Pffffffffffffffffffffff
-	icon_dead = "gib7"
+	icon_dead = "assaultron_sase_dead"
+	color_dead = "#467049"
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100
 	health = 100

@@ -97,6 +97,10 @@
 
 	/// What does this creature taste like?
 	var/list/tastes
+	/// When something is turned in for a quest, it'll give it a tag so it can only be turned in once per player
+	var/list/quest_tag
+	/// Override the deletion of this atom for quests
+	var/important
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -147,6 +151,7 @@
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
+	SSatoms.everything[type]++
 
 	InitTastes()
 
@@ -169,6 +174,7 @@
 		// QDEL_NULL(tastes)
 
 /atom/Destroy()
+	SSatoms.everything[type]--
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
 			var/datum/atom_hud/alternate_appearance/AA = alternate_appearances[K]
@@ -186,6 +192,8 @@
 
 	QDEL_NULL(light)
 
+	if(LAZYLEN(quest_tag))
+		QDEL_LIST(quest_tag)
 	return ..()
 
 /**
@@ -450,6 +458,9 @@
 				. += span_notice("It has [reagents.total_volume] unit\s left.")
 			else
 				. += span_danger("It's empty.")
+	var/itworth = techweb_item_point_check(src)
+	if(itworth > 0)
+		. += span_green("You figure a scientist would love to have this thing!")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

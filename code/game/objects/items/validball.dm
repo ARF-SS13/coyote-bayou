@@ -23,6 +23,7 @@
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
 	var/autoreveal_time = 1 HOURS
+	important = TRUE
 
 /obj/item/validball/Initialize()
 	. = ..()
