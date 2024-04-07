@@ -26,7 +26,7 @@
 		GUN_UPGRADE_ZOOM = 1, 											// Anything above 2x is almost unusable.
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(1,10) * 0.01,				// This is pretty much only good for black powder and plasma weapons, still good to have regardless.
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_MAGIC, GUN_ENERGY) 		// Basically the "class" of gun. Ballistic, Magic, and or Energy.
+	I.req_gun_tags = list() 		// Basically the "class" of gun. Ballistic, Magic, and or Energy.
 	I.gun_loc_tag = null 												// This is in case you want a "one type of this mod" thing.
 
 // Damage. PROJECTILE gets barrels, ENERGY gets chips, and MAGIC gets crystalized nether energy.
@@ -104,7 +104,7 @@
 /obj/item/gun_upgrade/chipthree
 	name = "Miniature Fusion Reactor"
 	desc = "A miniature sized fusion reactor that (kind of) safely dumps extra energy into the system to increase damage. The highest this can roll is 30%"
-	icon_state = "gauss"
+	icon_state = "battery_shunt"
 
 /obj/item/gun_upgrade/chipthree/New()
 	..()
@@ -128,7 +128,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = 1 + -21 * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/griptwo
@@ -142,13 +142,13 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-36) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/gripthree
 	name = "Gyration Stabilization Sleeve"
 	desc = "A thin and SUPER grippy metamaterial mesh to enhance your one handed firing ability. Oh my god! It even has a watermark... The highest this can roll is 50%."
-	icon_state = "stabilizing"
+	icon_state = "vibcompensator"
 
 /obj/item/gun_upgrade/gripthree/New()
 	..()
@@ -156,7 +156,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-51) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 // 2H Recoil. PROJECTILE, ENERGY gets muzzle devices, MAGIC gets higher quality focuses.
@@ -173,7 +173,7 @@
 		GUN_UPGRADE_RECOIL_2H = 1 + -21 * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + -21 * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/muzzletwo
@@ -188,7 +188,7 @@
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(-21,-36) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-36) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/muzzlethree
@@ -203,11 +203,11 @@
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(-21,-51) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-51) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 
-//  Fire Delay Multiplier / ROF. PROJECTILE, ENERGY gets triggers, MAGIC gets books. 
+//  Fire Delay Multiplier 
 
 /obj/item/gun_upgrade/triggerone
 	name = "Match Trigger"
@@ -220,7 +220,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + -16 * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/triggertwo
@@ -234,7 +234,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-36) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/triggerthree
@@ -248,7 +248,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-51) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 // Scope: "Classless" upgrades for zooming.
@@ -264,7 +264,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_ZOOM = 1.1
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_MAGIC, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/sighttwo
@@ -278,7 +278,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_ZOOM = 1 + rand(0.5,1)
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_MAGIC, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/sightthree
@@ -292,7 +292,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_ZOOM = 1 + rand(0,2)
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_MAGIC, GUN_ENERGY)
+	I.req_gun_tags = list()
 	I.gun_loc_tag = null
 
 // Paint: "Classless" upgrades for multiple types of traits at once. Only one at once, takes a special paint slot.
