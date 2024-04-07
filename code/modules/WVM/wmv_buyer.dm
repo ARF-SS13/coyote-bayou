@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/expected_price = 0
 	var/list/prize_list = list()  // infinite profits should be crap, more limited profits should be good. Should never be better than cargo.
 	var/trader_key = WVM_SCRAPPER
+	var/exact_change = TRUE
 
 
 	/// List of things it buys, and allows any of its children into the buy list
@@ -315,11 +316,18 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	else
 		return "IDLE - <A href='?src=[REF(src)];choice=run'><u>Initiate Sale</u></A><br>"
 
+/obj/machinery/mineral/wasteland_trader/proc/charon()
+	if(exact_change)
+		return "<A href='?src=[REF(src)];choice=toggle_exact_change'><u>Paying out in Copper, Silver, Gold</u></A><br>"
+	else
+		return "<A href='?src=[REF(src)];choice=toggle_exact_change'><u>Paying out in Copper only</u></A><br>"
+
 /obj/machinery/mineral/wasteland_trader/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "[run_button()]"
+	dat += "[run_button()]<br>"
+	dat += "[charon()]"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
@@ -378,6 +386,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		abort()
 	if(href_list["choice"] == "eject")
 		eject()
+	if(href_list["choice"] == "toggle_exact_change")
+		TOGGLE_VAR(exact_change)
 	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
 		if (!prize || !(prize in prize_list))
@@ -512,10 +522,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/fractional = final_price - FLOOR(final_price, 1)
 	if(fractional || prob(2))
 		generate_fortune(fractional || rand(1,10)) // no more only-bad fortunes for everyone
-	var/storedcaps = payout(final_price)
-	var/currencie = final_price > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	var/currencei = storedcaps > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	say("Sold [I] for [final_price] [currencie], bringing the total to [storedcaps] [currencei]!")
+	payout(floor(final_price), I, TRUE)
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -540,19 +547,128 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		lucky_target = get_ranged_target_turf(src, pick(GLOB.alldirs), rand(1,5), 5)
 	yote.throw_at(lucky_target, 20, 1)
 
-/obj/machinery/mineral/wasteland_trader/proc/payout(caps)
-	var/obj/item/stack/f13Cash/caps/C
-	for(var/thingy in src)
-		if(!istype(thingy, /obj/item/stack/f13Cash/caps))
-			continue
-		C = thingy
-		break
-	if(!C)
-		C = new(src)
-		C.amount = 0
-	C.amount += caps
-	C.update_icon()
-	return C.amount
+/// takes in an amount of raw cash, and returns a list of the denominations of coins that would be used to make that amount
+/// Assumptions: 10 copper -> 1 silver, 10 silver -> 1 gold
+/// list format: list("copper" = 0, "silver" = 0, "gold" = 0)
+/proc/generate_denomination_list(money_in)
+	var/list/coinage = list("copper" = 0, "silver" = 0, "gold" = 0)
+	coinage["gold"] = money_in / 100
+	money_in -= coinage["gold"] * 100
+	coinage["silver"] = money_in / 10
+	money_in -= coinage["silver"] * 10
+	coinage["copper"] = money_in
+	return coinage
+
+/// takes in an amount of raw cash, and distributes it through only copper stacks in the machine
+/// each stack can only take 500 coins, so it will create new stacks as needed
+/obj/machinery/mineral/wasteland_trader/proc/copper_only(caps, obj/item/I, loud)
+	for(var/obj/item/stack/f13Cash/caps/copper_stack in contents)
+		if(copper_stack.amount < 500)
+			var/amount_to_add = min(500 - copper_stack.amount, caps)
+			copper_stack.amount += amount_to_add
+			copper_stack.update_icon()
+			caps -= amount_to_add
+			if(caps <= 0)
+				return TRUE // all done!
+	var/safety = 100
+	while(caps > 0 && safety--)
+		var/obj/item/stack/f13Cash/caps/C = new(src)
+		if(!C)
+			return FALSE
+		C.amount = min(500, caps)
+		C.update_icon()
+		caps -= C.amount
+	var/total_cash = 0
+	for(var/obj/item/stack/f13Cash/C in contents)
+		if(istype(C, /obj/item/stack/f13Cash/denarius))
+			total_cash += (C.amount * 10) // silver, 10 copper per
+		else if(istype(C, /obj/item/stack/f13Cash/aureus))
+			total_cash += (C.amount * 100) // gold, 100 copper per
+		else
+			total_cash += C.amount
+	if(loud)
+		announce_sale(caps, total_cash, I)
+
+/obj/machinery/mineral/wasteland_trader/proc/payout(caps, obj/item/I, loud)
+	if(!exact_change)
+		return copper_only(caps, I, loud)
+	/// get the total cash we have in the machine, plus the amount we're paying out, in copper
+	var/total_cash = caps
+	/// we're going to sweep up any duplicate stacks of copper and silver
+	var/obj/item/stack/f13Cash/caps/one_copper
+	var/obj/item/stack/f13Cash/denarius/one_silver
+	var/obj/item/stack/f13Cash/aureus/one_gold
+	for(var/obj/item/stack/f13Cash/C in contents)
+		if(istype(C, /obj/item/stack/f13Cash/denarius))
+			total_cash += (C.amount * 10) // silver, 10 copper per
+			if(one_silver)
+				qdel(C)
+			else
+				one_silver = C
+				one_silver.amount = 0
+		else if(istype(C, /obj/item/stack/f13Cash/aureus))
+			total_cash += (C.amount * 100) // gold, 100 copper per
+			if(one_gold)
+				qdel(C)
+			else
+				one_gold = C
+				one_gold.amount = 0
+		else
+			total_cash += C.amount
+			if(one_copper)
+				qdel(C)
+			else
+				one_copper = C
+				one_copper.amount = 0 // we'll give em back, I swear
+	/// if we're paying out in exact change, we need to generate the list of denominations
+	var/list/coinage = generate_denomination_list(total_cash)
+	var/copperamt = coinage["copper"]
+	var/silveramt = coinage["silver"]
+	var/goldamt = coinage["gold"]
+	/// first distribute the copper
+	if(copperamt > 0)
+		if(!one_copper)
+			one_copper = new(src, copperamt)
+		else
+			one_copper.amount = copperamt
+		one_copper.update_icon()
+	/// then the silver
+	if(silveramt > 0)
+		if(!one_silver)
+			one_silver = new(src, silveramt)
+		else
+			one_silver.amount = silveramt
+		one_silver.update_icon()
+	/// then make some gold stacks. if we have more than 500 gold to place, we'll make as many stacks of 500 as we need, and then one for the remainder
+	if(goldamt > 0)
+		if(goldamt > 500)
+			while(goldamt > 500)
+				var/obj/item/stack/f13Cash/aureus/G = new(src, 500)
+				G.update_icon()
+				goldamt -= 500
+		if(goldamt > 0)
+			var/obj/item/stack/f13Cash/aureus/G = new(src, goldamt)
+			G.update_icon()
+	if(loud)
+		announce_sale(caps, total_cash, I)
+
+/obj/machinery/mineral/wasteland_trader/proc/announce_sale(soldfor, totalcash, obj/item/I)
+	var/thing = I ? "\the [I]" : "something"
+	var/currencie = soldfor > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	var/currencei = totalcash > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
+
+/obj/item/debug_vendorsale
+	name = "Really Valuable Thing"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "latexballoon_blow"
+
+/obj/item/debug_vendorsale/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
+
+/obj/item/debug_vendorsale/proc/get_value()
+	return round(CREDITS_TO_COINS(12345678909))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
@@ -567,7 +683,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			if(ismob(C)) // juuuust in case
 				whos_it_for = C
 	else
-		for(var/mob/who in view(7, src)) // this also counts ghosts
+		for(var/mob/who in range(7, src)) // this also counts ghosts
 			if(!whos_it_for)
 				whos_it_for = who
 				continue
