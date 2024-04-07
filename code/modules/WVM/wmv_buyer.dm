@@ -673,7 +673,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
 
 /obj/item/debug_vendorsale/proc/get_value()
-	return round(CREDITS_TO_COINS(12345678))
+	return round(CREDITS_TO_COINS(12345))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
@@ -718,6 +718,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	msg_out += "[FOURSPACES][whofor]'s projected destiny<br>"
 	msg_out += "<hr><br><br><center>"
 	var/bitch = FALSE
+	luck = rand(1,100) // old system was kinda bungus
 	switch(luck)
 		if(-INFINITY to 35)
 			switch(rand(1,20))
