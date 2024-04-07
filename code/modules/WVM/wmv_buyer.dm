@@ -552,11 +552,16 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 /// list format: list("copper" = 0, "silver" = 0, "gold" = 0)
 /proc/generate_denomination_list(money_in)
 	var/list/coinage = list("copper" = 0, "silver" = 0, "gold" = 0)
-	coinage["gold"] = money_in / 100
-	money_in -= coinage["gold"] * 100
-	coinage["silver"] = money_in / 10
-	money_in -= coinage["silver"] * 10
-	coinage["copper"] = money_in
+	while(money_in > 0)
+		if(money_in >= 100)
+			coinage["gold"] += 1
+			money_in -= 100
+		else if(money_in >= 10)
+			coinage["silver"] += 1
+			money_in -= 10
+		else
+			coinage["copper"] += 1
+			money_in -= 1
 	return coinage
 
 /// takes in an amount of raw cash, and distributes it through only copper stacks in the machine
