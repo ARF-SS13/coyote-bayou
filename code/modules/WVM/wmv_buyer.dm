@@ -481,6 +481,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		var/obj/item/stack/S = thing2sell
 		final_price = S.amount * final_price
 	var/time2sell = final_price * 0.1 SECONDS
+	if(time2sell > 10 SECONDS)
+		var/difference = time2sell - (10 SECONDS)
+		time2sell = (10 SECONDS) + sqrt(sqrt(difference)) // genius
 	say("Now processing [thing2sell]!", just_chat = TRUE)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
