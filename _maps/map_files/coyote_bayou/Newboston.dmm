@@ -22138,10 +22138,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mig" = (
-/obj/effect/landmark/party{
-	region = "Nash's bar"
-	},
-/turf/open/indestructible/ground/outside/gravel,
+/obj/effect/landmark/start/f13/deputy,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "mih" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -22524,6 +22522,10 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"msP" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/f13/darkmarble,
+/area/f13/wasteland/city/newboston/bar)
 "msX" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/outside/road{
@@ -27719,13 +27721,14 @@
 	},
 /area/f13/building)
 "pxr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/room,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/item/chair/stool{
+	icon_state = "bar"
 	},
-/area/f13/wasteland/city/newboston/bar)
+/obj/effect/landmark/party{
+	region = "Nash's bar"
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/city/newboston/outdoors)
 "pxB" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
@@ -67824,7 +67827,7 @@ fDY
 pJc
 fDY
 fDY
-pJc
+pxr
 fDY
 fDY
 fDY
@@ -68085,7 +68088,7 @@ fDY
 fDY
 fDY
 fDY
-mig
+fDY
 fDY
 fDY
 fDY
@@ -68347,7 +68350,7 @@ vOY
 vOY
 wuq
 fft
-pxr
+fft
 vOY
 vOY
 vOY
@@ -68604,7 +68607,7 @@ fef
 rpW
 jnu
 xOW
-snD
+xGp
 nyo
 kwu
 mTe
@@ -68864,7 +68867,7 @@ ute
 snD
 maY
 maY
-xGp
+maY
 fef
 qAj
 rpW
@@ -69378,10 +69381,10 @@ ute
 ute
 ute
 ute
-ute
+msP
 nkj
-rpW
 hsR
+rpW
 epk
 tiJ
 vOY
@@ -69635,10 +69638,10 @@ dgU
 dgU
 dgU
 dgU
-dgU
+rpW
 vOY
 vOY
-vOY
+fef
 vOY
 vOY
 vOY
@@ -70111,7 +70114,7 @@ uBn
 lkY
 qPo
 njY
-soG
+mig
 uiB
 hVc
 lbs
@@ -76031,9 +76034,9 @@ uIt
 uIt
 qCp
 ptC
-uIt
-uIt
-uIt
+uQa
+qCp
+qCp
 qCp
 mrr
 mrr
@@ -76287,8 +76290,8 @@ qCp
 cQD
 cQD
 qCp
-uIt
-uQa
+qCp
+qCp
 qCp
 qCp
 qCp

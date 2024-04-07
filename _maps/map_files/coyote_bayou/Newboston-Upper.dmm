@@ -6914,6 +6914,14 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"rs" = (
+/obj/structure/railing,
+/obj/structure/chair/bench,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland/city/newboston/outdoors)
 "rv" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress1";
@@ -14549,6 +14557,12 @@
 	color = "#779999"
 	},
 /area/f13/ncr)
+"Ka" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston/outdoors)
 "Kc" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -45103,11 +45117,11 @@ Ll
 dZ
 Ld
 fC
-mz
-tN
-tN
-tN
-tN
+dK
+Cv
+Cv
+Cv
+rs
 tN
 tN
 tN
@@ -45360,11 +45374,11 @@ dK
 kx
 kx
 dK
+dK
+tE
+tE
+dK
 mz
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -45617,11 +45631,11 @@ dK
 dK
 dK
 dK
+Ll
+LU
+lw
+fC
 kb
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -45874,11 +45888,11 @@ dK
 dK
 dK
 dK
+Ll
+dZ
+Ld
+fC
 Gh
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -46131,11 +46145,11 @@ dK
 dK
 dK
 dK
+dK
+kx
+kx
+dK
 eI
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -46388,11 +46402,11 @@ dK
 tE
 tE
 dK
+dK
+dK
+dK
+dK
 LQ
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -46645,11 +46659,11 @@ Ll
 LU
 lw
 fC
+dK
+dK
+dK
+dK
 kb
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -46902,11 +46916,11 @@ Ll
 dZ
 Ld
 fC
+dK
+dK
+dK
+dK
 Sw
-tN
-tN
-tN
-tN
 tN
 tN
 tN
@@ -47160,10 +47174,10 @@ kx
 kx
 dK
 dK
-aC
-aC
+Hh
+Hh
+Hh
 gM
-tN
 tN
 tN
 tN
@@ -47419,8 +47433,8 @@ rh
 dK
 Hh
 Hh
+Hh
 DQ
-tN
 tN
 tN
 tN
@@ -47676,8 +47690,8 @@ cw
 cw
 Js
 Hh
+Hh
 DQ
-tN
 tN
 tN
 tN
@@ -47933,8 +47947,8 @@ jK
 cw
 cw
 Zh
+Hh
 DQ
-tN
 tN
 tN
 tN
@@ -48190,8 +48204,8 @@ cw
 cw
 cw
 PV
+Ka
 mr
-tN
 tN
 tN
 tN
