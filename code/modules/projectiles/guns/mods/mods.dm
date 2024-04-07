@@ -40,7 +40,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 10
+		GUN_UPGRADE_DAMAGE_MULT = 1 + 9 * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = null
@@ -54,7 +54,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = rand(10,20)
+		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,19) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = null
@@ -68,7 +68,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = rand(10,30)
+		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,29) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = null
@@ -82,7 +82,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 10
+		GUN_UPGRADE_DAMAGE_MULT = 1 + 9 * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -96,7 +96,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = rand(10,20)
+		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,19) * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -110,7 +110,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = rand(10,30)
+		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,29) * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -126,7 +126,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = -20
+		GUN_UPGRADE_RECOIL_1H = 1 + -21 * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
 	I.gun_loc_tag = null
@@ -140,7 +140,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = rand(-20,-35)
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-36) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
 	I.gun_loc_tag = null
@@ -154,7 +154,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = rand(-20,-50)
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-51) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_MAGIC)
 	I.gun_loc_tag = null
@@ -170,8 +170,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_2H = -20,
-		GUN_UPGRADE_PROJ_SPEED_MULT = -20
+		GUN_UPGRADE_RECOIL_2H = 1 + -21 * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + -21 * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -185,8 +185,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_2H = rand(-20,-35),
-		GUN_UPGRADE_PROJ_SPEED_MULT = rand(-20,-35)
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-21,-36) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-36) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -200,8 +200,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_2H = rand(-20,-50),
-		GUN_UPGRADE_PROJ_SPEED_MULT = rand(-20,-50)
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-21,-51) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-51) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -218,7 +218,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = -15
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + -16 * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -232,7 +232,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-15,-35)
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-36) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
@@ -246,7 +246,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-15,-50)
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-51) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	I.gun_loc_tag = null
