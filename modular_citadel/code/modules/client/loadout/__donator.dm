@@ -760,7 +760,25 @@
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
+	new /obj/item/gun/ballistic/automatic/smg/p90/llxninety(src) // whatever
+
+/datum/gear/donator/kits/chewyexe
+	name = "stash from the past"
+	path = /obj/item/storage/box/large/custom_kit/chewyexe
+	ckeywhitelist = list("Chewy.exe")
+
+/obj/item/storage/box/large/custom_kit/chewyexe/PopulateContents()
+	new	/obj/item/clothing/suit/armor/rangercombat(src)
+	new	/obj/item/clothing/head/helmet/f13/ncr/rangercombat(src)
+	new	/obj/item/gun/ballistic/rifle/mag/antimaterial/loadout(src)
+
+/datum/gear/donator/kits/aphass
+	name = "lapine smelling premium plasmacutter box"
+	path = /obj/item/storage/box/large/custom_kit/aphass
+	ckeywhitelist = list("Whirlsam")
+
+/obj/item/storage/box/large/custom_kit/aphass/PopulateContents()
+	new /obj/item/gun/energy/plasmacutter/adv(src)
 
 /datum/gear/donator/kits/palpapus
 	name = "Darth Plapappus Customs"
@@ -777,6 +795,15 @@
 	new /obj/item/clothing/gloves/f13/military(src)
 	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
 	new /obj/item/storage/backpack/trekker(src)
+
+
+
+
+
+
+
+
+
 
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
