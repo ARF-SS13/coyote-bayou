@@ -35,9 +35,7 @@
 	deathmessage = span_colossus("chokes on their own blood, gurgling out 'You're coming with me, mutie' as they activate their self destruct!")
 	deathsound = 'sound/effects/gravhit.ogg'
 	del_on_death = FALSE
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
-	loot_drop_amount = 15
-	loot_amount_random = TRUE
+	loot = list(/obj/item/keycard/library)
 
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/BiologicalLife(seconds, times_fired)

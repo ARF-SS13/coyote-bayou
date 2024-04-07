@@ -525,6 +525,12 @@
 	path = /obj/item/clothing/under/misc/gear_harness
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
+/datum/gear/uniform/chameleon
+	name = "chameleon outfit"
+	path = /obj/item/clothing/under/chameleon
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+	cost = 0
+
 /datum/gear/uniform/navy
 	name = "navy jumpsuit"
 	path = /obj/item/clothing/under/f13/navy
