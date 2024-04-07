@@ -6914,14 +6914,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
-"rs" = (
-/obj/structure/railing,
-/obj/structure/chair/bench,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland/city/newboston/outdoors)
 "rv" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress1";
@@ -9618,6 +9610,12 @@
 /obj/item/ammo_box/magazine/garand3006,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
+"yg" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston/outdoors)
 "yh" = (
 /obj/structure/dresser{
 	pixel_y = 16;
@@ -14557,12 +14555,6 @@
 	color = "#779999"
 	},
 /area/f13/ncr)
-"Ka" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/outdoors)
 "Kc" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -17229,6 +17221,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"QC" = (
+/obj/structure/railing,
+/obj/structure/chair/bench,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland/city/newboston/outdoors)
 "QD" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -45121,7 +45121,7 @@ dK
 Cv
 Cv
 Cv
-rs
+QC
 tN
 tN
 tN
@@ -48204,7 +48204,7 @@ cw
 cw
 cw
 PV
-Ka
+yg
 mr
 tN
 tN
@@ -54876,10 +54876,10 @@ tN
 tN
 tN
 tN
-tN
-tN
-tN
-tN
+OT
+OT
+OT
+OT
 tN
 tN
 tN
@@ -55133,8 +55133,8 @@ tN
 tN
 tN
 tN
-tN
-tN
+OT
+OT
 NI
 RV
 RV
@@ -55390,8 +55390,8 @@ tN
 tN
 tN
 tN
-tN
-tN
+OT
+OT
 Xi
 OT
 OT
@@ -55647,8 +55647,8 @@ tN
 tN
 tN
 tN
-tN
-tN
+OT
+OT
 By
 OT
 OT
@@ -55905,7 +55905,7 @@ Fo
 Fo
 Fo
 Fo
-tN
+OT
 Ts
 OT
 OT
