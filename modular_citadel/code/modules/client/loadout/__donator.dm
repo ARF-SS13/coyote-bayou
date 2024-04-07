@@ -120,7 +120,7 @@
 
 /obj/item/storage/box/large/custom_kit/aerodynamique/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
-	new /obj/item/gun_upgrade/scope/watchman(src)
+//	new /obj/item/gun_upgrade/scope/watchman(src) // for now just icing their attachments, when they play they'll complain
 
 /datum/gear/donator/kits/aerodynamique2
 	name = "Ancient Huntress' Bounty"
@@ -257,7 +257,7 @@
 	new /obj/item/book/granter/crafting_recipe/blueprint/infiltrator(src)
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
+//	new /obj/item/gun_upgrade/muzzle/silencer(src) // for now just icing their attachments, when they play they'll complain
 
 /datum/gear/donator/kits/matter7
 	name = "A Box for the Smelly Circuit Sergal"
@@ -545,7 +545,7 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/clothing/suit/armor/light/kit/plates(src)
-	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
+//	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src) // for now just icing their attachments, when they play they'll complain
 
 /datum/gear/donator/kits/ferisramsay3
 	name = "Maddy's Loadout"
@@ -632,7 +632,7 @@
 
 /obj/item/storage/box/large/custom_kit/greed2323/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+//	new /obj/item/gun_upgrade/trigger/raidertrigger(src) // for now just icing their attachments, when they play they'll complain
 
 // H
 
@@ -742,7 +742,7 @@
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/under/syndicate/camo(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
+//	new /obj/item/gun_upgrade/muzzle/silencer(src) // for now just icing their attachments, when they play they'll complain
 	new /obj/item/radio(src)
 
 /datum/gear/donator/kits/jademanique
@@ -760,7 +760,25 @@
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
+	new /obj/item/gun/ballistic/automatic/smg/p90/llxninety(src) // whatever
+
+/datum/gear/donator/kits/chewyexe
+	name = "stash from the past"
+	path = /obj/item/storage/box/large/custom_kit/chewyexe
+	ckeywhitelist = list("Chewy.exe")
+
+/obj/item/storage/box/large/custom_kit/chewyexe/PopulateContents()
+	new	/obj/item/clothing/suit/armor/rangercombat(src)
+	new	/obj/item/clothing/head/helmet/f13/ncr/rangercombat(src)
+	new	/obj/item/gun/ballistic/rifle/mag/antimaterial/loadout(src)
+
+/datum/gear/donator/kits/aphass
+	name = "lapine smelling premium plasmacutter box"
+	path = /obj/item/storage/box/large/custom_kit/aphass
+	ckeywhitelist = list("Whirlsam")
+
+/obj/item/storage/box/large/custom_kit/aphass/PopulateContents()
+	new /obj/item/gun/energy/plasmacutter/adv(src)
 
 /datum/gear/donator/kits/palpapus
 	name = "Darth Plapappus Customs"
@@ -1619,7 +1637,7 @@
 	new /obj/item/ammo_box/magazine/m308/ext(src)
 	new /obj/item/ammo_box/magazine/m308/ext(src)
 	new /obj/item/gun/ballistic/automatic/slr/stinki(src)
-	new /obj/item/gun_upgrade/scope/killer(src)
+//	new /obj/item/gun_upgrade/scope/killer(src) // for now just icing their attachments, when they play they'll complain
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"

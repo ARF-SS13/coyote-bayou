@@ -173,7 +173,7 @@ Raider
 		///obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
 		/obj/item/ammo_box/c45rev = 2,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 1,
 		/obj/item/grenade/smokebomb = 2,
 		)
@@ -485,7 +485,7 @@ Raider
 		///obj/item/gun/ballistic/rifle/hunting/remington = 1,
 		///obj/item/ammo_box/a308 = 1,
 		///obj/item/ammo_box/a308box = 1,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 	//	/obj/item/gun/ballistic/revolver/revolver44=2,
 		/obj/item/storage/belt/shoulderholster=1,
 	//	/obj/item/ammo_box/m44=4,
