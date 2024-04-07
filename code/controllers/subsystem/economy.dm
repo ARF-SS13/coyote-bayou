@@ -96,9 +96,9 @@ SUBSYSTEM_DEF(economy)
 
 	var/list/quest_console_paths = list()
 
-	var/easy_quest_count = 5
-	var/medium_quest_count = 4
-	var/hard_quest_count = 2
+	var/easy_quest_count = 3
+	var/medium_quest_count = 2
+	var/hard_quest_count = 1
 	var/cbt_quest_count = 1
 
 	var/static_spam = 0
