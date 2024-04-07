@@ -12,7 +12,7 @@
 	max_ammo = 24
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_BOX)
 	ammo_type = /obj/item/ammo_casing/shotgun
-	multiple_sprites = 2
+	multiple_sprites = 5
 	caliber = list(CALIBER_SHOTGUN)
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
@@ -23,11 +23,29 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	icon_state = "lbox"
 
+/obj/item/ammo_box/shotgun/slug/crate
+	name = "Slug shotgun ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
 /obj/item/ammo_box/shotgun/buck
 	name = "Buckshot shotgun ammo box"
 	desc = "A box full of shotgun shells."
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	icon_state = "gbox"
+
+/obj/item/ammo_box/shotgun/buck/crate
+	name = "Buckshot shotgun ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
 
 /obj/item/ammo_box/shotgun/magnum
 	name = "Magnum buckshot shotgun ammo box"
@@ -41,19 +59,46 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	icon_state = "bbox"
 
+/obj/item/ammo_box/shotgun/bean/crate
+	name = "Beanbag shotgun ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
 /obj/item/ammo_box/shotgun/rubber
 	name = "Rubbershot shotgun ammo box"
 	desc = "A box full of shotgun shells."
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "stunbox"
 
+/obj/item/ammo_box/shotgun/rubber/crate
+	name = "Rubbershot shotgun ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
 /obj/item/ammo_box/shotgun/improvised
 	name = "homemade shotgun shells"
 	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
-	max_ammo = 16
-	multiple_sprites = 1
+	max_ammo = 24
+	multiple_sprites = 3
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	icon_state = "improvshotbag"
+
+/obj/item/ammo_box/shotgun/improvised/crate
+	name = "bulk homemade shotgun shells"
+	desc = "A whole big bag of recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
 
 /obj/item/ammo_box/shotgun/incendiary
 	name = "Box of incendiary shotgun shells"
@@ -117,11 +162,29 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/m22/crate
+	name = "ammo crate (.22lr)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 600
+
 /obj/item/ammo_box/m22/rubber
 	name = "ammo box (.22lr rubber)"
 	icon_state = "22rubber"
 	desc = "A box of .22 rubber rounds. For when you want to be useless."
 	ammo_type = /obj/item/ammo_casing/a22/rubber
+
+/obj/item/ammo_box/m22/rubber/crate
+	name = "ammo crate (.22lr rubber)"
+	desc = "A wooden crate of .22 rubber rounds. For when you want to be useless."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 600
 
 /obj/item/ammo_box/m22/shock
 	name = "ammo box (.22lr electroshock)"
@@ -135,6 +198,14 @@
 	desc = "A box of .22 ratshot rounds."
 	ammo_type = /obj/item/ammo_casing/a22/ratshot
 
+/obj/item/ammo_box/m22/ratshot/crate
+	name = "ammo crate (.22lr ratshot)"
+	desc = "A wooden crate of .22 ratshot rounds."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 600
 
 //needle ammo
 
@@ -203,12 +274,30 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/c9mm/crate
+	name = "ammo crate (9mm)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 450
+
 /obj/item/ammo_box/c9mm/rubber
 	name = "ammo box (9mm rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmbox"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
+/obj/item/ammo_box/c9mm/rubber/crate
+	name = "ammo crate (9mm rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 450
 
 /obj/item/ammo_box/c9mm/incendiary
 	name = "ammo box (9mm incendiary-tipped)"
@@ -221,6 +310,15 @@
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 	ammo_type = /obj/item/ammo_casing/c9mm/improvised
+
+/obj/item/ammo_box/c9mm/improvised/crate
+	name = "bulk bag with reloaded 9mm bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 450
+
 /*
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
@@ -266,6 +364,15 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/c10mm/crate
+	name = "ammo crate (10mm)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
+
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm incendiary-tipped)"
 	desc = "A box of 10mm incendiary-tipped rounds. This'll burn."
@@ -276,12 +383,29 @@
 	name = "ammo box (10mm rubber)"
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
+/obj/item/ammo_box/c10mm/rubber/crate
+	name = "ammo crate (10mm rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
+
 /obj/item/ammo_box/c10mm/improvised
 	name = "bag with reloaded 10mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
 	ammo_type = /obj/item/ammo_casing/c10mm/improvised
 	multiple_sprites = 3
+
+/obj/item/ammo_box/c10mm/improvised/crate
+	name = "bulk bag with reloaded 10mm bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
 
 //.357 Magnum
 /obj/item/ammo_box/a357box
@@ -296,10 +420,28 @@
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a357box/crate
+	name = "ammo crate (.357 Magnum FMJ)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
+
 /obj/item/ammo_box/a357box/ratshot
 	name = "ammo box (.357 Magnum Ratshot)"
 	desc = ".357 shotshells, meant for shooting tiny critters. Nigh useless against armor."
 	ammo_type = /obj/item/ammo_casing/a357/ratshot
+
+/obj/item/ammo_box/a357box/ratshot/crate
+	name = "ammo crate (.357 Magnum Ratshot)"
+	desc = "A wooden crate of .357 shotshells, meant for shooting tiny critters. Nigh useless against armor."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
 
 /obj/item/ammo_box/a357box/ricochet
 	name = "ammo box (.357 Magnum ricochet)"
@@ -319,6 +461,14 @@
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 
+/obj/item/ammo_box/a357box/improvised/crate
+	name = "bulk bag with reloaded .357 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
+
 //.44 Magnum
 /obj/item/ammo_box/m44box
 	name = "ammo box (.44 Magnum FMJ)"
@@ -327,10 +477,19 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_44)
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 42
+	max_ammo = 48
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m44box/crate
+	name = "ammo crate (.44 Magnum FMJ)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
 
 /obj/item/ammo_box/m44box/incendiary
 	name = "ammo box (.44 magnum incendiary-tipped)"
@@ -345,6 +504,14 @@
 	ammo_type = /obj/item/ammo_casing/m44/improvised
 	multiple_sprites = 3
 
+/obj/item/ammo_box/m44box/improvised/crate
+	name = "bulk bag with reloaded .44 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 /obj/item/ammo_box/a45lcbox
 	name = "ammo box (.45 Long Colt)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -356,12 +523,28 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a45lcbox/crate
+	name = "ammo crate (.45 Long Colt)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
+
 /obj/item/ammo_box/a45lcbox/improvised
 	name = "bag with reloaded .45 Long Colt bullets"
 	icon_state = "improvshotbag"
 	ammo_type = /obj/item/ammo_casing/a45lc/improvised
 	multiple_sprites = 3
 
+/obj/item/ammo_box/a45lcbox/improvised/crate
+	name = "bulk bag with reloaded .45 Long Colt bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
 
 // .45 ACP
 /obj/item/ammo_box/c45
@@ -376,12 +559,30 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/c45/crate
+	name = "ammo crate (.45 ACP)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
+
 /obj/item/ammo_box/c45/rubber
 	name = "ammo box (.45 rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	multiple_sprites = 2
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45/rubber
+
+/obj/item/ammo_box/c45/rubber/crate
+	name = "ammo crate (.45 rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
 
 /obj/item/ammo_box/c45/incendiary
 	name = "ammo box (.45 incendiary-tipped)"
@@ -395,6 +596,13 @@
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 
+/obj/item/ammo_box/c45/improvised/crate
+	name = "bulk bag with reloaded .45 ACP bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
 
 //.45-70 Gov't
 /obj/item/ammo_box/c4570box
@@ -409,10 +617,28 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/c4570box/crate
+	name = "ammo crate (.45-70 FMJ)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
+
 /obj/item/ammo_box/c4570box/ratshot
 	name = "ammo box (.45-70 Forager)"
 	desc = ".45-70 shotshells, meant for shooting tiny critters. Nigh useless against armor."
 	ammo_type = /obj/item/ammo_casing/c4570/ratshot
+
+/obj/item/ammo_box/c4570box/ratshot/crate
+	name = "ammo crate (.45-70 Forager)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
 
 /obj/item/ammo_box/c4570box/explosive
 	name = "ammo box (.45-70 HE)"
@@ -431,6 +657,13 @@
 	max_ammo = 40
 	multiple_sprites = 3
 
+/obj/item/ammo_box/c4570box/improvised/crate
+	name = "bulk bag with reloaded .45-70 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
 
 //5mm
 
@@ -446,6 +679,15 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/m5mmbox/crate
+	name = "ammo crate (5mm FMJ)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
+
 /obj/item/ammo_box/m5mmbox/shock
 	name = "ammo box (5mm ESD)"
 	desc = "Advanced 5mm bullets with electrostatic discharger tips."
@@ -457,6 +699,14 @@
 	icon_state = "improvshotbag"
 	max_ammo = 60
 	multiple_sprites = 3
+
+/obj/item/ammo_box/m5mmbox/improvised/crate
+	name = "bulk bag with reloaded 5mm bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
 
 //5.56x45
 /obj/item/ammo_box/a556
@@ -470,6 +720,16 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/a556/crate
+	name = "ammo crate (5.56 FMJ)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
+
 /*
 /obj/item/ammo_box/a556/sport
 	name = "ammo box (.223 sport)"
@@ -481,6 +741,15 @@
 	icon_state = "556box"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a556/rubber
+
+/obj/item/ammo_box/a556/rubber/crate
+	name = "ammo crate (5.56 rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
 
 /obj/item/ammo_box/a556/microshrapnel
 	name = "ammo box (5.56 microshrapnel)"
@@ -512,6 +781,14 @@
 	max_ammo = 50
 	icon_state = "improvshotbag"
 
+/obj/item/ammo_box/a556/improvised/crate
+	name = "bulk bag with reloaded 5.56 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 250
+
 //7.62x51, .308 Winchester
 /obj/item/ammo_box/a308box
 	name = "ammo box (.308)"
@@ -525,6 +802,15 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a308box/crate
+	name = "ammo crate (.308)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 200
+
 /obj/item/ammo_box/a308box/improvised
 	name = "bag with reloaded .308 bullets"
 	ammo_type = /obj/item/ammo_casing/a308/improvised
@@ -532,11 +818,19 @@
 	max_ammo = 40
 	multiple_sprites = 3
 
+/obj/item/ammo_box/a308box/improvised/crate
+	name = "bulk bag with reloaded .308 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 200
+
 //7.62x51, .30-06
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "ammobox"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "box30"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
 	ammo_type = /obj/item/ammo_casing/a3006
@@ -545,10 +839,27 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a3006box/crate
+	name = "ammo crate (.30-06)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
+
 /obj/item/ammo_box/a3006box/rubber
 	name = "ammo box (.30-06 rubber)"
 	ammo_type = /obj/item/ammo_casing/a3006/rubber
 
+/obj/item/ammo_box/a3006box/rubber/crate
+	name = "ammo crate (.30-06 rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
 
 /obj/item/ammo_box/a3006box/improvised
 	name = "bag with reloaded .30-06 bullets"
@@ -556,6 +867,14 @@
 	icon_state = "improvshotbag"
 	max_ammo = 30
 	multiple_sprites = 3
+
+/obj/item/ammo_box/a3006box/improvised/crate
+	name = "bulk bag with reloaded .30-06 bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 150
 
 /*
 /obj/item/ammo_box/a762box
@@ -597,6 +916,14 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a308/rubber
 
+/obj/item/ammo_box/a308box/rubber/crate
+	name = "ammo crate (.308 rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 200
 
 //.50 MG and 14mm
 /obj/item/ammo_box/a50MGbox
@@ -611,6 +938,15 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a50MGbox/crate
+	name = "ammo crate (.50 MG)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
 /obj/item/ammo_box/a50MGbox/rubber
 	name = "ammo box (.50 rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -618,12 +954,28 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a50MG/rubber
 
+/obj/item/ammo_box/a50MGbox/rubber/crate
+	name = "ammo crate (.50 rubber)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
 /obj/item/ammo_box/a50MGbox/improvised
 	name = "bag with reloaded .50MG slugs"
 	ammo_type = /obj/item/ammo_casing/a50MG/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 20
 	multiple_sprites = 3
+
+/obj/item/ammo_box/a50MGbox/improvised/crate
+	name = "bulk bag with reloaded .50MG slugs"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
 
 /obj/item/ammo_box/a50MGbox/contam
 	name = "ammo box (12.7mm contaminated)"
@@ -651,6 +1003,15 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/m14mm/crate
+	name = "ammo crate (14mm)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 180
+
 /obj/item/ammo_box/m14mm/contam
 	name = "ammo box (14mm contaminated)"
 	desc = "14mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
@@ -659,26 +1020,52 @@
 /obj/item/ammo_box/m14mm/improvised
 	name = "bag with reloaded 14mm bullets"
 	icon_state = "improvshotbag"
-	max_ammo = 40
+	max_ammo = 36
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 	multiple_sprites = 3
+
+/obj/item/ammo_box/m14mm/improvised/crate
+	name = "bulk bag with reloaded 14mm bullets"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "improv_bulk"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 180
 
 //Misc.
 /obj/item/ammo_box/m473
 	name = "ammo box (4.73mm caseless)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "ammobox"
+	icon_state = "47box"
 	caliber = list(CALIBER_CASELESS)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 100
+	max_ammo = 60
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m473/crate
+	name = "ammo crate (4.73mm caseless)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
 
 /obj/item/ammo_box/m473/rubber
 	name = "ammo box (4.73mm less-than-lethal)"
 	ammo_type = /obj/item/ammo_casing/caseless/g11/rubber
+
+/obj/item/ammo_box/m473/rubber/crate
+	name = "ammo crate (4.73mm less-than-lethal)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 300
 
 /obj/item/ammo_box/m473/incendiary
 	name = "ammo box (4.73mm incendiary)"

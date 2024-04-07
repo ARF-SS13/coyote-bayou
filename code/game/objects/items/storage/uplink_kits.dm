@@ -347,7 +347,7 @@
 	new /obj/item/storage/backpack/satchel(src)
 	new /obj/item/pda/heads(src)
 	new /obj/item/clipboard(src)
-
+/*
 /obj/item/storage/box/syndie_kit/chameleon/broken/PopulateContents()
 	new /obj/item/clothing/under/chameleon/broken(src)
 	new /obj/item/clothing/suit/chameleon/broken(src)
@@ -361,7 +361,7 @@
 	new /obj/item/stamp/chameleon/broken(src)
 	new /obj/item/pda/chameleon/broken(src)
 	// No chameleon laser, they can't randomise for //REASONS//
-
+*/
 /obj/item/storage/box/syndie_kit/bee_grenades
 	name = "buzzkill grenade box"
 	desc = "A sleek, sturdy box with a buzzing noise coming from the inside. Uh oh."

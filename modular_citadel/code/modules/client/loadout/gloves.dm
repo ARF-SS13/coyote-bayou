@@ -15,6 +15,11 @@
 	name = "grey gloves"
 	path = /obj/item/clothing/gloves/color/grey
 
+/datum/gear/gloves/chameleon
+	name = "chameleon gloves"
+	path = /obj/item/clothing/gloves/chameleon
+	cost = 0
+
 /datum/gear/gloves/brown
 	name = "brown gloves"
 	path = /obj/item/clothing/gloves/color/brown

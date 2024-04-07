@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("shelf parts", /obj/item/rack_parts), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("shop shelf", /obj/machinery/smartfridge/bottlerack/lootshelf/craftable, 15, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("shop shelf", /obj/machinery/smartfridge/bottlerack/lootshelf/craftable, 5, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 30, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
@@ -413,7 +413,12 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 // Cloth
 
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
-	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
+	new/datum/stack_recipe("custom backpack", /obj/item/storage/backpack/chameleon, 4), \
+	new/datum/stack_recipe("custom jumpsuit", /obj/item/clothing/under/chameleon, 5), \
+	new/datum/stack_recipe("custom gloves", /obj/item/clothing/gloves/chameleon, 5), \
+	new/datum/stack_recipe("custom shoes", /obj/item/clothing/shoes/chameleon, 5), \
+	new/datum/stack_recipe("custom neck cloak", /obj/item/clothing/neck/cloak/chameleon, 5), \
+	new/datum/stack_recipe("custom hat", /obj/item/clothing/head/chameleon, 5), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
 	null, \
 	new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4), \

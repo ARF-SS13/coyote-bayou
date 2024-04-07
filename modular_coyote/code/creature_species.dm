@@ -233,6 +233,13 @@
 /mob/living/carbon/human/species/furret
 	race = /datum/species/feral/pokemon/furret
 
+/datum/species/feral/pokemon/furret/shiny
+	name = "Feral Shiny Furret"
+	id = "furret_shiny"
+	roundstart = TRUE
+/mob/living/carbon/human/species/furret
+	race = /datum/species/feral/pokemon/furret
+
 /datum/species/feral/pokemon/gallade
 	name = "Feral Gallade"
 	id = "gallade"
@@ -795,6 +802,45 @@
 /mob/living/carbon/human/species/scrotie
 	race = /datum/species/feral/scrotie
 
+/datum/species/feral/otiepede
+	name = "Feral Otiepede"
+	id = "otiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otiepede
+	race = /datum/species/feral/otiepede
+
+/datum/species/feral/snotie
+	name = "Feral Snotie"
+	id = "snotie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/snotie
+	race = /datum/species/feral/snotie
+
+/datum/species/feral/scrotiepede
+	name = "Feral Scrotiepede"
+	id = "scrotiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/scrotiepede
+	race = /datum/species/feral/scrotiepede
+
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
 	id = "direwolf"
@@ -1276,7 +1322,7 @@
 	roundstart = TRUE
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_r"
-	
+
 /mob/living/carbon/human/species/femdigo
 	race = /datum/species/feral/femdigo
 
@@ -1645,25 +1691,25 @@
 /mob/living/carbon/human/species/drakesec
 	race = /datum/species/adapted/drakeborg/drakesec
 
-/datum/species/adapted/drakeborg/drakemed 
+/datum/species/adapted/drakeborg/drakemed
 	name = "Adapted Med Drake"
 	id = "drakemed"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemed 
+/mob/living/carbon/human/species/drakemed
 	race = /datum/species/adapted/drakeborg/drakemed
 
-/datum/species/adapted/drakeborg/drakeeng 
+/datum/species/adapted/drakeborg/drakeeng
 	name = "Adapted Eng Drake"
 	id = "drakeeng"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakeeng 
-	race = /datum/species/adapted/drakeborg/drakeeng 
+/mob/living/carbon/human/species/drakeeng
+	race = /datum/species/adapted/drakeborg/drakeeng
 
 /datum/species/adapted/drakeborg/drakemine
 	name = "Adapted Mine Drake"
 	id = "drakemine"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemine 
+/mob/living/carbon/human/species/drakemine
 	race = /datum/species/adapted/drakeborg/drakemine
 
 /datum/species/adapted/drakeborg/drakesci
@@ -1693,7 +1739,7 @@
 	name = "Adapted Gygax"
 	id = "gygax"
 	roundstart = TRUE
-/mob/living/carbon/human/species/gygax	
+/mob/living/carbon/human/species/gygax
 	race = /datum/species/adapted/mechs/gygax
 
 /datum/species/adapted/mechs/darkgygax
@@ -1707,21 +1753,21 @@
 	name = "Adapted Ripley"
 	id = "ripley"
 	roundstart = TRUE
-/mob/living/carbon/human/species/ripley	
+/mob/living/carbon/human/species/ripley
 	race = /datum/species/adapted/mechs/ripley
 
 /datum/species/adapted/mechs/marauder
 	name = "Adapted Marauder"
 	id = "marauder"
 	roundstart = TRUE
-/mob/living/carbon/human/species/marauder	
+/mob/living/carbon/human/species/marauder
 	race = /datum/species/adapted/mechs/marauder
 
 /datum/species/adapted/mechs/seraph
 	name = "Adapted Seraph"
 	id = "seraph"
 	roundstart = TRUE
-/mob/living/carbon/human/species/seraph	
+/mob/living/carbon/human/species/seraph
 	race = /datum/species/adapted/mechs/seraph
 
 /datum/species/adapted/mechs/phazon

@@ -101,6 +101,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
@@ -872,6 +875,10 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
+
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
