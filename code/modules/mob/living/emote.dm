@@ -2324,3 +2324,56 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "tilts"
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
+
+//Slime start
+
+//Framework
+/* /mob/living/carbon/human/species/slime/regenerate_icons()
+	cut_overlays()
+	if(slime_mood && !stat)
+		add_overlay("aslime-[mood]")
+	else
+		return
+	..() */
+//Framework end
+
+/datum/emote/mood
+	key = "slimenone"
+	message = null
+	var/slime_mood = null
+	mob_type_allowed_typecache = /mob/living/carbon/human
+
+/datum/emote/mood/run_emote(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/datum/species/S = H?.dna?.species
+		if(istype(S, /datum/species/feral/slime))
+			S.slime_mood = slime_mood
+			S.handle_body(H)
+
+/datum/emote/mood/sneaky
+	key = "slimesneaky"
+	slime_mood = "aslime-mischevous"
+
+/datum/emote/mood/smile
+	key = "slimesmile"
+	slime_mood = "aslime-:3"
+
+/datum/emote/mood/cat
+	key = "slimecat"
+	slime_mood = "aslime-:33"
+
+/datum/emote/mood/pout
+	key = "slimepout"
+	slime_mood = "aslime-pout"
+
+/datum/emote/mood/sad
+	key = "slimesad"
+	slime_mood = "aslime-sad"
+
+/datum/emote/mood/angry
+	key = "slimeangry"
+	slime_mood = "aslime-angry"
+
+// Slime end

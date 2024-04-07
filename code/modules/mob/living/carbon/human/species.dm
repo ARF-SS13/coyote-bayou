@@ -146,6 +146,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/list/alt_prefixes
 	/// doesn't override your taur body selection
 	var/footstep_type
+	//footstep sounds
+	var/slime_mood
+	// the face of the slime
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -677,6 +680,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(icon_width != 32)//We need to recenter!
 			F.pixel_x += -((icon_width-32)/2)
 		standing += F
+
+		if (slime_mood)
+			var/mutable_appearance/sf = mutable_appearance ('icons/mob/slimes.dmi', slime_mood, BODYPARTS_LAYER) //Slime face
+			standing += sf
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)) && !H.IsFeral())
@@ -1210,6 +1217,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
 		stop_wagging_tail(H)
+		slime_mood = null
 
 /datum/species/proc/auto_equip(mob/living/carbon/human/H)
 	// handles the equipping of species-specific gear

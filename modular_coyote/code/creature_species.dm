@@ -901,6 +901,31 @@
 /mob/living/carbon/human/species/mousewhite
 	race = /datum/species/feral/mousewhite
 
+/datum/species/feral/wisp
+	name = "Feral Wisp"
+	id = "wisp"
+	simple_icon = 'modular_roguetown/items/lighting.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+/mob/living/carbon/human/species/wisp
+	race = /datum/species/feral/wisp
+
+/datum/species/feral/slime
+	name = "Feral Slime"
+	id = "player slime"
+	simple_icon = 'icons/mob/slimes.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
+/mob/living/carbon/human/species/slime
+	race = /datum/species/feral/slime
+
 /datum/species/feral/bat
 	name = "Feral Bat"
 	id = "bat"
