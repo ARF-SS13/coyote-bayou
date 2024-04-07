@@ -177,7 +177,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/hud_actions
 
 	var/list/item_upgrades = list()
-	var/max_upgrades = 3
+	var/max_upgrades = 5 // was three now five because the amount of mods you need/want has significantly increased. Love you!
 
 	/// extra special transform
 	var/matrix/special_transform
