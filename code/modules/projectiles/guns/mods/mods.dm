@@ -43,7 +43,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + 9 * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_BARREL1
 
 /obj/item/gun_upgrade/barreltwo
 	name = "Magnetic Accelerator Coil"
@@ -57,7 +57,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,19) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_BARREL2
 
 /obj/item/gun_upgrade/barrelthree
 	name = "Polarized Magnetic Hyper-Accelerator"
@@ -71,7 +71,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,29) * 0.01
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_BARREL3
 
 /obj/item/gun_upgrade/chipone
 	name = "Reinforced Energy Pumps"
@@ -85,7 +85,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + 9 * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_CHIP1
 
 /obj/item/gun_upgrade/chiptwo
 	name = "Dynamo Booster"
@@ -99,7 +99,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,19) * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_CHIP2
 
 /obj/item/gun_upgrade/chipthree
 	name = "Miniature Fusion Reactor"
@@ -113,7 +113,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(9,29) * 0.01
 	)
 	I.req_gun_tags = list(GUN_ENERGY)
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_CHIP3
 
 // 1H Recoil. Classless, all grips.
 
@@ -129,7 +129,7 @@
 		GUN_UPGRADE_RECOIL_1H = 1 + -21 * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_GRIP1
 
 /obj/item/gun_upgrade/griptwo
 	name = "Styrene-Butadiene Grip"
@@ -143,7 +143,7 @@
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-36) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_GRIP2
 
 /obj/item/gun_upgrade/gripthree
 	name = "Gyration Stabilization Sleeve"
@@ -157,7 +157,7 @@
 		GUN_UPGRADE_RECOIL_1H = 1 + rand(-21,-51) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_GRIP3
 
 // 2H Recoil. PROJECTILE, ENERGY gets muzzle devices, MAGIC gets higher quality focuses.
 
@@ -174,7 +174,7 @@
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + -21 * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_MUZZLE1
 
 /obj/item/gun_upgrade/muzzletwo
 	name = "Military Muzzle Device"
@@ -189,7 +189,7 @@
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-36) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_MUZZLE2
 
 /obj/item/gun_upgrade/muzzlethree
 	name = "Research Muzzle Device"
@@ -204,7 +204,7 @@
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-21,-51) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_MUZZLE3
 
 
 //  Fire Delay Multiplier 
@@ -221,7 +221,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + -16 * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_TRIGGER1
 
 /obj/item/gun_upgrade/triggertwo
 	name = "Military Trigger"
@@ -235,7 +235,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-36) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_TRIGGER2
 
 /obj/item/gun_upgrade/triggerthree
 	name = "Pristine Trigger"
@@ -249,7 +249,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-16,-51) * 0.01
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_TRIGGER3
 
 // Scope: "Classless" upgrades for zooming.
 
@@ -265,7 +265,7 @@
 		GUN_UPGRADE_ZOOM = 1.1
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_SIGHT1
 
 /obj/item/gun_upgrade/sighttwo
 	name = "Old Scope"
@@ -279,7 +279,7 @@
 		GUN_UPGRADE_ZOOM = 1 + rand(0.5,1)
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_SIGHT2
 
 /obj/item/gun_upgrade/sightthree
 	name = "Pristine Scope"
@@ -293,7 +293,7 @@
 		GUN_UPGRADE_ZOOM = 1 + rand(0,2)
 	)
 	I.req_gun_tags = list()
-	I.gun_loc_tag = null
+	I.gun_loc_tag = GUN_SIGHT3
 
 // Paint: "Classless" upgrades for multiple types of traits at once. Only one at once, takes a special paint slot.
 
