@@ -323,19 +323,6 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/laser_pointer = 5
 ))
 
-GLOBAL_LIST_INIT(trash_attachment, list(
-	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
-	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
-	/obj/item/tool_upgrade/refinement/laserguide = 1,
-	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/paint/red = 1,
-	/obj/item/tool_upgrade/paint/blue = 1,
-	/obj/item/tool_upgrade/paint/yellow = 1
-))
-
 GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_chem +\
 	GLOB.trash_clothing +\
@@ -344,8 +331,7 @@ GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_misc +\
 	GLOB.trash_mob +\
 	GLOB.trash_part +\
-	GLOB.trash_tool +\
-	GLOB.trash_attachment)
+	GLOB.trash_tool)
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/under/overalls,
@@ -953,28 +939,6 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 	/obj/item/advanced_crafting_components/receiver,
 	/obj/item/advanced_crafting_components/assembly,
 	/obj/item/advanced_crafting_components/alloys
-))
-
-GLOBAL_LIST_INIT(loot_attachment, list(
-	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
-	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
-	/obj/item/tool_upgrade/refinement/laserguide = 1,
-	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/paint/red = 1,
-	/obj/item/tool_upgrade/paint/blue = 1,
-	/obj/item/tool_upgrade/paint/yellow = 1
-))
-
-GLOBAL_LIST_INIT(loot_attachment_advanced, list(
-	/obj/item/gun_upgrade/scope/killer = 2,
-	/obj/item/gun_upgrade/barrel/mag_accel = 2,
-	/obj/item/tool_upgrade/reinforcement/plasmablock = 2,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 2,
-	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
-	/obj/item/tool_upgrade/productivity/motor = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

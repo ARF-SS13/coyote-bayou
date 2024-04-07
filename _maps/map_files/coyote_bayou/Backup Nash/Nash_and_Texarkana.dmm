@@ -1499,11 +1499,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ruins)
-"afX" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "afY" = (
 /obj/structure/table/wood,
 /obj/item/storage/backpack/satchel/leather,
@@ -6049,10 +6044,6 @@
 /obj/item/clothing/shoes/f13/diesel/alt,
 /turf/open/floor/f13/wood,
 /area/f13/store)
-"awm" = (
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "awn" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -6201,16 +6192,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland/city)
-"awN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
 "awO" = (
 /obj/structure/table/rolling,
 /obj/item/trash/tray{
@@ -18275,7 +18256,7 @@
 /mob/living/simple_animal/pet/dog/eyebot{
 	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
 	name = "Bighorn eyebot";
-	speak = list("Need                                                                                                                                                                                                                                                                a                                                                                                                                                                                                                                                                drink?                                                                                                                                                                                                                                                                Want                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                trade?                                                                                                                                                                                                                                                                Need                                                                                                                                                                                                                                                                your                                                                                                                                                                                                                                                                cuts                                                                                                                                                                                                                                                                and                                                                                                                                                                                                                                                                bruises                                                                                                                                                                                                                                                                mended?                                                                                                                                                                                                                                                                Head                                                                                                                                                                                                                                                                on                                                                                                                                                                                                                                                                over                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                Bighorn!")
+	speak = list("Need                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                drink?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Want                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                trade?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Need                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                your                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                cuts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                and                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                bruises                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                mended?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Head                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                on                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                over                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Bighorn!")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -34070,7 +34051,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "eoZ" = (
@@ -60397,7 +60377,6 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/stool/bar/brass,
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
 "klb" = (
@@ -72008,7 +71987,6 @@
 "mKR" = (
 /obj/structure/table,
 /obj/item/clothing/glasses/f13/biker,
-/obj/item/gun_upgrade/trigger/raidertrigger,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -75181,7 +75159,6 @@
 /obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/common_guns,
 /obj/effect/spawner/lootdrop/f13/common_melee,
-/obj/effect/spawner/lootdrop/f13/common_mods,
 /obj/effect/spawner/lootdrop/f13/common_ammo,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -81893,7 +81870,6 @@
 	pixel_x = -25;
 	pixel_y = 4
 	},
-/obj/structure/chair/stool/bar/brass,
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
 "oSV" = (
@@ -85163,7 +85139,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pFd" = (
@@ -89304,16 +89279,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
-"qCG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/chomp/thicket2{
-	color = "#224422"
-	},
-/obj/effect/temp_visual/steam,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "qCJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -92492,9 +92457,6 @@
 /obj/item/gun/ballistic/automatic/pistol/pistol22,
 /obj/item/ammo_box/magazine/m22,
 /obj/item/ammo_box/magazine/m22,
-/obj/item/tool_upgrade/productivity/ergonomic_grip,
-/obj/item/tool_upgrade/refinement/laserguide,
-/obj/item/tool_upgrade/refinement/ported_barrel,
 /obj/structure/closet/crate/footlocker{
 	color = "#5A5A5A";
 	name = "dead-drop footlocker"
@@ -165439,7 +165401,7 @@ tMc
 kFs
 kFs
 aOk
-awm
+aOk
 mgs
 aae
 aae
@@ -165699,7 +165661,7 @@ aOk
 www
 pFa
 yhg
-awN
+yhg
 nhS
 asS
 aae
@@ -165955,7 +165917,7 @@ kFs
 okJ
 aOk
 acD
-qCG
+lDH
 aON
 eoV
 uba
@@ -166216,7 +166178,7 @@ cFK
 cFK
 acD
 etg
-afX
+kFs
 aOk
 aOk
 aae
@@ -166471,7 +166433,7 @@ cFK
 aOk
 gxt
 cFK
-awm
+aOk
 hrz
 wOt
 aOk
