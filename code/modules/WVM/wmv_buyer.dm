@@ -668,7 +668,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
 
 /obj/item/debug_vendorsale/proc/get_value()
-	return round(CREDITS_TO_COINS(12345678909))
+	return round(CREDITS_TO_COINS(12345678))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
