@@ -60,7 +60,7 @@
 	I.gun_loc_tag = null
 
 /obj/item/gun_upgrade/barrelthree
-	name = "Gauss-Polarized Magnetic Hyper-Accelerator Coil"
+	name = "Polarized Magnetic Hyper-Accelerator"
 	desc = "A titanium-plasteel barrel combined with an uber-tuned mag accelerator to not only increase the stress tolerances on the barrel, but also send the bullet traveling faster using coilgun tech. The highest this can roll is 30%"
 	icon_state = "gauss"
 
