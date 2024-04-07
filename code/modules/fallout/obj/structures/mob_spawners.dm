@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
-	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// Time between spawns
 	var/spawn_time = 40 SECONDS
 	/// Can be boarded up
@@ -52,9 +52,19 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/delay_start = FALSE
 	/// Some cool factions to override the default ones
 	var/list/faction = list()
+	/// hold off on making the component
+	var/hold_component = FALSE
 
-/obj/structure/nest/Initialize()
+/obj/structure/nest/blank
+	hold_component = TRUE
+
+/obj/structure/nest/ComponentInitialize()
 	. = ..()
+	if(hold_component)
+		return
+	make_component()
+
+/obj/structure/nest/proc/make_component()
 	// null faction, so we don't overwrite it
 	AddComponent(/datum/component/spawner,\
 		_mob_types = mob_types,\

@@ -37,6 +37,9 @@
 		hasAnnounced = TRUE
 */
 
+GLOBAL_LIST_EMPTY(fish_ponds) // actually spawners
+
+/// """Carp""" """Migration"""
 /datum/round_event_control/spawn_nests
 	name = "Mob Blowout"
 	typepath = /datum/round_event/common/spawn_nests
@@ -214,17 +217,15 @@
 		spawn_holes |= hole
 	message_admins("Readied [LAZYLEN(coords_to_spawn_at)] nests. Firing soon-ish.")
 
-// /datum/round_event/common/spawn_nests/tick()
-// 	if(!LAZYLEN(coords_to_spawn_at))
-// 		kill()
-// 		return
-// 	for(var/coordie in coords_to_spawn_at)
-// 		var/turf/here = coords2turf(coordie)
-// 		if(!isturf(here))
-// 			coords_to_spawn_at -= coordie
-// 			continue
-// 		if(prob(10))
-// 			do_sparks(1, FALSE, here, /datum/effect_system/spark_spread/quantum)
+/datum/round_event/common/spawn_nests/tick()
+	if(!LAZYLEN(coords_to_spawn_at))
+		kill()
+		return
+	for(var/coordie in coords_to_spawn_at)
+		var/turf/here = coords2turf(coordie)
+		if(!isturf(here))
+			coords_to_spawn_at -= coordie
+			continue
 
 /datum/round_event/common/spawn_nests/end(fake)
 	var/list/stuff_spawned = list()

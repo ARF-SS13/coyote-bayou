@@ -1,6 +1,6 @@
 GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 /datum/component/spawner
-	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
 	/// Format: list(special_mob_datum)
 	var/list/special_mobs = list()
@@ -49,6 +49,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	COOLDOWN_DECLARE(spawn_until)
 	COOLDOWN_DECLARE(spawner_cooldown)
 	var/covered = FALSE
+	var/datum/nest_box/my_ticket
 
 /datum/component/spawner/Initialize(
 		_mob_types,
@@ -105,13 +106,15 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(randomizer_tag)
 		setup_random_nest()
 	var/coords = atom2coords(parent)
-	GLOB.nest_spawn_points -= coords // im here! honest
-
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING,PROC_REF(nest_destroyed))
-	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC,PROC_REF(on_attack_generic))
-	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,PROC_REF(coverme))
-	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,PROC_REF(uncoverme))
-	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB,PROC_REF(unbirth_mob))
+	var/datum/nest_box/NB = LAZYACCESS(GLOB.nest_spawn_points, coords) // im here! honest
+	if(istype(NB))
+		GLOB.nest_spawn_points[coords] = null
+		qdel(NB) // I'm here, honest
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING,   PROC_REF(nest_destroyed))
+	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, PROC_REF(on_attack_generic))
+	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,    PROC_REF(coverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,  PROC_REF(uncoverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, PROC_REF(unbirth_mob))
 	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS,PROC_REF(has_spawner))
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
@@ -120,6 +123,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
+	if(!am_special)
+		my_ticket = new /datum/nest_box(src)
 	// if(SSspawners.use_turf_registration)
 	// 	register_turfs()
 	// else
@@ -230,8 +235,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
-	if(!am_special)
-		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
+	if(my_ticket) // we'll be back, eventually
+		my_ticket.globalize(src)
 	qdel(src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
@@ -461,6 +466,119 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		for(var/r_group in subtypesof(/datum/random_mob_spawner_group))
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
+
+/datum/component/spawner/proc/register_myself()
+	var/atom/master = parent
+	if(!master.loc)
+		return
+	var/my_coords = atom2coords(master)
+	if(LAZYACCESS(GLOB.nest_spawn_points, my_coords))
+		return
+
+/// A holder for all sorts of our spawner data, so wacky events can make em come back
+/datum/next_box
+	var/spawn_time = 0
+	var/max_mobs = 0
+	var/spawn_text = "emerges from"
+	var/spawn_sound = null
+	var/list/faction = list()
+	var/coverable_by_dense_things = TRUE
+	var/coverable = FALSE
+	var/randomizer_tag = null
+	var/randomizer_kind = null
+	var/randomizer_difficulty = 0
+	var/delay_start = FALSE
+	var/am_special = FALSE
+	var/coords = null
+	var/list/mob_types = list()
+	var/infinite = FALSE
+	var/overpopulation_range = 5
+	var/swarm_size = 1
+	/// and the stuff relating to the actual spawner next object thing
+	var/nest_name
+	var/nest_desc
+	var/nest_icon
+	var/nest_icon_state
+	var/nest_resistance_flags
+	var/nest_anchored
+	var/nest_layer
+
+/datum/nest_box/New(datum/component/spawner/girlfriend)
+	spawn_time                = girlfriend.spawn_time
+	max_mobs                  = girlfriend.max_mobs
+	spawn_text                = girlfriend.spawn_text
+	spawn_sound               = girlfriend.spawn_sound
+	faction                   = girlfriend.faction.Copy()
+	coverable_by_dense_things = girlfriend.coverable_by_dense_things
+	coverable                 = girlfriend.coverable
+	randomizer_tag            = girlfriend.randomizer_tag
+	randomizer_kind           = girlfriend.randomizer_kind
+	randomizer_difficulty     = girlfriend.randomizer_difficulty
+	delay_start               = girlfriend.delay_start
+	am_special                = girlfriend.am_special
+	coords                    = atom2coords(girlfriend.parent)
+	mob_types                 = girlfriend.mob_types.Copy()
+	infinite                  = girlfriend.infinite
+	overpopulation_range      = girlfriend.overpopulation_range
+	swarm_size                = girlfriend.swarm_size
+	var/obj/P = girlfriend.parent
+	nest_name                 = P.name
+	nest_desc                 = P.desc
+	nest_icon                 = P.icon
+	nest_icon_state           = P.icon_state
+	nest_anchored             = P.anchored
+	nest_layer                = P.layer
+
+/datum/nest_box/proc/globalize(datum/component/spawner/parent)
+	parent.my_ticket = null // one way or another, we're not coming back
+	var/turf/is_there = coords2turf(coords) || get_turf(parent.parent)
+	if(is_there)
+		qdel(src)
+		return
+	GLOB.nest_spawn_points[coords] = src
+
+/datum/nest_box/proc/my_turf()
+	return coords2turf(coords)
+
+/// creates a whole new nest from our data, then CEASES TO EXIST!!!!!
+/datum/nest_box/proc/pop_nest()
+	GLOB.nest_spawn_points[coords] = null
+	var/turf/here = coords2turf(coords)
+	if(!here)
+		qdel(src)
+		return
+	var/obj/structure/nest/blank/nuhole = new(here)
+	nuhole.name                      = nest_name
+	nuhole.desc                      = nest_desc
+	nuhole.icon                      = nest_icon
+	nuhole.icon_state                = nest_icon_state
+	nuhole.anchored                  = nest_anchored
+	nuhole.layer                     = nest_layer
+	nuhole.mob_types                 = mob_types
+	nuhole.spawn_time                = spawn_time
+	nuhole.coverable                 = coverable
+	nuhole.coverable_by_dense_things = coverable_by_dense_things
+	nuhole.spawn_text                = spawn_text
+	nuhole.overpopulation_range      = overpopulation_range
+	nuhole.max_mobs                  = max_mobs
+	nuhole.radius                    = radius
+	nuhole.spawnsound                = spawnsound
+	nuhole.infinite                  = infinite
+	nuhole.swarm_size                = swarm_size
+	nuhole.faction                   = faction
+	nuhole.randomizer_tag            = randomizer_tag
+	nuhole.randomizer_kind           = randomizer_kind
+	nuhole.randomizer_difficulty     = randomizer_difficulty
+	nuhole.delay_start               = delay_start
+	nuhole.am_special                = am_special
+	nuhole.make_component()
+	qdel(src)
+
+
+
+
+
+
 
 /// Is passed a mob via the signal, and will attempt to despawn the mob and store it in the spawner.
 /datum/component/spawner/proc/unbirth_mob(datum/source, mob/living/simple_animal/despawn_me)
