@@ -910,6 +910,7 @@
 	icon_rest_suffix = "_rest"
 	roundstart = TRUE
 	liked_food = VEGETABLES
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
 /mob/living/carbon/human/species/wisp
 	race = /datum/species/feral/wisp
 
