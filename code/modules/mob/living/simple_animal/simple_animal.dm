@@ -216,7 +216,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///multichance projectile hit behaviour (MCPHB)
 	var/mcphb_arms_hit = FALSE
 	var/mcphb_legs_hit = FALSE
-		
+	
+	/// makes certain mobs explode into stuff when they die
+	var/am_important = FALSE // you are not important
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -358,6 +361,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(infight_check))
 	RegisterSignal(src, COMSIG_ATOM_BUTCHER,PROC_REF(butcher_me))
 	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
+	RegisterSignal(src, COMSIG_MOB_IS_IMPORTANT,PROC_REF(am_i_important))
+
+/mob/living/simple_animal/proc/am_i_important()
+	return am_important
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
