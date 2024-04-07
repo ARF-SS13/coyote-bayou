@@ -971,6 +971,10 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
+/obj/item/gun/ballistic/rifle/mag/antimaterial/loadout
+	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Not only lacks an iron sight, but due to unmaintained age it doesn't punch as hard."
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+
 /obj/item/gun/ballistic/rifle/mag/pz39custom //custom
 	name = "Custom Panzerbüchse 39"
 	desc = "A customized PzB.39 AT rifle. This rifle seems to be custom fitted to fire in a bolt-action mode instead of a falling-block action.The bolt is not really much of a bolt but it works, it also adds more weight to the rifle. From 27.78 lbs to 30 pounds! The rifle consists of premium grade parts. The stock itself, the part where one rests their shoulder, is extra padded for comfort and shock absorbing properties. Engraved on the reciever is baroque motifs while the rifle itself has a few moths and feline figures engraved on the reciever. A rifle fit for the Queen from the shadows."
@@ -1082,46 +1086,3 @@
 	mag_type = /obj/item/ammo_box/magazine/testbullet
 	damage_multiplier = 30
 
-/* * * * * * * * * * *
- * MK-18 MOD 1 Bifrost
- * .30-06
- * Basically a lightweight sniper rifle
- * Slow to fire
- * Loadout only
- * * * * * * * * * * */
-
-/obj/item/gun/ballistic/rifle/mag/bifrost
-	name = "\improper MK-18 MOD 1 Bifrost"
-	desc = "A curious rifle in anodized black coated aluminum ultra lightweight furniture. The barrel is 20 inches in length, the twists and grooves covered with a thin layer of Stellite leading up to an externally threaded black cerakote barrel. It's chambered in .338 Lapua Magnum (8.6×70 mm), the unsuppressed firing sound more like a warning bell to the coming Ragnarök."
-	icon = 'modular_coyote/icons/objects/guns/fortysixtimesthirtytwo.dmi'
-	icon_state = "bifrost"
-	item_state = "bifrost"
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/amr/bifrost
-	cock_wording = "cycle"
-	casing_ejector = TRUE
-	handedness = GUN_EJECTOR_LEFT
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HMG_RECOIL(3, 3)
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
-	can_scope = TRUE
-	scope_state = "revolver_scope"
-	scope_x_offset = 16
-	scope_y_offset = 11
-	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
-	can_suppress = TRUE
-	suppressor_state = "n99_suppressor"
-	suppressor_x_offset = 46
-	suppressor_y_offset = 14
-	can_bayonet = TRUE
-	knife_x_offset = 24
-	knife_y_offset = 14
