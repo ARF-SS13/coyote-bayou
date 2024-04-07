@@ -16,7 +16,7 @@
 		/obj/effect/spawner/lootdrop/f13/trash_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_toys = 5,
 		/obj/effect/spawner/lootdrop/f13/trash_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/trash_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/trash_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_money = 10,
@@ -43,7 +43,7 @@
 		/obj/effect/spawner/lootdrop/f13/common_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/common_toys = 4,
 		/obj/effect/spawner/lootdrop/f13/common_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/common_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/common_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/common_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/common_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/common_money = 10,
@@ -67,7 +67,7 @@
 		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_toys = 3,
 		/obj/effect/spawner/lootdrop/f13/uncommon_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_money = 10,
@@ -125,7 +125,7 @@
 	icon_state = "x7"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_medicine = 20,
-		/obj/effect/spawner/lootdrop/f13/rare_mods = 20,
+//		/obj/effect/spawner/lootdrop/f13/rare_mods = 20,
 		/obj/effect/spawner/lootdrop/f13/rare_drugs = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_mats = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_parts = 10,
@@ -1221,10 +1221,10 @@
 		/obj/item/stack/sheet/mineral/diamond/twentyfive = 1,
 	)
 
-////////////////////////////////
-///weapon attachment spawners///
-////////////////////////////////
-
+/////////////////////////////////////////
+///(legacy) weapon attachment spawners///
+/////////////////////////////////////////
+/*
 /obj/effect/spawner/lootdrop/f13/trash_mods
 	name = "trash attachments"
 	loot = list(
@@ -1275,7 +1275,7 @@
 		/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
 		/obj/item/tool_upgrade/augment/ai_tool = 1,
 	)
-
+*/
 ///////////////////////////
 ///machine part spawners///
 ///////////////////////////

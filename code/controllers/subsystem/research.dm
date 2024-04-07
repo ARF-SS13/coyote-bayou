@@ -65,9 +65,9 @@ SUBSYSTEM_DEF(research)
 	/obj/item/melee/unarmed/powerfist/goliath      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/gun/energy/laser/wattz/recharger     = list(TECHWEB_POINT_TYPE_GENERIC = 5000), // Low weight uncommon unique
 	//   -   Misc!
-	/obj/item/gun_upgrade/scope/better             = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
-	/obj/item/gun_upgrade/mechanism/battery_shunt  = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
-	/obj/item/tool_upgrade/augment/ai_tool         = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/gun_upgrade/scope/better             = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/gun_upgrade/mechanism/battery_shunt  = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/tool_upgrade/augment/ai_tool         = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 //	/obj/item/reagent_containers/glass/bottle/FEV_solution = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 //	/obj/item/reagent_containers/glass/bottle/FEV_solution/two = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 //	/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
