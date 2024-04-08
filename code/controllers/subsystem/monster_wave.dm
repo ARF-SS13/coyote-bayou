@@ -4,6 +4,11 @@ SUBSYSTEM_DEF(monster_wave)
 	var/successful_firing = 0
 	var/allowed_firings = 9000
 	var/chance_of_fire = 100 //Fuck you, people need mobs to shoot! -TK
+	/// big list of all the spawners that have been destroyed
+	var/list/spawner_tickets = list() // list(/datum/nest_box)
+	/// big list of all the spawner boys in existence
+	var/list/spawner_boys = list() // list(/mob
+
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
@@ -156,3 +161,66 @@ SUBSYSTEM_DEF(monster_wave)
 	new /obj/structure/nest/wolf(choose_turf)
 	message_admins("The Monster Wave for Dogs has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
 	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")
+
+
+/mob/living/simple_animal/nest_spawn_hole_guy
+	name = "rift"
+	desc = "An ominous haze of indescernable make and model, forming an otherworldly coccoon around what appears to be somewhere else. Within this wriggling \
+		mass of mangled spacetime, you can see the faint silhouettes of familiar creatures moving around inside-- familiar <i>hostile</i> creatures! \
+		Its like mama always said, that whenever you come across a dimensional rift to planes of existence where that nest full of monsters you filled never got filled, \
+		if you hit it enough, it should go away. That or stand next to it for a while. Let's make her proud!"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "dragnetfield"
+	mob_armor = ARMOR_VALUE_RIFT
+	maxHealth = 100
+	health = 100
+	move_resist = MOVE_FORCE_OVERPOWERING
+	density = FALSE
+	a_intent = INTENT_HARM
+	del_on_death = TRUE
+	wander = FALSE
+	AIStatus = AI_OFF
+	var/my_coords
+	var/datum/weakref/my_event
+
+/mob/living/simple_animal/nest_spawn_hole_guy/Destroy()
+	un_nest()
+	. = ..()
+
+/mob/living/simple_animal/nest_spawn_hole_guy/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(no_attack_pls))
+	RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(im_hit))
+
+/mob/living/simple_animal/nest_spawn_hole_guy/update_overlays()
+	. = ..()
+	cut_overlays()
+	var/mutable_appearance/overlay1 = mutable_appearance(icon, "quantum_sparks")
+	. += overlay1
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/no_attack_pls()
+	return TRUE
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/register_event(datum/round_event/common/spawn_nests/event)
+	my_event = WEAKREF(event)
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/un_nest()
+	var/datum/round_event/common/spawn_nests/event = GET_WEAKREF(my_event)
+	if(event)
+		event.coords_to_spawn_at -= my_coords
+		event.spawn_holes -= src
+	do_sparks(3, FALSE, src, /datum/effect_system/spark_spread/quantum)
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/im_hit()
+	playsound(src, 'sound/effects/portalboy_hit.ogg', 100, TRUE)
+	do_sparks(1, FALSE, src, /datum/effect_system/spark_spread/quantum)
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/succ()
+	playsound(src, 'sound/effects/portalboy_success.ogg', 100, TRUE)
+	qdel(src)
+
+/mob/living/simple_animal/nest_spawn_hole_guy/death()
+	playsound(src, 'sound/effects/portalboy_death.ogg', 100, TRUE)
+	un_nest()
+	. = ..()
+

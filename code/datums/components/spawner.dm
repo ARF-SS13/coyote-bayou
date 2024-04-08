@@ -1,4 +1,3 @@
-GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 /datum/component/spawner
 	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
@@ -476,14 +475,14 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return
 
 /// A holder for all sorts of our spawner data, so wacky events can make em come back
-/datum/next_box
+/datum/nest_box
 	var/spawn_time = 0
 	var/max_mobs = 0
 	var/spawn_text = "emerges from"
 	var/spawn_sound = null
 	var/list/faction = list()
 	var/coverable_by_dense_things = TRUE
-	var/coverable = FALSE
+	var/coverable = TRUE
 	var/randomizer_tag = null
 	var/randomizer_kind = null
 	var/randomizer_difficulty = 0
@@ -494,6 +493,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	var/infinite = FALSE
 	var/overpopulation_range = 5
 	var/swarm_size = 1
+	var/radius = 10
 	/// and the stuff relating to the actual spawner next object thing
 	var/nest_name
 	var/nest_desc
@@ -510,7 +510,6 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	spawn_sound               = girlfriend.spawn_sound
 	faction                   = girlfriend.faction.Copy()
 	coverable_by_dense_things = girlfriend.coverable_by_dense_things
-	coverable                 = girlfriend.coverable
 	randomizer_tag            = girlfriend.randomizer_tag
 	randomizer_kind           = girlfriend.randomizer_kind
 	randomizer_difficulty     = girlfriend.randomizer_difficulty
@@ -562,7 +561,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	nuhole.overpopulation_range      = overpopulation_range
 	nuhole.max_mobs                  = max_mobs
 	nuhole.radius                    = radius
-	nuhole.spawnsound                = spawnsound
+	nuhole.spawnsound                = spawn_sound
 	nuhole.infinite                  = infinite
 	nuhole.swarm_size                = swarm_size
 	nuhole.faction                   = faction
@@ -570,7 +569,6 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	nuhole.randomizer_kind           = randomizer_kind
 	nuhole.randomizer_difficulty     = randomizer_difficulty
 	nuhole.delay_start               = delay_start
-	nuhole.am_special                = am_special
 	nuhole.make_component()
 	qdel(src)
 
