@@ -12,6 +12,7 @@
 	new /obj/item/flashlight(src)
 	new /obj/item/flashlight/glowstick(src)
 	new /obj/item/melee/onehanded/knife/hunting(src)
+	new /obj/item/hand_tele(src)
 
 /// Empty kit!
 /obj/item/storage/survivalkit/empty/PopulateContents()

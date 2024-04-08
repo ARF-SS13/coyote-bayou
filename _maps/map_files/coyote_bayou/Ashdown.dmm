@@ -11257,8 +11257,13 @@
 	},
 /area/f13/wasteland/city)
 "eTF" = (
-/turf/open/water,
-/area/f13/building/abandoned)
+/obj/item/circuitboard/computer/teleporter,
+/obj/structure/frame/computer{
+	dir = 1
+	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "eTN" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
@@ -20361,6 +20366,10 @@
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
+"iSh" = (
+/obj/machinery/teleport/station,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "iSs" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/renegade,
@@ -21045,6 +21054,10 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/city)
+"jit" = (
+/obj/machinery/teleport/hub,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "jiS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -56899,7 +56912,7 @@ tsa
 cqu
 iyW
 sIv
-eTF
+cfu
 xhi
 bjd
 cfu
@@ -57166,7 +57179,7 @@ emZ
 qIx
 lvc
 sQz
-eTF
+cfu
 bHR
 xGc
 hxL
@@ -58963,7 +58976,7 @@ jsU
 cfu
 sQz
 fuM
-eTF
+cfu
 bjd
 bHR
 uPr
@@ -110861,7 +110874,7 @@ iyT
 qES
 qES
 qES
-lWl
+eTF
 btP
 btP
 btP
@@ -111118,7 +111131,7 @@ mZZ
 qES
 qES
 qES
-qES
+iSh
 aLl
 rhn
 eUV
@@ -111375,7 +111388,7 @@ qES
 qES
 qES
 qES
-qES
+jit
 guz
 sAa
 eUV
@@ -111628,10 +111641,10 @@ iKf
 mYI
 iKf
 iKf
-qES
 uKL
 oDo
 uKL
+qES
 qES
 guz
 iKV
@@ -111885,10 +111898,10 @@ tiN
 mex
 iKf
 iKf
-qES
 uKL
 oDo
 uKL
+qES
 qES
 cUP
 uCG

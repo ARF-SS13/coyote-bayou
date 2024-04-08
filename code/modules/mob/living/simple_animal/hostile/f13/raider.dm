@@ -613,14 +613,14 @@
 	var/max_mobs = 3
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
 	var/spawn_time = 15 SECONDS
-	var/spawn_text = "flies from"
+	//var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
 	loot_drop_amount = 5
 
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
 	RemoveComponentByType(/datum/component/spawner)

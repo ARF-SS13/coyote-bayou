@@ -852,6 +852,8 @@
 
 /proc/safe_json_decode(string, default = list())
 	. = default
+	if(isnull(string))
+		return
 	return json_decode(string)
 
 /proc/bitfield_to_list(bitfield = 0, list/wordlist)
