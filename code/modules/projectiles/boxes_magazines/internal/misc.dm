@@ -42,6 +42,13 @@
 	max_ammo = 3
 	can_change_caliber = FALSE
 
+/obj/item/ammo_box/magazine/internal/llxninety
+	name = "LLX90 internal feeding mechanism"
+	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
+	caliber = list(CALIBER_MUSKET_LASER, CALIBER_MUSKET_PLASMA, CALIBER_CASELESS)
+	max_ammo = 50
+	multiload = 1
+
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test

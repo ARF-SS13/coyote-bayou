@@ -566,7 +566,7 @@
 		M.adjustBruteLoss(-3, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-10)
 		M.adjustFireLoss(-1, include_roboparts = TRUE)
-		M.adjustToxLoss(-1, TRUE, TRUE) //heals TOXINLOVERs
+		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -588,7 +588,7 @@
 		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-10)
 		M.adjustFireLoss(-3, include_roboparts = TRUE)
-		M.adjustToxLoss(-1, TRUE, TRUE) //heals TOXINLOVERs
+		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -610,7 +610,7 @@
 		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-50)
 		M.adjustFireLoss(-1, include_roboparts = TRUE)
-		M.adjustToxLoss(-5, TRUE, TRUE) //heals TOXINLOVERs
+		M.adjustToxLoss(-5, TRUE, FALSE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-25)
 		M.adjustStaminaLoss(-50)
 		return
@@ -633,7 +633,7 @@
 		M.adjustBruteLoss(-15, include_roboparts = TRUE) //HEALS
 		M.adjustOxyLoss(-20)
 		M.adjustFireLoss(-15, include_roboparts = TRUE) // Effective on robots and people with prosthetics now
-		M.adjustToxLoss(-20, TRUE, TRUE) //heals TOXINLOVERs (It should actually do that now)
+		M.adjustToxLoss(-20, TRUE, FALSE) //heals TOXINLOVERs (It should actually do that now)
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return

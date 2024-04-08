@@ -62,7 +62,7 @@
 	blood_volume = 0
 	decompose = FALSE
 	tastes = list("dirt" = 1, "sand" = 1, "metal?" = 1)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -111,7 +111,7 @@
 	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -144,7 +144,7 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
 	butcher_difficulty = 1.5
-	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
+	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10, /obj/effect/gibspawner/larva)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -174,16 +174,16 @@
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
 	var/spawn_time = 30 SECONDS
-	var/spawn_text = "hatches from"
+	//var/spawn_text = "hatches from"
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
 	RemoveComponentByType(/datum/component/spawner)
@@ -256,7 +256,7 @@
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	emote_taunt = list("snips")
@@ -313,7 +313,7 @@
 	speed = 1.35
 	maxHealth = 110
 	health = 110
-	move_to_delay = 4
+	move_to_delay = 2
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /////////////
@@ -376,7 +376,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -519,7 +519,7 @@
 	)
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -553,7 +553,7 @@
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	speed = 1

@@ -41424,6 +41424,13 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"htN" = (
+/obj/item/circuitboard/computer/teleporter,
+/obj/structure/frame/computer{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
 "htO" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -48919,11 +48926,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "jpT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/obj/structure/sign/warning{
-	plane = -4
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
 	},
+/obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jpW" = (
@@ -48934,8 +48940,8 @@
 /area/f13/wasteland/city/nash/downtown)
 "jqg" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt/light,
-/area/f13/building/abandoned)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "jqi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -56690,7 +56696,7 @@
 /obj/structure/sign/warning/radiation{
 	plane = -4
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "lul" = (
 /obj/structure/flora/grass/wasteland{
@@ -56948,10 +56954,8 @@
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "lye" = (
-/obj/structure/obstacle/barbedwire/end,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
+/obj/machinery/teleport/hub,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "lyq" = (
 /obj/structure/table/reinforced,
@@ -58036,6 +58040,9 @@
 	},
 /area/f13/building/coyote/nash/firestation)
 "lMw" = (
+/obj/structure/campfire/barrel,
+/obj/item/stack/sheet/mineral/wood/five,
+/obj/item/flashlight/flare/torch,
 /obj/effect/decal/marking,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -61772,6 +61779,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/city)
+"mHm" = (
+/obj/machinery/teleport/station,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "mHp" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -61951,7 +61962,6 @@
 "mKR" = (
 /obj/structure/table,
 /obj/item/clothing/glasses/f13/biker,
-/obj/item/gun_upgrade/trigger/raidertrigger,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -63046,7 +63056,7 @@
 "nbg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt/dirtgrassline,
-/area/f13/building/abandoned)
+/area/f13/wasteland)
 "nbj" = (
 /obj/structure/table,
 /obj/structure/debris/v2{
@@ -64607,7 +64617,6 @@
 /obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/common_guns,
 /obj/effect/spawner/lootdrop/f13/common_melee,
-/obj/effect/spawner/lootdrop/f13/common_mods,
 /obj/effect/spawner/lootdrop/f13/common_ammo,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -90472,8 +90481,10 @@
 /area/f13/caves)
 "ulY" = (
 /obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/sign/warning{
+	plane = -4
+	},
+/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "ulZ" = (
 /obj/structure/bus_door,
@@ -102333,11 +102344,19 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "xxk" = (
-/obj/structure/campfire/barrel,
-/obj/item/stack/sheet/mineral/wood/five,
-/obj/item/flashlight/flare/torch,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/obj/effect/decal/marking,
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#555555"
 	},
 /area/f13/underground/cave/coyote/antmound)
 "xxs" = (
@@ -111276,7 +111295,7 @@ bzm
 vtX
 hEG
 rVd
-trb
+htN
 bmM
 dKU
 bay
@@ -111533,7 +111552,7 @@ wmA
 tOm
 hEG
 rVd
-rVd
+mHm
 izs
 grM
 qWp
@@ -137331,7 +137350,7 @@ aus
 hWr
 aaB
 alP
-aaB
+ioI
 aae
 aae
 aae
@@ -137588,8 +137607,8 @@ aaB
 aaB
 jwk
 aaB
-vzh
-aaB
+jpT
+ioI
 ioI
 aae
 aae
@@ -144288,9 +144307,9 @@ aae
 aae
 aaB
 aaB
-aae
-aae
-aae
+aaB
+aaB
+aaB
 aae
 aae
 aae
@@ -144547,11 +144566,11 @@ aae
 aaB
 aae
 aae
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
 fit
 drf
 drf
@@ -148652,7 +148671,7 @@ aaB
 aaB
 aaB
 aaB
-aaB
+aae
 aae
 aae
 aae
@@ -148907,12 +148926,12 @@ aae
 aae
 aae
 aae
-aaB
-aaB
-aaB
-aaB
-aaB
 aae
+abV
+hWr
+aaB
+aaB
+ulY
 xfv
 xfv
 jSW
@@ -149165,12 +149184,12 @@ aae
 aae
 aae
 aae
+abV
 aaB
 aaB
 aaB
 aaB
-ulY
-jpT
+aaB
 jqg
 nbg
 cFK
@@ -149422,12 +149441,12 @@ aak
 aae
 aae
 aae
-aae
-aaB
-aaB
-aaB
-ulY
 luj
+aaB
+aaB
+aaB
+aaB
+aaB
 jqg
 nbg
 bZY

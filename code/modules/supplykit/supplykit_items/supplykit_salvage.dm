@@ -64,3 +64,10 @@
 	desc = "A cloth bag made for holding minerals as you mine."
 	item = /obj/item/storage/bag/ore
 	cost = 2
+
+/datum/supplykit_item/tools/researchpaper
+	name = "Research Paper"
+	desc = "Research papers for the wannabe or average scientist."
+	item = /obj/item/blueprint/research 
+	cost = 10
+	cant_discount = TRUE

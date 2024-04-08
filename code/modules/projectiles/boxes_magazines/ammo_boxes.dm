@@ -12,7 +12,7 @@
 	max_ammo = 24
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_BOX)
 	ammo_type = /obj/item/ammo_casing/shotgun
-	multiple_sprites = 5
+	multiple_sprites = 2
 	caliber = list(CALIBER_SHOTGUN)
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
@@ -829,7 +829,7 @@
 //7.62x51, .30-06
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "box30"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
@@ -1124,7 +1124,7 @@
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
-	max_ammo = 8
+	max_ammo = 2
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 2
 	randomize_ammo_count = FALSE

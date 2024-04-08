@@ -5,7 +5,7 @@
 	display_name = "Basic Quantum Theory"
 	description = "Basic studies into the mysterious realm known as Quantum Theory."
 	prereq_ids = list("base", "datatheory")
-	design_ids = list("beacon", "xenobioconsole", "telesci_gps", "xenobio_monkeys")
+	design_ids = list("xenobioconsole", "telesci_gps", "xenobio_monkeys")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/practical_bluespace

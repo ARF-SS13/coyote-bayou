@@ -372,8 +372,8 @@ Mayor
 	title = "New Boston Security"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Your best Judgement"
 	description = "You are a loyal protector of New Boston, keeping the settlement within firm control under the authority of the Mayor. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave New Bostonundefended, and don't let its people die out."
 //	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of New Bostonif a Mayor or Secretary does not exist."
@@ -773,7 +773,7 @@ Mayor
 	flag = F13SETTLER
 	department_flag = DEP_OASIS
 	total_positions = -1
-	spawn_positions =-1
+	spawn_positions = -1
 	supervisors = "New Boston's laws"
 	description = "You are a citizen living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
@@ -1048,8 +1048,8 @@ Mayor
 	title = "Guild Financier"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Mayor"
 	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of New Boston. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of New Boston, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
@@ -1230,8 +1230,8 @@ Mayor
 	title = "Vertibird Pilot"
 	flag = F13PILOT
 	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "New Boston's laws"
 	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
@@ -1571,8 +1571,8 @@ Mayor
 	title = "Guild Shopkeeper"
 	flag = GUILDSHOPKEEP
 	department_flag = GUILD
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
@@ -1648,14 +1648,14 @@ Mayor
 
 //Guild Healer
 /datum/job/oasis/f13practitioner
-	title = "Guild Healer"
+	title = "Reclaimer Healer"
 	flag = GUILDMEDIC
-	department_flag = GUILD
-	faction = "Guild"
+	department_flag = RECLAIMERS
+	faction = "Reclaimers"
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
+	supervisors = "the Reclaimers."
+	description = "You work for the Reclaimers. Check your guidebook for more info."
 	enforces = "Check your guidebook"
 	selection_color = "#FFDDFF"
 	exp_requirements = 0
@@ -1714,8 +1714,7 @@ Mayor
 	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/storage/survivalkit/medical/follower
 	backpack_contents = list(
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/cool_book/guildguide = 1
+		/obj/item/cool_book/reclaimerguide
 	)
 
 //Guild Financier
@@ -1725,8 +1724,8 @@ Mayor
 	flag = GUILDBANKER
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
@@ -1759,8 +1758,8 @@ Mayor
 	flag = GUILDLIBRARIAN
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
@@ -1815,8 +1814,8 @@ Mayor
 	flag = GUILDBARTEND
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
@@ -1883,8 +1882,8 @@ Mayor
 	flag = GUILDKNIGHT
 	department_flag = GUILD
 	faction = "Guild"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"

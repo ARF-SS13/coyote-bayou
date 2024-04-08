@@ -478,7 +478,7 @@
 // Amulet of Protection (Tier 1.5 armor, 10 DT/Wound prot)
 /datum/crafting_recipe/magic/armoramulet
 	name = "Amulet of Protection"
-	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor
 	time = 10
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/mineral/titanium = 1,
@@ -488,7 +488,7 @@
 // Amulet of Hazard Protection (Tier 1? armor, 75 enviro prot + 50 plasma prot)
 /datum/crafting_recipe/magic/radamulet
 	name = "Amulet of Cleansing"
-	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor/hazard
 	time = 10
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/mineral/titanium = 1,
@@ -555,7 +555,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/tool_upgrade/paint/red = 1,
+				/obj/item/gun_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
@@ -566,7 +566,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
 				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/tool_upgrade/paint/red = 1,
+				/obj/item/gun_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 

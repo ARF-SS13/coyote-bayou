@@ -10,7 +10,7 @@
 	/// How many mobs can be attached to this spawner at once
 	var/max_mobs = 5
 	/// verb for when the thing comes out of the thing
-	var/spawn_text = "emerges from"
+	var/spawn_text = ""
 	/// sound to play when the thing spawns a thing
 	var/spawn_sound
 	/// The minimum distance to a client before we can start spawning mobs.
@@ -77,8 +77,8 @@
 		mob_types = _mob_types
 	if(_faction)
 		faction = _faction
-	if(_spawn_text)
-		spawn_text = _spawn_text
+	//if(_spawn_text)
+		//spawn_text = _spawn_text
 	if(_max_mobs)
 		max_mobs = _max_mobs
 	if(_range)
@@ -386,7 +386,7 @@
 		if(!chosen_mob)
 			qdel(P) // clearly, out of mobs. shouldnt get here
 			return
-		L = new chosen_mob(get_turf(P))
+		L = new chosen_mob(get_turf(P), "TOPHEAVY-KOBOLD")
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs |= WEAKREF(L)
 		L.nest = WEAKREF(P) // Neither really own each other, its all purely for record keeping
@@ -601,6 +601,7 @@
 		start_spawning()
 		// nobody'll know the difference~
 	qdel(despawn_me)
+	return TRUE
 
 /// If anything asks if we have a spawner, we say yes.
 /datum/component/spawner/proc/has_spawner()

@@ -177,7 +177,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/hud_actions
 
 	var/list/item_upgrades = list()
-	var/max_upgrades = 3
+	var/max_upgrades = 5 // was three now five because the amount of mods you need/want has significantly increased. Love you!
 
 	/// extra special transform
 	var/matrix/special_transform
@@ -234,6 +234,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
+	item_flags &= ~PERSONAL_ITEM	//prevent reqdels
 	if(ismob(loc))
 		var/mob/m = loc
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
@@ -537,6 +538,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/datum/action/A = X
 		A.Remove(user)
 	if(item_flags & DROPDEL)
+		qdel(src)
+	if(item_flags & PERSONAL_ITEM && !recursive_loc_search(src, user))
 		qdel(src)
 	item_flags &= ~IN_INVENTORY
 	if(SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user) & COMPONENT_DROPPED_RELOCATION)

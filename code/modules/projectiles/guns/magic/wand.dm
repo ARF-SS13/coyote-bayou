@@ -250,11 +250,17 @@
 	desc = "An extremely basic wand carved from bone, and topped with a roughly hewn crystal. Good for begginers, and handling vermin, but not much else."
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
-	max_charges = 3
-	recharge_rate = 2 SECONDS
+	max_charges = 1
+	recharge_rate = 6 SECONDS
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
+
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
+	pellets = 6 //I've fucked with this for 4 hours straight, there is no variable that lets you make shotgun spread, variation does nothing, add_spread does nothing
+// Dont be like me, Don't try to make this a shotgun with a spread degree higher than 1 degree, you simply cant
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/weak
 	name = "weak arcane bolt"
@@ -276,12 +282,13 @@
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	max_charges = 3
-	recharge_rate = 2 SECONDS
+	recharge_rate = 1 SECONDS // It used to fire 3 shots, this just makes it a bit like how it was before
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
-	pellets = 3
-	variance = 100
 
 /obj/item/projectile/magic/kelpmagic/sparks/weak
 	supereffective_damage = null
@@ -297,11 +304,15 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	max_charges = 6
-	recharge_rate = 2 SECONDS
+	max_charges = 2
+	recharge_rate = 6 SECONDS
+	init_firemodes = list(
+	/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/average
 	name = "arcane bolt"
@@ -324,11 +335,10 @@
 	icon_state = "lightningrod"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
-	max_charges = 6
+	max_charges = 4
 	recharge_rate = 2 SECONDS
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/automatic/rpm300
 	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks
@@ -336,9 +346,9 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
-	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
-	damage_low = 5
-	damage_high = 15
+	damage = 15 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
+	damage_low = 10
+	damage_high = 20
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"

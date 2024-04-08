@@ -36,7 +36,7 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 30
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -67,7 +67,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911)
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/effect/gibspawner/human)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -173,7 +173,7 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 
@@ -207,7 +207,7 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 
@@ -236,7 +236,8 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/gun/ballistic/rifle/hunting,
-		/obj/effect/spawner/lootdrop/f13/uncommon_armor
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+		/obj/effect/gibspawner/human
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -258,7 +259,7 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -281,7 +282,7 @@
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 	robust_searching = TRUE
@@ -313,6 +314,8 @@
 	icon_living = "renegade_meister"
 	icon_dead = "renegade_meister-dead"
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
+	vision_range = 12
+	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
 	healable = 1
@@ -330,7 +333,7 @@
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 8
 	loot_amount_random = TRUE
 	speak = list(
@@ -382,7 +385,7 @@
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/beam/laser/laer/hitscan
 	projectilesound = 'sound/f13weapons/laerfire.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 15
 	loot_amount_random = TRUE
 	speak = list(
@@ -438,7 +441,7 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 	projectile_sound_properties = list(

@@ -327,7 +327,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		switch (mode)
 			if (0)
-				dat += "<h2><center>=======COYOTE-CO DATAPAL v2.1=======</center></h2>"
+				dat += "<h2><center>=======GEKKERTEC DATAPAL v2.2=======</center></h2>"
 				dat += "Owner: [owner], [ownjob]<br>"
 				dat += "ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]</a><br>"
 				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update DataPal Info" : ""]</a><br><br>"
@@ -339,6 +339,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=65536'>[PDAIMG(mail)]Guild Questboard</a></li>"
+				dat += "<li></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)]Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)]Messenger</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=99'>[PDAIMG(signaler)]Radio</a></li>"
@@ -641,6 +643,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 						Boop()
 				if("4")//Redirects to hub
 					mode = 0
+					if (!silent)
+						Boop()
+
+				if("65536")//Questhingy
+					SSeconomy.open_quest_console(U, src)
 					if (!silent)
 						Boop()
 

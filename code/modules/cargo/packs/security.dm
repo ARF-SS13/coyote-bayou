@@ -156,7 +156,7 @@
 /datum/supply_pack/security/combatknives_single
 	name = "Combat Knife Single-Pack"
 	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-wasteland boot. You know what's better than one knife? Three of 'em!"
-	cost = 100
+	cost = 500
 	num_contained = 3
 	contains = list(/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting,
@@ -398,7 +398,7 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
 	crate_name = "energy crate"
 */
-
+/*
 /datum/supply_pack/security/mods
 	name = "Weapons - Gun Mods"
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
@@ -425,7 +425,7 @@
 					/obj/item/gun_upgrade/scope/killer,
 					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "advanced gun mods crate"
-
+*/
 /* /datum/supply_pack/security/aimod // removed because ZAX was super nerfed
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."

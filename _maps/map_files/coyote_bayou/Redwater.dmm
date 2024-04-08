@@ -8290,9 +8290,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
 "cUh" = (
-/obj/structure/car/rubbish1,
+/obj/machinery/teleport/station,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
+	icon_state = "horizontalinnermain0"
 	},
 /area/f13/building)
 "cUj" = (
@@ -18628,10 +18628,9 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
 "gBu" = (
-/obj/machinery/door/poddoor/shutters/preopen,
-/mob/living/simple_animal/hostile/ghoul,
+/obj/machinery/teleport/hub,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
+	icon_state = "horizontalinnermain0"
 	},
 /area/f13/building)
 "gBB" = (
@@ -41301,7 +41300,6 @@
 /area/f13/building)
 "oDM" = (
 /obj/machinery/workbench,
-/obj/effect/spawner/lootdrop/f13/common_mods,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "oDQ" = (
@@ -50624,12 +50622,13 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal/cave)
 "rSP" = (
-/obj/machinery/door/poddoor/shutters/preopen,
-/obj/item/storage/trash_stack{
-	icon_state = "trash_2"
+/obj/item/circuitboard/computer/teleporter,
+/obj/structure/frame/computer{
+	dir = 1
 	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
+	icon_state = "horizontalinnermain0"
 	},
 /area/f13/building)
 "rSZ" = (
@@ -66803,12 +66802,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bar)
-"xBV" = (
-/obj/machinery/door/poddoor/shutters/preopen,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/building)
 "xCc" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/thief,
@@ -96202,11 +96195,11 @@ hoC
 hoC
 hoC
 hoC
-iLG
-mJV
-mJV
-mJV
-mJV
+fHN
+bFR
+bFR
+bFR
+bFR
 bFR
 clM
 tsv
@@ -96723,8 +96716,8 @@ xAc
 eIj
 uCq
 mrv
-gBu
-xBV
+fBl
+jMC
 rSP
 jXx
 bFR
@@ -97239,7 +97232,7 @@ mtu
 jXx
 fBl
 jMC
-uOz
+gBu
 jXx
 bFR
 bFR

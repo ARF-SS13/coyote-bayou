@@ -95,8 +95,8 @@
  * Hand-tele
  */
 /obj/item/hand_tele
-	name = "hand tele"
-	desc = "A portable item using blue-space technology."
+	name = "Hand Quantum-Stabilization Harness"
+	desc = "A portable hand 'teleporter' that actually works by observing your quantum superposition in relevance to your portal storm state. IN NERD TERMS USE THIS TO TELEPORT PLACES."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hand_tele"
 	item_state = "electronic"
@@ -110,7 +110,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/list/active_portal_pairs
-	var/max_portal_pairs = 3
+	var/max_portal_pairs = 1 // was three
 	var/atmos_link_override
 
 /obj/item/hand_tele/Initialize()
@@ -177,9 +177,9 @@
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
-	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
-		return
+//	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+//		to_chat(user, span_notice("\The [src] is malfunctioning."))
+//		return
 	user.show_message(span_notice("Locked In."), MSG_AUDIBLE)
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(get_turf(T)), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
