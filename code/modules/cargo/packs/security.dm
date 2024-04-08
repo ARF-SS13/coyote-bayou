@@ -398,7 +398,7 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
 	crate_name = "energy crate"
 */
-
+/*
 /datum/supply_pack/security/mods
 	name = "Weapons - Gun Mods"
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
@@ -425,7 +425,7 @@
 					/obj/item/gun_upgrade/scope/killer,
 					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "advanced gun mods crate"
-
+*/
 /* /datum/supply_pack/security/aimod // removed because ZAX was super nerfed
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."

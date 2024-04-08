@@ -366,6 +366,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	armor = ARMOR_VALUE_CLOTHES
 	armor_tier_desc = ARMOR_CLOTHING_DESC
+	slowdown = ARMOR_SLOWDOWN_NONE
 
 /obj/item/clothing/suit/chameleon/harness
 	name = "light harness"

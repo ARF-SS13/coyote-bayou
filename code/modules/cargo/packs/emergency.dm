@@ -21,7 +21,7 @@
 		/obj/item/stealthboy,
 		/obj/item/stock_parts/cell/bluespace,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
-		/obj/item/gun_upgrade/muzzle/silencer,
+		/obj/item/gun_upgrade/muzzleone,
 )
 	crate_name = "Stealth Mercenary Kit"
 

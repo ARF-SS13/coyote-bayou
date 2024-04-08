@@ -114,7 +114,7 @@
 	item = /obj/item/pen/sleepy
 	cost = 4
 	exclude_modes = list(/datum/game_mode/nuclear)
-
+/*
 /datum/uplink_item/stealthy_weapons/suppressor
 	name = "Suppressor"
 	desc = "This suppressor will silence the shots of the weapon it is attached to for increased stealth and superior ambushing capability. \
@@ -122,7 +122,7 @@
 	item = /obj/item/gun_upgrade/muzzle/silencer
 	cost = 1
 	surplus = 10
-
+*/
 /datum/uplink_item/stealthy_weapons/soap
 	name = "Syndicate Soap"
 	desc = "A sinister-looking surfactant used to clean blood stains to hide murders and prevent DNA analysis. \
