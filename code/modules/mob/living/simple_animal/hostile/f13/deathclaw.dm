@@ -68,6 +68,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
+	am_important = TRUE
 
 /mob/living/simple_animal/hostile/deathclaw/Initialize()
 	. = ..()

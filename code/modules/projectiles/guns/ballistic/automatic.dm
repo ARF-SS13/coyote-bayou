@@ -704,7 +704,7 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T3 //IDK dps lol
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm100,
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/Glock86Fire.ogg'
