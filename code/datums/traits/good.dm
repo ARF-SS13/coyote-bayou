@@ -495,6 +495,27 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	else
 		H.update_icons()
 
+/datum/quirk/magehand
+	name = "Mage hand"
+	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
+	value = 32
+	category = "Magic Quirks"
+	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
+	conflicts = list(
+
+	)
+	human_only = FALSE
+
+/datum/quirk/magehand/on_spawn()
+	var/mob/living/H = quirk_holder
+	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+	if(ishuman(quirk_holder))
+		H.regenerate_icons()
+	else
+		H.update_icons()
+
 /* //placeholder test concluded
 /datum/quirk/wizard
 	name = "Wasteland Wizard"

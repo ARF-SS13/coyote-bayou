@@ -426,8 +426,8 @@
 	damage_type = BURN
 	range = 3
 	pixels_per_second = 275
-	flag = "energy"
-	supereffective_damage = 7 
+	flag = "laser"
+	supereffective_damage = 3 
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 //weak version
