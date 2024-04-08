@@ -581,6 +581,17 @@
 				/obj/item/stack/sheet/mineral/uranium = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
+// Staff of Magma (Flamethrower staff, short range, fast charge, high power)
+/datum/crafting_recipe/magic/flamethrower
+	name = "Staff of Magma"
+	result = /obj/item/gun/magic/staff/kelpmagic/flamethrower
+	time = 30
+	reqs = list(/obj/item/stack/sheet/bronze = 10,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/mineral/plasma = 2,
+				/obj/item/stack/sheet/bluespace_crystal = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
 // T1 Mending Wand (basic omni heal, ~50 HP all categories every 5 minutes)
 /datum/crafting_recipe/magic/mendingwand
 	name = "Wand of Mending"
