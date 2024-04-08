@@ -168,8 +168,13 @@
 	return TRUE
 
 /obj/item/tk_grab/proc/check_if_focusable(obj/target)
-	if(!tk_user || !istype(tk_user) || QDELETED(target) || !istype(target) || !tk_user.dna.check_mutation(TK))
+	if(!tk_user || !istype(tk_user) || QDELETED(target) || !istype(target) /*|| !tk_user.dna.check_mutation(TK)*/)
 		qdel(src)
+		return
+	if(!isitem(target)) //So we cant grab closets, or mobs
+		return
+	var/obj/item/thing = target //This checks the object we're grabbing
+	if(thing.w_class > WEIGHT_CLASS_SMALL) //This makes sure the object is a small thing, and not above
 		return
 	if(!tkMaxRangeCheck(tk_user, target) || target.anchored || !isturf(target.loc))
 		qdel(src)
