@@ -11,7 +11,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	/// How many mobs can be attached to this spawner at once
 	var/max_mobs = 5
 	/// verb for when the thing comes out of the thing
-	var/spawn_text = "emerges from"
+	var/spawn_text = ""
 	/// sound to play when the thing spawns a thing
 	var/spawn_sound
 	/// The minimum distance to a client before we can start spawning mobs.
@@ -77,8 +77,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		mob_types = _mob_types
 	if(_faction)
 		faction = _faction
-	if(_spawn_text)
-		spawn_text = _spawn_text
+	//if(_spawn_text)
+		//spawn_text = _spawn_text
 	if(_max_mobs)
 		max_mobs = _max_mobs
 	if(_range)

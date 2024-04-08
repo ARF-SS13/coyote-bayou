@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	/// Did this thing make loot? If so, dont drop more stuff
 	var/made_loot = FALSE
 	/// verb for when a mob comes out
-	var/spawn_text = "emerges from"
+	//var/spawn_text = NULL //it makes a sound
 	/// Range to check for other mobs to see if there's too many around
 	var/overpopulation_range = 6
 	/// max mobs that can be alive and nearby before it refuses to spawn more
@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		_mob_types = mob_types,\
 		_spawn_time = spawn_time,\
 		_faction = faction,\
-		_spawn_text = spawn_text,\
+		/*_spawn_text = spawn_text,*/\
 		_max_mobs = max_mobs,\
 		_range = radius,\
 		_overpopulation_range = overpopulation_range,\
@@ -383,7 +383,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "nest_gecko"
 	desc = "A pile of gecko eggs on top of a clay mound."
 	max_mobs = 3
-	spawn_text = "crawls out from the"
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko = 4,
@@ -401,7 +400,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "nest_gecko"
 	desc = "Where theres a big sexy dragon couple, there are bound to be big sexy kobolds. Look at em now!"
 	max_mobs = 3
-	spawn_text = "crawls out from the"
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko = 4,
@@ -418,7 +416,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal = 8,
@@ -433,7 +430,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos in the field."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 6,
@@ -445,7 +441,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos protecting their home."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 12,
@@ -581,7 +576,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "frog"
 	desc = "Are those tadpoles?"
 	max_mobs = 2
-	spawn_text = "hops out of the water!"
 	spawnsound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/retaliate/frog = 10,

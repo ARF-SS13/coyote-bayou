@@ -20,15 +20,12 @@
 			armor = max(0, (100*armor/(100-armor)*(1-armour_penetration))/(armor/(100-armor)*(1-armour_penetration)+1))
 		if(penetrated_text && COOLDOWN_FINISHED(src, armor_message_antispam))
 			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[penetrated_text]"))
 	else if(armor >= 100)
 		if(absorb_text && COOLDOWN_FINISHED(src, armor_message_antispam))
 			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[absorb_text]"))
 	else if(armor > 0)
 		if(soften_text && COOLDOWN_FINISHED(src, armor_message_antispam))
 			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[soften_text]"))
 	return armor
 
 
