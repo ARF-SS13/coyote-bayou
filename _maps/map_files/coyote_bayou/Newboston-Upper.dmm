@@ -1795,7 +1795,7 @@
 "eV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
 "eW" = (
 /turf/closed/wall/f13/coyote/oldwood,
@@ -5280,11 +5280,6 @@
 /obj/structure/bookshelf{
 	pixel_y = 20
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	pixel_y = 20;
-	pixel_x = -9
-	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "ol" = (
@@ -5851,7 +5846,6 @@
 /area/f13/building/tribal)
 "pM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants/dead,
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 8
@@ -9491,7 +9485,7 @@
 /area/f13/building/tribal)
 "zW" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
 "zX" = (
 /obj/structure/railing/wood{
@@ -13445,6 +13439,15 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"Kn" = (
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
 "Ko" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -15481,11 +15484,10 @@
 /turf/open/floor/carpet/red,
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "PC" = (
-/obj/structure/simple_door/interior,
-/obj/item/lock_bolt,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/item/flashlight/lamp{
+	pixel_y = 6
 	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
 "PD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -16489,9 +16491,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Si" = (
-/obj/machinery/light_switch{
-	pixel_x = 22
-	},
 /obj/structure/dresser{
 	pixel_y = 16;
 	density = 0
@@ -43374,7 +43373,7 @@ jO
 oa
 eV
 zW
-PC
+mM
 Zx
 Uu
 Zx
@@ -43886,7 +43885,7 @@ lZ
 ud
 jO
 oa
-qu
+VZ
 VZ
 tF
 YV
@@ -44663,7 +44662,7 @@ mM
 fC
 RT
 IL
-tF
+Kn
 tF
 tF
 RR
@@ -44920,7 +44919,7 @@ oa
 oa
 oa
 oa
-oa
+dK
 oa
 oa
 oa
@@ -46203,7 +46202,7 @@ vz
 vz
 vz
 lf
-ES
+Ap
 Qk
 xA
 cR
@@ -48767,7 +48766,7 @@ GU
 GU
 mM
 tg
-mM
+PC
 ok
 mG
 mM
