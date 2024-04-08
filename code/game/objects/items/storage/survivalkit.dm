@@ -38,6 +38,7 @@
 	new /obj/item/melee/onehanded/knife/bone(src)
 	new /obj/item/firebow(src)
 	new /obj/item/flashlight(src)
+	new /obj/item/hand_tele(src)
 
 /obj/item/storage/survivalkit/tribal/empty/PopulateContents()
 	return
