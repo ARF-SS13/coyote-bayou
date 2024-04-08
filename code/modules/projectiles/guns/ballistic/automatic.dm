@@ -691,24 +691,6 @@
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //208 dps
 
-/obj/item/gun/ballistic/automatic/smg/p90/llxninety
-	name = "LLX90"
-	desc = "Based off of the hollowed out shell of a FNP90, this is a laser musket conversion. It features no discernable serial code or any branding."
-	icon_state = "p90"
-	item_state = "m90"
-	mag_type = /obj/item/ammo_box/magazine/internal/llxninety
-	init_mag_type = /obj/item/ammo_box/magazine/internal/llxninety
-	weapon_class = WEAPON_CLASS_CARBINE
-	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3 //IDK dps lol
-	init_recoil = AUTOCARBINE_RECOIL(1, 1)
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm100,
-		/datum/firemode/semi_auto/fast
-	)
-	fire_sound = 'sound/f13weapons/Glock86Fire.ogg'
-
 /* * * * * * * * * * *
 * M22 SMG
 *-weak damage
