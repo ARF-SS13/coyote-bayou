@@ -295,7 +295,7 @@
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	faction = list("BOS")
+	faction = list("BOS", "wastebots")
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"

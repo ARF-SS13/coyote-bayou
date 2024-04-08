@@ -850,7 +850,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 
-	faction = list("hostile", "gecko", "rat-friend")
+	faction = list("rat", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -926,7 +926,7 @@
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
-	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	faction = list("slime") //at last, I am at peace ~TK
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
