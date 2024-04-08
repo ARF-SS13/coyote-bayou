@@ -6109,6 +6109,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"eta" = (
+/obj/machinery/teleport/hub,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "etg" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -12807,6 +12811,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"jdq" = (
+/obj/machinery/teleport/station,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "jdB" = (
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/inside/mountain,
@@ -20405,6 +20413,14 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"oom" = (
+/obj/item/circuitboard/computer/teleporter,
+/obj/structure/frame/computer{
+	dir = 1
+	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "ooB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
@@ -65807,7 +65823,7 @@ bGy
 nVG
 cON
 nVG
-cON
+oom
 ehT
 tIR
 tAB
@@ -66064,7 +66080,7 @@ cON
 bGy
 nVG
 cON
-cON
+jdq
 ehT
 cGP
 tAB
@@ -66321,7 +66337,7 @@ cON
 cON
 nVG
 nVG
-cON
+eta
 ehT
 ehT
 eln
