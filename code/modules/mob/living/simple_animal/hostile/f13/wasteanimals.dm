@@ -850,7 +850,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 
-	faction = list("hostile", "gecko", "rat-friend")
+	faction = list("hostile", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
