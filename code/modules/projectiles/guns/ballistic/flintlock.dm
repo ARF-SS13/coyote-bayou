@@ -429,7 +429,7 @@
 	name = "ancient matchlock handgonne"
 	desc = "Is that thing even real?  Does it actually even work?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlockhandgonne"
+	icon_state = "matchlock_handgonne"
 	item_state = "flintlock"
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
@@ -437,7 +437,7 @@
 	name = "ancient fancy matchlock arquebus"
 	desc = "Don't put it near someones arquebussy."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlockarquebus"
+	icon_state = "matchlock_arquebus"
 	item_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -487,7 +487,7 @@
 	name = "ancient matchlock musketoon"
 	desc = "An ancient but well kept blackpowder matchlock musketoon; just like the 30 years war would have had!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlockmusketoon"
+	icon_state = "matchlock_musketoon"
 	item_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
