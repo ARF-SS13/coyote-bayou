@@ -1249,7 +1249,7 @@
 	rotate_on_lying = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 /mob/living/carbon/human/species/mimic
-	race = /datum/species/adapted/simplebot/mimic
+	race = /datum/species/feral/mimic
 
 // No more mimics
 
