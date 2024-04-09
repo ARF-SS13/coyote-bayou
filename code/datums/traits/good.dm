@@ -2010,7 +2010,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 32
+	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
 	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat bludgeon."
 	conflicts = list()
@@ -2018,6 +2018,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel as your arm is wriggling...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a club, somehow."
+
+/datum/quirk/magegrab
+	name = "Mage Grab" // Better name pending
+	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
+	value = 28
+	category = "Magic Quirks"
+	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
+	conflicts = list()
+	mob_trait = TRAIT_MAGEGRAB
 
 /datum/quirk/bigbiter
 	name = "Biter - Big"
