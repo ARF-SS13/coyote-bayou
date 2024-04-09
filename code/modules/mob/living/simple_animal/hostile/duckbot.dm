@@ -30,6 +30,7 @@
 	mob_armor = ARMOR_VALUE_DEATHCLAW_PA // so we get the tombstone message for our duck
 	maxHealth = 1
 	health = 1
+	density = FALSE
 	move_to_delay = 1 SECONDS // slow duck
 	melee_damage_lower = 0
 	melee_damage_upper = 0
@@ -65,6 +66,7 @@
 	light_power = 2 // abusing (your retinas) duck
 	light_color = "#FFCC66"
 	light_on = TRUE
+	randpixel = 12
 
 /mob/living/simple_animal/hostile/amusing_duck/handle_automated_action()
 	. = ..()
