@@ -235,6 +235,7 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
+	mob_armor = ARMOR_VALUE_GHOUL_COLD
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -252,6 +253,7 @@
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
+	mob_armor = ARMOR_VALUE_GHOUL_COLDER
 	speed = 1.5
 	maxHealth = 80
 	health = 80
@@ -380,7 +382,7 @@
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	maxHealth = 60 
 	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
@@ -396,7 +398,7 @@
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	maxHealth = 80 
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -411,6 +413,7 @@
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
 	icon_gib = "syndicate_gib"
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	speak_chance = 1
 	environment_smash = 0
 	response_help_simple = "hugs"
@@ -445,6 +448,7 @@
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
 	icon_gib = "syndicate_gib"
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
@@ -484,6 +488,7 @@
 	icon_living = "wyomingghost"
 	icon_dead = "wyomingghost_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_GHOUL_PA
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("wheezes")
@@ -512,6 +517,7 @@
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
 	stat_attack = CONSCIOUS
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
@@ -585,6 +591,7 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
 	maxHealth = 200
 	health = 200
 	can_ghost_into = FALSE

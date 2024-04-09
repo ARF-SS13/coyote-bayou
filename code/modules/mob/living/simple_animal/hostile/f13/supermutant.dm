@@ -416,7 +416,6 @@
 		return
 	if(prob(30))
 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-		addtimer(3)
 		Charge()
 	if(prob(85) || Proj.damage > 30)
 		return ..()
@@ -449,13 +448,12 @@
 	if(!T || T == loc)
 		return
 	charging = TRUE
-	visible_message(span_danger(">[src] charges!"))
+	visible_message(span_danger("[src] charges!"))
 	DestroySurroundings()
 	walk(src, 0)
 	setDir(get_dir(src, T))
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 1)
-	addtimer(3)
 	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src,PROC_REF(charge_end)))
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/charge_end(list/effects_to_destroy)
@@ -485,9 +483,6 @@
 		shake_camera(src, 2, 3)
 		var/throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(L, src)))
 		L.throw_at(throwtarget, 3)
-
-
-	charging = FALSE
 	charging = FALSE
 
 
@@ -524,29 +519,14 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)
-
-	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src,PROC_REF(fire_release_wall), d)
+	INVOKE_ASYNC(src,PROC_REF(fire_release_wall))
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release_wall(dir)
-	var/list/hit_things = list(src)
-	var/turf/E = get_edge_target_turf(src, dir)
-	var/range = 10
-	var/turf/previousturf = get_turf(src)
-	for(var/turf/J in getline(src,E))
-		if(!range || (J != previousturf && (!previousturf.atmos_adjacent_turfs || !previousturf.atmos_adjacent_turfs[J])))
-			break
-		range--
-		new /obj/effect/hotspot(J)
-		J.hotspot_expose(500, 500, 1)
-		for(var/mob/living/L in J.contents - hit_things)
-			if(istype(L, /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain))
-				continue
-			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("You're hit by the nightkin's release of energy!"))
-			hit_things += L
-		previousturf = J
-		addtimer(1)
+	for(var/mob/living/target in view(10, src))
+		var/obj/item/ammo_casing/casing = new /obj/item/ammo_casing/shotgun/incendiary(get_turf(src))
+		casing.factionize(faction)
+		casing.fire_casing(target, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		qdel(casing)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain
 	name = "nightkin rain lord"
