@@ -95,7 +95,7 @@
  * Hand-tele
  */
 /obj/item/hand_tele
-	name = "Hand Quantum-Stabilization Harness"
+	name = "Hand Teleporter"
 	desc = "A portable hand 'teleporter' that actually works by observing your quantum superposition in relevance to your portal storm state. IN NERD TERMS USE THIS TO TELEPORT PLACES."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hand_tele"
