@@ -760,7 +760,7 @@
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/p90/llxninety(src) // whatever
+	new /obj/item/gun/ballistic/automatic/sportcarbine(src) // whatever
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
