@@ -70,4 +70,14 @@
 	faction = list("neutral")
 	attack_same = TRUE
 	gold_core_spawnable = HOSTILE_SPAWN
+	emote_taunt_sound = list('sound/effects/goose.ogg')
+	idlesound = list('sound/effects/goose.ogg')
+	death_sound = 'sound/effects/goose.ogg'
 	var/random_retaliate = TRUE
+
+/mob/living/simple_animal/hostile/goose/Initialize(mapload, nest_spawned)
+	. = ..()
+	if(prob(3))
+		name = "angry bird"
+	else if(prob(1))
+		idlesound = list('sound/machines/thegoose_song_01.ogg', 'sound/machines/thegoose_song_02.ogg', 'sound/machines/thegoose_honk.ogg')

@@ -827,6 +827,10 @@
 	if(prob(3))
 		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 2 // quaCK
 		nest_desc += " Disclaimer: Lay egg is true."
+	if(prob(5))
+		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool
+		nest_desc += " Also there's a lot of angry honking in there. Weird."
+		swarm_size += 1
 	mob_types = new_paths.Copy()
 	return TRUE
 
