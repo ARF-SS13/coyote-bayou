@@ -7,6 +7,7 @@
 	text_gain_indication = span_notice("You feel smarter!")
 	limb_req = BODY_ZONE_HEAD
 	instability = 30
+	mutadone_proof = TRUE
 
 /*/datum/mutation/human/telekinesis/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
 	..()
