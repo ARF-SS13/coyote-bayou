@@ -2543,7 +2543,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
 	conflicts = list(
 		/datum/quirk/masterrifleman,
-		/datum/quirk/straightshooter
+		/datum/quirk/straightshooter,
+		/datum/quirk/deadeye
 		)
 	gain_text = span_notice("Aim just behind behind the front leg...")
 	lose_text = span_notice(".223 is probably overkill for deer...")
