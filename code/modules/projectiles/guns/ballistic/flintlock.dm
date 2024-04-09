@@ -13,7 +13,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
-	max_upgrades = 2
+	max_upgrades = 5
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -304,7 +304,6 @@
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
 	can_scope = TRUE
-	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -541,7 +540,6 @@
 	trigger_guard = TRIGGER_GUARD_NORMAL //Need fin dexterity to finger its trigger ~TK
 	dryfire_text = "*not loaded*"
 	can_scope = TRUE
-	max_upgrades = 2
 
 /obj/item/gun/flintlock/matchlock/handbombard //hahaha yes ~sickos in the crowd
 	name = "ancient hand bombard"
