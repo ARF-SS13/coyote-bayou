@@ -2,6 +2,15 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 150
 	anchored = TRUE
+	var/resize = 1 
+
+/obj/structure/flora/proc/update_transform()
+	return
+
+/obj/structure/flora/Initialize()
+	.=..()
+	resize = rand(0.5, 1.5)
+	update_transform()
 
 //trees
 /obj/structure/flora/tree
