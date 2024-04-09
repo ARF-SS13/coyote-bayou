@@ -4,13 +4,11 @@
 	anchored = TRUE
 	var/resize = 1 
 
-/obj/structure/flora/proc/update_transform()
-	return
 
 /obj/structure/flora/Initialize()
 	.=..()
-	resize = rand(0.5, 1.5)
-	update_transform()
+	transform = transform.Scale(rand(5,15)/10, rand(5,15)/10)
+
 
 //trees
 /obj/structure/flora/tree
