@@ -7,7 +7,7 @@
 
 /obj/structure/flora/Initialize()
 	.=..()
-	transform = transform.Scale(rand(5,15)/10, rand(5,15)/10)
+	transform = transform.Scale(rand(8,12)/10, rand(8,12)/10)
 
 
 //trees
