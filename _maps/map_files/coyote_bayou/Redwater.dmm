@@ -1577,6 +1577,14 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland/redwater)
+"aIb" = (
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "aIj" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
@@ -3827,6 +3835,14 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
+"btS" = (
+/turf/open/floor/f13{
+	dir = 1;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "btV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -4241,6 +4257,14 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"bAO" = (
+/turf/open/floor/f13{
+	dir = 4;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "bAP" = (
 /obj/structure/nest/protectron{
 	max_mobs = 2
@@ -6724,6 +6748,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"crz" = (
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "crB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/water/running,
@@ -7679,6 +7709,24 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/building/tribal/cave)
+"cJf" = (
+/obj/structure/rack/shelf_metal/modern,
+/obj/item/storage/medical/ancientfirstaid{
+	pixel_y = 0
+	},
+/obj/item/storage/box/ration/ranger_breakfast{
+	pixel_y = -6
+	},
+/obj/item/storage/box/ration/ranger_lunch{
+	pixel_y = -1
+	},
+/obj/item/storage/box/ration/ranger_dinner{
+	pixel_y = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "cJD" = (
 /obj/structure/fence/wooden{
 	dir = 4;
@@ -8712,6 +8760,13 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland/town)
+"daM" = (
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "daR" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -9081,6 +9136,16 @@
 	},
 /turf/open/floor/wood_worn,
 /area/f13/wasteland/redwater)
+"diS" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "diV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -18412,6 +18477,21 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"gwA" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/obj/structure/chair/sofa/corp/corner{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "gwG" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/surrounding_tile{
@@ -20349,6 +20429,14 @@
 	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
+"hfW" = (
+/obj/machinery/computer/teleporter{
+	dir = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "hfY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -28025,6 +28113,12 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
+"jKn" = (
+/obj/machinery/teleport/station,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "jKs" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/turf_decal/weather/dirt{
@@ -35988,6 +36082,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"mFu" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "mFA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
@@ -36557,6 +36657,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"mOs" = (
+/turf/open/floor/f13{
+	icon_state = "stagestairs"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "mOw" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -38047,6 +38154,14 @@
 /obj/machinery/light/small/broken,
 /turf/open/water,
 /area/f13/caves)
+"nwo" = (
+/turf/open/floor/f13{
+	dir = 2;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "nwA" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -40738,6 +40853,16 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"ouq" = (
+/obj/item/beacon{
+	mouse_opacity = 0;
+	alpha = 0;
+	name = "RTN Teleporter Beacon"
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "ous" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -41516,6 +41641,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"oHl" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "oHu" = (
 /obj/effect/decal/waste{
 	icon_state = "goo11"
@@ -41822,6 +41955,16 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland/town)
+"oMu" = (
+/obj/structure/decoration/vent{
+	pixel_y = -8
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "oMy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42004,6 +42147,16 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"oQp" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "oQL" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowvertical"
@@ -44450,6 +44603,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"pNt" = (
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "pNu" = (
 /obj/structure/bed/mattress,
 /obj/item/clothing/glasses/f13/biker,
@@ -46507,6 +46668,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
+"qCr" = (
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "qCA" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -51362,6 +51531,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"seK" = (
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "seL" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -53590,6 +53764,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"sSE" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "sSG" = (
 /obj/structure/car/rubbish3,
 /obj/effect/decal/cleanable/dirt{
@@ -57148,6 +57333,16 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
+"ufk" = (
+/obj/structure/decoration/vent{
+	pixel_y = 5
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "ufM" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticaltop"
@@ -60249,6 +60444,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"vmx" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "vmD" = (
 /obj/structure/flora/chomp/thicket2{
 	color = "#224422"
@@ -60857,6 +61063,14 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"vyI" = (
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "vyL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/tentclothedge{
@@ -62552,6 +62766,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"wdy" = (
+/obj/structure/decoration/shock{
+	pixel_y = 4;
+	name = "PORTAL-STORM SHELTER";
+	desc = "A sign indicating that this bunker is a portal storm shelter."
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "wdE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -63055,6 +63281,12 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
+"wmE" = (
+/obj/structure/simple_door/metal,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "wmK" = (
 /obj/structure/table/wood,
 /obj/machinery/reagentgrinder,
@@ -63759,6 +63991,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/redwater)
+"wzf" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Redwater Portal-Storm Shelter"
+	})
 "wzh" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_7"
@@ -90392,14 +90630,14 @@ bFR
 bFR
 sNS
 bFR
-bFR
-bFR
-bFR
-flv
-bFR
-bFR
-bFR
-bFR
+lVL
+lVL
+lVL
+lVL
+lVL
+lVL
+lVL
+lVL
 bFR
 bFR
 bFR
@@ -90649,16 +90887,16 @@ bFR
 bFR
 bFR
 bFR
-bFR
-bFR
-flv
-bFR
-bFR
-bFR
-bFR
-bFR
-bFR
-bFR
+lVL
+daM
+daM
+daM
+daM
+daM
+lVL
+lVL
+lVL
+lVL
 bFR
 bFR
 bFR
@@ -90906,14 +91144,14 @@ bFR
 bFR
 ifN
 bFR
-flv
-flv
-bFR
-iIF
-iIF
-iIF
-iIF
-iIF
+lVL
+daM
+hfW
+jKn
+wzf
+daM
+daM
+daM
 iIF
 iIF
 iIF
@@ -91163,14 +91401,14 @@ bFR
 ifN
 bFR
 bFR
-bFR
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+wdy
+daM
+pNt
+aIb
+aIb
+gwA
+sSE
+daM
 iIF
 iIF
 iIF
@@ -91420,14 +91658,14 @@ bFR
 bFR
 bFR
 bFR
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+mOs
+mFu
+btS
+ouq
+seK
+crz
+nwo
+daM
 iIF
 kDz
 kDz
@@ -91677,14 +91915,14 @@ bFR
 bFR
 bFR
 bFR
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+ufk
+oMu
+vyI
+bAO
+bAO
+bAO
+qCr
+daM
 iIF
 kDz
 qhm
@@ -91935,13 +92173,13 @@ bFR
 flv
 iIF
 iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+daM
+daM
+wmE
+daM
+daM
+cJf
+daM
 iIF
 kDz
 emZ
@@ -92192,13 +92430,13 @@ gll
 flv
 iIF
 iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+daM
+vmx
+aIb
+oHl
+daM
+daM
+daM
 iIF
 kDz
 emZ
@@ -92449,11 +92687,11 @@ flv
 bFR
 iIF
 iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+daM
+oQp
+bAO
+diS
+daM
 iIF
 iIF
 tzA
@@ -92706,11 +92944,11 @@ flv
 bFR
 iIF
 iIF
-iIF
-iIF
-iIF
-iIF
-iIF
+daM
+daM
+daM
+daM
+daM
 iIF
 iIF
 iIF

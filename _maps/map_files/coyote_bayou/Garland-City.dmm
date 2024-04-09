@@ -423,6 +423,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"aqY" = (
+/obj/machinery/teleport/station,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "ara" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -1271,6 +1277,24 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"aSS" = (
+/obj/structure/rack/shelf_metal/modern,
+/obj/item/storage/medical/ancientfirstaid{
+	pixel_y = 0
+	},
+/obj/item/storage/box/ration/ranger_breakfast{
+	pixel_y = -6
+	},
+/obj/item/storage/box/ration/ranger_lunch{
+	pixel_y = -1
+	},
+/obj/item/storage/box/ration/ranger_dinner{
+	pixel_y = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "aTr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -1839,6 +1863,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"bpI" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
 "bpM" = (
 /obj/structure/fence/post,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -4223,6 +4251,14 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"dav" = (
+/turf/open/floor/f13{
+	dir = 1;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "daA" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8;
@@ -4650,9 +4686,10 @@
 	},
 /area/f13/wasteland)
 "dpX" = (
-/obj/structure/car/rubbish1,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "dqh" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/f13{
@@ -5893,6 +5930,14 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/wasteland)
+"ejM" = (
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "ejR" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -7131,6 +7176,17 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"fbP" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "fbW" = (
 /obj/structure/chair/bench,
 /obj/machinery/light/small,
@@ -7389,6 +7445,16 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
+"fme" = (
+/obj/structure/decoration/vent{
+	pixel_y = -8
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "fmj" = (
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/road,
@@ -8435,6 +8501,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"gby" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "gbE" = (
 /obj/structure/flora/ausbushes/brflowers{
 	light_power = 3;
@@ -8452,6 +8524,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"gdA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
 "ged" = (
 /obj/structure/chair/sofa/corp/right,
 /turf/open/floor/f13{
@@ -8596,6 +8674,14 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"giJ" = (
+/obj/machinery/computer/teleporter{
+	dir = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "giO" = (
 /obj/structure/debris/v4,
 /turf/open/indestructible/ground/outside/water,
@@ -9661,6 +9747,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gZb" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "gZf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -9945,6 +10039,14 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"hkE" = (
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "hkW" = (
 /mob/living/simple_animal/hostile/megafauna/behemoth{
 	faction = list("hostile","supermutant","wastebot","Gecko");
@@ -10371,6 +10473,16 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland)
+"hzN" = (
+/obj/structure/decoration/vent{
+	pixel_y = 5
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "hzO" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -12912,6 +13024,17 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"jii" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "jin" = (
 /obj/structure/mirror{
 	pixel_y = 30
@@ -13088,6 +13211,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"jql" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
 "jqw" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/food,
@@ -13752,14 +13881,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jPE" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/nest/ghoul{
-	layer = 2.7;
-	max_mobs = 1;
-	radius = 3
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "jPJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood{
@@ -15582,13 +15709,13 @@
 	},
 /area/f13/wasteland)
 "ldM" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
+/turf/open/floor/f13{
+	dir = 4;
+	icon_state = "yellowsiding"
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "ldN" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -19584,6 +19711,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"nMi" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "nMk" = (
 /obj/structure/chair/stool{
 	icon_state = "bench";
@@ -19745,6 +19882,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"nQG" = (
+/obj/structure/simple_door/metal,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "nQP" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -21185,6 +21328,12 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/building)
+"oNS" = (
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "oOb" = (
 /obj/structure/flora/tree/wasteland,
 /turf/open/indestructible/ground/outside/dirt,
@@ -25378,6 +25527,14 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"rOL" = (
+/turf/open/floor/f13{
+	dir = 2;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "rON" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -26477,6 +26634,18 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"sDB" = (
+/obj/structure/decoration/shock{
+	pixel_y = 4;
+	name = "PORTAL-STORM SHELTER";
+	desc = "A sign indicating that this bunker is a portal storm shelter."
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "sDK" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -27903,6 +28072,13 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building)
+"tER" = (
+/turf/open/floor/f13{
+	icon_state = "stagestairs"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "tEX" = (
 /obj/machinery/conveyor/auto{
 	dir = 4
@@ -28016,15 +28192,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tIx" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
 	},
-/obj/structure/flora/junglebush/large,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "tIR" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -28483,6 +28657,16 @@
 	icon_state = "housewood2"
 	},
 /area/f13/wasteland)
+"tYc" = (
+/obj/item/beacon{
+	mouse_opacity = 0;
+	alpha = 0;
+	name = "RTN Teleporter Beacon"
+	},
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "tYe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -29069,6 +29253,16 @@
 	icon_state = "whiteyellowdirtychess2"
 	},
 /area/f13/wasteland)
+"upK" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "uqf" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain0"
@@ -29808,6 +30002,21 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"uSN" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/obj/structure/chair/sofa/corp/corner{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "uTz" = (
 /obj/structure/spider/stickyweb,
 /obj/machinery/light,
@@ -30900,11 +31109,8 @@
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland)
 "vGA" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2"
-	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "vGE" = (
 /obj/structure/barricade/wooden,
@@ -31517,6 +31723,12 @@
 /obj/item/reagent_containers/food/condiment/bbqsauce,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
+"wcX" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/f13,
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "wcY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -33058,6 +33270,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"xfV" = (
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building{
+	name = "Garland Portal-Storm Shelter"
+	})
 "xgf" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house,
@@ -55302,8 +55522,8 @@ sZw
 wSy
 mMG
 rUq
-rUq
-rUq
+aDy
+aDy
 rUq
 rUq
 pKh
@@ -55558,11 +55778,11 @@ mMG
 mMG
 rUq
 rUq
-sZw
-rUq
-rUq
-rUq
-ipy
+aDy
+aDy
+aDy
+aDy
+aDy
 pKh
 irh
 wrm
@@ -55814,13 +56034,13 @@ rUq
 rUq
 rUq
 mMG
-rUq
-rUq
-kdh
-rUq
-rUq
-rUq
-eFN
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
+vGA
 hZs
 jZa
 jZa
@@ -56071,15 +56291,15 @@ fLu
 rUq
 rUq
 mMG
-gEo
-bzO
-sZw
-sZw
-rUq
-rUq
-fKJ
-ldM
-rlu
+aDy
+jPE
+jPE
+jPE
+jPE
+jPE
+aDy
+aDy
+jql
 bHZ
 wSy
 rUq
@@ -56328,15 +56548,15 @@ rOJ
 eQT
 rUq
 mMG
-mMG
-mMG
-rUq
-rUq
-fdL
-mMG
-rUq
-rUq
-kWY
+aDy
+jPE
+giJ
+aqY
+gby
+jPE
+jPE
+jPE
+aDy
 mMG
 pBy
 rUq
@@ -56585,15 +56805,15 @@ nOw
 rOJ
 ctq
 iGy
-rUq
-rUq
-fdL
-rUq
-rUq
-sZw
-sZw
-mMG
-jvA
+sDB
+jPE
+ejM
+hkE
+hkE
+uSN
+fbP
+jPE
+bpI
 pKh
 dKF
 eQT
@@ -56842,15 +57062,15 @@ nOw
 ozt
 nnM
 rUq
-rUq
-nOl
-vFZ
-fLu
-fLu
-rUq
-sZw
-mMG
-rUq
+tER
+wcX
+dav
+tYc
+dpX
+oNS
+rOL
+jPE
+aDy
 pKh
 gJi
 pVu
@@ -57099,14 +57319,14 @@ bYq
 wcY
 kVZ
 mMG
-pKh
-fbY
-uMz
-wnL
-rOJ
-eQT
-rUq
-gzG
+hzN
+fme
+xfV
+ldM
+ldM
+ldM
+tIx
+jPE
 vGA
 jUe
 bYq
@@ -57356,15 +57576,15 @@ rnb
 rUq
 rUq
 mMG
-pKh
-ugc
-dhA
-nOw
-nOw
-rOJ
-ctq
+aDy
 jPE
-rUq
+jPE
+nQG
+jPE
+jPE
+aSS
+jPE
+aDy
 rnb
 rnb
 rUq
@@ -57613,15 +57833,15 @@ ipy
 rUq
 vNd
 rUq
-pKh
-pWX
-aKy
-nOw
-nOw
-ozt
-nnM
-rUq
-rUq
+aDy
+jPE
+jii
+hkE
+gZb
+jPE
+jPE
+jPE
+aDy
 pKh
 rUq
 rUq
@@ -57870,15 +58090,15 @@ rUq
 pKh
 dKF
 eQT
-mMG
-lfN
-pWX
-jZa
-bYq
-wcY
-kVZ
-mMG
-pUk
+aDy
+jPE
+upK
+ldM
+nMi
+jPE
+aDy
+aDy
+aDy
 eFN
 rUq
 rUq
@@ -58127,15 +58347,15 @@ pKh
 pKh
 pWX
 cyz
-tLd
-rUq
-rnb
-qZi
-rnb
-rUq
-rUq
-mMG
-mMG
+aDy
+jPE
+jPE
+jPE
+jPE
+jPE
+aDy
+aDy
+bpI
 fdL
 dgd
 gzG
@@ -58384,15 +58604,15 @@ rUq
 pKh
 eaS
 iqc
-tLd
-rUq
-dpX
-rUq
-rUq
-rUq
-tIx
-sZw
-rUq
+gdA
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
 rUq
 bzO
 mMG
@@ -58642,13 +58862,13 @@ rUq
 rUq
 lnJ
 rUq
-bzO
-rUq
-rUq
-rUq
-dHI
-dKF
-eQT
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
+aDy
 fLu
 rUq
 rUq
@@ -58899,10 +59119,10 @@ rUq
 rUq
 rUq
 rUq
-gEo
 rUq
 rUq
-pKh
+rUq
+rUq
 sZw
 pWX
 sqq
