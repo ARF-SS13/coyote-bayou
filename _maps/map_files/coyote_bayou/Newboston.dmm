@@ -3192,6 +3192,17 @@
 	color = "#DD4444"
 	},
 /area/f13/wasteland)
+"bNh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Diner Dangers"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building/abandoned)
 "bNo" = (
 /obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -4258,6 +4269,20 @@
 "crx" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"crH" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
 /area/f13/wasteland)
 "crV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -7717,6 +7742,16 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"ehi" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "ehp" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -10968,6 +11003,16 @@
 /obj/structure/railing,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
+"fNW" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 2"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "fOb" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -12410,6 +12455,17 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
+"gBg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "gBt" = (
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior2"
@@ -12978,6 +13034,23 @@
 /obj/structure/simple_door/dirtyglass,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"gRZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "gSd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -13209,6 +13282,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/trainstation)
+"gXZ" = (
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "gYg" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -15320,6 +15400,19 @@
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999";
 	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
+"idN" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
 	},
 /area/f13/wasteland)
 "ied" = (
@@ -18233,6 +18326,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"jAP" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 8"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2"
+	},
+/area/f13/wasteland)
 "jAV" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -18270,6 +18373,19 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"jCb" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "jCq" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
@@ -18340,6 +18456,20 @@
 /obj/structure/spacevine,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"jEs" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "jEw" = (
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13{
@@ -19583,6 +19713,11 @@
 /obj/structure/table/wood/bar,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"kmH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "kmM" = (
 /obj/structure/window/fulltile/store,
@@ -21437,6 +21572,17 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"liy" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "liA" = (
 /obj/structure/wreck/trash/engine,
 /obj/effect/decal/cleanable/dirt,
@@ -21804,6 +21950,17 @@
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
+"lsM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2left"
+	},
+/area/f13/wasteland)
 "lsR" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -21859,6 +22016,16 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"luT" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2left"
+	},
+/area/f13/wasteland)
 "lva" = (
 /obj/structure/table/wood,
 /obj/item/locked_box/weapon/melee/tier3,
@@ -22009,6 +22176,14 @@
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
 	},
+/area/f13/wasteland)
+"lxW" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 8"
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lyi" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23475,6 +23650,17 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"moK" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 5"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "moZ" = (
 /obj/machinery/vending/dinnerware{
 	pixel_y = 19;
@@ -23956,6 +24142,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"mBN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Diner Dangers"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "mCb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -25540,6 +25737,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nxn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "nxu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -26460,6 +26672,20 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
+"nTl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "nTI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26597,6 +26823,14 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/building)
+"nYd" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Diner Dangers"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "nYv" = (
 /obj/item/storage/trash_stack,
@@ -26983,11 +27217,12 @@
 	},
 /area/f13/wasteland)
 "omc" = (
-/obj/effect/landmark/vertibird{
-	name = "New Boston - Northwest Side";
-	id = "New Boston - Northwest Side"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming"
+	},
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
 	},
@@ -28149,6 +28384,18 @@
 	color = "#888888"
 	},
 /area/f13/wasteland/city/newboston/library)
+"oYa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "oYb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/conveyor{
@@ -30834,9 +31081,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "qwt" = (
-/obj/structure/simple_door/repaired,
-/obj/structure/spacevine,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "qwS" = (
 /obj/effect/decal/fakelattice,
@@ -31086,6 +31333,16 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"qBc" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain3"
+	},
+/area/f13/wasteland)
 "qBj" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -31315,6 +31572,12 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"qFZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "qGg" = (
 /obj/effect/decal/cleanable/glass,
@@ -36282,6 +36545,19 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/outdoors)
+"thB" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "thJ" = (
 /obj/structure/table/wood,
 /obj/item/clothing/under/swimsuit/green{
@@ -37172,6 +37448,17 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"tBB" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Newb Oston Gaming 3"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 1;
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "tBH" = (
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
@@ -37903,6 +38190,20 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"tSp" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "tSw" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -39155,6 +39456,10 @@
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
+/area/f13/building)
+"uEB" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "uEC" = (
 /obj/effect/decal/cleanable/robot_debris,
@@ -49092,7 +49397,7 @@ mec
 lWa
 aZE
 top
-uWd
+apj
 mec
 lWa
 tPQ
@@ -50119,7 +50424,7 @@ tPQ
 mec
 lWa
 mxS
-leN
+xeN
 uWd
 mec
 lWa
@@ -51477,7 +51782,7 @@ yde
 upt
 tPQ
 tot
-yde
+xaJ
 kwB
 oSM
 kwB
@@ -51662,7 +51967,7 @@ mec
 lWa
 aZE
 leN
-uWd
+apj
 mec
 lWa
 eSQ
@@ -51734,14 +52039,14 @@ aMU
 upt
 tPQ
 tPQ
-yde
+xaJ
 kFI
 rzg
 aMU
 yde
 aMU
 qXK
-upt
+mva
 tPQ
 tPQ
 tPQ
@@ -51988,17 +52293,17 @@ kwB
 uNx
 fbU
 kwB
-yde
+xaJ
 tPQ
 tPQ
-yde
+xaJ
 nvV
 dsk
 aMU
 yde
 tvB
 gYg
-yde
+xaJ
 tPQ
 tPQ
 bNZ
@@ -52245,12 +52550,12 @@ xuB
 xuB
 kwB
 epU
-yde
+xaJ
 tPQ
 tPQ
 yde
-yde
-yde
+xaJ
+xaJ
 hZc
 yde
 yde
@@ -52492,9 +52797,9 @@ hpI
 mec
 lWa
 upt
-yde
-yde
-yde
+xaJ
+xaJ
+xaJ
 yde
 yde
 yde
@@ -52945,7 +53250,7 @@ igt
 vzy
 vzy
 lWa
-aZE
+apj
 uWd
 uWd
 mec
@@ -53169,7 +53474,7 @@ tPQ
 mec
 fuV
 mxS
-uWd
+apj
 leN
 aTw
 lWa
@@ -54029,6 +54334,24 @@ eFO
 aZE
 hpI
 hec
+fNW
+hpI
+apj
+hpI
+hpI
+hpI
+hpI
+hpI
+hpI
+hpI
+hpI
+hpI
+iiM
+hpI
+fNW
+hpI
+iiM
+hpI
 hpI
 hpI
 apj
@@ -54041,31 +54364,13 @@ hpI
 hpI
 hpI
 hpI
-iiM
-hpI
-hpI
-hpI
-iiM
-hpI
-hpI
-hpI
-apj
-hpI
-hpI
-hpI
-hpI
-hpI
-hpI
-hpI
-hpI
-hpI
 hpI
 iiM
 hpI
 apj
 hpI
 iiM
-cJW
+omc
 cJW
 cJW
 cJW
@@ -54710,7 +55015,7 @@ tPQ
 tPQ
 mec
 fuV
-mxS
+wnw
 uWd
 leN
 hKA
@@ -55002,7 +55307,7 @@ vzy
 vzy
 lWa
 mxS
-top
+wnw
 top
 mec
 lWa
@@ -55538,7 +55843,7 @@ xoo
 nNm
 aYb
 nNm
-nNm
+jAP
 npu
 nNm
 lWa
@@ -56254,7 +56559,7 @@ mec
 ksO
 bIz
 nKo
-leN
+xeN
 mec
 lWa
 yde
@@ -56288,7 +56593,7 @@ vzy
 lWa
 aZE
 uWd
-uWd
+apj
 mec
 lWa
 tPQ
@@ -56353,7 +56658,7 @@ lOg
 fUN
 gqW
 aMU
-yde
+uEB
 asA
 aZE
 top
@@ -56605,12 +56910,12 @@ hKA
 vzy
 nRx
 vzy
-upt
+qwt
 aMU
 kwB
 pGW
 tvh
-upt
+qwt
 lWa
 aZE
 uWd
@@ -56867,7 +57172,7 @@ kSu
 aMU
 aMU
 aMU
-yde
+uEB
 ksO
 apj
 uWd
@@ -57537,7 +57842,7 @@ gIL
 gIL
 mec
 lWa
-mxS
+aZE
 top
 uWd
 mec
@@ -57571,7 +57876,7 @@ iWw
 wJj
 iWw
 eFO
-mxS
+wnw
 uWd
 uWd
 mec
@@ -58309,7 +58614,7 @@ yde
 vzy
 fuV
 xuW
-top
+apj
 uWd
 mec
 lWa
@@ -58337,7 +58642,7 @@ lWa
 mxS
 hpI
 hpI
-iiM
+apj
 hpI
 cJW
 cJW
@@ -58610,12 +58915,12 @@ tPQ
 mec
 lWa
 aZE
-hpI
+apj
 hpI
 iiM
 hpI
 hpI
-hpI
+apj
 cJW
 cJW
 cJW
@@ -58652,7 +58957,7 @@ hpI
 cJW
 hpI
 iiM
-hpI
+fNW
 hpI
 klx
 uWd
@@ -58882,7 +59187,7 @@ hpI
 iiM
 hpI
 hpI
-hpI
+wSJ
 iiM
 hpI
 hpI
@@ -59620,7 +59925,7 @@ mQz
 hKA
 lWa
 aZE
-uWd
+apj
 top
 mec
 lWa
@@ -59877,7 +60182,7 @@ tPQ
 mec
 lWa
 aZE
-uWd
+apj
 leN
 mec
 ksO
@@ -60109,7 +60414,7 @@ vzy
 lWa
 aZE
 top
-uWd
+apj
 mec
 ksO
 tPQ
@@ -60152,7 +60457,7 @@ mQz
 mec
 ksO
 aZE
-uWd
+apj
 top
 mec
 upt
@@ -61136,7 +61441,7 @@ ohw
 vzy
 fuV
 xuW
-top
+wnw
 leN
 mec
 lWa
@@ -61492,7 +61797,7 @@ yde
 gYg
 qXK
 uqz
-yde
+uEB
 vzy
 ksO
 xuW
@@ -61749,7 +62054,7 @@ yde
 hSh
 fUN
 kwB
-upt
+qwt
 vzy
 lWa
 aZE
@@ -61966,7 +62271,7 @@ yde
 lWa
 aZE
 top
-uWd
+moK
 mec
 yde
 jxJ
@@ -62421,7 +62726,7 @@ yde
 vzy
 lWa
 aZE
-leN
+xeN
 top
 mec
 lWa
@@ -62699,17 +63004,17 @@ tPQ
 tPQ
 tPQ
 tPQ
-tPQ
+lxW
 tPQ
 mec
 lWa
 xuW
+apj
 uWd
-uWd
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 mec
 yde
@@ -62771,7 +63076,7 @@ uWd
 uWd
 mec
 vzy
-yde
+xaJ
 kwB
 qIp
 fUp
@@ -63236,7 +63541,7 @@ dWa
 wvX
 ksO
 xuW
-top
+wnw
 uWd
 mec
 yde
@@ -64445,7 +64750,7 @@ tPQ
 hpI
 hpI
 hpI
-cJW
+wnw
 hpI
 cJW
 cJW
@@ -64453,26 +64758,26 @@ cJW
 hpI
 hpI
 uWo
-hpI
-hpI
-hpI
-hpI
-hpI
-cJW
-cJW
-hpI
-cJW
-hpI
-hpI
-cJW
-cJW
+apj
 hpI
 hpI
 hpI
 hpI
 cJW
 cJW
+hpI
 cJW
+hpI
+hpI
+cJW
+cJW
+hpI
+hpI
+hpI
+hpI
+cJW
+cJW
+wnw
 cJW
 cJW
 iiM
@@ -64495,7 +64800,7 @@ cJW
 cJW
 cJW
 hpI
-hpI
+apj
 cJW
 hpI
 hpI
@@ -64517,7 +64822,7 @@ hpI
 hpI
 hpI
 hpI
-cJW
+wnw
 hpI
 iiM
 uWo
@@ -64702,7 +65007,7 @@ tPQ
 axw
 hpI
 cJW
-omc
+cJW
 cJW
 cJW
 cJW
@@ -64720,20 +65025,20 @@ hpI
 cJW
 cJW
 cJW
-hpI
+apj
 cJW
 hpI
 hpI
 uWo
 cJW
-cJW
+wnw
 hpI
 hpI
 hpI
 cJW
 cJW
 iiM
-hpI
+apj
 wvY
 hpI
 iiM
@@ -64746,7 +65051,7 @@ cJW
 hpI
 cJW
 cJW
-hpI
+apj
 hpI
 hpI
 hpI
@@ -64857,7 +65162,7 @@ hpI
 leZ
 hpI
 wvY
-cJW
+gBg
 iiM
 iCt
 iCt
@@ -64962,7 +65267,7 @@ hpI
 hpI
 uWo
 cJW
-cJW
+wnw
 hpI
 hpI
 cJW
@@ -64972,14 +65277,14 @@ cJW
 cJW
 hpI
 hpI
+apj
+apj
 hpI
+cJW
 hpI
 hpI
 cJW
-hpI
-hpI
-cJW
-uWo
+xeN
 cJW
 cJW
 hpI
@@ -64999,7 +65304,7 @@ hpI
 hpI
 hpI
 hpI
-cJW
+wnw
 uWo
 cJW
 cJW
@@ -65406,7 +65711,7 @@ fNC
 ccs
 upt
 hqc
-uVu
+tBB
 hqc
 hRl
 tot
@@ -65616,8 +65921,8 @@ uWd
 leN
 hKA
 yde
-yde
-yde
+xaJ
+xaJ
 upt
 ooj
 rWc
@@ -65881,7 +66186,7 @@ lez
 tnE
 lRa
 dxw
-yde
+xaJ
 lWa
 aZE
 top
@@ -65919,9 +66224,9 @@ tYC
 oju
 jpF
 yde
-hqc
-wPB
-nfe
+luT
+lsM
+qBc
 hRl
 tot
 tot
@@ -66122,7 +66427,7 @@ dpp
 aMU
 aMU
 kwB
-upt
+mva
 brd
 lWa
 mxS
@@ -66138,7 +66443,7 @@ wBs
 dpp
 jRV
 hpf
-yde
+xaJ
 lWa
 mxS
 wnw
@@ -66379,7 +66684,7 @@ dpp
 aMU
 yfH
 kwB
-upt
+mva
 vzy
 lWa
 aZE
@@ -66578,7 +66883,7 @@ vzy
 lWa
 aZE
 top
-uWd
+apj
 mec
 yde
 xCc
@@ -66883,7 +67188,7 @@ uWd
 uWd
 hKA
 vzy
-lea
+xaJ
 aMU
 kwB
 qCA
@@ -67074,7 +67379,7 @@ mec
 ksO
 aZE
 leN
-uWd
+apj
 mec
 vzy
 acd
@@ -67177,9 +67482,9 @@ hvj
 aMU
 aMU
 upt
-yde
-upt
-upt
+xaJ
+mva
+mva
 yde
 yde
 brd
@@ -67634,7 +67939,7 @@ kwB
 yde
 lWa
 aZE
-hpI
+gRZ
 hpI
 hKA
 vzy
@@ -67686,7 +67991,7 @@ aZE
 top
 top
 eWw
-ssj
+uEB
 aMU
 kwB
 aoT
@@ -67818,7 +68123,7 @@ tPQ
 mec
 ksO
 mxS
-uWd
+apj
 uWd
 mec
 lWa
@@ -67943,7 +68248,7 @@ aZE
 uWd
 uWd
 mec
-cdu
+qFZ
 jVf
 aMU
 kwB
@@ -68119,7 +68424,7 @@ mbZ
 aWo
 lWa
 aZE
-top
+wnw
 uWd
 mec
 yde
@@ -68200,7 +68505,7 @@ aZE
 uWd
 uWd
 hKA
-upt
+qwt
 jVf
 aMU
 aMU
@@ -68406,7 +68711,7 @@ yde
 lWa
 sMx
 hpI
-uWo
+gRZ
 mec
 vNf
 vMp
@@ -69643,7 +69948,7 @@ tPQ
 hKA
 fuV
 mxS
-leN
+xeN
 uWd
 oHQ
 sNM
@@ -69662,7 +69967,7 @@ qys
 biO
 nAx
 uWd
-top
+wnw
 mec
 upt
 yde
@@ -70131,7 +70436,7 @@ tPQ
 mec
 ksO
 aZE
-top
+wnw
 uWd
 mec
 lWa
@@ -70448,7 +70753,7 @@ yde
 ksO
 xuW
 uWd
-uWd
+gRZ
 hKA
 vMp
 vMp
@@ -70764,7 +71069,7 @@ yde
 jxs
 rVZ
 fTG
-emj
+kmH
 ksO
 aZE
 top
@@ -70962,7 +71267,7 @@ yde
 fuV
 mxS
 top
-uWd
+gRZ
 mec
 ucr
 biu
@@ -71186,7 +71491,7 @@ mec
 lWa
 mxS
 leN
-uWd
+apj
 hKA
 acd
 eFl
@@ -71239,7 +71544,7 @@ hpI
 hpI
 xTS
 hpI
-hpI
+gRZ
 hpI
 xeN
 hpI
@@ -72011,8 +72316,8 @@ yde
 upt
 upt
 nUv
-upt
-cdu
+mva
+glB
 wvX
 wvX
 lWa
@@ -72201,7 +72506,7 @@ hpI
 hpI
 hpI
 cJW
-uWo
+xeN
 iCt
 cJW
 hpI
@@ -72250,7 +72555,7 @@ hpI
 hpI
 iiM
 hpI
-hpI
+crH
 hpI
 hpI
 hpI
@@ -72445,7 +72750,7 @@ mec
 lWa
 xuW
 hpI
-hpI
+apj
 iiM
 hpI
 hpI
@@ -72476,20 +72781,20 @@ iiM
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 uWo
 hpI
 uWo
 cJW
-uWo
+xeN
 iCt
 cJW
 leZ
 cJW
 hpI
-hpI
+apj
 iiM
 hpI
 hpI
@@ -72507,11 +72812,11 @@ hpI
 hpI
 iiM
 hpI
-hpI
-hpI
-hpI
-hpI
-hpI
+thB
+idN
+idN
+idN
+liy
 hpI
 hpI
 hpI
@@ -72566,7 +72871,7 @@ hpI
 hpI
 hpI
 apj
-hpI
+ehi
 hpI
 iiM
 cJW
@@ -72710,7 +73015,7 @@ uWo
 uWo
 uWo
 uWo
-cJW
+wnw
 cJW
 cJW
 uWo
@@ -72720,7 +73025,7 @@ hpI
 hpI
 cJW
 cJW
-cJW
+wnw
 uWo
 cJW
 hpI
@@ -72768,8 +73073,8 @@ cJW
 hpI
 cJW
 hpI
-hpI
-cJW
+thB
+nxn
 hpI
 hpI
 iiM
@@ -72988,7 +73293,7 @@ hpI
 hpI
 iiM
 cJW
-cJW
+wnw
 hpI
 hpI
 hpI
@@ -73001,7 +73306,7 @@ hpI
 hpI
 hpI
 iiM
-hpI
+apj
 hpI
 hpI
 iiM
@@ -73755,7 +74060,7 @@ jaN
 vzy
 lWa
 mxS
-leN
+xeN
 uWd
 mec
 lWa
@@ -74243,7 +74548,7 @@ tPQ
 mec
 ksO
 mxS
-top
+wnw
 uWd
 mec
 vzy
@@ -74544,7 +74849,7 @@ eFL
 eFL
 lZG
 aZE
-uWd
+apj
 top
 pOz
 pOz
@@ -74833,7 +75138,7 @@ aZE
 hpI
 wnw
 mec
-yde
+xaJ
 eDu
 vQb
 yde
@@ -75039,7 +75344,7 @@ vNO
 qxY
 vzy
 lWa
-mxS
+wnw
 top
 leN
 mec
@@ -75090,7 +75395,7 @@ aZE
 hpI
 uWo
 mec
-cdu
+glB
 iAI
 thW
 yde
@@ -75829,7 +76134,7 @@ vWX
 vzy
 lWa
 aZE
-uWd
+apj
 uWd
 mec
 mKV
@@ -76300,7 +76605,7 @@ mec
 lWa
 xuW
 uWd
-top
+wnw
 mec
 vzy
 uLf
@@ -76326,7 +76631,7 @@ vzy
 uOT
 xuW
 uWd
-top
+wnw
 mec
 lWa
 eBN
@@ -77610,7 +77915,7 @@ qxY
 vzy
 lWa
 aZE
-leN
+xeN
 top
 mec
 lWa
@@ -78143,7 +78448,7 @@ vzy
 lWa
 aZE
 uWd
-top
+wnw
 pOz
 pOz
 pOz
@@ -78851,7 +79156,7 @@ hpI
 hpI
 hpI
 hpI
-cJW
+wnw
 cJW
 cJW
 cJW
@@ -78873,7 +79178,7 @@ hpI
 hpI
 iiM
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -78886,7 +79191,7 @@ hpI
 cJW
 hpI
 hpI
-hpI
+apj
 cJW
 hpI
 hpI
@@ -78894,7 +79199,7 @@ hpI
 hpI
 hpI
 iiM
-hpI
+apj
 uWo
 hpI
 iiM
@@ -79091,12 +79396,12 @@ uWY
 uWY
 uWY
 hpI
-hpI
+apj
 hpI
 cJW
 iiM
 uWo
-cJW
+wnw
 hpI
 cJW
 cJW
@@ -79113,7 +79418,7 @@ cJW
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 cJW
@@ -79123,7 +79428,7 @@ cJW
 hpI
 hpI
 hpI
-cJW
+wnw
 leZ
 cJW
 hpI
@@ -79136,7 +79441,7 @@ hpI
 cJW
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79156,7 +79461,7 @@ cJW
 hpI
 iiM
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79166,7 +79471,7 @@ hpI
 hpI
 cJW
 hpI
-hpI
+apj
 hpI
 iiM
 hpI
@@ -79184,8 +79489,8 @@ hpI
 hpI
 hpI
 iiM
-hpI
-cJW
+jCb
+oYa
 hpI
 iiM
 hpI
@@ -79205,7 +79510,7 @@ iiM
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79426,7 +79731,7 @@ uWo
 cJW
 hpI
 iiM
-hpI
+apj
 hpI
 hpI
 iiM
@@ -79441,9 +79746,9 @@ lxJ
 aNt
 hpI
 leZ
-cJW
-hpI
-hpI
+nTl
+gXZ
+tSp
 leZ
 hpI
 svX
@@ -79617,7 +79922,7 @@ tby
 hpI
 hpI
 hpI
-cJW
+wnw
 uWo
 cJW
 hpI
@@ -79661,13 +79966,13 @@ hpI
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 iiM
 hpI
 cJW
-hpI
+apj
 iiM
 hpI
 hpI
@@ -79695,11 +80000,11 @@ hpI
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 leZ
 apj
-hpI
+jEs
 hpI
 iiM
 hpI
@@ -79862,7 +80167,7 @@ wdM
 uWY
 uWY
 cJW
-hpI
+apj
 cJW
 cJW
 leZ
@@ -79880,7 +80185,7 @@ wGC
 hpI
 hpI
 hpI
-hpI
+apj
 cJW
 cJW
 cJW
@@ -79888,7 +80193,7 @@ uWo
 cJW
 uWo
 uWo
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79897,7 +80202,7 @@ hpI
 cJW
 leZ
 hpI
-hpI
+apj
 hpI
 leZ
 hpI
@@ -79905,12 +80210,12 @@ hpI
 hpI
 hpI
 cJW
-cJW
+wnw
 hpI
 cJW
 hpI
 hpI
-hpI
+apj
 hpI
 cJW
 hpI
@@ -79932,7 +80237,7 @@ hpI
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79946,7 +80251,7 @@ uWo
 iiM
 uWo
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -79961,7 +80266,7 @@ hpI
 iiM
 hpI
 hpI
-hpI
+apj
 hpI
 hED
 hpI
@@ -79976,7 +80281,7 @@ iiM
 cJW
 cJW
 cJW
-hpI
+apj
 hpI
 hpI
 hpI
@@ -80925,7 +81230,7 @@ gep
 hKA
 lWa
 mxS
-nKo
+ukT
 top
 mec
 brd
@@ -81858,8 +82163,8 @@ hRl
 tot
 skN
 cTR
-rih
-bIu
+xRF
+bNh
 iWj
 rVF
 esN
@@ -81979,7 +82284,7 @@ dxk
 brd
 lWa
 aZE
-uWd
+apj
 uWd
 eRj
 vzy
@@ -82108,7 +82413,7 @@ mec
 vzy
 inV
 inV
-aMU
+nYd
 kwB
 yde
 hRl
@@ -82211,7 +82516,7 @@ hKA
 lWa
 mxS
 nKo
-top
+wnw
 mec
 vzy
 mKq
@@ -82878,7 +83183,7 @@ top
 mec
 yde
 inV
-aMU
+nYd
 yde
 yde
 yde
@@ -83127,7 +83432,7 @@ hvj
 kwB
 kwB
 hvj
-lIE
+aMU
 ksO
 mxS
 uWd
@@ -83265,7 +83570,7 @@ vzy
 ksO
 aZE
 uWd
-leN
+xeN
 iDH
 vzy
 cdu
@@ -83333,8 +83638,8 @@ mec
 tPQ
 mQz
 mql
-upt
-upt
+ydy
+ydy
 mQz
 dVq
 upt
@@ -83384,7 +83689,7 @@ kwB
 bvV
 kwB
 aMU
-yde
+xaJ
 lWa
 xuW
 apj
@@ -83590,7 +83895,7 @@ mec
 tPQ
 tPQ
 mql
-cdu
+hYy
 aDm
 tPQ
 mQz
@@ -83641,7 +83946,7 @@ kwB
 uhO
 aMU
 aMU
-yde
+xaJ
 lWa
 mxS
 uWd
@@ -83845,9 +84150,9 @@ top
 uWd
 mec
 yde
-yde
-upt
-upt
+wvX
+ydy
+ydy
 lYb
 wlD
 dVq
@@ -83898,7 +84203,7 @@ kwB
 fUx
 aMU
 aMU
-lIE
+aMU
 lWa
 mxS
 top
@@ -84009,7 +84314,7 @@ upt
 mec
 lWa
 aZE
-leN
+xeN
 uWd
 mec
 ndt
@@ -85129,7 +85434,7 @@ wDV
 uWd
 uWd
 mec
-yde
+wvX
 gdh
 aMU
 tnh
@@ -85643,8 +85948,8 @@ uWd
 uWd
 uWd
 mec
-yde
-yde
+wvX
+wvX
 yde
 plo
 plo
@@ -86201,8 +86506,8 @@ upt
 yde
 yde
 upt
-yde
-upt
+xaJ
+mva
 cdu
 upt
 yde
@@ -86349,11 +86654,11 @@ vzy
 lWa
 xuW
 jOR
-hpI
+apj
 iiM
 hpI
 hpI
-hpI
+apj
 hpI
 hpI
 hpI
@@ -87351,7 +87656,7 @@ mec
 lWa
 xuW
 uWd
-top
+wnw
 mec
 fuV
 saD
@@ -87747,7 +88052,7 @@ kwB
 kwB
 aMU
 kwB
-yde
+xaJ
 vzy
 bvt
 mxS
@@ -88004,7 +88309,7 @@ aMU
 fYs
 uaD
 aMU
-upt
+mva
 brd
 tmf
 mxS
@@ -88213,7 +88518,7 @@ iir
 uWd
 uWd
 mec
-qwt
+xaJ
 aMU
 nfC
 aMU
@@ -88403,7 +88708,7 @@ iWw
 iWw
 tLU
 lWa
-aZE
+apj
 top
 top
 mec
@@ -88470,7 +88775,7 @@ iir
 top
 uWd
 mec
-wvX
+xaJ
 aMU
 aMU
 aMU
@@ -89663,7 +89968,7 @@ ydy
 mec
 lWa
 aZE
-top
+wnw
 top
 pOz
 pOz
@@ -90065,7 +90370,7 @@ vzy
 bvt
 aZE
 hpI
-cJW
+mBN
 hpI
 hpI
 hpI
@@ -90527,8 +90832,8 @@ top
 uWd
 iDH
 vzy
-wvX
-wvX
+xaJ
+xaJ
 wvX
 wvX
 wvX
@@ -90784,7 +91089,7 @@ top
 uWd
 dEj
 vzy
-wvX
+xaJ
 aMU
 mGR
 cUS
@@ -90974,7 +91279,7 @@ aMU
 yde
 lWa
 aZE
-uWd
+apj
 uWd
 mec
 vzy
@@ -91720,7 +92025,7 @@ mec
 lWa
 mxS
 nKo
-top
+wnw
 pOz
 pOz
 dka
@@ -92747,7 +93052,7 @@ tPQ
 mec
 lWa
 aZE
-top
+wnw
 top
 mec
 vzy
@@ -93136,9 +93441,9 @@ wvX
 wvX
 flJ
 jjG
-wvX
-wvX
-wvX
+xaJ
+xaJ
+xaJ
 jjG
 jjG
 ydy
@@ -93288,7 +93593,7 @@ vNf
 lWa
 mxS
 uWd
-uWd
+apj
 mec
 brd
 nZO
@@ -94803,7 +95108,7 @@ jgL
 dAy
 qSS
 mxS
-nKo
+ukT
 top
 mec
 vzy
@@ -94829,7 +95134,7 @@ sNE
 vNf
 lWa
 aZE
-uWd
+apj
 uWd
 mec
 mlt
@@ -95153,7 +95458,7 @@ veP
 veP
 lmt
 lmt
-yde
+xaJ
 jMg
 hCn
 rIX
@@ -95410,7 +95715,7 @@ uWd
 pot
 lmt
 lmt
-yde
+xaJ
 hCn
 hCn
 hCn
@@ -95667,7 +95972,7 @@ uWd
 pot
 lmt
 lmt
-yde
+xaJ
 qzx
 aUZ
 pxg
@@ -95848,7 +96153,7 @@ hpI
 hpI
 hpI
 cJW
-hpI
+apj
 hpI
 hpI
 cJW
@@ -95956,8 +96261,8 @@ mxS
 leN
 leN
 mec
-yde
-yde
+xaJ
+xaJ
 hNm
 hNm
 hNm
@@ -96094,7 +96399,7 @@ cJW
 hpI
 hpI
 hpI
-hpI
+apj
 uWo
 hpI
 hpI
@@ -96110,7 +96415,7 @@ hpI
 hpI
 hpI
 hpI
-hpI
+apj
 hpI
 iiM
 hpI
@@ -96213,7 +96518,7 @@ aZE
 leN
 uWd
 mec
-yde
+xaJ
 aMU
 kwB
 aMU
@@ -96355,7 +96660,7 @@ cJW
 hpI
 hpI
 hpI
-cJW
+wnw
 hpI
 hpI
 cJW
@@ -96367,7 +96672,7 @@ hpI
 hpI
 hpI
 cJW
-hpI
+apj
 hpI
 iiM
 hpI
@@ -96733,7 +97038,7 @@ lqb
 aMU
 pVm
 aMU
-yde
+xaJ
 ksO
 tPQ
 tPQ
@@ -96990,7 +97295,7 @@ qQM
 puv
 kaJ
 kwB
-yde
+xaJ
 lWa
 tPQ
 tPQ
@@ -97247,7 +97552,7 @@ kwB
 aMU
 dJT
 uIx
-yde
+xaJ
 lWa
 tPQ
 tPQ
@@ -101851,12 +102156,12 @@ fwG
 mlX
 nIO
 brd
-cdu
+glB
+mva
 upt
-upt
 cdu
-cdu
-upt
+glB
+mva
 niQ
 jPi
 niQ
@@ -102108,7 +102413,7 @@ ucr
 mlX
 brd
 vzy
-cdu
+glB
 tjH
 aAz
 yde
@@ -102352,9 +102657,9 @@ vNf
 vNf
 vNf
 vNf
-vNf
-fwG
-vNf
+xaJ
+mva
+xaJ
 fwG
 lxE
 wMX
@@ -103392,7 +103697,7 @@ kwB
 fwG
 vzy
 vzy
-yde
+xaJ
 jfx
 yiB
 aoT
@@ -103649,7 +103954,7 @@ lhn
 vNf
 brd
 mlX
-yde
+xaJ
 rjj
 syB
 skT
@@ -103906,7 +104211,7 @@ kwB
 vNf
 brd
 vzy
-upt
+mva
 yde
 yde
 yde
