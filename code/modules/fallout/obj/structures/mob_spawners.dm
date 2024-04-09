@@ -54,6 +54,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/list/faction = list()
 	/// hold off on making the component
 	var/hold_component = FALSE
+	var/ignore_faction = FALSE
+	var/generation = 1
 
 /obj/structure/nest/blank
 	hold_component = TRUE
@@ -81,7 +83,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		_randomizer_tag = randomizer_tag,\
 		_randomizer_kind = randomizer_kind,\
 		_randomizer_difficulty = randomizer_difficulty,\
-		_delay_start = delay_start\
+		_delay_start = delay_start,\
+		_ignore_faction = ignore_faction,\
+		_generation = generation,\
 		)
 
 /obj/structure/nest/Destroy()
@@ -226,8 +230,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "pirate hideout"
 	max_mobs = 2
 	spawn_time = 10 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/pirate/melee = 2,
-					/mob/living/simple_animal/hostile/pirate/ranged = 2)
+	mob_types = list(/mob/living/simple_animal/hostile/raider/pirate/melee = 2,
+					/mob/living/simple_animal/hostile/raider/pirate/ranged = 2)
 
 /obj/structure/nest/russian
 	name = "russian hideout"
@@ -242,12 +246,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "syndicate hideout"
 	max_mobs = 2
 	spawn_time = 15 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/melee/sword/space = 2,
-					/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper = 2,
-					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space = 2,
-					/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper = 2,
-					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
-					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper)
+	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"

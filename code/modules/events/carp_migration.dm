@@ -120,37 +120,37 @@ GLOBAL_LIST_EMPTY(fish_ponds) // actually spawners
 	var/list/spawn_holes = list()
 
 /datum/round_event/common/spawn_nests/start()
-	var/time_in = world.time - SSticker.round_start_time
-	var/num_to_spawn = LAZYLEN(GLOB.nest_spawn_points)
-	if(num_to_spawn <= 0)
-		return kill()
-	switch(time_in)
-		if(-INFINITY to 45 MINUTES)
-			num_to_spawn = min(2, num_to_spawn)
-		if(45 MINUTES to 1.5 HOURS)
-			num_to_spawn *= 0.25
-		if(1.5 HOURS to 3 HOURS)
-			num_to_spawn *= 0.5
-		if(3 HOURS to 4 HOURS)
-			num_to_spawn *= 0.75
-		else
-			num_to_spawn *= 0.90
-	num_to_spawn = round(clamp(num_to_spawn, 0, min(LAZYLEN(GLOB.nest_spawn_points), max_nests_per_event)))
-	var/list/hak = GLOB.nest_spawn_points
-	var/list/spawndidates = hak.Copy()
-	for(var/i in 1 to num_to_spawn)
-		if(!LAZYLEN(spawndidates))
-			break
-		var/coordie = pick(spawndidates)
-		spawndidates -= coordie
-		var/turf/here = coords2turf(coordie)
-		if(locate(/obj/structure/nest) in here)
-			continue // already a nest here lol
-		coords_to_spawn_at |= coordie
-		var/mob/living/simple_animal/nest_spawn_hole_guy/hole = new /mob/living/simple_animal/nest_spawn_hole_guy(here)
-		hole.register_event(src)
-		spawn_holes |= hole
-	message_admins("Readied [LAZYLEN(coords_to_spawn_at)] nests. Firing soon-ish.")
+	// var/time_in = world.time - SSticker.round_start_time
+	// var/num_to_spawn = LAZYLEN(GLOB.nest_spawn_points)
+	// if(num_to_spawn <= 0)
+	// 	return kill()
+	// switch(time_in)
+	// 	if(-INFINITY to 45 MINUTES)
+	// 		num_to_spawn = min(2, num_to_spawn)
+	// 	if(45 MINUTES to 1.5 HOURS)
+	// 		num_to_spawn *= 0.25
+	// 	if(1.5 HOURS to 3 HOURS)
+	// 		num_to_spawn *= 0.5
+	// 	if(3 HOURS to 4 HOURS)
+	// 		num_to_spawn *= 0.75
+	// 	else
+	// 		num_to_spawn *= 0.90
+	// num_to_spawn = round(clamp(num_to_spawn, 0, min(LAZYLEN(GLOB.nest_spawn_points), max_nests_per_event)))
+	// var/list/hak = GLOB.nest_spawn_points
+	// var/list/spawndidates = hak.Copy()
+	// for(var/i in 1 to num_to_spawn)
+	// 	if(!LAZYLEN(spawndidates))
+	// 		break
+	// 	var/coordie = pick(spawndidates)
+	// 	spawndidates -= coordie
+	// 	var/turf/here = coords2turf(coordie)
+	// 	if(locate(/obj/structure/nest) in here)
+	// 		continue // already a nest here lol
+	// 	coords_to_spawn_at |= coordie
+	// 	var/mob/living/simple_animal/nest_spawn_hole_guy/hole = new /mob/living/simple_animal/nest_spawn_hole_guy(here)
+	// 	hole.register_event(src)
+	// 	spawn_holes |= hole
+	// message_admins("Readied [LAZYLEN(coords_to_spawn_at)] nests. Firing soon-ish.")
 
 /datum/round_event/common/spawn_nests/tick()
 	if(!LAZYLEN(coords_to_spawn_at))

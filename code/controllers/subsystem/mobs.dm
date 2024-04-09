@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(mobs)
 
 	var/there_is_no_escape = FALSE // there is escape
 	var/debug_no_icon_2_html = FALSE
+	var/debug_everyone_has_robuster_searching = FALSE
 
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 

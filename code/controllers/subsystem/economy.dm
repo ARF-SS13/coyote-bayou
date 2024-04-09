@@ -976,10 +976,10 @@ SUBSYSTEM_DEF(economy)
 		to_save += list(save_package)
 	P.saved_active_quests = to_save.Copy()
 	. = P.save_character()
-	COOLDOWN_START(src, save_cooldown, 1 SECONDS)
+	COOLDOWN_START(src, save_cooldown, 15 SECONDS)
 	if(!COOLDOWN_FINISHED(src, save_spam_cooldown))
 		return
-	COOLDOWN_START(src, save_spam_cooldown, 15 SECONDS)
+	COOLDOWN_START(src, save_spam_cooldown, 30 MINUTES)
 	to_chat(user, span_green("Quest data saved!"))
 
 
