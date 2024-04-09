@@ -1504,8 +1504,8 @@
 		"Silver Hybrid" = "snorm_",
 		"Silver Hybrid Inverted" = "snorminvert_",
 		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
-	icon_dead_suffix = "_rest"
-	icon_rest_suffix = "_dead"
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
 	rotate_on_lying = FALSE
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/mimic
