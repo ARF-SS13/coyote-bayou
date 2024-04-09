@@ -186,6 +186,7 @@
 #define TRAIT_ARMBLADE			"Arm Blade"
 #define TRAIT_CYBERKNIFE		"Cyber Blade"
 #define TRAIT_ARMTENT			"Tentacle Arm"
+#define TRAIT_MAGEGRAB			"Mage Grab"
 #define TRAIT_TAILPLAY			"Tail Player"
 #define TRAIT_TAILWHIP			"Tail Whipper"
 #define TRAIT_TAILSMASH			"Tail Smasher"

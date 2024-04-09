@@ -1267,8 +1267,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!path)
 		return 0
 	if(world.time < savecharcooldown)
-		if(istype(parent))
-			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
+		//if(istype(parent))
+			//to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
 	SSquirks.CheckAndVerifyPrefQuirks(src, FALSE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN

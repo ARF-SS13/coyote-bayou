@@ -37,6 +37,12 @@
 	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
 	cost = 40
 
+/datum/supplykit_item/magic/magma
+	name = "Lesser Magma Staff"
+	desc = "A short range flamethrower for magicians"
+	item = /obj/item/gun/magic/staff/kelpmagic/flamethrower/weak
+	cost = 40
+
 /datum/supplykit_item/magic/acid
 	name = "Lesser Acid Staff"
 	desc = "A simple staff that launches a acid ball."

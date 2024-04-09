@@ -88933,10 +88933,6 @@
 /area/f13/wasteland)
 "tOk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/vertibird{
-	id = "Nash - SE of the City of Nash";
-	name = "Nash - SE of the City of Nash"
-	},
 /obj/machinery/camera/autoname{
 	dir = 5;
 	pixel_y = 14;
@@ -101337,10 +101333,6 @@
 "xiA" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
-	},
-/obj/effect/landmark/vertibird{
-	id = "Nash - Museum";
-	name = "Nash - Museum"
 	},
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{

@@ -850,7 +850,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 
-	faction = list("hostile", "gecko", "rat-friend")
+	faction = list("rat", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -926,7 +926,7 @@
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
-	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	faction = list("slime") //at last, I am at peace ~TK
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -1017,15 +1017,7 @@
 		'sound/creatures/terrorbird/hoot3.ogg',
 		'sound/creatures/terrorbird/hoot4.ogg',
 		)
-	emote_taunt_sound = list(
-		'sound/creatures/terrorbird/growl1.ogg',
-		'sound/creatures/terrorbird/growl2.ogg',
-		'sound/creatures/terrorbird/growl3.ogg',
-		)
-	death_sound = list(
-		'sound/creatures/terrorbird/groan1.ogg',
-		'sound/creatures/terrorbird/groan2.ogg',
-	)
+
 	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
 	desc_short = "What a terrifying bird."
 

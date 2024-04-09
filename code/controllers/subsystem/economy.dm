@@ -979,8 +979,8 @@ SUBSYSTEM_DEF(economy)
 	COOLDOWN_START(src, save_cooldown, 15 SECONDS)
 	if(!COOLDOWN_FINISHED(src, save_spam_cooldown))
 		return
-	COOLDOWN_START(src, save_spam_cooldown, 30 MINUTES)
-	to_chat(user, span_green("Quest data saved!"))
+	COOLDOWN_START(src, save_spam_cooldown, 15 SECONDS)
+	
 
 
 /datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
