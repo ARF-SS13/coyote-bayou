@@ -263,7 +263,7 @@
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
 	slot_flags = NONE
 	flags_1 = NONE
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = /obj/item/ammo_casing/magic/tentacle
 	fire_sound = 'sound/weapons/whipgrab.ogg'
 	force = 0
