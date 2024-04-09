@@ -275,7 +275,7 @@
 	desc = "Damn bitch, you eat with them teeth?"
 	color = "#FF4444"
 	force = 40
-	attack_speed = CLICK_CD_MELEE * 0.8
+	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/biter/fast
 	name = "Fast Biter"
@@ -392,7 +392,7 @@
 	desc = "RIP AND TEAR."
 	color = "#FF4444"
 	force = 40
-	attack_speed = CLICK_CD_MELEE * 0.8
+	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/clawer/fast
 	name = "Fast Clawer"
@@ -545,7 +545,7 @@
 	icon_state = "proboscis"
 	color = "#FF4444"
 	force = 40
-	attack_speed = CLICK_CD_MELEE * 0.8
+	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/beans
 	name = "beans"
