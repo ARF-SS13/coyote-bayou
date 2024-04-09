@@ -410,7 +410,7 @@
 
 //Tier 2 Ammo
 
-/datum/design/ammolathe/musket
+/datum/design/ammolathe/musket/minie
 	name = "flintlock minie ball pouch"
 	id = "musket_minie"
 	build_path = /obj/item/ammo_box/flintlock/minie
