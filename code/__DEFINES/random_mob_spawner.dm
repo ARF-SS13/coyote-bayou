@@ -891,18 +891,18 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 3
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
-		/mob/living/simple_animal/hostile/pirate/melee = 5
+		/mob/living/simple_animal/hostile/raider/pirate/melee = 5
 		)
 	num_mobs_to_spawn_medium = 2
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_medium = list(
-		/mob/living/simple_animal/hostile/pirate/melee = 2,
-		/mob/living/simple_animal/hostile/pirate/ranged = 3
+		/mob/living/simple_animal/hostile/raider/pirate/melee = 2,
+		/mob/living/simple_animal/hostile/raider/pirate/ranged = 3
 		)
 	num_mobs_to_spawn_hard = 2
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/pirate/ranged = 5,
+		/mob/living/simple_animal/hostile/raider/pirate/ranged = 5,
 		)
 
 /// Russians
@@ -943,20 +943,20 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
-		/mob/living/simple_animal/hostile/syndicate/melee/sword/space = 2,
-		/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper = 1
+		/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space = 2,
+		/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space/stormtrooper = 1
 		)
 	num_mobs_to_spawn_medium = 2
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_medium = list(
-		/mob/living/simple_animal/hostile/syndicate/ranged/smg/space = 2,
-		/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper = 1
+		/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space = 2,
+		/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space/stormtrooper = 1
 		)
 	num_mobs_to_spawn_hard = 1
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space = 2,
-		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper = 1
+		/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space = 2,
+		/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper = 1
 		)
 
 /// Cazadores
