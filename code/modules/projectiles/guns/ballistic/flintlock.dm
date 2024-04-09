@@ -41,6 +41,10 @@
 	update_icon()
 	return TRUE
 
+/obj/item/gun/flintlock/generate_guntags()
+	..()
+	gun_tags |= GUN_PROJECTILE
+
 /obj/item/gun/flintlock/ui_data(mob/user)
 	var/list/data = ..()
 	data["cockable"] = TRUE
