@@ -132,6 +132,7 @@
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
+	del_on_death = TRUE
 
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
