@@ -1479,7 +1479,6 @@
 "fh" = (
 /obj/effect/fake_stairs/east,
 /obj/structure/railing{
-	dir = 2;
 	color = "Grey"
 	},
 /obj/machinery/light{
@@ -1982,21 +1981,6 @@
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
-"gx" = (
-/obj/structure/wood_counter{
-	color = "#251A17";
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building)
 "gA" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/f13{
@@ -2021,11 +2005,6 @@
 /obj/item/lipstick/black,
 /obj/structure/mirror{
 	pixel_x = 24
-	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	layer = 2;
-	dir = 4
 	},
 /obj/structure/table/wood{
 	layer = 2.5;
@@ -2486,8 +2465,7 @@
 "iE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
@@ -2682,10 +2660,6 @@
 "jA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/wood_counter/bend{
-	layer = 2;
-	dir = 8
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -3565,19 +3539,6 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
-"mY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 1
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/building)
 "mZ" = (
 /obj/structure/railing{
 	dir = 8;
@@ -4275,10 +4236,6 @@
 	layer = 2.5;
 	alpha = 1
 	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	layer = 2
-	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -4513,11 +4470,6 @@
 "qy" = (
 /obj/machinery/microwave/stove{
 	pixel_x = 18
-	},
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 1;
-	pixel_x = -10
 	},
 /obj/structure/table/wood{
 	layer = 2.5;
@@ -5164,11 +5116,6 @@
 "sT" = (
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1
-	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	dir = 1;
-	layer = 2
 	},
 /obj/structure/table/wood{
 	layer = 2.5;
@@ -5943,11 +5890,6 @@
 /obj/item/lipstick,
 /obj/structure/mirror{
 	pixel_x = 24
-	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	layer = 2;
-	dir = 4
 	},
 /obj/structure/table/wood{
 	layer = 2.5;
@@ -7778,10 +7720,6 @@
 /area/f13/building)
 "CJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 4
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -9004,11 +8942,6 @@
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 1
 	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	dir = 1;
-	layer = 2
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -9759,10 +9692,6 @@
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
-	},
-/obj/structure/wood_counter{
-	color = "#251A17";
-	layer = 2
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -11655,11 +11584,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/obj/structure/wood_counter{
-	color = "#251A17";
-	dir = 1;
-	layer = 2
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -13016,10 +12940,6 @@
 /area/f13/caves)
 "UK" = (
 /obj/machinery/light,
-/obj/structure/wood_counter{
-	layer = 2;
-	dir = 1
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -13315,10 +13235,6 @@
 /area/f13/wasteland)
 "VI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/wood_counter/bend{
-	dir = 1;
-	layer = 2
-	},
 /obj/structure/table/wood{
 	layer = 2.5;
 	alpha = 1
@@ -14544,9 +14460,6 @@
 /area/f13/building)
 "ZK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/wood_counter{
-	layer = 2
-	},
 /obj/structure/sink/kitchen{
 	pixel_y = 19;
 	layer = 1.9
@@ -49091,7 +49004,7 @@ Zo
 Zo
 NO
 QU
-gx
+pB
 OL
 ox
 IU
@@ -59902,7 +59815,7 @@ RD
 Zo
 ZK
 ll
-mY
+jA
 Zo
 jk
 jk
