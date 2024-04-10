@@ -212,7 +212,7 @@
 		var/sanitizedsaycolor = client.sanitize_chat_color(speaker.get_chat_color())
 		message = color_for_chatlog(message, sanitizedsaycolor, speaker.name)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
-	if(islist(data) && LAZYACCESS(data, "is_radio") && !LAZYACCESS(data, "suppress_blurbles") && (data["ckey"] in GLOB.directory) && CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
+	if(islist(data) && LAZYACCESS(data, "is_radio") && !LAZYACCESS(data, "suppress_blurbles") && (data["ckey"] in GLOB.directory) && CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES) && !SSchat.debug_block_radio_blurbles)
 		var/mob/blurbler = ckey2mob(data["ckey"])
 		if(blurbler && blurbler != src)
 			blurbler.play_AC_typing_indicator(message, speaker, src, TRUE)
