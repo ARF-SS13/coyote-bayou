@@ -632,7 +632,7 @@
 	resize = 0.5
 	update_transform()
 
-/mob/living/simple_animal/hostile/radroach/macro
+/mob/living/simple_animal/hostile/radroach/strongradroach
 	maxHealth = 140
 	health = 140
 	name = "Macro Pillbug"
