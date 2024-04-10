@@ -33,7 +33,7 @@
 	maxHealth = 10
 	health = 10
 	spacewalk = TRUE
-	faction = list("hostile")
+	faction = list("hostile", "bees-friend")
 	dodge_prob = 0
 	move_to_delay = 0
 	obj_damage = 0
