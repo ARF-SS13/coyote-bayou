@@ -123,10 +123,10 @@
 		var/obj/structure/nest/nest = parent
 		if(nest.spawned_by_ckey)
 			am_special = TRUE
-	if(istype(parent, /obj/structure/nest/special))
+	if(istype(parent, /obj/structure/nest/special) || ismob(parent))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
-	if(!am_special && !delay_start)
+	if(parent.type == (/obj/structure/nest) && !am_special && !delay_start && LAZYLEN(mob_types))
 		my_ticket = new /datum/nest_box(src)
 	// if(SSspawners.use_turf_registration)
 	// 	register_turfs()
@@ -238,7 +238,7 @@
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
-	if(my_ticket && !am_special) // we'll be back, eventually
+	if(my_ticket && !am_special && parent.type == /obj/structure/nest) // we'll be back, eventually
 		my_ticket.globalize(src)
 	qdel(src)
 
@@ -509,6 +509,8 @@
 	var/datum/weakref/assigned_to
 
 /datum/nest_box/New(datum/component/spawner/girlfriend)
+	if(girlfriend.am_special)
+		return
 	spawn_time                = girlfriend.spawn_time
 	max_mobs                  = girlfriend.max_mobs
 	// spawn_text                = girlfriend.spawn_text
@@ -542,11 +544,19 @@
 	. = ..()
 
 /datum/nest_box/proc/globalize(datum/component/spawner/parent)
-	if(istype(parent.parent, /obj/structure/nest))
-		var/obj/structure/nest/N = parent.parent
-		if(N.spawned_by_ckey)
-			return FALSE
-	parent.my_ticket = null // one way or another, we're not coming back
+	parent?.my_ticket = null // one way or another, we're not coming back
+	if(!parent)
+		qdel(src)
+		return FALSE
+	if(!parent.parent || parent.parent.type != /obj/structure/nest) // darn junker creators
+		qdel(src)
+		return FALSE
+	var/obj/structure/nest/N = parent.parent // maybe if I keep writing these, mine'll get back together
+	if(N.spawned_by_ckey || istype(N, /obj/structure/nest/special))
+		return FALSE
+	if(LAZYLEN(parent.mob_types) < 1)
+		qdel(src)
+		return FALSE
 	var/turf/is_there = my_turf() || get_turf(parent?.parent)
 	if(!is_there)
 		qdel(src)
