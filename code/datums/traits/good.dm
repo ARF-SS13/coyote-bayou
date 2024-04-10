@@ -1906,6 +1906,28 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
 
+/datum/quirk/beesfriend
+	name = "Beast Friend - Radbees"
+	desc = "Rad-bees are not going to attack upon seeing you. Good for wasteland apiarists!"
+	value = 14
+	category = "Critter Quirks"
+	mechanics = "Radbees share their faction with you, meaning they won't do anything about you or care at all that you exist."
+	mob_trait = TRAIT_BEASTFRIEND_BEE
+	gain_text = span_notice("(Rad)Bee not afraid!")
+	lose_text = span_danger("(Rad)BEE AFRAID!!")
+	medical_record_text = "Patient talks about bees a lot. Radiated ones, specifically."
+	locked = FALSE
+	human_only = FALSE
+
+/datum/quirk/beesfriend/add()
+	var/mob/living/H = quirk_holder
+	H.faction |= list("bees-friend")
+
+/datum/quirk/beesfriend/remove()
+	var/mob/living/H = quirk_holder
+	if(H)
+		H.faction -= list("bees-friend")
+
 /datum/quirk/wildshape
 	name = "Wild Shape"
 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
