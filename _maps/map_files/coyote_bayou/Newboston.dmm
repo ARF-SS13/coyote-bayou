@@ -2677,7 +2677,6 @@
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = 2
 	},
 /turf/open/floor/wood_common{
@@ -3760,9 +3759,7 @@
 	},
 /area/f13/building)
 "ceh" = (
-/obj/machinery/mineral/wasteland_vendor/ammo{
-	pixel_y = 0
-	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
 /obj/machinery/light{
 	light_color = "#e8eaff";
 	dir = 1;
@@ -10900,10 +10897,6 @@
 /area/f13/wasteland)
 "fKF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/wood_counter{
-	layer = 2;
-	pixel_y = 3
-	},
 /obj/structure/sink{
 	pixel_y = 20;
 	layer = 1.9
@@ -10911,12 +10904,11 @@
 /obj/structure/mirror/alt{
 	pixel_y = 30
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/item/soap{
 	pixel_y = 6
+	},
+/obj/structure/table/wood_counter{
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building)
@@ -13527,12 +13519,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"hel" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors)
 "hep" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/curtain,
@@ -17218,9 +17204,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/ruins{
 	name = "stepping stones";
 	color = "#bfbfbf"
@@ -25808,9 +25792,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "nyL" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -38747,9 +38729,7 @@
 	},
 /area/f13/building)
 "ujm" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/ruins{
 	name = "stepping stones";
 	color = "#bfbfbf"
@@ -40140,9 +40120,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/caves)
 "uYT" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -45122,9 +45100,7 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 15
 	},
-/obj/structure/table/wood/bar{
-	pixel_y = 0
-	},
+/obj/structure/table/wood/bar,
 /turf/open/floor/plasteel/f13/darkmarble,
 /area/f13/wasteland/city/newboston/bar)
 "xGw" = (
@@ -76021,7 +75997,7 @@ vMp
 vMp
 dGj
 yde
-hel
+vJk
 kMK
 yde
 ogc
@@ -76278,7 +76254,7 @@ cZU
 cZU
 dGj
 yde
-hel
+vJk
 rGC
 yde
 yde
@@ -76535,7 +76511,7 @@ qBj
 qBj
 xgZ
 yde
-hel
+vJk
 dqa
 dlN
 xZc
@@ -76792,7 +76768,7 @@ dGj
 xgZ
 fKN
 yde
-hel
+vJk
 iYx
 gje
 pll
@@ -77049,7 +77025,7 @@ jtS
 jtS
 bBH
 yde
-hel
+vJk
 rGC
 gje
 pll
@@ -77306,7 +77282,7 @@ iUQ
 iUQ
 iUQ
 iUQ
-hel
+vJk
 rGC
 gje
 tZu
@@ -77563,7 +77539,7 @@ yde
 yde
 yde
 yde
-hel
+vJk
 rGC
 gje
 syK
@@ -78591,7 +78567,7 @@ uIt
 bKo
 ptC
 uQa
-hel
+vJk
 rGC
 cyi
 mrr
@@ -78848,7 +78824,7 @@ yde
 yde
 yde
 yde
-hel
+vJk
 rGC
 gje
 xZc
