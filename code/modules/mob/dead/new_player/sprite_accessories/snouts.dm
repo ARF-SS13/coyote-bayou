@@ -358,6 +358,11 @@
 	icon_state = "hhorse"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/beaksmall
+	name = "Beak Small"
+	icon_state = "beaksmall"
+	matrixed_sections = MATRIX_RED
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/

@@ -133,7 +133,7 @@
 			. = UnarmedAttack(A, TRUE, a_intent)
 			if(!(. & NO_AUTO_CLICKDELAY_HANDLING) && ismob(A))
 				// from huntinghorn.dm and huntinghorneffects.dm
-				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(20))
+				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(40))
 					return
 				DelayNextAction(CLICK_CD_MELEE)
 			return
@@ -165,7 +165,7 @@
 			. = UnarmedAttack(A, TRUE, a_intent)
 			if(!(. & NO_AUTO_CLICKDELAY_HANDLING) && ismob(A))
 				// from huntinghorn.dm and huntinghorneffects.dm
-				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(20))
+				if(HAS_TRAIT(src, TRAIT_HH_COOLDOWN_IGNORE) && prob(40))
 					return
 				DelayNextAction(CLICK_CD_MELEE)
 			return

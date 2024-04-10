@@ -464,6 +464,7 @@
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
+#define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 
 /// Artifact/effect signals
 #define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)
@@ -750,6 +751,18 @@
 #define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
 #define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
+#define COMSIG_BOUNTYPROGRAM_OPEN_MENU "bounty_open_program" // (datum/source, mob/user)
+#define COMSIG_BOUNTYPROGRAM_GIVE_CLAIMER "bounty_give_claimer" // (datum/source, mob/user)
+#define COMSIG_BOUNTYPROGRAM_ATTEMPT_CLAIM_THING "bounty_attempt_claim_thing" // (datum/source, atom/thing, mob/user)
+#define COMSIG_BOUNTYPROGRAM_GET_NUMBER_OF_ACTIVE_QUESTS "bounty_get_numofques" // ()
+#define COMSIG_BOUNTYPROGRAM_HAS_QUEST "COMSIG_BOUNTYPROGRAM_HAS_QUEST" // (datum/source, datum/bounty/B)
+#define COMSIG_BOUNTYPROGRAM_EXISTS "COMSIG_BOUNTYPROGRAM_EXISTS" // (hi)
+
+#define COMSIG_GET_BUTCHER_EFFECTIVENESS "COMSIG_GET_BUTCHER_EFFECTIVENESS" // ()
+#define COMSIG_GET_BUTCHER_BONUS_MODIFIER "COMSIG_GET_BUTCHER_BONUS_MODIFIER" // ()
+#define COMSIG_ATOM_BUTCHER "COMSIG_ATOM_BUTCHER" // ()
+#define COMSIG_ATOM_CAN_BUTCHER "COMSIG_ATOM_CAN_BUTCHER" // ()
+#define COMSIG_MOB_IS_IMPORTANT "COMSIG_MOB_IS_IMPORTANT" // ()
 
 
 

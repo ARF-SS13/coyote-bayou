@@ -101,6 +101,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
@@ -129,6 +132,7 @@
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
+	del_on_death = TRUE
 
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
@@ -847,7 +851,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 
-	faction = list("hostile", "gecko", "rat-friend")
+	faction = list("rat", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -872,6 +876,10 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
+
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
@@ -919,7 +927,7 @@
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
-	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	faction = list("slime") //at last, I am at peace ~TK
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -936,7 +944,7 @@
 /mob/living/simple_animal/hostile/gelcube/Initialize()
 	. = ..()
 	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool
 
 
 ////////////
@@ -1010,15 +1018,7 @@
 		'sound/creatures/terrorbird/hoot3.ogg',
 		'sound/creatures/terrorbird/hoot4.ogg',
 		)
-	emote_taunt_sound = list(
-		'sound/creatures/terrorbird/growl1.ogg',
-		'sound/creatures/terrorbird/growl2.ogg',
-		'sound/creatures/terrorbird/growl3.ogg',
-		)
-	death_sound = list(
-		'sound/creatures/terrorbird/groan1.ogg',
-		'sound/creatures/terrorbird/groan2.ogg',
-	)
+
 	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
 	desc_short = "What a terrifying bird."
 

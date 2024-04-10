@@ -23,6 +23,7 @@
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
 	var/autoreveal_time = 1 HOURS
+	important = TRUE
 
 /obj/item/validball/Initialize()
 	. = ..()
@@ -31,7 +32,7 @@
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
+	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS, TRUE)
 
 /obj/item/validball/proc/roundstartify()
 	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)

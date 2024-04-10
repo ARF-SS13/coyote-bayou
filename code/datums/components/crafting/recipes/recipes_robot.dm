@@ -74,6 +74,18 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/duckbot
+	name = "Amusing Duck"
+	result = /mob/living/simple_animal/amusing_duck
+	reqs = list(/obj/item/bikehorn = 1,
+				/obj/item/bodypart/r_arm/robot = 1,
+				/obj/item/assembly/prox_sensor = 1,
+				/obj/item/storage/fancy/egg_box = 5,
+				/obj/item/grenade/f13/dynamite = 1)
+	time = 40
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/aitater
 	name = "intelliTater"
 	result = /obj/item/aicard/aitater

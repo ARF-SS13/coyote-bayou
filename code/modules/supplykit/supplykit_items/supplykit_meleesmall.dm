@@ -152,17 +152,17 @@
 	item = /obj/item/clothing/glasses/sunglasses/gar
 
 /datum/supplykit_item/meleesmall/plasma
-	name = "Plasma Cutter"
+	name = "Plasma Slicer"
 	desc = "A green plasma blade, augmented for boosted damage."
 	item = /obj/item/melee/transforming/plasmacutter/regular
 
 /datum/supplykit_item/meleesmall/celestia
-	name = "Plasma Cutter Celestia"
+	name = "Plasma Slicer Celestia"
 	desc = "A blue plasma blade, augmented to deflect attacks."
 	item = /obj/item/melee/transforming/plasmacutter/regular/celestia
 
 /datum/supplykit_item/meleesmall/eve
-	name = "Plasma Cutter Eve"
+	name = "Plasma Slicer Eve"
 	desc = "A purple plasma blade, augmented for swift strikes."
 	item = /obj/item/melee/transforming/plasmacutter/regular/eve
 

@@ -583,11 +583,11 @@
 	prize_amount = 1
 	locked = TRUE
 	lock_tier = 3
-
+/*
 /obj/item/locked_box/misc/attachments/initialize_prizes()
 	global_loot_lists = list(GLOB.loot_attachment)
 	. = ..()
-
+*/
 /obj/item/locked_box/misc/blueprints
 	easy_naming = "blueprint "
 	locked = TRUE

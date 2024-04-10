@@ -774,7 +774,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
-/datum/crafting_recipe/tailor/chameleon_mask
+/*/datum/crafting_recipe/tailor/chameleon_mask
 	name = "Chameleon Mask"
 	result = /obj/item/clothing/mask/chameleon
 	reqs = list(/obj/item/clothing/mask/breath,
@@ -783,7 +783,7 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
+	subcategory = CAT_GENCLOTHES*/
 
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"

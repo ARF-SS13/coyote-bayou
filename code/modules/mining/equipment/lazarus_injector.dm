@@ -65,3 +65,81 @@
 		. += span_info("[src] is empty.")
 	if(malfunctioning)
 		. += span_info("The display on [src] seems to be flickering.")
+
+//
+// Holoparasites
+// + in the loadout
+// + infinite uses
+// // - reduced mob health
+// - slightly larger
+//
+
+#define GHOSTLY_BLUE "#69afff"
+#define DEMON_RED "#ff6969"
+
+/obj/item/holoparasite_injector
+	name = "Etherleech Injector"
+	desc = "An injector filled with a cocktail of nanomachines that copy an entity's form, using the body to fuel another charge and animate it."
+	icon = 'icons/obj/syringe.dmi'
+	icon_state = "lazarus_hypo"
+	item_state = "hypo"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	throwforce = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	throw_speed = 3
+	throw_range = 5
+	var/revive_type = SENTIENCE_ORGANIC //So you can't revive boss monsters or robots with it
+
+/obj/item/holoparasite_injector/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if(isliving(target) && proximity_flag)
+		if(isanimal(target))
+			var/mob/living/simple_animal/M = target
+			if(M.sentience_type != revive_type)
+				to_chat(user, span_info("[src] needs a good biofuel source to reanimate."))
+				return
+			if(M.stat == DEAD)
+				M.faction = list("neutral")
+				M.revive(full_heal = 1, admin_revive = 1)
+				M.alpha = 100
+				M.color = GHOSTLY_BLUE
+				M.light_color = GHOSTLY_BLUE
+				M.light_range = 2
+				user.visible_message(span_notice("[M] suddenly contorts in pain before rising a ghostly blue!"))
+				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
+				return
+			else
+				to_chat(user, span_info("Due to the gruesome process, the [src] has safeties to prevent it being used on the living."))
+				return
+		else
+			to_chat(user, span_info("This monster is an exceptionally powerful soul and resists the nanomachines!"))
+			return
+
+/obj/item/holoparasite_injector/jaeger
+	name = "LLX22 Crimson Etherleech Auto-Injector"
+
+/obj/item/holoparasite_injector/jaeger/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if(isliving(target) && proximity_flag)
+		if(isanimal(target))
+			var/mob/living/simple_animal/M = target
+			if(M.sentience_type != revive_type)
+				to_chat(user, span_info("[src] needs a good biofuel source to reanimate."))
+				return
+			if(M.stat == DEAD)
+				M.faction = list("neutral")
+				M.revive(full_heal = 1, admin_revive = 1)
+				M.alpha = 100	
+				M.color = DEMON_RED
+				M.light_color = DEMON_RED
+				M.light_range = 2
+				user.visible_message(span_notice("[M] suddenly contorts in pain before rising a crimson red!"))
+				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
+				return
+			else
+				to_chat(user, span_info("Due to the gruesome process, the [src] has safeties to prevent it being used on the living."))
+				return
+		else
+			to_chat(user, span_info("This monster is an exceptionally powerful soul and resists the nanomachines!"))
+			return

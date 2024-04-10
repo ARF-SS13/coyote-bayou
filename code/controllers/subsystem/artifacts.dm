@@ -538,7 +538,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	SEND_SIGNAL(chunk, COMSIG_ITEM_ARTIFACT_FINALIZE)
 
 /datum/controller/subsystem/processing/artifacts/proc/get_artifactible_turf()
-	if(prob(use_valid_ball_spawner_chance))
+	if(prob(use_valid_ball_spawner_chance) && LAZYLEN(SSvalidball.valid_ball_spawner_coords))
 		return coords2turf(pick(SSvalidball.valid_ball_spawner_coords))
 	else
 		return find_safe_turf(zlevels = ARTIFACT_Z_LEVELS, extended_safety_checks = TRUE)

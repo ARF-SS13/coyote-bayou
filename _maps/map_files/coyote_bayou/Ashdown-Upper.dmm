@@ -3104,13 +3104,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
-"xc" = (
-/obj/effect/landmark/start/f13/biker,
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
-/area/f13/caves)
 "xd" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -3788,13 +3781,6 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building)
-"Bw" = (
-/obj/effect/landmark/start/f13/ashdown,
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
-/area/f13/caves)
 "BD" = (
 /obj/machinery/hydroponics/soil{
 	name = "riverbed soil";
@@ -4578,13 +4564,6 @@
 /obj/structure/rug/big/rug_blue_shag,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/caves)
-"Hc" = (
-/obj/effect/landmark/start/f13/biker_boss,
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
 /area/f13/caves)
 "Hd" = (
 /turf/open/floor/f13{
@@ -71955,11 +71934,11 @@ nR
 nR
 iX
 RQ
-Hc
-Bw
-Bw
-Bw
-Bw
+On
+je
+On
+On
+On
 ex
 UG
 eo
@@ -72212,11 +72191,11 @@ jZ
 jZ
 qa
 Bm
-xc
-xc
-xc
-xc
-xc
+On
+je
+On
+On
+On
 FA
 Hi
 eo

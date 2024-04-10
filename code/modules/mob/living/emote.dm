@@ -1790,6 +1790,47 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			"How could someone mess up so badly?",
 			"The game was rigged from the start."))))
 
+/mob/living/verb/emote_special_str()
+	set name = "Roll Strength"
+	set desc = "Roll for bicep circumfrence."
+	set category = "Roleplaying"
+	emote("special_strength")
+
+/mob/living/verb/emote_special_per()
+	set name = "Roll Perception"
+	set desc = "Roll for eyeball circumfrence."
+	set category = "Roleplaying"
+	emote("special_perception")
+
+/mob/living/verb/emote_special_end()
+	set name = "Roll Endurance"
+	set desc = "Roll for heart circumfrence."
+	set category = "Roleplaying"
+	emote("special_endurance")
+
+/mob/living/verb/emote_special_cha()
+	set name = "Roll Charisma"
+	set desc = "Roll for beauty circumfrence."
+	set category = "Roleplaying"
+	emote("special_charisma")
+
+/mob/living/verb/emote_special_int()
+	set name = "Roll Intelligence"
+	set desc = "Roll for brain circumfrence."
+	set category = "Roleplaying"
+	emote("special_intelligence")
+
+/mob/living/verb/emote_special_agi()
+	set name = "Roll Agility"
+	set desc = "Roll for wiggly circumfrence."
+	set category = "Roleplaying"
+	emote("special_agility")
+
+/mob/living/verb/emote_special_luc()
+	set name = "Roll Luck"
+	set desc = "Roll for some sort of circumfrence."
+	set category = "Roleplaying"
+	emote("special_luck")
 
 /datum/emote/living/special
 	key = "special"
@@ -1845,7 +1886,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		return FALSE
 
 	var/special_noun = null
-	var/special_phrase_input = special_override ? special_override : lowertext(params)
+	var/special_phrase_input = special_override ? lowertext(special_override) : lowertext(params)
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
@@ -1889,6 +1930,8 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		self_message = message_first,
 		blind_message = message_first)
 	user.emote_for_ghost_sight(message_first)
+
+	playsound(get_turf(user), 'sound/effects/statroll.ogg', 75, TRUE)
 
 	spawn(special_delay)
 		if(!user)
@@ -2281,3 +2324,56 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "tilts"
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
+
+//Slime start
+
+//Framework
+/* /mob/living/carbon/human/species/slime/regenerate_icons()
+	cut_overlays()
+	if(slime_mood && !stat)
+		add_overlay("aslime-[mood]")
+	else
+		return
+	..() */
+//Framework end
+
+/datum/emote/mood
+	key = "slimenone"
+	message = null
+	var/slime_mood = null
+	mob_type_allowed_typecache = /mob/living/carbon/human
+
+/datum/emote/mood/run_emote(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/datum/species/S = H?.dna?.species
+		if(istype(S, /datum/species/feral/slime))
+			S.slime_mood = slime_mood
+			S.handle_body(H)
+
+/datum/emote/mood/sneaky
+	key = "slimesneaky"
+	slime_mood = "aslime-mischevous"
+
+/datum/emote/mood/smile
+	key = "slimesmile"
+	slime_mood = "aslime-:3"
+
+/datum/emote/mood/cat
+	key = "slimecat"
+	slime_mood = "aslime-:33"
+
+/datum/emote/mood/pout
+	key = "slimepout"
+	slime_mood = "aslime-pout"
+
+/datum/emote/mood/sad
+	key = "slimesad"
+	slime_mood = "aslime-sad"
+
+/datum/emote/mood/angry
+	key = "slimeangry"
+	slime_mood = "aslime-angry"
+
+// Slime end

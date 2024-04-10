@@ -1,0 +1,754 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/railing/wood/post{
+	dir = 4
+	},
+/obj/structure/railing/wood/post{
+	dir = 2
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"c" = (
+/obj/structure/closet/crate/wicker,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"d" = (
+/obj/structure/reagent_dispensers/compostbin,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"e" = (
+/obj/structure/railing/wood{
+	pixel_y = 0
+	},
+/obj/structure/railing/wood/post{
+	dir = 8;
+	pixel_y = 5
+	},
+/obj/structure/railing/wood/post{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"f" = (
+/obj/structure/legion_extractor,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"g" = (
+/obj/machinery/smartfridge/bottlerack/gardentool,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/cultivator/rake,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/item/shovel,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/item/storage/belt/utility/gardener,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"h" = (
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 8
+	},
+/obj/structure/rack/shelf_wood,
+/obj/structure/rug/big/rug_red{
+	layer = 0;
+	pixel_y = 5
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"i" = (
+/obj/structure/rack/shelf_wood,
+/obj/structure/rug/big/rug_red{
+	layer = 0;
+	pixel_y = -5
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"j" = (
+/obj/structure/railing/wood/post{
+	dir = 8
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"k" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"l" = (
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 8
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"m" = (
+/obj/structure/simple_door/tent,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"n" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0
+	},
+/obj/structure/railing/wood/post{
+	dir = 8;
+	pixel_y = 5
+	},
+/obj/structure/railing/wood/post{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"o" = (
+/obj/structure/table/wood,
+/obj/structure/rug/big/rug_red{
+	layer = 0
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"p" = (
+/obj/structure/sink/well,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"q" = (
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"r" = (
+/turf/closed/wall/f13/tentwall{
+	icon_state = "tent9"
+	},
+/area/f13/wasteland)
+"s" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"t" = (
+/obj/structure/closet/crate/wooden{
+	pixel_y = 10
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"u" = (
+/obj/structure/railing/wood/post{
+	dir = 8
+	},
+/obj/structure/railing/wood/post{
+	dir = 2
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"v" = (
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/obj/structure/railing/wood/post{
+	dir = 8
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/obj/structure/destructible/tribal_torch{
+	layer = 5;
+	pixel_x = -13
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"w" = (
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"x" = (
+/obj/structure/chair/bench,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"y" = (
+/obj/structure/closet/crate/wooden{
+	pixel_y = 10
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"z" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/railing/wood/post{
+	dir = 4
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"A" = (
+/obj/structure/simple_door/metal/fence/wooden{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"B" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/machinery/hydroponics/soil{
+	mutmod = 0;
+	name = "ancient fertile soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"C" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0
+	},
+/obj/structure/railing/wood/post{
+	dir = 4;
+	pixel_y = 5
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"D" = (
+/mob/living/simple_animal/chicken,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"E" = (
+/obj/structure/railing/wood/post{
+	dir = 8
+	},
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"F" = (
+/obj/structure/rack/shelf_wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"G" = (
+/turf/closed/wall/f13/tentwall{
+	icon_state = "tent6"
+	},
+/area/f13/wasteland)
+"H" = (
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"I" = (
+/mob/living/simple_animal/cow/brahmin/cow,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"J" = (
+/mob/living/simple_animal/cow/brahmin/cow/tan,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"K" = (
+/obj/structure/fermenting_barrel,
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 8
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"L" = (
+/obj/machinery/hydroponics/soil{
+	mutmod = 0;
+	name = "ancient fertile soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"M" = (
+/obj/machinery/smartfridge/bottlerack/seedbin,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"N" = (
+/obj/structure/chair/bench{
+	pixel_y = 10
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"O" = (
+/obj/structure/railing/wood/post{
+	dir = 2
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"P" = (
+/obj/structure/railing/wood{
+	pixel_y = 0
+	},
+/obj/structure/railing/wood/post{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"Q" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"R" = (
+/obj/structure/railing/wood/post{
+	dir = 4
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"S" = (
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"T" = (
+/turf/closed/wall/f13/tentwall{
+	icon_state = "tent5"
+	},
+/area/f13/wasteland)
+"U" = (
+/obj/structure/railing/wood/post{
+	dir = 2
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/obj/structure/railing/wood/post{
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch{
+	layer = 5
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"V" = (
+/turf/closed/wall/f13/tentwall,
+/area/f13/wasteland)
+"W" = (
+/obj/structure/chair/bench{
+	pixel_y = 10
+	},
+/obj/structure/rug/big/rug_red{
+	layer = 0
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"X" = (
+/obj/structure/railing/wood/post{
+	dir = 2
+	},
+/obj/structure/railing/wood{
+	pixel_y = 0;
+	dir = 1
+	},
+/obj/structure/railing/wood/post{
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch{
+	layer = 5
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"Y" = (
+/turf/closed/wall/f13/tentwall{
+	icon_state = "tent10"
+	},
+/area/f13/wasteland)
+"Z" = (
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+
+(1,1,1) = {"
+G
+V
+V
+V
+V
+V
+V
+V
+V
+V
+T
+"}
+(2,1,1) = {"
+V
+H
+l
+c
+F
+h
+i
+y
+K
+Q
+V
+"}
+(3,1,1) = {"
+V
+H
+H
+H
+H
+H
+H
+H
+H
+Q
+V
+"}
+(4,1,1) = {"
+V
+g
+H
+H
+H
+H
+H
+H
+H
+H
+m
+"}
+(5,1,1) = {"
+V
+H
+H
+H
+H
+H
+H
+x
+o
+W
+V
+"}
+(6,1,1) = {"
+V
+S
+q
+S
+H
+H
+H
+x
+Z
+N
+V
+"}
+(7,1,1) = {"
+Y
+V
+V
+V
+m
+m
+m
+V
+V
+V
+r
+"}
+(8,1,1) = {"
+e
+D
+w
+j
+w
+w
+w
+M
+f
+d
+u
+"}
+(9,1,1) = {"
+P
+D
+w
+A
+w
+w
+w
+w
+w
+w
+U
+"}
+(10,1,1) = {"
+P
+D
+w
+R
+t
+w
+w
+w
+w
+w
+A
+"}
+(11,1,1) = {"
+n
+k
+k
+E
+v
+w
+w
+w
+w
+w
+X
+"}
+(12,1,1) = {"
+P
+w
+J
+w
+A
+w
+w
+L
+L
+L
+O
+"}
+(13,1,1) = {"
+P
+w
+I
+w
+R
+w
+p
+L
+L
+L
+O
+"}
+(14,1,1) = {"
+C
+s
+s
+s
+z
+s
+s
+B
+B
+B
+a
+"}

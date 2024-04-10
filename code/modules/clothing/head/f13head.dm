@@ -169,8 +169,9 @@
 	desc = "An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
 	icon_state = "metalhelmet"
 	item_state = "metalhelmet"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_MELEE_T2)
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	name = "reinforced metal helmet"
@@ -396,7 +397,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	deflect_damage = 5
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = FALSE // Testing them if they're disable 
+	requires_training = FALSE // Testing them if they're disable
 
 /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor Helmet"

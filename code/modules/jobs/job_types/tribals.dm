@@ -192,10 +192,10 @@ Tribal Shaman
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
-		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
 		/obj/item/cool_book/shamanguide = 1,
-		/obj/item/healthanalyzer/tribal = 1
+		/obj/item/healthanalyzer/tribal = 1,
+		/obj/item/scrying = 1
 	)
 
 

@@ -39,12 +39,12 @@
 // Low energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/light
 	name = "laser beam"
-	damage = 30
+	damage = 60
 
 // More energy drain and higher cooldown
 /obj/item/projectile/beam/laser/mech/heavy
 	name = "heavy laser beam"
-	damage = 40
+	damage = 80
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
@@ -52,7 +52,7 @@
 // The highest energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/pulse
 	name = "charged pulse beam"
-	damage = 49
+	damage = 99
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
@@ -789,7 +789,7 @@
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
 	damage = 36
-	damage_list = list( "34" = 25, "36" = 40, "38" = 25)
+	damage_list = list( "34" = 25, "36" = 50, "38" = 25)
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray

@@ -992,6 +992,12 @@
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "braixen"
 
+/obj/item/toy/plush/otter
+	name = "otter plush"
+	desc = "You otta love it!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "otter"
+
 
 
 
@@ -1134,6 +1140,8 @@
 //Things from Mojave Sun, credit for the spirits go to them.
 
 //Rugs
+/obj/structure/rug
+	layer = BELOW_OPEN_DOOR_LAYER
 
 /obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
 	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
@@ -1153,9 +1161,6 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
-	plane = -15
-	layer = BELOW_OPEN_DOOR_LAYER
-	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"

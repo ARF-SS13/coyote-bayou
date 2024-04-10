@@ -20,19 +20,19 @@
 	var/max_mobs = 5
 	var/spawn_time = 300 //30 seconds default
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
-	var/spawn_text = "emerges from"
+	//var/spawn_text = ""
 	var/faction = list("hostile")
 
 /obj/structure/spawner/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs)
 
 /obj/structure/spawner/syndicate
 	name = "warp beacon"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "syndbeacon"
-	spawn_text = "warps in from"
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
+	
+	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
 /obj/structure/spawner/skeleton
@@ -44,7 +44,7 @@
 	max_mobs = 15
 	spawn_time = 150
 	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
-	spawn_text = "climbs out of"
+	
 	faction = list("skeleton")
 
 /obj/structure/spawner/mining
@@ -54,7 +54,6 @@
 	max_integrity = 200
 	max_mobs = 3
 	icon = 'icons/mob/nest.dmi'
-	spawn_text = "crawls out of"
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goldgrub, /mob/living/simple_animal/hostile/asteroid/goliath, /mob/living/simple_animal/hostile/asteroid/hivelord, /mob/living/simple_animal/hostile/asteroid/basilisk, /mob/living/simple_animal/hostile/asteroid/fugu)
 	faction = list("mining")
 

@@ -35,24 +35,33 @@
 /datum/status_effect/music/attack_up_xs
 	id = "\proper Strength"
 	desc = "You feel empowered."
-	var/had_little_leagues = FALSE
+	var/added_unarmed_trait = null
+	var/added_melee_trait = null
 
 /datum/status_effect/music/attack_up_xs/on_apply()
 	. = ..()
-	if(HAS_TRAIT(owner, TRAIT_LITTLE_LEAGUES))
-		had_little_leagues = TRUE
-		REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES, src)
+	//for unarmed
+	if(!HAS_TRAIT(owner, TRAIT_STEELFIST))
+		added_unarmed_trait = TRAIT_STEELFIST
+		ADD_TRAIT(owner, TRAIT_STEELFIST, "Fists of Steel")
+	else
+		added_unarmed_trait = TRAIT_IRONFIST
+		ADD_TRAIT(owner, TRAIT_IRONFIST, "Fists of Iron")
+
+	//for melee
+	if(!HAS_TRAIT(owner, TRAIT_BIG_LEAGUES))
+		added_melee_trait = TRAIT_BIG_LEAGUES
 		ADD_TRAIT(owner, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
-		return
-	ADD_TRAIT(owner, TRAIT_LITTLE_LEAGUES, "Melee - Little Leagues")
+	else
+		added_melee_trait = TRAIT_LITTLE_LEAGUES
+		ADD_TRAIT(owner, TRAIT_LITTLE_LEAGUES, "Melee - Little Leagues")
+
+	//ranged coming soon(tm)
 
 /datum/status_effect/music/attack_up_xs/on_remove()
 	. = ..()
-	if(had_little_leagues)
-		REMOVE_TRAIT(owner, TRAIT_BIG_LEAGUES, src)
-		ADD_TRAIT(owner, TRAIT_LITTLE_LEAGUES, "Melee - Little Leagues")
-		return
-	REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES, src)
+	REMOVE_TRAIT(owner, added_unarmed_trait, src)
+	REMOVE_TRAIT(owner, added_melee_trait, src)
 
 
 /datum/status_effect/music/speed_up
@@ -70,7 +79,7 @@
 /datum/movespeed_modifier/huntinghorn
 	flags = IGNORE_NOSLOW
 	variable = TRUE
-	multiplicative_slowdown = -0.1
+	multiplicative_slowdown = -0.3
 
 // check click.dm inside /mob/ClickOn()
 /datum/status_effect/music/cooldown_ignore
@@ -111,7 +120,7 @@
 	desc = "You feel like a magician."
 
 /datum/status_effect/music/fast_actions/interact_speed_modifier()
-	return 0.8
+	return 0.4
 
 
 /datum/status_effect/music/stamina_up
@@ -122,11 +131,15 @@
 	. = ..()
 	owner.sprint_buffer_max += 20
 	owner.sprint_buffer_regen_ds += 0.05
+	owner.stambuffer += 20
+	owner.incomingstammult -= 0.5
 
 /datum/status_effect/music/stamina_up/on_remove()
 	. = ..()
 	owner.sprint_buffer_max -= 20
 	owner.sprint_buffer_regen_ds -= 0.05
+	owner.stambuffer -= 20
+	owner.incomingstammult += 0.5
 
 
 
@@ -147,7 +160,9 @@
 	desc = "You feel soothed."
 
 /datum/status_effect/music/recovery/tick()
-	owner.heal_overall_damage(brute = 2, burn = 2, only_organic = FALSE)
+	owner.heal_overall_damage(brute = 1.5, burn = 1.5, only_organic = FALSE)
+	owner.adjustToxLoss(-1.5)
+	owner.adjustOxyLoss(-1.5)
 
 
 /datum/status_effect/music/maxhp_up
@@ -156,8 +171,8 @@
 
 /datum/status_effect/music/maxhp_up/on_apply()
 	. = ..()
-	owner.maxHealth += 10
+	owner.maxHealth += 20
 
 /datum/status_effect/music/maxhp_up/on_remove()
 	. = ..()
-	owner.maxHealth -= 10
+	owner.maxHealth -= 20

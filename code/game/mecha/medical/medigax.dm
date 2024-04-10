@@ -8,7 +8,6 @@
 	wreckage = /obj/structure/mecha_wreckage/medigax
 	armor = ARMOR_VALUE_HEAVY
 	internal_damage_threshold = 30
-	step_energy_drain = 30
 
 /obj/mecha/medical/medigax/moved_inside(mob/living/carbon/human/H)
 	. = ..()

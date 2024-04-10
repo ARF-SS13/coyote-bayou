@@ -53,6 +53,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE,PROC_REF(finalize))
 	RegisterSignal(parent, COMSIG_ITEM_WELLABLE,PROC_REF(tabulate_wellability))
 	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
+	RegisterSignal(parent, COMSIG_ITEM_GET_RESEARCH_POINTS,PROC_REF(tabulate_research))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(update_everything))
 	// RegisterSignal(parent, COMSIG_ITEM_CLICKED,PROC_REF(on_clicked))
 	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(on_microwave)) //c:
@@ -238,11 +239,15 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(total_value, 25)
+	return round(CREDITS_TO_COINS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
-	return (tabulate_value() * 0.8)
+	return (tabulate_value() * 0.4)
+
+/datum/component/artifact/proc/tabulate_research()
+	SIGNAL_HANDLER
+	return (tabulate_value() * 30)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER
@@ -761,7 +766,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = abs(base_value * get_magnitude() * 4)
+	value = abs(base_value * get_magnitude())
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
@@ -2392,8 +2397,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_POCKET | INV_SLOTBIT_BACKPACK | INV_SLOTBIT_SUITSTORE
 	foldable = FALSE
-	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/lead = 20)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
 	component_type = /datum/component/storage/concrete/box/artifact
 
 /obj/item/storage/box/artifactcontainer/ComponentInitialize()
@@ -2477,7 +2482,7 @@
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
 		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
-		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.5
 		)
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 

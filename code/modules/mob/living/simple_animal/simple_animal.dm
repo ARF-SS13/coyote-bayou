@@ -21,6 +21,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/icon_dead = ""
 	///We only try to show a gibbing animation if this exists.
 	var/icon_gib = null
+	/// color to colorize the dead sprite, if it should be different from the living sprite
+	var/color_dead = null
 
 	var/list/speak = list()
 	///Emotes while speaking IE: Ian [emote], [text] -- Ian barks, "WOOF!". Spoken text is generated from the speak variable.
@@ -30,6 +32,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/list/emote_hear = list()
 	///Unlike speak_emote, the list of things in this variable only show by themselves with no spoken text. IE: Ian barks, Ian yaps.
 	var/list/emote_see = list()
+
+	var/bombs_can_gib_me = TRUE
 
 	var/turns_per_move = 1
 	var/turns_since_move = 0
@@ -212,7 +216,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///multichance projectile hit behaviour (MCPHB)
 	var/mcphb_arms_hit = FALSE
 	var/mcphb_legs_hit = FALSE
-		
+	
+	/// makes certain mobs explode into stuff when they die
+	var/am_important = FALSE // you are not important
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -352,6 +359,12 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(infight_check))
+	RegisterSignal(src, COMSIG_ATOM_BUTCHER,PROC_REF(butcher_me))
+	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
+	RegisterSignal(src, COMSIG_MOB_IS_IMPORTANT,PROC_REF(am_i_important))
+
+/mob/living/simple_animal/proc/am_i_important()
+	return am_important
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -635,18 +648,74 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		adjustHealth(unsuitable_atmos_damage)
 */
 
+/mob/living/simple_animal/proc/can_butcher()
+	return !already_butchered
+
+/mob/living/simple_animal/proc/butcher_me(datum/source, mob/butcherer, bonus_modifier, effectiveness, gibbed, loud = TRUE)
+	if(!butcherer)
+		return
+	if(!butcher_results && !guaranteed_butcher_results)
+		return
+	if(already_butchered)
+		return
+	already_butchered = TRUE
+
+	if(butcherer && HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+		effectiveness *= 2
+	var/chance_to_drop_butchered_thing = effectiveness / max(butcher_difficulty, 0.01)
+	var/bonus_chance = max(0, (chance_to_drop_butchered_thing - 100) + bonus_modifier) //so 125 total effectiveness = 25% extra chance
+	var/meat_quality = 50 + (chance_to_drop_butchered_thing/10) //increases through quality of butchering tool, and through if it was butchered in the kitchen or not
+
+	var/said_fail = FALSE
+	var/turf/T = drop_location()
+	var/list/butchered_items = list()
+	for(var/V in butcher_results)
+		var/obj/rando_bits = V
+		var/amount = butcher_results[rando_bits]
+		for(var/_i in 1 to amount)
+			if(!prob(chance_to_drop_butchered_thing))
+				if(butcherer && loud && !said_fail)
+					said_fail = TRUE
+					to_chat(butcherer, span_warning("You fail to harvest some of the [initial(rando_bits.name)] from [src]."))
+			else if(prob(bonus_chance))
+				if(butcherer && loud)
+					to_chat(butcherer, span_info("You harvest some extra [initial(rando_bits.name)] from [src]!"))
+				for(var/i in 1 to 2)
+					butchered_items += new rando_bits (T)
+				if(HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+					if(butcherer)
+						to_chat(butcherer, span_info("Your advanced trapping knowledge allows you to harvest extra [initial(rando_bits.name)] from [src]!"))
+					for(var/i in 1 to 2)
+						butchered_items += new rando_bits (T)
+			else
+				butchered_items += new rando_bits (T)
+		butcher_results.Remove(rando_bits) //in case you want to, say, have it drop its results on gib
+
+	for(var/V in guaranteed_butcher_results)
+		var/obj/guaranteed_bits = V
+		var/amount = guaranteed_butcher_results[guaranteed_bits]
+		for(var/i in 1 to amount)
+			butchered_items += new guaranteed_bits (T)
+		guaranteed_butcher_results.Remove(guaranteed_bits)
+
+	for(var/butchered_item in butchered_items)
+		if(isobj(butchered_item))
+			var/obj/O = butchered_item
+			if(isfood(O))
+				var/obj/item/reagent_containers/food/butchered_meat = butchered_item
+				butchered_meat.food_quality = meat_quality
+			if(!O.anchored)
+				O.pixel_x = rand(-14,14)
+				O.pixel_y = rand(-14,14)
+
+	if(butcherer && loud)
+		visible_message(span_notice("[butcherer] butchers [src]."))
+	harvest(butcherer)
+	if(!gibbed)
+		gib(FALSE, FALSE, TRUE)
+
 /mob/living/simple_animal/gib()
-	if(butcher_results || guaranteed_butcher_results)
-		var/list/butcher = list()
-		if(butcher_results)
-			butcher += butcher_results
-		if(guaranteed_butcher_results)
-			butcher += guaranteed_butcher_results
-		var/atom/Tsec = drop_location()
-		for(var/path in butcher)
-			for(var/i in 1 to butcher[path])
-				if(prob(25))
-					new path(Tsec)
+	butcher_me(null, null, 0, 25, TRUE, FALSE)
 	..()
 
 /mob/living/simple_animal/gib_animation()
@@ -720,6 +789,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
 
+	if(color_dead)
+		add_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
@@ -778,6 +849,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/revive(full_heal = 0, admin_revive = 0)
 	if(..()) //successfully ressuscitated from death
+		if(color_dead)
+			remove_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)

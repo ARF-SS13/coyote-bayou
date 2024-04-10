@@ -7,16 +7,14 @@
 	name = "\improper Gygax"
 	desc = "A pre-War security exosuit developed by Vault-Tec to minimize casulties among security staff during violent uprisings. It's painted in a bright orange scheme to ensure recognizability."
 	icon_state = "gygax"
-	step_in = 3
+	step_in = 2.5
 	dir_in = 1 //Facing North.
-	max_integrity = 450
+	max_integrity = 550
 	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 25000
 	infra_luminosity = 6
 	wreckage = /obj/structure/mecha_wreckage/gygax
 	internal_damage_threshold = 20
-	step_energy_drain = 20
-	leg_overload_coeff = 300
 	smashcooldown = 8
 	canstrafe = TRUE
 
@@ -27,7 +25,6 @@
 	max_integrity = 500
 	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 35000
-	leg_overload_coeff = 100
 	wreckage = /obj/structure/mecha_wreckage/gygax/dark
 	max_equip = 4
 
@@ -49,11 +46,3 @@
 		cell = C
 		return
 	cell = new /obj/item/stock_parts/cell/hyper(src)
-
-/obj/mecha/combat/gygax/GrantActions(mob/living/user, human_occupant = 0)
-	..()
-	overload_action.Grant(user, src)
-
-/obj/mecha/combat/gygax/RemoveActions(mob/living/user, human_occupant = 0)
-	..()
-	overload_action.Remove(user)

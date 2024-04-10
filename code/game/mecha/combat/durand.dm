@@ -7,15 +7,14 @@
 	name = "\improper Durand"
 	desc = "An aging combat exosuit utilized by the Vault-Tec corporation. A pre-War design, developed by Vault-Tec to combat post-War threats. It seems to have an experimental shield projector installed to minimize damage to the exosuit."
 	icon_state = "durand"
-	step_in = 4
+	step_in = 2.5
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	armor = ARMOR_VALUE_PA
+	max_integrity = 500
+	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 30000
 	infra_luminosity = 8
-	force = 30
+	force = 45
 	canstrafe = TRUE
-	step_energy_drain = 40
 	internal_damage_threshold = 20
 	wreckage = /obj/structure/mecha_wreckage/durand
 

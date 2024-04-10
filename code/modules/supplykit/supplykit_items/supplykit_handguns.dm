@@ -27,6 +27,11 @@
 	desc = "A light handgun chambered in .22LR with integrated suppressor. takes 16 round magazines."
 	item = /obj/item/gun/ballistic/automatic/pistol/pistol22
 
+/datum/supplykit_item/handguns/val22
+	name = "Mini VAL"
+	desc = "A tiny replica VAL in .22LR, complete with an integrated suppressor. takes 16 round magazines."
+	item = /obj/item/gun/ballistic/automatic/pistol/pistol22/val
+
 /datum/supplykit_item/handguns/automag
 	name = "Automag"
 	desc = "A .44 magnum pistol that takes 7 round magazines."

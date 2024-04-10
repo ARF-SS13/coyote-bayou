@@ -65,6 +65,23 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+/obj/item/gun/ballistic/automatic/pistol/pistol22/val
+	name = "Mini VAL"
+	desc = "An absurdly tiny VAL rifle. You can barely reach its trigger."
+	icon_state = "vss"
+	item_state = "vss"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+
+/obj/item/gun/ballistic/automatic/pistol/pistol22/val/update_icon_state()
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/gun/ballistic/automatic/pistol/pistol22/val/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
+
 /* * * * * * * *
 * Derringers
 * Usually compact and easy to use.
@@ -161,6 +178,11 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion/update_icon_state()
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 //ruby pistol. single stack bootgun, otherwise unexceptional
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby

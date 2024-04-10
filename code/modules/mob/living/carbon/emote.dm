@@ -477,6 +477,28 @@
 	else
 		qdel(tentacle)
 
+//Mage grab spell
+/datum/emote/living/carbon/magegrab
+	key = "magegrab"
+	key_third_person = "grabbing you"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/magegrab/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to preform magic!"))
+		return
+	var/which_tentacle_to_spawn
+	if(HAS_TRAIT(user, TRAIT_MAGEGRAB))
+		which_tentacle_to_spawn = /obj/item/gun/magic/magegrab
+	else 
+		to_chat(user, span_notice("You ain't got this magic!"))
+	var/obj/item/gun/magic/magegrab/tentacle = new which_tentacle_to_spawn(user) 
+	if(user.put_in_active_hand(tentacle))
+		to_chat(user, span_notice("You get your spell ready to cast."))
+	else
+		qdel(tentacle)
+
 //Rock throw//
 /datum/emote/living/carbon/rocker
 	key = "rocks"
@@ -658,7 +680,7 @@
 
 /datum/emote/living/carbon/snicker
 	key = "snicker"
-	message = "snickers quietly to themselves."
+	message = "snickers quietly to themself."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/huff
@@ -758,5 +780,125 @@
 	var/obj/item/clothing/accessory/heart/dtf = new(user)
 	if(user.put_in_active_hand(dtf))
 		to_chat(user, span_notice("You're ready to make it clear to others what it is you REALLY want!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentlfg
+	key = "intentlfg"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentlfg/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/looking/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmelee
+	key = "intentmelee"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmelee/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/melee/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentranged
+	key = "intentranged"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentranged/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/ranged/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentnewplayer
+	key = "intentnewbie"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentnewplayer/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/newbsprout/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmentor
+	key = "intentmentor"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmentor/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/mentorcrown/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentsupport
+	key = "intentsupport"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentsupport/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/healer/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentpvp
+	key = "intentpvp"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intentpvp/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/pvpindicator/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intenttank
+	key = "intenttank"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intenttank/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/tank/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)

@@ -403,7 +403,7 @@
 	index = members.len
 	if(annihilate_tiles && crds)
 		crds.empty(null)
-	if(members[index] != /area/template_noop)
+	if(LAZYACCESS(members, index) && LAZYACCESS(members, index) != /area/template_noop)
 		var/atype = members[index]
 		world.preloader_setup(members_attributes[index], atype)//preloader for assigning  set variables on atom creation
 		var/atom/instance = areaCache[atype]

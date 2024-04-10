@@ -54,11 +54,17 @@ Difficulty: Medium
 	melee_damage_lower = 50
 	melee_damage_upper = 100
 	speed = 1
-	move_to_delay = 5
+	move_to_delay = 3
 	ranged = 1
+	projectilesound = 'sound/weapons/mmlbuster.ogg'
+	projectiletype = /obj/item/projectile/f13plasma/scatter/dragon
+	extra_projectiles = 1
+	ranged = TRUE
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
-	loot = list(/obj/structure/closet/crate/necropolis/dragon)
+	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30, /obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/swoop_cooldown = 0
@@ -68,6 +74,7 @@ Difficulty: Medium
 	death_sound = 'sound/magic/demon_dies.ogg'
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/drake()
 
+	faction = list("Nagafen", "Vox")
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/megafauna/dragon/Initialize()
@@ -426,3 +433,11 @@ Difficulty: Medium
 			hit_list += M
 			M.take_damage(45, BRUTE, "melee", 1)
 		sleep(1.5)
+
+/obj/item/projectile/f13plasma/scatter/dragon
+	damage = 50
+	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.25
+	wound_bonus = 50
+	color = "#FF0000"
+

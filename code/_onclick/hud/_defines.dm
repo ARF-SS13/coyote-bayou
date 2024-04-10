@@ -78,6 +78,8 @@
 //Lower right, persistent menu
 #define ui_drop_throw "EAST-1:28,SOUTH+1:7"
 #define ui_pull_resist "EAST-2:26,SOUTH+1:7"
+#define ui_pull_stop "EAST-1:28,SOUTH+1:24"
+#define ui_questbook "EAST-3:24,SOUTH+1:5"
 #define ui_movi "EAST-2:26,SOUTH:5"
 #define ui_sprintbufferloc "EAST-2:26,SOUTH:18"
 #define ui_acti "EAST-3:24,SOUTH:5"
@@ -87,6 +89,7 @@
 #define ui_building "EAST-1:27,SOUTH+2:7"
 #define ui_language_menu "EAST-1:27,SOUTH+2:22"
 #define ui_wield "EAST-1:10,SOUTH+1:23"
+#define ui_questscanner "EAST-2:24,SOUTH+1:5"
 
 #define ui_borg_pull "EAST-2:26,SOUTH+1:7"
 #define ui_borg_radio "EAST-1:28,SOUTH+1:7"
@@ -173,6 +176,7 @@
 //UI position overrides for 1:1 screen layout. (default is 7:5)
 #define ui_stamina "EAST-1:28,CENTER+1:17" // replacing internals button
 #define ui_overridden_resist "EAST-3:24,SOUTH+1:7"
+#define ui_questbook_overridden "EAST-3:24,SOUTH+1:7"
 #define ui_clickdelay "CENTER,SOUTH+1:-31"
 #define ui_resistdelay "EAST-3:24,SOUTH+1:4"
 #define ui_combat_toggle "EAST-4:22,SOUTH:5"

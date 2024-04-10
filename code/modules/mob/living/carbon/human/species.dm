@@ -146,6 +146,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/list/alt_prefixes
 	/// doesn't override your taur body selection
 	var/footstep_type
+	//footstep sounds
+	var/slime_mood
+	// the face of the slime
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -677,6 +680,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(icon_width != 32)//We need to recenter!
 			F.pixel_x += -((icon_width-32)/2)
 		standing += F
+
+		if (slime_mood)
+			var/mutable_appearance/sf = mutable_appearance ('icons/mob/slimes.dmi', slime_mood, BODYPARTS_LAYER) //Slime face
+			standing += sf
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)) && !H.IsFeral())
@@ -1210,6 +1217,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
 		stop_wagging_tail(H)
+		slime_mood = null
 
 /datum/species/proc/auto_equip(mob/living/carbon/human/H)
 	// handles the equipping of species-specific gear
@@ -1751,9 +1759,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					user.adjustBruteLoss(-5)
 					user.adjustFireLoss(-5)
 					user.adjustStaminaLoss(-20)
-
-					target.adjustCloneLoss(10)
-					target.adjustBruteLoss(10)
+					target.adjustBruteLoss(20)
 
 		else if(!(target.mobility_flags & MOBILITY_STAND))
 			target.forcesay(GLOB.hit_appends)
@@ -2497,6 +2503,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			H.adjust_bodytemperature(11)
 		else
 			H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + (H.fire_stacks * 12))
+			H.adjustFireLoss(H.fire_stacks)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)

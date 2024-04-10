@@ -27,7 +27,7 @@
 			itembasedepth = rand(40,60)
 			itemsafedepth = itembasedepth - rand(6,12)
 			itemactualdepth = rand(itemsafedepth,itembasedepth)
-		if(100)
+		if(100) // guaranteed rare for u
 			chosenitem = pickweight(GLOB.ult_artifact)
 			itembasedepth = rand(70,100)
 			itemsafedepth = itembasedepth - rand(12,14)
@@ -127,5 +127,5 @@
 		/turf/closed/mineral/iron/volcanic = 95, /turf/closed/mineral/strange = 15)
 */
 /turf/closed/mineral/random/volcanic/New()
-	mineralSpawnChanceList += list(/turf/closed/mineral/strange = 15)
+	mineralSpawnChanceList += list(/turf/closed/mineral/strange = 10)
 	. = ..()
