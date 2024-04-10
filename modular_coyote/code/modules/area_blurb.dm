@@ -129,7 +129,7 @@ ty ilu - bear
 // (Relative) Safety
 
 /area/f13/building/coyote/safe
-	name = "Unknown Portal Storm Shelter"
+	name = "Unknown Portal Storm Shelter" // this is relevant since the beacon says the name of whatever area it's within
 	narrate = "This old storm shelter was refitted to provide safety and (meager) supplies to those that hide within. Rest your eyes, traveller, this is one of the few truly safe spaces."
 	narrate_sound = 'sound/ambience/ambitech.ogg'
 
