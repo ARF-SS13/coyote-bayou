@@ -757,10 +757,10 @@
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
 	path = /obj/item/storage/box/large/custom_kit/jaeger // bookmark from JSC
-	ckeywhitelist = list("kilment")
+	ckeywhitelist = list("kilment, colfer")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/sportcarbine(src) // whatever
+	new /obj/item/holoparasite_injector/jaeger(src) // whatever
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
