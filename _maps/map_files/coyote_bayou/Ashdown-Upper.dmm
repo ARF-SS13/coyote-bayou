@@ -304,7 +304,6 @@
 "cI" = (
 /obj/structure/chair/sofa/left{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 7;
 	color = "green"
 	},
@@ -320,7 +319,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/brown/beer{
-	pixel_y = 0;
 	pixel_x = 6
 	},
 /obj/item/reagent_containers/food/drinks/bottle/brown/beer{
@@ -350,8 +348,7 @@
 	icon_state = "weapon_idle"
 	},
 /obj/structure/fence/wooden{
-	pixel_x = 16;
-	pixel_y = 0
+	pixel_x = 16
 	},
 /turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
@@ -736,7 +733,6 @@
 	dir = 4
 	},
 /obj/machinery/biogenerator{
-	pixel_y = 0;
 	pixel_x = 1
 	},
 /turf/open/floor/plasteel/f13{
@@ -1133,7 +1129,6 @@
 	pixel_x = -7
 	},
 /obj/item/toy/lewd/dildo/canine{
-	pixel_y = 0;
 	pixel_x = -3
 	},
 /obj/item/toy/lewd/dildo/dragon{
@@ -1514,9 +1509,7 @@
 "lC" = (
 /obj/structure/nightstand/small{
 	pixel_x = 2;
-	pixel_y = 22;
-	density = 0;
-	opacity = 0
+	pixel_y = 22
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1694,12 +1687,10 @@
 "mL" = (
 /obj/machinery/mineral/wasteland_vendor/crafting,
 /obj/structure/fence/wooden{
-	pixel_x = 15;
-	pixel_y = 0
+	pixel_x = 15
 	},
 /obj/structure/fence/wooden{
-	pixel_x = -17;
-	pixel_y = 0
+	pixel_x = -17
 	},
 /turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
@@ -1726,9 +1717,7 @@
 /area/f13/building/abandoned)
 "mX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach{
-	max_mobs = 3
-	},
+/obj/structure/nest/radroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustysolid"
@@ -1876,7 +1865,6 @@
 "oq" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	icon_state = "railing_corner"
 	},
 /turf/open/floor/f13/wood,
@@ -2357,7 +2345,6 @@
 /area/f13/building)
 "rY" = (
 /obj/structure/fence/wooden{
-	pixel_y = 0;
 	pixel_x = 13
 	},
 /obj/structure/fence/wooden{
@@ -2373,7 +2360,6 @@
 	pixel_x = -15
 	},
 /obj/structure/fence/wooden{
-	pixel_y = 0;
 	pixel_x = 13
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -2596,7 +2582,6 @@
 	pixel_x = -6
 	},
 /obj/item/reagent_containers/food/drinks/bottle/brown/beer{
-	pixel_y = 0;
 	pixel_x = 6
 	},
 /turf/open/floor/f13/wood,
@@ -2644,9 +2629,7 @@
 "uc" = (
 /obj/structure/nightstand/small{
 	pixel_x = 2;
-	pixel_y = 22;
-	density = 0;
-	opacity = 0
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -2785,14 +2768,6 @@
 /obj/structure/rug/carpet2,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"uU" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4;
-	pixel_y = 0
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "uX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase,
@@ -2830,8 +2805,7 @@
 "vg" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -3263,8 +3237,7 @@
 /area/f13/wasteland)
 "yb" = (
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/building)
 "yf" = (
@@ -3321,12 +3294,10 @@
 "yu" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
 /obj/structure/fence/wooden{
-	pixel_x = 15;
-	pixel_y = 0
+	pixel_x = 15
 	},
 /obj/structure/fence/wooden{
-	pixel_x = -17;
-	pixel_y = 0
+	pixel_x = -17
 	},
 /turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
@@ -3443,8 +3414,7 @@
 	resistance_flags = 64
 	},
 /turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+	name = "air"
 	},
 /area/f13/wasteland)
 "zl" = (
@@ -4157,8 +4127,7 @@
 "Ew" = (
 /obj/machinery/mineral/wasteland_vendor/weapons,
 /obj/structure/fence/wooden{
-	pixel_x = -18;
-	pixel_y = 0
+	pixel_x = -18
 	},
 /turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
@@ -5519,7 +5488,6 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/fo13colored/Pink{
-	dir = 2;
 	name = "sex shop light"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -60383,10 +60351,10 @@ Hw
 EF
 zS
 qm
-uU
-uU
-uU
-uU
+jG
+jG
+jG
+jG
 Tz
 Hw
 Hw
@@ -62924,16 +62892,16 @@ Hw
 Hw
 Hw
 qm
-uU
-uU
-uU
-uU
-uU
-uU
-uU
-uU
-uU
-uU
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
 ks
 Hw
 Hw
@@ -66051,8 +66019,8 @@ wj
 wj
 wj
 wj
-uU
-uU
+jG
+jG
 Tz
 Hw
 Hw

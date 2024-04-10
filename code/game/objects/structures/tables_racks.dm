@@ -876,3 +876,54 @@
 /obj/structure/rack/large/shelf_rust
 	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
 	icon_state = "metal_shelf_rust"
+
+//From Mojave sun, credit to them for the sprite
+/obj/structure/table/wood_counter
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter"
+	smooth = SMOOTH_FALSE
+
+/obj/structure/table/wood_counter/bend
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_bend"
+
+/obj/structure/table/wood_counter/intersect
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_intersect"
+
+/obj/structure/table/wood_counter/cross
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_cross"
+
+/obj/structure/table/craft_counter
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter"
+	smooth = SMOOTH_FALSE
+
+/obj/structure/table/craft_counter/bend
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_bend"
+
+/obj/structure/table/craft_counter/intersect
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_intersect"
+
+/obj/structure/table/craft_counter/cross
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_cross"
