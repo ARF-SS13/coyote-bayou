@@ -2677,6 +2677,7 @@
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 4;
+	pixel_y = 0;
 	pixel_x = 2
 	},
 /turf/open/floor/wood_common{
@@ -3759,7 +3760,9 @@
 	},
 /area/f13/building)
 "ceh" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/machinery/mineral/wasteland_vendor/ammo{
+	pixel_y = 0
+	},
 /obj/machinery/light{
 	light_color = "#e8eaff";
 	dir = 1;
@@ -10897,6 +10900,10 @@
 /area/f13/wasteland)
 "fKF" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/wood_counter{
+	layer = 2;
+	pixel_y = 3
+	},
 /obj/structure/sink{
 	pixel_y = 20;
 	layer = 1.9
@@ -13520,6 +13527,12 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"hel" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "hep" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/curtain,
@@ -17205,7 +17218,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
 /turf/open/indestructible/ground/outside/ruins{
 	name = "stepping stones";
 	color = "#bfbfbf"
@@ -25793,7 +25808,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "nyL" = (
-/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -38730,7 +38747,9 @@
 	},
 /area/f13/building)
 "ujm" = (
-/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
 /turf/open/indestructible/ground/outside/ruins{
 	name = "stepping stones";
 	color = "#bfbfbf"
@@ -40121,7 +40140,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/caves)
 "uYT" = (
-/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -45101,7 +45122,9 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 15
 	},
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/bar{
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/f13/darkmarble,
 /area/f13/wasteland/city/newboston/bar)
 "xGw" = (
@@ -75998,7 +76021,7 @@ vMp
 vMp
 dGj
 yde
-vJk
+hel
 kMK
 yde
 ogc
@@ -76255,7 +76278,7 @@ cZU
 cZU
 dGj
 yde
-vJk
+hel
 rGC
 yde
 yde
@@ -76512,7 +76535,7 @@ qBj
 qBj
 xgZ
 yde
-vJk
+hel
 dqa
 dlN
 xZc
@@ -76769,7 +76792,7 @@ dGj
 xgZ
 fKN
 yde
-vJk
+hel
 iYx
 gje
 pll
@@ -77026,7 +77049,7 @@ jtS
 jtS
 bBH
 yde
-vJk
+hel
 rGC
 gje
 pll
@@ -77283,7 +77306,7 @@ iUQ
 iUQ
 iUQ
 iUQ
-vJk
+hel
 rGC
 gje
 tZu
@@ -77540,7 +77563,7 @@ yde
 yde
 yde
 yde
-vJk
+hel
 rGC
 gje
 syK
@@ -78568,7 +78591,7 @@ uIt
 bKo
 ptC
 uQa
-vJk
+hel
 rGC
 cyi
 mrr
@@ -78825,7 +78848,7 @@ yde
 yde
 yde
 yde
-vJk
+hel
 rGC
 gje
 xZc

@@ -1268,7 +1268,6 @@
 	icon_state = "nightstand_alt"
 
 //From Mojave sun, credit to them for the sprite
-/*
 /obj/structure/wood_counter
 	name = "Wooden Counter"
 	desc = "Count your wood? Or is it wood your count.."
@@ -1316,7 +1315,7 @@
 	desc = "Count your wood? Or is it wood your count.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "craft_counter_cross"
-*/
+
 /obj/structure/toilet_paper
 	name = "Toilet Paper Holder"
 	desc = "Look before you shit! I mean, sit!"
