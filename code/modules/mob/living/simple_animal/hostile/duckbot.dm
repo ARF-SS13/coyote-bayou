@@ -68,6 +68,11 @@
 	light_on = TRUE
 	randpixel = 12
 
+/mob/living/simple_animal/hostile/amusing_duck/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/wuv, "quacks!", EMOTE_AUDIBLE, /datum/mood_event/pet_animal, "quacks!", EMOTE_AUDIBLE)
+	AddElement(/datum/element/mob_holder, "duck")
+
 /mob/living/simple_animal/hostile/amusing_duck/handle_automated_action()
 	. = ..()
 	if(!.)
