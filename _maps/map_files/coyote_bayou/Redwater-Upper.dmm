@@ -15,7 +15,8 @@
 /area/f13/building/firetower)
 "bk" = (
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "bq" = (
@@ -49,7 +50,8 @@
 	color = "#A47449"
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "cd" = (
@@ -91,7 +93,8 @@
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1;
-	icon_state = "railing_corner"
+	icon_state = "railing_corner";
+	pixel_y = 0
 	},
 /obj/structure/railing{
 	color = "#A47449";
@@ -100,7 +103,8 @@
 	pixel_x = 1
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "cZ" = (
@@ -147,10 +151,12 @@
 /obj/structure/railing{
 	dir = 1;
 	icon_state = "railing_corner";
+	pixel_y = 0;
 	pixel_x = 1
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "dV" = (
@@ -182,11 +188,14 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "eQ" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
@@ -228,7 +237,8 @@
 	color = "#363636"
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "fL" = (
@@ -412,11 +422,13 @@
 "mR" = (
 /obj/structure/railing{
 	color = "#A47449";
+	dir = 2;
 	icon_state = "railing_corner";
 	pixel_x = 1
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "nj" = (
@@ -446,7 +458,8 @@
 "oj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "oo" = (
@@ -488,6 +501,7 @@
 "oN" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/structure/railing{
+	dir = 2;
 	icon_state = "railing_corner";
 	pixel_y = 2
 	},
@@ -512,17 +526,20 @@
 	light_color = "#f4e3b0"
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "pL" = (
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1;
-	icon_state = "railing_corner"
+	icon_state = "railing_corner";
+	pixel_y = 0
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "pM" = (
@@ -588,7 +605,8 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "ro" = (
@@ -764,11 +782,14 @@
 	color = "#A47449"
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/building/firetower)
 "vb" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
 	},
@@ -823,7 +844,9 @@
 	},
 /area/f13/wasteland)
 "xA" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
@@ -876,7 +899,9 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "yI" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/structure/car/rubbish3,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
@@ -905,7 +930,8 @@
 	pixel_x = 1
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "zj" = (
@@ -987,7 +1013,8 @@
 "Aw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "AF" = (
@@ -1060,7 +1087,9 @@
 /turf/open/floor/carpet,
 /area/f13/building/firetower)
 "BU" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/closed/wall/f13/wood,
 /area/f13/village/overpass_village)
 "Cg" = (
@@ -1164,7 +1193,8 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/building/firetower)
 "FF" = (
@@ -1177,7 +1207,8 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/building/firetower)
 "FL" = (
@@ -1686,7 +1717,8 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "Tc" = (
@@ -1875,7 +1907,8 @@
 	pixel_y = 2
 	},
 /turf/open/transparent/openspace{
-	name = "air"
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/wasteland)
 "Zc" = (

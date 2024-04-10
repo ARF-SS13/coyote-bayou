@@ -4520,7 +4520,9 @@
 	},
 /area/f13/building)
 "dxz" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	req_access = null
+	},
 /turf/open/floor/plasteel/darkbrown/side{
 	dir = 1
 	},
@@ -6168,7 +6170,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "eIn" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	req_access = null
+	},
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "eIu" = (
@@ -13557,7 +13561,9 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood)
 "jTF" = (
-/obj/structure/toilet,
+/obj/structure/toilet{
+	pixel_y = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -14996,6 +15002,16 @@
 /obj/structure/flora/wasteplant/wild_xander,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"kXC" = (
+/obj/machinery/shower{
+	icon_state = "shower";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
 "kXK" = (
 /turf/closed/wall/f13/supermart,
 /area/f13/building)
@@ -15776,7 +15792,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "lxG" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -22586,7 +22604,9 @@
 	},
 /area/f13/tunnel)
 "qCp" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	req_access = null
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -24112,7 +24132,9 @@
 	},
 /area/f13/building)
 "rKK" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -29116,9 +29138,11 @@
 /area/f13/wasteland)
 "vlZ" = (
 /obj/structure/filingcabinet{
+	pixel_y = 0;
 	pixel_x = 9
 	},
 /obj/structure/filingcabinet{
+	pixel_y = 0;
 	pixel_x = -1
 	},
 /obj/machinery/light/small{
@@ -42989,7 +43013,7 @@ mec
 eSu
 yde
 bKl
-jHN
+kXC
 dpp
 lez
 dpp

@@ -470,6 +470,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -981,6 +982,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -2247,6 +2249,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -4756,6 +4759,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -5080,6 +5084,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -6477,6 +6482,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -8796,6 +8802,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -8871,7 +8878,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/ruins)
 "aHg" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/ruins)
 "aHh" = (
@@ -13376,6 +13385,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -13553,6 +13563,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -13941,6 +13952,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -14195,6 +14207,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -14378,6 +14391,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -15498,12 +15512,14 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/item/trash,
@@ -15641,6 +15657,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -15750,6 +15767,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -18365,6 +18383,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -19099,6 +19118,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -20392,6 +20412,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -20749,6 +20770,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -21086,6 +21108,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -21099,6 +21122,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -22698,6 +22722,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -23445,6 +23470,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -23857,6 +23883,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -23929,6 +23956,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -24148,7 +24176,8 @@
 /area/f13/building)
 "cKC" = (
 /obj/machinery/light{
-	dir = 8
+	dir = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -24183,6 +24212,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -24531,6 +24561,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -25130,6 +25161,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -25155,6 +25187,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -25456,6 +25489,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -25810,7 +25844,9 @@
 /area/f13/wasteland)
 "dhn" = (
 /obj/structure/rack/shelf_metal/modern,
-/obj/item/storage/medical/ancientfirstaid,
+/obj/item/storage/medical/ancientfirstaid{
+	pixel_y = 0
+	},
 /obj/item/storage/box/ration/ranger_breakfast{
 	pixel_y = -6
 	},
@@ -26341,7 +26377,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dph" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/ruins)
@@ -26985,6 +27023,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -27056,6 +27095,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -27197,6 +27237,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/water{
@@ -27253,6 +27294,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -27283,6 +27325,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -27541,6 +27584,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -27593,6 +27637,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -28811,6 +28856,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -28850,6 +28896,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -29094,6 +29141,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -29196,6 +29244,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -29817,6 +29866,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -30225,6 +30275,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -30544,6 +30595,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -30708,6 +30760,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -30808,6 +30861,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -31071,6 +31125,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -31442,6 +31497,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -33799,6 +33855,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -33947,6 +34004,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -34393,6 +34451,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -34540,6 +34599,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -34904,6 +34964,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -35416,6 +35477,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -36420,6 +36482,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -37087,6 +37150,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -37685,6 +37749,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -38641,6 +38706,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -38824,6 +38890,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -39169,6 +39236,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -39306,6 +39374,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -40065,7 +40134,9 @@
 	},
 /area/f13/wasteland/city)
 "gYo" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
@@ -40411,6 +40482,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -41475,6 +41547,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/water{
@@ -41557,9 +41630,11 @@
 /area/f13/building/abandoned)
 "hvt" = (
 /obj/structure/fence/wooden{
+	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/fence/wooden{
+	pixel_y = 0;
 	pixel_x = -13
 	},
 /turf/closed/wall/f13/wood/house,
@@ -41664,6 +41739,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -41782,6 +41858,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -42646,6 +42723,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/item/trash,
@@ -42775,6 +42853,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -42948,6 +43027,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -43087,6 +43167,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -43228,6 +43309,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -44312,6 +44394,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -45065,6 +45148,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -45143,6 +45227,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -45423,6 +45508,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -46601,6 +46687,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -46690,6 +46777,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -46762,7 +46850,8 @@
 	density = 0;
 	dir = 1;
 	layer = 3.6;
-	pixel_x = -16
+	pixel_x = -16;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -47380,6 +47469,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -47663,6 +47753,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -47826,6 +47917,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/item/trash,
@@ -48055,6 +48147,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -48455,6 +48548,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -49943,6 +50037,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -50294,6 +50389,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -50667,6 +50763,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -50877,6 +50974,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -51457,6 +51555,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -51750,6 +51849,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -52032,6 +52132,7 @@
 /area/f13/wasteland/massfusion/entrance)
 "kkD" = (
 /turf/open/floor/f13{
+	dir = 2;
 	icon_state = "yellowsiding"
 	},
 /area/f13/building/coyote/safe/nash)
@@ -52498,6 +52599,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -54676,6 +54778,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -54717,6 +54820,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -54910,6 +55014,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -55153,6 +55258,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -55209,6 +55315,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -55263,6 +55370,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -55617,6 +55725,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -56799,6 +56908,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -57232,6 +57342,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -57911,6 +58022,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -58213,6 +58325,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -58362,6 +58475,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -58978,6 +59092,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -58999,6 +59114,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -59340,6 +59456,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -60359,6 +60476,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -60417,6 +60535,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -60749,6 +60868,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -60773,6 +60893,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -61440,6 +61561,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -62286,6 +62408,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -62487,6 +62610,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -63509,6 +63633,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -63951,6 +64076,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -64751,6 +64877,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/gravel,
@@ -64879,6 +65006,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -64943,6 +65071,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -65859,6 +65988,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -65890,6 +66020,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -65961,6 +66092,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -66051,6 +66183,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -66428,7 +66561,8 @@
 	density = 0;
 	dir = 1;
 	layer = 3.6;
-	pixel_x = -16
+	pixel_x = -16;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -66953,6 +67087,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -67280,6 +67415,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -67385,6 +67521,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -68230,6 +68367,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -68611,6 +68749,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -69020,6 +69159,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -69065,6 +69205,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -69193,6 +69334,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -69522,6 +69664,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -69754,7 +69897,9 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/building/abandoned)
 "oLI" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
 	bulb_colour = "#BC8F8F";
@@ -70365,6 +70510,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -70452,6 +70598,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -71110,6 +71257,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -71242,6 +71390,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -71303,6 +71452,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -71927,6 +72077,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -73381,6 +73532,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -74100,6 +74252,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -74435,6 +74588,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -74452,6 +74606,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -74883,6 +75038,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/item/trash,
@@ -74902,6 +75058,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -75130,6 +75287,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -75397,6 +75555,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -77106,6 +77265,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -77504,6 +77664,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -77600,6 +77761,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -77992,6 +78154,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -78071,6 +78234,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/gravel{
@@ -78525,6 +78689,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -79020,6 +79185,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/gravel{
@@ -79282,6 +79448,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -79730,6 +79897,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -79859,6 +80027,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -81074,6 +81243,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -82140,6 +82310,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -83259,6 +83430,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -83443,6 +83615,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -85089,6 +85262,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -85127,6 +85301,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -85343,6 +85518,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -85994,6 +86170,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -86066,6 +86243,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -86555,6 +86733,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -87307,6 +87486,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -87470,6 +87650,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -87693,6 +87874,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/gravel,
@@ -87817,6 +87999,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -87835,6 +88018,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -88128,6 +88312,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -88667,6 +88852,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -88768,6 +88954,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -88964,6 +89151,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -89668,6 +89856,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -89683,6 +89872,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -89809,6 +89999,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -90450,6 +90641,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -90457,6 +90649,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -90707,6 +90900,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -91091,6 +91285,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -92132,6 +92327,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -92345,6 +92541,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -92514,6 +92711,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -93313,6 +93511,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -93323,6 +93522,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -95331,6 +95531,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -95658,6 +95859,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -95807,6 +96009,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -96157,6 +96360,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -96236,6 +96440,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/water{
@@ -96977,6 +97182,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -97203,6 +97409,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -97271,6 +97478,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -97652,6 +97860,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -98284,6 +98493,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -98302,6 +98512,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -98988,6 +99199,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -99091,6 +99303,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -99373,6 +99586,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/gravel{
@@ -99557,6 +99771,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -99979,6 +100194,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -100238,6 +100454,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -100331,6 +100548,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -100858,6 +101076,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -101149,6 +101368,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -101308,6 +101528,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -101997,6 +102218,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -102011,6 +102233,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -102380,6 +102603,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -102665,6 +102889,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -103607,6 +103832,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -103830,6 +104056,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
+	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -103871,6 +104098,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -104696,6 +104924,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
@@ -104877,6 +105106,7 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "fog";
+	pixel_y = 0;
 	pixel_x = -1;
 	opacity = 1
 	},
