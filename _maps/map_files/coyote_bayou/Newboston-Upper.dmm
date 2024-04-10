@@ -577,13 +577,13 @@
 /area/f13/tribe)
 "bW" = (
 /obj/machinery/chem_master/primitive,
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "bY" = (
 /obj/item/kitchen/rollingpin,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter/bend{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -626,6 +626,14 @@
 	color = "#413527"
 	},
 /turf/open/water,
+/area/f13/building/tribal)
+"cf" = (
+/obj/structure/table/craft_counter/bend{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
 /area/f13/building/tribal)
 "cg" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -2461,6 +2469,15 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"gw" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "gy" = (
 /obj/effect/turf_decal/siding/brown,
 /obj/effect/turf_decal/siding/brown{
@@ -5133,9 +5150,8 @@
 	dir = 8
 	},
 /obj/item/kitchen/knife/butcher,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -5804,9 +5820,8 @@
 /area/f13/building)
 "pH" = (
 /obj/item/kitchen/knife,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -5879,10 +5894,7 @@
 /area/f13/building/tribal)
 "pQ" = (
 /obj/item/storage/fancy/rollingpapers,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "pR" = (
@@ -6914,10 +6926,7 @@
 	pixel_y = 6;
 	pixel_x = -14
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -7484,10 +7493,7 @@
 	},
 /obj/item/reagent_containers/pill/antivenom,
 /obj/item/reagent_containers/pill/antivenom,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "un" = (
@@ -7659,10 +7665,7 @@
 /area/f13/caves)
 "uL" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -8055,10 +8058,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "vW" = (
@@ -11417,9 +11417,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
 "EK" = (
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -13444,10 +13443,7 @@
 	pixel_x = 7;
 	pixel_y = 10
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -13658,9 +13654,8 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -13981,10 +13976,7 @@
 /area/f13/building)
 "Ly" = (
 /obj/item/pestle,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "Lz" = (
@@ -19126,6 +19118,12 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
+"Zr" = (
+/obj/structure/table/craft_counter,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "Zs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -24238,7 +24236,7 @@ HU
 HU
 HU
 HU
-EK
+Zr
 CE
 Ar
 UG
@@ -25523,7 +25521,7 @@ Vy
 Ey
 EK
 KD
-EK
+cf
 rz
 bS
 EM
@@ -26552,7 +26550,7 @@ Ki
 Ki
 Ki
 Ki
-Ki
+gw
 Ki
 Ki
 Ki
