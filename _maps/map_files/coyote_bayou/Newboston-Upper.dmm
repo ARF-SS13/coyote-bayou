@@ -517,9 +517,8 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -626,14 +625,6 @@
 	color = "#413527"
 	},
 /turf/open/water,
-/area/f13/building/tribal)
-"cf" = (
-/obj/structure/table/craft_counter/bend{
-	dir = 8
-	},
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
 /area/f13/building/tribal)
 "cg" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -2469,15 +2460,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"gw" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/table/wood,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#777777"
-	},
-/area/f13/tribe)
 "gy" = (
 /obj/effect/turf_decal/siding/brown,
 /obj/effect/turf_decal/siding/brown{
@@ -7493,7 +7475,9 @@
 	},
 /obj/item/reagent_containers/pill/antivenom,
 /obj/item/reagent_containers/pill/antivenom,
-/obj/structure/table/craft_counter,
+/obj/structure/table/craft_counter/bend{
+	dir = 4
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "un" = (
@@ -10765,6 +10749,15 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
+"Dn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "Do" = (
 /obj/structure/rack/shelf_metal/modern,
 /obj/item/stack/rods/scaffold/ten,
@@ -11417,8 +11410,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
 "EK" = (
-/obj/structure/table/craft_counter{
-	dir = 4
+/obj/structure/table/craft_counter/bend{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -14025,6 +14018,12 @@
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston/outdoors)
+"LM" = (
+/obj/structure/table/craft_counter,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "LN" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
@@ -16855,6 +16854,14 @@
 	color = "#766E65"
 	},
 /area/f13/building/tribal)
+"Tf" = (
+/obj/structure/table/craft_counter{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -19118,12 +19125,6 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
-"Zr" = (
-/obj/structure/table/craft_counter,
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
-/area/f13/building/tribal)
 "Zs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -24236,7 +24237,7 @@ HU
 HU
 HU
 HU
-Zr
+LM
 CE
 Ar
 UG
@@ -25519,9 +25520,9 @@ la
 nk
 Vy
 Ey
-EK
+Tf
 KD
-cf
+EK
 rz
 bS
 EM
@@ -26550,7 +26551,7 @@ Ki
 Ki
 Ki
 Ki
-gw
+Dn
 Ki
 Ki
 Ki
