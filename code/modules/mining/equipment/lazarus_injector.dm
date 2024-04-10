@@ -101,11 +101,10 @@
 				return
 			if(M.stat == DEAD)
 				M.faction = list("neutral")
+				M.maxHealth = 45
 				M.revive(full_heal = 1, admin_revive = 1)
-				M.alpha = 100
+				M.alpha = 200
 				M.color = GHOSTLY_BLUE
-				M.light_color = GHOSTLY_BLUE
-				M.light_range = 2
 				user.visible_message(span_notice("[M] suddenly contorts in pain before rising a ghostly blue!"))
 				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
 				return
@@ -129,11 +128,10 @@
 				return
 			if(M.stat == DEAD)
 				M.faction = list("neutral")
+				M.maxHealth = 20
 				M.revive(full_heal = 1, admin_revive = 1)
-				M.alpha = 100	
+				M.alpha = 200
 				M.color = DEMON_RED
-				M.light_color = DEMON_RED
-				M.light_range = 2
 				user.visible_message(span_notice("[M] suddenly contorts in pain before rising a crimson red!"))
 				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
 				return
