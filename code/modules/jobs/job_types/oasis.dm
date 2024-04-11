@@ -39,9 +39,6 @@ here's a tip, go search DEFINES/access.dm
 	department_flag = DEP_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "New Boston laws"
-	description = "You are a farmer living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
-	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -86,16 +83,13 @@ here's a tip, go search DEFINES/access.dm
 
 
 /*--------------------------------------------------------------*/
-/*
+
 /datum/job/oasis/f13prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
-	supervisors = "The Mayor"
-	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of New Bostonunderstands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
-	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
+	total_positions = -1
+	spawn_positions = -1
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13prospector
@@ -110,11 +104,11 @@ here's a tip, go search DEFINES/access.dm
 			/datum/job/oasis,
 		),
 	)
-/*
+
 	loadout_options = list(
-	/datum/outfit/loadout/engineer,
+	/datum/outfit/loadout/scavenger,
 	/datum/outfit/loadout/miner,)
-*/
+
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
 	jobtype = /datum/job/oasis/f13prospector
@@ -122,16 +116,12 @@ here's a tip, go search DEFINES/access.dm
 	id = /obj/item/card/id/dogtag/town
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/lantern
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/mining_scanner,
-		/obj/item/melee/onehanded/knife/hunting,
-		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
-		w = 1,
+		/obj/item/supplykit
 		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -150,13 +140,10 @@ here's a tip, go search DEFINES/access.dm
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
-/datum/outfit/loadout/engineer
-	name = "Engineer"
-	suit = /obj/item/clothing/suit/apron/overalls
+/datum/outfit/loadout/scavenger
+	name = "Scavenger"
 	glasses = /obj/item/clothing/glasses/welding
-	uniform = /obj/item/clothing/under/misc/overalls
 	belt = /obj/item/storage/belt/utility/full
-	shoes = /obj/item/clothing/shoes/workboots
 	backpack_contents = list(
 		/obj/item/pickaxe/mini = 1,
 		/obj/item/shovel/spade = 1,
@@ -165,16 +152,13 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/loadout/miner
 	name = "Miner"
 	suit = /obj/item/clothing/suit/armor/light/leather/rig
-	uniform = /obj/item/clothing/under/f13/lumberjack
 	head = /obj/item/clothing/head/hardhat
-	belt = /obj/item/storage/belt/utility/mining/alt
-	shoes = /obj/item/clothing/shoes/f13/miner
 	backpack_contents = list(
 		/obj/item/t_scanner/adv_mining_scanner = 1,
 		/obj/item/pickaxe/silver = 1,
 		/obj/item/shovel = 1,
 		)
-*/
+
 
 /*--------------------------------------------------------------*/
 

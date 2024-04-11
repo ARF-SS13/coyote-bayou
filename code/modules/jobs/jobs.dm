@@ -155,7 +155,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Farmer",
-	//"Prospector",
+	"Prospector",
 	//"Doctor",
 	//"Detective",
 	//"Guild Financier",
