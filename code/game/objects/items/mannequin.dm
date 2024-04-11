@@ -124,14 +124,7 @@
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 
-/// shitty debug fuckers
-/obj/item/mannequin/debug_mannequin
-	name = "lizard secretary mannequin"
-	desc = "Hey there, Pushes-The-Papers!"
-	dressup = /datum/outfit/job/den/f13secretary
-	spec = /datum/species/lizard
-	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT
-	debug = TRUE
+
 
 /obj/item/mannequin/debug_mannequin/random_random
 	name = "mannequin"
