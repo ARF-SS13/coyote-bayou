@@ -78,7 +78,7 @@
 #define DEMON_RED "#ff6969"
 
 /obj/item/holoparasite_injector
-	name = "Etherleech Injector"
+	name = "BioSynth Reanimator Injector" // RIP, single most generic name to beat out "Etherleech".
 	desc = "An injector filled with a cocktail of nanomachines that copy an entity's form, using the body to fuel another charge and animate it."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "lazarus_hypo"
@@ -89,7 +89,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 3
 	throw_range = 5
-	var/revive_type = SENTIENCE_ORGANIC //So you can't revive boss monsters or robots with it
+	var/revive_type = SENTIENCE_ORGANIC // So you can't revive boss monsters with it.
 
 /obj/item/holoparasite_injector/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
@@ -117,8 +117,9 @@
 			return
 
 /obj/item/holoparasite_injector/jaeger
-	name = "LLX22 Crimson Etherleech Auto-Injector"
-
+	name = "LLX22 Crimson Holoparasite Auto-Injector"
+	desc = "A specially branded Holoparasite nanite strain. What years of the LLX11 Jet Auto-Injector program has led up to- a modern philosopher's stone. You can't bring back the dead, not in the way LapinLattice tried at least."
+	icon_state = "combat_hypo"
 /obj/item/holoparasite_injector/jaeger/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
 	if(isliving(target) && proximity_flag)
