@@ -26,9 +26,7 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
 
-/*
-Mayor
-*/
+
 
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
