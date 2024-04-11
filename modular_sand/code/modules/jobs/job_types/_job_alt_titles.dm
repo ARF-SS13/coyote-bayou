@@ -1,3 +1,6 @@
+/datum/job
+	var/list/alt_titles = list()
+
 //Command
 /datum/job/captain
 	alt_titles = list(
@@ -204,4 +207,13 @@
 /datum/job/mining
 	alt_titles = list(
 		"Explorer"
+		)
+
+//CB Job Alt Titles
+/datum/job/wasteland/f13raider/adventurer
+	alt_titles = list(
+		"Explorer",
+		"Gunslinger",
+		"Healer",
+		"Bruiser",
 		)
