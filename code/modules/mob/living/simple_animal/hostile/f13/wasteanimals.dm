@@ -946,7 +946,7 @@
 
 /mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
 /obj/item/projectile/giantratsummon
 	name = "giant rat summoning"

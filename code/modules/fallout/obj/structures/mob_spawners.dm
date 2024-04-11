@@ -303,7 +303,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
 	mob_types = list(/mob/living/simple_animal/hostile/molerat/micro = 10)
-	mob_types = list(/mob/living/simple_animal/hostile/molerat/leader = 3)
+	mob_types = list(/mob/living/simple_animal/hostile/molerat/leader = 1)
 	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
