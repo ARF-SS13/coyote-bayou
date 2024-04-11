@@ -164,6 +164,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Preacher",
 	"New Boston Librarian",
 	"Texarkana Ranger",
+	"Adventurer"
 ))
 
 //Den Citizenship
