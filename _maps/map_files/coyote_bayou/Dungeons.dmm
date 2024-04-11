@@ -33102,9 +33102,10 @@
 /area/f13/enclave)
 "omw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/ladder/unbreakable{
-	id = "hn2";
-	height = 2
+/obj/effect/step_trigger/teleporter{
+	teleport_x = 129;
+	teleport_y = 192;
+	checkPulled = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -55515,6 +55516,17 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
+"xRg" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/step_trigger/player_choice_log{
+	title = "Welcome to Heavens Night.";
+	question = "Welcome to Heavens Night, this club is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/underground/cave)
 "xRz" = (
 /obj/effect/turf_decal/big{
 	dir = 6
@@ -103206,7 +103218,7 @@ iWs
 xZG
 xZG
 xZG
-xZG
+apk
 pAR
 whv
 whv
@@ -103462,7 +103474,7 @@ xJa
 kNU
 kNU
 kNU
-kNU
+xRg
 omw
 apk
 whv
@@ -103720,7 +103732,7 @@ kNU
 pAR
 xZG
 xZG
-xZG
+apk
 apk
 whv
 whv
