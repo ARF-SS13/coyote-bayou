@@ -792,6 +792,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			droppedstuff |= newthing
 	for(var/atom/thingy in droppedstuff)
 		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
+	loot.Cut()
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
