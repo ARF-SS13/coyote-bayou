@@ -1887,7 +1887,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/crittermaster/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.faction |= list("critter-friend, neutral")
+	H.faction |= list("critter-friend")
 	tame = new
 	H.AddAbility(tame)
 	gather = new
@@ -1898,7 +1898,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/crittermaster/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
-		H.faction -= list("critter-friend, neutral")
+		H.faction -= list("critter-friend")
 		H.RemoveAbility(tame)
 		QDEL_NULL(tame)
 		H.RemoveAbility(gather)
