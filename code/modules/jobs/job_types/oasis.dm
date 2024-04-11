@@ -224,7 +224,7 @@ here's a tip, go search DEFINES/access.dm
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13settler
-	title = "New Boston Citizen"
+	title = "Citizen"
 	flag = F13SETTLER
 	department_flag = DEP_OASIS
 	total_positions = -1
@@ -637,7 +637,7 @@ here's a tip, go search DEFINES/access.dm
 
 
 /datum/job/oasis/nashcurator
-	title = "New Boston Librarian"
+	title = "Librarian"
 	flag = LIBRARIAN
 	department_flag = DEP_OASIS
 	total_positions = -1
@@ -657,7 +657,7 @@ here's a tip, go search DEFINES/access.dm
 	)
 
 /datum/outfit/job/den/nashcurator
-	name = "New Boston Librarian"
+	name = "Librarian"
 	jobtype = /datum/job/oasis/nashcurator
 	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town

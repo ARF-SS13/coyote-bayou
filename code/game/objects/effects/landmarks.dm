@@ -775,7 +775,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/nashcurator
-	name = "New Boston Librarian"
+	name = "Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/dendoc

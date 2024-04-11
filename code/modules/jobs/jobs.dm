@@ -154,15 +154,17 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"New Boston Citizen",
+	"Citizen",
 	"Farmer",
 	"Prospector",
 	"Town Doctor",
 	"Town Scientist",
 	"Guild Worker",
 	"Barkeep",
+	"Club Manager",
+	"Club Worker",
 	"Preacher",
-	"New Boston Librarian",
+	"Librarian",
 	"Texarkana Ranger",
 	"Adventurer"
 ))
