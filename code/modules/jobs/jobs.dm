@@ -154,12 +154,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	//"High Alderperson",
-	//"Councilperson",
-	"Sheriff",
-	"New Boston Security",
-	//"Deputy Mayor",
-	//"Farmer",
+	"Farmer",
 	//"Prospector",
 	//"Doctor",
 	//"Detective",

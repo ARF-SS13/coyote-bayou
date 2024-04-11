@@ -33,16 +33,12 @@ here's a tip, go search DEFINES/access.dm
 	faction = FACTION_OASIS
 
 
-
-
-/*--------------------------------------------------------------*/
-/*
 /datum/job/oasis/f13farmer
 	title = "Farmer"
 	flag = F13FARMER
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "New Boston laws"
 	description = "You are a farmer living in New Boston. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
 	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
@@ -60,12 +56,7 @@ here's a tip, go search DEFINES/access.dm
 			/datum/job/oasis,
 		),
 	)
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/abiotic,
-	/datum/outfit/loadout/pomologist,
-	/datum/outfit/loadout/zany,)
-*/
+
 /datum/outfit/job/den/f13farmer
 	name = "Farmer"
 	jobtype = /datum/job/oasis/f13farmer
@@ -74,15 +65,14 @@ here's a tip, go search DEFINES/access.dm
 
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/storage/bag/plants
 	backpack_contents = list(
 		/obj/item/cultivator=1, \
 		/obj/item/hatchet=1,
-		/obj/item/shovel/spade=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm/adv/simple=2)
+		/obj/item/shovel/spade=1,
+		/obj/item/supplykit)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -94,30 +84,7 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
 
-/datum/outfit/loadout/abiotic
-	name = "Abiotic"
-	backpack_contents = list(
-		/obj/item/seeds/bamboo = 1,
-		/obj/item/seeds/glowshroom = 1,
-		/obj/item/seeds/tower = 1,
-		)
 
-/datum/outfit/loadout/pomologist
-	name = "Pomologist"
-	backpack_contents = list(
-		/obj/item/seeds/grape/green = 1,
-		/obj/item/seeds/apple/gold = 1,
-		/obj/item/seeds/cherry/blue = 1,
-		)
-
-/datum/outfit/loadout/zany
-	name = "Zany"
-	backpack_contents = list(
-		/obj/item/clothing/mask/cigarette/pipe = 1,
-		/obj/item/seeds/cannabis = 1,
-		/obj/item/seeds/tea/catnip = 1,
-		)
-*/
 /*--------------------------------------------------------------*/
 /*
 /datum/job/oasis/f13prospector
