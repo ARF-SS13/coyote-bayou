@@ -627,9 +627,9 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/lilmonster/Initialize()
+/mob/living/simple_animal/hostile/radroach/micro/Initialize()
 	.=..()
-	resize = 0.5
+	resize = 0.75
 	update_transform()
 
 /mob/living/simple_animal/hostile/radroach/strongradroach
@@ -673,6 +673,11 @@
 	) //same as a newt for how they attack
 
 /mob/living/simple_animal/hostile/radroach/leader/Initialize()
+	.=..()
+	resize = 2.0
+	update_transform()
+
+/mob/living/simple_animal/hostile/radroach/strongradroach/Initialize()
 	.=..()
 	resize = 2.0
 	update_transform()

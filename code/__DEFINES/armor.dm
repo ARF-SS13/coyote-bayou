@@ -862,9 +862,9 @@
 /* gross mob spawner pre-spawner thing armor
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RIFT list(\
-		"melee" = 50, \
+		"melee" = 15, \
 		"bullet" = 25, \
-		"laser" = 50, \
+		"laser" = 15, \
 		"energy" = -100, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -879,7 +879,7 @@
  * Rather bearable otherwise
  * * * * * * * * * * * */
 #define ARMOR_VALUE_BEAR list(\
-		"melee" = 80, \
+		"melee" = 25, \
 		"bullet" = 15, \
 		"laser" = 10, \
 		"energy" = 0, \
@@ -889,15 +889,15 @@
 		"fire" = 100, \
 		"acid" = 100, \
 		"wound" = 100, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 4)
 
 /* Bear armor!
  * Unbearable in melee
  * And also in ranged
  * * * * * * * * * * * */
 #define ARMOR_VALUE_BEAR_ARMOR list(\
-		"melee" = 80, \
-		"bullet" = 75, \
+		"melee" = 35, \
+		"bullet" = 35, \
 		"laser" = 10, \
 		"energy" = 0, \
 		"bomb" = 0, \
@@ -906,7 +906,7 @@
 		"fire" = 100, \
 		"acid" = 100, \
 		"wound" = 100, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 7)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values

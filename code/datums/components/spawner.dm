@@ -82,6 +82,12 @@
 		mob_types = _mob_types
 	if(_faction)
 		faction = _faction
+	else
+		for(var/mobpath in mob_types)
+			var/mob/living/mobinit = mobpath
+			var/list/fact = initial(mobinit.faction)
+			if(LAZYLEN(fact))
+				faction |= fact
 	//if(_spawn_text)
 		//spawn_text = _spawn_text
 	if(_max_mobs)
@@ -118,6 +124,7 @@
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,    PROC_REF(coverme))
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,  PROC_REF(uncoverme))
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, PROC_REF(unbirth_mob))
+	RegisterSignal(parent, COMSIG_ATOM_QUEST_SCANNED, PROC_REF(dump_questables))
 	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS,PROC_REF(has_spawner))
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
@@ -368,7 +375,7 @@
 		qdel(parent)
 
 /// spawn the mob(s)
-/datum/component/spawner/proc/spawn_mob()
+/datum/component/spawner/proc/spawn_mob(list/overrides)
 	var/atom/P = parent
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
@@ -381,27 +388,66 @@
 			qdel(spawner_special)
 			return
 	var/chosen_mob
-	var/mob/living/simple_animal/L
-	for(var/i = 1 to swarm_size)
-		if(infinite) // dont decrement the spawnlist
-			chosen_mob = pickweight(mob_types)
-		else
-			chosen_mob = pickweight_n_reduce(mob_types)
+	var/override_mob = LAZYACCESS(overrides, "which_mob")
+	var/override_swarm = LAZYACCESS(overrides, "how_many")
+	var/mob/living/simple_animal/L = override_mob
+	var/how_many = override_swarm || swarm_size
+	for(var/i in 1 to how_many)
+		if(ispath(L) && mob_types[L] >= 1)
+			chosen_mob = L
+			mob_types[L]--
+		if(!ispath(L))
+			if(infinite) // dont decrement the spawnlist
+				chosen_mob = pickweight(mob_types)
+			else
+				chosen_mob = pickweight_n_reduce(mob_types)
 		if(!chosen_mob)
-			qdel(P) // clearly, out of mobs. shouldnt get here
+			if(istype(parent, /obj/structure/nest))
+				qdel(P) // clearly, out of mobs. shouldnt get here
 			return
 		L = new chosen_mob(get_turf(P), "TOPHEAVY-KOBOLD")
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs |= WEAKREF(L)
-		L.nest = WEAKREF(P) // Neither really own each other, its all purely for record keeping
+		L.link_to_nest(P)
 		if(length(faction))
 			L.faction = src.faction
-		if(ignore_faction)
-			L.ignore_faction = TRUE
+		// if(ignore_faction)
+		// 	L.ignore_faction = TRUE
 	// P.visible_message(span_danger("[L] [spawn_text] [P]."))
 	if(spawn_sound)
 		playsound(P, spawn_sound, 30, 1)
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
+
+/datum/component/spawner/proc/remove_mob_from_nest(datum/source, mob/living/simple_animal/removed_animal)
+	for(var/datum/weakref/maybe_them in spawned_mobs)
+		if(GET_WEAKREF(maybe_them) == removed_animal)
+			spawned_mobs -= maybe_them
+
+/datum/component/spawner/proc/dump_questables(datum/source, mob/user)
+	if(!user)
+		return
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(user)
+	if(!QB)
+		return
+	if(!QB.scanning_mobs_makes_nests_dump_questable_mobs)
+		return
+	var/list/questable_typecache = QB.get_quest_paths()
+	if(!LAZYLEN(questable_typecache))
+		return
+	var/list/squirts = list()
+	for(var/mobpath in mob_types)
+		if(questable_typecache[mobpath])
+			squirts += mobpath
+	if(!LAZYLEN(squirts))
+		return
+	var/squirts_left = 4
+	var/squirts_per = round(squirts_left / LAZYLEN(squirts))
+	for(var/mobpath in squirts)
+		spawn_mob(list("which_mob" = mobpath, "how_many" = round(squirts_per)))
+		squirts_left -= squirts_per
+		if(squirts_left <= 0)
+			break
+
 
 /datum/component/spawner/proc/setup_random_nest()
 	if(!randomizer_tag)
@@ -607,7 +653,7 @@
 /// mutates our stored values to be a bit different!
 /datum/nest_box/proc/mutate() // >:3c
 	spawn_time = clamp(spawn_time + rand(-5 SECONDS, 5 SECONDS), 5 SECONDS, 60 SECONDS)
-	max_mobs = clamp(max_mobs + rand(-2, 3), 1, 10)
+	// max_mobs = clamp(max_mobs + rand(-2, 3), 1, 10)
 	overpopulation_range = clamp(overpopulation_range + rand(-2, 2), 1, 20)
 	swarm_size = swarm_size > 1 ? clamp(swarm_size + rand(1, 3), 1, 10) : 1
 	radius = clamp(radius + rand(-2, 2), 1, 20)
@@ -616,7 +662,7 @@
 		if(prob(50) && LAZYLEN(mob_types) > 1)
 			new_paths[mobpath] = mob_types[mobpath] // no change
 			continue
-		ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
+		// ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
 		var/list/potentials = list()
 		/// if its a robot, turn that robot into a different robot!
 		if(ispath(mobpath, /mob/living/simple_animal/hostile/eyebot))
@@ -831,16 +877,16 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
 			potentials -= mobpath
 		if(LAZYLEN(potentials))
-			new_paths[pick(potentials)] = clamp(mob_types[mobpath] |= rand(-1,5), 1, 100)
+			new_paths[pick(potentials)] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 			continue
-		new_paths[mobpath] = clamp(mob_types[mobpath] |= rand(-1,5), 1, 100)
+		new_paths[mobpath] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 		continue
 	nest_name = "Class \Roman[generation] ex-vivo delivery chamber"
 	nest_desc = "A cool hole in the ground full of cool things. Stick your hand in and see! (Warning: Cool things are actually baddies)"
-	if(prob(3))
+	if(prob(1))
 		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 3 // quaCK
 		nest_desc += " Disclaimer: Lay egg is true."
-	if(prob(5))
+	if(prob(1))
 		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool
 		nest_desc += " Also there's a lot of angry honking in there. Weird."
 		swarm_size += 1

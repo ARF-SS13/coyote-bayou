@@ -150,6 +150,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/saved_finished_quests = list()
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
+	var/list/saved_unclaimed_points = 0
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
