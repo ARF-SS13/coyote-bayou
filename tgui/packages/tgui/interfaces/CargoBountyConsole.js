@@ -372,6 +372,7 @@ const BottomToolbar = (props, context) => {
   const {
     TimeToNext,
     BeepOnUpdate,
+    scanning_mobs_makes_nests_dump_questable_mobs,
   } = data;
 
   const BeepToggleIcon = BeepOnUpdate ? "volume-up" : "volume-mute";
@@ -412,8 +413,28 @@ const BottomToolbar = (props, context) => {
             </Stack.Item>
           </Stack>
         </Stack.Item>
-        <Stack.Item basis="50%">
-          <ButtonThatGivesPlayerAScanner />
+        <Stack.Item basis="10%">
+          <Button
+            icon={scanning_mobs_makes_nests_dump_questable_mobs ? "house-signal" : "rss"}
+            iconColor={scanning_mobs_makes_nests_dump_questable_mobs ? "green" : "label"}
+            iconSize={2}
+            tooltip={scanning_mobs_makes_nests_dump_questable_mobs
+              ? "Scanning a mob that had spawned from a nest will trigger the nest to dump out mobs relating to your quests! Click here to make it not do that."
+              : "Scanning a mob that had spawned from a nest will NOT trigger the nest to dump out mobs relating to your quests! Click here to make it do that."}
+            onClick={() => act('ToggleNestDump')} />
+        </Stack.Item>
+        <Stack.Item basis="40%">
+          <Button
+            icon="search"
+            iconSize={2}
+            fluid
+            fitted
+            iconColor="label"
+            color="green"
+            tooltip="Get you a turnin scanner!"
+            onClick={() => act('GetScanner')}>
+            Turn Stuff In!
+          </Button>
         </Stack.Item>
       </Stack>
     </Section>
@@ -671,25 +692,6 @@ const ReadMe = (props, context) => {
       />
 
     </Section>
-  );
-};
-
-// / just a simple button that gives the player a scanner
-// / the scanner is an item that you use to turn in things for quests
-// / fancy!
-const ButtonThatGivesPlayerAScanner = (props, context) => {
-  const { act, data } = useBackend(context);
-  return (
-    <Button
-      icon="search"
-      fluid
-      fitted
-      iconColor="label"
-      color="green"
-      tooltip="Get you a turnin scanner!"
-      onClick={() => act('GetScanner')}>
-      Turn Stuff In!
-    </Button>
   );
 };
 

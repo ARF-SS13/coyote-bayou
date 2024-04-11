@@ -898,6 +898,7 @@
 	name = "Swarmling"
 	maxHealth = 10
 	density = FALSE
+	randpixel = 16
 	health = 15
 	melee_damage_lower = 2
 	melee_damage_upper = 6
@@ -914,7 +915,7 @@
 
 /mob/living/simple_animal/hostile/molerat/micro/Initialize()
 	.=..()
-	resize = 0.3
+	resize = 0.75
 	update_transform()
 
 /mob/living/simple_animal/hostile/molerat/leader

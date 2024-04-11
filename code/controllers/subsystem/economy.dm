@@ -699,6 +699,7 @@ SUBSYSTEM_DEF(economy)
 	var/double_virgin = TRUE
 	var/queued_save = FALSE
 	var/save_spam_cooldown = 0
+	var/scanning_mobs_makes_nests_dump_questable_mobs = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -930,6 +931,7 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return // they broke everything
+	adjust_funds(P.saved_unclaimed_points, null)
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
@@ -946,7 +948,7 @@ SUBSYSTEM_DEF(economy)
 		SSeconomy.activate_quest(B)
 		B.assign_to(user)
 	double_virgin = FALSE
-	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests from your save file! =3"))
+	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [P.saved_unclaimed_points] [SSeconomy.currency_unit] from your save file! =3"))
 	return TRUE
 
 /// Save all the active quests to the save, overwriting whatever's in there
@@ -975,6 +977,7 @@ SUBSYSTEM_DEF(economy)
 		save_package["VALID"] = TRUE
 		to_save += list(save_package)
 	P.saved_active_quests = to_save.Copy()
+	P.saved_unclaimed_points = unclaimed_points
 	. = P.save_character()
 	COOLDOWN_START(src, save_cooldown, 15 SECONDS)
 	if(!COOLDOWN_FINISHED(src, save_spam_cooldown))
@@ -1015,6 +1018,7 @@ SUBSYSTEM_DEF(economy)
 		thing = user
 	playsound(thing, 'sound/effects/quests_updated.ogg', 40, TRUE)
 
+/// returns a typecache
 /datum/quest_book/proc/get_quest_paths()
 	var/list/out = list()
 	for(var/uid in active_quests)
@@ -1058,6 +1062,7 @@ SUBSYSTEM_DEF(economy)
 	data["MyQuests"] = mybounties
 	data["QuestHistory"] = quest_history
 	data["MyFinished"] = recent_finished
+	data["scanning_mobs_makes_nests_dump_questable_mobs"] = scanning_mobs_makes_nests_dump_questable_mobs
 
 	data["CurrencyUnit"] = SSeconomy.currency_unit
 	data["CurrencyName"] = SSeconomy.currency_name
@@ -1135,6 +1140,9 @@ SUBSYSTEM_DEF(economy)
 			. = TRUE
 		if("ToggleClaimOnKill")
 			TOGGLE_VAR(claim_on_kill)
+			. = TRUE
+		if("ToggleNestDump")
+			TOGGLE_VAR(scanning_mobs_makes_nests_dump_questable_mobs)
 			. = TRUE
 		if("OpenQuest")
 			var/datum/bounty/B

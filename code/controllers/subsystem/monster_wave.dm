@@ -156,6 +156,11 @@ SUBSYSTEM_DEF(monster_wave)
 	AIStatus = AI_OFF
 	var/datum/nest_box/nest_seed
 	var/spawn_after = 0
+	light_system = STATIC_LIGHT
+	light_range = 9
+	light_power = 0.75
+	light_color = "#6eaaff"
+	light_on = TRUE
 
 /mob/living/simple_animal/nest_spawn_hole_guy/Initialize(datum/nest_box/NB)
 	if(NB)
