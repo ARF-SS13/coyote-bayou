@@ -362,9 +362,9 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
-	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
+	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

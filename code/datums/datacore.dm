@@ -175,9 +175,6 @@
 		//if(rank in GLOB.biker_positions)
 		//	bikers[name] = rank
 		//	department = 1
-		if(rank in GLOB.heavensnight_positions)
-			heavensnight[name] = rank
-			department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))
