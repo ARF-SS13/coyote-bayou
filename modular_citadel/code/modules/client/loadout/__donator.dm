@@ -1908,7 +1908,7 @@
 /datum/gear/donator/kits/zeronetalpha
 	name = "Glowstick Kit"
 	path = /obj/item/storage/box/large/custom_kit/zeronetalpha
-	ckeywhitelist = list("zeronetalpha, zeronettwo")
+	ckeywhitelist = list("zeronetalpha", "zeronettwo")
 
 /obj/item/storage/box/large/custom_kit/zeronetalpha/PopulateContents()
 	new /obj/item/cartridge/resize
@@ -2096,4 +2096,3 @@
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/toy/plush/otter(src)
-

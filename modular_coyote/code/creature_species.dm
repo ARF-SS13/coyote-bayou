@@ -1227,6 +1227,32 @@
 
 //end aliens
 
+//Mimics! No special code here, I wish I could make the morph mob's gimmick a trait, but this is for all you crate pilled people
+/datum/species/feral/mimic
+	name = "Mimic Chest"
+	simple_icon = 'modular_roguetown/topadd/takyon/Mimics.dmi'
+	id = "newmimic"
+	roundstart = TRUE
+	icon_width = 64
+	alt_prefixes = list(
+		"Inverted" = "oginvert_", 
+		"Hybrid" = "gnorm_", 
+		"Hybrid Inverted" = "gnorminvert_", 
+		"Subtle" = "gsubtle_", 
+		"Silver" = "os_", 
+		"Silver Inverted" = "osinvert_", 
+		"Silver Hybrid" = "snorm_",
+		"Silver Hybrid Inverted" = "snorminvert_",
+		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
+/mob/living/carbon/human/species/mimic
+	race = /datum/species/feral/mimic
+
+// No more mimics
+
 /datum/species/feral/bigwolfblack
 	name = "Feral Giant Black Wolf"
 	id = "blackwolf"
@@ -1486,30 +1512,6 @@
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/probe
 	race = /datum/species/adapted/simplebot/probe
-
-//Mimics! No special code here, I wish I could make the morph mob's gimmick a trait, but this is for all you crate pilled people
-/datum/species/adapted/simplebot/mimic
-	name = "Adapted Mimic"
-	simple_icon = 'modular_roguetown/topadd/takyon/Mimics.dmi'
-	id = "newmimic"
-	roundstart = TRUE
-	icon_width = 64
-	alt_prefixes = list(
-		"Inverted" = "oginvert_", 
-		"Hybrid" = "gnorm_", 
-		"Hybrid Inverted" = "gnorminvert_", 
-		"Subtle" = "gsubtle_", 
-		"Silver" = "os_", 
-		"Silver Inverted" = "osinvert_", 
-		"Silver Hybrid" = "snorm_",
-		"Silver Hybrid Inverted" = "snorminvert_",
-		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
-	icon_dead_suffix = "_rest"
-	icon_rest_suffix = "_dead"
-	rotate_on_lying = FALSE
-	footstep_type = FOOTSTEP_MOB_CRAWL
-/mob/living/carbon/human/species/mimic
-	race = /datum/species/adapted/simplebot/mimic
 
 // Lets just seperate all the feral robot animal robots from the pure, normal robots this time that totally arent thicc
 

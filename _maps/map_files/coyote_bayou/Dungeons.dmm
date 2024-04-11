@@ -82,9 +82,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/mining)
 "aaG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
@@ -204,9 +202,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "adl" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -2259,8 +2255,7 @@
 "aVD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/big{
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -3657,7 +3652,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/machinery/shower{
@@ -4161,8 +4155,7 @@
 /area/f13/underground/cave/tunnelertemple/void)
 "bRj" = (
 /obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -4675,14 +4668,6 @@
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
-"ccT" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot/chew{
-	faction = list("wastebot")
-	},
-/turf/open/floor/plating/f13/inside/mountain{
-	icon_state = "mountain2"
-	},
-/area/f13/underground/cave)
 "ccZ" = (
 /obj/structure/barricade/sandbags{
 	dir = 1
@@ -5509,9 +5494,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/door/window/brigdoor{
-	dir = 4
-	},
+/obj/machinery/door/window/brigdoor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
@@ -5773,9 +5756,7 @@
 	},
 /area/f13/building)
 "cCe" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -6818,9 +6799,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/tunnelertemple)
 "cUg" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
+/obj/machinery/door/window,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -10765,13 +10744,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
-"ewz" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "ewC" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -11959,8 +11931,7 @@
 /area/f13/bunker)
 "eXm" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
@@ -14550,9 +14521,7 @@
 	},
 /area/f13/building)
 "gcB" = (
-/obj/structure/nest/protectron{
-	max_mobs = 2
-	},
+/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/green/side{
 	dir = 1
 	},
@@ -14792,7 +14761,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -15395,12 +15363,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/vault)
-"gvA" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/building)
 "gvM" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -16414,9 +16376,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
 "gSv" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
@@ -16729,7 +16689,6 @@
 /obj/machinery/button/door{
 	id = "finalbossyellow";
 	name = "shutters button";
-	pixel_y = 0;
 	light_color = "#FFFF00";
 	light_power = 40;
 	light_range = 4;
@@ -20196,9 +20155,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "iFy" = (
-/obj/structure/nest/protectron{
-	max_mobs = 2
-	},
+/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/green/side,
 /area/f13/building)
 "iFE" = (
@@ -22674,7 +22631,6 @@
 "jMd" = (
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 2;
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -23002,8 +22958,7 @@
 /area/f13/brotherhood/operations)
 "jUZ" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/floor/plasteel/airless/white,
 /area/f13/building)
@@ -25464,8 +25419,7 @@
 "kXI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/outlet_injector/layer1{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/structure/reagent_dispensers/barrel/explosive{
 	pixel_x = -2;
@@ -25496,7 +25450,6 @@
 "kYy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	id_tag = null;
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -26344,8 +26297,7 @@
 /area/f13/bunker)
 "lsg" = (
 /obj/structure/chair/comfy/brown{
-	dir = 4;
-	icon_state = "comfychair"
+	dir = 4
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -27548,11 +27500,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "lVq" = (
-/obj/structure/wood_counter{
-	layer = 6;
-	pixel_y = -1;
-	opacity = 1
-	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = 9
@@ -27609,7 +27556,6 @@
 "lVG" = (
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 2;
 	pixel_y = 20
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -30385,7 +30331,6 @@
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
 	name = "steam";
-	pixel_y = 0;
 	pixel_x = 19
 	},
 /obj/structure/spacevine{
@@ -31646,8 +31591,7 @@
 /area/f13/building)
 "nDp" = (
 /obj/machinery/light/broken{
-	dir = 8;
-	icon_state = "tube-broken"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -37852,9 +37796,7 @@
 /turf/open/floor/carpet/purple,
 /area/f13/brotherhood/rnd)
 "qgJ" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
+/obj/machinery/door/window,
 /obj/structure/closet,
 /obj/effect/validball_spawner,
 /turf/open/floor/plasteel/barber{
@@ -40014,13 +39956,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
-"raO" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/f13/whitemarble,
-/area/f13/building)
 "raY" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Head Knight's Office";
@@ -40137,7 +40072,6 @@
 /area/f13/building)
 "rcQ" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = null;
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -41061,9 +40995,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/door/window/brigdoor{
-	dir = 4
-	},
+/obj/machinery/door/window/brigdoor,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -45767,8 +45699,7 @@
 /area/f13/brotherhood/leisure)
 "tDc" = (
 /obj/effect/turf_decal/big{
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -46199,13 +46130,6 @@
 	light_color = "#ad1b1b"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/building)
-"tLf" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
-/turf/open/floor/plating/beach/water,
 /area/f13/building)
 "tLA" = (
 /obj/machinery/plantgenes,
@@ -47597,9 +47521,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/water,
 /area/f13/underground/cave/tunnelertemple/void)
 "urZ" = (
@@ -67096,7 +67018,7 @@ aoh
 cCj
 dHW
 aRZ
-ccT
+fTd
 cCj
 gHj
 tMp
@@ -96270,7 +96192,7 @@ dXJ
 xrG
 dXJ
 riK
-gvA
+dON
 qOs
 aLX
 aLX
@@ -115460,7 +115382,7 @@ ltw
 rLB
 tOZ
 tOZ
-raO
+ahI
 jsq
 erS
 rLB
@@ -116752,7 +116674,7 @@ rLB
 jfP
 ubw
 ubw
-ewz
+kIj
 ubw
 eXm
 rLB
@@ -117521,7 +117443,7 @@ cuN
 nsp
 vtf
 tdb
-tLf
+uGd
 qWX
 qWX
 uGd

@@ -113,11 +113,6 @@
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
-	var/coords = atom2coords(parent)
-	var/datum/nest_box/NB = LAZYACCESS(GLOB.nest_spawn_points, coords) // im here! honest
-	if(istype(NB))
-		GLOB.nest_spawn_points[coords] = null
-		qdel(NB) // I'm here, honest
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING,   PROC_REF(nest_destroyed))
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, PROC_REF(on_attack_generic))
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,    PROC_REF(coverme))
@@ -131,7 +126,7 @@
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
-	if(!am_special)
+	if(!am_special && !delay_start)
 		my_ticket = new /datum/nest_box(src)
 	// if(SSspawners.use_turf_registration)
 	// 	register_turfs()
@@ -243,7 +238,7 @@
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
-	if(my_ticket) // we'll be back, eventually
+	if(my_ticket && !am_special) // we'll be back, eventually
 		my_ticket.globalize(src)
 	qdel(src)
 
@@ -477,14 +472,6 @@
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
-/datum/component/spawner/proc/register_myself()
-	var/atom/master = parent
-	if(!master.loc)
-		return
-	var/my_coords = atom2coords(master)
-	if(LAZYACCESS(GLOB.nest_spawn_points, my_coords))
-		return
-
 /// A holder for all sorts of our spawner data, so wacky events can make em come back
 /datum/nest_box
 	var/spawn_time = 0
@@ -604,18 +591,19 @@
 	nuhole.ignore_faction            = ignore_faction
 	nuhole.generation                = generation
 	nuhole.make_component()
+	SSmonster_wave.catalogue_me(src)
 	qdel(src)
 
 /// mutates our stored values to be a bit different!
 /datum/nest_box/proc/mutate() // >:3c
 	spawn_time = clamp(spawn_time + rand(-5 SECONDS, 5 SECONDS), 5 SECONDS, 60 SECONDS)
-	max_mobs = clamp(max_mobs + rand(-3, 3), 1, 10)
+	max_mobs = clamp(max_mobs + rand(-2, 3), 1, 10)
 	overpopulation_range = clamp(overpopulation_range + rand(-2, 2), 1, 20)
-	swarm_size = clamp(swarm_size + rand(-1, 1), 1, 5)
+	swarm_size = swarm_size > 1 ? clamp(swarm_size + rand(1, 3), 1, 10) : 1
 	radius = clamp(radius + rand(-2, 2), 1, 20)
 	var/list/new_paths = list()
 	for(var/mobpath in mob_types)
-		if(prob(50))
+		if(prob(50) && LAZYLEN(mob_types) > 1)
 			new_paths[mobpath] = mob_types[mobpath] // no change
 			continue
 		ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
@@ -704,11 +692,15 @@
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/radscorpion)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/poison/giant_spider)\
 			|| prob(15))
-			potentials |= typesof(/mob/living/simple_animal/hostile/fireant)
-			potentials |= typesof(/mob/living/simple_animal/hostile/radscorpion)
-			potentials |= typesof(/mob/living/simple_animal/hostile/poison/giant_spider)
-			potentials |= typesof(/mob/living/simple_animal/hostile/giantant)
-			potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
+			if(ispath(mobpath, /mob/living/simple_animal/hostile/radroach) && prob(80))
+				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
+				potentials -= /mob/living/simple_animal/hostile/radroach
+			else
+				potentials |= typesof(/mob/living/simple_animal/hostile/fireant)
+				potentials |= typesof(/mob/living/simple_animal/hostile/radscorpion)
+				potentials |= typesof(/mob/living/simple_animal/hostile/poison/giant_spider)
+				potentials |= typesof(/mob/living/simple_animal/hostile/giantant)
+				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
 			potentials -= mobpath
 		/// larger animals 
 		else if(ispath(mobpath, /mob/living/simple_animal/hostile/gorilla)\
@@ -769,16 +761,27 @@
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/stalkeryoung)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/carp)\
 			|| prob(10))
-			potentials |= typesof(/mob/living/simple_animal/hostile/gecko)
-			potentials -= typesof(/mob/living/simple_animal/hostile/gecko/debug)
-			potentials |= typesof(/mob/living/simple_animal/hostile/rat)
-			potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
-			potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
-			potentials |= typesof(/mob/living/simple_animal/hostile/carp)
-			potentials |= typesof(/mob/living/simple_animal/hostile/cazador)
-			potentials |= typesof(/mob/living/simple_animal/hostile/stalkeryoung)
-			potentials |= typesof(/mob/living/simple_animal/hostile/lizard)
-			potentials |= typesof(/mob/living/simple_animal/hostile/lightgeist)
+			if(istype(mobpath, /mob/living/simple_animal/hostile/molerat) && prob(80))
+				potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
+				potentials -= /mob/living/simple_animal/hostile/molerat
+			else			
+				potentials |= typesof(/mob/living/simple_animal/hostile/gecko)
+				potentials -= typesof(/mob/living/simple_animal/hostile/gecko/debug)
+				if(prob(30))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/shaman)
+				if(prob(90))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/head_shaman)
+				if(prob(30))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/chieftain)
+				potentials |= typesof(/mob/living/simple_animal/hostile/rat)
+				potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
+				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
+				potentials |= typesof(/mob/living/simple_animal/hostile/carp)
+				potentials -= typesof(/mob/living/simple_animal/hostile/carp/ranged) // no more literal deathray fish
+				potentials |= typesof(/mob/living/simple_animal/hostile/cazador)
+				potentials |= typesof(/mob/living/simple_animal/hostile/stalkeryoung)
+				potentials |= typesof(/mob/living/simple_animal/hostile/lizard)
+				potentials |= typesof(/mob/living/simple_animal/hostile/lightgeist)
 			potentials -= mobpath
 		/// misc wierdoes
 		else if(istype(mobpath, /mob/living/simple_animal/hostile/trog)\
@@ -825,7 +828,7 @@
 	nest_name = "Class \Roman[generation] ex-vivo delivery chamber"
 	nest_desc = "A cool hole in the ground full of cool things. Stick your hand in and see! (Warning: Cool things are actually baddies)"
 	if(prob(3))
-		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 2 // quaCK
+		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 3 // quaCK
 		nest_desc += " Disclaimer: Lay egg is true."
 	if(prob(5))
 		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool

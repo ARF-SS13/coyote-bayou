@@ -517,13 +517,8 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/structure/craft_counter{
-	dir = 4;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -581,17 +576,13 @@
 /area/f13/tribe)
 "bW" = (
 /obj/machinery/chem_master/primitive,
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "bY" = (
-/obj/structure/craft_counter/bend{
-	dir = 4;
-	layer = 2
-	},
 /obj/item/kitchen/rollingpin,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter/bend{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -1784,7 +1775,6 @@
 "eU" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1;
-	pixel_y = 0;
 	pixel_x = 21
 	},
 /obj/structure/simple_door/house{
@@ -2949,10 +2939,6 @@
 	},
 /area/f13/building)
 "hP" = (
-/obj/structure/wood_counter{
-	layer = 6;
-	pixel_y = -1
-	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = 9
@@ -3691,15 +3677,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
-"kb" = (
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 2
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar/heaven)
 "kc" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/floor/f13{
@@ -5154,14 +5131,9 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/structure/craft_counter{
-	dir = 4;
-	layer = 2
-	},
 /obj/item/kitchen/knife/butcher,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -5830,13 +5802,8 @@
 /area/f13/building)
 "pH" = (
 /obj/item/kitchen/knife,
-/obj/structure/craft_counter{
-	dir = 4;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -5909,13 +5876,7 @@
 /area/f13/building/tribal)
 "pQ" = (
 /obj/item/storage/fancy/rollingpapers,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/obj/structure/craft_counter{
-	layer = 2
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "pR" = (
@@ -6943,17 +6904,11 @@
 	},
 /area/f13/tribe)
 "sP" = (
-/obj/structure/craft_counter{
-	layer = 2
-	},
 /obj/item/pestle{
 	pixel_y = 6;
 	pixel_x = -14
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -7520,13 +7475,8 @@
 	},
 /obj/item/reagent_containers/pill/antivenom,
 /obj/item/reagent_containers/pill/antivenom,
-/obj/structure/craft_counter/bend{
-	dir = 4;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter/bend{
+	dir = 4
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -7699,13 +7649,7 @@
 /area/f13/caves)
 "uL" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/structure/craft_counter{
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -7846,9 +7790,7 @@
 "vd" = (
 /obj/structure/nightstand/small{
 	pixel_x = 2;
-	pixel_y = 22;
-	density = 0;
-	opacity = 0
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -8100,13 +8042,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/obj/structure/craft_counter{
-	layer = 2
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "vW" = (
@@ -10813,6 +10749,15 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
+"Dn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#777777"
+	},
+/area/f13/tribe)
 "Do" = (
 /obj/structure/rack/shelf_metal/modern,
 /obj/item/stack/rods/scaffold/ten,
@@ -11465,13 +11410,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
 "EK" = (
-/obj/structure/craft_counter/bend{
-	dir = 8;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter/bend{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -13496,13 +13436,7 @@
 	pixel_x = 7;
 	pixel_y = 10
 	},
-/obj/structure/craft_counter{
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -13713,13 +13647,8 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/structure/craft_counter{
-	dir = 4;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
+/obj/structure/table/craft_counter{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -14034,20 +13963,13 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt{
-	dir = 2;
 	pixel_y = 32
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "Ly" = (
-/obj/structure/craft_counter{
-	layer = 2
-	},
 /obj/item/pestle,
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "Lz" = (
@@ -14096,6 +14018,12 @@
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston/outdoors)
+"LM" = (
+/obj/structure/table/craft_counter,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "LN" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
@@ -15709,19 +15637,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
-"PQ" = (
-/obj/structure/craft_counter{
-	dir = 4;
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
-/area/f13/building/tribal)
 "PR" = (
 /obj/structure/barricade/wooden/planks{
 	density = 0;
@@ -16939,6 +16854,14 @@
 	color = "#766E65"
 	},
 /area/f13/building/tribal)
+"Tf" = (
+/obj/structure/table/craft_counter{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "Th" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -17050,18 +16973,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/cult,
 /area/f13/tribe)
-"TB" = (
-/obj/structure/craft_counter{
-	layer = 2
-	},
-/obj/structure/table/wood{
-	layer = 2.5;
-	alpha = 1
-	},
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
-/area/f13/building/tribal)
 "TD" = (
 /obj/structure/chair/sofa/right{
 	color = "#800000";
@@ -17839,7 +17750,6 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5;
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
@@ -24327,7 +24237,7 @@ HU
 HU
 HU
 HU
-TB
+LM
 CE
 Ar
 UG
@@ -25610,7 +25520,7 @@ la
 nk
 Vy
 Ey
-PQ
+Tf
 KD
 EK
 rz
@@ -26641,7 +26551,7 @@ Ki
 Ki
 Ki
 Ki
-Ki
+Dn
 Ki
 Ki
 Ki
@@ -45162,7 +45072,7 @@ WX
 Hy
 eG
 ot
-kb
+CF
 tj
 tN
 tN
