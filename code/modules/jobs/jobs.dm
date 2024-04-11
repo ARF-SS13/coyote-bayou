@@ -154,20 +154,15 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
+	"New Boston Citizen",
 	"Farmer",
 	"Prospector",
-	//"Doctor",
-	//"Detective",
-	//"Guild Financier",
 	"Town Doctor",
 	"Town Scientist",
-	//"Texarkana Quartermaster",
 	"Guild Worker",
 	"Barkeep",
-	"Citizen",
-	//"Preacher",
-	"Vertibird Pilot",
-	//"New Boston Librarian",
+	"Preacher",
+	"New Boston Librarian",
 ))
 
 //Den Citizenship
