@@ -357,14 +357,14 @@ GLOBAL_LIST_INIT(position_categories, list(
 	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
 	"Reclaimers" = list("jobs" = reclaimer_positions, "color" = "#a43dd4"),
-	"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
+	//"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
-	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
+	//EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

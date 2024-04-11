@@ -562,100 +562,11 @@ here's a tip, go search DEFINES/access.dm
 		)
 
 
-////////             //   //       ////////
-//         //   //        //       //      //
-//  ////   //   //   //   //       //      //
-//    //   //   //   //   //       //     //
-////////   ///////   //   ///////  ////////
-
-
-// Guild Adventurers
-
-//Guild Worker
-
-/datum/job/oasis/f13shopkeeper
-	title = "Guild Shopkeeper"
-	flag = GUILDSHOPKEEP
-	department_flag = GUILD
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	selection_color = "#dcba97"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
-/datum/outfit/job/den/f13shopkeeper
-	name = "Shopkeeper"
-	jobtype = /datum/job/oasis/f13shopkeeper
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/supplykit
-	uniform = /obj/item/clothing/under/f13/roving
-	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	gloves = /obj/item/pda
-	l_pocket = /obj/item/storage/wallet/stash/high
-	backpack_contents = list(
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/cool_book/guildguide = 1
-		)
-
-/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedenergycell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedmfcell)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/enhancedecp)
-
-/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
 
 //Reclaimer healer
 /datum/job/oasis/f13practitioner
 	title = "Reclaimer Healer"
-	flag = GUILDMEDIC
+	flag = RECMEDIC
 	department_flag = RECLAIMERS
 	faction = "Reclaimers"
 	total_positions = -1
@@ -723,53 +634,14 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/cool_book/reclaimerguide
 	)
 
-//Guild Financier
 
-/datum/job/oasis/f13banker
-	title = "Guild Financier"
-	flag = GUILDBANKER
-	department_flag = GUILD
-	faction = "Guild"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	selection_color = "#dcba97"
-	outfit = /datum/outfit/job/den/f13banker
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-
-/datum/outfit/job/den/f13banker
-	name = "Banker"
-	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/supplykit
-	uniform = /obj/item/clothing/under/lawyer/blacksuit
-	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/headset_town/guild
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
-	gloves = /obj/item/pda
-	backpack_contents = list(
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/storage/wallet/stash/banker = 1,
-		/obj/item/cool_book/guildguide = 1
-		)
-
-//Guild Cataloger
 
 /datum/job/oasis/nashcurator
-	title = "Guild Cataloger"
-	flag = GUILDLIBRARIAN
-	department_flag = GUILD
-	faction = "Guild"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	description = "You are a Curator for the library of New Boston. Assist people with writing books, be a journalist, stock the shelves."
+	title = "New Boston Librarian"
+	flag = LIBRARIAN
+	department_flag = DEP_OASIS
+	total_positions = -1
+	spawn_positions = -1
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/nashcurator
@@ -795,10 +667,6 @@ here's a tip, go search DEFINES/access.dm
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/pda
 	r_pocket = /obj/item/storage/wallet/stash/mid
-	backpack_contents = list(
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/cool_book/guildguide = 1
-		)
 
 /datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -813,26 +681,23 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
 
-//Guild Bartender
-
 /datum/job/oasis/f13barkeep
-	title = "Guild Kitcheneer"
-	flag = GUILDBARTEND
-	department_flag = GUILD
-	faction = "Guild"
-	total_positions = 0
-	spawn_positions = 0
+	title = "Barkeep"
+	flag = F13BARKEEP	
+	department_flag = DEP_OASIS
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the Adventurers Guild."
 	description = "You work for the Adventurers Guild. Check your guidebook for more info."
 	enforces = "Check your guidebook"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
-/*
+
 	loadout_options = list(
 	/datum/outfit/loadout/diner
 	)
-*/
+
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	matchmaking_allowed = list(
@@ -857,9 +722,7 @@ here's a tip, go search DEFINES/access.dm
 	gloves = /obj/item/pda
 	l_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/book/manual/nuka_recipes = 1,
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/cool_book/guildguide = 1
+		/obj/item/book/manual/nuka_recipes = 1
 		)
 
 /datum/outfit/loadout/diner
@@ -881,53 +744,3 @@ here's a tip, go search DEFINES/access.dm
 	/obj/item/storage/box/ingredients/sushi = 1
 	)
 
-//Guild Knight
-
-/datum/job/followers/f13followerguard
-	title = "Guild Knight"
-	flag = GUILDKNIGHT
-	department_flag = GUILD
-	faction = "Guild"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	selection_color = "#FFDDFF"
-
-	outfit = /datum/outfit/job/followers/f13followerguard
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-
-/datum/outfit/job/followers/f13followerguard
-	name =	"Knight"
-	jobtype =	/datum/job/followers/f13followerguard
-	belt = /obj/item/supplykit
-	id =	/obj/item/card/id/silver
-	uniform =	/obj/item/clothing/under/f13/bodyguard
-	ears = /obj/item/radio/headset/headset_town/guild
-	suit =	/obj/item/clothing/suit/armor/medium/combat/chinese
-	head =	/obj/item/clothing/head/beret
-	shoes =	/obj/item/clothing/shoes/combat
-	backpack =	/obj/item/storage/backpack/explorer
-	satchel =	/obj/item/storage/backpack/satchel/explorer
-	gloves = /obj/item/pda
-	l_pocket = /obj/item/storage/wallet/stash/mid
-	r_pocket = /obj/item/megaphone/sec
-	backpack_contents = list(
-		/obj/item/storage/box/guild/uniform,
-		/obj/item/cool_book/guildguide = 1,
-	)
-
-//Guild Uniforms
-
-/obj/item/storage/box/guild/uniform
-	name = "Formal Guild Uniforms"
-
-/obj/item/storage/box/guild/uniform/PopulateContents()
-	new /obj/item/clothing/under/dress/skirt/red(src)
-	new /obj/item/clothing/under/f13/medievalgerman3(src)
-	new /obj/item/clothing/shoes/cowboy/alt(src)
-	new /obj/item/storage/belt/fannypack(src)
-	new /obj/item/clothing/gloves/modif_patrol(src)
-	new /obj/item/clothing/head/coyote/britishtricornetwo(src)
