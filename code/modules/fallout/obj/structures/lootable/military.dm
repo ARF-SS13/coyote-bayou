@@ -35,30 +35,39 @@
 	icon_state = "weaponcrate3"
 	icon_state_open = "weaponcrate3open"
 
-GLOBAL_LIST_INIT(ammo_loot_tiers, list(
-	LOOT_TIER_LOWEST = list(
-						/obj/effect/spawner/lootdrop/f13/trash_ammo = 25,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5,
-						),
+/obj/structure/lootable/guns
+	name = "gun crate"
+	random_name_list = "gun crate"
+	desc = "Looks like some kind of weapon crate."
+	icon = 'icons/fallout/objects/crates.dmi'
+	icon_state = "weaponcrate1"
+	icon_state_open = "weaponcrate1open"
+	loot_type = LOOT_GUNS
 
-	LOOT_TIER_LOW = list(
-						/obj/effect/spawner/lootdrop/f13/rare_ammo = 2,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 15,
-						/obj/effect/spawner/lootdrop/f13/trash_ammo = 15,
-						),
+/obj/structure/lootable/guns/dynamic
+	dynamic_loot_tier = TRUE
 
-	LOOT_TIER_MID = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 10,
-						),
-	LOOT_TIER_HIGH = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 20,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 15,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 5,
-						),
-	LOOT_TIER_HIGHEST = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 25,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 5,
-						),
-))
+/obj/structure/lootable/guns/trash
+	loot_tier = LOOT_TIER_LOWEST
+	icon_state = "guncrate1"
+	icon_state_open = "guncrate1open"
+
+/obj/structure/lootable/guns/common
+	loot_tier = LOOT_TIER_LOW
+	icon_state = "guncrate1"
+	icon_state_open = "guncrate1open"
+
+/obj/structure/lootable/guns/uncommon
+	loot_tier = LOOT_TIER_MID
+	icon_state = "guncrate2"
+	icon_state_open = "guncrate2open"
+
+/obj/structure/lootable/guns/rare
+	loot_tier = LOOT_TIER_HIGH
+	icon_state = "guncrate3"
+	icon_state_open = "guncrate3open"
+
+/obj/structure/lootable/guns/veryrare
+	loot_tier = LOOT_TIER_HIGHEST
+	icon_state = "guncrate3"
+	icon_state_open = "guncrate3open"
