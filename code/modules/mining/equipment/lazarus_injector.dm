@@ -130,11 +130,11 @@
 				return
 			if(M.stat == DEAD)
 				M.faction = list("neutral")
+				M.color = DEMON_RED
 				M.maxHealth = 20
 				M.revive(full_heal = 1, admin_revive = 1)
 				M.loot = list()
 				M.alpha = 180
-				M.color = DEMON_RED
 				user.visible_message(span_notice("[M] suddenly contorts in pain before rising a crimson red!"))
 				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
 				return
