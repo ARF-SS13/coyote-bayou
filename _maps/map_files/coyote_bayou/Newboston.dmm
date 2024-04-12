@@ -25495,14 +25495,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
-"nkj" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/bar)
 "nku" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -41653,15 +41645,13 @@
 	},
 /area/f13/building/abandoned)
 "vFa" = (
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
-/turf/open/floor/wood_common,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland/city/newboston/bar)
 "vFh" = (
 /obj/structure/rack,
@@ -76950,11 +76940,11 @@ pll
 bgN
 dlN
 dlN
-nkj
+vFa
 wuq
 wuq
 wuq
-nkj
+vFa
 ueL
 ueL
 lKL

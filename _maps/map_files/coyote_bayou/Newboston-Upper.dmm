@@ -12405,13 +12405,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/newboston/outdoors)
-"Iv" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors)
 "Iw" = (
 /obj/structure/rack/shelf_metal/modern,
 /obj/item/wrench/medical,
@@ -15329,7 +15322,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/wasteland/city/newboston/outdoors)
 "Qm" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/cult,
@@ -16815,7 +16808,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/wasteland/city/newboston/outdoors)
 "UE" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -42188,18 +42181,18 @@ YE
 jO
 tN
 RM
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
-OT
+dK
+dK
+dK
+dK
+dK
+dK
+dK
+dK
+dK
+dK
+dK
+dK
 UD
 tN
 tN
@@ -42457,7 +42450,7 @@ mM
 NB
 wR
 JG
-ma
+EC
 tN
 tN
 tN
@@ -42714,7 +42707,7 @@ ch
 ZR
 Fo
 eD
-ma
+EC
 tN
 tN
 tN
@@ -42971,7 +42964,7 @@ UI
 ll
 Su
 IX
-ma
+EC
 tN
 tN
 tN
@@ -43228,7 +43221,7 @@ gv
 dG
 cP
 mM
-ma
+EC
 tN
 tN
 tN
@@ -43485,7 +43478,7 @@ ZJ
 NI
 mz
 mM
-ma
+EC
 tN
 tN
 tN
@@ -43742,7 +43735,7 @@ WG
 VC
 QR
 mM
-ma
+EC
 Ws
 tN
 tN
@@ -52471,9 +52464,9 @@ GU
 GU
 GU
 GU
-tN
-tN
-Iv
+GU
+GU
+oa
 dK
 mf
 mf
@@ -52725,12 +52718,12 @@ GU
 GU
 GU
 GU
-tN
-tN
-tN
-tN
-tN
-Iv
+GU
+GU
+GU
+GU
+GU
+oa
 dK
 dK
 dK
@@ -52982,12 +52975,12 @@ GU
 GU
 GU
 GU
-tN
-tN
-tN
-tN
-tN
-Iv
+GU
+GU
+GU
+GU
+GU
+oa
 dK
 dK
 dK
@@ -53241,8 +53234,8 @@ GU
 GU
 GU
 GU
-tN
-tN
+GU
+GU
 mM
 mM
 dX
@@ -53498,8 +53491,8 @@ GU
 GU
 GU
 GU
-tN
-tN
+GU
+GU
 mM
 Kg
 kU
@@ -53755,8 +53748,8 @@ GU
 GU
 GU
 GU
-tN
-tN
+GU
+GU
 mM
 jW
 kU
@@ -54012,8 +54005,8 @@ GU
 GU
 GU
 GU
-tN
-tN
+GU
+GU
 mM
 ZO
 kU
@@ -54269,8 +54262,8 @@ GU
 GU
 GU
 GU
-tN
-tN
+GU
+GU
 QC
 lD
 et
