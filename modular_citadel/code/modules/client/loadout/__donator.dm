@@ -157,7 +157,7 @@
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
-	new /obj/obj/item/reagent_containers/food/snacks/f13/canned/dog(src) // evil and fucked up
+	new /obj/item/reagent_containers/food/snacks/f13/canned/dog(src) // evil and fucked up
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
