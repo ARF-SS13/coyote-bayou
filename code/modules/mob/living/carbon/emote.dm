@@ -477,6 +477,28 @@
 	else
 		qdel(tentacle)
 
+//Mage grab spell
+/datum/emote/living/carbon/magegrab
+	key = "magegrab"
+	key_third_person = "grabbing you"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/magegrab/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to preform magic!"))
+		return
+	var/which_tentacle_to_spawn
+	if(HAS_TRAIT(user, TRAIT_MAGEGRAB))
+		which_tentacle_to_spawn = /obj/item/gun/magic/magegrab
+	else 
+		to_chat(user, span_notice("You ain't got this magic!"))
+	var/obj/item/gun/magic/magegrab/tentacle = new which_tentacle_to_spawn(user) 
+	if(user.put_in_active_hand(tentacle))
+		to_chat(user, span_notice("You get your spell ready to cast."))
+	else
+		qdel(tentacle)
+
 //Rock throw//
 /datum/emote/living/carbon/rocker
 	key = "rocks"

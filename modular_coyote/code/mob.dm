@@ -26,6 +26,7 @@
 	speak_chance = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
 	loot_drop_amount = 4
+	am_important = TRUE
 
 /mob/living/simple_animal/hostile/hellpig/Initialize()
 	. = ..()

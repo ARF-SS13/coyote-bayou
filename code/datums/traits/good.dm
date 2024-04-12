@@ -495,6 +495,27 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	else
 		H.update_icons()
 
+/datum/quirk/magehand
+	name = "Mage hand"
+	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
+	value = 32
+	category = "Magic Quirks"
+	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
+	conflicts = list(
+
+	)
+	human_only = FALSE
+
+/datum/quirk/magehand/on_spawn()
+	var/mob/living/H = quirk_holder
+	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+	if(ishuman(quirk_holder))
+		H.regenerate_icons()
+	else
+		H.update_icons()
+
 /* //placeholder test concluded
 /datum/quirk/wizard
 	name = "Wasteland Wizard"
@@ -1885,6 +1906,28 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
 
+/datum/quirk/beesfriend
+	name = "Beast Friend - Radbees"
+	desc = "Rad-bees are not going to attack upon seeing you. Good for wasteland apiarists!"
+	value = 14
+	category = "Critter Quirks"
+	mechanics = "Radbees share their faction with you, meaning they won't do anything about you or care at all that you exist."
+	mob_trait = TRAIT_BEASTFRIEND_BEE
+	gain_text = span_notice("(Rad)Bee not afraid!")
+	lose_text = span_danger("(Rad)BEE AFRAID!!")
+	medical_record_text = "Patient talks about bees a lot. Radiated ones, specifically."
+	locked = FALSE
+	human_only = FALSE
+
+/datum/quirk/beesfriend/add()
+	var/mob/living/H = quirk_holder
+	H.faction |= list("bees-friend")
+
+/datum/quirk/beesfriend/remove()
+	var/mob/living/H = quirk_holder
+	if(H)
+		H.faction -= list("bees-friend")
+
 /datum/quirk/wildshape
 	name = "Wild Shape"
 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
@@ -1989,7 +2032,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 32
+	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
 	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat bludgeon."
 	conflicts = list()
@@ -1997,6 +2040,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel as your arm is wriggling...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a club, somehow."
+
+/datum/quirk/magegrab
+	name = "Mage Grab" // Better name pending
+	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
+	value = 28
+	category = "Magic Quirks"
+	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
+	conflicts = list()
+	mob_trait = TRAIT_MAGEGRAB
 
 /datum/quirk/bigbiter
 	name = "Biter - Big"
@@ -2513,7 +2565,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
 	conflicts = list(
 		/datum/quirk/masterrifleman,
-		/datum/quirk/straightshooter
+		/datum/quirk/straightshooter,
+		/datum/quirk/deadeye
 		)
 	gain_text = span_notice("Aim just behind behind the front leg...")
 	lose_text = span_notice(".223 is probably overkill for deer...")

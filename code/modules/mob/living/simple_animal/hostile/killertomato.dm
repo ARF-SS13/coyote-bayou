@@ -7,8 +7,8 @@
 	gender = NEUTER
 	speak_chance = 0
 	turns_per_move = 5
-	maxHealth = 30
-	health = 30
+	maxHealth = 60
+	health = 60
 	see_in_dark = 3
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/killertomato = 2)
 	response_help_continuous  = "prods"
@@ -17,8 +17,8 @@
 	response_disarm_simple = "push aside"
 	response_harm_continuous = "smacks"
 	response_harm_simple = "smack"
-	melee_damage_lower = 8
-	melee_damage_upper = 12
+	melee_damage_lower = 20
+	melee_damage_upper = 40
 	attack_verb_continuous = "slams"
 	attack_verb_simple = "slam"
 	attack_sound = 'sound/weapons/punch1.ogg'

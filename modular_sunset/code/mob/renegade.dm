@@ -314,6 +314,8 @@
 	icon_living = "renegade_meister"
 	icon_dead = "renegade_meister-dead"
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
+	vision_range = 12
+	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
 	healable = 1

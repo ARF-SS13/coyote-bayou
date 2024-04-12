@@ -901,6 +901,34 @@
 /mob/living/carbon/human/species/mousewhite
 	race = /datum/species/feral/mousewhite
 
+/datum/species/feral/wisp
+	name = "Feral Wisp"
+	id = "wisp"
+	simple_icon = 'modular_roguetown/items/lighting.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+	footstep_type = FOOTSTEP_MOB_CRAWL
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
+/mob/living/carbon/human/species/wisp
+	race = /datum/species/feral/wisp
+
+/datum/species/feral/slime
+	name = "Feral Slime"
+	id = "player slime"
+	simple_icon = 'icons/mob/slimes.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+	footstep_type = FOOTSTEP_MOB_CRAWL
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
+/mob/living/carbon/human/species/slime
+	race = /datum/species/feral/slime
+
 /datum/species/feral/bat
 	name = "Feral Bat"
 	id = "bat"
@@ -1198,6 +1226,32 @@
 	race = /datum/species/feral/xeno/wraith
 
 //end aliens
+
+//Mimics! No special code here, I wish I could make the morph mob's gimmick a trait, but this is for all you crate pilled people
+/datum/species/feral/mimic
+	name = "Mimic Chest"
+	simple_icon = 'modular_roguetown/topadd/takyon/Mimics.dmi'
+	id = "newmimic"
+	roundstart = TRUE
+	icon_width = 64
+	alt_prefixes = list(
+		"Inverted" = "oginvert_", 
+		"Hybrid" = "gnorm_", 
+		"Hybrid Inverted" = "gnorminvert_", 
+		"Subtle" = "gsubtle_", 
+		"Silver" = "os_", 
+		"Silver Inverted" = "osinvert_", 
+		"Silver Hybrid" = "snorm_",
+		"Silver Hybrid Inverted" = "snorminvert_",
+		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
+/mob/living/carbon/human/species/mimic
+	race = /datum/species/feral/mimic
+
+// No more mimics
 
 /datum/species/feral/bigwolfblack
 	name = "Feral Giant Black Wolf"

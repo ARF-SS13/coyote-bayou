@@ -1163,6 +1163,8 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 			. = "huge"
 		if(WEIGHT_CLASS_GIGANTIC)
 			. = "gigantic"
+		if(WEIGHT_CLASS_NO_INVENTORY)
+			. = "device that can't fit in any storage"
 		else
 			. = ""
 
@@ -1658,20 +1660,23 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return // There is no haystack, or needle for that matter
 	if(max_depth <= 0)
 		return // we've gone too deep
-	if(istype(haystack, pathtype))
-		return haystack
+	if(islist(pathtype))
+		for(var/pat in pathtype)
+			if(istype(haystack, pat))
+				return haystack
+	else
+		if(istype(haystack, pathtype))
+			return haystack
 	if(isturf(haystack))
 		return
 	if(haystack && haystack.loc)
 		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
 
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
-/proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
-	if(!isturf(search_me))
-		if(!isatom(search_me))
-			return list()
-		else
-			search_me = get_turf(search_me)
+/// actually works on any atom, fyi (not just turfs)
+/proc/get_all_in_turf(atom/search_me, include_turf = FALSE, max_depth = 5)
+	if(!isatom(search_me))
+		return list()
 	var/list/atoms_in_turf = search_me.contents?.Copy()
 	if(!LAZYLEN(atoms_in_turf))
 		return list()

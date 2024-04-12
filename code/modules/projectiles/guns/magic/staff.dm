@@ -394,3 +394,65 @@
 		/datum/firemode/semi_auto/faster
 	)
 
+/****************/
+//Staff of Magma//
+//AAAAAAAAAAA HELP MEEE - Flamethrower adjacent//
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/flamethrower
+	name = "staff of alchemical magma"
+	desc = "A moderately sized staff made of black bronze that seems to be a hodgepodge of clockwork components connected together. A regenerating fuel cell rests along the side, with a tube connecting to a bunsen burner at the top that expels enflamed fuel that burns as hot as magma. A design of an arcane staff thats more mechanical than arcane, designed by a wandering artificer from a far off realm."
+	icon_state = "staff of alchemy"
+	item_state = "staff of alchemy"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	fire_sound = 'sound/weapons/fire03.ogg'
+	max_charges = 20
+	recharge_rate = 1 SECONDS
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magmaspray
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/magmaspray
+	projectile_type = /obj/item/projectile/magic/kelpmagic/magmaspray
+	pellets = 2
+
+/obj/item/projectile/magic/kelpmagic/magmaspray
+	name = "magma spray"
+	icon_state = "nuclear" //This should make enemies with good burn armor resist the magma staff very well
+	damage = 35
+	damage_low = 30  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
+	damage_high = 40 
+	damage_type = BURN
+	range = 3
+	pixels_per_second = 275
+	flag = "laser"
+	supereffective_damage = 1 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") 
+
+//weak version
+/obj/item/gun/magic/staff/kelpmagic/flamethrower/weak
+	name = "low power staff of magma"
+	desc = "A moderately sized staff made of black bronze that seems to be a hodgepodge of clockwork components connected together. A regenerating fuel cell rests along the side, with a tube connecting to a bunsen burner at the top that expels enflamed fuel that burns as hot as magma. A design of an arcane staff thats more mechanical than arcane, designed by a wandering artificer from a far off realm."
+	icon_state = "staff of alchemy"
+	item_state = "staff of alchemy"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	fire_sound = 'sound/weapons/fire03.ogg'
+	color = "#ac233e"
+	max_charges = 10
+	recharge_rate = 0.4 SECONDS //This staff is very weak against anything with armor
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magmaspray/weak
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
+/obj/item/ammo_casing/magic/kelpmagic/magmaspray/weak
+	projectile_type = /obj/item/projectile/magic/kelpmagic/magmaspray/weak
+	pellets = 3
+
+/obj/item/projectile/magic/kelpmagic/magmaspray/weak
+	supereffective_damage = null // No more supereffective
+	supereffective_faction = null
+	damage = 5
+	damage_low = 5
+	damage_high = 10
+	flag = "laser"

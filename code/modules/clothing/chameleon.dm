@@ -279,7 +279,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/under/chameleon)
 	random_sensor = FALSE
 	resistance_flags = NONE
 	can_adjust = FALSE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_CLOTHES
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
@@ -353,8 +353,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	max_integrity = 100
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = 0
-	armor = 0
-	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor = ARMOR_VALUE_CLOTHES
 	stiffness = 0
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -427,7 +426,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 	icon_state = "meson"
 	item_state = "meson"
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_ZERO
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
@@ -456,7 +455,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon)
 	item_state = "ygloves"
 
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_ZERO
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
@@ -487,7 +486,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 	icon_state = "greysoft"
 
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_ZERO
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
@@ -530,7 +529,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_ZERO
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 	gas_transfer_coefficient = 0.01
@@ -587,7 +586,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/shoes/chameleon)
 	desc = "A pair of black shoes."
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_CLOTHES
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 	var/datum/action/item_action/chameleon/change/chameleon_action
@@ -728,7 +727,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/neck/cloak/chameleon)
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "blacktie"
 	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_ZERO
 
 /obj/item/clothing/neck/cloak/chameleon
 	var/datum/action/item_action/chameleon/change/chameleon_action

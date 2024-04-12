@@ -398,6 +398,20 @@
 	desc = "A nice white stove for cooking."
 	icon_state = "white_stove"
 
+/obj/machinery/microwave/white_stove/update_icon_state()
+	if(broken)
+		icon_state = "white_stove"
+	else if(dirty_anim_playing)
+		icon_state = "white_stove"
+	else if(dirty == 100)
+		icon_state = "white_stove"
+	else if(operating)
+		icon_state = "white_stove_on"
+	else if(panel_open)
+		icon_state = "white_stove"
+	else
+		icon_state = "white_stove"
+
 /obj/machinery/microwave/gas_stove
 	name = "gas stove"
 	desc = "A nice white gas stove for cooking."

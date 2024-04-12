@@ -60,7 +60,7 @@
 			if(revive_allowed)
 				livingMob.revive(full_heal = TRUE)
 			continue
-		var/health_to_consider = min(livingMob.maxHealth, 50)
+		var/health_to_consider = min(livingMob.maxHealth, 30)
 		if(healing_types & BRUTELOSS)
 			livingMob.adjustBruteLoss(-health_to_consider*0.1)
 		if(healing_types & FIRELOSS)	

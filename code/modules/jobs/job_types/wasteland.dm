@@ -617,20 +617,15 @@ Raider
 		/obj/item/storage/fancy/rollingpapers = 1,
 		)
 
-/datum/job/wasteland/f13raider/resident
-	title = "Tunnel Rats Churl"
-	flag = F13RAIDER
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = FACTION_WASTELAND
-	social_faction = FACTION_RAIDERS
+/datum/job/wasteland/f13raider/adventurer
+	title = "Adventurer"
+	flag = DEP_OASIS
+	faction = FACTION_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a resident of the leftover sewer system facility under the now atomicaly flattened city of Nash. Lifes rough on the edges."
-	supervisors = "Maybe a strongarm, maybe not.  Your call."
 	selection_color = "#df80af"
 	exp_requirements = 0
-	exp_type = EXP_TYPE_WASTELAND
+
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
@@ -654,7 +649,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13raider/resident
 	name = "Tunnel Rats Resident"
-	jobtype = /datum/job/wasteland/f13raider/resident
+	jobtype = /datum/job/wasteland/f13raider/adventurer
 
 	id = null
 	ears = null

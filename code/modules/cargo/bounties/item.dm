@@ -5,6 +5,9 @@
 	var/include_subtypes = TRUE     // Set to FALSE to make the datum apply only to a strict type.
 	var/list/exclude_types // Types excluded.
 
+	/// A specific list of things wanted, complete all ofthem!
+	var/list/wanted_list = list()
+
 /datum/bounty/item/New()
 	..()
 	wanted_types = typecacheof(wanted_types)

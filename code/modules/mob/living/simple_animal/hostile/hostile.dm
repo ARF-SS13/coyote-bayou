@@ -5,6 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
+	a_intent = INTENT_HARM // I LOVE PLAYING THE SCOOTER DANCE WITH PROTECTRONS
 	var/datum/weakref/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.
@@ -62,6 +63,7 @@
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
 
+	var/melee_attacks = TRUE
 	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
 	var/melee_windup_time = 0.3 SECONDS
 	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
@@ -82,6 +84,7 @@
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
 	var/ranged_ignores_vision = FALSE //if it'll fire ranged attacks even if it lacks vision on its target, only works with environment smash
 	var/check_friendly_fire = 0 // Should the ranged mob check for friendlies when shooting
+	var/should_factionize_shots = TRUE
 	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/retreat_distance = null
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
@@ -93,6 +96,7 @@
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 1 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
+	var/robuster_searching = FALSE //Makes mobs see through walls if theyve seen you before
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/search_objects = 0 //If we want to consider objects when searching around, set this to 1. If you want to search for objects while also ignoring mobs until hurt, set it to 2. To completely ignore mobs, even when attacked, set it to 3
@@ -143,12 +147,17 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
+	/// Makes it so the mob tally doesnt count this thing as being deleted when its just sleeping
+	var/went_to_sleep = FALSE
+
 	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
 
-/mob/living/simple_animal/hostile/Initialize(mapload)
+/mob/living/simple_animal/hostile/Initialize(mapload, nest_spawned)
 	. = ..()
 	set_origin(src)
 	wanted_objects = typecacheof(wanted_objects)
+	if(nest_spawned != "TOPHEAVY-KOBOLD")
+		SSmobs.mob_spawned(src)
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
@@ -161,6 +170,8 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(!went_to_sleep)
+		SSmobs.mob_despawned(src)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
@@ -174,7 +185,7 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(prob(1) && world.time-timeofdeath > 3 MINUTES)//give players enough time to finish their fights and butcher the real way
+		if(decompose && prob(1) && world.time-timeofdeath > 3 MINUTES && !SSeconomy.is_part_of_a_quest(src))//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
@@ -411,6 +422,8 @@
 
 	if(ismob(the_target)) //Target is in godmode, ignore it.
 		var/mob/M = the_target
+		if(M.ignore_faction)
+			return FALSE
 		if(M.status_flags & GODMODE)
 			return FALSE
 		if(!M.client)
@@ -553,7 +566,7 @@
 		if(my_target.loc != null && get_dist(origin, my_target.loc) <= vision_range) //We can't see our targette, but he's in our vision range still
 			if(ranged_ignores_vision && ranged_cooldown <= world.time) //we can't see our targette... but we can fire at them!
 				OpenFire(my_target)
-			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS)) //If we're capable of smashing through walls, forget about vision completely after finding our targette
+			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS) || robuster_searching || SSmobs.debug_everyone_has_robuster_searching) //If we're capable of smashing through walls, forget about vision completely after finding our targette
 				Goto(my_target,move_to_delay,minimum_distance)
 				FindHidden()
 				return 1
@@ -602,6 +615,8 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
+	if(!melee_attacks)
+		return
 	var/atom/my_target = get_target()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
 	in_melee = TRUE
@@ -684,13 +699,14 @@
 			M.Goto(src,M.move_to_delay,M.minimum_distance)
 
 /mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
-	if(check_friendly_fire && !ckey)
-		for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
-			for(var/mob/living/L in T)
-				if(L == src || L == A)
-					continue
-				if(faction_check_mob(L) && !attack_same)
-					return TRUE
+	if(!check_friendly_fire || ckey || should_factionize_shots)
+		return FALSE
+	for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
+		for(var/mob/living/L in T)
+			if(L == src || L == A)
+				continue
+			if(faction_check_mob(L) && !attack_same)
+				return TRUE
 
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(COOLDOWN_TIMELEFT(src, sight_shoot_delay))
@@ -991,6 +1007,7 @@
 		my_home = RESOLVEWEAKREF(nest)
 	if(!my_home)
 		my_home = new/obj/structure/nest/special(get_turf(src))
+	went_to_sleep = TRUE
 	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
 
 /mob/living/simple_animal/hostile/setup_variations()
