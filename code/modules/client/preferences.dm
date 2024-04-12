@@ -4471,7 +4471,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/generate_quester_id()
 	var/list/new_quid = list()
-	new_quid += ckey(parent.ckey)
+	if(parent)
+		new_quid += ckey(parent.ckey)
+	else
+		new_quid += ckey(safepick(GLOB.ai_names) || "cranberry") //🤖 fixes integration tests
 	new_quid += ckey(safepick(GLOB.ing_verbs) || "cranberry")
 	new_quid += ckey(safepick(GLOB.adverbs) || "cranberry")
 	new_quid += ckey("[rand(1000,9999)]")
