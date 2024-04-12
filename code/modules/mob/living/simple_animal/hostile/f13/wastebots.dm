@@ -383,12 +383,6 @@
 		"takes aim",
 		"holds its ground"
 		)
-	emote_taunt_sound = list(
-		'sound/f13npc/protectron/aggro1.ogg',
-		'sound/f13npc/protectron/aggro2.ogg',
-		'sound/f13npc/protectron/aggro3.ogg',
-		'sound/f13npc/protectron/aggro4.ogg'
-		)
 	idlesound = list(
 		'sound/f13npc/protectron/idle1.ogg',
 		'sound/f13npc/protectron/idle2.ogg',
