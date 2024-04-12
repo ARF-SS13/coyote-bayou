@@ -557,6 +557,24 @@
 	message = "smirks."
 	message_param = "smirks at %t."
 
+/datum/emote/living/smugsmirk
+	key = "smugsmirk"
+	key_third_person = "smirks smugly."
+	message = "smirks smugly."
+	message_param = "smirks smugly at %t."
+
+/datum/emote/living/smuggrin
+	key = "smuggrin"
+	key_third_person = "grins smugly."
+	message = "grins smugly."
+	message_param = "grins smugly at %t."
+
+/datum/emote/living/leer
+	key = "leer"
+	key_third_person = "leers"
+	message = "leers."
+	message_param = "leers at %t."
+
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
