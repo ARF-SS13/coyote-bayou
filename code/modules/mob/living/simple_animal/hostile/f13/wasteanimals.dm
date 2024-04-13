@@ -132,6 +132,7 @@
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
+	del_on_death = TRUE
 
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
@@ -864,6 +865,7 @@
 	waddle_side_time = 2
 	desc_short = "Small, squishy, and numerous."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	randpixel = 8
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
@@ -890,6 +892,99 @@
 	.=..()
 	resize = 0.8
 	update_transform()
+
+
+/mob/living/simple_animal/hostile/molerat/micro
+	name = "Swarmling"
+	maxHealth = 10
+	density = FALSE
+	randpixel = 16
+	health = 15
+	melee_damage_lower = 2
+	melee_damage_upper = 6
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(10, 13, 15),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/molerat/micro/Initialize()
+	.=..()
+	resize = 0.75
+	update_transform()
+
+/mob/living/simple_animal/hostile/molerat/leader
+	name = "Giant Rat Broodmother"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	retreat_distance = 9
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 9
+	variation_list = list(
+		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(70, 75, 80),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/molerat/leader/Initialize()
+	.=..()
+	resize = 2.0
+	update_transform()
+
+/mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+
+/obj/item/projectile/giantratsummon
+	name = "giant rat summoning"
+	icon_state = "spark"
+	range = 10
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage = 0
+	stamina = 20
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	
+	pixels_per_second = BULLET_SPEED_BASE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+	..()
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/molerat/micro/summon, target, 10, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	//		break
+	return BULLET_ACT_HIT
+
+/mob/living/simple_animal/hostile/molerat/micro/summon //untameable
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	del_on_death = TRUE
+
+
+
+
+//GELCUBE
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"

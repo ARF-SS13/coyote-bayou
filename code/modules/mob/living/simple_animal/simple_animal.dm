@@ -127,6 +127,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/gold_core_spawnable = NO_SPAWN
 
 	var/datum/weakref/nest
+	var/nest_coords
 
 	///Sentience type, for slime potions.
 	var/sentience_type = SENTIENCE_ORGANIC
@@ -362,6 +363,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	RegisterSignal(src, COMSIG_ATOM_BUTCHER,PROC_REF(butcher_me))
 	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
 	RegisterSignal(src, COMSIG_MOB_IS_IMPORTANT,PROC_REF(am_i_important))
+	RegisterSignal(src, COMSIG_ATOM_QUEST_SCANNED,PROC_REF(i_got_scanned))
+
+/mob/living/simple_animal/proc/i_got_scanned(datum/source, mob/scanner)
+	if(!nest_coords)
+		return
+	var/turf/nest_turf = coords2turf(nest_coords)
+	if(!nest_turf)
+		return
+	var/obj/structure/nest/N = locate(/obj/structure/nest) in nest_turf
+	if(!N)
+		return
+	SEND_SIGNAL(N, COMSIG_ATOM_QUEST_SCANNED, scanner)
 
 /mob/living/simple_animal/proc/am_i_important()
 	return am_important
@@ -779,12 +792,13 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			droppedstuff |= newthing
 	for(var/atom/thingy in droppedstuff)
 		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
+	loot.Cut()
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
 	unstamcrit()
 
-	sever_link_to_nest()
+	sever_link_to_nest() // killed
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
@@ -1154,13 +1168,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	unstamcrit()
 
+/mob/living/simple_animal/proc/link_to_nest(atom/birthplace)
+	if(nest || !isatom(birthplace))
+		return
+	nest = WEAKREF(birthplace)
+	nest_coords = atom2coords(birthplace)
+
 /mob/living/simple_animal/proc/sever_link_to_nest()
-	if(nest)
-		var/datum/component/spawner/our_nest = nest.resolve()
-		if(istype(our_nest))
-			for(var/datum/weakref/maybe_us in our_nest.spawned_mobs)
-				if(nest.resolve(maybe_us) == src)
-					our_nest.spawned_mobs -= maybe_us
+	if(!nest)
+		return
+	var/atom/our_nest = GET_WEAKREF(nest)
+	if(istype(our_nest))
+		SEND_SIGNAL(our_nest, COMSIG_SPAWNER_REMOVE_MOB_FROM_NEST, src)
 	nest = null
 
 /mob/living/simple_animal/proc/setup_variations()

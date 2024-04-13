@@ -610,14 +610,114 @@
 	. = ..()
 //Variants for Radroachers
 
-/mob/living/simple_animal/hostile/radroach/raddyroach
-	maxHealth = 140
-	health = 140
-	melee_damage_lower = 8
-	melee_damage_upper = 12
+/mob/living/simple_animal/hostile/radroach/micro
+	name = "Micro Pillbug"
+	maxHealth = 20
+	health = 20
+	melee_damage_lower = 2
+	melee_damage_upper = 6
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(10, 13, 15),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/radroach/micro/Initialize()
+	.=..()
+	resize = 0.75
+	update_transform()
 
 /mob/living/simple_animal/hostile/radroach/strongradroach
-	maxHealth = 60
-	health = 60
-	melee_damage_lower = 6
-	melee_damage_upper = 8
+	maxHealth = 140
+	health = 140
+	name = "Macro Pillbug"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	variation_list = list(
+		MOB_COLOR_VARIATION(80, 80, 80, 125, 125, 125), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(15, 20, 22),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/radroach/leader
+	name = "Pillbug Leader"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	retreat_distance = 9
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 9
+	variation_list = list(
+		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(70, 75, 80),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/radroach/leader/Initialize()
+	.=..()
+	resize = 2.0
+	update_transform()
+
+/mob/living/simple_animal/hostile/radroach/strongradroach/Initialize()
+	.=..()
+	resize = 2.0
+	update_transform()
+
+
+/obj/item/projectile/pillbugsummon
+	name = "pillbug summoning"
+	icon_state = "spark"
+	range = 10
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage = 0
+	stamina = 20
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	
+	pixels_per_second = BULLET_SPEED_BASE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+	..()
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/radroach/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	//		break
+	return BULLET_ACT_HIT
+
+/mob/living/simple_animal/hostile/radroach/summon //untameable
+	faction = list("gecko")
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	del_on_death = TRUE
+
+/mob/living/simple_animal/hostile/radroach/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/radroach, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
+

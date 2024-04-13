@@ -150,6 +150,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/saved_finished_quests = list()
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
+	var/list/saved_unclaimed_points = 0
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -1347,6 +1348,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Hunting Horn Sounds:</b> <a href='?_src_=prefs;preference=hear_hunting_horns'>[(toggles & SOUND_HUNTINGHORN) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Sprint Depletion Sound:</b> <a href='?_src_=prefs;preference=hear_sprint_buffer'>[(toggles & SOUND_SPRINTBUFFER) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
@@ -4004,6 +4006,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("hear_hunting_horns")
 					toggles ^= SOUND_HUNTINGHORN
 					
+				if("hear_sprint_buffer")
+					toggles ^= SOUND_SPRINTBUFFER
+					
 				if("hear_midis")
 					toggles ^= SOUND_MIDI
 
@@ -4466,7 +4471,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/generate_quester_id()
 	var/list/new_quid = list()
-	new_quid += ckey(parent.ckey)
+	if(parent)
+		new_quid += ckey(parent.ckey)
+	else
+		new_quid += ckey(safepick(GLOB.ai_names) || "cranberry") //🤖 fixes integration tests
 	new_quid += ckey(safepick(GLOB.ing_verbs) || "cranberry")
 	new_quid += ckey(safepick(GLOB.adverbs) || "cranberry")
 	new_quid += ckey("[rand(1000,9999)]")

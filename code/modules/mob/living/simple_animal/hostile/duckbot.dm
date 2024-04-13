@@ -27,9 +27,9 @@
 	ranged = FALSE // LAY EGG changes this
 	melee_attacks = FALSE
 	environment_smash = NONE
-	mob_armor = ARMOR_VALUE_DEATHCLAW_PA // so we get the tombstone message for our duck
-	maxHealth = 1
-	health = 1
+	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR // so we get the tombstone message for our duck
+	maxHealth = 40
+	health = 40
 	density = FALSE
 	move_to_delay = 1 SECONDS // slow duck
 	melee_damage_lower = 0
@@ -67,6 +67,11 @@
 	light_color = "#FFCC66"
 	light_on = TRUE
 	randpixel = 12
+
+/mob/living/simple_animal/hostile/amusing_duck/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/wuv, "quacks!", EMOTE_AUDIBLE, /datum/mood_event/pet_animal, "quacks!", EMOTE_AUDIBLE)
+	AddElement(/datum/element/mob_holder, "duck")
 
 /mob/living/simple_animal/hostile/amusing_duck/handle_automated_action()
 	. = ..()

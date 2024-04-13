@@ -100,6 +100,12 @@
 	item = /obj/item/lazarus_injector
 	cost = 10
 
+/datum/supplykit_item/animals/etherleech
+	name = "BioSynth Reanimator Injector"
+	desc = "A reusable modified Lazarus used to revive and tame most creatures"
+	item = /obj/item/holoparasite_injector
+	cost = 20
+
 /datum/supplykit_item/animals/pet
 	name = "Animal Beacon"
 	desc = "A beacon that summons your harmless pet or livestock from the safety of home."

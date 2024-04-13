@@ -95,7 +95,7 @@
  * Hand-tele
  */
 /obj/item/hand_tele
-	name = "Hand Quantum-Stabilization Harness"
+	name = "Hand Teleporter"
 	desc = "A portable hand 'teleporter' that actually works by observing your quantum superposition in relevance to your portal storm state. IN NERD TERMS USE THIS TO TELEPORT PLACES."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hand_tele"
@@ -140,7 +140,7 @@
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
 	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
 		return
 	var/list/L = list(  )
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
@@ -173,13 +173,13 @@
 	var/atom/T = L[t1]
 	var/area/A = get_area(T)
 	if(A.noteleport)
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
-//	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-//		to_chat(user, span_notice("\The [src] is malfunctioning."))
-//		return
+	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
+		return
 	user.show_message(span_notice("Locked In."), MSG_AUDIBLE)
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(get_turf(T)), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))

@@ -138,7 +138,7 @@
 #define F13BANKER		(1<<12)	// IDK MAN BUT IT SEEMS IMPORTANT
 #define F13BARKEEP		(1<<13)
 #define F13PILOT		(1<<14)
-#define NASHCURATOR		(1<<15)
+#define LIBRARIAN		(1<<15)
 
 #define DEP_GAR (1<<7)
 
@@ -215,16 +215,11 @@
 #define RECMECHANIC		(1<<3)
 #define RECNANSPEC		(1<<4)
 #define RECGUARD	    (1<<5)
+#define RECMEDIC		(1<<6)
 
-#define GUILD			(1<<15)
 
-#define GUILDSHOPKEEP	(1<<0)
-#define GUILDBANKER		(1<<1)
-#define GUILDMEDIC		(1<<2)
-#define GUILDBARTEND	(1<<3)
-#define GUILDCHEF		(1<<4)
-#define GUILDLIBRARIAN	(1<<5)
-#define GUILDKNIGHT		(1<<6)
+
+
 
 #define KHAN		(1<<16)
 

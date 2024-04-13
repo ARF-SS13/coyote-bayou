@@ -943,6 +943,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			message_admins("Failed to generate a quester id for [parent.ckey]!!!")
 		WRITE_FILE(S["quester_uid"], saved_quid)
 	S["quester_uid"] >> quester_uid
+	S["saved_unclaimed_points"] >> saved_unclaimed_points
 	var/helicopter_precum
 	S["saved_finished_quests"] >> helicopter_precum
 	saved_finished_quests = safe_json_decode(helicopter_precum)
@@ -1550,6 +1551,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(LAZYLEN(saved_finished_quests))
 		WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
 	WRITE_FILE(S["saved_active_quests"], safe_json_encode(saved_active_quests))
+	WRITE_FILE(S["saved_unclaimed_points"], saved_unclaimed_points)
 
 	return 1
 

@@ -156,6 +156,8 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/dog(src) // evil and fucked up
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -756,11 +758,11 @@
 
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
-	path = /obj/item/storage/box/large/custom_kit/jaeger // bookmark from JSC
-	ckeywhitelist = list("kilment")
+	path = /obj/item/storage/box/large/custom_kit/jaeger
+	ckeywhitelist = list("Kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/sportcarbine(src) // whatever
+	new /obj/item/holoparasite_injector/jaeger(src)
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
@@ -1905,7 +1907,7 @@
 /datum/gear/donator/kits/zeronetalpha
 	name = "Glowstick Kit"
 	path = /obj/item/storage/box/large/custom_kit/zeronetalpha
-	ckeywhitelist = list("zeronetalpha, zeronettwo")
+	ckeywhitelist = list("zeronetalpha", "zeronettwo")
 
 /obj/item/storage/box/large/custom_kit/zeronetalpha/PopulateContents()
 	new /obj/item/cartridge/resize
@@ -2093,4 +2095,3 @@
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/toy/plush/otter(src)
-
