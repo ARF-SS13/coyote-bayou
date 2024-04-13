@@ -285,6 +285,9 @@
 		return TRUE
 	if(density)
 		do_animate("deny")
+	else if(picked_open)
+		close()
+		return TRUE
 
 /obj/machinery/door/allowed(mob/M)
 	if(emergency)
