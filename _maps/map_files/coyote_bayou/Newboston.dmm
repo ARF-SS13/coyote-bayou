@@ -17346,6 +17346,10 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
+"iZq" = (
+/obj/machinery/vending/hydronutrients,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/building/workshop/nash)
 "iZu" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
@@ -20395,6 +20399,19 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"kCC" = (
+/obj/structure/beebox{
+	pixel_y = 11;
+	layer = 4;
+	density = 0
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4;
+	pixel_x = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/workshop/nash)
 "kCN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -25727,11 +25744,8 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "nrx" = (
-/obj/structure/beebox{
-	pixel_y = 11;
-	layer = 4;
-	density = 0
-	},
+/obj/machinery/biogenerator,
+/obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/workshop/nash)
 "nsl" = (
@@ -31038,7 +31052,7 @@
 	},
 /area/f13/building/tribal/caveofforever)
 "qrX" = (
-/obj/structure/legion_extractor,
+/obj/machinery/vending/hydroseeds,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/workshop/nash)
 "qse" = (
@@ -40434,6 +40448,10 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"uXg" = (
+/obj/machinery/seed_extractor,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/building/workshop/nash)
 "uXz" = (
 /obj/structure/lamp_post/doubles/bent{
 	density = 0;
@@ -71321,7 +71339,7 @@ vRd
 soG
 pll
 hVc
-syx
+kCC
 syx
 rxK
 cEt
@@ -71578,12 +71596,12 @@ vRd
 jri
 pll
 hVc
+jnB
+wIP
+wIP
+wIP
 lbs
-wIP
-wIP
-lbs
-wIP
-wIP
+myf
 hVc
 ifw
 qHX
@@ -71835,12 +71853,12 @@ vbR
 hzj
 pll
 hVc
-nrx
 lbs
 lbs
 ujm
 lbs
 lbs
+eoV
 hVc
 prE
 rOW
@@ -72092,12 +72110,12 @@ onB
 iJo
 vxh
 hVc
-myf
-wIP
-wIP
 lbs
 wIP
 wIP
+wIP
+lbs
+rdO
 hVc
 rOW
 rOW
@@ -72349,12 +72367,12 @@ jeh
 aBY
 pll
 hVc
-jnB
 lbs
 lbs
 lbs
 lbs
-qrX
+lbs
+acE
 hVc
 xRq
 eqe
@@ -72609,9 +72627,9 @@ hVc
 awt
 wIP
 wIP
-lbs
 wIP
-eoV
+lbs
+iZq
 hVc
 rOW
 rOW
@@ -72865,10 +72883,10 @@ pll
 hVc
 lbs
 lbs
-lbs
 ujm
 lbs
-rdO
+lbs
+uXg
 hVc
 jGw
 ott
@@ -73123,9 +73141,9 @@ hVc
 lbs
 wIP
 wIP
-lbs
 wIP
-acE
+lbs
+nrx
 hVc
 jGw
 ott
@@ -73380,9 +73398,9 @@ hVc
 lbs
 wIP
 wIP
-lbs
 wIP
 lbs
+qrX
 hVc
 srI
 srI
