@@ -176,7 +176,7 @@ class ChatRenderer {
       this.highlightColor = null;
       return;
     }
-    /// adds consent to every highlight set
+    // adds consent to every highlight set
     text = text + ",consent"; // Superlagg edit, remove if it sucks
     const lines = String(text)
       .split(',')
