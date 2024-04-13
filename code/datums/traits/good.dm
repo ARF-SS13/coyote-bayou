@@ -130,6 +130,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	/datum/crafting_recipe/armyhelmetheavy,
 	/datum/crafting_recipe/huntingshotgun))
 
+GLOBAL_LIST_INIT(security_expert, list(
+	/datum/crafting_recipe/lockpick_basic,
+	/datum/crafting_recipe/lockpick_improved))
+
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -2920,3 +2924,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+
+/datum/quirk/security_expert
+	name = "Security Expert"
+	desc = "You've got a knack for getting into places you shouldn't be."
+	mob_trait = TRAIT_SECURITYEXPERT
+	value = 20
+	category = "Lifepath Quirks"
+	mechanics = "You can craft and use lockpicking sets to open doors and lockboxes."
+	conflicts = list()
+
+/datum/quirk/security_expert/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes += GLOB.security_expert
+
+/datum/quirk/security_expert/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.security_expert

@@ -184,6 +184,10 @@
 	if(!istype(picking))
 		return FALSE
 
+	if(!picking.can_use(user))
+		to_chat(user, span_warning("You're not sure where to start with this..."))
+		return FALSE
+
 	picking.in_use = TRUE
 
 	var/list/pick_messages = list(
@@ -254,14 +258,15 @@
 		ignore_walls = FALSE
 		)
 	
-	if(prob(15))
+	if(prob(picking.success_chance))
 		user.show_message(span_green(pick(pick_messages["successmessages"])))
 		try_to_activate_door(user, TRUE)
 		. = TRUE
 	else
 		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+		if(prob(picking.break_chance))
+			picking.use_pick(user)
 	picking.in_use = FALSE
-	picking.use_pick(user)
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user, force_open)
 	add_fingerprint(user)
