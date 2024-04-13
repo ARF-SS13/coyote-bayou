@@ -23,7 +23,7 @@
 #define LOOT_LASERS "energy guns"
 #define LOOT_MELEE "melee"
 //household
-#define LOOT_KITCHEN "kitchen"
+#define LOOT_KITCHEN "kitchen" //food, cookware, etc
 #define LOOT_CLOTHES "clothes"
 //farm
 #define LOOT_FARM "farm" //Farming tools, cowboy weapons and clothes
@@ -80,6 +80,8 @@
 	var/uses
 	///Can players come back to loot this after a while?
 	var/reusable = FALSE
+	///If this can be re-lootable later, how long do we wait?
+	var/reusable_cooldown = 1 MINUTES
 
 /obj/structure/lootable/Initialize(mapload)
 	//Do dynamic loot tier magic here
@@ -91,10 +93,14 @@
 /obj/structure/lootable/attack_hand(mob/user)
 	var/ukey = ckey(user?.ckey)
 	if(!ukey)
-		to_chat(user, span_alert("You need a ckey to search the trash! Gratz on not having a ckey, tell a coder about it!"))
+		to_chat(user, span_alert("You need a ckey to search this! Gratz on not having a ckey, tell a coder about it!"))
 	if(ukey in loot_players)
-		to_chat(user, span_notice("You already have looted [src]."))
-		return
+		if(!reusable)
+			to_chat(user, span_notice("You've already looted [src]. A fresh pair of eyes might be able to find more..."))
+			return
+		else if((world.time - loot_players[ukey]) < reusable_cooldown)
+			to_chat(user, span_notice("You have already looted [src] too recently...."))
+			return
 	if(!being_looted)
 		playsound(get_turf(src), GetLootingSound(), 100, TRUE, 1)
 	to_chat(user, span_smallnoticeital("You start looking through [src] for anything worth taking..."))
@@ -103,18 +109,15 @@
 		being_looted = FALSE
 		return
 	being_looted = FALSE
-	if(!reusable && (ukey in loot_players))
-		to_chat(user, span_notice("You have already looted [src]."))
-		return
 	loot_players[ukey] = world.time
 	//Switch to the open icon state for a while.
 	if(icon_state_open)
 		icon_state = icon_state_open
 	var/num_loot = rand(loot_rolls_min, loot_rolls_max)
-	if(num_loot < 1)
+	if(num_loot < 1 || (!isnull(uses) && uses < 1))
 		to_chat(user, span_notice("You didn't find anything useful in [src]."))
 		return
-	to_chat(user, span_notice("You finish looting through [src]."))
+	to_chat(user, span_notice("You finish searching [src]."))
 	var/turf/loot_turf = get_turf(user)
 	for(var/i=0, i<num_loot, i++ )
 		var/list/ourlist = LAZYACCESS(GLOB.lootable_types, loot_type)
@@ -123,8 +126,13 @@
 			if(ispath(L))
 				L = new L(loot_turf)
 
-	//Inspect our loot pile
+	//Inspect our loot pile automatically
 	AltClickNoInteract(user, loot_turf)
+
+	if(uses > 0)
+		uses--
+	if(uses <= 0)
+		qdel(src)
 
 /obj/structure/lootable/proc/GetLootableName()
 	if(!random_name_list)
@@ -276,9 +284,111 @@ GLOBAL_LIST_INIT(gun_loot_tiers, list(
 						),
 ))
 
+				/// Clothes ///
+GLOBAL_LIST_INIT(clothes_loot_tiers, list(
+	LOOT_TIER_LOWEST = list(
+						/obj/effect/spawner/lootdrop/f13/clothes = 25
+						),
+	LOOT_TIER_LOW = list(
+						/obj/effect/spawner/lootdrop/f13/clothes = 25
+						),
+	LOOT_TIER_MID = list(
+						/obj/effect/spawner/lootdrop/f13/clothes = 25
+						),
+	LOOT_TIER_HIGH = list(
+						/obj/effect/spawner/lootdrop/f13/clothes = 25
+						),
+	LOOT_TIER_HIGHEST = list(
+						/obj/effect/spawner/lootdrop/f13/clothes = 25
+						),
+))
+
+				/// electrical ///
+GLOBAL_LIST_INIT(electrical_loot_tiers, list(
+	LOOT_TIER_LOWEST = list(
+						/obj/effect/spawner/lootdrop/f13/trash_parts = 10,
+						/obj/effect/spawner/lootdrop/f13/electrical = 25,
+						),
+	LOOT_TIER_LOW = list(
+						/obj/effect/spawner/lootdrop/f13/common_parts = 10,
+						/obj/effect/spawner/lootdrop/f13/electrical = 25,
+						),
+	LOOT_TIER_MID = list(
+						/obj/effect/spawner/lootdrop/f13/common_parts = 5,
+						/obj/effect/spawner/lootdrop/f13/electrical = 25,
+						/obj/effect/spawner/lootdrop/f13/uncommon_parts = 5,
+						),
+	LOOT_TIER_HIGH = list(
+						/obj/effect/spawner/lootdrop/f13/electrical = 25,
+						/obj/effect/spawner/lootdrop/f13/uncommon_parts = 10,
+						),
+	LOOT_TIER_HIGHEST = list(
+						/obj/effect/spawner/lootdrop/f13/electrical = 25,
+						/obj/effect/spawner/lootdrop/f13/rare_parts = 10,
+						),
+))
+
+				/// hidden stashes ///
+GLOBAL_LIST_INIT(hiddenstash_loot_tiers, list(
+	LOOT_TIER_LOWEST = list(
+						/obj/effect/spawner/lootdrop/f13/trash = 1,
+						/obj/effect/spawner/lootdrop/f13/common = 3,
+						/obj/effect/spawner/lootdrop/f13/uncommon = 5,
+						/obj/effect/spawner/lootdrop/f13/rare = 1,
+						),
+	LOOT_TIER_LOW = list(
+						/obj/effect/spawner/lootdrop/f13/trash = 1,
+						/obj/effect/spawner/lootdrop/f13/common = 3,
+						/obj/effect/spawner/lootdrop/f13/uncommon = 5,
+						/obj/effect/spawner/lootdrop/f13/rare = 1,
+						),
+	LOOT_TIER_MID = list(
+						/obj/effect/spawner/lootdrop/f13/trash = 1,
+						/obj/effect/spawner/lootdrop/f13/common = 3,
+						/obj/effect/spawner/lootdrop/f13/uncommon = 5,
+						/obj/effect/spawner/lootdrop/f13/rare = 3,
+						),
+	LOOT_TIER_HIGH = list(
+						/obj/effect/spawner/lootdrop/f13/trash = 1,
+						/obj/effect/spawner/lootdrop/f13/common = 3,
+						/obj/effect/spawner/lootdrop/f13/uncommon = 5,
+						/obj/effect/spawner/lootdrop/f13/rare = 3,
+						),
+	LOOT_TIER_HIGHEST = list(
+						/obj/effect/spawner/lootdrop/f13/trash = 1,
+						/obj/effect/spawner/lootdrop/f13/common = 3,
+						/obj/effect/spawner/lootdrop/f13/uncommon = 5,
+						/obj/effect/spawner/lootdrop/f13/rare = 4,
+						),
+))
+
 GLOBAL_LIST_INIT(lootable_types, list(
 	LOOT_AMMO = GLOB.ammo_loot_tiers,
 	LOOT_TRASH = GLOB.trash_loot_tiers,
 	LOOT_GUNS = GLOB.gun_loot_tiers,
-//	LOOT_CLOTHES = GLOB.clothes_loot_tiers,
+	LOOT_CLOTHES = GLOB.clothes_loot_tiers,
+	LOOT_ELECTRICAL = GLOB.electrical_loot_tiers,
+	LOOT_HIDDEN_STASH = GLOB.hiddenstash_loot_tiers,
 ))
+
+
+//TODO: move this to another file
+/obj/structure/lootable/hidden_stash
+	name = "hidden stash"
+	desc = "Maybe I can find something to wear in here..."
+	icon = 'icons/fallout/objects/decals.dmi'
+	icon_state = "ventrusty"
+	loot_tier = LOOT_TIER_MID
+	loot_type = LOOT_HIDDEN_STASH
+	var/randomize_loot_tier = TRUE
+	icon_state_open = null
+	loot_rolls_max = 12
+	loot_rolls_min = 6
+	alpha = 128 //hehe
+	uses = 1
+
+/obj/structure/lootable/hidden_stash/Initialize(mapload)
+	if(randomize_loot_tier)
+		loot_tier = rand(LOOT_TIER_LOWEST, LOOT_TIER_HIGHEST)
+	. = ..()
+	
