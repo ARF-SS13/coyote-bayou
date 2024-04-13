@@ -80,3 +80,4 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		if(C.prefs.chat_toggles & CHAT_REMOTE_LOOC)
 			continue
 		to_chat(C, adminmsg_far)
+		playsound(get_turf(user), 'sound/effects/adminnotification.ogg', 100, FALSE, -7,)
