@@ -11330,6 +11330,12 @@
 	color = "#888888"
 	},
 /area/f13/building/tribal)
+"FB" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "FC" = (
 /turf/open/floor/f13,
 /area/f13/wasteland)
@@ -14189,6 +14195,9 @@
 	color = "#777777"
 	},
 /area/f13/tribe)
+"Nh" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Ni" = (
 /obj/structure/campfire/stove,
 /obj/item/grown/log/tree,
@@ -43753,9 +43762,9 @@ vD
 Zm
 mM
 tF
-tN
-tN
-tN
+Nh
+Nh
+Nh
 tN
 tN
 tN
@@ -44010,9 +44019,9 @@ tW
 Uy
 Sq
 mM
-tN
-tN
-tN
+Nh
+Nh
+Nh
 tN
 tN
 tN
@@ -44267,9 +44276,9 @@ tW
 RW
 tW
 QC
-tN
-tN
-tN
+Nh
+Nh
+Nh
 tN
 tN
 tN
@@ -44524,9 +44533,9 @@ ys
 tW
 Uy
 QC
-tN
-tN
-tN
+Nh
+Nh
+Nh
 tN
 tN
 tN
@@ -44781,9 +44790,9 @@ vD
 QC
 QC
 QC
-Ws
-tN
-tN
+FB
+Nh
+Nh
 tN
 tN
 tN
@@ -45039,8 +45048,8 @@ OT
 OT
 OT
 ma
-tN
-tN
+Nh
+Nh
 tN
 tN
 tN
@@ -45296,8 +45305,8 @@ OT
 OT
 OT
 ma
-tN
-tN
+Nh
+Nh
 tN
 tN
 tN
