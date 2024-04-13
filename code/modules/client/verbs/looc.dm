@@ -71,10 +71,10 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		var/client/C = M.client
 		if(C in GLOB.admins)
 			to_chat(C, adminmsg_near)
-			SEND_SOUND(C, 'sound/effects/adminnotification.ogg')
+			SEND_SOUND(C, 'sound/effects/looc_boop.ogg')
 		else if(!isobserver(M))
 			to_chat(C, playermsg)
-			SEND_SOUND(C, 'sound/effects/adminnotification.ogg')
+			SEND_SOUND(C, 'sound/effects/looc_boop.ogg')
 
 	for(var/client/C in GLOB.admins)
 		if (C.mob in heard)
@@ -82,4 +82,3 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		if(C.prefs.chat_toggles & CHAT_REMOTE_LOOC)
 			continue
 		to_chat(C, adminmsg_far)
-		SEND_SOUND(C, 'sound/effects/adminnotification.ogg')
