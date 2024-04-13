@@ -82,4 +82,3 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		if(C.prefs.chat_toggles & CHAT_REMOTE_LOOC)
 			continue
 		to_chat(C, adminmsg_far)
-		SEND_SOUND(C, 'sound/effects/looc_boop.ogg')
