@@ -391,4 +391,3 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	if(randomize_loot_tier)
 		loot_tier = rand(LOOT_TIER_LOWEST, LOOT_TIER_HIGHEST)
 	. = ..()
-	
