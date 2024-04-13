@@ -133,10 +133,12 @@
 #define TRAIT_BRUTERESISTMAJOR	"brute_resist_major"
 #define TRAIT_BRUTEWEAK			"brute_weak_minor"
 #define TRAIT_BRUTEWEAKMAJOR	"brute_weak_major"
+#define TRAIT_BRUTEWEAKFATAL	"brute_weak_fatal"
 #define TRAIT_BURNRESIST		"burn_resist_minor"
 #define TRAIT_BURNRESISTMAJOR	"burn_resist_major"
 #define TRAIT_BURNWEAK			"burn_weak_minor"
 #define TRAIT_BURNWEAKMAJOR		"burn_weak_major"
+#define TRAIT_BURNWEAKFATAL		"burn_weak_fatal"
 #define TRAIT_GENELESS			"geneless"
 #define TRAIT_VIRUSIMMUNE		"virus_immunity"
 #define TRAIT_PIERCEIMMUNE		"pierce_immunity"
@@ -420,6 +422,8 @@
 #define	TRAIT_LIFEGIVERPLUS		"lifegiverplus" //boosts HP by 20
 #define	TRAIT_FLIMSY			"flimsy" //lowers HP by 10
 #define	TRAIT_VERYFLIMSY			"veryflimsy" //lowers HP by 20
+#define	TRAIT_CATASTROPHICFLIMSY			"catastrophicflimsy" //lowers HP by 50
+#define	TRAIT_FATALFLIMSY			"fatalflimsy" //lowers HP by 50
 #define TRAIT_MARS_TEACH		"mars_teachings" //for legion unique functions
 #define TRAIT_EXPLOSIVE_CRAFTING "explosive_crafting" //can craft explosives and bombs
 #define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced_explosive_crafting" //can craft almost all kinds of explosives

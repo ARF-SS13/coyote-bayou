@@ -22,14 +22,14 @@
 	item_state = "staffofanimation"
 
 /obj/item/gun/magic/staff/healing
-	name = "staff of healing"
+	name = "staff of resurrection"
 	desc = "An artefact that spits bolts of restoring magic which can remove ailments of all kinds and even raise the dead."
 	fire_sound = 'sound/magic/staff_healing.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	icon_state = "staffofhealing"
 	item_state = "staffofhealing"
 	max_charges = 1
-	recharge_rate = 30 MINUTES
+	recharge_rate = 10 MINUTES
 
 /obj/item/gun/magic/staff/chaos
 	name = "staff of chaos"
@@ -186,7 +186,7 @@
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
 	icon_state = "mmstaff"
-	max_charges = 24 // CURRENTLY BUGGED. THIS ITEM CAN GO NEGATIVE CHARGES AND SHOOT INFINITELY. NEEDS BUGFIXING BY SOMEONE SMARTER THAN ME (KELP)
+	max_charges = 24 // Tee hee, Kelp doesnt know that staves don't like burst fire, sshh, nobody tell em
 	recharge_rate = 10 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	force_wielded = 37 // Practical all around! May change later.
