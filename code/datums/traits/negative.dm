@@ -1162,7 +1162,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "Your body is made of sticks and twigs, rats are a serious threat. Single hits can be fatal"
 	value = -77
 	category = "Health Quirks"
-	mechanics = "Your maximum hitpoints are reduced to 25 points above crit."
+	mechanics = "Your maximum hitpoints are reduced to 20 points above crit. Not for the faint of heart."
 	conflicts = list(
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/lifegiver,
@@ -1176,10 +1176,10 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
 
-/datum/quirk/veryflimsy/on_spawn()
+/datum/quirk/fatalflimsy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth -= 125
-	H.health -= 125
+	H.maxHealth -= 80
+	H.health -= 80
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
