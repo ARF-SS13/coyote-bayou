@@ -66,7 +66,7 @@
 	color = "#363636"
 	},
 /obj/structure/table/booth,
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "acc" = (
 /obj/structure/table/reinforced,
@@ -5827,7 +5827,7 @@
 	dir = 8;
 	icon_state = "booth_west_north"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "dha" = (
 /obj/structure/table/reinforced,
@@ -8026,6 +8026,10 @@
 	color = "#363636"
 	},
 /obj/structure/table/wood/settler,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 9
+	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "epr" = (
@@ -18131,7 +18135,7 @@
 	dir = 4;
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "jut" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -20194,7 +20198,7 @@
 	dir = 8;
 	icon_state = "booth_west_south"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "kwx" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
@@ -21922,10 +21926,17 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "lon" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler{
+	density = 0
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/obj/effect/fake_stairs/west,
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "loU" = (
@@ -26160,7 +26171,7 @@
 	dir = 4;
 	icon_state = "booth_east_south"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "nDo" = (
 /obj/structure/closet/cabinet,
@@ -36826,7 +36837,7 @@
 	},
 /obj/structure/table/booth,
 /obj/machinery/light,
-/turf/open/floor/wood_common,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "thB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -43206,6 +43217,9 @@
 	color = "#363636"
 	},
 /obj/structure/window/fulltile/house,
+/obj/structure/curtain/directional/north{
+	color = "#845f58"
+	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
 "wzg" = (
@@ -45514,16 +45528,15 @@
 	},
 /area/f13/building)
 "xGp" = (
-/obj/effect/step_trigger/teleporter{
-	teleport_x = 184;
-	teleport_y = 192;
-	checkPulled = 1;
-	teleport_z = 2
-	},
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333";
 	pixel_x = 2
+	},
+/obj/structure/ladder/unbreakable{
+	pixel_y = 13;
+	color = "#FF33FF";
+	id = "heavens_night"
 	},
 /turf/open/floor/f13{
 	icon_state = "stagestairs";
