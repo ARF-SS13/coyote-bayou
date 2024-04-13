@@ -116,11 +116,21 @@
 			to_chat(user, span_info("This monster is an exceptionally powerful soul and resists the nanomachines!"))
 			return
 
-/obj/item/holoparasite_injector/jaeger
+/obj/item/jaegerholopara
 	name = "LLX22 Crimson Holoparasite Auto-Injector"
 	desc = "A specially branded Holoparasite nanite strain. What years of the LLX11 Jet Auto-Injector program has led up to- a modern philosopher's stone. You can't bring back the dead, not in the way LapinLattice tried at least."
+	icon = 'icons/obj/syringe.dmi'
 	icon_state = "combat_hypo"
-/obj/item/holoparasite_injector/jaeger/afterattack(atom/target, mob/user, proximity_flag)
+	item_state = "hypo"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	throwforce = 0
+	w_class = WEIGHT_CLASS_SMALL
+	throw_speed = 3
+	throw_range = 5
+	var/revive_type = SENTIENCE_ORGANIC // So you can't revive boss monsters with it.
+
+/obj/item/jaegerholopara/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
 	if(isliving(target) && proximity_flag)
 		if(isanimal(target))

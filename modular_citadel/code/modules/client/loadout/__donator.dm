@@ -762,7 +762,7 @@
 	ckeywhitelist = list("Kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/holoparasite_injector/jaeger(src)
+	new /obj/item/jaegerholopara(src)
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
