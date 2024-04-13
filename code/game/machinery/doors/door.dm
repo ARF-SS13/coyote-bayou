@@ -262,7 +262,7 @@
 	if(prob(picking.success_chance))
 		user.show_message(span_green(pick(pick_messages["successmessages"])))
 		picked_open = TRUE
-		autoclose = FALSE
+		autoclose = 60 SECONDS
 		try_to_activate_door(user, TRUE)
 		. = TRUE
 	else
