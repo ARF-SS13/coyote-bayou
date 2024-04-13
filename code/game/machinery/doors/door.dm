@@ -28,6 +28,7 @@
 	var/emergency = FALSE // Emergency access override
 	var/sub_door = FALSE // true if it's meant to go under another door.
 	var/closingLayer = CLOSED_DOOR_LAYER
+	var/picked_open = FALSE // true if it's open due to lockpicking.
 	var/autoclose = FALSE //does it automatically close after some time
 	var/safe = TRUE //whether the door detects things and mobs in its way and reopen or crushes them.
 	var/locked = FALSE //whether the door is bolted or not.
@@ -260,6 +261,8 @@
 	
 	if(prob(picking.success_chance))
 		user.show_message(span_green(pick(pick_messages["successmessages"])))
+		picked_open = TRUE
+		autoclose = FALSE
 		try_to_activate_door(user, TRUE)
 		. = TRUE
 	else
@@ -440,6 +443,10 @@
 				return
 
 	operating = TRUE
+
+	if(picked_open)
+		autoclose = initial(autoclose)
+		picked_open = FALSE
 
 	do_animate("closing")
 	layer = closingLayer
