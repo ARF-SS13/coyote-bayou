@@ -154,14 +154,14 @@
 	del_on_death = FALSE
 	melee_damage_lower = 24
 	melee_damage_upper = 55
-	extra_projectiles = 2 //5 projectiles
+	extra_projectiles = 2 
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 5
 	minimum_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
 	attack_verb_simple = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/laser/pistol/ultraweak
+	projectiletype = /obj/item/projectile/beam/laser/pistol/wastebot
 	emote_taunt_sound = list(
 		'sound/f13npc/sentry/taunt1.ogg',
 		'sound/f13npc/sentry/taunt2.ogg',
