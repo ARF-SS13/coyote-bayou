@@ -626,6 +626,17 @@
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
+/datum/crafting_recipe/magic/resurrectstaff
+	name = "Staff of Resurrection"
+	result = /obj/item/gun/magic/staff/healing
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 20,
+				/obj/item/stack/sheet/leather = 5,
+				/obj/item/stack/sheet/mineral/gold = 5,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
 // Perfected Staff of Healing (Literally just the medbeam but Bulky and needs magic)
 /datum/crafting_recipe/magic/healstaff/perfected
 	name = "Perfected Staff of Healing"
