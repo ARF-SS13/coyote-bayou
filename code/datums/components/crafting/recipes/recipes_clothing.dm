@@ -559,7 +559,7 @@
 /datum/crafting_recipe/cigarpipe	//Citadel item
 	name = "Cigarette Pipe"
 	result = /obj/item/clothing/mask/cigarette/pipe/cigarpipe
-	reqs = list(/obj/item/stack/sheet/metal)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
 	category = CAT_CLOTHING
