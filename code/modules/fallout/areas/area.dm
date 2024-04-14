@@ -231,8 +231,6 @@
 /area/f13/wasteland/city/newboston
 	name = "New Boston"
 	icon_state = "newboston"
-	weather_tags = list()
-// Weather-proof!
 
 /area/f13/wasteland/city/newboston/outdoors
 	name = "New Boston Streets"
@@ -241,6 +239,7 @@
 /area/f13/wasteland/city/newboston/house
 	name = "New Boston Housing"
 	icon_state = "house"
+	indoors = TRUE
 
 /area/f13/wasteland/city/newboston/farm
 	name = "New Boston Farm"
@@ -261,14 +260,17 @@
 /area/f13/wasteland/city/newboston/bar
 	name = "New Boston Bar"
 	icon_state = "alcohol"
+	indoors = TRUE
 
 /area/f13/wasteland/city/newboston/bank
 	name = "New Boston Bank"
 	icon_state = "bank"
+	indoors = TRUE
 
 /area/f13/wasteland/city/newboston/sauna
 	name = "New Boston Sauna"
 	icon_state = "house1"
+	indoors = TRUE
 
 /area/f13/wasteland/city/newboston/chapel
 	name = "New Boston Chapel"
@@ -278,12 +280,12 @@
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/building/church,
 		)
+	indoors = TRUE
 
 /area/f13/wasteland/city/newboston/library
 	name = "New Boston Library"
 	icon_state = "library"
-
-
+	indoors = TRUE
 
 // Believe it or not, light switches are tied to areas, so...
 /area/f13/wasteland/city/newboston/house/cabin_one
