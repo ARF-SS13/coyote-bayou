@@ -79,7 +79,7 @@
 #define ui_drop_throw "EAST-1:28,SOUTH+1:7"
 #define ui_pull_resist "EAST-2:26,SOUTH+1:7"
 #define ui_pull_stop "EAST-1:28,SOUTH+1:24"
-#define ui_questbook "EAST-3:24,SOUTH+1:5"
+#define ui_questbook "EAST-3:21,SOUTH+1:5"
 #define ui_movi "EAST-2:26,SOUTH:5"
 #define ui_sprintbufferloc "EAST-2:26,SOUTH:18"
 #define ui_acti "EAST-3:24,SOUTH:5"
