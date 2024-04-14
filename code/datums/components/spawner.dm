@@ -82,7 +82,7 @@
 		mob_types = _mob_types
 	if(_faction)
 		faction = _faction
-	else
+	if(!LAZYLEN(faction) || ("UPDATEME" in _faction))
 		for(var/mobpath in mob_types)
 			var/mob/living/mobinit = mobpath
 			var/list/fact = initial(mobinit.faction)
@@ -133,7 +133,7 @@
 	if(istype(parent, /obj/structure/nest/special) || ismob(parent))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
-	if(parent.type == (/obj/structure/nest) && !am_special && !delay_start && LAZYLEN(mob_types))
+	if(!ismob(parent) && !am_special && !delay_start && LAZYLEN(mob_types))
 		my_ticket = new /datum/nest_box(src)
 	// if(SSspawners.use_turf_registration)
 	// 	register_turfs()
@@ -245,7 +245,7 @@
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
-	if(my_ticket && !am_special && parent.type == /obj/structure/nest) // we'll be back, eventually
+	if(my_ticket && !am_special && !ismob(parent)) // we'll be back, eventually
 		my_ticket.globalize(src)
 	qdel(src)
 
@@ -562,6 +562,9 @@
 	// spawn_text                = girlfriend.spawn_text
 	spawn_sound               = girlfriend.spawn_sound
 	faction                   = girlfriend.faction.Copy()
+	if(!islist(faction))
+		faction = list(faction)
+	faction                  |= "UPDATEME"
 	coverable_by_dense_things = girlfriend.coverable_by_dense_things
 	randomizer_tag            = girlfriend.randomizer_tag
 	randomizer_kind           = girlfriend.randomizer_kind
@@ -594,7 +597,7 @@
 	if(!parent)
 		qdel(src)
 		return FALSE
-	if(!parent.parent || parent.parent.type != /obj/structure/nest) // darn junker creators
+	if(!parent.parent || ismob(parent.parent)) // darn junker creators
 		qdel(src)
 		return FALSE
 	var/obj/structure/nest/N = parent.parent // maybe if I keep writing these, mine'll get back together
