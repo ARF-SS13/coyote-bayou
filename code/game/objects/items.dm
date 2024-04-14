@@ -365,11 +365,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			var/datum/material/MyMat = custom_materials[1]
 			if(MyMat.strength_modifier)
 				DamMult = MyMat.strength_modifier
-		// I seriously don't get why these used to use initial(). whats the point.
-		var/CalcF = (force + force_bonus) * DamMult	//force_bonus is added by things like smithing and sharpening
+		var/damagevalue = force
+		var/CalcAS = attack_speed
+		if(src.is_dual_wielded)
+			damagevalue = memory_original_force
+			CalcAS = dual_wield_memory_attack_speed
+		var/CalcF = (damagevalue + force_bonus) * DamMult	//force_bonus is added by things like smithing and sharpening
 		var/CalcFW = (force_wielded + force_bonus) * DamMult
 		var/CalcFUW = (force_unwielded + force_bonus) * DamMult
-		var/CalcAS = attack_speed
 
 		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
