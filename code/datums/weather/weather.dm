@@ -111,7 +111,7 @@
 	if(sound_ai_type)
 		sound_ai = new sound_ai_type(list(), FALSE, TRUE)
 	telegraph()
-
+//Somewhere between here
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
  *
@@ -171,7 +171,7 @@
 	sound_ai?.start()
 	for(var/P in GLOB.player_list)
 		handle_looping_sound(P)
-
+//and here is fucked
 /**
  * Weather enters the winding down phase, stops effects
  *
