@@ -380,7 +380,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/pose = GetPose(M, TRUE)
 	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/timeplayed = 420 HOURS
-	var/client/C = extract_ckey(M)
+	var/client/C = extract_client(M)
 	if(C)
 		timeplayed = C.get_exp_living(TRUE)
 	var/is_new = timeplayed <= newbie_time_threshold
