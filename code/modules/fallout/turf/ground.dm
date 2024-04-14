@@ -69,6 +69,7 @@
 #define GRASS_SPONTANEOUS 		  	2
 #define GRASS_WEIGHT			  	8
 #define RAND_PLANT_CHANCE			50
+#define HIDDEN_STASH_CHANCE			0.2
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
