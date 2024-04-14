@@ -9,7 +9,7 @@
 	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 0.1      // How many units of nutrient will be drained in the tray //test //lowering it even further
+	var/nutridrain = 0.05      // How many units of nutrient will be drained in the tray //test //lowering it even further
 	var/maxnutri = 100		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
@@ -36,7 +36,7 @@
 /obj/machinery/hydroponics/Initialize()
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
 	create_reagents(20)
-	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
+	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 100) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	. = ..()
 	LAZYREMOVE(GLOB.machines, src)
 	LAZYADD(GLOB.plant_bins, src)
