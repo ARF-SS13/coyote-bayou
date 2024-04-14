@@ -779,6 +779,11 @@
 	icon_state = "umbreon"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Head" = MATRIX_RED)
 
+/datum/sprite_accessory/mam_body_markings/baseline // I really, really don't want to add more to this awful system
+	name = "Baseline"
+	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
+	icon_state = "baseline"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 
 //Fenny goes totally insane and tries to add a shitton of the virgo markings in. :)  Oh, also, I hate Poojawa.
