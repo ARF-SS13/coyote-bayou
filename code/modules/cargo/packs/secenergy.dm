@@ -166,7 +166,7 @@
 	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/secenergy/weaponname
+/datum/supply_pack/secenergy/tgpc
 	name = "TG Particle Cannon"
 	desc = "Five shots. More than enough to kill anything that moves."
 	cost = 20000
@@ -342,7 +342,7 @@
 	contains = list(/obj/item/gun/energy/laser/badlands)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/secenergy/weaponname
+/datum/supply_pack/secenergy/ever
 	name = "Plasma Pistol Eve"
 	desc = "An upgraded plasma pistol. Compact and extra deadly."
 	cost = 3000
@@ -350,7 +350,7 @@
 	contains = list(/obj/item/gun/energy/laser/plasma/pistol/eve)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/secenergy/weaponname
+/datum/supply_pack/secenergy/adam
 	name = "Plasma Pistol Adam"
 	desc = "An upgraded plasma pistol. Less compact and even more deadly."
 	cost = 3000
@@ -358,7 +358,7 @@
 	contains = list(/obj/item/gun/energy/laser/plasma/pistol/adam)
 	crate_name = "select weapon crate"
 
-	/datum/supply_pack/secenergy/ebowbig
+/datum/supply_pack/secenergy/ebowbig
 	name = "Energy Crossbow"
 	desc = "One shot, one kill. More often than not, anyway. Bonus, it's self-charging!"
 	cost = 4200
