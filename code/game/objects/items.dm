@@ -370,9 +370,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(src.is_dual_wielded)
 			damagevalue = memory_original_force
 			CalcAS = dual_wield_memory_attack_speed
-		var/CalcF = (damagevalue + force_bonus) * DamMult	//force_bonus is added by things like smithing and sharpening
-		var/CalcFW = (force_wielded + force_bonus) * DamMult
-		var/CalcFUW = (force_unwielded + force_bonus) * DamMult
+		var/CalcF = (damagevalue) * DamMult
+		var/CalcFW = (force_wielded) * DamMult
+		var/CalcFUW = (force_unwielded) * DamMult
 
 		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
