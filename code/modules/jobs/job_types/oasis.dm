@@ -121,7 +121,8 @@ here's a tip, go search DEFINES/access.dm
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/supplykit
+		/obj/item/supplykit,
+		/obj/item/pda = 1,
 		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
