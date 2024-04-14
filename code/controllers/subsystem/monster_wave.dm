@@ -157,8 +157,8 @@ SUBSYSTEM_DEF(monster_wave)
 	var/datum/nest_box/nest_seed
 	var/spawn_after = 0
 	light_system = STATIC_LIGHT
-	light_range = 9
-	light_power = 0.75
+	light_range = 11
+	light_power = 0.7
 	light_color = "#6eaaff"
 	light_on = TRUE
 
