@@ -435,7 +435,8 @@
 							/obj/item/instrument/trombone,
 							/obj/item/instrument/recorder,
 							/obj/item/instrument/harmonica,
-							/obj/item/instrument/musicalmoth
+							/obj/item/instrument/musicalmoth,
+							/obj/structure/piano/fancy
 							)
 		for(var/V in templist)
 			var/atom/A = V
