@@ -2613,7 +2613,7 @@ Raider
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/storage/firstaid/ancient = 2,
+		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/cool_book/teacherguidebook = 1
 		)
