@@ -9,8 +9,8 @@
 	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 0.3      // How many units of nutrient will be drained in the tray //test //lowering it even further
-	var/maxnutri = 10		//The maximum nutrient of water in the tray
+	var/nutridrain = 0.1      // How many units of nutrient will be drained in the tray //test //lowering it even further
+	var/maxnutri = 100		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
 	var/yieldmod = 1		//Nutriment's effect on yield
@@ -172,7 +172,7 @@
 				adjustToxic(-rand(1,10) / rating)
 
 //Pests & Weeds//////////////////////////////////////////////////////////
-
+/*
 			if(pestlevel >= 8)
 				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
 					adjustHealth(-2 / rating)
@@ -213,7 +213,7 @@
 			if(myseed.instability >= 20 )
 				if(prob(myseed.instability))
 					mutate()
-
+*/
 //Health & Age///////////////////////////////////////////////////////////
 
 			// Plant dies if plant_health <= 0
@@ -322,10 +322,10 @@
 	. += span_info("Water: [waterlevel]/[maxwater].")
 	. += span_info("Nutrient: [reagents.total_volume]/[maxnutri].")
 
-	if(weedlevel >= 5)
-		to_chat(user, span_warning("It's filled with weeds!"))
-	if(pestlevel >= 5)
-		to_chat(user, span_warning("It's filled with tiny worms!"))
+//	if(weedlevel >= 5)
+//		to_chat(user, span_warning("It's filled with weeds!"))
+//	if(pestlevel >= 5)
+//		to_chat(user, span_warning("It's filled with tiny worms!"))
 
 // Examining more a plant will yield a rough estimation of it's stats.
 // Intended for use by Wayfarer's and Legion to allow their farmers to gauge roughly how it's going.
