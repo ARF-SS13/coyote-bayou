@@ -236,4 +236,9 @@
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
-
+/datum/supply_pack/materials/powder50
+	name = "50 Gunpowder Clumps"
+	desc = "For when ammunition is in low supply."
+	cost = 2000
+	contains = list(/obj/item/stack/ore/blackpowder/fifty)
+	crate_name = "Gunpowder Restock"
