@@ -161,7 +161,14 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/wasteplant/rose = 2,
 	/obj/structure/flora/wasteplant/lily = 2,
 	/obj/structure/flora/wasteplant/forgetmenot = 2,
-	/obj/structure/flora/wasteplant/geranium =2
+	/obj/structure/flora/wasteplant/geranium =2,
+	/obj/structure/flora/wasteplant/tomato = 2,
+	/obj/structure/flora/wasteplant/watermelon =2,
+	/obj/structure/flora/wasteplant/grape = 2,
+	/obj/structure/flora/wasteplant/pumpkin = 2,
+	/obj/structure/flora/wasteplant/corn = 2,
+	/obj/structure/flora/wasteplant/carrot = 2
+
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(

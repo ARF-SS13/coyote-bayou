@@ -37,6 +37,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/list/customlist = list()
 
+	var/newbie_time_threshold = 4 DAYS
+
 /datum/controller/subsystem/who/Initialize()
 	CatalogueRegionLandmarks()
 	..()
@@ -377,6 +379,11 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/where_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/pose = GetPose(M, TRUE)
 	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
+	var/timeplayed = 420 HOURS
+	var/client/C = extract_client(M)
+	if(C)
+		timeplayed = text2num(C.get_exp_living(TRUE))
+	var/is_new = timeplayed <= newbie_time_threshold
 	var/list/throbber = Throb(M, admeme)
 	var/list/out = list()
 	out += "<br>"
@@ -391,6 +398,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			name_span = "brass"
 	/// the name slug, anonymization has been handled elsewhere
 	out += "<span class='[name_span]'> [name]</span>"
+	if(is_new)
+		out += " [span_noticealien("(New!)")]"
 	/// the role slug
 	if(role_visible)
 		out += " the <span class='[role_span]'>[role]</span>"

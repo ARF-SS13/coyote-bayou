@@ -275,10 +275,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
-	mob_types = list(/mob/living/simple_animal/hostile/radroach = 10)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/micro = 15)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/leader = 5)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/strongradroach = 10)
+	mob_types = list(/mob/living/simple_animal/hostile/radroach = 10,
+					/mob/living/simple_animal/hostile/radroach/micro = 15,
+					/mob/living/simple_animal/hostile/radroach/leader = 5,
+					/mob/living/simple_animal/hostile/radroach/strongradroach = 10
+					)
 
 /obj/structure/nest/fireant
 	name = "fireant nest"
@@ -301,9 +302,10 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 /obj/structure/nest/molerat
 	name = "molerat nest"
 	max_mobs = 4
-	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
-	mob_types = list(/mob/living/simple_animal/hostile/molerat/micro = 10)
-	mob_types = list(/mob/living/simple_animal/hostile/molerat/leader = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20,
+						/mob/living/simple_animal/hostile/molerat/micro = 10,
+						/mob/living/simple_animal/hostile/molerat/leader = 1
+	)
 	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
@@ -410,7 +412,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
 		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal = 3,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile =  4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman =  2,
 		)
 
 /obj/structure/nest/gecko/boss
@@ -427,7 +434,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
 		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile =  4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman =  2,
 		)
 
 /obj/structure/nest/gecko/tribal
