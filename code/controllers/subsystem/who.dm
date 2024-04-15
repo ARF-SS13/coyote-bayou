@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/list/customlist = list()
 
-	var/newbie_time_threshold = 4 DAYS
+	var/newbie_time_threshold = 60 * 100 // proc returns *minutes*, so its 60 minutes (an hour) times 100 (100 hours)
 
 /datum/controller/subsystem/who/Initialize()
 	CatalogueRegionLandmarks()
