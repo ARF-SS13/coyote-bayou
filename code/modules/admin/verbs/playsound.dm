@@ -33,7 +33,7 @@
 	message_admins("[key_name_admin(src)] played sound [S]")
 
 	for(var/mob/M in GLOB.player_list)
-		if(M.client.prefs.toggles & SOUND_MIDI)
+		if(M?.client?.prefs?.toggles & SOUND_MIDI)
 			admin_sound.volume = vol * M.client.admin_music_volume
 			SEND_SOUND(M, admin_sound)
 			admin_sound.volume = vol
