@@ -942,7 +942,11 @@
 /mob/living/simple_animal/hostile/molerat/leader/Initialize()
 	.=..()
 	resize = 2.0
+	pixel_y = 10
+	pixel_x = 12
 	update_transform()
+
+
 
 /mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
 	. = ..()
