@@ -52,6 +52,29 @@
 		to_chat(user, span_notice("You were interrupted."))
 		praying = FALSE
 
+/obj/item/wirecutters/proc/colorize(set_color)
+	update_icon()
+
+/obj/item/wirecutters/update_overlays()
+	. = ..()
+	cut_overlays()
+	var/datum/reskin/colorable_tool/myskin = get_current_skin()
+	if(!myskin)
+		return
+	icon_state = myskin.icon_state
+	if(!myskin.colorize)
+		return
+	add_atom_colour(myskin.get_color(src), FIXED_COLOUR_PRIORITY)
+	. += myskin.get_overlays(src)
+
+/obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
+	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))
+		user.visible_message(span_notice("[user] cuts [C]'s restraints with [src]!"))
+		qdel(C.handcuffed)
+		return
+	else
+		..()
+
 /obj/item/wirecutters/brass
 	name = "brass wirecutters"
 	desc = "A pair of eloquent wirecutters made of brass. The handle feels freezing cold to the touch."
