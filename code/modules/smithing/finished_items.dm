@@ -333,7 +333,7 @@
 	force_wielded = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/captain_saber
+	block_parry_data = /datum/block_parry_data/bokken
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
@@ -451,7 +451,7 @@
 	throwforce= 30
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.7
-	block_parry_data = /datum/block_parry_data/waki
+	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/smith/wakizashi/Initialize()
@@ -507,7 +507,7 @@
 	force_wielded = 40
 	force_unwielded = 30
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/smithrapier
+	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
