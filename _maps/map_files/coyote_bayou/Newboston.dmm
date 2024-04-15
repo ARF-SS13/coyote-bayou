@@ -4203,6 +4203,19 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"cnK" = (
+/obj/machinery/button/door{
+	id = "4210";
+	name = "Window Shutters";
+	pixel_x = -11;
+	pixel_y = -19;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "cross1";
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "cnN" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil,
@@ -81336,7 +81349,7 @@ mLI
 uWY
 uWY
 mLI
-tLM
+cnK
 kXC
 wdM
 uWY
