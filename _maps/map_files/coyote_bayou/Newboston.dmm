@@ -22310,6 +22310,19 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
+"lpX" = (
+/obj/machinery/button/door{
+	id = "4210";
+	name = "Window Shutters";
+	pixel_x = -11;
+	pixel_y = -19;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "cross1";
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "lqb" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -43623,7 +43636,7 @@
 /area/f13/caves)
 "wse" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = "4210";
+	id = s;
 	name = "outpost gate2"
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -81336,7 +81349,7 @@ mLI
 uWY
 uWY
 mLI
-tLM
+lpX
 kXC
 wdM
 uWY
