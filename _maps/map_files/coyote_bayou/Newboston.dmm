@@ -4203,6 +4203,19 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"cnK" = (
+/obj/machinery/button/door{
+	id = "4210";
+	name = "Window Shutters";
+	pixel_x = -11;
+	pixel_y = -19;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "cross1";
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "cnN" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil,
@@ -25521,19 +25534,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/nash)
-"naR" = (
-/obj/machinery/button/door{
-	id = "4210";
-	name = "Window Shutters";
-	pixel_x = -11;
-	pixel_y = -19;
-	req_one_access_txt = null
-	},
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "cross1";
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "naY" = (
 /obj/structure/chair/stool,
 /turf/open/floor/f13/wood,
@@ -43636,7 +43636,7 @@
 /area/f13/caves)
 "wse" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = s;
+	id = "4210";
 	name = "outpost gate2"
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -81349,7 +81349,7 @@ mLI
 uWY
 uWY
 mLI
-naR
+cnK
 kXC
 wdM
 uWY
