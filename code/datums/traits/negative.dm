@@ -1152,7 +1152,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
 
-/datum/quirk/veryflimsy/on_spawn()
+/datum/quirk/catastrophicflimsy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.maxHealth -= 50
 	H.health -= 50
@@ -1175,6 +1175,48 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
 	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
+
+`/datum/quirk/weakpaintolerance
+	name = "Pain Tolerance - Weak"
+	desc = "Your pain tolerance is really low. Pain is a good thing, and keeps you out of serious danger."
+	gain_text = span_danger("You feel wimpy...")
+	lose_text = span_notice("You feel stronger.")
+	value = -5
+	category = "Health Quirks"
+	mechanics = "You go into softcrit at 50 points of damage, but Your total health is unchanged. Good for new players"
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryweakpaintolerance)
+
+/datum/quirk/weakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 50
+
+/datum/quirk/veryweakpaintolerance
+	name = "Pain Tolerance - Very Weak"
+	desc = "Your pain tolerance is incredibly low. Pain is a good thing, and keeps you out of serious danger, but this is annoying. Good for new players"
+	gain_text = span_danger("You feel really wimpy...")
+	lose_text = span_notice("You feel much stronger.")
+	value = -15
+	category = "Health Quirks"
+	mechanics = "You go into crit at 20 points of damage, but your total health is unchanged. This includes all damage, include toxins from radiation, and oxygen from bloodloss"
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/weakpaintolerance)
+
+/datum/quirk/veryweakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 80
+
+/datum/quirk/extremelyweakpaintolerance
+	name = "Pain Tolerance - Total Wimp"
+	desc = "You don't know what pain is, because you pass out before you can experience it. Doesnt come with the bottom quirk for free"
+	gain_text = span_danger(":point_up::nerd::speech_balloon:")
+	lose_text = span_notice("You feel much stronger.")
+	value = -30
+	category = "Health Quirks"
+	mechanics = "You go into crit at 1 point of damage, but your total health is unchanged. Radiation can paralyze you until treated and bloodloss oxygen damage is lethal."
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/flimsy, /datum/quirk/weakpaintolerance)
+
+/datum/quirk/extremelyweakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 99`
 
 /datum/quirk/fatalflimsy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
