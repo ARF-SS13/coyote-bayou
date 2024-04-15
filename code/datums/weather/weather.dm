@@ -174,7 +174,7 @@
 	sound_ao?.start()
 	for(var/P in GLOB.player_list)
 		handle_looping_sound(P)
-//and here is fucked
+
 /**
  * Weather enters the winding down phase, stops effects
  *
