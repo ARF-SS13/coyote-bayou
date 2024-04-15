@@ -1176,7 +1176,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
 
-`/datum/quirk/weakpaintolerance
+/datum/quirk/fatalflimsy/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 80
+	H.health -= 80
+
+/datum/quirk/weakpaintolerance
 	name = "Pain Tolerance - Weak"
 	desc = "Your pain tolerance is really low. Pain is a good thing, and keeps you out of serious danger."
 	gain_text = span_danger("You feel wimpy...")
@@ -1216,12 +1221,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/extremelyweakpaintolerance/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.crit_threshold = 99`
+	H.crit_threshold = 99
 
-/datum/quirk/fatalflimsy/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth -= 80
-	H.health -= 80
+
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
