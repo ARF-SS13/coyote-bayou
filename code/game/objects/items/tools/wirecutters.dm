@@ -13,6 +13,7 @@
 	force_wielded = 22
 	throw_speed = 3
 	throw_range = 7
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=500)
 	attack_verb = list("pinched", "nipped")
@@ -22,6 +23,35 @@
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
+
+/obj/item/wirecutters/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	var/mob/living/carbon/human/target = M
+	if(!target || !isrobotic(target))
+		return FALSE
+
+	if(praying)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins to fix some wires their chassis."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begin fixing some wires."))
+
+	praying = TRUE
+	if(!target || !isrobotic(target))
+		praying = FALSE
+		return FALSE
+	if(do_after(user, 1 SECONDS, target = M)) 
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 0.5) // Wirecutters don't heal brute damage, this does, but only if below a health threshold
+		to_chat(M, span_notice("[user] finished some repairs on your chassis!"))
+		M.adjustFireLoss(-5, include_roboparts = TRUE) 
+		praying = FALSE
+		playsound(get_turf(target), 'sound/items/Deconstruct.ogg', 100, 1)
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		praying = FALSE
 
 /obj/item/wirecutters/proc/colorize(set_color)
 	update_icon()

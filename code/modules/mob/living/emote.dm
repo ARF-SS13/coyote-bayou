@@ -2343,6 +2343,20 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
 
+/datum/emote/living/rizz
+	key = "rizz"
+	key_third_person = "rizzler"
+	message = "<span class='hypnophrase'>radiates powerful rizz</span>"
+	message_param = "<span class='hypnophrase'>%t.</span>" //Funny color text
+	sound = "modular_splurt/sound/voice/rizz.ogg"
+
+/datum/emote/living/threaten
+	key = "threaten"
+	key_third_person = "threaten"
+	message = "<span class='velvet'>radiates a menacing aura.</span>"
+	message_param = "<span class='velvet'>%t.</span>" //Funny red text
+	sound = "modular_splurt/sound/voice/waterphone.ogg"
+
 //Slime start
 
 //Framework
