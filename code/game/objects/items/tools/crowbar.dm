@@ -12,7 +12,7 @@
 	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 7
-	var/praying = TRUE
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	reskinnable_component = /datum/component/reskinnable/crowbar
 
@@ -39,7 +39,7 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins messing with their covers."), \
+	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"]and begins messing with their covers."), \
 		span_info("You kneel[M == user ? null : " next to [M]"] and begins messing with their covers."))
 
 	praying = TRUE
