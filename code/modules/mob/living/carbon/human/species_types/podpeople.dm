@@ -19,7 +19,7 @@
 	var/light_burnheal = -1
 	var/light_bruteheal = -1
 	species_type = "plant"
-	allowed_limb_ids = list("pod","mush")
+	allowed_limb_ids = list("pod","mush","plant")
 
 /datum/species/pod/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
