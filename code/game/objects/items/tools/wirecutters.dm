@@ -36,8 +36,8 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins to rework some wires."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begins reworking some wires."))
+	user.visible_message(span_info("[user] kneels [M == user ? null : "next to [M]"] and begins to rework their wires."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins reworking their wires."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
