@@ -667,7 +667,7 @@ here's a tip, go search DEFINES/access.dm
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/pda
-	r_pocket = /obj/item/storage/wallet/stash/mid
+	
 
 /datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
 	. = ..()
