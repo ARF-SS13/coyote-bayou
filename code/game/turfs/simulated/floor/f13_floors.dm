@@ -48,6 +48,7 @@
 /turf/open/floor/plating/f13/outside/road/harsh
 	icon = 'icons/fallout/turfs/f13roadharsh.dmi'
 	icon_state = "outerpavement"
+	broken_states = list("hole")
 
 /// Rooftops
 
