@@ -1,7 +1,9 @@
-/datum/buildmode_mode
-	var/key = "oops"
+/datum/rts_mode
+	var/name = "Oops"
+	var/datum/rts_commander/parent
 
-	var/datum/buildmode/BM
+	var/left_is_down = FALSE
+	var/right_is_down = FALSE
 
 	// would corner selection work better as a component?
 	var/use_corner_selection = FALSE
@@ -9,38 +11,51 @@
 	var/turf/cornerA
 	var/turf/cornerB
 
-/datum/buildmode_mode/New(datum/buildmode/BM)
-	src.BM = BM
-	preview = list()
+/datum/rts_mode/New(datum/rts_commander/cmdr)
+	parent = cmdr
 	return ..()
 
-/datum/buildmode_mode/Destroy()
-	cornerA = null
-	cornerB = null
-	QDEL_LIST(preview)
-	preview = null
+/datum/rts_mode/Destroy()
+	if(parent)
+		if(parent.active_mode == src)
+			parent.active_mode = null
+		parent.available_modes -= src
+	parent = null
 	return ..()
 
-/datum/buildmode_mode/proc/enter_mode(datum/buildmode/BM)
+/datum/rts_mode/proc/enter_mode()
 	return
 
-/datum/buildmode_mode/proc/exit_mode(datum/buildmode/BM)
+/datum/rts_mode/proc/exit_mode()
 	return
 
-/datum/buildmode_mode/proc/get_button_iconstate()
+/datum/rts_mode/proc/get_button_iconstate()
 	return "buildmode_[key]"
 
-/datum/buildmode_mode/proc/show_help(client/c)
+/datum/rts_mode/proc/show_help(client/c)
 	CRASH("No help defined, yell at a coder")
 
-/datum/buildmode_mode/proc/change_settings(client/c)
+/datum/rts_mode/proc/change_settings(client/c)
 	to_chat(c, span_warning("There is no configuration available for this mode"))
 	return
 
-/datum/buildmode_mode/proc/Reset()
+/datum/rts_mode/proc/Reset()
 	deselect_region()
 
-/datum/buildmode_mode/proc/select_tile(turf/T, corner_to_select)
+/datum/rts_mode/proc/handle_click(mob/user, params, atom/object)
+	return TRUE // no doing underlying actions
+
+/datum/rts_mode/proc/handle_mousedown(mob/user, params, atom/object)
+	return TRUE // no doing underlying actions
+
+/datum/rts_mode/proc/handle_mouseup(mob/user, params, atom/object)
+	return TRUE // no doing underlying actions
+
+/datum/rts_mode/proc/handle_mousedrag(mob/user, src_object, params, over_object, src_location, over_location, src_control, over_control)
+	return TRUE // no doing underlying actions
+
+
+/datum/rts_mode/proc/select_tile(turf/T, corner_to_select)
 	var/overlaystate
 	BM.holder.images -= preview
 	switch(corner_to_select)
@@ -55,7 +70,7 @@
 	BM.holder.images += preview
 	return T
 
-/datum/buildmode_mode/proc/highlight_region(region)
+/datum/rts_mode/proc/highlight_region(region)
 	BM.holder.images -= preview
 	for(var/t in region)
 		var/image/I = image('icons/turf/overlays.dmi', t, "redOverlay")
@@ -63,13 +78,13 @@
 		preview += I
 	BM.holder.images += preview
 
-/datum/buildmode_mode/proc/deselect_region()
+/datum/rts_mode/proc/deselect_region()
 	BM.holder.images -= preview
 	preview.Cut()
 	cornerA = null
 	cornerB = null
 
-/datum/buildmode_mode/proc/handle_click(client/c, params, object)
+/datum/rts_mode/proc/handle_click(client/c, params, object)
 	var/list/pa = params2list(params)
 	var/left_click = pa.Find("left")
 	if(use_corner_selection)
@@ -88,4 +103,4 @@
 			deselect_region()
 	return
 
-/datum/buildmode_mode/proc/handle_selected_area(client/c, params)
+/datum/rts_mode/proc/handle_selected_area(client/c, params)

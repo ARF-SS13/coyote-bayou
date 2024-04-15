@@ -525,11 +525,11 @@
 /mob/proc/check_mousedrag_intercept(params,src_object,atom/over_object,src_location,over_location,src_control,over_control)
 	//Client level intercept
 	if(client && client.click_intercept)
-		if(call(client.click_intercept, "InterceptMouseDrag")(src_object, params, over_object, src_location, over_location, src_control, over_control))
+		if(call(client.click_intercept, "InterceptMouseDrag")(src,src_object, params, over_object, src_location, over_location, src_control, over_control))
 			return TRUE
 	//Mob level intercept
 	if(click_intercept)
-		if(call(click_intercept, "InterceptMouseDrag")(src_object, params, over_object, src_location, over_location, src_control, over_control))
+		if(call(click_intercept, "InterceptMouseDrag")(src,src_object, params, over_object, src_location, over_location, src_control, over_control))
 			return TRUE
 	return FALSE
 
