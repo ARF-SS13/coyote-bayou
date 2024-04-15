@@ -347,4 +347,16 @@ SUBSYSTEM_DEF(monster_wave)
 	RB.my_component = src
 	forceMove(RB)
 
+/obj/effect/landmark/hardmode_spawner
+	name = "Hardmode thing spawner"
+	var/difficulty = 1
+
+/obj/effect/landmark/hardmode_spawner/easy
+	name = "Hardmode Easy thing spawner"
+
+/obj/effect/landmark/hardmode_spawner/medium
+	name = "Hardmode Medium thing spawner"
+
+/obj/effect/landmark/hardmode_spawner/hard
+	name = "Hardmode Hard thing spawner"
 
