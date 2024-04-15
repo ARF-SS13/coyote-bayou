@@ -28,7 +28,7 @@
 /obj/item/wrench/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
-	
+
 	var/mob/living/carbon/human/target = M
 	if(!target || !isrobotic(target))
 		return FALSE
@@ -37,18 +37,16 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-
-	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins to tighten some bolts on their chassis."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begin tightening some bolts."))
+	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins working some bolts."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins working some bolts."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
 	if(do_after(user, 1 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 0.5) // Wrenches don't heal burn damage, this does, but only if below a health threshold
-		to_chat(M, span_notice("[user] finished some repairs on your chassis!"))
-		M.adjustBruteLoss(-5, include_roboparts = TRUE) // Not much, but present healing
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 1) // Gives you some okay healing, its free. Gets worse the healthier you are
+		to_chat(M, span_notice("[user] finished working your bolts!"))
 		praying = FALSE
 		playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
 	else

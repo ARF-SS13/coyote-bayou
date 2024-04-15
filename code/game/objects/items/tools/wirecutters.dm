@@ -36,17 +36,16 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins to fix some wires their chassis."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begin fixing some wires."))
+	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins to rework some wires."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins reworking some wires."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
 	if(do_after(user, 1 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 0.5) // Wirecutters don't heal brute damage, this does, but only if below a health threshold
-		to_chat(M, span_notice("[user] finished some repairs on your chassis!"))
-		M.adjustFireLoss(-5, include_roboparts = TRUE) 
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 1) // Gives you some okay healing, its free. Gets worse the healthier you are
+		to_chat(M, span_notice("[user] finished reworking your wires!"))
 		praying = FALSE
 		playsound(get_turf(target), 'sound/items/Deconstruct.ogg', 100, 1)
 	else
