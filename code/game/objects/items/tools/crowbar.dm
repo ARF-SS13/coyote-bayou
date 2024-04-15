@@ -12,7 +12,7 @@
 	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 7
-	var/praying = TRUE
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	reskinnable_component = /datum/component/reskinnable/crowbar
 
