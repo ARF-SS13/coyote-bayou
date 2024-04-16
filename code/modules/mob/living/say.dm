@@ -214,8 +214,12 @@
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	if(islist(data) && LAZYACCESS(data, "is_radio") && !LAZYACCESS(data, "suppress_blurbles") && (data["ckey"] in GLOB.directory) && CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES) && !SSchat.debug_block_radio_blurbles)
 		var/mob/blurbler = ckey2mob(data["ckey"])
-		if(blurbler/*  && blurbler != src */)
-			blurbler.play_AC_typing_indicator(message, speaker, src, TRUE)
+		if(blurbler && blurbler != src)
+			var/atom/noiser = speaker
+			if(istype(speaker, /atom/movable/virtualspeaker))
+				var/atom/movable/virtualspeaker/spunker = speaker
+				noiser = get_turf(spunker.source)
+			blurbler.play_AC_typing_indicator(message, noiser, src, TRUE)
 	return message
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)

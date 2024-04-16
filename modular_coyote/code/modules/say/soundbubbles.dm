@@ -295,3 +295,22 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE, sans_underpants = FALSE)
 	features += features_speech
 	..()
+
+/datum/map_template/shelter/debug_telecomms
+	shelter_id = "debug_telecomms"
+	description	= "A debug telecomms room for testing purposes."
+	mappath = "_maps/templates/telecomms.dmm"
+
+
+/datum/map_template/shelter/debug_telecomms/New()
+	. = ..()
+	blacklisted_turfs = list()
+	whitelisted_turfs = list()
+	banned_areas = list()
+	banned_objects = list()
+
+/obj/item/survivalcapsule/debug_telecomms
+	name = "Pocket telecomms"
+	template_id = "debug_telecomms"
+	nuke = TRUE
+
