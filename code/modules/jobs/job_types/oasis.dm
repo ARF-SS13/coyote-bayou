@@ -723,7 +723,8 @@ here's a tip, go search DEFINES/access.dm
 	gloves = /obj/item/pda
 	l_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
-		/obj/item/book/manual/nuka_recipes = 1
+		/obj/item/book/manual/nuka_recipes = 1,
+		/obj/item/pda
 		)
 
 /datum/outfit/loadout/diner

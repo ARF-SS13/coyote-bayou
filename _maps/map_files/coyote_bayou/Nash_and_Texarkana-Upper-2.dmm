@@ -165,14 +165,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"aC" = (
-/obj/machinery/computer/camera_advanced{
-	dir = 4;
-	networks = list("nash")
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "aD" = (
 /obj/structure/chair/bench{
 	dir = 1
@@ -869,25 +861,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"cR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "cS" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -1636,19 +1609,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
-"fH" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 25
-	},
-/obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/paper/fluff/ruins/listeningstation/reports/november,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "fK" = (
 /obj/structure/table/wood{
 	density = 0
@@ -2229,11 +2189,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"hD" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building/massfusion)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -2550,12 +2505,6 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
-"je" = (
-/obj/machinery/door/airlock/hatch{
-	req_one_access_txt = "61"
-	},
-/turf/open/floor/plating,
-/area/f13/building/massfusion)
 "jf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/f13/outside/roof{
@@ -3270,12 +3219,6 @@
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"lU" = (
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "lY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/house,
@@ -3908,12 +3851,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
-"ot" = (
-/obj/machinery/blackbox_recorder,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "ox" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/boozeomat,
@@ -4238,14 +4175,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"py" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/med_data/syndie{
-	dir = 4;
-	req_one_access = null
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "pC" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -4395,25 +4324,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"qf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "qk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/curtain{
@@ -7201,11 +7111,6 @@
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"Ay" = (
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "Az" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -7794,14 +7699,6 @@
 	},
 /turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
-"CT" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "CU" = (
 /obj/structure/fence{
 	dir = 4;
@@ -8203,20 +8100,6 @@
 	smooth = 1
 	},
 /area/f13/building/hospital)
-"Ex" = (
-/obj/structure/filingcabinet,
-/obj/item/paper/fluff/ruins/listeningstation/reports/april,
-/obj/item/paper/fluff/ruins/listeningstation/reports/may,
-/obj/item/paper/fluff/ruins/listeningstation/reports/june,
-/obj/item/paper/fluff/ruins/listeningstation/reports/july,
-/obj/item/paper/fluff/ruins/listeningstation/reports/august,
-/obj/item/paper/fluff/ruins/listeningstation/reports/september,
-/obj/item/paper/fluff/ruins/listeningstation/reports/october,
-/obj/item/paper/fluff/ruins/listeningstation/receipt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/paper/fluff/ruins/listeningstation/odd_report,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "Ey" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -8793,9 +8676,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"Gy" = (
-/turf/closed/indestructible/vaultdoor,
-/area/f13/building/massfusion)
 "GA" = (
 /obj/machinery/light{
 	dir = 8;
@@ -9370,14 +9250,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"IF" = (
-/obj/machinery/computer/telecomms/monitor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "IG" = (
 /obj/effect/turf_decal/weather/splineplain{
 	dir = 1
@@ -9751,21 +9623,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
-"JS" = (
-/obj/structure/rack{
-	dir = 8
-	},
-/obj/item/multitool{
-	pixel_x = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lamp{
-	pixel_y = 14
-	},
-/obj/item/binoculars,
-/obj/item/binoculars,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "JT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_wide,
@@ -10423,14 +10280,6 @@
 	color = "#FFFF44"
 	},
 /area/f13/wasteland)
-"Me" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "Mf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10444,9 +10293,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
-"Ml" = (
-/turf/open/transparent/openspace,
-/area/f13/building/massfusion)
 "Mm" = (
 /obj/structure/chair/bench{
 	dir = 1
@@ -11098,21 +10944,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/civ/grass0,
 /area/f13/wasteland)
-"Oy" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "Oz" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -11256,13 +11087,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"Pk" = (
-/obj/machinery/computer/message_monitor,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/paper/monitorkey,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "Pl" = (
 /obj/structure/car/rubbish2{
 	icon_state = "car_rubish3";
@@ -11637,13 +11461,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
-"QA" = (
-/obj/machinery/telecomms/relay/preset/ruskie{
-	use_power = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "QB" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#999999"
@@ -12101,24 +11918,6 @@
 /obj/structure/flora/tree/oak_five,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"Sj" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "Sk" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -12499,17 +12298,6 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
-"Tg" = (
-/obj/machinery/newscaster{
-	pixel_y = 32
-	},
-/obj/machinery/computer/telecomms/server{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "Ti" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/f13/wood,
@@ -12865,10 +12653,6 @@
 	color = "grey"
 	},
 /area/f13/wasteland)
-"Ux" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/massfusion)
 "Uy" = (
 /mob/living/simple_animal/hostile/renegade/soldier{
 	name = "Joe Bob"
@@ -14509,22 +14293,6 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/wood_common,
 /area/f13/building)
-"ZX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "ZZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/folding{
@@ -69323,14 +69091,14 @@ hm
 hm
 hm
 hm
-Gy
-hD
-hD
-hD
-hD
-hD
-hD
-Gy
+IO
+IO
+yP
+lF
+yP
+lF
+yP
+lF
 yP
 lF
 IO
@@ -69579,15 +69347,15 @@ hm
 hm
 hm
 hm
-Gy
-Gy
-Tg
-IF
-aC
-py
-Ex
-ZX
-je
+IO
+IO
+yP
+lF
+lF
+lF
+IO
+lF
+IO
 lF
 IO
 lF
@@ -69836,15 +69604,15 @@ hm
 hm
 hm
 hm
-Gy
-Pk
-Me
-CT
-Sj
-qf
-Ux
-cR
-hD
+lF
+IO
+IO
+IO
+yP
+lF
+IO
+lF
+IO
 lF
 yP
 IO
@@ -70093,15 +69861,15 @@ hm
 hm
 hm
 hm
-Gy
-lU
-Me
-Ay
-ZX
-Oy
-Oy
-Ml
-hD
+IO
+IO
+lF
+IO
+IO
+IO
+IO
+yP
+lF
 yP
 lF
 lF
@@ -70350,15 +70118,15 @@ hm
 hm
 hm
 hm
-Gy
-Gy
-Gy
-ot
-QA
-fH
-JS
-Gy
-Gy
+lF
+IO
+yP
+yP
+lF
+lF
+IO
+lF
+IO
 FI
 FI
 FI
@@ -70607,15 +70375,15 @@ hm
 hm
 hm
 hm
-hm
-hm
-Gy
-Gy
-Gy
-Gy
-Gy
-Gy
-Gy
+yP
+yP
+lF
+IO
+yP
+yP
+yP
+lF
+IO
 yP
 yP
 yP

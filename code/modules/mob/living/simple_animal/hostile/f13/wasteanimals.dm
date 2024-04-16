@@ -125,7 +125,7 @@
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	..()
 	summon_backup(15)
-	say("𐎧𐎤𐎫𐎯!!") // https://lingojam.com/Eng-Cuneiform  In this case they're just calling for help.
+	
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")

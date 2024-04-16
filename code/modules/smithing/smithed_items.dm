@@ -62,21 +62,27 @@
 			H.dropItemToGround(src)
 
 /obj/item/ingot/iron
+	name = "iron ingot"
 	custom_materials = list(/datum/material/iron=12000)
 
 /obj/item/ingot/diamond
+	name = "diamond ingot"
 	custom_materials = list(/datum/material/diamond=12000) //yeah ok
 
 /obj/item/ingot/uranium
+	name = "uranium ingot"
 	custom_materials = list(/datum/material/uranium=12000)
 
 /obj/item/ingot/plasma
+	name = "plasma ingot"
 	custom_materials = list(/datum/material/plasma=12000)//yeah ok
 
 /obj/item/ingot/gold
+	name = "gold ingot"
 	custom_materials = list(/datum/material/gold=12000)
 
 /obj/item/ingot/silver
+	name = "silver ingot"
 	custom_materials = list(/datum/material/silver=12000)
 
 /obj/item/ingot/titanium
@@ -101,6 +107,7 @@
 	custom_materials = list(/datum/material/runedmetal=12000)
 
 /obj/item/ingot/bronze
+	name = "bronze ingot"
 	custom_materials = list(/datum/material/bronze=12000)
 
 /* /obj/item/ingot/ratvar
@@ -108,6 +115,7 @@
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking." */
 
 /obj/item/ingot/bone
+	name = "bone ingot"
 	custom_materials = list(/datum/material/bone=12000)
 
 /obj/item/smithing/attackby(obj/item/I, mob/user)
