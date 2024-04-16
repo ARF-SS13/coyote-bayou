@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(rts)
 	flags = SS_NO_INIT
 	/// list of all quest keys (its convenient lol) and their RTS datums
 	var/list/commanders = list()
+	var/debug_criteria = TRUE
 
 /datum/controller/subsystem/rts/proc/GetCommander(mob/cmdr)
 	if(!cmdr)

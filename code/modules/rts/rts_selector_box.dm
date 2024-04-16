@@ -25,35 +25,43 @@
  * Also supports a zero-size box (one tile)!
  *  */
 
-/datum/rts_selector_effect
+/datum/rts_selector_box
 	var/list/imgs = list()
 	var/list/img_cache = list()
+	var/datum/rts_commander/parent
 	var/ckey
 	/// our two turfs, stored in coords form, so we can easily check if we should update the box
 	/// not necessarily the top left or right or whatever, just two points that define the box
 	var/coords_1
 	var/coords_2
+	var/shadecolor = "#2600ff"
 
-/datum/rts_selector_effect/Destroy()
+/datum/rts_selector_box/attack
+	shade_color = "#FF0000"
+
+/datum/rts_selector_box/New(datum/rts_commander/parent)
+	src.parent = parent
+
+/datum/rts_selector_box/Destroy()
 	clear_images()
 	return ..()
 
-/datum/rts_selector_effect/proc/associate(something)
+/datum/rts_selector_box/proc/associate(something)
 	var/keykey = extract_ckey(something)
 	if(istext(keykey))
 		ckey = keykey
 
-/datum/rts_selector_effect/proc/deliver_images()
+/datum/rts_selector_box/proc/deliver_images()
 	clear_images()
-	var/client/cl = ckey2client(ckey)
+	var/client/cl = parent.GetCommanderClient()
 	if(!cl)
 		return
 	if(istype(cl))
 		for(var/image/I in imgs)
 			cl.images += I
 
-/datum/rts_selector_effect/proc/clear_images(and_delete = FALSE)
-	var/client/cl = ckey2client(ckey) // cant rely on these damn clients existing ever
+/datum/rts_selector_box/proc/clear_images(and_delete = FALSE)
+	var/client/cl = parent.GetCommanderClient()
 	if(!cl)
 		return
 	for(var/image/I in imgs)
@@ -62,7 +70,7 @@
 	if(and_delete)
 		QDEL_LIST(imgs)
 
-/datum/rts_selector_effect/proc/update_box(turf/A, turf/B, who)
+/datum/rts_selector_box/proc/update_box(turf/A, turf/B, )
 	if(!A || !B)
 		return
 	if(A.z != B.z)
@@ -71,8 +79,6 @@
 	// var/Bcoords = atom2coords(B)
 	// if((Acoords == coords_1 || Acoords == coords_2) && (Bcoords == coords_1 || Bcoords == coords_2))
 	// 	return // got a match, no need to update
-	if(who)
-		associate(who)
 	clear_images(TRUE)
 	// coords_1 = Acoords
 	// coords_2 = Bcoords
@@ -125,17 +131,17 @@
 	deliver_images()
 	return TRUE
 
-/datum/rts_selector_effect/proc/draw_box(perimeter_turfs, mode, west_x, east_x, north_y, south_y)
+/datum/rts_selector_box/proc/draw_box(perimeter_turfs, mode, west_x, east_x, north_y, south_y)
 	switch(mode)
 		if("SINGLE")
 			var/image/I = image('icons/misc/mark.dmi', perimeter_turfs[1], "babyalien_onearth", RTS_SELECTOR_LAYER) // dont ask
-			I.color = "#00FF00"
+			I.color = shadecolor
 			imgs += I
 		if("HORIZONTAL")
 			for(var/turf/T in perimeter_turfs)
 				// is it an end piece?
 				var/image/I = image('icons/misc/mark.dmi', T, "pancake_onearth", RTS_SELECTOR_LAYER)
-				I.color = "#00FF00"
+				I.color = shadecolor
 				imgs += I
 				/// left end?
 				if(T.x == west_x)
@@ -150,7 +156,7 @@
 			for(var/turf/T in perimeter_turfs)
 				// is it an end piece?
 				var/image/I = image('icons/misc/mark.dmi', T, "lightpole_onearth", RTS_SELECTOR_LAYER)
-				I.color = "#00FF00"
+				I.color = shadecolor
 				imgs += I
 				/// top end?
 				if(T.y == north_y)
@@ -165,7 +171,7 @@
 			for(var/turf/T in perimeter_turfs)
 				// is it an end piece?
 				var/image/I = image('icons/misc/mark.dmi', T, "selector_onearth", RTS_SELECTOR_LAYER)
-				I.color = "#00FF00"
+				I.color = shadecolor
 				imgs += I
 				/// left end?
 				if(T.x == west_x)
@@ -198,73 +204,3 @@
 				else
 					stack_trace("ERROR: Box drawing failed! Unknown direction x: [T.x], y: [T.y]")
 	return TRUE
-
-
-
-/* 
-/datum/rts_selector
-	key = "Commander"
-	/// The twoo turfs that will define our selection, if any.
-	var/turf/A
-	var/turf/B
-	
-	use_corner_selection = TRUE
-	var/objholder = null
-
-/datum/rts_selector/show_help(client/c)
-	to_chat(c, span_notice("***********************************************************"))
-	to_chat(c, span_notice("Click down on a turf to select the first corner of a region"))
-	to_chat(c, span_notice("Release it to select the second corner of a region (and everything inside!)"))
-	to_chat(c, span_notice("Click right mouse button to tell them to go there or attack it"))
-	to_chat(c, span_notice("***********************************************************"))
-
-/datum/rts_selector/change_settings(client/c)
-	var/target_path = input(c, "Enter typepath:" ,"Typepath","/obj/structure/closet")
-	objholder = text2path(target_path)
-	if(!ispath(objholder))
-		objholder = pick_closest_path(target_path)
-		if(!objholder)
-			alert("No path has been selected.")
-			return
-		else if(ispath(objholder, /area))
-			objholder = null
-			alert("Area paths are not supported for this mode, use the area edit mode instead.")
-			return
-	deselect_region()
-
-/datum/rts_selector/handle_click(client/c, params, obj/object)
-	if(isnull(objholder))
-		to_chat(c, span_warning("Select an object type first."))
-		deselect_region()
-		return
-	..()
-
-/datum/rts_selector/handle_selected_area(client/c, params)
-	var/list/pa = params2list(params)
-	var/left_click = pa.Find("left")
-	var/alt_click = pa.Find("alt")
-
-	if(left_click) //rectangular
-		if(alt_click)
-			var/list/deletion_area = block(get_turf(cornerA),get_turf(cornerB))
-			for(var/beep in deletion_area)
-				var/turf/T = beep
-				for(var/atom/movable/AM in T)
-					qdel(AM)
-				// extreme haircut
-				T.ScrapeAway(INFINITY, CHANGETURF_DEFER_CHANGE)
-			for(var/beep in deletion_area)
-				var/turf/T = beep
-				T.AfterChange()
-			log_admin("Build Mode: [key_name(c)] deleted turfs from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]")
-			// if there's an analogous proc for this on tg lmk
-			// empty_region(block(get_turf(cornerA),get_turf(cornerB)))
-		else
-			for(var/turf/T in block(get_turf(cornerA),get_turf(cornerB)))
-				if(ispath(objholder,/turf))
-					T.PlaceOnTop(objholder)
-				else
-					var/obj/A = new objholder(T)
-					A.setDir(BM.build_dir)
-			log_admin("Build Mode: [key_name(c)] with path [objholder], filled the region from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]")
- */

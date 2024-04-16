@@ -8,7 +8,18 @@
 	/// so we can find our player c:
 	var/cmdr_ckey
 
-	var/datum/rts_selector_effect/mybox
+	var/datum/rts_selector_box/mybox
+	var/datum/rts_selector_box/attack/myattackbox
+	var/datum/rts_selection_manager/mysel
+	var/datum/rts_selection_manager/preview/mypvis
+	var/datum/rts_order_processor/myord // m'lord
+
+	/// the datums that determines what we should be selecting
+	var/list/criteria = list()
+	var/active_criteria = "default"
+
+	var/list/my_faction = list()
+	var/list/valid_types = list()
 
 	var/intercepting = FALSE
 
@@ -26,11 +37,19 @@
 	// SECTION UI
 	var/list/buttons
 
-
-
 /datum/rts_commander/New(mob/user)
 	UpdateCmdrID(user)
-	mybox = new()
+	mybox = new(src)
+	myattackbox = new(src)
+	mysel = new(src)
+	mypvis = new(src)
+	myord = new(src)
+	for(var/pat in subtypesof(/datum/rts_criteria))
+		var/datum/rts_criteria/newpat = pat
+		newpat = new(src)
+		criteria[newpat.kind] = newpat
+		if(newpat.is_default)
+			active_criteria = newpat.kind
 
 /datum/rts_commander/proc/UpdateCmdrID(mob/user)
 	if(user)
@@ -72,6 +91,10 @@
 /datum/rts_commander/proc/GetCommanderClient()
 	return extract_client(cmdr_ckey)
 
+/datum/rts_commander/proc/GetCommanderMob()
+	var/client/C = GetCommanderClient()
+	return C.mob
+
 /datum/rts_commander/proc/InterceptClickOn(mob/user, params, atom/object)
 
 	return TRUE // no doing underlying actions
@@ -82,14 +105,19 @@
 	origin_turf = get_turf(object)
 	UpdateHeldKeys(params)
 	/// ah what the heck, start a selection box if we're left clicking
-	if(left_is_down)
-		mybox.update_box(origin_turf, origin_turf, cmdr_ckey) // the two are the same
+	if(left_is_down && !right_is_down)
+		mybox.update_box(origin_turf, origin_turf, params) // the two are the same
+	else if(right_is_down && !left_is_down)
+		myattackbox.update_box(origin_turf, origin_turf, params)
 	return TRUE // no doing underlying actions
 
 /// Last pert of an input, takes in what we know from the mouse's position,
 /// and our origin thing, and the keys we used to click, and does something with it
 /datum/rts_commander/proc/InterceptMouseUp(mob/user, params, atom/object)
-
+	// var/list/parm = params2list(params)
+	/// if we're left clicking, we're selecting
+	if(left_is_down && !right_is_down)
+		mysel.SelectRegion(origin_turf, get_turf(object), LAZYACCESS(criteria, active_criteria), params)
 	CleanupHeldKeys(user, params, object) // remove the keys we were holding, and their effects
 	return TRUE // no doing underlying actions
 
@@ -99,7 +127,8 @@
 	/// update modifier keys
 	if(left_is_down)
 		var/turf/mouseover_turf = get_turf(over_object)
-		mybox.update_box(origin_turf, mouseover_turf, cmdr_ckey)
+		mybox.update_box(origin_turf, mouseover_turf, params)
+		mypvis.SelectRegion(origin_turf, mouseover_turf, LAZYACCESS(criteria, active_criteria), params)
 	return TRUE // no doing underlying actions
 
 /datum/rts_commander/proc/UpdateHeldKeys(params)
@@ -133,3 +162,5 @@
 	shift_is_down = FALSE
 	alt_is_down = FALSE
 	mybox.clear_images()
+	mysel.UpdateVisuals() // refreshes the selection plumbob
+	mypvis.UpdateVisuals() // flushes the preview
