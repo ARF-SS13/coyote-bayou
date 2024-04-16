@@ -223,7 +223,7 @@
 	icon_state = "scraplaser"
 	item_state = "shotguncity"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/improvised
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun)
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/improvised)
 	ammo_x_offset = 1
 	shaded_charge = 1
 	can_remove = 0 
