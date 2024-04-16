@@ -443,6 +443,9 @@
 			cur_category = params["category"]
 			cur_subcategory = params["subcategory"] || ""
 			. = TRUE
+		if("update_static")
+			update_static_data(usr)
+			. = TRUE
 
 /datum/component/personal_crafting/proc/build_recipe_data(datum/crafting_recipe/R)
 	var/list/data = list()

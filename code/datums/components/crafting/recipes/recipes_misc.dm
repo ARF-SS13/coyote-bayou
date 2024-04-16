@@ -727,6 +727,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -738,6 +739,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -749,6 +751,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/donkeyho
 	name = "Donkey Ho-Tay's Bane"
@@ -761,6 +764,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/mrboneswr
 	name = "Mr. Bones Wild Ride"
@@ -772,6 +776,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/accordiondlove
 	name = "Accordion D'love"
@@ -784,6 +789,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/dooter
 	name = "The Dooter"
@@ -794,6 +800,7 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/sweetlovin
 	name = "Sweet Lovin'"
@@ -806,6 +813,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/trom_bone
 	name = "Trom-Bone"
@@ -816,6 +824,7 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 
 /datum/crafting_recipe/rip/fingerlicker
@@ -828,6 +837,7 @@
 				/obj/item/reagent_containers/food/condiment/pack/bbqsauce = 10
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 //Lunchboxes
 
@@ -839,6 +849,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/hearts
 	name = "Hearts lunchbox"
@@ -848,6 +859,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/cat
 	name = "Cat lunchbox"
@@ -857,6 +869,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/nano
 	name = "Blue lunchbox"
@@ -866,6 +879,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/uni
 	name = "University lunchbox"
@@ -875,6 +889,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/teal
 	name = "Teal lunchbox"
@@ -884,6 +899,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/diona
 	name = "Diona lunchbox"
@@ -893,6 +909,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/black
 	name = "Black lunchbox"
@@ -902,6 +919,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 //Abraxo recipe after several requests
 
@@ -915,6 +933,7 @@
 		/datum/material/sand  = 1,
 		)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 
 /// Graveyard / Not Used
