@@ -147,13 +147,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
-"acY" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/broadcaster/preset_right,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "adt" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
@@ -942,10 +935,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
-"aEH" = (
-/obj/machinery/telecomms/server/presets/town,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "aEQ" = (
 /obj/structure/simple_door/repaired,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -1873,12 +1862,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
-"bsl" = (
-/obj/machinery/telecomms/server/presets/supply,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "bsu" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
@@ -4490,11 +4473,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"bRs" = (
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "bRt" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -4747,10 +4725,6 @@
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"bVb" = (
-/obj/machinery/telecomms/server/presets/khans,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "bVc" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -4800,12 +4774,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"bWe" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 8
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "bWf" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -5231,11 +5199,7 @@
 	},
 /area/f13/building/sewers)
 "cig" = (
-/obj/machinery/telecomms/processor/preset_four,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/closed/mineral/random/low_chance/underground,
 /area/tcommsat/server)
 "ciB" = (
 /obj/machinery/door/airlock/abandoned,
@@ -5339,13 +5303,6 @@
 /obj/item/paper_bin/bundlenatural,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"ckd" = (
-/obj/machinery/telecomms/processor/preset_one,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "cke" = (
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -5362,10 +5319,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"ckn" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "ckq" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/junker/creator,
@@ -5386,12 +5339,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"ckw" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "ckA" = (
 /obj/structure/dresser,
 /turf/open/floor/wood_common{
@@ -5744,10 +5691,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"cuK" = (
-/obj/machinery/telecomms/hub/preset,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "cvq" = (
 /obj/machinery/button/door{
 	id = "salad";
@@ -6786,13 +6729,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
-"dfI" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/obj/machinery/ntnet_relay,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "dgc" = (
 /obj/structure/decoration/vent,
 /obj/effect/overlay/junk/shower{
@@ -7868,10 +7804,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"dVq" = (
-/obj/machinery/telecomms/server/presets/security,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "dVL" = (
 /obj/structure/table,
 /obj/structure/barricade/bars{
@@ -8186,12 +8118,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"eht" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 1
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "ehC" = (
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -10274,12 +10200,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"fKL" = (
-/obj/machinery/telecomms/server/presets/medical,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "fKO" = (
 /obj/machinery/shower{
 	pixel_y = 16
@@ -10382,12 +10302,6 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/f13/caves)
-"fNr" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 9
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "fNu" = (
 /obj/machinery/light{
 	dir = 4
@@ -11402,12 +11316,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common,
 /area/f13/building)
-"gxz" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "gxF" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -12519,10 +12427,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hnv" = (
-/obj/machinery/light/floor,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "hod" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13140,13 +13044,6 @@
 /obj/item/cigbutt/cigarbutt,
 /turf/open/floor/wood_fancy,
 /area/f13/caves)
-"hKR" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
-	},
-/obj/machinery/telecomms/bus/preset_three,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "hKT" = (
 /obj/structure/chair/right{
 	dir = 4
@@ -14455,12 +14352,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"iCX" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "iDd" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress1"
@@ -14969,13 +14860,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/f13/building/sewers)
-"iTv" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/server/presets/bos,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "iTC" = (
 /obj/structure/closet/fridge,
 /turf/open/floor/wood_common{
@@ -15622,12 +15506,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"jpU" = (
-/obj/machinery/telecomms/server/presets/ncr,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "jqi" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
 	icon_state = "neutralrusty"
@@ -15655,13 +15533,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"jri" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/server/presets/vault,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "jrB" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/wall,
@@ -15773,9 +15644,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"jvt" = (
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "jvv" = (
 /obj/structure/table/wood/settler,
 /obj/item/trash/plate,
@@ -15885,13 +15753,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
-"jBs" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 9
-	},
-/obj/machinery/telecomms/bus/preset_one,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "jBB" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks{
@@ -16008,13 +15869,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"jFt" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
-	},
-/obj/machinery/telecomms/bus/preset_two,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "jFA" = (
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/dark,
@@ -16879,12 +16733,6 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"kkd" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "kkn" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/dark,
@@ -17404,20 +17252,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/sewers)
-"kGg" = (
-/obj/machinery/door/airlock/hatch{
-	req_one_access_txt = "61"
-	},
-/obj/machinery/door/poddoor/shutters/old{
-	id = "commsroomlockdown";
-	max_integrity = 10000;
-	name = "shutters";
-	obj_integrity = 1000000
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "kGt" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -17874,12 +17708,6 @@
 /obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
-"kVx" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "kVz" = (
 /obj/item/flashlight/lantern{
 	on = 1;
@@ -18105,10 +17933,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
-"lcF" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "lcM" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/glitter/blue,
@@ -19723,12 +19547,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
-"maA" = (
-/obj/machinery/telecomms/server/presets/responders,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "maE" = (
 /turf/closed/indestructible/fakedoor{
 	desc = "An indestructible door. Hm.";
@@ -20478,10 +20296,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/f13/caves)
-"mCM" = (
-/obj/machinery/telecomms/server/presets/legion,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "mCQ" = (
 /obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -24086,13 +23900,6 @@
 	name = "cave"
 	},
 /area/f13/caves)
-"paF" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/receiver/preset_right,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "pbg" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -24638,13 +24445,6 @@
 	name = "cave"
 	},
 /area/f13/caves)
-"pua" = (
-/obj/machinery/telecomms/processor/preset_two,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "pup" = (
 /obj/structure/table,
 /obj/structure/barricade/bars,
@@ -26174,10 +25974,6 @@
 /obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
-"qpK" = (
-/obj/machinery/telecomms/server/presets/science,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "qpR" = (
 /obj/machinery/mineral/wasteland_vendor/weapons,
 /turf/open/floor/f13/wood,
@@ -27305,13 +27101,6 @@
 	},
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
-"raU" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/server/presets/enclave,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "rbm" = (
 /obj/structure/filingcabinet,
 /obj/effect/decal/cleanable/dirt{
@@ -28221,13 +28010,6 @@
 /obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"rIZ" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/obj/machinery/telecomms/bus/preset_four,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "rJe" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -29320,14 +29102,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/grass,
 /area/f13/tunnel)
-"svL" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "svV" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -29353,10 +29127,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"swo" = (
-/obj/machinery/telecomms/server/presets/engineering,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "swz" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/wreck/trash/two_barrels,
@@ -29801,14 +29571,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
-"sMv" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "sMz" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -30281,12 +30043,6 @@
 "taG" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
-"taP" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "tbd" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/lattice{
@@ -30512,13 +30268,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
-"tiY" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/receiver/preset_left,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "tja" = (
 /obj/effect/overlay/junk/oldpipes{
 	dir = 6
@@ -30949,10 +30698,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall,
 /area/f13/tunnel)
-"twv" = (
-/obj/machinery/telecomms/server/presets/common,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "twE" = (
 /obj/effect/turf_decal/caution{
 	dir = 4
@@ -31320,12 +31065,6 @@
 /obj/structure/table_frame/wood,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"tKG" = (
-/obj/machinery/telecomms/server/presets/ranger,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "tKZ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -31668,11 +31407,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
-"tZD" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/obj/machinery/telecomms/message_server,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "tZM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
@@ -33368,13 +33102,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
-"vmW" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/server/presets/command,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "vnf" = (
 /obj/structure/chair/sofa/corner{
 	dir = 4
@@ -36608,13 +36335,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"xyV" = (
-/obj/machinery/telecomms/processor/preset_three,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "xza" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -36799,10 +36519,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"xDO" = (
-/obj/machinery/telecomms/server/presets/service,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "xDR" = (
 /obj/structure/simple_door/metal/ventilation{
 	name = "drainage system"
@@ -37217,13 +36933,6 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/water,
 /area/f13/caves)
-"xQO" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/broadcaster/preset_left,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
 "xQV" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
@@ -37344,12 +37053,6 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"xUW" = (
-/obj/machinery/telecomms/server/presets/den,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/tcommsat/server)
 "xVj" = (
 /obj/structure/simple_door/metal/barred,
 /obj/structure/decoration/rag,
@@ -87522,7 +87225,7 @@ ueb
 ueb
 ueb
 qom
-kGg
+ueb
 qom
 ueb
 ueb
@@ -87775,14 +87478,14 @@ pDI
 prr
 dpc
 ueb
-ckd
-jBs
-tiY
-iTv
-sMv
-raU
-xQO
-rIZ
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
 cig
 ueb
 eow
@@ -88032,15 +87735,15 @@ pCC
 pDI
 pDI
 ueb
-fNr
-kkd
-jvt
-jvt
-taP
-jvt
-jvt
-eht
-gxz
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
 ueb
 tbP
 nOj
@@ -88288,17 +87991,17 @@ cjJ
 nws
 pDI
 pDI
-qlt
-kVx
-twv
-bVb
-fKL
-jvt
-tKG
-qpK
-xDO
-ckn
-qlt
+ueb
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+ueb
 pDI
 cgt
 dOG
@@ -88545,17 +88248,17 @@ cjJ
 nws
 ciC
 nOj
-qlt
-dfI
-xUW
-hnv
-bRs
-cuK
-bRs
-hnv
-bsl
-tZD
-qlt
+ueb
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+ueb
 pDI
 mwi
 xZu
@@ -88802,17 +88505,17 @@ cjJ
 nws
 pDI
 pDI
-qlt
-kVx
-swo
-mCM
-jpU
-jvt
-maA
-dVq
-aEH
-ckn
-qlt
+ueb
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+ueb
 pDI
 pDI
 xZu
@@ -89060,15 +88763,15 @@ uAS
 nOj
 pDI
 ueb
-iCX
-bWe
-jvt
-jvt
-taP
-jvt
-jvt
-lcF
-ckw
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
 ueb
 tbP
 nOj
@@ -89317,15 +89020,15 @@ pDI
 fsu
 dpc
 ueb
-pua
-jFt
-paF
-vmW
-svL
-jri
-acY
-hKR
-xyV
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
+cig
 ueb
 eow
 ory
@@ -89578,7 +89281,7 @@ ueb
 ueb
 ueb
 qom
-kGg
+ueb
 qom
 ueb
 ueb
