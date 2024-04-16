@@ -10,10 +10,8 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/wasteland/city/newboston/house/cabin_three)
 "ae" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/curtain/directional/north,
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/house/cabin_seven)
+/turf/closed/indestructible/vaultdoor,
+/area/f13/building)
 "af" = (
 /obj/structure/bed{
 	pixel_y = 10
@@ -24,6 +22,14 @@
 	},
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/cyan,
+/area/f13/building)
+"ag" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
 /area/f13/building)
 "ai" = (
 /obj/machinery/computer/arcade{
@@ -1501,6 +1507,10 @@
 "ek" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
+"el" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "em" = (
 /obj/structure/filingcabinet/filingcabinet,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2945,6 +2955,11 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"ic" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building)
 "id" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -2979,6 +2994,20 @@
 	footstep = "grass"
 	},
 /area/f13/tribe)
+"ij" = (
+/obj/structure/filingcabinet,
+/obj/item/paper/fluff/ruins/listeningstation/reports/april,
+/obj/item/paper/fluff/ruins/listeningstation/reports/may,
+/obj/item/paper/fluff/ruins/listeningstation/reports/june,
+/obj/item/paper/fluff/ruins/listeningstation/reports/july,
+/obj/item/paper/fluff/ruins/listeningstation/reports/august,
+/obj/item/paper/fluff/ruins/listeningstation/reports/september,
+/obj/item/paper/fluff/ruins/listeningstation/reports/october,
+/obj/item/paper/fluff/ruins/listeningstation/receipt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/fluff/ruins/listeningstation/odd_report,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "ik" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -3181,6 +3210,16 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland/city/newboston/house)
+"iQ" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/paper/fluff/ruins/listeningstation/reports/november,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "iS" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/item/reagent_containers/glass/bucket/wood{
@@ -3956,13 +3995,11 @@
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/outdoors)
 "kZ" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/curtain/directional/north{
-	color = "#ACD1E9";
-	alpha = 200
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/house/cabin_seven)
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/libraryconsole/bookmanagement,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "la" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood_common{
@@ -4794,6 +4831,21 @@
 	pixel_x = -7
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"nj" = (
+/obj/structure/rack{
+	dir = 8
+	},
+/obj/item/multitool{
+	pixel_x = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lamp{
+	pixel_y = 14
+	},
+/obj/item/binoculars,
+/obj/item/binoculars,
+/turf/open/floor/plasteel/dark,
 /area/f13/building)
 "nk" = (
 /obj/structure/fermenting_barrel,
@@ -8706,6 +8758,24 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"yk" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "ym" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -9610,6 +9680,17 @@
 	},
 /turf/open/floor/wood_mosaic/wood_mosaic_light,
 /area/f13/wasteland/city/newboston/house/cabin_two)
+"AY" = (
+/obj/machinery/newscaster{
+	pixel_y = 32
+	},
+/obj/machinery/computer/telecomms/server{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "AZ" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal{
@@ -10703,6 +10784,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"DO" = (
+/obj/machinery/blackbox_recorder,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "DP" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -11203,6 +11290,14 @@
 	footstep = "grass"
 	},
 /area/f13/tribe)
+"EY" = (
+/obj/machinery/computer/telecomms/monitor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "EZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -12135,6 +12230,21 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"HA" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "HB" = (
 /obj/structure/simple_door/wood,
 /obj/item/lock_bolt{
@@ -12776,6 +12886,13 @@
 /obj/structure/chair,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
+"Jk" = (
+/obj/machinery/telecomms/relay/preset/ruskie{
+	use_power = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "Jl" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -14087,6 +14204,22 @@
 	color = "#766E65"
 	},
 /area/f13/building/tribal/cave)
+"MP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "MQ" = (
 /obj/structure/closet/crate/wooden,
 /obj/item/stack/sheet/mineral/wood/fifty,
@@ -15052,6 +15185,13 @@
 	footstep = "grass"
 	},
 /area/f13/tribe)
+"Pq" = (
+/obj/machinery/computer/message_monitor,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/monitorkey,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "Pr" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/dirt{
@@ -16303,6 +16443,11 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/house/cabin_three)
+"SB" = (
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building)
 "SD" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -16339,6 +16484,14 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
+"SI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/med_data/syndie{
+	dir = 4;
+	req_one_access = null
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "SJ" = (
 /obj/structure/anvil/obtainable/basic,
 /obj/item/melee/smith/hammer/premade,
@@ -16585,6 +16738,13 @@
 /obj/machinery/light,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland/city/newboston/house/cabin_four)
+"Ty" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing,
+/turf/open/transparent/openspace,
+/area/f13/building)
 "Tz" = (
 /obj/structure/legion_extractor{
 	pixel_y = 6
@@ -18766,6 +18926,14 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/building)
+"ZD" = (
+/obj/machinery/computer/camera_advanced{
+	dir = 4;
+	networks = list("nash")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/f13/building)
 "ZE" = (
 /mob/living/simple_animal/hostile/bs/knight,
@@ -46202,12 +46370,12 @@ rG
 cw
 cw
 cw
-Ws
 tN
 tN
 tN
-tN
-tN
+OT
+OT
+OT
 tN
 tN
 tN
@@ -46462,9 +46630,9 @@ Qc
 tN
 tN
 tN
-tN
-tN
-tN
+OT
+OT
+OT
 tN
 tN
 tN
@@ -46719,9 +46887,9 @@ Qc
 tN
 tN
 tN
-tN
-tN
-tN
+OT
+OT
+OT
 tN
 tN
 tN
@@ -46974,14 +47142,14 @@ en
 mn
 Qc
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+OT
+OT
+OT
+OT
+OT
+OT
+OT
 tN
 tN
 tN
@@ -47231,14 +47399,14 @@ cw
 Cr
 SU
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -47488,14 +47656,14 @@ wF
 Fs
 xG
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -47745,14 +47913,14 @@ Hh
 zr
 vJ
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -48002,14 +48170,14 @@ wC
 Hh
 fR
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -48259,14 +48427,14 @@ Hh
 Hh
 DQ
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -48516,14 +48684,14 @@ tP
 Hh
 DQ
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -48772,15 +48940,15 @@ vK
 Hh
 Hh
 eg
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -49029,15 +49197,15 @@ Hh
 rP
 qm
 rU
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+OT
+Nh
+Nh
+Nh
+Nh
+Nh
+OT
+OT
 tN
 tN
 tN
@@ -49285,16 +49453,16 @@ tp
 tp
 tp
 Ut
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+OT
+OT
+OT
+OT
+OT
+OT
+OT
+OT
+OT
 tN
 tN
 tN
@@ -49541,17 +49709,17 @@ eW
 tp
 Ve
 pd
-kZ
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+tp
+OT
+OT
+ae
+ic
+ic
+ic
+ic
+ic
+ic
+ae
 tN
 tN
 tN
@@ -49799,16 +49967,16 @@ tp
 hK
 tp
 tp
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+ae
+ae
+AY
+EY
+ZD
+SI
+ij
+iQ
+ic
 tN
 tN
 tN
@@ -50056,16 +50224,16 @@ kQ
 rg
 ZS
 tp
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+ae
+Pq
+SB
+SB
+yk
+MP
+el
+MP
+ic
 tN
 tN
 tN
@@ -50312,17 +50480,17 @@ Za
 mJ
 VH
 kB
+tp
+OT
 ae
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+kZ
+SB
+SB
+Ty
+HA
+HA
+ag
+ic
 tN
 tN
 tN
@@ -50570,16 +50738,16 @@ mJ
 Kx
 jy
 tp
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+OT
+ae
+ae
+ae
+nj
+ae
+DO
+Jk
+ae
+ae
 tN
 tN
 tN
@@ -50830,13 +50998,13 @@ tp
 tN
 tN
 tN
-tN
-tN
-tN
-tN
-tN
-tN
-tN
+ae
+ae
+ae
+ae
+ae
+ae
+ae
 tN
 tN
 tN
