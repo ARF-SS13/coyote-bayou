@@ -263,6 +263,7 @@
 	glass_icon_state = "boba_tea"
 	glass_name = "Boba Tea"
 	glass_desc = "A light and refreshing boba tea"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/bobatea
 	name = "boba tea"
@@ -278,6 +279,7 @@
 	glass_icon_state = "boba_lemonlime"
 	glass_name = "Lemon Lime Boba"
 	glass_desc = "A light and refreshing boba lemon lime"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/boba_lemonlime
 	name = "boba lemon lime"
@@ -293,6 +295,7 @@
 	glass_icon_state = "boba_strawberry"
 	glass_name = "Strawberry Boba"
 	glass_desc = "A light and refreshing boba strawberry"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/boba_strawberry
 	name = "boba strawberry"
@@ -308,6 +311,7 @@
 	glass_icon_state = "boba_banana"
 	glass_name = "banana Boba"
 	glass_desc = "A light and refreshing boba banana"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/boba_banana
 	name = "boba banana"
@@ -323,6 +327,7 @@
 	glass_icon_state = "boba_melonlime"
 	glass_name = "melon lime Boba"
 	glass_desc = "A light and refreshing boba melonlime"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/boba_melonlime
 	name = "boba melonlime"
@@ -338,6 +343,7 @@
 	glass_icon_state = "boba_lovebug"
 	glass_name = "Lovebug Boba"
 	glass_desc = "A light and refreshing boba lovebug"
+	nutriment_factor = 8
 
 /datum/chemical_reaction/drink/boba_lovebug
 	name = "boba lovebug"
