@@ -816,7 +816,6 @@
 	else
 		// Apply stamina damage if the mob tried to dodge into a wall
 		adjustStaminaLoss(10)
-		visible_message("<span class='notice'>[src] tries to dodge but hits a wall!</span>")
 		playsound(loc, 'sound/effects/hit_punch.ogg', 50, 1, -1) // Play a punch sound
 	dodging = TRUE
 
