@@ -1952,3 +1952,23 @@
 	icon_state = "flatscreen"
 	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
 	density = 0
+
+/obj/item/kirbyplants/bonsai
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_1"
+
+/obj/item/kirbyplants/bonsai/pink
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_2"
+
+/obj/item/kirbyplants/bonsai/orange
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_3"
+
+/obj/item/kirbyplants/bonsai/blue
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_4"

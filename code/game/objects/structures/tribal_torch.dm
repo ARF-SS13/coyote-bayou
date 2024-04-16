@@ -115,3 +115,12 @@
 	burning = TRUE
 	icon_state = "wall_torch_lit"
 	light_range = 7
+
+//Tiki torches from Civ
+
+/obj/structure/destructible/tribal_torch/tikilit //ALREADY LIT TORCH FOR USE IN MAPPING
+	burning = TRUE
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "tikitorch_lit"
+	light_range = 7
+
