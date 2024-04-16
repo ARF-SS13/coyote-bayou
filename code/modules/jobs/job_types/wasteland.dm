@@ -1294,7 +1294,7 @@ Raider
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP
-	faction = FACTION_WASTELAND
+	faction = FACTION_OASIS
 	total_positions = 2
 	spawn_positions = 2
 	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
