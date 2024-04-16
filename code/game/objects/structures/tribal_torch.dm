@@ -123,3 +123,4 @@
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "tikitorch_lit"
 	light_range = 7
+
