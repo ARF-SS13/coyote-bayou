@@ -213,3 +213,63 @@
 /obj/item/projectile/beam/laser/cranklasergun/overcharge/revolver_man
 	damage = 30
 ////////////////////////////////////////////////////////////////
+
+/obj/item/gun/energy/laser/cranklasergun/improvised
+	name = "improvised laser"
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "scraplaser"
+	item_state = "shotguncity"
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/improvised
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun)
+	ammo_x_offset = 1
+	shaded_charge = 1
+	can_remove = 0 
+	can_charge = 0 
+	can_flashlight = 0
+	can_scope = TRUE
+	trigger_guard = TRIGGER_GUARD_NORMAL
+	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/improvised  //basically a single shot charge
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 5
+
+
+/obj/item/ammo_casing/energy/cranklasergun/improvised
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
+	e_cost = 1
+	select_name = "kill"
+
+
+/obj/item/projectile/beam/laser/cranklasergun/improvised
+	name = "blaster bolt"
+	icon_state = "laser"
+	pass_flags = PASSTABLE| PASSGLASS
+	damage = 30
+	damage_list = list("25" = 25, "30" = 25, "35" = 25, "40" = 25)
+	light_range = 2
+	damage_type = BURN
+	hitsound = 'sound/weapons/sear.ogg'
+	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+	flag = "laser"
+	eyeblur = 2
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = LIGHT_COLOR_RED
+	ricochets_max = 50	//Honk!
+	ricochet_chance = 0
+	is_reflectable = TRUE
+	recoil = BULLET_RECOIL_HEAVY_LASER
+
+
