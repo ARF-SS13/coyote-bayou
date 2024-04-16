@@ -218,8 +218,8 @@
 			var/atom/noiser = speaker
 			if(istype(speaker, /atom/movable/virtualspeaker))
 				var/atom/movable/virtualspeaker/spunker = speaker
-				noiser = get_turf(spunker.source)
-			blurbler.play_AC_typing_indicator(message, noiser, src, TRUE)
+				noiser = get_turf(spunker.GetRadio())
+			blurbler.play_AC_typing_indicator(raw_message, noiser, src, TRUE)
 	return message
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)
