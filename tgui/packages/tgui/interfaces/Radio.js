@@ -98,11 +98,11 @@ export const Radio = (props, context) => {
                   onClick={() => act('subspace')} />
               )}
               <Button
-                  ml={1}
-                  icon="comments"
-                  selected={suppressBlurbles}
-                  content={`Noise Suppression ${suppressBlurbles ? 'ON' : 'OFF'}`}
-                  onClick={() => act('suppressBlurbles')} />
+                ml={1}
+                icon="comments"
+                selected={suppressBlurbles}
+                content={`Noise Suppression ${suppressBlurbles ? 'ON' : 'OFF'}`}
+                onClick={() => act('suppressBlurbles')} />
             </LabeledList.Item>
             {!!subspace && (
               <LabeledList.Item label="Channels">
