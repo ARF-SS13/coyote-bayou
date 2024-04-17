@@ -105,7 +105,7 @@
 	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
-	loot = list()
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 1
 	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
@@ -177,8 +177,9 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 8
 	melee_damage_upper = 14
-	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
 	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
@@ -234,6 +235,7 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
+	mob_armor = ARMOR_VALUE_GHOUL_COLD
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -251,6 +253,7 @@
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
+	mob_armor = ARMOR_VALUE_GHOUL_COLDER
 	speed = 1.5
 	maxHealth = 80
 	health = 80
@@ -319,6 +322,9 @@
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A glowing creature that may or may not be a reanimated corpse."
 	loot_drop_amount = 2
@@ -376,7 +382,7 @@
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	maxHealth = 60 
 	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
@@ -392,7 +398,7 @@
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	maxHealth = 80 
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -407,6 +413,7 @@
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
 	icon_gib = "syndicate_gib"
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	speak_chance = 1
 	environment_smash = 0
 	response_help_simple = "hugs"
@@ -441,6 +448,7 @@
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
 	icon_gib = "syndicate_gib"
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
@@ -480,6 +488,7 @@
 	icon_living = "wyomingghost"
 	icon_dead = "wyomingghost_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_GHOUL_PA
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("wheezes")
@@ -508,6 +517,7 @@
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
 	stat_attack = CONSCIOUS
+	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
@@ -581,6 +591,7 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
 	maxHealth = 200
 	health = 200
 	can_ghost_into = FALSE

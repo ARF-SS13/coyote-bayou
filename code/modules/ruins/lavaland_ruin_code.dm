@@ -91,7 +91,7 @@
 		/obj/item/stack/sheet/cloth	                = /datum/species/golem/cloth,
 		/obj/item/stack/sheet/mineral/adamantine	= /datum/species/golem/adamantine,
 		/obj/item/stack/sheet/plastic	            = /datum/species/golem/plastic,
-		/obj/item/stack/tile/brass					= /datum/species/golem/clockwork,
+//		/obj/item/stack/tile/brass					= /datum/species/golem/clockwork,
 		/obj/item/stack/sheet/bronze					= /datum/species/golem/bronze,
 		/obj/item/stack/sheet/cardboard				= /datum/species/golem/cardboard,
 		/obj/item/stack/sheet/leather				= /datum/species/golem/leather,
@@ -161,7 +161,7 @@
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize()
 	. = ..()
 	if(prob(90)) //only has a 10% chance of existing, otherwise it'll just be a NPC syndie.
-		new /mob/living/simple_animal/hostile/syndicate/ranged(get_turf(src))
+		new /mob/living/simple_animal/hostile/renegade/syndicate/ranged(get_turf(src))
 		return INITIALIZE_HINT_QDEL
 
 /datum/outfit/lavaland_syndicate/comms

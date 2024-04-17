@@ -222,6 +222,12 @@
 	entry_class = LOADOUT_CAT_OTHER
 	spawn_thing = /obj/item/storage/box/tools/wealth
 
+/datum/loadout_box/archeology
+	entry_tag = "archeologist"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_OTHER
+	spawn_thing = /obj/item/storage/belt/xenoarch/full
+
 /obj/item/storage/box/tools/guns
 	name = "weapon collection"
 
@@ -345,7 +351,6 @@
 	name = "marksman gear"
 
 /obj/item/storage/box/tools/marksman/PopulateContents()
-	new /obj/item/gun_upgrade/scope/watchman(src)
 	new /obj/item/clothing/suit/armor/medium/vest/flak(src)
 	new /obj/item/clothing/head/flakhelm(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
@@ -396,7 +401,6 @@
 	name = "hunting gear"
 
 /obj/item/storage/box/tools/hunter/PopulateContents()
-	new /obj/item/gun_upgrade/scope/watchman(src)
 	new /obj/item/storage/bag/plants(src)
 	new /obj/item/melee/onehanded/knife/bowie(src) //skinnin knife
 	new /obj/item/fishingrod(src) //mornin! nice day for fishin ain't it

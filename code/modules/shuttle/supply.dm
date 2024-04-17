@@ -15,8 +15,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/effect/mob_spawn,
 		/obj/effect/hierophant,
 		/obj/structure/receiving_pad,
-		/obj/effect/clockwork/spatial_gateway,
-		/obj/structure/destructible/clockwork/powered/clockwork_obelisk,
+//		/obj/effect/clockwork/spatial_gateway,
+//		/obj/structure/destructible/clockwork/powered/clockwork_obelisk,
 		/obj/item/warp_cube,
 		/obj/machinery/rnd/production/protolathe, //print tracking beacons, send shuttle
 		/obj/machinery/autolathe, //same
@@ -186,6 +186,8 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 
 /obj/docking_port/mobile/supply/proc/sell()
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	if(!D)
+		return
 	var/gain = 0
 
 	if(!GLOB.exports_list.len) // No exports list? Generate it!

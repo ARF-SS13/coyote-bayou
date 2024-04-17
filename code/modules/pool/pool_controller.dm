@@ -267,6 +267,8 @@
 	var/rcolor
 	if(reagents.reagent_list.len)
 		rcolor = mix_color_from_reagents(reagents.reagent_list)
+		if(rcolor == "rainbow")
+			rcolor = "#ffffff"
 	if(rcolor == old_rcolor)
 		return // small performance upgrade hopefully?
 	old_rcolor = rcolor

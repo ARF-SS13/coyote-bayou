@@ -87,7 +87,7 @@
 		set_opacity(0)
 	..()
 
-turf/closed/wall/f13/wood/house/update_damage_overlay()
+/turf/closed/wall/f13/wood/house/update_damage_overlay()
 	if(broken)
 		return
 	..()
@@ -106,7 +106,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/store
 	name = "store wall"
@@ -120,7 +120,19 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/store,
+	/turf/closed/wall/f13/store/constructed,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
@@ -184,7 +196,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
@@ -364,7 +376,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	var/tickerPeriod = 300 //in deciseconds
 	var/go/fullDark
 
-turf/closed/indestructible/f13/splashscreen/New()
+/turf/closed/indestructible/f13/splashscreen/New()
 	.=..()
 	name = "Fallout 13"
 	desc = "The wasteland is calling!"
@@ -382,7 +394,7 @@ turf/closed/indestructible/f13/splashscreen/New()
 	spawn() src.ticker()
 	return
 
-turf/closed/indestructible/f13/splashscreen/proc/ticker()
+/turf/closed/indestructible/f13/splashscreen/proc/ticker()
 	while(src && istype(src,/turf/closed/indestructible/f13/splashscreen))
 		src.swapImage()
 		sleep(src.tickerPeriod)

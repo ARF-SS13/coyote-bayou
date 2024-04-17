@@ -595,14 +595,12 @@
 
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	desc = "A large duffel bag containing a Bulldog, some drums, and a pair of thermal imaging glasses."
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
 	desc = "A large duffel bag containing a tactical medkit, a Donksoft machine gun, a big jumbo box of riot darts, and a knock-off pair of magboots."
@@ -640,7 +638,7 @@
 	new /obj/item/reagent_containers/pill/patch/medx(src)
 	new /obj/item/grenade/syndieminibomb(src)
 
-obj/item/storage/backpack/duffelbag/syndie/shredderbundle
+/obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A large duffel bag containing two CX Shredders, some magazines, an elite hardsuit, and a chest rig."
 
 /obj/item/storage/backpack/duffelbag/syndie/shredderbundle/PopulateContents()

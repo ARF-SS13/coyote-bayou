@@ -69,6 +69,7 @@
 #define GRASS_SPONTANEOUS 		  	2
 #define GRASS_WEIGHT			  	8
 #define RAND_PLANT_CHANCE			50
+#define HIDDEN_STASH_CHANCE			0.2
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
@@ -148,6 +149,26 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/burnedtree1 = 2,
 	/obj/structure/flora/burnedtree2 = 2,
 	/obj/structure/flora/burnedtree5 = 2,
+	/obj/structure/flora/wasteplant/berrybush/tinto = 2,
+	/obj/structure/flora/wasteplant/berrybush/amar = 2,
+	/obj/structure/flora/wasteplant/berrybush/azul = 2,
+	/obj/structure/flora/wasteplant/berrybush/majo = 2,
+	/obj/structure/flora/wasteplant/berrybush/narco = 2,
+	/obj/structure/flora/wasteplant/berrybush/zelenyy = 2,
+	/obj/structure/flora/wasteplant/berrybush/marron = 2,
+	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
+	/obj/structure/flora/wasteplant/sunflower = 2,
+	/obj/structure/flora/wasteplant/rose = 2,
+	/obj/structure/flora/wasteplant/lily = 2,
+	/obj/structure/flora/wasteplant/forgetmenot = 2,
+	/obj/structure/flora/wasteplant/geranium =2,
+	/obj/structure/flora/wasteplant/tomato = 2,
+	/obj/structure/flora/wasteplant/watermelon =2,
+	/obj/structure/flora/wasteplant/grape = 2,
+	/obj/structure/flora/wasteplant/pumpkin = 2,
+	/obj/structure/flora/wasteplant/corn = 2,
+	/obj/structure/flora/wasteplant/carrot = 2
+
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
@@ -361,8 +382,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 /turf/open/indestructible/ground/outside/dirt/Initialize()
 	. = ..()
 	if(icon_state == "dirtfull")
-		var/MM = text2num(time2text(world.timeofday, "MM"))
-		if(MM == 12 || MM == 1 || MM == 2)
+		if(SSweather.snowy_time)
 			name = "snow"
 			icon = 'icons/fallout/turfs/dirt.dmi'
 			icon_state = "snow[rand(0,12)]"
@@ -487,24 +507,24 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 
 /turf/open/indestructible/ground/outside/water/Entered(atom/movable/AM, atom/oldloc)
 	. = ..()
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You get drenched in water!"))
+	// if(istype(AM, /mob/living))
+	// 	var/mob/living/L = AM
+	// 	L.update_water()
+	// 	if(L.check_submerged() <= 0)
+	// 		return
+	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
+	// 		to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 
-/turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
-	. = ..()	
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You climb out of \the [src]."))
+// /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
+// 	. = ..()
+// 	if(istype(AM, /mob/living))
+// 		var/mob/living/L = AM
+// 		L.update_water()
+// 		if(L.check_submerged() <= 0)
+// 			return
+// 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
+// 			to_chat(L, span_warning("You climb out of \the [src]."))
 
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
@@ -563,6 +583,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "cave"
 	icon_state = "rockfloor1"
 	icon = 'icons/fallout/turfs/mining.dmi'
+	footstep = FOOTSTEP_SAND
 //	allowed_plants = list(/obj/item/seeds/glow)
 //	step_sounds = list("human" = "erikafootsteps")
 
@@ -655,6 +676,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "road"
 	icon_state = "innermiddle"
 	icon = 'icons/fallout/turfs/asphaltdirt.dmi'
+	footstep = FOOTSTEP_ROAD
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalkdirt

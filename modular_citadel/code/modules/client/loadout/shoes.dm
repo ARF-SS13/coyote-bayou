@@ -34,6 +34,11 @@
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
 
+/datum/gear/shoes/chameleon
+	name = "chameleon shoes"
+	path = /obj/item/clothing/shoes/chameleon
+	cost = 0
+
 /datum/gear/shoes/blackshoes
 	name = "black shoes"
 	path = /obj/item/clothing/shoes/sneakers/black
@@ -213,6 +218,23 @@
 /datum/gear/shoes/slippers
 	name = "bunny slippers"
 	path = /obj/item/clothing/shoes/slippers
+
+/datum/gear/shoes/meownshoes
+	name = "meown shoes"
+	path = /obj/item/clothing/shoes/meown_shoes
+
+/datum/gear/shoes/moffers
+	name = "moffer shoes"
+	path = /obj/item/clothing/shoes/moffers
+
+/datum/gear/shoes/jackbros
+	name = "jack frost shoes"
+	path = /obj/item/clothing/shoes/jackbros
+
+/datum/gear/shoes/saints
+	name = "saints shoes"
+	path = /obj/item/clothing/shoes/saints
+
 
 /// Factions Shoes or well NCR boots.
 

@@ -46,7 +46,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -173,7 +173,7 @@ Raider
 		///obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
 		/obj/item/ammo_box/c45rev = 2,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 1,
 		/obj/item/grenade/smokebomb = 2,
 		)
@@ -367,7 +367,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider/watcher
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider/doctor
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -485,7 +485,7 @@ Raider
 		///obj/item/gun/ballistic/rifle/hunting/remington = 1,
 		///obj/item/ammo_box/a308 = 1,
 		///obj/item/ammo_box/a308box = 1,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 	//	/obj/item/gun/ballistic/revolver/revolver44=2,
 		/obj/item/storage/belt/shoulderholster=1,
 	//	/obj/item/ammo_box/m44=4,
@@ -617,20 +617,15 @@ Raider
 		/obj/item/storage/fancy/rollingpapers = 1,
 		)
 
-/datum/job/wasteland/f13raider/resident
-	title = "Tunnel Rats Churl"
-	flag = F13RAIDER
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = FACTION_WASTELAND
-	social_faction = FACTION_RAIDERS
+/datum/job/wasteland/f13raider/adventurer
+	title = "Adventurer"
+	flag = DEP_OASIS
+	faction = FACTION_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a resident of the leftover sewer system facility under the now atomicaly flattened city of Nash. Lifes rough on the edges."
-	supervisors = "Maybe a strongarm, maybe not.  Your call."
 	selection_color = "#df80af"
 	exp_requirements = 0
-	exp_type = EXP_TYPE_WASTELAND
+
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
@@ -654,11 +649,11 @@ Raider
 
 /datum/outfit/job/wasteland/f13raider/resident
 	name = "Tunnel Rats Resident"
-	jobtype = /datum/job/wasteland/f13raider/resident
+	jobtype = /datum/job/wasteland/f13raider/adventurer
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -946,8 +941,7 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
-	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -959,7 +953,6 @@ Raider
 		///obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/radio/headset
 		)
@@ -1301,7 +1294,7 @@ Raider
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP
-	faction = FACTION_WASTELAND
+	faction = FACTION_OASIS
 	total_positions = 2
 	spawn_positions = 2
 	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
@@ -1317,7 +1310,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13radioop
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1327,7 +1320,6 @@ Raider
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
 		/obj/item/clothing/mask/chameleon
 		)
@@ -1351,8 +1343,7 @@ Raider
 	name = "Ashdown Citizen"
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
-	ears = /obj/item/radio/headset/headset_ashdown
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1363,7 +1354,6 @@ Raider
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/ashdowncit = 1
 		)
 
@@ -1424,13 +1414,13 @@ Raider
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/oasis/f13preacher
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
 	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
 	/datum/outfit/loadout/cleanser		//Just some bombs.
 	)
-
+*/
 	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts <--I'm doing something about it now!
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
@@ -1582,7 +1572,7 @@ Raider
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/preacher
+	belt = /obj/item/supplykit
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -1730,7 +1720,7 @@ Raider
 		DM.add_member(H)
 		H.gang = DM
 
-datum/job/wasteland/f13dendoctor
+/datum/job/wasteland/f13dendoctor
 	title = "Den Doctor"
 	flag = F13DENDOCTOR
 	faction = FACTION_WASTELAND
@@ -1837,12 +1827,12 @@ datum/job/wasteland/f13dendoctor
 	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante
-
+/*
 	loadout_options = list(
 							/datum/outfit/loadout/desert_ranger,
 							/datum/outfit/loadout/bounty_hunter,
 							/datum/outfit/loadout/retired_ranger)
-
+*/
 
 /datum/outfit/job/wasteland/f13vigilante
 	name = "Vigilante"
@@ -1860,7 +1850,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=4,
 		/obj/item/reagent_containers/pill/radx=1,
 		/obj/item/restraints/handcuffs=2,
-		/obj/item/kit_spawner/waster = 1,
+		/obj/item/supplykit = 1,
 )
 
 /*
@@ -1957,7 +1947,7 @@ datum/job/wasteland/f13dendoctor
 
 	access = list()
 	minimal_access = list()
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/brawler,
 	/datum/outfit/loadout/spearman,
@@ -1981,7 +1971,7 @@ datum/job/wasteland/f13dendoctor
 	/datum/outfit/loadout/rustwalkersshaman,
 	/datum/outfit/loadout/bonedancerexile
 	)
-
+*/
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -2043,7 +2033,7 @@ datum/job/wasteland/f13dendoctor
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/tribal/farlands
+	belt = /obj/item/supplykit
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -2059,7 +2049,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/melee/onehanded/knife/bone = 1
 		)
-
+/*
 //Generic Tribals
 /datum/outfit/loadout/brawler
 	name = "Far-Lands Mounted Warrior"
@@ -2335,6 +2325,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
 	)
+*/
 
 /////////////////
 ////Redwater/////
@@ -2352,13 +2343,14 @@ datum/job/wasteland/f13dendoctor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/loadout/redwaterslave
-
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/worker,	//Fields or the bar, this is just a generic workman/woman.
 	/datum/outfit/loadout/pack,		//pack mule slave
 	/datum/outfit/loadout/entertainer, //Dancer or musicion slave
 	/datum/outfit/loadout/sex			//p obvs fam
 	)
+*/
 
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
@@ -2469,11 +2461,13 @@ datum/job/wasteland/f13dendoctor
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
+/*
 	loadout_options = list(
 			/datum/outfit/loadout/overbossmelee,	//goliath
 			/datum/outfit/loadout/overbossamr,		//AMR
 			/datum/outfit/loadout/overbossranged, //moni + drugs
 	)
+*/
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
@@ -2489,7 +2483,7 @@ datum/job/wasteland/f13dendoctor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/military
-	belt = /obj/item/kit_spawner/raider/boss
+	belt = /obj/item/supplykit
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
@@ -2610,8 +2604,7 @@ datum/job/wasteland/f13dendoctor
 
 	id = /obj/item/card/id/dogtag/ranger
 	ears = /obj/item/radio/headset/headset_town/lawman
-	belt = /obj/item/kit_spawner/waster
-	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -2620,9 +2613,7 @@ datum/job/wasteland/f13dendoctor
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/storage/firstaid/ancient = 2,
+		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
-		/obj/item/kit_spawner/waster,
 		/obj/item/cool_book/teacherguidebook = 1
 		)

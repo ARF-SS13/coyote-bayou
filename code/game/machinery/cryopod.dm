@@ -456,7 +456,7 @@
 		if(target.mind.assigned_role in GLOB.command_positions)
 			LAZYADD(caught_string, "Head of Staff")
 			addendum = " Be sure to put your locker items back into your locker!"
-		if(iscultist(target) || is_servant_of_ratvar(target))
+		if(iscultist(target))
 			LAZYADD(caught_string, "Cultist")
 		if(is_devil(target))
 			LAZYADD(caught_string, "Devil")

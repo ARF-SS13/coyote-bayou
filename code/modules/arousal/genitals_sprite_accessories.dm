@@ -151,6 +151,10 @@
 	icon_state = "udders"
 	name = "Udders"
 
+/datum/sprite_accessory/breasts/pairround
+	icon_state = "pairround"
+	name = "Pair(round)"
+
 //BUTT BE HERE
 /datum/sprite_accessory/butt
 	icon = 'icons/obj/genitals/butt_onmob.dmi'

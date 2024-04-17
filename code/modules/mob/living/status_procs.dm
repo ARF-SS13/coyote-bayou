@@ -644,7 +644,7 @@
 	if(stat == DEAD)
 		return
 	if(!silent)
-		INVOKE_ASYNC(src, .proc/emote, "deathgasp")
+		INVOKE_ASYNC(src,PROC_REF(emote), "deathgasp")
 	ADD_TRAIT(src, TRAIT_FAKEDEATH, source)
 	ADD_TRAIT(src, TRAIT_DEATHCOMA, source)
 	tod = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
@@ -703,7 +703,7 @@
 	if(status_flags)
 		// hunting horns again babey. huntinghorn.dm and huntinghorneffects.dm
 		if(HAS_TRAIT(src, TRAIT_HH_DRAW_SPEED))
-			amount *= 0.6
+			amount *= 0.1
 		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
 		if(F)
 			F.duration = max(world.time + amount, F.duration)
@@ -715,7 +715,7 @@
 	if(status_flags)
 		// hunting horns again babey. huntinghorn.dm and huntinghorneffects.dm
 		if(HAS_TRAIT(src, TRAIT_HH_DRAW_SPEED))
-			amount *= 0.6
+			amount *= 0.1
 		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
 		if(amount <= 0)
 			if(F)

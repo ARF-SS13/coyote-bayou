@@ -14,12 +14,14 @@
 	key = "bootup"
 	key_third_person = "whirrs up their on board memory."
 	message = "whirrs up their on board memory."
+	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/bootup.ogg'
 
 /datum/emote/living/carbon/beeper7
 	key = "beeper7"
 	key_third_person = "pings!"
 	message = "pings!"
+	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
 
 /datum/emote/living/carbon/blink_r
@@ -431,6 +433,28 @@
 	else
 		qdel(blade)
 
+//cybernetic blade placeholder(?)
+/datum/emote/living/carbon/cyberarm
+	key = "cyber"
+	key_third_person = "draws an arm blade!"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/cyberarm/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to use your blade!"))
+		return
+	var/which_blade_to_spawn
+	if(HAS_TRAIT(user, TRAIT_CYBERKNIFE))
+		which_blade_to_spawn = /obj/item/hand_item/arm_blade/mutation/cyber
+	else 
+		to_chat(user, span_notice("You ain't got no arm blades!"))
+	var/obj/item/hand_item/arm_blade/mutation/cyber/blade = new which_blade_to_spawn(user) 
+	if(user.put_in_active_hand(blade))
+		to_chat(user, span_notice("You get your blades ready to slice!"))
+	else
+		qdel(blade)
+
 //arm tentacle mutation//
 /datum/emote/living/carbon/tentarm
 	key = "tentarm"
@@ -450,6 +474,28 @@
 	var/obj/item/gun/magic/tentacle/tentacle = new which_tentacle_to_spawn(user) 
 	if(user.put_in_active_hand(tentacle))
 		to_chat(user, span_notice("You get your arm tentacle ready to grab!"))
+	else
+		qdel(tentacle)
+
+//Mage grab spell
+/datum/emote/living/carbon/magegrab
+	key = "magegrab"
+	key_third_person = "grabbing you"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/magegrab/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to preform magic!"))
+		return
+	var/which_tentacle_to_spawn
+	if(HAS_TRAIT(user, TRAIT_MAGEGRAB))
+		which_tentacle_to_spawn = /obj/item/gun/magic/magegrab
+	else 
+		to_chat(user, span_notice("You ain't got this magic!"))
+	var/obj/item/gun/magic/magegrab/tentacle = new which_tentacle_to_spawn(user) 
+	if(user.put_in_active_hand(tentacle))
+		to_chat(user, span_notice("You get your spell ready to cast."))
 	else
 		qdel(tentacle)
 
@@ -482,7 +528,7 @@
 		hasPickedUp = TRUE
 		damageMult = rock.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, rock_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice hefty throwing rock!"))
@@ -522,7 +568,7 @@
 		hasPickedUp = TRUE
 		damageMult = brick.throwforce
 		if(!timerEnabled)
-			addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 			timerEnabled = TRUE
 		COOLDOWN_START(src, brick_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice weighty brick!"))
@@ -565,7 +611,7 @@
 			hasPickedUp = TRUE
 			damageMult = snowball.throwforce
 			if(!timerEnabled)
-				addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+				addtimer(CALLBACK(src,PROC_REF(reset_damage)), 2.5 SECONDS)
 				timerEnabled = TRUE
 			COOLDOWN_START(src, snowball_cooldown, 2.5 SECONDS)
 			to_chat(user, span_notice("You pack together a nice round snowball!"))
@@ -605,6 +651,7 @@
 /datum/emote/living/carbon/tsk
 	key = "tsk"
 	message = "tsks audibly."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/braidpull
 	key = "braidpull"
@@ -625,6 +672,7 @@
 /datum/emote/living/carbon/tongueclick
 	key = "tongueclick"
 	message = "clicks their tongue as if annoyed."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/kneel
 	key = "kneel"
@@ -632,11 +680,13 @@
 
 /datum/emote/living/carbon/snicker
 	key = "snicker"
-	message = "snickers quietly to themselves."
+	message = "snickers quietly to themself."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/huff
 	key = "huff"
 	message = "huffs loudly, exhausted or exasperated. Who knows."
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/wait
 	key = "wait"
@@ -730,5 +780,125 @@
 	var/obj/item/clothing/accessory/heart/dtf = new(user)
 	if(user.put_in_active_hand(dtf))
 		to_chat(user, span_notice("You're ready to make it clear to others what it is you REALLY want!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentlfg
+	key = "intentlfg"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentlfg/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/looking/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmelee
+	key = "intentmelee"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmelee/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/melee/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentranged
+	key = "intentranged"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentranged/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/ranged/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentnewplayer
+	key = "intentnewbie"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentnewplayer/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/newbsprout/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentmentor
+	key = "intentmentor"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentmentor/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/mentorcrown/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentsupport
+	key = "intentsupport"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/intentsupport/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/healer/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intentpvp
+	key = "intentpvp"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intentpvp/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/pvpindicator/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
+	else
+		qdel(dtf)
+
+/datum/emote/living/carbon/intenttank
+	key = "intenttank"
+	restraint_check = TRUE
+	
+/datum/emote/living/carbon/intenttank/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/tank/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)

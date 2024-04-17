@@ -131,7 +131,7 @@
 			qdel(src)
 			return
 	update_icon()
-	addtimer(CALLBACK(src, .proc/cyborg_recharge, user), 80)
+	addtimer(CALLBACK(src,PROC_REF(cyborg_recharge), user), 80)
 
 /obj/item/reagent_containers/hypospray/medipen/proc/cyborg_recharge(mob/living/silicon/robot/user)
 	if(!reagents.total_volume && iscyborg(user))
@@ -200,6 +200,8 @@
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_epipack"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
 	amount_per_transfer_from_this = 15
 	volume = 15
@@ -506,7 +508,7 @@
 
 /obj/item/hypospray/mkii/afterattack(atom/target, mob/user, proximity)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/attempt_inject, target, user, proximity)
+	INVOKE_ASYNC(src,PROC_REF(attempt_inject), target, user, proximity)
 
 /obj/item/hypospray/mkii/proc/attempt_inject(atom/target, mob/user, proximity)
 	if(!vial || !proximity || !isliving(target))

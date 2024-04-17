@@ -524,7 +524,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
-obj/effect/landmark/start/f13/ncrlogisticsofficer
+/obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Logistics Officer"
 	icon_state = "NCR Lieutenant"
 
@@ -775,7 +775,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/nashcurator
-	name = "New Boston Librarian"
+	name = "Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/dendoc
@@ -1003,3 +1003,23 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/biker_boss
 	name = "Overbiker"
 	icon_state = "Captain"
+
+// Reclaimers job spawns
+
+/obj/effect/landmark/start/f13/followersscientist/recresearcher
+	name = "Reclaimer Researcher"
+
+/obj/effect/landmark/start/f13/followersscientist/recarcheologist
+	name = "Reclaimer Archeologist"
+
+/obj/effect/landmark/start/f13/followersscientist/recslimeologist
+	name = "Reclaimer Slimeologist"
+
+/obj/effect/landmark/start/f13/followersscientist/recnanspec
+	name = "Reclaimer Nanite Specialist"
+
+/obj/effect/landmark/start/f13/followersscientist/recmechanic
+	name = "Reclaimer Mechanic"
+
+/obj/effect/landmark/start/f13/followersscientist/recguard
+	name = "Reclaimer Guard"

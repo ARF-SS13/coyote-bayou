@@ -81,20 +81,20 @@
 	. = ..()
 	nanites.stealth = FALSE
 
-/datum/nanite_program/reduced_diagnostics
-	name = "Reduced Diagnostics"
-	desc = "Disables some high-cost diagnostics in the nanites, making them unable to communicate their program list to portable scanners. \
-	Doing so saves some power, slightly increasing their replication speed."
+/datum/nanite_program/nanite_debugging
+	name = "Nanite Debugging"
+	desc = "Enables various high-cost diagnostics in the nanites, making them able to communicate their program list to portable scanners. \
+	Doing so uses some power, slightly decreasing their replication speed."
 	rogue_types = list(/datum/nanite_program/toxic)
-	use_rate = -0.1
+	use_rate = 0.1
 
-/datum/nanite_program/reduced_diagnostics/enable_passive_effect()
-	. = ..()
-	nanites.diagnostics = FALSE
-
-/datum/nanite_program/reduced_diagnostics/disable_passive_effect()
+/datum/nanite_program/nanite_debugging/enable_passive_effect()
 	. = ..()
 	nanites.diagnostics = TRUE
+
+/datum/nanite_program/nanite_debugging/disable_passive_effect()
+	. = ..()
+	nanites.diagnostics = FALSE
 
 /datum/nanite_program/relay
 	name = "Relay"
@@ -234,7 +234,7 @@
 	use_rate = 1.50
 	rogue_types = list(/datum/nanite_program/aggressive_replication, /datum/nanite_program/necrotic)
 	var/spread_cooldown = 0
-
+/*
 /datum/nanite_program/spreading/active_effect()
 	if(world.time < spread_cooldown)
 		return
@@ -243,7 +243,7 @@
 	for(var/mob/living/L in oview(5, host_mob))
 		if(!prob(25))
 			continue
-		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)))
+		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD|MOB_SYNTH)))
 			continue
 		target_hosts += L
 	if(!target_hosts.len)
@@ -266,7 +266,7 @@
 /datum/nanite_program/nanite_sting/on_trigger(comm_message)
 	var/list/mob/living/target_hosts = list()
 	for(var/mob/living/L in oview(1, host_mob))
-		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)) || SEND_SIGNAL(L, COMSIG_HAS_NANITES) || !L.Adjacent(host_mob))
+		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD|MOB_SYNTH)) || SEND_SIGNAL(L, COMSIG_HAS_NANITES) || !L.Adjacent(host_mob))
 			continue
 		target_hosts += L
 	if(!target_hosts.len)
@@ -279,7 +279,7 @@
 		SEND_SIGNAL(infectee, COMSIG_NANITE_SYNC, nanites)
 		infectee.investigate_log("was infected by a nanite cluster by [key_name(host_mob)] at [AREACOORD(infectee)].", INVESTIGATE_NANITES)
 		to_chat(infectee, span_warning("You feel a tiny prick."))
-
+*/
 /datum/nanite_program/mitosis
 	name = "Mitosis"
 	desc = "The nanites gain the ability to self-replicate, using bluespace to power the process. Becomes more effective the more nanites are already in the host.\

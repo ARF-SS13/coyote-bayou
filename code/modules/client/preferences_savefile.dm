@@ -56,7 +56,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/update_preferences(current_version, savefile/S)
 	if(current_version < 37)	//If you remove this, remove force_reset_keybindings() too.
 		force_reset_keybindings_direct(TRUE)
-		addtimer(CALLBACK(src, .proc/force_reset_keybindings), 30)	//No mob available when this is run, timer allows user choice.
+		addtimer(CALLBACK(src,PROC_REF(force_reset_keybindings)), 30)	//No mob available when this is run, timer allows user choice.
 
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
@@ -208,6 +208,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				faved_interactions = list()
 				WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+			if(PMC_ADDED_RADIO_BLURBLES) // i broke it =3
+				S["chat_toggles"] >> chat_toggles
+				chat_toggles |= CHAT_HEAR_RADIOBLURBLES
+				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				current_version |= PMC_ADDED_RADIO_BLURBLES
+			if(PMC_ADDED_RADIO_STATIC) // i broke it =3
+				S["chat_toggles"] >> chat_toggles
+				chat_toggles |= CHAT_HEAR_RADIOSTATIC
+				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				current_version |= PMC_ADDED_RADIO_STATIC
 
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
@@ -508,6 +518,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"snout" = "Round",
 		"horns" = "None",
 		"horns_color" = "85615a",
+		"blood_color" = "",
 		"ears" = "None",
 
 		"wings" = "None",
@@ -699,6 +710,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_insect_fluff"]			>> features["insect_fluff"]
 	S["feature_insect_markings"]		>> features["insect_markings"]
 	S["feature_horns_color"]			>> features["horns_color"]
+	S["feature_blood_color"]			>> features["blood_color"]
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
@@ -881,6 +893,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
 	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
+	S["undershirt_overclothes"]	>> undershirt_overclothes // Underwear over hands!
+	S["undies_overclothes"]		>> undies_overclothes // Underwear over hands!
+	S["socks_overclothes"]		>> socks_overclothes // Underwear over hands!
 
 	S["whoflags"]	>> whoflags // WHo!
 
@@ -929,13 +944,32 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
 
+	/// Test if they have a saved quid, if not, generate one.
+	var/saved_quid
+	S["quester_uid"] >> saved_quid
+	if(!istext(saved_quid)) // no saved quid, generate one
+		saved_quid = generate_quester_id()
+		if(!istext(saved_quid)) // failed to generate a quid, just use a default
+			message_admins("Failed to generate a quester id for [parent.ckey]!!!")
+		WRITE_FILE(S["quester_uid"], saved_quid)
+	S["quester_uid"] >> quester_uid
+	S["saved_unclaimed_points"] >> saved_unclaimed_points
+	var/helicopter_precum
+	S["saved_finished_quests"] >> helicopter_precum
+	saved_finished_quests = safe_json_decode(helicopter_precum)
+
+	var/helicopter_postcum
+	S["saved_active_quests"] >> helicopter_postcum
+	saved_active_quests = safe_json_decode(helicopter_postcum)
 
 	//sanitize data
-	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
-	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
-	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
-	faved_interactions		= sanitize_islist(faved_interactions, list())
+	show_in_directory     = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag         = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
+	directory_erptag      = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad          = strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions    = sanitize_islist(faved_interactions, list())
+	saved_finished_quests = sanitize_islist(saved_finished_quests, list())
+	saved_active_quests   = sanitize_islist(saved_active_quests, list())
 
 	//Sanitize
 
@@ -954,6 +988,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 	underwear_overhands	= sanitize_integer(underwear_overhands, 0, 1, initial(underwear_overhands))
+	undershirt_overclothes	= sanitize_integer(undershirt_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undershirt_overclothes))
+	undies_overclothes	= sanitize_integer(undies_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(undies_overclothes))
+	socks_overclothes	= sanitize_integer(socks_overclothes, UNDERWEAR_UNDER_CLOTHES, UNDERWEAR_OVER_EVERYTHING, initial(socks_overclothes))
 
 	hair_style					= sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -997,6 +1034,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		skin_tone					= sanitize_inlist(skin_tone, GLOB.skin_tones - GLOB.nonstandard_skin_tones, initial(skin_tone))
 
 	features["horns_color"]			= sanitize_hexcolor(features["horns_color"], 6, FALSE, "85615a")
+	if(!isnull(features["blood_color"]) && features["blood_color"] != "")
+		//if(features["blood_color"] == "rainbow")
+		features["blood_color"]			= sanitize_hexcolor(features["blood_color"], 6, FALSE, "900000")
 	features["wings_color"]			= sanitize_hexcolor(features["wings_color"], 6, FALSE, "FFFFFF")
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
 	jumpsuit_style					= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
@@ -1238,8 +1278,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!path)
 		return 0
 	if(world.time < savecharcooldown)
-		if(istype(parent))
-			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
+		//if(istype(parent))
+			//to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
 	SSquirks.CheckAndVerifyPrefQuirks(src, FALSE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
@@ -1300,6 +1340,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]				, features["legs"])
 	WRITE_FILE(S["feature_deco_wings"]				, features["deco_wings"])
 	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
+	WRITE_FILE(S["feature_blood_color"]				, features["blood_color"])
 	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
 	WRITE_FILE(S["feature_insect_wings"]			, features["insect_wings"])
 	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
@@ -1499,7 +1540,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 	WRITE_FILE(S["allow_trash_messages"]			, safe_json_encode(allow_trash_messages))
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
-	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
+	WRITE_FILE(S["undershirt_overclothes"]			, undershirt_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["undies_overclothes"]				, undies_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["socks_overclothes"]				, socks_overclothes) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["whoflags"]						, whoflags) // might actually be vore
 
 	//Character directory
 	WRITE_FILE(S["show_in_directory"], show_in_directory)
@@ -1514,6 +1558,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
+	if(LAZYLEN(saved_finished_quests))
+		WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
+	WRITE_FILE(S["saved_active_quests"], safe_json_encode(saved_active_quests))
+	WRITE_FILE(S["saved_unclaimed_points"], saved_unclaimed_points)
 
 	return 1
 

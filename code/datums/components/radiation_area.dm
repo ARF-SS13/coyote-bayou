@@ -8,8 +8,8 @@
 		return COMPONENT_INCOMPATIBLE
 	if(!isnull(rads_per_second))
 		rads = rads_per_second
-	RegisterSignal(parent, list(COMSIG_AREA_ENTERED), .proc/AddMob)
-	RegisterSignal(parent, list(COMSIG_AREA_EXITED), .proc/RemoveMob)
+	RegisterSignal(parent, list(COMSIG_AREA_ENTERED),PROC_REF(AddMob))
+	RegisterSignal(parent, list(COMSIG_AREA_EXITED),PROC_REF(RemoveMob))
 
 /datum/component/radiation_area/proc/AddMob(area/the_area, mob/living/carbon/glowy)
 	if(!istype(glowy))

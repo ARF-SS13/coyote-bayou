@@ -24,7 +24,7 @@ Location where the teleport begins, target that will teleport, distance to go, d
 Random error in tile placement x, error in tile placement y, and block offset.
 Block offset tells the proc how to place the box. Behind teleport location, relative to starting location, forward, etc.
 Negative values for offset are accepted, think of it in relation to North, -x is west, -y is south. Error defaults to positive.
-Turf and target are separate in case you want to teleport some distance from a turf the target is not standing on or something.
+/turf and target are separate in case you want to teleport some distance from a turf the target is not standing on or something.
 */
 
 	var/dirx = 0//Generic location finding variable.
@@ -271,11 +271,18 @@ Turf and target are separate in case you want to teleport some distance from a t
 		if(!admeme && M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
 		var/name = avoid_assoc_duplicate_keys(M.name, namecounts)
-		if(!admeme && (isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
-			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+		var/shark = FALSE
+		if(!admeme)
+			if(ckey(M.real_name) == ckey(M.ckey) || ckey(M.name) == ckey(M.ckey))
+				if(!(strings("data/super_special_ultra_instinct.json", "[ckey(M.name)]", TRUE, TRUE) || strings("data/super_special_ultra_instinct.json", "[ckey(M.real_name)]", TRUE, TRUE)))
+					shark = TRUE
+					name = safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
 		if(M.real_name && M.real_name != M.name)
-			name += " \[[M.real_name]\]"
+			if(shark)
+				name += " \[[safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)]\]"
+			else
+				name += " \[[M.real_name]\]"
 		if(M.stat == DEAD)
 			if(isobserver(M))
 				name += " \[ghost\]"
@@ -1075,7 +1082,7 @@ rough example of the "cone" made by the 3 dirs checked
 	return closest_atom
 
 
-proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
+/proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
 	if (value == FALSE) //nothing should be calling us with a number, so this is safe
 		value = input("Enter type to find (blank for all, cancel to cancel)", "Search for type") as null|text
 		if (isnull(value))
@@ -1156,6 +1163,8 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 			. = "huge"
 		if(WEIGHT_CLASS_GIGANTIC)
 			. = "gigantic"
+		if(WEIGHT_CLASS_NO_INVENTORY)
+			. = "device that can't fit in any storage"
 		else
 			. = ""
 
@@ -1351,18 +1360,31 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	usr = temp
 
 //Returns a list of all servants of Ratvar and observers.
-/proc/servants_and_ghosts()
+/*/proc/servants_and_ghosts()
 	. = list()
 	for(var/V in GLOB.player_list)
 		if(is_servant_of_ratvar(V) || isobserver(V))
-			. += V
+			. += V*/
 
-//datum may be null, but it does need to be a typed var
+/**
+ * NAMEOF: Compile time checked variable name to string conversion
+ * evaluates to a string equal to "X", but compile errors if X isn't a var on datum.
+ * datum may be null, but it does need to be a typed var.
+ **/
 #define NAMEOF(datum, X) (#X || ##datum.##X)
 
-#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##target, ##var_name, ##var_value)
+/**
+ * NAMEOF that actually works in static definitions because src::type requires src to be defined
+ */
+#if DM_VERSION >= 515
+#define NAMEOF_STATIC(datum, X) (nameof(type::##X))
+#else
+#define NAMEOF_STATIC(datum, X) (#X || ##datum.##X)
+#endif
+
+#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(usr, GLOBAL_PROC_REF(___callbackvarset), ##target, ##var_name, ##var_value)
 //dupe code because dm can't handle 3 level deep macros
-#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##datum, NAMEOF(##datum, ##var), ##var_value)
+#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(usr, GLOBAL_PROC_REF(___callbackvarset), ##datum, NAMEOF(##datum, ##var), ##var_value)
 
 /proc/___callbackvarset(list_or_datum, var_name, var_value)
 	if(length(list_or_datum))
@@ -1374,8 +1396,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else
 		D.vars[var_name] = var_value
 
-#define	TRAIT_CALLBACK_ADD(target, trait, source) CALLBACK(GLOBAL_PROC, /proc/___TraitAdd, ##target, ##trait, ##source)
-#define	TRAIT_CALLBACK_REMOVE(target, trait, source) CALLBACK(GLOBAL_PROC, /proc/___TraitRemove, ##target, ##trait, ##source)
+#define	TRAIT_CALLBACK_ADD(target, trait, source) CALLBACK(usr, GLOBAL_PROC_REF(___TraitAdd), ##target, ##trait, ##source)
+#define	TRAIT_CALLBACK_REMOVE(target, trait, source) CALLBACK(usr, GLOBAL_PROC_REF(___TraitRemove), ##target, ##trait, ##source)
 
 ///DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.
 /proc/___TraitAdd(target,trait,source)
@@ -1638,20 +1660,23 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return // There is no haystack, or needle for that matter
 	if(max_depth <= 0)
 		return // we've gone too deep
-	if(istype(haystack, pathtype))
-		return haystack
+	if(islist(pathtype))
+		for(var/pat in pathtype)
+			if(istype(haystack, pat))
+				return haystack
+	else
+		if(istype(haystack, pathtype))
+			return haystack
 	if(isturf(haystack))
 		return
 	if(haystack && haystack.loc)
 		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
 
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
-/proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
-	if(!isturf(search_me))
-		if(!isatom(search_me))
-			return list()
-		else
-			search_me = get_turf(search_me)
+/// actually works on any atom, fyi (not just turfs)
+/proc/get_all_in_turf(atom/search_me, include_turf = FALSE, max_depth = 5)
+	if(!isatom(search_me))
+		return list()
 	var/list/atoms_in_turf = search_me.contents?.Copy()
 	if(!LAZYLEN(atoms_in_turf))
 		return list()
@@ -1773,3 +1798,24 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /proc/GaussianRangePicker(min, max, mean, stddev)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
+
+/// takes in fuckin anything and outputs if its a player
+/proc/isplayer(imput)
+	if(istext(imput))
+		return !!LAZYACCESS(GLOB.directory, imput)
+	if(ismob(imput))
+		var/mob/M = imput
+		return !!(M.client || LAZYACCESS(GLOB.directory, M.ckey))
+
+/// makes sure input is text, either 3 or 6 characters, and only contains digits and the letters a-f (case insensitive)
+/proc/is_color(str)
+	. = FALSE
+	if(!istext(str)) // is it text?
+		return
+	var/len = length(str)
+	if(len != 3 && len != 6) // is it 3 or 6 chars?
+		return
+	var/badcharacters = regex(@"[^\da-fA-F]")
+	if(findtext(str, badcharacters)) // is it actually a hexcode?
+		return
+	. = TRUE

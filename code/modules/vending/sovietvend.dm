@@ -18,7 +18,7 @@
 		/obj/item/clothing/mask/balaclava = 4,
 		/obj/item/clothing/head/helmet/rus_ushanka = 4,
 		/obj/item/clothing/suit/space/hardsuit/soviet = 3,
-		/obj/item/gun/energy/laser/LaserAK/worn = 3
+	//	/obj/item/gun/energy/laser/LaserAK/worn = 3
 		)
 	premium = list()
 

@@ -1,6 +1,6 @@
 /obj/item/crowbar
 	name = "crowbar"
-	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors. Just holding it makes you feel like a free man."
+	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors. Just holding it makes you feel like a free man. This can help robots repair critical damages."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -12,6 +12,7 @@
 	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 7
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	reskinnable_component = /datum/component/reskinnable/crowbar
 
@@ -25,6 +26,34 @@
 
 	wound_bonus = -10
 	bare_wound_bonus = 5
+
+/obj/item/crowbar/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	var/mob/living/carbon/human/target = M
+	if(!target || !isrobotic(target))
+		return FALSE
+
+	if(praying)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins messing with their covers."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins messing with their covers this will increase their healing rate."))
+
+	praying = TRUE
+	if(!target || !isrobotic(target))
+		praying = FALSE
+		return FALSE
+	if(do_after(user, 2 SECONDS, target = M)) 
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Crowbar heals the most, but only when heavily damaged
+		to_chat(M, span_notice("[user] finished emergancy repairs on your body!"))
+		praying = FALSE
+		playsound(get_turf(target), 'sound/items/Crowbar.ogg', 100, 1)
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		praying = FALSE
 
 /obj/item/crowbar/red
 	icon_state = "crowbar_red"

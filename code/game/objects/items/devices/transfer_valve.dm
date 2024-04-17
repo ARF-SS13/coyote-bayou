@@ -20,7 +20,7 @@
 	. = ..()
 	
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -85,7 +85,7 @@
 /obj/item/transfer_valve/proc/on_entered(atom/movable/AM as mob|obj)
 	SIGNAL_HANDLER
 	if(attached_device)
-		INVOKE_ASYNC(attached_device, .proc/on_entered, AM)
+		INVOKE_ASYNC(attached_device,PROC_REF(on_entered), AM)
 
 /obj/item/transfer_valve/on_attack_hand()//Triggers mousetraps
 	. = ..()
@@ -143,7 +143,7 @@
 	if(toggle)
 		toggle = FALSE
 		toggle_valve()
-		addtimer(CALLBACK(src, .proc/toggle_off), 5)	//To stop a signal being spammed from a proxy sensor constantly going off or whatever
+		addtimer(CALLBACK(src,PROC_REF(toggle_off)), 5)	//To stop a signal being spammed from a proxy sensor constantly going off or whatever
 
 /obj/item/transfer_valve/proc/toggle_off()
 	toggle = TRUE
@@ -228,7 +228,7 @@
 
 		merge_gases()
 		for(var/i in 1 to 6)
-			addtimer(CALLBACK(src, /atom/.proc/update_icon), 20 + (i - 1) * 10)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/,update_icon)), 20 + (i - 1) * 10)
 
 	else if(valve_open && tank_one && tank_two)
 		split_gases()

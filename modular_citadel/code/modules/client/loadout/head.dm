@@ -8,6 +8,11 @@
 	name = "ballcap"
 	path = /obj/item/clothing/head/soft/mime
 
+/datum/gear/head/chameleon
+	name = "chameleon hat"
+	path = /obj/item/clothing/head/chameleon
+	cost = 0
+
 /datum/gear/head/beanie
 	name = "beanie"
 	path = /obj/item/clothing/head/beanie
@@ -473,7 +478,7 @@
 							"NCR Trooper",
 						)*/
 
-datum/gear/head/steelpot_bandolier
+/datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
@@ -1080,6 +1085,12 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ballistichelmets/fiend
+	name = "Fiend Helmet"
+	path = /obj/item/clothing/head/helmet/f13/fiend
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 //Hat hats
 /datum/gear/head/yellowtricorne
 	name = "Yellow Tricorne"
@@ -1298,6 +1309,11 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/harebell
 	name = "harebell"
 	path = /obj/item/reagent_containers/food/snacks/grown/harebell
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/peaceflower
+	name = "peaceflower"
+	path = /obj/item/clothing/head/peaceflower //This is a xenobiology product that makes the wearer a pacifist, and unable to take off the flower without help, looks very pretty tho.
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
 /datum/gear/head/sunflower

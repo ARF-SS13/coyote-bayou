@@ -536,11 +536,12 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
+		new /datum/data/wasteland_equipment("Basic Bandages",				/obj/item/stack/medical/gauze/improvised,							30),
+		new /datum/data/wasteland_equipment("Basic Stitches",				/obj/item/stack/medical/suture/emergency/fifteen,					30),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
-		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			120),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator/primitive,									150),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							300),
 		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
 		)
@@ -548,13 +549,46 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
+		new /datum/data/wasteland_equipment("Basic Bandages",				/obj/item/stack/medical/gauze/improvised,							30),
+		new /datum/data/wasteland_equipment("Basic Stitches",				/obj/item/stack/medical/suture/emergency/fifteen,					30),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
-		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			120),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator/primitive,									150),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							300),
 		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/supermedical
+	name = "Clinic Vending Machine - Medical"
+	icon_state = "numed_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						5),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							15),
+		new /datum/data/wasteland_equipment("Standard Bandages",			/obj/item/stack/medical/gauze,										15),
+		new /datum/data/wasteland_equipment("Standard Stitches",			/obj/item/stack/medical/suture,										15),
+		new /datum/data/wasteland_equipment("Healing Powder Pack",			/obj/item/storage/box/medicine/powder5,								15),
+		new /datum/data/wasteland_equipment("Bitter Drink Pack",			/obj/item/storage/box/medicine/bitterdrink5,						20),
+		new /datum/data/wasteland_equipment("Stimpak Pack",					/obj/item/storage/box/medicine/stimpaks/stimpaks5,					30),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator,											75),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						5),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							15),
+		new /datum/data/wasteland_equipment("Standard Bandages",			/obj/item/stack/medical/gauze,										15),
+		new /datum/data/wasteland_equipment("Standard Stitches",			/obj/item/stack/medical/suture,										15),
+		new /datum/data/wasteland_equipment("Healing Powder Pack",			/obj/item/storage/box/medicine/powder5,								15),
+		new /datum/data/wasteland_equipment("Bitter Drink Pack",			/obj/item/storage/box/medicine/bitterdrink5,						20),
+		new /datum/data/wasteland_equipment("Stimpak Pack",					/obj/item/storage/box/medicine/stimpaks/stimpaks5,					30),
+		new /datum/data/wasteland_equipment("Improvised Defibrillator",		/obj/item/defibrillator,											75),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
@@ -670,14 +704,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "nuweapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										100),
-		new /datum/data/wasteland_equipment("Beretta M93R (9mm)",							/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,			200),
-		new /datum/data/wasteland_equipment("Sig P220 (.45)",								/obj/item/gun/ballistic/automatic/pistol/sig,						200),
-		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						200),
-		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								200),
-		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								200),
-		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",					/obj/item/gun/ballistic/shotgun/hunting,							200),
-		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				200),
+		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										400),
+		new /datum/data/wasteland_equipment("Beretta M93R (9mm)",							/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,			500),
+		new /datum/data/wasteland_equipment("Sig P220 (.45)",								/obj/item/gun/ballistic/automatic/pistol/sig,						500),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",					/obj/item/gun/ballistic/shotgun/hunting,							500),
+		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						800),
+		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								800),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								800),
+		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
 		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
 		new /datum/data/wasteland_equipment("Compliance Regulator (SEC)",					/obj/item/gun/energy/laser/complianceregulator,						300),
 		new /datum/data/wasteland_equipment("AEP-7 (SEC)",									/obj/item/gun/energy/laser/pistol,									300),
@@ -691,19 +725,20 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",						/obj/item/book/granter/crafting_recipe/gunsmith_four, 				100),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										100),
-		new /datum/data/wasteland_equipment("Beretta M93R (9mm)",							/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,			200),
-		new /datum/data/wasteland_equipment("Sig P220 (.45)",								/obj/item/gun/ballistic/automatic/pistol/sig,						200),
-		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						200),
-		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								200),
-		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								200),
-		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",					/obj/item/gun/ballistic/shotgun/hunting,							200),
-		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				200),
+		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										400),
+		new /datum/data/wasteland_equipment("Beretta M93R (9mm)",							/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,			500),
+		new /datum/data/wasteland_equipment("Sig P220 (.45)",								/obj/item/gun/ballistic/automatic/pistol/sig,						500),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",					/obj/item/gun/ballistic/shotgun/hunting,							500),
+		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						800),
+		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								800),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								800),
+		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
 		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
 		new /datum/data/wasteland_equipment("Compliance Regulator (SEC)",					/obj/item/gun/energy/laser/complianceregulator,						300),
 		new /datum/data/wasteland_equipment("AEP-7 (SEC)",									/obj/item/gun/energy/laser/pistol,									300),
 		new /datum/data/wasteland_equipment("Pulse Pistol (ECP)",							/obj/item/gun/energy/ionrifle/compact,								300),
 		new /datum/data/wasteland_equipment("AER-9 	(MFC)",									/obj/item/gun/energy/laser/aer9,									300),
+		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							50),
 		new /datum/data/wasteland_equipment("Seclite Flashlight",							/obj/item/flashlight/seclite,										25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",						/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",						/obj/item/book/granter/crafting_recipe/gunsmith_two,				50),
@@ -716,47 +751,113 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Ammunition"
 	icon_state = "nuammo_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									20),
-		new /datum/data/wasteland_equipment("9mm Box (45 bullets)",							/obj/item/ammo_box/c9mm,								20),
-		new /datum/data/wasteland_equipment("10mm Box (30 bullets)",						/obj/item/ammo_box/c10mm,								20),
-		new /datum/data/wasteland_equipment(".45 Box (25 bullets)",							/obj/item/ammo_box/c45,									20),
-		new /datum/data/wasteland_equipment(".357 Box (25 bullets)",						/obj/item/ammo_box/a357box,								20),
-		new /datum/data/wasteland_equipment(".44 Box (20 bullets)",							/obj/item/ammo_box/m44box,								20),
-		new /datum/data/wasteland_equipment("5mm Box (30 bullets)",							/obj/item/ammo_box/m5mmbox,								20),
-		new /datum/data/wasteland_equipment("5.56x45 Box (25 bullets)",						/obj/item/ammo_box/a556,								20),
-		new /datum/data/wasteland_equipment(".308 Box (20 bullets)",						/obj/item/ammo_box/a308box,								20),
-		new /datum/data/wasteland_equipment("14mm Box (18 bullets)",						/obj/item/ammo_box/m14mm,								20),
-		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							20),
-		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						20),
-		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						20),
-		new /datum/data/wasteland_equipment("Shoddy Energy Cell",							/obj/item/stock_parts/cell/ammo/ec/bad,					20),
-		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell",						/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
-		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack",					/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
-		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							20),
-		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						20),
+		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									15),
+		new /datum/data/wasteland_equipment("9mm Box (45 bullets)",							/obj/item/ammo_box/c9mm,								15),
+		new /datum/data/wasteland_equipment("10mm Box (30 bullets)",						/obj/item/ammo_box/c10mm,								15),
+		new /datum/data/wasteland_equipment(".45 Box (25 bullets)",							/obj/item/ammo_box/c45,									15),
+		new /datum/data/wasteland_equipment(".357 Box (25 bullets)",						/obj/item/ammo_box/a357box,								15),
+		new /datum/data/wasteland_equipment(".44 Box (20 bullets)",							/obj/item/ammo_box/m44box,								15),
+		new /datum/data/wasteland_equipment("5mm Box (30 bullets)",							/obj/item/ammo_box/m5mmbox,								15),
+		new /datum/data/wasteland_equipment("5.56x45 Box (25 bullets)",						/obj/item/ammo_box/a556,								15),
+		new /datum/data/wasteland_equipment(".308 Box (20 bullets)",						/obj/item/ammo_box/a308box,								15),
+		new /datum/data/wasteland_equipment("14mm Box (18 bullets)",						/obj/item/ammo_box/m14mm,								15),
+		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							15),
+		new /datum/data/wasteland_equipment("45-70 Box (15 bullets)",						/obj/item/ammo_box/c4570box,							15),
+		new /datum/data/wasteland_equipment("4.73mm Box)",									/obj/item/ammo_box/m473,								15),
+		new /datum/data/wasteland_equipment(".50 BMG Box)",									/obj/item/ammo_box/a50MG,								15),
+		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						15),
+		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						15),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell (1/2 cap SEC)",				/obj/item/stock_parts/cell/ammo/ec,						15),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc,					15),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",	/obj/item/stock_parts/cell/ammo/ecp,					15),
+		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							15),
+		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						15),
+		new /datum/data/wasteland_equipment("Black Powder Minie Balls",					/obj/item/ammo_box/flintlock,							15),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							50),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment(".50 MG Box (12 GFBs)",							/obj/item/ammo_box/a50MGbox,							15),
+		new /datum/data/wasteland_equipment("46x40 mike mikes (like four point nine)", 		/obj/item/ammo_box/a40mm, 								15),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									20),
-		new /datum/data/wasteland_equipment("9mm Box (45 bullets)",							/obj/item/ammo_box/c9mm,								20),
-		new /datum/data/wasteland_equipment("10mm Box (30 bullets)",						/obj/item/ammo_box/c10mm,								20),
-		new /datum/data/wasteland_equipment(".45 Box (25 bullets)",							/obj/item/ammo_box/c45,									20),
-		new /datum/data/wasteland_equipment(".357 Box (25 bullets)",						/obj/item/ammo_box/a357box,								20),
-		new /datum/data/wasteland_equipment(".44 Box (20 bullets)",							/obj/item/ammo_box/m44box,								20),
-		new /datum/data/wasteland_equipment("5mm Box (30 bullets)",							/obj/item/ammo_box/m5mmbox,								20),
-		new /datum/data/wasteland_equipment("5.56x45 Box (25 bullets)",						/obj/item/ammo_box/a556,								20),
-		new /datum/data/wasteland_equipment(".308 Box (20 bullets)",						/obj/item/ammo_box/a308box,								20),
-		new /datum/data/wasteland_equipment("14mm Box (18 bullets)",						/obj/item/ammo_box/m14mm,								20),
-		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							20),
-		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						20),
-		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						20),
-		new /datum/data/wasteland_equipment("Shoddy Energy Cell (1/2 cap SEC)",				/obj/item/stock_parts/cell/ammo/ec/bad,					20),
-		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc/bad,				20),
-		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",	/obj/item/stock_parts/cell/ammo/ecp/bad,				20),
-		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							20),
-		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						20),
+		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									15),
+		new /datum/data/wasteland_equipment("9mm Box (45 bullets)",							/obj/item/ammo_box/c9mm,								15),
+		new /datum/data/wasteland_equipment("10mm Box (30 bullets)",						/obj/item/ammo_box/c10mm,								15),
+		new /datum/data/wasteland_equipment(".45 Box (25 bullets)",							/obj/item/ammo_box/c45,									15),
+		new /datum/data/wasteland_equipment(".357 Box (25 bullets)",						/obj/item/ammo_box/a357box,								15),
+		new /datum/data/wasteland_equipment(".44 Box (20 bullets)",							/obj/item/ammo_box/m44box,								15),
+		new /datum/data/wasteland_equipment("5mm Box (30 bullets)",							/obj/item/ammo_box/m5mmbox,								15),
+		new /datum/data/wasteland_equipment("5.56x45 Box (25 bullets)",						/obj/item/ammo_box/a556,								15),
+		new /datum/data/wasteland_equipment(".308 Box (20 bullets)",						/obj/item/ammo_box/a308box,								15),
+		new /datum/data/wasteland_equipment("14mm Box (18 bullets)",						/obj/item/ammo_box/m14mm,								15),
+		new /datum/data/wasteland_equipment(".30-06 Box (15 bullets)",						/obj/item/ammo_box/a3006box,							15),
+		new /datum/data/wasteland_equipment("45-70 Box",									/obj/item/ammo_box/c4570box,							15),
+		new /datum/data/wasteland_equipment("4.73mm Box)",									/obj/item/ammo_box/m473,								15),
+		new /datum/data/wasteland_equipment(".50 BMG Box)",									/obj/item/ammo_box/a50MG,								15),
+		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						15),
+		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						15),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell (1/2 cap SEC)",				/obj/item/stock_parts/cell/ammo/ec,						15),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc,					15),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",	/obj/item/stock_parts/cell/ammo/ecp,					15),
+		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							15),
+		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						15),
+		new /datum/data/wasteland_equipment("Black Powder Minie Balls",					/obj/item/ammo_box/flintlock,							15),
+		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							30),
 		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment(".50 MG Box (12 GFBs)",							/obj/item/ammo_box/a50MGbox,							15),
+		new /datum/data/wasteland_equipment("46x40 mike mikes (like four point nine)", 		/obj/item/ammo_box/a40mm, 								15), 
+		)
+
+/obj/machinery/mineral/wasteland_vendor/badammo
+	name = "Wasteland Vending Machine - Handloaded Ammunition"
+	icon_state = "nuammo_idle"
+	color = "#653800"
+	prize_list = list(
+		new /datum/data/wasteland_equipment(".22lr Box",									/obj/item/ammo_box/m22,									30),
+		new /datum/data/wasteland_equipment("9mm Bag",										/obj/item/ammo_box/c9mm/improvised,						30),
+		new /datum/data/wasteland_equipment("10mm Bag",										/obj/item/ammo_box/c10mm/improvised,					30),
+		new /datum/data/wasteland_equipment(".45 Bag",										/obj/item/ammo_box/c45/improvised,						30),
+		new /datum/data/wasteland_equipment(".357 Bag",										/obj/item/ammo_box/a357box/improvised,					30),
+		new /datum/data/wasteland_equipment(".44 Bag",										/obj/item/ammo_box/m44box/improvised,					30),
+		new /datum/data/wasteland_equipment("5mm Bag",										/obj/item/ammo_box/m5mmbox/improvised,					30),
+		new /datum/data/wasteland_equipment("5.56x45 Bag",									/obj/item/ammo_box/a556/improvised,						30),
+		new /datum/data/wasteland_equipment(".308 Bag",										/obj/item/ammo_box/a308box/improvised,					30),
+		new /datum/data/wasteland_equipment("14mm Bag",										/obj/item/ammo_box/m14mm/improvised,					30),
+		new /datum/data/wasteland_equipment(".30-06 Bag",									/obj/item/ammo_box/a3006box/improvised,					30),
+		new /datum/data/wasteland_equipment("45-70 Bag",									/obj/item/ammo_box/c4570box/improvised,					30),
+		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						30),
+		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						30),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell",							/obj/item/stock_parts/cell/ammo/ec/bad,					30),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell",						/obj/item/stock_parts/cell/ammo/mfc/bad,				30),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack",					/obj/item/stock_parts/cell/ammo/ecp/bad,				30),
+		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							30),
+		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						30),
+		new /obj/item/ammo_box/flintlock("Black Powder Ammo",								/obj/item/ammo_box/flintlock,							30),
+		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							60),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		7),
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment(".22lr Box",									/obj/item/ammo_box/m22,									30),
+		new /datum/data/wasteland_equipment("9mm Bag",										/obj/item/ammo_box/c9mm/improvised,						30),
+		new /datum/data/wasteland_equipment("10mm Bag",										/obj/item/ammo_box/c10mm/improvised,					30),
+		new /datum/data/wasteland_equipment(".45 Bag",										/obj/item/ammo_box/c45/improvised,						30),
+		new /datum/data/wasteland_equipment(".357 Bag",										/obj/item/ammo_box/a357box/improvised,					30),
+		new /datum/data/wasteland_equipment(".44 Bag",										/obj/item/ammo_box/m44box/improvised,					30),
+		new /datum/data/wasteland_equipment("5mm Bag",										/obj/item/ammo_box/m5mmbox/improvised,					30),
+		new /datum/data/wasteland_equipment("5.56x45 Bag",									/obj/item/ammo_box/a556/improvised,						30),
+		new /datum/data/wasteland_equipment(".308 Bag",										/obj/item/ammo_box/a308box/improvised,					30),
+		new /datum/data/wasteland_equipment("14mm Bag",										/obj/item/ammo_box/m14mm/improvised,					30),
+		new /datum/data/wasteland_equipment("45-70 Bag",									/obj/item/ammo_box/c4570box/improvised,					30),
+		new /datum/data/wasteland_equipment(".30-06 Bag",									/obj/item/ammo_box/a3006box/improvised,					30),
+		new /datum/data/wasteland_equipment("12 Gauge Buckshot box (12 shells)",			/obj/item/ammo_box/shotgun/buck,						30),
+		new /datum/data/wasteland_equipment("12 Gauge Slug box  (12 shells)",				/obj/item/ammo_box/shotgun/slug,						30),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell",							/obj/item/stock_parts/cell/ammo/ec/bad,					30),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell",						/obj/item/stock_parts/cell/ammo/mfc/bad,				30),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack",					/obj/item/stock_parts/cell/ammo/ecp/bad,				30),
+		new /datum/data/wasteland_equipment("Laser Batteries (18 batteries)",				/obj/item/ammo_box/lasmusket,							30),
+		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						30),
+		new /obj/item/ammo_box/flintlock("Black Powder Ammo",								/obj/item/ammo_box/flintlock,							30),
+		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							60),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		7),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
@@ -776,7 +877,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							30),
 		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							40),
 		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							50),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150)
+		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
@@ -791,7 +892,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							50),
-		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350)
+		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
@@ -801,7 +903,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				20),
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
-		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350)
+		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 
 /* These are shit, don't add them.
@@ -849,6 +952,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
 		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Datapal PDA",			/obj/item/pda,																25),
@@ -857,6 +961,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
 		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
@@ -864,12 +969,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	desc = "An automated machine that exhanges copper coins for more valuable ones. However, it takes a 10% cut."
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						11),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
+		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						11),
+		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
+		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
+		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
+		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
+		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
 		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/denarius, 							11),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						55),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						110),
@@ -885,12 +991,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)*/
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						11),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
+		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						11),
+		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
+		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
+		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
+		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
+		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
 		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/denarius, 							11),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						55),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						110),
@@ -911,12 +1018,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	desc = "An automated machine that exhanges copper coins for more valuable currency. This teller is specialized for bankers to provide better exchange rates."
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
+		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
@@ -927,12 +1035,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Golden Thaler x100", 		/obj/item/stack/f13Cash/aureus/hundo, 						10000),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
+		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		// new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		// new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		// new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		// new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		// new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
@@ -944,24 +1053,58 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/traderspecial
-	name = "Union Vending Machine - Scrip Exchanger"
-	desc = "An automated machine that exchanges currency for union backed tender."
+	name = "Union Vending Machine - Matvend"
+	desc = "An automated machine that exchanges currency for raw materials."
 	icon_state = "trade_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
+		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/bronze,								10), // you can literally print this shit en masse with cable coils and sheets
+		new /datum/data/wasteland_equipment("Rose Steel x1",					/obj/item/ingot/mythril,							100),
+		new /datum/data/wasteland_equipment("Ultrasteel x1",					/obj/item/ingot/adamantine,							150),
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
-		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
-		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
-		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
-		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
-		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
+		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
+		new /datum/data/wasteland_equipment("Black Bronze x1",					/obj/item/ingot/bronze,								10), // you can literally print this shit en masse with cable coils and sheets
+		new /datum/data/wasteland_equipment("Rose Steel x1",					/obj/item/ingot/mythril,							100),
+		new /datum/data/wasteland_equipment("Ultrasteel x1",					/obj/item/ingot/adamantine,							150),
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -973,7 +1116,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Superconductor Coils",				/obj/item/advanced_crafting_components/conductors,					50),
 		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						50),
 		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						50),
-		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						50)
+		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						50),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					50),
@@ -985,39 +1129,124 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/attachments
-	name = "Wasteland Vending Machine - Armor and Attachments"
+	name = "Wasteland Vending Machine - Discount Armor and Better Attachments"
 	icon_state = "seller_attachments"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								25),
-		new /datum/data/wasteland_equipment("Radiation Suit Hood",			/obj/item/clothing/head/radiation,								25),
-		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						50),
-		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					50),
-		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							20),
-		new /datum/data/wasteland_equipment("Old Scope",					/obj/item/gun_upgrade/scope/watchman,							60),
-		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
-		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
-		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								100),
-		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								100),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							100)
+		new /datum/data/wasteland_equipment("Radiation Suit",							/obj/item/clothing/suit/radiation,								20),
+		new /datum/data/wasteland_equipment("Radiation Suit Hood",						/obj/item/clothing/head/radiation,								20),
+		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",					/obj/item/clothing/suit/hooded/explorer,						40),
+		new /datum/data/wasteland_equipment("SEVA Environment Suit",					/obj/item/clothing/suit/hooded/explorer/seva,					40),
+		new /datum/data/wasteland_equipment("Military Gas Mask",						/obj/item/clothing/mask/gas/explorer,							20),
+		new /datum/data/wasteland_equipment("(T1 Barrel) Heavy Barrel",								/obj/item/gun_upgrade/barrelone,								100),
+		new /datum/data/wasteland_equipment("(T2 Barrel) Magnetic Accelerator Coil",				/obj/item/gun_upgrade/barreltwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Barrel) Polarized Magnetic Hyper-Accelerator",		/obj/item/gun_upgrade/barrelthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Chip) Reinforced Energy Pump",					/obj/item/gun_upgrade/chipone,									100),
+		new /datum/data/wasteland_equipment("(T2 Chip) Dynamo Booster",							/obj/item/gun_upgrade/chiptwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Chip) Miniature Fusion Reactor",					/obj/item/gun_upgrade/chipthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Grip) Mesh Grip",								/obj/item/gun_upgrade/gripone,									100),
+		new /datum/data/wasteland_equipment("(T2 Grip) Styrene-Butadiene Grip",					/obj/item/gun_upgrade/griptwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Grip) Gyration Stabilization Sleeve",			/obj/item/gun_upgrade/gripthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Muzzle) Muzzle Device",							/obj/item/gun_upgrade/muzzleone,								100),
+		new /datum/data/wasteland_equipment("(T2 Muzzle) Military Muzzle Device",					/obj/item/gun_upgrade/muzzletwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Muzzle) Research Muzzle Device",					/obj/item/gun_upgrade/muzzlethree,								200),
+		new /datum/data/wasteland_equipment("(T1 Trigger) Match Trigger",							/obj/item/gun_upgrade/triggerone,								100),
+		new /datum/data/wasteland_equipment("(T2 Trigger) Military Trigger",							/obj/item/gun_upgrade/triggertwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Trigger) Pristine Trigger",							/obj/item/gun_upgrade/triggerthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Scope) Reflex Sight",								/obj/item/gun_upgrade/sightone,									100),
+		new /datum/data/wasteland_equipment("(T2 Scope) Old Scope",								/obj/item/gun_upgrade/sighttwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Scope) Pristine Scope",							/obj/item/gun_upgrade/sightthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Paint) Red Paint",								/obj/item/gun_upgrade/paint/red,								100),
+		new /datum/data/wasteland_equipment("(T1 Paint) Blue Paint",								/obj/item/gun_upgrade/paint/blue,								150),
+		new /datum/data/wasteland_equipment("(T1 Paint) Yellow Paint",								/obj/item/gun_upgrade/paint/yellow,								150)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								25),
-		new /datum/data/wasteland_equipment("Radiation Suit Hood",			/obj/item/clothing/head/radiation,								25),
-		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",		/obj/item/clothing/suit/hooded/explorer,						50),
-		new /datum/data/wasteland_equipment("SEVA Environment Suit",		/obj/item/clothing/suit/hooded/explorer/seva,					50),
-		new /datum/data/wasteland_equipment("Military Gas Mask",			/obj/item/clothing/mask/gas/explorer,							30),
-		new /datum/data/wasteland_equipment("Old Scope",					/obj/item/gun_upgrade/scope/watchman,							60),
-		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
-		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
-		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/paint/red,								100),
-		new /datum/data/wasteland_equipment("Blue Paint",					/obj/item/tool_upgrade/paint/blue,								100),
-		new /datum/data/wasteland_equipment("Yellow Paint",					/obj/item/tool_upgrade/paint/yellow,							100)
+		new /datum/data/wasteland_equipment("Radiation Suit",							/obj/item/clothing/suit/radiation,								20),
+		new /datum/data/wasteland_equipment("Radiation Suit Hood",						/obj/item/clothing/head/radiation,								20),
+		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",					/obj/item/clothing/suit/hooded/explorer,						40),
+		new /datum/data/wasteland_equipment("SEVA Environment Suit",					/obj/item/clothing/suit/hooded/explorer/seva,					40),
+		new /datum/data/wasteland_equipment("Military Gas Mask",						/obj/item/clothing/mask/gas/explorer,							20),
+		new /datum/data/wasteland_equipment("(T1 Barrel) Heavy Barrel",								/obj/item/gun_upgrade/barrelone,								100),
+		new /datum/data/wasteland_equipment("(T2 Barrel) Magnetic Accelerator Coil",				/obj/item/gun_upgrade/barreltwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Barrel) Polarized Magnetic Hyper-Accelerator",		/obj/item/gun_upgrade/barrelthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Chip) Reinforced Energy Pump",					/obj/item/gun_upgrade/chipone,									100),
+		new /datum/data/wasteland_equipment("(T2 Chip) Dynamo Booster",							/obj/item/gun_upgrade/chiptwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Chip) Miniature Fusion Reactor",					/obj/item/gun_upgrade/chipthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Grip) Mesh Grip",								/obj/item/gun_upgrade/gripone,									100),
+		new /datum/data/wasteland_equipment("(T2 Grip) Styrene-Butadiene Grip",					/obj/item/gun_upgrade/griptwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Grip) Gyration Stabilization Sleeve",			/obj/item/gun_upgrade/gripthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Muzzle) Muzzle Device",							/obj/item/gun_upgrade/muzzleone,								100),
+		new /datum/data/wasteland_equipment("(T2 Muzzle) Military Muzzle Device",					/obj/item/gun_upgrade/muzzletwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Muzzle) Research Muzzle Device",					/obj/item/gun_upgrade/muzzlethree,								200),
+		new /datum/data/wasteland_equipment("(T1 Trigger) Match Trigger",							/obj/item/gun_upgrade/triggerone,								100),
+		new /datum/data/wasteland_equipment("(T2 Trigger) Military Trigger",							/obj/item/gun_upgrade/triggertwo,								150),
+		new /datum/data/wasteland_equipment("(T3 Trigger) Pristine Trigger",							/obj/item/gun_upgrade/triggerthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Scope) Reflex Sight",								/obj/item/gun_upgrade/sightone,									100),
+		new /datum/data/wasteland_equipment("(T2 Scope) Old Scope",								/obj/item/gun_upgrade/sighttwo,									150),
+		new /datum/data/wasteland_equipment("(T3 Scope) Pristine Scope",							/obj/item/gun_upgrade/sightthree,								200),
+		new /datum/data/wasteland_equipment("(T1 Paint) Red Paint",								/obj/item/gun_upgrade/paint/red,								100),
+		new /datum/data/wasteland_equipment("(T1 Paint) Blue Paint",								/obj/item/gun_upgrade/paint/blue,								150),
+		new /datum/data/wasteland_equipment("(T1 Paint) Yellow Paint",								/obj/item/gun_upgrade/paint/yellow,								150)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/badattachments
+	name = "Wasteland Vending Machine - Armor and Attachments"
+	icon_state = "seller_attachments"
+	color = "#684800"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Radiation Suit",							/obj/item/clothing/suit/radiation,								20),
+		new /datum/data/wasteland_equipment("Radiation Suit Hood",						/obj/item/clothing/head/radiation,								20),
+		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",					/obj/item/clothing/suit/hooded/explorer,						40),
+		new /datum/data/wasteland_equipment("SEVA Environment Suit",					/obj/item/clothing/suit/hooded/explorer/seva,					40),
+		new /datum/data/wasteland_equipment("Military Gas Mask",						/obj/item/clothing/mask/gas/explorer,							20),
+		new /datum/data/wasteland_equipment("Heavy Barrel",								/obj/item/gun_upgrade/barrelone,								100),
+		new /datum/data/wasteland_equipment("Magnetic Accelerator Coil",				/obj/item/gun_upgrade/barreltwo,								150),
+		new /datum/data/wasteland_equipment("Polarized Magnetic Hyper-Accelerator",		/obj/item/gun_upgrade/barrelthree,								200),
+		new /datum/data/wasteland_equipment("Reinforced Energy Pump",					/obj/item/gun_upgrade/chipone,									100),
+		new /datum/data/wasteland_equipment("Dynamo Booster",							/obj/item/gun_upgrade/chiptwo,									150),
+		new /datum/data/wasteland_equipment("Miniature Fusion Reactor",					/obj/item/gun_upgrade/chipthree,								200),
+		new /datum/data/wasteland_equipment("Mesh Grip",								/obj/item/gun_upgrade/gripone,									100),
+		new /datum/data/wasteland_equipment("Styrene-Butadiene Grip",					/obj/item/gun_upgrade/griptwo,									150),
+		new /datum/data/wasteland_equipment("Gyration Stabilization Sleeve",			/obj/item/gun_upgrade/gripthree,								200),
+		new /datum/data/wasteland_equipment("Muzzle Device",							/obj/item/gun_upgrade/muzzleone,								100),
+		new /datum/data/wasteland_equipment("Military Muzzle Device",					/obj/item/gun_upgrade/muzzletwo,								150),
+		new /datum/data/wasteland_equipment("Research Muzzle Device",					/obj/item/gun_upgrade/muzzlethree,								200),
+		new /datum/data/wasteland_equipment("Match Trigger",							/obj/item/gun_upgrade/triggerone,								100),
+		new /datum/data/wasteland_equipment("Military Trigger",							/obj/item/gun_upgrade/triggertwo,								150),
+		new /datum/data/wasteland_equipment("Pristine Trigger",							/obj/item/gun_upgrade/triggerthree,								200),
+		new /datum/data/wasteland_equipment("Reflex Sight",								/obj/item/gun_upgrade/sightone,									100),
+		new /datum/data/wasteland_equipment("Old Scope",								/obj/item/gun_upgrade/sighttwo,									150),
+		new /datum/data/wasteland_equipment("Pristine Scope",							/obj/item/gun_upgrade/sightthree,								200),
+		new /datum/data/wasteland_equipment("Red Paint",								/obj/item/gun_upgrade/paint/red,								100),
+		new /datum/data/wasteland_equipment("Blue Paint",								/obj/item/gun_upgrade/paint/blue,								150),
+		new /datum/data/wasteland_equipment("Yellow Paint",								/obj/item/gun_upgrade/paint/yellow,								150)
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Radiation Suit",							/obj/item/clothing/suit/radiation,								20),
+		new /datum/data/wasteland_equipment("Radiation Suit Hood",						/obj/item/clothing/head/radiation,								20),
+		new /datum/data/wasteland_equipment("Wasteland Explorer Armor",					/obj/item/clothing/suit/hooded/explorer,						40),
+		new /datum/data/wasteland_equipment("SEVA Environment Suit",					/obj/item/clothing/suit/hooded/explorer/seva,					40),
+		new /datum/data/wasteland_equipment("Military Gas Mask",						/obj/item/clothing/mask/gas/explorer,							20),
+		new /datum/data/wasteland_equipment("Heavy Barrel",								/obj/item/gun_upgrade/barrelone,								100),
+		new /datum/data/wasteland_equipment("Magnetic Accelerator Coil",				/obj/item/gun_upgrade/barreltwo,								150),
+		new /datum/data/wasteland_equipment("Polarized Magnetic Hyper-Accelerator",		/obj/item/gun_upgrade/barrelthree,								200),
+		new /datum/data/wasteland_equipment("Reinforced Energy Pump",					/obj/item/gun_upgrade/chipone,									100),
+		new /datum/data/wasteland_equipment("Dynamo Booster",							/obj/item/gun_upgrade/chiptwo,									150),
+		new /datum/data/wasteland_equipment("Miniature Fusion Reactor",					/obj/item/gun_upgrade/chipthree,								200),
+		new /datum/data/wasteland_equipment("Mesh Grip",								/obj/item/gun_upgrade/gripone,									100),
+		new /datum/data/wasteland_equipment("Styrene-Butadiene Grip",					/obj/item/gun_upgrade/griptwo,									150),
+		new /datum/data/wasteland_equipment("Gyration Stabilization Sleeve",			/obj/item/gun_upgrade/gripthree,								200),
+		new /datum/data/wasteland_equipment("Muzzle Device",							/obj/item/gun_upgrade/muzzleone,								100),
+		new /datum/data/wasteland_equipment("Military Muzzle Device",					/obj/item/gun_upgrade/muzzletwo,								150),
+		new /datum/data/wasteland_equipment("Research Muzzle Device",					/obj/item/gun_upgrade/muzzlethree,								200),
+		new /datum/data/wasteland_equipment("Match Trigger",							/obj/item/gun_upgrade/triggerone,								100),
+		new /datum/data/wasteland_equipment("Military Trigger",							/obj/item/gun_upgrade/triggertwo,								150),
+		new /datum/data/wasteland_equipment("Pristine Trigger",							/obj/item/gun_upgrade/triggerthree,								200),
+		new /datum/data/wasteland_equipment("Reflex Sight",								/obj/item/gun_upgrade/sightone,									100),
+		new /datum/data/wasteland_equipment("Old Scope",								/obj/item/gun_upgrade/sighttwo,									150),
+		new /datum/data/wasteland_equipment("Pristine Scope",							/obj/item/gun_upgrade/sightthree,								200),
+		new /datum/data/wasteland_equipment("Red Paint",								/obj/item/gun_upgrade/paint/red,								100),
+		new /datum/data/wasteland_equipment("Blue Paint",								/obj/item/gun_upgrade/paint/blue,								150),
+		new /datum/data/wasteland_equipment("Yellow Paint",								/obj/item/gun_upgrade/paint/yellow,								150)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting
@@ -1031,7 +1260,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Sheets (x50)",				/obj/item/stack/sheet/metal/fifty,									65),
 		new /datum/data/wasteland_equipment("Glass Sheets (x10)",				/obj/item/stack/sheet/glass/ten,									10),
 		new /datum/data/wasteland_equipment("Glass Sheets (x50)",				/obj/item/stack/sheet/glass/fifty,									50),
-		new /datum/data/wasteland_equipment("Gunpowder (x50)",					/obj/item/stack/ore/blackpowder/fifty,								75),
+		new /datum/data/wasteland_equipment("Gunpowder (x50)",					/obj/item/stack/ore/blackpowder/fifty,								300),
 		new /datum/data/wasteland_equipment("Sacks of Concrete (x50)",			/obj/item/stack/sheet/mineral/concrete/fifty,						20),
 		new /datum/data/wasteland_equipment("Art Canvas 19x19",					/obj/item/canvas/nineteenXnineteen,									20),
 		new /datum/data/wasteland_equipment("Art Canvas 23x19",					/obj/item/canvas/twentythreeXnineteen,								20),
@@ -1040,6 +1269,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Electrician Toolbox",				/obj/item/storage/toolbox/electrical,								15),
 		new /datum/data/wasteland_equipment("Insulated Gloves",					/obj/item/clothing/gloves/color/yellow,								15),
 		new /datum/data/wasteland_equipment("Military Engineer Gloves",			/obj/item/clothing/gloves/f13/military/engineer,					75),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Metal Parts (x5)",					/obj/item/stack/crafting/metalparts/five,							10),
@@ -1049,7 +1279,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Sheets (x50)",				/obj/item/stack/sheet/metal/fifty,									65),
 		new /datum/data/wasteland_equipment("Glass Sheets (x10)",				/obj/item/stack/sheet/glass/ten,									10),
 		new /datum/data/wasteland_equipment("Glass Sheets (x50)",				/obj/item/stack/sheet/glass/fifty,									50),
-		new /datum/data/wasteland_equipment("Gunpowder (x50)",					/obj/item/stack/ore/blackpowder/fifty,								75),
+		new /datum/data/wasteland_equipment("Gunpowder (x50)",					/obj/item/stack/ore/blackpowder/fifty,								300),
 		new /datum/data/wasteland_equipment("Sacks of Concrete (x50)",			/obj/item/stack/sheet/mineral/concrete/fifty,						20),
 		new /datum/data/wasteland_equipment("Art Canvas 19x19",					/obj/item/canvas/nineteenXnineteen,									20),
 		new /datum/data/wasteland_equipment("Art Canvas 23x19",					/obj/item/canvas/twentythreeXnineteen,								20),
@@ -1118,7 +1348,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<b>Currency conversion rates:</b><br>"
 	dat += "1 silver Dollar = [CASH_DEN_VENDOR] copper Edisons <br>"
 	dat += "1 gold Thaler = [CASH_AUR_VENDOR] copper Edisons <br>"
-	dat += "1 Trade Union scrip = [CASH_NCR_VENDOR] copper Edisons <br>"
+	// dat += "1 Trade Union scrip = [CASH_NCR_VENDOR] copper Edisons <br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"

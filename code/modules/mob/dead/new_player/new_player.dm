@@ -728,10 +728,10 @@
 			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
-	if(client.holder && check_rights(R_STEALTH, 0))
-		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
-		if(do_stealth == "Yes")
-			client.stealth()
+	// if(client.holder && check_rights(R_STEALTH, 0))
+	// 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	// 	if(do_stealth == "Yes")
+	// 		client.stealth()
 	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()

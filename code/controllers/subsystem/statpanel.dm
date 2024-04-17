@@ -150,7 +150,7 @@ SUBSYSTEM_DEF(statpanels)
 						if(length(turfitems) < 30) // only create images for the first 30 items on the turf, for performance reasons
 							if(!(REF(turf_content) in cached_images))
 								cached_images += REF(turf_content)
-								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom/movable, remove_from_cache)) // we reset cache if anything in it gets deleted
 								if(ismob(turf_content) || length(turf_content.overlays) > 2)
 									turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content), costly_icon2html(turf_content, target, sourceonly=TRUE))
 								else
@@ -261,13 +261,13 @@ SUBSYSTEM_DEF(statpanels)
 	switch(majority_kisser)
 		if(KISS_BOYS)
 			most_desired_sex = "Male"
-			majority_kisser = "Boykissing"
+			majority_kisser = "Boykissers"
 		if(KISS_GIRLS)
 			most_desired_sex = "Female"
-			majority_kisser = "Girlkissing"
+			majority_kisser = "Girlkissers"
 		if(KISS_ANY)
 			most_desired_sex = "Male and/or Female" // ye
-			majority_kisser = "Anykissing"
+			majority_kisser = "Anykissers"
 	
 	var/most_desired_tbs = "Top/Bottom/Switch"
 	switch(majority_tbs)
@@ -283,16 +283,16 @@ SUBSYSTEM_DEF(statpanels)
 	
 	switch(majority_sex)
 		if(MALE)
-			majority_sex = "Male"
+			majority_sex = "Males"
 		if(FEMALE)
-			majority_sex = "Female"
+			majority_sex = "Females"
 		if(PLURAL)
-			majority_sex = "Nonbinary"
+			majority_sex = "Nonbinaries"
 		else
-			majority_sex = "Anysex"
+			majority_sex = "Anysexes"
 	
 	/// There are a lot of Boykissing Female Tops on!
-	var/majority_string = "There are a lot of [majority_kisser] [majority_sex] [majority_tbs] on!"
+	var/majority_string = "The server has a lot of [majority_kisser], and [majority_sex], and [majority_tbs] on!"
 	/// milk yeah of course
 	var/desired_string = "If you're looking for a good time, you should play \a [most_desired_sex] [most_desired_tbs]!"
 	nashs_most_wanted = desired_string

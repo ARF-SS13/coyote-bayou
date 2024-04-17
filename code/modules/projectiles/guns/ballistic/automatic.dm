@@ -150,6 +150,18 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
+/obj/item/gun/ballistic/automatic/smg/american180/dp27
+	name = "Mini DP-27"
+	desc = "A tiny replica DP-27, with a .22 pan magazine."
+	icon = 'modular_coyote/icons/objects/mgs.dmi'
+	icon_state = "dp"
+	silenced = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/american180/dp27/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
+
 /obj/item/gun/ballistic/automatic/smg/american180/b180
 	name = "American 18-bee"
 	desc = "They used to call the gun a swarm of angry bees. In this case, it's literal."
@@ -402,6 +414,25 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22
+	name = ".22 MP5"
+	desc = "A commercial version of the MP5 chambered in .22LR."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "mp5"
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh
+	name = "Mini PPSh"
+	desc = "A tiny replica SMG, fed from .22 magazines. It's so small!"
+	icon_state = "pps"
+	item_state = "uzi"
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
 
 //tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
@@ -659,7 +690,6 @@
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //208 dps
-
 
 /* * * * * * * * * * *
 * M22 SMG
@@ -3103,20 +3133,20 @@
 //custom gun
 /obj/item/gun/ballistic/automatic/fg42tox
 	name = "Custom FG-42 rifle"
-	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope!The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope! The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
 	icon_state = "fg42"
 	item_state = "fg42"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	mag_type = /obj/item/ammo_box/magazine/fallschirm
+	init_mag_type = /obj/item/ammo_box/magazine/fallschirm
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	init_recoil = CARBINE_RECOIL(1.2, 1.3)
+	damage_multiplier = GUN_LESS_DAMAGE_C1
+	init_recoil = CARBINE_RECOIL(1, 0.9)
 	init_firemodes = list(
-		/datum/firemode/semi_auto ,
+		/datum/firemode/semi_auto/fast ,
 		/datum/firemode/automatic/rpm100
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -3125,6 +3155,31 @@
 	can_bayonet = FALSE
 	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/fg42.ogg'
+
+
+
+/obj/item/gun/ballistic/automatic/democracy
+	name = "M36 'Justice' battle rifle"
+	desc = "A M36 battle rifle, nicknamed 'Justice' by the company that produced it. Manufactured by an American division of Leo Armaments, which was quite patriotic. This rfle is chambered in .308. It seems to have a slow RPM and fast semi-automatic"
+	icon_state = "m36"
+	item_state = "m36"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1.8, 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto ,
+		/datum/firemode/automatic/rpm100
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
@@ -3352,6 +3407,18 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
+
+/obj/item/gun/ballistic/automatic/lewis/dp27
+	name = "DP-27"
+	desc = "An old Soviet light machinegun with a high capacity pan magazine."
+	icon = 'modular_coyote/icons/objects/mgs.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "dp"
+	item_state = "R84"
+	mag_type = /obj/item/ammo_box/magazine/lewis/l47
+	init_mag_type = /obj/item/ammo_box/magazine/lewis/l47
+
 
 //less damage than the M1919, but more compact magazines that hold more
 /obj/item/gun/ballistic/automatic/lewis/lanoe

@@ -100,6 +100,8 @@
 	var/list/ncr = list()
 	var/list/vault = list()
 	var/list/clinic = list()
+	var/list/reclaimer = list()
+	var/list/guild = list()
 	var/list/tribe = list()
 	var/list/waster = list()
 	var/list/den = list()
@@ -149,6 +151,12 @@
 		if(rank in GLOB.followers_positions)
 			clinic[name] = rank
 			department = 1
+		if(rank in GLOB.reclaimer_positions)
+			reclaimer[name] = rank
+			department = 1
+		if(rank in GLOB.guild_positions)
+			guild[name] = rank
+			department = 1
 		if(rank in GLOB.tribal_positions)
 			tribe[name] = rank
 			department = 1
@@ -161,15 +169,12 @@
 		if(rank in GLOB.den_positions)
 			den[name] = rank
 			department = 1
-		if(rank in GLOB.gar_positions)
-			garland[name] = rank
-			department = 1
-		if(rank in GLOB.biker_positions)
-			bikers[name] = rank
-			department = 1
-		if(rank in GLOB.heavensnight_positions)
-			heavensnight[name] = rank
-			department = 1
+		//if(rank in GLOB.gar_positions)
+		//	garland[name] = rank
+		//	department = 1
+		//if(rank in GLOB.biker_positions)
+		//	bikers[name] = rank
+		//	department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))
@@ -188,7 +193,7 @@
 	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 	// 		even = !even
 	if(length(nash))
-		dat += "<tr><th colspan=3>Nash</th></tr>"
+		dat += "<tr><th colspan=3>New Boston</th></tr>"
 		for(var/name in nash)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[nash[name]]</td></tr>"
 			even = !even
@@ -221,6 +226,16 @@
 		dat += "<tr><th colspan=3>Nash Clinic</th></tr>"
 		for(var/name in clinic)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[clinic[name]]</td></tr>"
+			even = !even
+	if(length(reclaimer))
+		dat += "<tr><th colspan=3>Reclaimers</th></tr>"
+		for(var/name in reclaimer)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[reclaimer[name]]</td></tr>"
+			even = !even
+	if(length(guild))
+		dat += "<tr><th colspan=3>Adventurers Guild</th></tr>"
+		for(var/name in guild)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[guild[name]]</td></tr>"
 			even = !even
 	if(length(tribe))
 		dat += "<tr><th colspan=3>Sulphur-Bottom Tribe</th></tr>"

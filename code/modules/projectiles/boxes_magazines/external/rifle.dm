@@ -255,6 +255,21 @@
 	start_empty = 1
 
 
+/obj/item/ammo_box/magazine/fallschirm
+	name = "FG-42 magazine chambered in 8mm kurz (.30-06)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "fg42"
+	caliber = list(CALIBER_3006)
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/fallschirm/empty
+	start_empty = 1
+
+
 /obj/item/ammo_box/magazine/geight
 	name = "patrone 88 cartridge (30-06)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

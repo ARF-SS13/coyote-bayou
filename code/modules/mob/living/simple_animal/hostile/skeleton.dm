@@ -6,6 +6,8 @@
 	icon_living = "skeleton"
 	icon_dead = "skeleton"
 	gender = NEUTER
+	rotate_on_lying = TRUE
+	mob_armor = ARMOR_VALUE_SKELETON
 	mob_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	turns_per_move = 5
 	speak_emote = list("rattles")
@@ -33,9 +35,8 @@
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	deathmessage = "collapses into a pile of bones!"
-	del_on_death = 1
+	del_on_death = FALSE
 	loot = list(/obj/effect/decal/remains/human)
-
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/skeleton/eskimo

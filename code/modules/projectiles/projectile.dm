@@ -187,6 +187,10 @@
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
+	/// Until we have traveled this many tiles (diagonals included) we FORCE faction on!
+	var/safety_range = 1
+	var/safety_switch = FALSE
+
 	var/bonus_crit_rolls = 1
 
 	var/is_crit_above = 9999
@@ -771,7 +775,7 @@
 	fired = TRUE
 	randomize_damage()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 	if(hitscan)
@@ -917,6 +921,12 @@
 			if(QDELETED(src))
 				return
 			pixels_range_leftover -= world.icon_size
+		if(safety_switch)
+			if(QDELETED(firer))
+				safety_switch = FALSE
+			if(get_dist(loc, firer) > safety_range)
+				faction = list()
+				safety_switch = FALSE
 	if(!hitscanning && !forcemoved)
 		var/traj_px = round(trajectory.return_px(), 1)
 		var/traj_py = round(trajectory.return_py(), 1)

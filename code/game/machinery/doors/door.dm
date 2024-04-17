@@ -28,6 +28,7 @@
 	var/emergency = FALSE // Emergency access override
 	var/sub_door = FALSE // true if it's meant to go under another door.
 	var/closingLayer = CLOSED_DOOR_LAYER
+	var/picked_open = FALSE // true if it's open due to lockpicking.
 	var/autoclose = FALSE //does it automatically close after some time
 	var/safe = TRUE //whether the door detects things and mobs in its way and reopen or crushes them.
 	var/locked = FALSE //whether the door is bolted or not.
@@ -184,6 +185,10 @@
 	if(!istype(picking))
 		return FALSE
 
+	if(!picking.can_use(user))
+		to_chat(user, span_warning("You're not sure where to start with this..."))
+		return FALSE
+
 	picking.in_use = TRUE
 
 	var/list/pick_messages = list(
@@ -254,14 +259,17 @@
 		ignore_walls = FALSE
 		)
 	
-	if(prob(15))
+	if(prob(picking.success_chance))
 		user.show_message(span_green(pick(pick_messages["successmessages"])))
+		picked_open = TRUE
+		autoclose = 60 SECONDS
 		try_to_activate_door(user, TRUE)
 		. = TRUE
 	else
 		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+		if(prob(picking.break_chance))
+			picking.use_pick(user)
 	picking.in_use = FALSE
-	picking.use_pick(user)
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user, force_open)
 	add_fingerprint(user)
@@ -277,6 +285,9 @@
 		return TRUE
 	if(density)
 		do_animate("deny")
+	else if(picked_open)
+		close()
+		return TRUE
 
 /obj/machinery/door/allowed(mob/M)
 	if(emergency)
@@ -374,7 +385,7 @@
 	if (. & EMP_PROTECT_SELF)
 		return
 	if(prob(severity/5) && (istype(src, /obj/machinery/door/airlock) || istype(src, /obj/machinery/door/window)) )
-		INVOKE_ASYNC(src, .proc/open)
+		INVOKE_ASYNC(src,PROC_REF(open))
 
 /obj/machinery/door/proc/unelectrify()
 	secondsElectrified = MACHINE_NOT_ELECTRIFIED
@@ -436,6 +447,10 @@
 
 	operating = TRUE
 
+	if(picked_open)
+		autoclose = initial(autoclose)
+		picked_open = FALSE
+
 	do_animate("closing")
 	layer = closingLayer
 	if(air_tight)
@@ -495,7 +510,7 @@
 		close()
 
 /obj/machinery/door/proc/autoclose_in(wait)
-	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src,PROC_REF(autoclose)), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
 
 /obj/machinery/door/proc/requiresID()
 	return 1

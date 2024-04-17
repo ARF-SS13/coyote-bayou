@@ -44,25 +44,26 @@
 /datum/component/artifact/Initialize(rarity = ART_RARITY_COMMON)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS, .proc/get_effects)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS, .proc/hi)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE, .proc/make_unique)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED, .proc/is_identified)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT, .proc/add_effect)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, .proc/read_parameters)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE, .proc/finalize)
-	RegisterSignal(parent, COMSIG_ITEM_WELLABLE, .proc/tabulate_wellability)
-	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/update_everything)
-	// RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
-	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/on_microwave) //c:
-	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME, .proc/get_name)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/get_description)
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS,     PROC_REF(get_effects))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS,          PROC_REF(hi))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE,     PROC_REF(make_unique))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED,      PROC_REF(is_identified))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT,      PROC_REF(add_effect))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, PROC_REF(read_parameters))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE,        PROC_REF(finalize))
+	RegisterSignal(parent, COMSIG_ITEM_WELLABLE,                 PROC_REF(tabulate_wellability))
+	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE,                PROC_REF(tabulate_value))
+	RegisterSignal(parent, COMSIG_ITEM_GET_RESEARCH_POINTS,      PROC_REF(tabulate_research))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,                 PROC_REF(update_everything))
+	// RegisterSignal(parent, COMSIG_ITEM_CLICKED,PROC_REF(on_clicked))
+	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(on_microwave)) //c:
+	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME,PROC_REF(get_name))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE,PROC_REF(get_description))
 	src.rarity = rarity
 
 /// Runs the artifact's main loop. starts when touched by a mob, stops when it doesnt have anything to do
 /datum/component/artifact/process()
-	INVOKE_ASYNC(src, .proc/mainloop)
+	INVOKE_ASYNC(src,PROC_REF(mainloop))
 
 /datum/component/artifact/proc/mainloop(force_flags)
 	ART_MASTER
@@ -181,8 +182,8 @@
 
 /datum/component/artifact/proc/register_mob_signals(mob/living/newbie)
 	return // todo: this
-	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE, .proc/on_mob_damage)
-	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD, .proc/on_bleed)
+	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(on_mob_damage))
+	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD,PROC_REF(on_bleed))
 
 /datum/component/artifact/proc/unregister_mob_signals(mob/living/current)
 	return // todo: this
@@ -238,11 +239,15 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(total_value, 25)
+	return round(CREDITS_TO_COINS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
-	return (tabulate_value() * 0.8)
+	return (tabulate_value() * 0.4)
+
+/datum/component/artifact/proc/tabulate_research()
+	SIGNAL_HANDLER
+	return (tabulate_value() * 30)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER
@@ -394,7 +399,7 @@
 	ART_MASTER
 	update_color()
 	//update_scanner_name()
-	INVOKE_ASYNC(src, .proc/floatycool)
+	INVOKE_ASYNC(src,PROC_REF(floatycool))
 
 /datum/component/artifact/proc/floatycool()
 	fade_in()
@@ -544,7 +549,7 @@
 	my_parent = WEAKREF(parent)
 	apply_parameters(parameters)
 	generate_trait()
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, .proc/on_effect_deleted, TRUE)
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED,PROC_REF(on_effect_deleted), TRUE)
 
 /datum/artifact_effect/Del()
 	cleanup(TRUE)
@@ -761,7 +766,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = abs(base_value * get_magnitude() * 4)
+	value = abs(base_value * get_magnitude())
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
@@ -1767,14 +1772,13 @@
 /datum/artifact_effect/passive_damage/healer/on_tick(obj/item/master, mob/living/target, obj/item/holder)
 	if(!isliving(target))
 		return
-	if(target.health < min_health)
-		return
+	last_applied = world.time
 	//if(target.health > (target.getMaxHealth() - max_health))
 	//	return
 	var/mult = lag_comp_factor()
 	var/armor_dr = max(check_armor(target, armor_flag) - SSartifacts.heal_armor_dr_threshold, 0)
 	var/dr = (100-min(armor_dr, ARMOR_CAP_DR))/100 // fun fact, this used to accidentally multiply the healing by your armor DR value, so APA would mean it healed you 61x faster, lol
-	if(implanted || !in_desired_slot())
+	if(implanted || !in_desired_slot() || target.health < min_health)
 		mult *= undesirable_mult
 	if(d_brute)
 		if(d_brute > 0)
@@ -1818,7 +1822,6 @@
 	if(d_brain)
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (-abs(d_brain) * mult * dr))
 
-	last_applied = world.time
 	//send_message(target, LAZYACCESS(dmg_out, 2))
 	return TRUE
 
@@ -2011,7 +2014,7 @@
 	else
 		if(!in_desired_slot())
 			return
-	target.adjustStaminaLossBuffered(stamina_adjustment)
+	target.adjustStaminaLoss(stamina_adjustment)
 	return TRUE
 
 /datum/artifact_effect/stamina/get_magnitude()
@@ -2394,8 +2397,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_POCKET | INV_SLOTBIT_BACKPACK | INV_SLOTBIT_SUITSTORE
 	foldable = FALSE
-	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/lead = 20)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
 	component_type = /datum/component/storage/concrete/box/artifact
 
 /obj/item/storage/box/artifactcontainer/ComponentInitialize()
@@ -2479,7 +2482,7 @@
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
 		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
-		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.5
 		)
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 

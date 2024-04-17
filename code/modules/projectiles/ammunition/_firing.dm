@@ -45,6 +45,9 @@
 		return
 	BB.original = target
 	BB.firer = user
+	if(isplayer(user) && !user.enabled_combat_indicator)
+		BB.factionize(user.faction)
+		BB.safety_switch = TRUE // disabled the factionize after it range from shooterd
 	BB.fired_from = fired_from
 	if (zone_override)
 		BB.def_zone = zone_override

@@ -73,8 +73,8 @@
 
 /obj/item/melee/smith/twohand/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
 
 /obj/item/melee/smith/twohand/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
@@ -267,7 +267,7 @@
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
-			H.dna.species.punchdamagehigh += force + 8 
+			H.dna.species.punchdamagehigh += force + 8
 			H.dna.species.punchdamagelow += force + 8
 			H.dna.species.attack_sound = hitsound
 			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
@@ -333,7 +333,7 @@
 	force_wielded = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/captain_saber
+	block_parry_data = /datum/block_parry_data/bokken
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
@@ -387,7 +387,7 @@
 		return eyestab(M,user)
 	else
 		return ..()
-	
+
 /obj/item/melee/smith/dagger/bowie
 	name = "sharpblade"
 	icon_state = "bowie_smith"
@@ -451,7 +451,7 @@
 	throwforce= 30
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.7
-	block_parry_data = /datum/block_parry_data/waki
+	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/smith/wakizashi/Initialize()
@@ -507,7 +507,7 @@
 	force_wielded = 40
 	force_unwielded = 30
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/smithrapier
+	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
@@ -644,7 +644,7 @@
 
 
 // Good throwing, thats about it (27, 40)
-/obj/item/melee/smith/javelin 
+/obj/item/melee/smith/javelin
 	name = "rebar throwing spike"
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
@@ -703,7 +703,7 @@
 		return
 	..()
 
-/obj/item/melee/smith/hammer/ratvar
+/*/obj/item/melee/smith/hammer/ratvar
 	name = "brass hammer"
 	custom_materials = list(/datum/material/bronze = 12000)
 	desc = "A brass hammer inscribed with... writing? You can't read it."
@@ -720,7 +720,7 @@
 		else
 			user.adjustBruteLoss(rand(force/2,force))
 		return
-	..()
+	..()*/
 
 /obj/item/melee/smith/hammer/debug
 	name = "debugging hammer"

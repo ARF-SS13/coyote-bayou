@@ -67,15 +67,6 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/chainsaw,
 	/datum/crafting_recipe/steeltower,
 	/datum/crafting_recipe/durathread_vest,
-	/datum/crafting_recipe/scope,
-	/datum/crafting_recipe/suppressor,
-	/datum/crafting_recipe/ergonomic_grip,
-	/datum/crafting_recipe/metal_guard,
-	/datum/crafting_recipe/forged_barrel,
-	/datum/crafting_recipe/booster,
-	/datum/crafting_recipe/heatsink,
-	/datum/crafting_recipe/laserguide,
-	/datum/crafting_recipe/gigalens,
 	/datum/crafting_recipe/ecpbad,
 	/datum/crafting_recipe/mfcbad,
 	/datum/crafting_recipe/ecbad,
@@ -138,6 +129,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	/datum/crafting_recipe/steelbib/heavy,
 	/datum/crafting_recipe/armyhelmetheavy,
 	/datum/crafting_recipe/huntingshotgun))
+
+GLOBAL_LIST_INIT(security_expert, list(
+	/datum/crafting_recipe/lockpick_basic,
+	/datum/crafting_recipe/lockpick_improved))
 
 
 //predominantly positive traits
@@ -460,6 +455,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
+/datum/quirk/treasurehunter 
+	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
+	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
+	value = 22
+	category = "Lifepath Quirks"
+	mechanics = "Allows you to craft loot spawners for free in the misc catagory, at the cost of time."
+	conflicts = list(
+
+	)
+	mob_trait = TRAIT_TREASURE_HUNTER
+	gain_text = span_notice("You really feel like digging.")
+	lose_text = span_notice("You really don't feel like digging.")
+	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
+	human_only = FALSE
+
+
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
@@ -483,6 +494,27 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/obj/item/musicaltuner/musicaltuner = new(get_turf(H))
 	H.put_in_hands(musicaltuner)
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
+	if(ishuman(quirk_holder))
+		H.regenerate_icons()
+	else
+		H.update_icons()
+
+/datum/quirk/magehand
+	name = "Mage hand"
+	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
+	value = 32
+	category = "Magic Quirks"
+	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
+	conflicts = list(
+
+	)
+	human_only = FALSE
+
+/datum/quirk/magehand/on_spawn()
+	var/mob/living/H = quirk_holder
+	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
 	if(ishuman(quirk_holder))
 		H.regenerate_icons()
 	else
@@ -612,6 +644,18 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 		H.mind.learned_recipes -= GLOB.pa_repair
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
+
+/datum/quirk/crafty
+	name = "Crafty"
+	desc = "You are able to craft without the necessities provided by a traditional workbench."
+	value = 25
+	category = "Lifepath Quirks"
+	mechanics = "You do not need a workbench or alchemy table when crafting."
+	human_only = FALSE
+/datum/quirk/crafty/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
@@ -1485,7 +1529,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 32
+	value = 14
 	category = "Food Quirks"
 	mechanics = "Your hunger never goes down, simple as that."
 	conflicts = list( //any of the eating quirks
@@ -1750,11 +1794,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/ratmaster
 	name = "Beast Master - Rats"
-	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
-	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
+	desc = "Whenever by psychic means or not, you gained ability to summon and control the rats of Wasteland (except giant ones).\
+	<br>You also able to tame wild ones. This will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
 	value = 22
 	category = "Critter Quirks"
-	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky."
+	mechanics = "You can summon up rat nests on the fly and order them around! Your rats aren't in the same faction as wild rats though, so they'll fight each other. You can tame the wild ones though, if you're lucky.\
+	<br><font color='#ff2929ff'>If you want to control giant rats, you will need Beast Master - Small Critters.</font>" // Why this sounds like DLC talk
 	conflicts = list(
 		/datum/quirk/ratfriend,
 		/datum/quirk/ratphobia,
@@ -1805,7 +1850,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You're basically a disney princess when it comes to some of the lesser critters of the swamplands."
 	value = 14
 	category = "Critter Quirks"
-	mechanics = "Specifically roaches, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
+	mechanics = "Specifically pillbugs, geckos and young nightstalkers treat you as being a faction friend. Ignoring you outright."
 	conflicts = list(
 		/datum/quirk/crittermaster,
 	)
@@ -1827,11 +1872,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/crittermaster
 	name = "Beast Master - Small Critters"
-	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and molerats (last ones will be initially hostile and needs to be tamed).\
+	desc = "Whenever by psychic means or not, you gained ability to control pillbugs, most geckos and giant rats (last ones will be initially hostile and needs to be tamed).\
 	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can also be tamed, but not controlled."
 	value = 34
 	category = "Critter Quirks"
-	mechanics = "You can tame and order around roaches, geckos (not all of the full variety pack though) and molerats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
+	mechanics = "You can tame and order around pillbugs, geckos (not all of the full variety pack though) and giant rats. While unable to attack players with them, they're a great distraction for fighting other mobs with."
 	conflicts = list(
 		/datum/quirk/critterfriend,
 	)
@@ -1864,6 +1909,28 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/beesfriend
+	name = "Beast Friend - Radbees"
+	desc = "Rad-bees are not going to attack upon seeing you. Good for wasteland apiarists!"
+	value = 14
+	category = "Critter Quirks"
+	mechanics = "Radbees share their faction with you, meaning they won't do anything about you or care at all that you exist."
+	mob_trait = TRAIT_BEASTFRIEND_BEE
+	gain_text = span_notice("(Rad)Bee not afraid!")
+	lose_text = span_danger("(Rad)BEE AFRAID!!")
+	medical_record_text = "Patient talks about bees a lot. Radiated ones, specifically."
+	locked = FALSE
+	human_only = FALSE
+
+/datum/quirk/beesfriend/add()
+	var/mob/living/H = quirk_holder
+	H.faction |= list("bees-friend")
+
+/datum/quirk/beesfriend/remove()
+	var/mob/living/H = quirk_holder
+	if(H)
+		H.faction -= list("bees-friend")
 
 /datum/quirk/wildshape
 	name = "Wild Shape"
@@ -1951,10 +2018,25 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient appears to possess a knife, somehow."
 	human_only = FALSE
 
+
+/datum/quirk/mantisblade
+	name = "Cybernetic Arm Blader"
+	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblade with the *cyber verb."
+
+	value = 32
+	category = "Mutant Quirks"
+	mechanics = "Your arm can turn into a horrifying cyberblade"
+	conflicts = list()
+	mob_trait = TRAIT_CYBERKNIFE
+	gain_text = span_notice("You feel as your arm is heavier...")
+	lose_text = span_danger("Your arm feels lighter...")
+	medical_record_text = "Patient appears to possess a cybernetic armblade."
+	human_only = FALSE
+
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 32
+	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
 	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat bludgeon."
 	conflicts = list()
@@ -1962,6 +2044,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel as your arm is wriggling...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a club, somehow."
+
+/datum/quirk/magegrab
+	name = "Mage Grab" // Better name pending
+	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
+	value = 28
+	category = "Magic Quirks"
+	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
+	conflicts = list()
+	mob_trait = TRAIT_MAGEGRAB
 
 /datum/quirk/bigbiter
 	name = "Biter - Big"
@@ -2349,6 +2440,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
 	conflicts = list(
 		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/flimsy,
 		/datum/quirk/veryflimsy
@@ -2477,7 +2569,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
 	conflicts = list(
 		/datum/quirk/masterrifleman,
-		/datum/quirk/straightshooter
+		/datum/quirk/straightshooter,
+		/datum/quirk/deadeye
 		)
 	gain_text = span_notice("Aim just behind behind the front leg...")
 	lose_text = span_notice(".223 is probably overkill for deer...")
@@ -2605,7 +2698,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
 /datum/quirk/package/creatureofthenightgreater
-	name = " Creature of the Night - Greater"
+	name = "Creature of the Night - Greater"
 	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
 	value = 100
 	category = "Quirk Packages"
@@ -2614,18 +2707,24 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/hard_yards,
 		/datum/quirk/night_vision_greater,
 		/datum/quirk/package/creatureofthenightlesser
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION_GREATER
 	gain_text = span_notice("Your night hunting instincts enhance!")
 	lose_text = span_notice("Your night hunting instincts fade away.")
+	medical_record_text = "Patient claims that they have night vision."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightgreater/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
 
+/datum/quirk/package/creatureofthenightgreater/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightgreater/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
 		REMOVE_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
@@ -2640,21 +2739,69 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/night_vision,
 		/datum/quirk/soft_yards,
 		/datum/quirk/package/creatureofthenightgreater
-		)
+	)
+	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("You feel more attuned in darker places.")
 	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
+	medical_record_text = "Patient claims they can see in the dark."
+	human_only = FALSE
 
 /datum/quirk/package/creatureofthenightlesser/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
+/datum/quirk/package/creatureofthenightlesser/on_spawn()
+	quirk_holder.update_sight()
 
 /datum/quirk/package/creatureofthenightlesser/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	quirk_holder.update_sight()
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+/datum/quirk/package/tinkerer
+	name = "Tinker-er"
+	desc = "You are able to craft without a traditional workbench, as well as craft more and gain more from salvage"
+	value = 85
+	category = "Quirk Packages"
+	mechanics = "You don't need a workbench or alchemy table when crafting, get more recipes, and gain 1-3 more from salvaging"
+	human_only = FALSE
+	conflicts = list(
+		/datum/quirk/tribal,
+		/datum/quirk/dumb,
+		/datum/quirk/luddite,
+		/datum/quirk/primitive,
+		/datum/quirk/technophreak,
+		/datum/quirk/crafty
+		)
+	mob_trait = TRAIT_TECHNOPHREAK
+
+/datum/quirk/package/tinkerer/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
+
+/datum/quirk/package/tinkerer/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.tier_three_parts
+	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
+
+/datum/quirk/package/tinkerer/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.tier_three_parts
+		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/package/generalmedicalpractitioner
 	name = "General Medical Practitioner"
@@ -2777,3 +2924,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+
+/datum/quirk/security_expert
+	name = "Security Expert"
+	desc = "You've got a knack for getting into places you shouldn't be."
+	mob_trait = TRAIT_SECURITYEXPERT
+	value = 20
+	category = "Lifepath Quirks"
+	mechanics = "You can craft and use lockpicking sets to open doors and lockboxes."
+	conflicts = list()
+
+/datum/quirk/security_expert/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes += GLOB.security_expert
+
+/datum/quirk/security_expert/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.security_expert

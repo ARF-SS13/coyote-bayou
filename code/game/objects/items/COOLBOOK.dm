@@ -76,6 +76,34 @@
 	color = "#CC3333"
 	book_key = "ashcitguide"
 
+/obj/item/cool_book/guildguide
+	name = "Guild Guidebook"
+	desc = "Thats a guidebook for the Adventurers Guild!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "guildguide"
+	color = "#f89b06"
+
+/obj/item/cool_book/reclaimerguide
+	name = "Reclaimer Guidebook"
+	desc = "Thats a guidebook for the Reclaimers!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "reclaimerguide"
+	color = "#9999F6"
+
+/obj/item/cool_book/warandpeace
+	name = "War And Peace, Book One"
+	desc = "Thats literally just a copy of War and Peace..."
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "wnp1"
+	color = "#db2100"
+	force = 30
+	force_wielded = 45
+	force_unwielded = 30
+	throwforce = 35
+
 /obj/item/cool_book/Initialize()
 	. = ..()
 	bookify()

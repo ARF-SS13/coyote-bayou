@@ -569,7 +569,6 @@
 
 /obj/machinery/smartfridge/bottlerack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 //god, don't just put the procs, at least put a return there!
 /obj/machinery/smartfridge/bottlerack/RefreshParts()
@@ -617,7 +616,7 @@
 
 /obj/machinery/smartfridge/bottlerack/gardentool/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src,PROC_REF(can_be_rotated)))
 
 // Preloaded simple farming rack for mapping
 /obj/machinery/smartfridge/bottlerack/gardentool/primitive
@@ -867,3 +866,28 @@
 		/obj/item/reagent_containers/food/condiment/cherryjelly = 1,
 		/obj/item/reagent_containers/food/condiment/peanut_butter = 1,
 		/obj/item/reagent_containers/food/condiment/mayonnaise = 1)
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable
+	name = "crafted shop shelf"
+	desc = "A handmade shop shelf, looks pretty robust. Has a blank sign in the center to be written on with a pen."
+	max_n_of_items = 75
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable
+	chance_initial_contents = list()
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable/on_deconstruction()
+	new /obj/item/stack/sheet/metal(drop_location(), 5)
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/craftable/accept_check(obj/item/O)
+	if(istype(O, /obj/item/clothing/head/mob_holder))
+		return FALSE
+	if(istype(O, /obj/item/storage))
+		return FALSE
+	if(istype(O, /obj/item/pen))
+		return FALSE
+	if(istype(O, /obj/item/toy/crayon/spraycan)) //Theres probably a better way to do this, I tried testing other ways, but this works
+		return FALSE
+
+	if(O)
+		return TRUE
+	return FALSE
