@@ -1144,7 +1144,7 @@
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
-///// GECKO QUOTAS /////
+///// BOTTLE QUOTAS /////
 /datum/bounty_quota/sealedbottle
 	name = "Find some sealed bottles"
 	paths = list(
@@ -1153,28 +1153,30 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(120)
-	easy_multiplier = 1
+	price_per_thing = COINS_TO_CREDITS(100) // Rely on multipliers for this one
+	easy_multiplier = 1.2
 	medium_multiplier = 1.5
 	hard_multiplier = 2
-	CBT_multiplier = 2
+	CBT_multiplier = 2 
 
-/datum/bounty_quota/sealedbottle/easy
-	needed_amount = 1
+/datum/bounty_quota/sealedbottle/easy // 240c for 200u
+	needed_amount = 2
 	difficulty = QUEST_DIFFICULTY_EASY
 
-/datum/bounty_quota/sealedbottle/medium // no newts
+/datum/bounty_quota/sealedbottle/medium // 750c for 500u
 	needed_amount = 5
+	paths_includes_root = FALSE
+	pick_this_many = 4
 	difficulty = QUEST_DIFFICULTY_MED
 
-/datum/bounty_quota/sealedbottle/hard
-	needed_amount = 5
-	difficulty = QUEST_DIFFICULTY_HARD
+/datum/bounty_quota/sealedbottle/hard // 2000c for 1000u
+	needed_amount = 10
 	paths_includes_root = FALSE
-	pick_this_many = 2
+	pick_this_many = 3
+	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/sealedbottle/CBT
+/datum/bounty_quota/sealedbottle/CBT // 4000c for 2000u
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT
 	paths_includes_root = FALSE
-	pick_this_many = 4
+	pick_this_many = 2
