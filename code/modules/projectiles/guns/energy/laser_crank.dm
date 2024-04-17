@@ -81,10 +81,10 @@
 		if((C.charge < C.maxcharge) && (!recharge_queued))
 			recharge_queued = 1  //this variable makes it so we can't queue multiple recharges at once, only one at a time (variable gets reset in {/obj/item/gun/shoot_live_shot(mob/living/user)})
 			playsound(user.loc, pick(firearm.crank_sound), playsound_volume, TRUE)
-			if(do_after(user, firearm.cranking_time, target = src, allow_movement = TRUE))
+			if(do_after(user, firearm.cranking_time, target = src, allow_movement = FALSE))
 				recharge_queued = 0
 				user.apply_damage(firearm.crank_stamina_cost, STAMINA)  //have you ever ridden a bike with a dynamo?
-				C.charge += 1
+				C.charge += 250
 				update_icon()
 				crankgun(user)
 				
@@ -141,7 +141,7 @@
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/classic  //basically a single shot charge
-	maxcharge = 4
+	maxcharge = 1000
 
 /obj/item/ammo_casing/energy/cranklasergun/classic
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/classic
@@ -174,7 +174,7 @@
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge
-	maxcharge = 3
+	maxcharge = 750
 
 /obj/item/ammo_casing/energy/cranklasergun/overcharge
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/overcharge
@@ -207,7 +207,7 @@
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge/revolver_man
-	maxcharge = 6
+	maxcharge = 1500
 
 /obj/item/ammo_casing/energy/cranklasergun/overcharge/revolver_man
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/overcharge/revolver_man
@@ -215,8 +215,8 @@
 
 /obj/item/projectile/beam/laser/cranklasergun/overcharge/revolver_man
 	damage = 30
-////////////////////////////////////////////////////////////////
 
+// Start of TG lasers
 /obj/item/gun/energy/laser/cranklasergun/tg
 	name = "improvised laser"
 	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
@@ -229,15 +229,18 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	can_charge = 1
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 
+	cranking_time = 0.6 SECONDS
+	crank_stamina_cost = 10
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto,
+		/datum/firemode/automatic/rpm100
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg  //basically a single shot charge
@@ -245,12 +248,12 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 20
+	maxcharge = 5000
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
-	e_cost = 1
+	e_cost = 250
 	select_name = "kill"
 
 
@@ -285,23 +288,18 @@
 	flight_x_offset = 15
 	flight_y_offset = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/burst/three/fast,
-		/datum/firemode/semi_auto
-	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
 	name = "integrated single charge cell"
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 25
+	maxcharge = 5000
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
-	e_cost = 1
+	e_cost = 200
 	select_name = "kill"
 // TG CARBINE END
 
@@ -313,9 +311,24 @@
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
+	cranking_time = 0.2 SECONDS
+	crank_stamina_cost = 2.5 // Requires more time, but less stamina
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/pistol)
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol //basically a single shot charge
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 10000
+
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/pistol
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
+	e_cost = 500
+	select_name = "kill"
 // TG PISTOL END
 
 // TG RIFLE
@@ -327,14 +340,16 @@
 	w_class = WEIGHT_CLASS_BULKY
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle)
+	cranking_time = 0.6 SECONDS
+	crank_stamina_cost = 10
 	can_flashlight = 1
 	flight_x_offset = 20
 	flight_y_offset = 10
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/burst/three/fast,
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto/fast,
+		/datum/firemode/automatic/rpm75 
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
@@ -342,11 +357,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 40
+	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
-	e_cost = 1
+	e_cost = 125
 	select_name = "kill"
 // TG RIFLE END
 
@@ -358,11 +373,15 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy)
+	cranking_time = 1.6 SECONDS
+	crank_stamina_cost = 20
+	crank_sound = list(
+		'sound/weapons/laserPump.ogg',
+	)
 	init_recoil = LASER_RIFLE_RECOIL(2, 2)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/burst/two/fastest,
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slower,
+		/datum/firemode/automatic/rpm40
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
@@ -370,11 +389,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 15
+	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
-	e_cost = 1
+	e_cost = 208
 	fire_sound = 'sound/weapons/pulse.ogg'
 	select_name = "kill"
 
@@ -394,9 +413,11 @@
 	item_state = "p90"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/auto
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
+	cranking_time = 0.6 SECONDS
+	crank_stamina_cost = 10
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm300,
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/fast,
 		/datum/firemode/semi_auto/fast
 	)
@@ -406,11 +427,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 60
+	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
-	e_cost = 1
+	e_cost = 83
 	select_name = "kill"
 // TG PARTY CANNON
 
@@ -421,11 +442,16 @@
 	item_state = "esniper"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
+	cranking_time = 1.2 SECONDS
+	crank_stamina_cost = 20
+	crank_sound = list(
+		'sound/weapons/laserPumpEmpty.ogg',
+	)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/particalcannon
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/particalcannon)
 	init_recoil = LASER_RIFLE_RECOIL(2, 3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/slower,
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/particalcannon
@@ -433,11 +459,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 50
+	maxcharge = 15625
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/particalcannon
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/particalcannon
-	e_cost = 50
+	e_cost = 3125
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	select_name = "kill"
 
@@ -461,13 +487,14 @@
 	icon_state = "spamlaser"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
+	cranking_time = 2 SECONDS // Basically costs nothing
+	crank_stamina_cost = 10
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
 	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
-	/datum/firemode/burst/five/fastest,
-	/datum/firemode/automatic/rpm300,
 	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
@@ -475,11 +502,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 62
+	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
-	e_cost = 0.5
+	e_cost = 40 //Gets 6 shots per charge
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	select_name = "kill"
 
