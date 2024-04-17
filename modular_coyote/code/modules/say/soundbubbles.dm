@@ -121,7 +121,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 	if(client)
 		var/client/C = client
 		if(statick)
-			return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]] * 0.5
+			return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]] * 2
 		return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]]
 	return 2
 
