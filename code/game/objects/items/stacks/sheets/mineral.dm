@@ -76,8 +76,8 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/sandbags
 
 GLOBAL_LIST_INIT(sandbag_recipes, list ( \
-	new/datum/stack_recipe("sandbags", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1), \
-	))
+	new/datum/stack_recipe("sandbag pile", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1),
+	new/datum/stack_recipe("sandbag barricade", /obj/structure/deployable_barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1),))
 
 /obj/item/stack/sheet/mineral/sandbags/get_main_recipes()
 	. = ..()
