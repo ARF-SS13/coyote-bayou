@@ -107,7 +107,7 @@
 	desc = "The basic Trident Gammaworks blaster carbine."
 	cost = 2000
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/carbine)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/carbine)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgpistol
@@ -115,7 +115,7 @@
 	desc = "A more compact version of the TG carbine. Talk about a pocket protector."
 	cost = 1800
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/carbine/pistol)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/pistol)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgspamlaser
@@ -123,7 +123,7 @@
 	desc = "Maximum capacity, minimum power."
 	cost = 1000
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/spamlaser)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgrifle
@@ -131,7 +131,7 @@
 	desc = "A MKII Trident Gammaworks Laser Rifle. Useful if you don't have room for extra ammo cells, but suffers in longer adventures."
 	cost = 2500
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgheavyrifle
@@ -139,7 +139,7 @@
 	desc = "A heavier variant of the MKII Laser Rifle. Fewer shots but each one hits much harder."
 	cost = 1800
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle/heavy)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgautorifle
@@ -147,7 +147,7 @@
 	desc = "The successor to the MKII Laser Rifle. Better in almost every way."
 	cost = 3800
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle/auto)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/tgnukerifle
@@ -171,7 +171,7 @@
 	desc = "Five shots. More than enough to kill anything that moves."
 	cost = 20000
 	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/particlecannon)
+	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/aep7

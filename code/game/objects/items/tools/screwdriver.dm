@@ -39,7 +39,7 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message(span_info("[user] kneels [M == user ? null : "next to [M]"] and begins to tighten their bits."), \
+	user.visible_message(span_info("[user] kneels[M == user ? null : "next to [M]"] and begins to tighten their bits."), \
 		span_info("You kneel[M == user ? null : " next to [M]"] and begins tightening their bits."))
 
 	praying = TRUE
