@@ -13832,9 +13832,9 @@
 /obj/structure/curtain/directional/east{
 	color = "#1e549c"
 	},
-/obj/machinery/door/airlock/science/glass{
+/obj/machinery/door/airlock/medical/glass{
 	req_one_access_txt = "136";
-	name = "Science"
+	name = "Medical"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
@@ -23161,14 +23161,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "lzG" = (
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/medical/glass{
+	req_one_access_txt = "136";
+	name = "Medical"
 	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/city/newboston/outdoors)
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "lzJ" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -81765,7 +81764,7 @@ hBU
 wuq
 ueL
 wuq
-lzG
+vFa
 nHr
 dsp
 klQ
@@ -82022,7 +82021,7 @@ ueL
 ueL
 ueL
 wuq
-lzG
+vFa
 nHr
 gDe
 klQ
@@ -82279,7 +82278,7 @@ pBs
 ueL
 jZR
 qFz
-tlI
+vOY
 qvh
 mdh
 klQ
@@ -82536,7 +82535,7 @@ pHs
 pHs
 vOY
 vOY
-tlI
+vOY
 fTf
 mdh
 klQ
@@ -86891,7 +86890,7 @@ jkD
 cBK
 rpE
 jkD
-bYl
+lzG
 tPo
 ygM
 tPo

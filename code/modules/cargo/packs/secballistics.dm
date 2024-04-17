@@ -84,15 +84,6 @@
 	contains = list(/obj/item/clothing/glasses/night/prescription)
 	crate_name = "armor crate"
 
-/datum/supply_pack/security/combatknives_single
-	name = "Combat Knife Single-Pack"
-	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-wasteland boot. You know what's better than one knife? Three of 'em!"
-	cost = 500
-	num_contained = 3
-	contains = list(/obj/item/melee/onehanded/knife/hunting,
-					/obj/item/melee/onehanded/knife/hunting,
-					/obj/item/melee/onehanded/knife/hunting)
-
 /datum/supply_pack/security/sechardsuit
 	name = "Sec Hardsuit"
 	desc = "It's an old style 'security hardsuit', whatever the fuck that's supposed to mean."
