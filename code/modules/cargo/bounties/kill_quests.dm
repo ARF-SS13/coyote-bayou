@@ -1128,6 +1128,8 @@
 	paths = list(pick(thing)) // guaranteed fresh at time of baking
 
 ////SEALED ALCOHOL QUOTA////
+/// To make bottlers useful///
+// Also a resource sink for bartenders//
 
 /datum/bounty/kill/sealedbottle
 	name = "Collect Sealed Alcohol"
@@ -1180,3 +1182,161 @@
 	difficulty = QUEST_DIFFICULTY_CBT
 	paths_includes_root = FALSE
 	pick_this_many = 2
+
+/// Blacksmith trading ///
+/// So blacksmiths can like, literally get any money?///
+/// POV: You found a single cool knife in a dungeon ///
+
+/datum/bounty/kill/weapons
+	name = "Collect Weapons"
+	description = "We need some extra weapons for the guild knights, buy, find, or make some."
+	flavor_focus = /obj/item/gun || /obj/item/melee
+	weight = 1
+	candupe = FALSE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/weapon/easy,
+		/datum/bounty_quota/weapon/medium,
+		/datum/bounty_quota/weapon/hard,
+		/datum/bounty_quota/weapon/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// WEAPON QUOTAS /////
+/datum/bounty_quota/weapon
+	name = "Find some weapons"
+	paths = list(
+		/obj/item/gun, /obj/item/melee
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(15) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2
+
+/datum/bounty_quota/weapon/easy 
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/weapon/medium 
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/weapon/hard 
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/weapon/CBT 
+	needed_amount = 40
+	difficulty = QUEST_DIFFICULTY_CBT
+
+///Farming Stuff, good for farmers
+/// Mmhhhhhhhhnghnm MElum :)
+
+/datum/bounty/kill/growns
+	name = "Collect Plantmatter"
+	description = "We're missing some seeds here at the guild, can you just send us some plants over."
+	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
+	weight = 1
+	candupe = FALSE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/growns/easy,
+		/datum/bounty_quota/growns/medium,
+		/datum/bounty_quota/growns/hard,
+		/datum/bounty_quota/growns/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// FARMER QUOTAS /////
+/datum/bounty_quota/growns
+	name = "Find some Plant matter"
+	paths = list(
+		/obj/item/reagent_containers/food/snacks/grown
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(2) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2
+
+/datum/bounty_quota/growns/easy 
+	needed_amount = 50
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/growns/medium 
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/growns/hard 
+	needed_amount = 150
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/growns/CBT 
+	needed_amount = 200
+	difficulty = QUEST_DIFFICULTY_CBT
+
+///Salvaging Stuff, good for people who have welder blindness
+/// Mmhhhhhhhhnghnm Salvj :)
+
+/datum/bounty/kill/salvage
+	name = "Collect Salavage"
+	description = "We're need more resources, can you send some raw salvage our way."
+	flavor_focus = /obj/item/salvage
+	weight = 1
+	candupe = FALSE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/salvage/easy,
+		/datum/bounty_quota/salvage/medium,
+		/datum/bounty_quota/salvage/hard,
+		/datum/bounty_quota/salvage/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// FARMER QUOTAS /////
+/datum/bounty_quota/salvage
+	name = "Find some raw salvage"
+	paths = list(
+		/obj/item/salvage
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(5) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2
+
+/datum/bounty_quota/salvage/easy 
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/salvage/medium 
+	needed_amount = 15
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/salvage/hard 
+	needed_amount = 20
+	paths_includes_root = FALSE
+	paths = list(
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
+	)
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/salvage/CBT 
+	needed_amount = 30
+	paths_includes_root = FALSE
+	paths = list(
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
+	)
+	difficulty = QUEST_DIFFICULTY_CBT
