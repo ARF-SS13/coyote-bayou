@@ -1190,7 +1190,7 @@
 /datum/bounty/kill/weapons
 	name = "Collect Weapons"
 	description = "We need some extra weapons for the guild knights, buy, find, or make some."
-	flavor_focus = /obj/item/gun || /obj/item/melee
+	flavor_focus = /obj/item/gun, /obj/item/melee
 	weight = 1
 	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
@@ -1306,7 +1306,9 @@
 /datum/bounty_quota/salvage
 	name = "Find some raw salvage"
 	paths = list(
-		/obj/item/salvage
+		/obj/item/salvage/low,
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
 	)
 	needed_amount = 10
 	paths_get_subtypes = TRUE
