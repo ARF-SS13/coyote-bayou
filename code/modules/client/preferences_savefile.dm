@@ -208,6 +208,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				faved_interactions = list()
 				WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+			if(PMC_ADDED_RADIO_BLURBLES) // i broke it =3
+				S["chat_toggles"] >> chat_toggles
+				chat_toggles |= CHAT_HEAR_RADIOBLURBLES
+				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				current_version |= PMC_ADDED_RADIO_BLURBLES
+			if(PMC_ADDED_RADIO_STATIC) // i broke it =3
+				S["chat_toggles"] >> chat_toggles
+				chat_toggles |= CHAT_HEAR_RADIOSTATIC
+				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				current_version |= PMC_ADDED_RADIO_STATIC
 
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 

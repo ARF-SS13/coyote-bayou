@@ -186,7 +186,7 @@
 		if(sourceturf && T && !(sourceturf in get_hear(5, T)))
 			. = span_small("[.]")
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE)
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE, list/data)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args) //parent calls can't overwrite the current proc args.
 	if(!client)
 		return
@@ -212,6 +212,13 @@
 		var/sanitizedsaycolor = client.sanitize_chat_color(speaker.get_chat_color())
 		message = color_for_chatlog(message, sanitizedsaycolor, speaker.name)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
+	if(islist(data) && LAZYACCESS(data, "is_radio") && (data["ckey"] in GLOB.directory) && !SSchat.debug_block_radio_blurbles)
+		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_STATIC))
+			playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
+			var/mob/blurbler = ckey2mob(data["ckey"])
+			if(blurbler && blurbler != src)
+				blurbler.play_AC_typing_indicator(raw_message, src, src, TRUE)
 	return message
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)

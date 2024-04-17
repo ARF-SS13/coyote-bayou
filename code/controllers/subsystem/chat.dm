@@ -21,6 +21,7 @@ SUBSYSTEM_DEF(chat)
 	var/list/flirts_all_categories = list() // flirt for me, flirt for me, flirt flirt
 
 	var/flirt_debug = TRUE
+	var/debug_block_radio_blurbles = FALSE
 
 	/// list of flirt ckey things so that we can store their target or something
 	/// format: list("flirterckey" = "targetckey")

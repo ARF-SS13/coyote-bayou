@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 		var/atom/thing = new state(null)
 		var/mutable_appearance/generated = new(thing)
 		generated.pixel_x = get_typing_indicator_x_offset()
-		generated.layer = BODY_FRONT_LAYER
+		generated.layer = 100 //BODY_FRONT_LAYER
 		return generated
 	else
 		CRASH("Unsupported typing indicator state: [state]")
