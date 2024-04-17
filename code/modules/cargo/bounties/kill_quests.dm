@@ -1312,8 +1312,8 @@
 	price_per_thing = COINS_TO_CREDITS(5) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5
-	hard_multiplier = 2
-	CBT_multiplier = 2
+	hard_multiplier = 5
+	CBT_multiplier = 6
 
 /datum/bounty_quota/salvage/easy 
 	needed_amount = 10
@@ -1325,7 +1325,7 @@
 
 /datum/bounty_quota/salvage/hard 
 	needed_amount = 20
-	paths_includes_root = FALSE
+	paths_includes_root = TRUE
 	paths = list(
 		/obj/item/salvage/high,
 		/obj/item/salvage/tool
@@ -1334,7 +1334,7 @@
 
 /datum/bounty_quota/salvage/CBT 
 	needed_amount = 30
-	paths_includes_root = FALSE
+	paths_includes_root = TRUE
 	paths = list(
 		/obj/item/salvage/high,
 		/obj/item/salvage/tool
