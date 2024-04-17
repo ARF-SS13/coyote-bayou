@@ -270,8 +270,6 @@
 	damage_list = list("25" = 25, "30" = 25, "35" = 25, "40" = 25)
 	light_range = 2
 	damage_type = BURN
-	cranking_time = 0.6 SECONDS
-	crank_stamina_cost = 10
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	flag = "laser"
@@ -293,9 +291,9 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
 	can_flashlight = 1
 	flight_x_offset = 15
+	flight_y_offset = 10
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
-	flight_y_offset = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
