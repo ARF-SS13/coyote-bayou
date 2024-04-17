@@ -1136,7 +1136,7 @@
 	description = "Our workers here are parched, we'll pay good money for quality, sealed alcohols."
 	flavor_focus = /obj/item/export/bottle
 	weight = 2
-	candupe = FALSE
+	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/sealedbottle/easy,
@@ -1192,7 +1192,7 @@
 	description = "We need some extra weapons for the guild knights, buy, find, or make some."
 	flavor_focus = /obj/item/gun || /obj/item/melee
 	weight = 1
-	candupe = FALSE
+	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/weapon/easy,
@@ -1241,7 +1241,7 @@
 	description = "We're missing some seeds here at the guild, can you just send us some plants over."
 	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
 	weight = 1
-	candupe = FALSE
+	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/growns/easy,
@@ -1290,7 +1290,7 @@
 	description = "We're need more resources, can you send some raw salvage our way."
 	flavor_focus = /obj/item/salvage
 	weight = 1
-	candupe = FALSE
+	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/salvage/easy,
