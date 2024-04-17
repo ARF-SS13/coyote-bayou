@@ -1154,6 +1154,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
+	candupe = TRUE
 	price_per_thing = COINS_TO_CREDITS(100) // Rely on multipliers for this one
 	easy_multiplier = 1.2
 	medium_multiplier = 1.5
@@ -1248,7 +1249,7 @@
 	name = "Collect Plantmatter"
 	description = "We're missing some seeds here at the guild, can you just send us some plants over."
 	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
-	weight = 55
+	weight = 1
 	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
