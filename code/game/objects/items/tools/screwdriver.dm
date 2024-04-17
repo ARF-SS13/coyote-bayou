@@ -47,8 +47,9 @@
 		praying = FALSE
 		return FALSE
 	if(do_after(user, 1 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 1) // Gives you some okay healing, its free. Gets worse the healthier you are
-		to_chat(M, span_notice("[user] finished tightening some bits!"))
+		M.adjustBruteLoss(-2.5, include_roboparts = TRUE) //Screwdriver is for healing both, but not well
+		M.adjustFireLoss(-2.5, include_roboparts = TRUE) 
+		to_chat(M, span_notice("[user] provided general repairs to you!"))
 		praying = FALSE
 		playsound(get_turf(target), 'sound/items/screwdriver.ogg', 100, 1)
 	else

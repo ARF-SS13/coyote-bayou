@@ -37,16 +37,16 @@
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message(span_info("[user] kneels [M == user ? null : " next to [M]"] and begins working some bolts."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begins working some bolts."))
+	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins repairing their dents."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins repairing any dents."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
 	if(do_after(user, 1 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 1) // Gives you some okay healing, its free. Gets worse the healthier you are
-		to_chat(M, span_notice("[user] finished working your bolts!"))
+		M.adjustBruteLoss(-5, include_roboparts = TRUE) //Wrench is for brute
+		to_chat(M, span_notice("[user] finished repairing your dents!"))
 		praying = FALSE
 		playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
 	else
