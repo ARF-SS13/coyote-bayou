@@ -1,6 +1,6 @@
 /obj/item/screwdriver
 	name = "screwdriver"
-	desc = "A long, pointy rod with a handy knob on the base. Used to screw things."
+	desc = "A long, pointy rod with a handy knob on the base. Used to screw things. This can be used for general robot repairs"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver_map"
 	item_state = "screwdriver"

@@ -1,6 +1,6 @@
 /obj/item/wrench
 	name = "wrench"
-	desc = "A wrench with common uses. Can be found in your hand."
+	desc = "A wrench with common uses. Can be found in your hand. This can repair dents in robots."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
