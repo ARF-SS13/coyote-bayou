@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		if(!allofem && !isnull(difficulty) && !isnull(its_difficulty))
 			if(!CHECK_BITFIELD(difficulty, its_difficulty))
 				continue
-		wanted_things += new BQ(src)
+		wanted_things += new BQ()
 	if(!LAZYLEN(wanted_things))
 		return create_quotas(TRUE) // thats it, you're all added
 
