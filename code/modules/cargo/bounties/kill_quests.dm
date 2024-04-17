@@ -1250,6 +1250,7 @@
 	description = "We're missing some seeds here at the guild, can you just send us some plants over."
 	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
 	weight = 1
+	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/growns/easy,
@@ -1270,7 +1271,6 @@
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
 	auto_generate_info = FALSE
-	candupe = TRUE
 	info = "Any raw plant matter such as melons"
 	claimdelay = 0.5
 	price_per_thing = COINS_TO_CREDITS(2) // Rely on multipliers for this one
