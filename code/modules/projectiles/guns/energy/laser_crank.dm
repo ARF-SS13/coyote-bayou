@@ -10,8 +10,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun)
 	var/list/crank_overcharge_mult = list()  //depending on how many overcharge stages the gun has, leave blank if you want no overcharge
 	var/list/crank_overcharge_fire_sounds = list()  //if your overcharged shots have different sounds put the actual paths here
-	var/cranking_time = 1 SECONDS
-	var/crank_stamina_cost = 10
+	var/cranking_time = 0.2 SECONDS
+	var/crank_stamina_cost = 5
 	var/list/crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
@@ -69,13 +69,15 @@
 //Crank to recharge
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
-	//we have to check if the gun is a cranklasergun type, otherwise ignore it
+	crankgun(user)
+
+/obj/item/gun/energy/proc/crankgun(mob/living/user)
 	if(istype(src, /obj/item/gun/energy/laser/cranklasergun))  //does the gun belong to the cranklasergun type we seek?
 		var/obj/item/gun/energy/laser/cranklasergun/firearm = src  //let's assign it a name then
 		var/obj/item/stock_parts/cell/C = src.get_cell()
 
 		var/playsound_volume = 50
-		
+
 		if((C.charge < C.maxcharge) && (!recharge_queued))
 			recharge_queued = 1  //this variable makes it so we can't queue multiple recharges at once, only one at a time (variable gets reset in {/obj/item/gun/shoot_live_shot(mob/living/user)})
 			playsound(user.loc, pick(firearm.crank_sound), playsound_volume, TRUE)
@@ -84,6 +86,7 @@
 				user.apply_damage(firearm.crank_stamina_cost, STAMINA)  //have you ever ridden a bike with a dynamo?
 				C.charge += 1
 				update_icon()
+				crankgun(user)
 				
 				//if it's the overcharged variant, then execute this too
 				if(firearm.crank_overcharge_mult.len)
@@ -214,7 +217,7 @@
 	damage = 30
 ////////////////////////////////////////////////////////////////
 
-/obj/item/gun/energy/laser/cranklasergun/improvised
+/obj/item/gun/energy/laser/cranklasergun/tg
 	name = "improvised laser"
 	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
@@ -222,38 +225,36 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "scraplaser"
 	item_state = "shotguncity"
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/improvised
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/improvised)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
 	ammo_x_offset = 1
 	shaded_charge = 1
-	can_remove = 0 
-	can_charge = 0 
-	can_flashlight = 0
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
-	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
+	max_upgrades = 6 
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto,
 	)
 
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/improvised  //basically a single shot charge
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg  //basically a single shot charge
 	name = "integrated single charge cell"
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5
+	maxcharge = 20
 
 
-/obj/item/ammo_casing/energy/cranklasergun/improvised
+/obj/item/ammo_casing/energy/cranklasergun/tg
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
 	e_cost = 1
 	select_name = "kill"
 
 
-/obj/item/projectile/beam/laser/cranklasergun/improvised
+/obj/item/projectile/beam/laser/cranklasergun/tg
 	name = "blaster bolt"
 	icon_state = "laser"
 	pass_flags = PASSTABLE| PASSGLASS
@@ -272,4 +273,218 @@
 	is_reflectable = TRUE
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
+// THE TG CARBINE
 
+/obj/item/gun/energy/laser/cranklasergun/tg/carbine
+	name = "laser carbine"
+	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
+	icon_state = "lascarbine"
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 25
+
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/carbine
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	e_cost = 1
+	select_name = "kill"
+// TG CARBINE END
+
+// TG PISTOL
+/obj/item/gun/energy/laser/cranklasergun/tg/pistol
+	name = "miniture laser pistol"
+	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains most of the carbine's power, its battery is less efficient due to the size."
+	icon_state = "laspistol"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+// TG PISTOL END
+
+// TG RIFLE
+/obj/item/gun/energy/laser/cranklasergun/tg/rifle
+	name = "laser rifle"
+	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
+	icon_state = "lasrifle"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	init_recoil = LASER_RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 40
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/rifle
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	e_cost = 1
+	select_name = "kill"
+// TG RIFLE END
+
+// TG HEAVY RIFLE
+/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy
+	name = "heavy laser rifle"
+	desc = "Originally designed as a man portable anti-tank weapon, nowadays this massive rifle is mostly used to fry Super Mutants and bandits in Power Armor."
+	icon_state = "lascannon"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy)
+	init_recoil = LASER_RIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/burst/two/fastest,
+		/datum/firemode/semi_auto/fast
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 15
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
+	e_cost = 1
+	fire_sound = 'sound/weapons/pulse.ogg'
+	select_name = "kill"
+
+/obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
+	name = "intense blaster bolt"
+	damage = 60
+	damage_list = list("55" = 25, "60" = 25, "65" = 25, "70" = 25)
+	wound_bonus = 40 // nasty, but it's still a laser.
+	recoil = BULLET_RECOIL_PLASMA
+// TG HEAVY RIFLE END
+
+// TG SMG
+/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto
+	name = "tactical laser rifle"
+	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
+	icon_state = "taclaser"
+	item_state = "p90"
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/auto
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/auto
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 60
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	e_cost = 1
+	select_name = "kill"
+// TG PARTY CANNON
+
+/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon
+	name = "particle cannon"
+	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
+	icon_state = "lassniper"
+	item_state = "esniper"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/particalcannon
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/particalcannon)
+	init_recoil = LASER_RIFLE_RECOIL(2, 3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/particalcannon
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 50
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/particalcannon
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/particalcannon
+	e_cost = 50
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	select_name = "kill"
+
+/obj/item/projectile/beam/cranklasergun/tg/particalcannon
+	name = "hyper-velocity particle beam"
+	icon_state = "emitter"
+	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload in the field
+	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "1000" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
+	wound_bonus = 60 // nasty, but it's still a laser
+	supereffective_damage = 100 // lowered from 150 because you can charge it now
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/xray
+	muzzle_type = /obj/effect/projectile/muzzle/xray
+	impact_type = /obj/effect/projectile/impact/xray
+
+// TG Repeating Blaster
+/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
+	name = "repeating blaster"
+	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
+	icon_state = "spamlaser"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+	/datum/firemode/burst/five/fastest,
+	/datum/firemode/automatic/rpm300,
+	/datum/firemode/automatic/rpm150,
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 62
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
+	e_cost = 0.5
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	select_name = "kill"
+
+/obj/item/projectile/beam/cranklasergun/tg/spamlaser //ultra weak but spammy, duh
+	name = "blaster bolt"
+	damage = 10
+	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
+	recoil = BULLET_RECOIL_HEAVY_LASER

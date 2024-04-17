@@ -474,11 +474,11 @@
 	name = "common energy"
 	loot = list(
 
-		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25 internal cell
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/carbine = 10,         //100 25 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //90  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
-		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//50  125 internal cell
 
 
 		// Better in some way (self charge, plasma, more efficient)
@@ -494,7 +494,7 @@
 	name = "uncommon energy"
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
-		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
+		/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon = 10,          //133 5
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
 		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
 		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
@@ -505,7 +505,7 @@
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
-		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,                   //150 40 internal cell
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
@@ -535,8 +535,8 @@
 	loot = list(                                                    //dps magcap
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80  24 internal cell
-		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy = 10,             //80  24 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 

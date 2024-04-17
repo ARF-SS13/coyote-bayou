@@ -1060,9 +1060,10 @@
  * Can craft super easy
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/scrap
+/*/obj/item/gun/energy/laser/tg/scrap
 	name = "improvised laser"
-	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"*/
+	// Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg
 
 /* * * * * *
  * TG Carbine
@@ -1071,7 +1072,7 @@
  * Spawn Tier; spawns with TG Pistol / Low end loot
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/carbine
+/*/obj/item/gun/energy/laser/tg/carbine
 	name = "laser carbine"
 	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
 	icon_state = "lascarbine"
@@ -1079,7 +1080,7 @@
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 10
-	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)*/ // Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg
 
 /* * * * * *
  * TG Pistol
@@ -1088,7 +1089,7 @@
  * Spawn Tier; spawns with TG carbine / Low end loot
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/carbine/pistol
+/*/obj/item/gun/energy/laser/tg/carbine/pistol
 	name = "miniture laser pistol"
 	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains most of the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
@@ -1098,8 +1099,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	can_flashlight = 0
 	can_scope = FALSE
-	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
-
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1) Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg 
+*/
 /* * * * * *
  * TG Rifle
  * Projectile AER-9 but WAY more shots
@@ -1107,7 +1108,7 @@
  * Uncommon
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/rifle
+/*/obj/item/gun/energy/laser/tg/rifle
 	name = "laser rifle"
 	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
 	icon_state = "lasrifle"
@@ -1120,9 +1121,9 @@
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/two,
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/fast 
 	)
-
+Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 /* * * * * *
  * TG Heavy Rifle
  * Plasma Rifle but laser-typed damage (upgrade from the TG Rifle, sidegrade to the Taclaser)
@@ -1130,7 +1131,7 @@
  * Rare
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/rifle/heavy
+/*/obj/item/gun/energy/laser/tg/rifle/heavy
 	name = "heavy laser rifle"
 	desc = "Originally designed as a man portable anti-tank weapon, nowadays this massive rifle is mostly used to fry Super Mutants and bandits in Power Armor."
 	icon_state = "lascannon"
@@ -1140,6 +1141,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+*/
 
 /* * * * * *
  * TG Taclaser
@@ -1148,7 +1150,7 @@
  * Rare
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/rifle/auto
+/*/obj/item/gun/energy/laser/tg/rifle/auto
 	name = "tactical laser rifle"
 	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
 	icon_state = "taclaser"
@@ -1160,7 +1162,7 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/fast,
 		/datum/firemode/semi_auto/fast
-	)
+	)*/
 
 /* * * * * *
  * TG HOS Pistol
@@ -1276,7 +1278,7 @@
  * Unique
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/particlecannon
+/*/obj/item/gun/energy/laser/tg/particlecannon
 	name = "particle cannon"
 	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
 	icon_state = "lassniper"
@@ -1288,7 +1290,7 @@
 	init_recoil = LASER_RIFLE_RECOIL(2, 3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
-	)
+	)*/
 
 /* * * * * *
  * TG Not-Calico
@@ -1297,7 +1299,7 @@
  * Rare
  * * * * * */
 
-/obj/item/gun/energy/laser/tg/spamlaser
+/*/obj/item/gun/energy/laser/tg/spamlaser
 	name = "repeating blaster"
 	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
 	icon_state = "spamlaser"
@@ -1310,7 +1312,7 @@
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm150,
 	/datum/firemode/semi_auto,
-	)
+	)*/
 
 /* * * * * *
  * XCOM UFO Defense Lasrifle
