@@ -214,7 +214,7 @@
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	if(islist(data) && LAZYACCESS(data, "is_radio") && (data["ckey"] in GLOB.directory) && !SSchat.debug_block_radio_blurbles)
 		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_STATIC))
-			playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+			playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
 		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
 			var/mob/blurbler = ckey2mob(data["ckey"])
 			if(blurbler && blurbler != src)
