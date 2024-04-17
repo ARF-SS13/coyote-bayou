@@ -174,13 +174,16 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 
 	var/prefdo = get_typing_indicator_pref()
 
-	// if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
-	// 	return
+	if(!prefdo || prefdo == GLOB.play_methods[NO_SOUND])	//If the preference is set to "No Sound", don't play anything
+		return
+
+	if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
+		return
 	
-	// if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
-	// 	return
+	if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
+		return
 	
-	if(prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
+	if(do_static && prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
 		playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE)
 		return
 
@@ -201,15 +204,19 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		if(do_static)
 			counter++ // one last on the endge
 		var/timecounter = 0
+		var/static_pause = do_static
 		for(var/i in 1 to counter)
 			timecounter += (rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
-			if(do_static && i == counter)
-				spawn(timecounter)
-					playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
-			else
-				spawn(timecounter)
-					TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
-					playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
+			if(static_pause)
+				timecounter += 3
+				static_pause = FALSE
+				// if(do_static && i == counter)
+				// 	spawn(timecounter * 2)
+				// 		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+				// else
+			spawn(timecounter)
+				TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
+				playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
