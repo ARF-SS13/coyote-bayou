@@ -1135,8 +1135,7 @@
 	name = "Collect Sealed Alcohol"
 	description = "Our workers here are parched, we'll pay good money for quality, sealed alcohols."
 	flavor_focus = /obj/item/export/bottle
-	weight = 2
-	candupe = TRUE
+	weight = 1
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/sealedbottle/easy,
@@ -1163,20 +1162,29 @@
 
 /datum/bounty_quota/sealedbottle/easy // 240c for 200u
 	needed_amount = 2
+	pick_this_many = 0
+	auto_generate_info = FALSE
+	info = "Any sealed bottles."
+	paths = list(
+		/obj/item/export/bottle
+	)
 	difficulty = QUEST_DIFFICULTY_EASY
 
 /datum/bounty_quota/sealedbottle/medium // 750c for 500u
 	needed_amount = 5
+	paths_get_subtypes = TRUE
 	pick_this_many = 4
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/sealedbottle/hard // 2000c for 1000u
 	needed_amount = 10
+	paths_get_subtypes = TRUE
 	pick_this_many = 3
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/sealedbottle/CBT // 4000c for 2000u
 	needed_amount = 20
+	paths_get_subtypes = TRUE
 	difficulty = QUEST_DIFFICULTY_CBT
 	pick_this_many = 2
 
@@ -1208,6 +1216,7 @@
 		/obj/item/gun, /obj/item/melee
 	)
 	needed_amount = 10
+	pick_this_many = 0
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
 	price_per_thing = COINS_TO_CREDITS(15) // Rely on multipliers for this one
@@ -1239,7 +1248,7 @@
 	name = "Collect Plantmatter"
 	description = "We're missing some seeds here at the guild, can you just send us some plants over."
 	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
-	weight = 1
+	weight = 55
 	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
@@ -1257,8 +1266,12 @@
 		/obj/item/reagent_containers/food/snacks/grown
 	)
 	needed_amount = 10
+	pick_this_many = 0
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
+	auto_generate_info = FALSE
+	info = "Any raw plant matter such as melons"
+	claimdelay = 0.5
 	price_per_thing = COINS_TO_CREDITS(2) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5

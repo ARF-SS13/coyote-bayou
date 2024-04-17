@@ -252,7 +252,7 @@
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 250
 	select_name = "kill"
 
@@ -298,7 +298,7 @@
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 200
 	select_name = "kill"
 // TG CARBINE END
@@ -360,7 +360,7 @@
 	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 125
 	select_name = "kill"
 // TG RIFLE END
@@ -430,7 +430,7 @@
 	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 83
 	select_name = "kill"
 // TG PARTY CANNON
@@ -507,7 +507,7 @@
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
 	e_cost = 40 //Gets 6 shots per charge
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	select_name = "kill"
 
 /obj/item/projectile/beam/cranklasergun/tg/spamlaser //ultra weak but spammy, duh
