@@ -1150,7 +1150,7 @@
 /datum/bounty_quota/sealedbottle
 	name = "Find some sealed bottles"
 	paths = list(
-		/obj/item/export/bottle,
+		/obj/item/export/bottle
 	)
 	needed_amount = 10
 	paths_get_subtypes = TRUE
@@ -1167,20 +1167,17 @@
 
 /datum/bounty_quota/sealedbottle/medium // 750c for 500u
 	needed_amount = 5
-	paths_includes_root = FALSE
 	pick_this_many = 4
 	difficulty = QUEST_DIFFICULTY_MED
 
 /datum/bounty_quota/sealedbottle/hard // 2000c for 1000u
 	needed_amount = 10
-	paths_includes_root = FALSE
 	pick_this_many = 3
 	difficulty = QUEST_DIFFICULTY_HARD
 
 /datum/bounty_quota/sealedbottle/CBT // 4000c for 2000u
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT
-	paths_includes_root = FALSE
 	pick_this_many = 2
 
 /// Blacksmith trading ///
@@ -1306,7 +1303,9 @@
 /datum/bounty_quota/salvage
 	name = "Find some raw salvage"
 	paths = list(
-		/obj/item/salvage
+		/obj/item/salvage/low,
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
 	)
 	needed_amount = 10
 	paths_get_subtypes = TRUE
