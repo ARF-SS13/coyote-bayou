@@ -174,11 +174,14 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 
 	var/prefdo = get_typing_indicator_pref()
 
-	// if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
-	// 	return
+	if(!prefdo || prefdo == GLOB.play_methods[NO_SOUND])	//If the preference is set to "No Sound", don't play anything
+		return
+
+	if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
+		return
 	
-	// if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
-	// 	return
+	if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
+		return
 	
 	if(prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
 		playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE)
@@ -205,7 +208,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 			timecounter += (rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
 			if(do_static && i == counter)
 				spawn(timecounter)
-					playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+					playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
 			else
 				spawn(timecounter)
 					TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
