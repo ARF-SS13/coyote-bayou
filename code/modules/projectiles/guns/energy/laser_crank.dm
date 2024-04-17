@@ -253,12 +253,12 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 2500
+	maxcharge = 5000
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
-	e_cost = 125
+	e_cost = 250
 	select_name = "kill"
 
 
