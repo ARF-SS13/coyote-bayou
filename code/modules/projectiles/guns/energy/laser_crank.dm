@@ -68,8 +68,8 @@
 //-->Gun mechanics
 //Crank to recharge
 /obj/item/gun/energy/attack_self(mob/living/user)
-  . = ..()
-  crankgun(user)
+	. = ..()
+	crankgun(user)
 
 /obj/item/gun/energy/proc/crankgun(mob/living/user)
 	if(istype(src, /obj/item/gun/energy/laser/cranklasergun))  //does the gun belong to the cranklasergun type we seek?
