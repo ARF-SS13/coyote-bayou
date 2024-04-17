@@ -233,8 +233,14 @@
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 
-	cranking_time = 0.6 SECONDS
+	cranking_time = 1.2 SECONDS
 	crank_stamina_cost = 10
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank_mb1.ogg',
+		'sound/effects/dynamo_crank/dynamo_crank_mb2.ogg',
+		'sound/effects/dynamo_crank/dynamo_crank_mb3.ogg',
+	)
+
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
@@ -287,6 +293,11 @@
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 10
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
+	cranking_time = 0.6 SECONDS
+	crank_stamina_cost = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
@@ -312,6 +323,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cranking_time = 0.2 SECONDS
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
 	crank_stamina_cost = 2.5 // Requires more time, but less stamina
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/pistol)
@@ -343,6 +357,9 @@
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
 	can_flashlight = 1
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
 	flight_x_offset = 20
 	flight_y_offset = 10
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
@@ -415,6 +432,9 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
+	crank_sound = list(
+		'sound/weapons/laserPump.ogg',
+	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
