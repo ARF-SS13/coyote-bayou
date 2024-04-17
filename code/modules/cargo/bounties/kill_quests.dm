@@ -1205,6 +1205,8 @@
 ///// WEAPON QUOTAS /////
 /datum/bounty_quota/weapon
 	name = "Find some weapons"
+	auto_generate_info = FALSE
+	info = "Melee or Ranged weapons"
 	paths = list(
 		/obj/item/gun, /obj/item/melee
 	)
@@ -1325,7 +1327,6 @@
 
 /datum/bounty_quota/salvage/hard 
 	needed_amount = 20
-	paths_includes_root = TRUE
 	paths = list(
 		/obj/item/salvage/high,
 		/obj/item/salvage/tool
@@ -1334,7 +1335,6 @@
 
 /datum/bounty_quota/salvage/CBT 
 	needed_amount = 30
-	paths_includes_root = TRUE
 	paths = list(
 		/obj/item/salvage/high,
 		/obj/item/salvage/tool
