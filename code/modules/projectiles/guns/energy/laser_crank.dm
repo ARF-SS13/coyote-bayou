@@ -233,7 +233,7 @@
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 
-	cranking_time = 1.2 SECONDS
+	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -241,11 +241,6 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm100
-	)
-	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank_mb1.ogg',
-		'sound/effects/dynamo_crank/dynamo_crank_mb2.ogg',
-		'sound/effects/dynamo_crank/dynamo_crank_mb3.ogg',
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg  //basically a single shot charge
@@ -295,9 +290,6 @@
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
-	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank.mp3',
-	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
 	name = "integrated single charge cell"
@@ -326,9 +318,6 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/pistol)
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
-	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank.mp3',
-	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol //basically a single shot charge
 	name = "integrated single charge cell"
@@ -359,15 +348,11 @@
 	flight_x_offset = 20
 	flight_y_offset = 10
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
-	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank.mp3',
-	)
 	init_firemodes = list(
 		/datum/firemode/burst/two,
 		/datum/firemode/semi_auto/fast,
 		/datum/firemode/automatic/rpm75 
 	)
-
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
 	name = "integrated single charge cell"
@@ -507,13 +492,10 @@
 	icon_state = "spamlaser"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
-	cranking_time = 1 SECONDS // Basically costs nothing
+	cranking_time = 2 SECONDS // Basically costs nothing
 	crank_stamina_cost = 10
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
-	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank.mp3',
-	)
 	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm150,
