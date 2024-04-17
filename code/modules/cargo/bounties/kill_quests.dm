@@ -1198,7 +1198,6 @@
 	description = "We need some extra weapons for the guild knights, buy, find, or make some."
 	flavor_focus = /obj/item/gun || /obj/item/melee
 	weight = 1
-	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/weapon/easy,
@@ -1216,6 +1215,7 @@
 	paths = list(
 		/obj/item/gun, /obj/item/melee
 	)
+	candupe = TRUE
 	needed_amount = 10
 	pick_this_many = 0
 	paths_get_subtypes = TRUE
@@ -1250,7 +1250,6 @@
 	description = "We're missing some seeds here at the guild, can you just send us some plants over."
 	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
 	weight = 1
-	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/growns/easy,
@@ -1271,6 +1270,7 @@
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
 	auto_generate_info = FALSE
+	candupe = TRUE
 	info = "Any raw plant matter such as melons"
 	claimdelay = 0.5
 	price_per_thing = COINS_TO_CREDITS(2) // Rely on multipliers for this one
@@ -1303,7 +1303,6 @@
 	description = "We're need more resources, can you send some raw salvage our way."
 	flavor_focus = /obj/item/salvage
 	weight = 1
-	candupe = TRUE
 	request_mode = QUEST_FULFILL_ALL
 	init_wanteds = list(
 		/datum/bounty_quota/salvage/easy,
@@ -1313,7 +1312,7 @@
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
-///// FARMER QUOTAS /////
+///// SALVAGE QUOTAS /////
 /datum/bounty_quota/salvage
 	name = "Find some raw salvage"
 	paths = list(
@@ -1324,6 +1323,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
+	candupe = TRUE
 	price_per_thing = COINS_TO_CREDITS(5) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5
