@@ -4262,6 +4262,12 @@
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/purple,
 /area/f13/brotherhood/rnd)
+"bSZ" = (
+/obj/structure/table/wood,
+/obj/item/key,
+/obj/item/lock_construct,
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "bTf" = (
 /obj/structure/chair/stool/retro/tan,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -12243,9 +12249,10 @@
 	},
 /area/f13/building)
 "fdj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/tree/cherryblossom,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
 /area/f13/underground/cave)
 "fdp" = (
 /obj/machinery/atmospherics/pipe/simple{
@@ -13011,6 +13018,14 @@
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"fuv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/tent,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "fuJ" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 1
@@ -16577,6 +16592,13 @@
 /obj/structure/sign/directions/cells,
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
+"gWY" = (
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/underground/cave)
 "gXb" = (
 /obj/structure/dresser,
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
@@ -20375,8 +20397,10 @@
 	},
 /area/f13/bunker)
 "iLt" = (
-/obj/structure/flora/tree/cherryblossom4,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/chair/comfy/plywood{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
 /area/f13/underground/cave)
 "iLw" = (
 /obj/machinery/light{
@@ -21633,6 +21657,11 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"joC" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/dice,
+/turf/open/floor/carpet/purple,
+/area/f13/underground/cave)
 "joK" = (
 /obj/effect/decal/remains/human,
 /obj/structure/nest/gecko/boss,
@@ -21875,6 +21904,11 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"jvl" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheetpurple,
+/turf/open/floor/carpet/purple,
+/area/f13/underground/cave)
 "jvG" = (
 /mob/living/simple_animal/hostile/eyebot,
 /obj/machinery/shower{
@@ -21895,10 +21929,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
 "jwm" = (
-/obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/closed/wall/f13/tentwall,
 /area/f13/underground/cave)
 "jwq" = (
 /turf/open/indestructible/ground/inside/dirt,
@@ -24588,6 +24620,10 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
+"kFw" = (
+/obj/structure/dresser,
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "kFL" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -29740,6 +29776,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
+"mQT" = (
+/obj/structure/simple_door/tent,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "mQZ" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -30233,6 +30276,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"nbi" = (
+/obj/structure/closet/crate/wooden,
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "nbl" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -32042,6 +32089,12 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/grass,
 /area/f13/underground/cave/vault/fourfivefour)
+"nOu" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/floor/wood_common,
+/area/f13/underground/cave)
 "nOF" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
@@ -34223,9 +34276,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "oIU" = (
-/obj/structure/flora/ausbushes/leafybush,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/closed/wall/f13/tentwall,
 /area/f13/underground/cave)
 "oJu" = (
 /obj/machinery/light/floor,
@@ -36497,6 +36548,10 @@
 /area/f13/bunker/bighornbunker)
 "pEV" = (
 /area/f13/brotherhood/rnd)
+"pEX" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/purple,
+/area/f13/underground/cave)
 "pFg" = (
 /obj/structure/chair{
 	dir = 4
@@ -44201,9 +44256,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "sUz" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/carpet/purple,
 /area/f13/underground/cave)
 "sUA" = (
 /obj/structure/spider/stickyweb,
@@ -51095,17 +51148,10 @@
 	},
 /area/f13/brotherhood/mining)
 "vSD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/ausbushes/brflowers{
-	light_power = 3;
-	light_color = "#008080";
-	light_range = 2
+/obj/structure/chair/comfy/plywood{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/glitter/blue{
-	color = "#444499";
-	layer = 3
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/carpet/purple,
 /area/f13/underground/cave)
 "vSG" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -54657,12 +54703,7 @@
 "xyq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/ausbushes/brflowers{
-	light_power = 3;
-	light_color = "#008080";
-	light_range = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/closed/wall/f13/tentwall,
 /area/f13/underground/cave)
 "xyw" = (
 /obj/effect/decal/cleanable/dirt,
@@ -55249,6 +55290,7 @@
 /area/f13/enclave)
 "xME" = (
 /obj/structure/simple_door/interior,
+/obj/item/lock_bolt,
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
 "xMF" = (
@@ -103705,12 +103747,12 @@ whv
 whv
 whv
 whv
-whv
-eLQ
-xZG
+oIU
+oIU
+jwm
+xyq
 xyq
 jwm
-xZG
 mBe
 dvC
 dpM
@@ -103962,12 +104004,12 @@ whv
 whv
 whv
 whv
-whv
-eLQ
-agk
-uYM
-dpM
-agk
+oIU
+nOu
+qbZ
+nOu
+qbZ
+fuv
 dvC
 odm
 dvC
@@ -104219,11 +104261,11 @@ whv
 whv
 whv
 whv
-whv
-aQL
-uYM
+oIU
 iLt
-fio
+iLt
+iLt
+qbZ
 jTM
 jTM
 jTM
@@ -104476,16 +104518,16 @@ whv
 whv
 whv
 whv
-whv
-pAR
-dvC
-sTA
-dvC
+oIU
+joC
+joC
+pEX
+qbZ
 jTM
 ahz
 ufD
 jTM
-xME
+gWY
 jTM
 jTM
 jTM
@@ -104733,11 +104775,11 @@ whv
 whv
 whv
 whv
-whv
-fdj
-hQb
+oIU
 vSD
-uYM
+vSD
+vSD
+qbZ
 jTM
 eBv
 ufD
@@ -104990,11 +105032,11 @@ whv
 whv
 whv
 whv
-whv
+oIU
 fdj
-sUz
-hQb
-hQb
+qbZ
+fdj
+qbZ
 jTM
 jTM
 jTM
@@ -105247,11 +105289,11 @@ whv
 whv
 whv
 whv
-whv
-eLQ
-eLQ
 oIU
-dvC
+oIU
+oIU
+oIU
+mQT
 jTM
 tOR
 nrd
@@ -105504,11 +105546,11 @@ whv
 whv
 whv
 whv
-whv
-eLQ
-pAR
-wqd
-pAR
+oIU
+kFw
+bSZ
+nOu
+qbZ
 jTM
 dWy
 ojI
@@ -105761,11 +105803,11 @@ whv
 whv
 whv
 whv
-whv
-kgq
-kgq
-kgq
-kgq
+oIU
+sUz
+sUz
+qbZ
+qbZ
 oIj
 uEV
 nrd
@@ -106018,11 +106060,11 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+oIU
+jvl
+sUz
+fdj
+nbi
 jTM
 jTM
 jTM
@@ -106275,12 +106317,12 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
+oIU
+oIU
+oIU
+oIU
+oIU
+oIU
 whv
 whv
 whv
