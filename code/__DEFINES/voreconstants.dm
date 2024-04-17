@@ -304,3 +304,4 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define LUST_TARGET (1<<2)
 
 #define RADIOPREF_HEAR_RADIO_BLURBLES "hear_staticky_chittering"
+#define RADIOPREF_HEAR_RADIO_STATIC "hear_staticky_clicks"

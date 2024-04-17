@@ -198,12 +198,18 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		var/TI_frequency
 		if (!isnum(counter))                                                            //something went wrong with the counter and it needs to be fixed. Quick, do SOMETHING!
 			counter = 4
+		if(do_static)
+			counter++ // one last on the endge
 		var/timecounter = 0
 		for(var/i in 1 to counter)
 			timecounter += (rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
-			spawn(timecounter)
-				TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
-				playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
+			if(do_static && i == counter)
+				spawn(timecounter)
+					playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+			else
+				spawn(timecounter)
+					TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
+					playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
