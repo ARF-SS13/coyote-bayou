@@ -297,7 +297,9 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, M)
 	signal.data["is_radio"] = TRUE
 	signal.data["suppress_blurbles"] = suppress_blurbles
-
+	if(!suppress_blurbles)
+		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+	
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
 		signal.data["compression"] = 0
