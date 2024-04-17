@@ -433,7 +433,7 @@
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
 	crank_sound = list(
-		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+		'sound/weapons/laserPump.ogg',
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
