@@ -1127,3 +1127,56 @@
 	name = initial(thing.name)
 	paths = list(pick(thing)) // guaranteed fresh at time of baking
 
+////SEALED ALCOHOL QUOTA////
+
+/datum/bounty/kill/sealedbottle
+	name = "Collect Sealed Alcohol"
+	description = "Our workers here are parched, we'll pay good money for quality, sealed alcohols."
+	flavor_focus = /obj/item/export/bottle
+	weight = 2
+	candupe = FALSE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/sealedbottle/easy,
+		/datum/bounty_quota/sealedbottle/medium,
+		/datum/bounty_quota/sealedbottle/hard,
+		/datum/bounty_quota/sealedbottle/CBT,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// BOTTLE QUOTAS /////
+/datum/bounty_quota/sealedbottle
+	name = "Find some sealed bottles"
+	paths = list(
+		/obj/item/export/bottle,
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS_TO_CREDITS(100) // Rely on multipliers for this one
+	easy_multiplier = 1.2
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2 
+
+/datum/bounty_quota/sealedbottle/easy // 240c for 200u
+	needed_amount = 2
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/sealedbottle/medium // 750c for 500u
+	needed_amount = 5
+	paths_includes_root = FALSE
+	pick_this_many = 4
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/sealedbottle/hard // 2000c for 1000u
+	needed_amount = 10
+	paths_includes_root = FALSE
+	pick_this_many = 3
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/sealedbottle/CBT // 4000c for 2000u
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_CBT
+	paths_includes_root = FALSE
+	pick_this_many = 2

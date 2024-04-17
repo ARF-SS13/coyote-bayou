@@ -293,7 +293,7 @@
 					// 	vary = TRUE, //decides wether or not the really goofy pitch shift function happens
 					// 	extrarange = 0, //extra range in tiles from the source of the sound, starts at 17.  Adjust there in. Or use '= SOUND_DISTNACE(# of tiles)'
 					// 	ignore_walls = FALSE, //Is it loud enough to be heard like your parents making you a new sibling?
-						
+
 					// 	falloff_exponent = SOUND_FALLOFF_EXPONENT, //From here down is generally unused
 					// 	frequency = null,
 					// 	channel = 0,
@@ -595,7 +595,8 @@
 		/datum/reagent/consumable/grey_bull,
 		/datum/reagent/consumable/sol_dry,
 		/datum/reagent/consumable/cream_soda,
-		/datum/reagent/consumable/big_red
+		/datum/reagent/consumable/big_red,
+		/datum/reagent/consumable/boba
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,

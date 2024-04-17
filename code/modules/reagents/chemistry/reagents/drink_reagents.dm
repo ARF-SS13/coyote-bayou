@@ -1476,3 +1476,13 @@
 	if(M.getToxLoss() && DT_PROB(10, delta_time))
 		M.adjustToxLoss(-0.5, 0)
 	return ..()
+
+/datum/reagent/consumable/boba
+	name = "boba"
+	description = "round ball things to make boba tea with."
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "boba"
+	glass_icon_state = "boba"
+	glass_name = "glass of boba"
+	glass_desc = "pops full of tastyness!"
+	value = REAGENT_VALUE_VERY_COMMON

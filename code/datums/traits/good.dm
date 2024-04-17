@@ -130,6 +130,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	/datum/crafting_recipe/armyhelmetheavy,
 	/datum/crafting_recipe/huntingshotgun))
 
+GLOBAL_LIST_INIT(security_expert, list(
+	/datum/crafting_recipe/lockpick_basic,
+	/datum/crafting_recipe/lockpick_improved))
+
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -1906,6 +1910,28 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
 
+/datum/quirk/beesfriend
+	name = "Beast Friend - Radbees"
+	desc = "Rad-bees are not going to attack upon seeing you. Good for wasteland apiarists!"
+	value = 14
+	category = "Critter Quirks"
+	mechanics = "Radbees share their faction with you, meaning they won't do anything about you or care at all that you exist."
+	mob_trait = TRAIT_BEASTFRIEND_BEE
+	gain_text = span_notice("(Rad)Bee not afraid!")
+	lose_text = span_danger("(Rad)BEE AFRAID!!")
+	medical_record_text = "Patient talks about bees a lot. Radiated ones, specifically."
+	locked = FALSE
+	human_only = FALSE
+
+/datum/quirk/beesfriend/add()
+	var/mob/living/H = quirk_holder
+	H.faction |= list("bees-friend")
+
+/datum/quirk/beesfriend/remove()
+	var/mob/living/H = quirk_holder
+	if(H)
+		H.faction -= list("bees-friend")
+
 /datum/quirk/wildshape
 	name = "Wild Shape"
 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
@@ -2898,3 +2924,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+
+/datum/quirk/security_expert
+	name = "Security Expert"
+	desc = "You've got a knack for getting into places you shouldn't be."
+	mob_trait = TRAIT_SECURITYEXPERT
+	value = 20
+	category = "Lifepath Quirks"
+	mechanics = "You can craft and use lockpicking sets to open doors and lockboxes."
+	conflicts = list()
+
+/datum/quirk/security_expert/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes += GLOB.security_expert
+
+/datum/quirk/security_expert/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.security_expert

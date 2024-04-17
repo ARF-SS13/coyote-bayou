@@ -1134,6 +1134,97 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.maxHealth -= 20
 	H.health -= 20
 
+/datum/quirk/catastrophicflimsy
+	name = "Health - Catastrophic"
+	desc = "Your body is made of papermache, most attacks are serious."
+	value = -55
+	category = "Health Quirks"
+	mechanics = "Your maximum hitpoints are reduced to 50%."
+	conflicts = list(
+		/datum/quirk/lifegiverplus,
+		/datum/quirk/lifegiver,
+		/datum/quirk/flimsy,
+		/datum/quirk/veryflimsy,
+	)
+	mob_trait = TRAIT_VERYFLIMSY
+	medical_record_text = "Patient is considerably less durable than average."
+	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
+	lose_text = "<span class='notice'>You start feeling as durable as your peers."
+	human_only = FALSE
+
+/datum/quirk/catastrophicflimsy/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 50
+	H.health -= 50
+
+/datum/quirk/fatalflimsy
+	name = "Health - Fatal"
+	desc = "Your body is made of sticks and twigs, rats are a serious threat. Single hits can be fatal"
+	value = -77
+	category = "Health Quirks"
+	mechanics = "Your maximum hitpoints are reduced to 20 points above crit. Not for the faint of heart."
+	conflicts = list(
+		/datum/quirk/lifegiverplus,
+		/datum/quirk/lifegiver,
+		/datum/quirk/flimsy,
+		/datum/quirk/veryflimsy,
+		/datum/quirk/catastrophicflimsy
+	)
+	mob_trait = TRAIT_FATALFLIMSY
+	medical_record_text = "Patient is considerably less durable than average."
+	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
+	lose_text = "<span class='notice'>You start feeling as durable as your peers."
+	human_only = FALSE
+
+/datum/quirk/fatalflimsy/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 80
+	H.health -= 80
+
+/datum/quirk/weakpaintolerance
+	name = "Pain Tolerance - Weak"
+	desc = "Your pain tolerance is really low. Pain is a good thing, and keeps you out of serious danger."
+	gain_text = span_danger("You feel wimpy...")
+	lose_text = span_notice("You feel stronger.")
+	value = -5
+	category = "Health Quirks"
+	mechanics = "You go into softcrit at 50 points of damage, but Your total health is unchanged. Good for new players"
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryweakpaintolerance)
+
+/datum/quirk/weakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 50
+
+/datum/quirk/veryweakpaintolerance
+	name = "Pain Tolerance - Very Weak"
+	desc = "Your pain tolerance is incredibly low. Pain is a good thing, and keeps you out of serious danger, but this is annoying. Good for new players"
+	gain_text = span_danger("You feel really wimpy...")
+	lose_text = span_notice("You feel much stronger.")
+	value = -15
+	category = "Health Quirks"
+	mechanics = "You go into crit at 20 points of damage, but your total health is unchanged. This includes all damage, include toxins from radiation, and oxygen from bloodloss"
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/weakpaintolerance)
+
+/datum/quirk/veryweakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 80
+
+/datum/quirk/extremelyweakpaintolerance
+	name = "Pain Tolerance - Total Wimp"
+	desc = "You don't know what pain is, because you pass out before you can experience it. Doesnt come with the bottom quirk for free"
+	gain_text = span_danger(":point_up::nerd::speech_balloon:")
+	lose_text = span_notice("You feel much stronger.")
+	value = -30
+	category = "Health Quirks"
+	mechanics = "You go into crit at 1 point of damage, but your total health is unchanged. Radiation can paralyze you until treated and bloodloss oxygen damage is lethal."
+	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/flimsy, /datum/quirk/weakpaintolerance)
+
+/datum/quirk/extremelyweakpaintolerance/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.crit_threshold = 99
+
+
+
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
@@ -1438,6 +1529,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = span_notice("Your arms are invigorated!")
 	medical_record_text = "Patient has an exceptionally weak muscolar system."
 	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"
+
 /datum/quirk/bruteweak
 	name = "Brute Weakness, Minor"
 	desc = "You're weaker to physical trauma than others."
@@ -1448,7 +1540,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteresistmajor,
-		/datum/quirk/bruteweakmajor
+		/datum/quirk/bruteweakmajor,
+		/datum/quirk/bruteweakfatal
 		)
 
 /datum/quirk/bruteweak/add()
@@ -1471,7 +1564,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteresistmajor,
-		/datum/quirk/bruteweak
+		/datum/quirk/bruteweak,
+		/datum/quirk/bruteweakfatal
 		)
 
 /datum/quirk/bruteweakmajor/add()
@@ -1480,6 +1574,29 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	species.brutemod = 1.2
 
 /datum/quirk/bruteweakmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1
+
+/datum/quirk/bruteweakfatal
+	name = "Brute Weakness, Fatal"
+	desc = "You're fatally weak to physical trauma than others. Paper tiger!"
+	mob_trait = TRAIT_BRUTEWEAKFATAL
+	value = -66
+	category = "Health Quirks"
+	mechanics = "You take 50% more brute damage."
+	conflicts = list(
+		/datum/quirk/bruteresist,
+		/datum/quirk/bruteresistmajor,
+		/datum/quirk/bruteweak
+		)
+
+/datum/quirk/bruteweakfatal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.brutemod = 1.5
+
+/datum/quirk/bruteweakfatal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.brutemod = 1
@@ -1494,7 +1611,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnresistmajor,
-		/datum/quirk/burnweakmajor
+		/datum/quirk/burnweakmajor,
+		/datum/quirk/burnweakfatal
 )
 
 /datum/quirk/burnweak/add()
@@ -1517,7 +1635,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnresistmajor,
-		/datum/quirk/burnweak
+		/datum/quirk/burnweak,
+		/datum/quirk/burnweakfatal
 )
 
 /datum/quirk/burnweakmajor/add()
@@ -1526,6 +1645,29 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	species.burnmod = 1.2
 
 /datum/quirk/burnweakmajor/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1
+
+/datum/quirk/burnweakfatal
+	name = "Burn Weakness, Fatal"
+	desc = "You're fatally weak to burns. Your skin is kindling!"
+	mob_trait = TRAIT_BURNWEAKMAJOR
+	value = -66
+	category = "Health Quirks"
+	mechanics = "You take 50% more burn damage."
+	conflicts = list(
+		/datum/quirk/burnresist,
+		/datum/quirk/burnresistmajor,
+		/datum/quirk/burnweak
+)
+
+/datum/quirk/burnweakfatal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.burnmod = 1.5
+
+/datum/quirk/burnweakfatal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1

@@ -110,7 +110,7 @@
 #define CAT_SPAGHETTI	"Food Spaghettis"
 #define CAT_ICE	"Food Frozen"
 #define CAT_MEDICAL "Medical"
-// #define CAT_BOTTLE "Bottling"
+#define CAT_BOTTLE "Bottling"
 #define CAT_GENCLOTHES "Wardrobe"
 #define CAT_ARMOR "Armor"
 #define CAT_PARMOR "Power Armor"

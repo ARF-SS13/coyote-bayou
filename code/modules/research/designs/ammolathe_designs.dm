@@ -364,7 +364,16 @@
 	id = "greasegunmag"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/greasegun/empty
-	category = list("initial", "Basic Magazines")
+	category = list("initial", "Basic Magazines") 
+
+	
+
+/datum/design/ammolathe/vssmag
+	name = "empty vss magazine (9mm)"
+	id = "vssmag"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/vss/empty
+	category = list("initial", "Basic Magazines") 
 
 /datum/design/ammolathe/mini_uzimag
 	name = "empty mini uzi magazine (9mm)"

@@ -1,9 +1,7 @@
+#define KILL_INVALID_SPAWN 3
 SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
 	wait = 2 SECONDS //change to either 30 MINUTES or 1 HOURS
-	var/successful_firing = 0
-	var/allowed_firings = 9000
-	var/chance_of_fire = 100 //Fuuck you, people need mobs to shoot! -TK
 	/// big list of all the spawners that have been destroyed
 	var/list/spawner_tickets = list() // list(/datum/nest_box)
 	/// big list of all the spawner lads in existence
@@ -17,6 +15,8 @@ SUBSYSTEM_DEF(monster_wave)
 	var/spawn_block_delay = 5 MINUTES
 	/// coords of spawn blocker devices per Z level
 	var/list/spawn_blockers = list() // list(/obj/structure/respawner_blocker)
+	var/num_spawned = 0
+	var/highest_gen = 0
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
@@ -24,37 +24,60 @@ SUBSYSTEM_DEF(monster_wave)
 //and changing allowed_firings to like.... 12?
 //     ^This guy was a coward. ~TK
 
+/datum/controller/subsystem/monster_wave/stat_entry(msg)
+	msg = "T:[num_spawned],G:[highest_gen],S:[LAZYLEN(spawner_tickets)],M:[LAZYLEN(spawner_lads)],B:[LAZYLEN(spawn_blockers)],C:[round(cost,0.005)]"
+	return msg
+
+
 /datum/controller/subsystem/monster_wave/fire(resumed = 0)
 	ticket2mob()
 	mob2hole()
 
 /datum/controller/subsystem/monster_wave/proc/ticket2mob()
 	var/tries = 50
-	while(tries-- > 0)
-		if(!LAZYLEN(spawner_tickets))
-			return
-		var/datum/nest_box/NB = pick(spawner_tickets)
-		if(!istype(NB) || QDELETED(NB))
-			continue
-		if(NB.time_i_died + NB.delayed_by + nest_respawndelay > world.time)
-			continue
-		var/turf/there = coords2turf(NB.coords)
-		if(!there)
+	mainloop:
+		while(tries-- > 0)
+			if(!LAZYLEN(spawner_tickets))
+				return
+			var/datum/nest_box/NB = pick(spawner_tickets)
+			if(!istype(NB) || QDELETED(NB))
+				continue
+			if(NB.time_i_died + NB.delayed_by + nest_respawndelay > world.time)
+				continue
+			var/turf/there = coords2turf(NB.coords)
+			if(!there)
+				unregister_nest_seed(NB)
+				qdel(NB)
+				continue
+			if(is_spawn_blocked(there))
+				NB.delayed_by += spawn_block_delay
+				continue
+			var/can_put = can_place_riftnest(there)
+			if(can_put == KILL_INVALID_SPAWN)
+				unregister_nest_seed(NB)
+				qdel(NB)
+				continue
+			else if(!can_put)
+				for(var/turf/somewhere in spiral_range(dist=3, center=there, orange=1))
+					can_put = can_place_riftnest(somewhere)
+					if(can_put == KILL_INVALID_SPAWN)
+						unregister_nest_seed(NB)
+						qdel(NB)
+						continue mainloop
+					else if(can_put)
+						there = somewhere
+						break
+			if(can_put == KILL_INVALID_SPAWN)
+				unregister_nest_seed(NB)
+				qdel(NB)
+				continue
+			else if(!can_put)
+				continue
+			NB.mutate() // >:3c
+			var/mob/living/simple_animal/nest_spawn_hole_guy/NSHG = new(there)
+			NSHG.set_up(NB)
 			unregister_nest_seed(NB)
-			continue
-		if(there.density)
-			for(var/turf/somewhere in range(7, there))
-				if(!somewhere.density)
-					there = somewhere
-					break
-		if(is_spawn_blocked(there))
-			NB.delayed_by += spawn_block_delay
-			continue
-		NB.mutate() // >:3c
-		var/mob/living/simple_animal/nest_spawn_hole_guy/NSHG = new(there)
-		NSHG.set_up(NB)
-		unregister_nest_seed(NB)
-		tries = round(tries * 0.5)
+			return TRUE
 
 /datum/controller/subsystem/monster_wave/proc/mob2hole()
 	var/tries = 50
@@ -64,7 +87,14 @@ SUBSYSTEM_DEF(monster_wave)
 		if(!istype(NSHG) || QDELETED(NSHG))
 			continue
 		if(NSHG.deploy_if_ready())
-			tries = round(tries * 0.5)
+			return TRUE
+
+/datum/controller/subsystem/monster_wave/proc/spawned_a_nest()
+	num_spawned++
+
+/datum/controller/subsystem/monster_wave/proc/catalogue_me(datum/nest_box/NB)
+	if(NB.generation > highest_gen)
+		highest_gen = NB.generation
 
 /datum/controller/subsystem/monster_wave/proc/is_spawn_blocked(turf/here)
 	if(!here)
@@ -78,6 +108,20 @@ SUBSYSTEM_DEF(monster_wave)
 		if(get_dist(RB, here) <= maxdist)
 			RB.blocked_something()
 			return TRUE
+
+/datum/controller/subsystem/monster_wave/proc/can_place_riftnest(turf/here)
+	if(!here)
+		return FALSE
+	if(locate(/obj/structure/nest) in here)
+		return KILL_INVALID_SPAWN
+	if(locate(/mob/living/simple_animal/nest_spawn_hole_guy) in here)
+		return FALSE
+	if(here.density)
+		return FALSE
+	for(var/atom/movable/thing in here)
+		if(thing.density)
+			return FALSE
+	return TRUE
 
 /datum/controller/subsystem/monster_wave/proc/get_spawn_delay()
 	return spawn_delay + world.time
@@ -112,6 +156,11 @@ SUBSYSTEM_DEF(monster_wave)
 	AIStatus = AI_OFF
 	var/datum/nest_box/nest_seed
 	var/spawn_after = 0
+	light_system = STATIC_LIGHT
+	light_range = 11
+	light_power = 0.7
+	light_color = "#6eaaff"
+	light_on = TRUE
 
 /mob/living/simple_animal/nest_spawn_hole_guy/Initialize(datum/nest_box/NB)
 	if(NB)
@@ -156,8 +205,14 @@ SUBSYSTEM_DEF(monster_wave)
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/deploy_if_ready(do_it_now)
 	if(!nest_seed)
 		return
+	if(SSmonster_wave.is_spawn_blocked(src))
+		death()
+		return
 	if(!COOLDOWN_FINISHED(src, spawn_after) && !do_it_now)
 		return
+	if(locate(/obj/structure/nest) in get_turf(src))
+		death()
+		return TRUE
 	. = TRUE
 	/// time to make the nest!
 	var/datum/nest_box/NB = nest_seed
@@ -169,6 +224,7 @@ SUBSYSTEM_DEF(monster_wave)
 		do_sparks(3, FALSE, src, /datum/effect_system/spark_spread/quantum)
 		break
 	SSmonster_wave.unregister_hole(src)
+	SSmonster_wave.spawned_a_nest()
 	qdel(src)
 
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/im_hit()
@@ -291,4 +347,16 @@ SUBSYSTEM_DEF(monster_wave)
 	RB.my_component = src
 	forceMove(RB)
 
+/obj/effect/landmark/hardmode_spawner
+	name = "Hardmode thing spawner"
+	var/difficulty = 1
+
+/obj/effect/landmark/hardmode_spawner/easy
+	name = "Hardmode Easy thing spawner"
+
+/obj/effect/landmark/hardmode_spawner/medium
+	name = "Hardmode Medium thing spawner"
+
+/obj/effect/landmark/hardmode_spawner/hard
+	name = "Hardmode Hard thing spawner"
 

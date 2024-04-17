@@ -15,6 +15,7 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
+	var/praying = FALSE
 	custom_materials = list(/datum/material/iron=75)
 	attack_verb = list("stabbed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -25,6 +26,35 @@
 	reskinnable_component = /datum/component/reskinnable/screwdriver
 	wound_bonus = -10
 	bare_wound_bonus = 5
+
+/obj/item/screwdriver/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	var/mob/living/carbon/human/target = M
+	if(!target || !isrobotic(target))
+		return FALSE
+
+	if(praying)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels [M == user ? null : "next to [M]"] and begins to tighten their bits."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins tightening their bits."))
+
+	praying = TRUE
+	if(!target || !isrobotic(target))
+		praying = FALSE
+		return FALSE
+	if(do_after(user, 1 SECONDS, target = M)) 
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 1) // Gives you some okay healing, its free. Gets worse the healthier you are
+		to_chat(M, span_notice("[user] finished tightening some bits!"))
+		praying = FALSE
+		playsound(get_turf(target), 'sound/items/screwdriver.ogg', 100, 1)
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		praying = FALSE
+
 
 /obj/item/screwdriver/Initialize()
 	. = ..()

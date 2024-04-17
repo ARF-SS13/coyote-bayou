@@ -459,7 +459,7 @@
 				"NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Recon Ranger",
 				"NCR Scout", "NCR Scout Sergeant", "NCR Scout Lieutenant",
 				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
-				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler", "Vertibird Pilot", "New Boston Librarian",
+				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler", "Vertibird Pilot", "Librarian",
 				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Forager", "Chief", "Shaman", "Villager", "Harvest Leader", "Spiritual Leader", "Forager")
 
 /proc/get_all_job_icons() //For all existing HUD icons

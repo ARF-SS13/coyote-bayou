@@ -70,7 +70,7 @@
 	custom_materials = list(/datum/material/iron = 1000)
 	total_mass = 3.4
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/captain_saber
+	block_parry_data = /datum/block_parry_data/bokken
 
 /datum/block_parry_data/captain_saber
 	parry_time_windup = 0.5
@@ -129,7 +129,7 @@
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	total_mass = 0.4
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/traitor_rapier
+	block_parry_data = /datum/block_parry_data/bokken
 
 // Fast, efficient parry.
 /datum/block_parry_data/traitor_rapier

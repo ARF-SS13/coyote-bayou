@@ -633,6 +633,7 @@
 #define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
+#define COMSIG_SPAWNER_REMOVE_MOB_FROM_NEST "remove_from_spawner_spawner" // Spawns something now!
 
 /// Blenderbrain signals
 /// Signals sent from the Persona Core to the host
@@ -757,6 +758,8 @@
 #define COMSIG_BOUNTYPROGRAM_GET_NUMBER_OF_ACTIVE_QUESTS "bounty_get_numofques" // ()
 #define COMSIG_BOUNTYPROGRAM_HAS_QUEST "COMSIG_BOUNTYPROGRAM_HAS_QUEST" // (datum/source, datum/bounty/B)
 #define COMSIG_BOUNTYPROGRAM_EXISTS "COMSIG_BOUNTYPROGRAM_EXISTS" // (hi)
+
+#define COMSIG_ATOM_QUEST_SCANNED "quest_scanned" // (datum/source, mob/scanner)
 
 #define COMSIG_GET_BUTCHER_EFFECTIVENESS "COMSIG_GET_BUTCHER_EFFECTIVENESS" // ()
 #define COMSIG_GET_BUTCHER_BONUS_MODIFIER "COMSIG_GET_BUTCHER_BONUS_MODIFIER" // ()

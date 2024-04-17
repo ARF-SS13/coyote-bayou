@@ -69,6 +69,7 @@
 #define GRASS_SPONTANEOUS 		  	2
 #define GRASS_WEIGHT			  	8
 #define RAND_PLANT_CHANCE			50
+#define HIDDEN_STASH_CHANCE			0.2
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
@@ -160,7 +161,14 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/wasteplant/rose = 2,
 	/obj/structure/flora/wasteplant/lily = 2,
 	/obj/structure/flora/wasteplant/forgetmenot = 2,
-	/obj/structure/flora/wasteplant/geranium =2
+	/obj/structure/flora/wasteplant/geranium =2,
+	/obj/structure/flora/wasteplant/tomato = 2,
+	/obj/structure/flora/wasteplant/watermelon =2,
+	/obj/structure/flora/wasteplant/grape = 2,
+	/obj/structure/flora/wasteplant/pumpkin = 2,
+	/obj/structure/flora/wasteplant/corn = 2,
+	/obj/structure/flora/wasteplant/carrot = 2
+
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(

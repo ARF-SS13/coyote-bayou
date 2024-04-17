@@ -550,7 +550,16 @@
 /datum/crafting_recipe/papermask	//Citadel item
 	name = "Paper Mask"
 	result = /obj/item/clothing/mask/paper
-	reqs = list(/obj/item/paper = 20)
+	reqs = list(/obj/item/paper = 1) //I don't think this requires an entire paper bin for a mask
+	tools = list() //Why does cutting a piece of paper into a circle require a workbench?
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES	//F13 category
+
+/datum/crafting_recipe/cigarpipe	//Citadel item
+	name = "Cigarette Pipe"
+	result = /obj/item/clothing/mask/cigarette/pipe/cigarpipe
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
 	category = CAT_CLOTHING

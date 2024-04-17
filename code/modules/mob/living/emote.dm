@@ -557,6 +557,24 @@
 	message = "smirks."
 	message_param = "smirks at %t."
 
+/datum/emote/living/smugsmirk
+	key = "smugsmirk"
+	key_third_person = "smirks smugly."
+	message = "smirks smugly."
+	message_param = "smirks smugly at %t."
+
+/datum/emote/living/smuggrin
+	key = "smuggrin"
+	key_third_person = "grins smugly."
+	message = "grins smugly."
+	message_param = "grins smugly at %t."
+
+/datum/emote/living/leer
+	key = "leer"
+	key_third_person = "leers"
+	message = "leers."
+	message_param = "leers at %t."
+
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
@@ -2324,6 +2342,20 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "tilts"
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
+
+/datum/emote/living/rizz
+	key = "rizz"
+	key_third_person = "rizzler"
+	message = "<span class='hypnophrase'>radiates powerful rizz</span>"
+	message_param = "<span class='hypnophrase'>%t.</span>" //Funny color text
+	sound = "modular_splurt/sound/voice/rizz.ogg"
+
+/datum/emote/living/threaten
+	key = "threaten"
+	key_third_person = "threaten"
+	message = "<span class='velvet'>radiates a menacing aura.</span>"
+	message_param = "<span class='velvet'>%t.</span>" //Funny red text
+	sound = "modular_splurt/sound/voice/waterphone.ogg"
 
 //Slime start
 

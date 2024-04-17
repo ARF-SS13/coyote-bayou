@@ -3,6 +3,8 @@
 #define MINOR_INSANITY_PEN 5
 #define MAJOR_INSANITY_PEN 10
 #define MOOD_INSANITY_MALUS 0.13 // 13% debuff per sanity_level above the default of 4 (higher is worser), overall a 39% debuff to skills at rock bottom depression.
+#define MOOD_SOUND_COOLDOWN 5 SECONDS
+
 
 /datum/component/mood
 	var/mood //Real happiness
@@ -18,6 +20,7 @@
 	var/datum/skill_modifier/great_mood/bonus
 	var/static/malus_id = 0
 	var/static/list/free_maluses = list()
+	var/next_mood_sound_time = 0
 
 /datum/component/mood/Initialize()
 	if(!isliving(parent))
@@ -112,45 +115,50 @@
 			shown_mood += event.mood_change
 		mood *= mood_modifier
 		shown_mood *= mood_modifier
-	var/mob/living/owner = parent	
+	var/mob/living/owner = parent
+	var/mood_sound = null
 	switch(mood)
 		if(-INFINITY to MOOD_LEVEL_SAD4)
 			mood_level = 1
 			to_chat(owner, span_warning("WAHGARBL! THIS IS HORRIBLE!!"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
+			mood_sound = 'sound/f13effects/karma_down.ogg'
 		if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
 			mood_level = 2
 			to_chat(owner, span_warning("This has got to be the lowest I've ever felt. Surely I can do something to make this better?"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
+			mood_sound = 'sound/f13effects/karma_down.ogg'
 		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
 			mood_level = 3
 			to_chat(owner, span_warning("I can't believe things have been going so badly lately, can it get any worse?"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
+			mood_sound = 'sound/f13effects/karma_down.ogg'
 		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
 			mood_level = 4
 			to_chat(owner, span_warning("Maybe things aren't so good, but-"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
+			mood_sound = 'sound/f13effects/karma_down.ogg'
 		if(MOOD_LEVEL_SAD1 to MOOD_LEVEL_HAPPY1)
 			mood_level = 5
 			to_chat(owner, span_good("Oh, but... Things aren't so bad, but-"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
+			mood_sound = 'sound/f13effects/karma_up.ogg'
 		if(MOOD_LEVEL_HAPPY1 to MOOD_LEVEL_HAPPY2)
 			mood_level = 6
 			to_chat(owner, span_good("This is nice but-"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
+			mood_sound = 'sound/f13effects/karma_up.ogg'
 		if(MOOD_LEVEL_HAPPY2 to MOOD_LEVEL_HAPPY3)
 			mood_level = 7
 			to_chat(owner, span_good("I feel good about life and the universe! But-"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
+			mood_sound = 'sound/f13effects/karma_up.ogg'
 		if(MOOD_LEVEL_HAPPY3 to MOOD_LEVEL_HAPPY4)
 			mood_level = 8
 			to_chat(owner, span_good("Have things ever been better than they are RIGHT NOW, but what if-"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
+			mood_sound = 'sound/f13effects/karma_up.ogg'
 		if(MOOD_LEVEL_HAPPY4 to INFINITY)
 			mood_level = 9
 			to_chat(owner, span_warning("WAHGARBL! EVERYTHING IS AWESOME!"))
-			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
-	update_mood_icon()
+			mood_sound = 'sound/f13effects/karma_up.ogg'
+
+	if(!isnull(mood_sound) && (world.time >= next_mood_sound_time))
+		SEND_SOUND(owner, sound(mood_sound))
+		next_mood_sound_time = world.time + MOOD_SOUND_COOLDOWN
+	//update_mood_icon()
 
 
 /datum/component/mood/proc/update_mood_icon()
@@ -158,10 +166,29 @@
 	if(owner.client && owner.hud_used)
 		if(sanity < 25)
 			screen_obj.icon_state = "mood_insane"
+			screen_obj.color = rgb(255, 0, 0)
+			return
 		else if (owner.has_status_effect(/datum/status_effect/chem/enthrall))//Fermichem enthral chem, maybe change?
 			screen_obj.icon_state = "mood_entrance"
 		else
 			screen_obj.icon_state = "mood[mood_level]"
+			switch(sanity)
+				if(-INFINITY to SANITY_UNSTABLE)
+					screen_obj.color = rgb(255, 158, 13)
+					return
+				if(SANITY_UNSTABLE to SANITY_DISTURBED)
+					screen_obj.color = rgb(255, 217, 0)
+					return
+				if(SANITY_DISTURBED to SANITY_NEUTRAL)
+					screen_obj.color = null
+					return
+				if(SANITY_NEUTRAL to SANITY_GREAT)
+					screen_obj.color = rgb(139, 206, 32)
+					return
+				if(SANITY_GREAT + 1 to INFINITY)
+					screen_obj.color = rgb(0, 231, 220)
+					return
+				
 
 /datum/component/mood/process() //Called on SSobj process
 	if(QDELETED(parent)) // workaround to an obnoxious sneaky periodical runtime.
@@ -255,7 +282,7 @@
 			free_maluses += malus
 			malus = null
 
-	//update_mood_icon()
+	update_mood_icon()
 
 /datum/component/mood/proc/setInsanityEffect(newval)//More code so that the previous proc works
 	if(newval == insanity_effect)

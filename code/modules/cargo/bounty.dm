@@ -213,7 +213,9 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	. = TRUE
 	SSeconomy.mark_quest_submission(thing, user, BQ)
 	BQ.Claim(thing, user)
+	var/dump_eet = TRUE
 	if(is_complete())
+		dump_eet = FALSE
 		to_chat(user, span_greentext("'[name]' completed!"))
 		to_chat(user, span_green("Claim your reward in the Quest Book!"))
 		playsound(get_turf(user), 'sound/effects/quest_complete.ogg', 90)
@@ -229,9 +231,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		playsound(get_turf(user), 'sound/effects/bleeblee.ogg', 75)
 	if(SEND_SIGNAL(thing, COMSIG_MOB_IS_IMPORTANT))
 		SEND_SIGNAL(thing, COMSIG_ATOM_BUTCHER, user, 70, 0, TRUE, FALSE)
+	if(dump_eet)
+		SEND_SIGNAL(thing, COMSIG_ATOM_QUEST_SCANNED, user)
 	if(BQ.delete_thing)
 		if(prob(0.1))
-			thing.audible_message("[thing] goes to brazil :)")
+			thing.audible_message(span_clown("[thing] goes to brazil :)"))
 		FancyDelete(thing)
 	else
 		var/image/I = image('icons/effects/effects.dmi', thing, "shield-flash-longer", thing.layer+1)

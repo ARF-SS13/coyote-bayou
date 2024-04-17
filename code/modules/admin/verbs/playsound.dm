@@ -33,8 +33,8 @@
 	message_admins("[key_name_admin(src)] played sound [S]")
 
 	for(var/mob/M in GLOB.player_list)
-		if(M.client.prefs.toggles & SOUND_MIDI)
-			admin_sound.volume = vol * M.client.admin_music_volume
+		if(M?.client?.prefs?.toggles & SOUND_MIDI)
+			admin_sound.volume = vol * M?.client.admin_music_volume
 			SEND_SOUND(M, admin_sound)
 			admin_sound.volume = vol
 
@@ -126,12 +126,13 @@
 		if(web_sound_url || stop_web_sounds)
 			for(var/m in GLOB.player_list)
 				var/mob/M = m
-				var/client/C = M.client
-				if(C.prefs.toggles & SOUND_MIDI)
-					if(!stop_web_sounds)
-						C.tgui_panel?.play_music(web_sound_url, music_extra_data)
-					else
-						C.tgui_panel?.stop_music()
+				var/client/C = M?.client
+				if(C)
+					if(C.prefs.toggles & SOUND_MIDI)
+						if(!stop_web_sounds)
+							C.tgui_panel?.play_music(web_sound_url, music_extra_data)
+						else
+							C.tgui_panel?.stop_music()
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Internet Sound")
 
@@ -175,7 +176,7 @@
 
 		for(var/m in GLOB.player_list)
 			var/mob/M = m
-			var/client/C = M.client
+			var/client/C = M?.client
 			if(C.prefs.toggles & SOUND_MIDI)
 				C.tgui_panel?.play_music(web_sound_input, music_extra_data)
 
@@ -203,6 +204,6 @@
 	message_admins("[key_name_admin(src)] stopped all currently playing sounds.")
 	for(var/mob/M in GLOB.player_list)
 		SEND_SOUND(M, sound(null))
-		var/client/C = M.client
+		var/client/C = M?.client
 		C?.tgui_panel?.stop_music()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop All Playing Sounds") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
