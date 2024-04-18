@@ -1102,6 +1102,31 @@ h1.alert, h2.alert {
   }
 }
 
+.private	{
+  color: #00BB80;
+  font-weight: bold;
+  animation: private 3000ms;
+  animation-direction: linear;
+}
+
+@keyframes private {
+	0% {
+    color: #006734;
+  }
+	10% {
+    color: #00FF00;
+  }
+	20% {
+    color: #006734;
+  }
+	30% {
+    color: #00FF00;
+  }
+	100% {
+    color: #00BB80;
+  }
+}
+
 .icon {
   height: 1em;
   width: auto;
