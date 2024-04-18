@@ -135,6 +135,9 @@
 	// 	return // gun can shoot, maybe
 	tick_selfcharge()
 
+/obj/item/gun/energy/attack_self(mob/living/user)
+	trigger_selfcharge(user)
+
 /obj/item/gun/energy/proc/trigger_selfcharge(mob/user)
 	if(selfcharge_initiated)
 		to_chat(user, span_alert("[src]'s self-charge cycle cannot be stopped!!!"))
