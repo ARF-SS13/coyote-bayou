@@ -768,7 +768,7 @@
 	race = /datum/species/feral/wolf
 
 /datum/species/feral/shepard
-	name = "shepherd"
+	name = "Feral Shepard"
 	id = "sheperd"
 	icon = 'icons/fallout/mobs/animals/dogs.dmi'
 	icon_dead_suffix = "_dead"
