@@ -921,23 +921,3 @@ armor	//Baseline hardsuits
 	. += span_notice("Alt-click to recolor it.")
 
 /* Custom Hardsuits */
-
-/obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm
-	name = "type IIIA hazard powersuit"
-	desc = "This heavily modified Cydonian powersuit sports specialized components and titanium plating to protect against CBRN hazards \
-	along with laser and plasma projectiles. However, shock absorbers and layers of kevlar had to be sacrificed to make it all fit. \
-	In addition, while it retains the standard model's mobility, the added bulk makes fine manipulation more difficult."
-	stiffness = HEAVY_STIFFNESS
-	armor_tokens = null
-	armor = list(\
-		"melee" = 15, \
-		"bullet" = 25, \
-		"laser" = 50, \
-		"energy" = 25, \
-		"bomb" = 15, \
-		"bio" = 100, \
-		"rad" = 75, \
-		"fire" = 40, \
-		"acid" = 75, \
-		"wound" = 10, \
-		"damage_threshold" = 5)
