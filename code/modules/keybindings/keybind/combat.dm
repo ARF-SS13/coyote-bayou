@@ -118,10 +118,10 @@
 
 	//let's find someone to kill.
 	var/turf/crimescene = locate(murderer.x + xdiff, murderer.y + ydiff, murderer.z)
-	var/mob/living/victim = locate(crimescene)
+	var/mob/living/victim = locate() in crimescene
 	if(!istype(victim))
 		crimescene = locate(murderer.x + xdiff * 2, murderer.y + ydiff * 2, murderer.z)
-		victim = locate(crimescene)
+		victim = locate() in crimescene
 
 		//so no victim?
 		if(!istype(victim))
