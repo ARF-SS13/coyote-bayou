@@ -1213,6 +1213,5 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	[span_warning("span_warning")]\n\
 	[span_yell("span_yell")]\n\
 	[span_yellowteamradio("span_yellowteamradio")]\n\
-	[span_private("span_private")]\n\
 	")
 
