@@ -1449,14 +1449,15 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/mineral/wasteland_vendor/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
-	if(stored_caps > C.max_amount)
-		C.add(C.max_amount - 1)
-		C.forceMove(src.loc)
-		stored_caps -= C.max_amount
-	else
-		C.add(stored_caps - 1)
-		C.forceMove(src.loc)
-		stored_caps = 0
+	payout(floor(stored_caps), null, FALSE, TRUE)
+	// var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
+	// if(stored_caps > C.max_amount)
+	// 	C.add(C.max_amount - 1)
+	// 	C.forceMove(src.loc)
+	// 	stored_caps -= C.max_amount
+	// else
+	// 	C.add(stored_caps - 1)
+	// 	C.forceMove(src.loc)
+	stored_caps = 0
 	playsound(src, 'sound/items/coinflip.ogg', 60, 1)
 	src.ui_interact(usr)

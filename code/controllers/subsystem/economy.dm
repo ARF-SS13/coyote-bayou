@@ -829,6 +829,9 @@ SUBSYSTEM_DEF(economy)
 	stuff |= get_all_in_turf(thing)
 	mainloop:
 		for(var/atom/thingy in stuff)
+			var/mob/living/no_stealing = recursive_loc_path_search(thingy, /mob/living, 7)
+			if(no_stealing && no_stealing.ckey)
+				continue mainloop // no stealing things from players
 			for(var/uid in active_quests)
 				var/datum/bounty/B = LAZYACCESS(active_quests, uid)
 				if(B.attempt_turn_in(thingy,user,TRUE))
