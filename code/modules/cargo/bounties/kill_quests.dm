@@ -1192,7 +1192,7 @@
 /// Blacksmith trading ///
 /// So blacksmiths can like, literally get any money?///
 /// POV: You found a single cool knife in a dungeon ///
-
+/*
 /datum/bounty/kill/weapons
 	name = "Collect Weapons"
 	description = "We need some extra weapons for the guild knights, buy, find, or make some."
@@ -1241,7 +1241,7 @@
 /datum/bounty_quota/weapon/cocknballtorture 
 	needed_amount = 40
 	difficulty = QUEST_DIFFICULTY_CBT
-
+*/ // maybe searching through all 400+ guns and melee weapons at once isn't a good idea 
 ///Farming Stuff, good for farmers
 /// Mmhhhhhhhhnghnm MElum :)
 
