@@ -1156,7 +1156,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 				our_paper.throw_at(T, 100, 1, null, TRUE)
 
 /datum/autolathe_loop_returns/proc/get_grade()
-	var/stuff_recycled = -min_to_print
+	var/stuff_recycled = 0
 	for(var/thing in paths_inserted)
 		var/numof = paths_inserted[thing]
 		if(!isnum(numof) || !isfinite(numof))
@@ -1167,18 +1167,19 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 			else if(ispath(thing, /obj/item/ammo_casing/a40mm))
 				numof *= 4
 		else if(ispath(thing, /obj/item/stack))
-			continue // so you cant just take stuff out and put it back in
+			numof *= 0.25 // so you cant just take stuff out and put it back in
 		var/obj/item/thingy = thing
 		var/toolspeed = initial(thingy.toolspeed)
 		if(toolspeed)
 			numof /= max(toolspeed, 0.00001)
 		stuff_recycled += numof
 	var/score = 0
-	var/cool_mean = floor(sqrt(stuff_recycled ** 1.025) ** 0.9)
-	var/cool_sd = sqrt(cool_mean)
+	var/cool_mean = floor(abs(sqrt(abs(stuff_recycled) ** 1.025) ** 0.9))
+	var/cool_sd = sqrt(abs(cool_mean))
 	score = gaussian(cool_mean, cool_sd)
 	score = rand(score, gaussian(score, sqrt(score)))
 	score = floor(score + rand(score*0.25, score*3))
+	score = abs(score)
 	if((world.time % 60) > 57)
 		score *= 2 // good luck!
 	switch(score)
