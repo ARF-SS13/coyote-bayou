@@ -81,7 +81,7 @@
 		if((C.charge < C.maxcharge) && (!recharge_queued))
 			recharge_queued = 1  //this variable makes it so we can't queue multiple recharges at once, only one at a time (variable gets reset in {/obj/item/gun/shoot_live_shot(mob/living/user)})
 			playsound(user.loc, pick(firearm.crank_sound), playsound_volume, TRUE)
-			if(do_after(user, firearm.cranking_time, target = src, allow_movement = FALSE))
+			if(do_after(user, firearm.cranking_time, target = src, allow_movement = TRUE))
 				recharge_queued = 0
 				user.apply_damage(firearm.crank_stamina_cost, STAMINA)  //have you ever ridden a bike with a dynamo?
 				C.charge += 250
