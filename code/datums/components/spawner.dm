@@ -139,7 +139,7 @@
 	// 	register_turfs()
 	// else
 	old_spawner_check = TRUE
-	if(!delay_start)
+	if(!delay_start && !am_special)
 		start_spawning()
 
 // /datum/component/spawner/proc/register_turfs()
@@ -318,16 +318,16 @@
 /datum/component/spawner/proc/old_spawn()
 	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
 		return
-	if(COOLDOWN_FINISHED(src, spawn_until))
-		deactivate()
+	// if(COOLDOWN_FINISHED(src, spawn_until))
+	// 	deactivate()
 	if(should_destroy_spawner())
 		qdel(parent)
 		return
-	if(!active)
-		if(!something_in_range())
-			return
-		activate()
-	if(active)
+	// if(!active)
+	// 	if(!something_in_range())
+	// 		return
+	// 	activate()
+	if(something_in_range())
 		try_to_spawn()
 
 /// turns itself on for another 20ish seconds
