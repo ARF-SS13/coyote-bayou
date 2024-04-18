@@ -662,6 +662,22 @@
 /mob/living/carbon/human/species/catslug
 	race = /datum/species/feral/catslug
 
+/datum/species/feral/werewolf
+	name = "Feral Werewolf"
+	id = "playerwolf"
+	simple_icon = 'modular_splurt/icons/mob/werewolf.dmi'
+	icon_width = 64
+	alt_prefixes = list("Skull Headed" = "skull_", "Ice" = "ice_")
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+	default_color = "FFFFFF"
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
+/mob/living/carbon/human/species/werewolf
+	race = /datum/species/feral/werewolf
+
 /datum/species/feral/chocobo
 	name = "Feral Chocobo"
 	id = "chocobo"
