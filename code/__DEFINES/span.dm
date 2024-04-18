@@ -71,6 +71,7 @@
 #define span_his_grace(str) ("<span class='his_grace'>" + str + "</span>")
 #define span_holoparasite(str) ("<span class='holoparasite'>" + str + "</span>")
 #define span_hypnophrase(str) ("<span class='hypnophrase'>" + str + "</span>")
+#define span_private(str) ("<span class='private'>" + str + "</span>")
 
 #define span_icon(str) ("<span class='icon'>" + str + "</span>")
 #define span_inathneq(str) ("<span class='inathneq'>" + str + "</span>")
