@@ -2347,15 +2347,29 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key = "rizz"
 	key_third_person = "rizzler"
 	message = "<span class='hypnophrase'>radiates powerful rizz</span>"
-	message_param = "<span class='hypnophrase'>%t.</span>" //Funny color text
+	message_param = "<span class='hypnophrase'>%t</span>" //Funny color text
 	sound = "modular_splurt/sound/voice/rizz.ogg"
 
 /datum/emote/living/threaten
 	key = "threaten"
 	key_third_person = "threaten"
 	message = "<span class='velvet'>radiates a menacing aura.</span>"
-	message_param = "<span class='velvet'>%t.</span>" //Funny red text
+	message_param = "<span class='velvet'>%t</span>" //Funny red text
 	sound = "modular_splurt/sound/voice/waterphone.ogg"
+
+/datum/emote/living/accusation
+	key = "accuse"
+	key_third_person = "accusation"
+	message = "says, <span class='blockytext'>O B J E C T I O N !!</span>"
+	message_param = "<span class='blockytext'>%t</span>" //Funny block text
+	sound = "modular_splurt/sound/voice/deathglare.ogg"
+
+/datum/emote/living/urgent
+	key = "urgent"
+	key_third_person = "urgency"
+	message = "<span class='urgent'>draws attention to themselves!</span>"
+	message_param = "<span class='urgent'>%t</span>" //Funny block text
+	sound = "modular_splurt/sound/voice/alienbeeper.ogg"
 
 //Slime start
 
