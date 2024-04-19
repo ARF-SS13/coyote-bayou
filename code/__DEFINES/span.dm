@@ -72,6 +72,11 @@
 #define span_holoparasite(str) ("<span class='holoparasite'>" + str + "</span>")
 #define span_hypnophrase(str) ("<span class='hypnophrase'>" + str + "</span>")
 #define span_private(str) ("<span class='private'>" + str + "</span>")
+#define span_urgent(str) ("<span class='urgent'>" + str + "</span>")
+#define span_softlove(str) ("<span class='softlove'>" + str + "</span>")
+#define span_glitch(str) ("<span class='glitch'>" + str + "</span>")
+#define span_blockytext(str) ("<span class='blockytext'>" + str + "</span>")
+
 
 #define span_icon(str) ("<span class='icon'>" + str + "</span>")
 #define span_inathneq(str) ("<span class='inathneq'>" + str + "</span>")
