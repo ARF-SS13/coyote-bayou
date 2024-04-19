@@ -767,6 +767,19 @@
 /mob/living/carbon/human/species/wolf
 	race = /datum/species/feral/wolf
 
+/datum/species/feral/shepard
+	name = "Feral Shepard"
+	id = "sheperd"
+	simple_icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_dead_suffix = "_dead"
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = TRUE
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/shepard
+	race = /datum/species/feral/shepard
+
 /datum/species/feral/dog
 	name = "Feral Dog"
 	id = "dog_feral"
