@@ -10,6 +10,12 @@ SUBSYSTEM_DEF(typinginit)
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/typinginit/Initialize()
+	if(!LAZYLEN(GLOB.typing_sounds))
+		populate_typing_list()
+
+	. = ..()
+
+/datum/controller/subsystem/typinginit/proc/populate_typing_list()
 	var/list/typingPaths = typesof(/datum/typing_sound)
 	
 	var/datum/typing_sound/currentSound = null
@@ -18,7 +24,6 @@ SUBSYSTEM_DEF(typinginit)
 		currentSound.AddToList()
 		currentSound = null
 
-	. = ..()
 
 // The new sound files!
 // name 					The unique key, CASE SENSITIVE, cannot be duplicates.
