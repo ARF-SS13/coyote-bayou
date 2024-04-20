@@ -188,7 +188,7 @@
 	var/list/faction = list()
 
 	/// Until we have traveled this many tiles (diagonals included) we FORCE faction on!
-	var/safety_range = 1
+	var/safety_range = 30 // set this bitch to thirty and call it a week
 	var/safety_switch = FALSE
 
 	var/bonus_crit_rolls = 1
