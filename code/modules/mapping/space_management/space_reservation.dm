@@ -15,6 +15,13 @@
 	turf_type = /turf/open/space/transit
 	borderturf = /turf/open/space/transit/border
 
+/datum/turf_reservation/dungeon
+	borderturf = /turf/closed/indestructible/f13/matrix
+
+/datum/turf_reservation/dungeon/New()
+	turf_type = world.turf
+	. = ..()
+
 /datum/turf_reservation/proc/Release()
 	var/v = reserved_turfs.Copy()
 	for(var/i in reserved_turfs)

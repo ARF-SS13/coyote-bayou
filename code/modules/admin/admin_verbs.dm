@@ -187,6 +187,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
 	/client/proc/map_template_loadtest,
+	/client/proc/dungeon_test_load,
+	/client/proc/dungeon_stress_test, //creates a bunch of random dungeons
 	/client/proc/jump_to_ruin,
 	/client/proc/clear_dynamic_transit,
 	/client/proc/toggle_medal_disable,
