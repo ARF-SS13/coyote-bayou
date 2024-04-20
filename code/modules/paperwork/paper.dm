@@ -399,6 +399,42 @@
 /obj/item/paper/crumpled/muddy
 	icon_state = "scrap_mud"
 
+/obj/item/paper/report_card
+	var/grade = "F" // See me after class
+	
+/obj/item/paper/report_card/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(fridge_report_card_get_value))
+
+/obj/item/paper/report_card/proc/fridge_report_card_get_value()
+	switch(grade)
+		if("P")
+			return 2500
+		if("S")
+			return 1000 // we're going out for frosty chocolate milkshakes
+		if("A+")
+			return 250
+		if("A")
+			return 200
+		if("A-")
+			return 175
+		if("B+")
+			return 75
+		if("B")
+			return 50
+		if("B-")
+			return 10
+		if("C+")
+			return 5
+		if("C")
+			return 1
+		else
+			return 0 // If I get a 75% or below, I dont pass, and neither will you
+
+
+
+
+
 #undef MAX_PAPER_LENGTH
 #undef MAX_PAPER_STAMPS
 #undef MAX_PAPER_STAMPS_OVERLAYS

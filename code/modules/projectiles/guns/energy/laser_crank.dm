@@ -81,7 +81,7 @@
 		if((C.charge < C.maxcharge) && (!recharge_queued))
 			recharge_queued = 1  //this variable makes it so we can't queue multiple recharges at once, only one at a time (variable gets reset in {/obj/item/gun/shoot_live_shot(mob/living/user)})
 			playsound(user.loc, pick(firearm.crank_sound), playsound_volume, TRUE)
-			if(do_after(user, firearm.cranking_time, target = src, allow_movement = FALSE))
+			if(do_after(user, firearm.cranking_time, target = src, allow_movement = TRUE))
 				recharge_queued = 0
 				user.apply_damage(firearm.crank_stamina_cost, STAMINA)  //have you ever ridden a bike with a dynamo?
 				C.charge += 250
@@ -233,8 +233,14 @@
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 
-	cranking_time = 0.6 SECONDS
+	cranking_time = 1.2 SECONDS
 	crank_stamina_cost = 10
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank_mb1.ogg',
+		'sound/effects/dynamo_crank/dynamo_crank_mb2.ogg',
+		'sound/effects/dynamo_crank/dynamo_crank_mb3.ogg',
+	)
+
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
@@ -252,7 +258,7 @@
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 250
 	select_name = "kill"
 
@@ -287,6 +293,11 @@
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 10
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
+	cranking_time = 0.6 SECONDS
+	crank_stamina_cost = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
@@ -298,7 +309,7 @@
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 200
 	select_name = "kill"
 // TG CARBINE END
@@ -312,6 +323,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cranking_time = 0.2 SECONDS
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
 	crank_stamina_cost = 2.5 // Requires more time, but less stamina
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/pistol)
@@ -343,6 +357,9 @@
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
 	can_flashlight = 1
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
 	flight_x_offset = 20
 	flight_y_offset = 10
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
@@ -360,7 +377,7 @@
 	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 125
 	select_name = "kill"
 // TG RIFLE END
@@ -415,6 +432,9 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
 	cranking_time = 0.6 SECONDS
 	crank_stamina_cost = 10
+	crank_sound = list(
+		'sound/weapons/laserPump.ogg',
+	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -430,7 +450,7 @@
 	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto
-	projectile_type = /obj/item/projectile/beam/cranklasergun/tg
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 83
 	select_name = "kill"
 // TG PARTY CANNON
@@ -507,7 +527,7 @@
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
 	e_cost = 40 //Gets 6 shots per charge
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	select_name = "kill"
 
 /obj/item/projectile/beam/cranklasergun/tg/spamlaser //ultra weak but spammy, duh

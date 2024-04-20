@@ -1934,12 +1934,11 @@
 	new /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn(src)
 
 /datum/gear/donator/kits/kelprunner02
-	name = "Cydonian Armor"
+	name = "Invisible Backpack"
 	path = /obj/item/storage/box/large/custom_kit/kelprunner02
 	ckeywhitelist = list("Kelprunner")
 
 /obj/item/storage/box/large/custom_kit/kelprunner02/PopulateContents()
-	new /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm(src)
 	new /obj/item/storage/backpack/invisipack(src)
 
 /datum/gear/donator/kits/kelprunner03
