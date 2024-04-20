@@ -30,6 +30,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
+	attack_verb = list("smacked", "bapped", "bopped", "bonked", "slapped", "whipped")
+	force = 15
+	backstab_multiplier = 1.5
+	throwforce = 0
 
 	//Main variables
 	var/owner = null // String name of owner
