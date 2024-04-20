@@ -1224,7 +1224,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features_override["hair_color_2"]	= sanitize_hexcolor(features_override["hair_color_2"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["hair_style_2"]	= sanitize_inlist(features_override["hair_style_2"], GLOB.hair_styles_list, "Bald")
-
+	
+	if(!LAZYLEN(GLOB.typing_sounds))
+		SStypinginit.populate_typing_list()//This list is initialized late, so if a savefile is saved during initialization (they almost always are), they might lose their sound selection. Manually populate it early, in that case.
 	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_sounds, "Default")//
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
 	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "Speed: Average (2)")
