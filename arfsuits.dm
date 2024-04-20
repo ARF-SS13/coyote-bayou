@@ -710,7 +710,7 @@
 	icon_state = "poland"
 	item_state = "poland"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	armor = ARMOR_VALUE_LIGHT
 	body_parts_hidden = CHEST|ARMS
 
