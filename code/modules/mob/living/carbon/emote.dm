@@ -24,6 +24,27 @@
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
 
+/datum/emote/living/carbon/rpurr
+	key = "rpurr"
+	key_third_person = "rpurr"
+	message = "purrs like a raptor."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/raptor_purr.ogg'
+
+/datum/emote/living/carbon/yippie
+	key = "yippie"
+	key_third_person = "yippie"
+	message = "is incredibly joyous!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/yippee.ogg'
+
+/datum/emote/living/carbon/mewo
+	key = "mewo"
+	key_third_person = "mewos"
+	message = "mewos innocently."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/mewo.ogg'
+
 /datum/emote/living/carbon/blink_r
 	key = "blink_r"
 	message = "blinks rapidly."
@@ -82,6 +103,23 @@
 	key_third_person = "rolls"
 	message = "rolls."
 	restraint_check = TRUE
+
+/datum/emote/living/carbon/oneclap
+	key = "oneclap"
+	key_third_person = "oneclaps"
+	message = "claps, once."
+	muzzle_ignore = TRUE
+	restraint_check = TRUE
+	emote_type = EMOTE_AUDIBLE
+	sound = list('honk/sound/emotes/clap1.ogg',
+				'honk/sound/emotes/clap2.ogg')
+
+
+/datum/emote/living/carbon/oneclap/can_run_emote(mob/living/user, status_check, intentional)
+	. = ..()
+	// Need hands to clap
+	if(!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
+		return
 
 /datum/emote/living/carbon/scratch
 	key = "scratch"

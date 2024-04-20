@@ -28,6 +28,7 @@ SUBSYSTEM_DEF(typinginit)
 /datum/typing_sound
 	var/name = "Default" 	// Referenced Name
 	var/soundFile = 'modular_coyote/sound/typing/default.ogg' // File ref
+	var/list/soundFileList = list() // If your voice has multiple sounds, do this
 	var/soundFileStatic = 'modular_coyote/sound/typing/default__static.ogg'
 	var/permitAnimalCrossing = TRUE // Allows animal crossing to work with the sound.
 
@@ -40,6 +41,8 @@ SUBSYSTEM_DEF(typinginit)
 /datum/typing_sound/proc/GetSound(statick)
 	if(statick)
 		return soundFileStatic
+	if(LAZYLEN(soundFileList))
+		return pick(soundFileList)
 	return soundFile
 
 /datum/typing_sound/fbmessenger
@@ -81,6 +84,88 @@ SUBSYSTEM_DEF(typinginit)
 	name = "Light"
 	soundFile = 'modular_coyote/sound/typing/lightspeak.ogg'
 	soundFileStatic = 'modular_coyote/sound/typing/lightspeak__static.ogg'
+
+/datum/typing_sound/undertalealphys
+	name = "Alphys"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_alphys.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_alphys__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertaleasgore
+	name = "Alphys"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_asgore.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_asgore__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertaleflowey
+	name = "Flower"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_flowey_1.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_flowey_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalefloweymad
+	name = "Mad Flower"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_flowey_2.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_flowey_2__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalemetta
+	name = "Metta"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_metta_1.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalemonster
+	name = "Danger Monster"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_monster1.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalemonster
+	name = "Peaceful Monster"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_monster2.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalepapyrus
+	name = "Skeleton"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_papyrus.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalebottom
+	name = "Ralsei"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_ralsei.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalesans
+	name = "Lazy"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_sans.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalesussy
+	name = "Dinosaur"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_susie.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertaletemmie
+	name = "Irritating"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_temmie.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertaletoriel
+	name = "Motherly"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_toriel.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertaleundyne
+	name = "Fish"
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_undyne.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
+
+/datum/typing_sound/undertalegaster
+	name = "Scientist"
+	soundFileList = list('modular_splurt/sound/voice/barks/undertale/voice_gaster_1.ogg', 
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_2.ogg',
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_3.ogg',
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_4.ogg',
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_5.ogg',
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_6.ogg',
+	'modular_splurt/sound/voice/barks/undertale/voice_gaster_7.ogg',)
+	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_gaster_1.ogg'
+/*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_flowey_2__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
 
 /datum/typing_sound/jackal
 	name = "Jackal"
