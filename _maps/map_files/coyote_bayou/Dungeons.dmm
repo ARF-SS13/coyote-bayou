@@ -18593,11 +18593,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
-"hRb" = (
-/obj/machinery/door/poddoor/incinerator_atmos_main,
-/obj/machinery/door/poddoor/shutters,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/brotherhood/mining)
 "hRj" = (
 /obj/structure/window/reinforced{
 	color = "#3e3d42"
@@ -21739,16 +21734,6 @@
 	icon_state = "2-i"
 	},
 /area/f13/vault)
-"jqe" = (
-/obj/structure/ladder/unbreakable{
-	icon_state = "ladder10";
-	id = "brotherhoodfun";
-	height = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/plating{
-	name = "plating"
-	},
-/area/f13/building)
 "jqf" = (
 /obj/effect/decal/cleanable/shreds{
 	pixel_x = -6;
@@ -48477,6 +48462,12 @@
 /turf/open/water,
 /area/f13/enclave)
 "uJZ" = (
+/obj/structure/ladder/unbreakable{
+	name = "Odd Vent";
+	id = "brotherhoodfun";
+	icon_state = "manhole_open";
+	height = 1
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/operations)
 "uKa" = (
@@ -78924,7 +78915,7 @@ vtT
 rip
 aVC
 vyO
-jqe
+jMq
 vtT
 vtT
 rip
@@ -118576,7 +118567,7 @@ vGa
 pie
 aCz
 aCz
-hRb
+hjh
 plO
 whv
 whv
