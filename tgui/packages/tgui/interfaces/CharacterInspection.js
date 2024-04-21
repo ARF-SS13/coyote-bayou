@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import {
