@@ -482,3 +482,41 @@
 	)
 	result = /mob/living/simple_animal/pet/cat/cak
 	subcategory = CAT_DESERT //Cat! Haha, get it? CAT? GET IT? We get it - Love Catpeople
+
+//Macarons//
+
+/datum/crafting_recipe/food/macaronred
+	name = "red macaron"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/macaronred
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/macaronyellow
+	name = "yellow macaron"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/macaronyellow
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/macaronpurple
+	name = "purple macaron"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/macaronpurple
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/macarongreen
+	name = "green macaron"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/macarongreen
+	subcategory = CAT_DESERT

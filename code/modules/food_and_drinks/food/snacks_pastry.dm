@@ -1080,5 +1080,42 @@
 	tastes = list("sugar" = 1, "sweetness")
 	foodtype = SUGAR | DAIRY
 
+/obj/item/reagent_containers/food/snacks/macaronred
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_1"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
 
+/obj/item/reagent_containers/food/snacks/macaronyellow
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_2"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
 
+/obj/item/reagent_containers/food/snacks/macaronpurple
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_3"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/macarongreen
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_4"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
