@@ -247,6 +247,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("sturdy wooden fence", /obj/structure/railing/wooden_fencing, 5, time = 1 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("sturdy wooden fence gate", /obj/structure/railing/wooden_fencing/gate, 5, time = 1 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
+	new/datum/stack_recipe("wooden bokken", /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken, 1, 1, 0.5 SECONDS, is_stack = FALSE), \
+	new/datum/stack_recipe("wooden quarterstaff", /obj/item/melee/classic_baton/coyote/oldquarterstaff, 1, 1, 0.5 SECONDS, is_stack = FALSE), \
 	new/datum/stack_recipe("wooden arrow shaft", /obj/item/arrow_shaft, 1, 1, 0.5 SECONDS, is_stack = FALSE), \
 	null, \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/wood, 1, time = 10),
