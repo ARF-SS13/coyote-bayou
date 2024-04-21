@@ -35,13 +35,14 @@
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
 					CAT_WASTEFOOD,
-					CAT_BREAD,
-					CAT_BURGER,
+					//CAT_BREAD,
+				//	CAT_BURGER,
 					CAT_MEAT,
 					CAT_MISCFOOD,
 					CAT_PASTRY,
 					CAT_PIE,
-					CAT_SOUP
+					CAT_SOUP,
+					CAT_DESERT,
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,

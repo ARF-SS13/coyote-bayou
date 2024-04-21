@@ -244,6 +244,14 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	PREFBROKEN
 	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_HEAR_RADIOSTATIC) // kinda vital here
 
+/// im an admin and i dont want to hear about how you want to destroy someone's bussy
+/datum/prefcheck/admin_wire_tap
+	index = ADMIN_CHAT_FILTER_DMS
+
+/datum/prefcheck/admin_wire_tap/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.admin_wire_tap // kinda vital here
+
 
 
 

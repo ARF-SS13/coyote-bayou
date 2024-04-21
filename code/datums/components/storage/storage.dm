@@ -66,6 +66,7 @@
 	var/list/ui_item_blocks
 
 	var/current_maxscreensize
+	var/max_depth = STORAGE_VIEW_DEPTH
 
 	var/allow_big_nesting = FALSE					//allow storage objects of the same or greater size.
 
@@ -336,7 +337,7 @@
 
 /datum/component/storage/proc/check_views()
 	for(var/mob/M in can_see_contents())
-		if(!isobserver(M) && !M.can_reach(parent, STORAGE_VIEW_DEPTH))
+		if(!isobserver(M) && !M.can_reach(parent, max_depth))
 			close(M)
 
 /datum/component/storage/proc/emp_act(datum/source, severity)

@@ -180,8 +180,8 @@ SUBSYSTEM_DEF(monster_wave)
 
 /mob/living/simple_animal/nest_spawn_hole_guy/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(no_attack_pls))
-	RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(im_hit))
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(no_attack_pls), TRUE)
+	RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(im_hit), TRUE)
 
 /mob/living/simple_animal/nest_spawn_hole_guy/update_overlays()
 	. = ..()

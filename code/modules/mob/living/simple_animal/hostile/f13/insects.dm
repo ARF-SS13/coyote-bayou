@@ -632,6 +632,11 @@
 	resize = 0.75
 	update_transform()
 
+/mob/living/simple_animal/hostile/radroach/micro/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
 /mob/living/simple_animal/hostile/radroach/strongradroach
 	maxHealth = 140
 	health = 140
@@ -650,6 +655,11 @@
 		MOB_MINIMUM_DISTANCE_LIST(1, 2),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/radroach/strongradroach/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 /mob/living/simple_animal/hostile/radroach/leader
 	name = "Pillbug Leader"
@@ -678,8 +688,10 @@
 	resize = 3.0
 	update_transform()
 
-
-
+/mob/living/simple_animal/hostile/radroach/leader/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 /obj/item/projectile/pillbugsummon
 	name = "pillbug summoning"

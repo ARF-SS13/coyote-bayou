@@ -256,6 +256,16 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/advanced/eeveealt
+	name = "eevee, alt"
+	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pokemon to evolve."
+	icon_state = "eevee2"
+	icon_living = "eevee2"
+	icon_dead = "eevee2_d"
+	p_types = list(P_TYPE_NORM)
+	mob_size = MOB_SIZE_SMALL
+	p_traits = list(P_TRAIT_RIDEABLE)
+
 /mob/living/simple_animal/advanced/espeon
 	name = "espeon"
 	desc = "Espeon is extremely loyal to any trainer it considers to be worthy. It is said to have developed precognitive powers to protect its trainer from harm."
