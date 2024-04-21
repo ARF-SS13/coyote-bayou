@@ -477,3 +477,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/butterbiscuit
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/sauteedeggplant
+	name ="Sauteed Eggplant"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sauteedeggplant
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/stuffedeggplant
+	name ="Stuffed Eggplant"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/stuffedeggplant
+	subcategory = CAT_MISCFOOD
