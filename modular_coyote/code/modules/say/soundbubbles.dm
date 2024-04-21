@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 				// else
 			spawn(timecounter)
 				TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
-				playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
+				playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, SOUND_RANGE(0), SOUND_FALLOFF_EXPONENT, TI_frequency)
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
