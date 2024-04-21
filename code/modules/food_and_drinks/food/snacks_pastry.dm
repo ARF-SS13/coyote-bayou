@@ -1030,3 +1030,33 @@
 	tastes = list("chocolate" = 1, "caramel")
 	foodtype = SUGAR | DAIRY
 
+/obj/item/reagent_containers/food/snacks/chocolatetruffle
+	name = "chocolate truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "chocolate_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "cream")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/peanuttruffle
+	name = "peanut truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "chocolate_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "peanut")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/peanutbuttercup
+	name = "peanut butter cup"
+	desc = "So chocolatey and creamy!"
+	icon_state = "peanut_butter_cup"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "peanut")
+	foodtype = SUGAR | DAIRY
+

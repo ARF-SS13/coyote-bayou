@@ -410,6 +410,49 @@
 	result = /obj/item/reagent_containers/food/snacks/store/cake/pavlova
 	subcategory = CAT_DESERT
 
+/datum/crafting_recipe/food/carameltruffle
+	name = "Caramel Truffle"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/sugar = 5,
+		/datum/reagent/consumable/caramel = 3
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/carameltruffle
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/chocolatetruffle
+	name = "Chocolate Truffle"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/sugar = 5
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/chocolatetruffle
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/peanuttruffle
+	name = "Peanut Truffle"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/peanut = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/peanuttruffle
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/peanutbuttercup
+	name = "Peanut Butter Cup"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/peanut = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/peanutbuttercup
+	subcategory = CAT_DESERT
+
 /datum/crafting_recipe/food/cak //I'm readding this. - TP
 	name = "Living cat/cake hybrid"
 	reqs = list(
