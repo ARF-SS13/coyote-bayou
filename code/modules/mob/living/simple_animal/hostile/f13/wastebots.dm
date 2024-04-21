@@ -248,7 +248,7 @@
 	desc = "A small pre-War droned used by the People's Liberation Army."
 	icon_state = "liberator_y"
 	can_ghost_into = FALSE
-	icon_living = "leberator_y"
+	icon_living = "liberator_y"
 	icon_dead = "liberator_y_d"
 
 /mob/living/simple_animal/hostile/handy/robobrain
