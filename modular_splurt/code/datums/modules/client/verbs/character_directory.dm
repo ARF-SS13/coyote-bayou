@@ -75,7 +75,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		var/mob/M = C?.mob
 		if(!M)
 			continue
-		var/name = C.prefs.real_name || M.real_name || M.name
+		var/name = SSchat.name_or_shark(M) //C.prefs.real_name || M.real_name || M.name
 		var/thegender = capitalize(C.prefs.gender || M.gender || "Other")
 		var/whokisser = "Unsure"
 		var/species
@@ -98,9 +98,13 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 					whokisser = "Likes Anyone"
 				if(KISS_NONE)
 					whokisser = "Not Interested"
-		
-		if((isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
-			name = C.prefs.my_shark
+
+		if(isdead(M) && lowertext(name) == ckey(M.ckey))
+			var/testname = C.prefs.real_name
+			if(lowertext(testname) == M.ckey)
+				name = C.prefs.my_shark
+			else
+				name = testname
 		// It's okay if we fail to find OOC notes and flavor text
 		// But if we can't find the name, they must be using a non-compatible mob type currently.
 		if(!name)

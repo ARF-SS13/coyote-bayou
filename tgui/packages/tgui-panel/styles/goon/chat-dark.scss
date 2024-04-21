@@ -1044,6 +1044,23 @@ em {
   }
 }
 
+
+.privateSent	{
+  color: #007f5f;
+  // font-weight: bold;
+  animation: privateSent 3000ms;
+  animation-direction: linear;
+}
+
+@keyframes privateSent {
+	0% {
+    color: #00FF00;
+  }
+	100% {
+    color: #007f5f;
+  }
+}
+
 .phobia {
   color: #dd0000;
   font-weight: bold;
