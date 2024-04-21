@@ -977,3 +977,23 @@
 	filling_color = "F0D830"
 	tastes = list("rice" = 1, "spain" = 2, "chili" = 2, "tomato" = 3)
 	foodtype = VEGETABLES | GRAIN
+
+/obj/item/reagent_containers/food/snacks/sauteedeggplant
+	name = "sauteed Eggplant"
+	desc = "The only good recipe for eggplant."
+	icon_state = "sauteed_eggplant"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "#BA55D3"
+	tastes = list("eggplant" = 3, "cheese" = 1, "veggies" = 1)
+	foodtype = VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/stuffedeggplant
+	name = "Stuffed Eggplant"
+	desc = "The only good recipe for eggplant."
+	icon_state = "stuffed_eggplant"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "#BA55D3"
+	tastes = list("eggplant" = 3, "cheese" = 1, "veggies" = 1)
+	foodtype = VEGETABLES | DAIRY
