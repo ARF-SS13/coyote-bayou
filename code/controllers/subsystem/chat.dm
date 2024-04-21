@@ -295,6 +295,8 @@ SUBSYSTEM_DEF(chat)
 		to_chat(sender, span_warning("Module failed to load."))
 		return
 	var/theirname = name_or_shark(reciever) || "some jerk" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
+	if(check_rights(R_ADMIN, FALSE))
+		theirname = "[theirname] - [extract_ckey(reciever)]"  // we're an admin, we can see their name
 	var/mesage = input(
 		sender,
 		"Enter your message to [theirname]. This will send a direct message to them, which they can reply to! Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>",
@@ -303,17 +305,22 @@ SUBSYSTEM_DEF(chat)
 	) as message|null
 	if(!mesage)
 		return
-	var/myname = name_or_shark(sender) || "some jerk"
+	var/myname = name_or_shark(sender) || "Anonymouse"
+	if(check_rights(R_ADMIN, FALSE))
+		myname = "[myname] - [extract_ckey(sender)]"  // we're an admin, we can see their name
+
 	var/payload2them = "<u><b>From [dm_linkify(reciever, sender, myname)]</u></b>: [mesage]<br>"
 	payload2them = span_private(payload2them)
 	to_chat(reciever, span_private("<br><U>You have a new message from [name_or_shark(sender) || "Some jerk"]!</U>"))
 	to_chat(reciever, payload2them)
+	reciever.playsound_local(reciever, 'sound/effects/direct_message_recieved.ogg', 75, FALSE)
+
 	var/payload2me = "<u><b>To [dm_linkify(sender, reciever, theirname)]</u></b>: [mesage]<br>"
-	payload2me = span_private(payload2me)
-	to_chat(sender, span_private("<br><U>Your message to [theirname] has been sent!</U>"))
+	payload2me = span_private_sent(payload2me)
+	to_chat(sender, span_private_sent("<br><U>Your message to [theirname] has been sent!</U>"))
 	to_chat(sender, payload2me)
 	sender.playsound_local(sender, 'sound/effects/direct_message_setn.ogg', 75, FALSE)
-	reciever.playsound_local(reciever, 'sound/effects/direct_message_recieved.ogg', 75, FALSE)
+
 	log_ooc("[sender.real_name] ([sender.ckey]) -> [reciever.real_name] ([reciever.ckey]): [mesage]")
 	message_admins("[ADMIN_TPMONTY(sender)] -DM-> [ADMIN_TPMONTY(reciever)]: [mesage]", ADMIN_CHAT_FILTER_DMS)
 
@@ -327,7 +334,7 @@ SUBSYSTEM_DEF(chat)
 	reciever = extract_mob(reciever)
 	if(!reciever || !reciever.client)
 		return
-	var/theirname = optional_name || name_or_shark(reciever) || "some jerk" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
+	var/theirname = optional_name || name_or_shark(reciever) || "Anonymouse" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
 	return "<a href='?src=[REF(src)];DM=1;sender_quid=[extract_quid(sender)];reciever_quid=[extract_quid(reciever)]'>[theirname]</a>"
 
 /datum/controller/subsystem/chat/Topic(href, list/href_list)
@@ -342,19 +349,21 @@ SUBSYSTEM_DEF(chat)
 	if(!istype(they))
 		return "Nobody"
 	if(check_rights(R_ADMIN, FALSE))
-		return they.real_name // we're an admin, we can see their name
-	if(isnewplayer(they))
-		return they.client.prefs.my_shark
+		return they.name || they.real_name
 	if(ckey(they.real_name) == ckey(they.ckey) || ckey(they.name) == ckey(they.ckey))
-		if(strings("data/super_special_ultra_instinct.json", "[ckey(they.name)]", TRUE, TRUE))
-			return they.name
-		if(strings("data/super_special_ultra_instinct.json", "[ckey(they.real_name)]", TRUE, TRUE))
-			return they.real_name
 		if(they.client)
-			return they.client.prefs.my_shark
-		else
-			return "Some jerk"
-	return they.name
+			var/test_name = they.client.prefs.real_name
+			if(ckey(test_name) == ckey(they.ckey))
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(test_name)]", TRUE, TRUE))
+					return test_name
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(they.name)]", TRUE, TRUE))
+					return test_name
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(they.real_name)]", TRUE, TRUE))
+					return test_name
+				return they.client.prefs.my_shark
+			return test_name
+		return safepick(GLOB.cow_names + GLOB.megacarp_first_names + GLOB.megacarp_last_names)
+	return they.real_name
 
 /datum/controller/subsystem/chat/proc/inspect_character(mob/viewer, list/payload)
 	if(!viewer)
