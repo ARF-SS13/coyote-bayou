@@ -343,3 +343,23 @@
 */
 
 
+/datum/crafting_recipe/food/cheesepieorgi
+	name = "Cheese Pieorgi"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/cheesepierogi
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/meatpieorgi
+	name = "Meat Pieorgi"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/meatpierogi
+	subcategory = CAT_MISCFOOD

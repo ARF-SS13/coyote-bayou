@@ -85,6 +85,65 @@
 	result = /obj/item/reagent_containers/food/snacks/oreocookie
 	subcategory = CAT_PASTRY
 
+/datum/crafting_recipe/food/sugarcookie/tree
+	time = 15
+	name = "Sugar cookie Tree"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/tree
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/sugarcookie/bear
+	time = 15
+	name = "Sugar cookie Bear"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/bear
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/sugarcookie/santa
+	time = 15
+	name = "Sugar cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/santa
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/sugarcookie/stocking
+	time = 15
+	name = "Sugar cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/stocking
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/sugarcookie/present
+	time = 15
+	name = "Sugar cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/present
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/sugarcookie/cane
+	time = 15
+	name = "Sugar cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sugarcookie/cane
+	subcategory = CAT_PASTRY
 ////////////////////////////////////////////////WAFFLES AND PANCAKES////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/waffles
