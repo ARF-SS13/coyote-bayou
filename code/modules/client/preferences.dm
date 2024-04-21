@@ -83,6 +83,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
+	var/my_shark = "Bingus Whale"
+
 	var/genital_whitelist = ""
 	var/whoflags = DEFAULT_WHO_FLAGS
 	var/lockouts = NONE
@@ -146,6 +148,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/kisser = KISS_DEFAULT // Kiss this (     Y     )
 	/// which quester UID we're using
 	var/quester_uid
+	var/dm_open = TRUE
+	var/needs_a_friend = FALSE // for the quest
+	var/list/blocked_from_dms = list() // list of quids
 	/// rough approximations of the character's finished quests
 	var/list/saved_finished_quests = list()
 	/// tight list of the character's active quests
@@ -154,6 +159,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
+	var/admin_wire_tap = TRUE
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
 		"mcolor2" = "FFFFFF",
@@ -397,6 +403,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/New(client/C)
 	parent = C
 
+	if(LAZYLEN(GLOB.cow_names))
+		my_shark = safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 	spawn(0)
 		if(C)
 			chatbgcolor = winget(C, "statbrowser", "background-color")

@@ -319,6 +319,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["genital_whitelist"]		>> genital_whitelist
 
 	S["lockouts"]	>> lockouts // my bans!
+	S["admin_wire_tap"]	>> admin_wire_tap // my bans!
 
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
@@ -377,6 +378,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
 	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
+	admin_wire_tap 		= sanitize_integer(admin_wire_tap, TRUE)
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -490,10 +492,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["lockouts"], lockouts)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
-
-	//permanent tattoos
-	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
-	return 1
+	WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -940,9 +939,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Permanent Tattoos
 	S["permanent_tattoos"]		>> permanent_tattoos
+	S["dm_open"]		>> dm_open
+	S["needs_a_friend"]		>> needs_a_friend
 
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
+	blocked_from_dms = safe_json_decode(S["blocked_from_dms"])
 
 	/// Test if they have a saved quid, if not, generate one.
 	var/saved_quid
@@ -970,6 +972,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	faved_interactions    = sanitize_islist(faved_interactions, list())
 	saved_finished_quests = sanitize_islist(saved_finished_quests, list())
 	saved_active_quests   = sanitize_islist(saved_active_quests, list())
+	dm_open               = sanitize_integer(dm_open, TRUE)
+	needs_a_friend        = sanitize_integer(needs_a_friend, TRUE)
 
 	//Sanitize
 
@@ -1408,6 +1412,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_flist"], features["flist"])
 
 	WRITE_FILE(S["feature_taste"], features["taste"])
+	WRITE_FILE(S["dm_open"], dm_open)
+	WRITE_FILE(S["needs_a_friend"], needs_a_friend)
 
 	//special
 	WRITE_FILE(S["special_s"]		,special_s)
@@ -1556,6 +1562,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
+	WRITE_FILE(S["blocked_from_dms"], safe_json_encode(blocked_from_dms))
 	//permanent tattoos
 	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
 	if(LAZYLEN(saved_finished_quests))
