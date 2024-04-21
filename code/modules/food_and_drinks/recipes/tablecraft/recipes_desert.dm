@@ -113,6 +113,24 @@
 	result = /obj/item/reagent_containers/food/snacks/peanut_butter
 	subcategory = CAT_DESERT
 
+/datum/crafting_recipe/food/thumbprintcookie
+	name = "Thumb print sugar cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/thumbprintcookie
+	subcategory = CAT_DESERT
+
+/datum/crafting_recipe/food/snickerdoodle
+	name = "snickerdoodle cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/snickerdoodle
+	subcategory = CAT_DESERT
+
 ////////////////////////////////////////////CUPCAKES////////////////////////////////////////////
 
 /datum/crafting_recipe/food/bluecherrycupcake

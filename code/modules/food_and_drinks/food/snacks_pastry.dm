@@ -1060,3 +1060,25 @@
 	tastes = list("chocolate" = 1, "peanut")
 	foodtype = SUGAR | DAIRY
 
+/obj/item/reagent_containers/food/snacks/thumbprintcookie
+	name = "thumbprint cookie"
+	desc = "A sweet and delicous cookie!"
+	icon_state = "thumbprint_cookie"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/snickerdoodle
+	name = "snickerdoodle cookie"
+	desc = "A sweet and delicous cookie!"
+	icon_state = "snickerdoodle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+
+
