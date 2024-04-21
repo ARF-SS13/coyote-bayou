@@ -58,11 +58,11 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		data["personalLookingForFriends"] = user.client.prefs.needs_a_friend
 	data["canOrbit"] = isobserver(user)
 
-// 	return data
+	return data
 
-// /datum/character_directory/ui_static_data(mob/user)
-// 	. = ..()
-// 	var/list/data = .
+/datum/character_directory/ui_static_data(mob/user)
+	. = ..()
+	var/list/data = .
 
 	var/list/directory_mobs = list()
 	for(var/client/C in GLOB.clients)
@@ -105,6 +105,8 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		// But if we can't find the name, they must be using a non-compatible mob type currently.
 		if(!name)
 			continue
+		if(LAZYLEN(name) > 28) // dammit colfer
+			name = copytext(name, 1, 25) + "..."
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
@@ -134,7 +136,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"whokisser" = whokisser,
 			"flist" = fricklist,
 			"quid" = C.prefs.quester_uid, // love is a quest, and I'm on a quest for love
-			"dms_r_open" = C.prefs.dm_open,
+			"dms_r_open" = TRUE,
 			"looking_for_friends" = C.prefs.needs_a_friend,
 			"profile_pic" = PfpHostLink(C.prefs.profilePicture, C.prefs.pfphost)
 		)))
@@ -196,14 +198,16 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			payload["whokisser"] = params["whokisser"]
 			payload["flist"] = params["flist"]
 			payload["quid"] = params["quid"]
-			payload["dms_r_open"] = params["dms_r_open"]
+			payload["dms_r_open"] = TRUE
 			payload["looking_for_friends"] = params["looking_for_friends"]
 			payload["profile_pic"] = params["profile_pic"]
 			SSchat.inspect_character(user, payload)
 		if("pager")
 			SSchat.start_page(user, params["quid"])
+			update_static_data(user, ui)
 		if("setLookingForFriends")
 			TOGGLE_VAR(user.client.prefs.needs_a_friend)
+
 		else
 			return check_for_mind_or_prefs(user, action, params["overwrite_prefs"])
 	return TRUE

@@ -304,21 +304,11 @@ SUBSYSTEM_DEF(chat)
 	if(!mesage)
 		return
 	var/myname = name_or_shark(sender) || "some jerk"
-	var/payload2them = {"<u><b>From <a href='
-			?src=[REF(src)];
-			DM=1;
-			sender_quid=[extract_quid(sender)];
-			reciever_quid=[extract_quid(reciever)];
-			'>[myname]</a></u></b>: [mesage]<br>"}
+	var/payload2them = "<u><b>From [dm_linkify(reciever, sender, myname)]</u></b>: [mesage]<br>"
 	payload2them = span_private(payload2them)
 	to_chat(reciever, span_private("<br><U>You have a new message from [name_or_shark(sender) || "Some jerk"]!</U>"))
 	to_chat(reciever, payload2them)
-	var/payload2me = {"<u><b>To <a href='
-			?src=[REF(src)];
-			DM=1;
-			sender_quid=[extract_quid(sender)];
-			reciever_quid=[extract_quid(reciever)];
-			'>[theirname]</a></u></b>: [mesage]<br>"}
+	var/payload2me = "<u><b>To [dm_linkify(sender, reciever, theirname)]</u></b>: [mesage]<br>"
 	payload2me = span_private(payload2me)
 	to_chat(sender, span_private("<br><U>Your message to [theirname] has been sent!</U>"))
 	to_chat(sender, payload2me)
@@ -326,6 +316,19 @@ SUBSYSTEM_DEF(chat)
 	reciever.playsound_local(reciever, 'sound/effects/direct_message_recieved.ogg', 75, FALSE)
 	log_ooc("[sender.real_name] ([sender.ckey]) -> [reciever.real_name] ([reciever.ckey]): [mesage]")
 	message_admins("[ADMIN_TPMONTY(sender)] -DM-> [ADMIN_TPMONTY(reciever)]: [mesage]", ADMIN_CHAT_FILTER_DMS)
+
+/// takes in a sencer, a reciever, and an optional name, and turns it into a clickable link to send a DM
+/datum/controller/subsystem/chat/proc/dm_linkify(mob/sender, mob/reciever, optional_name)
+	if(!sender || !reciever)
+		return
+	sender = extract_mob(sender)
+	if(!sender || !sender.client)
+		return
+	reciever = extract_mob(reciever)
+	if(!reciever || !reciever.client)
+		return
+	var/theirname = optional_name || name_or_shark(reciever) || "some jerk" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
+	return "<a href='?src=[REF(src)];DM=1;sender_quid=[extract_quid(sender)];reciever_quid=[extract_quid(reciever)]'>[theirname]</a>"
 
 /datum/controller/subsystem/chat/Topic(href, list/href_list)
 	. = ..()
@@ -698,7 +701,7 @@ SUBSYSTEM_DEF(chat)
 	flavor = payload["flavor_text"]
 	their_quid = payload["quid"]
 	looking_for_friends = payload["looking_for_friends"]
-	dms_r_open = payload["dms_r_open"]
+	dms_r_open = TRUE
 	name = payload["name"]
 	profile_pic = payload["profile_pic"]
 	if(viewer && viewer.client)
@@ -729,7 +732,7 @@ SUBSYSTEM_DEF(chat)
 	static_data["their_quid"] = their_quid
 	static_data["name"] = name
 	static_data["looking_for_friends"] = looking_for_friends
-	static_data["dms_r_open"] = dms_r_open
+	static_data["dms_r_open"] = TRUE
 	static_data["profile_pic"] = profile_pic
 	if(user && user.client) // dont know why they wouldnt, but whatever
 		static_data["viewer_quid"] = user.client.prefs.quester_uid
