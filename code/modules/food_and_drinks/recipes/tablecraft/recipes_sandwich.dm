@@ -13,7 +13,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sandwich
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/grilledcheesesandwich
 	name = "Grilled cheese sandwich"
@@ -22,7 +22,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/grilledcheese
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/baconlettucetomato
 	name = "BLT sandwich"
@@ -33,7 +33,7 @@
 		/datum/reagent/consumable/mayonnaise = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/baconlettucetomato
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/pbj_sandwich
 	name = "PB&J sandwich"
@@ -43,7 +43,7 @@
 		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
 	)
 	result = /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/pbj_sandwich/alt
 	name = "PB&J sandwich"
@@ -52,7 +52,7 @@
 		/obj/item/reagent_containers/food/snacks/peanut_buttertoast = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/peanutbutter_sandwich
 	name = "Peanut butter sandwich"
@@ -61,7 +61,7 @@
 		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
 	)
 	result = /obj/item/reagent_containers/food/snacks/peanutbutter_sandwich
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/peanutbutter_sandwich/banana
 	name = "Peanut butter banana sandwich"
@@ -71,6 +71,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/banana = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/peanutbutterbanana
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/tunasandwich
 	name = "Tuna sandwich"
@@ -81,7 +82,7 @@
 		/datum/reagent/consumable/mayonnaise = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/tuna_sandwich
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/meatballsub
 	name = "Meatball sub"
@@ -90,7 +91,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/meatballsub
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/hotdog
 	name = "Hot dog"
@@ -100,4 +101,4 @@
 		/obj/item/reagent_containers/food/snacks/sausage = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/hotdog
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD

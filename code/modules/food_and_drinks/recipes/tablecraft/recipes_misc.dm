@@ -364,23 +364,116 @@
 	result = /obj/item/reagent_containers/food/snacks/meatpierogi
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/meatcalzone
-	name = "Meat Calzone"
+
+////////////////////////////////////////////////BREAD////////////////////////////////////////////////
+
+/datum/crafting_recipe/food/creamcheesebread
+	name = "Cream cheese bread"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/doughslice = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1
+		/datum/reagent/consumable/milk = 5,
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/meatcalzone
+	result = /obj/item/reagent_containers/food/snacks/store/bread/creamcheese
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/veggiecalzone
-	name = "Vegetrian Calzone"
+/datum/crafting_recipe/food/meatbread
+	name = "Meat bread"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/doughslice = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 1
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet/plain = 3,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
 	)
-	result = /obj/item/reagent_containers/food/snacks/vegetariancalzone
+	result = /obj/item/reagent_containers/food/snacks/store/bread/meat
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/banananutbread
+	name = "Banana nut bread"
+	reqs = list(
+		/datum/reagent/consumable/milk = 5,
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/reagent_containers/food/snacks/boiledegg = 3,
+		/obj/item/reagent_containers/food/snacks/grown/banana = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/bread/banana
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/spidermeatbread
+	name = "Spidermeat bread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet/spider = 3,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/bread/spidermeat
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/butterdog
+	name = "Butterdog"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 3,
+		)
+	result = /obj/item/reagent_containers/food/snacks/butterdog
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/twobread
+	name = "Two bread"
+	reqs = list(
+		/datum/reagent/consumable/ethanol/wine = 5,
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/twobread
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/tofubread
+	name = "Tofu bread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/reagent_containers/food/snacks/tofu = 3,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/bread/tofu
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/cornbread
+	name = "Cornbread"
+	reqs = list(
+		/datum/reagent/consumable/flour = 10,
+		/datum/reagent/consumable/cornoil = 5,
+		/datum/reagent/consumable/eggyolk = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/bread/corn
+	subcategory = CAT_MISCFOOD
+
+
+////////////////////////////////////////////////MISC////////////////////////////////////////////////
+
+/datum/crafting_recipe/food/baguette
+	name = "Baguette"
+	time = 40
+	reqs = list(/datum/reagent/consumable/sodiumchloride = 1,
+				/datum/reagent/consumable/blackpepper = 1,
+				/obj/item/reagent_containers/food/snacks/pastrybase = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/baguette
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/garlicbread
+	name = "Garlic Bread"
+	time = 40
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+				/obj/item/reagent_containers/food/snacks/breadslice/plain = 1,
+				/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/garlicbread
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/butterbiscuit
+	name = "Butter Biscuit"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/butterbiscuit
 	subcategory = CAT_MISCFOOD

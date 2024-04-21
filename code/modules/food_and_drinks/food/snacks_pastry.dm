@@ -1020,3 +1020,13 @@
 	tastes = list("baked dough" = 1, "cheese", "Veggies")
 	foodtype = GRAIN | DAIRY
 
+/obj/item/reagent_containers/food/snacks/carameltruffle
+	name = "caramel truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "caramel_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "caramel")
+	foodtype = SUGAR | DAIRY
+
