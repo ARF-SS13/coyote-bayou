@@ -107,7 +107,7 @@
 
 /datum/crafting_recipe/food/sugarcookie/santa
 	time = 15
-	name = "Sugar cookie"
+	name = "Sugar cookie Santa"
 	reqs = list(
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1
@@ -117,7 +117,7 @@
 
 /datum/crafting_recipe/food/sugarcookie/stocking
 	time = 15
-	name = "Sugar cookie"
+	name = "Sugar cookie Stocking"
 	reqs = list(
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1
@@ -127,7 +127,7 @@
 
 /datum/crafting_recipe/food/sugarcookie/present
 	time = 15
-	name = "Sugar cookie"
+	name = "Sugar cookie Present"
 	reqs = list(
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1
@@ -137,7 +137,7 @@
 
 /datum/crafting_recipe/food/sugarcookie/cane
 	time = 15
-	name = "Sugar cookie"
+	name = "Sugar cookie Cane"
 	reqs = list(
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1

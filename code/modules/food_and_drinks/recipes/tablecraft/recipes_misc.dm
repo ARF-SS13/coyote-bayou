@@ -363,3 +363,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/meatpierogi
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/meatcalzone
+	name = "Meat Calzone"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/meatcalzone
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/veggiecalzone
+	name = "Vegetrian Calzone"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/vegetariancalzone
+	subcategory = CAT_MISCFOOD

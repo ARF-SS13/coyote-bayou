@@ -999,3 +999,24 @@
 	filling_color = "#F2CE91"
 	tastes = list("pastry" = 1, "potatos" = 1, "cheese", "meat")
 	foodtype = GRAIN | DAIRY | MEAT
+
+/obj/item/reagent_containers/food/snacks/meatcalzone
+	name = "meat calzone"
+	desc = "stuffed with goodness!"
+	icon_state = "meat_calzone"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	filling_color = "#F2CE91"
+	tastes = list("baked dough" = 1, "cheese", "meat")
+	foodtype = GRAIN | DAIRY | MEAT
+
+/obj/item/reagent_containers/food/snacks/vegetariancalzone
+	name = "vegetarian calzone"
+	desc = "stuffed with goodness!"
+	icon_state = "vegetarian_calzone"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	filling_color = "#F2CE91"
+	tastes = list("baked dough" = 1, "cheese", "Veggies")
+	foodtype = GRAIN | DAIRY
+
