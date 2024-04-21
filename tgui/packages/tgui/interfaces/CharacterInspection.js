@@ -31,7 +31,6 @@ export const CharacterInspection = (props, context) => {
     viewer_quid,
     name,
     looking_for_friends,
-    dms_r_open,
   } = data;
 
   const [
@@ -51,7 +50,7 @@ export const CharacterInspection = (props, context) => {
             <Section
               title={`${name} the ${species} (${gender})`}
               smallTitle={true}
-              buttons={(dms_r_open
+              buttons={(true
                 && <>
                   Say&nbsp;Hi!&nbsp;--&gt;&nbsp;&nbsp;&nbsp;
                   <Button
@@ -61,7 +60,7 @@ export const CharacterInspection = (props, context) => {
                     })}
                     icon="envelope"
                     tooltip="Send a message to this character!"
-                    disabled={!data.dms_r_open}
+                    disabled={!data.true}
                     mr={1} />
                   </>
               )} >

@@ -187,7 +187,7 @@ const SettingsControl = (props, context) => {
               onClick={() => act('setVisible', { overwrite_prefs: overwritePrefs })}
             />
           </Stack.Item> */}
-          <Stack.Item shrink>
+          {/* <Stack.Item shrink>
             Open For DMs:
           </Stack.Item>
           <Stack.Item grow>
@@ -196,7 +196,7 @@ const SettingsControl = (props, context) => {
               selected={personalDMs}
               onClick={() => act('setDMs', { overwrite_prefs: overwritePrefs })}
             />
-          </Stack.Item>
+          </Stack.Item> */}
           <Stack.Item shrink>
             Vore Tag:
           </Stack.Item>
@@ -384,7 +384,6 @@ const CharacterDirectoryList = (props, context) => {
                   onClick={() => act("pager", { quid: character.quid })}
                   icon="envelope"
                   tooltip="Send a message to this character!"
-                  disabled={!character.dms_r_open}
                   mr={1}
                 />
               </Table.Cell>
