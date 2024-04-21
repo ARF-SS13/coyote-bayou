@@ -285,10 +285,11 @@ SUBSYSTEM_DEF(chat)
 	if(!sender || !reciever)
 		return
 	sender = extract_mob(sender)
-	if(!sender)
+	if(!sender || !sender.client)
 		return
 	reciever = extract_mob(reciever)
-	if(!reciever)
+	if(!reciever || !reciever.client)
+		to_chat(sender, span_alert("Unable to contact user, please try again later!"))
 		return
 	if(is_blocked(sender, reciever))
 		to_chat(sender, span_warning("Module failed to load."))
@@ -339,6 +340,8 @@ SUBSYSTEM_DEF(chat)
 		return "Nobody"
 	if(check_rights(R_ADMIN, FALSE))
 		return they.real_name // we're an admin, we can see their name
+	if(isnewplayer(they))
+		return they.client.prefs.my_shark
 	if(ckey(they.real_name) == ckey(they.ckey) || ckey(they.name) == ckey(they.ckey))
 		if(strings("data/super_special_ultra_instinct.json", "[ckey(they.name)]", TRUE, TRUE))
 			return they.name
@@ -678,6 +681,7 @@ SUBSYSTEM_DEF(chat)
 	var/looking_for_friends
 	var/dms_r_open
 	var/name
+	var/profile_pic
 
 	/// update the character inspection with new data
 /datum/character_inspection/proc/update(mob/viewer, list/payload)
@@ -696,6 +700,7 @@ SUBSYSTEM_DEF(chat)
 	looking_for_friends = payload["looking_for_friends"]
 	dms_r_open = payload["dms_r_open"]
 	name = payload["name"]
+	profile_pic = payload["profile_pic"]
 	if(viewer && viewer.client)
 		show_to(viewer)
 
@@ -725,6 +730,7 @@ SUBSYSTEM_DEF(chat)
 	static_data["name"] = name
 	static_data["looking_for_friends"] = looking_for_friends
 	static_data["dms_r_open"] = dms_r_open
+	static_data["profile_pic"] = profile_pic
 	if(user && user.client) // dont know why they wouldnt, but whatever
 		static_data["viewer_quid"] = user.client.prefs.quester_uid
 	return static_data
@@ -741,6 +747,13 @@ SUBSYSTEM_DEF(chat)
 		return
 	if(action == "pager")
 		SSchat.start_page(viower, viowed)
+		return TRUE
+	if(action == "show_pic")
+		var/dat = {"<img src='[profile_pic]'>"}
+		var/datum/browser/popup = new(viower, "enlargeImage", "Full Sized Picture!",1024,768)
+		popup.set_content(dat)
+		popup.open()
+		return TRUE
 	if(action == "view_flist")
 		if(viowed)
 			to_chat(viower, span_notice("Opening F-list..."))
@@ -749,6 +762,7 @@ SUBSYSTEM_DEF(chat)
 		else
 			to_chat(viower, span_alert("Couldn't find that character's F-list!"))
 			return TRUE
+	return TRUE
 
 /datum/character_inspection/ui_state(mob/user)
 	return GLOB.always_state

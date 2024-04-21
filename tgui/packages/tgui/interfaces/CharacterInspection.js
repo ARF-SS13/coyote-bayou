@@ -30,7 +30,6 @@ export const CharacterInspection = (props, context) => {
     viewer_quid,
     name,
     looking_for_friends,
-    its_mine,
     dms_r_open,
   } = data;
 
@@ -41,17 +40,18 @@ export const CharacterInspection = (props, context) => {
 
   return (
     <Window
-      width={640}
-      height={480}
+      width={580}
+      height={640}
       resizable
-      title={`${name}'s Bio`}>
+      title={`${name} the ${species} (${gender})`}>
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item>
             <Section
               title={`${name} the ${species} (${gender})`}
-              buttons={(true &&
-                <>
+              smallTitle={true}
+              buttons={(dms_r_open
+                && <>
                   Say&nbsp;Hi!&nbsp;--&gt;&nbsp;&nbsp;&nbsp;
                   <Button
                     onClick={() => act("pager", {
@@ -61,14 +61,14 @@ export const CharacterInspection = (props, context) => {
                     icon="envelope"
                     tooltip="Send a message to this character!"
                     disabled={!data.dms_r_open}
-                    mr={1}
-                  />
-                </>
-              )} />
-            <ERPPref />
-            <VorePref />
-            <KissPref />
-            <FlistLink />
+                    mr={1} />
+                  </>
+              )} >
+              <ERPPref />
+              <VorePref />
+              <KissPref />
+              <FlistLink />
+            </Section>
           </Stack.Item>
           <Stack.Item>
             <Tabs
@@ -142,14 +142,36 @@ const MainWindow = (props, context) => { // main screen turn on
   return (
     <>
       {SelectedTab === 1 && (
-        <Section title="Flavor Text">
-          <Box
-            style={{
-              "whiteSpace": 'pre-wrap',
-            }}
-            dangerouslySetInnerHTML={Text2HTML(data.flavor)}
-            />
-        </Section>
+        <Box>
+          {data.profile_pic && (
+            <Box textAlign="center">
+              <Button
+                color="transparent"
+                tooltip="View this character's profile picture!"
+                onClick={() => act("show_pic", {
+                    their_quid: data.their_quid,
+                    viewer_quid: data.viewer_quid,
+                  })}>
+                <Box
+                  as="img"
+                  height="65vh"
+                  src={data.profile_pic}
+                  alt="Imagine a cool image here!"
+                  width="auto"
+                  maxWidth="100%"
+                  resizeMode="contain" />
+              </Button>
+            </Box>
+          )}
+          <Section title="Flavor Text">
+            <Box
+              style={{
+                "whiteSpace": 'pre-wrap',
+              }}
+              dangerouslySetInnerHTML={Text2HTML(data.flavor)}
+              />
+          </Section>
+        </Box>
       )
       || SelectedTab === 2 && (
         <Section title="OOC Notes">
@@ -174,50 +196,54 @@ const MainWindow = (props, context) => { // main screen turn on
       }
     </>
   );
-}
+};
 
 // / The bottom toolbar
 const BottomToolbar = (props, context) => {
   const { act, data } = useBackend(context);
-  const {looking_for_friends, dms_r_open} = data;
+  const {
+    looking_for_friends,
+    their_quid,
+    viewer_quid,
+  } = data;
 
   return (
     <Box mx={1} mt={1} textAlign="center">
       {
-        true ?
-          looking_for_friends ? (
-          <Button
-            onClick={() => act("pager", {
-              their_quid: their_quid,
-              viewer_quid: viewer_quid,
-            })}
-            tooltip="They're looking for a friend! Send them a message!"
-            mr={1}>
+        true
+          ? looking_for_friends ? (
+            <Button
+              onClick={() => act("pager", {
+                their_quid: their_quid,
+                viewer_quid: viewer_quid,
+              })}
+              tooltip="They're looking for a friend! Send them a message!"
+              mr={1}>
               Looking for friends! --&gt;&nbsp;&nbsp;&nbsp;
               <Icon name="envelope" size={2} />
               &lt;-- Send me a message!
-          </Button>
+            </Button>
           ) : (
-          <Button
-            onClick={() => act("pager", {
-              their_quid: their_quid,
-              viewer_quid: viewer_quid,
-            })}
-            color="transparent"
-            icon="envelope-circle-check"
-            tooltip="Send a message to this character!"
-            mr={1} />
+            <Button
+              onClick={() => act("pager", {
+                their_quid: their_quid,
+                viewer_quid: viewer_quid,
+              })}
+              color="transparent"
+              icon="envelope-circle-check"
+              tooltip="Send a message to this character!"
+              mr={1} />
           )
-        : <Box />
+          : <Box />
       }
     </Box>
   );
-}
+};
 
 // / The ERP Preference
 const ERPPref = (props, context) => {
   const { act, data } = useBackend(context);
-  const {erppref} = data;
+  const { erppref } = data;
 
   return (
     <Button
@@ -227,15 +253,15 @@ const ERPPref = (props, context) => {
       textAlign="center"
       color="transparent"
       mr={1}>
-        {erppref}
-      </Button>
+      {erppref}
+    </Button>
   );
-}
+};
 
 // / The Vore Preference
 const VorePref = (props, context) => {
   const { act, data } = useBackend(context);
-  const {vorepref} = data;
+  const { vorepref } = data;
 
   return (
     <Button
@@ -245,15 +271,15 @@ const VorePref = (props, context) => {
       textAlign="center"
       color="transparent"
       mr={1}>
-        {vorepref}
-      </Button>
+      {vorepref}
+    </Button>
   );
-}
+};
 
 // / The Kiss Preference
 const KissPref = (props, context) => {
   const { act, data } = useBackend(context);
-  const {kisspref} = data;
+  const { kisspref } = data;
 
   return (
     <Button
@@ -263,10 +289,10 @@ const KissPref = (props, context) => {
       textAlign="center"
       color="transparent"
       mr={1}>
-        {kisspref}
-      </Button>
+      {kisspref}
+    </Button>
   );
-}
+};
 
 // / The F-list link
 const FlistLink = (props, context) => {
@@ -275,7 +301,6 @@ const FlistLink = (props, context) => {
     flink,
     their_quid,
     viewer_quid,
-
   } = data;
 
   return (
@@ -294,7 +319,7 @@ const FlistLink = (props, context) => {
         mr={1} />
     )
   );
-}
+};
 
 // / Sanitizes and marks up text
 const Text2HTML = (text) => {

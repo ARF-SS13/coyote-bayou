@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import {
@@ -361,6 +362,7 @@ const CharacterDirectoryList = (props, context) => {
                     quid: character.quid,
                     dms_r_open: character.dms_r_open,
                     looking_for_friends: character.looking_for_friends,
+                    profile_pic: character.profile_pic,
                   })} // OH BOY BINGUS INSPECTION DAY
                   icon="sticky-note"
                   mr={1}

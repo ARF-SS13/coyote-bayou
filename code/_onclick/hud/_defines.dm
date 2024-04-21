@@ -169,6 +169,7 @@
 #define ui_ghost_teleport       "SOUTH:6,CENTER-0.25:24"
 #define ui_ghost_spawners       "SOUTH:6,CENTER+0.75:24"
 #define ui_ghost_second_wind    "SOUTH:38,CENTER-1.25:24"
+#define ui_ghost_char_dir    "SOUTH:38,CENTER-2.25:24"
 #define ui_ghost_move_up       	"SOUTH:6,CENTER+1.75:24"
 #define ui_ghost_move_down      "SOUTH:6,CENTER+1.75:24"
 

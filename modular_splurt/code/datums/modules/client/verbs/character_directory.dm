@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 					whokisser = "Not Interested"
 		
 		if((isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
-			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+			name = C.prefs.my_shark
 		// It's okay if we fail to find OOC notes and flavor text
 		// But if we can't find the name, they must be using a non-compatible mob type currently.
 		if(!name)
@@ -136,6 +136,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"quid" = C.prefs.quester_uid, // love is a quest, and I'm on a quest for love
 			"dms_r_open" = C.prefs.dm_open,
 			"looking_for_friends" = C.prefs.needs_a_friend,
+			"profile_pic" = PfpHostLink(C.prefs.profilePicture, C.prefs.pfphost)
 		)))
 
 	data["directory"] = directory_mobs
@@ -197,6 +198,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			payload["quid"] = params["quid"]
 			payload["dms_r_open"] = params["dms_r_open"]
 			payload["looking_for_friends"] = params["looking_for_friends"]
+			payload["profile_pic"] = params["profile_pic"]
 			SSchat.inspect_character(user, payload)
 		if("pager")
 			SSchat.start_page(user, params["quid"])
@@ -204,6 +206,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			TOGGLE_VAR(user.client.prefs.needs_a_friend)
 		else
 			return check_for_mind_or_prefs(user, action, params["overwrite_prefs"])
+	return TRUE
 
 /datum/character_directory/proc/check_for_mind_or_prefs(mob/user, action, overwrite_prefs)
 	if (!user.client)
