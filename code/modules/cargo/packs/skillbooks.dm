@@ -295,3 +295,4 @@
 	name = "Blueprint - Scout Carbine"
 	desc = "Schematics of a quality weapon for a quality customer."
 	cost = 5000
+	contains = list(/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine)
