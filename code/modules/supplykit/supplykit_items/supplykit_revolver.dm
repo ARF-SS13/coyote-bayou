@@ -94,6 +94,11 @@
 	desc = "An aging 9mm revolver with nine shots in the cylinder."
 	item = /obj/item/gun/ballistic/revolver/Lemat
 
+/datum/supplykit_item/revolvers/z14revolver
+	name = "Zunder-14 pistol"
+	desc = "An over engineered pistol revolver chambered in .44 magnum."
+	item = /obj/item/gun/ballistic/automatic/pistol/lugerrevolver
+
 /datum/supplykit_item/revolvers/medusa
 	name = "Medusa Revolver"
 	desc = "A complex revolver with an adaptable six round cylinder, able to chamber .22, 9mm, 10mm, .45ACP, .357, and .44."
