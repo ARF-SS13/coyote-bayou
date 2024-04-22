@@ -61,13 +61,6 @@
 					/obj/item/grenade/f13/plasma)
 	crate_name = "plasma grenade pack crate"
 
-/datum/supply_pack/secenergy/minigun
-	name = "Weapons - Gatling Laser"
-	desc = "For when you REALLY need to cook a steak from twenty yards away."
-	cost = 50000
-	contains = list(/obj/item/minigunpack)
-	crate_name = "gatling laser crate"
-
 /datum/supply_pack/secenergy/wands // Wands
 	name = "Magic - Wands"
 	desc = "A crate containing three whole wands. Hand-crafted by the Witches of Winslow, according to the Dallas catalog."
@@ -102,180 +95,12 @@
 		)
 	crate_name = "quality weapon crate"
 
-/datum/supply_pack/secenergy/tgcarbine
-	name = "TG Carbine"
-	desc = "The basic Trident Gammaworks blaster carbine."
-	cost = 2000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/carbine)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgpistol
-	name = "TG Blaster Pistol"
-	desc = "A more compact version of the TG carbine. Talk about a pocket protector."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/pistol)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgspamlaser
-	name = "TG Repeating Blaster"
-	desc = "Maximum capacity, minimum power."
-	cost = 1000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgrifle
-	name = "TG Laser Rifle"
-	desc = "A MKII Trident Gammaworks Laser Rifle. Useful if you don't have room for extra ammo cells, but suffers in longer adventures."
-	cost = 2500
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgheavyrifle
-	name = "TG Heavy Laser Rifle"
-	desc = "A heavier variant of the MKII Laser Rifle. Fewer shots but each one hits much harder."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgautorifle
-	name = "TG Tactical Laser"
-	desc = "The successor to the MKII Laser Rifle. Better in almost every way."
-	cost = 3800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgnukerifle
-	name = "TG Nuclear Rifle"
-	desc = "Self-charging, powerful, and it irradiates your enemies! Just don't get hit with an EMP or you'll start to glow."
-	cost = 8000 // 2 be increased
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgnukepistol
-	name = "TG Nuclear Pistol"
-	desc = "For when you want a nuclear reactor in a holster instead of on your back."
-	cost = 3000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/recharger/nuclear)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/tgpc
-	name = "TG Particle Cannon"
-	desc = "Five shots. More than enough to kill anything that moves."
-	cost = 20000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/aep7
-	name = "AEP-7 Laser Pistol"
-	desc = "For a brick, it shoots pretty good."
-	cost = 1600
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/pistol)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/aer9
-	name = "AER-9 Laser Rifle"
-	desc = "For a bigger brick, it shoots pretty good."
-	cost = 1600
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/aer9)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/plaspistol
-	name = "Plasma Pistol"
-	desc = "Compact and deadly. Just not quiet."
-	cost = 1760
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/plasma/pistol)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/plasrifle
-	name = "Plasma Rifle"
-	desc = "Less compact, but just as deadly. Still not quiet."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/plasma)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/aer12
-	name = "AER-12 Laser Rifle"
-	desc = "A more efficient brick. Shoots slightly better."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/aer12)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/wattz1ks
-	name = "Wattz 1000s Laser Pistol"
-	desc = "For when you prefer accuracy by volume and death of a thousand cuts. Or burns, as the case may be."
-	cost = 1660
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/wattzs)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/gammagun
-	name = "Gamma Gun"
-	desc = "For when you want to really ruin somebody's day."
-	cost = 660
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/gammagun)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/ionrifle
-	name = "Ion Rifle"
-	desc = "The perfect counter to robots or other energy guns. Big, bulky, and power efficient."
-	cost = 2200
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/ionrifle)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/ioncarbine
-	name = "Ion Carbine"
-	desc = "The perfect counter to robots or other energy guns. Medium, compact(ish), and sort of power efficient."
-	cost = 2200
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/ionrifle/carbine)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/ionpistol
-	name = "Ion Pulse Pistol"
-	desc = "The perfect counter to robots or other energy guns. Identical to the carbine in size, but less power efficient. At least it's cheaper."
-	cost = 2000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/ionrifle/compact)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/aer14
-	name = "AER-14 Laser Rifle"
-	desc = "An even more efficient brick. Shoots much better."
-	cost = 2100
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/aer14)
-	crate_name = "select weapon crate"
-
 /datum/supply_pack/secenergy/ultrarifle
 	name = "Ultracite AER Laser Rifle"
 	desc = "The most efficient brick of them all. Shoots pretty good. Uses the very rare Ultracite MFC."
 	cost = 2500
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/ultra_rifle)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/laer
-	name = "LAER Laser Rifle"
-	desc = "An unusual brick. Damage is incredibly variable."
-	cost = 2260
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/laer)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/wattz2k
@@ -294,68 +119,12 @@
 	contains = list(/obj/item/gun/energy/laser/wattz2k/extended)
 	crate_name = "select weapon crate"
 
-/datum/supply_pack/secenergy/wattz2ks
-	name = "Wattz 2000 Sport Edition"
-	desc = "The bougie version of the Wattz 2k. Not quite as strong, but it's self-charging."
-	cost = 5000 
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/wattz2ks)
-	crate_name = "select weapon crate"
-
 /datum/supply_pack/secenergy/retrolas
 	name = "Retro Laser Pistol"
 	desc = "An ultra-compact and incredibly powerful laser pistol. So small, it might even fit in your boot!"
 	cost = 2100
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/retro)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/laserbuss
-	name = "Laser Blunderbuss"
-	desc = "It's just as insane as it sounds. Careful you don't lose a hand shooting it!"
-	cost = 4260
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/scatter/laserbuss)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/compactrcw
-	name = "Compact RCW"
-	desc = "For when you want to put on a rave that kills people. Minimally effective against all forms of armor, but hyper-lethal otherwise."
-	cost = 3800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/auto)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/rcw
-	name = "Laser RCW"
-	desc = "For when you want to put on a rave that kills people. Only slightly less effective against armor."
-	cost = 4000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/rcw)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/badlands
-	name = "Badlands AEP-7"
-	desc = "A smaller brick that shoots twice as good."
-	cost = 3340
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/badlands)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/ever
-	name = "Plasma Pistol Eve"
-	desc = "An upgraded plasma pistol. Compact and extra deadly."
-	cost = 3000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/plasma/pistol/eve)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/secenergy/adam
-	name = "Plasma Pistol Adam"
-	desc = "An upgraded plasma pistol. Less compact and even more deadly."
-	cost = 3000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/plasma/pistol/adam)
 	crate_name = "select weapon crate"
 
 /datum/supply_pack/secenergy/ebowbig
