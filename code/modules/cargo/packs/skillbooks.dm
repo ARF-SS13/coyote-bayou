@@ -295,4 +295,3 @@
 	name = "Blueprint - Scout Carbine"
 	desc = "Schematics of a quality weapon for a quality customer."
 	cost = 5000
-	
