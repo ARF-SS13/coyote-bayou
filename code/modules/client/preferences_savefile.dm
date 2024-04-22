@@ -218,6 +218,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				chat_toggles |= CHAT_HEAR_RADIOSTATIC
 				WRITE_FILE(S["chat_toggles"], chat_toggles)
 				current_version |= PMC_ADDED_RADIO_STATIC
+			if(PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF) // i broke it =3
+				S["admin_wire_tap"] >> admin_wire_tap
+				admin_wire_tap = TRUE
+				WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
+				current_version |= PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF
 
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 

@@ -10,7 +10,9 @@ import {
   Table,
   Flex,
   Tabs,
-  Stack } from '../components';
+  ToggleBox,
+  Stack,
+  Tooltip} from '../components';
 import { Window } from '../layouts';
 
 const erpTagColor = {
@@ -42,8 +44,9 @@ export const CharacterDirectory = (props, context) => {
 
   return (
     <Window
-      width={1024}
-      height={480}
+      width={1280}
+      height={600}
+      theme="ntos"
       title="Coyote Bayou Yellow Pages"
       resizable>
       <Window.Content
@@ -296,6 +299,12 @@ const CharacterDirectoryList = (props, context) => {
         }>
       <Table collapsing>
         <Table.Row bold>
+          <SortButton id="looking_for_friends">
+            <Tooltip
+              content="These people are looking to make new friends! Why not click a star and say hello?">
+              LFF
+            </Tooltip>
+          </SortButton>
           <SortButton id="name">Name</SortButton>
           <SortButton id="gender">Gender</SortButton>
           <SortButton id="species">Species</SortButton>
@@ -315,29 +324,38 @@ const CharacterDirectoryList = (props, context) => {
         {directory
           .sort((a, b) => {
             const i = sortOrder ? 1 : -1;
-            return a[sortId].localeCompare(b[sortId]) * i;
+            const thea_string = a[sortId].toString()
+            const theb_string = b[sortId].toString()
+            return thea_string.localeCompare(theb_string) * i;
           })
           .map((character, i) => (
-            <Table.Row key={i} backgroundColor={erpTagColor[character.erptag]}>
-              <Table.Cell p={1} collapsing>
+            <Table.Row
+              key={i}
+              backgroundColor={erpTagColor[character.erptag] || 'label'}
+              style={{
+                border: '1px solid #000',
+                "border-radius": "30px",
+              }}>
+              <Table.Cell p={1} collapsing textAlign="center">
                 {character.looking_for_friends ?
                   <Button
                     icon="star"
                     color="green"
-                    tooltip="This person is looking to make new friends! Why not click here and say hello?"
+                    // tooltip="This person is looking to make new friends! Why not click here and say hello?"
                     onClick={() => act("pager", { quid: character.quid })} />
                   : <Fragment />
                 }
+              </Table.Cell>
+              <Table.Cell p={1} collapsing>
                 {canOrbit
                   ? <Button
                     color={erpTagColor[character.erptag]}
                     icon="ghost"
-                    tooltip="Orbit"
-                    content={` ${character.name}`}
+                    // tooltip="Orbit"
                     onClick={() => act("orbit", { ref: character.ref })} />
-                  : ` ${character.name}`}
+                  : <Fragment />}
+                  {` ${character.name}`}
               </Table.Cell>
-
               <Table.Cell>{character.gender}</Table.Cell>
               <Table.Cell>{character.species}</Table.Cell>
               <Table.Cell>{character.whokisser}</Table.Cell>
@@ -383,7 +401,7 @@ const CharacterDirectoryList = (props, context) => {
                 <Button
                   onClick={() => act("pager", { quid: character.quid })}
                   icon="envelope"
-                  tooltip="Send a message to this character!"
+                  // tooltip="Send a message to this character!"
                   mr={1}
                 />
               </Table.Cell>
@@ -404,7 +422,7 @@ const SortButton = (props, context) => {
   const [sortOrder, setSortOrder] = useLocalState(context, 'sortOrder', 'name');
 
   return (
-    <Table.Cell collapsing>
+    <Table.Cell collapsing textAlign="center" width="1px">
       <Button
         width="100%"
         color={sortId !== id && 'transparent'}

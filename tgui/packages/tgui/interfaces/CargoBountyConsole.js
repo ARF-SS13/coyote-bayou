@@ -578,7 +578,7 @@ const QuestCard = (props, context) => {
       icon={DiffIcon}
       iconSize={1.5}
       iconColor={DiffiColor}
-      tooltip={DiffiTooltip}
+      // tooltip={DiffiTooltip}
       color="transparent" />
   );
 
@@ -599,7 +599,7 @@ const QuestCard = (props, context) => {
   return (
     <Button
       width="100%"
-      tooltip={TooTip}
+      // tooltip={TooTip}
       disabled={IsDisabled}
       color={CuteColor}
       p={0.5}
