@@ -60,7 +60,6 @@ export const CharacterInspection = (props, context) => {
                     })}
                     icon="envelope"
                     tooltip="Send a message to this character!"
-                    disabled={!data.true}
                     mr={1} />
                   </>
               )} >
