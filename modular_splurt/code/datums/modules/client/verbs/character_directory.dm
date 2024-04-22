@@ -145,6 +145,26 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"profile_pic" = PfpHostLink(C.prefs.profilePicture, C.prefs.pfphost)
 		)))
 
+	if(SSchat.debug_character_directory)
+		for(var/i in 1 to SSchat.debug_character_directory)
+			directory_mobs.Add(list(list(
+				"name" = (safepick(GLOB.megacarp_first_names) + " " + safepick(GLOB.megacarp_last_names)),
+				"species" = "Test Species",
+				"ooc_notes" = "Test OOC Notes",
+				"tag" = "Test Tag",
+				"erptag" = "Test ERP Tag",
+				"character_ad" = "Test Ad",
+				"flavor_text" = "Test Flavor Text",
+				"ref" = null,
+				"gender" = "Fluid",
+				"whokisser" = "Likes Anyone",
+				"flist" = "Test F-List",
+				"quid" = "Test QUID",
+				"dms_r_open" = TRUE,
+				"looking_for_friends" = TRUE,
+				"profile_pic" = "https://www.example.com/test.jpg"
+			)))
+
 	data["directory"] = directory_mobs
 
 	return data
@@ -165,10 +185,12 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			if(!COOLDOWN_FINISHED(user.client, char_directory_cooldown))
 				to_chat(user, span_alert("Hold your horses! Its still refreshing!"))
 				return
-			COOLDOWN_START(user.client, char_directory_cooldown, 10)
+			COOLDOWN_START(user.client, char_directory_cooldown, 5)
 			update_static_data(user, ui)
 			return TRUE
 		if("orbit")
+			if(!isobserver(user))
+				return TRUE
 			var/ref = params["ref"]
 			var/mob/dead/observer/ghost = user
 			var/atom/movable/poi = (locate(ref) in GLOB.mob_list) || (locate(ref) in GLOB.poi_list)
@@ -208,10 +230,13 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			SSchat.inspect_character(user, payload)
 		if("pager")
 			SSchat.start_page(user, params["quid"])
-			update_static_data(user, ui)
+			// update_static_data(user, ui)
 		if("setLookingForFriends")
 			TOGGLE_VAR(user.client.prefs.needs_a_friend)
-
+			if(!COOLDOWN_FINISHED(user.client, char_directory_cooldown))
+				return
+			COOLDOWN_START(user.client, char_directory_cooldown, 5)
+			// update_static_data(user, ui)
 		else
 			return check_for_mind_or_prefs(user, action, params["overwrite_prefs"])
 	return TRUE
