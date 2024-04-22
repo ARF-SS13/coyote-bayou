@@ -96,7 +96,7 @@ SUBSYSTEM_DEF(typinginit)
 /*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_alphys__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
 
 /datum/typing_sound/undertaleasgore
-	name = "Alphys"
+	name = "Asgore"
 	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_asgore.ogg'
 /*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_asgore__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
 
@@ -115,7 +115,7 @@ SUBSYSTEM_DEF(typinginit)
 	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_metta_1.ogg'
 /*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
 
-/datum/typing_sound/undertalemonster
+/datum/typing_sound/undertaledmonster
 	name = "Danger Monster"
 	soundFile = 'modular_splurt/sound/voice/barks/undertale/voice_monster1.ogg'
 /*	soundFileStatic = 'modular_splurt/sound/voice/barks/voice_metta_1__static.ogg'*/ //This doesnt exist yet. I don't have the software to create these.
