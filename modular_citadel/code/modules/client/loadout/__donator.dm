@@ -284,7 +284,7 @@
 
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/heavy/tribal/westernwayfarer(src)
-	new /obj/item/clothing/head/helmet/f13/wastewarhat (src)
+	new /obj/item/clothing/head/helmet/f13/wastewarhat(src)
 	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
 	new /obj/item/toy/scale(src)
 
