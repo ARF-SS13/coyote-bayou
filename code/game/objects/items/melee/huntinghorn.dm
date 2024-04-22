@@ -11,7 +11,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/instruments_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/instruments_righthand.dmi'
 
-	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer to get an idea of its capabilities."
+	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer (by examining it twice quickly) to get an idea of its capabilities."
 
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_SUITSTORE
 	w_class = WEIGHT_CLASS_BULKY
