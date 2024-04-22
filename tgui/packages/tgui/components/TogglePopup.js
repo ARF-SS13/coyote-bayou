@@ -39,7 +39,7 @@ export class TogglePopup extends Component {
       ClosedStuff,
       ...rest
     } = props;
-    if(!open) {
+    if (!open) {
       return (
         <Button
           onClick={() => this.setState({ open: true })}
