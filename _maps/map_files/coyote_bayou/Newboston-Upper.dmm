@@ -4452,8 +4452,8 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/ladder/unbreakable{
 	id = "nbguardtower";
-	level = 1;
-	pixel_y = 0
+	pixel_y = 0;
+	height = 2
 	},
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland/city/newboston/house)
