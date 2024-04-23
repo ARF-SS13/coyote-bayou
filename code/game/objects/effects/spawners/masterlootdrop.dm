@@ -266,6 +266,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/rare99 = 4,        //119.6 12
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,         //104 12
