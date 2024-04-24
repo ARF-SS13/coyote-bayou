@@ -194,7 +194,7 @@
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [get_random_if_list(speaker.verb_say)] something but you cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
 		deaf_message = span_notice("You can't hear yourself!")
@@ -409,7 +409,7 @@
 		else if(derpspeech)
 			. = "gibbers"
 		else if(InCritical())
-			. = "whines"
+			. = get_random_if_list(verb_whisper)
 
 /mob/living/whisper(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)

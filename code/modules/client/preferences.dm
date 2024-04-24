@@ -745,8 +745,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 			dat += "<h2>Voice</h2>"
-			dat += "<b>Speech Verb:</b><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=speech_verb;task=input'>[custom_speech_verb]</a><br>"
 			dat += "<b>Custom Tongue:</b><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><br>"
 
@@ -758,6 +756,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><br>"
+			
+			dat += "<center><h2>Custom Say Verbs</h2></center>"
+			dat += "<a href='?_src_=prefs;preference=custom_say;verbtype=custom_say;task=input'>Says</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_whisper;task=input'>Whispers</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_ask;task=input'>Asks</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_exclaim;task=input'>Exclaims</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_yell;task=input'>Yells</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_sing;task=input'>Sings</a>"
 			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
 			dat += "</td>"
 			// Coyote ADD: End
@@ -2712,6 +2718,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_y = 0
+				if("custom_say")
+					var/verb_type = href_list["verbtype"]
+					var/lastvalue = ""
+					if(length(features[verb_type]))
+						lastvalue = jointext(features[verb_type],",")
+					var/msg = input(usr, "Give a custom set of verbs for this character's [verb_type]. Separate them with a single comma and nothing else.", "Custom [verb_type]", lastvalue) as message|null
+					if(!isnull(msg))
+						features[verb_type] = splittext(msg,",")
 				////////////////// VORE STUFF /
 				if("master_vore_toggle")
 					TOGGLE_VAR(master_vore_toggle)
@@ -4359,6 +4373,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			new_custom_tongue.Insert(character)
 	if(custom_speech_verb != "default")
 		character.dna.species.say_mod = custom_speech_verb
+
+	if(length(character.dna.features["custom_say"]))
+		character.verb_say = character.dna.features["custom_say"]
+	if(length(character.dna.features["custom_whisper"]))
+		character.verb_whisper = character.dna.features["custom_whisper"]
+	if(length(character.dna.features["custom_ask"]))
+		character.verb_ask = character.dna.features["custom_ask"]
+	if(length(character.dna.features["custom_exclaim"]))
+		character.verb_exclaim = character.dna.features["custom_exclaim"]
+	if(length(character.dna.features["custom_yell"]))
+		character.verb_yell = character.dna.features["custom_yell"]
+	if(length(character.dna.features["custom_sing"]))
+		character.verb_sing = character.dna.features["custom_sing"]
 
 	//limb stuff, only done when initially spawning in
 	if(initial_spawn)
