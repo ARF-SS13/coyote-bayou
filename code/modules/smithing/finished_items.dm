@@ -8,7 +8,7 @@
 	righthand_file = 'code/modules/smithing/icons/onmob/righthand.dmi'
 	mob_overlay_icon = 'code/modules/smithing/icons/onmob/slot.dmi'
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON //yeah ok
+	total_mass = TOTAL_MASS_TOY_SWORD //casually making it where it takes very little stamina to swing
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	force = WEAPON_FORCE_TOOL_SMALL
@@ -29,6 +29,7 @@
 	if(force < 0)
 		force = 0
 
+// ignore this, this is literally unused
 /obj/item/melee/smith/sharpener
 	name = "whetstone"
 	icon = 'icons/obj/kitchen.dmi'
@@ -297,9 +298,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	attack_verb = list("punched", "jabbed", "whacked")
-	force = 33
-	force_unwielded = 33
-	force_wielded = 33
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 
 /obj/item/melee/smith/unarmed/claws
 	name = "scrap claws"
@@ -312,9 +314,10 @@
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.8
-	force = 28
-	force_unwielded = 28
-	force_wielded = 28
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 //////////////////////////
@@ -328,9 +331,10 @@
 	icon_state = "sword_smith"
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
-	force = 47
-	force_unwielded = 47
-	force_wielded = 47
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/bokken
@@ -345,9 +349,10 @@
 	icon_state = "spatha_smith"
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
-	force = 42
-	force_unwielded = 42
-	force_wielded = 42
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 
 	block_chance = 8
 
@@ -356,9 +361,10 @@
 	icon_state = "sabre_smith"
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
-	force = 42
-	force_unwielded = 42
-	force_wielded = 42
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.9
@@ -370,10 +376,10 @@
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_EDGED
-	force = 24
-	force_unwielded = 24
-	force_wielded = 24
-	throwforce = 30
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.6 //fast as fuck boiii
@@ -392,10 +398,10 @@
 	name = "sharpblade"
 	icon_state = "bowie_smith"
 	overlay_state = "hilt_bowie"
-	force = 31
-	force_unwielded = 31
-	force_wielded = 31
-	throwforce= 34
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.8
 	sharpness = SHARP_EDGED
@@ -454,25 +460,6 @@
 	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
-/obj/item/melee/smith/wakizashi/Initialize()
-	if(prob(1))
-		name = pick("weebwhacker", "weedhacker", "weebhacker", "weewhacker")
-	. = ..()
-
-/datum/block_parry_data/waki //like longbokken but worse reflect
-	parry_stamina_cost = 6
-	parry_time_windup = 0
-	parry_time_active = 15 //decent window
-	parry_time_spindown = 0
-	parry_time_perfect = 2
-	parry_time_perfect_leeway = 0.75
-	parry_imperfect_falloff_percent = 7.5
-	parry_efficiency_to_counterattack = 100
-	parry_efficiency_considered_successful = 80
-	parry_efficiency_perfect = 120
-	parry_failed_stagger_duration = 3 SECONDS
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1.9)
-
 // Mace - low damage, high AP (25, 0,4)
 /obj/item/melee/smith/mace
 	name = "club"
@@ -480,7 +467,8 @@
 	overlay_state = "shaft_mace"
 	force = 35
 	force_unwielded = 35
-	force_wielded = 35
+	force_wielded = 45
+	throwforce= 40
 	block_chance = 5
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
@@ -501,11 +489,11 @@
 	icon_state = "katana_smith"
 	icon_prefix = "katana_smith"
 	overlay_state = "hilt_katana"
-	force = 30
-	block_chance = 15
 	attack_speed = CLICK_CD_MELEE * 0.8
-	force_wielded = 40
-	force_unwielded = 30
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/bokken
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -517,29 +505,15 @@
 	icon_state = "longsword_smith"
 	icon_prefix = "longsword_smith"
 	overlay_state = "hilt_longsword"
-	force = 28
 	block_chance = 15
-	force_wielded = 50
-	force_unwielded = 28
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
-
-/datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
-	parry_stamina_cost = 12 //dont miss
-	parry_time_active = 4
-	parry_time_perfect = 2
-	parry_time_perfect_leeway = 2
-	parry_failed_stagger_duration = 3 SECONDS
-	parry_failed_clickcd_duration = 3 SECONDS
-	parry_time_windup = 0
-	parry_time_spindown = 0
-	parry_imperfect_falloff_percent = 0
-	parry_efficiency_to_counterattack = 100
-	parry_efficiency_considered_successful = 120
-	parry_efficiency_perfect = 120
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
 
 // Heavy axe, 2H focused chopper 25/55. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe
@@ -548,30 +522,24 @@
 	icon_prefix = "axe_smith"
 	overlay_state = "shaft_axe"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 25
 	block_chance = 8
-	force_wielded = 55
-	force_unwielded = 25
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	slot_flags = INV_SLOTBIT_BACK
 	layer = MOB_UPPER_LAYER
-
-/obj/item/melee/smith/twohand/axe/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /obj/machinery/door) || istype(A, /obj/structure/simple_door) || istype(A, /obj/structure/barricade))
-		var/obj/machinery/door/D = A
-		D.take_damage(force, BRUTE, "melee", 0) // DOORFUCKER 9000
 
 /obj/item/melee/smith/twohand/axe/warhoned
 	name = "sledge axe"
 	icon_state = "warhoned_smith"
 	icon_prefix = "warhoned_smith"
 	overlay_state = "shaft_warhoned"
-	force = 25
 	block_chance = 5
-	force_wielded = 65
-	force_unwielded = 25
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/melee/smith/twohand/axe/crusher
@@ -579,28 +547,24 @@
 	icon_state = "crusher_smith"
 	icon_prefix = "crusher_smith"
 	overlay_state = "shaft_crusher"
-	force = 20
 	block_chance = 5
-	force_wielded = 50
-	force_unwielded = 20
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	attack_speed = CLICK_CD_MELEE * 1.5
 	sharpness = SHARP_NONE
-
-/obj/item/melee/smith/twohand/axe/crusher/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(70, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/melee/smith/twohand/axe/scrapblade
 	name = "homewrecker"
 	icon_state = "scrap_smith"
 	icon_prefix = "scrap_smith"
 	overlay_state = "hilt_scrap"
-	force = 25
 	block_chance = 10
-	force_wielded = 60
-	force_unwielded = 25
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	attack_speed = CLICK_CD_MELEE * 1.3
 
 /obj/item/melee/smith/twohand/spear
@@ -608,10 +572,11 @@
 	icon_state = "spear_smith"
 	icon_prefix = "spear_smith"
 	overlay_state = "shaft_spear"
-	force = 25
 	block_chance = 5
-	force_wielded = 50
-	force_unwielded = 25
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.9
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -621,10 +586,11 @@
 	icon_state = "lance_smith"
 	icon_prefix = "lance_smith"
 	overlay_state = "shaft_lance"
-	force = 28
 	block_chance = 8
-	force_wielded = 56
-	force_unwielded = 28
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	attack_speed = CLICK_CD_MELEE
 
 /obj/item/melee/smith/twohand/spear/trident
@@ -651,10 +617,10 @@
 	item_state = "javelin_smith"
 	sharpness = SHARP_EDGED
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = 15
-	force_unwielded = 15
-	force_wielded = 15
-	throwforce = 45
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	sharpness = SHARP_EDGED
 
 // Smaller weaker javelin, easier to store/carry, less effective
@@ -664,10 +630,10 @@
 	overlay_state = "handle_throwing"
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = 10
-	force_unwielded = 10
-	force_wielded = 10
-	throwforce = 35
+	force = 35
+	force_unwielded = 35
+	force_wielded = 45
+	throwforce= 40
 	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_EDGED
 
