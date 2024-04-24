@@ -192,6 +192,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_OOC_NOTES_UPDATE) // ooc notes now come with a cool template
 				var/ooc_notes
 				S["feature_ooc_notes"] >> ooc_notes
+				if(findtext(ooc_notes, OOC_NOTE_TEMPLATE))
+					current_version |= PMC_OOC_NOTES_UPDATE
+					continue
 				ooc_notes += OOC_NOTE_TEMPLATE
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
@@ -201,12 +204,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
 			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
 				S["feature_genital_whitelist"] >> genital_whitelist
+				if(!islist(genital_whitelist))
+					current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+					continue
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
-				S["faved_interactions"] >> faved_interactions
-				faved_interactions = list()
-				WRITE_FILE(S["faved_interactions"], faved_interactions)
+				// S["faved_interactions"] >> faved_interactions
+				// faved_interactions = list()
+				// WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
 			if(PMC_ADDED_RADIO_BLURBLES) // i broke it =3
 				S["chat_toggles"] >> chat_toggles
@@ -226,7 +232,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
 				var/list/huge_quest_list = list()
 				S["saved_finished_quests"] >> huge_quest_list
-
 				/// first/ back everything up
 				saved_finished_quests_old = huge_quest_list
 				WRITE_FILE(S["saved_finished_quests_old"], saved_finished_quests_old)
@@ -278,7 +283,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				saved_finished_quests = wat2save_flat.Copy()
 				WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
 				WRITE_FILE(S["historical_banked_points"], cashmoney)
-				// current_version |= PMC_FENNY_FINISHED_124_QUESTS
+				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 

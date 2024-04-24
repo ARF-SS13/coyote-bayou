@@ -16,6 +16,7 @@
 	name = "belly"							// Name of this location
 	desc = "It appears to be rather warm and wet. Makes sense, considering the fact it's a belly."	// Flavor text description of inside sight/sound/smells/feels.
 	rad_flags = RAD_NO_CONTAMINATE | RAD_PROTECT_CONTENTS
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/vore_sound = "Gulp"					// Sound when ingesting someone
 	var/vore_verb = "ingest"				// Verb for eating with this in messages
 	var/release_verb = "expels"				// Verb for releasing something from a stomach
