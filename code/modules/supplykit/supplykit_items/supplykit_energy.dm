@@ -3,10 +3,10 @@
 
 //primary vars
 /datum/supplykit_item/energy/
-	name = 
-	desc = 
-	item = 
-	cost = 
+	name =
+	desc =
+	item =
+	cost =
 
 //other vars
 	surplus = 100 //if set below 100, reduces chances of being in the surplus crate
@@ -118,8 +118,14 @@
 
 /datum/supplykit_item/energy/repeater
 	name = "Repeating Blaster"
-	desc = "A rapidfire energy blaster with an internal battery. It can be cranked to recharge"
+	desc = "A repeating blaster that shoots very quickly. Uses very low power blaster bolts. Can be cranked to be recharged."
 	item = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
+	cost = 40
+
+/datum/supplykit_item/energy/shocker
+	name = "Shock Autoblaster"
+	desc = "A repeating blaster that uses low power tesla shocks. Can be cranked to recharge."
+	item = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock
 	cost = 40
 
 /datum/supplykit_item/energy/wattz
