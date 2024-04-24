@@ -103,8 +103,8 @@ SUBSYSTEM_DEF(economy)
 
 	var/static_spam = 0
 
-	var/debug_quests = TRUE
-	var/debug_objectives = TRUE
+	var/debug_quests = FALSE
+	var/debug_objectives = FALSE
 	var/debug_ignore_extinction = FALSE
 	var/debug_include_laggy_item_quests = FALSE
 	var/debug_ignore_historical_round_number_check = TRUE
