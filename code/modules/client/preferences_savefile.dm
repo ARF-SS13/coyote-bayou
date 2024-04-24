@@ -192,6 +192,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_OOC_NOTES_UPDATE) // ooc notes now come with a cool template
 				var/ooc_notes
 				S["feature_ooc_notes"] >> ooc_notes
+				if(ooc_notes) // close enough
+					current_version |= PMC_OOC_NOTES_UPDATE
+					continue
 				ooc_notes += OOC_NOTE_TEMPLATE
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
@@ -201,12 +204,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
 			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
 				S["feature_genital_whitelist"] >> genital_whitelist
+				if(!islist(genital_whitelist))
+					current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+					continue
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
-				S["faved_interactions"] >> faved_interactions
-				faved_interactions = list()
-				WRITE_FILE(S["faved_interactions"], faved_interactions)
+				// S["faved_interactions"] >> faved_interactions
+				// faved_interactions = list()
+				// WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
 			if(PMC_ADDED_RADIO_BLURBLES) // i broke it =3
 				S["chat_toggles"] >> chat_toggles
@@ -223,6 +229,61 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				admin_wire_tap = TRUE
 				WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
 				current_version |= PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF
+			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
+				var/list/huge_quest_list = list()
+				S["saved_finished_quests"] >> huge_quest_list
+				/// first/ back everything up
+				saved_finished_quests_old = huge_quest_list
+				WRITE_FILE(S["saved_finished_quests_old"], saved_finished_quests_old)
+				huge_quest_list = safe_json_decode(huge_quest_list)
+				if(!islist(huge_quest_list))
+					huge_quest_list = list()
+				// for(var/i in 1 to 124) // comment out before release
+				// 	var/list/output = list()
+				// 	output[QF_QUESTER_NAME]           = "Bungo"
+				// 	output[QF_QUEST_TYPE]             = "nothing"
+				// 	output[QF_QUEST_NAME]             = "quest_name"
+				// 	output[QF_QUEST_DESCRIPTION]      = "bingus"
+				// 	output[QF_QUEST_TIME_COMPLETED]   = 59
+				// 	output[QF_QUEST_ROUND_ID]         = 59
+				// 	output[QF_QUEST_DIFFICULTY]       = text2num(pick(QUEST_DIFFICULTY_EASY, QUEST_DIFFICULTY_MED, QUEST_DIFFICULTY_HARD, QUEST_DIFFICULTY_CBT))
+				// 	output[QF_QUEST_REWARDED]         = text2num(rand(1, 1000))
+				// 	output[QF_OBJECTIVES]             = list()
+				// 	output["VALID"]                   = TRUE // everyone is valid under the toolbox
+				// 	huge_quest_list += list(output)
+				number_of_finished_quests = LAZYLEN(huge_quest_list)
+				var/cashmoney = 0
+				var/list/what2save = list()
+				what2save["[QUEST_DIFFICULTY_EASY]"] = list()
+				what2save["[QUEST_DIFFICULTY_MED]"] = list()
+				what2save["[QUEST_DIFFICULTY_HARD]"] = list()
+				what2save["[QUEST_DIFFICULTY_CBT]"] = list()
+				WRITE_FILE(S["number_of_finished_quests"], number_of_finished_quests)
+				for(var/list/fquest in huge_quest_list)
+					if(!LAZYACCESS(fquest, "VALID"))
+						stack_trace("fquest is not a valid list!!!!!!!!!!!!!!!!!!!!!!!!")
+						continue
+					var/qdiff = "[fquest[QF_QUEST_DIFFICULTY]]"
+					/// now we want to keep only the 4 highest payout quests
+					var/payout = text2num(fquest[QF_QUEST_REWARDED])
+					cashmoney += payout
+					if(LAZYLEN(what2save[qdiff]) < 4)
+						what2save[qdiff] += list(fquest)
+					else
+						for(var/list/quest in what2save[qdiff])
+							if(text2num(quest[QF_QUEST_REWARDED]) < payout)
+								what2save[qdiff] -= quest
+								what2save[qdiff] += list(fquest)
+								break
+				var/list/wat2save_flat = list()
+				/// convert the arselist to a flat list
+				for(var/difficulty in what2save)
+					for(var/list/quest in what2save[difficulty])
+						wat2save_flat += list(quest)
+				saved_finished_quests = wat2save_flat.Copy()
+				WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
+				WRITE_FILE(S["historical_banked_points"], cashmoney)
+				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
@@ -258,7 +319,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			fdel(bacpath) //only keep 1 version of backup
 		fcopy(S, bacpath) //byond helpfully lets you use a savefile for the first arg.
 		return FALSE
-	update_save(S)
 	. = TRUE
 
 	//general preferences
@@ -641,6 +701,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/needs_update = savefile_needs_update(S)
 	if(needs_update == -2)		//fatal, can't load any data
 		return FALSE
+	update_save(S)
 
 	. = TRUE
 
@@ -968,6 +1029,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/helicopter_postcum
 	S["saved_active_quests"] >> helicopter_postcum
 	saved_active_quests = safe_json_decode(helicopter_postcum)
+	S["number_of_finished_quests"] >> number_of_finished_quests
+	S["historical_banked_points"] >> historical_banked_points
 
 	//sanitize data
 	show_in_directory     = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
@@ -979,6 +1042,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	saved_active_quests   = sanitize_islist(saved_active_quests, list())
 	dm_open               = sanitize_integer(dm_open, TRUE)
 	needs_a_friend        = sanitize_integer(needs_a_friend, TRUE)
+	saved_unclaimed_points     = sanitize_integer(saved_unclaimed_points,    0, INFINITY, initial(saved_unclaimed_points))
+	number_of_finished_quests  = sanitize_integer(number_of_finished_quests, 0, INFINITY, initial(number_of_finished_quests))
+	historical_banked_points   = sanitize_integer(historical_banked_points,  0, INFINITY, initial(historical_banked_points))
+
 
 	//Sanitize
 
@@ -1576,6 +1643,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		WRITE_FILE(S["saved_finished_quests"], safe_json_encode(saved_finished_quests))
 	WRITE_FILE(S["saved_active_quests"], safe_json_encode(saved_active_quests))
 	WRITE_FILE(S["saved_unclaimed_points"], saved_unclaimed_points)
+	WRITE_FILE(S["number_of_finished_quests"], number_of_finished_quests)
+	WRITE_FILE(S["historical_banked_points"], historical_banked_points)
 
 	return 1
 

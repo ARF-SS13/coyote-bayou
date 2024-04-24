@@ -97,9 +97,9 @@
 	SIGNAL_HANDLER
 	if(active)
 		return
+	to_chat(vorer, span_userdanger("Uh oh."))
 	vorer?.visible_message(
 		span_alert("[vorer]'s [belly] starts ticking?"),
-		span_userdanger("Uh oh."),
 		pref_check = VOREPREF_VORE_MESSAGES
 	)
 	INVOKE_ASYNC(src,PROC_REF(preprime), vorer, null, FALSE, 100)

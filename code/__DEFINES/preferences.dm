@@ -148,6 +148,8 @@ GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "
 #define PMC_ADDED_RADIO_BLURBLES "CHAT_HEAR_RADIOBLURBLES" // Player Master Changelog
 #define PMC_ADDED_RADIO_STATIC "PMC_ADDED_RADIO_STATIC" // Player Master Changelog
 #define PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF "lookingatyouwiretap" // Player Master Changelog
+#define PMC_FENNY_FINISHED_124_QUESTS "and_killed_the_server" // Player Master Changelog
+#define PMC_FENNY_FINISHED_124_QUESTS2 "and_killed_the_server2" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
@@ -158,4 +160,6 @@ GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "
 	PMC_UNBREAK_FAVORITE_PLAPS,\
 	PMC_ADDED_RADIO_BLURBLES,\
 	PMC_ADDED_RADIO_STATIC,\
+	PMC_FENNY_FINISHED_124_QUESTS,\
+	PMC_FENNY_FINISHED_124_QUESTS2,\
 	)

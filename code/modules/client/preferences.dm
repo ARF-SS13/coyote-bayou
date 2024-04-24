@@ -152,10 +152,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/needs_a_friend = FALSE // for the quest
 	var/list/blocked_from_dms = list() // list of quids
 	/// rough approximations of the character's finished quests
+	var/list/saved_finished_quests_old = list() // deprecated, or something
 	var/list/saved_finished_quests = list()
+	var/number_of_finished_quests = 0
+	var/historical_banked_points = 0
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
-	var/list/saved_unclaimed_points = 0
+	var/saved_unclaimed_points = 0
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
