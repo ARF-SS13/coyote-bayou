@@ -20097,8 +20097,9 @@
 	color = "#363636"
 	},
 /obj/structure/table/wood/bar,
-/obj/item/storage/lockbox/dueling/hugbox,
-/obj/item/storage/lockbox/dueling/hugbox,
+/obj/item/storage/lockbox/dueling/hugbox{
+	pixel_y = 5
+	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
 "jFa" = (
@@ -22605,10 +22606,6 @@
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"kLY" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/bar)
 "kLZ" = (
 /obj/machinery/vending/bigredvend{
 	pixel_x = -10;
@@ -35018,7 +35015,9 @@
 	dir = 1;
 	light_color = "#706891"
 	},
-/obj/machinery/chem_dispenser/drinks,
+/obj/machinery/chem_dispenser/drinks{
+	obj_flags = EMAGGED
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -48362,6 +48361,10 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"xjS" = (
+/obj/machinery/microwave/stove,
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston/bar)
 "xjX" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/sandbags,
@@ -81859,7 +81862,7 @@ xOW
 wmG
 qSa
 vOY
-kLY
+xjS
 asT
 bjJ
 vOY
