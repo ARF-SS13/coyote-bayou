@@ -29393,6 +29393,13 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"mJj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/cherryblossom{
+	plane = -7
+	},
+/turf/open/floor/grass,
+/area/f13/underground/cave)
 "mJk" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel{
@@ -29835,6 +29842,17 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood/armory)
+"mRV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/ladder/unbreakable{
+	color = "#FF33FF";
+	height = 1;
+	id = "heavens_night"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/underground/cave)
 "mSe" = (
 /obj/structure/sign/warning,
 /turf/closed/wall/r_wall,
@@ -35547,6 +35565,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/tunnelertemple)
+"pkr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/cherryblossom{
+	plane = -6
+	},
+/turf/open/floor/grass,
+/area/f13/underground/cave)
 "pkt" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/gibs/human/body,
@@ -55657,16 +55682,26 @@
 	},
 /area/f13/bunker)
 "xRg" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/ladder/unbreakable{
-	color = "#FF33FF";
-	height = 1;
-	id = "heavens_night"
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/step_trigger/player_choice_log{
+	title = "Welcome to Heavens Night.";
+	question = "Welcome to Heavens Night, this club is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/underground/cave)
 "xRz" = (
 /obj/effect/turf_decal/big{
@@ -103366,8 +103401,8 @@ fio
 iWs
 xZG
 xZG
-xZG
-apk
+mJj
+pkr
 pAR
 whv
 whv
@@ -103624,7 +103659,7 @@ kNU
 kNU
 kNU
 xRg
-kNU
+mRV
 apk
 whv
 whv
@@ -103880,8 +103915,8 @@ ljz
 kNU
 pAR
 xZG
-xZG
-apk
+mJj
+pkr
 apk
 whv
 whv

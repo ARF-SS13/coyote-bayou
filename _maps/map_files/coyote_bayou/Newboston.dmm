@@ -22338,11 +22338,8 @@
 	},
 /area/f13/building/abandoned)
 "kGD" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/building)
+/turf/closed/mineral/random/low_chance,
+/area/f13/wasteland/city/newboston/outdoors)
 "kGH" = (
 /obj/structure/table/wood/settler,
 /obj/item/trash/plate,
@@ -50405,7 +50402,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/building)
+/area/f13/wasteland/city/newboston/outdoors)
 "xZm" = (
 /obj/effect/spawner/lootdrop/bedsheet,
 /obj/structure/bed,
@@ -68741,7 +68738,7 @@ tot
 tot
 tot
 tot
-tot
+kGD
 tot
 tot
 tot
@@ -84968,9 +84965,9 @@ avK
 avK
 avK
 spU
-kGD
-spU
-spU
+iRT
+avK
+avK
 spU
 jgL
 jgL
@@ -85226,8 +85223,8 @@ bKF
 bKF
 kXC
 xZl
-dPF
-dPF
+gIm
+gIm
 dPF
 iWw
 iWw
