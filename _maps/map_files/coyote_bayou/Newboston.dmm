@@ -10322,10 +10322,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fdm" = (
-/obj/machinery/mineral/equipment_vendor{
-	pixel_y = 14;
-	density = 0
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
 	},
@@ -11909,6 +11905,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
 "fRB" = (
@@ -35076,6 +35073,10 @@
 /obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/workshop/nash)
+"rdY" = (
+/obj/machinery/mineral/equipment_vendor,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "reb" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/subway,
@@ -99357,7 +99358,7 @@ tot
 tot
 tot
 tot
-tPQ
+rdY
 gIL
 tPQ
 gIL
