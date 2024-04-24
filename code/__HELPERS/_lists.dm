@@ -852,6 +852,8 @@
 
 /proc/safe_json_decode(string, default = list())
 	. = default
+	if(!istext(string))
+		return
 	if(isnull(string))
 		return
 	return json_decode(string)
