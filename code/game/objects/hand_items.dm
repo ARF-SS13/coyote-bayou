@@ -224,7 +224,7 @@
 	wound_bonus = 4
 	sharpness = SHARP_POINTY
 	attack_speed = CLICK_CD_MELEE * 0.7
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
@@ -232,10 +232,6 @@
 /obj/item/hand_item/biter/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(unarmed_adjusted)
-		mob_overlay_icon = righthand_file
-	if(!unarmed_adjusted)
-		mob_overlay_icon = lefthand_file
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
@@ -323,18 +319,12 @@
 	wound_bonus = 4
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.7
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
-	var/can_adjust_unarmed = TRUE
-	var/unarmed_adjusted = TRUE
 
 /obj/item/hand_item/clawer/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(unarmed_adjusted)
-		mob_overlay_icon = righthand_file
-	if(!unarmed_adjusted)
-		mob_overlay_icon = lefthand_file
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
@@ -356,25 +346,6 @@
 			H.dna.species.punchdamagelow = 10
 		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
 		H.dna.species.attack_verb = "punch"
-
-/obj/item/hand_item/clawer/examine(mob/user)
-	. = ..()
-	if(can_adjust_unarmed == TRUE)
-		if(unarmed_adjusted == TRUE)
-			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
-		else
-			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
-
-/obj/item/hand_item/clawer/AltClick(mob/user)
-	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ishuman(user)))
-		return
-	if(can_adjust_unarmed == TRUE)
-		toggle_unarmed_adjust()
-
-/obj/item/hand_item/clawer/proc/toggle_unarmed_adjust()
-	unarmed_adjusted = !unarmed_adjusted
-	to_chat(usr, span_notice("[src] is ready to be worn on another hand."))
 
 
 /obj/item/hand_item/clawer/creature
