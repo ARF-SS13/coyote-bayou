@@ -17,7 +17,7 @@
 
 /datum/crafting_recipe/sharpener
 	name = "Whetstone"
-	result = /obj/item/melee/smith/sharpener
+	result = /obj/item/sharpener
 	reqs = list(
 		/obj/item/ingot/titanium = 1,
 		/obj/item/stack/sheet/plasteel = 10,
