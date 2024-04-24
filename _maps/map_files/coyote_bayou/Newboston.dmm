@@ -1417,10 +1417,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
-"aGA" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/bar)
 "aGF" = (
 /obj/structure/window/fulltile/wood_window,
 /turf/open/floor/plasteel/f13{
@@ -6086,6 +6082,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house/clean,
 /area/f13/building)
+"cWl" = (
+/obj/machinery/microwave/stove,
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston/bar)
 "cWt" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
@@ -24505,8 +24505,7 @@
 /obj/machinery/chem_dispenser{
 	pixel_y = 19;
 	pixel_x = -12;
-	density = 0;
-	obj_flags = EMAGGED
+	density = 0
 	},
 /obj/machinery/chem_heater{
 	pixel_y = 17;
@@ -35020,9 +35019,6 @@
 	dir = 1;
 	light_color = "#706891"
 	},
-/obj/machinery/chem_dispenser/drinks{
-	obj_flags = EMAGGED
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -35034,6 +35030,7 @@
 	pixel_x = 15;
 	pixel_y = 32
 	},
+/obj/machinery/chem_dispenser/drinks/fullupgrade,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
 "qRA" = (
@@ -81863,7 +81860,7 @@ xOW
 wmG
 qSa
 vOY
-aGA
+cWl
 asT
 bjJ
 vOY
