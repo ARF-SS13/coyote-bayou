@@ -98,7 +98,8 @@
 			direct_target = target
 	if(!direct_target)
 		BB.preparePixelProjectile(target, user, params, spread)
-	BB.fire(null, direct_target, spread)
+	var/angle = text2num(params2list(params)["angle"])
+	BB.fire(angle, direct_target, spread)
 	BB = null
 	spend_casing()
 	return 1
