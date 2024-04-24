@@ -63,17 +63,18 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/say_mod(input, message_mode)
 	var/ending = copytext_char(input, -1)
 	if(message_mode == MODE_WHISPER)
-		return verb_whisper
+		. = verb_whisper
 	else if(message_mode == MODE_SING)
-		return verb_sing
+		. = verb_sing
 	else if(copytext_char(input, -2) == "!!")
-		return verb_yell
+		. = verb_yell
 	else if(ending == "?")
-		return verb_ask
+		. = verb_ask
 	else if(ending == "!")
-		return verb_exclaim
+		. = verb_exclaim
 	else
-		return verb_say
+		. = verb_say
+	return get_random_if_list(.)
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), message_mode)
 	if(!input)
