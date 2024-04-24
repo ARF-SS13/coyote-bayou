@@ -250,6 +250,11 @@
 	SEND_SIGNAL(src, COMSIG_VORE_ADD_BELLY, loc)
 	heartbeat_loop = new(list(), FALSE)
 	squish_loop = new(list(), FALSE)
+	/// So one of the stipulations to having vore be so readily accessible and available to just about anyione
+	/// is that it should not give the player a mechanical advantage over someone who doesnt use it
+	/// Think about it, a potentially game-changing mechanic that is locked out for someone who doesnt like vore kinda sucks
+	/// So, yeah
+	ADD_TRAIT(src, TRAIT_ARTIFACT_BLOCKER, src)
 
 /obj/vore_belly/ComponentInitialize()
 	. = ..()
