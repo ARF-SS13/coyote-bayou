@@ -192,7 +192,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_OOC_NOTES_UPDATE) // ooc notes now come with a cool template
 				var/ooc_notes
 				S["feature_ooc_notes"] >> ooc_notes
-				if(findtext(ooc_notes, OOC_NOTE_TEMPLATE))
+				if(ooc_notes) // close enough
 					current_version |= PMC_OOC_NOTES_UPDATE
 					continue
 				ooc_notes += OOC_NOTE_TEMPLATE
