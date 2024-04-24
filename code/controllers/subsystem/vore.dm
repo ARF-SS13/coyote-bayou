@@ -81,6 +81,10 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 		return FALSE
 	if(ishuman(eat_thing))
 		return TRUE
+	if(isliving(eat_thing))
+		var/mob/living/L = eat_thing
+		if(L.ckey || L.client)
+			return TRUE // we'll check their prefs later
 	return approved_vore_paths[eat_thing.type]
 
 // Returns a mob's smell
