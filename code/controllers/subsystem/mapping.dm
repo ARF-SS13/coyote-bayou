@@ -485,8 +485,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			continue
 		var/datum/map_template/dungeon/D = new dungeon_type()
 
-		dungeon_templates[D.dungeon_id] = D
-		map_templates[D.dungeon_id] = D
+		dungeon_templates[D.name] = D
+		map_templates[D.name] = D
 
 
 //Manual loading of away missions.

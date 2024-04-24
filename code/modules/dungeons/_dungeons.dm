@@ -1,4 +1,29 @@
+/// Dungeon controller.
+/datum/dungeon_controller
+	/// Unique ID that SSdungeons uses to keep track of this unique dungeon
+	var/dungeon_id
+	/// Turf reservations that this dungeon needs.
+	var/list/reservations = list()
+	/// A list of players inside the dungeon. If nobody's inside for a while, we wipe the reservation to save memory.
+	var/list/players_inside = list()
+	/// After everyone's left a dungeon, we should wait this long before wiping it.
+	var/wipe_after = 10 MINUTES
+	/// Weighted list of starting maps to choose from.
+	var/list/start_maps = list()
+	/// Weighted list of maps to choose from that aren't an entrance or exit. The meat of a dungeon.
+	var/list/middle_maps = list()
+	/// Weighted list of final maps to choose from. These always contain an exit for the dungeon.
+	var/list/exit_maps = list()
+	var/min_middle_maps = 1
+	var/max_middle_maps = 1
+	/// Can we roll into the same middle map more than once?
+	var/can_dupe_middle_maps = FALSE
+	/// When rolling a middle map, this is the chance to instead roll an exit map.
+	var/exit_chance = 50
+
+/// An individual map chunk for a dungeon.
 /datum/map_template/dungeon
+	name = "Dungeon Template"
 	var/description
 	/// Used by dynamic mob spawnpoints to assign health, damage, etc
 	var/difficulty
@@ -6,9 +31,7 @@
 	var/loot_abundance
 	/// What kinds of enemies spawn in this dungeon? examples: "Robots", "Geckos", "Super-advanced crab-people with quasar cannons"
 	var/threat_type
-	/// How many of this dungeon can be running at the same time?
-	var/max_simultaneous = 1
-
+	ztraits = list(ZTRAIT_RESERVED = TRUE, ZTRAIT_DUNGEON = TRUE)
 
 /datum/map_template/dungeon/proc/spawn_new_dungeon()
 	var/datum/turf_reservation/dungeon/reservation = SSmapping.RequestBlockReservation(width, height, type = /datum/turf_reservation/dungeon) 									//Reserve space to spawn our dungeon
@@ -43,12 +66,12 @@
 	set category = "Debug"
 	set name = "stress test dungeons"
 
-	SSDungeons.dungeon_stress_test = !SSDungeons.dungeon_stress_test
+	SSdungeons.dungeon_stress_test = !SSdungeons.dungeon_stress_test
 
-	if(SSmapping.dungeon_stress_test)
+	if(SSdungeons.dungeon_stress_test)
 		message_admins(span_adminnotice("STRESS TEST: Stress test started."))
 		for(var/i=0, i<30, i++)
-			if(!SSmapping.dungeon_stress_test)
+			if(!SSdungeons.dungeon_stress_test)
 				break
 			var/datum/map_template/dungeon/template
 			var/map = pick(SSmapping.dungeon_templates)
@@ -62,20 +85,6 @@
 	else
 		message_admins(span_adminnotice("STRESS TEST: Stress test canceled."))
 
-/// Dungeon master controller
-/datum/dungeon_controller
-	/// Unique ID that SSDungeons uses to keep track of this unique dungeon
-	var/dungeon_id
-	/// Turf reservations that this dungeon needs.
-	var/list/reservations = list()
-	/// A list of players inside the dungeon. If nobody's inside for a while, we wipe the reservation to save memory.
-	var/list/players_inside = list()
-	/// After everyone's left a dungeon, we should wait this long before wiping it.
-	var/wipe_after = 10 MINUTES
-	/// Each dungeon only gets one of these.
-	var/entrance
-	/// The name of the landmarks that our exits should take you to.
-	var/exit_landmarks = list()
 
 /// Click on this to enter a dungeon
 /obj/effect/landmark/dungeon_entrance
