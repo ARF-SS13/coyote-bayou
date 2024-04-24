@@ -1417,6 +1417,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"aGA" = (
+/obj/machinery/microwave/stove,
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston/bar)
 "aGF" = (
 /obj/structure/window/fulltile/wood_window,
 /turf/open/floor/plasteel/f13{
@@ -24501,7 +24505,8 @@
 /obj/machinery/chem_dispenser{
 	pixel_y = 19;
 	pixel_x = -12;
-	density = 0
+	density = 0;
+	obj_flags = EMAGGED
 	},
 /obj/machinery/chem_heater{
 	pixel_y = 17;
@@ -48361,10 +48366,6 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
-"xjS" = (
-/obj/machinery/microwave/stove,
-/turf/open/floor/wood_common,
-/area/f13/wasteland/city/newboston/bar)
 "xjX" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/sandbags,
@@ -81862,7 +81863,7 @@ xOW
 wmG
 qSa
 vOY
-xjS
+aGA
 asT
 bjJ
 vOY
