@@ -2909,11 +2909,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/tribal)
 "gc" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 2;
-	icon_state = "boards_drought_we-1"
-	},
+/obj/structure/cave/bigboards/westeast/four,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gd" = (
@@ -5258,11 +5254,7 @@
 	},
 /area/f13/wasteland)
 "ld" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 0;
-	icon_state = "boards_drought_we-6"
-	},
+/obj/structure/cave/bigboards/westeast/five,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lf" = (
@@ -9399,11 +9391,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/newboston/outdoors)
 "ue" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 0;
-	icon_state = "boards_drought_we-5"
-	},
+/obj/structure/cave/bigboards/westeast,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "uf" = (
@@ -11281,11 +11269,7 @@
 	},
 /area/f13/building/tribal)
 "yo" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 1;
-	icon_state = "boards_drought_we-5"
-	},
+/obj/structure/cave/bigboards/westeast/two,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "yp" = (
@@ -54219,7 +54203,7 @@ GU
 GU
 GU
 AB
-qF
+yo
 XQ
 mM
 tg
@@ -55504,7 +55488,7 @@ TA
 qF
 GU
 qF
-qF
+ue
 qF
 GU
 GU
@@ -55761,7 +55745,7 @@ GU
 GU
 GU
 AB
-qF
+yo
 XQ
 GU
 GU
