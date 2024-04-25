@@ -8,9 +8,9 @@ SUBSYSTEM_DEF(monster_wave)
 	var/list/spawner_lads = list() // list(/mob/living/simple_animal/nest_spawn_hole_guy)
 	/// big list of what we actually spawned, for an occasional admin report
 	/// How long it takes from when the spawner dies to when it starts the respawn process
-	var/nest_respawndelay = 20 MINUTES
+	var/nest_respawndelay = 15 MINUTES
 	/// How long it takes from when the spawnermob thing spawns to when it turns into a nest
-	var/spawn_delay = 10 MINUTES
+	var/spawn_delay = 15 MINUTES
 	/// how long after being blocked will we hold off on trying to spawn stuff there?
 	var/spawn_block_delay = 5 MINUTES
 	/// coords of spawn blocker devices per Z level
@@ -146,8 +146,8 @@ SUBSYSTEM_DEF(monster_wave)
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dragnetfield"
 	mob_armor = ARMOR_VALUE_RIFT
-	maxHealth = 100
-	health = 100
+	maxHealth = 25
+	health = 25
 	move_resist = MOVE_FORCE_OVERPOWERING
 	density = FALSE
 	a_intent = INTENT_HARM
@@ -161,6 +161,8 @@ SUBSYSTEM_DEF(monster_wave)
 	light_power = 0.7
 	light_color = "#6eaaff"
 	light_on = TRUE
+	shoot_me = TRUE
+	var/shhh_im_dead
 
 /mob/living/simple_animal/nest_spawn_hole_guy/Initialize(datum/nest_box/NB)
 	if(NB)
@@ -193,6 +195,8 @@ SUBSYSTEM_DEF(monster_wave)
 	return TRUE
 
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/set_up(datum/nest_box/NB)
+	if(shhh_im_dead)
+		return
 	if(!istype(NB))
 		return
 	nest_seed = NB
@@ -227,6 +231,23 @@ SUBSYSTEM_DEF(monster_wave)
 	SSmonster_wave.spawned_a_nest()
 	qdel(src)
 
+/mob/living/simple_animal/nest_spawn_hole_guy/handle_automated_action()
+	if(shhh_im_dead)
+		return
+	for(var/obj/structure/respawner_blocker in SSmonster_wave.spawn_blockers)
+		if(get_dist(src, RB) <= RB.protection_radius)
+			RB.killmeplease(src)
+			return
+
+/mob/living/simple_animal/nest_spawn_hole_guy/proc/unbirth()
+	if(!nest_seed)
+		return
+	SSmonster_wave.register_nest_seed(nest_seed)
+	nest_seed.null
+	do_sparks(5, TRUE, src, /datum/effect_system/spark_spread/quantum)
+	death()
+	return TRUE
+
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/im_hit()
 	playsound(src, 'sound/effects/portalboy_hit.ogg', 100, TRUE)
 	do_sparks(1, FALSE, src, /datum/effect_system/spark_spread/quantum)
@@ -244,9 +265,11 @@ SUBSYSTEM_DEF(monster_wave)
 	icon_state = "dominator"
 	density = TRUE
 	anchored = TRUE
-	var/protection_radius = 9
+	var/protection_radius = 11
 	var/obj/item/my_component
 	var/show_range_cooldown = 0
+	var/mob/living/simple_animal/nest_spawn_hole_guy/killing_something
+	var/datum/beam/my_bean
 
 /obj/structure/respawner_blocker/Initialize()
 	. = ..()
@@ -256,6 +279,9 @@ SUBSYSTEM_DEF(monster_wave)
 
 /obj/structure/respawner_blocker/Destroy()
 	SSmonster_wave.spawn_blockers -= src
+	if(killing_something)
+		killing_something.shhh_im_dead = null
+		killing_something = null
 	playsound(src, 'sound/machines/respawn_blocker_deactivate.ogg', 75, TRUE)
 	if(my_component)
 		my_component.forceMove(get_turf(src))
@@ -264,6 +290,25 @@ SUBSYSTEM_DEF(monster_wave)
 /obj/structure/respawner_blocker/proc/blocked_something()
 	playsound(src, 'sound/machines/respawn_blocker_blocked.ogg', 75, TRUE)
 	do_sparks(1, FALSE, src, /datum/effect_system/spark_spread/quantum)
+
+/// we're bout to ruin this guy's day
+/obj/structure/respawner_blocker/proc/killmeplease(mob/living/simple_animal/nest_spawn_hole_guy/NSHG)
+	if(killing_something == NSHG) // we're already killing something
+		return
+	NSHG.shhh_im_dead = src // omae wa mou shindeiru
+	addtimer(CALLBACK(src, PROC_REF(kill_it), NSHG, 3 SECONDS))
+	my_bean = Beam(get_turf(NSHG), "sm_arc_dbz_referance")
+	my_bean.start()
+	playsound(src, 'sound/machines/shoot_respawn_killer.ogg', 75, FALSE)
+
+/obj/structure/respawner_blocker/proc/kill_it(mob/living/simple_animal/nest_spawn_hole_guy/NSHG)
+	if(!NSHG || NSHG.shhh_im_dead != src)
+		return
+	my_bean.stop()
+	mybean = null
+	NHSG.shhh_im_dead = null
+	killing_something = null
+	NSHG.unbirth()
 
 /obj/structure/respawner_blocker/AltClick(mob/user)
 	. = ..()
@@ -279,34 +324,25 @@ SUBSYSTEM_DEF(monster_wave)
 /obj/structure/respawner_blocker/attack_hand(mob/user, act_intent, attackchain_flags)
 	. = ..()
 	say("[protection_radius] meter radius. [protection_radius*2+1]x[protection_radius*2+1] area. [protection_radius*2+1]^2 square meters. Protecting against transdimensional incursions, no nests will appear in this area.")
+	if(!COOLDOWN_FINISHED(src, show_range_cooldown))
+		return
+	COOLDOWN_START(src, show_range_cooldown, 10 SECONDS)
+	var/list/turfs2spawn = block(x-protection_radius, y-protection_radius, z, x+protection_radius, y+protection_radius, z)
+	turfs2spawn -= block(x-protection_radius+1, y-protection_radius+1, z, x+protection_radius-1, y+protection_radius-1, z)
+	for(var/turf/T in turfs2spawn)
+		var/direction_from_me_to_it = get_dir(src, T)
+		var/obj/effect/temp_visual/outline/FieldGenPerimeter = new(T, direction_from_me_to_it)
 
 /obj/effect/temp_visual/outline
 	name = "Field Generator Perimeter"
 	desc = "Wow! Nests that try to spawn in here will be blocked! Neat!"
 	icon_state = "medi_holo"
+	icon = 'icons/effects/fields.dmi'
 	duration = 10 SECONDS
 	var/sounding = TRUE
 
 /obj/effect/temp_visual/outline/Initialize(mapload, which_direction)
 	. = ..()
-	icon = 'icons/effects/fields.dmi'
-	switch(which_direction)
-		if(NORTHWEST)
-			icon_state = "projectile_dampen_northwest"
-		if(NORTH)
-			icon_state = "projectile_dampen_north"
-		if(NORTHEAST)
-			icon_state = "projectile_dampen_northeast"
-		if(WEST)
-			icon_state = "projectile_dampen_west"
-		if(EAST)
-			icon_state = "projectile_dampen_east"
-		if(SOUTHWEST)
-			icon_state = "projectile_dampen_southwest"
-		if(SOUTH)
-			icon_state = "projectile_dampen_south"
-		if(SOUTHEAST)
-			icon_state = "projectile_dampen_southeast"
 	animate(
 		src,
 		time=duration,
@@ -327,7 +363,7 @@ SUBSYSTEM_DEF(monster_wave)
 	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And it fits neatly in your pocket, given that your pocket is actually a duffelbag."
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator-closed"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	var/range = 5
 
 /obj/item/packaged_respawner_blocker/attack_self(mob/user)

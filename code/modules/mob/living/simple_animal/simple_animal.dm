@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
 	blood_volume = 425 //blood will smeared only a little bit from body dragging
-
+	var/bossmob = FALSE
 	status_flags = CANPUSH
 	rotate_on_lying = TRUE
 	var/icon_living = ""

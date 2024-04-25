@@ -729,6 +729,7 @@
 			if(prob(80))
 				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
 				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
 			if(prob(25))
 				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
 			if(prob(10))
@@ -805,6 +806,10 @@
 				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
 				if(prob(50))
 					potentials |= typesof(/mob/living/simple_animal/hostile/renegade)
+					if(prob(50))
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
 			potentials -= mobpath
 			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/legendary)
 			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/wyomingghost)
@@ -880,16 +885,17 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
 			potentials -= mobpath
 		if(LAZYLEN(potentials))
-			new_paths[pick(potentials)] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
+			var/mob/living/simple_animal/my_choose = pick(potentials)
+			new_paths[pick(potentials)] = (ispath(my_choose) && initial(my_choose.bossmob)) ? 1 : clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 			continue
 		new_paths[mobpath] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 		continue
 	nest_name = "Class \Roman[generation] ex-vivo delivery chamber"
 	nest_desc = "A cool hole in the ground full of cool things. Stick your hand in and see! (Warning: Cool things are actually baddies)"
-	if(prob(1))
+	if(prob(2))
 		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 3 // quaCK
 		nest_desc += " Disclaimer: Lay egg is true."
-	if(prob(1))
+	if(prob(2))
 		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool
 		nest_desc += " Also there's a lot of angry honking in there. Weird."
 		swarm_size += 1

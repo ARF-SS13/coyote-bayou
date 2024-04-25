@@ -24,6 +24,7 @@ Featuring:
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	bossmob = TRUE
 
 	var/spawn_mecha_type = /obj/mecha/combat/marauder/mauler/loaded
 	var/obj/mecha/mecha //Ref to pilot's mecha instance

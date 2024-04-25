@@ -183,6 +183,7 @@
 	/// bullet's general zone hit accuracy
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
+	var/is_player_projectile = FALSE
 
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
@@ -653,6 +654,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
+		if(M.shoot_me && is_player_projectile)
+			return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M

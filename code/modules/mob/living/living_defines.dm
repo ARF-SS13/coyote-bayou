@@ -51,6 +51,8 @@
 	/// Successful parries within the current parry cycle. It's a list of efficiency percentages.
 	var/list/successful_parries
 
+	var/shoot_me
+
 	var/confused = 0	//Makes the mob move in random directions.
 
 	var/hallucination = 0 //Directly affects how long a mob will hallucinate for
