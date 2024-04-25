@@ -340,7 +340,7 @@
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/pistol
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 500
 	select_name = "kill"
 // TG PISTOL END
