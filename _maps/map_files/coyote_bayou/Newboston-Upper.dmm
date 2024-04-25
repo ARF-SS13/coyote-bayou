@@ -13661,7 +13661,7 @@
 	color = "#453E38"
 	},
 /turf/open/transparent/openspace,
-/area/f13/wasteland)
+/area/f13/wasteland/city/newboston/outdoors)
 "Do" = (
 /obj/structure/rack/shelf_metal/modern,
 /obj/item/stack/rods/scaffold/ten,
@@ -18253,15 +18253,12 @@
 	},
 /area/f13/building)
 "MT" = (
-/obj/structure/railing{
-	pixel_y = -3
-	},
 /obj/effect/turf_decal/weather/splinefancy{
 	dir = 1;
 	color = "#453E38"
 	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland/city/newboston/outdoors)
 "MU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -47523,11 +47520,11 @@ tN
 tN
 tN
 tN
-tN
-tN
-tN
-tN
-tN
+Ws
+Ws
+Ws
+Ws
+Ws
 tN
 tN
 tN
@@ -47779,12 +47776,12 @@ dt
 tN
 tN
 tN
-tN
-tN
-tN
-Ws
-Ws
-Ws
+RM
+dK
+dK
+dK
+dK
+EC
 Ws
 Ws
 Ws
@@ -48037,8 +48034,8 @@ jO
 jO
 QL
 jO
-PE
-RM
+MT
+dK
 dK
 dK
 dK
