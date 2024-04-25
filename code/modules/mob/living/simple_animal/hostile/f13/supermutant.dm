@@ -171,6 +171,7 @@
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
+	color = "#3344BE"
 	ranged = 1
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 

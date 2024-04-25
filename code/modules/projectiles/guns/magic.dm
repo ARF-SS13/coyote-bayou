@@ -41,7 +41,7 @@
 	. = ..()
 
 /obj/item/gun/magic/can_shoot()
-	return charges
+	return charges >= 1
 
 /obj/item/gun/magic/recharge_newshot()
 	if (chambered && !chambered.BB)

@@ -1573,6 +1573,8 @@
 	name = "stalagmite"
 	icon_state = "stalagmite"
 	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+	density = 0
+	anchored = 1
 
 /obj/structure/cave/stalagmite/one
 	name = "stalagmite"
