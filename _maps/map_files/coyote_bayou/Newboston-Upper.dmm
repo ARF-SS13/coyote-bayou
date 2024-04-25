@@ -2909,11 +2909,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/tribal)
 "gc" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 2;
-	icon_state = "boards_drought_we-1"
-	},
+/obj/structure/cave/bigboards/westeast/four,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gd" = (
@@ -3021,9 +3017,9 @@
 	plane = -4
 	},
 /obj/structure/cave/support{
-	density = 1;
-	pixel_y = 16;
-	icon_state = "support_wall"
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -5258,11 +5254,7 @@
 	},
 /area/f13/wasteland)
 "ld" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 0;
-	icon_state = "boards_drought_we-6"
-	},
+/obj/structure/cave/bigboards/westeast/five,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lf" = (
@@ -5327,9 +5319,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cave/support{
-	density = 1;
-	pixel_y = 16;
-	icon_state = "support_wall"
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
@@ -8524,9 +8516,9 @@
 /area/f13/tribe)
 "sh" = (
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -9399,11 +9391,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/newboston/outdoors)
 "ue" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 0;
-	icon_state = "boards_drought_we-5"
-	},
+/obj/structure/cave/bigboards/westeast,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "uf" = (
@@ -11281,11 +11269,7 @@
 	},
 /area/f13/building/tribal)
 "yo" = (
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 1;
-	icon_state = "boards_drought_we-5"
-	},
+/obj/structure/cave/bigboards/westeast/two,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "yp" = (
@@ -11901,9 +11885,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -12201,9 +12185,9 @@
 /area/f13/caves)
 "Aq" = (
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -12292,7 +12276,8 @@
 "AB" = (
 /obj/structure/cave/support{
 	density = 1;
-	pixel_y = 16
+	pixel_y = 16;
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -12461,9 +12446,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -19190,9 +19175,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -20542,9 +20527,9 @@
 	plane = 0
 	},
 /obj/structure/cave/support{
-	density = 1;
-	pixel_y = 16;
-	icon_state = "support_wall"
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -21587,9 +21572,9 @@
 	plane = -4
 	},
 /obj/structure/cave/support{
-	density = 1;
-	pixel_y = 16;
-	icon_state = "support_wall"
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -22383,9 +22368,9 @@
 "Vm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cave/support{
-	density = 1;
 	pixel_y = 26;
-	icon_state = "support_wall"
+	icon_state = "support_wall";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -23710,7 +23695,8 @@
 "XQ" = (
 /obj/structure/cave/support{
 	density = 1;
-	pixel_y = 1
+	pixel_y = 0;
+	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -24478,11 +24464,7 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "ZG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cave/support{
-	density = 1;
-	pixel_y = 0;
-	icon_state = "boards_drought_we-5"
-	},
+/obj/structure/cave/bigboards/westeast,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "ZH" = (
@@ -54219,7 +54201,7 @@ GU
 GU
 GU
 AB
-qF
+yo
 XQ
 mM
 tg
@@ -55504,7 +55486,7 @@ TA
 qF
 GU
 qF
-qF
+ue
 qF
 GU
 GU
@@ -55761,7 +55743,7 @@ GU
 GU
 GU
 AB
-qF
+yo
 XQ
 GU
 GU
