@@ -785,6 +785,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_derg_mane"]				>> features["derg_mane"]
 	S["feature_derg_horns"]				>> features["derg_horns"]
 	S["feature_derg_eyes"]				>> features["derg_eyes"]
+	S["feature_custom_say"]				>> features["custom_say"]
+	S["feature_custom_whisper"]			>> features["custom_whisper"]
+	S["feature_custom_exclaim"]			>> features["custom_exclaim"]
+	S["feature_custom_yell"]			>> features["custom_yell"]
+	S["feature_custom_sing"]			>> features["custom_sing"]
 	S["persistent_scars"] 				>> persistent_scars
 	S["scars1"]							>> scars_list["1"]
 	S["scars2"]							>> scars_list["2"]
@@ -1430,6 +1435,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_derg_mane"]				, features["derg_mane"])
 	WRITE_FILE(S["feature_derg_horns"]				, features["derg_horns"])
 	WRITE_FILE(S["feature_derg_eyes"]				, features["derg_eyes"])
+	WRITE_FILE(S["feature_custom_say"]				, features["custom_say"])
+	WRITE_FILE(S["feature_custom_whisper"]			, features["custom_whisper"])
+	WRITE_FILE(S["feature_custom_exclaim"]			, features["custom_exclaim"])
+	WRITE_FILE(S["feature_custom_yell"]				, features["custom_yell"])
+	WRITE_FILE(S["feature_custom_sing"]				, features["custom_sing"])
 
 
 	WRITE_FILE(S["feature_has_cock"], features["has_cock"])
