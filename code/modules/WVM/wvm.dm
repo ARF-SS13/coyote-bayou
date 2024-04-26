@@ -903,7 +903,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Scav! Vol.1",								/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",					/obj/item/storage/battery_box,										50),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 					/obj/item/book/granter/crafting_recipe/ODF,							350),
-		new /datum/data/wasteland_equipment("Nest Repellant",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
+		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick",								/obj/item/flashlight/glowstick										0), 
 		new /datum/data/wasteland_equipment("Roadside flare",							/obj/item/flashlight/flare											0), // larp
 		)
@@ -917,7 +917,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Scav! Vol.1",								/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",					/obj/item/storage/battery_box,										50),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 					/obj/item/book/granter/crafting_recipe/ODF,							350),
-		new /datum/data/wasteland_equipment("Nest Repellant",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
+		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick",								/obj/item/flashlight/glowstick										0), 
 		new /datum/data/wasteland_equipment("Roadside flare",							/obj/item/flashlight/flare											0), // larp
 		)
