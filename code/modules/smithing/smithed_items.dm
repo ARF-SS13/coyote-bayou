@@ -94,9 +94,10 @@
 	custom_materials = list(/datum/material/runedmetal=12000)
 
 /obj/item/ingot/bronze
+	custom_materials = list(/datum/material/bronze=12000)
 	name = "(T1) Black Bronze ingot"
 	desc = "A high carbon (hence the name) ingot of Pre-Cataclysm steel sheening with portal energy."
-	custom_materials = list(/datum/material/bronze=12000)
+	material_flags = MATERIAL_COLOR
 
 /obj/item/ingot/mythril
 	custom_materials = list(/datum/material/mythril=12000)
