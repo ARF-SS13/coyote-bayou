@@ -226,23 +226,23 @@
 
 // RINGS
 /datum/mood_event/equipped_ring
-	description = span_nicegreen("You feel like you have a new purpose in life with your newly equipped silver ring.")
+	description = span_nicegreen("The ring steels your mind against worries about wealth.")
 	mood_change = 0.3 //Just enough to cross a mood threshold
 
 /datum/mood_event/equipped_ring/gold
-	description = span_nicegreen("Having such a gold ring on your hand makes you feel a bit more secure about your personal wealth status.")
+	description = span_nicegreen("The ring steels your mind against worries about wealth.")
 	mood_change = 0.6
 
 /datum/mood_event/equipped_ring/plasma
-	description = span_nicegreen("The swirling colors of the plasma ring seem to set your mind at ease.")
+	description = span_nicegreen("The ring steels your mind against worries about wealth.")
 	mood_change = 1
 
 /datum/mood_event/equipped_ring/diamond
-	description = span_nicegreen("Wherever or however you gotten this diamond ring, it took a good amount of work trying to get this.")
+	description = span_nicegreen("The ring steels your mind against worries about wealth.")
 	mood_change = 2
 
 /datum/mood_event/equipped_ring/bluespace
-	description = span_nicegreen("The mystic nature of the bluespace crystal affects your mood.")
+	description = span_nicegreen("The ring steels your mind against worries about wealth.")
 	mood_change = 3
 
 // NECKLACE

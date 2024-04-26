@@ -6690,6 +6690,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"dej" = (
+/obj/machinery/telecomms/relay/preset/auto,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "des" = (
 /obj/structure/flora/twig3,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
@@ -20105,6 +20109,10 @@
 	color = "#775555"
 	},
 /area/f13/building)
+"mvJ" = (
+/obj/machinery/ntnet_relay,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "mvW" = (
 /obj/structure/chair/bench,
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -37878,9 +37886,9 @@ cjD
 cjD
 cjD
 aaa
-aae
-aae
-aae
+aak
+aak
+aak
 aae
 aae
 aae
@@ -38131,13 +38139,13 @@ cpp
 aaa
 cjD
 cho
-cho
+mvJ
 cho
 cjD
 aaa
+aak
 aae
-aae
-aae
+aak
 xwF
 xwF
 xwF
@@ -38393,7 +38401,7 @@ cho
 cjD
 aaa
 aak
-aak
+aae
 aak
 xwF
 xwF
@@ -38644,13 +38652,13 @@ bzD
 cpp
 aaa
 cjD
-yat
 cho
+dej
 cho
 cjD
 aaa
 aae
-aak
+aae
 aae
 aaa
 aaa
@@ -38906,9 +38914,9 @@ cjD
 cjD
 cjD
 aaa
-aae
-aae
-aae
+aak
+aak
+aak
 aaa
 aaA
 aaA
@@ -39163,8 +39171,8 @@ aaa
 aaa
 aaa
 aaa
-aae
-aae
+aak
+aak
 aae
 aaa
 aaA
@@ -39420,9 +39428,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aak
+aak
+aak
 aaa
 aaA
 tlt
@@ -39678,7 +39686,7 @@ aaa
 aaa
 aaa
 aae
-aak
+aae
 aae
 aaa
 aaA
@@ -39934,9 +39942,9 @@ cpp
 cpp
 cpp
 aaa
-aae
 aak
-aae
+aak
+aak
 aaa
 aaA
 aaA
@@ -40450,7 +40458,7 @@ cpp
 aaa
 aak
 aae
-aae
+aak
 xwF
 xwF
 xwF
@@ -40962,7 +40970,7 @@ bwu
 bzD
 cpp
 aaa
-aae
+aak
 aae
 aae
 aaB
@@ -41219,9 +41227,9 @@ obE
 loN
 cpp
 aaa
-aae
-aae
-aae
+aak
+aak
+aak
 aaB
 aaB
 abV
@@ -41477,7 +41485,7 @@ cpp
 cpp
 aaa
 aak
-aak
+aae
 aae
 aaB
 aaB
@@ -41733,9 +41741,9 @@ aaa
 aaa
 aaa
 aaa
-aak
-aak
-aak
+aae
+aae
+aae
 xwF
 aaB
 aaB
@@ -41991,8 +41999,8 @@ aae
 aae
 aae
 aak
-aae
-aae
+aak
+aak
 xwF
 aaB
 aaB
@@ -42249,7 +42257,7 @@ aae
 aae
 aae
 aae
-aae
+aak
 aae
 aae
 aae
@@ -42504,9 +42512,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aak
+aak
+aak
 aae
 aae
 aae
@@ -43015,12 +43023,12 @@ aae
 aae
 aae
 aae
-aak
-aak
+aae
 aae
 aak
 aak
 aae
+aak
 aae
 aae
 aae
@@ -43271,13 +43279,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
 aak
 aae
 aae
+aak
 aae
+aak
+aak
 aae
 aae
 aae
@@ -43528,7 +43536,7 @@ aae
 aae
 aae
 aae
-aae
+aak
 aae
 aae
 aae
@@ -43784,9 +43792,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aak
+aak
+aak
 aae
 aae
 aae
@@ -44040,9 +44048,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aak
+aak
+aak
 aae
 aae
 aae
@@ -44296,8 +44304,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae

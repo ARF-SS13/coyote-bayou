@@ -722,7 +722,7 @@ const HistoryPanel = (props, context) => {
           {WhyItEmpty}
         </Box>
       ) : (
-        <Flex wrap justify="space-evenly">
+        <Flex wrap justify="space-around">
           {QuestHistory.map(QuestEntry => (
             <Flex.Item
               key={Keykey++}
@@ -809,7 +809,13 @@ const HistoryCard = (props, context) => {
 
   return (
     <Box
-      p={1}>
+      style={{
+        "border": "1px solid #000000",
+        "border-radius": "20px",
+        "background-color": "rgba(0, 0, 0, 0.5)",
+      }}
+      p={1.5}
+      m={1}>
       <Stack fill vertical>
         <Stack.Item shrink={1}>
           <Stack fill>
@@ -842,18 +848,18 @@ const HistoryCard = (props, context) => {
                 inline
                 fontSize="10px"
                 textColor="label">
-                {`:R-${FinQuestRound}`}
+                {`R: ${FinQuestRound}`}
               </Box>
             </Stack.Item>
           </Stack>
         </Stack.Item>
-        {/* {FinQuestObjectives.map(Objective => (
+        {FinQuestObjectives.map(Objective => (
             <Stack.Item>
               <ObjectiveCard
                 key={Keytwo++}
                 Objective={Objective}/>
-              </Stack.Item>
-          ))} */}
+            </Stack.Item>
+          ))}
       </Stack>
     </Box>
   );

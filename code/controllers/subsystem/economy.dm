@@ -393,8 +393,8 @@ SUBSYSTEM_DEF(economy)
 			highest_completed = LAZYLEN(QB.finished_this_round)
 			highest_completed_uid = QB.q_uid
 		/// compare how many quest they've completed throughout all time to the highest
-		if(LAZYLEN(QB.finished_quests) > historical_highest_completed)
-			historical_highest_completed = LAZYLEN(QB.finished_quests)
+		if(LAZYLEN(QB.get_historical_finished()) > historical_highest_completed)
+			historical_highest_completed = QB.get_historical_finished()
 			historical_highest_completed_uid = QB.q_uid
 		/// compare how much they've earned throughout all time to the highest
 		if(QB.get_historical_banked() > historical_highest_banked)
@@ -686,20 +686,26 @@ SUBSYSTEM_DEF(economy)
 	var/unclaimed_points = 0
 	/// Overall total of points earned this round
 	var/overall_banked = 0
+	var/lifetime_total_banked = 0
 	/// list of unique(ish) IDs of things that have been turned in
 	var/list/things_turned_in = list() // THINGS IVE SHOVED UP ME ARSE
 	var/list/paystubs = list()
 	var/datum/quest_window/QW
 	var/printer_cooldown = 0
 	var/claim_on_kill = FALSE
+	/// the bingus
 	var/virgin = TRUE
 	var/list/finished_this_round = list()
 	var/update_pls = FALSE
 	var/save_cooldown = 0 // just so we dont clobber the hard drive
+	/// the bongos
 	var/double_virgin = TRUE
 	var/queued_save = FALSE
+	var/lifetime_quest_total = 0
 	var/save_spam_cooldown = 0
 	var/scanning_mobs_makes_nests_dump_questable_mobs = FALSE
+	/// and the holy bepis
+	var/triple_virgin = TRUE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -719,6 +725,8 @@ SUBSYSTEM_DEF(economy)
 	load_player_finished_quests(quester)
 	/// who loves his brainwashing and always wants more?
 	load_player_active_quests(quester)
+	/// who's got a big ol' quest book and a heart full of glee?
+	load_player_banked_points(quester)
 
 /datum/quest_book/Destroy(force, ...)
 	if(QW)
@@ -860,6 +868,7 @@ SUBSYSTEM_DEF(economy)
 			to_chat(user, span_alert("Something went wrong with the payment method!!!!!!!"))
 		return FALSE
 	quest_done(B)
+	lifetime_quest_total++
 	SSeconomy.deactivate_quest(B) // just so they get good and dizzy
 	remove_active_quest(B, FALSE, TRUE)
 	update_lifetime_total(TRUE)
@@ -872,6 +881,16 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	finished_quests |= new /datum/finished_quest(B)
 	finished_this_round[B.uid] = B
+	compare_n_sort_finished_quests()
+
+/datum/quest_book/proc/load_player_banked_points(mob/quester)
+	if(!quester)
+		return
+	var/datum/preferences/P = extract_prefs(quester)
+	if(!P)
+		return
+	lifetime_total_banked = P.historical_banked_points
+	triple_virgin = FALSE // we will always remain a triple virgin =3
 
 /datum/quest_book/proc/load_player_finished_quests(mob/quester)
 	if(!quester)
@@ -880,6 +899,7 @@ SUBSYSTEM_DEF(economy)
 	if(!P)
 		return
 	virgin = FALSE
+	/// list format: list("1" = list(list(queststuff)), "2" = list(top_5_medium_quests), "4" = list(top_5_hard_quests)), "8" = list(top_5_cbt_quests))
 	for(var/list/questy in P.saved_finished_quests)
 		if(!LAZYACCESS(questy, "VALID"))
 			P.saved_finished_quests -= questy
@@ -887,9 +907,62 @@ SUBSYSTEM_DEF(economy)
 		var/datum/finished_quest/FQ = new /datum/finished_quest()
 		FQ.deserialize_from_list(questy)
 		finished_quests += FQ
-	sort_by_roundid()
+	lifetime_quest_total = P.number_of_finished_quests
+	compare_n_sort_finished_quests()
 
-/datum/quest_book/proc/sort_by_roundid()
+/// if nautical nonsense be something you wish
+/datum/quest_book/proc/compare_n_sort_finished_quests()
+	/// sort by difficulty
+	var/list/semisorted_grabbag = list()
+	semisorted_grabbag["[QUEST_DIFFICULTY_EASY]"] = list()
+	semisorted_grabbag["[QUEST_DIFFICULTY_MED]"] = list()
+	semisorted_grabbag["[QUEST_DIFFICULTY_HARD]"] = list()
+	semisorted_grabbag["[QUEST_DIFFICULTY_CBT]"] = list()
+	for(var/datum/finished_quest/FQ in finished_quests)
+		if(CHECK_BITFIELD(FQ.quest_difficulty, QUEST_DIFFICULTY_EASY))
+			semisorted_grabbag["[QUEST_DIFFICULTY_EASY]"] += FQ
+		if(CHECK_BITFIELD(FQ.quest_difficulty, QUEST_DIFFICULTY_MED))
+			semisorted_grabbag["[QUEST_DIFFICULTY_MED]"] += FQ
+		if(CHECK_BITFIELD(FQ.quest_difficulty, QUEST_DIFFICULTY_HARD))
+			semisorted_grabbag["[QUEST_DIFFICULTY_HARD]"] += FQ
+		if(CHECK_BITFIELD(FQ.quest_difficulty, QUEST_DIFFICULTY_CBT))
+			semisorted_grabbag["[QUEST_DIFFICULTY_CBT]"] += FQ
+	/// list of quests by difficulty, only saving the top 5
+	var/list/allsorts = list()
+	allsorts["[QUEST_DIFFICULTY_EASY]"] = list()
+	allsorts["[QUEST_DIFFICULTY_MED]"] = list()
+	allsorts["[QUEST_DIFFICULTY_HARD]"] = list()
+	allsorts["[QUEST_DIFFICULTY_CBT]"] = list()
+	// of each, keep only the top 4 by rewarded
+	for(var/diffi in semisorted_grabbag)
+		var/list/quests = semisorted_grabbag[diffi]
+		for(var/datum/finished_quest/FQ in quests)
+			if(LAZYLEN(allsorts[diffi]) < 4)
+				allsorts[diffi] += FQ
+			else
+				for(var/datum/finished_quest/FQ2 in allsorts[diffi])
+					if(FQ.quest_rewarded > FQ2.quest_rewarded)
+						allsorts[diffi] -= FQ2
+						allsorts[diffi] += FQ
+						break
+	var/list/pre_finished = list()
+	/// now we have a list of the top 4 of each difficulty
+	/// lets sort them by value
+	var/list/in_this_order = list("[QUEST_DIFFICULTY_EASY]", "[QUEST_DIFFICULTY_MED]", "[QUEST_DIFFICULTY_HARD]", "[QUEST_DIFFICULTY_CBT]")
+	for(var/diffi in in_this_order)
+		var/list/quests = allsorts[diffi]
+		quests = sortTim(quests, /proc/cmp_sort_finished_quest_by_value)
+		pre_finished += quests
+	/// now we have a list of the top 5 of each difficulty, sorted by value
+	finished_quests = pre_finished.Copy()
+
+/proc/cmp_sort_finished_quest_by_value(datum/finished_quest/A, datum/finished_quest/B)
+	var/result = text2num(B.quest_rewarded) - text2num(A.quest_rewarded)
+	if(result == 0)
+		result = text2num(B.quest_round_id) - text2num(A.quest_round_id)
+	return result
+
+/datum/quest_book/proc/sort_by_difficulty()
 	var/list/my_finished = sortTim(finished_quests.Copy(), /proc/cmp_sort_finished_quest_by_roundid_or_time_completed)
 	finished_quests = my_finished.Copy()
 
@@ -909,9 +982,9 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return
-	if(LAZYLEN(finished_quests) < LAZYLEN(P.saved_finished_quests)) // we somehow have less quests than are saved (which cannot happen!!!!)
-		return // ab0r7
 	P.saved_finished_quests = serialize_finished_quests_to_list()
+	if(lifetime_quest_total >= P.number_of_finished_quests) // we somehow have less quests than are saved (which cannot happen!!!!)
+		P.historical_banked_points = lifetime_total_banked
 	if(sync_active_too)
 		if(sync_active_quests_with_save())
 			return
@@ -919,7 +992,7 @@ SUBSYSTEM_DEF(economy)
 
 /datum/quest_book/proc/serialize_finished_quests_to_list()
 	var/list/quests = list()
-	sort_by_roundid()
+	compare_n_sort_finished_quests()
 	for(var/datum/finished_quest/FQ in finished_quests)
 		quests += list(FQ.serialize_to_list())
 	return quests
@@ -998,6 +1071,11 @@ SUBSYSTEM_DEF(economy)
 		paystubs[B.uid] = amount
 	unclaimed_points += amount
 	overall_banked += amount
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return
+	var/datum/preferences/P = extract_prefs(user)
+	P.saved_unclaimed_points = unclaimed_points
 	return TRUE
 
 /datum/quest_book/proc/have_they_done_this_quest_before(datum/bounty/B)
@@ -1074,16 +1152,16 @@ SUBSYSTEM_DEF(economy)
 	var/list/toots = list()
 	var/am_top_quester = (LAZYLEN(finished_this_round) >= SSeconomy.highest_completed)
 	var/am_top_earner = (overall_banked >= SSeconomy.highest_banked)
-	var/am_top_quester_historical = (LAZYLEN(finished_quests) >= SSeconomy.historical_highest_completed)
+	var/am_top_quester_historical = (get_historical_finished() >= SSeconomy.historical_highest_completed)
 	var/am_top_earner_historical = (get_historical_banked() >= SSeconomy.historical_highest_banked)
 	toots["AmTopQuester"] = am_top_quester
 	toots["AmTopEarner"] = am_top_earner
 	toots["AmTopQuesterHistorical"] = am_top_quester_historical
 	toots["AmTopEarnerHistorical"] = am_top_earner_historical
 
-	toots["TTyourquests"] = "You have completed [LAZYLEN(finished_quests)] quests this period[am_top_quester ? ", making you the top quester this period! Nice job =3" : "."]"
+	toots["TTyourquests"] = "You have completed [LAZYLEN(finished_this_round)] quests this period[am_top_quester ? ", making you the top quester this period! Nice job =3" : "."]"
 	toots["TTtopquests"] = "The top quester this period has completed [SSeconomy.highest_completed] quests[am_top_quester ? ", and that top quester is you! Keep it up =3" : "."]"
-	toots["TThistoricalquests"] = "Since the beginning of time, you have completed [LAZYLEN(finished_quests)] quests[am_top_quester_historical ? ", making you the top quester of all time (at least compared to everyone present)! Nice job =3" : "."]"
+	toots["TThistoricalquests"] = "Since the beginning of time, you have completed [get_historical_finished()] quests[am_top_quester_historical ? ", making you the top quester of all time (at least compared to everyone present)! Nice job =3" : "."]"
 	toots["TTtophistoricalquests"] = "The top quester of all time has completed [SSeconomy.historical_highest_completed] quests[am_top_quester_historical ? ", and that top quester is you! Keep it up =3" : "."]"
 	toots["TTglobalquests"] = "In total, [SSeconomy.total_completed] quests have been completed this period."
 
@@ -1104,7 +1182,7 @@ SUBSYSTEM_DEF(economy)
 	data["QuestMax"] = SSeconomy.max_quests
 	
 	data["QuestsCompleted"] = LAZYLEN(finished_this_round)
-	data["QuestHistoryCount"] = LAZYLEN(finished_quests)
+	data["QuestHistoryCount"] = get_historical_finished()
 	data["GlobalQuestsCompleted"] = SSeconomy.total_completed
 	data["GlobalHighestCompleted"] = SSeconomy.highest_completed
 	data["GlobalHistoricalQuestsCompleted"] = SSeconomy.historical_highest_completed
@@ -1214,11 +1292,11 @@ SUBSYSTEM_DEF(economy)
 	update_static_data(user)
 	return TRUE
 
+/datum/quest_book/proc/get_historical_finished()
+	return lifetime_quest_total
+
 /datum/quest_book/proc/get_historical_banked()
-	var/total = 0
-	for(var/datum/finished_quest/FQ in finished_quests)
-		total += FQ.quest_rewarded
-	return round(total)
+	return lifetime_total_banked
 
 /datum/quest_book/proc/print_quest(datum/bounty/B)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -1396,6 +1474,7 @@ SUBSYSTEM_DEF(economy)
 	output["FinQuestRound"]        = quest_round_id
 	output["FinQuestDifficulty"]   = quest_difficulty
 	output["FinQuestReward"]       = quest_rewarded
+	output["FinQuestRound"]        = quest_round_id
 	output["FinQuestObjectives"]   = list(objectives)
 	return output
 

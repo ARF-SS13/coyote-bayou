@@ -57,6 +57,11 @@
 	desc = "A fast firing chinese 10mm pistol with 12 round magazines."
 	item = /obj/item/gun/ballistic/automatic/pistol/type17
 
+/datum/supplykit_item/handguns/compactr99
+	name = "Colt N104 Defender"
+	desc = "A compact 10mm pistol."
+	item = /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/basic99
+
 /datum/supplykit_item/handguns/pistol47
 	name = "4.7mm pistol"
 	desc = "A caseless firing semiauto pistol that takes 18 round magazines of 4.73mm."
@@ -119,7 +124,7 @@
 
 /datum/supplykit_item/handguns/needler
 	name = "Needler Pistol"
-	desc = "An alienish gun that shoots needles from a 24 round internal reservoir."
+	desc = "An prototype gun that shoots needles from a 24 round internal reservoir."
 	item = /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 
 /datum/supplykit_item/handguns/ticon
@@ -129,5 +134,5 @@
 
 /datum/supplykit_item/handguns/volcanic
 	name = "Volcanic Pistol"
-	desc = "A single action pistol in .45acp, with a 6 round internal magazine."
+	desc = "A lever action pistol in .45acp, with a 6 round internal magazine."
 	item = /obj/item/gun/ballistic/rifle/repeater/volcanic

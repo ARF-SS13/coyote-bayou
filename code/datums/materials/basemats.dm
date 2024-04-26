@@ -3,7 +3,7 @@
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
 	color = "#9a8782"
-	strength_modifier = 0.9
+	strength_modifier = 1
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
 	value_per_unit = 0.0025
@@ -139,7 +139,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "titanium"
 	desc = "Titanium"
 	color = "#b3c0c7"
-	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	value_per_unit = 0.0625
@@ -200,29 +199,39 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 		var/obj/wooden = source
 		wooden.resistance_flags &= ~FLAMMABLE
 
-///Stronk force increase
+// smithing bullshit
 /datum/material/adamantine
-	name = "ultrasteel"
+	name = "Adamantine"
 	desc = "A powerful material made out of magic, I mean science!"
-	color = "#6d7e8e"
-	strength_modifier = 1.1
+	color = "#97b5d1"
+	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/adamantine
 	value_per_unit = 0.25
 	beauty_modifier = 0.4
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.3, "energy" = 1.3, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 2.5, "acid" = 1)
 
-///RPG Magic. (Admin only)
 /datum/material/mythril
-	name = "rose steel"
+	name = "Mythril"
 	desc = "How this even exists is byond me"
-	color = "#f2d5d7"
-	strength_modifier = 1.05
+	color = "#d7bfc1"
+	strength_modifier = 1.1
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/mythril
 	value_per_unit = 0.75
 	beauty_modifier = 0.5
 	armor_modifiers = list("melee" = 2, "bullet" = 2, "laser" = 2, "energy" = 2, "bomb" = 2, "bio" = 2, "rad" = 2, "fire" = 2, "acid" = 2)
+
+/datum/material/bronze
+	name = "Black Bronze"
+	desc = "Clock Cult? Never heard of it."
+	color = "#7c4600"
+	strength_modifier = 1
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/sheet/bronze
+	value_per_unit = 0.025
+	armor_modifiers = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
+	beauty_modifier = 0.2
 
 /*/datum/material/mythril/on_applied_obj(atom/source, amount, material_flags)
 	. = ..()
@@ -297,17 +306,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	armor_modifiers = list("melee" = 1.4, "bullet" = 1.4, "laser" = 0, "energy" = 0, "bomb" = 1.4, "bio" = 1.2, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5) //But it has.. a few problems that can't easily be compensated for.
 	beauty_modifier = 0.3 //It really beats the cold plain plating of the station, doesn't it?
 */
-
-/datum/material/bronze
-	name = "black bronze"
-	desc = "Clock Cult? Never heard of it."
-	color = "#563100"
-	strength_modifier = 1
-	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/bronze
-	value_per_unit = 0.025
-	armor_modifiers = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
-	beauty_modifier = 0.2
 
 /datum/material/paper
 	name = "paper"

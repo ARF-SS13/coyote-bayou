@@ -87,7 +87,7 @@
 				C.charge += 250
 				update_icon()
 				crankgun(user)
-				
+
 				//if it's the overcharged variant, then execute this too
 				if(firearm.crank_overcharge_mult.len)
 					if(!C.charge)
@@ -115,7 +115,7 @@
 	if(istype(src, /obj/item/gun/energy/laser/cranklasergun))
 		var/obj/item/gun/energy/laser/cranklasergun/firearm = src
 		recharge_queued = 0
-		
+
 		if(firearm.crank_overcharge_mult.len)
 			var/obj/item/stock_parts/cell/C = src.get_cell()
 			C.charge = 0
@@ -232,7 +232,7 @@
 	can_charge = 1
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
-	max_upgrades = 6 
+	max_upgrades = 6
 	cranking_time = 1.2 SECONDS
 	crank_stamina_cost = 10
 	crank_sound = list(
@@ -300,7 +300,7 @@
 	crank_stamina_cost = 10
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine 
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine
 	name = "integrated single charge cell"
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
@@ -336,12 +336,12 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 10000
+	maxcharge = 5000
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/pistol
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun
-	e_cost = 500
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
+	e_cost = 250
 	select_name = "kill"
 // TG PISTOL END
 
@@ -366,7 +366,7 @@
 	init_firemodes = list(
 		/datum/firemode/burst/two,
 		/datum/firemode/semi_auto/fast,
-		/datum/firemode/automatic/rpm75 
+		/datum/firemode/automatic/rpm75
 	)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
@@ -511,9 +511,9 @@
 	crank_stamina_cost = 10
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
-	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
-	/datum/firemode/automatic/rpm150,
+	/datum/firemode/automatic/rpm200,
 	/datum/firemode/semi_auto,
 	)
 
@@ -533,5 +533,50 @@
 /obj/item/projectile/beam/cranklasergun/tg/spamlaser //ultra weak but spammy, duh
 	name = "blaster bolt"
 	damage = 10
-	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
+	damage_list = list("8" = 20, "10" = 60, "15" = 15, "30" = 5)
 	recoil = BULLET_RECOIL_HEAVY_LASER
+
+// TG Electro Autoblaster
+/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock
+	name = "shock autoblaster"
+	desc = "The T30 Repeater was an experiment by Trident Gammaworks to exploit tesla technology. It saw limited commercial success even though the technology was deemed to have great potential."
+	icon_state = "teslaser"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	cranking_time = 2 SECONDS // Basically costs nothing
+	crank_stamina_cost = 10
+	crank_sound = list(
+		'sound/weapons/laserPump.ogg',
+	)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser/shocker)
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
+/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser/shocker
+	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker
+	e_cost = 83
+	fire_sound = 'sound/weapons/taser.ogg'
+	select_name = "kill"
+
+/obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker //stronger spammy zaps
+	name = "electrobolt"
+	damage = 20
+	damage_list = list("14" = 10, "16" = 10, "20" = 75, "25" = 5)
+	recoil = BULLET_RECOIL_HEAVY_LASER
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	hitscan = TRUE
+	hitscan_light_intensity = 4
+	hitscan_light_range = 1
+	hitscan_light_color_override = LIGHT_COLOR_BLUE
+	muzzle_flash_intensity = 9
+	muzzle_flash_range = 4
+	muzzle_flash_color_override = LIGHT_COLOR_BLUE
+	impact_light_intensity = 8
+	impact_light_range = 3.75
+	impact_light_color_override = LIGHT_COLOR_BLUE

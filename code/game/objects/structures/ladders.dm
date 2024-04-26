@@ -194,7 +194,7 @@
 	if(!is_ghost)
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 
-	if(!do_after(user, timetouse, target = src))
+	if(!is_ghost && !do_after(user, timetouse, target = src))
 		in_use = FALSE
 		return
 

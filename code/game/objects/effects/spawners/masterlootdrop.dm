@@ -266,6 +266,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/rare99 = 4,        //119.6 12
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,         //104 12
@@ -478,7 +479,8 @@
 		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //90  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
-		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//50  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//67  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock = 10, //100 60 internal slow, slower crank
 
 
 		// Better in some way (self charge, plasma, more efficient)
