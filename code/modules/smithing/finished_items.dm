@@ -398,6 +398,7 @@
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
+	w_class = WEIGHT_CLASS_NORMAL
 
 //
 // Longsword
@@ -453,7 +454,7 @@
 	icon_state = "warhoned_smith"
 	icon_prefix = "warhoned_smith"
 	overlay_state = "shaft_warhoned"
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	layer = MOB_UPPER_LAYER
 
 	force = 35 
