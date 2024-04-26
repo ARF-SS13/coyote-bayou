@@ -617,7 +617,7 @@
 
 /mob/living/simple_animal/hostile/tribe
 	name = "Lost Ones Hunter"
-	desc = "A Lost ones hunter, once part of the Sulphur Bottom tribe these lunatics have fallen to canibalism and baser instincts."
+	desc = "A Lost ones hunter, once part of the Mountain River tribe these lunatics have fallen to canibalism and baser instincts."
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
