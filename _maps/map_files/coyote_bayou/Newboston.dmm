@@ -18158,11 +18158,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
+/turf/open/indestructible/ground/outside/dirt/light,
 /area/f13/building)
 "iKV" = (
 /obj/structure/car/rubbish4,
@@ -25528,13 +25524,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"mcn" = (
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
-/area/f13/building)
 "mcu" = (
 /obj/structure/chair/stool{
 	dir = 8;
@@ -29016,10 +29005,8 @@
 "nKw" = (
 /obj/machinery/vending/snack/random,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "nKy" = (
@@ -29273,11 +29260,7 @@
 	randomizer_kind = "trash mobs";
 	randomizer_tag = "Newb Oston Gaming 5"
 	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "nQh" = (
 /obj/machinery/reagentgrinder,
@@ -31594,11 +31577,7 @@
 	brightness = 7;
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "pde" = (
 /obj/structure/table/optable,
@@ -40308,11 +40287,7 @@
 /area/f13/building)
 "tfL" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "tfS" = (
 /obj/structure/nest/randomized{
@@ -47181,13 +47156,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
-"wtM" = (
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	dir = 4;
-	color = "#A1BFFF"
-	},
-/area/f13/wasteland)
 "wuh" = (
 /obj/structure/flora/tree/cherryblossom2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -75746,7 +75714,7 @@ gIL
 gIL
 gIL
 tPQ
-mcn
+yde
 krG
 ovk
 ovk
@@ -76259,7 +76227,7 @@ yde
 yde
 yde
 yde
-mcn
+yde
 yde
 yde
 tPQ
@@ -77028,7 +76996,7 @@ uoA
 uBX
 uoA
 yde
-tfL
+mWI
 mWI
 mWI
 tsZ
@@ -77285,7 +77253,7 @@ njQ
 pie
 uoA
 tub
-mWI
+xCc
 gaU
 mWI
 wPY
@@ -78053,7 +78021,7 @@ qjA
 yde
 pHa
 uoA
-mcn
+uoA
 dnT
 yde
 xCc
@@ -78566,7 +78534,7 @@ tPQ
 tPQ
 tPQ
 yde
-mcn
+aMU
 mjS
 aMU
 yde
@@ -78822,7 +78790,7 @@ tPQ
 tPQ
 tPQ
 tPQ
-wtM
+tPQ
 yde
 yde
 yde
@@ -79079,7 +79047,7 @@ tPQ
 gIL
 tPQ
 tPQ
-wtM
+tPQ
 tPQ
 tPQ
 tPQ
@@ -79335,7 +79303,7 @@ tPQ
 tPQ
 tPQ
 tPQ
-wtM
+tPQ
 tPQ
 tPQ
 tPQ
@@ -79591,8 +79559,8 @@ rpU
 tPQ
 tPQ
 tPQ
-wtM
-wtM
+tPQ
+tPQ
 tPQ
 fwG
 vNf
@@ -79847,7 +79815,7 @@ cFi
 rpU
 gIL
 tPQ
-wtM
+tPQ
 tPQ
 tPQ
 tPQ
@@ -80103,8 +80071,8 @@ fNr
 rDY
 rpU
 gIL
-wtM
-wtM
+tPQ
+tPQ
 tPQ
 tPQ
 tPQ
