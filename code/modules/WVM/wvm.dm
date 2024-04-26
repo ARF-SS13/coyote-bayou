@@ -1083,9 +1083,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
 		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
 		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
-		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								50), // you can literally print this shit en masse with cable coils and sheets
-		new /datum/data/wasteland_equipment("(T2) Rose Steel x1",				/obj/item/ingot/mythril,							100),
-		new /datum/data/wasteland_equipment("(T3) Ultrasteel x1",				/obj/item/ingot/adamantine,							200),
+		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								350), // 40 coins more expensive than hand making to buy
+		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,							600), // 350 + 200 = 550, add another 50 as tax
+		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,							800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
 		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
 		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
 		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
@@ -1108,9 +1108,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
 		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
 		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
-		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								50), // you can literally print this shit en masse with cable coils and sheets
-		new /datum/data/wasteland_equipment("(T2) Rose Steel x1",				/obj/item/ingot/mythril,							100),
-		new /datum/data/wasteland_equipment("(T3) Ultrasteel x1",				/obj/item/ingot/adamantine,							200),
+		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								350), // 40 coins more expensive than hand making to buy
+		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,							600), // 350 + 200 = 550, add another 50 as tax
+		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,							800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
 		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
 		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
 		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),

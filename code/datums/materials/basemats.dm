@@ -124,7 +124,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Can cause bluespace effects on use. (Teleportation) (Not yet implemented)
 /datum/material/bluespace
-	name = "Ultracite Crystals"
+	name = "Netherium Crystals"
 	desc = "Crystals with high energy capabilities"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	integrity_modifier = 0.2 //these things shatter when thrown.
