@@ -2996,9 +2996,6 @@
 "go" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb/cobweb2{
-	plane = -4
-	},
 /obj/structure/cave/support{
 	pixel_y = 26;
 	icon_state = "support_wall";
@@ -21514,17 +21511,6 @@
 /obj/structure/simple_door/tent,
 /obj/item/lock_bolt{
 	dir = 1
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
-"TB" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2{
-	plane = -4
-	},
-/obj/structure/cave/support{
-	pixel_y = 26;
-	icon_state = "support_wall";
-	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -54386,7 +54372,7 @@ Yj
 "}
 (117,1,1) = {"
 Yj
-TB
+sh
 uc
 Qw
 qF
@@ -55158,7 +55144,7 @@ Yj
 (120,1,1) = {"
 Yj
 GU
-TB
+sh
 Qw
 Qw
 GU
