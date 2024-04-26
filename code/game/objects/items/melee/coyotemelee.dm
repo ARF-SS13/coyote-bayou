@@ -548,11 +548,11 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
+/* /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute")) */ //How about we stop instantly stamina critting people in power armor
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
 	name = "Old Bokken"
@@ -578,11 +578,36 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
+/* /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute")) Silence, code, be quiet for 1 million years*/
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick
+	name = "Dispute Stick"
+	desc = "A large stick, culturally used for dispute duels, whoevers still standing by the end had a better argument."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "handle"
+	item_state = "debranched_stick_old"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = INV_SLOTBIT_BELT
+	force = 0
+	throwforce = 0
+	wound_bonus = -20
+	force_unwielded = 0
+	force_wielded = 0
+	stam_dmg = 18
+	cooldown = 13
+	bare_wound_bonus = 0
+	sharpness = SHARP_NONE
+	w_class = WEIGHT_CLASS_TINY
+	attack_verb = list("articulated", "clocked", "bonked")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 30 // Skill based gameplay
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"
