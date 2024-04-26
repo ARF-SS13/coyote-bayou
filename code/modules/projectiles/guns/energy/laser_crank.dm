@@ -305,7 +305,7 @@
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
-	crank_power = 1250 // 4 cranks till full
+	crank_power = 1333 // 6 cranks till full
 	crank_stamina_cost = 50 // But also cost more stamina than before
 	cranking_time = 4 // And require a little more time
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
@@ -315,7 +315,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000 // 25 shots
+	maxcharge = 8000 // 40 shots
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
