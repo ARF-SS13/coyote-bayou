@@ -3,7 +3,6 @@
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
 	color = "#9a8782"
-	strength_modifier = 1
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
 	value_per_unit = 0.0025
@@ -62,7 +61,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "diamond"
 	desc = "Highly pressurized carbon"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
-	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	value_per_unit = 0.25
@@ -124,7 +122,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Can cause bluespace effects on use. (Teleportation) (Not yet implemented)
 /datum/material/bluespace
-	name = "Ultracite Crystals"
+	name = "Netherium Crystals"
 	desc = "Crystals with high energy capabilities"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	integrity_modifier = 0.2 //these things shatter when thrown.
@@ -149,7 +147,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "runite"
 	desc = "Runite"
 	color = "#3F9995"
-	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/runite
 	beauty_modifier = 0.5
@@ -160,7 +157,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "plastic"
 	desc = "Plastic"
 	color = "#caccd9"
-	strength_modifier = 0.85
 	sheet_type = /obj/item/stack/sheet/plastic
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	value_per_unit = 0.0125
@@ -172,7 +168,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "biomass"
 	desc = "Organic matter"
 	color = "#735b4d"
-	strength_modifier = 0.8
 	value_per_unit = 0.025
 
 
@@ -180,7 +175,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "wood"
 	desc = "Flexible, durable, but flamable. Hard to come across in space."
 	color = "#bb8e53"
-	strength_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	value_per_unit = 0.06
@@ -251,7 +245,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/sandblock
 	value_per_unit = 0.001
-	strength_modifier = 0.5
 	integrity_modifier = 0.1
 	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 1.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = 0.25
@@ -288,7 +281,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "Mir'ntrath barhah Nar'sie."
 	color = "#3C3434"
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	strength_modifier = 1.2
 	sheet_type = /obj/item/stack/sheet/runed_metal
 	value_per_unit = 0.75
 	armor_modifiers = list("melee" = 1.2, "bullet" = 1.2, "laser" = 1, "energy" = 1, "bomb" = 1.2, "bio" = 1.2, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
