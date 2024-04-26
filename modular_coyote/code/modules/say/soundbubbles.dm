@@ -188,8 +188,6 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		return
 
 	var/datum/typing_sound/TS = GLOB.typing_sounds[get_typing_indicator_sound_name()]
-	if(!TS || !TS.permitAnimalCrossing)
-		return
 	
 	var/list/word_count = splittext(txt," ")
 	var/counter = word_count.len
@@ -201,6 +199,8 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		var/TI_frequency
 		if (!isnum(counter))                                                            //something went wrong with the counter and it needs to be fixed. Quick, do SOMETHING!
 			counter = 4
+		if(!TS || !TS.permitAnimalCrossing)
+			counter = 1
 		if(do_static)
 			counter++ // one last on the endge
 		var/timecounter = 0

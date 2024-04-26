@@ -1396,6 +1396,17 @@
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
 
+/datum/species/feral/deathclaw/geist
+	name = "Cavern Geist"
+	id = "geist"
+	rotate_on_lying = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Cyber" = "cyber_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/geist
+	race = /datum/species/feral/deathclaw/geist
+
 /datum/species/feral/femdigo
 	name = "Female Wendigo"
 	id = "femdigo"
