@@ -133,7 +133,19 @@
 	guaranteed_butcher_results = list()
 	butcher_results = list()
 	del_on_death = TRUE
+	var/die_at_this_time = 0
+	var/lifetime = 1 MINUTES
 
+/mob/living/simple_animal/hostile/gecko/summon/Initialize()
+	die_at_this_time = world.time + lifetime
+	. = ..()
+
+/mob/living/simple_animal/hostile/gecko/summon/BiologicalLife(seconds, times_fired)
+	. = ..()
+	if(world.time >= die_at_this_time)
+		if(prob(5))
+			explosion(get_turf(src), -1, -1, 2, 0, FALSE, FALSE, 2, FALSE, TRUE) // why do we explode dood
+		dust()
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	melee_damage_lower *= 0.5

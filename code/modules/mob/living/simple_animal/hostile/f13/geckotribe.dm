@@ -291,7 +291,7 @@
 	)
 
 //gecko with a bow. will bravely defend its home
-/mob/living/simple_animal/hostile/gecko/tribal/hunter
+/mob/living/simple_animal/hostile/gecko/tribal/hunter // oh I love that game!
 	name = "gecko hunter"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one has a bone spear."
 	icon_state = "gekko_tribe_bowman"
@@ -591,6 +591,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -750,6 +751,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -912,6 +914,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",

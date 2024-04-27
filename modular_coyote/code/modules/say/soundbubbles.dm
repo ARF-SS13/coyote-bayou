@@ -180,10 +180,10 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 	if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
 		return
 	
-	if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
-		return
+	// if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
+	// 	return
 	
-	if(do_static && prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
+	if(prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
 		playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE)
 		return
 

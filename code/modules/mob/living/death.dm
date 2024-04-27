@@ -91,8 +91,7 @@
 
 	broadcast_death(signal)
 	if (client && client.prefs && client.prefs.auto_ooc)
-		if (!(client.prefs.chat_toggles & CHAT_OOC))
-			client.prefs.chat_toggles ^= CHAT_OOC
+		client.prefs.chat_toggles |= CHAT_OOC
 	if (client)
 		client.move_delay = initial(client.move_delay)
 

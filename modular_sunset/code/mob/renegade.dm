@@ -318,6 +318,7 @@
 	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
+	bossmob = TRUE
 	healable = 1
 	melee_damage_lower = 50
 	melee_damage_upper = 50
@@ -376,6 +377,7 @@
 	retreat_distance = 4
 	minimum_distance = 2
 	ranged = 1
+	bossmob = TRUE
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
