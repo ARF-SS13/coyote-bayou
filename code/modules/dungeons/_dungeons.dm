@@ -14,12 +14,19 @@
 	var/list/middle_maps = list()
 	/// Weighted list of final maps to choose from. These always contain an exit for the dungeon.
 	var/list/exit_maps = list()
-	var/min_middle_maps = 1
-	var/max_middle_maps = 1
+	var/min_middle_maps = 0
+	var/max_middle_maps = 0
 	/// Can we roll into the same middle map more than once?
 	var/can_dupe_middle_maps = FALSE
 	/// When rolling a middle map, this is the chance to instead roll an exit map.
 	var/exit_chance = 50
+
+/datum/dungeon_controller/New()
+	if(can_dupe_middle_maps == FALSE && min_middle_maps > LAZYLEN(middle_maps))
+		min_middle_maps = LAZYLEN(middle_maps)
+		max_middle_maps = max(min_middle_maps, max_middle_maps)
+	clamp(exit_chance, 0, 100)
+	
 
 /// An individual map chunk for a dungeon.
 /datum/map_template/dungeon
@@ -46,7 +53,9 @@
 	message_admins(span_adminnotice("DEBUG:Dungeon ([name]) placed at [ADMIN_COORDJMP(center)]"))
 	return center
 
-/// Loads a single dungeon of your choice
+/**
+ * Loads and spawns a dungeon instance for testing purposes.
+ */
 /client/proc/dungeon_test_load()
 	set category = "Debug"
 	set name = "spawn dungeon instance"
@@ -61,7 +70,13 @@
 
 	template.spawn_new_dungeon()
 
-/// Rapidly spawns and despawns dungeons as a test.
+/**
+ * This proc is used to perform a stress test on dungeons.
+ * It toggles the `SSdungeons.dungeon_stress_test` variable to start or cancel the stress test.
+ * During the stress test, it spawns multiple dungeons based on the available templates.
+ * Each dungeon is spawned with a delay of 30 seconds.
+ * The stress test can be canceled by toggling the `SSdungeons.dungeon_stress_test` variable again.
+ */
 /client/proc/dungeon_stress_test()
 	set category = "Debug"
 	set name = "stress test dungeons"
@@ -86,8 +101,12 @@
 		message_admins(span_adminnotice("STRESS TEST: Stress test canceled."))
 
 
+
+/obj/structrue/dungeon
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
 /// Click on this to enter a dungeon
-/obj/effect/landmark/dungeon_entrance
+/obj/structrue/dungeon/entrance
 	/// The typepath of the dungeon we use
 	var/dungeon_type
 
@@ -107,15 +126,15 @@
 
 /datum/map_template/dungeon/debug_2
 	name = "Debug Dungeon 2"
-	description = "I wanna be the very first."
+	description = "I wanna be the very second."
 	mappath = "_maps/templates/dungeons/debug_2.dmm"
 
 /datum/map_template/dungeon/debug_3
 	name = "Debug Dungeon 3"
-	description = "I wanna be the very first."
+	description = "I wanna be the very third."
 	mappath = "_maps/templates/dungeons/debug_3.dmm"
 
 /datum/map_template/dungeon/debug_4
 	name = "Debug Dungeon 4"
-	description = "I wanna be the very first."
+	description = "I wanna be the very fourth."
 	mappath = "_maps/templates/dungeons/debug_4.dmm"

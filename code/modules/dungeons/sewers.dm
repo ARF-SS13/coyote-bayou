@@ -2,23 +2,53 @@
 /datum/dungeon_controller/sewer
 	dungeon_id = "sewer"
 	wipe_after = 10 MINUTES
+	start_maps = list(/datum/map_template/dungeon/sewer/start = 25)
+	middle_maps = list(
+		/datum/map_template/dungeon/sewer_1 = 25,
+		/datum/map_template/dungeon/sewer_2 = 25,
+		/datum/map_template/dungeon/sewer_3 = 25,
+		)
+	exit_maps = list(/datum/map_template/dungeon/sewer/exit = 25)
+	min_middle_maps = 1
+	max_middle_maps = 3
+	/// Can we roll into the same middle map more than once?
+	can_dupe_middle_maps = FALSE
+	/// When rolling a middle map, this is the chance to instead roll an exit map.
+	exit_chance = 25
+
+/// Entrance
+/obj/structrue/dungeon/entrance/sewers
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "manhole_open"
+	dungeon_type = /datum/dungeon_controller/sewer
+
+/obj/structrue/dungeon/exit/sewers
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "ladder10"
 
 /datum/map_template/dungeon/sewer
 	name = "Sewer Dungeon Map"
-	description = "A random assortment of mappies."
-	/// Used by dynamic mob spawnpoints to assign health, damage, etc
-	difficulty
+	description = "A random assortment of gross tunnels."
+	difficulty = "Easy"
 	loot_abundance = LOOT_TIER_LOW
 	threat_type = "Geckos, Slimes, Rats, & Goons"
-	transitions = list()
 
 /datum/map_template/dungeon/sewer/start
 	name = "Sewer Dungeon Start"
-	description = "A random assortment of gross tunnels."
-	difficulty
-	loot_abundance
-	threat_type
-	transitions = list(/datum/map_template/dungeon/sewer_1 = 25, /datum/map_template/dungeon/sewer_2 = 25, /datum/map_template/dungeon/sewer_3 = 25)
+	mappath = "_maps/templates/dungeons/sewers/sewer_start.dmm"
 
+/datum/map_template/dungeon/sewer/one
+	name = "Sewer Dungeon 1"
+	description = "A section of the sewer dungeon."
 
+/datum/map_template/dungeon/sewer/two
+	name = "Sewer Dungeon 2"
+	description = "Another section of the sewer dungeon."
 
+/datum/map_template/dungeon/sewer/three
+	name = "Sewer Dungeon 3"
+	description = "The final section of the sewer dungeon."
+
+/datum/map_template/dungeon/sewer/exit
+	name = "Sewer Dungeon Exit"
+	description = "The exit of the sewer dungeon."
