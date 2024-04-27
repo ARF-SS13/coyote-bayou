@@ -1569,9 +1569,7 @@
 		"Hunter Killer" = "hunter_",
 		"Custodian" = "keeper_",
 		"Mythical" = "crystal_",
-		"Cephalopod" = "cepha_",
-		"Basic" = "basic_",
-		"Yellow" = "yellow_",)
+		"Cephalopod" = "cepha_",)
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 	rotate_on_lying = FALSE
