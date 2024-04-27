@@ -1,5 +1,5 @@
 /obj/item/sharpener
-	name = "melee weapon enhancement kit"
+	name = "whetstone"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "sharpener"
 	desc = "(click the icon with your melee weapon in your active hand to use) A cache of oils and crystals and such to enhance a weapon."
