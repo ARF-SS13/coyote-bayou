@@ -236,7 +236,7 @@ SUBSYSTEM_DEF(monster_wave)
 		return
 	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
 		if(get_dist(src, RB) <= RB.protection_radius)
-			RB.killmeplease(src)
+			RB.killmeplease(src) // kill me, daddy
 			return
 
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/unbirth()
@@ -265,7 +265,7 @@ SUBSYSTEM_DEF(monster_wave)
 	icon_state = "dominator"
 	density = TRUE
 	anchored = TRUE
-	var/protection_radius = 11
+	var/protection_radius = 9
 	var/obj/item/my_component
 	var/show_range_cooldown = 0
 	var/mob/living/simple_animal/nest_spawn_hole_guy/killing_something
@@ -355,8 +355,8 @@ SUBSYSTEM_DEF(monster_wave)
 /obj/effect/temp_visual/outline
 	name = "Field Generator Perimeter"
 	desc = "Wow! Nests that try to spawn in here will be blocked! Neat!"
-	icon_state = "medi_holo"
-	icon = 'icons/effects/fields.dmi'
+	icon_state = "shieldwall"
+	icon = 'icons/effects/effects.dmi'
 	duration = 10 SECONDS
 	var/sounding = TRUE
 

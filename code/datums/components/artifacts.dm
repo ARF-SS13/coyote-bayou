@@ -2014,7 +2014,7 @@
 	else
 		if(!in_desired_slot())
 			return
-	target.adjustStaminaLoss(stamina_adjustment)
+	target.adjustStaminaLoss(-(abs(stamina_adjustment)))
 	return TRUE
 
 /datum/artifact_effect/stamina/get_magnitude()
