@@ -144,7 +144,7 @@
 	. = ..()
 	if(world.time >= die_at_this_time)
 		if(prob(5))
-			explosion(get_turf(src), -1, -1, 2, 0, FALSE, FALSE, 2, FALSE, TRUE) // lol
+			explosion(get_turf(src), -1, -1, 2, 0, FALSE, FALSE, 2, FALSE, TRUE) // why do we explode dood
 		dust()
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
