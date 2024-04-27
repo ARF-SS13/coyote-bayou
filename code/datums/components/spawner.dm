@@ -662,7 +662,11 @@
 	radius = clamp(radius + rand(-2, 2), 1, 20)
 	var/list/new_paths = list()
 	for(var/mobpath in mob_types)
-		if(prob(50) && LAZYLEN(mob_types) > 1)
+		var/mob/living/simple_animal/hostile/baddie = mobpath
+		if(ispath(baddie) && initial(baddie.bossmob) == TRUE)
+			new_paths[mobpath] = mob_types[mobpath] // rolled a boss, honor tht
+			continue
+		if(prob(40) && LAZYLEN(mob_types) > 1)
 			new_paths[mobpath] = mob_types[mobpath] // no change
 			continue
 		// ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
