@@ -431,8 +431,15 @@
 		else
 			return COINS(1) // If I get a 75% or below, I dont pass, and neither will you
 
+/obj/item/paper/supplyreport
+	var/costvalue = 0 // See me after class
+	
+/obj/item/paper/supplyreport/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(getcostvalue))
 
-
+/obj/item/paper/supplyreport/proc/getcostvalue()
+	return costvalue
 
 
 #undef MAX_PAPER_LENGTH
