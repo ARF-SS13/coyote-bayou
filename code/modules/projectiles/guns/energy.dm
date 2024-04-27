@@ -143,7 +143,6 @@
 		to_chat(user, span_alert("[src]'s self-charge cycle cannot be stopped!!!"))
 		return
 	if(!selfcharge)
-		to_chat(user, span_alert("[src] does not have self-charging enabled!"))
 		return
 	if(!cell)
 		to_chat(user, span_alert("[src] does not have a cell!"))
