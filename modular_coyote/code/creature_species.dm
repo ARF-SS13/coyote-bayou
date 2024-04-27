@@ -1399,7 +1399,7 @@
 /datum/species/feral/deathclaw/geist
 	name = "Cavern Geist"
 	id = "geist"
-	rotate_on_lying = TRUE
+	rotate_on_lying = FALSE
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 	alt_prefixes = list("Cyber" = "cyber_")
