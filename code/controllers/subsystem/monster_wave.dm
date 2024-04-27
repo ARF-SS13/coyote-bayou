@@ -231,16 +231,20 @@ SUBSYSTEM_DEF(monster_wave)
 	SSmonster_wave.spawned_a_nest()
 	qdel(src)
 
-/mob/living/simple_animal/nest_spawn_hole_guy/handle_automated_action()
+/mob/living/simple_animal/nest_spawn_hole_guy/BiologicalLife(seconds, times_fired)
 	if(shhh_im_dead)
 		return
 	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
 		if(get_dist(src, RB) <= RB.protection_radius)
+			if(RB.killing_something)
+				continue
 			RB.killmeplease(src) // kill me, daddy
 			return
 
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/unbirth()
+	shhh_im_dead = null
 	if(!nest_seed)
+		death()
 		return
 	SSmonster_wave.register_nest_seed(nest_seed)
 	nest_seed = null
@@ -260,12 +264,12 @@ SUBSYSTEM_DEF(monster_wave)
 
 /obj/structure/respawner_blocker
 	name = "anti-transcendental field generator"
-	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And also keeps the janitor from cleaning up the mess. And also keeps the bartender from serving drinks. And also keeps the clown from slipping on a banana peel. And also keeps the AI from-- you get the idea."
+	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And also keeps the janitor from cleaning up the mess. And also keeps the bartender from serving drinks. And also keeps the clown from slipping on a banana peel. And also keeps the AI from-- you get the idea. It'll also emit a concentrated Yancy-Turtledove anti-displacement beam at any rifts that happen to already be there, blasting them into next week (or at least later today)."
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator"
 	density = TRUE
 	anchored = TRUE
-	var/protection_radius = 9
+	var/protection_radius = 10
 	var/obj/item/my_component
 	var/show_range_cooldown = 0
 	var/mob/living/simple_animal/nest_spawn_hole_guy/killing_something
@@ -300,7 +304,8 @@ SUBSYSTEM_DEF(monster_wave)
 	addtimer(CALLBACK(src, PROC_REF(kill_it)), 3 SECONDS)
 	my_bean = Beam(get_turf(NSHG), "sm_arc_dbz_referance")
 	my_bean.Start()
-	playsound(src, 'sound/machines/shoot_respawn_killer.ogg', 75, FALSE)
+	playsound(src, 'sound/machines/shoot_respawn_killer.ogg', 100, FALSE)
+	playsound(NSHG, 'sound/machines/shoot_respawn_killer.ogg', 100, FALSE)
 
 /obj/structure/respawner_blocker/proc/kill_it()
 	if(!killing_something || killing_something.shhh_im_dead != src)
@@ -308,8 +313,8 @@ SUBSYSTEM_DEF(monster_wave)
 	my_bean.End()
 	my_bean = null
 	killing_something.shhh_im_dead = null
-	killing_something = null
 	killing_something.unbirth()
+	killing_something = null
 
 /obj/structure/respawner_blocker/AltClick(mob/user)
 	. = ..()
@@ -324,43 +329,61 @@ SUBSYSTEM_DEF(monster_wave)
 
 /obj/structure/respawner_blocker/attack_hand(mob/user, act_intent, attackchain_flags)
 	. = ..()
-	say("[protection_radius] meter radius. [protection_radius*2+1]x[protection_radius*2+1] area. [protection_radius*2+1]^2 square meters. Protecting against transdimensional incursions, no nests will appear in this area.")
+	say("[protection_radius] meter radius. [protection_radius*2+1]x[protection_radius*2+1] area. [protection_radius*2+1]^2 square meters. Protecting against transdimensional incursions, no rifts can or will exist in this area.")
 	if(!COOLDOWN_FINISHED(src, show_range_cooldown))
 		return
 	COOLDOWN_START(src, show_range_cooldown, 10 SECONDS)
 	var/list/turfs2spawn = block(x-protection_radius, y-protection_radius, z, x+protection_radius, y+protection_radius, z)
 	turfs2spawn -= block(x-protection_radius+1, y-protection_radius+1, z, x+protection_radius-1, y+protection_radius-1, z)
+	var/north_y = y+protection_radius
+	var/south_y = y-protection_radius
+	var/west_x = x-protection_radius
+	var/east_x = x+protection_radius
+
 	for(var/turf/T in turfs2spawn)
-		var/direction_from_me_to_it
-		if(T.x == x-protection_radius)
-			direction_from_me_to_it = WEST
-			if(T.y == y-protection_radius)
-				direction_from_me_to_it = NORTHWEST
-			else if(T.y == y+protection_radius)
-				direction_from_me_to_it = SOUTHWEST
-		else if(T.x == x+protection_radius)
-			direction_from_me_to_it = EAST
-			if(T.y == y-protection_radius)
-				direction_from_me_to_it = NORTHEAST
-			else if(T.y == y+protection_radius)
-				direction_from_me_to_it = SOUTHEAST
-		else if(T.y == y-protection_radius)
-			direction_from_me_to_it = NORTH
-		else if(T.y == y+protection_radius)
-			direction_from_me_to_it = SOUTH
+		// is it an end piece?
+		var/obj/effect/temp_visual/outline/I = new(T)
+		/// left end?
+		if(T.x == west_x)
+			/// top left?
+			if(T.y == north_y)
+				I.dir = NORTHWEST
+			/// bottom left?
+			else if(T.y == south_y)
+				I.dir = SOUTHWEST
+			/// middlebit
+			else
+				I.dir = WEST
+		/// right end?
+		else if(T.x == east_x)
+			/// top right?
+			if(T.y == north_y)
+				I.dir = NORTHEAST
+			/// bottom right?
+			else if(T.y == south_y)
+				I.dir = SOUTHEAST
+			/// middlebit
+			else
+				I.dir = EAST
+		/// top middle?
+		else if(T.y == north_y)
+			I.dir = NORTH
+		/// bottom middle?
+		else if(T.y == south_y)
+			I.dir = SOUTH
 		else
-			continue
-		new /obj/effect/temp_visual/outline(T, direction_from_me_to_it)
+			stack_trace("ERROR: Box drawing failed! Unknown direction x: [T.x], y: [T.y]")
+	return TRUE
 
 /obj/effect/temp_visual/outline
 	name = "Field Generator Perimeter"
 	desc = "Wow! Nests that try to spawn in here will be blocked! Neat!"
-	icon_state = "shieldwall"
+	icon_state = "shieldwall_but_better"
 	icon = 'icons/effects/effects.dmi'
 	duration = 10 SECONDS
 	var/sounding = TRUE
 
-/obj/effect/temp_visual/outline/Initialize(mapload, which_direction)
+/obj/effect/temp_visual/outline/Initialize(mapload)
 	. = ..()
 	animate(
 		src,
