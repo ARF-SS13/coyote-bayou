@@ -1618,13 +1618,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/underground/cave)
-"aHo" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "aHG" = (
 /obj/structure/table/reinforced,
 /obj/item/nanite_remote,
@@ -7665,10 +7658,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
-/area/f13/building)
-"dkW" = (
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/plating/asteroid/basalt/lava,
 /area/f13/building)
 "dlc" = (
 /obj/structure/table/reinforced,
@@ -15683,13 +15672,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"gBR" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/carpet/red,
-/area/f13/building)
 "gCf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -34484,16 +34466,6 @@
 /obj/structure/debris/v2,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices1st)
-"oNJ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "oNL" = (
 /obj/structure/punji_sticks,
 /obj/structure/spacevine,
@@ -35282,10 +35254,6 @@
 /obj/item/storage/box/dice,
 /turf/open/floor/carpet/purple,
 /area/f13/underground/cave)
-"pda" = (
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/indestructible/necropolis,
-/area/f13/building)
 "pdh" = (
 /obj/machinery/vending/snack/green,
 /turf/open/floor/plasteel/f13{
@@ -37484,10 +37452,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"pYQ" = (
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "pYT" = (
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
@@ -43104,13 +43068,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/medical)
-"stq" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/wood_worn/wood_worn_dark,
-/area/f13/building)
 "stD" = (
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/offices2nd)
@@ -49878,13 +49835,6 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/offices1st)
-"vmM" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
 "vmR" = (
 /obj/item/bedsheet/patriot,
 /turf/open/floor/plasteel/f13{
@@ -50374,13 +50324,6 @@
 "vvK" = (
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/f13/building)
-"vvO" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/indestructible/necropolis,
-/area/f13/building)
 "vwb" = (
 /obj/structure/spacevine{
 	name = "Mutant Vines"
@@ -50769,13 +50712,6 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/offices1st)
-"vFW" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "vGa" = (
 /obj/structure/bookcase/random,
 /turf/open/indestructible/ground/inside/mountain,
@@ -53756,13 +53692,6 @@
 /mob/living/simple_animal/hostile/giantant,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/bunker)
-"wXC" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/mine/pickup/bloodbath,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building)
 "wXK" = (
 /turf/closed/indestructible/rock,
 /area/space)
@@ -69830,7 +69759,7 @@ ble
 ble
 ble
 ble
-pYQ
+ble
 ble
 ble
 ble
@@ -71123,7 +71052,7 @@ ble
 ble
 ble
 ble
-pYQ
+ble
 ble
 rLB
 bqN
@@ -71884,7 +71813,7 @@ rXY
 rLB
 ble
 ble
-pYQ
+ble
 rxf
 ble
 ble
@@ -73686,7 +73615,7 @@ ble
 ble
 rxf
 ble
-pYQ
+ble
 ble
 ble
 ble
@@ -75476,7 +75405,7 @@ whv
 whv
 whv
 rLB
-pYQ
+ble
 ble
 ble
 ble
@@ -75745,7 +75674,7 @@ ble
 ble
 ble
 ble
-pYQ
+ble
 ble
 ble
 ble
@@ -108597,7 +108526,7 @@ iHQ
 fnh
 iHQ
 iHQ
-aHo
+iHQ
 iHQ
 kyF
 kyF
@@ -109395,7 +109324,7 @@ eJY
 eJY
 iHQ
 iHQ
-aHo
+iHQ
 iHQ
 kyF
 kyF
@@ -109913,7 +109842,7 @@ iHQ
 iHQ
 hXs
 iHQ
-aHo
+iHQ
 ble
 dkJ
 whv
@@ -110153,7 +110082,7 @@ iHQ
 jAY
 jAY
 jAY
-oNJ
+jAY
 jAY
 jAY
 jAY
@@ -110909,7 +110838,7 @@ jAY
 dIA
 jAY
 jAY
-oNJ
+jAY
 jAY
 jAY
 jAY
@@ -111175,7 +111104,7 @@ jAY
 iHQ
 iHQ
 iHQ
-aHo
+iHQ
 iHQ
 iHQ
 jAY
@@ -113244,7 +113173,7 @@ jAY
 jAY
 jAY
 jAY
-oNJ
+jAY
 jAY
 jAY
 jAY
@@ -113765,7 +113694,7 @@ jAY
 iHQ
 kyF
 iHQ
-aHo
+iHQ
 iHQ
 iHQ
 iHQ
@@ -114258,7 +114187,7 @@ dUM
 lkX
 jAY
 jAY
-oNJ
+jAY
 jAY
 jAY
 jAY
@@ -115306,7 +115235,7 @@ riC
 riC
 toL
 bVY
-vmM
+bVY
 bVY
 bVY
 rYN
@@ -115667,7 +115596,7 @@ caW
 caW
 vvK
 eek
-pda
+eek
 vvK
 eek
 kdK
@@ -116066,7 +115995,7 @@ aYA
 riC
 riC
 riC
-wXC
+riC
 riC
 riC
 riC
@@ -116423,7 +116352,7 @@ whv
 whv
 kdK
 eek
-pda
+eek
 eek
 vvK
 vvK
@@ -116940,7 +116869,7 @@ eek
 dqj
 eek
 vvK
-pda
+eek
 eek
 eoK
 eek
@@ -116948,7 +116877,7 @@ vvK
 eek
 vvK
 eek
-pda
+eek
 eek
 vvK
 eek
@@ -117074,7 +117003,7 @@ ahB
 iHQ
 nbl
 gMg
-vvO
+gMg
 iHQ
 iHQ
 luU
@@ -117876,7 +117805,7 @@ rLB
 jzR
 pEe
 pEe
-vmM
+bVY
 tom
 bVY
 pEe
@@ -118099,7 +118028,7 @@ nrw
 nbl
 gMg
 gMg
-vvO
+gMg
 gMg
 kxN
 kxN
@@ -118361,7 +118290,7 @@ iHQ
 gMg
 gMg
 iHQ
-vvO
+gMg
 gMg
 cVh
 nrw
@@ -118371,7 +118300,7 @@ lNK
 riC
 riC
 riC
-wXC
+riC
 riC
 riC
 riC
@@ -118479,7 +118408,6 @@ whv
 whv
 kdK
 eek
-pda
 eek
 eek
 eek
@@ -118487,7 +118415,8 @@ eek
 eek
 eek
 eek
-dkW
+eek
+vvK
 vvK
 eek
 vvK
@@ -118869,7 +118798,7 @@ eek
 gMg
 gMg
 gMg
-vvO
+gMg
 gMg
 gMg
 gMg
@@ -118898,7 +118827,7 @@ bMH
 ojf
 ojf
 ojf
-gBR
+ojf
 ojf
 toL
 dLC
@@ -119778,7 +119707,7 @@ vvK
 vvK
 vvK
 eek
-pda
+eek
 eek
 eek
 eek
@@ -120421,7 +120350,7 @@ abW
 iBB
 iBB
 iBB
-stq
+iBB
 iBB
 jSX
 iBB
@@ -120433,7 +120362,7 @@ pdE
 pdE
 iBB
 iBB
-stq
+iBB
 iBB
 iBB
 iBB
@@ -120930,7 +120859,7 @@ iBB
 iBB
 iBB
 iBB
-stq
+iBB
 iBB
 iBB
 iBB
@@ -121192,7 +121121,7 @@ iBB
 iBB
 iBB
 iBB
-stq
+iBB
 iBB
 iBB
 wcD
@@ -121203,7 +121132,7 @@ iBB
 iBB
 iBB
 iBB
-stq
+iBB
 iBB
 iBB
 iBB
@@ -121220,7 +121149,7 @@ toL
 aKA
 uyM
 uyM
-vFW
+uyM
 uyM
 wio
 rLB
