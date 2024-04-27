@@ -281,9 +281,8 @@ Works together with spawning an observer, noted above.
 	var/mob/dead/observer/ghost = new(get_turf(src), src)	// Transfer safety to observer spawning proc.
 	SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 	ghost.can_reenter_corpse = can_reenter_corpse || (sig_flags & COMPONENT_FREE_GHOSTING)
-	// if (client && client.prefs && client.prefs.auto_ooc)
-	// 	if (!(client.prefs.chat_toggles & CHAT_OOC))
-	// 		client.prefs.chat_toggles ^= CHAT_OOC
+	if (client && client.prefs && client.prefs.auto_ooc)
+		client.prefs.chat_toggles |= CHAT_OOC
 	transfer_ckey(ghost, FALSE)
 	if(!QDELETED(ghost))
 		ghost.client.init_verbs()
