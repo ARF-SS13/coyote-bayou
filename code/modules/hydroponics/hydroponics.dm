@@ -161,7 +161,7 @@
 				adjustHealth(rand(1,2) / rating)
 				if(myseed && prob(myseed.weed_chance))
 					adjustWeeds(myseed.weed_rate)
-				else if(prob(2))  //5 percent chance the weed population will increase
+				// else if(prob(2))  //5 percent chance the weed population will increase
 					// adjustWeeds(1 / rating)
 
 //Toxins/////////////////////////////////////////////////////////////////
@@ -234,9 +234,9 @@
 					harvest = TRUE
 				else
 					lastproduce = age
-			if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
+			// if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
 				// adjustPests(1 / rating)
-		else
+		// else
 			if(waterlevel > 10 && reagents.total_volume > 0 && prob(3))  // If there's no plant, the percentage chance is 10% // Nerfing down to 3%
 				adjustWeeds(1 / rating)
 
