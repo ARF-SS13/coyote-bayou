@@ -264,7 +264,7 @@ SUBSYSTEM_DEF(monster_wave)
 
 /obj/structure/respawner_blocker
 	name = "anti-transcendental field generator"
-	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And also keeps the janitor from cleaning up the mess. And also keeps the bartender from serving drinks. And also keeps the clown from slipping on a banana peel. And also keeps the AI from-- you get the idea. It'll also emit a concentrated Yancy-Turtledove anti-displacement beam at any rifts that happen to already be there, blasting them into next week (or at least later today)."
+	desc = "A simple yet effective device that prevents those pesky rifts from forming. And also keeps raiders from tunneling in. And also keeps the janitor from cleaning up the mess. And also keeps the bartender from serving drinks. And also keeps the clown from slipping on a banana peel. And also keeps the AI from-- you get the idea. It'll also emit a concentrated Yancy-Turtledove anti-displacement beam at any rifts that happen to already be there, blasting them into next week (or at least later today)."
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator"
 	density = TRUE
