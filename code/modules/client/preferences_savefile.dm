@@ -40,8 +40,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/update_save(savefile/S)
 	if(S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
-	var/list/needs_updating = list()
-	needs_updating = current_version ^ PREFERENCES_MASTER_CHANGELOG
+	var/list/needs_updating = PREFERENCES_MASTER_CHANGELOG
+	for(var/clog in current_version)
+		needs_updating -= clog
 	if(LAZYLEN(needs_updating))
 		update_file(needs_updating, S)
 
@@ -199,15 +200,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
 			if(PMC_DAN_MESSED_UP_WHO_STUFF)
-				whoflags = DEFAULT_WHO_FLAGS
-				WRITE_FILE(S["whoflags"], whoflags)
+				// whoflags = DEFAULT_WHO_FLAGS
+				// WRITE_FILE(S["whoflags"], whoflags)
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
 			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
-				S["feature_genital_whitelist"] >> genital_whitelist
-				if(!islist(genital_whitelist))
-					current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
-					continue
-				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				// S["feature_genital_whitelist"] >> genital_whitelist
+				// if(!islist(genital_whitelist))
+				// 	current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+				// 	continue
+				// WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
 				// S["faved_interactions"] >> faved_interactions
@@ -217,17 +218,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_ADDED_RADIO_BLURBLES) // i broke it =3
 				S["chat_toggles"] >> chat_toggles
 				chat_toggles |= CHAT_HEAR_RADIOBLURBLES
-				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				chat_toggles = sanitize_integer(chat_toggles, 0, INFINITY, TOGGLES_DEFAULT_CHAT)
 				current_version |= PMC_ADDED_RADIO_BLURBLES
 			if(PMC_ADDED_RADIO_STATIC) // i broke it =3
 				S["chat_toggles"] >> chat_toggles
 				chat_toggles |= CHAT_HEAR_RADIOSTATIC
-				WRITE_FILE(S["chat_toggles"], chat_toggles)
+				chat_toggles = sanitize_integer(chat_toggles, 0, INFINITY, TOGGLES_DEFAULT_CHAT)
 				current_version |= PMC_ADDED_RADIO_STATIC
 			if(PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF) // i broke it =3
 				S["admin_wire_tap"] >> admin_wire_tap
 				admin_wire_tap = TRUE
-				WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
 				current_version |= PMC_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF
 			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
 				var/list/huge_quest_list = list()
@@ -285,6 +285,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				WRITE_FILE(S["historical_banked_points"], cashmoney)
 				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 
+	current_version = PREFERENCES_MASTER_CHANGELOG
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -701,7 +702,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/needs_update = savefile_needs_update(S)
 	if(needs_update == -2)		//fatal, can't load any data
 		return FALSE
-	update_save(S)
 
 	. = TRUE
 
@@ -1354,6 +1354,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// permanent tattoos
 	permanent_tattoos = sanitize_text(permanent_tattoos)
+	update_save(S)
 
 	return 1
 

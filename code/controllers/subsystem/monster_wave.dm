@@ -234,7 +234,7 @@ SUBSYSTEM_DEF(monster_wave)
 /mob/living/simple_animal/nest_spawn_hole_guy/handle_automated_action()
 	if(shhh_im_dead)
 		return
-	for(var/obj/structure/respawner_blocker in SSmonster_wave.spawn_blockers)
+	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
 		if(get_dist(src, RB) <= RB.protection_radius)
 			RB.killmeplease(src)
 			return
@@ -243,7 +243,7 @@ SUBSYSTEM_DEF(monster_wave)
 	if(!nest_seed)
 		return
 	SSmonster_wave.register_nest_seed(nest_seed)
-	nest_seed.null
+	nest_seed = null
 	do_sparks(5, TRUE, src, /datum/effect_system/spark_spread/quantum)
 	death()
 	return TRUE
@@ -293,22 +293,23 @@ SUBSYSTEM_DEF(monster_wave)
 
 /// we're bout to ruin this guy's day
 /obj/structure/respawner_blocker/proc/killmeplease(mob/living/simple_animal/nest_spawn_hole_guy/NSHG)
-	if(killing_something == NSHG) // we're already killing something
+	if(killing_something) // we're already killing something
 		return
+	killing_something = NSHG
 	NSHG.shhh_im_dead = src // omae wa mou shindeiru
-	addtimer(CALLBACK(src, PROC_REF(kill_it), NSHG, 3 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(kill_it)), 3 SECONDS)
 	my_bean = Beam(get_turf(NSHG), "sm_arc_dbz_referance")
-	my_bean.start()
+	my_bean.Start()
 	playsound(src, 'sound/machines/shoot_respawn_killer.ogg', 75, FALSE)
 
-/obj/structure/respawner_blocker/proc/kill_it(mob/living/simple_animal/nest_spawn_hole_guy/NSHG)
-	if(!NSHG || NSHG.shhh_im_dead != src)
+/obj/structure/respawner_blocker/proc/kill_it()
+	if(!killing_something || killing_something.shhh_im_dead != src)
 		return
-	my_bean.stop()
-	mybean = null
-	NHSG.shhh_im_dead = null
+	my_bean.End()
+	my_bean = null
+	killing_something.shhh_im_dead = null
 	killing_something = null
-	NSHG.unbirth()
+	killing_something.unbirth()
 
 /obj/structure/respawner_blocker/AltClick(mob/user)
 	. = ..()
@@ -330,8 +331,26 @@ SUBSYSTEM_DEF(monster_wave)
 	var/list/turfs2spawn = block(x-protection_radius, y-protection_radius, z, x+protection_radius, y+protection_radius, z)
 	turfs2spawn -= block(x-protection_radius+1, y-protection_radius+1, z, x+protection_radius-1, y+protection_radius-1, z)
 	for(var/turf/T in turfs2spawn)
-		var/direction_from_me_to_it = get_dir(src, T)
-		var/obj/effect/temp_visual/outline/FieldGenPerimeter = new(T, direction_from_me_to_it)
+		var/direction_from_me_to_it
+		if(T.x == x-protection_radius)
+			direction_from_me_to_it = WEST
+			if(T.y == y-protection_radius)
+				direction_from_me_to_it = NORTHWEST
+			else if(T.y == y+protection_radius)
+				direction_from_me_to_it = SOUTHWEST
+		else if(T.x == x+protection_radius)
+			direction_from_me_to_it = EAST
+			if(T.y == y-protection_radius)
+				direction_from_me_to_it = NORTHEAST
+			else if(T.y == y+protection_radius)
+				direction_from_me_to_it = SOUTHEAST
+		else if(T.y == y-protection_radius)
+			direction_from_me_to_it = NORTH
+		else if(T.y == y+protection_radius)
+			direction_from_me_to_it = SOUTH
+		else
+			continue
+		new /obj/effect/temp_visual/outline(T, direction_from_me_to_it)
 
 /obj/effect/temp_visual/outline
 	name = "Field Generator Perimeter"

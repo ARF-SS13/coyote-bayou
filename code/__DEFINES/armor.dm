@@ -872,7 +872,7 @@
 		"fire" = 100, \
 		"acid" = 100, \
 		"wound" = 100, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 4)
 
 /* Bear armor!
  * Unbearable in melee
