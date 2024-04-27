@@ -146,8 +146,8 @@ SUBSYSTEM_DEF(monster_wave)
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dragnetfield"
 	mob_armor = ARMOR_VALUE_RIFT
-	maxHealth = 25
-	health = 25
+	maxHealth = 50
+	health = 50
 	move_resist = MOVE_FORCE_OVERPOWERING
 	density = FALSE
 	a_intent = INTENT_HARM
