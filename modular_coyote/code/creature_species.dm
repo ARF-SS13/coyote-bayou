@@ -1555,6 +1555,30 @@
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
 
+/datum/species/adapted/simplebot/swarmer/hivebot
+	name = "Adapted Hivebot"
+	id = "hivebot"
+	alt_prefixes = list(
+		"Small" = "small_", 
+		"Small Alt" = "smallarm_", 
+		"Medium" = "medium_",
+		"Medium Alt" = "mediumarm_",
+		"Ranged" = "ranged_",
+		"Ranged Elite" = "rangedarm_",
+		"Factory" = "factory_",
+		"Hunter Killer" = "hunter_",
+		"Custodian" = "keeper_",
+		"Mythical" = "crystal_",
+		"Cephalopod" = "cepha_",
+		"Basic" = "basic_",
+		"Yellow" = "yellow_",)
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
+/mob/living/carbon/human/species/hivebot
+	race = /datum/species/adapted/simplebot/swarmer/hivebot
+
 /datum/species/adapted/simplebot/probe
 	name = "Adapted Probe"
 	simple_icon = 'icons/obj/mining.dmi'
