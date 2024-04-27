@@ -315,7 +315,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 8000 // 40 shots
+	maxcharge = 7000 // 35 shots
 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
@@ -347,7 +347,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 10000
+	maxcharge = 10000 // So it can be put into a portable recharger
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/pistol
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg/pistol
@@ -394,7 +394,7 @@
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
-	e_cost = 200 // 7 shots per crank
+	e_cost = 200 // 7.5 shots per crank
 	select_name = "kill"
 // TG RIFLE END
 
@@ -406,8 +406,9 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy)
-	cranking_time = 1.6 SECONDS
-	crank_stamina_cost = 20
+	crank_power = 1000 // 10 cranks until full
+	crank_stamina_cost = 50 // 4 stamina bars
+	cranking_time = 6 // And require a little more time
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)
@@ -422,11 +423,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000
+	maxcharge = 9800 // 65 shots per charge
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
-	e_cost = 208
+	e_cost = 150 // 6.5 shots per crank
 	fire_sound = 'sound/weapons/pulse.ogg'
 	select_name = "kill"
 
@@ -446,8 +447,9 @@
 	item_state = "p90"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/auto
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
-	cranking_time = 0.6 SECONDS
-	crank_stamina_cost = 10
+	crank_power = 1000 // 10 cranks until full
+	crank_stamina_cost = 45 // 4 stamina bars
+	cranking_time = 6 // And require a little more time
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)
@@ -463,11 +465,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000
+	maxcharge = 10000 // 100 shots per charge
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
-	e_cost = 83
+	e_cost = 100 // 10 shots per crank
 	select_name = "kill"
 // TG PARTY CANNON
 
@@ -478,8 +480,9 @@
 	item_state = "esniper"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
-	cranking_time = 1.2 SECONDS
-	crank_stamina_cost = 20
+	cranking_time = 3 SECONDS // Pretty reasonable.
+	crank_stamina_cost = 40 // Takes 160 stamina for one charge
+	crank_power = 500 
 	crank_sound = list(
 		'sound/weapons/laserPumpEmpty.ogg',
 	)
@@ -495,11 +498,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 15625
+	maxcharge = 10000 // Holds 5 shots
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/particalcannon
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/particalcannon
-	e_cost = 3125
+	e_cost = 2000
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	select_name = "kill"
 
@@ -523,8 +526,9 @@
 	icon_state = "spamlaser"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
-	cranking_time = 2 SECONDS // Basically costs nothing
-	crank_stamina_cost = 10
+	cranking_time = 3 SECONDS // Pretty reasonable.
+	crank_stamina_cost = 35 // Gets 3 cranks per stamina bar
+	crank_power = 500 
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
@@ -538,11 +542,11 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000
+	maxcharge = 5000 // takes about 10 cranks to fill
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
-	e_cost = 40 //Gets 6 shots per charge
+	e_cost = 40 //Gets 12 shots per charge
 	fire_sound = 'sound/weapons/taser2.ogg'
 	select_name = "kill"
 
@@ -559,8 +563,9 @@
 	icon_state = "teslaser"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
-	cranking_time = 2 SECONDS // Basically costs nothing
-	crank_stamina_cost = 10
+	cranking_time = 3 SECONDS // Pretty reasonable.
+	crank_stamina_cost = 35 // Gets 3 cranks per stamina bar
+	crank_power = 500 // Basically is just the repeating blaster again
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)
@@ -574,14 +579,14 @@
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser/shocker
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker
-	e_cost = 83
+	e_cost = 83 // 6 shots per charge
 	fire_sound = 'sound/weapons/taser.ogg'
 	select_name = "kill"
 
 /obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker //stronger spammy zaps
 	name = "electrobolt"
 	damage = 20
-	damage_list = list("14" = 10, "16" = 10, "20" = 75, "25" = 5)
+	damage_list = list("14" = 10, "16" = 10, "20" = 75, "25" = 5) // but you get double the damage
 	recoil = BULLET_RECOIL_HEAVY_LASER
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
