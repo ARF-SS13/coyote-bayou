@@ -393,6 +393,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// Versioning hack! Versioning hack! Versioning hack!
 	var/list/current_version = list()
+	/// Game prefs-related stuff
+	var/list/current_revision = list() // Have fun distinguishing between these two
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
