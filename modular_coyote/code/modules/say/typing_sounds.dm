@@ -85,6 +85,30 @@ SUBSYSTEM_DEF(typinginit)
 	soundFile = 'sound/machines/buzz-sigh.ogg'
 	soundFileStatic = 'sound/machines/buzz-sigh__static.ogg'
 
+/datum/typing_sound/glitchysynth
+	name = "Glitchy"
+	soundFile = 'modular_coyote/sound/typing/synth_possessed.ogg'
+	soundFileStatic = 'sound/machines/chime__static.ogg'
+	permitAnimalCrossing = FALSE
+
+/datum/typing_sound/glitchysynthsigh
+	name = "Glitchy Sigh"
+	soundFile = 'modular_coyote/sound/typing/synth_possessed_sigh.ogg'
+	soundFileStatic = 'sound/machines/chime__static.ogg'
+	permitAnimalCrossing = FALSE
+
+/datum/typing_sound/glitchysynthagro
+	name = "Glitchy Aggressive"
+	soundFile = 'modular_coyote/sound/typing/hivebot-bark-005.ogg'
+	soundFileStatic = 'sound/machines/chime__static.ogg'
+	permitAnimalCrossing = FALSE
+
+/datum/typing_sound/glitchysynthagro2
+	name = "Glitchy Aggressive 2"
+	soundFile = 'modular_coyote/sound/typing/hivebot-bark-003.ogg'
+	soundFileStatic = 'sound/machines/chime__static.ogg'
+	permitAnimalCrossing = FALSE
+
 /datum/typing_sound/light
 	name = "Light"
 	soundFile = 'modular_coyote/sound/typing/lightspeak.ogg'

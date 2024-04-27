@@ -508,9 +508,9 @@
 	if(!on)
 		return ..()
 
-	if(IS_STAMCRIT(user))//CIT CHANGE - makes batons unusuable in stamina softcrit
+	/*if(IS_STAMCRIT(user))//CIT CHANGE - makes batons unusuable in stamina softcrit
 		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
-		return //CIT CHANGE - ditto
+		return */ //CIT CHANGE - ditto // If your in near stamina crit your already dead
 
 	add_fingerprint(user)
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
@@ -556,7 +556,7 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			target.adjustStaminaLoss(30)
+			target.adjustStaminaLoss(stam_dmg)
 			additional_effects_carbon(target, user)
 			add_fingerprint(user)
 			target.visible_message(desc["visible"], desc["local"])

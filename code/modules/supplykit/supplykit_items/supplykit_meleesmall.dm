@@ -91,6 +91,13 @@
 	desc = "A wooden katana for practice and nonlethal blunt force trauma."
 	item = /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
 
+/datum/supplykit_item/meleesmall/contractor_baton
+	name = "Contractor Baton"
+	desc = "A high tech stunningstick that is the unholy triumvirate of stun combat. Perfect for downing bottoms like they're gazelles!"
+	item = /obj/item/melee/classic_baton/telescopic/contractor_baton
+	cant_discount = TRUE
+	cost = 5
+
 /datum/supplykit_item/meleesmall/broadsword
 	name = "Broadsword"
 	desc = "A classic, straight bladed steel sword."
