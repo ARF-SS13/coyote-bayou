@@ -1595,19 +1595,31 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aJu" = (
-/obj/structure/fluff/blocker,
-/obj/structure/ladder/unbreakable/door_teleport{
-	desc = "The entrance to Red Rocket!";
-	id = "RedRocket";
-	name = "Red Rocket";
-	layer = 5.1;
-	opacity = 1;
-	pixel_x = 16;
-	pixel_y = -8;
-	height = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2;
+	pixel_y = 0;
+	pixel_x = 12
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2
+	},
+/obj/structure/flora/ausbushes/ppflowers{
+	plane = -2
+	},
+/obj/structure/flora/ausbushes/brflowers{
+	plane = -2
+	},
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2;
+	pixel_y = 4;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "aJR" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -16087,32 +16099,6 @@
 /obj/item/pickaxe/mini,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland/city/newboston/house)
-"hKg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/chomp/bush2{
-	color = "#338833";
-	plane = -2;
-	pixel_y = 0;
-	pixel_x = 12
-	},
-/obj/structure/flora/chomp/bush2{
-	color = "#338833";
-	plane = -2
-	},
-/obj/structure/flora/ausbushes/ppflowers{
-	plane = -2
-	},
-/obj/structure/flora/ausbushes/brflowers{
-	plane = -2
-	},
-/obj/structure/flora/chomp/bush2{
-	color = "#338833";
-	plane = -2;
-	pixel_y = 4;
-	opacity = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors)
 "hKi" = (
 /obj/structure/simple_door/dirtyglass,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -16398,12 +16384,10 @@
 /turf/closed/indestructible/rock,
 /area/f13/caves)
 "hRJ" = (
-/obj/structure/ladder/unbreakable/door_teleport{
-	desc = "The entrance to Red Rocket!";
-	id = "Redrocket";
-	name = "Red Rocket";
-	layer = 5.1;
-	opacity = 1;
+/obj/structure/simple_door/interior,
+/obj/structure/ladder/unbreakable{
+	id = "redrocket";
+	pixel_y = -11;
 	height = 2
 	},
 /turf/open/floor/f13/wood,
@@ -45272,6 +45256,17 @@
 	icon_state = "rr5";
 	name = "Red Rocket";
 	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	},
+/obj/structure/simple_door/interior{
+	plane = -2;
+	pixel_y = 23;
+	pixel_x = 16
+	},
+/obj/structure/ladder/unbreakable{
+	id = "redrocket";
+	pixel_y = 11;
+	pixel_x = 16;
+	height = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -81094,7 +81089,7 @@ vOY
 rtz
 rpW
 vOY
-hKg
+aJu
 uLU
 cAt
 aHM
@@ -111813,7 +111808,7 @@ vzy
 lCf
 fAY
 fBS
-aJu
+fAY
 vwz
 vzy
 lWa
