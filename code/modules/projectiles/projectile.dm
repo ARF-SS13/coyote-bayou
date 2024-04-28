@@ -599,6 +599,8 @@
 	if(!isliving(target) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
+	if(maybehit.shoot_me)
+		return FALSE
 	return LAZYLEN(maybehit.faction & faction)
 
 
@@ -654,8 +656,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
-		if(M.shoot_me && is_player_projectile)
-			return M
+		// if(M.shoot_me && is_player_projectile)
+		// 	return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M

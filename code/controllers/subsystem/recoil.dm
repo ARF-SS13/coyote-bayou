@@ -86,9 +86,9 @@ SUBSYSTEM_DEF(recoil)
 	var/recoil_offset_premult = 80
 	var/recoil_offset_postmult = 0.01
 
-	var/recoil_wielded_reward = 0.5
+	var/recoil_wielded_reward = 0.85
 
-	var/turbofuck_threshold = 10
+	var/turbofuck_threshold = 5
 
 	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
@@ -159,21 +159,24 @@ SUBSYSTEM_DEF(recoil)
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
 	spread += get_offset(shotter, FALSE, TRUE)
 	spread = clamp(spread, 0, recoil_max_spread)
-	if(spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
-		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
 	var/turbofuck_unwielded_spread = FALSE
 	var/turboreward_wielded_spread = FALSE
+	var/pro_shooter = isatom(shotter) && HAS_TRAIT(shotter,TRAIT_NICE_SHOT)
 	if(istype(shoot))
 		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
-		if(spread > turbofuck_threshold && istype(shoot))
-			if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
-				turbofuck_unwielded_spread = TRUE // hodl it right
-				mean = spread
-				std = spread //fuck you wield it
-			else if(shoot.wielded) // yay you wielded it!
-				turboreward_wielded_spread = TRUE
+		if(!pro_shooter && !shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
+			turbofuck_unwielded_spread = TRUE // hodl it right
+			mean = spread
+			std = spread //fuck you wield it
+		else if(shoot.wielded) // yay you wielded it!
+			turboreward_wielded_spread = TRUE
+	if(!recoil_max_spread && spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
+		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
+	if(pro_shooter && !turbofuck_unwielded_spread)
+		std /= 4 // lucky number 7
+		mean *= 0.5
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std) * pick(1, -1)
 	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
@@ -193,7 +196,7 @@ SUBSYSTEM_DEF(recoil)
 		if(HAS_TRAIT(shotter,TRAIT_PHOBIC)) // Panicking!
 			my_angle *= 6 // RUN OR SHOOT?!?1
 
-	return round(clamp(my_angle, 0, recoil_max_spread), 0.1)
+	return round(clamp(my_angle, -recoil_max_spread, recoil_max_spread), 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////
 /datum/controller/subsystem/recoil/proc/kickback(mob/living/user, atom/my_weapon, recoil_tag = RECOIL_TAG_DEFAULT, recoil_in = 1)
