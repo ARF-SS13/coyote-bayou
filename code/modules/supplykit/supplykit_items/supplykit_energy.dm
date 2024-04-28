@@ -108,13 +108,13 @@
 	name = "Covenant Plasma Pistol"
 	desc = "An alien looking plasma pistol with an internal self charging battery."
 	item = /obj/item/gun/energy/laser/plasma/covpistol
-	cost = 40
+	cost = 20
 
 /datum/supplykit_item/energy/plasmarifle
 	name = "Covenant Plasma Rifle"
 	desc = "An alien looking plasma rifle with an internal self charging battery."
 	item = /obj/item/gun/energy/laser/plasma/plasmacov
-	cost = 40
+	cost = 20
 
 /datum/supplykit_item/energy/repeater
 	name = "Repeating Blaster"
