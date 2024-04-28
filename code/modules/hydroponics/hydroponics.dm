@@ -49,6 +49,8 @@
 	icon_state = "hydrotray3"
 
 /obj/machinery/hydroponics/constructable/RefreshParts()
+	return
+	/* 
 	var/tmp_capacity = 0
 	for (var/obj/item/stock_parts/matter_bin/M in component_parts)
 		tmp_capacity += M.rating
@@ -58,12 +60,13 @@
 	maxnutri = (tmp_capacity * 5) + STATIC_NUTRIENT_CAPACITY // Up to 50 Maximum
 	reagents.maximum_volume = maxnutri
 	nutridrain = 1/rating
+	*/
 
 /obj/machinery/hydroponics/constructable/examine(mob/user)
 	. = ..()
 	. += span_notice("Use <b>Alt-Click</b> to empty the tray's nutrients.")
-	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Tray efficiency at <b>[rating*100]%</b>.")
+	//if(in_range(user, src) || isobserver(user))
+	//	. += span_notice("The status display reads: Tray efficiency at <b>[rating*100]%</b>.")
 
 /obj/machinery/hydroponics/Destroy()
 	if(myseed)
@@ -145,7 +148,7 @@
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
-			adjustWater(-rand(1,3) / rating)//6
+			adjustWater(-nutridrain)//6
 
 			// If the plant is dry, it loses health pretty fast, unless mushroom
 			if(waterlevel <= 10 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -158,8 +161,8 @@
 				adjustHealth(rand(1,2) / rating)
 				if(myseed && prob(myseed.weed_chance))
 					adjustWeeds(myseed.weed_rate)
-				else if(prob(2))  //5 percent chance the weed population will increase
-					adjustWeeds(1 / rating)
+				// else if(prob(2))  //5 percent chance the weed population will increase
+					// adjustWeeds(1 / rating)
 
 //Toxins/////////////////////////////////////////////////////////////////
 
@@ -223,7 +226,7 @@
 
 			// If the plant is too old, lose health fast
 			if(age > myseed.lifespan)
-				adjustHealth(-rand(1,5) / rating)
+				adjustHealth(-rand() / rating)
 
 			// Harvest code
 			if(age > myseed.production && (age - lastproduce) > myseed.production && (!harvest && !dead))
@@ -231,9 +234,9 @@
 					harvest = TRUE
 				else
 					lastproduce = age
-			if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
-				adjustPests(1 / rating)
-		else
+			// if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
+				// adjustPests(1 / rating)
+		// else
 			if(waterlevel > 10 && reagents.total_volume > 0 && prob(3))  // If there's no plant, the percentage chance is 10% // Nerfing down to 3%
 				adjustWeeds(1 / rating)
 

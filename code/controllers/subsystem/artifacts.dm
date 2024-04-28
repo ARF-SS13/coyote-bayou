@@ -131,7 +131,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/pda,
 		/obj/item/dice,
 		/obj/item/latexballon,
-		/obj/item/organ, // totally not a horrible horrible idea
+		// /obj/item/organ, // totally not a horrible horrible idea
 		/obj/item/weapon/dvd,
 		/obj/item/fishy,
 		/obj/item/binoculars,

@@ -146,6 +146,24 @@
 		do_sparks(1, FALSE, get_turf(target))
 	..()
 
+/* simplemob pellet
+ * DAMAGE: 8
+ * STAMIN: 1
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
+/obj/item/projectile/bullet/pellet/simplemob
+	damage = BULLET_DAMAGE_SHOTGUN_PELLET * 0.5
+	stamina = BULLET_STAMINA_SHOTGUN_PELLET
+	spread = BULLET_SPREAD_SURPLUS * 3
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/bullet/pellet/simplemob/Initialize()
+	. = ..()
+	range = abs(floor(gaussian(5, 2))) // yeah suck it cpu
+
 /* 12g slug
  * DAMAGE: 50
  * STAMIN: 10

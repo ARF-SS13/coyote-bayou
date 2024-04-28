@@ -1527,17 +1527,17 @@ SUBSYSTEM_DEF(economy)
 	saleprice = round(price)
 	punchbonus = round((price * mult) - price)
 	add_atom_colour(coler, FIXED_COLOUR_PRIORITY)
-	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]"
+	name = "Guild Quest voucher - [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit], but you'll get a [punchbonus / 10] [SSeconomy.currency_unit] reward if you get it punched! \
+		\n\nThis thing is worth [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit], but you'll get a [punchbonus / 10] [SSeconomy.currency_unit] reward if you get it punched! \
 		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 
 /obj/item/card/quest_reward/punch()
 	if(!..())
 		return
-	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
+	name = "Guild Quest voucher - [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
+		\n\nThis thing is worth [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
 		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 	return TRUE
 

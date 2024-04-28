@@ -2343,6 +2343,42 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
 
+/datum/emote/living/glitchcall
+	key = "glitchy"
+	key_third_person = "glitches"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed.ogg"
+
+/datum/emote/living/glitchsigh
+	key = "glitchsigh"
+	key_third_person = "glitchsighs"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed_sigh.ogg"
+
+/datum/emote/living/glitchping
+	key = "glitchping"
+	key_third_person = "glitchpings"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed_ping.ogg"
+
+/datum/emote/living/glitchhonk
+	key = "glitchhonk"
+	key_third_person = "glitchhonks"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-005.ogg"
+
+/datum/emote/living/glitchhonk2
+	key = "glitchblare"
+	key_third_person = "glitchblares"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-003.ogg"
+
+/datum/emote/living/glitchhonk3
+	key = "glitchhorn"
+	key_third_person = "glitchhorns"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-001.ogg"
+
 /datum/emote/living/rizz
 	key = "rizz"
 	key_third_person = "rizzler"

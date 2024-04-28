@@ -1396,6 +1396,17 @@
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
 
+/datum/species/feral/deathclaw/geist
+	name = "Cavern Geist"
+	id = "geist"
+	rotate_on_lying = FALSE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Cyber" = "cyber_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/geist
+	race = /datum/species/feral/deathclaw/geist
+
 /datum/species/feral/femdigo
 	name = "Female Wendigo"
 	id = "femdigo"
@@ -1543,6 +1554,28 @@
 	attack_sound = 'sound/weapons/sear.ogg'
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
+
+/datum/species/adapted/simplebot/swarmer/hivebot
+	name = "Adapted Hivebot"
+	id = "hivebot"
+	alt_prefixes = list(
+		"Small" = "small_", 
+		"Small Alt" = "smallarm_", 
+		"Medium" = "medium_",
+		"Medium Alt" = "mediumarm_",
+		"Ranged" = "ranged_",
+		"Ranged Elite" = "rangedarm_",
+		"Factory" = "factory_",
+		"Hunter Killer" = "hunter_",
+		"Custodian" = "keeper_",
+		"Mythical" = "crystal_",
+		"Cephalopod" = "cepha_",)
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
+/mob/living/carbon/human/species/hivebot
+	race = /datum/species/adapted/simplebot/swarmer/hivebot
 
 /datum/species/adapted/simplebot/probe
 	name = "Adapted Probe"

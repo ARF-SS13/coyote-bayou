@@ -25,8 +25,8 @@
 
 #define RECIPE_MACE 		"Mace Head"
 #define RECIPE_AXE 			"Axe Head"
-#define RECIPE_SCRAP 		"Homewrecker Blade"
-#define RECIPE_CRUSHER 		"Bonebreaker Head"
+#define RECIPE_SCRAP 		"Greatsword Blade"
+#define RECIPE_CRUSHER 		"Greathammer Head"
 
 #define RECIPE_DAGGER 		"Dagger Blade"
 #define RECIPE_SPEAR 		"Spear Head"
@@ -37,9 +37,9 @@
 #define RECIPE_BOWIE 		"Bowie Blade"
 
 #define RECIPE_LANCE 		"Lance Head"
-#define RECIPE_GLADIUS 		"Razorbar Blade"
+#define RECIPE_GLADIUS 		"Gladius Blade"
 #define RECIPE_SPATHA 		"Spatha Blade"
-#define RECIPE_WARHONED 	"Sledge Axe Head"
+#define RECIPE_WARHONED 	"Greataxe Blade"
 
 #define RECIPE_KNUCKLES 	"Knuckledusters"
 #define RECIPE_CLAWS 		"Claws"
@@ -214,8 +214,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		"Lawnmower Machete Blade",
 		"Mace Head",
 		"Axe Head",
-		"Homewrecker Blade",
-		"Bonebreaker Head",
+		"Greatsword Blade",
+		"Greathammer Head",
 		"Dagger Blade",
 		"Spear Head",
 		"Javelin Head",
@@ -224,9 +224,9 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		"Saw Blade",
 		"Bowie Blade",
 		"Lance Head",
-		"Razorbar Blade",
+		"Gladius Blade",
 		"Spatha Blade",
-		"Sledge Axe Head",
+		"Greataxe Blade",
 		"Claws",
 		"Knuckledusters"
 		) //weak/strong/heavy hit affect strength. All the other steps shape.
@@ -322,12 +322,12 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Axe Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Homewrecker Blade")
-			stepsdone += "Homewrecker Blade"
+		if("Greatsword Blade")
+			stepsdone += "Greatsword Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Bonebreaker Head")
-			stepsdone += "Bonebreaker Head"
+		if("Greathammer Head")
+			stepsdone += "Greathammer Head"
 			currentsteps += 1
 			currentquality -= 1
 		if("Dagger Blade")
@@ -362,16 +362,16 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Lance Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Razorbar Blade")
-			stepsdone += "Razorbar Blade"
+		if("Gladius Blade")
+			stepsdone += "Gladius Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Spatha Blade")
 			stepsdone += "Spatha Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sledge Axe Head")
-			stepsdone += "Sledge Axe Head"
+		if("Greataxe Blade")
+			stepsdone += "Greataxe Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Knuckledusters")

@@ -54,6 +54,11 @@
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
+/obj/item/ammo_casing/shotgun/improvised/simplemob
+	projectile_type = /obj/item/projectile/bullet/pellet/simplemob
+	pellets = SHOTGUN_PELLET_IMPROVISED * 2 // double the pellets, but half the damage of each, doubles the effectiveness of armor
+	variance = SHOTGUN_SPREAD_IMPROVISED * 3
+
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
