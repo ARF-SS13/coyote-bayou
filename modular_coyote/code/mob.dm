@@ -1290,6 +1290,9 @@
 	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, "ignoredamageslowdown")
 	ADD_TRAIT(src, TRAIT_HEAL_TEND, "healing_triage")
 		
+/mob/living/simple_animal/advanced/hivebot/Initialize(mapload)
+	. = ..()
+	notify_ghosts("A new FRIENDLY hivebot has been created somewhere on the map, click it to take control!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_FUGITIVE)
 
 /*/mob/living/simple_animal/advanced/hivebot/attack_ghost(mob/dead/observer/ghost)
 	. = ..()
