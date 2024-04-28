@@ -179,7 +179,7 @@ SUBSYSTEM_DEF(recoil)
 		mean *= 0.5
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std) * pick(1, -1)
-	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
+	if(!pro_shooter && turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
 		my_angle += (rand(1,15) * SIGN(my_angle))
 	if(turboreward_wielded_spread) // give em a boost for wielding it
 		my_angle *= recoil_wielded_reward
