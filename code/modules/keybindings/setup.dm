@@ -187,7 +187,7 @@
 						continue
 					.[key] = KB.clientside
 
-/client/proc/change_input_toggle_key(var/key_to_set)
+/client/proc/change_input_toggle_key(key_to_set)
 	set name = "Change Input Toggle Key"
 	set desc = "Switch input toggle between tab and ctrl+tab."
 	set category = "OOC"
