@@ -16087,6 +16087,32 @@
 /obj/item/pickaxe/mini,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland/city/newboston/house)
+"hKg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2;
+	pixel_y = 0;
+	pixel_x = 12
+	},
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2
+	},
+/obj/structure/flora/ausbushes/ppflowers{
+	plane = -2
+	},
+/obj/structure/flora/ausbushes/brflowers{
+	plane = -2
+	},
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2;
+	pixel_y = 4;
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "hKi" = (
 /obj/structure/simple_door/dirtyglass,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -43727,7 +43753,8 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 14
+	pixel_y = 14;
+	opacity = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -81067,7 +81094,7 @@ vOY
 rtz
 rpW
 vOY
-gcp
+hKg
 uLU
 cAt
 aHM
