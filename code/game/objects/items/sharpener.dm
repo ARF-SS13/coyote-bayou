@@ -6,7 +6,7 @@
 	force = 5
 	var/used = 0
 	var/increment = 10 // literally 2x Masterwork
-	var/max = 200
+	var/max = 10000
 	var/prefix = "enhanced"
 	var/requires_sharpness = 0
 
