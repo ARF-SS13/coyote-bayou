@@ -1244,8 +1244,8 @@
 /mob/living/simple_animal/advanced/hivebot/ranged
 	name = "Ranged Hivebot"
 	desc = "WAAAAAA?"
-	health = 60
-	maxHealth = 60
+	health = 50
+	maxHealth = 50
 	icon_state = "rangedarm_hivebot"
 	icon_living = "rangedarm_hivebot"
 	icon_dead = "rangedarm_hivebot_dead"
@@ -1277,7 +1277,6 @@
 /mob/living/simple_animal/advanced/hivebot/ranged/Initialize(trait_source = TRAIT_GENERIC)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_CRIT_SHOT, "crit_shot")
-	ADD_TRAIT(src, TRAIT_NICE_SHOT, "nice_shot")
 
 /mob/living/simple_animal/advanced/hivebot/factory/Initialize(trait_source = TRAIT_GENERIC)
 	. = ..()
