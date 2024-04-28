@@ -192,25 +192,30 @@
 	set desc = "Switch input toggle between tab and ctrl+tab."
 	set category = "OOC"
 
+	// figure out what key we're using
 	if(!(key_to_set in list("Tab", "Ctrl+Tab")))
 		to_chat(src, span_warning("Invalid key [key_to_set] sent to change_input_toggle_key()"))
 		return
 	var/list/classic_hotkeys_temp = SSinput.macroset_classic_hotkey
 	var/key_to_remove = key_to_set == "Tab" ? "Ctrl+Tab" : "Tab"
 
+	// set it in classic hotkey mode
 	classic_hotkeys_temp[key_to_set] = "\".winset \\\"mainwindow.macro=[SKIN_MACROSET_CLASSIC_INPUT] input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\""
 	classic_hotkeys_temp[key_to_remove] = null
 
+	// set it in hotkey mode
 	var/list/hotkeys_temp = SSinput.macroset_hotkey
 	hotkeys_temp[key_to_set] = "\".winset \\\"input.focus=true?map.focus=true input.background-color=[COLOR_INPUT_DISABLED]:input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\""
 	hotkeys_temp[key_to_remove] = null
 
+	// set it in classic input mode
 	var/list/classic_temp = SSinput.macroset_classic_input
 	classic_temp[key_to_set] = "\".winset \\\"mainwindow.macro=[SKIN_MACROSET_CLASSIC_HOTKEYS] map.focus=true input.background-color=[COLOR_INPUT_DISABLED]\\\"\""
 	classic_temp[key_to_remove] = null
 
+	// apply the key sets to the client
 	src.apply_macro_set(SKIN_MACROSET_CLASSIC_HOTKEYS, classic_hotkeys_temp)
 	src.apply_macro_set(SKIN_MACROSET_HOTKEYS, hotkeys_temp)
 	src.apply_macro_set(SKIN_MACROSET_CLASSIC_INPUT, classic_temp)
 
-	to_chat(src, "Setting input toggle to [key_to_set].")
+	to_chat(src, "Setting input mode toggle to [key_to_set].")
