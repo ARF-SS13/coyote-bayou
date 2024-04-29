@@ -348,7 +348,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/tribal = 1)
+					/mob/living/simple_animal/hostile/raider/tribal = 1,
+					/mob/living/simple_animal/hostile/renegade/grunt/emp = 2)
 
 /obj/structure/nest/raider/melee
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
