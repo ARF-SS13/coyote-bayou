@@ -20353,6 +20353,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
+"bWn" = (
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
+/area/f13/wasteland/city)
 "bWr" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -53603,7 +53609,6 @@
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
 "kES" = (
-/mob/living/simple_animal/hostile/renegade/soldier,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outermaincornerinner - E"
@@ -59808,6 +59813,13 @@
 	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"mjk" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/renegade/soldier,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
+/area/f13/wasteland/city)
 "mjn" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
@@ -74623,6 +74635,12 @@
 	icon_state = "rubble"
 	},
 /area/f13/ruins)
+"qcI" = (
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city)
 "qcO" = (
 /obj/structure/guncase{
 	icon_state = "ecase";
@@ -83160,7 +83178,6 @@
 	},
 /area/f13/building/abandoned)
 "ssN" = (
-/mob/living/simple_animal/hostile/renegade/soldier,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
 	},
@@ -85866,10 +85883,10 @@
 	},
 /area/f13/wasteland/city)
 "tea" = (
-/obj/effect/landmark/vertibird{
-	id = "Nash - Robot Parking Lot";
-	name = "Nash - Robot Parking Lot"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/renegade/soldier,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -129318,7 +129335,7 @@ hCW
 amq
 vVo
 tej
-vnq
+qcI
 sxj
 sol
 nPf
@@ -132152,7 +132169,7 @@ knR
 aLT
 sxj
 eDe
-hXr
+mjk
 sxj
 sxj
 uXF
@@ -132667,7 +132684,7 @@ aLT
 uXF
 eDe
 hXr
-sxj
+bWn
 sxj
 hXr
 uxe
@@ -133181,9 +133198,9 @@ aLT
 sxj
 sxj
 eDe
-tea
+sxj
 hXr
-kdA
+tea
 uxe
 uXF
 nQQ
@@ -135496,7 +135513,7 @@ lLJ
 lLJ
 aaD
 aaD
-rOc
+yiR
 vjV
 vjV
 vjV
