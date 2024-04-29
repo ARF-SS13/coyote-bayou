@@ -906,6 +906,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick",								/obj/item/flashlight/glowstick,										0), 
 		new /datum/data/wasteland_equipment("Roadside flare",							/obj/item/flashlight/flare,											0), // larp
+		new /datum/data/wasteland_equipment("Hand teleporter",							/obj/item/hand_tele,												0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
@@ -916,7 +917,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 
 /* These are shit, don't add them.
@@ -973,7 +974,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
 		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
@@ -1077,9 +1078,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
 		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
 		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
-		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
-		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
-		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Metal x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Glass x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x5",						/obj/item/stack/sheet/plasteel/five,				200),
 		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
 		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
 		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
@@ -1102,9 +1103,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
 		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
 		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
-		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
-		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
-		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
+		new /datum/data/wasteland_equipment("Metal x20",						/obj/item/stack/sheet/metal/twenty,					10),
+		new /datum/data/wasteland_equipment("Glass x10",						/obj/item/stack/sheet/glass/ten,					5),
+		new /datum/data/wasteland_equipment("Plasteel x5",						/obj/item/stack/sheet/plasteel/five,				200),
 		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
 		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
 		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
@@ -1129,7 +1130,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						50),
 		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						50),
 		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						50),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					50),
@@ -1281,7 +1282,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Electrician Toolbox",				/obj/item/storage/toolbox/electrical,								15),
 		new /datum/data/wasteland_equipment("Insulated Gloves",					/obj/item/clothing/gloves/color/yellow,								15),
 		new /datum/data/wasteland_equipment("Military Engineer Gloves",			/obj/item/clothing/gloves/f13/military/engineer,					75),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Metal Parts (x5)",					/obj/item/stack/crafting/metalparts/five,							10),
