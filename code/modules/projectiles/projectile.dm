@@ -131,6 +131,7 @@
 	var/damage_mult = 1
 	/// dont touch this
 	var/finalmost_damage = 0
+	var/not_harmful = FALSE
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -596,9 +597,13 @@
 	return hit_something
 
 /obj/item/projectile/proc/faction_check(atom/target)
+	if(not_harmful)
+		return FALSE // its something that shouldnt be harmful
 	if(!isliving(target) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
+	if(maybehit.shoot_me)
+		return FALSE
 	return LAZYLEN(maybehit.faction & faction)
 
 
@@ -654,8 +659,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
-		if(M.shoot_me && is_player_projectile)
-			return M
+		// if(M.shoot_me && is_player_projectile)
+		// 	return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M

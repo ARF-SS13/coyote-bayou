@@ -136,6 +136,69 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
+/datum/crafting_recipe/cheaphivebot
+	name = "Cheap Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/cheap
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/rods = 12,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list()
+	time = 30
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/hivebot
+	name = "Regular Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot
+	reqs = list(/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 15)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/rangedhivebot
+	name = "Ranged Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/ranged
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/factoryhivebot
+	name = "Industrial Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/factory
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/crystalhivebot
+	name = "Magical Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/crystal
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/bluespace_crystal = 2,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
 	result = /obj/item/stock_parts/manipulator/pico

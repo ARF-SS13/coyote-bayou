@@ -1199,6 +1199,166 @@
 	icon_living = "femdigo"
 	icon_dead = "femdigo_dead"
 
+// Start of colfers silly craftable hivebots
+
+/mob/living/simple_animal/advanced/hivebot
+	name = "General Hivebot"
+	desc = "A hivebot?"
+	health = 70
+	see_in_dark = 3
+	maxHealth = 70
+	mob_armor = ARMOR_VALUE_ZERO
+	AIStatus = AI_IDLE
+	light_color = "#2BFF2B"
+	light_range = 2.5
+	light_power = 2
+	can_have_ai = TRUE
+	is_blacklisted = TRUE
+	death_sound = 'modular_coyote/sound/typing/hivebot-attack.ogg'
+	deathmessage = "was destroyed, use a multi-tool to revive them!"
+	idlesound = 'modular_coyote/sound/typing/hivebot-bark-003.ogg'
+	bubble_icon = "machine"
+	icon = 'icons/mob/playerswarmer.dmi'
+	rotate_on_lying = FALSE
+	ghost_cooldown_time = 1 SECONDS
+	can_ghost_into = TRUE
+	healable = 0
+	icon_state = "mediumarm_hivebot"
+	icon_living = "mediumarm_hivebot"
+	icon_dead = "mediumarm_hivebot_dead"
+
+/mob/living/simple_animal/advanced/hivebot/cheap
+	name = "Cheap Hivebot"
+	desc = "Cheap hivebot with little health, no special traits."
+	see_in_dark = 4
+	health = 25
+	maxHealth = 25
+	icon_state = "small_hivebot"
+	icon_living = "small_hivebot"
+	icon_dead = "small_hivebot_dead"
+
+/mob/living/simple_animal/advanced/hivebot/ranged
+	name = "Ranged Hivebot"
+	desc = "Ranged hivebot, comes with deadeye."
+	health = 50
+	maxHealth = 50
+	icon_state = "rangedarm_hivebot"
+	icon_living = "rangedarm_hivebot"
+	icon_dead = "rangedarm_hivebot_dead"
+
+/mob/living/simple_animal/advanced/hivebot/factory
+	name = "Factory Hivebot"
+	desc = "Factory hivebot, comes with treasure hunter, quick build, and technophreak"
+	health = 50
+	maxHealth = 50
+	icon_state = "factory_hivebot"
+	icon_living = "factory_hivebot"
+	icon_dead = "factory_hivebot_dead"
+
+/mob/living/simple_animal/advanced/hivebot/crystal
+	name = "Crystaline Hivebot"
+	desc = "Comes with improved healing, magegrab, and wand usage."
+	health = 60
+	maxHealth = 60
+	icon_state = "crystal_hivebot"
+	icon_living = "crystal_hivebot"
+	icon_dead = "crystal_hivebot_dead"
+
+
+/mob/living/simple_animal/advanced/hivebot/crystal/Initialize(trait_source = TRAIT_GENERIC)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_WAND_PROFICIENT, "wand_proficient")
+	ADD_TRAIT(src, TRAIT_IMPROVED_HEALING, "improved_healing")
+	ADD_TRAIT(src, TRAIT_MAGEGRAB, "Mage Grab")
+
+/mob/living/simple_animal/advanced/hivebot/ranged/Initialize(trait_source = TRAIT_GENERIC)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NICE_SHOT, "nice_shot")
+
+/mob/living/simple_animal/advanced/hivebot/factory/Initialize(trait_source = TRAIT_GENERIC)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_TREASURE_HUNTER, "treasurehunter")
+	ADD_TRAIT(src, TRAIT_TECHNOPHREAK, "technophreak")
+	ADD_TRAIT(src, TRAIT_QUICK_BUILD, "quick-build")
+
+/mob/living/simple_animal/advanced/hivebot/Initialize(trait_source = TRAIT_GENERIC)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, "ignoredamageslowdown")
+	ADD_TRAIT(src, TRAIT_HEAL_TEND, "healing_triage")
+		
+/mob/living/simple_animal/advanced/hivebot/Initialize(mapload)
+	. = ..()
+	notify_ghosts("A new FRIENDLY hivebot has been created somewhere on the map, click it to take control!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_FUGITIVE)
+
+/*/mob/living/simple_animal/advanced/hivebot/attack_ghost(mob/dead/observer/ghost)
+	. = ..()
+	icon_state = input("Default","small_hivebot","smallarm_hivebot","medium_hivebot")
+	if(icon_state == "Default")
+		icon_state = "hivebot"
+	else
+		icon_state = "hivebot"
+
+	icon_living = icon_state
+	icon_dead = "[icon_state]_dead"*/ // Would be cool to be able to set your icon, but I don't know how to make it work and im tired grandpa
+
+/mob/living/simple_animal/advanced/hivebot/examine(mob/user)
+	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!")
+
+	if(health != maxHealth)
+		if(health > maxHealth * 0.50) //Between maxHealth and about a third of maxHealth, between 30 and 10 for normal drones
+			. += span_warning("Its screws are slightly loose.")
+		else //otherwise, below about 33%
+			. += span_boldwarning("Its screws are very loose!")
+
+	if(stat == DEAD)
+		if(client)
+			. += span_deadsay("A message repeatedly flashes on its display: \"MULTITOOL -- REQUIRED\".")
+		else
+			. += span_deadsay("A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".")
+	. += "*---------*</span>"
+
+/mob/living/simple_animal/advanced/hivebot/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, /obj/item/screwdriver) && stat != DEAD)
+		if(health < maxHealth)
+			to_chat(user, span_notice("You start to tighten loose screws on [src]..."))
+			if(I.use_tool(src, user, 20))
+				adjustBruteLoss(-getBruteLoss())
+				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("You tighten [src == user ? "your" : "[src]'s"] loose screws."))
+			else
+				to_chat(user, span_warning("You need to remain still to tighten [src]'s screws!"))
+		else
+			to_chat(user, span_warning("[src]'s screws can't get any tighter!"))
+		return //This used to not exist and drones who repaired themselves also stabbed the shit out of themselves.
+
+/mob/living/simple_animal/advanced/hivebot/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, /obj/item/multitool) && stat == DEAD)
+		try_reactivating(user)
+
+/mob/living/simple_animal/advanced/hivebot/proc/try_reactivating(mob/living/user)
+	/*var/mob/dead/observer/G = get_ghost()
+	if(!client && (!G || !G.client))
+		var/list/faux_gadgets = list("hypertext inflator","failsafe directory","DRM switch","stack initializer",\
+									"anti-freeze capacitor","data stream diode","TCP bottleneck","supercharged I/O bolt",\
+									"tradewind stabilizer","radiated XML cable","registry fluid tank","open-source debunker")
+
+		var/list/faux_problems = list("won't be able to tune their bootstrap projector","will constantly remix their binary pool"+\
+									  " even though the BMX calibrator is working","will start leaking their XSS coolant",\
+									  "can't tell if their ethernet detour is moving or not", "won't be able to reseed enough"+\
+									  " kernels to function properly","can't start their neurotube console")
+
+		to_chat(user, span_warning("You can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)]."))
+		return*/
+	user.visible_message(span_notice("[user] begins to reactivate [src]."), span_notice("You begin to reactivate [src]..."))
+	if(do_after(user, 130, 1, target = src))
+		revive(full_heal = 1)
+		user.visible_message(span_notice("[user] reactivates [src]!"), span_notice("You reactivate [src]."))
+		/*if(G)
+			to_chat(G, span_ghostalert("You([name]) were reactivated by [user]!"))*/
+	else
+		to_chat(user, span_warning("You need to remain still to reactivate [src]!"))
+
 /mob/living/simple_animal/advanced/thicktron_s
 	name = "Modified Assaultron"
 	desc = "Why is it so thick?"

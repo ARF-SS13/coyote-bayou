@@ -289,7 +289,7 @@
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 0
 	is_reflectable = TRUE
-	recoil = BULLET_RECOIL_HEAVY_LASER
+	recoil = BULLET_RECOIL_LASER
 
 // THE TG CARBINE
 
