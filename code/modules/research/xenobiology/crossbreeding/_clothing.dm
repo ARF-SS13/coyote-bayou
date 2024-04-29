@@ -100,13 +100,17 @@ Slimecrossing Armor
 	name = "entrancing bud"
 	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn."
 	icon = 'icons/obj/slimecrossing.dmi'
-	icon_state = "peaceflower"
-	item_state = "peaceflower"
+	icon_state = "peaceflower1"
+	item_state = "peaceflower1"
 	slot_flags = INV_SLOTBIT_HEAD
 	body_parts_covered = NONE
 	dynamic_hair_suffix = ""
 	force = 0
 	throwforce = 0
+	light_on = TRUE
+	light_color = "#BC8F8F"
+	light_range = 3.5
+	light_power = 0.7
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
@@ -127,6 +131,10 @@ Slimecrossing Armor
 			to_chat(user, span_warning("You feel at peace. <b style='color:pink'>Why would you want anything else?</b>"))
 			return
 	return ..()
+
+/obj/item/clothing/head/peaceflower/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, src)
 
 /obj/item/clothing/suit/armor/heavy/adamantine
 	name = "adamantine armor"
