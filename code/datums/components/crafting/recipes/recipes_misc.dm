@@ -139,11 +139,10 @@
 /datum/crafting_recipe/cheaphivebot
 	name = "Cheap Hivebot"
 	result = /mob/living/simple_animal/advanced/hivebot/cheap
-	reqs = list(/obj/item/stack/crafting/electronicparts = 4,
-				/obj/item/stack/crafting/metalparts = 4,
-				/obj/item/stack/crafting/goodparts = 2,
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/rods = 12,
 				/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_WORKBENCH)
+	tools = list()
 	time = 30
 	subcategory = CAT_SCAVENGING
 	category = CAT_CRAFTING

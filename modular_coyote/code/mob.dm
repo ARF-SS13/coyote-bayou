@@ -1203,15 +1203,19 @@
 
 /mob/living/simple_animal/advanced/hivebot
 	name = "General Hivebot"
-	desc = "WAAAAAA?"
+	desc = "A hivebot?"
 	health = 70
+	see_in_dark = 3
 	maxHealth = 70
 	mob_armor = ARMOR_VALUE_ZERO
 	AIStatus = AI_IDLE
+	light_color = "#2BFF2B"
+	light_range = 2.5
+	light_power = 2
 	can_have_ai = TRUE
 	is_blacklisted = TRUE
 	death_sound = 'modular_coyote/sound/typing/hivebot-attack.ogg'
-	deathmessage = "was destroyed, use a multi-tool to repair them!"
+	deathmessage = "was destroyed, use a multi-tool to revive them!"
 	idlesound = 'modular_coyote/sound/typing/hivebot-bark-003.ogg'
 	bubble_icon = "machine"
 	icon = 'icons/mob/playerswarmer.dmi'
@@ -1223,27 +1227,19 @@
 	icon_living = "mediumarm_hivebot"
 	icon_dead = "mediumarm_hivebot_dead"
 
-/datum/quirk/machine_lang/add()
-	var/mob/living/simple_animal/advanced/hivebot/H = quirk_holder
-	H.grant_language(/datum/language/machine)
-
-/datum/quirk/machine_lang/remove()
-	var/mob/living/simple_animal/advanced/hivebot/H = quirk_holder
-	if(!QDELETED(H))
-		H.remove_language(/datum/language/machine)
-
 /mob/living/simple_animal/advanced/hivebot/cheap
 	name = "Cheap Hivebot"
-	desc = "WAAAAAA?"
-	health = 35
-	maxHealth = 35
+	desc = "Cheap hivebot with little health, no special traits."
+	see_in_dark = 4
+	health = 25
+	maxHealth = 25
 	icon_state = "small_hivebot"
 	icon_living = "small_hivebot"
 	icon_dead = "small_hivebot_dead"
 
 /mob/living/simple_animal/advanced/hivebot/ranged
 	name = "Ranged Hivebot"
-	desc = "WAAAAAA?"
+	desc = "Ranged hivebot, comes with deadeye."
 	health = 50
 	maxHealth = 50
 	icon_state = "rangedarm_hivebot"
@@ -1252,7 +1248,7 @@
 
 /mob/living/simple_animal/advanced/hivebot/factory
 	name = "Factory Hivebot"
-	desc = "WAAAAAA?"
+	desc = "Factory hivebot, comes with treasure hunter, quick build, and technophreak"
 	health = 50
 	maxHealth = 50
 	icon_state = "factory_hivebot"
@@ -1261,7 +1257,7 @@
 
 /mob/living/simple_animal/advanced/hivebot/crystal
 	name = "Crystaline Hivebot"
-	desc = "WAAAAAA?"
+	desc = "Comes with improved healing, magegrab, and wand usage."
 	health = 60
 	maxHealth = 60
 	icon_state = "crystal_hivebot"
@@ -1273,10 +1269,11 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_WAND_PROFICIENT, "wand_proficient")
 	ADD_TRAIT(src, TRAIT_IMPROVED_HEALING, "improved_healing")
+	ADD_TRAIT(src, TRAIT_MAGEGRAB, "Mage Grab")
 
 /mob/living/simple_animal/advanced/hivebot/ranged/Initialize(trait_source = TRAIT_GENERIC)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_CRIT_SHOT, "crit_shot")
+	ADD_TRAIT(src, TRAIT_NICE_SHOT, "nice_shot")
 
 /mob/living/simple_animal/advanced/hivebot/factory/Initialize(trait_source = TRAIT_GENERIC)
 	. = ..()
@@ -1315,7 +1312,7 @@
 
 	if(stat == DEAD)
 		if(client)
-			. += span_deadsay("A message repeatedly flashes on its display: \"REBOOT -- REQUIRED\".")
+			. += span_deadsay("A message repeatedly flashes on its display: \"MULTITOOL -- REQUIRED\".")
 		else
 			. += span_deadsay("A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".")
 	. += "*---------*</span>"
@@ -1325,7 +1322,7 @@
 	if(istype(I, /obj/item/screwdriver) && stat != DEAD)
 		if(health < maxHealth)
 			to_chat(user, span_notice("You start to tighten loose screws on [src]..."))
-			if(I.use_tool(src, user, 80))
+			if(I.use_tool(src, user, 20))
 				adjustBruteLoss(-getBruteLoss())
 				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("You tighten [src == user ? "your" : "[src]'s"] loose screws."))
 			else
@@ -1340,7 +1337,7 @@
 		try_reactivating(user)
 
 /mob/living/simple_animal/advanced/hivebot/proc/try_reactivating(mob/living/user)
-	var/mob/dead/observer/G = get_ghost()
+	/*var/mob/dead/observer/G = get_ghost()
 	if(!client && (!G || !G.client))
 		var/list/faux_gadgets = list("hypertext inflator","failsafe directory","DRM switch","stack initializer",\
 									"anti-freeze capacitor","data stream diode","TCP bottleneck","supercharged I/O bolt",\
@@ -1352,13 +1349,13 @@
 									  " kernels to function properly","can't start their neurotube console")
 
 		to_chat(user, span_warning("You can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)]."))
-		return
+		return*/
 	user.visible_message(span_notice("[user] begins to reactivate [src]."), span_notice("You begin to reactivate [src]..."))
-	if(do_after(user, 30, 1, target = src))
+	if(do_after(user, 130, 1, target = src))
 		revive(full_heal = 1)
 		user.visible_message(span_notice("[user] reactivates [src]!"), span_notice("You reactivate [src]."))
-		if(G)
-			to_chat(G, span_ghostalert("You([name]) were reactivated by [user]!"))
+		/*if(G)
+			to_chat(G, span_ghostalert("You([name]) were reactivated by [user]!"))*/
 	else
 		to_chat(user, span_warning("You need to remain still to reactivate [src]!"))
 
