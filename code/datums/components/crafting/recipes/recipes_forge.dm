@@ -20,7 +20,7 @@
 	result = /obj/item/sharpener
 	reqs = list(
 		/obj/item/ingot/titanium = 1,
-		/obj/item/stack/sheet/plasteel = 10,
+		/obj/item/stack/sheet/plasteel = 1,
 		/obj/item/stack/sheet/mineral/diamond = 1,
 		)
 	tools = list(TOOL_WORKBENCH)

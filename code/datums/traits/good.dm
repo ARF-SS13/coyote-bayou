@@ -1688,7 +1688,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "You're a better than average shot."
 	value = 44
 	category = "Ranged Quirks"
-	mechanics = "Your accuracy degrades much slower from movement, firing, or anything else."
+	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/deadeye,

@@ -2,7 +2,7 @@
 #define ASKED_ASKER 2
 
 SUBSYSTEM_DEF(interactions)
-	name = "Interactions"
+	name = "MERP"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_INTERACTIONS
 	var/list/interactions = list()

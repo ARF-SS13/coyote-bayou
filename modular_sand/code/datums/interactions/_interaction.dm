@@ -303,7 +303,8 @@
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		if(!(squish in view(15, user)))
+		var/list/whobez = view(15, user) | viewers(15, user) | hearers(15, user)
+		if(!(squish in whobez))
 			continue
 		// if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS)) // they already consented, what more do you want???
 		// 	continue

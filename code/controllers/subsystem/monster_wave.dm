@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(monster_wave)
 	/// How long it takes from when the spawnermob thing spawns to when it turns into a nest
 	var/spawn_delay = 15 MINUTES
 	/// how long after being blocked will we hold off on trying to spawn stuff there?
-	var/spawn_block_delay = 5 MINUTES
+	var/spawn_block_delay = 1 MINUTES
 	/// coords of spawn blocker devices per Z level
 	var/list/spawn_blockers = list() // list(/obj/structure/respawner_blocker)
 	var/num_spawned = 0
@@ -209,10 +209,9 @@ SUBSYSTEM_DEF(monster_wave)
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/deploy_if_ready(do_it_now)
 	if(!nest_seed)
 		return
-	if(SSmonster_wave.is_spawn_blocked(src))
-		death()
-		return
 	if(!COOLDOWN_FINISHED(src, spawn_after) && !do_it_now)
+		return
+	if(SSmonster_wave.is_spawn_blocked(src))
 		return
 	if(locate(/obj/structure/nest) in get_turf(src))
 		death()
@@ -235,10 +234,11 @@ SUBSYSTEM_DEF(monster_wave)
 	if(shhh_im_dead)
 		return
 	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
+		if(RB.z != z)
+			continue
 		if(get_dist(src, RB) <= RB.protection_radius)
-			if(RB.killing_something)
+			if(!RB.killmeplease(src)) // kill me, daddy
 				continue
-			RB.killmeplease(src) // kill me, daddy
 			return
 
 /mob/living/simple_animal/nest_spawn_hole_guy/proc/unbirth()
@@ -306,9 +306,10 @@ SUBSYSTEM_DEF(monster_wave)
 	my_bean.Start()
 	playsound(src, 'sound/machines/shoot_respawn_killer.ogg', 100, FALSE)
 	playsound(NSHG, 'sound/machines/shoot_respawn_killer.ogg', 100, FALSE)
+	return TRUE
 
 /obj/structure/respawner_blocker/proc/kill_it()
-	if(!killing_something || killing_something.shhh_im_dead != src)
+	if(!killing_something)
 		return
 	my_bean.End()
 	my_bean = null
