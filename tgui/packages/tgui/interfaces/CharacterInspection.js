@@ -136,13 +136,15 @@ const MainWindow = (props, context) => { // main screen turn on
     SelectedTab,
     setSelectedTab,
   ] = useLocalState(context, 'SelectedTab', 1);
+  /// check if data.profile_pic contains what is liokely a URL
+  const isURL = (data.profile_pic && data.profile_pic.match(/^(http|https):\/\//));
 
 
   return (
     <>
       {SelectedTab === 1 && (
         <Box>
-          {data.profile_pic && (
+          {isURL && data.profile_pic ? (
             <Box textAlign="center">
               <Button
                 color="transparent"
@@ -156,11 +158,16 @@ const MainWindow = (props, context) => { // main screen turn on
                   height="65vh"
                   src={data.profile_pic}
                   alt="Imagine a cool image here!"
-                  width="auto"
-                  maxWidth="100%"
-                  resizeMode="contain" />
+                  width="100%"
+                  style={{
+                    "objectFit": 'contain',
+                    "maxHeight": '65vh',
+                  }}
+                  />
               </Button>
             </Box>
+          ) : (
+            <Fragment />
           )}
           <Section title="Flavor Text">
             <Box
