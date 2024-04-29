@@ -186,6 +186,8 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/oak_five = 5,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/nest/gecko = 5,
+	/obj/structure/nest/radroach = 5
 	))
 
 GLOBAL_LIST_INIT(plant_type_weighted, list(
