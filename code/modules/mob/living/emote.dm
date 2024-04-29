@@ -557,6 +557,24 @@
 	message = "smirks."
 	message_param = "smirks at %t."
 
+/datum/emote/living/smugsmirk
+	key = "smugsmirk"
+	key_third_person = "smirks smugly."
+	message = "smirks smugly."
+	message_param = "smirks smugly at %t."
+
+/datum/emote/living/smuggrin
+	key = "smuggrin"
+	key_third_person = "grins smugly."
+	message = "grins smugly."
+	message_param = "grins smugly at %t."
+
+/datum/emote/living/leer
+	key = "leer"
+	key_third_person = "leers"
+	message = "leers."
+	message_param = "leers at %t."
+
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
@@ -2324,3 +2342,120 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "tilts"
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
+
+/datum/emote/living/glitchcall
+	key = "glitchy"
+	key_third_person = "glitches"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed.ogg"
+
+/datum/emote/living/glitchsigh
+	key = "glitchsigh"
+	key_third_person = "glitchsighs"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed_sigh.ogg"
+
+/datum/emote/living/glitchping
+	key = "glitchping"
+	key_third_person = "glitchpings"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/synth_possessed_ping.ogg"
+
+/datum/emote/living/glitchhonk
+	key = "glitchhonk"
+	key_third_person = "glitchhonks"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-005.ogg"
+
+/datum/emote/living/glitchhonk2
+	key = "glitchblare"
+	key_third_person = "glitchblares"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-003.ogg"
+
+/datum/emote/living/glitchhonk3
+	key = "glitchhorn"
+	key_third_person = "glitchhorns"
+	message = "emits a glitchy sound."
+	sound = "modular_coyote/sound/typing/hivebot-bark-001.ogg"
+
+/datum/emote/living/rizz
+	key = "rizz"
+	key_third_person = "rizzler"
+	message = "<span class='hypnophrase'>radiates powerful rizz</span>"
+	message_param = "<span class='hypnophrase'>%t</span>" //Funny color text
+	sound = "modular_splurt/sound/voice/rizz.ogg"
+
+/datum/emote/living/threaten
+	key = "threaten"
+	key_third_person = "threaten"
+	message = "<span class='velvet'>radiates a menacing aura.</span>"
+	message_param = "<span class='velvet'>%t</span>" //Funny red text
+	sound = "modular_splurt/sound/voice/waterphone.ogg"
+
+/datum/emote/living/accusation
+	key = "accuse"
+	key_third_person = "accusation"
+	message = "says, <span class='blockytext'>O B J E C T I O N !!</span>"
+	message_param = "<span class='blockytext'>%t</span>" //Funny block text
+	sound = "modular_splurt/sound/voice/deathglare.ogg"
+
+/datum/emote/living/urgent
+	key = "urgent"
+	key_third_person = "urgency"
+	message = "<span class='urgent'>draws attention to themselves!</span>"
+	message_param = "<span class='urgent'>%t</span>" //Funny block text
+	sound = "modular_splurt/sound/voice/alienbeeper.ogg"
+
+//Slime start
+
+//Framework
+/* /mob/living/carbon/human/species/slime/regenerate_icons()
+	cut_overlays()
+	if(slime_mood && !stat)
+		add_overlay("aslime-[mood]")
+	else
+		return
+	..() */
+//Framework end
+
+/datum/emote/mood
+	key = "slimenone"
+	message = null
+	var/slime_mood = null
+	mob_type_allowed_typecache = /mob/living/carbon/human
+
+/datum/emote/mood/run_emote(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/datum/species/S = H?.dna?.species
+		if(istype(S, /datum/species/feral/slime))
+			S.slime_mood = slime_mood
+			S.handle_body(H)
+
+/datum/emote/mood/sneaky
+	key = "slimesneaky"
+	slime_mood = "aslime-mischevous"
+
+/datum/emote/mood/smile
+	key = "slimesmile"
+	slime_mood = "aslime-:3"
+
+/datum/emote/mood/cat
+	key = "slimecat"
+	slime_mood = "aslime-:33"
+
+/datum/emote/mood/pout
+	key = "slimepout"
+	slime_mood = "aslime-pout"
+
+/datum/emote/mood/sad
+	key = "slimesad"
+	slime_mood = "aslime-sad"
+
+/datum/emote/mood/angry
+	key = "slimeangry"
+	slime_mood = "aslime-angry"
+
+// Slime end

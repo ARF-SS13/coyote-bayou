@@ -35,7 +35,7 @@
 			else //ingest, patch or inject
 				L.ForceContractDisease(D)
 
-	if(data["blood_type"] == "SY")
+	if(data["blood_type"] == "SY" || data["blood_type"] == "PLA")
 		//Synthblood is very disgusting to bloodsuckers. They will puke it out to expel it, unless they have masquarade on
 		switch(reac_volume)
 			if(0 to 3)
@@ -118,6 +118,10 @@
 			name = "Lizard Blood"
 			taste_description = "something spicy"
 			pH = 6.85
+		if(data["blood_type"] == "PLA")
+			name = "Tomato Blood"
+			taste_description = "sweet"
+			pH = 4.6
 
 /datum/reagent/blood/on_merge(list/mix_data)
 	if(data && mix_data)
@@ -170,7 +174,7 @@
 	pH = 4
 
 /datum/reagent/blood/tomato
-	data = list("donor"=null,"viruses"=null,"blood_DNA"=null, "bloodcolor" = BLOOD_COLOR_HUMAN, "blood_type"="SY","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
+	data = list("donor"=null,"viruses"=null,"blood_DNA"=null, "bloodcolor" = BLOOD_COLOR_HUMAN, "blood_type"="PLA","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
 	name = "Tomato Blood"
 	description = "This highly resembles blood, but it doesnt actually function like it, resembling more ketchup, with a more blood-like consistency."
 	taste_description = "sap" //Like tree sap?
@@ -1247,18 +1251,6 @@
 		reac_volume = min((reac_volume / 10), G.amount)
 		new/obj/item/stack/medical/gauze/adv(get_turf(G), reac_volume)
 		G.use(reac_volume)
-
-/datum/reagent/lead
-	name = "Lead"
-	description = "Pure lead is a metal."
-	reagent_state = SOLID
-	taste_description = "lead"
-	pH = 6
-	overdose_threshold = 30
-	color = "#c2391d"
-	material = /datum/material/lead
-	ghoulfriendly = TRUE
-
 /datum/reagent/iron
 	name = "Iron"
 	description = "Pure iron is a metal."

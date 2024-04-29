@@ -131,6 +131,7 @@
 	var/damage_mult = 1
 	/// dont touch this
 	var/finalmost_damage = 0
+	var/not_harmful = FALSE
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -183,12 +184,13 @@
 	/// bullet's general zone hit accuracy
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
+	var/is_player_projectile = FALSE
 
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
 	/// Until we have traveled this many tiles (diagonals included) we FORCE faction on!
-	var/safety_range = 1
+	var/safety_range = 30 // set this bitch to thirty and call it a week
 	var/safety_switch = FALSE
 
 	var/bonus_crit_rolls = 1
@@ -595,9 +597,13 @@
 	return hit_something
 
 /obj/item/projectile/proc/faction_check(atom/target)
+	if(not_harmful)
+		return FALSE // its something that shouldnt be harmful
 	if(!isliving(target) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
+	if(maybehit.shoot_me)
+		return FALSE
 	return LAZYLEN(maybehit.faction & faction)
 
 
@@ -653,6 +659,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
+		// if(M.shoot_me && is_player_projectile)
+		// 	return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M

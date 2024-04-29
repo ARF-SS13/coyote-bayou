@@ -403,7 +403,7 @@
 	index = members.len
 	if(annihilate_tiles && crds)
 		crds.empty(null)
-	if(members[index] != /area/template_noop)
+	if(LAZYACCESS(members, index) && LAZYACCESS(members, index) != /area/template_noop)
 		var/atype = members[index]
 		world.preloader_setup(members_attributes[index], atype)//preloader for assigning  set variables on atom creation
 		var/atom/instance = areaCache[atype]
@@ -429,7 +429,7 @@
 	SSatoms.map_loader_begin()
 	//instanciate the first /turf
 	var/turf/T
-	if(members[first_turf_index] != /turf/template_noop)
+	if(length(members) && members[first_turf_index] != /turf/template_noop)
 		T = instance_atom(members[first_turf_index],members_attributes[first_turf_index],crds,no_changeturf,placeOnTop,turn_angle, swap_xy, invert_y, invert_x)
 
 	if(T)

@@ -349,3 +349,24 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/sand
+	name = "Crush rocks"
+	result = /obj/item/stack/ore/glass/three
+	reqs = list(/obj/item/ammo_casing/caseless/rock = 3)
+	time = 15
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/duckbot
+	name = "Amusing Duck"
+	result = /mob/living/simple_animal/hostile/amusing_duck
+	reqs = list(/obj/item/multitool = 1,
+				/obj/item/flashlight = 1,
+				/obj/item/light/bulb = 1,
+				/obj/item/storage/fancy/egg_box = 5,
+				/obj/item/grenade/f13/dynamite = 1)
+	time = 40
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+

@@ -176,6 +176,8 @@ class ChatRenderer {
       this.highlightColor = null;
       return;
     }
+    // adds consent to every highlight set
+    text = text + ",consent"; // Superlagg edit, remove if it sucks
     const lines = String(text)
       .split(',')
       // eslint-disable-next-line no-useless-escape

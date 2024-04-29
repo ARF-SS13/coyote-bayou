@@ -436,15 +436,15 @@
 /////////////////
 /// Neck Gunbelt
 /obj/item/storage/belt/shoulderholster
-	name = "shoulder holster"
-	desc = "An over the shoulder shooter holder. WARNING: Badasses only."
+	name = "standard holster"
+	desc = "An over the shoulder shooter holder. WARNING: Badasses only. Fits 4 weapons"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = INV_SLOTBIT_NECK
-	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
+	component_type = /datum/component/storage/concrete/pockets/bos/paladin //4 slots instead of 3
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)

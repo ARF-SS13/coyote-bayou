@@ -60,29 +60,21 @@
 				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-	/*
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p>\[ <b>Ready</b> | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
-	*/
 		output += "<p>Please be patient, the game is starting soon!</p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh=1'>(Refresh)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 	else
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
-	if(!IsGuestKey(src.key))
-		output += playerpolls()
+	// if(!IsGuestKey(src.key))
+	// 	output += playerpolls()
 
 	output += "</center>"
 
@@ -183,6 +175,10 @@
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
+		return 1
+
+	if(href_list["directory"])
+		client.show_character_directory()
 		return 1
 
 	if(href_list["quirkconversion"])
@@ -728,10 +724,10 @@
 			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
-	if(client.holder && check_rights(R_STEALTH, 0))
-		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
-		if(do_stealth == "Yes")
-			client.stealth()
+	// if(client.holder && check_rights(R_STEALTH, 0))
+	// 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	// 	if(do_stealth == "Yes")
+	// 		client.stealth()
 	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()

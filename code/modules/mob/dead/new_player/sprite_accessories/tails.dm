@@ -1074,3 +1074,16 @@
 	name = "Umbreon"
 	icon_state = "umbreon"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/raddog
+	name = "Rad dog"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "chemlight"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/raddog
+	name = "Rad dog"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "chemlight"
+	matrixed_sections = MATRIX_ALL
+

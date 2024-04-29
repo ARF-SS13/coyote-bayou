@@ -363,6 +363,13 @@
 	damage = 35
 	damage_list = list("30" = 30, "35" = 50, "40" = 20)
 
+/obj/item/projectile/beam/laser/pistol/wastebot
+	name = "laser beam"
+	damage = 35
+	damage_list = list("30" = 30, "35" = 50, "40" = 20)
+	pixels_per_second = TILES_TO_PIXELS(7.5)
+
+
 /obj/item/projectile/beam/laser/pistol/hitscan //Actual AEP7
 	name = "laser beam"
 	damage = 24
@@ -789,7 +796,7 @@
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
 	damage = 36
-	damage_list = list( "34" = 25, "36" = 40, "38" = 25)
+	damage_list = list( "34" = 25, "36" = 50, "38" = 25)
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray

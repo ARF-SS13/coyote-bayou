@@ -106,38 +106,37 @@
 	description = "Heals maximum strength when heavily injured, barely any otherwise."
 	reagent_state = LIQUID
 	color = "#e650c0"
-	overdose_threshold = 60
 	taste_description = "grossness"
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
 	switch(M.getBruteLoss())
 		if(-INFINITY to 50)
-			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
+			M.adjustBruteLoss(-0.1*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
 		if(50 to 75)
-			M.adjustBruteLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
+			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustBruteLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
+			M.adjustBruteLoss(-3*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
 	switch(M.getFireLoss())
 		if(-INFINITY to 50)
-			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
+			M.adjustFireLoss(-0.1*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
 		if(50 to 75)
-			M.adjustFireLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
+			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustFireLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
+			M.adjustFireLoss(-3*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
 	switch(M.getToxLoss())
 		if(-INFINITY to 50)
-			M.adjustToxLoss(-1*REM, 0) //below 50 Toxin, it heals at full strength
+			M.adjustToxLoss(-0.1*REM, 0) //below 50 Toxin, it heals at full strength
 		if(50 to 75)
-			M.adjustToxLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustToxLoss(-1*REM, 0) //between 50 and 75, its at half strength
 		else
-			M.adjustToxLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+			M.adjustToxLoss(-3*REM, 0) //Otherwise it barely heals anything
 	..()
 	. = 1
 
@@ -2115,15 +2114,15 @@
 	var/winner = pick(hurts)
 	switch(winner)
 		if("brute")
-			M.adjustBruteLoss(-0.5 * songpower, TRUE)
+			M.adjustBruteLoss(-10 * songpower, TRUE, include_roboparts = TRUE)
 		if("burn")
-			M.adjustFireLoss(-0.5 * songpower, TRUE)
+			M.adjustFireLoss(-10 * songpower, TRUE, include_roboparts = TRUE)
 		if("tox")
-			M.adjustToxLoss(-0.5 * songpower, TRUE, TRUE)
+			M.adjustToxLoss(-10 * songpower, TRUE, TRUE)
 		if("oxy")
-			M.adjustOxyLoss(-5 * songpower, TRUE)
+			M.adjustOxyLoss(-10 * songpower, TRUE)
 		if("rad")
-			M.radiation = max(M.radiation - 1 * songpower, 0)
+			M.radiation = max(M.radiation - 5 * songpower, 0)
 		if("wound")
 			bleed_mult = max(bleed_mult - (0.2 * songpower), 0)
 	tap_toes(M, songpower, TRUE)

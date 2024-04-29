@@ -47,7 +47,7 @@ Difficulty: Normal
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/hierophant_new.dmi'
-	faction = list("boss") //asteroid mobs? get that shit out of my beautiful square house
+	faction = list("hostile","boss", "raider", "china") //asteroid mobs? get that shit out of my beautiful square house
 	speak_emote = list("preaches")
 	melee_damage_lower = 15
 	melee_damage_upper = 20

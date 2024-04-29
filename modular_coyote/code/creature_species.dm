@@ -233,6 +233,13 @@
 /mob/living/carbon/human/species/furret
 	race = /datum/species/feral/pokemon/furret
 
+/datum/species/feral/pokemon/furret/shiny
+	name = "Feral Shiny Furret"
+	id = "furret_shiny"
+	roundstart = TRUE
+/mob/living/carbon/human/species/furret
+	race = /datum/species/feral/pokemon/furret
+
 /datum/species/feral/pokemon/gallade
 	name = "Feral Gallade"
 	id = "gallade"
@@ -655,6 +662,22 @@
 /mob/living/carbon/human/species/catslug
 	race = /datum/species/feral/catslug
 
+/datum/species/feral/werewolf
+	name = "Feral Werewolf"
+	id = "playerwolf"
+	simple_icon = 'modular_splurt/icons/mob/werewolf.dmi'
+	icon_width = 64
+	alt_prefixes = list("Skull Headed" = "skull_", "Ice" = "ice_")
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+	default_color = "FFFFFF"
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
+/mob/living/carbon/human/species/werewolf
+	race = /datum/species/feral/werewolf
+
 /datum/species/feral/chocobo
 	name = "Feral Chocobo"
 	id = "chocobo"
@@ -744,6 +767,19 @@
 /mob/living/carbon/human/species/wolf
 	race = /datum/species/feral/wolf
 
+/datum/species/feral/shepard
+	name = "Feral Shepard"
+	id = "sheperd"
+	simple_icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_dead_suffix = "_dead"
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = TRUE
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/shepard
+	race = /datum/species/feral/shepard
+
 /datum/species/feral/dog
 	name = "Feral Dog"
 	id = "dog_feral"
@@ -794,6 +830,45 @@
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/scrotie
 	race = /datum/species/feral/scrotie
+
+/datum/species/feral/otiepede
+	name = "Feral Otiepede"
+	id = "otiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/otiepede
+	race = /datum/species/feral/otiepede
+
+/datum/species/feral/snotie
+	name = "Feral Snotie"
+	id = "snotie"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/snotie
+	race = /datum/species/feral/snotie
+
+/datum/species/feral/scrotiepede
+	name = "Feral Scrotiepede"
+	id = "scrotiepede"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list()
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/scrotiepede
+	race = /datum/species/feral/scrotiepede
 
 /datum/species/feral/direwolf
 	name = "Feral Direwolf"
@@ -854,6 +929,34 @@
 	liked_food = VEGETABLES
 /mob/living/carbon/human/species/mousewhite
 	race = /datum/species/feral/mousewhite
+
+/datum/species/feral/wisp
+	name = "Feral Wisp"
+	id = "wisp"
+	simple_icon = 'modular_roguetown/items/lighting.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+	footstep_type = FOOTSTEP_MOB_CRAWL
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
+/mob/living/carbon/human/species/wisp
+	race = /datum/species/feral/wisp
+
+/datum/species/feral/slime
+	name = "Feral Slime"
+	id = "player slime"
+	simple_icon = 'icons/mob/slimes.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+	footstep_type = FOOTSTEP_MOB_CRAWL
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
+/mob/living/carbon/human/species/slime
+	race = /datum/species/feral/slime
 
 /datum/species/feral/bat
 	name = "Feral Bat"
@@ -1153,6 +1256,32 @@
 
 //end aliens
 
+//Mimics! No special code here, I wish I could make the morph mob's gimmick a trait, but this is for all you crate pilled people
+/datum/species/feral/mimic
+	name = "Mimic Chest"
+	simple_icon = 'modular_roguetown/topadd/takyon/Mimics.dmi'
+	id = "newmimic"
+	roundstart = TRUE
+	icon_width = 64
+	alt_prefixes = list(
+		"Inverted" = "oginvert_", 
+		"Hybrid" = "gnorm_", 
+		"Hybrid Inverted" = "gnorminvert_", 
+		"Subtle" = "gsubtle_", 
+		"Silver" = "os_", 
+		"Silver Inverted" = "osinvert_", 
+		"Silver Hybrid" = "snorm_",
+		"Silver Hybrid Inverted" = "snorminvert_",
+		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
+/mob/living/carbon/human/species/mimic
+	race = /datum/species/feral/mimic
+
+// No more mimics
+
 /datum/species/feral/bigwolfblack
 	name = "Feral Giant Black Wolf"
 	id = "blackwolf"
@@ -1267,6 +1396,17 @@
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
 
+/datum/species/feral/deathclaw/geist
+	name = "Cavern Geist"
+	id = "geist"
+	rotate_on_lying = FALSE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	alt_prefixes = list("Cyber" = "cyber_")
+	roundstart = TRUE
+/mob/living/carbon/human/species/geist
+	race = /datum/species/feral/deathclaw/geist
+
 /datum/species/feral/femdigo
 	name = "Female Wendigo"
 	id = "femdigo"
@@ -1276,9 +1416,23 @@
 	roundstart = TRUE
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_r"
-	
+
 /mob/living/carbon/human/species/femdigo
 	race = /datum/species/feral/femdigo
+
+/datum/species/feral/bugs
+	name = "Feral Sectdrone"
+	id = "bug"
+	simple_icon = 'modular_coyote/icons/mob/sectdrones.dmi'
+	icon_width = 64
+	rotate_on_lying = FALSE
+	roundstart = TRUE
+	alt_prefixes = list("Queen" = "queen_")
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+
+/mob/living/carbon/human/species/bugs
+	race = /datum/species/feral/bugs
 
 //End Other//
 
@@ -1401,6 +1555,28 @@
 /mob/living/carbon/human/species/swarmer
 	race = /datum/species/adapted/simplebot/swarmer
 
+/datum/species/adapted/simplebot/swarmer/hivebot
+	name = "Adapted Hivebot"
+	id = "hivebot"
+	alt_prefixes = list(
+		"Small" = "small_", 
+		"Small Alt" = "smallarm_", 
+		"Medium" = "medium_",
+		"Medium Alt" = "mediumarm_",
+		"Ranged" = "ranged_",
+		"Ranged Elite" = "rangedarm_",
+		"Factory" = "factory_",
+		"Hunter Killer" = "hunter_",
+		"Custodian" = "keeper_",
+		"Mythical" = "crystal_",
+		"Cephalopod" = "cepha_",)
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
+/mob/living/carbon/human/species/hivebot
+	race = /datum/species/adapted/simplebot/swarmer/hivebot
+
 /datum/species/adapted/simplebot/probe
 	name = "Adapted Probe"
 	simple_icon = 'icons/obj/mining.dmi'
@@ -1423,6 +1599,18 @@
 	icon_width = 62
 	icon_rest_suffix = "_rest"
 	icon_dead_suffix = "-wreck"
+
+/datum/species/adapted/dogborg/zoid
+	name = "Adapted Zoid"
+	id = "zoid"
+	simple_icon = 'modular_coyote/icons/mob/zoids.dmi'
+	roundstart = TRUE
+	alt_prefixes = list("Zaber" = "zaber_")
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "_dead"
+/mob/living/carbon/human/species/zoid
+	race = /datum/species/adapted/dogborg/zoid
 
 /datum/species/adapted/dogborg/sechound
 	name = "Adapted Sechound"
@@ -1617,6 +1805,20 @@
 /mob/living/carbon/human/species/wreckraptor
 	race = /datum/species/adapted/raptorborg/wreckraptor
 
+/datum/species/adapted/raptorborg/microraptor
+	name = "Adapted Microraptor"
+	id = "raptor"
+	simple_icon = 'modular_coyote/icons/mob/paramob.dmi'
+	roundstart = TRUE
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	icon_dead_suffix = "_dead"
+	alt_prefixes = list("Blue" = "blue_", "Red" = "red_", "White" = "white_")
+/mob/living/carbon/human/species/microraptor
+	race = /datum/species/adapted/raptorborg/microraptor
+
+// End of the silly raptors 
+
 /datum/species/adapted/drakeborg
 	name = "REPORT THIS AS A BUGGY"
 	simple_icon = 'modular_coyote/code/drakeborgs/drakeborg_vr.dmi'
@@ -1633,25 +1835,25 @@
 /mob/living/carbon/human/species/drakesec
 	race = /datum/species/adapted/drakeborg/drakesec
 
-/datum/species/adapted/drakeborg/drakemed 
+/datum/species/adapted/drakeborg/drakemed
 	name = "Adapted Med Drake"
 	id = "drakemed"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemed 
+/mob/living/carbon/human/species/drakemed
 	race = /datum/species/adapted/drakeborg/drakemed
 
-/datum/species/adapted/drakeborg/drakeeng 
+/datum/species/adapted/drakeborg/drakeeng
 	name = "Adapted Eng Drake"
 	id = "drakeeng"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakeeng 
-	race = /datum/species/adapted/drakeborg/drakeeng 
+/mob/living/carbon/human/species/drakeeng
+	race = /datum/species/adapted/drakeborg/drakeeng
 
 /datum/species/adapted/drakeborg/drakemine
 	name = "Adapted Mine Drake"
 	id = "drakemine"
 	roundstart = TRUE
-/mob/living/carbon/human/species/drakemine 
+/mob/living/carbon/human/species/drakemine
 	race = /datum/species/adapted/drakeborg/drakemine
 
 /datum/species/adapted/drakeborg/drakesci
@@ -1681,7 +1883,7 @@
 	name = "Adapted Gygax"
 	id = "gygax"
 	roundstart = TRUE
-/mob/living/carbon/human/species/gygax	
+/mob/living/carbon/human/species/gygax
 	race = /datum/species/adapted/mechs/gygax
 
 /datum/species/adapted/mechs/darkgygax
@@ -1695,21 +1897,21 @@
 	name = "Adapted Ripley"
 	id = "ripley"
 	roundstart = TRUE
-/mob/living/carbon/human/species/ripley	
+/mob/living/carbon/human/species/ripley
 	race = /datum/species/adapted/mechs/ripley
 
 /datum/species/adapted/mechs/marauder
 	name = "Adapted Marauder"
 	id = "marauder"
 	roundstart = TRUE
-/mob/living/carbon/human/species/marauder	
+/mob/living/carbon/human/species/marauder
 	race = /datum/species/adapted/mechs/marauder
 
 /datum/species/adapted/mechs/seraph
 	name = "Adapted Seraph"
 	id = "seraph"
 	roundstart = TRUE
-/mob/living/carbon/human/species/seraph	
+/mob/living/carbon/human/species/seraph
 	race = /datum/species/adapted/mechs/seraph
 
 /datum/species/adapted/mechs/phazon
@@ -1746,6 +1948,13 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/medigax
 	race = /datum/species/adapted/mechs/medigax
+
+/datum/species/adapted/mechs/tachi
+	name = "Adapted Tachi"
+	id = "tachi"
+	roundstart = TRUE
+/mob/living/carbon/human/species/tachi
+	race = /datum/species/adapted/mechs/tachi
 
 
 //End Synthetic Creatures

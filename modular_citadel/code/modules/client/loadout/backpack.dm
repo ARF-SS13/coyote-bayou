@@ -155,7 +155,7 @@
 /datum/gear/backpack/cigarettes/cigars/havana
 	name = "Havanian cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/havana
-
+/*
 /datum/gear/backpack/backpack
 	name = "hiking backpack"
 	path = /obj/item/storage/backpack/old
@@ -206,18 +206,18 @@
 /datum/gear/hands/backpack/old
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
-
+*/
 /datum/gear/backpack/coinpouch
 	name = "coin pouch"
 	path = /obj/item/storage/wallet/stash/pouch
 	cost = 1
-
+/*
 /datum/gear/backpack/backpack/snailshell
 	name = "snail shell"
 	path = /obj/item/storage/backpack/satchel/snailshell
-
+*/
 //Skyrat bags
-
+/*
 /datum/gear/backpack/backpack/skyrat/ertodst
 	name = "black ert bag"
 	path = /obj/item/storage/backpack/skyrat/ertodst
@@ -411,6 +411,7 @@
 /datum/gear/backpack/backpack/skyrat/rockshell
 	name = "rock shell bag"
 	path = /obj/item/storage/backpack/skyrat/rockshell
+*/
 /////////////////////
 //Coyote Additions//
 ////////////////////

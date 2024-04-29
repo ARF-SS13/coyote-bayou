@@ -1237,16 +1237,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {carefully, gently, eagerly} {sniffs, snorfs, snuffles, sniffles, huffs} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+		"XU_NAME {carefully, gently, eagerly} {sniffs, snorfs, snuffles, sniffles, huffs} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
 	)
 	disarm_messages = list(
-		"XU_NAME {playfully, teasingly} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+		"XU_NAME {playfully, teasingly} {pushes, presses} XT_THEIR {nose, sniffer, snoot, face} into XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
 	)
 	grab_messages = list(
-		"XU_NAME {needily, greedily, possessively} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+		"XU_NAME {needily, greedily, possessively} {pushes, presses} XT_THEIR {nose, sniffer, snoot, face} into XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
 	)
 	harm_messages = list(
-		"XU_NAME {aggressively, vigoriously} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+		"XU_NAME {aggressively, vigoriously} {pushes, presses} XT_THEIR {nose, sniffer, snoot, face} into XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
 	)
 
 	simple_sounds = list(
@@ -1273,16 +1273,15 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
+		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
 	)
 	disarm_messages = list(
-		"XU_NAME {playfully, wetly, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
+		"XU_NAME {playfully, wetly, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
 	)
 	grab_messages = list(
-		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer} like a {piece of candy, treat, lollipop}.",
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer} like a {piece of candy, treat, lollipop}.",
 	)
 	harm_messages = list(
-		"XU_NAME {forcefully, aggressively} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer} like a {piece of candy, treat, lollipop}.",
 	)
 
 	simple_sounds = list(
@@ -1305,20 +1304,20 @@
 //Suck balls///
 ////////////////////
 /datum/interaction/lewd/partner/mutual/ball_suck
-	description = "Partner/Crotch - Lick their balls."
+	description = "Partner/Crotch - Suck their balls."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
 	)
 	disarm_messages = list(
-		"XU_NAME {playfully, needily} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+		"XU_NAME {playfully, needily} {suckles, mouths} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
 	)
 	grab_messages = list(
-		"XU_NAME {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} {like they need them, like they are drunk on them}.",
+		"XU_NAME {suckles, mouths} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} {like they need them, like they are drunk on them}.",
 	)
 	harm_messages = list(
-		"XU_NAME {aggressivelly, demandingly, overwhelmingly} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+		"XU_NAME {aggressivelly, demandingly, overwhelmingly} {suckles, mouths} XT_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
 	)
 
 	simple_sounds = list(

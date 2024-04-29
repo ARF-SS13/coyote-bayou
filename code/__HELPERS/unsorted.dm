@@ -271,11 +271,18 @@ Negative values for offset are accepted, think of it in relation to North, -x is
 		if(!admeme && M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
 		var/name = avoid_assoc_duplicate_keys(M.name, namecounts)
-		if(!admeme && (isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
-			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
+		var/shark = FALSE
+		if(!admeme)
+			if(ckey(M.real_name) == ckey(M.ckey) || ckey(M.name) == ckey(M.ckey))
+				if(!(strings("data/super_special_ultra_instinct.json", "[ckey(M.name)]", TRUE, TRUE) || strings("data/super_special_ultra_instinct.json", "[ckey(M.real_name)]", TRUE, TRUE)))
+					shark = TRUE
+					name = safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
 		if(M.real_name && M.real_name != M.name)
-			name += " \[[M.real_name]\]"
+			if(shark)
+				name += " \[[safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)]\]"
+			else
+				name += " \[[M.real_name]\]"
 		if(M.stat == DEAD)
 			if(isobserver(M))
 				name += " \[ghost\]"
@@ -1156,6 +1163,8 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 			. = "huge"
 		if(WEIGHT_CLASS_GIGANTIC)
 			. = "gigantic"
+		if(WEIGHT_CLASS_NO_INVENTORY)
+			. = "device that can't fit in any storage"
 		else
 			. = ""
 
@@ -1190,7 +1199,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /mob/dview/Destroy(force = FALSE)
 	if(!ready_to_die)
-		stack_trace("ALRIGHT WHICH FUCKER TRIED TO DELETE *MY* DVIEW?")
+		stack_trace("ALRIGHT WHICH frickER TRIED TO DELETE *MY* DVIEW?")
 
 		if (!force)
 			return QDEL_HINT_LETMELIVE
@@ -1651,20 +1660,23 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return // There is no haystack, or needle for that matter
 	if(max_depth <= 0)
 		return // we've gone too deep
-	if(istype(haystack, pathtype))
-		return haystack
+	if(islist(pathtype))
+		for(var/pat in pathtype)
+			if(istype(haystack, pat))
+				return haystack
+	else
+		if(istype(haystack, pathtype))
+			return haystack
 	if(isturf(haystack))
 		return
 	if(haystack && haystack.loc)
 		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
 
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
-/proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
-	if(!isturf(search_me))
-		if(!isatom(search_me))
-			return list()
-		else
-			search_me = get_turf(search_me)
+/// actually works on any atom, fyi (not just turfs)
+/proc/get_all_in_turf(atom/search_me, include_turf = FALSE, max_depth = 5)
+	if(!isatom(search_me))
+		return list()
 	var/list/atoms_in_turf = search_me.contents?.Copy()
 	if(!LAZYLEN(atoms_in_turf))
 		return list()
@@ -1694,6 +1706,31 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		var/client/clint = LAZYACCESS(GLOB.directory, clientthing)
 		if(clint)
 			return clint
+
+/// Takes in a client, mob, ckey, quid, or even prefs, and returns a mob
+/proc/extract_mob(something)
+	if(isclient(something))
+		var/client/clint = something
+		return clint.mob
+	if(ismob(something))
+		return something
+	if(istext(something))
+		var/client/C = LAZYACCESS(GLOB.directory, something)
+		if(C)
+			return C.mob
+		var/mob/critter = SSeconomy.quid2mob(something)
+		if(critter)
+			return critter
+	if(istype(something, /datum/preferences))
+		var/datum/preferences/P = something
+		return P.parent.mob
+
+/// takes in something that may have preferences, and returns their quid, wot wot
+/proc/extract_quid(something)
+	var/datum/preferences/P = extract_prefs(something)
+	if(!P)
+		return
+	return P.quester_uid
 
 /// Takes in a client, mob, or ckey, and returns the ckey
 /proc/get_ckey(clientthing)
@@ -1787,7 +1824,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
 
-/// takes in fuckin anything and outputs if its a player
+/// takes in frickin anything and outputs if its a player
 /proc/isplayer(imput)
 	if(istext(imput))
 		return !!LAZYACCESS(GLOB.directory, imput)

@@ -916,6 +916,12 @@
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "braixen"
 
+/obj/item/toy/plush/otter
+	name = "otter plush"
+	desc = "You otta love it!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "otter"
+
 
 
 
@@ -1058,6 +1064,8 @@
 //Things from Mojave Sun, credit for the spirits go to them.
 
 //Rugs
+/obj/structure/rug
+	layer = BELOW_OPEN_DOOR_LAYER
 
 /obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
 	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
@@ -1077,9 +1085,6 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
-	plane = -15
-	layer = BELOW_OPEN_DOOR_LAYER
-	vis_flags = 0	//Don't inherit the incorrect plane, silly.
 
 /obj/structure/rug/carpet2
 	name = "royal purple run carpet"
@@ -1187,6 +1192,7 @@
 	icon_state = "nightstand_alt"
 
 //From Mojave sun, credit to them for the sprite
+/*
 /obj/structure/wood_counter
 	name = "Wooden Counter"
 	desc = "Count your wood? Or is it wood your count.."
@@ -1234,7 +1240,7 @@
 	desc = "Count your wood? Or is it wood your count.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "craft_counter_cross"
-
+*/
 /obj/structure/toilet_paper
 	name = "Toilet Paper Holder"
 	desc = "Look before you shit! I mean, sit!"
@@ -1491,6 +1497,8 @@
 	name = "stalagmite"
 	icon_state = "stalagmite"
 	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+	density = 0
+	anchored = 1
 
 /obj/structure/cave/stalagmite/one
 	name = "stalagmite"
@@ -1870,3 +1878,23 @@
 	icon_state = "flatscreen"
 	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
 	density = 0
+
+/obj/item/kirbyplants/bonsai
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_1"
+
+/obj/item/kirbyplants/bonsai/pink
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_2"
+
+/obj/item/kirbyplants/bonsai/orange
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_3"
+
+/obj/item/kirbyplants/bonsai/blue
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_4"

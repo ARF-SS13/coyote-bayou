@@ -2,18 +2,18 @@
 	name = "whetstone"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "sharpener"
-	desc = "A block that makes things sharp."
+	desc = "(click the icon with your melee weapon in your active hand to use) A cache of oils and crystals and such to enhance a weapon."
 	force = 5
 	var/used = 0
-	var/increment = 5
-	var/max = 200
-	var/prefix = "sharpened"
-	var/requires_sharpness = 1
+	var/increment = 10 // literally 2x Masterwork
+	var/max = 10000
+	var/prefix = "enhanced"
+	var/requires_sharpness = 0
 
 
 /obj/item/sharpener/attackby(obj/item/I, mob/user, params)
 	if(used)
-		to_chat(user, span_warning("The sharpening block is too worn to use again!"))
+		to_chat(user, span_warning("The [src] is too worn to use again!"))
 		return
 	if(I.force >= max || I.throwforce >= max)//no esword sharpening
 		to_chat(user, span_warning("[I] is much too powerful to sharpen further!"))
@@ -30,21 +30,23 @@
 		to_chat(user, span_warning("[I] is much too powerful to sharpen further!"))
 		return
 	if(signal_out & COMPONENT_BLOCK_SHARPEN_BLOCKED)
-		to_chat(user, span_warning("[I] is not able to be sharpened right now!"))
+		to_chat(user, span_warning("[I] is not able to be refined right now!"))
 		return
 	if((signal_out & COMPONENT_BLOCK_SHARPEN_ALREADY) || (I.force > initial(I.force) && !signal_out))
-		to_chat(user, span_warning("[I] has already been refined before. It cannot be sharpened further!"))
+		to_chat(user, span_warning("[I] has already been refined before. It cannot be refined further!"))
 		return
 	if(!(signal_out & COMPONENT_BLOCK_SHARPEN_APPLIED))
-		I.force = clamp(I.force + increment, 0, max)
-		I.force_wielded = clamp(I.force_wielded + increment, 0, max)
-		I.force_unwielded = clamp(I.force_unwielded + increment, 0, max)
+		I.force += increment
+		I.throwforce += increment
+		I.throwforce_bonus += increment
+		I.force_bonus = increment
+		playsound(get_turf(src), 'sound/items/unsheath.ogg', 25, 1)
 
-	user.visible_message(span_notice("[user] sharpens [I] with [src]!"), span_notice("You sharpen [I], making it much more deadly than before."))
+	user.visible_message(span_notice("[user] enhances [I] with [src]!"), span_notice("You enhance [I], making it much more deadly than before."))
 	I.sharpness = SHARP_POINTY
 	I.throwforce = clamp(I.throwforce + increment, 0, max)
 	I.name = "[prefix] [I.name]"
-	name = "worn out [name]"
+	name = "useless [name]"
 	desc = "[desc] At least, it used to."
 	used = 1
 	update_icon()

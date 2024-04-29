@@ -126,3 +126,21 @@ ty ilu - bear
 /area/f13/underground/cave/coyote/antmound
 	narrate = "This cave smells like a mixture of petrolium products mixed with a lemony, almost citrus, scent. If you're clever you know it as formic acid. It's the smell of ants, and something flamable. Be careful here, you are in their home and they know these tunnels well."
 
+// (Relative) Safety
+
+/area/f13/building/coyote/safe
+	name = "Unknown Portal Storm Shelter" // this is relevant since the beacon says the name of whatever area it's within
+	narrate = "This old storm shelter was refitted to provide safety and (meager) supplies to those that hide within. Rest your eyes, traveller, this is one of the few truly safe spaces."
+	narrate_sound = 'sound/ambience/ambitech.ogg'
+
+/area/f13/building/coyote/safe/nash
+	name = "Nash Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/ashdown
+	name = "Ashdown Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/garland
+	name = "Garland Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/redwater
+	name = "Redwater Portal-Storm Shelter"

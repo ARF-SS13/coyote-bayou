@@ -136,6 +136,69 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
+/datum/crafting_recipe/cheaphivebot
+	name = "Cheap Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/cheap
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/rods = 12,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list()
+	time = 30
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/hivebot
+	name = "Regular Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot
+	reqs = list(/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 15)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/rangedhivebot
+	name = "Ranged Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/ranged
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/factoryhivebot
+	name = "Industrial Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/factory
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/crystalhivebot
+	name = "Magical Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/crystal
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/bluespace_crystal = 2,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
 	result = /obj/item/stock_parts/manipulator/pico
@@ -483,7 +546,7 @@
 /datum/crafting_recipe/well
 	name = "Water Well"
 	result = /obj/structure/sink/well
-	reqs = list(/obj/item/stack/sheet/metal = 20, /obj/item/stack/sheet/mineral/wood = 20, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 5, /obj/item/reagent_containers/glass/bucket =1)
+	reqs = list(/obj/item/ammo_casing/caseless/rock = 4, /obj/item/stack/sheet/mineral/wood = 15, /obj/item/ammo_casing/caseless/brick = 4, /obj/item/reagent_containers/glass/bucket =1)
 	tools = list(TOOL_SHOVEL)
 	time = 100
 	subcategory = CAT_MISCELLANEOUS
@@ -727,6 +790,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -738,6 +802,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -749,6 +814,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/donkeyho
 	name = "Donkey Ho-Tay's Bane"
@@ -761,6 +827,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/mrboneswr
 	name = "Mr. Bones Wild Ride"
@@ -772,6 +839,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/accordiondlove
 	name = "Accordion D'love"
@@ -784,6 +852,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/dooter
 	name = "The Dooter"
@@ -794,6 +863,7 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/sweetlovin
 	name = "Sweet Lovin'"
@@ -806,6 +876,7 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rip/trom_bone
 	name = "Trom-Bone"
@@ -816,6 +887,7 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 
 /datum/crafting_recipe/rip/fingerlicker
@@ -828,6 +900,7 @@
 				/obj/item/reagent_containers/food/condiment/pack/bbqsauce = 10
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 //Lunchboxes
 
@@ -839,6 +912,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/hearts
 	name = "Hearts lunchbox"
@@ -848,6 +922,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/cat
 	name = "Cat lunchbox"
@@ -857,6 +932,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/nano
 	name = "Blue lunchbox"
@@ -866,6 +942,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/uni
 	name = "University lunchbox"
@@ -875,6 +952,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/teal
 	name = "Teal lunchbox"
@@ -884,6 +962,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/diona
 	name = "Diona lunchbox"
@@ -893,6 +972,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/black
 	name = "Black lunchbox"
@@ -902,6 +982,7 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 //Abraxo recipe after several requests
 
@@ -915,6 +996,7 @@
 		/datum/material/sand  = 1,
 		)
 	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 
 /// Graveyard / Not Used

@@ -119,36 +119,34 @@
 */
 /datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
-	//if(P.hitscan && prob(50))
-	//	return BULLET_ACT_HIT //AKTUALLY U CANNOT DEFLECT HITSKANS UNLESS UWrE A NINJA ADNJ EVEN THEN ITS A 50% CHANCE
 	if(A.incapacitated(FALSE, TRUE)) //NO STUN
 		return BULLET_ACT_HIT
-	if(!CHECK_ALL_MOBILITY(A, MOBILITY_USE|MOBILITY_STAND)) //NO UNABLE TO USE, NO DEFLECTION ON THE FLOOR
+	if(!CHECK_ALL_MOBILITY(A, MOBILITY_USE|MOBILITY_STAND)) //NO UNABLE TO USE, NO DODGING ON THE FLOOR
 		return BULLET_ACT_HIT
 	if(A.dna && A.dna.check_mutation(HULK)) //NO HULK
 		return BULLET_ACT_HIT
 	if(!isturf(A.loc)) //NO MOTHERFLIPPIN MECHS!
 		return BULLET_ACT_HIT
-	if(A.in_throw_mode)
-		A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectiles with their bare hands!"), span_userdanger("You deflect the projectile!"))
-		playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
-		P.firer = A
-		P.setAngle(rand(0, 360))//SHING
-		var/totalStamDam = (P.damage > P.stamina) ? P.damage * physdammod : P.stamina * stamdammod
-		A.adjustStaminaLossBuffered(totalStamDam) //Attempt to change deflect cost based on projectile damage - Farmwizard
-		return BULLET_ACT_FORCE_PIERCE
-	return BULLET_ACT_HIT
+	A.visible_message(span_danger("[A] dodges the projectile cleanly, they're immune to ranged weapons!"), span_userdanger("You dodge out of the way of the projectile!"))
+	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+
+	var/totalStamDam = (P.damage > P.stamina) ? P.damage * physdammod : P.stamina * stamdammod
+	A.apply_damage(totalStamDam, STAMINA) //Changed it so the autododge takes more stamina than carp. -Farmwizard
+	return BULLET_ACT_FORCE_PIERCE
 
 /datum/martial_art/the_sleeping_carp/teach(mob/living/carbon/human/H, make_temporary = FALSE)
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
+	/*ADD_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT) */
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODRUGS, SLEEPING_CARP_TRAIT)
-	ADD_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT)
-	H.physiology.stamina_mod *= 0.5 //You take less stamina damage overall, but you do not reduce the damage from stun batons
+/*	ADD_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT) */
+	ADD_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR, SLEEPING_CARP_TRAIT)
+	H.physiology.stamina_mod *= 1.8 //You take a little more stamina damage
 	H.physiology.stun_mod *= 0.3 //for those rare stuns
+	H.physiology.brute_mod *= 2
+	H.physiology.burn_mod *= 2 // You generally take more damage
 	//H.physiology.pressure_mod *= 0.3 //go hang out with carp
 	//H.physiology.cold_mod *= 0.3 //cold mods are different to burn mods, they do stack however
 	//H.physiology.heat_mod *= 2 //this is mostly so sleeping carp has a viable weakness. Cooking them alive. Setting them on fire and heating them will be their biggest weakness. The reason for this is....filet jokes.
@@ -157,15 +155,18 @@
 
 /datum/martial_art/the_sleeping_carp/on_remove(mob/living/carbon/human/H)
 	. = ..()
-	REMOVE_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
+	/*REMOVE_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)*/
 	REMOVE_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NODRUGS, SLEEPING_CARP_TRAIT)
-	REMOVE_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT)
+	/*REMOVE_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT)*/
+	REMOVE_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR, SLEEPING_CARP_TRAIT)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
-	H.physiology.pressure_mod = initial(H.physiology.pressure_mod) //no more carpies
+	H.physiology.brute_mod = initial(H.physiology.brute_mod)
+	H.physiology.burn_mod = initial(H.physiology.burn_mod)
+	/*H.physiology.pressure_mod = initial(H.physiology.pressure_mod) //no more carpies
 	H.physiology.cold_mod = initial(H.physiology.cold_mod)
-	H.physiology.heat_mod = initial(H.physiology.heat_mod)
+	H.physiology.heat_mod = initial(H.physiology.heat_mod)*/
 
 	H.faction -= "carp" //:(
 
@@ -179,4 +180,4 @@
 	//to_chat(usr, "<span class='notice'>Gnashing Teeth</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
 	//to_chat(usr, "<span class='notice'>Crashing Wave Kick</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
 	//to_chat(usr, "<span class='notice'>Keelhaul</span>: Harm Grab. Kick opponents to the floor. Against prone targets, deal additional stamina damage and disarm them.")
-	to_chat(usr, span_notice("You can block all projectiles in Throw Mode. However, you are not invincible, and sustained damage will take it's toll on your stamina before your health."))
+	to_chat(usr, span_notice("You can dodge all projectiles. However, you are not invincible, and sustained damage will take it's toll on your stamina before your health."))

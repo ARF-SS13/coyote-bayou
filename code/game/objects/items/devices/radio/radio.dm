@@ -30,6 +30,8 @@
 	var/command = FALSE  // If true, use_command can be toggled at will.
 	var/commandspan = SPAN_COMMAND //allow us to set what the fuck we want for headsets
 
+	var/suppress_blurbles = FALSE
+
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
 	var/translate_binary = FALSE  // If true, can hear the special binary channel.
@@ -165,6 +167,7 @@
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
 	data["headset"] = istype(src, /obj/item/radio/headset)
+	data["suppressBlurbles"] = suppress_blurbles
 
 	return data
 
@@ -212,6 +215,9 @@
 				channels[channel] &= ~FREQ_LISTENING
 			else
 				channels[channel] |= FREQ_LISTENING
+			. = TRUE
+		if("suppressBlurbles")
+			TOGGLE_VAR(suppress_blurbles)
 			. = TRUE
 		if("command")
 			use_command = !use_command
@@ -288,8 +294,12 @@
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
 	// Construct the signal
-	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
-
+	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, M)
+	signal.data["is_radio"] = TRUE
+	signal.data["suppress_blurbles"] = suppress_blurbles
+	if(!suppress_blurbles)
+		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+	
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
 		signal.data["compression"] = 0
@@ -320,7 +330,7 @@
 	signal.levels = list(T.z)
 	signal.broadcast()
 
-/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, list/data)
 	. = ..()
 	if(radio_freq || !broadcasting || get_dist(src, speaker) > (canhear_range)-2)
 		return

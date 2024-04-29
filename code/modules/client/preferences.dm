@@ -83,6 +83,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
+	var/my_shark = "Bingus Whale"
+
 	var/genital_whitelist = ""
 	var/whoflags = DEFAULT_WHO_FLAGS
 	var/lockouts = NONE
@@ -143,10 +145,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
+	var/kisser = KISS_DEFAULT // Kiss this (     Y     )
+	/// which quester UID we're using
+	var/quester_uid
+	var/dm_open = TRUE
+	var/needs_a_friend = FALSE // for the quest
+	var/list/blocked_from_dms = list() // list of quids
+	/// rough approximations of the character's finished quests
+	var/list/saved_finished_quests_old = list() // deprecated, or something
+	var/list/saved_finished_quests = list()
+	var/number_of_finished_quests = 0
+	var/historical_banked_points = 0
+	/// tight list of the character's active quests
+	var/list/saved_active_quests = list()
+	var/saved_unclaimed_points = 0
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
+	var/admin_wire_tap = TRUE
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
 		"mcolor2" = "FFFFFF",
@@ -377,6 +393,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// Versioning hack! Versioning hack! Versioning hack!
 	var/list/current_version = list()
+	/// Game prefs-related stuff
+	var/list/current_revision = list() // Have fun distinguishing between these two
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
@@ -387,9 +405,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// How fast the mob wobbles side to side.
 	var/side_waddle_time = 2
 
+	/// Button to switch from input bar to hotkey mode.
+	var/input_mode_hotkey = "Ctrl+Tab"
+
 /datum/preferences/New(client/C)
 	parent = C
 
+	if(LAZYLEN(GLOB.cow_names))
+		my_shark = safepick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 	spawn(0)
 		if(C)
 			chatbgcolor = winget(C, "statbrowser", "background-color")
@@ -470,8 +493,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 
-			dat += "<center><h2>Occupation Choices</h2>"
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
+			dat += "<center><h2>Quest Board UID</h2>"
+			dat += "[quester_uid]</center>"
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center>"
 				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
@@ -727,8 +750,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 			dat += "<h2>Voice</h2>"
-			dat += "<b>Speech Verb:</b><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=speech_verb;task=input'>[custom_speech_verb]</a><br>"
 			dat += "<b>Custom Tongue:</b><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><br>"
 
@@ -740,6 +761,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><br>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><br>"
+			
+			dat += "<center><h2>Custom Say Verbs</h2></center>"
+			dat += "<a href='?_src_=prefs;preference=custom_say;verbtype=custom_say;task=input'>Says</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_whisper;task=input'>Whispers</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_ask;task=input'>Asks</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_exclaim;task=input'>Exclaims</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_yell;task=input'>Yells</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_sing;task=input'>Sings</a>"
 			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
 			dat += "</td>"
 			// Coyote ADD: End
@@ -1318,6 +1347,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(GAME_PREFERENCES_TAB) // Game Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>General Settings</h2>"
+			dat += "<b>Input Mode Hotkey:</b> <a href='?_src_=prefs;task=input;preference=input_mode_hotkey'>[input_mode_hotkey]</a><br>"
 			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
 			dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
 			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
@@ -1341,6 +1371,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Hunting Horn Sounds:</b> <a href='?_src_=prefs;preference=hear_hunting_horns'>[(toggles & SOUND_HUNTINGHORN) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Sprint Depletion Sound:</b> <a href='?_src_=prefs;preference=hear_sprint_buffer'>[(toggles & SOUND_SPRINTBUFFER) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
@@ -1411,6 +1442,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
 
 			dat += "<b>Income Updates:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Allowed" : "Muted"]</a><br>"
+			dat += "<b>Hear Radio Static:</b> <a href='?_src_=prefs;preference=static_radio'>[(chat_toggles & CHAT_HEAR_RADIOSTATIC) ? "Allowed" : "Muted"]</a><br>"
+			dat += "<b>Hear Radio Blurbles:</b> <a href='?_src_=prefs;preference=static_blurble'>[(chat_toggles & CHAT_HEAR_RADIOBLURBLES) ? "Allowed" : "Muted"]</a><br>"
 			dat += "<br>"
 
 			dat += "<b>Parallax (Fancy Space):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
@@ -2691,6 +2724,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_y = 0
+				if("custom_say")
+					var/verb_type = href_list["verbtype"]
+					var/lastvalue = ""
+					if(length(features[verb_type]))
+						lastvalue = jointext(features[verb_type],",")
+					var/msg = input(usr, "Give a custom set of verbs for this character's [verb_type]. Separate them with a single comma and nothing else.", "Custom [verb_type]", lastvalue) as message|null
+					if(!isnull(msg))
+						features[verb_type] = splittext(msg,",")
 				////////////////// VORE STUFF /
 				if("master_vore_toggle")
 					TOGGLE_VAR(master_vore_toggle)
@@ -3577,6 +3618,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (!isnull(desiredfps))
 						clientfps = desiredfps
 						parent.fps = desiredfps
+				if("input_mode_hotkey")
+					if(input_mode_hotkey == "Tab")
+						input_mode_hotkey = "Ctrl+Tab"
+					else
+						input_mode_hotkey = "Tab"
+					parent.change_input_toggle_key(input_mode_hotkey)
+					
 				if("ui")
 					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in GLOB.available_ui_styles
 					if(pickedui)
@@ -3998,6 +4046,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("hear_hunting_horns")
 					toggles ^= SOUND_HUNTINGHORN
 					
+				if("hear_sprint_buffer")
+					toggles ^= SOUND_SPRINTBUFFER
+					
 				if("hear_midis")
 					toggles ^= SOUND_MIDI
 
@@ -4039,6 +4090,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("income_pings")
 					chat_toggles ^= CHAT_BANKCARD
+
+				if("static_blurble")
+					chat_toggles ^= CHAT_HEAR_RADIOBLURBLES
+
+				if("static_radio")
+					chat_toggles ^= CHAT_HEAR_RADIOSTATIC
 
 				if("pull_requests")
 					chat_toggles ^= CHAT_PULLR
@@ -4330,6 +4387,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(custom_speech_verb != "default")
 		character.dna.species.say_mod = custom_speech_verb
 
+	if(length(character.dna.features["custom_say"]))
+		character.verb_say = character.dna.features["custom_say"]
+	if(length(character.dna.features["custom_whisper"]))
+		character.verb_whisper = character.dna.features["custom_whisper"]
+	if(length(character.dna.features["custom_ask"]))
+		character.verb_ask = character.dna.features["custom_ask"]
+	if(length(character.dna.features["custom_exclaim"]))
+		character.verb_exclaim = character.dna.features["custom_exclaim"]
+	if(length(character.dna.features["custom_yell"]))
+		character.verb_yell = character.dna.features["custom_yell"]
+	if(length(character.dna.features["custom_sing"]))
+		character.verb_sing = character.dna.features["custom_sing"]
+
 	//limb stuff, only done when initially spawning in
 	if(initial_spawn)
 		//delete any existing prosthetic limbs to make sure no remnant prosthetics are left over - But DO NOT delete those that are species-related
@@ -4457,6 +4527,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			if(L[slot] < MAX_FREE_PER_CAT)
 				return TRUE */
+
+/datum/preferences/proc/generate_quester_id()
+	var/list/new_quid = list()
+	if(parent)
+		new_quid += ckey(parent.ckey)
+	else
+		new_quid += ckey(safepick(GLOB.ai_names) || "cranberry") //🤖 fixes integration tests
+	new_quid += ckey(safepick(GLOB.ing_verbs) || "cranberry")
+	new_quid += ckey(safepick(GLOB.adverbs) || "cranberry")
+	new_quid += ckey("[rand(1000,9999)]")
+	new_quid += ckey("[rand(1000,9999)]")
+	return new_quid.Join("-")
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]

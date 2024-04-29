@@ -23,6 +23,7 @@
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
 	var/autoreveal_time = 1 HOURS
+	important = TRUE
 
 /obj/item/validball/Initialize()
 	. = ..()
@@ -48,7 +49,7 @@
 	activated = TRUE
 	START_PROCESSING(SSobj, src)
 	visible_message(span_notice("[src]'s transmitter lets out a faint beep. Anyone with a signal divination device can see where this is!"))
-	to_chat(world, span_danger("Be it by overheard rumor, or a sudden memory, you realize that the coveted keycards recently sent out their detection information. The hunt is on, for those that want to be a part of it. You can pick up a device to help find it in one of Nash's shops vending machines. But remember, those who hunt open themselves up to a world of danger."))
+	to_chat(world, span_danger("Be it by overheard rumor, or a sudden memory, you realize that the coveted keycards recently sent out their detection information. The hunt is on, for those that want to be a part of it. You can pick up a device to help find it in one of New Boston's shops vending machines. But remember, those who hunt open themselves up to a world of danger."))
 
 /obj/item/validball/proc/update_holders(mob/holder)
 	if(!ismob(holder))

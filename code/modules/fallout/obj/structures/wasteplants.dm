@@ -213,3 +213,70 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "cactus"
 	log_amount = 2
+
+/obj/structure/flora/wasteplant/sunflower
+	name = "sunflower"
+	icon_state = "sunflower"
+	desc = "It's always sunny in Phil- oh wait. Different movie."
+	produce = /obj/item/grown/sunflower
+
+/obj/structure/flora/wasteplant/rose
+	name = "roses"
+	icon_state = "rose"
+	desc = "Careful not to prick yourself."
+	produce = /obj/item/grown/rose
+
+/obj/structure/flora/wasteplant/lily
+	name = "lily"
+	icon_state = "lily"
+	desc = "But where's James?"
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
+
+/obj/structure/flora/wasteplant/forgetmenot
+	name = "forget me not"
+	icon_state = "forget_me_not"
+	desc = "Better not forget these flowers"
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
+
+/obj/structure/flora/wasteplant/geranium
+	name = "geranium"
+	icon_state = "geranium"
+	desc = "These might just have germs."
+	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
+
+/obj/structure/flora/wasteplant/tomato
+	name = "tomato"
+	icon_state = "tomato"
+	desc = "Squish."
+	produce = /obj/item/reagent_containers/food/snacks/grown/tomato
+
+/obj/structure/flora/wasteplant/watermelon
+	name = "watermelon"
+	icon_state = "watermelon"
+	desc = "Why would someone put water in a melon?"
+	produce = /obj/item/reagent_containers/food/snacks/grown/watermelon
+
+/obj/structure/flora/wasteplant/grape
+	name = "grape"
+	icon_state = "grape"
+	desc = "juicy!"
+	produce = /obj/item/reagent_containers/food/snacks/grown/grapes
+
+/obj/structure/flora/wasteplant/pumpkin
+	name = "pumpkin"
+	icon_state = "pumpkin"
+	desc = "Better get back before midnight."
+	produce = /obj/item/reagent_containers/food/snacks/grown/pumpkin
+
+/obj/structure/flora/wasteplant/corn
+	name = "corn"
+	icon_state = "corn"
+	desc = "Where's the leather couch? Oh wait wrong thing..."
+	produce = /obj/item/reagent_containers/food/snacks/grown/corn
+
+/obj/structure/flora/wasteplant/carrot
+	name = "carrot"
+	icon_state = "carrot"
+	desc = "Good for your eyes."
+	produce = /obj/item/reagent_containers/food/snacks/grown/carrot
+

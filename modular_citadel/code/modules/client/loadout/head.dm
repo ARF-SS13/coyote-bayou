@@ -8,6 +8,11 @@
 	name = "ballcap"
 	path = /obj/item/clothing/head/soft/mime
 
+/datum/gear/head/chameleon
+	name = "chameleon hat"
+	path = /obj/item/clothing/head/chameleon
+	cost = 0
+
 /datum/gear/head/beanie
 	name = "beanie"
 	path = /obj/item/clothing/head/beanie

@@ -102,7 +102,8 @@
 	atom/movable/virtualspeaker/speaker,  // representation of the method's speaker
 	datum/language/language,  // the language of the message
 	message,  // the text content of the message
-	spans  // the list of spans applied to the message
+	spans,  // the list of spans applied to the message
+	atom/real_source
 )
 	src.source = source
 	src.frequency = frequency
@@ -117,6 +118,10 @@
 		"language" = lang_instance.name,
 		"spans" = spans
 	)
+	if(ismob(real_source))
+		var/mob/truesource = real_source
+		if(truesource.client?.ckey)
+			data["ckey"] = truesource.client.ckey
 	var/turf/T = get_turf(source)
 	levels = list(T.z)
 
@@ -186,7 +191,7 @@
 	var/spans = data["spans"]
 	var/rendered = virt.compose_message(virt, language, message, frequency, spans)
 	for(var/atom/movable/hearer in receive)
-		hearer.Hear(rendered, virt, language, message, frequency, spans)
+		hearer.Hear(rendered, virt, language, message, frequency, spans, null, null, null, data)
 
 	// This following recording is intended for research and feedback in the use of department radio channels
 	if(length(receive))

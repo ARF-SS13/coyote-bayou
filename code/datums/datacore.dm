@@ -175,9 +175,6 @@
 		//if(rank in GLOB.biker_positions)
 		//	bikers[name] = rank
 		//	department = 1
-		if(rank in GLOB.heavensnight_positions)
-			heavensnight[name] = rank
-			department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))
@@ -196,7 +193,7 @@
 	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 	// 		even = !even
 	if(length(nash))
-		dat += "<tr><th colspan=3>Nash</th></tr>"
+		dat += "<tr><th colspan=3>New Boston</th></tr>"
 		for(var/name in nash)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[nash[name]]</td></tr>"
 			even = !even

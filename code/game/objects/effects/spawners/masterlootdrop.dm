@@ -16,7 +16,7 @@
 		/obj/effect/spawner/lootdrop/f13/trash_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_toys = 5,
 		/obj/effect/spawner/lootdrop/f13/trash_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/trash_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/trash_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/trash_money = 10,
@@ -43,7 +43,7 @@
 		/obj/effect/spawner/lootdrop/f13/common_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/common_toys = 4,
 		/obj/effect/spawner/lootdrop/f13/common_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/common_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/common_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/common_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/common_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/common_money = 10,
@@ -67,7 +67,7 @@
 		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_toys = 3,
 		/obj/effect/spawner/lootdrop/f13/uncommon_mats = 10,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 10,
+//		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_parts = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/uncommon_money = 10,
@@ -125,7 +125,7 @@
 	icon_state = "x7"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_medicine = 20,
-		/obj/effect/spawner/lootdrop/f13/rare_mods = 20,
+//		/obj/effect/spawner/lootdrop/f13/rare_mods = 20,
 		/obj/effect/spawner/lootdrop/f13/rare_drugs = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_mats = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_parts = 10,
@@ -234,6 +234,7 @@
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 6,            //151 10
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
+		/obj/item/gun/ballistic/automatic/smg/american180/dp27 = 1,			//150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
 		/obj/item/gun/ballistic/shotgun/needles = 8,                        //???
 		/obj/item/gun/ballistic/automatic/needlersmg = 9,                    //???
@@ -241,6 +242,8 @@
 		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 10,          //135 32        *
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22 = 4, 		//135 32
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/ppsh = 2,			//135 32
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 10,              //132 30
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 10,              //126 15
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 10,    //121 16
@@ -263,6 +266,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/rare99 = 4,        //119.6 12
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,         //104 12
@@ -318,6 +322,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/sig = 3,                   //180 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 3,      //168 15
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 3,              //150 16
+		/obj/item/gun/ballistic/automatic/pistol/pistol22/val = 1,			//150 16
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 1,     //143 7
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 3,          //138 8
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 1,              //130 7
@@ -455,6 +460,7 @@
 		/obj/item/gun/ballistic/revolver/thatgun = 10,                            //207 5
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,                       //186 97
 		/obj/item/gun/ballistic/automatic/lewis = 10,                             //186 47
+		/obj/item/gun/ballistic/automatic/lewis/dp27 = 10,							//186 47
 	)
 
 ////////////////////////////
@@ -469,11 +475,12 @@
 	name = "common energy"
 	loot = list(
 
-		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25 internal cell
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/carbine = 10,         //100 25 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //90  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
-		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//67  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock = 10, //100 60 internal slow, slower crank
 
 
 		// Better in some way (self charge, plasma, more efficient)
@@ -489,7 +496,7 @@
 	name = "uncommon energy"
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
-		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
+		/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon = 10,          //133 5
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
 		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
 		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
@@ -500,7 +507,7 @@
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
-		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,                   //150 40 internal cell
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
@@ -530,8 +537,8 @@
 	loot = list(                                                    //dps magcap
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80  24 internal cell
-		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy = 10,             //80  24 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 
@@ -1197,7 +1204,6 @@
 		/obj/item/stack/sheet/mineral/silver/twentyfive = 1,
 		/obj/item/stack/sheet/bronze/thirty = 1,
 		/obj/item/stack/rods/scaffold/ten = 1,
-		/obj/item/stack/sheet/lead/ten = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_mats
@@ -1217,10 +1223,10 @@
 		/obj/item/stack/sheet/mineral/diamond/twentyfive = 1,
 	)
 
-////////////////////////////////
-///weapon attachment spawners///
-////////////////////////////////
-
+/////////////////////////////////////////
+///(legacy) weapon attachment spawners///
+/////////////////////////////////////////
+/*
 /obj/effect/spawner/lootdrop/f13/trash_mods
 	name = "trash attachments"
 	loot = list(
@@ -1271,7 +1277,7 @@
 		/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
 		/obj/item/tool_upgrade/augment/ai_tool = 1,
 	)
-
+*/
 ///////////////////////////
 ///machine part spawners///
 ///////////////////////////
@@ -1843,4 +1849,300 @@
 		/obj/item/clothing/shoes/kindleKicks = 1,
 		/obj/item/clothing/gloves/tackler/offbrand = 1,
 		/obj/item/stack/sticky_tape = 1,
+	)
+
+/////////////////////
+///clothes spawner/// Totally not vending machine item lists smashed together
+/////////////////////
+
+/obj/effect/spawner/lootdrop/f13/clothes
+	name = "clothes"
+	loot = list(
+		/obj/effect/spawner/lootdrop/gloves = 8,
+		/obj/item/clothing/head/that = 4,
+		/obj/item/clothing/head/fedora = 3,
+		/obj/item/clothing/head/beret = 3,
+		/obj/item/clothing/head/beret/black = 3,
+		/obj/item/clothing/head/beret/purple = 3,
+		/obj/item/clothing/head/beret/blue = 3,
+		/obj/item/clothing/glasses/monocle = 3,
+		/obj/item/clothing/suit/jacket = 4,
+		/obj/item/clothing/suit/jacket/flannel = 4,
+		/obj/item/clothing/suit/jacket/flannel/red = 4,
+		/obj/item/clothing/suit/jacket/flannel/aqua = 4,
+		/obj/item/clothing/suit/jacket/flannel/brown = 4,
+		/obj/item/clothing/suit/jacket/puffer/vest = 4,
+		/obj/item/clothing/suit/jacket/puffer = 4,
+		/obj/item/clothing/suit/armor/outfit/overalls/sexymaid = 5,
+		/obj/item/clothing/suit/hooded/cloak/david = 4,
+		/obj/item/clothing/suit/bomber = 5,
+		/obj/item/clothing/under/suit/turtle/teal = 3,
+		/obj/item/clothing/under/suit/turtle/grey = 3,
+		/obj/item/clothing/under/rank/civilian/util = 5,
+		/obj/item/clothing/under/rank/civilian/util/greyshirt = 5,
+		/obj/item/clothing/under/suit/navy = 3,
+		/obj/item/clothing/under/suit/black_really = 3,
+		/obj/item/clothing/under/suit/burgundy = 3,
+		/obj/item/clothing/under/suit/charcoal = 3,
+		/obj/item/clothing/under/suit/white = 3,
+		/obj/item/clothing/under/costume/kilt = 3,
+		/obj/item/clothing/under/misc/overalls = 3,
+		/obj/item/clothing/under/suit/sl = 3,
+		/obj/item/clothing/under/sweater = 3,
+		/obj/item/clothing/under/sweater/black = 3,
+		/obj/item/clothing/under/sweater/purple = 3,
+		/obj/item/clothing/under/sweater/green = 3,
+		/obj/item/clothing/under/sweater/red = 3,
+		/obj/item/clothing/under/sweater/blue = 3,
+		/obj/item/clothing/under/pants/jeans = 5,
+		/obj/item/clothing/under/pants/classicjeans = 5,
+		/obj/item/clothing/under/pants/camo = 3,
+		/obj/item/clothing/under/pants/blackjeans = 5,
+		/obj/item/clothing/under/pants/khaki = 5,
+		/obj/item/clothing/under/pants/white = 5,
+		/obj/item/clothing/under/pants/red = 3,
+		/obj/item/clothing/under/pants/black = 4,
+		/obj/item/clothing/under/pants/tan = 4,
+		/obj/item/clothing/under/pants/track = 3,
+		/obj/item/clothing/under/shorts/jeanbshorts = 3,
+		/obj/item/clothing/under/shorts/darkbshorts = 3,
+		/obj/item/clothing/under/shorts/blackbshorts = 3,
+		/obj/item/clothing/under/shorts/brownbshorts = 3,
+		/obj/item/clothing/suit/jacket/miljacket = 5,
+		/obj/item/clothing/under/suit/white_on_white/skirt = 2,
+		/obj/item/clothing/under/rank/captain/suit/skirt = 2,
+		/obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt = 2,
+		/obj/item/clothing/neck/tie/blue = 3,
+		/obj/item/clothing/neck/tie/red = 3,
+		/obj/item/clothing/neck/tie/black = 3,
+		/obj/item/clothing/neck/tie/horrible = 5,
+		/obj/item/clothing/neck/scarf/pink = 3,
+		/obj/item/clothing/neck/scarf/red = 3,
+		/obj/item/clothing/neck/scarf/green = 3,
+		/obj/item/clothing/neck/scarf/darkblue = 3,
+		/obj/item/clothing/neck/scarf/purple = 3,
+		/obj/item/clothing/neck/scarf/yellow = 3,
+		/obj/item/clothing/neck/scarf/orange = 3,
+		/obj/item/clothing/neck/scarf/cyan = 3,
+		/obj/item/clothing/neck/scarf = 3,
+		/obj/item/clothing/neck/scarf/black = 3,
+		/obj/item/clothing/neck/scarf/zebra = 3,
+		/obj/item/clothing/neck/scarf/christmas = 3,
+		/obj/item/clothing/neck/stripedredscarf = 3,
+		/obj/item/clothing/neck/stripedbluescarf = 3,
+		/obj/item/clothing/neck/stripedgreenscarf = 3,
+		/obj/item/clothing/accessory/waistcoat = 2,
+		/obj/item/clothing/under/dress/skirt = 3,
+		/obj/item/clothing/under/dress/skirt/blue = 3,
+		/obj/item/clothing/under/dress/skirt/red = 3,
+		/obj/item/clothing/under/dress/skirt/purple = 3,
+		/obj/item/clothing/under/dress/sundress = 4,
+		/obj/item/clothing/under/dress/sundress/white = 4,
+		/obj/item/clothing/under/dress/striped = 3,
+		/obj/item/clothing/under/dress/sailor = 3,
+		/obj/item/clothing/under/dress/skirt/swept = 3,
+		/obj/item/clothing/under/dress/green = 3,
+		/obj/item/clothing/under/dress/pink = 3,
+		/obj/item/clothing/under/dress/redeveninggown = 3,
+		/obj/item/clothing/under/dress/blacktango = 3,
+		/obj/item/clothing/under/dress/westernbustle = 3,
+		/obj/item/clothing/under/dress/flamenco = 3,
+		/obj/item/clothing/under/dress/flower = 3,
+		/obj/item/clothing/under/dress/skirt/plaid = 3,
+		/obj/item/clothing/under/dress/skirt/plaid/blue = 3,
+		/obj/item/clothing/under/dress/skirt/plaid/purple = 3,
+		/obj/item/clothing/under/dress/skirt/plaid/green = 3,
+		/obj/item/clothing/under/croptop = 3,
+		/obj/item/clothing/glasses/regular = 2,
+		/obj/item/clothing/glasses/regular/jamjar = 2,
+		/obj/item/clothing/head/sombrero = 3,
+		/obj/item/clothing/neck/mantle/poncho = 3,
+		/obj/item/clothing/suit/ianshirt = 3,
+		/obj/item/clothing/shoes/laceup = 5,
+		/obj/item/clothing/shoes/sneakers/black = 6,
+		/obj/item/clothing/shoes/wraps = 3,
+		/obj/item/clothing/shoes/wraps/silver = 3,
+		/obj/item/clothing/shoes/wraps/red = 3,
+		/obj/item/clothing/shoes/wraps/blue = 3,
+		/obj/item/clothing/shoes/sandal = 3,
+		/obj/item/clothing/gloves/fingerless = 3,
+		/obj/item/clothing/glasses/orange = 5,
+		/obj/item/clothing/glasses/red = 5,
+		/obj/item/storage/belt/fannypack = 3,
+		/obj/item/clothing/suit/jacket/letterman = 5,
+		/obj/item/clothing/head/beanie = 3,
+		/obj/item/clothing/head/beanie/black = 3,
+		/obj/item/clothing/head/beanie/red = 3,
+		/obj/item/clothing/head/beanie/green = 3,
+		/obj/item/clothing/head/beanie/darkblue = 3,
+		/obj/item/clothing/head/beanie/purple = 3,
+		/obj/item/clothing/head/beanie/yellow = 3,
+		/obj/item/clothing/head/beanie/orange = 3,
+		/obj/item/clothing/head/beanie/cyan = 3,
+		/obj/item/clothing/head/beanie/christmas = 3,
+		/obj/item/clothing/head/beanie/striped = 3,
+		/obj/item/clothing/head/beanie/stripedred = 3,
+		/obj/item/clothing/head/beanie/stripedblue = 3,
+		/obj/item/clothing/head/beanie/stripedgreen = 3,
+		/obj/item/clothing/suit/jacket/letterman_red = 3,
+		/obj/item/clothing/ears/headphones = 10,
+		/obj/item/clothing/neck/apron/bartender = 4,
+		/obj/item/clothing/under/rank/civilian/bartender/purple = 4,
+		/obj/item/clothing/under/costume/christmas = 3,
+		/obj/item/clothing/under/costume/christmas/green = 3,
+		/obj/item/clothing/under/costume/christmas/croptop = 3,
+		/obj/item/clothing/under/costume/christmas/croptop/green = 3,
+		/obj/item/clothing/suit/hooded/wintercoat/christmascoatr = 3,
+		/obj/item/clothing/suit/hooded/wintercoat/christmascoatg = 3,
+		/obj/item/clothing/suit/hooded/wintercoat/christmascoatrg = 3,
+		/obj/item/clothing/head/christmashat = 3,
+		/obj/item/clothing/head/christmashatg = 3,
+		/obj/item/clothing/shoes/winterboots/christmasbootsr = 3,
+		/obj/item/clothing/shoes/winterboots/christmasbootsg = 3,
+		/obj/item/clothing/shoes/winterboots/santaboots = 3,
+		/obj/item/clothing/head/cowboyhat = 3,
+		/obj/item/clothing/head/cowboyhat/black = 3,
+		/obj/item/clothing/head/cowboyhat/white = 3,
+		/obj/item/clothing/head/cowboyhat/pink = 3,
+		/obj/item/clothing/shoes/cowboyboots = 3,
+		/obj/item/clothing/shoes/cowboyboots/black = 3,
+		/obj/item/clothing/under/costume/qipao = 3,
+		/obj/item/clothing/under/costume/qipao/white = 3,
+		/obj/item/clothing/under/costume/qipao/red = 3,
+		/obj/item/clothing/under/costume/cheongsam = 3,
+		/obj/item/clothing/under/costume/cheongsam/white = 3,
+		/obj/item/clothing/under/costume/cheongsam/red = 3,
+		/obj/item/clothing/suit/chickensuit = 1,
+		/obj/item/clothing/head/chicken = 1,
+		/obj/item/clothing/under/costume/gladiator = 1,
+		/obj/item/clothing/head/helmet/gladiator = 1,
+		/obj/item/clothing/under/rank/captain/suit = 1,
+		/obj/item/clothing/head/flatcap = 1,
+		/obj/item/clothing/suit/toggle/labcoat/mad = 1,
+		/obj/item/clothing/shoes/jackboots = 1,
+		/obj/item/clothing/under/costume/schoolgirl = 1,
+		/obj/item/clothing/under/costume/schoolgirl/red = 1,
+		/obj/item/clothing/under/costume/schoolgirl/green = 1,
+		/obj/item/clothing/under/costume/schoolgirl/orange = 1,
+		/obj/item/clothing/head/simplekitty = 1,
+		/obj/item/clothing/under/dress/skirt = 1,
+		/obj/item/clothing/head/beret = 1,
+		/obj/item/clothing/accessory/waistcoat = 1,
+		/obj/item/clothing/under/suit/black = 1,
+		/obj/item/clothing/head/that = 1,
+		/obj/item/clothing/under/costume/kilt = 1,
+		/obj/item/clothing/head/beret = 1,
+		/obj/item/clothing/accessory/waistcoat = 1,
+		/obj/item/clothing/glasses/monocle =1,
+		/obj/item/clothing/head/bowler = 1,
+		/obj/item/cane = 1,
+		/obj/item/clothing/under/rank/civilian/victorian_redsleeves = 1,
+		/obj/item/clothing/under/rank/civilian/victorian_redvest = 1,
+		/obj/item/clothing/under/rank/civilian/victorian_vest = 1,
+		/obj/item/clothing/under/rank/civilian/victorian_purple = 1,
+		/obj/item/clothing/suit/tailcoat = 1,
+		/obj/item/clothing/under/rank/civilian/victorianreddress = 1,
+		/obj/item/clothing/suit/vickyred = 1,
+		/obj/item/clothing/under/rank/civilian/victorianblackdress = 1,
+		/obj/item/clothing/suit/vickyblack =1,
+		/obj/item/clothing/under/rank/civilian/dutch = 2,
+		/obj/item/clothing/under/suit/sl = 1,
+		/obj/item/clothing/mask/fakemoustache = 1,
+		/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 1,
+		/obj/item/clothing/head/plaguedoctorhat = 1,
+		/obj/item/clothing/mask/gas/plaguedoctor = 1,
+		/obj/item/clothing/suit/toggle/owlwings = 1,
+		/obj/item/clothing/under/costume/owl = 1,
+		/obj/item/clothing/mask/gas/owl_mask = 1,
+		/obj/item/clothing/suit/toggle/owlwings/griffinwings = 1,
+		/obj/item/clothing/under/costume/griffin = 1,
+		/obj/item/clothing/shoes/griffin = 1,
+		/obj/item/clothing/head/griffin = 1,
+		/obj/item/clothing/neck/apron/labor = 1,
+		/obj/item/clothing/under/suit/waiter = 1,
+		/obj/item/clothing/suit/jacket/miljacket = 1,
+		/obj/item/clothing/under/costume/pirate = 1,
+		/obj/item/clothing/suit/pirate = 1,
+		/obj/item/clothing/head/pirate = 1,
+		/obj/item/clothing/head/bandana = 1,
+		/obj/item/clothing/head/bandana = 1,
+		/obj/item/clothing/under/costume/soviet = 1,
+		/obj/item/clothing/head/ushanka = 1,
+		/obj/item/clothing/suit/imperium_monk = 1,
+		/obj/item/clothing/mask/gas/cyborg = 1,
+		/obj/item/clothing/suit/chaplain/holidaypriest = 1,
+		/obj/item/clothing/head/wizard/marisa/fake = 1,
+		/obj/item/clothing/suit/wizrobe/marisa/fake = 1,
+		/obj/item/clothing/under/dress/sundress = 1,
+		/obj/item/clothing/head/witchwig = 1,
+		/obj/item/staff/broom = 1,
+		/obj/item/clothing/suit/wizrobe/fake = 1,
+		/obj/item/clothing/head/wizard/fake = 1,
+		/obj/item/staff = 3,
+		/obj/item/clothing/under/rank/captain/suit/skirt = 1,
+		/obj/item/clothing/mask/rat/bat = 1,
+		/obj/item/clothing/mask/rat/bee = 1,
+		/obj/item/clothing/mask/rat/bear = 1,
+		/obj/item/clothing/mask/rat/raven = 1,
+		/obj/item/clothing/mask/rat/jackal = 1,
+		/obj/item/clothing/mask/rat/fox = 1,
+		/obj/item/clothing/mask/frog = 1,
+		/obj/item/clothing/mask/rat/tribal = 1,
+		/obj/item/clothing/mask/rat = 1,
+		/obj/item/clothing/suit/armor/outfit/overalls/farmer = 1,
+		/obj/item/clothing/head/rabbitears =1,
+		/obj/item/clothing/head/sombrero = 1,
+		/obj/item/clothing/head/sombrero/green = 1,
+		/obj/item/clothing/neck/mantle/poncho = 1,
+		/obj/item/clothing/suit/armor/outfit/overalls/sexymaid = 5,
+		/obj/item/clothing/head/maid = 3,
+		/obj/item/clothing/under/costume/maid = 3,
+		/obj/item/clothing/under/janimaid = 3,
+		/obj/item/clothing/under/rank/civilian/janitor/maid = 3,
+		/obj/item/clothing/gloves/evening = 1,
+		/obj/item/clothing/glasses/cold=1,
+		/obj/item/clothing/glasses/heat=1,
+		/obj/item/clothing/suit/whitedress = 1,
+		/obj/item/clothing/under/costume/villain = 1,
+		/obj/item/clothing/shoes/singery = 1,
+		/obj/item/clothing/under/costume/singer/yellow = 1,
+		/obj/item/clothing/shoes/singerb = 1,
+		/obj/item/clothing/under/costume/singer/blue = 1,
+		/obj/item/clothing/suit/hooded/carp_costume = 1,
+		/obj/item/clothing/suit/snowman = 1,
+		/obj/item/clothing/head/snowman = 1,
+		/obj/item/clothing/mask/joy = 1,
+		/obj/item/clothing/head/cueball = 1,
+		/obj/item/clothing/under/suit/white_on_white = 1,
+		/obj/item/clothing/under/costume/sailor = 1,
+		/obj/item/clothing/ears/headphones = 2,
+		/obj/item/clothing/head/wig/random = 3,
+		/obj/item/clothing/suit/ran = 2,
+		/obj/item/clothing/head/ran = 2,
+		/obj/item/clothing/suit/pirate/captain = 2,
+		/obj/item/clothing/head/pirate/captain = 2,
+		/obj/item/clothing/under/costume/lobster = 1,
+		/obj/item/clothing/head/lobsterhat = 1,
+		/obj/item/clothing/head/drfreezehat = 1,
+		/obj/item/clothing/suit/dracula = 1,
+		/obj/item/clothing/suit/drfreeze_coat = 1,
+		/obj/item/clothing/suit/gothcoat = 2,
+		/obj/item/clothing/under/costume/draculass = 1,
+		/obj/item/clothing/under/costume/drfreeze = 1,
+		)
+
+/obj/effect/spawner/lootdrop/f13/electrical
+	name = "electrical appliance loot"
+	loot = list(
+	/obj/item/stack/cable_coil/random/five = 5,
+	/obj/item/radio/off = 5,
+	/obj/item/assembly/infra = 3,
+	/obj/item/assembly/igniter = 3,
+	/obj/item/assembly/signaler = 3,
+	/obj/item/stack/sheet/metal/five = 5,
+	/obj/item/stack/sheet/glass/five = 5,
+	/obj/item/stack/rods/ten = 5,
+	/obj/item/stack/crafting/metalparts = 2,
+	/obj/item/stack/crafting/goodparts = 2,
+	/obj/item/stack/crafting/electronicparts/five = 10,
 	)

@@ -173,7 +173,7 @@ Raider
 		///obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
 		/obj/item/ammo_box/c45rev = 2,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 1,
 		/obj/item/grenade/smokebomb = 2,
 		)
@@ -485,7 +485,7 @@ Raider
 		///obj/item/gun/ballistic/rifle/hunting/remington = 1,
 		///obj/item/ammo_box/a308 = 1,
 		///obj/item/ammo_box/a308box = 1,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+//		/obj/item/gun_upgrade/scope/watchman = 1,
 	//	/obj/item/gun/ballistic/revolver/revolver44=2,
 		/obj/item/storage/belt/shoulderholster=1,
 	//	/obj/item/ammo_box/m44=4,
@@ -617,20 +617,15 @@ Raider
 		/obj/item/storage/fancy/rollingpapers = 1,
 		)
 
-/datum/job/wasteland/f13raider/resident
-	title = "Tunnel Rats Churl"
-	flag = F13RAIDER
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = FACTION_WASTELAND
-	social_faction = FACTION_RAIDERS
+/datum/job/wasteland/f13raider/adventurer
+	title = "Adventurer"
+	flag = DEP_OASIS
+	faction = FACTION_OASIS
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a resident of the leftover sewer system facility under the now atomicaly flattened city of Nash. Lifes rough on the edges."
-	supervisors = "Maybe a strongarm, maybe not.  Your call."
 	selection_color = "#df80af"
 	exp_requirements = 0
-	exp_type = EXP_TYPE_WASTELAND
+
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
@@ -654,7 +649,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13raider/resident
 	name = "Tunnel Rats Resident"
-	jobtype = /datum/job/wasteland/f13raider/resident
+	jobtype = /datum/job/wasteland/f13raider/adventurer
 
 	id = null
 	ears = null
@@ -1299,7 +1294,7 @@ Raider
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP
-	faction = FACTION_WASTELAND
+	faction = FACTION_OASIS
 	total_positions = 2
 	spawn_positions = 2
 	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
@@ -2618,7 +2613,7 @@ Raider
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/storage/firstaid/ancient = 2,
+		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/cool_book/teacherguidebook = 1
 		)

@@ -5263,7 +5263,7 @@
 
 // Magic armors - bizarre stats, don't fit into normal categories? Probably will need tweaking down the line.
 
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+/obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor
 	name = "talisman of protection"
 	desc = "A talisman made of magically charged titanium and set with a gleaming fragment of gold. This will protect the wearer from all attacks equally, but the enchantment prevents the wearing of proper armor."
 	w_class = WEIGHT_CLASS_TINY
@@ -5274,7 +5274,7 @@
 	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10, "damage_threshold" = 10)
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+/obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor/hazard
 	name = "talisman of cleansing"
 	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
 	icon_state = "hazardamulet"

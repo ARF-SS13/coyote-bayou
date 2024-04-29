@@ -34,6 +34,11 @@
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
 
+/datum/gear/shoes/chameleon
+	name = "chameleon shoes"
+	path = /obj/item/clothing/shoes/chameleon
+	cost = 0
+
 /datum/gear/shoes/blackshoes
 	name = "black shoes"
 	path = /obj/item/clothing/shoes/sneakers/black

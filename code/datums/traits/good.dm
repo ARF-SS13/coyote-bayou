@@ -67,15 +67,6 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/chainsaw,
 	/datum/crafting_recipe/steeltower,
 	/datum/crafting_recipe/durathread_vest,
-	/datum/crafting_recipe/scope,
-	/datum/crafting_recipe/suppressor,
-	/datum/crafting_recipe/ergonomic_grip,
-	/datum/crafting_recipe/metal_guard,
-	/datum/crafting_recipe/forged_barrel,
-	/datum/crafting_recipe/booster,
-	/datum/crafting_recipe/heatsink,
-	/datum/crafting_recipe/laserguide,
-	/datum/crafting_recipe/gigalens,
 	/datum/crafting_recipe/ecpbad,
 	/datum/crafting_recipe/mfcbad,
 	/datum/crafting_recipe/ecbad,
@@ -138,6 +129,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	/datum/crafting_recipe/steelbib/heavy,
 	/datum/crafting_recipe/armyhelmetheavy,
 	/datum/crafting_recipe/huntingshotgun))
+
+GLOBAL_LIST_INIT(security_expert, list(
+	/datum/crafting_recipe/lockpick_basic,
+	/datum/crafting_recipe/lockpick_improved))
 
 
 //predominantly positive traits
@@ -504,6 +499,27 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	else
 		H.update_icons()
 
+/datum/quirk/magehand
+	name = "Mage hand"
+	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
+	value = 32
+	category = "Magic Quirks"
+	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
+	conflicts = list(
+
+	)
+	human_only = FALSE
+
+/datum/quirk/magehand/on_spawn()
+	var/mob/living/H = quirk_holder
+	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+	if(ishuman(quirk_holder))
+		H.regenerate_icons()
+	else
+		H.update_icons()
+
 /* //placeholder test concluded
 /datum/quirk/wizard
 	name = "Wasteland Wizard"
@@ -628,6 +644,18 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 		H.mind.learned_recipes -= GLOB.pa_repair
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
+
+/datum/quirk/crafty
+	name = "Crafty"
+	desc = "You are able to craft without the necessities provided by a traditional workbench."
+	value = 25
+	category = "Lifepath Quirks"
+	mechanics = "You do not need a workbench or alchemy table when crafting."
+	human_only = FALSE
+/datum/quirk/crafty/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
@@ -1660,7 +1688,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You're a better than average shot."
 	value = 44
 	category = "Ranged Quirks"
-	mechanics = "Your accuracy degrades much slower from movement, firing, or anything else."
+	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/deadeye,
@@ -1882,6 +1910,28 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
 
+/datum/quirk/beesfriend
+	name = "Beast Friend - Radbees"
+	desc = "Rad-bees are not going to attack upon seeing you. Good for wasteland apiarists!"
+	value = 14
+	category = "Critter Quirks"
+	mechanics = "Radbees share their faction with you, meaning they won't do anything about you or care at all that you exist."
+	mob_trait = TRAIT_BEASTFRIEND_BEE
+	gain_text = span_notice("(Rad)Bee not afraid!")
+	lose_text = span_danger("(Rad)BEE AFRAID!!")
+	medical_record_text = "Patient talks about bees a lot. Radiated ones, specifically."
+	locked = FALSE
+	human_only = FALSE
+
+/datum/quirk/beesfriend/add()
+	var/mob/living/H = quirk_holder
+	H.faction |= list("bees-friend")
+
+/datum/quirk/beesfriend/remove()
+	var/mob/living/H = quirk_holder
+	if(H)
+		H.faction -= list("bees-friend")
+
 /datum/quirk/wildshape
 	name = "Wild Shape"
 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
@@ -1986,7 +2036,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 32
+	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
 	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat bludgeon."
 	conflicts = list()
@@ -1994,6 +2044,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel as your arm is wriggling...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a club, somehow."
+
+/datum/quirk/magegrab
+	name = "Mage Grab" // Better name pending
+	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
+	value = 28
+	category = "Magic Quirks"
+	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
+	conflicts = list()
+	mob_trait = TRAIT_MAGEGRAB
 
 /datum/quirk/bigbiter
 	name = "Biter - Big"
@@ -2381,6 +2440,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
 	conflicts = list(
 		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/flimsy,
 		/datum/quirk/veryflimsy
@@ -2509,7 +2569,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
 	conflicts = list(
 		/datum/quirk/masterrifleman,
-		/datum/quirk/straightshooter
+		/datum/quirk/straightshooter,
+		/datum/quirk/deadeye
 		)
 	gain_text = span_notice("Aim just behind behind the front leg...")
 	lose_text = span_notice(".223 is probably overkill for deer...")
@@ -2700,6 +2761,48 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
 		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
 
+/datum/quirk/package/tinkerer
+	name = "Tinker-er"
+	desc = "You are able to craft without a traditional workbench, as well as craft more and gain more from salvage"
+	value = 85
+	category = "Quirk Packages"
+	mechanics = "You don't need a workbench or alchemy table when crafting, get more recipes, and gain 1-3 more from salvaging"
+	human_only = FALSE
+	conflicts = list(
+		/datum/quirk/tribal,
+		/datum/quirk/dumb,
+		/datum/quirk/luddite,
+		/datum/quirk/primitive,
+		/datum/quirk/technophreak,
+		/datum/quirk/crafty
+		)
+	mob_trait = TRAIT_TECHNOPHREAK
+
+/datum/quirk/package/tinkerer/on_spawn()
+	var/mob/living/H = quirk_holder
+	new /obj/machinery/workbench(H)
+	new /obj/machinery/chem_master/primitive(H)
+
+/datum/quirk/package/tinkerer/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.tier_three_parts
+	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
+
+/datum/quirk/package/tinkerer/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.tier_three_parts
+		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
+
 /datum/quirk/package/generalmedicalpractitioner
 	name = "General Medical Practitioner"
 	desc = "You were a General Practiotioner at some point in your life, you probably had an office and a license to practice medicine, or... maybe this is what you kept saying to your patients..."
@@ -2821,3 +2924,22 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+
+/datum/quirk/security_expert
+	name = "Security Expert"
+	desc = "You've got a knack for getting into places you shouldn't be."
+	mob_trait = TRAIT_SECURITYEXPERT
+	value = 20
+	category = "Lifepath Quirks"
+	mechanics = "You can craft and use lockpicking sets to open doors and lockboxes."
+	conflicts = list()
+
+/datum/quirk/security_expert/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes += GLOB.security_expert
+
+/datum/quirk/security_expert/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.security_expert

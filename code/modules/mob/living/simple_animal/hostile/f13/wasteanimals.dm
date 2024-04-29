@@ -101,6 +101,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
@@ -122,14 +125,27 @@
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	..()
 	summon_backup(15)
-	say("𐎧𐎤𐎫𐎯!!") // https://lingojam.com/Eng-Cuneiform  In this case they're just calling for help.
+	
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
+	del_on_death = TRUE
+	var/die_at_this_time = 0
+	var/lifetime = 1 MINUTES
 
+/mob/living/simple_animal/hostile/gecko/summon/Initialize()
+	die_at_this_time = world.time + lifetime
+	. = ..()
+
+/mob/living/simple_animal/hostile/gecko/summon/BiologicalLife(seconds, times_fired)
+	. = ..()
+	if(world.time >= die_at_this_time)
+		if(prob(5))
+			explosion(get_turf(src), -1, -1, 2, 0, FALSE, FALSE, 2, FALSE, TRUE) // why do we explode dood
+		dust()
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	melee_damage_lower *= 0.5
@@ -847,7 +863,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 
-	faction = list("hostile", "gecko", "rat-friend")
+	faction = list("rat", "rat-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -861,6 +877,7 @@
 	waddle_side_time = 2
 	desc_short = "Small, squishy, and numerous."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	randpixel = 8
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
@@ -873,6 +890,10 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
 
+/mob/living/simple_animal/hostile/molerat/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
@@ -883,6 +904,104 @@
 	.=..()
 	resize = 0.8
 	update_transform()
+
+
+/mob/living/simple_animal/hostile/molerat/micro
+	name = "Swarmling"
+	maxHealth = 10
+	density = FALSE
+	randpixel = 16
+	health = 15
+	melee_damage_lower = 2
+	melee_damage_upper = 6
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(10, 13, 15),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/molerat/micro/Initialize()
+	.=..()
+	resize = 0.75
+	update_transform()
+
+/mob/living/simple_animal/hostile/molerat/leader
+	name = "Giant Rat Broodmother"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	retreat_distance = 9
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 9
+	ranged = TRUE
+	variation_list = list(
+		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(70, 75, 80),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/molerat/leader/Initialize()
+	.=..()
+	resize = 2.0
+	pixel_y = 10
+	pixel_x = 12
+	update_transform()
+
+
+
+/mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+
+/obj/item/projectile/giantratsummon
+	name = "giant rat summoning"
+	icon_state = "spark"
+	range = 10
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage = 0
+	stamina = 20
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	
+	pixels_per_second = BULLET_SPEED_BASE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+	..()
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/molerat/micro/summon, target, 10, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	//		break
+	return BULLET_ACT_HIT
+
+/mob/living/simple_animal/hostile/molerat/micro/summon //untameable
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	del_on_death = TRUE
+
+
+
+
+//GELCUBE
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"
@@ -919,7 +1038,7 @@
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
-	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	faction = list("slime") //at last, I am at peace ~TK
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 
@@ -936,7 +1055,7 @@
 /mob/living/simple_animal/hostile/gelcube/Initialize()
 	. = ..()
 	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool
 
 
 ////////////
@@ -1010,15 +1129,7 @@
 		'sound/creatures/terrorbird/hoot3.ogg',
 		'sound/creatures/terrorbird/hoot4.ogg',
 		)
-	emote_taunt_sound = list(
-		'sound/creatures/terrorbird/growl1.ogg',
-		'sound/creatures/terrorbird/growl2.ogg',
-		'sound/creatures/terrorbird/growl3.ogg',
-		)
-	death_sound = list(
-		'sound/creatures/terrorbird/groan1.ogg',
-		'sound/creatures/terrorbird/groan2.ogg',
-	)
+
 	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
 	desc_short = "What a terrifying bird."
 
