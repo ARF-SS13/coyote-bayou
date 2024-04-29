@@ -126,6 +126,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		flavor_text = C.prefs.features["flavor_text"]
 
 		fricklist = C.prefs.features["flist"] || FALSE
+		var/thepic = C.prefs.profilePicture ? PfpHostLink(C.prefs.profilePicture, C.prefs.pfphost) : ""
 
 		directory_mobs.Add(list(list(
 			"name" = name,
@@ -142,7 +143,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"quid" = C.prefs.quester_uid, // love is a quest, and I'm on a quest for love
 			"dms_r_open" = TRUE,
 			"looking_for_friends" = C.prefs.needs_a_friend,
-			"profile_pic" = PfpHostLink(C.prefs.profilePicture, C.prefs.pfphost)
+			"profile_pic" = thepic,
 		)))
 
 	if(SSchat.debug_character_directory)

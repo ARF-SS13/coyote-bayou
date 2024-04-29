@@ -131,6 +131,7 @@
 	var/damage_mult = 1
 	/// dont touch this
 	var/finalmost_damage = 0
+	var/not_harmful = FALSE
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -595,6 +596,8 @@
 	return hit_something
 
 /obj/item/projectile/proc/faction_check(atom/target)
+	if(not_harmful)
+		return FALSE // its something that shouldnt be harmful
 	if(!isliving(target) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
