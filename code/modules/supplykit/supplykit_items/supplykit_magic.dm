@@ -37,6 +37,7 @@
 	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
 	cost = 40
 
+
 /datum/supplykit_item/magic/magma
 	name = "Lesser Magma Staff"
 	desc = "A short range flamethrower for magicians"
@@ -91,4 +92,9 @@
 	item = /obj/item/book/granter/martial/carp
 	cost = 40
 
-
+/datum/supplykit_item/magic/peaceflower
+	name = "Peace Flower"
+	desc = "A flower that makes you a pacifist, but provides a light source, and free healing. <b>Cannot be removed!</b>"
+	item = /obj/item/clothing/head/peaceflower
+	cost = 0
+	limited_stock = 1

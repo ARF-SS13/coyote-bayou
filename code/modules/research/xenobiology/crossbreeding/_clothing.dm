@@ -109,32 +109,72 @@ Slimecrossing Armor
 	throwforce = 0
 	light_on = TRUE
 	light_color = "#BC8F8F"
-	light_range = 3.5
-	light_power = 0.7
+	light_range = 4
+	light_power = 1
+	var/slurpinlumens = FALSE
+	light_system = MOVABLE_LIGHT
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
 
-/obj/item/clothing/head/peaceflower/equipped(mob/living/carbon/human/user, slot)
+
+/obj/item/clothing/head/peaceflower/equipped(mob/living/carbon/human/user, slot, mob/living/carbon/C)
 	. = ..()
 	if(slot == SLOT_HEAD)
 		ADD_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
 
-/obj/item/clothing/head/peaceflower/dropped(mob/living/carbon/human/user)
+/obj/item/clothing/head/peaceflower/dropped(mob/living/carbon/human/user, mob/living/carbon/C)
 	..()
 	REMOVE_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
 
+
 /obj/item/clothing/head/peaceflower/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+
+	if(slurpinlumens)
+		to_chat(user, span_notice("You are already eating light, be patient."))
+		return
+
+	slurpinlumens = TRUE
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, span_warning("You feel at peace. <b style='color:pink'>Why would you want anything else?</b>"))
-			return
+			if(do_after(user, 5 SECONDS, target = C, allow_movement = TRUE))
+				C.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10)
+				C.adjustBruteLoss(-10, include_roboparts = TRUE) //HEALS
+				C.adjustOxyLoss(-10)
+				C.adjustFireLoss(-10, include_roboparts = TRUE) // Effective on robots and people with prosthetics now
+				C.adjustToxLoss(-10, TRUE, FALSE) //heals TOXINLOVERs (It should actually do that now)
+				C.adjustStaminaLoss(-30)
+				to_chat(user, span_warning("<b style='color:pink'>You feel at peace.</b>"))
+				slurpinlumens = FALSE
+		slurpinlumens = FALSE
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		slurpinlumens = FALSE
+
 	return ..()
 
 /obj/item/clothing/head/peaceflower/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, src)
+
+/obj/item/clothing/head/peaceflower/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Light On" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_lit"),
+			"Light Off" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_unlit")
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Light Off")
+			set_light_on(FALSE)
+			/*user.AddRemove(/datum/element/photosynthesis, light_bruteheal = -1, light_burnheal = -1, light_toxheal = -1, light_oxyheal = -1, light_nutrition_gain_factor = 4)*/
+			balloon_alert(user, "The flower closes.")
+		if("Light On") // The photosynth thing works, but literally only once. I don't know how to make it work constantly.
+			/*user.AddElement(/datum/element/photosynthesis, light_bruteheal = -1, light_burnheal = -1, light_toxheal = -1, light_oxyheal = -1, light_nutrition_gain_factor = 4)*/
+			set_light_on(TRUE)
+			balloon_alert(user, "The flower blooms")
+		else
+			return
 
 /obj/item/clothing/suit/armor/heavy/adamantine
 	name = "adamantine armor"
