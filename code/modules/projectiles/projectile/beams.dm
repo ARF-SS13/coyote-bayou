@@ -733,6 +733,17 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	sharpness = SHARP_POINTY
 
+//Covie Carbine "bullet"
+/obj/item/projectile/beam/laser/mpc/covcarb
+	name = "crystal"
+	icon_state = "plasma1"
+	damage = 30
+	damage_list = list("20" = 8, "25" = 8, "30" = 55, "35" = 10, "40" = 19)
+	stamina = BULLET_STAMINA_PISTOL_10MM
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_10MM
+	light_color = LIGHT_COLOR_GREEN
+
 /obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
 	icon_state = "ion"
@@ -839,7 +850,7 @@
 	hitscan = TRUE
 
 /obj/item/projectile/beam/laser/beam //Covenant version of a watzz2k hitscan proj. Hits like a semi-truck
-	name = " sniper laser bolt"
+	name = "sniper laser bolt"
 	damage = 80
 	damage_list = list( "70" = 25, "80" = 40, "85" = 25)
 	wound_bonus = 10

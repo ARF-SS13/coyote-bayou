@@ -493,7 +493,8 @@
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
 	desc = " An upgraded version of the Compact RCW. Boasts a higher cell efficiency at the cost of the burstfire and armor melting power."
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
+	icon_state = "autoshock"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock)
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
@@ -1099,7 +1100,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	can_flashlight = 0
 	can_scope = FALSE
-	init_recoil = LASER_HANDGUN_RECOIL(1, 1) Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg 
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1) Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg
 */
 /* * * * * *
  * TG Rifle
@@ -1121,7 +1122,7 @@
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/two,
-		/datum/firemode/semi_auto/fast 
+		/datum/firemode/semi_auto/fast
 	)
 Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 /* * * * * *
@@ -1258,7 +1259,7 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
-	max_upgrades = 5 
+	max_upgrades = 5
 	can_flashlight = 1
 	flight_x_offset = 20
 	flight_y_offset = 10
@@ -1450,6 +1451,27 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn)
 	selfchargerate = 3 SECONDS
 	damage_multiplier = GUN_LESS_DAMAGE_T1
+
+//Lore accurate(ish) covie carbine
+/obj/item/gun/energy/laser/covcarbine
+	name = "Type-51 Carbine"
+	desc = "The T-51 Carbine is a recoil-operated, semi-automatic, charger-fed marksman rifle capable of firing ballistic rounds at a significant range. It is somewhat unique among Covenant weapons in that it is not dependent on superheated plasma or other energy-based material, but rather fires radioactively charged ballistic projectiles."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "covcarb"
+	item_state = "covrifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/covcarbine)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = CARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
