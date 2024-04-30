@@ -187,6 +187,9 @@
 	var/obj/item/lootitem = loot
 	/// check the player for a salvage bag
 	var/list/atomstocheck = user.contents | user.loc.contents
+	if(istype(user.pulling))
+		atomstocheck |= user.pulling.contents
+		atomstocheck |= user.pulling.loc.contents
 	for(var/obj/item/wornhold in atomstocheck)
 		for(var/coolpath in valid_containers)
 			if(istype(wornhold, coolpath))
