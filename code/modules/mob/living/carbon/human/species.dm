@@ -685,18 +685,20 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/mutable_appearance/sf = mutable_appearance ('icons/mob/slimes.dmi', slime_mood, BODYPARTS_LAYER) //Slime face
 			standing += sf
 
+	var/list/standing_undereyes = list()
+	var/list/standing_overeyes = list()
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)) && !H.IsFeral())
 		// lipstick
 		if(H.lip_style && (LIPS in species_traits))
-			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -BODY_LAYER)
+			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -UNDERWEAR_OVERSUIT_LAYER)
 			lip_overlay.color = H.lip_color
 
 			if(OFFSET_LIPS in H.dna.species.offset_features)
 				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_LIPS][1]
 				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_LIPS][2]
 
-			standing += lip_overlay
+			standing_overeyes += lip_overlay
 
 		// eyes
 		if(!(NOEYES in species_traits))
@@ -722,8 +724,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					left_eye.pixel_y += offset_features[OFFSET_EYES][2]
 					right_eye.pixel_x += offset_features[OFFSET_EYES][1]
 					right_eye.pixel_y += offset_features[OFFSET_EYES][2]
-				standing += left_eye
-				standing += right_eye
+				if(H.eye_over_hair)
+					standing_overeyes += left_eye
+					standing_overeyes += right_eye
+				else
+					standing_undereyes += left_eye
+					standing_undereyes += right_eye
 
 	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
@@ -846,13 +852,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
 
-	if(standing.len) // MAYBE - WIZARD
-		H.overlays_standing[BODY_LAYER] = standing
+	// if(standing.len) // MAYBE - WIZARD
+	H.overlays_standing[BODY_LAYER] = standing_undereyes | standing
 
 	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies
 	H.overlays_standing[UNDERWEAR_OVERHANDS_LAYER] = standing_overdies
 	H.overlays_standing[UNDERWEAR_OVERCLOTHES_LAYER] = standing_veryoverdies
-	H.overlays_standing[UNDERWEAR_OVERSUIT_LAYER] = standing_evenmoreveryoverdies
+	H.overlays_standing[UNDERWEAR_OVERSUIT_LAYER] = standing_overeyes | standing_evenmoreveryoverdies
 
 	H.apply_overlay(UNDERWEAR_LAYER)
 	H.apply_overlay(UNDERWEAR_OVERHANDS_LAYER)
