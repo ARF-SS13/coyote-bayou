@@ -13,7 +13,7 @@
 	bound_width = 64
 	max_stuff = 8
 	base_stuff = 4
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/car/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -33,7 +33,7 @@
 	icon = 'icons/obj/vehicles/bus1.dmi'
 	max_stuff = 12
 	base_stuff = 6
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /*
 /obj/structure/wreck/bus/welder_act(mob/living/user, obj/item/I)
@@ -287,7 +287,7 @@
 	bound_height = 32
 	max_stuff = 3
 	base_stuff = 2
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/two_tire
 	name = "tires"
@@ -298,7 +298,7 @@
 	bound_height = 32
 	max_stuff = 2
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/one_tire
 	name = "tire"
@@ -309,7 +309,7 @@
 	bound_height = 32
 	max_stuff = 2
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/halftire
 	name = "buried tire"
@@ -330,7 +330,7 @@
 	bound_height = 32
 	max_stuff = 3
 	base_stuff = 2
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/three_barrels
 	name = "barrels"
@@ -341,7 +341,7 @@
 	bound_height = 32
 	max_stuff = 3
 	base_stuff = 2
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/two_barrels
 	name = "barrels"
@@ -352,7 +352,7 @@
 	bound_height = 32
 	max_stuff = 2
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/one_barrel
 	name = "barrel"
@@ -363,7 +363,7 @@
 	bound_height = 32
 	max_stuff = 2
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/engine
 	name = "engine"
@@ -374,7 +374,7 @@
 	bound_height = 32
 	max_stuff = 3
 	base_stuff = 2
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/autoshaft
 	name = "automobile shaft"
@@ -387,7 +387,7 @@
 	layer = TURF_LAYER
 	max_stuff = 2
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/bus_door
 	name = "bus door"
@@ -400,7 +400,7 @@
 	layer = TURF_LAYER
 	max_stuff = 1
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/secway
 	name = "broken secway"
@@ -411,7 +411,7 @@
 	bound_height = 32
 	max_stuff = 3
 	base_stuff = 1
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/brokenvendor
 	name = "broken vendor"
@@ -422,7 +422,7 @@
 	bound_height = 32
 	max_stuff = 6
 	base_stuff = 3
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/machinepile
 	name = "broken machinery"
@@ -433,7 +433,7 @@
 	bound_height = 32
 	max_stuff = 6
 	base_stuff = 3
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/machinepiletwo
 	name = "broken machinery"
@@ -444,4 +444,4 @@
 	bound_height = 32
 	max_stuff = 6
 	base_stuff = 3
-	can_salvage = TRUE
+	salvagecomponent = /datum/component/toolable/salvage/welder

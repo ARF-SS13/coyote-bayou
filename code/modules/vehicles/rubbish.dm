@@ -27,9 +27,9 @@
 	resistance_flags = INDESTRUCTIBLE
 	bound_height = 64
 	bound_width = 64
-	max_stuff = 8
-	base_stuff = 2
-	can_salvage = TRUE
+	// max_stuff = 8
+	// base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/car/rubbish1
 	name = "pre-War rubbish"
