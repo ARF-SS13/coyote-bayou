@@ -483,8 +483,8 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/item/crowbar/basic,
-/obj/item/screwdriver/basic,
+/obj/item/crowbar/crude,
+/obj/item/screwdriver/crude,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -4894,7 +4894,7 @@
 	},
 /area/f13/wasteland)
 "dMo" = (
-/obj/item/wrench/basic,
+/obj/item/wrench/crude,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10499,7 +10499,7 @@
 /turf/closed/wall/f13/sunset/brick_small_light,
 /area/f13/building)
 "icN" = (
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
 	randomizer_kind = "mid level mobs";
@@ -26952,7 +26952,7 @@
 "urk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/screwdriver/basic,
+/obj/item/screwdriver/crude,
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
 	},

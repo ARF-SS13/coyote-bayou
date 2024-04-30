@@ -4951,8 +4951,8 @@
 /area/f13/village)
 "bZk" = (
 /obj/structure/rack,
-/obj/item/crowbar/basic,
-/obj/item/wrench/basic,
+/obj/item/crowbar/crude,
+/obj/item/wrench/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -7088,10 +7088,10 @@
 /area/f13/building)
 "cYR" = (
 /obj/structure/rack,
-/obj/item/weldingtool/basic{
+/obj/item/weldingtool/crude{
 	pixel_x = 2
 	},
-/obj/item/screwdriver/basic,
+/obj/item/screwdriver/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -52872,7 +52872,7 @@
 "wNK" = (
 /obj/structure/rack,
 /obj/item/stack/cable_coil/ten,
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner"
@@ -54354,7 +54354,7 @@
 /turf/open/water,
 /area/f13/caves)
 "xth" = (
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /obj/item/screwdriver/crude,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)

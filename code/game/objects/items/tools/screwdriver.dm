@@ -2,8 +2,8 @@
 	name = "screwdriver"
 	desc = "A long, pointy rod with a handy knob on the base. Used to screw things. This can be used for general robot repairs"
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "screwdriver_map"
-	item_state = "screwdriver"
+	icon_state = "basicscrew"
+	item_state = "basicscrew"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -23,7 +23,7 @@
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
-	reskinnable_component = /datum/component/reskinnable/screwdriver
+	reskinnable_component = null
 	wound_bonus = -10
 	bare_wound_bonus = 5
 
@@ -180,9 +180,10 @@
 	desc = "A piece of junk metal sharpened to a point, worthwile as a shiv or crude turning device."
 	icon_state = "crudescrew"
 	item_state = "crudescrew"
-	toolspeed = 6
+	toolspeed = 4
 	reskinnable_component = null
 
+/*
 /obj/item/screwdriver/basic
 	name = "basic screwdriver"
 	desc = "A refined tip of a jerry-rigged screwdriver, pretty accurate."
@@ -190,12 +191,12 @@
 	item_state = "basicscrew"
 	toolspeed = 2
 	reskinnable_component = null
+*/
 
 /obj/item/screwdriver/hightech
-	name = "advanced drill"
-	desc = "An extremely precise micro-mechanised saturnite drill, capable of infinite force and pressure."
-	icon_state = "advancedscrew"
-	item_state = "advancedscrew"
-	usesound = 'sound/items/pshoom.ogg'
+	name = "prewar screwdriver"
+	desc = "An excellent quality prewar screwdriver, made of sturdy high carbon machined steel."
+	icon_state = "screwdriver_map"
+	item_state = "screwdriver"
 	toolspeed = 0.1
-	reskinnable_component = null
+	reskinnable_component = /datum/component/reskinnable/screwdriver

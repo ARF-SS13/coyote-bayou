@@ -8862,10 +8862,10 @@
 /area/f13/building/sewers)
 "esu" = (
 /obj/structure/table/wood,
-/obj/item/wrench/basic,
-/obj/item/screwdriver/basic,
-/obj/item/crowbar/basic,
-/obj/item/weldingtool/basic,
+/obj/item/wrench/crude,
+/obj/item/screwdriver/crude,
+/obj/item/crowbar/crude,
+/obj/item/weldingtool/crude,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
 "esI" = (
@@ -16255,7 +16255,7 @@
 	},
 /area/f13/building/sewers)
 "jNb" = (
-/obj/item/wrench/basic,
+/obj/item/wrench/crude,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "jNl" = (
@@ -19735,8 +19735,8 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/item/crowbar/basic,
-/obj/item/screwdriver/basic,
+/obj/item/crowbar/crude,
+/obj/item/screwdriver/crude,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -24402,7 +24402,7 @@
 	},
 /area/f13/building/sewers)
 "pyr" = (
-/obj/item/wrench/basic,
+/obj/item/wrench/crude,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,

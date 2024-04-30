@@ -437,7 +437,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-	component_type = /datum/component/storage/concrete/bag/salvage/storage
+	component_type = /datum/component/storage/concrete/bag/salvage
 
 /obj/item/storage/bag/casings
 	name = "casing bag"
