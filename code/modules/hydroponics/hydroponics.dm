@@ -35,7 +35,7 @@
 
 /obj/machinery/hydroponics/Initialize()
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
-	create_reagents(20)
+	create_reagents(100)
 	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 100) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	. = ..()
 	LAZYREMOVE(GLOB.machines, src)
@@ -49,7 +49,7 @@
 	icon_state = "hydrotray3"
 
 /obj/machinery/hydroponics/constructable/RefreshParts()
-	return
+	reagents.maximum_volume = 100
 	/* 
 	var/tmp_capacity = 0
 	for (var/obj/item/stock_parts/matter_bin/M in component_parts)
