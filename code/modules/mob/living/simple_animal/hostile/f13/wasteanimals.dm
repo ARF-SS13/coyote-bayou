@@ -1092,7 +1092,7 @@
 	sharpness = SHARP_NONE
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
-/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/moleratsummon/on_hit(atom/target, blocked = FALSE)
 	..()
 	spawn_and_random_walk(/mob/living/simple_animal/hostile/molerat/micro/summon, target, 10, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
 	//		break
@@ -1104,6 +1104,9 @@
 	butcher_results = list()
 	del_on_death = TRUE
 
+/mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
 
 
 
