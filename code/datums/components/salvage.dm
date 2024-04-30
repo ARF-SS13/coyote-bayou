@@ -87,7 +87,7 @@
 	var/list/valid_containers = list()
 
 	var/list/rarity_table = list(
-		SCRAP_RARITY_UNCOMMON = 30,
+		SCRAP_RARITY_UNCOMMON = 20,
 		SCRAP_RARITY_RARE = 5,
 	)
 	var/list/common_loot_table = list(/obj/item/salvage/low = 1)

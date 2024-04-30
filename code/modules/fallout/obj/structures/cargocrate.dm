@@ -9,8 +9,8 @@
 	resistance_flags = INDESTRUCTIBLE
 	plane = MOB_PLANE
 	bound_width = 64
-	// max_stuff = 20 //chance for the freight container to be nice and full~
-	// base_stuff = 4
+	max_stuff = 20 //chance for the freight container to be nice and full~
+	base_stuff = 4
 	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/cargocrate/Initialize()

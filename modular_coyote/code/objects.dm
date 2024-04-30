@@ -122,8 +122,8 @@
 	name = "Gas Pump"
 	icon_state = "oilpump1X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
-	// max_stuff = 4
-	// base_stuff = 2
+	max_stuff = 4
+	base_stuff = 2
 	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/gas_pump/oilpump1x
