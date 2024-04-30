@@ -637,6 +637,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["age"]					>> age
 	S["hair_color"]				>> hair_color
 	S["facial_hair_color"]		>> facial_hair_color
+	S["eye_over_hair"]			>> eye_over_hair
 	S["eye_type"]				>> eye_type
 	S["left_eye_color"]			>> left_eye_color
 	S["right_eye_color"]		>> right_eye_color
@@ -993,10 +994,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	hair_color			= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color	= sanitize_hexcolor(facial_hair_color, 6, FALSE)
+	eye_over_hair		= sanitize_integer(eye_over_hair, FALSE, TRUE, initial(eye_over_hair))
 	eye_type			= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
 	left_eye_color		= sanitize_hexcolor(left_eye_color, 6, FALSE)
 	right_eye_color		= sanitize_hexcolor(right_eye_color, 6, FALSE)
-	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
+	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags))
 	//whoflags = initial(whoflags) // comment out before release
 
 	var/static/allow_custom_skintones
@@ -1286,6 +1288,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)
 	WRITE_FILE(S["eye_type"]				, eye_type)
+	WRITE_FILE(S["eye_over_hair"]			, eye_over_hair)
 	WRITE_FILE(S["left_eye_color"]			, left_eye_color)
 	WRITE_FILE(S["right_eye_color"]			, right_eye_color)
 	WRITE_FILE(S["use_custom_skin_tone"]	, use_custom_skin_tone)
