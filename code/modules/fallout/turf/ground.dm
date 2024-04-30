@@ -186,6 +186,8 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/oak_five = 5,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/nest/gecko = 5,
+	/obj/structure/nest/radroach = 5
 	))
 
 GLOBAL_LIST_INIT(plant_type_weighted, list(
@@ -422,7 +424,53 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	icon = 'icons/fallout/turfs/asphalt.dmi'
 	footstep = FOOTSTEP_ROAD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
-//	step_sounds = list("human" = "erikafootsteps")
+	greeble = "junklist"
+
+
+GLOBAL_LIST_INIT(dust_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 1,
+	))
+
+GLOBAL_LIST_INIT(trash_spawn_list, list(
+	/obj/effect/spawner/lootdrop/trash = 5,
+	))
+
+GLOBAL_LIST_INIT(salvage_spawn_list, list(
+	/obj/structure/car = 10,
+	/obj/structure/car/rubbish1 = 10,
+	/obj/structure/car/rubbish2 = 10,
+	/obj/structure/car/rubbish3 = 10,
+	/obj/structure/car/rubbish4 = 10,
+	/obj/effect/decal/cleanable/oil/slippery = 10
+	))
+
+GLOBAL_LIST_INIT(nest_spawn_list, list(
+	/obj/structure/nest/gecko = 5,
+	/obj/structure/nest/radroach = 5,
+	/obj/structure/nest/molerat = 5,
+	))
+
+GLOBAL_LIST_INIT(junk_type_weighted, list(
+	"dust" = 91,
+	"trash" = 3,
+	"salvage" = 3,
+	"nest" = 3
+))
+
+/turf/open/indestructible/ground/outside/dirthole
+	name = "Dirt hole"
+	icon_state = "dirthole"
+	desc = "A dirt hole."
+	slowdown = 3
+	flags_1 = ADJACENCIES_OVERLAY
+
+/turf/open/indestructible/ground/outside/river
+	name = "river"
+	icon_state = "riverwateruhh"
+	desc = "A river."
+	slowdown = 5
+	flags_1 = ADJACENCIES_OVERLAY
+
 
 /turf/open/indestructible/ground/outside/road_s
 	name = "\proper road"
@@ -436,6 +484,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	icon = 'icons/fallout/turfs/sidewalk.dmi'
 	footstep = FOOTSTEP_ROAD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	greeble = "junklist"
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalk_s

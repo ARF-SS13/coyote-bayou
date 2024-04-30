@@ -1598,7 +1598,7 @@
 /obj/structure/fluff/blocker,
 /obj/structure/ladder/unbreakable/door_teleport{
 	desc = "The entrance to Red Rocket!";
-	id = "RedRocket";
+	id = "redrocket";
 	name = "Red Rocket";
 	layer = 5.1;
 	opacity = 1;
@@ -13372,6 +13372,10 @@
 "gvH" = (
 /turf/open/floor/carpet/purple,
 /area/f13/building/abandoned)
+"gvN" = (
+/obj/machinery/mineral/equipment_vendor,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
 "gvS" = (
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
@@ -48179,10 +48183,8 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "wTs" = (
 /obj/structure/rack/shelf_wood,
-/obj/item/circuitboard/machine/hydroponics/automagic,
-/obj/item/circuitboard/machine/hydroponics/automagic{
-	pixel_y = -7
-	},
+/obj/item/circuitboard/machine/hydroponics,
+/obj/item/circuitboard/machine/hydroponics,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -100648,7 +100650,7 @@ tot
 tot
 tot
 nyL
-gIL
+gvN
 dAy
 jgL
 jgL

@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
+	var/safe_town
+
 	/// Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
 	var/map_name
 

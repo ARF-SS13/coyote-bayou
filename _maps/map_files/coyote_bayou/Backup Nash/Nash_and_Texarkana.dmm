@@ -91379,6 +91379,12 @@
 /obj/item/clothing/head/cone,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rcG" = (
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city)
 "rcI" = (
 /obj/machinery/workbench,
 /obj/machinery/light,
@@ -97012,7 +97018,7 @@
 	},
 /area/f13/building/abandoned)
 "ssN" = (
-/mob/living/simple_animal/hostile/renegade/soldier,
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
 	},
@@ -147019,7 +147025,7 @@ iGw
 amq
 vVo
 tej
-vnq
+rcG
 sxj
 sxj
 adK

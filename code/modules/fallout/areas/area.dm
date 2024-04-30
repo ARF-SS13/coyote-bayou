@@ -232,6 +232,7 @@
 /area/f13/wasteland/city/newboston
 	name = "New Boston"
 	icon_state = "newboston"
+	safe_town = TRUE
 	ambience_area = list(
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/woodcreak,
