@@ -5715,8 +5715,10 @@
 /turf/open/floor/plasteel/white,
 /area/f13/building)
 "dMO" = (
-/mob/living/simple_animal/hostile/renegade/meister,
-/obj/item/card/highbounty,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "dMU" = (
@@ -6183,6 +6185,10 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"edL" = (
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "edQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7226,6 +7232,11 @@
 	icon_state = "common-broken2"
 	},
 /area/f13/building/abandoned)
+"eNP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "eNW" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -10025,6 +10036,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"gxA" = (
+/mob/living/simple_animal/hostile/renegade/meister{
+	aggro_vision_range = 7
+	},
+/obj/item/card/highbounty,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "gxD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -25273,6 +25291,14 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
+"pNn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "pOd" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -35718,6 +35744,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "wLE" = (
@@ -36018,6 +36045,11 @@
 	icon_state = "bluedirtychess"
 	},
 /area/f13/building/mall)
+"wSY" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/renegade/grunt/emp,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "wTQ" = (
 /obj/structure/simple_door/bunker,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -66415,8 +66447,8 @@ vje
 vje
 nSB
 ueZ
-dMO
-xkN
+nSY
+nSY
 nSY
 eBE
 hzE
@@ -66672,8 +66704,8 @@ vje
 vje
 enE
 dzz
-mtp
-cCN
+nSY
+nSY
 epN
 bjE
 sTt
@@ -66931,7 +66963,7 @@ nSB
 dAp
 kjS
 ncm
-cnH
+pNn
 kyF
 nXG
 sTt
@@ -67187,10 +67219,10 @@ vje
 nSB
 aOf
 nSY
-sTt
+nSY
 wLv
-fnY
-dAp
+gxA
+xkN
 cwc
 mHc
 mHc
@@ -67446,8 +67478,8 @@ fpb
 nSY
 wrD
 aXU
-nSY
-fnY
+mtp
+cCN
 ppM
 aHl
 mHc
@@ -67700,7 +67732,7 @@ vje
 vje
 nSB
 fpb
-ppM
+dMO
 epN
 gqo
 nSY
@@ -68996,7 +69028,7 @@ vje
 vje
 enE
 tmP
-nSY
+edL
 rKK
 iaH
 kMq
@@ -69511,7 +69543,7 @@ oLE
 nSV
 sWH
 ekO
-sTt
+wSY
 tmP
 ppM
 tmP
@@ -70014,7 +70046,7 @@ vje
 vje
 enE
 pzy
-dAp
+eNP
 enE
 vje
 enE
@@ -73356,7 +73388,7 @@ vje
 oLE
 vCm
 vAK
-nSY
+edL
 cAQ
 ppM
 oVO

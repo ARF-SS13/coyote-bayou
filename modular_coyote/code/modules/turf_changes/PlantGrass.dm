@@ -11,8 +11,10 @@
 		return FALSE
 	if((locate(/obj/machinery) in src))
 		return FALSE
-	var/obj/structure/flora/randPlant
-	var/floratype = pickweight(GLOB.plant_type_weighted)
+	var/atom/movable/randPlant
+	var/floratype = greeble ? greeble : pickweight(GLOB.plant_type_weighted)
+	if(greeble == "junklist")
+		floratype = pickweight(GLOB.junk_type_weighted)
 	switch(floratype)
 		if("medicinal")
 			randPlant = pickweight(GLOB.medicinal_plant_list)
@@ -20,6 +22,18 @@
 			randPlant = pickweight(GLOB.tree_plant_list)
 		if("grass")
 			randPlant = pickweight(GLOB.grass_plant_list)
+		if("salvage")
+			randPlant = pickweight(GLOB.salvage_spawn_list)
+		if("nest")
+			randPlant = pickweight(GLOB.nest_spawn_list)
+		if("dust")
+			randPlant = pickweight(GLOB.dust_spawn_list)
+		if("trash")
+			randPlant = pickweight(GLOB.trash_spawn_list)
+		if("wreckage_and_nests")
+			var/list/nestnwreck = GLOB.nest_spawn_list
+			nestnwreck |= GLOB.salvage_spawn_list
+			randPlant = pickweight(nestnwreck)
 	if(randPlant)
 		new randPlant(src)
 		return TRUE
@@ -39,10 +53,16 @@
 /turf/open/
 	var/spawnPlants = FALSE
 	var/spawnHiddenStashes = FALSE
+	var/greeble
 
 /turf/open/Initialize(mapload)
-	if(mapload && spawnPlants && !is_reserved_level(z))
-		plantGrass()
+	if(mapload && (spawnPlants || greeble) && !is_reserved_level(z))
+		if(greeble)
+			var/area/here = loc
+			if(!here.safe_town)
+				plantGrass()
+		else
+			plantGrass()
 	if(mapload && spawnHiddenStashes && !is_reserved_level(z))
 		StashCheck()
 	. = ..()
