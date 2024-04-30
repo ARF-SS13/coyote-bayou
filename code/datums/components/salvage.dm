@@ -221,6 +221,7 @@
 	for(var/trait in bonus_traits)
 		if(HAS_TRAIT(user, trait))
 			if(prob(bonus_traits[trait][SCRAP_EXTRA_ROLL_CHANCE]))
+				to_chat(user, span_notice("Your skills help you find some extra salvage from [parent]."))
 				return TRUE
 
 /datum/component/toolable/salvage/proc/StartDisassembleMessage(mob/living/user, obj/item/tool, time, obj/item/offhand)
@@ -245,8 +246,8 @@
 	valid_containers = list(/obj/item/storage/bag/salvage, /obj/item/storage/bag/salvagestorage)
 	bonus_traits = list(
 		TRAIT_TECHNOPHREAK = list(
-			SCRAP_RARITY_UNCOMMON = 10,
-			SCRAP_RARITY_RARE = 10,
+			SCRAP_RARITY_UNCOMMON = 0,
+			SCRAP_RARITY_RARE = 0,
 			SCRAP_EXTRA_ROLL_CHANCE = 50,
 		)
 	)
