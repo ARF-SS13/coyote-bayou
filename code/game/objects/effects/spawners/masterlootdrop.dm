@@ -541,6 +541,7 @@
 		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
+		/obj/item/gun/energy/laser/auto/twin = 10,                  //37.5 30 DPS tool says it's low but I think it struggles with burst fire. Similar in power to tesla autoshock
 
 		//sidearms
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
@@ -560,7 +561,8 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/scatter/nonlethal = 500,            //132(276) 20 insane for pve wtf
+		/obj/item/gun/energy/laser/scatter/nonlethal = 100,            //132(276) 20 insane for pve wtf
+		/obj/item/gun/energy/laser/auto/oasis = 400,                   //266 50 low damage per shot, deals plasma damage
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500, //200 1 self charge, EMP immune
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,           //225 4
 		/obj/item/gun/medbeam/magic = 400,                             //000 inf medbeam
