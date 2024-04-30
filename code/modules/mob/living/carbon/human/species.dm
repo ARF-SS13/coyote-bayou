@@ -704,13 +704,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!has_eyes)
 				standing += mutable_appearance('icons/mob/eyes.dmi', "eyes_missing", -BODY_LAYER)
 			else
+				var/eyelayer = -BODY_LAYER
+				if(H.eye_over_hair)
+					eyelayer = -UNDERWEAR_OVERSUIT_LAYER // hair layer, plus (minus) one
 				var/left_state = DEFAULT_LEFT_EYE_STATE
 				var/right_state = DEFAULT_RIGHT_EYE_STATE
 				if(eye_type in GLOB.eye_types)
 					left_state = eye_type + "_left_eye"
 					right_state = eye_type + "_right_eye"
-				var/mutable_appearance/left_eye = mutable_appearance('icons/mob/eyes.dmi', left_state, -BODY_LAYER)
-				var/mutable_appearance/right_eye = mutable_appearance('icons/mob/eyes.dmi', right_state, -BODY_LAYER)
+				var/mutable_appearance/left_eye = mutable_appearance('icons/mob/eyes.dmi', left_state, eyelayer)
+				var/mutable_appearance/right_eye = mutable_appearance('icons/mob/eyes.dmi', right_state, eyelayer)
 				if((EYECOLOR in species_traits) && has_eyes)
 					left_eye.color = "#" + H.left_eye_color
 					right_eye.color = "#" + H.right_eye_color
