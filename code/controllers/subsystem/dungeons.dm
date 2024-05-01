@@ -13,13 +13,12 @@ SUBSYSTEM_DEF(dungeons)
 	return ..()
 
 /// Creates the specified dungeon instance and adds it to the dungeon_instances list. Happens when a player interacts with the entrance to a dungeon and tries to enter it.
-/datum/controller/subsystem/dungeons/proc/CreateDungeonInstance(entrance)
-	if(!entrance || !istype(entrance, /obj/structrue/dungeon_entrance))
-		return FALSE
-	var/datum/dungeon_controller/DC = new dungeon_type(src)
+/datum/controller/subsystem/dungeons/proc/CreateDungeonInstance(datum/dungeon_controller/DC)
+	if(isnull(DC) || !istype(DC, /datum/dungeon_controller))
+		return
 	dungeon_tally++
-	DC.dungeon_id = "[DC.name] [dungeon_tally]"
-	dungeon_instances[dungeon_id] = DC
+	DC.dungeon_id = "[DC.dungeon_id] [dungeon_tally]"
+	dungeon_instances[DC.dungeon_id] = DC
 	return DC
 
 /datum/controller/subsystem/dungeons/proc/connect_entrance(obj/effect/landmark/dungeon_entrance/E)

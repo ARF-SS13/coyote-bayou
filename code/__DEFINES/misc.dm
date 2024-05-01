@@ -562,3 +562,48 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 #define DUAL_WIELDING_AGILE_FORCE		0.75
 #define DUAL_WIELDING_ENCUMBERED_FORCE	0.50
 #define DUAL_WIELDING_SPEED_DIVIDER 	3
+
+//Tiers of loot
+///Trash tier
+#define LOOT_TIER_LOWEST 1
+///Common tier
+#define LOOT_TIER_LOW 2
+///Uncommon tier
+#define LOOT_TIER_MID 3
+///Rare tier
+#define LOOT_TIER_HIGH 4
+///Very Rare tier
+#define LOOT_TIER_HIGHEST 5
+
+
+//Types of loot
+//trash
+#define LOOT_TRASH "trash"
+//military
+#define LOOT_AMMO "ammo"
+#define LOOT_ARMOR "armor"
+#define LOOT_WEAPONS "weapons" //A combination of guns and melee weapons
+#define LOOT_GUNS "guns" //Just gun-type weapons
+#define LOOT_BALLISTIC "ballistic guns"
+#define LOOT_LASERS "energy guns"
+#define LOOT_MELEE "melee"
+//household
+#define LOOT_KITCHEN "kitchen" //food, cookware, etc
+#define LOOT_CLOTHES "clothes"
+//farm
+#define LOOT_FARM "farm" //Farming tools, cowboy weapons and clothes
+#define LOOT_PLANTS "plants" //Seeds, grown stuff, fertilizer, water, etc.
+//job specific
+#define LOOT_MECHANIC "mechanic" //mostly tools
+#define LOOT_ELECTRICAL "electrical" //circuit boards, batteries, wires, etc. Things you could find in consumer electronics like televisions and fridges
+#define LOOT_SCIENCE "science" //gadgets and gizmos, futuristic stuff, research materials
+//medical
+#define LOOT_FIRSTAID "first aid"
+#define LOOT_SURGERY "surgery"
+//others
+#define LOOT_CONVENIENCE_STORE "convenience store"
+#define LOOT_CHURCH "church"
+#define LOOT_SCHOOL "school"
+#define LOOT_HOBO "hobo"
+#define LOOT_ORE "ore" //abandoned ore boxes
+#define LOOT_HIDDEN_STASH "hidden stash" //Could be anything

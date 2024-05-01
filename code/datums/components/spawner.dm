@@ -236,7 +236,7 @@
 	if(!clear_spawned_mobs)
 		return
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
-		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
+		var/mob/living/simple_animal/removed_animal = mob_ref?.resolve()
 		if(!removed_animal)
 			continue
 		if(removed_animal.nest == src)
