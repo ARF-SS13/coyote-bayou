@@ -48,20 +48,21 @@
 		return
 	if(owner.mind == originalmind) //If they're home, let the chem deal with deletion.
 		return
-	if(owner.mind)
+	/*if(owner.mind)
 		var/mob/living/simple_animal/astral/G = new(get_turf(M.loc))
 		owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 		to_chat(G, span_warning("[M]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
-		log_reagent("FERMICHEM: [M]'s possesser has been booted out into a astral ghost!")
+		log_reagent("FERMICHEM: [M]'s possesser has been booted out into a astral ghost!")// Disabled, because this could only happen if an admin jumps into your body while using it
+		*/
 	originalmind.transfer_to(original)
 
 /datum/status_effect/chem/astral_insurance/on_remove() //God damnit get them home!
 	if(owner.mind != originalmind) //If they're home, HOORAY
-		if(owner.mind)
+		/*if(owner.mind)
 			var/mob/living/simple_animal/astral/G = new(get_turf(owner))
 			owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 			to_chat(G, span_warning("[owner]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
-			log_reagent("FERMICHEM: [owner]'s possesser has been booted out into a astral ghost!")
+			log_reagent("FERMICHEM: [owner]'s possesser has been booted out into a astral ghost!")*/
 		originalmind.transfer_to(original)
 	return ..()
 
