@@ -769,7 +769,7 @@
 
 /datum/species/feral/shepard
 	name = "Feral Shepard"
-	id = "sheperd"
+	id = "shepherd"
 	simple_icon = 'icons/fallout/mobs/animals/dogs.dmi'
 	icon_dead_suffix = "_dead"
 	icon_width = 32
