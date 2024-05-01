@@ -94,7 +94,6 @@
 
 /datum/supplykit_item/magic/peaceflower
 	name = "Peace Flower"
-	desc = "A flower that makes you a pacifist, but provides a light source, and free healing. <b>Cannot be removed!</b>"
+	desc = "A flower that when worn heals you and feeds you for large amounts, but makes you a pacifist. Its behavior can be altered with shift+ctrl click. You can click it to reduce your radiation too!"
 	item = /obj/item/clothing/head/peaceflower
-	cost = 0
-	limited_stock = 1
+	cost = 15
