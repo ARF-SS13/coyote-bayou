@@ -1048,6 +1048,7 @@
 	anchored = TRUE
 	opacity = 1
 	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock1
 	name = "rock"
@@ -1056,6 +1057,7 @@
 	anchored = TRUE
 	opacity = 1
 	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock2
 	name = "rock"
@@ -1064,6 +1066,7 @@
 	anchored = TRUE
 	opacity = 1
 	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock3
 	name = "rock"
@@ -1072,12 +1075,14 @@
 	anchored = TRUE
 	opacity = 1
 	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock4
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock4"
 	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/wild_plant/thistle
 	name = "thistle"
