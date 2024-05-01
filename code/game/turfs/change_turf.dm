@@ -107,6 +107,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	changing_turf = TRUE
 	qdel(src)	//Just get the side effects and call Destroy
 	var/turf/W = new path(src)
+	if(radiation_turf)
+		W.radiation_turf = radiation_turf
 
 	for(var/i in transferring_comps)
 		W.TakeComponent(i)

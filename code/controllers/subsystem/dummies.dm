@@ -30,13 +30,13 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	COOLDOWN_DECLARE(snapshot_cooldown)
 
 /datum/controller/subsystem/dummy/fire(resumed)
-	if(LAZYLEN(all_dummies) < DUMMY_PRUNE_SIZE)
-		return
-	for(var/mob/living/carbon/human/dummy/dummy in all_dummies)
-		if(COOLDOWN_FINISHED(dummy, unuse_timer))
-			unregister_dummy(dummy)
-			qdel(dummy)
-	capture_snapshot_of_players()
+	// if(LAZYLEN(all_dummies) < DUMMY_PRUNE_SIZE)
+	// 	return
+	// for(var/mob/living/carbon/human/dummy/dummy in all_dummies)
+	// 	if(COOLDOWN_FINISHED(dummy, unuse_timer))
+	// 		unregister_dummy(dummy)
+	// 		qdel(dummy)
+	//capture_snapshot_of_players() surprise, it doesnt work
 
 /datum/controller/subsystem/dummy/proc/get_a_dummy()
 	var/mob/living/carbon/human/dummy/D
@@ -48,6 +48,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		D = new()
 		register_dummy(D)
 	D.in_use = TRUE
+	D.wipe_state() // please please PLEASE stop broadcasting random peoples' genitals
 	COOLDOWN_START(D, unuse_timer, 20 MINUTES)
 	D.setDir(SOUTH)
 	return D
@@ -335,6 +336,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	dna.initialize_dna("B+", randomise = TRUE)
 	icon_render_key = null
 	transform = initial(transform)
+	destroy_genitals()
 	cut_overlays()
 
 //Inefficient pooling/caching way.

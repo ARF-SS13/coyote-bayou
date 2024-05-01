@@ -77,7 +77,7 @@
 		var/obj/item/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer))
 			return TRUE
-		if(prob(25))
+		if(prob(5)) // significantly lowered the chance of just getting shot lmaoooo
 			return TRUE
 		return FALSE
 
@@ -102,7 +102,7 @@
 /obj/structure/deployable_barricade/proc/wire()
 	can_wire = FALSE
 	is_wired = TRUE
-	modify_max_integrity(max_integrity + 50)
+	modify_max_integrity(max_integrity + 100) // equivalent to like 3.3 5.56 shots 
 	update_icon()
 
 /obj/structure/deployable_barricade/wirecutter_act(mob/living/user, obj/item/I)
@@ -118,7 +118,7 @@
 	playsound(src, 'sound/items/wirecutter.ogg', 25, TRUE)
 	user.visible_message(span_notice("[user] removed the barbed wire on [src]."),
 	span_notice("You removed the barbed wire on [src]."))
-	modify_max_integrity(max_integrity - 50)
+	modify_max_integrity(max_integrity - 100)
 	can_wire = TRUE
 	is_wired = FALSE
 	update_icon()
@@ -292,6 +292,52 @@
 		visible_message(span_notice("[user] repairs [src]."))
 
 /obj/structure/deployable_barricade/wooden/update_icon()
+	. = ..()
+	if(dir == NORTH)
+		pixel_y = 8
+
+//
+// Sandbags
+// 
+
+/obj/structure/deployable_barricade/sandbags
+	name = "sandbags"
+	desc = "A 3/4s height wall to block bullets."
+	icon = 'modular_coyote/icons/objects/barricade.dmi'
+	icon_state = "sandbag"
+	max_integrity = 375
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 25, "damage_threshold" = 5) // second pass on armor values because of tanky-ness
+	layer = OBJ_LAYER
+	stack_type = /obj/item/stack/sheet/mineral/sandbags
+	stack_amount = 1
+	destroyed_stack_amount = 0
+	can_change_dmg_state = TRUE
+	barricade_type = "sandbag"
+	can_wire = FALSE
+
+/obj/structure/deployable_barricade/sandbags/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/stack/sheet/mineral/sandbags))
+		var/obj/item/stack/sheet/mineral/sandbags/D = I
+		if(obj_integrity >= max_integrity)
+			return
+
+		if(D.get_amount() < 1)
+			to_chat(user, span_warning("You need at least one bag to repair [src]!"))
+			return
+
+		visible_message(span_notice("[user] begins to repair [src]."))
+
+		if(!do_after(user,50, src) || obj_integrity >= max_integrity)
+			return
+
+		if(!D.use(1))
+			return
+
+		obj_integrity = max_integrity
+		visible_message(span_notice("[user] repairs [src]."))
+
+/obj/structure/deployable_barricade/sandbags/update_icon()
 	. = ..()
 	if(dir == NORTH)
 		pixel_y = 8

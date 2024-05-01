@@ -32,47 +32,6 @@
 	result = /obj/item/reagent_containers/food/snacks/muffin/poppy
 	subcategory = CAT_PASTRY
 
-////////////////////////////////////////////CUPCAKES////////////////////////////////////////////
-
-/datum/crafting_recipe/food/bluecherrycupcake
-	name = "Blue cherry cupcake"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/grown/bluecherries = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/bluecherrycupcake
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/strawberrycupcake
-	name = "Strawberry cherry cupcake"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/grown/strawberry  = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/strawberrycupcake
-	subcategory = CAT_PASTRY
-
-////////////////////////////////////////////COOKIES////////////////////////////////////////////
-
-/datum/crafting_recipe/food/raisincookie
-	name = "Raisin cookie"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/no_raisin = 1,
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/grown/oat = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/raisincookie
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/sugarcookie
-	time = 15
-	name = "Sugar cookie"
-	reqs = list(
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/sugarcookie
-	subcategory = CAT_PASTRY
 
 ////////////////////////////////////////////////WAFFLES AND PANCAKES////////////////////////////////////////////////
 
@@ -121,19 +80,6 @@
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/cracker
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/fortunecookie
-	time = 15
-	name = "Fortune cookie"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/paper = 1
-	)
-	parts =	list(
-		/obj/item/paper = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/fortunecookie
 	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/honeybun
@@ -185,58 +131,50 @@
 	result = /obj/item/reagent_containers/food/snacks/cannoli
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/peanut_butter_cookie
-	name = "Peanut butter cookie"
+/datum/crafting_recipe/food/croissant
+	name = "croissant"
 	reqs = list(
-		/datum/reagent/consumable/peanut_butter = 5,
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/peanut_butter
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/raw_brownie_batter
-	name = "Raw brownie batter"
-	reqs = list(
-		/datum/reagent/consumable/flour = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/egg = 2,
-		/datum/reagent/consumable/coco = 5,
+		/obj/item/reagent_containers/food/snacks/bun = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/raw_brownie_batter
+	result = /obj/item/reagent_containers/food/snacks/croissant
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/peanut_butter_brownie_sheet
-	name = "Peanut Butter Brownie Sheet"
+
+////////////////////////////////////////////////TOAST////////////////////////////////////////////////
+
+/datum/crafting_recipe/food/butteredtoast
+	name = "Buttered Toast"
 	reqs = list(
-		/datum/reagent/consumable/flour = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/egg = 2,
-		/datum/reagent/consumable/coco = 5,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/brownie_sheet_peanut
+	result = /obj/item/reagent_containers/food/snacks/butteredtoast
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/crunchy_peanut_butter_tart
-	name = "Crunchy peanut butter tart"
+/datum/crafting_recipe/food/jelliedtoast
+	name = "Jellied toast"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5,
-		/datum/reagent/consumable/cream = 5,
+		/datum/reagent/consumable/cherryjelly = 5,
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
-	category = CAT_PASTRY
+	result = /obj/item/reagent_containers/food/snacks/jelliedtoast/cherry
+	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/moth_cheese_cakes
-	name = "Ælorölen (Cheesecake balls)"
+/datum/crafting_recipe/food/peanutbuttertoast
+	name = "Peanut butter toast"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/datum/reagent/consumable/coco = 1,
-		/datum/reagent/consumable/flour = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/datum/reagent/consumable/honey = 5
+		/datum/reagent/consumable/peanut_butter = 5,
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
-	category = CAT_PASTRY
+	result = /obj/item/reagent_containers/food/snacks/peanut_buttertoast
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/frenchtoast
+	name = "french toast"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/datum/reagent/consumable/sugar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/frenchtoast
+	subcategory = CAT_PASTRY

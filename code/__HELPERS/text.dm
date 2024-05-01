@@ -142,7 +142,7 @@
 #define LETTERS_DETECTED 4
 
 //Filters out undesirable characters from names
-/proc/reject_bad_name(t_in, allow_numbers = FALSE, max_length = MAX_NAME_LEN, ascii_only = TRUE)
+/proc/reject_bad_name(t_in, allow_numbers = TRUE, max_length = MAX_NAME_LEN, ascii_only = TRUE)
 	if(!t_in)
 		return //Rejects the input if it is null
 
@@ -872,3 +872,13 @@ GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 		idx++
 
 	return msgedit
+
+///change text color of keywords in a string.
+/proc/color_keyword(text, color, keyword)
+	return replacetext(text, keyword, span_color(keyword, color))
+
+///does both of above, for chat log coloring of player messages.
+/proc/color_for_chatlog(text, color, name)
+	var/out = color_keyword(text, color, name)
+	out = alternating_color_span(out, color, "\"", FALSE)
+	return out

@@ -780,7 +780,7 @@
 	if(source?.IsFeral() || owner?.IsFeral())
 		dmg_overlay_type = null
 
-	if(status == BODYPART_ROBOTIC)
+	else if(status == BODYPART_ROBOTIC)
 		dmg_overlay_type = "robotic"
 		if(!render_like_organic)
 			marking_value = null

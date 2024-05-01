@@ -63,7 +63,7 @@
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/raider
+	belt = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -104,7 +104,7 @@
 	jobtype = /datum/job/heavensnight/f13manager
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -113,7 +113,6 @@
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,
@@ -126,8 +125,8 @@
 	head_announce = list("Security")
 	faction = FACTION_CLUB
 	social_faction = FACTION_CLUB
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = -1
+	spawn_positions = -1
 	description = "You are the manager for the Heavens Night club, you ensure the workings of the club are in order."
 	supervisors = "Yourself and your customers!"
 	selection_color = "#df80af"
@@ -144,7 +143,7 @@
 	jobtype = /datum/job/heavensnight/f13clubworker
 	id =	/obj/item/card/id/selfassign
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -153,7 +152,6 @@
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/kit_spawner/tools,
 		/obj/item/pda = 1,
 		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,

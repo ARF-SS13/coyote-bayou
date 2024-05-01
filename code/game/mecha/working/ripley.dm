@@ -2,15 +2,17 @@
 	name = "\improper APLU \"Ripley\""
 	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	icon_state = "ripley"
-	step_in = 3 //Move speed, lower is faster.
+	step_in = 2.5 //Move speed, lower is faster.
+	force = 40
 	max_temperature = 20000
-	max_integrity = 300
+	max_integrity = 400
 	armor = ARMOR_VALUE_MEDIUM
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
 	var/list/cargo = new
 	var/cargo_capacity = 15
 	var/hides = 0
+	canstrafe = TRUE
 
 /obj/mecha/working/ripley/go_out()
 	..()
@@ -32,12 +34,13 @@
 	return ..()
 
 /obj/mecha/working/ripley/firefighter
-	desc = "Autonomous Power Loader Unit. This model is refitted with additional thermal protection."
+	desc = "Autonomous Power Loader Unit. This model is refitted with improved servos for faster ground speed and extra armor."
 	name = "\improper APLU \"Firefighter\""
 	icon_state = "firefighter"
-	step_in = 4
+	step_in = 2
+	force = 50
 	max_temperature = 65000
-	max_integrity = 400
+	max_integrity = 500
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	lights_power = 7
 	armor = ARMOR_VALUE_MEDIUM
@@ -46,12 +49,13 @@
 
 
 /obj/mecha/working/ripley/deathripley // Admin-only mecha.
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
-	name = "\improper DEATH-RIPLEY"
+	desc = "Raider Ripley"
+	name = "\improper Raider Ripley"
 	icon_state = "deathripley"
-	step_in = 2
+	step_in = 1.8
+	force = 60
 	max_temperature = 100000
-	max_integrity = 500
+	max_integrity = 550
 	armor = ARMOR_VALUE_MEDIUM
 	lights_power = 7
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
@@ -63,7 +67,7 @@
 	ME.attach(src)
 
 /obj/mecha/working/ripley/deathripley/real
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE. FOR REAL"
+	desc = "OH SHIT IT'S THE RAIDERS WE'RE ALL GONNA DIE. FOR REAL"
 
 /obj/mecha/working/ripley/deathripley/real/Initialize()
 	. = ..()
@@ -79,11 +83,11 @@
 	name = "\improper Clarke"
 	icon_state = "clarke"
 	max_temperature = 65000
-	max_integrity = 300
-	step_in = 1.6
+	max_integrity = 400
+	force = 50
+	step_in = 1.5
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	lights_power = 7
-	step_energy_drain = 30 //slightly higher energy drain since you movin those wheels FAST
 	armor = ARMOR_VALUE_MEDIUM
 	max_equip = 5
 	wreckage = /obj/structure/mecha_wreckage/clarke

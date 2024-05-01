@@ -22,12 +22,12 @@
 
 /mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
 	/* var/static/list/crit_allowed_modes = list(
-		MODE_WHISPER = TRUE, 
-		MODE_CUSTOM_SAY = TRUE, 
-		MODE_SING = TRUE, 
-		MODE_HEADSET = TRUE, 
-		MODE_ROBOT = TRUE, 
-		MODE_CHANGELING = TRUE, 
+		MODE_WHISPER = TRUE,
+		MODE_CUSTOM_SAY = TRUE,
+		MODE_SING = TRUE,
+		MODE_HEADSET = TRUE,
+		MODE_ROBOT = TRUE,
+		MODE_CHANGELING = TRUE,
 		MODE_ALIEN = TRUE
 		) */
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
@@ -186,7 +186,7 @@
 		if(sourceturf && T && !(sourceturf in get_hear(5, T)))
 			. = span_small("[.]")
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE)
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE, list/data)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args) //parent calls can't overwrite the current proc args.
 	if(!client)
 		return
@@ -194,7 +194,7 @@
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [get_random_if_list(speaker.verb_say)] something but you cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
 		deaf_message = span_notice("You can't hear yourself!")
@@ -208,7 +208,17 @@
 		return
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode, FALSE, source)
+	if(client.prefs.color_chat_log)
+		var/sanitizedsaycolor = client.sanitize_chat_color(speaker.get_chat_color())
+		message = color_for_chatlog(message, sanitizedsaycolor, speaker.name)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
+	if(islist(data) && LAZYACCESS(data, "is_radio") && (data["ckey"] in GLOB.directory) && !SSchat.debug_block_radio_blurbles)
+		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_STATIC))
+			playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
+			var/mob/blurbler = ckey2mob(data["ckey"])
+			if(blurbler && blurbler != src)
+				blurbler.play_AC_typing_indicator(raw_message, src, src, TRUE)
 	return message
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)
@@ -241,6 +251,7 @@
 		the_dead[M] = TRUE
 
 	var/eavesdropping
+	
 	var/eavesrendered
 	if(eavesdrop_range)
 		eavesdropping = stars(message)
@@ -262,7 +273,7 @@
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, /.proc/flick_overlay, I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -345,8 +356,8 @@
 	if(cultslurring)
 		message = cultslur(message)
 
-	if(clockcultslurring)
-		message = CLOCK_CULT_SLUR(message)
+/*	if(clockcultslurring)
+		message = CLOCK_CULT_SLUR(message)*/
 
 	var/end_char = copytext(message, length(message), length(message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~", ",", "_", "+", "|", "*")))
@@ -398,7 +409,7 @@
 		else if(derpspeech)
 			. = "gibbers"
 		else if(InCritical())
-			. = "whines"
+			. = get_random_if_list(verb_whisper)
 
 /mob/living/whisper(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)

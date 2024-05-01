@@ -10,7 +10,7 @@
 	if(ckey)
 		SSsecondwind.i_died(ckey)
 	if(!gibbed)
-		INVOKE_ASYNC(src, .proc/emote, "deathgasp")
+		INVOKE_ASYNC(src,PROC_REF(emote), "deathgasp")
 		SWplz = new
 		SWplz.Grant(src)
 

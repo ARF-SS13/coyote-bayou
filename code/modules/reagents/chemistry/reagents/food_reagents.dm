@@ -25,7 +25,7 @@
 		current_cycle++
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
-	holder?.remove_reagent(type, metabolization_rate)
+	..()
 	if (canbrew)
 		if (holder?.has_reagent(/datum/reagent/medicine/spaceacillin))
 			return
@@ -112,6 +112,16 @@
 	if(M.satiety < 600)
 		M.satiety += 30
 	. = ..()
+
+/datum/reagent/consumable/nutriment/batteryacid
+	name = "Battery Acid"
+	description = "Robots need nutrients too."
+	value = REAGENT_VALUE_COMMON
+	nutriment_factor = 15 * REAGENTS_METABOLISM 
+	brute_heal = 0
+	burn_heal = 0
+	canbrew = FALSE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/cooking_oil
 	name = "Cooking Oil"
@@ -400,7 +410,7 @@
 	taste_description = "flowers"
 
 /datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REM, 0)
 	..()
 
 /datum/reagent/consumable/xanderjuice
@@ -423,7 +433,7 @@
 	taste_description = "plants"
 
 /datum/reagent/consumable/agavejuice/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.5*REM, 0)
 	..()
 
 /datum/reagent/consumable/ferajuice
@@ -435,7 +445,7 @@
 
 /datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
 	if(M.health > 20)
-		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-1*REM, 0)
 	..()
 
 /datum/reagent/consumable/daturajuice
@@ -474,7 +484,7 @@
 	taste_description = "nuts"
 
 /datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.5*REM, 0)
 	..()
 
 /datum/reagent/consumable/tato_juice

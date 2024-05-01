@@ -1267,15 +1267,10 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	if(!SSticker)
 		return
 
-	SSticker.selected_tip = input
+	SSticker.send_midround_tip(input)
 
-	// If we've already tipped, then send it straight away.
-	if(SSticker.tipped)
-		SSticker.send_tip_of_the_round()
-
-
-	message_admins("[key_name_admin(usr)] sent a tip of the round.")
-	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
+	message_admins("[key_name_admin(usr)] sent a tip.")
+	log_admin("[key_name(usr)] sent \"[input]\" as the Tip.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
 
 /client/proc/modify_goals()
@@ -1531,7 +1526,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 					var/shots_this_limb = 0
 					for(var/t in shuffle(open_adj_turfs))
 						var/turf/iter_turf = t
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/firing_squad, dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
+						addtimer(CALLBACK(usr, GLOBAL_PROC_REF(firing_squad), dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
 						delay_counter += delay_per_shot
 						shots_this_limb++
 						if(shots_this_limb > shots_per_limb_per_rep)

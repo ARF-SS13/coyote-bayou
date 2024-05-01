@@ -25,6 +25,8 @@
 	rad_flags = RAD_NO_CONTAMINATE // Prevent the same cheese as with the stock parts
 	obj_flags = CAN_BE_HIT // so you can LICK it
 	tastes = list("tangy metal" = 1)
+	///If your charge is greater than the key, it uses that icon state, otherwise it checks the next one
+	var/list/charge_states
 
 /obj/item/stock_parts/cell/get_cell()
 	return src
@@ -40,7 +42,7 @@
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_icon()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_battery)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(lick_battery))
 
 /obj/item/stock_parts/cell/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -68,7 +70,7 @@
 		add_overlay(image('icons/obj/power.dmi',"grown_wires"))
 	if(charge < 0.01)
 		return
-	else if (maxcharge == 1000 || maxcharge == 2500 || maxcharge == 5000)
+	else if (maxcharge == 1000 || maxcharge == 2500 || maxcharge == 5000)//I physically vomited reading this hack
 		if(charge/maxcharge >=0.995)
 			add_overlay("cell-o2")
 		else
@@ -217,16 +219,21 @@
 /obj/item/reagent_containers/food/snacks/cell
 	name = "oops"
 	desc = "If you're reading this it means I messed up. This is related to ipcs/synths eating cells and I didn't know a better way to do it than making a new food object."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment/batteryacid = 1)
 	tastes = list("electricity" = 1, "metal" = 1)
+	eatingsound = 'sound/weapons/laserPumpEmpty.ogg'
 
 /obj/item/stock_parts/cell/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && isrobotic(M))
+		if(charge == 0)
+			to_chat(user, "This powercell doesnt have enough power to charge you.")
+			return
 		var/obj/item/reagent_containers/food/snacks/cell/cell_as_food = new
 		cell_as_food.name = name
 		if(cell_as_food.attack(M, user, def_zone))
 			take_damage(40, sound_effect=FALSE, attacked_by = user)
 		qdel(cell_as_food)
+		use(maxcharge*0.2)
 	else
 		return ..()
 
@@ -470,33 +477,35 @@
 	name = "microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
-	icon_state = "mfc-full"
+	icon_state = "mfc"
 	maxcharge = 30000
+	charge_states = list("0.65" = "-full",
+						"0.35" = "-half",
+						"0" = "-empty",
+						)
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	if(charge >= (maxcharge*0.65))
-		icon_state = "mfc-full"
-	else if(charge >= (maxcharge*0.35))
-		icon_state = "mfc-half"
-	else
-		icon_state = "mfc-empty"
 	. = ..()
+	if(LAZYLEN(charge_states))
+		for(var/CS in charge_states)
+			if(charge >= (maxcharge*text2num(CS)))
+				icon_state = "[initial(icon_state)][LAZYACCESS(charge_states, CS)]"
+				break
 
 // Enhanced Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/large
 	name = "enhanced microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to hold fifty percent more charge."
 	icon = 'icons/fallout/objects/powercells.dmi'
-	icon_state = "mfc-full"
+	icon_state = "bluemfc"
 	maxcharge = 45000
-	color = "#0066FF"
 
 // Crafted Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/bad
 	name = "shoddy microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
-	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
-	icon_state = "mfc-full"
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "graymfc"
 	maxcharge = 22500
 
 /obj/item/stock_parts/cell/ammo/ultracite

@@ -294,7 +294,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 		a_intent = possible_a_intents[current_intent]
 	if(prob(0.01))
-		playsound_local(get_turf(src), 'sound/effects/Huuu.ogg')
+		playsound(get_turf(src), 'sound/effects/Huuu.ogg')
 	/* else
 		var/playthis
 		switch(a_intent)

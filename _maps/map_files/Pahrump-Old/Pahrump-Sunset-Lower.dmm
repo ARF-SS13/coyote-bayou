@@ -1561,10 +1561,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"bjZ" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
-/turf/open/water,
-/area/f13/radiation)
 "bkI" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -3066,11 +3062,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -3135,11 +3131,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -4286,7 +4282,7 @@
 /area/f13/building)
 "bPL" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
@@ -7565,7 +7561,7 @@
 /area/f13/bunker)
 "duo" = (
 /obj/structure/bed/old,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_y = 32
 	},
@@ -8866,10 +8862,10 @@
 /area/f13/building/sewers)
 "esu" = (
 /obj/structure/table/wood,
-/obj/item/wrench/basic,
-/obj/item/screwdriver/basic,
-/obj/item/crowbar/basic,
-/obj/item/weldingtool/basic,
+/obj/item/wrench/crude,
+/obj/item/screwdriver/crude,
+/obj/item/crowbar/crude,
+/obj/item/weldingtool/crude,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
 "esI" = (
@@ -9278,11 +9274,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -11533,11 +11529,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -13971,8 +13967,8 @@
 /area/f13/building/sewers)
 "iiO" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/hypospray/medipen/psycho,
-/obj/item/reagent_containers/hypospray/medipen/psycho,
+/obj/item/reagent_containers/pill/patch/psycho,
+/obj/item/reagent_containers/pill/patch/psycho,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "iiR" = (
@@ -15752,11 +15748,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -15925,11 +15921,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -16259,7 +16255,7 @@
 	},
 /area/f13/building/sewers)
 "jNb" = (
-/obj/item/wrench/basic,
+/obj/item/wrench/crude,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "jNl" = (
@@ -18235,11 +18231,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
 	faction = list("Syndicate");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -19739,8 +19735,8 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/item/crowbar/basic,
-/obj/item/screwdriver/basic,
+/obj/item/crowbar/crude,
+/obj/item/screwdriver/crude,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -20192,11 +20188,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -20438,11 +20434,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Reprogrammed Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -21282,7 +21278,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/f13{
 	color = "#ffe9de";
@@ -23486,12 +23482,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/tunnel)
-"oTM" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "oTQ" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -23852,11 +23842,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -24412,7 +24402,7 @@
 	},
 /area/f13/building/sewers)
 "pyr" = (
-/obj/item/wrench/basic,
+/obj/item/wrench/crude,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -24543,7 +24533,7 @@
 /area/f13/caves)
 "pBw" = (
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
@@ -25614,11 +25604,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -25842,11 +25832,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -30264,7 +30254,7 @@
 /area/f13/tunnel)
 "tuH" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
@@ -32033,11 +32023,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -32452,11 +32442,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -33903,11 +33893,11 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Repaired Turret";
 	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile = /obj/item/projectile/bullet/a308/improvised/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
@@ -34414,8 +34404,8 @@
 	},
 /area/f13/building/sewers)
 "wzl" = (
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/wood_common{
 	color = "#775555"
 	},
@@ -36038,7 +36028,7 @@
 /area/f13/tunnel)
 "xIb" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/hypospray/medipen/steady,
+/obj/item/reagent_containers/pill/patch/steady,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
@@ -46989,7 +46979,7 @@ aah
 aah
 aah
 pwE
-oTM
+bQS
 aah
 jja
 aah
@@ -89926,7 +89916,7 @@ dOG
 ltl
 wNg
 kBK
-bjZ
+bWq
 pua
 aae
 aae

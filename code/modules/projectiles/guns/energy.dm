@@ -27,6 +27,7 @@
 	/// The index of the ammo_types/firemodes which we're using right now !! has NOTHING to do with the gun's actual firemode
 	var/current_firemode_index = 1
 	var/can_charge = 1 //Can it be charged in a recharger?
+	var/can_box_charge = TRUE // can it be charged in a box recharger?
 	var/can_remove = 1 //Can the cell itself be removed and replaced?
 	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
 	var/charge_sections = 4
@@ -38,7 +39,29 @@
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 	var/charge_cost_multiplier = 1
-	var/selfchargerate = 0 // set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
+	/// set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
+	var/selfchargerate = 3 SECONDS 
+
+	/// did we start selfcharging???
+	var/selfcharge_initiated = FALSE
+	/// is the selfcharge paused???
+	var/selfcharge_paused = FALSE
+	/// When your lazergun runs out of batteries, how long till it can be used?
+	var/self_recharge_duration = 8 SECONDS
+	/// how much longer do we have to waaaaaait?
+	var/charge_duration_remaining = 0
+	/// last time we ticked the charge bar
+	var/last_charge_tick = 0
+	/// the sound it plays when its empty and starts to charge
+	var/charge_begin_sound = 'sound/weapons/energy_startcharge.ogg'
+	/// the soundloop it plays when its charging
+	var/datum/looping_sound/charge_loop = /datum/looping_sound/energy_charging
+	/// the sound it plays when its alllllll done!
+	var/charge_finished_sound = 'sound/weapons/energy_chargedone_ding.ogg'
+	/// the sound it plays when you make it selfcharge cus you altclicked it
+	var/charge_selfcharge_sound = 'sound/weapons/energy_manualcharge.ogg'
+
+	var/my_chargebar
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -50,7 +73,7 @@
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
-		cell.use(round(cell.charge * severity/100))
+		cell?.use(round(cell.charge * severity/100))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
 		update_icon()
@@ -77,6 +100,8 @@
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
+		if(ispath(charge_loop))
+			charge_loop = new charge_loop(list(src), FALSE)
 	update_icon()
 
 /obj/item/gun/energy/Destroy()
@@ -95,26 +120,71 @@
 	. = ..()
 	if(!right_click_overridden)
 		. += span_notice("Right click in combat mode to switch modes.")
+	if(selfcharge && !selfcharge_initiated && !can_remove)
+		. += span_notice("Alt-Click to force-initiate a self-charge cycle. This will drain the cell beforehand!")
+	if(charge_duration_remaining)
+		. += span_notice("Currently recharging! Should be ready in about [DisplayTimeText(charge_duration_remaining)].")
 
 /obj/item/gun/energy/process()
-	if(selfcharge && cell?.charge < cell.maxcharge)
-		if(selfcharge == EGUN_SELFCHARGE_BORG)
-			var/atom/owner = loc
-			if(istype(owner, /obj/item/robot_module))
-				owner = owner.loc
-			if(!iscyborg(owner))
-				return
-			var/mob/living/silicon/robot/R = owner
-			if(!R.cell?.use(100))
-				return
-		cell.give(cell.maxcharge / max(selfchargerate, 0.01))
-		if(!chambered) //if empty chamber we try to charge a new shot
-			recharge_newshot(TRUE)
-		update_icon()
+	if(!selfcharge)
+		return // all done!
+	if(!cell)
+		return // also all done
+	// if(has_enough_charge_to_fire())
+	// 	abort_selfcharge()
+	// 	return // gun can shoot, maybe
+	tick_selfcharge()
+
+/obj/item/gun/energy/attack_self(mob/living/user)
+	trigger_selfcharge(user)
+
+/obj/item/gun/energy/proc/trigger_selfcharge(mob/user)
+	if(selfcharge_initiated)
+		to_chat(user, span_alert("[src]'s self-charge cycle cannot be stopped!!!"))
+		return
+	if(!selfcharge)
+		return
+	if(!cell)
+		to_chat(user, span_alert("[src] does not have a cell!"))
+		return
+	to_chat(user, span_notice("[src]'s self-charging cycle initiated! Please wait..."))
+	var/suppress_charge_sound = FALSE
+	if(charge_selfcharge_sound)
+		playsound(src, charge_selfcharge_sound, 50, 1)
+		suppress_charge_sound = TRUE
+	initiate_selfcharge(suppress_charge_sound)
+	return TRUE
+
+/obj/item/gun/energy/proc/has_enough_charge_to_fire()
+	if(!cell || QDELETED(cell) || cell.charge <= 0)
+		return FALSE
+	return cell.charge >= shotcost()
+
+/obj/item/gun/energy/proc/shotcost()
+	var/obj/item/ammo_casing/energy/AC = chambered || ammo_type[current_firemode_index]
+	if(!AC)
+		return INFINITY // no shooting!
+	return AC.e_cost * get_charge_cost_mult()
+
+
+
+	// if(cell?.charge < cell.maxcharge)
+	// 	if(selfcharge == EGUN_SELFCHARGE_BORG)
+	// 		var/atom/owner = loc
+	// 		if(istype(owner, /obj/item/robot_module))
+	// 			owner = owner.loc
+	// 		if(!iscyborg(owner))
+	// 			return
+	// 		var/mob/living/silicon/robot/R = owner
+	// 		if(!R.cell?.use(100))
+	// 			return
+	// 	cell.give(cell.maxcharge / max(selfchargerate, 0.01))
+	// 	if(!chambered) //if empty chamber we try to charge a new shot
+	// 		recharge_newshot(TRUE)
+	// 	update_icon()
 
 /obj/item/gun/energy/can_shoot()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-	return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
+	return has_enough_charge_to_fire()
 
 /obj/item/gun/energy/recharge_newshot(no_cyborg_drain)
 	if (!ammo_type || !cell)
@@ -123,22 +193,111 @@
 		if(iscyborg(loc))
 			var/mob/living/silicon/robot/R = loc
 			if(R.cell)
-				var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index] //Necessary to find cost of shot
-				if(R.cell.use(shot.e_cost * get_charge_cost_mult())) 		//Take power from the borg...
-					cell.give(shot.e_cost * get_charge_cost_mult())	//... to recharge the shot
+				if(R.cell.use(shotcost())) 		//Take power from the borg...
+					cell.give(shotcost())	//... to recharge the shot
+					. = TRUE
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
-		if(cell.charge >= AC.e_cost * get_charge_cost_mult()) //if there's enough power in the cell cell...
+		if(has_enough_charge_to_fire()) //if there's enough power in the cell cell...
+			. = TRUE
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
 
 /obj/item/gun/energy/process_chamber()
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
-		var/obj/item/ammo_casing/energy/shot = chambered
-		cell.use(shot.e_cost * get_charge_cost_mult())//... drain the cell cell
+		cell.use(shotcost())//... drain the cell cell
 	chambered = null //either way, released the prepared shot
-	recharge_newshot() //try to charge a new shot
+	if(!recharge_newshot()) //try to charge a new shot
+		initiate_selfcharge()
+		return
+
+/obj/item/gun/energy/proc/initiate_selfcharge(silent)
+	if(!selfcharge || selfcharge_initiated || selfcharge_paused)
+		return
+	if(!cell)
+		return
+	selfcharge_initiated = TRUE
+	selfcharge_paused = FALSE
+	cell.charge = 0
+	charge_duration_remaining = self_recharge_duration
+	last_charge_tick = world.time // prevent wierd race conditions that would instanly charge the gonne
+	if(!silent && charge_begin_sound)
+		playsound(src, charge_begin_sound, 80, TRUE)
+	if(istype(charge_loop))
+		charge_loop.start()
+	if(my_chargebar)
+		SSprogress_bars.remove_bar(my_chargebar)
+	my_chargebar = SSprogress_bars.add_bar(src, list(), charge_duration_remaining, FALSE, FALSE)
+	update_icon()
+	return TRUE
+
+/obj/item/gun/energy/proc/tick_selfcharge()
+	if(!selfcharge)
+		abort_selfcharge()
+		return
+	if(!selfcharge_initiated)
+		if(cell && cell.charge < shotcost())
+			initiate_selfcharge()
+		return
+	var/time_elapsed = world.time - last_charge_tick
+	last_charge_tick = world.time
+	if(!cell || selfcharge_paused)
+		return
+	var/external_mult = SEND_SIGNAL(loc, COMSIG_ENERGY_GUN_SELFCHARGE_TICK, src) || 1
+	charge_duration_remaining -= time_elapsed * external_mult
+	update_icon()
+	if(charge_duration_remaining <= 0)
+		finish_self_charge()
+		return
+	if(my_chargebar)
+		SSprogress_bars.update_bar(my_chargebar, self_recharge_duration - charge_duration_remaining)
+
+/obj/item/gun/energy/proc/finish_self_charge()
+	if(!cell)
+		return
+	selfcharge_initiated = FALSE
+	selfcharge_paused = FALSE
+	cell.charge = cell.maxcharge
+	charge_duration_remaining = 0
+	if(charge_finished_sound)
+		playsound(src, charge_finished_sound, 75, TRUE)
+	if(istype(charge_loop))
+		charge_loop.stop()
+	if(my_chargebar)
+		SSprogress_bars.remove_bar(my_chargebar)
+		my_chargebar = 0
+	update_icon()
+
+/// battery fell out while self-charging, hold off on doing stuff
+/obj/item/gun/energy/proc/pause_selfcharge()
+	if(!selfcharge ||!selfcharge_initiated)
+		return
+	selfcharge_paused = TRUE
+	if(istype(charge_loop))
+		charge_loop.stop()
+
+/obj/item/gun/energy/proc/abort_selfcharge()
+	if(istype(charge_loop))
+		charge_loop.stop()
+	selfcharge_initiated = FALSE
+	selfcharge_paused = FALSE
+	charge_duration_remaining = 0
+	update_icon()
+
+/obj/item/gun/energy/proc/resume_or_initiate_selfcharge()
+	if(!selfcharge || !selfcharge_initiated)
+		return
+	if(!selfcharge_paused)
+		if(has_enough_charge_to_fire())
+			return
+		initiate_selfcharge()
+		return
+	selfcharge_paused = FALSE
+	if(istype(charge_loop))
+		charge_loop.start()
+	last_charge_tick = world.time // no skipping!
+	update_icon()
 
 /obj/item/gun/energy/do_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(!chambered && can_shoot())
@@ -305,19 +464,19 @@
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost * get_charge_cost_mult())
+			cell.use(shotcost())
 			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
 
 /obj/item/gun/energy/altafterattack(atom/target, mob/user, proximity_flags, params)
@@ -339,7 +498,10 @@
 		if(sounds_and_words)
 			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
-	if(can_remove == 0)
+	if(can_remove == FALSE)
+		if(selfcharge)
+			trigger_selfcharge(user)
+			return
 		if(sounds_and_words)
 			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 		return
@@ -351,6 +513,8 @@
 		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
 		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 	cell = null
+	pause_selfcharge()
+	update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
@@ -366,6 +530,7 @@
 		if (!cell && istype(AM, cell_type))
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
+				resume_or_initiate_selfcharge()
 				to_chat(user, span_notice("You load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
@@ -386,7 +551,7 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	var/c_mult = get_charge_cost_mult()
 	data["has_magazine"] = !!cell
-	data["charge_cost"] = shot?.e_cost * c_mult || 0
+	data["charge_cost"] = shot?.e_cost * c_mult || 0 // shotcost() would return infinity in various cases
 	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
 	data["magazine_name"] = cell ? cell.name : "Unknown" // Its a magazine you silly goose
 	if(cell)

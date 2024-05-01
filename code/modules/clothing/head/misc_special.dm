@@ -267,7 +267,7 @@
 /obj/item/clothing/head/foilhat/Initialize(mapload)
 	. = ..()
 	if(!warped)
-		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, INV_SLOTBIT_HEAD, 6, TRUE, null, CALLBACK(src, .proc/warp_up))
+		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, INV_SLOTBIT_HEAD, 6, TRUE, null, CALLBACK(src,PROC_REF(warp_up)))
 	else
 		warp_up()
 

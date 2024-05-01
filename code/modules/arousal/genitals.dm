@@ -440,7 +440,7 @@
 	. = ..()
 	if(.)
 		update()
-		RegisterSignal(owner, COMSIG_MOB_DEATH, .proc/update_appearance)
+		RegisterSignal(owner, COMSIG_MOB_DEATH,PROC_REF(update_appearance))
 		if(genital_visflags & GENITAL_ALWAYS_VISIBLE)
 			owner.exposed_genitals += src
 
@@ -458,8 +458,7 @@
 //proc to give a player their genitals and stuff when they log in
 /mob/living/carbon/human/proc/give_genitals(clean = FALSE)//clean will remove all pre-existing genitals. proc will then give them any genitals that are enabled in their DNA
 	if(clean)
-		for(var/obj/item/organ/genital/G in internal_organs)
-			qdel(G)
+		destroy_genitals()
 	if (NOGENITALS in dna.species.species_traits)
 		return
 	if(dna.features["has_vag"])
@@ -617,7 +616,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			//gross_image.layer = -layer_to_put_it
 			genital_overlay.loc = src
 			gross_image.loc = src
-			gross_image.layer = (position == "BEHIND") ? layer-1 : layer+1 // idfk
+			gross_image.layer = SSpornhud.get_layer(src, nad.pornhud_slot, position)
 			// and then add it to the genital_sprites layer list thing
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
@@ -665,3 +664,8 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		else if (bellyCheck == FALSE)
 			dna.features["belly_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
 	return TRUE
+
+/// uh hi we're here to reposess your nads
+/mob/living/carbon/human/proc/destroy_genitals()
+	for(var/obj/item/organ/genital/mike_look_down in internal_organs)
+		qdel(mike_look_down)

@@ -112,6 +112,9 @@
 	slink = soullink(/datum/soullink/shapeshift, stored , shape)
 	slink.source = src
 
+	if(shape.client.prefs.waddle_amount > 0)
+		shape.AddComponent(/datum/component/waddling, shape.client.prefs.waddle_amount, shape.client.prefs.up_waddle_time, shape.client.prefs.side_waddle_time)
+
 /obj/shapeshift_holder/Destroy()
 	if(!restoring)
 		restore()

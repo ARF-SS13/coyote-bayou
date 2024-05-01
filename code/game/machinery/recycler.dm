@@ -26,7 +26,7 @@
 	req_one_access = get_all_accesses() + get_all_centcom_access()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -105,7 +105,7 @@
 
 /obj/machinery/recycler/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/eat, AM)
+	INVOKE_ASYNC(src,PROC_REF(eat), AM)
 
 /obj/machinery/recycler/proc/eat(atom/AM0)
 	if(stat & (BROKEN|NOPOWER) || safety_mode)
@@ -134,7 +134,7 @@
 				emergency_stop(AM)
 				return
 		else if(isliving(AM))
-			if((obj_flags & EMAGGED)||((!allowed(AM))&&(!ishuman(AM))))
+			if((obj_flags & EMAGGED)||((!allowed(AM))&&(!isliving(AM))))
 				to_eat += crush_living(AM)
 			else
 				emergency_stop(AM)
@@ -191,7 +191,7 @@
 	safety_mode = TRUE
 	update_icon()
 	L.forceMove(loc)
-	addtimer(CALLBACK(src, .proc/reboot), SAFETY_COOLDOWN)
+	addtimer(CALLBACK(src,PROC_REF(reboot)), SAFETY_COOLDOWN)
 
 /obj/machinery/recycler/proc/reboot()
 	playsound(src, 'sound/machines/ping.ogg', 50, 0)

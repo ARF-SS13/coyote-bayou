@@ -33,6 +33,15 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_fluff, GLOB.insect_fluffs_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/deco_wings, GLOB.deco_wings_list)
 
+	//dragons
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_body, GLOB.derg_body_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_belly, GLOB.derg_belly_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_ears, GLOB.derg_ear_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_horns, GLOB.derg_horn_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_mane, GLOB.derg_mane_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_eyes, GLOB.derg_eye_list)
+
+
 //CIT CHANGES START HERE, ADDS SNOWFLAKE BODYPARTS AND MORE
 	//mammal bodyparts (fucking furries)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_body_markings, GLOB.mam_body_markings_list)
@@ -90,11 +99,21 @@
 			continue
 		GLOB.uplink_items += path
 	//(sub)typesof entries are listed by the order they are loaded in the code, so we'll have to rearrange them here.
-	GLOB.uplink_items = sortList(GLOB.uplink_items, /proc/cmp_uplink_items_dsc)
+	GLOB.uplink_items = sortList(GLOB.uplink_items, GLOBAL_PROC_REF(cmp_uplink_items_dsc))
+
+	//supplykit items
+	for(var/path in subtypesof(/datum/supplykit_item))
+		var/datum/supplykit_item/I = path
+		if(!initial(I.item)) //We add categories to a separate list.
+			GLOB.supplykit_categories |= initial(I.category)
+			continue
+		GLOB.supplykit_items += path
+	//(sub)typesof entries are listed by the order they are loaded in the code, so we'll have to rearrange them here.
+	GLOB.supplykit_items = sortList(GLOB.supplykit_items, /proc/cmp_supplykit_items_dsc)
 
 	init_subtypes(/datum/crafting_recipe, GLOB.crafting_recipes)
 
-	INVOKE_ASYNC(GLOBAL_PROC, .proc/init_ref_coin_values) //so the current procedure doesn't sleep because of UNTIL()
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(init_ref_coin_values)) //so the current procedure doesn't sleep because of UNTIL()
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.

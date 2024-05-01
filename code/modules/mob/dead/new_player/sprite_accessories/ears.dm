@@ -49,6 +49,14 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/ears/human/bigwolfsplayed
+	name = "Big Wolf - Splayed"
+	icon_state = "bigwolfsplayed"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+
 /datum/sprite_accessory/ears/human/bigwolfinner
 	name = "Big Wolf (ALT)"
 	icon_state = "bigwolfinner"
@@ -105,6 +113,15 @@
 
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/human/catbigsplayed
+	name = "Cat, Big - Splayed"
+	icon_state = "catbigsplayed"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 
 /datum/sprite_accessory/ears/human/cobra
 	name = "Cobra Hood"
@@ -169,6 +186,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/ears/human/fennecsplayed
+	name = "Fennec - Splayed"
+	icon_state = "fennecsplayed"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+
 /datum/sprite_accessory/ears/human/fennec2
 	name = "Fennec (ALT)"
 	icon_state = "fennec2"
@@ -188,6 +212,14 @@
 /datum/sprite_accessory/ears/human/fox
 	name = "Fox"
 	icon_state = "fox"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/human/fox/foxsplayed
+	name = "Fox - Splayed"
+	icon_state = "foxsplayed"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
 	color_src = MATRIXED
@@ -325,6 +357,14 @@
 	icon_state = "bigwolf"
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/ears/mam_ears/bigwolfsplayed
+	name = "Big Wolf - Splayed"
+	icon_state = "bigwolfsplayed"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+
 /datum/sprite_accessory/ears/mam_ears/bigwolfinner
 	name = "Big Wolf (ALT)"
 	icon_state = "bigwolfinner"
@@ -365,6 +405,11 @@
 /datum/sprite_accessory/ears/mam_ears/catbig
 	name = "Cat, Big"
 	icon_state = "catbig"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/catbigsplayed
+	name = "Cat, Big - Splayed"
+	icon_state = "catbigsplayed"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/ears/mam_ears/cobra
@@ -413,6 +458,12 @@
 	icon_state = "fennec"
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/ears/mam_ears/fennecsplayed
+	name = "Fennec - Splayed"
+	icon_state = "fennecsplayed"
+	matrixed_sections = MATRIX_RED_BLUE
+
+
 /datum/sprite_accessory/ears/mam_ears/fennec2
 	name = "Fennec (ALT)"
 	icon_state = "fennec2"
@@ -423,9 +474,20 @@
 	icon_state = "fish"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/mam_ears/foldedback
+	name = "Folded Back"
+	icon_state = "foldedback"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	color_src = MUTCOLORS
+
 /datum/sprite_accessory/ears/mam_ears/fox
 	name = "Fox"
 	icon_state = "fox"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/foxsplayed
+	name = "Fox - Splayed"
+	icon_state = "foxsplayed"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/ears/mam_ears/husky
@@ -525,22 +587,26 @@
 	icon_state = "bigwolfbp"
 	matrixed_sections = MATRIX_ALL
 
-/datum/sprite_accessory/ears/human/fennec2bp
+/datum/sprite_accessory/ears/mam_ears/fennec2bp
 	name = "Fennec (ALT) - both piercings"
 	icon_state = "fennec2bp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-/datum/sprite_accessory/ears/human/fennec2lp
+/datum/sprite_accessory/ears/mam_ears/fennec2lp
 	name = "Fennec (ALT) - left piercing"
 	icon_state = "fennec2lp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-/datum/sprite_accessory/ears/human/fennec2rp
+/datum/sprite_accessory/ears/mam_ears/fennec2rp
 	name = "Fennec (ALT) - right piercing"
 	icon_state = "fennec2rp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-
+/datum/sprite_accessory/ears/mam_ears/draconic
+	name = "Draconic Spikes"
+	icon_state = "draconicspikes"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	matrixed_sections = MATRIX_ALL

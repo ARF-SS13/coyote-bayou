@@ -24,6 +24,23 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
+/obj/item/ammo_casing/shotgun/needlerbuckshot
+	name = "Crystal needler shotgun shell"
+	desc = "A small gauge shell filled with crystal needlers."
+	icon_state = "hnsg"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	projectile_type = /obj/item/projectile/bullet/pellet/needler_buckshot
+	pellets = SHOTGUN_PELLET_NEEDLER
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_SHOTGUN
+
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
@@ -37,6 +54,11 @@
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
+/obj/item/ammo_casing/shotgun/improvised/simplemob
+	projectile_type = /obj/item/projectile/bullet/pellet/simplemob
+	pellets = SHOTGUN_PELLET_IMPROVISED * 2 // double the pellets, but half the damage of each, doubles the effectiveness of armor
+	variance = SHOTGUN_SPREAD_IMPROVISED * 3
+
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
@@ -49,7 +71,7 @@
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
-obj/item/ammo_casing/shotgun/executioner
+/obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
 	desc = "A 12 gauge lead slug purpose built to annihilate flesh on impact."
 	icon_state = "stunshell"

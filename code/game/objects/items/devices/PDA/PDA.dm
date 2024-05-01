@@ -30,6 +30,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
+	attack_verb = list("smacked", "bapped", "bopped", "bonked", "slapped", "whipped")
+	force = 15
+	backstab_multiplier = 1.5
+	throwforce = 0
 
 	//Main variables
 	var/owner = null // String name of owner
@@ -44,7 +48,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// var/static/list/standard_overlays_icons = list("pda-r", "blank", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay")
 	// var/list/current_overlays //set on Initialize.
 	var/obj/item/radio/radio = null //the radio inside the pipboy
-
+	/// The internal geiger counter
+	var/obj/item/geiger_counter/geiger
+	var/g_on = FALSE
+	var/g_rads
 	//variables exclusively used on 'update_overlays' (which should never be called directly, and 'update_icon' doesn't use args anyway)
 	var/new_overlays = FALSE
 	var/new_alert = FALSE
@@ -74,8 +81,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_text //No text spamming
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
-	var/ttone = "beep" //The ringtone!
-	var/note = "Congratulations, your has chosen the CoyoteCo DataPal Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
+	var/ttone = "beep-boop" //The ringtone!
+	var/note = "Congratulations, you have chosen the Coyote-Co DataPal Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
 	var/detonatable = TRUE // Can the PDA be blown up?
@@ -110,6 +117,23 @@ GLOBAL_LIST_EMPTY(PDAs)
 	. += id ? span_notice("Alt-click to remove the id.") : ""
 	if(inserted_item && (!isturf(loc)))
 		. += span_notice("Ctrl-click to remove [inserted_item].")
+	if(istype(geiger) && g_on)
+		examine_geiger(user)
+
+/obj/item/pda/equipped(mob/user)
+	. = ..()
+	if(istype(geiger))
+		geiger.on_equip(user)
+
+/obj/item/pda/pickup(mob/user)
+	. = ..()
+	if(istype(geiger))
+		geiger.on_pickup(user)
+
+/obj/item/pda/dropped(mob/user)
+	. = ..()
+	if(istype(geiger))
+		geiger.on_drop(user)
 
 /obj/item/pda/Initialize()
 	. = ..()
@@ -124,6 +148,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		inserted_item =	new /obj/item/pen(src)
 	radio = new /obj/item/radio(src)
+	geiger = new /obj/item/geiger_counter(src)
 	new_overlays = TRUE
 
 /obj/item/pda/ComponentInitialize()
@@ -274,7 +299,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	user.set_machine(src)
 
-	var/dat = "<!DOCTYPE html><html><head><style>body {[font_mode] padding: 0; margin: 12px; background-color: #062113; color: #4aed92; line-height: 135%;} h2, h4 {color: #4aed92;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Personal Information Processor</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\">"
+	var/dat = "<!DOCTYPE html><html><head><style>body {[font_mode] padding: 0; margin: 12px; background-color: #062113; color: #4aed92; line-height: 135%;} h2, h4 {color: #4aed92;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Coyote-Co DataPal</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\">"
 //	dat += assets.css_tag()
 //	dat += emoji_s.css_tag()
 //Removed to fix a pda runtime ~TK
@@ -306,10 +331,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		switch (mode)
 			if (0)
-				dat += "<h2><center>=======PERSONAL INFORMATION PROCESSOR v.1.2=======</center></h2>"
+				dat += "<h2><center>=======GEKKERTEC DATAPAL v2.2=======</center></h2>"
 				dat += "Owner: [owner], [ownjob]<br>"
 				dat += "ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]</a><br>"
-				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update Pip-Boy Info" : ""]</a><br><br>"
+				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update DataPal Info" : ""]</a><br><br>"
 
 				dat += "[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
 				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer]"
@@ -318,10 +343,21 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=65536'>[PDAIMG(mail)]Guild Questboard</a></li>"
+				dat += "<li></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)]Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)]Messenger</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=99'>[PDAIMG(signaler)]Radio</a></li>"
+				if(istype(geiger))
 
+					if(istype(geiger))
+						var/extra = ""
+						if(g_on)
+							extra += " | AMBIENT: [geiger?.current_tick_amount ? round(geiger?.current_tick_amount, 0.1) : 0]"
+							if(isliving(loc))
+								var/mob/living/L = user
+								extra += " | USER: [L.radiation ? round(L.radiation, 0.1) : 0]"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=Geiger'>[PDAIMG(scanner)][g_on ? "Disable" : "Enable"] Geiger Counter[extra]</a></li>"
 				if (cartridge)
 					if (cartridge.access & CART_MANIFEST)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)]View Crew Manifest</a></li>"
@@ -409,7 +445,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(cartridge)
 					dat += cartridge.message_header()
 
-				dat += "<h4>[PDAIMG(menu)] Detected DataPal's</h4>"
+				dat += "<h4>[PDAIMG(menu)] Detected DataPals</h4>"
 
 				dat += "<ul>"
 				var/count = 0
@@ -570,7 +606,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					update_label()
 					if (!silent)
 						playsound(src, 'sound/machines/terminal_processing.ogg', 15, 1)
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
+					addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
 
 				if("Eject")//Ejects the cart, only done from hub.
 					if (!isnull(cartridge))
@@ -614,12 +650,23 @@ GLOBAL_LIST_EMPTY(PDAs)
 					if (!silent)
 						Boop()
 
+				if("65536")//Questhingy
+					SSeconomy.open_quest_console(U, src)
+					if (!silent)
+						Boop()
+
 
 
 //MAIN FUNCTIONS===================================
 
 				if("Light")
 					toggle_light()
+
+				if("Geiger")
+					toggle_geiger(U)
+
+				if("GeigerRead")
+					examine_geiger(U)
 
 				if("Medical Scan")
 					if(scanmode == PDA_SCANNER_MEDICAL)
@@ -918,7 +965,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// Log it in our logs
 	tnote += "<i><b>&rarr; To [target_text]:</b></i><br>[signal.format_message()]<br>"
 	// Show it to ghosts
-	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>Pip-Boy 3000 Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
+	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>DataPal Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
 	for(var/i in GLOB.dead_mob_list)
 		var/mob/M = i
 		if(QDELETED(M))
@@ -943,7 +990,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/receive_message(datum/signal/subspace/pda/signal)
 	tnote += "<i><b>&larr; From <a href='byond://?src=[REF(src)];choice=Message;target=[REF(signal.source)]'>[signal.data["name"]]</a> ([signal.data["job"]]):</b></i> <a href='byond://?src=[REF(src)];choice=toggle_block;target=[signal.data["name"]]'>(BLOCK/UNBLOCK)</a><br>[signal.format_message()]<br>"
 	if (!silent)
-		playsound(src, 'modular_coyote/sound/pipsounds/pipmsgget.ogg', 80, 1)
+		playsound(src, 'modular_coyote/sound/pipsounds/beepboop.ogg', 80, 1)
 		audible_message("[icon2html(src, hearers(src))] *[ttone]*", null, 3)
 	//Search for holder of the PDA.
 	var/mob/living/L = null
@@ -1046,6 +1093,26 @@ GLOBAL_LIST_EMPTY(PDAs)
 		playsound(src, "modular_coyote/sound/pipsounds/piplighton.ogg", 50, 1)
 	update_icon()
 
+/obj/item/pda/verb/verb_toggle_geiger()
+	set category = "Object"
+	set name = "Toggle Geiger Counter"
+	toggle_geiger(usr)
+
+/obj/item/pda/proc/toggle_geiger(mob/living/user)
+	if(!istype(user) || !istype(geiger) || !user.canUseTopic(src, BE_CLOSE))
+		return
+	geiger?.attack_self(user)
+	g_on = geiger?.scanning
+	playsound(src, "sound/f13items/flashlight_off.ogg", 25, FALSE, -5)
+	update_icon()
+	geiger?.listeningTo = user
+
+
+/obj/item/pda/proc/examine_geiger(mob/living/user)
+	if(!user.canUseTopic(src, BE_CLOSE) || !istype(geiger) || !istype(user))
+		return
+	geiger.examine(user)
+
 /obj/item/pda/proc/remove_pen()
 
 	if(hasSiliconAccessInArea(usr) || !usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -1115,6 +1182,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 			ownjob = idcard.assignment
 			update_label()
 			to_chat(user, span_notice("Card scanned."))
+			//Automatically turn the geiger counter on.
+			if(!g_on && istype(geiger))
+				toggle_geiger(user)
 			if (!silent)
 				playsound(src, 'sound/machines/terminal_success.ogg', 15, 1)
 		else
@@ -1235,6 +1305,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 		QDEL_NULL(pai)
 	if(istype(inserted_item))
 		QDEL_NULL(inserted_item)
+	if(istype(radio))
+		QDEL_NULL(radio)
+	if(istype(geiger))
+		QDEL_NULL(geiger)
 	return ..()
 
 //AI verb and proc for sending PDA messages.

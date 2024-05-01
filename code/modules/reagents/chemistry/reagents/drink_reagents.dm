@@ -499,6 +499,12 @@
 	glass_name = "glass of Space Cola"
 	glass_desc = "A glass of refreshing Space Cola."
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_1 // Spess cola, pretty mediocre but everywhere
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/space_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-5)
@@ -514,6 +520,12 @@
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of Space Mountain Wind"
 	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
+	sodie_tier = SODIE_TIER_1 // Spess mountain wind, gets you hype!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
 
 /datum/reagent/consumable/spacemountainwind/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
@@ -532,6 +544,12 @@
 	glass_name = "glass of Dr. Gibb"
 	glass_desc = "Dr. Gibb. Not as dangerous as the glass_name might imply."
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_1 // Dr Gibb, makes Dan fat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/dr_gibb/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-6)
@@ -547,6 +565,12 @@
 	glass_icon_state = "space-up_glass"
 	glass_name = "glass of Space-Up"
 	glass_desc = "Space-up. It helps you keep your cool."
+	sodie_tier = SODIE_TIER_1 // Spess up, makes you cool
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 
 /datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
@@ -562,6 +586,12 @@
 	glass_icon_state = "glass_yellow"
 	glass_name = "glass of lemon-lime"
 	glass_desc = "You're pretty certain a real fruit has never actually touched this."
+	sodie_tier = SODIE_TIER_1 // Spess citrus sodie, makes you feel better
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/lemon_lime/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -577,6 +607,12 @@
 	glass_name = "glass of Pwr Game"
 	glass_desc = "Goes well with a Vlad's salad."
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_1 // Gamer fuel, for gamers
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/pwr_game/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -591,6 +627,12 @@
 	glass_icon_state = "glass_red"
 	glass_name = "glass of Shambler's juice"
 	glass_desc = "Mmm mm, shambly."
+	sodie_tier = SODIE_TIER_1 // Changer goop! Pretends to be Gibb
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -663,6 +705,12 @@
 	value = REAGENT_VALUE_COMMON
 	synth_metabolism_use_human = TRUE
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_2 // Annoying insulation drink, great after getting a shock!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/grey_bull/on_mob_metabolize(mob/living/L)
 	..()
@@ -689,6 +737,12 @@
 	glass_name = "glass of soda water"
 	glass_desc = "Soda water. Why not make a scotch and soda?"
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_1 // All the fun of soda with none of the good stuff!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_NONE)
 
 	// A variety of nutrients are dissolved in club soda, without sugar.
 	// These nutrients include carbon, oxygen, hydrogen, phosphorous, potassium, sulfur and sodium, all of which are needed for healthy plant growth.
@@ -712,6 +766,12 @@
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of tonic water"
 	glass_desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	sodie_tier = SODIE_TIER_1 // Its just wrangchy soda
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
@@ -842,6 +902,12 @@
 	glass_desc = "A cherry flavored milkshake."
 	value = REAGENT_VALUE_COMMON
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_3 // I really like milkshakes
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/bluecherryshake
 	name = "Blue Cherry Shake"
@@ -855,6 +921,12 @@
 	glass_desc = "An exotic blue milkshake."
 	value = REAGENT_VALUE_UNCOMMON
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_4 // I really like milkshakes
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/vanillashake
 	name = "Vanilla Shake"
@@ -868,6 +940,12 @@
 	glass_desc = "A vanilla flavored milkshake."
 	value = REAGENT_VALUE_COMMON
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_3 // I really like milkshakes
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/caramelshake
 	name = "Caramel Shake"
@@ -881,6 +959,12 @@
 	glass_desc = "A caramel flavored milkshake."
 	value = REAGENT_VALUE_COMMON
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_4 // I really like milkshakes
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/choccyshake
 	name = "Chocolate Shake"
@@ -894,6 +978,12 @@
 	glass_desc = "A chocolate flavored milkshake."
 	value = REAGENT_VALUE_COMMON
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_3 // I really like milkshakes
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/choccyshake/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
@@ -924,7 +1014,13 @@
 	glass_desc = "Dr. Gibb with ice cream on top."
 	value = REAGENT_VALUE_VERY_COMMON
 	canbrew = TRUE
-	
+	sodie_tier = SODIE_TIER_3 // The drink that made Dan fat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+
 /datum/reagent/consumable/pumpkinjuice
 	name = "Pumpkin Juice"
 	description = "Juiced from real pumpkin."
@@ -947,6 +1043,12 @@
 	glass_icon_state = "triplecitrus" //needs own sprite mine are trash
 	glass_name = "glass of triple citrus"
 	glass_desc = "A mixture of citrus juices. Tangy, yet smooth."
+	sodie_tier = SODIE_TIER_2 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/grape_soda
 	name = "Grape soda"
@@ -956,6 +1058,12 @@
 	glass_name = "glass of grape juice"
 	glass_desc = "It's grape (soda)!"
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_2 // I forget what grape does
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/grape_soda/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -995,6 +1103,12 @@
 	taste_description = "sweet pomegranates"
 	glass_name = "glass of grenadine"
 	glass_desc = "Delicious flavored syrup."
+	sodie_tier = SODIE_TIER_1 // nah its cherry soda, but flat as heck
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/parsnipjuice
 	name = "Parsnip Juice"
@@ -1030,6 +1144,12 @@
 	glass_desc = "A classic All-American vanilla flavored soft drink."
 	value = REAGENT_VALUE_VERY_COMMON //just a little vanilla
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_1 // cream, and sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/cream_soda/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -1045,6 +1165,12 @@
 	glass_name = "Sol Dry"
 	glass_desc = "A soothing, mellow drink made from ginger."
 	canbrew = TRUE
+	sodie_tier = SODIE_TIER_2 // Refreshing aperitif after eating literal garbage
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/sol_dry/on_mob_life(mob/living/carbon/M)
 	M.adjust_disgust(-5)
@@ -1136,6 +1262,12 @@
 	glass_name = "glass of Monkey Energy"
 	glass_desc = "You can unleash the ape, but without the pop of the can?"
 	value = REAGENT_VALUE_COMMON
+	sodie_tier = SODIE_TIER_1 // whats a monkey's worst enemy? a banana peel, protect the brain!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_HIGHEST)
 
 /datum/reagent/consumable/monkey_energy/on_mob_life(mob/living/carbon/M)
 	M.Jitter(20)
@@ -1344,3 +1476,13 @@
 	if(M.getToxLoss() && DT_PROB(10, delta_time))
 		M.adjustToxLoss(-0.5, 0)
 	return ..()
+
+/datum/reagent/consumable/boba
+	name = "boba"
+	description = "round ball things to make boba tea with."
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "boba"
+	glass_icon_state = "boba"
+	glass_name = "glass of boba"
+	glass_desc = "pops full of tastyness!"
+	value = REAGENT_VALUE_VERY_COMMON

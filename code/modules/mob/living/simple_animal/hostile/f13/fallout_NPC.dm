@@ -25,7 +25,6 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list()
 	unsuitable_atmos_damage = 15
 	faction = list("vault", "city")
 	check_friendly_fire = 1
@@ -34,6 +33,14 @@
 	despawns_when_lonely = FALSE
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
+
 
 /obj/effect/mob_spawn/human/corpse/vault
 	name = "Vault Dweller"
@@ -87,7 +94,6 @@
 	health = 160
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
@@ -150,6 +156,9 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	harm_intent_damage = 8
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
@@ -189,11 +198,10 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
-	loot = list()
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	ranged_cooldown_time = 30
-	projectiletype = /obj/item/projectile/f13plasma/pistol/adam
+	projectiletype = /obj/item/projectile/f13plasma/pistol/adam/simple
 	projectilesound = 'sound/weapons/wave.ogg'
 	extra_projectiles = 1
 	attack_verb_simple = "thrusts"
@@ -207,6 +215,15 @@
 		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
+	retreat_health_percent = 0.8
+	max_heal_amount = 0.85
+	heal_per_life = 0.115
+	tactical_retreat = 10
+
+/mob/living/simple_animal/hostile/enclave/scientist/Aggro()
+	..()
+	summon_backup(15)
+	say("Intruder!!") 
 
 // Enclave Armored Infantry
 /mob/living/simple_animal/hostile/enclave/soldier
@@ -219,14 +236,16 @@
 	health = 650
 	melee_damage_lower = 20
 	melee_damage_upper = 47
-	extra_projectiles = 2 
+	extra_projectiles = 2
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12
-	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
-	projectiletype = /obj/item/projectile/plasmacarbine
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
+	projectiletype = /obj/item/projectile/f13plasma/scatter
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -269,14 +288,14 @@
 /////////////////////
 
 /mob/living/simple_animal/hostile/bs
-	name = "BS"
-	desc = "The brotherhood never fails."
+	name = "Tech-Trooper"
+	desc = "The something another never fails."
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	faction = list("BOS")
+	faction = list("BOS", "wastebots")
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -292,7 +311,6 @@
 	attack_verb_simple = "pistol-whips"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list()
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
@@ -301,9 +319,12 @@
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/bs
-	name = "Brotherhood Knight"
+	name = "Tech-trooper"
 	uniform = /obj/item/clothing/under/syndicate/brotherhood
 	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/combat/swat
@@ -313,16 +334,18 @@
 	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 
 /mob/living/simple_animal/hostile/bs/knight
-	name = "Brotherhood Knight"
-	desc = "A Brotherhood Knight wielding a laser pistol and older issue Brotherhood combat armor."
+	name = "Tech-trooper Leftenant"
+	desc = "A loser wielding a laser pistol and older issue combat armor."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
 	projectilesound = 'sound/f13weapons/aep7fire.ogg'
 	projectile_sound_properties = list(
@@ -337,18 +360,20 @@
 	)
 
 /mob/living/simple_animal/hostile/bs/paladin
-	name = "Brotherhood Paladin"
-	desc = "A Paladin equipped with an AER9 and T-51b power armor. The Brotherhood has arrived."
+	name = "Tech-Trooper Commander"
+	desc = "A dork equipped with an AER9 and T-51b power armor. The idiots have arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
 	icon_dead = "bs_paladin_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	maxHealth = 480
 	health = 480
 	healable = 1
 	ranged = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
 	projectilesound = 'sound/f13weapons/aer9fire.ogg'
 	projectile_sound_properties = list(
@@ -535,7 +560,7 @@
 	loot = list()
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a308
 	projectile_sound_properties = list(
@@ -558,12 +583,11 @@
 	icon_gib = "gib"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list()
 	maxHealth = 180
 	health = 180
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a308
 	projectile_sound_properties = list(
@@ -592,8 +616,8 @@
 ////////////////
 
 /mob/living/simple_animal/hostile/tribe
-	name = "Wayfarer Hunter"
-	desc = "A hunter of the wayfarer tribe, wielding a glaive."
+	name = "Lost Ones Hunter"
+	desc = "A Lost ones hunter, once part of the Sulphur Bottom tribe these lunatics have fallen to canibalism and baser instincts."
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
@@ -617,7 +641,7 @@
 	a_intent = INTENT_HARM
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
-	speak = list("For our kin!", "This will be a good hunt.", "The gods look upon me today.")
+	speak = list("Blood, blood, blood, blood!", "You'll make a fine stew!", "Perish interloper!")
 	speak_emote = list("says")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight

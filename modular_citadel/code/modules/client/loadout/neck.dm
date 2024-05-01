@@ -49,6 +49,10 @@
 	name = "grey cloak"
 	path = /obj/item/clothing/neck/mantle/gray
 
+/datum/gear/neck/mantle/red
+	name = "red cloak"
+	path = /obj/item/clothing/neck/mantle/red
+
 /datum/gear/neck/mantle/ragged
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged
@@ -65,6 +69,12 @@
 /datum/gear/neck/stethe
 	name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
+
+/datum/gear/neck/chameleon
+	name = "chameleon neckpiece"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/chameleon
+	cost = 0
 
 /datum/gear/neck/blacktie
 	name = "black tie"
@@ -202,9 +212,9 @@
 	cost = 2
 
 /datum/gear/neck/shoulderholster
-	name = "shoulder holster"
+	name = "standard holster"
 	path = /obj/item/storage/belt/shoulderholster
-	cost = 2
+	cost = 1
 
 /datum/gear/belt/sword
 	name = "sword sheath"

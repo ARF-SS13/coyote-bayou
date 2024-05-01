@@ -95,14 +95,19 @@
 	var/list/command = list()
 	var/list/bos = list()
 	var/list/enclave = list()
-	var/list/oasis = list()
+	var/list/nash = list()
 	var/list/leg = list()
 	var/list/ncr = list()
 	var/list/vault = list()
-	var/list/flw = list()
+	var/list/clinic = list()
+	var/list/reclaimer = list()
+	var/list/guild = list()
 	var/list/tribe = list()
-	var/list/was = list()
-	var/list/hvn = list()
+	var/list/waster = list()
+	var/list/den = list()
+	var/list/garland = list()
+	var/list/heavensnight = list()
+	var/list/bikers = list()
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -135,7 +140,7 @@
 			enclave[name] = rank
 			department = 1
 		if(rank in GLOB.oasis_positions)
-			oasis[name] = rank
+			nash[name] = rank
 			department = 1
 		if(rank in GLOB.legion_positions)
 			leg[name] = rank
@@ -144,7 +149,13 @@
 			ncr[name] = rank
 			department = 1
 		if(rank in GLOB.followers_positions)
-			flw[name] = rank
+			clinic[name] = rank
+			department = 1
+		if(rank in GLOB.reclaimer_positions)
+			reclaimer[name] = rank
+			department = 1
+		if(rank in GLOB.guild_positions)
+			guild[name] = rank
 			department = 1
 		if(rank in GLOB.tribal_positions)
 			tribe[name] = rank
@@ -153,11 +164,17 @@
 			vault[name] = rank
 			department = 1
 		if(rank in GLOB.wasteland_positions)
-			was[name] = rank
+			waster[name] = rank
 			department = 1
-		if(rank in GLOB.heavensnight_positions)
-			hvn[name] = rank
+		if(rank in GLOB.den_positions)
+			den[name] = rank
 			department = 1
+		//if(rank in GLOB.gar_positions)
+		//	garland[name] = rank
+		//	department = 1
+		//if(rank in GLOB.biker_positions)
+		//	bikers[name] = rank
+		//	department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))
@@ -165,35 +182,60 @@
 		for(var/name in command)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[command[name]]</td></tr>"
 			even = !even
-	if(length(bos))
-		dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
-		for(var/name in bos)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
+	// if(length(bos))
+	// 	dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
+	// 	for(var/name in bos)
+	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
+	// 		even = !even
+	// if(length(enclave))
+	// 	dat += "<tr><th colspan=3>Enclave</th></tr>"
+	// 	for(var/name in enclave)
+	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
+	// 		even = !even
+	if(length(nash))
+		dat += "<tr><th colspan=3>New Boston</th></tr>"
+		for(var/name in nash)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[nash[name]]</td></tr>"
 			even = !even
-	if(length(enclave))
-		dat += "<tr><th colspan=3>Enclave</th></tr>"
-		for(var/name in enclave)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
+	if(length(den))
+		dat += "<tr><th colspan=3>Denfolk</th></tr>"
+		for(var/name in den)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
 			even = !even
-	if(length(oasis))
-		dat += "<tr><th colspan=3>Nash</th></tr>"
-		for(var/name in oasis)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[oasis[name]]</td></tr>"
+	if(length(garland))
+		dat += "<tr><th colspan=3>Garland Bridgers</th></tr>"
+		for(var/name in garland)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[garland[name]]</td></tr>"
 			even = !even
-	if(length(leg))
-		dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"
-		for(var/name in leg)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
+	if(length(bikers))
+		dat += "<tr><th colspan=3>Ashdown</th></tr>"
+		for(var/name in bikers)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bikers[name]]</td></tr>"
 			even = !even
-	if(length(ncr))
-		dat += "<tr><th colspan=3>New California Republic</th></tr>"
-		for(var/name in ncr)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
-			even = !even
-	if(length(flw))
+	// if(length(leg))
+	// 	dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"
+	// 	for(var/name in leg)
+	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
+	// 		even = !even
+	// if(length(ncr))
+	// 	dat += "<tr><th colspan=3>New California Republic</th></tr>"
+	// 	for(var/name in ncr)
+	// 		dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
+	// 		even = !even
+	if(length(clinic))
 		dat += "<tr><th colspan=3>Nash Clinic</th></tr>"
-		for(var/name in flw)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[flw[name]]</td></tr>"
+		for(var/name in clinic)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[clinic[name]]</td></tr>"
+			even = !even
+	if(length(reclaimer))
+		dat += "<tr><th colspan=3>Reclaimers</th></tr>"
+		for(var/name in reclaimer)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[reclaimer[name]]</td></tr>"
+			even = !even
+	if(length(guild))
+		dat += "<tr><th colspan=3>Adventurers Guild</th></tr>"
+		for(var/name in guild)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[guild[name]]</td></tr>"
 			even = !even
 	if(length(tribe))
 		dat += "<tr><th colspan=3>Sulphur-Bottom Tribe</th></tr>"
@@ -205,15 +247,15 @@
 		for(var/name in vault)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[vault[name]]</td></tr>"
 			even = !even
-	if(length(was))
+	if(length(waster))
 		dat += "<tr><th colspan=3>Wasteland</th></tr>"
-		for(var/name in was)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[was[name]]</td></tr>"
+		for(var/name in waster)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[waster[name]]</td></tr>"
 			even = !even
-	if(length(hvn))
+	if(length(heavensnight))
 		dat += "<tr><th colspan=3>Heavens Night</th></tr>"
-		for(var/name in hvn)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[hvn[name]]</td></tr>"
+		for(var/name in heavensnight)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[heavensnight[name]]</td></tr>"
 			even = !even
 	// misc guys
 	if(length(misc))

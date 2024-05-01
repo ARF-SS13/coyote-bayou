@@ -17,7 +17,7 @@
 		return M.get_top_level_mob()
 	return src
 
-proc/get_top_level_mob(mob/S)
+/proc/get_top_level_mob(mob/S)
 	if(istype(S.loc,/mob)&&S.loc!=S)
 		var/mob/M=S.loc
 		return M.get_top_level_mob()
@@ -94,6 +94,7 @@ proc/get_top_level_mob(mob/S)
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
 	user.emote_for_ghost_sight(message, subtler, message_range)
 
+	playsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 80, FALSE, -14,)
 
 ///////////////// VERB CODE
 /mob/living/proc/subtle_keybind()

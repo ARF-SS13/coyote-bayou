@@ -40,7 +40,13 @@
 			price += ex.reagents_value[x]
 
 		if(price)
-			to_chat(user, span_notice("Scanned [O], value: <b>[price]</b> credits[O.contents.len ? " (contents included)" : ""]."))
+			//get conversion rates
+			// var/datum/export/material/f13cash/scrip/scrip = /datum/export/material/f13cash/scrip
+			var/datum/export/material/f13cash/copper = /datum/export/material/f13cash
+			// var/scrip_conv = initial(scrip.cost)
+			var/copper_conv = initial(copper.cost)
+			
+			to_chat(user, span_notice("Scanned [O], value: <b>[price / copper_conv]</b> copper [O.contents.len ? "(contents included)" : ""]."))
 		else
 			to_chat(user, span_warning("Scanned [O], no export value."))
 		if(bounty_ship_item_and_contents(O, dry_run=TRUE))

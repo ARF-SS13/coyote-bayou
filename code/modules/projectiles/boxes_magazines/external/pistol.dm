@@ -253,6 +253,20 @@
 /obj/item/ammo_box/magazine/m5mmcustom/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m47pistol
+	name = "handgun magazine for 4.7mm caseless"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "pistol47"
+	ammo_type = /obj/item/ammo_casing/caseless/g11
+	caliber = list(CALIBER_CASELESS)
+	max_ammo = 18
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m47pistol/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m14mmcustom
 	name = "handgun magazine for 14mm"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

@@ -83,3 +83,77 @@
 				return TRUE
 		else
 			return ..()
+
+//From Roguetown
+
+/obj/structure/window/fulltile/stainedglass
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "window-solid"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/woodwindoworange
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "woodwindow"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/woodwindowwhite
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "w-woodwindow"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/woodwindowmoonlight
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "sliding-moonlight-closed"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/woodwindowyellow
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "sliding-electric-closed"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/stainedsilver
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "stained-silver"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/stainedyellow
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "stained-yellow"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3
+
+/obj/structure/window/fulltile/stainedglass/stainedzizo
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "stained-zizo"
+	dir = 5
+	max_integrity = 100
+	fulltile = 1
+	smooth = 0
+	level = 3

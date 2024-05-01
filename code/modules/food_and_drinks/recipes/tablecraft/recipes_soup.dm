@@ -111,8 +111,6 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/mushroom
 	subcategory = CAT_SOUP
 
-
-
 /datum/crafting_recipe/food/nettlesoup
 	name = "Nettle soup"
 	reqs = list(
@@ -136,8 +134,6 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/beet/red
 	subcategory = CAT_SOUP
 
-
-
 /datum/crafting_recipe/food/stew
 	name = "Stew"
 	reqs = list(
@@ -152,8 +148,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/stew
 	subcategory = CAT_SOUP
-
-
 
 /datum/crafting_recipe/food/sweetpotatosoup
 	name = "Sweet potato soup"

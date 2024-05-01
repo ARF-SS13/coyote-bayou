@@ -118,100 +118,24 @@
 
 //Gas Pumps
 
-/obj/structure/gas_pump/oilpump1X
+/obj/structure/gas_pump
 	name = "Gas Pump"
 	icon_state = "oilpump1X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
-	var/uses_left = 2
-	var/inuse = FALSE
+	max_stuff = 4
+	base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
-/obj/structure/gas_pump/oilpump1X/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-			if(prob(5))
-				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
-			visible_message("[src] falls apart, the final components having been removed.")
-			qdel(src)
+/obj/structure/gas_pump/oilpump1x
+	name = "Gas Pump"
+	icon_state = "oilpump1X"
+	icon = 'modular_coyote/icons/objects/items.dmi'
+
 
 /obj/structure/gas_pump/oilpump2X
 	name = "Gas Pump"
 	icon_state = "oilpump2X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
-
-	var/uses_left = 2
-	var/inuse = FALSE
-
-/obj/structure/gas_pump/oilpump2X/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-			if(prob(5))
-				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
-			visible_message("[src] falls apart, the final components having been removed.")
-			qdel(src)
 
 /obj/structure/gas_pump/oilpump3X
 	name = "Gas Pump"
@@ -986,6 +910,18 @@
 	icon = 'icons/obj/plushies_big.dmi'
 	icon_state = "registeel"
 
+/obj/item/toy/plush/braixen
+	name = "braixen plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "braixen"
+
+/obj/item/toy/plush/otter
+	name = "otter plush"
+	desc = "You otta love it!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "otter"
+
 
 
 
@@ -1128,27 +1064,42 @@
 //Things from Mojave Sun, credit for the spirits go to them.
 
 //Rugs
+/obj/structure/rug
+	layer = BELOW_OPEN_DOOR_LAYER
+
+/obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
+	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
+		user.visible_message("[user] begins cutting the [src] apart.", \
+				span_notice("You begin cutting the [src] into strips."), \
+				span_italic("You hear faint sounds of ripping cloth."))
+		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/stack/sheet/cloth (drop_location(), 10)
+		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		qdel(src)
+		return TRUE
 
 /obj/structure/rug/carpet
-	name = "run carpet"
+	name = "black and red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
 
 /obj/structure/rug/carpet2
-	name = "run carpet"
+	name = "royal purple run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet2"
 
 /obj/structure/rug/carpet3
-	name = "run carpet"
+	name = "red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet3"
 
 /obj/structure/rug/carpet4
-	name = "run carpet"
+	name = "turquoise run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet4"
@@ -1241,6 +1192,7 @@
 	icon_state = "nightstand_alt"
 
 //From Mojave sun, credit to them for the sprite
+/*
 /obj/structure/wood_counter
 	name = "Wooden Counter"
 	desc = "Count your wood? Or is it wood your count.."
@@ -1288,7 +1240,7 @@
 	desc = "Count your wood? Or is it wood your count.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "craft_counter_cross"
-
+*/
 /obj/structure/toilet_paper
 	name = "Toilet Paper Holder"
 	desc = "Look before you shit! I mean, sit!"
@@ -1469,6 +1421,13 @@
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
 	icon_state = "sportscar"
 
+/obj/vehicle/sealed/car/caddy
+	name = "Personal full sized luxury SUV"
+	desc = "a refitted, redone, customized, and restored old relic of the early 2000s. This full sized luxury SUV comes with state of the art infotainment while also containing all the settings and whatnot one would find in such a vehicle."
+	icon_state = "caddy"
+	key_type = /obj/item/key/security
+	icon = 'icons/fallout/vehicles/medium_vehicles.dmi'
+
 /obj/vehicle/sealed/car/jeep
 	name = "jeep"
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
@@ -1538,6 +1497,8 @@
 	name = "stalagmite"
 	icon_state = "stalagmite"
 	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+	density = 0
+	anchored = 1
 
 /obj/structure/cave/stalagmite/one
 	name = "stalagmite"
@@ -1726,3 +1687,214 @@
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "scale"
 	w_class = WEIGHT_CLASS_TINY
+
+//Christmas stuff
+
+/obj/structure/christmas
+	name = "Base"
+	icon_state = "base"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/garland
+	name = "garland"
+	icon_state = "garland_on"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakeone
+	name = "snowflakes"
+	icon_state = "snowflakes_1"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflaketwo
+	name = "snowflakes"
+	icon_state = "snowflakes_2"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakethree
+	name = "snowflakes"
+	icon_state = "snowflakes_3"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakefour
+	name = "snowflakes"
+	icon_state = "snowflakes_4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselred
+	name = "red tinsel"
+	icon_state = "tinsel_r"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselyellow
+	name = "yellow tinsel"
+	icon_state = "tinsel_y"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselwhite
+	name = "white tinsel"
+	icon_state = "tinsel_w"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowman
+	name = "snowman"
+	icon_state = "snowman_s"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowmanhat
+	name = "snowman with hat"
+	icon_state = "snowman_hat"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift4
+	name = "present"
+	icon_state = "gift4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift5
+	name = "present"
+	icon_state = "gift5"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift6
+	name = "present"
+	icon_state = "gift6"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/doorwreath
+	name = "door wreath"
+	icon_state = "doorwreath"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+
+/obj/structure/christmas/xmaslights
+	name = "xmaslights"
+	icon_state = "xmaslights"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinyxmastree
+	name = "tinyxmastree"
+	icon_state = "tinyxmastree"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/item/toy/candycaneballoon
+	name = "candycane balloon"
+	desc = "A candycane balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "candycaneballoon"
+
+/obj/item/toy/xmastreeballoon
+	name = "xmas tree balloon"
+	desc = "A christmas tree balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "xmastreeballoon"
+
+//Custom gun
+
+/obj/item/gun/ballistic/shotgun/s163/thingblessed
+	name = "Blessed Gecko-Slayer"
+	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
+
+//Haybale
+
+/obj/structure/haybale
+	name = "haybale"
+	desc = "Don't toss a needle in it!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "haybale"
+
+/obj/structure/clothes
+	name = "clothing line"
+	desc = "Hang up your clothes!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "clothesline"
+
+/obj/structure/bridgefull
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_full"
+
+/obj/structure/bridgeupper
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_upper"
+
+/obj/structure/bridgelower
+	name = "bridge"
+	desc = "Get over it"
+	icon = 'modular_coyote/icons/objects/bridge.dmi'
+	icon_state = "bridge_lower"
+
+/obj/structure/playstation
+	name = "Playstation"
+	icon_state = "ps"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/playstationcontroller
+	name = "Playstation with controllers"
+	icon_state = "pscontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snescontroller
+	name = "Super Nintendo with Controllers"
+	icon_state = "snescontroller"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/structure/snes
+	name = "Super Nintendo"
+	icon_state = "snes"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/item/toy/gameboy
+	name = "Gameboy"
+	desc = "A handheld gaming system!"
+	icon = 'modular_coyote/icons/items/items.dmi'
+	icon_state = "gameboy"
+
+/obj/structure/flatscreen
+	name = "Flatscreen TV"
+	icon_state = "flatscreen"
+	icon = 'modular_coyote/icons/objects/gamesystem.dmi'
+	density = 0
+
+/obj/item/kirbyplants/bonsai
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_1"
+
+/obj/item/kirbyplants/bonsai/pink
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_2"
+
+/obj/item/kirbyplants/bonsai/orange
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_3"
+
+/obj/item/kirbyplants/bonsai/blue
+	name = "bonsai"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "bonsai_4"

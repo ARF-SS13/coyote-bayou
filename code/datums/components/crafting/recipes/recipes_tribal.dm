@@ -411,7 +411,7 @@
 
 //Bone Dancers
 
-datum/crafting_recipe/tribalwar/bone
+/datum/crafting_recipe/tribalwar/bone
 	category = CAT_PRIMAL
 	always_available = FALSE
 
@@ -475,10 +475,21 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/bone = 1)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/magic/gravitygloves
+	name = "Gravity Gloves"
+	result = /obj/item/clothing/gloves/fingerless/pugilist/gravity
+	time = 30
+	reqs = list(/datum/material/titanium = 10,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/sheet/mineral/plasma = 2,
+				/obj/item/stack/sheet/mineral/diamond = 1,
+				/obj/item/stack/sheet/bluespace_crystal = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
 // Amulet of Protection (Tier 1.5 armor, 10 DT/Wound prot)
 /datum/crafting_recipe/magic/armoramulet
 	name = "Amulet of Protection"
-	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor
 	time = 10
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/mineral/titanium = 1,
@@ -488,7 +499,7 @@ datum/crafting_recipe/tribalwar/bone
 // Amulet of Hazard Protection (Tier 1? armor, 75 enviro prot + 50 plasma prot)
 /datum/crafting_recipe/magic/radamulet
 	name = "Amulet of Cleansing"
-	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor/hazard
 	time = 10
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/mineral/titanium = 1,
@@ -555,7 +566,7 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/gun_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
@@ -566,7 +577,7 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
 				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/gun_upgrade/paint/red = 1,
 				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
@@ -579,6 +590,17 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/crafting/metalparts = 5,
 				/obj/item/stack/sheet/mineral/plasma = 2,
 				/obj/item/stack/sheet/mineral/uranium = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Magma (Flamethrower staff, short range, fast charge, high power)
+/datum/crafting_recipe/magic/flamethrower
+	name = "Staff of Magma"
+	result = /obj/item/gun/magic/staff/kelpmagic/flamethrower
+	time = 30
+	reqs = list(/obj/item/stack/sheet/bronze = 10,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/mineral/plasma = 2,
+				/obj/item/stack/sheet/bluespace_crystal = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 // T1 Mending Wand (basic omni heal, ~50 HP all categories every 5 minutes)
@@ -602,6 +624,17 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/mineral/gold = 3,
 				/obj/item/stack/sheet/mineral/diamond = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+/datum/crafting_recipe/magic/resurrectstaff
+	name = "Staff of Resurrection"
+	result = /obj/item/gun/magic/staff/healing
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 20,
+				/obj/item/stack/sheet/leather = 5,
+				/obj/item/stack/sheet/mineral/gold = 5,
+				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 // Perfected Staff of Healing (Literally just the medbeam but Bulky and needs magic)

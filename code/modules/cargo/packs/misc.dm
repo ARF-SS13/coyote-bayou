@@ -308,6 +308,18 @@
 //////////////////////////// Caps and other //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+// Let me explain something to you, fellow coder
+// The shuttle should be the town's lifeline.
+//
+// However, enterprising individuals shouldn't be rewarded for snuffing that lifeline.
+// This IS a multiplayer game afterall.
+//
+// As such, consider your actions wisely. 
+// Coins conversion, or cool shit in the shuttle?
+// -
+// I've chosen here. It would be better for the majority if an overachieving minority didn't have complete control over what can be bought or sold.
+
+/*
 /datum/supply_pack/misc/capstwofifty
 	name = "Coins Conversion 250"
 	desc = "Converts credits into Coins! 250 Version"
@@ -321,6 +333,8 @@
 	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
 	crate_name = "coins crate 2"
+*/ 
+
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Misc + Decor ////////////////////////////////////

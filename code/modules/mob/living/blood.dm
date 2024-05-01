@@ -371,6 +371,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 		blood_data["blood_DNA"] = dna.unique_enzymes
 		blood_data["bloodcolor"] = dna.species.exotic_blood_color
+		if(client && !isnull(client.prefs.features["blood_color"]) && client.prefs.features["blood_color"] != "")
+			blood_data["bloodcolor"] = client.prefs.features["blood_color"]
 		if(disease_resistances && disease_resistances.len)
 			blood_data["resistances"] = disease_resistances.Copy()
 		var/list/temp_chem = list()
@@ -432,21 +434,21 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		return
 
 	var/static/list/bloodtypes_safe = list(
-		"A-" = list("A-", "O-", "SY"),
-		"A+" = list("A-", "A+", "O-", "O+", "SY"),
-		"B-" = list("B-", "O-", "SY"),
-		"B+" = list("B-", "B+", "O-", "O+", "SY"),
-		"AB-" = list("A-", "B-", "O-", "AB-", "SY"),
-		"AB+" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "SY"),
-		"O-" = list("O-","SY"),
-		"O+" = list("O-", "O+","SY"),
-		"L" = list("L","SY"),
-		"U" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "L", "U","SY"),
-		"HF" = list("HF", "SY"),
-		"X*" = list("X*", "SY"),
-		"SY" = list("SY"),
-		"GEL" = list("GEL","SY"),
-		"BUG" = list("BUG", "SY")
+		"A-" = list("A-", "O-", "SY", "PLA"),
+		"A+" = list("A-", "A+", "O-", "O+", "SY", "PLA"),
+		"B-" = list("B-", "O-", "SY", "PLA"),
+		"B+" = list("B-", "B+", "O-", "O+", "SY", "PLA"),
+		"AB-" = list("A-", "B-", "O-", "AB-", "SY", "PLA"),
+		"AB+" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "SY", "PLA"),
+		"O-" = list("O-","SY", "PLA"),
+		"O+" = list("O-", "O+","SY", "PLA"),
+		"L" = list("L","SY", "PLA"),
+		"U" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "L", "U", "SY", "PLA"),
+		"HF" = list("HF", "SY", "PLA"),
+		"X*" = list("X*", "SY", "PLA"),
+		"SY" = list("SY", "PLA"),
+		"GEL" = list("GEL","SY", "PLA"),
+		"BUG" = list("BUG", "SY", "PLA")
 	)
 
 	var/safe = bloodtypes_safe[bloodtype]

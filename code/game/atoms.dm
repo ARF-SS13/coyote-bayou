@@ -97,6 +97,10 @@
 
 	/// What does this creature taste like?
 	var/list/tastes
+	/// When something is turned in for a quest, it'll give it a tag so it can only be turned in once per player
+	var/list/quest_tag
+	/// Override the deletion of this atom for quests
+	var/important
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -147,6 +151,7 @@
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
+	SSatoms.everything[type]++
 
 	InitTastes()
 
@@ -169,6 +174,7 @@
 		// QDEL_NULL(tastes)
 
 /atom/Destroy()
+	SSatoms.everything[type]--
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
 			var/datum/atom_hud/alternate_appearance/AA = alternate_appearances[K]
@@ -186,6 +192,8 @@
 
 	QDEL_NULL(light)
 
+	if(LAZYLEN(quest_tag))
+		QDEL_LIST(quest_tag)
 	return ..()
 
 /**
@@ -450,6 +458,10 @@
 				. += span_notice("It has [reagents.total_volume] unit\s left.")
 			else
 				. += span_danger("It's empty.")
+	var/list/itworth = techweb_item_point_check(src)
+	for(var/tweb in itworth)
+		if(isnum(itworth[tweb]) && itworth[tweb] > 0)
+			. += span_green("You figure this thing is worth around [round(itworth[tweb], 250)] science points.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
@@ -525,7 +537,7 @@
 
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+		addtimer(CALLBACK(src,PROC_REF(hitby_react), AM), 2)
 
 /atom/proc/hitby_react(atom/movable/AM)
 	if(AM && isturf(AM.loc))
@@ -545,9 +557,11 @@
 	var/blood_id = get_blood_id()
 	if(!(blood_id in GLOB.blood_reagent_types))
 		return
+	var/list/blood_data = get_blood_data()
 	var/list/blood_dna = list()
 	if(dna)
-		blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		//blood_dna["color"] = dna.species.exotic_blood_color //so when combined, the list grows with the number of colors
+		blood_dna["color"] = blood_data["bloodcolor"]
 		blood_dna[dna.unique_enzymes] = dna.blood_type
 	else
 		blood_dna["color"] = BLOOD_COLOR_HUMAN
@@ -571,6 +585,10 @@
 		blood_DNA["color"] = new_blood_dna["color"]
 		changed = TRUE
 	else
+		if(blood_DNA["color"] == "rainbow" || new_blood_dna["color"] == "rainbow")
+			changed = blood_DNA["color"] == "rainbow"
+			blood_DNA["color"] = "rainbow"
+			return changed
 		var/old = blood_DNA["color"]
 		blood_DNA["color"] = BlendRGB(blood_DNA["color"], new_blood_dna["color"])
 		changed = old != blood_DNA["color"]
@@ -591,8 +609,11 @@
 			return
 		if(!blood_DNA["color"])
 			blood_DNA["color"] = blood_dna["color"]
-		else
-			blood_DNA["color"] = BlendRGB(blood_DNA["color"], blood_dna["color"])
+			return
+		if(blood_DNA["color"] == "rainbow" || blood_DNA["color"] == "rainbow")
+			blood_DNA["color"] = "rainbow"
+			return
+		blood_DNA["color"] = BlendRGB(blood_DNA["color"], blood_dna["color"])
 
 //to add blood from a mob onto something, and transfer their dna info
 /atom/proc/add_mob_blood(mob/living/M)
@@ -661,7 +682,9 @@
 	return TRUE
 
 /atom/proc/blood_DNA_to_color()
-	return (blood_DNA && blood_DNA["color"]) || BLOOD_COLOR_HUMAN
+	if(blood_DNA && !isnull(blood_DNA["color"]))
+		return blood_DNA["color"]
+	return BLOOD_COLOR_HUMAN
 
 /atom/proc/clean_blood()
 	. = blood_DNA? TRUE : FALSE
@@ -724,7 +747,7 @@
 	var/list/things = src_object.contents()
 	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, FALSE)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, my_bar)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage,handle_mass_item_insertion), things, src_object, user, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 	to_chat(user, span_notice("You dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can."))
@@ -889,6 +912,7 @@
 		if(curturf)
 			. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[curturf.x];Y=[curturf.y];Z=[curturf.z]'>Jump To</option>"
 	VV_DROPDOWN_OPTION(VV_HK_MODIFY_TRANSFORM, "Modify Transform")
+	VV_DROPDOWN_OPTION(VV_HK_EDIT_COLOR_MATRIX, "Edit Color as Matrix")
 	VV_DROPDOWN_OPTION(VV_HK_SPIN_ANIMATION, "SpinAnimation")
 	VV_DROPDOWN_OPTION(VV_HK_STOP_ALL_ANIMATIONS, "Stop All Animations")
 	VV_DROPDOWN_OPTION(VV_HK_ADD_REAGENT, "Add Reagent")
@@ -937,6 +961,9 @@
 		var/newname = input(usr, "What do you want to rename this to?", "Automatic Rename") as null|text
 		if(newname)
 			vv_auto_rename(newname)
+	if(href_list[VV_HK_EDIT_COLOR_MATRIX] && check_rights(R_VAREDIT))
+		var/client/C = usr.client
+		C?.open_color_matrix_editor(src)
 
 /atom/vv_get_header()
 	. = ..()
@@ -994,6 +1021,8 @@
 // You can override it to catch all tool interactions, for use in complex deconstruction procs.
 // Just don't forget to return ..() in the end.
 /atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT, user, I, tool_type) & STOP_ATTACK_PROC_CHAIN)
+		return STOP_ATTACK_PROC_CHAIN
 	switch(tool_type)
 		if(TOOL_CROWBAR)
 			return crowbar_act(user, I)
@@ -1191,7 +1220,7 @@
 
 /atom/proc/update_filters()
 	filters = null
-	filter_data = sortTim(filter_data, /proc/cmp_filter_data_priority, TRUE)
+	filter_data = sortTim(filter_data, GLOBAL_PROC_REF(cmp_filter_data_priority), TRUE)
 	for(var/f in filter_data)
 		var/list/data = filter_data[f]
 		var/list/arguments = data.Copy()
@@ -1328,4 +1357,7 @@
 	if(istype(src, /atom/movable/virtualspeaker))
 		var/atom/movable/virtualspeaker/vs = src
 		return vs.get_chat_color()
-	return rgb(255, 255, 255)
+	return rgb(127, 127, 127)
+
+/atom/proc/wingetproc(id, params)
+	return winget(src, id, params)

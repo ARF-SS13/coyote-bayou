@@ -365,7 +365,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_BASE (TILES_TO_PIXELS(30)) //960 (30 tiles per second, 32 pixels per tile)
 
 /// Arrow speed defines
-#define ARROW_SPEED_BASE (BULLET_SPEED_BASE * 0.90)
+#define ARROW_SPEED_BASE (BULLET_SPEED_BASE / 3)
 
 /// Bullet damage modifier defines
 #define BULLET_MATCH_MULT_DAMAGE 1.25 // rare, pack a punch
@@ -695,6 +695,8 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define RUBBERY_RECOIL_RIFLE_50MG (BULLET_RECOIL_RIFLE_50MG * RUBBERY_RECOIL_MULT)
 #define RUBBERY_WOUND_RIFLE_50MG (BULLET_WOUND_RIFLE_50MG * 2)
 
+#define BULLET_DAMAGE_RIFLE_HEAVYNEEDLE 65
+
 #define BULLET_DAMAGE_RIFLE_GAUSS 20
 #define BULLET_DAMAGE_RIFLE_GAUSS_HANDLOAD (BULLET_DAMAGE_RIFLE_GAUSS * BULLET_HANDLOAD_MULT_DAMAGE)
 #define BULLET_DAMAGE_RIFLE_GAUSS_MATCH (BULLET_DAMAGE_RIFLE_GAUSS * BULLET_MATCH_MULT_DAMAGE)
@@ -715,6 +717,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define RUBBERY_WOUND_RIFLE_GAUSS (BULLET_WOUND_RIFLE_GAUSS * 2)
 
 #define BULLET_DAMAGE_SHOTGUN_PELLET 8
+#define BULLET_DAMAGE_NEEDLER_PELLET 3 //will need revision when possible <-- Tox note
 #define BULLET_DAMAGE_RATSHOT_PELLET 6 //six divides easily into the 36 damage of .357, and 60 damage of .45-70
 #define BULLET_DAMAGE_SHOTGUN_PELLET_HANDLOAD (BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_HANDLOAD_MULT_DAMAGE)
 #define BULLET_DAMAGE_SHOTGUN_PELLET_MATCH (BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_MATCH_MULT_DAMAGE)
@@ -860,6 +863,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_FALLOFF_MIN_DAMAGE 3
 
 /// Shotgun pellet count defines
+#define SHOTGUN_PELLET_NEEDLER 5
 #define SHOTGUN_PELLET_BASE 10
 #define SHOTGUN_PELLET_IMPROVISED 8
 
@@ -1010,6 +1014,12 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_LESS_DAMAGE_T5 0.50
 #define GUN_LESS_DAMAGE_T6 0.35
 #define GUN_LESS_DAMAGE_T7 0.25
+
+//custom gun damage debuffs for later usage if gun needs a fine tuning.
+#define GUN_LESS_DAMAGE_C1 0.55
+#define GUN_LESS_DAMAGE_C2 0.45
+#define GUN_LESS_DAMAGE_C3 0.40
+#define GUN_LESS_DAMAGE_C4 0.30
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12

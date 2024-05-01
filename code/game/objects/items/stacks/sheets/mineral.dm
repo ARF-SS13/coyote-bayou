@@ -76,8 +76,8 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/sandbags
 
 GLOBAL_LIST_INIT(sandbag_recipes, list ( \
-	new/datum/stack_recipe("sandbags", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1), \
-	))
+	new/datum/stack_recipe("sandbag pile", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1),
+	new/datum/stack_recipe("sandbag barricade", /obj/structure/deployable_barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1),))
 
 /obj/item/stack/sheet/mineral/sandbags/get_main_recipes()
 	. = ..()
@@ -331,7 +331,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	new/datum/stack_recipe("titanium tile", /obj/item/stack/tile/mineral/titanium, 1, 4, 20), \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/titanium, 1, time = 10),
-	new/datum/stack_recipe("titanic ingot", /obj/item/ingot/titanium, 6, time = 100), \
+	new/datum/stack_recipe("titanium ingot", /obj/item/ingot/titanium, 6, time = 100), \
 	new/datum/stack_recipe("bear trap", /obj/item/restraints/legcuffs/beartrap, 1, time = 50), \
 	/*new/datum/stack_recipe("high quality parts", /obj/item/stack/crafting/goodparts, 5, time = 50) \ these are easy enough to find*/
 	))

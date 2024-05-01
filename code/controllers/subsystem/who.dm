@@ -37,13 +37,17 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/list/customlist = list()
 
+	var/newbie_time_threshold = 60 * 100 // proc returns *minutes*, so its 60 minutes (an hour) times 100 (100 hours)
+
 /datum/controller/subsystem/who/Initialize()
 	CatalogueRegionLandmarks()
 	..()
 	var/numregions = 0
 	for(var/zlvl in regions)
 		numregions += LAZYLEN(regions[zlvl])
-	to_chat(world, span_boldannounce("Initialized [numregions] regions!"))
+	to_chat(world, span_boldannounce("Initialized [rand(1,9999999)] regions!"))
+	if(prob(1))
+		to_chat(world, span_boldannounce("<3 <3 <3 =3 <3 <3 <3"))
 
 /datum/controller/subsystem/who/fire(resumed)
 	if(!LAZYLEN(save_queue))
@@ -347,9 +351,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	lines += "<br>"
 	lines += "<hr>" // BRR BRR HURR!!~<3
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
-	if(admeme)
-		lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
-		lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
+	// if(admeme)
+	// 	lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
+	// 	lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
 	lines += span_notice("<br>You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
 	lines += "<br>"
 	lines += Me(whoer)
@@ -375,6 +379,11 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/where_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/pose = GetPose(M, TRUE)
 	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
+	var/timeplayed = 420 HOURS
+	var/client/C = extract_client(M)
+	if(C)
+		timeplayed = text2num(C.get_exp_living(TRUE))
+	var/is_new = timeplayed <= newbie_time_threshold
 	var/list/throbber = Throb(M, admeme)
 	var/list/out = list()
 	out += "<br>"
@@ -388,7 +397,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			out += " \[[M.client.holder.rank]\]"
 			name_span = "brass"
 	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [name]</span>"
+	out += "<span class='[name_span]'> [SSchat.dm_linkify(usr, M, name)]</span>"
+	if(is_new)
+		out += " [span_noticealien("(New!)")]"
 	/// the role slug
 	if(role_visible)
 		out += " the <span class='[role_span]'>[role]</span>"
@@ -941,8 +952,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		DispenseInfo(defaultpose, "", "OOC status", TRUE)
 		return
 	var/newpose = stripped_input(usr, "Set the custom OOC status! (Char Limit: [MAX_STATUS_LEN])\n\
-		You can add a color to the OOC status! Just start the line with QQc and then a 6 character hexcode, \
-		like 'QQcFF00DD' or 'QQc123456'", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
+		You can add a color to the OOC status! Just add 'QQcHEXCODE;' before your status, without quotes. \
+		Just swap out HEXCODE with a 6-character hexcode color, like FFF123", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
 	c_pose = newpose
 	DispenseInfo(defaultpose, SSwho.ParsePoseColor(newpose), "OOC status")
 

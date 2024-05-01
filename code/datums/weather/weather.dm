@@ -111,7 +111,7 @@
 	if(sound_ai_type)
 		sound_ai = new sound_ai_type(list(), FALSE, TRUE)
 	telegraph()
-
+//Somewhere between here
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
  *
@@ -151,7 +151,7 @@
 		alert_players(pick(telegraph_message_list), telegraph_sound)
 	else
 		alert_players(telegraph_message, telegraph_sound)
-	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
+	addtimer(CALLBACK(src, PROC_REF(start)), telegraph_duration)
 
 /**
  * Starts the actual weather and effects from it
@@ -166,12 +166,12 @@
 	stage = MAIN_STAGE
 	update_areas()
 	if(LAZYLEN(weather_message_list))
-		alert_players(pick(weather_message_list), weather_sound)	
+		alert_players(pick(weather_message_list), weather_sound)
 	else
 		alert_players(weather_message, weather_sound)
-	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
-	sound_ao?.start()
+	addtimer(CALLBACK(src,PROC_REF(wind_down)), weather_duration)
 	sound_ai?.start()
+	sound_ao?.start()
 	for(var/P in GLOB.player_list)
 		handle_looping_sound(P)
 
@@ -191,7 +191,7 @@
 		alert_players(pick(end_message_list), end_sound)
 	else
 		alert_players(end_message, end_sound)
-	addtimer(CALLBACK(src, .proc/end), end_duration)
+	addtimer(CALLBACK(src, PROC_REF(end)), end_duration)
 
 /datum/weather/proc/alert_players(message, sound_play)
 	if(!message && !sound_play)

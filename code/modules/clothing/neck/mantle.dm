@@ -28,6 +28,11 @@
 	desc = "A simple mantle to cover your shoulders with."
 	icon_state = "brown"
 
+/obj/item/clothing/neck/mantle/red
+	name = "plain red mantle"
+	desc = "A simple mantle to cover your shoulders with."
+	icon_state = "red"
+
 /obj/item/clothing/neck/mantle/overseer
 	name = "vault-tec overseers mantle"
 	desc = "This is the overseers mantle.  Issued by the Vault-tec corporation to easily identify the overseer. This mantle has been passed down from overseer to overseer"

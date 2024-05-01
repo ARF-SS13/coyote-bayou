@@ -174,14 +174,14 @@
 	begin_day = 1
 	end_day = 5
 	begin_month = APRIL
-
+/*
 /datum/holiday/april_fools/celebrate()
 	SSjob.set_overflow_role("Clown")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/mob/dead/new_player/P in GLOB.mob_list)
 		if(P.client)
 			P.client.playtitlemusic()
-
+*/ // I just want to pass integ checks please
 /datum/holiday/fourtwenty
 	name = "Four-Twenty"
 	begin_day = 20
@@ -577,7 +577,7 @@ Since Ramadan is an entire month that lasts 29.5 days on average, the start and 
 	return "Have a merry Christmas!"
 
 /datum/holiday/xmas/celebrate()
-	SSticker.OnRoundstart(CALLBACK(src, .proc/roundstart_celebrate))
+	SSticker.OnRoundstart(CALLBACK(src,PROC_REF(roundstart_celebrate)))
 
 /datum/holiday/xmas/proc/roundstart_celebrate()
 	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)

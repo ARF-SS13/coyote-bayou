@@ -959,9 +959,6 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 	to_chat(usr, "Processing [LAZYLEN(all_guns)] total weapons...")
 	if(!LAZYLEN(GLOB.gun_balance_list))
 		for(var/gunthing in all_guns)
-			if(gunthing in GLOB.gun_balance_list)
-				to_chat(usr, span_warning("ERROR: [gunthing] was skipped because it's a duplicate! How did that happen!"))
-				continue
 			gunthing = new gunthing()//We need to instantiate these guns because many of their stats don't exist until they've Init'd
 			if(istype(gunthing, /obj/item/gun/ballistic))
 				var/obj/item/gun/ballistic/G = gunthing
@@ -1008,7 +1005,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 						continue
 				for(var/f in fire_modes)
 					var/datum/firemode/fm = f
-					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+					var/fm_rps = min((fm.get_fire_delay(TRUE)*fm.burst_count)/60, fm.get_fire_delay(TRUE)/60)// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
 				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
@@ -1086,6 +1083,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					cell = new G.cell_type()
 				var/cell_max_charge = cell.maxcharge
 				var/charge_per_shot
+				var/g_shot_charge_mult = 1
 				var/shots_per_cell
 				var/dam_per_cell
 				var/burst_length_seconds
@@ -1100,6 +1098,14 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					to_chat(usr, span_warning("ERROR: [G] ([G.type]) has no ammo types and has been skipped."))
 					continue
 
+				//Energy Projectile Damage
+				var/mycasing = G.ammo_type[1]//This is probably the right one :)
+				if(!isobj(mycasing))
+					g_casing = new mycasing(G)
+				else
+					g_casing = mycasing
+				g_bullet = new g_casing.projectile_type(G)
+
 				//RPM & RPS
 				var/list/fire_modes = G.firemodes
 				if(!LAZYLEN(fire_modes))
@@ -1113,20 +1119,15 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
 				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
 					var/datum/firemode/fm = fire_modes[1]
 					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
+				charge_per_shot = g_casing.e_cost*(g_shot_charge_mult)
 
-				//Energy Projectile Damage
-				var/mycasing = G.ammo_type[1]//This is probably the right one :)
-				if(!isobj(mycasing))
-					g_casing = new mycasing(G)
-				else
-					g_casing = mycasing
-				g_bullet = new g_casing.projectile_type(G)
-				charge_per_shot = initial(g_casing.e_cost)*(G.get_charge_cost_mult())//This might be wrong if our first firemode isn't the highest RPM one
 				//Start avg, mode, min, & max calcs
 				if(g_bullet && g_rps)
 					var/list/dam_list = initial(g_bullet.damage_list)
@@ -1195,7 +1196,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 		var/list/sortinglist = list()
 		for(var/gg in GLOB.gun_balance_list)
 			sortinglist[gg] = GLOB.gun_balance_list[gg][sorttype]//Associate the sorting value to the key
-		sortTim(sortinglist, /proc/cmp_numeric_dsc, associative = TRUE)//Sort the DPS associations
+		sortTim(sortinglist, GLOBAL_PROC_REF(cmp_numeric_dsc), associative = TRUE)//Sort the DPS associations
 		for(var/gs in sortinglist)//Re-add the other variables
 			sortinglist[gs] = GLOB.gun_balance_list[gs]
 		GLOB.gun_balance_list = LAZYCOPY(sortinglist)//Copy the temporary sorted list into the global list

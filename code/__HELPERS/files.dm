@@ -31,7 +31,7 @@
 
 	for(var/i=0, i<max_iterations, i++)
 		var/list/choices = flist(path)
-		choices = sortList(choices, /proc/cmp_text_dsc)
+		choices = sortList(choices, GLOBAL_PROC_REF(cmp_text_dsc))
 		if(path != root)
 			choices.Insert(1,"/")
 

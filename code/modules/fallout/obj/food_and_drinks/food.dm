@@ -19,12 +19,11 @@
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/molerat
-	name = "molerat meat"
-	desc = "A slab of smelly molerat meat."
+	name = "giant rat meat"
+	desc = "A slab of smelly giant rat meat."
 	icon_state = "bearmeat"
 	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/toxin = 1
+		/datum/reagent/consumable/nutriment = 3
 	)
 	bitesize = 3
 	filling_color = "#FA8072"
@@ -237,7 +236,7 @@
 	desc = "A dog steak does not look attractive, but some people eat worse things when it comes to survival.<br>What did you expect from roasted dog?"
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
-	name = "radroach steak"
+	name = "mutant pillbug steak"
 	desc = "A off-color radroach steak.<br>you could have sworn you saw it still twitch."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "moth_steak"
@@ -293,7 +292,7 @@
 	filling_color = "#967117"
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
-	name = "radscoropion roast"
+	name = "radscorpion roast"
 	desc = "Meat from a radscorpion's chitin, cracked open and carefully roasted to perfection in its own posion."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "mirelurk_roast"
@@ -1147,6 +1146,18 @@
 	icon_state = "baked_nightstalker_tail"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/brahminpotpie
+	name = "Brahmin potpie"
+	icon_state = "brahmin_pot_pie"
+	desc = "A pot pie is a type of pie with a top pie crust, sometimes a bottom pie crust, consisting of flaky pastry This is filled with stewed brahmin tongue"
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/nutriment = 6
+	)
+	tastes = list("pie" = 1, "meat" = 1, "gravy" = 1)
+	bitesize = 4
+	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/gecko_kebab
 	name = "gecko kebab"

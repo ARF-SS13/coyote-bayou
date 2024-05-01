@@ -291,3 +291,18 @@
 	crate_name = "solar panel crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
+/datum/supply_pack/engineering/firefighter
+	name = "Ripley Firefighter Mech"
+	desc = "Autonomous Power Loader Unit. This model is refitted with improved servos for faster ground speed and extra armor."
+	cost = 6000
+	special = TRUE
+	contains = list(/obj/mecha/working/ripley/firefighter)
+	crate_name= "firefighter crate"
+
+/datum/supply_pack/engineering/deathripley
+	name = "Death-Ripley Mech"
+	desc = "Raider Ripley."
+	cost = 8000
+	special = TRUE
+	contains = list(/obj/mecha/working/ripley/deathripley)
+	crate_name= "Death-Ripley crate"

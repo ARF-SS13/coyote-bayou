@@ -15,12 +15,16 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 /mob/proc/get_typing_indicator_icon_state()
 	return typing_indicator_state
 
+/mob/proc/get_typing_indicator_x_offset()
+	return 0
 /// Generates the mutable appearance for typing indicator. Should prevent stuck overlays.
 /mob/proc/generate_typing_indicator()
 	var/state = get_typing_indicator_icon_state()
 	if(ispath(state))
 		var/atom/thing = new state(null)
 		var/mutable_appearance/generated = new(thing)
+		generated.pixel_x = get_typing_indicator_x_offset()
+		generated.layer = 100 //BODY_FRONT_LAYER
 		return generated
 	else
 		CRASH("Unsupported typing indicator state: [state]")
@@ -36,7 +40,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 		return
 	typing_indicator_current = state_override
 	add_overlay(state_override)
-	typing_indicator_timerid = addtimer(CALLBACK(src, .proc/clear_typing_indicator), timeout_override, TIMER_STOPPABLE)
+	typing_indicator_timerid = addtimer(CALLBACK(src,PROC_REF(clear_typing_indicator)), timeout_override, TIMER_STOPPABLE)
 
 /**
  * Removes typing indicator.
@@ -56,7 +60,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 	appearance_flags = RESET_COLOR | TILE_BOUND | PIXEL_SCALE
 	layer = ABOVE_FLY_LAYER
 
-mob/proc/toggle_typing_indicator()
+/mob/proc/toggle_typing_indicator()
 	if(!typing_indicator_current && typing_indicator_enabled)
 		display_typing_indicator()
 	else
