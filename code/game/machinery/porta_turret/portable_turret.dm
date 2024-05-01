@@ -526,9 +526,9 @@
 		num_salvage_to_make++
 	for(var/loots in 1 to num_salvage_to_make)
 		switch(rand(1,10))
-			if(1 to 3)
+			if(1 to 5)
 				new /obj/item/salvage/low(right_here)
-			if(4 to 6)
+			if(6)
 				new /obj/item/salvage/tool(right_here)
 			if(7 to 10)
 				new /obj/item/salvage/high(right_here)

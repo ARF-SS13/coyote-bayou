@@ -15410,7 +15410,7 @@
 	icon_state = "crowbar";
 	name = "chest-opener"
 	},
-/obj/item/weldingtool/basic,
+/obj/item/weldingtool/crude,
 /obj/item/surgicaldrill{
 	icon = 'icons/obj/tools.dmi';
 	icon_state = "drill_screw"
@@ -45662,7 +45662,7 @@
 /obj/item/wrench,
 /obj/item/screwdriver,
 /obj/item/crowbar,
-/obj/item/weldingtool/basic,
+/obj/item/weldingtool/crude,
 /obj/item/clothing/head/welding/f13/fire,
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest,
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderhead,
@@ -85855,7 +85855,7 @@
 	},
 /obj/item/clothing/head/welding/f13,
 /obj/item/clothing/head/welding/f13,
-/obj/item/weldingtool/basic,
+/obj/item/weldingtool/crude,
 /obj/item/weldingtool/mini,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/sidewalk{
