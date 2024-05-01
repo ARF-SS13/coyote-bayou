@@ -354,15 +354,6 @@
 /obj/structure/mirelurkegg,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"abu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/f13,
-/area/f13/building)
 "aby" = (
 /turf/closed/wall/mineral/concrete/blastproof,
 /area/f13/building/massfusion)
@@ -25015,15 +25006,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/nash/downtown)
-"cVa" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/plasteel/vault,
-/area/f13/building)
 "cVk" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -36010,11 +35992,6 @@
 "fRs" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "fRF" = (
@@ -36149,17 +36126,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"fSX" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/underground/cave/coyote/antmound)
 "fTf" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt,
@@ -59478,17 +59444,6 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/building/coyote/safe/nash)
-"lWa" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/f13,
-/area/f13/building)
 "lWe" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -63694,16 +63649,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/ruins)
-"mZz" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/plasteel/vault,
-/area/f13/building)
 "mZA" = (
 /turf/open/indestructible/ground/outside/sidewalkdirt{
 	icon_state = "outerpavement";
@@ -82982,15 +82927,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"saV" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/plasteel/vault,
-/area/f13/building)
 "saX" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt{
@@ -92381,15 +92317,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city)
-"uxq" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 4;
-	randomizer_kind = "greater spider";
-	randomizer_tag = "Creepy Crawlers2"
-	},
-/turf/open/floor/f13,
-/area/f13/building)
 "uxs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -94411,15 +94338,6 @@
 	icon_state = "verticaloutermaintop"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
-"uYu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 2;
-	randomizer_kind = "lesser spider";
-	randomizer_tag = "Creepy Crawlers"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/building)
 "uYE" = (
 /obj/structure/chair/stool{
 	dir = 4;
@@ -111347,7 +111265,7 @@ itM
 sMc
 itM
 usE
-mZz
+usE
 usE
 fSJ
 lWN
@@ -112123,7 +112041,7 @@ igq
 fSJ
 jJV
 eCH
-uxq
+jJV
 jJV
 itM
 vqh
@@ -114183,7 +114101,7 @@ fSJ
 oyD
 jJV
 nrG
-abu
+jJV
 gpc
 vqh
 lWN
@@ -114691,7 +114609,7 @@ lQa
 pkf
 itM
 fSJ
-abu
+jJV
 xGu
 fSJ
 xnF
@@ -114943,7 +114861,7 @@ usE
 usE
 xNq
 itM
-cVa
+itM
 itM
 itM
 eBy
@@ -115728,7 +115646,7 @@ itM
 mbv
 fSJ
 pyN
-uYu
+igq
 pJM
 fSJ
 ezS
@@ -116237,7 +116155,7 @@ mJe
 jJV
 fSJ
 oAW
-saV
+itM
 itM
 itM
 fSJ
@@ -116491,7 +116409,7 @@ jJV
 oyD
 gOb
 jJV
-abu
+jJV
 fSJ
 xRk
 mbv
@@ -116744,7 +116662,7 @@ jJV
 oyD
 oyD
 jJV
-abu
+jJV
 oyD
 oyD
 jJV
@@ -117266,7 +117184,7 @@ jJV
 geD
 eCH
 jJV
-lWa
+eUO
 jJV
 jJV
 hEw
@@ -117508,7 +117426,7 @@ kJH
 mrg
 kJH
 mrg
-fSX
+mrg
 mrg
 fSJ
 igq
@@ -118283,7 +118201,7 @@ mrg
 mrg
 fSJ
 igq
-saV
+itM
 itM
 itM
 sQE
@@ -118297,7 +118215,7 @@ lWN
 lWN
 fSJ
 vmy
-lWa
+eUO
 jJV
 bEE
 fSJ
