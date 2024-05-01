@@ -1311,11 +1311,6 @@
 	path = /obj/item/reagent_containers/food/snacks/grown/harebell
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
-/datum/gear/head/peaceflower
-	name = "peaceflower"
-	path = /obj/item/clothing/head/peaceflower //This is a xenobiology product that makes the wearer a pacifist, and unable to take off the flower without help, looks very pretty tho.
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-
 /datum/gear/head/sunflower
 	name = "sun flower"
 	path = /obj/item/grown/sunflower
