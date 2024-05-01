@@ -1,8 +1,9 @@
 /obj/item/wrench
 	name = "wrench"
-	desc = "A wrench with common uses. Can be found in your hand."
+	desc = "A wrench with common uses. Can be found in your hand. This can repair dents in robots."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "wrench"
+	icon_state = "basicwrench2"
+	item_state = "basicwrench"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -11,18 +12,46 @@
 	force_unwielded = 25
 	force_wielded = 30
 	throwforce = 7
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	usesound = 'sound/items/ratchet.ogg'
 	custom_materials = list(/datum/material/iron=500)
-	reskinnable_component = /datum/component/reskinnable/wrench
+	reskinnable_component = null
 
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
-
 	wound_bonus = -10
 	bare_wound_bonus = 5
+
+/obj/item/wrench/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	var/mob/living/carbon/human/target = M
+	if(!target || !isrobotic(target))
+		return FALSE
+
+	if(praying)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins repairing their dents."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begins repairing any dents."))
+
+	praying = TRUE
+	if(!target || !isrobotic(target))
+		praying = FALSE
+		return FALSE
+	if(do_after(user, 1 SECONDS, target = M)) 
+		M.adjustBruteLoss(-5, include_roboparts = TRUE) //Wrench is for brute
+		to_chat(M, span_notice("[user] finished repairing your dents!"))
+		praying = FALSE
+		playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		praying = FALSE
 
 /obj/item/wrench/cyborg
 	name = "automatic wrench"
@@ -100,9 +129,10 @@
 	desc = "A bent bar, finnicky to use and requires a lot of effort for consant adjustments, better than your bare hand though."
 	icon_state = "crudewrench"
 	item_state = "crudewrench"
-	toolspeed = 6
+	toolspeed = 4
 	reskinnable_component = null
 
+/*
 /obj/item/wrench/basic
 	name = "basic wrench"
 	desc = "A pipe with an old, wrench head on it."
@@ -110,11 +140,12 @@
 	item_state = "basicwrench"
 	toolspeed = 2
 	reskinnable_component = null
+*/
 
 /obj/item/wrench/hightech
-	name = "advanced locking device"
-	desc = "An advanced locking device that uses micro-mechanisms to grasp on and tighten objects with extreme torque accuracy and speed."
-	icon_state = "advancedwrench"
-	item_state = "advancedwrench"
+	name = "prewar wrench"
+	desc = "A drop forged wrench, very durable and well made."
+	icon_state = "wrench"
+	item_state = "wrench"
 	toolspeed = 0.1
-	reskinnable_component = null
+	reskinnable_component = /datum/component/reskinnable/wrench

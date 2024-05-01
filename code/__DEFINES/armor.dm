@@ -865,14 +865,14 @@
 		"melee" = 15, \
 		"bullet" = 25, \
 		"laser" = 15, \
-		"energy" = -100, \
+		"energy" = -1000, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
 		"fire" = 100, \
 		"acid" = 100, \
 		"wound" = 100, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 5)
 
 /* Bear armor!
  * Unbearable in melee

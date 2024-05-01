@@ -89,6 +89,48 @@
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
 
+// LIGHT RANGED EMP VARIANT
+/mob/living/simple_animal/hostile/renegade/grunt/emp
+	name = "Renegade Grunt"
+	desc = "The standard issue muscle employed among the Renegades."
+	icon_state = "renegade_emper"
+	icon_living = "renegade_emper"
+	icon_dead = "renegade_prospect-dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RENEGADE_COMBAT_ARMOR
+	maxHealth = 100
+	health = 100
+	healable = 1
+	check_friendly_fire = 1
+	retreat_distance = 6
+	minimum_distance = 3
+	extra_projectiles = 0
+	ranged_cooldown_time = 2 SECONDS
+	sight_shoot_delay_time = 0.2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/ion
+	projectilesound = 'sound/f13weapons/pulsepistolfire.ogg'
+	robust_searching = TRUE
+	speak = list(
+		"Come get some!",
+		"Fuck off!",
+		"Landon's going to promote me after this!",
+		"Bullets for days!",
+		"Renegades represent!"
+		)
+	speak_emote = list("says")
+	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
+
 // LIGHT SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/engie
 	name = "Renegade Engie"
@@ -318,6 +360,7 @@
 	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
+	bossmob = TRUE
 	healable = 1
 	melee_damage_lower = 50
 	melee_damage_upper = 50
@@ -376,6 +419,7 @@
 	retreat_distance = 4
 	minimum_distance = 2
 	ranged = 1
+	bossmob = TRUE
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'

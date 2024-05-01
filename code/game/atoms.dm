@@ -1021,6 +1021,8 @@
 // You can override it to catch all tool interactions, for use in complex deconstruction procs.
 // Just don't forget to return ..() in the end.
 /atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT, user, I, tool_type) & STOP_ATTACK_PROC_CHAIN)
+		return STOP_ATTACK_PROC_CHAIN
 	switch(tool_type)
 		if(TOOL_CROWBAR)
 			return crowbar_act(user, I)

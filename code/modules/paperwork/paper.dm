@@ -399,6 +399,49 @@
 /obj/item/paper/crumpled/muddy
 	icon_state = "scrap_mud"
 
+/obj/item/paper/report_card
+	var/grade = "F" // See me after class
+	
+/obj/item/paper/report_card/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(fridge_report_card_get_value))
+
+/obj/item/paper/report_card/proc/fridge_report_card_get_value()
+	switch(grade)
+		if("P")
+			return COINS(2500)
+		if("S")
+			return COINS(1000) // we're going out for frosty chocolate milkshakes
+		if("A+")
+			return COINS(250)
+		if("A")
+			return COINS(200)
+		if("A-")
+			return COINS(175)
+		if("B+")
+			return COINS(75)
+		if("B")
+			return COINS(50)
+		if("B-")
+			return COINS(10)
+		if("C+")
+			return COINS(5)
+		if("C")
+			return COINS(1)
+		else
+			return COINS(1) // If I get a 75% or below, I dont pass, and neither will you
+
+/obj/item/paper/supplyreport
+	var/costvalue = 0 // See me after class
+	
+/obj/item/paper/supplyreport/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(getcostvalue))
+
+/obj/item/paper/supplyreport/proc/getcostvalue()
+	return costvalue
+
+
 #undef MAX_PAPER_LENGTH
 #undef MAX_PAPER_STAMPS
 #undef MAX_PAPER_STAMPS_OVERLAYS

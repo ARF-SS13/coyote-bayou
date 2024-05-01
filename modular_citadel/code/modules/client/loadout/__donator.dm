@@ -284,6 +284,7 @@
 
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/heavy/tribal/westernwayfarer(src)
+	new /obj/item/clothing/head/helmet/f13/wastewarhat(src)
 	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
 	new /obj/item/toy/scale(src)
 
@@ -1446,7 +1447,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit006/PopulateContents()
 	new /obj/item/ammo_box/m473(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/automatic/pistol/lugerrevolver/tox(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/pet_carrier/paws(src)
@@ -1461,8 +1462,9 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00last/PopulateContents()
 	new /obj/item/ammo_box/a3006box(src)
 	new /obj/item/ammo_box/magazine/stg(src)
-	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
-	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/lugerrevolver/tox(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/stg44custom(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
@@ -1797,8 +1799,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
-	new /obj/item/gun/ballistic/automatic/m1carbine/covcarbine(src)
-	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/gun/energy/laser/covcarbine(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
 	// /obj/item/gun/energy/alien(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
@@ -1934,12 +1936,11 @@
 	new /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn(src)
 
 /datum/gear/donator/kits/kelprunner02
-	name = "Cydonian Armor"
+	name = "Invisible Backpack"
 	path = /obj/item/storage/box/large/custom_kit/kelprunner02
 	ckeywhitelist = list("Kelprunner")
 
 /obj/item/storage/box/large/custom_kit/kelprunner02/PopulateContents()
-	new /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm(src)
 	new /obj/item/storage/backpack/invisipack(src)
 
 /datum/gear/donator/kits/kelprunner03

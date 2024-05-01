@@ -429,10 +429,8 @@
 		if(!M.client)
 			if(!SSmobs.debug_disable_mob_ceasefire)
 				var/client_in_range = FALSE
-				for(var/client/C in GLOB.clients)
-					if(!C.mob)
-						continue
-					if(get_dist(M, C.mob) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
+				for(var/mob/living/L in SSmobs.clients_by_zlevel[z])
+					if(get_dist(src, L) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
 						client_in_range = TRUE
 						break
 				if(!client_in_range)
@@ -816,7 +814,6 @@
 	else
 		// Apply stamina damage if the mob tried to dodge into a wall
 		adjustStaminaLoss(10)
-		visible_message("<span class='notice'>[src] tries to dodge but hits a wall!</span>")
 		playsound(loc, 'sound/effects/hit_punch.ogg', 50, 1, -1) // Play a punch sound
 	dodging = TRUE
 

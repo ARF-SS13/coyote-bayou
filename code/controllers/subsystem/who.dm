@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/list/customlist = list()
 
-	var/newbie_time_threshold = 4 DAYS
+	var/newbie_time_threshold = 60 * 100 // proc returns *minutes*, so its 60 minutes (an hour) times 100 (100 hours)
 
 /datum/controller/subsystem/who/Initialize()
 	CatalogueRegionLandmarks()
@@ -397,7 +397,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			out += " \[[M.client.holder.rank]\]"
 			name_span = "brass"
 	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [name]</span>"
+	out += "<span class='[name_span]'> [SSchat.dm_linkify(usr, M, name)]</span>"
 	if(is_new)
 		out += " [span_noticealien("(New!)")]"
 	/// the role slug

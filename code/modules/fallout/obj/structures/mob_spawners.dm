@@ -348,7 +348,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/tribal = 1)
+					/mob/living/simple_animal/hostile/raider/tribal = 1,
+					/mob/living/simple_animal/hostile/renegade/grunt/emp = 2)
 
 /obj/structure/nest/raider/melee
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
@@ -398,6 +399,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
 					/mob/living/simple_animal/hostile/cazador/young = 3)
 
+
 /obj/structure/nest/gecko
 	name = "gecko eggs"
 	icon = 'icons/fallout/mobs/nests.dmi'
@@ -406,14 +408,24 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 3
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/gecko = 4,
-		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
-		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 2,
-		/mob/living/simple_animal/hostile/gecko/fire = 1,
-		/mob/living/simple_animal/hostile/gecko/legacy = 3,
+		/mob/living/simple_animal/hostile/gecko              = 4,
+		/mob/living/simple_animal/hostile/gecko/fire         = 1,
+		/mob/living/simple_animal/hostile/gecko/legacy       = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big          = 2,
 		)
+
+/obj/structure/nest/gecko/Initialize()
+	if(prob(10))
+		mob_types |= list(
+			/mob/living/simple_animal/hostile/gecko/tribal          = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/juvenile = 4,
+			/mob/living/simple_animal/hostile/gecko/tribal/warrior  = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/hunter   = 3,
+		)
+		if(prob(1))
+			mob_types |= list(/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman = 1)
+	. = ..()
 
 /obj/structure/nest/gecko/boss
 	name = "kobold eggs"
@@ -429,7 +441,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
 		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile =  4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman =  2,
 		)
 
 /obj/structure/nest/gecko/tribal

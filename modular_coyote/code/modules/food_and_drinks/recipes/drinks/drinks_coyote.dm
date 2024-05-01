@@ -240,6 +240,25 @@
 	results = list(/datum/reagent/consumable/peachshake = 3)
 	required_reagents = list(/datum/reagent/consumable/peachjuice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
 
+/datum/reagent/consumable/orangeshake
+	name = "Orange Shake"
+	description = "A frosty orange milkshake."
+	color = "#541B00"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8 * REAGENTS_METABOLISM
+	taste_description = "sweet creamy oranges"
+	glass_icon_state = "orangeshake"
+	glass_name = "orange shake"
+	glass_desc = "A orange flavored milkshake."
+	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
+
+/datum/chemical_reaction/drink/orangehshake
+	name = "orange Shake"
+	id = /datum/reagent/consumable/orangeshake
+	results = list(/datum/reagent/consumable/orangeshake = 3)
+	required_reagents = list(/datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+
 /datum/reagent/consumable/ethanol/cloverclub
 	name = "Clover Club"
 	description = "A light and refreshing raspberry cocktail."
@@ -255,3 +274,98 @@
 	results = list(/datum/chemical_reaction/drink/cloverclub = 3)
 	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/ethanol/gin = 3)
 
+/datum/reagent/consumable/bobatea
+	name = "Boba Tea"
+	description = "A light and refreshing boba tea."
+	taste_description = "popping boba and tea"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_tea"
+	glass_name = "Boba Tea"
+	glass_desc = "A light and refreshing boba tea"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/bobatea
+	name = "boba tea"
+	id = /datum/reagent/consumable/bobatea
+	results = list(/datum/reagent/consumable/bobatea = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/tea = 1)
+
+/datum/reagent/consumable/boba_lemonlime
+	name = "Boba Lemon Lime"
+	description = "A light and refreshing boba, lemon lime flavor."
+	taste_description = "popping boba and lemonlime"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_lemonlime"
+	glass_name = "Lemon Lime Boba"
+	glass_desc = "A light and refreshing boba lemon lime"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/boba_lemonlime
+	name = "boba lemon lime"
+	id = /datum/reagent/consumable/boba_lemonlime
+	results = list(/datum/reagent/consumable/boba_lemonlime = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/lemon_lime = 1)
+
+/datum/reagent/consumable/boba_strawberry
+	name = "Boba strawberry"
+	description = "A light and refreshing boba, strawberry flavor."
+	taste_description = "popping boba and lemonlime"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_strawberry"
+	glass_name = "Strawberry Boba"
+	glass_desc = "A light and refreshing boba strawberry"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/boba_strawberry
+	name = "boba strawberry"
+	id = /datum/reagent/consumable/boba_strawberry
+	results = list(/datum/reagent/consumable/boba_strawberry = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/strawberryjuice = 1)
+
+/datum/reagent/consumable/boba_banana
+	name = "Boba banana"
+	description = "A light and refreshing boba, banana flavor."
+	taste_description = "popping boba and banana"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_banana"
+	glass_name = "banana Boba"
+	glass_desc = "A light and refreshing boba banana"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/boba_banana
+	name = "boba banana"
+	id = /datum/reagent/consumable/boba_banana
+	results = list(/datum/reagent/consumable/boba_banana = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/banana = 1)
+
+/datum/reagent/consumable/boba_melonlime
+	name = "Boba melon lime"
+	description = "A light and refreshing boba, melon and lime flavor."
+	taste_description = "popping boba, melon, and lime"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_melonlime"
+	glass_name = "melon lime Boba"
+	glass_desc = "A light and refreshing boba melonlime"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/boba_melonlime
+	name = "boba melonlime"
+	id = /datum/reagent/consumable/boba_melonlime
+	results = list(/datum/reagent/consumable/boba_melonlime = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/watermelonjuice = 1, /datum/reagent/consumable/limejuice = 1)
+
+/datum/reagent/consumable/boba_lovebug
+	name = "Boba lovebug"
+	description = "A light and refreshing boba and love."
+	taste_description = "popping boba and love"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "boba_lovebug"
+	glass_name = "Lovebug Boba"
+	glass_desc = "A light and refreshing boba lovebug"
+	nutriment_factor = 8
+
+/datum/chemical_reaction/drink/boba_lovebug
+	name = "boba lovebug"
+	id = /datum/reagent/consumable/boba_lovebug
+	results = list(/datum/reagent/consumable/boba_lovebug = 3)
+	required_reagents = list(/datum/reagent/consumable/boba = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/vanilla = 1,/datum/reagent/consumable/grenadine = 1 )

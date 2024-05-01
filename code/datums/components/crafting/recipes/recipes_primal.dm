@@ -46,13 +46,13 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/wonderglue
-	name = "Animal Glue"
+	name = "Wonder Glue"
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
-	reqs = list(/obj/item/stack/sheet/bone = 3,
-				/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/sinew = 3)
+	reqs = list(/obj/item/stack/sheet/bone = 1,
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/sinew = 1)
 	result = /obj/item/crafting/wonderglue
 	category = CAT_PRIMAL
 
@@ -70,7 +70,7 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/duct_tape
-	name = "Bonfire"
+	name = "Duct Tape" // Why was this named bonfire
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)

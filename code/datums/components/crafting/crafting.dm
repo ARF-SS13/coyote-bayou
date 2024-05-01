@@ -30,18 +30,19 @@
 					//CAT_FARMING,
 					CAT_MISCELLANEOUS,
 					//CAT_FURNITURE,
-					//CAT_BOTTLE,
+					CAT_BOTTLE
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
 					CAT_WASTEFOOD,
-					CAT_BREAD,
-					CAT_BURGER,
+					//CAT_BREAD,
+				//	CAT_BURGER,
 					CAT_MEAT,
 					CAT_MISCFOOD,
 					CAT_PASTRY,
 					CAT_PIE,
 					CAT_SOUP,
+					CAT_DESERT,
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
@@ -442,6 +443,9 @@
 		if("set_category")
 			cur_category = params["category"]
 			cur_subcategory = params["subcategory"] || ""
+			. = TRUE
+		if("update_static")
+			update_static_data(usr)
 			. = TRUE
 
 /datum/component/personal_crafting/proc/build_recipe_data(datum/crafting_recipe/R)

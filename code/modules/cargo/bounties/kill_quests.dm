@@ -8,10 +8,10 @@
  * */
 
 /datum/bounty/kill
-	base_reward =         COINS_TO_CREDITS(50)
-	medium_reward_bonus = COINS_TO_CREDITS(10)
-	hard_reward_bonus =   COINS_TO_CREDITS(20)
-	CBT_reward_bonus =    COINS_TO_CREDITS(30)
+	base_reward =         COINS(50)
+	medium_reward_bonus = COINS(10)
+	hard_reward_bonus =   COINS(20)
+	CBT_reward_bonus =    COINS(30)
 	flavor_kind = QUEST_KIND_KILL_MOBS
 	candupe = FALSE
 	respect_extinction = TRUE
@@ -29,7 +29,7 @@
 		/datum/bounty_quota/gecko/easy,
 		/datum/bounty_quota/gecko/medium,
 		/datum/bounty_quota/gecko/hard,
-		/datum/bounty_quota/gecko/CBT,
+		/datum/bounty_quota/gecko/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -42,7 +42,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(3)
+	price_per_thing = COINS(3)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -60,7 +60,7 @@
 	needed_amount = 25
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/gecko/CBT
+/datum/bounty_quota/gecko/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -76,7 +76,7 @@
 		/datum/bounty_quota/rat/easy,
 		/datum/bounty_quota/rat/medium,
 		/datum/bounty_quota/rat/hard,
-		/datum/bounty_quota/rat/CBT,
+		/datum/bounty_quota/rat/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -90,7 +90,7 @@
 	needed_amount = 20
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(1)
+	price_per_thing = COINS(1)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -108,7 +108,7 @@
 	needed_amount = 30
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/rat/CBT
+/datum/bounty_quota/rat/cocknballtorture
 	needed_amount = 150
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -124,7 +124,7 @@
 		/datum/bounty_quota/nightstalker/easy,
 		/datum/bounty_quota/nightstalker/medium,
 		/datum/bounty_quota/nightstalker/hard,
-		/datum/bounty_quota/nightstalker/CBT,
+		/datum/bounty_quota/nightstalker/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -138,7 +138,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(4)
+	price_per_thing = COINS(4)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -162,7 +162,7 @@
 	)
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/nightstalker/CBT
+/datum/bounty_quota/nightstalker/cocknballtorture
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -178,7 +178,7 @@
 		/datum/bounty_quota/molerat/easy,
 		/datum/bounty_quota/molerat/medium,
 		/datum/bounty_quota/molerat/hard,
-		/datum/bounty_quota/molerat/CBT,
+		/datum/bounty_quota/molerat/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -191,7 +191,7 @@
 	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(3)
+	price_per_thing = COINS(3)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -209,7 +209,7 @@
 	needed_amount = 30
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/molerat/CBT
+/datum/bounty_quota/molerat/cocknballtorture
 	needed_amount = 200 // good luck
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -225,7 +225,7 @@
 		/datum/bounty_quota/scorpin/easy,
 		/datum/bounty_quota/scorpin/medium,
 		/datum/bounty_quota/scorpin/hard,
-		/datum/bounty_quota/scorpin/CBT,
+		/datum/bounty_quota/scorpin/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -238,7 +238,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(20)
+	price_per_thing = COINS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -262,7 +262,7 @@
 	)
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/scorpin/CBT
+/datum/bounty_quota/scorpin/cocknballtorture
 	needed_amount = 150
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -278,7 +278,7 @@
 		/datum/bounty_quota/roachypillbug/easy,
 		/datum/bounty_quota/roachypillbug/medium,
 		/datum/bounty_quota/roachypillbug/hard,
-		/datum/bounty_quota/roachypillbug/CBT,
+		/datum/bounty_quota/roachypillbug/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -291,7 +291,7 @@
 	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(2)
+	price_per_thing = COINS(2)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -309,7 +309,7 @@
 	needed_amount = 40
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/roachypillbug/CBT
+/datum/bounty_quota/roachypillbug/cocknballtorture
 	needed_amount = 200
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -325,7 +325,7 @@
 		/datum/bounty_quota/ghoul/easy,
 		/datum/bounty_quota/ghoul/medium,
 		/datum/bounty_quota/ghoul/hard,
-		/datum/bounty_quota/ghoul/CBT,
+		/datum/bounty_quota/ghoul/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -338,7 +338,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5)
+	price_per_thing = COINS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -356,7 +356,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/ghoul/CBT
+/datum/bounty_quota/ghoul/cocknballtorture
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -372,7 +372,7 @@
 		/datum/bounty_quota/ant/easy,
 		/datum/bounty_quota/ant/medium,
 		/datum/bounty_quota/ant/hard,
-		/datum/bounty_quota/ant/CBT,
+		/datum/bounty_quota/ant/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -386,7 +386,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(6)
+	price_per_thing = COINS(6)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -404,7 +404,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/ant/CBT
+/datum/bounty_quota/ant/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -420,7 +420,7 @@
 		/datum/bounty_quota/supermutant/easy,
 		/datum/bounty_quota/supermutant/medium,
 		/datum/bounty_quota/supermutant/hard,
-		/datum/bounty_quota/supermutant/CBT,
+		/datum/bounty_quota/supermutant/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -434,7 +434,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(10)
+	price_per_thing = COINS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -452,7 +452,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/supermutant/CBT
+/datum/bounty_quota/supermutant/cocknballtorture
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -468,7 +468,7 @@
 		/datum/bounty_quota/bloatfly/easy,
 		/datum/bounty_quota/bloatfly/medium,
 		/datum/bounty_quota/bloatfly/hard,
-		/datum/bounty_quota/bloatfly/CBT,
+		/datum/bounty_quota/bloatfly/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -481,7 +481,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(4)
+	price_per_thing = COINS(4)
 	easy_multiplier = 1
 	medium_multiplier = 1
 	hard_multiplier = 2
@@ -499,7 +499,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/bloatfly/CBT
+/datum/bounty_quota/bloatfly/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -515,7 +515,7 @@
 		/datum/bounty_quota/hellpig/easy,
 		/datum/bounty_quota/hellpig/medium,
 		/datum/bounty_quota/hellpig/hard,
-		/datum/bounty_quota/hellpig/CBT,
+		/datum/bounty_quota/hellpig/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -528,7 +528,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(20)
+	price_per_thing = COINS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -546,7 +546,7 @@
 	needed_amount = 3
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/hellpig/CBT
+/datum/bounty_quota/hellpig/cocknballtorture
 	needed_amount = 10
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -562,7 +562,7 @@
 		/datum/bounty_quota/centaur/easy,
 		/datum/bounty_quota/centaur/medium,
 		/datum/bounty_quota/centaur/hard,
-		/datum/bounty_quota/centaur/CBT,
+		/datum/bounty_quota/centaur/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -575,7 +575,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(8)
+	price_per_thing = COINS(8)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -593,7 +593,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/centaur/CBT
+/datum/bounty_quota/centaur/cocknballtorture
 	needed_amount = 50 // are there even that many?
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -609,7 +609,7 @@
 		/datum/bounty_quota/raider/easy,
 		/datum/bounty_quota/raider/medium,
 		/datum/bounty_quota/raider/hard,
-		/datum/bounty_quota/raider/CBT,
+		/datum/bounty_quota/raider/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -626,7 +626,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(15)
+	price_per_thing = COINS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -644,7 +644,7 @@
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/raider/CBT
+/datum/bounty_quota/raider/cocknballtorture
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -660,7 +660,7 @@
 		/datum/bounty_quota/deathclaw/easy,
 		/datum/bounty_quota/deathclaw/medium,
 		/datum/bounty_quota/deathclaw/hard,
-		/datum/bounty_quota/deathclaw/CBT,
+		/datum/bounty_quota/deathclaw/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -673,7 +673,7 @@
 	needed_amount = 2
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(50)
+	price_per_thing = COINS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -691,9 +691,9 @@
 	needed_amount = 6
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/deathclaw/CBT
+/datum/bounty_quota/deathclaw/cocknballtorture
 	needed_amount = 20
-	difficulty = QUEST_DIFFICULTY_CBT // the CBT part is actually finding 20 of em
+	difficulty = QUEST_DIFFICULTY_CBT // the cocknballtorture part is actually finding 20 of em
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -704,7 +704,7 @@
 	flavor_focus = /mob/living/simple_animal/hostile/enclave
 	weight = 1
 	init_wanteds = list(
-		/datum/bounty_quota/enclavehellion/CBT,
+		/datum/bounty_quota/enclavehellion/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -718,13 +718,13 @@
 	needed_amount = 20
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(50)
+	price_per_thing = COINS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
 	CBT_multiplier = 4
 
-/datum/bounty_quota/enclavehellion/CBT
+/datum/bounty_quota/enclavehellion/cocknballtorture
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -740,7 +740,7 @@
 		/datum/bounty_quota/civilianrobot/easy,
 		/datum/bounty_quota/civilianrobot/medium,
 		/datum/bounty_quota/civilianrobot/hard,
-		/datum/bounty_quota/civilianrobot/CBT,
+		/datum/bounty_quota/civilianrobot/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -756,7 +756,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(10)
+	price_per_thing = COINS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -774,7 +774,7 @@
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/civilianrobot/CBT
+/datum/bounty_quota/civilianrobot/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -790,7 +790,7 @@
 		/datum/bounty_quota/militaryrobot/easy,
 		/datum/bounty_quota/militaryrobot/medium,
 		/datum/bounty_quota/militaryrobot/hard,
-		/datum/bounty_quota/militaryrobot/CBT,
+		/datum/bounty_quota/militaryrobot/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -807,7 +807,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(20)
+	price_per_thing = COINS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -825,7 +825,7 @@
 	needed_amount = 30
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/militaryrobot/CBT
+/datum/bounty_quota/militaryrobot/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -852,7 +852,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5000)
+	price_per_thing = COINS(5000)
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -866,7 +866,7 @@
 		/datum/bounty_quota/crab/easy,
 		/datum/bounty_quota/crab/medium,
 		/datum/bounty_quota/crab/hard,
-		/datum/bounty_quota/crab/CBT,
+		/datum/bounty_quota/crab/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -880,7 +880,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5)
+	price_per_thing = COINS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -898,7 +898,7 @@
 	needed_amount = 25
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/crab/CBT
+/datum/bounty_quota/crab/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -914,7 +914,7 @@
 		/datum/bounty_quota/hugespider/easy,
 		/datum/bounty_quota/hugespider/medium,
 		/datum/bounty_quota/hugespider/hard,
-		/datum/bounty_quota/hugespider/CBT,
+		/datum/bounty_quota/hugespider/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -928,7 +928,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(15)
+	price_per_thing = COINS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -946,7 +946,7 @@
 	needed_amount = 15
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/hugespider/CBT
+/datum/bounty_quota/hugespider/cocknballtorture
 	needed_amount = 50
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -960,7 +960,7 @@
 	weight = 1
 	init_wanteds = list(
 		/datum/bounty_quota/renegade/hard,
-		/datum/bounty_quota/renegade/CBT,
+		/datum/bounty_quota/renegade/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -977,7 +977,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(15)
+	price_per_thing = COINS(15)
 	hard_multiplier = 1
 	CBT_multiplier = 2
 
@@ -985,7 +985,7 @@
 	needed_amount = 5
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/renegade/CBT
+/datum/bounty_quota/renegade/cocknballtorture
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -1001,7 +1001,7 @@
 		/datum/bounty_quota/grabbag/easy,
 		/datum/bounty_quota/grabbag/medium,
 		/datum/bounty_quota/grabbag/hard,
-		/datum/bounty_quota/grabbag/CBT,
+		/datum/bounty_quota/grabbag/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
@@ -1015,7 +1015,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(5)
+	price_per_thing = COINS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -1033,7 +1033,7 @@
 	needed_amount = 30
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/grabbag/CBT
+/datum/bounty_quota/grabbag/cocknballtorture
 	needed_amount = 100
 	difficulty = QUEST_DIFFICULTY_CBT
 
@@ -1095,7 +1095,7 @@
 		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,
 		/datum/bounty_quota/supergrabbag,
-		/datum/bounty_quota/supergrabbag, // welcome to CBT
+		/datum/bounty_quota/supergrabbag, // welcome to cocknballtorture
 	)
 	difficulty = QUEST_DIFFICULTY_CBT
 	candupe = TRUE
@@ -1109,7 +1109,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS_TO_CREDITS(200)
+	price_per_thing = COINS(200)
 	easy_multiplier = 1
 	medium_multiplier = 1
 	hard_multiplier = 2
@@ -1127,3 +1127,229 @@
 	name = initial(thing.name)
 	paths = list(pick(thing)) // guaranteed fresh at time of baking
 
+////SEALED ALCOHOL QUOTA////
+/// To make bottlers useful///
+// Also a resource sink for bartenders//
+
+/datum/bounty/kill/sealedbottle
+	name = "Collect Sealed Alcohol"
+	description = "Our workers here are parched, we'll pay good money for quality, sealed alcohols."
+	flavor_focus = /obj/item/export/bottle
+	weight = 1
+	candupe = TRUE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/sealedbottle/easy,
+		/datum/bounty_quota/sealedbottle/medium,
+		/datum/bounty_quota/sealedbottle/hard,
+		/datum/bounty_quota/sealedbottle/cocknballtorture,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// BOTTLE QUOTAS /////
+/datum/bounty_quota/sealedbottle
+	name = "Find some sealed bottles"
+	paths = list(
+		/obj/item/export/bottle
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS(100) // Rely on multipliers for this one
+	easy_multiplier = 1.2
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2 
+
+/datum/bounty_quota/sealedbottle/easy // 240c for 200u
+	needed_amount = 2
+	pick_this_many = 0
+	auto_generate_info = FALSE
+	info = "Any sealed bottles."
+	paths = list(
+		/obj/item/export/bottle
+	)
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/sealedbottle/medium // 750c for 500u
+	needed_amount = 5
+	paths_get_subtypes = TRUE
+	pick_this_many = 4
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/sealedbottle/hard // 2000c for 1000u
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	pick_this_many = 3
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/sealedbottle/cocknballtorture // 4000c for 2000u
+	needed_amount = 20
+	paths_get_subtypes = TRUE
+	difficulty = QUEST_DIFFICULTY_CBT
+	pick_this_many = 2
+
+/// Blacksmith trading ///
+/// So blacksmiths can like, literally get any money?///
+/// POV: You found a single cool knife in a dungeon ///
+/*
+/datum/bounty/kill/weapons
+	name = "Collect Weapons"
+	description = "We need some extra weapons for the guild knights, buy, find, or make some."
+	flavor_focus = /obj/item/gun || /obj/item/melee
+	weight = 1
+	candupe = TRUE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/weapon/easy,
+		/datum/bounty_quota/weapon/medium,
+		/datum/bounty_quota/weapon/hard,
+		/datum/bounty_quota/weapon/cocknballtorture,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// WEAPON QUOTAS /////
+/datum/bounty_quota/weapon
+	name = "Find some weapons"
+	auto_generate_info = FALSE
+	info = "Melee or Ranged weapons"
+	paths = list(
+		/obj/item/gun, /obj/item/melee
+	)
+	needed_amount = 10
+	pick_this_many = 0
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS(15) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2
+
+/datum/bounty_quota/weapon/easy 
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/weapon/medium 
+	needed_amount = 20
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/weapon/hard 
+	needed_amount = 30
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/weapon/cocknballtorture 
+	needed_amount = 40
+	difficulty = QUEST_DIFFICULTY_CBT
+*/ // maybe searching through all 400+ guns and melee weapons at once isn't a good idea 
+///Farming Stuff, good for farmers
+/// Mmhhhhhhhhnghnm MElum :)
+
+/datum/bounty/kill/growns
+	name = "Collect Plantmatter"
+	description = "We're missing some seeds here at the guild, can you just send us some plants over."
+	flavor_focus = /obj/item/reagent_containers/food/snacks/grown
+	weight = 1
+	candupe = TRUE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/growns/easy,
+		/datum/bounty_quota/growns/medium,
+		/datum/bounty_quota/growns/hard,
+		/datum/bounty_quota/growns/cocknballtorture,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// FARMER QUOTAS /////
+/datum/bounty_quota/growns
+	name = "Find some Plant matter"
+	paths = list(
+		/obj/item/reagent_containers/food/snacks/grown
+	)
+	needed_amount = 10
+	pick_this_many = 0
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	auto_generate_info = FALSE
+	info = "Any raw plant matter such as melons"
+	claimdelay = 0.5
+	price_per_thing = COINS(2) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 2
+	CBT_multiplier = 2
+
+/datum/bounty_quota/growns/easy 
+	needed_amount = 50
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/growns/medium 
+	needed_amount = 100
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/growns/hard 
+	needed_amount = 150
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/growns/cocknballtorture 
+	needed_amount = 200
+	difficulty = QUEST_DIFFICULTY_CBT
+
+///Salvaging Stuff, good for people who have welder blindness
+/// Mmhhhhhhhhnghnm Salvj :)
+
+/datum/bounty/kill/salvage
+	name = "Collect Salavage"
+	description = "We're need more resources, can you send some raw salvage our way."
+	flavor_focus = /obj/item/salvage
+	weight = 1
+	candupe = TRUE
+	request_mode = QUEST_FULFILL_ALL
+	init_wanteds = list(
+		/datum/bounty_quota/salvage/easy,
+		/datum/bounty_quota/salvage/medium,
+		/datum/bounty_quota/salvage/hard,
+		/datum/bounty_quota/salvage/cocknballtorture,
+	)
+	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
+
+///// SALVAGE QUOTAS /////
+/datum/bounty_quota/salvage
+	name = "Find some raw salvage"
+	paths = list(
+		/obj/item/salvage/low,
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
+	)
+	needed_amount = 10
+	paths_get_subtypes = TRUE
+	paths_includes_root = TRUE
+	price_per_thing = COINS(5) // Rely on multipliers for this one
+	easy_multiplier = 1
+	medium_multiplier = 1.5
+	hard_multiplier = 5
+	CBT_multiplier = 6
+
+/datum/bounty_quota/salvage/easy 
+	needed_amount = 10
+	difficulty = QUEST_DIFFICULTY_EASY
+
+/datum/bounty_quota/salvage/medium 
+	needed_amount = 15
+	difficulty = QUEST_DIFFICULTY_MED
+
+/datum/bounty_quota/salvage/hard 
+	needed_amount = 20
+	paths = list(
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
+	)
+	difficulty = QUEST_DIFFICULTY_HARD
+
+/datum/bounty_quota/salvage/cocknballtorture 
+	needed_amount = 30
+	paths = list(
+		/obj/item/salvage/high,
+		/obj/item/salvage/tool
+	)
+	difficulty = QUEST_DIFFICULTY_CBT

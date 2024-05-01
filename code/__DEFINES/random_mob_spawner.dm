@@ -732,6 +732,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		/mob/living/simple_animal/hostile/gecko = 10,
 		/mob/living/simple_animal/hostile/gecko/big = 2,
 		/mob/living/simple_animal/hostile/gecko/fire = 2,
+		/mob/living/simple_animal/hostile/gecko/fire/rads = 2,
 		/mob/living/simple_animal/hostile/gecko/legacy = 10,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 4,
 		)

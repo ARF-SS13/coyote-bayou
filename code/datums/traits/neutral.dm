@@ -189,6 +189,22 @@
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
 
+/datum/quirk/agroeater
+	name = "Aggressive Metabolism"
+	desc = "You gain natural healing from eating food, but your metabolism is aggressively fast, causing you to eat alot of food"
+	value = 0 // This heals 71 brute damage in 16 minutes, but also massively increases your hunger rate. Having no hunger is extremely bad
+	category = "Food Quirks"
+	mechanics = "You heal naturally, but if your starving, you no longer heal. Starving is very bad for you."
+	conflicts = list() 
+
+/datum/quirk/agroeater/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddElement(/datum/element/photosynthesis, -0.15, -0.15, -0.15, -0.15, -1, 0, -1, -1.5) // Should work at all times, no matter what light condition
+
+/datum/quirk/agroeater/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.RemoveElement(/datum/element/photosynthesis, -0.15, -0.15, -0.15, -0.15, -1, 0, -1, -1.5)
+
 /datum/quirk/maso
 	name = "Masochism"
 	desc = "You are aroused by pain."

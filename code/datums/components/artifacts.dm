@@ -239,7 +239,7 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(CREDITS_TO_COINS(total_value), 25)
+	return round(COINS_TO_CREDITS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
@@ -2014,7 +2014,7 @@
 	else
 		if(!in_desired_slot())
 			return
-	target.adjustStaminaLoss(stamina_adjustment)
+	target.adjustStaminaLoss(-(abs(stamina_adjustment)))
 	return TRUE
 
 /datum/artifact_effect/stamina/get_magnitude()

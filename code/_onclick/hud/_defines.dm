@@ -85,7 +85,7 @@
 #define ui_acti "EAST-3:24,SOUTH:5"
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5"	//alternative intent switcher for when the interface is hidden (F12)
-#define ui_crafting	"EAST-1:27,SOUTH+3:5"
+#define ui_crafting	"EAST-4:24,SOUTH+1:6"
 #define ui_building "EAST-1:27,SOUTH+2:7"
 #define ui_language_menu "EAST-1:27,SOUTH+2:22"
 #define ui_wield "EAST-1:10,SOUTH+1:23"
@@ -169,6 +169,7 @@
 #define ui_ghost_teleport       "SOUTH:6,CENTER-0.25:24"
 #define ui_ghost_spawners       "SOUTH:6,CENTER+0.75:24"
 #define ui_ghost_second_wind    "SOUTH:38,CENTER-1.25:24"
+#define ui_ghost_char_dir    "SOUTH:38,CENTER-2.25:24"
 #define ui_ghost_move_up       	"SOUTH:6,CENTER+1.75:24"
 #define ui_ghost_move_down      "SOUTH:6,CENTER+1.75:24"
 
@@ -181,6 +182,6 @@
 #define ui_resistdelay "EAST-3:24,SOUTH+1:4"
 #define ui_combat_toggle "EAST-4:22,SOUTH:5"
 
-#define ui_boxcraft "EAST-4:22,SOUTH+1:6"
+#define ui_boxcraft "EAST-4:24,SOUTH+1:6"
 #define ui_boxarea "EAST-4:6,SOUTH+1:6"
 #define ui_boxlang "EAST-5:22,SOUTH+1:6"

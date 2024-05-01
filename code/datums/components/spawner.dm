@@ -139,7 +139,7 @@
 	// 	register_turfs()
 	// else
 	old_spawner_check = TRUE
-	if(!delay_start)
+	if(!delay_start && !am_special)
 		start_spawning()
 
 // /datum/component/spawner/proc/register_turfs()
@@ -318,16 +318,16 @@
 /datum/component/spawner/proc/old_spawn()
 	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
 		return
-	if(COOLDOWN_FINISHED(src, spawn_until))
-		deactivate()
+	// if(COOLDOWN_FINISHED(src, spawn_until))
+	// 	deactivate()
 	if(should_destroy_spawner())
 		qdel(parent)
 		return
-	if(!active)
-		if(!something_in_range())
-			return
-		activate()
-	if(active)
+	// if(!active)
+	// 	if(!something_in_range())
+	// 		return
+	// 	activate()
+	if(something_in_range())
 		try_to_spawn()
 
 /// turns itself on for another 20ish seconds
@@ -662,7 +662,11 @@
 	radius = clamp(radius + rand(-2, 2), 1, 20)
 	var/list/new_paths = list()
 	for(var/mobpath in mob_types)
-		if(prob(50) && LAZYLEN(mob_types) > 1)
+		var/mob/living/simple_animal/hostile/baddie = mobpath
+		if(ispath(baddie) && initial(baddie.bossmob) == TRUE)
+			new_paths[mobpath] = mob_types[mobpath] // rolled a boss, honor tht
+			continue
+		if(prob(40) && LAZYLEN(mob_types) > 1)
 			new_paths[mobpath] = mob_types[mobpath] // no change
 			continue
 		// ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
@@ -729,6 +733,7 @@
 			if(prob(80))
 				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
 				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
 			if(prob(25))
 				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
 			if(prob(10))
@@ -805,6 +810,10 @@
 				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
 				if(prob(50))
 					potentials |= typesof(/mob/living/simple_animal/hostile/renegade)
+					if(prob(50))
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
 			potentials -= mobpath
 			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/legendary)
 			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/wyomingghost)
@@ -880,16 +889,17 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
 			potentials -= mobpath
 		if(LAZYLEN(potentials))
-			new_paths[pick(potentials)] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
+			var/mob/living/simple_animal/my_choose = pick(potentials)
+			new_paths[pick(potentials)] = (ispath(my_choose) && initial(my_choose.bossmob)) ? 1 : clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 			continue
 		new_paths[mobpath] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
 		continue
 	nest_name = "Class \Roman[generation] ex-vivo delivery chamber"
 	nest_desc = "A cool hole in the ground full of cool things. Stick your hand in and see! (Warning: Cool things are actually baddies)"
-	if(prob(1))
+	if(prob(2))
 		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 3 // quaCK
 		nest_desc += " Disclaimer: Lay egg is true."
-	if(prob(1))
+	if(prob(2))
 		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool
 		nest_desc += " Also there's a lot of angry honking in there. Weird."
 		swarm_size += 1

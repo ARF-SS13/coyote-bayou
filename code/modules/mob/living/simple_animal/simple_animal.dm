@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
 	blood_volume = 425 //blood will smeared only a little bit from body dragging
-
+	var/bossmob = FALSE
 	status_flags = CANPUSH
 	rotate_on_lying = TRUE
 	var/icon_living = ""
@@ -330,9 +330,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(jobban_isbanned(user, ROLE_SYNDICATE))
 		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
 		return FALSE
-	if(!(z in COMMON_Z_LEVELS))
+	/*if(!(z in COMMON_Z_LEVELS))
 		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
-		return FALSE
+		return FALSE*/ // Kekeke, zlevel restrictions are antifun anyway!!!!!!!!!!!!!!!!
 	if(!lazarused_by && living_player_count() < pop_required_to_jump_into)
 		to_chat(user, span_warning("There needs to be at least [pop_required_to_jump_into] living players to hop in this! This check is bypassed if the mob has had a lazarus injector used on it though. Which it hasn't (yet)."))
 		return FALSE
@@ -344,15 +344,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return FALSE
 	if(!user.key)
 		return FALSE
-	if(!islist(GLOB.playmob_cooldowns[user.key]))
+	/*if(!islist(GLOB.playmob_cooldowns[user.key]))
 		GLOB.playmob_cooldowns[user.key] = list()
 	if(GLOB.playmob_cooldowns[user.key][ghost_mob_id] > world.time)
-		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time
+		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time*/ // No, respawn times are instant
 		//if(check_rights_for(user.client, R_ADMIN))
 		//	to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
 		//else // yeah no turns out its not a great idea
-		to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
-		return FALSE
+		/*to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
+		return FALSE*/
 	return TRUE
 
 /mob/living/simple_animal/ComponentInitialize()

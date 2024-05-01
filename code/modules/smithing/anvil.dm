@@ -15,34 +15,34 @@
 
 #define RECIPE_BALLANDCHAIN "Unchained Ball"
 
-#define RECIPE_MACHETE "Machete Blade"
-#define RECIPE_SABRE "Bumper Sabre Blade"
-#define RECIPE_SWORD "Sword Blade"
-#define RECIPE_WAKI "Weedwhacker Blade"
-#define RECIPE_KATANA "Scraptana Blade"
-#define RECIPE_LONGSWORD "Long Blade"
-#define RECIPE_MACHREFORG "Lawnmower Machete Blade"
+#define RECIPE_MACHETE 		"Machete Blade"
+#define RECIPE_SABRE 		"Sabre Blade"
+#define RECIPE_SWORD 		"Sword Blade"
+#define RECIPE_WAKI 		"Wakizashi Blade"
+#define RECIPE_KATANA 		"Katana Blade"
+#define RECIPE_LONGSWORD 	"Longsword Blade"
+#define RECIPE_MACHREFORG 	"Lawnmower Machete Blade"
 
-#define RECIPE_MACE "Club Head"
-#define RECIPE_AXE "Woodsplitter Head"
-#define RECIPE_SCRAP "Homewrecker Blade"
-#define RECIPE_CRUSHER "Bonebreaker Head"
+#define RECIPE_MACE 		"Mace Head"
+#define RECIPE_AXE 			"Axe Head"
+#define RECIPE_SCRAP 		"Greatsword Blade"
+#define RECIPE_CRUSHER 		"Greathammer Head"
 
-#define RECIPE_DAGGER "Shiv Blade"
-#define RECIPE_SPEAR "Spear Head"
-#define RECIPE_JAVELIN "Javelin Head"
-#define RECIPE_THROWING "Throwing Knife Blade"
-#define RECIPE_TRIDENT "Trident Head"
-#define RECIPE_SAW "Saw Blade"
-#define RECIPE_BOWIE "Sharpblade Blade"
+#define RECIPE_DAGGER 		"Dagger Blade"
+#define RECIPE_SPEAR 		"Spear Head"
+#define RECIPE_JAVELIN 		"Javelin Head"
+#define RECIPE_THROWING 	"Throwing Knife Blade"
+#define RECIPE_TRIDENT 		"Trident Head"
+#define RECIPE_SAW 			"Saw Blade"
+#define RECIPE_BOWIE 		"Bowie Blade"
 
-#define RECIPE_LANCE "Lance Head"
-#define RECIPE_GLADIUS "Razorbar Blade"
-#define RECIPE_SPATHA "Papercutter Blade"
-#define RECIPE_WARHONED "Sledge Axe Head"
+#define RECIPE_LANCE 		"Lance Head"
+#define RECIPE_GLADIUS 		"Gladius Blade"
+#define RECIPE_SPATHA 		"Spatha Blade"
+#define RECIPE_WARHONED 	"Greataxe Blade"
 
-#define RECIPE_KNUCKLES "Duster Lump"
-#define RECIPE_CLAWS "Sharp Prongs"
+#define RECIPE_KNUCKLES 	"Knuckledusters"
+#define RECIPE_CLAWS 		"Claws"
 
 GLOBAL_LIST_INIT(anvil_recipes, list(
 	RECIPE_HAMMER = /obj/item/smithing/hammerhead,
@@ -206,29 +206,29 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		"Ring",
 		"Unchained Ball",
 		"Machete Blade",
-		"Bumper Sabre Blade",
+		"Sabre Blade",
 		"Sword Blade",
-		"Weedwhacker Blade",
-		"Scraptana Blade",
-		"Long Blade",
+		"Wakizashi Blade",
+		"Katana Blade",
+		"Longsword Blade",
 		"Lawnmower Machete Blade",
-		"Club Head",
-		"Woodsplitter Head",
-		"Homewrecker Blade",
-		"Bonebreaker Head",
-		"Shiv Blade",
+		"Mace Head",
+		"Axe Head",
+		"Greatsword Blade",
+		"Greathammer Head",
+		"Dagger Blade",
 		"Spear Head",
 		"Javelin Head",
 		"Throwing Knife Blade",
 		"Trident Head",
 		"Saw Blade",
-		"Sharpblade Blade",
+		"Bowie Blade",
 		"Lance Head",
-		"Razorbar Blade",
-		"Papercutter Blade",
-		"Sledge Axe Head",
-		"Sharp Prongs",
-		"Duster Lump"
+		"Gladius Blade",
+		"Spatha Blade",
+		"Greataxe Blade",
+		"Claws",
+		"Knuckledusters"
 		) //weak/strong/heavy hit affect strength. All the other steps shape.
 	var/stepdone = input(user, "How would you like to work the metal?") in shapingsteps
 
@@ -239,7 +239,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 
 	// Time it takes for us to uh...forge..?
-	var/steptime = 1 SECONDS
+	var/steptime = 0.5 SECONDS
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
 		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
@@ -290,48 +290,48 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Machete Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Bumper Sabre Blade")
-			stepsdone += "Bumper Sabre Blade"
+		if("Sabre Blade")
+			stepsdone += "Sabre Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Sword Blade")
 			stepsdone += "Sword Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Weedwhacker Blade")
-			stepsdone += "Weedwhacker Blade"
+		if("Wakizashi Blade")
+			stepsdone += "Wakizashi Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Scraptana Blade")
-			stepsdone += "Scraptana Blade"
+		if("Katana Blade")
+			stepsdone += "Katana Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Long Blade")
-			stepsdone += "Long Blade"
+		if("Longsword Blade")
+			stepsdone += "Longsword Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Lawnmower Machete Blade")
 			stepsdone += "Lawnmower Machete Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Club Head")
-			stepsdone += "Club Head"
+		if("Mace Head")
+			stepsdone += "Mace Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Woodsplitter Head")
-			stepsdone += "Woodsplitter Head"
+		if("Axe Head")
+			stepsdone += "Axe Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Homewrecker Blade")
-			stepsdone += "Homewrecker Blade"
+		if("Greatsword Blade")
+			stepsdone += "Greatsword Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Bonebreaker Head")
-			stepsdone += "Bonebreaker Head"
+		if("Greathammer Head")
+			stepsdone += "Greathammer Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Shiv Blade")
-			stepsdone += "Shiv Blade"
+		if("Dagger Blade")
+			stepsdone += "Dagger Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Spear Head")
@@ -354,32 +354,32 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Saw Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sharpblade Blade")
-			stepsdone += "Sharpblade Blade"
+		if("Bowie Blade")
+			stepsdone += "Bowie Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Lance Head")
 			stepsdone += "Lance Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Razorbar Blade")
-			stepsdone += "Razorbar Blade"
+		if("Gladius Blade")
+			stepsdone += "Gladius Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Papercutter Blade")
-			stepsdone += "Papercutter Blade"
+		if("Spatha Blade")
+			stepsdone += "Spatha Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sledge Axe Head")
-			stepsdone += "Sledge Axe Head"
+		if("Greataxe Blade")
+			stepsdone += "Greataxe Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Duster Lump")
-			stepsdone += "Duster Lump"
+		if("Knuckledusters")
+			stepsdone += "Knuckledusters"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sharp Prongs")
-			stepsdone += "Sharp Prongs"
+		if("Claws")
+			stepsdone += "Claws"
 			currentsteps += 1
 			currentquality -= 1
 

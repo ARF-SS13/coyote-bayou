@@ -196,7 +196,7 @@
 	desc = "A powerful muzzle device that uses science-y non-sense to decrease muzzle rise. In nerd terms, it significantly reduces recoil. The highest this can roll is 50%."
 	icon_state = "compensatedbarrel"
 
-/obj/item/gun_upgrade/muzzletwo/New()
+/obj/item/gun_upgrade/muzzlethree/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -207,7 +207,7 @@
 	I.gun_loc_tag = GUN_MUZZLE3
 
 
-//  Fire Delay Multiplier 
+//  Fire Delay Multiplier
 
 /obj/item/gun_upgrade/triggerone
 	name = "Match Trigger"

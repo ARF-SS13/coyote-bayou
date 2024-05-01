@@ -632,6 +632,11 @@
 	resize = 0.75
 	update_transform()
 
+/mob/living/simple_animal/hostile/radroach/micro/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
 /mob/living/simple_animal/hostile/radroach/strongradroach
 	maxHealth = 140
 	health = 140
@@ -651,6 +656,11 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
+/mob/living/simple_animal/hostile/radroach/strongradroach/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
 /mob/living/simple_animal/hostile/radroach/leader
 	name = "Pillbug Leader"
 	maxHealth = 40
@@ -664,7 +674,7 @@
 	ranged = TRUE
 	variation_list = list(
 		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_LIST(4, 4.2, 4.3),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(70, 75, 80),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -675,14 +685,13 @@
 
 /mob/living/simple_animal/hostile/radroach/leader/Initialize()
 	.=..()
-	resize = 2.0
+	resize = 3.0
 	update_transform()
 
-/mob/living/simple_animal/hostile/radroach/strongradroach/Initialize()
-	.=..()
-	resize = 2.0
-	update_transform()
-
+/mob/living/simple_animal/hostile/radroach/leader/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 /obj/item/projectile/pillbugsummon
 	name = "pillbug summoning"
