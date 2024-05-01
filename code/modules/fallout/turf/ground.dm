@@ -187,7 +187,12 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
 	/obj/structure/nest/gecko = 5,
-	/obj/structure/nest/radroach = 5
+	/obj/structure/nest/radroach = 5,
+	/obj/structure/flora/chomp/bones/lrock = 7,
+	/obj/structure/flora/chomp/bones/lrock1 = 7,
+	/obj/structure/flora/chomp/bones/lrock2 = 7,
+	/obj/structure/flora/chomp/bones/lrock3 = 7,
+	/obj/structure/flora/chomp/bones/lrock4 = 7,
 	))
 
 GLOBAL_LIST_INIT(plant_type_weighted, list(
@@ -428,7 +433,21 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 
 
 GLOBAL_LIST_INIT(dust_spawn_list, list(
-	/obj/effect/decal/cleanable/dirt = 1,
+	/obj/effect/decal/cleanable/dirt = 90,
+	/obj/effect/decal/remains = 1,
+	/obj/effect/decal/cleanable/blood/drip = 1,
+	/obj/structure/bonfire/prelit = 1, 
+	/obj/effect/decal/waste = 1,
+	/obj/structure/barricade/sandbags = 1,
+	/obj/item/shard = 1, 
+	/obj/effect/decal/cleanable/generic = 1,
+	/obj/effect/decal/cleanable/glass = 1,
+	/obj/structure/flora/grass/coyote/one = 1,
+	/obj/structure/flora/grass/coyote/two = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
+	/obj/structure/flora/grass/coyote/four = 1,
+	/obj/structure/flora/grass/coyote/five = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
 	))
 
 GLOBAL_LIST_INIT(trash_spawn_list, list(
@@ -441,7 +460,9 @@ GLOBAL_LIST_INIT(salvage_spawn_list, list(
 	/obj/structure/car/rubbish2 = 10,
 	/obj/structure/car/rubbish3 = 10,
 	/obj/structure/car/rubbish4 = 10,
-	/obj/effect/decal/cleanable/oil/slippery = 10
+	/obj/effect/decal/cleanable/oil/slippery = 10,
+	/obj/item/mine/emp = 1,
+	/obj/item/mine/shrapnel = 1,
 	))
 
 GLOBAL_LIST_INIT(nest_spawn_list, list(
@@ -451,10 +472,10 @@ GLOBAL_LIST_INIT(nest_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(junk_type_weighted, list(
-	"dust" = 91,
+	"dust" = 92,
 	"trash" = 3,
 	"salvage" = 3,
-	"nest" = 3
+	"nest" = 2
 ))
 
 /turf/open/indestructible/ground/outside/dirthole
