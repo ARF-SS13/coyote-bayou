@@ -59,6 +59,7 @@ All foods are distributed among various categories. Use common sense.
 	var/eatverb
 	var/dried_type = null
 	var/dry = 0
+	var/eatingsound = 'sound/items/eatfood.ogg'
 	var/cooked_type = null  //for microwave cooking. path of the resulting item after microwaving
 	var/filling_color = "#FFFFFF" //color to use when added to custom food.
 	var/custom_food_type = null  //for food customizing. path of the custom food to create
@@ -214,7 +215,7 @@ All foods are distributed among various categories. Use common sense.
 			if(M.satiety > -200)
 				M.satiety -= junkiness
 			if(!silent)
-				playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
+				playsound(M.loc,eatingsound, rand(10,50), 1)
 			if(reagents.total_volume)
 				SEND_SIGNAL(src, COMSIG_FOOD_EATEN, M, user)
 				var/fraction = min(bitesize / reagents.total_volume, 1)

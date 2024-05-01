@@ -18,7 +18,6 @@
 	inherent_traits = list(
 		TRAIT_EASYDISMEMBER,
 		TRAIT_LIMBATTACHMENT,
-		TRAIT_NO_PROCESS_FOOD,
 		TRAIT_RADIMMUNE,
 		TRAIT_NOBREATH,
 		TRAIT_CLONEIMMUNE,
@@ -61,10 +60,10 @@
 	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin", "protectron", "golem")
 
 /datum/species/synthfurry/spec_life(mob/living/carbon/human/H)
-	if(H.nutrition < NUTRITION_LEVEL_FED)
+/*	if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
+		H.nutrition = NUTRITION_LEVEL_FED*/ // Because not having to eat is dumb
 	if(H.losebreath != 0)
 		H.losebreath = 0 // just in case
 	if(H.toxloss)
