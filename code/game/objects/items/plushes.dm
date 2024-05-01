@@ -583,6 +583,17 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	icon_state = "kobold"
 	item_state = "kobold"
 
+/obj/item/toy/plush/lizardplushie/kobold/scrip
+	name = "Oobie Biddilets, Devourer of Markets, he who ate all the union scrip like the fat kobold he is plushie"
+	desc = "Oh he knows what he did. You can thank him for this."
+	icon_state = "kobold"
+	item_state = "kobold"
+
+/obj/item/toy/plush/lizardplushie/kobold/scrip/Initialize(mapload, set_snowflake_id)
+	. = ..()
+	transform *= 3
+	special_transform = transform
+
 /obj/item/toy/plush/nukeplushie
 	name = "operative plushie"
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."
@@ -837,7 +848,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	if(!H)
 		return //Type safety.
 	H.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-	addtimer(CALLBACK(H, /mob/living/carbon/human.proc/dropItemToGround, src, TRUE), 1)
+	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human,dropItemToGround), src, TRUE), 1)
 
 /obj/item/toy/plush/plushling/New()
 	var/initial_state = pick("plushie_lizard", "plushie_snake", "plushie_slime", "fox")

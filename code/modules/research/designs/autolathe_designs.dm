@@ -235,16 +235,6 @@
 	build_path = /obj/item/stack/rods
 	category = list("initial","Construction")
 	maxstack = 50
-
-/datum/design/lead
-	name = "Lead"
-	id = "lead"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/lead = 2000)
-	build_path = /obj/item/stack/sheet/lead
-	category = list("initial","Construction")
-	maxstack = 50
-
 /datum/design/titanium
 	name = "Titanium"
 	id = "titanium"
@@ -559,7 +549,7 @@
 	build_path = /obj/item/storage/portable_chem_mixer
 	category = list("initial", "Medical")
 
-/datum/design/portable_chem_mixer
+/datum/design/portable_chem_blender
 	name = "FOODCO Kitchen Buddy 2000"
 	id = "portable_blender"
 	build_type = AUTOLATHE
@@ -792,6 +782,15 @@
 	materials = list(MAT_GLASS = 20)
 	build_path = /obj/item/stock_parts/cell/emergency_light
 	category = list("initial", "Electronics")
+
+/datum/design/portable_charger
+	name = "Portable Battery Charger"
+	id = "portable_charger"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 3000)
+	build_path = /obj/item/storage/battery_box
+	category = list("initial", "Electronics")
+	autocalc_materials = TRUE // hope it works =3
 
 /datum/design/packageWrap
 	name = "Package Wrapping"

@@ -51,14 +51,20 @@ Difficulty: Medium
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	speak_emote = list("roars")
-	melee_damage_lower = 40
-	melee_damage_upper = 40
+	melee_damage_lower = 50
+	melee_damage_upper = 100
 	speed = 1
-	move_to_delay = 5
+	move_to_delay = 3
 	ranged = 1
+	projectilesound = 'sound/weapons/mmlbuster.ogg'
+	projectiletype = /obj/item/projectile/f13plasma/scatter/dragon
+	extra_projectiles = 1
+	ranged = TRUE
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
-	loot = list(/obj/structure/closet/crate/necropolis/dragon)
+	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30, /obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/swoop_cooldown = 0
@@ -68,6 +74,7 @@ Difficulty: Medium
 	death_sound = 'sound/magic/demon_dies.ogg'
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/drake()
 
+	faction = list("Nagafen", "Vox")
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/megafauna/dragon/Initialize()
@@ -111,20 +118,19 @@ Difficulty: Medium
 		return
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + ranged_cooldown_time
-
-	if(prob(15 + anger_modifier) && !client)
+	if(client)
+		return
+	if(prob(15 + anger_modifier))
 		if(health < maxHealth/2)
-			INVOKE_ASYNC(src, .proc/swoop_attack, TRUE, null, 50)
+			INVOKE_ASYNC(src,PROC_REF(swoop_attack), TRUE, null, 50)
 		else
 			fire_rain()
 
-	else if(prob(10+anger_modifier) && !client)
-		if(health > maxHealth/2)
-			INVOKE_ASYNC(src, .proc/swoop_attack)
-		else
-			INVOKE_ASYNC(src, .proc/triple_swoop)
 	else
-		fire_walls()
+		if(health > maxHealth/2)
+			INVOKE_ASYNC(src,PROC_REF(swoop_attack))
+		else
+			INVOKE_ASYNC(src,PROC_REF(triple_swoop))
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_rain()
 	var/atom/my_target = get_target()
@@ -135,11 +141,12 @@ Difficulty: Medium
 		if(prob(11))
 			new /obj/effect/temp_visual/target(turf)
 
+/*
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_walls()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)
 
 	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/fire_wall, d)
+		INVOKE_ASYNC(src,PROC_REF(fire_wall), d)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_wall(dir)
 	var/list/hit_things = list(src)
@@ -160,6 +167,7 @@ Difficulty: Medium
 			hit_things += L
 		previousturf = J
 		sleep(1)
+*/
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/triple_swoop()
 	swoop_attack(swoop_duration = 30)
@@ -314,7 +322,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/target/Initialize(mapload, list/flame_hit)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, flame_hit)
+	INVOKE_ASYNC(src,PROC_REF(fall), flame_hit)
 
 /obj/effect/temp_visual/target/proc/fall(list/flame_hit)
 	var/turf/T = get_turf(src)
@@ -360,7 +368,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/flight, negative)
+	INVOKE_ASYNC(src,PROC_REF(flight), negative)
 
 /obj/effect/temp_visual/dragon_flight/proc/flight(negative)
 	if(negative)
@@ -425,3 +433,11 @@ Difficulty: Medium
 			hit_list += M
 			M.take_damage(45, BRUTE, "melee", 1)
 		sleep(1.5)
+
+/obj/item/projectile/f13plasma/scatter/dragon
+	damage = 50
+	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.25
+	wound_bonus = 50
+	color = "#FF0000"
+

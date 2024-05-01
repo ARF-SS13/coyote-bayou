@@ -61,7 +61,7 @@
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
 		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
-		addtimer(CALLBACK(src, .proc/makeWine, list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
+		addtimer(CALLBACK(src,PROC_REF(makeWine), list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 		return TRUE
 	else if(SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && do_after(user, 2 SECONDS, target = src))
 		var/list/storage_contents = list()
@@ -73,7 +73,7 @@
 				continue
 			fruits += fruit
 		if (length(fruits))
-			addtimer(CALLBACK(src, .proc/makeWine, fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
+			addtimer(CALLBACK(src,PROC_REF(makeWine), fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 			to_chat(user, span_notice("You fill \the [src] from \the [I] and start the fermentation process."))
 		else
 			to_chat(user, span_warning("There's nothing in \the [I] that you can ferment!"))

@@ -35,7 +35,7 @@
 
 	if(density && flags_1 & ON_BORDER_1) // blocks normal movement from and to the direction it's facing.
 		var/static/list/loc_connections = list(
-			COMSIG_ATOM_EXIT = .proc/on_exit,
+			COMSIG_ATOM_EXIT =PROC_REF(on_exit),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -81,7 +81,7 @@
 	if(flags_1&NODECONSTRUCT_1)
 		return
 	to_chat(user, span_notice("You begin to [anchored ? "unfasten the railing from":"fasten the railing to"] the floor..."))
-	if(I.use_tool(src, user, volume = 75, extra_checks = CALLBACK(src, .proc/check_anchored, anchored)))
+	if(I.use_tool(src, user, volume = 75, extra_checks = CALLBACK(src,PROC_REF(check_anchored), anchored)))
 		set_anchored(!anchored)
 		to_chat(user, span_notice("You [anchored ? "fasten the railing to":"unfasten the railing from"] the floor."))
 	return TRUE
@@ -144,7 +144,6 @@
 	desc = "Marks property and prevents accidents."
 	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "straight_wood"
-	layer = WALL_OBJ_LAYER
 
 /obj/structure/railing/wood/underlayer
 	layer = BELOW_MOB_LAYER
@@ -174,7 +173,6 @@
 	desc = "A waist high handrail, perhaps you could climb over it."
 	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "handrail_y"
-	layer = WALL_OBJ_LAYER
 
 /obj/structure/railing/handrail/underlayer
 	layer = BELOW_MOB_LAYER

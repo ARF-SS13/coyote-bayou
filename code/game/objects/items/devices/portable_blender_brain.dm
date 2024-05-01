@@ -550,7 +550,7 @@
 /datum/blender_brain/proc/preprocess_speech(mob/speaker, message)
 	if(!should_listen_to(speaker))
 		return
-	INVOKE_ASYNC(src, .proc/process_speech, speaker, message)
+	INVOKE_ASYNC(src,PROC_REF(process_speech), speaker, message)
 
 /// takes in mob and message, and turns it into a stimulus
 /datum/blender_brain/proc/process_speech(mob/speaker, message)
@@ -1000,18 +1000,18 @@
 
 /obj/item/persona_core/proc/register_signals()
 	var/atom/movable/sigtarg = get_host()
-	RegisterSignal(sigtarg, COMSIG_ITEM_RECYCLED, .proc/crushed)
-	RegisterSignal(sigtarg, COMSIG_BB_HOST_TO_PC_STIMULUS, .proc/input_stimulus)
-	RegisterSignal(sigtarg, COMSIG_ITEM_DROPPED, .proc/input_stimulus_dropped)
-	RegisterSignal(sigtarg, COMSIG_ITEM_EQUIPPED, .proc/input_stimulus_equipped)
-	//RegisterSignal(sigtarg, COMSIG_ITEM_CLICKED, .proc/input_stimulus_clicked) // yeah these dont work
-	//RegisterSignal(sigtarg, COMSIG_ITEM_PICKUP, .proc/input_stimulus_pickup)
-	//RegisterSignal(sigtarg, COMSIG_MOVABLE_IMPACT, .proc/input_stimulus_impact)
-	// RegisterSignal(sigtarg, COMSIG_ITEM_MICROWAVE_ACT, .proc/input_stimulus_microwave)
-	// RegisterSignal(sigtarg, COMSIG_ITEM_MOUSE_ENTER, .proc/input_stimulus_mouse_enter)
-	// RegisterSignal(sigtarg, COMSIG_ITEM_MOUSE_EXIT, .proc/input_stimulus_mouse_exit)
-	RegisterSignal(sigtarg, COMSIG_MOVABLE_HEAR, .proc/input_heard)
-	RegisterSignal(sigtarg, COMSIG_BB_HOST_TO_PC_AMOUR_MOD, .proc/get_host_modifier)
+	RegisterSignal(sigtarg, COMSIG_ITEM_RECYCLED,PROC_REF(crushed))
+	RegisterSignal(sigtarg, COMSIG_BB_HOST_TO_PC_STIMULUS,PROC_REF(input_stimulus))
+	RegisterSignal(sigtarg, COMSIG_ITEM_DROPPED,PROC_REF(input_stimulus_dropped))
+	RegisterSignal(sigtarg, COMSIG_ITEM_EQUIPPED,PROC_REF(input_stimulus_equipped))
+	//RegisterSignal(sigtarg, COMSIG_ITEM_CLICKED,PROC_REF(input_stimulus_clicked)) // yeah these dont work
+	//RegisterSignal(sigtarg, COMSIG_ITEM_PICKUP,PROC_REF(input_stimulus_pickup))
+	//RegisterSignal(sigtarg, COMSIG_MOVABLE_IMPACT,PROC_REF(input_stimulus_impact))
+	// RegisterSignal(sigtarg, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(input_stimulus_microwave))
+	// RegisterSignal(sigtarg, COMSIG_ITEM_MOUSE_ENTER,PROC_REF(input_stimulus_mouse_enter))
+	// RegisterSignal(sigtarg, COMSIG_ITEM_MOUSE_EXIT,PROC_REF(input_stimulus_mouse_exit))
+	RegisterSignal(sigtarg, COMSIG_MOVABLE_HEAR,PROC_REF(input_heard))
+	RegisterSignal(sigtarg, COMSIG_BB_HOST_TO_PC_AMOUR_MOD,PROC_REF(get_host_modifier))
 
 /obj/item/persona_core/proc/crushed()
 	SIGNAL_HANDLER
@@ -1183,7 +1183,7 @@
 	busy_for = setting
 
 /obj/item/persona_core/process()
-	INVOKE_ASYNC(src, .proc/process_impulses)
+	INVOKE_ASYNC(src,PROC_REF(process_impulses))
 
 /obj/item/persona_core/proc/process_impulses()
 	busy_for = max(busy_for - 1, 0)
@@ -1196,7 +1196,7 @@
 			CRASH("Blenderbrain [src] tried to process an invalid impulse: [impulse]")
 		var/datum/blenderbrain_impulse/thimpulse = impulse
 		var/do_next = thimpulse.immediate_next
-		INVOKE_ASYNC(thimpulse, /datum/blenderbrain_impulse.proc/run_it)
+		INVOKE_ASYNC(thimpulse, TYPE_PROC_REF(/datum/blenderbrain_impulse,run_it))
 		if(do_next)
 			continue
 		break

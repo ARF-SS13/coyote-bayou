@@ -22,7 +22,7 @@
 /obj/item/mannequin/Initialize(mapload)
 	. = ..()
 	if(mapload)
-		addtimer(CALLBACK(src, .proc/set_looks), 30 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(set_looks)), 30 SECONDS)
 	else
 		set_looks()
 	if(debug)
@@ -57,7 +57,7 @@
 
 	my_overlay = SSdummy.get_dummy_image("mannequin", spec, dressup, null, null, null, random_body, random_species, random_outfit, TRUE, FALSE)
 	update_icon()
-	addtimer(CALLBACK(src, .proc/set_looks), 1 HOURS)
+	addtimer(CALLBACK(src,PROC_REF(set_looks)), 1 HOURS)
 
 /obj/item/mannequin/update_overlays()
 	. = ..()
@@ -73,7 +73,7 @@
 	set_looks(src, user, user)
 
 /obj/item/mannequin/proc/debugify()
-	RegisterSignal(src, COMSIG_ITEM_ATTACKCHAIN, .proc/set_looks)
+	RegisterSignal(src, COMSIG_ITEM_ATTACKCHAIN,PROC_REF(set_looks))
 
 /obj/item/mannequin/british_infantry
 	name = "british infantry mannequin"
@@ -124,14 +124,7 @@
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 
-/// shitty debug fuckers
-/obj/item/mannequin/debug_mannequin
-	name = "lizard secretary mannequin"
-	desc = "Hey there, Pushes-The-Papers!"
-	dressup = /datum/outfit/job/den/f13secretary
-	spec = /datum/species/lizard
-	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT
-	debug = TRUE
+
 
 /obj/item/mannequin/debug_mannequin/random_random
 	name = "mannequin"

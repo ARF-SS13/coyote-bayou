@@ -5,6 +5,18 @@
 	name = "mime shoes"
 	icon_state = "mime"
 
+/obj/item/clothing/shoes/cowboy/alt
+	name = "Cowboy Boots, alt"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_alt"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+	strip_delay = 70
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	lace_time = 12 SECONDS
+
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
@@ -323,14 +335,14 @@
 	active = TRUE
 	set_light_color(rgb(rand(0,255),rand(0,255),rand(0,255)))
 	set_light_on(TRUE)
-	addtimer(CALLBACK(src, .proc/lightUp), 5)
+	addtimer(CALLBACK(src,PROC_REF(lightUp)), 5)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0,255),rand(0,255),rand(0,255)))
 		set_light_on(TRUE)
 		lightCycle += 1
-		addtimer(CALLBACK(src, .proc/lightUp), 5)
+		addtimer(CALLBACK(src,PROC_REF(lightUp)), 5)
 	else
 		set_light_on(FALSE)
 		lightCycle = 0
@@ -569,11 +581,6 @@
 	icon_state = "putt"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
-/obj/item/clothing/shoes/cowboy/alt
-	name = "Cowboy Boots, alt"
-	desc = "A set of cowboy boots. Yeehaw!"
-	icon_state = "cowboy_alt"
-
 /obj/item/clothing/shoes/cowboy/ranger
 	name = "Ranger Cowboy"
 	desc = "A set of cowboy boots. Yeehaw!"
@@ -590,3 +597,26 @@
 	desc = "These shoes are made for quacking, and thats just what they'll do."
 	icon_state = "ducky"
 	item_state = "ducky"
+
+/obj/item/clothing/shoes/meown_shoes
+	name = "meown shoes"
+	desc = "The adorable sound they make when you walk will mean making friends is more likely."
+	icon_state = "meown_shoes"
+//	squeak_sound = list('sound/effects/footstep/meowstep1.ogg'=1) //mew mew mew mew
+
+/obj/item/clothing/shoes/moffers
+	name = "moffers"
+	desc = "No moths were harmed in the making of these slippers."
+	icon_state = "moffers"
+//	squeak_sound = list('sound/voice/moth/scream_moth.ogg'=1) //like sweet music to my ears
+
+/obj/item/clothing/shoes/jackbros
+	name = "frosty boots"
+	desc = "For when you're stepping on up to the plate."
+	icon_state = "JackFrostShoes"
+
+
+/obj/item/clothing/shoes/saints
+	name = "saints sneakers"
+	desc = "Officially branded Saints sneakers. Incredibly valuable!"
+	icon_state = "saints_shoes"

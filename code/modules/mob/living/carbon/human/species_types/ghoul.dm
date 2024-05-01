@@ -6,32 +6,27 @@
 /datum/species/ghoul
 	name = "Ghoul"
 	id = "ghoul"
-	say_mod = "rasps"
-	limbs_id = "ghoul"
-	species_traits = list(HAIR,FACEHAIR,HAS_BONE, MUTCOLORS, EYECOLOR,LIPS, HORNCOLOR,WINGCOLOR)
-	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT)
-	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BEAST)
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None", "mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	default_color = "4B4B4B"
+
+	species_traits = list(MUTCOLORS,EYECOLOR,FACEHAIR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
+
+	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BEAST
+	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
+						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
 	attack_verb = "claw"
-	punchstunthreshold = 9
-	tail_type = "tail_human"
-	wagging_type = "waggingtail_human"
-	species_type = "human"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/mammal
+	liked_food = MEAT | FRIED
+	disliked_food = TOXIC
 
-	allowed_limb_ids = list("ghoul","human","mammal","aquatic","avian","shadekin")
-	use_skintones = 0
-	speedmod = 0.4 //slightly slower than humans
-	sexes = 1
-	sharp_blunt_mod = 1.5 //Since I'm effectively taking 50 HP away, they get some more defense to make up for it.
-	sharp_edged_mod = 1.5
-	disliked_food = NONE
-	liked_food = NONE
-	var/info_text = "You are a <span class='danger'>Ghoul.</span>. As pre-war zombified relic, or an unluckily recently made post-necrotic, you cannot bleed, cannot breathe, and heal from radiation. On surface examination, you are indistinguishable from a corpse. \
-					Your <span class='warning'>fragile limbs</span> are a source of vulnerability for you-they are easily dismembered and easily detached, though you can stick them on just as easily. You are incredibly fragile in melee. \
-					<span class='boldwarning'>Stimpaks and powder</span> will have reduced effect on your bizzare biology. Sutures, radiation, and other, non-chemical sources of healing are more effective. All chemicals that do not heal brute or burn work as normal. \
-					<span class='nicegreen'>Radiation heals you slowly.</span> \
-					<span class='warning'>You are terrible at melee</span> and innately slower than humans. You also cannot go into critical condition-ever. You will keep shambling forward until you are <span class='danger'>dead.</span>"
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	species_type = "furry"
 
+	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+
+/*
 //Ghouls have weak limbs.
 /datum/species/ghoul/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
@@ -121,7 +116,7 @@
 		H.apply_status_effect(/datum/status_effect/ghoulheal)
 	else
 		H.remove_status_effect(/datum/status_effect/ghoulheal)
-
+*/
 
 
 /*/datum/species/ghoul/glowing

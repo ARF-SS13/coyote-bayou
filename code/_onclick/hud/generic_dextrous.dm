@@ -44,6 +44,18 @@
 	using.screen_loc = ui_overridden_resist
 	using.hud = src
 	hotkeybuttons += using
+	//questbook button
+	using = new /atom/movable/screen/questbook()
+	// using.icon = ui_style
+	using.screen_loc = ui_questbook_overridden
+	using.hud = src
+	hotkeybuttons += using
+	//quest scanner button
+	using = new /atom/movable/screen/scannerpls()
+	// using.icon = ui_style
+	using.screen_loc = ui_questscanner
+	using.hud = src
+	hotkeybuttons += using
 	//Health indicator
 	healths = new /atom/movable/screen/healths()
 	healths.hud = src

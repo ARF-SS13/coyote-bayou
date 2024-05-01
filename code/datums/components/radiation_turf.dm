@@ -23,12 +23,12 @@
 		radioactive_things[reff] = ref_n_type[reff]
 	var/turf/our_turf = parent
 	our_coordinates = "[our_turf.x]:[our_turf.y]:[our_turf.z]"
-	RegisterSignal(parent, list(COMSIG_TURF_CHECK_RADIATION), .proc/im_still_here)
-	RegisterSignal(parent, list(COMSIG_TURF_IRRADIATE), .proc/update_rads)
-	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED), .proc/AddMob)
-	RegisterSignal(parent, list(COMSIG_ATOM_EXITED), .proc/RemoveMob)
-	RegisterSignal(parent, list(COMSIG_TURF_CHANGE), .proc/on_turf_change)
-	RegisterSignal(SSdcs, list(COMSIG_GLOB_RADIATION_SHOW), .proc/ping_rads)
+	RegisterSignal(parent, list(COMSIG_TURF_CHECK_RADIATION),PROC_REF(im_still_here))
+	RegisterSignal(parent, list(COMSIG_TURF_IRRADIATE),PROC_REF(update_rads))
+	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED),PROC_REF(AddMob))
+	RegisterSignal(parent, list(COMSIG_ATOM_EXITED),PROC_REF(RemoveMob))
+	RegisterSignal(parent, list(COMSIG_TURF_CHANGE),PROC_REF(on_turf_change))
+	RegisterSignal(SSdcs, list(COMSIG_GLOB_RADIATION_SHOW),PROC_REF(ping_rads))
 
 // from this point onwards, we cannot rely on our parent to be our turf. 
 // So, we'll have to sit here and treat whatever's at our coordinates *as* our parent 
@@ -110,7 +110,7 @@
 		return
 	thingtoggle = TRUE
 	blinker.maptext = thingtoggle ? "[rads]" : initial(blinker.maptext)
-	addtimer(CALLBACK(src, .proc/unping_rads), 2 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
+	addtimer(CALLBACK(src,PROC_REF(unping_rads)), 2 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
 
 /datum/component/radiation_turf/proc/unping_rads()
 	var/turf/blinker = coords2turf(our_coordinates)

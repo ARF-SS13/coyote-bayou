@@ -55,7 +55,7 @@
 		retreat_distance = 10
 		approach_distance = 10
 		if(will_burrow)
-			addtimer(CALLBACK(src, .proc/Burrow), chase_time)
+			addtimer(CALLBACK(src,PROC_REF(Burrow)), chase_time)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/PostMeleeAttack(atom/my_target)
 	if(istype(my_target, /obj/item/stack/ore))

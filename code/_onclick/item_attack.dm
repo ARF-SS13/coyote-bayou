@@ -37,6 +37,8 @@
 			return
 		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
 			return
+		if((. |= pre_attack(target, user, params, ., 1)) & STOP_ATTACK_PROC_CHAIN)
+			return
 		if(max_reach >= 2 && has_range_for_melee_attack(target, user))
 			return ranged_melee_attack(target, user, params)
 	return afterattack(target, user, FALSE, params)

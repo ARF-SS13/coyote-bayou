@@ -84,15 +84,14 @@
 	med_hud_set_status()
 	clear_typing_indicator()
 	if(!gibbed && !QDELETED(src))
-		addtimer(CALLBACK(src, .proc/med_hud_set_status), (DEFIB_TIME_LIMIT * 10) + 1)
+		addtimer(CALLBACK(src,PROC_REF(med_hud_set_status)), (DEFIB_TIME_LIMIT * 10) + 1)
 	stop_pulling()
 
 	var/signal = SEND_SIGNAL(src, COMSIG_MOB_DEATH, gibbed)
 
 	broadcast_death(signal)
 	if (client && client.prefs && client.prefs.auto_ooc)
-		if (!(client.prefs.chat_toggles & CHAT_OOC))
-			client.prefs.chat_toggles ^= CHAT_OOC
+		client.prefs.chat_toggles |= CHAT_OOC
 	if (client)
 		client.move_delay = initial(client.move_delay)
 

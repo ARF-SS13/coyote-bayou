@@ -6,7 +6,19 @@
  * BB.spread - Inaccuracy of the projectile being fired, also added to spread
  * Final spread out, for shotguns, is the angle that the spray pattern will be centered on
  */
-/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, atom/fired_from)
+/obj/item/ammo_casing/proc/fire_casing(
+	atom/target,
+	mob/living/user,
+	params,
+	distro,
+	quiet,
+	zone_override,
+	spread,
+	damage_multiplier = 1,
+	penetration_multiplier = 1,
+	projectile_speed_multiplier = 1,
+	atom/fired_from
+)
 	var/angle_out = calc_spread(user, spread, distro, (pellets == 1 ? variance : 0), fired_from)
 
 	var/targloc = get_turf(target)
@@ -20,7 +32,20 @@
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
-		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_CRIT_SHOT) ? 0.5 : 1), zone_override, params, angle_out)
+		var/varaiance_multiplier = 1
+		if(HAS_TRAIT(user, TRAIT_NICE_SHOT))
+			varaiance_multiplier = 0.65
+		SEND_SIGNAL(
+			src,\
+			COMSIG_PELLET_CLOUD_INIT,\
+			target,\
+			user,\
+			fired_from,\
+			randomspread,\
+			angle_out,\
+			zone_override,\
+			params,\
+			(variance * varaiance_multiplier)) // great googly moogly Ive had this backwards for HOW many years?
 
 	if(istype(user))
 		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
@@ -45,6 +70,10 @@
 		return
 	BB.original = target
 	BB.firer = user
+	if(isplayer(user) && !user.enabled_combat_indicator)
+		BB.factionize(user.faction)
+		BB.safety_switch = TRUE // disabled the factionize after it range from shooterd
+		BB.is_player_projectile = TRUE
 	BB.fired_from = fired_from
 	if (zone_override)
 		BB.def_zone = zone_override
@@ -95,7 +124,8 @@
 			direct_target = target
 	if(!direct_target)
 		BB.preparePixelProjectile(target, user, params, spread)
-	BB.fire(null, direct_target, spread)
+	var/angle = text2num(params2list(params)["angle"])
+	BB.fire(angle, direct_target, spread)
 	BB = null
 	spend_casing()
 	return 1

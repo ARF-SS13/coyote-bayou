@@ -330,8 +330,8 @@ GENETICS SCANNER
 						trauma_desc += B.scan_desc
 						trauma_text += trauma_desc
 					temp_message += " <span class='alert'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>"
-				if(C.mob_quirks.len)
-					temp_message += " <span class='info'>Subject has the following physiological traits: [C.get_trait_string()].</span>"
+//				if(C.mob_quirks.len)
+//					temp_message += " <span class='info'>Subject has the following physiological traits: [C.get_trait_string()].</span>"
 
 				if(ishuman(C) && advanced)
 					//MON PETIT CHAUFFEUR
@@ -1069,7 +1069,7 @@ GENETICS SCANNER
 
 		ready = FALSE
 		icon_state = "[icon_state]_recharging"
-		addtimer(CALLBACK(src, .proc/recharge), cooldown, TIMER_UNIQUE)
+		addtimer(CALLBACK(src,PROC_REF(recharge)), cooldown, TIMER_UNIQUE)
 
 /obj/item/sequence_scanner/proc/recharge()
 	icon_state = initial(icon_state)

@@ -111,7 +111,7 @@
 		insaneinthemembrane.sanity = 0
 		for(var/lore in typesof(/datum/brain_trauma/severe))
 			C.gain_trauma(lore)
-		addtimer(CALLBACK(src, /obj/singularity/wizard.proc/deranged, C), 100)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/singularity/wizard,deranged), C), 100)
 
 /obj/singularity/wizard/proc/deranged(mob/living/carbon/C)
 	if(!C || C.stat == DEAD)
@@ -138,15 +138,16 @@
 	hitsound = 'sound/items/welder2.ogg'
 	var/cooldown_time = 1000 //15 min
 	var/cooldown = 0
+	var/scryden = FALSE
 
 /obj/item/scrying/attack_self(mob/user)
 	var/turf/T = get_turf(src)
 	if(!T)
 		to_chat(user, span_phobia("Wow you're not on a turf, cool."))
 		return
-	if(T.get_lumcount() > 0.2)
+	/*if(T.get_lumcount() > 0.2)
 		to_chat(user, span_warning("It's too bright here to use [src.name]!"))
-		return 0
+		return 0*/
 	if(!COOLDOWN_FINISHED(src,cooldown))
 		to_chat(user, span_warning("The orb is murky, your power drained."))
 		return
@@ -154,6 +155,26 @@
 	visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 	user.ghostize(1, voluntary = TRUE)
 	COOLDOWN_START(src, cooldown, cooldown_time)
+
+/obj/item/scrying/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	if(scryden)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and holds the [src] infront of them, their eyes beginning to glaze over."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and let them gaze into the [src]."))
+
+	scryden = TRUE
+	if(do_after(user, 10 SECONDS, target = M))
+		M.reagents?.add_reagent(/datum/reagent/fermi/astral, 3) 
+		to_chat(M, span_notice("As [user]'s holds out the [src] infront of you, you can see yourself staring back like a mirror world.. and then you both come together!"))
+		scryden = FALSE
+	else
+		to_chat(user, span_notice("Your scrying was interrupted."))
+		scryden = FALSE
 
 /////////////////////////////////////////Necromantic Stone///////////////////
 

@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	if(!place_to_put_it || !isturf(place_to_put_it))
 		place_to_put_it = get_turf(src) //just dump it on the floor you filthy animal
 	// base 1 loot roll, +1 if technophreak, 50% for +1, and 25% for +1
-	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(25)) + (prob(10))
+	var/loot_rolls = 1 + (prob(25)) + (prob(10)) // + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
 	for(var/i in 1 to loot_rolls)
 		var/obj/I = pick(src.Loot)
 		new I (place_to_put_it)
@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	name = "Pre-war tool salvage"
 	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
 	icon_state = "toolsalvage"
-	Loot = list(/obj/item/weldingtool/advanced,
+	Loot = list(/obj/item/weldingtool/hightech,
 				/obj/item/crowbar/hightech,
 				/obj/item/crowbar/hightech,
 				/obj/item/screwdriver/hightech,
@@ -302,8 +302,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/wrench/hightech,
 				/obj/item/wrench/hightech,
 				/obj/item/wirecutters/hightech,
-				/obj/item/wirecutters/hightech,
-				/obj/item/multitool/advanced)
+				/obj/item/wirecutters/hightech)
 
 /obj/item/salvage/high
 	name = "Advanced pre-war salvage"
