@@ -173,7 +173,9 @@
 /area/f13/building/tribal/cave)
 "ads" = (
 /turf/closed/indestructible/f13/matrix{
-	plane = -1
+	plane = -1;
+	opacity = 0;
+	name = "elsewhere"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "adu" = (
@@ -8371,6 +8373,16 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"ebe" = (
+/obj/structure/wreck/bus/orange{
+	pixel_y = -4;
+	pixel_x = -3;
+	name = "bus from somewhere"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "ebj" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -8684,12 +8696,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
 "eis" = (
-/obj/structure/wreck/bus/orange{
-	pixel_y = -4;
-	pixel_x = -3
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "eiu" = (
@@ -25462,6 +25471,13 @@
 	},
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
+"lUv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "lUx" = (
 /obj/structure/window/fulltile/house/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -40938,16 +40954,6 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
-"tlj" = (
-/obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "tlo" = (
 /obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -44385,12 +44391,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"uTg" = (
-/obj/machinery/light,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "uTw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -47270,13 +47270,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
-"wkF" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999";
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "wkM" = (
 /obj/effect/spawner/lootdrop/healing_kits,
 /turf/open/floor/f13/wood,
@@ -48477,6 +48470,16 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal/cave)
+"wQA" = (
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "wQI" = (
 /obj/machinery/washing_machine,
 /obj/item/clothing/head/cowboyhat/pink,
@@ -74310,7 +74313,7 @@ hRl
 "}
 (88,1,1) = {"
 hRl
-tlj
+wQA
 gIm
 gIm
 gIm
@@ -74567,8 +74570,8 @@ hRl
 "}
 (89,1,1) = {"
 hRl
+ebe
 uWY
-eis
 uWY
 uWY
 mdh
@@ -74828,8 +74831,8 @@ uWY
 uWY
 uWY
 aub
-uTg
-tEr
+eis
+fNr
 fNr
 fNr
 fNr
@@ -75856,7 +75859,7 @@ uWY
 uWY
 uWY
 aub
-uTg
+eis
 hVc
 hVc
 hTc
@@ -77141,7 +77144,7 @@ iNm
 mke
 onB
 iJo
-uTg
+eis
 hVc
 hVc
 lbs
@@ -78681,7 +78684,7 @@ blS
 hRl
 kmZ
 dUS
-wkF
+lUv
 dwQ
 his
 eiW
