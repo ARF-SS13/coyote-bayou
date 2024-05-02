@@ -186,9 +186,6 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/oak_five = 5,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
-	/obj/structure/nest/gecko = 2,
-	/obj/structure/nest/radroach = 2,
-	/obj/structure/nest/molerat = 2,
 	/obj/structure/flora/chomp/bones/lrock = 7,
 	/obj/structure/flora/chomp/bones/lrock1 = 7,
 	/obj/structure/flora/chomp/bones/lrock2 = 7,
@@ -473,10 +470,10 @@ GLOBAL_LIST_INIT(nest_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(junk_type_weighted, list(
-	"dust" = 92,
-	"trash" = 3,
-	"salvage" = 3,
-	"nest" = 2
+	"dust" = 89,
+	"trash" = 5,
+	"salvage" = 5,
+	"nest" = 1
 ))
 
 /turf/open/indestructible/ground/outside/dirthole
