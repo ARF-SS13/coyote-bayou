@@ -56,6 +56,7 @@
 	wielded_icon = "legionaxe2"
 	force_unwielded = 30
 	force_wielded = 65
+	armour_penetration = 0.3
 	attack_speed = CLICK_CD_MELEE * 1.3  //10.4
 
 /obj/item/twohanded/legionaxe/ComponentInitialize()
@@ -328,6 +329,7 @@
 	wielded_icon = "spear-claw2"
 	force_unwielded = 22
 	force_wielded = 48
+	armour_penetration = 0.1
 	backstab_multiplier = 1.5
 
 // Deathclaw Spear-Axe		Keywords: TRIBAL, Damage 25/30, Armor-piercing +0.25, Reach, Wound Bonus
@@ -350,8 +352,9 @@
 	slot_flags = INV_SLOTBIT_BELT + SLOT_BACK
 	force = 20
 	force_unwielded = 25
-	force_wielded = 30
+	force_wielded = 45
 	backstab_multiplier = 1.5
+	armour_penetration = 0.2
 	attack_speed = CLICK_CD_MELEE * 0.85 // 6.8
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
@@ -497,7 +500,10 @@
 	hitsound = 'sound/items/welder2.ogg'
 	wielded_icon = "thermiclance2"
 	force_unwielded = 5
-	force_wielded = 69
+	force_wielded = 45
+	attack_speed = CLICK_CD_MELEE * 0.6 //makes it fulfill a different niche than the king of all melee, turning it into a strong, fast spear rather than a 1 shot machine.
+	armour_penetration = 0.2
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	backstab_multiplier = 1.8 //:)
 
 /obj/item/twohanded/thermic_lance/afterattack(atom/A, mob/living/user, proximity)
@@ -538,6 +544,7 @@
 	slot_flags_on = null
 	force = 28
 	force_on = 55
+	armour_penetration = 0.2
 	backstab_multiplier = 1.3
 	throwforce = 15
 	throwforce_on = 30
@@ -561,7 +568,9 @@
 	force = 25
 	wielded_icon = "hammer-super2"
 	force_unwielded = 25
-	force_wielded = 68
+	force_wielded = 75
+	armour_penetration = 0.1
+	attack_speed = CLICK_CD_MELEE * 1.5 // changes it to be a proper upgrade to the sledge hammer, hits like a truck, but it's pretty slow
 	backstab_multiplier = 1.3
 
 /obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
@@ -624,7 +633,7 @@
 	icon_state = "hammer-courtmartial"
 	icon_prefix = "hammer-courtmartial"
 	toolspeed = 0.8
-
+	force_wielded = 60 //faster sledgehammer, but inferior to super sledge 
 /obj/item/twohanded/sledgehammer/rockethammer/courtmartial/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
@@ -647,14 +656,16 @@
 	force = 25
 	wielded_icon = "hammer-atom2"
 	force_unwielded = 25
-	force_wielded = 55
+	force_wielded = 60
+	armour_penetration = 0.4
+	attack_speed = CLICK_CD_MELEE * 1.4 //tons of AP and hefty hit, but slow
 	backstab_multiplier = 2.0 //no one expects the nuclear inquisition
 
-/obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_effect(300, EFFECT_IRRADIATE, 0)
+//obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user) //useless effect that only hurts the user, meaningless in pvp, it's been changed for better AP instead
+	//. = ..()
+	//if(!istype(M))
+		//return
+	//M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 
 // War Mace			Keywords: TRIBAL, Damage 25/45, AP 0.2
@@ -780,6 +791,7 @@
 	icon_prefix = "steelsaw"
 	force = 4
 	backstab_multiplier = 1.5
+	armour_penetration = 0.2
 	toolspeed = 0.5
 	wound_bonus = 20
 	bare_wound_bonus = 20
@@ -797,7 +809,7 @@
 	var/off_item_state = "steelsaw"
 	var/weight_class_on = WEIGHT_CLASS_HUGE
 	var/on = FALSE
-	var/force_on = 29 //10 more dps than chainsaw, but less perhit
+	var/force_on = 30 //10 more dps than chainsaw, but less perhit
 	var/force_off = 10
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 
@@ -847,7 +859,8 @@
 	icon_state = "autoaxe"
 	item_state = "autoaxe"
 	icon_prefix = "autoaxe"
-	force_on = 33
+	force_on = 35
+	armour_penetration = 0.3 //it's an expensive to craft weapon that requires crafting recipes and hunting around for some rather esoteric parts, it should be worth the trouble.
 	attack_speed = CLICK_CD_MELEE * 1.5
 	on_icon_state = "autoaxe_on"
 	off_icon_state = "autoaxe"
