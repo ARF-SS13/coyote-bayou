@@ -214,7 +214,7 @@
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
+mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
 	//if(self_message && target != src)
 		//show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
@@ -411,8 +411,8 @@
 		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time)
 			result = A.examine(src)
 			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(A, COMSIG_PARENT_QDELETING,PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src,PROC_REF(clear_from_recent_examines), A), EXAMINE_MORE_TIME)
+			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
 			handle_eye_contact(A)
 		else
 			result = A.examine_more(src)
@@ -454,13 +454,13 @@
 	if(!istype(examined_carbon) || (!(examined_carbon.wear_mask && examined_carbon.wear_mask.flags_inv & HIDEFACE) && !(examined_carbon.head && examined_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = span_smallnotice("You make eye contact with [examined_mob].")
-			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	var/mob/living/carbon/us_as_carbon = src // i know >casting as subtype, but this isn't really an inheritable check
 	if(!istype(us_as_carbon) || (!(us_as_carbon.wear_mask && us_as_carbon.wear_mask.flags_inv & HIDEFACE) && !(us_as_carbon.head && us_as_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = span_smallnotice("[src] makes eye contact with you.")
-			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
 
 //same as above
 //note: ghosts can point, this is intended
@@ -603,7 +603,10 @@
 	SEND_SIGNAL(new_mob, COMSIG_MOB_PRE_PLAYER_CHANGE, new_mob, src)
 	if (client)
 		if(client.prefs?.auto_ooc)
-			client.prefs.chat_toggles |= CHAT_OOC
+			if (client.prefs.chat_toggles & CHAT_OOC && isliving(new_mob))
+				client.prefs.chat_toggles ^= CHAT_OOC
+			if (!(client.prefs.chat_toggles & CHAT_OOC) && isdead(new_mob))
+				client.prefs.chat_toggles ^= CHAT_OOC
 	new_mob.ckey = ckey
 	if(send_signal)
 		SEND_SIGNAL(src, COMSIG_MOB_KEY_CHANGE, new_mob, src)
@@ -671,13 +674,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
-		var/followers_clinic_full_of_big_strong_gay_dogs_in_it = PfpHostLink(profilePicture)
-		var/dat = {"
-			<img src='[followers_clinic_full_of_big_strong_gay_dogs_in_it]' width='100%' height='100%' 'object-fit: scale-down;'>
-			<br>
-			[followers_clinic_full_of_big_strong_gay_dogs_in_it] <- Copy this link to your browser to view the full sized image.
-		"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,768)
+		var/dat = {"<img src='[PfpHostLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
 		popup.set_content(dat)
 		popup.open()
 
@@ -836,7 +834,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 //-->Pixel sliding on steroids
 /mob
-	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob 
+	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob
 	var/pixel_slide_target_has_help_int = FALSE  //we are going to store here the pixel sliding's target variable, specifically if they are in help intent
 	var/pixel_slide_memory_x    //memory of previous x position before moving
 	var/pixel_slide_memory_y    //memory of previous y position before moving
@@ -1347,7 +1345,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	\n\
 	- On the off chance that you DO find out someone is using your advance to stir pointless OOC drama please ahelp and let us know, don't assume we're aware. \n\
 	"
-/* 
+
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
 	set category = "IC"
@@ -1463,8 +1461,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
 	"Leer - Sneak a peak at their assets.",
-	"React - Want to tell them something.",
-	"Touch - Pull their tail."
+	"React - Want to tell them something."
 	)
 	choices = sortList(choices)
 
@@ -2004,13 +2001,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
-		if("Touch - Pull their hair.")
-			to_chat(A, span_notice("[src] is reaching to <span class='love'>pull your tail?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to pull [A]'s tail, maybe they'll notice you trying to be frisky!")
-			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
-
 			return
- */
+
 
 
 

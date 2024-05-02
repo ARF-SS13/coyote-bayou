@@ -17,7 +17,6 @@
 	var/template_id = "shelter_alpha"
 	var/datum/map_template/shelter/template
 	var/used = FALSE
-	var/nuke = FALSE
 
 /obj/item/survivalcapsule/proc/get_template()
 	if(template)
@@ -45,19 +44,18 @@
 		used = TRUE
 		sleep(50)
 		var/turf/deploy_location = get_turf(src)
-		if(!nuke)
-			var/status = template.check_deploy(deploy_location)
-			switch(status)
-				if(SHELTER_DEPLOY_BAD_AREA)
-					src.loc.visible_message(span_warning("\The [src] will not function in this area."))
-				if(SHELTER_DEPLOY_BAD_TURFS, SHELTER_DEPLOY_ANCHORED_OBJECTS)
-					var/width = template.width
-					var/height = template.height
-					src.loc.visible_message(span_warning("\The [src] doesn't have room to deploy! You need to clear a [width]x[height] area!"))
+		var/status = template.check_deploy(deploy_location)
+		switch(status)
+			if(SHELTER_DEPLOY_BAD_AREA)
+				src.loc.visible_message(span_warning("\The [src] will not function in this area."))
+			if(SHELTER_DEPLOY_BAD_TURFS, SHELTER_DEPLOY_ANCHORED_OBJECTS)
+				var/width = template.width
+				var/height = template.height
+				src.loc.visible_message(span_warning("\The [src] doesn't have room to deploy! You need to clear a [width]x[height] area!"))
 
-			if(status && status != SHELTER_DEPLOY_ALLOWED)
-				used = FALSE
-				return
+		if(status != SHELTER_DEPLOY_ALLOWED)
+			used = FALSE
+			return
 
 		playsound(src, 'sound/effects/phasein.ogg', 100, 1)
 
@@ -65,7 +63,7 @@
 		if(!is_mining_level(T.z)) //only report capsules away from the mining/lavaland level
 			message_admins("[ADMIN_LOOKUPFLW(usr)] activated a bluespace capsule away from the mining level! [ADMIN_VERBOSEJMP(T)]")
 			log_admin("[key_name(usr)] activated a bluespace capsule away from the mining level at [AREACOORD(T)]")
-		template.load(deploy_location, centered = TRUE, annihilate = nuke)
+		template.load(deploy_location, centered = TRUE)
 		new /obj/effect/particle_effect/smoke(get_turf(src))
 		qdel(src)
 

@@ -52,6 +52,7 @@
 /datum/sprite_accessory/deco_wings/angel
 	name = "Angel"
 	icon_state = "angel"
+	color_src = 0
 	dimension_x = 46
 	center = TRUE
 	dimension_y = 34
@@ -252,7 +253,7 @@
 /datum/sprite_accessory/deco_wings/robotic2
 	name = "Robotic - No Tail"
 	icon_state = "shock2"
-
+	
 /datum/sprite_accessory/deco_wings/roboticalt
 	name = "Robotic Alt"
 	icon_state = "robotic"
@@ -516,4 +517,3 @@
 /datum/sprite_accessory/insect_markings/witchwing
 	name = "Witch Wing"
 	icon_state = "witchwing"
-

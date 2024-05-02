@@ -91,7 +91,7 @@
 	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
 
 
-/*/obj/item/melee/cultblade/pickup(mob/living/user)
+/obj/item/melee/cultblade/pickup(mob/living/user)
 	..()
 	if(!iscultist(user))
 		if(!is_servant_of_ratvar(user))
@@ -101,7 +101,7 @@
 			to_chat(user, span_userdanger("A horrible force yanks at your arm!"))
 			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.dropItemToGround(src)*/
+			user.dropItemToGround(src)
 
 /obj/item/cult_bastard
 	name = "bloody bastard sword"
@@ -168,7 +168,7 @@
 
 /obj/item/cult_bastard/pickup(mob/living/user)
 	. = ..()
-/*	if(!iscarbon(user))
+	if(!iscarbon(user))
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, span_cultlarge("\"I wouldn't advise that.\""))
 			force = 5
@@ -180,7 +180,7 @@
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 			user.dropItemToGround(src, TRUE)
 			user.DefaultCombatKnockdown(50)
-			return*/
+			return
 	force = initial(force)
 	jaunt.Grant(user, src)
 	linked_action.Grant(user, src)
@@ -270,7 +270,7 @@
 	sword.spinning = TRUE
 	sword.block_chance = 75
 	sword.slowdown += 1.5
-	addtimer(CALLBACK(src,PROC_REF(stop_spinning)), 50)
+	addtimer(CALLBACK(src, .proc/stop_spinning), 50)
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
@@ -433,7 +433,6 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 
-/*
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
@@ -450,11 +449,11 @@
 			user.adjustBruteLoss(25)
 			user.dropItemToGround(src, TRUE)
 
-// /obj/item/clothing/suit/hooded/cultrobes/cult_shield/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-// 	if(current_charges)
-// 		block_return[BLOCK_RETURN_NORMAL_BLOCK_CHANCE] = 100
-// 		block_return[BLOCK_RETURN_BLOCK_CAPACITY] = (block_return[BLOCK_RETURN_BLOCK_CAPACITY] || 0) + current_charges
-// 	return ..()
+/obj/item/clothing/suit/hooded/cultrobes/cult_shield/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(current_charges)
+		block_return[BLOCK_RETURN_NORMAL_BLOCK_CHANCE] = 100
+		block_return[BLOCK_RETURN_BLOCK_CAPACITY] = (block_return[BLOCK_RETURN_BLOCK_CAPACITY] || 0) + current_charges
+	return ..()
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(current_charges)
@@ -471,7 +470,6 @@
 	. = ..()
 	if(!isinhands && current_charges)
 		. += mutable_appearance('icons/effects/cult_effects.dmi', "shield-cult", MOB_LAYER + 0.01)
-*/
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker
 	name = "flagellant's robes"
@@ -492,7 +490,6 @@
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	armor = ARMOR_VALUE_MEDIUM
 
-/*
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()
 	if(!iscarbon(user))
@@ -508,7 +505,6 @@
 			user.emote("scream")
 			user.adjustBruteLoss(25)
 			user.dropItemToGround(src, TRUE)
-*/
 
 /obj/item/clothing/glasses/hud/health/night/cultblind
 	desc = "may Nar'Sie guide you through the darkness and shield you from the light."
@@ -530,7 +526,8 @@
 	name = "flask of unholy water"
 	desc = "Toxic to nonbelievers; reinvigorating to the faithful - this flask may be sipped or thrown."
 	icon = 'icons/obj/drinks.dmi'
-	icon_state = "unholyflask"
+	icon_state = "holyflask"
+	color = "#333333"
 	list_reagents = list(/datum/reagent/fuel/unholywater = 50)
 
 /obj/item/shuttle_curse
@@ -722,8 +719,8 @@
 
 /obj/item/cult_spear/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
@@ -746,7 +743,6 @@
 		qdel(spear_act)
 	..()
 
-/*
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
 	if(isliving(hit_atom))
@@ -758,7 +754,7 @@
 			else
 				L.visible_message(span_warning("[src] bounces off of [L], as if repelled by an unseen force!"))
 		else if(!..())
-//			if(!L.anti_magic_check())
+			if(!L.anti_magic_check())
 				if(is_servant_of_ratvar(L))
 					to_chat(L, span_cultlarge("\"Kneel for me, scum\""))
 					L.confused += clamp(10 - L.confused, 0, 5) //confuses and lightly knockdowns + damages hostile cultists instead of hardstunning like before
@@ -769,7 +765,6 @@
 			break_spear(T)
 	else
 		..()
-*/
 
 /obj/item/cult_spear/proc/break_spear(turf/T)
 	if(src)
@@ -894,10 +889,10 @@
 		qdel(src)
 		return
 	charging = TRUE
-	INVOKE_ASYNC(src,PROC_REF(charge), user)
+	INVOKE_ASYNC(src, .proc/charge, user)
 	if(do_after(user, 90, target = user))
 		firing = TRUE
-		INVOKE_ASYNC(src,PROC_REF(pewpew), user, params)
+		INVOKE_ASYNC(src, .proc/pewpew, user, params)
 		var/obj/structure/emergency_shield/invoker/N = new(user.loc)
 		if(do_after(user, 90, target = user))
 			user.DefaultCombatKnockdown(40)
@@ -970,7 +965,7 @@
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, 1)
 						L.emote("scream")
 		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
-		INVOKE_ASYNC(current_beam, TYPE_PROC_REF(/datum/beam,Start))
+		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
 
 
 /obj/effect/ebeam/blood
@@ -1017,7 +1012,7 @@
 			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
 			if(illusions > 0)
 				illusions--
-				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror,readd)), 450)
+				addtimer(CALLBACK(src, /obj/item/shield/mirror.proc/readd), 450)
 				if(prob(60))
 					var/mob/living/simple_animal/hostile/illusion/M = new(owner.loc)
 					M.faction = list("cult")
@@ -1058,10 +1053,10 @@
 				L.visible_message(span_warning("[src] bounces off of [L], as if repelled by an unseen force!"))
 		else if(!..())
 			if(!L.anti_magic_check())
-/*				if(is_servant_of_ratvar(L))
+				if(is_servant_of_ratvar(L))
 					L.DefaultCombatKnockdown(60)
 				else
-					L.DefaultCombatKnockdown(30)*/
+					L.DefaultCombatKnockdown(30)
 				if(D.thrower)
 					for(var/mob/living/Next in orange(2, T))
 						if(!Next.density || iscultist(Next))

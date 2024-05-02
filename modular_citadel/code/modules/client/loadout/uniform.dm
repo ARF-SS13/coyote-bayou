@@ -190,16 +190,6 @@
 	path = /obj/item/clothing/under/f13/bdu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/swimsuitskimp
-	name = "German tactical swimsuit"
-	path = /obj/item/clothing/under/f13/ww1swim
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/swimsuitskimp/two
-	name = "French tactical swimsuit"
-	path = /obj/item/clothing/under/f13/ww1swim/french
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/bdu/desert
 	name = "desert battle dress uniform"
 	path = /obj/item/clothing/under/f13/dbdu
@@ -525,12 +515,6 @@
 	path = /obj/item/clothing/under/misc/gear_harness
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
-/datum/gear/uniform/chameleon
-	name = "chameleon outfit"
-	path = /obj/item/clothing/under/chameleon
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
-	cost = 0
-
 /datum/gear/uniform/navy
 	name = "navy jumpsuit"
 	path = /obj/item/clothing/under/f13/navy
@@ -802,30 +786,21 @@
 	name = "cream sweater"
 	path = /obj/item/clothing/under/sweater
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
-
 /datum/gear/uniform/sweater/black
 	name = "black sweater"
 	path = /obj/item/clothing/under/sweater/black
-
 /datum/gear/uniform/sweater/blue
 	name = "blue sweater"
 	path = /obj/item/clothing/under/sweater/blue
-
 /datum/gear/uniform/sweater/purple
 	name = "purple sweater"
 	path = /obj/item/clothing/under/sweater/purple
-
 /datum/gear/uniform/sweater/green
 	name = "green sweater"
 	path = /obj/item/clothing/under/sweater/green
-
 /datum/gear/uniform/sweater/red
 	name = "red sweater"
 	path = /obj/item/clothing/under/sweater/red
-
-/datum/gear/uniform/sweater/keyhole
-	name =  "Keyhole Sweater"
-	path = /obj/item/clothing/under/misc/keyholesweater
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"
@@ -1134,7 +1109,7 @@
 	path = /obj/item/clothing/under/rank/security/officer/blueshirt
 	cost = 0
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	restricted_desc = "New Boston"
+	restricted_desc = "Nash"
 	restricted_roles = list("High Alderperson",
 							"Councilperson",
 							"Chief of Police",
@@ -1659,44 +1634,28 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
 /datum/gear/uniform/goner_red
-	name = "quasimilitary green uniform, red"
+	name = "utility uniform, red"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_green
-	name = "quasimilitary green uniform, green"
+	name = "utility uniform, green"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/green
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_blue
-	name = "quasimilitary green uniform, blue"
+	name = "utility uniform, blue"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/goner_yellow
-	name = "quasimilitary green uniform, yellow"
+	name = "utility uniform, yellow"
 	cost = 0
 	path = /obj/item/clothing/under/f13/goner/yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/goner_red/alt
-	name = "quasimilitary brown uniform, red"
-	path = /obj/item/clothing/under/f13/goner/alt/red
-
-/datum/gear/uniform/goner_green/alt
-	name = "quasimilitary brown uniform, green"
-	path = /obj/item/clothing/under/f13/goner/alt/green
-
-/datum/gear/uniform/goner_blue/alt
-	name = "quasimilitary brown uniform, blue"
-	path = /obj/item/clothing/under/f13/goner/alt/blue
-
-/datum/gear/uniform/goner_yellow/alt
-	name = "quasimilitary brown uniform, yellow"
-	path = /obj/item/clothing/under/f13/goner/alt/yellow
 
 /datum/gear/uniform/clown
 	name = "Clown suit"
@@ -3656,51 +3615,3 @@
 	cost = 0
 	path = /obj/item/clothing/under/rank/medical/doctor/util
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
-
-/datum/gear/uniform/aurora/dress
-	name = "Colorable dress"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/dress
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/dressshortsleeve
-	name = "Short Sleeve dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/dressshortsleeve
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/dressshortsleeve
-	name = "Short Sleeve dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/dressshortsleeve
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/eveningdress
-	name = "Evening Dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/evening_gown
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/openshoulderdress
-	name = "open shoulder dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/open_shoulder_dress
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/asymmdress
-	name = "asymm dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/asymm_dress
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/teadress
-	name = "tea dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/tea_dress
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
-
-/datum/gear/uniform/aurora/longsleevedress
-	name = "long sleeve dress, colorable"
-	cost = 0
-	path = /obj/item/clothing/under/aurora/longsleeve_dress
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

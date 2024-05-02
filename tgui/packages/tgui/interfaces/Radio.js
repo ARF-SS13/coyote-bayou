@@ -18,7 +18,6 @@ export const Radio = (props, context) => {
     useCommand,
     subspace,
     subspaceSwitchable,
-    suppressBlurbles,
   } = data;
   const tunedChannel = RADIO_CHANNELS
     .find(channel => channel.freq === frequency);
@@ -97,12 +96,6 @@ export const Radio = (props, context) => {
                   content={`Subspace Tx ${subspace ? 'ON' : 'OFF'}`}
                   onClick={() => act('subspace')} />
               )}
-              <Button
-                ml={1}
-                icon="comments"
-                selected={suppressBlurbles}
-                content={`Noise Suppression ${suppressBlurbles ? 'ON' : 'OFF'}`}
-                onClick={() => act('suppressBlurbles')} />
             </LabeledList.Item>
             {!!subspace && (
               <LabeledList.Item label="Channels">

@@ -13,19 +13,13 @@
 		/mob/living/simple_animal/hostile/radroach)
 #define RTS_RATS_ALLOWED list(\
 		/mob/living/simple_animal/hostile/rat,\
-		/mob/living/simple_animal/hostile/rat/skitter,\
-		/mob/living/simple_animal/hostile/rat/frien)
+		/mob/living/simple_animal/hostile/rat/skitter)
 #define RTS_ROBOT_ALLOWED list(\
 		/mob/living/simple_animal/hostile/handy,\
 		/mob/living/simple_animal/hostile/handy/protectron,\
 		/mob/living/simple_animal/hostile/eyebot)
 
 // Separate defines for taming and control, else use above.
-#define TAME_RATS_ALLOWED list(\
-		/mob/living/simple_animal/hostile/rat,\
-		/mob/living/simple_animal/hostile/rat/skitter,\
-		/mob/living/simple_animal/hostile/molerat)
-
 #define TAME_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/stalker,\
 		/mob/living/simple_animal/hostile/stalkeryoung,\
@@ -178,8 +172,7 @@
 		if(allmobs || (M.type in who_to_check))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				continue
-			//M.Goto(user,M.move_to_delay,1)
-			walk_to(M, user, 1, M.move_to_delay)
+			M.Goto(user,M.move_to_delay,1)
 			M.do_alert_animation(M)
 	return TRUE
 
@@ -270,8 +263,7 @@
 		if(allmobs || (M.type in who_to_check))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				continue
-			//M.Goto(target,M.move_to_delay,1)
-			walk_to(M, target, 1, M.move_to_delay)
+			M.Goto(target,M.move_to_delay,1)
 			M.do_alert_animation(M)
 	remove_ranged_ability()
 	return TRUE
@@ -306,9 +298,6 @@
 	immune_to_lowpop = TRUE
 	banned_from_lowpop = FALSE
 	nest_to_spawn = /obj/structure/nest/rat
-
-/obj/effect/proc_holder/mob_common/make_nest/rat/tame
-	nest_to_spawn = /obj/structure/nest/rat/tame
 
 /obj/effect/proc_holder/mob_common/make_nest/mouse
 	immune_to_lowpop = TRUE
@@ -458,7 +447,7 @@
 /obj/effect/proc_holder/mob_common/taming_mobs/rat
 	name = "Tame - Rats"
 	desc = "Try to make rats and mice docile. Melee range."
-	allowed_mobs = TAME_RATS_ALLOWED
+	allowed_mobs = RTS_RATS_ALLOWED
 
 /obj/effect/proc_holder/mob_common/taming_mobs/small_critter
 	name = "Tame - Small Critters"
@@ -502,8 +491,6 @@
 			user.show_message(span_green("The <b>[M.name]</b> is tamed!"))
 			M.name = "tamed [initial(M.name)]"
 			M.desc = "[initial(M.desc)] This one appears to be tame."
-			M.response_help_continuous = "pets" // Let the people pet tamed creatures instead of poking them.
-			M.response_help_simple = "pet"
 			M.make_ghostable(user)
 			M.make_a_nest = null // Unless is it possible to make nest dug by neutral/tamed mob also spawn neutrals without creating yet another nest type.
 			COOLDOWN_START(src, taming_cooldown, 60 SECONDS)

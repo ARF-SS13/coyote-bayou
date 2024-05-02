@@ -9,9 +9,6 @@
 	var/hidden_underwear = FALSE
 	var/hidden_undershirt = FALSE
 	var/hidden_socks = FALSE
-	var/underwear_oversuit = FALSE
-	var/undershirt_oversuit = FALSE
-	var/socks_oversuit = FALSE
 
 //Mob procs
 /mob/living/carbon/human/verb/underwear_toggle()
@@ -22,44 +19,21 @@
 	if(!confirm)
 		return
 	if(confirm == "Top")
-		toggle_undies_visibility(PHUD_SHIRT)
+		hidden_undershirt = !hidden_undershirt
 
-	else if(confirm == "Bottom")
-		toggle_undies_visibility(PHUD_PANTS)
+	if(confirm == "Bottom")
+		hidden_underwear = !hidden_underwear
 
-	else if(confirm == "Socks")
-		toggle_undies_visibility(PHUD_SOCKS)
+	if(confirm == "Socks")
+		hidden_socks = !hidden_socks
 
-	else if(confirm == "All")
+	if(confirm == "All")
 		var/on_off = (hidden_undershirt || hidden_underwear || hidden_socks) ? FALSE : TRUE
-		toggle_undies_visibility(PHUD_SHIRT, on_off)
-		toggle_undies_visibility(PHUD_PANTS, on_off)
-		toggle_undies_visibility(PHUD_SOCKS, on_off)
+		hidden_undershirt = on_off
+		hidden_underwear = on_off
+		hidden_socks = on_off
 
 	update_body(TRUE)
-
-/mob/living/carbon/human/proc/toggle_undies_visibility(slut, onoff)
-	var/newvis = FALSE
-	switch(slut)
-		if(PHUD_PANTS)
-			if(onoff)
-				hidden_underwear = onoff
-			else
-				TOGGLE_VAR(hidden_underwear)
-			newvis = hidden_underwear
-		if(PHUD_SHIRT)
-			if(onoff)
-				hidden_undershirt = onoff
-			else
-				TOGGLE_VAR(hidden_undershirt)
-			newvis = hidden_undershirt
-		if(PHUD_SOCKS)
-			if(onoff)
-				hidden_socks = onoff
-			else
-				TOGGLE_VAR(hidden_socks)
-			newvis = hidden_socks
-	SSpornhud.update_visibility(src, slut, !newvis)
 
 
 /mob/living/carbon/human/proc/adjust_arousal(strength,aphro = FALSE,maso = FALSE) // returns all genitals that were adjust

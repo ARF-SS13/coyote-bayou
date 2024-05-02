@@ -1,4 +1,5 @@
 /mob/living/carbon/human/say_mod(input, message_mode)
+	verb_say = dna.species.say_mod
 	. = ..()
 	if(message_mode != MODE_CUSTOM_SAY && message_mode != MODE_WHISPER_CRIT)
 		switch(slurring)

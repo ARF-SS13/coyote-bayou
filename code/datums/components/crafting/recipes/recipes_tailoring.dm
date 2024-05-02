@@ -166,7 +166,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-/datum/crafting_recipe/steelbib
+datum/crafting_recipe/steelbib
 	name = "Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/medium/vest/breastplate
 	reqs = list(/obj/item/stack/sheet/leather = 2,
@@ -178,7 +178,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-/datum/crafting_recipe/steelbib/heavy
+datum/crafting_recipe/steelbib/heavy
 	name = "Reinforced Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
@@ -190,7 +190,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/combathazardsuit // sec biosuit
+datum/crafting_recipe/combathazardsuit // sec biosuit
 	name = "Reinforced CBRN Suit"
 	result = /obj/item/clothing/suit/bio_suit/security
 	reqs = list(/obj/item/clothing/suit/radiation = 1,
@@ -202,7 +202,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/combathazardhood // sec biohood
+datum/crafting_recipe/combathazardhood // sec biohood
 	name = "Reinforced CBRN Hood"
 	result = /obj/item/clothing/head/bio_hood/security
 	reqs = list(/obj/item/clothing/head/helmet/armyhelmet = 1,
@@ -319,205 +319,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 	always_available = FALSE
-
-///////////////
-//Power Armor//
-///////////////
-
-/datum/crafting_recipe/pa_t45b
-	name = "Power Armor Exo-Skeleton"
-	result = /obj/item/storage/box/armor/t45b
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/ingot/iron = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t45b
-	name = "PA Exo-Skeleton"
-
-/obj/item/storage/box/armor/t45b/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t45b(src)
-	new /obj/item/clothing/suit/armor/power_armor/t45b(src)
-
-/datum/crafting_recipe/pa_t45b_raider
-	name = "powered scrap suit"
-	result = /obj/item/storage/box/armor/t45b_raider
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/advanced_crafting_components/alloys = 2,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/iron = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t45b_raider
-	name = "T-45b Raider PA"
-
-/obj/item/storage/box/armor/t45b_raider/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider(src)
-	new /obj/item/clothing/suit/armor/power_armor/t45b/raider(src)
-
-/datum/crafting_recipe/pa_t45b_hotrod
-	name = "Refurbished T-45b Hotrod power armor"
-	result = /obj/item/storage/box/armor/t45b_hotrod
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/advanced_crafting_components/lenses = 2,
-				/obj/item/advanced_crafting_components/flux = 2,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/plasma = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t45b_hotrod
-	name = "T-45b Hotrod PA"
-
-/obj/item/storage/box/armor/t45b_hotrod/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod(src)
-	new /obj/item/clothing/suit/armor/power_armor/t45b/hotrod(src)
-
-/datum/crafting_recipe/pa_t45d
-	name = "T-45d power armor"
-	result = /obj/item/storage/box/armor/t45d
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/sheet/prewar = 30,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/silver = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t45d
-	name = "T-45d PA"
-
-/obj/item/storage/box/armor/t45d/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t45d(src)
-	new /obj/item/clothing/suit/armor/power_armor/t45d(src)
-
-/datum/crafting_recipe/pa_t51b
-	name = "T-51b power armor"
-	result = /obj/item/storage/box/armor/t51b
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 15,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/gold = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t51b
-	name = "T-51b PA"
-
-/obj/item/storage/box/armor/t51b/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t51b(src)
-	new /obj/item/clothing/suit/armor/power_armor/t51b(src)
-
-/datum/crafting_recipe/pa_t51b_hardened
-	name = "Hardened T-51b power armor"
-	result = /obj/item/storage/box/armor/t51b_hardened
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 30,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/titanium = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/t51b_hardened
-	name = "Hardened T-51b PA"
-
-/obj/item/storage/box/armor/t51b_hardened/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/t51b(src)
-	new /obj/item/clothing/suit/armor/power_armor/t51b/hardened(src)
-
-/datum/crafting_recipe/pa_excavator
-	name = "excavator power armor"
-	result = /obj/item/storage/box/armor/pa_excavator
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 30,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/diamond = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/pa_excavator
-	name = "excavator power armor"
-
-/obj/item/storage/box/armor/pa_excavator/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/excavator(src)
-	new /obj/item/clothing/suit/armor/power_armor/excavator(src)
-
-/datum/crafting_recipe/pa_advanced
-	name = "advanced power armor"
-	result = /obj/item/storage/box/armor/pa_advanced
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/goodparts = 25,
-				/obj/item/advanced_crafting_components/alloys = 2,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/diamond = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/pa_advanced
-	name = "advanced power armor"
-
-/obj/item/storage/box/armor/pa_advanced/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/advanced(src)
-	new /obj/item/clothing/suit/armor/power_armor/advanced(src)
-
-/datum/crafting_recipe/pa_advanced_x02
-	name = "Enclave power armor"
-	result = /obj/item/storage/box/armor/pa_advanced_x02
-	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/crafting/goodparts = 25,
-				/obj/item/advanced_crafting_components/alloys = 3,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
-				/obj/item/ingot/mythril = 1)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER, TOOL_AWORKBENCH)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_PARMOR
-
-/obj/item/storage/box/armor/pa_advanced_x02
-	name = "enclave power armor"
-
-/obj/item/storage/box/armor/pa_advanced_x02/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet(src)
-	new /obj/item/clothing/suit/armor/power_armor/advanced/x02(src)
 
 ///////////
 //HELMETS//
@@ -774,7 +575,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
-/*/datum/crafting_recipe/tailor/chameleon_mask
+/datum/crafting_recipe/tailor/chameleon_mask
 	name = "Chameleon Mask"
 	result = /obj/item/clothing/mask/chameleon
 	reqs = list(/obj/item/clothing/mask/breath,
@@ -783,7 +584,7 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES*/
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"
@@ -1486,7 +1287,7 @@
 	subcategory = CAT_GENCLOTHES
 */
 
-/datum/crafting_recipe/polis
+datum/crafting_recipe/polis
 	name = "Police Officer's Uniform"
 	result = /obj/item/clothing/under/f13/police/officer
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1497,7 +1298,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polislt
+datum/crafting_recipe/polislt
 	name = "Police Lieutenant's Uniform"
 	result = /obj/item/clothing/under/f13/police/lieutenant
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1509,7 +1310,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polischief
+datum/crafting_recipe/polischief
 	name = "Police Chief's Uniform"
 	result = /obj/item/clothing/under/f13/police/chief
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1521,7 +1322,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polissnr
+datum/crafting_recipe/polissnr
 	name = "Police Search and Rescue Uniform"
 	result = /obj/item/clothing/under/f13/police/snr
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1532,7 +1333,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/poliscoat
+datum/crafting_recipe/poliscoat
 	name = "Police Officer's Jacket"
 	result = /obj/item/clothing/suit/armor/medium/vest/polis
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1544,7 +1345,7 @@
 	always_available = FALSE
 
 
-/datum/crafting_recipe/polisltcoat
+datum/crafting_recipe/polisltcoat
 	name = "Police Lieutenant's Jacket"
 	result = /obj/item/clothing/suit/armor/medium/vest/polislt
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1556,7 +1357,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polischiefcoat
+datum/crafting_recipe/polischiefcoat
 	name = "Police Chief's Jacket"
 	result = /obj/item/clothing/suit/armor/medium/vest/polischief
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1568,7 +1369,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polissnrcoat
+datum/crafting_recipe/polissnrcoat
 	name = "Police Search and Rescue Jacket"
 	result = /obj/item/clothing/suit/armor/medium/vest/polissnr
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1579,7 +1380,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polishat
+datum/crafting_recipe/polishat
 	name = "Police Officer's Hat"
 	result = /obj/item/clothing/head/hat/polis
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1591,7 +1392,7 @@
 	always_available = FALSE
 
 
-/datum/crafting_recipe/polislthat
+datum/crafting_recipe/polislthat
 	name = "Police Lieutenant's Hat"
 	result = /obj/item/clothing/head/hat/polislt
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1603,7 +1404,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polischiefhat
+datum/crafting_recipe/polischiefhat
 	name = "Police Chief's Hat"
 	result = /obj/item/clothing/head/hat/polischief
 	reqs = list(/obj/item/stack/sheet/durathread = 10,
@@ -1615,7 +1416,7 @@
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
-/datum/crafting_recipe/polissnrhat
+datum/crafting_recipe/polissnrhat
 	name = "Police Search and Rescue Hat"
 	result = /obj/item/clothing/head/hat/polissnr
 	reqs = list(/obj/item/stack/sheet/durathread = 10,

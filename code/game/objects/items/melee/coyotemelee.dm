@@ -31,18 +31,17 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
-	force = 30
-	backstab_multiplier = 1.1
-	force_unwielded = 30
-	force_wielded = 75
-	throwforce = 30
+	force = 25
+	force_unwielded = 25
+	force_wielded = 47
+	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "have'd at the")
 	hitsound = 'sound/weapons/slice.ogg'
-	block_chance = 10
+	block_chance = 5
 
 /obj/item/melee/coyote/harpoon
 	name = "old harpoon"
@@ -54,11 +53,10 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
-	force = 25
-	force_unwielded = 25
-	force_wielded = 55
-	backstab_multiplier = 1.6 //I mean, it's a harpoon.  Aren't they kind of MADE for stabbing fat things in the back?
-	throwforce = 55
+	force = 20
+	force_unwielded = 20
+	force_wielded = 40
+	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
@@ -66,7 +64,6 @@
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
-	block_chance = 15
 
 /obj/item/melee/coyote/katanaold //Technically a worse scrap sabre, but stylistic as shit so eat my ass I guess ~TK
 	name = "old katana"
@@ -79,10 +76,9 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
-	force = 40
-	force_unwielded = 40
-	force_wielded = 50
-	backstab_multiplier = 1.5
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -91,7 +87,7 @@
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
-	block_chance = 8
+	block_chance = 15
 
 /obj/item/melee/coyote/wakazashiold
 	name = "old wakazashi"
@@ -103,10 +99,9 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 30
-	force_unwielded = 30
-	force_wielded = 42
-	backstab_multiplier = 1.1
+	force = 20
+	force_unwielded = 20
+	force_wielded = 28
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
@@ -115,7 +110,7 @@
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
-	block_chance = 3
+	block_chance = 10
 
 /obj/item/melee/coyote/tantoold
 	name = "old tanto"
@@ -127,10 +122,9 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 20
-	force_unwielded = 20
-	force_wielded = 25
-	backstab_multiplier = 4
+	force = 15
+	force_unwielded = 15
+	force_wielded = 22
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
@@ -138,8 +132,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * 0.6
-	block_chance = 1
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 5
 
 /obj/item/melee/coyote/combataxe
 	name = "Combat Axe"
@@ -151,18 +145,17 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 35
-	force_unwielded = 35
-	force_wielded = 50
-	backstab_multiplier = 1.5
-	throwforce = 35
+	force = 25
+	force_unwielded = 25
+	force_wielded = 35
+	throwforce = 30
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "hacked")
 	hitsound = 'sound/weapons/slice.ogg'
-	block_chance = 8
+	block_chance = 5
 
 /obj/item/melee/coyote/smallsword
 	name = "Small Sword"
@@ -175,19 +168,18 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 35 // 45 = MW, 55 = Masterwork + Whetstone, 65 = Master Work + Whetstone + Big leagues 
-	force_unwielded = 35 // 
-	force_wielded = 45 // 75 max extra damage. As a treat. 
-	block_chance = 3 // learn to parry, filthy casual
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	backstab_multiplier = 1.1
+	force = 20
+	force_unwielded = 20
+	force_wielded = 28
+	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 10
 
 /obj/item/melee/coyote/oldcutlass
 	name = "Old Cutlass"
@@ -200,21 +192,18 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 40
-	force_unwielded = 40 // 70 max
-	force_wielded = 50 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat
+	force = 28
+	force_unwielded = 28
+	force_wielded = 35
+	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
 	hitsound = 'sound/weapons/slice.ogg'
-	
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
 
 /obj/item/melee/coyote/crudeblade
 	name = "Crude Blade"
@@ -228,8 +217,7 @@
 	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
-	force_wielded = 80
-	backstab_multiplier = 2 //Very rewarding backstab smash attack
+	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -238,7 +226,7 @@
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
-	block_chance = 20
+	block_chance = 40
 
 /obj/item/melee/coyote/oldkanobo
 	name = "Old Kanobo"
@@ -252,8 +240,7 @@
 	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
-	force_wielded = 80
-	backstab_multiplier = 2 //Very rewarding backstab smash attack
+	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -262,7 +249,7 @@
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
-	block_chance = 20
+	block_chance = 40
 
 /obj/item/melee/coyote/mauler
 	name = "Mauler"
@@ -276,8 +263,7 @@
 	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
-	force_wielded = 90
-	backstab_multiplier = 1.7 //Very rewarding backstab smash attack
+	force_wielded = 65
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -296,12 +282,9 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = INV_SLOTBIT_BELT
-	force = 30 // 45 = MW, 55 = Masterwork + Whetstone, 65 = Master Work + Whetstone + Big leagues 
-	force_unwielded = 30 // 
-	force_wielded = 40 // 75 max extra damage. As a treat. 
-	block_chance = 3 // learn to parry, filthy casual
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	backstab_multiplier = 1.1	
+	force = 20
+	force_unwielded = 20
+	force_wielded = 25
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
@@ -309,7 +292,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
-	
+	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/melee/coyote/club/mace
 	name = "mace"
@@ -326,20 +309,17 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = INV_SLOTBIT_BACK
-	force = 35
-	force_unwielded = 35 // 70 max
-	force_wielded = 45 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat	
+	force = 25
+	force_unwielded = 25
+	force_wielded = 40
+	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
 
 /obj/item/melee/coyote/oldlongsword
 	name = "Old Longsword"
@@ -352,20 +332,18 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 35
-	force_unwielded = 35 // 70 max
-	force_wielded = 45 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat
+	force = 28
+	force_unwielded = 28
+	force_wielded = 35
+	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
 	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
 
 /obj/item/melee/coyote/oldlongsword/kuddleslongsword
 	name = "Break of Dawn"
@@ -397,12 +375,9 @@
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
 	force = 20
-	force_unwielded = 20 // 35 max
-	force_wielded = 55 // 90 max
-	throwforce = 55
-	block_chance = 15 // P-Much a dedicated blocking weapon
-	attack_speed = CLICK_CD_MELEE * 1.5  // slow as sin to make up for it
-	backstab_multiplier = 2 // makes an otherwise non-position heavy weapon a little more tactical
+	force_unwielded = 20
+	force_wielded = 40
+	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
@@ -423,18 +398,16 @@
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
 	force = 20
-	force_unwielded = 20 // 35 max
-	force_wielded = 55 // 90 max
-	throwforce = 55
-	block_chance = 15 // P-Much a dedicated blocking weapon
-	attack_speed = CLICK_CD_MELEE * 1.5  // slow as sin to make up for it
-	backstab_multiplier = 2 // makes an otherwise non-position heavy weapon a little more tactical	
+	force_unwielded = 20
+	force_wielded = 40
+	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_POINTY
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 1.5
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldnaginata
@@ -449,12 +422,9 @@
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
 	force = 20
-	force_unwielded = 20 // 35 max
-	force_wielded = 55 // 90 max
-	throwforce = 55
-	block_chance = 15 // P-Much a dedicated blocking weapon
-	attack_speed = CLICK_CD_MELEE * 1.5  // slow as sin to make up for it
-	backstab_multiplier = 2 // makes an otherwise non-position heavy weapon a little more tactical
+	force_unwielded = 20
+	force_wielded = 40
+	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
@@ -475,20 +445,18 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BACK
-	force = 20
-	force_unwielded = 20 // 35 max
-	force_wielded = 55 // 90 max
-	throwforce = 55
-	block_chance = 15 // P-Much a dedicated blocking weapon
-	attack_speed = CLICK_CD_MELEE * 1.5  // slow as sin to make up for it
-	backstab_multiplier = 2 // makes an otherwise non-position heavy weapon a little more tactical
+	force = 18
+	force_unwielded = 18
+	force_wielded = 35
+	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
-
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 15
 
 /obj/item/melee/coyote/macuahuitl
 	name = "Macuahuitl"
@@ -500,20 +468,17 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	slot_flags = INV_SLOTBIT_BELT
-	force = 35
-	force_unwielded = 35 // 70 max
-	force_wielded = 45 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("batter-gashed", "sliced", "diced")
 	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/melee/coyote/oldkhopesh
 	name = "Old Khopesh"
@@ -525,20 +490,18 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 35
-	force_unwielded = 35 // 70 max
-	force_wielded = 45 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
+	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
 	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff
 	name = "Old Quarterstaff"
@@ -553,7 +516,6 @@
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
-	backstab_multiplier = 2 //I swear to god I will make quarterstaff meta real ~TK
 	throwforce = 15
 	wound_bonus = 15
 	stam_dmg = 30
@@ -565,11 +527,11 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/* /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute")) */ //How about we stop instantly stamina critting people in power armor
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
 	name = "Old Bokken"
@@ -595,36 +557,11 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/* /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute")) Silence, code, be quiet for 1 million years*/
-
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick
-	name = "Dispute Stick"
-	desc = "A large stick, culturally used for dispute duels, whoevers still standing by the end had a better argument."
-	icon = 'modular_coyote/icons/objects/weapons.dmi'
-	icon_state = "handle"
-	item_state = "debranched_stick_old"
-	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
-	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
-	force = 0
-	throwforce = 0
-	wound_bonus = -20
-	force_unwielded = 0
-	force_wielded = 0
-	stam_dmg = 18
-	cooldown = 13
-	bare_wound_bonus = 0
-	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("articulated", "clocked", "bonked")
-	hitsound = 'sound/weapons/smash.ogg'
-	attack_speed = CLICK_CD_MELEE * 0.7
-	block_chance = 30 // Skill based gameplay
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"
@@ -636,20 +573,18 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
-	force = 40
-	force_unwielded = 40 // 70 max
-	force_wielded = 50 // 80 max
-	throwforce = 0 
-	block_chance = 8 // kinda like before, because I know you won't be parrying.
-	attack_speed = CLICK_CD_MELEE * 1.1 
-	armour_penetration =  0.1 // as a treat
-	backstab_multiplier = 1.5 // as a treat
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
+	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
 	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
 
 /obj/item/melee/coyote/oldpike/sarissa
 	name = "Old Sarissa"
@@ -700,7 +635,7 @@
 //why am I making this
 //please no
 
-/obj/item/melee/coyote/danimaul
+/obj/item/melee/coyote/danhead
 	name = "dan's head on a stick"
 	icon = 'modular_coyote/icons/objects/danimaul.dmi'
 	lefthand_file = 'modular_coyote/icons/objects/danimaulinhandleft.dmi'
@@ -709,8 +644,7 @@
 	item_state = "danimauler"
 	force = 5
 	force_unwielded = 5
-	force_wielded = 200
-	backstab_multiplier = 478 //get sat on, idiot ~TK
+	force_wielded = 10
 	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
 /obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)

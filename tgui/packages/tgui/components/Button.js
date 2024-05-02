@@ -21,7 +21,6 @@ export const Button = props => {
     icon,
     iconRotation,
     iconSpin,
-    iconSize,
     iconColor,
     iconPosition,
     color,
@@ -95,7 +94,6 @@ export const Button = props => {
           name={icon}
           color={iconColor}
           rotation={iconRotation}
-          size={iconSize}
           spin={iconSpin} />
       )}
       {content}
@@ -105,7 +103,6 @@ export const Button = props => {
           name={icon}
           color={iconColor}
           rotation={iconRotation}
-          size={iconSize}
           spin={iconSpin} />
       )}
     </Box>

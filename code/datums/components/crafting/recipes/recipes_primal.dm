@@ -46,13 +46,13 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/wonderglue
-	name = "Wonder Glue"
+	name = "Animal Glue"
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
-	reqs = list(/obj/item/stack/sheet/bone = 1,
-				/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/sheet/sinew = 1)
+	reqs = list(/obj/item/stack/sheet/bone = 3,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/sinew = 3)
 	result = /obj/item/crafting/wonderglue
 	category = CAT_PRIMAL
 
@@ -70,7 +70,7 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/duct_tape
-	name = "Duct Tape" // Why was this named bonfire
+	name = "Bonfire"
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
@@ -153,6 +153,14 @@
 			/datum/reagent/oil = 5,
 			/obj/item/shovel/spade = 1)
 	result = /obj/item/shovel/serrated
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/punji_sticks
+	name = "Punji stick Trap"
+	time = 30
+	reqs = list(
+			/obj/item/stack/sheet/mineral/bamboo = 5)
+	result = /obj/structure/punji_sticks
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/wickerdoll
@@ -498,22 +506,23 @@
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/lighttribe
-	name = "Light Tribal Armor"
+	name = "Light Tribal Plates"
 	result = /obj/item/clothing/suit/armor/light/tribal/strips
-	time = 75
-	reqs = list(/obj/item/stack/sheet/leather = 3)
+	time = 600
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_PRIMAL
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_FORGE)
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/heavytribe
-	name = "Heavy Tribal Armor"
+	name = "Heavy Tribal Plates"
 	result = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
-	time = 300
-	reqs = list(/obj/item/stack/sheet/bone = 8,
-				/obj/item/stack/sheet/leather = 1)
+	time = 600
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_PRIMAL
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_FORGE)
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/goliathcloak
@@ -554,10 +563,10 @@
 	name = "Light Armored Cloak"
 	result = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	time = 120
-	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 4,
-				/obj/item/stack/sheet/leather = 2,
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
+				/obj/item/stack/sheet/leather = 6,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/stack/sheet/cloth = 2)
+				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE

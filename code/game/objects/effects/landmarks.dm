@@ -524,7 +524,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
-/obj/effect/landmark/start/f13/ncrlogisticsofficer
+obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Logistics Officer"
 	icon_state = "NCR Lieutenant"
 
@@ -775,7 +775,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/nashcurator
-	name = "Librarian"
+	name = "Nash Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/dendoc
@@ -810,37 +810,18 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
-/obj/effect/landmark/start/f13/wastelander/clubworker
-	name = "Club Worker"
-	icon_state = "Wastelander"
-	color = "#FF9999"
-
-/obj/effect/landmark/start/f13/wastelander/clubmanager
-	name = "Club Manager"
-	icon_state = "Wastelander"
-	color = "#FF9944"
-
 /obj/effect/landmark/start/f13/wastelander/den
-	name = "Den Citizen"
+	name = "Den Waster"
 	icon_state = "Wastelander"
 
-/obj/effect/landmark/start/f13/wastelander/backstage
-	name = "Backstage Character"
-	icon_state = "Wastelander"
-	color = "#FF0000"
 
 /obj/effect/landmark/start/f13/wastelander/gar
-	name = "Garland Citizen"
+	name = "Garland City Waster"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/ashdown
 	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
-
-/obj/effect/landmark/start/f13/texasranger
-	name = "Texarkana Ranger"
-	icon_state = "Wastelander"
-	color = "#66BBBB"
 
 /obj/effect/landmark/start/f13/raider
 	name = "Outlaw"
@@ -913,7 +894,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/shaman
-	name = "Spiritual Leader"
+	name = "Shaman"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/villager
@@ -925,15 +906,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
-	name = "Forager"
+	name = "Hunter"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/Hhunter
-	name = "Head Forager"
+	name = "Head Hunter"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid
-	name = "Harvest Leader"
+	name = "Druid"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/spiritpledged
@@ -962,7 +943,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard
-	name = "New Boston Paramedic"
+	name = "Nash Paramedic"
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer
@@ -1003,23 +984,3 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/biker_boss
 	name = "Overbiker"
 	icon_state = "Captain"
-
-// Reclaimers job spawns
-
-/obj/effect/landmark/start/f13/followersscientist/recresearcher
-	name = "Reclaimer Researcher"
-
-/obj/effect/landmark/start/f13/followersscientist/recarcheologist
-	name = "Reclaimer Archeologist"
-
-/obj/effect/landmark/start/f13/followersscientist/recslimeologist
-	name = "Reclaimer Slimeologist"
-
-/obj/effect/landmark/start/f13/followersscientist/recnanspec
-	name = "Reclaimer Nanite Specialist"
-
-/obj/effect/landmark/start/f13/followersscientist/recmechanic
-	name = "Reclaimer Mechanic"
-
-/obj/effect/landmark/start/f13/followersscientist/recguard
-	name = "Reclaimer Guard"

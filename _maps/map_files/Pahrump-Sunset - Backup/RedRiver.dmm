@@ -8595,6 +8595,7 @@
 	},
 /area/f13/building)
 "eTF" = (
+/obj/item/stack/ore/lead,
 /turf/open/water,
 /area/f13/building/abandoned)
 "eUh" = (
@@ -11881,7 +11882,7 @@
 	},
 /area/f13/wasteland)
 "gPz" = (
-/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/lead/twenty,
 /obj/structure/closet/crate,
 /turf/open/floor/plating/rust,
 /area/f13/building)
@@ -16087,8 +16088,8 @@
 /area/f13/building)
 "jrG" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/reagent_containers/pill/patch/psycho,
-/obj/item/reagent_containers/pill/patch/psycho,
+/obj/item/reagent_containers/hypospray/medipen/psycho,
+/obj/item/reagent_containers/hypospray/medipen/psycho,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/f13{

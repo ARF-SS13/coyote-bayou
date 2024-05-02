@@ -146,9 +146,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/list/alt_prefixes
 	/// doesn't override your taur body selection
 	var/footstep_type
-	//footstep sounds
-	var/slime_mood
-	// the face of the slime
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -648,8 +645,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.remove_overlay(BODY_LAYER)
 	H.remove_overlay(UNDERWEAR_LAYER)
 	H.remove_overlay(UNDERWEAR_OVERHANDS_LAYER)
-	H.remove_overlay(UNDERWEAR_OVERCLOTHES_LAYER)
-	H.remove_overlay(UNDERWEAR_OVERSUIT_LAYER)
 
 	var/list/standing = list()
 	// creature characters don't need to do all this work, just display their icon.
@@ -681,24 +676,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			F.pixel_x += -((icon_width-32)/2)
 		standing += F
 
-		if (slime_mood)
-			var/mutable_appearance/sf = mutable_appearance ('icons/mob/slimes.dmi', slime_mood, BODYPARTS_LAYER) //Slime face
-			standing += sf
-
-	var/list/standing_undereyes = list()
-	var/list/standing_overeyes = list()
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)) && !H.IsFeral())
 		// lipstick
 		if(H.lip_style && (LIPS in species_traits))
-			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -UNDERWEAR_OVERSUIT_LAYER)
+			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
 
 			if(OFFSET_LIPS in H.dna.species.offset_features)
 				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_LIPS][1]
 				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_LIPS][2]
 
-			standing_overeyes += lip_overlay
+			standing += lip_overlay
 
 		// eyes
 		if(!(NOEYES in species_traits))
@@ -706,16 +695,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!has_eyes)
 				standing += mutable_appearance('icons/mob/eyes.dmi', "eyes_missing", -BODY_LAYER)
 			else
-				var/eyelayer = -BODY_LAYER
-				if(H.eye_over_hair)
-					eyelayer = -UNDERWEAR_OVERSUIT_LAYER // hair layer, plus (minus) one
 				var/left_state = DEFAULT_LEFT_EYE_STATE
 				var/right_state = DEFAULT_RIGHT_EYE_STATE
 				if(eye_type in GLOB.eye_types)
 					left_state = eye_type + "_left_eye"
 					right_state = eye_type + "_right_eye"
-				var/mutable_appearance/left_eye = mutable_appearance('icons/mob/eyes.dmi', left_state, eyelayer)
-				var/mutable_appearance/right_eye = mutable_appearance('icons/mob/eyes.dmi', right_state, eyelayer)
+				var/mutable_appearance/left_eye = mutable_appearance('icons/mob/eyes.dmi', left_state, -BODY_LAYER)
+				var/mutable_appearance/right_eye = mutable_appearance('icons/mob/eyes.dmi', right_state, -BODY_LAYER)
 				if((EYECOLOR in species_traits) && has_eyes)
 					left_eye.color = "#" + H.left_eye_color
 					right_eye.color = "#" + H.right_eye_color
@@ -724,19 +710,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					left_eye.pixel_y += offset_features[OFFSET_EYES][2]
 					right_eye.pixel_x += offset_features[OFFSET_EYES][1]
 					right_eye.pixel_y += offset_features[OFFSET_EYES][2]
-				if(H.eye_over_hair)
-					standing_overeyes += left_eye
-					standing_overeyes += right_eye
-				else
-					standing_undereyes += left_eye
-					standing_undereyes += right_eye
+				standing += left_eye
+				standing += right_eye
 
 	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
 	var/list/standing_overdies = list()
-	var/list/standing_veryoverdies = list()
-	var/list/standing_evenmoreveryoverdies = list()
-	SSpornhud.flush_undies(H)
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
 		var/overhands
@@ -749,121 +728,68 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/datum/sprite_accessory/taur/TA
 		if(mutant_bodyparts["taur"] && H.dna.features["taur"])
 			TA = GLOB.taur_list[H.dna.features["taur"]]
-		/////////////////////////// SOCKS ///////////////////////////
 		if(!(TA?.hide_legs) && H.socks && !H.hidden_socks && H.get_num_legs(FALSE) >= 2)
 			if(H.saved_socks)
 				H.socks = H.saved_socks
 				H.saved_socks = ""
 			var/datum/sprite_accessory/underwear/socks/S = GLOB.socks_list[H.socks]
 			if(S)
-				var/put_it_here_instead = layer_to_put_it_on
-				if(H.socks_oversuit)
-					if(H.socks_oversuit == UNDERWEAR_OVER_UNIFORM)
-						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
-					else if(H.socks_oversuit == UNDERWEAR_OVER_SUIT)
-						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/digilegs = ((DIGITIGRADE in species_traits) && S.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -put_it_here_instead)
-				var/image/dirty_socks = image(S.icon, H, "[S.icon_state][digilegs]", -put_it_here_instead)
+				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -layer_to_put_it_on)
 				if(S.has_color)
 					MA.color = "#[H.socks_color]"
-					dirty_socks.color = "#[H.socks_color]"
-				if(H.socks_oversuit == UNDERWEAR_OVER_UNIFORM)
-					standing_veryoverdies += MA
-				else if(H.socks_oversuit == UNDERWEAR_OVER_SUIT || H.socks_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					standing_evenmoreveryoverdies += MA
-				else if(overhands)
+				if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
-				if(H.socks_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					dirty_socks.layer = SSpornhud.get_layer(H, PHUD_SOCKS, "FRONT")
-					SSpornhud.catalogue_part(H, PHUD_SOCKS, dirty_socks)
 
-		/////////////////////////// UNDERPANTIIES ///////////////////////////
 		if(H.underwear && !H.hidden_underwear)
 			if(H.saved_underwear)
 				H.underwear = H.saved_underwear
 				H.saved_underwear = ""
 			var/datum/sprite_accessory/underwear/bottom/B = GLOB.underwear_list[H.underwear]
 			if(B)
-				var/put_it_here_instead = layer_to_put_it_on
-				if(H.underwear_oversuit)
-					if(H.underwear_oversuit == UNDERWEAR_OVER_UNIFORM)
-						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
-					else if(H.underwear_oversuit == UNDERWEAR_OVER_SUIT)
-						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/digilegs = ((DIGITIGRADE in species_traits) && B.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -put_it_here_instead)
-				var/image/dirty_undies = image(B.icon, H, "[B.icon_state][digilegs]", -put_it_here_instead)
+				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -layer_to_put_it_on)
 				if(B.has_color)
 					MA.color = "#[H.undie_color]"
-					dirty_undies.color = "#[H.undie_color]"
-				if(H.underwear_oversuit == UNDERWEAR_OVER_SUIT || H.underwear_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					standing_veryoverdies += MA
-				else if(H.underwear_oversuit == UNDERWEAR_OVER_SUIT)
-					standing_evenmoreveryoverdies += MA
-				else if(overhands)
+				if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
-				if(H.underwear_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					dirty_undies.layer = SSpornhud.get_layer(H, PHUD_PANTS, "FRONT")
-					SSpornhud.catalogue_part(H, PHUD_PANTS, dirty_undies)
 
-		/////////////////////////// SHIRT ///////////////////////////
 		if(H.undershirt && !H.hidden_undershirt)
 			if(H.saved_undershirt)
 				H.undershirt = H.saved_undershirt
 				H.saved_undershirt = ""
 			var/datum/sprite_accessory/underwear/top/T = GLOB.undershirt_list[H.undershirt]
 			if(T)
-				var/put_it_here_instead = layer_to_put_it_on
-				if(H.undershirt_oversuit)
-					if(H.undershirt_oversuit == UNDERWEAR_OVER_UNIFORM)
-						put_it_here_instead = UNDERWEAR_OVERCLOTHES_LAYER
-					else if(H.undershirt_oversuit == UNDERWEAR_OVER_SUIT)
-						put_it_here_instead = UNDERWEAR_OVERSUIT_LAYER
 				var/state = "[T.icon_state][((DIGITIGRADE in species_traits) && T.has_digitigrade) ? "_d" : ""]"
 				var/mutable_appearance/MA
 				if(T.use_sex_mask && H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
-					MA = wear_alpha_masked_version(state, T.icon, put_it_here_instead, FEMALE_UNIFORM_TOP)
+					MA = wear_alpha_masked_version(state, T.icon, layer_to_put_it_on, FEMALE_UNIFORM_TOP)
 				else
-					MA = mutable_appearance(T.icon, state, -put_it_here_instead)
-				var/image/dirty_bra = image(MA.icon, H, MA.icon_state, -put_it_here_instead)
+					MA = mutable_appearance(T.icon, state, -layer_to_put_it_on)
 				if(T.has_color)
 					MA.color = "#[H.shirt_color]"
-					dirty_bra.color = "#[H.shirt_color]"
-				if(H.undershirt_oversuit == UNDERWEAR_OVER_SUIT || H.undershirt_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					standing_veryoverdies += MA
-				else if(H.undershirt_oversuit == UNDERWEAR_OVER_SUIT)
-					standing_evenmoreveryoverdies += MA
-				else if(overhands)
+				if(overhands)
 					standing_overdies += MA
 				else
 					standing_undies += MA
-				if(H.undershirt_oversuit == UNDERWEAR_OVER_EVERYTHING)
-					dirty_bra.layer = SSpornhud.get_layer(H, PHUD_SHIRT, "FRONT")
-					SSpornhud.catalogue_part(H, PHUD_SHIRT, dirty_bra)
-	/// all this just to put on pants? no wonder everyone's naked
 
 	//Warpaint and tattoos
 	if(H.warpaint && !H.IsFeral())
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
 
-	// if(standing.len) // MAYBE - WIZARD
-	H.overlays_standing[BODY_LAYER] = standing_undereyes | standing
+	if(standing.len) // MAYBE - WIZARD
+		H.overlays_standing[BODY_LAYER] = standing
 
 	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies
 	H.overlays_standing[UNDERWEAR_OVERHANDS_LAYER] = standing_overdies
-	H.overlays_standing[UNDERWEAR_OVERCLOTHES_LAYER] = standing_veryoverdies
-	H.overlays_standing[UNDERWEAR_OVERSUIT_LAYER] = standing_overeyes | standing_evenmoreveryoverdies
 
 	H.apply_overlay(UNDERWEAR_LAYER)
 	H.apply_overlay(UNDERWEAR_OVERHANDS_LAYER)
-	H.apply_overlay(UNDERWEAR_OVERCLOTHES_LAYER)
-	H.apply_overlay(UNDERWEAR_OVERSUIT_LAYER)
 	H.apply_overlay(BODY_LAYER)
 	handle_mutant_bodyparts(H)
 
@@ -955,10 +881,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-	var/list/tailhacked = list() // tailhud's a bazinga, innit
-	var/list/winghacked = list() // tailhud II: Tail Hudder
-	SSpornhud.flush_accessories(H)
-	var/dont_not_add = isdummy(H) // preview dummies and pornhud dont mix
+	var/tailhacked // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -985,7 +908,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/mutant_string = S.mutant_part_string
 			if(mutant_string == "tailwag") //wagging tails should be coloured the same way as your tail
 				mutant_string = "tail"
-			var/pornhud_it = !dont_not_add && (mutant_string in list(MUTANT_PORNHUD_PARTS))
 			var/primary_string = advanced_color_system ? "[mutant_string]_primary" : "mcolor"
 			var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : "mcolor2"
 			var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : "mcolor3"
@@ -1066,19 +988,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					for(var/index in 1 to accessory_colorlist.len)
 						accessory_colorlist[index] /= 255
 					accessory_overlay.color = list(accessory_colorlist)
-			if(pornhud_it)
-				accessory_overlay.layer = SSpornhud.get_layer(H, mutant_string, layertext)
-				switch(mutant_string)
-					if(MUTANT_PORNHUD_TAIL)
-						tailhacked += accessory_overlay
-					if(MUTANT_PORNHUD_WINGS)
-						winghacked += accessory_overlay
-			else
-				standing += accessory_overlay
 
 			if(OFFSET_MUTPARTS in H.dna.species.offset_features)
 				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+
+			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
+				tailhacked = TRUE
+				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay) // oh baby gimme that tail~
+			standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
 				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
@@ -1124,15 +1042,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					extra_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
 					extra_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
-				if(pornhud_it)
-					extra_accessory_overlay.layer = SSpornhud.get_layer(H, mutant_string, layertext)
-					switch(mutant_string)
-						if(MUTANT_PORNHUD_TAIL)
-							tailhacked += extra_accessory_overlay
-						if(MUTANT_PORNHUD_WINGS)
-							winghacked += extra_accessory_overlay
-				else
-					standing += extra_accessory_overlay
+				standing += extra_accessory_overlay
 
 			if(S.extra2) //apply the extra overlay, if there is one
 				var/mutable_appearance/extra2_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
@@ -1173,16 +1083,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					extra2_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
 					extra2_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
-
-				if(pornhud_it)
-					extra2_accessory_overlay.layer = SSpornhud.get_layer(H, mutant_string, layertext)
-					switch(mutant_string)
-						if(MUTANT_PORNHUD_TAIL)
-							tailhacked += extra2_accessory_overlay
-						if(MUTANT_PORNHUD_WINGS)
-							winghacked += extra2_accessory_overlay
-				else
-					standing += extra2_accessory_overlay
+				standing += extra2_accessory_overlay
 
 		H.overlays_standing[layernum] = standing
 
@@ -1191,8 +1092,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
-	SSpornhud.catalogue_part(H, PHUD_TAIL, tailhacked) // hey gimme back my tail
-	SSpornhud.catalogue_part(H, PHUD_WINGS, winghacked) // hey gimme back my dingo wings
+	if(!tailhacked)
+		SSpornhud.catalogue_part(H, PHUD_TAIL, null) // hey gimme back my tail
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.
@@ -1226,7 +1127,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
 		stop_wagging_tail(H)
-		slime_mood = null
 
 /datum/species/proc/auto_equip(mob/living/carbon/human/H)
 	// handles the equipping of species-specific gear
@@ -1454,14 +1354,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 ////////////
 
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H)
-	if(HAS_TRAIT(H, TRAIT_NOHUNGER))
-		H.set_nutrition(NUTRITION_LEVEL_FED - 1)
+	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
 	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
 		H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
 
-	//The fuking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
+	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	else 
 		if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
 			if(H.overeatduration < 100)
@@ -1483,17 +1382,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!H.insanelycomfy)
 			to_chat(H, span_notice("You feel comfy."))
 			H.insanelycomfy = TRUE
-			for(var/mob/living/somone in range(1, H))
-				if(somone == H)
-					continue
-				if(!somone.client)
-					continue
-				SSstatpanels.discard_horny_demographic(H) // If we're comfy with someone, its likely that they are fucking each other
-				break // And the horny demographic thing is to get people who arent fucking to find people to fuck, so if theyre fucking, remove them from the list of people lookin to fuck
 	else if(H.insanelycomfy)
 		to_chat(H, span_notice("You no longer feel comfy."))
 		H.insanelycomfy = FALSE
-		SSstatpanels.collect_horny_demographic(H)
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER) && !H.insanelycomfy)
@@ -1603,7 +1494,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
 			to_chat(H, span_danger("Your hair starts to fall out in clumps..."))
-			addtimer(CALLBACK(src,PROC_REF(go_bald), H), 50)
+			addtimer(CALLBACK(src, .proc/go_bald, H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -1768,7 +1659,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					user.adjustBruteLoss(-5)
 					user.adjustFireLoss(-5)
 					user.adjustStaminaLoss(-20)
-					target.adjustBruteLoss(20)
+
+					target.adjustCloneLoss(10)
+					target.adjustBruteLoss(10)
 
 		else if(!(target.mobility_flags & MOBILITY_STAND))
 			target.forcesay(GLOB.hit_appends)
@@ -1850,7 +1743,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					// for(var/i in 1 to 3)
 					// 	vol *= 0.75
 					// 	dist = round(dist*0.75)
-					// 	addtimer(CALLBACK(src,PROC_REF(bootysmack), get_turf(target), vol, dist), time)
+					// 	addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
 					// 	time += 0.5 SECONDS
 					target.adjustStaminaLoss(25)
 					user.visible_message(
@@ -2512,7 +2405,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			H.adjust_bodytemperature(11)
 		else
 			H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + (H.fire_stacks * 12))
-			H.adjustFireLoss(H.fire_stacks)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)

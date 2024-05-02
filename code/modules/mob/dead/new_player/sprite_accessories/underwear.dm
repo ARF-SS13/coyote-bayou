@@ -99,6 +99,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
+
 /datum/sprite_accessory/underwear/bottom/female_beekini
 	name = "Panties - Bee-kini"
 	icon_state = "panties_bee-kini"
@@ -114,10 +115,12 @@
 	icon_state = "panties_cow"
 	gender = FEMALE
 
+
 /datum/sprite_accessory/underwear/bottom/fishnet_lower
 	name = "Panties - Fishnet"
 	icon_state = "fishnet_lower"
 	gender = FEMALE
+
 
 /datum/sprite_accessory/underwear/bottom/female_usastripe
 	name = "Panties - Freedom"
@@ -134,6 +137,7 @@
 	icon_state = "panties_neko"
 	has_color = TRUE
 	gender = FEMALE
+
 
 /datum/sprite_accessory/underwear/bottom/panties_slim
 	name = "Panties - Slim"
@@ -159,6 +163,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
+
 /datum/sprite_accessory/underwear/bottom/panties_uk
 	name = "Panties - UK"
 	icon_state = "panties_uk"
@@ -181,6 +186,7 @@
 	icon_state = "swimming_red"
 	gender = FEMALE
 	covers_chest = TRUE
+
 
 /datum/sprite_accessory/underwear/bottom/thong
 	name = "Thong"
@@ -220,12 +226,4 @@
 	has_color = TRUE
 	gender = FEMALE
 
-//new bodysuit - covers all bodyparts. There is a "revealing" variant in the socks file that is meant to be used in combination with both bras and panties.
-/datum/sprite_accessory/underwear/bottom/bodysuit
-	name = "Bodysuit"
-	icon_state = "bodysuit"
-	has_color = TRUE
-	covers_groin = TRUE
-	covers_chest = TRUE
-	covers_belly = TRUE
-	has_digitigrade = TRUE
+

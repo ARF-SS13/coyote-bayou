@@ -357,7 +357,7 @@
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)
 	. = ..()
-	RegisterSignal(M, COMSIG_MOB_SAY,PROC_REF(handle_speech))
+	RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 
 /obj/item/instrument/harmonica/dropped(mob/M)
 	. = ..()
@@ -435,8 +435,7 @@
 							/obj/item/instrument/trombone,
 							/obj/item/instrument/recorder,
 							/obj/item/instrument/harmonica,
-							/obj/item/instrument/musicalmoth,
-							/obj/structure/piano/fancy
+							/obj/item/instrument/musicalmoth
 							)
 		for(var/V in templist)
 			var/atom/A = V

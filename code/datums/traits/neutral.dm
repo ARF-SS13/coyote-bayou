@@ -189,22 +189,6 @@
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
 
-/datum/quirk/agroeater
-	name = "Aggressive Metabolism"
-	desc = "You gain natural healing from eating food, but your metabolism is aggressively fast, causing you to eat alot of food"
-	value = 0 // This heals 71 brute damage in 16 minutes, but also massively increases your hunger rate. Having no hunger is extremely bad
-	category = "Food Quirks"
-	mechanics = "You heal naturally, but if your starving, you no longer heal. Starving is very bad for you."
-	conflicts = list() 
-
-/datum/quirk/agroeater/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.AddElement(/datum/element/photosynthesis, -0.15, -0.15, -0.15, -0.15, -1, 0, -1, -1.5) // Should work at all times, no matter what light condition
-
-/datum/quirk/agroeater/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.RemoveElement(/datum/element/photosynthesis, -0.15, -0.15, -0.15, -0.15, -1, 0, -1, -1.5)
-
 /datum/quirk/maso
 	name = "Masochism"
 	desc = "You are aroused by pain."
@@ -377,14 +361,14 @@
 			species.disliked_food &= ~MEAT
 
 /datum/quirk/hydra
-	name = "Multiple Identities"
-	desc = "You have multiple identities voices, names, or you are a multi-headed creature."
+	name = "Hydra Heads"
+	desc = "You are a tri-headed creature, or maybe you just have multiple personalities."
 	value = 0
 	category = "Lifepath Quirks"
-	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which will be your character name and voice."
+	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which personality is speaking."
 	conflicts = list()
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = span_notice("You hear other voices inside of your head(s).")
+	gain_text = span_notice("You hear two other voices inside of your head(s).")
 	lose_text = span_danger("All of your minds become singular.")
 	medical_record_text = "Patient has multiple heads and personalities affixed to their body."
 
@@ -414,7 +398,7 @@
 /datum/action/innate/hydrareset/Activate()
 	var/mob/living/carbon/human/hydra = owner
 	hydra.real_name = hydra.name_archive
-	hydra.visible_message(span_notice("[hydra.name] speaks with multiple familiar voices overlapping eachother."), \
+	hydra.visible_message(span_notice("[hydra.name] pushes all three heads forwards; they seem to be talking as a collective."), \
 							span_notice("You are now talking as [hydra.name_archive]!"), ignored_mobs=owner)
 
 /datum/action/innate/hydra/Activate() //I hate this but its needed
@@ -422,7 +406,7 @@
 	var/list/names = splittext(hydra.name_archive,"-")
 	var/selhead = input("Who would you like to speak as?","Heads:") in names
 	hydra.real_name = selhead
-	hydra.visible_message(span_notice("[hydra.name] alters their portrayed identity, appearing as [selhead] instead."), \
+	hydra.visible_message(span_notice("[hydra.name] pulls the rest of their heads back; and puts [selhead]'s forward."), \
 							span_notice("You are now talking as [selhead]!"), ignored_mobs=owner)
 
 /datum/quirk/sheltered
@@ -641,7 +625,7 @@
 	human_only = FALSE
 
 /datum/quirk/smol
-	name = "Scoopable!"
+	name = "Smol!"
 	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, carrying you around is just pretty dang easy."
 	value = 0
 	category = "Lifepath Quirks"

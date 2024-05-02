@@ -136,69 +136,6 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
-/datum/crafting_recipe/cheaphivebot
-	name = "Cheap Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/cheap
-	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
-				/obj/item/stack/rods = 12,
-				/obj/item/stack/sheet/metal = 5)
-	tools = list()
-	time = 30
-	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
-
-/datum/crafting_recipe/hivebot
-	name = "Regular Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot
-	reqs = list(/obj/item/stack/crafting/electronicparts = 10,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 15)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
-
-/datum/crafting_recipe/rangedhivebot
-	name = "Ranged Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/ranged
-	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 12,
-				/obj/item/stack/sheet/plasteel = 8)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
-
-/datum/crafting_recipe/factoryhivebot
-	name = "Industrial Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/factory
-	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 12,
-				/obj/item/stack/sheet/plasteel = 8)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
-
-/datum/crafting_recipe/crystalhivebot
-	name = "Magical Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/crystal
-	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 12,
-				/obj/item/stack/sheet/bluespace_crystal = 2,
-				/obj/item/stack/sheet/mineral/diamond = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
-
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
 	result = /obj/item/stock_parts/manipulator/pico
@@ -470,7 +407,7 @@
 	name = "Picket Sign"
 	result = /obj/item/picket_sign
 	reqs = list(/obj/item/stack/rods = 1,
-				/obj/item/stack/sheet/mineral/wood = 2)
+				/obj/item/stack/sheet/cardboard = 2)
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -507,13 +444,59 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-/datum/crafting_recipe/naturalcardboard
-	name = "Hand-Pressed Cardboard"
-	time = 45
-	reqs = list(/datum/reagent/water = 50, /datum/reagent/ash = 20, /obj/item/stack/sheet/mineral/wood = 1)
-	result = /obj/item/stack/sheet/cardboard/five // Pressed paper gives you 25 paper, which is 5 paper bags, this is equivilent in terms of storage size
+/*
+/datum/crafting_recipe/electrochromatic_kit
+	name = "Electrochromatic Kit"
+	result = /obj/item/electronics/electrochromatic_kit
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/cable_coil = 1)
+	time = 5
+	subcategory = CAT_TOOL
+	category = CAT_MISC
+	always_available = FALSE
+
+/datum/crafting_recipe/heretic/codex
+	name = "Codex Cicatrix"
+	result = /obj/item/forbidden_book
+	tools = list(/obj/item/pen)
+	reqs = list(/obj/item/paper = 5,
+				/obj/item/organ/eyes = 1,
+				/obj/item/organ/heart = 1,
+				/obj/item/stack/sheet/animalhide/human = 1)
+	time = 150
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	always_available = FALSE
+
+
+/datum/crafting_recipe/plunger
+	name = "Plunger"
+	result = /obj/item/plunger
+	time = 1
+	reqs = list(/obj/item/stack/sheet/plastic = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_MISC
+	subcategory = CAT_TOOL
+
+/datum/crafting_recipe/rcl
+	name = "Makeshift Rapid Cable Layer"
+	result = /obj/item/rcl/ghetto
+	time = 40
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
+	subcategory = CAT_TOOL
+	category = CAT_MISC
+
+/datum/crafting_recipe/command_banner
+	name = "Command Banner"
+	result = /obj/item/banner/command/mundane
+	time = 40
+	reqs = list(/obj/item/stack/rods = 2,
+				/obj/item/clothing/under/rank/captain/parade = 1)
+	subcategory = CAT_FURNITURE
+	category = CAT_MISC
+
+*/
 
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
@@ -546,7 +529,7 @@
 /datum/crafting_recipe/well
 	name = "Water Well"
 	result = /obj/structure/sink/well
-	reqs = list(/obj/item/ammo_casing/caseless/rock = 4, /obj/item/stack/sheet/mineral/wood = 15, /obj/item/ammo_casing/caseless/brick = 4, /obj/item/reagent_containers/glass/bucket =1)
+	reqs = list(/obj/item/stack/sheet/metal = 20, /obj/item/stack/sheet/mineral/wood = 20, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 5, /obj/item/reagent_containers/glass/bucket =1)
 	tools = list(TOOL_SHOVEL)
 	time = 100
 	subcategory = CAT_MISCELLANEOUS
@@ -557,36 +540,6 @@
 	result = /obj/item/reagent_containers/glass/bucket/wateringcan
 	reqs = list(/obj/item/stack/sheet/metal = 1, /obj/item/stack/sheet/plastic = 1)
 	time = 10
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/mixedbouquet
-	name = "Mixed bouquet"
-	result = /obj/item/bouquet
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily =2,
-				/obj/item/grown/sunflower = 2,
-				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 2)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/sunbouquet
-	name = "Sunflower bouquet"
-	result = /obj/item/bouquet/sunflower
-	reqs = list(/obj/item/grown/sunflower = 6)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/poppybouquet
-	name = "Poppy bouquet"
-	result = /obj/item/bouquet/poppy
-	reqs = list (/obj/item/reagent_containers/food/snacks/grown/poppy = 6)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/rosebouquet
-	name = "Rose bouquet"
-	result = /obj/item/bouquet/rose
-	reqs = list(/obj/item/grown/rose = 6)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -790,7 +743,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -802,7 +754,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/soultar
 	name = "The Keytar to the Soul"
@@ -814,7 +765,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/donkeyho
 	name = "Donkey Ho-Tay's Bane"
@@ -827,7 +777,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/mrboneswr
 	name = "Mr. Bones Wild Ride"
@@ -839,7 +788,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/accordiondlove
 	name = "Accordion D'love"
@@ -852,7 +800,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/dooter
 	name = "The Dooter"
@@ -863,7 +810,6 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/sweetlovin
 	name = "Sweet Lovin'"
@@ -876,7 +822,6 @@
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/rip/trom_bone
 	name = "Trom-Bone"
@@ -887,7 +832,6 @@
 				/obj/item/stack/sheet/bone = 800,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 
 /datum/crafting_recipe/rip/fingerlicker
@@ -900,7 +844,6 @@
 				/obj/item/reagent_containers/food/condiment/pack/bbqsauce = 10
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 //Lunchboxes
 
@@ -912,7 +855,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/hearts
 	name = "Hearts lunchbox"
@@ -922,7 +864,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/cat
 	name = "Cat lunchbox"
@@ -932,7 +873,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/nano
 	name = "Blue lunchbox"
@@ -942,7 +882,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/uni
 	name = "University lunchbox"
@@ -952,7 +891,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/teal
 	name = "Teal lunchbox"
@@ -962,7 +900,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/diona
 	name = "Diona lunchbox"
@@ -972,7 +909,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 /datum/crafting_recipe/lunchbox/black
 	name = "Black lunchbox"
@@ -982,7 +918,6 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
 
 //Abraxo recipe after several requests
 
@@ -996,60 +931,3 @@
 		/datum/material/sand  = 1,
 		)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-
-/// Graveyard / Not Used
-
-/*
-/datum/crafting_recipe/electrochromatic_kit
-	name = "Electrochromatic Kit"
-	result = /obj/item/electronics/electrochromatic_kit
-	reqs = list(/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 5
-	subcategory = CAT_TOOL
-	category = CAT_MISC
-	always_available = FALSE
-
-/datum/crafting_recipe/heretic/codex
-	name = "Codex Cicatrix"
-	result = /obj/item/forbidden_book
-	tools = list(/obj/item/pen)
-	reqs = list(/obj/item/paper = 5,
-				/obj/item/organ/eyes = 1,
-				/obj/item/organ/heart = 1,
-				/obj/item/stack/sheet/animalhide/human = 1)
-	time = 150
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-	always_available = FALSE
-
-/datum/crafting_recipe/plunger
-	name = "Plunger"
-	result = /obj/item/plunger
-	time = 1
-	reqs = list(/obj/item/stack/sheet/plastic = 1,
-				/obj/item/stack/sheet/mineral/wood = 1)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/rcl
-	name = "Makeshift Rapid Cable Layer"
-	result = /obj/item/rcl/ghetto
-	time = 40
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
-	reqs = list(/obj/item/stack/sheet/metal = 15)
-	subcategory = CAT_TOOL
-	category = CAT_MISC
-
-/datum/crafting_recipe/command_banner
-	name = "Command Banner"
-	result = /obj/item/banner/command/mundane
-	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/captain/parade = 1)
-	subcategory = CAT_FURNITURE
-	category = CAT_MISC
-
-*/

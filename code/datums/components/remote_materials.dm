@@ -25,11 +25,11 @@ handles linking back and forth.
 	src.allow_standalone = allow_standalone
 	after_insert = _after_insert
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY,PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
 
 	var/turf/T = get_turf(parent)
 	if (force_connect || (mapload && is_station_level(T.z)))
-		addtimer(CALLBACK(src,PROC_REF(LateInitialize)))
+		addtimer(CALLBACK(src, .proc/LateInitialize))
 	else if (allow_standalone)
 		_MakeLocal()
 
@@ -65,7 +65,8 @@ handles linking back and forth.
 		/datum/material/uranium,
 		/datum/material/titanium,
 		/datum/material/bluespace,
-		/datum/material/plastic
+		/datum/material/plastic,
+		/datum/material/lead,
 		)
 
 	mat_container = parent.AddComponent(/datum/component/material_container, allowed_mats, local_size, allowed_types=/obj/item/stack, _after_insert = after_insert)

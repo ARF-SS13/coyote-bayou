@@ -41,7 +41,6 @@
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-stage1"
 	anchored = TRUE
-	plane = MOB_PLANE
 	layer = WALL_OBJ_LAYER
 	max_integrity = 200
 	armor = ARMOR_VALUE_MEDIUM
@@ -184,7 +183,6 @@
 	var/base_state = "tube"		// base description and icon_state
 	icon_state = "tube"
 	desc = "A lighting fixture."
-	plane = MOB_PLANE
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
 	use_power = ACTIVE_POWER_USE
@@ -291,7 +289,7 @@
 			update(0)
 	if(flicker_chance)
 		START_PROCESSING(SSmachines, src)
-	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(lick_light))
+	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_light)
 
 /obj/machinery/light/proc/lick_light(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
 	if(!iscarbon(licker) || !tongue)

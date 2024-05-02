@@ -321,22 +321,6 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if(lums <= 0.6)
 		REMOVE_TRAIT(quirk_holder, TRAIT_LIGHT_SENSITIVITY, TRAIT_GENERIC)
 
-/datum/quirk/lightburning
-	name = "Shadow Creature"
-	desc = "You are a shadey creature! Bright lights burn you, the shadows mend you."
-	value = -33 // This can kill you, which is extremely bad, and makes city play somewhat impossible
-	category = "Health Quirks"
-	mechanics = "While in the light, you slowly wither away, but the reverse happens in the dark, healing you and giving you nutrition."
-	conflicts = list(/datum/quirk/nyctophobia)
-
-/datum/quirk/lightburning/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.AddElement(/datum/element/photosynthesis, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.2, 0.2) // Set it a bit higher, since finding true dark areas (totally 0) is near impossible
-
-/datum/quirk/lightburning/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.RemoveElement(/datum/element/photosynthesis, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.2, 0.2)
-
 /datum/quirk/nonviolent
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
@@ -487,8 +471,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/dumb_thing = TRUE
 
 /datum/quirk/social_anxiety/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT,PROC_REF(eye_contact))
-	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE,PROC_REF(looks_at_floor))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, .proc/eye_contact)
+	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
 	if(!quirk_holder)
@@ -520,7 +504,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	if(prob(85) || (istype(mind_check) && mind_check.mind))
 		return
 
-	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), quirk_holder, span_smallnotice("You make eye contact with [A].")), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, quirk_holder, span_smallnotice("You make eye contact with [A].")), 3)
 */
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	if(prob(75))
@@ -543,7 +527,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 			msg += "causing you to freeze up!"
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
-	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), quirk_holder, span_userdanger("[msg]")), 3) // so the examine signal has time to fire and this will print after
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, quirk_holder, span_userdanger("[msg]")), 3) // so the examine signal has time to fire and this will print after
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/mood_event/anxiety_eyecontact
@@ -1150,97 +1134,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.maxHealth -= 20
 	H.health -= 20
 
-/datum/quirk/catastrophicflimsy
-	name = "Health - Catastrophic"
-	desc = "Your body is made of papermache, most attacks are serious."
-	value = -55
-	category = "Health Quirks"
-	mechanics = "Your maximum hitpoints are reduced to 50%."
-	conflicts = list(
-		/datum/quirk/lifegiverplus,
-		/datum/quirk/lifegiver,
-		/datum/quirk/flimsy,
-		/datum/quirk/veryflimsy,
-	)
-	mob_trait = TRAIT_VERYFLIMSY
-	medical_record_text = "Patient is considerably less durable than average."
-	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
-	lose_text = "<span class='notice'>You start feeling as durable as your peers."
-	human_only = FALSE
-
-/datum/quirk/catastrophicflimsy/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth -= 50
-	H.health -= 50
-
-/datum/quirk/fatalflimsy
-	name = "Health - Fatal"
-	desc = "Your body is made of sticks and twigs, rats are a serious threat. Single hits can be fatal"
-	value = -77
-	category = "Health Quirks"
-	mechanics = "Your maximum hitpoints are reduced to 20 points above crit. Not for the faint of heart."
-	conflicts = list(
-		/datum/quirk/lifegiverplus,
-		/datum/quirk/lifegiver,
-		/datum/quirk/flimsy,
-		/datum/quirk/veryflimsy,
-		/datum/quirk/catastrophicflimsy
-	)
-	mob_trait = TRAIT_FATALFLIMSY
-	medical_record_text = "Patient is considerably less durable than average."
-	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
-	lose_text = "<span class='notice'>You start feeling as durable as your peers."
-	human_only = FALSE
-
-/datum/quirk/fatalflimsy/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth -= 80
-	H.health -= 80
-
-/datum/quirk/weakpaintolerance
-	name = "Pain Tolerance - Weak"
-	desc = "Your pain tolerance is really low. Pain is a good thing, and keeps you out of serious danger."
-	gain_text = span_danger("You feel wimpy...")
-	lose_text = span_notice("You feel stronger.")
-	value = -5
-	category = "Health Quirks"
-	mechanics = "You go into softcrit at 50 points of damage, but Your total health is unchanged. Good for new players"
-	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryweakpaintolerance)
-
-/datum/quirk/weakpaintolerance/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.crit_threshold = 50
-
-/datum/quirk/veryweakpaintolerance
-	name = "Pain Tolerance - Very Weak"
-	desc = "Your pain tolerance is incredibly low. Pain is a good thing, and keeps you out of serious danger, but this is annoying. Good for new players"
-	gain_text = span_danger("You feel really wimpy...")
-	lose_text = span_notice("You feel much stronger.")
-	value = -15
-	category = "Health Quirks"
-	mechanics = "You go into crit at 20 points of damage, but your total health is unchanged. This includes all damage, include toxins from radiation, and oxygen from bloodloss"
-	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/weakpaintolerance)
-
-/datum/quirk/veryweakpaintolerance/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.crit_threshold = 80
-
-/datum/quirk/extremelyweakpaintolerance
-	name = "Pain Tolerance - Total Wimp"
-	desc = "You don't know what pain is, because you pass out before you can experience it. Doesnt come with the bottom quirk for free"
-	gain_text = span_danger(":point_up::nerd::speech_balloon:")
-	lose_text = span_notice("You feel much stronger.")
-	value = -30
-	category = "Health Quirks"
-	mechanics = "You go into crit at 1 point of damage, but your total health is unchanged. Radiation can paralyze you until treated and bloodloss oxygen damage is lethal."
-	conflicts = list(/datum/quirk/fatalflimsy, /datum/quirk/catastrophicflimsy, /datum/quirk/veryflimsy, /datum/quirk/flimsy, /datum/quirk/weakpaintolerance)
-
-/datum/quirk/extremelyweakpaintolerance/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.crit_threshold = 99
-
-
-
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
@@ -1505,9 +1398,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Hardcore"
 	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
 		and the only way you'll be able to live again is if someone finds and revives your body or a spirit takes mercy on you!"
-	value = -34
+	value = -11
 	category = "Lifepath Quirks"
-	mechanics = "You lose access to the Second Wind function. This is important there's almost never medical staff. Tread lightly, waster."
+	mechanics = "You lose access to the Second Wind function."
 	conflicts = list(
 
 	)
@@ -1515,218 +1408,4 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
 		The spirits may be merciful, better hope they are in a good mood!")
 	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
-	locked =  FALSE
-
-/datum/quirk/armor_aversion
-	name = "Armor Aversion"
-	desc = "For a reason or another, you're unable to wear medium or heavy armour"
-	value = -35
-	category = "Functional Quirks"
-	mechanics = "You can't wear medium, heavy or power armor anymore."
-	conflicts = list(
-		/datum/quirk/pa_wear
-	)
-	mob_trait = TRAIT_NO_MED_HVY_ARMOR
-	gain_text = span_boldannounce("You really don't like to feel encumbered.")
-	lose_text = span_notice("You don't mind feeling encumbered too much anymore.")
-	locked =  FALSE
-
-/datum/quirk/weak_of_muscles
-	name = "Weak of Muscles"
-	desc = "For a reason or another, you're unable to lift objects bigger than normal size "
-	value = -50  //it's really a big drawback
-	category = "Functional Quirks"
-	mechanics = "You're only capable of lifting up objects that have weight class equal or smaller than normal. Anything heavier will be impossible for you to lift up, \
-				with some core item exceptions. (This is a WIP quirk, feel free to ping us if we forgot to whitelist any core item)."
-	conflicts = list(
-	)
-	mob_trait = TRAIT_WEAK_OF_MUSCLES
-	gain_text = span_danger("Your arms feel really tired...")
-	lose_text = span_notice("Your arms are invigorated!")
-	medical_record_text = "Patient has an exceptionally weak muscolar system."
-	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"
-
-/datum/quirk/bruteweak
-	name = "Brute Weakness, Minor"
-	desc = "You're weaker to physical trauma than others."
-	mob_trait = TRAIT_BRUTEWEAK
-	value = -22
-	category = "Health Quirks"
-	mechanics = "You take 10% more brute damage."
-	conflicts = list(
-		/datum/quirk/bruteresist,
-		/datum/quirk/bruteresistmajor,
-		/datum/quirk/bruteweakmajor,
-		/datum/quirk/bruteweakfatal
-		)
-
-/datum/quirk/bruteweak/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1.1
-
-/datum/quirk/bruteweak/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1
-
-/datum/quirk/bruteweakmajor
-	name = "Brute Weakness, Major"
-	desc = "You're even weaker to physical trauma than others. Paper tiger!"
-	mob_trait = TRAIT_BRUTEWEAKMAJOR
-	value = -44
-	category = "Health Quirks"
-	mechanics = "You take 20% more brute damage."
-	conflicts = list(
-		/datum/quirk/bruteresist,
-		/datum/quirk/bruteresistmajor,
-		/datum/quirk/bruteweak,
-		/datum/quirk/bruteweakfatal
-		)
-
-/datum/quirk/bruteweakmajor/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1.2
-
-/datum/quirk/bruteweakmajor/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1
-
-/datum/quirk/bruteweakfatal
-	name = "Brute Weakness, Fatal"
-	desc = "You're fatally weak to physical trauma than others. Paper tiger!"
-	mob_trait = TRAIT_BRUTEWEAKFATAL
-	value = -66
-	category = "Health Quirks"
-	mechanics = "You take 50% more brute damage."
-	conflicts = list(
-		/datum/quirk/bruteresist,
-		/datum/quirk/bruteresistmajor,
-		/datum/quirk/bruteweak
-		)
-
-/datum/quirk/bruteweakfatal/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1.5
-
-/datum/quirk/bruteweakfatal/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.brutemod = 1
-
-/datum/quirk/burnweak
-	name = "Burn Weakness, Minor"
-	desc = "You're weaker to burns than others."
-	mob_trait = TRAIT_BURNWEAK
-	value = -22
-	category = "Health Quirks"
-	mechanics = "You take 10% more burn damage."
-	conflicts = list(
-		/datum/quirk/burnresist,
-		/datum/quirk/burnresistmajor,
-		/datum/quirk/burnweakmajor,
-		/datum/quirk/burnweakfatal
-)
-
-/datum/quirk/burnweak/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1.1
-
-/datum/quirk/burnweak/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1
-
-/datum/quirk/burnweakmajor
-	name = "Burn Weakness, Major"
-	desc = "You're even weaker to burns than others. Your skin is kindling!"
-	mob_trait = TRAIT_BURNWEAKMAJOR
-	value = -44
-	category = "Health Quirks"
-	mechanics = "You take 20% more burn damage."
-	conflicts = list(
-		/datum/quirk/burnresist,
-		/datum/quirk/burnresistmajor,
-		/datum/quirk/burnweak,
-		/datum/quirk/burnweakfatal
-)
-
-/datum/quirk/burnweakmajor/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1.2
-
-/datum/quirk/burnweakmajor/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1
-
-/datum/quirk/burnweakfatal
-	name = "Burn Weakness, Fatal"
-	desc = "You're fatally weak to burns. Your skin is kindling!"
-	mob_trait = TRAIT_BURNWEAKMAJOR
-	value = -66
-	category = "Health Quirks"
-	mechanics = "You take 50% more burn damage."
-	conflicts = list(
-		/datum/quirk/burnresist,
-		/datum/quirk/burnresistmajor,
-		/datum/quirk/burnweak
-)
-
-/datum/quirk/burnweakfatal/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1.5
-
-/datum/quirk/burnweakfatal/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.burnmod = 1
-
-/datum/quirk/radweakmajor
-	name = "Radiation Weakness, Major"
-	desc = "Gieger Counter? Better pack one. Seriously"
-	value = -55
-	category = "Radiation Quirks"
-	mechanics = "You absorb 100% more radiation."
-	conflicts = list(
-		/datum/quirk/radimmunesorta,
-		/datum/quirk/radimmuneish,
-		/datum/quirk/radweak
-	)
-	mob_trait = TRAIT_100_RAD_WEAK
-	locked =  FALSE
-
-/datum/quirk/radweak
-	name = "Radiation Weakness, Minor"
-	desc = "You more likely to die than get superpowers from radiation."
-	value = -22
-	category = "Radiation Quirks"
-	mechanics = "You absorb 50% more radiation"
-	conflicts = list(
-		/datum/quirk/radimmunesorta,
-		/datum/quirk/radimmuneish,
-		/datum/quirk/radweakmajor
-	)
-	mob_trait = TRAIT_50_RAD_WEAK
-	locked =  FALSE
-
-/datum/quirk/toxinlover
-	name = "Toxinlover"
-	desc = "Your biology is hyperadapted to toxins to the point where you process them the opposite of any normal organic, \
-		however most healing magic and chemicals will quickly kill you or drain your blood. This is not a system reccomended for magic users."
-	value = -34
-	category = "Health Quirks"
-	mechanics = "You heal and regenerate toxin damage from toxic chemicals, but are harmed by anything that would normally fix toxin damage. With the existance of mages and the hunting horn, this is a burden to bare."
-	conflicts = list(
-
-	)
-	mob_trait = TRAIT_TOXINLOVER
-	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an exact inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages.")
-	lose_text = span_notice("You are now operating under normal toxin damage systems.")
 	locked =  FALSE

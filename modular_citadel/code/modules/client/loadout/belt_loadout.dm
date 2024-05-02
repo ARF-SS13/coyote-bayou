@@ -95,15 +95,11 @@
 	path = /obj/item/storage/belt/sabre/heavy
 
 /datum/gear/belt/webbing/burma
-	name = "Pattern 37 webbing"
+	name = "burma webbing"
 	path = /obj/item/storage/belt/military/commonwealth_brit
 
-/datum/gear/belt/webbing/burma/oldschoolonceagain
-	name = "1908 pattern webbing"
-	path = /obj/item/storage/belt/military/commonwealth_brit/oldschool
-
 /datum/gear/belt/leather/boer
-	name = "Boer War leather bandolier"
+	name = "leather bandolier"
 	path = /obj/item/storage/belt/bandolier/boer_band
 
 /datum/gear/belt/webbing/french

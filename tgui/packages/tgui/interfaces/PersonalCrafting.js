@@ -71,13 +71,9 @@ export const PersonalCrafting = (props, context) => {
           </Dimmer>
         )}
         <Section
-          title="Manual refreshes may be needed."
+          title="If materials fail to register; switch categories and try again."
           buttons={(
             <Fragment>
-              <Button
-                icon="cog"
-                content="Refresh"
-                onClick={() => act('update_static')} />
               <Button.Checkbox
                 content="Compact"
                 checked={display_compact}

@@ -55,8 +55,8 @@
 
 /obj/item/ammo_box/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_load))
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_load))
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
 
 /// An aheal, but for ammo boxes
 /obj/item/ammo_box/proc/admin_load()
@@ -381,31 +381,13 @@
 
 /obj/item/ammo_box/update_icon_state()
 	switch(multiple_sprites)
-		if(1) //standard
+		if(1)
 			icon_state = "[initial(icon_state)]-[stored_ammo.len]"
-		if(2) //speedloaders and such
+		if(2)
 			icon_state = "[initial(icon_state)]-[stored_ammo.len ? "[max_ammo]" : "0"]"
-		if(3) //improvised bags
+		if(3)
 			if(stored_ammo.len >= 8)
 				icon_state = "[initial(icon_state)]-8"
-			else
-				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
-		if(4) //ammo crates
-			if(stored_ammo.len >= 100)
-				icon_state = "[initial(icon_state)]-5"
-			else if(stored_ammo.len >= 75)
-				icon_state = "[initial(icon_state)]-4"
-			else if(stored_ammo.len >= 50)
-				icon_state = "[initial(icon_state)]-3"
-			else if(stored_ammo.len >= 25)
-				icon_state = "[initial(icon_state)]-2"
-			else if(stored_ammo.len >= 1)
-				icon_state = "[initial(icon_state)]-1"
-			else
-				icon_state = "[initial(icon_state)]-0"
-		if(5)
-			if(stored_ammo.len >= 12)
-				icon_state = "[initial(icon_state)]-12"
 			else
 				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
 

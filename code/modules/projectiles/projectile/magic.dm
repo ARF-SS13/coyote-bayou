@@ -24,8 +24,7 @@
 	icon_state = "ion"
 	damage = 0
 	damage_type = OXY
-	not_harmful = TRUE
-	nodamage = TRUE
+	nodamage = 1
 
 /obj/item/projectile/magic/resurrection/on_hit(mob/living/carbon/target)
 	. = ..()
@@ -382,8 +381,8 @@
 /obj/structure/closet/decay/Initialize()
 	. = ..()
 	if(auto_destroy)
-		addtimer(CALLBACK(src,PROC_REF(bust_open)), 5 MINUTES)
-	addtimer(CALLBACK(src,PROC_REF(magicly_lock)), 5)
+		addtimer(CALLBACK(src, .proc/bust_open), 5 MINUTES)
+	addtimer(CALLBACK(src, .proc/magicly_lock), 5)
 
 /obj/structure/closet/decay/proc/magicly_lock()
 	if(!welded)
@@ -397,7 +396,7 @@
 
 /obj/structure/closet/decay/proc/decay()
 	animate(src, alpha = 0, time = 30)
-	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(qdel), src), 30)
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 30)
 
 /obj/structure/closet/decay/open(mob/living/user)
 	. = ..()
@@ -405,12 +404,12 @@
 		if(icon_state == magic_icon) //check if we used the magic icon at all before giving it the lesser magic icon
 			unmagify()
 		else
-			addtimer(CALLBACK(src,PROC_REF(decay)), 15 SECONDS)
+			addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
 
 /obj/structure/closet/decay/proc/unmagify()
 	icon_state = weakened_icon
 	update_icon()
-	addtimer(CALLBACK(src,PROC_REF(decay)), 15 SECONDS)
+	addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
 	icon_welded = "welded"
 
 /obj/item/projectile/magic/aoe
@@ -506,7 +505,7 @@
 			return BULLET_ACT_BLOCK
 	var/turf/T = get_turf(target)
 	for(var/i=0, i<50, i+=10)
-		addtimer(CALLBACK(usr, GLOBAL_PROC_REF(explosion), T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
 
 /obj/item/projectile/magic/aoe/fireball/lowpower
 	name = "bolt of fireball"
@@ -553,8 +552,7 @@
 /obj/item/projectile/magic/healbrute
 	icon_state = "bruteheal"
 	damage = 0
-	not_harmful = TRUE
-	nodamage = TRUE
+	nodamage  = TRUE
 
 /obj/item/projectile/magic/healbrute/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -565,10 +563,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-3, include_roboparts = TRUE) //HEALS
+		M.adjustBruteLoss(-3) //HEALS
 		M.adjustOxyLoss(-10)
-		M.adjustFireLoss(-1, include_roboparts = TRUE)
-		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
+		M.adjustFireLoss(-1)
+		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -576,8 +574,7 @@
 /obj/item/projectile/magic/healburn
 	icon_state = "burnheal"
 	damage = 0
-	not_harmful = TRUE
-	nodamage = TRUE
+	nodamage  = TRUE
 
 /obj/item/projectile/magic/spellcard/book/healburn/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -588,10 +585,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
+		M.adjustBruteLoss(-1) //HEALS
 		M.adjustOxyLoss(-10)
-		M.adjustFireLoss(-3, include_roboparts = TRUE)
-		M.adjustToxLoss(-1, TRUE, FALSE) //heals TOXINLOVERs
+		M.adjustFireLoss(-3)
+		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
@@ -599,8 +596,7 @@
 /obj/item/projectile/magic/healtoxin
 	icon_state = "toxinheal"
 	damage = 0
-	not_harmful = TRUE
-	nodamage = TRUE
+	nodamage  = TRUE
 
 /obj/item/projectile/magic/healtoxin/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -611,10 +607,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-1, include_roboparts = TRUE) //HEALS
+		M.adjustBruteLoss(-1) //HEALS
 		M.adjustOxyLoss(-50)
-		M.adjustFireLoss(-1, include_roboparts = TRUE)
-		M.adjustToxLoss(-5, TRUE, FALSE) //heals TOXINLOVERs
+		M.adjustFireLoss(-1)
+		M.adjustToxLoss(-5, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-25)
 		M.adjustStaminaLoss(-50)
 		return
@@ -623,8 +619,7 @@
 	name = "mending bolt"
 	icon_state = "bruteheal"
 	damage = 0
-	not_harmful = TRUE
-	nodamage = TRUE
+	nodamage  = TRUE
 
 /obj/item/projectile/magic/tenderwand/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -635,10 +630,10 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-15, include_roboparts = TRUE) //HEALS
+		M.adjustBruteLoss(-15) //HEALS
 		M.adjustOxyLoss(-20)
-		M.adjustFireLoss(-15, include_roboparts = TRUE) // Effective on robots and people with prosthetics now
-		M.adjustToxLoss(-20, TRUE, FALSE) //heals TOXINLOVERs (It should actually do that now)
+		M.adjustFireLoss(-10)
+		M.adjustToxLoss(-20, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return

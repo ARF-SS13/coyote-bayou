@@ -75,17 +75,16 @@ const CargoStatus = (props, context) => {
     message,
     points,
     requestonly,
-    CoinUnit,
   } = data;
   return (
     <Section
-      title={"Cargo (All prices in Copper Coins - " + CoinUnit + " )"}
+      title="Cargo"
       buttons={(
         <Box inline bold>
           <AnimatedNumber
-            value={points / 10}
+            value={points}
             format={value => formatMoney(value)} />
-          {' ' + CoinUnit}
+          {' credits'}
         </Box>
       )}>
       <LabeledList>
@@ -123,7 +122,6 @@ export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     self_paid,
-    CoinUnit,
   } = data;
   const supplies = toArray(data.supplies);
   const [
@@ -193,9 +191,9 @@ export const CargoCatalog = (props, context) => {
                         id: pack.id,
                       })}>
                       {formatMoney(self_paid && !pack.goody
-                        ? Math.round((pack.cost * 1.1) / 10)
-                        : (pack.cost / 10))}
-                      {' ' + CoinUnit}
+                        ? Math.round(pack.cost * 1.1)
+                        : pack.cost)}
+                      {' cr'}
                     </Button>
                   </Table.Cell>
                 </Table.Row>
@@ -212,7 +210,6 @@ const CargoRequests = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     requestonly,
-    CoinUnit,
   } = data;
   const requests = data.requests || [];
   // Labeled list reimplementation to squeeze extra columns out of it
@@ -250,7 +247,7 @@ const CargoRequests = (props, context) => {
                 <i>{request.reason}</i>
               </Table.Cell>
               <Table.Cell collapsing textAlign="right">
-                {formatMoney((request.cost / 10))} {CoinUnit}
+                {formatMoney(request.cost)} cr
               </Table.Cell>
               {!requestonly && (
                 <Table.Cell collapsing>
@@ -280,7 +277,6 @@ const CargoCartButtons = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     requestonly,
-    CoinUnit,
   } = data;
   const cart = data.cart || [];
   const total = cart.reduce((total, entry) => total + entry.cost, 0);
@@ -294,7 +290,7 @@ const CargoCartButtons = (props, context) => {
         {cart.length === 1 && '1 item'}
         {cart.length >= 2 && cart.length + ' items'}
         {' '}
-        {total > 0 && `(${formatMoney(total / 10)} ${CoinUnit})`}
+        {total > 0 && `(${formatMoney(total)} cr)`}
       </Box>
       <Button
         icon="times"
@@ -312,7 +308,6 @@ const CargoCart = (props, context) => {
     away,
     docked,
     location,
-    CoinUnit,
   } = data;
   const cart = data.cart || [];
   return (
@@ -344,7 +339,7 @@ const CargoCart = (props, context) => {
                 )}
               </Table.Cell>
               <Table.Cell collapsing textAlign="right">
-                {formatMoney((entry.cost) / 10)} {CoinUnit}
+                {formatMoney(entry.cost)} cr
               </Table.Cell>
               <Table.Cell collapsing>
                 <Button

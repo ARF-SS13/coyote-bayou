@@ -9,16 +9,15 @@
 	resistance_flags = INDESTRUCTIBLE
 	plane = MOB_PLANE
 	bound_width = 64
-	max_stuff = 20 //chance for the freight container to be nice and full~
-	base_stuff = 4
-	salvagecomponent = /datum/component/toolable/salvage/welder
+	var/uses_left = 4
+	var/inuse = FALSE
 
 /obj/structure/cargocrate/Initialize()
 	. = ..()
 	icon_state = pick("cargocrate1","cargocrate2","cargocrate3","cargocrate4","cargocrate5")
 	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
 
-/*
+
 /obj/structure/cargocrate/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
 		var/obj/item/weldingtool/W = I
@@ -57,5 +56,3 @@
 		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
 			visible_message("[src] falls apart, the final components having been removed.")
 			qdel(src)
-*/
-

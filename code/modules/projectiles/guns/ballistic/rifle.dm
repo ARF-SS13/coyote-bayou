@@ -28,7 +28,6 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	can_bayonet = TRUE
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	casing_ejector = FALSE // THIS makes it require manual cocking of the gun!!!
@@ -537,28 +536,6 @@
 		/datum/firemode/semi_auto/slower
 	)
 
-//lee speed
-/obj/item/gun/ballistic/rifle/leespeedster
-	name = "Lee Einfield 'Speed' rifle."
-	desc = "A modified Lee Enfield with a shorten mag capacity but high stopping power. The bolt is greased and well made, even lighter which allows for faster operation of the rifle. It lacks the bayonet lug."
-	icon = 'icons/fallout/objects/guns/longguns.dmi'
-	icon_state = "speed"
-	item_state = "308"
-	mag_type = /obj/item/ammo_box/magazine/internal/speedinglee
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(1, 1)
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	can_scope = TRUE
-	can_bayonet = FALSE
-	cock_sound = 'sound/weapons/boltpump.ogg'
-	fire_sound = 'sound/f13weapons/boltfire.ogg'
-
-	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
-	)
-
 /obj/item/gun/ballistic/rifle/mosin/mini
 	name = "Mini-mosin"
 	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
@@ -691,59 +668,6 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
-
-
-/obj/item/gun/ballistic/rifle/antique/tankgun
-	name = "Mauser TankGewehr M1918"
-	desc = "A very old yet heavy AT rifle. Chambered in 13.7mm(50.cal), this rifle was used in limited numbers in 1918. The rifle weighs a staggering 40 pounds but packs a HEFTY punch. Go ahead, send that mutant to the gates in the sky."
-	icon = 'icons/fallout/objects/guns/tg1918.dmi'
-	icon_state = "tg"
-	item_state = "tg"
-	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
-	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
-	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	init_recoil = HMG_RECOIL(3, 2)
-	slowdown = GUN_SLOWDOWN_RIFLE_LMG
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	can_scope = FALSE
-	can_bayonet = FALSE
-	can_suppress = FALSE
-
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
-	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
-
-/obj/item/gun/ballistic/rifle/antique/tankgun/custom
-	name = "Custom TankGewehr M1918"
-	desc = "A custom made TGM1918 rifle. This rifle still weighs a staggering 40+ pounds, but the gun is engraved and the wood akin to that of birch. A fancy AT rifle for those that pack heat. On the butt of the gun is a scene of a moth chasing a feline."
-	icon = 'icons/fallout/objects/guns/tg1918.dmi'
-	icon_state = "tg"
-	item_state = "tg"
-	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
-	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
-	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = HMG_RECOIL(3, 2)
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	can_scope = FALSE
-	can_bayonet = FALSE
-	can_suppress = FALSE
-
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
-	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 /obj/item/gun/ballistic/rifle/antique/gross
 	name = "sawed off Gras"
@@ -971,10 +895,6 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
-/obj/item/gun/ballistic/rifle/mag/antimaterial/loadout
-	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Not only lacks an iron sight, but due to unmaintained age it doesn't punch as hard."
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-
 /obj/item/gun/ballistic/rifle/mag/pz39custom //custom
 	name = "Custom Panzerbüchse 39"
 	desc = "A customized PzB.39 AT rifle. This rifle seems to be custom fitted to fire in a bolt-action mode instead of a falling-block action.The bolt is not really much of a bolt but it works, it also adds more weight to the rifle. From 27.78 lbs to 30 pounds! The rifle consists of premium grade parts. The stock itself, the part where one rests their shoulder, is extra padded for comfort and shock absorbing properties. Engraved on the reciever is baroque motifs while the rifle itself has a few moths and feline figures engraved on the reciever. A rifle fit for the Queen from the shadows."
@@ -999,62 +919,6 @@
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
-
-
-
-/obj/item/gun/ballistic/rifle/mauserrifle
-	name = "Mauser Model 1871"
-	desc = "A Mauser Model 1871, also known as the Gewehr 71 or Infantry Gewehr 71. A bolt action rifle chambered in 11.7mm(50.cal), this rifle saw service by the German Empire. It was replaced by the Gewehr 88 in 1888 through 1890."
-	icon_state = "m71"
-	item_state = "m71"
-	mag_type = /obj/item/ammo_box/magazine/internal/mausereight
-	init_mag_type = /obj/item/ammo_box/magazine/internal/mausereight
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T4
-	init_recoil = RIFLE_RECOIL (1.4 , 0.9)
-	cock_delay = GUN_COCK_RIFLE_BASE
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-	can_scope = TRUE
-	fire_sound = 'sound/f13weapons/fg42.ogg'
-	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
-
-/obj/item/gun/ballistic/rifle/gewehr88
-	name = "Model 1888 commission rifle"
-	desc = "A Model 1888 commission rifle. This rifle interestingly enough has the ability to eject the clip, also seems to require it itself to fire. This specific model was made so it is extra sturdy. It seems to be in perfect condition with freshly new wood varnish!"
-	icon_state = "g88"
-	item_state = "g88"
-	mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
-	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = RIFLE_RECOIL (1.2 , 0.7)
-	cock_delay = GUN_COCK_RIFLE_BASE
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-	can_scope = TRUE
-	fire_sound = 'sound/f13weapons/fg42.ogg'
-	force_unwielded = 30
-	force = 30
-	force_wielded = 35
-
-
 
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
@@ -1086,3 +950,46 @@
 	mag_type = /obj/item/ammo_box/magazine/testbullet
 	damage_multiplier = 30
 
+/* * * * * * * * * * *
+ * MK-18 MOD 1 Bifrost
+ * .30-06
+ * Basically a lightweight sniper rifle
+ * Slow to fire
+ * Loadout only
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/mag/bifrost
+	name = "\improper MK-18 MOD 1 Bifrost"
+	desc = "A curious rifle in anodized black coated aluminum ultra lightweight furniture. The barrel is 20 inches in length, the twists and grooves covered with a thin layer of Stellite leading up to an externally threaded black cerakote barrel. It's chambered in .338 Lapua Magnum (8.6×70 mm), the unsuppressed firing sound more like a warning bell to the coming Ragnarök."
+	icon = 'modular_coyote/icons/objects/guns/fortysixtimesthirtytwo.dmi'
+	icon_state = "bifrost"
+	item_state = "bifrost"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/amr/bifrost
+	cock_wording = "cycle"
+	casing_ejector = TRUE
+	handedness = GUN_EJECTOR_LEFT
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HMG_RECOIL(3, 3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE
+	scope_state = "revolver_scope"
+	scope_x_offset = 16
+	scope_y_offset = 11
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+	can_suppress = TRUE
+	suppressor_state = "n99_suppressor"
+	suppressor_x_offset = 46
+	suppressor_y_offset = 14
+	can_bayonet = TRUE
+	knife_x_offset = 24
+	knife_y_offset = 14

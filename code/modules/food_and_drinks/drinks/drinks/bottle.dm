@@ -182,7 +182,6 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell
 	desc = "A flask of holy water...it's been sitting in the Necropolis a while though."
-	icon_state = "unholyflask"
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/holyoil

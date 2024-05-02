@@ -70,7 +70,7 @@
 	custom_materials = list(/datum/material/iron = 1000)
 	total_mass = 3.4
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/bokken
+	block_parry_data = /datum/block_parry_data/captain_saber
 
 /datum/block_parry_data/captain_saber
 	parry_time_windup = 0.5
@@ -129,7 +129,7 @@
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	total_mass = 0.4
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/bokken
+	block_parry_data = /datum/block_parry_data/traitor_rapier
 
 // Fast, efficient parry.
 /datum/block_parry_data/traitor_rapier
@@ -205,17 +205,17 @@
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton
 	name = "contractor baton"
-	desc = "A compact, specialized baton that's great at securing potential victims."
+	desc = "A compact, specialised baton assigned to Syndicate contractors. Applies light electrical shocks to targets."
 	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "contractor_baton_0" // looks cool
+	icon_state = "contractor_baton_0"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
 	slot_flags = INV_SLOTBIT_BELT
-	w_class = WEIGHT_CLASS_TINY // so you can fit it basically everywhere
+	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
-	force = 0 // so we're not hurting our new toy :)
-	cooldown = 10 // one second cooldown
+	force = 5
+	cooldown = 20
 	stam_dmg = 45	//4 hit stamcrit
 	affect_silicon = TRUE
 	on_sound = 'sound/weapons/contractorbatonextend.ogg'
@@ -223,8 +223,8 @@
 	on_icon_state = "contractor_baton_1"
 	off_icon_state = "contractor_baton_0"
 	on_item_state = "contractor_baton"
-	force_on = 0 
-	force_off = 0
+	force_on = 16
+	force_off = 5
 	weight_class_on = WEIGHT_CLASS_NORMAL
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/get_wait_description()
@@ -232,9 +232,8 @@
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/additional_effects_carbon(mob/living/target, mob/living/user)
 	target.Jitter(20)
-	target.apply_status_effect(/datum/status_effect/electrostaff, 30)	// 3x slowdown +
-	target.drop_all_held_items() // disarm +
-	target.DefaultCombatKnockdown(50, override_stamdmg = 0) // knockdown. Whether you like it or not, you're getting fucked.
+	target.apply_effect(EFFECT_STUTTER, 20)
+	target.apply_status_effect(/datum/status_effect/electrostaff, 30)	//knockdown, disarm, and slowdown, the unholy triumvirate of stam combat
 
 /obj/item/melee/supermatter_sword
 	name = "supermatter sword"
@@ -336,7 +335,7 @@
 /obj/item/melee/roastingstick/Initialize()
 	. = ..()
 	if (!ovens)
-		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire))
+		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire, /obj/structure/destructible/clockwork/massive/ratvar))
 
 /obj/item/melee/roastingstick/attack_self(mob/user)
 	on = !on

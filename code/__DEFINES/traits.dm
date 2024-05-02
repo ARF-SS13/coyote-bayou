@@ -102,7 +102,6 @@
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM			"pacifism"
 #define TRAIT_PACIFISM_LESSER	"lesserpacifism"
-#define TRAIT_WEAK_OF_MUSCLES	"weak of muscles"
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
@@ -127,18 +126,6 @@
 #define TRAIT_RADIMMUNE			"rad_immunity"
 #define TRAIT_75_RAD_RESIST		"big_rad_resist"
 #define TRAIT_50_RAD_RESIST		"some_rad_resist"
-#define TRAIT_50_RAD_WEAK		"some_rad_weakness"
-#define TRAIT_100_RAD_WEAK		"big_rad_weakness"
-#define TRAIT_BRUTERESIST		"brute_resist_minor"
-#define TRAIT_BRUTERESISTMAJOR	"brute_resist_major"
-#define TRAIT_BRUTEWEAK			"brute_weak_minor"
-#define TRAIT_BRUTEWEAKMAJOR	"brute_weak_major"
-#define TRAIT_BRUTEWEAKFATAL	"brute_weak_fatal"
-#define TRAIT_BURNRESIST		"burn_resist_minor"
-#define TRAIT_BURNRESISTMAJOR	"burn_resist_major"
-#define TRAIT_BURNWEAK			"burn_weak_minor"
-#define TRAIT_BURNWEAKMAJOR		"burn_weak_major"
-#define TRAIT_BURNWEAKFATAL		"burn_weak_fatal"
 #define TRAIT_GENELESS			"geneless"
 #define TRAIT_VIRUSIMMUNE		"virus_immunity"
 #define TRAIT_PIERCEIMMUNE		"pierce_immunity"
@@ -186,9 +173,7 @@
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
 #define TRAIT_ARMBLADE			"Arm Blade"
-#define TRAIT_CYBERKNIFE		"Cyber Blade"
 #define TRAIT_ARMTENT			"Tentacle Arm"
-#define TRAIT_MAGEGRAB			"Mage Grab"
 #define TRAIT_TAILPLAY			"Tail Player"
 #define TRAIT_TAILWHIP			"Tail Whipper"
 #define TRAIT_TAILSMASH			"Tail Smasher"
@@ -214,7 +199,6 @@
 #define TRAIT_SOH				"soh"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
-#define TRAIT_TREASURE_HUNTER 	"treasurehunter"
 #define TRAIT_SIXTHSENSE		"sixthsense"
 #define TRAIT_DISSECTED			"dissected"
 #define TRAIT_FEARLESS			"fearless"
@@ -360,7 +344,6 @@
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
 #define TRAIT_BEASTMASTER_SMALLCRITTER "beastmaster-smallcritters"
-#define TRAIT_BEASTFRIEND_BEE "beastfriend-bees"
 #define TRAIT_WILDSHAPE "wild shape"
 #define TRAIT_NO_CHOCOLATE "chocolate-intolerance"
 #define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
@@ -372,7 +355,6 @@
 #define TRAIT_ENDLESS_RUNNER "endless_runner"
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 #define TRAIT_NOHIDEFACE "no hide face"
-#define TRAIT_SECURITYEXPERT "security-expert"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
@@ -424,8 +406,6 @@
 #define	TRAIT_LIFEGIVERPLUS		"lifegiverplus" //boosts HP by 20
 #define	TRAIT_FLIMSY			"flimsy" //lowers HP by 10
 #define	TRAIT_VERYFLIMSY			"veryflimsy" //lowers HP by 20
-#define	TRAIT_CATASTROPHICFLIMSY			"catastrophicflimsy" //lowers HP by 50
-#define	TRAIT_FATALFLIMSY			"fatalflimsy" //lowers HP by 50
 #define TRAIT_MARS_TEACH		"mars_teachings" //for legion unique functions
 #define TRAIT_EXPLOSIVE_CRAFTING "explosive_crafting" //can craft explosives and bombs
 #define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced_explosive_crafting" //can craft almost all kinds of explosives
@@ -439,8 +419,6 @@
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
 #define TRAIT_NO_SECOND_WIND "no_second_wind"
-
-#define TRAIT_NO_MED_HVY_ARMOR "no_med_heavy_armor"
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
@@ -559,13 +537,6 @@
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define TRAIT_SPACEWALK "spacewalk"
 #define RADX_TRAIT "trait_from_rad-x"
-
-/// HUNTING HORNS! check huntinghorneffects.dm and huntinghorn.dm
-#define TRAIT_HH_COOLDOWN_IGNORE "horn_cooldown"
-#define TRAIT_HH_IRON_SKIN "horn_iron_skin"
-#define TRAIT_HH_KNOCKDOWN_RES "horn_kd_res"
-#define TRAIT_HH_DIVINE_BLESSING "horn_divine"
-#define TRAIT_HH_DRAW_SPEED "horn_draw_speed"
 
 //important_recursive_contents traits
 /*

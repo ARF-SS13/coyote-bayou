@@ -51,7 +51,7 @@
 	src.unres_sides = unres_sides
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT =PROC_REF(on_exit),
+		COMSIG_ATOM_EXIT = .proc/on_exit,
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)
@@ -367,11 +367,11 @@
 				return
 
 			if(density)
-				INVOKE_ASYNC(src,PROC_REF(open))
+				INVOKE_ASYNC(src, .proc/open)
 			else
-				INVOKE_ASYNC(src,PROC_REF(close))
+				INVOKE_ASYNC(src, .proc/close)
 		if("touch")
-			INVOKE_ASYNC(src,PROC_REF(open_and_close))
+			INVOKE_ASYNC(src, .proc/open_and_close)
 
 /obj/machinery/door/window/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)

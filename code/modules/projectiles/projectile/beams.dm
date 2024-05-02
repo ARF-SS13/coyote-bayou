@@ -39,12 +39,12 @@
 // Low energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/light
 	name = "laser beam"
-	damage = 60
+	damage = 30
 
 // More energy drain and higher cooldown
 /obj/item/projectile/beam/laser/mech/heavy
 	name = "heavy laser beam"
-	damage = 80
+	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
@@ -52,7 +52,7 @@
 // The highest energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/pulse
 	name = "charged pulse beam"
-	damage = 99
+	damage = 49
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
@@ -363,13 +363,6 @@
 	damage = 35
 	damage_list = list("30" = 30, "35" = 50, "40" = 20)
 
-/obj/item/projectile/beam/laser/pistol/wastebot
-	name = "laser beam"
-	damage = 35
-	damage_list = list("30" = 30, "35" = 50, "40" = 20)
-	pixels_per_second = TILES_TO_PIXELS(7.5)
-
-
 /obj/item/projectile/beam/laser/pistol/hitscan //Actual AEP7
 	name = "laser beam"
 	damage = 24
@@ -665,15 +658,6 @@
 	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
 	light_color = LIGHT_COLOR_RED
 
-/obj/item/projectile/f13plasma/pistol/adam/simple //Adam
-	icon = 'icons/fallout/objects/guns/projectiles.dmi'
-	icon_state = "adam"
-	damage = 55
-	damage_list = list( "54" = 30, "55" = 50, "70" = 20)
-	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
-	light_color = LIGHT_COLOR_RED
-	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
-
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30
 
@@ -685,7 +669,6 @@
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 35
 	damage_list = list( "34" = 30, "35" = 50, "55" = 20)
-	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
 
 /obj/item/projectile/beam/laser/rcw //RCW
 	name = "rapidfire beam"
@@ -732,17 +715,6 @@
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	sharpness = SHARP_POINTY
-
-//Covie Carbine "bullet"
-/obj/item/projectile/beam/laser/mpc/covcarb
-	name = "crystal"
-	icon_state = "plasma1"
-	damage = 30
-	damage_list = list("20" = 8, "25" = 8, "30" = 55, "35" = 10, "40" = 19)
-	stamina = BULLET_STAMINA_PISTOL_10MM
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_10MM
-	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
@@ -807,7 +779,7 @@
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
 	damage = 36
-	damage_list = list( "34" = 25, "36" = 50, "38" = 25)
+	damage_list = list( "34" = 25, "36" = 40, "38" = 25)
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
@@ -850,7 +822,7 @@
 	hitscan = TRUE
 
 /obj/item/projectile/beam/laser/beam //Covenant version of a watzz2k hitscan proj. Hits like a semi-truck
-	name = "sniper laser bolt"
+	name = " sniper laser bolt"
 	damage = 80
 	damage_list = list( "70" = 25, "80" = 40, "85" = 25)
 	wound_bonus = 10

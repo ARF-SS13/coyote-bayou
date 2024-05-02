@@ -30,10 +30,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
-	attack_verb = list("smacked", "bapped", "bopped", "bonked", "slapped", "whipped")
-	force = 15
-	backstab_multiplier = 1.5
-	throwforce = 0
 
 	//Main variables
 	var/owner = null // String name of owner
@@ -81,7 +77,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_text //No text spamming
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
-	var/ttone = "beep-boop" //The ringtone!
+	var/ttone = "beep" //The ringtone!
 	var/note = "Congratulations, you have chosen the Coyote-Co DataPal Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
@@ -331,7 +327,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		switch (mode)
 			if (0)
-				dat += "<h2><center>=======GEKKERTEC DATAPAL v2.2=======</center></h2>"
+				dat += "<h2><center>=======COYOTE-CO DATAPAL v2.1=======</center></h2>"
 				dat += "Owner: [owner], [ownjob]<br>"
 				dat += "ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]</a><br>"
 				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update DataPal Info" : ""]</a><br><br>"
@@ -343,8 +339,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
-				dat += "<li><a href='byond://?src=[REF(src)];choice=65536'>[PDAIMG(mail)]Guild Questboard</a></li>"
-				dat += "<li></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)]Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)]Messenger</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=99'>[PDAIMG(signaler)]Radio</a></li>"
@@ -606,7 +600,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					update_label()
 					if (!silent)
 						playsound(src, 'sound/machines/terminal_processing.ogg', 15, 1)
-					addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
 
 				if("Eject")//Ejects the cart, only done from hub.
 					if (!isnull(cartridge))
@@ -647,11 +641,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 						Boop()
 				if("4")//Redirects to hub
 					mode = 0
-					if (!silent)
-						Boop()
-
-				if("65536")//Questhingy
-					SSeconomy.open_quest_console(U, src)
 					if (!silent)
 						Boop()
 
@@ -990,7 +979,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/receive_message(datum/signal/subspace/pda/signal)
 	tnote += "<i><b>&larr; From <a href='byond://?src=[REF(src)];choice=Message;target=[REF(signal.source)]'>[signal.data["name"]]</a> ([signal.data["job"]]):</b></i> <a href='byond://?src=[REF(src)];choice=toggle_block;target=[signal.data["name"]]'>(BLOCK/UNBLOCK)</a><br>[signal.format_message()]<br>"
 	if (!silent)
-		playsound(src, 'modular_coyote/sound/pipsounds/beepboop.ogg', 80, 1)
+		playsound(src, 'modular_coyote/sound/pipsounds/pipmsgget.ogg', 80, 1)
 		audible_message("[icon2html(src, hearers(src))] *[ttone]*", null, 3)
 	//Search for holder of the PDA.
 	var/mob/living/L = null

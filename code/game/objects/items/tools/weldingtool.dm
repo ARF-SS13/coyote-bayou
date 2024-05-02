@@ -3,8 +3,8 @@
 	name = "welding tool"
 	desc = "A standard edition welder provided by RobCo."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "basicweld"
-	item_state = "basicweld"
+	icon_state = "welder"
+	item_state = "welder"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -490,22 +490,20 @@
 	desc = "A god-awful construction of rusted junk, a blood bag and spirit, salvaged and robust, extremely useless and slow, but EVENTUALLY, it might burn something."
 	icon_state = "crudeweld"
 	item_state = "crudeweld"
-	toolspeed = 4
+	toolspeed = 10
 
-/*
 /obj/item/weldingtool/basic
 	name = "basic welding tool"
 	desc = "A roughly crafted together welding tool, not perfect but it works."
 	icon_state = "basicweld"
 	item_state = "basicweld"
 	toolspeed = 2
-*/
 
 /obj/item/weldingtool/hightech
-	name = "prewar welding tool"
-	desc = "A high quality welding tool with a very efficient burner. it never runs out of fuel, if given time to cool down."
-	icon_state = "welder"
-	item_state = "welder"
+	name = "advanced welding tool"
+	desc = "A high-tech Quantum heated flamer tool, capable of infinitely replenishing itself using Quantum energy."
+	icon_state = "advancedweld"
+	item_state = "advancedweld"
 	light_range = 1
 	toolspeed = 0.1
 	var/nextrefueltick = 0

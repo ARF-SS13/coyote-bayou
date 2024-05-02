@@ -10,9 +10,9 @@
 	custom_materials = list(/datum/material/geckohide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/molerat
-	name = "giant rat skin"
+	name = "molerat skin"
 	desc = "A smelly piece of hide, mostly used as a doormat."
-	singular_name = "giant rat skin piece"
+	singular_name = "molerat skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-molerat"
 	merge_type = /obj/item/stack/sheet/animalhide/molerat

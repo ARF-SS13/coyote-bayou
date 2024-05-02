@@ -100,12 +100,21 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/list/rare_suffixes = list()
 
 	var/list/artifactible_items = list(
-		/obj/item/toy,
+		/obj/item/toy/tennis,
+		/obj/item/toy/gun,
+		/obj/item/toy/sword,
+		/obj/item/toy/talking,
+		/obj/item/toy/clockwork_watch,
+		/obj/item/toy/toy_dagger,
+		/obj/item/toy/toy_xeno,
+		/obj/item/toy/cattoy,
+		// /obj/item/toy/figure,
+		/obj/item/toy/seashell,
 		/obj/item/trash,
 		/obj/item/taster,
-		// /obj/item/candle, // ironically next to impossible to see
+		/obj/item/candle,
 		/obj/item/extinguisher/mini,
-		/* /obj/item/toy/plush/carpplushie,
+		/obj/item/toy/plush/carpplushie,
 		/obj/item/toy/plush/bubbleplush,
 		/obj/item/toy/plush/narplush/hugbox,
 		/obj/item/toy/plush/lizardplushie,
@@ -125,22 +134,12 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/toy/plush/mammal/fox,
 		/obj/item/toy/plush/mammal/fox/fuzzy,
 		/obj/item/toy/plush/catgirl/fermis,
-		/obj/item/toy/plush/hairball, */
+		/obj/item/toy/plush/hairball,
 		/obj/item/laser_pointer,
 		/obj/item/healthanalyzer,
-		/obj/item/pda,
-		/obj/item/dice,
-		/obj/item/latexballon,
-		// /obj/item/organ, // totally not a horrible horrible idea
-		/obj/item/weapon/dvd,
-		/obj/item/fishy,
-		/obj/item/binoculars,
-		/obj/item/laser_pointer,
-		/obj/item/cardboard_cutout,
-		/obj/item/flashlight,
 	)
-
 	var/list/unartifactible_items = list(
+		/obj/item/candle/tribal_torch,
 		/obj/item/toy/plush/mammal/fox/squishfox, // its too powerful
 	)
 	//These specific items, but not their subtypes, are not allowed
@@ -210,18 +209,18 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/health_good_rare_max = 75
 	var/health_discrete = 1
 
-	var/stamina_bad_common_min = 3
-	var/stamina_bad_common_max = 1
-	var/stamina_bad_uncommon_min = 5
-	var/stamina_bad_uncommon_max = 3
-	var/stamina_bad_rare_min = 65
-	var/stamina_bad_rare_max = 3
-	var/stamina_good_common_min = -6
-	var/stamina_good_common_max = -8
-	var/stamina_good_uncommon_min = -8
-	var/stamina_good_uncommon_max = -10
-	var/stamina_good_rare_min = -5
-	var/stamina_good_rare_max = -65
+	var/stamina_bad_common_min = -6
+	var/stamina_bad_common_max = -8
+	var/stamina_bad_uncommon_min = -8
+	var/stamina_bad_uncommon_max = -10
+	var/stamina_bad_rare_min = -5
+	var/stamina_bad_rare_max = -65
+	var/stamina_good_common_min = 3
+	var/stamina_good_common_max = 1
+	var/stamina_good_uncommon_min = 5
+	var/stamina_good_uncommon_max = 3
+	var/stamina_good_rare_min = 65
+	var/stamina_good_rare_max = 3
 	var/stamina_discrete = 0.1
 
 	var/speed_bad_common_min = 0.2
@@ -338,8 +337,6 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/heal_max_types_common = 1
 	var/heal_max_types_uncommon = 2
 	var/heal_max_types_rare = 3
-
-	var/heal_armor_dr_threshold = 22 // light armor gets full heal, anything after that gets reduced
 
 	var/list/traits_good_common = list(
 	)
@@ -500,7 +497,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/controller/subsystem/processing/artifacts/fire(resumed = 0)
 	if(prob(spawn_chance))
-		INVOKE_ASYNC(src,PROC_REF(spawn_random_artifact))
+		INVOKE_ASYNC(src, .proc/spawn_random_artifact)
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -538,7 +535,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	SEND_SIGNAL(chunk, COMSIG_ITEM_ARTIFACT_FINALIZE)
 
 /datum/controller/subsystem/processing/artifacts/proc/get_artifactible_turf()
-	if(prob(use_valid_ball_spawner_chance) && LAZYLEN(SSvalidball.valid_ball_spawner_coords))
+	if(prob(use_valid_ball_spawner_chance))
 		return coords2turf(pick(SSvalidball.valid_ball_spawner_coords))
 	else
 		return find_safe_turf(zlevels = ARTIFACT_Z_LEVELS, extended_safety_checks = TRUE)
@@ -745,7 +742,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 			rare_artifacts |= WEAKREF(thing)
 
 /datum/controller/subsystem/processing/artifacts/proc/sig_reg(obj/item/thing)
-	RegisterSignal(thing, COMSIG_PARENT_PREQDELETED,PROC_REF(artifact_deleted), TRUE)
+	RegisterSignal(thing, COMSIG_PARENT_PREQDELETED, .proc/artifact_deleted, TRUE)
 
 /datum/controller/subsystem/processing/artifacts/proc/artifact_deleted(obj/item/thing)
 	if(!isitem(thing))

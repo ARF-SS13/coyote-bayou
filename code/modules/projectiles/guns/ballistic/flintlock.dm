@@ -13,7 +13,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
-	max_upgrades = 5
+	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -40,10 +40,6 @@
 	cocked = TRUE
 	update_icon()
 	return TRUE
-
-/obj/item/gun/flintlock/generate_guntags()
-	..()
-	gun_tags |= GUN_PROJECTILE
 
 /obj/item/gun/flintlock/ui_data(mob/user)
 	var/list/data = ..()
@@ -180,7 +176,7 @@
 	firing = TRUE
 	var/shoot_delay = round(max(gaussian(prefire_time, prefire_time * prefire_randomness), prefire_time * 0.75), 0.1)
 	fuse_loop.start()
-	addtimer(CALLBACK(src,PROC_REF(fire_at_cursor), user), shoot_delay)
+	addtimer(CALLBACK(src, .proc/fire_at_cursor, user), shoot_delay)
 	update_icon()
 	return TRUE
 
@@ -304,6 +300,7 @@
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
 	can_scope = TRUE
+	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -429,7 +426,7 @@
 	name = "ancient matchlock handgonne"
 	desc = "Is that thing even real?  Does it actually even work?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlock_handgonne"
+	icon_state = "matchlockhandgonne"
 	item_state = "flintlock"
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
@@ -437,7 +434,7 @@
 	name = "ancient fancy matchlock arquebus"
 	desc = "Don't put it near someones arquebussy."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlock_arquebus"
+	icon_state = "matchlockarquebus"
 	item_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -487,7 +484,7 @@
 	name = "ancient matchlock musketoon"
 	desc = "An ancient but well kept blackpowder matchlock musketoon; just like the 30 years war would have had!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
-	icon_state = "matchlock_musketoon"
+	icon_state = "matchlockmusketoon"
 	item_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -540,6 +537,7 @@
 	trigger_guard = TRIGGER_GUARD_NORMAL //Need fin dexterity to finger its trigger ~TK
 	dryfire_text = "*not loaded*"
 	can_scope = TRUE
+	max_upgrades = 2
 
 /obj/item/gun/flintlock/matchlock/handbombard //hahaha yes ~sickos in the crowd
 	name = "ancient hand bombard"

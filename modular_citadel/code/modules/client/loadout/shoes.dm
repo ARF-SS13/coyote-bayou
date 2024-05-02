@@ -34,11 +34,6 @@
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
 
-/datum/gear/shoes/chameleon
-	name = "chameleon shoes"
-	path = /obj/item/clothing/shoes/chameleon
-	cost = 0
-
 /datum/gear/shoes/blackshoes
 	name = "black shoes"
 	path = /obj/item/clothing/shoes/sneakers/black
@@ -132,32 +127,32 @@
 	name = "military boots"
 	path = /obj/item/clothing/shoes/f13/military
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
-	cost = 1
+	cost = 2
 
 /datum/gear/shoes/military/leather
 	name = "leather combat boots"
 	path = /obj/item/clothing/shoes/f13/military/leather
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/desert
 	name = "desert combat boots"
 	path = /obj/item/clothing/shoes/f13/military/desert
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/combat
 	name = "combat boots"
 	path = /obj/item/clothing/shoes/combat
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/steeltipped
 	name = "steel tipped boots"
 	path = /obj/item/clothing/shoes/f13/military/khan
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/steelpelts
 	name = "steel tipped pelt boots"
 	path = /obj/item/clothing/shoes/f13/military/khan_pelt
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/duty
 	name = "duty boots"
 	path = /obj/item/clothing/shoes/f13/military/duty
-	cost = 1
+	cost = 2
 /datum/gear/shoes/military/patrol
 	name = "patrol boots"
 	path = /obj/item/clothing/shoes/f13/military/patrol
@@ -165,7 +160,7 @@
 /datum/gear/shoes/military/jackboots
 	name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
-	cost = 1
+	cost = 2
 /datum/gear/shoes/clown
 	name = "clown shoes"
 	path = /obj/item/clothing/shoes/clown
@@ -193,7 +188,6 @@
 /datum/gear/shoes/cowboy/alt
 	name = "Alt Cowboy Boots"
 	path = /obj/item/clothing/shoes/cowboy/alt
-	cost = 2
 
 /datum/gear/shoes/cowboy/ranger
 	name = "Ranger Cowboy Boots"
@@ -202,13 +196,13 @@
 /datum/gear/shoes/unmcboots
 	name = "UNMC Standard boots"
 	path = /obj/item/clothing/shoes/unmcb
-	cost = 1
+	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
 /datum/gear/shoes/unmcbootswinter
 	name = "Winterized UNMC Standard boots"
 	path= /obj/item/clothing/shoes/unmcb/winter
-	cost = 1
+	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
 /datum/gear/shoes/ducky
@@ -219,30 +213,13 @@
 	name = "bunny slippers"
 	path = /obj/item/clothing/shoes/slippers
 
-/datum/gear/shoes/meownshoes
-	name = "meown shoes"
-	path = /obj/item/clothing/shoes/meown_shoes
-
-/datum/gear/shoes/moffers
-	name = "moffer shoes"
-	path = /obj/item/clothing/shoes/moffers
-
-/datum/gear/shoes/jackbros
-	name = "jack frost shoes"
-	path = /obj/item/clothing/shoes/jackbros
-
-/datum/gear/shoes/saints
-	name = "saints shoes"
-	path = /obj/item/clothing/shoes/saints
-
-
 /// Factions Shoes or well NCR boots.
 
 
 /datum/gear/shoes/patrol_boots
 	name = " patrol boots"
 	path = /obj/item/clothing/shoes/f13/military/ncr
-	cost = 1
+	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 /*	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",

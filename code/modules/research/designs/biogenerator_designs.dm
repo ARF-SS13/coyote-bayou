@@ -90,7 +90,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 2)
 	make_reagents = list(/datum/reagent/plantnutriment/eznutriment = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/l4z_nut
 	name = "10u Left 4 Zed"
@@ -98,7 +98,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 4)
 	make_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/rh_nut
 	name = "10u Robust Harvest"
@@ -106,7 +106,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 5)
 	make_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/end_gro
 	name = "30u Enduro Grow"
@@ -114,7 +114,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 30)
 	make_reagents = list(/datum/reagent/plantnutriment/endurogrow = 30)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/liq_earth
 	name = "30u Liquid Earthquake"
@@ -122,7 +122,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 30)
 	make_reagents = list(/datum/reagent/plantnutriment/liquidearthquake = 30)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/weed_killer
 	name = "Weed Killer"
@@ -130,7 +130,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 10)
 	make_reagents = list(/datum/reagent/toxin/plantbgone/weedkiller = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/pest_spray
 	name = "Pest Killer"
@@ -138,15 +138,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 10)
 	make_reagents = list(/datum/reagent/toxin/pestkiller = 10)
-	category = list("initial","Botany")
-
-/datum/design/strange_seed
-	name = "Strange Seeds"
-	id = "strange_seed"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 4000)
-	build_path = /obj/item/seeds/random
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/ammonia
 	name = "10u Ammonia"
@@ -154,7 +146,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 25)
 	make_reagents = list(/datum/reagent/ammonia = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/saltpetre
 	name = "10u Saltpetre"
@@ -162,7 +154,7 @@
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 75)
 	make_reagents = list(/datum/reagent/saltpetre = 10)
-	category = list("initial","Botany")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/empty_carton
 	name = "Small Empty Carton Box"

@@ -11,9 +11,6 @@
 		return FALSE
 	if(istype(buckled, /obj/vehicle/ridden))
 		buckled.unbuckle_mob(src)
-	// hunting horns strike again. huntinghorn.dm and huntinghorneffects.dm
-	if(HAS_TRAIT(src, TRAIT_HH_KNOCKDOWN_RES))
-		amount *= 0.5
 	var/drop_items = amount > 80		//80 is cutoff for old item dropping behavior
 	var/stamdmg = isnull(override_stamdmg)? (amount * 0.25) : override_stamdmg
 	KnockToFloor(drop_items, TRUE, updating)
@@ -644,7 +641,7 @@
 	if(stat == DEAD)
 		return
 	if(!silent)
-		INVOKE_ASYNC(src,PROC_REF(emote), "deathgasp")
+		INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	ADD_TRAIT(src, TRAIT_FAKEDEATH, source)
 	ADD_TRAIT(src, TRAIT_DEATHCOMA, source)
 	tod = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
@@ -701,9 +698,6 @@
 
 /mob/living/proc/WeaponDrawDelay(amount, updating = TRUE) //Can't go below remaining duration
 	if(status_flags)
-		// hunting horns again babey. huntinghorn.dm and huntinghorneffects.dm
-		if(HAS_TRAIT(src, TRAIT_HH_DRAW_SPEED))
-			amount *= 0.1
 		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
 		if(F)
 			F.duration = max(world.time + amount, F.duration)
@@ -713,9 +707,6 @@
 
 /mob/living/proc/SetWeaponDrawDelay(amount, updating = TRUE) //Sets remaining duration
 	if(status_flags)
-		// hunting horns again babey. huntinghorn.dm and huntinghorneffects.dm
-		if(HAS_TRAIT(src, TRAIT_HH_DRAW_SPEED))
-			amount *= 0.1
 		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
 		if(amount <= 0)
 			if(F)

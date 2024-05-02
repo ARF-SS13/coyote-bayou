@@ -4,10 +4,7 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "bow"
-	weapon_class = null
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
-	draw_time = GUN_DRAW_QUICK
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
@@ -29,7 +26,6 @@
 		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
 
 	/// Can this bow link to a quiver?
 	var/can_link_to_quiver = TRUE
@@ -202,16 +198,10 @@
 //////////////////////////////
 /obj/item/gun/ballistic/bow
 	force = 15
-	force_wielded = 30
-
-/obj/item/gun/ballistic/bow/CtrlShiftClick(mob/user)
-	if(damtype == BRUTE)
-		balloon_alert(user, "Switched to Stamina melee damage.")
-		damtype = STAMINA
-	else
-		balloon_alert(user, "Switched to Brute melee damage.")
-		damtype = BRUTE
-// Hopefully some player somewhere at some point in time will make use of this incredibly niche attack.
+	force_wielded = 35 
+	damtype = STAMINA
+//	When you think about it, aren't bows just extra-long wooden batons?
+//	So let's have attacking people with bows deal stamina damage.
 //////////////
 //	Tier 1	//
 //////////////
@@ -222,25 +212,22 @@
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "shortbow"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
-
-/obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow
-	name = "Marksman Crossbow"
-	desc = "A compact crossbow with a precision scope."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "xbow"
-	item_state = "xbow"
-	trigger_guard = TRIGGER_GUARD_NONE
-	can_scope = FALSE
-	zoom_factor = 1.5
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
 
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
 	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"	//temporary fix
 	icon_state = "tribalbow"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)	
 
 //dunno if you want to include more information for each bow, but this is the basics
 
@@ -256,7 +243,11 @@
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "modern"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_firemodes = list(
+			/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/bow/longbow
 	name = "Longbow"
@@ -264,8 +255,11 @@
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "longbow"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
-	w_class = WEIGHT_CLASS_BULKY
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
 
 /obj/item/gun/ballistic/bow/lightxbow
 	name = "Light Crossbow"
@@ -273,7 +267,11 @@
 	icon_state = "xbow"
 	item_state = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
+	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
 
 //////////////
 //	Tier 3	//
@@ -286,13 +284,18 @@
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "composite"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	init_firemodes = list(
+			/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/bow/composite/masterwork
 	name = "Masterwork Composite Bow"
 	desc = "A work of art produced by a seasoned bowyer, addorned with gold leaf."
 	icon_state = "composite_gold"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	obj_flags = UNIQUE_RENAME
 
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
@@ -301,4 +304,8 @@
 	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
 	item_state = "bow"
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	init_firemodes = list(
+			/datum/firemode/semi_auto
+	)

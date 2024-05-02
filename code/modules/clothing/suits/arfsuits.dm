@@ -218,7 +218,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
-	var/requires_training = FALSE
+	var/requires_training = TRUE
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	name = "secondary gear harness"
@@ -599,14 +599,6 @@
 	icon_state = "britishtrench"
 	item_state = "britishtrench"
 
-/obj/item/clothing/suit/armor/outfit/jacket/ww1trench/latewar
-	name = "Anglo trench coat"
-	desc = "A Anglo trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "britishtrenchlate"
-	item_state = "britishtrenchlate"
-
 /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
 	name = "Grey trench raider coat."
 	desc = "A trench coat that is quite comfortable to wear."
@@ -622,6 +614,79 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "frenchtrench"
 	item_state = "frenchtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	name = "Ancient West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "krieg"
+	item_state = "krieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	name = "Ancient Medical West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "mkrieg"
+	item_state = "mkrieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	name = "Ancient West German Officer greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "Kriegissar"
+	item_state = "Kriegissar"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	name = "Ancient Officer's American greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "40kofficer"
+	item_state = "40kofficer"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	name = "Ancient Officer's greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ancientofficer"
+	item_state = "ancientofficer"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/techpriesting
+	name = "Cyber priest outfit."
+	desc = "A trench coat that's all cyber themed!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "cyberpriest"
+	item_state = "cyberpriest"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/cyberpriesting
+	name = "Cyber-pyscho priest outfit."
+	desc = "A trench coat that's all cyber themed! Comes with some helping hands."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "tecpriest"
+	item_state = "tecpriest"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/fanaticalpriest
+	name = "Town crier outfit."
+	desc = "A trench coat that screams 'listen to my words, hear me!'. Comes with some recipts wax stamped to it!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "acolytecoat"
+	item_state = "acolytecoat"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/urmandoutfit
+	name = "Ancient West German fanatic outfit."
+	desc = "A trench coat that once belonged to a fanatical person. Who or what did they worship? Who knows. All one knows is, it's a good piece of clothing for those wanting to showcase their more hear-ye side of life!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "fanatic"
+	item_state = "fanatic"
+
 
 /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
 	name = "Padded Soviet jacket"
@@ -1149,7 +1214,7 @@
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
-	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the local tribe."
+	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST
@@ -1420,83 +1485,6 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
-
-//////////////////////
-// WARHAMMER LIGHT //
-/////////////////////
-// more sexy, even more protection.
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits
-	name = "Ancient West german greatcoat"
-	desc = "A trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "krieg"
-	item_state = "krieg"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/medical
-	name = "Ancient Medical West german greatcoat"
-	desc = "A trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "mkrieg"
-	item_state = "mkrieg"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/officer
-	name = "Ancient West German Officer greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "Kriegissar"
-	item_state = "Kriegissar"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/americanofficer
-	name = "Ancient Officer's American greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "40kofficer"
-	item_state = "40kofficer"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/genericofficer
-	name = "Ancient Officer's greatcoat"
-	desc = "A adorned trench coat that is quite comfortable to wear."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "ancientofficer"
-	item_state = "ancientofficer"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/techpriesting
-	name = "Cyber priest outfit."
-	desc = "A trench coat that's all cyber themed!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "cyberpriest"
-	item_state = "cyberpriest"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/cyberpriesting
-	name = "Cyber-pyscho priest outfit."
-	desc = "A trench coat that's all cyber themed! Comes with some helping hands."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "tecpriest"
-	item_state = "tecpriest"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/fanaticalpriest
-	name = "Town crier outfit."
-	desc = "A trench coat that screams 'listen to my words, hear me!'. Comes with some recipts wax stamped to it!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "acolytecoat"
-	item_state = "acolytecoat"
-
-/obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/urmandoutfit
-	name = "Ancient West German fanatic outfit."
-	desc = "A trench coat that once belonged to a fanatical person. Who or what did they worship? Who knows. All one knows is, it's a good piece of clothing for those wanting to showcase their more hear-ye side of life!"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "fanatic"
-	item_state = "fanatic"
 
 //////////////////
 // LIGHT RAIDER //
@@ -1822,32 +1810,6 @@
 	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
 
-/obj/item/clothing/suit/armor/light/duster/goner/alt
-	name = "dev-patched brown trenchcoat"
-	desc = "A non-existent ugly trenchcoat."
-	icon_state = "goner_suitb"
-	item_state = "duster"
-
-/obj/item/clothing/suit/armor/light/duster/goner/alt/red
-	name = "red-patched brown trenchcoat"
-	desc = "A rather crude looking, brown trenchcoat with red linings and arm patches.<br>Guess war can be ugly too."
-	icon_state = "goner_suitb_r"
-
-/obj/item/clothing/suit/armor/light/duster/goner/alt/green
-	name = "green-patched brown trenchcoat"
-	desc = "A rather crude looking, brown trenchcoat with green linings and arm patches.<br>Guess war can be ugly too."
-	icon_state = "goner_suitb_g"
-
-/obj/item/clothing/suit/armor/light/duster/goner/alt/blue
-	name = "blue-patched brown trenchcoat"
-	desc = "A rather crude looking, brown trenchcoat with blue linings and arm patches.<br>Guess war can be ugly too."
-	icon_state = "goner_suitb_b"
-
-/obj/item/clothing/suit/armor/light/duster/goner/alt/yellow
-	name = "yellow-patched brown trenchcoat"
-	desc = "A rather crude looking, brown trenchcoat with yellow linings and arm patches.<br>Guess war can be ugly too."
-	icon_state = "goner_suitb_y"
-
 /obj/item/clothing/suit/armor/light/duster/russian_coat
 	name = "russian battle coat"
 	desc = "Used in extremly cold fronts, made out of real bears."
@@ -2100,7 +2062,7 @@
 	icon_state = "taursaddle"
 	item_state = "taursaddle"
 	mutantrace_variation = STYLE_ALL_TAURIC
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/saddlebag
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 ////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/suit/armor/taursaddle/light
@@ -2116,6 +2078,7 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
+	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
@@ -2135,6 +2098,7 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
+	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
@@ -2150,6 +2114,7 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
+	pocket_storage_component_path = null
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_HEAVY
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
@@ -2730,7 +2695,7 @@
 
 /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	name = "heavy tribal armor"
-	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the local tribe."
+	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
@@ -2779,21 +2744,6 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
-	vis_flags = GROIN
-
-
-/obj/item/clothing/suit/armor/medium/ww1trenchbib
-	name = "WW1 steel armor"
-	desc = "A World War 1 steel bib that was in use by the sentry units and stationary units of numerous nations and factions. It protected mainly against shrapnel and aerial darts thrown from biplanes. Seems to offer better melee and shrapnel resistance."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
-	icon_state = "ww1bib"
-	item_state = "ww1bib"
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	armor_tier_desc = ARMOR_CLOTHING_LIGHT
-	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
@@ -2996,36 +2946,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
-
-/obj/item/clothing/suit/armor/medium/helldiver
-	name = "Democratic EA-5 assault armor"
-	desc = "A black and yellow colored set of armor. There is a skull isignia directly on the chest plate. This armor was manufactured by America in the late 2220s. Used for troopers sent out to explore hostile xenoplanets. Its official name is EA-5 exoarmor. "
-	icon_state = "helldiver"
-	item_state = "helldiver"
-	equip_delay_self = 3
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
-	armor = ARMOR_VALUE_MEDIUM
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	anthro_mob_worn_overlay = 'icons/fallout/onmob/clothes/armor_medium_digi.dmi'
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
-	mutantrace_variation = STYLE_DIGITIGRADE
-
-/obj/item/clothing/suit/armor/medium/wolf
-	name = "Hardened Combat Carapace"
-	desc = "A unique set of heavy carapace with a skull within a bunker an wings upon the shoulder, underneath the skull. A simple '43rd' Was labeled with a sword stabbing through it. On the chest embrassened was 'Kas-'' the rest was scarred off. Beyond the name 'Relt' on the pectoral. Along the blackened armor, was a bunch of different bits of graffite in chalkwhite..."
-	icon_state = "wolfsquad"
-	item_state = "wolfsquad"
-	icon = 'icons/fallout/clothing/armored_power.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
-	armor = ARMOR_VALUE_HEAVY
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
-	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
-	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
-	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
 	name = "Leo Armaments MARK XI armor 'Patriot'"
@@ -3341,7 +3261,7 @@
 	item_state = "vest_follower"
 
 /obj/item/clothing/suit/armor/medium/vest/town
-	name = "New Boston flak vest"
+	name = "Nash flak vest"
 	desc = "A refurbished flak vest, repaired by the Nash Police Department. The ballistic nylon has a much tougher weave, but it still will not take acid or most high-powered rounds."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -3491,7 +3411,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
-	name = "New Boston steel breastplate"
+	name = "Nash steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like Nash citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -4548,7 +4468,7 @@
 	/// Projectiles below this damage will get deflected
 	var/deflect_damage = 20 // blocks handload 9mm, which simplemobs shoot
 	/// If TRUE - it requires PA training trait to be worn
-	var/requires_training = FALSE // testing if the PA perk is actually fun or not
+	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
 	/// If TRUE - the suit has been recently affected by EMP blast
@@ -4847,7 +4767,7 @@
 			emped = TRUE
 			slowdown += induced_slowdown
 			L.update_equipment_speed_mods()
-			addtimer(CALLBACK(src,PROC_REF(end_emp_effect), induced_slowdown), 50)
+			addtimer(CALLBACK(src, .proc/end_emp_effect, induced_slowdown), 50)
 	return
 
 /obj/item/clothing/suit/armor/power_armor/proc/end_emp_effect(slowdown_induced)
@@ -4901,13 +4821,12 @@
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	can_deflect = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	requires_training = FALSE
+	requires_training = TRUE
 /obj/item/clothing/suit/armor/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor"
 	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
 	icon_state = "arroyoapa"
 	item_state = "arroyoapa"
-
 /obj/item/clothing/suit/armor/power_armor/fluff/pappavol
 	name = "Decaying Power Armor"
 	desc = "Large big and green with hints of rust that cover its decaying metal robotic frame. It looks like it was custom built... roughly put together with shitty welding and crude rivets that hold the green rusty armor together."
@@ -4915,8 +4834,8 @@
 	item_state = "pappavolarmor"
 
 /obj/item/clothing/suit/armor/power_armor/t45b
-	name = "Power Armor Exo-Skeleton"
-	desc = "A set of power armor with the metallic outer workings removed, fit for any form of addition to make a proper set of power armor!"
+	name = "Refurbished T-45b power armor"
+	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE
@@ -4949,6 +4868,7 @@
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
 
 /obj/item/clothing/suit/armor/power_armor/t45d
 	name = "T-45d power armor"
@@ -4956,6 +4876,7 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/power_armor/t45d/knightcaptain
 	name = "Head-Knight's T-45d Power Armour"
@@ -4976,6 +4897,7 @@
 	item_state = "t51bpowerarmor"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 25)
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/power_armor/t51b/pony
 	name = "colorful T-51b power armor"
@@ -4992,6 +4914,7 @@
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
 	item_state = "t51green"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 
 /obj/item/clothing/suit/armor/power_armor/t51b/bos
@@ -5005,12 +4928,14 @@
 	desc = "Developed by Garrahan Mining Co. in collaboration with West Tek, the Excavator-class power armor was designed to protect miners from rockfalls and airborne contaminants while increasing the speed at which they could work. "
 	icon_state = "excavator"
 	item_state = "excavator"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/power_armor/advanced
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/power_armor/hellfire // Event only - Deathsquad tier
 	name = "Hellfire power armor"
@@ -5030,6 +4955,7 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02 // Oh the misery
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/toggle/armor
 	// body_parts_covered = CHEST|GROIN
@@ -5263,7 +5189,7 @@
 
 // Magic armors - bizarre stats, don't fit into normal categories? Probably will need tweaking down the line.
 
-/obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
 	name = "talisman of protection"
 	desc = "A talisman made of magically charged titanium and set with a gleaming fragment of gold. This will protect the wearer from all attacks equally, but the enchantment prevents the wearing of proper armor."
 	w_class = WEIGHT_CLASS_TINY
@@ -5274,7 +5200,7 @@
 	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10, "damage_threshold" = 10)
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 
-/obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor/hazard
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
 	name = "talisman of cleansing"
 	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
 	icon_state = "hazardamulet"

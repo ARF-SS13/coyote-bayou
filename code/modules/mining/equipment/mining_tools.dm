@@ -13,7 +13,7 @@
 	item_state = "pickaxe"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
 	toolspeed = 1

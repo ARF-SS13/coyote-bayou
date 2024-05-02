@@ -8,11 +8,6 @@
 	name = "ballcap"
 	path = /obj/item/clothing/head/soft/mime
 
-/datum/gear/head/chameleon
-	name = "chameleon hat"
-	path = /obj/item/clothing/head/chameleon
-	cost = 0
-
 /datum/gear/head/beanie
 	name = "beanie"
 	path = /obj/item/clothing/head/beanie
@@ -478,7 +473,7 @@
 							"NCR Trooper",
 						)*/
 
-/datum/gear/head/steelpot_bandolier
+datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
@@ -553,7 +548,7 @@
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
-	/*restricted_desc = "New Boston PD, Nash officials"
+	/*restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"High Alderperson",
@@ -866,11 +861,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
-/datum/gear/head/skullmask
-	name = "Tribal Skull-Mask"
-	path = /obj/item/clothing/head/helmet/f13/skull_helmet
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-	cost = 2
 
 /datum/gear/head/steelm1
 	name = "M1 Helmet "
@@ -1082,12 +1072,6 @@
 /datum/gear/head/ballistichelmets/number10
 	name = "MK6 Helmet"
 	path = /obj/item/clothing/head/kevlarhelmet/ukhelmet
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-	cost = 2
-
-/datum/gear/head/ballistichelmets/fiend
-	name = "Fiend Helmet"
-	path = /obj/item/clothing/head/helmet/f13/fiend
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 

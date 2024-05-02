@@ -38,6 +38,4 @@ export { Table } from './Table';
 export { Tabs } from './Tabs';
 export { TextArea } from './TextArea';
 export { TimeDisplay } from './TimeDisplay';
-export { ToggleBox } from './ToggleBox';
-export { TogglePopup } from './TogglePopup';
 export { Tooltip } from './Tooltip';

@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/kit_spawner/attack_self(mob/user)
 	if(can_use_kit(user))
-		INVOKE_ASYNC(src,PROC_REF(use_the_kit), user)
+		INVOKE_ASYNC(src, .proc/use_the_kit, user)
 	else
 		playsound(src, 'sound/machines/synth_no.ogg', 40, 1)
 
@@ -376,7 +376,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		stop_using_the_kit(user)
 		return
 	//user.show_message("[final_key] selected!")
-	INVOKE_ASYNC(src,PROC_REF(spawn_the_thing), user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
+	INVOKE_ASYNC(src, .proc/spawn_the_thing, user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
 
 /obj/item/kit_spawner/proc/check_choice(choice_to_check)
 	if(!choice_to_check)
@@ -781,7 +781,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/melee/onehanded/machete/scrapsabre(src)
 
 /obj/item/storage/box/gun/melee/celestia
-	name = "Plasma Slicer Celestia"
+	name = "Plasma Cutter Celestia"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/celestia/PopulateContents()
@@ -795,14 +795,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
 
 /obj/item/storage/box/gun/melee/eve
-	name = "Plasma Slicer Eve"
+	name = "Plasma Cutter Eve"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/eve/PopulateContents()
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 
 /obj/item/storage/box/gun/melee/plasma
-	name = "Plasma Slicer"
+	name = "Plasma Cutter"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/PopulateContents()
@@ -1360,12 +1360,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
-/obj/item/storage/box/gun/pistol/needler
-	name = "NP-149/40 pistol case"
+/obj/item/storage/box/gun/rifle/needler
+	name = "NR-43 Turán rifle case"
 
-/obj/item/storage/box/gun/pistol/needler/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/needlerpistol(src)
-	new /obj/item/ammo_box/needlercapsule/handloaded(src)
+/obj/item/storage/box/gun/rifle/needler/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/needlerrifle(src)
+	new /obj/item/ammo_box/needlercapsule(src)
 
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
@@ -1420,20 +1420,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/c10mm(src)
-
-/obj/item/storage/box/gun/rifle/maus71
-	name = "Mauser 71 rifle case"
-
-/obj/item/storage/box/gun/rifle/maus71/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mauserrifle(src)
-	new /obj/item/ammo_box/a50MGbox(src)
-
-/obj/item/storage/box/gun/rifle/gew88
-	name = "Gewehr 88 rifle case"
-
-/obj/item/storage/box/gun/rifle/gew88/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/gewehr88(src)
-	new /obj/item/ammo_box/a3006box(src)
 
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
@@ -1988,19 +1974,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
 
-/datum/loadout_box/mauser71gobrr
-	entry_tag = "Mauser 71 Bolt action rifle"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/maus71
-
-
-/datum/loadout_box/gewehr88gobrr
-	entry_tag = "Gewehr 88 Bolt action rifle"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/gew88
-
 /datum/loadout_box/carbine9mm
 	entry_tag = "9mm Carbine"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2018,6 +1991,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
+
+/datum/loadout_box/needlergobrr
+	entry_tag = "Turan Prototype Needler Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/needler
 
 /datum/loadout_box/trainer
 	entry_tag = "Training Repeater"
@@ -2348,12 +2327,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/volcanics
 
-/datum/loadout_box/needlergobrr
-	entry_tag = "NP-149/40 Prototype Needler Pistol"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_PISTOL
-	spawn_thing = /obj/item/storage/box/gun/pistol/needler
-
 /datum/loadout_box/lematsgobrr
 	entry_tag = "LeMat revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2475,13 +2448,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee
 
 /datum/loadout_box/melee/celestia
-	entry_tag = "Plasma Slicer Celestia"
+	entry_tag = "Plasma Cutter Celestia"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/celestia
 
 /datum/loadout_box/melee/eve
-	entry_tag = "Plasma Slicer Eve"
+	entry_tag = "Plasma Cutter Eve"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/eve
@@ -2493,7 +2466,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee/energykatana
 
 /datum/loadout_box/melee/plasma
-	entry_tag = "Plasma slicer"
+	entry_tag = "Plasma Cutter"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/plasma
@@ -3065,8 +3038,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "laser pistol and carbine case"
 
 /obj/item/storage/box/gun/energy/tglaser/PopulateContents()
-	new /obj/item/gun/energy/laser/cranklasergun/tg/carbine(src)
-	new /obj/item/gun/energy/laser/cranklasergun/tg/pistol(src)
+	new /obj/item/gun/energy/laser/tg/carbine(src)
+	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
 
 // Spamlaser
 /datum/loadout_box/energy/tglaser/spammer
@@ -3079,4 +3052,4 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "repeating blaster case"
 
 /obj/item/storage/box/gun/energy/tglaser/spammer/PopulateContents()
-	new /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser(src)
+	new /obj/item/gun/energy/laser/tg/spamlaser(src)

@@ -4061,7 +4061,7 @@
 /area/f13/tunnel)
 "clz" = (
 /obj/structure/bed/old,
-/obj/item/reagent_containers/pill/patch/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_y = 32
 	},
@@ -6942,7 +6942,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
 "dSg" = (
-/obj/item/wrench/crude,
+/obj/item/wrench/basic,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16292,7 +16292,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/bunker)
 "jnf" = (
-/obj/item/wirecutters/crude,
+/obj/item/wirecutters/basic,
 /obj/item/screwdriver/crude,
 /obj/structure/table/wood,
 /obj/item/storage/box/handcuffs,
@@ -19542,7 +19542,7 @@
 /area/f13/tunnel)
 "lmG" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -35157,8 +35157,8 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/item/crowbar/crude,
-/obj/item/screwdriver/crude,
+/obj/item/crowbar/basic,
+/obj/item/screwdriver/basic,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -35822,7 +35822,7 @@
 /area/f13/brotherhood/leisure)
 "vEB" = (
 /obj/structure/table,
-/obj/item/reagent_containers/pill/patch/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},

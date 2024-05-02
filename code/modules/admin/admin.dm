@@ -6,13 +6,13 @@
 	message_admins(finalMessage)
 	log_world(finalMessage)
 
-/proc/message_admins(msg, pref)
+/proc/message_admins(msg)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
-	to_chat(GLOB.admins, msg, confidential = TRUE, pref_check = pref)
+	to_chat(GLOB.admins, msg, confidential = TRUE)
 
-/proc/relay_msg_admins(msg, pref)
+/proc/relay_msg_admins(msg)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">RELAY:</span> <span class=\"message linkify\">[msg]</span></span>"
-	to_chat(GLOB.admins, msg, confidential = TRUE, pref_check = pref)
+	to_chat(GLOB.admins, msg, confidential = TRUE)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels

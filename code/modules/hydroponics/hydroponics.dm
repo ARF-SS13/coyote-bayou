@@ -9,8 +9,8 @@
 	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 0.05      // How many units of nutrient will be drained in the tray //test //lowering it even further
-	var/maxnutri = 100		//The maximum nutrient of water in the tray
+	var/nutridrain = 0.3      // How many units of nutrient will be drained in the tray //test //lowering it even further
+	var/maxnutri = 10		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
 	var/yieldmod = 1		//Nutriment's effect on yield
@@ -35,8 +35,8 @@
 
 /obj/machinery/hydroponics/Initialize()
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
-	create_reagents(100)
-	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 100) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
+	create_reagents(20)
+	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	. = ..()
 	LAZYREMOVE(GLOB.machines, src)
 	LAZYADD(GLOB.plant_bins, src)
@@ -49,8 +49,6 @@
 	icon_state = "hydrotray3"
 
 /obj/machinery/hydroponics/constructable/RefreshParts()
-	reagents.maximum_volume = 100
-	/* 
 	var/tmp_capacity = 0
 	for (var/obj/item/stock_parts/matter_bin/M in component_parts)
 		tmp_capacity += M.rating
@@ -60,13 +58,12 @@
 	maxnutri = (tmp_capacity * 5) + STATIC_NUTRIENT_CAPACITY // Up to 50 Maximum
 	reagents.maximum_volume = maxnutri
 	nutridrain = 1/rating
-	*/
 
 /obj/machinery/hydroponics/constructable/examine(mob/user)
 	. = ..()
 	. += span_notice("Use <b>Alt-Click</b> to empty the tray's nutrients.")
-	//if(in_range(user, src) || isobserver(user))
-	//	. += span_notice("The status display reads: Tray efficiency at <b>[rating*100]%</b>.")
+	if(in_range(user, src) || isobserver(user))
+		. += span_notice("The status display reads: Tray efficiency at <b>[rating*100]%</b>.")
 
 /obj/machinery/hydroponics/Destroy()
 	if(myseed)
@@ -148,7 +145,7 @@
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
-			adjustWater(-nutridrain)//6
+			adjustWater(-rand(1,3) / rating)//6
 
 			// If the plant is dry, it loses health pretty fast, unless mushroom
 			if(waterlevel <= 10 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -161,8 +158,8 @@
 				adjustHealth(rand(1,2) / rating)
 				if(myseed && prob(myseed.weed_chance))
 					adjustWeeds(myseed.weed_rate)
-				// else if(prob(2))  //5 percent chance the weed population will increase
-					// adjustWeeds(1 / rating)
+				else if(prob(2))  //5 percent chance the weed population will increase
+					adjustWeeds(1 / rating)
 
 //Toxins/////////////////////////////////////////////////////////////////
 
@@ -175,7 +172,7 @@
 				adjustToxic(-rand(1,10) / rating)
 
 //Pests & Weeds//////////////////////////////////////////////////////////
-/*
+
 			if(pestlevel >= 8)
 				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
 					adjustHealth(-2 / rating)
@@ -216,7 +213,7 @@
 			if(myseed.instability >= 20 )
 				if(prob(myseed.instability))
 					mutate()
-*/
+
 //Health & Age///////////////////////////////////////////////////////////
 
 			// Plant dies if plant_health <= 0
@@ -226,7 +223,7 @@
 
 			// If the plant is too old, lose health fast
 			if(age > myseed.lifespan)
-				adjustHealth(-rand() / rating)
+				adjustHealth(-rand(1,5) / rating)
 
 			// Harvest code
 			if(age > myseed.production && (age - lastproduce) > myseed.production && (!harvest && !dead))
@@ -234,9 +231,9 @@
 					harvest = TRUE
 				else
 					lastproduce = age
-			// if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
-				// adjustPests(1 / rating)
-		// else
+			if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
+				adjustPests(1 / rating)
+		else
 			if(waterlevel > 10 && reagents.total_volume > 0 && prob(3))  // If there's no plant, the percentage chance is 10% // Nerfing down to 3%
 				adjustWeeds(1 / rating)
 
@@ -325,10 +322,10 @@
 	. += span_info("Water: [waterlevel]/[maxwater].")
 	. += span_info("Nutrient: [reagents.total_volume]/[maxnutri].")
 
-//	if(weedlevel >= 5)
-//		to_chat(user, span_warning("It's filled with weeds!"))
-//	if(pestlevel >= 5)
-//		to_chat(user, span_warning("It's filled with tiny worms!"))
+	if(weedlevel >= 5)
+		to_chat(user, span_warning("It's filled with weeds!"))
+	if(pestlevel >= 5)
+		to_chat(user, span_warning("It's filled with tiny worms!"))
 
 // Examining more a plant will yield a rough estimation of it's stats.
 // Intended for use by Wayfarer's and Legion to allow their farmers to gauge roughly how it's going.

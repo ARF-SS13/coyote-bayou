@@ -26,7 +26,7 @@
 	priority = 100
 
 /datum/movespeed_modifier/status_effect/electrostaff
-	multiplicative_slowdown = 3 // hahahahahaha
+	multiplicative_slowdown = 1
 	movetypes = GROUND
 
 //no comment.
