@@ -13039,6 +13039,11 @@
 /area/f13/building)
 "gma" = (
 /obj/effect/landmark/start/f13/settler,
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -14069,6 +14074,11 @@
 /area/f13/wasteland/city/newboston/bar)
 "gLP" = (
 /obj/effect/landmark/start/f13/followersdoctor,
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "gLT" = (
@@ -15148,6 +15158,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/white,
 /area/f13/building)
+"hmq" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "hmu" = (
 /obj/structure/table/wood,
 /obj/item/storage/trash_stack,
@@ -40023,6 +40039,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
+"sPI" = (
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "sPM" = (
 /obj/structure/closet/wardrobe,
 /obj/item/stack/medical/suture/five,
@@ -74272,7 +74298,7 @@ hRl
 "}
 (88,1,1) = {"
 hRl
-gIm
+sPI
 gIm
 gIm
 gIm
@@ -74790,7 +74816,7 @@ uWY
 uWY
 uWY
 aub
-mdh
+hmq
 tEr
 fNr
 fNr
@@ -75818,7 +75844,7 @@ uWY
 uWY
 uWY
 aub
-mdh
+hmq
 hVc
 hVc
 hTc
@@ -77103,7 +77129,7 @@ iNm
 mke
 onB
 iJo
-mdh
+hmq
 hVc
 hVc
 lbs
