@@ -62,7 +62,7 @@
 	source.visible_message(span_warning("[user] picks up [source]!"), \
 					span_userdanger("[user] picks you up!"))
 	to_chat(user, span_notice("You pick [source] up."))
-	source.drop_all_held_items()
+	// source.drop_all_held_items()
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	holder.escape_on_find = escape_on_find
 	holder.associate(user)
