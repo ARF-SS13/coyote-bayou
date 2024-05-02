@@ -174,7 +174,8 @@
 "ads" = (
 /turf/closed/indestructible/f13/matrix{
 	plane = -1;
-	opacity = 0
+	opacity = 0;
+	name = "elsewhere"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "adu" = (
@@ -5561,6 +5562,13 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"cFw" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "cFy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -8046,13 +8054,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"dTd" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999";
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "dTu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/cult,
@@ -8694,7 +8695,8 @@
 "eis" = (
 /obj/structure/wreck/bus/orange{
 	pixel_y = -4;
-	pixel_x = -3
+	pixel_x = -3;
+	name = "bus from somewhere"
 	},
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
@@ -11790,16 +11792,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
-"fEr" = (
-/obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "fFe" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -15764,6 +15756,16 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"hAZ" = (
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "hBh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/texasranger,
@@ -32678,6 +32680,12 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
+"pwg" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "pwh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
@@ -36089,12 +36097,6 @@
 	color = "#777777"
 	},
 /area/f13/building/tribal/cave)
-"rac" = (
-/obj/machinery/light,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "rax" = (
 /obj/structure/debris/v4,
 /turf/open/floor/f13{
@@ -74311,7 +74313,7 @@ hRl
 "}
 (88,1,1) = {"
 hRl
-fEr
+hAZ
 gIm
 gIm
 gIm
@@ -74829,7 +74831,7 @@ uWY
 uWY
 uWY
 aub
-rac
+pwg
 fNr
 fNr
 fNr
@@ -75857,7 +75859,7 @@ uWY
 uWY
 uWY
 aub
-rac
+pwg
 hVc
 hVc
 hTc
@@ -77142,7 +77144,7 @@ iNm
 mke
 onB
 iJo
-rac
+pwg
 hVc
 hVc
 lbs
@@ -78682,7 +78684,7 @@ blS
 hRl
 kmZ
 dUS
-dTd
+cFw
 dwQ
 his
 eiW
