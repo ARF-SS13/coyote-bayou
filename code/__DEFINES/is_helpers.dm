@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(simplemobs_wildlife, typecacheof(list(
 	/mob/living/simple_animal/hostile/carp,
 	/mob/living/simple_animal/hostile/cazador,
 	/mob/living/simple_animal/hostile/bloatfly,
-	/mob/living/simple_animal/hostile/radroach,
+	/mob/living/simple_animal/hostile/pillbug,
 	/mob/living/simple_animal/hostile/mirelurk,
 	/mob/living/simple_animal/hostile/bear/yaoguai,
 	/mob/living/simple_animal/hostile/trog,
@@ -317,7 +317,7 @@ GLOBAL_LIST_INIT(simplemobs_insects, typecacheof(list(
 	/mob/living/simple_animal/hostile/radscorpion,
 	/mob/living/simple_animal/hostile/cazador,
 	/mob/living/simple_animal/hostile/bloatfly,
-	/mob/living/simple_animal/hostile/radroach,
+	/mob/living/simple_animal/hostile/pillbug,
 	)))
 
 

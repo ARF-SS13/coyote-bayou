@@ -538,10 +538,10 @@
 	. = ..()
 
 //////////////
-// RADROACH //
+// Pillbug //
 //////////////
 
-/mob/living/simple_animal/hostile/radroach
+/mob/living/simple_animal/hostile/pillbug
 	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
 	icon = 'modular_coyote/icons/mob/pillbug.dmi'
@@ -604,13 +604,13 @@
 	actual_retreat_message = "The %NAME skitters away from %TARGET like a lunatic!"
 	healing_message = "The %NAME bandages itself!" // ye, oh easily, thats why I love procs~
 
-/mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 //Variants for Radroachers
 
-/mob/living/simple_animal/hostile/radroach/micro
+/mob/living/simple_animal/hostile/pillbug/micro
 	name = "Micro Pillbug"
 	maxHealth = 20
 	health = 20
@@ -627,17 +627,17 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/micro/Initialize()
+/mob/living/simple_animal/hostile/pillbug/micro/Initialize()
 	.=..()
 	resize = 0.75
 	update_transform()
 
-/mob/living/simple_animal/hostile/radroach/micro/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/micro/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
-/mob/living/simple_animal/hostile/radroach/strongradroach
+/mob/living/simple_animal/hostile/pillbug/strongradroach
 	maxHealth = 140
 	health = 140
 	name = "Macro Pillbug"
@@ -656,12 +656,12 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/strongradroach/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/strongradroach/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
-/mob/living/simple_animal/hostile/radroach/leader
+/mob/living/simple_animal/hostile/pillbug/leader
 	name = "Pillbug Leader"
 	maxHealth = 40
 	health = 40
@@ -683,12 +683,12 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/leader/Initialize()
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize()
 	.=..()
 	resize = 3.0
 	update_transform()
 
-/mob/living/simple_animal/hostile/radroach/leader/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/leader/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
@@ -716,18 +716,18 @@
 
 /obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
 	..()
-	spawn_and_random_walk(/mob/living/simple_animal/hostile/radroach/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/pillbug/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
 	//		break
 	return BULLET_ACT_HIT
 
-/mob/living/simple_animal/hostile/radroach/summon //untameable
+/mob/living/simple_animal/hostile/pillbug/summon //untameable
 	faction = list("gecko")
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
 	del_on_death = TRUE
 
-/mob/living/simple_animal/hostile/radroach/leader/Initialize(mapload)
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/radroach, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/pillbug, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
 
