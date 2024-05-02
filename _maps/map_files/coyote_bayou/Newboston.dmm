@@ -6253,7 +6253,8 @@
 	},
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "cXa" = (
@@ -13039,6 +13040,11 @@
 /area/f13/building)
 "gma" = (
 /obj/effect/landmark/start/f13/settler,
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -14069,6 +14075,11 @@
 /area/f13/wasteland/city/newboston/bar)
 "gLP" = (
 /obj/effect/landmark/start/f13/followersdoctor,
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
 "gLT" = (
@@ -19225,7 +19236,8 @@
 "jeh" = (
 /obj/effect/landmark/start/f13/followersscientist/recslimeologist,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "jer" = (
@@ -30446,7 +30458,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/followersscientist/recnanspec,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "onN" = (
@@ -31140,6 +31153,12 @@
 /obj/item/bedsheet/random,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"oJm" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "oKm" = (
 /obj/machinery/mineral/wasteland_vendor/ammo,
 /turf/open/floor/wood_common,
@@ -34026,6 +34045,13 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"qgo" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "qgp" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13{
@@ -41425,7 +41451,8 @@
 	},
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "tvS" = (
@@ -44782,7 +44809,8 @@
 "vbR" = (
 /obj/effect/landmark/start/f13/followersscientist/recnanspec,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "vck" = (
@@ -44871,7 +44899,8 @@
 "veJ" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "veP" = (
@@ -46387,7 +46416,8 @@
 "vRd" = (
 /obj/effect/landmark/start/f13/followersscientist/recguard,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "vRH" = (
@@ -49125,7 +49155,8 @@
 "xhQ" = (
 /obj/effect/landmark/start/f13/texasranger,
 /turf/open/indestructible/ground/outside/road{
-	color = "#999999"
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "xhW" = (
@@ -50970,6 +51001,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"xTx" = (
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "xTy" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -74272,7 +74313,7 @@ hRl
 "}
 (88,1,1) = {"
 hRl
-gIm
+xTx
 gIm
 gIm
 gIm
@@ -74790,7 +74831,7 @@ uWY
 uWY
 uWY
 aub
-mdh
+oJm
 tEr
 fNr
 fNr
@@ -75818,7 +75859,7 @@ uWY
 uWY
 uWY
 aub
-mdh
+oJm
 hVc
 hVc
 hTc
@@ -77103,7 +77144,7 @@ iNm
 mke
 onB
 iJo
-mdh
+oJm
 hVc
 hVc
 lbs
@@ -78129,7 +78170,7 @@ vqy
 hRl
 pML
 klQ
-uWY
+tkO
 aub
 uiB
 hVc
@@ -78386,7 +78427,7 @@ vqy
 hRl
 jqA
 klQ
-uWY
+tkO
 aub
 sbq
 hVc
@@ -78643,7 +78684,7 @@ blS
 hRl
 kmZ
 dUS
-mLI
+qgo
 dwQ
 his
 eiW
@@ -78900,7 +78941,7 @@ vqy
 hRl
 ntV
 klQ
-uWY
+tkO
 aub
 hWI
 gIm
@@ -79414,7 +79455,7 @@ vqy
 hRl
 gao
 vIQ
-uWY
+tkO
 uWY
 uou
 brC
