@@ -25,7 +25,7 @@
 	icon_dead = "duckbot_dead"
 	ignore_faction = TRUE // so mobs dont kill it on accident
 	ranged = TRUE
-	melee_attacks = FALSE
+	melee_attacks_per_tick = 0
 	environment_smash = NONE
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR // so we get the tombstone message for our duck
 	maxHealth = 40
@@ -45,7 +45,7 @@
 	despawns_when_lonely = FALSE
 	robuster_searching = TRUE
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	turns_per_move = 1
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	faction = list("duck")
@@ -83,7 +83,7 @@
 		return
 	blast_an_egg_at_someone(target)
 
-/mob/living/simple_animal/hostile/amusing_duck/AttackingTarget()
+/mob/living/simple_animal/hostile/amusing_duck/InitiateMeleeAttack(atom/target, was_telegraphed_its_okay)
 	if(!client)
 		return
 	wakka_wakka(TRUE)

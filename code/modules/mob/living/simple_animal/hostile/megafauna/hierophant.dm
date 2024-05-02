@@ -186,7 +186,7 @@ Difficulty: Normal
 		if(my_target)
 			arena_trap(my_target)
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/hierophant/Goto(target, delay, approach_distance)
 	wander = TRUE
 	if(!blinking)
 		..()

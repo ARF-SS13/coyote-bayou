@@ -35,7 +35,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2, /obj/item/stack/sheet/animalhide/human = 1, /obj/item/stack/sheet/bone = 1)
 	robust_searching = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
-	minimum_distance = 1
+	approach_distance = 1
 
 /mob/living/simple_animal/hostile/asteroid/miner/ComponentInitialize()
 	. = ..()

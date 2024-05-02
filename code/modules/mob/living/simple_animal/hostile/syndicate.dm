@@ -67,7 +67,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	wound_bonus = 10
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	status_flags = 0
 
 /mob/living/simple_animal/hostile/renegade/syndicate/melee/sword
@@ -83,7 +83,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	light_color = LIGHT_COLOR_RED
 	status_flags = 0
 	light_system = MOVABLE_LIGHT
@@ -111,14 +111,14 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 6
-	minimum_distance = 6
+	approach_distance = 6
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	dodging = FALSE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 
 /mob/living/simple_animal/hostile/renegade/syndicate/ranged/infiltrator //shuttle loan event
 	projectilesound = 'sound/weapons/gunshot_silenced.ogg'
@@ -133,11 +133,11 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 6
-	minimum_distance = 6
-	rapid = 5
+	approach_distance = 6
+	auto_fire_delay = 5
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 
@@ -151,18 +151,18 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 4
-	minimum_distance = 4
-	rapid = 2
-	rapid_fire_delay = 6
+	approach_distance = 4
+	auto_fire_delay = 2
+	auto_fire_delay = 6
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
 
 /mob/living/simple_animal/hostile/renegade/syndicate/civilian
-	minimum_distance = 10
+	approach_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -201,7 +201,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 45
 	wound_bonus = 10
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	maxHealth = 170
 	health = 170
 	mob_armor = ARMOR_VALUE_SYNDIE_REDSUIT
@@ -220,7 +220,7 @@
 	melee_damage_lower = 45
 	melee_damage_upper = 50
 	wound_bonus = 40
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -371,7 +371,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	wound_bonus = 40
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	maxHealth = 250
 	health = 250
 

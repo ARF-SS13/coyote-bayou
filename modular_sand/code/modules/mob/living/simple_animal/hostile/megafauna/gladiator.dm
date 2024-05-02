@@ -33,7 +33,7 @@ They deal 35 brute (armor is considered).
 	var/block_chance = 50
 	ranged = 1
 	ranged_cooldown_time = 30
-	minimum_distance = 1
+	approach_distance = 1
 	health = 1500
 	maxHealth = 1500
 	movement_type = GROUND
@@ -294,13 +294,13 @@ They deal 35 brute (armor is considered).
 	sleep(4)
 	face_atom(target)
 	move_to_delay = move_to_charge
-	minimum_distance = 0
+	approach_distance = 0
 	charging = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/gladiator/proc/discharge(var/modifier = 1)
 	stunned = TRUE
 	charging = FALSE
-	minimum_distance = 1
+	approach_distance = 1
 	chargetiles = 0
 	animate(src, color = initial(color), 7)
 	update_phase()

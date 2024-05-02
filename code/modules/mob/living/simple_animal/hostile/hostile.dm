@@ -711,7 +711,7 @@
 	if(!target || !telegraphs_melee)
 		return HAI_TELEGRAPH_PROCEED_MELEE
 	if(windup_timer_id) // we're in the middle of scrotiographing an attack, it'll handle it dont worry
-		if(world.time >= blackboard.telegraphing_until + 1 SECOND)
+		if(world.time >= blackboard.telegraphing_until + 1 SECONDS)
 			StopTelegraphingMelee(TRUE)
 			return HAI_TELEGRAPH_PROCEED_MELEE
 		else
@@ -897,14 +897,11 @@
 	// 	return
 	deltimer(sight_shoot_timer_id)
 	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
-	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src,PROC_REF(Shoot), A)
-		for(var/i in 1 to rapid)
-			addtimer(cb, (i - 1)*rapid_fire_delay)
-	else
-		Shoot(A)
-		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src,PROC_REF(Shoot), A), i * auto_fire_delay)
+	var/shots_to_do = auto_fire_burst_count
+	Shoot(A)
+	if(shots_to_do--)
+		for(var/i in 1 to shots_to_do)
+			addtimer(CALLBACK(src, PROC_REF(Shoot), A), i * auto_fire_delay)
 	ThrowSomething(A)
 	return TRUE
 

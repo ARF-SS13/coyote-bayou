@@ -59,7 +59,7 @@ Removes slaughterlings (because they are bullshit), instead replacing them with 
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(target, move_to_delay, minimum_distance)
+	Goto(target, move_to_delay, approach_distance)
 	bloodsmacks()
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/bloodsmacks()

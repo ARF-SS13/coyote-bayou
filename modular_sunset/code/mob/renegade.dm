@@ -103,8 +103,8 @@
 	healable = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
-	minimum_distance = 3
-	extra_projectiles = 0
+	approach_distance = 3
+	auto_fire_burst_count = 0
 	ranged_cooldown_time = 2 SECONDS
 	sight_shoot_delay_time = 0.2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL

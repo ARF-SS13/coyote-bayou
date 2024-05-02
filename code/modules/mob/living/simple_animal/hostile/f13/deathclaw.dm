@@ -444,7 +444,7 @@
 	if(!charging)
 		return ..()
 
-/mob/living/simple_animal/hostile/deathclaw/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/deathclaw/Goto(target, delay, approach_distance)
 	if(!charging)
 		..()
 
@@ -464,7 +464,7 @@
 /mob/living/simple_animal/hostile/deathclaw/proc/charge_end(list/effects_to_destroy)
 	charging = FALSE
 	if(target)
-		Goto(target, move_to_delay, minimum_distance)
+		Goto(target, move_to_delay, approach_distance)
 
 /mob/living/simple_animal/hostile/deathclaw/Bump(atom/A)
 	if(charging)

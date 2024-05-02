@@ -142,7 +142,7 @@ Difficulty: Extremely Hard
 	adjustBruteLoss(30 * severity - 120)
 	visible_message(span_danger("[src] absorbs the explosion!"), span_userdanger("You absorb the explosion!"))
 
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, approach_distance)
 	if(enraging)
 		return
 	return ..()

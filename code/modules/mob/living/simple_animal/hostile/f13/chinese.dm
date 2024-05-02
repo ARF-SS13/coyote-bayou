@@ -13,7 +13,7 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	retreat_distance = 2
-	minimum_distance = 1
+	approach_distance = 1
 	speed = 1
 	maxHealth = 80
 	health = 80

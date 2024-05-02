@@ -38,7 +38,7 @@
 	doing_move_loop = FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/asteroid/curseblob/Goto(move_target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/asteroid/curseblob/Goto(move_target, delay, approach_distance)
 	move_loop(get_target(), delay)
 
 /mob/living/simple_animal/hostile/asteroid/curseblob/proc/move_loop(move_target, delay)

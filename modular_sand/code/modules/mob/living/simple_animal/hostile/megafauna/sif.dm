@@ -294,7 +294,7 @@ Difficulty: Medium
 		if(.)
 			recovery_time = world.time + 10
 
-/mob/living/simple_animal/hostile/megafauna/sif/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/sif/Goto(target, delay, approach_distance)
 	if(charging == FALSE)
 		..()
 

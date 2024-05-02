@@ -303,7 +303,7 @@
 	melee_damage_upper = 12
 	move_to_delay = 1.5
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 8
 	waddle_amount = 3
@@ -1040,7 +1040,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	retreat_distance = 9
-	minimum_distance = 7
+	approach_distance = 7
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE

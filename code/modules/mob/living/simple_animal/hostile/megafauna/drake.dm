@@ -58,7 +58,7 @@ Difficulty: Medium
 	ranged = 1
 	projectilesound = 'sound/weapons/mmlbuster.ogg'
 	projectiletype = /obj/item/projectile/f13plasma/scatter/dragon
-	extra_projectiles = 1
+	auto_fire_burst_count = 1
 	ranged = TRUE
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
@@ -109,7 +109,7 @@ Difficulty: Medium
 	if(!swooping)
 		..()
 
-/mob/living/simple_animal/hostile/megafauna/dragon/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/dragon/Goto(target, delay, approach_distance)
 	if(!swooping)
 		..()
 

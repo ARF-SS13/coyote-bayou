@@ -311,7 +311,7 @@
 	timeout,
 	repath_delay,
 	max_path_length,
-	minimum_distance,
+	approach_distance,
 	obj/item/card/id/id,
 	simulated_only,
 	turf/avoid,
@@ -331,7 +331,7 @@
 		chasing,
 		repath_delay,
 		max_path_length,
-		minimum_distance,
+		approach_distance,
 		id,
 		simulated_only,
 		avoid,
@@ -343,7 +343,7 @@
 	///Max amount of steps to search
 	var/max_path_length
 	///Minimum distance to the target before path returns
-	var/minimum_distance
+	var/approach_distance
 	///An ID card representing what access we have and what doors we can open. Kill me
 	var/obj/item/card/id/id
 	///Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
@@ -357,13 +357,13 @@
 	///Cooldown for repathing, prevents spam
 	COOLDOWN_DECLARE(repath_cooldown)
 
-/datum/move_loop/has_target/jps/setup(delay, timeout, atom/chasing, repath_delay, max_path_length, minimum_distance, obj/item/card/id/id, simulated_only, turf/avoid, skip_first)
+/datum/move_loop/has_target/jps/setup(delay, timeout, atom/chasing, repath_delay, max_path_length, approach_distance, obj/item/card/id/id, simulated_only, turf/avoid, skip_first)
 	. = ..()
 	if(!.)
 		return
 	src.repath_delay = repath_delay
 	src.max_path_length = max_path_length
-	src.minimum_distance = minimum_distance
+	src.approach_distance = approach_distance
 	src.id = id
 	src.simulated_only = simulated_only
 	src.avoid = avoid
@@ -371,8 +371,8 @@
 	if(istype(id, /obj/item/card/id))
 		RegisterSignal(id, COMSIG_PARENT_QDELETING,PROC_REF(handle_no_id)) //I prefer erroring to harddels. If this breaks anything consider making id info into a datum or something
 
-/datum/move_loop/has_target/jps/compare_loops(datum/move_loop/loop_type, priority, flags, extra_info, delay, timeout, atom/chasing, repath_delay, max_path_length, minimum_distance, obj/item/card/id/id, simulated_only, turf/avoid, skip_first)
-	if(..() && repath_delay == src.repath_delay && max_path_length == src.max_path_length && minimum_distance == src.minimum_distance && id == src.id && simulated_only == src.simulated_only && avoid == src.avoid)
+/datum/move_loop/has_target/jps/compare_loops(datum/move_loop/loop_type, priority, flags, extra_info, delay, timeout, atom/chasing, repath_delay, max_path_length, approach_distance, obj/item/card/id/id, simulated_only, turf/avoid, skip_first)
+	if(..() && repath_delay == src.repath_delay && max_path_length == src.max_path_length && approach_distance == src.approach_distance && id == src.id && simulated_only == src.simulated_only && avoid == src.avoid)
 		return TRUE
 	return FALSE
 
@@ -395,7 +395,7 @@
 		return
 	COOLDOWN_START(src, repath_cooldown, repath_delay)
 	SEND_SIGNAL(src, COMSIG_MOVELOOP_JPS_REPATH)
-	movement_path = get_path_to(moving, target, max_path_length, minimum_distance, id, simulated_only, avoid, skip_first)
+	movement_path = get_path_to(moving, target, max_path_length, approach_distance, id, simulated_only, avoid, skip_first)
 
 /datum/move_loop/has_target/jps/move()
 	if(!length(movement_path))

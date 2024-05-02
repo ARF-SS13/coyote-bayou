@@ -665,7 +665,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	retreat_distance = 9
-	minimum_distance = 7
+	approach_distance = 7
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE
