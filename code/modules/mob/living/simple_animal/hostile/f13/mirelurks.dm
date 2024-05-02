@@ -58,7 +58,9 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
 	)
-
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/xeno/bodypartless)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
@@ -90,6 +92,9 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/xeno/bodypartless)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
@@ -121,6 +126,9 @@
 		MOB_MINIMUM_DISTANCE_LIST(3, 4, 5),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/xeno/bodypartless)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/mirelurk/baby/Initialize()

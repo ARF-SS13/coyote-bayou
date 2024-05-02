@@ -5,8 +5,8 @@
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
 	exp_type = EXP_TYPE_LIVING
-	total_positions = 10 // supposedly whitelisted, no worries here
-	spawn_positions = 10
+	total_positions = -1 // supposedly whitelisted, no worries here
+	spawn_positions = -1
 	outfit = /datum/outfit/job/biker
 
 

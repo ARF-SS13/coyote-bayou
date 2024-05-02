@@ -23,16 +23,19 @@
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
 	var/autoreveal_time = 1 HOURS
+	important = TRUE
 
 /obj/item/validball/Initialize()
 	. = ..()
 	register_vb_datum()
-	addtimer(CALLBACK(src, .proc/activate_the_validball), autoreveal_time)
 	SSvalidball.valid_balls |= src
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
+	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS, TRUE)
+
+/obj/item/validball/proc/roundstartify()
+	addtimer(CALLBACK(src,PROC_REF(activate_the_validball)), autoreveal_time)
 
 /obj/item/validball/proc/register_vb_datum()
 	var/datum/validball_data_report/vb_datum = new
@@ -46,7 +49,7 @@
 	activated = TRUE
 	START_PROCESSING(SSobj, src)
 	visible_message(span_notice("[src]'s transmitter lets out a faint beep. Anyone with a signal divination device can see where this is!"))
-	to_chat(world, span_danger("Be it by overheard rumor, or a sudden memory, you realize that the coveted keycards recently sent out their detection information. The hunt is on, for those that want to be a part of it. You can pick up a device to help find it in one of Nash's shops vending machines. But remember, those who hunt open themselves up to a world of danger."))
+	to_chat(world, span_danger("Be it by overheard rumor, or a sudden memory, you realize that the coveted keycards recently sent out their detection information. The hunt is on, for those that want to be a part of it. You can pick up a device to help find it in one of New Boston's shops vending machines. But remember, those who hunt open themselves up to a world of danger."))
 
 /obj/item/validball/proc/update_holders(mob/holder)
 	if(!ismob(holder))
@@ -178,7 +181,7 @@
 	user.show_message("You press the SCAN button, and [src] lets out an excited beep!")
 	say(span_robot("Scanning for anomalous signals, please wait."))
 	currently_scanning = TRUE
-	addtimer(CALLBACK(src, .proc/read_scan_ping, user), scan_time)
+	addtimer(CALLBACK(src,PROC_REF(read_scan_ping), user), scan_time)
 
 /obj/item/pinpointer/validball_finder/proc/read_scan_ping()
 	if(!isweakref(scan_turf))
@@ -295,6 +298,10 @@
 			return "Southern Wastes - Common"
 		if(Z_LEVEL_REDLICK)
 			return "Northern Wastes - Common"
+		if(Z_LEVEL_NEWBOSTON)
+			return "New Boston - Common"
+		if(Z_LEVEL_NEWBOSTON_UPPER)
+			return "New Boston - Second Story"
 		else
 			return "~!UNKNOWN!~"
 
@@ -420,6 +427,7 @@
 	if(isturf(right_here) && isatom(spawn_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
 		var/obj/item/validball/thenewvb = new the_thing(spawn_here)
+		thenewvb.roundstartify()
 		return thenewvb
 	return FALSE
 

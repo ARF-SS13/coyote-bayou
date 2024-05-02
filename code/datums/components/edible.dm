@@ -34,12 +34,12 @@ Behavior that's still missing from this component that original food items had t
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_ANIMAL, .proc/UseByAnimal)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE,PROC_REF(examine))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_ANIMAL,PROC_REF(UseByAnimal))
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/UseFromHand)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK,PROC_REF(UseFromHand))
 	else if(isturf(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/TryToEatTurf)
+		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND,PROC_REF(TryToEatTurf))
 
 	src.bite_consumption = bite_consumption
 	src.food_flags = food_flags
@@ -156,7 +156,7 @@ Behavior that's still missing from this component that original food items had t
 					eater.visible_message(
 						span_notice("[eater] unwillingly [eatverb]s \the [parent]."), 
 						span_notice("You unwillingly [eatverb] \the [parent]."))
-			if((600 * (1 + eater.overeatduration / 1000)) to INFINITY)
+			if(650 to INFINITY)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] gluttonously [eatverb]s \the [parent], cramming it down [eater.p_their()] throat!"), 

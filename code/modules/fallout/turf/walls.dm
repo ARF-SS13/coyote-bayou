@@ -87,7 +87,7 @@
 		set_opacity(0)
 	..()
 
-turf/closed/wall/f13/wood/house/update_damage_overlay()
+/turf/closed/wall/f13/wood/house/update_damage_overlay()
 	if(broken)
 		return
 	..()
@@ -106,7 +106,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/store
 	name = "store wall"
@@ -120,7 +120,19 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/store,
+	/turf/closed/wall/f13/store/constructed,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
@@ -184,7 +196,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
@@ -321,9 +333,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	update_icon()
 	var/dat
 	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], simple animal [departing_mob.type], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else
@@ -339,6 +351,12 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
 	else
 		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
+	
+	if(departing_mob.client.is_in_game >= 1)
+		// if(departing_mob.client.is_in_game == 2)
+		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
+		departing_mob.client.is_in_game = 0
+	
 	departing_mob.despawn()
 
 
@@ -358,7 +376,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	var/tickerPeriod = 300 //in deciseconds
 	var/go/fullDark
 
-turf/closed/indestructible/f13/splashscreen/New()
+/turf/closed/indestructible/f13/splashscreen/New()
 	.=..()
 	name = "Fallout 13"
 	desc = "The wasteland is calling!"
@@ -376,7 +394,7 @@ turf/closed/indestructible/f13/splashscreen/New()
 	spawn() src.ticker()
 	return
 
-turf/closed/indestructible/f13/splashscreen/proc/ticker()
+/turf/closed/indestructible/f13/splashscreen/proc/ticker()
 	while(src && istype(src,/turf/closed/indestructible/f13/splashscreen))
 		src.swapImage()
 		sleep(src.tickerPeriod)

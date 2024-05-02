@@ -78,6 +78,66 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = TRUE
 
+/obj/item/ammo_box/magazine/internal/needleshmg
+	name = "magazine box filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 48
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/needlessmg
+	name = "magazine box filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 35
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/mausereight
+	name = "magazine box filled with mauser ammo"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/gewehreight
+	name = "magazine box filled with mauser ammo"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 5
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/giantgun
+	name = "magazine box filled with K bullets"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "mauser"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 1
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
 /obj/item/ammo_box/magazine/internal/grenadeshotgun
 	name = "magazine filled with 40mm mike-mikes ouch ouchs"
 	ammo_type = /obj/item/ammo_casing/a40mm/buck
@@ -101,6 +161,15 @@
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = list(CALIBER_308)
 	max_ammo = 9
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/speedinglee
+	name = "magazine filled with 308."
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 4
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE

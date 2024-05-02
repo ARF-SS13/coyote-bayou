@@ -268,7 +268,7 @@
 		SEND_SOUND(ranged_ability_user, sound('sound/effects/ghost.ogg',0,1,50))
 		var/image/C = image('icons/effects/cult_effects.dmi',H,"bloodsparkles", ABOVE_MOB_LAYER)
 		add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_apoc", C, FALSE)
-		addtimer(CALLBACK(H,/atom/.proc/remove_alt_appearance,"cult_apoc",TRUE), 2400, TIMER_OVERRIDE|TIMER_UNIQUE)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/atom/,remove_alt_appearance), "cult_apoc", TRUE), 2400, TIMER_OVERRIDE|TIMER_UNIQUE)
 		to_chat(ranged_ability_user,"<span class='cult'><b>[H] has been cursed with living nightmares!</b></span>")
 		attached_action.charges--
 		attached_action.desc = attached_action.base_desc
@@ -297,8 +297,8 @@
 			R.conceal()
 		for(var/obj/structure/destructible/cult/S in range(5,owner))
 			S.conceal()
-		for(var/turf/open/floor/engine/cult/T  in range(5,owner))
-			T.realappearance.alpha = 0
+		// for(var/turf/open/floor/engine/cult/T  in range(5,owner))
+		// 	T.realappearance.alpha = 0
 		for(var/obj/machinery/door/airlock/cult/AL in range(5, owner))
 			AL.conceal()
 		revealing = TRUE
@@ -314,8 +314,8 @@
 			R.reveal()
 		for(var/obj/structure/destructible/cult/S in range(6,owner))
 			S.reveal()
-		for(var/turf/open/floor/engine/cult/T  in range(6,owner))
-			T.realappearance.alpha = initial(T.realappearance.alpha)
+/*		for(var/turf/open/floor/engine/cult/T  in range(6,owner))
+			T.realappearance.alpha = initial(T.realappearance.alpha)*/
 		for(var/obj/machinery/door/airlock/cult/AL in range(6, owner))
 			AL.reveal()
 		revealing = FALSE

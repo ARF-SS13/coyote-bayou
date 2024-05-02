@@ -15,7 +15,7 @@
 /obj/item/megaphone/equipped(mob/M, slot)
 	. = ..()
 	if (slot == SLOT_HANDS)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY,PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -32,6 +32,7 @@
 			spamcheck = world.time + 50
 			speech_args[SPEECH_SPANS] |= voicespan
 
+
 /obj/item/megaphone/emag_act(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
@@ -44,6 +45,7 @@
 /obj/item/megaphone/sec
 	name = "security megaphone"
 	icon_state = "megaphone-sec"
+	voicespan = list(SPAN_REALLYBIG, "userdanger")
 
 /obj/item/megaphone/command
 	name = "command megaphone"

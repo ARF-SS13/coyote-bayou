@@ -446,6 +446,7 @@
 			return TRUE
 
 	to_chat(M, span_warning("You are unable to equip that!"))
+	usr.playsound_local(usr.loc, 'sound/weapons/bite.ogg', 100, 0)
 	return FALSE
 
 //-->

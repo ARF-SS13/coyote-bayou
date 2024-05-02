@@ -109,11 +109,11 @@
 	to_chat(user, span_notice("You emag [src]'s interface."))
 	emag_cooldown = world.time + 100
 
-	if(is_servant_of_ratvar(src))
+/*	if(is_servant_of_ratvar(src))
 		to_chat(src, "<span class='nezbere'>\"[text2ratvar("You will serve Engine above all else")]!\"</span>\n\
 		<span class='danger'>ALERT: Subversion attempt denied.</span>")
 		log_game("[key_name(user)] attempted to emag cyborg [key_name(src)], but they serve only Ratvar.")
-		return TRUE
+		return TRUE*/
 
 	if(connected_ai && connected_ai.mind && connected_ai.mind.has_antag_datum(/datum/antagonist/traitor))
 		to_chat(src, span_danger("ALERT: Foreign software execution prevented."))
@@ -127,7 +127,7 @@
 		ResetModule()
 		return TRUE
 
-	INVOKE_ASYNC(src, .proc/beep_boop_rogue_bot, user)
+	INVOKE_ASYNC(src,PROC_REF(beep_boop_rogue_bot), user)
 	return TRUE
 
 /mob/living/silicon/robot/proc/beep_boop_rogue_bot(mob/user)

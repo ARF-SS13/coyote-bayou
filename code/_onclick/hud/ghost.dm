@@ -52,6 +52,16 @@
 	var/mob/dead/observer/G = usr
 	SSsecondwind.show_menu_to(G)
 
+/atom/movable/screen/ghost/character_directory
+	name = "Character Directory"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "chardir"
+
+/atom/movable/screen/ghost/character_directory/Click()
+	var/mob/dead/observer/G = usr
+	var/client/C = G.client
+	C.show_character_directory()
+
 /atom/movable/screen/ghost/move_ghost_up
 	name = "Move up"
 	icon_state = "move_ghost_up"
@@ -99,6 +109,11 @@
 
 	using = new /atom/movable/screen/ghost/second_wind()
 	using.screen_loc = ui_ghost_second_wind // THIS IS A DEFINE!!!
+	using.hud = src
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/character_directory()
+	using.screen_loc = ui_ghost_char_dir // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 

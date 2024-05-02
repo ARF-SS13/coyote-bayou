@@ -250,6 +250,18 @@
 	using.hud = src
 	hotkeybuttons += using
 
+	using = new /atom/movable/screen/questbook()
+	// using.icon = ui_style
+	using.screen_loc = ui_questbook
+	using.hud = src
+	hotkeybuttons += using
+
+	using = new /atom/movable/screen/scannerpls()
+	// using.icon = ui_style
+	using.screen_loc = ui_questscanner
+	using.hud = src
+	hotkeybuttons += using
+
 	using = new /atom/movable/screen/rest()
 	using.icon = ui_style
 	using.screen_loc = ui_pull_resist
@@ -366,6 +378,10 @@
 	sleep_hud_button.hud = src
 	infodisplay += sleep_hud_button
 
+	triage = new /atom/movable/screen/triage()
+	triage.hud = src
+	infodisplay += triage
+
 	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
 	aooc_hud_button.hud = src
 	infodisplay += aooc_hud_button
@@ -382,7 +398,7 @@
 	pull_icon.icon = ui_style
 	pull_icon.hud = src
 	pull_icon.update_icon()
-	pull_icon.screen_loc = ui_pull_resist
+	pull_icon.screen_loc = ui_pull_stop
 	static_inventory += pull_icon
 
 	lingchemdisplay = new /atom/movable/screen/ling/chems()

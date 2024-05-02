@@ -1102,6 +1102,47 @@ h1.alert, h2.alert {
   }
 }
 
+.private	{
+  color: #00563b;
+  // font-weight: bold;
+  animation: private 3000ms;
+  animation-direction: linear;
+}
+
+@keyframes private {
+	0% {
+    color: #006734;
+  }
+	10% {
+    color: #00FF00;
+  }
+	20% {
+    color: #006734;
+  }
+	30% {
+    color: #00FF00;
+  }
+	100% {
+    color: #00563b;
+  }
+}
+
+.privateSent	{
+  color: #002c21;
+  // font-weight: bold;
+  animation: privateSent 3000ms;
+  animation-direction: linear;
+}
+
+@keyframes privateSent {
+	0% {
+    color: #00FF00;
+  }
+	100% {
+    color: #002c21;
+  }
+}
+
 .icon {
   height: 1em;
   width: auto;
@@ -1203,4 +1244,108 @@ h1.alert, h2.alert {
 
 .ml-3 {
   margin-left: 3em;
+}
+
+.urgent	{
+  color: #292929;
+  font-weight: bold;
+  animation: urgentalert 3000ms;
+  animation-direction: linear;
+  text-shadow: 0 0 2px #ff0000
+}
+
+@keyframes urgentalert {
+	0% {
+    color: #000000;
+  }
+	5% {
+    color: #ffffff;
+  }
+	10% {
+    color: #000000;
+  }
+	15% {
+    color: #ffffff;
+  }
+	25% {
+    color: #222222;
+  }
+	100% {
+    color: #2e2e2e;
+  }
+
+}
+
+.softlove	{
+  color: #ff006a;
+  font-weight: bold;
+  animation: softlovin 5000ms infinite;
+  animation-direction: alternate;
+  text-shadow: 0 0 6px #ff6d6d
+}
+
+@keyframes softlovin {
+	0% {
+    color: #da005b;
+  }
+	100% {
+    color: #9500ff;
+  }
+}
+
+.glitch	{
+  color: #ff006a;
+  font-weight: bold;
+  animation: glitchy 5000ms;
+  animation-direction: both;
+}
+
+@keyframes glitchy {
+	0% {
+    color: #f2ff00;
+  }
+	2% {
+    color: #ff0000;
+  }
+	4% {
+    color: #1eff00;
+  }
+	6% {
+    color: #1100ff;
+  }
+	8% {
+    color: #ffffff;
+  }
+	100% {
+    color: #000000;
+  }
+
+}
+
+.blockytext {
+  color: #ffffff;
+  background-color: #000000;
+  font-weight: bold;
+  display: outside;
+  animation: blockytext 15000ms infinite;
+  animation-direction: linear;
+}
+
+@keyframes blockytext {
+	0% {
+    color: #ffffff;
+  }
+	1% {
+    color: #ff0000;
+  }
+	2% {
+    color: #ffffff;
+  }
+	3% {
+    color: #ff0000;
+  }
+	4% {
+    color: #ffffff;
+  }
+
 }

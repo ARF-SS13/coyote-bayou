@@ -402,6 +402,28 @@
 		var/mob/living/L = usr
 		L.resist()
 
+/atom/movable/screen/questbook
+	name = "Open Questbook"
+	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
+	icon_state = "act_resist"
+	layer = HUD_LAYER
+	plane = HUD_PLANE
+
+/atom/movable/screen/questbook/Click()
+	if(isliving(usr))
+		SSeconomy.open_quest_console(usr)
+
+/atom/movable/screen/scannerpls
+	name = "Get a Quest Scanner"
+	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
+	icon_state = "act_scannerpls"
+	layer = HUD_LAYER
+	plane = HUD_PLANE
+
+/atom/movable/screen/scannerpls/Click()
+	if(isliving(usr))
+		SSeconomy.give_claimer(usr, usr)
+
 /atom/movable/screen/rest
 	name = "rest"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'

@@ -91,7 +91,7 @@
 		return
 	if(user)
 		visible_message(span_warning("[user] stuffs [victim] into [src]!"))
-	RegisterSignal(victim, COMSIG_LIVING_RESIST, .proc/free_me)
+	RegisterSignal(victim, COMSIG_LIVING_RESIST,PROC_REF(free_me))
 	inserted = victim
 	inserted.forceMove(src)
 

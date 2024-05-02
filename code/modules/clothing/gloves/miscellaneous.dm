@@ -74,6 +74,15 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
 	enhancement = 1 //They're +1!
 
+/obj/item/clothing/gloves/fingerless/pugilist/gravity
+	name = "gravity gauntlet"
+	desc = "A magical glove that grants the wearer the ability to grab distant objects, use with *magegrab!"
+	icon_state = "s_ninjan"
+	item_state = "s_ninjan"
+	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
+	enhancement = 0 //Not for damage, a utility item
+	secondary_trait = TRAIT_MAGEGRAB //Should give you the magegrab quirk, not telekinesis
+
 /obj/item/clothing/gloves/fingerless/pugilist/hungryghost
 	name = "armwraps of the hungry ghost"
 	desc = "A series of blackened, bloodstained armwraps stitched with strange geometric symbols. Makes you pretty keen to commit horrible acts against the living through bloody carnage."

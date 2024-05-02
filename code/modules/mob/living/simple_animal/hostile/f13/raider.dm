@@ -48,11 +48,18 @@
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
+	retreat_health_percent = 0.1
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
-/mob/living/simple_animal/hostile/raider/Initialize()
+/mob/living/simple_animal/hostile/raider/Initialize() // I dont, but, you can
 	. = ..()
 	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -158,6 +165,9 @@
 	loot_amount_random = FALSE
 	random_trash_loot = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 // LEGENDARY RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/legendary
@@ -193,10 +203,18 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
-	name = "Raider Boss"
+	name = "Machinegun Martha"
+	gender = FEMALE
 	icon_state = "raiderboss"
 	icon_living = "raiderboss"
 	icon_dead = "raiderboss_dead"
@@ -211,7 +229,7 @@
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
 	speed = 3.5
-	projectiletype = /obj/item/projectile/bullet/c10mm/improvised
+	projectiletype = /obj/item/projectile/bullet/c10mm/improvised/simple
 	loot = list(/obj/item/gun/ballistic/automatic/smg/smg10mm, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
@@ -223,6 +241,7 @@
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	despawns_when_lonely = FALSE
+	important = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
@@ -233,7 +252,13 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
@@ -300,6 +325,9 @@
 		"*come",\
 		"Fuck em' up!"\
 		))
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 10
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
 	name = "Blueberry Bates and his Bottom-Feeder Buys"
@@ -319,7 +347,9 @@
 	auto_fire_burst_count = 1
 	retreat_distance = 3
 	approach_distance = 3
-	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	speak_emote = list(
 		"mutters",
 		"counts his coins to himself",
@@ -385,6 +415,9 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 // FIREFIGHTER RAIDER
 /mob/living/simple_animal/hostile/raider/firefighter
@@ -398,6 +431,9 @@
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	melee_attacks_per_tick = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 // BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
@@ -430,6 +466,9 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/raider/ranged/biker
 	uniform = /obj/item/clothing/under/f13/ncrcf
@@ -438,6 +477,7 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
+	
 
 // YANKEE RAIDER
 
@@ -456,6 +496,9 @@
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 
 /obj/effect/mob_spawn/human/corpse/raider/baseball
@@ -480,6 +523,9 @@
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	melee_attacks_per_tick = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/raiderrags
@@ -560,20 +606,20 @@
 	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/op
+	projectiletype = /obj/item/projectile/bullet/c45/improvised
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
 	var/spawn_time = 15 SECONDS
-	var/spawn_text = "flies from"
+	//var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
 	loot_drop_amount = 5
 
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
 	RemoveComponentByType(/datum/component/spawner)
@@ -821,7 +867,7 @@
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/energy/nuclear_particle
+	projectiletype = /obj/item/projectile/energy/nuclear_particle/cultist
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
 	auto_fire_burst_count = 1

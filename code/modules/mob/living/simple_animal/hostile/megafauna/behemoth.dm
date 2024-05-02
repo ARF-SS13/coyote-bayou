@@ -29,6 +29,9 @@
 	attack_verb_simple = "slams"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	weather_immunities = list("snow")
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	speak_emote = list("roars")
 	attack_action_types = list(/datum/action/innate/megafauna_attack/heavy_stomp,
 							   /datum/action/innate/megafauna_attack/disorienting_scream)
@@ -95,7 +98,7 @@
 	. = ..()
 	stored_move_dirs &= ~direct
 	if(!stored_move_dirs)
-		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1, FALSE)
+		INVOKE_ASYNC(src,PROC_REF(ground_slam), stomp_range, 1, FALSE)
 
 /// Slams the ground around the behemoth throwing back enemies caught nearby
 /mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay, do_damage)

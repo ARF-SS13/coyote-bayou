@@ -127,7 +127,7 @@
 /obj/item/rupee/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -141,7 +141,7 @@
 	SIGNAL_HANDLER
 	if(!istype(M))
 		return
-	INVOKE_ASYNC(M, /mob/.proc/put_in_hands, src)
+	INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/,put_in_hands), src)
 
 /obj/item/rupee/equipped(mob/user, slot)
 	playsound(get_turf(loc), 'sound/misc/server-ready.ogg', 50, 1, -1)

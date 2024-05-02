@@ -15,7 +15,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	///The type of sheet this material creates. This should be replaced as soon as possible by greyscale sheets
 	var/sheet_type
 	///This is a modifier for force, and resembles the strength of the material
-	var/strength_modifier = 1
+	var/strength_modifier = 0.9
 	///This is a modifier for integrity, and resembles the strength of the material
 	var/integrity_modifier = 1
 	///This is the amount of value per 1 unit of the material
@@ -54,7 +54,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 		source.name = "[name] [source.name]"
 
 	if(beauty_modifier)
-		addtimer(CALLBACK(source, /datum.proc/_AddElement, list(/datum/element/beauty, beauty_modifier * amount)), 0)
+		addtimer(CALLBACK(source, TYPE_PROC_REF(/datum,_AddElement), list(/datum/element/beauty, beauty_modifier * amount)), 0)
 
 	if(istype(source, /obj)) //objs
 		on_applied_obj(source, amount, material_flags)

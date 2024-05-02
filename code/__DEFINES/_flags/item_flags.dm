@@ -32,6 +32,8 @@
 #define HAND_ITEM							(1<<15)
 /// Has this thing been run through a blender at least once?
 #define BEEN_JUICED							(1<<16)
+/// This thing should be deleted when dropped, BUT and this is important, only deletes when it is no longer in your inventory
+#define PERSONAL_ITEM						(1<<17)
 
 /// This thing was clicked on, and something said not to pick it up (cus its gonna do something cool)
 #define ITEM_CLICKED_NOPICKUP				(1<<1)

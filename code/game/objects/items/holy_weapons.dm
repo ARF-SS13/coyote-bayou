@@ -319,7 +319,7 @@
 
 	nullrod_icons = sortList(nullrod_icons)
 
-	var/choice = show_radial_menu(L, src , nullrod_icons, custom_check = CALLBACK(src, .proc/check_menu, L), radius = 42, require_near = TRUE)
+	var/choice = show_radial_menu(L, src , nullrod_icons, custom_check = CALLBACK(src,PROC_REF(check_menu), L), radius = 42, require_near = TRUE)
 	if(!choice || !check_menu(L))
 		return
 
@@ -366,6 +366,8 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	name = "god hand"
 	desc = "This hand of yours glows with an awesome power!"
+	force = 45
+	force_wielded = 65 //It replaces an entire hand
 	item_flags = ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/sear.ogg'
@@ -545,6 +547,8 @@
 	item_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
+	force = 55
+	force_wielded = 65 //It replaces an entire hand
 	item_flags = ABSTRACT
 	w_class = WEIGHT_CLASS_HUGE
 	sharpness = SHARP_EDGED
@@ -566,8 +570,8 @@
 	name = "monk's staff"
 	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass mutants.."
 	w_class = WEIGHT_CLASS_BULKY
-	force_wielded = 30 // Slightly better than the null rod with much better block chance.
-	force_unwielded = 20
+	force_wielded = 45 // Slightly better than the null rod with much better block chance.
+	force_unwielded = 35
 	block_chance = 40
 	attack_speed = CLICK_CD_MELEE * 0.85 // Everybody was kung fu fighting!
 	slot_flags = INV_SLOTBIT_BACK
@@ -614,7 +618,7 @@
 		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
 		H.adjustStaminaLoss(rand(12,18))
 		if(prob(25))
-			(INVOKE_ASYNC(src, .proc/jedi_spin, user))
+			(INVOKE_ASYNC(src,PROC_REF(jedi_spin), user))
 	else
 		return ..()
 
@@ -660,7 +664,7 @@
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")
-	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_BELT // its a necklace lol
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK | INV_SLOTBIT_BELT // its a necklace lol
 	var/praying = FALSE
 	var/deity_name = "Giex" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
 
@@ -702,13 +706,14 @@
 		span_info("You kneel[M == user ? null : " next to [M]"] and begin a prayer to [deity_name]."))
 
 	praying = TRUE
-	if(do_after(user, 20, target = M))
-		M.reagents?.add_reagent(/datum/reagent/water/holywater, 5)
+	if(do_after(user, 100, target = M)) //I made their time to cast about 5x longer, which isnt much still.
+		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Makes it heal more if your injured, less if your not
+		M.reagents?.add_reagent(/datum/reagent/medicine/radaway, 5) //I would also add some wound healing personally, but I think this is good enough
 		to_chat(M, span_notice("[user]'s prayer to [deity_name] has eased your pain!"))
-		M.adjustToxLoss(-5, TRUE, TRUE)
-		M.adjustOxyLoss(-5)
-		M.adjustBruteLoss(-5)
-		M.adjustFireLoss(-5)
+		M.adjustToxLoss(-20, TRUE, TRUE)
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-20, include_roboparts = TRUE) // I made robots able to benifit from this
+		M.adjustFireLoss(-20, include_roboparts = TRUE) //I quadrupled their healing
 		praying = FALSE
 	else
 		to_chat(user, span_notice("Your prayer to [deity_name] was interrupted."))

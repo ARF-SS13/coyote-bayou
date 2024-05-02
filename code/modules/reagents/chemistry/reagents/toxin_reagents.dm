@@ -254,7 +254,7 @@
 	. = ..()
 	for(var/i in M.all_scars)
 		qdel(i)
-
+/*
 /datum/reagent/toxin/zombiepowder
 	name = "Zombie Powder"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
@@ -294,7 +294,7 @@
 		if(9 to INFINITY)
 			fakedeath_active = TRUE
 			M.fakedeath(type)
-
+*/
 /datum/reagent/toxin/ghoulpowder
 	name = "Ghoul Powder"
 	description = "A strong neurotoxin that slows metabolism to a death-like state, while keeping the patient fully active. Causes toxin buildup if used too long."

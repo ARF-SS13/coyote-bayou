@@ -25,7 +25,7 @@
 
 /obj/item/reagent_containers/food/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED, .proc/take_a_bellybite)
+	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED,PROC_REF(take_a_bellybite))
 
 
 /obj/item/reagent_containers/food/proc/adjust_food_quality(new_quality)

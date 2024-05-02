@@ -104,9 +104,10 @@
 		falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, 
 		distance_multiplier = 1, 
 		use_reverb = FALSE,
-		soundpref_index
+		soundpref_index,
+		respect_deafness = TRUE
 		)
-	if(!client || !can_hear())
+	if(!client || (respect_deafness && !can_hear()))
 		return
 
 	if(!S)

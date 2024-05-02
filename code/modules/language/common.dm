@@ -18,10 +18,9 @@
 	Sources:
 	http://www.sttmedia.com/syllablefrequency-english
 	http://www.chinahighlights.com/travelguide/learning-chinese/pinyin-syllables.htm
-*/______qdel_list_wrapper(list/L)
-	. = ..()
+*/
 
-	//New list generated with chatgpt sounding 'vaguely' like english.  Better than it sounding way too much like chinese, lol
+//New list generated with chatgpt sounding 'vaguely' like english.  Better than it sounding way too much like chinese, lol
 /datum/language/common/syllables = list(
 "a",
 "zib",

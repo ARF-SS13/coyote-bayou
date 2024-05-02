@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			Radio.set_frequency(radio_freq)
 			Radio.talk_into(src, "[emergency] emergency in [department]!!", radio_freq)
 			update_icon()
-			addtimer(CALLBACK(src, .proc/clear_emergency), 5 MINUTES)
+			addtimer(CALLBACK(src,PROC_REF(clear_emergency)), 5 MINUTES)
 
 	if(href_list["department"] && message)
 		var/sending = message
@@ -368,8 +368,8 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				radio_freq = FREQ_COMMAND
 			if("medbay")
 				radio_freq = FREQ_MEDICAL
-			if("science")
-				radio_freq = FREQ_SCIENCE
+			if("reclaimer")
+				radio_freq = FREQ_RECLAIMER
 			if("engineering")
 				radio_freq = FREQ_ENGINEERING
 			if("security")

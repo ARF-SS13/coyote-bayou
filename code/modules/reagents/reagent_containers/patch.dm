@@ -46,28 +46,55 @@
 /obj/item/reagent_containers/pill/patch/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
 
+// ---------------------------------
+// MED-X
+
+/obj/item/reagent_containers/pill/patch/medx
+	name = "Med-X"
+	desc = "A needle containing a single dose of Med-X. This powerful drug will not only allow the user to take more damage before falling unconscious, but it'll help them recover from critical injuries."
+	list_reagents = list(/datum/reagent/medicine/medx = 15) // Addiction is 16u. Technically it's worse than psycho overall, so larger dose-per-item makes it better for pure duration
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_medx"
 
 // ---------------------------------
 // JET
 
 /obj/item/reagent_containers/pill/patch/jet
 	name = "Jet"
-	desc = "A highly addictive meta-amphetamine that produces a fast-acting, intense euphoric high on the user."
+	desc = "This inhaler contains a highly addictive drug that not only gives the user an euphoric high, but also causes them to have greatly increased stamina regeneration."
 	list_reagents = list(/datum/reagent/drug/jet = 10)
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_jet"
-
 
 // ---------------------------------
 // TURBO
 
 /obj/item/reagent_containers/pill/patch/turbo
 	name = "Turbo"
-	desc = "A chem that vastly increases the user's reflexes and slows their perception of time."
+	desc = "Turbo is a powerful drug that pushes the user's body into overdrive, allowing them to temporarily ignore any slowness caused by injuries or bloodloss."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_turbo"
 	list_reagents = list(/datum/reagent/drug/turbo = 5)
 
+// ---------------------------------
+// PSYCHO
+
+/obj/item/reagent_containers/pill/patch/psycho
+	name = "Psycho"
+	desc = "A single-use pack of psycho, this drug is tailor made for a frontline combatant. Users are much harder to both stun and knock unconscious, and gain a large boost in strength. However, it's both addictive and causes a slight amount of brain damage with every shot."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_psycho"
+	list_reagents = list(/datum/reagent/drug/psycho = 10)
+
+// ---------------------------------
+// STEADY
+
+/obj/item/reagent_containers/pill/patch/steady
+	name = "Steady"
+	desc = "This inhaler is filled with the combat drug known as 'Steady.' While under its effects, the user will find it much easier to control any weapon's recoil."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_steady"
+	list_reagents = list(/datum/reagent/drug/steady = 10)
 
 // ---------------------------------
 // HEALING POWDER
@@ -124,11 +151,11 @@
 	desc = "A strong herbal healing concoction invented and created by the Twin Mothers tribe."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_bitterdrink"
-	list_reagents = list(/datum/reagent/medicine/healing_powder = 5, /datum/reagent/medicine/bicaridine = 5, /datum/reagent/medicine/kelotane = 5) 
+	list_reagents = list(/datum/reagent/medicine/healing_powder = 5, /datum/reagent/medicine/bicaridine = 5, /datum/reagent/medicine/kelotane = 5)
 	self_delay = 5
 
 // ---------------------------------
-// HYDRA - never a thing, make it something. Sprites done.
+// HYDRA - never a thing, make it something. Sprites done. *Kelpnote- perfect chem for healing Wound damage since that's an unfilled niche.
 
 /* /obj/item/reagent_containers/pill/patch/hydra
 	name = "Hydra"
@@ -147,7 +174,7 @@
 	desc = "A mysterious, sweet tasting and scented red fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this red ambrosia is unparalelled in its healing factor on the body."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_redambrosia"
-	list_reagents = list(/datum/reagent/red_ambrosia = 1) 
+	list_reagents = list(/datum/reagent/red_ambrosia = 1)
 	self_delay = 5 SECONDS
 
 /obj/item/reagent_containers/pill/blueambrosia // Heals brain damage and traumas
@@ -155,7 +182,7 @@
 	desc = "A mysterious, sweet tasting and scented blue fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this blue ambrosia is unparalelled in its healing factor on the mind."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_blueambrosia"
-	list_reagents = list(/datum/reagent/blue_ambrosia = 1) 
+	list_reagents = list(/datum/reagent/blue_ambrosia = 1)
 	self_delay = 5 SECONDS
 
 /obj/item/reagent_containers/pill/greenambrosia // Heals 100 damage to all internal organs
@@ -163,7 +190,7 @@
 	desc = "A mysterious, sweet tasting and scented green fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this green ambrosia is unparalelled in its healing factor on one's internals."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_greenambrosia"
-	list_reagents = list(/datum/reagent/green_ambrosia = 1) 
+	list_reagents = list(/datum/reagent/green_ambrosia = 1)
 	self_delay = 5 SECONDS
 
 /obj/item/reagent_containers/pill/patch/random

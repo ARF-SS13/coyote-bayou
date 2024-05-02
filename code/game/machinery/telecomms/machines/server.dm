@@ -81,8 +81,8 @@
 
 /obj/machinery/telecomms/server/presets/science
 	id = "Science Server"
-	freq_listening = list(FREQ_SCIENCE)
-	autolinkers = list("science")
+	freq_listening = list(FREQ_RECLAIMER)
+	autolinkers = list("reclaimer")
 
 /obj/machinery/telecomms/server/presets/medical
 	id = "Medical Server"
@@ -116,7 +116,7 @@
 
 /obj/machinery/telecomms/server/presets/bos
 	id = "BOS Server"
-	freq_listening = list(FREQ_ASHDOWN)
+	freq_listening = list(FREQ_GUILD)
 	autolinkers = list("bos")
 
 /obj/machinery/telecomms/server/presets/enclave

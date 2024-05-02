@@ -816,3 +816,106 @@
 	build_path = /obj/item/shuttle_route_optimisation/void
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+/////////////////////////////////////////
+////////////Crafting Components//////////
+/////////////////////////////////////////
+
+/datum/design/metal_parts
+	name = "Metal Parts"
+	desc = "A craftng component used to build things."
+	id = "metal_parts"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/stack/crafting/metalparts
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/good_parts
+	name = "High Quality Metal Parts"
+	desc = "A craftng component used to build things."
+	id = "good_parts"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/titanium = 200)
+	build_path = /obj/item/stack/crafting/goodparts
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/electronic_parts
+	name = "Electronic Parts"
+	desc = "A craftng component used to build things."
+	id = "electronic_parts"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/glass = 200, /datum/material/gold = 200, /datum/material/silver = 200)
+	build_path = /obj/item/stack/crafting/electronicparts
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/flux_capacitor
+	name = "Flux Capacitor"
+	desc = "A craftng component used to build things."
+	id = "flux_capacitor"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/plasma = 1000, /datum/material/silver = 500, /datum/material/gold = 300)
+	build_path = /obj/item/advanced_crafting_components/flux
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/focused_lens
+	name = "Focused Crystal Lenses"
+	desc = "A craftng component used to build things."
+	id = "focused_lens"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/glass = 1000, /datum/material/silver = 500, /datum/material/diamond = 300)
+	build_path = /obj/item/advanced_crafting_components/lenses
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/conductor_coil
+	name = "Superconductor Coil"
+	desc = "A craftng component used to build things."
+	id = "conductor_coil"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/silver = 1000, /datum/material/gold = 500, /datum/material/bluespace = 300)
+	build_path = /obj/item/advanced_crafting_components/conductors
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/adv_receiver
+	name = "Advanced Modular Receiver"
+	desc = "A craftng component used to build things."
+	id = "adv_receiver"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/titanium = 1000, /datum/material/iron = 500, /datum/material/silver = 300)
+	build_path = /obj/item/advanced_crafting_components/receiver
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/weapon_assembly
+	name = "Pre-War Weapon Assembly"
+	desc = "A craftng component used to build things."
+	id = "weapon_assembly"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/titanium = 1000, /datum/material/silver = 500, /datum/material/iron = 300)
+	build_path = /obj/item/advanced_crafting_components/assembly
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/super_alloy
+	name = "Superlight Alloys"
+	desc = "A craftng component used to build things."
+	id = "super_alloy"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/diamond = 1000, /datum/material/bluespace = 500, /datum/material/titanium = 300)
+	build_path = /obj/item/advanced_crafting_components/alloys
+	category = list("Stock Parts")
+	lathe_time_factor = 0.2
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE

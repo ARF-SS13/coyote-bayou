@@ -587,22 +587,26 @@
 	icon_state = "bigwolfbp"
 	matrixed_sections = MATRIX_ALL
 
-/datum/sprite_accessory/ears/human/fennec2bp
+/datum/sprite_accessory/ears/mam_ears/fennec2bp
 	name = "Fennec (ALT) - both piercings"
 	icon_state = "fennec2bp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-/datum/sprite_accessory/ears/human/fennec2lp
+/datum/sprite_accessory/ears/mam_ears/fennec2lp
 	name = "Fennec (ALT) - left piercing"
 	icon_state = "fennec2lp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-/datum/sprite_accessory/ears/human/fennec2rp
+/datum/sprite_accessory/ears/mam_ears/fennec2rp
 	name = "Fennec (ALT) - right piercing"
 	icon_state = "fennec2rp"
 	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
-
+/datum/sprite_accessory/ears/mam_ears/draconic
+	name = "Draconic Spikes"
+	icon_state = "draconicspikes"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	matrixed_sections = MATRIX_ALL

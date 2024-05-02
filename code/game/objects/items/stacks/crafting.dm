@@ -87,6 +87,9 @@ GLOBAL_LIST_INIT(metalparts_recipes, list(\
 
 GLOBAL_LIST_INIT(electronicparts_recipes, list(\
 	new/datum/stack_recipe("ion arrowhead", /obj/item/stack/arrowhead/ion, 1, 1, 1 SECONDS),\
+	new/datum/stack_recipe("chameleon mask", /obj/item/clothing/mask/chameleon, 5, 1, 1 SECONDS),\
+	new/datum/stack_recipe("chameleon glasses", /obj/item/clothing/glasses/chameleon, 5, 1, 1 SECONDS),\
+
 	))
 
 /obj/item/stack/crafting/electronicparts/get_main_recipes()
