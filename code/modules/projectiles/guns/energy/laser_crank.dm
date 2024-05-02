@@ -308,7 +308,7 @@
 	crank_power = 1333 // 6 cranks till full
 	crank_stamina_cost = 50 // But also cost more stamina than before
 	cranking_time = 4 // And require a little more time
-	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+	init_recoil = LASER_CARBINE_RECOIL(1, 0.8)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine
 	name = "integrated single charge cell"
@@ -332,9 +332,9 @@
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	cranking_time = 3 SECONDS 
-	crank_stamina_cost = 30 
-	crank_power = 2500 
+	cranking_time = 3 SECONDS
+	crank_stamina_cost = 30
+	crank_power = 2500
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
@@ -342,7 +342,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/pistol)
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol 
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/pistol
 	name = "integrated single charge cell"
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
@@ -371,7 +371,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle)
 	crank_power = 1500 // 7 cranks until full
 	crank_stamina_cost = 45 // 3 stamina bars
-	cranking_time = 4 // And require a little more time
+	cranking_time = 4 SECONDS// And require a little more time
 	can_flashlight = 1
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
@@ -412,7 +412,7 @@
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)
-	init_recoil = LASER_RIFLE_RECOIL(2, 2)
+	init_recoil = LASER_RIFLE_RECOIL(2, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower,
 		/datum/firemode/automatic/rpm40
@@ -482,7 +482,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	cranking_time = 3 SECONDS // Pretty reasonable.
 	crank_stamina_cost = 40 // Takes 160 stamina for one charge
-	crank_power = 500 
+	crank_power = 500
 	crank_sound = list(
 		'sound/weapons/laserPumpEmpty.ogg',
 	)
@@ -528,7 +528,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	cranking_time = 3 SECONDS // Pretty reasonable.
 	crank_stamina_cost = 35 // Gets 3 cranks per stamina bar
-	crank_power = 500 
+	crank_power = 500
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
@@ -571,7 +571,7 @@
 	)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser/shocker)
-	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1)
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm150,
 	/datum/firemode/semi_auto,

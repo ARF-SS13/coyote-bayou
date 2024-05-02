@@ -273,6 +273,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+	init_recoil = LASER_HANDGUN_RECOIL(0.8, 0.8)
 
 //Recharger Pistol
 /obj/item/gun/energy/laser/wattz/recharger
