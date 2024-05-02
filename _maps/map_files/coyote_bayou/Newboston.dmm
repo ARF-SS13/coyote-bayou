@@ -173,7 +173,8 @@
 /area/f13/building/tribal/cave)
 "ads" = (
 /turf/closed/indestructible/f13/matrix{
-	plane = -1
+	plane = -1;
+	opacity = 0
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "adu" = (
@@ -8045,6 +8046,13 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"dTd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "dTu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/cult,
@@ -11782,6 +11790,16 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
+"fEr" = (
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "fFe" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -36071,6 +36089,12 @@
 	color = "#777777"
 	},
 /area/f13/building/tribal/cave)
+"rac" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "rax" = (
 /obj/structure/debris/v4,
 /turf/open/floor/f13{
@@ -40938,16 +40962,6 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
-"tlj" = (
-/obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "tlo" = (
 /obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -44385,12 +44399,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"uTg" = (
-/obj/machinery/light,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "uTw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -47270,13 +47278,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
-"wkF" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999";
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "wkM" = (
 /obj/effect/spawner/lootdrop/healing_kits,
 /turf/open/floor/f13/wood,
@@ -74310,7 +74311,7 @@ hRl
 "}
 (88,1,1) = {"
 hRl
-tlj
+fEr
 gIm
 gIm
 gIm
@@ -74828,8 +74829,8 @@ uWY
 uWY
 uWY
 aub
-uTg
-tEr
+rac
+fNr
 fNr
 fNr
 fNr
@@ -75856,7 +75857,7 @@ uWY
 uWY
 uWY
 aub
-uTg
+rac
 hVc
 hVc
 hTc
@@ -77141,7 +77142,7 @@ iNm
 mke
 onB
 iJo
-uTg
+rac
 hVc
 hVc
 lbs
@@ -78681,7 +78682,7 @@ blS
 hRl
 kmZ
 dUS
-wkF
+dTd
 dwQ
 his
 eiW
