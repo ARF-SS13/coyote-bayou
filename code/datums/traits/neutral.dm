@@ -1541,7 +1541,7 @@
 
 /datum/status_effect/toomuchcake/on_remove()
 	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "toomuchcake")
+	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "toomuchcake")
 
 /datum/mood_event/toomuchcake
 	mood_change = -4
