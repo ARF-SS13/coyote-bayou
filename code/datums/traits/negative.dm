@@ -1522,7 +1522,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "For a reason or another, you're unable to wear medium or heavy armour"
 	value = -35
 	category = "Functional Quirks"
-	mechanics = "You can't wear medium, heavy or power armor anymore."
+	mechanics = "You can't wear any armor that has more than 2 DT or 35 DR against melee, bullets, or lasers."
 	conflicts = list(
 		/datum/quirk/pa_wear
 	)
