@@ -411,7 +411,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	return angle2dir_cardinal(rand(0,360)) // something fucked up, just send a direction
 
 /obj/item/gun/ballistic/MagReload(mob/user)
-	if(istype(mag_type, /obj/item/ammo_box/magazine/internal) || !ishuman(user))//Miniguns and stuff
+	if((magazine && istype(magazine, /obj/item/ammo_box/magazine/internal)) || !ishuman(user))//Miniguns and shotguns and bolt actions and not magazine guns
 		return FALSE
 	if(on_cooldown() || !user.has_direct_access_to(src, STORAGE_VIEW_DEPTH))
 		to_chat(user, span_notice("You can't reload [src] right now!"))
