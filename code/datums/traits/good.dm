@@ -2936,7 +2936,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/security_expert/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
+	if(!isnull(H?.mind))
+		if(!H.mind.learned_recipes)
+			H.mind.learned_recipes = list()
 		H.mind.learned_recipes += GLOB.security_expert
 
 /datum/quirk/security_expert/remove()
