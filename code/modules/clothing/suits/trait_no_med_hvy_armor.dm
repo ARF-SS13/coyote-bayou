@@ -3,6 +3,8 @@
 #define ARMOR_AVERSION_THRESHOLD_BULLET 35
 #define ARMOR_AVERSION_THRESHOLD_LASER 	35
 #define ARMOR_AVERSION_THRESHOLD_THRES	2
+// IF YOU UPDATE THESE VALUES, UPDATE THE DESCRIPTION OF /datum/quirk/armor_aversion
+
 
 //-->can the human equip this?
 /obj/item/clothing/suit/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
