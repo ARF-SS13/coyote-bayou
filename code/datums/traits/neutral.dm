@@ -1537,7 +1537,13 @@
 	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
 	adjust_text = "That's much better."
 	drop_text = "Whew... free at last!"
-	
+
+/datum/status_effect/toomuchcake
+	id = "Constriction"
+	duration = -1
+	alert_type = null
+	status_type = STATUS_EFFECT_UNIQUE
+
 /datum/status_effect/toomuchcake/on_apply()
 	. = ..()
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "toomuchcake", /datum/mood_event/toomuchcake)
