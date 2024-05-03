@@ -1519,3 +1519,30 @@
 	var/obj/item/right = owner.get_item_by_slot(SLOT_R_STORE)
 	if(params == left || params == right)
 		return COMSIG_MOB_CANCEL_CLICKON
+
+/datum/quirk/dan_nicki/cake
+	name = "Big Ass"
+	desc = "You have a hard time getting your clothes on."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while, or they'll become uncomfortable."
+	conflicts = list()
+	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
+	lose_text = span_notice("Your clothes feel looser.")
+	debuff = /datum/status_effect/hotrod
+	warning_text = "Your clothes are getting a little tight..."
+	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
+	adjust_text = "That's much better."
+	drop_text = "Whew... free at last!"
+	
+/datum/status_effect/toomuchcake/on_apply()
+	. = ..()
+	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "toomuchcake", /datum/mood_event/toomuchcake)
+
+/datum/status_effect/toomuchcake/on_remove()
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "toomuchcake")
+
+/datum/mood_event/toomuchcake
+	mood_change = -4
+	description = span_warning("These clothes are way too tight!")
