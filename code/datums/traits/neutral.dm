@@ -1389,7 +1389,7 @@
 
 /datum/status_effect/dan_nicki/tick()
 	. = ..()
-	owner.adjustOxyLoss(0.3)
+	owner.adjustOxyLoss(0.5)
 
 /datum/quirk/dan_nicki/proc/make_timers()
 	deltimer(debufftimer)
