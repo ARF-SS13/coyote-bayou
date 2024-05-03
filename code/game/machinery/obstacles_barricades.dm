@@ -453,7 +453,6 @@
 	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 5
 
-
 /obj/structure/obstacle/barbedwire/end
 	icon_state = "barbed_end"
 
