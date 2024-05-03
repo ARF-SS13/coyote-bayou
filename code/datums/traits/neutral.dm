@@ -1529,7 +1529,7 @@
 	conflicts = list()
 	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
 	lose_text = span_notice("Your clothes feel looser.")
-	debuff = /datum/status_effect/hotrod
+	debuff = /datum/status_effect/toomuchcake
 	warning_text = "Your clothes are getting a little tight..."
 	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
 	adjust_text = "That's much better."
