@@ -463,7 +463,7 @@
 // we clearly want the revolver to be re-sheathed in the previous location.
 // If anything is broken, or not working properly, contact me or fix it -leonzrygin
 //<--
-/mob/verb/quick_equip()
+/mob/verb/quick_equip(obj/item/I)
 	set name = "quick-equip"
 	set hidden = 1
 
@@ -471,7 +471,8 @@
 		return
 
 	var/obj/item/storage
-	var/obj/item/I = get_active_held_item()
+	if(!isitem(I))
+		I = get_active_held_item()
 
 	//obj/item/melee/onehanded
 

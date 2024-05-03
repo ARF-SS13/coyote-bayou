@@ -25,6 +25,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/handedness = GUN_EJECTOR_RIGHT
 	var/cock_sound = "gun_slide_lock"
 	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if(spawnwithmagazine)
@@ -408,3 +409,51 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			if(GUN_EJECTOR_ANY)
 				return turn(user.dir, pick(0, -90, 90, 180))
 	return angle2dir_cardinal(rand(0,360)) // something fucked up, just send a direction
+
+/obj/item/gun/ballistic/MagReload(mob/user)
+	if((magazine && istype(magazine, /obj/item/ammo_box/magazine/internal)) || !ishuman(user))//Miniguns and shotguns and bolt actions and not magazine guns
+		return FALSE
+	if(on_cooldown() || !user.has_direct_access_to(src, STORAGE_VIEW_DEPTH))
+		to_chat(user, span_notice("You can't reload [src] right now!"))
+		return FALSE
+	//typecast the user as a human
+	var/mob/living/carbon/human/H = user
+
+	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
+	busy_action = TRUE
+	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
+	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for a magazine to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
+		busy_action = FALSE
+		return FALSE
+
+	//First, search for compatible magazines in some predictable locations. Let's not search every item on them to save compute time.
+	var/list/validmags = list()
+	var/list/yourstuff = H?.contents + H?.belt?.contents + H?.back?.contents + H?.wear_suit?.contents + H?.shoes?.contents + H?.head?.contents + H?.l_store?.contents + H?.r_store?.contents + H?.s_store?.contents
+
+	for(var/obj/item/ammo_box/magazine/M in yourstuff)
+		var/rounds = LAZYLEN(M.stored_ammo)
+		if(rounds > 0 && is_magazine_allowed(M))//valid mags have ammo and are allowed to be inserted into your gun
+			validmags[M] = rounds
+	yourstuff = null
+
+	//Then, try to insert the one with the most ammo in it.
+	if(LAZYLEN(validmags))
+		sortTim(validmags, /proc/cmp_numeric_dsc, TRUE)//Sort them by most filled to least filled.
+		for(var/obj/item/ammo_box/magazine/M in validmags)
+			var/obj/magloc = isobj(M.loc) ? M.loc : null
+			if(isgun(magloc))// Don't swap magazines with two guns.
+				continue
+			var/obj/oldmag = isobj(magazine) ? magazine : null
+			if(H.has_direct_access_to(M, STORAGE_VIEW_DEPTH) && attackby(M, user))//Actually reload the gun
+				if(magloc && oldmag)
+					if(!magloc.attackby(oldmag, user))// Try to put your old mag in the new one's place
+						H.quick_equip(oldmag)// If that fails, quick equip it.
+				break//If we loaded a new mag successfully, stop
+	else
+		to_chat(H, span_alert("You couldn't find any filled magazines that fit \the [src]!"))
+		busy_action = FALSE
+		return FALSE
+
+	busy_action = FALSE
+	return TRUE
