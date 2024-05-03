@@ -98,35 +98,84 @@ Slimecrossing Armor
 
 /obj/item/clothing/head/peaceflower
 	name = "entrancing bud"
-	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn."
+	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn. Its behavior can be altered with shift+ctrl click"
 	icon = 'icons/obj/slimecrossing.dmi'
-	icon_state = "peaceflower"
-	item_state = "peaceflower"
+	icon_state = "peaceflower1"
+	item_state = "peaceflower1"
 	slot_flags = INV_SLOTBIT_HEAD
 	body_parts_covered = NONE
 	dynamic_hair_suffix = ""
 	force = 0
 	throwforce = 0
+	light_on = TRUE
+	light_color = "#BC8F8F"
+	light_range = 4
+	light_power = 1
+	var/slurpinlumens = FALSE
+	light_system = MOVABLE_LIGHT
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
+
 
 /obj/item/clothing/head/peaceflower/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == SLOT_HEAD)
 		ADD_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
+		user.AddElement(/datum/element/photosynthesis, -1, -1, -1, -1, 4, 0.5, 0.2, 0)
 
 /obj/item/clothing/head/peaceflower/dropped(mob/living/carbon/human/user)
 	..()
 	REMOVE_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
+	user.RemoveElement(/datum/element/photosynthesis, -1, -1, -1, -1, 4, 0.5, 0.2, 0)
 
 /obj/item/clothing/head/peaceflower/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+
+	if(slurpinlumens)
+		to_chat(user, span_notice("You are already eating light, be patient."))
+		return
+
+	slurpinlumens = TRUE
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, span_warning("You feel at peace. <b style='color:pink'>Why would you want anything else?</b>"))
-			return
+			to_chat(user, span_notice("You begin channeling the flower to reduce your radiation."))
+			if(do_after(user, 5 SECONDS, target = C, allow_movement = TRUE))
+				C.reagents?.add_reagent(/datum/reagent/medicine/radaway, 10)
+				slurpinlumens = FALSE
+				to_chat(user, span_notice("Your radiation slowly fades away.."))
+		slurpinlumens = FALSE
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		slurpinlumens = FALSE
+
 	return ..()
+
+/obj/item/clothing/head/peaceflower/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, src)
+
+/obj/item/clothing/head/peaceflower/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Light On" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_lit"),
+			"Light Off" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_unlit"),
+			"Destroy Flower" = image(icon = 'icons/fallout/objects/bureaucracy.dmi', icon_state = "paperplane_onfire")
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Light Off")
+			set_light_on(FALSE)
+			balloon_alert(user, "The flower closes.")
+		if("Light On") // The photosynth thing works, but literally only once. I don't know how to make it work constantly.
+			set_light_on(TRUE)
+			balloon_alert(user, "The flower blooms")
+		if("Destroy Flower")
+			to_chat(user, span_notice("The flower begins to wither atop your head."))
+			if(do_after(user, 15 SECONDS, stay_close = FALSE))
+				user.RemoveElement(/datum/element/photosynthesis, -1, -1, -1, -1, 4, 0.5, 0.2, 0)
+				qdel(src)
+		else
+			return
 
 /obj/item/clothing/suit/armor/heavy/adamantine
 	name = "adamantine armor"

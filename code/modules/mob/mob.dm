@@ -671,8 +671,13 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
-		var/dat = {"<img src='[PfpHostLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
+		var/followers_clinic_full_of_big_strong_gay_dogs_in_it = PfpHostLink(profilePicture)
+		var/dat = {"
+			<img src='[followers_clinic_full_of_big_strong_gay_dogs_in_it]' width='100%' height='100%' 'object-fit: scale-down;'>
+			<br>
+			[followers_clinic_full_of_big_strong_gay_dogs_in_it] <- Copy this link to your browser to view the full sized image.
+		"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,768)
 		popup.set_content(dat)
 		popup.open()
 

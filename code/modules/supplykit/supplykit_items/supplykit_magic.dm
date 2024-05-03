@@ -37,6 +37,7 @@
 	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
 	cost = 40
 
+
 /datum/supplykit_item/magic/magma
 	name = "Lesser Magma Staff"
 	desc = "A short range flamethrower for magicians"
@@ -91,4 +92,8 @@
 	item = /obj/item/book/granter/martial/carp
 	cost = 40
 
-
+/datum/supplykit_item/magic/peaceflower
+	name = "Peace Flower"
+	desc = "A flower that when worn heals you and feeds you for large amounts, but makes you a pacifist. Its behavior can be altered with shift+ctrl click. You can click it to reduce your radiation too!"
+	item = /obj/item/clothing/head/peaceflower
+	cost = 15

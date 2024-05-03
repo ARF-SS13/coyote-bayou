@@ -2,7 +2,7 @@
 	name = "crowbar"
 	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors. Just holding it makes you feel like a free man. This can help robots repair critical damages."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "crowbar"
+	icon_state = "basicbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = 'sound/items/crowbar.ogg'
@@ -14,7 +14,7 @@
 	throwforce = 7
 	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
-	reskinnable_component = /datum/component/reskinnable/crowbar
+	reskinnable_component = null
 
 	custom_materials = list(/datum/material/iron=450)
 	weapon_special_component = /datum/component/weapon_special/single_turf
@@ -123,21 +123,21 @@
 	name = "crude crowbar"
 	desc = "A flattened piece of rusted pipe, barely enough to squeeze under most things, but helps get a firm grip."
 	icon_state = "crudebar"
-	toolspeed = 6
+	toolspeed = 4
 	reskinnable_component = null
 
+/*
 /obj/item/crowbar/basic
 	name = "basic crowbar"
 	desc = "A flattened and reinforced piece of rebar, bent a to a firm point and pretty flat."
 	icon_state = "basicbar"
 	toolspeed = 2
 	reskinnable_component = null
+*/
 
 /obj/item/crowbar/hightech
-	name = "advanced prying device"
-	desc = "A mechanically assited prying device, capable of dislodging basically anything."
-	icon_state = "advancedbar"
-	item_state = "crowbaradvance"
-	usesound = 'sound/items/jaws_pry.ogg'
+	name = "prewar crowbar"
+	desc = "A high carbon steel crowbar, very durable."
+	icon_state = "crowbar"
 	toolspeed = 0.1
-	reskinnable_component = null
+	reskinnable_component = /datum/component/reskinnable/crowbar

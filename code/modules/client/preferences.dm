@@ -366,6 +366,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/autostand = TRUE
 	var/auto_ooc = FALSE
 
+	/// should our eyes be uwu animu overhair, or normal eyes
+	var/eye_over_hair = FALSE
+
 	/// If we have persistent scars enabled
 	var/persistent_scars = TRUE
 	/// We have 5 slots for persistent scars, if enabled we pick a random one to load (empty by default) and scars at the end of the shift if we survived as our original person
@@ -666,14 +669,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eyes</h3>"
-				dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=eye_type;task=input'>[eye_type]</a><br>"
+				dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=eye_type;task=input'>[eye_type]</a>"
 				if((EYECOLOR in pref_species.species_traits))
 					if(!use_skintones && !mutant_colors)
 						dat += APPEARANCE_CATEGORY_COLUMN
 					if(left_eye_color != right_eye_color)
 						split_eye_colors = TRUE
+					dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_eye_over_hair;task=input'>[eye_over_hair ? "Over Hair" : "Under Hair"]</a>"
 					dat += "<b>Heterochromia</b><br>"
-					dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a><br>"
+					dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"
 					if(!split_eye_colors)
 						dat += "<b>Eye Color</b><br>"
 						dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a><br>"
@@ -2965,6 +2969,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					split_eye_colors = !split_eye_colors
 					right_eye_color = left_eye_color
 
+				if("toggle_eye_over_hair")
+					TOGGLE_VAR(eye_over_hair)
+
 				if("species")
 					var/result = input(user, "Select a species", "Species Selection") as null|anything in GLOB.roundstart_race_names
 					if(result)
@@ -4345,6 +4352,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.special_l = special_l
 	character.fuzzy = fuzzy
 
+	character.eye_over_hair = eye_over_hair
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)

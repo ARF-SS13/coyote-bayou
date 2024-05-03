@@ -766,7 +766,11 @@ SUBSYSTEM_DEF(chat)
 		SSchat.start_page(viower, viowed)
 		return TRUE
 	if(action == "show_pic")
-		var/dat = {"<img src='[profile_pic]'>"}
+		var/dat = {"
+			<img src='[profile_pic]' width='100%' height='100%' 'object-fit: scale-down;'>
+			<br>
+			[profile_pic] <- Copy this link to your browser to view the full sized image.
+		"}
 		var/datum/browser/popup = new(viower, "enlargeImage", "Full Sized Picture!",1024,768)
 		popup.set_content(dat)
 		popup.open()

@@ -113,6 +113,16 @@
 		M.satiety += 30
 	. = ..()
 
+/datum/reagent/consumable/nutriment/batteryacid
+	name = "Battery Acid"
+	description = "Robots need nutrients too."
+	value = REAGENT_VALUE_COMMON
+	nutriment_factor = 15 * REAGENTS_METABOLISM 
+	brute_heal = 0
+	burn_heal = 0
+	canbrew = FALSE
+	synth_metabolism_use_human = TRUE
+
 /datum/reagent/consumable/cooking_oil
 	name = "Cooking Oil"
 	description = "A variety of cooking oil derived from fat or plants. Used in food preparation and frying."

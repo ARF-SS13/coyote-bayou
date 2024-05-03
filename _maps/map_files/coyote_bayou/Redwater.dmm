@@ -1567,8 +1567,8 @@
 "aIj" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -10129,7 +10129,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "dCZ" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
@@ -20613,7 +20613,7 @@
 /turf/open/floor/wood_common,
 /area/f13/bar)
 "hnW" = (
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
 	randomizer_kind = "mid level mobs";
@@ -48337,7 +48337,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "rmW" = (
-/obj/item/weldingtool/basic,
+/obj/item/weldingtool/crude,
 /mob/living/simple_animal/hostile/renegade/grunt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
@@ -64040,7 +64040,7 @@
 "wNN" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/weapon_parts,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,

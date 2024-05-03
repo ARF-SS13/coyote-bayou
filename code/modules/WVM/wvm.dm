@@ -906,6 +906,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick",								/obj/item/flashlight/glowstick,										0), 
 		new /datum/data/wasteland_equipment("Roadside flare",							/obj/item/flashlight/flare,											0), // larp
+		new /datum/data/wasteland_equipment("Hand teleporter",							/obj/item/hand_tele,												0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
@@ -916,7 +917,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					500),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 
 /* These are shit, don't add them.
@@ -973,7 +974,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Health Scanner",	/obj/item/cartridge/medical,						10),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Datapal: Signaler",	/obj/item/cartridge/signal,								10),
 		new /datum/data/wasteland_equipment("V270-Band Signal Divination Device",	/obj/item/pinpointer/validball_finder,						10),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
@@ -1069,54 +1070,66 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	desc = "An automated machine that exchanges currency for raw materials."
 	icon_state = "trade_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
-		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
-		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
-		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
-		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
-		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
-		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
-		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
-		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
-		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
-		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
-		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
-		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
-		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
-		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
-		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
-		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								350), // 40 coins more expensive than hand making to buy
-		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,							600), // 350 + 200 = 550, add another 50 as tax
-		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,							800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
-		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
-		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
-		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
-		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 							50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,								200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,								150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,									100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,								10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,								30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,								300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,								30),
+		new /datum/data/wasteland_equipment("Metal x20",						/obj/item/stack/sheet/metal/twenty,									10),
+		new /datum/data/wasteland_equipment("Glass x10",						/obj/item/stack/sheet/glass/ten,									5),
+		new /datum/data/wasteland_equipment("Plasteel x5",						/obj/item/stack/sheet/plasteel/five,								200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,									25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,						3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,							5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,							6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,								20),
+		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,												350), // 40 coins more expensive than hand making to buy
+		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,											600), // 350 + 200 = 550, add another 50 as tax
+		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,											800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,					2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,					4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,					5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,							1000),
+		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					250),
+		new /datum/data/wasteland_equipment("Weapon Assembly",					/obj/item/advanced_crafting_components/assembly,					250),
+		new /datum/data/wasteland_equipment("Superconductor Coils",				/obj/item/advanced_crafting_components/conductors,					250),
+		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						250),
+		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						250),
+		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						250),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 			50000),
-		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,				200),
-		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,				150),
-		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,					100),
-		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,				10),
-		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,				30),
-		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,				300),
-		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,				30),
-		new /datum/data/wasteland_equipment("Ferrite x20",						/obj/item/stack/sheet/metal/twenty,					10),
-		new /datum/data/wasteland_equipment("Silicate x10",						/obj/item/stack/sheet/glass/ten,					5),
-		new /datum/data/wasteland_equipment("Plasteel x1",						/obj/item/stack/sheet/plasteel,						200),
-		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,					25),
-		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,		3),
-		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,			5),
-		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,			6),
-		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,				20),
-		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,								350), // 40 coins more expensive than hand making to buy
-		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,							600), // 350 + 200 = 550, add another 50 as tax
-		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,							800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
-		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,	2),
-		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,	4),
-		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,	5),
-		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,			1000),
+		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 							50000),
+		new /datum/data/wasteland_equipment("Plasma x1",						/obj/item/stack/sheet/mineral/plasma,								200),
+		new /datum/data/wasteland_equipment("Diamond x1",						/obj/item/stack/sheet/mineral/diamond,								150),
+		new /datum/data/wasteland_equipment("Gold x1",							/obj/item/stack/sheet/mineral/gold,									100),
+		new /datum/data/wasteland_equipment("Silver x1",						/obj/item/stack/sheet/mineral/silver,								10),
+		new /datum/data/wasteland_equipment("Uranium x1",						/obj/item/stack/sheet/mineral/uranium,								30),
+		new /datum/data/wasteland_equipment("Crystal x1",						/obj/item/stack/ore/bluespace_crystal,								300),
+		new /datum/data/wasteland_equipment("Titanium x1",						/obj/item/stack/sheet/mineral/titanium,								30),
+		new /datum/data/wasteland_equipment("Metal x20",						/obj/item/stack/sheet/metal/twenty,									10),
+		new /datum/data/wasteland_equipment("Glass x10",						/obj/item/stack/sheet/glass/ten,									5),
+		new /datum/data/wasteland_equipment("Plasteel x5",						/obj/item/stack/sheet/plasteel/five,								200),
+		new /datum/data/wasteland_equipment("Plastic x5",						/obj/item/stack/sheet/plastic/five,									25),
+		new /datum/data/wasteland_equipment("Electronic Scrap x3",				/obj/item/stack/crafting/electronicparts/three,						3),
+		new /datum/data/wasteland_equipment("Metal Scrap x5",					/obj/item/stack/crafting/metalparts/five,							5),
+		new /datum/data/wasteland_equipment("Good Metal Scrap x3",				/obj/item/stack/crafting/goodparts/three,							6),
+		new /datum/data/wasteland_equipment("Cardboard x20",					/obj/item/stack/sheet/cardboard/twenty,								20),
+		new /datum/data/wasteland_equipment("(T1) Black Bronze x1",				/obj/item/ingot/bronze,												350), // 40 coins more expensive than hand making to buy
+		new /datum/data/wasteland_equipment("(T2) Mythril x1",					/obj/item/ingot/mythril,											600), // 350 + 200 = 550, add another 50 as tax
+		new /datum/data/wasteland_equipment("(T3) Adamantine x1",				/obj/item/ingot/adamantine,											800), // 600 + 200, cost of superlight Pre-Cataclysm alloys, no more tax
+		new /datum/data/wasteland_equipment("Lollipop x1",						/obj/item/reagent_containers/food/snacks/lollipop,					2),
+		new /datum/data/wasteland_equipment("Gumball x1",						/obj/item/reagent_containers/food/snacks/gumball,					4),
+		new /datum/data/wasteland_equipment("Butter x1",						/obj/item/reagent_containers/food/snacks/butter,					5),
+		new /datum/data/wasteland_equipment("Deluxe Stock Part Box x1",			/obj/item/storage/box/stockparts/deluxe,							1000),
+		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					250),
+		new /datum/data/wasteland_equipment("Weapon Assembly",					/obj/item/advanced_crafting_components/assembly,					250),
+		new /datum/data/wasteland_equipment("Superconductor Coils",				/obj/item/advanced_crafting_components/conductors,					250),
+		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						250),
+		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						250),
+		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						250),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -1129,7 +1142,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						50),
 		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						50),
 		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						50),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					50),
@@ -1281,7 +1294,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Electrician Toolbox",				/obj/item/storage/toolbox/electrical,								15),
 		new /datum/data/wasteland_equipment("Insulated Gloves",					/obj/item/clothing/gloves/color/yellow,								15),
 		new /datum/data/wasteland_equipment("Military Engineer Gloves",			/obj/item/clothing/gloves/f13/military/engineer,					75),
-		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					100),
+		new /datum/data/wasteland_equipment("Nest Repellant",					/obj/item/packaged_respawner_blocker,					0),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Metal Parts (x5)",					/obj/item/stack/crafting/metalparts/five,							10),
