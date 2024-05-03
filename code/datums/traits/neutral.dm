@@ -1355,3 +1355,203 @@
 	mob_trait = TRAIT_NOHIDEFACE
 	gain_text = span_notice("You feel seen!")
 	lose_text = span_notice("You feel hidden")
+
+/obj/item/clothing/proc/Adjust()
+	SEND_SIGNAL(src, COMSIG_CLOTHING_ADJUST, usr)
+	verbs -= /obj/item/clothing/proc/Adjust
+
+#define	CLOTHING_ADJUST_TIME_MIN 10 MINUTES
+#define CLOTHING_ADJUST_TIME_MAX 15 MINUTES 
+
+/datum/quirk/dan_nicki
+	name = "Big Boobs"
+	desc = "If the internet was a thing, people would be looking you up on google."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
+	conflicts = list()
+	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
+	lose_text = span_notice("The urge to find a tailor disappears.")
+	var/debufftimer = null
+	var/warningtimer = null
+	var/active = FALSE
+	var/datum/status_effect/debuff = /datum/status_effect/dan_nicki
+	var/warning_text = "Your clothes are getting a little tight..."
+	var/unadjust_text = "Your clothes feel way too tight to breathe! You'll need to adjust them using their context menu."
+	var/adjust_text = "You feel like you can breathe again. That's much better."
+	var/drop_text = "Whew... free at last!"
+
+/datum/status_effect/dan_nicki
+	id = "Constriction"
+	duration = -1
+	alert_type = null
+	status_type = STATUS_EFFECT_UNIQUE
+
+/datum/status_effect/dan_nicki/tick()
+	. = ..()
+	owner.adjustOxyLoss(0.5)
+
+/datum/quirk/dan_nicki/proc/make_timers()
+	deltimer(debufftimer)
+	deltimer(warningtimer)
+	var/time_til_debuff = rand(CLOTHING_ADJUST_TIME_MIN, CLOTHING_ADJUST_TIME_MAX)
+	var/time_til_warning = time_til_debuff - (1 MINUTES)
+	debufftimer = addtimer(CALLBACK(src, PROC_REF(unadjust)), time_til_debuff, TIMER_DELETE_ME | TIMER_STOPPABLE)
+	warningtimer = addtimer(CALLBACK(src, PROC_REF(warn)), time_til_warning, TIMER_DELETE_ME | TIMER_STOPPABLE)
+
+/datum/quirk/dan_nicki/add()
+	. = ..()
+	make_timers()
+
+/datum/quirk/dan_nicki/remove()
+	. = ..()
+	deltimer(debufftimer)
+	deltimer(warningtimer)
+
+/datum/quirk/dan_nicki/proc/unadjust()
+	var/mob/living/H = quirk_holder
+	var/obj/item/clothing/under/prison = H.get_item_by_slot(SLOT_W_UNIFORM)
+	if(prison)
+		H.apply_status_effect(debuff)
+		prison.verbs += /obj/item/clothing/proc/Adjust
+		RegisterSignal(prison, COMSIG_CLOTHING_ADJUST, PROC_REF(on_adjust))
+		RegisterSignal(prison, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
+		to_chat(H, span_warning(unadjust_text))
+		active = TRUE
+	else
+		make_timers()
+
+/datum/quirk/dan_nicki/proc/warn()
+	if(quirk_holder.get_item_by_slot(SLOT_W_UNIFORM))
+		to_chat(quirk_holder, span_warning(warning_text))
+
+/datum/quirk/dan_nicki/proc/on_adjust(obj/item/source, mob/user)
+	var/mob/living/H = user
+	if(!istype(H))
+		return
+	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
+		return
+	H.remove_status_effect(debuff)
+	to_chat(H, span_warning(adjust_text))
+	active = FALSE
+	make_timers()
+
+/datum/quirk/dan_nicki/proc/on_drop(obj/item/source, mob/user)
+	var/mob/living/H = user
+	if(!istype(H))
+		return
+	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM))
+		return
+	H.remove_status_effect(debuff)
+	to_chat(H, span_warning(drop_text))
+	var/obj/item/clothing/S = source
+	S.verbs -= /obj/item/clothing/proc/Adjust
+	active = FALSE
+	make_timers()
+
+
+#undef CLOTHING_ADJUST_TIME_MIN
+#undef CLOTHING_ADJUST_TIME_MAX
+
+/datum/quirk/dan_nicki/wreckingballs
+	name = "Big Balls"
+	desc = "You have a hard time finding clothes that fit."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while, or you'll suffer a speed penalty."
+	conflicts = list()
+	gain_text = span_notice("The heavy swingers between your legs strain your clothes.")
+	lose_text = span_notice("Your clothes feel looser.")
+	debuff = /datum/status_effect/wreckingballs
+	warning_text = "Your clothes are getting a little tight..."
+	unadjust_text = "Your clothes feel way too tight to move! You'll need to adjust them using their context menu."
+	adjust_text = "You feel like you can move your legs again. That's much better."
+	drop_text = "Whew... free at last!"
+
+/datum/status_effect/wreckingballs
+	id = "Constriction"
+	duration = -1
+	alert_type = null
+	status_type = STATUS_EFFECT_UNIQUE
+
+/datum/status_effect/wreckingballs/on_apply()
+	. = ..()
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/wreckingballs, TRUE, "wreckingballs")
+
+/datum/status_effect/wreckingballs/on_remove()
+	. = ..()
+	owner.remove_movespeed_modifier("wreckingballs", update = TRUE)
+
+/datum/movespeed_modifier/wreckingballs
+	flags = IGNORE_NOSLOW
+	variable = TRUE
+	multiplicative_slowdown = 0.3
+
+/datum/quirk/dan_nicki/hugecock
+	name = "Big Dick"
+	desc = "You have a HARD time finding clothes that fit."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
+	conflicts = list()
+	gain_text = span_notice("You feel your clothes stretch around your extra leg.")
+	lose_text = span_notice("Your clothes feel looser.")
+	debuff = /datum/status_effect/hotrod
+	warning_text = "Your clothes are getting a little tight..."
+	unadjust_text = "Your clothes feel way too tight to reach into your pockets! You'll need to adjust them using their context menu."
+	adjust_text = "You feel like you can reach into your pockets again. That's much better."
+	drop_text = "Whew... free at last!"
+
+/datum/status_effect/hotrod
+	id = "Constriction"
+	duration = -1
+	alert_type = null
+	status_type = STATUS_EFFECT_UNIQUE
+
+/datum/status_effect/hotrod/on_apply()
+	. = ..()
+	RegisterSignal(owner, COMSIG_MOB_CLICKON, PROC_REF(on_clickon))
+
+/datum/status_effect/hotrod/on_remove()
+	. = ..()
+	UnregisterSignal(owner, COMSIG_MOB_CLICKON)
+
+/datum/status_effect/hotrod/proc/on_clickon(atom/A, params)
+
+	var/obj/item/left = owner.get_item_by_slot(SLOT_L_STORE)
+	var/obj/item/right = owner.get_item_by_slot(SLOT_R_STORE)
+	if(params == left || params == right)
+		return COMSIG_MOB_CANCEL_CLICKON
+
+/datum/quirk/dan_nicki/cake
+	name = "Big Ass"
+	desc = "You have a hard time getting your clothes on."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while, or they'll become uncomfortable."
+	conflicts = list()
+	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
+	lose_text = span_notice("Your clothes feel looser.")
+	debuff = /datum/status_effect/toomuchcake
+	warning_text = "Your clothes are getting a little tight..."
+	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
+	adjust_text = "You feel more comfortable in your clothes again. That's much better."
+	drop_text = "Whew... free at last!"
+
+/datum/status_effect/toomuchcake
+	id = "Constriction"
+	duration = -1
+	alert_type = null
+	status_type = STATUS_EFFECT_UNIQUE
+
+/datum/status_effect/toomuchcake/on_apply()
+	. = ..()
+	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "toomuchcake", /datum/mood_event/toomuchcake)
+
+/datum/status_effect/toomuchcake/on_remove()
+	. = ..()
+	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "toomuchcake")
+
+/datum/mood_event/toomuchcake
+	mood_change = -4
+	description = span_warning("These clothes are way too tight!")
