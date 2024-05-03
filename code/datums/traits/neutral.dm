@@ -1399,6 +1399,9 @@
 	debufftimer = addtimer(CALLBACK(src, PROC_REF(unadjust)), time_til_debuff, TIMER_DELETE_ME | TIMER_STOPPABLE)
 	warningtimer = addtimer(CALLBACK(src, PROC_REF(warn)), time_til_warning, TIMER_DELETE_ME | TIMER_STOPPABLE)
 
+/datum/quirk/dan_nicki/add()
+	. = ..()
+	make_timers()
 
 /datum/quirk/dan_nicki/remove()
 	. = ..()
