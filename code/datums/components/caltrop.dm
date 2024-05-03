@@ -36,7 +36,7 @@
 	src.max_damage = max(min_damage, max_damage)
 	src.probability = probability
 	src.flags = flags
-	src.soundfile = soundfile
+	src.soundfile = 'sound/effects/wounds/crackandbleed.ogg'
 
 	if(ismovable(parent))
 		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
@@ -111,7 +111,7 @@
 	INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human/,apply_damage), damage, BRUTE, picked_def_zone, FALSE, FALSE, FALSE, CANT_WOUND)
 
 	if(!(flags & CALTROP_NOSTUN)) // Won't set off the paralysis.
-		H.Paralyze(60)
+		H.Paralyze(0)
 
 	if(!soundfile)
 		return
