@@ -1535,7 +1535,7 @@
 	debuff = /datum/status_effect/toomuchcake
 	warning_text = "Your clothes are getting a little tight..."
 	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
-	adjust_text = "That's much better."
+	adjust_text = "You feel more comfortable in your clothes again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/toomuchcake
