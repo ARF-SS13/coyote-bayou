@@ -70,7 +70,7 @@
 /obj/item/firebow/proc/StartBurning(mob/user)
 	cinder = TRUE
 	heat = 1500
-	addtimer(CALLBACK(src, .proc/Extinguish, user), burnLength)
+	addtimer(CALLBACK(src,PROC_REF(Extinguish), user), burnLength)
 	UpdateIcon()
 
 /obj/item/firebow/proc/Extinguish(mob/user)

@@ -131,6 +131,7 @@
 	var/damage_mult = 1
 	/// dont touch this
 	var/finalmost_damage = 0
+	var/not_harmful = FALSE
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -183,13 +184,21 @@
 	/// bullet's general zone hit accuracy
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
+	var/is_player_projectile = FALSE
 
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
+	/// Until we have traveled this many tiles (diagonals included) we FORCE faction on!
+	var/safety_range = 30 // set this bitch to thirty and call it a week
+	var/safety_switch = FALSE
+
 	var/bonus_crit_rolls = 1
 
 	var/is_crit_above = 9999
+
+	/// Multichance_hit_behaviour
+	var/critical_hit = 0  //0 = no critical hit; 1 = head; 2 = arms; 3 = legs
 
 /obj/item/projectile/Initialize()
 	. = ..()
@@ -370,17 +379,15 @@
 		return BODY_ZONE_CHEST
 
 /obj/item/projectile/proc/prehit(atom/target)
-	//-->Pacifism Lesser Trait, most important section of it
-	if(iscarbon(target))
-		if(iscarbon(firer))  //is our firer a carbon that can have traits?
-			if(!nodamage)  //if the projectile is harmless by definition then there's no need for the trait to even trigger
-				var/mob/living/carbon/C = target
-				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
-					trait_pacifism_lesser_consequences(firer, TRUE)
-					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
-					return FALSE
-	//<--
-	return TRUE
+	var/status = 0  //basically if the number increases it means that the projectile for some reason has to miss
+
+	status += check_pacifism_lesser(src, firer, target)
+	status += multichance_projectile_hit_behaviour(src, firer, target, status)
+
+	if(!status)
+		return TRUE
+	else
+		return FALSE
 
 /obj/item/projectile/proc/on_hit(atom/target, blocked = FALSE)
 	if(fired_from)
@@ -590,9 +597,13 @@
 	return hit_something
 
 /obj/item/projectile/proc/faction_check(atom/target)
+	if(not_harmful)
+		return FALSE // its something that shouldnt be harmful
 	if(!isliving(target) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
+	if(maybehit.shoot_me)
+		return FALSE
 	return LAZYLEN(maybehit.faction & faction)
 
 
@@ -648,6 +659,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
+		// if(M.shoot_me && is_player_projectile)
+		// 	return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M
@@ -770,7 +783,7 @@
 	fired = TRUE
 	randomize_damage()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 	if(hitscan)
@@ -916,6 +929,12 @@
 			if(QDELETED(src))
 				return
 			pixels_range_leftover -= world.icon_size
+		if(safety_switch)
+			if(QDELETED(firer))
+				safety_switch = FALSE
+			if(get_dist(loc, firer) > safety_range)
+				faction = list()
+				safety_switch = FALSE
 	if(!hitscanning && !forcemoved)
 		var/traj_px = round(trajectory.return_px(), 1)
 		var/traj_py = round(trajectory.return_py(), 1)

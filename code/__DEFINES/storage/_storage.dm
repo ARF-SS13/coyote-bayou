@@ -43,3 +43,7 @@
 #define WEIGHT_CLASS_HUGE     5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
+/// Token that just means Hey, Dont Bag It
+#define WEIGHT_CLASS_NO_INVENTORY 65536 // also makes it next to impossible to throw, fun fact
+
+#define ALLOW_ARTIFACT_STUFF (1 << 0)

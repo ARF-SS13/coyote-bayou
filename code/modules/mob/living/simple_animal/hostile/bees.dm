@@ -33,7 +33,7 @@
 	maxHealth = 10
 	health = 10
 	spacewalk = TRUE
-	faction = list("hostile")
+	faction = list("hostile", "bees-friend")
 	dodge_prob = 0
 	move_to_delay = 0
 	obj_damage = 0
@@ -210,7 +210,7 @@
 		return
 	beehome = BB
 	BB.bees |= src
-	RegisterSignal(BB, COMSIG_PARENT_QDELETING, .proc/move_out)
+	RegisterSignal(BB, COMSIG_PARENT_QDELETING,PROC_REF(move_out))
 
 /mob/living/simple_animal/hostile/poison/bees/proc/move_out()
 	if(!beehome)
@@ -326,7 +326,7 @@
 
 /mob/living/simple_animal/hostile/poison/bees/short/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(death)), 50 SECONDS)
 
 /mob/living/simple_animal/hostile/poison/bees/short/frenly //these bees need to be frenly or they'd murder everyone
 	faction = list("neutral")

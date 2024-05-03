@@ -65,7 +65,7 @@
 			custom_materials[i] *= amount
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_movable_entered_occupied_turf,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_movable_entered_occupied_turf),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -74,7 +74,7 @@
 			if(item_stack == src)
 				continue
 			if(can_merge(item_stack))
-				INVOKE_ASYNC(src, .proc/merge_without_del, item_stack)
+				INVOKE_ASYNC(src,PROC_REF(merge_without_del), item_stack)
 				if(zero_amount())
 					return INITIALIZE_HINT_QDEL
 	var/list/temp_recipes = get_main_recipes()
@@ -365,7 +365,7 @@
 	return TRUE
 
 /obj/item/stack/tool_use_check(mob/living/user, amount, silent)
-	if(get_amount() > amount)
+	if(get_amount() >= amount)
 		return TRUE
 	if(silent)
 		return FALSE
@@ -438,10 +438,12 @@
 		CRASH("Stack merge attempted on non-stack target stack. (target_stack = [target_stack]) (src = [src]) motherfucking stacks")
 	if(amount < 1)
 		qdel(src)
-		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
+		return
+		// CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
 	if(target_stack.amount < 1)
 		qdel(target_stack)
-		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
+		return
+		// CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
 
 	var/transfer = get_amount()
 	if(target_stack.is_cyborg)
@@ -449,7 +451,7 @@
 	else
 		transfer = min(transfer, (limit ? limit : target_stack.max_amount) - target_stack.amount)
 	if(pulledby)
-		INVOKE_ASYNC(pulledby, /atom/movable/.proc/start_pulling, target_stack)
+		INVOKE_ASYNC(pulledby, TYPE_PROC_REF(/atom/movable/,start_pulling), target_stack)
 	target_stack.copy_evidences(src)
 	use(transfer, transfer = TRUE, check = FALSE)
 	target_stack.add(transfer)
@@ -473,7 +475,7 @@
 		return
 
 	if(!arrived.throwing && can_merge(arrived))
-		INVOKE_ASYNC(src, .proc/merge, arrived)
+		INVOKE_ASYNC(src,PROC_REF(merge), arrived)
 
 /obj/item/stack/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(can_merge(AM, TRUE))

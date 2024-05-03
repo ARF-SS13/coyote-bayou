@@ -2,6 +2,7 @@
 	name = "tribal torch"
 	desc = "A standing torch, used to provide light in dark environments."
 	density = FALSE
+	plane = MOB_PLANE
 	anchored = TRUE
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "torch_unlit"
@@ -17,7 +18,7 @@
 
 /obj/structure/destructible/tribal_torch/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/smooch_fire)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(smooch_fire))
 
 /obj/structure/destructible/tribal_torch/Destroy()
 	. = ..()
@@ -83,10 +84,10 @@
 		flicker(rand(1, 4)) // 0.1 to 0.4 seconds
 
 /obj/structure/destructible/tribal_torch/proc/flicker(duration)
-	addtimer(CALLBACK(src, .proc/unflicker, light_range), duration)
+	addtimer(CALLBACK(src,PROC_REF(unflicker), light_range), duration)
 	set_light(light_range - rand(1, 2))
 	flickering = TRUE
-	addtimer(CALLBACK(src, .proc/unflicker), duration)
+	addtimer(CALLBACK(src,PROC_REF(unflicker)), duration)
 
 /obj/structure/destructible/tribal_torch/proc/unflicker(new_range)
 	set_light(new_range)
@@ -102,6 +103,7 @@
 
 /obj/structure/destructible/tribal_torch/wall
 	icon_state = "wall_torch_unlit"
+	layer = WALL_OBJ_LAYER
 
 /obj/structure/destructible/tribal_torch/wall/update_icon()
 	. = ..()
@@ -113,3 +115,12 @@
 	burning = TRUE
 	icon_state = "wall_torch_lit"
 	light_range = 7
+
+//Tiki torches from Civ
+
+/obj/structure/destructible/tribal_torch/tikilit //ALREADY LIT TORCH FOR USE IN MAPPING
+	burning = TRUE
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "tikitorch_lit"
+	light_range = 7
+

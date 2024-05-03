@@ -74,7 +74,7 @@
 					if(!prob(prob_trash))
 						continue
 					prob_trash -= 40
-					var/trash_mod_path = pick(GLOB.trash_gunmods)
+					var/trash_mod_path = pick(GLOB.trash_craft) // this was trash gunmods but like they're not gonna be in loot anymore
 					var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
 					if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
 						break

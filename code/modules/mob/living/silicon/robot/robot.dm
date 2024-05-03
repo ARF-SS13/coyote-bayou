@@ -16,7 +16,7 @@
 	wires = new /datum/wires/robot(src)
 	AddElement(/datum/element/empprotection, EMP_PROTECT_WIRES)
 
-	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)
+	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT,PROC_REF(charge))
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
@@ -63,7 +63,7 @@
 		mmi.brainmob.real_name = src.real_name
 		mmi.brainmob.container = mmi
 
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src,PROC_REF(updatename))
 
 	equippable_hats = typecacheof(equippable_hats)
 
@@ -334,11 +334,11 @@
 
 /mob/living/silicon/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weldingtool) && (user.a_intent != INTENT_HARM || user == src))
-		INVOKE_ASYNC(src, .proc/attempt_welder_repair, W, user)
+		INVOKE_ASYNC(src,PROC_REF(attempt_welder_repair), W, user)
 		return
 
 	else if(istype(W, /obj/item/stack/cable_coil) && wiresexposed)
-		INVOKE_ASYNC(src, .proc/attempt_cable_repair, W, user)
+		INVOKE_ASYNC(src,PROC_REF(attempt_cable_repair), W, user)
 		return
 
 	else if(istype(W, /obj/item/crowbar))	// crowbar means open or close the cover
@@ -747,7 +747,7 @@
 	cell = new /obj/item/stock_parts/cell/hyper(src, 25000)
 	radio = new /obj/item/radio/borg/syndicate(src)
 	laws = new /datum/ai_laws/syndicate_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	addtimer(CALLBACK(src,PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/syndicate/proc/show_playstyle()
 	if(playstyle_string)
@@ -855,6 +855,8 @@
 
 	if(see_override)
 		see_invisible = see_override
+	if(client?.holder)
+		see_invisible = client.holder.ghostsight_or(see_invisible) //can't see ghosts through cameras
 	sync_lighting_plane_alpha()
 
 /mob/living/silicon/robot/update_stat()
@@ -948,7 +950,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src,PROC_REF(updatename))
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)

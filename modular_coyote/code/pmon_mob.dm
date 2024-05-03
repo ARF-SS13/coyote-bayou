@@ -28,6 +28,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	turns_per_move = 5
+	var/is_blacklisted = FALSE // THis variable lets you stop mobs from being joinable roundstart
 	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	// Sprites are already rotated for lying down while resting.
@@ -256,6 +257,16 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/advanced/eeveealt
+	name = "eevee, alt"
+	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pokemon to evolve."
+	icon_state = "eevee2"
+	icon_living = "eevee2"
+	icon_dead = "eevee2_d"
+	p_types = list(P_TYPE_NORM)
+	mob_size = MOB_SIZE_SMALL
+	p_traits = list(P_TRAIT_RIDEABLE)
+
 /mob/living/simple_animal/advanced/espeon
 	name = "espeon"
 	desc = "Espeon is extremely loyal to any trainer it considers to be worthy. It is said to have developed precognitive powers to protect its trainer from harm."
@@ -308,6 +319,14 @@
 	icon_state = "furret"
 	icon_living = "furret"
 	icon_dead = "furret_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+
+/mob/living/simple_animal/advanced/furret/shiny
+	name = "shiny furret"
+	icon_state = "furret_shiny"
+	icon_living = "furret_shiny"
+	icon_dead = "furret_shiny_d"
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
@@ -381,7 +400,7 @@
 /mob/living/simple_animal/advanced/jolteon/bud
 	name = "Bud"
 	p_active_moves = list(M_SHOCK) //Shocks you by default
-
+/*
 /mob/living/simple_animal/advanced/kirlia
 	name = "kirlia"
 	icon_state = "kirlia"
@@ -389,7 +408,7 @@
 	icon_dead = "kirlia_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
-
+*/
 /mob/living/simple_animal/advanced/larvitar
 	name = "larvitar"
 	desc = "It is born deep underground. It can't emerge until it has entirely consumed the soil around it."
@@ -700,7 +719,7 @@
 	icon_dead = "purrloin_d"
 	p_types = list(P_TYPE_DARK)
 	mob_size = MOB_SIZE_SMALL
-
+/*
 /mob/living/simple_animal/advanced/ralts
 	name = "ralts"
 	icon_state = "ralts"
@@ -708,7 +727,7 @@
 	icon_dead = "ralts_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
-
+*/
 /mob/living/simple_animal/advanced/raticate
 	name = "raticate"
 	icon_state = "raticate"

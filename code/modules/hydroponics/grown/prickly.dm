@@ -13,7 +13,9 @@
 	reagents_add = list(
 		/datum/reagent/consumable/nutriment = 0.2,
 		/datum/reagent/water = 0.1,
-		/datum/reagent/consumable/nutriment/vitamin = 0.05
+		/datum/reagent/consumable/nutriment/vitamin = 0.05,
+		/datum/reagent/medicine/neurine = 0.05,
+		/datum/reagent/medicine/mutadone = 0.05
 	)
 	lifespan = 60
 	endurance = 20

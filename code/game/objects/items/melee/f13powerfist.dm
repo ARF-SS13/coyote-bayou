@@ -187,6 +187,7 @@
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
+	armour_penetration = 0.2
 	tool_behaviour = TOOL_SAW
 	sharpness = SHARP_EDGED
 	toolspeed = 1.5
@@ -236,6 +237,7 @@
 	off_icon_state = "prewarrip_off"
 	on_item_state = "prewarrip_on"
 	off_item_state = "prewarrip_off"
+	armour_penetration = 0.3
 	force_on = 50
 
 /obj/item/melee/powered/ripper/dull

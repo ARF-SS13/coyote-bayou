@@ -62,7 +62,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "syndbeacon"
 	spawn_text = "warps in from"
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
+	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
 /mob/living/simple_animal/hostile/spawner/skeleton
@@ -129,7 +129,7 @@
 	maxHealth = 1000
 	max_mobs = 8
 	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/radroach)
+	mob_types = list(/mob/living/simple_animal/hostile/pillbug)
 	faction = list("gecko")
 
 /mob/living/simple_animal/hostile/spawner/mining

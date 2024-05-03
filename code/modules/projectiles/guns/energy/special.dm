@@ -107,7 +107,7 @@
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	custom_materials = list(/datum/material/iron=2000)
-	silenced = TRUE
+	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -120,7 +120,7 @@
 	unique_frequency = TRUE
 	can_flashlight = 0
 	max_mod_capacity = 0 // TG Kinetic Accelerator Mods
-	max_upgrades = 1 // ERIS weapon mods
+	max_upgrades = 2 // ERIS weapon mods
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 

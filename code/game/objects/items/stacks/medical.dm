@@ -90,7 +90,7 @@
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/try_heal, M, user)
+	INVOKE_ASYNC(src,PROC_REF(try_heal), M, user)
 
 /obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, just_check = FALSE)
 	if(heal(M, user, just_check))
@@ -147,7 +147,12 @@
 	//var/is_skilled = 1
 	if(start_sound)
 		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
-	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE, allow_lying = TRUE))
+	if(istype(src, /obj/item/stack/medical/bruise_pack/lick/))
+		if(!do_after(user, get_delay_time(user, C, 1), TRUE, C, required_mobility_flags = NONE, allow_movement = TRUE,))
+			to_chat(user, span_warning("You were interrupted!"))
+			is_healing = FALSE
+			return FALSE
+	else if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE, allow_lying = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
 		is_healing = FALSE
 		return FALSE

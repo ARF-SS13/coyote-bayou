@@ -47,7 +47,7 @@
 
 /datum/tattoo/proc/on_apply(mob/user)
 	if(fade_time)
-		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
+		addtimer(CALLBACK(src,PROC_REF(fade_tattoo)), fade_time)
 
 /datum/tattoo/Destroy(force, ...)
 	if(owner_limb)
@@ -82,7 +82,7 @@
 	if(fadedness++ > TATTOO_VERY_FADED)
 		qdel(src)
 		return
-	addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
+	addtimer(CALLBACK(src,PROC_REF(fade_tattoo)), fade_time)
 
 /// Is the tattoo somewhere really private? So you dont examine someone in power armor and find FOXYGRANDMA above their ass
 /// A really in-depth check through a person's privates to see if their relevant bits are, in fact, visible
@@ -748,7 +748,7 @@
 		victim.emote("scream")
 	owie.receive_damage(brute = owie.brute_dam < 30 ? brute_d : 0, stamina = stamina_d, wound_bonus = bleed_d, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 	if(engraving)
-		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
+		addtimer(CALLBACK(src,PROC_REF(make_noises_and_pain), victim, user, tat_loc, part), next_time)
 
 /obj/item/tattoo_gun/proc/try_remove_tattoo(mob/living/carbon/human/victim, mob/living/user, bodyzone, obj/item/bodypart/part)
 	if(!istype(victim) || !istype(user))

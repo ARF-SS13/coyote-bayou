@@ -23,8 +23,7 @@
 		if(isnewplayer(m))
 			continue
 		if (m.client && m.client.prefs && m.client.prefs.auto_ooc)
-			if (!(m.client.prefs.chat_toggles & CHAT_OOC))
-				m.client.prefs.chat_toggles ^= CHAT_OOC
+			m.client.prefs.chat_toggles |= CHAT_OOC
 		if(m.mind)
 			if(m.stat != DEAD && !isbrain(m) && !iscameramob(m))
 				num_survivors++
@@ -214,7 +213,7 @@
 	//send2chat(" <@&922230570791108628> ", CONFIG_GET(string/discord_channel_serverstatus))
 	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for your [pick(publisher)] report!", FALSE)
 	//lonestar edit. i'm adding a timer here because i'm tired of the messages being sent out of order
-	addtimer(CALLBACK(src, .proc/send_roundinfo), 3 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(send_roundinfo)), 3 SECONDS)
 
 	CHECK_TICK
 
@@ -253,7 +252,7 @@
 	end_of_round_deathmatch()
 	var/time_to_end = CONFIG_GET(number/eorg_period)
 	to_chat(world, "<span class='info'>EORD in progress, game end delayed by [time_to_end * 0.1] seconds!</a></span>")
-	addtimer(CALLBACK(src, .proc/standard_reboot), time_to_end)
+	addtimer(CALLBACK(src,PROC_REF(standard_reboot)), time_to_end)
 
 
 /datum/controller/subsystem/ticker/proc/standard_reboot()
@@ -282,6 +281,9 @@
 
 	//Antagonists
 	parts += antag_report()
+
+	//quests!
+	parts += quest_report()
 
 	//validball!
 	parts += validball_report()
@@ -500,6 +502,24 @@
 		return "" 
 	return "<div class='panel stationborder'>[report_lines.Join("<br>")]</div>"
 
+/datum/controller/subsystem/ticker/proc/quest_report()
+	if(!LAZYLEN(SSvalidball.vb_reports))
+		return ""
+	var/datum/quest_report/QR = new()
+	var/list/report_lines = list()
+	report_lines += span_header("Top Quester: [span_greentext("[QR.top_quester_name], the [QR.top_quester_job]!")]")
+	report_lines += span_header("They completed [span_greentext("[QR.top_quester_total]")] quests! Wow!")
+	report_lines += span_header("Overall, [span_greentext("[QR.total_quests]")] quests were completed! So many!")
+
+	report_lines += "<hr>"
+	report_lines += span_header("Top Earner: ") + span_greentext("[QR.top_earner_name], the [QR.top_earner_job]!")
+	report_lines += span_header("They earned [span_greentext("[round(QR.top_earner_total / 10)]")] [QR.currency_unit]! Superb!")
+	report_lines += span_header("Overall, [span_greentext("[round(QR.total_earned / 10)]")] [QR.currency_unit] was earned! Rolling in it!")
+
+	if(!LAZYLEN(report_lines))
+		return "" 
+	return "<div class='panel stationborder'>[report_lines.Join("<br>")]</div>"
+
 /datum/controller/subsystem/ticker/proc/antag_report()
 	var/list/result = list()
 	var/list/all_teams = list()
@@ -522,7 +542,7 @@
 	var/currrent_category
 	var/datum/antagonist/previous_category
 
-	sortTim(all_antagonists, /proc/cmp_antag_category)
+	sortTim(all_antagonists, GLOBAL_PROC_REF(cmp_antag_category))
 
 	for(var/datum/antagonist/A in all_antagonists)
 		if(!A.show_in_roundend)

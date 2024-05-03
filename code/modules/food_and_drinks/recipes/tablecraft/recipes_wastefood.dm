@@ -49,7 +49,7 @@
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/moleratstew
-	name = "Molerat Stew"
+	name = "Giant Rat Stew"
 	reqs = list(
 		/datum/reagent/consumable/ethanol/beer = 10,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 1,
@@ -151,38 +151,6 @@
 		/datum/reagent/consumable/sodawater = 5,
 		/datum/reagent/consumable/sugar = 5
 	)
-
-/* awaiting assets + code for completion
-
-/datum/crafting_recipe/food/pemmican
-	name = "Pemmican"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
-		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
-		/obj/item/reagent_containers/food/snacks/tallow = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pemmican
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/crunchymutfruit
-	name = "Crunchy Mutfruit"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/datum/reagent/consumable/sugar = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/tatofries
-	name = "Tato fries"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
-		/obj/item/reagent_containers/food/snacks/butter = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/tatofries
-	subcategory = CAT_WASTEFOOD
-*/
 
 /datum/crafting_recipe/food/mirelurkstew
 	name = "Mirelurk Stew"
@@ -326,6 +294,18 @@
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
+/datum/crafting_recipe/food/brahminpotpie
+	name = "brahmin potpie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2,
+		/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/brahminpotpie
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+
 /datum/crafting_recipe/food/gecko_kebab
 	name = "gecko kebab"
 	reqs = list(
@@ -368,7 +348,7 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/steak
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
-	
+
 /datum/crafting_recipe/food/imitation_bcm
 	name = "Imitation BlamCo Mac and Cheese"
 	reqs = list(
@@ -390,8 +370,8 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/canned/porknbeans
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
-	
-	
+
+
 /////////////////
 //Sewer Food.  //
 /////////////////
@@ -422,3 +402,36 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/rat
 	subcategory = CAT_WASTEFOOD
+
+/// Legacy Content
+
+/*
+/datum/crafting_recipe/food/pemmican
+	name = "Pemmican"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
+		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
+		/obj/item/reagent_containers/food/snacks/tallow = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pemmican
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/crunchymutfruit
+	name = "Crunchy Mutfruit"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/datum/reagent/consumable/sugar = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/tatofries
+	name = "Tato fries"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/tatofries
+	subcategory = CAT_WASTEFOOD
+*/

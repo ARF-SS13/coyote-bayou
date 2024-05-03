@@ -294,7 +294,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	loadout_options = list(
 		/datum/outfit/loadout/decvetbull,	// Supersledge, 10mm SMG, Smokebomb
 		/datum/outfit/loadout/decvetwolf,	// Thermic lance, Carl Gustaf, Extra Bitter
-		/datum/outfit/loadout/decvetsnake, // Brush gun, Ripper, Extra Bitters
+//		/datum/outfit/loadout/decvetsnake, // Brush gun, Ripper, Extra Bitters
 		/datum/outfit/loadout/decvetbrave, // trench shotgun, 44 revolver, ballistic fist
 		)
 
@@ -350,7 +350,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/ammo_box/magazine/cg45 = 2,
 		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
-
+/*
 /datum/outfit/loadout/decvetsnake
 	name = "Mark of the Snake"
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
@@ -361,7 +361,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
-
+*/
 /datum/outfit/loadout/decvetbrave
 	name = "Mark of the Brave"
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
@@ -651,7 +651,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 	loadout_options = list(	// ALL: .45 Revolver, Machete
 		/datum/outfit/loadout/expambusher,	// lever-action shotgun, Bottlecap mine, MP5
-		/datum/outfit/loadout/expsniper,	// SKS, Smokebomb
+//		/datum/outfit/loadout/expsniper,	// SKS, Smokebomb
 		)
 
 	matchmaking_allowed = list(
@@ -702,7 +702,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		)
-
+/*
 /datum/outfit/loadout/expsniper
 	name = "Sniper"
 	glasses = /obj/item/clothing/glasses/sunglasses/big
@@ -712,7 +712,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/gun_upgrade/scope/watchman = 1,
 		)
-
+*/
 
 
 
@@ -1306,7 +1306,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 
 // Slavemaster
 
-datum/job/CaesarsLegion/Legionnaire/f13slavemaster
+/datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	title = "Legion Slavemaster"
 	flag = F13SLAVEMASTER
 	total_positions = 1

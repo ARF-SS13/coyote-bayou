@@ -20,8 +20,8 @@ SUBSYSTEM_DEF(matchmaking)
 
 /datum/controller/subsystem/matchmaking/proc/add_candidate_aspiration(mob/living/candidate, datum/matchmaking_pref/aspiration)
 	if(!bachelors[candidate])
-		RegisterSignal(candidate, COMSIG_PARENT_QDELETING, .proc/on_candidate_qdel)
-		RegisterSignal(candidate, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_candidate_logout)
+		RegisterSignal(candidate, COMSIG_PARENT_QDELETING,PROC_REF(on_candidate_qdel))
+		RegisterSignal(candidate, COMSIG_MOB_CLIENT_LOGOUT,PROC_REF(on_candidate_logout))
 	LAZYADD(bachelors[candidate], aspiration)
 
 
@@ -89,7 +89,7 @@ SUBSYSTEM_DEF(matchmaking)
 		CRASH("Matchmaking pref created without a holder.")
 	if(matches_aimed <= 0)
 		CRASH("Matchmaking pref created with invalid matches_aimed value: [matches_aimed]")
-	RegisterSignal(pref_holder, COMSIG_PARENT_QDELETING, .proc/on_candidate_qdel)
+	RegisterSignal(pref_holder, COMSIG_PARENT_QDELETING,PROC_REF(on_candidate_qdel))
 	src.pref_holder = pref_holder
 	src.matches_aimed = clamp(matches_aimed, 0, max_matches)
 	SSmatchmaking.add_candidate_aspiration(pref_holder, src)
@@ -161,7 +161,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/proc/enact_match(mob/living/target)
 	matches_found++
 	if(spawn_time > 0)
-		addtimer(CALLBACK(src, .proc/do_enact_match, WEAKREF(target)), spawn_time)
+		addtimer(CALLBACK(src,PROC_REF(do_enact_match), WEAKREF(target)), spawn_time)
 	else
 		do_enact_match(target)
 	if(matches_found >= matches_aimed)

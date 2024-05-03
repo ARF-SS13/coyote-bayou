@@ -20,14 +20,22 @@
 	if(_can_be_blunt)
 		can_be_blunt = _can_be_blunt
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/onItemAttack)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK,PROC_REF(onItemAttack))
+	RegisterSignal(parent, COMSIG_GET_BUTCHER_EFFECTIVENESS, PROC_REF(GetEffectiveness))
+	RegisterSignal(parent, COMSIG_GET_BUTCHER_BONUS_MODIFIER, PROC_REF(GetBonusModifier))
+
+/datum/component/butchering/proc/GetEffectiveness()
+	return effectiveness
+
+/datum/component/butchering/proc/GetBonusModifier()
+	return bonus_modifier
 
 /datum/component/butchering/proc/onItemAttack(obj/item/source, mob/living/M, mob/living/user)
 	if(user.a_intent != INTENT_HARM)
 		return
 	if(M.stat == DEAD && (M.butcher_results || M.guaranteed_butcher_results)) //can we butcher it?
 		if(butchering_enabled && (can_be_blunt || source.get_sharpness()))
-			INVOKE_ASYNC(src, .proc/startButcher, source, M, user)
+			INVOKE_ASYNC(src,PROC_REF(startButcher), source, M, user)
 			return COMPONENT_ITEM_NO_ATTACK
 
 	if(ishuman(M) && source.force && source.get_sharpness())
@@ -37,14 +45,16 @@
 				user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!"), 1, \
 								span_warning("Their neck has already been already cut, you can't make the bleeding any worse!"))
 				return COMPONENT_ITEM_NO_ATTACK
-			INVOKE_ASYNC(src, .proc/startNeckSlice, source, H, user)
+			INVOKE_ASYNC(src,PROC_REF(startNeckSlice), source, H, user)
 			return COMPONENT_ITEM_NO_ATTACK
 
 /datum/component/butchering/proc/startButcher(obj/item/source, mob/living/M, mob/living/user)
+	if(!SEND_SIGNAL(M, COMSIG_ATOM_CAN_BUTCHER))
+		to_chat(user, span_alert("You can't see anything worth butchering from [M]"))
 	to_chat(user, span_notice("You begin to butcher [M]..."))
 	playsound(M.loc, butcher_sound, 50, TRUE, -1)
 	if(do_mob(user, M, speed) && M.Adjacent(source))
-		Butcher(user, M)
+		SEND_SIGNAL(M, COMSIG_ATOM_BUTCHER, user, effectiveness, bonus_modifier, FALSE, TRUE)
 
 /datum/component/butchering/proc/startNeckSlice(obj/item/source, mob/living/carbon/human/H, mob/living/user)
 	user.visible_message(span_danger("[user] is slitting [H]'s throat!"), \
@@ -72,53 +82,6 @@
 		H.apply_status_effect(/datum/status_effect/neck_slice)
 
 /datum/component/butchering/proc/Butcher(mob/living/butcher, mob/living/meat)
-	var/meat_quality = 50 + (bonus_modifier/10) //increases through quality of butchering tool, and through if it was butchered in the kitchen or not
-	if(istype(get_area(butcher), /area/crew_quarters/kitchen))
-		meat_quality = meat_quality + 10
-	var/turf/T = meat.drop_location()
-	var/final_effectiveness = effectiveness - meat.butcher_difficulty
-	var/bonus_chance = max(0, (final_effectiveness - 100) + bonus_modifier) //so 125 total effectiveness = 25% extra chance
-	var/list/butchered_items = list()
-	for(var/V in meat.butcher_results)
-		var/obj/bones = V
-		var/amount = meat.butcher_results[bones]
-		for(var/_i in 1 to amount)
-			if(!prob(final_effectiveness))
-				if(butcher)
-					to_chat(butcher, span_warning("You fail to harvest some of the [initial(bones.name)] from [meat]."))
-			else if(prob(bonus_chance))
-				if(butcher)
-					to_chat(butcher, span_info("You harvest some extra [initial(bones.name)] from [meat]!"))
-				for(var/i in 1 to 2)
-					butchered_items += new bones (T)
-			else if(HAS_TRAIT(butcher, TRAIT_TRAPPER))
-				if(butcher)
-					to_chat(butcher, span_info("Your advanced trapping knowledge allows you to harvest extra [initial(bones.name)] from [meat]!"))
-				for(var/i in 1 to 2)
-					butchered_items += new bones (T)
-			else
-				butchered_items += new bones (T)
-		meat.butcher_results.Remove(bones) //in case you want to, say, have it drop its results on gib
-	for(var/V in meat.guaranteed_butcher_results)
-		var/obj/sinew = V
-		var/amount = meat.guaranteed_butcher_results[sinew]
-		for(var/i in 1 to amount)
-			butchered_items += new sinew (T)
-		meat.guaranteed_butcher_results.Remove(sinew)
-	for(var/butchered_item in butchered_items)
-		if(isobj(butchered_item))
-			var/obj/O = butchered_item
-			if(isfood(O))
-				var/obj/item/reagent_containers/food/butchered_meat = butchered_item
-				butchered_meat.food_quality = meat_quality
-			if(!O.anchored)
-				O.pixel_x = rand(-14,14)
-				O.pixel_y = rand(-14,14)
-	if(butcher)
-		meat.visible_message(span_notice("[butcher] butchers [meat]."))
-	ButcherEffects(meat)
-	meat.harvest(butcher)
-	meat.gib(FALSE, FALSE, TRUE)
 
 /datum/component/butchering/proc/ButcherEffects(mob/living/meat) //extra effects called on butchering, override this via subtypes
 	return
@@ -132,7 +95,7 @@
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/onCrossed)
+	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED,PROC_REF(onCrossed))
 
 /datum/component/butchering/recycler/proc/onCrossed(datum/source, mob/living/L)
 	if(!istype(L))

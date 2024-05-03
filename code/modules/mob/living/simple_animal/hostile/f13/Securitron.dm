@@ -29,7 +29,8 @@
 	response_harm_simple = "hits"
 	robust_searching = TRUE
 	blood_volume = 0
-	del_on_death = TRUE
+	bombs_can_gib_me = FALSE
+	// del_on_death = TRUE
 	healable = FALSE
 	faction = list("wastebot")
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
@@ -53,7 +54,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	extra_projectiles = 2
+	extra_projectiles = 1
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
 	ranged_ignores_vision = TRUE
 	attack_verb_simple = "punches"
@@ -75,6 +76,15 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
+	var/explodes_on_death = FALSE
+	var/ex_devastate = 1
+	var/ex_heavy = 2
+	var/ex_light = 4
+	var/ex_flash = 4
+	var/ex_flames = 6
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
@@ -106,13 +116,25 @@
 	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
-	explosion(src,1,2,4,4)
+	explosion(
+		get_turf(src),
+		ex_devastate,
+		ex_heavy,
+		ex_light,
+		ex_flash,
+		flame_range = ex_flames
+		)
+
+/mob/living/simple_animal/hostile/securitron/ex_act(severity, target, origin)
+	. = ..()
+	
 
 /mob/living/simple_animal/hostile/securitron/death()
 	do_sparks(3, TRUE, src)
-	for(var/i in 1 to 3)
-		addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
+	if(explodes_on_death)
+		for(var/i in 1 to 3)
+			addtimer(CALLBACK(src,PROC_REF(do_death_beep)), i * 1 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(self_destruct)), 4 SECONDS)
 	return ..()
 
 /mob/living/simple_animal/hostile/securitron/Aggro()
@@ -132,14 +154,14 @@
 	del_on_death = FALSE
 	melee_damage_lower = 24
 	melee_damage_upper = 55
-	extra_projectiles = 2 //5 projectiles
+	extra_projectiles = 2 
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 5
 	minimum_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
 	attack_verb_simple = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/laser/pistol/ultraweak
+	projectiletype = /obj/item/projectile/beam/laser/pistol/wastebot
 	emote_taunt_sound = list(
 		'sound/f13npc/sentry/taunt1.ogg',
 		'sound/f13npc/sentry/taunt2.ogg',
@@ -163,11 +185,8 @@
 		'sound/f13npc/sentry/idle4.ogg'
 		)
 	var/warned = FALSE
-	loot = list(
-		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/five,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
-		)
+	explodes_on_death = TRUE
+
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -178,6 +197,13 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon,
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/item/stack/crafting/electronicparts/five,
+		/obj/item/stock_parts/cell/ammo/mfc/recycled,
+		/obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/Life()
 	..()
@@ -199,6 +225,9 @@
 	color = "#75FFE2"
 	aggro_vision_range = 15
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 //cannot self-harm with it's explosion spam
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 10
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -262,5 +291,5 @@
 	minimum_distance = 1
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
-	addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(do_death_beep)), 1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(self_destruct)), 2 SECONDS)

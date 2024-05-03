@@ -270,11 +270,11 @@
 
 /obj/item/storage/box/bundledenboss/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/assault_carbine/worn(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
-	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
-	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
+	new /obj/item/reagent_containers/pill/patch/medx(src)
+	new /obj/item/reagent_containers/pill/patch/psycho(src)
+	new /obj/item/reagent_containers/pill/patch/psycho(src)
 	new /obj/item/clothing/under/f13/densuit(src)
 
 /datum/gang_item/equipment/bundleanarchist

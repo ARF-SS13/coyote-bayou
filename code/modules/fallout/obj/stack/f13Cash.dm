@@ -73,7 +73,7 @@
 
 /obj/item/stack/f13Cash/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED, .proc/dingaling)
+	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED,PROC_REF(dingaling))
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)
@@ -360,11 +360,11 @@
 /obj/item/stack/f13Cash/ncr
 	name = "Trade Union scrip"
 	singular_name = "Trade Union scrip"  /* same for denarius, we can pretend the legion can't latin properly */
-	flavor_desc = "Scrip issued by the Texarkana Trade Union that can be exchanged for goods and services. Or copper."
+	flavor_desc = "Scrip issued by the Texarkana Trade Union that can be exchanged for goods and services. Or copper. Currently worthless cus a kobold ate them all."
 	max_amount = 15000
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
-	value = CASH_NCR * CASH_CAP
+	value = CASH_NCR * CASH_CAP * 0
 	flippable = FALSE
 	merge_type = /obj/item/stack/f13Cash/ncr
 	pitch = 0
