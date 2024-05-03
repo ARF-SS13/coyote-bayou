@@ -1368,7 +1368,7 @@
 	desc = "If the internet was a thing, people would be looking you up on google."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to adjust your clothes every once in a while, or your breathing will be restricted enough to slightly lower your maximum health"
+	mechanics = "You need to adjust your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
 	conflicts = list()
 	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
 	lose_text = span_notice("The urge to find a tailor disappears.")
