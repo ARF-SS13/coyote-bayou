@@ -129,3 +129,14 @@
 			return
 	murderer.ClickOn(victim, params)
 	return
+
+/datum/keybinding/carbon/reload_gun
+	hotkey_keys = list("ShiftR")
+	name = "reload_gun"
+	full_name = "Reload gun"
+	description = "Automatically reloads the gun in your active hand."
+	category = CATEGORY_COMBAT
+
+/datum/keybinding/carbon/reload_gun/down(client/user)
+	user.mob?.ReloadGun()
+	return TRUE
