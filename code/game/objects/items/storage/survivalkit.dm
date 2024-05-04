@@ -10,7 +10,7 @@
 
 /obj/item/storage/survivalkit/PopulateContents()
 	new /obj/item/flashlight(src)
-	new /obj/item/flashlight/glowstick(src)
+	new /obj/item/storage/box/matches(src)
 	new /obj/item/melee/onehanded/knife/hunting(src)
 	new /obj/item/hand_tele(src)
 
@@ -37,7 +37,6 @@
 	new /obj/item/flashlight/flare/torch(src)
 	new /obj/item/melee/onehanded/knife/bone(src)
 	new /obj/item/firebow(src)
-	new /obj/item/flashlight(src)
 	new /obj/item/hand_tele(src)
 
 /obj/item/storage/survivalkit/tribal/empty/PopulateContents()

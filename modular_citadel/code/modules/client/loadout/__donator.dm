@@ -1749,7 +1749,7 @@
 	new /obj/item/gun/ballistic/revolver/revolver45(src)
 
 /datum/gear/donator/kits/truedark
-	name = "Stolen Brotherhood Supplies"
+	name = "Lockhard Renegade Supplies"
 	path = /obj/item/storage/box/large/custom_kit/truedark
 	ckeywhitelist = list("truedark")
 
@@ -1765,6 +1765,7 @@
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
 	new /obj/item/clothing/suit/armor/medium/combat/bos/cylphie(src)
+	new /obj/item/card/id/denid/truedark(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -1808,7 +1809,7 @@
 /datum/gear/donator/kits/truedark5
 	name = "Vivian loadout"
 	path = /obj/item/storage/box/large/custom_kit/truedark5
-	ckeywhitelist = list("trudark")
+	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark5/PopulateContents()
 	new /obj/item/clothing/neck/scarf/pink(src)
@@ -1917,6 +1918,7 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/card/id/denid/truedark(src)
 
 /datum/gear/donator/kits/saltspider
 	name = "Wasteland cooking kit"

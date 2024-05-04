@@ -122,6 +122,34 @@
 
 /obj/item/storage/fancy/candle_box/attack_self(mob_user)
 	return
+///////////////
+//flare pouch//
+///////////////
+
+/obj/item/storage/fancy/flare_pouch
+	name = "flare pouch"
+	desc = "A streamlined pouch for holding flares."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "flarebox"
+	icon_type = "flare"
+	item_state = "flarebox"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+	spawn_type = /obj/item/flashlight/flare
+
+/obj/item/storage/fancy/flare_pouch/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 12
+	STR.can_hold = typecacheof(list(/obj/item/flashlight/flare, /obj/item/flashlight/glowstick, /obj/effect/spawner/lootdrop/glowstick))
+
+/obj/item/storage/fancy/flare_pouch/glowstick
+	name = "glowstick pouch"
+	desc = "A streamlined pouch for holding glowsticks."
+	icon_state = "wflarebox"
+	icon_type = "wflare"
+	item_state = "wflarebox"
+	spawn_type = /obj/item/flashlight/glowstick
 
 ////////////
 //CIG PACK//

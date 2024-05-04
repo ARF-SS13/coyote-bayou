@@ -5402,7 +5402,7 @@
 	pixel_y = 7
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon_artifacts{
-	loot = list(/obj/item/blueprint/research=50,/obj/item/flashlight/seclite=50);
+	loot = list(/obj/item/blueprint/research=50,/obj/item/flashlight=50);
 	name = "50 percent research spawner"
 	},
 /obj/item/broom,
@@ -7492,7 +7492,7 @@
 /obj/structure/rack/shelf_wood/modern{
 	color = "#777777"
 	},
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
@@ -10610,8 +10610,8 @@
 /area/f13/wasteland)
 "fbI" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/mountain,
@@ -16807,7 +16807,7 @@
 /obj/structure/closet/crate/wooden,
 /obj/item/ammo_box/a308box,
 /obj/item/ammo_box/a308,
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
@@ -39938,9 +39938,9 @@
 /area/f13/wasteland)
 "sLs" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "sLF" = (
@@ -40205,12 +40205,12 @@
 /area/f13/wasteland)
 "sQB" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
