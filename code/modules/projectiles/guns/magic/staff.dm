@@ -193,6 +193,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "cut")
 	sharpness = SHARP_EDGED
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -209,6 +210,10 @@
 	damage_high = 50
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /****************/
 //Staff of Fireball//
@@ -429,6 +434,10 @@
 	flag = "laser"
 	supereffective_damage = 1 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 //weak version
 /obj/item/gun/magic/staff/kelpmagic/flamethrower/weak
