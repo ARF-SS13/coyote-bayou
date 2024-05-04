@@ -368,7 +368,6 @@
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	on_damage = 30
-	slot_flags = null
 
 /obj/item/flashlight/flare/torch/attack_self(mob/user)
 	// Usual checks
