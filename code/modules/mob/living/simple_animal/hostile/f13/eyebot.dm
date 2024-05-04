@@ -16,7 +16,7 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	move_to_delay = 3
+	move_to_delay = 4
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 40

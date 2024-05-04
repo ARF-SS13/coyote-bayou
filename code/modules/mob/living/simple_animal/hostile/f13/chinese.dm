@@ -37,6 +37,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	move_to_delay = 3.5
 
 
 /mob/living/simple_animal/hostile/chinese/Aggro()

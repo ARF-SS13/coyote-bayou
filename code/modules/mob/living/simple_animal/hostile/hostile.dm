@@ -46,7 +46,7 @@
 
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
-	var/move_to_delay = 3
+	var/move_to_delay = 3.5
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
