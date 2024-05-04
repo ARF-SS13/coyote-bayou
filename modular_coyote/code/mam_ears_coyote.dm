@@ -391,3 +391,11 @@
 	icon_state = "lopunny"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/ears/mam_ears/spinda
+	name = "spinda"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "spinda"
+	matrixed_sections = MATRIX_RED_GREEN
+
+
+
