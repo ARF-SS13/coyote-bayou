@@ -408,7 +408,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy)
 	crank_power = 1000 // 10 cranks until full
 	crank_stamina_cost = 50 // 4 stamina bars
-	cranking_time = 6 // And require a little more time
+	cranking_time = 6 SECONDS // And require a little more time
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)
@@ -471,9 +471,9 @@
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
 	e_cost = 100 // 10 shots per crank
 	select_name = "kill"
-// TG PARTY CANNON
 
-/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon
+// TG PARTY CANNON
+/obj/item/gun/energy/laser/cranklasergun/tg/particlecannon
 	name = "particle cannon"
 	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
 	icon_state = "lassniper"

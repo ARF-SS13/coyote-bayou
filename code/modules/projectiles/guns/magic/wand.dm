@@ -251,16 +251,15 @@
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	max_charges = 1
-	recharge_rate = 6 SECONDS
+	recharge_rate = 4 SECONDS
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
 
-
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
-	pellets = 6 //I've fucked with this for 4 hours straight, there is no variable that lets you make shotgun spread, variation does nothing, add_spread does nothing
-// Dont be like me, Don't try to make this a shotgun with a spread degree higher than 1 degree, you simply cant
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/weak
 	name = "weak arcane bolt"
@@ -306,6 +305,7 @@
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	max_charges = 2
 	recharge_rate = 6 SECONDS
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 	/datum/firemode/semi_auto/faster
 	)
@@ -317,11 +317,15 @@
 /obj/item/projectile/magic/kelpmagic/magicmissile/average
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
-	damage = 20
-	damage_low = 35
-	damage_high = 45
+	damage = 35
+	damage_low = 30
+	damage_high = 40
 	damage_type = BURN
 	flag = "laser"
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 
 /****************/
