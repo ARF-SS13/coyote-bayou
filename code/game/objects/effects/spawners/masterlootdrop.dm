@@ -506,7 +506,7 @@
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
-		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,                   //150 40 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,     //150 40 internal cell
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
