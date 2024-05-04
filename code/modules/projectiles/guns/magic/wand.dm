@@ -317,9 +317,9 @@
 /obj/item/projectile/magic/kelpmagic/magicmissile/average
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
-	damage = 20
-	damage_low = 35
-	damage_high = 45
+	damage = 35
+	damage_low = 30
+	damage_high = 40
 	damage_type = BURN
 	flag = "laser"
 

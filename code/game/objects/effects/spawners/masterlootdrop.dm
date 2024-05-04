@@ -476,7 +476,7 @@
 	loot = list(
 
 		/obj/item/gun/energy/laser/cranklasergun/tg/carbine = 10,         //100 25 internal cell
-		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //60  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
 		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//67  125 internal cell

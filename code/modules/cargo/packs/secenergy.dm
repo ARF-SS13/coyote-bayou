@@ -165,8 +165,8 @@ template end */
 /datum/supply_pack/secenergy/tgpistol
 	name = "TG Blaster Pistol"
 	desc = "A compact blaster pistol with a charging crank. If you have a vermin problem, this'll make short work of it. That's about all it'll do, though."
-	cost = replace me
-	num_contained = 1800
+	cost = 1800
+	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/pistol)
 	crate_name = "energy weapon crate"
 
@@ -202,4 +202,92 @@ template end */
 	contains = list(/obj/item/gun/energy/laser/cranklasergun/tg/rifle)
 	crate_name = "energy weapon crate"
 
-// Magic
+// Wands
+/datum/supply_pack/secenergy/missilewand
+	name = "Wand of Magic Missile"
+	desc = "A magic wand that passively recharges while not in use. This one fires a spread of high power projectiles like a shotgun."
+	cost = 4000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/shockwand
+	name = "Wand of Sparks"
+	desc = "A magic wand that passively recharges while not in use. This one fires an extremely fast burst of low power lightning bolts and charges exceptionally fast."
+	cost = 3000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/wand/kelpmagic/sparky)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/fireboltwand
+	name = "Wand of Firebolt"
+	desc = "A magic wand that passively recharges while not in use. This one fires high power firebolts that partially ignore armor."
+	cost = 3500
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/wand/kelpmagic/firebolt)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/healwand
+	name = "Wand of Mending"
+	desc = "A magic wand that passively recharges while not in use. This one fires healing bolts that cures all damage types almost equally."
+	cost = 3500
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/wand/kelpmagic/healwand)
+	crate_name = "energy weapon crate"
+
+// Staves
+/datum/supply_pack/secenergy/missilestaff
+	name = "Staff of Magic Missile"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires a spread of high power projectiles like a shotgun, and performs better in melee combat than other staves."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/magicmissile)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/acidstaff
+	name = "Staff of Acid"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires extremely rapid blasts of acid with incredibly varied damage."
+	cost = 8000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/acidstaff)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/shockstaff
+	name = "Staff of Lightning"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires high power bolts of lightning."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/lightning)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/magmastaff
+	name = "Staff of Alchemical Magma"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires short range bolts of magma that recharges extremely quickly."
+	cost = 15000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/flamethrower)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/fireballstaff
+	name = "Staff of Fireball"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires an extremely high powered, explosive fireball. Capable of destroying basic walls."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/fireball)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/healstaff
+	name = "Staff of Healing"
+	desc = "A bulky magic staff that passively recharges while not in use. This one fires healing bolts that cure all types of damage, and is incredibly efficient."
+	cost = 7500
+	num_contained = 1
+	contains = list(/obj/item/gun/magic/staff/kelpmagic/healstaff)
+	crate_name = "energy weapon crate"
+
+/datum/supply_pack/secenergy/healstaffupgr
+	name = "Perfected Staff of Healing"
+	desc = "This magic staff has infinite charge. It heals slower than other staves, and only heals Brute and Burn damage, but leaves your other hand free for another weapon -- or you can use a second staff. Don't cross the streams from another person!"
+	cost = 15000
+	num_contained = 1
+	contains = list(/obj/item/gun/medbeam/magic)
+	crate_name = "energy weapon crate"
