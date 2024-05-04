@@ -1726,8 +1726,8 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/ww1selfloader // tier above the G43 rifle. Powerful yet slow.
-	name = " Selbstlader 1906 Rifle"
-	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patened back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
+	name = "Selbstlader 1906 Rifle"
+	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patented back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
 	icon_state = "lugerrifle"
 	item_state = "lugerrifle"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
