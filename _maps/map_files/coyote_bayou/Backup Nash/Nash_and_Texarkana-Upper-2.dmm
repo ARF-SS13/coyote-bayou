@@ -1199,8 +1199,8 @@
 /area/f13/wasteland)
 "ep" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "eq" = (
@@ -1597,7 +1597,7 @@
 	pixel_x = -6;
 	pixel_y = 14
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_x = 8;
 	pixel_y = 11
 	},

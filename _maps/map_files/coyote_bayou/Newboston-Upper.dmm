@@ -3598,7 +3598,7 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_x = 8;
 	pixel_y = 11
 	},
@@ -4311,7 +4311,7 @@
 "ji" = (
 /obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/uncommon_artifacts{
-	loot = list(/obj/item/blueprint/research = 50, /obj/item/flashlight/seclite = 50);
+	loot = list(/obj/item/blueprint/research = 50, /obj/item/flashlight = 50);
 	name = "50 percent research spawner"
 	},
 /turf/open/floor/f13/wood,
@@ -9687,14 +9687,14 @@
 /area/f13/building)
 "uX" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uY" = (
