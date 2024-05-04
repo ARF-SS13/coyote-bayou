@@ -1626,13 +1626,6 @@
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
-"aKV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "aLp" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken"
@@ -5388,7 +5381,7 @@
 	pixel_y = 7
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon_artifacts{
-	loot = list(/obj/item/blueprint/research=50,/obj/item/flashlight=50);
+	loot = list(/obj/item/blueprint/research=50,/obj/item/flashlight/seclite=50);
 	name = "50 percent research spawner"
 	},
 /obj/item/broom,
@@ -6006,9 +5999,8 @@
 /area/f13/brotherhood)
 "cQs" = (
 /obj/effect/decal/marking{
-	icon_state = "doublevertical"
+	icon_state = "doubleverticalcorroded"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
 	},
@@ -7478,7 +7470,7 @@
 /obj/structure/rack/shelf_wood/modern{
 	color = "#777777"
 	},
-/obj/item/flashlight{
+/obj/item/flashlight/seclite{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
@@ -10554,8 +10546,8 @@
 /area/f13/wasteland)
 "fbI" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/mountain,
@@ -12629,6 +12621,15 @@
 /obj/effect/decal/cleanable/glitter/pink,
 /turf/open/floor/fakespace,
 /area/f13/building/tribal/caveofforever)
+"gbc" = (
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "gbf" = (
 /obj/effect/decal/fakelattice,
 /turf/open/indestructible/ground/outside/ruins,
@@ -16695,7 +16696,7 @@
 /obj/structure/closet/crate/wooden,
 /obj/item/ammo_box/a308box,
 /obj/item/ammo_box/a308,
-/obj/item/flashlight{
+/obj/item/flashlight/seclite{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
@@ -17188,14 +17189,6 @@
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
-"imE" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "imM" = (
 /obj/machinery/jukebox,
 /turf/open/floor/plasteel/f13{
@@ -18734,6 +18727,14 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"iVQ" = (
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "iVV" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -19735,14 +19736,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"jrW" = (
-/obj/effect/decal/marking{
-	icon_state = "doubleverticalcorroded"
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "jso" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/f13{
@@ -19928,14 +19921,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"jwy" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "jwz" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/drinkingglasses,
@@ -21134,14 +21119,6 @@
 /obj/item/trash/f13/tin,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"jXL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "jXQ" = (
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood,
@@ -24420,6 +24397,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"lxk" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirthole{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "lxx" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -33221,6 +33204,13 @@
 	icon_state = "horizontaloutermainleft"
 	},
 /area/f13/wasteland)
+"pKj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "pKp" = (
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
@@ -34140,8 +34130,10 @@
 /area/f13/building)
 "qnf" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirthole{
-	color = "#999999"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "qnl" = (
@@ -38339,14 +38331,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
-"sfL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "sfN" = (
 /obj/structure/holohoop{
 	dir = 4
@@ -39586,9 +39570,9 @@
 /area/f13/wasteland)
 "sLs" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "sLF" = (
@@ -39846,12 +39830,12 @@
 /area/f13/wasteland)
 "sQB" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
-/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -42840,6 +42824,14 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"ulJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "ulP" = (
 /obj/structure/window/fulltile/wood{
 	max_integrity = 140
@@ -42934,14 +42926,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
-"uou" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "uoz" = (
 /obj/structure/table/wood,
 /obj/item/candle,
@@ -78894,7 +78878,7 @@ jqA
 klQ
 veJ
 mLI
-imE
+nxO
 nxO
 nxO
 nxO
@@ -79149,9 +79133,9 @@ vqy
 hRl
 jqA
 klQ
-tkO
-uWY
-uou
+cIE
+brC
+brC
 brC
 brC
 brC
@@ -83826,7 +83810,7 @@ avK
 avK
 avK
 avK
-aKV
+pKj
 iRT
 avK
 avK
@@ -84083,7 +84067,7 @@ gIm
 gIm
 gIm
 bKF
-sfL
+qnf
 gIm
 gIm
 gIm
@@ -84596,7 +84580,7 @@ uWY
 mLI
 tLM
 kfv
-qnf
+lxk
 uWY
 mLI
 mLI
@@ -84853,12 +84837,12 @@ uWY
 mLI
 nDh
 kfv
-jrW
-jwy
 cQs
-cQs
-jwy
-jwy
+iVQ
+gbc
+gbc
+iVQ
+iVQ
 kuW
 udg
 uyU
@@ -85112,7 +85096,7 @@ nDh
 kfv
 uWY
 uWY
-jXL
+ulJ
 hrr
 uWY
 uWY
@@ -86651,7 +86635,7 @@ mbZ
 bIG
 hUu
 afY
-xlf
+czD
 xlf
 aST
 xlf
