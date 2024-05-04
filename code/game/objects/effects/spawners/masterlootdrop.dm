@@ -1390,6 +1390,8 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		/obj/item/reagent_containers/glass/beaker/large = 1,
 		/obj/item/flashlight = 1,
+		/obj/item/storage/fancy/flare_pouch = 1,
+		/obj/item/storage/fancy/flare_pouch/glowstick = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_tools
@@ -1412,8 +1414,8 @@
 		/obj/item/book/granter/crafting_recipe/scav_two = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
-		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/blue = 1,
+		/obj/item/flashlight/lantern/mining = 1,
 		/obj/item/book/granter/martial/raging_boar = 1,
 	)
 
@@ -1439,7 +1441,7 @@
 		/obj/item/reagent_containers/glass/beaker/meta = 1,
 		/obj/item/reagent_containers/glass/beaker/noreact = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/lantern = 1,
 		/obj/item/weldingtool/hightech = 1,
 		/obj/item/crowbar/hightech = 1,
 		/obj/item/crowbar/hightech = 1,

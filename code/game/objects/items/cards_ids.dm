@@ -1246,6 +1246,9 @@
 
 	access = list(ACCESS_DEN)
 
+/obj/item/card/id/denid/truedark
+	name = "Lytmon Labs"
+	desc = "A Vault ID with the vault number replaced with \"Lytmon Labs\"."
 
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"

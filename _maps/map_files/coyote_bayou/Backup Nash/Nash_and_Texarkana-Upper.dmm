@@ -14654,7 +14654,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	light_on = 1;
 	on = 1;
@@ -18543,7 +18543,7 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_x = 8;
 	pixel_y = 11
 	},
@@ -39554,8 +39554,8 @@
 /area/f13/building)
 "tWr" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building)
@@ -43441,7 +43441,7 @@
 /area/f13/building)
 "vYF" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	light_on = 1;
 	on = 1;

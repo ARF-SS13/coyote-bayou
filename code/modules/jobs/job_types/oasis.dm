@@ -19,14 +19,18 @@ here's a tip, go search DEFINES/access.dm
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
 
-
+/datum/outfit/job/den/pre_equip(mob/living/carbon/human/H)
+	..()
+	r_pocket = pick(
+		/obj/item/storage/fancy/flare_pouch, \
+		/obj/item/storage/fancy/flare_pouch/glowstick)
 
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
@@ -63,7 +67,7 @@ here's a tip, go search DEFINES/access.dm
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/wallet/stash/mid
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	belt = /obj/item/storage/bag/plants
 	backpack_contents = list(
 		/obj/item/cultivator=1, \
@@ -80,6 +84,9 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
+	r_pocket = pick(
+		/obj/item/storage/fancy/flare_pouch, \
+		/obj/item/storage/fancy/flare_pouch/glowstick)
 
 
 /*--------------------------------------------------------------*/
@@ -117,7 +124,7 @@ here's a tip, go search DEFINES/access.dm
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/wallet/stash/mid
-	r_pocket = /obj/item/flashlight/lantern
+	//r_pocket = /obj/item/flashlight/lantern
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -200,7 +207,7 @@ here's a tip, go search DEFINES/access.dm
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/dendoctor
 	l_pocket = /obj/item/storage/wallet/stash/mid
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/storage/fancy/flare_pouch/glowstick
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
@@ -262,7 +269,7 @@ here's a tip, go search DEFINES/access.dm
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
@@ -629,10 +636,11 @@ here's a tip, go search DEFINES/access.dm
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	gloves = /obj/item/pda
-	l_pocket = /obj/item/storage/wallet/stash/mid
-	r_pocket = /obj/item/storage/survivalkit/medical/follower
+	//l_pocket = /obj/item/storage/wallet/stash/mid
+	l_pocket = /obj/item/storage/survivalkit/medical/follower
 	backpack_contents = list(
-		/obj/item/cool_book/reclaimerguide
+		/obj/item/cool_book/reclaimerguide,
+		/obj/item/storage/wallet/stash/mid
 	)
 
 
