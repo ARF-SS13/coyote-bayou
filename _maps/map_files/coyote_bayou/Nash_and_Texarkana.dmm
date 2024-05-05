@@ -33883,8 +33883,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "fqE" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
-/turf/closed/mineral/random/low_chance,
+/obj/structure/nest/fireant,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/underground/cave/coyote/antmound)
 "fqG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -44333,7 +44335,6 @@
 /area/f13/wasteland/city/nash/theloop)
 "icR" = (
 /obj/effect/decal/remains/human,
-/obj/item/twohanded/baseball/golfclub,
 /obj/structure/ladder/unbreakable{
 	height = 2;
 	id = "antnest"
@@ -57417,30 +57418,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "lxp" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#555555"
-	},
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/indestructible/rock,
+/area/f13/underground/cave/coyote/antmound)
 "lxH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -77586,20 +77566,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "qDo" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#555555"
-	},
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/fireant,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/underground/cave/coyote/antmound)
 "qDq" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/oil/slippery{
@@ -85546,9 +85517,10 @@
 	},
 /area/f13/wasteland)
 "sKE" = (
-/obj/structure/bed/mattress/pregame,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/fireant,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/underground/cave/coyote/antmound)
 "sKI" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{
@@ -93278,9 +93250,7 @@
 /obj/structure/wreck/trash/machinepiletwo{
 	icon_state = "boxfort"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/nash/theloop)
 "uKl" = (
 /obj/structure/rack,
@@ -107120,7 +107090,7 @@ aOk
 aOk
 aOk
 aOk
-sKE
+aOk
 aaa
 rrq
 ayl
@@ -107377,7 +107347,7 @@ aOk
 aOk
 aOk
 aOk
-aJN
+aOk
 adg
 egE
 ayl
@@ -107634,7 +107604,7 @@ gWL
 gWL
 aOk
 aOk
-aJN
+aOk
 adg
 egE
 ayl
@@ -107891,7 +107861,7 @@ aOk
 gWL
 gWL
 aOk
-qDo
+aOk
 adg
 egE
 ayl
@@ -108148,7 +108118,7 @@ aOk
 aOk
 gWL
 aOk
-lxp
+aOk
 oLh
 axv
 ayl
@@ -110759,30 +110729,30 @@ lWN
 lWN
 lWN
 lWN
+lxp
 lWN
-lWN
 ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
+vVy
 aaa
 "}
 (17,1,1) = {"
@@ -111006,19 +110976,19 @@ itM
 itM
 itM
 fSJ
+lxp
+lxp
+lxp
+lxp
 lWN
 lWN
 lWN
+lxp
+lxp
+lxp
 lWN
-lWN
-lWN
-lWN
-lWN
-lWN
-lWN
-lWN
-lWN
-ezS
+lxp
+vVy
 ezS
 ezS
 ezS
@@ -111267,9 +111237,9 @@ lWN
 lWN
 lWN
 lWN
-lWN
-lWN
-lWN
+lxp
+lxp
+lxp
 lWN
 lWN
 lWN
@@ -111545,11 +111515,11 @@ ezS
 ezS
 ezS
 ezS
+tNk
 ezS
-ezS
-ezS
-ezS
-ezS
+tNk
+tNk
+tNk
 ezS
 ezS
 ezS
@@ -111790,18 +111760,18 @@ lWN
 lWN
 lWN
 ezS
+gfq
+gfq
+gfq
+gfq
+gfq
 ezS
 ezS
 ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
-ezS
+tNk
+tNk
+tNk
+tNk
 ezS
 ezS
 ezS
@@ -112051,7 +112021,7 @@ gfq
 gfq
 ezS
 ezS
-ezS
+gfq
 ezS
 ezS
 ezS
@@ -112308,8 +112278,8 @@ gfq
 gfq
 ezS
 ezS
-ezS
-tNk
+gfq
+gfq
 tNk
 ezS
 ezS
@@ -112558,25 +112528,25 @@ lWN
 lWN
 lWN
 lWN
-lWN
-lWN
+gLE
+gLE
 vNL
 ezS
 ezS
 ezS
 ezS
 ezS
-tNk
-tNk
-ezS
-ezS
-ezS
 gfq
 gfq
 ezS
 ezS
 ezS
-ezS
+gfq
+gfq
+gfq
+gfq
+gfq
+gfq
 ezS
 ezS
 ezS
@@ -112815,7 +112785,7 @@ vqh
 vqh
 vqh
 lWN
-lWN
+gLE
 lWN
 dBU
 ezS
@@ -112824,16 +112794,16 @@ nkX
 pmP
 tNk
 tNk
+gfq
+gfq
+gfq
+gfq
+gfq
+ezS
 ezS
 ezS
 ezS
 gfq
-gfq
-ezS
-ezS
-ezS
-ezS
-ezS
 ezS
 ezS
 ezS
@@ -113072,7 +113042,7 @@ yem
 kHr
 vqh
 lWN
-lWN
+gLE
 lWN
 pmP
 nkX
@@ -113087,8 +113057,8 @@ gfq
 gfq
 ezS
 ezS
-ezS
-ezS
+tNk
+tNk
 ezS
 gfq
 ezS
@@ -113329,7 +113299,7 @@ ntg
 yem
 vqh
 lWN
-lWN
+gLE
 lWN
 ezS
 ezS
@@ -113342,9 +113312,9 @@ ezS
 vNL
 gfq
 ezS
-ezS
-ezS
-ezS
+tNk
+tNk
+tNk
 ezS
 ezS
 gfq
@@ -113598,8 +113568,8 @@ nkX
 gfq
 vNL
 ezS
-ezS
-ezS
+tNk
+tNk
 ezS
 ezS
 ezS
@@ -114885,7 +114855,7 @@ pmP
 ezS
 ezS
 ezS
-pmP
+hyc
 vNL
 gfq
 ezS
@@ -115136,13 +115106,13 @@ tNk
 dBU
 nkX
 nkX
-tNk
+gfq
 tNk
 qeC
 ezS
 nkX
 ezS
-ezS
+gfq
 nkX
 gfq
 gvR
@@ -115388,17 +115358,17 @@ fSJ
 fSJ
 fSJ
 ezS
-ezS
-vNL
-dBU
-ezS
-tNk
-ezS
-tNk
-tNk
-ezS
-ezS
 gfq
+vNL
+hyc
+gfq
+gfq
+gfq
+jNE
+tNk
+ezS
+ezS
+jNE
 vNL
 ezS
 ezS
@@ -115651,12 +115621,12 @@ ezS
 ezS
 tNk
 qeC
+gfq
 tNk
-tNk
 ezS
 ezS
 ezS
-dBU
+hyc
 ezS
 ezS
 nkX
@@ -115908,12 +115878,12 @@ vNL
 ezS
 ezS
 ezS
+gfq
 ezS
 ezS
 ezS
 ezS
-ezS
-nkX
+vNL
 ezS
 ezS
 ezS
@@ -116165,12 +116135,12 @@ ezS
 ezS
 ezS
 ezS
-ezS
-tNk
-tNk
-tNk
-pmP
-tNk
+gfq
+gfq
+gfq
+gfq
+hyc
+gfq
 ezS
 nkX
 ezS
@@ -116419,10 +116389,10 @@ vNL
 ezS
 nkX
 ezS
-nkX
+qeC
 ezS
 ezS
-tNk
+gfq
 ezS
 ezS
 ezS
@@ -116651,7 +116621,7 @@ mTh
 mrg
 mrg
 mrg
-tVn
+kJH
 fSJ
 jJV
 oyD
@@ -116675,11 +116645,11 @@ lWN
 gfq
 nkX
 ezS
-ezS
-ezS
-ezS
-ezS
 tNk
+ezS
+ezS
+ezS
+gfq
 ezS
 ezS
 nkX
@@ -116908,7 +116878,7 @@ mTh
 mrg
 mrg
 mrg
-sSL
+kJH
 fSJ
 jJV
 oyD
@@ -116933,10 +116903,10 @@ jNE
 vNL
 nkX
 ezS
-nkX
+qeC
 ezS
 ezS
-tNk
+gfq
 ezS
 tNk
 dBU
@@ -117164,8 +117134,8 @@ tqL
 mTh
 mrg
 mrg
-mrg
-tVn
+kJH
+kJH
 fSJ
 fSJ
 fSJ
@@ -117193,7 +117163,7 @@ gfq
 ezS
 ezS
 ezS
-ezS
+gfq
 nkX
 ezS
 nkX
@@ -117710,7 +117680,7 @@ ezS
 ezS
 nkX
 ezS
-ezS
+gfq
 ezS
 nkX
 nkX
@@ -117962,15 +117932,15 @@ tNk
 nkX
 vNL
 nkX
-ezS
+tNk
 ezS
 nkX
 tNk
 ezS
-qeC
+vNL
 ezS
-ezS
-ezS
+gfq
+gfq
 tNk
 ezS
 gfq
@@ -118218,16 +118188,16 @@ ezS
 ezS
 nkX
 gfq
-nkX
+qeC
 ezS
 nkX
 pmP
 ezS
 tNk
-ezS
-qeC
-ezS
-ezS
+gfq
+vNL
+gfq
+jNE
 tNk
 ezS
 vNL
@@ -118450,7 +118420,7 @@ mrg
 ihU
 mrg
 mrg
-mrg
+tVn
 fSJ
 igq
 too
@@ -118475,16 +118445,16 @@ ezS
 ezS
 ezS
 gfq
-nkX
+qeC
 dBU
 ezS
 ezS
 tNk
 tNk
+gfq
 ezS
-ezS
-ezS
-ezS
+gfq
+gfq
 tNk
 ezS
 gfq
@@ -118707,7 +118677,7 @@ mrg
 mrg
 mrg
 mrg
-mrg
+sSL
 fSJ
 igq
 igq
@@ -118731,14 +118701,14 @@ fSJ
 nkX
 nkX
 ezS
+vNL
 qeC
-nkX
 nkX
 tNk
 ezS
 nkX
 qeC
-ezS
+gfq
 ezS
 nkX
 nkX
@@ -118964,7 +118934,7 @@ mrg
 mrg
 mrg
 mrg
-mrg
+tVn
 fSJ
 vNz
 fSJ
@@ -118988,14 +118958,14 @@ fSJ
 ezS
 tNk
 dBU
-nkX
+vNL
 ezS
 ezS
 nkX
 nkX
 nkX
 ezS
-ezS
+gfq
 ezS
 nkX
 gfq
@@ -119231,11 +119201,11 @@ ezS
 nkX
 nkX
 ezS
-ezS
-ezS
-fqE
-ezS
-ezS
+gfq
+gfq
+jRc
+gfq
+gfq
 tNk
 nkX
 ezS
@@ -119245,14 +119215,14 @@ qeC
 tNk
 nkX
 nkX
-ezS
+gfq
 tNk
 ezS
 nkX
 ezS
 ezS
 ezS
-ezS
+gfq
 gfq
 gfq
 gfq
@@ -119479,31 +119449,31 @@ ezS
 ezS
 ezS
 gfq
-gfq
+jNE
 jRc
-ezS
-ezS
-ezS
-tNk
-ezS
-nkX
-ezS
-ezS
+gfq
+gfq
+gfq
+gfq
+gfq
+vNL
+gfq
+gfq
 ezS
 gfq
 ezS
-qeC
-tNk
+vNL
+gfq
 ezS
 ezS
 ezS
 tNk
 nkX
 ezS
-ezS
-nkX
-ezS
-tNk
+gfq
+vNL
+gfq
+gfq
 tNk
 nkX
 ezS
@@ -119748,16 +119718,16 @@ nkX
 ezS
 ezS
 ezS
+tNk
 ezS
-ezS
-ezS
-ezS
-ezS
-ezS
+gfq
+gfq
+gfq
+gfq
 vNL
 ezS
-ezS
-ezS
+gfq
+gfq
 ezS
 ezS
 tNk
@@ -119770,9 +119740,9 @@ vNL
 ezS
 nkX
 nkX
-ezS
-ezS
-nkX
+gfq
+gfq
+qDo
 qeC
 gfq
 ezS
@@ -120002,9 +119972,9 @@ tNk
 ezS
 ezS
 ezS
-dBU
-ezS
-ezS
+pmP
+tNk
+tNk
 ezS
 ezS
 ezS
@@ -120026,10 +119996,10 @@ gfq
 gfq
 tNk
 ezS
-qeC
-tNk
-qeC
-qeC
+vNL
+gfq
+hyc
+hyc
 dBU
 gfq
 ezS
@@ -120283,10 +120253,10 @@ ezS
 ezS
 ezS
 ezS
-ezS
-ezS
-nkX
-ezS
+gfq
+vNL
+hyc
+gfq
 ezS
 gfq
 ezS
@@ -120516,7 +120486,7 @@ nkX
 nkX
 ezS
 gfq
-vTL
+fqE
 ezS
 ezS
 ezS
@@ -120524,26 +120494,26 @@ gfq
 gfq
 gfq
 gfq
+jNE
+ezS
+tNk
+qeC
+tNk
+ezS
+ezS
 gfq
+ezS
 ezS
 ezS
 nkX
 ezS
 ezS
 ezS
+ezS
+hyc
+sKE
 gfq
-ezS
-ezS
-ezS
-nkX
-ezS
-ezS
-ezS
-ezS
-nkX
-ezS
-ezS
-nkX
+vNL
 ezS
 gfq
 ezS
@@ -120781,7 +120751,7 @@ ezS
 ezS
 ezS
 ezS
-tNk
+gfq
 ezS
 nkX
 nkX
@@ -121038,12 +121008,12 @@ tNk
 tNk
 tNk
 ezS
-ezS
-ezS
-ezS
+gfq
+gfq
+gfq
 vNL
 gfq
-ezS
+gfq
 gfq
 nkX
 ezS
@@ -121295,12 +121265,12 @@ ezS
 ezS
 tNk
 nkX
-nkX
-ezS
+vNL
+gfq
 ezS
 ezS
 vNL
-ezS
+tNk
 ezS
 ezS
 tNk
@@ -121553,11 +121523,11 @@ ezS
 ezS
 ezS
 ezS
-ezS
+gfq
 ezS
 ezS
 gfq
-ezS
+tNk
 ezS
 ezS
 ezS
@@ -121814,7 +121784,7 @@ vNL
 ezS
 ezS
 gfq
-ezS
+tNk
 ezS
 nkX
 nkX
@@ -122060,9 +122030,9 @@ ezS
 ezS
 ezS
 ezS
-ezS
-ezS
-nkX
+tNk
+tNk
+qeC
 gfq
 ezS
 nkX
@@ -122071,7 +122041,7 @@ gfq
 gfq
 gfq
 gfq
-ezS
+tNk
 ezS
 ezS
 ezS
@@ -122319,7 +122289,7 @@ ezS
 qeC
 nkX
 ezS
-nkX
+qeC
 gfq
 ezS
 ezS
@@ -123097,7 +123067,7 @@ gfq
 nkX
 tNk
 ezS
-ezS
+gfq
 ezS
 nkX
 ezS
@@ -123345,7 +123315,7 @@ ezS
 ezS
 ezS
 ezS
-ezS
+tNk
 gfq
 gfq
 qeC
@@ -123602,7 +123572,7 @@ ezS
 ezS
 ezS
 ezS
-ezS
+tNk
 vNL
 nkX
 nkX
@@ -124631,7 +124601,7 @@ ezS
 tNk
 ezS
 ezS
-nkX
+qeC
 gfq
 ezS
 tNk
@@ -124888,7 +124858,7 @@ nkX
 ezS
 ezS
 ezS
-nkX
+qeC
 gfq
 ezS
 tNk
@@ -124896,8 +124866,8 @@ ezS
 nkX
 hyc
 aYh
-ezS
-ezS
+tNk
+tNk
 hyc
 gfq
 gfq
@@ -125154,7 +125124,7 @@ dBU
 dBU
 jcY
 upa
-ezS
+tNk
 ezS
 ezS
 nkX
@@ -150557,7 +150527,7 @@ dPM
 xXm
 iVC
 lox
-lox
+uWT
 dKY
 acT
 aef
@@ -150814,7 +150784,7 @@ fSq
 xKA
 fSq
 lox
-lox
+uWT
 dKY
 acT
 sTX
@@ -151071,7 +151041,7 @@ dpt
 dpt
 wUx
 lox
-lox
+uWT
 dKY
 kbr
 uNi
@@ -151328,7 +151298,7 @@ dpt
 fSq
 dpt
 nGx
-lox
+uWT
 dKY
 kbr
 iYh
@@ -151585,7 +151555,7 @@ qhP
 nOy
 dpt
 nGx
-lox
+uWT
 jAN
 acT
 aeh
@@ -151842,7 +151812,7 @@ qhP
 fSq
 fSq
 lox
-lox
+uWT
 dKY
 acT
 acS
@@ -152099,7 +152069,7 @@ wUx
 dpt
 dpt
 nGx
-lox
+uWT
 cVH
 acT
 aew
@@ -152356,7 +152326,7 @@ axJ
 fSq
 dpt
 lox
-lox
+uWT
 abL
 xKv
 iWY
@@ -152613,7 +152583,7 @@ fSq
 qhP
 fSq
 lox
-lox
+uWT
 eWm
 iIK
 lEj
@@ -152870,7 +152840,7 @@ fSq
 dpt
 dpt
 lox
-lox
+uWT
 vnq
 bzp
 bzp
@@ -153127,7 +153097,7 @@ dpt
 fSq
 dpt
 lox
-lox
+uWT
 vnq
 qYY
 qYY
@@ -153384,7 +153354,7 @@ fSq
 wUx
 qhP
 lox
-lox
+uWT
 vnq
 lQb
 fpl
@@ -153641,7 +153611,7 @@ dpt
 fSq
 dpt
 wMm
-lox
+uWT
 uXF
 iBR
 tEA
@@ -153898,7 +153868,7 @@ dpt
 dpt
 fSq
 lox
-lox
+uWT
 vnq
 snq
 bzp

@@ -383,6 +383,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
+	greeble = "nest"
 
 /turf/open/indestructible/ground/outside/dirt/Initialize()
 	. = ..()
@@ -453,6 +454,7 @@ GLOBAL_LIST_INIT(trash_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(salvage_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 50,
 	/obj/structure/car = 10,
 	/obj/structure/car/rubbish1 = 10,
 	/obj/structure/car/rubbish2 = 10,
@@ -464,6 +466,7 @@ GLOBAL_LIST_INIT(salvage_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(nest_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 5,
 	/obj/structure/nest/gecko = 5,
 	/obj/structure/nest/radroach = 5,
 	/obj/structure/nest/molerat = 5,
