@@ -25,6 +25,7 @@
 	//heart attack stuff
 	handle_heart()
 	dna.species.spec_life(src) // for mutantraces
+	handle_crit()
 	return (stat != DEAD) && !QDELETED(src)
 
 /mob/living/carbon/human/PhysicalLife(seconds, times_fired)
@@ -41,6 +42,96 @@
 		if (CS.clothing_flags & STOPSPRESSUREDAMAGE && (headless || (CH.clothing_flags & STOPSPRESSUREDAMAGE)))
 			return ONE_ATMOSPHERE
 	return ..()
+
+
+/mob/living/carbon/human/proc/handle_crit()
+	if(HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
+		return FALSE
+	if(health > crit_threshold) // if we're above crit, we're not in crit
+		// handle_agony(src)
+		return FALSE
+	// welcome to crit! We're gonna make your life suck until you unsuck it
+	var/die_at = abs(HEALTH_THRESHOLD_DEAD)
+	var/total_crit_hp = crit_threshold + die_at // 200 + 0 = 200
+	var/hp_below_crit = total_crit_hp - (health + die_at) // 200 - (-30 + 200) = 30 hp below crit
+	var/crit_percent = hp_below_crit / total_crit_hp // 30 / 200 = 0.15
+	/// first, update the deepest crit we've gone
+	crit_agony = max(crit_percent, crit_agony) // its actually a number 0-1
+	/// Now, mess em up, if we can
+	if(COOLDOWN_FINISHED(src, crit_damage_cd))
+		if(injury_bandage_proportion() > crit_percent && prob(100 * crit_percent))
+			apply_damage(2 * crit_percent, pick(BRUTE, BURN), BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+			COOLDOWN_START(src, crit_damage_cd, 10 SECONDS)
+	if(COOLDOWN_FINISHED(src, crit_bleed_cd))
+		if(prob(200 * crit_percent))
+			COOLDOWN_START(src, crit_bleed_cd, 20 SECONDS)
+			if(!can_bleed()) // why cant they bleed?
+				if(isrobotic(src) || only_has_robot_limbs()) // they're a robot or Cylphie
+					to_chat(src, span_danger("A severed wire shorts out with a small EMP!"))
+					emp_act(10, TRUE) // darn robots
+				else // darn skeletons
+					apply_damage(2 * crit_percent, BRUTE, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+			else
+				if(is_bleeding())
+					to_chat(src, span_danger("You feel a clot dislodge, spraying blood all over!"))
+					aggravate_wound(crit_percent)
+				else
+					apply_damage(2 * crit_percent, OXY, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+	if(COOLDOWN_FINISHED(src, crit_faint_cd))
+		if(prob(200 * crit_percent))
+			var/sleeptime = 20 SECONDS * crit_percent
+			COOLDOWN_START(src, crit_faint_cd, rand(15 SECONDS, 45 SECONDS) + sleeptime)
+			if(HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
+				drop_all_held_items()
+			else
+				AdjustSleeping(sleeptime)
+				to_chat(src, span_danger("You feel faint and collapse!"))
+
+/mob/living/carbon/human/proc/can_bleed()
+	var/list/implies_nonbleedable = list(
+		NOBLOOD,
+		ROBOTIC_LIMBS,
+	)
+	var/datum/species/S = dna.species
+	if(S)
+		for(var/traint in S.species_traits)
+			if(traint in implies_nonbleedable)
+				return FALSE
+		var/list/implies_bleedable = list(
+			HAS_FLESH,
+		)
+		var/notableed = TRUE
+		for(var/traint in S.species_traits)
+			if(traint in implies_bleedable)
+				notableed = FALSE
+		if(notableed)
+			return FALSE
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return FALSE
+	return TRUE // *in theory*
+
+// GLOBAL_LIST_EMPTY(agony_cache) // todo: this
+
+// /datum/species/proc/handle_agony(mob/living/carbon/human/src)
+// 	if(crit_agony <= CRIT_AGONY_THRESHOLD)
+// 		return
+// 	var/how_bad = CRIT_AGONY_NONE
+// 	switch(crit_agony)
+// 		if(-INFINITY to CRIT_AGONY_THRESHOLD)
+// 			return
+// 		if(CRIT_AGONY_THRESHOLD to CRIT_AGONY_THRESHOLD_LIGHT)
+// 			how_bad = CRIT_AGONY_LIGHT
+// 		if(CRIT_AGONY_THRESHOLD_LIGHT to CRIT_AGONY_THRESHOLD_MAJOR)
+// 			how_bad = CRIT_AGONY_MAJOR
+// 		if(CRIT_AGONY_THRESHOLD_MAJOR to CRIT_AGONY_THRESHOLD_CATASTROPHIC)
+// 			how_bad = CRIT_AGONY_CATASTROPHIC
+// 		else
+// 			how_bad = CRIT_AGONY_DIED
+// 	if(!LAZYLEN(GLOB.agony_cache))
+// 		for(var/pain in subtypesof(/datum/agony))
+// 			var/datum/agony/AAA = pain
+// 			GLOB.agony_cache |= new AAA()
+// 	var/list/eligable_agonies = list()
 
 
 /mob/living/carbon/human/handle_traits()

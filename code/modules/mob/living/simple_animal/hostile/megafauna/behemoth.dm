@@ -18,7 +18,6 @@
 	move_to_delay = 8
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = TRUE
-	stat_attack = CONSCIOUS
 	pixel_x = -16
 	wander = FALSE
 	movement_type = GROUND

@@ -255,6 +255,7 @@
 	#define COMPONENT_BLOCK_GHOSTING (1<<0)
 	#define COMPONENT_DO_NOT_PENALIZE_GHOSTING (1<<1)
 	#define COMPONENT_FREE_GHOSTING (1<<2)
+#define COMSIG_MOB_REMOVE_CHICKEN_HAT "mob_remove_chicken_hat"	//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_ALLOWED "mob_allowed"						//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"			//from base of mob/anti_magic_check(): (mob/user, magic, holy, tinfoil, chargecost, self, protection_sources)
 	#define COMPONENT_BLOCK_MAGIC 1
@@ -378,8 +379,8 @@
 
 // /mob/living/simple_animal/hostile signals
 #define COMSIG_HOSTILE_CHECK_FACTION "hostile_check_faction"	//from base of mob/living/simple_animal/hostile/check_faction(): (mob/living/simple_animal/hostile/target, mob/living/simple_animal/hostile/attacker)
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 	#define COMPONENT_HOSTILE_NO_ATTACK 1
+#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 
 // /obj signals
 #define COMSIG_OBJ_DECONSTRUCT 	"obj_deconstruct"				//from base of obj/deconstruct(): (disassembled)

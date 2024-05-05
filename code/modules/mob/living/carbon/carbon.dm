@@ -1121,13 +1121,13 @@
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
 			death()
 			return
-		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > 50 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
+		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
 			set_stat(UNCONSCIOUS)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			if(!eye_blind)
 				blind_eyes(1)
 		else
-			if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
+			if((health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT)) || getOxyLoss() > 50)
 				set_stat(SOFT_CRIT)
 				SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			else
@@ -1283,7 +1283,8 @@
 	for(var/i in status_effects)
 		var/datum/status_effect/S = i
 		. *= S.interact_speed_modifier()
-
+	if(stat == SOFT_CRIT)
+		. *= 3
 
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
@@ -1472,6 +1473,13 @@
 	if(wear_mask)
 		if(wear_mask.flags_inv & HIDEEYES)
 			LAZYOR(., SLOT_GLASSES)
+
+// if any of our bodyparts are bleeding
+/mob/living/carbon/proc/only_has_robot_limbs()
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if(BP.status == BODYPART_ORGANIC)
+			return FALSE
 
 // if any of our bodyparts are bleeding
 /mob/living/carbon/proc/is_bleeding()

@@ -276,7 +276,7 @@
 
 /datum/component/storage/proc/quick_empty(mob/M)
 	var/atom/A = parent
-	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
+	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated(allow_crit = TRUE))
 		return
 	if(check_locked(null, M, TRUE))
 		return FALSE
@@ -484,7 +484,7 @@
 		var/obj/item/I = O
 		if(iscarbon(M) || isdrone(M))
 			var/mob/living/L = M
-			if(!L.incapacitated() && I == L.get_active_held_item())
+			if(!L.incapacitated(allow_crit = TRUE) && I == L.get_active_held_item())
 				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE))	//If it has storage it should be trying to dump, not insert.
 					handle_item_insertion(I, FALSE, L)
 					var/atom/A = parent
@@ -727,7 +727,7 @@
 			playsound(A, "rustle", 50, 1, -5)
 		return TRUE
 
-	if(user.can_hold_items() && !user.incapacitated())
+	if(user.can_hold_items() && !user.incapacitated(allow_crit = TRUE))
 		var/obj/item/I = locate() in real_location()
 		if(!I)
 			return

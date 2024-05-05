@@ -296,7 +296,7 @@
 	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE) || hacked)
 		return
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")

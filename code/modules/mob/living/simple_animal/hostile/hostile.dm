@@ -103,7 +103,9 @@
 	var/search_objects_timer_id //Timer for regaining our old search_objects value after being attacked
 	var/search_objects_regain_time = 30 //the delay between being attacked and gaining our old search_objects value back
 	var/list/wanted_objects = list() //A typecache of objects types that will be checked against to attack, should we have search_objects enabled
-	var/stat_attack = CONSCIOUS //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
+	var/attack_downed_players = TRUE // ignore stat attack, attack people in soft crit.... for a while
+	var/attack_downed_proportion = 0.85 // Attack until they're this proportion between soft crit and hard crit
+	var/stat_attack = SOFT_CRIT //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
 	var/stat_exclusive = FALSE //Mobs with this set to TRUE will exclusively attack things defined by stat_attack, stat_attack DEAD means they will only attack corpses
 	var/attack_same = 0 //Set us to 1 to allow us to attack our own faction
 	var/datum/weakref/targetting_origin = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
@@ -451,8 +453,15 @@
 					return FALSE
 				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
 					return FALSE
-				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
-					return FALSE
+				if(attack_downed_players && L.stat == SOFT_CRIT && iscarbon(L))
+					/// so fun fact, not all players go into crit at 0 HP
+					/// some go into crit at, like, 50 HP, or at -40 HP
+					/// so we have to offset the crit threshold by the amount of health they have
+					var/hp_offset = abs(HEALTH_THRESHOLD_FULLCRIT) + L.crit_threshold // lower and upper bounds of crit
+					var/adj_health = L.health + hp_offset
+					var/propo = max(adj_health, 0.01) / hp_offset
+					if(propo < attack_downed_proportion)
+						return FALSE
 				if(friends[L] > 0 && foes[L] < 1)
 					return FALSE
 			else

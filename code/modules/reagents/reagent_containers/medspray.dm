@@ -53,7 +53,7 @@
 	if(L == user)
 		L.visible_message(span_notice("[user] attempts to [apply_method] [src] on [user.p_them()]self."))
 		if(self_delay)
-			if(!do_mob(user, L, self_delay))
+			if(!do_mob(user, L, self_delay, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 				return
 			if(!reagents || !reagents.total_volume)
 				return

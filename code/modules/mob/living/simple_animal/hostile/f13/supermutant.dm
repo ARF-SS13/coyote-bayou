@@ -25,7 +25,6 @@
 		"yells"
 		)
 	move_to_delay = 5
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	emote_taunt_sound = list(

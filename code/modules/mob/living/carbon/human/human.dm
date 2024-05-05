@@ -1136,7 +1136,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	cut_overlay(MA)
 
 /mob/living/carbon/human/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting = TRUE)
-	if(incapacitated() || (check_resting && !CHECK_MOBILITY(src, MOBILITY_STAND)))
+	// if(incapacitated() || (check_resting && !CHECK_MOBILITY(src, MOBILITY_STAND)))
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(!Adjacent(M) && (M.loc != src))
@@ -1396,7 +1397,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src, required_mobility_flags = MOBILITY_STAND))
 			if(can_piggyback(target))
-				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
+				if(target.incapacitated(FALSE, TRUE, allow_crit = TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return
 				/*if(dna.features["taur"] != "None" || IsFeral())  //if the mount is a taur, then everyone needs -1 hands to piggback ride.
@@ -1461,7 +1462,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	var/stambufferinfluence = (bufferedstam*(100/stambuffer))*0.2 //CIT CHANGE - makes stamina buffer influence movedelay
 	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))	//if we want to ignore slowdown from damage, but not from equipment
 		var/health_deficiency = ((maxHealth + stambufferinfluence) - health + (getStaminaLoss()*0.75))//CIT CHANGE - reduces the impact of staminaloss and makes stamina buffer influence it
-		if(health_deficiency >= 40)
+		if(stat)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, (health_deficiency-39) / 65)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying, TRUE, (health_deficiency-39) / 20)
+		else if(health_deficiency >= 40)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, (health_deficiency-39) / 75)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying, TRUE, (health_deficiency-39) / 25)
 		else

@@ -37,7 +37,6 @@
 	ranged_cooldown_time = 20 SECONDS
 	pass_flags = LETPASSTHROW
 	robust_searching = TRUE
-	stat_attack = CONSCIOUS
 	death_sound = 'sound/machines/machinery_break_1.ogg'
 	aggro_vision_range = 8 //A little more aggressive once in combat to balance out their really low HP
 	decompose = FALSE

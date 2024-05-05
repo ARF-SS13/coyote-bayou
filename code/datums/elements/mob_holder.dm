@@ -36,7 +36,7 @@
 		examine_list += span_notice("Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>! Maybe check in LOOC before just doing so though.")
 
 /datum/element/mob_holder/proc/mob_try_pickup(mob/living/source, mob/user)
-	if(!user.Adjacent(source) || user.incapacitated())
+	if(!user.Adjacent(source) || user.incapacitated(allow_crit = TRUE))
 		return FALSE
 	if(isanimal(user))
 		var/mob/living/simple_animal/S = user

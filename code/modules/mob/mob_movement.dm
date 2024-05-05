@@ -420,17 +420,17 @@
 		for(var/atom/movable/screen/mov_intent/selector in hud_used.static_inventory)
 			selector.update_icon()
 
-#define MOB_LAYER_SHIFT_INCREMENT    0.01
-#define MOB_LAYER_SHIFT_MIN         3.75
+#define MOB_LAYER_SHIFT_INCREMENT    0.5
+#define MOB_LAYER_SHIFT_MIN         2.5
 //#define MOB_LAYER                 4   // This is a byond standard define
-#define MOB_LAYER_SHIFT_MAX           4.05
+#define MOB_LAYER_SHIFT_MAX           20
 //Layer code ported from Skyrat, credit to Ranged66
 
 /mob/living/verb/layershift_up()
 	set name = "Shift Layer Upwards"
 	set category = "IC"
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return
 
@@ -446,7 +446,7 @@
 	set name = "Reset Layer"
 	set category = "IC"
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return
 
@@ -461,7 +461,7 @@
 	set name = "Shift Layer Downwards"
 	set category = "IC"
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return
 

@@ -132,7 +132,7 @@ GLOBAL_LIST_EMPTY(supplykits)
 /datum/component/supplykit/proc/MakePurchase(mob/user, datum/supplykit_item/U)
 	if(!istype(U))
 		return
-	if (!user || user.incapacitated())
+	if (!user || user.incapacitated(allow_crit = TRUE))
 		return
 
 	if(supplytokens < U.cost || U.limited_stock == 0)

@@ -101,8 +101,19 @@
 
 //Health Defines
 #define HEALTH_THRESHOLD_CRIT 0
-#define HEALTH_THRESHOLD_FULLCRIT -30
-#define HEALTH_THRESHOLD_DEAD -100
+#define HEALTH_THRESHOLD_FULLCRIT -175
+#define HEALTH_THRESHOLD_DEAD -200
+
+#define CRIT_AGONY_THRESHOLD 0.1 // or about 20 damage into crit
+#define CRIT_AGONY_THRESHOLD_LIGHT 0.2 // or about 40 damage into crit
+#define CRIT_AGONY_THRESHOLD_MAJOR 0.6 // or about 120 damage into crit
+#define CRIT_AGONY_THRESHOLD_CATASTROPHIC 0.85 // u die, maybe
+
+#define CRIT_AGONY_NONE 0
+#define CRIT_AGONY_LIGHT 1
+#define CRIT_AGONY_MAJOR 2
+#define CRIT_AGONY_CATASTROPHIC 3
+#define CRIT_AGONY_DIED 4
 
 //Actual combat defines
 

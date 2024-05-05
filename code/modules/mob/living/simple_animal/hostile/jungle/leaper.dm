@@ -20,7 +20,6 @@
 	pixel_x = -16
 	layer = LARGE_MOB_LAYER
 	speed = 10
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	var/hopping = FALSE
 	var/hop_cooldown = 0 //Strictly for player controlled leapers

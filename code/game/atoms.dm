@@ -373,7 +373,7 @@
 /atom/proc/HasProximity(atom/movable/AM as mob|obj)
 	return
 
-/atom/proc/emp_act(severity)
+/atom/proc/emp_act(severity, only_target)
 	var/protection = SEND_SIGNAL(src, COMSIG_ATOM_EMP_ACT, severity)
 	if(!(protection & EMP_PROTECT_WIRES) && istype(wires))
 		wires.emp_pulse(severity)

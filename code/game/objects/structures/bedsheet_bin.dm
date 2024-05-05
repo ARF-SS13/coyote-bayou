@@ -362,7 +362,7 @@ LINEN BINS
 	return attack_hand(user)
 
 /obj/structure/bedsheetbin/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		return
 	if(amount >= 1)
 		amount--

@@ -302,7 +302,7 @@
 
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
-	if(!isliving(user) || user.incapacitated() || !isliving(dropping))
+	if(!isliving(user) || user.incapacitated(allow_crit = TRUE) || !isliving(dropping))
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(in_use) // Someone's already going in.
 		return
@@ -315,7 +315,7 @@
 		return
 	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the swamps", "Confirm", "Cancel") != "Confirm")
 		return
-	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
+	if(user.incapacitated(allow_crit = TRUE) || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
 	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
 		to_chat(user, span_warning("This mind has only recently departed. Wait at most two minutes before sending this character out of the round."))

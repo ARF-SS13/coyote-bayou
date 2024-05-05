@@ -199,7 +199,7 @@
 
 
 /mob/proc/put_in_hand_check(obj/item/I)
-	if(incapacitated() && !(I.item_flags&ABSTRACT)) //Cit change - Changes lying to incapacitated so that it's plausible to pick things up while on the ground
+	if(incapacitated(allow_crit = TRUE) && !(I.item_flags&ABSTRACT)) //Cit change - Changes lying to incapacitated so that it's plausible to pick things up while on the ground
 		return FALSE
 	if(!istype(I))
 		return FALSE
@@ -467,7 +467,7 @@
 	set name = "quick-equip"
 	set hidden = 1
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 
 	var/obj/item/storage

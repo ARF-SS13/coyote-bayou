@@ -231,7 +231,7 @@
 		plappeemob = GET_WEAKREF(debug_plappee)
 	else
 		plappeemob = ckey2mob(plappee)
-	if(plappermob.incapacitated(FALSE, FALSE, TRUE))
+	if(plappermob.incapacitated(FALSE, FALSE, TRUE, allow_crit = TRUE))
 		return FALSE // they're in no shape to plap! 
 	if(get_dist(plappermob, plappeemob) > 2)
 		return FALSE // too far away

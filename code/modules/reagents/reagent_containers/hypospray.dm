@@ -120,7 +120,7 @@
 	else
 		M.visible_message(span_danger("[user] attempts to use [src] on [M]."), \
 							span_userdanger("[user] attempts to use [src] on [M]."))
-		if(!do_mob(user, M))
+		if(!do_mob(user, M, 1 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 			return 0
 
 	..()

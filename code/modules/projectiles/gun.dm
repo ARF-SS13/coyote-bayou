@@ -418,6 +418,9 @@ ATTACHMENTS
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
+	if(user && user.incapacitated())
+		to_chat(user, span_danger("You're too messed up to shoot [src]!"))
+		return
 
 	if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
 		var/mob/living/L = user

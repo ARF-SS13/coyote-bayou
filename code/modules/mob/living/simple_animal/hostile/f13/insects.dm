@@ -360,7 +360,6 @@
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
-	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = 1
