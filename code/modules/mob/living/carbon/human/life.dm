@@ -59,11 +59,11 @@
 	crit_agony = max(crit_percent, crit_agony) // its actually a number 0-1
 	/// Now, mess em up, if we can
 	if(COOLDOWN_FINISHED(src, crit_damage_cd))
-		if(injury_bandage_proportion() > crit_percent && prob(100 * crit_percent))
+		if(injury_bandage_proportion() > crit_percent && prob(150 * crit_percent))
 			apply_damage(2 * crit_percent, pick(BRUTE, BURN), BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
 			COOLDOWN_START(src, crit_damage_cd, 10 SECONDS)
 	if(COOLDOWN_FINISHED(src, crit_bleed_cd))
-		if(prob(200 * crit_percent))
+		if(prob(100 * crit_percent))
 			COOLDOWN_START(src, crit_bleed_cd, 20 SECONDS)
 			if(!can_bleed()) // why cant they bleed?
 				if(isrobotic(src) || only_has_robot_limbs()) // they're a robot or Cylphie
@@ -78,8 +78,8 @@
 				else
 					apply_damage(2 * crit_percent, OXY, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
 	if(COOLDOWN_FINISHED(src, crit_faint_cd))
-		if(prob(200 * crit_percent))
-			var/sleeptime = 20 SECONDS * crit_percent
+		if(prob(100 * crit_percent))
+			var/sleeptime = 10 SECONDS * crit_percent
 			COOLDOWN_START(src, crit_faint_cd, rand(15 SECONDS, 45 SECONDS) + sleeptime)
 			if(HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
 				drop_all_held_items()
