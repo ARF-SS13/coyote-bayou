@@ -76,7 +76,7 @@
 
 /datum/supplykit_item/magic/berseker
 	name = "Berserker's Rights"
-	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
+	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, better footing, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
 	item = /obj/item/book/granter/martial/berserker
 	cost = 40
 
@@ -88,7 +88,7 @@
 
 /datum/supplykit_item/magic/sleepingcarp
 	name = "Sleeping Carp Scroll"
-	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina, improved resistance to incoming stamina damage and stuns, and an aversion to drugs and firearms."
+	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina and increased damage taken, improved resistance to incoming stamina damage and stuns, and an aversion to drugs."
 	item = /obj/item/book/granter/martial/carp
 	cost = 40
 
@@ -102,4 +102,4 @@
 	name = "Rising Bass"
 	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
 	item = /obj/item/book/granter/martial/bass
-	cost = 40
+  cost = 40
