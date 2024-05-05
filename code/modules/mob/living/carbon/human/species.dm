@@ -2511,8 +2511,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT && !no_protection)
 			H.adjust_bodytemperature(11)
 		else
-			H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + (H.fire_stacks * 12))
-			H.adjustFireLoss(H.fire_stacks)
+			// H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + (H.fire_stacks * 12))
+			var/damage2do = H.fire_stacks
+			if(H.incapacitated())
+				damage2do /= 4 // in crit, fire less dead;luy
+			H.adjustFireLoss(damage2do)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)
