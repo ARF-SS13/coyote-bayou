@@ -102,4 +102,4 @@
 	name = "Rising Bass"
 	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
 	item = /obj/item/book/granter/martial/bass
-  cost = 40
+	cost = 40
