@@ -191,6 +191,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(!P)
 		return
 	SEND_SIGNAL(src, COMSIG_ITEM_SET_SKIN, P.pda_skin)
+	var/ringertone = P.pda_ringmessage
+	if(LAZYLEN(ringertone))
+		ttone = ringertone
 
 /obj/item/pda/proc/update_style(client/C)
 	background_color = C.prefs.pda_color
