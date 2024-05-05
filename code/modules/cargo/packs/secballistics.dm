@@ -162,7 +162,7 @@ template end */
 	desc = "A Russian shotgun that uses magazines. Someone really looked at an AK and thought it'd be better off shooting buckshot."
 	cost = 3000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/shotgun/riot)
+	contains = list(/obj/item/gun/ballistic/automatic/saiga12k)
 	crate_name = "ballistic weapon crate"
 
 /datum/supply_pack/security/trenchgun
