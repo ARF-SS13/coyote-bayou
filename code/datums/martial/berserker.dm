@@ -38,19 +38,19 @@
 					span_userdanger("[A] [atk_verb]s you!"), null, null, A)
 	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	if(prob(10))
-		crit_damage += (damage * 2)
+		crit_damage += (damage * 2.5)
 		playsound(get_turf(D), 'sound/weapons/bite.ogg', 50, TRUE, -1)
 		D.visible_message(span_warning("[D] staggers as they're slammed in the stomach"), span_userdanger("You are struck with incredible precision by [A]!"))
 		log_combat(A, D, "critcal hard punched (Berserker)")//log it here because a critical can swing for 40 force and it's important for the sake of how hard they hit
 	else
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 		log_combat(A, D, "hard punched punched (Berserker)")//so as to not double up on logging
-	D.apply_damage(damage * 1.3 + crit_damage, BRUTE, affecting, armor_block, wound_bonus = CANT_WOUND)
+	D.apply_damage(damage * 2 + crit_damage, BRUTE, affecting, armor_block, wound_bonus = CANT_WOUND)
 	return TRUE
 
 ///Shouldercheck: Harm Harm Harm combo, throws people seven tiles backwards
 /datum/martial_art/berserker/proc/shoulderCheck(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	var/damage = (damage_roll(A,D) + 3)
+	var/damage = (damage_roll(A,D) * 1.5)
 	var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_CHEST)
 	var/armor_block = D.run_armor_check(affecting, "melee")
 	A.do_attack_animation(D, ATTACK_EFFECT_KICK)
@@ -96,8 +96,8 @@
 		playsound(get_turf(A), 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		D.emote("scream")
 		D.dropItemToGround(D.get_active_held_item())
-		D.apply_damage(10, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		D.apply_damage(20, STAMINA, pick(A.zone_selected))
+		D.apply_damage(20, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		D.apply_damage(35, STAMINA, pick(A.zone_selected))
 		to_chat(A, span_danger("You wrench [D]'s wrist!"))
 		log_combat(A, D, "wrist wrenched (Berserker)")
 
@@ -146,6 +146,7 @@
 	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
 	ADD_TRAIT(H, TRAIT_BERSERKER, TRAIT_BERSERKER)
 	ADD_TRAIT(H, TRAIT_MARTIAL_A, TRAIT_BERSERKER)
+	ADD_TRAIT(H, TRAIT_NOSLIPALL, TRAIT_BERSERKER)
 	H.physiology.stamina_mod *= 0.3 //more stamina
 	H.physiology.stun_mod *= 0.3 //better stun resistance
 
@@ -158,6 +159,7 @@
 	REMOVE_TRAIT(H, TRAIT_BERSERKER, BERSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
 	REMOVE_TRAIT(H, TRAIT_MARTIAL_A, TRAIT_BERSERKER)
+	REMOVE_TRAIT(H, TRAIT_NOSLIPALL, TRAIT_BERSERKER)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
 
@@ -171,5 +173,5 @@
 	to_chat(usr, "<span class='notice'>Gutpunch</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
 	to_chat(usr, "<span class='notice'>Shoulder Check</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
 	to_chat(usr, span_notice("<span class='notice'>Wrist Wrench</span>: Disarm Disarm. Grab and painfully wrench someone's wrist, disarming them and dealing minor brute and stamina damage."))
-	to_chat(usr, span_notice("In addition, your body is better conditioned, giving you further stamina and increased stun resistance."))
+	to_chat(usr, span_notice("In addition, your body is better conditioned, giving you further stamina and increased stun resistance, you also are able to have a better footing and will no longer slip."))
 	//to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm  Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")
