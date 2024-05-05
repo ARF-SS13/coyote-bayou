@@ -16,7 +16,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
 	weapon_class = WEAPON_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_suppress = TRUE
@@ -203,7 +203,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Pocket10"
 	item_state = "glock"
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
@@ -229,7 +229,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Warden10"
 	item_state = "glock"
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
@@ -547,7 +547,7 @@
 	name = "Colt N99 pistol"
 	desc = "A large, pre-war styled, gas-operated 10mm pistol manufactured by Colt."
 	icon_state = "n99"
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
@@ -794,7 +794,7 @@
 	icon_state = "bornheim"
 	item_state = "pistolchrome"
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	init_recoil = HANDGUN_RECOIL(2.3, 2.3)
 	disallowed_mags = list(
