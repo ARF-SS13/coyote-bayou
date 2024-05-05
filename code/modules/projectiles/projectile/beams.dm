@@ -1023,7 +1023,7 @@
 	name = "blaster bolt"
 	damage = 10
 	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
-	recoil = BULLET_RECOIL_HEAVY_LASER
+	recoil = BULLET_RECOIL_PLASMA
 
 //Laser AK projectiles
 /obj/item/projectile/beam/laser/tg/kalashheavy
