@@ -97,3 +97,9 @@
 	desc = "A flower that when worn heals you and feeds you for large amounts, but makes you a pacifist. Its behavior can be altered with shift+ctrl click. You can click it to reduce your radiation too!"
 	item = /obj/item/clothing/head/peaceflower
 	cost = 15
+
+/datum/supplykit_item/magic/bass
+	name = "Rising Bass"
+	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
+	item = /obj/item/book/granter/martial/bass
+	cost = 40
