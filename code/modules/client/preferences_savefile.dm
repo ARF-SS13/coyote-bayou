@@ -116,6 +116,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				// faved_interactions = list()
 				// WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+			if(PMC_MY_PDA_FLIES_IN_FULL_COLOR) // i broke it =3
+				pda_skin = "Random!"
+				WRITE_FILE(S["pda_skin"], pda_skin)
+				current_version |= PMC_MY_PDA_FLIES_IN_FULL_COLOR
 			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
 				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 				var/list/huge_quest_list = list()

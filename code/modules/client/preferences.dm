@@ -81,7 +81,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_chaos = null
 	var/pda_style = MONO
 	var/pda_color = "#808000"
-	var/pda_skin = PDA_SKIN_CLASSIC
+	var/pda_skin = "Random!"
 
 	var/my_shark = "Bingus Whale"
 
@@ -1385,6 +1385,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										[preview_hide_undies ? "Hidden" : "Visible"]
 							</a>"}
 					dat += "</td>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>PDA Style</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=choose_pda_skin'>
+										[pda_skin]
+							</a>"}
+					dat += "</td>"
 					dat += "</tr>"
 					dat += "</table>"
 				if(PREFS_ALL_HAS_GENITALS_SET) // fuck it
@@ -2499,6 +2509,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			features["genital_visibility_flags"] = new_bit
 	if(href_list["preference"] == "toggle_undie_preview")
 		TOGGLE_VAR(preview_hide_undies)
+
+	if(href_list["preference"] == "choose_pda_skin")
+		var/pickedPDASkin = input(user, "Choose your DataPal appearance. (You can change this in-game by ctrl-shift-clicking the DataPal!)", "Character Preference", pda_skin) as null|anything in GLOB.pda_skins
+		if(pickedPDASkin)
+			pda_skin = pickedPDASkin
 
 	if(href_list["preference"] == "genital_hide")
 		var/hideit = text2num(href_list["hideflag"])
@@ -3689,10 +3704,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedPDAColor = input(user, "Choose your PDA Interface color.", "Character Preference",pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
-				if("pda_skin")
-					var/pickedPDASkin = input(user, "Choose your PDA reskin.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
-					if(pickedPDASkin)
-						pda_skin = pickedPDASkin
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
 					if (!isnull(desiredlength))
