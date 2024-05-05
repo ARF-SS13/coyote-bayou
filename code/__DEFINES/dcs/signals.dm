@@ -464,6 +464,7 @@
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
+#define COMSIG_ITEM_SET_SKIN "set_skin" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
 #define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 

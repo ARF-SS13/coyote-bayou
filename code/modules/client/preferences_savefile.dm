@@ -116,6 +116,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				// faved_interactions = list()
 				// WRITE_FILE(S["faved_interactions"], faved_interactions)
 				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+			if(PMC_MY_PDA_FLIES_IN_FULL_COLOR) // i broke it =3
+				pda_skin = "Random!"
+				WRITE_FILE(S["pda_skin"], pda_skin)
+				current_version |= PMC_MY_PDA_FLIES_IN_FULL_COLOR
 			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
 				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 				var/list/huge_quest_list = list()
@@ -250,9 +254,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["menuoptions"]		>> menuoptions
 	S["enable_tips"]		>> enable_tips
 	S["tip_delay"]			>> tip_delay
-	S["pda_style"]			>> pda_style
-	S["pda_color"]			>> pda_color
-	S["pda_skin"]			>> pda_skin
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
@@ -319,9 +320,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ghost_others	= sanitize_inlist(ghost_others, GLOB.ghost_others_options, GHOST_OTHERS_DEFAULT_OPTION)
 	menuoptions		= SANITIZE_LIST(menuoptions)
 	be_special		= SANITIZE_LIST(be_special)
-	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
-	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
-	pda_skin		= sanitize_inlist(pda_skin, GLOB.pda_reskins, PDA_SKIN_CLASSIC)
 	screenshake			= sanitize_integer(screenshake, 0, 800, initial(screenshake))
 	damagescreenshake	= sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	widescreenpref		= sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
@@ -435,6 +433,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_style"], pda_style)
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["pda_skin"], pda_skin)
+	WRITE_FILE(S["pda_ringmessage"], pda_ringmessage)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["modless_key_bindings"], modless_key_bindings)
 
@@ -907,6 +906,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["permanent_tattoos"]		>> permanent_tattoos
 	S["dm_open"]		>> dm_open
 	S["needs_a_friend"]		>> needs_a_friend
+	S["pda_style"]			>> pda_style
+	S["pda_color"]			>> pda_color
+	S["pda_skin"]			>> pda_skin
+	S["pda_ringmessage"]	>> pda_ringmessage
 
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
@@ -1000,6 +1003,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	right_eye_color		= sanitize_hexcolor(right_eye_color, 6, FALSE)
 	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags))
 	//whoflags = initial(whoflags) // comment out before release
+	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
+	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
+	pda_skin		= sanitize_inlist(pda_skin, GLOB.pda_skins, "Random!")
+	pda_ringmessage		= sanitize_text(pda_ringmessage, initial(pda_ringmessage))
 
 	var/static/allow_custom_skintones
 	if(isnull(allow_custom_skintones))
@@ -1555,6 +1562,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["saved_unclaimed_points"], saved_unclaimed_points)
 	WRITE_FILE(S["number_of_finished_quests"], number_of_finished_quests)
 	WRITE_FILE(S["historical_banked_points"], historical_banked_points)
+
+	WRITE_FILE(S["pda_style"], pda_style)
+	WRITE_FILE(S["pda_color"], pda_color)
+	WRITE_FILE(S["pda_skin"], pda_skin)
+	WRITE_FILE(S["pda_ringmessage"], pda_ringmessage)
 
 	return 1
 

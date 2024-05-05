@@ -34,6 +34,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	force = 15
 	backstab_multiplier = 1.5
 	throwforce = 0
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
 
 	//Main variables
 	var/owner = null // String name of owner
@@ -150,6 +151,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	radio = new /obj/item/radio(src)
 	geiger = new /obj/item/geiger_counter(src)
 	new_overlays = TRUE
+	personalize()
 
 /obj/item/pda/ComponentInitialize()
 	. = ..()
@@ -180,11 +182,18 @@ GLOBAL_LIST_EMPTY(PDAs)
 // 	to_chat(M, "[src] is now skinned as '[choice]'.")
 
 
-/obj/item/pda/equipped(mob/user, slot)
-	. = ..()
-	if(equipped || !user.client)
+/// its reasonbable to assume that if a PDA spawns in or under a player mob, it belongs to that player, right?
+/obj/item/pda/proc/personalize()
+	var/mob/living/someone = owner || recursive_loc_path_search(loc, /mob/living, 5)
+	if(!someone)
 		return
-	update_style(user.client)
+	var/datum/preferences/P = extract_prefs(someone)
+	if(!P)
+		return
+	SEND_SIGNAL(src, COMSIG_ITEM_SET_SKIN, P.pda_skin)
+	var/ringertone = P.pda_ringmessage
+	if(LAZYLEN(ringertone))
+		ttone = ringertone
 
 /obj/item/pda/proc/update_style(client/C)
 	background_color = C.prefs.pda_color
