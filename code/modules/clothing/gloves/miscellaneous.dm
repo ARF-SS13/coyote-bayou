@@ -268,3 +268,27 @@
 	icon_state = "long_fingerless"
 	item_state = "long_fingerless"
 
+/obj/item/clothing/gloves/armwarmer
+	name = "arm warmer"
+	desc = "A pair of arm warmers."
+	icon_state = "armwarmer"
+	item_state = "armwarmer"
+
+/obj/item/clothing/gloves/armwarmer_long
+	name = "arm warmer long"
+	desc = "A pair of arm warmers."
+	icon_state = "armwarmer_long"
+	item_state = "armwarmer_long"
+
+/obj/item/clothing/gloves/armwarmer_striped
+	name = "arm warmer striped"
+	desc = "A pair of arm warmers."
+	icon_state = "armwarmer_striped"
+	item_state = "armwarmer_striped"
+
+/obj/item/clothing/gloves/armwarmer_striped_long
+	name = "arm warmer striped long"
+	desc = "A pair of arm warmers."
+	icon_state = "armwarmer_striped_long"
+	item_state = "armwarmer_striped_long"
+
