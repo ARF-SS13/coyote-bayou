@@ -1068,6 +1068,7 @@
 	icon_state = "legion_slaveleather"
 	item_state = "legion_slaveleather"
 	body_parts_hidden = 0
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 ///////////
 // LIGHT //

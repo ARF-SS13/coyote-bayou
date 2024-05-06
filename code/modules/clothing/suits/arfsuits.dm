@@ -995,6 +995,7 @@
 	icon_state = "legion_slaveleather"
 	item_state = "legion_slaveleather"
 	body_parts_hidden = 0
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 ///////////
 // LIGHT //
@@ -5114,6 +5115,56 @@
 	desc = "An suspicious looking combat suit designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
 	icon_state = "syndicate-contract"
 	item_state = "syndicate-contract"
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/suit/armor/texasmed/infiltrator/contractor/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Black" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black"),
+			"Green Stripe" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-green"),
+			"Orange Stripe" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-orange"),
+			"Blue Stripe" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-blue"),
+			"Red Stripe" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-red"),
+			"Medic Marks" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-med"),
+			"Engi Marks" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-black-engie"),
+			"Contractor" = image(icon = 'icons/mob/clothing/suit.dmi', icon_state = "syndicate-contract"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Black")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black"
+			item_state = "syndicate-black"
+		if("Green Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-green"
+			item_state = "syndicate-black-green"
+		if("Orange Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-orange"
+			item_state = "syndicate-black-orange"
+		if("Blue Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-blue"
+			item_state = "syndicate-black-blue"
+		if("Red Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-red"
+			item_state = "syndicate-black-red"
+		if("Medic Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-med"
+			item_state = "syndicate-black-med"
+		if("Engi Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-black-engie"
+			item_state = "syndicate-black-engie"
+		if("Contractor")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-contract"
+			item_state = "syndicate-contract"
+		else
+			return
+
 /obj/item/clothing/suit/armor/texasmed/mantle
 	name = "mantled Texas militia breastplate"
 	desc = "A medium set of armor used by the First Texas Militia. This one has some cloth thrown over the shoulder."
