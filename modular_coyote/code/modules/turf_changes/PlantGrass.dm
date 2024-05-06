@@ -86,7 +86,7 @@
 		qdel(turfPlant)
 	. =  ..()
 
-#define OUTSIDE_JUNK_DISTRIBUTION list("nests" = 1, "salvage" = 2, "trash" = 2, "nothing" = 95)
+#define OUTSIDE_JUNK_DISTRIBUTION list("nest" = 1, "salvage" = 2, "trash" = 2, "nothing" = 95)
 
 /turf/open/indestructible/ground/outside/dirt
 	spawnPlants = TRUE
