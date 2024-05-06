@@ -195,6 +195,9 @@ SUBSYSTEM_DEF(recoil)
 			my_angle *= 5 //YOU AINT HITTING shoot BROTHA. REALLY.
 		if(HAS_TRAIT(shotter,TRAIT_PHOBIC)) // Panicking!
 			my_angle *= 6 // RUN OR SHOOT?!?1
+		if(istype(shotter.loc, /obj/item/clothing/head/mob_holder) && isliving(shotter.loc.loc))
+			my_angle += (abs(get_offset(shotter.loc.loc, FALSE, TRUE)) * SIGN(my_angle))
+			my_angle *= 1.5 // just a little bit more
 
 	return round(clamp(my_angle, -recoil_max_spread, recoil_max_spread), 0.1)
 

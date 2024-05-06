@@ -653,9 +653,9 @@
 /area/f13/enclave)
 "ahI" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -3985,7 +3985,7 @@
 /area/f13/tunnel)
 "bCC" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4421,7 +4421,7 @@
 /area/f13/village)
 "bMo" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "bMp" = (
@@ -5424,7 +5424,7 @@
 "ckM" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ckN" = (
@@ -7235,7 +7235,7 @@
 /area/f13/village)
 "dcH" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dcK" = (
@@ -20056,7 +20056,7 @@
 	},
 /area/f13/wasteland)
 "inz" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/screwdriver,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26104,12 +26104,12 @@
 /area/f13/village)
 "kOW" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/effect/turf_decal/stripes/white/box,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
@@ -27622,7 +27622,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lwj" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lws" = (
@@ -28672,7 +28672,7 @@
 /area/f13/village)
 "lUT" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -35166,7 +35166,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/under/rank/security/officer/formal{
 	name = "security officer's uniform"
 	},
@@ -38341,7 +38341,7 @@
 /area/f13/building)
 "qjk" = (
 /obj/structure/closet/crate,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/export/bottle/goldschlager,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/inside/mountain,
@@ -43760,7 +43760,7 @@
 	},
 /area/f13/building)
 "sGE" = (
-/mob/living/simple_animal/hostile/radroach{
+/mob/living/simple_animal/hostile/pillbug{
 	desc = "The most trustworthy ally of the sheriff. This tough bug has survived dozens of attempts to squish 'em. ";
 	faction = list("neutral");
 	health = 60;
@@ -44960,9 +44960,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/ncr)
 "tgR" = (
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -45591,7 +45591,7 @@
 /area/f13/village)
 "tsS" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tsZ" = (
@@ -55191,7 +55191,7 @@
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /turf/open/floor/f13/wood,
 /area/f13/building)

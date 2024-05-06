@@ -98,7 +98,7 @@ Slimecrossing Armor
 
 /obj/item/clothing/head/peaceflower
 	name = "entrancing bud"
-	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn."
+	desc = "An extremely addictive flower, full of peace magic. This rare flower is not often seen due to its entrancing pacifying effects when worn. Its behavior can be altered with shift+ctrl click"
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "peaceflower1"
 	item_state = "peaceflower1"
@@ -158,7 +158,8 @@ Slimecrossing Armor
 /obj/item/clothing/head/peaceflower/CtrlShiftClick(mob/user)
 	var/static/list/choices = list(
 			"Light On" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_lit"),
-			"Light Off" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_unlit")
+			"Light Off" = image(icon = 'icons/fallout/objects/items.dmi', icon_state = "match_unlit"),
+			"Destroy Flower" = image(icon = 'icons/fallout/objects/bureaucracy.dmi', icon_state = "paperplane_onfire")
 		)
 	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
 	switch(choice)
@@ -168,6 +169,11 @@ Slimecrossing Armor
 		if("Light On") // The photosynth thing works, but literally only once. I don't know how to make it work constantly.
 			set_light_on(TRUE)
 			balloon_alert(user, "The flower blooms")
+		if("Destroy Flower")
+			to_chat(user, span_notice("The flower begins to wither atop your head."))
+			if(do_after(user, 15 SECONDS, stay_close = FALSE))
+				user.RemoveElement(/datum/element/photosynthesis, -1, -1, -1, -1, 4, 0.5, 0.2, 0)
+				qdel(src)
 		else
 			return
 

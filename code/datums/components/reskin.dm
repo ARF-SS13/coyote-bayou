@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	/// Actually use the original skin thing
 	var/use_original_skin = TRUE
 	/// The cooldown between reskins
-	var/reskin_cooldown = 5 MINUTES
+	var/reskin_cooldown = 5 SECONDS
 	COOLDOWN_DECLARE(reskin_when)
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
@@ -34,6 +34,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE),PROC_REF(is_reskinnable))
 	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN),PROC_REF(update_skin))
 	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN),PROC_REF(get_current_skin))
+	RegisterSignal(parent, list(COMSIG_ITEM_SET_SKIN),PROC_REF(force_skin))
 
 /datum/component/reskinnable/UnregisterFromParent()
 	skins = null
@@ -83,6 +84,17 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return FALSE
 	if(QDELETED(master))
 		return FALSE
+	assign_skin(choice)
+
+/datum/component/reskinnable/proc/force_skin(datum/source, choice)
+	assign_skin(choice, FALSE)
+
+/datum/component/reskinnable/proc/assign_skin(choice, cooldown)
+	if(choice == "Random!")
+		choice = safepick(skins)
+		if(!choice)
+			return FALSE
+	var/obj/item/master = parent
 	var/datum/reskin/skindatum
 	if(choice == RESKIN_SKINDEX_ORIGINAL)
 		skindatum = my_original_skin
@@ -92,7 +104,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return FALSE
 	skindex = skindatum.skin
 	skindatum.apply_to_item(master)
-	COOLDOWN_START(src, reskin_when, reskin_cooldown)
+	if(cooldown)
+		COOLDOWN_START(src, reskin_when, reskin_cooldown)
 	return TRUE
 
 /datum/component/reskinnable/proc/can_reskin(datum/source, mob/user)
@@ -1046,6 +1059,65 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	mob_overlay_icon = null
 	mutantrace_variation = null
 
+GLOBAL_LIST_INIT(pda_skins, list(
+	"Random!",
+	"DataPal",
+	"Medical PDA",
+	"Virology PDA",
+	"Engineering PDA",
+	"Security PDA",
+	"Detective PDA",
+	"Warden PDA",
+	"Janitor PDA",
+	"Scientist PDA",
+	"Head of Personnel PDA",
+	"Head of Security PDA",
+	"Chief Engineer PDA",
+	"Chief Medical Officer PDA",
+	"Research Director PDA",
+	"Captain PDA",
+	"Lieutenant PDA",
+	"Atmospheric Technician PDA",
+	"Chemist PDA",
+	"Geneticist PDA",
+	"Teachboy PDA",
+	"Curator PDA",
+	"Neko PDA",
+	"Handy Orange PDA",
+	"Handy PDA",
+	"Handy Medical PDA",
+	"Handy Virologist PDA",
+	"Handy Engineer PDA",
+	"Handy Security PDA",
+	"Handy Detective PDA",
+	"Handy Warden PDA",
+	"Handy Janitor PDA",
+	"Handy Scientist PDA",
+	"Handy HoP PDA",
+	"Handy HoS PDA",
+	"Handy CE PDA",
+	"Handy CMO PDA",
+	"Handy RD PDA",
+	"Handy Captain PDA",
+	"Handy Lieutenant PDA",
+	"Handy Cargo PDA",
+	"Handy QM PDA",
+	"Handy Miner PDA",
+	"Handy Chaplain PDA",
+	"Handy Cook PDA",
+	"Handy Garden PDA",
+	"Handy Syndicate PDA",
+	"Handy Lawyer PDA",
+	"Handy Roboticist PDA",
+	"Handy Bartender PDA",
+	"Handy Atmos PDA",
+	"Handy Chemist PDA",
+	"Handy Geneticist PDA",
+	"Handy Clear PDA",
+	"Handy Librarian PDA",
+	"Handy Neko PDA",
+	))
+
 /// PDA SKINS ///
 /datum/component/reskinnable/pda
 	skins = list(
@@ -1105,6 +1177,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Handy Librarian PDA",
 		"Handy Neko PDA",
 	)
+
 /datum/reskin/pda
 	skin = "Datapal 3000"
 	name = "Datapal 3000"

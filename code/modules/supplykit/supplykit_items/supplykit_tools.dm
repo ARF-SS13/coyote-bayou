@@ -143,3 +143,16 @@
 	item = /obj/item/extinguisher/mini
 	cost = 2
 
+/datum/supplykit_item/tools/flarepouch
+	name = "Flare Pouch"
+	desc = "A small leather pouch containing a dozen flares."
+	item = /obj/item/storage/fancy/flare_pouch
+	cost = 5
+
+/datum/supplykit_item/tools/glowpouch
+	name = "Glowstick Pouch"
+	desc = "A small leather pouch containing a dozen glowsticks."
+	item = /obj/item/storage/fancy/flare_pouch/glowstick
+	cost = 5
+
+

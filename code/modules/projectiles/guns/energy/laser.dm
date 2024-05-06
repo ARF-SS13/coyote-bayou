@@ -273,6 +273,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+	init_recoil = LASER_HANDGUN_RECOIL(0.8, 0.8)
 
 //Recharger Pistol
 /obj/item/gun/energy/laser/wattz/recharger
@@ -1279,7 +1280,7 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
  * Unique
  * * * * * */
 
-/*/obj/item/gun/energy/laser/tg/particlecannon
+/obj/item/gun/energy/laser/tg/particlecannon
 	name = "particle cannon"
 	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
 	icon_state = "lassniper"
@@ -1288,10 +1289,10 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 	w_class = WEIGHT_CLASS_BULKY
 	can_flashlight = 0
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/particle)
-	init_recoil = LASER_RIFLE_RECOIL(2, 3)
+	init_recoil = LASER_RIFLE_RECOIL(3, 5) // Bad handling means it's not as good right as you find it, but basically any modding solves this problem.
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
-	)*/
+	)
 
 /* * * * * *
  * TG Not-Calico

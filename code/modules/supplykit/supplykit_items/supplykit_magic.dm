@@ -76,7 +76,7 @@
 
 /datum/supplykit_item/magic/berseker
 	name = "Berserker's Rights"
-	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
+	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, better footing, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
 	item = /obj/item/book/granter/martial/berserker
 	cost = 40
 
@@ -88,13 +88,18 @@
 
 /datum/supplykit_item/magic/sleepingcarp
 	name = "Sleeping Carp Scroll"
-	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina, improved resistance to incoming stamina damage and stuns, and an aversion to drugs and firearms."
+	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina and increased damage taken, improved resistance to incoming stamina damage and stuns, and an aversion to drugs."
 	item = /obj/item/book/granter/martial/carp
 	cost = 40
 
 /datum/supplykit_item/magic/peaceflower
 	name = "Peace Flower"
-	desc = "A flower that makes you a pacifist, but provides a light source, and free healing. <b>Cannot be removed!</b>"
+	desc = "A flower that when worn heals you and feeds you for large amounts, but makes you a pacifist. Its behavior can be altered with shift+ctrl click. You can click it to reduce your radiation too!"
 	item = /obj/item/clothing/head/peaceflower
-	cost = 0
-	limited_stock = 1
+	cost = 15
+
+/datum/supplykit_item/magic/bass
+	name = "Rising Bass"
+	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
+	item = /obj/item/book/granter/martial/bass
+	cost = 40

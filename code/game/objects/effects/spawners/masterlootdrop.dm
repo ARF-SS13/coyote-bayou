@@ -476,11 +476,11 @@
 	loot = list(
 
 		/obj/item/gun/energy/laser/cranklasergun/tg/carbine = 10,         //100 25 internal cell
-		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //60  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
 		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//67  125 internal cell
-		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock = 10, //100 60 internal slow, slower crank
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock = 10, //100 60 internal cell, slower crank
 
 
 		// Better in some way (self charge, plasma, more efficient)
@@ -496,7 +496,6 @@
 	name = "uncommon energy"
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
-		/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon = 10,          //133 5
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
 		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
 		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
@@ -507,7 +506,7 @@
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
-		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,                   //150 40 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,     //150 40 internal cell
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
@@ -538,10 +537,10 @@
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
 		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy = 10,             //80  24 internal cell
-		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 		/obj/item/gun/energy/laser/auto/twin = 10,                  //37.5 30 DPS tool says it's low but I think it struggles with burst fire. Similar in power to tesla autoshock
+		/obj/item/gun/energy/laser/scatter/nonlethal = 100,					//132(276) 20 insane for pve wtf, nonlethal damage only so it's here
 
 		//sidearms
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
@@ -561,12 +560,13 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/scatter/nonlethal = 100,            //132(276) 20 insane for pve wtf
-		/obj/item/gun/energy/laser/auto/oasis = 400,                   //266 50 low damage per shot, deals plasma damage
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500, //200 1 self charge, EMP immune
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,           //225 4
-		/obj/item/gun/medbeam/magic = 400,                             //000 inf medbeam
-		/obj/item/minigunpack = 1,                                     //??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
+		/obj/item/gun/energy/laser/tg/particlecannon = 5,					//133 (~300) 5, have to use a Weapon Recharger
+		/obj/item/gun/energy/laser/auto/oasis = 10,							//266 50 low damage per shot, deals plasma damage
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,		//200 60 internal cell
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 50,		//200 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 10,				//225 4
+		/obj/item/gun/medbeam/magic = 10,									//000 inf medbeam
+		/obj/item/minigunpack = 5,											//??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
 	)
 
 ///////////////////////////
@@ -1390,6 +1390,8 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		/obj/item/reagent_containers/glass/beaker/large = 1,
 		/obj/item/flashlight = 1,
+		/obj/item/storage/fancy/flare_pouch = 1,
+		/obj/item/storage/fancy/flare_pouch/glowstick = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_tools
@@ -1412,8 +1414,8 @@
 		/obj/item/book/granter/crafting_recipe/scav_two = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
-		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/blue = 1,
+		/obj/item/flashlight/lantern/mining = 1,
 		/obj/item/book/granter/martial/raging_boar = 1,
 	)
 
@@ -1439,7 +1441,7 @@
 		/obj/item/reagent_containers/glass/beaker/meta = 1,
 		/obj/item/reagent_containers/glass/beaker/noreact = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/lantern = 1,
 		/obj/item/weldingtool/hightech = 1,
 		/obj/item/crowbar/hightech = 1,
 		/obj/item/crowbar/hightech = 1,

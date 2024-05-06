@@ -8074,7 +8074,7 @@
 /turf/open/floor/carpet,
 /area/f13/brotherhood/offices2nd)
 "dtf" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "dty" = (
@@ -10814,7 +10814,7 @@
 /area/f13/brotherhood/operating)
 "eyt" = (
 /obj/item/clothing/glasses/meson,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/storage/bag/ore,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -11162,7 +11162,7 @@
 /area/f13/brotherhood/mining)
 "eGe" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
@@ -12267,7 +12267,7 @@
 	},
 /area/f13/building)
 "fdI" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "fes" = (
@@ -14632,8 +14632,8 @@
 /area/f13/brotherhood/operations)
 "gfw" = (
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/radroach,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
@@ -17629,7 +17629,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "hwi" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/structure/rack,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -18253,7 +18253,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "hLi" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -26043,7 +26043,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "lnG" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -27530,7 +27530,7 @@
 	pixel_x = -6;
 	pixel_y = 14
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_x = 8;
 	pixel_y = 11
 	},
@@ -27712,7 +27712,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
 "lXZ" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -27847,7 +27847,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/building)
 "maq" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -33097,8 +33097,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -41581,8 +41581,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -44811,7 +44811,7 @@
 /area/f13/bunker)
 "tge" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -47475,8 +47475,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -48008,8 +48008,8 @@
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/spawner/lootdrop/armory_contraband,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,

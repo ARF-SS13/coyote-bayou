@@ -81,7 +81,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_chaos = null
 	var/pda_style = MONO
 	var/pda_color = "#808000"
-	var/pda_skin = PDA_SKIN_CLASSIC
+	var/pda_skin = "Random!"
+	var/pda_ringmessage = "beep-boop"
 
 	var/my_shark = "Bingus Whale"
 
@@ -463,6 +464,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[SETTINGS_TAB]' [current_tab == SETTINGS_TAB ? "class='linkOn'" : ""]>Character Settings</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' [current_tab == APPEARANCE_TAB ? "class='linkOn'" : ""]>Character Appearance</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[CHAR_INFO_TAB]' [current_tab == CHAR_INFO_TAB ? "class='linkOn'" : ""]>Character Info</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[ERP_TAB]' [current_tab == ERP_TAB ? "class='linkOn'" : ""]>Underlying Appearance</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
@@ -513,8 +515,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
-			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
-			dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
 
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -606,94 +606,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += APPEARANCE_CATEGORY_COLUMN
-			dat += "<h3>Flavor Text</h3>"
-			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
-			if(length(features["flavor_text"]) <= 40)
-				if(!length(features["flavor_text"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["flavor_text"]]"
-			else
-				dat += "[TextPreview(features["flavor_text"])]...<BR>"
-			dat += "<h3>Silicon Flavor Text</h3>"
-			dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
-			if(length(features["silicon_flavor_text"]) <= 40)
-				if(!length(features["silicon_flavor_text"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["silicon_flavor_text"]]"
-			else
-				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
-			dat += "<h3>OOC notes</h3>"
-			dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
-			var/ooc_notes_len = length(features["ooc_notes"])
-			if(ooc_notes_len <= 40)
-				if(!ooc_notes_len)
-					dat += "\[...\]<br>"
-				else
-					dat += "[features["ooc_notes"]]<br>"
-			else
-				dat += "[TextPreview(features["ooc_notes"])]...<br>"
-
-			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
-			var/background_info_notes_len = length(features["background_info_notes"])
-			if(background_info_notes_len <= 40)
-				if(!background_info_notes_len)
-					dat += "\[...\]<br>"
-				else
-					dat += "[features["background_info_notes"]]<br>"
-			else
-				dat += "[TextPreview(features["background_info_notes"])]...<br>"
-
-			//outside link stuff
-			dat += "<h3>Outer hyper-links settings</h3>"
-			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
-			var/flist_len = length(features["flist"])
-			if(flist_len <= 40)
-				if(!flist_len)
-					dat += "\[...\]"
-				else
-					dat += "[features["flist"]]"
-			else
-				dat += "[TextPreview(features["flist"])]...<br>"
-
-			//Start Creature Character
-			dat += "<h2>Simple Creature Character</h2>"
-			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
-			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
-			/*
-			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
-				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
-			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
-			*/
-			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
-			if(length(creature_flavor_text) <= 40)
-				if(!length(creature_flavor_text))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_flavor_text]<br>"
-			else
-				dat += "[TextPreview(creature_flavor_text)]...<br>"
-			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
-			if(length(creature_ooc) <= 40)
-				if(!length(creature_ooc))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_ooc]<br>"
-			else
-				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(creature_species)
-				if(!LAZYLEN(GLOB.creature_selectable))
-					generate_selectable_creatures()
-				if(!(creature_species in GLOB.creature_selectable))
-					creature_species = initial(creature_species)
-				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
-			// End creature Character
-
-			dat += "</td>"
-			//	END COLUMN 1
-			//	START COLUMN 2
+			
+			//	START COLUMN 1
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 			dat += "<h3>Body</h3>"
@@ -714,7 +628,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!chosen_limb_id || !(chosen_limb_id in pref_species.allowed_limb_ids))
 					chosen_limb_id = pref_species.limbs_id || pref_species.id
 				dat += "<b>Body Sprite:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=bodysprite;task=input'>[chosen_limb_id]</a><br>"
-			
+			dat += "</td>"
+			dat += APPEARANCE_CATEGORY_COLUMN
 			var/use_skintones = pref_species.use_skintones			
 			var/mutant_colors
 			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
@@ -748,66 +663,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>[modification]: [modified_limbs[modification][1]]</b><BR>"
 
 			dat += "</td>"
-			//	END COLUMN 2
-			//	START COLUMN 3
-			dat += APPEARANCE_CATEGORY_COLUMN
-
-			dat += "<h2>Voice</h2>"
-			dat += "<b>Custom Tongue:</b><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><br>"
-
-			// Coyote ADD: Blurbleblurhs
-			dat += "<b>Voice Sound:</b></b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><br>"
-			dat += "<b>Voice When:</b></b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><br>"			
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><br>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><br>"
-			
-			dat += "<center><h2>Custom Say Verbs</h2></center>"
-			dat += "<a href='?_src_=prefs;preference=custom_say;verbtype=custom_say;task=input'>Says</a>"
-			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_whisper;task=input'>Whispers</a>"
-			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_ask;task=input'>Asks</a>"
-			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_exclaim;task=input'>Exclaims</a>"
-			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_yell;task=input'>Yells</a>"
-			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_sing;task=input'>Sings</a>"
-			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
-			dat += "</td>"
-			// Coyote ADD: End
-			dat += APPEARANCE_CATEGORY_COLUMN
-			if(HAIR in pref_species.species_traits)
-				dat += "<h3>Hair</h3>"
-				dat += "<b>Style Up:</b><br>"
-				dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]<br>"
-				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br><BR>"
-
-				// Coyote ADD: Hair gradients
-				dat += "<b>Gradient Up:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br><BR>"
-				// Coyote ADD: End
-
-				dat += "<b>Style Down:</b><br>"
-				dat += "<a href='?_src_=prefs;preference=previous_hair_style_2;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style_2;task=input'>&gt;</a><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style_2;task=input'>[features_override["hair_style_2"]]</a>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features_override["hair_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_color_2;task=input'>Change</a><br><BR>"
-
-				dat += "<b>Gradient Down:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style_2;task=input'>[features_override["grad_style_2"]]</a>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color_2;task=input'>Change</a><br><BR>"
-
-				dat += "<b>Facial Style:</b><br>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]<br>"
-				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br><BR>"
-
-			dat += "<b>Show/hide Undies:</b><br>"
-			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_undie_preview;task=input'>[preview_hide_undies ? "Hidden" : "Visible"]<br>"
-
-			dat += "</td>"
-
+			//	END COLUMN 1
+			//  START COLUMN 2
 			dat += APPEARANCE_CATEGORY_COLUMN
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eyes</h3>"
@@ -828,11 +685,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eye_left;task=input'>Change</a><br>"
 						dat += "<b>Right Color</b><br>"
 						dat += "<span style='border: 1px solid #161616; background-color: #[right_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eye_right;task=input'>Change</a><br>"
-
-			dat += "<h3>Randomization</h3>"
-			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
-			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
-
+			//  END COLUMN 2
+			//start column 3
+			dat += APPEARANCE_CATEGORY_COLUMN
 			//Waddling
 			dat += "<h3>Waddling</h3>"
 			dat += "<b>Waddle Amount:</b><a href='?_src_=prefs;preference=waddle_amount;task=input'>[waddle_amount]</a><br>"
@@ -855,10 +710,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><br>"
 			
 			dat += "</td>"
-
-			//end column 5 or something
-			//start column 6
-
 			//Mutant stuff
 			var/mutant_category = 0
 			mutant_category++
@@ -1083,6 +934,174 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			dat += "</tr></table>"*/
 
+		if(CHAR_INFO_TAB)
+			if(path)
+				var/savefile/S = new /savefile(path)
+				if(S)
+					dat += "<center>"
+					var/name
+					var/unspaced_slots = 0
+					for(var/i=1, i<=max_save_slots, i++)
+						unspaced_slots++
+						if(unspaced_slots > 8)
+							dat += "<br>"
+							unspaced_slots = 0
+						S.cd = "/character[i]"
+						S["real_name"] >> name
+						if(!name)
+							name = "Character[i]"
+						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
+					dat += "</center>"
+			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
+			dat += APPEARANCE_CATEGORY_COLUMN
+			dat += "<h3>Flavor Text</h3>"
+			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
+			if(length(features["flavor_text"]) <= 40)
+				if(!length(features["flavor_text"]))
+					dat += "\[...\]"
+				else
+					dat += "[features["flavor_text"]]"
+			else
+				dat += "[TextPreview(features["flavor_text"])]...<BR>"
+			dat += "<h3>Silicon Flavor Text</h3>"
+			dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
+			if(length(features["silicon_flavor_text"]) <= 40)
+				if(!length(features["silicon_flavor_text"]))
+					dat += "\[...\]"
+				else
+					dat += "[features["silicon_flavor_text"]]"
+			else
+				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
+			dat += "<h3>OOC notes</h3>"
+			dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
+			var/ooc_notes_len = length(features["ooc_notes"])
+			if(ooc_notes_len <= 40)
+				if(!ooc_notes_len)
+					dat += "\[...\]<br>"
+				else
+					dat += "[features["ooc_notes"]]<br>"
+			else
+				dat += "[TextPreview(features["ooc_notes"])]...<br>"
+
+			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+			var/background_info_notes_len = length(features["background_info_notes"])
+			if(background_info_notes_len <= 40)
+				if(!background_info_notes_len)
+					dat += "\[...\]<br>"
+				else
+					dat += "[features["background_info_notes"]]<br>"
+			else
+				dat += "[TextPreview(features["background_info_notes"])]...<br>"
+
+			//outside link stuff
+			dat += "<h3>Outer hyper-links settings</h3>"
+			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+			var/flist_len = length(features["flist"])
+			if(flist_len <= 40)
+				if(!flist_len)
+					dat += "\[...\]"
+				else
+					dat += "[features["flist"]]"
+			else
+				dat += "[TextPreview(features["flist"])]...<br>"
+
+			//Start Creature Character
+			dat += "<h2>Simple Creature Character</h2>"
+			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
+			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			/*
+			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
+				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
+			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+			*/
+			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
+			if(length(creature_flavor_text) <= 40)
+				if(!length(creature_flavor_text))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_flavor_text]<br>"
+			else
+				dat += "[TextPreview(creature_flavor_text)]...<br>"
+			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
+			if(length(creature_ooc) <= 40)
+				if(!length(creature_ooc))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_ooc]<br>"
+			else
+				dat += "[TextPreview(creature_ooc)]...<br>"
+			if(creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))
+					generate_selectable_creatures()
+				if(!(creature_species in GLOB.creature_selectable))
+					creature_species = initial(creature_species)
+				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
+			// End creature Character
+
+			dat += "</td>"
+			//	END COLUMN 1
+			//	START COLUMN 2
+			dat += APPEARANCE_CATEGORY_COLUMN
+
+			dat += "<h2>Voice</h2>"
+			dat += "<b>Custom Tongue:</b><br>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><br>"
+
+			// Coyote ADD: Blurbleblurhs
+			dat += "<b>Voice Sound:</b></b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><br>"
+			dat += "<b>Voice When:</b></b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><br>"			
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><br>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><br>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><br>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><br>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><br>"
+			dat += "</td>"
+			
+			dat += APPEARANCE_CATEGORY_COLUMN
+			dat += "<center><h2>Custom Say Verbs</h2></center>"
+			dat += "<a href='?_src_=prefs;preference=custom_say;verbtype=custom_say;task=input'>Says</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_whisper;task=input'>Whispers</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_ask;task=input'>Asks</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_exclaim;task=input'>Exclaims</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_yell;task=input'>Yells</a>"
+			dat += "<BR><a href='?_src_=prefs;preference=custom_say;verbtype=custom_sing;task=input'>Sings</a>"
+			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
+			dat += "</td>"
+			// Coyote ADD: End
+			dat += APPEARANCE_CATEGORY_COLUMN
+			if(HAIR in pref_species.species_traits)
+				dat += "<h3>Hair</h3>"
+				dat += "<b>Style Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]<br>"
+				dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br><BR>"
+
+				// Coyote ADD: Hair gradients
+				dat += "<b>Gradient Up:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br><BR>"
+				// Coyote ADD: End
+
+				dat += "<b>Style Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style_2;task=input'>[features_override["hair_style_2"]]</a>"
+				dat += "<a href='?_src_=prefs;preference=previous_hair_style_2;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style_2;task=input'>&gt;</a><br>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["hair_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_color_2;task=input'>Change</a><br><BR>"
+
+				dat += "<b>Gradient Down:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style_2;task=input'>[features_override["grad_style_2"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color_2;task=input'>Change</a><br><BR>"
+
+				dat += "<b>Facial Style:</b><br>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]<br>"
+				dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><br>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><br><BR>"
+
+			dat += "<b>Show/hide Undies:</b><br>"
+			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_undie_preview;task=input'>[preview_hide_undies ? "Hidden" : "Visible"]<br>"
+
+			dat += "</td>"
+
+			//end column 3 or something
 		/// just kidding I moved it down here lol
 		if(ERP_TAB) // hoo haw preferences
 			if(path)
@@ -1340,6 +1359,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									?_src_=prefs;
 									preference=toggle_undie_preview'>
 										[preview_hide_undies ? "Hidden" : "Visible"]
+							</a>"}
+					dat += "</td>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>PDA Style</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=choose_pda_skin'>
+										[pda_skin]
+							</a>"}
+					dat += "</td>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>PDA Ringmessage</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=choose_pda_message'>
+										[pda_ringmessage]
 							</a>"}
 					dat += "</td>"
 					dat += "</tr>"
@@ -2456,6 +2495,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			features["genital_visibility_flags"] = new_bit
 	if(href_list["preference"] == "toggle_undie_preview")
 		TOGGLE_VAR(preview_hide_undies)
+
+	if(href_list["preference"] == "choose_pda_skin")
+		var/pickedPDASkin = input(user, "Choose your DataPal appearance. (You can change this in-game by ctrl-shift-clicking the DataPal!)", "Character Preference", pda_skin) as null|anything in GLOB.pda_skins
+		if(pickedPDASkin)
+			pda_skin = pickedPDASkin
+
+	if(href_list["preference"] == "choose_pda_message")
+		var/new_message = stripped_multiline_input_or_reflect(
+			user, 
+			"What message would you like to display when someone rings your DataPal? (Leave blank to disable)",
+			"DataPal Ring Message",
+			pda_ringmessage,
+			30)
+		if(!isnull(new_message))
+			if(new_message)
+				pda_ringmessage = new_message
+			else
+				pda_ringmessage = "beep-boop"
 
 	if(href_list["preference"] == "genital_hide")
 		var/hideit = text2num(href_list["hideflag"])
@@ -3646,10 +3703,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedPDAColor = input(user, "Choose your PDA Interface color.", "Character Preference",pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
-				if("pda_skin")
-					var/pickedPDASkin = input(user, "Choose your PDA reskin.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
-					if(pickedPDASkin)
-						pda_skin = pickedPDASkin
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
 					if (!isnull(desiredlength))

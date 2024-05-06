@@ -275,10 +275,10 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
-	mob_types = list(/mob/living/simple_animal/hostile/radroach = 10,
-					/mob/living/simple_animal/hostile/radroach/micro = 15,
-					/mob/living/simple_animal/hostile/radroach/leader = 5,
-					/mob/living/simple_animal/hostile/radroach/strongradroach = 10
+	mob_types = list(/mob/living/simple_animal/hostile/pillbug = 10,
+					/mob/living/simple_animal/hostile/pillbug/micro = 15,
+					/mob/living/simple_animal/hostile/pillbug/leader = 5,
+					/mob/living/simple_animal/hostile/pillbug/strongradroach = 10
 					)
 
 /obj/structure/nest/fireant

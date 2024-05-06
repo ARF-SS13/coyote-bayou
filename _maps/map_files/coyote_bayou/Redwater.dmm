@@ -1567,8 +1567,8 @@
 "aIj" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -2280,7 +2280,7 @@
 "aUH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
 	},
@@ -10129,7 +10129,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "dCZ" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
@@ -11048,7 +11048,7 @@
 "dVk" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -19768,16 +19768,16 @@
 /area/f13/building/abandoned)
 "gZp" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "gZA" = (
@@ -23801,7 +23801,7 @@
 /area/f13/wasteland/redwater)
 "iuN" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 1;
 	icon_state = "dirt"
@@ -28826,7 +28826,7 @@
 /area/f13/building)
 "khh" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
@@ -39885,7 +39885,7 @@
 "ojx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/wood_common,
@@ -41065,7 +41065,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
@@ -48018,7 +48018,7 @@
 /area/f13/building/abandoned)
 "rih" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -51254,7 +51254,7 @@
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -64040,7 +64040,7 @@
 "wNN" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/weapon_parts,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -87991,11 +87991,11 @@ nQD
 bFR
 bFR
 jXx
-rho
-rho
+jXx
+jXx
 kJo
-rho
-rho
+jXx
+jXx
 jXx
 bFR
 bFR

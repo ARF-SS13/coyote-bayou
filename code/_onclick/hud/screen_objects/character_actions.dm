@@ -87,11 +87,11 @@
 				H.emote("tend")
 
 			I = H.get_active_held_item()
-			I.melee_attack_chain(H, H, params)
+			I?.melee_attack_chain(H, H, params)
 
 		else if(istype(I, /obj/item/hand_item/healable/))
 			I = H.get_active_held_item()
-			I.melee_attack_chain(H, H, params)
+			I?.melee_attack_chain(H, H, params)
 
 /atom/movable/screen/aooc_hud_button
 	name = "AOOC"

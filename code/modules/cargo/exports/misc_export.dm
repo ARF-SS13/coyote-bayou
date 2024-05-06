@@ -266,7 +266,7 @@
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
-		/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon,
+		/obj/item/gun/energy/laser/tg/particlecannon,
 		/obj/item/gun/energy/laser/xcomufolaser,
 		/obj/item/gun/energy/laser/LaserAK,
 	)

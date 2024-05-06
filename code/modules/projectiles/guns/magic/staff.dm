@@ -179,36 +179,41 @@
 
 /****************/
 //Staff of Magic Missile//
-//Basic Mage's Staff - Shotgun adjacent (burst fire because I can't figure out true scattershot)/
+//Basic Mage's Staff - Shotgun with bayonet/
 /***************/
 
 /obj/item/gun/magic/staff/kelpmagic/magicmissile
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
 	icon_state = "mmstaff"
-	max_charges = 24 // Tee hee, Kelp doesnt know that staves don't like burst fire, sshh, nobody tell em
-	recharge_rate = 10 SECONDS
+	max_charges = 6
+	recharge_rate = 8 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
-	force_wielded = 37 // Practical all around! May change later.
+	force_wielded = 40 // Practical all around! May change later.
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "cut")
 	sharpness = SHARP_EDGED
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/burst/three/fast,
 		/datum/firemode/semi_auto
 	)
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/advanced
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/advanced
 	name = "greater magic missile"
 	icon_state = "arcane_barrage"
-	damage = 25 // same as the tribeam
-	damage_low = 20
+	damage = 40
+	damage_low = 30
 	damage_high = 50
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /****************/
 //Staff of Fireball//
@@ -249,7 +254,7 @@
 	icon_state = "lightningstaff"
 	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
 	max_charges = 12
-	recharge_rate = 30 SECONDS
+	recharge_rate = 8 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -283,7 +288,7 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks/thunder/lowpower
 	name = "low power lightning bolt"
-	flag = "laser" 
+	flag = "laser"
 	damage = 40
 	damage_low = 40
 	damage_high = 60
@@ -422,13 +427,17 @@
 	icon_state = "nuclear" //This should make enemies with good burn armor resist the magma staff very well
 	damage = 35
 	damage_low = 30  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
-	damage_high = 40 
+	damage_high = 40
 	damage_type = BURN
 	range = 3
 	pixels_per_second = 275
 	flag = "laser"
 	supereffective_damage = 1 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") 
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 //weak version
 /obj/item/gun/magic/staff/kelpmagic/flamethrower/weak

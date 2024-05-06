@@ -106,6 +106,30 @@
 	cost = 5000
 	contains = list(/obj/item/storage/firstaid/tactical)
 
+/datum/supply_pack/medical/brutepouch
+	name = "Brute Medical Pouch Refill"
+	desc = "A set of bandages, sutures, and a first-aid spray perfect to refill a medical pouch or medkit. Tailored for bruises."
+	cost = 500
+	contains = list(
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/suture,
+	/obj/item/stack/medical/suture,
+	/obj/item/reagent_containers/medspray/styptic
+	)
+
+/datum/supply_pack/medical/burnpouch
+	name = "Burn Medical Pouch Refill"
+	desc = "A set of bandages, sutures, and a first-aid spray perfect to refill a medical pouch or medkit. Tailored for burns."
+	cost = 500
+	contains = list(
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/suture,
+	/obj/item/stack/medical/suture,
+	/obj/item/reagent_containers/medspray/silver_sulf
+	)
+
 /datum/supply_pack/medical/potions
 	name = "Ambrosia Elixirs"
 	desc = "Four bottles of precious Ambrosia Elixirs. Two reds, one blue, and one green included.."

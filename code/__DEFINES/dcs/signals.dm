@@ -464,6 +464,7 @@
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
+#define COMSIG_ITEM_SET_SKIN "set_skin" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
 #define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 
@@ -752,6 +753,8 @@
 #define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
 #define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
 #define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
+
+#define COMSIG_CLOTHING_ADJUST "COMSIG_CLOTHING_ADJUST" // (obj/item/clothing/source, mob/user)
 
 #define COMSIG_BOUNTYPROGRAM_OPEN_MENU "bounty_open_program" // (datum/source, mob/user)
 #define COMSIG_BOUNTYPROGRAM_GIVE_CLAIMER "bounty_give_claimer" // (datum/source, mob/user)
