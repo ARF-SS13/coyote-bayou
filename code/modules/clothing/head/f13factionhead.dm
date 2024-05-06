@@ -962,6 +962,54 @@
 	flags_cover = HEADCOVERSEYES
 	mutantrace_variation = STYLE_MUZZLE
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/head/helmet/infiltrator/contractor/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Black" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black"),
+			"Green Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-green"),
+			"Orange Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-orange"),
+			"Blue Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-blue"),
+			"Red Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-red"),
+			"Medic Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-med"),
+			"Engi Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-engie"),
+			"Contractor" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-contract-helm"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Black")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black"
+			item_state = "syndicate-helm-black"
+		if("Green Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-green"
+			item_state = "syndicate-helm-black-green"
+		if("Orange Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-orange"
+			item_state = "syndicate-helm-black-orange"
+		if("Blue Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-blue"
+			item_state = "syndicate-helm-black-blue"
+		if("Red Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-red"
+			item_state = "syndicate-helm-black-red"
+		if("Medic Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-med"
+			item_state = "syndicate-helm-black-med"
+		if("Engi Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-engie"
+			item_state = "syndicate-helm-black-engie"
+		if("Contractor")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-contract-helm"
+			item_state = "syndicate-contract-helm"
+		else
+			return
 //Wayfarer
 //Wayfarer
 /obj/item/clothing/head/helmet/f13/deathskull
