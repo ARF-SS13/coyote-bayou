@@ -16,10 +16,9 @@
 		/datum/firemode/semi_auto
 	)
 	handedness = GUN_EJECTOR_ANY
-
-
 	var/select = 0 //doesn't do anything?
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
+	reloading_time = 0.5 SECONDS
 
 /obj/item/gun/ballistic/revolver/Initialize()
 	. = ..()
