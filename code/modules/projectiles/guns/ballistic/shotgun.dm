@@ -33,6 +33,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value

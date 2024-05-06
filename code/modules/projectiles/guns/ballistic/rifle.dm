@@ -35,6 +35,7 @@
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value

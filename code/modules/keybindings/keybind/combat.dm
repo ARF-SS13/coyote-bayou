@@ -140,3 +140,14 @@
 /datum/keybinding/carbon/reload_gun/down(client/user)
 	user.mob?.ReloadGun()
 	return TRUE
+
+/datum/keybinding/carbon/reload_gun_or_throw
+	hotkey_keys = list("CtrlR")
+	name = "reload_gun_or_throw"
+	full_name = "Reload or toggle throw"
+	description = "Automatically reloads the gun in your active hand, or toggles throwing mode if you don't have a gun in your active hand."
+	category = CATEGORY_COMBAT
+
+/datum/keybinding/carbon/reload_gun_or_throw/down(client/user)
+	user.mob?.ReloadGun(TRUE)
+	return TRUE
