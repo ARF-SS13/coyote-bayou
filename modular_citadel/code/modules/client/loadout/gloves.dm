@@ -76,15 +76,7 @@
 	name = "armwarmers"
 	path = /obj/item/clothing/gloves/armwarmer
 
-/datum/gear/gloves/armwarmer/long
-	name = "armwarmers, long"
-	path = /obj/item/clothing/gloves/armwarmer_long
-
 /datum/gear/gloves/armwarmer/striped
 	name = "armwarmers, striped"
 	path = /obj/item/clothing/gloves/armwarmer_striped
-
-/datum/gear/gloves/armwarmer/striped/long
-	name = "armwarmers, striped, long"
-	path = /obj/item/clothing/gloves/armwarmer_striped_long
 
