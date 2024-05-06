@@ -270,7 +270,7 @@
 
 /obj/item/clothing/gloves/armwarmer
 	name = "arm warmer"
-	desc = "A pair of arm warmers."
+	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
 	icon_state = "armwarmer"
 	item_state = "armwarmer"
 	var/list/poly_colors = list("#F08080")
@@ -299,7 +299,7 @@
 
 /obj/item/clothing/gloves/armwarmer_striped
 	name = "arm warmer striped"
-	desc = "A pair of arm warmers."
+	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
 	icon_state = "armwarmer_striped"
 	item_state = "armwarmer_striped"
 	var/list/poly_colors = list("#FFFFFF", "#F08080")
