@@ -540,7 +540,7 @@
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 		/obj/item/gun/energy/laser/auto/twin = 10,                  //37.5 30 DPS tool says it's low but I think it struggles with burst fire. Similar in power to tesla autoshock
-		/obj/item/gun/energy/laser/scatter/nonlethal = 100,					//132(276) 20 insane for pve wtf, nonlethal damage only so it's here
+		/obj/item/gun/energy/laser/scatter/nonlethal = 10,					//132(276) 20 insane for pve wtf, nonlethal damage only so it's here
 
 		//sidearms
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
