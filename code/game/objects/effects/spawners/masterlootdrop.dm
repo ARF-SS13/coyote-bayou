@@ -537,10 +537,10 @@
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
 		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy = 10,             //80  24 internal cell
-		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 		/obj/item/gun/energy/laser/auto/twin = 10,                  //37.5 30 DPS tool says it's low but I think it struggles with burst fire. Similar in power to tesla autoshock
+		/obj/item/gun/energy/laser/scatter/nonlethal = 100,					//132(276) 20 insane for pve wtf, nonlethal damage only so it's here
 
 		//sidearms
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
@@ -560,13 +560,13 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/cranklasergun/tg/particlecannon = 300,	//133 5 while the DPS is low it has ABSURD burst damage (also it needs the DPS tool run again to get the bane DPS)
-		/obj/item/gun/energy/laser/scatter/nonlethal = 100,					//132(276) 20 insane for pve wtf
-		/obj/item/gun/energy/laser/auto/oasis = 400,						//266 50 low damage per shot, deals plasma damage
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500,		//200 1 self charge, EMP immune
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,				//225 4
-		/obj/item/gun/medbeam/magic = 400,									//000 inf medbeam
-		/obj/item/minigunpack = 1,											//??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
+		/obj/item/gun/energy/laser/tg/particlecannon = 5,					//133 (~300) 5, have to use a Weapon Recharger
+		/obj/item/gun/energy/laser/auto/oasis = 10,							//266 50 low damage per shot, deals plasma damage
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,		//200 60 internal cell
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 50,		//200 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 10,				//225 4
+		/obj/item/gun/medbeam/magic = 10,									//000 inf medbeam
+		/obj/item/minigunpack = 5,											//??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
 	)
 
 ///////////////////////////
