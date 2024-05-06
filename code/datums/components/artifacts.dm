@@ -74,7 +74,7 @@
 		effect.tick(master, current_target, current_holder, current_slot, update_flags)
 	if(COOLDOWN_FINISHED(src, colorwobble))
 		COOLDOWN_START(src, colorwobble, SSartifacts.art_effect_colorwobble_delay)
-		colorwobble(master, my_color)
+		// colorwobble(master, my_color)
 		if(isitem(current_holder))
 			colorwobble(current_holder, current_holder.color)
 		// if(isliving(current_target))
@@ -413,9 +413,9 @@
 /datum/component/artifact/proc/floaty()
 	ART_MASTER
 	var/matrix/m1 = matrix()
-	m1.Translate(0, 2)
+	m1.Translate(0, 5)
 	var/matrix/m2 = matrix()
-	m2.Translate(0, -2)
+	m2.Translate(0, -5)
 	animate(master, transform = m1, time = 5 SECONDS, loop = -1, easing = SINE_EASING, flags = ANIMATION_PARALLEL)
 	animate(transform = m2, time = 3 SECONDS, easing = SINE_EASING)
 

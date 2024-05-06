@@ -676,6 +676,7 @@
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE
+	can_glow_revive = FALSE
 	variation_list = list(
 		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
 		MOB_SPEED_LIST(4, 4.2, 4.3),

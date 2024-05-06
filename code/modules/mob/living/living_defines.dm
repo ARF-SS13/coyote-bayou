@@ -28,6 +28,7 @@
 	var/staminaloss = 0		//Stamina damage, or exhaustion. You recover it slowly naturally, and are knocked down if it gets too high. Holodeck and hallucinations deal this.
 	var/crit_threshold = HEALTH_THRESHOLD_CRIT // when the mob goes from "normal" to crit
 
+	var/can_glow_revive = TRUE
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/living_flags = NONE
