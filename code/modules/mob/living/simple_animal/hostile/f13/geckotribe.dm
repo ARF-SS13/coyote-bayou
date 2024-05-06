@@ -639,6 +639,7 @@
 	move_resist = MOVE_FORCE_OVERPOWERING
 	projectiletype = /obj/item/projectile/geckosummon
 	projectilesound = 'sound/magic/Staff_Healing.ogg'
+	can_glow_revive = FALSE
 	idlesound = list(
 		'sound/f13npc/gecko/geckocall1.ogg',
 		'sound/f13npc/gecko/geckocall2.ogg',
@@ -979,6 +980,7 @@
 	can_ghost_into = FALSE
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	can_glow_revive = FALSE
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),

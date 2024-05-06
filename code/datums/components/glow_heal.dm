@@ -57,7 +57,7 @@
 		if(faction_only && !(faction_only in livingMob.faction))
 			continue //if you don't have the faction listed in the intial, then you aren't getting targeted 
 		if(livingMob.stat == DEAD) 
-			if(revive_allowed)
+			if(revive_allowed && livingMob.can_glow_revive)
 				livingMob.revive(full_heal = TRUE)
 			continue
 		var/health_to_consider = min(livingMob.maxHealth, 30)
