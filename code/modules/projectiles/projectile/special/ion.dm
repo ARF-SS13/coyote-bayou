@@ -17,3 +17,13 @@
 	emp_radius = 1
 	damage = 20
 	damage_list = list("18" = 30, "20" = 50, "25" = 20)
+
+/obj/item/projectile/ion/renegade
+	name = "ion bolt"
+	icon_state = "ion"
+	damage = 0 // being stunlocked AND shot to death isn't fun gameplay
+	damage_list = list("0" = 100)
+	damage_type = BURN
+	flag = "energy"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion
+	emp_radius = 3

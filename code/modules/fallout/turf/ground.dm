@@ -186,8 +186,6 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/oak_five = 5,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
-	/obj/structure/nest/gecko = 5,
-	/obj/structure/nest/radroach = 5,
 	/obj/structure/flora/chomp/bones/lrock = 7,
 	/obj/structure/flora/chomp/bones/lrock1 = 7,
 	/obj/structure/flora/chomp/bones/lrock2 = 7,
@@ -385,6 +383,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
+	greeble = "nest"
 
 /turf/open/indestructible/ground/outside/dirt/Initialize()
 	. = ..()
@@ -455,6 +454,7 @@ GLOBAL_LIST_INIT(trash_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(salvage_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 50,
 	/obj/structure/car = 10,
 	/obj/structure/car/rubbish1 = 10,
 	/obj/structure/car/rubbish2 = 10,
@@ -466,16 +466,17 @@ GLOBAL_LIST_INIT(salvage_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(nest_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 5,
 	/obj/structure/nest/gecko = 5,
 	/obj/structure/nest/radroach = 5,
 	/obj/structure/nest/molerat = 5,
 	))
 
 GLOBAL_LIST_INIT(junk_type_weighted, list(
-	"dust" = 92,
-	"trash" = 3,
-	"salvage" = 3,
-	"nest" = 2
+	"dust" = 89,
+	"trash" = 5,
+	"salvage" = 5,
+	"nest" = 1
 ))
 
 /turf/open/indestructible/ground/outside/dirthole

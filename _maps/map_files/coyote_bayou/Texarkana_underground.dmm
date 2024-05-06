@@ -643,7 +643,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "auF" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "auG" = (
@@ -674,7 +674,7 @@
 	},
 /area/f13/building/massfusion)
 "avd" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -1140,7 +1140,7 @@
 	},
 /area/f13/caves)
 "aMP" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -1211,7 +1211,7 @@
 /area/f13/caves)
 "aQd" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plating,
 /area/f13/building/museum)
 "aQy" = (
@@ -1676,7 +1676,7 @@
 	},
 /area/f13/building)
 "bmR" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
 "bnp" = (
@@ -1846,7 +1846,7 @@
 	name = "wooden post";
 	pixel_x = 15
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -2238,7 +2238,7 @@
 /area/f13/building/sewers)
 "bDa" = (
 /obj/item/storage/trash_stack,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bDc" = (
@@ -2333,13 +2333,13 @@
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
 "bEv" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
 "bEJ" = (
@@ -2570,7 +2570,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bHw" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bHx" = (
@@ -2945,7 +2945,7 @@
 	},
 /area/f13/caves)
 "bJJ" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 8
 	},
@@ -3000,8 +3000,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bKa" = (
-/mob/living/simple_animal/hostile/radroach,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
 "bKb" = (
@@ -3219,7 +3219,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bLf" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -3729,7 +3729,7 @@
 	},
 /area/f13/building)
 "bNH" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bNI" = (
@@ -3768,7 +3768,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "bNO" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "bNQ" = (
@@ -4165,7 +4165,7 @@
 	},
 /area/f13/tunnel)
 "bPX" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bPY" = (
@@ -4444,7 +4444,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bRi" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bRl" = (
@@ -4491,7 +4491,7 @@
 "bRy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
@@ -7292,7 +7292,7 @@
 "dDM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "dDV" = (
@@ -7350,7 +7350,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "dFm" = (
@@ -7487,7 +7487,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dJy" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -8008,7 +8008,7 @@
 /area/f13/caves)
 "ebV" = (
 /obj/item/storage/box/lights/tubes,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "ecc" = (
@@ -8023,7 +8023,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "edy" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
@@ -8221,7 +8221,7 @@
 "enJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plating,
 /area/f13/building/museum)
 "enP" = (
@@ -9502,7 +9502,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbearcore"
 	},
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -11065,7 +11065,7 @@
 	},
 /area/f13/caves)
 "gpR" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -11795,7 +11795,7 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/gun/ballistic/revolver/police,
 /obj/item/gun/ballistic/revolver/police,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -12829,7 +12829,7 @@
 "hCV" = (
 /obj/structure/closet/crate/wooden,
 /obj/effect/spawner/lootdrop/maintenance,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
 "hCW" = (
@@ -13032,7 +13032,7 @@
 /area/f13/building/hospital)
 "hKC" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -13454,7 +13454,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ibk" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "ibA" = (
@@ -14547,7 +14547,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iGV" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "iHy" = (
@@ -15874,7 +15874,7 @@
 	},
 /area/f13/building)
 "jFA" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/museum)
 "jFL" = (
@@ -16312,7 +16312,7 @@
 /area/f13/building/sewers)
 "jSR" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
 "jSZ" = (
@@ -17639,7 +17639,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "kTY" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/water,
 /area/f13/building/sewers)
 "kUb" = (
@@ -17713,7 +17713,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "kVz" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -17923,7 +17923,7 @@
 "lbK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "lbL" = (
@@ -19361,7 +19361,7 @@
 /area/f13/building/sewers)
 "lUZ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/machinery/light/broken{
 	dir = 8
 	},
@@ -19370,7 +19370,7 @@
 /area/f13/building/museum)
 "lVa" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "lVf" = (
@@ -19828,7 +19828,7 @@
 /turf/open/water,
 /area/f13/building/sewers)
 "mmk" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -20078,7 +20078,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "muS" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -21457,7 +21457,7 @@
 	},
 /area/f13/caves)
 "nti" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -22995,7 +22995,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/building/museum)
@@ -23893,7 +23893,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "pag" = (
@@ -24407,7 +24407,7 @@
 	},
 /area/f13/caves)
 "prW" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
 "psp" = (
@@ -25755,7 +25755,7 @@
 /area/f13/tunnel)
 "qjo" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/museum)
 "qjB" = (
@@ -26189,7 +26189,7 @@
 	},
 /area/f13/building/sewers)
 "qvL" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "qvR" = (
@@ -27687,7 +27687,7 @@
 "rvD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
 "rvM" = (
@@ -29086,7 +29086,7 @@
 /turf/closed/indestructible/vaultdoor,
 /area/f13/caves)
 "svg" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -30537,7 +30537,7 @@
 /area/f13/caves)
 "tqE" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
 "trn" = (
@@ -30603,7 +30603,7 @@
 /area/f13/caves)
 "ttq" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/machinery/conveyor/inverted,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
@@ -31648,7 +31648,7 @@
 /area/f13/building/museum)
 "ujY" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/museum)
 "ukq" = (
@@ -32162,9 +32162,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/miningcar,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "uEJ" = (
@@ -34010,7 +34010,7 @@
 	},
 /area/f13/tunnel)
 "vVC" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -34234,7 +34234,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "waB" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -34831,7 +34831,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "wwC" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/closet,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/under/f13/vault,
@@ -35141,7 +35141,7 @@
 /turf/closed/indestructible/vaultdoor,
 /area/f13/caves)
 "wIj" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
 "wIn" = (
@@ -35734,7 +35734,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "xeV" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -35908,7 +35908,7 @@
 	},
 /area/f13/building/sewers)
 "xku" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -36043,11 +36043,11 @@
 /area/f13/caves)
 "xqr" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building/museum)
 "xqv" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
 "xqA" = (

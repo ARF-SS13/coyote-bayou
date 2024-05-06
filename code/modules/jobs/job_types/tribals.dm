@@ -63,6 +63,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
+	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	id = null
@@ -538,7 +539,7 @@ Hunter
 /datum/outfit/loadout/melee
 	name = "Militia"
 	backpack_contents = list(
-		/obj/item/flashlight/lantern = 1,
+		/obj/item/flashlight/flare/torch = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 2,
 		/obj/item/hatchet/war_axe = 1,

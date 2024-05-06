@@ -751,20 +751,20 @@
 				potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/wyomingghost)
 		/// the bugs are back in town
 		else if(ispath(mobpath, /mob/living/simple_animal/hostile/giantant)\
-			|| ispath(mobpath, /mob/living/simple_animal/hostile/radroach)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/pillbug)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/fireant)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/radscorpion)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/poison/giant_spider)\
 			|| prob(15))
-			if(ispath(mobpath, /mob/living/simple_animal/hostile/radroach) && prob(80))
-				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
-				potentials -= /mob/living/simple_animal/hostile/radroach
+			if(ispath(mobpath, /mob/living/simple_animal/hostile/pillbug) && prob(80))
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
+				potentials -= /mob/living/simple_animal/hostile/pillbug
 			else
 				potentials |= typesof(/mob/living/simple_animal/hostile/fireant)
 				potentials |= typesof(/mob/living/simple_animal/hostile/radscorpion)
 				potentials |= typesof(/mob/living/simple_animal/hostile/poison/giant_spider)
 				potentials |= typesof(/mob/living/simple_animal/hostile/giantant)
-				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
 			potentials -= mobpath
 		/// larger animals 
 		else if(ispath(mobpath, /mob/living/simple_animal/hostile/gorilla)\
@@ -822,7 +822,7 @@
 		else if(ispath(mobpath, /mob/living/simple_animal/hostile/gecko)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/rat)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/molerat)\
-			|| ispath(mobpath, /mob/living/simple_animal/hostile/radroach)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/pillbug)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/cazador)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/lizard)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/lightgeist)\
@@ -843,7 +843,7 @@
 					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/chieftain)
 				potentials |= typesof(/mob/living/simple_animal/hostile/rat)
 				potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
-				potentials |= typesof(/mob/living/simple_animal/hostile/radroach)
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
 				potentials |= typesof(/mob/living/simple_animal/hostile/carp)
 				potentials -= typesof(/mob/living/simple_animal/hostile/carp/ranged) // no more literal deathray fish
 				potentials |= typesof(/mob/living/simple_animal/hostile/cazador)

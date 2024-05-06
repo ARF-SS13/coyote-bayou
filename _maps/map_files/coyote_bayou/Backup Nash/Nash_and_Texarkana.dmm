@@ -1042,7 +1042,7 @@
 /area/f13/building/workshop/nash)
 "aek" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "aem" = (
@@ -5236,7 +5236,7 @@
 /obj/structure/sign/poster/contraband/pinup_funk{
 	pixel_x = -32
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -7128,7 +7128,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "azY" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -10894,7 +10894,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -12218,7 +12218,7 @@
 /obj/machinery/light/small/built{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "aQf" = (
@@ -22664,7 +22664,7 @@
 /area/f13/wasteland/city)
 "bWS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bWU" = (
@@ -24793,7 +24793,7 @@
 /area/f13/building/coyote/nash/museum/groundfloor)
 "coD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -25198,7 +25198,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	name = "poopers lamp"
 	},
 /turf/open/floor/wood_common{
@@ -26882,7 +26882,7 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#224422"
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -27664,7 +27664,7 @@
 	name = "wooden post";
 	pixel_x = 15
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -29813,7 +29813,7 @@
 /area/f13/wasteland)
 "drp" = (
 /obj/structure/rack,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
@@ -30435,7 +30435,7 @@
 /area/f13/building/abandoned)
 "dyb" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood1-broken"
 	},
@@ -33763,7 +33763,7 @@
 /area/debug_mussy)
 "emC" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -34236,7 +34236,7 @@
 /area/f13/ruins)
 "erw" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "erx" = (
@@ -36270,7 +36270,7 @@
 	},
 /area/f13/building/abandoned)
 "ePZ" = (
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "eQf" = (
@@ -40673,7 +40673,7 @@
 /turf/open/floor/carpet/purple,
 /area/f13/bar/heaven)
 "fOw" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -40932,7 +40932,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "fRG" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/screwdriver,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -41139,7 +41139,7 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "fTG" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -47231,7 +47231,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "hnl" = (
@@ -62323,7 +62323,7 @@
 /area/f13/wasteland/city/nash/starterroad)
 "kHm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 7;
 	pixel_x = -10
 	},
@@ -65899,7 +65899,7 @@
 	pixel_x = 8;
 	id = "jointstoreshutters"
 	},
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "lwG" = (
@@ -67317,7 +67317,7 @@
 /area/f13/building/coyote/nash/school/groundfloor)
 "lMi" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -68057,7 +68057,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/under/rank/security/officer/formal{
 	name = "security officer's uniform"
 	},
@@ -71003,7 +71003,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/nash)
 "mzq" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "mzt" = (
@@ -77826,8 +77826,8 @@
 "oac" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/trash,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -82613,9 +82613,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/miningcar,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pdj" = (
@@ -86373,7 +86373,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
@@ -87955,7 +87955,7 @@
 /area/f13/wasteland)
 "qoi" = (
 /mob/living/simple_animal/cockroach,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qop" = (
@@ -91399,7 +91399,7 @@
 /area/f13/wasteland/city/nash/downtown)
 "rcQ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "rcS" = (
@@ -93739,7 +93739,7 @@
 "rFR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -94804,11 +94804,11 @@
 /area/f13/building/coyote/nash/firestation)
 "rUF" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "rUG" = (
@@ -95332,7 +95332,7 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 7;
 	pixel_x = -10
 	},
@@ -96345,7 +96345,7 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city)
 "slX" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 7;
 	pixel_x = -10
 	},
@@ -98463,7 +98463,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "sIE" = (
@@ -98855,7 +98855,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -106143,7 +106143,7 @@
 /obj/item/clothing/under/f13/police/trooper,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/head/helmet/f13/motorcycle,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/melee/classic_baton/police,
 /obj/item/clothing/glasses/f13/biker,
 /obj/item/clothing/suit/armor/medium/vest/blueshirt,
@@ -111772,7 +111772,7 @@
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
 "vIv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1
 	},
 /turf/open/floor/f13{
@@ -114143,7 +114143,7 @@
 /area/f13/building/coyote/nash/firestation)
 "wlg" = (
 /obj/structure/table/booth,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -115388,7 +115388,7 @@
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
 "wxZ" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},
@@ -119005,9 +119005,9 @@
 /area/f13/building)
 "xmO" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#6D6D6D"
 	},

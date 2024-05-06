@@ -6062,14 +6062,14 @@
 /area/f13/village)
 "Yv" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "Yw" = (
@@ -6295,15 +6295,15 @@
 /area/f13/building)
 "ZO" = (
 /obj/structure/rack,
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},

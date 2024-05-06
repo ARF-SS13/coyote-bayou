@@ -3383,7 +3383,7 @@
 /area/f13/caves)
 "cnA" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood{
 	icon_state = "housebase"
 	},
@@ -6977,7 +6977,7 @@
 /area/f13/wasteland)
 "eDs" = (
 /obj/effect/spawner/lootdrop/f13/common,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "eDU" = (
@@ -9746,7 +9746,7 @@
 "gpX" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -11370,7 +11370,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	light_on = 1;
 	on = 1;
@@ -12097,7 +12097,7 @@
 	dir = 1
 	},
 /obj/structure/closet/fridge,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -21098,7 +21098,7 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/wasteland)
 "nbB" = (
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -23511,7 +23511,7 @@
 	pixel_y = 30
 	},
 /obj/effect/spawner/lootdrop/f13/common,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
@@ -23915,7 +23915,7 @@
 /area/f13/wasteland)
 "oNd" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	layer = 2.8;
 	light_on = 1;
@@ -24397,7 +24397,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "pfv" = (
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -31090,7 +31090,7 @@
 /area/f13/building)
 "tDj" = (
 /obj/effect/spawner/lootdrop/f13/common,
-/mob/living/simple_animal/hostile/radroach/strongradroach,
+/mob/living/simple_animal/hostile/pillbug/strongradroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
@@ -31752,8 +31752,8 @@
 /area/f13/building/massfusion)
 "tWr" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building)
@@ -34874,7 +34874,7 @@
 /area/f13/building)
 "vYF" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
 	light_on = 1;
 	on = 1;

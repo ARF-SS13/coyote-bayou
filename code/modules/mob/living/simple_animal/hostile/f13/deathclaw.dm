@@ -69,6 +69,8 @@
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	am_important = TRUE
+	bossmob = TRUE
+
 
 /mob/living/simple_animal/hostile/deathclaw/Initialize()
 	. = ..()

@@ -272,7 +272,7 @@
 /datum/bounty/kill/roachypillbugs
 	name = "Slay some Roachy Pillbugs"
 	description = "Roachy Pillbugs are everywhere! I'll pay you to kill some of them."
-	flavor_focus = /mob/living/simple_animal/hostile/radroach
+	flavor_focus = /mob/living/simple_animal/hostile/pillbug
 	weight = 1
 	init_wanteds = list(
 		/datum/bounty_quota/roachypillbug/easy,
@@ -286,7 +286,7 @@
 /datum/bounty_quota/roachypillbug
 	name = "Kill some Roachy Pillbugs"
 	paths = list(
-		/mob/living/simple_animal/hostile/radroach,
+		/mob/living/simple_animal/hostile/pillbug,
 	)
 	needed_amount = 15
 	paths_get_subtypes = TRUE

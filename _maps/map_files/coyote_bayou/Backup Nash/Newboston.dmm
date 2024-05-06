@@ -118,7 +118,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "aeF" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -6733,8 +6733,8 @@
 /area/f13/wasteland)
 "fbI" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/mountain,
@@ -7855,7 +7855,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "fTG" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
@@ -9874,7 +9874,7 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/building)
 "huT" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -10638,7 +10638,7 @@
 /obj/structure/closet/crate/wooden,
 /obj/item/ammo_box/a308box,
 /obj/item/ammo_box/a308,
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	desc = "A heavy prewar flashlight.";
 	name = "flashlight"
 	},
@@ -15044,7 +15044,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -16462,7 +16462,7 @@
 	},
 /area/f13/building)
 "lVs" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -24067,7 +24067,7 @@
 /area/f13/wasteland)
 "rJS" = (
 /obj/effect/decal/cleanable/greenglow,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rKj" = (
@@ -25669,9 +25669,9 @@
 /area/f13/building)
 "sLs" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "sLF" = (
@@ -25798,12 +25798,12 @@
 /area/f13/city)
 "sQB" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -26411,7 +26411,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tnh" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tnx" = (
@@ -30679,7 +30679,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/city)
 "wzg" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -32748,7 +32748,7 @@
 	},
 /area/f13/building)
 "xZj" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},

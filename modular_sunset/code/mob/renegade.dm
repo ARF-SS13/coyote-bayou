@@ -108,7 +108,7 @@
 	ranged_cooldown_time = 2 SECONDS
 	sight_shoot_delay_time = 0.2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/ion
+	projectiletype = /obj/item/projectile/ion/renegade
 	projectilesound = 'sound/f13weapons/pulsepistolfire.ogg'
 	robust_searching = TRUE
 	speak = list(

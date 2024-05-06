@@ -136,7 +136,7 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
-	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
+//M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
 /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
 	name = "M3 Civillian Pistol"
 	desc = "This pistol is the civillian version of the M3 Magnum, which uses common and abundant 9mm ammunition."
@@ -260,7 +260,7 @@
 	weapon_class = WEAPON_CLASS_TINY
 
 /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
-	name = "Taurus 5mm 'Equalizer' pistol"
+	name = "5mm Equalizer pistol"
 	desc = "A not so well known 5mm chambered pistol. The Taurus 'Equalizer' is a pistol with a 20 round 5mm capacity and a decent hitting catridge."
 	icon_state = "5mm"
 	item_state = "handgonne"
@@ -992,7 +992,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 /* * * * * * * * * *
-* .44 automag copycats. same as the original one with or without added flavor * 
+* .44 automag copycats. same as the original one with or without added flavor *
 * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/automag/m6 //weaker .44, spawn tier.

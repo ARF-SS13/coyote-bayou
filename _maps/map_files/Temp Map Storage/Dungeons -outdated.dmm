@@ -230,7 +230,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/bunker/bighornbunker)
 "alf" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -3286,7 +3286,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
 "dtf" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "dty" = (
@@ -4388,7 +4388,7 @@
 /area/f13/bunker)
 "eyt" = (
 /obj/item/clothing/glasses/meson,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/storage/bag/ore,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -4559,7 +4559,7 @@
 /area/f13/bunker)
 "eGe" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
 "eGp" = (
@@ -4967,7 +4967,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fdI" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "fez" = (
@@ -6712,7 +6712,7 @@
 /area/f13/vault)
 "gNT" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1
 	},
 /turf/open/floor/f13{
@@ -10353,7 +10353,7 @@
 	},
 /area/f13/underground/cave)
 "kxw" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kxI" = (
@@ -14162,8 +14162,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "okF" = (
@@ -14175,7 +14175,7 @@
 	},
 /area/f13/bunker)
 "okG" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -17678,8 +17678,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "rLF" = (
@@ -19574,7 +19574,7 @@
 /area/f13/underground/cave)
 "tJQ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -20177,8 +20177,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "uqs" = (
@@ -20408,8 +20408,8 @@
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/spawner/lootdrop/armory_contraband,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "uBU" = (
@@ -21903,9 +21903,9 @@
 	},
 /area/f13/bunker)
 "wba" = (
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/item/binoculars,
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -21969,7 +21969,7 @@
 	},
 /area/f13/bunker)
 "wcO" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "wcT" = (
@@ -23754,7 +23754,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "ydW" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";

@@ -129,7 +129,7 @@
 	maxHealth = 1000
 	max_mobs = 8
 	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/radroach)
+	mob_types = list(/mob/living/simple_animal/hostile/pillbug)
 	faction = list("gecko")
 
 /mob/living/simple_animal/hostile/spawner/mining

@@ -1087,7 +1087,7 @@
 /area/f13/building)
 "aek" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "aem" = (
@@ -10879,7 +10879,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -25869,7 +25869,7 @@
 "drp" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "drq" = (
@@ -32624,7 +32624,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "fRG" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/screwdriver,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -32734,7 +32734,7 @@
 	},
 /area/f13/building/abandoned)
 "fTG" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -48367,7 +48367,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/under/rank/security/officer/formal{
 	name = "security officer's uniform"
 	},
@@ -50059,7 +50059,7 @@
 	},
 /area/f13/building/abandoned)
 "mzq" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "mzt" = (
@@ -54109,8 +54109,8 @@
 "oac" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/trash,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -61964,7 +61964,7 @@
 /area/f13/building/abandoned)
 "rcQ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "rdh" = (
@@ -66015,7 +66015,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -75462,7 +75462,7 @@
 	},
 /area/f13/building)
 "wxZ" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},

@@ -705,17 +705,17 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 4
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
-		/mob/living/simple_animal/hostile/radroach = 20
+		/mob/living/simple_animal/hostile/pillbug = 20
 		)
 	num_mobs_to_spawn_medium = 5
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_QUICK
 	mob_list_medium = list(
-		/mob/living/simple_animal/hostile/radroach = 20
+		/mob/living/simple_animal/hostile/pillbug = 20
 		)
 	num_mobs_to_spawn_hard = 6
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_QUICKER
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/radroach = 20
+		/mob/living/simple_animal/hostile/pillbug = 20
 		)
 
 /// Geckos (that arent bold)

@@ -50,7 +50,7 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	box = /obj/item/storage/survivalkit/outlaw
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
@@ -63,6 +63,9 @@ Raider
 
 /datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	. = ..()
+	r_pocket = pick(
+		/obj/item/storage/fancy/flare_pouch, \
+		/obj/item/storage/fancy/flare_pouch/glowstick)
 	uniform = pick(
 		/obj/item/clothing/under/f13/merca, \
 		/obj/item/clothing/under/f13/mercc, \
@@ -371,7 +374,7 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
@@ -657,7 +660,7 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 	//	/obj/item/storage/bag/money/small/raider = 1,
@@ -943,7 +946,7 @@ Raider
 	ears = null
 	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
@@ -959,6 +962,9 @@ Raider
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
+	r_pocket = pick(
+		/obj/item/storage/fancy/flare_pouch, \
+		/obj/item/storage/fancy/flare_pouch/glowstick)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -1312,7 +1318,7 @@ Raider
 	ears = /obj/item/radio/headset
 	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/flashlight/flare
+	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
@@ -1326,6 +1332,9 @@ Raider
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
+	r_pocket = pick(
+		/obj/item/storage/fancy/flare_pouch, \
+		/obj/item/storage/fancy/flare_pouch/glowstick)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -1345,7 +1354,7 @@ Raider
 	id = null
 	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
@@ -1576,7 +1585,7 @@ Raider
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	r_pocket = 		/obj/item/flashlight/flare
+	r_pocket = 		/obj/item/storage/fancy/flare_pouch
 
 	backpack =		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
@@ -2037,6 +2046,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
+	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit/tribal
@@ -2484,7 +2494,7 @@ Raider
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/military
 	belt = /obj/item/supplykit
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
@@ -2606,7 +2616,7 @@ Raider
 	ears = /obj/item/radio/headset/headset_town/lawman
 	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit

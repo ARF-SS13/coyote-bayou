@@ -201,7 +201,7 @@
 
 /* * * * * * * * * * *
  * Hermes revolver
- * Light, Fast and hyper accurate 
+ * Light, Fast and hyper accurate
  * 9mm
  * Uncommon
  * * * * * * * * * * */
@@ -270,8 +270,8 @@
 
 /obj/item/gun/ballistic/revolver/medusa
 	name = "Medusa Multi-Caliber Revolver"
-	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder, able to fit from .22 up to .44, though the loose chambering makes it quite innacurate"
-	icon_state = "medusa" 
+	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder that's able to fit .22 up to .44, though the loose chambering makes it rather innacurate."
+	icon_state = "medusa"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -510,7 +510,7 @@
 * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/Lemat
 	name = "Grapeshot Revolver"
-	desc = "A 9 shot revolver from a time long forgotten. The revolver itself has been refitted to be 9mm. Unlike the original version, this one needs no wax caps or .36cal balls to be fitted into the cylinder. It also does not take a shotgun shell. But at least you have 9 shots to put a target down"
+	desc = "A 9 shot revolver from a time long forgotten. The revolver itself has been refitted to be 9mm. Unlike the original version, this one needs no wax caps or .36cal balls to be fitted into the cylinder. It also does not take a shotgun shell. But at least you have 9 shots to put your target down."
 	item_state = "lemat"
 	icon_state = "lemat"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
