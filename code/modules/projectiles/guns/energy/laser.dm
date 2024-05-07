@@ -1186,6 +1186,17 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 	selfchargerate = 2.5 SECONDS
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
+// loadout ver, 2x as long to charge
+/obj/item/gun/energy/laser/tg/recharger/loadout
+	name = "smuggled experimental laser pistol"
+	color = "#ad9782"
+	selfchargerate = 5 SECONDS
+	can_flashlight = 1 // because the cov carbine can IIRC
+
+/obj/item/gun/energy/laser/tg/recharger/loadout/captainskin // to be removed eventually when the skin system can be applied to laser guns
+	icon_state = "caplaser"
+	item_state = "caplaser"
+
 /* * * * * *
  * TG Nuclear Pistol
  * Dangerous self-charging rad-pistol

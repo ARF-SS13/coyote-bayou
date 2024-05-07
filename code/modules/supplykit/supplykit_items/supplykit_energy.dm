@@ -128,6 +128,17 @@
 	item = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock
 	cost = 40
 
+/datum/supplykit_item/energy/smuggledhos
+	name = "Smuggled HOS Pistol"
+	desc = "A smuggled HOS pistol from a far off space station. Due to a size restricted capacitor to make it fit discreetly in cargo, it takes five seconds to charge."
+	item = /obj/item/gun/energy/laser/tg/recharger/loadout
+	cost = 40 // 5 second long self charge + 100 dps
+
+/datum/supplykit_item/energy/smuggledhos/captain
+	name = "Smuggled Antique Laser Pistol"
+	desc = "A smuggled Captain's antique pistol from a far off space station. Statistically the same as the Smuggled HOS Pistol."
+	item = /obj/item/gun/energy/laser/tg/recharger/loadout/captainskin
+
 /datum/supplykit_item/energy/wattz
 	name = "Wattz 1000"
 	desc = "A semi-auto Laser pistol firing high energy bolts. takes EC."
