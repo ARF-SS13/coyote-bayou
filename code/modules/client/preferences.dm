@@ -3687,7 +3687,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						input_mode_hotkey = "Ctrl+Tab"
 					else
 						input_mode_hotkey = "Tab"
-					parent.change_input_toggle_key(input_mode_hotkey)
+					parent.change_input_toggle_key(input_mode_hotkey, send_chat = TRUE)
 					
 				if("ui")
 					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in GLOB.available_ui_styles

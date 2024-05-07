@@ -57,7 +57,6 @@
 /client/proc/ensure_keys_set(datum/preferences/prefs_override = prefs)
 	if(SSinput.initialized)
 		full_macro_assert(prefs_override)
-	change_input_toggle_key(prefs.input_mode_hotkey)
 
 /client/proc/full_macro_assert(datum/preferences/prefs_override = prefs)
 	INVOKE_ASYNC(src,PROC_REF(do_full_macro_assert), prefs_override)		// winget sleeps.
@@ -131,6 +130,7 @@
 		apply_macro_set(macroset, macrosets[macroset])
 	// Finally, set hotkeys.
 	set_hotkeys_preference(prefs_override)
+	change_input_toggle_key(prefs.input_mode_hotkey)
 
 /proc/keybind_modifier_permutation(key, alt = FALSE, ctrl = FALSE, shift = FALSE, self = TRUE)
 	var/list/permutations = list()
@@ -187,7 +187,7 @@
 						continue
 					.[key] = KB.clientside
 
-/client/proc/change_input_toggle_key(key_to_set)
+/client/proc/change_input_toggle_key(key_to_set, send_chat = FALSE)
 	set name = "Change Input Toggle Key"
 	set desc = "Switch input toggle between tab and ctrl+tab."
 	set category = "OOC"
@@ -217,5 +217,5 @@
 	src.apply_macro_set(SKIN_MACROSET_CLASSIC_HOTKEYS, classic_hotkeys_temp)
 	src.apply_macro_set(SKIN_MACROSET_HOTKEYS, hotkeys_temp)
 	src.apply_macro_set(SKIN_MACROSET_CLASSIC_INPUT, classic_temp)
-
-	to_chat(src, "Setting input mode toggle to [key_to_set].")
+	if(send_chat)
+		to_chat(src, "Setting input mode toggle to [key_to_set].")
