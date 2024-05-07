@@ -669,7 +669,8 @@ GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
 	/obj/item/stack/sheet/leather,
 	/obj/item/stack/sheet/sinew,
 	/obj/item/stack/sheet/bone,
-	/obj/item/fishy
+	/obj/item/fishy,
+	/obj/item/disk/plantgene
 	)))
 
 GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
@@ -833,14 +834,14 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BAG_MAX_TOTAL_SPACE STORAGE_BAG_MAX_ITEMS * STORAGE_BAG_MAX_SIZE
 
 /// How many items fit in a salvage bag
-#define STORAGE_SALVAGE_BAG_MAX_ITEMS 32
+#define STORAGE_SALVAGE_BAG_MAX_ITEMS 50
 /// How big a thing can fit in a bag thing
 #define STORAGE_SALVAGE_BAG_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a bag thing
 #define STORAGE_SALVAGE_BAG_MAX_TOTAL_SPACE STORAGE_SALVAGE_BAG_MAX_ITEMS * STORAGE_SALVAGE_BAG_MAX_ITEMS
 
 /// How many items total fit in a trash bag thing
-#define STORAGE_TRASH_BAG_MAX_ITEMS STORAGE_BAG_MAX_ITEMS * 2 //28
+#define STORAGE_TRASH_BAG_MAX_ITEMS 50
 /// How big a thing can fit in a trash bag thing
 #define STORAGE_TRASH_BAG_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a trash bag thing
