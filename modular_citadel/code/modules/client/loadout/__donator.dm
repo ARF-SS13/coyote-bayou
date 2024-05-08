@@ -315,6 +315,16 @@
 	new /obj/item/disk/plantgene(src)
 // C
 
+/datum/gear/donator/kits/colfer
+	name = "parmesan smelling box"
+	path = /obj/item/storage/box/large/custom_kit/colfer
+	ckeywhitelist = list("colfer")
+
+/obj/item/storage/box/large/custom_kit/colfer/PopulateContents()
+	name = "parmesan smelling box"
+	new /obj/item/clothing/head/peaceflower(src)
+	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
+
 /datum/gear/donator/kits/caseapollo58143
 	name = "Missionary Kit"
 	path = /obj/item/storage/box/large/custom_kit/caseapollo58143
