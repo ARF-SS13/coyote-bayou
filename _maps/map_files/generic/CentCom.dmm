@@ -120,6 +120,10 @@
 	},
 /turf/closed/indestructible/riveted,
 /area/f13/underground/mountain)
+"aw" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "ax" = (
 /obj/effect/holodeck_effect/mobspawner/penguin,
 /obj/effect/holodeck_effect/mobspawner/penguin,
@@ -2049,6 +2053,19 @@
 /obj/effect/landmark/start/new_player,
 /turf/open/floor/plating,
 /area/start)
+"gg" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
+"gQ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating/beach/water,
+/area/f13/underground/mountain)
 "gV" = (
 /turf/closed/indestructible/fakedoor{
 	name = "CentCom Warehouse"
@@ -2089,12 +2106,20 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"hC" = (
+/obj/structure/fluff/beach_umbrella,
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "hQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"hR" = (
+/obj/machinery/microwave/white_stove,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "hX" = (
 /turf/closed/indestructible/fakedoor{
 	name = "CentCom Cell"
@@ -3232,6 +3257,10 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/centcom/evac)
+"ma" = (
+/obj/machinery/light,
+/turf/open/floor/plating/beach/water,
+/area/f13/underground/mountain)
 "mb" = (
 /obj/machinery/computer/shuttle/labor,
 /obj/effect/turf_decal/stripes/line{
@@ -3335,6 +3364,12 @@
 	},
 /turf/open/floor/plasteel/darkgreen,
 /area/tdome/tdomeobserve)
+"mr" = (
+/obj/structure/fluff/beach_towel{
+	dir = 4
+	},
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "mD" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -4006,6 +4041,12 @@
 	dir = 8
 	},
 /area/centcom/evac)
+"ot" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless/white,
+/area/f13/underground/mountain)
 "ou" = (
 /obj/structure/table/wood,
 /obj/item/storage/secure/briefcase{
@@ -4215,6 +4256,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"oV" = (
+/obj/structure/fluff/beach_towel{
+	dir = 9
+	},
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "oX" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-05";
@@ -4524,6 +4571,16 @@
 /obj/effect/landmark/ai_multicam_room,
 /turf/open/ai_visible,
 /area/ai_multicam_room)
+"pZ" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
+"qa" = (
+/obj/structure/fluff/railing/corner,
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "qb" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Administrative Office";
@@ -4776,6 +4833,17 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"qK" = (
+/obj/structure/table/glass,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
+"qN" = (
+/obj/structure/chair/wood,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "qQ" = (
 /obj/item/scalpel{
 	pixel_y = 12
@@ -5883,6 +5951,10 @@
 /obj/machinery/microwave/stove,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"uE" = (
+/obj/structure/simple_door/house/clean,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "uG" = (
 /obj/machinery/autolathe/constructionlathe,
 /turf/open/floor/plasteel/vault{
@@ -6157,6 +6229,14 @@
 	},
 /obj/structure/window/reinforced,
 /turf/closed/indestructible/riveted,
+/area/f13/underground/mountain)
+"vl" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
+/obj/structure/chair/sofa/left,
+/turf/open/floor/f13/wood,
 /area/f13/underground/mountain)
 "vo" = (
 /obj/item/storage/firstaid/toxin,
@@ -6685,6 +6765,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"xm" = (
+/obj/structure/fluff/beach_towel{
+	dir = 10
+	},
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "xr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/sign/directions/engineering{
@@ -6694,6 +6780,16 @@
 	},
 /turf/open/floor/plating,
 /area/centcom/evac)
+"xs" = (
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
+"xz" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "xC" = (
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
@@ -6702,12 +6798,30 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"xK" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
+"xN" = (
+/obj/effect/fake_stairs/west,
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "xR" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"xU" = (
+/obj/structure/fireplace{
+	dir = 4;
+	pixel_x = -10
+	},
+/turf/open/floor/carpet,
+/area/f13/underground/mountain)
 "xV" = (
 /obj/structure/wreck/trash/secway,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -6838,6 +6952,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"zv" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "zx" = (
 /obj/structure/filingcabinet/security,
 /turf/open/floor/plasteel/grimy,
@@ -6974,6 +7092,11 @@
 /obj/structure/closet/secure_closet/armory3,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"Ax" = (
+/obj/structure/fluff/beach_towel,
+/obj/structure/fluff/beach_towel,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "AC" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/light{
@@ -7022,6 +7145,11 @@
 /obj/machinery/workbench,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/evac)
+"AL" = (
+/obj/structure/table/wood,
+/obj/item/slime_cookie/cerulean,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "AO" = (
 /obj/machinery/door/airlock/centcom{
 	name = "CentCom Supply";
@@ -7098,6 +7226,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"Bi" = (
+/turf/open/floor/plasteel/airless/white,
+/area/f13/underground/mountain)
 "Bj" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
@@ -7512,6 +7643,10 @@
 "DB" = (
 /turf/open/indestructible/ground/inside/subway,
 /area/centcom/evac)
+"DO" = (
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "DV" = (
 /obj/machinery/light/small,
 /obj/structure/chair/bench,
@@ -7521,10 +7656,18 @@
 /obj/structure/chair/bench,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"DX" = (
+/obj/effect/fake_stairs/south,
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "DY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/inside/mountain,
 /area/centcom/evac)
+"Eb" = (
+/obj/structure/bookshelf,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "Eg" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -7532,6 +7675,12 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Ej" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/f13/underground/mountain)
 "Ep" = (
 /turf/closed/indestructible/riveted,
 /area/tdome/tdomeobserve)
@@ -7552,6 +7701,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/tdome/tdomeobserve)
+"Ey" = (
+/obj/machinery/computer/arcade/orion_trail,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "EB" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/decoration/rag,
@@ -7619,6 +7772,9 @@
 /obj/effect/landmark/deathmatch,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"EU" = (
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "EZ" = (
 /obj/structure/toilet{
 	dir = 1
@@ -7642,6 +7798,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/inside/mountain,
 /area/centcom/evac)
+"Fh" = (
+/obj/machinery/light,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "Fk" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/decal/cleanable/dirt,
@@ -7662,6 +7822,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"FB" = (
+/obj/structure/window,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
+"FJ" = (
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/turf/open/floor/carpet/green,
+/area/f13/underground/mountain)
 "FK" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 9
@@ -7674,6 +7845,18 @@
 "FU" = (
 /obj/structure/speaking_tile,
 /turf/closed/mineral/ash_rock,
+/area/f13/underground/mountain)
+"FV" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/beach/water,
+/area/f13/underground/mountain)
+"FW" = (
+/obj/structure/fluff/beach_towel{
+	dir = 6
+	},
+/turf/open/floor/plating/beach/sand,
 /area/f13/underground/mountain)
 "Ga" = (
 /obj/structure/cable{
@@ -7789,6 +7972,10 @@
 	},
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
+"Hp" = (
+/obj/machinery/light/small,
+/turf/open/floor/f13,
+/area/f13/underground/mountain)
 "Hq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -7844,10 +8031,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"HT" = (
+/obj/structure/curtain,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "HU" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"HZ" = (
+/turf/open/floor/carpet/green,
+/area/f13/underground/mountain)
 "Id" = (
 /obj/machinery/computer/security/telescreen,
 /obj/structure/table/reinforced,
@@ -8113,6 +8307,13 @@
 /obj/effect/landmark/thunderdome/one,
 /turf/open/floor/plasteel/neutral,
 /area/tdome/arena)
+"Jo" = (
+/obj/structure/table/glass,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "Js" = (
 /turf/open/floor/plasteel/red/corner{
 	dir = 8
@@ -8242,6 +8443,9 @@
 /obj/item/paper/fluff/stations/centcom/broken_evac,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape/backup)
+"Kr" = (
+/turf/open/floor/f13,
+/area/f13/underground/mountain)
 "Kw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8643,6 +8847,12 @@
 "MB" = (
 /turf/open/indestructible/binary,
 /area/fabric_of_reality)
+"MD" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "MH" = (
 /obj/structure/ladder/unbreakable/binary/unlinked,
 /turf/open/indestructible/airblock,
@@ -8669,6 +8879,12 @@
 /obj/structure/wreck/trash/secway,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"No" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "Nu" = (
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plasteel,
@@ -8677,6 +8893,9 @@
 /obj/structure/ladder/unbreakable/binary,
 /turf/open/indestructible/airblock,
 /area/fabric_of_reality)
+"NG" = (
+/turf/open/floor/holofloor/beach/coast_t,
+/area/f13/underground/mountain)
 "NI" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 9
@@ -8688,6 +8907,10 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/underground/mountain)
+"NX" = (
+/obj/machinery/door/airlock/glass,
+/turf/open/floor/f13,
 /area/f13/underground/mountain)
 "NY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8718,6 +8941,14 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"Oq" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
+/obj/structure/chair/sofa/right,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "Ox" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 1
@@ -8730,6 +8961,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/four)
+"OB" = (
+/obj/structure/fluff/beach_towel{
+	dir = 8
+	},
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
 "OC" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -8764,11 +9001,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"Pz" = (
+/obj/structure/bedsheetbin/towel,
+/turf/open/floor/plating/beach/sand,
+/area/f13/underground/mountain)
+"PA" = (
+/turf/open/floor/plating/beach/coastline_b,
+/area/f13/underground/mountain)
 "PE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"PI" = (
+/turf/open/floor/carpet,
+/area/f13/underground/mountain)
 "Qa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/steak,
@@ -8853,11 +9100,28 @@
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"Rb" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheethos,
+/turf/open/floor/carpet,
+/area/f13/underground/mountain)
+"Rp" = (
+/turf/closed/indestructible/wood,
+/area/f13/underground/mountain)
 "RB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"RC" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/toilet{
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "RF" = (
 /obj/machinery/light/small/broken,
 /obj/effect/decal/cleanable/glass,
@@ -8912,6 +9176,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
+"RZ" = (
+/obj/structure/table/glass,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "Sb" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -9152,6 +9420,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"Tw" = (
+/obj/structure/table/glass,
+/obj/item/flashlight/lamp,
+/turf/open/floor/carpet,
+/area/f13/underground/mountain)
 "TI" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
@@ -9165,6 +9438,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"TX" = (
+/obj/structure/fluff/beach_towel,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "TZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -9178,6 +9455,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"Um" = (
+/obj/machinery/door/airlock/alarmlock,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
+"Up" = (
+/obj/machinery/power/smes,
+/turf/open/floor/f13,
+/area/f13/underground/mountain)
 "Ut" = (
 /turf/closed/indestructible/fakedoor{
 	name = "Thunderdome Admin"
@@ -9212,6 +9497,10 @@
 /obj/item/mine/stun,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Vd" = (
+/obj/structure/rug/big/rug_fancy,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "Vx" = (
 /obj/effect/turf_decal,
 /turf/open/floor/plasteel,
@@ -9258,6 +9547,10 @@
 "VT" = (
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"VU" = (
+/obj/structure/fireplace,
+/turf/open/floor/carpet/green,
+/area/f13/underground/mountain)
 "VZ" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 5
@@ -9373,6 +9666,10 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Xb" = (
+/obj/item/storage/box/drinkingglasses,
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "Xz" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/inside/subway,
@@ -9381,6 +9678,20 @@
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/four)
+"XG" = (
+/turf/open/floor/plating/beach/water,
+/area/f13/underground/mountain)
+"XM" = (
+/obj/machinery/door/airlock/glass,
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
+"XO" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/terminal{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "XQ" = (
 /obj/structure/table,
 /obj/item/wirecutters,
@@ -9392,6 +9703,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"Ym" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/underground/mountain)
 "Yv" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
@@ -9464,6 +9781,10 @@
 /obj/effect/turf_decal/vg_decals/numbers/three,
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod/loading/three)
+"Zx" = (
+/obj/machinery/door/airlock/glass,
+/turf/open/floor/plasteel/airless/white,
+/area/f13/underground/mountain)
 "Zy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -9479,6 +9800,9 @@
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/four)
+"ZE" = (
+/turf/open/floor/plasteel/f13/whitemarble,
+/area/f13/underground/mountain)
 "ZN" = (
 /obj/effect/decal/waste,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -67291,27 +67615,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -67548,27 +67872,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+Rp
+Rp
+Rp
+Rp
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -67805,27 +68129,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+rb
+rb
+rb
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+rb
+Rp
+Up
+Up
+Rp
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -68062,27 +68386,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+rb
+rb
+rb
+Rp
+ZE
+ZE
+No
+Xb
+Jo
+Rp
+rb
+Rp
+Kr
+Kr
+Rp
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -68319,27 +68643,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+Rp
+Rp
+Rp
+Rp
+ZE
+zv
+hR
+qK
+RZ
+Rp
+rb
+Rp
+Kr
+Hp
+Rp
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -68576,27 +68900,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+PI
+xU
+PI
+Rp
+Um
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+NX
+Rp
+Rp
+Rp
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -68833,27 +69157,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+PI
+PI
+PI
+Rp
+EU
+Rp
+xs
+xs
+xs
+Rp
+Oq
+Vd
+EU
+Zx
+ot
+Bi
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -69090,27 +69414,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+PI
+PI
+PI
+Rp
+EU
+Rp
+xs
+xs
+xs
+Rp
+vl
+EU
+EU
+Rp
+Rp
+Rp
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -69347,27 +69671,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+Rb
+Tw
+PI
+HT
+EU
+Rp
+qa
+mr
+mr
+Rp
+aw
+EU
+EU
+MD
+EU
+xz
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -69604,27 +69928,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+Rp
+Rp
+Rp
+Rp
+Rp
+Um
+Rp
+FW
+EU
+EU
+XM
+EU
+EU
+EU
+EU
+qN
+XO
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -69861,27 +70185,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+xs
+xs
+xs
+DX
+EU
+EU
+EU
+EU
+oV
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+rb
+rb
 aa
 aa
 aa
@@ -70118,27 +70442,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+xs
+xs
+xs
+xs
+OB
+xm
+EU
+xN
+xs
+NG
+PA
+FV
+XG
+XG
+FV
+XG
+XG
+FV
+rb
 aa
 aa
 aa
@@ -70375,27 +70699,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+TX
+xs
+hC
+NG
+PA
+XG
+XG
+XG
+XG
+XG
+XG
+XG
+rb
 aa
 aa
 aa
@@ -70632,27 +70956,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+FJ
+HZ
+qN
+AL
+Rp
+TX
+xs
+xs
+NG
+PA
+XG
+XG
+XG
+XG
+XG
+XG
+ma
+rb
 aa
 aa
 aa
@@ -70889,27 +71213,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+VU
+HZ
+qN
+DO
+Rp
+TX
+xs
+xs
+NG
+PA
+XG
+XG
+XG
+XG
+XG
+XG
+XG
+rb
 aa
 aa
 aa
@@ -71146,27 +71470,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+Ej
+HZ
+EU
+pZ
+Rp
+Ax
+xs
+xs
+NG
+PA
+XG
+XG
+XG
+XG
+XG
+XG
+ma
+rb
 aa
 aa
 aa
@@ -71403,27 +71727,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+EU
+EU
+EU
+Fh
+Rp
+TX
+xs
+hC
+NG
+PA
+XG
+XG
+XG
+XG
+XG
+XG
+XG
+rb
 aa
 aa
 aa
@@ -71660,27 +71984,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+EU
+EU
+EU
+EU
+uE
+TX
+Pz
+xs
+NG
+PA
+gQ
+XG
+XG
+gQ
+XG
+XG
+gQ
+rb
 aa
 aa
 aa
@@ -71917,27 +72241,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+EU
+EU
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -72174,27 +72498,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+Eb
+EU
+uE
+ZE
+No
+FB
+xK
+Rp
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -72431,27 +72755,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+Ey
+Ym
+Rp
+RC
+gg
+ZE
+ZE
+Rp
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
 aa
 aa
 aa
@@ -72688,27 +73012,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rb
+rb
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+Rp
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
 aa
 aa
 aa
