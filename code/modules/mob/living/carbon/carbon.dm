@@ -559,7 +559,12 @@
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
 /mob/living/carbon/is_muzzled()
-	return(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
+	if(!wear_mask)
+		return FALSE
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
+		return TRUE
+	if(!(wear_mask.slot_flags & INV_SLOTBIT_MASK) && (wear_mask.w_class >= WEIGHT_CLASS_SMALL))
+		return TRUE
 
 /mob/living/carbon/hallucinating()
 	if(hallucination)

@@ -352,6 +352,7 @@
 #define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
+#define TRAIT_ORAL_FIXATION "oral fixation"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
 #define TRAIT_WEAPONSMITH "weaponsmith"
