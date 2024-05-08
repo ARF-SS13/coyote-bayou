@@ -1253,7 +1253,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_MASK)
 			if(H.wear_mask)
 				return FALSE
-			if(!(I.slot_flags & INV_SLOTBIT_MASK))
+			//if(!(I.slot_flags & INV_SLOTBIT_MASK))
+			//	return FALSE
+			if(HAS_TRAIT(H, TRAIT_ORAL_FIXATION))
+				if(!(I.w_class <= WEIGHT_CLASS_SMALL) && !(I.slot_flags & INV_SLOTBIT_MASK))
+					return FALSE
+			else if(!(I.slot_flags & INV_SLOTBIT_MASK))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
