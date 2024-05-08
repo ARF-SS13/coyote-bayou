@@ -875,6 +875,7 @@
 	id = "direwolf"
 	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
 	icon_width = 64
+	alt_prefixes = list("Armored" = "armored_")
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 	roundstart = TRUE

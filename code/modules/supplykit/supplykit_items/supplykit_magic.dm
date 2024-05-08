@@ -98,6 +98,18 @@
 	item = /obj/item/clothing/head/peaceflower
 	cost = 15
 
+/datum/supplykit_item/magic/mendingwand
+	name = "Wand of Mending"
+	desc = "A wand that can be used to heal your friends, one of the best healing methods available. And it fits in your bag!"
+	item = /obj/item/gun/magic/wand/kelpmagic/healwand
+	cost = 65
+
+/datum/supplykit_item/magic/staffofhealing
+	name = "Perfected Staff Of Healing"
+	desc = "A magic staff that fires a beam of healing at a target, extremely consistant healing to your friends!"
+	item = /obj/item/gun/medbeam/magic
+	cost = 70
+
 /datum/supplykit_item/magic/bass
 	name = "Rising Bass"
 	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."

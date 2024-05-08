@@ -68,6 +68,12 @@
 	item = /obj/item/stealthboy
 	cost = 40
 
+/datum/supplykit_item/misc/whetstone
+	name = "Whetstone"
+	desc = "A stone for sharpening weapons of all types, strengthening their melee damage, can even be used on bottoms!"
+	item = /obj/item/sharpener
+	cost = 40
+
 /datum/supplykit_item/misc/music
 	name = "Musical Instrument"
 	desc = "Your choice of a musical instrument, for bolstering the mood and wellbeing of those around you."
