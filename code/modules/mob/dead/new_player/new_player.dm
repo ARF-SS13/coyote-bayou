@@ -607,8 +607,8 @@
 
 	character.client.is_in_game = 1
 	spawn(5 MINUTES)
-		if(character.client.is_in_game)
-			character.client.is_in_game = 2
+		if(character?.client?.is_in_game)
+			character?.client?.is_in_game = 2
 
 			for(var/i in GLOB.player_list)
 				if(isliving(i))

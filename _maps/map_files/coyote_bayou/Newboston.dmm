@@ -265,10 +265,27 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "afZ" = (
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat,
+/obj/structure/closet/crate/freezer{
+	anchored = 1
+	},
 /obj/structure/sink{
+	dir = 1;
 	pixel_y = 15
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "agk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -877,7 +894,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "atc" = (
 /obj/machinery/seed_extractor,
@@ -2275,7 +2292,32 @@
 /area/f13/building)
 "bjJ" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood_common,
+/obj/item/storage/box/bowls,
+/obj/item/kitchen/fork{
+	pixel_x = 12;
+	pixel_y = -2
+	},
+/obj/item/kitchen/fork{
+	pixel_x = 12;
+	pixel_y = -2
+	},
+/obj/item/kitchen/fork{
+	pixel_x = 12;
+	pixel_y = -2
+	},
+/obj/item/kitchen/fork{
+	pixel_x = 12;
+	pixel_y = -2
+	},
+/obj/item/kitchen/fork{
+	pixel_x = 12;
+	pixel_y = -2
+	},
+/obj/item/kitchen/knife{
+	pixel_x = -11;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "bjV" = (
 /obj/machinery/light,
@@ -2672,20 +2714,13 @@
 	},
 /area/f13/wasteland)
 "byb" = (
-/obj/structure/closet/fridge{
-	anchored = 1
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
 	},
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/wood_wide,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "byj" = (
 /obj/effect/decal/cleanable/dirt{
@@ -5071,12 +5106,29 @@
 	},
 /area/f13/building)
 "cNZ" = (
+/obj/item/reagent_containers/food/condiment/mustard,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/obj/item/reagent_containers/food/condiment/honey,
+/obj/item/reagent_containers/food/condiment/cherryjelly,
+/obj/item/reagent_containers/food/condiment/peanut_butter,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/condiment/ketchup,
 /obj/machinery/light/small{
-	dir = 8
+	dir = 8;
+	light_color = "#d8b1b1"
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+/obj/structure/closet/fridge{
+	anchored = 1
 	},
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/reagent_containers/glass/bottle/radium,
+/obj/item/reagent_containers/glass/bottle/radium,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "cOr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5292,7 +5344,7 @@
 /area/f13/building)
 "cWl" = (
 /obj/machinery/microwave/stove,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "cWt" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -6454,9 +6506,11 @@
 "dJE" = (
 /obj/item/kitchen/knife/butcher,
 /obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/tray,
+/obj/item/clothing/neck/apron/chef,
+/obj/item/clothing/head/collectable/chef,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "dJR" = (
 /obj/structure/holohoop{
@@ -16797,14 +16851,7 @@
 /area/f13/building)
 "jzg" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/condiment/mustard,
-/obj/item/reagent_containers/food/condiment/bbqsauce,
-/obj/item/reagent_containers/food/condiment/honey,
-/obj/item/reagent_containers/food/condiment/cherryjelly,
-/obj/item/reagent_containers/food/condiment/peanut_butter,
-/obj/item/reagent_containers/food/condiment/mayonnaise,
-/obj/item/reagent_containers/food/condiment/ketchup,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "jzQ" = (
 /obj/machinery/vending/coffee,
@@ -17193,9 +17240,6 @@
 	},
 /area/f13/building)
 "jLW" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "barcounter"
-	},
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
@@ -21563,11 +21607,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "maY" = (
-/obj/structure/decoration/hatch,
-/obj/structure/kitchenspike,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "mbk" = (
 /obj/structure/closet/crate/large,
@@ -23082,9 +23123,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mTe" = (
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "mTp" = (
 /obj/structure/simple_door/room,
@@ -28727,17 +28766,27 @@
 	},
 /area/f13/building)
 "qlE" = (
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/reagent_containers/food/condiment/flour,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/structure/closet/fridge,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/food/condiment/enzyme,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "qlJ" = (
 /obj/structure/window/fulltile/house{
@@ -31290,7 +31339,7 @@
 /area/f13/building)
 "rDQ" = (
 /obj/machinery/processor,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/wasteland/city/newboston/bar)
 "rDY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -73186,7 +73235,7 @@ utH
 ogc
 dJE
 mTe
-rDQ
+mTe
 vOY
 nLi
 ueL
@@ -73440,11 +73489,11 @@ lCU
 bgN
 dlN
 dlN
-vFa
-wuq
-wuq
-wuq
-vFa
+byb
+mTe
+mTe
+mTe
+byb
 ueL
 ueL
 wuq
@@ -73699,8 +73748,8 @@ gje
 iQJ
 vOY
 afZ
-wuq
-byb
+mTe
+jzg
 vOY
 weC
 hBU
@@ -73955,8 +74004,8 @@ uYT
 cgk
 oRJ
 vOY
-wuq
-wuq
+rDQ
+mTe
 jzg
 vOY
 pdv

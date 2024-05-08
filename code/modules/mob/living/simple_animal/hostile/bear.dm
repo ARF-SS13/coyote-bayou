@@ -112,9 +112,9 @@
 
 /mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Several functions used from it.
 	name = "Terrygold"
-	icon_state = "butterbear"
-	icon_living = "butterbear"
-	icon_dead = "butterbear_dead"
+	icon_state = "brownbear"
+	icon_living = "brownbear"
+	icon_dead = "brownbear_dead"
 	desc = "I can't believe its not a bear!"
 	faction = list("neutral", "russian")
 	obj_damage = 11
