@@ -68,6 +68,24 @@
 	item = /obj/item/stack/medical/suture
 	cost = 10
 
+/datum/supplykit_item/misc/defibprimative
+	name = "Improvised Defib"
+	desc = "For reviving your friends, can be stuffed in your bag."
+	item = /obj/item/defibrillator/primitive
+	cost = 5
+
+/datum/supplykit_item/misc/defibcompact
+	name = "Compact Defib"
+	desc = "For reviving your friends, can be stuffed in your bag, or worn on your belt."
+	item = /obj/item/defibrillator/compact
+	cost = 15
+
+/datum/supplykit_item/magic/medbeam
+	name = "Medbeam"
+	desc = "A powerful medical beam gun that lets you beam your friends back to full health, very consistant and free to use!"
+	item = /obj/item/gun/medbeam
+	cost = 70
+
 /* burns aren't implimented
 /datum/supplykit_item/medical/ointment
 	name = "Ointment"
