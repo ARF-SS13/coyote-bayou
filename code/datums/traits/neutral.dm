@@ -328,6 +328,15 @@
 	lose_text = span_notice("Your headpats addiction wanes.")
 	medical_record_text = "Patient seems overly affectionate."
 
+/datum/quirk/oral_fixation
+	name = "Oral Fixation"
+	desc = "You have an urge to put things in your mouth."
+	mob_trait = TRAIT_ORAL_FIXATION
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You can fit any small sized item in your mouth. Small items will muffle your voice. Tiny items wont."
+	conflicts = list()
+
 /datum/quirk/overweight
 	name = "Overweight"
 	desc = "You're particularly fond of food, and join the round being overweight."
