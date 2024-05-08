@@ -80,6 +80,12 @@
 	item = /obj/item/defibrillator/compact
 	cost = 15
 
+/datum/supplykit_item/misc/defibsalt
+	name = "Smelling Salts"
+	desc = "For reviving your friends, its small, but only has 10 uses."
+	item = /obj/item/smelling_salts
+	cost = 20
+
 /datum/supplykit_item/magic/medbeam
 	name = "Medbeam"
 	desc = "A powerful medical beam gun that lets you beam your friends back to full health, very consistant and free to use!"

@@ -25,6 +25,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	//initialize limbs first
 	create_bodyparts()
 
+
 	//initialize dna. for spawned humans; overwritten by other code
 	create_dna(src)
 	randomize_human(src, TRUE, TRUE)
@@ -60,6 +61,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
 	AddElement(/datum/element/flavor_text, _name = "Background Info Notes", _addendum = "Put information about your character's background!", _always_show = TRUE, _save_key = "background_info_notes", _examine_no_preview = TRUE)
 	AddElement(/datum/element/flavor_text, _name = "F-list link", _always_show = FALSE, _save_key = "flist", _examine_no_preview = TRUE, _attach_internet_link = TRUE)
+	AddElement(/datum/element/mob_holder, "corgi")
 	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS,PROC_REF(signal_update_genitals))
 
 /mob/living/carbon/human/Destroy()
