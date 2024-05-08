@@ -71,10 +71,21 @@
 	return
 
 /obj/effect/portal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(get_turf(user) == get_turf(src))
+	var/turf/my_turf = get_turf(src)
+	if(istype(user.pulling, /mob/living))
+		var/mob/living/pullee = user.pulling
+		if(get_turf(pullee) == my_turf)
+			user.stop_pulling()
+			teleport(pullee)
+			return
+		if(Adjacent(pullee))
+			user.Move_Pulled(my_turf)
+			return
+	if(get_turf(user) == my_turf)
 		teleport(user)
+		return
 	if(Adjacent(user))
-		user.forceMove(get_turf(src))
+		user.Move(my_turf, get_dir(user, src))
 
 /obj/effect/portal/Initialize(mapload, _lifespan = 0, obj/effect/portal/_linked, automatic_link = FALSE, turf/hard_target_override, atmos_link_override)
 	. = ..()
