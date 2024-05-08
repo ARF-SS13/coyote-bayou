@@ -97,7 +97,7 @@
 	force = 25
 	force_wielded = 35
 	force_unwielded = 25
-	slowdown = 0.1
+	slowdown = 0.2
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/target, worn_state, alt_worn, right_hand, left_hand, slots = NONE)

@@ -960,11 +960,11 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 
 /datum/quirk/pa_wear
-	name = "Power Armor Training"
-	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere or something."
+	name = "Power Armor Crafting"
+	desc = "You've been around the wastes and have learned the wonders of crafting high tech armor from somewhere or something."
 	value = 32
 	category = "Lifepath Quirks"
-	mechanics = "You can wear power armor."
+	mechanics = "You can craft powerarmor, anyone can wear it though."
 	conflicts = list(
 		/datum/quirk/dumb,
 		/datum/quirk/luddite,
@@ -1990,7 +1990,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer have the giga zoomies...")
 	medical_record_text = "Patient is full of way too much energy, and has not stopped running around my office as of writing."
 
-/datum/quirk/artifact_identify
+/*/datum/quirk/artifact_identify
 	name = "Artifact Hunter"
 	desc = "You have a keen eye for identifying magical, otherworldly trash! You can identify artifacts at a glance."
 	value = 32
@@ -2002,7 +2002,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You feel as if you lost the knack for identifying ancient objects.")
 	medical_record_text = "Patient claims to know about alien, or some form of ancient technology."
 	locked =  FALSE
-	human_only = FALSE
+	human_only = FALSE*/ // Artifacts are identified in 5 seconds, potential change in the future to let you spawn with an artifact
 
 /datum/quirk/armblader
 	name = "Arm Blader"

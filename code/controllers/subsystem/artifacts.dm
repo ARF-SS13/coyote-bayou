@@ -406,7 +406,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/datum/quirk/wandproficient,
 		/datum/quirk/night_vision_greater,
 		/datum/quirk/nohunger,
-		/datum/quirk/artifact_identify,
+		/*/datum/quirk/artifact_identify,*/// Artifacts take 5 seconds to identify, to be upgraded eventually
 
 	)
 
