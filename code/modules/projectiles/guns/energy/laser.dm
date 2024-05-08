@@ -1047,7 +1047,6 @@
 	can_flashlight = 0
 	can_scope = TRUE
 	trigger_guard = TRIGGER_GUARD_NORMAL
-	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
@@ -1271,7 +1270,6 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 	weapon_weight = GUN_TWO_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
-	max_upgrades = 5
 	can_flashlight = 1
 	flight_x_offset = 20
 	flight_y_offset = 10

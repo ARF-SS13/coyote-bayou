@@ -1252,7 +1252,6 @@
 	)
 	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	max_upgrades = 5 // moddable to fuck and fack
 	can_bayonet = TRUE
 	bayonet_state = "bayonetstraight"
 	knife_x_offset = 22
@@ -1288,7 +1287,6 @@
 		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm200
 	)
-	max_upgrades = 3
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
 	knife_x_offset = 22
@@ -1483,7 +1481,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	/// sets if the gun is turnt
 	var/turnt = FALSE
-	max_upgrades = 6
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -3257,7 +3254,6 @@
 		/datum/firemode/automatic/rpm75
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-	max_upgrades = 2
 	can_suppress = TRUE
 	can_bayonet = FALSE
 
