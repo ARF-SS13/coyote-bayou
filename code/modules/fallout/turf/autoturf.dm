@@ -100,20 +100,42 @@
 	
 	icon_state += iconstate_ext
 
+
+/// returns TRUE if the checked turf should be connected. returns false otherwise.
 /turf/open/autoturf/proc/check_dir(tocheck)
 	. = FALSE
 	var/turf/open/checkturf = get_step(src, tocheck)
 	if(istype(checkturf, src.type))
 		. =  TRUE
 
-	
-
-/turf/open/autoturf/sidewalk/clean
-	icon = 'code/modules/fallout/turf/autoturficons/sidewalk.dmi'
-	icon_state = "clean"
 
 
 /turf/open/autoturf/expensive
 	var/list/weighted_iconstates
 	var/list/connect_whitelist
-	var/list/connect_blacklist
+
+/turf/open/autoturf/expensive/Initialize(mapload)
+	if(weighted_iconstates)
+		pickweight(weighted_iconstates)
+	. = ..()
+
+// running this extra list iteration is definitely gonna raise overhead.
+/turf/open/autoturf/expensive/check_dir(tocheck)
+	. = FALSE
+	var/turf/checkturf = get_step(src, tocheck)
+	if(istype(checkturf, src.type))
+		return TRUE
+	for(var/whitelistedtype in connect_whitelist)
+		if(istype(checkturf, whitelistedtype))
+			. = TRUE
+
+/turf/open/autoturf/expensive/sidewalk/clean
+	icon = 'code/modules/fallout/turf/autoturficons/sidewalk.dmi'
+	icon_state = "clean"
+	connect_whitelist = list(/turf/closed/wall)
+
+/turf/open/autoturf/expensive/sidewalk/check_dir(tocheck)
+	. = ..()
+	var/turf/checkturf = get_step(src, tocheck)
+	if(locate(/obj/structure/window) in checkturf)
+		return TRUE
