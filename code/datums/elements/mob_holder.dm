@@ -56,7 +56,7 @@
 		return FALSE
 	source.visible_message(span_warning("[user] starts picking up [source]."), \
 					span_userdanger("[user] starts picking you up!"))
-	if(!do_after(user, 20, target = source) || source.buckled)
+	if(!do_after(user, 60, target = source) || source.buckled)
 		return FALSE
 
 	source.visible_message(span_warning("[user] picks up [source]!"), \
@@ -97,6 +97,7 @@
 	force = 25
 	force_wielded = 35
 	force_unwielded = 25
+	slowdown = 0.1
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/target, worn_state, alt_worn, right_hand, left_hand, slots = NONE)

@@ -649,7 +649,7 @@
 	mob_trait = TRAIT_COMBATSWITCH
 	human_only = FALSE
 
-/datum/quirk/smol
+/*/datum/quirk/smol
 	name = "Scoopable!"
 	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, carrying you around is just pretty dang easy."
 	value = 0
@@ -668,6 +668,7 @@
 /datum/quirk/smol/remove()
 	if(istype(quirk_holder))
 		quirk_holder.RemoveElement(/datum/element/mob_holder) // undog
+*/ //Inate trait with all humans now
 
 /datum/quirk/cat
 	name = "A cat!"
