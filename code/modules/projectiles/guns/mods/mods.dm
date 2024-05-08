@@ -171,7 +171,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_2H = 1 + -20 * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + -20 * 0.01
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + 20 * 0.01
 	)
 	I.req_gun_tags = list()
 	I.gun_loc_tag = GUN_MUZZLE1
@@ -186,7 +186,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(-20,-35) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-20,-35) * 0.01
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(20,35) * 0.01
 	)
 	I.req_gun_tags = list()
 	I.gun_loc_tag = GUN_MUZZLE2
@@ -201,7 +201,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_2H = 1 + rand(-20,-55) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-20,-55) * 0.01
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(20,55) * 0.01
 	)
 	I.req_gun_tags = list()
 	I.gun_loc_tag = GUN_MUZZLE3
