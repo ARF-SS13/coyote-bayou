@@ -152,7 +152,7 @@
 				L["[get_area(com.target)] (Active)"] = com.target
 			else
 				L["[get_area(com.target)] (Inactive)"] = com.target
-	var/list/turfs = list(	)
+/*	var/list/turfs = list(	)
 	for(var/turf/T in urange(10, orange=1))
 		if(T.x>world.maxx-8 || T.x<8)
 			continue	//putting them at the edge is dumb
@@ -163,7 +163,7 @@
 			continue
 		turfs += T
 	if(turfs.len)
-		L["None (Dangerous)"] = pick(turfs)
+		L["None (Dangerous)"] = pick(turfs) */
 	var/t1 = input(user, "Please select a teleporter to lock in on.", "Hand Teleporter") as null|anything in L
 	if (!t1 || user.get_active_held_item() != src || user.incapacitated())
 		return
