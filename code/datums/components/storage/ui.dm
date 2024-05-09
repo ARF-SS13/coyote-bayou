@@ -62,7 +62,6 @@
 				continue
 			O.mouse_opacity = MOUSE_OPACITY_OPAQUE //This is here so storage items that spawn with contents correctly have the "click around item to equip"
 			O.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
-			O.maptext = ""
 			O.layer = ABOVE_HUD_LAYER
 			O.plane = ABOVE_HUD_PLANE
 			. += O
@@ -248,7 +247,6 @@
 		B.name = I.name
 
 		I.mouse_opacity = MOUSE_OPACITY_ICON
-		I.maptext = ""
 		I.layer = VOLUMETRIC_STORAGE_ITEM_LAYER
 		I.plane = VOLUMETRIC_STORAGE_ITEM_PLANE
 
