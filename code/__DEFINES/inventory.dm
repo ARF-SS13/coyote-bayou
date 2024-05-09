@@ -862,7 +862,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_MAX_ITEMS 24
+#define STORAGE_QUIVER_MAX_ITEMS 50
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
@@ -876,7 +876,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_QUIVER_LIGHT_TOTAL_SPACE STORAGE_QUIVER_LIGHT_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 48
+#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 100
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
