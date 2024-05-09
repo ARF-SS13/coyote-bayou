@@ -49,14 +49,14 @@
 		praying = FALSE
 		return FALSE
 	if(do_after(user, 1 SECONDS, target = M))
-		if(user.heal_reservoir >= 1)
-			user.healing_reservoir--
+		if(user.heal_reservoir >= 1)//Check for charges again because we might've used them up while waiting.
+			user.heal_reservoir--
 			M.adjustBruteLoss(-5, include_roboparts = TRUE) //Wrench is for brute
 			to_chat(M, span_notice("[user] finished repairing your dents!"))
 			praying = FALSE
 			playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
 		else
-			to_chat(user, span_notice("You can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+			to_chat(user, span_notice("You can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
 			praying = FALSE
 	else
 		to_chat(user, span_notice("You were interrupted."))
