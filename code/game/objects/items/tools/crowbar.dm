@@ -68,11 +68,6 @@
 			to_chat(user, span_notice("You can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
 			praying = FALSE
 
-	if(do_after(user, 2 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Crowbar heals the most, but only when heavily damaged
-		to_chat(M, span_notice("[user] finished emergancy repairs on your body!"))
-		praying = FALSE
-		playsound(get_turf(target), 'sound/items/Crowbar.ogg', 100, 1)
 	else
 		to_chat(user, span_notice("You were interrupted."))
 		praying = FALSE
