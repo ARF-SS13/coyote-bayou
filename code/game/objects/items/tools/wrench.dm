@@ -33,6 +33,10 @@
 	if(!target || !isrobotic(target))
 		return FALSE
 
+	if(target.health >= target.maxHealth)
+		to_chat(user, span_notice("[target] doesn't have any dents to fix."))
+		return FALSE
+
 	if(user.heal_reservoir < 1) //You have no healing charges remaining.
 		to_chat(user, span_notice("You can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
 		return FALSE
