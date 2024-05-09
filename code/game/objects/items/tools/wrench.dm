@@ -33,6 +33,10 @@
 	if(!target || !isrobotic(target))
 		return FALSE
 
+	if(user.heal_reservoir < 1) //You have no healing charges remaining.
+		to_chat(user, span_notice("You can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+		return FALSE
+
 	if(praying)
 		to_chat(user, span_notice("You are already using [src]."))
 		return
@@ -44,11 +48,16 @@
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
-	if(do_after(user, 1 SECONDS, target = M)) 
-		M.adjustBruteLoss(-5, include_roboparts = TRUE) //Wrench is for brute
-		to_chat(M, span_notice("[user] finished repairing your dents!"))
-		praying = FALSE
-		playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
+	if(do_after(user, 1 SECONDS, target = M))
+		if(user.heal_reservoir >= 1)
+			user.healing_reservoir--
+			M.adjustBruteLoss(-5, include_roboparts = TRUE) //Wrench is for brute
+			to_chat(M, span_notice("[user] finished repairing your dents!"))
+			praying = FALSE
+			playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
+		else
+			to_chat(user, span_notice("You can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+			praying = FALSE
 	else
 		to_chat(user, span_notice("You were interrupted."))
 		praying = FALSE
