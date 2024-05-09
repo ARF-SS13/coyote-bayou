@@ -734,8 +734,8 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 750
-	health = 750
+	maxHealth = 150
+	health = 150
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
