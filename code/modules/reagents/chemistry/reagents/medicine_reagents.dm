@@ -12,7 +12,7 @@
 
 /datum/reagent/medicine/on_mob_life(mob/living/carbon/M)
 	current_cycle++
-	holder.remove_reagent(type, metabolization_rate / M.metabolism_efficiency) //medicine reagents stay longer if you have a better metabolism
+	holder?.remove_reagent(type, metabolization_rate / M.metabolism_efficiency) //medicine reagents stay longer if you have a better metabolism
 
 /datum/reagent/medicine/leporazine
 	name = "Leporazine"
@@ -117,7 +117,7 @@
 			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
 			M.adjustBruteLoss(-3*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
-	..()
+	. = ..()
 	. = 1
 
 	switch(M.getFireLoss())
@@ -127,7 +127,7 @@
 			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
 			M.adjustFireLoss(-3*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
-	..()
+	. = ..()
 	. = 1
 
 	switch(M.getToxLoss())
@@ -137,7 +137,7 @@
 			M.adjustToxLoss(-1*REM, 0) //between 50 and 75, its at half strength
 		else
 			M.adjustToxLoss(-3*REM, 0) //Otherwise it barely heals anything
-	..()
+	. = ..()
 	. = 1
 
 /datum/reagent/medicine/synaptizine
