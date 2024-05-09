@@ -131,7 +131,7 @@ superlagg says: cool story, oranges
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
-	parry_efficiency_to_counterattack = 120
+	parry_efficiency_to_counterattack = 20 // unless you completely butcher your parry, you will riposte
 	parry_efficiency_considered_successful = 0		// VERY generous
 	parry_efficiency_perfect = 120
 	parry_efficiency_perfect_override = list()
