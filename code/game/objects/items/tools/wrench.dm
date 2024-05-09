@@ -52,6 +52,7 @@
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
+
 	if(do_after(user, clamp(toolspeed*10, 0.5 SECONDS, 2 SECONDS), target = M))
 		if(user.heal_reservoir >= 1)//Check for charges again because we might've used them up while waiting.
 			user.heal_reservoir--
