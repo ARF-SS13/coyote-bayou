@@ -36,6 +36,7 @@
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
 	var/supposedly_a_problem = 0
+	maptext_width = 48 //prevents ammo count from wrapping down into two lines
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
@@ -57,6 +58,20 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_load))
 	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_load))
+
+/// Updates the ammo count number that renders on top of the icon
+/obj/item/ammo_box/proc/UpdateAmmoCountOverlay()
+	if(isturf(loc))//Only show th ammo count if the magazine is, like, in an inventory or something. Mags on the ground don't need a big number on them, that's ugly.
+		maptext = ""
+	else 
+		if(LAZYLEN(stored_ammo) > 0)
+			maptext = "<b>[LAZYLEN(stored_ammo)]/[max_ammo]"
+		else
+			maptext = "<b>0/[max_ammo]"
+
+/obj/item/ammo_box/doMove(atom/destination)
+	. = ..()
+	UpdateAmmoCountOverlay()
 
 /// An aheal, but for ammo boxes
 /obj/item/ammo_box/proc/admin_load()
@@ -364,6 +379,7 @@
 
 /obj/item/ammo_box/update_icon()
 	. = ..()
+	UpdateAmmoCountOverlay()
 /* 	if(length(bullet_cost))
 		var/temp_materials = custom_materials.Copy()
 		for (var/material in bullet_cost)
@@ -408,6 +424,7 @@
 				icon_state = "[initial(icon_state)]-12"
 			else
 				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
+	UpdateAmmoCountOverlay()
 
 //Behavior for magazines
 /obj/item/ammo_box/magazine/proc/ammo_count()
@@ -418,6 +435,7 @@
 	for(var/obj/item/ammo in stored_ammo)
 		ammo.forceMove(turf_mag)
 		stored_ammo -= ammo
+	UpdateAmmoCountOverlay()
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
