@@ -42,7 +42,7 @@
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins repairing their dents."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begins repairing any dents."))
+		span_info("You kneel[M == user ? null : " next to [M]"] and begin repairing any dents."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
