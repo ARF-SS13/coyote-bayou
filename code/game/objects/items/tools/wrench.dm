@@ -33,12 +33,12 @@
 	if(!target || !isrobotic(target))
 		return FALSE
 
-	if(target.health >= target.maxHealth)
-		to_chat(user, span_notice("[target] doesn't have any dents to fix."))
+	if(target.health >= target.maxHealth)//quick but dirty way
+		to_chat(user, span_notice("[target] doesn't seem to need fixing right now."))
 		return FALSE
 
 	if(user.heal_reservoir < 1) //You have no healing charges remaining.
-		to_chat(user, span_notice("You can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+		to_chat(user, span_notice("You just can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
 		return FALSE
 
 	if(praying)
@@ -59,6 +59,8 @@
 			to_chat(M, span_notice("[user] finished repairing your dents!"))
 			praying = FALSE
 			playsound(get_turf(target), 'sound/items/trayhit2.ogg', 100, 1)
+			if(target.health < target.maxHealth)
+				attack(target, user)
 		else
 			to_chat(user, span_notice("You can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
 			praying = FALSE
