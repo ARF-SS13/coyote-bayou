@@ -382,13 +382,13 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	equip_delay_other = 10
 	max_integrity = 100
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BOMB_T1)
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 	w_class = WEIGHT_CLASS_SMALL
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor/light
 
 /obj/item/clothing/suit/chameleon/harness/medium
 	name = "medium harness"
@@ -406,6 +406,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENERGY_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BOMB_T2, ARMOR_MODIFIER_UP_DT_T1)
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor/medium
 
 /obj/item/clothing/suit/chameleon/harness/heavy
 	name = "heavy harness"
@@ -419,6 +420,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENERGY_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BOMB_T2, ARMOR_MODIFIER_UP_DT_T2)
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	stiffness = HEAVY_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor/heavy
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 	name = "Optical Meson Scanner"
