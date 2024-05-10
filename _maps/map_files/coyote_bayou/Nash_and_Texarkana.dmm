@@ -37281,6 +37281,7 @@
 "ghR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/fake_stairs/north,
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "ghY" = (
@@ -66134,9 +66135,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nFG" = (
-/obj/structure/stairs/north,
-/obj/structure/stairs/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/fake_stairs/north,
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "nFN" = (
@@ -83111,13 +83111,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
-"sek" = (
-/obj/structure/stairs/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab{
-	icon_state = "rockcrete_slab_dmg4"
-	},
-/area/f13/wasteland)
 "sep" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/dirt,
@@ -90575,11 +90568,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/underground/cave/coyote/antmound)
-"tVx" = (
-/obj/structure/stairs/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockcrete_slab,
-/area/f13/wasteland)
 "tVD" = (
 /obj/structure/stairs/east,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -118911,7 +118899,7 @@ pAi
 uro
 myQ
 ycE
-sek
+ycE
 ghR
 myQ
 rDE
@@ -119168,8 +119156,8 @@ pAi
 uro
 trb
 myQ
-tVx
 myQ
+nFG
 myQ
 aQZ
 nnQ
@@ -119425,8 +119413,8 @@ pAi
 hjs
 myQ
 mJo
-tVx
 myQ
+nFG
 vjE
 aQZ
 sae
@@ -119682,8 +119670,8 @@ pAi
 iPw
 myQ
 myQ
-nFG
 myQ
+nFG
 myQ
 aQZ
 mHp
@@ -119939,8 +119927,8 @@ pAi
 iPw
 myQ
 vjE
-tVx
 myQ
+nFG
 ycE
 gNH
 mHp
@@ -120196,8 +120184,8 @@ xaj
 hjs
 myQ
 hsk
-tVx
 myQ
+nFG
 iPZ
 aQZ
 aYW
@@ -120453,8 +120441,8 @@ qgq
 uro
 ycE
 myQ
-tVx
 myQ
+nFG
 myQ
 vfs
 aUo
@@ -120710,8 +120698,8 @@ yem
 uro
 myQ
 myQ
-tVx
 myQ
+nFG
 myQ
 gNH
 aUo
