@@ -893,7 +893,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_QUIVER_TOTAL_SPACE STORAGE_QUIVER_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 12
+#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 20
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_LIGHT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver

@@ -194,6 +194,15 @@
 	merge_type = /obj/item/stack/arrowhead/ion
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/ion
 
+/obj/item/stack/arrowhead/split
+	name = "split arrow heads"
+	singular_name = "split arrow head"
+	desc = "A clump of arrows loosely bound with string, spreads out after shooting."
+	icon = 'icons/obj/arrow_crafting.dmi'
+	icon_state = "arrow_head_splitarrow"
+	merge_type = /obj/item/stack/arrowhead/split
+	result_arrow = /obj/item/ammo_casing/caseless/arrow/split
+
 /obj/item/stack/arrowhead/bludgeon
 	name = "bludgeoning arrow heads"
 	singular_name = "bludgeoning arrow head"

@@ -146,6 +146,7 @@
 	force_unwielded = 5
 	force_wielded = 10
 	throwforce = 5
+	silenced = TRUE
 	icon = 'modular_coyote/icons/objects/bows.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -165,6 +166,7 @@
 	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 25
+	silenced = TRUE
 	icon_state = "slingstaff"
 	overheat_time = 40 // 4.0 seconds
 	init_recoil = LASER_CARBINE_RECOIL(2, 1)

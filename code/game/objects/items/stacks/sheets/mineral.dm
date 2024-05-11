@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	new/datum/stack_recipe("drying rack", /obj/machinery/smartfridge/drying_rack, 10, one_per_turf = 1, on_floor = 1), \
 	null, \
 	new/datum/stack_recipe("sandstone door", /obj/structure/mineral_door/sandstone, 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("flint arrowhead", /obj/item/stack/arrowhead/flint, 1, 1, time = 2.5 SECONDS), \
+	new/datum/stack_recipe("flint arrowhead", /obj/item/stack/arrowhead/flint, 1, 1, 25, time = 2.5 SECONDS, is_stack = TRUE), \
 	new/datum/stack_recipe("aesthetic volcanic floor tile", /obj/item/stack/tile/basalt, 2, 2, 4, 20), \
 	new/datum/stack_recipe("Assistant Statue", /obj/structure/statue/sandstone/assistant, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Breakdown into sand", /obj/item/stack/ore/glass, 1, one_per_turf = 0, on_floor = 1), \
