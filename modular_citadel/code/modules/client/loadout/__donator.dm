@@ -616,7 +616,7 @@
 /obj/item/storage/box/large/custom_kit/fuzlet4/PopulateContents()
 	new /obj/item/seeds/aloe(src)
 	new /obj/item/seeds/wheat(src)
-	new /obj/item/seeds/wheat/oats(src)
+	new /obj/item/seeds/wheat/oat(src)
 	new /obj/item/seeds/corn(src)
 	new /obj/item/seeds/potato(src)
 	new /obj/item/seeds/sugarcane(src)
