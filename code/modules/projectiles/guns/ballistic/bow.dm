@@ -231,7 +231,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	damage_multiplier = GUN_EXTRA_DAMAGE_T0 // Cheap, worst bow.
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 // Cheap, worst bow.
 
 /obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow
 	name = "Marksman Crossbow"
