@@ -315,18 +315,7 @@
 	name = "All four barrels"
 	desc = "Unleash the whole gun at once."
 	burst_delay_default = GUN_BURSTFIRE_DELAY_FASTEST
-//Snowflake bow speed
-/datum/firemode/burst/bow
-	name = "Multi shot"
-	desc = "Fire multiple arrows."
-	extra_tip = "Fires a several-round burst. Recoil is calculated after the end of the burst, so every shot \
-		in the burst will have more or less the same amount of spread."
-	icon_state = "burst"
-	fire_type_default = GUN_FIREMODE_BURST
-	burst_delay_default = GUN_BURSTFIRE_DELAY_FASTEST
-	shoot_delay_default = GUN_FIRE_DELAY_SLOWEST
-	burst_count_default = 3
-// Ok its over
+
 /datum/firemode/burst/three
 	name = "3-Round Burst"
 	desc = "Short, controlled bursts."
