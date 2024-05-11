@@ -1,26 +1,26 @@
 GLOBAL_LIST_INIT(fish_rates, list(
-	/obj/item/fishy/carp		=9,
-	/obj/item/fishy/salmon		=9,
+	/obj/item/fishy/carp		=8,
+	/obj/item/fishy/salmon		=8,
 	/obj/item/fishy/eel			=2,
-	/obj/item/fishy/crawdad		=9,
-	/obj/item/fishy/shrimp		=9,
-	/obj/item/fishy/guppy		=9,
-	/obj/item/fishy/firefish		=9,
-	/obj/item/fishy/greenchromis		=9,
-	/obj/item/fishy/cardinalfish		=9,
-	/obj/item/fishy/catfish		=9,
-	/obj/item/fishy/plastetra		=9,
-	/obj/item/fishy/angelfish		=9,
-	/obj/item/fishy/clownfish		=9,
-	/obj/item/fishy/lubefish		=9,
-	/obj/item/fishy/lanternfish		=9,
-	/obj/item/fishy/goldfish		=9,
-	/obj/item/fishy/dwarf_moonfish		=9,
-	/obj/item/fishy/bugfish		=9,
-	/obj/item/fishy/gunner_jellyfish		=9,
-	/obj/item/fishy/needlefish		=9,
-	/obj/item/fishy/armorfish		=9,
-	/obj/item/fishy/pufferfish		=9
+	/obj/item/fishy/crawdad		=4,
+	/obj/item/fishy/shrimp		=2,
+	/obj/item/fishy/guppy		=4,
+	/obj/item/fishy/firefish		=1,
+	/obj/item/fishy/greenchromis		=2,
+	/obj/item/fishy/cardinalfish		=1,
+	/obj/item/fishy/catfish		=8,
+	/obj/item/fishy/plastetra		=1,
+	/obj/item/fishy/angelfish		=1,
+	/obj/item/fishy/clownfish		=2,
+	/obj/item/fishy/lubefish		=2,
+	/obj/item/fishy/lanternfish		=1,
+	/obj/item/fishy/goldfish		=1,
+	/obj/item/fishy/dwarf_moonfish		=1,
+	/obj/item/fishy/bugfish		=1,
+	/obj/item/fishy/gunner_jellyfish		=1,
+	/obj/item/fishy/needlefish		=4,
+	/obj/item/fishy/armorfish		=2,
+	/obj/item/fishy/pufferfish		=1
 ))
 //I have tried to have variables be highly influential so that customization can happen
 //customization, maybe some rods are better than others ;)
@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	var/current_waitfail = 0
 	//customization, some rods catch trash better than others, if you really want that I guess
 	//default is 40, which is 40 percent chance
-	var/trash_chance = 40
+	var/trash_chance = 10
 	/// Changes alert sound when a fish is biting the line.
 	var/alert_sound = 1
 
@@ -130,8 +130,8 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	switch(fish_got)
 		if(FALSE)
 			if(prob(trash_chance))
-				var/junk_item = pick(GLOB.loot_garbage)
-				new junk_item(current_turf)
+				//var/junk_item = pick(GLOB.loot_garbage)
+				new /obj/effect/spawner/lootdrop/f13/trash(current_turf)
 				return 1
 			if(prob(10))
 				new /obj/item/salvage/low(current_turf)
@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	current_waitfail = 0
 	//customization, some rods catch trash better than others, if you really want that I guess
 	//default is 40, which is 40 percent chance
-	trash_chance = 40
+	trash_chance = 10
 
 /obj/item/fishingrod/sleepyrod/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))

@@ -50,8 +50,8 @@
 /obj/item/hand_item/healable/toucher
 	name = "touch"
 	desc = "A finger, for touching things."
-	icon = 'icons/obj/in_hands.dmi'
-	icon_state = "feeder"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "healinghand"
 	attack_verb = list("touched", "poked", "prodded")
 	pokesound = 'sound/items/tendingwounds.ogg'
 	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
