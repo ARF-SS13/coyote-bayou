@@ -409,7 +409,7 @@
 		/obj/item/gun/ballistic/revolver/hunting = 10,                            //68 6
 		/obj/item/gun/ballistic/rifle/enfield = 10,                               //60 10
 		/obj/item/gun/ballistic/revolver/revolver44 = 10,                         //56 6
-		/obj/item/gun/ballistic/bow/longbow = 10,                                 //54 1 oof
+		/obj/item/gun/ballistic/bow/longbow = 10,                                 //45 1 oof
 	)
 
 ///DPS <= 200
@@ -440,8 +440,7 @@
 
 		//other
 		/obj/item/m2flamethrowertank = 5,                                         //who knows
-		/obj/item/gun/ballistic/bow/modern = 5,                                   //110 1
-		/obj/item/gun/ballistic/bow/compoundbow = 5,                              //125 1
+		/obj/item/gun/ballistic/bow/modern = 5,                                   //83 (With bane) 1
 	)
 
 /// DPS >200 or equally as good
@@ -455,6 +454,7 @@
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 10,                      //240 20
 		/obj/item/gun/ballistic/revolver/detective = 10,                          //225 6
 		/obj/item/gun/ballistic/automatic/bar = 10,                               //207 20
+		/obj/item/gun/ballistic/bow/compoundbow = 5,                              //218 (With bane) 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,        //213 5
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 5,  //213 5
 		/obj/item/gun/ballistic/revolver/thatgun = 10,                            //207 5

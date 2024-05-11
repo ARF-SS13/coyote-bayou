@@ -227,11 +227,11 @@
 	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "shortbow"
-	item_state = "bow"
+	item_state = "bow" 
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower // Jack of all trades
+		/datum/firemode/semi_auto/slower
 	)
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1 // Does the least damage, jack of all trades, cheap.
+	damage_multiplier = GUN_EXTRA_DAMAGE_T0 // Cheap, worst bow.
 
 /obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow
 	name = "Marksman Crossbow"
