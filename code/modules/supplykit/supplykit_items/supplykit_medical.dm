@@ -130,6 +130,12 @@
 	item = /obj/item/reagent_containers/pill/antivenom
 	cost = 10
 
+/datum/supplykit_item/medical/purgative
+	name = "Fiery Purgative"
+	desc = "A foul liquid that violently purges your body of all toxins, chemicals, and radiation via very unpleasant means."
+	item = /obj/item/reagent_containers/pill/fiery_purgative
+	cost = 10
+
 /datum/supplykit_item/medical/radx
 	name = "Rad-x Bottle"
 	desc = "A bottle of preventative anti-radiation chemicals, massively reducing the effects of exposure."

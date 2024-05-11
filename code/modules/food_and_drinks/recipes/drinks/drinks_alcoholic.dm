@@ -18,6 +18,12 @@
 	results = list(/datum/reagent/consumable/ethanol/bilk = 2)
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/ethanol/beer = 1)
 
+/datum/chemical_reaction/vilk
+	name = "Vilk"
+	id = /datum/reagent/consumable/ethanol/vilk
+	results = list(/datum/reagent/consumable/ethanol/vilk = 2)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/ethanol/vodka = 1)
+
 /datum/chemical_reaction/moonshine
 	name = "Moonshine"
 	id = /datum/reagent/consumable/ethanol/moonshine
