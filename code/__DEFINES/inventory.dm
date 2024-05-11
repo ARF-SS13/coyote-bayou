@@ -862,21 +862,21 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_MAX_ITEMS 50 // Can hold 50 field arrows, or 25 regular/upgraded ones
+#define STORAGE_QUIVER_MAX_ITEMS 50
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
 #define STORAGE_QUIVER_TOTAL_SPACE STORAGE_QUIVER_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 20 // Can hold 20 field arrows, or 10 regular/upgraded arrows. Ment for speciality arrows/babies first quiver
+#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 20
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_LIGHT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
 #define STORAGE_QUIVER_LIGHT_TOTAL_SPACE STORAGE_QUIVER_LIGHT_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 100 // Can hold 100 field arrows, or 50 regular/upgraded. For bulk arrow usage
+#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 100
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
