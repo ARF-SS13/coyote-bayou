@@ -862,7 +862,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_MAX_ITEMS 48 // Can hold 48 field arrows, or 24 regular/upgraded ones
+#define STORAGE_QUIVER_MAX_ITEMS 50 // Can hold 50 field arrows, or 25 regular/upgraded ones
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
@@ -876,7 +876,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_QUIVER_LIGHT_TOTAL_SPACE STORAGE_QUIVER_LIGHT_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 96 // Can hold 96 field arrows, or 48 regular/upgraded. For bulk arrow usage
+#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 100 // Can hold 100 field arrows, or 50 regular/upgraded. For bulk arrow usage
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
