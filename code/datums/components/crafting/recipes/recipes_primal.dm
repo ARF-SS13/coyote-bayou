@@ -481,9 +481,9 @@
 	name = "heavy back quiver"
 	result = /obj/item/storage/bag/tribe_quiver/heavy
 	time = 120 //arbitrary numbers yay
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
-				/obj/item/stack/sheet/metal = 6,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4) //two deathclaw kills. a decent bit of hunting work
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 6,
+				/obj/item/stack/sheet/metal = 8,
+				/obj/item/stack/sheet/leather = 8) //Nobody has ever or will ever make this because belt quivers would be superior if it required deathclaw kills
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
@@ -556,7 +556,7 @@
 	time = 120
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 4,
 				/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/bone = 1,
 				/obj/item/stack/sheet/cloth = 2)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)

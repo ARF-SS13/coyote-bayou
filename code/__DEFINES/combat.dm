@@ -1137,6 +1137,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 /// Converts rounds per minute to deciseconds per shot
 #define RPM_TO_FIRE_DELAY(rpm) ((60 / rpm) * 10)
 
+#define GUN_FIRE_RATE_20 RPM_TO_FIRE_DELAY(40) // 40 RPM = 15 deciseconds per shot
 #define GUN_FIRE_RATE_40 RPM_TO_FIRE_DELAY(80) // 80 RPM = 7.5 deciseconds per shot | Fenny said to double them all! - Jaeger
 #define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
 #define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
@@ -1160,6 +1161,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_FIRE_DELAY_NORMAL GUN_FIRE_RATE_100
 #define GUN_FIRE_DELAY_SLOW GUN_FIRE_RATE_75
 #define GUN_FIRE_DELAY_SLOWER GUN_FIRE_RATE_40
+#define GUN_FIRE_DELAY_SLOWEST GUN_FIRE_RATE_20
 
 /// Gun autofire delay Base
 #define GUN_AUTOFIRE_DELAY_BASE 1

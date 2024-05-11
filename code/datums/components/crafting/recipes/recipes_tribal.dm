@@ -44,6 +44,26 @@
 				/obj/item/weaponcrafting/string = 1,
 				)
 
+/datum/crafting_recipe/tribalwar/bow
+	name = "Long Bow"
+	result = /obj/item/gun/ballistic/bow/longbow
+	time = 65
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20, //easy to make. you can get one as a starter
+				/obj/item/weaponcrafting/string = 5,
+				/obj/item/stack/sheet/leather = 5,
+				/obj/item/stack/sheet/metal = 5
+				)
+
+/datum/crafting_recipe/tribalwar/composite
+	name = "Composite Bow"
+	result = /obj/item/gun/ballistic/bow/composite
+	time = 65
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10, 
+				/obj/item/weaponcrafting/string = 3,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/bone = 2
+				)
+
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
 	result = /obj/item/melee/onehanded/machete/training

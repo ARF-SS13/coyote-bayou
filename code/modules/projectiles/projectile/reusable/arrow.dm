@@ -160,8 +160,18 @@
 	..()
 	target.emp_act(15)//5 severity is very, very low
 
-
 //////////////////////
+//	Split Arrow		//
+//////////////////////
+
+/obj/item/projectile/bullet/reusable/arrow/split
+	name = "split arrow"
+	desc = "an arrow that splits apart after firing."
+	break_chance = 100 // Don't want people getting 2 back for shooting 1
+	spread = 15 // Whats the downside? Not much, but it requires good metal parts to make + is hard to hit things with
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/split
+	
+
 //	Bludgeon Arrow	//
 //////////////////////
 // Stamina Arrow
