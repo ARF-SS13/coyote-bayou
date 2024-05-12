@@ -8,7 +8,7 @@
  *afterattack. The return value does not matter.
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params, attackchain_flags, damage_multiplier = 1)
-	if(user != target && user.incapacitated() && !extract_ckey(target)) // no attacking mobs, other players is okay
+	if(user != target && !isitem(target) && && user.incapacitated() && !extract_ckey(target)) // no attacking mobs, other players is okay
 		to_chat(user, span_danger("You are to messed up to use [src] on anything but yourself!"))
 		return
 	if(isliving(user))
