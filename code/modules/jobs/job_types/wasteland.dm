@@ -1947,7 +1947,7 @@ Raider
 	social_faction = FACTION_TRIBE
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
+	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe."
 
 	selection_color = "#dddddd"
