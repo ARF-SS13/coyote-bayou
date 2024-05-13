@@ -91,7 +91,7 @@
 	ammo_x_offset = 3
 	selfcharge = EGUN_SELFCHARGE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/cyborg
@@ -174,7 +174,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	pin = null
 	ammo_x_offset = 3
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -287,7 +287,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -455,7 +455,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser)
 	can_scope = FALSE
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
@@ -482,7 +482,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
 	can_scope = FALSE
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -496,7 +496,7 @@
 	desc = " An upgraded version of the Compact RCW. Boasts a higher cell efficiency at the cost of the burstfire and armor melting power."
 	icon_state = "autoshock"
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock)
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
@@ -515,7 +515,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultra_pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -539,7 +539,7 @@
 	can_charge = FALSE
 	selfcharge = EGUN_SELFCHARGE
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -831,7 +831,7 @@
 	can_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/alien)
 	cell_type = /obj/item/stock_parts/cell/ammo/alien //unchargeable, but removable
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -846,7 +846,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	ammo_x_offset = 3
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

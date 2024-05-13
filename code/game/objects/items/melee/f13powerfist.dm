@@ -16,7 +16,7 @@
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
@@ -162,7 +162,7 @@
 	toolspeed = 0.3 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 

@@ -1408,6 +1408,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, GLOB.default_all_armor_slot_allowed) )
 				return TRUE
+			if(HAS_TRAIT(H, TRAIT_PACKRAT))
+				if(istype(I, /obj/item/storage/backpack))
+					return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)
 			if(H.handcuffed)

@@ -6,8 +6,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	attack_speed = CLICK_CD_MELEE * 1.15 //9.2
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = INV_SLOTBIT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
@@ -347,7 +347,7 @@
 	wound_bonus = 5
 	bare_wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT + SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	force_unwielded = 30
 	force_wielded = 75
@@ -537,7 +537,7 @@
 	icon_state_on = "protonaxe_on"
 	w_class = WEIGHT_CLASS_BULKY
 	w_class_on = WEIGHT_CLASS_HUGE
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	slot_flags_on = null
 	force = 28
 	force_on = 65
@@ -797,7 +797,7 @@
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	total_mass = TOTAL_MASS_NORMAL_ITEM //it swings faster
 	var/structure_bonus_damage = 20
 	var/on_icon_state = "steelsaw_on"

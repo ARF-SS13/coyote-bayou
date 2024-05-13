@@ -1578,7 +1578,7 @@
 	unloadable = TRUE
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
 	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 6 // 3 bursts, you need 2 cans
+	max_ammo = 240
 	custom_materials = list(/datum/material/iron = MATS_MISC)
 	randomize_ammo_count = FALSE
 

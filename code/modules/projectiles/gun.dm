@@ -750,6 +750,10 @@ ATTACHMENTS
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		remove_hud_actions(user)
 		zoom(user, FALSE)
+	if(HAS_TRAIT(user, TRAIT_WEAK_OF_MUSCLES))  //we obviously need to check if the user HAS the trait.... DUH! (thank you a lot Blue and Dan)
+		if(weapon_class > WEAPON_CLASS_NORMAL)
+			user.dropItemToGround(src, TRUE)
+			to_chat(user, span_alert("The [src] is too heavy for you!"))
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()

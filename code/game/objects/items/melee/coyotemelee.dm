@@ -8,7 +8,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 25
 	force_unwielded = 25
 	force_wielded = 47
@@ -30,7 +30,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	backstab_multiplier = 1.1
 	force_unwielded = 30
@@ -53,7 +53,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 25
 	force_unwielded = 25
 	force_wielded = 55
@@ -78,7 +78,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 40
 	force_unwielded = 40
 	force_wielded = 50
@@ -102,7 +102,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	force_unwielded = 30
 	force_wielded = 42
@@ -126,7 +126,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 25
@@ -150,7 +150,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35
 	force_unwielded = 35
 	force_wielded = 50
@@ -174,7 +174,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35 // 45 = MW, 55 = Masterwork + Whetstone, 65 = Master Work + Whetstone + Big leagues 
 	force_unwielded = 35 // 
 	force_wielded = 45 // 75 max extra damage. As a treat. 
@@ -199,7 +199,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 40
 	force_unwielded = 40 // 70 max
 	force_wielded = 50 // 80 max
@@ -225,7 +225,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 80
@@ -249,7 +249,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 80
@@ -273,7 +273,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 90
@@ -295,7 +295,7 @@
 	item_state = "club"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30 // 45 = MW, 55 = Masterwork + Whetstone, 65 = Master Work + Whetstone + Big leagues 
 	force_unwielded = 30 // 
 	force_wielded = 40 // 75 max extra damage. As a treat. 
@@ -325,7 +325,7 @@
 	item_state = "big_club"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35
 	force_unwielded = 35 // 70 max
 	force_wielded = 45 // 80 max
@@ -351,7 +351,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35
 	force_unwielded = 35 // 70 max
 	force_wielded = 45 // 80 max
@@ -395,7 +395,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20 // 35 max
 	force_wielded = 55 // 90 max
@@ -421,7 +421,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20 // 35 max
 	force_wielded = 55 // 90 max
@@ -447,7 +447,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20 // 35 max
 	force_wielded = 55 // 90 max
@@ -474,7 +474,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20 // 35 max
 	force_wielded = 55 // 90 max
@@ -499,7 +499,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35
 	force_unwielded = 35 // 70 max
 	force_wielded = 45 // 80 max
@@ -524,7 +524,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 35
 	force_unwielded = 35 // 70 max
 	force_wielded = 45 // 80 max
@@ -549,7 +549,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
@@ -580,7 +580,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
@@ -610,7 +610,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 0
 	throwforce = 0
 	wound_bonus = -20
@@ -635,7 +635,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 40
 	force_unwielded = 40 // 70 max
 	force_wielded = 50 // 80 max
