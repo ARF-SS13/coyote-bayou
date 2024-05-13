@@ -120,7 +120,6 @@
 	unique_frequency = TRUE
 	can_flashlight = 0
 	max_mod_capacity = 0 // TG Kinetic Accelerator Mods
-	max_upgrades = 2 // ERIS weapon mods
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 

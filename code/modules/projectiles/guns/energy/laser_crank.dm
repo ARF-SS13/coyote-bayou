@@ -259,7 +259,6 @@
 	crank_stamina_cost = 32 // 1/4th stamina
 	cranking_time = 2.5 SECONDS
 	trigger_guard = TRIGGER_GUARD_NORMAL
-	max_upgrades = 6
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank_mb1.ogg',
 		'sound/effects/dynamo_crank/dynamo_crank_mb2.ogg',

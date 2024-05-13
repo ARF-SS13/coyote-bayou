@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	icon_state = "pda"
 	item_state = "Pip-boy"
 	item_flags = NOBLUDGEON
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF

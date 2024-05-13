@@ -608,6 +608,22 @@
 /obj/item/storage/box/large/custom_kit/fuzlet3/PopulateContents()
 	new /obj/item/dnainjector/geladikinesis(src)
 
+/datum/gear/donator/kits/fuzlet4
+	name = "Brewing Kit"
+	path = /obj/item/storage/box/large/custom_kit/fuzlet4
+	ckeywhitelist = list("fuzlet")
+
+/obj/item/storage/box/large/custom_kit/fuzlet4/PopulateContents()
+	new /obj/item/seeds/aloe(src)
+	new /obj/item/seeds/wheat(src)
+	new /obj/item/seeds/wheat/oat(src)
+	new /obj/item/seeds/corn(src)
+	new /obj/item/seeds/potato(src)
+	new /obj/item/seeds/sugarcane(src)
+	new /obj/item/paper_bin(src)
+	new /obj/item/storage/bag/plants/portaseeder(src)
+	new /obj/item/stack/sheet/mineral/wood/fifty(src)
+
 // G
 
 /datum/gear/donator/kits/generalpantsu

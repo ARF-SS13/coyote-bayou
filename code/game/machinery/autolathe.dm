@@ -1144,7 +1144,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/list/ppl = list()
 	for(var/mob/m in view(15, get_turf(lathe)))
 		ppl += m
-	var/mob/M = pick(ppl)
+	var/mob/M
+	if(LAZYLEN(ppl))
+		M = pick(ppl)
 	if(M)
 		our_paper.throw_at(M, 100, 1, M, TRUE)
 	else

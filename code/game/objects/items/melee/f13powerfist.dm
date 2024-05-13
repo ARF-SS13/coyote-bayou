@@ -12,7 +12,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	force = 55 //needs more hefty damage to be worthwhile outside pvp. will have to test
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
@@ -204,6 +204,7 @@
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 	var/description_on = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
 	var/description_off = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/melee/powered/ripper/attack_self(mob/user)
 	on = !on
@@ -239,6 +240,7 @@
 	off_item_state = "prewarrip_off"
 	armour_penetration = 0.3
 	force_on = 50
+	
 
 /obj/item/melee/powered/ripper/dull
 	name = "worn ripper"

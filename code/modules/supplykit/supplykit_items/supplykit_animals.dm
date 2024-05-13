@@ -82,6 +82,12 @@
 	item = /obj/item/reagent_containers/food/snacks/grown/oat
 	cost = 1
 
+/datum/supplykit_item/animals/seeds
+	name = "Random Seed"
+	desc = "A handful of four random plant seeds. who knows what they are!"
+	item = /obj/effect/spawner/lootdrop/f13/seedspawner
+	cost = 4
+
 /datum/supplykit_item/animals/fever
 	name = "Fever Blossom"
 	desc = "A mutated passion flower that has developed strong aphrodisiac properties."

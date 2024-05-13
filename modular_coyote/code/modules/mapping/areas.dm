@@ -84,6 +84,7 @@
 
 /area/f13/building/workshop/nash
 	name = "New Boston Workshop"
+	narrate = "The gathering point of many a adventurer and busybody civilian. This is where myths and legends are spun, equipment is shared, and where the coins flow like water."
 	safe_town = TRUE
 
 /area/f13/building/workshop/ashdown

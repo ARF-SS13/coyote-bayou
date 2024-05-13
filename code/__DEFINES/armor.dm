@@ -1181,19 +1181,19 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
  * Medium Armor
  * Substantial armor
 */
-#define ARMOR_SLOWDOWN_MEDIUM 0.4
+#define ARMOR_SLOWDOWN_MEDIUM 0.35
 
 /*
  * Heavy Armor
  * Bulky suits of heavy armor
 */
-#define ARMOR_SLOWDOWN_HEAVY 0.80
+#define ARMOR_SLOWDOWN_HEAVY 0.7
 
 /*
  * Salvaged Power Armor
  * Basically wearing a car
 */
-#define ARMOR_SLOWDOWN_SALVAGE 2
+#define ARMOR_SLOWDOWN_SALVAGE 1.7
 
 /*
  * Refurbished Power Armor

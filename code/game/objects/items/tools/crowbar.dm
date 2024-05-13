@@ -35,22 +35,39 @@
 	if(!target || !isrobotic(target))
 		return FALSE
 
+	if(target.health >= target.maxHealth)//quick but dirty way
+		to_chat(user, span_notice("[target] doesn't seem to need fixing right now."))
+		return FALSE
+
+	if(user.heal_reservoir < 1) //You have no healing charges remaining.
+		to_chat(user, span_notice("You just can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+		return FALSE
+
 	if(praying)
 		to_chat(user, span_notice("You are already using [src]."))
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins messing with their covers."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begins messing with their covers this will increase their healing rate."))
+		span_info("You kneel[M == user ? null : " next to [M]"] and begin messing with their covers. This will increase their healing rate."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
 		praying = FALSE
 		return FALSE
-	if(do_after(user, 2 SECONDS, target = M)) 
-		M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Crowbar heals the most, but only when heavily damaged
-		to_chat(M, span_notice("[user] finished emergancy repairs on your body!"))
-		praying = FALSE
-		playsound(get_turf(target), 'sound/items/Crowbar.ogg', 100, 1)
+
+	if(do_after(user, clamp(toolspeed*20, 0.5 SECONDS, 2 SECONDS), target = M))
+		if(user.heal_reservoir >= 1)//Check for charges again because we might've used them up while waiting.
+			user.heal_reservoir--
+			M.reagents?.add_reagent(/datum/reagent/medicine/medbotchem, 10) //Crowbar heals the most, but only when heavily damaged
+			to_chat(M, span_notice("[user] finished emergancy repairs on your body!"))
+			praying = FALSE
+			playsound(get_turf(target), 'sound/items/Crowbar.ogg', 100, 1)
+			if(target.health < target.maxHealth)
+				attack(target, user)
+		else
+			to_chat(user, span_notice("You can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
+			praying = FALSE
+
 	else
 		to_chat(user, span_notice("You were interrupted."))
 		praying = FALSE
