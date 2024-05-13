@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(chat)
 
 	/// all the wacky ass flirt datums we have in existence
 	var/list/flirts = list()
+	var/list/flirtsByNumbers = list()
 	/// A cached mass of jsonified flirt datums, for TGUI
 	var/list/flirt_for_tgui = list() // flirt for me, flirt for me, flirt flirt
 	var/list/flirts_all_categories = list() // flirt for me, flirt for me, flirt flirt
@@ -277,7 +278,7 @@ SUBSYSTEM_DEF(chat)
 			if(LAZYACCESS(flirt_cooldowns, flirter.ckey) < world.time)
 				to_chat(flirter, span_warning("Hold your horses! You're still working on that last flirt!"))
 				return
-			return F.give_flirter(flirter, target)
+			return F.give_flirter(flirter)
 
 /datum/controller/subsystem/chat/ui_state(mob/user)
 	return GLOB.always_state
@@ -325,7 +326,7 @@ SUBSYSTEM_DEF(chat)
 	sender.playsound_local(sender, 'sound/effects/direct_message_setn.ogg', 75, FALSE)
 
 	log_ooc("[sender.real_name] ([sender.ckey]) -> [reciever.real_name] ([reciever.ckey]): [mesage]")
-	message_admins("[ADMIN_TPMONTY(sender)] -DM-> [ADMIN_TPMONTY(reciever)]: [mesage]", ADMIN_CHAT_FILTER_DMS)
+	message_admins("[ADMIN_TPMONTY(sender)] -DM-> [ADMIN_TPMONTY(reciever)]: [mesage]", ADMIN_CHAT_FILTER_DMS, list(sender, reciever))
 
 /// takes in a sencer, a reciever, and an optional name, and turns it into a clickable link to send a DM
 /datum/controller/subsystem/chat/proc/dm_linkify(mob/sender, mob/reciever, optional_name)
@@ -338,7 +339,8 @@ SUBSYSTEM_DEF(chat)
 	if(!reciever || !reciever.client)
 		return
 	var/theirname = optional_name || name_or_shark(reciever) || "Anonymouse" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
-	return "<a href='?src=[REF(src)];DM=1;sender_quid=[extract_quid(sender)];reciever_quid=[extract_quid(reciever)]'>[theirname]</a>"
+	
+	return "<a href='?src=[REF(src)];DM=1;sender_quid=[REF(sender)];reciever_quid=[REF(reciever)]'>[theirname]</a>"
 
 /datum/controller/subsystem/chat/Topic(href, list/href_list)
 	. = ..()
@@ -445,6 +447,12 @@ SUBSYSTEM_DEF(chat)
 	if(user.stat == DEAD)
 		to_chat(user, span_warning("You've got better things to do than flirt, such as being dead."))
 		return
+	if(LAZYLEN(params))
+		var/whichm = text2num(params)
+		if(isnum(whichm) && whichm > 0 && whichm <= LAZYLEN(SSchat.flirtsByNumbers))
+			var/datum/flirt/F = LAZYACCESS(SSchat.flirtsByNumbers, whichm)
+			if(F)
+				return F.give_flirter(user)
 	to_chat(user, span_notice("You get ready to flirt. What will you do? And who with?"))
 	to_chat(user, span_notice("HOW TO USE: Click on the emote you want to use, and it'll give you a thing in your hand! Just click on whoever you want to send a flirtatious message to, or just use it in hand to send a message to everyone nearby. That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
