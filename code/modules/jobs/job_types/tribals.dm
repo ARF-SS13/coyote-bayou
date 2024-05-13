@@ -148,7 +148,7 @@ Tribal Shaman
 	supervisors = "The chief.  You are a peer to the harvest leader."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "The spiritual leader and medical leader of the Sulphur Bottom Tribe. You aid villagers in their day to day lives but also have access to the spiritual realm via your scrying orb to render assistance on a wider scale."
+	description = "The spiritual leader and medical leader of the Mountain River Tribe. You aid villagers in their day to day lives but also have access to the spiritual realm via your scrying orb to render assistance on a wider scale."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -233,7 +233,7 @@ Tribal Hunt Master
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
+	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Mountain River. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -358,7 +358,7 @@ Villager
 	spawn_positions = 10
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "everyone but the other villagers."
-	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
+	description = "A proud member of the Mountain River tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -654,7 +654,7 @@ Guardian
 	spawn_positions = -1
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "New Boston's laws and all tribe members aside from other villagers"
-	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	description = "A proud member of the Mountain River tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#006666"
 	exp_requirements = 0
 

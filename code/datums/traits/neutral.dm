@@ -461,7 +461,7 @@
 	desc = "You're somehow capable of understanding and speaking the common tribal languages in the area."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the language of the swamps, shared with the Sulphur Bottom Tribe."
+	mechanics = "You can speak the language of the swamps, shared with the Mountain River Tribe."
 	conflicts = list()
 	gain_text = span_notice("You remember the old ways of your tribe..")
 	lose_text = span_notice("You've forgotten the ways of your ancestors..")
