@@ -139,7 +139,7 @@
 	icon_state = "throw_spear"
 	item_state = "tribalspear"
 	force = 35 // lets make this an actual weapon and not a wiffle bat
-	throwforce = 60 // Its normal sized, throwing spears should hurt
+	throwforce = 40 // Same value as smithed javlins
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
