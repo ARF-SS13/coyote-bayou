@@ -138,8 +138,8 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	icon_state = "throw_spear"
 	item_state = "tribalspear"
-	force = 15
-	throwforce = 40 //clears threshholds for trash mobs
+	force = 35 // lets make this an actual weapon and not a wiffle bat
+	throwforce = 60 // Its normal sized, throwing spears should hurt
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -361,7 +361,7 @@
 	desc = "a finely balanced knife made from a lightweight alloy, designed for being thrown. You can easily embed these in someone, and you look darn cool while doing so."
 	icon_state = "knife_throw"
 	force = 20
-	throwforce = 30
+	throwforce = 45 // Shits made out of prewar metals, may make telekinesis really good with throwing knives
 	backstab_multiplier = 1.90
 	bare_wound_bonus = 15 //keep your arteries covered
 	throw_speed = 5
@@ -644,8 +644,9 @@
 	icon_state = "boomerang"
 	item_state = "boomerang"
 	force = 30
-	throwforce = 18 //so it can kill weak trash mobs in one throw, a bug causes boomerang type weapons to deal double the intended damage, so this is  a bandaid fix meanwhile
+	throwforce = 20 // 5 points worse than a hunting knife, equiv to gar glasses
 	throw_speed = 4
+	w_class = WEIGHT_CLASS_SMALL
 	backstab_multiplier = 1.40
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	sharpness = SHARP_NONE
