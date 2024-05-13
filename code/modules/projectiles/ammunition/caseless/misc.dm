@@ -31,8 +31,8 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "floor1"
 	projectile_type = /obj/item/projectile/incendiary/flamethrower
-	pellets = 3
-	variance = 20
+	pellets = 1
+	variance = 5
 	sound_properties = CSP_MISC
 
 //throwin' rock, for throwin'. obtained via *rocks

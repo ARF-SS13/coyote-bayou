@@ -6,7 +6,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/tesla_revolver

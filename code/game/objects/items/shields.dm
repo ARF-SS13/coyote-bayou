@@ -204,7 +204,7 @@
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/plastic=8000)
 	attack_verb = list("shoved", "bashed")
 	var/cooldown = 0 //shield bash cooldown. based on world.time
@@ -562,6 +562,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
 	desc = "Yep, that's a shield. Good for not getting whacked."
 	icon_state = "shield_stop"
 	item_state = "shield_stop"
