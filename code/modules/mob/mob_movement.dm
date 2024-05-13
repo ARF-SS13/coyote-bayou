@@ -420,19 +420,19 @@
 		for(var/atom/movable/screen/mov_intent/selector in hud_used.static_inventory)
 			selector.update_icon()
 
-#define MOB_LAYER_SHIFT_INCREMENT    0.5
+#define MOB_LAYER_SHIFT_INCREMENT    0.01
 #define MOB_LAYER_SHIFT_MIN         2.5
 //#define MOB_LAYER                 4   // This is a byond standard define
-#define MOB_LAYER_SHIFT_MAX           20
+#define MOB_LAYER_SHIFT_MAX           20 // yes you can fly above your own genitals
 //Layer code ported from Skyrat, credit to Ranged66
 
 /mob/living/verb/layershift_up()
 	set name = "Shift Layer Upwards"
 	set category = "IC"
 
-	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
-		return
+	// if(incapacitated(allow_crit = TRUE))
+	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	return
 
 	if(layer >= MOB_LAYER_SHIFT_MAX)
 		to_chat(src, span_warning("You cannot increase your layer priority any further."))
@@ -446,9 +446,9 @@
 	set name = "Reset Layer"
 	set category = "IC"
 
-	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
-		return
+	// if(incapacitated(allow_crit = TRUE))
+	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	return
 
 	if(lying)
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
@@ -461,9 +461,9 @@
 	set name = "Shift Layer Downwards"
 	set category = "IC"
 
-	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
-		return
+	// if(incapacitated(allow_crit = TRUE))
+	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	return
 
 	if(layer <= MOB_LAYER_SHIFT_MIN)
 		to_chat(src, span_warning("You cannot decrease your layer priority any further."))
