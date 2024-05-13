@@ -271,8 +271,10 @@
 	desc = "Go beyond impossible and kick reason to the curb!"
 	icon_state = "garb"
 	item_state = "garb"
-	force = 23
-	throwforce = 12
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
+	throwforce = 25
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -302,18 +304,24 @@
 	desc = "Believe in us humans."
 	icon_state = "supergarb"
 	item_state = "garb"
-	force = 23
-	throwforce = 23
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
+	throwforce = 25
+	throw_speed = 4
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
+
 /obj/item/clothing/glasses/sunglasses/gar
 	name = "gar glasses"
 	desc = "Just who the hell do you think I am?!"
 	icon_state = "gar"
 	item_state = "gar"
-	force = 23
-	throwforce = 12
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
+	throwforce = 25
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -343,8 +351,11 @@
 	desc = "We evolve past the person we were a minute before. Little by little we advance with each turn. That's how a drill works!"
 	icon_state = "supergar"
 	item_state = "gar"
-	force = 23
-	throwforce = 12
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
+	throwforce = 25
+	throw_speed = 4
 	sharpness = SHARP_EDGED
 	glass_colour_type = /datum/client_colour/glass_colour/red
 	attack_speed = CLICK_CD_MELEE * 0.8

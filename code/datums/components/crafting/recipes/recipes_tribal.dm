@@ -73,6 +73,15 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribalwar/boomerang
+	name = "Wooden Boomerang"
+	result = /obj/item/melee/f13onehanded/boomerang
+	time = 50
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 15,
+				/obj/item/stack/sheet/cloth = 2
+				)
+	tools = list(TOOL_WORKBENCH)
+
 //CLOTHING AND TOOLS
 
 /datum/crafting_recipe/tribal

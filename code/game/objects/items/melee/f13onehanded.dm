@@ -138,8 +138,8 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	icon_state = "throw_spear"
 	item_state = "tribalspear"
-	force = 15
-	throwforce = 40 //clears threshholds for trash mobs
+	force = 35 // lets make this an actual weapon and not a wiffle bat
+	throwforce = 40 // Same value as smithed javlins
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -698,6 +698,7 @@
 	force_unwielded = 35
 	throwforce = 25 //so it can kill weak trash mobs in one throw, a bug causes boomerang type weapons to deal double the intended damage, so this is  a bandaid fix meanwhile
 	throw_speed = 4
+	w_class = WEIGHT_CLASS_SMALL
 	backstab_multiplier = 1.40
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	sharpness = SHARP_NONE
