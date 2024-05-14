@@ -167,6 +167,7 @@
 	name = "roller bed"
 	desc = "A collapsed roller bed that can be carried around."
 	icon = 'icons/obj/rollerbed.dmi'
+	var/unfoldabletype = /obj/structure/bed/roller
 	icon_state = "folded"
 	w_class = WEIGHT_CLASS_NORMAL // No more excuses, stop getting blood everywhere
 
@@ -194,7 +195,7 @@
 		deploy_roller(user, target)
 
 /obj/item/roller/proc/deploy_roller(mob/user, atom/location)
-	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(location)
+	var/obj/structure/bed/roller/R = new unfoldabletype(location)
 	R.add_fingerprint(user)
 	qdel(src)
 
@@ -287,6 +288,7 @@
 /obj/item/roller/bedroll
 	name = "rolled bedroll"
 	desc = "A collapsed bedroll that can be carried around."
+	unfoldabletype = /obj/structure/bed/roller/bedroll
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "bedrollrolled"
 	w_class = WEIGHT_CLASS_SMALL // So you don't have to struggle with it! Besides, bedrolls can get pretty small.
