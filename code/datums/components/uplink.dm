@@ -237,7 +237,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 /datum/component/uplink/proc/MakePurchase(mob/user, datum/uplink_item/U)
 	if(!istype(U))
 		return
-	if (!user || user.incapacitated())
+	if (!user || user.incapacitated(allow_crit = TRUE))
 		return
 
 	if(telecrystals < U.cost || U.limited_stock == 0)

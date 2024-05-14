@@ -67,6 +67,7 @@
 	if(thealert.timeout)
 		addtimer(CALLBACK(src,PROC_REF(alert_timeout), thealert, category), thealert.timeout)
 		thealert.timeout = world.time + thealert.timeout - world.tick_lag
+	// thealert.setup()
 	return thealert
 
 /mob/proc/alert_timeout(atom/movable/screen/alert/alert, category)
@@ -107,6 +108,23 @@
 
 /atom/movable/screen/alert/MouseExited()
 	closeToolTip(usr)
+
+// /atom/movable/screen/alert/progbar
+// 	name = "Cool Timed Alert"
+// 	desc = "This alert has a progress bar associated with it. Could be a timer, could be charge, could be anything."
+// 	icon_state = "not_enough_oxy"
+// 	var/maxvalue = 100
+// 	var/currentvalue = 0
+// 	var/minvalue = 0
+// 	var/is_timer = FALSE
+// 	var/processes = FALSE
+// 	var/mybar
+
+// /atom/movable/screen/alert/progbar/proc/setup()
+// 	if(!mob_viewer)
+// 		return
+// 	mybar = SSprogress_bars.add_bar(src, mob_viewer, maxvalue, FALSE, FALSE)
+
 
 
 //Gas alerts

@@ -25,7 +25,6 @@
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	unsuitable_atmos_damage = 20
-	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("trog")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
@@ -58,7 +57,6 @@
 	icon_living = "tunneler"
 	icon_dead = "tunneler_dead"
 	robust_searching = TRUE
-	stat_attack = CONSCIOUS
 	health = 144
 	maxHealth = 144
 	speed = 1
@@ -141,7 +139,6 @@
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/veryfar_noise.ogg'
 	unsuitable_atmos_damage = 20
-	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("tunneler")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,

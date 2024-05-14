@@ -582,7 +582,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/AltClick(mob/living/user)
 	. = ..()
-	if(!istype(user) || !Adjacent(user) || user.incapacitated())
+	if(!istype(user) || !Adjacent(user) || user.incapacitated(allow_crit = TRUE))
 		return
 	if (command)
 		use_command = !use_command

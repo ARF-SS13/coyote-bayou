@@ -620,7 +620,7 @@
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/helmet/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
 		if(world.time > cooldown + toggle_cooldown)
 			cooldown = world.time
 			up = !up
@@ -1019,7 +1019,7 @@
 		return
 
 	var/mob/user = usr
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		return
 	attached_light.on = !attached_light.on
 	attached_light.update_brightness()

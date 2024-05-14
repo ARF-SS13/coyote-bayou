@@ -901,7 +901,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			return new childspawn(target)
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -1049,7 +1049,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
-		if(user.incapacitated())
+		if(user.incapacitated(allow_crit = TRUE))
 			return
 		for(var/atom/movable/A in get_turf(src))
 			if(A != src && A != M && A.density)

@@ -122,12 +122,12 @@
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
 
-	if(should_be_lying || restrained || incapacitated())
+	if(should_be_lying || restrained || incapacitated(allow_crit = TRUE))
 		mobility_flags &= ~(MOBILITY_UI|MOBILITY_PULL)
 	else
 		mobility_flags |= MOBILITY_UI|MOBILITY_PULL
 
-	var/canitem_general = !paralyze && !stun && conscious && !(stat_softcrit) && !chokehold && !restrained && has_arms && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
+	var/canitem_general = !paralyze && !stun && conscious && stat_conscious && !chokehold && !restrained && has_arms && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
 	if(canitem_general)
 		mobility_flags |= (MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE | MOBILITY_HOLD)
 	else

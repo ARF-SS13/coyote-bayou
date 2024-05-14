@@ -332,7 +332,7 @@
 /obj/structure/barricade/wooden/proc/check_menu(mob/living/user, obj/item/I)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated() || !user.Adjacent(src) || user.get_active_held_item() != I)
+	if(user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src) || user.get_active_held_item() != I)
 		return FALSE
 	return TRUE
 
