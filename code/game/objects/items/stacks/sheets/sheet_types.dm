@@ -438,7 +438,8 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4), \
 	new/datum/stack_recipe("padded floor tile", /obj/item/stack/tile/padded, 1, 4, 20), \
 	new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE), \
-	null, \
+	new/datum/stack_recipe("bedroll", /obj/structure/bed/roller/bedroll, 4, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \ 
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("beekeeping hood", /obj/item/clothing/head/beekeeper_head, 2), \
 	new/datum/stack_recipe("beekeeping suit", /obj/item/clothing/suit/beekeeper_suit, 4), \
