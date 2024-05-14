@@ -96,7 +96,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = LMG_RECOIL(1.7,1.7)
@@ -897,7 +897,7 @@
 	icon_state = "mk23"
 	init_mag_type = /obj/item/ammo_box/magazine/m45/socom
 	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
@@ -932,7 +932,7 @@
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
@@ -957,7 +957,7 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	init_mag_type = /obj/item/ammo_box/magazine/m14mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2 //T3 might've been a lil much. will see
 	init_firemodes = list(
@@ -982,7 +982,7 @@
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
@@ -1011,7 +1011,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
 	init_recoil = HMG_RECOIL (8, 8)
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
@@ -1036,7 +1036,7 @@
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	init_mag_type = /obj/item/ammo_box/magazine/m14mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
@@ -1060,7 +1060,7 @@
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
-	weapon_class = WEAPON_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)

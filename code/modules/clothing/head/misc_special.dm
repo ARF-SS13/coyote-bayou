@@ -339,7 +339,7 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/head/slouch/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
 		up = !up
 		icon_state = "[initial(icon_state)][up ? "up" : ""]"
 		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
@@ -358,7 +358,7 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/head/slouch/alt/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
 		up = !up
 		icon_state = "[initial(icon_state)][up ? "up" : ""]"
 		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")

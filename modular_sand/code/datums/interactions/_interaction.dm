@@ -267,7 +267,7 @@
 		return
 	if(!evaluate_target(user, target, silent = discrete))
 		return
-	if(!override_for_tgui && user.incapacitated())
+	if(!override_for_tgui && user.incapacitated(allow_crit = TRUE))
 		if(!discrete)
 			to_chat(user, span_warning("You are in no shape to do that!"))
 		return

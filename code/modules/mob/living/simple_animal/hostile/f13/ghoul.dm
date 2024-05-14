@@ -523,7 +523,6 @@
 	name = "ravenous feral ghoul"
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
-	stat_attack = CONSCIOUS
 	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	can_ghost_into = FALSE
 	maxHealth = 200

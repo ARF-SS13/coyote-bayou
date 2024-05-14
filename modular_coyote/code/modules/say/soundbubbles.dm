@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 	return ..()
 
 /mob/proc/play_AC_typing_indicator(txt, atom/playfrom, mob/whoprefs, do_static)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
-	if(stat != CONSCIOUS)
+	if(stat > SOFT_CRIT)
 		return
 	if(!playfrom)
 		playfrom = src

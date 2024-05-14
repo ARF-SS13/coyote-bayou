@@ -1095,6 +1095,12 @@
 		if(woundie.get_blood_flow(FALSE))
 			return TRUE
 
+/obj/item/bodypart/proc/aggravate_wound(scalar)
+	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
+		return
+	for(var/datum/wound/woundie in wounds)
+		woundie.aggravate_wound(scalar)
+
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart
  *

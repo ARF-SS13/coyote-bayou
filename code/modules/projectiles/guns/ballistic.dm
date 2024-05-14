@@ -332,7 +332,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		user.visible_message("[user] shortens \the [src]!", span_notice("You shorten \the [src]."))
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)

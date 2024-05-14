@@ -174,7 +174,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
@@ -195,7 +195,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
@@ -487,7 +487,7 @@
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = HANDGUN_RECOIL(4, 4)

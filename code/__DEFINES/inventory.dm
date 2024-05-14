@@ -331,7 +331,7 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/toy,
 	/obj/item/cult_bastard,
 	/obj/item/shield,
-	/obj/item/storage/backpack/satchel,
+	///obj/item/storage/backpack/satchel,
 	/obj/item/huntinghorn
 	)))
 
@@ -754,7 +754,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 /// How many items total fit in a holster belt
 #define STORAGE_BELT_HOLSTER_MAX_ITEMS 7
 /// How big a thing can fit in a holster belt
-#define STORAGE_BELT_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
+#define STORAGE_BELT_HOLSTER_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a holster belt
 #define STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE WEIGHT_CLASS_NORMAL * 3
 

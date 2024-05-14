@@ -35,7 +35,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp // ECP has 20,000 charge, shot drain is 2000. This gives it 10 shots vs a rifle's 15.
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 
@@ -142,6 +142,7 @@
 	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/sling)
 	weapon_weight = GUN_ONE_HAND_ONLY
+	w_class = WEIGHT_CLASS_TINY
 	force = 5
 	force_unwielded = 5
 	force_wielded = 10
@@ -161,7 +162,7 @@
 	name = "sling staff"
 	desc = "A simple piece of leather strapped to a staff allowing it greater damage both in melee and at range. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
 	weapon_weight = GUN_TWO_HAND_ONLY
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 25
 	force_unwielded = 25
 	force_wielded = 35

@@ -320,8 +320,17 @@
 		return FALSE
 	if(!(AM.can_be_pulled(src, state, force)))
 		return FALSE
-	if(throwing || incapacitated())
+	if(throwing)
 		return FALSE
+	if(incapacitated())
+		if(stat > SOFT_CRIT)
+			return FALSE
+		if(isliving(AM))
+			var/mob/living/L = AM
+			if(!L.faction_check_mob(src))
+				return FALSE // no dragging around enemies if you're in crit
+		else
+			return FALSE
 
 	AM.add_fingerprint(src)
 
@@ -476,7 +485,7 @@
 /mob/living/verb/lookup()
 	set name = "Look Up"
 	set category = "IC"
-	if(src.incapacitated())
+	if(src.incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't look up right now!"))
 	var/turf/T = SSmapping.get_turf_above(get_turf(src))
 	if(!istype(T, /turf/open/transparent/openspace))
@@ -497,8 +506,14 @@
 	UnregisterSignal(src, list(COMSIG_LIVING_STATUS_PARALYZE, COMSIG_LIVING_STATUS_UNCONSCIOUS, COMSIG_LIVING_STATUS_SLEEP, COMSIG_LIVING_STATUS_KNOCKDOWN, COMSIG_MOVABLE_MOVED, COMSIG_MOB_CLIENT_CHANGE_VIEW))
 
 
-/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
-	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (combat_flags & COMBAT_FLAG_HARD_STAMCRIT) || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)))
+/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, allow_crit = FALSE)
+	if(stat)
+		if(allow_crit && stat <= SOFT_CRIT)
+			return FALSE
+		return TRUE
+	if(IsUnconscious() || IsStun() || IsParalyzed() || (combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
+		return TRUE
+	if(check_immobilized && IsImmobilized() || !ignore_restraints && restrained(ignore_grab))
 		return TRUE
 
 /mob/living/canUseStorage()
@@ -1136,7 +1151,7 @@
 	return
 
 /mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -1475,6 +1490,24 @@
 	if(isnull(.))
 		return
 	update_mobility()
+// 	if(new_stat == SOFT_CRIT)
+// 		enter_soft_crit()
+// 	else
+// 		leave_soft_crit()
+
+// /mob/living/proc/enter_soft_crit()
+// 	if(stat != SOFT_CRIT)
+// 		return
+// 	if((last_entered_soft_crit + SOFT_CRIT_FLAIL_COOLDOWN) > world.time)
+// 		return
+// 	throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+// 	last_entered_soft_crit = world.time
+// 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, PROC_REF(chicken_hat))
+
+// /mob/living/proc/leave_soft_crit()
+
+
+// /mob/living/proc/process_soft_crit()
 
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))
@@ -1484,7 +1517,7 @@
 
 
 /mob/living/proc/do_give(mob/living/target)
-	if(incapacitated() || !Adjacent(target))
+	if(incapacitated(allow_crit = TRUE) || !Adjacent(target))
 		return
 
 	if(INTERACTING_WITH(src, target))
@@ -1506,7 +1539,7 @@
 		to_chat(src, span_warning("[target] is too busy fighting!"))
 		return
 
-	if(target.incapacitated())
+	if(target.incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("[target] is in no condition to handle items!"))
 		return
 
@@ -1520,7 +1553,7 @@
 	var/target_answer = alert(target, "[src] wants to give you \a [gift]. Will you accept it?", "An offer you can't refuse", "Accept", "Visibly reject", "Quietly ignore")
 	STOP_INTERACTING_WITH(src, target)
 
-	if(QDELING(src) || QDELETED(target) || QDELETED(gift) || incapacitated() || target.incapacitated() || !target.can_hold_items())
+	if(QDELING(src) || QDELETED(target) || QDELETED(gift) || incapacitated(allow_crit = TRUE) || target.incapacitated(allow_crit = TRUE) || !target.can_hold_items())
 		return
 
 	switch(target_answer)

@@ -47,7 +47,7 @@
 
 //Proc that moves gas/breath masks out of the way, disabling them and allowing pill/food consumption
 /obj/item/clothing/mask/proc/adjustmask(mob/living/user)
-	if(user && user.incapacitated())
+	if(user && user.incapacitated(allow_crit = TRUE))
 		return
 	mask_adjusted = !mask_adjusted
 	if(!mask_adjusted)

@@ -448,7 +448,7 @@
 	. = ..()
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 

@@ -630,7 +630,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr) || usr.lying)
+	if(usr.incapacitated(allow_crit = TRUE) || !Adjacent(usr) || usr.lying)
 		return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota

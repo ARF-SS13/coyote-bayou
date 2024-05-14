@@ -1408,6 +1408,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, GLOB.default_all_armor_slot_allowed) )
 				return TRUE
+			if(HAS_TRAIT(H, TRAIT_PACKRAT))
+				if(istype(I, /obj/item/storage/backpack))
+					return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)
 			if(H.handcuffed)
@@ -1634,6 +1637,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			log_combat(user, target, "shaked")
 		return 1
 	else
+		if(user == target)
+			to_chat(user, span_warning("You can't quite give yourself CPR!"))
+			return
 		var/we_breathe = !HAS_TRAIT(user, TRAIT_NOBREATH)
 		var/we_lung = user.getorganslot(ORGAN_SLOT_LUNGS)
 
@@ -1645,6 +1651,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			to_chat(user, span_notice("You do not breathe, so you cannot perform CPR."))
 
 /datum/species/proc/grab(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
+	if(user.incapacitated(allow_crit = TRUE))
+		if(!extract_ckey(target)) // you can punch players, not mob
+			return FALSE
+
 	if(target.check_martial_melee_block())
 		target.visible_message(span_warning("[target] blocks [user]'s grab attempt!"), target = user, \
 			target_message = span_warning("[target] blocks your grab attempt!"))
@@ -1665,6 +1675,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		trait_pacifism_lesser_consequences(user)
 		return FALSE
 	//<--
+
+	if(user.incapacitated(allow_crit = TRUE))
+		if(!extract_ckey(target)) // you can punch players, not mob
+			return FALSE
 
 	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm [target]!"))
@@ -1785,6 +1799,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	playsound(place, 'sound/weapons/slap.ogg', vol, FALSE, SOUND_DISTANCE(dist), frequency = 22000) // deep bassy ass
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
+	if(user.incapacitated(allow_crit = TRUE))
+		if(!extract_ckey(target)) // you can punch players, not mob
+			return FALSE
+
 	// CITADEL EDIT slap mouthy gits and booty
 	var/aim_for_mouth = user.zone_selected == "mouth"
 	var/target_on_help = target.a_intent == INTENT_HELP

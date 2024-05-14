@@ -92,6 +92,11 @@
 	/// What flags apply to this wound
 	var/wound_flags = (FLESH_WOUND | BONE_WOUND | ACCEPTS_GAUZE)
 
+	var/aggravated_until = 0
+	var/base_aggravation_time = 30 SECONDS
+	var/base_aggravation_force = 1
+	var/aggravation_scalar = 0
+
 /datum/wound/Destroy()
 	if(attached_surgery)
 		QDEL_NULL(attached_surgery)
@@ -259,6 +264,12 @@
 
 	// lastly, treat them
 	treat(I, user)
+	return TRUE
+
+/// makes the wound worse for a while
+/datum/wound/proc/aggravate_wound(scalar)
+	aggravation_scalar = max(scalar, aggravation_scalar)
+	aggravated_until = world.time + (base_aggravation_time * aggravation_scalar)
 	return TRUE
 
 /// Generic bleed wound treatment from whatever'll allow it

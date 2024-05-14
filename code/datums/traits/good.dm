@@ -1766,6 +1766,15 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient has failed heart monitoring tests multiple times."
 	locked =  FALSE
 
+/datum/quirk/packrat
+	name = "Packrat"
+	desc = "You are well practiced at hoarding random junk, and can carry nearly double what most others can."
+	value = 34
+	category = "Functional Quirks"
+	mechanics = "You can carry a second backpack or duffel bag in your suit slot, for additional stuff!"
+	conflicts = list()
+	mob_trait = TRAIT_PACKRAT
+
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
 	desc = "Rats and wild mice of all kind outright ignore you now."

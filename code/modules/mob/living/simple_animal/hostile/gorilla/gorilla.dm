@@ -34,7 +34,6 @@
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
 	faction = list("jungle")
 	robust_searching = TRUE
-	stat_attack = CONSCIOUS
 	//minbodytemp = 270
 	//maxbodytemp = 350
 	unique_name = TRUE

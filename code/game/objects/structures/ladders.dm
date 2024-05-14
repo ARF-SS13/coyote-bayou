@@ -78,7 +78,7 @@
 	var/mob/peeker = usr
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -110,7 +110,7 @@
 		return
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -260,7 +260,7 @@
 			. |= DOWN_LADDER_WEATHER_IS_DANGEROUS
 
 /obj/structure/ladder/proc/check_menu(mob/user)
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

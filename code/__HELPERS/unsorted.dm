@@ -1715,6 +1715,9 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(ismob(something))
 		return something
 	if(istext(something))
+		var/mob/Mm = locate(something)
+		if(Mm) // if its a REF()
+			return Mm 
 		var/client/C = LAZYACCESS(GLOB.directory, something)
 		if(C)
 			return C.mob

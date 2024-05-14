@@ -896,7 +896,7 @@ armor	//Baseline hardsuits
 	. = ..()
 	if(!in_range(src, user) || !istype(user))
 		return
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 

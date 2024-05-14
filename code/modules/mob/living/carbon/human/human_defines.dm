@@ -98,6 +98,12 @@
 
 	var/busy= FALSE
 
+	COOLDOWN_DECLARE(crit_damage_cd)
+	COOLDOWN_DECLARE(crit_bleed_cd)
+	COOLDOWN_DECLARE(crit_faint_cd)
+	var/list/agonies = list() // we go into crit, we come out with an agony
+	var/crit_agony = 0
+
 /// Unarmed parry data for human
 /datum/block_parry_data/unarmed/human
 	parry_respect_clickdelay = TRUE

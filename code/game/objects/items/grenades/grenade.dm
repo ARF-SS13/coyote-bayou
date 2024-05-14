@@ -74,6 +74,9 @@
 
 
 /obj/item/grenade/attack_self(mob/user)
+	if(user && user.incapacitated(allow_crit = TRUE))
+		to_chat(user, span_danger("You're too messed up to do that!"))
+		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NODROP))
 		to_chat(user, span_notice("You try prying [src] off your hand..."))
 		if(do_after(user, 70, target=src))

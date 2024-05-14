@@ -688,7 +688,7 @@
 	if(!ismob(loc))
 		return
 	var/mob/M = loc
-	if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.incapacitated(allow_crit = TRUE) && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 

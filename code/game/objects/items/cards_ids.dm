@@ -832,14 +832,14 @@
 	. = ..()
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 	if(alert("Are you sure you want to recolor your id?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",id_color) as color|null
 		if(!in_range(src, user) || !energy_color_input)
 			return TRUE
-		if(user.incapacitated() || !istype(user))
+		if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 			to_chat(user, span_warning("You can't do that right now!"))
 			return TRUE
 		id_color = sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1)

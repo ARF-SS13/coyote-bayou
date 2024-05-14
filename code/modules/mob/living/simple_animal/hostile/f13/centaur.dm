@@ -48,7 +48,6 @@
 	a_intent = INTENT_HARM
 	attack_verb_simple = list("whipped", "whacked", "whomped", "wailed on", "smacked", "smashed", "bapped")
 	unsuitable_atmos_damage = 20
-	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("hostile", "supermutant")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/centaur = 3,

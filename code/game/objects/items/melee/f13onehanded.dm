@@ -16,7 +16,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
@@ -44,7 +44,7 @@
 	force = 55
 	throwforce = 10
 	block_chance = 20
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
@@ -156,7 +156,7 @@
 	item_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = INV_SLOTBIT_MASK
+	slot_flags = INV_SLOTBIT_MASK | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 4
 	throwforce = 15
@@ -432,7 +432,7 @@
 	throw_speed = 3
 	throw_range = 3
 	sharpness = SHARP_NONE
-	slot_flags = SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/melee/onehanded/club/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -494,10 +494,10 @@
 	item_state = "classic_baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 18
 	backstab_multiplier = 1.50
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	wound_bonus = 15
 	var/stun_stam_cost_coeff = 1.25
 	var/hardstun_ds = TRUE
@@ -651,8 +651,8 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = INV_SLOTBIT_BELT
-	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = NONE
 	force = 0
 	on = FALSE
@@ -680,7 +680,7 @@
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = INV_SLOTBIT_BELT
+		slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("hit", "poked")
@@ -753,7 +753,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	attack_speed = CLICK_CD_MELEE * 0.9
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
@@ -837,7 +837,7 @@
 	desc = "Lead filled gloves which are ideal for beating the crap out of opponents. Deals significant stamina damage. I mean, I wouldn't want to get punched in the chest with it..."
 	icon_state = "sapper"
 	item_state = "sapper"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	backstab_multiplier = 1.40
 
@@ -852,7 +852,7 @@
 	desc = "Padded gloves which are ideal for beating the crap out of opponents while keeping your own hands protected."
 	icon_state = "fightglovesblack"
 	item_state = "fightglovesblack"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	backstab_multiplier = 1.25
 
@@ -861,7 +861,7 @@
 	desc = "Gloves with short claws built into the palms."
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
 	force = 40
@@ -873,7 +873,7 @@
 	desc = "Leather gloves with razor blades built into the back of the hand."
 	icon_state = "lacerator"
 	item_state = "lacerator"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	force = 40
 	backstab_multiplier = 1.1
 	bare_wound_bonus = 5
@@ -886,7 +886,7 @@
 	desc = "Weighted metal gloves that are covered in spikes.  Don't expect to grab things with this."
 	icon_state = "mace_glove"
 	item_state = "mace_glove"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 45
 	backstab_multiplier = 1.25
 	sharpness = SHARP_NONE
@@ -962,7 +962,7 @@ y
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
@@ -1017,7 +1017,7 @@ y
 	toolspeed = 0.2 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 ///////////
@@ -1123,7 +1123,7 @@ CODE FOR BLEEDING STACK
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -1160,7 +1160,7 @@ CODE FOR BLEEDING STACK
 		to_chat(user, get_on_off_description())
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = INV_SLOTBIT_BELT
+		slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("badgered", "beat")

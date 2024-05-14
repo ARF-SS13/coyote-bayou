@@ -18,7 +18,6 @@
 	health = 100
 	healable = 1
 	speed = 1.2
-	stat_attack = CONSCIOUS//Fuck you, Exotic Jazz. Use words, for people. ~TK
 	obj_damage = 150
 	melee_damage_lower = 25
 	melee_damage_upper = 40

@@ -157,7 +157,6 @@
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
 	maxHealth = 400 // 500 is double 250, so 100 points less than double
 	health = 400
-	stat_attack = CONSCIOUS
 	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -314,7 +313,6 @@
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
 	maxHealth = 400
 	health = 400
-	stat_attack = CONSCIOUS
 	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -396,7 +394,6 @@
 	health = 600
 	color = "#FFFF00"
 	color_mad = rgb(133, 98, 87)
-	stat_attack = CONSCIOUS
 	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -420,7 +417,6 @@
 	mob_armor = ARMOR_VALUE_DEATHCLAW_PA // ha get fucked
 	maxHealth = 1000 // ha get turbofucked
 	health = 1000
-	stat_attack = CONSCIOUS
 	melee_damage_lower = 40
 	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY

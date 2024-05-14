@@ -29,7 +29,7 @@
 	var/obj/machinery/computer/camera_advanced/base_construction/console
 
 /obj/item/construction/rcd/internal/check_menu(mob/living/user)
-	if(!istype(user) || user.incapacitated() || !user.Adjacent(console))
+	if(!istype(user) || user.incapacitated(allow_crit = TRUE) || !user.Adjacent(console))
 		return FALSE
 	return TRUE
 

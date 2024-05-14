@@ -157,7 +157,7 @@
 	. = ..()
 	if (!istype(src_location) || !istype(over_location))
 		return
-	if (!user || user.incapacitated() || !user.Adjacent(src))
+	if (!user || user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src))
 		return
 	if (!(locate(/obj/structure/table) in src_location) || !(locate(/obj/structure/table) in over_location))
 		return

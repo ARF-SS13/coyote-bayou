@@ -605,7 +605,7 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	if(isliving(user))
 		var/mob/living/L = user
 		L.DelayNextAction(CLICK_CD_MELEE)
-		if(!user.incapacitated() && Adjacent(user))
+		if(!user.incapacitated(allow_crit = TRUE) && Adjacent(user))
 			user.visible_message(span_notice("[L] starts washing in \the [src]."),
 								span_notice("You start washing in \the [src]."),
 								span_notice("You hear splashing water and scrubbing."))

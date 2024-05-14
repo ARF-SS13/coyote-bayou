@@ -30,7 +30,7 @@
 
 
 /obj/item/clothing/head/soft/proc/flip(mob/user)
-	if(!user.incapacitated())
+	if(!user.incapacitated(allow_crit = TRUE))
 		src.flipped = !src.flipped
 		if(src.flipped)
 			icon_state = "[soft_type]soft_flipped"

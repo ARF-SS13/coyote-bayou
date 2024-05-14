@@ -1351,7 +1351,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 
 	aiPDA.create_message(src, selected)
@@ -1381,7 +1381,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
 
 /mob/living/silicon/ai/proc/cmd_show_message_log(mob/user)
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 	if(!isnull(aiPDA))
 		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"

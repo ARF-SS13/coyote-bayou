@@ -310,7 +310,7 @@
 /mob/proc/restrained(ignore_grab)
 	return
 
-/mob/proc/incapacitated(ignore_restraints, ignore_grab)
+/mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, allow_crit = FALSE)
 	return
 
 //This proc is called whenever someone clicks an inventory ui slot.
@@ -519,7 +519,7 @@
 	if(ismecha(loc))
 		return
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 
 	var/obj/item/I = get_active_held_item()
