@@ -1098,20 +1098,50 @@
 				shown_health_amount = health
 			if(shown_health_amount >= maxHealth)
 				hud_used.healths.icon_state = "health0"
-			else if(shown_health_amount > maxHealth*0.8)
+			else if(shown_health_amount > maxHealth*0.95)
 				hud_used.healths.icon_state = "health1"
-			else if(shown_health_amount > maxHealth*0.6)
+			else if(shown_health_amount > maxHealth*0.9)
 				hud_used.healths.icon_state = "health2"
-			else if(shown_health_amount > maxHealth*0.4)
+			else if(shown_health_amount > maxHealth*0.85)
 				hud_used.healths.icon_state = "health3"
-			else if(shown_health_amount > maxHealth*0.2)
+			else if(shown_health_amount > maxHealth*0.80)
 				hud_used.healths.icon_state = "health4"
-			else if(shown_health_amount > 0)
+			else if(shown_health_amount > maxHealth*0.75)
 				hud_used.healths.icon_state = "health5"
-			else
+			else if(shown_health_amount > maxHealth*0.70)
 				hud_used.healths.icon_state = "health6"
+			else if(shown_health_amount > maxHealth*0.65)
+				hud_used.healths.icon_state = "health7"
+			else if(shown_health_amount > maxHealth*0.60)
+				hud_used.healths.icon_state = "health8"
+			else if(shown_health_amount > maxHealth*0.55)
+				hud_used.healths.icon_state = "health9"
+			else if(shown_health_amount > maxHealth*0.50)
+				hud_used.healths.icon_state = "health10"
+			else if(shown_health_amount > maxHealth*0.45)
+				hud_used.healths.icon_state = "health11"
+			else if(shown_health_amount > maxHealth*0.40)
+				hud_used.healths.icon_state = "health12"
+			else if(shown_health_amount > maxHealth*0.35)
+				hud_used.healths.icon_state = "health13"
+			else if(shown_health_amount > maxHealth*0.30)
+				hud_used.healths.icon_state = "health14"
+			else if(shown_health_amount > maxHealth*0.25)
+				hud_used.healths.icon_state = "health15"
+			else if(shown_health_amount > maxHealth*0.20)
+				hud_used.healths.icon_state = "health16"
+			else if(shown_health_amount > maxHealth*0.15)
+				hud_used.healths.icon_state = "health17"
+			else if(shown_health_amount > maxHealth*0.10)
+				hud_used.healths.icon_state = "health18"
+			else if(shown_health_amount > maxHealth*0.05)
+				hud_used.healths.icon_state = "health19"
+			else if(shown_health_amount > 0)
+				hud_used.healths.icon_state = "health19"
+			else
+				hud_used.healths.icon_state = "health20"
 		else
-			hud_used.healths.icon_state = "health7"
+			hud_used.healths.icon_state = "health21"
 
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)
 	if(hud_used && hud_used.internals)
