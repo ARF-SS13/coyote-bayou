@@ -17,12 +17,10 @@
 	exit_chance = 25
 
 /// Entrance
-/obj/structrue/dungeon/entrance/sewers
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "manhole_open"
+/obj/structure/dungeon/entrance/sewers
 	dungeon_type = /datum/dungeon_controller/sewer
 
-/obj/structrue/dungeon/exit/sewers
+/obj/structure/dungeon/exit/sewers
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "ladder10"
 

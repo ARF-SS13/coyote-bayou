@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(dungeons)
 	flags = SS_KEEP_TIMING
 	wait = 30 SECONDS
 	var/dungeon_stress_test = FALSE
-	/// List of each unique dungeon instance.
+	/// List of each unique dungeon instance's controller datum.
 	var/list/dungeon_instances = list()
 	/// Tally of how many dungeons have been made
 	var/dungeon_tally = 0
@@ -12,8 +12,12 @@ SUBSYSTEM_DEF(dungeons)
 /datum/controller/subsystem/dungeons/Initialize()
 	return ..()
 
-/// Creates the specified dungeon instance and adds it to the dungeon_instances list. Happens when a player interacts with the entrance to a dungeon and tries to enter it.
-/datum/controller/subsystem/dungeons/proc/CreateDungeonInstance(datum/dungeon_controller/DC)
+/datum/controller/subsystem/dungeons/fire(resumed)
+
+/datum/controller/subsystem/dungeons/proc/CreateDungeonInstance(dungeon_type)
+	if(isnull(dungeon_type))
+		return
+	var/datum/dungeon_controller/DC = new dungeon_type
 	if(isnull(DC) || !istype(DC, /datum/dungeon_controller))
 		return
 	dungeon_tally++
@@ -21,4 +25,4 @@ SUBSYSTEM_DEF(dungeons)
 	dungeon_instances[DC.dungeon_id] = DC
 	return DC
 
-/datum/controller/subsystem/dungeons/proc/connect_entrance(obj/effect/landmark/dungeon_entrance/E)
+//datum/controller/subsystem/dungeons/proc/connect_entrance(obj/structure/dungeon/entrance/E)

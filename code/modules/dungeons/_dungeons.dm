@@ -18,10 +18,12 @@
 	var/max_middle_maps = 0
 	/// Can we roll into the same middle map more than once?
 	var/can_dupe_middle_maps = FALSE
-	/// When rolling a middle map, this is the chance to instead roll an exit map.
+	/// When rolling a middle map, this is the chance to instead roll an exit map. If 0, will always roll the max middle maps and an exit map.
 	var/exit_chance = 50
 	/// An associative list of map templates that have been spawned for this controller with their respective turf reservations.
 	var/list/my_maps = list()
+	///
+	var/list/my_reservations = list()
 	/// Controls dynamic loot and mob spawning behavior. Also determines what tier of rift stabilizer you need to open an instance of this dungeon.
 	var/loot_abundance = LOOT_TIER_MID
 
@@ -31,11 +33,14 @@
 		min_middle_maps = LAZYLEN(middle_maps)
 		max_middle_maps = max(min_middle_maps, max_middle_maps)
 	exit_chance = clamp(exit_chance, 0, 100)
+	
+	MakeMapList()
 
-	// Generate the order of the dungeon's maps
-	// We will associate the turf reservations for them later, when they're actually generated
-	my_maps += pick(start_maps)
+/// Populates the my_maps list with the weighted list of maps to choose from
+/datum/dungeon_controller/proc/MakeMapList()
+	my_maps += pickweight(start_maps)
 	var/mids = 0
+	var/exited = FALSE
 	for(var/i=0, i<max_middle_maps, i++)
 		if(rand(1,100) <= exit_chance) 							// Rolled an exit map chunk
 			if(mids < min_middle_maps) 							// We haven't rolled enough middle maps yet
@@ -44,26 +49,48 @@
 					mids++
 			if(mids >= min_middle_maps)							// We have enough middle maps, so we can roll an exit map
 				my_maps += pick(exit_maps)
+				exited = TRUE
 				break
 		else
 			my_maps += pick(middle_maps)						// We rolled a middle map, so add it to the list
 			mids++
-	SSdungeons.CreateDungeonInstance(src)
+	if(!exited)
+		my_maps += pick(exit_maps)								// We didn't roll an exit map, so add one to the end
+		exited = TRUE
 
+	AssociateMapTemplates()
+
+/// Takes the my_maps list and associates their paths with real map templates to instanciate
+/datum/dungeon_controller/proc/AssociateMapTemplates()
+	for(var/map in my_maps)
+		if(!ispath(map))
+			continue
+		for(var/datum/map_template/dungeon/template in SSmapping.dungeon_templates)
+			if(istype(template, map))
+				map = template
+			message_admins(span_adminnotice("DEBUG: Matched [map] for a map template."))
+		if(ispath(map))
+			message_admins(span_adminnotice("DEBUG: Failed to find dungeon map template for [map]. Report this as a bug!"))
 
 /datum/dungeon_controller/proc/GenerateMap(map_index)
-	var/datum/map_template/dungeon/map = my_maps[map_index]
-	var/datum/turf_reservation/dungeon/reservation = SSmapping.RequestBlockReservation(map.width, map.height, type = /datum/turf_reservation/dungeon)
-	if(!reservation)
+	var/datum/map_template/dungeon/map
+	if(ispath(my_maps[map_index]))
+		my_maps[map_index] = locate(my_maps[map_index]) in SSmapping.dungeon_templates
+	var/datum/turf_reservation/dungeon/reservation = map.spawn_dungeon_map_chunk()
+	if(!istype(reservation))
 		message_admins(span_adminnotice("DEBUG:Failed to reserve space to spawn a dungeon.")) 											//We couldn't reserve a spot.
 		return
-	var/turf/placement = locate(reservation.bottom_left_coords[1],reservation.bottom_left_coords[2],reservation.bottom_left_coords[3])
-	map.load(placement)																														//Place the dungeon
-	var/turf/center = locate(placement.x + round(map.width/2),placement.y + round(map.height/2),placement.z)									//Locate the center turf of the dungeon to spawn a dungeon controller / landmark thing
-	new /obj/effect/landmark/dungeon_mark(center, src)
-	message_admins(span_adminnotice("DEBUG:Dungeon chunk #[map_index] for \"[dungeon_id]\" placed at [ADMIN_COORDJMP(center)]"))
-	my_maps[map_index] = reservation
+	my_reservations[map_index] = reservation
+	my_maps[map_index] = map
 	return reservation
+
+
+
+
+//dungeon controller
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//map templates
+
 
 /// An individual map chunk for a dungeon.
 /datum/map_template/dungeon
@@ -146,39 +173,83 @@
 			The Reclaimers have been known to use these to access hidden caches of advanced technology and resources."
 	// Can open rifts of this tier and below. Compares against the dungeon's loot_abundance
 	var/dungeon_tier = LOOT_TIER_MID
+	// How many uses this stabilizer has before it disintegrates. Set to 0 for infinite uses.
+	var/uses = 1
+
+/obj/item/rift_stabilizer/proc/ReduceUses(amount)
+	if(uses > 0)
+		uses -= amount
+		if(uses <= 0)
+			visible_message(span_warning("[src] disintegrates into dust."),
+							span_warning("[src] disintegrates into dust."),
+							span_warning("You hear electrical sparks flying and the sound of metal crumbling into dust."))
+			qdel(src)
 
 /obj/item/rift_stabilizer/advanced
 	name = "advanced rift stabilizer"
 	icon_state = "rift_stabilizer_2"
 	dungeon_tier = LOOT_TIER_HIGHEST
 
-/obj/structrue/dungeon
+/obj/item/rift_stabilizer/infinite
+	name = "perfected rift stabilizer"
+	desc = "A perfected version of the rift stabilizer that never runs out of uses. A practically mythical piece of tech within the Reclaimers."
+	icon_state = "rift_stabilizer_2"
+	light_range = 2
+	light_color = "#aec314"
+	dungeon_tier = LOOT_TIER_HIGHEST
+	uses = 0
+
+/obj/structure/dungeon
 	name = "dungeon thing"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /// Click on this to enter a dungeon
-/obj/structrue/dungeon/entrance
+/obj/structure/dungeon/entrance
 	/// The typepath of the dungeon we use
 	var/dungeon_type
+	/// The tier of rift stabilizer needed to open this dungeon.
+	var/dungeon_tier
 	/// List of dungeon controllers created for this entrance. Lets several people run the same dungeon at once.
 	var/list/instances = list()
+	icon = 'modular_coyote/icons/objects/dungeon_obj.dmi'
+	icon_state = "entrance_mapping"
+	var/icon_stabilized = "entrance_stab"
+	var/icon_unstabilized = "entrance"
+	var/stabilized = FALSE
+	light_range = 5
+	light_color = "#00FFFF"
 
+/obj/structure/dungeon/entrance/Initialize()
+	. = ..()
+	icon_state = stabilized ? icon_stabilized : icon_unstabilized
 
-/obj/structrue/dungeon/attackby(obj/item/C, mob/user, params)
-	if(istype(C, /obj/item/rift_stabilizer))
-		if(C.dungeon_tier < dungeon_type.loot_abundance)
-			to_chat(user, span_warning("This rift is too powerful for [src] to stabilize it. A stronger one might work."),
-			MESSAGE_TYPE_INFO)
-			// Play a negative sound
+/obj/structure/dungeon/entrance/proc/TryMakeNewDungeon(mob/user, obj/item/rift_stabilizer/R)
+	if(user && R)
+		if(dungeon_tier && R.dungeon_tier < dungeon_tier)
+			to_chat(user, span_warning("This particular rift is too powerful for [src] to stabilize it. A stronger one might work."))
+			// Play a negative sound here
 			return
-		var/datum/dungeon_controller/DC = new dungeon_type(src)
-		LAZYADD(instances, DC)
+	var/datum/dungeon_controller/DC = SSdungeons.CreateDungeonInstance(dungeon_type)
+	if(!DC || isnull(DC))
+		if(user)
+			to_chat(user, span_warning("Failed to create a dungeon instance. Report this as a bug!"))
+		return
+	//play a positive sound here
+	LAZYADD(instances, DC)
+	R?.ReduceUses(1)
+	DC.GenerateMap(1)//Generate the first map chunk so it can be used instantly
+	return DC
 
+/obj/structure/dungeon/entrance/attackby(obj/item/C, mob/user, params)
+	if(istype(C, /obj/item/rift_stabilizer))
+		var/datum/dungeon_controller/DC = TryMakeNewDungeon(user, C)
+		if(DC)
+			visible_message(user, span_notice("The rift stabilizer hums and crackles with energy as it stabilizes the rift."),
+							span_notice("The rift stabilizer hums and crackles with energy as it stabilizes the rift."),
+							span_notice("You hear crackling and sparking before a stable hum eminates."))
+			DC.GenerateMap(1)
 	else
-		return ..()
-
-	
-	
+		. = ..()
 
 /obj/effect/landmark/dungeon_entrance/debug_1
 
