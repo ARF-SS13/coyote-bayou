@@ -1676,7 +1676,7 @@
 	give_message_span = "notice"
 	self_message = "You <span class='love'>heave your breasts in a displeasured manner towards</span> %TARGET%!"
 	self_message_span = "notice" // check them out in spans.dm!
-	target_message = "%FLIRTER% is maybe <span class='love'>heav</span>?"
+	target_message = "%FLIRTER% is maybe <span class='love'>heaving their breasts at you?</span>?"
 	target_message_span = "notice"
 	aoe_message = "%FLIRTER% stretches a bit."
 	aoe_message_span = "notice"

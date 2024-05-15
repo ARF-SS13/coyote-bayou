@@ -255,29 +255,36 @@
 		H.dna.species.attack_verb = "bites"
 
 /obj/item/hand_item/biter/creature
-	force = 25
-	force_wielded = 30
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	
 
 /obj/item/hand_item/biter/big
 	name = "Big Biter"
 	desc = "Talk shit, get BIG bit."
 	color = "#884444"
-	force = 25
+	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/biter/sabre
 	name = "Sabre Toothed Biter"
 	desc = "Damn bitch, you eat with them teeth?"
 	color = "#FF4444"
-	force = 40
+	force = 45
+	force_wielded = 55
+	force_unwielded = 45
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/biter/fast
 	name = "Fast Biter"
 	desc = "Talk shit, get SPEED bit."
 	color = "#448844"
-	force = 18
+	force = 25
+	force_wielded = 30
+	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 0.5
 
 /obj/item/hand_item/biter/play
@@ -286,13 +293,16 @@
 	color = "#ff44ff"
 	force = 0
 	force_wielded = 0
+	force_unwielded = 0
 	attack_speed = 1
 
 /obj/item/hand_item/biter/spicy
 	name = "Spicy Biter"
 	desc = "Your sickly little nibbler, good for dropping fools."
 	color = "#44FF44"
-	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 
@@ -313,7 +323,9 @@
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
-	force = 15
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	backstab_multiplier = 1.8
 	throwforce = 0
 	wound_bonus = 4
@@ -350,12 +362,16 @@
 
 /obj/item/hand_item/clawer/creature
 	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 
 /obj/item/hand_item/clawer/big
 	name = "Big Clawer"
 	desc = "Thems some BIG ASS claws."
 	color = "#884444"
-	force = 25
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/razor
@@ -363,13 +379,17 @@
 	desc = "RIP AND TEAR."
 	color = "#FF4444"
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/clawer/fast
 	name = "Fast Clawer"
 	desc = "Thems some FAST ASS claws."
 	color = "#448844"
-	force = 18
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	attack_speed = CLICK_CD_MELEE * 0.5
 
 /obj/item/hand_item/clawer/play
@@ -377,13 +397,17 @@
 	desc = "Basically just a bean thwapper."
 	color = "#FF88FF"
 	force = 0
+	force_wielded = 0
+	force_unwielded = 0
 	attack_speed = 1
 
 /obj/item/hand_item/clawer/spicy
 	name = "Spicy Clawer"
 	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
 	color = "#44FF44"
-	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
@@ -403,6 +427,8 @@
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	backstab_multiplier = 1.5
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
@@ -426,6 +452,8 @@
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	backstab_multiplier = 1.5
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0

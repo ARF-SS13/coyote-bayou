@@ -512,7 +512,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 			new /datum/stack_recipe("welcome mat", /obj/structure/rug/mat/welcome, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
 		)), \
 	null, \
-	))
+))
 
 /obj/item/stack/sheet/cloth
 	name = "cloth"
