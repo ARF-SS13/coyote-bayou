@@ -46,15 +46,13 @@
 	..()
 	. = TRUE
 
-
-
 /datum/reagent/consumable/tea/coyotetea
 	name = "Coyote Tea"
 	description = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
 	color = "#008000"
 	nutriment_factor = 0
 	taste_description = "smoke"
-	glass_icon_state = "coyotetea"
+	glass_icon_state = "tea"
 	glass_name = "Coyote Tea"
 	glass_desc = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
 
