@@ -1277,7 +1277,7 @@
 
 /mob/living/simple_animal/advanced/hivebot/factory/Initialize(trait_source = TRAIT_GENERIC)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_TREASURE_HUNTER, "treasurehunter")
+	/*ADD_TRAIT(src, TRAIT_TREASURE_HUNTER, "treasurehunter")*/// Not until crafting menus are fixed
 	ADD_TRAIT(src, TRAIT_TECHNOPHREAK, "technophreak")
 	ADD_TRAIT(src, TRAIT_QUICK_BUILD, "quick-build")
 
