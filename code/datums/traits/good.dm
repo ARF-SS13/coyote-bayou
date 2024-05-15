@@ -455,7 +455,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
-/datum/quirk/treasurehunter 
+/*/datum/quirk/treasurehunter 
 	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
 	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
 	value = 22
@@ -468,7 +468,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You really feel like digging.")
 	lose_text = span_notice("You really don't feel like digging.")
 	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
-	human_only = FALSE
+	human_only = FALSE*/// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
 
 
 /datum/quirk/musician
