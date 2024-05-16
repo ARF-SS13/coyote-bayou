@@ -418,7 +418,7 @@ ATTACHMENTS
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
-	if(user && user.incapacitated())
+	if(user && user.incapacitated(allow_crit = TRUE))
 		to_chat(user, span_danger("You're too messed up to shoot [src]!"))
 		return
 
@@ -622,6 +622,7 @@ ATTACHMENTS
 					shoot_live_shot(user, 1, target, message, stam_cost, BB, casing_sound)
 				else
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
+				user.in_crit_HP_penalty = 25
 		else
 			shoot_with_empty_chamber(user)
 			update_icon()

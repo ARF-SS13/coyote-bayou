@@ -1490,24 +1490,16 @@
 	if(isnull(.))
 		return
 	update_mobility()
-// 	if(new_stat == SOFT_CRIT)
-// 		enter_soft_crit()
-// 	else
-// 		leave_soft_crit()
+	if(new_stat == SOFT_CRIT)
+		enter_soft_crit()
+	else
+		leave_soft_crit()
 
-// /mob/living/proc/enter_soft_crit()
-// 	if(stat != SOFT_CRIT)
-// 		return
-// 	if((last_entered_soft_crit + SOFT_CRIT_FLAIL_COOLDOWN) > world.time)
-// 		return
-// 	throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
-// 	last_entered_soft_crit = world.time
-// 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, PROC_REF(chicken_hat))
+/mob/living/proc/enter_soft_crit()
+	in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
 
-// /mob/living/proc/leave_soft_crit()
-
-
-// /mob/living/proc/process_soft_crit()
+/mob/living/proc/leave_soft_crit()
+	in_crit_HP_penalty = 0
 
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))

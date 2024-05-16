@@ -999,47 +999,17 @@
 		return
 
 	if(health <= crit_threshold)
-		var/severity = 0
-		switch(health)
-			if(-20 to -10)
-				severity = 1
-			if(-30 to -20)
-				severity = 2
-			if(-40 to -30)
-				severity = 3
-			if(-50 to -40)
-				severity = 4
-			if(-50 to -40)
-				severity = 5
-			if(-60 to -50)
-				severity = 6
-			if(-70 to -60)
-				severity = 7
-			if(-90 to -70)
-				severity = 8
-			if(-95 to -90)
-				severity = 9
-			if(-INFINITY to -95)
-				severity = 10
-		if(!InFullCritical())
-			var/visionseverity = 4
-			switch(health)
-				if(-8 to -4)
-					visionseverity = 5
-				if(-12 to -8)
-					visionseverity = 6
-				if(-16 to -12)
-					visionseverity = 7
-				if(-20 to -16)
-					visionseverity = 8
-				if(-24 to -20)
-					visionseverity = 9
-				if(-INFINITY to -24)
-					visionseverity = 10
-			overlay_fullscreen("critvision", /atom/movable/screen/fullscreen/crit/vision, visionseverity)
+		var/total_crit_span = -HEALTH_THRESHOLD_FULLCRIT + crit_threshold // -(-125) + -20 = 105
+		var/adjusted_hp = -HEALTH_THRESHOLD_FULLCRIT + health // -(-125) + -55 = 70
+		/// how much damage we have taken past the crit threshold
+		var/damage_into_crit = total_crit_span - adjusted_hp // 105 - 70 = 35
+		var/crit_proportion = round((damage_into_crit / total_crit_span) * 10) // 35 / 105 = 0.3333 * 10 = 3.3333 = 3
+		var/severity = crit_proportion
+		if(severity > 5)
+			overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		else
-			clear_fullscreen("critvision")
-		overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
+			clear_fullscreen("crit")
+		overlay_fullscreen("critvision", /atom/movable/screen/fullscreen/crit/vision, severity)
 	else
 		clear_fullscreen("crit")
 		clear_fullscreen("critvision")
@@ -1069,21 +1039,10 @@
 
 	//Fire and Brute damage overlay (BSSR)
 	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(hurtdamage)
-		var/severity = 0
-		switch(hurtdamage)
-			if(5 to 15)
-				severity = 1
-			if(15 to 30)
-				severity = 2
-			if(30 to 45)
-				severity = 3
-			if(45 to 70)
-				severity = 4
-			if(70 to 85)
-				severity = 5
-			if(85 to INFINITY)
-				severity = 6
+	if(hurtdamage > 2)
+		var/HP_before_crit = maxHealth - crit_threshold
+		/// returns an integer from 0 to 6, representing the severity of the damage
+		var/severity = clamp(round((hurtdamage / HP_before_crit) * 6), 0, 6)
 		overlay_fullscreen("brute", /atom/movable/screen/fullscreen/brute, severity)
 	else
 		clear_fullscreen("brute")
@@ -1092,6 +1051,7 @@
 	if(!client || !hud_used)
 		return
 	if(hud_used.healths)
+		hud_used.healths.FormattifyHealthText(src, shown_health_amount)
 		if(stat != DEAD)
 			. = 1
 			if(!shown_health_amount)
@@ -1112,6 +1072,14 @@
 				hud_used.healths.icon_state = "health6"
 		else
 			hud_used.healths.icon_state = "health7"
+
+/mob/living/proc/attackable_in_crit()
+	if(health > crit_threshold)
+		return TRUE
+	if(stat > SOFT_CRIT)
+		return FALSE
+	if(stat == SOFT_CRIT && in_crit_HP_penalty > 0)
+		return TRUE
 
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)
 	if(hud_used && hud_used.internals)
