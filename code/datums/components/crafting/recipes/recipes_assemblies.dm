@@ -2,7 +2,7 @@
 // Diggy hole			//
 //////////////////////////
 
-/datum/crafting_recipe/trashloot
+/*/datum/crafting_recipe/trashloot
 	name = "Quickly dig up trash"
 	result = /obj/effect/spawner/lootdrop/f13/trash
 	reqs = list() // This should mean it requires nothing to craft, right?
@@ -23,7 +23,7 @@
 		return
 	parent.visible_message(span_notice("[parent] digs up some stuff!"))
 	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
-
+*/// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
 /*
 /datum/crafting_recipe/trashloot/common
 	name = "Dig up common loot"
@@ -40,11 +40,11 @@
 
 // if you can give me a valid reason just to be able to spawn free shit besides unicorn horn arguments, do let me know 
 
-/datum/crafting_recipe/trashloot/rock
+/*/datum/crafting_recipe/trashloot/rock
 	name = "Excavate a strange rock"
 	result = /obj/item/strangerock
 	reqs = list(/obj/item/pickaxe = 1) // so you at least have to put SOMETHING in
-	time = 60 SECONDS 
+	time = 60 SECONDS */// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
 
 ///////////////////////////
 //Electronics and Robots//

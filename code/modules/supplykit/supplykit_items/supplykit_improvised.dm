@@ -73,13 +73,13 @@
 	item = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 
 /datum/supplykit_item/improvised/shortbow
-	name = "Shortbow"
+	name = "Short bow"
 	desc = "A small bow, short enough to be stashed in a backpack."
 	item = /obj/item/gun/ballistic/bow/shortbow
 	cost = 20
 
 /datum/supplykit_item/improvised/recurve
-	name = "Longow"
+	name = "Long bow"
 	desc = "A tall, bulky bow, with a high power draw."
 	item = /obj/item/gun/ballistic/bow/longbow
 	cost = 20
