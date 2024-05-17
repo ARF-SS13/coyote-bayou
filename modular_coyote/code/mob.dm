@@ -1285,7 +1285,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, "ignoredamageslowdown")
 	ADD_TRAIT(src, TRAIT_HEAL_TEND, "healing_triage")
-		
+
 /mob/living/simple_animal/advanced/hivebot/Initialize(mapload)
 	. = ..()
 	notify_ghosts("A new FRIENDLY hivebot has been created somewhere on the map, click it to take control!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_FUGITIVE)
@@ -1455,6 +1455,16 @@
 	icon_state = "purple_kirin"
 	icon_living = "purple_kirin"
 	icon_dead = "purple_kirin_dead"
+
+/mob/living/simple_animal/advanced/greycat
+	name = "fluffy cat"
+	desc = "a fluffy grey and white cat."
+	icon = 'modular_coyote/icons/mob/cat.dmi'
+	icon_state = "grey_white"
+	icon_living = "grey_white"
+	icon_dead = "grey_white_dead"
+    resize = 0.5
+
 
 
 
