@@ -402,7 +402,7 @@ SUBSYSTEM_DEF(monster_wave)
 	qdel(src)
 
 /obj/item/packaged_respawner_blocker
-	name = "folded anti-transcendental field generator"
+	name = "monster rift destabiling device"
 	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And it fits neatly in your pocket, given that your pocket is actually a duffelbag."
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator-closed"

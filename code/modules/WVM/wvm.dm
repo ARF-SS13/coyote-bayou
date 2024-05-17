@@ -904,7 +904,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Portable Cell Charger",					/obj/item/storage/battery_box,										50),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 					/obj/item/book/granter/crafting_recipe/ODF,							150),
 		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",			/obj/item/book/granter/trait/trekking,								350),
-		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
+		new /datum/data/wasteland_equipment("Rift Repelling Machine",					/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick Pouch",							/obj/item/storage/fancy/flare_pouch/glowstick,						5), 
 		new /datum/data/wasteland_equipment("Flare Pouch",								/obj/item/storage/fancy/flare_pouch,								5), // larp
 		new /datum/data/wasteland_equipment("Hand teleporter",							/obj/item/hand_tele,												0),
