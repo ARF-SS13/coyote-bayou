@@ -1820,7 +1820,7 @@
 	"Medical" = "med_",
 	"White" = "white_",
 	"Janitor" = "jani_",
-	"Engineer" = "engi_",
+	"Engineer" = "eng_",
 	"Service" = "serv_",
 	"Cargo" = "car_")
 /mob/living/carbon/human/species/smolraptor
