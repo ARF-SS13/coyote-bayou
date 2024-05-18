@@ -1811,6 +1811,7 @@
 	id = "smolraptor"
 	simple_icon = 'modular_coyote/icons/mob/microraptor.dmi'
 	roundstart = TRUE
+	rotate_on_lying = TRUE
 	alt_prefixes = list(
 	"Central Command" = "cc_", 
 	"Science" = "sci_", 
