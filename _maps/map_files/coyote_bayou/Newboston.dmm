@@ -1706,7 +1706,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/brflowers{
@@ -3343,7 +3342,6 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/decoration/hatch{
-	dir = 2;
 	icon_state = "vault_cargo";
 	pixel_y = 39
 	},
@@ -4889,7 +4887,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -5433,8 +5430,7 @@
 "cXj" = (
 /obj/machinery/light{
 	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -6102,7 +6098,6 @@
 "dts" = (
 /obj/structure/sign/departments/medbay,
 /obj/structure/decoration/hatch{
-	dir = 2;
 	icon_state = "vault_clinic";
 	pixel_y = 6;
 	name = "sign";
@@ -6276,13 +6271,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/loading_area{
-	pixel_y = 0;
 	dir = 4;
 	pixel_x = 2
 	},
 /obj/effect/turf_decal/caution{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /turf/open/floor/pod{
@@ -8234,13 +8227,11 @@
 /area/f13/building)
 "eGh" = (
 /obj/effect/turf_decal/loading_area{
-	pixel_y = 0;
 	dir = 4;
 	pixel_x = 2
 	},
 /obj/effect/turf_decal/caution{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /obj/effect/turf_decal/weather/splineplaincee{
@@ -10376,7 +10367,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -10983,7 +10973,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/brflowers{
@@ -11171,7 +11160,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -11975,7 +11963,6 @@
 /area/f13/caves)
 "gzn" = (
 /obj/structure/cave/support{
-	pixel_y = 0;
 	anchored = 1;
 	pixel_x = -12
 	},
@@ -12265,7 +12252,6 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "gIr" = (
 /obj/structure/cave/support{
-	pixel_y = 0;
 	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -12903,7 +12889,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -13801,8 +13786,7 @@
 /obj/effect/landmark/start/f13/texasranger,
 /obj/machinery/light{
 	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -14171,7 +14155,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -14774,7 +14757,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/fullgrass{
@@ -14997,7 +14979,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/ywflowers{
@@ -15297,7 +15278,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -15510,8 +15490,7 @@
 	},
 /obj/machinery/light{
 	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/trader)
@@ -16082,7 +16061,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -18284,7 +18262,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -19266,7 +19243,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -19824,7 +19800,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -21362,7 +21337,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -21557,7 +21531,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -21843,7 +21816,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/ywflowers{
@@ -22118,7 +22090,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -22254,9 +22225,7 @@
 /obj/effect/turf_decal/weather/dirtcorner{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/dirtcorner{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirtcorner,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
 	color = "#A1BFFF"
@@ -22750,7 +22719,6 @@
 	color = "#363636"
 	},
 /obj/structure/decoration/hatch{
-	dir = 2;
 	icon_state = "vault_diner";
 	plane = 0;
 	pixel_y = 13;
@@ -24466,7 +24434,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/ywflowers{
@@ -27400,7 +27367,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -28424,7 +28390,6 @@
 "pwM" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
-	dir = 2;
 	termtag = "Public"
 	},
 /obj/effect/turf_decal/weather/splineplaincee{
@@ -28525,7 +28490,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12;
 	opacity = 1
 	},
@@ -31361,7 +31325,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -32043,9 +32006,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rpU" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
 	color = "#A1BFFF"
@@ -32283,13 +32244,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/loading_area{
-	pixel_y = 0;
 	dir = 4;
 	pixel_x = 2
 	},
 /obj/effect/turf_decal/caution{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /turf/open/floor/pod/light,
@@ -32681,8 +32640,7 @@
 /area/f13/trainstation)
 "rHz" = (
 /obj/structure/railing{
-	dir = 6;
-	pixel_y = 0
+	dir = 6
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -33344,7 +33302,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/ywflowers{
@@ -33643,7 +33600,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -33703,7 +33659,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -34093,7 +34048,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -36216,7 +36170,6 @@
 /area/f13/building)
 "tAv" = (
 /obj/structure/cave/support{
-	pixel_y = 0;
 	anchored = 1
 	},
 /turf/open/floor/plating/ashplanet/wateryrock{
@@ -36303,7 +36256,6 @@
 	color = "#999999"
 	},
 /obj/structure/decoration/hatch{
-	dir = 2;
 	icon_state = "vault_botany";
 	plane = 0;
 	pixel_y = 7
@@ -36515,8 +36467,7 @@
 "tKS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mineral/wasteland_vendor/traderspecial{
-	icon_state = "trade_,mining";
-	pixel_y = 0
+	icon_state = "trade_,mining"
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
@@ -36779,9 +36730,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tRA" = (
-/obj/machinery/mineral/wasteland_vendor/mining{
-	pixel_y = 0
-	},
+/obj/machinery/mineral/wasteland_vendor/mining,
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
 "tRQ" = (
@@ -37596,7 +37545,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -38035,7 +37983,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -38211,7 +38158,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -38384,6 +38330,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"uOD" = (
+/obj/effect/landmark/safe_home,
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "uPk" = (
 /obj/structure/sink{
 	pixel_y = 15
@@ -38845,7 +38797,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -40711,7 +40662,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/ywflowers{
@@ -40827,7 +40777,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -40946,7 +40895,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/chomp/bush2{
@@ -41944,7 +41892,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /obj/structure/flora/ausbushes/brflowers{
@@ -41973,8 +41920,7 @@
 "wQA" = (
 /obj/machinery/light{
 	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -42785,7 +42731,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -43526,7 +43471,6 @@
 	id = "heavens_night"
 	},
 /obj/structure/decoration/hatch{
-	dir = 2;
 	icon_state = "vault_erp";
 	pixel_y = 34;
 	alpha = 150;
@@ -43631,7 +43575,6 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
 	plane = -2;
-	pixel_y = 0;
 	pixel_x = 12
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -78001,7 +77944,7 @@ nHr
 dsp
 klQ
 rHb
-uWY
+uOD
 kTZ
 tLM
 mLI

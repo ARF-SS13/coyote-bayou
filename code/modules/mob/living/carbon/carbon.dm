@@ -596,6 +596,9 @@
 		buckled.user_unbuckle_mob(src,src)
 
 /mob/living/carbon/resist_fire()
+	var/obj/item/extinguisher/E = GetExtinguisher()
+	if(E && E.autoextinguish(src))
+		return 
 	fire_stacks -= 5
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
@@ -1005,7 +1008,7 @@
 		var/damage_into_crit = total_crit_span - adjusted_hp // 105 - 70 = 35
 		var/crit_proportion = round((damage_into_crit / total_crit_span) * 10) // 35 / 105 = 0.3333 * 10 = 3.3333 = 3
 		var/severity = crit_proportion
-		if(severity > 5)
+		if(severity > 8 || InFullCritical())
 			overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		else
 			clear_fullscreen("crit")
@@ -1056,47 +1059,52 @@
 			. = 1
 			if(!shown_health_amount)
 				shown_health_amount = health
-			if(shown_health_amount >= maxHealth)
+			var/dmg_before_crit = maxHealth - crit_threshold
+			var/dmg_taken = maxHealth - shown_health_amount
+			var/healthpercent = (((dmg_before_crit - dmg_taken) / (dmg_before_crit == 0 ? 0.01 : dmg_before_crit)) * 100) // percent of health remaining
+			var/rawnum = round(healthpercent, 5)
+
+			if(rawnum >= 100)
 				hud_used.healths.icon_state = "health0"
-			else if(shown_health_amount > maxHealth*0.95)
+			else if(rawnum > 95)
 				hud_used.healths.icon_state = "health1"
-			else if(shown_health_amount > maxHealth*0.9)
+			else if(rawnum > 90)
 				hud_used.healths.icon_state = "health2"
-			else if(shown_health_amount > maxHealth*0.85)
+			else if(rawnum > 85)
 				hud_used.healths.icon_state = "health3"
-			else if(shown_health_amount > maxHealth*0.80)
+			else if(rawnum > 80)
 				hud_used.healths.icon_state = "health4"
-			else if(shown_health_amount > maxHealth*0.75)
+			else if(rawnum > 75)
 				hud_used.healths.icon_state = "health5"
-			else if(shown_health_amount > maxHealth*0.70)
+			else if(rawnum > 70)
 				hud_used.healths.icon_state = "health6"
-			else if(shown_health_amount > maxHealth*0.65)
+			else if(rawnum > 65)
 				hud_used.healths.icon_state = "health7"
-			else if(shown_health_amount > maxHealth*0.60)
+			else if(rawnum > 60)
 				hud_used.healths.icon_state = "health8"
-			else if(shown_health_amount > maxHealth*0.55)
+			else if(rawnum > 55)
 				hud_used.healths.icon_state = "health9"
-			else if(shown_health_amount > maxHealth*0.50)
+			else if(rawnum > 50)
 				hud_used.healths.icon_state = "health10"
-			else if(shown_health_amount > maxHealth*0.45)
+			else if(rawnum > 45)
 				hud_used.healths.icon_state = "health11"
-			else if(shown_health_amount > maxHealth*0.40)
+			else if(rawnum > 40)
 				hud_used.healths.icon_state = "health12"
-			else if(shown_health_amount > maxHealth*0.35)
+			else if(rawnum > 35)
 				hud_used.healths.icon_state = "health13"
-			else if(shown_health_amount > maxHealth*0.30)
+			else if(rawnum > 30)
 				hud_used.healths.icon_state = "health14"
-			else if(shown_health_amount > maxHealth*0.25)
+			else if(rawnum > 25)
 				hud_used.healths.icon_state = "health15"
-			else if(shown_health_amount > maxHealth*0.20)
+			else if(rawnum > 20)
 				hud_used.healths.icon_state = "health16"
-			else if(shown_health_amount > maxHealth*0.15)
+			else if(rawnum > 15)
 				hud_used.healths.icon_state = "health17"
-			else if(shown_health_amount > maxHealth*0.10)
+			else if(rawnum > 10)
 				hud_used.healths.icon_state = "health18"
-			else if(shown_health_amount > maxHealth*0.05)
+			else if(rawnum > 5)
 				hud_used.healths.icon_state = "health19"
-			else if(shown_health_amount > 0)
+			else if(rawnum > 0)
 				hud_used.healths.icon_state = "health19"
 			else
 				hud_used.healths.icon_state = "health20"
@@ -1104,11 +1112,11 @@
 			hud_used.healths.icon_state = "health21"
 
 /mob/living/proc/attackable_in_crit()
-	if(health > crit_threshold)
+	if(!InCritical())
 		return TRUE
-	if(stat > SOFT_CRIT)
+	if(InFullCritical())
 		return FALSE
-	if(stat == SOFT_CRIT && in_crit_HP_penalty > 0)
+	if(InCritical() && in_crit_HP_penalty > 0)
 		return TRUE
 
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)

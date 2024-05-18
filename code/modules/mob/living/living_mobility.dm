@@ -84,7 +84,7 @@
 	var/pinned = resting && pulledby && pulledby.grab_state >= GRAB_NECK // Cit change - adds pinning for aggressive-grabbing people on the ground
 	var/has_limbs = has_arms || ignore_legs || has_legs
 	var/canmove = !immobilize && !stun && conscious && !paralyze && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && has_limbs && !pinned && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
-	var/canresist = !stun && conscious && !stat_softcrit && !paralyze && has_limbs && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
+	var/canresist = canmove // !stun && conscious && !paralyze && has_limbs && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
 
 	if(canmove)
 		mobility_flags |= MOBILITY_MOVE

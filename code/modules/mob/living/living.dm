@@ -1262,7 +1262,13 @@
 /mob/living/proc/fakefire()
 	return
 
-
+/// looks for an extinguisher in the user's inventory no matter where it is and returns it
+/mob/living/proc/GetExtinguisher()
+	var/list/everything = get_all_in_turf(src)
+	for(var/obj/item/I in everything)
+		if(istype(I, /obj/item/extinguisher))
+			if(I.reagents.has_reagent(/datum/reagent/water, 1))
+				return I
 
 //Mobs on Fire
 /mob/living/proc/IgniteMob()
@@ -1496,11 +1502,12 @@
 		leave_soft_crit()
 
 /mob/living/proc/enter_soft_crit()
+	throw_alert("cret", /atom/movable/screen/alert/in_crit)
 	in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
 
 /mob/living/proc/leave_soft_crit()
 	in_crit_HP_penalty = 0
-
+	clear_alert("cret")
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))
 	set category = "IC"

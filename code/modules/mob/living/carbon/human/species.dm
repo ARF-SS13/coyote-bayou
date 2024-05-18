@@ -2247,7 +2247,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!forced && hit_percent <= 0)
 		return 0
-	if(H.in_crit_HP_penalty && H.stat > CONSCIOUS && damage > 0)
+	if(H.in_crit_HP_penalty && H.InCritical() && damage > 0)
 		H.in_crit_HP_penalty -= damage
 
 	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
