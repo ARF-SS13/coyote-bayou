@@ -1806,6 +1806,25 @@
 /mob/living/carbon/human/species/wreckraptor
 	race = /datum/species/adapted/raptorborg/wreckraptor
 
+/datum/species/adapted/raptorborg/smolraptor
+	name = "Adapted Smolraptor"
+	id = "smolraptor"
+	simple_icon = 'modular_coyote/icons/mob/microraptor.dmi'
+	roundstart = TRUE
+	alt_prefixes = list(
+	"Central Command" = "cc_", 
+	"Science" = "sci_", 
+	"White" = "white_", 
+	"Mining" = "mine_", 
+	"Medical" = "med_",
+	"White" = "white_",
+	"Janitor" = "jani_",
+	"Engineer" = "engi_",
+	"Service" = "serv_",
+	"Cargo" = "car_")
+/mob/living/carbon/human/species/smolraptor
+	race = /datum/species/adapted/raptorborg/smolraptor
+
 /datum/species/adapted/raptorborg/microraptor
 	name = "Adapted Microraptor"
 	id = "raptor"
