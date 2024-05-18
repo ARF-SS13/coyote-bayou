@@ -1811,6 +1811,7 @@
 	id = "smolraptor"
 	simple_icon = 'modular_coyote/icons/mob/microraptor.dmi'
 	roundstart = TRUE
+	rotate_on_lying = TRUE
 	alt_prefixes = list(
 	"Central Command" = "cc_", 
 	"Science" = "sci_", 
@@ -1819,7 +1820,7 @@
 	"Medical" = "med_",
 	"White" = "white_",
 	"Janitor" = "jani_",
-	"Engineer" = "engi_",
+	"Engineer" = "eng_",
 	"Service" = "serv_",
 	"Cargo" = "car_")
 /mob/living/carbon/human/species/smolraptor
