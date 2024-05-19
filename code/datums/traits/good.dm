@@ -1497,7 +1497,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "Gieger Counters are for suckers, mostly."
 	value = 40
 	category = "Radiation Quirks"
-	mechanics = "You only absorb 25% of all radiation."
+	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
 		/datum/quirk/radimmunesorta,
 		/datum/quirk/radweakmajor,
