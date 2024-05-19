@@ -160,6 +160,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
 	var/saved_unclaimed_points = 0
+	var/last_quest_login = 0
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -500,6 +501,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<center><h2>Quest Board UID</h2>"
 			dat += "[quester_uid]</center>"
+			var/away42long = SSeconomy.inactivity_penalty(src)
+			var/list/llogin_msg = list()
+			llogin_msg += "<center><B>Last Login:</B> [time2text(last_quest_login)]"
+			llogin_msg += " <B>Banked Cash:</B> [saved_unclaimed_points][SSeconomy.currency_unit]"
+			if(away42long)
+				llogin_msg += " - [span_alert("[away42long]")][SSeconomy.currency_unit] (inactivity fee)"
+			llogin_msg += "</center>"
+			dat += llogin_msg.Join()
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center>"
 				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))

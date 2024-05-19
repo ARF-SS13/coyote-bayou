@@ -55,6 +55,12 @@ SUBSYSTEM_DEF(economy)
 	var/currency_name = "buc"
 	var/currency_name_plural = "bux"
 	var/boring_units_only = TRUE
+	/// when depositing coins, what proportion just fricks off into the void?
+	var/coin_deposit_tax = 0.80 
+	/// Every day you dont log in, how much of your money just fricks off into the void?
+	var/housing_fee_percent = 0.02
+	/// where all the money that you lose from taxes goes
+	var/public_projects = "local localatorium"
 
 	/// weakrefs to all the bounty computers, so they can go BEEP when updated
 	var/list/computers = list()
@@ -111,6 +117,7 @@ SUBSYSTEM_DEF(economy)
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
+	setup_public_project()
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len)
 	for(var/A in department_accounts)
 		new /datum/bank_account/department(A, budget_to_hand_out)
@@ -135,6 +142,69 @@ SUBSYSTEM_DEF(economy)
 	//	var/datum/bank_account/bank_account = account
 	//	bank_account.payday(1)
 	//disabled payday
+
+/datum/controller/subsystem/economy/proc/setup_public_project()
+	var/list/projects = list(
+		"be used to fund the guns for tots program",
+		"go towards the national debt",
+		"help fund public schools",
+		"help build the localatorium",
+		"be invested into making more and better guns",
+		"help fund research into more powerful rift-blasters",
+		"help pay off Chiara's donut budget",
+		"help pay off Chiara's chair repair budget",
+		"go towards growing of a new and even even bigger World's Largest Potato",
+		"fun constructuion of libraries with books in them this time",
+		"be used to fund a use for all these corpses you've all been sending us",
+		"go towards putting out the River of Flame",
+		"pay to put food on your family",
+		"help fund moving New Boston 20 meters to the left",
+		"go towards putting up wallpaper in the Portal Shelters",
+		"be put in the Rainy Day fund",
+		"help fund the Bras for Broken Backs charity",
+		"be put into your retirement fund",
+		"help fund the Bosoms for Bosomless charity",
+		"go towards the Larger Rears for the Lacking charity",
+		"fund cuter homes for all those adorable crows what deliver things for nuts",
+		"be used to buy more magnets",
+		"be used to buy more candles",
+		"be used to buy less candles",
+		"help fund research into what the heck a Gibbl is",
+		"help feed the curveless",
+		"be used to fund the new and improved World's Largest Potato",
+		"go towards finally removing all those peckleschteiner doors that keep popping up",
+		"pay for more bonfires in the middle of every road",
+		"go towards the Wider Waists for Waifus charity",
+		"help dig a deeper hot tub for the tribals",
+		"be used to fund GekkerTec do whatever it is they do",
+		"fund more bulletproof ducks",
+		"help drive the spiders out of Spiders, New Sharon",
+		"go towards the Beefier Arms for Blaster Users charity",
+		"go towards buying more landmines to put outside the Army Base",
+		"go towards buying more robots for Mass Fusion",
+		"go towards buying thicker thighs for raptors",
+		"go towards floofening tails for foxes",
+		"fund the lubrication of local synths",
+		"fund the de-lubrication of local synths",
+		"fund our army of maids that clean up all the fluids you all keep spraying all over the rental houses",
+		"fund the Keep Isabelle Well Fed ordinance",
+		"be used to buy more war bonds",
+		"go towards making arm warmers that actually fit under your DataPal",
+		"help bribe deathclaws into having really delicious meat",
+		"fund research as to why nobody can frickin die anymore",
+		"be used to keep our portals their bluest",
+		"be used to remove the soundproofing on mechs",
+		"pay for more public contortionist lessons",
+		"be used to put less apples in the vending machines, please",
+		"go towards making your dreams come true",
+		"go towards making your dreams come true, in pog form",
+		"help hungry foxes eat the world's largest potato",
+		"help repave the Lancaster section of the I-14 for the next 5 goshdarned years",
+		"be used to increase the length of those chains they have on those pens at the bank",
+		"fund butt combat",
+		"help rebaconify hellpigs",
+	)
+	public_projects = pick(projects)
 
 /datum/controller/subsystem/economy/proc/setup_currency()
 	var/list/units = list(
@@ -205,6 +275,45 @@ SUBSYSTEM_DEF(economy)
 			currency_name = "Dollar"
 			currency_name_plural = "Dollars"
 			currency_unit = "$"
+
+/// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
+/// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
+/// cept we arent actually making any money off this game, and player retention here is just to feel like I'm not a loser, mom
+/datum/controller/subsystem/economy/proc/inactivity_penalty(taxated)
+	if(!taxated)
+		return FALSE
+	var/datum/preferences/P = extract_prefs(taxated)
+	if(!P)
+		return FALSE
+	if(P.saved_unclaimed_points < 1)
+		return FALSE
+	var/last_spawn = P.last_quest_login
+	if(!last_spawn) // hasnt been set yet
+		return FALSE
+	var/rn = world.realtime
+	var/DSsince = round(clamp(rn - last_spawn, 0, 8 DAYS)) // at most 7 days of inactivity
+	if(DSsince < 1 DAYS)
+		return FALSE
+	DSsince -= 1 DAYS
+	var/days_since = round(DSsince / (1 DAYS))
+	var/kept = (1 - housing_fee_percent) ** days_since // you keep 95% of your money every day you're gone, past 1 day
+	var/penalty = round((1 - kept) * P.saved_unclaimed_points)
+	return penalty
+
+/// Actually ded00cts the money from the player
+/datum/controller/subsystem/economy/proc/incur_inactivity_penalty(taxated)
+	if(!taxated)
+		return FALSE
+	var/datum/preferences/P = extract_prefs(taxated)
+	if(!P)
+		return FALSE
+	var/penalty = inactivity_penalty(taxated)
+	if(!penalty)
+		return FALSE
+	P.saved_unclaimed_points -= penalty
+	P.last_quest_login = world.realtime
+	P.save_character()
+	return penalty
 
 /datum/controller/subsystem/economy/proc/setup_quests()
 	if(LAZYLEN(all_quests))
@@ -706,6 +815,7 @@ SUBSYSTEM_DEF(economy)
 	var/scanning_mobs_makes_nests_dump_questable_mobs = FALSE
 	/// and the holy bepis
 	var/triple_virgin = TRUE
+	var/money_dialogging = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -725,7 +835,7 @@ SUBSYSTEM_DEF(economy)
 	load_player_finished_quests(quester)
 	/// who loves his brainwashing and always wants more?
 	load_player_active_quests(quester)
-	/// who's got a big ol' quest book and a heart full of glee?
+	/// who's got a big quest book and a heart full of glee?
 	load_player_banked_points(quester)
 
 /datum/quest_book/Destroy(force, ...)
@@ -1007,7 +1117,8 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return // they broke everything
-	adjust_funds(P.saved_unclaimed_points, null)
+	SSeconomy.incur_inactivity_penalty(P)
+	adjust_funds(P.saved_unclaimed_points, null, FALSE)
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
@@ -1024,7 +1135,7 @@ SUBSYSTEM_DEF(economy)
 		SSeconomy.activate_quest(B)
 		B.assign_to(user)
 	double_virgin = FALSE
-	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [P.saved_unclaimed_points] [SSeconomy.currency_unit] from your save file! =3"))
+	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [round(CREDITS_TO_COINS(P.saved_unclaimed_points))] [SSeconomy.currency_unit] from your save file! =3"))
 	return TRUE
 
 /// Save all the active quests to the save, overwriting whatever's in there
@@ -1062,7 +1173,7 @@ SUBSYSTEM_DEF(economy)
 	
 
 
-/datum/quest_book/proc/adjust_funds(amount, datum/bounty/B)
+/datum/quest_book/proc/adjust_funds(amount, datum/bounty/B, update_overall = TRUE)
 	if(!amount)
 		return
 	if(istype(B))
@@ -1070,7 +1181,8 @@ SUBSYSTEM_DEF(economy)
 			return // no double dipping~
 		paystubs[B.uid] = amount
 	unclaimed_points += amount
-	overall_banked += amount
+	if(update_overall)
+		overall_banked += amount
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
@@ -1211,7 +1323,7 @@ SUBSYSTEM_DEF(economy)
 			SSeconomy.finish_quest(LAZYACCESS(active_quests, params["BountyUID"]), src, user)
 			. = TRUE
 		if("CashOut")
-			dispense_reward()
+			operate_cash_machine()
 			. = TRUE
 		if("ToggleBeep")
 			TOGGLE_VAR(beep_on_update)
@@ -1272,7 +1384,114 @@ SUBSYSTEM_DEF(economy)
 	QW.show_quest_window(user, B, its_mine)
 	update_static_data(user)
 
-/datum/quest_book/proc/dispense_reward()
+/// Click with empty hand? it ask how mmuch cash u wanna out
+/// click with ticket in hand? it puts ticket cash un u cashhole, 100% return
+/// click with cash in hand? it puts cash in u cashhole, like 20% return
+/datum/quest_book/proc/operate_cash_machine()
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return
+	update_owner_data(user)
+	if(money_dialogging)
+		to_chat(user, span_alert("You're already in the middle of a transaction!"))
+		return
+	var/obj/item/holded = user.get_active_held_item()
+	if(holded && QDELING(holded))
+		to_chat(user, span_alert("That item is no more!"))
+		return
+	if(istype(holded, /obj/item/card/quest_reward)) // Ticket in hand
+		return devour_ticket(holded)
+	if(istype(holded, /obj/item/stack/f13Cash))
+		return deposit_coins(holded)
+	return cash_out()
+
+/datum/quest_book/proc/cash_out()
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return
+	update_owner_data(user)
+	if(unclaimed_points < 10)
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
+		return
+	money_dialogging = TRUE
+	var/howmuch = input(
+		user,
+		"How many [SSeconomy.currency_name_plural] would you like to withdraw? Max: [round(CREDITS_TO_COINS(unclaimed_points))]",
+		"$$$ for U",
+		0,
+	) as num|null
+	money_dialogging = FALSE
+	if(isnull(howmuch) || howmuch == 0)
+		to_chat(user, span_notice("Nevermind!!"))
+		return
+	if(!isnum(howmuch))
+		to_chat(user, span_alert("That's not a number!"))
+		return
+	if(howmuch < 0)
+		to_chat(user, span_alert("You need to enter a positive number to get anything out of this!"))
+		return
+	howmuch = round(COINS_TO_CREDITS(clamp(floor(howmuch), 0, unclaimed_points)), 10)
+	return dispense_reward(howmuch)
+
+/datum/quest_book/proc/deposit_coins(obj/item/stack/f13Cash/coins)
+	if(!coins)
+		return
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return
+	update_owner_data(user)
+	var/valueper = 1
+	if(istype(coins, /obj/item/stack/f13Cash/caps))
+		valueper = 1
+	else if(istype(coins, /obj/item/stack/f13Cash/denarius))
+		valueper = 10
+	else if(istype(coins, /obj/item/stack/f13Cash/aureus))
+		valueper = 100 // aaaaaaAAAAAAAAAAAAAAAA WHY ARENT THESE DEFINED ONST HR ASTUFNISJ K AAAAAAA
+	var/totalvalue = coins.amount * valueper
+	if(totalvalue < 1)
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("That cash is worthless!"))
+		return
+	var/to_deposit = floor(totalvalue * 0.2)
+	var/to_tax = totalvalue - to_deposit
+	if(to_deposit < 1)
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("The taxes wouldn't leave you with anything! Try depositing at least 5 [SSeconomy.currency_name_plural] worth of cash!"))
+		return
+	var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n\
+		The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). \
+		Do you wish to proceed?"
+	money_dialogging = TRUE
+	var/confyrm = alert(
+		user,
+		sans_representation,
+		"Tax Form CB-13",
+		"Deposit",
+		"Cancel",
+	)
+	money_dialogging = FALSE
+	if(confyrm == "Deposit" && !QDELETED(coins))
+		/// time has passed! time to update how much we're really adding to the cash hole
+		totalvalue = coins.amount * valueper
+		if(totalvalue < 1)
+			playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+			to_chat(user, span_alert("That cash is suddenly worthless!"))
+			return
+		to_deposit = floor(totalvalue * 0.2)
+		coins.amount = 0
+		coins.value = 0
+		qdel(coins)
+		adjust_funds(round(COINS_TO_CREDITS(to_deposit)), null, FALSE)
+		to_chat(user, span_green("You deposited [to_deposit] [SSeconomy.currency_name_plural] (after taxes) into your Guild Account!"))
+		playsound(user, 'sound/machines/coin_insert.ogg', 80, TRUE)
+		update_static_data(user)
+		return
+	else
+		to_chat(user, span_notice("Nevermind!!"))
+		return
+
+/datum/quest_book/proc/dispense_reward(cashmoney)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return FALSE
@@ -1281,8 +1500,12 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
 		return FALSE
-	var/payment = unclaimed_points
-	unclaimed_points = 0
+	var/payment = min(cashmoney, unclaimed_points)
+	if(payment < 1)
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("You don't have that much cash to cash out! Try completing some quests =3"))
+		return FALSE
+	unclaimed_points -= payment
 	var/obj/item/card/quest_reward/QR = new(get_turf(user))
 	QR.assign_value(payment, 1.15, "#[random_color()]")
 	if(user)
@@ -1290,6 +1513,28 @@ SUBSYSTEM_DEF(economy)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
 	update_lifetime_total()
 	update_static_data(user)
+	return TRUE
+
+/// FIN VORE FIN VORE
+/datum/quest_book/proc/devour_ticket(obj/item/card/quest_reward/QR)
+	var/mob/user = SSeconomy.quid2mob(q_uid)
+	if(!user)
+		return FALSE
+	update_owner_data(user)
+	if(!istype(QR, /obj/item/card/quest_reward))
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("That's not a ticket!"))
+		return FALSE
+	var/payment = QR.saleprice
+	QR.saleprice = 0
+	if(payment < 1)
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("That ticket is worthless!"))
+		return FALSE
+	playsound(user, 'sound/machines/printer_press_unbirth.ogg', 40, TRUE)
+	to_chat(user, span_green("You deposited a ticket for [CREDITS_TO_COINS(payment)] [SSeconomy.currency_name_plural] into your Guild Account!"))
+	qdel(QR)
+	adjust_funds(payment, null, FALSE)
 	return TRUE
 
 /datum/quest_book/proc/get_historical_finished()
@@ -1521,25 +1766,24 @@ SUBSYSTEM_DEF(economy)
 	icon_state = "data_1"
 	punched_state = "punchedticket"
 	w_class = WEIGHT_CLASS_TINY
-	punchable = TRUE
+	punchable = FALSE
 
 /obj/item/card/quest_reward/proc/assign_value(price, mult, coler)
 	saleprice = round(price)
 	punchbonus = round((price * mult) - price)
 	add_atom_colour(coler, FIXED_COLOUR_PRIORITY)
-	name = "Guild Quest voucher - [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit]"
+	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit], but you'll get a [punchbonus / 10] [SSeconomy.currency_unit] reward if you get it punched! \
-		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
+		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]!"
 
 /obj/item/card/quest_reward/punch()
 	if(!..())
 		return
-	name = "Guild Quest voucher - [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
-	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [round(COINS_TO_CREDITS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
-		It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
-	return TRUE
+	// name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
+	// desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
+	// 	\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
+	// 	It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
+	// return TRUE
 
 //////////////////////////////////////////////////////
 /// CLAIMER ITEM ////////////////////////////////////

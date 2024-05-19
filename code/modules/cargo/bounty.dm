@@ -3,10 +3,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 /datum/bounty
 	var/name
 	var/description
-	var/base_reward =         COINS(50) // In credits.
-	var/medium_reward_bonus = COINS(10) // In credits.
-	var/hard_reward_bonus =   COINS(30) // In credits.
-	var/CBT_reward_bonus =    COINS(50) // In credits.
+	var/base_reward =         COINS_TO_CREDITS(50) // In credits.
+	var/medium_reward_bonus = COINS_TO_CREDITS(10) // In credits.
+	var/hard_reward_bonus =   COINS_TO_CREDITS(30) // In credits.
+	var/CBT_reward_bonus =    COINS_TO_CREDITS(50) // In credits.
 
 	/// Which questgivers can give this quest? for flavor purposes
 	/// format: list(QUESTGIVER_GUILD, QUESTGIVER_GRAGG, etc)

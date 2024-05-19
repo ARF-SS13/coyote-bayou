@@ -81,8 +81,8 @@
 #define BOUNTY_QUOTA_DEAD (1 << 2)
 
 /// Credits to Coins
-#define COINS(x) (x * 10)
-#define COINS_TO_CREDITS(x) (x / 10)
+#define COINS_TO_CREDITS(x) (x * 10)
+#define CREDITS_TO_COINS(x) (x / 10)
 
 #define QUEST_KIND_KILL_BOSS "kill boss"
 #define QUEST_KIND_KILL_MOBS "kill mob"

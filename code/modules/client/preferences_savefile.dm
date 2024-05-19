@@ -911,6 +911,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["pda_skin"]			>> pda_skin
 	S["pda_ringmessage"]	>> pda_ringmessage
 
+	S["last_quest_login"]	>> last_quest_login
+
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
 	blocked_from_dms = safe_json_decode(S["blocked_from_dms"])
@@ -936,18 +938,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["historical_banked_points"] >> historical_banked_points
 
 	//sanitize data
-	show_in_directory     = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
-	directory_tag         = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
-	directory_erptag      = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
-	directory_ad          = strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
-	faved_interactions    = sanitize_islist(faved_interactions, list())
-	saved_finished_quests = sanitize_islist(saved_finished_quests, list())
-	saved_active_quests   = sanitize_islist(saved_active_quests, list())
-	dm_open               = sanitize_integer(dm_open, TRUE)
-	needs_a_friend        = sanitize_integer(needs_a_friend, TRUE)
+	show_in_directory          = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag              = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
+	directory_erptag           = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad               = strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions         = sanitize_islist(faved_interactions, list())
+	saved_finished_quests      = sanitize_islist(saved_finished_quests, list())
+	saved_active_quests        = sanitize_islist(saved_active_quests, list())
+	dm_open                    = sanitize_integer(dm_open, TRUE)
+	needs_a_friend             = sanitize_integer(needs_a_friend, TRUE)
 	saved_unclaimed_points     = sanitize_integer(saved_unclaimed_points,    0, INFINITY, initial(saved_unclaimed_points))
 	number_of_finished_quests  = sanitize_integer(number_of_finished_quests, 0, INFINITY, initial(number_of_finished_quests))
 	historical_banked_points   = sanitize_integer(historical_banked_points,  0, INFINITY, initial(historical_banked_points))
+	last_quest_login           = sanitize_integer(last_quest_login,          5, INFINITY, world.realtime)
 
 
 	//Sanitize
@@ -1567,6 +1570,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["pda_skin"], pda_skin)
 	WRITE_FILE(S["pda_ringmessage"], pda_ringmessage)
+
+	WRITE_FILE(S["last_quest_login"], last_quest_login)
 
 	return 1
 

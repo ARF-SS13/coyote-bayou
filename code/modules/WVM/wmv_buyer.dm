@@ -433,7 +433,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if("[I.type]" == last_appraised)
 		quiet = TRUE
 	last_appraised = "[I.type]"
-	var/final_price = (round(COINS_TO_CREDITS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
+	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
 		if(!silent)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
@@ -690,7 +690,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
 
 /obj/item/debug_vendorsale/proc/get_value()
-	return round(COINS_TO_CREDITS(12345))
+	return round(CREDITS_TO_COINS(12345))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
