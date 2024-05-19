@@ -1463,7 +1463,7 @@
 	icon_state = "grey_white"
 	icon_living = "grey_white"
 	icon_dead = "grey_white_dead"
-    resize = 0.5
+	resize = 0.5
 
 
 
