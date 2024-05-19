@@ -1463,9 +1463,11 @@
 	icon_state = "grey_white"
 	icon_living = "grey_white"
 	icon_dead = "grey_white_dead"
-	resize = 0.5
 
-
+/mob/living/simple_animal/advanced/greycat/Initialize()
+    .=..()
+    resize = 0.3
+    update_transform()
 
 
 
