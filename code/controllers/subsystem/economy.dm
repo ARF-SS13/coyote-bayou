@@ -944,7 +944,7 @@ SUBSYSTEM_DEF(economy)
 	var/list/stuff = list()
 	stuff |= thing
 	stuff |= thing.contents // warning, may extract nuts
-	stuff |= get_all_in_turf(thing)
+	stuff |= get_all_in_turf(get_turf(thing))
 	mainloop:
 		for(var/atom/thingy in stuff)
 			var/mob/living/no_stealing = recursive_loc_path_search(thingy, /mob/living, 7)
@@ -1780,8 +1780,8 @@ SUBSYSTEM_DEF(economy)
 	if(!..())
 		return
 	// name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
-	// desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-	// 	\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. \
+	// desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. 
+	// 	\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. 
 	// 	It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 	// return TRUE
 
@@ -1801,6 +1801,7 @@ SUBSYSTEM_DEF(economy)
 	slot_flags = INV_SLOTBIT_ANYWHERE
 	max_reach = 7
 	force = 0
+	force_harmclick = TRUE
 	var/ping_cooldown = 0
 	var/being_used = FALSE
 
