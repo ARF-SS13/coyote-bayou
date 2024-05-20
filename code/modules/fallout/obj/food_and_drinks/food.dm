@@ -15,7 +15,7 @@
 	filling_color = "#FA8072"
 	tastes = list("meat" = 4, "scales" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/gecko
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/molerat
@@ -29,7 +29,7 @@
 	filling_color = "#FA8072"
 	tastes = list("meat" = 4, "whiskers" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/molerat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/bear
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/wolf
@@ -43,7 +43,7 @@
 	filling_color = "#FA8072"
 	tastes = list("meat" = 3)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/wolf
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
@@ -59,7 +59,7 @@
 	filling_color = "#FA8072"
 	tastes = list("chewy meat" = 3, "scales" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/bear
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/mirelurk
@@ -79,7 +79,7 @@
 	)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/mirelurk
 	tastes = list("crab" = 1)
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/squirrel
@@ -94,7 +94,7 @@
 	tastes = list("rodent" = 3, "chicken" = 1)
 	filling_color = "#FA8072"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat
@@ -109,7 +109,7 @@
 	bitesize = 2
 	tastes = list("insect guts" = 3)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat
@@ -125,7 +125,7 @@
 	bitesize = 3
 	tastes = list("insect guts" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ant_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat
@@ -141,7 +141,7 @@
 	bitesize = 3
 	tastes = list("insect guts" = 2, "spicyness" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ant_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat
@@ -157,7 +157,7 @@
 	bitesize = 2
 	tastes = list("insect guts" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/bloatfly_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat
@@ -173,7 +173,7 @@
 	bitesize = 2
 	tastes = list("insect guts" = 3, "sweet tangy liquid" = 1) //google says toxin is sweet anyway.
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat
@@ -190,7 +190,7 @@
 	bitesize = 4
 	tastes = list("insect guts" = 3, "sweet tangy liquid" = 2) //google says toxin is sweet anyway.
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
@@ -204,7 +204,7 @@
 	tastes = list("rotting flesh" = 3)
 	filling_color = "#7c1104" //Dark Red
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	foodtype = RAW | MEAT | GROSS
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/centaur
@@ -218,7 +218,7 @@
 	tastes = list("abomination" = 2, "mutatated flesh" = 1)
 	filling_color = "#7c1104"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
-	slice_path = null
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	foodtype = RAW | MEAT | GROSS
 
 //WASTELAND STEAKS
