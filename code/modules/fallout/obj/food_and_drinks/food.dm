@@ -204,7 +204,7 @@
 	tastes = list("rotting flesh" = 3)
 	filling_color = "#7c1104" //Dark Red
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
-	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT | GROSS
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/centaur
@@ -218,7 +218,7 @@
 	tastes = list("abomination" = 2, "mutatated flesh" = 1)
 	filling_color = "#7c1104"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
-	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	foodtype = RAW | MEAT | GROSS
 
 //WASTELAND STEAKS
