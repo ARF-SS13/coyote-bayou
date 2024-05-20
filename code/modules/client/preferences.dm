@@ -161,6 +161,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/saved_active_quests = list()
 	var/saved_unclaimed_points = 0
 	var/last_quest_login = 0
+	/// every single calendar day this character has spawned in
+	var/list/days_spawned_in = list()
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -501,7 +503,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<center><h2>Quest Board UID</h2>"
 			dat += "[quester_uid]</center>"
-			var/away42long = SSeconomy.inactivity_penalty(src)
+			var/away42long = 0 // SSeconomy.inactivity_penalty(src)
 			var/list/llogin_msg = list()
 			llogin_msg += "<center><B>Last Login:</B> [time2text(last_quest_login)]"
 			llogin_msg += " <B>Banked Cash:</B> [saved_unclaimed_points][SSeconomy.currency_unit]"

@@ -103,6 +103,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/print_spans,
 	/datum/admins/proc/admin_who,
 	/datum/admins/proc/admin_who2,
+	/datum/admins/proc/test_dailies,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -1052,6 +1053,17 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
 		return
 	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/datum/admins/proc/test_dailies()
+	set category = "Debug"
+	set name = "Zaptest Dailies"
+	set desc = "tells everyone how poorly the daily login bonus works."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with test_dailies() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with test_dailies() without admin perms.")
+		return
+	SSeconomy.test_daily_calcs()
 
 /// yay, copied so epople will ever see it!!
 /datum/admins/proc/admin_who2()

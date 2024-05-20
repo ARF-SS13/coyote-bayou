@@ -1,3 +1,5 @@
+#define TIMES_TO_NUMBER(yeor, moonth, diay) (((yeor - 2020) * 10000) + (moonth * 100) + diay)
+
 SUBSYSTEM_DEF(economy)
 	name = "QuestEconomy"
 	wait = 15 MINUTES
@@ -65,6 +67,10 @@ SUBSYSTEM_DEF(economy)
 	/// weakrefs to all the bounty computers, so they can go BEEP when updated
 	var/list/computers = list()
 
+	var/last_quest_update = 0
+	var/next_quest_update = 0
+	var/quest_update_interval = 15 MINUTES
+
 	/// Holds all the cool stuff that's happening in the world of quests!
 	var/list/quest_books = list()
 	/// list of paths that are probably part of a quest
@@ -109,11 +115,17 @@ SUBSYSTEM_DEF(economy)
 
 	var/static_spam = 0
 
+	var/today = 0
+	var/inactivity_cutoff = 7 // days
+	var/spree_reward_per_day = 100
+	var/spree_max = 7 // days
+
 	var/debug_quests = FALSE
 	var/debug_objectives = FALSE
 	var/debug_ignore_extinction = FALSE
 	var/debug_include_laggy_item_quests = FALSE
 	var/debug_ignore_historical_round_number_check = TRUE
+	var/debug_daily_spawn_in_stuff = FALSE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -127,21 +139,34 @@ SUBSYSTEM_DEF(economy)
 		setup_quests()
 	refresh_quest_pool()
 	init_quest_consoles()
+
+	today = floor((world.realtime - (23 YEARS)) / (1 DAYS))
+
+	// var/list/todaylist = splittext(time2text(world.realtime, "YYYY-MM-DD"), "-")
+	// for(var/i in 1 to LAZYLEN(todaylist))
+	// 	todaylist[i] = text2num(todaylist[i])
+
+	// today = TIMES_TO_NUMBER(todaylist[1], todaylist[2], todaylist[3])
+
+	// var/datelength = 31
+	// dates.Cut()
+	// dates.len = datelength
+
+	// for(var/dia in 1 to datelength)
+	// 	var/list/thatday = splittext(time2text(world.realtime - (dia DAYS) + (1 DAYS), "YYYY-MM-DD"), "-")
+	// 	for(var/i in 1 to LAZYLEN(thatday))
+	// 		thatday[i] = text2num(thatday[i])
+	// 	dates[dia] = TIMES_TO_NUMBER(thatday[1], thatday[2], thatday[3])
+	
 	. = ..()
 	spawn(5 SECONDS)
 		to_chat(world, span_boldannounce("Added [LAZYLEN(all_quests)] quests! :D"))
 
 /datum/controller/subsystem/economy/fire(resumed = 0)
-	refresh_quest_pool()
-	//eng_payout()  // Payout based on nothing. What will replace it? Surplus power, powered APC's, air alarms? Who knows.
-	//sci_payout() // Payout based on slimes.
-	//secmedsrv_payout() // Payout based on crew safety, health, and mood.
-	//civ_payout() // Payout based on ??? Profit
-	//car_payout() // Cargo's natural gain in the cash moneys.
-	//for(account in bank_accounts)
-	//	var/datum/bank_account/bank_account = account
-	//	bank_account.payday(1)
-	//disabled payday
+	if(world.time > next_quest_update)
+		refresh_quest_pool()
+		update_quest_statistics()
+
 
 /datum/controller/subsystem/economy/proc/setup_public_project()
 	var/list/projects = list(
@@ -279,41 +304,207 @@ SUBSYSTEM_DEF(economy)
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
 /// cept we arent actually making any money off this game, and player retention here is just to feel like I'm not a loser, mom
-/datum/controller/subsystem/economy/proc/inactivity_penalty(taxated)
-	if(!taxated)
-		return FALSE
+/datum/controller/subsystem/economy/proc/calculate_daily_spawn_in_stuff(taxated, list/override_dates, override_bank, override_today)
 	var/datum/preferences/P = extract_prefs(taxated)
-	if(!P)
-		return FALSE
-	if(P.saved_unclaimed_points < 1)
-		return FALSE
-	var/last_spawn = P.last_quest_login
-	if(!last_spawn) // hasnt been set yet
-		return FALSE
-	var/rn = world.realtime
-	var/DSsince = round(clamp(rn - last_spawn, 0, 8 DAYS)) // at most 7 days of inactivity
-	if(DSsince < 1 DAYS)
-		return FALSE
-	DSsince -= 1 DAYS
-	var/days_since = round(DSsince / (1 DAYS))
-	var/kept = (1 - housing_fee_percent) ** days_since // you keep 95% of your money every day you're gone, past 1 day
-	var/penalty = round((1 - kept) * P.saved_unclaimed_points)
-	return penalty
+	var/datum/quest_book/QB = get_quest_book(taxated)
+	var/just_checking = FALSE
+	if(!override_dates && !override_bank)
+		if(!taxated)
+			return FALSE
+		if(!P)
+			return FALSE
+		if(!LAZYLEN(P.days_spawned_in))
+			return FALSE
+		if(!QB)
+			return FALSE
+		if(QB.has_been_login_spreed)
+			just_checking = TRUE // theyve already been taxed or rewrded, just return something, and check the login *before* their last login
+	/// if they havent been on the bayou for more than a day, they start losing money
+	var/list/dates2check = override_dates ? override_dates : P.days_spawned_in
+	var/used_today = override_today ? override_today : today
+	var/their_bank = override_bank ? override_bank : P.saved_unclaimed_points
+	var/inactive_days = 0
+	var/login_spree = 0
+	var/login_index = just_checking ? LAZYLEN(dates2check) - 1 : LAZYLEN(dates2check)
+	var/last_login = LAZYACCESS(dates2check, login_index)
+	if(last_login == used_today) // checking the same day they logged in, either something went wrong, or its a unit test
+		if(LAZYLEN(dates2check) <= 1) // one entry
+			return 0
+		last_login = LAZYACCESS(dates2check, login_index - 1)
+	/// first check their inactivity spree
+	var/days_since_last_login = (override_today ? override_today : today) - last_login
+	if(days_since_last_login > 1)
+		inactive_days = clamp(days_since_last_login - 1, 0, inactivity_cutoff)
+	else // count the number of consecutive days they've been on the bayou
+		var/last_date_checked = last_login
+		for(var/i in 1 to LAZYLEN(dates2check))
+			/// count from the end of the list, 1 indexed
+			var/truindex = LAZYLEN(dates2check) - (i)
+			var/day = LAZYACCESS(dates2check, truindex) // get the day
+			if(last_date_checked - day <= 1)
+				login_spree += 1
+				last_date_checked = day
+			else
+				break
+		login_spree = clamp(login_spree, 0, spree_max)
+	/// and finally return how much they're gonna lose or gain
+	if(inactive_days)
+		var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
+		var/penalty = their_bank - floor(their_bank * penalty_percent)
+		return -penalty
+	if(login_spree)
+		var/reward = ceil(login_spree * spree_reward_per_day)
+		return reward
+
+/// and the unit tests
+/datum/controller/subsystem/economy/proc/test_daily_calcs()
+	var/list/dates_of_interest = list()
+	for(var/i in 1 to 500)
+		// var/list/newday = splittext(time2text(round(world.realtime - ((i - 1) * (1 DAYS)), (1 DAYS)), "YYYY-MM-DD"), "-")
+		// dates_of_interest += TIMES_TO_NUMBER(text2num(newday[1]), text2num(newday[2]), text2num(newday[3]))
+		dates_of_interest += floor((world.realtime - ((i - 1) * (1 DAYS)) - (23 YEARS)) / (1 DAYS))
+	var/list/return_list = list()
+	/// penalty loop
+	var/list/date_list = list()
+	var/test_amount = 10000
+
+	/// 1. logging in again on the same day
+	/// - should return 0 and no changed bank
+	date_list = list(LAZYACCESS(dates_of_interest, 1))
+	var/exp_penalty = 0
+	var/exp_bank = test_amount
+	return_list += run_unit_test("1. logging in again on the same day", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 2. logging in after a day
+	/// - should return a bonus of 100, and the bank should be increased to test_amount + 100
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2))
+	exp_penalty = (spree_reward_per_day * 1)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("2. logging in after a day", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 3. logging in after 2 days
+	/// - should return one penalty, and the bank should be reduced to test_amount - (1 = (0.02^1))
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 3))
+	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 1)))
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("3. logging in after 2 days", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 4. logging in after 3 days
+	/// - should return two penalty, and the bank should be reduced to test_amount - (2 = (0.02^2))
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 4))
+	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 2)))
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("4. logging in after 3 days", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 5. logging in after 7 days
+	/// - should return six penalty, and the bank should be reduced to test_amount - (6 = (0.02^6))
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 8))
+	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 6)))
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("5. logging in after 7 days", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 6. logging in after 8 days (the max)
+	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 9))
+	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("6. logging in after 8 days (max)", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 7. logging in after 200 days
+	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 201))
+	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("7. logging in after 200 days", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// reward loop
+	/// 8. logging in today and yesterday
+	/// - should return 1 bonus, and the bank should be increased to test_amount + 100
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2))
+	exp_penalty = (spree_reward_per_day * 1)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("8. logging in today and yesterday", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 9. logging in today, yesterday, and the day before that
+	/// - should return 2 bonus, and the bank should be increased to test_amount + 200
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3))
+	exp_penalty = (spree_reward_per_day * 2)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("9. logging in today, yesterday, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 10. logging in today, yesterday, the day before that, and the day before that
+	/// - should return 3 bonus, and the bank should be increased to test_amount + 300
+	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3), LAZYACCESS(dates_of_interest, 4))
+	exp_penalty = (spree_reward_per_day * 3)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("10. logging in today, yesterday, the day before that, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 11. logging in for the past 20 days
+	/// - should return 7 bonus, and the bank should be increased to test_amount + 700
+	for(var/i in 1 to 20)
+		date_list += LAZYACCESS(dates_of_interest, i)
+	exp_penalty = (spree_reward_per_day * 7)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("11. logging in for the past 20 days", date_list, test_amount, exp_bank, exp_penalty)
+
+	/// 12. logging in for the past 5 days, then a break of 2 days, then logging in for the past 200 days
+	/// - should return 5 bonus, and the bank should be increased to test_amount + 500
+	for(var/i in 1 to 5)
+		date_list += LAZYACCESS(dates_of_interest, i)
+	for(var/i in 8 to 200)
+		date_list += LAZYACCESS(dates_of_interest, i)
+	exp_penalty = (spree_reward_per_day * 5)
+	exp_bank = test_amount + exp_penalty
+	return_list += run_unit_test("12. logging in for the past 5 days, then a break of 2 days, then logging in for the past 200 days", date_list, test_amount, exp_bank, exp_penalty)
+	var/printme = return_list.Join("\n")
+	to_chat(world, span_boldannounce("Daily spawn in stuff tests:\n") + "[printme]")
+
+/datum/controller/subsystem/economy/proc/run_unit_test(nombre = "ERROR", list/date_list = list(today), cash_before = 1000, expected_cash_after = 1000, expected_penalty = 1000)
+	// var/list/todaytoday = splittext(time2text(world.realtime, "YYYY-MM-DD"), "-")
+	// for(var/i in 1 to LAZYLEN(todaytoday))
+	// 	todaytoday[i] = text2num(todaytoday[i])
+	// var/todaytodaytoday = TIMES_TO_NUMBER(todaytoday[1], todaytoday[2], todaytoday[3])
+	var/todaytodaytoday = floor((world.realtime - (23 YEARS)) / (1 DAYS)) // close enough
+	date_list = reverseList(date_list)
+	var/penalty = calculate_daily_spawn_in_stuff(null, date_list, cash_before, todaytodaytoday)
+	var/cash_after = cash_before + penalty
+	var/days_passed = todaytodaytoday - LAZYACCESS(date_list, 1)
+	var/list/gotted_data = list(
+		"cash_before" = cash_before, 
+		"penalty" = penalty, 
+		"expected_penalty" = expected_penalty, 
+		"cash_after" = cash_after, 
+		"expected_cash_after" = expected_cash_after,
+		"days_passed" = days_passed
+		)
+	return parsify_unit_tests(nombre, gotted_data)
+
+/datum/controller/subsystem/economy/proc/parsify_unit_tests(nombre, list/parseme_list)
+	var/return_string = "[nombre]\n"
+	return_string += "\tDays passed: [parseme_list["days_passed"]]\n"
+	return_string += "\tCash before: [parseme_list["cash_before"]]\n"
+	var/pig = parseme_list["penalty"] == parseme_list["expected_penalty"] ? span_green("PASS") : span_alert("FAIL")
+	return_string += "\tExpected change: [parseme_list["expected_penalty"]]\n"
+	return_string += "\tChange: [parseme_list["penalty"]] -> [pig]\n"
+	var/cow = parseme_list["cash_after"] == parseme_list["expected_cash_after"] ? span_green("PASS") : span_alert("FAIL")
+	return_string += "\tExpected cash after: [parseme_list["expected_cash_after"]]\n"
+	return_string += "\tCash after: [parseme_list["cash_after"]] -> [cow]\n"
+	return return_string
 
 /// Actually ded00cts the money from the player
-/datum/controller/subsystem/economy/proc/incur_inactivity_penalty(taxated)
-	if(!taxated)
-		return FALSE
-	var/datum/preferences/P = extract_prefs(taxated)
-	if(!P)
-		return FALSE
-	var/penalty = inactivity_penalty(taxated)
-	if(!penalty)
-		return FALSE
-	P.saved_unclaimed_points -= penalty
-	P.last_quest_login = world.realtime
-	P.save_character()
-	return penalty
+// /datum/controller/subsystem/economy/proc/calculate_daily_spawn_in_stuff(taxated)
+// 	if(!taxated)
+// 		return FALSE
+// 	var/datum/preferences/P = extract_prefs(taxated)
+// 	if(!P)
+// 		return FALSE
+// 	var/penalty = housing_fee_percent(taxated)
+// 	if(!penalty)
+// 		return FALSE
+// 	P.saved_unclaimed_points -= penalty
+// 	P.last_quest_login = world.realtime
+// 	P.save_character()
+// 	return penalty
 
 /datum/controller/subsystem/economy/proc/setup_quests()
 	if(LAZYLEN(all_quests))
@@ -329,6 +520,8 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/refresh_quest_pool()
 	if(LAZYLEN(all_quests))
 		setup_quests()
+	next_quest_update = world.time + quest_update_interval
+	last_quest_update = world.time
 	QDEL_LIST_ASSOC_VAL(quest_pool)
 	if(debug_quests)
 		var/list/quist = list()
@@ -586,15 +779,27 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/give_claimer(mob/user, atom/base)
 	if(!user)
 		return
+	var/obj/item/in_active_hand = user.get_active_held_item()
+	var/obj/item/inactive_hand = user.get_inactive_held_item()
+	if(istype(in_active_hand, /obj/item/hand_item/quest_scanner))
+		to_chat(user, span_warning("You're already standing there with your claimer in your hand!"))
+		return
+	if(istype(inactive_hand, /obj/item/hand_item/quest_scanner))
+		if(in_active_hand == null)
+			if(user.put_in_hands(inactive_hand))
+				to_chat(user, span_notice("You get out the Claimer!"))
+			return
+		to_chat(user, span_warning("You already have a quest scanner, right there in your other hand! You'd get it out, but your [prob(1) ? "beans" : "hands"] are full!"))
+		return
 	var/list/all_their_stuff = get_all_in_turf(user)
 	for(var/atom/thing in all_their_stuff)
 		if(istype(thing, /obj/item/hand_item/quest_scanner))
 			if(user.put_in_hands(thing))
 				to_chat(user, span_notice("You get out the Claimer!"))
-			else
-				to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]! You'd get it out, but your hands are full!"))
+				return
+			to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]! You'd get it out, but your hands are full!"))
 			return
-	if(user.get_active_held_item() && user.get_inactive_held_item())
+	if(in_active_hand && inactive_hand)
 		if(prob(1))
 			to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
 		else
@@ -696,16 +901,7 @@ SUBSYSTEM_DEF(economy)
 	return second_choice || person
 
 /datum/controller/subsystem/economy/proc/update_when(formatit)
-	if(!formatit)
-		return next_fire
-	var/remaining = next_fire - world.time
-	return remaining
-	// if(remaining <= 0)
-	// 	return "Now!"
-	// return DisplayTimeText(remaining, show_zeroes = TRUE, abbreviated = TRUE, fixed_digits = 2)
-	
-// /datum/controller/subsystem/economy/proc/register_computer(atom/thing)
-// 	computers |= WEAKREF(thing) // dont forget to register your shareware
+	return next_quest_update - world.time
 	
 /datum/controller/subsystem/economy/proc/get_dep_account(dep_id)
 	for(var/datum/bank_account/department/D in generated_accounts)
@@ -816,6 +1012,7 @@ SUBSYSTEM_DEF(economy)
 	/// and the holy bepis
 	var/triple_virgin = TRUE
 	var/money_dialogging = FALSE
+	var/has_been_login_spreed = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -1117,7 +1314,7 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
 		return // they broke everything
-	SSeconomy.incur_inactivity_penalty(P)
+	// SSeconomy.incur_housing_fee_percent(P)
 	adjust_funds(P.saved_unclaimed_points, null, FALSE)
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
