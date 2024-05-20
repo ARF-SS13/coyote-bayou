@@ -1466,7 +1466,7 @@
 
 /mob/living/simple_animal/advanced/greycat/Initialize()
     .=..()
-    resize = 0.3
+    resize = 0.5
     update_transform()
 
 
