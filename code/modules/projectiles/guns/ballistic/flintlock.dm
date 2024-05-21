@@ -191,19 +191,20 @@
 	firing = FALSE // the gun's firing btw
 	cocked = FALSE
 	fuse_loop.stop()
-	if(!chambered)
+	if(!chambered || !chambered.BB)
 		shoot_with_empty_chamber(user)
 		return FALSE
 	var/atom/tar_get = user?.client?.mouseObject
 	/// this is if they disconnect, or tossed the gun before it fired, or ceased to exist, or something
 	if(!tar_get || !user || loc != user)
+		tar_get = null
 		if(prob(50) || (user && HAS_TRAIT(user, TRAIT_NICE_SHOT))) // pick someone or something to shoot
 			var/list/luckyboiz = list()
 			for(var/mob/living/luckyboi in view(get_turf(src), 20))
 				luckyboiz += luckyboi
 			if(LAZYLEN(luckyboiz))
 				tar_get = pick(luckyboiz)
-		if(!tar_get) // if there's nothing to shoot, pick a random direction
+		else // if there's nothing to shoot, pick a random direction
 			tar_get = get_step(user, pick(GLOB.alldirs))
 		user = null // to prevent factionization, and let it shoot yourself (in the foot)
 	user?.face_atom(tar_get)
@@ -211,6 +212,12 @@
 	SSeffects.do_effect(EFFECT_SMOKE_CONE, get_turf(src), get_turf(tar_get))
 	chambered = null // the caseless casing thing deletes itself
 	update_icon()
+	if(!user) // on the ground, so toss it around
+		var/shootdir = turn(get_dir(get_turf(src), get_turf(tar_get)), 180)
+		var/turf/toss_thisways = get_step(get_turf(src), shootdir)
+		if(prob(50)) // throw a bit further
+			toss_thisways = get_step(toss_thisways, shootdir)
+		throw_at(toss_thisways, 4, 1, null, TRUE, TRUE)
 
 /obj/item/gun/flintlock/laser
 	name = "flintlock laser pistol"
