@@ -50,12 +50,14 @@
 	data["cocked"] = cocked || FALSE
 	data["flintlock_load_time"] = (load_time * 0.1) || 0
 	data["flintlock_prefire_time"] = (prefire_time * 0.1) || 0
+	data["flintlock_prefire_1SD"] = (prefire_randomness * 0.1) || 0
 	data["has_magazine"] = TRUE
 	data["accepted_magazines"] = "powder, and ball"
 	data["magazine_name"] = "Metal Tube"
 	data["magazine_calibers"] = "powder, and ball"
 	data["shots_remaining"] = !!chambered || 0
 	data["shots_max"] = 1
+	return data
 
 /obj/item/gun/flintlock/attack_self(mob/living/user)
 	cock(user)

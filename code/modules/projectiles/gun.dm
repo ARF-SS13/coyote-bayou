@@ -1176,18 +1176,18 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 	else
-		stack_trace("No firemodes found for [src]!")
-		message_admins("No firemodes found for [src]!")
+		// stack_trace("No firemodes found for [src]!")
+		// message_admins("No firemodes found for [src]!")
 		data["firemode_count"] = 1
-		data["firemode_info"] = list(
+		data["firemode_info"] = list(list(
 			"index" = 1,
 			"current" = TRUE,
-			"name" = "Im a fire mode!",
-			"desc" = "but its broken",
+			"name" = "Single Shot",
+			"desc" = "Single shot firing mode. Fires one shot at a time.",
 			"burst" = 1,
 			"fire_delay" = 1,
 			"fire_rate" = 1,
-		)
+		))
 
 	data["attachments"] = list()
 	var/attindex = 1
