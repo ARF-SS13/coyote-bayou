@@ -842,7 +842,7 @@
 	blink_state = "<font color='[font_color_base]'>[textnum_base]"
 	blink_flicker_state = "<font color='[font_color_flicker]'>[textnum_flicker]"
 	var/datum/preferences/P = extract_prefs(mymob)
-	if(P.show_health_smilies)
+	if(P?.show_health_smilies)
 		base_state += "<br>[smiley_base]"
 		flicker_state += "<br>[smiley_flicker]"
 		blink_state += "<br>[smiley_blink]"
