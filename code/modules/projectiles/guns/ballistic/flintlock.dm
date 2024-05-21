@@ -96,7 +96,8 @@
 	if(!load_casing(user, to_load)) //load the ammo casing into the gun
 		to_chat(user, span_alert("You can't seem to load [to_load] into [src].")) //tell the user the gun cannot be loaded
 		return //return
-	bawx.stored_ammo -= to_load //remove the ammo casing from the box
+	bawx.stored_ammo -= to_load //remove the ammo casing from the boxx
+	bawx.update_icon() //update the icon of the boxx
 
 /// Forcemoves bluuet into the gun, and sets its chambered to the bluuet
 /obj/item/gun/flintlock/proc/load_casing(mob/living/user, obj/item/ammo_casing/bluuet)
@@ -190,17 +191,24 @@
 	firing = FALSE // the gun's firing btw
 	cocked = FALSE
 	fuse_loop.stop()
-	if(!user)
-		return FALSE // cus shit like this could happen
 	if(!chambered)
 		shoot_with_empty_chamber(user)
 		return FALSE
-	var/atom/tar_get = user.client?.mouseObject
-	if(!tar_get) // if the user disconnected before firing, just lob it somewhere
-		tar_get = get_step(user, user.dir)
-	user.face_atom(tar_get)
-	do_fire(tar_get, user, TRUE, user.client.mouseParams)
-	SSeffects.do_effect(EFFECT_SMOKE_CONE, get_turf(user), get_turf(tar_get))
+	var/atom/tar_get = user?.client?.mouseObject
+	/// this is if they disconnect, or tossed the gun before it fired, or ceased to exist, or something
+	if(!tar_get || !user || loc != user)
+		if(prob(50) || (user && HAS_TRAIT(user, TRAIT_NICE_SHOT))) // pick someone or something to shoot
+			var/list/luckyboiz = list()
+			for(var/mob/living/luckyboi in view(get_turf(src), 20))
+				luckyboiz += luckyboi
+			if(LAZYLEN(luckyboiz))
+				tar_get = pick(luckyboiz)
+		if(!tar_get) // if there's nothing to shoot, pick a random direction
+			tar_get = get_step(user, pick(GLOB.alldirs))
+		user = null // to prevent factionization, and let it shoot yourself (in the foot)
+	user?.face_atom(tar_get)
+	do_fire(tar_get, user, TRUE, user?.client?.mouseParams)
+	SSeffects.do_effect(EFFECT_SMOKE_CONE, get_turf(src), get_turf(tar_get))
 	chambered = null // the caseless casing thing deletes itself
 	update_icon()
 

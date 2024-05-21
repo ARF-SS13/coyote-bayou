@@ -337,7 +337,7 @@ ATTACHMENTS
 	update_icon()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P, casing_sound)
-	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
+	if(stam_cost && istype(user)) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
@@ -349,7 +349,7 @@ ATTACHMENTS
 		shootprops[CSP_INDEX_SOUND_OUT] = silenced ? fire_sound_silenced : fire_sound
 
 	playsound(
-		user,
+		src,
 		shootprops[CSP_INDEX_SOUND_OUT],
 		shootprops[CSP_INDEX_VOLUME],
 		shootprops[CSP_INDEX_VARY],
@@ -618,11 +618,11 @@ ATTACHMENTS
 				update_icon()
 				return
 			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+				if(get_dist((user || get_turf(src)), target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
 					shoot_live_shot(user, 1, target, message, stam_cost, BB, casing_sound)
 				else
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
-				user.in_crit_HP_penalty = 25
+				user?.in_crit_HP_penalty = 25
 		else
 			shoot_with_empty_chamber(user)
 			update_icon()
