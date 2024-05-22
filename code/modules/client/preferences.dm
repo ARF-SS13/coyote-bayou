@@ -160,6 +160,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
 	var/saved_unclaimed_points = 0
+	var/show_health_smilies = TRUE
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -1449,12 +1450,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
 			if (user && user.client && !user.client.prefs.screenshake==0)
 				dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
-			var/p_chaos
-			if (!preferred_chaos)
-				p_chaos = "No preference"
-			else
-				p_chaos = preferred_chaos
-			dat += "<b>Preferred Chaos Amount:</b> <a href='?_src_=prefs;preference=preferred_chaos;task=input'>[p_chaos]</a><br>"
+
+			dat += "<b>Show Health Smileys:</b> <a href='?_src_=prefs;preference=show_health_smilies;task=input'>[show_health_smilies ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "</td>"
 			dat += "</tr></table>"
@@ -2642,6 +2639,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(href_list["preference"] in GLOB.preferences_custom_names)
 				ask_for_custom_name(user,href_list["preference"])
 			switch(href_list["preference"])
+				if("show_health_smilies")
+					TOGGLE_VAR(show_health_smilies)
+					return 1
 				if("special_s")
 					var/new_point = input(user, "Choose Amount(1-9)", "Strength") as num|null
 					if(new_point)

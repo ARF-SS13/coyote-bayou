@@ -30,7 +30,7 @@
 
 //main function
 /proc/multichance_projectile_hit_behaviour(obj/item/projectile/P, atom/movable/firer, atom/target, status)
-	if(!status)  //status needs to be 0, otherwise it means that bullet has missed already
+	if(!status && istype(firer))  //status needs to be 0, otherwise it means that bullet has missed already
 		var/firer_crit_shot_add = 0
 		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
 			firer_crit_shot_add = MCPHB_CRIT_SHOT

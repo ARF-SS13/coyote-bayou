@@ -337,7 +337,7 @@ ATTACHMENTS
 	update_icon()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P, casing_sound)
-	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
+	if(stam_cost && istype(user)) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
@@ -349,7 +349,7 @@ ATTACHMENTS
 		shootprops[CSP_INDEX_SOUND_OUT] = silenced ? fire_sound_silenced : fire_sound
 
 	playsound(
-		user,
+		src,
 		shootprops[CSP_INDEX_SOUND_OUT],
 		shootprops[CSP_INDEX_VOLUME],
 		shootprops[CSP_INDEX_VARY],
@@ -418,7 +418,7 @@ ATTACHMENTS
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
-	if(user && user.incapacitated())
+	if(user && user.incapacitated(allow_crit = TRUE))
 		to_chat(user, span_danger("You're too messed up to shoot [src]!"))
 		return
 
@@ -618,10 +618,11 @@ ATTACHMENTS
 				update_icon()
 				return
 			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+				if(get_dist((user || get_turf(src)), target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
 					shoot_live_shot(user, 1, target, message, stam_cost, BB, casing_sound)
 				else
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
+				user?.in_crit_HP_penalty = 25
 		else
 			shoot_with_empty_chamber(user)
 			update_icon()
@@ -1175,18 +1176,18 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 	else
-		stack_trace("No firemodes found for [src]!")
-		message_admins("No firemodes found for [src]!")
+		// stack_trace("No firemodes found for [src]!")
+		// message_admins("No firemodes found for [src]!")
 		data["firemode_count"] = 1
-		data["firemode_info"] = list(
+		data["firemode_info"] = list(list(
 			"index" = 1,
 			"current" = TRUE,
-			"name" = "Im a fire mode!",
-			"desc" = "but its broken",
+			"name" = "Single Shot",
+			"desc" = "Single shot firing mode. Fires one shot at a time.",
 			"burst" = 1,
 			"fire_delay" = 1,
 			"fire_rate" = 1,
-		)
+		))
 
 	data["attachments"] = list()
 	var/attindex = 1
