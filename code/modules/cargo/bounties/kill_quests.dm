@@ -651,24 +651,24 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // Deathclaws
-/datum/bounty/kill/deathclaws
+/datum/bounty/kill/aethergiests
 	name = "Slay some Deathclaws"
 	description = "Deathclaws are scary and mean! (and honestly kinda tasty) I'll pay you to kill some of them."
-	flavor_focus = /mob/living/simple_animal/hostile/deathclaw
+	flavor_focus = /mob/living/simple_animal/hostile/aethergiest
 	weight = 1
 	init_wanteds = list(
-		/datum/bounty_quota/deathclaw/easy,
-		/datum/bounty_quota/deathclaw/medium,
-		/datum/bounty_quota/deathclaw/hard,
-		/datum/bounty_quota/deathclaw/cocknballtorture,
+		/datum/bounty_quota/aethergiest/easy,
+		/datum/bounty_quota/aethergiest/medium,
+		/datum/bounty_quota/aethergiest/hard,
+		/datum/bounty_quota/aethergiest/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
 ///// DEATHCLAW QUOTAS /////
-/datum/bounty_quota/deathclaw
+/datum/bounty_quota/aethergiest
 	name = "Kill some Deathclaws"
 	paths = list(
-		/mob/living/simple_animal/hostile/deathclaw,
+		/mob/living/simple_animal/hostile/aethergiest,
 	)
 	needed_amount = 2
 	paths_get_subtypes = TRUE
@@ -679,19 +679,19 @@
 	hard_multiplier = 3
 	CBT_multiplier = 4
 
-/datum/bounty_quota/deathclaw/easy
+/datum/bounty_quota/aethergiest/easy
 	needed_amount = 2
 	difficulty = QUEST_DIFFICULTY_EASY
 
-/datum/bounty_quota/deathclaw/medium
+/datum/bounty_quota/aethergiest/medium
 	needed_amount = 4
 	difficulty = QUEST_DIFFICULTY_MED
 
-/datum/bounty_quota/deathclaw/hard
+/datum/bounty_quota/aethergiest/hard
 	needed_amount = 6
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/deathclaw/cocknballtorture
+/datum/bounty_quota/aethergiest/cocknballtorture
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT // the cocknballtorture part is actually finding 20 of em
 

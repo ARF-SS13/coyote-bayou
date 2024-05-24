@@ -162,7 +162,7 @@
 /area/f13/building)
 "dj" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},
@@ -868,7 +868,7 @@
 /area/f13/wasteland)
 "uz" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},
@@ -1534,7 +1534,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "JP" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary{
+/mob/living/simple_animal/hostile/aethergiest/legendary{
 	desc = "That is fucking PEABUS!"
 	},
 /turf/open/floor/f13/wood,
@@ -1718,7 +1718,7 @@
 /area/f13/building/hospital)
 "Ok" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},

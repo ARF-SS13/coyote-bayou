@@ -546,7 +546,7 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
 	/obj/item/melee/unarmed/powerfist,
-	/obj/item/melee/unarmed/deathclawgauntlet,
+	/obj/item/melee/unarmed/aethergiestgauntlet,
 	/obj/item/melee/unarmed/powerfist/moleminer
 ))
 

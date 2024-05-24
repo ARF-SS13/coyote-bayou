@@ -56,24 +56,24 @@
 	weight = 10
 	request_mode = QUEST_FULFILL_ALL
 	wanted_things = list(
-		new /datum/bounty_quota/deathclaw_steak(5),
+		new /datum/bounty_quota/aethergiest_steak(5),
 	)
 	difficulty = QUEST_DIFFICULTY_EASY
 	difficulty_flags = NONE
 
 
-/datum/bounty_quota/deathclaw_steak
-	name = "Deliver some deathclaw steaks"
-	info = "Can accept any type of deathclaw steak."
+/datum/bounty_quota/aethergiest_steak
+	name = "Deliver some aethergiest steaks"
+	info = "Can accept any type of aethergiest steak."
 	paths = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
+		/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest
 	)
 	needed_amount = 1
 	auto_generate_info = TRUE
 	pick_this_many = 1
 	paths_get_subtypes = TRUE
 
-/datum/bounty_quota/deathclaw_steak/setzup()
+/datum/bounty_quota/aethergiest_steak/setzup()
 	. = ..()
 	needed_amount = rand(1, 25)
 

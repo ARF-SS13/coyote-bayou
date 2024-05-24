@@ -780,7 +780,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
 	faction_bonus_force = 5
-	nemesis_factions = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
+	nemesis_factions = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
 	var/transform_cooldown
 	var/swiping = FALSE
 	var/bleed_stacks_per_hit = 3

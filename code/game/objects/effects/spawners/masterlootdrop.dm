@@ -648,8 +648,8 @@
 		/obj/item/melee/unarmed/powerfist/goliath = 5,
 		/obj/item/melee/onehanded/dragonfire = 5, //edgy
 		/obj/item/melee/powered/ripper/prewar = 5,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 5, //sure why not
-		/obj/item/melee/unarmed/deathclawgauntlet = 5,
+		/obj/item/twohanded/spear/bonespear/aethergiest = 5, //sure why not
+		/obj/item/melee/unarmed/aethergiestgauntlet = 5,
 		/obj/item/book/granter/martial/bass = 5,
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 5,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 5,
@@ -1751,10 +1751,10 @@
 	name = "rare food"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/f13/mre = 1,
-		/obj/item/reagent_containers/food/snacks/f13/deathclawegg = 1,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestegg = 1,
 		/obj/item/reagent_containers/food/snacks/f13/molejerky = 1,
 		/obj/item/reagent_containers/food/snacks/f13/caravanlunch = 1,
-		/obj/item/reagent_containers/food/snacks/f13/deathclawomelette = 1,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestomelette = 1,
 		/obj/item/storage/box/ration/menu_one = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		/obj/item/storage/box/ration/menu_three = 1,
@@ -1781,7 +1781,7 @@
 		/obj/effect/spawner/bundle/mobs/rat/one = 3000,
 		/obj/effect/spawner/bundle/mobs/rat/three = 900,
 		/obj/effect/spawner/bundle/mobs/rat/five = 100,
-		/obj/effect/spawner/bundle/mobs/rat/actually_a_deathclaw = 1, //because yes...until someone cries and says no~
+		/obj/effect/spawner/bundle/mobs/rat/actually_a_aethergiest = 1, //because yes...until someone cries and says no~
 	)
 
 ////////////////////

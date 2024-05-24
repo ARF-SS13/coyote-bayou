@@ -750,7 +750,7 @@
 /area/f13/building)
 "azS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "aAa" = (
@@ -860,7 +860,7 @@
 	},
 /area/f13/caves)
 "aEk" = (
-/mob/living/simple_animal/hostile/deathclaw/mother{
+/mob/living/simple_animal/hostile/aethergiest/mother{
 	obj_damage = 100
 	},
 /turf/open/floor/f13{
@@ -1174,7 +1174,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aUv" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -1237,7 +1237,7 @@
 /area/f13/caves)
 "aXY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -2225,7 +2225,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "bDj" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/water,
 /area/f13/tunnel)
 "bDk" = (
@@ -3190,7 +3190,7 @@
 /area/f13/tunnel)
 "bLe" = (
 /obj/machinery/light/small,
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bLf" = (
@@ -3636,7 +3636,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibtorso"
 	},
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bMX" = (
@@ -3796,7 +3796,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bNA" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bNC" = (
@@ -4091,7 +4091,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bOU" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bOW" = (
@@ -5977,7 +5977,7 @@
 	},
 /area/f13/tunnel)
 "cne" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -6039,14 +6039,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "cox" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "coE" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor1-old"
 	},
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "coF" = (
@@ -10538,7 +10538,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -11044,7 +11044,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gaz" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -11350,7 +11350,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "gjs" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary{
+/mob/living/simple_animal/hostile/aethergiest/legendary{
 	name = "Serena Williams";
 	color = "EE3333";
 	melee_damage_upper = 65
@@ -11410,7 +11410,7 @@
 	icon_state = "floor5-old"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "glB" = (
@@ -12443,7 +12443,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "gZn" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gZO" = (
@@ -16266,7 +16266,7 @@
 	},
 /area/f13/building/trainstation)
 "jNq" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16391,7 +16391,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "jQC" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -18166,14 +18166,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "lgN" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/blood{
@@ -20415,7 +20415,7 @@
 	},
 /area/f13/building/massfusion)
 "mEn" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -20698,7 +20698,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "mPJ" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
@@ -21387,7 +21387,7 @@
 /area/f13/caves)
 "nre" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -22559,7 +22559,7 @@
 	},
 /area/f13/caves)
 "ojM" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
@@ -23629,14 +23629,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
 "oXC" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/blood{
@@ -26222,7 +26222,7 @@
 	anchored = 1;
 	can_be_unanchored = 1
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawomelette,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestomelette,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "qDU" = (
@@ -26404,7 +26404,7 @@
 	},
 /area/f13/caves)
 "qIQ" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "qIZ" = (
@@ -31194,7 +31194,7 @@
 "ugN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "ugU" = (
@@ -32013,7 +32013,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "uKv" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -32090,7 +32090,7 @@
 	},
 /area/f13/tunnel)
 "uNC" = (
-/obj/structure/nest/deathclaw/mother{
+/obj/structure/nest/aethergiest/mother{
 	infinite = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -36377,7 +36377,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xUb" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},

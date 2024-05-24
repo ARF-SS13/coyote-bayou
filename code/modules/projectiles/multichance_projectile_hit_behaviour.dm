@@ -11,7 +11,7 @@
 #define PROB_HEADSHOT_HIT 50		//Chances of dealing extra damage to the mob when aiming head
 #define PROB_HEADSHOT_MISS 25		//Chances of wasting a bullet when aiming head
 #define PROB_ARMS_HIT 75			//Chances of triggering a gimmick by shooting arms
-#define PROB_THRESHOLD_ARMS_HIT 20  //Minimum percentage value to trigger the stun (it makes the function sharper and avoids cases where peashooters can knock deathclaws down)
+#define PROB_THRESHOLD_ARMS_HIT 20  //Minimum percentage value to trigger the stun (it makes the function sharper and avoids cases where peashooters can knock aethergiests down)
 #define PROB_LEGS_HIT 50			//Chances of hitting on the legs
 #define PROB_LEGS_MISS 25			//Chances of wasting a bullet when aiming legs
 

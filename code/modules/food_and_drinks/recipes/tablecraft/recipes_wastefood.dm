@@ -28,15 +28,15 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/wastelandwellington
 	subcategory = CAT_WASTEFOOD
 
-/datum/crafting_recipe/food/deathclawomelette
+/datum/crafting_recipe/food/aethergiestomelette
 	name = "Deathclaw Omelette"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/f13/deathclawegg = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw = 1,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestegg = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest = 1,
 		/obj/item/reagent_containers/food/snacks/butter =2,
 		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
+	result = /obj/item/reagent_containers/food/snacks/f13/aethergiestomelette
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/longpork_stew
@@ -190,9 +190,9 @@
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/broiled_death_claw
-	name = "Broiled deathclaw"
+	name = "Broiled aethergiest"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest = 1,
 		/obj/item/stack/sheet/mineral/wood = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
@@ -280,17 +280,17 @@
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
-/datum/crafting_recipe/food/deathclaw_egg_omelette
-	name = "deathclaw egg omelette"
+/datum/crafting_recipe/food/aethergiest_egg_omelette
+	name = "aethergiest egg omelette"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/f13/deathclawegg = 2,
-		/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw = 3,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestegg = 2,
+		/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest = 3,
 		/obj/item/reagent_containers/food/snacks/butter = 2,
 		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/f13/deathclaw_egg_omelette
+	result = /obj/item/reagent_containers/food/snacks/f13/aethergiest_egg_omelette
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 

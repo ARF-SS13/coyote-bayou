@@ -1257,8 +1257,8 @@
 	allowed = GLOB.default_all_armor_slot_allowed
 
 /obj/item/clothing/suit/hooded/cloak/goliath
-	name = "deathclaw cloak"
-	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
+	name = "aethergiest cloak"
+	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome aethergiest."
 	icon_state = "clawsuitcloak"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -1268,7 +1268,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
-	name = "deathclaw cloak hood"
+	name = "aethergiest cloak hood"
 	desc = "A protective & concealing hood."
 	icon_state = "clawheadcloak"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
@@ -1321,7 +1321,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/hhunter
 	name = "Razorclaw armour"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	desc = "A suit of armour fashioned out of the remains of a legendary aethergiest."
 	icon_state = "rcarmour"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/hhunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -1335,7 +1335,7 @@
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
 	name = "Razorclaw helm"
-	desc = "The skull of a legendary deathclaw."
+	desc = "The skull of a legendary aethergiest."
 	icon_state = "rchelmet"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -1345,7 +1345,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/shunter
 	name = "quickclaw armour"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
+	desc = "A suit of armour fashioned out of the remains of a legendary aethergiest, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
 	icon_state = "birdarmor"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -1359,7 +1359,7 @@
 
 /obj/item/clothing/head/hooded/cloakhood/shunter
 	name = "quickclaw hood"
-	desc = "A hood made of deathclaw hides, light while also being comfortable to wear, designed for speed."
+	desc = "A hood made of aethergiest hides, light while also being comfortable to wear, designed for speed."
 	icon_state = "birdhood"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -1368,11 +1368,11 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = 0
 
-/obj/item/clothing/suit/hooded/cloak/deathclaw
-	name = "deathclaw cloak"
-	icon_state = "deathclaw"
-	desc = "Made from the sinew and skin of the fearsome deathclaw, this cloak will shield its wearer from harm."
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/deathclaw
+/obj/item/clothing/suit/hooded/cloak/aethergiest
+	name = "aethergiest cloak"
+	icon_state = "aethergiest"
+	desc = "Made from the sinew and skin of the fearsome aethergiest, this cloak will shield its wearer from harm."
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/aethergiest
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
@@ -1380,9 +1380,9 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
-/obj/item/clothing/head/hooded/cloakhood/deathclaw
-	name = "deathclaw cloak hood"
-	icon_state = "hood_deathclaw"
+/obj/item/clothing/head/hooded/cloakhood/aethergiest
+	name = "aethergiest cloak hood"
+	icon_state = "hood_aethergiest"
 	desc = "A protective and concealing hood."
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -1392,7 +1392,7 @@
 /obj/item/clothing/suit/hooded/cloak/razorclaw
 	name = "razorclaw cloak"
 	icon_state = "rcarmor"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	desc = "A suit of armour fashioned out of the remains of a legendary aethergiest."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/razorclaw
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -1406,7 +1406,7 @@
 /obj/item/clothing/head/hooded/cloakhood/razorclaw
 	name = "razorclaw helm"
 	icon_state = "helmet_razorclaw"
-	desc = "The skull of a legendary deathclaw."
+	desc = "The skull of a legendary aethergiest."
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -3713,8 +3713,8 @@
 //custom loadout armor for someone
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout
-	name = "weathered deathclaw power armor"
-	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	name = "weathered aethergiest power armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a aethergiest, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
 	icon_state = "arroyoapa"
 	item_state = "arroyoapa"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
@@ -4889,7 +4889,7 @@
 	requires_training = FALSE
 /obj/item/clothing/suit/armor/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor"
-	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a aethergiest, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
 	icon_state = "arroyoapa"
 	item_state = "arroyoapa"
 

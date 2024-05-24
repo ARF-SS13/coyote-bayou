@@ -389,10 +389,10 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 					A common unit of exchange, backed by water in the Hub."
 	sheet_type = /obj/item/stack/f13Cash/caps
 
-/datum/material/deathclawhide
-	name = "deathclaw leather"
+/datum/material/aethergiesthide
+	name = "aethergiest leather"
 	desc = "A glorious hunting trophy."
-	sheet_type = /obj/item/stack/sheet/animalhide/deathclaw
+	sheet_type = /obj/item/stack/sheet/animalhide/aethergiest
 
 /datum/material/geckohide
 	name = "gecko leather"

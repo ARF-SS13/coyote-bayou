@@ -468,7 +468,7 @@
 
 /mob/living/simple_animal/advanced/tenderclawmale
 	name = "male tenderclaw"
-	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	desc = "A..aethergiest? Or, well. It sort of looks like a aethergiest. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
 	icon_state = "newclaw"
 	icon_living = "newclaw"
@@ -476,7 +476,7 @@
 
 /mob/living/simple_animal/advanced/tenderclawfemale
 	name = "female tenderclaw"
-	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	desc = "A..aethergiest? Or, well. It sort of looks like a aethergiest. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
 	icon_state = "femclaw"
 	icon_living = "femclaw"
@@ -484,7 +484,7 @@
 
 /mob/living/simple_animal/advanced/tenderclawherm
 	name = "herm tenderclaw"
-	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	desc = "A..aethergiest? Or, well. It sort of looks like a aethergiest. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
 	icon_state = "hermclaw"
 	icon_living = "hermclaw"
@@ -1127,7 +1127,7 @@
 	icon_dead = "parrot_dead"
 
 /mob/living/simple_animal/advanced/purpledc
-	name = "purple cloaked deathclaw"
+	name = "purple cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "pur"
@@ -1135,7 +1135,7 @@
 	icon_dead = "pur_dead"
 
 /mob/living/simple_animal/advanced/whitedc
-	name = "white cloaked deathclaw"
+	name = "white cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "whi"
@@ -1143,7 +1143,7 @@
 	icon_dead = "whi_dead"
 
 /mob/living/simple_animal/advanced/reddc
-	name = "red cloaked deathclaw"
+	name = "red cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "red"
@@ -1151,7 +1151,7 @@
 	icon_dead = "red_dead"
 
 /mob/living/simple_animal/advanced/grydc
-	name = "grey cloaked deathclaw"
+	name = "grey cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "gry"
@@ -1159,7 +1159,7 @@
 	icon_dead = "gry_dead"
 
 /mob/living/simple_animal/advanced/brodc
-	name = "brown cloaked deathclaw"
+	name = "brown cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "bro"
@@ -1167,7 +1167,7 @@
 	icon_dead = "bro_dead"
 
 /mob/living/simple_animal/advanced/hubdc
-	name = "black cloaked deathclaw"
+	name = "black cloaked aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "hub"
@@ -1175,7 +1175,7 @@
 	icon_dead = "hub_dead"
 
 /mob/living/simple_animal/advanced/maidclaw
-	name = "maid deathclaw"
+	name = "maid aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_state = "maidclaw"
@@ -1183,12 +1183,12 @@
 	icon_dead = "maidclaw_dead"
 
 /mob/living/simple_animal/advanced/queenclaw
-	name = "Queen deathclaw"
+	name = "Queen aethergiest"
 	desc = "Gonna rip and tear, in style."
 	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
-	icon_state = "deathclaw_queen"
-	icon_living = "deathclaw_queen"
-	icon_dead = "deathclaw_queen_dead"
+	icon_state = "aethergiest_queen"
+	icon_living = "aethergiest_queen"
+	icon_dead = "aethergiest_queen_dead"
 
 //splurt mobs
 /mob/living/simple_animal/advanced/femdigo

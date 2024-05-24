@@ -621,7 +621,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/tunnel)
 "avH" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
+/mob/living/simple_animal/hostile/aethergiest/legendary,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -859,7 +859,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "aBP" = (
-/obj/structure/nest/deathclaw/mother{
+/obj/structure/nest/aethergiest/mother{
 	infinite = 1;
 	spawn_time = 400
 	},
@@ -902,14 +902,14 @@
 	},
 /area/f13/brotherhood/dorms)
 "aCV" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/blood{
@@ -1675,7 +1675,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "aZU" = (
-/obj/structure/nest/deathclaw{
+/obj/structure/nest/aethergiest{
 	radius = 4
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -3055,7 +3055,7 @@
 	},
 /area/f13/brotherhood/leisure)
 "bJc" = (
-/obj/structure/nest/deathclaw{
+/obj/structure/nest/aethergiest{
 	max_mobs = 2
 	},
 /turf/open/indestructible/ground/inside/subway{
@@ -6288,7 +6288,7 @@
 /turf/open/water,
 /area/f13/den)
 "dyz" = (
-/obj/structure/nest/deathclaw{
+/obj/structure/nest/aethergiest{
 	radius = 5
 	},
 /area/f13/bunker)
@@ -6563,7 +6563,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "dHh" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "dHw" = (
@@ -8971,7 +8971,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/mining)
 "ePT" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -9945,7 +9945,7 @@
 	},
 /area/f13/den)
 "fsU" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -11385,7 +11385,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "gjC" = (
-/obj/structure/nest/deathclaw/mother{
+/obj/structure/nest/aethergiest/mother{
 	infinite = 1;
 	spawn_time = 400
 	},
@@ -13646,7 +13646,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "hDO" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -15191,7 +15191,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "iAy" = (
-/obj/structure/nest/deathclaw{
+/obj/structure/nest/aethergiest{
 	radius = 5
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -16358,7 +16358,7 @@
 /obj/structure/rack,
 /area/f13/building)
 "jpi" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
+/mob/living/simple_animal/hostile/aethergiest/legendary,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jpr" = (
@@ -23172,14 +23172,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "nHg" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg{
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg{
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/blood{
@@ -29574,7 +29574,7 @@
 	can_be_unanchored = 1
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/item/reagent_containers/food/snacks/f13/deathclawomelette,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestomelette,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
@@ -33821,7 +33821,7 @@
 	},
 /area/f13/brotherhood/offices2nd)
 "unm" = (
-/obj/structure/nest/deathclaw{
+/obj/structure/nest/aethergiest{
 	max_mobs = 2
 	},
 /turf/open/floor/f13{
@@ -34313,8 +34313,8 @@
 /obj/structure/chair/stool/retro/black,
 /area/f13/den)
 "uDu" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
-/obj/structure/nest/deathclaw{
+/mob/living/simple_animal/hostile/aethergiest/legendary,
+/obj/structure/nest/aethergiest{
 	radius = 5
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -39133,7 +39133,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "xBs" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "xBw" = (
