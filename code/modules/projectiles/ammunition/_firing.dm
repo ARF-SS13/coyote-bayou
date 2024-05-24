@@ -49,16 +49,16 @@
 
 	if(istype(user))
 		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
-	user.newtonian_move(get_dir(target, user))
+		user.newtonian_move(get_dir(target, user))
 	update_icon()
 	return 1
 
 /obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0, atom/fired_from)
 	. = 0
 	if(!randomspread) // usually true
-		return
+		return 0
 	if(!isliving(user))
-		return
+		return 0
 	var/gun_bullet_spread = 0
 	gun_bullet_spread += BB?.spread || 0 // bullet's inherent inaccuracy
 	gun_bullet_spread += distro || 0 // gun's inaccuracy
@@ -70,18 +70,21 @@
 		return
 	BB.original = target
 	BB.firer = user
-	if(isplayer(user) && !user.enabled_combat_indicator)
+	var/shooter_living = istype(user)
+	if(shooter_living && isplayer(user) && !user.enabled_combat_indicator)
 		BB.factionize(user.faction)
 		BB.safety_switch = TRUE // disabled the factionize after it range from shooterd
 		BB.is_player_projectile = TRUE
 	BB.fired_from = fired_from
 	if (zone_override)
 		BB.def_zone = zone_override
-	else
+	else if (shooter_living)
 		BB.def_zone = user.zone_selected
+	else
+		BB.def_zone = BODY_ZONE_CHEST
 	BB.suppressed = quiet
 	BB.damage_threshold_penetration = damage_threshold_penetration
-	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+	if(shooter_living && HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
 		BB.damage_mod *= 0.2 // lol
 
 	if(isgun(fired_from))
@@ -108,7 +111,7 @@
 		qdel(reagents)
 
 /obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
-	var/turf/curloc = get_turf(user)
+	var/turf/curloc = get_turf(user) || get_turf(src)
 	if (!istype(targloc) || !istype(curloc) || !BB)
 		return 0
 
@@ -123,7 +126,7 @@
 		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
 			direct_target = target
 	if(!direct_target)
-		BB.preparePixelProjectile(target, user, params, spread)
+		BB.preparePixelProjectile(target, (user || src), params, spread)
 	var/angle = text2num(params2list(params)["angle"])
 	BB.fire(angle, direct_target, spread)
 	BB = null
