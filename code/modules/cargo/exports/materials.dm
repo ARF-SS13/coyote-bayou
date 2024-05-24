@@ -172,12 +172,12 @@
 	k_elasticity = 0/1000
 
 
-/datum/export/material/deathclawhide
+/datum/export/material/aethergiesthide
 	cost = 1000
 	message = " "
-	unit_name = "deathclaw hide"
-	material_id = /datum/material/deathclawhide
-	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+	unit_name = "aethergiest hide"
+	material_id = /datum/material/aethergiesthide
+	export_types = list(/obj/item/stack/sheet/animalhide/aethergiest)
 	k_elasticity = 0/1000
 
 

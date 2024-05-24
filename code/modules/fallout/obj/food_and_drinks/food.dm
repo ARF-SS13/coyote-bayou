@@ -46,9 +46,9 @@
 	slice_path = null
 	foodtype = RAW | MEAT
 
-/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
-	name = "deathclaw meat"
-	desc = "A slab of hard but delicious deathclaw meat."
+/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest
+	name = "aethergiest meat"
+	desc = "A slab of hard but delicious aethergiest meat."
 	icon_state = "goliathmeat"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 9,
@@ -58,7 +58,7 @@
 	bitesize = 6 //Big slabs of meat from a massive creature
 	filling_color = "#FA8072"
 	tastes = list("chewy meat" = 3, "scales" = 1)
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/aethergiest
 	slice_path = null
 	foodtype = RAW | MEAT
 
@@ -304,8 +304,8 @@
 	)
 	tastes = list("bug protein" = 3, "sweet tangy liquid" = 1)
 
-/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
-	name = "deathclaw steak"
+/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest
+	name = "aethergiest steak"
 	desc = "A piece of hot spicy meat, eaten by only the most worthy hunters - or the most rich clients."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	bonus_reagents = list(
@@ -594,16 +594,16 @@
 
 //WASTELAND EGGS
 
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg
-	name = "deathclaw egg"
-	desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
-	icon_state = "deathclawegg"
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg
+	name = "aethergiest egg"
+	desc = "A aethergiest egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
+	icon_state = "aethergiestegg"
 	bonus_reagents = list(/datum/reagent/toxin = 30)
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
 	filling_color = "#F0E68C"
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(!..()) //was it caught by a mob?
 		var/turf/T = get_turf(hit_atom)
 		new/obj/effect/decal/cleanable/egg_smudge(T)
@@ -695,11 +695,11 @@
 	filling_color = "B#22222"
 	foodtype = MEAT | GRAIN
 
-/obj/item/reagent_containers/food/snacks/f13/deathclawomelette
-	name = "deathclaw omelette"
-	desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
+/obj/item/reagent_containers/food/snacks/f13/aethergiestomelette
+	name = "aethergiest omelette"
+	desc = "A delicious omelette made from one big aethergiest egg. Hope you're not allergic."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
-	icon_state = "deathclawomlette"
+	icon_state = "aethergiestomlette"
 	bonus_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 		/datum/reagent/medicine/omnizine = 40,
@@ -1030,7 +1030,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/broiled_death_claw
-	name = "broiled deathclaw"
+	name = "broiled aethergiest"
 	desc = "All the flavor seared in for extra kick."
 	icon_state = "broiled_death_claw"
 	list_reagents = list(
@@ -1041,7 +1041,7 @@
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 10
 	)
-	tastes = list("deathclaw meat" = 3, "butter" = 1)
+	tastes = list("aethergiest meat" = 3, "butter" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/fire_ant_fricassee
@@ -1127,17 +1127,17 @@
 	tastes = list("cooked insect guts" = 2, "pastry dough" = 1)
 	foodtype = MEAT | GRAIN
 
-/obj/item/reagent_containers/food/snacks/f13/deathclaw_egg_omelette
-	name = "deathclaw egg omelette"
-	desc = "An omelette made from a pristine deathclaw eggs."
-	icon_state = "deathclaw_egg_omelette"
+/obj/item/reagent_containers/food/snacks/f13/aethergiest_egg_omelette
+	name = "aethergiest egg omelette"
+	desc = "An omelette made from a pristine aethergiest eggs."
+	icon_state = "aethergiest_egg_omelette"
 	bonus_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 16,
 		/datum/reagent/medicine/omnizine = 60,
 		/datum/reagent/medicine/dexalin = 20
 	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 80)
-	tastes = list("deathclaw eggs" = 2, "deathclaw Meat" = 2, "cheese" = 1)
+	tastes = list("aethergiest eggs" = 2, "aethergiest Meat" = 2, "cheese" = 1)
 	foodtype = MEAT | DAIRY
 
 /obj/item/reagent_containers/food/snacks/f13/baked_nightstalker_tail

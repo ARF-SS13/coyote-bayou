@@ -241,7 +241,7 @@ template end */
 
 /datum/supply_pack/security/huntingrifle
 	name = "Hunting Rifle"
-	desc = "A bolt-action rifle chambered in .30-06. Perfect no matter what you decide to hunt, from geckos to deathclaws. Just, maybe, don't try and use this to clear out a pillbug infestation?"
+	desc = "A bolt-action rifle chambered in .30-06. Perfect no matter what you decide to hunt, from geckos to aethergiests. Just, maybe, don't try and use this to clear out a pillbug infestation?"
 	cost = 2200
 	num_contained = 1
 	contains = list(/obj/item/gun/ballistic/rifle/hunting)

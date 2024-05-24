@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/tribalwar/lighttribe,
 	/datum/crafting_recipe/tribalwar/heavytribe,
 	/datum/crafting_recipe/tribalwar/legendaryclawcloak,
-	/datum/crafting_recipe/tribalwar/deathclawspear,
+	/datum/crafting_recipe/tribalwar/aethergiestspear,
 	/datum/crafting_recipe/warpaint,
 	/datum/crafting_recipe/tribalradio,
 	/datum/crafting_recipe/tribalwar/goliathcloak,
@@ -123,7 +123,7 @@ Tribal Chief
 	neck =	/obj/item/clothing/neck/mantle/chief
 	id =	/obj/item/card/id/tribetattoo
 	suit =	/obj/item/clothing/suit/hooded/cloak/hhunter
-	suit_store =	/obj/item/twohanded/spear/bonespear/deathclaw
+	suit_store =	/obj/item/twohanded/spear/bonespear/aethergiest
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
@@ -634,7 +634,7 @@ Guardian
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
 	suit = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
-	//suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	//suit_store = /obj/item/twohanded/spear/bonespear/aethergiest
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,

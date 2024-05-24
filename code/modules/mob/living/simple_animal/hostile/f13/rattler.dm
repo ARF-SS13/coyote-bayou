@@ -1,6 +1,6 @@
 /*IN THIS FILE:
 -Rattler
-as per originally proposed concept: less powerful directly than deathclaws, but faster, and venom is rough. don't yell at me if this is OP
+as per originally proposed concept: less powerful directly than aethergiests, but faster, and venom is rough. don't yell at me if this is OP
 using ant armor b/c it just kinda works here and i don't want it to be super beefy lol.
 */
 

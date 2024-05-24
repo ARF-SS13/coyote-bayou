@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
-		/obj/item/stack/sheet/animalhide/deathclaw = 20,
+		/obj/item/stack/sheet/animalhide/aethergiest = 20,
 		/obj/item/stack/sheet/animalhide/gecko = 2,
 		/obj/item/stack/sheet/animalhide/molerat = 2,
 		/obj/item/stack/sheet/animalhide/wolf = 8,
@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/f13/stalkerpelt = 8,
 		/obj/item/clothing/head/bearpelt = 20,
 		/obj/item/stack/sheet/animalhide/human = 0,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 8,

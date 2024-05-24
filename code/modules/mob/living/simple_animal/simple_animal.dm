@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/response_harm_continuous = "hits"
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
-	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
+	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a aethergiest then you're desperate enough to need it
 	/// Mob damage threshold, subtracted from incoming damage
 	var/force_threshold = 0
 	/// mob's inherent armor
@@ -1399,7 +1399,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(60 to 80)
 			descriptors += span_alert(" could play chicken with a car and win.")
 		if(80 to INFINITY)
-			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/deathclaw) ? "another" : "a"] deathclaw and win.")
+			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/aethergiest) ? "another" : "a"] aethergiest and win.")
 	descriptors += "\n"
 	///Bullet
 	var/bullet_armor = mob_armor.getRating("bullet")

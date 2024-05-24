@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
  */
 // TODO: make this work
 /* #define FACTION_HOSTILE "hostile"
-#define FACTION_DEATHCLAW "deathclaw"
+#define FACTION_DEATHCLAW "aethergiest"
 #define FACTION_GECKO "gecko"
 #define FACTION_RAT "rat"
 #define FACTION_YAOGUAI "yaoguai"

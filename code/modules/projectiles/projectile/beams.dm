@@ -409,7 +409,7 @@
 
 	// This could be a bit overboard, if it actually worked.
 	supereffective_damage = BULLET_DAMAGE_PISTOL_10MM
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
 	name = "recharger beam"
@@ -884,7 +884,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 12
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/pistol/covenant/bane
 	name = "plasma energy bolt"
@@ -903,7 +903,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 20
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/repeater/covenant
 	name = "plasma energy bolt"
@@ -922,7 +922,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 11
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/repeater/onibane
 	name = "plasma energy bolt"
@@ -941,7 +941,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 18
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
@@ -1013,7 +1013,7 @@
 	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "1000" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
 	wound_bonus = 60 // nasty, but it's still a laser
 	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload in the field
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray

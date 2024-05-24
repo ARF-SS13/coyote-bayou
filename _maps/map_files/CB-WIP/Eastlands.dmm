@@ -54,7 +54,7 @@
 	},
 /area/f13/building)
 "aeA" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "afh" = (
@@ -115,7 +115,7 @@
 /area/f13/building)
 "aix" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -216,12 +216,12 @@
 	},
 /area/f13/wasteland)
 "aph" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "apM" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "shadowright"
 	},
@@ -535,7 +535,7 @@
 "aLi" = (
 /obj/structure/closet,
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2,
@@ -1813,7 +1813,7 @@
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building)
 "ctw" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
@@ -2434,7 +2434,7 @@
 /area/f13/underground/cave)
 "dki" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -2485,7 +2485,7 @@
 /area/f13/building)
 "dph" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw","mining")
+	faction = list("wastebot","robot","ghoul","aethergiest","mining")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -2924,7 +2924,7 @@
 /area/f13/building)
 "dTG" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -3620,7 +3620,7 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "eXZ" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -3669,7 +3669,7 @@
 "fbh" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3856,7 +3856,7 @@
 /area/f13/building)
 "frN" = (
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -3869,7 +3869,7 @@
 /area/f13/building)
 "fuo" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -4061,7 +4061,7 @@
 /area/f13/building)
 "fMK" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt/bigiceturf,
@@ -4817,7 +4817,7 @@
 /area/f13/building)
 "gIL" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -4905,7 +4905,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building)
 "gPa" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
@@ -5249,7 +5249,7 @@
 /area/f13/building)
 "hoH" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5516,7 +5516,7 @@
 "hEQ" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
@@ -6480,7 +6480,7 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/f13/building)
 "iQK" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iRe" = (
@@ -7141,7 +7141,7 @@
 	},
 /area/f13/underground/cave)
 "jMV" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
 "jMW" = (
@@ -7734,7 +7734,7 @@
 /area/f13/building)
 "kJx" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -8536,7 +8536,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "lQB" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
@@ -8962,7 +8962,7 @@
 /area/f13/wasteland)
 "msR" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -9134,7 +9134,7 @@
 /area/f13/wasteland)
 "mCS" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -9342,7 +9342,7 @@
 /area/f13/building)
 "mUu" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -10314,7 +10314,7 @@
 /area/f13/building)
 "oiG" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/inside/mountain,
@@ -10806,7 +10806,7 @@
 /area/f13/building)
 "oMK" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -10838,7 +10838,7 @@
 /area/f13/building)
 "oPS" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11369,7 +11369,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "pFN" = (
-/mob/living/simple_animal/hostile/deathclaw/power_armor{
+/mob/living/simple_animal/hostile/aethergiest/power_armor{
 	name = "Anthony";
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
 	},
@@ -11888,7 +11888,7 @@
 /area/f13/building)
 "qst" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12072,7 +12072,7 @@
 /area/f13/wasteland)
 "qCV" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
@@ -12595,7 +12595,7 @@
 /area/f13/underground/cave)
 "rjz" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13415,13 +13415,13 @@
 /area/f13/wasteland)
 "sFo" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "sFM" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
@@ -13735,7 +13735,7 @@
 /area/f13/wasteland)
 "tas" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13823,7 +13823,7 @@
 /area/f13/building)
 "tex" = (
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -13974,7 +13974,7 @@
 	},
 /area/f13/wasteland)
 "tpQ" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
@@ -14055,7 +14055,7 @@
 /area/f13/building)
 "tsm" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14350,7 +14350,7 @@
 /area/f13/building)
 "tMQ" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
@@ -14536,7 +14536,7 @@
 /area/f13/building)
 "tZi" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 400
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14549,7 +14549,7 @@
 /area/f13/building)
 "tZA" = (
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/item/chair/stool/alien,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14620,7 +14620,7 @@
 /area/f13/building)
 "uex" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -15489,7 +15489,7 @@
 /area/f13/underground/cave)
 "vnA" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -15803,7 +15803,7 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "vFN" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -16246,7 +16246,7 @@
 "wjn" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -16335,7 +16335,7 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "woO" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -16603,7 +16603,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "wJx" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
@@ -16862,7 +16862,7 @@
 /area/f13/building)
 "xae" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16977,7 +16977,7 @@
 	},
 /area/f13/wasteland)
 "xhD" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/f13/building)
@@ -17319,7 +17319,7 @@
 "xLf" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
@@ -17499,7 +17499,7 @@
 "xYX" = (
 /obj/structure/closet/crate,
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/ice/colder,

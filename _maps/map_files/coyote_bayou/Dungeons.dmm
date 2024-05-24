@@ -4658,7 +4658,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "cgd" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -11080,7 +11080,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "eNs" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "eNx" = (
@@ -29206,7 +29206,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/reagent_containers/food/snacks/meat/steak/deathclaw,
+/obj/item/reagent_containers/food/snacks/meat/steak/aethergiest,
 /turf/open/indestructible/necropolis,
 /area/f13/building)
 "nbm" = (
@@ -42530,7 +42530,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "sRJ" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "sRS" = (
@@ -52576,7 +52576,7 @@
 /area/f13/enclave)
 "xvD" = (
 /obj/structure/table/wood,
-/obj/item/melee/unarmed/deathclawgauntlet,
+/obj/item/melee/unarmed/aethergiestgauntlet,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "xvN" = (
@@ -52954,7 +52954,7 @@
 "xFd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/tunnel)
 "xFj" = (
@@ -53700,8 +53700,8 @@
 	},
 /area/f13/brotherhood/dorms)
 "xWL" = (
-/mob/living/simple_animal/hostile/deathclaw/power_armor{
-	faction = list("deathclaw","enclave");
+/mob/living/simple_animal/hostile/aethergiest/power_armor{
+	faction = list("aethergiest","enclave");
 	mob_armor = list("melee"=35,"bullet"=35,"laser"=35,"energy"=10,"bomb"=0,"bio"=100,"rad"=100,"fire"=0,"acid"=0,"wound"=0,"damage_threshold"=15)
 	},
 /turf/open/indestructible/ground/outside/dirt,

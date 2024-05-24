@@ -418,14 +418,14 @@
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = 14
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/bullet/needle/improvised
 	name = "Jade needle"
 	icon_state = "needleimprov"
 	damage_list = list("12" = 80, "14" = 20, "16" = 5)
 	supereffective_damage = 8
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE_HANDLOAD
 	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS

@@ -21,7 +21,7 @@
 #define MOB_SPAWNER_CENTAUR "centaurs"
 #define MOB_SPAWNER_SUPERMUTANT_AND_CENTAUR "gruesome_twosome"
 #define MOB_SPAWNER_CAZADOR "cazadors"
-#define MOB_SPAWNER_DEATHCLAW "deathclaws"
+#define MOB_SPAWNER_DEATHCLAW "aethergiests"
 #define MOB_SPAWNER_HELLPIG "hellpiggy"
 #define MOB_SPAWNER_YAOGUAI "bear"
 #define MOB_SPAWNER_WOLF "woof"
@@ -645,9 +645,9 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		)
 
 /// Deathclaws
-/datum/random_mob_spawner/deathclaw
+/datum/random_mob_spawner/aethergiest
 	nest_tag = MOB_SPAWNER_DEATHCLAW
-	nest_name = "deathclaw den"
+	nest_name = "aethergiest den"
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
@@ -655,19 +655,19 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
 	mob_list_easy = list(
-		/mob/living/simple_animal/hostile/deathclaw = 1
+		/mob/living/simple_animal/hostile/aethergiest = 1
 		)
 	num_mobs_to_spawn_medium = 2
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONGEST
 	mob_list_medium = list(
-		/mob/living/simple_animal/hostile/deathclaw/mother = 1,
-		/mob/living/simple_animal/hostile/deathclaw = 1
+		/mob/living/simple_animal/hostile/aethergiest/mother = 1,
+		/mob/living/simple_animal/hostile/aethergiest = 1
 		)
 	num_mobs_to_spawn_hard = 2
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONGEST
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/deathclaw/mother = 1,
-		/mob/living/simple_animal/hostile/deathclaw/legendary = 1
+		/mob/living/simple_animal/hostile/aethergiest/mother = 1,
+		/mob/living/simple_animal/hostile/aethergiest/legendary = 1
 		)
 
 /// Hellpigs my love
