@@ -58,7 +58,7 @@
 	bitesize = 6 //Big slabs of meat from a massive creature
 	filling_color = "#FA8072"
 	tastes = list("chewy meat" = 3, "scales" = 1)
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/aethergiest
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/bear
 
 
