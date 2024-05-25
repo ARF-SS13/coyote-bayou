@@ -57,7 +57,7 @@
 	/obj/structure/simple_door/wood,
 	/obj/structure/simple_door/interior
 	)
-
+*/
 /turf/closed/wall/f13/coyote/oldwood
 	name = "old wood wall"
 	desc = "A wall of very old and rotting wood."
