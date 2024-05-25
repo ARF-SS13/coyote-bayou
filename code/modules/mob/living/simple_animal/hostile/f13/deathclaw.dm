@@ -7,10 +7,10 @@
 	name = "aethergiest"
 	desc = "A massive multidimensional predator.  Here to eat you and your alternate dimension self's dog. Fight or flee, but do it quick."
 	icon = 'icons/fallout/mobs/monsters/deathclaw.dmi'
-	icon_state = "aethergiest"
-	icon_living = "aethergiest"
-	icon_dead = "aethergiest_dead"
-	icon_gib = "aethergiest_gib"
+	icon_state = "deathclaw"
+	icon_living = "deathclaw"
+	icon_dead = "deathclaw_dead"
+	icon_gib = "deathclaw_gib"
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	alpha = 200
 	maxHealth = 250
@@ -173,10 +173,10 @@
 	name = "aethergiest"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws."
 	icon = 'icons/fallout/mobs/monsters/deathclaw.dmi'
-	icon_state = "aethergiest"
-	icon_living = "aethergiest"
-	icon_dead = "aethergiest_dead"
-	icon_gib = "aethergiest_gib"
+	icon_state = "deathclaw"
+	icon_living = "deathclaw"
+	icon_dead = "deathclaw_dead"
+	icon_gib = "deathclaw_gib"
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	maxHealth = 250
 	health = 250
@@ -379,9 +379,9 @@
 /mob/living/simple_animal/hostile/aethergiest/butter
 	name = "butterclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is...made out of butter?"
-	icon_state = "aethergiest_butter"
-	icon_living = "aethergiest_butter"
-	icon_dead = "aethergiest_butter_dead"
+	icon_state = "deathclaw_butter"
+	icon_living = "deathclaw_butter"
+	icon_dead = "deathclaw_butter_dead"
 	color_mad = rgb(133, 98, 87)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 10,
 							/obj/item/stack/sheet/animalhide/aethergiest = 3)
