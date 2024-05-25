@@ -780,7 +780,7 @@
 	if(source?.IsFeral() || owner?.IsFeral())
 		dmg_overlay_type = null
 
-	if(status == BODYPART_ROBOTIC)
+	else if(status == BODYPART_ROBOTIC)
 		dmg_overlay_type = "robotic"
 		if(!render_like_organic)
 			marking_value = null
@@ -1094,6 +1094,12 @@
 	for(var/datum/wound/woundie in wounds)
 		if(woundie.get_blood_flow(FALSE))
 			return TRUE
+
+/obj/item/bodypart/proc/aggravate_wound(scalar)
+	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
+		return
+	for(var/datum/wound/woundie in wounds)
+		woundie.aggravate_wound(scalar)
 
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart

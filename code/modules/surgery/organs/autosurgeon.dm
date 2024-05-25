@@ -30,7 +30,7 @@
 	else if(!storedorgan)
 		to_chat(user, span_notice("[src] currently has no implant stored."))
 		return
-	if(!do_after(user, 30 SECONDS, TRUE, src))  // Surgery takes at least SOME time.
+	if(!do_after(user, 20 SECONDS, TRUE, src))  // Surgery takes at least SOME time.
 		to_chat(user, span_warning("You need to hold still while the autosurgeon operates!"))
 		return
 	storedorgan.Insert(user)//insert stored organ into the user

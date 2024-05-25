@@ -91,34 +91,34 @@
 			overrides[ARTMOD_RADIATION] = list()
 			overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = -(buff_strength/100)
 			overrides[ARTMOD_RADIATION][ARTVAR_IS_BUFF] = TRUE
-	switch(debuff_type)
-		if(1) //brute
-			overrides[ARTMOD_PASSIVE_DOT] = list()
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BRUTE] = (buff_strength/100)
-		if(2) //burn
-			overrides[ARTMOD_PASSIVE_DOT] = list()
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BURN] = (buff_strength/100)
-		if(3) //toxin
-			overrides[ARTMOD_PASSIVE_DOT] = list()
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
-			overrides[ARTMOD_PASSIVE_DOT][ARTVAR_TOXIN] = (buff_strength/100)
-		if(4) //health
-			overrides[ARTMOD_MAX_HP] = list()
-			overrides[ARTMOD_MAX_HP][ARTVAR_HP_CHANGE] = -(buff_strength/5)
-		if(5) //stamina
-			overrides[ARTMOD_STAMINA] = list()
-			overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = -(buff_strength/100)
-		if(6) //speed
-			overrides[ARTMOD_SPEED] = list()
-			overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = -(buff_strength/100)
-		if(7) //blood
-			overrides[ARTMOD_BLOOD] = list()
-			overrides[ARTMOD_BLOOD][ARTVAR_BLOOD_ADJUSTMENT] = (buff_strength/100)
-		if(8) //radiation
-			overrides[ARTMOD_RADIATION] = list()
-			overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = -(buff_strength/100)
+	// switch(debuff_type)
+	// 	if(1) //brute
+	// 		overrides[ARTMOD_PASSIVE_DOT] = list()
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BRUTE] = (buff_strength/100)
+	// 	if(2) //burn
+	// 		overrides[ARTMOD_PASSIVE_DOT] = list()
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BURN] = (buff_strength/100)
+	// 	if(3) //toxin
+	// 		overrides[ARTMOD_PASSIVE_DOT] = list()
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = 5
+	// 		overrides[ARTMOD_PASSIVE_DOT][ARTVAR_TOXIN] = (buff_strength/100)
+	// 	if(4) //health
+	// 		overrides[ARTMOD_MAX_HP] = list()
+	// 		overrides[ARTMOD_MAX_HP][ARTVAR_HP_CHANGE] = -(buff_strength/5)
+	// 	if(5) //stamina
+	// 		overrides[ARTMOD_STAMINA] = list()
+	// 		overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = -(buff_strength/100)
+	// 	if(6) //speed
+	// 		overrides[ARTMOD_SPEED] = list()
+	// 		overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = -(buff_strength/100)
+	// 	if(7) //blood
+	// 		overrides[ARTMOD_BLOOD] = list()
+	// 		overrides[ARTMOD_BLOOD][ARTVAR_BLOOD_ADJUSTMENT] = (buff_strength/100)
+	// 	if(8) //radiation
+	// 		overrides[ARTMOD_RADIATION] = list()
+	// 		overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = -(buff_strength/100)
 	set_name_to()
 	var/name_prefix = get_prefix()
 	var/colorize = get_color()

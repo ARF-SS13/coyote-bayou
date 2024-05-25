@@ -171,7 +171,10 @@
 	var/image/user_image = null
 
 /mob/camera/aiEye/remote/update_remote_sight(mob/living/user)
-	user.see_invisible = SEE_INVISIBLE_LIVING //can't see ghosts through cameras
+	if(user.client?.holder)
+		user.see_invisible = user.client.holder.ghostsight_or(SEE_INVISIBLE_LIVING) //can't see ghosts through cameras
+	else
+		user.see_invisible = SEE_INVISIBLE_LIVING
 	user.sight = SEE_TURFS | SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1

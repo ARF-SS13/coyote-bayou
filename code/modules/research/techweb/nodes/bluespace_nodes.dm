@@ -5,7 +5,7 @@
 	display_name = "Basic Quantum Theory"
 	description = "Basic studies into the mysterious realm known as Quantum Theory."
 	prereq_ids = list("base", "datatheory")
-	design_ids = list("beacon", "xenobioconsole", "telesci_gps", "xenobio_monkeys")
+	design_ids = list("xenobioconsole", "telesci_gps", "xenobio_monkeys")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/practical_bluespace
@@ -31,6 +31,22 @@
 	prereq_ids = list("adv_power", "adv_bluespace")
 	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/selfcharge_power
+	id = "selfcharge_power"
+	display_name = "Self-Charging Technology"
+	description = "The power of infinite!"
+	prereq_ids = list("bluespace_power", "alientech")
+	design_ids = list("selfcharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+
+/datum/techweb_node/hypercharge_power
+	id = "hypercharge_power"
+	display_name = "Hyper-Charging Technology"
+	description = "The power of infinite time two!"
+	prereq_ids = list("selfcharge_power")
+	design_ids = list("hypercharge_cell")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
 
 /*8
 /datum/techweb_node/bluespace_holding

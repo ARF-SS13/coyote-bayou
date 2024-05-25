@@ -1217,7 +1217,7 @@
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TABLE_CLICKED_WITH_ITEM, .proc/apply_to_table)
+	RegisterSignal(src, COMSIG_TABLE_CLICKED_WITH_ITEM,PROC_REF(apply_to_table))
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/examine(mob/user)
 	. = ..()
@@ -1255,7 +1255,7 @@
 		return
 	if(!user.Adjacent(T))
 		return
-	INVOKE_ASYNC(src, .proc/actually_apply_to_table, T, user, params)
+	INVOKE_ASYNC(src,PROC_REF(actually_apply_to_table), T, user, params)
 	return TABLE_NO_PLACE
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/proc/actually_apply_to_table(obj/structure/table/T, mob/user, params)

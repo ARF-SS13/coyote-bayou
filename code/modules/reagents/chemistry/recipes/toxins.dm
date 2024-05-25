@@ -75,7 +75,7 @@
 	id = /datum/reagent/toxin/mutetoxin
 	results = list(/datum/reagent/toxin/mutetoxin = 2)
 	required_reagents = list(/datum/reagent/uranium = 2, /datum/reagent/water = 1, /datum/reagent/carbon = 1)
-
+/*
 /datum/chemical_reaction/zombiepowder
 	name = "Zombie Powder"
 	id = /datum/reagent/toxin/zombiepowder
@@ -87,7 +87,7 @@
 	id = /datum/reagent/toxin/ghoulpowder
 	results = list(/datum/reagent/toxin/ghoulpowder = 2)
 	required_reagents = list(/datum/reagent/toxin/zombiepowder = 1, /datum/reagent/medicine/epinephrine = 1)
-
+*/ // instant KO reagent?? hello?? this is a balance nightmare, you can just sneak this into anyone's food or use our WONDERFUL LLX11 to instantly knock them out 
 /datum/chemical_reaction/mindbreaker
 	name = "Mindbreaker Toxin"
 	id = /datum/reagent/toxin/mindbreaker

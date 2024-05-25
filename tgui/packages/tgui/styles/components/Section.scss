@@ -36,6 +36,12 @@ $separator-color: colors.$primary !default;
   color: $title-text-color;
 }
 
+.Section__titleText_small {
+  font-size: base.em(12px);
+  font-weight: bold;
+  color: $title-text-color;
+}
+
 .Section__buttons {
   position: absolute;
   display: inline-block;

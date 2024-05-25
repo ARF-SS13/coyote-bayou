@@ -11,7 +11,7 @@
 		else
 			var/datum/numbered_display/ND = .[I.type]
 			ND.number++
-	. = sortTim(., /proc/cmp_numbered_displays_name_asc, associative = TRUE)
+	. = sortTim(., GLOBAL_PROC_REF(cmp_numbered_displays_name_asc), associative = TRUE)
 
 /**
  * Orients all objects in legacy mode, and returns the objects to show to the user.
@@ -62,7 +62,6 @@
 				continue
 			O.mouse_opacity = MOUSE_OPACITY_OPAQUE //This is here so storage items that spawn with contents correctly have the "click around item to equip"
 			O.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
-			O.maptext = ""
 			O.layer = ABOVE_HUD_LAYER
 			O.plane = ABOVE_HUD_PLANE
 			. += O
@@ -248,7 +247,6 @@
 		B.name = I.name
 
 		I.mouse_opacity = MOUSE_OPACITY_ICON
-		I.maptext = ""
 		I.layer = VOLUMETRIC_STORAGE_ITEM_LAYER
 		I.plane = VOLUMETRIC_STORAGE_ITEM_PLANE
 
@@ -289,7 +287,7 @@
 	else if(current_maxscreensize)
 		maxallowedscreensize = current_maxscreensize
 	// we got screen size, register signal
-	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_logout, override = TRUE)
+	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT,PROC_REF(on_logout), override = TRUE)
 	if(M.active_storage != src)
 		if(M.active_storage)
 			M.active_storage.ui_hide(M)

@@ -60,18 +60,3 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 	
-	switch(client.prefs.kisser)
-		if(KISS_BOYS)
-			SSstatpanels.cached_boykissers |= ckey
-		if(KISS_GIRLS)
-			SSstatpanels.cached_girlkissers |= ckey
-		if(KISS_ANY)
-			SSstatpanels.cached_anykissers |= ckey
-	switch(client.prefs.tbs)
-		if(TBS_TOP)
-			SSstatpanels.cached_tops |= ckey
-		if(TBS_BOTTOM)
-			SSstatpanels.cached_bottoms |= ckey
-		if(TBS_SHOES)
-			SSstatpanels.cached_switches |= ckey
-

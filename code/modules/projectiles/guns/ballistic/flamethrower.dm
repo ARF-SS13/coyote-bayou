@@ -12,8 +12,8 @@
 	var/obj/item/gun/ballistic/m2flamethrower/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
-	var/overheat_max = 12
-	var/heat_diffusion = 1
+	var/overheat_max = 30
+	var/heat_diffusion = 3
 
 /obj/item/m2flamethrowertank/Initialize()
 	. = ..()
@@ -117,7 +117,7 @@
 	var/obj/item/m2flamethrowertank/ammo_pack
 	init_firemodes = list(
 		/datum/firemode/burst/three,
-		/datum/firemode/semi_auto
+		/datum/firemode/automatic/rpm150
 	)
 
 /obj/item/gun/ballistic/m2flamethrower/Initialize()

@@ -6,9 +6,9 @@
 	cost = 200
 	unit_name = "chems (low)"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
-	/obj/item/reagent_containers/hypospray/medipen/medx,
+	/obj/item/reagent_containers/pill/patch/medx,
 	/obj/item/reagent_containers/blood/radaway,
-	/obj/item/reagent_containers/hypospray/medipen/steady,
+	/obj/item/reagent_containers/pill/patch/steady,
 	/obj/item/storage/pill_bottle/chem_tin/mentats,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -50,7 +50,7 @@
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
 		/obj/item/gun/ballistic/rifle/mosin/mini,
-		/obj/item/gun/energy/laser/tg/scrap,
+		/obj/item/gun/energy/laser/cranklasergun/tg,
 		)
 
 /datum/export/item/commongun
@@ -114,7 +114,7 @@
 		/obj/item/gun/ballistic/automatic/smg/american180,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2,
-		/obj/item/gun/ballistic/automatic/smg/mp5,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder,
 		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/ballistic/automatic/service,
@@ -156,8 +156,8 @@
 		/obj/item/gun/energy/laser/retro,
 		/obj/item/gun/ballistic/revolver/grenadelauncher,
 		/obj/item/gun/ballistic/shotgun/grenade,
-		/obj/item/gun/energy/laser/tg/carbine,
-		/obj/item/gun/energy/laser/tg/rifle,
+		/obj/item/gun/energy/laser/cranklasergun/tg/carbine,
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle,
 		)
 
 /datum/export/item/raregun
@@ -186,7 +186,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/pistol14,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
 		/obj/item/gun/ballistic/rifle/mag/boys,
-		/obj/item/gun/ballistic/rifle/mag/antimateriel,
+		/obj/item/gun/ballistic/rifle/mag/antimaterial,
 		/obj/item/gun/ballistic/shotgun/police,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
@@ -220,8 +220,8 @@
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
 		/obj/item/gun/magic/,
-		/obj/item/gun/energy/laser/tg/rifle/heavy,
-		/obj/item/gun/energy/laser/tg/rifle/auto,
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy,
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto,
 		/obj/item/gun/energy/laser/tg/recharger,
 		)
 
@@ -256,10 +256,10 @@
 		/obj/item/gun/energy/ionrifle/carbine,
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
-		/obj/item/melee/unarmed/deathclawgauntlet,
+		/obj/item/melee/unarmed/aethergiestgauntlet,
 		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
-		/obj/item/twohanded/spear/bonespear/deathclaw,
+		/obj/item/twohanded/spear/bonespear/aethergiest,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
 		/obj/item/sord,
 		/obj/item/melee/transforming/plasmacutter/regular/adam,
@@ -293,7 +293,6 @@
 		/obj/item/clothing/head/helmet/f13/combat/mk2,
 		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
 		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
 		/obj/item/clothing/suit/armor/medium/odst,
@@ -411,7 +410,7 @@
 	cost = 450
 	unit_name = "high-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/wolf,
-						/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw)
+						/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest)
 
 /datum/export/item/processedmeats
 	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
@@ -717,27 +716,28 @@
 /datum/export/item/forged
 	cost = 200
 	unit_name = "forged weapons"
-	export_types = list(/obj/item/melee/smith/sword,
-	/obj/item/melee/smith/sword/spatha,
-	/obj/item/melee/smith/sword/sabre,
-	/obj/item/melee/smith/dagger,
-	/obj/item/melee/smith/dagger/bowie,
-	/obj/item/melee/smith/machete,
-	/obj/item/melee/smith/machete/gladius,
-	/obj/item/melee/smith/machete/reforged,
-	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/mace,
-	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/twohand/longsword,
-	/obj/item/melee/smith/twohand/axe,
-	/obj/item/melee/smith/twohand/axe/warhoned,
-	/obj/item/melee/smith/twohand/axe/crusher,
-	/obj/item/melee/smith/twohand/axe/scrapblade,
-	/obj/item/melee/smith/twohand/spear,
-	/obj/item/melee/smith/twohand/spear/lance,
-	/obj/item/melee/smith/twohand/spear/trident,
-	/obj/item/melee/smith/javelin,
-	/obj/item/melee/smith/throwingknife,
+	export_types = list(
+//	/obj/item/melee/smith/sword,
+//	/obj/item/melee/smith/sword/spatha,
+//	/obj/item/melee/smith/sword/sabre,
+	/obj/item/melee/smith/dagger // haha skyrim dagger farm
+//	/obj/item/melee/smith/dagger/bowie,
+//	/obj/item/melee/smith/machete,
+//	/obj/item/melee/smith/machete/gladius,
+//	/obj/item/melee/smith/machete/reforged,
+//	/obj/item/melee/smith/wakizashi,
+//	/obj/item/melee/smith/mace,
+//	/obj/item/melee/smith/twohand/katana,
+//	/obj/item/melee/smith/twohand/longsword,
+//	/obj/item/melee/smith/twohand/axe,
+//	/obj/item/melee/smith/twohand/axe/warhoned,
+//	/obj/item/melee/smith/twohand/axe/crusher,
+//	/obj/item/melee/smith/twohand/axe/scrapblade,
+//	/obj/item/melee/smith/twohand/spear,
+//	/obj/item/melee/smith/twohand/spear/lance,
+//	/obj/item/melee/smith/twohand/spear/trident,
+//	/obj/item/melee/smith/javelin,
+//	/obj/item/melee/smith/throwingknife,
 	)
 
 /datum/export/item/nucrate // Hopefully this one works

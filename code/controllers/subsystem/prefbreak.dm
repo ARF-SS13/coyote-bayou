@@ -229,6 +229,30 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	return CHECK_BITFIELD(consumer.toggles, HEAR_LEWD_VERB_WORDS) // kinda vital here
 
 
+/// hear lewd-related stuff
+/datum/prefcheck/radio_blurbles
+	index = RADIOPREF_HEAR_RADIO_BLURBLES
+
+/datum/prefcheck/radio_blurbles/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_HEAR_RADIOBLURBLES) // kinda vital here
+
+/datum/prefcheck/radio_blurbles
+	index = RADIOPREF_HEAR_RADIO_STATIC
+
+/datum/prefcheck/radio_blurbles/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_HEAR_RADIOSTATIC) // kinda vital here
+
+/// im an admin and i dont want to hear about how you want to destroy someone's bussy
+/datum/prefcheck/admin_wire_tap
+	index = ADMIN_CHAT_FILTER_DMS
+
+/datum/prefcheck/admin_wire_tap/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.admin_wire_tap // kinda vital here
+
+
 
 
 

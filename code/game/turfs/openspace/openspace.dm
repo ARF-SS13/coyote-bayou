@@ -1,4 +1,5 @@
 GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdrop, new)
+GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all_but_higher, /atom/movable/openspace_backdrop/higher, new)
 
 /atom/movable/openspace_backdrop
 	name			= "openspace_backdrop"
@@ -10,6 +11,13 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	plane           = OPENSPACE_BACKDROP_PLANE
 	mouse_opacity 	= MOUSE_OPACITY_TRANSPARENT
 	layer           = SPLASHSCREEN_LAYER
+	color = list(
+		1.0, 0.2, 0.3, 0.0,
+		0.2, 1.1, 0.4, 0.0,
+		0.2, 0.2, 1.2, 0.0,
+		0.0, 0.0, 0.0, 1.0)
+
+/atom/movable/openspace_backdrop/higher
 
 /turf/open/transparent/openspace
 	name = "open space"
@@ -58,9 +66,27 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
  */
 /turf/open/transparent/openspace/Enter(atom/movable/mover, atom/oldloc)
 	. = ..()
+	if(be_careful(mover))
+		return FALSE
 	if(.)
 		//higher priority than CURRENTLY_Z_FALLING so the movable doesn't fall on Entered()
 		mover.set_currently_z_moving(CURRENTLY_Z_FALLING_FROM_MOVE)
+
+/turf/open/transparent/openspace/proc/be_careful(atom/movable/mover)
+	if(!isliving(mover))
+		return FALSE
+	var/turf/belome = SSmapping.get_turf_below(src)
+	for(var/atom/thing in belome)
+		if(thing.intercept_zImpact(mover) & FALL_INTERCEPTED)
+			return FALSE // no need to be careful, its just stairs
+	var/mob/living/L = mover
+	if(istype(L, /mob/living/carbon)) // ignore tackling carbons
+		var/mob/living/carbon/C = mover
+		if(C.tackling)
+			return FALSE
+	if(L.m_intent == MOVE_INTENT_WALK && (!HAS_TRAIT(L, TRAIT_CLUMSY) || !HAS_TRAIT(L, TRAIT_NORUNNING)))
+		to_chat(L, span_warning("Whoa! You nearly fell! Good thing you were careful!"))
+		return TRUE
 
 ///Makes movables fall when forceMove()'d to this turf.
 /turf/open/transparent/openspace/Entered(atom/movable/AM)

@@ -50,7 +50,7 @@
 	restricted_roles = list("Chaplain")
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 
-/datum/uplink_item/role_restricted/clockwork_slab
+/*/datum/uplink_item/role_restricted/clockwork_slab
 	name = "Clockwork Slab"
 	desc = "A reverse engineered clockwork slab. Is this really a good idea?."
 	item = /obj/item/clockwork/slab/traitor
@@ -58,7 +58,7 @@
 	player_minimum = 20
 	refundable = TRUE
 	restricted_roles = list("Chaplain")
-	exclude_modes = list(/datum/game_mode/traitor/internal_affairs)
+	exclude_modes = list(/datum/game_mode/traitor/internal_affairs)*/
 
 /datum/uplink_item/role_restricted/arcane_tome
 	name = "Arcane Tome"

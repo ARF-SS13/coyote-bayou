@@ -43,7 +43,7 @@
 	src.applied_coupon = coupon
 
 /datum/supply_order/proc/generateRequisition(turf/T)
-	var/obj/item/paper/P = new(T)
+	var/obj/item/paper/supplyreport/P = new(T)
 
 	P.name = "requisition form - #[id] ([pack.name])"
 	P.info += "<h2>[station_name()] Supply Requisition</h2>"
@@ -56,6 +56,7 @@
 		P.info += "Paid by: [paying_account.account_holder]<br/>"
 	P.info += "Rank: [orderer_rank]<br/>"
 	P.info += "Comment: [reason]<br/>"
+	P.costvalue = round(COINS(abs(gaussian(10, 10))))
 
 	P.update_icon()
 	return P

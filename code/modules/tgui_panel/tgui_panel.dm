@@ -16,7 +16,7 @@
 /datum/tgui_panel/New(client/client)
 	src.client = client
 	window = new(client, "browseroutput")
-	window.subscribe(src, .proc/on_message)
+	window.subscribe(src,PROC_REF(on_message))
 
 /datum/tgui_panel/Del()
 	window.unsubscribe(src)
@@ -48,8 +48,8 @@
 	window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat))
 	initialized_at = world.time
 
-	addtimer(CALLBACK(src, .proc/request_telemetry), 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/on_initialize_timed_out), 10 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(request_telemetry)), 1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(on_initialize_timed_out)), 10 SECONDS)
 
 /**
  * private

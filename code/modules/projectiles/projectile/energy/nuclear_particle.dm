@@ -35,6 +35,9 @@
 	name = "gamma particle"
 	irradiate = 500
 
+/obj/item/projectile/energy/nuclear_particle/cultist
+	name = "morph ray"
+	irradiate = 100
 
 
 /obj/item/projectile/energy/nuclear_particle/plasmabounce
@@ -59,7 +62,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 	light_power = 3
-	
+
 /obj/item/projectile/energy/nuclear_particle/plasmabounce/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(ismob(target) )

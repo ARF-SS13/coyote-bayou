@@ -39,6 +39,15 @@ GLOBAL_LIST_EMPTY(insect_fluffs_list)
 GLOBAL_LIST_EMPTY(insect_markings_list)
 GLOBAL_LIST_EMPTY(caps_list)
 
+	//Dragon bits
+GLOBAL_LIST_EMPTY(derg_body_list)
+GLOBAL_LIST_EMPTY(derg_belly_list)
+GLOBAL_LIST_EMPTY(derg_mane_list)
+GLOBAL_LIST_EMPTY(derg_ear_list)
+GLOBAL_LIST_EMPTY(derg_eye_list)
+GLOBAL_LIST_EMPTY(derg_horn_list)
+
+
 //a way to index the right bodypart list given the type of bodypart
 GLOBAL_LIST_INIT(mutant_reference_list, list(
 	"tail_lizard" = GLOB.tails_list_lizard,
@@ -58,6 +67,12 @@ GLOBAL_LIST_INIT(mutant_reference_list, list(
 	"insect_wings" = GLOB.insect_wings_list,
 	"insect_fluff" = GLOB.insect_fluffs_list,
 	"insect_markings" = GLOB.insect_markings_list,
+	"derg_body" = GLOB.derg_body_list,
+	"derg_belly" = GLOB.derg_belly_list,
+	"derg_horns" = GLOB.derg_horn_list,
+	"derg_mane" = GLOB.derg_mane_list,
+	"derg_ears" = GLOB.derg_ear_list,
+	"derg_eyes" = GLOB.derg_eye_list,
 	"caps" = GLOB.caps_list,
 	"ipc_screen" = GLOB.ipc_screens_list,
 	"ipc_antenna" = GLOB.ipc_antennas_list,
@@ -70,6 +85,7 @@ GLOBAL_LIST_INIT(mutant_reference_list, list(
 	"xenodorsal" = GLOB.xeno_dorsal_list,
 	"xenohead" = GLOB.xeno_head_list,
 	"xenotail" = GLOB.xeno_tail_list))
+
 
 //references wag types to regular types, wings open to wings, etc
 GLOBAL_LIST_INIT(mutant_transform_list, list("wingsopen" = "wings",
@@ -165,7 +181,64 @@ GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything
 	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,
 	"Bone Satchel" = /obj/item/storage/backpack/satchel/bone,
 	"Old Satchel" = /obj/item/storage/backpack/satchel/old,
-	"Service Satchel" = /obj/item/storage/backpack/satchel/enclave
+	"Service Satchel" = /obj/item/storage/backpack/satchel/enclave,
+	"Chameleon Backpack" = /obj/item/storage/backpack/chameleon,
+	"Inconspicuous Backpack" = /obj/item/storage/backpack/satchel/invisible,
+	"Explorer Satchel" = /obj/item/storage/backpack/satchel/explorer,
+	"Trekker Backpack" = /obj/item/storage/backpack/trekker,
+	"Trekker Satchel" = /obj/item/storage/backpack/satchel/trekker,
+	"Marine Backpack" = /obj/item/storage/backpack/trekker/marinepack,
+	"Security Backpack" = /obj/item/storage/backpack/security,
+	"Security Satchel" = /obj/item/storage/backpack/satchel/sec,
+	"Trophy Backpack" = /obj/item/storage/backpack/cultpack,
+	"Snail Shell Satchel" = /obj/item/storage/backpack/satchel/snailshell,
+	"Black ERT Backpack" = /obj/item/storage/backpack/skyrat/ertodst,
+	"Robotics Backpack" = /obj/item/storage/backpack/skyrat/robobackpack,
+	"Robotics Satchel" = /obj/item/storage/backpack/satchel/skyrat/robosatchel,
+	"Robotics Dufflebag" = /obj/item/storage/backpack/duffelbag/skyrat/roboduffel,
+	"Robotics Messanger Bag" = /obj/item/storage/backpack/skyrat/robomessanger,
+	"HoP Backpack" = /obj/item/storage/backpack/skyrat/hopbackpack,
+	"HoP Satchel" = /obj/item/storage/backpack/satchel/skyrat/hopsatchel,
+	"HoP Dufflebag" = /obj/item/storage/backpack/duffelbag/skyrat/hopduffel,
+	"HoP Messanger Bag" = /obj/item/storage/backpack/skyrat/hopmessanger,
+	"Security Backpack" = /obj/item/storage/backpack/skyrat/securitybackpack,
+	"Security Satchel" = /obj/item/storage/backpack/satchel/skyrat/securitysatchel,
+	"Security Dufflebag" = /obj/item/storage/backpack/duffelbag/skyrat/securityduffel,
+	"Security Messanger bag" = /obj/item/storage/backpack/skyrat/securitymessenger,
+	"Medical Backpack" = /obj/item/storage/backpack/skyrat/medicalbackpack,
+	"Medical Satchel" = /obj/item/storage/backpack/satchel/skyrat/medicalsatchel,
+	"Medical Dufflebag" = /obj/item/storage/backpack/duffelbag/skyrat/medicalduffel,
+	"Medical Messanger Bag" = /obj/item/storage/backpack/skyrat/medicalmessenger,
+	"Blueshield Backpack" = /obj/item/storage/backpack/skyrat/blueshieldbackpack,
+	"Blueshield Satchel" = /obj/item/storage/backpack/satchel/skyrat/blueshieldsatchel,
+	"Blueshield Dufflebag" = /obj/item/storage/backpack/duffelbag/skyrat/blueshieldduffel,
+	"Blueshield Messanger Bag" = /obj/item/storage/backpack/skyrat/blueshieldmessanger,
+	"Bulky Green Bag" = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackgreen,
+	"Bulky Black Bag" = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackblack,
+	"Bulky White Bag" = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackwhite,
+	"Bulky Brown Bag" = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackbrown,
+	"Black Messanger Bag" = /obj/item/storage/backpack/skyrat/messangerblack,
+	"Dark Blue Messanger Bag" = /obj/item/storage/backpack/skyrat/messangercaptain,
+	"Purple Accented Messanger Bag" = /obj/item/storage/backpack/skyrat/messangerscience,
+	"Blue Accented Messanger Bag" = /obj/item/storage/backpack/skyrat/messangergenetics,
+	"Brown and Orange Messanger Bag" = /obj/item/storage/backpack/skyrat/messangerengineering,
+	"Brown and Blue Messanger Bag" = /obj/item/storage/backpack/skyrat/messangerexplorer,
+	"Green and Blue Messanger Bag" = /obj/item/storage/backpack/skyrat/messengerhydroponics,
+	"Clown Messanger Bag" = /obj/item/storage/backpack/skyrat/messengerclown,
+	"Medical Messanger Bag, alt" = /obj/item/storage/backpack/skyrat/messengermedical,
+	"Chemistry Messanger Bag" = /obj/item/storage/backpack/skyrat/messengerchemistry,
+	"Virology  Messanger Bag" = /obj/item/storage/backpack/skyrat/messengervirology,
+	"Coronor Messanger Bag" = /obj/item/storage/backpack/skyrat/messengercoroner,
+	"Cone Shell Bag" = /obj/item/storage/backpack/skyrat/coneshell,
+	"Cinammon Shell Bag" = /obj/item/storage/backpack/skyrat/cinnamonshell,
+	"Caramel Shell Bag" = /obj/item/storage/backpack/skyrat/caramelshell,
+	"Pyramid Shell Bag, white" = /obj/item/storage/backpack/skyrat/pyramidshellwhite,
+	"Spiral Shell Bag, white" = /obj/item/storage/backpack/skyrat/spiralshellwhite,
+	"Rock Shell Bag, white" = /obj/item/storage/backpack/skyrat/rockshellwhite,
+	"Mecha Shell Bag" = /obj/item/storage/backpack/skyrat/mechashell,
+	"Pyramid Shell Bag" = /obj/item/storage/backpack/skyrat/pyramidshell,
+	"Spiral Shell Bag" = /obj/item/storage/backpack/skyrat/spiralshell,
+	"Rock Shell Bag" = /obj/item/storage/backpack/skyrat/rockshell
 	))
 
 //Suit/Skirt
@@ -295,13 +368,70 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 //locked parts are those that your picked species requires to have
 //unlocked parts are those that anyone can choose on customisation regardless
 //parts not in unlocked, but in all, are thus locked
-GLOBAL_LIST_INIT(all_mutant_parts, list("tail_lizard" = "Tail", "mam_tail" = "Tail", "tail_human" = "Tail", "snout" = "Snout", "frills" = "Frills", "spines" = "Spines", "mam_body_markings" = "Species Markings" , "mam_ears" = "Ears", "ears" = "Ears", "mam_snouts" = "Snout", "legs" = "Legs", "deco_wings" = "Decorative Wings", "insect_wings" = "Insect Wings", "insect_fluff" = "Insect Fluff", "taur" = "Tauric Body", "insect_markings" = "Insect Markings", "wings" = "Wings", "arachnid_legs" = "Arachnid Legs", "arachnid_spinneret" = "Spinneret", "arachnid_mandibles" = "Mandibles", "xenohead" = "Caste Head", "xenotail" = "Tail", "xenodorsal" = "Dorsal Spines", "ipc_screen" = "Screen", "ipc_antenna" = "Antenna", "meat_type" = "Meat Type", "horns" = "Horns"))
+GLOBAL_LIST_INIT(all_mutant_parts, list(
+	"tail_lizard" = "Tail",
+	"mam_tail" = "Tail",
+	"tail_human" = "Tail",
+	"snout" = "Snout",
+	"frills" = "Frills",
+	"spines" = "Spines",
+	"mam_body_markings" = "Species Markings",
+	"mam_ears" = "Ears", "ears" = "Ears",
+	"mam_snouts" = "Snout", "legs" = "Legs",
+	"deco_wings" = "Decorative Wings",
+	"insect_wings" = "Insect Wings",
+	"insect_fluff" = "Insect Fluff",
+	"taur" = "Tauric Body",
+	"insect_markings" = "Insect Markings",
+	"wings" = "Wings",
+	"arachnid_legs" = "Arachnid Legs",
+	"arachnid_spinneret" = "Spinneret",
+	"arachnid_mandibles" = "Mandibles",
+	"xenohead" = "Caste Head",
+	"xenotail" = "Tail",
+	"xenodorsal" = "Dorsal Spines",
+	"ipc_screen" = "Screen",
+	"ipc_antenna" = "Antenna",
+	"meat_type" = "Meat Type",
+	"horns" = "Horns",
+	"derg_body" = "Dragon Body",
+	"derg_belly" = "Dragon Under",
+	"derg_horns" = "Dragon Horns",
+	"derg_mane" = "Dragon Mane",
+	"derg_ears" = "Dragon Ears",
+	"derg_eyes" = "Dragon Eyes"))
+
 GLOBAL_LIST_INIT(unlocked_mutant_parts, list("horns", "insect_fluff"))
 //parts in either of the above two lists that require a second option that allows them to be coloured
 GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color"))
 
 //body ids that have greyscale sprites
-GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin","spider"))
+GLOBAL_LIST_INIT(greyscale_limb_types, list(
+	"human",
+	"moth",
+	"lizard",
+	"pod",
+	"plant",
+	"jelly",
+	"slime",
+	"golem",
+	"lum",
+	"stargazer",
+	"mush",
+	"ethereal",
+	"snail",
+	"c_golem",
+	"b_golem",
+	"mammal",
+	"xeno",
+	"ipc",
+	"insect",
+	"synthliz",
+	"avian",
+	"aquatic",
+	"shadekin",
+	"spider",
+	"dragon"))
 
 //body ids that have prosthetic sprites
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))
@@ -309,15 +439,16 @@ GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","g
 //body ids that have non-gendered bodyparts
 GLOBAL_LIST_INIT(nongendered_limb_types, list(
 	"fly",
-	"zombie"
-	,"synth",
+	"zombie",
+	"synth",
 	"shadow",
 	"cultgolem",
 	"agent",
 	"plasmaman",
 	"clockgolem",
 	"clothgolem",
-	"smutant"
+	"smutant",
+	"dragon"
 	))
 
 //list of eye types, corresponding to a respective left and right icon state for the set of eyes
@@ -334,6 +465,8 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"double4",
 	"cyclops",
 	"shadekin",
+	"large",
+	"large(offset)",
 	"heterochromic-eyeshadow",
 	"heterochromic-eyebrow",
 	"heterochromic-raccoon",

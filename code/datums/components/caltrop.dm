@@ -21,7 +21,7 @@
 
 	///given to connect_loc to listen for something moving over target
 	var/static/list/crossed_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 
 	///So we can update ant damage
@@ -36,12 +36,12 @@
 	src.max_damage = max(min_damage, max_damage)
 	src.probability = probability
 	src.flags = flags
-	src.soundfile = soundfile
+	src.soundfile = 'sound/effects/wounds/crackandbleed.ogg'
 
 	if(ismovable(parent))
 		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
 	else
-		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, .proc/on_entered)
+		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED,PROC_REF(on_entered))
 
 // Inherit the new values passed to the component
 /datum/component/caltrop/InheritComponent(datum/component/caltrop/new_comp, original, min_damage, max_damage, probability, flags, soundfile)
@@ -108,10 +108,10 @@
 			span_userdanger("You step on [parent]!")
 		)
 
-	INVOKE_ASYNC(H, /mob/living/carbon/human/.proc/apply_damage, damage, BRUTE, picked_def_zone, FALSE, FALSE, FALSE, CANT_WOUND)
+	INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human/,apply_damage), damage, BRUTE, picked_def_zone, FALSE, FALSE, FALSE, CANT_WOUND)
 
 	if(!(flags & CALTROP_NOSTUN)) // Won't set off the paralysis.
-		H.Paralyze(60)
+		H.Paralyze(0)
 
 	if(!soundfile)
 		return

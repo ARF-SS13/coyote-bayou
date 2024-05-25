@@ -24,7 +24,7 @@
 	hosthealth = null
 	return ..()
 
-/mob/living/simple_animal/hostile/clockwork/marauder/guardian/create_mob_hud()
+/*/mob/living/simple_animal/hostile/clockwork/marauder/guardian/create_mob_hud()
 	if(client && !hud_used)
 		hud_used = new /datum/hud/marauder(src, ui_style2icon(client.prefs.UI_style))
 
@@ -43,3 +43,4 @@
 			G.try_emerge()
 		else
 			G.return_to_host()
+*/

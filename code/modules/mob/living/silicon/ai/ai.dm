@@ -131,7 +131,7 @@
 
 	create_eye()
 	if(client)
-		INVOKE_ASYNC(src, .proc/apply_pref_name,"ai",client)
+		INVOKE_ASYNC(src,PROC_REF(apply_pref_name),"ai",client)
 
 	set_core_display_icon()
 
@@ -798,7 +798,7 @@
 /mob/living/silicon/ai/can_buckle()
 	return 0
 
-/mob/living/silicon/ai/incapacitated(ignore_restraints, ignore_grab)
+/mob/living/silicon/ai/incapacitated(ignore_restraints, ignore_grab, allow_crit)
 	if(aiRestorePowerRoutine)
 		return TRUE
 	return ..()

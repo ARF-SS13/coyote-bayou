@@ -52,24 +52,30 @@
 
 
 //These procs fetch a cumulative total damage from all bodyparts
-/mob/living/carbon/getBruteLoss()
+/mob/living/carbon/getBruteLoss(include_roboparts = TRUE)
 	var/amount = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
+		if(BP.status != BODYPART_ORGANIC && !include_roboparts)
+			continue
 		amount += BP.brute_dam
 	return amount
 
-/mob/living/carbon/getFireLoss()
+/mob/living/carbon/getFireLoss(include_roboparts = TRUE)
 	var/amount = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
+		if(BP.status != BODYPART_ORGANIC && !include_roboparts)
+			continue
 		amount += BP.burn_dam
 	return amount
 
-/mob/living/carbon/getBleedLoss()
+/mob/living/carbon/getBleedLoss(include_roboparts = TRUE)
 	var/amount = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
+		if(BP.status != BODYPART_ORGANIC && !include_roboparts)
+			continue
 		amount += BP.bleed_dam
 	return amount
 
@@ -96,14 +102,14 @@
 		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
 
-/mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced)
-		if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
+/mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, force_be_heal)
+	if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
+		if(!forced && !force_be_heal)
 			amount = -amount
-			if(amount > 0)
-				blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
-			else
-				blood_volume -= amount
+		if(amount > 0)
+			blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
+		else
+			blood_volume += abs(amount)
 	return ..()
 
 /mob/living/carbon/getStaminaLoss()

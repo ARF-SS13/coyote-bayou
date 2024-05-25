@@ -26,8 +26,8 @@
 	cached_designs = list()
 	stored_research = new
 	host_research = SSresearch.science_tech
-	INVOKE_ASYNC(src, .proc/update_research)
-	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src, .proc/AfterMaterialInsert))
+	INVOKE_ASYNC(src,PROC_REF(update_research))
+	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src,PROC_REF(AfterMaterialInsert)))
 	RefreshParts()
 
 /obj/machinery/rnd/production/Destroy()
@@ -171,8 +171,8 @@
 	if(production_animation)
 		flick(production_animation, src)
 	var/timecoeff = D.lathe_time_factor * print_cost_coeff
-	addtimer(CALLBACK(src, .proc/reset_busy), (20 * timecoeff * amount) ** 0.5)
-	addtimer(CALLBACK(src, .proc/do_print, D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** 0.5)
+	addtimer(CALLBACK(src,PROC_REF(reset_busy)), (20 * timecoeff * amount) ** 0.5)
+	addtimer(CALLBACK(src,PROC_REF(do_print), D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** 0.5)
 	return TRUE
 
 /obj/machinery/rnd/production/proc/search(string)

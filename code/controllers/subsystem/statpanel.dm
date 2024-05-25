@@ -14,6 +14,12 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/cached_tops = list()
 	var/list/cached_bottoms = list()
 	var/list/cached_switches = list()
+	var/list/cached_bois = list()
+	var/list/cached_girls = list()
+	var/list/cached_them = list()
+	var/list/cached_herms = list()
+	var/the_majority = "Nobody seems to be on!"
+	var/nashs_most_wanted = "They want some friends!"
 
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
@@ -26,10 +32,9 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
-			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_anykissers)]",
-			"Tops: [LAZYLEN(cached_tops)]",
-			"Switches: [LAZYLEN(cached_switches)]",
-			"Bottoms: [LAZYLEN(cached_bottoms)]",
+			"----------------------------",
+			"[the_majority]",
+			"[nashs_most_wanted]",
 		)
 
 		if(SSshuttle.emergency)
@@ -145,7 +150,7 @@ SUBSYSTEM_DEF(statpanels)
 						if(length(turfitems) < 30) // only create images for the first 30 items on the turf, for performance reasons
 							if(!(REF(turf_content) in cached_images))
 								cached_images += REF(turf_content)
-								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom/movable, remove_from_cache)) // we reset cache if anything in it gets deleted
 								if(ismob(turf_content) || length(turf_content.overlays) > 2)
 									turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content), costly_icon2html(turf_content, target, sourceonly=TRUE))
 								else
@@ -158,6 +163,155 @@ SUBSYSTEM_DEF(statpanels)
 					target << output("[turfitems];", "statbrowser:update_listedturf")
 		if(MC_TICK_CHECK)
 			return
+
+/// Adds (merges) a player's sexual demographic information to the fucklist (F-List)
+/datum/controller/subsystem/statpanels/proc/collect_horny_demographic(someone)
+	/// we need two things: a client, and a mob. the mob we can get from the client!
+	var/client/C = extract_client(someone)
+	if(!C)
+		return
+	var/mob/M = C.mob
+	if(!M)
+		return // shouldnt happen, but ya know
+	var/CKEY = C.ckey
+	if(!CKEY) // no guests
+		return
+	discard_horny_demographic(C, FALSE)
+	var/sex = M.gender // remind me to add in more options than BYOND's default
+	var/tbs = C.prefs.tbs // Turner Broadcasting System (RIP the conan show)
+	var/who_i_kiss = C.prefs.kisser // smoonch
+	switch(sex)
+		if(MALE)
+			cached_bois |= CKEY
+		if(FEMALE)
+			cached_girls |= CKEY
+		if(PLURAL)
+			cached_herms |= CKEY
+		else
+			cached_them |= CKEY
+	switch(tbs)
+		if(TBS_BOTTOM)
+			cached_bottoms |= CKEY
+		if(TBS_TOP)
+			cached_tops |= CKEY
+		if(TBS_SHOES) // tops, bottoms, shoes
+			cached_switches |= CKEY
+	switch(who_i_kiss)
+		if(KISS_BOYS)
+			cached_boykissers |= CKEY
+		if(KISS_GIRLS)
+			cached_girlkissers |= CKEY
+		if(KISS_ANY)
+			cached_anykissers |= CKEY
+	update_fucklist_tally()
+
+// Removes a player's sexual demographic information from the fucklist (F-List)
+/datum/controller/subsystem/statpanels/proc/discard_horny_demographic(someone, update_tally = TRUE)
+	var/client/C = extract_client(someone)
+	if(!C)
+		return
+	/// we just need the ckey, to delete it from the fucklist
+	var/CKEY = C.ckey
+	if(!CKEY) // no guests
+		return
+	cached_bois -= CKEY
+	cached_girls -= CKEY
+	cached_herms -= CKEY
+	cached_them -= CKEY
+	cached_bottoms -= CKEY
+	cached_tops -= CKEY
+	cached_switches -= CKEY
+	cached_boykissers -= CKEY
+	cached_girlkissers -= CKEY
+	cached_anykissers -= CKEY
+	if(update_tally)
+		update_fucklist_tally()
+
+/// Updates the fucklist tally, for the fucklist panel
+/// Reads the list of our current demographic, and determines what sort of
+/// person is currently in demand
+/// Used to help players know who to play if they want to be a certain sexual
+/datum/controller/subsystem/statpanels/proc/update_fucklist_tally()
+	/// first, read the list of sexual orientations.
+	/// lets assume that boykissers want to kiss boys, and girlkissers want to kiss girls, etc
+	var/list/kisslist = list(
+		KISS_BOYS = LAZYLEN(cached_boykissers),
+		KISS_GIRLS = LAZYLEN(cached_girlkissers),
+		KISS_ANY = LAZYLEN(cached_anykissers),
+	)
+	var/majority_kisser = highest_number_in_ass_list(kisslist)
+
+	var/list/sexlist = list(
+		PLURAL = LAZYLEN(cached_herms),
+		FEMALE = LAZYLEN(cached_girls),
+		MALE = LAZYLEN(cached_bois),
+		THEM = LAZYLEN(cached_them),
+	)
+	var/majority_sex = highest_number_in_ass_list(sexlist)
+
+	var/list/tbslist = list(
+		TBS_BOTTOM = LAZYLEN(cached_bottoms),
+		TBS_TOP = LAZYLEN(cached_tops),
+		TBS_SHOES = LAZYLEN(cached_switches),
+	)
+	var/majority_tbs = highest_number_in_ass_list(tbslist)
+
+	/// what sex is most desired?
+	var/most_desired_sex = "Anysex"
+	switch(majority_kisser)
+		if(KISS_BOYS)
+			most_desired_sex = "Male"
+			majority_kisser = "Boykissers"
+		if(KISS_GIRLS)
+			most_desired_sex = "Female"
+			majority_kisser = "Girlkissers"
+		if(KISS_ANY)
+			most_desired_sex = "Male and/or Female" // ye
+			majority_kisser = "Anykissers"
+	
+	var/most_desired_tbs = "Top/Bottom/Switch"
+	switch(majority_tbs)
+		if(TBS_BOTTOM)
+			most_desired_tbs = "Switch / Top"
+			majority_tbs = "Bottoms"
+		if(TBS_TOP)
+			most_desired_tbs = "Switch / Bottom"
+			majority_tbs = "Tops"
+		if(TBS_SHOES)
+			most_desired_tbs = "Top / Switch" // ye
+			majority_tbs = "Switches"
+	
+	switch(majority_sex)
+		if(MALE)
+			majority_sex = "Males"
+		if(FEMALE)
+			majority_sex = "Females"
+		if(PLURAL)
+			majority_sex = "Nonbinaries"
+		else
+			majority_sex = "Anysexes"
+	
+	/// There are a lot of Boykissing Female Tops on!
+	var/majority_string = "The server has a lot of [majority_kisser], and [majority_sex], and [majority_tbs] on!"
+	/// milk yeah of course
+	var/desired_string = "If you're looking for a good time, you should play \a [most_desired_sex] [most_desired_tbs]!"
+	nashs_most_wanted = desired_string
+	the_majority = majority_string
+	/// all done!
+	
+	/// hm, what of the majority_sex is relevant here?
+	/// how bout this:
+	/// we print what is most desired, *and* what is most popular
+	/// but, two lines
+	/// There are a lot of Straight Female Tops on!
+	/// And yeah
+	/// and more readable~
+	/// Id want to keep the kink demographic to another tab
+	/// feels a lot more appropriate
+	/// tonight? hm, tgui? tgui is easier, oddly enough, plus ahelp code is fuuuuucked
+	/// I like it
+
+
 
 
 /datum/controller/subsystem/statpanels/proc/generate_mc_data()

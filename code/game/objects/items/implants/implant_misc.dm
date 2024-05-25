@@ -35,7 +35,7 @@
 	return dat
 
 /obj/item/implant/adrenalin/post_implant(mob/living/target, mob/living/user, silent = FALSE)
-	RegisterSignal(target, COMSIG_MOB_STATCHANGE, .proc/prejuice)
+	RegisterSignal(target, COMSIG_MOB_STATCHANGE,PROC_REF(prejuice))
 	return
 
 /obj/item/implant/adrenalin/post_removed(mob/living/source, silent = FALSE, special = 0)
@@ -49,7 +49,7 @@
 	if(newstat == CONSCIOUS)
 		return
 	playsound(imp_in, 'sound/effects/autoinjector_beeps.ogg', 75, TRUE)
-	addtimer(CALLBACK(src, .proc/juice), 2 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(juice)), 2 SECONDS)
 
 
 /obj/item/implant/adrenalin/proc/juice()

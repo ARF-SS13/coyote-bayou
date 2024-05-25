@@ -15,7 +15,7 @@
 GLOBAL_LIST_INIT(glass_recipes, list ( \
 	new/datum/stack_recipe("directional window", /obj/structure/window/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile window", /obj/structure/window/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe("glass arrowhead", /obj/item/stack/arrowhead/glass, 1, 1, time = 2 SECONDS), \
+	new/datum/stack_recipe("glass arrowhead", /obj/item/stack/arrowhead/glass, 1, 1, 25, time = 2 SECONDS, is_stack = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("glass working bases", list( \
 		new/datum/stack_recipe("chem dish", /obj/item/glasswork/glass_base/dish, 10), \
@@ -317,7 +317,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

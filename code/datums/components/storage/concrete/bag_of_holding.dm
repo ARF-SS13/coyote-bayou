@@ -10,7 +10,7 @@
 	var/list/obj/item/storage/backpack/holding/matching = typecache_filter_list(W.GetAllContents(), typecacheof(/obj/item/storage/backpack/holding))
 	matching -= A
 	if(istype(W, /obj/item/storage/backpack/holding) || matching.len)
-		INVOKE_ASYNC(src, .proc/do_disaster, W, user)
+		INVOKE_ASYNC(src,PROC_REF(do_disaster), W, user)
 	. = ..()
 
 /datum/component/storage/concrete/bluespace/bag_of_holding/proc/do_disaster(obj/item/W, mob/living/user)

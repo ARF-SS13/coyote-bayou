@@ -141,8 +141,8 @@
 /obj/item/disk/nanite_program/researchplus
 	program_type = /datum/nanite_program/researchplus
 
-/obj/item/disk/nanite_program/reduced_diagnostics
-	program_type = /datum/nanite_program/reduced_diagnostics
+/obj/item/disk/nanite_program/nanite_debugging
+	program_type = /datum/nanite_program/nanite_debugging
 
 /obj/item/disk/nanite_program/good_mood
 	program_type = /datum/nanite_program/good_mood

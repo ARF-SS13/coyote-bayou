@@ -39,7 +39,7 @@
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
 	girder_type = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
 
 /turf/closed/wall/f13/wood/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
@@ -68,8 +68,8 @@
 	icon_state = "interior0"
 //	icon_type_smooth = "interior"
 	hardness = 10
-//	smoothing_flags = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
+//	smooth = SMOOTH_OLD
+	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/store
 	name = "DEPRECATED WALL! REPLACE WITH CONCRETE WALLS!"
@@ -83,7 +83,19 @@
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
+	canSmoothWith = list(
+	/turf/closed/wall/f13/store,
+	/turf/closed/wall/f13/store/constructed,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
 
 /turf/closed/wall/mineral/concrete
 	name = "concrete wall"
@@ -223,7 +235,7 @@
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
@@ -326,7 +338,7 @@
 
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
-	if(!isliving(user) || user.incapacitated() || !isliving(dropping))
+	if(!isliving(user) || user.incapacitated(allow_crit = TRUE) || !isliving(dropping))
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(in_use) // Someone's already going in.
 		return
@@ -339,7 +351,7 @@
 		return
 	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the swamps", "Confirm", "Cancel") != "Confirm")
 		return
-	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
+	if(user.incapacitated(allow_crit = TRUE) || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
 	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
 		to_chat(user, span_warning("This mind has only recently departed. Wait at most two minutes before sending this character out of the round."))
@@ -357,9 +369,9 @@
 	update_icon()
 	var/dat
 	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], simple animal [departing_mob.type], at [AREACOORD(src)]. Contents despawned along:"
+		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else
@@ -375,6 +387,12 @@
 		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
 	else
 		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
+	
+	if(departing_mob.client.is_in_game >= 1)
+		// if(departing_mob.client.is_in_game == 2)
+		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
+		departing_mob.client.is_in_game = 0
+	
 	departing_mob.despawn()
 
 
@@ -394,7 +412,7 @@
 	var/tickerPeriod = 300 //in deciseconds
 	var/go/fullDark
 
-turf/closed/indestructible/f13/splashscreen/New()
+/turf/closed/indestructible/f13/splashscreen/New()
 	.=..()
 	name = "Fallout 13"
 	desc = "The wasteland is calling!"
@@ -412,7 +430,7 @@ turf/closed/indestructible/f13/splashscreen/New()
 	spawn() src.ticker()
 	return
 
-turf/closed/indestructible/f13/splashscreen/proc/ticker()
+/turf/closed/indestructible/f13/splashscreen/proc/ticker()
 	while(src && istype(src,/turf/closed/indestructible/f13/splashscreen))
 		src.swapImage()
 		sleep(src.tickerPeriod)

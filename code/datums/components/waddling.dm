@@ -15,7 +15,7 @@
 		up_waddle_time = amount_to_bob_up
 	if(!isnull(amount_to_bob_side))
 		side_waddle_time = amount_to_bob_side
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/Waddle)
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED),PROC_REF(Waddle))
 
 /datum/component/waddling/proc/UpdateFromPrefs(datum/preferences/P)
 	if(!isnull(P))

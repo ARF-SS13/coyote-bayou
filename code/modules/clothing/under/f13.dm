@@ -201,6 +201,31 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/ww1swim
+	name = "German Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from Imperial germany, 1917"
+	icon_state = "igss"
+	item_state = "igss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/ww1swim/french
+	name = "French Tactical swimsuit"
+	desc = "A very revealing and skimpy militaristic swimsuit from World War One. The fact this thing exists is a biproduct of the portal storms that plague the bayou..how peculiar. This one is from France, 1916"
+	icon_state = "fss"
+	item_state = "fss"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/ww1custom
+	name = "Decorated White Army Officer uniform"
+	desc = "A decorated uniform. There's three medals and a cross on the right side of the chest. This cleanly pressed and very formal uniform seems to have a tag on the tunic's interior, it reads 'Night Z. 1921'. It seems to be quite an old uniform."
+	icon_state = "nightoutfit"
+	item_state = "nightoutfit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
 	name = "Ancient West German Officer uniform"
 	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
@@ -1177,6 +1202,7 @@
 	item_color = "khan_uniform"
 	var/uniformtoggled = FALSE
 	body_parts_hidden = GROIN|LEGS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/khan/biker
 	name = "rough ridin' jeans"
@@ -1258,7 +1284,7 @@
 
 /obj/item/clothing/under/f13/tribe_Hhunter
 	name = "Razorclaw robes"
-	desc = "Tanned leather robes, decorated with bones of deathclaws and marked with the great machine spirit of earth."
+	desc = "Tanned leather robes, decorated with bones of aethergiests and marked with the great machine spirit of earth."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "hhunterrags"
 	item_state = "hhunterrags"
@@ -1283,6 +1309,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"

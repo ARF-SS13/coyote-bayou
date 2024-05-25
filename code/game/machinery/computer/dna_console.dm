@@ -5,9 +5,9 @@
 /// Timeout for DNA Scramble in DNA Consoles
 #define SCRAMBLE_TIMEOUT 600
 /// Timeout for using the Joker feature to solve a gene in DNA Console
-#define JOKER_TIMEOUT 12000
+#define JOKER_TIMEOUT 6000
 /// How much time DNA Scanner upgrade tiers remove from JOKER_TIMEOUT
-#define JOKER_UPGRADE 3000
+#define JOKER_UPGRADE 1500
 
 /// Maximum value for radiaton strength when pulsing enzymes
 #define RADIATION_STRENGTH_MAX 15
@@ -2026,7 +2026,7 @@
 			connected_scanner.set_linked_console(null)
 	connected_scanner = new_scanner
 	if(connected_scanner)
-		RegisterSignal(connected_scanner, COMSIG_PARENT_QDELETING, .proc/react_to_scanner_del)
+		RegisterSignal(connected_scanner, COMSIG_PARENT_QDELETING,PROC_REF(react_to_scanner_del))
 		connected_scanner.set_linked_console(src)
 
 /obj/machinery/computer/scan_consolenew/proc/react_to_scanner_del(datum/source)

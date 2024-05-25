@@ -61,8 +61,8 @@
 	add_fingerprint(user)
 
 /obj/item/melee/transforming/plasmacutter/regular/celestia
-	name = "plasma cutter celestia"
-	desc = "A sapphire colored plasma cutter. This one is designed to be adept at deflecting enemy attacks."
+	name = "plasma slicer celestia"
+	desc = "A sapphire colored plasma slicer. This one is designed to be adept at deflecting enemy attacks."
 	icon_state = "celestia0"
 	icon_state_on = "celestia1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -84,8 +84,8 @@
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular
-	name = "plasma cutter"
-	desc = "A bright green plasma cutter. This one boasts a high energy blade for fiercer damage."
+	name = "plasma slicer"
+	desc = "A bright green plasma slicer. This one boasts a high energy blade for fiercer damage."
 	icon_state = "plasmacutter0"
 	icon_state_on = "plasmacutter1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -107,8 +107,8 @@
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/eve
-	name = "plasma cutter eve"
-	desc = "A violet colored plasma cutter. This one is designed with a lightweight, more elegant frame, for quicker strikes."
+	name = "plasma slicer eve"
+	desc = "A violet colored plasma slicer. This one is designed with a lightweight, more elegant frame, for quicker strikes."
 	icon_state = "eve0"
 	icon_state_on = "eve1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -156,8 +156,8 @@
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/adam
-	name = "plasma cutter adam"
-	desc = "A bright crimson plasma cutter. This Cutter boasts the design strenghths of all its lesser companions"
+	name = "plasma slicer adam"
+	desc = "A bright crimson plasma slicer. This Cutter boasts the design strenghths of all its lesser companions"
 	icon_state = "adam0"
 	icon_state_on = "adam1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -448,7 +448,7 @@
 	. = ..()
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 

@@ -95,7 +95,7 @@
 	glide_size = driftdelay
 	alpha = 255 / clamp(distance_modifier, 1, 3)
 	transform = matrix(transform) * clamp(1 / max(distance_modifier + 1, 1), 0.5, 3)
-	INVOKE_ASYNC(src, .proc/fade_out)
+	INVOKE_ASYNC(src,PROC_REF(fade_out))
 	walk(src, driftdir, driftdelay, 32)
 	lifetime = rand(lifetime*0.5, lifetime*3)
 	QDEL_IN(src, lifetime)

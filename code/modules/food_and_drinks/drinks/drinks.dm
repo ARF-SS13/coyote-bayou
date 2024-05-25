@@ -23,13 +23,13 @@
 		gulp_size = max(round(reagents.total_volume / 5), 5)
 
 /obj/item/reagent_containers/food/drinks/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
-	INVOKE_ASYNC(src, .proc/attempt_forcedrink, vorer, vorer, TRUE, TRUE, TRUE)
+	INVOKE_ASYNC(src,PROC_REF(attempt_forcedrink), vorer, vorer, TRUE, TRUE, TRUE)
 	if(gut.can_taste)
 		checkLiked(min(gulp_size/reagents.total_volume, 1), vorer)
 	return TRUE
 
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
-	INVOKE_ASYNC(src, .proc/attempt_forcedrink, M, user)
+	INVOKE_ASYNC(src,PROC_REF(attempt_forcedrink), M, user)
 
 /obj/item/reagent_containers/food/drinks/proc/attempt_forcedrink(mob/living/M, mob/user, force, silent, vorebite)
 	if(!reagents || !reagents.total_volume)
@@ -91,7 +91,7 @@
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
 			bro.cell.use(30)
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/add_reagent, refill, trans), 600)
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents,add_reagent), refill, trans), 600)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
@@ -157,7 +157,7 @@
 	. = ..()
 	if (!istype(src_location) || !istype(over_location))
 		return
-	if (!user || user.incapacitated() || !user.Adjacent(src))
+	if (!user || user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src))
 		return
 	if (!(locate(/obj/structure/table) in src_location) || !(locate(/obj/structure/table) in over_location))
 		return
@@ -301,8 +301,7 @@
 /obj/item/reagent_containers/food/drinks/mug/on_reagent_change(changetype)
 	cut_overlays()
 	if(reagents.total_volume)
-		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay")
-		MA.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/MA = mutable_appearance(icon,"mugoverlay", color = mix_color_from_reagents(reagents.reagent_list))
 		add_overlay(MA)
 	else
 		icon_state = "tea_empty"
@@ -487,6 +486,12 @@
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
+/obj/item/reagent_containers/food/drinks/flask/tech
+	name = "High-tech Canteen"
+	desc = "A rather technical looking drinking vessel made of a polymer housing for the general shape, it is reminiscent of a water canteen. It faintly hums as the metallic refrigeration kicks in to keep the contents cold. It is woven with a carbon fiber mesh at places to also help with this, and to offer some grip. The initials J.N. are marked on the underside of the vessel."
+	icon_state = "techcanteen"
+	list_reagents = list(/datum/reagent/water = 60)
+
 /obj/item/reagent_containers/food/drinks/britcup
 	name = "cup"
 	desc = "A cup with the british flag emblazoned on it."
@@ -535,10 +540,10 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
 	if(!is_drainable())
-		INVOKE_ASYNC(src, .proc/pop_top, vorer, vorer, TRUE, TRUE, TRUE)
+		INVOKE_ASYNC(src,PROC_REF(pop_top), vorer, vorer, TRUE, TRUE, TRUE)
 		return TRUE
 	if(!reagents.total_volume)
-		INVOKE_ASYNC(src, .proc/crush_can, vorer, vorer, TRUE, TRUE, TRUE)
+		INVOKE_ASYNC(src,PROC_REF(crush_can), vorer, vorer, TRUE, TRUE, TRUE)
 		return TRUE
 	return ..()
 

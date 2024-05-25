@@ -124,7 +124,7 @@
 //////////////////////////
 //Fenny losing his mind//
 ////////////////////////
-
+/*
 /datum/weather/rain/fog/nashdown_event //I'm totally not using weather as a makeshift randomized event creator, shut up cactus.  This system already works.
 	probability = 100
 
@@ -177,7 +177,7 @@
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the rogue robots of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the feral ghouls of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the radscorpions of the area.</font>",
-		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the deathclaws of the area.</font>",
+		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the aethergiests of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the city of Redlick, west of Ashdown, for supplies.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the city of Texarkana, east of Nash, for supplies.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the mines north of the Christus Saint Michaels hospital in Texarkana.</font>",
@@ -228,3 +228,4 @@
 	//The fog is quiet. It knows that it is quiet because of the way it is.
 	sound_ao_type = null
 	sound_ai_type = null
+*/

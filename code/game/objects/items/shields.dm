@@ -27,6 +27,10 @@
 	var/shieldbash_stagger_duration = 5 SECONDS
 	/// Shield bashing push distance
 	var/shieldbash_push_distance = 1
+	weapon_special_component = /datum/component/weapon_special/single_turf
+	force = 12
+	force_wielded = 20
+	force_unwielded = 12
 
 /datum/block_parry_data/shield
 	block_damage_multiplier = 0.25
@@ -200,7 +204,7 @@
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/plastic=8000)
 	attack_verb = list("shoved", "bashed")
 	var/cooldown = 0 //shield bash cooldown. based on world.time
@@ -258,7 +262,7 @@
 	return ..()
 
 //Bulletproof riot shield
-obj/item/shield/riot/bullet_proof
+/obj/item/shield/riot/bullet_proof
 	name = "bullet resistant shield"
 	desc = "Kevlar coated surface makes this riot shield a lot better for blocking projectiles."
 	icon_state = "shield_bulletproof"
@@ -532,7 +536,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 /obj/item/shield/riot/implant/Moved()
 	. = ..()
 	if(istype(loc, /obj/item/organ/cyberimp/arm/shield))
-		recharge_timerid = addtimer(CALLBACK(src, .proc/recharge), recharge_delay, flags = TIMER_STOPPABLE)
+		recharge_timerid = addtimer(CALLBACK(src,PROC_REF(recharge)), recharge_delay, flags = TIMER_STOPPABLE)
 	else		//extending
 		if(recharge_timerid)
 			deltimer(recharge_timerid)
@@ -558,10 +562,14 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
 	desc = "Yep, that's a shield. Good for not getting whacked."
 	icon_state = "shield_stop"
 	item_state = "shield_stop"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	force = 12
+	force_wielded = 20
+	force_unwielded = 12
 	max_integrity = -1
 	resistance_flags = null
 
@@ -576,7 +584,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "red_buckler"
 	item_state = "red_buckler"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+
 	max_integrity = -1
 	resistance_flags = null
 
@@ -592,7 +600,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "blue_buckler"
 	item_state = "blue_buckler"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+
 	max_integrity = -1
 	resistance_flags = null
 
@@ -607,7 +615,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "steel_shield"
 	item_state = "steel_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+
 	max_integrity = -1
 	resistance_flags = null
 
@@ -623,7 +631,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "iron_shield"
 	item_state = "iron_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -639,7 +647,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bronze_shield"
 	item_state = "bronze_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -654,7 +662,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield2"
 	item_state = "semioval_shield_blue"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -669,7 +677,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield3"
 	item_state = "semioval_shield_blue"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -684,7 +692,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield4"
 	item_state = "semioval_shield_blue"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -699,7 +707,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "roman_buckler"
 	item_state = "roman_buckler"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -714,7 +722,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "semioval_shield_blue"
 	item_state = "semioval_shield_blue"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -729,7 +737,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "egyptian_shield"
 	item_state = "egyptian_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -744,7 +752,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "buckler2"
 	item_state = "buckler2"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -759,7 +767,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "imperial_kite"
 	item_state = "imperial_kite"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -774,7 +782,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "pegasus_shield"
 	item_state = "pegasus_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -789,7 +797,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "owl_shield"
 	item_state = "owl_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -803,7 +811,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chimalli"
 	item_state = "chimalli"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -818,7 +826,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "scutum"
 	item_state = "scutum"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -832,7 +840,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "orc_shield"
 	item_state = "orc_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -847,7 +855,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "nguni_shield"
 	item_state = "nguni_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -861,7 +869,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chitin_shield"
 	item_state = "chitin_shield"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -876,7 +884,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chitin_buckler"
 	item_state = "chitin_buckler"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -892,7 +900,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	desc = "A heavily weathered riot shield that has seen much use, it seems to have been modified to be foldable for storage, at the cost of some protection."
 	icon_state = "shield_riot"
 	item_state = "shield_riot"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null
 
@@ -908,6 +916,6 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "semioval_shield_templar2"
 	item_state = "semioval_shield_templar2"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	
 	max_integrity = -1
 	resistance_flags = null

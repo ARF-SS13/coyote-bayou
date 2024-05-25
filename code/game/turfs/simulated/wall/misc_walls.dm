@@ -48,7 +48,7 @@
 	new /obj/effect/temp_visual/cult/turf(get_turf(src))
 
 //Clockwork wall: Causes nearby tinkerer's caches to generate components.
-/turf/closed/wall/clockwork
+/*/turf/closed/wall/clockwork
 	name = "clockwork wall"
 	desc = "A huge chunk of warm metal. The clanging of machinery emanates from within."
 	explosion_block = 5
@@ -168,7 +168,7 @@
 		hardness = initial(hardness)
 		slicing_duration = initial(slicing_duration)
 		animate(realappearance, color = initial(realappearance.color), time = 25)
-
+*/
 
 /turf/closed/wall/vault
 	icon = 'icons/turf/walls.dmi'

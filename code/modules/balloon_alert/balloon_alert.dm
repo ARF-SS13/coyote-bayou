@@ -45,7 +45,7 @@
 		easing = CUBIC_EASING | EASE_IN,
 	)
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_client, balloon_alert, viewer_client), BALLOON_TEXT_TOTAL_LIFETIME)
+	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(remove_image_from_client), balloon_alert, viewer_client), BALLOON_TEXT_TOTAL_LIFETIME)
 
 #undef BALLOON_TEXT_FADE_TIME
 #undef BALLOON_TEXT_FULLY_VISIBLE_TIME

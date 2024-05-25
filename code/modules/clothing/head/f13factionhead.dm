@@ -253,7 +253,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
  */
-obj/item/clothing/head/helmet/f13/enclave/usmcriot
+/obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	name = "old United States Marine Corp riot helmet"
 	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "modified_usmc_riot"
@@ -814,7 +814,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/town/officer
-	name = "Nash officer's cap"
+	name = "New Boston officer's cap"
 	desc = "A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -962,6 +962,54 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	flags_cover = HEADCOVERSEYES
 	mutantrace_variation = STYLE_MUZZLE
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/head/helmet/infiltrator/contractor/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Black" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black"),
+			"Green Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-green"),
+			"Orange Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-orange"),
+			"Blue Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-blue"),
+			"Red Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-red"),
+			"Medic Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-med"),
+			"Engi Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-engie"),
+			"Contractor" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-contract-helm"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Black")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black"
+			item_state = "syndicate-helm-black"
+		if("Green Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-green"
+			item_state = "syndicate-helm-black-green"
+		if("Orange Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-orange"
+			item_state = "syndicate-helm-black-orange"
+		if("Blue Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-blue"
+			item_state = "syndicate-helm-black-blue"
+		if("Red Stripe")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-red"
+			item_state = "syndicate-helm-black-red"
+		if("Medic Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-med"
+			item_state = "syndicate-helm-black-med"
+		if("Engi Marks")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-helm-black-engie"
+			item_state = "syndicate-helm-black-engie"
+		if("Contractor")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "syndicate-contract-helm"
+			item_state = "syndicate-contract-helm"
+		else
+			return
 //Wayfarer
 //Wayfarer
 /obj/item/clothing/head/helmet/f13/deathskull
@@ -1081,7 +1129,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	icon_state = "army_general"
 	item_state = "army_general"
 
-obj/item/clothing/head/f13/army/beret
+/obj/item/clothing/head/f13/army/beret
 	name = "US Army beret"
 	desc = "A black beret, standard issue for all US Army personnel not authorised to wear a different beret."
 	icon = 'icons/fallout/clothing/hats.dmi'
@@ -1173,6 +1221,44 @@ obj/item/clothing/head/f13/army/beret
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "state_trooper"
 	item_state = "state_trooper"
+
+// Unaligned Tribal
+/obj/item/clothing/head/helmet/f13/skull_helmet
+	name = "skull mask"
+	desc = "A tribal skull-mask adorned with decorative feathers and... are those real antler-horns? <span class='bold'>Ctrl + Shift to customise!</span>"
+	icon_state = "skullmask1"
+	item_state = "skullmask1"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
+	var/is_hair_hidden = FALSE
+	pocket_storage_component_path = null
+
+/obj/item/clothing/head/helmet/f13/skull_helmet/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Skull_Antler" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask1"),
+			"Skull_Redfeather" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask2"),
+			"Skull_Bluefeather" = image(icon = 'icons/obj/clothing/hats.dmi', icon_state = "skullmask3"),
+			"Safe" = image(icon = 'icons/radials/radial_buttons.dmi', icon_state = "safe"),
+			"Danger" = image(icon = 'icons/radials/radial_buttons.dmi', icon_state = "danger"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Skull_Antler")
+			icon_state = "skullmask1"
+			balloon_alert(user, "Switched to Default")
+		if("Skull_Redfeather")
+			icon_state = "skullmask2"
+			balloon_alert(user, "Switched to Redfeather")
+		if("Skull_Bluefeather")
+			icon_state = "skullmask3"
+			balloon_alert(user, "Switched to Bluefeather")
+		if("Safe")
+			flags_inv -= HIDEFACE
+			balloon_alert(user, "Revealing Identity!")
+		if("Danger")
+			flags_inv += HIDEFACE
+			balloon_alert(user, "Concealing Identity!")
+		else
+			return
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

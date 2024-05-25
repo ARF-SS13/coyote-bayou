@@ -299,30 +299,30 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
 
-/datum/sprite_accessory/tails/mam_tails/deathclaw
+/datum/sprite_accessory/tails/mam_tails/aethergiest
 	name = "Deathclaw"
-	icon_state = "deathclaw"
+	icon_state = "aethergiest"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails/deathclaw
+/datum/sprite_accessory/tails_animated/mam_tails/aethergiest
 	name = "Deathclaw"
-	icon_state = "deathclaw"
+	icon_state = "aethergiest"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails/human/deathclaw
+/datum/sprite_accessory/tails/human/aethergiest
 	name = "Deathclaw"
-	icon_state = "deathclaw"
+	icon_state = "aethergiest"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/human/deathclaw
+/datum/sprite_accessory/tails_animated/human/aethergiest
 	name = "Deathclaw"
-	icon_state = "deathclaw"
+	icon_state = "aethergiest"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
@@ -738,4 +738,18 @@
 	name = "Husky - Down"
 	icon_state = "downhusky"
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/malechu
+	name = "Pikachu (Male)"
+	icon_state = "pikachumale"
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/malechu
+	name = "Pikachu (Male)"
+	icon_state = "pikachumale"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN

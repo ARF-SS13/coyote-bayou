@@ -19,7 +19,7 @@
 #define LAZYISIN(L, V) L ? (V in L) : FALSE
 #define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= length(L) ? L[I] : null) : L[I]) : null)
 #define LAZYSET(L, K, V) if(!L) { L = list(); } L[K] = V;
-#define LAZYLEN(L) length(L)
+#define LAZYLEN(L) length(L) // this! rturns the length of a list, yeah!
 #define LAZYLENGTHEN(L, I) if(!L) { L = list(); } L.len = (L.len < I ? I : L.len); // Thats a hose lengthener -- you need one!
 //Sets a list to null
 #define LAZYNULL(L) L = null
@@ -575,16 +575,16 @@
 
 ///uses sort_list() but uses the var's name specifically. This should probably be using mergeAtom() instead
 /proc/sort_names(list/list_to_sort, order=1)
-	return sortTim(list_to_sort.Copy(), order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
+	return sortTim(list_to_sort.Copy(), order >= 0 ? GLOBAL_PROC_REF(cmp_name_asc) : GLOBAL_PROC_REF(cmp_name_dsc))
 
 //for sorting clients or mobs by ckey
 /proc/sortKey(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_ckey_asc : /proc/cmp_ckey_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_ckey_asc) : GLOBAL_PROC_REF(cmp_ckey_dsc))
 
 //Specifically for record datums in a list.
 /proc/sortRecord(list/L, field = "name", order = 1)
 	GLOB.cmp_field = field
-	return sortTim(L, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_records_asc) : GLOBAL_PROC_REF(cmp_records_dsc))
 
 //any value in a list
 /proc/sortList(list/L, cmp=/proc/cmp_text_asc)
@@ -592,11 +592,11 @@
 
 //uses sortList() but uses the var's name specifically. This should probably be using mergeAtom() instead
 /proc/sortNames(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_name_asc) : GLOBAL_PROC_REF(cmp_name_dsc))
 
 //uses sortList() but uses the mob's ckey specifically!
 /proc/sortCkeys(list/L, order=1)
-	return sortTim(L, order >= 0 ? /proc/cmp_ckey_mob_asc : /proc/cmp_ckey_mob_dsc)
+	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_ckey_mob_asc) : GLOBAL_PROC_REF(cmp_ckey_mob_dsc))
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)
@@ -852,6 +852,10 @@
 
 /proc/safe_json_decode(string, default = list())
 	. = default
+	if(!istext(string))
+		return
+	if(isnull(string))
+		return
 	return json_decode(string)
 
 /proc/bitfield_to_list(bitfield = 0, list/wordlist)
@@ -941,3 +945,22 @@
 		return maybelist
 	return list(maybelist)
 
+/// Used to have a var automagically swap between a list of options
+/// returns the next option (or the first if its the end)
+/proc/rotate_vars(current, list/options)
+	if(!current || !LAZYLEN(options))
+		return
+	var/varpos = options.Find(current)
+	if(!varpos)
+		return options
+	var/next = WRAP(varpos + 1, 1, LAZYLEN(options))
+	return LAZYACCESS(options, next)
+
+/proc/get_random(list/input)
+	return input[rand(1,input.len)]
+
+// returns input if it's not a list. otherwise, pick an item at random.
+/proc/get_random_if_list(input)
+	if(islist(input))
+		return get_random(input)
+	return input

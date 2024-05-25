@@ -80,14 +80,17 @@
 		puff_reagent_left = 1
 	else
 		reagents.trans_to(D, amount_per_transfer_from_this, 1/range)
-	D.color = mix_color_from_reagents(D.reagents.reagent_list)
+	var/mix_color = mix_color_from_reagents(D.reagents.reagent_list)
+	if(mix_color == "rainbow")
+		mix_color = "#ffffff"
+	D.color = mix_color
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
 	log_reagent("SPRAY: [key_name(usr)] fired [src] ([REF(src)]) [COORD(T)] at [A] ([REF(A)]) [COORD(A)] (chempuff: [D.reagents.log_list()])")
 	var/wait_step = max(round(2+ spray_delay * INVERSE(range)), 2)
 	last_spray = world.time
-	INVOKE_ASYNC(src, .proc/do_spray, A, wait_step, D, range, puff_reagent_left)
+	INVOKE_ASYNC(src,PROC_REF(do_spray), A, wait_step, D, range, puff_reagent_left)
 	return TRUE
 
 /obj/item/reagent_containers/spray/proc/do_spray(atom/A, wait_step, obj/effect/decal/chempuff/D, range, puff_reagent_left)
@@ -146,7 +149,7 @@
 	set name = "Empty Spray Bottle"
 	set category = "Object"
 	set src in usr
-	if(usr.incapacitated())
+	if(usr.incapacitated(allow_crit = TRUE))
 		return
 	if (alert(usr, "Are you sure you want to empty that?", "Empty Bottle:", "Yes", "No") != "Yes")
 		return

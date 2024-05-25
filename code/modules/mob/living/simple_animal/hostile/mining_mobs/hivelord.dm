@@ -93,7 +93,7 @@
 	. = ..()
 	if(swarming)
 		AddComponent(/datum/component/swarming) //oh god not the bees
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src,PROC_REF(death)), 100)
 
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
@@ -118,7 +118,6 @@
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
 	del_on_death = 1
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
@@ -161,7 +160,7 @@
 		return
 	stored_mob = prefbreak
 	prefbreak.forceMove(src)
-	RegisterSignal(prefbreak, COMSIG_PARENT_QDELETING, .proc/squirt_mob)
+	RegisterSignal(prefbreak, COMSIG_PARENT_QDELETING,PROC_REF(squirt_mob))
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/proc/squirt_mob()
 	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
@@ -205,7 +204,6 @@
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "is shrugged off by"
 	del_on_death = TRUE
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	swarming = TRUE
 	var/can_infest_dead = FALSE

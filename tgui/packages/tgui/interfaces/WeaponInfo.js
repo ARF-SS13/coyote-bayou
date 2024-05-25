@@ -47,21 +47,43 @@ export const WeaponInfo = (props, context) => {
 export const RangedInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    gun_name,
-    gun_damage_multiplier,
-    gun_penetration_multiplier,
-    gun_spread,
-    firemode_current,
-    gun_chambered,
-    gun_is_chambered,
+    gun_name = "Really Cool Gun",
+    gun_damage_multiplier = 1,
+    gun_penetration_multiplier = 0,
+    gun_spread = 0,
+    firemode_current = {},
+    gun_chambered = {},
+    gun_is_chambered = false,
+    flintlock_load_time = 0,
+    flintlock_prefire_time = 0,
+    flintlock_prefire_1SD = 0,
   } = data;
+  let true_firemode = firemode_current || {};
+  if (!firemode_current || !true_firemode["fire_rate"]) {
+    true_firemode = {}; // eat my a ss
+    true_firemode.fire_rate = "N/A";
+    true_firemode.action_kind = "Shoot";
+    true_firemode.desc = "Makes weapon shoot!";
+  }
+  let flintable = false;
+  let flintable_loadtime = 0;
+  let flintable_prefiretime = 0;
+  let flintable_prefire_1SD = 0;
+  if (flintlock_load_time > 0
+      && flintlock_prefire_time > 0
+      && flintlock_prefire_1SD > 0) {
+    flintable = true;
+    flintable_loadtime = `${flintlock_load_time}s`;
+    flintable_prefiretime
+      = `~${flintlock_prefire_time}s ±${flintlock_prefire_1SD}s (1SD)`;
+  }
   const prefixed_dm = gun_damage_multiplier || 0;
   const prefixed_pm = gun_penetration_multiplier || 0;
   const fixed_damage_multiplier = prefixed_dm.toFixed(2);
   const fixed_penetration_multiplier = prefixed_pm.toFixed(2);
-  const firemode_rpm = firemode_current["fire_rate"];
-  const firemode_name = firemode_current["action_kind"];
-  const firemode_desc = firemode_current["desc"];
+  const firemode_rpm = true_firemode.fire_rate || "N/A";
+  const firemode_name = true_firemode.action_kind || "Shoot";
+  const firemode_desc = true_firemode.desc || "Makes weapon shoot!";
   let damage_value;
   if (gun_is_chambered && !!gun_chambered.projectile_damage) {
     const plts = gun_chambered.pellets;
@@ -120,6 +142,29 @@ export const RangedInfo = (props, context) => {
             {firemode_rpm}
           </Table.Cell>
         </Table.Row>
+
+        {flintable ? (
+          <Fragment>
+            <Table.Row>
+              <Table.Cell bold textAlign="right" width="35%" color="label">
+                <Tooltipify name={"Load Time: "} tip={"Time to load the flintlock."} />
+              </Table.Cell>
+              <Table.Cell>
+                {flintable_loadtime}
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell bold textAlign="right" width="35%" color="label">
+                <Tooltipify name={"Prefire Time: "} tip={"Average prefire time, with 1 standard deviation."} />
+              </Table.Cell>
+              <Table.Cell>
+                {flintable_prefiretime}
+              </Table.Cell>
+            </Table.Row>
+          </Fragment>
+        ) : null}
+
       </Table>
       <Box
         width="100%"
@@ -134,10 +179,10 @@ export const RangedInfo = (props, context) => {
 export const MeleeInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    gun_name,
-    gun_melee,
-    gun_melee_wielded,
-    gun_armor_penetration,
+    gun_name = "Really Cool Gun",
+    gun_melee = 0,
+    gun_melee_wielded = 0,
+    gun_armor_penetration = 0,
   } = data;
   const prefixed_gap = gun_armor_penetration || 0;
   return (
@@ -180,7 +225,7 @@ export const MeleeInfo = (props, context) => {
 export const MagazineInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    has_magazine,
+    has_magazine = false,
   } = data;
   if (has_magazine) {
     return (
@@ -200,6 +245,7 @@ export const MagazineInfoLoaded = (props, context) => {
     magazine_calibers,
     shots_remaining,
     shots_max,
+    gun_is_chambered,
     gun_chambered,
     cockable,
     cocked,
@@ -219,7 +265,7 @@ export const MagazineInfoLoaded = (props, context) => {
     let cKtt;
     let cKcl;
     if (cocked) {
-      if (gun_chambered) {
+      if (gun_is_chambered) {
         cKnm = "Cocked";
         cKtt = "Gun is cocked and ready to fire!";
         cKcl = 'green';
@@ -234,7 +280,7 @@ export const MagazineInfoLoaded = (props, context) => {
       cKcl = 'red';
     }
     cockRead = <Tooltipify name={cKnm} tip={cKtt} />;
-    cockColored = <Box color={cKcl} />;
+    cockColored = <Box color={cKcl}>{cockRead}</Box>;
   }
   const thagomizer = "accepts: " + magazine_calibers; // thanks mike
   return (
@@ -464,12 +510,12 @@ export const ProjectileInfo = (props, context) => {
 const RecoilInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    unmodded_recoil_unwielded,
-    modded_recoil_unwielded,
-    unmodded_recoil_wielded,
-    modded_recoil_wielded,
-    gun_recoil_scoot_title,
-    gun_recoil_scoot_stats,
+    unmodded_recoil_unwielded = 1,
+    modded_recoil_unwielded = 1,
+    unmodded_recoil_wielded = 1,
+    modded_recoil_wielded = 1,
+    gun_recoil_scoot_title = "Affected by movement",
+    gun_recoil_scoot_stats = "Movement applies its full recoil amount.",
   } = data;
   const recoilTip = "These multiply the shot projectile's \
   recoil calculations, based on whether you're wielding the gun or not. \
@@ -611,8 +657,8 @@ const FiremodeInfo = (props, context) => {
   if (!firemode_count) {
     return (
       <Section title="Firemodes">
-        <Box color="bad">
-          No firemodes! This is probably a bug! Uh oh~
+        <Box>
+          Single-fire only!
         </Box>
       </Section>
     );
@@ -643,10 +689,10 @@ const FiremodeInfo = (props, context) => {
 const AttachmentInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    attachments,
+    attachments = {},
   } = data;
   const AttachmentTip = "Attachments are things you can add to your gun to make it better*! They can be attached and detached by clicking on them.";
-  if (!attachments.length) {
+  if (!attachments || !attachments.length) {
     return (
       <Section title={<Tooltipify name="Attachments" tip={AttachmentTip} big={1} />}>
         <Tooltipify name="No attachments!" tip="Vanilla's a good flavor too." />

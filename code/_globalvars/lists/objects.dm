@@ -1,6 +1,10 @@
 GLOBAL_LIST_EMPTY(cable_list)					    //Index for all cables, so that powernets don't have to look through the entire world all the time
 GLOBAL_LIST_EMPTY(portals)					        //list of all /obj/effect/portal
 GLOBAL_LIST_EMPTY(airlocks)					        //list of all airlocks
+
+/// List of all curtains for button tracking
+GLOBAL_LIST_EMPTY(curtains)
+
 GLOBAL_LIST_EMPTY(mechas_list)				        //list of all mechs. Used by hostile mobs target tracking.
 GLOBAL_LIST_EMPTY(shuttle_caller_list)  		    //list of all communication consoles and AIs, for automatic shuttle calls when there are none.
 GLOBAL_LIST_EMPTY(machines)					        //NOTE: this is a list of ALL machines now. The processing machines list is SSmachine.processing !
@@ -23,6 +27,8 @@ GLOBAL_LIST_EMPTY(tech_list)					//list of all /datum/tech datums indexed by id.
 GLOBAL_LIST_EMPTY(surgeries_list)				//list of all surgeries by name, associated with their path.
 GLOBAL_LIST_EMPTY(uplink_items)					//list of all uplink item typepaths, ascendingly sorted by their initial name.
 GLOBAL_LIST_EMPTY(uplink_categories)			//list of all uplink categories, listed by the order they are loaded in code. Be careful.
+GLOBAL_LIST_EMPTY(supplykit_items)				//list of all supplykit item typepaths, ascendingly sorted by their initial name.
+GLOBAL_LIST_EMPTY(supplykit_categories)			//list of all supplykit categories, listed by the order they are loaded in code. Be careful.
 GLOBAL_LIST_EMPTY(crafting_recipes)				//list of all table craft recipes
 GLOBAL_LIST_EMPTY(rcd_list)					//list of Rapid Construction Devices.
 GLOBAL_LIST_EMPTY(apcs_list)					//list of all Area Power Controller machines, separate from machines for powernet speeeeeeed.

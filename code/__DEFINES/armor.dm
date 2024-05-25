@@ -217,6 +217,74 @@
 		"wound" = 0, \
 		"damage_threshold" = 3)
 
+/* cold ghoul armor
+ * So cold that heat attacks dont hurt em
+ * however that works
+ * but kinetic stuff smashes em to pieces
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_COLD list(\
+		"melee" = -50, \
+		"bullet" = -50, \
+		"laser" = 80, \
+		"energy" = 80, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 7)
+
+/* colder ghoul armor
+ * So cold that heat attacks dont hurt em
+ * however that works
+ * but kinetic stuff smashes em to pieces
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_COLDER list(\
+		"melee" = -50, \
+		"bullet" = -50, \
+		"laser" = 95, \
+		"energy" = 95, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 7)
+
+/* Ghouls, in armor!
+ * combat armor, to be specific
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_COMBAT list(\
+		"melee" = 25, \
+		"bullet" = 40, \
+		"laser" = 55, \
+		"energy" = 95, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 4)
+
+/* Ghouls, in armor!
+ * power armor, to be specific
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_PA list(\
+		"melee" = 60, \
+		"bullet" = 60, \
+		"laser" = 99, \
+		"energy" = 99, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 15)
+
 /* Legendary ghoul armor
  * Tough and glowy!
  * Very resistant to laser and plasma
@@ -395,7 +463,7 @@
  * Plasma fucks em to death
  * DT - Specifically 24 so no starting knives can counter it.
  * * * * * * * * * * * */
-// Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw. - Jaeger
+// Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary aethergiest. - Jaeger
 #define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
 		"melee" = 20, \
 		"bullet" = 30, \
@@ -407,10 +475,10 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 24) // Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw.
+		"damage_threshold" = 24) // Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary aethergiest.
 
 /* Deathclaw power armor - basically a super boss fight
- * Power armor + deathclaw = yeah youre not killing this
+ * Power armor + aethergiest = yeah youre not killing this
  * Doesn't appear anywhere outside of super dangerous areas that DO NOT offer a power fantasy. Has stats to match it. Regular 5.56 will not do here, bring a melee weapon or something bigger.
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_PA list(\
@@ -622,6 +690,133 @@
 		"wound" = 0, \
 		"damage_threshold" = 8)
 
+/* Syndicate simplemob
+ * Resistant to laser and plasma (cus nanotrasen)
+ * Less resistant to bullet (thanks goofball)
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_VEST list(\
+		"melee" = 25, \
+		"bullet" = 35, \
+		"laser" = 50, \
+		"energy" = 50, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 4)
+
+/* Syndicate simplemob, melee form
+ * Resistant to laser and plasma (cus nanotrasen)
+ * Less resistant to bullet (thanks goofball)
+ * better DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_VEST_MELEE list(\
+		"melee" = 25, \
+		"bullet" = 35, \
+		"laser" = 50, \
+		"energy" = 50, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 8)
+
+/* Syndicate armor simplemob
+ * Resistant to laser and plasma (cus nanotrasen)
+ * Less resistant to bullet (thanks goofball)
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_REDSUIT list(\
+		"melee" = 25, \
+		"bullet" = 35, \
+		"laser" = 65, \
+		"energy" = 75, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 6)
+
+/* Syndicate armor simplemob
+ * Resistant to laser and plasma (cus nanotrasen)
+ * Less resistant to bullet (thanks goofball)
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_REDSUIT_MELEE list(\
+		"melee" = 50, \
+		"bullet" = 35, \
+		"laser" = 65, \
+		"energy" = 75, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 11)
+
+/* Elite Syndicate armor simplemob
+ * Very Resistant to laser and plasma (cus nanotrasen + shield)
+ * Also resistant to melee cus assistant proof
+ * Less resistant to bullet (thanks goofball)
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_ELITE list(\
+		"melee" = 75, \
+		"bullet" = 35, \
+		"laser" = 85, \
+		"energy" = 80, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 10)
+
+/* Elite Syndicate armor simplemob, melee form
+ * Very Resistant to laser and plasma (cus nanotrasen + shield)
+ * Also resistant to melee cus assistant proof
+ * Less resistant to bullet (thanks goofball)
+ * better DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SYNDIE_ELITE_MELEE list(\
+		"melee" = 80, \
+		"bullet" = 35, \
+		"laser" = 85, \
+		"energy" = 80, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 12)
+
+/* Skeleton!
+ * Projectiles go right through em!
+ * But they're weak to melee cus they didnt get their calcium
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SKELETON list(\
+		"melee" = -100, \
+		"bullet" = 90, \
+		"laser" = 90, \
+		"energy" = 90, \
+		"bomb" = 100, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 0)
 
 /* Ant
  * Good melee / bullet resist
@@ -667,17 +862,51 @@
 /* gross mob spawner pre-spawner thing armor
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RIFT list(\
-		"linemelee" = 100, \
-		"linebullet" = 100, \
-		"linelaser" = 0, \
-		"energy" = -100, \
+		"melee" = 15, \
+		"bullet" = 25, \
+		"laser" = 15, \
+		"energy" = -1000, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
 		"fire" = 100, \
 		"acid" = 100, \
 		"wound" = 100, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 5)
+
+/* Bear armor!
+ * Unbearable in melee
+ * Rather bearable otherwise
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_BEAR list(\
+		"melee" = 25, \
+		"bullet" = 15, \
+		"laser" = 10, \
+		"energy" = 0, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 100, \
+		"acid" = 100, \
+		"wound" = 100, \
+		"damage_threshold" = 4)
+
+/* Bear armor!
+ * Unbearable in melee
+ * And also in ranged
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_BEAR_ARMOR list(\
+		"melee" = 35, \
+		"bullet" = 35, \
+		"laser" = 10, \
+		"energy" = 0, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 100, \
+		"acid" = 100, \
+		"wound" = 100, \
+		"damage_threshold" = 7)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
@@ -884,7 +1113,7 @@
 /* DT tokens
  * Adds on damage threshold
  * T1 - Small plated inserts, or heavy leather
- * T2 - Sturdy plated inserts, or deathclaw plating
+ * T2 - Sturdy plated inserts, or aethergiest plating
  * T3 - Dedicated armor reinforcements
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_DT_T1 list(\
@@ -952,19 +1181,19 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
  * Medium Armor
  * Substantial armor
 */
-#define ARMOR_SLOWDOWN_MEDIUM 0.4
+#define ARMOR_SLOWDOWN_MEDIUM 0.35
 
 /*
  * Heavy Armor
  * Bulky suits of heavy armor
 */
-#define ARMOR_SLOWDOWN_HEAVY 0.80
+#define ARMOR_SLOWDOWN_HEAVY 0.7
 
 /*
  * Salvaged Power Armor
  * Basically wearing a car
 */
-#define ARMOR_SLOWDOWN_SALVAGE 2
+#define ARMOR_SLOWDOWN_SALVAGE 1.7
 
 /*
  * Refurbished Power Armor

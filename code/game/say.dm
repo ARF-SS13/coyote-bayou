@@ -14,7 +14,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 		language = get_selected_language()
 	send_speech(message, 7, src, , spans, message_language=language, just_chat = just_chat)
 
-/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat)
+/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat, list/data)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
 /atom/movable/proc/can_speak()
@@ -22,26 +22,13 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
-	var/saycolor = src.get_chat_color()
-	var/color_message = alternating_color_span(rendered, saycolor, "\"", FALSE)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
-		if(istype(AM,/mob/living/carbon))
-			var/mob/living/carbon/AMcarb = AM
-			if(AMcarb.client?.prefs.color_chat_log)
-				AM.Hear(color_message, src, message_language, message, , spans, message_mode, source, just_chat)
-				return
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)
 	if(!source)
 		source = speaker
-	var/docolor = FALSE
-	var/saycolor = rgb(255, 255, 255)
-	if(istype(src, /mob/living/carbon))
-		var/mob/living/carbon/carbo = src
-		docolor = carbo.client?.prefs.color_chat_log
-		saycolor = speaker.get_chat_color()
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
 	var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
@@ -51,18 +38,14 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/freqpart = radio_freq ? "\[[get_radio_name(radio_freq)]\] " : ""
 	//Speaker name
 	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
-	if(docolor)
-		namepart = span_color(namepart, saycolor)
 	if(face_name && ishuman(speaker))
 		var/mob/living/carbon/human/H = speaker
 		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
 	//End name span.
 	var/endspanpart = "</span>"
-
+	
 	//Message
 	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
-	if(docolor)
-		messagepart = alternating_color_span(messagepart, saycolor, "\"", FALSE)
 
 	var/languageicon = ""
 	var/datum/language/D = GLOB.language_datum_instances[message_language]
@@ -80,17 +63,18 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/say_mod(input, message_mode)
 	var/ending = copytext_char(input, -1)
 	if(message_mode == MODE_WHISPER)
-		return verb_whisper
+		. = verb_whisper
 	else if(message_mode == MODE_SING)
-		return verb_sing
+		. = verb_sing
 	else if(copytext_char(input, -2) == "!!")
-		return verb_yell
+		. = verb_yell
 	else if(ending == "?")
-		return verb_ask
+		. = verb_ask
 	else if(ending == "!")
-		return verb_exclaim
+		. = verb_exclaim
 	else
-		return verb_say
+		. = verb_say
+	return get_random_if_list(.)
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), message_mode)
 	if(!input)
@@ -178,11 +162,14 @@ And the base of the send_speech() proc, which is the core of saycode.
 	
 
 /atom/movable/proc/attach_spans(input, list/spans)
-	if((input[1] == "!") && (length(input) > 2))
-		return
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
 		input = capitalize(copytext(input, customsayverb + length(input[customsayverb])))
+
+	if((input[1] == "!") && (length(input) > 2))
+		return
+	if(!length(spans) || isnull(spans[1]) && !customsayverb)
+		return input
 	if(input)
 		return "[message_spans_start(spans)][input]</span>"
 	else

@@ -29,6 +29,9 @@
 /obj/item/ammo_casing/magic/fireball
 	projectile_type = /obj/item/projectile/magic/aoe/fireball
 
+/obj/item/ammo_casing/magic/fireball/lowpower
+	projectile_type = /obj/item/projectile/magic/aoe/fireball/lowpower
+
 /obj/item/ammo_casing/magic/chaos
 	projectile_type = /obj/item/projectile/magic
 

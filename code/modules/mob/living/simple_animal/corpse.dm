@@ -209,7 +209,7 @@
 	id = /obj/item/card/id
 	mask = /obj/item/clothing/mask/rat/bee
 
-obj/effect/mob_spawn/human/corpse/raider
+/obj/effect/mob_spawn/human/corpse/raider
 	uniform = /obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/armor/heavy/metal
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -217,7 +217,7 @@ obj/effect/mob_spawn/human/corpse/raider
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
 
-obj/effect/mob_spawn/human/corpse/raidermelee
+/obj/effect/mob_spawn/human/corpse/raidermelee
 	name = "Raider Melee Corpse"
 	uniform = /obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/armor/light/leather/leather_jacket
@@ -253,7 +253,7 @@ obj/effect/mob_spawn/human/corpse/raidermelee
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
 
-obj/effect/mob_spawn/human/corpse/raiderbossalt
+/obj/effect/mob_spawn/human/corpse/raiderbossalt
 	name = "Raider Boss Corpse"
 	uniform = /obj/item/clothing/under/f13/mercc
 	suit = /obj/item/clothing/suit/armor/heavy/metal/reinforced

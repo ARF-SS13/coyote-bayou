@@ -10,6 +10,11 @@
 		vol_temp = R.volume
 		vol_counter += vol_temp
 
+		if(istype(R, /datum/reagent/blood))
+			var/datum/reagent/blood/blood = R
+			if(blood.rainbow)
+				return "rainbow"
+
 		if(!mixcolor)
 			mixcolor = R.color
 

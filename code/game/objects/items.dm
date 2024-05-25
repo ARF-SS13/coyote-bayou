@@ -177,7 +177,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/hud_actions
 
 	var/list/item_upgrades = list()
-	var/max_upgrades = 3
+	var/max_upgrades = 5 // was three now five because the amount of mods you need/want has significantly increased. Love you!
 
 	/// extra special transform
 	var/matrix/special_transform
@@ -234,6 +234,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
+	item_flags &= ~PERSONAL_ITEM	//prevent reqdels
 	if(ismob(loc))
 		var/mob/m = loc
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
@@ -364,22 +365,26 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			var/datum/material/MyMat = custom_materials[1]
 			if(MyMat.strength_modifier)
 				DamMult = MyMat.strength_modifier
-		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
-		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
-		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
-		var/InitialAS = initial(attack_speed)
+		var/damagevalue = force
+		var/CalcAS = attack_speed
+		if(src.is_dual_wielded)
+			damagevalue = memory_original_force
+			CalcAS = dual_wield_memory_attack_speed
+		var/CalcF = (damagevalue) * DamMult
+		var/CalcFW = (force_wielded) * DamMult
+		var/CalcFUW = (force_unwielded) * DamMult
 
 		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [InitialFUW] | (DPS [round(InitialFUW * (10/InitialAS), 0.1)])"
-			readout += "\nTWO HANDED [InitialFW] | (DPS [round(InitialFW * (10/InitialAS), 0.1)])"
-			readout += "\nDUAL WIELD [InitialFUW * dual_wielded_mult] | (DPS [round((InitialFUW * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+			readout += "\nONE HANDED [CalcFUW] | (DPS [round(CalcFUW * (10/CalcAS), 0.1)])"
+			readout += "\nTWO HANDED [CalcFW] | (DPS [round(CalcFW * (10/CalcAS), 0.1)])"
+			readout += "\nDUAL WIELD [CalcFUW * dual_wielded_mult] | (DPS [round((CalcFUW * dual_wielded_mult) * (10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		else
-			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
-			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+			readout += "\nDAMAGE [CalcF] | (DPS [round(CalcF * (10/CalcAS), 0.1)])"
+			readout += "\nDUAL WIELD [CalcF * dual_wielded_mult] | (DPS [round((CalcF * dual_wielded_mult) * (10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		readout += "\nTHROW DAMAGE [(throwforce + throwforce_bonus) * DamMult]"
-		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
+		readout += "\nATTACKS / SECOND [round(10 / CalcAS, 0.1)] | DUAL WIELD [round(10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"
 
@@ -538,6 +543,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		A.Remove(user)
 	if(item_flags & DROPDEL)
 		qdel(src)
+	if(item_flags & PERSONAL_ITEM && !recursive_loc_search(src, user))
+		qdel(src)
 	item_flags &= ~IN_INVENTORY
 	if(SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user) & COMPONENT_DROPPED_RELOCATION)
 		. = ITEM_RELOCATED_BY_DROPPED
@@ -623,7 +630,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr) || usr.lying)
+	if(usr.incapacitated(allow_crit = TRUE) || !Adjacent(usr) || usr.lying)
 		return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota
@@ -793,7 +800,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, messy_throw = TRUE)
 	set_thrownby(thrower)
-	callback = CALLBACK(src, .proc/after_throw, callback, (spin && messy_throw)) //replace their callback with our own
+	callback = CALLBACK(src,PROC_REF(after_throw), callback, (spin && messy_throw)) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
 
 /obj/item/proc/set_thrownby(new_thrownby)
@@ -801,7 +808,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		UnregisterSignal(thrownby, COMSIG_PARENT_QDELETING)
 	thrownby = new_thrownby
 	if(thrownby)
-		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING, .proc/thrownby_deleted)
+		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING,PROC_REF(thrownby_deleted))
 
 /obj/item/proc/thrownby_deleted(datum/source)
 	SIGNAL_HANDLER
@@ -982,7 +989,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if((item_flags & IN_INVENTORY) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr
-		tip_timer = addtimer(CALLBACK(src, .proc/openTip, location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
+		tip_timer = addtimer(CALLBACK(src,PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 
 /obj/item/MouseExited(location,control,params)
 	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_EXIT, location, control, params)
@@ -1010,7 +1017,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			delay = user.mind.item_action_skills_mod(src, delay, skill_difficulty, SKILL_USE_TOOL, null, FALSE)
 
 		// Create a callback with checks that would be called every tick by do_after.
-		var/datum/callback/tool_check = CALLBACK(src, .proc/tool_check_callback, user, amount, extra_checks)
+		var/datum/callback/tool_check = CALLBACK(src,PROC_REF(tool_check_callback), user, amount, extra_checks)
 
 		if(ismob(target))
 			if(!do_mob(user, target, delay, extra_checks=tool_check))
@@ -1282,3 +1289,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
 	. = ..()
+
+/obj/item/MouseDrop(mob/over, src_location, over_location)
+	var/mob/living/L = usr
+	if((L != over) && (isliving(over)))
+		var/mob/living/target = over
+		L.do_give(target)
+	return ..()

@@ -35,6 +35,8 @@
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
+	var/supposedly_a_problem = 0
+	maptext_width = 48 //prevents ammo count from wrapping down into two lines
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
@@ -54,8 +56,22 @@
 
 /obj/item/ammo_box/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_load))
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_load))
+
+/// Updates the ammo count number that renders on top of the icon
+/obj/item/ammo_box/proc/UpdateAmmoCountOverlay()
+	if(isturf(loc))//Only show th ammo count if the magazine is, like, in an inventory or something. Mags on the ground don't need a big number on them, that's ugly.
+		maptext = ""
+	else 
+		if(LAZYLEN(stored_ammo) > 0)
+			maptext = "<b>[LAZYLEN(stored_ammo)]/[max_ammo]"
+		else
+			maptext = "<b>0/[max_ammo]"
+
+/obj/item/ammo_box/doMove(atom/destination)
+	. = ..()
+	UpdateAmmoCountOverlay()
 
 /// An aheal, but for ammo boxes
 /obj/item/ammo_box/proc/admin_load()
@@ -188,6 +204,9 @@
 	if(istype(A, /obj/item/ammo_box/))
 		if(load_from_box(A, user, silent))
 			return TRUE
+	if(COOLDOWN_FINISHED(src, supposedly_a_problem) && istype(A, /obj/item/gun))
+		COOLDOWN_START(src, supposedly_a_problem, 1) // just a brief thing so that the game has time to load the thing before you try to load the thing again, thanks automatics
+		return A.attackby(src, user, params, silent, replace_spent)
 
 /obj/item/ammo_box/proc/load_from_box(obj/item/ammo_box/other_ammobox, mob/user, silent)
 	if(!istype(other_ammobox, /obj/item/ammo_box))
@@ -360,6 +379,7 @@
 
 /obj/item/ammo_box/update_icon()
 	. = ..()
+	UpdateAmmoCountOverlay()
 /* 	if(length(bullet_cost))
 		var/temp_materials = custom_materials.Copy()
 		for (var/material in bullet_cost)
@@ -377,15 +397,34 @@
 
 /obj/item/ammo_box/update_icon_state()
 	switch(multiple_sprites)
-		if(1)
+		if(1) //standard
 			icon_state = "[initial(icon_state)]-[stored_ammo.len]"
-		if(2)
+		if(2) //speedloaders and such
 			icon_state = "[initial(icon_state)]-[stored_ammo.len ? "[max_ammo]" : "0"]"
-		if(3)
+		if(3) //improvised bags
 			if(stored_ammo.len >= 8)
 				icon_state = "[initial(icon_state)]-8"
 			else
 				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
+		if(4) //ammo crates
+			if(stored_ammo.len >= 100)
+				icon_state = "[initial(icon_state)]-5"
+			else if(stored_ammo.len >= 75)
+				icon_state = "[initial(icon_state)]-4"
+			else if(stored_ammo.len >= 50)
+				icon_state = "[initial(icon_state)]-3"
+			else if(stored_ammo.len >= 25)
+				icon_state = "[initial(icon_state)]-2"
+			else if(stored_ammo.len >= 1)
+				icon_state = "[initial(icon_state)]-1"
+			else
+				icon_state = "[initial(icon_state)]-0"
+		if(5)
+			if(stored_ammo.len >= 12)
+				icon_state = "[initial(icon_state)]-12"
+			else
+				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
+	UpdateAmmoCountOverlay()
 
 //Behavior for magazines
 /obj/item/ammo_box/magazine/proc/ammo_count()
@@ -396,6 +435,7 @@
 	for(var/obj/item/ammo in stored_ammo)
 		ammo.forceMove(turf_mag)
 		stored_ammo -= ammo
+	UpdateAmmoCountOverlay()
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A

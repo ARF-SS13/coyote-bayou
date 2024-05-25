@@ -230,7 +230,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/bunker/bighornbunker)
 "alf" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1516,7 +1516,7 @@
 /area/f13/bunker)
 "bKm" = (
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2028,7 +2028,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "cmd" = (
-/obj/item/twohanded/spear/bonespear/deathclaw,
+/obj/item/twohanded/spear/bonespear/aethergiest,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "cml" = (
@@ -3286,7 +3286,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
 "dtf" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "dty" = (
@@ -4388,7 +4388,7 @@
 /area/f13/bunker)
 "eyt" = (
 /obj/item/clothing/glasses/meson,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/storage/bag/ore,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -4559,7 +4559,7 @@
 /area/f13/bunker)
 "eGe" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
 "eGp" = (
@@ -4967,7 +4967,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fdI" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "fez" = (
@@ -6712,7 +6712,7 @@
 /area/f13/vault)
 "gNT" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1
 	},
 /turf/open/floor/f13{
@@ -8183,7 +8183,7 @@
 /area/f13/city)
 "ikl" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -9980,7 +9980,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kdT" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
+/mob/living/simple_animal/hostile/aethergiest/legendary,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -10353,7 +10353,7 @@
 	},
 /area/f13/underground/cave)
 "kxw" = (
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kxI" = (
@@ -10462,7 +10462,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "kCW" = (
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "kDh" = (
@@ -13719,7 +13719,7 @@
 	},
 /area/f13/bunker)
 "nOK" = (
-/obj/item/stack/sheet/animalhide/deathclaw,
+/obj/item/stack/sheet/animalhide/aethergiest,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "nON" = (
@@ -14070,7 +14070,7 @@
 /area/f13/bunker)
 "oeB" = (
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -14162,8 +14162,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "okF" = (
@@ -14175,7 +14175,7 @@
 	},
 /area/f13/bunker)
 "okG" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -14312,7 +14312,7 @@
 	},
 /area/f13/bunker)
 "orm" = (
-/mob/living/simple_animal/hostile/deathclaw{
+/mob/living/simple_animal/hostile/aethergiest{
 	desc = "One of the claw brothers.";
 	name = "Jimmy"
 	},
@@ -15146,7 +15146,7 @@
 /area/f13/bunker)
 "peo" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -17678,8 +17678,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "rLF" = (
@@ -17990,9 +17990,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "scS" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "sdU" = (
@@ -19574,7 +19574,7 @@
 /area/f13/underground/cave)
 "tJQ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -19957,7 +19957,7 @@
 	},
 /area/f13/bunker)
 "uhq" = (
-/mob/living/simple_animal/hostile/deathclaw{
+/mob/living/simple_animal/hostile/aethergiest{
 	mob_size = 5;
 	resize = 1.5
 	},
@@ -20177,8 +20177,8 @@
 /obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "uqs" = (
@@ -20408,8 +20408,8 @@
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/spawner/lootdrop/armory_contraband,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "uBU" = (
@@ -21580,7 +21580,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "vGr" = (
-/mob/living/simple_animal/hostile/deathclaw{
+/mob/living/simple_animal/hostile/aethergiest{
 	desc = "One of the claw brothers.";
 	name = "Chuck"
 	},
@@ -21903,9 +21903,9 @@
 	},
 /area/f13/bunker)
 "wba" = (
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /obj/item/binoculars,
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -21969,7 +21969,7 @@
 	},
 /area/f13/bunker)
 "wcO" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "wcT" = (
@@ -23754,7 +23754,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "ydW" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/head/ushanka,
 /obj/structure/closet{
 	desc = "This stores guns for russian security,da ?";
@@ -23871,7 +23871,7 @@
 	},
 /area/f13/bunker)
 "yjD" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "yjN" = (

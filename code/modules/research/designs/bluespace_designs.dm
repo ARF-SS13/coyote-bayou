@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 //////////////Blue Space/////////////////
 /////////////////////////////////////////
-
+/*
 /datum/design/beacon
 	name = "Tracking Beacon"
 	desc = "A blue space tracking beacon."
@@ -12,7 +12,7 @@
 	build_path = /obj/item/beacon
 	category = list("Bluespace Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
-
+*/
 /datum/design/bag_holding
 	name = "Bag of Holding"
 	desc = "A backpack that opens into a localized pocket of bluespace."

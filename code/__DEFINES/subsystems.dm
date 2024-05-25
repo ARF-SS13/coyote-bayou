@@ -86,13 +86,14 @@
 #define INIT_ORDER_RESEARCH			75
 #define INIT_ORDER_EVENTS			70
 #define INIT_ORDER_JOBS				65
-#define INIT_ORDER_QUIRKS			60
+#define INIT_ORDER_QUIRKS			61
+#define INIT_ORDER_FLIRT			60
 #define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
 #define INIT_ORDER_TICKER			55
 #define INIT_ORDER_INSTRUMENTS		53
 #define INIT_ORDER_MAPPING			50
-#define INIT_ORDER_ECONOMY			45
 #define INIT_ORDER_TIMETRACK		47
+#define INIT_ORDER_WEATHER			45
 #define INIT_ORDER_NETWORKS			40
 #define INIT_ORDER_HOLODECK			35
 #define INIT_ORDER_ARTIFACT			34
@@ -112,7 +113,7 @@
 #define INIT_ORDER_ASSETS			-4
 #define INIT_ORDER_ICON_SMOOTHING	-5
 #define INIT_ORDER_OVERLAY			-6
-#define INIT_ORDER_MATCHMATKING -7
+#define INIT_ORDER_MATCHMATKING 	-7
 #define INIT_ORDER_XKEYSCORE		-10
 #define INIT_ORDER_STICKY_BAN		-10
 #define INIT_ORDER_LIGHTING			-20
@@ -120,6 +121,7 @@
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
 #define INIT_ORDER_PREFBREAK		-51
+#define INIT_ORDER_ECONOMY			-92
 #define INIT_ORDER_PERSISTENCE		-95
 #define INIT_ORDER_LATELOAD			-97
 #define INIT_ORDER_DEMO				-99  // o avoid a bunch of changes related to initialization being written, do this last

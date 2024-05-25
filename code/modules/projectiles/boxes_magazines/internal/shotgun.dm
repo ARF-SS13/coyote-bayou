@@ -22,6 +22,11 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 3
 
+/obj/item/ammo_box/magazine/internal/shot/needler
+	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
+	caliber = list(CALIBER_SHOTGUNNEEDLER)
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/shot/tube
 	name = "dual feed shotgun internal tube"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot

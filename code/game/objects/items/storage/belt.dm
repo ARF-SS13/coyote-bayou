@@ -82,11 +82,11 @@
 	desc = "Holds a collection of simple tools."
 
 /obj/item/storage/belt/utility/waster/PopulateContents()
-	new /obj/item/crowbar(src)
-	new /obj/item/wrench(src)
-	new /obj/item/screwdriver/basic(src)
-	new /obj/item/weldingtool/basic(src)
-	new /obj/item/wirecutters/basic(src)
+	new /obj/item/crowbar/crude(src)
+	new /obj/item/wrench/crude(src)
+	new /obj/item/screwdriver/crude(src)
+	new /obj/item/weldingtool/crude(src)
+	new /obj/item/wirecutters/crude(src)
 	new /obj/item/stack/cable_coil(src,30,pick("yellow","orange"))
 
 // Forgemaster toolbelt (made to make the old chainsaw 2h component bearable, phase out unless needed, wasteland toobelt should suffice)
@@ -95,11 +95,11 @@
 	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
 
 /obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
-	new /obj/item/crowbar(src)
-	new /obj/item/wrench(src)
-	new /obj/item/screwdriver/basic(src)
-	new /obj/item/weldingtool/basic(src)
-	new /obj/item/wirecutters/basic(src)
+	new /obj/item/crowbar/crude(src)
+	new /obj/item/wrench/crude(src)
+	new /obj/item/screwdriver/crude(src)
+	new /obj/item/weldingtool/crude(src)
+	new /obj/item/wirecutters/crude(src)
 	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
@@ -215,7 +215,7 @@
 	new /obj/item/handsaw(src)
 	new /obj/item/retractor(src)
 	new /obj/item/hemostat(src)
-	new /obj/item/weldingtool/basic(src)
+	new /obj/item/weldingtool(src)
 	new /obj/item/bonesetter(src)
 
 //////////////////
@@ -299,7 +299,7 @@
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/army/followers
-	name = "follower belt"
+	name = "guild knight belt"
 	desc = "A thoughtful belt for holding things like guns."
 	icon_state = "grenadebeltold"
 	item_state = "security"
@@ -436,15 +436,15 @@
 /////////////////
 /// Neck Gunbelt
 /obj/item/storage/belt/shoulderholster
-	name = "shoulder holster"
-	desc = "An over the shoulder shooter holder. WARNING: Badasses only."
+	name = "standard holster"
+	desc = "An over the shoulder shooter holder. WARNING: Badasses only. Fits 4 weapons"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = INV_SLOTBIT_NECK
-	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
+	component_type = /datum/component/storage/concrete/pockets/bos/paladin //4 slots instead of 3
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
@@ -839,20 +839,32 @@
 //NCR Ranger's stuff
 
 /obj/item/storage/belt/military/commonwealth_brit
-	name = "burma webbing"
+	name = "Pattern 37 webbing"
 	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
-	icon_state = "brit_webbing"
-	item_state = "brit_webbing"
+	icon_state = "brit_web"
+	item_state = "brit_web"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+
+/obj/item/storage/belt/military/commonwealth_brit/oldschool
+	name = "Pattern 1908 webbing"
+	desc = "A versatile chest rig, this one seems to be used in the great war by Great Britain and the commonwealth."
+	icon_state = "brit_webww1"
+	item_state = "brit_webww1"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
 /obj/item/storage/belt/bandolier/boer_band
-	name = "leather bandolier"
-	desc = "An old style of bandolier used by primarily those who ride upon horses."
-	icon_state = "boer_band"
-	item_state = "boer_band"
+	name = " Boar War Leather Band"
+	desc = "An old style of bandolier used by primarily those who ride upon horses. Used in the boer war."
+	icon_state = "boer"
+	item_state = "boer"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
 /obj/item/storage/belt/military/french_webbing
 	name = "french webbing"
-	desc = "A versailles chest rig, this one seems to be used in long bread enviroments and such"
+	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
 	icon_state = "french_webbing"
 	item_state = "french_webbing"
 

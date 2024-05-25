@@ -28,7 +28,7 @@
 	var/datum/client_colour/CC = new colour_type()
 	LAZYINITLIST(client_colours)
 	client_colours |= CC
-	sortTim(client_colours, /proc/cmp_clientcolour_priority)
+	sortTim(client_colours, GLOBAL_PROC_REF(cmp_clientcolour_priority))
 	update_client_colour()
 
 

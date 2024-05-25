@@ -17,12 +17,16 @@
 /proc/techweb_item_point_check(obj/item/I)
 	if(SSresearch.techweb_point_items[I.type])
 		return SSresearch.techweb_point_items[I.type]
+	var/secondtry = SEND_SIGNAL(I, COMSIG_ITEM_GET_RESEARCH_POINTS)
+	if(secondtry)
+		return list(TECHWEB_POINT_TYPE_GENERIC = secondtry)
 
 /proc/techweb_point_display_generic(pointlist)
 	var/list/ret = list()
 	for(var/i in pointlist)
 		if(SSresearch.point_types[i])
 			ret += "[SSresearch.point_types[i]]: [pointlist[i]]"
+			continue
 		else
 			ret += "ERRORED POINT TYPE: [pointlist[i]]"
 	return ret.Join("<BR>")

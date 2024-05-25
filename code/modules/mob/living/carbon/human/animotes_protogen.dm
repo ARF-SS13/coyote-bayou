@@ -26,7 +26,11 @@
 	if(	H.dna.features["mam_snouts"] == "Protogen - Snout" || \
 		H.dna.features["mam_snouts"] == "Protogen - Snout Under" || \
 		H.dna.features["mam_snouts"] == "Protogen - Snout Tertiary" || \
-		H.dna.features["mam_snouts"] == "Protogen - Snout Tertiary Under" \
+		H.dna.features["mam_snouts"] == "Protogen - Snout Tertiary Under" || \
+		H.dna.features["mam_snouts"] == "Protogen with Beak - Snout" || \
+		H.dna.features["mam_snouts"] == "Protogen with Beak - Snout Under" || \
+		H.dna.features["mam_snouts"] == "Protogen with Beak - Snout Tertiary" || \
+		H.dna.features["mam_snouts"] == "Protogen with Beak - Snout Tertiary Under" \
 	)
 		return TRUE
 	to_chat(usr, span_warning("You realize that you're actually missing a protogen visor to do this..."))

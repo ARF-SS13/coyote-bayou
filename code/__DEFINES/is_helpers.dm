@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
 #define ispodperson(A) (is_species(A, /datum/species/pod))
 #define isflyperson(A) (is_species(A, /datum/species/fly))
-#define isjellyperson(A) (is_species(A, /datum/species/jelly))
+#define isjellyperson(A) (is_species(A, /datum/species/jelly) || is_species(A, /datum/species/feral/slime))
 #define isslimeperson(A) (is_species(A, /datum/species/jelly/slime))
 #define isluminescent(A) (is_species(A, /datum/species/jelly/luminescent))
 #define iszombie(A) (is_species(A, /datum/species/zombie))
@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismush(A) (is_species(A, /datum/species/mush))
 #define isshadow(A) (is_species(A, /datum/species/shadow))	
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
-#define isrobotic(A) (is_species(A, /datum/species/synthfurry/ipc) || is_species(A, /datum/species/synthfurry) || is_species(/datum/species/synth) || is_species(/datum/species/android))
+#define isrobotic(A) (is_species(A, /datum/species/synthfurry/ipc) || is_species(A, /datum/species/synthfurry) || is_species(A, /datum/species/adapted) || is_species(/datum/species/synth) || is_species(/datum/species/android))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
 
 // Citadel specific species
@@ -161,6 +161,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isconstruct(A) (istype(A, /mob/living/simple_animal/hostile/construct))
 
 #define ismegafauna(A) (istype(A, /mob/living/simple_animal/hostile/megafauna))
+#define isdummy(A) (istype(A, /mob/living/carbon/human/dummy))
 
 //Misc mobs
 #define isobserver(A) (istype(A, /mob/dead/observer))
@@ -273,7 +274,7 @@ GLOBAL_LIST_INIT(simplemobs_wildlife, typecacheof(list(
 	/mob/living/simple_animal/hostile/molerat,
 	/mob/living/simple_animal/hostile/centaur,
 	/mob/living/simple_animal/hostile/abomination,
-	/mob/living/simple_animal/hostile/deathclaw,
+	/mob/living/simple_animal/hostile/aethergiest,
 	/mob/living/simple_animal/hostile/ghoul,
 	/mob/living/simple_animal/hostile/giantant,
 	/mob/living/simple_animal/hostile/fireant,
@@ -284,7 +285,7 @@ GLOBAL_LIST_INIT(simplemobs_wildlife, typecacheof(list(
 	/mob/living/simple_animal/hostile/carp,
 	/mob/living/simple_animal/hostile/cazador,
 	/mob/living/simple_animal/hostile/bloatfly,
-	/mob/living/simple_animal/hostile/radroach,
+	/mob/living/simple_animal/hostile/pillbug,
 	/mob/living/simple_animal/hostile/mirelurk,
 	/mob/living/simple_animal/hostile/bear/yaoguai,
 	/mob/living/simple_animal/hostile/trog,
@@ -298,7 +299,7 @@ GLOBAL_LIST_INIT(simplemobs_animals, typecacheof(list(
 	/mob/living/simple_animal/hostile/molerat,
 	/mob/living/simple_animal/hostile/centaur,
 	/mob/living/simple_animal/hostile/abomination,
-	/mob/living/simple_animal/hostile/deathclaw,
+	/mob/living/simple_animal/hostile/aethergiest,
 	/mob/living/simple_animal/hostile/rat,
 	/mob/living/simple_animal/hostile/regalrat,
 	/mob/living/simple_animal/hostile/carp,
@@ -316,7 +317,7 @@ GLOBAL_LIST_INIT(simplemobs_insects, typecacheof(list(
 	/mob/living/simple_animal/hostile/radscorpion,
 	/mob/living/simple_animal/hostile/cazador,
 	/mob/living/simple_animal/hostile/bloatfly,
-	/mob/living/simple_animal/hostile/radroach,
+	/mob/living/simple_animal/hostile/pillbug,
 	)))
 
 

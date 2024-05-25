@@ -29,6 +29,10 @@
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
+/datum/sprite_accessory/penis/tipknotted
+	icon_state = "tipknotted"
+	name = "Knotted with a tip poking from sheath"
+
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
 	name = "Flared"
@@ -146,6 +150,10 @@
 /datum/sprite_accessory/breasts/udders
 	icon_state = "udders"
 	name = "Udders"
+
+/datum/sprite_accessory/breasts/pairround
+	icon_state = "pairround"
+	name = "Pair(round)"
 
 //BUTT BE HERE
 /datum/sprite_accessory/butt

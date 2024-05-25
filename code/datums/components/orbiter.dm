@@ -23,7 +23,7 @@
 	. = ..()
 	var/atom/target = parent
 	while(ismovable(target))
-		RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/move_react)
+		RegisterSignal(target, COMSIG_MOVABLE_MOVED,PROC_REF(move_react))
 		target = target.loc
 
 /datum/component/orbiter/UnregisterFromParent()
@@ -61,7 +61,7 @@
 			orbiter.orbiting.end_orbit(orbiter)
 	orbiters[orbiter] = TRUE
 	orbiter.orbiting = src
-	RegisterSignal(orbiter, COMSIG_MOVABLE_MOVED, .proc/orbiter_move_react)
+	RegisterSignal(orbiter, COMSIG_MOVABLE_MOVED,PROC_REF(orbiter_move_react))
 
 	SEND_SIGNAL(parent, COMSIG_ATOM_ORBIT_BEGIN, orbiter)
 
@@ -91,7 +91,6 @@
 		orbiter.glide_size = movable_parent.glide_size
 
 	orbiter.forceMove(get_turf(parent))
-	to_chat(orbiter, span_notice("Now orbiting [parent]."))
 
 /datum/component/orbiter/proc/end_orbit(atom/movable/orbiter, refreshing=FALSE)
 	if(!orbiters[orbiter])
@@ -135,7 +134,7 @@
 	if(orbited?.loc && orbited.loc != newturf) // We want to know when anything holding us moves too
 		var/atom/target = orbited.loc
 		while(ismovable(target))
-			RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/move_react, TRUE)
+			RegisterSignal(target, COMSIG_MOVABLE_MOVED,PROC_REF(move_react), TRUE)
 			target = target.loc
 
 	var/atom/curloc = master.loc

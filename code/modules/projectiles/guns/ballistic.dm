@@ -25,6 +25,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/handedness = GUN_EJECTOR_RIGHT
 	var/cock_sound = "gun_slide_lock"
 	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if(spawnwithmagazine)
@@ -146,7 +147,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			playsound(src, "gun_insert_full_magazine", 70, 1)
 			if(!chambered)
 				chamber_round()
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
 		else
 			playsound(src, "gun_insert_empty_magazine", 70, 1)
 		new_mag.update_icon()
@@ -278,7 +279,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 
 /// Pump if click with empty thing
 /obj/item/gun/ballistic/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(!casing_ejector && chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
+	if(!casing_ejector && chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP) && !istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))
 		pump(user, TRUE)
 	else
 		..()
@@ -331,7 +332,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		user.visible_message("[user] shortens \the [src]!", span_notice("You shorten \the [src]."))
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
@@ -408,3 +409,152 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			if(GUN_EJECTOR_ANY)
 				return turn(user.dir, pick(0, -90, 90, 180))
 	return angle2dir_cardinal(rand(0,360)) // something fucked up, just send a direction
+
+/obj/item/gun/ballistic/Reload(mob/user)
+	if(!ishuman(user))
+		return FALSE
+	if(on_cooldown(user) || !user.has_direct_access_to(src, STORAGE_VIEW_DEPTH))
+		to_chat(user, span_notice("You can't reload \the [src] right now!"))
+		return FALSE
+	//Shotguns, bolt action rifles, etc.
+	if(magazine?.fixed_mag)
+		return InternalReload(user)
+	//External magazine weapons
+	else
+		return MagReload(user)
+
+/*
+* Reloads an internal magazine of a weapon with boxes of ammo in your inventory or loose rounds. Unsafe, call Reload() instead.
+*/
+/obj/item/gun/ballistic/proc/InternalReload(mob/user)
+	//typecast the user as a human
+	var/mob/living/carbon/human/H = user
+
+	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
+	busy_action = TRUE
+	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
+	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for a magazine to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
+		busy_action = FALSE
+		return FALSE
+
+	var/isrevolver = FALSE
+	if(istype(src, /obj/item/gun/ballistic/revolver) || istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))//Pull any loose shells out, first.
+		var/obj/item/gun/ballistic/revolver/R = src
+		isrevolver = TRUE
+		R.eject_shells(H, TRUE)
+	else if((chambered && !chambered?.BB) || (!chambered && LAZYLEN(magazine?.stored_ammo)))//Eject any empty shells from the chamber
+		attack_self(H)
+
+	var/list/validboxes = list()
+	var/boxedrounds = 0 //If we don't have enough boxed rounds, look for loose rounds as well
+	var/list/validcasings = list()
+	var/list/yourstuff = H?.contents + H?.belt?.contents + H?.back?.contents + H?.wear_suit?.contents + H?.shoes?.contents + H?.head?.contents + H?.l_store?.contents + H?.r_store?.contents + H?.s_store?.contents + H?.wear_neck?.contents
+	//find compatible boxes of ammo
+	for(var/obj/item/ammo_box/B in yourstuff)
+		var/rounds = LAZYLEN(B.stored_ammo)
+		if(rounds > 0 && B.caliber?[1] == magazine.caliber?[1] && !isgun(B.loc))
+			boxedrounds += rounds
+			validboxes += B
+			validboxes[B] = rounds
+	//find loose rounds if there aren't enough boxed rounds to fill the magazine
+	if(LAZYLEN(validboxes) == 0 || boxedrounds < (magazine.max_ammo - magazine.ammo_count()))
+		for(var/obj/item/ammo_casing/AC in yourstuff)
+			if(AC.BB && (AC.caliber in magazine?.caliber) && !isgun(AC.loc))//Not spent, correct caliber
+				if(AC.loc in validboxes)//don't count these twice
+					continue
+				validcasings += AC
+
+	if(LAZYLEN(validboxes) || LAZYLEN(validcasings))
+		if(LAZYLEN(validboxes) && magazine.ammo_count() < magazine.max_ammo)
+			sortTim(validboxes, /proc/cmp_numeric_asc, TRUE)//Sort them by least to most filled so we empty the least filled ones first.
+			for(var/obj/item/ammo_box/B in validboxes)
+				if(isnull(B) || QDELETED(B))
+					continue
+				//reload from this ammo box multiple times if our magazine doesn't get filled in one go or we need to chamber a round and then fill up.
+				if(!magazine?.multiload)//internal magazines that don't load multiple rounds at once
+					var/numroundstoload = clamp((magazine.max_ammo - magazine.ammo_count()), 1, LAZYLEN(B.stored_ammo))
+					for(var/i = 1; i <= numroundstoload; i++)
+						if(do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE) && H.has_direct_access_to(B, STORAGE_VIEW_DEPTH) && attackby(B, user))
+							continue
+						else
+							break
+				else// magazines that accept multiple rounds at once
+					if(do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE) && H.has_direct_access_to(B, STORAGE_VIEW_DEPTH) && attackby(B, user))
+						if(!isrevolver && ((chambered && !chambered?.BB) || !chambered))//spent round or an empty chamber
+							attack_self(H)//rack the bolt
+							//Insert another round to top us off since we just chambered a round
+							if(LAZYLEN(B.stored_ammo) && do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE) && magazine.ammo_count() < magazine.max_ammo && LAZYLEN(B.stored_ammo))
+								attackby(B, user)
+						var/newammo = LAZYLEN(B.stored_ammo)
+						if(newammo == 0)
+							validboxes -= B
+						else
+							validboxes[B] = newammo //update this box's ammo count
+							sortTim(validboxes, /proc/cmp_numeric_asc, TRUE)			
+				if(LAZYLEN(magazine.stored_ammo) < magazine.max_ammo)
+					continue
+				else
+					break
+		if(LAZYLEN(validcasings) && magazine.ammo_count() < magazine.max_ammo)
+			for(var/obj/item/ammo_casing/AC in validcasings)
+				if(isnull(AC) || QDELETED(AC) || !AC.BB)
+					continue
+				if(do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE) && H.has_direct_access_to(AC, STORAGE_VIEW_DEPTH) && attackby(AC, user))
+					validcasings -= AC
+					if(!isrevolver && ((chambered && !chambered?.BB) || !chambered))//spent round or an empty chamber
+						attack_self(H)//rack the bolt
+				if(magazine.ammo_count() < magazine.max_ammo)
+					continue
+				else
+					break
+	else
+		to_chat(H, span_alert("You couldn't find any ammunition that fits into \the [src]!"))
+
+	busy_action = FALSE
+	return TRUE
+
+/// Reloads a magazine into a gun that uses external magazines. Unsafe, call Reload() instead.
+/obj/item/gun/ballistic/proc/MagReload(mob/user)
+	if(!mag_type)
+		return FALSE
+	//typecast the user as a human
+	var/mob/living/carbon/human/H = user
+
+	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
+	busy_action = TRUE
+	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
+	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for some ammunition to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
+		busy_action = FALSE
+		return FALSE
+
+	//First, search for compatible magazines in some predictable locations. Let's not search every item on them to save compute time. Skips organs and other weird stuff by doing it this way.
+	var/list/validmags = list()
+	var/list/yourstuff = H?.contents + H?.belt?.contents + H?.back?.contents + H?.wear_suit?.contents + H?.shoes?.contents + H?.head?.contents + H?.l_store?.contents + H?.r_store?.contents + H?.s_store?.contents + H?.wear_neck?.contents
+	for(var/obj/item/ammo_box/magazine/M in yourstuff)
+		var/rounds = LAZYLEN(M.stored_ammo)
+		if(rounds > 0 && is_magazine_allowed(M))//valid mags have ammo and are allowed to be inserted into your gun
+			validmags[M] = rounds
+	yourstuff = null
+
+	//Then, try to insert the one with the most ammo in it.
+	if(LAZYLEN(validmags))
+		sortTim(validmags, /proc/cmp_numeric_dsc, TRUE)//Sort them by most filled to least filled.
+		for(var/obj/item/ammo_box/magazine/M in validmags)
+			var/obj/magloc = isobj(M.loc) ? M.loc : null
+			if(isgun(magloc))// Don't swap magazines with two guns.
+				continue
+			var/obj/oldmag = isobj(magazine) ? magazine : null
+			if(H.has_direct_access_to(M, STORAGE_VIEW_DEPTH) && attackby(M, user))//Actually reload the gun
+				if(magloc && oldmag)
+					if(!magloc.attackby(oldmag, user))// Try to put your old mag in the new one's place
+						H.quick_equip(oldmag)// If that fails, quick equip it.
+				break//If we loaded a new mag successfully, stop
+	else
+		to_chat(H, span_alert("You couldn't find any filled magazines that fit \the [src]!"))
+		busy_action = FALSE
+		return FALSE
+
+	busy_action = FALSE
+	return TRUE

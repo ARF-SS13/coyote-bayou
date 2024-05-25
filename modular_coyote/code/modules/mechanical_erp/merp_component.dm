@@ -53,14 +53,14 @@
 /datum/component/merp/Initialize()
 	if(!SSmerp.should_merp(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN), .proc/setup_merp)
-	RegisterSignal(parent, list(COMSIG_MERP_GIVE_MERP_INITIATOR), .proc/give_initiator)
-	RegisterSignal(parent, list(COMSIG_MERP_GIVE_HAND_BIT), .proc/give_merp_item)
-	RegisterSignal(parent, list(COMSIG_MERP_DO_PLAP), .proc/plap)
-	RegisterSignal(parent, list(COMSIG_MERP_GET_PLAPPED), .proc/get_plapped)
-	RegisterSignal(parent, list(COMSIG_MERP_KILL_COMBO), .proc/combo_died) // ):
-	RegisterSignal(parent, list(COMSIG_MERP_PLAP_EXPIRED), .proc/plap_died) // ):
-	RegisterSignal(parent, list(COMSIG_MERP_GET_OTHER_COMBOS), .proc/get_combos)
+	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN),PROC_REF(setup_merp))
+	RegisterSignal(parent, list(COMSIG_MERP_GIVE_MERP_INITIATOR),PROC_REF(give_initiator))
+	RegisterSignal(parent, list(COMSIG_MERP_GIVE_HAND_BIT),PROC_REF(give_merp_item))
+	RegisterSignal(parent, list(COMSIG_MERP_DO_PLAP),PROC_REF(plap))
+	RegisterSignal(parent, list(COMSIG_MERP_GET_PLAPPED),PROC_REF(get_plapped))
+	RegisterSignal(parent, list(COMSIG_MERP_KILL_COMBO),PROC_REF(combo_died)) // ):
+	RegisterSignal(parent, list(COMSIG_MERP_PLAP_EXPIRED),PROC_REF(plap_died)) // ):
+	RegisterSignal(parent, list(COMSIG_MERP_GET_OTHER_COMBOS),PROC_REF(get_combos))
 	START_PROCESSING(SSmerp, src)
 	setup_merp()
 

@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/reagent_state = LIQUID
 	var/list/data
 	var/current_cycle = 0
-	var/volume = 0									//pretend this is moles
+	var/volume = 0									//pretend this is moles //no
 	var/color = "#000000" // rgb: 0, 0, 0
 	var/alpha = 0
 	var/can_synth = TRUE // can this reagent be synthesized? (for example: odysseus syringe gun)
@@ -65,11 +65,23 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/effective_blood_max = 0
 	/// How much this reagent slows bleeding to by while in you
 	var/bleed_mult = 1
+	// var/harm_affected_by_fractional_volume = TRUE
+	// var/heal_affected_by_fractional_volume = TRUE
+	// var/damage_is_per_second = FALSE
+	var/last_metabolize = 0
 	/// The fraction of this reagent compared against metabolization rate
 	/// Prevents microdosing from being too effective
 	var/effect_mult = 1
 	/// How much to divide non-full dose multipliers
 	var/fractional_mult_divisor = 1
+	/// Soda fiend stuff
+	var/sodie_heal_brute = 0
+	var/sodie_heal_burn = 0
+	var/sodie_heal_toxin = 0
+	var/sodie_heal_brain = 0
+	var/sodie_heal_oxy = 0
+	/// why's all this on the parentmost reagent? cus consumable should be on the parentmost reagent, thats why
+	var/sodie_tier = 0
 
 /datum/reagent/New()
 	. = ..()
@@ -112,7 +124,13 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/reaction_turf(turf/T, volume)
 	return
 
-/datum/reagent/proc/pre_metabolize(mob/living/carbon/C)
+/datum/reagent/proc/pre_mob_life(mob/living/carbon/C)
+	/// first, calculate the per-second effect multiplier, if set to be per-second
+	// calc_per_second(C) // later
+	/// then, calculate the fractional portion of the metabolization rate
+	calc_fractional_mult(C)
+
+/datum/reagent/proc/calc_fractional_mult(mob/living/carbon/C)
 	if(volume >= metabolization_rate)
 		effect_mult = 1
 		return
@@ -120,10 +138,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(effect_mult < 1)
 		effect_mult /= fractional_mult_divisor
 
+/// for doing stuff after metabolization, stuff that would be common to many reagents
+/datum/reagent/proc/post_mob_life(mob/living/carbon/M)
+	soda_power(M)
+
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M)
 	current_cycle++
 	if(holder)
 		holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
+	return TRUE
 
 /datum/reagent/proc/on_mob_life_synth(mob/living/carbon/M)
 	current_cycle++
@@ -239,6 +262,11 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 // Called when the reagent container is hit by an explosion
 /datum/reagent/proc/on_ex_act(severity)
 	return
+
+/datum/reagent/proc/soda_power(mob/living/carbon/L)
+	if(!HAS_TRAIT(L, TRAIT_NUKA_LOVER) || !iscarbon(L))
+		return
+	SEND_SIGNAL(L, COMSIG_CARBON_REAGENT_POST_LIFE, src)
 
 // Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
 /datum/reagent/proc/overdose_process(mob/living/M)

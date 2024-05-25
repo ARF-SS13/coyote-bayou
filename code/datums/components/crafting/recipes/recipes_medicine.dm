@@ -281,7 +281,7 @@
 
 /datum/crafting_recipe/psycho
 	name = "Psycho"
-	result = /obj/item/reagent_containers/hypospray/medipen/psycho
+	result = /obj/item/reagent_containers/pill/patch/psycho
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 3,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 3,
 				/datum/reagent/consumable/nuka_cola = 10)
@@ -292,7 +292,7 @@
 
 /datum/crafting_recipe/medx
 	name = "Med-X"
-	result = /obj/item/reagent_containers/hypospray/medipen/medx
+	result = /obj/item/reagent_containers/pill/patch/medx
 	reqs = list(/obj/item/reagent_containers/syringe = 1,
 				/obj/item/reagent_containers/food/snacks/grown/datura = 2,
 				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2)
@@ -303,7 +303,7 @@
 
 /datum/crafting_recipe/medx/chemistry
 	name = "Med-X (from chems)"
-	result = /obj/item/reagent_containers/hypospray/medipen/medx
+	result = /obj/item/reagent_containers/pill/patch/medx
 	reqs = list(/obj/item/reagent_containers/syringe = 1,
 				/datum/reagent/medicine/epinephrine = 5,
 				/datum/reagent/medicine/morphine = 5)
@@ -327,7 +327,7 @@
 
 /datum/crafting_recipe/steady
 	name = "Steady"
-	result = /obj/item/reagent_containers/hypospray/medipen/steady
+	result = /obj/item/reagent_containers/pill/patch/steady
 	reqs = list(/datum/reagent/consumable/sunset = 15,
 				/obj/item/reagent_containers/food/drinks/bottle = 1,
 				/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1,
@@ -353,6 +353,19 @@
 	/obj/item/wirecutters = 2,
 	/obj/item/stock_parts/cell = 6,
 	/obj/item/crafting/lunchbox = 1,
+	/obj/item/stack/cable_coil = 30
+	)
+	time = 75
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/primitive_defib
+	name = "Improvised Defibrillator"
+	result = /obj/item/defibrillator/primitive
+	reqs = list(
+	/obj/item/wirecutters = 2,
+	/obj/item/stock_parts/cell = 6,
+	/obj/item/storage/bag/plants/lunchbox = 1,
 	/obj/item/stack/cable_coil = 30
 	)
 	time = 75

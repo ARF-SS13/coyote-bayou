@@ -69,11 +69,11 @@
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
-	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, .proc/kill_autoplapper)
-	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER, .proc/confirm_autoplap)
-	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED, .proc/stop_all_autoplappers)
-	RegisterSignal(parent, COMSIG_SPLURT_I_CAME, .proc/stop_all_autoplappers)
+	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT,PROC_REF(open_menu))
+	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER,PROC_REF(kill_autoplapper))
+	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER,PROC_REF(confirm_autoplap))
+	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED,PROC_REF(stop_all_autoplappers))
+	RegisterSignal(parent, COMSIG_SPLURT_I_CAME,PROC_REF(stop_all_autoplappers))
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
@@ -457,7 +457,7 @@
 /datum/component/interaction_menu_granter/proc/queue_save()
 	if(savetimer)
 		deltimer(savetimer)
-	savetimer = addtimer(CALLBACK(src, .proc/save_prefs), 4 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
+	savetimer = addtimer(CALLBACK(src,PROC_REF(save_prefs)), 4 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
 
 /datum/component/interaction_menu_granter/proc/save_prefs()
 	var/mob/living/self = parent

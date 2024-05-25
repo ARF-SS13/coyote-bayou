@@ -22,6 +22,12 @@ GLOBAL_LIST_INIT(personality_quirks, list(
 	PERSONALITY_TRAIT(TRAIT_RPLIGHT,          span_greenannounce("🤡"), TRAIT_RPFOCUSED),
 	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         span_greenannounce("⛑"), TRAIT_RPFOCUSED),
 	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, span_greenannounce("💀"), TRAIT_RPFOCUSED),
+	
+	PERSONALITY_TRAIT(TRAIT_PVEFOC,           span_danger("✌️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_PVPFOC,           span_danger("🔥"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_OOCAPP,           span_danger("☎️"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER), //It needs all this, otherwise people wont see it
+	PERSONALITY_TRAIT(TRAIT_COMBATSWITCH,     span_danger("🌎"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_SHY,              span_danger("😔"), TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER),
 
 	PERSONALITY_TRAIT(TRAIT_ADV_ER,           span_binarysay("♞"), TRAIT_ADV_SEEKER),
 	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          span_binarysay("💑"), TRAIT_ADV_SEEKER),
@@ -55,6 +61,11 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	TRAIT_RPLIGHT = 				 span_greenannounce("They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach."),
 	TRAIT_RPSCRUBS = 				 span_greenannounce("They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs."),
 	TRAIT_RPDAYSOFOURLIVES =		 span_greenannounce("They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera."),
+	TRAIT_PVEFOC =							span_danger("This player prefers PVE scenarios. Don't force them into PVP"),
+	TRAIT_PVPFOC =							span_danger("This player prefers PVP scenarios. "),
+	TRAIT_OOCAPP =							span_danger("This players prefers to be approached over L/OOC."),
+	TRAIT_COMBATSWITCH =					span_danger("This player is happy to do PVP or PVE gameplay"),
+	TRAIT_SHY =								span_danger("They are a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?"),
 	TRAIT_ADV_ER = 					 	 span_binarysay("They look like the adventuring sort."),
 	TRAIT_ADV_LFG =					 	 span_binarysay("They look like they'd like to have someone adventure with them, maybe you should ask?"),
 	TRAIT_ADV_SOLO = 				 	 span_binarysay("They don't look like they'd want anyone to adventure with right now."),
@@ -249,7 +260,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			if(WOUND_BLEED_SEVERE_THRESHOLD to WOUND_BLEED_CRITICAL_THRESHOLD)
 				msg += "<B>[t_His] [BP.name] looks absolutely mangled!</B>\n"
 			if(WOUND_BLEED_CRITICAL_THRESHOLD to INFINITY)
-				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a deathclaw!</B>\n"
+				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a aethergiest!</B>\n"
 
 		var/has_bleed_wounds = is_bleeding()
 		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))
@@ -257,15 +268,14 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			var/bandaid_max_time = initial(BP.current_gauze.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
-					msg += "fresh "
-				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
-					msg += "slightly worn "
-				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
-					msg += "badly worn "
-				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
-					msg += "nearly ruined "
+			if(bandaid_time > bandaid_max_time * BANDAGE_GOODLIFE_DURATION)
+				msg += "fresh "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_MIDLIFE_DURATION)
+				msg += "slightly worn "
+			else if(bandaid_time > bandaid_max_time * BANDAGE_ENDLIFE_DURATION)
+				msg += "badly worn "
+			else
+				msg += "nearly ruined "
 			msg += "[BP.current_gauze.name]"
 			if(has_bleed_wounds)
 				msg += span_warning(" covering a bleeding wound!\n")
@@ -277,15 +287,14 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			var/bandaid_max_time = initial(BP.current_suture.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
-			switch(bandaid_time)
-				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
-					msg += "sturdy "
-				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
-					msg += "slightly frayed "
-				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
-					msg += "badly frayed "
-				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
-					msg += "nearly popped "
+			if(bandaid_time > bandaid_max_time * SUTURE_GOODLIFE_DURATION)
+				msg += "sturdy "
+			else if(bandaid_time > bandaid_max_time * SUTURE_MIDLIFE_DURATION)
+				msg += "slightly frayed "
+			else if(bandaid_time > bandaid_max_time * SUTURE_ENDLIFE_DURATION)
+				msg += "badly frayed "
+			else
+				msg += "nearly popped "
 			msg += "[BP.current_suture.name]"
 			if(has_bleed_wounds)
 				msg += span_warning(" covering a bleeding wound!\n")
@@ -507,8 +516,6 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		if(stat == UNCONSCIOUS)
 			msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
 		else
-			if(HAS_TRAIT(src, TRAIT_DUMB))
-				msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
 			if(InCritical())
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain) && !(living_flags & HIDE_OFFLINE_INDICATOR))

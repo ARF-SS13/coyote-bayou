@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(sacred_well_items)
 				/obj/item/gun/energy/laser/wattz2k/extended/blessed,
 				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/sacred,
 				/obj/item/gun/ballistic/automatic/smg/tommygun/whitelegs,
-				/obj/item/gun/ballistic/bow/composite,
+				/obj/item/gun/ballistic/bow/composite/masterwork,
 				/obj/item/gun/ballistic/bow/longbow,
 				/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor,
 				/obj/item/clothing/suit/armor/light/tribal/simple,
@@ -236,7 +236,7 @@ GLOBAL_LIST_EMPTY(sacred_well_items)
 	if(debug)
 		say("cooldown started!!")
 	set_light(1, -1, "#f9ff48")
-	addtimer(CALLBACK(src, .proc/end_cooldown), 1.5 MINUTES)
+	addtimer(CALLBACK(src,PROC_REF(end_cooldown)), 1.5 MINUTES)
 
 /obj/structure/sacredwell/proc/end_cooldown() //might need to fiddle w/ this......
 	if(debug)

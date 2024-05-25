@@ -69,9 +69,9 @@
 	new /obj/structure/table_frame/wood(src.loc)
 	qdel(src)
 
-/obj/structure/table_frame/ratvar_act()
+/*/obj/structure/table_frame/ratvar_act()
 	new /obj/structure/table_frame/brass(src.loc)
-	qdel(src)
+	qdel(src)*/
 
 /*
  * Wooden Frames
@@ -104,7 +104,7 @@
 	else
 		return ..()
 
-/obj/structure/table_frame/brass
+/*/obj/structure/table_frame/brass
 	name = "brass table frame"
 	desc = "Four pieces of brass arranged in a square. It's slightly warm to the touch."
 	icon_state = "brass_frame"
@@ -138,4 +138,4 @@
 		var/previouscolor = color
 		color = "#960000"
 		animate(src, color = previouscolor, time = 8)
-		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)*/

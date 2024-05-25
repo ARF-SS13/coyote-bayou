@@ -12,7 +12,7 @@
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "handy"
 	icon_living = "handy"
-	icon_dead = "robot_dead"
+	icon_dead = "securitron_dead" // look better
 	speed = 2
 	can_ghost_into = TRUE
 	gender = NEUTER
@@ -29,7 +29,6 @@
 		MOB_EMP_SCRAMBLE
 		)
 	healable = FALSE
-	stat_attack = CONSCIOUS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
 	melee_damage_lower = 12
 	melee_damage_upper = 24
@@ -38,7 +37,7 @@
 	faction = list("wastebot")
 	speak_emote = list("states")
 	gold_core_spawnable = HOSTILE_SPAWN
-	del_on_death = TRUE
+	// del_on_death = TRUE
 	deathmessage = "blows apart!"
 	taunt_chance = 30
 	blood_volume = 0
@@ -47,6 +46,9 @@
 	waddle_side_time = 1
 	send_mobs = null
 	call_backup = null
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 	emote_taunt_sound = list(
 		'sound/f13npc/handy/taunt1.ogg',
@@ -70,7 +72,8 @@
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/three
+		/obj/item/stack/crafting/electronicparts/three,
+		/obj/effect/gibspawner/ipc/bodypartless
 		)
 	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
 	desc_short = "A snooty robot with a circular saw."
@@ -108,7 +111,8 @@
 	desc = "A pre-war combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
-	icon_dead = "robot_dead"
+	icon_dead = "securitron_dead"
+	color_dead = "#467049"
 	can_ghost_into = FALSE
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100
@@ -127,7 +131,8 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
+		/obj/item/stock_parts/cell/ammo/mfc/recycled,
+		/obj/effect/gibspawner/ipc/bodypartless
 		)
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
@@ -163,6 +168,9 @@
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
 	desc_short = "A gutsy robot with a plasma gun."
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
@@ -239,7 +247,7 @@
 	desc = "A small pre-War droned used by the People's Liberation Army."
 	icon_state = "liberator_y"
 	can_ghost_into = FALSE
-	icon_living = "leberator_y"
+	icon_living = "liberator_y"
 	icon_dead = "liberator_y_d"
 
 /mob/living/simple_animal/hostile/handy/robobrain
@@ -263,11 +271,9 @@
 	retreat_distance = 2
 	minimum_distance = 2
 	check_friendly_fire = TRUE
-	loot = list(
-		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
 	emote_taunt_sound = null
@@ -310,10 +316,12 @@
 	health = 100
 	speed = 4
 	can_ghost_into = TRUE
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
-	stat_attack = CONSCIOUS
 	ranged = TRUE
 	move_to_delay = 9 //WAY slower than average,
 	// m2d 3 = standard, less is fast, more is slower.
@@ -347,7 +355,8 @@
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/five
+		/obj/item/stack/crafting/electronicparts/five,
+		/obj/effect/gibspawner/ipc/bodypartless
 		)
 	attack_phrase = list(
 		"Howdy pardner!",
@@ -371,12 +380,6 @@
 		"whirls up its servos",
 		"takes aim",
 		"holds its ground"
-		)
-	emote_taunt_sound = list(
-		'sound/f13npc/protectron/aggro1.ogg',
-		'sound/f13npc/protectron/aggro2.ogg',
-		'sound/f13npc/protectron/aggro3.ogg',
-		'sound/f13npc/protectron/aggro4.ogg'
 		)
 	idlesound = list(
 		'sound/f13npc/protectron/idle1.ogg',
@@ -482,7 +485,8 @@
 	icon_state = "assaultron"
 	icon_living = "assaultron"
 	gender = FEMALE //Pffffffffffffffffffffff
-	icon_dead = "gib7"
+	icon_dead = "assaultron_sase_dead"
+	color_dead = "#467049"
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100
 	health = 100
@@ -492,13 +496,12 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 45
 	environment_smash = 2 //can smash walls
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 	attack_verb_simple = "grinds their claws on"
 	faction = list("wastebot")
-	loot = list(
-		/obj/effect/decal/cleanable/robot_debris,
-		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled
-		)
+	
 
 	emote_taunt_sound = FALSE
 	emote_taunt = FALSE
@@ -537,7 +540,7 @@
 	desc = "A modified mr. gutsy, equipped with a more precise flamer, ditching it's plasma weaponry."
 	color = "#B85C00"
 	projectilesound = 'sound/magic/fireball.ogg'
-	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	projectiletype = /obj/item/projectile/incendiary/flamethrower
 	extra_projectiles = 1
 	can_ghost_into = FALSE
 

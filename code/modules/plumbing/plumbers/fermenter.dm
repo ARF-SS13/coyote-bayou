@@ -41,14 +41,14 @@
 	if(move_dir == eat_dir)
 		return TRUE
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
 /obj/machinery/plumbing/fermenter/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/ferment, AM)
+	INVOKE_ASYNC(src,PROC_REF(ferment), AM)
 
 /obj/machinery/plumbing/fermenter/proc/ferment(atom/AM)
 	if(stat & NOPOWER)

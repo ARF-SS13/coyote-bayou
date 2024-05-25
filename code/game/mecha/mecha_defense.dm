@@ -309,7 +309,7 @@
 /obj/mecha/narsie_act()
 	emp_act(100)
 
-/obj/mecha/ratvar_act()
+/*/obj/mecha/ratvar_act()
 	if((GLOB.ratvar_awakens || GLOB.clockwork_gateway_activated) && occupant)
 		if(is_servant_of_ratvar(occupant)) //reward the minion that got a mech by repairing it
 			full_repair(TRUE)
@@ -317,7 +317,7 @@
 			var/mob/living/L = occupant
 			go_out(TRUE)
 			if(L)
-				L.ratvar_act()
+				L.ratvar_act()*/
 
 /obj/mecha/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!no_effect)

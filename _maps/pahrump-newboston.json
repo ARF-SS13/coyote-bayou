@@ -1,0 +1,115 @@
+{
+	"map_name": "Western Texarkana",
+	"map_path": "map_files/coyote_bayou",
+	"map_file": [
+		"Dungeons.dmm",
+		"Texarkana_underground.dmm",
+		"Nash_and_Texarkana.dmm",
+		"Nash_and_Texarkana-Upper.dmm",
+		"Nash_and_Texarkana-Upper-2.dmm",
+		"Newboston.dmm",
+		"Newboston-Upper.dmm"
+	],
+	"station_ruin_budget":0,
+	"space_ruin_levels":0,
+	"space_empty_levels":0,
+	"shuttles": {
+		"cargo":"cargo_pahrump",
+		"emergency": "emergency_pahrump",
+		"ferry": "ferry_fancy"
+	},
+	"traits":[
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Up": 1,
+			"No Parallax": true,
+			"Linkage" : null,
+			"Name": "Dungeons"
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Dungeons": true,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Name": "Lower Yuma",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 0
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Name": "Yuma",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Yuma - Upper",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 2
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Down": -1,
+			"Linkage" : "Cross",
+			"No Parallax": true,
+			"Above": true,
+			"Name": "Yuma - Second Upper boogaloo 2",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 3
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force West": 1,
+			"Name": "New Boston",
+			"Force X": 1,
+			"Force Y": 2,
+			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "New Boston - Upper",
+			"Force X": 1,
+			"Force Y": 2,
+			"Force Z": 2
+		}
+	],
+	"minetype": "none"
+}

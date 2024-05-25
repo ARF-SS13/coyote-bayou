@@ -1,3 +1,4 @@
+
 #define ART_MASTER var/obj/item/master = parent; if(!isitem(master)) CRASH("Artifact component has no master!!!")
 
 #define ART_EQUIP "art_equip"
@@ -43,25 +44,26 @@
 /datum/component/artifact/Initialize(rarity = ART_RARITY_COMMON)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS, .proc/get_effects)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS, .proc/hi)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE, .proc/make_unique)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED, .proc/is_identified)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT, .proc/add_effect)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, .proc/read_parameters)
-	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE, .proc/finalize)
-	RegisterSignal(parent, COMSIG_ITEM_WELLABLE, .proc/tabulate_wellability)
-	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/update_everything)
-	// RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
-	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/on_microwave) //c:
-	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME, .proc/get_name)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/get_description)
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_GET_EFFECTS,     PROC_REF(get_effects))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_EXISTS,          PROC_REF(hi))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE,     PROC_REF(make_unique))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_IDENTIFIED,      PROC_REF(is_identified))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT,      PROC_REF(add_effect))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, PROC_REF(read_parameters))
+	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE,        PROC_REF(finalize))
+	RegisterSignal(parent, COMSIG_ITEM_WELLABLE,                 PROC_REF(tabulate_wellability))
+	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE,                PROC_REF(tabulate_value))
+	RegisterSignal(parent, COMSIG_ITEM_GET_RESEARCH_POINTS,      PROC_REF(tabulate_research))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,                 PROC_REF(update_everything))
+	// RegisterSignal(parent, COMSIG_ITEM_CLICKED,PROC_REF(on_clicked))
+	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT,PROC_REF(on_microwave)) //c:
+	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME,PROC_REF(get_name))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE,PROC_REF(get_description))
 	src.rarity = rarity
 
 /// Runs the artifact's main loop. starts when touched by a mob, stops when it doesnt have anything to do
 /datum/component/artifact/process()
-	INVOKE_ASYNC(src, .proc/mainloop)
+	INVOKE_ASYNC(src,PROC_REF(mainloop))
 
 /datum/component/artifact/proc/mainloop(force_flags)
 	ART_MASTER
@@ -72,11 +74,11 @@
 		effect.tick(master, current_target, current_holder, current_slot, update_flags)
 	if(COOLDOWN_FINISHED(src, colorwobble))
 		COOLDOWN_START(src, colorwobble, SSartifacts.art_effect_colorwobble_delay)
-		colorwobble(master, my_color)
+		// colorwobble(master, my_color)
 		if(isitem(current_holder))
 			colorwobble(current_holder, current_holder.color)
-		if(isliving(current_target))
-			colorwobble(current_target, current_target.color)
+		// if(isliving(current_target))
+		// 	colorwobble(current_target, current_target.color)
 	update_identification()
 
 /datum/component/artifact/proc/colorwobble(atom/target, orig_color)
@@ -180,8 +182,8 @@
 
 /datum/component/artifact/proc/register_mob_signals(mob/living/newbie)
 	return // todo: this
-	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE, .proc/on_mob_damage)
-	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD, .proc/on_bleed)
+	//RegisterSignal(newbie, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(on_mob_damage))
+	//RegisterSignal(newbie, COMSIG_CARBON_GET_BLEED_MOD,PROC_REF(on_bleed))
 
 /datum/component/artifact/proc/unregister_mob_signals(mob/living/current)
 	return // todo: this
@@ -237,11 +239,15 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(total_value, 25)
+	return round(COINS_TO_CREDITS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER
-	return (tabulate_value() * 0.8)
+	return (tabulate_value() * 0.4)
+
+/datum/component/artifact/proc/tabulate_research()
+	SIGNAL_HANDLER
+	return (tabulate_value() * 30)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER
@@ -393,7 +399,7 @@
 	ART_MASTER
 	update_color()
 	//update_scanner_name()
-	INVOKE_ASYNC(src, .proc/floatycool)
+	INVOKE_ASYNC(src,PROC_REF(floatycool))
 
 /datum/component/artifact/proc/floatycool()
 	fade_in()
@@ -407,9 +413,9 @@
 /datum/component/artifact/proc/floaty()
 	ART_MASTER
 	var/matrix/m1 = matrix()
-	m1.Translate(0, 2)
+	m1.Translate(0, 5)
 	var/matrix/m2 = matrix()
-	m2.Translate(0, -2)
+	m2.Translate(0, -5)
 	animate(master, transform = m1, time = 5 SECONDS, loop = -1, easing = SINE_EASING, flags = ANIMATION_PARALLEL)
 	animate(transform = m2, time = 3 SECONDS, easing = SINE_EASING)
 
@@ -543,7 +549,7 @@
 	my_parent = WEAKREF(parent)
 	apply_parameters(parameters)
 	generate_trait()
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, .proc/on_effect_deleted, TRUE)
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED,PROC_REF(on_effect_deleted), TRUE)
 
 /datum/artifact_effect/Del()
 	cleanup(TRUE)
@@ -760,7 +766,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = abs(base_value * get_magnitude() * 4)
+	value = abs(base_value * get_magnitude())
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
@@ -882,7 +888,7 @@
 
 /datum/artifact_effect/max_hp_modifier/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_HP_CHANGE)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					hp_change = RANDOM(SSartifacts.health_good_common_max, SSartifacts.health_good_common_min)
@@ -954,18 +960,19 @@
 /datum/artifact_effect/trait_giver
 	kind = ARTMOD_TRAIT_GIVER
 	base_value = 300
-	chance_weight = 0
-	special_spawn_only = TRUE
+	chance_weight = 2
 	var/custom_prefix = "Trait"
 	var/custom_suffix = "Giver"
 	var/custom_desc = "Gives you a trait when stored somewhere."
-	var/trait_to_give
+	var/trait_to_give // doesnt really work.......... yet
+	var/datum/quirk/quirk_to_give
+	var/even_more_special_trait_id
 
 /datum/artifact_effect/trait_giver/penance
-	kind = ARTMOD_TRAIT_GIVER_PENANCE
-	base_value = 300
-	custom_desc = span_alert("Causes intense suffering to the wearer.")
-	trait_to_give = TRAIT_PENANCE
+	// kind = ARTMOD_TRAIT_GIVER_PENANCE
+	// base_value = 300
+	// custom_desc = span_alert("Causes intense suffering to the wearer.")
+	// trait_to_give = TRAIT_PENANCE
 
 /datum/artifact_effect/trait_giver/apply_parameters(list/parameters = list())
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_TRAIT_TO_GIVE)))
@@ -981,27 +988,70 @@
 	. = ..()
 
 /datum/artifact_effect/trait_giver/on_equipped(obj/item/master, mob/living/target, obj/item/holder)
-	ADD_TRAIT(target, trait_to_give, src)
+	if(trait_to_give)
+		ADD_TRAIT(target, trait_to_give, src)
+	if(ispath(quirk_to_give))
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
+		if(!SSquirks.HasQuirk(target, quirk_to_give) && !HAS_TRAIT(target, even_more_special_trait_id))
+			ADD_TRAIT(target, even_more_special_trait_id, src)
+			SSquirks.AddQuirkToMob(target, quirk_to_give, words = tell_em)
 	return TRUE
 
 /datum/artifact_effect/trait_giver/on_unequipped(obj/item/master, mob/living/target, obj/item/holder)
-	REMOVE_TRAIT(target, trait_to_give, src)
+	if(trait_to_give)
+		REMOVE_TRAIT(target, trait_to_give, src)
+	if(ispath(quirk_to_give))
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
+		if(HAS_TRAIT(target, even_more_special_trait_id)) // only ONLY remove it if we gave it to them
+			SSquirks.RemoveQuirkFromMob(target, quirk_to_give, words = tell_em)
+			REMOVE_TRAIT(target, even_more_special_trait_id, src)
 	return TRUE
 
+/datum/artifact_effect/trait_giver/generate_trait()
+	. = ..()
+	even_more_special_trait_id = "[my_unique_trait_id]_but_even_more_special"
+
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
+	// var/quirk = prob(50) // either a quirk, or a trait!
+	// if(quirk)
+	// 	if(force_buff || is_buff)
+	switch(rarity)
+		if(ART_RARITY_COMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_common)
+		if(ART_RARITY_UNCOMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_uncommon)
+		if(ART_RARITY_RARE)
+			quirk_to_give = pick(SSartifacts.quirks_good_rare)
+		// else
+		// 	switch(rarity)
+		// 			trait_to_give = pick(SSartifacts.traits_good_common)
+		// 		if(ART_RARITY_UNCOMMON)
+		// 			trait_to_give = pick(SSartifacts.traits_good_uncommon)
+		// 		if(ART_RARITY_RARE)
+		// 			trait_to_give = pick(SSartifacts.traits_good_rare)
 	. = ..()
 
 /datum/artifact_effect/trait_giver/get_affix_index(isprefix)
 	return 1
 
 /datum/artifact_effect/trait_giver/update_prefix()
-	return custom_prefix
+	return pick(SSartifacts.prefixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_suffix()
-	return custom_suffix
+	return pick(SSartifacts.suffixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_desc()
-	descriptions = list(custom_desc)
+	//if(trait_to_give) // todo: this
+	if(ispath(quirk_to_give))
+		var/datum/quirk/myquirk = SSquirks.GetQuirk(quirk_to_give)
+		var/mesage = "Confers [myquirk.name] while worn on/in [translate_slots()]."
+		if(is_buff)
+			mesage = span_green(mesage)
+		else
+			mesage = span_alert(mesage)
+		descriptions = list(mesage)
+	else
+		descriptions = list(span_notice("Confers a vague feeling of importance to the wearer."))
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -1104,7 +1154,7 @@
 /datum/artifact_effect/speed
 	kind = ARTMOD_SPEED
 	base_value = 400
-	chance_weight = 1
+	chance_weight = 0 // doesnt actually work................... yet
 	var/multiplicative_slowdown = 0 // more is slower
 	var/my_unique_id = "bingus"
 	var/equip_message = "You feel faster."
@@ -1122,7 +1172,7 @@
 
 /datum/artifact_effect/speed/randomize(rarity, force_buff)
 	if(isnull(LAZYACCESS(overridden, ARTVAR_SPEED_ADJUSTMENT)))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					multiplicative_slowdown = RANDOM(SSartifacts.speed_good_common_max, SSartifacts.speed_good_common_min)
@@ -1208,7 +1258,7 @@
 /// All values are in damage per second     ///
 /datum/artifact_effect/passive_damage
 	kind = ARTMOD_PASSIVE_DOT
-	chance_weight = 5
+	chance_weight = 0
 	/// Stop doing damage if their health is below this
 	var/min_health = 5
 	/// Damage to do to brute
@@ -1722,57 +1772,56 @@
 /datum/artifact_effect/passive_damage/healer/on_tick(obj/item/master, mob/living/target, obj/item/holder)
 	if(!isliving(target))
 		return
-	if(target.health < min_health)
-		return
+	last_applied = world.time
 	//if(target.health > (target.getMaxHealth() - max_health))
 	//	return
 	var/mult = lag_comp_factor()
-	var/dr = 1
-	var/dt = 0
-	if(!implanted)
-		dr = check_armor(target, armor_flag)
-		// dt = check_dt(target)
-	if(implanted || !in_desired_slot())
+	var/armor_dr = max(check_armor(target, armor_flag) - SSartifacts.heal_armor_dr_threshold, 0)
+	var/dr = (100-min(armor_dr, ARMOR_CAP_DR))/100 // fun fact, this used to accidentally multiply the healing by your armor DR value, so APA would mean it healed you 61x faster, lol
+	if(implanted || !in_desired_slot() || target.health < min_health)
 		mult *= undesirable_mult
 	if(d_brute)
-		target.apply_damage(
-			-abs(d_brute) * mult,
-			BRUTE,
-			blocked = dr,
-			spread_damage = TRUE
+		if(d_brute > 0)
+			d_brute = -d_brute
+		target.adjustBruteLoss(
+			(d_brute * mult * dr),
+			TRUE,
+			FALSE,
 		)
 	if(d_burn)
-		target.apply_damage(
-			-abs(d_burn) * mult,
-			BURN,
-			blocked = dr,
-			spread_damage = TRUE
+		if(d_burn > 0)
+			d_burn = -d_burn
+		target.adjustFireLoss(
+			(d_burn * mult * dr),
+			TRUE,
+			FALSE,
 		)
 	if(d_toxin)
-		target.apply_damage(
-			-abs(d_toxin) * mult,
-			TOX,
-			blocked = dr,
-			spread_damage = TRUE
+		if(d_toxin > 0)
+			d_toxin = -d_toxin
+		target.adjustToxLoss(
+			(d_toxin * mult * dr),
+			TRUE,
+			FALSE,
+			TRUE
 		)
 	if(d_oxy)
-		target.apply_damage(
-			-abs(d_oxy) * mult,
-			OXY,
-			blocked = dr,
-			spread_damage = TRUE
+		if(d_oxy > 0)
+			d_oxy = -d_oxy
+		target.adjustOxyLoss(
+			(d_oxy * mult * dr),
+			TRUE,
 		)
 	if(d_clone)
-		target.apply_damage(
-			-abs(d_clone) * mult,
-			CLONE,
-			blocked = dr,
-			spread_damage = TRUE
+		if(d_clone > 0)
+			d_clone = -d_clone
+		target.adjustCloneLoss(
+			(d_clone * mult * dr),
+			TRUE,
 		)
 	if(d_brain)
-		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (((-abs(d_brain) * mult) - dt) * dr))
+		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (-abs(d_brain) * mult * dr))
 
-	last_applied = world.time
 	//send_message(target, LAZYACCESS(dmg_out, 2))
 	return TRUE
 
@@ -1906,6 +1955,7 @@
 	if(abs(d_brain) != 0)
 		out += span_green("Heals [abs(d_brain)] brain damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	out += span_notice("Heals at [undesirable_mult]x the rate while stored anywhere else.")
+	out += span_notice("Healing is affected by [armor_flag] armor greater than [SSartifacts.heal_armor_dr_threshold] DR.")
 	descriptions = out
 
 
@@ -1928,12 +1978,12 @@
 		stamina_adjustment = LAZYACCESS(parameters, ARTVAR_STAMINA_ADJUSTMENT)
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)))
 		stamcrit_cooldown = LAZYACCESS(parameters, ARTVAR_STAMCRIT_COOLDOWN)
-	is_buff = (stamina_adjustment > 0)
+	is_buff = (stamina_adjustment <= 0)
 	. = ..()
 
 /datum/artifact_effect/stamina/randomize(rarity, force_buff)
 	if(stamina_adjustment == initial(stamina_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					stamina_adjustment = RANDOM(SSartifacts.stamina_good_common_max, SSartifacts.stamina_good_common_min)
@@ -1964,7 +2014,7 @@
 	else
 		if(!in_desired_slot())
 			return
-	target.adjustStaminaLossBuffered(stamina_adjustment)
+	target.adjustStaminaLoss(-(abs(stamina_adjustment)))
 	return TRUE
 
 /datum/artifact_effect/stamina/get_magnitude()
@@ -2045,7 +2095,7 @@
 		if(radz < target_radiation)
 			return
 		var/rad_protection = implanted ? 0 : target.getarmor(BODY_ZONE_CHEST, "rad")
-		target.radiation = max(target.radiation - (radiation_adjustment * mult * (rad_protection*0.01)), 0)
+		target.radiation = max(target.radiation - (radiation_adjustment * mult * ((1-rad_protection)/100)), 0)
 		return TRUE
 	else
 		if(radz > target_radiation)
@@ -2055,7 +2105,7 @@
 
 /datum/artifact_effect/radiation/randomize(rarity, force_buff)
 	if(target_radiation == initial(target_radiation))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_radiation = RANDOM(SSartifacts.radiation_target_good_common_min, SSartifacts.radiation_target_good_common_max)
@@ -2156,7 +2206,7 @@
 
 /datum/artifact_effect/blood/randomize(rarity, force_buff)
 	if(target_blood == initial(target_blood))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					target_blood = RANDOM(SSartifacts.blood_target_good_common_min, SSartifacts.blood_target_good_common_max)
@@ -2186,9 +2236,9 @@
 /datum/artifact_effect/blood/on_tick(obj/item/master, mob/living/target, obj/item/holder)
 	if(!isliving(target))
 		return
-	var/mult = lag_comp_factor()
 	if(is_buff && !in_desired_slot())
 		return
+	var/mult = lag_comp_factor()
 	var/bloodvol = target.get_blood(TRUE)
 	if(ISABOUTEQUAL(bloodvol, target_blood, blood_adjustment * 2))
 		return TRUE // already where we want it
@@ -2260,7 +2310,7 @@
 
 /datum/artifact_effect/feeder/randomize(rarity, force_buff)
 	if(nutrition_adjustment == initial(nutrition_adjustment))
-		if(force_buff)
+		if(force_buff || is_buff)
 			switch(rarity)
 				if(ART_RARITY_COMMON)
 					nutrition_adjustment = RANDOM(SSartifacts.nutrition_rate_good_common_min, SSartifacts.nutrition_rate_good_common_max)
@@ -2347,8 +2397,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_POCKET | INV_SLOTBIT_BACKPACK | INV_SLOTBIT_SUITSTORE
 	foldable = FALSE
-	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/lead = 20)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
 	component_type = /datum/component/storage/concrete/box/artifact
 
 /obj/item/storage/box/artifactcontainer/ComponentInitialize()
@@ -2432,7 +2482,7 @@
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
 		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
-		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.5
 		)
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 

@@ -15,34 +15,34 @@
 
 #define RECIPE_BALLANDCHAIN "Unchained Ball"
 
-#define RECIPE_MACHETE "Machete Blade"
-#define RECIPE_SABRE "Bumper Sabre Blade"
-#define RECIPE_SWORD "Sword Blade"
-#define RECIPE_WAKI "Weedwhacker Blade"
-#define RECIPE_KATANA "Scraptana Blade"
-#define RECIPE_LONGSWORD "Long Blade"
-#define RECIPE_MACHREFORG "Lawnmower Machete Blade"
+#define RECIPE_MACHETE 		"Machete Blade"
+#define RECIPE_SABRE 		"Sabre Blade"
+#define RECIPE_SWORD 		"Sword Blade"
+#define RECIPE_WAKI 		"Wakizashi Blade"
+#define RECIPE_KATANA 		"Katana Blade"
+#define RECIPE_LONGSWORD 	"Longsword Blade"
+#define RECIPE_MACHREFORG 	"Lawnmower Machete Blade"
 
-#define RECIPE_MACE "Club Head"
-#define RECIPE_AXE "Woodsplitter Head"
-#define RECIPE_SCRAP "Homewrecker Blade"
-#define RECIPE_CRUSHER "Bonebreaker Head"
+#define RECIPE_MACE 		"Mace Head"
+#define RECIPE_AXE 			"Axe Head"
+#define RECIPE_SCRAP 		"Greatsword Blade"
+#define RECIPE_CRUSHER 		"Greathammer Head"
 
-#define RECIPE_DAGGER "Shiv Blade"
-#define RECIPE_SPEAR "Spear Head"
-#define RECIPE_JAVELIN "Javelin Head"
-#define RECIPE_THROWING "Throwing Knife Blade"
-#define RECIPE_TRIDENT "Trident Head"
-#define RECIPE_SAW "Saw Blade"
-#define RECIPE_BOWIE "Sharpblade Blade"
+#define RECIPE_DAGGER 		"Dagger Blade"
+#define RECIPE_SPEAR 		"Spear Head"
+#define RECIPE_JAVELIN 		"Javelin Head"
+#define RECIPE_THROWING 	"Throwing Knife Blade"
+#define RECIPE_TRIDENT 		"Trident Head"
+#define RECIPE_SAW 			"Saw Blade"
+#define RECIPE_BOWIE 		"Bowie Blade"
 
-#define RECIPE_LANCE "Lance Head"
-#define RECIPE_GLADIUS "Razorbar Blade"
-#define RECIPE_SPATHA "Papercutter Blade"
-#define RECIPE_WARHONED "Sledge Axe Head"
+#define RECIPE_LANCE 		"Lance Head"
+#define RECIPE_GLADIUS 		"Gladius Blade"
+#define RECIPE_SPATHA 		"Spatha Blade"
+#define RECIPE_WARHONED 	"Greataxe Blade"
 
-#define RECIPE_KNUCKLES "Duster Lump"
-#define RECIPE_CLAWS "Sharp Prongs"
+#define RECIPE_KNUCKLES 	"Knuckledusters"
+#define RECIPE_CLAWS 		"Claws"
 
 GLOBAL_LIST_INIT(anvil_recipes, list(
 	RECIPE_HAMMER = /obj/item/smithing/hammerhead,
@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 /obj/structure/anvil/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_CLICK_ALT, .proc/ResetAnvil) // emergency way to reset the anvil incase something goes wrong.
+	RegisterSignal(src, COMSIG_CLICK_ALT,PROC_REF(ResetAnvil)) // emergency way to reset the anvil incase something goes wrong.
 	currentquality = anvilquality
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
@@ -188,12 +188,12 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/do_shaping(mob/user, qualitychange)
 	if(!iscarbon(user))
 		return
-	
+
 	SetBusy(TRUE, user)
 
 	currentquality += qualitychange
 	workpiece_state = WORKPIECE_INPROGRESS // set it so we're working on it.
-	
+
 	// Present choice selection.
 	var/list/shapingsteps = list(
 		"Pickaxe Head",
@@ -206,32 +206,32 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		"Ring",
 		"Unchained Ball",
 		"Machete Blade",
-		"Bumper Sabre Blade",
+		"Sabre Blade",
 		"Sword Blade",
-		"Weedwhacker Blade",
-		"Scraptana Blade",
-		"Long Blade",
+		"Wakizashi Blade",
+		"Katana Blade",
+		"Longsword Blade",
 		"Lawnmower Machete Blade",
-		"Club Head",
-		"Woodsplitter Head",
-		"Homewrecker Blade",
-		"Bonebreaker Head",
-		"Shiv Blade",
+		"Mace Head",
+		"Axe Head",
+		"Greatsword Blade",
+		"Greathammer Head",
+		"Dagger Blade",
 		"Spear Head",
 		"Javelin Head",
 		"Throwing Knife Blade",
 		"Trident Head",
 		"Saw Blade",
-		"Sharpblade Blade",
+		"Bowie Blade",
 		"Lance Head",
-		"Razorbar Blade",
-		"Papercutter Blade",
-		"Sledge Axe Head",
-		"Sharp Prongs",
-		"Duster Lump"
+		"Gladius Blade",
+		"Spatha Blade",
+		"Greataxe Blade",
+		"Claws",
+		"Knuckledusters"
 		) //weak/strong/heavy hit affect strength. All the other steps shape.
 	var/stepdone = input(user, "How would you like to work the metal?") in shapingsteps
-	
+
 
 	// if user is not in range, remove business.
 	if(!locate(src) in range(1, user))
@@ -239,14 +239,14 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 
 	// Time it takes for us to uh...forge..?
-	var/steptime = 1 SECONDS
+	var/steptime = 0.5 SECONDS
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
 		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
 
 	if(!do_after(user, steptime, target = src))
 		return SetBusy(FALSE, user)
-	
+
 	// I hate this.
 	// I'd rather die.
 	switch(stepdone)
@@ -290,48 +290,48 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Machete Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Bumper Sabre Blade")
-			stepsdone += "Bumper Sabre Blade"
+		if("Sabre Blade")
+			stepsdone += "Sabre Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Sword Blade")
 			stepsdone += "Sword Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Weedwhacker Blade")
-			stepsdone += "Weedwhacker Blade"
+		if("Wakizashi Blade")
+			stepsdone += "Wakizashi Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Scraptana Blade")
-			stepsdone += "Scraptana Blade"
+		if("Katana Blade")
+			stepsdone += "Katana Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Long Blade")
-			stepsdone += "Long Blade"
+		if("Longsword Blade")
+			stepsdone += "Longsword Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Lawnmower Machete Blade")
 			stepsdone += "Lawnmower Machete Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Club Head")
-			stepsdone += "Club Head"
+		if("Mace Head")
+			stepsdone += "Mace Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Woodsplitter Head")
-			stepsdone += "Woodsplitter Head"
+		if("Axe Head")
+			stepsdone += "Axe Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Homewrecker Blade")
-			stepsdone += "Homewrecker Blade"
+		if("Greatsword Blade")
+			stepsdone += "Greatsword Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Bonebreaker Head")
-			stepsdone += "Bonebreaker Head"
+		if("Greathammer Head")
+			stepsdone += "Greathammer Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Shiv Blade")
-			stepsdone += "Shiv Blade"
+		if("Dagger Blade")
+			stepsdone += "Dagger Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Spear Head")
@@ -354,55 +354,55 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "Saw Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sharpblade Blade")
-			stepsdone += "Sharpblade Blade"
+		if("Bowie Blade")
+			stepsdone += "Bowie Blade"
 			currentsteps += 1
 			currentquality -= 1
 		if("Lance Head")
 			stepsdone += "Lance Head"
 			currentsteps += 1
 			currentquality -= 1
-		if("Razorbar Blade")
-			stepsdone += "Razorbar Blade"
+		if("Gladius Blade")
+			stepsdone += "Gladius Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Papercutter Blade")
-			stepsdone += "Papercutter Blade"
+		if("Spatha Blade")
+			stepsdone += "Spatha Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sledge Axe Head")
-			stepsdone += "Sledge Axe Head"
+		if("Greataxe Blade")
+			stepsdone += "Greataxe Blade"
 			currentsteps += 1
 			currentquality -= 1
-		if("Duster Lump")
-			stepsdone += "Duster Lump"
+		if("Knuckledusters")
+			stepsdone += "Knuckledusters"
 			currentsteps += 1
 			currentquality -= 1
-		if("Sharp Prongs")
-			stepsdone += "Sharp Prongs"
+		if("Claws")
+			stepsdone += "Claws"
 			currentsteps += 1
 			currentquality -= 1
-	
+
 	// Display message
 	user.show_message(span_notice("You hammer the metal into a [stepdone]."))
-	
+
 	// more sounds... uhhh...
 	playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',30)
 
 	// sparkles~
-	do_smithing_sparks(1, TRUE, src) 
-	
+	do_smithing_sparks(1, TRUE, src)
+
 	// the stepsdone is a string of characters which are actions made.
 	// Once it is more or equal to 1, call try finish.
 	if(length(stepsdone) >= 1)
 		tryfinish(user)
-	
+
 	SetBusy(FALSE, user) // Set it to false, cause we're done now some how.
 
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
-	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
 		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
 		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
@@ -414,7 +414,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(user.mind.skill_holder) // Divide the failing chance based on the skillmodifier
 		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing) / 10 + 1
 		finalfailchance = max(0, finalfailchance / skillmod) //lv 2 gives 20% less to fail, 3 30%, etc
-	
+
 
 	///////
 	// The two main conditionals
@@ -422,9 +422,9 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 	// I hate this. If you hit more than 10 times, or the final piece failed and you have no artifact. Why it gotta look so awkward.
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
-	
+
 		to_chat(user, span_warning("You overwork the metal, causing it to turn into useless slag!"))
-		
+
 		new /obj/item/stack/ore/slag(get_turf(src)) // Spawn some slag
 
 		ResetAnvil() // Resets it to be default.
@@ -432,8 +432,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		if(user.mind.skill_holder) // give them some experience
 			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 50, 500000, silent = FALSE) //This shouldn't give you a full level until 3+
 
-		return SetBusy(FALSE, user) 
-	
+		return SetBusy(FALSE, user)
+
 	// IF YOU DIDN'T FUCK UP THE RECIPE
 	for(var/i in GLOB.anvil_recipes) // for each recipes.
 		if(i == stepsdone) // if... "cum" == "bbu" idfk what the fuck am I looking at why isnt this a GLOB recipe list...
@@ -572,12 +572,12 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	icon_state = "ratvaranvil"
 	currentquality = 1
 	itemqualitymax = 8
-/obj/structure/anvil/obtainable/ratvar/attackby(obj/item/I, mob/user)
+/*/obj/structure/anvil/obtainable/ratvar/attackby(obj/item/I, mob/user)
 	if(is_servant_of_ratvar(user))
 		return ..()
 	else
 		to_chat(user, span_neovgre("KNPXWN, QNJCQNW!")) //rot13 then rot22 if anyone wants to decode
-
+*/
 /obj/structure/anvil/obtainable/narsie
 	name = "runic anvil"
 	desc = "An anvil made of a strange, runic metal."

@@ -1,6 +1,5 @@
-GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 /datum/component/spawner
-	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
 	/// Format: list(special_mob_datum)
 	var/list/special_mobs = list()
@@ -11,7 +10,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	/// How many mobs can be attached to this spawner at once
 	var/max_mobs = 5
 	/// verb for when the thing comes out of the thing
-	var/spawn_text = "emerges from"
+	var/spawn_text = ""
 	/// sound to play when the thing spawns a thing
 	var/spawn_sound
 	/// The minimum distance to a client before we can start spawning mobs.
@@ -34,6 +33,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	var/coverable_by_dense_things = TRUE
 	/// Dont start spawning just yet
 	var/delay_start = FALSE
+	/// If we should make our mobs just ignore faction checks (from other mobs, they still attack players)
+	var/ignore_faction = FALSE
 	/// im special
 	var/am_special = FALSE
 	/// Is something covering us?
@@ -41,20 +42,22 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	/// use the old spawner player-is-close check
 	var/old_spawner_check = FALSE
 	/// All our turfs that we're listening to
-	var/list/my_turfs = list() // its a list of coords
-	/// All our turfs that somehow got destroyed, and we need to reconnect with
-	var/list/disconnected = list() // its a list of coords
+	// var/list/my_turfs = list() // its a list of coords
+	// /// All our turfs that somehow got destroyed, and we need to reconnect with
+	// var/list/disconnected = list() // its a list of coords
 	var/active = FALSE
 	/// When tripped, when do we stop trying to spawn things?
-	var/spawn_until = 0
+	COOLDOWN_DECLARE(spawn_until)
 	COOLDOWN_DECLARE(spawner_cooldown)
 	var/covered = FALSE
+	var/datum/nest_box/my_ticket
+	var/generation = 1
 
 /datum/component/spawner/Initialize(
 		_mob_types,
 		_spawn_time,
 		_faction,
-		_spawn_text,
+		// _spawn_text,
 		_max_mobs,
 		_range,
 		_overpopulation_range,
@@ -66,7 +69,9 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		_randomizer_tag,
 		_randomizer_kind,
 		_randomizer_difficulty,
-		_delay_start
+		_delay_start,
+		_ignore_faction,
+		_generation,
 	)
 
 	if(!isatom(parent))
@@ -77,8 +82,14 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		mob_types = _mob_types
 	if(_faction)
 		faction = _faction
-	if(_spawn_text)
-		spawn_text = _spawn_text
+	if(!LAZYLEN(faction) || ("UPDATEME" in _faction))
+		for(var/mobpath in mob_types)
+			var/mob/living/mobinit = mobpath
+			var/list/fact = initial(mobinit.faction)
+			if(LAZYLEN(fact))
+				faction |= fact
+	//if(_spawn_text)
+		//spawn_text = _spawn_text
 	if(_max_mobs)
 		max_mobs = _max_mobs
 	if(_range)
@@ -101,82 +112,92 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		infinite = _infinite
 	if(_delay_start)
 		delay_start = _delay_start
+	if(_ignore_faction)
+		ignore_faction = _ignore_faction
+	if(_generation)
+		generation = _generation
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
-	var/coords = atom2coords(parent)
-	GLOB.nest_spawn_points -= coords // im here! honest
-
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
-	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
-	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/coverme)
-	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/uncoverme)
-	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
-	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING,   PROC_REF(nest_destroyed))
+	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, PROC_REF(on_attack_generic))
+	RegisterSignal(parent, COMSIG_SPAWNER_COVERED,    PROC_REF(coverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,  PROC_REF(uncoverme))
+	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, PROC_REF(unbirth_mob))
+	RegisterSignal(parent, COMSIG_ATOM_QUEST_SCANNED, PROC_REF(dump_questables))
+	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS,PROC_REF(has_spawner))
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
 		if(nest.spawned_by_ckey)
 			am_special = TRUE
-	if(istype(parent, /obj/structure/nest/special))
+	if(istype(parent, /obj/structure/nest/special) || ismob(parent))
 		am_special = TRUE
-		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
-	register_turfs()
+		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW,PROC_REF(spawn_mob_special))
+	if(!ismob(parent) && !am_special && !delay_start && LAZYLEN(mob_types))
+		my_ticket = new /datum/nest_box(src)
+	// if(SSspawners.use_turf_registration)
+	// 	register_turfs()
+	// else
+	old_spawner_check = TRUE
+	if(!delay_start && !am_special)
+		start_spawning()
 
-/datum/component/spawner/proc/register_turfs()
-	var/atom/dad = parent
-	if(!dad.loc)
-		return
-	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
-	for(var/turf/trip in range(range, dad.loc))
-		connect_to_turf(trip, debug_color)
+// /datum/component/spawner/proc/register_turfs()
+// 	var/atom/dad = parent
+// 	if(!dad.loc)
+// 		return
+// 	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
+// 	for(var/turf/trip in range(range, dad.loc))
+// 		connect_to_turf(trip, debug_color)
 
-/datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
-	my_turfs |= atom2coords(trip)
-	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
-	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
-	if(SSspawners.debug_spawner_turfs && debug_color)
-		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
+// /datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
+// 	my_turfs |= atom2coords(trip)
+//	RegisterSignal(trip, COMSIG_ATOM_ENTERED,PROC_REF(turf_trip))
+//	RegisterSignal(trip, COMSIG_TURF_CHANGE,PROC_REF(turf_changed))
+// 	if(SSspawners.debug_spawner_turfs && debug_color)
+// 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
 
-/datum/component/spawner/proc/turf_changed(turf/changed)
-	if(!isturf(changed))
-		return
-	disconnected |= atom2coords(changed)
-	start_spawning()
+// /datum/component/spawner/proc/turf_changed(turf/changed)
+// 	if(!isturf(changed))
+// 		return
+// 	disconnected |= atom2coords(changed)
+// 	start_spawning()
 
-/datum/component/spawner/proc/unregister_turfs()
-	for(var/coords in my_turfs)
-		var/turf/trip = coords2turf(coords)
-		if(!trip)
-			continue
-		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
-		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
-	my_turfs = list()
-	disconnected = list()
+// /datum/component/spawner/proc/unregister_turfs()
+// 	for(var/coords in my_turfs)
+// 		var/turf/trip = coords2turf(coords)
+// 		if(!trip)
+// 			continue
+// 		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
+// 		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
+// 	my_turfs = list()
+// 	disconnected = list()
 
-/datum/component/spawner/proc/reconnect()
-	if(!LAZYLEN(disconnected))
-		return
-	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
-	for(var/coord in disconnected)
-		var/turf/trip = coords2turf(coord)
-		if(!trip)
-			continue
-		connect_to_turf(trip, debug_color)
+// /datum/component/spawner/proc/reconnect()
+// 	if(!LAZYLEN(disconnected))
+// 		return
+// 	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
+// 	for(var/coord in disconnected)
+// 		var/turf/trip = coords2turf(coord)
+// 		if(!trip)
+// 			continue
+// 		connect_to_turf(trip, debug_color)
 
-/datum/component/spawner/proc/still_there()
-	return TRUE // hi
+// /datum/component/spawner/proc/still_there()
+// 	return TRUE // hi
 
 /datum/component/spawner/process()
-	if(old_spawner_check)
-		try_to_spawn()
-		return
-	if(COOLDOWN_FINISHED(src, spawn_until))
-		stop_spawning(null, FALSE)
-		return
-	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
-		try_to_spawn()
-	else
-		reconnect()
+	old_spawn()
+	// if(old_spawner_check)
+	// 	old_spawn()
+	// 	return
+	// if(COOLDOWN_FINISHED(src, spawn_until))
+	// 	stop_spawning(null, FALSE)
+	// 	return
+	// if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
+	// 	try_to_spawn()
+	// else
+	// 	reconnect()
 
 /// something entered one of our turfs, check if we should spawn something
 /datum/component/spawner/proc/turf_trip(datum/source, atom/movable/arrived)
@@ -203,10 +224,15 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
+	if(covered)
+		return
+	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+	active = TRUE
 	START_PROCESSING(SSspawners, src)
 
 /datum/component/spawner/proc/stop_spawning(datum/source, clear_spawned_mobs = TRUE)
 	STOP_PROCESSING(SSspawners, src)
+	COOLDOWN_RESET(src, spawn_until)
 	if(!clear_spawned_mobs)
 		return
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
@@ -219,8 +245,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
-	if(!am_special)
-		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
+	if(my_ticket && !am_special && !ismob(parent)) // we'll be back, eventually
+		my_ticket.globalize(src)
 	qdel(src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
@@ -245,6 +271,9 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return FALSE
 	if(has_mobs_left())
 		return FALSE
+	if(QDELETED(parent))
+		qdel(src)
+		return FALSE // nothing to delete
 	if(ismob(parent))
 		qdel(src)
 		return FALSE // no more self-destructing ant queens
@@ -252,7 +281,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// Do we have any mobs left?
 /datum/component/spawner/proc/has_mobs_left()
-	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
+	return LAZYLEN(mob_types) || LAZYLEN(special_mobs)
 
 /datum/component/spawner/proc/check_mob(mob/living/check)
 	if(!isliving(check))
@@ -271,8 +300,6 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return FALSE
 	if(something_covering_us())
 		return FALSE
-	if(old_spawner_check && !something_in_range())
-		return FALSE
 	spawn_mob()
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 	if(should_destroy_spawner())
@@ -283,10 +310,36 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(!range)
 		return TRUE
 	var/atom/P = parent
-	for(var/mob/living in GLOB.player_list) // client-containing mobs, NOT clients
-		if(get_dist(P, living) <= range)
+	for(var/mob/living/butt in LAZYACCESS(SSmobs.clients_by_zlevel, P?.z)) // client-containing mobs, NOT clients
+		if(get_dist(P, butt) <= range)
 			return TRUE
-	
+
+/// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
+/datum/component/spawner/proc/old_spawn()
+	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
+		return
+	// if(COOLDOWN_FINISHED(src, spawn_until))
+	// 	deactivate()
+	if(should_destroy_spawner())
+		qdel(parent)
+		return
+	// if(!active)
+	// 	if(!something_in_range())
+	// 		return
+	// 	activate()
+	if(something_in_range())
+		try_to_spawn()
+
+/// turns itself on for another 20ish seconds
+/datum/component/spawner/proc/activate()
+	active = TRUE
+	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+
+/// turns itself off
+/datum/component/spawner/proc/deactivate()
+	active = FALSE
+	COOLDOWN_RESET(src, spawn_until)
+
 /// is something covering us?
 /datum/component/spawner/proc/something_covering_us()
 	if(!coverable_by_dense_things)
@@ -322,7 +375,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		qdel(parent)
 
 /// spawn the mob(s)
-/datum/component/spawner/proc/spawn_mob()
+/datum/component/spawner/proc/spawn_mob(list/overrides)
 	var/atom/P = parent
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
@@ -335,25 +388,66 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 			qdel(spawner_special)
 			return
 	var/chosen_mob
-	var/mob/living/simple_animal/L
-	for(var/i = 1 to swarm_size)
-		if(infinite) // dont decrement the spawnlist
-			chosen_mob = pickweight(mob_types)
-		else
-			chosen_mob = pickweight_n_reduce(mob_types)
+	var/override_mob = LAZYACCESS(overrides, "which_mob")
+	var/override_swarm = LAZYACCESS(overrides, "how_many")
+	var/mob/living/simple_animal/L = override_mob
+	var/how_many = override_swarm || swarm_size
+	for(var/i in 1 to how_many)
+		if(ispath(L) && mob_types[L] >= 1)
+			chosen_mob = L
+			mob_types[L]--
+		if(!ispath(L))
+			if(infinite) // dont decrement the spawnlist
+				chosen_mob = pickweight(mob_types)
+			else
+				chosen_mob = pickweight_n_reduce(mob_types)
 		if(!chosen_mob)
-			qdel(P) // clearly, out of mobs. shouldnt get here
+			if(istype(parent, /obj/structure/nest))
+				qdel(P) // clearly, out of mobs. shouldnt get here
 			return
-		L = new chosen_mob(get_turf(P))
+		L = new chosen_mob(get_turf(P), "TOPHEAVY-KOBOLD")
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs |= WEAKREF(L)
-		L.nest = WEAKREF(P) // Neither really own each other, its all purely for record keeping
+		L.link_to_nest(P)
 		if(length(faction))
 			L.faction = src.faction
-	P.visible_message(span_danger("[L] [spawn_text] [P]."))
+		// if(ignore_faction)
+		// 	L.ignore_faction = TRUE
+	// P.visible_message(span_danger("[L] [spawn_text] [P]."))
 	if(spawn_sound)
 		playsound(P, spawn_sound, 30, 1)
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
+
+/datum/component/spawner/proc/remove_mob_from_nest(datum/source, mob/living/simple_animal/removed_animal)
+	for(var/datum/weakref/maybe_them in spawned_mobs)
+		if(GET_WEAKREF(maybe_them) == removed_animal)
+			spawned_mobs -= maybe_them
+
+/datum/component/spawner/proc/dump_questables(datum/source, mob/user)
+	if(!user)
+		return
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(user)
+	if(!QB)
+		return
+	if(!QB.scanning_mobs_makes_nests_dump_questable_mobs)
+		return
+	var/list/questable_typecache = QB.get_quest_paths()
+	if(!LAZYLEN(questable_typecache))
+		return
+	var/list/squirts = list()
+	for(var/mobpath in mob_types)
+		if(questable_typecache[mobpath])
+			squirts += mobpath
+	if(!LAZYLEN(squirts))
+		return
+	var/squirts_left = 4
+	var/squirts_per = round(squirts_left / LAZYLEN(squirts))
+	for(var/mobpath in squirts)
+		spawn_mob(list("which_mob" = mobpath, "how_many" = round(squirts_per)))
+		squirts_left -= squirts_per
+		if(squirts_left <= 0)
+			break
+
 
 /datum/component/spawner/proc/setup_random_nest()
 	if(!randomizer_tag)
@@ -424,6 +518,394 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
+/// A holder for all sorts of our spawner data, so wacky events can make em come back
+/datum/nest_box
+	var/spawn_time = 0
+	var/max_mobs = 0
+	var/spawn_text = "emerges from"
+	var/spawn_sound = null
+	var/list/faction = list()
+	var/coverable_by_dense_things = TRUE
+	var/coverable = TRUE
+	var/randomizer_tag = null
+	var/randomizer_kind = null
+	var/randomizer_difficulty = 0
+	var/delay_start = FALSE
+	var/am_special = FALSE
+	var/coords = null
+	var/list/mob_types = list()
+	var/infinite = FALSE
+	var/overpopulation_range = 5
+	var/swarm_size = 1
+	var/radius = 10
+	var/ignore_faction = FALSE
+	/// and the stuff relating to the actual spawner next object thing
+	var/nest_name
+	var/nest_desc
+	var/nest_icon
+	var/nest_icon_state
+	var/nest_resistance_flags
+	var/nest_anchored
+	var/nest_layer
+
+	var/generation = 0
+
+	var/time_i_died = 0
+	var/delayed_by = 0
+	var/datum/weakref/assigned_to
+
+/datum/nest_box/New(datum/component/spawner/girlfriend)
+	if(girlfriend.am_special)
+		return
+	spawn_time                = girlfriend.spawn_time
+	max_mobs                  = girlfriend.max_mobs
+	// spawn_text                = girlfriend.spawn_text
+	spawn_sound               = girlfriend.spawn_sound
+	faction                   = girlfriend.faction.Copy()
+	if(!islist(faction))
+		faction = list(faction)
+	faction                  |= "UPDATEME"
+	coverable_by_dense_things = girlfriend.coverable_by_dense_things
+	randomizer_tag            = girlfriend.randomizer_tag
+	randomizer_kind           = girlfriend.randomizer_kind
+	randomizer_difficulty     = girlfriend.randomizer_difficulty
+	delay_start               = girlfriend.delay_start
+	am_special                = girlfriend.am_special
+	coords                    = atom2coords(girlfriend.parent)
+	mob_types                 = girlfriend.mob_types.Copy()
+	infinite                  = girlfriend.infinite
+	overpopulation_range      = girlfriend.overpopulation_range
+	swarm_size                = girlfriend.swarm_size
+	generation                = girlfriend.generation + 1
+	var/obj/P = girlfriend.parent
+	nest_name                 = P.name
+	nest_desc                 = P.desc
+	nest_icon                 = P.icon
+	nest_icon_state           = P.icon_state
+	nest_anchored             = P.anchored
+	nest_layer                = P.layer
+
+/datum/nest_box/Destroy(force, ...)
+	var/mob/living/simple_animal/nest_spawn_hole_guy/NSHG = GET_WEAKREF(assigned_to)
+	if(istype(NSHG))
+		NSHG.nest_seed = null
+	SSmonster_wave.unregister_nest_seed(src)
+	. = ..()
+
+/datum/nest_box/proc/globalize(datum/component/spawner/parent)
+	parent?.my_ticket = null // one way or another, we're not coming back
+	if(!parent)
+		qdel(src)
+		return FALSE
+	if(!parent.parent || ismob(parent.parent)) // darn junker creators
+		qdel(src)
+		return FALSE
+	var/obj/structure/nest/N = parent.parent // maybe if I keep writing these, mine'll get back together
+	if(N.spawned_by_ckey || istype(N, /obj/structure/nest/special))
+		return FALSE
+	if(LAZYLEN(parent.mob_types) < 1)
+		qdel(src)
+		return FALSE
+	var/turf/is_there = my_turf() || get_turf(parent?.parent)
+	if(!is_there)
+		qdel(src)
+		return
+	coords = atom2coords(is_there)
+	time_i_died = world.time
+	SSmonster_wave.register_nest_seed(src)
+
+/datum/nest_box/proc/my_turf()
+	return coords2turf(coords)
+
+/// creates a whole new nest from our data, then CEASES TO EXIST!!!!!
+/datum/nest_box/proc/pop_nest(right_here)
+	SSmonster_wave.unregister_nest_seed(src)
+	var/turf/here = coords2turf(right_here) || my_turf()
+	if(!here)
+		qdel(src)
+		return
+	var/obj/structure/nest/blank/nuhole = new(here)
+	nuhole.name                      = nest_name
+	nuhole.desc                      = nest_desc
+	nuhole.icon                      = nest_icon
+	nuhole.icon_state                = nest_icon_state
+	nuhole.anchored                  = nest_anchored
+	nuhole.layer                     = nest_layer
+	nuhole.mob_types                 = mob_types
+	nuhole.spawn_time                = spawn_time
+	nuhole.coverable                 = coverable
+	nuhole.coverable_by_dense_things = coverable_by_dense_things
+	// nuhole.spawn_text                = spawn_text
+	nuhole.overpopulation_range      = overpopulation_range
+	nuhole.max_mobs                  = max_mobs
+	nuhole.radius                    = radius
+	nuhole.spawnsound                = spawn_sound
+	nuhole.infinite                  = infinite
+	nuhole.swarm_size                = swarm_size
+	nuhole.faction                   = faction
+	nuhole.randomizer_tag            = randomizer_tag
+	nuhole.randomizer_kind           = randomizer_kind
+	nuhole.randomizer_difficulty     = randomizer_difficulty
+	nuhole.delay_start               = delay_start
+	nuhole.ignore_faction            = ignore_faction
+	nuhole.generation                = generation
+	nuhole.make_component()
+	SSmonster_wave.catalogue_me(src)
+	qdel(src)
+
+/// mutates our stored values to be a bit different!
+/datum/nest_box/proc/mutate() // >:3c
+	spawn_time = clamp(spawn_time + rand(-5 SECONDS, 5 SECONDS), 5 SECONDS, 60 SECONDS)
+	// max_mobs = clamp(max_mobs + rand(-2, 3), 1, 10)
+	overpopulation_range = clamp(overpopulation_range + rand(-2, 2), 1, 20)
+	swarm_size = swarm_size > 1 ? clamp(swarm_size + rand(1, 3), 1, 10) : 1
+	radius = clamp(radius + rand(-2, 2), 1, 20)
+	var/list/new_paths = list()
+	for(var/mobpath in mob_types)
+		var/mob/living/simple_animal/hostile/baddie = mobpath
+		if(ispath(baddie) && initial(baddie.bossmob) == TRUE)
+			new_paths[mobpath] = mob_types[mobpath] // rolled a boss, honor tht
+			continue
+		if(prob(40) && LAZYLEN(mob_types) > 1)
+			new_paths[mobpath] = mob_types[mobpath] // no change
+			continue
+		// ignore_faction = TRUE // cant guarantee they wont infight with the new guys, so lets guarantee it
+		var/list/potentials = list()
+		/// if its a robot, turn that robot into a different robot!
+		if(ispath(mobpath, /mob/living/simple_animal/hostile/eyebot))
+			potentials |= typesof(/mob/living/simple_animal/hostile/eyebot) - mobpath
+			if(prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/hivebot)
+				potentials |= /mob/living/simple_animal/hostile/handy // just the root, most are rather rough
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/handy)) // somehow encapsulates a heckton of horrible bots
+			if(mobpath == /mob/living/simple_animal/hostile/handy) // base handies shouldnt mutate into anything horrifying
+				potentials |= typesof(/mob/living/simple_animal/hostile/hivebot)
+				potentials |= typesof(/mob/living/simple_animal/hostile/eyebot)
+				if(prob(25)) // sike, lets mutate them into something else
+					potentials |= typesof(/mob/living/simple_animal/hostile/handy)
+					potentials |= typesof(/mob/living/simple_animal/hostile/securitron)
+					potentials -= mobpath
+			else if(ispath(mobpath, /mob/living/simple_animal/hostile/handy/protectron)) // protectrons
+				potentials |= typesof(/mob/living/simple_animal/hostile/handy/protectron)
+				if(prob(50))
+					potentials |= typesof(/mob/living/simple_animal/hostile/hivebot)
+					potentials |= typesof(/mob/living/simple_animal/hostile/handy) // cut loose, and fancy free
+				potentials -= mobpath
+			else if(ispath(mobpath, /mob/living/simple_animal/hostile/handy/assaultron)\
+				|| ispath(mobpath, /mob/living/simple_animal/hostile/handy/robobrain)\
+				|| ispath(mobpath, /mob/living/simple_animal/hostile/handy/gutsy)) // the big baddies
+				potentials |= typesof(/mob/living/simple_animal/hostile/handy) // cut loose, and fancy free
+				if(prob(50))
+					potentials |= typesof(/mob/living/simple_animal/hostile/securitron) // branch off to a whole other tree!
+				potentials -= /mob/living/simple_animal/hostile/handy 
+				potentials -= mobpath
+			else // some other wierd hendybot
+				potentials |= typesof(/mob/living/simple_animal/hostile/handy) // cut loose, and fancy free
+				potentials |= typesof(/mob/living/simple_animal/hostile/securitron) // branch off to a whole other tree!
+				potentials -= mobpath
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/securitron)) // they're all just outright better than handies
+			potentials |= typesof(/mob/living/simple_animal/hostile/handy) // cut loose, and fancy free
+			potentials |= typesof(/mob/living/simple_animal/hostile/securitron) // branch off to a whole other tree!
+			potentials -= mobpath
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/hivebot))
+			potentials |= typesof(/mob/living/simple_animal/hostile/hivebot)
+			potentials -= mobpath
+			if(prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/eyebot)
+		/// return of the raiders
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/raider))
+			potentials |= typesof(/mob/living/simple_animal/hostile/raider)
+			potentials -= typesof(/mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt) // remove unique bosses
+			potentials -= typesof(/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates) // remove unique bosses
+			if(prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/renegade)
+				if(prob(80))
+					potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
+					potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+			if(prob(10))
+				potentials |= typesof(/mob/living/simple_animal/hostile/skeleton) // SP00KY SCARY SKELETONS
+			if(prob(25))
+				potentials |= typesof(/mob/living/simple_animal/hostile/gorilla)
+			potentials -= mobpath
+		/// release the renegades
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/renegade))
+			potentials |= typesof(/mob/living/simple_animal/hostile/renegade)
+			if(prob(80))
+				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
+				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+				potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
+			if(prob(25))
+				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
+			if(prob(10))
+				potentials |= typesof(/mob/living/simple_animal/hostile/skeleton) // SP00KY SCARY SKELETONS
+			if(prob(25))
+				potentials |= typesof(/mob/living/simple_animal/hostile/aethergiest)
+			potentials -= mobpath
+		/// shuffle the ghouls
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/ghoul))
+			potentials |= typesof(/mob/living/simple_animal/hostile/skeleton)
+			potentials |= typesof(/mob/living/simple_animal/hostile/ghoul)
+			if(prob(80))
+				potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/legendary)
+			if(prob(95))
+				potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/wyomingghost)
+		/// the bugs are back in town
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/giantant)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/pillbug)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/fireant)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/radscorpion)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/poison/giant_spider)\
+			|| prob(15))
+			if(ispath(mobpath, /mob/living/simple_animal/hostile/pillbug) && prob(80))
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
+				potentials -= /mob/living/simple_animal/hostile/pillbug
+			else
+				potentials |= typesof(/mob/living/simple_animal/hostile/fireant)
+				potentials |= typesof(/mob/living/simple_animal/hostile/radscorpion)
+				potentials |= typesof(/mob/living/simple_animal/hostile/poison/giant_spider)
+				potentials |= typesof(/mob/living/simple_animal/hostile/giantant)
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
+			potentials -= mobpath
+		/// larger animals 
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/gorilla)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/bear)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/wolf)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/alligator)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/mirelurk)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/aethergiest)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/hellpig)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/texas_rattler)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/stalker)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/jungle/mega_arachnid)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/dinosaur)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/kangaroo)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/bloodbird)\
+			|| prob(15))
+			potentials |= typesof(/mob/living/simple_animal/hostile/gorilla)
+			potentials |= typesof(/mob/living/simple_animal/hostile/bear)
+			potentials |= typesof(/mob/living/simple_animal/hostile/wolf)
+			potentials |= typesof(/mob/living/simple_animal/hostile/alligator)
+			potentials |= typesof(/mob/living/simple_animal/hostile/mirelurk)
+			if((ispath(mobpath, /mob/living/simple_animal/hostile/aethergiest) && prob(50)) || prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/aethergiest)
+				if(prob(80))
+					potentials -= typesof(/mob/living/simple_animal/hostile/aethergiest/power_armor)
+					potentials -= typesof(/mob/living/simple_animal/hostile/aethergiest/legendary)
+			if((ispath(mobpath, /mob/living/simple_animal/hostile/hellpig) && prob(50)) || prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/hellpig)
+			if(ispath(mobpath, /mob/living/simple_animal/hostile/texas_rattler) || prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/texas_rattler)
+			potentials |= typesof(/mob/living/simple_animal/hostile/stalker)
+			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/mega_arachnid)
+			potentials |= typesof(/mob/living/simple_animal/hostile/dinosaur)
+			potentials |= typesof(/mob/living/simple_animal/hostile/kangaroo)
+			potentials |= typesof(/mob/living/simple_animal/hostile/bloodbird)
+			if(prob(1))
+				potentials |= typesof(/mob/living/simple_animal/hostile/gelcube)
+			potentials -= mobpath
+		/// skeleton clause
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/skeleton))
+			potentials |= typesof(/mob/living/simple_animal/hostile/ghoul)
+			if(prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/raider)
+				if(prob(50))
+					potentials |= typesof(/mob/living/simple_animal/hostile/renegade)
+					if(prob(50))
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/meister)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/traitor)
+						potentials -= typesof(/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot)
+			potentials -= mobpath
+			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/legendary)
+			potentials -= typesof(/mob/living/simple_animal/hostile/ghoul/wyomingghost)
+			potentials -= typesof(/mob/living/simple_animal/hostile/raider/ranged/boss)
+		/// the rest of the animals
+		else if(ispath(mobpath, /mob/living/simple_animal/hostile/gecko)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/rat)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/molerat)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/pillbug)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/cazador)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/lizard)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/lightgeist)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/stalkeryoung)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/carp)\
+			|| prob(10))
+			if(istype(mobpath, /mob/living/simple_animal/hostile/molerat) && prob(80))
+				potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
+				potentials -= /mob/living/simple_animal/hostile/molerat
+			else			
+				potentials |= typesof(/mob/living/simple_animal/hostile/gecko)
+				potentials -= typesof(/mob/living/simple_animal/hostile/gecko/debug)
+				if(prob(30))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/shaman)
+				if(prob(90))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/head_shaman)
+				if(prob(30))
+					potentials -= typesof(/mob/living/simple_animal/hostile/gecko/tribal/chieftain)
+				potentials |= typesof(/mob/living/simple_animal/hostile/rat)
+				potentials |= typesof(/mob/living/simple_animal/hostile/molerat)
+				potentials |= typesof(/mob/living/simple_animal/hostile/pillbug)
+				potentials |= typesof(/mob/living/simple_animal/hostile/carp)
+				potentials -= typesof(/mob/living/simple_animal/hostile/carp/ranged) // no more literal deathray fish
+				potentials |= typesof(/mob/living/simple_animal/hostile/cazador)
+				potentials |= typesof(/mob/living/simple_animal/hostile/stalkeryoung)
+				potentials |= typesof(/mob/living/simple_animal/hostile/lizard)
+				potentials |= typesof(/mob/living/simple_animal/hostile/lightgeist)
+			potentials -= mobpath
+		/// misc wierdoes
+		else if(istype(mobpath, /mob/living/simple_animal/hostile/trog)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/centaur)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/supermutant)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/alien)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/faithless)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/gelcube)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/leaper)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/mega_arachnid)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/seedling)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/mook)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/mimic)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/shark)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/venus_human_trap)\
+			|| istype(mobpath, /mob/living/simple_animal/hostile/killertomato)\
+			|| prob(15))
+			potentials |= typesof(/mob/living/simple_animal/hostile/trog)
+			potentials |= typesof(/mob/living/simple_animal/hostile/centaur)
+			potentials |= typesof(/mob/living/simple_animal/hostile/supermutant)
+			if(prob(90))
+				potentials |= typesof(/mob/living/simple_animal/hostile/supermutant/legendary)
+			if(prob(75))
+				potentials |= typesof(/mob/living/simple_animal/hostile/supermutant/nightkin)
+			potentials |= typesof(/mob/living/simple_animal/hostile/alien)
+			if(prob(90))
+				potentials |= typesof(/mob/living/simple_animal/hostile/alien/queen)
+			potentials |= typesof(/mob/living/simple_animal/hostile/faithless)
+			potentials |= typesof(/mob/living/simple_animal/hostile/gelcube)
+			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/leaper)
+			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/mega_arachnid)
+			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/seedling)
+			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/mook)
+			potentials |= typesof(/mob/living/simple_animal/hostile/mimic)
+			potentials |= typesof(/mob/living/simple_animal/hostile/shark)
+			potentials |= typesof(/mob/living/simple_animal/hostile/venus_human_trap)
+			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
+			potentials -= mobpath
+		if(LAZYLEN(potentials))
+			var/mob/living/simple_animal/my_choose = pick(potentials)
+			new_paths[pick(potentials)] = (ispath(my_choose) && initial(my_choose.bossmob)) ? 1 : clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
+			continue
+		new_paths[mobpath] = clamp(mob_types[mobpath] + rand(-1, -2), 1, 100)
+		continue
+	nest_name = "Class \Roman[generation] ex-vivo delivery chamber"
+	nest_desc = "A cool hole in the ground full of cool things. Stick your hand in and see! (Warning: Cool things are actually baddies)"
+	if(prob(2))
+		new_paths[/mob/living/simple_animal/hostile/amusing_duck] = 3 // quaCK
+		nest_desc += " Disclaimer: Lay egg is true."
+	if(prob(2))
+		new_paths[/mob/living/simple_animal/hostile/goose] = 15 // cool
+		nest_desc += " Also there's a lot of angry honking in there. Weird."
+		swarm_size += 1
+	mob_types = new_paths.Copy()
+	return TRUE
+
 /// Is passed a mob via the signal, and will attempt to despawn the mob and store it in the spawner.
 /datum/component/spawner/proc/unbirth_mob(datum/source, mob/living/simple_animal/despawn_me)
 	if(QDELETED(parent))
@@ -447,6 +929,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		start_spawning()
 		// nobody'll know the difference~
 	qdel(despawn_me)
+	return TRUE
 
 /// If anything asks if we have a spawner, we say yes.
 /datum/component/spawner/proc/has_spawner()

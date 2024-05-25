@@ -12,8 +12,8 @@
 	///The cargo account for grabbing the cargo account's credits.
 	var/static/datum/bank_account/cargocash
 
-/datum/computer_file/program/bounty/proc/print_paper()
-	new /obj/item/paper/bounty_printout(get_turf(computer))
+// /datum/computer_file/program/bounty/proc/print_paper()
+// 	new /obj/item/paper/bounty_printout(get_turf(computer))
 
 /datum/computer_file/program/bounty/ui_interact(mob/user, datum/tgui/ui)
 	if(!GLOB.bounties_list.len)
@@ -34,14 +34,15 @@
 /datum/computer_file/program/bounty/ui_act(action,params)
 	if(..())
 		return
-	switch(action)
-		if("ClaimBounty")
-			var/datum/bounty/cashmoney = locate(params["bounty"]) in GLOB.bounties_list
-			if(cashmoney)
-				cashmoney.claim()
-			return TRUE
-		if("Print")
-			if(printer_ready < world.time)
-				printer_ready = world.time + PRINTER_TIMEOUT
-				print_paper()
-				return
+	// var/mob/user = usr
+	// switch(action)
+	// 	if("ClaimBounty")
+	// 		var/datum/bounty/cashmoney = locate(params["bounty"]) in GLOB.bounties_list
+	// 		if(cashmoney)
+	// 			cashmoney.claim(user)
+	// 		return TRUE
+	// 	if("Print")
+	// 		if(printer_ready < world.time)
+	// 			printer_ready = world.time + PRINTER_TIMEOUT
+	// 			print_paper()
+	// 			return

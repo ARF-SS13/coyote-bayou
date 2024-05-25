@@ -71,12 +71,12 @@
 			return TRUE
 	return FALSE
 
-/obj/structure/grille/ratvar_act()
+/*/obj/structure/grille/ratvar_act()
 	if(broken)
 		new /obj/structure/grille/ratvar/broken(src.loc)
 	else
 		new /obj/structure/grille/ratvar(src.loc)
-	qdel(src)
+	qdel(src)*/
 
 /obj/structure/grille/Bumped(atom/movable/AM)
 	if(!ismob(AM))
@@ -291,7 +291,7 @@
 	broken_type = null
 
 
-/obj/structure/grille/ratvar
+/*/obj/structure/grille/ratvar
 	icon_state = "ratvargrille"
 	name = "cog grille"
 	desc = "A strangely-shaped grille."
@@ -324,4 +324,4 @@
 	rods_amount = 1
 	rods_broken = FALSE
 	grille_type = /obj/structure/grille/ratvar
-	broken_type = null
+	broken_type = null*/

@@ -2,7 +2,6 @@
 	anchored = 1
 	density = 1
 	layer = MOB_LAYER + 1
-
 /obj/structure/wreck/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
 
@@ -12,52 +11,19 @@
 	icon = 'icons/obj/vehicles/medium_vehicles.dmi'
 	icon_state = "derelict"
 	bound_width = 64
-	var/uses_left = 2
-	var/inuse = FALSE
+	max_stuff = 8
+	base_stuff = 4
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/car/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
-
-	if(inuse || uses_left <= 0) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-		return
-	inuse = TRUE //one at a time boys, this isn't some kind of weird party
-	if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-		inuse = FALSE
-		return //the tool fails this check, so stop
-	user.visible_message("[user] starts disassembling [src].")
-	for(var/i1 in 1 to 2)
-		if(!I.use_tool(src, user, 75, volume=100))
-			user.visible_message("[user] stops disassembling [src].")
-			inuse = FALSE
-			return //you did something, like moving, so stop
-		var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-		user.visible_message("[user] slices through a [fake_dismantle].")
-
-	var/turf/usr_turf = get_turf(user) //Bellow are the changes made by PR#256
-	var/modifier = 0
-	if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-		modifier += rand(1,3)
-	var/obj/item/l = user.get_inactive_held_item()
-	if(istype(l,/obj/item/weldingtool))
-		var/obj/item/weldingtool/WO = l
-		if(WO.tool_start_check(user, amount=3))
-			WO.use(3)
-			modifier++
-	for(var/i2 in 1 to (2+modifier))
-		new /obj/item/salvage/low(usr_turf)
-	for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-		if(prob(6))
-			new /obj/item/salvage/high(usr_turf)
-	uses_left--
-	inuse = FALSE //putting this after the -- because the first check prevents cheesing
-	if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
 
 /obj/structure/wreck/car/bike
 	name = "wrecked motorcycle"
 	desc = "An old pre-war motorcycle, rusted and destroyed with age and weathering."
 	icon_state = "rust_light_no_wheels"
+	max_stuff = 4
+	base_stuff = 2
 
 /obj/structure/wreck/bus
 	name = "wrecked bus"
@@ -65,23 +31,25 @@
 	bound_width = 192
 	bound_height = 64
 	icon = 'icons/obj/vehicles/bus1.dmi'
-	var/uses_left = 4
-	var/inuse = FALSE
+	max_stuff = 12
+	base_stuff = 6
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
+/*
 /obj/structure/wreck/bus/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
 
-	if(inuse || uses_left <= 0) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+	if(in_use || uses_left <= 0) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
 		return
-	inuse = TRUE //one at a time boys, this isn't some kind of weird party
+	in_use = TRUE //one at a time boys, this isn't some kind of weird party
 	if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-		inuse = FALSE
+		in_use = FALSE
 		return //the tool fails this check, so stop
 	user.visible_message("[user] starts disassembling [src].")
 	for(var/i1 in 1 to 2)
 		if(!I.use_tool(src, user, 75, volume=100))
 			user.visible_message("[user] stops disassembling [src].")
-			inuse = FALSE
+			in_use = FALSE
 			return //you did something, like moving, so stop
 		var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
 		user.visible_message("[user] slices through a [fake_dismantle].")
@@ -102,10 +70,11 @@
 		if(prob(6))
 			new /obj/item/salvage/high(usr_turf)
 	uses_left--
-	inuse = FALSE //putting this after the -- because the first check prevents cheesing
+	in_use = FALSE //putting this after the -- because the first check prevents cheesing
 	if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
 		visible_message("[src] falls apart, the final components having been removed.")
 		qdel(src)
+*/
 
 /obj/structure/wreck/bus/blue
 	icon_state = "blue"
@@ -139,7 +108,6 @@
 	icon_state = "bus1"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented1
 	name = "wrecked bus"
@@ -148,7 +116,6 @@
 	icon_state = "bus2"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented2
 	name = "wrecked bus"
@@ -157,7 +124,6 @@
 	icon_state = "bus3"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented3
 	name = "wrecked bus"
@@ -166,7 +132,6 @@
 	icon_state = "bus4"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented4
 	name = "wrecked bus"
@@ -175,7 +140,6 @@
 	icon_state = "bus5"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented5
 	name = "wrecked bus"
@@ -184,7 +148,6 @@
 	icon_state = "bus6"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented6
 	name = "wrecked bus"
@@ -194,7 +157,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented7
 	name = "wrecked bus"
@@ -203,7 +165,6 @@
 	icon_state = "bus8"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented8
 	name = "wrecked bus"
@@ -212,7 +173,6 @@
 	icon_state = "bus9"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented9
 	name = "wrecked bus"
@@ -221,7 +181,6 @@
 	icon_state = "bus10"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented10
 	name = "wrecked bus"
@@ -230,7 +189,6 @@
 	icon_state = "bus11"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented11
 	name = "wrecked bus"
@@ -239,7 +197,6 @@
 	icon_state = "bus12"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented12
 	name = "wrecked bus"
@@ -248,7 +205,6 @@
 	icon_state = "bus13"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented13
 	name = "wrecked bus"
@@ -258,7 +214,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented14
 	name = "wrecked bus"
@@ -268,7 +223,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented15
 	name = "wrecked bus"
@@ -278,7 +232,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented16
 	name = "wrecked bus"
@@ -288,7 +241,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented17
 	name = "wrecked bus"
@@ -298,7 +250,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented18
 	name = "wrecked bus"
@@ -308,7 +259,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented19
 	name = "wrecked bus"
@@ -318,7 +268,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented20
 	name = "wrecked bus"
@@ -328,7 +277,6 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
 
 /obj/structure/wreck/trash/five_tires
 	name = "tire pile"
@@ -337,6 +285,9 @@
 	icon_state = "five_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/two_tire
 	name = "tires"
@@ -345,6 +296,9 @@
 	icon_state = "two_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/one_tire
 	name = "tire"
@@ -353,6 +307,9 @@
 	icon_state = "one_t"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/halftire
 	name = "buried tire"
@@ -371,6 +328,9 @@
 	icon_state = "four_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/three_barrels
 	name = "barrels"
@@ -379,6 +339,9 @@
 	icon_state = "three_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/two_barrels
 	name = "barrels"
@@ -387,6 +350,9 @@
 	icon_state = "two_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/one_barrel
 	name = "barrel"
@@ -395,6 +361,9 @@
 	icon_state = "one_b"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 2
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/engine
 	name = "engine"
@@ -403,6 +372,9 @@
 	icon_state = "engine"
 	bound_width = 32
 	bound_height = 32
+	max_stuff = 3
+	base_stuff = 2
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/autoshaft
 	name = "automobile shaft"
@@ -413,6 +385,9 @@
 	bound_height = 32
 	density = 0
 	layer = TURF_LAYER
+	max_stuff = 2
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/bus_door
 	name = "bus door"
@@ -423,6 +398,9 @@
 	bound_height = 32
 	density = 0
 	layer = TURF_LAYER
+	max_stuff = 1
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/secway
 	name = "broken secway"
@@ -431,44 +409,9 @@
 	icon_state = "secwaybroke"
 	bound_width = 32
 	bound_height = 32
-	var/inuse = FALSE
-
-/obj/structure/wreck/trash/secway/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
+	max_stuff = 3
+	base_stuff = 1
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/brokenvendor
 	name = "broken vendor"
@@ -477,44 +420,9 @@
 	icon_state = "technical_pile3"
 	bound_width = 32
 	bound_height = 32
-	var/inuse = FALSE
-
-/obj/structure/wreck/trash/brokenvendor/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
+	max_stuff = 6
+	base_stuff = 3
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/machinepile
 	name = "broken machinery"
@@ -523,45 +431,9 @@
 	icon_state = "technical_pile1"
 	bound_width = 32
 	bound_height = 32
-	var/inuse = FALSE
-
-/obj/structure/wreck/trash/machinepile/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
-
+	max_stuff = 6
+	base_stuff = 3
+	salvagecomponent = /datum/component/toolable/salvage/welder
 
 /obj/structure/wreck/trash/machinepiletwo
 	name = "broken machinery"
@@ -570,40 +442,6 @@
 	icon_state = "technical_pile2"
 	bound_width = 32
 	bound_height = 32
-	var/inuse = FALSE
-
-/obj/structure/wreck/trash/machinepiletwo/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/weldingtool))
-		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
-			return
-		inuse = TRUE //one at a time boys, this isn't some kind of weird party
-		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
-			inuse = FALSE
-			return //the tool fails this check, so stop
-		user.visible_message("[user] starts disassembling [src].")
-		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-			inuse = FALSE
-			return //you can't use the tool, so stop
-		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 1 SECONDS, target = src)) //this is my work around, because do_After does have a move away
-				user.visible_message("[user] stops disassembling [src].")
-				inuse = FALSE
-				return //you did something, like moving, so stop
-			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
-			user.visible_message("[user] slices through a [fake_dismantle].")
-			I.play_tool_sound(src, 100)
-		var/turf/usr_turf = get_turf(user)
-		var/modifier = 0
-		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-			modifier = rand(1, 3)
-		for(var/i2 in 1 to (3+modifier))
-			if(prob(25))
-				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
-			if(prob(10))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(10))
-				new /obj/item/salvage/tool(usr_turf)
-		inuse = FALSE //putting this after the -- because the first check prevents cheesing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
+	max_stuff = 6
+	base_stuff = 3
+	salvagecomponent = /datum/component/toolable/salvage/welder

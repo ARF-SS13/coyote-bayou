@@ -18,14 +18,14 @@
 
 /obj/item/button/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_CLICKED, .proc/activate)
-	RegisterSignal(src, COMSIG_BUTTON_ATTACH, .proc/attach_to_storage)
+	RegisterSignal(src, COMSIG_ITEM_CLICKED,PROC_REF(activate))
+	RegisterSignal(src, COMSIG_BUTTON_ATTACH,PROC_REF(attach_to_storage))
 
 /obj/item/button/attackby(obj/item/W, mob/user, params)
 	activate(user)
 
 /obj/item/button/proc/attach_to_storage(datum/source, obj/item/storage/S)
-	RegisterSignal(S, COMSIG_BUTTON_UPDATE, .proc/reaction)
+	RegisterSignal(S, COMSIG_BUTTON_UPDATE,PROC_REF(reaction))
 
 /obj/item/button/proc/activate(datum/source, mob/user)
 	playsound(get_turf(src), click_sound, 50, TRUE)

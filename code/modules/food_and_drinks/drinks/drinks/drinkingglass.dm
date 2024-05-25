@@ -23,9 +23,8 @@
 		if(R.glass_icon_state)
 			icon_state = R.glass_icon_state
 		else
-			var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glassoverlay")
+			var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glassoverlay", color = mix_color_from_reagents(reagents.reagent_list))
 			icon_state = "glass_empty"
-			reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
 			add_overlay(reagent_overlay)
 	else
 		icon_state = "glass_empty"
@@ -66,8 +65,7 @@
 			icon_state = largest_reagent.shot_glass_icon_state
 		else
 			icon_state = "shotglassclear"
-			var/mutable_appearance/shot_overlay = mutable_appearance(icon, "shotglassoverlay")
-			shot_overlay.color = mix_color_from_reagents(reagents.reagent_list)
+			var/mutable_appearance/shot_overlay = mutable_appearance(icon, "shotglassoverlay", color = mix_color_from_reagents(reagents.reagent_list))
 			add_overlay(shot_overlay)
 
 
@@ -114,7 +112,7 @@
 	list_reagents = list(/datum/reagent/consumable/nukaberry = 50)
 	foodtype = NUKA
 
-obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	name = "Cosmic Float"
 	list_reagents = list(/datum/reagent/consumable/nukafloat = 50)
 	foodtype = NUKA

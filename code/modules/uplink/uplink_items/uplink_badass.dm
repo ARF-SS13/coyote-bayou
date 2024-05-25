@@ -6,13 +6,13 @@
 */
 
 // Pointless (Badassery)
-
+/*
 /datum/uplink_item/badass/costumes/obvious_chameleon
 	name = "Broken Chameleon Kit"
 	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything on the station, and more! \
 			Please note that this kit did NOT pass quality control."
 	item = /obj/item/storage/box/syndie_kit/chameleon/broken
-
+*/
 /datum/uplink_item/badass/costumes
 	include_modes = list(/datum/game_mode/nuclear)
 	cost = 4

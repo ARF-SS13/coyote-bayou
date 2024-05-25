@@ -28,12 +28,14 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	can_bayonet = TRUE
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	casing_ejector = FALSE // THIS makes it require manual cocking of the gun!!!
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -148,7 +150,7 @@
 	item_state = "lever22short"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
@@ -536,11 +538,33 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+//lee speed
+/obj/item/gun/ballistic/rifle/leespeedster
+	name = "Lee Einfield 'Speed' rifle."
+	desc = "A modified Lee Enfield with a shorten mag capacity but high stopping power. The bolt is greased and well made, even lighter which allows for faster operation of the rifle. It lacks the bayonet lug."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "speed"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/speedinglee
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_bayonet = FALSE
+	cock_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
+
 /obj/item/gun/ballistic/rifle/mosin/mini
 	name = "Mini-mosin"
 	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/twentytwo
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 
 	init_firemodes = list(
@@ -669,6 +693,59 @@
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
 
+
+/obj/item/gun/ballistic/rifle/antique/tankgun
+	name = "Mauser TankGewehr M1918"
+	desc = "A very old yet heavy AT rifle. Chambered in 13.7mm(50.cal), this rifle was used in limited numbers in 1918. The rifle weighs a staggering 40 pounds but packs a HEFTY punch. Go ahead, send that mutant to the gates in the sky."
+	icon = 'icons/fallout/objects/guns/tg1918.dmi'
+	icon_state = "tg"
+	item_state = "tg"
+	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
+	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
+	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	init_recoil = HMG_RECOIL(3, 2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_suppress = FALSE
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+/obj/item/gun/ballistic/rifle/antique/tankgun/custom
+	name = "Custom TankGewehr M1918"
+	desc = "A custom made TGM1918 rifle. This rifle still weighs a staggering 40+ pounds, but the gun is engraved and the wood akin to that of birch. A fancy AT rifle for those that pack heat. On the butt of the gun is a scene of a moth chasing a feline."
+	icon = 'icons/fallout/objects/guns/tg1918.dmi'
+	icon_state = "tg"
+	item_state = "tg"
+	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
+	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
+	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = HMG_RECOIL(3, 2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_suppress = FALSE
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
 /obj/item/gun/ballistic/rifle/antique/gross
 	name = "sawed off Gras"
 	desc = "A very old black powder cartridge gun of French lineage. Unfortunately, it evidently did not survive its journey here."
@@ -678,7 +755,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // T1 or T0 just make it a downgrade to the sawed off hunting rifle
 	init_recoil = RIFLE_RECOIL(3, 2) // Say goodbye your to kneecaps chucklenuts
@@ -864,15 +941,15 @@
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 /* * * * * * * * * * *
- * Anti-Materiel Rifle
+ * Anti-Material Rifle
  * Huge Bolt-Action Rifle
  * .50MG
  * Slow to fire
  * Uncommon
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/mag/antimateriel
-	name = "anti-materiel rifle"
+/obj/item/gun/ballistic/rifle/mag/antimaterial
+	name = "anti-material rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "amr"
@@ -884,7 +961,7 @@
 	mag_type = /obj/item/ammo_box/magazine/amr
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T6
 	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -892,8 +969,12 @@
 	)
 	can_scope = FALSE
 	zoom_factor = 1
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+/obj/item/gun/ballistic/rifle/mag/antimaterial/loadout
+	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Not only lacks an iron sight, but due to unmaintained age it doesn't punch as hard."
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 
 /obj/item/gun/ballistic/rifle/mag/pz39custom //custom
 	name = "Custom Panzerbüchse 39"
@@ -917,8 +998,64 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 	can_scope = TRUE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+
+
+/obj/item/gun/ballistic/rifle/mauserrifle
+	name = "Mauser Model 1871"
+	desc = "A Mauser Model 1871, also known as the Gewehr 71 or Infantry Gewehr 71. A bolt action rifle chambered in 11.7mm(50.cal), this rifle saw service by the German Empire. It was replaced by the Gewehr 88 in 1888 through 1890."
+	icon_state = "m71"
+	item_state = "m71"
+	mag_type = /obj/item/ammo_box/magazine/internal/mausereight
+	init_mag_type = /obj/item/ammo_box/magazine/internal/mausereight
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = RIFLE_RECOIL (1.4 , 0.9)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/fg42.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+/obj/item/gun/ballistic/rifle/gewehr88
+	name = "Model 1888 commission rifle"
+	desc = "A Model 1888 commission rifle. This rifle interestingly enough has the ability to eject the clip, also seems to require it itself to fire. This specific model was made so it is extra sturdy. It seems to be in perfect condition with freshly new wood varnish!"
+	icon_state = "g88"
+	item_state = "g88"
+	mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
+	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = RIFLE_RECOIL (1.2 , 0.7)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/fg42.ogg'
+	force_unwielded = 30
+	force = 30
+	force_wielded = 35
+
+
 
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
@@ -941,8 +1078,8 @@
 		/datum/firemode/semi_auto/slower
 	)
 	can_scope = FALSE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting
@@ -950,33 +1087,3 @@
 	mag_type = /obj/item/ammo_box/magazine/testbullet
 	damage_multiplier = 30
 
-/* * * * * * * * * * *
- * FR-12.7 Hebe
- * +.50MG
- * +/-Loadout item
- * -Low mag size
- * -Slow to fire
- * -User isn't a boltworker (cheater) 
- * * * * * * * * * * */
-
-/obj/item/gun/ballistic/rifle/hebe
-	name = "FR-12.7 Hebe"
-	desc = "An anti-material rifle with a high efficiency muzzle break and a Stellite lined barrel. Despite the apparent lack of scope and scope mount, it features a robust adjustable stock for maximum accuracy. Lacks barrel threading."
-	icon = 'modular_coyote/icons/objects/guns/amr.dmi'
-	icon_state = "amr"
-	item_state = "amr"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hebe
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HMG_RECOIL(3, 3)
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	casing_ejector = FALSE
-	can_scope = FALSE
-	can_suppress = FALSE
-	can_flashlight = TRUE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)

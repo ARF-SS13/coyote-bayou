@@ -146,7 +146,7 @@
 		to_chat(user, span_notice("You lean quietly toward [target] and secretly draw out your fangs..."))
 	else
 		to_chat(user, span_warning("You pull [target] close to you and draw out your fangs..."))
-	if(!do_mob(user, target, feed_time, 0, 1, extra_checks = CALLBACK(src, .proc/ContinueActive, user, target)))//sleep(10)
+	if(!do_mob(user, target, feed_time, 0, 1, extra_checks = CALLBACK(src,PROC_REF(ContinueActive), user, target)))//sleep(10)
 		to_chat(user, span_warning("Your feeding was interrupted."))
 		//DeactivatePower(user,target)
 		return
@@ -207,7 +207,7 @@
 	//user.mobility_flags &= ~MOBILITY_MOVE // user.canmove = 0 // Prevents spilling blood accidentally.
 
 		// Abort? A bloody mistake.
-		if(!do_mob(user, target, 20, 0, 0, extra_checks=CALLBACK(src, .proc/ContinueActive, user, target)))
+		if(!do_mob(user, target, 20, 0, 0, extra_checks=CALLBACK(src,PROC_REF(ContinueActive), user, target)))
 			// May have disabled Feed during do_mob
 			if(!active || !ContinueActive(user, target))
 				break

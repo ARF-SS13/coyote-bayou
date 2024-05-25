@@ -11,7 +11,7 @@
 
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
 	// WARNING: This entire section is shitcode and prone to breaking at any time.
-	INVOKE_ASYNC(src, .proc/attempt_feed, M, user, target)		// for example, the arguments in this proc are wrong
+	INVOKE_ASYNC(src,PROC_REF(attempt_feed), M, user, target)		// for example, the arguments in this proc are wrong
 	// but i don't have time to properly fix it right now.
 
 /obj/item/reagent_containers/glass/proc/attempt_feed(mob/M, mob/user, obj/target)
@@ -46,7 +46,7 @@
 				M.visible_message(span_danger("[user] attempts to feed something to [M]."), \
 							span_userdanger("[user] attempts to feed something to you."))
 				log_combat(user, M, "is attempting to feed", reagents.log_list())
-				if(!do_mob(user, M))
+				if(!do_mob(user, M, 1 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 					return
 				if(!reagents || !reagents.total_volume)
 					return // The drink might be empty after the delay, such as by spam-feeding
@@ -61,7 +61,7 @@
 				log_reagent("INGESTION: SELF: [key_name(user)] (loc [user.loc] at [AREACOORD(T)]) - [reagents.log_list()]")
 			var/fraction = min(5/reagents.total_volume, 1)
 			reagents.reaction(M, INGEST, fraction)
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, null, null, null, self_fed? "self swallowed" : "fed by [user]"), 5)
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents,trans_to), M, 5, null, null, null, self_fed? "self swallowed" : "fed by [user]"), 5)
 			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
@@ -542,8 +542,7 @@
 /obj/item/reagent_containers/glass/woodmug/update_overlays()
 	. = ..()
 	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state)
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state, color = mix_color_from_reagents(reagents.reagent_list))
 		. += filling
 
 /obj/item/reagent_containers/glass/woodmug/stone

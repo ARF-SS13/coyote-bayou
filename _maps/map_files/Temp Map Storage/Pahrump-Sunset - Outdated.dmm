@@ -644,9 +644,9 @@
 /area/f13/enclave)
 "ahI" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -4068,7 +4068,7 @@
 /area/f13/tunnel)
 "bCC" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -5013,8 +5013,8 @@
 /area/f13/village)
 "bZk" = (
 /obj/structure/rack,
-/obj/item/crowbar/basic,
-/obj/item/wrench/basic,
+/obj/item/crowbar/crude,
+/obj/item/wrench/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -5496,7 +5496,7 @@
 "ckM" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ckN" = (
@@ -7170,10 +7170,10 @@
 /area/f13/building)
 "cYR" = (
 /obj/structure/rack,
-/obj/item/weldingtool/basic{
+/obj/item/weldingtool/crude{
 	pixel_x = 2
 	},
-/obj/item/screwdriver/basic,
+/obj/item/screwdriver/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -7305,7 +7305,7 @@
 /area/f13/village)
 "dcH" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dcK" = (
@@ -8325,8 +8325,8 @@
 "dxe" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/trash,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -15600,7 +15600,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/reagent_containers/hypospray/medipen/psycho,
+/obj/item/reagent_containers/pill/patch/psycho,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -16831,7 +16831,7 @@
 	},
 /area/f13/wasteland)
 "gSH" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/aethergiest/mother,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gSS" = (
@@ -20370,7 +20370,7 @@
 	},
 /area/f13/wasteland)
 "inz" = (
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/screwdriver,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -28037,7 +28037,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lwj" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lws" = (
@@ -30978,7 +30978,7 @@
 /obj/item/lighter,
 /obj/item/clothing/suit/toggle/labcoat/followers,
 /obj/item/storage/box/pillbottles,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mIF" = (
@@ -31001,7 +31001,7 @@
 /area/f13/wasteland)
 "mJb" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -35681,7 +35681,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/clothing/under/rank/security/officer/formal{
 	name = "security officer's uniform"
 	},
@@ -36235,7 +36235,7 @@
 /obj/item/reagent_containers/pill/healingpowder,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
 "pbn" = (
@@ -38907,7 +38907,7 @@
 /area/f13/building)
 "qjk" = (
 /obj/structure/closet/crate,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/export/bottle/goldschlager,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/inside/mountain,
@@ -44421,7 +44421,7 @@
 	},
 /area/f13/building)
 "sGE" = (
-/mob/living/simple_animal/hostile/radroach{
+/mob/living/simple_animal/hostile/pillbug{
 	desc = "The most trustworthy ally of the sheriff. This tough bug has survived dozens of attempts to squish 'em. ";
 	faction = list("neutral");
 	health = 60;
@@ -46232,7 +46232,7 @@
 /area/f13/ncr)
 "tsS" = (
 /obj/structure/table/wood/settler,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tsZ" = (
@@ -52201,7 +52201,7 @@
 /area/f13/village)
 "weJ" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "weW" = (
@@ -53687,7 +53687,7 @@
 "wNK" = (
 /obj/structure/rack,
 /obj/item/stack/cable_coil/ten,
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner"
@@ -55217,7 +55217,7 @@
 /turf/open/water,
 /area/f13/caves)
 "xth" = (
-/obj/item/wirecutters/basic,
+/obj/item/wirecutters/crude,
 /obj/item/screwdriver/crude,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -55319,7 +55319,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "xuY" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xvg" = (
@@ -56053,7 +56053,7 @@
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/item/clothing/under/overalls,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -56538,7 +56538,7 @@
 /turf/open/water,
 /area/f13/caves)
 "yax" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "yaA" = (

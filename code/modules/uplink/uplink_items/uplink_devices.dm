@@ -204,7 +204,7 @@
 	name = "Medx"
 	desc = "Medx, the tool of many great heroes. Makes you nearly immune to non-lethal weaponry for about \
 			5 minutes after injection."
-	item = /obj/item/reagent_containers/hypospray/medipen/medx
+	item = /obj/item/reagent_containers/pill/patch/medx
 	cost = 5
 	surplus = 90
 

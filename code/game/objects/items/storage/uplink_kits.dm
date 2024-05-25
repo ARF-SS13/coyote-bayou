@@ -25,7 +25,7 @@
 		if("bond") // 29 tc
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/card/id/syndicate(src)
-			new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+			new /obj/item/reagent_containers/pill/patch/medx(src)
 			new /obj/item/clothing/neck/tie/red(src)
 
 		if("screwed") // 29 tc
@@ -54,7 +54,7 @@
 			new /obj/item/encryptionkey/syndicate(src)
 			new /obj/item/grenade/syndieminibomb(src)
 			new /obj/item/clothing/glasses/phantomthief/syndicate(src)
-			new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+			new /obj/item/reagent_containers/pill/patch/medx(src)
 
 		if("baseball") // 42~ tc
 			new /obj/item/clothing/glasses/sunglasses/garb(src) //Lets say 2 tc
@@ -347,7 +347,7 @@
 	new /obj/item/storage/backpack/satchel(src)
 	new /obj/item/pda/heads(src)
 	new /obj/item/clipboard(src)
-
+/*
 /obj/item/storage/box/syndie_kit/chameleon/broken/PopulateContents()
 	new /obj/item/clothing/under/chameleon/broken(src)
 	new /obj/item/clothing/suit/chameleon/broken(src)
@@ -361,7 +361,7 @@
 	new /obj/item/stamp/chameleon/broken(src)
 	new /obj/item/pda/chameleon/broken(src)
 	// No chameleon laser, they can't randomise for //REASONS//
-
+*/
 /obj/item/storage/box/syndie_kit/bee_grenades
 	name = "buzzkill grenade box"
 	desc = "A sleek, sturdy box with a buzzing noise coming from the inside. Uh oh."
@@ -480,7 +480,7 @@
 		/obj/item/clothing/glasses/thermal/syndi,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/reagent_containers/hypospray/medipen/medx,
+		/obj/item/reagent_containers/pill/patch/medx,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/storage/toolbox/infiltrator
 	)

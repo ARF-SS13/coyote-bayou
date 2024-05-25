@@ -79,12 +79,12 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 
 // ============--- GETTERS ---============
 
-/mob/proc/get_typing_indicator_sound()
+/mob/proc/get_typing_indicator_sound(statick)
 	if(client)
 		var/client/C = client
 		var/datum/typing_sound/soundDatum = GLOB.typing_sounds[C.prefs.features["typing_indicator_sound"]]
 		if(soundDatum)
-			return soundDatum.soundFile
+			return soundDatum.GetSound(statick)
 	return GLOB.typing_sounds["Default"]
 
 /mob/proc/get_typing_indicator_sound_name()
@@ -117,9 +117,11 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		return GLOB.typing_indicator_variances[C.prefs.features["typing_indicator_variance"]]
 	return 2
 
-/mob/proc/get_typing_indicator_volume()
+/mob/proc/get_typing_indicator_volume(statick)
 	if(client)
 		var/client/C = client
+		if(statick)
+			return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]] * 2
 		return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]]
 	return 2
 
@@ -138,7 +140,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		return
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_STARTING])
-		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
+		play_AC_typing_indicator()
 
 // Disabling this unfortunately for now as I think this is causing too much perf hit on things.
 /*	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_TYPING])
@@ -158,20 +160,34 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		return ..()
 	
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_FINISHED])
-		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
+		play_AC_typing_indicator()
 
 	return ..()
 
-/mob/proc/play_AC_typing_indicator(txt as text)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
-	if(stat != CONSCIOUS)
+/mob/proc/play_AC_typing_indicator(txt, atom/playfrom, mob/whoprefs, do_static)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
+	if(stat > SOFT_CRIT)
+		return
+	if(!playfrom)
+		playfrom = src
+	if(!whoprefs)
+		whoprefs = src
+
+	var/prefdo = get_typing_indicator_pref()
+
+	if(!prefdo || prefdo == GLOB.play_methods[NO_SOUND])	//If the preference is set to "No Sound", don't play anything
 		return
 
-	if(!txt)			//If the message is empty, play nothing
+	if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
+		return
+	
+	// if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
+	// 	return
+	
+	if(prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
+		playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE)
 		return
 
 	var/datum/typing_sound/TS = GLOB.typing_sounds[get_typing_indicator_sound_name()]
-	if(!TS || !TS.permitAnimalCrossing)
-		return
 	
 	var/list/word_count = splittext(txt," ")
 	var/counter = word_count.len
@@ -183,10 +199,24 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		var/TI_frequency
 		if (!isnum(counter))                                                            //something went wrong with the counter and it needs to be fixed. Quick, do SOMETHING!
 			counter = 4
+		if(!TS || !TS.permitAnimalCrossing)
+			counter = 1
+		if(do_static)
+			counter++ // one last on the endge
+		var/timecounter = 0
+		var/static_pause = do_static
 		for(var/i in 1 to counter)
-			TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
-			playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
-			sleep(rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
+			timecounter += (rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
+			if(static_pause)
+				timecounter += 3
+				static_pause = FALSE
+				// if(do_static && i == counter)
+				// 	spawn(timecounter * 2)
+				// 		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+				// else
+			spawn(timecounter)
+				TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
+				playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
@@ -273,6 +303,25 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 						features_speech["typing_indicator_max_words_spoken"] = new_input
 	..()
 
-/datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
+/datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE, sans_underpants = FALSE)
 	features += features_speech
 	..()
+
+/datum/map_template/shelter/debug_telecomms
+	shelter_id = "debug_telecomms"
+	description	= "A debug telecomms room for testing purposes."
+	mappath = "_maps/templates/telecomms.dmm"
+
+
+/datum/map_template/shelter/debug_telecomms/New()
+	. = ..()
+	blacklisted_turfs = list()
+	whitelisted_turfs = list()
+	banned_areas = list()
+	banned_objects = list()
+
+/obj/item/survivalcapsule/debug_telecomms
+	name = "Pocket telecomms"
+	template_id = "debug_telecomms"
+	nuke = TRUE
+

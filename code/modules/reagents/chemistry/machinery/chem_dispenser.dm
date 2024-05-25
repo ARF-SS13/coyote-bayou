@@ -95,16 +95,16 @@
 
 /obj/machinery/chem_dispenser/Initialize()
 	. = ..()
-	dispensable_reagents = sortList(dispensable_reagents, /proc/cmp_reagents_asc)
+	dispensable_reagents = sortList(dispensable_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(emagged_reagents)
-		emagged_reagents = sortList(emagged_reagents, /proc/cmp_reagents_asc)
+		emagged_reagents = sortList(emagged_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents)
-		upgrade_reagents = sortList(upgrade_reagents, /proc/cmp_reagents_asc)
+		upgrade_reagents = sortList(upgrade_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents2)
-		upgrade_reagents2 = sortList(upgrade_reagents2, /proc/cmp_reagents_asc)
+		upgrade_reagents2 = sortList(upgrade_reagents2, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents3)
-		upgrade_reagents3 = sortList(upgrade_reagents3, /proc/cmp_reagents_asc)
-	dispensable_reagents = sortList(dispensable_reagents, /proc/cmp_reagents_asc)
+		upgrade_reagents3 = sortList(upgrade_reagents3, GLOBAL_PROC_REF(cmp_reagents_asc))
+	dispensable_reagents = sortList(dispensable_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	update_icon()
 
 /obj/machinery/chem_dispenser/Destroy()
@@ -293,7 +293,7 @@
 					// 	vary = TRUE, //decides wether or not the really goofy pitch shift function happens
 					// 	extrarange = 0, //extra range in tiles from the source of the sound, starts at 17.  Adjust there in. Or use '= SOUND_DISTNACE(# of tiles)'
 					// 	ignore_walls = FALSE, //Is it loud enough to be heard like your parents making you a new sibling?
-						
+
 					// 	falloff_exponent = SOUND_FALLOFF_EXPONENT, //From here down is generally unused
 					// 	frequency = null,
 					// 	channel = 0,
@@ -595,7 +595,8 @@
 		/datum/reagent/consumable/grey_bull,
 		/datum/reagent/consumable/sol_dry,
 		/datum/reagent/consumable/cream_soda,
-		/datum/reagent/consumable/big_red
+		/datum/reagent/consumable/big_red,
+		/datum/reagent/consumable/boba
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
@@ -610,7 +611,8 @@
 		/datum/reagent/consumable/aloejuice,
 		/datum/reagent/consumable/peachjuice,
 		/datum/reagent/consumable/blumpkinjuice,
-		/datum/reagent/consumable/cherryjelly
+		/datum/reagent/consumable/cherryjelly,
+		/datum/reagent/consumable/cucumberjuice
 	)
 	upgrade_reagents2 = list(
 		/datum/reagent/consumable/vanilla,
@@ -677,7 +679,8 @@
 		/datum/reagent/consumable/ethanol/sake,
 		/datum/reagent/consumable/ethanol/applejack,
 		/datum/reagent/consumable/ethanol/champagne,
-		/datum/reagent/consumable/ethanol/fernet
+		/datum/reagent/consumable/ethanol/fernet,
+		/datum/reagent/consumable/ethanol/amaretto
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/ethanol,

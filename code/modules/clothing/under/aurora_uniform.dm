@@ -637,13 +637,13 @@
 	name = "haori - red"
 	desc = "This makes you feel like you need to clap wood blocks together."
 	icon_state = "haori2"
-	item_state = "haori2"	
+	item_state = "haori2"
 
 /obj/item/clothing/under/civ13/haori3
 	name = "haori - gray"
 	desc = "This makes you feel like you need to clap wood blocks together."
 	icon_state = "haori3"
-	item_state = "haori3"	
+	item_state = "haori3"
 
 /obj/item/clothing/under/civ13/haorisamurai2
 	name = "haori w/ Jacket - grey"
@@ -656,3 +656,59 @@
 	desc = "A sort of jacket, or something. Looks odd."
 	icon_state = "haori_samurai3"
 	item_state = "haori_samurai3"
+
+/obj/item/clothing/under/aurora/dress
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "dress"
+	item_state = "dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/dressshortsleeve
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "shortsleeve_dress"
+	item_state = "shortsleeve_dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/evening_gown
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "evening_gown"
+	item_state = "evening_gown"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/open_shoulder_dress
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "open_shoulder_dress"
+	item_state = "open_shoulder_dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/asymm_dress
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "asymm_dress"
+	item_state = "asymm_dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/tea_dress
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "tea_dress"
+	item_state = "tea_dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/under/aurora/longsleeve_dress
+	name = "colorable dress"
+	desc = "A white dress"
+	icon_state = "longsleeve_dress"
+	item_state = "longsleeve_dress"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS

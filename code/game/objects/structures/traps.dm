@@ -27,7 +27,7 @@
 			/mob/dead))
 	
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -62,7 +62,7 @@
 
 /obj/structure/trap/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/process_entered, AM)
+	INVOKE_ASYNC(src,PROC_REF(process_entered), AM)
 
 /obj/structure/trap/proc/process_entered(atom/movable/AM)
 	if(last_trigger + time_between_triggers > world.time)
@@ -176,7 +176,7 @@
 	. = ..()
 	time_between_triggers = 10
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

@@ -18,7 +18,6 @@
 	health = 100
 	healable = 1
 	speed = 1.2
-	stat_attack = CONSCIOUS//Fuck you, Exotic Jazz. Use words, for people. ~TK
 	obj_damage = 150
 	melee_damage_lower = 25
 	melee_damage_upper = 40
@@ -32,7 +31,13 @@
 	waddle_amount = 5
 	waddle_up_time = 1
 	waddle_side_time = 1
-	loot = list(/obj/item/stack/f13Cash/random/med)
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 30
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
@@ -61,7 +66,49 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911)
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/effect/gibspawner/human)
+	robust_searching = TRUE
+	speak = list(
+		"Come get some!",
+		"Fuck off!",
+		"Landon's going to promote me after this!",
+		"Bullets for days!",
+		"Renegades represent!"
+		)
+	speak_emote = list("says")
+	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
+
+// LIGHT RANGED EMP VARIANT
+/mob/living/simple_animal/hostile/renegade/grunt/emp
+	name = "Renegade Grunt"
+	desc = "The standard issue muscle employed among the Renegades."
+	icon_state = "renegade_emper"
+	icon_living = "renegade_emper"
+	icon_dead = "renegade_prospect-dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RENEGADE_COMBAT_ARMOR
+	maxHealth = 100
+	health = 100
+	healable = 1
+	check_friendly_fire = 1
+	retreat_distance = 6
+	minimum_distance = 3
+	extra_projectiles = 0
+	ranged_cooldown_time = 2 SECONDS
+	sight_shoot_delay_time = 0.2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/ion/renegade
+	projectilesound = 'sound/f13weapons/pulsepistolfire.ogg'
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -104,11 +151,6 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
-	loot = list(
-		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/common_bombs,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mats
-		)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -152,10 +194,6 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
-	loot = list(
-		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mags
-		)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -176,6 +214,9 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 //MEDIUM MELEE VARIANT
 /mob/living/simple_animal/hostile/renegade/defender
@@ -196,11 +237,6 @@
 	attack_verb_simple = "bashes"
 	attack_sound = 'sound/weapons/slam.ogg'
 	a_intent = INTENT_HARM
-	loot = list(
-		//obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-		/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-		/obj/effect/spawner/lootdrop/f13/ncr_c_ration
-		)
 	emote_taunt = list("bashes their shield with the mace")
 	robust_searching = TRUE
 	speak = list(
@@ -212,6 +248,9 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 //HEAVY RANGED VARIANT
 /mob/living/simple_animal/hostile/renegade/drifter
@@ -238,7 +277,8 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/gun/ballistic/rifle/hunting,
-		/obj/effect/spawner/lootdrop/f13/uncommon_armor
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+		/obj/effect/gibspawner/human
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -260,6 +300,9 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 // HEAVY SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/guardian
@@ -280,12 +323,9 @@
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	loot = list(
-		/obj/item/gun/ballistic/shotgun/trench,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mags,
-		/obj/item/stack/f13Cash/random/low,
-		/obj/item/clothing/suit/armor/medium/vest/breastplate/light
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -315,8 +355,11 @@
 	icon_living = "renegade_meister"
 	icon_dead = "renegade_meister-dead"
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
+	vision_range = 12
+	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
+	bossmob = TRUE
 	healable = 1
 	melee_damage_lower = 50
 	melee_damage_upper = 50
@@ -332,12 +375,9 @@
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	loot = list(
-		/obj/item/book/granter/trait/pa_wear,
-		/obj/item/stack/f13Cash/random/high,
-		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/stack/sheet/plasteel/five
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 8
+	loot_amount_random = TRUE
 	speak = list(
 		"POWER TO THE ARMOR!",
 		"I AM GOING TO BREAK YOU IN HALF!",
@@ -362,7 +402,7 @@
 	return 6
 
 // POWER ARMOR VARIANT 2.0
-/mob/living/simple_animal/hostile/renegade/traitor
+/mob/living/simple_animal/hostile/renegade/traitor //while good intentions were there for this mob, it's op. Nerfed it. - Blue
 	name = "Brotherhood of Steel Traitor"
 	desc = "A former Brotherhood of Steel Paladin, now turn coat for the Renegades. You imagine this is who is responsible for the siege."
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
@@ -370,30 +410,27 @@
 	icon_living = "rebound_chosen"
 	icon_dead = "mercenary_ghoul_dead"
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
-	maxHealth = 300
-	health = 300
+	maxHealth = 250
+	health = 250
 	healable = 1
 	melee_damage_lower = 55
 	melee_damage_upper = 60
 	retreat_distance = 4
 	minimum_distance = 2
 	ranged = 1
+	bossmob = TRUE
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	extra_projectiles = 4
-	ranged_cooldown_time = 2 SECONDS
+	extra_projectiles = 3
+	ranged_cooldown_time = 3 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/beam/laser/laer/hitscan
 	projectilesound = 'sound/f13weapons/laerfire.ogg'
-	loot = list(
-		/obj/item/book/granter/trait/pa_wear,
-		/obj/item/stack/f13Cash/random/high,
-		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/stack/sheet/plasteel/five,
-		/obj/effect/spawner/lootdrop/f13/rare_armor
-		)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot_drop_amount = 15
+	loot_amount_random = TRUE
 	speak = list(
 		"Death to the Brotherhood!",
 		"Loyalty doesn't feed my family's bellies!",
@@ -447,11 +484,9 @@
 		)
 	speak_emote = list("says")
 	speak_chance = 1
-	loot = list(
-		/obj/effect/spawner/lootdrop/f13/common_medicine,
-		/obj/item/gun/ballistic/revolver/m29,
-		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
-
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_HEAVY_VOLUME),

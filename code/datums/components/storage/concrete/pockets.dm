@@ -5,6 +5,7 @@
 	max_combined_w_class = STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE * 2
 	max_volume = STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE * 2
 	rustle_sound = TRUE
+	override_flags = ALLOW_ARTIFACT_STUFF
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
@@ -198,6 +199,27 @@
 	max_volume = STORAGE_SUIT_GENERIC_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
 
+/datum/component/storage/concrete/pockets/armor/light
+	max_items = STORAGE_ARMOR_LIGHT_MAX_ITEMS
+	max_w_class = STORAGE_ARMOR_LIGHT_MAX_SIZE
+	max_combined_w_class = STORAGE_ARMOR_LIGHT_MAX_TOTAL_SPACE
+	max_volume = STORAGE_ARMOR_LIGHT_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/armor/medium
+	max_items = STORAGE_ARMOR_MEDIUM_MAX_ITEMS
+	max_w_class = STORAGE_ARMOR_MEDIUM_MAX_SIZE
+	max_combined_w_class = STORAGE_ARMOR_MEDIUM_MAX_TOTAL_SPACE
+	max_volume = STORAGE_ARMOR_MEDIUM_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/armor/heavy
+	max_items = STORAGE_ARMOR_HEAVY_MAX_ITEMS
+	max_w_class = STORAGE_ARMOR_HEAVY_MAX_SIZE
+	max_combined_w_class = STORAGE_QUIVER_HEAVY_TOTAL_SPACE
+	max_volume = STORAGE_QUIVER_HEAVY_TOTAL_SPACE
+	rustle_sound = TRUE
+
 /// scarf
 /datum/component/storage/concrete/pockets/scarf
 	max_items = STORAGE_NECKPRON_GENERIC_MAX_ITEMS
@@ -268,3 +290,10 @@
 	. = ..()
 	can_hold = GLOB.ammobelt_allowed
 	can_hold |= GLOB.gunbelt_allowed
+
+/// Saddle-bags
+/datum/component/storage/concrete/pockets/saddlebag
+	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE

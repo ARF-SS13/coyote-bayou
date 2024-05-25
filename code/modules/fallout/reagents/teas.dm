@@ -11,7 +11,7 @@
 	glass_desc = "A soothing herbal rememedy steeped from the Agave Plant. Inhibits increased healing of burns and sores."
 
 /datum/reagent/consumable/tea/agavetea/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-3*REM, 0)
 	M.nutrition = max(M.nutrition - 3, 0)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
@@ -34,7 +34,7 @@
 	glass_desc = "A soothing herbal rememedy steeped from the Broc Flower. Increases the clearance and flow of airways."
 
 /datum/reagent/consumable/tea/broctea/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-4*REM, 0)
 	M.nutrition = max(M.nutrition - 3, 0)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
@@ -46,15 +46,13 @@
 	..()
 	. = TRUE
 
-
-
 /datum/reagent/consumable/tea/coyotetea
 	name = "Coyote Tea"
 	description = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
 	color = "#008000"
 	nutriment_factor = 0
 	taste_description = "smoke"
-	glass_icon_state = "coyotetea"
+	glass_icon_state = "tea"
 	glass_name = "Coyote Tea"
 	glass_desc = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
 
@@ -65,7 +63,7 @@
 	M.AdjustStun(-40, 0)
 	M.AdjustKnockdown(-40, 0)
 	M.AdjustUnconscious(-40, 0)
-	M.adjustStaminaLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-1*REM, 0)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
 	M.jitteriness = max(0,M.jitteriness-3)
@@ -94,7 +92,7 @@
 		if(R != src)
 			M.reagents.remove_reagent(R.type,2.5)
 	if(M.health > 20)
-		M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-3*REM, 0)
 		. = TRUE
 	M.radiation += 0.1
 	M.dizziness = max(0,M.dizziness-2)
@@ -147,7 +145,7 @@
 /datum/reagent/consumable/tea/xandertea/on_mob_life(mob/living/carbon/M)
 	if(M.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 1)
-	M.adjustToxLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-4*REM, 0)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
 	M.jitteriness = max(0,M.jitteriness-3)

@@ -53,7 +53,7 @@
 		/obj/item/storage/belt/military/snack = ARCADE_WEIGHT_RARE,
 
 		/obj/item/clothing/mask/fakemoustache/italian = ARCADE_WEIGHT_RARE,
-		/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake = ARCADE_WEIGHT_TRICK,
+//		/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake = ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/suit/hooded/wintercoat/narsie/fake = ARCADE_WEIGHT_TRICK
 	)
 	connectable = FALSE

@@ -375,7 +375,7 @@
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
 	if (slot == SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY,PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -779,3 +779,12 @@
 	desc = "A witch hat"
 	icon_state = "nt_witch"
 	item_state = "nt_witch"
+
+/obj/item/clothing/head/hoodcowl
+	name = "Hood cowl"
+	desc = "A dirty, worn-down rag with crudely cut-out eyeholes that barely qualifies as clothing."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "hoodcowl"
+	item_state = "hoodcowl"
+	flags_inv = HIDEHAIR
+	dynamic_hair_suffix = ""

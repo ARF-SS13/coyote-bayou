@@ -103,7 +103,7 @@
 	. = ..()
 	if(can_be_held)
 		//icon/item state is defined in mob_holder/drone_worn_icon()
-		AddElement(/datum/element/mob_holder, null, 'icons/mob/clothing/head.dmi', 'icons/mob/inhands/clothing_righthand.dmi', 'icons/mob/inhands/clothing_lefthand.dmi', INV_SLOTBIT_HEAD, /datum/element/mob_holder.proc/drone_worn_icon)
+		AddElement(/datum/element/mob_holder, null, 'icons/mob/clothing/head.dmi', 'icons/mob/inhands/clothing_righthand.dmi', 'icons/mob/inhands/clothing_lefthand.dmi', INV_SLOTBIT_HEAD, TYPE_PROC_REF(/datum/element/mob_holder,drone_worn_icon))
 
 /mob/living/simple_animal/drone/med_hud_set_health()
 	var/image/holder = hud_list[DIAG_HUD]
@@ -150,7 +150,7 @@
 /mob/living/simple_animal/drone/gib()
 	dust()
 
-/mob/living/simple_animal/drone/ratvar_act()
+/*/mob/living/simple_animal/drone/ratvar_act()
 	if(status_flags & GODMODE)
 		return
 
@@ -164,7 +164,7 @@
 		mind.transfer_to(R, 1)
 	else
 		transfer_ckey(R)
-	qdel(src)
+	qdel(src)*/
 
 
 /mob/living/simple_animal/drone/examine(mob/user)

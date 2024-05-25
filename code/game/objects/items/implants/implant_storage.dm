@@ -34,6 +34,10 @@
 		else
 			pocket = new(target)
 
+/obj/item/implant/storage/Destroy()
+	QDEL_NULL(pocket)
+	. = ..()
+
 /obj/item/storage/bluespace_pocket
 	name = "internal bluespace pocket"
 	icon_state = "pillbox"

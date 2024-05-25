@@ -3,7 +3,7 @@
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
-	volume = 200
+	volume = 400
 	w_class = WEIGHT_CLASS_SMALL
 	reagent_flags = DRAINABLE
 	var/blood_type = null
@@ -112,10 +112,10 @@
 		if(user != C)
 			user.visible_message(span_danger("[user] forces [C] to drink from the [src]."), \
 			span_notice("You force [C] to drink from the [src]"))
-			if(!do_mob(user, C, 50))
+			if(!do_mob(user, C, 5 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 				return
 		else
-			if(!do_mob(user, C, 10))
+			if(!do_mob(user, C, 5 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 				return
 
 			to_chat(user, span_notice("You take a sip from the [src]."))

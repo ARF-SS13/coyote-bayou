@@ -188,7 +188,7 @@
 		name = "\improper [A.name] APC"
 		stat |= MAINT
 		update_icon()
-	addtimer(CALLBACK(src, .proc/update), 5)
+	addtimer(CALLBACK(src,PROC_REF(update)), 5)
 
 	GLOB.apcs_list += src
 
@@ -254,8 +254,8 @@
 		else
 			. += "It's [ !terminal ? "not" : "" ] wired up."
 			. += "The electronics are[!has_electronics?"n't":""] installed."
-		if(user.Adjacent(src) && integration_cog)
-			. += span_warning("[src]'s innards have been replaced by strange brass machinery!")
+/*		if(user.Adjacent(src) && integration_cog)
+			. += span_warning("[src]'s innards have been replaced by strange brass machinery!")*/
 
 	else
 		if (stat & MAINT)
@@ -265,8 +265,8 @@
 		else
 			. += "The cover is closed."
 
-	if(integration_cog && is_servant_of_ratvar(user))
-		. += span_brass("There is an integration cog installed!")
+/*	if(integration_cog && is_servant_of_ratvar(user))
+		. += span_brass("There is an integration cog installed!")*/
 
 	. += span_notice("Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.")
 
@@ -465,7 +465,7 @@
 							span_notice("You remove the power control board."))
 						new /obj/item/electronics/apc(loc)
 						return
-		else if(integration_cog)
+/*		else if(integration_cog)
 			user.visible_message(span_notice("[user] starts prying [integration_cog] from [src]..."), \
 			span_notice("You painstakingly start tearing [integration_cog] out of [src]'s guts..."))
 			W.play_tool_sound(src)
@@ -474,7 +474,7 @@
 				span_notice("[integration_cog] comes free with a clank and snaps in two as the machinery returns to normal!"))
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				QDEL_NULL(integration_cog)
-			return
+			return*/
 		else if (opened!=APC_COVER_REMOVED)
 			opened = APC_COVER_CLOSED
 			coverlocked = TRUE //closing cover relocks it
@@ -683,10 +683,10 @@
 			if (opened==APC_COVER_REMOVED)
 				opened = APC_COVER_OPENED
 			update_icon()
-	else if(istype(W, /obj/item/clockwork/integration_cog) && is_servant_of_ratvar(user))
+/*	else if(istype(W, /obj/item/clockwork/integration_cog) && is_servant_of_ratvar(user))
 		if(integration_cog)
 			to_chat(user, span_warning("This APC already has a cog."))
-			return
+			return*/
 		if(!opened)
 			user.visible_message(span_warning("[user] slices [src]'s cover lock, and it swings wide open!"), \
 			span_alloy("You slice [src]'s cover lock apart with [W], and the cover swings open."))
@@ -698,7 +698,7 @@
 			playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 			if(!do_after(user, 70, target = src))
 				return
-			user.visible_message(span_warning("[user] installs [W] in [src]!"), \
+/*			user.visible_message(span_warning("[user] installs [W] in [src]!"), \
 			"<span class='alloy'>Replicant alloy rapidly covers the APC's innards, replacing the machinery.</span><br>\
 			<span class='brass'>This APC will now passively provide power for the cult!</span>")
 			playsound(user, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
@@ -709,7 +709,7 @@
 			opened = APC_COVER_CLOSED
 			locked = TRUE //Clockies get full APC access on cogged APCs, but they can't lock or unlock em unless they steal some ID to give all of them APC access, soo this is pretty much just QoL for them and makes cogs a tiny bit more stealthy
 			update_icon()
-		return
+		return*/
 	else if(panel_open && !opened && is_wire_tool(W))
 		wires.interact(user)
 	else
@@ -900,7 +900,7 @@
 
 /obj/machinery/power/apc/ui_data(mob/user)
 	var/list/data = list(
-		"locked" = locked && !(integration_cog && is_servant_of_ratvar(user)) && !area.hasSiliconAccessInArea(user, PRIVILEDGES_SILICON|PRIVILEDGES_DRONE),
+		"locked" = locked && !(!area.hasSiliconAccessInArea(user, PRIVILEDGES_SILICON|PRIVILEDGES_DRONE)),
 		"failTime" = failure_timer,
 		"isOperating" = operating,
 		"externalPower" = main_status,
@@ -1011,7 +1011,7 @@
 		. = UI_INTERACTIVE
 
 /obj/machinery/power/apc/ui_act(action, params)
-	if(..() || !can_use(usr, 1) || (locked && !area.hasSiliconAccessInArea(usr, PRIVILEDGES_SILICON|PRIVILEDGES_DRONE) && !failure_timer && action != "toggle_nightshift" && (!integration_cog || !(is_servant_of_ratvar(usr)))))
+	if(..() || !can_use(usr, 1) || (locked && !area.hasSiliconAccessInArea(usr, PRIVILEDGES_SILICON|PRIVILEDGES_DRONE) && !failure_timer && action != "toggle_nightshift"))
 		return
 	switch(action)
 		if("lock")
@@ -1073,7 +1073,7 @@
 			for(var/obj/machinery/light/L in area)
 				if(!initial(L.no_emergency)) //If there was an override set on creation, keep that override
 					L.no_emergency = emergency_lights
-					INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
+					INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light/,update), FALSE)
 				CHECK_TICK
 	return TRUE
 
@@ -1142,7 +1142,7 @@
 		return
 	to_chat(malf, "Beginning override of APC systems. This takes some time, and you cannot perform other actions during the process.")
 	malf.malfhack = src
-	malf.malfhacking = addtimer(CALLBACK(malf, /mob/living/silicon/ai/.proc/malfhacked, src), 600, TIMER_STOPPABLE)
+	malf.malfhacking = addtimer(CALLBACK(malf, TYPE_PROC_REF(/mob/living/silicon/ai/,malfhacked), src), 600, TIMER_STOPPABLE)
 
 	var/atom/movable/screen/alert/hackingapc/A
 	A = malf.throw_alert("hackingapc", /atom/movable/screen/alert/hackingapc)
@@ -1313,7 +1313,7 @@
 	var/environ_satisfied = FALSE
 	var/equipment_satisfied = FALSE
 	var/lighting_satisfied = FALSE
-	
+
 	if(cur_excess >= lastused_environ && environ != 0)
 		autoset(environ, 1)
 		add_load(lastused_environ)
@@ -1462,7 +1462,7 @@
 	environ = 0
 	update_icon()
 	update()
-	addtimer(CALLBACK(src, .proc/reset, APC_RESET_EMP), severity*8)
+	addtimer(CALLBACK(src,PROC_REF(reset), APC_RESET_EMP), severity*8)
 
 /obj/machinery/power/apc/blob_act(obj/structure/blob/B)
 	set_broken()
@@ -1489,7 +1489,7 @@
 		return
 	if( cell && cell.charge>=20)
 		cell.use(20)
-		INVOKE_ASYNC(src, .proc/break_lights)
+		INVOKE_ASYNC(src,PROC_REF(break_lights))
 
 /obj/machinery/power/apc/proc/break_lights()
 	for(var/obj/machinery/light/L in area)

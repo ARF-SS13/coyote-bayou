@@ -248,7 +248,8 @@
 "Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green,
 "thrumbo" = /mob/living/simple_animal/cow/brahmin/thrumbo,
 "tamed triceratops" = /mob/living/simple_animal/cow/brahmin/molerat/trike,
-"tamed yaoguai" = /mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai
+"tamed yaoguai" = /mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai,
+"tractor" = /mob/living/simple_animal/cow/brahmin/motorbike/tractor
 )
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon
@@ -350,9 +351,9 @@
 		"gold club" = /obj/item/twohanded/baseball/golfclub,
 		"sledgehammer" = /obj/item/twohanded/sledgehammer,
 		"chainsaw" = /obj/item/twohanded/chainsaw,
-		"plasma cutter celestia" = /obj/item/melee/transforming/plasmacutter/regular/celestia,
-		"plasma cutter eve" = /obj/item/melee/transforming/plasmacutter/regular/eve,
-		"plasma cutter" = /obj/item/melee/transforming/plasmacutter/regular,
+		"plasma slicer celestia" = /obj/item/melee/transforming/plasmacutter/regular/celestia,
+		"plasma slicer eve" = /obj/item/melee/transforming/plasmacutter/regular/eve,
+		"plasma slicer" = /obj/item/melee/transforming/plasmacutter/regular,
 		"yaoguai gauntlet" = /obj/item/melee/unarmed/yaoguaigauntlet,
 		"frying pan" = /obj/item/melee/onehanded/club/fryingpan,
 		"trench shovel" = /obj/item/shovel/trench,
@@ -371,9 +372,10 @@
 	desc = "Contains your choice of weapon inside!"
 	var/static/list/weapon_list = list(
 		"American 180" = /obj/item/gun/ballistic/automatic/smg/american180,
+		"Mini DP-27" = /obj/item/gun/ballistic/automatic/smg/american180/dp27,
 		"10mm SMG" = /obj/item/gun/ballistic/automatic/smg/smg10mm,
 		"M2 carbine" = /obj/item/gun/ballistic/automatic/m1carbine/m2,
-		"MP5-SD" = /obj/item/gun/ballistic/automatic/smg/mp5,
+		"MP5-SD" = /obj/item/gun/ballistic/automatic/smg/mp5sd,
 		"multicaliber carbine" = /obj/item/gun/ballistic/automatic/smg/sidewinder,
 		"combat carbine" = /obj/item/gun/ballistic/automatic/combat,
 		"service rifle" = /obj/item/gun/ballistic/automatic/service,

@@ -24,19 +24,19 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	var/datum/progressbar/bar = new(owner, can_see, duration, automatic, auto_remove)
 	register_bar(owner, bar)
 	. = bar.bar_id
-	INVOKE_ASYNC(bar, /datum/progressbar.proc/start)
+	INVOKE_ASYNC(bar, TYPE_PROC_REF(/datum/progressbar,start))
 
 /datum/controller/subsystem/processing/progress_bars/proc/remove_bar(bar_id)
 	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
 	if(!istype(bar))
 		return
-	INVOKE_ASYNC(bar, /datum/progressbar.proc/stop)
+	INVOKE_ASYNC(bar, TYPE_PROC_REF(/datum/progressbar,stop))
 
 /datum/controller/subsystem/processing/progress_bars/proc/update_bar(bar_id, number)
 	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
 	if(!istype(bar))
 		return FALSE
-	INVOKE_ASYNC(bar, /datum/progressbar.proc/update, number)
+	INVOKE_ASYNC(bar, TYPE_PROC_REF(/datum/progressbar,update), number)
 	return number
 
 /datum/controller/subsystem/processing/progress_bars/proc/check_bar(bar_id)
@@ -92,7 +92,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 		return
 	for(var/datum/weakref/weakbar in ckey_proglist[the_ckey])
 		var/datum/progressbar/bar = RESOLVEWEAKREF(weakbar)
-		INVOKE_ASYNC(bar, /datum/progressbar.proc/show_bar)
+		INVOKE_ASYNC(bar, TYPE_PROC_REF(/datum/progressbar,show_bar))
 	return TRUE
 
 /// When a client who is supposed to see this connects, we need to show it to their client
@@ -120,7 +120,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 		var/datum/progressbar/bar = LAZYACCESS(progbars, barid)
 		if(!bar)
 			continue
-		INVOKE_ASYNC(bar, /datum/progressbar.proc/update_position, get_bar_index(owner, barid))
+		INVOKE_ASYNC(bar, TYPE_PROC_REF(/datum/progressbar,update_position), get_bar_index(owner, barid))
 
 #define BAR_MASTER var/atom/master = display_loc?.resolve();if(!master ||(master && QDELETED(master))){master_deleted(); return}
 #define PROGRESSBAR_HEIGHT 6
@@ -165,7 +165,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	display_loc = WEAKREF(location)
 	generate_bar_id()
 	register_visibility(can_see)
-	RegisterSignal(location, COMSIG_PARENT_QDELETING, .proc/master_deleted)
+	RegisterSignal(location, COMSIG_PARENT_QDELETING,PROC_REF(master_deleted))
 
 /datum/progressbar/proc/register_visibility(list/can_see)
 	if(!LAZYLEN(can_see) || SSprogress_bars.debug_make_visible_to_everyone) // heh
@@ -267,7 +267,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	// var/turf/right_here = get_turf(master)
 	// display_loc = WEAKREF(right_here)
 	// bar.loc = right_here
-	INVOKE_ASYNC(src, .proc/stop)
+	INVOKE_ASYNC(src,PROC_REF(stop))
 
 /// Generates a unique ID for the progress bar.
 /// I mean the time of day is unique enough, but I like big dumb numbers

@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(timeddoor_list)
 
 /obj/structure/timeddoor/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/timeddeletedoor), deletion_time)
+	addtimer(CALLBACK(src,PROC_REF(timeddeletedoor)), deletion_time)
 
 /obj/structure/timeddoor/proc/timeddeletedoor()
 	announce_fall()

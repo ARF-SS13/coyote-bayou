@@ -71,7 +71,7 @@
 		if(!over_object)
 			return
 
-		if(!M.incapacitated())
+		if(!M.incapacitated(allow_crit = TRUE))
 
 			if(istype(over_object, /atom/movable/screen/inventory/hand))
 				var/atom/movable/screen/inventory/hand/H = over_object
@@ -228,8 +228,8 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	var/settings = 1
 
 /obj/item/pneumatic_cannon/rockitlauncher/Initialize()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
 
 	if(istype(loc, /obj/item/rockitlauncher_pack)) //We should spawn inside an ammo pack so let's use that one.
 		ammo_pack = loc

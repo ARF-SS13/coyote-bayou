@@ -71,9 +71,13 @@ export const PersonalCrafting = (props, context) => {
           </Dimmer>
         )}
         <Section
-          title="If materials fail to register; switch categories and try again."
+          title="Manual refreshes may be needed."
           buttons={(
             <Fragment>
+              <Button
+                icon="cog"
+                content="Refresh"
+                onClick={() => act('update_static')} />
               <Button.Checkbox
                 content="Compact"
                 checked={display_compact}
@@ -104,7 +108,7 @@ export const PersonalCrafting = (props, context) => {
               </Tabs>
             </Flex.Item>
             <Flex.Item grow={1} basis={0}>
-              <CraftingList craftables={shownRecipes} />
+              <CraftingList craftables={shownRecipes} busy={busy} />
             </Flex.Item>
           </Flex>
         </Section>
@@ -116,6 +120,7 @@ export const PersonalCrafting = (props, context) => {
 const CraftingList = (props, context) => {
   const {
     craftables = [],
+    busy,
   } = props;
   const { act, data } = useBackend(context);
   const {
@@ -138,7 +143,7 @@ const CraftingList = (props, context) => {
             <Button
               icon="cog"
               content="Craft"
-              disabled={!craftability[craftable.ref]}
+              disabled={!craftability[craftable.ref] || busy}
               tooltip={craftable.tool_text && (
                 'Tools needed: ' + craftable.tool_text
               )}

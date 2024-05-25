@@ -153,7 +153,7 @@
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.5
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.3
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /*
@@ -283,7 +283,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = BULLET_DAMAGE_RIFLE_473 * 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot")
 
 /* 4.73 explosive
  * DAMAGE: 15
@@ -584,6 +584,19 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_308_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
+/* 7.62mm simple mob projectile
+ * DAMAGE: 45
+ * STAMIN: 45
+ * RECOIL: 2
+ * WOUNDS: 25
+ * WNAKED: 15
+ */
+/obj/item/projectile/bullet/a308/improvised/simple //for simple mobs, separate to allow balancing
+	name = ".308 bullet"
+	damage_list = list("22" = 40, "28" = 45, "45" = 30, "48" = 5, "50" = 3, "55" = 2)
+	spread = BULLET_SPREAD_HANDLOAD*15 //30 degree firing arc, might miss at long range
+	pixels_per_second = BULLET_SPEED_PISTOL_45ACP_HANDLOAD * 0.7
+
 /* 7.62mm rubber
  * DAMAGE: 4.5
  * STAMIN: 135
@@ -631,17 +644,6 @@
 
 	embed_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	embedding = list(embed_chance=12, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.3, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a762/microshrapnel)
-
-/* 7.62mm simple
- * DAMAGE: 45
- * STAMIN: 45
- * RECOIL: 2
- * WOUNDS: 25
- * WNAKED: 15
- */
-/obj/item/projectile/bullet/a762/sport/simple //for simple mobs, separate to allow balancing
-	name = ".308 bullet"
-	damage_list = list("22" = 40, "28" = 45, "45" = 30, "48" = 5, "50" = 3, "55" = 2)
 
 /*
 /obj/item/projectile/bullet/a762/uraniumtipped
@@ -701,33 +703,43 @@
 	sharpness = SHARP_NONE
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
+/obj/item/projectile/bullet/heavyneedle //Heavy duty PVE-PVP round. 65 damage. superb bane, used with very low capacity needle guns. Think 1-4 capacity firearms.
+	name = " Ruby needle shard"
+	icon_state = "heavyneedle"
+	damage = BULLET_DAMAGE_RIFLE_HEAVYNEEDLE
+	damage_list = list("65" = 55, "70" = 15, "75" = 0.5)
+	stamina = BULLET_STAMINA_RIFLE_50MG
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_50MG
+
+	wound_bonus = BULLET_WOUND_RIFLE_50MG
+	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	pixels_per_second = BULLET_SPEED_RIFLE_50MG
+
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	supereffective_damage = 90
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /////////
 // .50 //
 /////////
 
 /* * * * * * * *
- * Heavy Rifle Bullet
- * Match
- * Surplus
- * Improvised
- * Incendiary
- * Explosive
- * Rubber
- * Penetrator
- * Poison
- * * * * * * * */
-
-/* .50MG Match
- * DAMAGE: 93
- * STAMIN: 140
- * RECOIL: 2
- * WOUNDS: 50
- * WNAKED: 30
- */
+* Heavy Rifle Bullet
+* Match
+* Surplus
+* Improvised
+* Incendiary
+* Explosive
+* Rubber
+* Penetrator
+* Poison
+* * * * * * * */
 /obj/item/projectile/bullet/a50MG
 	name = ".50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG //75
-	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 5)
+	damage_list = list("85" = 15, "96" = 55, "110" = 15, "120" = 10, "140" = 5)
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_50MG
@@ -738,10 +750,6 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
-// Bane, handloads don't get it because you went cheap. Loser.
-	supereffective_damage = 95 // SPECIFICALLY 95 because 60 (min damage) + 95 (bane damage) = 155 (total min+bane damage) - 35% (combat armor value) = 100.75 
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* .50MG surplus
  * DAMAGE: 75
@@ -1157,7 +1165,7 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
 	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH // hmm
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	/// Reduces damage by this much when it hits a thing
 	var/per_wall_mult = 0.8
 

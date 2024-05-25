@@ -2976,7 +2976,7 @@
 /turf/open/transparent/openspace,
 /area/f13/building)
 "cIz" = (
-/obj/item/flashlight/seclite{
+/obj/item/flashlight{
 	pixel_x = 5;
 	pixel_y = -2
 	},
@@ -8020,7 +8020,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 20;
 	on = 1;
 	light_on = 1;
@@ -8542,7 +8542,7 @@
 	dir = 1
 	},
 /obj/structure/closet/fridge,
-/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -10856,7 +10856,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -14044,7 +14044,7 @@
 /area/f13/building/mall)
 "mKv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -15091,7 +15091,7 @@
 /obj/structure/closet/cabinet/anchored{
 	pixel_y = 10
 	},
-/obj/item/twohanded/spear/bonespear/deathclaw,
+/obj/item/twohanded/spear/bonespear/aethergiest,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "nKT" = (
@@ -16316,7 +16316,7 @@
 /area/f13/building/massfusion)
 "oQQ" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -16334,8 +16334,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/hospital)
 "oRw" = (
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/pill/patch/medx,
+/obj/item/reagent_containers/pill/patch/medx,
 /obj/structure/closet/cabinet/anchored{
 	pixel_y = 10
 	},
@@ -16875,7 +16875,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "pwS" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -17372,7 +17372,7 @@
 /area/f13/building/abandoned)
 "pXT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "pXV" = (
@@ -17425,7 +17425,7 @@
 /area/f13/wasteland)
 "pZa" = (
 /obj/structure/junk/cabinet,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_x = -1
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -18567,7 +18567,7 @@
 /area/f13/building/mall)
 "rdm" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -19727,7 +19727,7 @@
 	},
 /area/f13/building)
 "rWI" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	on = 1;
 	light_on = 1;
 	icon_state = "lantern-on";
@@ -23767,7 +23767,7 @@
 /area/f13/building)
 "vYF" = (
 /obj/structure/table,
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 20;
 	on = 1;
 	light_on = 1;

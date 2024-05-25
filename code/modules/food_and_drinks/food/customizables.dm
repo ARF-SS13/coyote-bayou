@@ -335,8 +335,7 @@
 /obj/item/reagent_containers/glass/bowl/update_overlays()
 	. = ..()
 	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state)
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state, color = mix_color_from_reagents(reagents.reagent_list))
 		. += filling
 
 #undef INGREDIENTS_FILL

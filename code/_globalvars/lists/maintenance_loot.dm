@@ -218,10 +218,10 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/reagent_containers/pill/patch/turbo = 1,
 	/obj/item/reagent_containers/pill/healingpowder = 10,
 	/obj/item/reagent_containers/pill/stimulant = 1,
-	/obj/item/reagent_containers/hypospray/medipen/medx = 5,
+	/obj/item/reagent_containers/pill/patch/medx = 5,
 	/obj/item/storage/pill_bottle/chem_tin/buffout = 5,
-	/obj/item/reagent_containers/hypospray/medipen/steady = 5,
-	/obj/item/reagent_containers/hypospray/medipen/psycho = 5,
+	/obj/item/reagent_containers/pill/patch/steady = 5,
+	/obj/item/reagent_containers/pill/patch/psycho = 5,
 	/obj/item/storage/pill_bottle/chem_tin/mentats = 5,
 	/obj/item/storage/pill_bottle/chem_tin/mentats/grape = 1,
 	/obj/item/storage/pill_bottle/chem_tin/mentats/orange = 1,
@@ -323,17 +323,6 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/laser_pointer = 5
 ))
 
-GLOBAL_LIST_INIT(trash_attachment, list(
-	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
-	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
-	/obj/item/tool_upgrade/refinement/laserguide = 1,
-	/obj/item/tool_upgrade/productivity/booster = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 2
-))
-
 GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_chem +\
 	GLOB.trash_clothing +\
@@ -342,8 +331,7 @@ GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_misc +\
 	GLOB.trash_mob +\
 	GLOB.trash_part +\
-	GLOB.trash_tool +\
-	GLOB.trash_attachment)
+	GLOB.trash_tool)
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/under/overalls,
@@ -492,8 +480,8 @@ GLOBAL_LIST_INIT(loot_medical_drug, list(
 	/obj/item/reagent_containers/pill/patch/turbo,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/reagent_containers/pill/stimulant,
-	/obj/item/reagent_containers/hypospray/medipen/medx,
-	/obj/item/reagent_containers/hypospray/medipen/steady
+	/obj/item/reagent_containers/pill/patch/medx,
+	/obj/item/reagent_containers/pill/patch/steady
 ))
 
 GLOBAL_LIST_INIT(loot_t1_melee, list(
@@ -558,7 +546,7 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
 	/obj/item/melee/unarmed/powerfist,
-	/obj/item/melee/unarmed/deathclawgauntlet,
+	/obj/item/melee/unarmed/aethergiestgauntlet,
 	/obj/item/melee/unarmed/powerfist/moleminer
 ))
 
@@ -655,7 +643,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/brush,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/rifle/mag/antimateriel,
+	/obj/item/gun/ballistic/rifle/mag/antimaterial,
 	/obj/item/ammo_box/magazine/amr,
 	/obj/item/gun/ballistic/revolver/m2405,
 	/obj/item/ammo_box/rev308,
@@ -951,26 +939,6 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 	/obj/item/advanced_crafting_components/receiver,
 	/obj/item/advanced_crafting_components/assembly,
 	/obj/item/advanced_crafting_components/alloys
-))
-
-GLOBAL_LIST_INIT(loot_attachment, list(
-	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
-	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
-	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
-	/obj/item/tool_upgrade/refinement/laserguide = 1,
-	/obj/item/tool_upgrade/productivity/booster = 1,
-//	/obj/item/tool_upgrade/productivity/red_paint = 1
-))
-
-GLOBAL_LIST_INIT(loot_attachment_advanced, list(
-	/obj/item/gun_upgrade/scope/killer = 2,
-	/obj/item/gun_upgrade/barrel/mag_accel = 2,
-	/obj/item/tool_upgrade/reinforcement/plasmablock = 2,
-	/obj/item/tool_upgrade/refinement/stabilized_grip = 2,
-	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
-	/obj/item/tool_upgrade/productivity/motor = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

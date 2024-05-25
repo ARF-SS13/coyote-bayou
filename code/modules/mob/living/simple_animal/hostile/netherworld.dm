@@ -62,8 +62,8 @@
 	gold_core_spawnable = NO_SPAWN
 	health = 100
 	maxHealth = 100
-	melee_damage_lower = 5
-	melee_damage_upper = 10
+	melee_damage_lower = 25
+	melee_damage_upper = 35
 	attack_verb_continuous = "punches"
 	attack_verb_simple = "punch"
 	deathmessage = "falls apart into a fine dust."
@@ -76,7 +76,6 @@
 	spawn_time = 600 //1 minute
 	max_mobs = 15
 	icon = 'icons/mob/nest.dmi'
-	spawn_text = "crawls through"
 	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo, /mob/living/simple_animal/hostile/netherworld, /mob/living/simple_animal/hostile/netherworld/blankbody)
 	faction = list("nether")
 

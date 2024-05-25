@@ -1,3 +1,100 @@
+// Different Paint!
+
+/datum/crafting_recipe/paint/redreroll
+	name = "Re-roll Red Paint"
+	result = /obj/item/gun_upgrade/paint/red
+	reqs = list(/obj/item/gun_upgrade/paint/red = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/bluereroll
+	name = "Re-roll Blue Paint"
+	result = /obj/item/gun_upgrade/paint/blue
+	reqs = list(/obj/item/gun_upgrade/paint/blue = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/yellowreroll
+	name = "Re-roll Yellow Paint"
+	result = /obj/item/gun_upgrade/paint/yellow
+	reqs = list(/obj/item/gun_upgrade/paint/yellow = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/orangereroll
+	name = "Re-roll Orange Paint"
+	result = /obj/item/gun_upgrade/paint/orange
+	reqs = list(/obj/item/gun_upgrade/paint/orange = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/purplereroll
+	name = "Re-roll Purple Paint"
+	result = /obj/item/gun_upgrade/paint/purple
+	reqs = list(/obj/item/gun_upgrade/paint/purple = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/greenreroll
+	name = "Re-roll Green Paint"
+	result = /obj/item/gun_upgrade/paint/green
+	reqs = list(/obj/item/gun_upgrade/paint/green = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/blackreroll
+	name = "Re-roll Black Paint"
+	result = /obj/item/gun_upgrade/paint/black
+	reqs = list(/obj/item/gun_upgrade/paint/black = 2)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/orange
+	name = "Orange Paint"
+	result = /obj/item/gun_upgrade/paint/orange
+	reqs = list(/obj/item/gun_upgrade/paint/red = 1,
+				/obj/item/gun_upgrade/paint/yellow = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/purple
+	name = "Purple Paint"
+	result = /obj/item/gun_upgrade/paint/purple
+	reqs = list(/obj/item/gun_upgrade/paint/red = 1,
+				/obj/item/gun_upgrade/paint/blue = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/green
+	name = "Green Paint"
+	result = /obj/item/gun_upgrade/paint/green
+	reqs = list(/obj/item/gun_upgrade/paint/blue = 1,
+				/obj/item/gun_upgrade/paint/yellow = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+/datum/crafting_recipe/paint/black
+	name = "Black Paint"
+	result = /obj/item/gun_upgrade/paint/black
+	reqs = list(/obj/item/gun_upgrade/paint/orange = 1,
+				/obj/item/gun_upgrade/paint/purple = 1,
+				/obj/item/gun_upgrade/paint/green = 1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+
+// End of Paint!
+
 /datum/crafting_recipe/twohanded/spear
 	name = "Spear"
 	result = /obj/item/twohanded/spear
@@ -132,16 +229,18 @@
 ///////////////
 
 /datum/crafting_recipe/ecrecharge
-	name = "Small Energy Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ec/recycled
-	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
+	name = "Small Energy Cell (medium quality)"
+	result = /obj/item/stock_parts/cell/ammo/ec
+	reqs = list(/obj/item/stock_parts/cell/ammo/ec/bad=1,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 8
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/ecbad
-	name = "Small Energy Cell (craft)"
+	name = "Small Energy Cell (low quality)"
 	result = /obj/item/stock_parts/cell/ammo/ec/bad
 	reqs = list(/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/electronicparts = 1,
@@ -153,82 +252,86 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/enhancedenergycell
-	name = "Enhanced Energy Cell"
+	name = "Enhanced Energy Cell (high quality)"
 	result = /obj/item/stock_parts/cell/ammo/ec/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
 				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
-	time = 80
+	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/mfcrecharge
-	name = "Microfusion Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/mfc/recycled
-	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
+	name = "Microfusion Cell (medium quality)"
+	result = /obj/item/stock_parts/cell/ammo/mfc
+	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=1,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 8
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/mfcbad
-	name = "Microfusion Cell (craft)"
+	name = "Microfusion Cell (low quality)"
 	result = /obj/item/stock_parts/cell/ammo/mfc/bad
 	reqs = list(/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/crafting/electronicparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 4 //you're hastily putting it together - blue
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/enhancedmfcell
-	name = "Enhanced Microfusion Cell"
+	name = "Enhanced Microfusion Cell (high quality)"
 	result = /obj/item/stock_parts/cell/ammo/mfc/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
 				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
-	time = 80
+	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/ecprecharge
-	name = "Electron Charge Pack (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ecp/recycled
-	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
+	name = "Electron Charge Pack (medium quality)"
+	result = /obj/item/stock_parts/cell/ammo/ecp
+	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=1,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 8
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/ecpbad
-	name = "Electron Charge Pack (craft)"
+	name = "Electron Charge Pack (low quality)"
 	result = /obj/item/stock_parts/cell/ammo/ecp/bad
 	reqs = list(/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/electronicparts = 2,
 				/obj/item/stack/crafting/metalparts = 2) //These CAN be used to craft enhanced cells
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 4
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/enhancedecp
-	name = "Enhanced Electron Charge Pack"
+	name = "Enhanced Electron Charge Pack (high quality)"
 	result = /obj/item/stock_parts/cell/ammo/ecp/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp = 1, //Don't wanna require 2 cells just to condense them down to 1 slot for not much other benefit.
 				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
-	time = 80
+	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 	always_available = FALSE
@@ -939,8 +1042,7 @@
 /datum/crafting_recipe/ratling_gun
 	name = "Ratling gun"
 	result = /obj/item/gun/ballistic/automatic/ratling_gun
-	reqs = list(/obj/item/gun_upgrade/barrel/forged = 5,
-				/obj/item/stack/crafting/metalparts = 2,
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stock_parts/manipulator/pico = 3,
 				/obj/item/stack/sheet/bronze = 10)
@@ -1079,7 +1181,6 @@
 	reqs = list(/obj/item/gun/ballistic/automatic/assault_rifle = 1,
 				/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/gun_upgrade/muzzle/silencer = 1,
 				/obj/item/stack/sheet/plastic = 3,
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -1190,8 +1291,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
-				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/gun_upgrade/scope/watchman = 1
+				/obj/item/stack/crafting/goodparts = 5
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -1518,7 +1618,7 @@
 //scrap tg laser
 /datum/crafting_recipe/scraplaser
 	name = "improvised laser"
-	result = /obj/item/gun/energy/laser/tg/scrap
+	result = /obj/item/gun/energy/laser/cranklasergun/tg
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/goodparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3
@@ -1648,8 +1748,8 @@
 
 //AM rifle
 /datum/crafting_recipe/am_rifle
-	name = "Anti-Materiel Rifle"
-	result = /obj/item/gun/ballistic/rifle/mag/antimateriel
+	name = "Anti-material Rifle"
+	result = /obj/item/gun/ballistic/rifle/mag/antimaterial
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
@@ -1822,8 +1922,8 @@
 ///GUN ATTACHMENT/PARTS CRAFTING//
 //////////////////////////////////
 /datum/crafting_recipe/scope
-	name = "ACOG Scope"
-	result = /obj/item/gun_upgrade/scope/watchman
+	name = "Reflex Sight"
+	result = /obj/item/gun_upgrade/sightone
 	reqs = list(
 				/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/glass = 3,
@@ -1835,7 +1935,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-
+/*
 /datum/crafting_recipe/suppressor
 	name = "Silencer"
 	result = /obj/item/gun_upgrade/muzzle/silencer
@@ -1850,10 +1950,10 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-
+*/
 /datum/crafting_recipe/ergonomic_grip
 	name = "Ergonomic Grip"
-	result = /obj/item/tool_upgrade/productivity/ergonomic_grip
+	result = /obj/item/gun_upgrade/gripone
 	reqs = list(
 				/obj/item/stack/sheet/plastic = 5,
 				/obj/item/stack/sheet/leather = 2
@@ -1864,23 +1964,9 @@
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
-/datum/crafting_recipe/metal_guard
-	name = "Metal Guard"
-	result = /obj/item/tool_upgrade/reinforcement/guard
-	reqs = list(
-				/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/crafting/goodparts = 5
-				)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
 /datum/crafting_recipe/forged_barrel
 	name = "Forged Barrel"
-	result = /obj/item/gun_upgrade/barrel/forged
+	result = /obj/item/gun_upgrade/barrelone
 	reqs = list(
 				/obj/item/stack/sheet/mineral/titanium = 5,
 				/obj/item/stack/crafting/metalparts = 5,
@@ -1893,142 +1979,14 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/booster
-	name = "Booster Chip"
-	result = /obj/item/tool_upgrade/productivity/booster
+	name = "Reinforced Energy Pumps"
+	result = /obj/item/gun_upgrade/chipone
 	reqs = list(
 				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/stack/sheet/plastic = 5,
 				/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/heatsink
-	name = "Heatsink"
-	result = /obj/item/tool_upgrade/reinforcement/heatsink
-	reqs = list(
-				/obj/item/stack/crafting/electronicparts = 2,
-				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/cable_coil = 5
-	)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/laserguide
-	name = "Laser Guide"
-	result = /obj/item/tool_upgrade/refinement/laserguide
-	reqs = list(
-				/obj/item/laser_pointer = 1,
-				/obj/item/crafting/duct_tape = 1
-	)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/gigalens
-	name = "GigaLens"
-	result = /obj/item/gun_upgrade/barrel/excruciator
-	reqs = list(
-				/obj/item/advanced_crafting_components/lenses = 1,
-				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/advanced_crafting_components/flux = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/battshunt
-	name = "Poseidon Quantum Injection Electro-shunt"
-	result = /obj/item/gun_upgrade/mechanism/battery_shunt
-	reqs = list(
-				/obj/item/advanced_crafting_components/flux = 2,
-				/obj/item/stack/sheet/mineral/gold = 3,
-				/obj/item/tool_upgrade/productivity/booster = 1,
-				/obj/item/stock_parts/capacitor/adv = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/overdrivemod
-	name = "REPCONN overdrive chip"
-	result = /obj/item/gun_upgrade/mechanism/overdrive
-	reqs = list(
-				/obj/item/stack/sheet/mineral/uranium = 2,
-				/obj/item/stock_parts/capacitor/adv = 1,
-				/obj/item/stack/sheet/mineral/gold = 1,
-				/obj/item/tool_upgrade/productivity/booster = 1,
-				/obj/item/advanced_crafting_components/flux = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/*/datum/crafting_recipe/overshootermod
-	name = "Extended internal magazine kit"
-	result = /obj/item/gun_upgrade/mechanism/overshooter
-	reqs = list(
-				/obj/item/stack/sheet/mineral/titanium = 5,
-				/obj/item/advanced_crafting_components/alloys = 1,
-				/obj/item/stock_parts/matter_bin/super = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE*/
-
-/datum/crafting_recipe/ai_tool
-	name = "Vault-Tec Integrated ZAX module"
-	result = /obj/item/tool_upgrade/augment/ai_tool
-	reqs = list (
-				/obj/item/gun_upgrade/mechanism/overdrive = 1,
-				/obj/item/stack/sheet/bluespace_crystal = 1,
-				/obj/item/stock_parts/scanning_module/triphasic = 1,
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/coolant
-	name = "Coolant Coil"
-	result = /obj/item/tool_upgrade/reinforcement/plasmablock
-	reqs = list(
-				/obj/item/advanced_crafting_components/conductors = 1,
-				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/advanced_crafting_components/alloys = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_PARTS
-	always_available = FALSE
-
-/datum/crafting_recipe/coolant
-	name = "Full Auto Kit"
-	result = /obj/item/gun_upgrade/mechanism/weintraub
-	reqs = list(
-				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/advanced_crafting_components/assembly = 1
-	)
-	tools = list(TOOL_AWORKBENCH)
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS

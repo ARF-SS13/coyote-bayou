@@ -25,6 +25,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	//initialize limbs first
 	create_bodyparts()
 
+
 	//initialize dna. for spawned humans; overwritten by other code
 	create_dna(src)
 	randomize_human(src, TRUE, TRUE)
@@ -44,7 +45,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(CONFIG_GET(flag/disable_stambuffer))
 		enable_intentional_sprint_mode()
 
-	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
+	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, TYPE_PROC_REF(/atom,clean_blood))
 	GLOB.human_list += src
 	// var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
 	// pornHud.add_to_hud(src)
@@ -58,7 +59,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text/carbon, _name = "Flavor Text", _save_key = "flavor_text")
 	AddElement(/datum/element/flavor_text, "", "Set Pose/Leave OOC Message", "This should be used only for things pertaining to the current round!")
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
-	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS, .proc/signal_update_genitals)
+	AddElement(/datum/element/flavor_text, _name = "Background Info Notes", _addendum = "Put information about your character's background!", _always_show = TRUE, _save_key = "background_info_notes", _examine_no_preview = TRUE)
+	AddElement(/datum/element/flavor_text, _name = "F-list link", _always_show = FALSE, _save_key = "flist", _examine_no_preview = TRUE, _attach_internet_link = TRUE)
+	AddElement(/datum/element/mob_holder, "corgi")
+	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS,PROC_REF(signal_update_genitals))
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
@@ -232,7 +236,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	..()
 	var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
-		INVOKE_ASYNC(MB, /mob/living/simple_animal/bot/mulebot/.proc/RunOver, src)
+		INVOKE_ASYNC(MB, TYPE_PROC_REF(/mob/living/simple_animal/bot/mulebot/,RunOver), src)
 
 	spreadFire(AM)
 
@@ -240,10 +244,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)
@@ -355,7 +356,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if(!LAZYLEN(tattoo_words))
 			to_chat(usr, span_alert("You can't seem to make anything out on [src]!"))
 			return
-		to_chat(usr, span_notice("[jointext(tattoo_words, "<br>")]"))		
+		to_chat(usr, span_notice("[jointext(tattoo_words, "<br>")]"))
 
 ///////HUDs///////
 	if(href_list["hud"])
@@ -600,7 +601,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)
 				undershirt = new_shirt
-				saved_undershirt = new_shirt
 				show_message(span_notice("You put on a new [new_shirt]!"))
 				update_body(TRUE)
 			else
@@ -615,11 +615,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("shirt_toggle")
+			toggle_undies_visibility(PHUD_SHIRT)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("shirt_oversuit")
+			undershirt_oversuit = undershirt_oversuit+1
+			if(undershirt_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				undershirt_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 		if("undies")
 			var/new_undies = input(usr, "Select some new undies!", "Changing") as null|anything in GLOB.underwear_list
 			if(new_undies)
 				underwear = new_undies
-				saved_underwear = new_undies
 				show_message(span_notice("You put on a new pair of [new_undies]!"))
 				update_body(TRUE)
 			else
@@ -634,11 +643,20 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("undies_toggle")
+			toggle_undies_visibility(PHUD_PANTS)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("undies_oversuit")
+			underwear_oversuit = underwear_oversuit+1
+			if(underwear_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				underwear_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 		if("socks")
 			var/new_sox = input(usr, "Select some socks!", "Changing") as null|anything in GLOB.socks_list
 			if(new_sox)
 				socks = new_sox
-				saved_socks = new_sox
 				show_message(span_notice("You put on a new pair of [new_sox]!"))
 				update_body(TRUE)
 			else
@@ -653,11 +671,22 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				show_message(span_notice("Nevermind!"))
 			show_underwear_panel()
+		if("socks_toggle")
+			toggle_undies_visibility(PHUD_SOCKS)
+			update_body(TRUE)
+			show_underwear_panel()
+		if("socks_oversuit")
+			socks_oversuit = socks_oversuit+1
+			if(socks_oversuit > UNDERWEAR_OVER_EVERYTHING)
+				socks_oversuit = UNDERWEAR_UNDER_CLOTHES
+			update_body(TRUE)
+			show_underwear_panel()
 
 // I see athens, I see greece, I see src's /datum/sprite_accessory/underwear/bottom/briefs
 /mob/living/carbon/human/proc/show_underwear_panel()
 	var/list/dat = list()
-	dat += {"<a 
+	var/datum/preferences/P = client?.prefs
+	dat += {"<a
 				class='clicky'
 				href='
 					?src=[REF(src)];
@@ -673,70 +702,112 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "<tr class='undies_row'>"
 	dat += "<td class='undies_cell'>"
 	dat += "<div class='undies_label'>Topwear</div>"
-	dat += {"<a 
-				class='undies_link' 
+	dat += {"<a
+				class='undies_link'
 				href='
 					?src=[REF(src)];
 					action=shirt'>
 						[undershirt]
 			</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[shirt_color]' 
+					background-color:#[shirt_color]'
 				href='
 					?src=[REF(src)];
 					action=shirt_color'>
 					[shirt_color]
 			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=shirt_toggle'>
+					[hidden_undershirt ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=shirt_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, undershirt_oversuit + 1)]
+			</a>"}
 	dat += "</td>"
 	dat += "</tr><tr class='undies_row'>"
 	dat += "<td class='undies_cell'>"
 	dat += "<div class='undies_label'>Bottomwear</div>"
-	dat += {"<a 
-				class='undies_link' 
+	dat += {"<a
+				class='undies_link'
 				href='
 					?src=[REF(src)];
 					action=undies'>
 						[underwear]
 			</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[undie_color]' 
+					background-color:#[undie_color]'
 				href='
 					?src=[REF(src)];
 					action=undies_color'>
 						[undie_color]
 			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=undies_toggle'>
+					[hidden_underwear ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=undies_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, underwear_oversuit + 1)]
+			</a>"}
 	dat += "</td>"
 	dat += "</tr><tr class='undies_row'>"
 	dat += {"<td class='undies_cell'>
 				<div class='undies_label'>Legwear</div>
-				<a 
-					class='undies_link' 
+				<a
+					class='undies_link'
 					href='
 						?src=[REF(src)];
 						action=socks'>
 							[socks]
 				</a>"}
-	dat += {"<a 
+	dat += {"<a
 				class='undies_link'
 				style='
-					background-color:#[socks_color]' 
+					background-color:#[socks_color]'
 				href='
 					?src=[REF(src)];
 					action=socks_color'>
 						[socks_color]
 			</a>"}
-	var/datum/preferences/P = client?.prefs
-	dat += {"<a 
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=socks_toggle'>
+					[hidden_socks ? "Hidden" : "Visible"]
+			</a>"}
+	dat += {"<a
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=socks_oversuit'>
+					[LAZYACCESS(GLOB.undie_position_strings, socks_oversuit + 1)]
+			</a>"}
+	dat += {"<a
 				class='undies_link'
 				href='
 					?src=[REF(src)];
 					action=toggle_underoverhand'>
 						Worn [P?.underwear_overhands ? "over" : "under"] your hands
 			</a>"}
+	dat += "<hr>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
@@ -749,7 +820,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 /mob/living/carbon/human/proc/show_genital_hide_panel()
 	var/list/dat = list()
-	dat += {"<a 
+	dat += {"<a
 				class='clicky'
 				href='
 					?src=[REF(src)];
@@ -761,8 +832,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	dat += "<tr class='talign'><td class='talign'>"
 	dat += "<div class='gen_container'>"
 	dat += "<div class='gen_setting_name'>See Bellies:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -770,8 +841,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BELLY) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Butts:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -779,8 +850,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BUTT) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Breasts:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -788,8 +859,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BOOBS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Vaginas:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -797,8 +868,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_VAG) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Penises:</div>" // everyone can has_cheezburger
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -806,8 +877,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_PENIS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Balls:</div>" // GET UR FUCKIN BURGER
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
@@ -816,8 +887,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Visibility Whitelist:</div>" // BURGER TIME
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=change_genital_whitelist'>
@@ -825,8 +896,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Apply Changes:</div>" // BURGER TIME
-	dat += {"<a 
-				class='clicky' 
+	dat += {"<a
+				class='clicky'
 				href='
 					?src=[REF(src)];
 					action=update_every_fucking_crotch'>
@@ -1057,7 +1128,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			electrocution_skeleton_anim = mutable_appearance(icon, "electrocuted_base")
 			electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
 		add_overlay(electrocution_skeleton_anim)
-		addtimer(CALLBACK(src, .proc/end_electrocution_animation, electrocution_skeleton_anim), anim_duration)
+		addtimer(CALLBACK(src,PROC_REF(end_electrocution_animation), electrocution_skeleton_anim), anim_duration)
 
 	else //or just do a generic animation
 		flick_overlay_view(image(icon,src,"electrocuted_generic",ABOVE_MOB_LAYER), src, anim_duration)
@@ -1067,7 +1138,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	cut_overlay(MA)
 
 /mob/living/carbon/human/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting = TRUE)
-	if(incapacitated() || (check_resting && !CHECK_MOBILITY(src, MOBILITY_STAND)))
+	// if(incapacitated() || (check_resting && !CHECK_MOBILITY(src, MOBILITY_STAND)))
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(!Adjacent(M) && (M.loc != src))
@@ -1102,7 +1174,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		return
 	else
 		if(hud_used.healths)
-			var/health_amount = min(health, maxHealth - clamp(getStaminaLoss()-50, 0, 80))//CIT CHANGE - makes staminaloss have less of an impact on the health hud
+			var/health_amount = min(health, maxHealth/*  - clamp(getStaminaLoss()-50, 0, 80) */)//CIT CHANGE - makes staminaloss have less of an impact on the health hud // LAGG CHANGE - removed stamina loss from health hud
 			if(..(health_amount)) //not dead
 				switch(hal_screwyhud)
 					if(SCREWYHUD_CRIT)
@@ -1327,16 +1399,16 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src, required_mobility_flags = MOBILITY_STAND))
 			if(can_piggyback(target))
-				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
+				if(target.incapacitated(FALSE, TRUE, allow_crit = TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return
-				if(dna.features["taur"] != "None")  //if the mount is a taur, then everyone needs -1 hands to piggback ride.
-					if(istype(get_item_by_slot(SLOT_WEAR_SUIT), /obj/item/clothing/suit/armor/taursaddle))  //if the mount is wearing a saddle, then there's no need to use hands at all
+				/*if(dna.features["taur"] != "None" || IsFeral())  //if the mount is a taur, then everyone needs -1 hands to piggback ride.
+					if(istype(get_item_by_slot(SLOT_WEAR_SUIT), /obj/item/clothing/suit/armor/taursaddle) || (locate(/obj/item/clothing/suit/armor/taursaddle) in src))  //if the mount is wearing a saddle, then there's no need to use hands at all
 						buckle_mob(target, TRUE, TRUE, FALSE, 0, 0, FALSE)
 					else
-						buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)
+						buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)*/
 				else
-					buckle_mob(target, TRUE, TRUE, FALSE, 1, 2, FALSE)
+					buckle_mob(target, TRUE, TRUE, FALSE, 0, 0, FALSE)
 		else
 			visible_message(span_warning("[target] fails to climb onto [src]!"))
 	else
@@ -1392,7 +1464,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	var/stambufferinfluence = (bufferedstam*(100/stambuffer))*0.2 //CIT CHANGE - makes stamina buffer influence movedelay
 	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))	//if we want to ignore slowdown from damage, but not from equipment
 		var/health_deficiency = ((maxHealth + stambufferinfluence) - health + (getStaminaLoss()*0.75))//CIT CHANGE - reduces the impact of staminaloss and makes stamina buffer influence it
-		if(health_deficiency >= 40)
+		if(stat)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, (health_deficiency-39) / 65)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying, TRUE, (health_deficiency-39) / 20)
+		else if(health_deficiency >= 40)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, (health_deficiency-39) / 75)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying, TRUE, (health_deficiency-39) / 25)
 		else
@@ -1517,11 +1592,11 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 /mob/living/carbon/human/species/golem/durathread
 	race = /datum/species/golem/durathread
 
-/mob/living/carbon/human/species/golem/clockwork
+/*/mob/living/carbon/human/species/golem/clockwork
 	race = /datum/species/golem/clockwork
 
 /mob/living/carbon/human/species/golem/clockwork/no_scrap
-	race = /datum/species/golem/clockwork/no_scrap
+	race = /datum/species/golem/clockwork/no_scrap*/
 
 /mob/living/carbon/human/species/jelly
 	race = /datum/species/jelly

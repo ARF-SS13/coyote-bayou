@@ -47,8 +47,8 @@
 	amount = 5
 
 GLOBAL_LIST_INIT(metalparts_recipes, list(\
-	new/datum/stack_recipe("broadhead arrow tip", /obj/item/stack/arrowhead/broadhead, 1, 1, 1 SECONDS),\
-	new/datum/stack_recipe("bodkin arrow tip", /obj/item/stack/arrowhead/bodkin, 1, 1, 1 SECONDS),\
+	new/datum/stack_recipe("broadhead arrow tip", /obj/item/stack/arrowhead/broadhead, 1, 1, 25, 1 SECONDS, is_stack = TRUE),\
+	new/datum/stack_recipe("bodkin arrow tip", /obj/item/stack/arrowhead/bodkin, 1, 1, 25, 1 SECONDS, is_stack = TRUE),\
 	))
 
 /obj/item/stack/crafting/metalparts/get_main_recipes()
@@ -69,6 +69,14 @@ GLOBAL_LIST_INIT(metalparts_recipes, list(\
 /obj/item/stack/crafting/goodparts/five
 	amount = 5
 
+GLOBAL_LIST_INIT(goodparts_recipes, list(\
+	new/datum/stack_recipe("split arrow tip", /obj/item/stack/arrowhead/split, 1, 1, 25, 1 SECONDS, is_stack = TRUE)
+	))
+
+/obj/item/stack/crafting/goodparts/get_main_recipes()
+	. = ..()
+	. += GLOB.goodparts_recipes
+
 /obj/item/stack/crafting/electronicparts
 	name = "electronic parts"
 	icon_state = "sheet-electronicparts"
@@ -86,9 +94,11 @@ GLOBAL_LIST_INIT(metalparts_recipes, list(\
 	amount = 5
 
 GLOBAL_LIST_INIT(electronicparts_recipes, list(\
-	new/datum/stack_recipe("ion arrowhead", /obj/item/stack/arrowhead/ion, 1, 1, 1 SECONDS),\
-	))
+	new/datum/stack_recipe("ion arrowhead", /obj/item/stack/arrowhead/ion, 1, 1, 25, 1 SECONDS, is_stack = TRUE), \
+	new/datum/stack_recipe("chameleon mask", /obj/item/clothing/mask/chameleon, 5, 1, 1 SECONDS),\
+	new/datum/stack_recipe("chameleon glasses", /obj/item/clothing/glasses/chameleon, 5, 1, 1 SECONDS),\
 
+	))
 /obj/item/stack/crafting/electronicparts/get_main_recipes()
 	. = ..()
 	. += GLOB.electronicparts_recipes

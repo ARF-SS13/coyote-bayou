@@ -4,7 +4,7 @@
 	invisibility = INVISIBILITY_ABSTRACT
 	density = FALSE
 	stat = DEAD
-	
+
 	//is there a result we want to read from the age gate
 	var/age_gate_result
 
@@ -60,29 +60,21 @@
 				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-	/*
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p>\[ <b>Ready</b> | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
-	*/
 		output += "<p>Please be patient, the game is starting soon!</p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh=1'>(Refresh)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 	else
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
-	if(!IsGuestKey(src.key))
-		output += playerpolls()
+	// if(!IsGuestKey(src.key))
+	// 	output += playerpolls()
 
 	output += "</center>"
 
@@ -185,6 +177,10 @@
 		client.prefs.ShowChoices(src)
 		return 1
 
+	if(href_list["directory"])
+		client.show_character_directory()
+		return 1
+
 	if(href_list["quirkconversion"])
 		SSquirks.ConvertOldQuirklistToNewQuirklist(client.prefs)
 		new_player_panel()
@@ -219,7 +215,7 @@
 
 	if(href_list["refresh_chat"]) //fortuna addition. asset delivery pain
 		client.nuke_chat()
-	
+
 	if(href_list["fit_viewport_lobby"])
 		client.fit_viewport()
 
@@ -231,7 +227,7 @@
 		if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 			to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 			return
-		
+
 		if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
 			to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 			return
@@ -259,7 +255,7 @@
 
 		PreLateChoices()
 
-	if(href_list["join_as_creature"])	
+	if(href_list["join_as_creature"])
 		CreatureSpawn()
 	if(href_list["manifest"])
 		ViewManifest()
@@ -392,18 +388,18 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? No current restrictions on observing, you can spawn in as normal.","Player Setup","Yes","No")
+	// var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? No current restrictions on observing, you can spawn in as normal.","Player Setup","Yes","No")
 
-	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
+	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
 		return FALSE
 
-	if(client.holder && check_rights(R_STEALTH, 0))
-		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
-		if(do_stealth == "Yes")
-			client.stealth()
+	// if(client.holder && check_rights(R_STEALTH, 0))
+	// 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	// 	if(do_stealth == "Yes")
+	// 		client.stealth()
 
 	var/mob/dead/observer/observer = new()
 	spawning = TRUE
@@ -499,7 +495,7 @@
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
 		return FALSE
-	
+
 	if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 		return FALSE
@@ -568,7 +564,7 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(humanc.client)
 			humanc.client.prefs.post_copy_to(humanc)
-	
+
 	if(character.client.prefs.waddle_amount > 0)
 		character.AddComponent(/datum/component/waddling, character.client.prefs.waddle_amount, character.client.prefs.up_waddle_time, character.client.prefs.side_waddle_time)
 
@@ -596,6 +592,36 @@
 		humanc.client.deadmin()
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
 	SSevents.holiday_on_join(humanc)
+
+	if(ishuman(humanc))
+		var/mob/living/carbon/human/H = humanc
+		var/obj/item/suit = H.get_item_by_slot(SLOT_WEAR_SUIT)
+		if(HAS_TRAIT(H, TRAIT_NO_MED_HVY_ARMOR) && (!isnull(suit)))
+			if( suit.armor.melee		> (ARMOR_AVERSION_THRESHOLD_MELEE) || \
+				suit.armor.bullet		> (ARMOR_AVERSION_THRESHOLD_BULLET) || \
+				suit.armor.laser		> (ARMOR_AVERSION_THRESHOLD_LASER) || \
+				suit.armor.damage_threshold	> (ARMOR_AVERSION_THRESHOLD_THRES))
+
+				H.dropItemToGround(suit)
+				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
+
+	character.client.is_in_game = 1
+	spawn(5 MINUTES)
+		if(character?.client?.is_in_game)
+			character?.client?.is_in_game = 2
+
+			for(var/i in GLOB.player_list)
+				if(isliving(i))
+					if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
+						var/obj/item/card/id/selfassign/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.assignment] may be snooping around the county."))
+
+					else if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/pda))
+						var/obj/item/pda/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.ownjob] may be snooping around the county."))
+
+					else
+						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [rank] may be snooping around the county."))
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -698,10 +724,10 @@
 			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
-	if(client.holder && check_rights(R_STEALTH, 0))
-		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
-		if(do_stealth == "Yes")
-			client.stealth()
+	// if(client.holder && check_rights(R_STEALTH, 0))
+	// 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	// 	if(do_stealth == "Yes")
+	// 		client.stealth()
 	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()
@@ -772,7 +798,7 @@
 
 		client.prefs.scars_list["[cur_scar_index]"] = valid_scars
 		client.prefs.save_character()
-		
+
 	// load permanent tattoos
 	if(client.prefs.permanent_tattoos)
 		H.load_all_tattoos(client.prefs.permanent_tattoos)
@@ -785,14 +811,13 @@
 		mind.active = 0					//we wish to transfer the key manually
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
-
-
 	H.name = real_name
 	client.init_verbs()
 	. = H
 	new_character = .
 	if(transfer_after)
 		transfer_character()
+	H.update_pixel_shifting(TRUE)
 
 /mob/dead/new_player/proc/transfer_character()
 	. = new_character

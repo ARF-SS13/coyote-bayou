@@ -22,8 +22,8 @@
 	maxHealth = 75
 	health = 75
 	harm_intent_damage = 18
-	melee_damage_lower = 18
-	melee_damage_upper = 18
+	melee_damage_lower = 24
+	melee_damage_upper = 48
 	attack_verb_continuous = "maims"
 	attack_verb_simple = "maim"
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -83,8 +83,8 @@
 	//maxbodytemp = INFINITY
 
 	harm_intent_damage = 0
-	melee_damage_lower = 0
-	melee_damage_upper = 0
+	melee_damage_lower = 5
+	melee_damage_upper = 15
 	attack_verb_continuous = "violently hugs"
 	attack_verb_simple = "violently hug"
 	vision_range = 0

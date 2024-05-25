@@ -12,11 +12,11 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	force = 55 //needs more hefty damage to be worthwhile outside pvp. will have to test
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
@@ -162,7 +162,7 @@
 	toolspeed = 0.3 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 
@@ -187,6 +187,7 @@
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
+	armour_penetration = 0.2
 	tool_behaviour = TOOL_SAW
 	sharpness = SHARP_EDGED
 	toolspeed = 1.5
@@ -203,6 +204,7 @@
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 	var/description_on = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
 	var/description_off = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/melee/powered/ripper/attack_self(mob/user)
 	on = !on
@@ -236,7 +238,9 @@
 	off_icon_state = "prewarrip_off"
 	on_item_state = "prewarrip_on"
 	off_item_state = "prewarrip_off"
+	armour_penetration = 0.3
 	force_on = 50
+	
 
 /obj/item/melee/powered/ripper/dull
 	name = "worn ripper"

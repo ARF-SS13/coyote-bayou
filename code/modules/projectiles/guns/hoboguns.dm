@@ -174,7 +174,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
@@ -195,7 +195,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
@@ -373,11 +373,11 @@
 
 /obj/item/gun/ballistic/automatic/autopipe/special
 		name = "Redwater Special"
-		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of complete loss of control as soon as you pull the trigger."
+		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of not being able to take it off of full auto."
 		color = "#FF0000"
-		damage_multiplier = GUN_EXTRA_DAMAGE_T5
+		damage_multiplier = GUN_EXTRA_DAMAGE_T3
 		init_firemodes = list(
-			/datum/firemode/burst/twenty/slower
+			/datum/firemode/automatic/rpm300
 		)
 
 /////////////////////
@@ -487,7 +487,7 @@
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = HANDGUN_RECOIL(4, 4)

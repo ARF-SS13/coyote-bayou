@@ -11,7 +11,7 @@
 		a_boost--
 		to_chat(H, span_notice("There are <B>[a_boost]</B> adrenaline boosts remaining."))
 		s_coold = 3
-		addtimer(CALLBACK(src, .proc/ninjaboost_after), 70)
+		addtimer(CALLBACK(src,PROC_REF(ninjaboost_after)), 70)
 
 /obj/item/clothing/suit/space/space_ninja/proc/ninjaboost_after()
 	var/mob/living/carbon/human/H = affecting

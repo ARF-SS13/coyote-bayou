@@ -11,7 +11,7 @@
 /obj/effect/mine/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -30,7 +30,7 @@
 	if(AM.movement_type & FLYING)
 		return
 
-	INVOKE_ASYNC(src, .proc/triggermine, AM)
+	INVOKE_ASYNC(src,PROC_REF(triggermine), AM)
 
 /obj/effect/mine/proc/triggermine(mob/victim)
 	if(triggered)

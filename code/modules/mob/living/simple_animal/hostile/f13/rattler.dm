@@ -1,6 +1,6 @@
 /*IN THIS FILE:
 -Rattler
-as per originally proposed concept: less powerful directly than deathclaws, but faster, and venom is rough. don't yell at me if this is OP
+as per originally proposed concept: less powerful directly than aethergiests, but faster, and venom is rough. don't yell at me if this is OP
 using ant armor b/c it just kinda works here and i don't want it to be super beefy lol.
 */
 
@@ -37,6 +37,9 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	retreat_distance = 2
 
 	faction = list("hostile", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot_drop_amount = 3
+	loot_amount_random = TRUE
 
 
 

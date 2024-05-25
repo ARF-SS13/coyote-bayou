@@ -5,6 +5,7 @@
 	buildstackamount = 1
 	item_chair = null
 	var/mutable_appearance/armrest
+	color = "#a75400"
 
 /obj/structure/chair/sofa/Initialize()
 	armrest = mutable_appearance(icon, "[icon_state]_armrest", ABOVE_MOB_LAYER, MOB_PLANE)
@@ -42,6 +43,7 @@
 	name = "sofa"
 	desc = "Soft, cushy and cozy. These sofas reek of bland faceless corporatism, but they aren't old and ratty at least."
 	icon_state = "corp_sofamiddle"
+	color = null
 
 /obj/structure/chair/sofa/corp/left
 	icon_state = "corp_sofaend_left"

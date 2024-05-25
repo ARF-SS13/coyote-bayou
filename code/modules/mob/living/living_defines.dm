@@ -28,6 +28,7 @@
 	var/staminaloss = 0		//Stamina damage, or exhaustion. You recover it slowly naturally, and are knocked down if it gets too high. Holodeck and hallucinations deal this.
 	var/crit_threshold = HEALTH_THRESHOLD_CRIT // when the mob goes from "normal" to crit
 
+	var/can_glow_revive = TRUE
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/living_flags = NONE
@@ -50,6 +51,8 @@
 	var/parry_end_time_last = 0
 	/// Successful parries within the current parry cycle. It's a list of efficiency percentages.
 	var/list/successful_parries
+
+	var/shoot_me
 
 	var/confused = 0	//Makes the mob move in random directions.
 
@@ -95,7 +98,9 @@
 
 	var/list/butcher_results = null //these will be yielded from butchering with a probability chance equal to the butcher item's effectiveness
 	var/list/guaranteed_butcher_results = null //these will always be yielded from butchering
-	var/butcher_difficulty = 0 //effectiveness prob. is modified negatively by this amount; positive numbers make it more difficult, negative ones make it easier
+	/// Divisor for the chance to get a given thing from butchering. Higher is less likely. Do NOT make it 0
+	var/butcher_difficulty = 1
+	var/already_butchered = FALSE //if the mob has already been butchered
 
 	var/hellbound = 0 //People who've signed infernal contracts are unrevivable.
 
@@ -160,6 +165,7 @@
 	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond
 	var/sprint_buffer_regen_last = 0		//last world.time this was regen'd for math.
 	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.
+	var/sprint_buffer_sound_time
 	//---End
 
 	var/disconnect_time //how long have we been dc'd for

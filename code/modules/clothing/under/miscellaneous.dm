@@ -1574,6 +1574,7 @@
 	item_state = "loincloth"
 	item_color = "loincloth"
 	can_adjust = FALSE
+	w_class = WEIGHT_CLASS_SMALL
 
 // Bayou Stuff - started by Kelprunner
 
@@ -1773,6 +1774,42 @@
 	item_color = "iris_tribal"
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/under/sun_skirt
+	name = "sun skirt, green"
+	desc = "A middrif skirt that's colored in forest green."
+	icon_state = "sun_skirt"
+	item_state = "sun_skirt"
+	item_color = "sun_skirt"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/sun_skirt_grey
+	name = "sun skirt, grey scaled"
+	desc = "A middrif skirt that's colorable."
+	icon_state = "sun_skirt_grey"
+	item_state = "sun_skirt_grey"
+	item_color = "sun_skirt_grey"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/half_skirt
+	name = "flowy midrif skirt"
+	desc = "A middrif skirt that's blue."
+	icon_state = "half_skirt"
+	item_state = "half_skirt"
+	item_color = "half_skirt"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/poofygreen
+	name = "green poof"
+	desc = "A green poofy skirt with not much to hide chest wise."
+	icon = 'icons/obj/clothing/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/dress.dmi'
+	icon_state = "petal_custom"
+	item_state = "petal_custom"
+	item_color = "petal_custom"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
 
 
 

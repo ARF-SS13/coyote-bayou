@@ -40,6 +40,10 @@
 			return	//no tele-grooming
 		if(new_style)
 			H.hair_style = new_style
+		
+		new_style = input(user, "Select the second hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
+		if(new_style)
+			H.dna.features["hair_style_2"] = new_style
 
 		H.update_hair()
 

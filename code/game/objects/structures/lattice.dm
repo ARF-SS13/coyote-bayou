@@ -31,8 +31,8 @@
 /obj/structure/lattice/blob_act(obj/structure/blob/B)
 	return
 
-/obj/structure/lattice/ratvar_act()
-	new /obj/structure/lattice/clockwork(loc)
+/*/obj/structure/lattice/ratvar_act()
+	new /obj/structure/lattice/clockwork(loc)*/
 
 /obj/structure/lattice/attackby(obj/item/C, mob/user, params)
 	if(resistance_flags & INDESTRUCTIBLE)
@@ -67,7 +67,7 @@
 	if(current_size >= STAGE_FOUR)
 		deconstruct()
 
-/obj/structure/lattice/clockwork
+/*/obj/structure/lattice/clockwork
 	name = "cog lattice"
 	desc = "A lightweight support lattice. These hold the Justicar's station together."
 	icon = 'icons/obj/smooth_structures/lattice_clockwork.dmi'
@@ -88,7 +88,7 @@
 		icon = 'icons/obj/smooth_structures/lattice_clockwork.dmi'
 		pixel_x = 0
 		pixel_y = 0
-	return TRUE
+	return TRUE*/
 
 /obj/structure/lattice/catwalk
 	name = "catwalk"
@@ -105,8 +105,8 @@
 /obj/structure/lattice/catwalk/deconstruction_hints(mob/user)
 	to_chat(user, span_notice("The supporting rods look like they could be <b>cut</b>."))
 
-/obj/structure/lattice/catwalk/ratvar_act()
-	new /obj/structure/lattice/catwalk/clockwork(loc)
+/*/obj/structure/lattice/catwalk/ratvar_act()
+	new /obj/structure/lattice/catwalk/clockwork(loc)*/
 
 /obj/structure/lattice/catwalk/Move()
 	var/turf/T = loc
@@ -120,7 +120,7 @@
 		C.deconstruct()
 	..()
 
-/obj/structure/lattice/catwalk/clockwork
+/*/obj/structure/lattice/catwalk/clockwork
 	name = "clockwork catwalk"
 	icon = 'icons/obj/smooth_structures/catwalk_clockwork.dmi'
 	canSmoothWith = list(/obj/structure/lattice,
@@ -148,7 +148,7 @@
 		icon = 'icons/obj/smooth_structures/catwalk_clockwork.dmi'
 		pixel_x = 0
 		pixel_y = 0
-	return TRUE
+	return TRUE*/
 
 /obj/structure/lattice/lava
 	name = "heatproof support lattice"

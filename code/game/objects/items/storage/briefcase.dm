@@ -65,7 +65,6 @@
 	force = 12 //oasis made it better
 
 /obj/item/storage/briefcase/secretary/PopulateContents()
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/gun/ballistic/automatic/pistol/sig(src)
 	new /obj/item/paper_bin/bundlenatural(src)
 	new /obj/item/clothing/under/suit/black/skirt(src)
@@ -73,7 +72,7 @@
 	new /obj/item/storage/box/funds(src)
 	
 /obj/item/storage/box/funds
-	name = "Nash operating funds"
+	name = "New Boston operating funds"
 	desc = "A box filled with both local and foreign currency, to cover unexpected purchases"
 
 // Secretary spawns with all 3 types of money for negotatiating with any side. ~325 caps worth
@@ -108,7 +107,6 @@
 	..() // in case you need any paperwork done after your rampage
 	new /obj/item/clothing/neck/tie/red(src)
 	new /obj/item/clothing/under/syndicate/sniper(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 
 /obj/item/storage/briefcase/modularbundle
@@ -116,7 +114,6 @@
 	force = 10
 
 /obj/item/storage/briefcase/modularbundle/PopulateContents()
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/clothing/under/suit/black(src)
 	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/suit/toggle/lawyer/black/syndie(src)

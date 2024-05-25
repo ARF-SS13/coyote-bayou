@@ -38,7 +38,10 @@
 			. = VV_TYPE
 
 	else if(islist(var_value))
-		. = VV_LIST
+		if(var_name in GLOB.color_vars)
+			. = VV_COLOR_MATRIX
+		else
+			. = VV_LIST
 
 	else if(isfile(var_value))
 		. = VV_FILE
@@ -54,6 +57,7 @@
 				VV_TEXT,
 				VV_MESSAGE,
 				VV_ICON,
+				VV_COLOR_MATRIX,
 				VV_ATOM_REFERENCE,
 				VV_DATUM_REFERENCE,
 				VV_MOB_REFERENCE,
@@ -229,6 +233,11 @@
 			var/datum/newguy = new type()
 			newguy.datum_flags |= DF_VAR_EDITED
 			.["value"] = newguy
+
+		if(VV_COLOR_MATRIX)
+			.["value"] = open_color_matrix_editor()
+			if(.["value"] == color_matrix_identity()) //identity is equivalent to null
+				.["class"] = null
 
 		if(VV_NEW_TYPE)
 			var/type = current_value

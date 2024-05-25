@@ -94,7 +94,9 @@
 	for(var/datum/space_transition_point/pnt in grid)
 		pnt.set_neigbours(point_grid)
 
-	var/datum/space_level/DO = SLS[1]
+	var/datum/space_level/DO = LAZYACCESS(SLS, 1)
+	if(!DO)
+		return
 
 	P = point_grid[level_trait(DO.z_value, Z_FORCE_X) + 1][level_trait(DO.z_value, Z_FORCE_Y) + 1][level_trait(DO.z_value, Z_FORCE_Z) + 1] // cursed yes, I know, but this hasn't been touched in 5 years and the original coder couldn't spell neighbour so a bit of spaghetti will help a little. Mentally. I'm unsure though honestly I could rant for days about why spaghettification is a great thing and shouldn't just be a term used for black holes, honestly. Anyways yeah I've made the meme spam comment now as I usually do with every feature I add/change so there we go!
 	
@@ -172,4 +174,3 @@
 				S.destination_x = x_pos_transition[side] == 1 ? S.x : x_pos_transition[side]
 				S.destination_y = y_pos_transition[side] == 1 ? S.y : y_pos_transition[side]
 				S.destination_z = zdestination
-

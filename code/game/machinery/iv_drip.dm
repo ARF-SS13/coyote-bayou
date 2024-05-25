@@ -48,7 +48,7 @@
 		else
 			. += "beakeridle"
 		if(beaker.reagents.total_volume)
-			var/mutable_appearance/filling_overlay = mutable_appearance('icons/obj/iv_drip.dmi', "reagent")
+			var/mutable_appearance/filling_overlay = mutable_appearance('icons/obj/iv_drip.dmi', "reagent", color = mix_color_from_reagents(beaker.reagents.reagent_list))
 
 			var/percent = round((beaker.reagents.total_volume / beaker.volume) * 100)
 			switch(percent)
@@ -67,7 +67,6 @@
 				if(91 to INFINITY)
 					filling_overlay.icon_state = "reagent100"
 
-			filling_overlay.color = mix_color_from_reagents(beaker.reagents.reagent_list)
 			. += filling_overlay
 
 /obj/machinery/iv_drip/MouseDrop(mob/living/target)
@@ -196,7 +195,7 @@
 		to_chat(usr, span_warning("You can't do that!"))
 		return
 
-	if(usr.incapacitated())
+	if(usr.incapacitated(allow_crit = TRUE))
 		return
 	if(beaker)
 		if(usr && Adjacent(usr) && usr.can_hold_items())
@@ -216,7 +215,7 @@
 		to_chat(usr, span_warning("You can't do that!"))
 		return
 
-	if(usr.incapacitated())
+	if(usr.incapacitated(allow_crit = TRUE))
 		return
 	mode = !mode
 	to_chat(usr, "The IV drip is now [mode ? "injecting" : "taking blood"].")

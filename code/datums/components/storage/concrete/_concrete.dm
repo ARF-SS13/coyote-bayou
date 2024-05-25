@@ -17,9 +17,9 @@
 
 /datum/component/storage/concrete/Initialize()
 	. = ..()
-	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL, .proc/on_contents_del)
-	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, .proc/on_deconstruct)
-	RegisterSignal(parent, COMSIG_OBJ_BREAK, .proc/on_break)
+	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL,PROC_REF(on_contents_del))
+	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT,PROC_REF(on_deconstruct))
+	RegisterSignal(parent, COMSIG_OBJ_BREAK,PROC_REF(on_break))
 
 /datum/component/storage/concrete/Destroy()
 	var/atom/real_location = real_location()
@@ -88,7 +88,7 @@
 	if(S == src)
 		return
 	if(!length(slaves))
-		RegisterSignal(parent, COMSIG_ATOM_GET_LOCS, .proc/get_locs_react)
+		RegisterSignal(parent, COMSIG_ATOM_GET_LOCS,PROC_REF(get_locs_react))
 	slaves += S
 
 

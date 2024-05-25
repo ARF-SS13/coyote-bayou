@@ -4,6 +4,7 @@
 	icon = 'icons/obj/flora/twigs.dmi'
 	icon_state = "tree_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/tree_log
 	name = "tree log"
@@ -65,9 +66,17 @@
 /obj/structure/flora
 	/// Will auto-generate a transparency zone behind this plant when initialized.
 	var/do_transparency = TRUE
+	/// If do_transparency == TRUE, this is the target alpha that the plant will have.
+	var/transparency_alpha = 150
+	/// X and Y will be randomized to spread flora around and reduce the amount of plants that are perfectly centered on their tiles. Only works if the plant's x and y are 0.
+	var/randomize_xy = TRUE
 
 /obj/structure/flora/Initialize()
 	. = ..()
+	if(randomize_xy && pixel_y == 0 && pixel_x == 0)
+		pixel_y = rand(-12, 12)
+		pixel_x = rand(-12, 12)
+
 	if(icon && do_transparency == TRUE && ((layer > MOB_LAYER) || (layer == MOB_LAYER && plane >= ABOVE_ALL_MOB_LAYER)))
 		CreateTransparency()
 
@@ -82,7 +91,7 @@
 			var/ysize = CEILING(ih/32, 1)
 			var/x_off = 0 //-(ih/2)/32 //Slide to the left (nvm it already slides automatically)
 			var/y_off = 1
-			AddComponent(/datum/component/largetransparency, x_off, y_off, xsize, ysize)
+			AddComponent(/datum/component/largetransparency, x_off, y_off, xsize, ysize, target_alpha = transparency_alpha)
 
 /obj/structure/flora/tree/oak_one
 	name = "tree"
@@ -111,6 +120,7 @@
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "tree_4"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/tree/oak_five
 	name = "tree"
@@ -153,6 +163,7 @@
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "med_pine"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/tree/cherryblossom
 	name = "tree"
@@ -195,6 +206,7 @@
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "med_pine_dead"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/grass/coyote/one
 	name = "dead grass"
@@ -729,6 +741,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palmrs_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump1
 	name = "palm stump"
@@ -736,6 +749,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palmls_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump2
 	name = "palm stump"
@@ -743,6 +757,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palml_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump3
 	name = "palm stump"
@@ -750,6 +765,7 @@
 	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
 	icon_state = "palmr_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/desertstump
 	name = "tree stump"
@@ -757,6 +773,7 @@
 	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
 	icon_state = "desert_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/potplant0
 	name = "Potted Plant"
@@ -1023,35 +1040,49 @@
 	icon_state = "lbone"
 	anchored = TRUE
 
+
 /obj/structure/flora/chomp/bones/lrock
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock"
 	anchored = TRUE
+	opacity = 1
+	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock1
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock1"
 	anchored = TRUE
+	opacity = 1
+	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock2
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock2"
 	anchored = TRUE
+	opacity = 1
+	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock3
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock3"
 	anchored = TRUE
+	opacity = 1
+	density = 1
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/chomp/bones/lrock4
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock4"
 	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/flora/wild_plant/thistle
 	name = "thistle"

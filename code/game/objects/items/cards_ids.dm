@@ -20,15 +20,25 @@
 	/// Has it been punched?
 	var/punched = FALSE
 	/// what icon_state to use when punched
-	var/punched_state
+	var/punched_state = "card-id"
 	var/list/files = list()
+
+	/// PRICES ARE IN TENTHS OF A COPPER (cus cargo uses credits, even tho it doesnt look like it)
+	/// How much the card is worth
+	var/saleprice = COINS(10)
+	/// How much the puncher gives out for free
+	var/punchbonus = COINS(20)
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
+	RegisterSignal(src, COMSIG_ITEM_GET_RESEARCH_POINTS,PROC_REF(tabulate_research))
 
 /obj/item/card/proc/tabulate_value()
-	return 0
+	return saleprice
+
+/obj/item/card/proc/tabulate_research()
+	return saleprice * 5
 
 /obj/item/card/proc/punch(mob/living/user)
 	if(!punchable)
@@ -822,14 +832,14 @@
 	. = ..()
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 	if(alert("Are you sure you want to recolor your id?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",id_color) as color|null
 		if(!in_range(src, user) || !energy_color_input)
 			return TRUE
-		if(user.incapacitated() || !istype(user))
+		if(user.incapacitated(allow_crit = TRUE) || !istype(user))
 			to_chat(user, span_warning("You can't do that right now!"))
 			return TRUE
 		id_color = sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1)
@@ -970,6 +980,14 @@
 	assignment = "badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
+
+/obj/item/card/id/dogtag/ranger
+	name = "ranger's badge"
+	desc = "A silver badge with special engravings to denote ranger status."
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /obj/item/card/id/dogtag/town
 	name = "citizenship permit"
@@ -1228,6 +1246,9 @@
 
 	access = list(ACCESS_DEN)
 
+/obj/item/card/id/denid/truedark
+	name = "Lytmon Labs"
+	desc = "A Vault ID with the vault number replaced with \"Lytmon Labs\"."
 
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"
@@ -1403,12 +1424,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-
-/obj/item/card/lowbounty/tabulate_value()
-	if(punched)
-		return 1500
-	else
-		return 1125
+	saleprice = COINS(120)
+	punchbonus = COINS(40)
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1422,12 +1439,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-
-/obj/item/card/midbounty/tabulate_value()
-	if(punched)
-		return 2812
-	else
-		return 2250
+	saleprice = COINS(225)
+	punchbonus = COINS(56) // total of a lot
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1441,12 +1454,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-
-/obj/item/card/highbounty/tabulate_value()
-	if(punched)
-		return 5250
-	else
-		return 4500
+	saleprice = COINS(450)
+	punchbonus = COINS(75) // total of a lot
 
 /obj/item/card/kingbounty
 	name = "King's Bounty Ticket"
@@ -1460,10 +1469,6 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
 	punched_state = "punchedticket"
-
-/obj/item/card/kingbounty/tabulate_value()
-	if(punched)
-		return 10500
-	else
-		return 9000
+	saleprice = COINS(900)
+	punchbonus = COINS(150) // total of a lot
 

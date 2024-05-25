@@ -3,6 +3,7 @@
 	name = "parent fish"
 	desc = "debug, report to Jake"
 	icon = 'icons/obj/fish/fish_items.dmi'
+	w_class = WEIGHT_CLASS_SMALL
 	//the type of meat it drops
 	var/meat_type
 	//the max primary meat it drops
@@ -105,6 +106,7 @@
 	desc = "debug, report to coders (or jake) if you see this."
 	icon = 'icons/obj/fish/fish_items.dmi'
 	grind_results = list(/datum/reagent/nutracid = 1)
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/fishyegg/carp
 	name = "carp fish egg"

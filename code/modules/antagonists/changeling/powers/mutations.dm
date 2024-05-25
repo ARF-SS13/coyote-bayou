@@ -263,9 +263,9 @@
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
 	slot_flags = NONE
 	flags_1 = NONE
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = /obj/item/ammo_casing/magic/tentacle
-	fire_sound = 'sound/effects/splat.ogg'
+	fire_sound = 'sound/weapons/whipgrab.ogg'
 	force = 0
 	max_charges = 1
 	fire_delay = 1
@@ -312,7 +312,7 @@
 	name = "tentacle"
 	icon_state = "tentacle_end"
 	pass_flags = PASSTABLE
-	damage = 5
+	damage = 0
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'
@@ -394,12 +394,12 @@
 
 					if(INTENT_GRAB)
 						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
-						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, .proc/tentacle_grab, H, C))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src,PROC_REF(tentacle_grab), H, C))
 						return BULLET_ACT_HIT
 
 					if(INTENT_HARM)
 						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!"),span_userdanger("A tentacle grabs you and throws you towards [H]!"))
-						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, .proc/tentacle_stab, H, C))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src,PROC_REF(tentacle_stab), H, C))
 						return BULLET_ACT_HIT
 			else
 				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
@@ -411,6 +411,167 @@
 	source = null
 	return ..()
 
+//*****MAGIC GRAB*****//
+//********************//
+
+/obj/item/gun/magic/magegrab
+	name = "magic grab"
+	desc = "A magic hand to grab people with."
+	icon = 'icons/obj/nuke_tools.dmi'
+	icon_state = "magegrab"
+	item_state = "magegrab"
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
+	slot_flags = NONE
+	flags_1 = NONE
+	w_class = WEIGHT_CLASS_HUGE
+	ammo_type = /obj/item/ammo_casing/magic/magegrab
+	fire_sound = 'sound/effects/curse1.ogg'
+	force = 0
+	max_charges = 1
+	fire_delay = 1
+	throwforce = 0 //Just to be on the safe side
+	throw_range = 0
+	throw_speed = 0
+	var/can_drop = TRUE
+
+/obj/item/gun/magic/magegrab/Initialize(mapload, silent)
+	. = ..()
+	if(ismob(loc))
+		if(!silent)
+			loc.visible_message(span_warning("[loc.name]'s hand begins glowing with magic power!"), span_warning("Our hand bursts alight with the magic spell."), span_italic("You hear a spell flaring to life!"))
+		else
+			to_chat(loc, span_notice("You prepare to extend a magic grip."))
+
+
+/obj/item/gun/magic/magegrab/shoot_with_empty_chamber(mob/living/user as mob|obj)
+	to_chat(user, span_warning("The [name] is not ready yet."))
+
+/obj/item/gun/magic/magegrab/process_chamber()
+	. = ..()
+	if(charges == 0)
+		qdel(src)
+
+/obj/item/ammo_casing/magic/magegrab
+	name = "magic grab"
+	desc = "A magic grab."
+	projectile_type = /obj/item/projectile/magegrab
+	caliber = "magic grab"
+	icon_state = "e_netting" // I just realized this does nothing :)
+	firing_effect_type = null
+	var/obj/item/gun/magic/magegrab/gun //the item that shot it
+
+/obj/item/ammo_casing/magic/magegrab/Initialize()
+	gun = loc
+	. = ..()
+
+/obj/item/ammo_casing/magic/magegrab/Destroy()
+	gun = null
+	return ..()
+
+/obj/item/projectile/magegrab
+	name = "magic grab"
+	icon_state = "toxinheal"
+	pass_flags = PASSTABLE
+	damage = 0
+	damage_type = BRUTE
+	range = 8
+	hitsound = 'sound/effects/well_wake.ogg'
+	var/chain
+	var/obj/item/ammo_casing/magic/magegrab/source //the item that shot it
+
+/obj/item/projectile/magegrab/Initialize()
+	source = loc
+	. = ..()
+
+/obj/item/projectile/magegrab/fire(setAngle)
+	if(firer)
+		chain = firer.Beam(src, icon_state = "lichbeam", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
+	..()
+
+/obj/item/projectile/magegrab/proc/reset_throw(mob/living/carbon/human/H)
+	if(H.in_throw_mode)
+		H.throw_mode_off() //Don't annoy the changeling if he doesn't catch the item
+
+	/* /obj/item/projectile/magegrab/proc/magegrab_grab(mob/living/carbon/human/H, mob/living/carbon/C)
+	if(H.Adjacent(C))
+		if(H.get_active_held_item() && !H.get_inactive_held_item())
+			H.swap_hand()
+		if(H.get_active_held_item())
+			return
+		C.grabbedby(H)
+		C.grippedby(H, instant = TRUE)*/  //Magegrab is a nerfed, item/mob grabbing version of arm tentacle, it doesnt need some of the stuff here
+
+/*/obj/item/projectile/tentacle/proc/tentacle_stab(mob/living/carbon/human/H, mob/living/carbon/C)
+	if(H.Adjacent(C))
+		for(var/obj/item/I in H.held_items)
+			if(I.get_sharpness())
+				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!"), span_userdanger("[H] impales you with [H.p_their()] [I.name]!"))
+				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
+				H.do_item_attack_animation(C, used_item = I)
+				H.add_mob_blood(C)
+				playsound(get_turf(H),I.hitsound,75,1)
+				return*/
+
+/obj/item/projectile/magegrab/on_hit(atom/target, blocked = FALSE)
+	var/mob/living/carbon/human/H = firer
+	if(blocked >= 100)
+		return BULLET_ACT_BLOCK
+	if(isitem(target))
+		var/obj/item/I = target
+		if(!I.anchored)
+			to_chat(firer, span_notice("You pull [I] right into your grasp."))
+			H.put_in_hands(I) //Because throwing it is goofy as fuck and unreliable. If you land the tentacle despite the penalties to accuracy, you should have your reward.
+			. = BULLET_ACT_HIT
+
+	else if(isliving(target))
+		var/mob/living/L = target
+		if(!L.anchored && !L.throwing)//avoid double hits
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				var/firer_intent = INTENT_HARM
+				var/mob/M = firer
+				if(istype(M))
+					firer_intent = M.a_intent
+				switch(firer_intent)
+					if(INTENT_HELP)
+						C.visible_message(span_danger("[L] is pulled by [H]'s magic grip!"),span_userdanger("A magic grip grabs you and pulls you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2)
+						return BULLET_ACT_HIT
+
+					if(INTENT_DISARM)
+						var/obj/item/I = C.get_active_held_item()
+						if(I)
+							if(C.dropItemToGround(I))
+								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!"),span_userdanger("A magic grip pulls [I] away from you!"))
+								on_hit(I) //grab the item as if you had hit it directly with the tentacle
+								return BULLET_ACT_HIT
+							else
+								to_chat(firer, span_danger("You can't seem to pry [I] off [C]'s hands!"))
+								return BULLET_ACT_BLOCK
+						else
+							to_chat(firer, span_danger("[C] has nothing in hand to disarm!"))
+							return BULLET_ACT_HIT
+
+					/*if(INTENT_GRAB)
+						C.visible_message(span_danger("[L] is grabbed by [H]'s magic grip!"),span_userdanger("A magic grip grabs you and pulls you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src,PROC_REF(magegrab_grab), H, C))
+						return BULLET_ACT_HIT*/
+
+					/*if(INTENT_HARM)
+						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!"),span_userdanger("A tentacle grabs you and throws you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src,PROC_REF(tentacle_stab), H, C))
+						return BULLET_ACT_HIT */
+			else
+				L.visible_message(span_danger("[L] is pulled by [H]'s magic grip!"),span_userdanger("A magic grip grabs you and pulls you towards [H]!"))
+				L.throw_at(get_step_towards(H,L), 8, 2)
+				. = BULLET_ACT_HIT
+
+/obj/item/projectile/magegrab/Destroy()
+	qdel(chain)
+	source = null
+	return ..()
 
 /***************************************\
 |****************SHIELD*****************|

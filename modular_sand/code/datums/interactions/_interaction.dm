@@ -82,7 +82,7 @@
 	 */
 	var/list/splorch_cd = 7 SECONDS // the 7 is for good luck
 	var/list/squorch_cooldowns = list()
-	var/list/guosh_cd = 1 SECONDS // the 7 is for good luck
+	var/list/guosh_cd = 1 SECONDS
 	var/list/guorch_cooldowns = list()
 
 
@@ -267,7 +267,7 @@
 		return
 	if(!evaluate_target(user, target, silent = discrete))
 		return
-	if(!override_for_tgui && user.incapacitated())
+	if(!override_for_tgui && user.incapacitated(allow_crit = TRUE))
 		if(!discrete)
 			to_chat(user, span_warning("You are in no shape to do that!"))
 		return
@@ -303,10 +303,11 @@
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		if(!(squish in view(15, user)))
+		var/list/whobez = view(15, user) | viewers(15, user) | hearers(15, user)
+		if(!(squish in whobez))
 			continue
-		if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS))
-			continue
+		// if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS)) // they already consented, what more do you want???
+		// 	continue
 		to_chat(squish, message)
 	return TRUE
 	
@@ -395,7 +396,12 @@
 				messagelist = help_messages
 	if(!LAZYLEN(messagelist))
 		stack_trace("Hey, you forgot to set any messages for [type] - [description]! It needs to be something!!!")
-		messagelist = list("%USER does something, also %TARGET is there.","%USER should open a bug report, also %TARGET is there.")
+		messagelist = list(span_hypnophrase("It was at this moment XU_NAME realized that what XU_THEY had found XU_THEMSELF square in the middle of a bugged interaction. \
+		\"Oh no!\", XU_THEY cried, \"I need to report this to Superlagg! And I know just what I'll say, too!\" XU_THEY said with a confident stwile, \
+		\"'Dan, you silly animal, an interaction lacked any sort of usable message, possibly due to a missing help_messages!' is what I will start with,\" \
+		XU_THEY started, \"'The interaction is [type], otherwise known as [description]. Its help_messages contains [LAZYLEN(help_messages)] entries, \
+		and,' and this is the most important part, 'SLIM-PASSIVE-AGGRESSIVE-TROUT'\" Godspeed to your bug reporting ways, XU_NAME! Oh also XU_TARGET was there too, \
+		wondering what the hell XU_NAME was on about."))
 	var/msg = pick(messagelist)
 	if(!msg)
 		return "%USER opens a bug report."
@@ -529,7 +535,7 @@
 	var/user_are = user.p_are()
 	var/user_were = user.p_were()
 	var/user_do = user.p_do()
-	var/user_penis = user.get_penetrating_genital_name()
+	var/user_penis = user.get_penetrating_genital_name(prob(1))
 	var/target_they = target.p_they()
 	var/target_their = target.p_their()
 	var/target_themself = target.p_them()
@@ -537,7 +543,7 @@
 	var/target_are = target.p_are()
 	var/target_were = target.p_were()
 	var/target_do = target.p_do()
-	var/target_penis = target.get_penetrating_genital_name()
+	var/target_penis = target.get_penetrating_genital_name(prob(1))
 	message = replacetextEx(message, "XU_THEY", user_they) // I'm sorry, I had to. - Zuhayr
 	message = replacetextEx(message, "XU_THEIR", user_their)
 	message = replacetextEx(message, "XU_THEMSELF", user_themself)
@@ -567,7 +573,7 @@
 		var/word = ""
 		if(LAZYLEN(wordlist))
 			word = trim(pick(wordlist))
-		if(prob(0.01))
+		if(prob(1))
 			word = "bazinga" // required for linting
 		message = splicetext(message, charpos, charpos2 + 1, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed

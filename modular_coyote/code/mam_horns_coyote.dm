@@ -151,3 +151,21 @@
 	icon_state = "jackalope"
 
 
+/datum/sprite_accessory/horns/antlers2
+	name = "Antlers 2"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "antlers"
+
+
+/datum/sprite_accessory/horns/impala
+	name = "Impala"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "impala"
+
+
+/datum/sprite_accessory/horns/bigimpala
+	name = "Impala (big)"
+	icon = 'icons/mob/mam/coyote/horns_big.dmi'
+	icon_state = "bigimpala"
+
+

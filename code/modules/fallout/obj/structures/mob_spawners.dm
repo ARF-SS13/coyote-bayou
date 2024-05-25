@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
-	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// Time between spawns
 	var/spawn_time = 40 SECONDS
 	/// Can be boarded up
@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	/// Did this thing make loot? If so, dont drop more stuff
 	var/made_loot = FALSE
 	/// verb for when a mob comes out
-	var/spawn_text = "emerges from"
+	//var/spawn_text = NULL //it makes a sound
 	/// Range to check for other mobs to see if there's too many around
 	var/overpopulation_range = 6
 	/// max mobs that can be alive and nearby before it refuses to spawn more
@@ -52,15 +52,27 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/delay_start = FALSE
 	/// Some cool factions to override the default ones
 	var/list/faction = list()
+	/// hold off on making the component
+	var/hold_component = FALSE
+	var/ignore_faction = FALSE
+	var/generation = 1
 
-/obj/structure/nest/Initialize()
+/obj/structure/nest/blank
+	hold_component = TRUE
+
+/obj/structure/nest/ComponentInitialize()
 	. = ..()
+	if(hold_component)
+		return
+	make_component()
+
+/obj/structure/nest/proc/make_component()
 	// null faction, so we don't overwrite it
 	AddComponent(/datum/component/spawner,\
 		_mob_types = mob_types,\
 		_spawn_time = spawn_time,\
 		_faction = faction,\
-		_spawn_text = spawn_text,\
+		/*_spawn_text = spawn_text,*/\
 		_max_mobs = max_mobs,\
 		_range = radius,\
 		_overpopulation_range = overpopulation_range,\
@@ -71,7 +83,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		_randomizer_tag = randomizer_tag,\
 		_randomizer_kind = randomizer_kind,\
 		_randomizer_difficulty = randomizer_difficulty,\
-		_delay_start = delay_start\
+		_delay_start = delay_start,\
+		_ignore_faction = ignore_faction,\
+		_generation = generation,\
 		)
 
 /obj/structure/nest/Destroy()
@@ -100,12 +114,14 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		return try_seal(user, I, I.type, "planks", 1 HOURS)
 
-	if(covered) // allow you to interact only when it's sealed
-		..()
-	else
-		if(user.a_intent == INTENT_HARM)
-			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
-			return
+	..()  //we can destroy them without covering the hole
+
+	// if(covered) // allow you to interact only when it's sealed
+	// 	..()
+	// else
+	// 	if(user.a_intent == INTENT_HARM)
+	// 		to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
+	// 		return
 
 /obj/structure/nest/proc/remove_nest()
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
@@ -147,7 +163,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/image/overlay_image = image(icon, icon_state = cover_state)
 	add_overlay(overlay_image)
 	if(timer)
-		addtimer(CALLBACK(src, .proc/do_unseal), timer)
+		addtimer(CALLBACK(src,PROC_REF(do_unseal)), timer)
 
 /obj/structure/nest/proc/try_unseal(mob/user = null, obj/item/I = null)
 	if(!istype(user))
@@ -173,16 +189,80 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
 
-/obj/structure/nest/deathclaw
-	name = "deathclaw nest"
+/obj/structure/nest/lesserspider
+	name = "spider nest"
+	max_mobs = 2
+	spawn_time = 10 SECONDS //creepy fast crawlies
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 3,
+					/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 3)
+
+/obj/structure/nest/greaterspider
+	name = "empress nest"
+	max_mobs = 1
+	spawn_time = 20 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1)
+
+/obj/structure/nest/omegaspider
+	name = "emperor nest"
+	max_mobs = 1
+	spawn_time = 25 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2)
+
+/obj/structure/nest/mook
+	name = "mook den"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/jungle/mook = 2)
+
+/obj/structure/nest/hivebot
+	name = "hivebot datacreator"
+	max_mobs = 3
+	spawn_time = 5 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/hivebot = 3,
+					/mob/living/simple_animal/hostile/hivebot/range = 3,
+					/mob/living/simple_animal/hostile/hivebot/rapid = 3,
+					/mob/living/simple_animal/hostile/hivebot/strong = 3)
+
+/obj/structure/nest/pirate
+	name = "pirate hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/raider/pirate/melee = 2,
+					/mob/living/simple_animal/hostile/raider/pirate/ranged = 2)
+
+/obj/structure/nest/russian
+	name = "russian hideout"
+	max_mobs = 2
+	spawn_time = 10 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/russian/ranged = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/mosin = 2, 
+					/mob/living/simple_animal/hostile/russian/ranged/trooper = 2,
+					/mob/living/simple_animal/hostile/russian/ranged/officer = 2)
+
+/obj/structure/nest/syndicate
+	name = "syndicate hideout"
+	max_mobs = 2
+	spawn_time = 15 SECONDS
+	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space/stormtrooper = 2,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space,
+					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper)
+
+/obj/structure/nest/aethergiest
+	name = "aethergiest nest"
 	max_mobs = 1
 	spawn_time = 60 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/aethergiest = 1)
 
-/obj/structure/nest/deathclaw/mother
-	name = "mother deathclaw nest"
+/obj/structure/nest/aethergiest/mother
+	name = "mother aethergiest nest"
 	spawn_time = 120 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/mother = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/aethergiest/mother = 1)
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
@@ -192,16 +272,22 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/radscorpion/black = 5)
 
 /obj/structure/nest/radroach
-	name = "radroach nest"
+	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
-	mob_types = list(/mob/living/simple_animal/hostile/radroach = 15)
+	mob_types = list(/mob/living/simple_animal/hostile/pillbug = 10,
+					/mob/living/simple_animal/hostile/pillbug/micro = 15,
+					/mob/living/simple_animal/hostile/pillbug/leader = 5,
+					/mob/living/simple_animal/hostile/pillbug/strongradroach = 10
+					)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/fireant
 	name = "fireant nest"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 3,
 					/mob/living/simple_animal/hostile/giantant = 6)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
@@ -218,8 +304,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 /obj/structure/nest/molerat
 	name = "molerat nest"
 	max_mobs = 4
-	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
-	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
+	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20,
+						/mob/living/simple_animal/hostile/molerat/micro = 10,
+						/mob/living/simple_animal/hostile/molerat/leader = 1
+	)
+	spawn_time = 30 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
@@ -227,17 +316,27 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/mirelurk = 2,
 					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 					/mob/living/simple_animal/hostile/mirelurk/baby = 8)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/rat
 	name = "rat nest"
 	max_mobs = 6
-	spawn_time = 7 SECONDS //squeak
+	spawn_time = 30 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
+
+/obj/structure/nest/rat/tame
+	name = "imprinted rat nest"
+	desc = "An artifical-looking nest full of less-than-evil squeakers."
+	color = "#91fdac"
+	mob_types = list(
+		/mob/living/simple_animal/hostile/rat/frien = 9,
+		/mob/living/simple_animal/hostile/rat/skitter/curious = 1
+	)
 
 /obj/structure/nest/mouse
 	name = "mouse nest"
 	max_mobs = 6
-	spawn_time = 7 SECONDS //squeak
+	spawn_time = 30 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat/skitter = 30)
 
 /obj/structure/nest/raider
@@ -252,13 +351,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/tribal = 1)
+					/mob/living/simple_animal/hostile/raider/tribal = 1,
+					/mob/living/simple_animal/hostile/renegade/grunt/emp = 2)
 
 /obj/structure/nest/raider/melee
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
 					/mob/living/simple_animal/hostile/raider/firefighter = 2,
 					/mob/living/simple_animal/hostile/raider/baseball = 5,
 					/mob/living/simple_animal/hostile/raider/tribal = 1)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/raider/ranged
 	max_mobs = 1
@@ -301,6 +402,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
 					/mob/living/simple_animal/hostile/cazador/young = 3)
+	spawn_time = 30 SECONDS
+
 
 /obj/structure/nest/gecko
 	name = "gecko eggs"
@@ -308,7 +411,34 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "nest_gecko"
 	desc = "A pile of gecko eggs on top of a clay mound."
 	max_mobs = 3
-	spawn_text = "crawls out from the"
+	spawnsound = 'sound/misc/crack.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko              = 4,
+		/mob/living/simple_animal/hostile/gecko/fire         = 1,
+		/mob/living/simple_animal/hostile/gecko/legacy       = 3,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
+		/mob/living/simple_animal/hostile/gecko/big          = 2,
+		)
+	spawn_time = 30 SECONDS
+
+/obj/structure/nest/gecko/Initialize()
+	if(prob(10))
+		mob_types |= list(
+			/mob/living/simple_animal/hostile/gecko/tribal          = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/juvenile = 4,
+			/mob/living/simple_animal/hostile/gecko/tribal/warrior  = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/hunter   = 3,
+		)
+		if(prob(1))
+			mob_types |= list(/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman = 1)
+	. = ..()
+
+/obj/structure/nest/gecko/boss
+	name = "kobold eggs"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "nest_gecko"
+	desc = "Where theres a big sexy dragon couple, there are bound to be big sexy kobolds. Look at em now!"
+	max_mobs = 3
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko = 4,
@@ -317,7 +447,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
 		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile =  4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman =  2,
 		)
 
 /obj/structure/nest/gecko/tribal
@@ -325,7 +459,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal = 8,
@@ -340,24 +473,24 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos in the field."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 6,
 		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 12
 	)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/gecko/tribal/guard
 	name = "gecko guard campsite"
 	icon = 'icons/fallout/objects/furniture/heating.dmi'
 	icon_state = "campfire"
 	desc = "A surprisingly well put together campsite for sleepy geckos protecting their home."
-	spawn_text = "emerges from the"
 	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 12,
 		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 6
 	)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/gelcube
 	name = "slimy tunnel"
@@ -379,6 +512,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "wolf den"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/wolf = 5)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"
@@ -412,12 +546,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list()
 
 /obj/structure/nest/special/remove_nest()
-	return 
+	return
 /obj/structure/nest/special/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration, atom/attacked_by)
 	. = ..()
 	if(.)
 		SEND_SIGNAL(src, COMSIG_SPAWNER_SPAWN_NOW)
-	return 
+	return
 
 //Event Nests
 /obj/structure/nest/zombieghoul
@@ -488,7 +622,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "frog"
 	desc = "Are those tadpoles?"
 	max_mobs = 2
-	spawn_text = "hops out of the water!"
 	spawnsound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/retaliate/frog = 10,

@@ -56,10 +56,10 @@
 	qdel(src)
 	new /obj/structure/table/wood(A)
 
-/obj/structure/table/ratvar_act()
+/*/obj/structure/table/ratvar_act()
 	var/atom/A = loc
 	qdel(src)
-	new /obj/structure/table/reinforced/brass(A)
+	new /obj/structure/table/reinforced/brass(A)*/
 
 /obj/structure/table/attack_paw(mob/user)
 	return attack_hand(user)
@@ -264,14 +264,14 @@
 /obj/structure/table/rolling/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
 	attached_items += I
-	RegisterSignal(I, COMSIG_MOVABLE_MOVED, .proc/RemoveItemFromTable) //Listen for the pickup event, unregister on pick-up so we aren't moved
+	RegisterSignal(I, COMSIG_MOVABLE_MOVED,PROC_REF(RemoveItemFromTable)) //Listen for the pickup event, unregister on pick-up so we aren't moved
 
 /obj/structure/table/rolling/proc/RemoveItemFromTable(datum/source, newloc, dir)
 	if(newloc != loc) //Did we not move with the table? because that shit's ok
@@ -281,7 +281,7 @@
 
 /obj/structure/table/rolling/proc/on_entered(atom/OldLoc, Dir)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/on_move, OldLoc, Dir)
+	INVOKE_ASYNC(src,PROC_REF(on_move), OldLoc, Dir)
 
 /obj/structure/table/rolling/proc/on_move(atom/OldLoc, Dir)
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
@@ -312,7 +312,7 @@
 /obj/structure/table/glass/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -333,7 +333,7 @@
 		return
 	// Don't break if they're just flying past
 	if(AM.throwing)
-		addtimer(CALLBACK(src, .proc/throw_check, AM), 5)
+		addtimer(CALLBACK(src,PROC_REF(throw_check), AM), 5)
 	else
 		check_break(AM)
 
@@ -606,7 +606,7 @@
 	else
 		. = ..()
 
-/obj/structure/table/reinforced/brass
+/*/obj/structure/table/reinforced/brass
 	name = "brass table"
 	desc = "A solid, slightly beveled brass table."
 	icon = 'icons/obj/smooth_structures/brass_table.dmi'
@@ -641,7 +641,7 @@
 		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
 
 /obj/structure/table/reinforced/brass/ratvar_act()
-	obj_integrity = max_integrity
+	obj_integrity = max_integrity*/
 
 /obj/structure/table/bronze
 	name = "bronze table"
@@ -699,6 +699,12 @@
 		patient = null
 		return FALSE
 
+// Primitive Surgery Table
+/obj/structure/table/optable/primitive
+	name = "butchers table"
+	desc = "Used for painful, primitive medical procedures."
+	icon_state = "optable_primitive"
+
 /*
  * Racks
  */
@@ -717,6 +723,9 @@
 	max_integrity = 30
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
+
+/obj/structure/rack/shelf_wood/modern
+	icon_state = "shelf_wood_modern"
 
 /obj/structure/rack
 	name = "rack"
@@ -737,6 +746,11 @@
 	name = "metal shelf"
 	desc = "Metal shelf."
 	icon_state = "shelf"
+
+/obj/structure/rack/shelf_metal/modern
+	name = "metal shelf"
+	desc = "Metal shelf."
+	icon_state = "shelf_modern"
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()
@@ -874,3 +888,54 @@
 /obj/structure/rack/large/shelf_rust
 	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
 	icon_state = "metal_shelf_rust"
+
+//From Mojave sun, credit to them for the sprite
+/obj/structure/table/wood_counter
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter"
+	smooth = SMOOTH_FALSE
+
+/obj/structure/table/wood_counter/bend
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_bend"
+
+/obj/structure/table/wood_counter/intersect
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_intersect"
+
+/obj/structure/table/wood_counter/cross
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_cross"
+
+/obj/structure/table/craft_counter
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter"
+	smooth = SMOOTH_FALSE
+
+/obj/structure/table/craft_counter/bend
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_bend"
+
+/obj/structure/table/craft_counter/intersect
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_intersect"
+
+/obj/structure/table/craft_counter/cross
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_cross"

@@ -147,6 +147,9 @@
 /datum/firemode/semi_auto/slower
 	shoot_delay_default = GUN_FIRE_DELAY_SLOWER
 
+/datum/firemode/semi_auto/slowest
+	shoot_delay_default = GUN_FIRE_DELAY_SLOWEST
+
 /datum/firemode/automatic
 	name = "Fully Automatic"
 	desc = "Spray and pray."
@@ -198,7 +201,7 @@
 	fire_type_default = GUN_FIREMODE_AUTO
 	shoot_delay_default = GUN_FIRE_RATE_200
 
-datum/firemode/automatic/rpm250
+/datum/firemode/automatic/rpm250
 	name = "Fully Automatic"
 	desc = "Automatic - 250 RPM."
 	fire_type_default = GUN_FIREMODE_AUTO

@@ -52,6 +52,8 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
+	var/radiation_turf = 0
+
 
 /turf/vv_edit_var(var_name, var_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -413,7 +415,7 @@
 
 	var/list/things = src_object.contents()
 	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, TRUE)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, my_bar)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage,mass_remove_from_storage), src, things, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 
@@ -603,6 +605,10 @@
 		V.icon_state = "vomitpurp_[pick(1,4)]"
 	else if (toxvomit == VOMIT_TOXIC)
 		V.icon_state = "vomittox_[pick(1,4)]"
+	else if (toxvomit == VOMIT_NANITE)
+		V.name = "metallic slurry"
+		V.desc = "A puddle of metallic slurry that looks vaguely like very fine sand. It almost seems like it's moving..."
+		V.icon_state = "vomitnanite_[pick(1,4)]"
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(C.reagents)

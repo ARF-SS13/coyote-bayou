@@ -80,9 +80,9 @@
 
 /obj/item/storage/blender_belt/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_REQUEST, .proc/handle_request)
-	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_IMPULSE, .proc/handle_impulse)
-	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_CAN_INSERT, .proc/can_insert)
+	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_REQUEST,PROC_REF(handle_request))
+	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_IMPULSE,PROC_REF(handle_impulse))
+	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_CAN_INSERT,PROC_REF(can_insert))
 
 /obj/item/storage/blender_belt/ex_act(severity, target)
 	if(severity < 3)
@@ -135,27 +135,27 @@
 		return
 	switch(first_impulse)
 		if(IMPULSE_START)
-			INVOKE_ASYNC(src, .proc/start_running, subject, grind_or_juice)
+			INVOKE_ASYNC(src,PROC_REF(start_running), subject, grind_or_juice)
 		if(IMPULSE_STOP)
-			INVOKE_ASYNC(src, .proc/stop_running)
+			INVOKE_ASYNC(src,PROC_REF(stop_running))
 		if(IMPULSE_SET_GRINDER)
 			if(second_impulse == IMPULSE_START)
-				INVOKE_ASYNC(src, .proc/start_running, subject, BLENDER_BLENDMODE_GRIND)
+				INVOKE_ASYNC(src,PROC_REF(start_running), subject, BLENDER_BLENDMODE_GRIND)
 			else
 				grind_or_juice = BLENDER_BLENDMODE_GRIND
 		if(IMPULSE_SET_JUICER)
 			if(second_impulse == IMPULSE_START)
-				INVOKE_ASYNC(src, .proc/start_running, subject, BLENDER_BLENDMODE_JUICE)
+				INVOKE_ASYNC(src,PROC_REF(start_running), subject, BLENDER_BLENDMODE_JUICE)
 			else
 				grind_or_juice = BLENDER_BLENDMODE_JUICE
 		if(IMPULSE_SET_GRINDER)
-			INVOKE_ASYNC(src, .proc/set_blender, subject)
+			INVOKE_ASYNC(src,PROC_REF(set_blender), subject)
 		if(IMPULSE_SET_DISPENSER)
-			INVOKE_ASYNC(src, .proc/set_dispenser, subject)
+			INVOKE_ASYNC(src,PROC_REF(set_dispenser), subject)
 		if(IMPULSE_EJECT)
-			INVOKE_ASYNC(src, .proc/eject_all, subject)
+			INVOKE_ASYNC(src,PROC_REF(eject_all), subject)
 		if(IMPULSE_EXAMINE)
-			INVOKE_ASYNC(src, .proc/describe_contents, subject)
+			INVOKE_ASYNC(src,PROC_REF(describe_contents), subject)
 		if(IMPULSE_HORRIBLE_NOISES)
 			use_horrible_grinding_noises = TRUE
 	return TRUE
@@ -197,7 +197,7 @@
 	if(grind_or_dispense != BLENDER_BELTMODE_BLENDER)
 		set_blender(user)
 	blending = TRUE
-	INVOKE_ASYNC(src, .proc/blend_loop, user)
+	INVOKE_ASYNC(src,PROC_REF(blend_loop), user)
 
 /obj/item/storage/blender_belt/proc/get_run_time(mob/user)
 	BLENDER_GET_SUBJECT
@@ -241,7 +241,7 @@
 			playsound(src, 'sound/machines/blender.ogg', 50, 1)
 		else
 			playsound(src, 'sound/machines/juicer.ogg', 20, 1)
-	if(!do_after(user, get_run_time(user), needhand = FALSE, target = src, extra_checks = CALLBACK(src, .proc/still_running), allow_movement = TRUE))
+	if(!do_after(user, get_run_time(user), needhand = FALSE, target = src, extra_checks = CALLBACK(src,PROC_REF(still_running)), allow_movement = TRUE))
 		if(blending)
 			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_ROCKY_ABORT, subject)
 		else
@@ -261,7 +261,7 @@
 		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_FULL_SECOND, subject)
 		abort()
 		return FALSE
-	INVOKE_ASYNC(src, .proc/blend_loop, user) // and loop!
+	INVOKE_ASYNC(src,PROC_REF(blend_loop), user) // and loop!
 	
 /obj/item/storage/blender_belt/proc/get_thing_to_blend(mob/user)
 	for(var/obj/item/thing in contents)
@@ -670,7 +670,7 @@
 
 /obj/item/storage/blender_belt/attack_hand(mob/user)
 	if(grind_or_dispense == BLENDER_BELTMODE_DISPENSER && ismob(loc))
-		INVOKE_ASYNC(src, /datum.proc/ui_interact, user)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/datum,ui_interact), user)
 	else
 		. = ..()
 
@@ -688,7 +688,7 @@
 	if(!ismob(loc))
 		return
 	var/mob/M = loc
-	if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.incapacitated(allow_crit = TRUE) && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 

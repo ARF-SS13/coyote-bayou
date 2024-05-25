@@ -18,7 +18,7 @@
 	if(!IS_HERETIC(user))
 		return
 	if(!is_in_use)
-		INVOKE_ASYNC(src, .proc/activate , user)
+		INVOKE_ASYNC(src, PROC_REF(activate) , user)
 
 /obj/effect/eldritch/attackby(obj/item/I, mob/living/user)
 	. = ..()
@@ -165,7 +165,7 @@
  * Use this whenever you want to add someone to the list
  */
 /datum/reality_smash_tracker/proc/AddMind(datum/mind/M)
-	RegisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN,.proc/ReworkNetwork)
+	RegisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN,PROC_REF(ReworkNetwork))
 	targets |= M
 	_Generate()
 	for(var/X in smashes)

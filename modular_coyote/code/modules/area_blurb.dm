@@ -49,7 +49,7 @@ ty ilu - bear
 	narrate = "This road, if you follow it long enough, goes around the city of Texarkana in a slightly broken but very big loop. You don't know why it's like that, but it sure is. Rumors say that this path, especially on the north western portion, are particularly dangerous."
 
 /area/f13/wasteland/city/nash/downtown
-	narrate = "The actual city of Texarkana, and you're knee deep in it. This town is not safe. Often filled with raiders, poisonous monsters, and even the occasional deathclaw. You need to keep your wits about you, or else you're going to wish you were just hurting. Remember, Nash is to the West."
+	narrate = "The actual city of Texarkana, and you're knee deep in it. This town is not safe. Often filled with raiders, poisonous monsters, and even the occasional aethergiest. You need to keep your wits about you, or else you're going to wish you were just hurting. Remember, Nash is to the West."
 
 
 /area/f13/wasteland/city/nash/redriverdepotroad
@@ -126,3 +126,21 @@ ty ilu - bear
 /area/f13/underground/cave/coyote/antmound
 	narrate = "This cave smells like a mixture of petrolium products mixed with a lemony, almost citrus, scent. If you're clever you know it as formic acid. It's the smell of ants, and something flamable. Be careful here, you are in their home and they know these tunnels well."
 
+// (Relative) Safety
+
+/area/f13/building/coyote/safe
+	name = "Unknown Portal Storm Shelter" // this is relevant since the beacon says the name of whatever area it's within
+	narrate = "This old storm shelter was refitted to provide safety and (meager) supplies to those that hide within. Rest your eyes, traveller, this is one of the few truly safe spaces."
+	narrate_sound = 'sound/ambience/ambitech.ogg'
+
+/area/f13/building/coyote/safe/nash
+	name = "Nash Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/ashdown
+	name = "Ashdown Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/garland
+	name = "Garland Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/redwater
+	name = "Redwater Portal-Storm Shelter"

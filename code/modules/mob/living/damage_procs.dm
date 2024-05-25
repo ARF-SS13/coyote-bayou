@@ -22,10 +22,18 @@
 	if(!damage || (hit_percent <= 0))
 		return 0
 
+	// check huntinghorn.dm and huntinghorneffects.dm
+	if(HAS_TRAIT(src, TRAIT_HH_IRON_SKIN))
+		damage_threshold += 10
+
 	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
 		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
 	var/damage_amount =  forced ? damage : damage * hit_percent
 
+	// hunting horns again babey
+	if(HAS_TRAIT(src, TRAIT_HH_DIVINE_BLESSING) && prob(30))
+		damage_amount *= 0.6
+		to_chat(src, span_info("Damage taken was reduced!"))
 
 	switch(damagetype)
 		if(BRUTE)
@@ -198,7 +206,7 @@
 /mob/living/proc/getToxLoss()
 	return toxloss
 
-/mob/living/proc/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/proc/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, force_be_heal)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_TOXINIMMUNE))

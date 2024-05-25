@@ -79,7 +79,7 @@
 	adjustStaminaLossBuffered(data.parry_stamina_cost)
 	parry_start_time = world.time
 	successful_parries = list()
-	addtimer(CALLBACK(src, .proc/end_parry_sequence), full_parry_duration)
+	addtimer(CALLBACK(src,PROC_REF(end_parry_sequence)), full_parry_duration)
 	if(data.parry_flags & PARRY_LOCK_ATTACKING)
 		ADD_TRAIT(src, TRAIT_MOBILITY_NOUSE, ACTIVE_PARRY_TRAIT)
 	if(data.parry_flags & PARRY_LOCK_SPRINTING)
@@ -340,7 +340,7 @@
 	if(owner)
 		attach_to(owner)
 	if(autorun)
-		INVOKE_ASYNC(src, .proc/run_animation, windup, active, spindown)
+		INVOKE_ASYNC(src,PROC_REF(run_animation), windup, active, spindown)
 
 /obj/effect/abstract/parry/main/Destroy()
 	detach_from(owner)

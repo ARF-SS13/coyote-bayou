@@ -2,6 +2,13 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 150
 	anchored = TRUE
+	var/resize = 1 
+
+
+/obj/structure/flora/Initialize()
+	.=..()
+	transform = transform.Scale(rand(8,12)/10, rand(8,12)/10)
+
 
 //trees
 /obj/structure/flora/tree
@@ -346,7 +353,7 @@
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/tactical)
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 500)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum,_AddElement), list(/datum/element/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
 
 /obj/item/kirbyplants/random

@@ -89,6 +89,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of beer"
 	glass_desc = "A freezing pint of beer."
 	pH = 4
+	sodie_tier = SODIE_TIER_1 // Beer is just soda with alcohol in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 	// Beer is a chemical composition of alcohol and various other things. It's a garbage nutrient but hey, it's still one. Also alcohol is bad, mmmkay?
 /datum/reagent/consumable/ethanol/beer/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -116,6 +122,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A freezing pint of green beer. Festive."
 	pH = 6
 	synth_metabolism_use_human = TRUE
+	sodie_tier = SODIE_TIER_2 // Gamer fuel, for gamers
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/beer/green/on_mob_life(mob/living/carbon/M)
 	if(M.color != color)
@@ -169,6 +181,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "glass of Thirteen Loko"
 	glass_desc = "This is a glass of Thirteen Loko, it appears to be of the highest quality. The drink, not the glass."
+	sodie_tier = SODIE_TIER_2 // Thirteen Loko, easy to make, easy to drink, easy to die
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/thirteenloko/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
@@ -250,6 +268,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		. = 1
 	return ..() || .
 
+/datum/reagent/consumable/ethanol/vilk
+	name = "Vilk"
+	description = "A worrisome coctktail of vodka and milk, surprisingly effective at treating radiation poisoning. For the Mommyland!"
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	boozepwr = 35
+	taste_description = "bitterness and cream"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of vilk"
+	glass_desc = "A worrisome coctktail of vodka and milk, surprisingly effective at treating radiation poisoning. For the Mommyland!"
+
+/datum/reagent/consumable/ethanol/vilk/on_mob_life(mob/living/carbon/M)
+	M.radiation = max(M.radiation-4,0)
+	return ..()
+
 /datum/reagent/consumable/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
 	description = "Made for a woman, strong enough for a man."
@@ -262,6 +295,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A glass of this is sure to prevent a meltdown."
 	pH = 3.5
 	value = REAGENT_VALUE_RARE
+	sodie_tier = SODIE_TIER_3 // it has soda in it, sorta
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/threemileisland/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
@@ -402,6 +441,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of ale"
 	glass_desc = "A freezing pint of delicious Ale."
 	pH = 4.5
+	sodie_tier = SODIE_TIER_1 // Ale is just beer that's been left out for a while
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_HIGH)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/goldschlager
 	name = "Goldschlager"
@@ -441,6 +486,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Gin and Tonic"
 	glass_desc = "A mild but still great cocktail. Drink up, like a true Englishman."
 	pH = 3
+	sodie_tier = SODIE_TIER_2 // Making a command decision, tonic is legally a sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/rum_coke
 	name = "Rum and Coke"
@@ -453,6 +504,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Rum and Coke"
 	glass_desc = "The classic go-to of fratboys."
 	pH = 4
+	sodie_tier = SODIE_TIER_2 // Its nuka dark, but better, cus its actually intended for consumption
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/cuba_libre
 	name = "Cuba Libre"
@@ -464,6 +521,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
 	glass_desc = "A classic mix of rum, cola, and lime. A favorite of revolutionaries everywhere!"
+	sodie_tier = SODIE_TIER_2 // Cuba Libre, the traditional drink of revolutions! Heals revolutionaries
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED) // viva la sodie
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
@@ -484,6 +547,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "whiskeycolaglass"
 	glass_name = "whiskey cola"
 	glass_desc = "An innocent-looking mixture of cola and Whiskey. Delicious."
+	sodie_tier = SODIE_TIER_2 // Its nuka dark, but better, cus its actually intended for consumption
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/martini
 	name = "Classic Martini"
@@ -575,6 +644,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Brave Bull"
 	glass_desc = "Tequila and Coffee liqueur, brought together in a mouthwatering mixture. Drink up."
 	var/tough_text
+	sodie_tier = SODIE_TIER_3 // BE BRAVE, SON OF BITCHES
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/brave_bull/on_mob_metabolize(mob/living/M)
 	tough_text = pick("brawny", "tenacious", "tough", "hardy", "sturdy") //Tuff stuff
@@ -598,6 +673,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "tequila Sunrise"
 	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Terra..."
 	var/obj/effect/dummy/lighting_obj/tequila_light
+	sodie_tier = SODIE_TIER_2 // grenadine is just cherry sodie thats gone flat FIGHT ME
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/Destroy()
 	if(tequila_light)
@@ -693,6 +774,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "The Manly Dorf"
 	glass_desc = "A manly concoction made from Ale and Beer. Intended for true men only."
 	var/dorf_mode
+	sodie_tier = SODIE_TIER_2 // the best drink in the game gets better!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/manly_dorf/on_mob_metabolize(mob/living/M)
 	var/real_dorf = isdwarf(M) //_species(H, /datum/species/dwarf)
@@ -722,6 +809,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "longislandicedteaglass"
 	glass_name = "Long Island Iced Tea"
 	glass_desc = "The liquor cabinet, brought together in a delicious mix. Intended for middle-aged alcoholic women only."
+	sodie_tier = SODIE_TIER_2 // Its got cola in it, so its a sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/moonshine
 	name = "Moonshine"
@@ -822,6 +915,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "whiskeysodaglass2"
 	glass_name = "whiskey soda"
 	glass_desc = "Ultimate refreshment."
+	sodie_tier = SODIE_TIER_2 // Whiskey SODA, so its a sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/antifreeze
 	name = "Anti-freeze"
@@ -867,6 +966,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "snowwhite"
 	glass_name = "Snow White"
 	glass_desc = "A cold refreshment."
+	sodie_tier = SODIE_TIER_2 // Two *technically* sodies combine to one whole sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/demonsblood //Prevents the imbiber from being dragged into a pool of blood by a slaughter demon.
 	name = "Demon's Blood"
@@ -878,6 +983,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "demonsblood"
 	glass_name = "Demons Blood"
 	glass_desc = "Just looking at this thing makes the hair at the back of your neck stand up."
+	sodie_tier = SODIE_TIER_3 // Made from two whole sodies, and I like both of em
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_HIGH)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/devilskiss //If eaten by a slaughter demon, the demon will regret it.
 	name = "Devil's Kiss"
@@ -900,6 +1011,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "vodkatonicglass"
 	glass_name = "vodka and tonic"
 	glass_desc = "For when a gin and tonic isn't Russian enough."
+	sodie_tier = SODIE_TIER_2 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/ginfizz
 	name = "Gin Fizz"
@@ -911,6 +1028,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "ginfizzglass"
 	glass_name = "gin fizz"
 	glass_desc = "Refreshingly lemony, deliciously dry."
+	sodie_tier = SODIE_TIER_2 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/bahama_mama
 	name = "Bahama Mama"
@@ -996,6 +1119,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "grogglass"
 	glass_name = "Grog"
 	glass_desc = "A fine and cepa drink for wastelanders."
+	sodie_tier = SODIE_TIER_1 // Imma give it a bone
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/aloe
 	name = "Aloe"
@@ -1063,6 +1192,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "changelingsting"
 	glass_name = "Changeling Sting"
 	glass_desc = "A stingy drink."
+	sodie_tier = SODIE_TIER_2 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/changelingsting/on_mob_life(mob/living/carbon/M)
 	if(M.mind) //Changeling Sting assists in the recharging of changeling chemicals.
@@ -1093,6 +1228,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Syndicate Bomb"
 	glass_desc = "A syndicate bomb."
+	sodie_tier = SODIE_TIER_2 // has some beer innit
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/syndicatebomb/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
@@ -1109,6 +1250,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "hiveminderaser"
 	glass_name = "Hivemind Eraser"
 	glass_desc = "For when even mindshields can't save you."
+	sodie_tier = SODIE_TIER_2 // 13loko
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/erikasurprise
 	name = "Erika Surprise"
@@ -1120,6 +1267,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "erikasurprise"
 	glass_name = "Erika Surprise"
 	glass_desc = "The surprise is, it's green!"
+	sodie_tier = SODIE_TIER_2 // GIt Ale innit
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/driestmartini
 	name = "Driest Martini"
@@ -1192,6 +1345,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Fetching Fizz"
 	glass_desc = "Induces magnetism in the imbiber. Started as a barroom prank but evolved to become popular with miners and scrappers. Metallic aftertaste."
 	value = REAGENT_VALUE_UNCOMMON
+	sodie_tier = SODIE_TIER_2 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/fetching_fizz/on_mob_life(mob/living/carbon/M)
 	for(var/obj/item/stack/ore/O in orange(3, M))
@@ -1211,6 +1370,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Hearty Punch"
 	glass_desc = "Aromatic beverage served piping hot. According to folk tales it can almost wake the dead."
 	value = REAGENT_VALUE_RARE //considering the low recipe yield.
+	sodie_tier = SODIE_TIER_5 // Its the best thing ever
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_5, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/hearty_punch/on_mob_life(mob/living/carbon/M)
 	if(M.health <= 0)
@@ -1232,6 +1397,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Bacchus' Blessing"
 	glass_desc = "You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?"
 	value = REAGENT_VALUE_RARE
+	sodie_tier = SODIE_TIER_5 // Theres probably some sodie in there, but you deserve something for this horrible thing
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_HIGHEST)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_5, SODIE_HEALRANK_HIGHEST)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_5, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_5, SODIE_HEALRANK_HIGHEST)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_5, SODIE_HEALRANK_HIGHEST)
 
 /datum/reagent/consumable/ethanol/atomicbomb
 	name = "Atomic Bomb"
@@ -1423,6 +1594,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Nar'Sour"
 	glass_desc = "A new hit cocktail inspired by THE ARM Breweries will have you shouting Fuu ma'jin in no time!"
 	value = REAGENT_VALUE_UNCOMMON
+	sodie_tier = SODIE_TIER_3 // Blood's pretty sodieful (cus one of the reagents is blood) (I mean sodie)
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/narsour/on_mob_life(mob/living/carbon/M)
 	M.cultslurring = min(M.cultslurring + 3, 3)
@@ -1496,6 +1673,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
 	glass_desc = "An intimidating and lawful beverage dares you to violate the law and make its day. Still can't drink it on duty, though."
+	sodie_tier = SODIE_TIER_2 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/quadruple_sec/on_mob_life(mob/living/carbon/M)
 	if(M.mind && HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM)) //Securidrink in line with the screwderiver for engineers.
@@ -1515,6 +1698,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Quintuple Sec"
 	glass_desc = "Now you are become law, destroyer of clowns."
 	value = REAGENT_VALUE_EXCEPTIONAL
+	sodie_tier = SODIE_TIER_3 // Tonic is a sodie, command decision
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/quintuple_sec/on_mob_life(mob/living/carbon/M)
 	if(M.mind && HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM)) //Securidrink in line with the screwderiver for engineers but STRONG..
@@ -1584,6 +1773,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	shot_glass_icon_state = "shotglassgreen"
 	pH = 4
 	value = REAGENT_VALUE_UNCOMMON
+	sodie_tier = SODIE_TIER_4 // i like thi stuff
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_HIGH)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_HIGH)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_metabolize(mob/living/L)
 	var/heal_points = 10
@@ -1803,6 +1998,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "utter bitterness"
 	glass_name = "glass of fernet"
 	glass_desc = "A glass of pure Fernet. Only an absolute madman would drink this alone."
+	sodie_tier = SODIE_TIER_2 // i miss drinking gallons of this on skyrat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
@@ -1821,6 +2022,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "godlyblend"
 	glass_name = "glass of fernet cola"
 	glass_desc = "A sawed-off cola bottle filled with Fernet Cola. Nothing better after eating like a lardass."
+	sodie_tier = SODIE_TIER_3 // i miss drinking gallons of this on skyrat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
@@ -1839,6 +2046,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "fanciulli"
 	glass_name = "glass of fanciulli"
 	glass_desc = "A glass of Fanciulli. It's just Manhattan with Fernet."
+	sodie_tier = SODIE_TIER_3 // i miss drinking gallons of this on skyrat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/fanciulli/on_mob_life(mob/living/carbon/M)
 	M.adjust_nutrition(-5)
@@ -1861,6 +2074,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state= "minted_fernet"
 	glass_name = "glass of branca menta"
 	glass_desc = "A glass of Branca Menta, perfect for those lazy and hot sunday summer afternoons." //Get lazy literally by drinking this
+	sodie_tier = SODIE_TIER_3 // i miss drinking gallons of this on skyrat
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/branca_menta/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C)
@@ -1894,6 +2113,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Wizz Fizz"
 	glass_desc = "The glass bubbles and froths with an almost magical intensity."
 	value = REAGENT_VALUE_COMMON
+	sodie_tier = SODIE_TIER_2 // magically delicious
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/wizz_fizz/on_mob_life(mob/living/carbon/M)
 	//A healing drink similar to Quadruple Sec, Ling Stings, and Screwdrivers for the Wizznerds; the check is consistent with the changeling sting
@@ -1913,6 +2138,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "bug_spray"
 	glass_name = "Bug Spray"
 	glass_desc = "Your eyes begin to water as the sting of alcohol reaches them."
+	sodie_tier = SODIE_TIER_2 // magically delicious
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/bug_spray/on_mob_life(mob/living/carbon/M)
 //Bugs should not drink Bug spray.
@@ -1934,6 +2165,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "applejack_glass"
 	glass_name = "Applejack"
 	glass_desc = "You feel like you could drink this all neight."
+	sodie_tier = SODIE_TIER_1 // i like it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_1, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_1, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_1, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/jack_rose
 	name = "Jack Rose"
@@ -1945,6 +2182,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "jack_rose"
 	glass_name = "Jack Rose"
 	glass_desc = "Enough of these, and you really will start to suppose your toeses are roses."
+	sodie_tier = SODIE_TIER_2 // i like it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/turbo
 	name = "Turbo"
@@ -1957,6 +2200,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Turbo"
 	glass_desc = "A turbulent cocktail for outlaw hoverbikers."
 	value = REAGENT_VALUE_RARE
+	sodie_tier = SODIE_TIER_3 // sodie
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M)
 	if(prob(4))
@@ -1975,6 +2224,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Old Timer"
 	glass_desc = "WARNING! May cause premature aging!"
 	value = REAGENT_VALUE_UNCOMMON //Parsnip juice? Really? lol
+	sodie_tier = SODIE_TIER_2 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/old_timer/on_mob_life(mob/living/carbon/M)
 	if(prob(20))
@@ -2008,6 +2263,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Rubberneck"
 	glass_desc = "A popular drink amongst those adhering to an all synthetic diet."
 	value = REAGENT_VALUE_COMMON
+	sodie_tier = SODIE_TIER_3 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/duplex
 	name = "Duplex"
@@ -2049,6 +2310,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "The glass seems to be sliding between realities. Doubles as a Berenstain remover."
 	value = REAGENT_VALUE_UNCOMMON
 	var/stored_teleports = 0
+	sodie_tier = SODIE_TIER_2 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M)
 	if(M.drunkenness > 40)
@@ -2159,6 +2426,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Sin's Delight"
 	glass_desc = "You can smell the seven sins rolling off the top of the glass."
 	value = REAGENT_VALUE_RARE
+	sodie_tier = SODIE_TIER_4 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/strawberry_daiquiri
 	name = "Strawberry Daiquiri"
@@ -2180,6 +2453,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "liz_fizz"
 	glass_name = "Liz Fizz"
 	glass_desc = "Looks like a citrus sherbet seperated in layers? Why would anyone want that is beyond you."
+	sodie_tier = SODIE_TIER_3 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/miami_vice
 	name = "Miami Vice"
@@ -2231,6 +2510,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of Rotgut"
 	glass_desc = "cleaning fluid or tasty drink, you decide."
 	value = REAGENT_VALUE_UNCOMMON
+	sodie_tier = SODIE_TIER_4 // sodie rots teeth, and this rots guts, so..,
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_LOW)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/gin_garden
 	name = "Gin Garden"
@@ -2242,6 +2527,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "gin_garden"
 	glass_name = "gin garden"
 	glass_desc = "Hey, someone forgot the herb and... the cucumber in my cocktail!"
+	sodie_tier = SODIE_TIER_2 // its got sodie in it
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_HIGHEST)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
 
 /datum/reagent/consumable/ethanol/amaretto
 	name = "Amaretto"
@@ -2347,6 +2638,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/list/names = list("null fruit" = 1) //Names of the fruits used. Associative list where name is key, value is the percentage of that fruit.
 	var/list/tastes = list("bad coding" = 1) //List of tastes. See above.
 	pH = 4
+	sodie_tier = SODIE_TIER_2 // I just like fruit wine
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
 
 /datum/reagent/consumable/ethanol/fruit_wine/on_new(list/data)
 	names = data["names"]
@@ -2384,15 +2681,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of [name]"
 	glass_desc = description
 	for(var/taste in tastes)
-		switch(tastes[taste])
-			if(minimum_percent*2 to INFINITY)
-				primary_tastes += taste
-			if(minimum_percent to minimum_percent*2)
-				secondary_tastes += taste
+		if(tastes[taste] > minimum_percent*2)
+			primary_tastes += taste
+		else if(tastes[taste] > minimum_percent)
+			secondary_tastes += taste
 
 	var/minimum_name_percent = 0.35
 	name = ""
-	var/list/names_in_order = sortTim(names, /proc/cmp_numeric_dsc, TRUE)
+	var/list/names_in_order = sortTim(names, GLOBAL_PROC_REF(cmp_numeric_dsc), TRUE)
 	var/named = FALSE
 	for(var/fruit_name in names)
 		if(names[fruit_name] >= minimum_name_percent)

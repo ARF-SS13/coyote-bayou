@@ -41,13 +41,13 @@
 	icon_state = "standingb"
 	light_color = "#0000FF"
 
-/obj/structure/campfire/wallcandle
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle
 	name = "wall candle"
 	desc = "A flickering wall candle."
 	icon = 'modular_roguetown/misc/lighting.dmi'
 	icon_state = "wallcandle"
 
-/obj/structure/campfire/wallcandle/blue
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle/blue
 	name = "wall candle"
 	desc = "A flickering wall candle."
 	icon = 'modular_roguetown/misc/lighting.dmi'

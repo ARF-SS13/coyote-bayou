@@ -55,7 +55,7 @@
 	if(!isliving(loc)) // fuck
 		qdel(src)
 		return
-	RegisterSignal(loc, COMSIG_MOB_CLICKON, .proc/intercept_click)
+	RegisterSignal(loc, COMSIG_MOB_CLICKON,PROC_REF(intercept_click))
 	owner = WEAKREF(loc)
 
 /obj/item/hand_item/caster/Destroy()

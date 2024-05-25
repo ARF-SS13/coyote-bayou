@@ -8,14 +8,13 @@
 	desc = "A retrofit of the orginal 'Durand' exosuit designed for extended combat operations, the shield projector has been replaced with a smoke-screen dispenser and a sophisticated sensor suite."
 	icon_state = "marauder"
 	step_in = 5
-	max_integrity = 500
+	max_integrity = 650
 	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 60000
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	infra_luminosity = 3
 	wreckage = /obj/structure/mecha_wreckage/marauder
 	internal_damage_threshold = 10
-	step_energy_drain = 60
 	force = 40 // Just don't go near that thing, or do, it can't strafe.
 	canstrafe = FALSE
 
@@ -46,7 +45,7 @@
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	icon_state = "seraph"
 	step_in = 3
-	max_integrity = 1000
+	max_integrity = 1100
 	armor = ARMOR_VALUE_HEAVY
 	infra_luminosity = 1
 	wreckage = /obj/structure/mecha_wreckage/seraph

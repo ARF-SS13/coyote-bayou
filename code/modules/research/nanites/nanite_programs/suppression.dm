@@ -11,7 +11,7 @@
 /datum/nanite_program/sleepy/on_trigger(comm_message)
 	to_chat(host_mob, span_warning("You start to feel very sleepy..."))
 	host_mob.drowsyness += 20
-	addtimer(CALLBACK(host_mob, /mob/living.proc/Sleeping, 200), rand(60,200))
+	addtimer(CALLBACK(host_mob, TYPE_PROC_REF(/mob/living,Sleeping), 200), rand(60,200))
 
 /datum/nanite_program/paralyzing
 	name = "Paralysis"
@@ -276,7 +276,7 @@
 /datum/nanite_program/good_mood
 	name = "Happiness Enhancer"
 	desc = "The nanites synthesize serotonin inside the host's brain, creating an artificial sense of happiness."
-	use_rate = 0.1
+	use_rate = 0.5 // kinda goated, +speed & +health 
 	rogue_types = list(/datum/nanite_program/brain_decay)
 
 /datum/nanite_program/good_mood/register_extra_settings()

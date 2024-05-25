@@ -22,8 +22,7 @@
 	if(erupting_state)
 		icon_state = erupting_state
 	else
-		var/mutable_appearance/I = mutable_appearance('icons/obj/lavaland/terrain.dmi', "[icon_state]_soup")
-		I.color = mix_color_from_reagents(reagents.reagent_list)
+		var/mutable_appearance/I = mutable_appearance('icons/obj/lavaland/terrain.dmi', "[icon_state]_soup", color = mix_color_from_reagents(reagents.reagent_list))
 		add_overlay(I)
 
 /obj/structure/geyser/process()

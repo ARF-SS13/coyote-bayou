@@ -87,7 +87,7 @@ superlagg says: cool story, oranges
 	block_chance = 0 // oops
 	force = 35 // oops
 	item_flags = ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/bokken/quick_parry/proj
+	block_parry_data = /datum/block_parry_data/bokken
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/katana/timestop/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
@@ -123,36 +123,28 @@ superlagg says: cool story, oranges
 	wound_bonus = 0
 
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
-	parry_stamina_cost = 8 // be wise about when you parry, though, else you won't be able to fight enough to make it count
+	parry_stamina_cost = 10 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 20 // small parry window
+	parry_time_active = 10 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
-	parry_efficiency_to_counterattack = 120
-	parry_efficiency_considered_successful = 80		// VERY generous
+	parry_efficiency_to_counterattack = 20 // unless you completely butcher your parry, you will riposte
+	parry_efficiency_considered_successful = 0		// VERY generous
 	parry_efficiency_perfect = 120
-	parry_efficiency_perfect_override = list(
-		TEXT_ATTACK_TYPE_PROJECTILE = 30,
-	)
-	parry_failed_stagger_duration = 2 SECONDS
+	parry_efficiency_perfect_override = list()
+	parry_failed_stagger_duration = 0.5 SECONDS
+	parry_failed_clickcd_duration = 0.5 SECONDS
 	parry_data = list(
 		PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5, // 7*2.5 = 17.5, 8*2.5 = 20, 9*2.5 = 22.5, 10*2.5 = 25
 	)
 
 /datum/block_parry_data/bokken/quick_parry // emphasizing REALLY SHORT PARRIES
-	parry_stamina_cost = 6 // still more costly than most parries, but less than a full bokken parry
+	parry_stamina_cost = 10 // still more costly than most parries, but less than a full bokken parry
 	parry_time_active = 5 // REALLY small parry window
-	parry_time_perfect = 2.5 // however...
-	parry_time_perfect_leeway = 2 // the entire time, the parry is perfect
-	parry_failed_stagger_duration = 1 SECONDS
-	parry_failed_clickcd_duration = 1 SECONDS // more forgiving punishments for missed parries
 	// still, don't fucking miss your parries or you're down stamina and staggered to shit
-
-/datum/block_parry_data/bokken/quick_parry/proj
-	parry_efficiency_perfect_override = list()
 
 /obj/item/melee/bokken/Initialize()
 	. = ..()
@@ -400,7 +392,7 @@ superlagg says: cool story, oranges
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddElement(/datum/element/art, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 1000)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum,_AddElement), list(/datum/element/beauty, 1000)), 0)
 
 /obj/item/tailclub
 	name = "tail club"
@@ -486,7 +478,7 @@ superlagg says: cool story, oranges
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/ownerExamined)
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE,PROC_REF(ownerExamined))
 
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
@@ -503,7 +495,7 @@ superlagg says: cool story, oranges
 /obj/item/circlegame/proc/ownerExamined(mob/living/owner, mob/living/sucker)
 	if(!istype(sucker) || !in_range(owner, sucker))
 		return
-	addtimer(CALLBACK(src, .proc/waitASecond, owner, sucker), 4)
+	addtimer(CALLBACK(src,PROC_REF(waitASecond), owner, sucker), 4)
 
 /// Stage 2: Fear sets in
 /obj/item/circlegame/proc/waitASecond(mob/living/owner, mob/living/sucker)
@@ -512,10 +504,10 @@ superlagg says: cool story, oranges
 
 	if(owner == sucker) // big mood
 		to_chat(owner, span_danger("Wait a second... you just looked at your own [src.name]!"))
-		addtimer(CALLBACK(src, .proc/selfGottem, owner), 10)
+		addtimer(CALLBACK(src,PROC_REF(selfGottem), owner), 10)
 	else
 		to_chat(sucker, span_danger("Wait a second... was that a-"))
-		addtimer(CALLBACK(src, .proc/GOTTEM, owner, sucker), 6)
+		addtimer(CALLBACK(src,PROC_REF(GOTTEM), owner, sucker), 6)
 
 /// Stage 3A: We face our own failures
 /obj/item/circlegame/proc/selfGottem(mob/living/owner)
@@ -641,8 +633,8 @@ superlagg says: cool story, oranges
 
 /obj/item/vibro_weapon/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
@@ -684,9 +676,9 @@ superlagg says: cool story, oranges
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "pitchfork"
 	desc = "A simple tool used for moving hay."
-	force = 25
+	force = 40
 	throwforce = 25
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "impaled", "pierced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
@@ -696,8 +688,8 @@ superlagg says: cool story, oranges
 
 /obj/item/pitchfork/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD,PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD,PROC_REF(on_unwield))
 
 /obj/item/pitchfork/ComponentInitialize()
 	. = ..()

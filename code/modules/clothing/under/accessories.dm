@@ -918,3 +918,74 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
 
+/obj/item/clothing/accessory/looking
+	name = "looking for a group"
+	desc = "Man where is everyone"
+	item_state = "looking"
+	icon_state = "looking"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/melee
+	name = "melee specialist"
+	desc = "You like beating people with a club dont you?"
+	item_state = "melee"
+	icon_state = "melee"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/ranged
+	name = "ranged specialist"
+	desc = "You like shooting people dont you?"
+	item_state = "ranged"
+	icon_state = "ranged"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/newbsprout
+	name = "new sprout"
+	desc = "You arent sure what your doing, but you want people to help"
+	item_state = "sprout"
+	icon_state = "sprout"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/mentorcrown
+	name = "mentor crown"
+	desc = "You are sure of what your doing, and are willing to help"
+	item_state = "crown"
+	icon_state = "crown"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/healer
+	name = "support specialist"
+	desc = "Doesnt come with the bottom perk for free"
+	item_state = "healer"
+	icon_state = "healer"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/pvpindicator
+	name = "PVP Intent"
+	desc = "You just want to kill someone, well, if two characters have this floating next to eachother, they should just go to town on one another!"
+	item_state = "antag"
+	icon_state = "antag"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+/obj/item/clothing/accessory/tank
+	name = "tank specialist"
+	desc = "Doesnt come with the top perk for free"
+	item_state = "shield"
+	icon_state = "shield"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)

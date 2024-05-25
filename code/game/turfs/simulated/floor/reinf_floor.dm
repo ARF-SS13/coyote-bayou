@@ -127,35 +127,36 @@
 	desc = "The air smells strangely over this sinister flooring."
 	icon_state = "plating"
 	floor_tile = null
-	var/obj/effect/clockwork/overlay/floor/bloodcult/realappearance
+	// var/obj/effect/clockwork/overlay/floor/bloodcult/realappearance
 
 
-/turf/open/floor/engine/cult/Initialize()
-	. = ..()
-	new /obj/effect/temp_visual/cult/turf/floor(src)
-	realappearance = new /obj/effect/clockwork/overlay/floor/bloodcult(src)
-	realappearance.linked = src
+// /turf/open/floor/engine/cult/Initialize()
+// 	. = ..()
+// 	new /obj/effect/temp_visual/cult/turf/floor(src)
+// //	realappearance = new /obj/effect/clockwork/overlay/floor/bloodcult(src)
+// //	realappearance.linked = src
 
-/turf/open/floor/engine/cult/Destroy()
-	be_removed()
-	return ..()
+// /turf/open/floor/engine/cult/Destroy()
+// 	be_removed()
+// 	return ..()
 
-/turf/open/floor/engine/cult/ChangeTurf(path, new_baseturf, flags)
-	if(path != type)
-		be_removed()
-	return ..()
+// /turf/open/floor/engine/cult/ChangeTurf(path, new_baseturf, flags)
+// 	if(path != type)
+// 		be_removed()
+// 	return ..()
 
-/turf/open/floor/engine/cult/proc/be_removed()
-	qdel(realappearance)
-	realappearance = null
+// /turf/open/floor/engine/cult/proc/be_removed()
+// //	qdel(realappearance)
+// 	// realappearance = null
 
-/turf/open/floor/engine/cult/ratvar_act()
-	. = ..()
-	if(istype(src, /turf/open/floor/engine/cult)) //if we haven't changed type
-		var/previouscolor = color
-		color = "#FAE48C"
-		animate(src, color = previouscolor, time = 8)
-		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+// /*/turf/open/floor/engine/cult/ratvar_act()
+// 	. = ..()
+// 	if(istype(src, /turf/open/floor/engine/cult)) //if we haven't changed type
+// 		var/previouscolor = color
+// 		color = "#FAE48C"
+// 		animate(src, color = previouscolor, time = 8)
+// 		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+// */
 
 /turf/open/floor/engine/cult/airless
 	initial_gas_mix = AIRLESS_ATMOS

@@ -75,6 +75,20 @@
 	if(!GLOB.insect_markings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_markings, GLOB.insect_markings_list)
 
+	//Dragons
+	if(!GLOB.derg_body_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_body, GLOB.derg_body_list)
+	if(!GLOB.derg_belly_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_belly, GLOB.derg_belly_list)
+	if(!GLOB.derg_horn_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_horns, GLOB.derg_horn_list)
+	if(!GLOB.derg_mane_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_mane, GLOB.derg_mane_list)
+	if(!GLOB.derg_ear_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_ears, GLOB.derg_ear_list)
+	if(!GLOB.derg_eye_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_eyes, GLOB.derg_eye_list)
+
 	//CIT CHANGES - genitals and such
 	if(!GLOB.cock_shapes_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/penis, GLOB.cock_shapes_list)
@@ -161,6 +175,7 @@
 		"snout"				= pick(GLOB.snouts_list),
 		"horns"				= "None",
 		"horns_color"		= "85615a",
+		"blood_color"		= "",
 		"ears"				= "None",
 		"frills"			= pick(GLOB.frills_list),
 		"spines"			= pick(GLOB.spines_list),
@@ -170,6 +185,13 @@
 		"insect_fluff"		= "None",
 		"insect_markings"	= pick(GLOB.insect_markings_list),
 		"taur"				= "None",
+		"derg_body"			= pick(GLOB.derg_body_list),
+		"derg_belly"		= pick(GLOB.derg_belly_list),
+		"derg_ears"			= "None",
+		"derg_mane"			= "None",
+		"derg_horns"		= "None",
+		"derg_eyes"			= "None",
+
 		"mam_body_markings" = list(),
 		"mam_ears" 			= snowflake_ears_list ? pick(snowflake_ears_list) : "None",
 		"mam_snouts"		= snowflake_mam_snouts_list ? pick(snowflake_mam_snouts_list) : "None",

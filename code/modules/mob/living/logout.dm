@@ -1,5 +1,6 @@
 /mob/living/Logout()
 	update_z(null)
+	SSstatpanels.discard_horny_demographic(src)
 	..()
 	disconnect_time = world.realtime
 	if(!key && mind)	//key and mind have become separated.

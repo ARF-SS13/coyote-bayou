@@ -506,6 +506,34 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cobpipeoff"
 	smoketime = 0
 
+/obj/item/clothing/mask/cigarette/pipe/cigarpipe
+	name = "cigarette mouthpiece"
+	desc = "A pipe, for smoking cigarettes. Probably increases your charisma."
+	icon_state = "extendpipeoff"
+	item_state = "extendpipeoff"
+	icon_on = "extendpipeon"  //Note - these are in masks.dmi
+	icon_off = "extendpipeoff"
+	smoketime = 0
+
+/obj/item/clothing/mask/cigarette/pipe/cigarpipe/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/clothing/mask/cigarette)) // This does mean you can put other pipes into it yes
+		to_chat(user, span_notice("You stuff [O] into [src]."))
+		smoketime = 400
+		packeditem = 1
+		name = "[O.name]-packed [initial(name)]"
+		if(O.reagents)
+			O.reagents.trans_to(src, O.reagents.total_volume, log = "cigar fill: pipe pack")
+		qdel(O)
+		
+	else
+		var/lighting_text = O.ignition_effect(src,user)
+		if(lighting_text)
+			if(smoketime > 0)
+				light(lighting_text)
+			else
+				to_chat(user, span_warning("There is nothing to smoke!"))
+		else
+			return ..()
 
 /////////
 //ZIPPO//

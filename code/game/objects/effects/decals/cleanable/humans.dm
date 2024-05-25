@@ -7,6 +7,7 @@
 	blood_state = BLOOD_STATE_BLOOD
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	color = BLOOD_COLOR_HUMAN //default so we don't have white splotches everywhere.
+	var/rainbow = FALSE
 	beauty = -100
 
 
@@ -26,6 +27,14 @@
 	update_icon()
 
 /obj/effect/decal/cleanable/blood/update_icon()
+	var/dnacolor = blood_DNA_to_color()
+	if(rainbow || dnacolor == "rainbow")
+		color = "#ffffff"
+		rainbow = TRUE
+		var/filter = get_filter("rainbow")
+		if(!filter)
+			add_filter("rainbow", 100, list(type="layer", x=rand(-16,16), y=0, icon='icons/effects/rainbow_gradient.dmi', blend_mode=BLEND_MULTIPLY))
+		return
 	color = blood_DNA_to_color()
 
 /obj/effect/decal/cleanable/blood/old
@@ -58,8 +67,17 @@
 	random_icon_states = null
 	beauty = -50
 	var/list/existing_dirs = list()
+	var/rainbow
 
 /obj/effect/decal/cleanable/trail_holder/update_icon()
+	var/dnacolor = blood_DNA_to_color()
+	if(rainbow || dnacolor == "rainbow")
+		color = "#ffffff"
+		rainbow = TRUE
+		var/filter = get_filter("rainbow")
+		if(!filter)
+			add_filter("rainbow", 100, list(type="layer", x=rand(-16,16), y=0, icon='icons/effects/rainbow_gradient.dmi', blend_mode=BLEND_MULTIPLY))
+		return
 	color = blood_DNA_to_color()
 
 /obj/effect/cleanable/trail_holder/Initialize()
@@ -93,8 +111,8 @@
 	. = ..()
 	
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_exit,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
+		COMSIG_ATOM_EXITED =PROC_REF(on_exit),
 
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)

@@ -37,3 +37,47 @@
 	. = ..()
 	if(prob(5) && random_retaliate == TRUE)
 		Retaliate()
+
+
+/mob/living/simple_animal/hostile/goose
+	name = "angry goose"
+	desc = "It's loose"
+	icon_state = "goose"
+	icon_living = "goose"
+	icon_dead = "goose_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	emote_taunt = list("hisses")
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 25
+	health = 25
+	harm_intent_damage = 5
+	melee_damage_lower = 5
+	melee_damage_upper = 15
+	attack_verb_continuous = "pecks"
+	attack_verb_simple = "peck"
+	attack_sound = "goose"
+	speak_emote = list("honks")
+	faction = list("neutral")
+	attack_same = TRUE
+	gold_core_spawnable = HOSTILE_SPAWN
+	emote_taunt_sound = list('sound/effects/goose.ogg')
+	idlesound = list('sound/effects/goose.ogg')
+	death_sound = 'sound/effects/goose.ogg'
+	var/random_retaliate = TRUE
+
+/mob/living/simple_animal/hostile/goose/Initialize(mapload, nest_spawned)
+	. = ..()
+	if(prob(3))
+		name = "angry bird"
+	else if(prob(1))
+		idlesound = list('sound/machines/thegoose_song_01.ogg', 'sound/machines/thegoose_song_02.ogg', 'sound/machines/thegoose_honk.ogg')

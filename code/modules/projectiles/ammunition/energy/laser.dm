@@ -442,6 +442,10 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
+/obj/item/ammo_casing/energy/laser/tg/spam
+	projectile_type = /obj/item/projectile/beam/laser/tg/spam
+	e_cost = 40 // 125 shots; might need adjustment. Half the DPS of a compact RCW
+
 //Laser AK casings
 /obj/item/ammo_casing/energy/laser/tg/kalashheavy
 	projectile_type = /obj/item/projectile/beam/laser/tg/kalashheavy
@@ -458,6 +462,13 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/beam
 	e_cost = 3000 // 10 shots
 	fire_sound = 'sound/f13weapons/beamrifle.ogg'
+
+//"Laser" Cov Carbine
+/obj/item/ammo_casing/energy/laser/covcarbine
+	projectile_type = /obj/item/projectile/beam/laser/mpc/covcarb
+	e_cost = 1660 // ~18 shots, accurate to Halo 2
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

@@ -297,7 +297,7 @@
 			continue
 		if(!C)
 			C = R.holder.my_atom
-		R.pre_metabolize(C)
+		R.pre_mob_life(C)
 		if(!R.metabolizing)
 			R.metabolizing = TRUE
 			if(isrobotic(C) && !R.synth_metabolism_use_human)
@@ -329,6 +329,7 @@
 					need_mob_update += R.on_mob_life_synth(C)
 				else
 					need_mob_update += R.on_mob_life(C)
+				need_mob_update += R.post_mob_life(C)
 
 	if(can_overdose)
 		if(addiction_tick == 6)
@@ -478,7 +479,7 @@
 				if(total_matching_reagents == total_required_reagents && total_matching_catalysts == total_required_catalysts && matching_container && matching_other && meets_temp_requirement && can_special_react)
 					possible_reactions  += C
 
-		sortTim(possible_reactions, /proc/cmp_chemical_reactions_default, FALSE)
+		sortTim(possible_reactions, GLOBAL_PROC_REF(cmp_chemical_reactions_default), FALSE)
 
 		if(possible_reactions.len)
 			var/datum/chemical_reaction/selected_reaction = possible_reactions[1]

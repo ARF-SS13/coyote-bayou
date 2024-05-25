@@ -7,7 +7,7 @@ LINEN BINS
 
 /obj/item/blanket
 	name = "blanket"
-	desc = "A undyed rough blanket."
+	desc = "A undyed rough blanket. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "blanket1"
 	item_state = "bedsheet"
@@ -18,12 +18,29 @@ LINEN BINS
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 
+/obj/item/blanket/attack_self(mob/user)
+	if(!user.can_reach(src))		//No telekenetic grabbing.
+		return
+	if(!user.dropItemToGround(src))
+		return
+	if(layer == initial(layer))
+		plane = MOB_PLANE // makes it render on the mob plane to overlay the mobs.
+		layer = ABOVE_MOB_LAYER
+		to_chat(user, span_notice("You cover yourself with [src]."))
+	else
+		plane = initial(plane) // sets it back!
+		layer = initial(layer)
+		to_chat(user, span_notice("You smooth [src] out beneath you."))
+	add_fingerprint(user)
+	return
+// Want something to do? Refactor blankets into bedsheets.
+
 /obj/item/blanket/blanketalt
 	icon_state = "blanket2"
 
 /obj/item/bedsheet
 	name = "bedsheet"
-	desc = "A surprisingly soft linen bedsheet."
+	desc = "A surprisingly soft linen bedsheet. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "sheetwhite"
 	item_state = "bedsheet"
@@ -345,7 +362,7 @@ LINEN BINS
 	return attack_hand(user)
 
 /obj/structure/bedsheetbin/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		return
 	if(amount >= 1)
 		amount--

@@ -14,6 +14,7 @@
 /turf/open/indestructible/reebe_void/spawning
 	icon_state = "reebespawn"
 
+/*
 /turf/open/indestructible/reebe_void/spawning/Initialize(mapload)
 	. = ..()
 	if(mapload)
@@ -24,17 +25,19 @@
 				new /obj/item/clockwork/alloy_shards/medium(src)
 			if(prob(3))
 				new /obj/item/clockwork/alloy_shards/small(src)
-
+*/
 /turf/open/indestructible/reebe_void/spawning/lattices
 	icon_state = "reebelattice"
 
+/*
 /turf/open/indestructible/reebe_void/spawning/lattices/Initialize(mapload)
 	. = ..()
 	if(mapload)
 		if(prob(2.5))
 			new /obj/structure/lattice/catwalk/clockwork(src)
 		else if(prob(5))
-			new /obj/structure/lattice/clockwork(src)
+			new /obj/structure/lattice/clockwork(src) 
+*/
 
 /turf/open/indestructible/reebe_void/Enter(atom/movable/AM, atom/old_loc)
 	if(!..())

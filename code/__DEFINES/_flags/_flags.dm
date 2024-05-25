@@ -106,6 +106,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define FREEZE_PROOF	(1<<7) //can't be frozen
 #define GOLIATH_RESISTANCE (1<<8) //CIT CHANGE
 #define GOLIATH_WEAKNESS (1<<9) //CIT CHANGE
+#define BLAST_RESISTANT (1<<10) //isnt pwnt by ex_act severity 1, just beaten up a bit
 
 //tesla_zap
 #define ZAP_MACHINE_EXPLOSIVE		(1<<0)
@@ -129,6 +130,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 #define GLOBAL_LIGHT_TURF_2         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
 #define BLOCK_RADIO_2               (1<<1)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
+#define BOUNTY_CLAIMED               (1<<2)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
 
 //Mob mobility var flags
 /// any flag

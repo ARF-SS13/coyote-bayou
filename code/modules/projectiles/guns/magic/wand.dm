@@ -250,18 +250,23 @@
 	desc = "An extremely basic wand carved from bone, and topped with a roughly hewn crystal. Good for begginers, and handling vermin, but not much else."
 	icon_state = "missilewand"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
-	max_charges = 15
-	recharge_rate = 20 SECONDS
+	max_charges = 1
+	recharge_rate = 4 SECONDS
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/weak
 	name = "weak arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 15
-	damage_low = 10
-	damage_high = 30
+	damage_low = 25
+	damage_high = 35
 	damage_type = BURN
 	flag = "laser"
 
@@ -275,13 +280,14 @@
 	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
-	max_charges = 10
-	recharge_rate = 10 SECONDS
+	max_charges = 3
+	recharge_rate = 1 SECONDS // It used to fire 3 shots, this just makes it a bit like how it was before
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
 	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
-	pellets = 3
-	variance = 100
 
 /obj/item/projectile/magic/kelpmagic/sparks/weak
 	supereffective_damage = null
@@ -297,20 +303,29 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	max_charges = 25
-	recharge_rate = 10 SECONDS
+	max_charges = 2
+	recharge_rate = 6 SECONDS
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+	/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
+	pellets = 6
 
 /obj/item/projectile/magic/kelpmagic/magicmissile/average
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
-	damage = 20
-	damage_low = 10
-	damage_high = 30
+	damage = 35
+	damage_low = 30
+	damage_high = 40
 	damage_type = BURN
 	flag = "laser"
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 
 /****************/
@@ -324,11 +339,10 @@
 	icon_state = "lightningrod"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
-	max_charges = 30
-	recharge_rate = 6 SECONDS
+	max_charges = 4
+	recharge_rate = 2 SECONDS
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/automatic/rpm300
 	)
 
 /obj/item/ammo_casing/magic/kelpmagic/sparks
@@ -336,9 +350,9 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
-	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
-	damage_low = 5
-	damage_high = 15
+	damage = 15 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
+	damage_low = 10
+	damage_high = 20
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"
@@ -358,7 +372,7 @@
 	impact_light_range = 3.75
 	impact_light_color_override = LIGHT_COLOR_BLUE
 	supereffective_damage = 10
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
 /****************/
@@ -372,8 +386,8 @@
 	icon_state = "fireboltwand"
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
-	max_charges = 8
-	recharge_rate = 20 SECONDS
+	max_charges = 3
+	recharge_rate = 4 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/firebolt
 		projectile_type = /obj/item/projectile/magic/kelpmagic/firebolt
@@ -399,7 +413,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 30 SECONDS
+	recharge_rate = 3 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand

@@ -1,7 +1,7 @@
 ///////////////////// Mob Living /////////////////////
 /mob/living/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, list(COMSIG_MOB_CLIENT_LOGIN, COMSIG_MOB_KEY_CHANGE), .proc/vorify)
+	RegisterSignal(src, list(COMSIG_MOB_CLIENT_LOGIN, COMSIG_MOB_KEY_CHANGE),PROC_REF(vorify))
 
 /mob/living/proc/vorify()
 	if(!CHECK_PREFS(src, VOREPREF_MASTER))

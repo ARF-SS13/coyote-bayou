@@ -302,7 +302,7 @@
 ////////////////////
 //Good Boy 1A10//
 ////////////////////
-datum/interaction/lewd/mutual/good_boy
+/datum/interaction/lewd/mutual/good_boy
 	description = "Partner/Head - Call them a good boy."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -328,7 +328,7 @@ datum/interaction/lewd/mutual/good_boy
 ////////////////////
 //Good Girl 1A11//
 ////////////////////
-datum/interaction/lewd/mutual/good_girl
+/datum/interaction/lewd/mutual/good_girl
 	description = "Partner/Head - Call them a good girl."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -354,7 +354,7 @@ datum/interaction/lewd/mutual/good_girl
 ////////////////////
 //Praise them 1A12//
 ////////////////////
-datum/interaction/lewd/mutual/praise_them
+/datum/interaction/lewd/mutual/praise_them
 	description = "Partner/Head - Praise them."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -380,7 +380,7 @@ datum/interaction/lewd/mutual/praise_them
 ////////////////////
 //Play with their mouth 1A13//
 ////////////////////
-datum/interaction/lewd/mutual/mouth_play
+/datum/interaction/lewd/mutual/mouth_play
 	description = "Partner/Head - Play with their mouth."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -406,7 +406,7 @@ datum/interaction/lewd/mutual/mouth_play
 ////////////////////
 //Beg to be bred, FE 1A14//
 ////////////////////
-datum/interaction/lewd/mutual/nesting_behavior
+/datum/interaction/lewd/mutual/nesting_behavior
 	description = "Partner/Head - Beg them to breed you, Feminine Edition."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -433,7 +433,7 @@ datum/interaction/lewd/mutual/nesting_behavior
 ////////////////////
 //Beg to be bred, ME 1A15//
 ////////////////////
-datum/interaction/lewd/mutual/nesting_behavior_butt
+/datum/interaction/lewd/mutual/nesting_behavior_butt
 	description = "Partner/Head - Beg them to breed you, Butt Edition."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -459,7 +459,7 @@ datum/interaction/lewd/mutual/nesting_behavior_butt
 ////////////////////
 //Play with their hair 1A16//
 ////////////////////
-datum/interaction/lewd/mutual/hair_play
+/datum/interaction/lewd/mutual/hair_play
 	description = "Partner/Head - Play with their hair."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap

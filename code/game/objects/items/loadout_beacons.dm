@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/kit_spawner/attack_self(mob/user)
 	if(can_use_kit(user))
-		INVOKE_ASYNC(src, .proc/use_the_kit, user)
+		INVOKE_ASYNC(src,PROC_REF(use_the_kit), user)
 	else
 		playsound(src, 'sound/machines/synth_no.ogg', 40, 1)
 
@@ -376,7 +376,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		stop_using_the_kit(user)
 		return
 	//user.show_message("[final_key] selected!")
-	INVOKE_ASYNC(src, .proc/spawn_the_thing, user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
+	INVOKE_ASYNC(src,PROC_REF(spawn_the_thing), user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
 
 /obj/item/kit_spawner/proc/check_choice(choice_to_check)
 	if(!choice_to_check)
@@ -781,7 +781,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/melee/onehanded/machete/scrapsabre(src)
 
 /obj/item/storage/box/gun/melee/celestia
-	name = "Plasma Cutter Celestia"
+	name = "Plasma Slicer Celestia"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/celestia/PopulateContents()
@@ -795,14 +795,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
 
 /obj/item/storage/box/gun/melee/eve
-	name = "Plasma Cutter Eve"
+	name = "Plasma Slicer Eve"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/eve/PopulateContents()
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 
 /obj/item/storage/box/gun/melee/plasma
-	name = "Plasma Cutter"
+	name = "Plasma Slicer"
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/gun/melee/PopulateContents()
@@ -1199,6 +1199,28 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a308(src)
 	new /obj/item/ammo_box/a308box(src)
 
+/obj/item/storage/box/gun/revolver/rev47
+	name = "4.7mm caseless revolver case"
+
+/obj/item/storage/box/gun/revolver/rev47/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver47mm(src)
+	new /obj/item/ammo_box/m473(src)
+
+/obj/item/storage/box/gun/revolver/rev5
+	name = "5mm revolver case"
+
+/obj/item/storage/box/gun/revolver/rev5/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver5mm(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+
+/obj/item/storage/box/gun/pistol/pistol47
+	name = "4.7mm pistol case"
+
+/obj/item/storage/box/gun/pistol/pistol47/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/pistol47mm(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/magazine/m47pistol(src)
+
 /// Semiauto pistols!
 
 /obj/item/storage/box/gun/pistol
@@ -1338,6 +1360,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
+/obj/item/storage/box/gun/pistol/needler
+	name = "NP-149/40 pistol case"
+
+/obj/item/storage/box/gun/pistol/needler/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/needlerpistol(src)
+	new /obj/item/ammo_box/needlercapsule/handloaded(src)
+
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
 	name = "LeMat revolver case"
@@ -1391,6 +1420,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/c10mm(src)
+
+/obj/item/storage/box/gun/rifle/maus71
+	name = "Mauser 71 rifle case"
+
+/obj/item/storage/box/gun/rifle/maus71/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/mauserrifle(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+
+/obj/item/storage/box/gun/rifle/gew88
+	name = "Gewehr 88 rifle case"
+
+/obj/item/storage/box/gun/rifle/gew88/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/gewehr88(src)
+	new /obj/item/ammo_box/a3006box(src)
 
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
@@ -1909,6 +1952,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
 
+/datum/loadout_box/revolver47
+	entry_tag = "4.7mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev47
+
+/datum/loadout_box/revolver5
+	entry_tag = "5mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev5
+
+/datum/loadout_box/pistol47mmm
+	entry_tag = "4.7mm caseless pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/pistol47
+
 /* /datum/loadout_box/sidewinder_magnum
 	entry_tag = "Multicaliber Magnum"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -1926,6 +1987,19 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
+
+/datum/loadout_box/mauser71gobrr
+	entry_tag = "Mauser 71 Bolt action rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/maus71
+
+
+/datum/loadout_box/gewehr88gobrr
+	entry_tag = "Gewehr 88 Bolt action rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/gew88
 
 /datum/loadout_box/carbine9mm
 	entry_tag = "9mm Carbine"
@@ -2274,6 +2348,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/volcanics
 
+/datum/loadout_box/needlergobrr
+	entry_tag = "NP-149/40 Prototype Needler Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/needler
+
 /datum/loadout_box/lematsgobrr
 	entry_tag = "LeMat revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2395,13 +2475,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee
 
 /datum/loadout_box/melee/celestia
-	entry_tag = "Plasma Cutter Celestia"
+	entry_tag = "Plasma Slicer Celestia"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/celestia
 
 /datum/loadout_box/melee/eve
-	entry_tag = "Plasma Cutter Eve"
+	entry_tag = "Plasma Slicer Eve"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/eve
@@ -2413,7 +2493,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee/energykatana
 
 /datum/loadout_box/melee/plasma
-	entry_tag = "Plasma Cutter"
+	entry_tag = "Plasma slicer"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/plasma
@@ -2554,7 +2634,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldcutlass
 
-/*
+
 /datum/loadout_box/crudeblade
 	entry_tag = "Crude Blade"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2566,7 +2646,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/melee/coyote/mauler
-*/
+
 
 /datum/loadout_box/club
 	entry_tag = "Club"
@@ -2964,6 +3044,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/magic/healstaff/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
+/datum/loadout_box/lesserfireball
+	entry_tag = "Lesser Fireball Staff"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
+
+
+
+
 // Putting this down here because it refuses to work. Needs to be fixed later.
 
 /datum/loadout_box/energy/tglaser
@@ -2976,5 +3065,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "laser pistol and carbine case"
 
 /obj/item/storage/box/gun/energy/tglaser/PopulateContents()
-	new /obj/item/gun/energy/laser/tg/carbine(src)
-	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
+	new /obj/item/gun/energy/laser/cranklasergun/tg/carbine(src)
+	new /obj/item/gun/energy/laser/cranklasergun/tg/pistol(src)
+
+// Spamlaser
+/datum/loadout_box/energy/tglaser/spammer
+	entry_tag = "Repeating Blaster"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser/spammer
+
+/obj/item/storage/box/gun/energy/tglaser/spammer
+	name = "repeating blaster case"
+
+/obj/item/storage/box/gun/energy/tglaser/spammer/PopulateContents()
+	new /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser(src)

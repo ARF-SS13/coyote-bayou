@@ -64,7 +64,7 @@
 	volume = 100
 	ignore_flags = 1 // So they can heal their comrades.
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/lesser_syndicate_nanites = 40, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
-
+// bookmark
 /obj/item/reagent_containers/hypospray/combat/omnizine // owned idiot
 	desc = "A modified air-needle autoinjector, used by underfunded support operatives to slowly heal injuries in combat and limp away from a fight."
 	volume = 90
@@ -74,6 +74,15 @@
 	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with experimental medical compounds for rapid healing."
 	volume = 100
 	list_reagents = list(/datum/reagent/medicine/adminordrazine/quantum_heal = 80, /datum/reagent/medicine/synaptizine = 20)
+
+/obj/item/reagent_containers/hypospray/loadout
+	name = "LLX11 stimulant delivery system"
+	desc = "A LapinLattice X11 jet autoinjector stimulant delivery system. A simple press of its activator injects whatever is loaded in the chemical storage into the bloodstream without using a needle. The back of the device has a port for a syringe to load something else into the storage system, be it narcotics or medicines."
+	amount_per_transfer_from_this = 10
+	icon_state = "combat_hypo"
+	volume = 50
+	ignore_flags = 1 
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 25, /datum/reagent/medicine/coagulant = 25)
 
 /obj/item/reagent_containers/hypospray/magillitis
 	name = "experimental autoinjector"
@@ -97,7 +106,7 @@
 	ignore_flags = 1 //so you can medipen through hardsuits
 	reagent_flags = NONE
 	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/preservahyde = 3, /datum/reagent/medicine/coagulant = 2)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 5)
 	custom_premium_price = PRICE_ALMOST_EXPENSIVE
 
 /obj/item/reagent_containers/hypospray/medipen/attack(mob/M, mob/user)
@@ -111,7 +120,7 @@
 	else
 		M.visible_message(span_danger("[user] attempts to use [src] on [M]."), \
 							span_userdanger("[user] attempts to use [src] on [M]."))
-		if(!do_mob(user, M))
+		if(!do_mob(user, M, 1 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 			return 0
 
 	..()
@@ -122,7 +131,7 @@
 			qdel(src)
 			return
 	update_icon()
-	addtimer(CALLBACK(src, .proc/cyborg_recharge, user), 80)
+	addtimer(CALLBACK(src,PROC_REF(cyborg_recharge), user), 80)
 
 /obj/item/reagent_containers/hypospray/medipen/proc/cyborg_recharge(mob/living/silicon/robot/user)
 	if(!reagents.total_volume && iscyborg(user))
@@ -191,6 +200,8 @@
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_epipack"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
 	amount_per_transfer_from_this = 15
 	volume = 15
@@ -227,7 +238,7 @@
 // ---------------------------------
 // MED-X
 
-/obj/item/reagent_containers/hypospray/medipen/medx
+/obj/item/reagent_containers/pill/patch/medx
 	name = "Med-X"
 	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -240,7 +251,7 @@
 // ---------------------------------
 // PSYCHO
 
-/obj/item/reagent_containers/hypospray/medipen/psycho
+/obj/item/reagent_containers/pill/patch/psycho
 	name = "Psycho"
 	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -252,7 +263,7 @@
 // ---------------------------------
 // STEADY
 
-/obj/item/reagent_containers/hypospray/medipen/steady
+/obj/item/reagent_containers/pill/patch/steady
 	name = "Steady"
 	desc = "An inhaler of Steady, a combat drug which provides the user with a steady aim that makes it impossible to miss in sharpshooting. However, it is also highly addictive"
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -497,7 +508,7 @@
 
 /obj/item/hypospray/mkii/afterattack(atom/target, mob/user, proximity)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/attempt_inject, target, user, proximity)
+	INVOKE_ASYNC(src,PROC_REF(attempt_inject), target, user, proximity)
 
 /obj/item/hypospray/mkii/proc/attempt_inject(atom/target, mob/user, proximity)
 	if(!vial || !proximity || !isliving(target))

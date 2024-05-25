@@ -135,7 +135,7 @@
 			if(!G)
 				return FALSE
 		if(clonemind.damnation_type) //Can't clone the damned.
-			INVOKE_ASYNC(src, .proc/horrifyingsound)
+			INVOKE_ASYNC(src,PROC_REF(horrifyingsound))
 			mess = TRUE
 			update_icon()
 			return FALSE

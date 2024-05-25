@@ -30,7 +30,7 @@
 			)
 		)
 	mid_length = 2
-	volume = 25
+	volume = 10
 	var/last_radiation
 
 /datum/looping_sound/geiger/get_sound(starttime)
@@ -86,6 +86,13 @@
 		SOUND_LOOP_ENTRY('sound/weapons/stuff_casing.ogg', 0.7 SECONDS, 1), 
 		)
 	mid_length = 0.7 SECONDS
+	volume = 50
+
+/datum/looping_sound/energy_charging
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/weapons/energy_chargeloop.ogg', 2.8 SECONDS, 1), 
+		)
+	mid_length = 2.8 SECONDS
 	volume = 50
 
 /datum/looping_sound/musket_fuse

@@ -10,22 +10,22 @@
 	custom_materials = list(/datum/material/geckohide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/molerat
-	name = "molerat skin"
+	name = "giant rat skin"
 	desc = "A smelly piece of hide, mostly used as a doormat."
-	singular_name = "molerat skin piece"
+	singular_name = "giant rat skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-molerat"
 	merge_type = /obj/item/stack/sheet/animalhide/molerat
 	custom_materials = list(/datum/material/molerathide=MINERAL_MATERIAL_AMOUNT)
 
-/obj/item/stack/sheet/animalhide/deathclaw
-	name = "deathclaw skin"
+/obj/item/stack/sheet/animalhide/aethergiest
+	name = "aethergiest skin"
 	desc = "A glorious hunting trophy."
-	singular_name = "deathclaw skin piece"
+	singular_name = "aethergiest skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
-	icon_state = "sheet-deathclaw"
-	merge_type = /obj/item/stack/sheet/animalhide/deathclaw
-	custom_materials = list(/datum/material/deathclawhide=MINERAL_MATERIAL_AMOUNT)
+	icon_state = "sheet-aethergiest"
+	merge_type = /obj/item/stack/sheet/animalhide/aethergiest
+	custom_materials = list(/datum/material/aethergiesthide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/wolf
 	name = "dog skin"

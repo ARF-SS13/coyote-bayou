@@ -3,7 +3,8 @@
 	result = /obj/item/stack/ore/blackpowder
 	time = 5
 	reqs = list(/datum/reagent/blackpowder = 50)
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/explosive_collar
 	name = "Explosive Collar"
@@ -13,7 +14,8 @@
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/igniter = 1,)
 	time = 30
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/chemical_payload
 	name = "Chemical Payload (C4)"
@@ -25,7 +27,8 @@
 	)
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
 	time = 30
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/molotov
 	name = "Molotov Cocktail (empty)"
@@ -34,7 +37,8 @@
 		/obj/item/reagent_containers/food/drinks/bottle = 1,
 		)
 	time = 2
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/dynamite
 	name = "Stick of Dynamite"
@@ -43,7 +47,8 @@
 				/obj/item/paper = 2,
 				/obj/item/stack/ore/blackpowder = 2)
 	time = 5
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/firebomb
 	name = "Firebomb"
@@ -53,7 +58,8 @@
 				/obj/item/assembly/igniter = 1,
 				/obj/item/reagent_containers/food/drinks/flask = 1)
 	time = 5
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/firebomb_2
 	name = "Firebomb (from scrap)"
@@ -63,7 +69,8 @@
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 2)
 	time = 5
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/coffeepotbomb
 	name = "Coffeepot Bomb"
@@ -73,7 +80,8 @@
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/timer = 1)
 	time = 5
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/coffeepotbomb_2
 	name = "Coffeepot Bomb (from scrap)"
@@ -84,7 +92,8 @@
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3)
 	time = 5
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/explosive/bottlecap_mine
 	name = "Bottlecap Mine"
@@ -95,7 +104,8 @@
 			/obj/item/stack/cable_coil = 5,
 			/obj/item/stack/f13Cash/caps = 200)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 //Bottlecap mines made with the new ones
 /datum/crafting_recipe/explosive/bottlecap_mine/other
@@ -107,7 +117,9 @@
 			/obj/item/stack/cable_coil = 5,
 			/obj/item/stack/f13Cash/caps = 200)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/explosive/shrapnelmine
 	name = "Shrapnel Mine"
 	result = /obj/item/mine/shrapnel/random
@@ -118,7 +130,8 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/explosive/explomine
@@ -133,7 +146,8 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/explosive/stingmine
@@ -148,7 +162,8 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/explosive/pulsemine
@@ -162,7 +177,8 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	always_available = FALSE
 
 /datum/crafting_recipe/explosive/stunmine
@@ -175,7 +191,8 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	always_available = FALSE
 
 
@@ -187,12 +204,14 @@
 	parts = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
 	time = 15
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/concussion
 	name = "High Explosive Grenade" //this one has no shrapnel
 	result = /obj/item/grenade/syndieminibomb/concussion
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 10,
 			/obj/item/stack/crafting/metalparts = 5,
@@ -209,7 +228,8 @@
 /datum/crafting_recipe/frag_shrapnel
 	name = "Fragmentation Grenade"
 	result = /obj/item/grenade/f13/frag
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 10,
 			/obj/item/stack/crafting/metalparts = 2,
@@ -226,7 +246,8 @@
 /datum/crafting_recipe/incendiary
 	name = "Incendiary Grenade"
 	result = /obj/item/grenade/f13/incendiary
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 20,
 			/obj/item/stack/crafting/metalparts = 15,
@@ -243,7 +264,8 @@
 /datum/crafting_recipe/stinger
 	name = "Stinger Grenade"
 	result = /obj/item/grenade/f13/stinger
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 5,
 			/obj/item/stack/crafting/metalparts = 3,
@@ -259,7 +281,8 @@
 /datum/crafting_recipe/radgrenade
 	name = "Radiation Grenade"
 	result = /obj/item/grenade/f13/radiation
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 20,
 			/obj/item/stack/crafting/metalparts = 10,
@@ -277,7 +300,8 @@
 /datum/crafting_recipe/flashbang
 	name = "Flashbang"
 	result = /obj/item/grenade/flashbang
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 10,
 			/obj/item/stack/crafting/metalparts = 3,
@@ -293,7 +317,8 @@
 /datum/crafting_recipe/smokebomb
 	name = "Smokebomb"
 	result = /obj/item/grenade/smokebomb
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 10,
 			/obj/item/stack/crafting/metalparts = 5,
@@ -309,7 +334,8 @@
 /datum/crafting_recipe/empgrenade
 	name = "Pulse Grenade"
 	result = /obj/item/grenade/empgrenade
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 			/obj/item/stack/sheet/metal = 5,
 			/obj/item/stack/crafting/metalparts = 5,
@@ -325,7 +351,8 @@
 /datum/crafting_recipe/rocket_base
 	name = "Empty rocket shell"
 	result = /obj/item/rocketshell
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	reqs = list(
 				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/crafting/metalparts = 8,
@@ -339,7 +366,8 @@
 
 /datum/crafting_recipe/weakrocket
 	name = "Low-yield HE rocket"
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	result = /obj/item/ammo_casing/caseless/rocket
 	reqs = list(
 		/obj/item/rocketshell = 1,
@@ -353,7 +381,8 @@
 
 /datum/crafting_recipe/strongrocket
 	name = "High-yield HE rocket"
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	result = /obj/item/ammo_casing/caseless/rocket/big
 	reqs = list(
 		/obj/item/rocketshell = 1,
@@ -367,7 +396,8 @@
 
 /datum/crafting_recipe/incendiaryrocket
 	name = "Incendiary rocket"
-	category = CAT_AMMO
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 	result = /obj/item/ammo_casing/caseless/rocket/incendiary
 	reqs = list(
 		/obj/item/rocketshell = 1,

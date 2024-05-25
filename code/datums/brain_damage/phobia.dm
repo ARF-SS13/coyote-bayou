@@ -7,6 +7,7 @@
 	var/phobia_type
 	var/next_check = 0
 	var/next_scare = 0
+	var/timer_active = 0
 	var/list/trigger_words
 	//instead of cycling every atom, only cycle the relevant types
 	var/list/trigger_mobs
@@ -97,11 +98,11 @@
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "i")
 
 		if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
-			addtimer(CALLBACK(src, .proc/freak_out, null, word), 10) //to react AFTER the chat message
-			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_phobia("$1"))
+			addtimer(CALLBACK(src,PROC_REF(freak_out), null, word), 10) //to react AFTER the chat message
+			//hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_phobia("$1"))
 			break
 
-/datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
+/*/datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
 		return
 	for(var/word in trigger_words)
@@ -109,32 +110,31 @@
 
 		if(findtext(speech_args[SPEECH_MESSAGE], reg))
 			to_chat(owner, span_warning("You can't bring yourself to say the word \"<span class='phobia'>[word]</span>\"!"))
-			speech_args[SPEECH_MESSAGE] = ""
+			speech_args[SPEECH_MESSAGE] = ""*/
 
 /datum/brain_trauma/mild/phobia/proc/freak_out(atom/reason, trigger_word)
-	next_scare = world.time + 10 SECONDS
+	next_scare = world.time + 30 SECONDS
 	if(owner.stat == DEAD)
 		return
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
 	if(reason)
-		to_chat(owner, span_userdanger("Seeing [reason] [message]!"))
+		to_chat(owner, span_danger("Seeing [reason] [message]!"))
 	else if(trigger_word)
-		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!"))
+		to_chat(owner, span_danger("Hearing \"[trigger_word]\" [message]!"))
 	else
-		to_chat(owner, span_userdanger("Something [message]!"))
-	owner.emote("scream")
-
+		to_chat(owner, span_danger("Something [message]!"))
+	owner.stuttering += 5
+	ADD_TRAIT(owner, TRAIT_PHOBIC, TRAIT_GENERIC) // Generic phobia trait for applying general non-mood debuffs to people
+	if(!timer_active)
+		addtimer(CALLBACK(src, PROC_REF(RemoveTrait)), 3 MINUTES)
+		timer_active = 1
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "phobia", /datum/mood_event/phobia) //Always apply the phobia mood debuff
-	if(prob(50))//Half the time apply some mostly harmless effects
-		owner.Jitter(5)
-		owner.dizziness += 5
-		owner.stuttering += 5
-		owner.adjustStaminaLoss(rand(5,25))
-	else if(prob(50))//Half the time we don't apply the harmless effects, apply the somewhat harmful ones
-		owner.dizziness += 8 //Screen shake
-		owner.confused += 3 //Movement scrambled
-		owner.Jitter(10) //Mob jitters and you receive another mood debuff on top of your phobia mood debuff
-		owner.stuttering += 8 //Voice stuttering
+
+/datum/brain_trauma/mild/phobia/proc/RemoveTrait()
+	if(!timer_active)
+		return
+	REMOVE_TRAIT(owner,TRAIT_PHOBIC, TRAIT_GENERIC)
+	timer_active = 0
 
 /datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))

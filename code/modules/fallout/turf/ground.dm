@@ -67,9 +67,9 @@
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
 #define GRASS_SPONTANEOUS 		  	2
-#define GRASS_WEIGHT			  	4
-/// Percent chance to spawn a medicinal plant instead of a regular grass, bush, etc.
-#define MEDICINAL_PLANT_CHANCE		10
+#define GRASS_WEIGHT			  	8
+#define RAND_PLANT_CHANCE			50
+#define HIDDEN_STASH_CHANCE			0.2
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
@@ -95,73 +95,109 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	/obj/structure/flora/wasteplant/fever_blossom = 10,
 	))
 
-GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
-	/obj/structure/flora/grass/wasteland = 2,
+GLOBAL_LIST_INIT(grass_plant_list, list(
+	/obj/structure/flora/grass/wasteland = 150,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
 	/obj/structure/flora/brushwoodalt = 1,
-	/obj/structure/flora/tree/med_pine = 2,
-	/obj/structure/flora/tree/med_pine_dead = 2,
-	/obj/structure/flora/grass/coyote/one = 2,
-	/obj/structure/flora/grass/coyote/two = 2,
-	/obj/structure/flora/grass/coyote/three = 2,
-	/obj/structure/flora/grass/coyote/four = 2,
-	/obj/structure/flora/grass/coyote/five = 2,
-	/obj/structure/flora/grass/coyote/six = 2,
-	/obj/structure/flora/grass/coyote/seven = 2,
-	/obj/structure/flora/grass/coyote/eight = 2,
-	/obj/structure/flora/grass/coyote/nine = 2,
-	/obj/structure/flora/grass/coyote/ten = 2,
-	/obj/structure/flora/grass/coyote/eleven = 2,
-	/obj/structure/flora/grass/coyote/twelve = 2,
-	/obj/structure/flora/grass/coyote/thirteen = 2,
-	/obj/structure/flora/grass/coyote/fourteen = 2,
-	/obj/structure/flora/grass/coyote/fiveteen = 2,
-	/obj/structure/flora/grass/coyote/sixteen = 2,
-	/obj/structure/flora/grass/coyote/seventeen = 2,
-	/obj/structure/flora/grass/coyote/eighteen = 2,
-	/obj/structure/flora/grass/coyote/nineteen = 2,
-	/obj/structure/flora/grass/coyote/twenty = 2,
-	/obj/structure/flora/grass/coyote/twentyone = 2,
-	/obj/structure/flora/grass/coyote/twentytwo = 2,
-	/obj/structure/flora/grass/coyote/twentythree = 2,
-	/obj/structure/flora/grass/coyote/twentyfour = 2,
-	/obj/structure/flora/grass/coyote/twentyfive = 2,
-	/obj/structure/flora/grass/coyote/twentysix = 2,
-	/obj/structure/flora/grass/coyote/twentyseven = 2,
-	/obj/structure/flora/grass/coyote/twentyeight = 2,
-	/obj/structure/flora/grass/coyote/twentynine = 2,
-	/obj/structure/flora/grass/coyote/thirty = 2,
-	/obj/structure/flora/wild_plant/thistle = 1,
-	/obj/structure/flora/wild_plant/petunia = 1,
-	/obj/structure/flora/wild_plant/petunia/purple = 1,
-	/obj/structure/flora/wild_plant/petunia/purplewhite = 1,
-	/obj/structure/flora/wild_plant/petunia/redwhite =  1,
-	/obj/structure/flora/wild_plant/petunia/bluewhite = 1,
-	/obj/structure/flora/ausbushes/ppflowers = 1,
-	/obj/structure/flora/ausbushes/ywflowers = 1,
-	/obj/structure/flora/ausbushes/brflowers = 1,
-	/obj/structure/flora/ausbushes/stalkybush = 1,
-	/obj/structure/flora/ausbushes/sunnybush = 1,
-	/obj/structure/flora/ausbushes/palebush = 1,
-	/obj/structure/flora/ausbushes/pointybush = 1,
-	/obj/structure/flora/ausbushes/leafybush = 1,
-	/obj/structure/flora/ausbushes/fernybush = 1,
-	/obj/structure/flora/tree/med_pine = 1,
-	/obj/structure/flora/tree/med_pine_dead = 1,
-	/obj/structure/flora/tree_stump = 1,
-	/obj/structure/flora/tree/african_acacia_dead = 1,
-	/obj/structure/flora/tree/tall = 1,
-	/obj/structure/flora/tree/oak_one = 1,
-	/obj/structure/flora/tree/oak_two = 1,
-	/obj/structure/flora/tree/oak_three = 1,
-	/obj/structure/flora/tree/oak_four = 1,
-	/obj/structure/flora/tree/oak_five = 1,
-	/obj/structure/flora/burnedtree1 = 1,
-	/obj/structure/flora/burnedtree2 = 1,
-	/obj/structure/flora/burnedtree5 = 1
+	/obj/structure/flora/grass/coyote/one = 1,
+	/obj/structure/flora/grass/coyote/two = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
+	/obj/structure/flora/grass/coyote/four = 1,
+	/obj/structure/flora/grass/coyote/five = 1,
+	/obj/structure/flora/grass/coyote/six = 1,
+	/obj/structure/flora/grass/coyote/seven = 1,
+	/obj/structure/flora/grass/coyote/eight = 1,
+	/obj/structure/flora/grass/coyote/nine = 1,
+	/obj/structure/flora/grass/coyote/ten = 1,
+	/obj/structure/flora/grass/coyote/eleven = 1,
+	/obj/structure/flora/grass/coyote/twelve = 1,
+	/obj/structure/flora/grass/coyote/thirteen = 1,
+	/obj/structure/flora/grass/coyote/fourteen = 1,
+	/obj/structure/flora/grass/coyote/fiveteen = 1,
+	/obj/structure/flora/grass/coyote/sixteen = 1,
+	/obj/structure/flora/grass/coyote/seventeen = 1,
+	/obj/structure/flora/grass/coyote/eighteen = 1,
+	/obj/structure/flora/grass/coyote/nineteen = 1,
+	/obj/structure/flora/grass/coyote/twenty = 1,
+	/obj/structure/flora/grass/coyote/twentyone = 1,
+	/obj/structure/flora/grass/coyote/twentytwo = 1,
+	/obj/structure/flora/grass/coyote/twentythree = 1,
+	/obj/structure/flora/grass/coyote/twentyfour = 1,
+	/obj/structure/flora/grass/coyote/twentyfive = 1,
+	/obj/structure/flora/grass/coyote/twentysix = 1,
+	/obj/structure/flora/grass/coyote/twentyseven = 1,
+	/obj/structure/flora/grass/coyote/twentyeight = 1,
+	/obj/structure/flora/grass/coyote/twentynine = 1,
+	/obj/structure/flora/grass/coyote/thirty = 1,
+	/obj/structure/flora/wild_plant/thistle = 2,
+	/obj/structure/flora/wild_plant/petunia = 2,
+	/obj/structure/flora/wild_plant/petunia/purple = 2,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 2,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  2,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 2,
+	/obj/structure/flora/ausbushes/ppflowers = 2,
+	/obj/structure/flora/ausbushes/ywflowers = 2,
+	/obj/structure/flora/ausbushes/brflowers = 2,
+	/obj/structure/flora/ausbushes/stalkybush = 2,
+	/obj/structure/flora/ausbushes/sunnybush = 2,
+	/obj/structure/flora/ausbushes/palebush = 2,
+	/obj/structure/flora/ausbushes/pointybush = 2,
+	/obj/structure/flora/ausbushes/leafybush = 2,
+	/obj/structure/flora/ausbushes/fernybush = 2,
+	/obj/structure/flora/burnedtree1 = 2,
+	/obj/structure/flora/burnedtree2 = 2,
+	/obj/structure/flora/burnedtree5 = 2,
+	/obj/structure/flora/wasteplant/berrybush/tinto = 2,
+	/obj/structure/flora/wasteplant/berrybush/amar = 2,
+	/obj/structure/flora/wasteplant/berrybush/azul = 2,
+	/obj/structure/flora/wasteplant/berrybush/majo = 2,
+	/obj/structure/flora/wasteplant/berrybush/narco = 2,
+	/obj/structure/flora/wasteplant/berrybush/zelenyy = 2,
+	/obj/structure/flora/wasteplant/berrybush/marron = 2,
+	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
+	/obj/structure/flora/wasteplant/sunflower = 2,
+	/obj/structure/flora/wasteplant/rose = 2,
+	/obj/structure/flora/wasteplant/lily = 2,
+	/obj/structure/flora/wasteplant/forgetmenot = 2,
+	/obj/structure/flora/wasteplant/geranium =2,
+	/obj/structure/flora/wasteplant/tomato = 2,
+	/obj/structure/flora/wasteplant/watermelon =2,
+	/obj/structure/flora/wasteplant/grape = 2,
+	/obj/structure/flora/wasteplant/pumpkin = 2,
+	/obj/structure/flora/wasteplant/corn = 2,
+	/obj/structure/flora/wasteplant/carrot = 2
+
 	))
+
+GLOBAL_LIST_INIT(tree_plant_list, list(
+	/obj/structure/flora/tree/jungle = 15,
+	/obj/structure/flora/tree/jungle/small = 15,
+	/obj/structure/flora/tree/med_pine = 7,
+	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/flora/tree_stump = 5,
+	/obj/structure/flora/tree/african_acacia_dead = 5,
+	/obj/structure/flora/tree/tall = 5,
+	/obj/structure/flora/tree/oak_one = 5,
+	/obj/structure/flora/tree/oak_two = 5,
+	/obj/structure/flora/tree/oak_three = 5,
+	/obj/structure/flora/tree/oak_four = 5,
+	/obj/structure/flora/tree/oak_five = 5,
+	/obj/structure/flora/tree/med_pine = 7,
+	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/flora/chomp/bones/lrock = 7,
+	/obj/structure/flora/chomp/bones/lrock1 = 7,
+	/obj/structure/flora/chomp/bones/lrock2 = 7,
+	/obj/structure/flora/chomp/bones/lrock3 = 7,
+	/obj/structure/flora/chomp/bones/lrock4 = 7,
+	))
+
+GLOBAL_LIST_INIT(plant_type_weighted, list(
+	"grass" = 50,
+	"medicinal" = 10,
+	"tree" = 10,
+))
 
 /turf/open/indestructible/ground/outside/dirthole
 	name = "Dirt hole"
@@ -347,6 +383,16 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
+	greeble = "nest"
+
+/turf/open/indestructible/ground/outside/dirt/Initialize()
+	. = ..()
+	if(icon_state == "dirtfull")
+		if(SSweather.snowy_time)
+			name = "snow"
+			icon = 'icons/fallout/turfs/dirt.dmi'
+			icon_state = "snow[rand(0,12)]"
+			update_icon()
 
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //same thing here, dirt absorbs the liquid... :(
@@ -382,7 +428,71 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	icon = 'icons/fallout/turfs/asphalt.dmi'
 	footstep = FOOTSTEP_ROAD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
-//	step_sounds = list("human" = "erikafootsteps")
+	greeble = "junklist"
+
+
+GLOBAL_LIST_INIT(dust_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 90,
+	/obj/effect/decal/remains = 1,
+	/obj/effect/decal/cleanable/blood/drip = 1,
+	/obj/structure/bonfire/prelit = 1, 
+	/obj/effect/decal/waste = 1,
+	/obj/structure/barricade/sandbags = 1,
+	/obj/item/shard = 1, 
+	/obj/effect/decal/cleanable/generic = 1,
+	/obj/effect/decal/cleanable/glass = 1,
+	/obj/structure/flora/grass/coyote/one = 1,
+	/obj/structure/flora/grass/coyote/two = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
+	/obj/structure/flora/grass/coyote/four = 1,
+	/obj/structure/flora/grass/coyote/five = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
+	))
+
+GLOBAL_LIST_INIT(trash_spawn_list, list(
+	/obj/effect/spawner/lootdrop/trash = 5,
+	))
+
+GLOBAL_LIST_INIT(salvage_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 50,
+	/obj/structure/car = 10,
+	/obj/structure/car/rubbish1 = 10,
+	/obj/structure/car/rubbish2 = 10,
+	/obj/structure/car/rubbish3 = 10,
+	/obj/structure/car/rubbish4 = 10,
+	/obj/effect/decal/cleanable/oil/slippery = 10,
+	/obj/item/mine/emp = 1,
+	/obj/item/mine/shrapnel = 1,
+	))
+
+GLOBAL_LIST_INIT(nest_spawn_list, list(
+	/obj/effect/decal/cleanable/dirt = 5,
+	/obj/structure/nest/gecko = 5,
+	/obj/structure/nest/radroach = 5,
+	/obj/structure/nest/molerat = 5,
+	))
+
+GLOBAL_LIST_INIT(junk_type_weighted, list(
+	"dust" = 89,
+	"trash" = 5,
+	"salvage" = 5,
+	"nest" = 1
+))
+
+/turf/open/indestructible/ground/outside/dirthole
+	name = "Dirt hole"
+	icon_state = "dirthole"
+	desc = "A dirt hole."
+	slowdown = 3
+	flags_1 = ADJACENCIES_OVERLAY
+
+/turf/open/indestructible/ground/outside/river
+	name = "river"
+	icon_state = "riverwateruhh"
+	desc = "A river."
+	slowdown = 5
+	flags_1 = ADJACENCIES_OVERLAY
+
 
 /turf/open/indestructible/ground/outside/road_s
 	name = "\proper road"
@@ -396,6 +506,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	icon = 'icons/fallout/turfs/sidewalk.dmi'
 	footstep = FOOTSTEP_ROAD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	greeble = "junklist"
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalk_s
@@ -467,24 +578,24 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 
 /turf/open/indestructible/ground/outside/water/Entered(atom/movable/AM, atom/oldloc)
 	. = ..()
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You get drenched in water!"))
+	// if(istype(AM, /mob/living))
+	// 	var/mob/living/L = AM
+	// 	L.update_water()
+	// 	if(L.check_submerged() <= 0)
+	// 		return
+	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
+	// 		to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 
-/turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
-	. = ..()	
-	if(istype(AM, /mob/living))
-		var/mob/living/L = AM
-		L.update_water()
-		if(L.check_submerged() <= 0)
-			return
-		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, span_warning("You climb out of \the [src]."))
+// /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
+// 	. = ..()
+// 	if(istype(AM, /mob/living))
+// 		var/mob/living/L = AM
+// 		L.update_water()
+// 		if(L.check_submerged() <= 0)
+// 			return
+// 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
+// 			to_chat(L, span_warning("You climb out of \the [src]."))
 
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
@@ -494,7 +605,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	if(isliving(user))
 		var/mob/living/L = user
 		L.DelayNextAction(CLICK_CD_MELEE)
-		if(!user.incapacitated() && Adjacent(user))
+		if(!user.incapacitated(allow_crit = TRUE) && Adjacent(user))
 			user.visible_message(span_notice("[L] starts washing in \the [src]."),
 								span_notice("You start washing in \the [src]."),
 								span_notice("You hear splashing water and scrubbing."))
@@ -543,6 +654,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "cave"
 	icon_state = "rockfloor1"
 	icon = 'icons/fallout/turfs/mining.dmi'
+	footstep = FOOTSTEP_SAND
 //	allowed_plants = list(/obj/item/seeds/glow)
 //	step_sounds = list("human" = "erikafootsteps")
 
@@ -635,6 +747,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "road"
 	icon_state = "innermiddle"
 	icon = 'icons/fallout/turfs/asphaltdirt.dmi'
+	footstep = FOOTSTEP_ROAD
 //	step_sounds = list("human" = "erikafootsteps")
 
 /turf/open/indestructible/ground/outside/sidewalkdirt

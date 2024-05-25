@@ -101,6 +101,9 @@
 	var/job = null//Living
 
 	var/list/faction = list("neutral") //A list of factions that this mob is currently in, for hostile mob targetting, amongst other things
+	/// ignore_faction
+	var/ignore_faction = FALSE
+
 	var/move_on_shuttle = 1 // Can move on the shuttle.
 
 	/// The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
@@ -209,3 +212,9 @@
 
 	///is the mob set to always whisper?
 	var/is_autowhisper = FALSE
+
+	///round_healthtext_to_this_number
+	var/HP_text_roundto = 5
+
+	/// if we did anything hostile, let us get attacked in crit, until we take this much more damage
+	var/in_crit_HP_penalty = 0

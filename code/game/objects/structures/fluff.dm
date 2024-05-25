@@ -271,3 +271,13 @@
  */
 /obj/structure/fluff/hedge/opaque
 	opacity = TRUE
+
+/obj/structure/fluff/blocker
+	name = "Something really solid"
+	desc = "You shall not pass!"
+	icon_state = "blank"
+	density = TRUE
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	max_integrity = 99999
+// For when you want to block someone off, but don't want to use a turf to do it.

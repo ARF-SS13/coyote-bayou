@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
 	blood_volume = 425 //blood will smeared only a little bit from body dragging
-
+	var/bossmob = FALSE
 	status_flags = CANPUSH
 	rotate_on_lying = TRUE
 	var/icon_living = ""
@@ -21,6 +21,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/icon_dead = ""
 	///We only try to show a gibbing animation if this exists.
 	var/icon_gib = null
+	/// color to colorize the dead sprite, if it should be different from the living sprite
+	var/color_dead = null
 
 	var/list/speak = list()
 	///Emotes while speaking IE: Ian [emote], [text] -- Ian barks, "WOOF!". Spoken text is generated from the speak variable.
@@ -30,6 +32,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/list/emote_hear = list()
 	///Unlike speak_emote, the list of things in this variable only show by themselves with no spoken text. IE: Ian barks, Ian yaps.
 	var/list/emote_see = list()
+
+	var/bombs_can_gib_me = TRUE
 
 	var/turns_per_move = 1
 	var/turns_since_move = 0
@@ -53,7 +57,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/response_harm_continuous = "hits"
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
-	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
+	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a aethergiest then you're desperate enough to need it
 	/// Mob damage threshold, subtracted from incoming damage
 	var/force_threshold = 0
 	/// mob's inherent armor
@@ -123,6 +127,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/gold_core_spawnable = NO_SPAWN
 
 	var/datum/weakref/nest
+	var/nest_coords
 
 	///Sentience type, for slime potions.
 	var/sentience_type = SENTIENCE_ORGANIC
@@ -208,6 +213,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/player_character = null
 	var/ignore_other_mobs = TRUE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
 	var/override_ignore_other_mobs = FALSE // If TRUE, it'll ignore the idnore other mobs flag, for mobs that are supposed to be hostile to everything
+
+	///multichance projectile hit behaviour (MCPHB)
+	var/mcphb_arms_hit = FALSE
+	var/mcphb_legs_hit = FALSE
+	
+	/// makes certain mobs explode into stuff when they die
+	var/am_important = FALSE // you are not important
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -317,9 +330,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(jobban_isbanned(user, ROLE_SYNDICATE))
 		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
 		return FALSE
-	if(!(z in COMMON_Z_LEVELS))
+	/*if(!(z in COMMON_Z_LEVELS))
 		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
-		return FALSE
+		return FALSE*/ // Kekeke, zlevel restrictions are antifun anyway!!!!!!!!!!!!!!!!
 	if(!lazarused_by && living_player_count() < pop_required_to_jump_into)
 		to_chat(user, span_warning("There needs to be at least [pop_required_to_jump_into] living players to hop in this! This check is bypassed if the mob has had a lazarus injector used on it though. Which it hasn't (yet)."))
 		return FALSE
@@ -331,22 +344,40 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return FALSE
 	if(!user.key)
 		return FALSE
-	if(!islist(GLOB.playmob_cooldowns[user.key]))
+	/*if(!islist(GLOB.playmob_cooldowns[user.key]))
 		GLOB.playmob_cooldowns[user.key] = list()
 	if(GLOB.playmob_cooldowns[user.key][ghost_mob_id] > world.time)
-		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time
+		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time*/ // No, respawn times are instant
 		//if(check_rights_for(user.client, R_ADMIN))
 		//	to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
 		//else // yeah no turns out its not a great idea
-		to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
-		return FALSE
+		/*to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
+		return FALSE*/
 	return TRUE
 
 /mob/living/simple_animal/ComponentInitialize()
 	. = ..()
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
-	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/infight_check)
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(infight_check))
+	RegisterSignal(src, COMSIG_ATOM_BUTCHER,PROC_REF(butcher_me))
+	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
+	RegisterSignal(src, COMSIG_MOB_IS_IMPORTANT,PROC_REF(am_i_important))
+	RegisterSignal(src, COMSIG_ATOM_QUEST_SCANNED,PROC_REF(i_got_scanned))
+
+/mob/living/simple_animal/proc/i_got_scanned(datum/source, mob/scanner)
+	if(!nest_coords)
+		return
+	var/turf/nest_turf = coords2turf(nest_coords)
+	if(!nest_turf)
+		return
+	var/obj/structure/nest/N = locate(/obj/structure/nest) in nest_turf
+	if(!N)
+		return
+	SEND_SIGNAL(N, COMSIG_ATOM_QUEST_SCANNED, scanner)
+
+/mob/living/simple_animal/proc/am_i_important()
+	return am_important
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -454,7 +485,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	can_ghost_into = TRUE
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
-	RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL, .proc/set_ghost_timeout)
+	// RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL,PROC_REF(set_ghost_timeout))
 	if(istype(user))
 		lazarused = TRUE
 		lazarused_by = WEAKREF(user)
@@ -630,18 +661,74 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		adjustHealth(unsuitable_atmos_damage)
 */
 
+/mob/living/simple_animal/proc/can_butcher()
+	return !already_butchered
+
+/mob/living/simple_animal/proc/butcher_me(datum/source, mob/butcherer, bonus_modifier, effectiveness, gibbed, loud = TRUE)
+	if(!butcherer)
+		return
+	if(!butcher_results && !guaranteed_butcher_results)
+		return
+	if(already_butchered)
+		return
+	already_butchered = TRUE
+
+	if(butcherer && HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+		effectiveness *= 2
+	var/chance_to_drop_butchered_thing = effectiveness / max(butcher_difficulty, 0.01)
+	var/bonus_chance = max(0, (chance_to_drop_butchered_thing - 100) + bonus_modifier) //so 125 total effectiveness = 25% extra chance
+	var/meat_quality = 50 + (chance_to_drop_butchered_thing/10) //increases through quality of butchering tool, and through if it was butchered in the kitchen or not
+
+	var/said_fail = FALSE
+	var/turf/T = drop_location()
+	var/list/butchered_items = list()
+	for(var/V in butcher_results)
+		var/obj/rando_bits = V
+		var/amount = butcher_results[rando_bits]
+		for(var/_i in 1 to amount)
+			if(!prob(chance_to_drop_butchered_thing))
+				if(butcherer && loud && !said_fail)
+					said_fail = TRUE
+					to_chat(butcherer, span_warning("You fail to harvest some of the [initial(rando_bits.name)] from [src]."))
+			else if(prob(bonus_chance))
+				if(butcherer && loud)
+					to_chat(butcherer, span_info("You harvest some extra [initial(rando_bits.name)] from [src]!"))
+				for(var/i in 1 to 2)
+					butchered_items += new rando_bits (T)
+				if(HAS_TRAIT(butcherer, TRAIT_TRAPPER))
+					if(butcherer)
+						to_chat(butcherer, span_info("Your advanced trapping knowledge allows you to harvest extra [initial(rando_bits.name)] from [src]!"))
+					for(var/i in 1 to 2)
+						butchered_items += new rando_bits (T)
+			else
+				butchered_items += new rando_bits (T)
+		butcher_results.Remove(rando_bits) //in case you want to, say, have it drop its results on gib
+
+	for(var/V in guaranteed_butcher_results)
+		var/obj/guaranteed_bits = V
+		var/amount = guaranteed_butcher_results[guaranteed_bits]
+		for(var/i in 1 to amount)
+			butchered_items += new guaranteed_bits (T)
+		guaranteed_butcher_results.Remove(guaranteed_bits)
+
+	for(var/butchered_item in butchered_items)
+		if(isobj(butchered_item))
+			var/obj/O = butchered_item
+			if(isfood(O))
+				var/obj/item/reagent_containers/food/butchered_meat = butchered_item
+				butchered_meat.food_quality = meat_quality
+			if(!O.anchored)
+				O.pixel_x = rand(-14,14)
+				O.pixel_y = rand(-14,14)
+
+	if(butcherer && loud)
+		visible_message(span_notice("[butcherer] butchers [src]."))
+	harvest(butcherer)
+	if(!gibbed)
+		gib(FALSE, FALSE, TRUE)
+
 /mob/living/simple_animal/gib()
-	if(butcher_results || guaranteed_butcher_results)
-		var/list/butcher = list()
-		if(butcher_results)
-			butcher += butcher_results
-		if(guaranteed_butcher_results)
-			butcher += guaranteed_butcher_results
-		var/atom/Tsec = drop_location()
-		for(var/path in butcher)
-			for(var/i in 1 to butcher[path])
-				if(prob(25))
-					new path(Tsec)
+	butcher_me(null, null, 0, 25, TRUE, FALSE)
 	..()
 
 /mob/living/simple_animal/gib_animation()
@@ -705,16 +792,19 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			droppedstuff |= newthing
 	for(var/atom/thingy in droppedstuff)
 		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
+	loot.Cut()
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
 	unstamcrit()
 
-	sever_link_to_nest()
+	sever_link_to_nest() // killed
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
 
+	if(color_dead)
+		add_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
@@ -722,7 +812,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(death_sound)
 			playsound(get_turf(src),death_sound, 200, ignore_walls = TRUE, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2]))
 		if(deathmessage || !del_on_death)
-			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
+			INVOKE_ASYNC(src,PROC_REF(emote), "deathgasp")
 	if(del_on_death)
 		..(gibbed)
 		// if(prob(del_on_death*100))
@@ -773,6 +863,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/revive(full_heal = 0, admin_revive = 0)
 	if(..()) //successfully ressuscitated from death
+		if(color_dead)
+			remove_atom_colour(color_dead, FIXED_COLOUR_PRIORITY)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)
@@ -809,7 +901,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			return new childspawn(target)
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -885,6 +977,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/atom/A = client.eye
 		if(A.update_remote_sight(src)) //returns 1 if we override all other sight updates.
 			return
+	if(client?.holder)
+		see_invisible = client.holder.ghostsight_or(see_invisible) //can't see ghosts through cameras
 	sync_lighting_plane_alpha()
 
 /mob/living/simple_animal/get_idcard(hand_first = TRUE)
@@ -955,7 +1049,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
-		if(user.incapacitated())
+		if(user.incapacitated(allow_crit = TRUE))
 			return
 		for(var/atom/movable/A in get_turf(src))
 			if(A != src && A != M && A.density)
@@ -1025,22 +1119,54 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(hud_used.healths)
 		if(stat != DEAD)
 			. = 1
+			if(!health)
+				health = health
 			if(health >= maxHealth)
 				hud_used.healths.icon_state = "health0"
-			else if(health > maxHealth*0.8)
+			else if(health > maxHealth*0.95)
 				hud_used.healths.icon_state = "health1"
-			else if(health > maxHealth*0.6)
+			else if(health > maxHealth*0.9)
 				hud_used.healths.icon_state = "health2"
-			else if(health > maxHealth*0.4)
+			else if(health > maxHealth*0.85)
 				hud_used.healths.icon_state = "health3"
-			else if(health > maxHealth*0.2)
+			else if(health > maxHealth*0.80)
 				hud_used.healths.icon_state = "health4"
-			else if(health > 0)
+			else if(health > maxHealth*0.75)
 				hud_used.healths.icon_state = "health5"
-			else
+			else if(health > maxHealth*0.70)
 				hud_used.healths.icon_state = "health6"
+			else if(health > maxHealth*0.65)
+				hud_used.healths.icon_state = "health7"
+			else if(health > maxHealth*0.60)
+				hud_used.healths.icon_state = "health8"
+			else if(health > maxHealth*0.55)
+				hud_used.healths.icon_state = "health9"
+			else if(health > maxHealth*0.50)
+				hud_used.healths.icon_state = "health10"
+			else if(health > maxHealth*0.45)
+				hud_used.healths.icon_state = "health11"
+			else if(health > maxHealth*0.40)
+				hud_used.healths.icon_state = "health12"
+			else if(health > maxHealth*0.35)
+				hud_used.healths.icon_state = "health13"
+			else if(health > maxHealth*0.30)
+				hud_used.healths.icon_state = "health14"
+			else if(health > maxHealth*0.25)
+				hud_used.healths.icon_state = "health15"
+			else if(health > maxHealth*0.20)
+				hud_used.healths.icon_state = "health16"
+			else if(health > maxHealth*0.15)
+				hud_used.healths.icon_state = "health17"
+			else if(health > maxHealth*0.10)
+				hud_used.healths.icon_state = "health18"
+			else if(health > maxHealth*0.05)
+				hud_used.healths.icon_state = "health19"
+			else if(health > 0)
+				hud_used.healths.icon_state = "health19"
+			else
+				hud_used.healths.icon_state = "health20"
 		else
-			hud_used.healths.icon_state = "health7"
+			hud_used.healths.icon_state = "health21"
 
 /mob/living/simple_animal/update_stamina()
 	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
@@ -1074,28 +1200,36 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	unstamcrit()
 
+/mob/living/simple_animal/proc/link_to_nest(atom/birthplace)
+	if(nest || !isatom(birthplace))
+		return
+	nest = WEAKREF(birthplace)
+	nest_coords = atom2coords(birthplace)
+
 /mob/living/simple_animal/proc/sever_link_to_nest()
-	if(nest)
-		var/datum/component/spawner/our_nest = nest.resolve()
-		if(istype(our_nest))
-			for(var/datum/weakref/maybe_us in our_nest.spawned_mobs)
-				if(nest.resolve(maybe_us) == src)
-					our_nest.spawned_mobs -= maybe_us
+	if(!nest)
+		return
+	var/atom/our_nest = GET_WEAKREF(nest)
+	if(istype(our_nest))
+		SEND_SIGNAL(our_nest, COMSIG_SPAWNER_REMOVE_MOB_FROM_NEST, src)
 	nest = null
 
 /mob/living/simple_animal/proc/setup_variations()
 	if(!LAZYLEN(variation_list))
 		return FALSE // we're good here
-	if(LAZYLEN(variation_list[MOB_VARIED_NAME_GLOBAL_LIST]))
-		vary_mob_name_from_global_lists()
-	else if(LAZYLEN(variation_list[MOB_VARIED_NAME_LIST]))
-		vary_mob_name_from_local_list()
+	// if(LAZYLEN(variation_list[MOB_VARIED_NAME_GLOBAL_LIST]))
+	// 	vary_mob_name_from_global_lists()
+	// else if(LAZYLEN(variation_list[MOB_VARIED_NAME_LIST]))
+	// 	vary_mob_name_from_local_list()
 	if(LAZYLEN(variation_list[MOB_VARIED_COLOR]))
 		vary_mob_color()
 	if(LAZYLEN(variation_list[MOB_VARIED_HEALTH]))
 		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
 		maxHealth = our_health
 		health = our_health
+	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		var/speedpick = pick(variation_list[MOB_VARIED_SPEED])
+		set_varspeed(speedpick)
 	return TRUE
 
 /mob/living/simple_animal/proc/vary_from_list(which_list, weighted_list = FALSE)
@@ -1265,7 +1399,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(60 to 80)
 			descriptors += span_alert(" could play chicken with a car and win.")
 		if(80 to INFINITY)
-			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/deathclaw) ? "another" : "a"] deathclaw and win.")
+			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/aethergiest) ? "another" : "a"] aethergiest and win.")
 	descriptors += "\n"
 	///Bullet
 	var/bullet_armor = mob_armor.getRating("bullet")
@@ -1312,19 +1446,19 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(80 to INFINITY)
 			descriptors += span_warning(" this is some kind of super creature drinks plasma for breakfast.")
 	descriptors += "\n"
-	///dt
-	var/damage_threshold = mob_armor.getRating("damage_threshold")
-	switch(damage_threshold)
-		if(-INFINITY to 1)
-			descriptors += span_greenteamradio("[p_they(TRUE)] look[p_s()] like a reasonably safe opponent.")
-		if(2 to 4)
-			descriptors += span_info("[p_they(TRUE)] look[p_s()] like an even fight.")
-		if(5 to 6)
-			descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like quite a gamble!")
-		if(7 to 9)
-			descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like it would wipe the floor with you!")
-		if(9 to INFINITY)
-			descriptors += span_warning("What would you like your tombstone to say?")
+	// ///dt
+	// var/damage_threshold = mob_armor.getRating("damage_threshold")
+	// switch(damage_threshold)
+	// 	if(-INFINITY to 1)
+	// 		descriptors += span_greenteamradio("[p_they(TRUE)] look[p_s()] like a reasonably safe opponent.")
+	// 	if(2 to 4)
+	// 		descriptors += span_info("[p_they(TRUE)] look[p_s()] like an even fight.")
+	// 	if(5 to 6)
+	// 		descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like quite a gamble!")
+	// 	if(7 to 9)
+	// 		descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like it would wipe the floor with you!")
+	// 	if(9 to INFINITY)
+	// 		descriptors += span_warning("What would you like your tombstone to say?")
 	descriptors += "\n"
 	if(LAZYLEN(descriptors))
 		mob_armor_description = jointext(descriptors, "")

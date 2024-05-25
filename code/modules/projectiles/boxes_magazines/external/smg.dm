@@ -28,7 +28,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/vss
+/obj/item/ammo_box/magazine/vss/empty
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/greasegun

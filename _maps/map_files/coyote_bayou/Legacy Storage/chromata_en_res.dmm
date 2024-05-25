@@ -230,7 +230,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "bn" = (
@@ -238,7 +238,7 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
 "bo" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "bp" = (
@@ -361,7 +361,7 @@
 /area/awaymission/wildwest)
 "bN" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
@@ -439,7 +439,7 @@
 /area/awaymission/wildwest)
 "ck" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
@@ -472,7 +472,7 @@
 /area/ruin/space/diner)
 "cw" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest)
@@ -595,7 +595,7 @@
 /area/awaymission/wildwest)
 "df" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
@@ -882,7 +882,7 @@
 /area/awaymission/wildwest)
 "fk" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/ruin/space/diner)
@@ -912,7 +912,7 @@
 /area/f13/underground/cave)
 "fA" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/awaymission/wildwest)
@@ -939,7 +939,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/diner)
 "fK" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
 "fL" = (
@@ -1018,7 +1018,7 @@
 /area/awaymission/wildwest)
 "gk" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -1127,7 +1127,7 @@
 /area/awaymission/wildwest)
 "hb" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -1197,7 +1197,7 @@
 /area/awaymission/wildwest)
 "hE" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
@@ -1232,7 +1232,7 @@
 /area/ruin/space/diner)
 "hS" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -1324,7 +1324,7 @@
 /area/awaymission/wildwest)
 "iu" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/eggcluster,
 /turf/open/floor/f13,
@@ -1433,7 +1433,7 @@
 "js" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -1603,7 +1603,7 @@
 "kL" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -1826,7 +1826,7 @@
 /area/awaymission/wildwest)
 "lY" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -1891,7 +1891,7 @@
 /area/awaymission/wildwest)
 "mr" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
@@ -1991,7 +1991,7 @@
 /area/awaymission/wildwest)
 "mR" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/eggcluster,
 /turf/open/floor/plasteel/dark,
@@ -2022,7 +2022,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "ne" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "nh" = (
@@ -2056,7 +2056,7 @@
 /area/awaymission/wildwest)
 "no" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2089,7 +2089,7 @@
 /area/awaymission/wildwest)
 "ny" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/wooden,
 /area/awaymission/wildwest)
@@ -2169,7 +2169,7 @@
 /area/awaymission/wildwest)
 "oe" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -2232,7 +2232,7 @@
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
 "oz" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "oA" = (
@@ -2306,7 +2306,7 @@
 /area/awaymission/wildwest)
 "oW" = (
 /mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	health = 500;
 	melee_damage_lower = 40;
 	melee_damage_upper = 45
@@ -2671,7 +2671,7 @@
 /area/awaymission/wildwest)
 "rt" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -2801,7 +2801,7 @@
 "ss" = (
 /obj/structure/closet,
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest)
@@ -2829,7 +2829,7 @@
 /area/awaymission/wildwest)
 "sH" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2870,7 +2870,7 @@
 "sT" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2903,7 +2903,7 @@
 /area/awaymission/wildwest)
 "sZ" = (
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /obj/item/chair/stool/alien,
 /turf/open/floor/plasteel/vault,
@@ -2939,7 +2939,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -3262,7 +3262,7 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -3508,7 +3508,7 @@
 /area/ruin/space/diner)
 "xt" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -3906,7 +3906,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "zS" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "zT" = (
@@ -3929,7 +3929,7 @@
 /area/awaymission/wildwest)
 "Ac" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -4002,13 +4002,13 @@
 "At" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "Au" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/f13,
@@ -4115,7 +4115,7 @@
 /area/awaymission/wildwest)
 "Bc" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -4233,7 +4233,7 @@
 "BN" = (
 /obj/machinery/light/small,
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/cocoon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -4243,7 +4243,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "BU" = (
-/mob/living/simple_animal/hostile/deathclaw/power_armor{
+/mob/living/simple_animal/hostile/aethergiest/power_armor{
 	name = "Anthony"
 	},
 /turf/open/indestructible/ground/outside/roaddirt,
@@ -4380,7 +4380,7 @@
 /area/awaymission/wildwest)
 "CO" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -4574,7 +4574,7 @@
 "Ef" = (
 /obj/structure/filingcabinet,
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -4612,7 +4612,7 @@
 "Ew" = (
 /mob/living/simple_animal/hostile/jungle/mega_arachnid{
 	desc = "A snarling beast that looks at you with an odd amount of intelligence; it makes odd clacking and clicking noises as it walks, like something metallic inside of it actuates with every step..";
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	health = 500;
 	melee_damage_lower = 40;
 	melee_damage_upper = 45
@@ -4638,7 +4638,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/common_unique,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "EE" = (
@@ -4755,7 +4755,7 @@
 /area/awaymission/wildwest)
 "Fl" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -4779,7 +4779,7 @@
 /area/awaymission/wildwest)
 "Fp" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
@@ -4965,7 +4965,7 @@
 /area/awaymission/wildwest)
 "Gv" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
@@ -5092,7 +5092,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/wooden,
 /area/awaymission/wildwest)
@@ -5176,7 +5176,7 @@
 /area/f13/underground/cave)
 "HZ" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/floor/plasteel/dark,
@@ -5238,7 +5238,7 @@
 "IB" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
@@ -5249,7 +5249,7 @@
 "IF" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/floor/plating/wooden,
@@ -5392,7 +5392,7 @@
 /area/f13/underground/cave)
 "JN" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
@@ -5482,7 +5482,7 @@
 /area/awaymission/wildwest)
 "Kn" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
@@ -5569,7 +5569,7 @@
 "KM" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/jungle/mega_arachnid{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	health = 500;
 	melee_damage_lower = 40;
 	melee_damage_upper = 45
@@ -5605,7 +5605,7 @@
 "KY" = (
 /obj/structure/closet/crate,
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /turf/open/floor/plating/ice/colder,
 /area/awaymission/wildwest)
@@ -5646,7 +5646,7 @@
 /area/awaymission/wildwest)
 "Lj" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
@@ -6177,7 +6177,7 @@
 /area/awaymission/wildwest)
 "ON" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
@@ -6208,7 +6208,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "OW" = (
@@ -6263,7 +6263,7 @@
 /area/awaymission/wildwest)
 "Pp" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/diner)
@@ -6297,7 +6297,7 @@
 /turf/open/indestructible/necropolis,
 /area/awaymission/wildwest)
 "PB" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/aethergiest,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "PD" = (
@@ -6440,7 +6440,7 @@
 "Qv" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/cocoon,
 /turf/open/floor/f13,
@@ -6461,7 +6461,7 @@
 /area/awaymission/wildwest)
 "QA" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
@@ -6472,7 +6472,7 @@
 "QC" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -6528,7 +6528,7 @@
 "QV" = (
 /mob/living/simple_animal/hostile/jungle/mega_arachnid{
 	desc = "A snarling beast that looks at you with an odd amount of intelligence; it makes odd clacking and clicking noises as it walks, like something metallic inside of it actuates with every step..";
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	health = 500;
 	melee_damage_lower = 40;
 	melee_damage_upper = 45
@@ -6626,12 +6626,12 @@
 	},
 /area/awaymission/wildwest)
 "RM" = (
-/obj/structure/nest/deathclaw/mother,
+/obj/structure/nest/aethergiest/mother,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "RO" = (
 /mob/living/simple_animal/hostile/handy/robobrain{
-	faction = list("wastebot","robot","deathclaw","ghoul")
+	faction = list("wastebot","robot","aethergiest","ghoul")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
@@ -6680,7 +6680,7 @@
 /area/awaymission/wildwest)
 "Sg" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -6705,7 +6705,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/underground/cave)
 "Sm" = (
-/obj/item/reagent_containers/food/snacks/f13/deathclawegg,
+/obj/item/reagent_containers/food/snacks/f13/aethergiestegg,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
 "Sn" = (
@@ -6718,7 +6718,7 @@
 /area/awaymission/wildwest)
 "Sq" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
@@ -6797,7 +6797,7 @@
 /area/awaymission/wildwest)
 "SL" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/floor/plating/wooden,
@@ -6832,7 +6832,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
 "ST" = (
@@ -6861,7 +6861,7 @@
 /area/awaymission/wildwest)
 "Ta" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -6982,7 +6982,7 @@
 /area/awaymission/wildwest)
 "TZ" = (
 /mob/living/simple_animal/hostile/poison/giant_spider{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -7125,7 +7125,7 @@
 /area/awaymission/wildwest)
 "UN" = (
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	faction = list("supermutant","ghoul","deathclaw","robot");
+	faction = list("supermutant","ghoul","aethergiest","robot");
 	health = 600
 	},
 /turf/open/floor/plasteel/dark{
@@ -7365,7 +7365,7 @@
 /area/awaymission/wildwest)
 "We" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
@@ -7431,7 +7431,7 @@
 /area/awaymission/wildwest)
 "Wz" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/vault,
@@ -7505,7 +7505,7 @@
 /area/awaymission/wildwest)
 "Xl" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
@@ -7766,7 +7766,7 @@
 /area/f13/underground/cave)
 "Zp" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	faction = list("spiders","deathclaw")
+	faction = list("spiders","aethergiest")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)

@@ -105,7 +105,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_ores)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(Pickup_ores))
 	listeningTo = user
 
 /obj/item/storage/bag/ore/dropped(mob/user)
@@ -354,7 +354,7 @@
 
 /*	Now in tribal mode!*/
 
-obj/item/storage/bag/chemistry/tribal
+/obj/item/storage/bag/chemistry/tribal
 	name = "tribal medicinal bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "tribal_chembag"
@@ -437,7 +437,7 @@ obj/item/storage/bag/chemistry/tribal
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-	component_type = /datum/component/storage/concrete/bag/salvage/storage
+	component_type = /datum/component/storage/concrete/bag/salvage
 
 /obj/item/storage/bag/casings
 	name = "casing bag"
@@ -464,7 +464,7 @@ obj/item/storage/bag/chemistry/tribal
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_casings)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(Pickup_casings))
 	listeningTo = user
 
 /// finds a casing and return it
@@ -560,6 +560,10 @@ obj/item/storage/bag/chemistry/tribal
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/bag/quiver
+	var/spam_protection = FALSE
+	var/mob/listeningTo
+	var/last_inserted_type
+	var/last_was_empty = FALSE
 
 /obj/item/storage/bag/tribe_quiver/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/gun/ballistic/bow))
@@ -567,6 +571,89 @@ obj/item/storage/bag/chemistry/tribal
 		if(boe.link_quiver_to_bow(user, src))
 			return
 	. = ..()
+
+
+/obj/item/storage/bag/tribe_quiver/dropped(mob/user)
+	. = ..()
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	listeningTo = null
+
+/obj/item/storage/bag/tribe_quiver/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(Pickup_casings))
+	listeningTo = user
+
+/// finds a casing and return it
+/// returns null if none found, OR, and this is a big OR
+/// OR if we've previously inserted a loaded casing, and there were no other empty casings, and the next casing would be different
+/// than the last inserted casing. This is so that, by default, it'll load only one type of casng per click
+/obj/item/storage/bag/tribe_quiver/proc/find_casing(mob/living/user)
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!LAZYLEN(contents))
+		return
+	var/list/loaded_casings = list()
+	var/obj/item/ammo_casing/out
+	var/should_stop = FALSE
+	for(var/obj/item/ammo_casing/bluuet in contents)
+		if(bluuet.BB)
+			if(last_was_empty)
+				should_stop = TRUE
+				last_was_empty = FALSE
+			// if(last_inserted_type)
+			// 	if(bluuet.type == last_inserted_type)
+			// 		out = bluuet
+			// 		break
+			// else
+			loaded_casings |= bluuet
+		else
+			out = bluuet // ezpz
+			last_was_empty = TRUE
+			should_stop = FALSE
+			break
+	if(should_stop)
+		return FALSE
+	if(out)
+		return out
+	// if(last_inserted_type) // we didnt find a casing like the one we last inserted, so attempt to break the operation
+	// 	last_inserted_type = null
+	// 	return
+	out = LAZYACCESS(loaded_casings, 1)
+	if(out)
+		last_inserted_type = out.type
+		return out
+
+/obj/item/storage/bag/tribe_quiver/proc/Pickup_casings(mob/living/user)
+	var/show_message = FALSE
+	var/turf/tile = user.loc
+	if (!isturf(tile))
+		return
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		for(var/obj/item/ammo_casing/caseless/arrow/loosie in tile)
+			if(!is_type_in_typecache(loosie, STR.can_hold))
+				continue
+			if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, loosie, user, TRUE))
+				loosie.transform = initial(loosie.transform)
+				loosie.dir = initial(loosie.dir)
+				show_message = TRUE
+				continue
+			if(!spam_protection)
+				to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+				spam_protection = TRUE
+				break
+
+	if(show_message)
+		playsound(user, "rustle", 50, TRUE)
+		user.visible_message(span_notice("[user] scoops up the arrows beneath [user.p_them()]."), \
+			span_notice("You scoop up the arrows beneath you with your [name]."))
+	spam_protection = FALSE
+
 
 /obj/item/storage/bag/tribe_quiver/full/PopulateContents()
 	for(var/i in 1 to 12)
@@ -582,11 +669,11 @@ obj/item/storage/bag/chemistry/tribal
 	component_type = /datum/component/storage/concrete/bag/quiver/light_quiver
 
 /obj/item/storage/bag/tribe_quiver/light/full/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 35 to 50)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
 /obj/item/storage/bag/tribe_quiver/light/full/flint/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 35 to 50)
 		new /obj/item/ammo_casing/caseless/arrow/flint(src)//Little more applicable for tribals.
 
 /obj/item/storage/bag/tribe_quiver/heavy
@@ -598,7 +685,7 @@ obj/item/storage/bag/chemistry/tribal
 	component_type = /datum/component/storage/concrete/bag/quiver/heavy_quiver
 
 /obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 75 to 100)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
 /obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)

@@ -133,100 +133,100 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 //Base parts. They aren't intended to be replicate-able by players, but are useful to describe what a machine needs, and round-start machines will have them.
 
 /obj/item/stock_parts/capacitor
-	name = "capacitor"
-	desc = "A pre-war design for a simple consumer-grade capacitor. Not much better than a watch battery."
+	name = "capacitor (Tier Level: 1)"
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade CAPACITOR. Not much better than a watch battery."
 	icon_state = "capacitor"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module
-	name = "scanning module"
-	desc = "A pre-war design for a simple consumer-grade scanning device. Not much better than a light sensitive circuit."
+	name = "scanning module (Tier Level: 1)"
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade SCANNING MODULE. Not much better than a light sensitive circuit."
 	icon_state = "scan_module"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator
-	name = "manipulator"
-	desc = "A pre-war design for a simple consumer-grade manipulator. Not much better than a simple gear."
+	name = "manipulator (Tier Level: 1)"
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade MANIPULATOR. Not much better than a simple gear."
 	icon_state = "micro_mani"
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser
-	name = "laser"
-	desc = "A pre-war design for a simple consumer-grade laser. Not much better than a nixie tube."
+	name = "laser (Tier Level: 1)"
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade LASER. Not much better than a nixie tube."
 	icon_state = "micro_laser"
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin
-	name = "matter bin"
-	desc = "A pre-war design for a simple consumer-grade storage bin. Not much better than a funnel."
+	name = "matter bin (Tier Level: 1)"
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade MATTER BIN. Not much better than a funnel."
 	icon_state = "matter_bin"
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 1
 
 /obj/item/stock_parts/capacitor/simple
-	name = "watch battery"
-	desc = "A small battery presumably used to keep a watch timing properly. Could be useful as a makeshift capacitor."
+	name = "watch battery (Tier Level: 2)"
+	desc = "</font><font color='orange'>(Tier Level: 2).</font><br>A small battery presumably used to keep a watch timing properly. Could be useful as a makeshift CAPACITOR."
 	icon_state = "watch_battery"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/simple
-	name = "light sensitive circuit"
-	desc = "Sometimes found in cameras or infrared detectors. Useful for scanning things, if a little low-tech."
+	name = "light sensitive circuit (Tier Level: 2)"
+	desc = "</font><font color='orange'>(Tier Level: 2).</font><br>Sometimes found in cameras or infrared detectors. Useful as a SCANNING MODULE, if a little low-tech."
 	icon_state = "light_sensitive_circuit"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/simple
-	name = "simple gear"
-	desc = "A simple gear. A couple of these could probably be used in a mechanism to manipulate things."
+	name = "simple gear (Tier Level: 2)"
+	desc = "</font><font color='orange'>(Tier Level: 2).</font><br>A simple gear. A couple of these could probably be used in a mechanism as a MANIPULATOR."
 	icon_state = "simple_gear"
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/simple
-	name = "nixie tube"
-	desc = "A small bulb with a complicated filament pattern. Puts off enough heat that it could be used for heating small components in a pinch."
+	name = "nixie tube (Tier Level: 2)"
+	desc = "</font><font color='orange'>(Tier Level: 2).</font><br>A small bulb with a complicated filament pattern. Puts off enough heat that it could be used for heating small components in a pinch. Like a LASER."
 	icon_state = "simple_bulb"
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/simple
-	name = "intake funnel"
-	desc = "Practically a metal cone. Useful to store some stuff in a machine, at least."
+	name = "intake funnel (Tier Level: 2)"
+	desc = "</font><font color='orange'>(Tier Level: 2).</font><br>Practically a metal cone. Useful to store some stuff in a machine, at least. It's a MATTER BIN of sorts."
 	icon_state = "funnel"
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 2
 
 /obj/item/stock_parts/capacitor/adv
-	name = "capacitor"
-	desc = "A fairly modern design for a capacitor, it can take in and distribute power pretty quickly compared to a battery."
+	name = "upgraded capacitor (Tier Level: 3)"
+	desc = "</font><font color='yellow'>(Tier Level: 3).</font><br>A fairly modern design for a CAPACITOR, it can take in and distribute power pretty quickly compared to a battery."
 	icon_state = "basic_capacitor"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/adv
-	name = "small antenna"
-	desc = "Useful for scanning and analyzing signals. Comes with a built in miniature light sensor, too!"
+	name = "small antenna (Tier Level: 3)"
+	desc = "</font><font color='yellow'>(Tier Level: 3).</font><br>Useful as a SCANNING MODULE and for analyzing signals. Comes with a built in miniature light sensor, too!"
 	icon_state = "small_antenna"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/nano
-	name = "complex gearwork"
-	desc = "More than a few gears interlocked together, useful for manipulating things on a finer scale."
+	name = "complex gearwork (Tier Level: 3)"
+	desc = "</font><font color='yellow'>(Tier Level: 3).</font><br>More than a few gears interlocked together, useful as a MANIPULATOR in machinery."
 	icon_state = "complex_gearwork"
 	rating = 2
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/high
-	name = "flash bulb"
-	desc = "A reusable flash bulb. Not only does it shine particularly bright, it can let out a fair bit of heat."
+	name = "flash bulb (Tier Level: 3)"
+	desc = "</font><font color='yellow'>(Tier Level: 3).</font><br>A reusable flash bulb. Not only does it shine particularly bright, it can let out a fair bit of heat like a LASER in machinery."
 	icon_state = "modern_bulb"
 	rating = 2
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/adv
-	name = "hopper"
-	desc = "A spacious hopper for containing just about anything in a machine and distributing it effectively."
+	name = "hopper (Tier Level: 3)"
+	desc = "</font><font color='yellow'>(Tier Level: 3).</font><br>A spacious hopper for containing just about anything in a machine and distributing it effectively. It's a MATTER BIN, really."
 	icon_state = "hopper"
 	rating = 2
 	custom_materials = list(/datum/material/iron=80)
@@ -234,36 +234,36 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 //Rating 3
 
 /obj/item/stock_parts/capacitor/super
-	name = "advanced capacitor"
-	desc = "A very effective capacitor, with a bit more heft to it."
+	name = "advanced capacitor (Tier Level: 4)"
+	desc = "</font><font color='green'>(Tier Level: 4).</font><br>A very effective CAPACITOR, with a bit more heft to it."
 	icon_state = "advanced_capacitor"
 	rating = 3
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/phasic
-	name = "advanced antenna"
-	desc = "A high-resolution antenna and camera device, this could scan a pretty wide variety of things."
+	name = "advanced antenna (Tier Level: 4)"
+	desc = "</font><font color='green'>(Tier Level: 4).</font><br>A high-resolution antenna and camera device, this could be used as a SCANNING MODULE in a pretty wide variety of things."
 	icon_state = "advanced_antenna"
 	rating = 3
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/pico
-	name = "delicate mechanism"
-	desc = "A whole lot of finely crafted gears, belts, and gearshafts. This could probably manipulate things with microscopic precision."
+	name = "delicate mechanism (Tier Level: 4)"
+	desc = "</font><font color='green'>(Tier Level: 4).</font><br>A whole lot of finely crafted gears, belts, and gearshafts. This could probably be used as a MANIPULATOR in machinery with microscopic precision."
 	icon_state = "delicate_mechanism"
 	rating = 3
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/ultra
-	name = "laser diode"
+	name = "laser diode (Tier Level: 4)"
+	desc = "</font><font color='green'>(Tier Level: 4).</font><br>A LASER diode able to put out heat and light very precisely in machinery."
 	icon_state = "diode"
-	desc = "A laser diode able to put out heat and light very precisely."
 	rating = 3
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/super
-	name = "storage bin"
-	desc = "A small container designed compressed and store just about anything safely in a machine."
+	name = "storage bin (Tier Level: 4)"
+	desc = "</font><font color='green'>(Tier Level: 4).</font><br>A small container designed compressed and store just about anything safely in a machine as a MATTER BIN."
 	icon_state = "super_matter_bin"
 	rating = 3
 	custom_materials = list(/datum/material/iron=80)
@@ -271,36 +271,36 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 //Rating 4
 
 /obj/item/stock_parts/capacitor/quadratic
-	name = "pre-war capacitor"
-	desc = "This absurdly efficient capacitor was made with pre-war materials and designs."
+	name = "pre-war hyper capacitor (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This absurdly efficient CAPACITOR was made with pre-war materials and designs."
 	icon_state = "pre_war_capacitor"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/triphasic
-	name = "pre-war scanning device"
-	desc = "A compact, ultra-high resolution scanning device made with pre-war materials and designs."
+	name = "pre-war 64k scanning device (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A compact, ultra-high resolution SCANNING MODULE made with pre-war materials and designs."
 	icon_state = "pre_war_scanner"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/femto
-	name = "pre-war servo"
-	desc = "A microservo capable of manipulating things on the atomic scale, made using pre-war materials and designs."
+	name = "pre-war ultra servo (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A microservo capable of filling the role of a MANIPULATOR in machinery on the atomic scale, made using pre-war materials and designs."
 	icon_state = "pre_war_servo"
 	rating = 4
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/quadultra
-	name = "pre-war laser emitter"
+	name = "pre-war hyper laser emitter (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This extremely powerful LASER array could only be made with pre-war materials and designs."
 	icon_state = "pre_war_emitter"
-	desc = "This extremely powerful micro-laser could only be made with pre-war materials and designs."
 	rating = 4
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
-	name = "pre-war storage system"
-	desc = "A container that uses the same pre-war tech that some Vaults pack into Pip-Boys to contain large amounts of material."
+	name = "pre-war maximum storage system (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A MATTER BIN that uses the same pre-war tech that some military equipment used to contain large amounts of material."
 	icon_state = "pre_war_storage"
 	rating = 4
 	custom_materials = list(/datum/material/iron=80)

@@ -168,13 +168,31 @@
 		stress = max(stress - 4, 0)
 
 /datum/brain_trauma/severe/monophobia/proc/check_alone()
+	//is... the owner of the pet blind..? because if yes... then they may not see the pet.
 	if(HAS_TRAIT(owner, TRAIT_BLIND))
 		return TRUE
+
+	//firstly let's check if this pet is within our viewrange
 	for(var/mob/M in oview(owner, 7))
 		if(!isliving(M)) //ghosts ain't people
 			continue
 		if(M.is_monophobia_pet || M.ckey)
 			return FALSE
+
+	//secondly let's check if our pet is actually in our backpack
+	var/obj/item/storage = owner.get_item_by_slot(SLOT_BACK)
+	if(storage)  //Are we actually wearing a backpack?
+		if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is the thing we are wearing on the back an actual storage item?
+			if(storage.contents.len)  //if it has no items, don't even bother checking!
+				for(var/obj/item/I in storage.contents)  //Is an animal hiding in our backpack????
+					if(istype(I, /obj/item/clothing/head/mob_holder))
+						return FALSE
+	
+	//thirdly let's actually check if the mob is being held in the hands
+	for(var/obj/item/I in owner.held_items)  //Is an animal hiding on our hands????
+		if(istype(I, /obj/item/clothing/head/mob_holder))
+			return FALSE
+
 	return TRUE
 
 /datum/brain_trauma/severe/monophobia/proc/stress_reaction()
@@ -188,7 +206,7 @@
 				to_chat(owner, span_warning("You feel sick..."))
 			else
 				to_chat(owner, span_warning("You feel really sick at the thought of being alone!"))
-			addtimer(CALLBACK(owner, /mob/living/carbon.proc/vomit, high_stress), 50) //blood vomit if high stress
+			addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living/carbon,vomit), high_stress), 50) //blood vomit if high stress
 		if(2)
 			if(!high_stress)
 				to_chat(owner, span_warning("You can't stop shaking..."))
@@ -289,7 +307,7 @@
 	var/regex/reg = new("(\\b[REGEX_QUOTE(trigger_phrase)]\\b)","ig")
 
 	if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
-		addtimer(CALLBACK(src, .proc/hypnotrigger), 10) //to react AFTER the chat message
+		addtimer(CALLBACK(src,PROC_REF(hypnotrigger)), 10) //to react AFTER the chat message
 		hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("*********"))
 
 /datum/brain_trauma/severe/hypnotic_trigger/proc/hypnotrigger()

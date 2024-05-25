@@ -16,7 +16,7 @@
 
 // Compost when drunk..?
 /datum/reagent/compost/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(0.5*REM, 0)
 	. = TRUE
 	..()
 

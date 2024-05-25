@@ -82,16 +82,6 @@
 	refined_type = /obj/item/stack/sheet/metal
 	merge_type = /obj/item/stack/ore/iron
 
-/obj/item/stack/ore/lead
-	name = "lead ore"
-	icon_state = "lead ore"
-	item_state = "lead ore"
-	singular_name = "lead ore chunk"
-	points = 3
-	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/lead
-	merge_type = /obj/item/stack/ore/lead
-
 /obj/item/stack/ore/glass
 	name = "sand pile"
 	icon_state = "Glass ore"
@@ -103,6 +93,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	merge_type = /obj/item/stack/ore/glass
 	grind_results = list(/datum/reagent/silicon = 20,)
+
+/obj/item/stack/ore/glass/three
+	amount = 3
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 	new/datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -343,7 +336,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		else
 			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!"), span_danger("You strike \the [src], causing a chain reaction."))
 			log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(bombturf)]")
-		det_timer = addtimer(CALLBACK(src, .proc/detonate, notify_admins), det_time, TIMER_STOPPABLE)
+		det_timer = addtimer(CALLBACK(src,PROC_REF(detonate), notify_admins), det_time, TIMER_STOPPABLE)
 
 /obj/item/gibtonite/proc/detonate(notify_admins)
 	if(primed)
@@ -448,7 +441,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		playsound(user.loc, 'sound/items/coinflip.ogg', 50, 1)
 		var/oldloc = loc
 		sleep(15)
-		if(loc == oldloc && user && !user.incapacitated())
+		if(loc == oldloc && user && !user.incapacitated(allow_crit = TRUE))
 			user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
 								span_notice("You flip [src]. It lands on [coinflip]."), \
 								span_italic("You hear the clattering of loose change."))

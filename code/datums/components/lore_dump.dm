@@ -10,11 +10,11 @@
 /datum/component/lore/Initialize()
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE_MORE), .proc/lore_dump)
+	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE_MORE),PROC_REF(lore_dump))
 
 /datum/component/lore/proc/lore_dump(datum/source, mob/reader)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/dump_lore, reader)
+	INVOKE_ASYNC(src,PROC_REF(dump_lore), reader)
 
 /datum/component/lore/proc/dump_lore(mob/reader)
 	if(!reader)

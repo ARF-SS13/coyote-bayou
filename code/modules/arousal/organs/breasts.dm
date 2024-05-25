@@ -1,5 +1,5 @@
 #define BREASTS_ICON_MIN_SIZE 1
-#define BREASTS_ICON_MAX_SIZE 6
+#define BREASTS_ICON_MAX_SIZE 20
 
 /obj/item/organ/genital/breasts
 	name = "breasts"
@@ -40,6 +40,9 @@ GLOBAL_LIST_INIT(breast_values, list(
 	"n" = 14,
 	"o" = 15,
 	"huge" = 16,
+	"massive" = 17,
+	"giga" = 18,
+	"impossible" = 19, 
 	"flat" = 0))
 
 GLOBAL_LIST_INIT(massive_breast_descriptors, list(
@@ -74,9 +77,11 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			out["BitName"] = "A set of udders."
 		if("pair")
 			out["BitName"] = "A pair of breasts."
+		if("pair(round)")
+			out["BitName"] = "A pair of breasts."
 		else
 			out["BitName"] = "A [shape]-set of breasts."
-	out["BitSize"] = "They are a [uppertext(size)]-cup."
+	out["BitSize"] = "They are \a [uppertext(size)]-cup."
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = !!aroused_state
 	out["BitExtra"] = "Operating at %100 capacity."
@@ -89,6 +94,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	switch(lowershape)
 		if("pair")
 			desc = "You see a pair of breasts."
+		if("pair(round)")
+			desc = "You see a pair of breasts."
 		if("quad")
 			desc = "You see two pairs of breast, one just under the other."
 		if("sextuple")
@@ -97,8 +104,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			desc = "You see a set of crotch milkers, they are udderly fantastic!"
 		else
 			desc = "You see some breasts, they seem to be quite exotic."
-	if(size == "huge")
-		desc = "You see [pick(GLOB.massive_breast_descriptors)]. Their volume is way beyond cupsize now, measuring in about [round(cached_size * 2)]cm in diameter."
+	if(size in list("huge", "massive", "giga", "impossible"))
+		desc += "\nThey are [pick(GLOB.massive_breast_descriptors)], far beyond any conventional measurement!"
 	else
 		if (size == "flat")
 			desc += " They're very small and flatchested, however."
@@ -146,7 +153,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 		return
 	if(new_value == cached_size)
 		return
-	new_value = clamp(new_value, 0, 16)
+	new_value = clamp(new_value, 0, 19)
 	prev_size = cached_size
 	cached_size = new_value
 	update()
@@ -162,12 +169,12 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	switch(rounded_cached)
 		if(0) //flatchested
 			size = "flat"
-		if(1 to 15) //on the charts
+		if(1 to 19) //on the charts
 			size = GLOB.breast_values[rounded_cached]
-		if(16 to INFINITY) //off the charts
-			size = "huge"
+		if(19 to INFINITY) //off the charts
+			size = "impossible"
 
-	if(rounded_cached < 16 && owner)//Because byond doesn't count from 0, I have to do this.
+	if(rounded_cached < 19 && owner)//Because byond doesn't count from 0, I have to do this.
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_cached > r_prev_size)

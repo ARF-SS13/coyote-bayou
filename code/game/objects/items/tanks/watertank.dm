@@ -363,7 +363,7 @@
 	cut_overlays()
 
 	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "backpack-10")
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "backpack-10", color = mix_color_from_reagents(reagents.reagent_list))
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -374,14 +374,13 @@
 			if(61 to INFINITY)
 				filling.icon_state = "backpack100"
 
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		add_overlay(filling)
 
 /obj/item/reagent_containers/chemtank/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE) //apply chemcolor and level
 	. = ..()
 	//inhands + reagent_filling
 	if(!isinhands && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "backpackmob-10")
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "backpackmob-10", color = mix_color_from_reagents(reagents.reagent_list))
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -392,7 +391,6 @@
 			if(61 to INFINITY)
 				filling.icon_state = "backpackmob100"
 
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		. += filling
 
 /obj/item/reagent_containers/chemtank/proc/turn_on()

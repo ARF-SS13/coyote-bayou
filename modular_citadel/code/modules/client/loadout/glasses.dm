@@ -23,6 +23,11 @@
 	name = "Large sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/gear/glasses/chameleon
+	name = "chameleon glasses"
+	path = /obj/item/clothing/glasses/chameleon
+	cost = 0
+
 /datum/gear/glasses/biker
 	name = "biker goggles"
 	path = /obj/item/clothing/glasses/f13/biker

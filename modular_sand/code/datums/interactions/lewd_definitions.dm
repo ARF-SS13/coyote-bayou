@@ -32,7 +32,7 @@
 	var/has_butt = FALSE
 	var/anus_always_accessible = FALSE
 	var/has_breasts = FALSE
-	var/anus_exposed = FALSE
+	var/anus_exposed = FALSE //hahahahahahhahahahahhahahahahha lmfao
 	var/last_partner
 	var/last_orifice
 	var/obj/item/organ/last_genital

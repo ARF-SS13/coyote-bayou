@@ -110,7 +110,7 @@
 		wearer = changeto
 		LAZYADD(wearer.user_movement_hooks, src)
 		cached_pull = changeto.pulling
-		mobhook = changeto.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED), CALLBACK(src, .proc/on_mob_move, changeto))
+		mobhook = changeto.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED), CALLBACK(src,PROC_REF(on_mob_move), changeto))
 
 /obj/item/flightpack/Initialize()
 	ion_trail = new
@@ -425,7 +425,7 @@
 	crashing = FALSE
 
 /obj/item/flightpack/proc/door_pass(obj/structure/mineral_door/door)
-	INVOKE_ASYNC(door, /obj/structure/mineral_door.proc/Open)
+	INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/structure/mineral_door,Open))
 	var/turf/T = get_turf(door)
 	wearer.forceMove(T)
 	wearer.visible_message(span_boldnotice("[wearer] rolls to [wearer.p_their()] sides and slips past [door]!"))
@@ -445,7 +445,7 @@
 		if((!A.allowed(wearer)) && !A.emergency)
 			nopass = TRUE
 	if(!nopass)
-		INVOKE_ASYNC(A, /obj/machinery/door.proc/open)
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/door,open))
 		wearer.visible_message(span_warning("[wearer] rolls sideways and slips past [A]"))
 		var/turf/target = get_turf(A)
 		if(istype(A, /obj/machinery/door/window) && (get_turf(wearer) == get_turf(A)))
@@ -536,7 +536,7 @@
 			return TRUE
 		usermessage("Warning: Velocity too high to safely disengage. Retry to confirm emergency shutoff.", "boldwarning")
 		override_safe = TRUE
-		addtimer(CALLBACK(src, .proc/enable_safe), 50)
+		addtimer(CALLBACK(src,PROC_REF(enable_safe)), 50)
 		return FALSE
 
 /obj/item/flightpack/proc/enable_safe()

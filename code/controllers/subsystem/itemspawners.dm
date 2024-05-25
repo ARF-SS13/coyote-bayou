@@ -65,6 +65,12 @@ SUBSYSTEM_DEF(itemspawners)
 
 /obj/item
 	var/from_trash = FALSE
+	///Key of the player who looted me, if at all.
+	var/looted_by
+	///x,y,z of where I was looted, if at all. format: "x;y;z". Uses params2list to reduce memory usage
+	var/looted_coordinates
+	/// world.time that this item was looted
+	var/looted_when
 
 /datum/controller/subsystem/itemspawners/proc/restock_trash_piles()
 	if(!COOLDOWN_FINISHED(src, next_trash_delivery))

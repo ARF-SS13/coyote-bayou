@@ -69,6 +69,7 @@
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"					//from base of atom/attack_hulk(): (/mob/living/carbon/human)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"				//from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_PARENT_EXAMINE "atom_examine"                    //from base of atom/examine(): (/mob, list/examine_return_text)
+#define COMSIG_FLIST "flist" // mob/examined, mob/examiner
 ///from base of atom/get_examine_name(): (/mob, list/overrides)
 #define COMSIG_ATOM_GET_EXAMINE_NAME "atom_examine_name"
 #define COMSIG_PARENT_EXAMINE_MORE "atom_examine_more"                    ///from base of atom/examine_more(): (/mob)
@@ -195,6 +196,7 @@
 ///Called by something licked to return a signal to the thing licking to let the thing lick it even if it shouldnt be licked
 #define COMSIG_LICK_RETURN "lick_return"
 
+#define COMSIG_ATOM_TOOL_ACT "atom_tool_act" 
 
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
@@ -253,6 +255,7 @@
 	#define COMPONENT_BLOCK_GHOSTING (1<<0)
 	#define COMPONENT_DO_NOT_PENALIZE_GHOSTING (1<<1)
 	#define COMPONENT_FREE_GHOSTING (1<<2)
+#define COMSIG_MOB_REMOVE_CHICKEN_HAT "mob_remove_chicken_hat"	//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_ALLOWED "mob_allowed"						//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"			//from base of mob/anti_magic_check(): (mob/user, magic, holy, tinfoil, chargecost, self, protection_sources)
 	#define COMPONENT_BLOCK_MAGIC 1
@@ -370,13 +373,14 @@
 #define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"						// defined twice, in carbon and human's topics, fired when interacting with a valid embedded_object to pull it out (mob/living/carbon/target, /obj/item, /obj/item/bodypart/L)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"		// called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 
+#define COMSIG_CARBON_REAGENT_POST_LIFE "carbon_reagent_post_life" // (datum/source, datum/reagent/R)
 // /mob/living/silicon signals
 #define COMSIG_ROBOT_UPDATE_ICONS "robot_update_icons"			//from base of robot/update_icons(): ()
 
 // /mob/living/simple_animal/hostile signals
 #define COMSIG_HOSTILE_CHECK_FACTION "hostile_check_faction"	//from base of mob/living/simple_animal/hostile/check_faction(): (mob/living/simple_animal/hostile/target, mob/living/simple_animal/hostile/attacker)
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 	#define COMPONENT_HOSTILE_NO_ATTACK 1
+#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 
 // /obj signals
 #define COMSIG_OBJ_DECONSTRUCT 	"obj_deconstruct"				//from base of obj/deconstruct(): (disassembled)
@@ -440,6 +444,9 @@
 #define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
 #define COMSIG_GET_UPGRADES "get_upgrades"						//from /atom/refresh_upgrades(): (/src) Called to get the upgrades of the /src
 
+#define SIG_ITEM_WIELD "item_wield"								//from /obj/item/wield(): (src, mob/usr)
+#define SIG_ITEM_UNWIELD "item_unwield"							//from /obj/item/unwield(): (src, mob/usr)
+
 #define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)
 #define COMSIG_ITEM_WORN_OVERLAYS "item_worn_overlays"			//from base of obj/item/worn_overlays(): (isinhands, icon_file, used_state, style_flags, list/overlays)
@@ -458,7 +465,9 @@
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
+#define COMSIG_ITEM_SET_SKIN "set_skin" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
+#define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 
 /// Artifact/effect signals
 #define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)
@@ -478,6 +487,8 @@
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
 #define COMSIG_GRENADE_ARMED "grenade_armed"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
+
+#define COMSIG_ENERGY_GUN_SELFCHARGE_TICK "energy_gun_selfcharge_tick" // datum/source, obj/item/gun/energy/shootergun
 
 // /obj/item/clothing signals
 #define COMSIG_SHOES_STEP_ACTION "shoes_step_action"			//from base of obj/item/clothing/shoes/proc/step_action(): ()
@@ -625,6 +636,7 @@
 #define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
+#define COMSIG_SPAWNER_REMOVE_MOB_FROM_NEST "remove_from_spawner_spawner" // Spawns something now!
 
 /// Blenderbrain signals
 /// Signals sent from the Persona Core to the host
@@ -743,6 +755,22 @@
 #define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
 #define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
+#define COMSIG_CLOTHING_ADJUST "COMSIG_CLOTHING_ADJUST" // (obj/item/clothing/source, mob/user)
+
+#define COMSIG_BOUNTYPROGRAM_OPEN_MENU "bounty_open_program" // (datum/source, mob/user)
+#define COMSIG_BOUNTYPROGRAM_GIVE_CLAIMER "bounty_give_claimer" // (datum/source, mob/user)
+#define COMSIG_BOUNTYPROGRAM_ATTEMPT_CLAIM_THING "bounty_attempt_claim_thing" // (datum/source, atom/thing, mob/user)
+#define COMSIG_BOUNTYPROGRAM_GET_NUMBER_OF_ACTIVE_QUESTS "bounty_get_numofques" // ()
+#define COMSIG_BOUNTYPROGRAM_HAS_QUEST "COMSIG_BOUNTYPROGRAM_HAS_QUEST" // (datum/source, datum/bounty/B)
+#define COMSIG_BOUNTYPROGRAM_EXISTS "COMSIG_BOUNTYPROGRAM_EXISTS" // (hi)
+
+#define COMSIG_ATOM_QUEST_SCANNED "quest_scanned" // (datum/source, mob/scanner)
+
+#define COMSIG_GET_BUTCHER_EFFECTIVENESS "COMSIG_GET_BUTCHER_EFFECTIVENESS" // ()
+#define COMSIG_GET_BUTCHER_BONUS_MODIFIER "COMSIG_GET_BUTCHER_BONUS_MODIFIER" // ()
+#define COMSIG_ATOM_BUTCHER "COMSIG_ATOM_BUTCHER" // ()
+#define COMSIG_ATOM_CAN_BUTCHER "COMSIG_ATOM_CAN_BUTCHER" // ()
+#define COMSIG_MOB_IS_IMPORTANT "COMSIG_MOB_IS_IMPORTANT" // ()
 
 
 

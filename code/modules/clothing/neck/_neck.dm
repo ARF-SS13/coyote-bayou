@@ -99,6 +99,7 @@
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	dog_fashion = /datum/dog_fashion/head
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
@@ -254,6 +255,7 @@
 	desc = "It's for pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule. It seems to be made out of a polychromic material."
 	icon_state = "petcollar"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar
+	w_class = WEIGHT_CLASS_SMALL
 	var/poly_states = 1
 	var/poly_colors = list("#00BBBB")
 	var/tagname = null
@@ -334,7 +336,6 @@
 	desc = "Damn, it feels good to be a gangster."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
-
 /obj/item/clothing/neck/necklace/dope/merchant
 	desc = "Don't ask how it works, the proof is in the holochips!"
 	/// scales the amount received in case an admin wants to emulate taxes/fees.
@@ -373,7 +374,7 @@
 //VERY SUPER BADASS NECKERCHIEFS//
 //////////////////////////////////
 
-obj/item/clothing/neck/neckerchief
+/obj/item/clothing/neck/neckerchief
 	icon = 'icons/obj/clothing/masks.dmi' //In order to reuse the bandana sprite
 	w_class = WEIGHT_CLASS_TINY
 	var/sourceBandanaType

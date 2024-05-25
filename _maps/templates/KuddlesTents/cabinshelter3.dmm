@@ -1,0 +1,411 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/f13/wood,
+/area/f13/wasteland)
+"c" = (
+/obj/structure/rug/big/rug_fancy{
+	layer = 0;
+	pixel_y = -16
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"f" = (
+/obj/structure/chair/sofa/corp{
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/structure/rug/big/rug_blue_shag{
+	layer = 0;
+	pixel_y = 10
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"g" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain/directional/north,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"h" = (
+/obj/structure/chair/wood{
+	icon = 'icons/obj/objects2.dmi';
+	icon_state = "wooden_chair";
+	pixel_y = 4;
+	dir = 8;
+	pixel_x = 6
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"j" = (
+/obj/structure/destructible/tribal_torch/wall,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"k" = (
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"l" = (
+/obj/structure/rug/big/rug_blue{
+	layer = 0s
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"m" = (
+/obj/structure/chair/wood{
+	icon = 'icons/obj/objects2.dmi';
+	icon_state = "wooden_chair";
+	pixel_y = -4;
+	dir = 8;
+	pixel_x = 6
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"n" = (
+/obj/structure/chair/sofa/corp/left{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"o" = (
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"q" = (
+/obj/structure/fireplace,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"r" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"s" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"t" = (
+/obj/structure/chair/sofa/corp/corner{
+	pixel_x = -8;
+	pixel_y = 8;
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"u" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 10;
+	layer = 4;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/grill,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"v" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2;
+	layer = 4;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"z" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"C" = (
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 1;
+	pixel_y = 16
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"E" = (
+/obj/structure/closet/cabinet,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"F" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/structure/rug/big/rug_blue_shag{
+	layer = 0
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"I" = (
+/obj/structure/table/wood/club{
+	pixel_y = -5
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"J" = (
+/obj/structure/rug/mat/welcome,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"M" = (
+/obj/structure/closet/crate/wooden{
+	pixel_y = 10
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"P" = (
+/obj/structure/closet/crate/wicker,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"Q" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 1;
+	pixel_y = 16
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"R" = (
+/obj/structure/closet/crate/wooden,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"S" = (
+/obj/structure/rack/shelf_wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"U" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain/directional/east,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"V" = (
+/obj/structure/bed{
+	pixel_y = 12
+	},
+/obj/structure/bed,
+/obj/item/bedsheet/doublesheethop,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"W" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain/directional/south,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"X" = (
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+"Y" = (
+/obj/structure/bed{
+	pixel_y = 12
+	},
+/obj/structure/bed,
+/obj/item/bedsheet/doublesheethos,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+U
+a
+a
+Q
+z
+z
+u
+"}
+(2,1,1) = {"
+a
+t
+f
+F
+s
+k
+k
+X
+J
+o
+o
+r
+"}
+(3,1,1) = {"
+a
+n
+k
+k
+s
+k
+k
+g
+m
+I
+h
+v
+"}
+(4,1,1) = {"
+a
+q
+k
+k
+k
+k
+k
+a
+a
+U
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+a
+a
+a
+C
+k
+a
+E
+k
+R
+a
+"}
+(6,1,1) = {"
+a
+M
+k
+E
+a
+k
+l
+X
+k
+k
+k
+a
+"}
+(7,1,1) = {"
+W
+k
+c
+k
+X
+k
+k
+a
+k
+c
+k
+a
+"}
+(8,1,1) = {"
+a
+s
+V
+j
+a
+S
+P
+a
+C
+Y
+s
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}

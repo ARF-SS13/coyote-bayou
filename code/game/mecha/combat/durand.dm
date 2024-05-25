@@ -7,15 +7,14 @@
 	name = "\improper Durand"
 	desc = "An aging combat exosuit utilized by the Vault-Tec corporation. A pre-War design, developed by Vault-Tec to combat post-War threats. It seems to have an experimental shield projector installed to minimize damage to the exosuit."
 	icon_state = "durand"
-	step_in = 4
+	step_in = 2.5
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	armor = ARMOR_VALUE_PA
+	max_integrity = 500
+	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 30000
 	infra_luminosity = 8
-	force = 30
+	force = 45
 	canstrafe = TRUE
-	step_energy_drain = 40
 	internal_damage_threshold = 20
 	wreckage = /obj/structure/mecha_wreckage/durand
 
@@ -25,8 +24,8 @@
 	shield = new/obj/durand_shield
 	shield.chassis = src
 	shield.layer = layer
-	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, .proc/relay)
-	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, .proc/prehit)
+	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE,PROC_REF(relay))
+	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT,PROC_REF(prehit))
 	. = ..()
 
 /obj/mecha/combat/durand/Destroy()
@@ -91,7 +90,7 @@ Expects a turf. Returns true if the attack should be blocked, false if not.*/
 				. = TRUE
 	return
 
-obj/mecha/combat/durand/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0)
+/obj/mecha/combat/durand/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0)
 	if(defense_check(user.loc))
 //		log_message("Attack absorbed by defense field. Attacker - [user].", LOG_MECHA, color="orange")
 		shield.attack_generic(user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
@@ -144,7 +143,7 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 
 /obj/durand_shield/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, .proc/activate)
+	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE,PROC_REF(activate))
 
 /obj/durand_shield/Destroy()
 	if(chassis)

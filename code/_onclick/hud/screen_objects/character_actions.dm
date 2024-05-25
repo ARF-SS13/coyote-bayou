@@ -7,15 +7,13 @@
 
 /atom/movable/screen/autowhisper/Click(location,control,params)
 	var/mob/M = usr
-	to_chat(M, span_notice("You'll now whisper everything you say."))
 	M.is_autowhisper = M.is_autowhisper ? FALSE : TRUE
 	if(M.is_autowhisper)
+		to_chat(M, span_notice("You'll now whisper everything you say."))
 		icon_state = "autowhisper1"
 	else
+		to_chat(M, span_notice("You'll no longer whisper everything you say."))
 		icon_state = "autowhisper0"
-
-
-
 
 /atom/movable/screen/pose
 	name = "pose"
@@ -25,9 +23,6 @@
 /atom/movable/screen/pose/Click(location,control,params)
 	var/mob/M = usr
 	M.manage_flavor_tests()
-
-
-
 
 /atom/movable/screen/up
 	name = "up"
@@ -43,8 +38,6 @@
 /atom/movable/screen/up/DblClick(location,control,params)
 	var/mob/L = usr
 	L.up()
-
-
 
 /atom/movable/screen/down
 	name = "down"
@@ -64,6 +57,41 @@
 	if(isliving(usr))
 		var/mob/living/L = usr
 		L.toggle_mob_sleep()
+
+/atom/movable/screen/triage
+	name = "triage button"
+	icon_state = "triage"
+	screen_loc = ui_character_actions
+
+/atom/movable/screen/triage/Click(location,control,params)
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		if(isnull(H.get_active_held_item()))
+			if(HAS_TRAIT(H, TRAIT_HEAL_TONGUE))
+				H.emote("lick")
+			else if(HAS_TRAIT(H, TRAIT_HEAL_TOUCH))
+				H.emote("touch")
+			else if(HAS_TRAIT(H, TRAIT_HEAL_TEND))
+				H.emote("tend")
+
+/atom/movable/screen/triage/DblClick(location,control,params)
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		var/obj/item/I = H.get_active_held_item()
+		if(isnull(I))
+			if(HAS_TRAIT(H, TRAIT_HEAL_TONGUE))
+				H.emote("lick")
+			else if(HAS_TRAIT(H, TRAIT_HEAL_TOUCH))
+				H.emote("touch")
+			else if(HAS_TRAIT(H, TRAIT_HEAL_TEND))
+				H.emote("tend")
+
+			I = H.get_active_held_item()
+			I?.melee_attack_chain(H, H, params)
+
+		else if(istype(I, /obj/item/hand_item/healable/))
+			I = H.get_active_held_item()
+			I?.melee_attack_chain(H, H, params)
 
 /atom/movable/screen/aooc_hud_button
 	name = "AOOC"

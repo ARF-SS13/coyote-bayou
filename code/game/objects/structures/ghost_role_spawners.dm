@@ -427,7 +427,7 @@
 		id.update_label()
 	else
 		to_chat(L, span_userdanger("Your owner is already dead!  You will soon perish."))
-		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob,dust), 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
 	name = "Demonic Friend"
@@ -758,7 +758,6 @@
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit = 1,
 		/obj/item/storage/survivalkit/medical = 1,
-		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
 		/obj/item/clothing/mask/gas/ranger = 1,
@@ -874,7 +873,7 @@
 	flavour_text = "For the gods!"
 	assignedrole = "Spear Hunter"
 	outfit = /datum/outfit/job/tribal/f13hunter
-	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	suit_store = /obj/item/twohanded/spear/bonespear/aethergiest
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,

@@ -23,7 +23,7 @@
 		/datum/language/monkey,
 		/datum/language/narsie,
 		/datum/language/beachbum,
-		/datum/language/ratvar,
+//		/datum/language/ratvar,
 		/datum/language/aphasia,
 		/datum/language/slime,
 		/datum/language/vampiric,
@@ -38,8 +38,13 @@
 		/datum/language/birdsong,
 		/datum/language/rabbit,
 		/datum/language/bug,
+		/datum/language/fictionalnorse,
+		/datum/language/technorussian,
 		/datum/language/xenocommon,	//just let it happen
 		/datum/language/machine,	//who cares
+		/datum/language/spanish,
+		/datum/language/serbian,
+		/datum/language/freljordian,
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
@@ -107,15 +112,15 @@
 		M.dna.species.say_mod = say_mod
 	if(length(initial_accents) || length(accents))
 		//M.UnregisterSignal(M, COMSIG_MOB_SAY)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech, override = TRUE)
+		RegisterSignal(M, COMSIG_MOB_SAY,PROC_REF(handle_speech), override = TRUE)
 
 
 /obj/item/organ/tongue/Remove(special = FALSE)
 	if(!QDELETED(owner))
 		if(say_mod && owner.dna?.species)
 			owner.dna.species.say_mod = initial(owner.dna.species.say_mod)
-		UnregisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
-		//owner.RegisterSignal(owner, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
+		UnregisterSignal(owner, COMSIG_MOB_SAY,PROC_REF(handle_speech))
+		//owner.RegisterSignal(owner, TYPE_PROC_REF(COMSIG_MOB_SAY, /mob/living/carbon/,handle_tongueless_speech))
 	return ..()
 
 /obj/item/organ/tongue/could_speak_language(language)
@@ -213,7 +218,7 @@
 		/datum/language/xenocommon,
 		/datum/language/common,
 		/datum/language/draconic,
-		/datum/language/ratvar,
+//		/datum/language/ratvar,
 		/datum/language/monkey))
 
 /obj/item/organ/tongue/alien/Initialize(mapload)

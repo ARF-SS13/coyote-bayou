@@ -658,6 +658,13 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "brotherhood_armor"
 	item_state = "brotherhood_armor"
 
+/obj/item/clothing/suit/armor/medium/combat/bos/cylphie
+	name = "Singed Brotherhood Armor"
+	desc = "A suit of scrap brotherhood combat armor with burn marks across every piece. There are broken holotags welded across the numerous plates, and a scratched to shit dogtag with the name 'Blue Blaze' cut into it."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "cylphieexilearmor"
+	item_state = "cylphieexilearmor"
+
 /obj/item/clothing/suit/armor/medium/combat/mk2/bos
 	name = "reinforced initiate armor"
 	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."

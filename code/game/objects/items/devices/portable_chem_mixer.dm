@@ -111,7 +111,7 @@
 	if (loc != user)
 		return ..()
 	if(SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED))
-		INVOKE_ASYNC(src, /datum.proc/ui_interact, user)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/datum,ui_interact), user)
 
 /obj/item/storage/portable_chem_mixer/attack_self(mob/user)
 	if(loc == user)
@@ -128,7 +128,7 @@
 	. = ..()
 	if(ismob(loc))
 		var/mob/M = loc
-		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+		if(!M.incapacitated(allow_crit = TRUE) && istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 

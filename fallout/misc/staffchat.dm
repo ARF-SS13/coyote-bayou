@@ -171,4 +171,6 @@ GLOBAL_PROTECT(staff)
 		winset(src, "mainwindow.mainvsplit", "pos=3x0")
 	winset(src, "mainwindow", "is-maximized=true")
 
+	fit_viewport()
+
 // writing this here for testing reasons pls ignore

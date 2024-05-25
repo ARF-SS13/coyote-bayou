@@ -69,19 +69,21 @@
 
 /obj/structure/simple_door/AltClick(mob/user)
 	. = ..()
-	if(deadbolt && isliving(user) && Adjacent(user, src) && !user.incapacitated())
-		if(get_dir(src,user) != deadbolt.dir)
-			to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
-		else
-			deadbolt.ToggleLock(user)
-			do_squish(0.9,0.9,0.25 SECONDS)
-			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
+	if(isliving(user) && istype(deadbolt))
+		var/mob/living/L = user
+		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
+			if(get_dir(src,user) != deadbolt.dir)
+				to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
+			else
+				deadbolt.ToggleLock(user)
+				do_squish(0.9,0.9,0.25 SECONDS)
+				playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
 
 /obj/structure/simple_door/CtrlClick(mob/user)
 	. = ..()
 	if(isliving(user) && istype(padlock))
 		var/mob/living/L = user
-		if(L?.mobility_flags & MOBILITY_USE)
+		if(L?.mobility_flags & MOBILITY_USE && L.Adjacent(src))
 			var/obj/item/key/K
 			var/foundit
 			for(var/maybekey in L) //Search two layers deep for a matching key
@@ -91,11 +93,11 @@
 					if(istype(maybekey2, /obj/item/key))
 						K = maybekey2
 				if(K?.lock_data == padlock?.lock_data)
-					attackby(K, user)
+					attackby(K, L)
 					foundit = TRUE
 					break
 			if(!foundit) //We can't find it :(
-				to_chat(user, span_warning("You can't find the right key to unlock \the [src]! Maybe it's too deeply packed away or you lost it?"))
+				to_chat(L, span_warning("You can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
@@ -354,7 +356,7 @@
 	can_disasemble = TRUE
 	can_have_lock = TRUE
 
-obj/structure/simple_door/house/add_debris_element()
+/obj/structure/simple_door/house/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 // cleaned and repainted white
@@ -634,3 +636,77 @@ obj/structure/simple_door/house/add_debris_element()
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?
 	opacity = FALSE
 	base_opacity = FALSE
+
+//Doors from Civ13
+
+/obj/structure/simple_door/civ
+	icon_state = "base"
+	door_type = "base"
+	icon = 'modular_coyote/icons/turfs/material_doors.dmi'
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = TRUE
+
+/obj/structure/simple_door/civ/gate
+	name = "gate"
+	icon_state = "gate"
+	door_type = "gate"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/sandgate
+	name = "sandstone gate"
+	icon_state = "sgate"
+	door_type = "sgate"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/saloon
+	name = "Saloon"
+	icon_state = "saloon"
+	door_type = "saloon"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/storedoor
+	name = "Store Door"
+	icon_state = "storedoor"
+	door_type = "storedoor"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/shoji
+	name = "shoji"
+	icon_state = "shoji"
+	door_type = "shoji"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/cell
+	name = "cell"
+	icon_state = "cell"
+	door_type = "cell"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE
+
+/obj/structure/simple_door/civ/cellwooden
+	name = "wooden cell"
+	icon_state = "woodcell"
+	door_type = "woodcell"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_have_lock = FALSE

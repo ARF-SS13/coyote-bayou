@@ -781,7 +781,7 @@ Senior Knight
 	exp_requirements = 900
 
 	loadout_options = list(
-	/datum/outfit/loadout/sknighta, //AER9
+//	/datum/outfit/loadout/sknighta, //AER9
 	/datum/outfit/loadout/sknightb, //Browning Auto-5
 	/datum/outfit/loadout/sknightc, //R93 PDW
 	/datum/outfit/loadout/sknightd,
@@ -837,7 +837,7 @@ Senior Knight
 		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
 		)
-
+/*
 /datum/outfit/loadout/sknighta
 	name = "Footknight"
 	backpack_contents = list(
@@ -847,7 +847,7 @@ Senior Knight
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
-
+*/
 /datum/outfit/loadout/sknightb
 	name = "Knight-Defender"
 	backpack_contents = list(
@@ -993,7 +993,7 @@ Knight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/gun/ballistic/automatic/smg/mp5=1,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd=1,
 		/obj/item/ammo_box/magazine/uzim9mm=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,

@@ -10,7 +10,7 @@
 					/obj/item/storage/box/matches = 10,
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/rollingpapers = 5)
-	contraband = list(/obj/item/lighter = 3)
+	contraband = list(/obj/item/lighter = 3, /obj/item/storage/fancy/cigarettes/cigpack_syndicate = 5)
 	premium = list(/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
 					/obj/item/storage/fancy/cigarettes/cigars = 1,
 					/obj/item/storage/fancy/cigarettes/cigars/havana = 1,
@@ -46,6 +46,7 @@
 					/obj/item/storage/fancy/cigarettes/cigpack_carp = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_midori = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 5,
+					/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 5,
 					/obj/item/storage/box/matches = 10,
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/rollingpapers = 5)

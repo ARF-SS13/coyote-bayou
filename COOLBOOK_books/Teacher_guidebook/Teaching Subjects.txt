@@ -1,0 +1,156 @@
+%TITLE:Teaching Subjects
+
+This chapter is on in game systems that are non-standard from normal SS13.  Things that players who may be used to the normal way the game is played may simply
+never even consider, as they haven't been here for our entire development run.  It also includes just overall useful information about things like plants, hotkeys, etc.
+
+For what should be obvious reasons, a mix of IC and OOC verbology.  
+
+- Self Interaction/Inventory
+- Movement
+- Combat (melee)
+- Combat (ranged)
+- Healing
+- The Wilderness & Survival Tips
+
+I am SURE I will miss things.  Please, please, please add more chapters and information if you see fit. ~Fenny
+
+
+--PAGEBREAK--
+
+Self Interaction/Inventory
+
+We have a lot of odd hotkeys and shortcuts for interacting with things.  We'll start with the backpack, as it is the most commonly accessed object that new players should have
+experience with from elsewhere. Assume any hotkeys mentioned are only effective when in hotkey mode.  I know, unreal.
+
+
+We have opening box in box mechanics (you can alt click on containers, even when in other containers, to open them)
+
+You can put a satchel and a few other backpack types onto your weapon slot (just to the left of your ID)
+
+You do not need armor to use the weapon slot, at all.
+
+Hats, scarves, and many other objects often have small inventory spaces in them.  Most that do have to be removed with alt click, and are opened with a normal click.
+
+Shift + x is a universal wielding hotkey.  If it is not set then it should be in Preferences tab -> Game Prefs -> Keybindings. Any hotkey mentioned after this can be found there.
+
+All pop up windows can use the universal windows search function via ctrl + f.  USE IT.  It IS your friend! (This is standard to byond, but many players don't know!!)
+
+Comma (,) is used to safety guns.
+
+Period (.) is used to switch fire state on guns.
+
+A hotkey can be set to triage quirks (Magical, Triage, and Lick healing) and if pressed twice you will self heal automatically!
+
+You can click an item and drag it onto someone else to give it to them. 
+
+Pressing E will draw a weapon from a series of slots.  This can be corrected later but it should be in the order of Weapon Slot - Belt Slot - Backpack Slot - Boot Slot
+
+You can alt click water to wash yourself off.  Kinda icky though.
+ 
+
+
+--PAGEBREAK--
+
+Movement
+
+We have a few special movement systems that are, as far as I'm aware of writing this (1/25/24) haven't been copied in the way we have them anywhere else. ~Fenny
+
+
+You can climb a LOT of walls by alt clicking on them.  Freerunner quirk players do this faster.
+
+Players can build stairs out of bricks, allowing almost anyone to climb walls.  You will need to use the say verb '*bricks' and alt click on the wall with it to build them.
+
+We have numerous quirks and martial arts that allow for 'jumping' movement.  Combined with climbing up walls you can easily turn yourself into a rooftop ninja.
+
+Our pixel shift system is not tile limited, you can pixel shift into other peoples tiles to get closer to them.  You can also pixel shift out of the way and allow people by.
+
+Our pixel tilt system is degree limited to a full 360 degrees. You can spin all the way around.
+
+
+--PAGEBREAK--
+
+Combat (melee)
+
+This section is broken into a few quick things, as our melee combat system hasn't been fully expanded yet (1/25/24) ~Fenny
+
+Always use harm intent when doing melee combat with a non-punch weapon!  We have directional melee attacks that even have reach.  It even attacks under you, allowing you to fight off
+swarms of mobs that get super close VERY easily.
+
+Wielding (shift+x) a single melee weapon almost always increases its damage.
+
+Using the wield hotkey (shift+x) when you have two things in your hands will cause you to dual wield them.  This is a very simple system to use.  Your first attack causes your active hands weapon
+to strike, then while it is 'recycling' you can attack with your off hand by just clicking again.  This allows for some very fast attack times, but of course the overall damage is lower per hit.
+
+Shields can be quite powerful for rounding out a build if you are focused on not taking damage. By default they are press and hold F to use, while facing the foe but there is a keybinding to
+switch them over to toggle.  Combined with some heavy armor and a high block% weapon you can really become quite hard to put down.  
+
+We have a few martial arts, as well as player access to the Fists of the North Star (we call it the swamp star, because of course we do), and while Martial Arts can be fairly powerful
+I generally suggest using them with a melee weapon unless you plan on forcing a lot of pvp situations (which I don't suggest you do, because being unpopular will get old fast.)
+
+
+--PAGEBREAK--
+
+Combat (ranged)
+
+We have an idiotic variety of guns. (Fenny, 2024)  
+
+As such, it may be in your best interest to carry multiples and use them for certain scenarios. Teach new players there are bootguns, and things of that
+nature so that they can generally have a ranged weapon on them.  Even the tribals can craft (with the crafting menu) a sling that has infinite ammo for ranged combat that ANYONE can use, even with fat fingers.
+
+Our Ranged combat PVE system HAS been expanded
+
+Target Head on Mob: Higher damage potential, but chance to miss.
+
+Target Arms on Mob: Stun damage potential, but chance to miss.
+
+Target Legs on Mob: Slowdown damage potential, but chance to miss
+
+Target Body on Mob: If you hit, you hit, no extra effects.
+
+Included herein is also some information about mobs behaviors.
+
+Some mobs are short sighted.  It takes practice to figure out what that vision distance is, but it can and should be abused!
+
+Some mobs are weak to certain things.  Pulse weapons and grenades doing an absolute number on robots for instance, or how ants are a bit weaker to energy weapons.
+
+
+--PAGEBREAK--
+
+Healing
+
+We have a lot of non-standard healing systems here.  Be sure you're on the up and up with them. Remember also that we have building up wound damage that determines when you
+reach the threshold for taking worse and worse wounds.  Ignoring it, especially in light armor, is a great way to end up bleeding like a stuck pig.
+
+Sleep healing is a thing, and works even better when buckled to a bed and in the dark.  Don't knock it.  It may be a bit slower but it can absolutely tank Wound Damage.
+
+Eating to heal also helps fight off wound damage, but it can also heal some lighter damage outright.  Staying well fed (and in a good mood) can greatly boost your combat effeciency.
+
+Use the Triage tools (Magical healing via touch, triage via tend and lick healing via lick).  They are literally free healing and have no downside.  If you carry a water bottle you can get even more milage out of them.
+
+Nature is your friend, and often much easier to find things in than looking for 'man made' loot.  If you're having rad problems and pass up eating a punga to help you only have yourself to blame when your hair falls out.
+
+Sutures will do damage (very small) to someone if you're not a trained medical professional.  This damage will heal after a few moments but it COULD do more harm than good if applied to a VERY wounded person. 
+
+While obviously it requires you to have a place to do it surgery is an EXTREMELY powerful tool for healing damage.  With the right tools and gear you can also do it on the go.
+
+
+--PAGEBREAK--
+
+The Wilderness & Survival Tips
+
+Outside of towns is a hateful place to be.  Remember to use the tools available to help make your life, and others, a bit smoother.
+
+Use binoculars and scopes to gain perspective.  Realize that being higher up will zoom your view out even further.  The view from Nash's watch towers is intensely large.
+
+Some of the wildlife is more aggressive than others.  Molerats will charge you down, but geckos will often try to psyche you out.  Maybe don't always engage if you don't have to.
+
+The different areas of the map (z levels) are designed for different types of play.  New Boston is generally easier for combat, Nash is varies, Ashdown is rural and very secluded, Redwater is mid-level dangerous with spikes (and a massive highly intense dungeon) and then finally Garland City is a straight up combat slog, with some of the most varied and best loot in the game to be found in its eastern reaches.
+
+Don't panic. To sprint into the unknown is to invite disaster and newbies need to learn to GO.  SLOWER.  If they take their time they will find more space for roleplay, more space for learning, and more space to keep living.
+
+Remember that most of the weather doesn't harm much of anyone but the two that do are downright murderous.  
+
+Have a base of operations somewhere.  Put a lock on it and make it yours.  You will often have loot you can't use but want to hold on to.  Better to store it in a house than in your backpack(s).
+
+More tips to be added later. ~Fenny
+

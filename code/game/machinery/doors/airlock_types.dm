@@ -569,7 +569,7 @@
 	armor = ARMOR_VALUE_MEDIUM
 
 //Pinion airlocks: Clockwork doors that only let servants of Ratvar through.
-/obj/machinery/door/airlock/clockwork
+/*/obj/machinery/door/airlock/clockwork
 	name = "pinion airlock"
 	desc = "A massive cogwheel set into two heavy slabs of brass."
 	icon = 'icons/obj/doors/airlocks/clockwork/pinion_airlock.dmi'
@@ -680,7 +680,7 @@
 
 /obj/machinery/door/airlock/clockwork/brass
 	glass = TRUE
-	opacity = 0
+	opacity = 0*/
 
 //////////////////////////////////
 /*

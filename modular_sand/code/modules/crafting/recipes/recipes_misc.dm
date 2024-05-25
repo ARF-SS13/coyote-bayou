@@ -8,7 +8,7 @@
 	result = /obj/machinery/shower
 	tools = list(TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/a357ammospeed
 	name = "Speed loader (.357)"
@@ -26,7 +26,7 @@
 	result = /obj/item/tank/internals/emergency_oxygen/double/empty
 	tools = list(TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/case_cosmos
 	name = "Cosmos Compartment Case"
@@ -35,4 +35,4 @@
 	result = /obj/item/storage/backpack/case/cosmos
 	tools = list(TOOL_SCREWDRIVER)
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC

@@ -21,8 +21,14 @@
 /obj/machinery/cardpuncher/proc/punch_card(mob/living/user, obj/item/card/thecard)
 	if(!istype(thecard) || !isliving(user))
 		return
-	if(thecard.punch(user))
+	if(!thecard.punch(user))
+		to_chat(user, span_alert("That's already been punched! You're free to toss that thing onto the train."))
+		return
+	var/payout = round(COINS_TO_CREDITS(thecard.punchbonus))
+	if(payout)
+		new /obj/item/stack/f13Cash/caps(get_turf(src), payout)
+	else
 		new /obj/item/stack/f13Cash/random/bankerticket(get_turf(src))
-		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
-
+	playsound(get_turf(src), 'sound/machines/card_punch.ogg', 50, 1)
+	to_chat(user, span_green("You punch the ticket, and coins fall out! Be sure to give the coins to whoever gave you this ticket, that's their reward! You can sell this ticket on the train, or give it back to them if you really want to."))
 

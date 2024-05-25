@@ -102,6 +102,8 @@ ATTACHMENTS
 	var/mutable_appearance/knife_overlay
 	var/bayonet_state = "bayonetstraight"
 
+	var/can_paint = TRUE
+
 	var/can_scope = FALSE
 	var/mutable_appearance/scope_overlay
 	var/scope_state = "scope"
@@ -184,6 +186,11 @@ ATTACHMENTS
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
+	/// Is the player currently reloading this gun?
+	var/reloading = FALSE
+	/// This is the base reload speed, which is modified by things like the size of the magazine in use.
+	var/reloading_time = 1 SECONDS
+
 /obj/item/gun/Initialize()
 	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	if(!recoil_tag)
@@ -232,7 +239,7 @@ ATTACHMENTS
 		if(!ispath(init_firemodes[i], /datum/firemode))
 			init_firemodes.Cut(i, i+1)
 
-	
+
 	if(!LAZYLEN(init_firemodes)) // Nothing passed the filter
 		init_firemodes = list(/datum/firemode/semi_auto) // good enough
 
@@ -265,8 +272,8 @@ ATTACHMENTS
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_fill_gun)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_fill_gun)
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(admin_fill_gun))
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD,PROC_REF(admin_fill_gun))
 
 /obj/item/gun/proc/admin_fill_gun()
 	return
@@ -330,7 +337,7 @@ ATTACHMENTS
 	update_icon()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P, casing_sound)
-	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
+	if(stam_cost && istype(user)) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
@@ -342,7 +349,7 @@ ATTACHMENTS
 		shootprops[CSP_INDEX_SOUND_OUT] = silenced ? fire_sound_silenced : fire_sound
 
 	playsound(
-		user,
+		src,
 		shootprops[CSP_INDEX_SOUND_OUT],
 		shootprops[CSP_INDEX_VOLUME],
 		shootprops[CSP_INDEX_VARY],
@@ -351,12 +358,12 @@ ATTACHMENTS
 		distant_sound = shootprops[CSP_INDEX_DISTANT_SOUND],
 		distant_range = shootprops[CSP_INDEX_DISTANT_RANGE]
 		)
-	if(!silenced && message && COOLDOWN_FINISHED(src, shoot_message_antispam))
-		COOLDOWN_START(src, shoot_message_antispam, GUN_SHOOT_MESSAGE_ANTISPAM_TIME)
-		if(pointblank)
-			user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
-		else
-			user.visible_message(span_danger("[user] fires [src]!"), null, null, COMBAT_MESSAGE_RANGE)
+//	if(!silenced && message && COOLDOWN_FINISHED(src, shoot_message_antispam))
+//		COOLDOWN_START(src, shoot_message_antispam, GUN_SHOOT_MESSAGE_ANTISPAM_TIME)
+//		if(pointblank)
+//			user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
+//		else
+//			user.visible_message(span_danger("[user] fires [src]!"), null, null, COMBAT_MESSAGE_RANGE)
 	SSrecoil.kickback(user, src, recoil_tag, P?.recoil)
 
 //Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
@@ -411,6 +418,9 @@ ATTACHMENTS
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
+	if(user && user.incapacitated(allow_crit = TRUE))
+		to_chat(user, span_danger("You're too messed up to shoot [src]!"))
+		return
 
 	if(istype(user))//Check if the user can use the gun, if the user isn't alive(turrets) assume it can.
 		var/mob/living/L = user
@@ -463,7 +473,7 @@ ATTACHMENTS
 			else if(G.can_trigger_gun(user))
 				loop_counter++
 				var/stam_cost = G.getstamcost(user)
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, stam_cost), loop_counter)
+				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun,process_fire), target, user, TRUE, params, null, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
 
@@ -518,11 +528,11 @@ ATTACHMENTS
 
 /obj/item/gun/proc/on_cooldown(mob/user)
 	if (automatic == 0)
-		return busy_action || firing || ((last_fire + get_fire_delay(user)) > world.time)
+		return reloading || busy_action || firing || ((last_fire + get_fire_delay(user)) > world.time)
 	if (automatic == 1)
-		return busy_action || firing
+		return reloading || busy_action || firing
 
-/* 
+/*
  * So here is the list of proc calls that happen when you fire a gun:
  * You click on something with a gun in your hand
  * The game calls ClickOn() on the gun
@@ -608,10 +618,11 @@ ATTACHMENTS
 				update_icon()
 				return
 			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+				if(get_dist((user || get_turf(src)), target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
 					shoot_live_shot(user, 1, target, message, stam_cost, BB, casing_sound)
 				else
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
+				user?.in_crit_HP_penalty = 25
 		else
 			shoot_with_empty_chamber(user)
 			update_icon()
@@ -743,6 +754,10 @@ ATTACHMENTS
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		remove_hud_actions(user)
 		zoom(user, FALSE)
+	if(HAS_TRAIT(user, TRAIT_WEAK_OF_MUSCLES))  //we obviously need to check if the user HAS the trait.... DUH! (thank you a lot Blue and Dan)
+		if(weapon_class > WEAPON_CLASS_NORMAL)
+			user.dropItemToGround(src, TRUE)
+			to_chat(user, span_alert("The [src] is too heavy for you!"))
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
@@ -839,7 +854,7 @@ ATTACHMENTS
 		user.client.change_view(zoom_out_amt)
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
-		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
 		user.visible_message(span_notice("[user] looks down the scope of [src]."), span_notice("You look down the scope of [src]."))
 	else
@@ -849,7 +864,7 @@ ATTACHMENTS
 		user.client.pixel_y = 0
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.visible_message(span_notice("[user] looks up from the scope of [src]."), span_notice("You look up from the scope of [src]."))
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(on_walk)) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
 /obj/item/gun/proc/on_walk(mob/living/user)
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
@@ -922,11 +937,11 @@ ATTACHMENTS
 		current_recoil = 0
 	else if(current_recoil_cooldown_time > 0) // no zero divides plz
 		current_recoil *= (current_recoil_schedule - current_time) / current_recoil_cooldown_time // Partial recoil cooldown
-	
+
 	/// Calculate a new spread, basically recoil to spread, clamped
 	var/new_spread = 0
 	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, current_recoil)
-	
+
 	/// Set a new time to clear recoil
 	recoil_cooldown_schedule = world.time + recoil_cooldown_time
 
@@ -1066,7 +1081,7 @@ ATTACHMENTS
 		zoom_out_amt = zoom_amt + 1
 	else
 		zoom_out_amt = world.view
-	
+
 	zoom(user)
 
 	if(safety)
@@ -1161,18 +1176,18 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 	else
-		stack_trace("No firemodes found for [src]!")
-		message_admins("No firemodes found for [src]!")
+		// stack_trace("No firemodes found for [src]!")
+		// message_admins("No firemodes found for [src]!")
 		data["firemode_count"] = 1
-		data["firemode_info"] = list(
+		data["firemode_info"] = list(list(
 			"index" = 1,
 			"current" = TRUE,
-			"name" = "Im a fire mode!",
-			"desc" = "but its broken",
+			"name" = "Single Shot",
+			"desc" = "Single shot firing mode. Fires one shot at a time.",
 			"burst" = 1,
 			"fire_delay" = 1,
 			"fire_rate" = 1,
-		)
+		))
 
 	data["attachments"] = list()
 	var/attindex = 1
@@ -1244,6 +1259,8 @@ ATTACHMENTS
 		gun_tags |= GUN_SCOPE
 	if(can_suppress)
 		gun_tags |= GUN_SILENCABLE
+	if(can_paint)
+		gun_tags |= GUN_PAINTABLE
 	//if(!get_sharpness())
 	//	gun_tags |= SLOT_BAYONET
 
@@ -1299,10 +1316,10 @@ ATTACHMENTS
 	if(!my_mode)
 		return fire_delay // shrug
 	. = my_mode.get_fire_delay()
-	if(CHECK_BITFIELD(gun_skill_check, AFFECTED_BY_FAST_PUMP))
+	if(CHECK_BITFIELD(gun_skill_check, AFFECTED_BY_FAST_PUMP) && user)
 		if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
 			. *= GUN_RIFLEMAN_REFIRE_DELAY_MULT
-	if(CHECK_BITFIELD(cooldown_delay_mods, GUN_AUTO_PUMPED))
+	if(CHECK_BITFIELD(cooldown_delay_mods, GUN_AUTO_PUMPED) && user)
 		if(!HAS_TRAIT(user, TRAIT_FAST_PUMP))
 			. *= GUN_AUTOPUMP_REFIRE_DELAY_MULT
 
@@ -1358,7 +1375,7 @@ ATTACHMENTS
 /obj/item/gun/proc/misfire_hurt_user(mob/living/user, extra_hurt)
 	if(!user || !isliving(user))
 		return FALSE
-	
+
 	var/is_pow = extra_hurt > 1.5 ? TRUE : FALSE
 	extra_hurt = clamp(extra_hurt, 1, 2.5) // lets not literally kill whoever's using this thing
 
@@ -1505,7 +1522,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 /obj/item/gun/proc/misfire_dump_ammo(mob/user, dump_harder)
 	if(!user)
 		return FALSE
-	
+
 	var/obj/item/thing_2_yeet
 	/// subtypes that do everything differnt suuuuuuuck
 	if(istype(src, /obj/item/gun/energy))
@@ -1538,7 +1555,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 /obj/item/gun/proc/misfire_yeet_gun(mob/user, throw_harder)
 	if(!user)
 		return FALSE
-	
+
 	user.dropItemToGround(src)
 	var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6) * throw_harder, 3 * throw_harder)
 	if(!isturf(throw_it_here))
@@ -1563,8 +1580,6 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/crowbar/abductor(src)
 	new /obj/item/weldingtool/advanced(src)
 	new /obj/item/stack/crafting/metalparts/five(src)
-	new /obj/item/gun_upgrade/scope/watchman(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/melee/onehanded/knife/bayonet(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/gun/ballistic/automatic/autopipe(src)
@@ -1597,8 +1612,6 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/screwdriver/abductor(src)
 	new /obj/item/crowbar/abductor(src)
 	new /obj/item/weldingtool/advanced(src)
-	new /obj/item/gun_upgrade/scope/watchman(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/melee/onehanded/knife/bayonet(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder(src)
@@ -1634,6 +1647,33 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
+
+//Reload hotkey stuff
+/obj/item/gun/proc/Reload(mob/user)
+	return FALSE
+
+/mob/proc/ReloadGun()
+	return FALSE
+
+/mob/living/carbon/human/ReloadGun(throw_if_no_gun_in_active_hand)
+	var/I = get_active_held_item()
+	var/obj/item/gun/G
+	if(istype(I, /obj/item/gun))
+		G = I
+	if(throw_if_no_gun_in_active_hand && isnull(G))
+		src.toggle_throw_mode()
+		return TRUE
+	var/I2 = get_inactive_held_item()
+	var/obj/item/gun/G2
+	if(istype(I2, /obj/item/gun))
+		G2 = I2
+	if(!G && !G2)
+		to_chat(src, span_warning("You aren't holding a gun you can reload!"))
+		return FALSE
+	G?.Reload(src)
+	if(get_inactive_held_item() == G2)//recheck this again because it might have changed since we reloaded the active hand gun.
+		G2?.Reload(src)
+	return TRUE
 
 ///////////////////
 //GUNCODE ARCHIVE//

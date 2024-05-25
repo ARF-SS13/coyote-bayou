@@ -14,6 +14,8 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/toggleadminhelpsound,
 	/client/proc/debugstatpanel,
 	/client/proc/ignore_as_a_ghost,
+	/client/proc/toggle_admin_wire_tap,
+	/client/proc/toggle_seeing_ghosts,  /* Toggles whether or not the player can see ghosts */
 	/client/proc/RemoteLOOC, 			/*Fuck you I'm a PascaleCase enjoyer when it comes to functions. Fuck you nerds for using your shitty ass underscores like you know what the fuck you're reading why add an extra character and waste a couple milimeters of eye movement for me to read your entire proc name like jesus fucking christ bro. Just literally use PascalCase it looks so much neater, it's modern, industry professionals are taught to use it, C# coding standards state this, C++ coding standards, Unreal Engine developers do this, and so do Unity professionals. Like bruh please. Join me in the revolution to do PascalCase. */ // Welcome to byond~ src.grab_antlers_and_grind(deer_boi)
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
@@ -640,6 +642,27 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] has modified Dynamic Explosion Scale: [ex_scale]")
 	message_admins("[key_name_admin(usr)] has  modified Dynamic Explosion Scale: [ex_scale]")
 
+/client/proc/toggle_seeing_ghosts()
+	set category = "Admin.Game"
+	set name = "Toggle Seeing Ghosts"
+	set desc = "Toggle whether or not you can see guh-guh-guh-ghosts."
+
+	if(!holder)
+		return
+	var/was_seeing = !isnull(holder.see_invis_override)
+	if(was_seeing) // unsee em
+		holder.see_invis_override = null
+		if(mob)
+			mob.update_sight()
+		log_admin("[key_name(usr)] can no longer see ghosts.")
+		message_admins("[key_name_admin(usr)] can no longer see ghosts.")
+	else
+		holder.see_invis_override = SEE_INVISIBLE_OBSERVER
+		if(mob)
+			mob.update_sight()
+		log_admin("[key_name(usr)] can now see ghosts!")
+		message_admins("[key_name_admin(usr)] can now see ghosts!")
+
 /client/proc/ignore_as_a_ghost()
 	set category = "OOC"
 	set name = "Block user's emotes"
@@ -665,6 +688,16 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		to_chat(usr, "You will no longer hear [dork]'s emotes while a ghost.")
 	P.save_preferences()
 	to_chat(usr, "Preferences saved.")
+
+/client/proc/toggle_admin_wire_tap()
+	set category = "OOC"
+	set name = "Ignore Others' DMs"
+	set desc = "Blocks seeing DMs from players to players who arent you."
+
+	TOGGLE_VAR(prefs.admin_wire_tap)
+	prefs.save_preferences()
+	to_chat(src, span_abductor("You will [prefs.admin_wire_tap ? "now" : "no longer"] eavesdrop on other players' DMs."))
+	to_chat(src, "Preferences saved.")
 
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"

@@ -99,7 +99,7 @@
 	item_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
 	mag_type = /obj/item/ammo_box/magazine/internal/mininuke
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	can_suppress = FALSE
 	slowdown = 1
 	projectile_speed_multiplier = 0.4 //run

@@ -142,7 +142,7 @@
 		/obj/item/book/granter/trait/techno = 1)
 
 /datum/outfit/loadout/hunter
-	name = "Hunter"
+	name = "Forager"
 	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	belt = /obj/item/storage/belt/bandolier
 	backpack_contents = list(
@@ -251,7 +251,6 @@
 /datum/outfit/loadout/privileged
 	name = "Privileged"
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat/goji
-	glasses = /obj/item/clothing/glasses/wraith_spectacles
 	head = /obj/item/clothing/head/collectable/petehat/gang
 	r_hand = /obj/item/gun/ballistic/revolver/colt357/lucky
 	l_hand = /obj/item/twohanded/baseball/louisville

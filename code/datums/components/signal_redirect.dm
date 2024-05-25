@@ -10,7 +10,7 @@
 		warning("signals are [list2params(signals)], callback is [_callback]]")
 		return COMPONENT_INCOMPATIBLE
 	if(flags & REDIRECT_TRANSFER_WITH_TURF && isturf(parent))
-		RegisterSignal(parent, COMSIG_TURF_CHANGE, .proc/turf_change)
+		RegisterSignal(parent, COMSIG_TURF_CHANGE,PROC_REF(turf_change))
 	RegisterSignal(parent, signals, _callback)
 
 /datum/component/redirect/proc/turf_change(path, new_baseturfs, flags, list/transfers)

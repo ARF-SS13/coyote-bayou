@@ -20,7 +20,7 @@
 	. = ..()
 	icon_state = "goo[rand(1,13)]"
 //	AddComponent(/datum/component/radioactive, 200, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
-//NO BAD. The radiation component SUCKS ASS - these components self-propagate into 500+ "radiation waves"
+//NO BAD. The radiation component SUCKS a ss - these components self-propagate into 500+ "radiation waves"
 	//START_PROCESSING(SSradiation,src) //Let's do this in a far more reasonable way- radiate players around us on a pulse. That's it.
 	//turns out *that* way wasn't really reasonable either. Lets try something else!
 	irradiate_turfs()
@@ -35,15 +35,18 @@
 /obj/effect/decal/waste/proc/irradiate_turfs()
 	if(QDELETED(src))
 		return
-	for(var/turf/rad_turf in view(range, get_turf(src)))
-		if(SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, intensity, WEAKERREF(src), type)) // if we get something back from the turf, its already radioactive
-			continue // and made more radioactive~
-		rad_turf.AddComponent(/datum/component/radiation_turf, intensity, list(WEAKERREF(src) = type)) // the component will handle the SSradiation stuff
+	for(var/turf/T in range(range, get_turf(src)))
+		T.radiation_turf += intensity
+	// for(var/turf/rad_turf in view(range, get_turf(src)))
+	// 	if(SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, intensity, WEAKERREF(src), type)) // if we get something back from the turf, its already radioactive
+	// 		continue // and made more radioactive~
+	// 	rad_turf.AddComponent(/datum/component/radiation_turf, intensity, list(WEAKERREF(src) = type)) // the component will handle the SSradiation stuff
 
 /// Asks all the turfs in range to reduce or remove the radiation
 /obj/effect/decal/waste/proc/unirradiate_turfs()
-	for(var/turf/rad_turf in range(range, get_turf(src))) // range, in case some goober changed what the puddle can see
-		SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, -intensity, WEAKERREF(src), type)
+	for(var/turf/T in range(range, get_turf(src))) // range, in case some goober changed what the puddle can see
+		T.radiation_turf = max(0, T.radiation_turf - intensity)
+		// SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, -intensity, WEAKERREF(src), type)
 
 /*
 //Bing bang boom done

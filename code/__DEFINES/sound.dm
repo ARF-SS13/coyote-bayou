@@ -113,6 +113,7 @@
 #define SOUND_LOOP_ENTRY(file, length, chance) list(SL_FILE_PATH = file, SL_FILE_LENGTH = length) = chance
 #define AREA_MUSIC(file, length) list(SL_FILE_PATH = file, SL_FILE_LENGTH = length)
 #define AREA_SOUND(file, length) list(SL_FILE_PATH = file, SL_FILE_LENGTH = length)
+#define AREA_Z_MUSIC(Z, file) file = Z // itll reorder everything on runtime, preferably without runtimes
 
 
 //Ambience types

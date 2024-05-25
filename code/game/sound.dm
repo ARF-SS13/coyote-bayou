@@ -35,21 +35,21 @@
 	var/turf/above_turf = SSmapping.get_turf_above(turf_source)
 	var/turf/below_turf = SSmapping.get_turf_below(turf_source)
 
-	if(!ignore_walls) //these sounds don't carry through walls
-		listeners = listeners & hearers(maxdistance,turf_source)
+	// if(!ignore_walls) //these sounds don't carry through walls
+	// 	listeners = listeners & (hearers(maxdistance,turf_source) | viewers(maxdistance,turf_source))
 
-		if(above_turf && istransparentturf(above_turf))
-			listeners += hearers(maxdistance,above_turf)
+	// 	if(above_turf && istransparentturf(above_turf))
+	// 		listeners += (hearers(maxdistance,above_turf) | viewers(maxdistance,turf_source))
 
-		if(below_turf && istransparentturf(turf_source))
-			listeners += hearers(maxdistance,below_turf)
+	// 	if(below_turf && istransparentturf(turf_source))
+	// 		listeners += (hearers(maxdistance,below_turf) | viewers(maxdistance,turf_source))
 
-	else
-		if(above_turf && istransparentturf(above_turf))
-			listeners += SSmobs.clients_by_zlevel[above_turf.z]
+	// else
+	if(above_turf && istransparentturf(above_turf))
+		listeners += SSmobs.clients_by_zlevel[above_turf.z]
 
-		if(below_turf && istransparentturf(turf_source))
-			listeners += SSmobs.clients_by_zlevel[below_turf.z]
+	if(below_turf && istransparentturf(turf_source))
+		listeners += SSmobs.clients_by_zlevel[below_turf.z]
 
 	for(var/mob/listening_mob as anything in listeners + SSmobs.dead_players_by_zlevel[source_z])
 		if(soundpref_index && !CHECK_PREFS(listening_mob, soundpref_index))
@@ -104,9 +104,10 @@
 		falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, 
 		distance_multiplier = 1, 
 		use_reverb = FALSE,
-		soundpref_index
+		soundpref_index,
+		respect_deafness = TRUE
 		)
-	if(!client || !can_hear())
+	if(!client || (respect_deafness && !can_hear()))
 		return
 
 	if(!S)

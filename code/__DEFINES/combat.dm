@@ -101,8 +101,19 @@
 
 //Health Defines
 #define HEALTH_THRESHOLD_CRIT 0
-#define HEALTH_THRESHOLD_FULLCRIT -30
-#define HEALTH_THRESHOLD_DEAD -100
+#define HEALTH_THRESHOLD_FULLCRIT -125
+#define HEALTH_THRESHOLD_DEAD -150
+
+#define CRIT_AGONY_THRESHOLD 0.1 // or about 20 damage into crit
+#define CRIT_AGONY_THRESHOLD_LIGHT 0.2 // or about 40 damage into crit
+#define CRIT_AGONY_THRESHOLD_MAJOR 0.6 // or about 120 damage into crit
+#define CRIT_AGONY_THRESHOLD_CATASTROPHIC 0.85 // u die, maybe
+
+#define CRIT_AGONY_NONE 0
+#define CRIT_AGONY_LIGHT 1
+#define CRIT_AGONY_MAJOR 2
+#define CRIT_AGONY_CATASTROPHIC 3
+#define CRIT_AGONY_DIED 4
 
 //Actual combat defines
 
@@ -313,7 +324,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
  */
 // TODO: make this work
 /* #define FACTION_HOSTILE "hostile"
-#define FACTION_DEATHCLAW "deathclaw"
+#define FACTION_DEATHCLAW "aethergiest"
 #define FACTION_GECKO "gecko"
 #define FACTION_RAT "rat"
 #define FACTION_YAOGUAI "yaoguai"
@@ -365,7 +376,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_BASE (TILES_TO_PIXELS(30)) //960 (30 tiles per second, 32 pixels per tile)
 
 /// Arrow speed defines
-#define ARROW_SPEED_BASE (BULLET_SPEED_BASE * 0.90)
+#define ARROW_SPEED_BASE (BULLET_SPEED_BASE / 3)
 
 /// Bullet damage modifier defines
 #define BULLET_MATCH_MULT_DAMAGE 1.25 // rare, pack a punch
@@ -695,6 +706,8 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define RUBBERY_RECOIL_RIFLE_50MG (BULLET_RECOIL_RIFLE_50MG * RUBBERY_RECOIL_MULT)
 #define RUBBERY_WOUND_RIFLE_50MG (BULLET_WOUND_RIFLE_50MG * 2)
 
+#define BULLET_DAMAGE_RIFLE_HEAVYNEEDLE 65
+
 #define BULLET_DAMAGE_RIFLE_GAUSS 20
 #define BULLET_DAMAGE_RIFLE_GAUSS_HANDLOAD (BULLET_DAMAGE_RIFLE_GAUSS * BULLET_HANDLOAD_MULT_DAMAGE)
 #define BULLET_DAMAGE_RIFLE_GAUSS_MATCH (BULLET_DAMAGE_RIFLE_GAUSS * BULLET_MATCH_MULT_DAMAGE)
@@ -715,6 +728,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define RUBBERY_WOUND_RIFLE_GAUSS (BULLET_WOUND_RIFLE_GAUSS * 2)
 
 #define BULLET_DAMAGE_SHOTGUN_PELLET 8
+#define BULLET_DAMAGE_NEEDLER_PELLET 3 //will need revision when possible <-- Tox note
 #define BULLET_DAMAGE_RATSHOT_PELLET 6 //six divides easily into the 36 damage of .357, and 60 damage of .45-70
 #define BULLET_DAMAGE_SHOTGUN_PELLET_HANDLOAD (BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_HANDLOAD_MULT_DAMAGE)
 #define BULLET_DAMAGE_SHOTGUN_PELLET_MATCH (BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_MATCH_MULT_DAMAGE)
@@ -782,6 +796,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_FLINTLOCK (BULLET_SPEED_BASE * 0.75)
 #define BULLET_SPEED_FLINTLOCK_HANDLOAD (BULLET_SPEED_FLINTLOCK * BULLET_HANDLOAD_MULT_SPEED)
 #define BULLET_SPEED_FLINTLOCK_MATCH (BULLET_SPEED_FLINTLOCK * BULLET_MATCH_MULT_SPEED)
+#define BULLET_SPEED_FLINTLOCK_RUBBER (BULLET_SPEED_FLINTLOCK * 0.50)
 #define BULLET_WOUND_FLINTLOCK 50
 #define BULLET_WOUND_FLINTLOCK_HANDLOAD (BULLET_WOUND_FLINTLOCK * BULLET_HANDLOAD_MULT_WOUND)
 #define BULLET_WOUND_FLINTLOCK_MATCH (BULLET_WOUND_FLINTLOCK * BULLET_MATCH_MULT_WOUND)
@@ -860,6 +875,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_FALLOFF_MIN_DAMAGE 3
 
 /// Shotgun pellet count defines
+#define SHOTGUN_PELLET_NEEDLER 5
 #define SHOTGUN_PELLET_BASE 10
 #define SHOTGUN_PELLET_IMPROVISED 8
 
@@ -1011,6 +1027,12 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_LESS_DAMAGE_T6 0.35
 #define GUN_LESS_DAMAGE_T7 0.25
 
+//custom gun damage debuffs for later usage if gun needs a fine tuning.
+#define GUN_LESS_DAMAGE_C1 0.55
+#define GUN_LESS_DAMAGE_C2 0.45
+#define GUN_LESS_DAMAGE_C3 0.40
+#define GUN_LESS_DAMAGE_C4 0.30
+
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
 
@@ -1127,6 +1149,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 /// Converts rounds per minute to deciseconds per shot
 #define RPM_TO_FIRE_DELAY(rpm) ((60 / rpm) * 10)
 
+#define GUN_FIRE_RATE_20 RPM_TO_FIRE_DELAY(40) // 40 RPM = 15 deciseconds per shot
 #define GUN_FIRE_RATE_40 RPM_TO_FIRE_DELAY(80) // 80 RPM = 7.5 deciseconds per shot | Fenny said to double them all! - Jaeger
 #define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
 #define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
@@ -1150,6 +1173,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_FIRE_DELAY_NORMAL GUN_FIRE_RATE_100
 #define GUN_FIRE_DELAY_SLOW GUN_FIRE_RATE_75
 #define GUN_FIRE_DELAY_SLOWER GUN_FIRE_RATE_40
+#define GUN_FIRE_DELAY_SLOWEST GUN_FIRE_RATE_20
 
 /// Gun autofire delay Base
 #define GUN_AUTOFIRE_DELAY_BASE 1
@@ -1297,36 +1321,44 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 //weapon class defines for standardized stats
 #define WEAPON_CLASS_TINY list(\
 "w_class" = WEIGHT_CLASS_TINY,\
-"slot_flags" = INV_SLOTBIT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_LIGHT,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
 "draw_time" = GUN_DRAW_QUICK,\
 )
 #define WEAPON_CLASS_SMALL list(\
 "w_class" = WEIGHT_CLASS_SMALL,\
-"slot_flags" = INV_SLOTBIT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_MEDIUM,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
-"draw_time" = GUN_DRAW_NORMAL,\
+"draw_time" = GUN_DRAW_QUICK,\
 )
 #define WEAPON_CLASS_NORMAL list(\
 "w_class" = WEIGHT_CLASS_NORMAL,\
-"slot_flags" = INV_SLOTBIT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_HEAVY,\
 "force" = GUN_MELEE_FORCE_PISTOL_HEAVY,\
 "draw_time" = GUN_DRAW_NORMAL,\
 )
 #define WEAPON_CLASS_CARBINE list(\
-"w_class" = WEIGHT_CLASS_BULKY,\
+"w_class" = WEIGHT_CLASS_NORMAL,\
 "slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_CARBINE,\
 "force" = GUN_MELEE_FORCE_RIFLE_LIGHT,\
 "draw_time" = GUN_DRAW_LONG,\
 )
 #define WEAPON_CLASS_RIFLE list(\
+"w_class" = WEIGHT_CLASS_NORMAL,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
+"slowdown" = GUN_SLOWDOWN_RIFLE_BOLT,\
+"force" = GUN_MELEE_FORCE_RIFLE_HEAVY,\
+"draw_time" = GUN_DRAW_LONG,\
+)
+
+#define WEAPON_CLASS_HEAVY list(\
 "w_class" = WEIGHT_CLASS_BULKY,\
 "slot_flags" = INV_SLOTBIT_BACK,\
-"slowdown" = GUN_SLOWDOWN_RIFLE_BOLT,\
+"slowdown" = GUN_SLOWDOWN_RIFLE_LMG,\
 "force" = GUN_MELEE_FORCE_RIFLE_HEAVY,\
 "draw_time" = GUN_DRAW_LONG,\
 )

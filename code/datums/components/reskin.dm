@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	/// Actually use the original skin thing
 	var/use_original_skin = TRUE
 	/// The cooldown between reskins
-	var/reskin_cooldown = 5 MINUTES
+	var/reskin_cooldown = 5 SECONDS
 	COOLDOWN_DECLARE(reskin_when)
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
@@ -30,10 +30,11 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	if(LAZYLEN(skin_override))
 		skins = skin_override.Copy()
 	initialize_skins()
-	RegisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT), .proc/open_skin_picker)
-	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE), .proc/is_reskinnable)
-	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN), .proc/update_skin)
-	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN), .proc/get_current_skin)
+	RegisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT),PROC_REF(open_skin_picker))
+	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE),PROC_REF(is_reskinnable))
+	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN),PROC_REF(update_skin))
+	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN),PROC_REF(get_current_skin))
+	RegisterSignal(parent, list(COMSIG_ITEM_SET_SKIN),PROC_REF(force_skin))
 
 /datum/component/reskinnable/UnregisterFromParent()
 	skins = null
@@ -62,7 +63,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		init_skins_if_they_havent_yet()
 	if(!can_reskin(src, user))
 		return
-	INVOKE_ASYNC(src, .proc/actually_open_skin_picker, user)
+	INVOKE_ASYNC(src,PROC_REF(actually_open_skin_picker), user)
 
 /datum/component/reskinnable/proc/actually_open_skin_picker(mob/user)
 	var/obj/item/master = parent
@@ -78,11 +79,22 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		if(!the_icon)
 			the_icon = my_original_skin.icon
 		skinnies["[skine.skin]"] = skine.get_preview_image(master)
-	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src, .proc/can_reskin, src, user), radius = 40, require_near = TRUE, ultradense = (LAZYLEN(skins) > 7))
+	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src,PROC_REF(can_reskin), src, user), radius = 40, require_near = TRUE, ultradense = (LAZYLEN(skins) > 7))
 	if(!choice)
 		return FALSE
 	if(QDELETED(master))
 		return FALSE
+	assign_skin(choice)
+
+/datum/component/reskinnable/proc/force_skin(datum/source, choice)
+	assign_skin(choice, FALSE)
+
+/datum/component/reskinnable/proc/assign_skin(choice, cooldown)
+	if(choice == "Random!")
+		choice = safepick(skins)
+		if(!choice)
+			return FALSE
+	var/obj/item/master = parent
 	var/datum/reskin/skindatum
 	if(choice == RESKIN_SKINDEX_ORIGINAL)
 		skindatum = my_original_skin
@@ -92,7 +104,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return FALSE
 	skindex = skindatum.skin
 	skindatum.apply_to_item(master)
-	COOLDOWN_START(src, reskin_when, reskin_cooldown)
+	if(cooldown)
+		COOLDOWN_START(src, reskin_when, reskin_cooldown)
 	return TRUE
 
 /datum/component/reskinnable/proc/can_reskin(datum/source, mob/user)
@@ -155,6 +168,9 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	/// the type of thing this thing expects
 	var/expected_type = /obj/item
 
+	var/lefthand_file
+	var/righthand_file
+
 /datum/reskin/New(obj/item/template)
 	if(!isitem(template))
 		return
@@ -173,6 +189,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = template.icon
 	icon_state = template.icon_state
 	item_state = template.item_state
+	lefthand_file = template.lefthand_file
+	righthand_file = template.righthand_file
 	mob_overlay_icon = template.mob_overlay_icon
 	mutantrace_variation = template.mutantrace_variation
 
@@ -190,6 +208,10 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		target.icon_state = icon_state
 	if(!isnull(item_state))
 		target.item_state = item_state
+	if(!isnull(lefthand_file))
+		target.lefthand_file = lefthand_file
+	if(!isnull(righthand_file))
+		target.righthand_file = righthand_file
 	if(!isnull(mob_overlay_icon))
 		target.mob_overlay_icon = mob_overlay_icon
 	if(!isnull(mutantrace_variation))
@@ -1037,6 +1059,65 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	mob_overlay_icon = null
 	mutantrace_variation = null
 
+GLOBAL_LIST_INIT(pda_skins, list(
+	"Random!",
+	"DataPal",
+	"Medical PDA",
+	"Virology PDA",
+	"Engineering PDA",
+	"Security PDA",
+	"Detective PDA",
+	"Warden PDA",
+	"Janitor PDA",
+	"Scientist PDA",
+	"Head of Personnel PDA",
+	"Head of Security PDA",
+	"Chief Engineer PDA",
+	"Chief Medical Officer PDA",
+	"Research Director PDA",
+	"Captain PDA",
+	"Lieutenant PDA",
+	"Atmospheric Technician PDA",
+	"Chemist PDA",
+	"Geneticist PDA",
+	"Teachboy PDA",
+	"Curator PDA",
+	"Neko PDA",
+	"Handy Orange PDA",
+	"Handy PDA",
+	"Handy Medical PDA",
+	"Handy Virologist PDA",
+	"Handy Engineer PDA",
+	"Handy Security PDA",
+	"Handy Detective PDA",
+	"Handy Warden PDA",
+	"Handy Janitor PDA",
+	"Handy Scientist PDA",
+	"Handy HoP PDA",
+	"Handy HoS PDA",
+	"Handy CE PDA",
+	"Handy CMO PDA",
+	"Handy RD PDA",
+	"Handy Captain PDA",
+	"Handy Lieutenant PDA",
+	"Handy Cargo PDA",
+	"Handy QM PDA",
+	"Handy Miner PDA",
+	"Handy Chaplain PDA",
+	"Handy Cook PDA",
+	"Handy Garden PDA",
+	"Handy Syndicate PDA",
+	"Handy Lawyer PDA",
+	"Handy Roboticist PDA",
+	"Handy Bartender PDA",
+	"Handy Atmos PDA",
+	"Handy Chemist PDA",
+	"Handy Geneticist PDA",
+	"Handy Clear PDA",
+	"Handy Librarian PDA",
+	"Handy Neko PDA",
+	))
+
 /// PDA SKINS ///
 /datum/component/reskinnable/pda
 	skins = list(
@@ -1096,6 +1177,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Handy Librarian PDA",
 		"Handy Neko PDA",
 	)
+
 /datum/reskin/pda
 	skin = "Datapal 3000"
 	name = "Datapal 3000"
@@ -1470,6 +1552,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Arisaka 38",
 		"Arisaka 99",
 		"Gewehr 71",
+		"Gewehr 88",
 		"Gewehr 98",
 		"Mauser 90",
 		"Mauser 93",
@@ -1632,6 +1715,22 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
+
+/datum/reskin/gun/hunting_rifle/gewehr88
+	skin = "Gewehr 88"
+	name = "Gewehr 88"
+	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2168."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "gewehr88"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	sawn_name = "sawed off Gewehr 88"
+	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 88, and then he invented the Gewehr 88 sawed off. He was a genius."
+	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	sawn_icon_state = "obrez"
 /datum/reskin/gun/hunting_rifle/gewehr98
 	skin = "Gewehr 98"
 	name = "Gewehr 98"
@@ -1647,6 +1746,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
+
 /datum/reskin/gun/hunting_rifle/mauser90
 	skin = "Mauser 90"
 	name = "Mauser 90"
@@ -1863,7 +1963,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	skin = "P-14"
 	name = "P-14"
 	desc = "A bolt-action rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "p14"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1917,7 +2017,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	skin = "Number 4"
 	name = "Number 4"
 	desc = "A bolt-action rifle. The fourth rifle ever made."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "no_4"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -2289,6 +2389,33 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	unloaded_chambered_state = "scarl-e"
 	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	unloaded_empty_state = "scarl-e"
+
+
+////////////////////////////
+///   KELPMAGIC STAVES   ///
+/datum/component/reskinnable/staff_kelpmagic
+	skins = list(
+		"Magic Staff",
+		"Shaman Staff",
+	)
+
+/datum/reskin/gun/staff_kelpmagic/shaman
+	skin = "Shaman Staff"
+	name = "shaman staff"
+	desc = "An intricate staff, carried for centuries by the shaman class of the tribe."
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "staff-shaman"
+	item_state = "staff-shaman"
+	expected_type = /obj/item/gun
+
+
+
+
+
+
 
 ////////////////////////////
 /// DEBUG SERVICE RIFLE ///

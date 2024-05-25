@@ -22,9 +22,18 @@
 	var/snap_category
 	/// Should we spread our loot to adjacent tiles? Set to 0 or null to disable.
 	var/fan_out_turfs_range
-
+	/// This is the ckey of the player who spawned this lootdrop (if any). Used for quests and other stuff like that where the player needs to do something themself. Copied to the looted_by var in conjunction with looted_when and looted_coordinates for this purpose.
+	var/mylooter
+/*
+/obj/effect/spawner/lootdrop/New(loc, looter)
+	mylooter = looter
+	..()
+*/
 /obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap, survived_snap)
 	. = ..()
+	if(!mapload && ismob(usr))
+		var/mob/U = usr
+		mylooter = ckey(U?.ckey)
 	return startup_procedure(mapload, block_tier_swap, survived_snap)
 
 /obj/effect/spawner/lootdrop/proc/startup_procedure(mapload, block_tier_swap, survived_snap)
@@ -32,7 +41,7 @@
 	if(cull_spawners(mapload, block_tier_swap, survived_snap))
 		return INITIALIZE_HINT_NORMAL
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
-		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
+		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(spawn_the_stuff))
 		return INITIALIZE_HINT_NORMAL // have fun!
 	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
@@ -57,7 +66,7 @@
 		loot = downtier_list
 		tier_adjusted = TRUE
 
-/obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
+/obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack, looter)
 	if(!LAZYLEN(loot))
 		qdel(src)
 		return
@@ -90,6 +99,12 @@
 					spawned_loot.pixel_x = pixel_x
 				if(pixel_y != 0)
 					spawned_loot.pixel_y = pixel_y
+			if(isitem(spawned_loot))
+				var/obj/item/I = spawned_loot
+				I.looted_when = world.time
+				I.looted_coordinates = "[x];[y];[z]"
+				I.looted_by = mylooter
+
 	if(delay_spawn)
 		qdel(src)
 
@@ -604,7 +619,6 @@
 		/obj/effect/spawner/lootdrop/space_cash/no_turf = 5,
 		/obj/effect/spawner/lootdrop/druggie_pill/no_turf = 5,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 5,
-		/obj/item/gun_upgrade/muzzle/silencer = 5,
 		/obj/item/toy/cards/deck/syndicate = 5,
 		/obj/item/clothing/under/syndicate = 5,
 		/obj/item/clothing/mask/gas/syndicate = 5,

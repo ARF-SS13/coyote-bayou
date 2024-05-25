@@ -337,7 +337,11 @@ GLOBAL_LIST_INIT(leatherstrips_recipes, list (
 	new/datum/stack_recipe("slave labor outfit", /obj/item/clothing/suit/armor/outfit/slavelabor, 2, time = 50), 
 	new/datum/stack_recipe("jabroni outfit", /obj/item/clothing/under/jabroni, 4, time = 80),
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2, time = 40), 
-	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2, time = 40)
+	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2, time = 40),
+	new/datum/stack_recipe("secondary gear harness", /obj/item/clothing/suit/chameleon/harness/second_gear_harness, 4, time = 40), //From here on, this is all so people can have their snowflake loadout drip incase it gets burnt in a fire or w\e
+	new/datum/stack_recipe("light harness", /obj/item/clothing/suit/chameleon/harness, 6, time = 40), 
+	new/datum/stack_recipe("medium harness", /obj/item/clothing/suit/chameleon/harness/medium, 10, time = 40),
+	new/datum/stack_recipe("heavy harness", /obj/item/clothing/suit/chameleon/harness/heavy, 12, time = 40),
 ))
 
 /obj/item/stack/sheet/leatherstrips/get_main_recipes()

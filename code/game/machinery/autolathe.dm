@@ -77,7 +77,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	matching_designs = list()
 
 /obj/machinery/autolathe/ComponentInitialize()
-	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src,PROC_REF(AfterMaterialInsert)))
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
@@ -162,8 +162,13 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 				if(!disabled && can_build(D, 10))
 					m10 = TRUE
 				var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+				var/iter_max_multiplier = 50
 				for(var/datum/material/mat in D.materials)
-					max_multiplier = min(50, round(mats.get_material_amount(mat)/(D.materials[mat] * prod_coeff)))
+					if (D.materials[mat] == 0)
+						continue // We aren't actually using the material, let's skip the divide by zero error and get on with our lives
+					var/local_max_multiplier = min(50, round(mats.get_material_amount(mat)/(D.materials[mat] * prod_coeff)))
+					iter_max_multiplier = min(local_max_multiplier, iter_max_multiplier) // Use the lesser of the two since there is a limiting factor
+				max_multiplier = iter_max_multiplier
 
 		var/list/design = list(
 			name = D.name,
@@ -243,7 +248,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 						if(materials.materials[i] > 0)
 							list_to_show += i
 
-					used_material = tgui_input_list(usr, "Choose [used_material]", "Custom Material", sortList(list_to_show, /proc/cmp_typepaths_asc))
+					used_material = tgui_input_list(usr, "Choose [used_material]", "Custom Material", sortList(list_to_show, GLOBAL_PROC_REF(cmp_typepaths_asc)))
 					if(isnull(used_material))
 						return //Didn't pick any material, so you can't build shit either.
 					custom_materials[used_material] += amount_needed
@@ -256,7 +261,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
-				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
+				addtimer(CALLBACK(src,PROC_REF(make_item), power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
 				to_chat(usr, span_alert("Not enough materials for this operation."))
@@ -469,7 +474,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	// 	to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
 	// 	return FALSE // screw energy guns
 	/// if we're here, we loaded something, so lets queue up another cycle
-	addtimer(CALLBACK(src, .proc/gun_loop, user, gunammo), 0.1 SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(gun_loop), user, gunammo), 0.1 SECONDS)
 	return TRUE
 
 /obj/machinery/autolathe/proc/load_from_bag(mob/user, obj/item/storage/bag/casings/cbag) // BIG BAG, BIG BAG, BIGABIGABIGBAG
@@ -601,14 +606,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	report_card.inserted_something(item)
 	if(report_timer)
 		deltimer(report_timer)
-	report_timer = addtimer(CALLBACK(src, .proc/print_record), 30 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
+	report_timer = addtimer(CALLBACK(src,PROC_REF(print_record)), 30 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
 
 	if(!istype(big_report_card))
 		big_report_card = new()
 	big_report_card.inserted_something(item)
 	if(big_report_timer)
 		deltimer(big_report_timer)
-	big_report_timer = addtimer(CALLBACK(src, .proc/print_big_record), 15 MINUTES, TIMER_STOPPABLE) // save in 4 seconds
+	big_report_timer = addtimer(CALLBACK(src,PROC_REF(print_big_record)), 15 MINUTES, TIMER_STOPPABLE) // save in 4 seconds
 
 /obj/machinery/autolathe/proc/print_record()
 	if(!istype(report_card, /datum/autolathe_loop_returns))
@@ -678,7 +683,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 /obj/machinery/autolathe/ComponentInitialize()
 	var/list/extra_mats = list(/datum/material/plastic)
-	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID] + extra_mats, 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID] + extra_mats, 0, TRUE, null, null, CALLBACK(src,PROC_REF(AfterMaterialInsert)))
 
 /obj/machinery/autolathe/constructionlathe
 	name = "Workshop"
@@ -1047,7 +1052,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	icon_state = icon_state_base
 	wooded = FALSE
 	framed = FALSE
-	RegisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED), .proc/self_destruct)
+	RegisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED),PROC_REF(self_destruct))
 
 /obj/machinery/autolathe/ammo/improvised/proc/self_destruct(disassembled)
 	var/obj/structure/table/T = GET_WEAKREF(mytable)
@@ -1092,11 +1097,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	prod_coeff = STANDARD_PART_LEVEL_LATHE_COEFFICIENT(default_workspeed)
 
 /datum/autolathe_loop_returns
+	/// FORMAT: list(/obj/item/eaten = 3)
+	var/list/paths_inserted = list()
 	/// FORMAT: list("/obj/item/eaten" = 3)
 	var/list/things_inserted = list()
 	/// total mats inserted
 	/// FORMAT: list("/datum/material/iron" = 3)
 	var/list/total_mats = list()
+	var/min_to_print = 30
 
 /datum/autolathe_loop_returns/proc/inserted_something(obj/item/thing)
 	if(!istype(thing))
@@ -1104,6 +1112,13 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(!things_inserted["[thing]"])
 		things_inserted["[thing]"] = 0
 	things_inserted["[thing]"] += 1
+	if(!paths_inserted[thing.type])
+		paths_inserted[thing.type] = 0
+	if(ispath(thing, /obj/item/stack))
+		var/obj/item/stack/stk = thing
+		paths_inserted[thing.type] += stk.amount
+	else
+		paths_inserted[thing.type] += 1
 	for(var/mat in thing.custom_materials)
 		if(!total_mats["[mat]"])
 			total_mats["[mat]"] = 0
@@ -1113,21 +1128,25 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/stuff_recycled = 0
 	for(var/thing in things_inserted)
 		stuff_recycled += things_inserted[thing]
-	if(stuff_recycled > 30)
+	if(stuff_recycled > min_to_print)
 		return TRUE
 
 /datum/autolathe_loop_returns/proc/output_report(obj/machinery/autolathe/lathe)
-	var/obj/item/paper/our_paper = new(get_turf(lathe))
+	var/obj/item/paper/report_card/our_paper = new(get_turf(lathe))
 	if(!our_paper)
 		return FALSE
 	GLOB.lathe_reports_done += 1
-	our_paper.name = "recycling report #[GLOB.lathe_reports_done]"
-	our_paper.info = write_contents()
+	our_paper.name = "recycling report card #[GLOB.lathe_reports_done]"
+	var/mrs_heavybottoms_english_class_parent_teacher_conference = get_grade()
+	our_paper.grade = mrs_heavybottoms_english_class_parent_teacher_conference || "F"
+	our_paper.info = write_contents(mrs_heavybottoms_english_class_parent_teacher_conference)
 	our_paper.update_icon_state()
 	var/list/ppl = list()
 	for(var/mob/m in view(15, get_turf(lathe)))
 		ppl += m
-	var/mob/M = pick(ppl)
+	var/mob/M
+	if(LAZYLEN(ppl))
+		M = pick(ppl)
 	if(M)
 		our_paper.throw_at(M, 100, 1, M, TRUE)
 	else
@@ -1138,7 +1157,72 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 						continue bingus
 				our_paper.throw_at(T, 100, 1, null, TRUE)
 
-/datum/autolathe_loop_returns/proc/write_contents()
+/datum/autolathe_loop_returns/proc/get_grade()
+	var/stuff_recycled = 0
+	for(var/thing in paths_inserted)
+		var/numof = paths_inserted[thing]
+		if(!isnum(numof) || !isfinite(numof))
+			continue
+		if(ispath(thing, /obj/item/ammo_casing))
+			if(ispath(thing, /obj/item/ammo_casing/caseless/rocket))
+				numof *= 5
+			else if(ispath(thing, /obj/item/ammo_casing/a40mm))
+				numof *= 4
+		else if(ispath(thing, /obj/item/stack))
+			numof *= 0.25 // so you cant just take stuff out and put it back in
+		var/obj/item/thingy = thing
+		var/toolspeed = initial(thingy.toolspeed)
+		if(toolspeed)
+			numof /= max(toolspeed, 0.00001)
+		stuff_recycled += numof
+	stuff_recycled = max(stuff_recycled, 1)
+	var/score = 0
+	var/cool_mean = floor(abs(sqrt(abs(stuff_recycled) ** 1.1) ** 0.975))
+	var/cool_sd = sqrt(abs(cool_mean))
+	score = gaussian(cool_mean, cool_sd)
+	score = rand(score, gaussian(score, sqrt(abs(score))))
+	score = floor(score + rand(score*0.5, score*3))
+	score = abs(score)
+	if((world.time % 60) > 57)
+		score *= 5 // good luck!
+	else
+		var/a_square = sqrt(abs(score))
+		for(var/i in 1 to 100) // computers are good at math, right?
+			a_square += sqrt(abs(a_square))
+		score += sqrt(abs(a_square))
+	score = round(score)
+	switch(score)
+		if(-INFINITY to 0)
+			return "F"
+		if(0 to 50)
+			return "D"
+		if(50 to 70)
+			return "D+"
+		if(70 to 80)
+			return "C-"
+		if(80 to 90)
+			return "C"
+		if(90 to 120)
+			return "C+"
+		if(120 to 175)
+			return "B-"
+		if(175 to 250)
+			return "B"
+		if(250 to 350)
+			return "B+"
+		if(350 to 500)
+			return "A-"
+		if(500 to 750)
+			return "A"
+		if(750 to 1000)
+			return "A+"
+		if(1000 to 1500)
+			return "S"
+		else
+			return "P"
+
+
+/datum/autolathe_loop_returns/proc/write_contents(final_grade)
 	var/list/msg_out = list()
 	msg_out += "<hr><br>"
 	msg_out += "[span_small(uppertext(STATION_TIME_TIMESTAMP(FALSE, world.time)))]<br>"
@@ -1161,7 +1245,10 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	msg_out += "<br>"
 	msg_out += "Thank you for choosing GekkerTek, Nash's favorite brand of fox-made machinery!<br>"
 	msg_out += "<br>"
-	msg_out += "<center>- END REPORT -</center><br>"
+	msg_out += "Final grade: <b><u>[final_grade]</u></b><br>"
+	if((final_grade in list("F", "D", "D+")))
+		msg_out += "<b>See me after class.</b><br>"
+	msg_out += "<center>- END REPORT CARD -</center><br>"
 	msg_out += "<hr><br>"
 	return msg_out.Join()
 

@@ -37,12 +37,12 @@
 	return TRUE
 
 /obj/item/fleshlight/proc/customize(mob/living/user)
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/new_style = tgui_input_list(usr, "Choose style", "Customize Fleshlight", list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS))
 		if(new_style)
 			style = new_style
 	update_icon()
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/new_color = input(user, "Choose color.", "Customize Fleshlight", sleevecolor) as color|null
 		if(new_color)
 			sleevecolor = new_color
@@ -666,7 +666,7 @@
 			playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
 			to_chat(user, "<span class='notice'>[P] has been linked up successfully.</span>")
 			update_portal()
-			RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
+			RegisterSignal(user, COMSIG_PARENT_QDELETING,PROC_REF(drop_out))
 		else
 			to_chat(user, "<span class='notice'>One of these pieces has already been paired.</span>")
 	else
@@ -710,7 +710,7 @@
 				to_chat(user, span_notice("The panties are not linked to a portal fleshlight."))
 			else
 				update_portal()
-				RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
+				RegisterSignal(user, COMSIG_PARENT_QDELETING,PROC_REF(drop_out))
 		else
 			update_portal()
 			UnregisterSignal(user, COMSIG_PARENT_QDELETING)

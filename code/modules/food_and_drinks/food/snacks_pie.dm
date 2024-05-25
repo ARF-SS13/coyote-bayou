@@ -363,13 +363,14 @@
 	name = "french silk pie"
 	desc = "A decadent pie made of a creamy chocolate mousse filling topped with a layer of whipped cream and chocolate shavings. Sliceable."
 	icon_state = "frenchsilkpie"
+	slice_path = /obj/item/reagent_containers/food/snacks/pie/pieslice/frenchsilk
+	slices_num = 4
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 12,
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("pie" = 1, "smooth chocolate" = 1, "whipped cream" = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
-	slice_path = /obj/item/reagent_containers/food/snacks/pie/pieslice/frenchsilk
 
 /obj/item/reagent_containers/food/snacks/pie/pieslice/frenchsilk
 	name = "french silk pie slice"

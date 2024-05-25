@@ -235,6 +235,7 @@
 				<b>Cosmic Grape:</b> Cosmic Cola 5u + Grape Juice 5u<br>
 				<b>Cosmic Dark:</b> Cosmic Cola 5u + Rum 5u<br>
 				<b>Cosmic Orange:</b> Cosmic Cola 5u + Orange Juice 5u<br>
+				<b>Cosmic Strawberry:</b> Cosmic Cola 5u + Strawberry Juice 5u<br>
 				<b>Cosmic Wild:</b> Cosmic Cola 5u + Sunset Sasparilla 5u<br>
 				<b>Cosmic Ray:</b> Cosmic Orange 1u + Cosmic Victory 1u<br>
 				<b>Cosmic Rush:</b> Cosmic Wild 1u + Cosmic Victory 1u<br>

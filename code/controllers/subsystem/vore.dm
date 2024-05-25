@@ -1,13 +1,5 @@
 /// List of types that are allowed to be eaten (right now)
 /// Register COMSIG_VORE_ATOM_DEVOURED to a proc on these to make them do stuff
-#define VORABLE_TYPES list(\
-	/obj/item/reagent_containers/food,\
-	/mob/living/simple_animal,\
-	/obj/item/organ,\
-	/obj/item/clothing/head/mob_holder,\
-	/obj/item/trash,\
-	/obj/item/grenade,\
-	)
 
 //
 // Vore subsystem - Process vore bellies
@@ -57,8 +49,23 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal)
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_items_that_can_be_vored()
-	for(var/itempath in VORABLE_TYPES)
-		approved_vore_paths |= typecacheof(itempath)
+	approved_vore_paths |= typecacheof(list(
+		/obj/item/reagent_containers/food,
+		/mob/living/simple_animal,
+		/obj/item/organ,
+		/obj/item/clothing/head/mob_holder,
+		/obj/item/trash,
+		/obj/item/grenade,
+		/obj/item/key, // if you eat your own house keys, thats on you
+		/obj/item/lock_construct,
+		/obj/item/pda,
+		/obj/item/cool_book, // hey i coded the darn thing, I say its edible
+		/obj/item/toy,
+		/obj/item/dice,
+		/obj/item/latexballon,
+		/obj/item/book,
+		/obj/item/shrapnel, // yum
+	))
 	approved_vore_paths |= approved_vore_mobtypes
 
 /// Stores a mob's smell
@@ -74,6 +81,10 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 		return FALSE
 	if(ishuman(eat_thing))
 		return TRUE
+	if(isliving(eat_thing))
+		var/mob/living/L = eat_thing
+		if(L.ckey || L.client)
+			return TRUE // we'll check their prefs later
 	return approved_vore_paths[eat_thing.type]
 
 // Returns a mob's smell
@@ -86,6 +97,6 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 /datum/controller/subsystem/processing/vore/proc/should_have_vore(mob/living/living_pred)
 	if(!isliving(living_pred))
 		return FALSE // no ghostvore (yet)
-	if(!is_type_in_typecache(living_pred.type, approved_vore_mobtypes))
-		return FALSE
+	// if(!is_type_in_typecache(living_pred.type, approved_vore_mobtypes))
+	// 	return FALSE // screw it, everyone gets vore
 	return TRUE

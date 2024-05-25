@@ -1,7 +1,7 @@
 /datum/language/narsie
-	name = "Nar'Sian"
-	desc = "The ancient, blood-soaked, impossibly complex language of Nar'Sian cultists."
-	speech_verb = "intones"
+	name = "R'Lyehian"
+	desc = "The ancient, blood-soaked, impossibly complex language of R'Lyehian cultists."
+	speech_verb = "chants"
 	ask_verb = "inquires"
 	exclaim_verb = "invokes"
 	key = "n"

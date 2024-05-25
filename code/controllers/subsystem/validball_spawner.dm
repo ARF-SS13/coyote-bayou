@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(validball)
 			message_admins("Validball failed to spawn after [initial(tries_left)] tries! Validball is not go!")
 			return
 		message_admins("Validball couldn't spawn, trying again in 1 second. [tries_left] tries left!")
-		addtimer(CALLBACK(src, .proc/spawn_validballs), 1 SECONDS) // try again later
+		addtimer(CALLBACK(src,PROC_REF(spawn_validballs)), 1 SECONDS) // try again later
 		return
 	if(num_to_spawn > LAZYLEN(valid_ball_spawners))
 		message_admins("Uh oh, config wants more validballs than there are available spawners! Validball is still go, but every validball spawner will spawn a validball. Have fun!")
@@ -54,8 +54,10 @@ SUBSYSTEM_DEF(validball)
 	//and clean up all the spawners
 	for(var/obj/effect/validball_spawner/valid_spawner in valid_ball_spawners)
 		valid_ball_spawner_coords += "[atom2coords(valid_spawner)]]" // imma keep track of these
-		qdel(valid_spawner)
 		valid_ball_spawners -= valid_spawner
+		var/turf/where_it_was = get_turf(valid_spawner)
+		qdel(valid_spawner)
+		new /obj/effect/spawner/lootdrop/f13/uncommon(where_it_was) // will also spawn loot under validballs, all the more reason to nab em
 	if(LAZYLEN(valid_ball_spawners))
 		message_admins("Validball spawner list still has stuff in it! Validball is still go probably, but there might be huge gross X-es left over. Point at them and laugh till they go away.")
 	else

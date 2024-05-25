@@ -6,6 +6,7 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 	priority = FIRE_PRIORITY_SPAWNERS
 	var/active_duration = 20 SECONDS
 	var/debug_spawner_turfs = FALSE
+	var/use_turf_registration = FALSE
 
 /// YEah so this used to be something, but then I messed up and all the mobs just
 /// Went into their own spawners, and I liked that, so imma do that k
@@ -16,7 +17,7 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 // 	var/list/spawners = list()
 
 // / When a spawner is made, add it to the list, by its Z level
-// /datum/controller/subsystem/spawners/proc/register_spawner(atom/spwner)
+// /datum/controller/subsystem/spawners/proc/register_nest_seed(atom/spwner)
 // 	if(!spwner)
 // 		return
 // 	if(!islist(spawners["[spwner.z]"]))
@@ -24,7 +25,7 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 // 	spawners["[spwner.z]"] |= spwner
 
 // /// When a spawner is deleted, find it and remove it
-// /datum/controller/subsystem/spawners/proc/unregister_spawner(atom/spwner)
+// /datum/controller/subsystem/spawners/proc/unregister_nest_seed(atom/spwner)
 // 	if(!spwner)
 // 		return
 // 	spawners["[spwner.z]"] -= spwner

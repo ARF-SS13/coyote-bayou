@@ -101,7 +101,7 @@
 	name = "derelict drone"
 	default_hatmask = /obj/item/clothing/head/ushanka
 
-/mob/living/simple_animal/drone/cogscarab
+/*/mob/living/simple_animal/drone/cogscarab
 	name = "cogscarab"
 	desc = "A strange, drone-like machine. It constantly emits the hum of gears."
 	icon_state = "drone_clock"
@@ -209,7 +209,7 @@
 /mob/living/simple_animal/drone/cogscarab/update_mobility()
 	. = ..()
 	update_icons()
-
+*/
 /obj/item/drone_shell/ancient //snowflake meme drone type for dungeon rewards
 	name = "ancient drone shell"
 	desc = "A shell of a maintenance drone, an expendable robot built to perform repairs. This one seems to have a RobCo logo stamped on it."

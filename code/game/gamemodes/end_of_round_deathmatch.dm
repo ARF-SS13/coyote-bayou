@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 
 
 /datum/controller/subsystem/ticker/proc/end_of_round_deathmatch()
-	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN, .proc/grant_eord_respawn) // New mobs can now respawn into EORD
+	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN,PROC_REF(grant_eord_respawn)) // New mobs can now respawn into EORD
 	var/list/spawns = GLOB.deathmatch_spawn_points.Copy()
 
 	if(!length(spawns))

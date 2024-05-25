@@ -20,6 +20,7 @@ interface SectionProps extends BoxProps {
   level?: boolean;
   /** @deprecated Please use `scrollable` property */
   overflowY?: any;
+  smallTitle?: boolean;
 }
 
 export class Section extends Component<SectionProps> {
@@ -52,6 +53,7 @@ export class Section extends Component<SectionProps> {
       fill,
       fitted,
       scrollable,
+      smallTitle,
       children,
       ...rest
     } = this.props;
@@ -70,9 +72,15 @@ export class Section extends Component<SectionProps> {
         {...computeBoxProps(rest)}>
         {hasTitle && (
           <div className="Section__title">
-            <span className="Section__titleText">
-              {title}
-            </span>
+            {smallTitle && (
+              <span className="Section__titleText_small">
+                {title}
+              </span>
+            ) || (
+              <span className="Section__titleText">
+                {title}
+              </span>
+            )}
             <div className="Section__buttons">
               {buttons}
             </div>

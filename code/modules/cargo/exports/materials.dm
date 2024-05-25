@@ -82,11 +82,10 @@
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 1500
+	cost = 250
 	material_id = /datum/material/adamantine
 	message = "cm3 of pre-war ingots"
-	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
-	/obj/item/ingot/adamantine)
+	export_types = list(/obj/item/ingot/adamantine, /obj/item/stack/sheet/mineral/adamantine)
 
 /*
 /datum/export/material/prewar
@@ -97,7 +96,7 @@
 */
 
 /datum/export/material/mythril
-	cost = 600
+	cost = 100
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
 	export_types = list(/obj/item/ingot/mythril)
@@ -167,18 +166,18 @@
 	export_types = list(/obj/item/stack/f13Cash/aureus)
 
 /datum/export/material/f13cash/scrip
-	cost = 6 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
+	cost = 0.00000001 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
 	unit_name = "scrip"
 	export_types = list(/obj/item/stack/f13Cash/ncr)
 	k_elasticity = 0/1000
 
 
-/datum/export/material/deathclawhide
+/datum/export/material/aethergiesthide
 	cost = 1000
 	message = " "
-	unit_name = "deathclaw hide"
-	material_id = /datum/material/deathclawhide
-	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+	unit_name = "aethergiest hide"
+	material_id = /datum/material/aethergiesthide
+	export_types = list(/obj/item/stack/sheet/animalhide/aethergiest)
 	k_elasticity = 0/1000
 
 
@@ -192,7 +191,7 @@
 /datum/export/material/molerathide
 	cost = 100
 	message = " "
-	unit_name = "molerat hide"
+	unit_name = "giant rat hide"
 	material_id = /datum/material/molerathide
 	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
 

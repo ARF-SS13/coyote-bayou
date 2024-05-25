@@ -48,20 +48,21 @@
 		return
 	if(owner.mind == originalmind) //If they're home, let the chem deal with deletion.
 		return
-	if(owner.mind)
+	/*if(owner.mind)
 		var/mob/living/simple_animal/astral/G = new(get_turf(M.loc))
 		owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 		to_chat(G, span_warning("[M]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
-		log_reagent("FERMICHEM: [M]'s possesser has been booted out into a astral ghost!")
+		log_reagent("FERMICHEM: [M]'s possesser has been booted out into a astral ghost!")// Disabled, because this could only happen if an admin jumps into your body while using it
+		*/
 	originalmind.transfer_to(original)
 
 /datum/status_effect/chem/astral_insurance/on_remove() //God damnit get them home!
 	if(owner.mind != originalmind) //If they're home, HOORAY
-		if(owner.mind)
+		/*if(owner.mind)
 			var/mob/living/simple_animal/astral/G = new(get_turf(owner))
 			owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 			to_chat(G, span_warning("[owner]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
-			log_reagent("FERMICHEM: [owner]'s possesser has been booted out into a astral ghost!")
+			log_reagent("FERMICHEM: [owner]'s possesser has been booted out into a astral ghost!")*/
 		originalmind.transfer_to(original)
 	return ..()
 
@@ -128,8 +129,8 @@
 	master = get_mob_by_key(enthrallID)
 	//if(M.ckey == enthrallID)
 	//	owner.remove_status_effect(src)//At the moment, a user can enthrall themselves, toggle this back in if that should be removed.
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, .proc/owner_resist) //Do resistance calc if resist is pressed#
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/owner_hear)
+	RegisterSignal(owner, COMSIG_LIVING_RESIST,PROC_REF(owner_resist)) //Do resistance calc if resist is pressed#
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR,PROC_REF(owner_hear))
 	mental_capacity = 500 - M.getOrganLoss(ORGAN_SLOT_BRAIN)//It's their brain!
 	lewd = (owner.client?.prefs.cit_toggles & HYPNO) && (master.client?.prefs.cit_toggles & HYPNO)
 	var/message = "[(lewd ? "I am a good pet for [enthrallGender]." : "[master] is a really inspirational person!")]"
@@ -484,14 +485,14 @@
 			//Speak (Forces player to talk)
 			if (lowertext(customTriggers[trigger][1]) == "speak")//trigger2
 				var/saytext = "Your mouth moves on it's own before you can even catch it."
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, span_notice("<i>[saytext]</i>")), 5)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_notice("<i>[saytext]</i>")), 5)
 				addtimer(CALLBACK(C, /atom/movable/proc/say, "[customTriggers[trigger][2]]"), 5)
 				log_reagent("FERMICHEM: MKULTRA: [owner] ckey: [owner.key] has been forced to say: \"[customTriggers[trigger][2]]\" from previous trigger.")
 
 
 			//Echo (repeats message!) allows customisation, but won't display var calls! Defaults to hypnophrase.
 			else if (lowertext(customTriggers[trigger][1]) == "echo")//trigger2
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, "<span class='velvet'><i>[customTriggers[trigger][2]]</i></span>"), 5)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, "<span class='velvet'><i>[customTriggers[trigger][2]]</i></span>"), 5)
 				//(to_chat(owner, "<span class='hypnophrase'><i>[customTriggers[trigger][2]]</i></span>"))//trigger3
 
 			//Shocking truth!
@@ -590,8 +591,8 @@
 	//cultists are already brainwashed by their god
 	if(iscultist(owner))
 		deltaResist *= 1.3
-	else if (is_servant_of_ratvar(owner))
-		deltaResist *= 1.3
+/*	else if (is_servant_of_ratvar(owner))
+		deltaResist *= 1.3*/
 	//antags should be able to resist, so they can do their other objectives. This chem does frustrate them, but they've all the tools to break free when an oportunity presents itself.
 	else if (owner.mind.assigned_role in GLOB.antagonists)
 		deltaResist *= 1.2

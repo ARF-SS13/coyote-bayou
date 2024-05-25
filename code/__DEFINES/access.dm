@@ -105,6 +105,7 @@ also be like that but I can't be arsed to go back and change them all*/
 #define ACCESS_BIKER 		135 //general not-khan cowbikers
 #define ACCESS_SCIENCE		136 //general science access
 #define ACCESS_CLUB			137 //general heavens night access placeholder
+#define ACCESS_GUILD		138 //Adventurers Guild access
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.
 #define ACCESS_SYNDICATE_LEADER 151//Nuke Op Leader Access

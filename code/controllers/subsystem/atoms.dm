@@ -16,6 +16,10 @@ SUBSYSTEM_DEF(atoms)
 
 	var/list/BadInitializeCalls = list()
 
+	/// Ginormous hell tally of all the types of atoms in existence.
+	/// FORMAT: list(/type = amount)
+	var/list/everything = list()
+
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
 	to_chat(world, span_boldannounce("Initializing Genetics..."))
@@ -170,6 +174,17 @@ SUBSYSTEM_DEF(atoms)
 		InitializeAtoms()
 	old_initialized = SSatoms.old_initialized
 	BadInitializeCalls = SSatoms.BadInitializeCalls
+
+/datum/controller/subsystem/atoms/proc/GetExistingAtomsOfPath(atom/A)
+	if(isatom(A)) // HEY VSAUCE, DANNY HERE, I AM STANDING IN FRONT OF THE WORST PROC IVE EVER MADE
+		A = A.type // OR IS IT?
+	var/list/atoms = list()
+	for(var/B in everything)
+		if(LAZYACCESS(everything, B) < 1)
+			continue
+		if(ispath(B, A)) // NAH ITS PRETTY BAD
+			atoms |= B
+	return atoms
 
 /datum/controller/subsystem/atoms/proc/setupGenetics()
 	var/list/mutations = subtypesof(/datum/mutation/human)

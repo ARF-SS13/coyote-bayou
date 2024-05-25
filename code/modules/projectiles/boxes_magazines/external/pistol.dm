@@ -240,7 +240,7 @@
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
 /obj/item/ammo_box/magazine/m5mmcustom
-	name = "handgun magazine for 5mm"
+	name = "handgun magazine (5mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "5mmmag"
 	ammo_type = /obj/item/ammo_casing/m5mm
@@ -253,8 +253,22 @@
 /obj/item/ammo_box/magazine/m5mmcustom/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m47pistol
+	name = "handgun magazine (4.7mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "pistol47"
+	ammo_type = /obj/item/ammo_casing/caseless/g11
+	caliber = list(CALIBER_CASELESS)
+	max_ammo = 18
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m47pistol/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m14mmcustom
-	name = "handgun magazine for 14mm"
+	name = "handgun magazine (14mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "14mmmagnum"
 	ammo_type = /obj/item/ammo_casing/p14mm

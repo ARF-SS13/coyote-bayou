@@ -6,7 +6,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	name = "Workshop Scrapper"
 	desc = "A vending machine that's been modified to accept various items in exchange for copper Edisons. \
 			A sign on it reads, 'Keep your workplace clean and get paid doing it!' \
-			It's better than a trash can, at least."
+			It's better than a trash can, at least. \
+			Make sure to check in with the shopkeep for a better deal!"
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "trade_idle"
 
@@ -20,6 +21,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/expected_price = 0
 	var/list/prize_list = list()  // infinite profits should be crap, more limited profits should be good. Should never be better than cargo.
 	var/trader_key = WVM_SCRAPPER
+	var/exact_change = TRUE
 
 
 	/// List of things it buys, and allows any of its children into the buy list
@@ -32,8 +34,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/reagent_containers/hypospray = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 3,
-		/obj/item/reagent_containers/hypospray/medipen/steady = 3,
+		/obj/item/reagent_containers/pill/patch/medx = 3,
+		/obj/item/reagent_containers/pill/patch/steady = 3,
 		/obj/item/reagent_containers/pill/patch/jet =3,
 		/obj/item/reagent_containers/pill/patch/turbo =3,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 3,
@@ -54,11 +56,28 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/leather = 0.8,
 		/obj/item/reagent_containers/food/snacks/meat = 5,
 		/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat = 0, // To prevent people from printing effortless money at a biogen
-		/obj/item/fishy/carp		= 5,
-		/obj/item/fishy/salmon		= 10,
-		/obj/item/fishy/eel			= 2,
-		/obj/item/fishy/crawdad		= 7,
-		/obj/item/fishy/shrimp		= 3,
+		/obj/item/fishy/carp = 5,
+		/obj/item/fishy/salmon = 5,
+		/obj/item/fishy/eel = 15,
+		/obj/item/fishy/crawdad = 5,
+		/obj/item/fishy/shrimp = 5,
+		/obj/item/fishy/guppy = 5,
+		/obj/item/fishy/firefish = 25,
+		/obj/item/fishy/greenchromis = 10,
+		/obj/item/fishy/cardinalfish = 20,
+		/obj/item/fishy/catfish = 5,
+		/obj/item/fishy/plastetra = 20,
+		/obj/item/fishy/angelfish = 15,
+		/obj/item/fishy/clownfish = 10,
+		/obj/item/fishy/lubefish = 10,
+		/obj/item/fishy/lanternfish = 15,
+		/obj/item/fishy/goldfish = 100,
+		/obj/item/fishy/dwarf_moonfish = 20,
+		/obj/item/fishy/bugfish = 15,
+		/obj/item/fishy/gunner_jellyfish = 15,
+		/obj/item/fishy/needlefish = 1,
+		/obj/item/fishy/armorfish = 5,
+		/obj/item/fishy/pufferfish = 20,
 		/obj/item/reagent_containers/food/snacks/meat/slab/human = 0,
 		/obj/item/stack/sheet/animalhide = 3,
 		/obj/item/clothing/suit/armor = 10,
@@ -122,6 +141,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
 		// magic shit:tm:
 		/obj/item/gun/magic/ = 15,
+		// weapon mods
+		/obj/item/gun_upgrade/ = 15,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
@@ -143,7 +164,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
-		/obj/item/stack/sheet/animalhide/deathclaw = 20,
+		/obj/item/stack/sheet/animalhide/aethergiest = 20,
 		/obj/item/stack/sheet/animalhide/gecko = 2,
 		/obj/item/stack/sheet/animalhide/molerat = 2,
 		/obj/item/stack/sheet/animalhide/wolf = 8,
@@ -152,7 +173,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/f13/stalkerpelt = 8,
 		/obj/item/clothing/head/bearpelt = 20,
 		/obj/item/stack/sheet/animalhide/human = 0,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 8,
@@ -276,7 +297,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	GLOB.wasteland_vendor_shop_list[trader_key] = list()
 	var/list/donut = list()
 	/// so parents are processed first, and subtype prices have priority
-	var/list/buylist = sortList(buyables_loose, /proc/cmp_typepaths_length_asc)
+	var/list/buylist = sortList(buyables_loose, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff)
@@ -285,7 +306,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			donut[thing] = cumfrosting[thing]
 	/// now, prune and process the tight list
 	buylist.Cut()
-	buylist = sortList(buyables_tight, /proc/cmp_typepaths_length_asc)
+	buylist = sortList(buyables_tight, GLOBAL_PROC_REF(cmp_typepaths_length_asc))
 	for(var/stuff in buylist)
 		var/list/cumfrosting = list()
 		cumfrosting = typecacheof(stuff, TRUE)
@@ -311,11 +332,18 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	else
 		return "IDLE - <A href='?src=[REF(src)];choice=run'><u>Initiate Sale</u></A><br>"
 
+/obj/machinery/mineral/wasteland_trader/proc/charon()
+	if(exact_change)
+		return "<A href='?src=[REF(src)];choice=toggle_exact_change'><u>Paying out in Copper, Silver, Gold</u></A><br>"
+	else
+		return "<A href='?src=[REF(src)];choice=toggle_exact_change'><u>Paying out in Copper only</u></A><br>"
+
 /obj/machinery/mineral/wasteland_trader/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "[run_button()]"
+	dat += "[run_button()]<br>"
+	dat += "[charon()]"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
@@ -346,6 +374,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Salvaged Power Armor: 30¢<br>"
 	dat += "Power Armor: 75¢<br>"
 	dat += "Melee Weapons: 10¢<br>"
+	dat += "Weapon Mods: 5¢<br>"
 	dat += "<br>"
 	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 75¢<br>"
@@ -373,6 +402,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		abort()
 	if(href_list["choice"] == "eject")
 		eject()
+	if(href_list["choice"] == "toggle_exact_change")
+		TOGGLE_VAR(exact_change)
 	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
 		if (!prize || !(prize in prize_list))
@@ -395,21 +426,22 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	appraise_item(I)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user)
 
-/obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, looping)
+/obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, silent)
 	if(!I)
 		return
-	var/silent
+	var/quiet
 	if("[I.type]" == last_appraised)
-		silent = TRUE
+		quiet = TRUE
 	last_appraised = "[I.type]"
-	if(!GLOB.wasteland_vendor_shop_list[trader_key][I.type])
-		if(!looping)
-			say("I'll give you absolutely nothing for \the [I]!", just_chat = silent)
+	var/final_price = (round(COINS_TO_CREDITS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
+	if(!final_price)
+		if(!silent)
+			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type]
-	if(!looping)
-		say("I'll give you [final_price] copper per [I]!", just_chat = silent)
-	return TRUE
+	if(!silent)
+		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
+		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = quiet)
+	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
 	var/was_locked = islocked()
@@ -450,7 +482,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		if(istype(thingy, /obj/item/button))
 			continue
 		if(appraise_item(thingy, TRUE))
-			INVOKE_ASYNC(src, .proc/sell_loop_start)
+			INVOKE_ASYNC(src,PROC_REF(sell_loop_start))
 			return TRUE
 	say("There's nothing to sell!")
 
@@ -465,7 +497,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Nothing to sell!")
 		abort()
 		return
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][thing2sell.type]
+	var/final_price = appraise_item(thing2sell, TRUE)
 	if(!final_price)
 		say("Nope, don't want that [thing2sell]!")
 		yeet_thing(thing2sell)
@@ -475,11 +507,14 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		var/obj/item/stack/S = thing2sell
 		final_price = S.amount * final_price
 	var/time2sell = final_price * 0.1 SECONDS
+	if(time2sell > 10 SECONDS)
+		var/difference = time2sell - (10 SECONDS)
+		time2sell = (10 SECONDS) + sqrt(sqrt(difference)) // genius
 	say("Now processing [thing2sell]!", just_chat = TRUE)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
-	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
+	sales_timer = addtimer(CALLBACK(src,PROC_REF(sell_loop_end), thing2sell), time2sell, TIMER_STOPPABLE)
 
 /obj/machinery/mineral/wasteland_trader/proc/sell_loop_end(obj/item/I)
 	if(!I)
@@ -491,7 +526,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		say("Hey, where'd my [I] go?")
 		abort()
 		return
-	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type]
+	var/final_price = appraise_item(I, FALSE)
 	if(!final_price)
 		say("Nope, don't want that [I]!")
 		yeet_thing(I)
@@ -503,8 +538,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/fractional = final_price - FLOOR(final_price, 1)
 	if(fractional || prob(2))
 		generate_fortune(fractional || rand(1,10)) // no more only-bad fortunes for everyone
-	var/storedcaps = payout(final_price)
-	say("Sold [I] for [final_price] Edisons, bringing the total to [storedcaps] copper!")
+	payout(floor(final_price), I, TRUE, exact_change, TRUE)
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -518,6 +552,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(yote.loc != src)
 		return
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, yote, get_turf(src), TRUE)
+	yote.forceMove(get_turf(src)) // juuuuuust in case
 	var/atom/lucky_target
 	var/list/throw_at_ables = list()
 	for(var/mob/oops in view(7, src))
@@ -526,21 +561,136 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		lucky_target = pick(throw_at_ables)
 	else
 		lucky_target = get_ranged_target_turf(src, pick(GLOB.alldirs), rand(1,5), 5)
-	yote.throw_at(lucky_target, 20, 1, src)
+	yote.throw_at(lucky_target, 20, 1)
 
-/obj/machinery/mineral/wasteland_trader/proc/payout(caps)
-	var/obj/item/stack/f13Cash/caps/C
-	for(var/thingy in src)
-		if(!istype(thingy, /obj/item/stack/f13Cash/caps))
-			continue
-		C = thingy
-		break
-	if(!C)
-		C = new(src)
-		C.amount = 0
-	C.amount += caps
-	C.update_icon()
-	return C.amount
+/// takes in an amount of raw cash, and returns a list of the denominations of coins that would be used to make that amount
+/// Assumptions: 10 copper -> 1 silver, 10 silver -> 1 gold
+/// list format: list("copper" = 0, "silver" = 0, "gold" = 0)
+/proc/generate_denomination_list(money_in)
+	var/list/coinage = list("copper" = 0, "silver" = 0, "gold" = 0)
+	while(money_in > 0)
+		if(money_in >= 100)
+			coinage["gold"] += 1
+			money_in -= 100
+		else if(money_in >= 10)
+			coinage["silver"] += 1
+			money_in -= 10
+		else
+			coinage["copper"] += 1
+			money_in -= 1
+	return coinage
+
+/// takes in an amount of raw cash, and distributes it through only copper stacks in the machine
+/// each stack can only take 500 coins, so it will create new stacks as needed
+/obj/machinery/proc/copper_only(caps, obj/item/I, loud)
+	for(var/obj/item/stack/f13Cash/caps/copper_stack in contents)
+		if(copper_stack.amount < 500)
+			var/amount_to_add = min(500 - copper_stack.amount, caps)
+			copper_stack.amount += amount_to_add
+			copper_stack.update_icon()
+			caps -= amount_to_add
+			if(caps <= 0)
+				return TRUE // all done!
+	var/safety = 100
+	while(caps > 0 && safety--)
+		var/obj/item/stack/f13Cash/caps/C = new(src)
+		if(!C)
+			return FALSE
+		C.amount = min(500, caps)
+		C.update_icon()
+		caps -= C.amount
+	var/total_cash = 0
+	for(var/obj/item/stack/f13Cash/C in contents)
+		if(istype(C, /obj/item/stack/f13Cash/denarius))
+			total_cash += (C.amount * 10) // silver, 10 copper per
+		else if(istype(C, /obj/item/stack/f13Cash/aureus))
+			total_cash += (C.amount * 100) // gold, 100 copper per
+		else
+			total_cash += C.amount
+	if(loud && I)
+		announce_sale(caps, total_cash, I)
+
+/obj/machinery/proc/payout(caps, obj/item/I, loud, denominate, inside)
+	if(!denominate)
+		return copper_only(caps, I, loud)
+	/// get the total cash we have in the machine, plus the amount we're paying out, in copper
+	var/total_cash = caps
+	/// we're going to sweep up any duplicate stacks of copper and silver
+	var/obj/item/stack/f13Cash/caps/one_copper
+	var/obj/item/stack/f13Cash/denarius/one_silver
+	var/obj/item/stack/f13Cash/aureus/one_gold
+	for(var/obj/item/stack/f13Cash/C in contents)
+		if(istype(C, /obj/item/stack/f13Cash/denarius))
+			total_cash += (C.amount * 10) // silver, 10 copper per
+			if(one_silver)
+				qdel(C)
+			else
+				one_silver = C
+				one_silver.amount = 0
+		else if(istype(C, /obj/item/stack/f13Cash/aureus))
+			total_cash += (C.amount * 100) // gold, 100 copper per
+			if(one_gold)
+				qdel(C)
+			else
+				one_gold = C
+				one_gold.amount = 0
+		else
+			total_cash += C.amount
+			if(one_copper)
+				qdel(C)
+			else
+				one_copper = C
+				one_copper.amount = 0 // we'll give em back, I swear
+	var/atom/put_it = inside ? src : get_turf(src) // insiiide, outsiiide, insiiide, outsiiide, insiiide, outsiiide the machine
+	/// if we're paying out in exact change, we need to generate the list of denominations
+	var/list/coinage = generate_denomination_list(total_cash)
+	var/copperamt = coinage["copper"]
+	var/silveramt = coinage["silver"]
+	var/goldamt = coinage["gold"]
+	/// first distribute the copper
+	if(copperamt > 0)
+		if(!one_copper)
+			one_copper = new(put_it, copperamt)
+		else
+			one_copper.amount = copperamt
+		one_copper.update_icon()
+	/// then the silver
+	if(silveramt > 0)
+		if(!one_silver)
+			one_silver = new(put_it, silveramt)
+		else
+			one_silver.amount = silveramt
+		one_silver.update_icon()
+	/// then make some gold stacks. if we have more than 500 gold to place, we'll make as many stacks of 500 as we need, and then one for the remainder
+	if(goldamt > 0)
+		if(goldamt > 500)
+			while(goldamt > 500)
+				var/obj/item/stack/f13Cash/aureus/G = new(put_it, 500)
+				G.update_icon()
+				goldamt -= 500
+		if(goldamt > 0)
+			var/obj/item/stack/f13Cash/aureus/G = new(put_it, goldamt)
+			G.update_icon()
+	if(loud && I)
+		announce_sale(caps, total_cash, I)
+
+/obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
+	var/thing = I ? "\the [I]" : "something"
+	var/currencie = soldfor > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	var/currencei = totalcash > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
+
+/obj/item/debug_vendorsale
+	name = "Really Valuable Thing"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "latexballoon_blow"
+
+/obj/item/debug_vendorsale/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
+
+/obj/item/debug_vendorsale/proc/get_value()
+	return round(COINS_TO_CREDITS(12345))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
@@ -555,7 +705,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			if(ismob(C)) // juuuust in case
 				whos_it_for = C
 	else
-		for(var/mob/who in view(7, src)) // this also counts ghosts
+		for(var/mob/who in range(7, src)) // this also counts ghosts
 			if(!whos_it_for)
 				whos_it_for = who
 				continue
@@ -585,6 +735,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	msg_out += "[FOURSPACES][whofor]'s projected destiny<br>"
 	msg_out += "<hr><br><br><center>"
 	var/bitch = FALSE
+	luck = rand(1,100) // old system was kinda bungus
 	switch(luck)
 		if(-INFINITY to 35)
 			switch(rand(1,20))
@@ -738,9 +889,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			continue
 		if(istype(thingy, /obj/item/stack/f13Cash))
 			continue
-		if(appraise_item(thingy, TRUE))
-			return thingy
-	return
+		return thingy
+	// 	if(appraise_item(thingy, TRUE))
+	// return
 
 
 /*
@@ -796,7 +947,7 @@ Fence
 */
 
 /obj/machinery/mineral/wasteland_trader/bountyticket
-	name = "Nash Bounty Ticket Machine"
+	name = "New Boston Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(

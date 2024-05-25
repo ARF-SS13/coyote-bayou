@@ -20,7 +20,7 @@
 /obj/item/clothing/mask/equipped(mob/M, slot)
 	. = ..()
 	if (slot == SLOT_MASK && modifies_speech)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY,PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -47,7 +47,7 @@
 
 //Proc that moves gas/breath masks out of the way, disabling them and allowing pill/food consumption
 /obj/item/clothing/mask/proc/adjustmask(mob/living/user)
-	if(user && user.incapacitated())
+	if(user && user.incapacitated(allow_crit = TRUE))
 		return
 	mask_adjusted = !mask_adjusted
 	if(!mask_adjusted)

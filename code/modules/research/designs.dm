@@ -45,7 +45,9 @@ other types of metals and chemistry for reagents).
 	/// Checks if the material price is less than that of what it gives back, and then adds some if so
 	/// Spams the chat with bullshit if so, its a debugging tool~
 	var/debug_materials = FALSE
-	
+
+	var/autocalc_materials = FALSE		//If true, the materials list will be automatically calculated from the build_path (and whtever stuff is in the design)
+
 /datum/design/error_design
 	name = "ERROR"
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Command so their techs can fix this ASAP(tm)"
@@ -55,8 +57,10 @@ other types of metals and chemistry for reagents).
 	return ..()
 
 /datum/design/proc/InitializeMaterials()
-	if(debug_materials)
+	if(debug_materials) // probably doesnt work
 		material_cost_autobalance()
+	if(autocalc_materials)
+		AutocalcMaterialCosts()
 	var/list/temp_list = list()
 	for(var/i in materials) //Go through all of our materials, get the subsystem instance, and then replace the list.
 		var/amount = materials[i]
@@ -67,6 +71,35 @@ other types of metals and chemistry for reagents).
 			temp_list[i] = amount
 	materials = temp_list
 
+/// spawns the thing, pulls out all the stuff inside it, tallies up the materials it is, and then does some math to set the cost
+/datum/design/proc/AutocalcMaterialCosts()
+	if(!autocalc_materials)
+		return
+	if(!ispath(build_path, /obj/item)) // currently only supports items
+		return // its fiiiiiine
+	var/obj/item/thing = new build_path()
+	if(!thing) // Something went wrong, so lets bail
+		return
+	var/list/all_things = list()
+	var/list/to_check = list(thing)
+	while(LAZYLEN(to_check))
+		var/obj/item/this_thing = to_check[1]
+		to_check -= this_thing
+		if(!isitem(this_thing)) // not an item, skipping
+			continue
+		all_things += this_thing
+		for(var/i in this_thing.contents) // mommy finger, mommy finger, where are you?
+			to_check += i // here i am, here i am, how do you do?
+	if(LAZYLEN(all_things)) // daddy finger, daddy finger, where are you?
+		return // here i am, here i am, how do you do?
+	var/list/design_materials = list() // grandpa finger, grandpa finger, where are you?
+	for(var/obj/item/this_thing in all_things) // here i am, here i am, how do you do?
+		counterlist_combine(design_materials, this_thing.custom_materials) // garbage collector, garbage collector, where are you?
+	QDEL_LIST(all_things) // here i am, here i am, go away
+	counterlist_scale(design_materials, SSresearch.autocalc_mult) // how do you do?
+	if(LAZYLEN(design_materials)) // very well, i thank you
+		materials = design_materials // baby shark, doo doo doo doo doo doo doo
+	/// heres a cute shark: <(OvO)>
 
 /datum/design/proc/material_cost_autobalance()
 	if(ispath(build_path, /obj/item/ammo_box))

@@ -40,7 +40,7 @@
 
 /obj/item/grenade/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED, .proc/vore_prime)
+	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED,PROC_REF(vore_prime))
 
 /obj/item/grenade/deconstruct(disassembled = TRUE)
 	if(!disassembled)
@@ -74,6 +74,9 @@
 
 
 /obj/item/grenade/attack_self(mob/user)
+	if(user && user.incapacitated(allow_crit = TRUE))
+		to_chat(user, span_danger("You're too messed up to do that!"))
+		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NODROP))
 		to_chat(user, span_notice("You try prying [src] off your hand..."))
 		if(do_after(user, 70, target=src))
@@ -97,12 +100,12 @@
 	SIGNAL_HANDLER
 	if(active)
 		return
+	to_chat(vorer, span_userdanger("Uh oh."))
 	vorer?.visible_message(
 		span_alert("[vorer]'s [belly] starts ticking?"),
-		span_userdanger("Uh oh."),
 		pref_check = VOREPREF_VORE_MESSAGES
 	)
-	INVOKE_ASYNC(src, .proc/preprime, vorer, null, FALSE, 100)
+	INVOKE_ASYNC(src,PROC_REF(preprime), vorer, null, FALSE, 100)
 	return TRUE
 
 // for electric beep on activation
@@ -120,7 +123,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 // Turn on the grenade if shot
 /obj/item/grenade/bullet_act(obj/item/projectile/P)
@@ -147,7 +150,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 // For hissing fuse sound
 /obj/item/grenade/proc/primefuse(mob/user, delayoverride, msg = TRUE, volume = 60) 
@@ -164,7 +167,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 
 /obj/item/grenade/proc/prime(mob/living/lanced_by)

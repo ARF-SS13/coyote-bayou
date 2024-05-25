@@ -8,8 +8,8 @@ GLOBAL_LIST_EMPTY(total_extraction_beacons)
 	w_class = WEIGHT_CLASS_NORMAL
 	var/obj/structure/extraction_point/beacon
 	var/list/beacon_networks = list("station")
-	var/uses_left = 3
-	var/can_use_indoors
+	var/uses_left = 10000 // good luck
+	var/can_use_indoors = 1
 	var/safe_for_living_creatures = 1
 	var/max_force_fulton = MOVE_FORCE_STRONG
 

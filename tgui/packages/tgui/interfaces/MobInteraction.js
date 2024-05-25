@@ -949,15 +949,15 @@ const InteractionPage = (props, context) => {
       {LewdText}
     </Button>
   );
-  const SeeMessages =(
-    <Button
-      inline
-      icon="comment"
-      selected={SeeLewdMessages}
-      tooltip={SeeLewdMessages ? "Hide Lewd Messages" : "Show Lewd Messages"}
-      onClick={() =>
-      { act('ToggleSeeLewdMessages'); }} />
-  );
+  // const SeeMessages =(
+  //   <Button
+  //     inline
+  //     icon="comment"
+  //     selected={SeeLewdMessages}
+  //     tooltip={SeeLewdMessages ? "Hide Lewd Messages" : "Show Lewd Messages"}
+  //     onClick={() =>
+  //     { act('ToggleSeeLewdMessages'); }} />
+  // );
   const HearSounds =(
     <Button
       inline
@@ -977,7 +977,7 @@ const InteractionPage = (props, context) => {
         </Box>
       </Flex.Item>
       <Flex.Item>
-        {SeeMessages}
+        {/* {SeeMessages} They already consented! */}
         {HearSounds}
         <Box inline px="1em" />
       </Flex.Item>

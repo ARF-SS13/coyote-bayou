@@ -33,7 +33,6 @@
 	result = /obj/item/reagent_containers/food/snacks/kebab/fiesta
 	subcategory = CAT_MEAT
 
-
 ////////////////////////////////////////////////MISC RECIPE's////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/meatsalted
@@ -95,7 +94,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/cornedbeef
 	subcategory = CAT_MEAT
-
 
 /datum/crafting_recipe/food/stewedsoymeat
 	name = "Stewed soymeat"

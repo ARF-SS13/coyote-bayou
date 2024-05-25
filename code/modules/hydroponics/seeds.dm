@@ -106,7 +106,7 @@
 	S.reagents_add = reagents_add.Copy() // Faster than grabbing the list from genes.
 	return S
 
-obj/item/seeds/proc/is_gene_forbidden(typepath)
+/obj/item/seeds/proc/is_gene_forbidden(typepath)
 	return (typepath in forbiddengenes)
 
 

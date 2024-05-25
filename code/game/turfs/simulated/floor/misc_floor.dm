@@ -135,7 +135,7 @@
 	floor_tile = /obj/item/stack/tile/plasteel
 
 //Clockwork floor: Slowly heals toxin damage on nearby servants.
-/turf/open/floor/clockwork
+/*/turf/open/floor/clockwork
 	name = "clockwork floor"
 	desc = "Tightly-pressed brass tiles. They emit minute vibration."
 	icon_state = "plating"
@@ -193,8 +193,8 @@
 		I.pixel_y = rand(-9, 0)
 		var/list/viewing = list()
 		for(var/mob/M in viewers(src))
-			if(M.client && (is_servant_of_ratvar(M) || isobserver(M) || M.stat == DEAD))
-				viewing += M.client
+/*			if(M.client && (is_servant_of_ratvar(M) || isobserver(M) || M.stat == DEAD))
+				viewing += M.client*/
 		flick_overlay(I, viewing, 8)
 		L.adjustToxLoss(-3, TRUE, TRUE)
 
@@ -238,7 +238,7 @@
 	icon_state = "reebe"
 	baseturfs = /turf/open/floor/clockwork/reebe
 	uses_overlay = FALSE
-	planetary_atmos = TRUE
+	planetary_atmos = TRUE*/
 
 /turf/open/floor/bluespace
 	slowdown = -1
@@ -278,4 +278,4 @@
 	heavyfootstep = FOOTSTEP_RUST
 
 /turf/open/floor/plating/rust/rust_heretic_act()
-	return 
+	return

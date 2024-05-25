@@ -42,13 +42,13 @@
 		give_money(rand(1, 125))
 		crct.start_cash = FALSE
 
-	INVOKE_ASYNC(src, .proc/toggle_reel_spin, TRUE)//The reels won't spin unless we activate them
+	INVOKE_ASYNC(src,PROC_REF(toggle_reel_spin), TRUE)//The reels won't spin unless we activate them
 
 	var/list/reel = reels[1]
 	for(var/i = 0, i < reel.len, i++) //Populate the reels.
 		randomize_reels()
 
-	INVOKE_ASYNC(src, .proc/toggle_reel_spin, FALSE)
+	INVOKE_ASYNC(src,PROC_REF(toggle_reel_spin), FALSE)
 
 /obj/machinery/computer/slot_machine/Destroy()
 	if(balance)

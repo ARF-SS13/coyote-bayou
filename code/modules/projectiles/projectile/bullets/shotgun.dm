@@ -16,15 +16,43 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 //	supereffective_damage = 2
-//	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+//	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
+
+//needler shotgun pellet.
+/obj/item/projectile/bullet/pellet/needler_buckshot //very weak PVP damage, good bane damage.
+	name = "needler pellet"
+	icon_state = "needlesg"
+	icon = 'icons/obj/projectiles.dmi'
+	damage = BULLET_DAMAGE_NEEDLER_PELLET
+	damage_list = list("3" = 10, "4" = 10, "5" = 0.5 )
+	stamina = BULLET_STAMINA_SHOTGUN_PELLET
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET
+	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	ricochets_max = 2
+	ricochet_chance = 30
+	ricochet_auto_aim_angle = 50
+	ricochet_auto_aim_range = 6
+	ricochet_incidence_leeway = 80
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+	supereffective_damage = 8
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 //ratshot pellet: 6 damage instead of 8, fewer pellets. would make many tiny damage pellets but performance
 /obj/item/projectile/bullet/pellet/shotgun_ratshot
@@ -38,14 +66,14 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* rubber pellet
  * DAMAGE: 1
@@ -64,10 +92,10 @@
 	wound_bonus = RUBBERY_WOUND_SHOTGUN_PELLET
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	
+
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 	sharpness = SHARP_NONE
 	embedding = null
@@ -77,7 +105,7 @@
 	//However, you can find handloaded buckshot in the trash, you can't find rubbershot.
 	//This means that you'll always be paying to use rubbershot, whereas handloaded buckshot is often a freebie.
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* handload pellet
  * DAMAGE: 8
@@ -95,14 +123,14 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -117,6 +145,24 @@
 	if(prob(50))
 		do_sparks(1, FALSE, get_turf(target))
 	..()
+
+/* simplemob pellet
+ * DAMAGE: 8
+ * STAMIN: 1
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
+/obj/item/projectile/bullet/pellet/simplemob
+	damage = BULLET_DAMAGE_SHOTGUN_PELLET * 0.5
+	stamina = BULLET_STAMINA_SHOTGUN_PELLET
+	spread = BULLET_SPREAD_SURPLUS * 3
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/bullet/pellet/simplemob/Initialize()
+	. = ..()
+	range = abs(floor(gaussian(5, 2))) // yeah suck it cpu
 
 /* 12g slug
  * DAMAGE: 50
@@ -136,7 +182,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_SLUG
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -183,14 +229,14 @@
 	wound_bonus = RUBBERY_WOUND_SHOTGUN_SLUG
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION
 
 	supereffective_damage = BULLET_DAMAGE_PISTOL_9MM
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* train
  * DAMAGE: 20
@@ -209,7 +255,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_TRAIN
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_TRAIN_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_TRAIN
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -240,7 +286,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_SLUG * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -264,7 +310,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -285,6 +331,7 @@
 	light_range = LIGHT_RANGE_FIRE
 	light_color = LIGHT_COLOR_FIRE
 
+	damage_type = BURN
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_DAMAGE_FIRE
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET * BULLET_STAMINA_FIRE
 	spread = BULLET_SPREAD_SURPLUS
@@ -293,7 +340,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -324,7 +371,7 @@
 	wound_bonus = RUBBERY_WOUND_SHOTGUN_SLUG
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -371,7 +418,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_SLUG
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -409,7 +456,7 @@
 	wound_bonus = BULLET_WOUND_SHOTGUN_SLUG * BULLET_WOUND_EXPLOSIVE
 	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT * BULLET_NAKED_WOUND_EXPLOSIVE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 

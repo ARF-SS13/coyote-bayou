@@ -10,8 +10,9 @@
 
 /obj/item/storage/survivalkit/PopulateContents()
 	new /obj/item/flashlight(src)
-	new /obj/item/flashlight/glowstick(src)
+	new /obj/item/storage/box/matches(src)
 	new /obj/item/melee/onehanded/knife/hunting(src)
+	new /obj/item/hand_tele(src)
 
 /// Empty kit!
 /obj/item/storage/survivalkit/empty/PopulateContents()
@@ -36,6 +37,7 @@
 	new /obj/item/flashlight/flare/torch(src)
 	new /obj/item/melee/onehanded/knife/bone(src)
 	new /obj/item/firebow(src)
+	new /obj/item/hand_tele(src)
 
 /obj/item/storage/survivalkit/tribal/empty/PopulateContents()
 	return
@@ -78,8 +80,8 @@
 	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/medical
 
 /obj/item/storage/survivalkit/medical/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/loadout(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/charcoal(src)

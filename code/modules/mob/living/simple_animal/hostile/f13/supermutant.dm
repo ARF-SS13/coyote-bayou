@@ -25,7 +25,6 @@
 		"yells"
 		)
 	move_to_delay = 5
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	emote_taunt_sound = list(
@@ -74,6 +73,14 @@
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	ignore_other_mobs = TRUE // gentle giants that respect the inhabitants of the wastes. Cept for players
+	retreat_health_percent = 0.5
+	max_heal_amount = 0.9
+	heal_per_life = 0.115
+	tactical_retreat = 10
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/generic/animal)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
+
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
@@ -163,13 +170,14 @@
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
+	color = "#3344BE"
 	ranged = 1
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 
 	health = 130
-	retreat_distance = 2
-	minimum_distance = 1
-	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	retreat_distance = 3
+	minimum_distance = 2
+	casingtype = /obj/item/ammo_casing/shotgun/improvised/simplemob
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
@@ -179,7 +187,8 @@
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
 		/obj/item/ammo_box/shotgun/improvised,
-		/obj/item/gun/ballistic/revolver/widowmaker
+		/obj/item/gun/ballistic/revolver/widowmaker,
+		/obj/effect/gibspawner/generic/animal
 		)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
@@ -207,7 +216,8 @@
 	minimum_distance = 3
 	ranged_cooldown_time = 2 SECONDS
 	loot = list(
-		/obj/item/gun/ballistic/automatic/varmint
+		/obj/item/gun/ballistic/automatic/varmint,
+		/obj/effect/gibspawner/generic/animal
 		)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
@@ -254,6 +264,9 @@
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/generic/animal)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/Aggro()
 	..()
@@ -288,7 +301,7 @@
 	minimum_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
+	loot = list(/obj/item/ammo_box/magazine/m556/rifle, /obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -333,7 +346,7 @@
 	minimum_distance = 7
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
-	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
+	loot = list(/obj/item/stock_parts/cell/ammo/mfc, /obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -403,7 +416,6 @@
 		return
 	if(prob(30))
 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-		addtimer(3)
 		Charge()
 	if(prob(85) || Proj.damage > 30)
 		return ..()
@@ -436,14 +448,13 @@
 	if(!T || T == loc)
 		return
 	charging = TRUE
-	visible_message(span_danger(">[src] charges!"))
+	visible_message(span_danger("[src] charges!"))
 	DestroySurroundings()
 	walk(src, 0)
 	setDir(get_dir(src, T))
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 1)
-	addtimer(3)
-	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src, .proc/charge_end))
+	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src,PROC_REF(charge_end)))
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/charge_end(list/effects_to_destroy)
 	charging = FALSE
@@ -472,9 +483,6 @@
 		shake_camera(src, 2, 3)
 		var/throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(L, src)))
 		L.throw_at(throwtarget, 3)
-
-
-	charging = FALSE
 	charging = FALSE
 
 
@@ -511,29 +519,14 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)
-
-	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/fire_release_wall, d)
+	INVOKE_ASYNC(src,PROC_REF(fire_release_wall))
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release_wall(dir)
-	var/list/hit_things = list(src)
-	var/turf/E = get_edge_target_turf(src, dir)
-	var/range = 10
-	var/turf/previousturf = get_turf(src)
-	for(var/turf/J in getline(src,E))
-		if(!range || (J != previousturf && (!previousturf.atmos_adjacent_turfs || !previousturf.atmos_adjacent_turfs[J])))
-			break
-		range--
-		new /obj/effect/hotspot(J)
-		J.hotspot_expose(500, 500, 1)
-		for(var/mob/living/L in J.contents - hit_things)
-			if(istype(L, /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain))
-				continue
-			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("You're hit by the nightkin's release of energy!"))
-			hit_things += L
-		previousturf = J
-		addtimer(1)
+	for(var/mob/living/target in view(10, src))
+		var/obj/item/ammo_casing/casing = new /obj/item/ammo_casing/shotgun/incendiary(get_turf(src))
+		casing.factionize(faction)
+		casing.fire_casing(target, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		qdel(casing)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain
 	name = "nightkin rain lord"

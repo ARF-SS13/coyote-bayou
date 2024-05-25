@@ -1,15 +1,34 @@
 /obj/item/lockpick_set
 	name = "lockpicking set"
-	desc = "A set of tools dedicated to lockpicking, intended for the novice to the master."
+	desc = "A set of tools dedicated to lockpicking, intended for quick bypassing of low-security locks."
 	icon = 'icons/obj/fallout/lockbox.dmi'
 	icon_state = "basic_lockpick"
 	var/in_use = FALSE
 	w_class = WEIGHT_CLASS_TINY
-	var/uses_left = 6 //15% chance to success, might need more.  Needs Playtesting.
+	var/uses_left = 4 			// Might need more.  Needs Playtesting.
+	var/success_chance = 20 	// out of 100
+	var/break_chance = 20 		// after failing a check. so yes, technically less overall.
+	var/lockpick_tier = 1		// some locked boxes require higher tier lockpicks
+
+/obj/item/lockpick_set/improved
+	name = "improved lockpicking set"
+	desc = "A set of better lockpicking tools."
+	icon_state = "advanced_lockpick"
+	uses_left = 6
+	success_chance = 40
+	break_chance = 10
+	lockpick_tier = 2
 
 /obj/item/lockpick_set/Initialize()
 	. = ..()
-	uses_left = rand(2, initial(src.uses_left))
+	//uses_left = rand(2, initial(src.uses_left))
+
+/obj/item/lockpick_set/examine(mob/user)
+	. = ..()
+	if(uses_left > 1)
+		. += span_notice("It looks like it can take about [uses_left] bad twists before it breaks.")
+	else
+		. += span_notice("It looks like it's about to tear in half!")
 
 /obj/item/lockpick_set/proc/use_pick(mob/user)
 	uses_left--
@@ -24,6 +43,9 @@
 			playsound(get_turf(src),'sound/items/Wirecutter.ogg',100, 1, ignore_walls = FALSE)
 			qdel(src)
 			return
+
+/obj/item/lockpick_set/proc/can_use(mob/user)
+	return HAS_TRAIT(user, TRAIT_SECURITYEXPERT)
 
 /obj/item/locked_box
 	name = "locked box"
@@ -116,8 +138,10 @@
 
 /obj/item/locked_box/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/screwdriver))
+
 		if(!locked)
 			return
+
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) / 2 //the higher the lock tier, the harder it is, down to a max of 0, divided by 2
 		if(!prob(success_after_tier))
 			if(fragile)
@@ -130,11 +154,22 @@
 		to_chat(user, span_green("You successfully unlock [src]."))
 		locked = FALSE
 		return
+
 	else if(istype(W, /obj/item/lockpick_set))
 		if(!locked)
 			return
+
+		var/obj/item/lockpick_set/tool = W
+		if(!tool.can_use(user))
+			to_chat(user, span_warning("You're not really sure what to do with this..."))
+			return
+
+		if(lock_tier > 3 && tool.lockpick_tier < 2)
+			to_chat(user, span_warning("You need a better set of tools to get past security measures like this!"))
+			return
+
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
-		var/success_after_skill = min((user.client.prefs.special_l * 5) + success_after_tier, 100) //the higher the persons luck, the better, up to a max of 100, with 50 added
+		var/success_after_skill = min((user.client.prefs.special_p * 5) + success_after_tier, 100) //the higher the persons perception, the better, up to a max of 100, with 50 added
 		if(!prob(success_after_skill))
 			to_chat(user, span_warning("You fail to pick [src]."))
 			return
@@ -583,11 +618,11 @@
 	prize_amount = 1
 	locked = TRUE
 	lock_tier = 3
-
+/*
 /obj/item/locked_box/misc/attachments/initialize_prizes()
 	global_loot_lists = list(GLOB.loot_attachment)
 	. = ..()
-
+*/
 /obj/item/locked_box/misc/blueprints
 	easy_naming = "blueprint "
 	locked = TRUE

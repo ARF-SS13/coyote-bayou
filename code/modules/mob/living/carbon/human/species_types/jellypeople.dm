@@ -8,7 +8,7 @@
 	mutantlungs = /obj/item/organ/lungs/slime
 	mutant_heart = /obj/item/organ/heart/slime
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "mam_tail" = "None", "mam_ears" = "None", "mam_snouts" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade")
-	inherent_traits = list(TRAIT_TOXINLOVER)
+	inherent_traits = list()
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	gib_types = list(/obj/effect/gibspawner/slime, /obj/effect/gibspawner/slime/bodypartless)
 	exotic_blood = /datum/reagent/blood/jellyblood
@@ -17,9 +17,8 @@
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 	var/datum/action/innate/slime_change/slime_change	//CIT CHANGE
-	liked_food = TOXIC | MEAT
-	disliked_food = null
-	toxic_food = ANTITOXIC
+	liked_food = FRUIT | MEAT
+	disliked_food = TOXIC
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
@@ -463,7 +462,7 @@
 	limbs_id = "slime"
 	default_color = "00FFFF"
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR)
-	inherent_traits = list(TRAIT_TOXINLOVER)
+	inherent_traits = list()
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_tail" = "None", "mam_ears" = "None", "mam_body_markings" = "Plain", "mam_snouts" = "None", "taur" = "None", "legs" = "Plantigrade")
 	say_mod = "says"
 	hair_color = "mutcolor"
@@ -905,8 +904,8 @@
 	linked_mobs.Add(M)
 	if(!selflink)
 		to_chat(M, span_notice("You are now connected to [slimelink_owner.real_name]'s Slime Link."))
-		RegisterSignal(M, COMSIG_MOB_DEATH , .proc/unlink_mob)
-		RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/unlink_mob)
+		RegisterSignal(M, COMSIG_MOB_DEATH ,PROC_REF(unlink_mob))
+		RegisterSignal(M, COMSIG_PARENT_QDELETING,PROC_REF(unlink_mob))
 	var/datum/action/innate/linked_speech/action = new(src)
 	linked_actions.Add(action)
 	action.Grant(M)

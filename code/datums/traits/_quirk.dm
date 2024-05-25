@@ -28,7 +28,7 @@
 	var/datum/controller/subsystem/processing/quirks/livesfrombased // Just a dummy reference so that the GC will think this thing is being used, when really its actually totally being used
 	var/reference //If this is just a reference template used by the subsystem, so it'll stop randomly dying for no raisin
 
-/datum/quirk/New(mob/living/quirk_mob, spawn_effects)
+/datum/quirk/New(mob/living/quirk_mob, spawn_effects, words = TRUE)
 	key = "[type]" // this is the key that will be used to identify the quirk in the quirk list
 	// parse_mechanics()
 	for(var/q in conflicts)
@@ -41,7 +41,7 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	if(gain_text)
+	if(gain_text && words)
 		to_chat(quirk_holder, gain_text)
 	quirk_holder.mob_quirks += src
 	if(mob_trait)
@@ -53,7 +53,7 @@
 	add()
 	if(spawn_effects)
 		on_spawn()
-		addtimer(CALLBACK(src, .proc/post_add), 30)
+		addtimer(CALLBACK(src,PROC_REF(post_add)), 30)
 
 /datum/quirk/Destroy()
 	if(reference)
@@ -61,8 +61,6 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		if(lose_text)
-			to_chat(quirk_holder, lose_text)
 		quirk_holder.mob_quirks -= src
 		if(mob_trait)
 			if(!islist(mob_trait))
@@ -82,6 +80,12 @@
 // 	var/static/regex/misctoken = regex(@"$MISC\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
 // 	mechanics = misctoken.Replace_char(mechanics, "[span_monkeylead("$1")]")
 // 	mechanics = span_suppradio(mechanics)
+
+/datum/quirk/proc/preremove(words)
+	if(!words)
+		return
+	if(lose_text)
+		to_chat(quirk_holder, lose_text)
 
 /datum/quirk/proc/get_conflicts()
 	var/returnlist = list() // so now we're gonna convert the list of paths to string names, like it was before, but better cus I did it

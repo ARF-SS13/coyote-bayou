@@ -91,7 +91,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock)
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -104,7 +104,7 @@
 	desc = "This Glock 86 plasma pistol has had its magnetic housing chamber realigned to reduce the drain on its energy cell. Its efficiency has doubled, allowing it to fire more shots before the battery is expended."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock/extended)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 //Plasma Rifle
@@ -185,7 +185,7 @@
 	icon_state = "Aldric-Plasma-CasterEve"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_scope = FALSE
@@ -193,7 +193,8 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
-		/datum/firemode/burst/five
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
@@ -205,7 +206,7 @@
 	icon_state = "Aldric-Plasma-Caster"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/caster)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_scope = FALSE
@@ -213,7 +214,8 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
-		/datum/firemode/burst/five
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
@@ -231,6 +233,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
@@ -272,6 +275,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_CARBINE

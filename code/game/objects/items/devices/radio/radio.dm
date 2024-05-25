@@ -30,6 +30,8 @@
 	var/command = FALSE  // If true, use_command can be toggled at will.
 	var/commandspan = SPAN_COMMAND //allow us to set what the fuck we want for headsets
 
+	var/suppress_blurbles = FALSE
+
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
 	var/translate_binary = FALSE  // If true, can hear the special binary channel.
@@ -165,6 +167,7 @@
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
 	data["headset"] = istype(src, /obj/item/radio/headset)
+	data["suppressBlurbles"] = suppress_blurbles
 
 	return data
 
@@ -213,6 +216,9 @@
 			else
 				channels[channel] |= FREQ_LISTENING
 			. = TRUE
+		if("suppressBlurbles")
+			TOGGLE_VAR(suppress_blurbles)
+			. = TRUE
 		if("command")
 			use_command = !use_command
 			. = TRUE
@@ -230,7 +236,7 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language)
+	INVOKE_ASYNC(src,PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
@@ -288,8 +294,12 @@
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
 	// Construct the signal
-	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
-
+	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, M)
+	signal.data["is_radio"] = TRUE
+	signal.data["suppress_blurbles"] = suppress_blurbles
+	if(!suppress_blurbles)
+		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+	
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
 		signal.data["compression"] = 0
@@ -307,7 +317,7 @@
 
 	// Non-subspace radios will check in a couple of seconds, and if the signal
 	// was never received, send a mundane broadcast (no headsets).
-	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
+	addtimer(CALLBACK(src,PROC_REF(backup_transmission), signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
@@ -320,7 +330,7 @@
 	signal.levels = list(T.z)
 	signal.broadcast()
 
-/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, list/data)
 	. = ..()
 	if(radio_freq || !broadcasting || get_dist(src, speaker) > (canhear_range)-2)
 		return
@@ -498,7 +508,7 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "a rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
+	desc = "A rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone

@@ -5,6 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
+	a_intent = INTENT_HARM // I LOVE PLAYING THE SCOOTER DANCE WITH PROTECTRONS
 	var/datum/weakref/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.
@@ -45,7 +46,7 @@
 
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
-	var/move_to_delay = 3
+	var/move_to_delay = 3.5
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
@@ -61,7 +62,8 @@
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
-	
+
+	var/melee_attacks = TRUE
 	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
 	var/melee_windup_time = 0.3 SECONDS
 	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
@@ -82,6 +84,7 @@
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
 	var/ranged_ignores_vision = FALSE //if it'll fire ranged attacks even if it lacks vision on its target, only works with environment smash
 	var/check_friendly_fire = 0 // Should the ranged mob check for friendlies when shooting
+	var/should_factionize_shots = TRUE
 	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/retreat_distance = null
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
@@ -92,14 +95,17 @@
 	//COOLDOWN_DECLARE(decomposition_schedule)
 
 //These vars are related to how mobs locate and target
-	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
+	var/robust_searching = 1 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
+	var/robuster_searching = FALSE //Makes mobs see through walls if theyve seen you before
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/search_objects = 0 //If we want to consider objects when searching around, set this to 1. If you want to search for objects while also ignoring mobs until hurt, set it to 2. To completely ignore mobs, even when attacked, set it to 3
 	var/search_objects_timer_id //Timer for regaining our old search_objects value after being attacked
 	var/search_objects_regain_time = 30 //the delay between being attacked and gaining our old search_objects value back
 	var/list/wanted_objects = list() //A typecache of objects types that will be checked against to attack, should we have search_objects enabled
-	var/stat_attack = CONSCIOUS //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
+	var/attack_downed_players = TRUE // ignore stat attack, attack people in soft crit.... for a while
+	var/attack_downed_until = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT // Attack until they're this proportion between soft crit and hard crit
+	var/stat_attack = SOFT_CRIT //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
 	var/stat_exclusive = FALSE //Mobs with this set to TRUE will exclusively attack things defined by stat_attack, stat_attack DEAD means they will only attack corpses
 	var/attack_same = 0 //Set us to 1 to allow us to attack our own faction
 	var/datum/weakref/targetting_origin = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
@@ -109,6 +115,21 @@
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
 	var/peaceful = FALSE //Determines if mob is actively looking to attack something, regardless if hostile by default to the target or not
+
+	//Tactical Retreat Code//
+	//tactical retreat and heal vars.  These exist to give mobs a breakpoint to cut and run from combat. 
+	//Once they have disengaged they will heal up. While they can't return to combat at least they'll be prepped for the next player push.
+	var/retreat_health_percent = 0 //.25 = 25% health remaining
+	var/max_heal_amount = 0 //how much the mob heals up to when its triggered its low health tactical retreat
+	var/heal_per_life = 0 //how much per life tick the mob heals, %. 0.25 is 25%.
+	var/tactical_retreat = 0 //Distance in tiles the mob retreats in a panic
+	var/retreat_message_said = FALSE 
+	var/actual_retreat_message = "The %NAME tries to flee from %TARGET!"
+	var/max_healing_ability = 0 //In decimal percent, 1 = 100%
+	var/healing_message = "The %NAME is trying to heal itself!"
+	var/healing_sound = 'sound/items/tendingwounds.ogg' // 
+	var/healing_volume = 30
+
 
 //These vars activate certain things on the mob depending on what it hears
 	var/attack_phrase = "" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
@@ -128,10 +149,17 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
-/mob/living/simple_animal/hostile/Initialize(mapload)
+	/// Makes it so the mob tally doesnt count this thing as being deleted when its just sleeping
+	var/went_to_sleep = FALSE
+
+	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
+
+/mob/living/simple_animal/hostile/Initialize(mapload, nest_spawned)
 	. = ..()
 	set_origin(src)
 	wanted_objects = typecacheof(wanted_objects)
+	if(nest_spawned != "TOPHEAVY-KOBOLD")
+		SSmobs.mob_spawned(src)
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
@@ -144,6 +172,8 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(!went_to_sleep)
+		SSmobs.mob_despawned(src)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
@@ -157,10 +187,11 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(prob(1) && world.time-timeofdeath > 3 MINUTES)//give players enough time to finish their fights and butcher the real way
+		if(decompose && prob(1) && world.time-timeofdeath > 3 MINUTES && !SSeconomy.is_part_of_a_quest(src))//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
+	tacticalhealing() // just had to put the procs where they would be run yeh, should work now, should be it, probably ye
 	queue_naptime()
 	check_health()
 
@@ -171,7 +202,7 @@
 		return FALSE
 	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return FALSE
-	
+
 	if(is_low_health && health > (maxHealth * low_health_threshold)) // no longer low health
 		make_high_health()
 		return TRUE
@@ -213,7 +244,7 @@
 		return
 	var/atom/my_target = get_target()
 	if(dodging && my_target && in_melee && isturf(loc) && isturf(my_target.loc))
-		var/datum/cb = CALLBACK(src,.proc/sidestep)
+		var/datum/cb = CALLBACK(src,PROC_REF(sidestep))
 		if(sidestep_per_cycle > 1) //For more than one just spread them equally - this could changed to some sensible distribution later
 			var/sidestep_delay = SSnpcpool.wait / sidestep_per_cycle
 			for(var/i in 1 to sidestep_per_cycle)
@@ -230,12 +261,12 @@
 	if(go2bed)
 		if(lonely_timer_id)
 			return
-		lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
+		lonely_timer_id = addtimer(CALLBACK(src,PROC_REF(queue_unbirth)), 30 SECONDS, TIMER_STOPPABLE)
 	else
 		if(!lonely_timer_id)
 			return
 		deltimer(lonely_timer_id)
-		lonely_timer_id = null	
+		lonely_timer_id = null
 		unqueue_unbirth()
 
 /mob/living/simple_animal/hostile/proc/consider_despawning()
@@ -260,7 +291,7 @@
 /mob/living/simple_animal/hostile/become_the_mob(mob/user)
 	if(lonely_timer_id)
 		deltimer(lonely_timer_id)
-		lonely_timer_id = null	
+		lonely_timer_id = null
 	unqueue_unbirth()
 	. = ..()
 
@@ -320,7 +351,7 @@
 	if(!search_objects)
 		. = hearers(vision_range, origin) - src //Remove self
 
-		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden,/obj/item/electronic_assembly))
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/item/electronic_assembly))
 
 		for(var/HM in typecache_filter_list(range(vision_range, origin), hostile_machines))
 			CHECK_TICK
@@ -393,16 +424,19 @@
 
 	if(ismob(the_target)) //Target is in godmode, ignore it.
 		var/mob/M = the_target
+		if(M.ignore_faction)
+			return FALSE
 		if(M.status_flags & GODMODE)
 			return FALSE
 		if(!M.client)
-			var/client_in_range = FALSE
-			for(var/client/C in GLOB.clients)
-				if(get_dist(M, C) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
-					client_in_range = TRUE
-					break
-			if(!client_in_range)
-				return FALSE
+			if(!SSmobs.debug_disable_mob_ceasefire)
+				var/client_in_range = FALSE
+				for(var/mob/living/L in SSmobs.clients_by_zlevel[z])
+					if(get_dist(src, L) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
+						client_in_range = TRUE
+						break
+				if(!client_in_range)
+					return FALSE
 
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
@@ -419,8 +453,12 @@
 					return FALSE
 				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
 					return FALSE
-				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
-					return FALSE
+				if(attack_downed_players && L.stat == SOFT_CRIT && iscarbon(L))
+					/// so fun fact, not all players go into crit at 0 HP
+					/// some go into crit at, like, 50 HP, or at -40 HP
+					/// so we have to offset the crit threshold by the amount of health they have
+					if(!L.attackable_in_crit())
+						return FALSE
 				if(friends[L] > 0 && foes[L] < 1)
 					return FALSE
 			else
@@ -466,7 +504,7 @@
 //What we do after closing in
 /mob/living/simple_animal/hostile/proc/MeleeAction(patience = TRUE)
 	if(rapid_melee > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/CheckAndAttack)
+		var/datum/callback/cb = CALLBACK(src,PROC_REF(CheckAndAttack))
 		var/delay = SSnpcpool.wait / rapid_melee
 		for(var/i in 1 to rapid_melee)
 			addtimer(cb, (i - 1)*delay)
@@ -478,7 +516,7 @@
 /mob/living/simple_animal/hostile/proc/CheckAndAttack()
 	var/atom/origin = get_origin()
 	var/atom/my_target = get_target()
-	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
+	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())
 		AttackingTarget()
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our targette
@@ -532,7 +570,7 @@
 		if(my_target.loc != null && get_dist(origin, my_target.loc) <= vision_range) //We can't see our targette, but he's in our vision range still
 			if(ranged_ignores_vision && ranged_cooldown <= world.time) //we can't see our targette... but we can fire at them!
 				OpenFire(my_target)
-			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS)) //If we're capable of smashing through walls, forget about vision completely after finding our targette
+			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS) || robuster_searching || SSmobs.debug_everyone_has_robuster_searching) //If we're capable of smashing through walls, forget about vision completely after finding our targette
 				Goto(my_target,move_to_delay,minimum_distance)
 				FindHidden()
 				return 1
@@ -556,12 +594,18 @@
 			minimum_distance = 1
 		else
 			minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
-	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
-		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		if(prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+			move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+		if(prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+			set_varspeed(pick(variation_list[MOB_VARIED_SPEED]))
+
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	if(!ckey && !stat && search_objects < 3 && . > 0)//Not unconscious, and we don't ignore mobs
+		if(amount > 0)
+			tacticalretreat()
 		if(peaceful == TRUE)
 			peaceful = FALSE
 		if(search_objects)//Turn off item searching and ignore whatever item we were looking at, we're more concerned with fight or flight
@@ -575,6 +619,8 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
+	if(!melee_attacks)
+		return
 	var/atom/my_target = get_target()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
 	in_melee = TRUE
@@ -588,7 +634,7 @@
 		minimum_distance = 1 //Stop moving away
 		if(melee_windup_sound)
 			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
-		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/,do_windup), melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
 		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
 			my_target = get_target() //Switch targets if we did during our windup.
 			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
@@ -619,7 +665,7 @@
 	vision_range = aggro_vision_range
 	var/atom/my_target = get_target()
 	if(my_target && LAZYLEN(emote_taunt) && prob(taunt_chance))
-		INVOKE_ASYNC(src, .proc/emote, "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [my_target].")
+		INVOKE_ASYNC(src,PROC_REF(emote), "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [my_target].")
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
@@ -657,13 +703,14 @@
 			M.Goto(src,M.move_to_delay,M.minimum_distance)
 
 /mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
-	if(check_friendly_fire && !ckey)
-		for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
-			for(var/mob/living/L in T)
-				if(L == src || L == A)
-					continue
-				if(faction_check_mob(L) && !attack_same)
-					return TRUE
+	if(!check_friendly_fire || ckey || should_factionize_shots)
+		return FALSE
+	for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
+		for(var/mob/living/L in T)
+			if(L == src || L == A)
+				continue
+			if(faction_check_mob(L) && !attack_same)
+				return TRUE
 
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(COOLDOWN_TIMELEFT(src, sight_shoot_delay))
@@ -672,17 +719,17 @@
 		return
 	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
 	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
+		var/datum/callback/cb = CALLBACK(src,PROC_REF(Shoot), A)
 		for(var/i in 1 to rapid)
 			addtimer(cb, (i - 1)*rapid_fire_delay)
 	else
 		Shoot(A)
 		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A), i * auto_fire_delay)
 	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
+		addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
 	if(projectiletype)
 		if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
 			projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
@@ -716,8 +763,8 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
-			vary = FALSE, 
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE],
+			vary = FALSE,
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.factionize(faction)
@@ -734,8 +781,8 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
-			vary = FALSE, 
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE],
+			vary = FALSE,
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		P.starting = startloc
@@ -773,7 +820,6 @@
 	else
 		// Apply stamina damage if the mob tried to dodge into a wall
 		adjustStaminaLoss(10)
-		visible_message("<span class='notice'>[src] tries to dodge but hits a wall!</span>")
 		playsound(loc, 'sound/effects/hit_punch.ogg', 50, 1, -1) // Play a punch sound
 	dodging = TRUE
 
@@ -806,7 +852,7 @@
 			DestroyObjectsInDirection(direction)
 
 
-mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
+/mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
 	if(environment_smash)
 		EscapeConfinement()
 		for(var/dir in GLOB.cardinals)
@@ -875,10 +921,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/GainPatience()
 	if(QDELETED(src))
 		return
-	
+
 	if(lose_patience_timeout)
 		LosePatience()
-		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
+		lose_patience_timer_id = addtimer(CALLBACK(src,PROC_REF(LoseTarget)), lose_patience_timeout, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/LosePatience()
@@ -889,10 +935,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/LoseSearchObjects()
 	if(QDELETED(src))
 		return
-	
+
 	search_objects = 0
 	deltimer(search_objects_timer_id)
-	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
+	search_objects_timer_id = addtimer(CALLBACK(src,PROC_REF(RegainSearchObjects)), search_objects_regain_time, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/RegainSearchObjects(value)
@@ -911,14 +957,14 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
 		toggle_ai(AI_Z_OFF)
 		return
-	
+
 	tlist = ListTargetsLazy(T.z)
 
 	if(AIStatus == AI_IDLE && tlist.len)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden))
+	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 	. = list()
 	for (var/I in SSmobs.clients_by_zlevel[_Z])
 		var/mob/M = I
@@ -947,7 +993,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!new_target)
 		return
 	target = WEAKREF(new_target)
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING,PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/queue_unbirth()
 	SSidlenpcpool.add_to_culling(src)
@@ -964,6 +1010,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		my_home = RESOLVEWEAKREF(nest)
 	if(!my_home)
 		my_home = new/obj/structure/nest/special(get_turf(src))
+	went_to_sleep = TRUE
 	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
 
 /mob/living/simple_animal/hostile/setup_variations()
@@ -1014,7 +1061,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	visible_message(span_green("[src] shudders as the EMP overloads its servos!"))
 	LoseTarget()
 	toggle_ai(AI_OFF)
-	addtimer(CALLBACK(src, .proc/un_emp_stun), min(intensity, 3 SECONDS))
+	addtimer(CALLBACK(src,PROC_REF(un_emp_stun)), min(intensity, 3 SECONDS))
 
 /mob/living/simple_animal/hostile/proc/un_emp_stun()
 	active_emp_flags -= MOB_EMP_STUN
@@ -1031,7 +1078,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	visible_message(span_green("[src] lets out a burst of static and whips its gun around wildly!"))
 	var/list/old_faction = faction
 	faction = null
-	addtimer(CALLBACK(src, .proc/un_emp_berserk, old_faction), intensity SECONDS * 0.5)
+	addtimer(CALLBACK(src,PROC_REF(un_emp_berserk), old_faction), intensity SECONDS * 0.5)
 
 /mob/living/simple_animal/hostile/proc/un_emp_berserk(list/unberserk)
 	active_emp_flags -= MOB_EMP_BERSERK
@@ -1058,3 +1105,32 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	minimum_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))
+
+// 
+
+/mob/living/simple_animal/hostile/proc/tacticalretreat() 
+	if(!tactical_retreat) // if we're not tactically retreating,
+		return // dont!
+	if(stat == DEAD || (health / maxHealth) < retreat_health_percent) // If I ain't dead, and my max health percent is less than my retreat health percent then...
+		retreat_distance = initial(retreat_distance) // I look at my original mob retreat distance
+		return //With that sniffed then I look to see if.
+	var/atom/my_target = get_target() //Do I have a target?????
+	if(!retreat_message_said && my_target) //If I haven't said my retreat message and I definitely don't have a target
+		var/msg = actual_retreat_message // Then play my retreat message
+		msg = replacetext(msg, "%NAME", name) //with my name
+		msg = replacetext(msg, "%TARGET", my_target.name) // and the targets name
+		visible_message(span_danger(msg)) // in it.
+		retreat_message_said = TRUE //I've officially said my retreat message
+	retreat_distance = tactical_retreat // then make my retreat distance my tactical retreat distance
+	//Now I run like hell until my health is higher than my health/max health retreat percent.
+
+//Tactical Healing Code
+//                                                              V these can go too
+/mob/living/simple_animal/hostile/proc/tacticalhealing() // Every life tick, my hostile ass is going to...
+	if(!heal_per_life || health > max_healing_ability || get_target()) //Then I check my heal per life var to see if my health isn't greater than my max healing ability and I do NOT have a target then
+		return // I do a lil dance and
+	adjustHealth(-heal_per_life*maxHealth) //heal this much per life tick, negative is giving me health back. I guess you could make a mob bleed out by having it do positive adjust health?
+	visible_message(span_danger(replacetext(healing_message, "%NAME", name))) // almost, take a look at how the retreatcode's message is handled
+	playsound(get_turf(src), healing_sound, healing_volume, 1, ignore_walls = TRUE)
+	retreat_message_said = FALSE
+

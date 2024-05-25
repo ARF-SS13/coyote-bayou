@@ -240,23 +240,21 @@ There are several things that need to be remembered:
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_GLASSES]
 		inv.update_icon()
 
-	if(IsFeral())
-		return
-
 	if(glasses)
 		glasses.screen_loc = ui_glasses		//...draw the item in the inventory screen
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)			//if the inventory is open ...
 				client.screen += glasses				//Either way, add the item to the HUD
 		update_observer_view(glasses,1)
-		if(!(head && (head.flags_inv & HIDEEYES)) && !(wear_mask && (wear_mask.flags_inv & HIDEEYES)))
-			overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', override_state = glasses.icon_state)
-		var/mutable_appearance/glasses_overlay = overlays_standing[GLASSES_LAYER]
-		if(glasses_overlay)
-			if(OFFSET_GLASSES in dna.species.offset_features)
-				glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
-				glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
-			overlays_standing[GLASSES_LAYER] = glasses_overlay
+		if(!IsFeral())
+			if(!(head && (head.flags_inv & HIDEEYES)) && !(wear_mask && (wear_mask.flags_inv & HIDEEYES)))
+				overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', override_state = glasses.icon_state)
+			var/mutable_appearance/glasses_overlay = overlays_standing[GLASSES_LAYER]
+			if(glasses_overlay)
+				if(OFFSET_GLASSES in dna.species.offset_features)
+					glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
+					glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
+				overlays_standing[GLASSES_LAYER] = glasses_overlay
 	apply_overlay(GLASSES_LAYER)
 
 
@@ -705,8 +703,11 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	. += "[dna.features["color_scheme"]]"
 
 	var/is_feral = FALSE
+	var/alt_appearance
 	if(IsFeral())
 		is_feral = TRUE
+		if(client?.prefs?.alt_appearance in dna.species.alt_prefixes)
+			alt_appearance = dna.species.alt_prefixes[client?.prefs?.alt_appearance]
 
 	if(!IsFeral())
 		if(dna.check_mutation(HULK))
@@ -755,6 +756,8 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 
 	if(is_feral)
 		. += "-feral"
+		if(alt_appearance)
+			. += "-[alt_appearance]"
 
 	else if(HAS_TRAIT(src, TRAIT_HUSK))
 		. += "-husk"
@@ -841,11 +844,11 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	update_inv_wear_mask()
 
 //fortuna edit. for applying effects to players that enter water
-/mob/living/carbon/human/update_water()
-	if(QDESTROYING(src))
-		return
-	var/depth = check_submerged()
-	if(!depth)
-		return
-	if(lying)
-		return
+// /mob/living/carbon/human/update_water()
+// 	if(QDESTROYING(src))
+// 		return
+// 	var/depth = check_submerged()
+// 	if(!depth)
+// 		return
+// 	if(lying)
+// 		return

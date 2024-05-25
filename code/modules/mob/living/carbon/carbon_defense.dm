@@ -56,12 +56,40 @@
 		return
 	affecting.dismember(P.damtype)
 
+/// Returns a value between 0 and 1, of how many damaged parts they have, versus how many parts have some kind of bandage
+/// 1 means all injured limbs are bandaged or they dont have injured limbs, 0 means all wounds are unbandaged
+/mob/living/carbon/proc/injury_bandage_proportion()
+	var/injured_parts = 0
+	var/bandaged_parts = 0
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(LAZYLEN(BP.wounds))
+			injured_parts++
+		else if(BP.brute_dam || BP.burn_dam)
+			injured_parts++
+		if(BP.current_gauze || BP.current_suture)
+			bandaged_parts++
+	return injured_parts ? bandaged_parts / injured_parts : 1
+
+/// Picks one of our wounds and makes it bleed twice as fast for a short time!
+/mob/living/carbon/proc/aggravate_wound(scalar)
+	var/bleed_wounds = list()
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(LAZYLEN(BP.wounds))
+			bleed_wounds += BP
+	if(!LAZYLEN(bleed_wounds))
+		return
+	var/obj/item/bodypart/BP = pick(bleed_wounds)
+	if(!BP)
+		return
+	return BP.aggravate_wound(scalar)
 
 /mob/living/carbon/catch_item(obj/item/I, skip_throw_mode_check = FALSE)
 	. = ..()
 	if(!HAS_TRAIT(src, TRAIT_AUTO_CATCH_ITEM) && !skip_throw_mode_check && !in_throw_mode)
 		return
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 	if (get_active_held_item())
 		if (HAS_TRAIT(src, TRAIT_AUTO_CATCH_ITEM))
@@ -259,7 +287,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src,PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.

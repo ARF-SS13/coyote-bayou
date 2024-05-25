@@ -39,10 +39,10 @@
 	var/list/weapon_upgrades = list() //variable name(string) -> num
 
 /datum/component/item_upgrade/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ_NOHIT, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_examine)
-	RegisterSignal(parent, COMSIG_UPGRADE_REMOVE, .proc/uninstall)
-	RegisterSignal(parent, COMSIG_GET_UPGRADES, .proc/get_upgrades)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ_NOHIT,PROC_REF(attempt_install))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE,PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_UPGRADE_REMOVE,PROC_REF(uninstall))
+	RegisterSignal(parent, COMSIG_GET_UPGRADES,PROC_REF(get_upgrades))
 
 /datum/component/item_upgrade/proc/attempt_install(datum/source, atom/movable/target, mob/living/user)
 	return can_apply(target, user) && apply(target, user)
@@ -104,8 +104,8 @@
 	var/obj/item/I = parent
 	I.forceMove(A)
 	A.item_upgrades.Add(I)
-	RegisterSignal(A, COMSIG_UPGRADE_APPVAL, .proc/apply_values)
-	RegisterSignal(A, COMSIG_UPGRADE_ADDVAL, .proc/add_values)
+	RegisterSignal(A, COMSIG_UPGRADE_APPVAL,PROC_REF(apply_values))
+	RegisterSignal(A, COMSIG_UPGRADE_ADDVAL,PROC_REF(add_values))
 	A.AddComponent(/datum/component/upgrade_removal)
 	A.refresh_upgrades()
 	return TRUE
@@ -452,7 +452,7 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 
 /datum/component/upgrade_removal/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/attempt_uninstall)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY,PROC_REF(attempt_uninstall))
 
 /datum/component/upgrade_removal/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_PARENT_ATTACKBY)
@@ -470,7 +470,7 @@
 	if(upgrade_loc.item_upgrades.len && C.tool_behaviour == TOOL_SCREWDRIVER)
 		var/list/possibles = upgrade_loc.item_upgrades.Copy()
 		possibles += "Cancel"
-		var/obj/item/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
+		var/obj/item/item_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if(toremove == "Cancel")
 			return 1
 		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
@@ -486,15 +486,15 @@
 				return 1
 	return 0
 
-/obj/item/tool_upgrade
-	name = "tool upgrade"
-	icon = 'modular_coyote/eris/icons/tool_upgrades.dmi'
+/obj/item/item_upgrade
+	name = "upgrade"
+	icon = 'modular_coyote/eris/icons/mods.dmi'
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
 
 //Coyote Maint Tag 
 //All of our mods for weapons hdel, we don't know why. ~10/30/2023 ~Fenny
-/obj/item/tool_upgrade/Destroy()
+/obj/item/gun_upgrade/Destroy()
   . = ..()
   moveToNullspace()
   return QDEL_HINT_LETMELIVE

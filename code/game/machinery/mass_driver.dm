@@ -47,7 +47,7 @@
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -57,4 +57,4 @@
 	if(isliving(AM))
 		var/mob/living/L = AM
 		to_chat(L, span_warning("You feel something click beneath you!"))
-	addtimer(CALLBACK(src, .proc/drive), drive_delay)
+	addtimer(CALLBACK(src,PROC_REF(drive)), drive_delay)

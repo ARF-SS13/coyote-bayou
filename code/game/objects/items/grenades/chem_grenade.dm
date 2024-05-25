@@ -26,7 +26,7 @@
 	stage_change() // If no argument is set, it will change the stage to the current stage, useful for stock grenades that start READY.
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -161,7 +161,7 @@
 /obj/item/grenade/chem_grenade/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
 	if(nadeassembly)
-		INVOKE_ASYNC(nadeassembly, .proc/on_entered, AM)
+		INVOKE_ASYNC(nadeassembly,PROC_REF(on_entered), AM)
 
 /obj/item/grenade/chem_grenade/on_found(mob/finder)
 	if(nadeassembly)
@@ -318,7 +318,7 @@
 		message_admins("grenade primed by an assembly at [AREACOORD(DT)], attached by [ADMIN_LOOKUPFLW(M)] and last touched by [ADMIN_LOOKUPFLW(last)] ([nadeassembly.a_left.name] and [nadeassembly.a_right.name])</a>.")
 		log_game("grenade primed by an assembly at [AREACOORD(DT)], attached by [key_name(M)] and last touched by [key_name(last)] ([nadeassembly.a_left.name] and [nadeassembly.a_right.name])")
 	else
-		addtimer(CALLBACK(src, .proc/prime), det_time)
+		addtimer(CALLBACK(src,PROC_REF(prime)), det_time)
 	log_game("A grenade detonated at [AREACOORD(DT)]")
 	return TRUE
 

@@ -22,6 +22,9 @@
 	/// So you can have a holster only able to hold one gun, but plenty of ammo
 	var/list/quota
 
+	/// Flags that allow/disallow things in/out on a vague, ephemeral basis
+	var/override_flags = NONE
+
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
@@ -63,6 +66,7 @@
 	var/list/ui_item_blocks
 
 	var/current_maxscreensize
+	var/max_depth = STORAGE_VIEW_DEPTH
 
 	var/allow_big_nesting = FALSE					//allow storage objects of the same or greater size.
 
@@ -94,39 +98,39 @@
 	if(master)
 		change_master(master)
 
-	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE, .proc/on_check)
-	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED, .proc/check_locked)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW, .proc/signal_show_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT, .proc/signal_insertion_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT, .proc/signal_can_insert)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE, .proc/signal_take_type)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE, .proc/signal_fill_type)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE, .proc/set_locked)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE, .proc/signal_take_obj)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY, .proc/signal_quick_empty)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM, .proc/signal_hide_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL, .proc/close_all)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .proc/signal_return_inv)
+	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE,PROC_REF(on_check))
+	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED,PROC_REF(check_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW,PROC_REF(signal_show_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT,PROC_REF(signal_insertion_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT,PROC_REF(signal_can_insert))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE,PROC_REF(signal_take_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE,PROC_REF(signal_fill_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE,PROC_REF(set_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE,PROC_REF(signal_take_obj))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY,PROC_REF(signal_quick_empty))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM,PROC_REF(signal_hide_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL,PROC_REF(close_all))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY,PROC_REF(signal_return_inv))
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/attackby)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY,PROC_REF(attackby))
 
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/on_attack_hand)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW, .proc/on_attack_hand)
-	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, .proc/emp_act)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST, .proc/show_to_ghost)
-	RegisterSignal(parent, COMSIG_ATOM_ENTERED, .proc/refresh_mob_views)
-	RegisterSignal(parent, COMSIG_ATOM_EXITED, .proc/_remove_and_refresh)
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND,PROC_REF(on_attack_hand))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW,PROC_REF(on_attack_hand))
+	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT,PROC_REF(emp_act))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST,PROC_REF(show_to_ghost))
+	RegisterSignal(parent, COMSIG_ATOM_ENTERED,PROC_REF(refresh_mob_views))
+	RegisterSignal(parent, COMSIG_ATOM_EXITED,PROC_REF(_remove_and_refresh))
 
-	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, .proc/preattack_intercept)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/attack_self)
-	RegisterSignal(parent, COMSIG_ITEM_PICKUP, .proc/signal_on_pickup)
+	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK,PROC_REF(preattack_intercept))
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF,PROC_REF(attack_self))
+	RegisterSignal(parent, COMSIG_ITEM_PICKUP,PROC_REF(signal_on_pickup))
 
-	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, .proc/close_all)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/check_views)
+	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW,PROC_REF(close_all))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED,PROC_REF(check_views))
 
-	RegisterSignal(parent, COMSIG_CLICK_ALT, .proc/on_alt_click)
-	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, .proc/mousedrop_onto)
-	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, .proc/mousedrop_receive)
+	RegisterSignal(parent, COMSIG_CLICK_ALT,PROC_REF(on_alt_click))
+	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO,PROC_REF(mousedrop_onto))
+	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO,PROC_REF(mousedrop_receive))
 
 	update_actions()
 
@@ -153,7 +157,7 @@
 		return
 	var/obj/item/I = parent
 	modeswitch_action = new(I)
-	RegisterSignal(modeswitch_action, COMSIG_ACTION_TRIGGER, .proc/action_trigger)
+	RegisterSignal(modeswitch_action, COMSIG_ACTION_TRIGGER,PROC_REF(action_trigger))
 	if(I.obj_flags & IN_INVENTORY)
 		var/mob/M = I.loc
 		if(!istype(M))
@@ -223,7 +227,7 @@
 		return
 	var/my_bar = SSprogress_bars.add_bar(I.loc, list(), len, FALSE, FALSE)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, my_bar)))
+	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src,PROC_REF(handle_mass_pickup), things, I.loc, rejections, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 	to_chat(M, span_notice("You put everything you could [insert_preposition] [parent]."))
@@ -272,7 +276,7 @@
 
 /datum/component/storage/proc/quick_empty(mob/M)
 	var/atom/A = parent
-	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
+	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated(allow_crit = TRUE))
 		return
 	if(check_locked(null, M, TRUE))
 		return FALSE
@@ -281,7 +285,7 @@
 	var/turf/T = get_turf(A)
 	var/list/things = get_quickempty_list()
 	var/my_bar = SSprogress_bars.add_bar(T, list(), length(things), FALSE, FALSE)
-	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, .proc/mass_remove_from_storage, T, things, my_bar)))
+	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src,PROC_REF(mass_remove_from_storage), T, things, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 	A.do_squish(0.8, 1.2)
@@ -333,7 +337,7 @@
 
 /datum/component/storage/proc/check_views()
 	for(var/mob/M in can_see_contents())
-		if(!isobserver(M) && !M.can_reach(parent, STORAGE_VIEW_DEPTH))
+		if(!isobserver(M) && !M.can_reach(parent, max_depth))
 			close(M)
 
 /datum/component/storage/proc/emp_act(datum/source, severity)
@@ -480,7 +484,7 @@
 		var/obj/item/I = O
 		if(iscarbon(M) || isdrone(M))
 			var/mob/living/L = M
-			if(!L.incapacitated() && I == L.get_active_held_item())
+			if(!L.incapacitated(allow_crit = TRUE) && I == L.get_active_held_item())
 				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE))	//If it has storage it should be trying to dump, not insert.
 					handle_item_insertion(I, FALSE, L)
 					var/atom/A = parent
@@ -502,18 +506,19 @@
 			host.add_fingerprint(M)
 		return FALSE
 	if(!length(can_hold_extra) || !is_type_in_typecache(I, can_hold_extra))
-		if(length(can_hold) && !is_type_in_typecache(I, can_hold))
-			if(!stop_messages)
-				to_chat(M, span_warning("[host] cannot hold [I]!"))
-			return FALSE
-		if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Check for specific items which this container can't hold.
-			if(!stop_messages)
-				to_chat(M, span_warning("[host] cannot hold [I]!"))
-			return FALSE
-		if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS && I.w_class > max_w_class)
-			if(!stop_messages)
-				to_chat(M, span_warning("[I] is too long for [host]!"))
-			return FALSE
+		if(!check_overrides(I))
+			if(length(can_hold) && !is_type_in_typecache(I, can_hold))
+				if(!stop_messages)
+					to_chat(M, span_warning("[host] cannot hold [I]!"))
+				return FALSE
+			if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Check for specific items which this container can't hold.
+				if(!stop_messages)
+					to_chat(M, span_warning("[host] cannot hold [I]!"))
+				return FALSE
+			if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS && I.w_class > max_w_class)
+				if(!stop_messages)
+					to_chat(M, span_warning("[I] is too long for [host]!"))
+				return FALSE
 		// STORAGE LIMITS
 	if(storage_flags & STORAGE_LIMIT_MAX_ITEMS)
 		if(real_location.contents.len >= max_items)
@@ -559,7 +564,7 @@
 /// Has our quota been met?
 /datum/component/storage/proc/check_quota(obj/item/I)
 	if(!LAZYLEN(quota))
-		return
+		return // not enough dogs
 	var/atom/real_location = real_location()
 	var/list/tally = list()
 	for(var/i in quota)
@@ -722,7 +727,7 @@
 			playsound(A, "rustle", 50, 1, -5)
 		return TRUE
 
-	if(user.can_hold_items() && !user.incapacitated())
+	if(user.can_hold_items() && !user.incapacitated(allow_crit = TRUE))
 		var/obj/item/I = locate() in real_location()
 		if(!I)
 			return
@@ -756,3 +761,12 @@
  */
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
+
+/datum/component/storage/proc/check_overrides(obj/item/I)
+	if(!override_flags)
+		return
+	if(CHECK_BITFIELD(override_flags, ALLOW_ARTIFACT_STUFF))
+		if(istype(I, /obj/item/storage/box/artifactcontainer))
+			return TRUE
+		if(SEND_SIGNAL(I, COMSIG_ITEM_ARTIFACT_EXISTS))
+			return TRUE // cheesed to meet you

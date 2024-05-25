@@ -3,7 +3,7 @@
 	add_verb(src, /mob/living/verb/subtler)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -320,8 +320,17 @@
 		return FALSE
 	if(!(AM.can_be_pulled(src, state, force)))
 		return FALSE
-	if(throwing || incapacitated())
+	if(throwing)
 		return FALSE
+	if(incapacitated())
+		if(stat > SOFT_CRIT)
+			return FALSE
+		if(isliving(AM))
+			var/mob/living/L = AM
+			if(!L.faction_check_mob(src))
+				return FALSE // no dragging around enemies if you're in crit
+		else
+			return FALSE
 
 	AM.add_fingerprint(src)
 
@@ -476,7 +485,7 @@
 /mob/living/verb/lookup()
 	set name = "Look Up"
 	set category = "IC"
-	if(src.incapacitated())
+	if(src.incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't look up right now!"))
 	var/turf/T = SSmapping.get_turf_above(get_turf(src))
 	if(!istype(T, /turf/open/transparent/openspace))
@@ -485,20 +494,26 @@
 		return
 	else
 		src.reset_perspective(T)
-		RegisterSignal(src, COMSIG_MOB_CLIENT_CHANGE_VIEW, .proc/stop_looking_up) //no binos/scops
-		RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_KNOCKDOWN, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_PARALYZE, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_UNCONSCIOUS, .proc/stop_looking_up)
-		RegisterSignal(src, COMSIG_LIVING_STATUS_SLEEP, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_MOB_CLIENT_CHANGE_VIEW,PROC_REF(stop_looking_up)) //no binos/scops
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_KNOCKDOWN,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_PARALYZE,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_UNCONSCIOUS,PROC_REF(stop_looking_up))
+		RegisterSignal(src, COMSIG_LIVING_STATUS_SLEEP,PROC_REF(stop_looking_up))
 
 /mob/living/proc/stop_looking_up()
 	reset_perspective(null)
 	UnregisterSignal(src, list(COMSIG_LIVING_STATUS_PARALYZE, COMSIG_LIVING_STATUS_UNCONSCIOUS, COMSIG_LIVING_STATUS_SLEEP, COMSIG_LIVING_STATUS_KNOCKDOWN, COMSIG_MOVABLE_MOVED, COMSIG_MOB_CLIENT_CHANGE_VIEW))
 
 
-/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
-	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (combat_flags & COMBAT_FLAG_HARD_STAMCRIT) || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)))
+/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, allow_crit = FALSE)
+	if(stat)
+		if(allow_crit && stat <= SOFT_CRIT)
+			return FALSE
+		return TRUE
+	if(IsUnconscious() || IsStun() || IsParalyzed() || (combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
+		return TRUE
+	if(check_immobilized && IsImmobilized() || !ignore_restraints && restrained(ignore_grab))
 		return TRUE
 
 /mob/living/canUseStorage()
@@ -923,7 +938,7 @@
 	else
 		throw_alert("gravity", /atom/movable/screen/alert/weightless)
 	if(!override && !is_flying())
-		INVOKE_ASYNC(src, /atom/movable.proc/float, !has_gravity)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable,float), !has_gravity)
 
 /mob/living/float(on)
 	if(throwing)
@@ -1136,7 +1151,7 @@
 	return
 
 /mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
@@ -1221,6 +1236,10 @@
 			amount *= 0.25
 		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
 			amount *= 0.5
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_WEAK))
+			amount *= 1.5
+		else if(HAS_TRAIT(src, TRAIT_100_RAD_WEAK))
+			amount *= 2
 
 	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
@@ -1243,7 +1262,13 @@
 /mob/living/proc/fakefire()
 	return
 
-
+/// looks for an extinguisher in the user's inventory no matter where it is and returns it
+/mob/living/proc/GetExtinguisher()
+	var/list/everything = get_all_in_turf(src)
+	for(var/obj/item/I in everything)
+		if(istype(I, /obj/item/extinguisher))
+			if(I.reagents.has_reagent(/datum/reagent/water, 1))
+				return I
 
 //Mobs on Fire
 /mob/living/proc/IgniteMob()
@@ -1471,7 +1496,18 @@
 	if(isnull(.))
 		return
 	update_mobility()
+	if(new_stat == SOFT_CRIT)
+		enter_soft_crit()
+	else
+		leave_soft_crit()
 
+/mob/living/proc/enter_soft_crit()
+	throw_alert("cret", /atom/movable/screen/alert/in_crit)
+	in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
+
+/mob/living/proc/leave_soft_crit()
+	in_crit_HP_penalty = 0
+	clear_alert("cret")
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))
 	set category = "IC"
@@ -1480,7 +1516,7 @@
 
 
 /mob/living/proc/do_give(mob/living/target)
-	if(incapacitated() || !Adjacent(target))
+	if(incapacitated(allow_crit = TRUE) || !Adjacent(target))
 		return
 
 	if(INTERACTING_WITH(src, target))
@@ -1502,7 +1538,7 @@
 		to_chat(src, span_warning("[target] is too busy fighting!"))
 		return
 
-	if(target.incapacitated())
+	if(target.incapacitated(allow_crit = TRUE))
 		to_chat(src, span_warning("[target] is in no condition to handle items!"))
 		return
 
@@ -1516,7 +1552,7 @@
 	var/target_answer = alert(target, "[src] wants to give you \a [gift]. Will you accept it?", "An offer you can't refuse", "Accept", "Visibly reject", "Quietly ignore")
 	STOP_INTERACTING_WITH(src, target)
 
-	if(QDELING(src) || QDELETED(target) || QDELETED(gift) || incapacitated() || target.incapacitated() || !target.can_hold_items())
+	if(QDELING(src) || QDELETED(target) || QDELETED(gift) || incapacitated(allow_crit = TRUE) || target.incapacitated(allow_crit = TRUE) || !target.can_hold_items())
 		return
 
 	switch(target_answer)
@@ -1566,10 +1602,7 @@
 //Coyote Add
 /mob/living/proc/despawn()
 	SSwho.KillCustoms(ckey, "despawned")
-	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
-	for(var/i in contents)
-		var/atom/movable/content = i
-		dat += " [content.type]"
+	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
 	ghostize()
 	qdel(src)
@@ -1587,3 +1620,14 @@
 	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
 		. += ""
 		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+
+/mob/living/verb/handstand()
+	set category = "IC"
+	set name = "Perform Handstand "
+	set desc = "Button that turns your character upside down."
+
+	to_chat(src, span_notice("You try to perform a handstand."))
+	if(do_after(src, 1 SECONDS, target = src))
+		for(var/i in 1 to 180)  //I know this is awful
+			src.tilt_left()

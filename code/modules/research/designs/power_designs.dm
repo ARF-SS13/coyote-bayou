@@ -57,6 +57,28 @@
 	category = list("Misc","Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
+/datum/design/selfcharging_cell
+	name = "Charged Slime Core"
+	desc = "A power cell that holds 20 MJ of energy, and can self charge."
+	id = "selfcharge_cell"
+	build_type = PROTOLATHE | MECHFAB
+	materials = list(/datum/material/gold = 200,/datum/material/plasma = 300, /datum/material/bluespace = 500)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/high/slime
+	category = list("Misc","Power Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/hypercharging_cell
+	name = "Hypercharged Slime Core"
+	desc = "A power cell that holds 40 MJ of energy, and can self charge."
+	id = "hypercharge_cell"
+	build_type = PROTOLATHE | MECHFAB
+	materials = list(/datum/material/gold = 400, /datum/material/plasma = 600, /datum/material/bluespace = 1000)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/high/slime/hypercharged
+	category = list("Misc","Power Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
 /datum/design/inducer
 	name = "Inducer"
 	desc = "The NT-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."

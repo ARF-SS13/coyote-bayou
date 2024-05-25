@@ -47,7 +47,7 @@ Difficulty: Normal
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/hierophant_new.dmi'
-	faction = list("boss") //asteroid mobs? get that shit out of my beautiful square house
+	faction = list("hostile","boss", "raider", "china") //asteroid mobs? get that shit out of my beautiful square house
 	speak_emote = list("preaches")
 	melee_damage_lower = 15
 	melee_damage_upper = 20
@@ -161,10 +161,10 @@ Difficulty: Normal
 				if(ranged_cooldown <= world.time)
 					calculate_rage()
 					ranged_cooldown = world.time + max(5, ranged_cooldown_time - anger_modifier * 0.75)
-					INVOKE_ASYNC(src, .proc/burst, get_turf(src))
+					INVOKE_ASYNC(src,PROC_REF(burst), get_turf(src))
 				else
 					burst_range = 3
-					INVOKE_ASYNC(src, .proc/burst, get_turf(src), 0.25) //melee attacks on living mobs cause it to release a fast burst if on cooldown
+					INVOKE_ASYNC(src,PROC_REF(burst), get_turf(src), 0.25) //melee attacks on living mobs cause it to release a fast burst if on cooldown
 				if(L.stat == CONSCIOUS && L.health >= 30)
 					OpenFire()
 			return ..()
@@ -262,9 +262,9 @@ Difficulty: Normal
 					while(health && !QDELETED(my_target) && cross_counter)
 						cross_counter--
 						if(prob(60))
-							INVOKE_ASYNC(src, .proc/cardinal_blasts, my_target)
+							INVOKE_ASYNC(src,PROC_REF(cardinal_blasts), my_target)
 						else
-							INVOKE_ASYNC(src, .proc/diagonal_blasts, my_target)
+							INVOKE_ASYNC(src,PROC_REF(diagonal_blasts), my_target)
 						sleep(6 + target_slowness)
 					animate(src, color = oldcolor, time = 8)
 					addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
@@ -310,13 +310,13 @@ Difficulty: Normal
 
 	else if(prob(70 - anger_modifier)) //a cross blast of some type
 		if(prob(anger_modifier * (2 / target_slowness)) && health < maxHealth * 0.5) //we're super angry do it at all dirs
-			INVOKE_ASYNC(src, .proc/alldir_blasts, my_target)
+			INVOKE_ASYNC(src,PROC_REF(alldir_blasts), my_target)
 		else if(prob(60))
-			INVOKE_ASYNC(src, .proc/cardinal_blasts, my_target)
+			INVOKE_ASYNC(src,PROC_REF(cardinal_blasts), my_target)
 		else
-			INVOKE_ASYNC(src, .proc/diagonal_blasts, my_target)
+			INVOKE_ASYNC(src,PROC_REF(diagonal_blasts), my_target)
 	else //just release a burst of power
-		INVOKE_ASYNC(src, .proc/burst, get_turf(src))
+		INVOKE_ASYNC(src,PROC_REF(burst), get_turf(src))
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/diagonal_blasts(mob/victim) //fire diagonal cross blasts with a delay
 	var/turf/T = get_turf(victim)
@@ -327,7 +327,7 @@ Difficulty: Normal
 	sleep(2)
 	new /obj/effect/temp_visual/hierophant/blast(T, src, FALSE)
 	for(var/d in GLOB.diagonals)
-		INVOKE_ASYNC(src, .proc/blast_wall, T, d)
+		INVOKE_ASYNC(src,PROC_REF(blast_wall), T, d)
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/cardinal_blasts(mob/victim) //fire cardinal cross blasts with a delay
 	var/turf/T = get_turf(victim)
@@ -338,7 +338,7 @@ Difficulty: Normal
 	sleep(2)
 	new /obj/effect/temp_visual/hierophant/blast(T, src, FALSE)
 	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/blast_wall, T, d)
+		INVOKE_ASYNC(src,PROC_REF(blast_wall), T, d)
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/alldir_blasts(mob/victim) //fire alldir cross blasts with a delay
 	var/turf/T = get_turf(victim)
@@ -349,7 +349,7 @@ Difficulty: Normal
 	sleep(2)
 	new /obj/effect/temp_visual/hierophant/blast(T, src, FALSE)
 	for(var/d in GLOB.alldirs)
-		INVOKE_ASYNC(src, .proc/blast_wall, T, d)
+		INVOKE_ASYNC(src,PROC_REF(blast_wall), T, d)
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/blast_wall(turf/T, set_dir) //make a wall of blasts beam_range tiles long
 	var/range = beam_range
@@ -368,13 +368,13 @@ Difficulty: Normal
 		return
 	arena_cooldown = world.time + initial(arena_cooldown)
 	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/arena_squares, T, d)
+		INVOKE_ASYNC(src,PROC_REF(arena_squares), T, d)
 	for(var/t in RANGE_TURFS(11, T))
 		if(t && get_dist(t, T) == 11)
 			new /obj/effect/temp_visual/hierophant/wall(t, src)
 			new /obj/effect/temp_visual/hierophant/blast(t, src, FALSE)
 	if(get_dist(src, T) >= 11) //hey you're out of range I need to get closer to you!
-		INVOKE_ASYNC(src, .proc/blink, T)
+		INVOKE_ASYNC(src,PROC_REF(blink), T)
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/arena_squares(turf/T, set_dir) //make a fancy effect extending from the arena targette
 	var/turf/previousturf = T
@@ -531,7 +531,7 @@ Difficulty: Normal
 	friendly_fire_check = is_friendly_fire
 	if(new_speed)
 		speed = new_speed
-	addtimer(CALLBACK(src, .proc/seek_target), 1)
+	addtimer(CALLBACK(src,PROC_REF(seek_target)), 1)
 
 /obj/effect/temp_visual/hierophant/chaser/proc/get_target_dir()
 	. = get_cardinal_dir(src, targetturf)
@@ -619,10 +619,10 @@ Difficulty: Normal
 	if(ismineralturf(loc)) //drill mineral turfs
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled(caster)
-	INVOKE_ASYNC(src, .proc/blast)
+	INVOKE_ASYNC(src,PROC_REF(blast))
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -642,7 +642,7 @@ Difficulty: Normal
 /obj/effect/temp_visual/hierophant/blast/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
 	if(bursting)
-		INVOKE_ASYNC(src, .proc/do_damage, get_turf(src))
+		INVOKE_ASYNC(src,PROC_REF(do_damage), get_turf(src))
 
 /obj/effect/temp_visual/hierophant/blast/proc/do_damage(turf/T)
 	if(!damage)
@@ -698,7 +698,7 @@ Difficulty: Normal
 		if(H.beacon == src)
 			to_chat(user, span_notice("You start removing your hierophant beacon..."))
 			H.timer = world.time + 51
-			INVOKE_ASYNC(H, /obj/item/hierophant_club.proc/prepare_icon_update)
+			INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club,prepare_icon_update))
 			if(do_after(user, 50, target = src))
 				playsound(src,'sound/magic/blind.ogg', 200, 1, -4)
 				new /obj/effect/temp_visual/hierophant/telegraph/teleport(get_turf(src), user)
@@ -708,7 +708,7 @@ Difficulty: Normal
 				qdel(src)
 			else
 				H.timer = world.time
-				INVOKE_ASYNC(H, /obj/item/hierophant_club.proc/prepare_icon_update)
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club,prepare_icon_update))
 		else
 			to_chat(user, span_hierophant_warning("You touch the beacon with the club, but nothing happens."))
 	else

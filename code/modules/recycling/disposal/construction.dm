@@ -30,7 +30,7 @@
 
 	if(flip)
 		var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
-		INVOKE_ASYNC(CALLBACK(rotcomp, /datum/component/simple_rotation.proc/BaseRot, ROTATION_FLIP))
+		INVOKE_ASYNC(CALLBACK(rotcomp, TYPE_PROC_REF(/datum/component/simple_rotation,BaseRot), ROTATION_FLIP))
 
 	update_icon()
 
@@ -89,7 +89,7 @@
 
 /obj/structure/disposalconstruct/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_FLIP | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated), CALLBACK(src, .proc/after_rot))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_FLIP | ROTATION_VERBS ,null,CALLBACK(src,PROC_REF(can_be_rotated)), CALLBACK(src,PROC_REF(after_rot)))
 
 /obj/structure/disposalconstruct/proc/after_rot(mob/user,rotation_type)
 	if(rotation_type == ROTATION_FLIP)

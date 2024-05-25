@@ -57,7 +57,7 @@
 	qdel(src)
 
 /obj/item/bodybag/bluespace/container_resist(mob/living/user)
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		to_chat(user, span_warning("You can't get out while you're restrained like this!"))
 		return
 	to_chat(user, span_notice("You claw at the fabric of [src], trying to tear it open..."))

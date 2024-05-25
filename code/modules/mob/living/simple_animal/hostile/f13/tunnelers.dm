@@ -25,12 +25,14 @@
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	unsuitable_atmos_damage = 20
-	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("trog")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/generic/animal)
+	loot_drop_amount = 2
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/trog/sporecarrier
 	name = "spore carrier"
@@ -46,7 +48,7 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	unsuitable_atmos_damage = 0
 	faction = list("plants")
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1, /obj/effect/gibspawner/generic/animal)
 
 /mob/living/simple_animal/hostile/trog/tunneler
 	name = "tunneler"
@@ -55,12 +57,24 @@
 	icon_living = "tunneler"
 	icon_dead = "tunneler_dead"
 	robust_searching = TRUE
-	stat_attack = CONSCIOUS
 	health = 144
 	maxHealth = 144
 	speed = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 32
+	emote_taunt_sound = list('modular_citadel/sound/voice/scream_m.ogg', 'modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
+	emote_taunt = list(
+		"grunts",
+		"stares",
+		"twitches",
+		"groans",
+		"growls",
+		"laughs eerily",
+		"roars",
+		"screams",
+		"charges"
+		)
+	taunt_chance = 30
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -80,7 +94,8 @@
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
-	H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 3)
+	H.adjustStaminaLoss(3)
 
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone
@@ -101,6 +116,19 @@
 	obj_damage = 30
 	melee_damage_lower = 18
 	melee_damage_upper = 40
+	emote_taunt_sound = list('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg', 'modular_citadel/sound/voice/scream_f3.ogg')
+	emote_taunt = list(
+		"grunts",
+		"stares",
+		"twitches",
+		"groans",
+		"growls",
+		"laughs eerily",
+		"roars",
+		"screams",
+		"charges"
+		)
+	taunt_chance = 30
 	vision_range = 9
 	aggro_vision_range = 18
 	retreat_distance = 6
@@ -111,7 +139,6 @@
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/veryfar_noise.ogg'
 	unsuitable_atmos_damage = 20
-	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("tunneler")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
@@ -128,7 +155,6 @@
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
-	H.reagents.add_reagent(/datum/reagent/toxin, 3)
-	H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
-	H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
+	H.adjustStaminaLoss(5)
 

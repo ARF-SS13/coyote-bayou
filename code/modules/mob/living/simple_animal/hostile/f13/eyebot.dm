@@ -16,7 +16,7 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	move_to_delay = 3
+	move_to_delay = 4
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 40
@@ -55,12 +55,15 @@
 	vision_range = 7 //reduced from 13 to 7 because who needs that kind of shit in their life
 	aggro_vision_range = 7 //as above
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
+	projectiletype = /obj/item/projectile/beam/laser/pistol/wastebot
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	emote_taunt_sound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -72,6 +75,9 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A flying metal meatball with lasers."
+	variation_list = list(
+		MOB_SPEED_LIST(3.5, 4, 4.5),
+	)
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
@@ -98,7 +104,7 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = -1
+	speed = 2
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye
 	name = "floating eyebot"
@@ -177,7 +183,7 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = 1
+	speed = 2
 
 /mob/living/simple_animal/pet/dog/eyebot/playable/become_the_mob(mob/user)
 	send_mobs = null

@@ -64,7 +64,7 @@
 	. = ..()
 	if(output)
 		if(output.reagents.total_volume)
-			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "output")
+			var/mutable_appearance/filling_overlay = mutable_appearance(icon, "output", color = mix_color_from_reagents(output.reagents.reagent_list))
 
 			var/percent = round((output.reagents.total_volume / output.volume) * 100)
 			switch(percent)
@@ -87,7 +87,6 @@
 				if(100 to INFINITY)
 					filling_overlay.icon_state = "output-100"
 
-			filling_overlay.color = list(mix_color_from_reagents(output.reagents.reagent_list))
 			. += filling_overlay
 
 /obj/machinery/water_purifier/examine(mob/user)

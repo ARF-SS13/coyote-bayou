@@ -313,7 +313,7 @@
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -328,10 +328,10 @@
 	// If there was already mist, and the shower was turned off (or made cold): remove the existing mist in 25 sec
 	var/obj/effect/mist/mist = locate() in loc
 	if(!mist && on && watertemp != "freezing")
-		addtimer(CALLBACK(src, .proc/make_mist), 5 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(make_mist)), 5 SECONDS)
 
 	if(mist && (!on || watertemp == "freezing"))
-		addtimer(CALLBACK(src, .proc/clear_mist), 25 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(clear_mist)), 25 SECONDS)
 
 /obj/machinery/shower/proc/make_mist()
 	var/obj/effect/mist/mist = locate() in loc
@@ -355,7 +355,7 @@
 
 /obj/machinery/shower/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/handle_enter, AM)
+	INVOKE_ASYNC(src,PROC_REF(handle_enter), AM)
 
 /proc/wash_obj(obj/O)
 	if(isobj(O))
@@ -378,7 +378,7 @@
 				qdel(E)
 
 ///Washes a mob as if it were under a shower or rain. Shower object is optional
-proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
+/proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 	if(!isliving(L))
 		return FALSE
 	SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
@@ -830,3 +830,30 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 				playsound(loc, 'sound/weapons/tap.ogg', 50, 1)
 		if(BURN)
 			playsound(loc, 'sound/items/welder.ogg', 80, 1)
+
+/obj/structure/curtain/directional
+	color = "#363636"
+	alpha = 255
+	desc = "A curtain that you can only open from one side."
+
+/obj/structure/curtain/directional/north
+	dir = NORTH
+
+/obj/structure/curtain/directional/south
+	dir = SOUTH
+
+/obj/structure/curtain/directional/east
+	dir = EAST
+
+/obj/structure/curtain/directional/west
+	dir = WEST
+
+/obj/structure/curtain/directional/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
+			if(get_dir(src,user) != dir)
+				balloon_alert(user, "You can only open the [src] from \the [dir2text(dir)]! ")
+			else
+				playsound(loc, 'sound/effects/curtain.ogg', 50, 1)
+				toggle()

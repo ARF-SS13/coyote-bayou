@@ -160,6 +160,9 @@
 	hearers -= ignored_mobs
 
 	var/saycolor = src.get_chat_color()
+	var/targetsaycolor = null
+	if(!!target)
+		targetsaycolor = target.get_chat_color()
 
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
@@ -170,16 +173,14 @@
 		//the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
 			msg = blind_message
-		var/name = ""
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				name = "<b>[src]</b>"
+				msg = "<b>[src.name]</b> [msg]"
 			if(target.client.prefs.color_chat_log)
-				if(name)
-					name = span_color(name, saycolor)
-				msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-			if(name)
-				msg = name + " " + msg
+				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+				var/sanitizedtargetsaycolor = target.client.sanitize_chat_color(targetsaycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	//if(self_message)
 		//hearers -= src
@@ -201,22 +202,19 @@
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
 			M.create_chat_message(src, raw_message = msg, runechat_flags = visible_message_flags)
-		var/name = ""
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				name = "<b>[src]</b>"
+				msg = "<b>[src]</b> [msg]"
 			if(M.client.prefs.color_chat_log)
-				if(name)
-					name = span_color(name,saycolor)
-				else
-					msg = replacetext(msg, src.name, span_color(src.name, saycolor))
-				msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-			if(name)
-				msg = name + " " + msg
+				var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				if(!!target)
+					var/sanitizedtargetsaycolor = M.client.sanitize_chat_color(targetsaycolor)
+					msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
-mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
 	//if(self_message && target != src)
 		//show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
@@ -251,9 +249,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//if(self_message)
 		//hearers -= src
 //	var/raw_msg = message
-	var/name = ""
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
-		name = "<b>[src]</b>"
+		message = "<b>[src]</b> [message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
@@ -264,13 +261,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			continue
 		var/msg = M.can_hear() ? message : deaf_message
 		if(M.client?.prefs.color_chat_log)
-			if(name)
-				name = span_color(name,saycolor)
-			else
-				msg = replacetext(msg, src.name, span_color(src.name, saycolor))
-			msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-		if(name)
-			msg = name + " " + msg
+			var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
+			msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
 			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
@@ -318,7 +310,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 /mob/proc/restrained(ignore_grab)
 	return
 
-/mob/proc/incapacitated(ignore_restraints, ignore_grab)
+/mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, allow_crit = FALSE)
 	return
 
 //This proc is called whenever someone clicks an inventory ui slot.
@@ -419,8 +411,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time)
 			result = A.examine(src)
 			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
+			RegisterSignal(A, COMSIG_PARENT_QDELETING,PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src,PROC_REF(clear_from_recent_examines), A), EXAMINE_MORE_TIME)
 			handle_eye_contact(A)
 		else
 			result = A.examine_more(src)
@@ -462,13 +454,13 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(!istype(examined_carbon) || (!(examined_carbon.wear_mask && examined_carbon.wear_mask.flags_inv & HIDEFACE) && !(examined_carbon.head && examined_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = span_smallnotice("You make eye contact with [examined_mob].")
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	var/mob/living/carbon/us_as_carbon = src // i know >casting as subtype, but this isn't really an inheritable check
 	if(!istype(us_as_carbon) || (!(us_as_carbon.wear_mask && us_as_carbon.wear_mask.flags_inv & HIDEFACE) && !(us_as_carbon.head && us_as_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = span_smallnotice("[src] makes eye contact with you.")
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
 //same as above
 //note: ghosts can point, this is intended
@@ -527,7 +519,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(ismecha(loc))
 		return
 
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -611,10 +603,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	SEND_SIGNAL(new_mob, COMSIG_MOB_PRE_PLAYER_CHANGE, new_mob, src)
 	if (client)
 		if(client.prefs?.auto_ooc)
-			if (client.prefs.chat_toggles & CHAT_OOC && isliving(new_mob))
-				client.prefs.chat_toggles ^= CHAT_OOC
-			if (!(client.prefs.chat_toggles & CHAT_OOC) && isdead(new_mob))
-				client.prefs.chat_toggles ^= CHAT_OOC
+			client.prefs.chat_toggles |= CHAT_OOC
 	new_mob.ckey = ckey
 	if(send_signal)
 		SEND_SIGNAL(src, COMSIG_MOB_KEY_CHANGE, new_mob, src)
@@ -682,8 +671,13 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
-		var/dat = {"<img src='[PfpHostLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
+		var/followers_clinic_full_of_big_strong_gay_dogs_in_it = PfpHostLink(profilePicture)
+		var/dat = {"
+			<img src='[followers_clinic_full_of_big_strong_gay_dogs_in_it]' width='100%' height='100%' 'object-fit: scale-down;'>
+			<br>
+			[followers_clinic_full_of_big_strong_gay_dogs_in_it] <- Copy this link to your browser to view the full sized image.
+		"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,768)
 		popup.set_content(dat)
 		popup.open()
 
@@ -842,7 +836,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 //-->Pixel sliding on steroids
 /mob
-	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob
+	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob 
 	var/pixel_slide_target_has_help_int = FALSE  //we are going to store here the pixel sliding's target variable, specifically if they are in help intent
 	var/pixel_slide_memory_x    //memory of previous x position before moving
 	var/pixel_slide_memory_y    //memory of previous y position before moving
@@ -1353,7 +1347,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	\n\
 	- On the off chance that you DO find out someone is using your advance to stir pointless OOC drama please ahelp and let us know, don't assume we're aware. \n\
 	"
-
+/* 
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
 	set category = "IC"
@@ -1446,6 +1440,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Touch - Poke their breast.",
 	"Touch - Poke their tummy.",
 	"Touch - Poke their thigh.",
+	"Touch - Grab their hips.",
 	"Touch - Put a finger over their mouth.",
 	"React - Dare them to 'make you' do something.",
 	"Leer - Stare defiantly.",
@@ -1468,7 +1463,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
 	"Leer - Sneak a peak at their assets.",
-	"React - Want to tell them something."
+	"React - Want to tell them something.",
+	"Touch - Pull their tail."
 	)
 	choices = sortList(choices)
 
@@ -2003,8 +1999,18 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
-			return
+		if("Touch - Grab their hips.")
+			to_chat(A, span_notice("[src] is maybe reaching to <span class='love'>grab your hips?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
+		if("Touch - Pull their hair.")
+			to_chat(A, span_notice("[src] is reaching to <span class='love'>pull your tail?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to pull [A]'s tail, maybe they'll notice you trying to be frisky!")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+			return
+ */
 
 
 

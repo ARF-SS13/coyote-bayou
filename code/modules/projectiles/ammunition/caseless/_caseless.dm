@@ -28,8 +28,28 @@
 	icon_state = "needlecasing"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	caliber = CALIBER_NEEDLE
+	force = 2
+	throwforce = 1
+	embedding = list("embed_chance"= 25)
 	projectile_type = /obj/item/projectile/bullet/needle
-	var/reagent_amount = 15
+
+/obj/item/ammo_casing/caseless/needle/heavy
+	name = "A ruby needler round."
+	desc = "A heavy and long dart for use in needler heavy weaponary."
+	icon_state = "heavyneedlecase"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = CALIBER_HNEEDLE
+	projectile_type = /obj/item/projectile/bullet/heavyneedle
+
+/obj/item/ammo_casing/caseless/needle/improvised
+	name = "A jade needler round."
+	desc = "A dart for use in needler pistols."
+	icon_state = "needleimprovcase"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = CALIBER_NEEDLE
+	force = 2
+	throwforce = 1
+	projectile_type = /obj/item/projectile/bullet/needle/improvised
 
 /obj/item/ammo_casing/caseless/musketball
 	name = "Musketball"

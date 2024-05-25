@@ -16,6 +16,7 @@
 	name = "belly"							// Name of this location
 	desc = "It appears to be rather warm and wet. Makes sense, considering the fact it's a belly."	// Flavor text description of inside sight/sound/smells/feels.
 	rad_flags = RAD_NO_CONTAMINATE | RAD_PROTECT_CONTENTS
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/vore_sound = "Gulp"					// Sound when ingesting someone
 	var/vore_verb = "ingest"				// Verb for eating with this in messages
 	var/release_verb = "expels"				// Verb for releasing something from a stomach
@@ -249,18 +250,23 @@
 	SEND_SIGNAL(src, COMSIG_VORE_ADD_BELLY, loc)
 	heartbeat_loop = new(list(), FALSE)
 	squish_loop = new(list(), FALSE)
+	/// So one of the stipulations to having vore be so readily accessible and available to just about anyione
+	/// is that it should not give the player a mechanical advantage over someone who doesnt use it
+	/// Think about it, a potentially game-changing mechanic that is locked out for someone who doesnt like vore kinda sucks
+	/// So, yeah
+	ADD_TRAIT(src, TRAIT_ARTIFACT_BLOCKER, src)
 
 /obj/vore_belly/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_VORE_DEVOUR_ATOM, .proc/nom_mob)
-	RegisterSignal(src, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
-	RegisterSignal(src, COMSIG_VORE_AUTO_EMOTE, .proc/auto_emote)
-	RegisterSignal(src, COMSIG_VORE_ADD_BELLY, .proc/add_belly)
-	RegisterSignal(src, COMSIG_BELLY_EXPEL_SPECIFIC, .proc/release_specific_contents)
-	RegisterSignal(src, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
-	RegisterSignal(src, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
-	RegisterSignal(src, COMSIG_VORE_RECALCULATE_SLOWDOWN, .proc/update_slowdowns)
-	RegisterSignal(src, COMSIG_BELLY_HANDLE_TRASH, .proc/hork_trash)
+	RegisterSignal(src, COMSIG_VORE_DEVOUR_ATOM,PROC_REF(nom_mob))
+	RegisterSignal(src, COMSIG_VORE_STOP_SOUNDS,PROC_REF(stop_sounds))
+	RegisterSignal(src, COMSIG_VORE_AUTO_EMOTE,PROC_REF(auto_emote))
+	RegisterSignal(src, COMSIG_VORE_ADD_BELLY,PROC_REF(add_belly))
+	RegisterSignal(src, COMSIG_BELLY_EXPEL_SPECIFIC,PROC_REF(release_specific_contents))
+	RegisterSignal(src, COMSIG_VORE_EXPEL_MOB_OOC,PROC_REF(ooc_escape))
+	RegisterSignal(src, COMSIG_VORE_EXPEL_ALL,PROC_REF(release_all_contents))
+	RegisterSignal(src, COMSIG_VORE_RECALCULATE_SLOWDOWN,PROC_REF(update_slowdowns))
+	RegisterSignal(src, COMSIG_BELLY_HANDLE_TRASH,PROC_REF(hork_trash))
 
 /obj/vore_belly/Destroy()
 	// be kind, undefined
@@ -294,11 +300,11 @@
 	SIGNAL_HANDLER
 	owner = new_owner
 	START_PROCESSING(SSvore, src)
-	RegisterSignal(new_owner, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
-	RegisterSignal(new_owner, COMSIG_BELLY_EXPEL_SPECIFIC, .proc/release_specific_contents)
-	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
-	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
-	RegisterSignal(new_owner, COMSIG_MOB_APPLY_DAMAGE, .proc/pass_damage) // OUR APC IS UNDER ATTACK
+	RegisterSignal(new_owner, COMSIG_VORE_STOP_SOUNDS,PROC_REF(stop_sounds))
+	RegisterSignal(new_owner, COMSIG_BELLY_EXPEL_SPECIFIC,PROC_REF(release_specific_contents))
+	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB_OOC,PROC_REF(ooc_escape))
+	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL,PROC_REF(release_all_contents))
+	RegisterSignal(new_owner, COMSIG_MOB_APPLY_DAMAGE,PROC_REF(pass_damage)) // OUR APC IS UNDER ATTACK
 
 // Called whenever an atom enters this belly
 /obj/vore_belly/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
@@ -311,10 +317,10 @@
 			SEND_SIGNAL(src, COMSIG_BELLY_EXPEL_SPECIFIC, living_prey) // oops! out you go!
 			return
 		living_prey.become_blind("belly_[REF(src)]")
-		RegisterSignal(living_prey, COMSIG_MOB_DEATH, .proc/digestion_death)
-		RegisterSignal(living_prey, COMSIG_MOB_GHOSTIZE, .proc/stop_sounds_ghostize)
-		RegisterSignal(living_prey, COMSIG_LIVING_RESIST, .proc/relay_resist)
-		RegisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE, .proc/relay_resist)
+		RegisterSignal(living_prey, COMSIG_MOB_DEATH,PROC_REF(digestion_death))
+		RegisterSignal(living_prey, COMSIG_MOB_GHOSTIZE,PROC_REF(stop_sounds_ghostize))
+		RegisterSignal(living_prey, COMSIG_LIVING_RESIST,PROC_REF(relay_resist))
+		RegisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE,PROC_REF(relay_resist))
 		if(CHECK_PREFS(living_prey, VOREPREF_VORE_MESSAGES))
 			var/raw_desc //Let's use this to avoid needing to write the reformat code twice
 			if(absorbed_desc && SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE))
@@ -330,7 +336,7 @@
 				formatted_desc = replacetext(formatted_desc, "%prey", living_prey) //replace with whatever mob entered into this belly
 				to_chat(living_prey, span_notice("<B>[formatted_desc]</B>"), pref_check = VOREPREF_VORE_MESSAGES)
 
-	RegisterSignal(arrived, COMSIG_PARENT_PREQDELETED, .proc/trigger_slowdown_update)
+	RegisterSignal(arrived, COMSIG_PARENT_PREQDELETED,PROC_REF(trigger_slowdown_update))
 	//Generic entered message
 	SEND_SIGNAL(arrived, COMSIG_VORE_ATOM_DEVOURED, src, owner)
 	SEND_SIGNAL(arrived, COMSIG_VORE_UPDATE_PANEL)
@@ -362,7 +368,7 @@
 /// Having things in your belly really slows you down!
 /obj/vore_belly/proc/update_slowdowns()
 	item_slowdown = get_item_slowdown()
-	mob_slowdown = get_mob_slowdown()
+	// mob_slowdown = get_mob_slowdown()
 
 /obj/vore_belly/proc/trigger_slowdown_update()
 	SEND_SIGNAL(owner, COMSIG_VORE_RECALCULATE_SLOWDOWN)
@@ -582,10 +588,10 @@
 	for(var/obj/item/dink in contents)
 		SEND_SIGNAL(dink, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 	/// And if any mobs are inside, get their items too!
-	for(var/mob/living/dork in get_nested_mobs(FALSE))
-		for(var/obj/item/thingy in dork.contents)
-			SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
-			. |= thingy // and I mean *every* fuckin item
+	// for(var/mob/living/dork in get_nested_mobs(FALSE)) // or not!
+	// 	for(var/obj/item/thingy in dork.contents)
+	// 		SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
+	// 		. |= thingy // and I mean *every* fuckin item
 
 /// If allowed, spit up some trash
 /obj/vore_belly/proc/hork_trash(datum/source, obj/item/trashthing)
@@ -623,7 +629,7 @@
 	//	M.updateVRPanel()
 	// Setup the autotransfer checks if needed
 	if(!isnull(transferlocation) && autotransferchance > 0)
-		addtimer(CALLBACK(src, .proc/check_autotransfer, movable_prey), autotransferwait)
+		addtimer(CALLBACK(src,PROC_REF(check_autotransfer), movable_prey), autotransferwait)
 
 /obj/vore_belly/proc/check_autotransfer(atom/movable/movable_prey)
 	// Some sanity checks
@@ -634,7 +640,7 @@
 		return
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
 	// Didn't transfer, so wait before retrying
-	addtimer(CALLBACK(src, .proc/check_autotransfer, movable_prey), autotransferwait)
+	addtimer(CALLBACK(src,PROC_REF(check_autotransfer), movable_prey), autotransferwait)
 
 ///Transfers contents from one belly to another
 /obj/vore_belly/proc/transfer_contents(atom/movable/movable_prey, obj/vore_belly/target, silent = FALSE)
@@ -845,13 +851,13 @@
 
 	send_voremessage(living_prey, struggle_messages_outside, struggle_messages_inside)
 	if(!escapechance && owner.stat != CONSCIOUS)
-		INVOKE_ASYNC(src, .proc/attempt_escape, living_prey) //If owner is stat (dead, KO) we can actually escape
+		INVOKE_ASYNC(src,PROC_REF(attempt_escape), living_prey) //If owner is stat (dead, KO) we can actually escape
 		return
 
 	if(!escapable) //If the stomach has escapable enabled.
 		return
 	if(prob(escapechance)) //Let's have it check to see if the prey escapes first.
-		INVOKE_ASYNC(src, .proc/attempt_escape, living_prey)
+		INVOKE_ASYNC(src,PROC_REF(attempt_escape), living_prey)
 	if(prob(transferchance) && transferlocation) //Next, let's have it see if they end up getting into an even bigger mess then when they started.
 		var/list/assbellies = list()
 		SEND_SIGNAL(src, COMSIG_VORE_GET_BELLIES, assbellies, TRUE)

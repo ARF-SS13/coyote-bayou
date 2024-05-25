@@ -14,7 +14,7 @@
 
 /obj/item/reagent_containers/food/drinks/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/LapDrink)
+	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(LapDrink))
 
 
 /obj/item/reagent_containers/food/drinks/Destroy()
@@ -35,7 +35,8 @@
 	if(notifiedHint)
 		return
 	
-	to_chat(src, span_yellowteamradio("You're down, but not out! Rest up and get some sleep and you can fight back to your feet!"))
-	to_chat(src, span_tinynoticeital("You can regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
+	to_chat(src, span_yellowteamradio("You're down, but not out! Get yourself to safety and heal yourself up!"))
+	to_chat(src, span_yellowteamradio("You can heal yourself while in crit now!"))
+	to_chat(src, span_tinynoticeital("You can also regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
 
 	notifiedHint = TRUE

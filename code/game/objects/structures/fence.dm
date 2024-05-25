@@ -98,7 +98,7 @@
 				return TRUE
 		return FALSE
 
-		
+
 	if(istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/rods = W
 		switch(hole_size)
@@ -219,7 +219,7 @@
 	can_have_lock = TRUE
 	opening_time = 3
 	closing_time = 2
-	hard_open = 0	
+	hard_open = 0
 
 //Obsolete handrails, railing is better
 /obj/structure/fence/handrail_end
@@ -297,3 +297,238 @@
 	cuttable = FALSE
 	density = FALSE
 
+//Civ Fences
+
+/obj/structure/fence/wooden/civ
+	name = "Base"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "fence"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/woodenfence
+	name = "wooden fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "fence"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/woodenfence/damanged
+	name = "wooden fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "fence2"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/woodenfence/broken
+	name = "wooden fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "fence3"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/steelpicket
+	name = "steel picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "steel_picket"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/steelpicket/damanged
+	name = "steel picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "steel_picket2"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/steelpicket/broken
+	name = "steel picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "steel_picket3"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/picket
+	name = "picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "picket"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/picket/damaged
+	name = "picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "picket2"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/picket/broken
+	name = "picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "picket3"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/picket/white
+	name = "picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "white_fence"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/iron
+	name = "iron fence"
+	desc = "A fence fashioned out of iron probably. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "iron_fence"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/picket/white
+	name = "picket fence"
+	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "white_fence"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/goalpost
+	name = "goalpost"
+	desc = "Where's the ball?"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "goalpost"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/goalpost/mesh
+	name = "goalpost"
+	desc = "Where's the ball?"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "goalpost_i"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/wooden/civ/goalpost/end
+	name = "goalpost"
+	desc = "Where's the ball?"
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "goalpostX"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence1"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/corner
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence_corner1"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/blue
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence2"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/blue/corner
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence_corner2"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/red
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence3"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/red/corner
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence_corner3"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/green
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence4"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/corner/green
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence_corner4"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/yellow
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence5"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80
+
+/obj/structure/fence/civ/metalfence/corner/yellow
+	name = "metal fence"
+	desc = "A fence that looks like it's made from an old storage container."
+	icon = 'modular_coyote/icons/objects/structures/civ_fence.dmi'
+	icon_state = "metal_fence_corner5"
+	cuttable = FALSE
+	climbable = TRUE
+	proj_pass_rate = 80

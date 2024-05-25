@@ -1,7 +1,7 @@
 // Used for translating channels to tokens on examination
 GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_COMMON = RADIO_KEY_COMMON,
-	RADIO_CHANNEL_SCIENCE = RADIO_TOKEN_SCIENCE,
+	RADIO_CHANNEL_RECLAIMER = RADIO_TOKEN_RECLAIMER,
 	RADIO_CHANNEL_COMMAND = RADIO_TOKEN_COMMAND,
 	RADIO_CHANNEL_MEDICAL = RADIO_TOKEN_MEDICAL,
 	RADIO_CHANNEL_ENGINEERING = RADIO_TOKEN_ENGINEERING,
@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_VAULT = RADIO_TOKEN_VAULT,
 	RADIO_CHANNEL_BIKER = RADIO_TOKEN_BIKER,
 	RADIO_CHANNEL_NCR = RADIO_TOKEN_NCR,
-	RADIO_CHANNEL_ASHDOWN = RADIO_TOKEN_ASHDOWN,
+	RADIO_CHANNEL_GUILD = RADIO_TOKEN_GUILD,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
 	RADIO_CHANNEL_TOWN_MAYOR = RADIO_TOKEN_TOWN_MAYOR,
@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_med
 
 /obj/item/radio/headset/headset_sci
-	name = "science radio headset"
+	name = "reclaimer radio headset"
 	desc = "A sciency headset. Like usual."
 	icon_state = "sci_headset"
 	item_state = "headset_alt"
@@ -407,12 +407,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
 
-/obj/item/radio/headset/headset_ashdown
-	name = "ashdown radio headset"
-	desc = "This is used by the residents of Ashdown.\nTo access the Ashdown channel, use :d as in ashDown."
+/obj/item/radio/headset/headset_town/guild
+	name = "guild radio headset"
+	desc = "This is used by the residents of the new boston guild.\nTo access the guild channel, use :g as in guild or f to talk in new boston channel."
 	icon_state = "mine_headset" 
 	item_state = "headset_alt"
-	keyslot = new /obj/item/encryptionkey/headset_ashdown
+	keyslot = new /obj/item/encryptionkey/headset_town/guild
 
 /obj/item/radio/headset/headset_biker
 	name = "Hell's Nomads radio headset"
@@ -422,14 +422,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_biker
 
 /obj/item/radio/headset/headset_town
-	name = "Nash radio headset"
+	name = "New Boston radio headset"
 	desc = "This is used by the town of Nash.\
 		\nTo access the Nash channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_town/lawman
-	name = "Nash sheriff radio headset"
+	name = "New Boston sheriff radio headset"
 	desc = "This is used by Nash's local sheriff force. Protects ears from flashbangs.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash sheriff channel, use :l."
@@ -439,14 +439,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_town/lawman
 
 /obj/item/radio/headset/headset_town/commerce
-	name = "Nash commerce radio headset"
+	name = "New Boston commerce radio headset"
 	desc = "This is used by Nash's small business owners.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash commerce channel, use :j."
 	keyslot = new /obj/item/encryptionkey/headset_town/commerce
 
 /obj/item/radio/headset/headset_town/mayor
-	name = "Nash mayoral radio headset"
+	name = "New Boston mayoral radio headset"
 	desc = "This is used by Nash's mayor (and secretary). Protects ears from flashbangs.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash mayor channel, use :y.\
@@ -458,7 +458,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_town/mayor
 
 /obj/item/radio/headset/headset_town/medical
-	name = "Nash medical radio headset"
+	name = "New Boston medical radio headset"
 	desc = "This is used by Nash's medical folk.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the medical channel, use :m"
@@ -582,7 +582,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/AltClick(mob/living/user)
 	. = ..()
-	if(!istype(user) || !Adjacent(user) || user.incapacitated())
+	if(!istype(user) || !Adjacent(user) || user.incapacitated(allow_crit = TRUE))
 		return
 	if (command)
 		use_command = !use_command

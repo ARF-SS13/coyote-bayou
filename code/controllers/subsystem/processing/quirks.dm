@@ -45,7 +45,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 	/// Will give us a list of all quirks, sorted by point value, then name
 	/// Will solve a lot of sorting issues later, i swear
-	var/list/quirk_list = sortList(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
+	var/list/quirk_list = sortList(subtypesof(/datum/quirk), GLOBAL_PROC_REF(cmp_quirk_asc))
 
 	for(var/V in quirk_list)
 		var/datum/quirk/T = new V(src) // They'll be fiiiiiine
@@ -132,7 +132,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/ui_close(mob/user)
 	. = ..()
 	SaveUserPreferences(user)
-	//INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
+	//INVOKE_ASYNC(src,PROC_REF(UpdateTheWretchedPrefMenu), user)
 
 /datum/controller/subsystem/processing/quirks/ui_static_data(mob/user)
 	var/list/data = list()
@@ -204,7 +204,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			. = TRUE
 		if("ClearQuirks") // Nuke the quirks! (gotta nuke something)
 			. = TRUE
-			INVOKE_ASYNC(src, .proc/ConfirmClear, user)
+			INVOKE_ASYNC(src,PROC_REF(ConfirmClear), user)
 
 /// returns a list of ckey'd quirk names
 /datum/controller/subsystem/processing/quirks/proc/QuirkList2TGUI(mob/user)
@@ -426,7 +426,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		to_prune[Q2] = Q2.value
 		num_good_quirks++
 	// Now, lets sort the list by value, descending
-	to_prune = sortList(to_prune, /proc/cmp_quirk_asc) // only got the asc, so just flip it
+	to_prune = sortList(to_prune, GLOBAL_PROC_REF(cmp_quirk_asc)) // only got the asc, so just flip it
 	to_prune = reverseList(to_prune)
 	for(var/datum/quirk/Q3 in to_prune)
 		RemoveQuirkFromPrefs(P, Q3)
@@ -550,17 +550,17 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		P.save_character()
 
 /// Adds a quirk to a mob
-/datum/controller/subsystem/processing/quirks/proc/AddQuirkToMob(mob/user, Qany, spawn_effects)
+/datum/controller/subsystem/processing/quirks/proc/AddQuirkToMob(mob/user, Qany, spawn_effects, words = TRUE)
 	if(!user || !Qany)
 		return
 	var/datum/quirk/T = GetQuirk(Qany)
 	if(!T)
 		return
-	new T.type(user, spawn_effects)
+	new T.type(user, spawn_effects, words)
 	return TRUE
 
 /// Removes a quirk from a mob
-/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromMob(mob/user, Qany, cus_antag)
+/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromMob(mob/user, Qany, cus_antag, words = TRUE)
 	if(!user || !Qany)
 		return
 	var/datum/quirk/U = HasQuirk(user, Qany)
@@ -568,6 +568,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		return // no deleting *our* quirks
 	if(cus_antag)
 		U.removed_cus_antag(user)
+	U.preremove(words)
 	qdel(U)
 	return TRUE
 
@@ -655,7 +656,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			failures += quirkname
 			continue
 		quirkthing += Q.type
-	quirkthing = sortList(quirkthing, /proc/cmp_quirk_asc)
+	quirkthing = sortList(quirkthing, GLOBAL_PROC_REF(cmp_quirk_asc))
 	quirkthing = reverseList(quirkthing) // yeah i dont wanna make another cmp
 	/// remove all this current quirks
 	P.char_quirks = list()

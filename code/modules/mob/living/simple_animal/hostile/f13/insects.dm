@@ -62,6 +62,9 @@
 	blood_volume = 0
 	decompose = FALSE
 	tastes = list("dirt" = 1, "sand" = 1, "metal?" = 1)
+	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -108,6 +111,13 @@
 	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
+	extra_projectiles = 3
+	ranged = TRUE
+	projectiletype = /obj/item/projectile/magic/kelpmagic/magmaspray/weak
+	projectilesound = 'sound/weapons/fire03.ogg'
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
 	. = ..()
@@ -115,7 +125,7 @@
 /mob/living/simple_animal/hostile/fireant/Aggro()
 	..()
 	summon_backup(10)
-
+/*
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
 	var/atom/my_target = get_target()
@@ -123,7 +133,7 @@
 		return
 	var/mob/living/carbon/human/H = my_target
 	H.reagents.add_reagent(/datum/reagent/hellwater, 1)
-
+*/
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
 	name = "giant ant queen"
@@ -138,7 +148,7 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
 	butcher_difficulty = 1.5
-	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
+	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10, /obj/effect/gibspawner/larva)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -168,13 +178,16 @@
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
 	var/spawn_time = 30 SECONDS
-	var/spawn_text = "hatches from"
+	//var/spawn_text = "hatches from"
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 5
+	loot_amount_random = TRUE
 
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
 	RemoveComponentByType(/datum/component/spawner)
@@ -247,6 +260,9 @@
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	emote_taunt = list("snips")
 
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
@@ -301,7 +317,7 @@
 	speed = 1.35
 	maxHealth = 110
 	health = 110
-	move_to_delay = 4
+	move_to_delay = 2
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /////////////
@@ -344,7 +360,6 @@
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
-	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = 1
@@ -364,6 +379,9 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/cazador/AttackingTarget()
 	. = ..()
@@ -467,7 +485,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
-				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, 
+				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -504,6 +522,9 @@
 	)
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/bloatfly/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -520,22 +541,24 @@
 	. = ..()
 
 //////////////
-// RADROACH //
+// Pillbug //
 //////////////
 
-/mob/living/simple_animal/hostile/radroach
-	name = "radroach"
+/mob/living/simple_animal/hostile/pillbug
+	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
-	icon = 'icons/fallout/mobs/animals/insects.dmi'
-	icon_state = "radroach"
-	icon_living = "radroach"
-	icon_dead = "radroach_dead"
+	icon = 'modular_coyote/icons/mob/pillbug.dmi'
+	icon_state = "pillbug"
+	icon_living = "pillbug"
+	icon_dead = "pillbug_dead"
 	icon_gib = "radroach_gib"
 	can_ghost_into = TRUE
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1
-
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot_drop_amount = 1
+	loot_amount_random = TRUE
 	speed = 1
 	maxHealth = 20
 	health = 20
@@ -565,11 +588,11 @@
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
-		MOB_HEALTH_LIST(10, 30, 1),
+		MOB_HEALTH_LIST(10, 20, 1),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-		MOB_MINIMUM_DISTANCE_LIST(0, 1, 1),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2, 3), //teehee ~TK <3
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
 
 	emote_taunt_sound = list('sound/creatures/radroach_chitter.ogg',)
@@ -577,21 +600,138 @@
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	desc_short = "One of countless bugs that move in gross hordes."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	retreat_health_percent = 0.99
+	max_heal_amount = 0.9
+	heal_per_life = 0.115 // just about!
+	tactical_retreat = 9
+	actual_retreat_message = "The %NAME skitters away from %TARGET like a lunatic!"
+	healing_message = "The %NAME bandages itself!" // ye, oh easily, thats why I love procs~
 
-/mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 //Variants for Radroachers
 
-/mob/living/simple_animal/hostile/radroach/raddyroach
+/mob/living/simple_animal/hostile/pillbug/micro
+	name = "Micro Pillbug"
+	maxHealth = 20
+	health = 20
+	melee_damage_lower = 2
+	melee_damage_upper = 6
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(10, 13, 15),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/pillbug/micro/Initialize()
+	.=..()
+	resize = 0.75
+	update_transform()
+
+/mob/living/simple_animal/hostile/pillbug/micro/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+/mob/living/simple_animal/hostile/pillbug/strongradroach
 	maxHealth = 140
 	health = 140
-	melee_damage_lower = 8
-	melee_damage_upper = 12
+	name = "Macro Pillbug"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	variation_list = list(
+		MOB_COLOR_VARIATION(80, 80, 80, 125, 125, 125), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(15, 20, 22),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/strongradroach
-	maxHealth = 60
-	health = 60
-	melee_damage_lower = 6
-	melee_damage_upper = 8
+/mob/living/simple_animal/hostile/pillbug/strongradroach/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+/mob/living/simple_animal/hostile/pillbug/leader
+	name = "Pillbug Leader"
+	maxHealth = 40
+	health = 40
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	retreat_distance = 9
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 9
+	ranged = TRUE
+	can_glow_revive = FALSE
+	variation_list = list(
+		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(4, 4.2, 4.3),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(70, 75, 80),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+	) //same as a newt for how they attack
+
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize()
+	.=..()
+	resize = 3.0
+	update_transform()
+
+/mob/living/simple_animal/hostile/pillbug/leader/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+/obj/item/projectile/pillbugsummon
+	name = "pillbug summoning"
+	icon_state = "spark"
+	range = 10
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage = 0
+	stamina = 20
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_BASE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+	..()
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/pillbug/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	//		break
+	return BULLET_ACT_HIT
+
+/mob/living/simple_animal/hostile/pillbug/summon //untameable
+	faction = list("gecko")
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	del_on_death = TRUE
+
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/pillbug, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
+

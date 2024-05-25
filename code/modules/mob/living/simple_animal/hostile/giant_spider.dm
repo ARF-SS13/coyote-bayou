@@ -6,7 +6,7 @@
 
 /mob/living/simple_animal/hostile/poison
 	var/poison_per_bite = 5
-	var/poison_type = /datum/reagent/toxin
+	var/poison_type = /datum/reagent/toxin/rattler_venom
 
 /mob/living/simple_animal/hostile/poison/AttackingTarget()
 	. = ..()
@@ -101,6 +101,59 @@
 	user.transfer_ckey(src, FALSE)
 	return TRUE
 
+// SOJOURN SPIDERS
+
+//Emperor - Fast, deadly, and uses clotting medicine as venom
+/mob/living/simple_animal/hostile/poison/giant_spider/emperor
+	name = "emperor spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is huge with long legs with hard chitin plates and glowing nightmarish eyes filled with malign hatred."
+	icon = 'modular_sojourn/icons/mob/spiders/emperor.dmi'
+	icon_state = "spider_emperor"
+	icon_living = "spider_emperor"
+	icon_dead = "spider_emperor-dead"
+	maxHealth = 450
+	health = 450
+	vision_range = 9
+	move_to_delay = 4
+	turns_per_move = 7
+	poison_per_bite = 7
+	melee_damage_lower = 30 //might need tweaking, should be fine for now.
+	melee_damage_upper = 60
+
+//Empress - Large, Durable, and horrifying. Fight in a group!
+/mob/living/simple_animal/hostile/poison/giant_spider/empress
+	name = "reaper spider"
+	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
+	icon = 'modular_sojourn/icons/mob/spiders/empress.dmi'
+	icon_state = "terror_empress"
+	icon_living = "terror_empress"
+	icon_dead = "terror_empress-dead"
+	maxHealth = 750
+	health = 750
+	move_to_delay = 5
+	turns_per_move = 2
+	poison_per_bite = 15
+	melee_damage_lower = 50
+	melee_damage_upper = 80
+
+//Queen - The spooky broodmother. Fear them!
+/mob/living/simple_animal/hostile/poison/giant_spider/queen
+	name = "queen spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
+	icon = 'modular_sojourn/icons/mob/spiders/queen.dmi'
+	icon_state = "spider_queen"
+	icon_living = "spider_queen"
+	icon_dead = "spider_queen-dead"
+	maxHealth = 550
+	health = 550
+	move_to_delay = 4.5
+	turns_per_move = 7
+	poison_per_bite = 7
+	melee_damage_lower = 40 //meant to be slightly stronger than emperor due to the beefier size.
+	melee_damage_upper = 70
+
+// END OF SOJOURN SPIDERS
+
 //nursemaids - these create webs and eggs
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
@@ -162,7 +215,7 @@
 	melee_damage_upper = 1
 	poison_per_bite = 12
 	move_to_delay = 4
-	poison_type = /datum/reagent/toxin/venom //all in venom, glass cannon. you bite 5 times and they are DEFINITELY dead, but 40 health and you are extremely obvious. Ambush, maybe?
+	poison_type = /datum/reagent/toxin/rattler_venom //all in venom, glass cannon. you bite 5 times and they are DEFINITELY dead, but 40 health and you are extremely obvious. Ambush, maybe?
 	speed = 1
 	gold_core_spawnable = NO_SPAWN
 
@@ -390,7 +443,6 @@
 	name = "Wrap"
 	panel = "Spider"
 	active = FALSE
-	datum/action/spell_action/action = null
 	desc = "Wrap something or someone in a cocoon. If it's a living being, you'll also consume them, allowing you to lay eggs."
 	ranged_mousepointer = 'icons/effects/wrap_target.dmi'
 	action_icon = 'icons/mob/actions/actions_animal.dmi'
@@ -435,7 +487,7 @@
 		if(target_atom.anchored)
 			return
 		user.cocoon_target = target_atom
-		INVOKE_ASYNC(user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse/.proc/cocoon)
+		INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living/simple_animal/hostile/poison/giant_spider/nurse/,cocoon))
 		remove_ranged_ability()
 		return TRUE
 

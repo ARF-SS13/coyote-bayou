@@ -221,7 +221,7 @@
 /obj/effect/hotspot/proc/on_entered(atom/movable/AM, oldLoc)
 	SIGNAL_HANDLER
 	if(isliving(AM))
-		INVOKE_ASYNC(AM, /atom/.proc/fire_act, temperature, volume)
+		INVOKE_ASYNC(AM, TYPE_PROC_REF(/atom/,fire_act), temperature, volume)
 
 /obj/effect/hotspot/singularity_pull()
 	return

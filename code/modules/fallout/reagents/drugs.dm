@@ -97,8 +97,8 @@
 	description = "A chemical compound that, when inhaled, vastly increases the user's reflexes and slows their perception of time. Carries a risk of addiction and extreme nausea and toxin damage if overdosed."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
-	overdose_threshold = 14
-	addiction_threshold = 9
+	overdose_threshold = 15
+	addiction_threshold = 10
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
@@ -387,7 +387,7 @@
 	color = "#E0D532"
 	reagent_state = LIQUID
 	overdose_threshold = 20
-	addiction_threshold = 9 //Addicted on the first dose
+	addiction_threshold = 11 //no more addicting on a single use
 	metabolization_rate = 0.8 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 

@@ -95,8 +95,8 @@
  * Hand-tele
  */
 /obj/item/hand_tele
-	name = "hand tele"
-	desc = "A portable item using blue-space technology."
+	name = "Hand Teleporter"
+	desc = "A portable hand 'teleporter' that actually works by observing your quantum superposition in relevance to your portal storm state. IN NERD TERMS USE THIS TO TELEPORT PLACES."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hand_tele"
 	item_state = "electronic"
@@ -110,7 +110,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/list/active_portal_pairs
-	var/max_portal_pairs = 3
+	var/max_portal_pairs = 1 // was three
 	var/atmos_link_override
 
 /obj/item/hand_tele/Initialize()
@@ -140,7 +140,7 @@
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
 	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
 		return
 	var/list/L = list(  )
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
@@ -152,7 +152,7 @@
 				L["[get_area(com.target)] (Active)"] = com.target
 			else
 				L["[get_area(com.target)] (Inactive)"] = com.target
-	var/list/turfs = list(	)
+/*	var/list/turfs = list(	)
 	for(var/turf/T in urange(10, orange=1))
 		if(T.x>world.maxx-8 || T.x<8)
 			continue	//putting them at the edge is dumb
@@ -163,9 +163,9 @@
 			continue
 		turfs += T
 	if(turfs.len)
-		L["None (Dangerous)"] = pick(turfs)
+		L["None (Dangerous)"] = pick(turfs) */
 	var/t1 = input(user, "Please select a teleporter to lock in on.", "Hand Teleporter") as null|anything in L
-	if (!t1 || user.get_active_held_item() != src || user.incapacitated())
+	if (!t1 || user.get_active_held_item() != src || user.incapacitated(allow_crit = TRUE))
 		return
 	if(active_portal_pairs.len >= max_portal_pairs)
 		user.show_message(span_notice("\The [src] is recharging!"))
@@ -173,19 +173,19 @@
 	var/atom/T = L[t1]
 	var/area/A = get_area(T)
 	if(A.noteleport)
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
 	if(!current_location || current_area.noteleport || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		to_chat(user, span_notice("\The [src] is malfunctioning. Perhaps the signal is easily scattered by terrain or altitude?"))
 		return
 	user.show_message(span_notice("Locked In."), MSG_AUDIBLE)
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(get_turf(T)), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return
-	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy) //Gosh darn it kevinz.
-	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
+	RegisterSignal(created[1], COMSIG_PARENT_QDELETING,PROC_REF(on_portal_destroy)) //Gosh darn it kevinz.
+	RegisterSignal(created[2], COMSIG_PARENT_QDELETING,PROC_REF(on_portal_destroy))
 	try_move_adjacent(created[1], user.dir)
 	active_portal_pairs[created[1]] = created[2]
 	var/obj/effect/portal/c1 = created[1]

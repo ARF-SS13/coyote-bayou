@@ -102,8 +102,8 @@ SUBSYSTEM_DEF(traumas)
 
 		"the supernatural"   = typecacheof(list(
 			/mob/living/simple_animal/hostile/construct,
-			/mob/living/simple_animal/hostile/clockwork,
-			/mob/living/simple_animal/drone/cogscarab,
+//			/mob/living/simple_animal/hostile/clockwork,
+//			/mob/living/simple_animal/drone/cogscarab,
 			/mob/living/simple_animal/revenant,
 			/mob/living/simple_animal/shade)
 			),
@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/simple_animal/pet/penguin,
 			/mob/living/simple_animal/bird)
 			),
-		
+
 		"dogs" = typecacheof(list(
 			/mob/living/simple_animal/pet/dog,
 			/mob/living/simple_animal/hostile/stickman/dog,
@@ -296,13 +296,13 @@ SUBSYSTEM_DEF(traumas)
 						/obj/machinery/door/airlock/cult,
 						/obj/singularity/narsie,
 						/obj/item/soulstone,
-						/obj/structure/destructible/clockwork,
+/*						/obj/structure/destructible/clockwork,
 						/obj/item/clockwork,
 						/obj/item/clothing/suit/armor/clockwork,
 						/obj/item/clothing/glasses/judicial_visor,
 						/obj/effect/clockwork/sigil/,
 						/obj/item/stack/tile/brass,
-						/obj/machinery/door/airlock/clockwork,
+						/obj/machinery/door/airlock/clockwork,*/
 						/obj/item/clothing/suit/wizrobe,
 						/obj/item/clothing/head/wizard,
 						/obj/item/spellbook,
@@ -407,8 +407,8 @@ SUBSYSTEM_DEF(traumas)
 						),
 
 					"the supernatural" = typecacheof(list(
-						/turf/open/floor/clockwork,
-						/turf/closed/wall/clockwork,
+//						/turf/open/floor/clockwork,
+//						/turf/closed/wall/clockwork,
 						/turf/open/floor/plasteel/cult,
 						/turf/closed/wall/mineral/cult)),
 
@@ -446,7 +446,7 @@ SUBSYSTEM_DEF(traumas)
 							),
 
 						"the supernatural" = typecacheof(list(
-							/datum/species/golem/clockwork,
+//							/datum/species/golem/clockwork,
 							/datum/species/golem/runic)
 							),
 

@@ -74,6 +74,15 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
 	enhancement = 1 //They're +1!
 
+/obj/item/clothing/gloves/fingerless/pugilist/gravity
+	name = "gravity gauntlet"
+	desc = "A magical glove that grants the wearer the ability to grab distant objects, use with *magegrab!"
+	icon_state = "s_ninjan"
+	item_state = "s_ninjan"
+	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
+	enhancement = 0 //Not for damage, a utility item
+	secondary_trait = TRAIT_MAGEGRAB //Should give you the magegrab quirk, not telekinesis
+
 /obj/item/clothing/gloves/fingerless/pugilist/hungryghost
 	name = "armwraps of the hungry ghost"
 	desc = "A series of blackened, bloodstained armwraps stitched with strange geometric symbols. Makes you pretty keen to commit horrible acts against the living through bloody carnage."
@@ -258,4 +267,62 @@
 	desc = "A pair of long, white gloves with fingerlips tips.."
 	icon_state = "long_fingerless"
 	item_state = "long_fingerless"
+
+/obj/item/clothing/gloves/armwarmer
+	name = "arm warmer"
+	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
+	icon_state = "armwarmer"
+	item_state = "armwarmer"
+	var/list/poly_colors = list("#F08080")
+
+/obj/item/clothing/gloves/armwarmer/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, poly_colors, 1)
+
+/obj/item/clothing/gloves/armwarmer/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Armwarmers" = image(icon = 'icons/mob/clothing/hands.dmi', icon_state = "armwarmer"),
+			"Long Armwarmers" = image(icon = 'icons/mob/clothing/hands.dmi', icon_state = "armwarmer_long"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Armwarmers")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "armwarmer"
+			item_state = "armwarmer"
+		if("Long Armwarmers")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "armwarmer_long"
+			item_state = "armwarmer_long"
+		else
+			return
+
+/obj/item/clothing/gloves/armwarmer_striped
+	name = "arm warmer striped"
+	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
+	icon_state = "armwarmer_striped"
+	item_state = "armwarmer_striped"
+	var/list/poly_colors = list("#FFFFFF", "#F08080")
+
+/obj/item/clothing/gloves/armwarmer_striped/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, poly_colors, 2)
+
+/obj/item/clothing/gloves/armwarmer_striped/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Striped Armwarmers" = image(icon = 'icons/mob/clothing/hands.dmi', icon_state = "armwarmer_striped"),
+			"Long Striped Armwarmers" = image(icon = 'icons/mob/clothing/hands.dmi', icon_state = "armwarmer_striped_long"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Striped Armwarmers")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "armwarmer_striped"
+			item_state = "armwarmer_striped"
+		if("Long Striped Armwarmers")
+			balloon_alert(user, "Your suit changes color.")
+			icon_state = "armwarmer_striped_long"
+			item_state = "armwarmer_striped_long"
+		else
+			return
 

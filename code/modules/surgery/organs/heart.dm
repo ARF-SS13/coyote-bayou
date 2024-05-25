@@ -31,7 +31,7 @@
 
 /obj/item/organ/heart/Remove(special = FALSE)
 	if(!special)
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 12 SECONDS)
+		addtimer(CALLBACK(src,PROC_REF(stop_if_unowned)), 12 SECONDS)
 	return ..()
 
 /obj/item/organ/heart/proc/stop_if_unowned()
@@ -44,7 +44,7 @@
 		user.visible_message("<span class='notice'>[user] squeezes [src] to \
 			make it beat again!</span>",span_notice("You squeeze [src] to make it beat again!"))
 		Restart()
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 80)
+		addtimer(CALLBACK(src,PROC_REF(stop_if_unowned)), 80)
 
 /obj/item/organ/heart/proc/Stop()
 	beating = 0
@@ -98,7 +98,7 @@
 		owner.set_heartattack(TRUE)
 		failed = TRUE
 
-obj/item/organ/heart/slime
+/obj/item/organ/heart/slime
 	name = "slime heart"
 	desc = "It seems we've gotten to the slimy core of the matter."
 	icon_state = "heart-s-on"
@@ -199,7 +199,7 @@ obj/item/organ/heart/slime
 	if(. & EMP_PROTECT_SELF)
 		return
 	Stop()
-	addtimer(CALLBACK(src, .proc/Restart), 0.2*severity SECONDS)
+	addtimer(CALLBACK(src,PROC_REF(Restart)), 0.2*severity SECONDS)
 	damage += severity
 
 /obj/item/organ/heart/cybernetic/upgraded
@@ -213,7 +213,7 @@ obj/item/organ/heart/slime
 	var/rid = /datum/reagent/medicine/epinephrine
 	var/ramount = 10
 
-obj/item/organ/heart/cybernetic/upgraded/on_life()
+/obj/item/organ/heart/cybernetic/upgraded/on_life()
 	. = ..()
 	if(!.)
 		return

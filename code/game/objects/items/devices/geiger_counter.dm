@@ -6,7 +6,7 @@
 
 #define RAD_MEASURE_SMOOTHING 5
 
-#define RAD_GRACE_PERIOD 2
+#define RAD_GRACE_PERIOD 10
 
 /obj/item/geiger_counter //DISCLAIMER: I know nothing about how real-life Geiger counters work. This will not be realistic. ~Xhuis
 	name = "\improper Geiger counter"
@@ -39,35 +39,32 @@
 /obj/item/geiger_counter/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(soundloop)
+	listeningTo = null
 	return ..()
 
 /obj/item/geiger_counter/process()
-	update_icon()
-	update_sound()
-
 	if(!scanning)
 		current_tick_amount = 0
+		radiation_count = 0
+		if(last_tick_amount)
+			update_icon()
+			update_sound()
+		last_tick_amount = 0
 		return
 
-	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
-	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
+	current_tick_amount = 0
 	var/area/this_area = get_area(src)
 	if(this_area?.rads_per_second)
-		radiation_count += this_area.rads_per_second / RAD_MEASURE_SMOOTHING
-	var/turf/righthere = get_turf(src)
-	var/radz = isturf(righthere) ? SEND_SIGNAL(righthere, COMSIG_TURF_CHECK_RADIATION) : 0
-	radiation_count += radz
-
-	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
-		last_tick_amount = current_tick_amount
-
-	else if(!(obj_flags & EMAGGED))
-		grace--
-		if(grace <= 0)
-			radiation_count = 0
-
-	current_tick_amount = 0
+		radiation_count += this_area.rads_per_second
+//	var/turf/righthere = get_turf(src)
+//	var/radz = isturf(righthere) ? righthere.radiation_turf : 0
+//	radiation_count += radz
+	current_tick_amount += radiation_count //current_tick_amount might not be 0 because rad_act may have added additional rads before this process() tick.
+	
+	last_tick_amount = current_tick_amount //used to see if we need to clear a sound or icon, mostly
+	update_icon()
+	update_sound()
+	radiation_count = 0 //reset the tally until the next process() tick
 
 /obj/item/geiger_counter/examine(mob/user)
 	. = ..()
@@ -118,30 +115,35 @@
 	if(!scanning)
 		loop.stop()
 		return
-	if(!radiation_count)
+	if(!current_tick_amount)
 		loop.stop()
 		return
-	loop.last_radiation = radiation_count
+	loop.last_radiation = current_tick_amount
 	loop.start()
 
 /obj/item/geiger_counter/rad_act(amount)
 	. = ..()
 	if(amount <= RAD_BACKGROUND_RADIATION || !scanning)
 		return
+	radiation_count += amount
+	/*handled in process(), just increase the rad tally for this tick
 	var/turf/theturf = get_turf(src) // fun fact, get_turf() doesnt work in the target of a signal, the define requires an actual *thing*
 	var/turfrads = SEND_SIGNAL(theturf, COMSIG_TURF_CHECK_RADIATION) // filter out the turf rads, otherwise it'll double the input
 	var/area/thearea = get_area(src) // Also filter out the area's radiation, its already checked in process()
 	var/arearads = thearea?.rads_per_second
-	current_tick_amount += max(0, (amount - (turfrads ? turfrads : 0) - (arearads ? arearads : 0))) // might end up considerably less than accurate per rad_act, but only around radiation barrels
-	update_icon()
+	radiation_count += max(0, (amount - (turfrads ? turfrads : 0) - (arearads ? arearads : 0))) // might end up considerably less than accurate per rad_act, but only around radiation barrels
+	*/
 
 /obj/item/geiger_counter/equipped(mob/user)
 	. = ..()
+	on_equip(user)
+
+/obj/item/geiger_counter/proc/on_equip(mob/user)
 	if(listeningTo == user)
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
+	RegisterSignal(user, COMSIG_ATOM_RAD_ACT,PROC_REF(redirect_rad_act))
 	listeningTo = user
 	to_chat(user,"equipped")
 
@@ -149,30 +151,46 @@
 	rad_act(amount)
 
 /obj/item/geiger_counter/dropped(mob/user)
-	if(!ishuman(loc))
+	on_drop(user)
+	. = ..()
+
+/obj/item/geiger_counter/proc/on_drop(mob/user)
+	if(istype(loc, /obj/item/pda))
+		if(listeningTo)
+			UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)	
+		listeningTo = null
+		if(isliving(loc.loc))
+			listeningTo = loc.loc
+	else if(!ishuman(loc))
 		if(listeningTo)
 			UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
 		listeningTo = null
-	. = ..()
 
 /obj/item/geiger_counter/pickup(mob/user)
 	. = ..()
+	on_pickup(user)
+
+/obj/item/geiger_counter/proc/on_pickup(mob/user)
 	if(listeningTo == user)
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
+	RegisterSignal(user, COMSIG_ATOM_RAD_ACT,PROC_REF(redirect_rad_act))
 	listeningTo = user
 
-/obj/item/geiger_counter/attack_self(mob/user)
+/obj/item/geiger_counter/attack_self(mob/user, silent)
 	scanning = !scanning
 	if(scanning)
+		current_tick_amount = 0
+		last_tick_amount = 0
+		radiation_count = 0
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj, src)
 	update_icon()
 	update_sound()
-	to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
+	if(!silent)
+		to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
 
 /obj/item/geiger_counter/afterattack(atom/target, mob/user)
 	. = ..()
@@ -180,7 +198,7 @@
 		if(!(obj_flags & EMAGGED))
 			user.visible_message(span_notice("[user] scans [target] with [src]."), span_notice("You scan [target]'s radiation levels with [src]..."))
 			scan(target, user)
-			//addtimer(CALLBACK(src, .proc/scan, target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
+			//addtimer(CALLBACK(src,PROC_REF(scan), target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
 		else
 			user.visible_message(span_notice("[user] scans [target] with [src]."), span_danger("You project [src]'s stored radiation into [target]!"))
 			target.rad_act(radiation_count)

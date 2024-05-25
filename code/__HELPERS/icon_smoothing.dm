@@ -481,3 +481,15 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #undef DEFAULT_UNDERLAY_ICON_STATE
 
 #undef SET_ADJ_IN_DIR
+	for(var/cdir in GLOB.cardinals)
+		var/turf/T = get_step(src,cdir)
+		if(!T)
+			continue
+		for(var/a_type in canSmoothWith)
+			var/A = locate(a_type) in T
+			if(A || T.type == a_type)
+				junction |= cdir
+				break
+
+/atom/proc/relative(custom_junction = junction)
+	icon_state = "[src.icon_type_smooth][custom_junction]"

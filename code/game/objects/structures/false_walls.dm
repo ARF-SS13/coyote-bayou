@@ -30,9 +30,9 @@
 	. = ..()
 	air_update_turf(TRUE)
 
-/obj/structure/falsewall/ratvar_act()
+/*/obj/structure/falsewall/ratvar_act()
 	new /obj/structure/falsewall/brass(loc)
-	qdel(src)
+	qdel(src)*/
 
 /obj/structure/falsewall/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(opening)
@@ -275,6 +275,31 @@
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
 
+/obj/structure/falsewall/wood/f13
+	name = "wooden wall"
+	desc = "A traditional wooden wall."
+	icon = 'icons/fallout/turfs/walls/wood.dmi'
+	icon_state = "wood0"
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+	icon_type_smooth = "wood"
+	smooth = SMOOTH_OLD
+
+/obj/structure/falsewall/wood/f13/update_icon_state()
+	if(opening)
+		if(density)
+			icon_state = "fwall_opening"
+			smooth = SMOOTH_FALSE
+			clear_smooth_overlays()
+		else
+			icon_state = "fwall_closing"
+	else
+		if(density)
+			icon_state = initial(icon_state)
+			smooth = SMOOTH_OLD
+			queue_smooth(src)
+		else
+			icon_state = "fwall_open"
+
 /obj/structure/falsewall/iron
 	name = "rough metal wall"
 	desc = "A wall with rough metal plating."
@@ -328,7 +353,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
 
-/obj/structure/falsewall/brass
+/*/obj/structure/falsewall/brass
 	name = "clockwork wall"
 	desc = "A huge chunk of warm metal. The clanging of machinery emanates from within."
 	icon = 'icons/turf/walls/clockwork_wall.dmi'
@@ -353,4 +378,4 @@
 
 /obj/structure/falsewall/brass/ratvar_act()
 	if(GLOB.ratvar_awakens)
-		obj_integrity = max_integrity
+		obj_integrity = max_integrity*/

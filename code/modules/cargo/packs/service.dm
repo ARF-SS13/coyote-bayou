@@ -145,10 +145,10 @@
 
 /datum/supply_pack/service/cutlery
 	name = "Kitchen Cutlery Deluxe Set"
-	desc = "Need to slice and dice away those \"Tomatoes\"? Well we got what you need! From a nice set of knifes, forks, plates, glasses, and a whetstone for when you got some grizzle that is a bit harder to slice then normal."
+	desc = "Need to slice and dice away those \"Tomatoes\"? Well we got what you need! From a nice set of knifes, forks, plates, glasses."
 	cost = 7750
 	contraband = TRUE
-	contains = list(/obj/item/sharpener, //Deluxe for a reason
+	contains = list(/obj/item/trash/plate,
 					/obj/item/trash/plate,
 					/obj/item/trash/plate,
 					/obj/item/trash/plate,

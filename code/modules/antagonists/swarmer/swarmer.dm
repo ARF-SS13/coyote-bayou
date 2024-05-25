@@ -208,7 +208,7 @@
 /obj/item/clockwork/alloy_shards/IntegrateAmount()
 	return 10
 
-/obj/item/stack/tile/brass/IntegrateAmount()
+/* /obj/item/stack/tile/brass/IntegrateAmount()
 	return 5
 
 /obj/item/clockwork/alloy_shards/medium/gear_bit/large/IntegrateAmount()
@@ -221,7 +221,7 @@
 	return 2
 
 /obj/item/clockwork/alloy_shards/small/IntegrateAmount()
-	return 1
+	return 1 */
 
 /turf/open/floor/swarmer_act()//ex_act() on turf calls it on its contents, this is to prevent attacking mobs by DisIntegrate()'ing the floor
 	return FALSE
@@ -647,7 +647,7 @@
 /obj/structure/swarmer/trap/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED =PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

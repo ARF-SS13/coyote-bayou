@@ -17,9 +17,11 @@
 	var/move_me = TRUE
 	var/in_use = FALSE // To avoid message spam
 	var/timetouse = 15
+	var/base_icon_state = ""
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
+	base_icon_state = icon_state
 	if (up)
 		src.up = up
 		up.down = src
@@ -29,6 +31,18 @@
 		down.up = src
 		down.update_icon()
 	return INITIALIZE_HINT_LATELOAD
+
+/obj/structure/ladder/unbreakable/door_teleport
+	name = "Beth-Esda Style Door"
+	icon = 'icons/fallout/structures/doors.dmi'
+	icon_state = "room"
+
+/obj/structure/ladder/unbreakable/door_teleport/update_icon()
+	icon_state = base_icon_state
+	return
+/obj/structure/ladder/unbreakable/door_teleport/update_icon_state()
+	icon_state = base_icon_state
+	return
 
 /obj/structure/ladder/Destroy(force)
 	if ((resistance_flags & INDESTRUCTIBLE) && !force)
@@ -64,7 +78,7 @@
 	var/mob/peeker = usr
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -96,7 +110,7 @@
 		return
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -104,18 +118,18 @@
 		if(UP)
 			peeker.reset_perspective(up.loc)
 			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
-				RegisterSignal(up, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+				RegisterSignal(up, COMSIG_CLICK,PROC_REF(on_connected_ladder_clicked))
 		if(DOWN)
 			peeker.reset_perspective(down.loc)
 			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
-				RegisterSignal(down, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+				RegisterSignal(down, COMSIG_CLICK,PROC_REF(on_connected_ladder_clicked))
 		else
 			return
 
 	LAZYADDASSOC(ladder_watchers, "[peek_dir]", peeker)
-	RegisterSignal(peeker, COMSIG_MOVABLE_MOVED, .proc/on_peeker_move)
+	RegisterSignal(peeker, COMSIG_MOVABLE_MOVED,PROC_REF(on_peeker_move))
 	// This is the closest thing this codebase has to an incapacitation signal.
-	RegisterSignal(peeker, COMSIG_DISABLE_COMBAT_MODE, .proc/stop_peeking)
+	RegisterSignal(peeker, COMSIG_DISABLE_COMBAT_MODE,PROC_REF(stop_peeking))
 
 
 /obj/structure/ladder/proc/on_peeker_move(mob/source)
@@ -180,7 +194,7 @@
 	if(!is_ghost)
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 
-	if(!do_after(user, timetouse, target = src))
+	if(!is_ghost && !do_after(user, timetouse, target = src))
 		in_use = FALSE
 		return
 
@@ -224,7 +238,7 @@
 	if(!LAZYLEN(tool_list))
 		to_chat(user, span_warning("Well that's awkward, [src] couldn't generate a menu! This is probably a bug, please call 1-800-IMCODER"))
 		return
-	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src,PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if (!is_ghost && !in_range(src, user))
 		return  // nice try
 	switch(result)
@@ -246,7 +260,7 @@
 			. |= DOWN_LADDER_WEATHER_IS_DANGEROUS
 
 /obj/structure/ladder/proc/check_menu(mob/user)
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

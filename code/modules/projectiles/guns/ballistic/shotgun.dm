@@ -33,6 +33,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -284,7 +285,7 @@
 	icon_state = "pump-sawn"
 	item_state = "shotgun" // Is this how it figures out the in hand sprite to pair with player sprites? This doesn't match anything in guns_left/righthand.dmi...
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/shorty
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
@@ -315,7 +316,7 @@
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
@@ -343,13 +344,13 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		slot_flags = INV_SLOTBIT_BACK
-		w_class = WEIGHT_CLASS_BULKY
+		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
+		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
 		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		to_chat(user, "You fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
@@ -511,7 +512,7 @@
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2 //can bump to T1 if this is too poor
 	cock_delay = GUN_COCK_SHOTGUN_FAST
@@ -675,6 +676,23 @@
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
+/obj/item/gun/ballistic/shotgun/needles
+	name = "Pz87 pump-action shotgun"
+	desc = "A Pz87 shotgun. Manufactured by Latos Systems in collaboration with the Swiss navy and Remington, this shotgun has a internal 6+1 internal tube capacity. Unlike traditional ballistics, it fires micro-needles. A prototype shotgun that never saw the light of combat and battle."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "needlesg"
+	item_state = "needlesg"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/needler
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	fire_sound = 'sound/f13weapons/needler.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
+
 /* * * * * * * * * * *
  * Jackhammer shotgun
  * Magazine automatic! shotgun
@@ -709,7 +727,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	init_firemodes = list(

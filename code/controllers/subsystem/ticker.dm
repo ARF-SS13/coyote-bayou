@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(ticker)
 	var/selected_tip						// What will be the tip of the day?
 	///Tips will send anywhere from -50% and +50% of this time.
 	var/midround_tip_interval = 30 MINUTES //~2 tips every hour
-
+	var/list/tips_list = list()
 	var/timeLeft						//pregame timer
 	var/start_at
 
@@ -135,6 +135,8 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
+	if(!LAZYLEN(tips_list))
+		tips_list = world.file2list("strings/tips.txt")
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -200,7 +202,7 @@ SUBSYSTEM_DEF(ticker)
 					for(var/client/C in SSvote.voting)
 						C << browse(null, "window=vote;can_close=0")
 					SSvote.reset()
-				addtimer(CALLBACK(src, .proc/send_midround_tip), 1 MINUTES)//Send out first tip
+				addtimer(CALLBACK(src, PROC_REF(send_midround_tip)), 1 MINUTES)//Send out first tip
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
 				if(start_immediately)
@@ -218,9 +220,9 @@ SUBSYSTEM_DEF(ticker)
 			mode.process(wait * 0.1)
 			check_queue()
 			check_maprotate()
-			scripture_states = scripture_unlock_alert(scripture_states)
+//			scripture_states = scripture_unlock_alert(scripture_states)
 			//SSshuttle.autoEnd()
-			
+
 			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
 				current_state = GAME_STATE_FINISHED
 				toggle_ooc(TRUE) // Turn it on
@@ -408,15 +410,14 @@ SUBSYSTEM_DEF(ticker)
 			living.mob_transforming = TRUE
 			if(living.client)
 				if (living.client.prefs && living.client.prefs.auto_ooc)
-					if (living.client.prefs.chat_toggles & CHAT_OOC)
-						living.client.prefs.chat_toggles ^= CHAT_OOC
+					living.client.prefs.chat_toggles |= CHAT_OOC
 				var/atom/movable/screen/splash/S = new(living.client, TRUE)
 				S.Fade(TRUE)
 				living.client.init_verbs()
 			livings += living
 
 	if(livings.len)
-		addtimer(CALLBACK(src, .proc/release_characters, livings), 30, TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(src,PROC_REF(release_characters), livings), 30, TIMER_CLIENT_TIME)
 
 	SSmatchmaking.matchmake()
 
@@ -435,24 +436,28 @@ SUBSYSTEM_DEF(ticker)
 	if(selected_tip)
 		m = selected_tip
 	else
-		var/list/randomtips = world.file2list("strings/tips.txt")
-		if(randomtips.len)
-			m = pick(randomtips)
-
+		if(!LAZYLEN(tips_list))
+			tips_list = world.file2list("strings/tips.txt")
+		if(tips_list.len)
+			m = pick(tips_list)
 	if(m)
 		to_chat(world, "<span class='purple'><b>Tip of the round: </b>[html_encode(m)]</span>")
 
 ///Sends a game tip to everyone and then queues up another tip.
-/datum/controller/subsystem/ticker/proc/send_midround_tip()
-	if(IsRoundInProgress())//Only send the tip if people are playing.
-		var/m
-		var/list/randomtips = world.file2list("strings/tips.txt")
-		if(randomtips.len)
-			m = pick(randomtips)
-		if(m)
-			to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
-	// Queue up the next tip even if it didn't send one now.
-	addtimer(CALLBACK(src, .proc/send_midround_tip), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+/datum/controller/subsystem/ticker/proc/send_midround_tip(override)
+	if(!LAZYLEN(tips_list))
+		tips_list = world.file2list("strings/tips.txt")
+	var/m
+	if(isnull(override) && IsRoundInProgress())//Only send the tip if the round has started. Shouldn't ever be a problem unless something broke.
+		if(LAZYLEN(tips_list))
+			m = pick(tips_list)
+	else if(override)
+		m = override
+	if(m)
+		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
+	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
+	if(isnull(override))
+		addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)
@@ -491,7 +496,7 @@ SUBSYSTEM_DEF(ticker)
 	if (!prob((world.time/600)*CONFIG_GET(number/maprotatechancedelta)) && CONFIG_GET(flag/tgstyle_maprotation))
 		return
 	if(CONFIG_GET(flag/tgstyle_maprotation))
-		INVOKE_ASYNC(SSmapping, /datum/controller/subsystem/mapping/.proc/maprotate)
+		INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping/,maprotate))
 	else
 		var/vote_type = CONFIG_GET(string/map_vote_type)
 		switch(vote_type)
@@ -575,7 +580,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Nash Publishing"
+	var/news_source = "New Boston Publishing"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
 			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."
@@ -623,7 +628,7 @@ SUBSYSTEM_DEF(ticker)
 	if(SSblackbox.first_death)
 		var/list/ded = SSblackbox.first_death
 		//fortuna addition. list of random names for the roundend news investigator
-		var/list/investigator = list("Nash Investigators","A band of couriers","Patrolling wasters","A few mysterious strangers")
+		var/list/investigator = list("New Boston Investigators","A band of couriers","Patrolling wasters","A few mysterious strangers")
 		if(ded.len)
 			news_message += "[pick(investigator)] discovered the corpse of a person of interest in the area. Their name was: [ded["name"]], the [ded["role"]], who died in a nearby [ded["area"]].[ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""]"
 		else
@@ -654,7 +659,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(player.ready == PLAYER_READY_TO_OBSERVE && player.mind)
 			//Break chain since this has a sleep input in it
-			addtimer(CALLBACK(player, /mob/dead/new_player.proc/make_me_an_observer), 1)
+			addtimer(CALLBACK(player, TYPE_PROC_REF(/mob/dead/new_player,make_me_an_observer)), 1)
 
 /datum/controller/subsystem/ticker/proc/load_mode()
 	var/mode = trim(file2text("data/mode.txt"))

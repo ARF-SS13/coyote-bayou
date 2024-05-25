@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
+	var/safe_town
+
 	/// Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
 	var/map_name
 
@@ -93,10 +95,12 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 
 	var/open_space = 0
 
-	/// List of music to play. FORMAT: AREA_MUSIC('sound/file.ogg, sound length)
+	/// List of music to play. FORMAT: AREA_Z_MUSIC(Z, 'sound/file.ogg)
 	// var/list/ambientmusic = list(
-	//	AREA_MUSIC('sound/misc/sadtrombone.ogg', 3.9 SECONDS)
+	//	AREA_Z_MUSIC(Z_LEVEL_GIRLAND, 'sound/misc/sadtrombone.ogg')
 	//	)
+	// Z_LEVEL_FALLBACK will play if an entry is mising
+	// will be reformated into list('file1', 'file2', etc), indexed by Z
 	var/list/ambientmusic
 
 	/// List of sounds to play. FORMAT: list(AREA_SOUND('sound/misc/sadtrombone.ogg', 3.9 SECONDS), AREA_MUSIC('sound/misc/sadtrombone.ogg', 3.9 SECONDS)) has a cooldown of 3 seconds between each play, but you can have sounds play for longer if you want
@@ -163,12 +167,12 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if (picked && is_station_level(picked.z))
 			GLOB.teleportlocs[AR.name] = AR
 
-	sortTim(GLOB.teleportlocs, /proc/cmp_text_dsc)
+	sortTim(GLOB.teleportlocs, GLOBAL_PROC_REF(cmp_text_dsc))
 
 // ===
 
 /area/New()
-	if(!minimap_color) // goes in New() because otherwise it doesn't fucking work
+	if(!minimap_color) // goes in New() because otherwise it doesn't f*cking work // s-stars and garters, your language!
 		// generate one using the icon_state
 		if(icon_state && icon_state != "unknown")
 			var/icon/I = new(icon, icon_state, dir)
@@ -214,6 +218,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	initialize_soundloop()
 
 	initialize_weather_list()
+
+	initialize_music()
 
 	//so far I'm only implementing it on mapped unique areas, it's easier this way.
 	if(unique && sub_areas)
@@ -284,7 +290,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				A.power_light = FALSE
 				A.power_equip = FALSE
 				A.power_environ = FALSE
-			INVOKE_ASYNC(A, .proc/power_change)
+			INVOKE_ASYNC(A,PROC_REF(power_change))
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(ambience_area)
 	remove_from_weather_list()
@@ -302,14 +308,39 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if(!(loopy in GLOB.area_sound_loops))
 			GLOB.area_sound_loops[loopy] = new loopy(list(), FALSE)
 
+/// converts the area music list into an area music list
+/area/proc/initialize_music()
+	if(!LAZYLEN(ambientmusic))
+		ambientmusic = null
+		return FALSE
+	var/list/muslist = ambientmusic.Copy()
+	ambientmusic.Cut()
+	var/lenf = world.maxz + 5 // honk
+	ambientmusic.len = lenf
+	var/ballback
+	for(var/mussy in muslist)
+		if(!isnum(muslist[mussy]))
+			continue
+		var/index = muslist[mussy]
+		if(index == Z_LEVEL_FALLBACK)
+			index = lenf
+			ballback = mussy
+		index = round(clamp(index, 1, LAZYLEN(ambientmusic))) // die
+		ambientmusic[index] = mussy
+	/// and, fill in the blanks
+	for(var/i in 1 to LAZYLEN(ambientmusic))
+		if(LAZYACCESS(ambientmusic, i))
+			continue
+		ambientmusic[i] = ballback
+
 /// Adds the area to a list for weather to read when picking areas for weather
 /area/proc/initialize_weather_list()
 	if(!weather_tags || !LAZYLEN(weather_tags) || isnull(weather_tags))
 		return FALSE
-	for(var/wethertag in weather_tags)
-		if(!islist(GLOB.area_weather_list[wethertag]))
-			GLOB.area_weather_list[wethertag] = list()
-		GLOB.area_weather_list[wethertag] |= src
+	for(var/whethertag in weather_tags)
+		if(!islist(GLOB.area_weather_list[whethertag]))
+			GLOB.area_weather_list[whethertag] = list()
+		GLOB.area_weather_list[whethertag] |= src
 
 /// unAdds the area to a list for weather to read when picking areas for weather
 /area/proc/remove_from_weather_list()
@@ -403,7 +434,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				if(D.operating)
 					D.nextstate = opening ? FIREDOOR_OPEN : FIREDOOR_CLOSED
 				else if(!(D.density ^ opening))
-					INVOKE_ASYNC(D, (opening ? /obj/machinery/door/firedoor.proc/open : /obj/machinery/door/firedoor.proc/close))
+					INVOKE_ASYNC(D, (opening ? TYPE_PROC_REF(/obj/machinery/door/firedoor, open) : TYPE_PROC_REF(/obj/machinery/door/firedoor, close)))
 
 /area/proc/firealert(obj/source)
 	if(always_unpowered == 1) //no fire alarms in space/asteroid
@@ -472,7 +503,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		var/mob/living/silicon/SILICON = i
 		if(SILICON.triggerAlarm("Burglar", src, cameras, trigger))
 			//Cancel silicon alert after 1 minute
-			addtimer(CALLBACK(SILICON, /mob/living/silicon.proc/cancelAlarm,"Burglar",src,trigger), 600)
+			addtimer(CALLBACK(SILICON, TYPE_PROC_REF(/mob/living/silicon,cancelAlarm) ,"Burglar",src,trigger), 600)
 
 /area/proc/set_fire_alarm_effects(boolean)
 	fire = boolean
@@ -546,7 +577,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			A.power_light = power_light
 			A.power_equip = power_equip
 			A.power_environ = power_environ
-			INVOKE_ASYNC(A, .proc/power_change)
+			INVOKE_ASYNC(A,PROC_REF(power_change))
 	update_icon()
 
 /area/proc/usage(chan)
@@ -626,15 +657,29 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			var/sounds_to_play = pick(ambientsounds)
 			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 			var/sound/S = sound(sounds_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
-			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src,PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
 			COOLDOWN_START(L.client, area_sound_effect_cooldown, sounds_to_play[SL_FILE_LENGTH] + sound_delay)
 
-		if(LAZYLEN(ambientmusic) && !COOLDOWN_TIMELEFT(L.client, area_music_cooldown) && prob(35)) //fortuna add. re-implements ambient music
-			var/music_to_play = pick(ambientmusic)
-			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
-			var/sound/S = sound(music_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
-			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
-			COOLDOWN_START(L.client, area_music_cooldown, music_to_play[SL_FILE_LENGTH] + sound_delay)
+		ambient_music_start(L)
+
+/area/proc/ambient_music_start(mob/living/L) //fortuna add. re-implements ambient music. Dan add. re-re-reimplements ambient music
+	if(!L)
+		return
+	if(!LAZYLEN(ambientmusic))
+		return 
+	if(type in L.client.area_musics)
+		return
+	L.client.area_musics |= type
+	var/music_to_play = LAZYACCESS(ambientmusic, L.z) // MOVE TO THE LZ
+	if(!music_to_play) // unsupported Z
+		music_to_play = LAZYACCESS(ambientmusic, LAZYLEN(ambientmusic))
+		if(!music_to_play) // no fallback
+			return
+	var/sound_delay = rand(1 SECONDS, 15 SECONDS)
+	var/sound/S = sound(music_to_play, repeat = TRUE, wait = 0, volume = 25, channel = CHANNEL_AMBIENT_MUSIC)
+	addtimer(CALLBACK(src, PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
+	L.client.SoundQuery()
+	COOLDOWN_START(L.client, area_music_cooldown, S.len + sound_delay)
 
 /area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)
 	SEND_SOUND(play_to, to_play)
@@ -674,6 +719,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, M)
 	SEND_SIGNAL(M, COMSIG_EXIT_AREA, src) //The atom that exits the area
 	addremove_to_soundloop(M, FALSE)
+	if(isliving(M))
+		var/mob/living/L = M
+		if(L.client)
+			if(type in L.client.area_musics)
+				L.stop_sound_channel(CHANNEL_AMBIENT_MUSIC)
 
 /area/proc/setup(a_name)
 	name = a_name

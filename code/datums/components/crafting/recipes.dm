@@ -23,3 +23,5 @@
  */
 /datum/crafting_recipe/proc/check_requirements(mob/user, list/collected_requirements)
 	return TRUE
+/datum/crafting_recipe/proc/on_finished(atom/a, atom/parent)
+	return

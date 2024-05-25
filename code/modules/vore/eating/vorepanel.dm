@@ -32,7 +32,7 @@
 /datum/vore_look/New(mob/living/new_host)
 	if(istype(new_host))
 		host = new_host
-		RegisterSignal(host, COMSIG_PARENT_QDELETING, .proc/disown)
+		RegisterSignal(host, COMSIG_PARENT_QDELETING,PROC_REF(disown))
 	. = ..()
 
 /datum/vore_look/Destroy()

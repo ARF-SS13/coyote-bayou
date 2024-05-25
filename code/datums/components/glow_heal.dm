@@ -33,7 +33,7 @@
 		glow_color = color_glow
 	healing_types = type_healing
 	START_PROCESSING(SSobj, src)
-	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE, .proc/restart_process)
+	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE,PROC_REF(restart_process))
 
 /datum/component/glow_heal/proc/restart_process()
 	START_PROCESSING(SSobj, src)
@@ -57,10 +57,10 @@
 		if(faction_only && !(faction_only in livingMob.faction))
 			continue //if you don't have the faction listed in the intial, then you aren't getting targeted 
 		if(livingMob.stat == DEAD) 
-			if(revive_allowed)
+			if(revive_allowed && livingMob.can_glow_revive)
 				livingMob.revive(full_heal = TRUE)
 			continue
-		var/health_to_consider = min(livingMob.maxHealth, 50)
+		var/health_to_consider = min(livingMob.maxHealth, 30)
 		if(healing_types & BRUTELOSS)
 			livingMob.adjustBruteLoss(-health_to_consider*0.1)
 		if(healing_types & FIRELOSS)	

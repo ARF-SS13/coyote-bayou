@@ -16,6 +16,7 @@
 	var/adjusted = NORMAL_STYLE
 	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
 	var/dummy_thick = FALSE // is able to hold accessories on its item
+	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/clothing/accessory/attached_accessory
 	var/obj/item/clothing/accessory/attached_accessory_b
 	var/obj/item/clothing/accessory/attached_accessory_c
