@@ -1,16 +1,17 @@
-/*
+
 /turf/closed/wall/f13/coyote/darkwoodwall
 	name = "darkwood wall"
 	desc = "A wall made out of darkwood."
-	icon = 'modular_coyote/icons/turfs/walls.dmi'
-	icon_state = "nordic0"
-	icon_type_smooth = "nordic"
+	icon = 'icons/turf/walls/wood_nordic.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
 	hardness = 80
-	smoothing_flags = SMOOTH_OLD
+	smoothing_flags = SMOOTH_BITMASK
 	girder_type = 0
-	sheet_type = null
+	baseturfs = /turf/open/floor/plating/wooden
+	sheet_type = /obj/item/stack/sheet/mineral/wood
 	canSmoothWith = list(/turf/closed/wall/f13/coyote/darkwoodwall, /turf/closed/wall)
-
+/*
 /turf/closed/wall/f13/coyote/fortress_brick
 	name = "fortress brickwall"
 	desc = "An old wall you'd see at a fortress."
@@ -35,16 +36,17 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/coyote/tavern_wall, /obj/structure/window/fulltile/wood, /turf/closed/wall)
+*/
 
 /turf/closed/wall/f13/coyote/oldwood
 	name = "old wood wall"
 	desc = "A wall of very old and rotting wood."
-	icon = 'modular_coyote/icons/turfs/walls.dmi'
-	icon_state = "oldwood0"
-	icon_type_smooth = "oldwood"
+	icon = 'icons/turf/walls/wood_wall.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
 	hardness = 80
-	smoothing_flags = SMOOTH_OLD
+	smoothing_flags = SMOOTH_BITMASK
 	girder_type = 0
-	sheet_type = null
+	baseturfs = /turf/open/floor/plating/wooden
+	sheet_type = /obj/item/stack/sheet/mineral/wood
 	canSmoothWith = list(/turf/closed/wall/f13/coyote/oldwood, /turf/closed/wall)
-*/

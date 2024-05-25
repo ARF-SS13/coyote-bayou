@@ -29,13 +29,11 @@
 	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
 
 /turf/closed/wall/f13/wood
-	name = "wooden wall"
-	desc = "A traditional wooden wall."
-	icon = 'icons/fallout/turfs/walls/wood.dmi'
-	icon_state = "wood0"
-//	icon_type_smooth = "wood"
+	name = "cabin wall"
+	desc = "A traditional wooden log cabin wall."
+	icon = 'icons/turf/walls/wood_log.dmi'
+	icon_state = "wall-0"
 	hardness = 60
-//	smoothing_flags = SMOOTH_OLD
 	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
@@ -49,50 +47,19 @@
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
 	desc = "A weathered pre-War house wall."
-	icon = 'icons/fallout/turfs/walls/house.dmi'
-	icon_state = "house0"
-//	icon_type_smooth = "house"
+	icon = 'icons/turf/walls/house_wall_dirty.dmi'
+	icon_state = "wall-0"
 	hardness = 50
 	var/broken = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
-
-/turf/closed/wall/f13/wood/house/broken
-	broken = 1
-	damage = 21
-	icon_state = "house0-broken"
-
-/turf/closed/wall/f13/wood/house/broken/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/stack/sheet/mineral/wood))
-		var/obj/item/stack/sheet/mineral/wood/I = W
-		if(I.amount < 2)
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, span_warning("You must stand still to fix the wall!"))
-			return
-		W.use(2)
-		ChangeTurf(/turf/closed/wall/f13/wood/house)
-	. = ..()
-
-
-/turf/closed/wall/f13/wood/house/take_damage(dam)
-	if(damage + dam > hardness/2)
-		broken = 1
-	..()
-
-
-/turf/closed/wall/f13/wood/house/update_icon()
-	if(broken)
-		set_opacity(0)
-	..()
-
-turf/closed/wall/f13/wood/house/update_damage_overlay()
-	if(broken)
-		return
-	..()
+	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
 
 /turf/closed/wall/f13/wood/house/clean
-	icon_state = "house0-clean"
+	icon = 'icons/turf/walls/house_wall.dmi'
 
+/turf/closed/wall/f13/wood/house/broken
+	name = "DEPRECATED WALL! INFORM MAPPERS TO REPLACE THIS!"
+/turf/closed/wall/f13/coyote/fortress_brick
+	name = "DEPRECATED WALL! INFORM MAPPERS TO REPLACE THIS!"
 
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
@@ -105,7 +72,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
 
 /turf/closed/wall/f13/store
-	name = "store wall"
+	name = "DEPRECATED WALL! REPLACE WITH CONCRETE WALLS!"
 	desc = "A pre-War store wall made of solid concrete."
 	icon = 'icons/turf/walls/f13store.dmi'
 	icon_state = "store"
@@ -118,19 +85,95 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
 
+/turf/closed/wall/mineral/concrete
+	name = "concrete wall"
+	desc = "A pre-fabricated concrete wall."
+	icon = 'icons/turf/walls/concrete.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	sheet_type = /obj/item/stack/sheet/mineral/sandstone
+	hardness = 40
+	explosion_block = 0
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	custom_materials = list(/datum/material/sandstone = 4000)
+
+/obj/structure/falsewall/concrete
+	name = "concrete wall"
+	desc = "A pre-fabricated concrete wall."
+	icon = 'icons/turf/walls/concrete.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	mineral = /obj/item/stack/sheet/mineral/sandstone
+	walltype = /turf/closed/wall/mineral/concrete
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+
+/turf/closed/wall/mineral/brick
+	name = "brick wall"
+	desc = "A wall made out of red brick."
+	icon = 'icons/turf/walls/brick_wall.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	sheet_type = /obj/item/stack/sheet/mineral/sandstone//Needs replacing with an actual brick subtype
+	hardness = 40
+	explosion_block = 0
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_REDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS)
+	custom_materials = list(/datum/material/sandstone = 4000)
+
+/obj/structure/falsewall/brick
+	name = "brick wall"
+	desc = "A wall made out of red brick."
+	icon = 'icons/turf/walls/brick_wall.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	mineral = /obj/item/stack/sheet/mineral/sandstone
+	walltype = /turf/closed/wall/mineral/brick
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_REDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS)
+
+/turf/closed/wall/mineral/brick/old
+	name = "weathered brick wall"
+	desc = "A wall made out of red brick."
+	icon = 'icons/turf/walls/brick_wall_old.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	sheet_type = /obj/item/stack/sheet/mineral/sandstone//Needs replacing with an actual brick subtype
+	hardness = 40
+	explosion_block = 0
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS)
+	custom_materials = list(/datum/material/sandstone = 4000)
+
+/obj/structure/falsewall/brick/old
+	name = "weathered brick wall"
+	desc = "A wall made out of red brick."
+	icon = 'icons/turf/walls/brick_wall_old.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	mineral = /obj/item/stack/sheet/mineral/sandstone
+	walltype = /turf/closed/wall/mineral/brick
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS)
+
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
 	desc = "The walls of a portable tent."
-	icon = 'icons/fallout/turfs/walls/tent.dmi'
-	icon_state = "tent0"
-//	icon_type_smooth = "tent"
+	icon = 'icons/turf/walls/tent_wall.dmi'
+	icon_state = "wall-0"
 	hardness = 10
 	unbreakable = 0
-//	smoothing_flags = SMOOTH_OLD
-	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
+	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
 
 /turf/closed/wall/f13/scrap
@@ -185,12 +228,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
 	desc = "A sturdy metal wall with various pipes and wiring set inside a special groove."
-	icon = 'icons/fallout/turfs/walls/tunnel.dmi'
-	icon_state = "tunnel0"
-//	icon_type_smooth = "tunnel"
+	icon = 'icons/turf/walls/utility_wall.dmi'
+	icon_state = "wall-0"
 	hardness = 100
-//	smoothing_flags = SMOOTH_OLD
-	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tunnel, /turf/closed/wall)
