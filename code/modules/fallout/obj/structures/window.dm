@@ -92,7 +92,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindoworange
@@ -101,7 +101,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowwhite
@@ -110,7 +110,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowmoonlight
@@ -119,7 +119,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowyellow
@@ -128,7 +128,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedsilver
@@ -137,7 +137,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedyellow
@@ -146,7 +146,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedzizo
@@ -155,5 +155,5 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3

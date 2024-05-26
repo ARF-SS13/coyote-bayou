@@ -895,7 +895,7 @@
 	desc = "Count your wood? Or is it wood your count.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "wood_counter"
-	smooth = SMOOTH_FALSE
+	smoothing_flags = SMOOTH_CORNERS
 
 /obj/structure/table/wood_counter/bend
 	name = "Wooden Counter"
@@ -920,7 +920,7 @@
 	desc = "Count your wood? Or is it wood your count.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "craft_counter"
-	smooth = SMOOTH_FALSE
+	smoothing_flags = FALSE
 
 /obj/structure/table/craft_counter/bend
 	name = "Crafted Counter"
