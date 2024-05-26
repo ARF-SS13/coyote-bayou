@@ -17,7 +17,7 @@
 	hardness = 50
 
 /turf/closed/wall/r_wall/f13superstore
-	name = "store wall"
+	name = "DEPRECATED! TELL MAPPERS TO REPLACE THIS."
 	desc = "A huge chunk of metal used to separate rooms."
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	hardness = 50

@@ -171,6 +171,16 @@
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/tile/wood
 
+//Bamboo
+/obj/item/stack/tile/bamboo
+	name = "bamboo mat pieces"
+	singular_name = "bamboo mat piece"
+	desc = "A piece of a bamboo mat with a decorative trim."
+	icon_state = "tile_bamboo"
+	inhand_icon_state = "tile-bamboo"
+	turf_type = /turf/open/floor/bamboo
+	merge_type = /obj/item/stack/tile/bamboo
+	resistance_flags = FLAMMABLE
 
 //Cloth Floors
 
