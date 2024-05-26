@@ -171,8 +171,9 @@
 */
 
 /turf/closed/wall/vault
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "rockvault"
+	name = "vault wall"
+	desc = "An airtight metal wall with decorative blue-and-gold plating."
+	icon = 'icons/turf/walls/wall_vault.dmi'
 
 /turf/closed/wall/ice
 	icon = 'icons/turf/walls/icedmetal_wall.dmi'
