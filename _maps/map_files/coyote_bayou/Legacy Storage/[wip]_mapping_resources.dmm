@@ -39221,7 +39221,7 @@
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi';
 	icon_state = "r_wall";
 	name = "rusty reinforced wall";
-	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/brass,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/wall/clockwork,/turf/closed/indestructible/f13/obsidian);
+	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/brass,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/indestructible/f13/obsidian);
 	smooth = 1
 	},
 /area/f13/wasteland)
