@@ -34,7 +34,7 @@
 	/obj/structure/simple_door/interior
 	)
 
-/turf/closed/wall/f13/coyote/tavern_wall
+/turf/closed/wall/f13/tentwall
 	name = "tavern wall"
 	desc = "A wall in a tavern style."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
@@ -45,7 +45,7 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(
-	/turf/closed/wall/f13/coyote/tavern_wall,
+	/turf/closed/wall/f13/tentwall,
 	/turf/closed/wall,
 	/obj/structure/window/fulltile,
 	/obj/structure/window/fulltile/house,
