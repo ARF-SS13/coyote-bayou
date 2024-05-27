@@ -24,6 +24,14 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
+/obj/item/ammo_casing/shotgun/buckshot/wide
+	name = "supermagnum shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	pellets = 20
+	variance = 25
+
 /obj/item/ammo_casing/shotgun/needlerbuckshot
 	name = "Crystal needler shotgun shell"
 	desc = "A small gauge shell filled with crystal needlers."

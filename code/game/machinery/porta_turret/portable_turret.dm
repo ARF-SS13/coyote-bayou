@@ -1876,6 +1876,41 @@
 		mode = TURRET_LETHAL
 	. = ..()
 
+/obj/machinery/porta_turret/f13/town/rifle
+	name = "allied friendly point defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a burst of 5.56mm shells \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	stun_projectile = /obj/item/projectile/bullet/m5mm/rubber
+	lethal_projectile = /obj/item/projectile/bullet/m5mm
+	lethal_projectile_sound = 'sound/f13weapons/assault_carbine.ogg'
+	stun_projectile_sound = 'sound/f13weapons/assault_carbine.ogg'
+	burst_count = 5
+	shot_spread = 2
+	shot_delay = 1 SECONDS
+
+/obj/machinery/porta_turret/f13/town/shotgun
+	name = "allied scattercannon point defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a spray of buckshot \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	stun_projectile = null
+	lethal_projectile = null
+	lethal_projectile_sound = 'sound/f13weapons/shotgun.ogg'
+	stun_projectile_sound = 'sound/f13weapons/shotgun.ogg'
+	casing_type_stun = /obj/item/ammo_casing/shotgun/rubbershot
+	casing_type_lethal = /obj/item/ammo_casing/shotgun/buckshot/wide
+
 /obj/machinery/porta_turret/f13/town/AMR_turret
 	name = "allied big game point defense system"
 	icon = 'icons/obj/turrets.dmi'
