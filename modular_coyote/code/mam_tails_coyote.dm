@@ -301,28 +301,28 @@
 
 /datum/sprite_accessory/tails/mam_tails/aethergiest
 	name = "Deathclaw"
-	icon_state = "aethergiest"
+	icon_state = "deathclaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails_animated/mam_tails/aethergiest
 	name = "Deathclaw"
-	icon_state = "aethergiest"
+	icon_state = "deathclaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/human/aethergiest
 	name = "Deathclaw"
-	icon_state = "aethergiest"
+	icon_state = "deathclaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails_animated/human/aethergiest
 	name = "Deathclaw"
-	icon_state = "aethergiest"
+	icon_state = "deathclaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN

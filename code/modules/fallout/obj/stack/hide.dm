@@ -23,7 +23,7 @@
 	desc = "A glorious hunting trophy."
 	singular_name = "aethergiest skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
-	icon_state = "sheet-aethergiest"
+	icon_state = "sheet-deathclaw"
 	merge_type = /obj/item/stack/sheet/animalhide/aethergiest
 	custom_materials = list(/datum/material/aethergiesthide=MINERAL_MATERIAL_AMOUNT)
 
