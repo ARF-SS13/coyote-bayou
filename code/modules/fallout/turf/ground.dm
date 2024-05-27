@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(grass_plant_list, list(
-	/obj/structure/flora/grass/wasteland = 150,
+	/obj/structure/flora/grass/wasteland = 350,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
