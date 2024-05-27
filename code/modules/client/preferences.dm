@@ -146,9 +146,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this (     Y     )
-	/// which quester UID we're using
-	var/quester_uid
+	var/kisser = KISS_DEFAULT // Kiss this  /      V      \/
+	/// which quester UID we're using      |       |       |
+	var/quester_uid //                     (_______|_______)
 	var/dm_open = TRUE
 	var/needs_a_friend = FALSE // for the quest
 	var/list/blocked_from_dms = list() // list of quids
@@ -160,9 +160,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
 	var/saved_unclaimed_points = 0
-	var/last_quest_login = 0
-	/// every single calendar day this character has spawned in
-	var/list/days_spawned_in = list()
+	/// Last time we spawned in and took economic damage
+	var/last_quest_login = 0 // its a big number, but our savefiles simply arent bloated enough, and I've got a sonic OC to round out
+	/// every single world.realtime we've logged in
+	var/list/days_spawned_in = list() // "Hey sonic, is that a truckload of chilidogs?"
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"

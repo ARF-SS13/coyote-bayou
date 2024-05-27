@@ -3,7 +3,7 @@
 SUBSYSTEM_DEF(economy)
 	name = "QuestEconomy"
 	wait = 15 MINUTES
-	init_order = INIT_ORDER_ECONOMY
+	init_order = INIT_ORDER_ECONOMY + 2000
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 5
 	var/budget_pool = 35000
@@ -115,6 +115,7 @@ SUBSYSTEM_DEF(economy)
 
 	var/static_spam = 0
 
+	var/list/relevant_dates = list()
 	var/today = 0
 	var/inactivity_cutoff = 7 // days
 	var/spree_reward_per_day = 100
@@ -140,23 +141,15 @@ SUBSYSTEM_DEF(economy)
 	refresh_quest_pool()
 	init_quest_consoles()
 
-	today = floor((world.realtime - (23 YEARS)) / (1 DAYS))
+	today = QDAY_TODAY
 
-	// var/list/todaylist = splittext(time2text(world.realtime, "YYYY-MM-DD"), "-")
-	// for(var/i in 1 to LAZYLEN(todaylist))
-	// 	todaylist[i] = text2num(todaylist[i])
+	var/datelength = today // its the number of days since the beginning of time, so what better size for a list of dates?
+	relevant_dates.Cut()
+	relevant_dates.len = datelength
 
-	// today = TIMES_TO_NUMBER(todaylist[1], todaylist[2], todaylist[3])
-
-	// var/datelength = 31
-	// dates.Cut()
-	// dates.len = datelength
-
-	// for(var/dia in 1 to datelength)
-	// 	var/list/thatday = splittext(time2text(world.realtime - (dia DAYS) + (1 DAYS), "YYYY-MM-DD"), "-")
-	// 	for(var/i in 1 to LAZYLEN(thatday))
-	// 		thatday[i] = text2num(thatday[i])
-	// 	dates[dia] = TIMES_TO_NUMBER(thatday[1], thatday[2], thatday[3])
+	for(var/dia in 1 to LAZYLEN(relevant_dates))
+		relevant_dates[dia] = REALTIME2QDAYS(-dia - 1)
+	// relevant_dates = reverseList(relevant_dates)
 	
 	. = ..()
 	spawn(5 SECONDS)
@@ -304,10 +297,9 @@ SUBSYSTEM_DEF(economy)
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
 /// cept we arent actually making any money off this game, and player retention here is just to feel like I'm not a loser, mom
-/datum/controller/subsystem/economy/proc/calculate_daily_spawn_in_stuff(taxated, list/override_dates, override_bank, override_today)
+/datum/controller/subsystem/economy/proc/calculate_daily_spawn_in_stuff(taxated, list/override_dates, override_bank)
 	var/datum/preferences/P = extract_prefs(taxated)
 	var/datum/quest_book/QB = get_quest_book(taxated)
-	var/just_checking = FALSE
 	if(!override_dates && !override_bank)
 		if(!taxated)
 			return FALSE
@@ -317,52 +309,67 @@ SUBSYSTEM_DEF(economy)
 			return FALSE
 		if(!QB)
 			return FALSE
-		if(QB.has_been_login_spreed)
-			just_checking = TRUE // theyve already been taxed or rewrded, just return something, and check the login *before* their last login
 	/// if they havent been on the bayou for more than a day, they start losing money
-	var/list/dates2check = override_dates ? override_dates : P.days_spawned_in
-	var/used_today = override_today ? override_today : today
+	var/list/dates2check = override_dates ? override_dates.Copy() : P.days_spawned_in.Copy()
+	var/list/our_calendar = relevant_dates.Copy()
+	if(LAZYACCESS(our_calendar, 1) == LAZYACCESS(dates2check, 1)) // they logged in today
+		return 0 // no penalty or reward
+	/// they didnt log in today. lets see how many days they missed
+	var/yasterday = LAZYACCESS(our_calendar, 2)
 	var/their_bank = override_bank ? override_bank : P.saved_unclaimed_points
-	var/inactive_days = 0
-	var/login_spree = 0
-	var/login_index = just_checking ? LAZYLEN(dates2check) - 1 : LAZYLEN(dates2check)
-	var/last_login = LAZYACCESS(dates2check, login_index)
-	if(last_login == used_today) // checking the same day they logged in, either something went wrong, or its a unit test
-		if(LAZYLEN(dates2check) <= 1) // one entry
-			return 0
-		last_login = LAZYACCESS(dates2check, login_index - 1)
-	/// first check their inactivity spree
-	var/days_since_last_login = (override_today ? override_today : today) - last_login
-	if(days_since_last_login > 1)
-		inactive_days = clamp(days_since_last_login - 1, 0, inactivity_cutoff)
-	else // count the number of consecutive days they've been on the bayou
-		var/last_date_checked = last_login
-		for(var/i in 1 to LAZYLEN(dates2check))
-			/// count from the end of the list, 1 indexed
-			var/truindex = LAZYLEN(dates2check) - (i)
-			var/day = LAZYACCESS(dates2check, truindex) // get the day
-			if(last_date_checked - day <= 1)
-				login_spree += 1
-				last_date_checked = day
-			else
-				break
-		login_spree = clamp(login_spree, 0, spree_max)
-	/// and finally return how much they're gonna lose or gain
-	if(inactive_days)
-		var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
-		var/penalty = their_bank - floor(their_bank * penalty_percent)
-		return -penalty
-	if(login_spree)
+	if(LAZYACCESS(dates2check, 1) == yasterday) // their last login was yesterday
+		return calculate_spree_reward(dates2check, our_calendar, their_bank)
+	else
+		return calculate_inactivity_penalty(dates2check, our_calendar, their_bank)
+
+/datum/controller/subsystem/economy/proc/calculate_spree_reward(list/dates2check, list/our_calendar, their_bank)
+	if(!LAZYLEN(dates2check) || !LAZYLEN(our_calendar) || !their_bank)
+		return 0
+	var/login_spree = 0 // check for spree!
+	var/ourcheck_index = 2
+	var/theircheck_index = 1
+	var/our_date = 0
+	var/their_date = 0
+	var/safety = 200
+	while(ourcheck_index <= LAZYLEN(our_calendar) && theircheck_index <= LAZYLEN(dates2check) && safety--)
+		if(login_spree >= spree_max)
+			break
+		our_date = LAZYACCESS(our_calendar, ourcheck_index)
+		their_date = LAZYACCESS(dates2check, theircheck_index)
+		if(our_date == their_date)
+			login_spree++
+			ourcheck_index++
+			theircheck_index++
+		else
+			break
+	if(login_spree > 0)
 		var/reward = ceil(login_spree * spree_reward_per_day)
 		return reward
 
-/// and the unit tests
+/datum/controller/subsystem/economy/proc/calculate_inactivity_penalty(list/dates2check, list/our_calendar, their_bank)
+	if(!LAZYLEN(dates2check) || !LAZYLEN(our_calendar) || !their_bank)
+		return 0
+	var/inactive_days = -1
+	var/our_date = LAZYACCESS(our_calendar, 1)
+	var/their_date = LAZYACCESS(dates2check, 1)
+	inactive_days = clamp(our_date - their_date - 1, 0 , inactivity_cutoff) // today should be bigger than their last login, so this should be positive
+	if(inactive_days > 0)
+		var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
+		var/penalty = their_bank - floor(their_bank * penalty_percent)
+		return -penalty
+
+
+
+/// My first unit tests! :3
 /datum/controller/subsystem/economy/proc/test_daily_calcs()
-	var/list/dates_of_interest = list()
-	for(var/i in 1 to 500)
-		// var/list/newday = splittext(time2text(round(world.realtime - ((i - 1) * (1 DAYS)), (1 DAYS)), "YYYY-MM-DD"), "-")
-		// dates_of_interest += TIMES_TO_NUMBER(text2num(newday[1]), text2num(newday[2]), text2num(newday[3]))
-		dates_of_interest += floor((world.realtime - ((i - 1) * (1 DAYS)) - (23 YEARS)) / (1 DAYS))
+	// var/list/dates_of_interest = list()
+	// for(var/i in 1 to 500)
+	// 	// var/list/newday = splittext(time2text(round(world.realtime - ((i - 1) * (1 DAYS)), (1 DAYS)), "YYYY-MM-DD"), "-")
+	// 	// dates_of_interest += TIMES_TO_NUMBER(text2num(newday[1]), text2num(newday[2]), text2num(newday[3]))
+	// 	// dates_of_interest += floor((world.realtime - ((i - 1) * (1 DAYS)) - (23 YEARS)) / (1 DAYS))
+	// 	dates_of_interest += REALTIME2QDAYS(i)
+	// dates_of_interest = reverseList(dates_of_interest)
+	var/list/dates_of_interest = relevant_dates.Copy() // whatever
 	var/list/return_list = list()
 	/// penalty loop
 	var/list/date_list = list()
@@ -377,42 +384,42 @@ SUBSYSTEM_DEF(economy)
 
 	/// 2. logging in after a day
 	/// - should return a bonus of 100, and the bank should be increased to test_amount + 100
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2))
+	date_list = list(LAZYACCESS(dates_of_interest, 2))
 	exp_penalty = (spree_reward_per_day * 1)
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("2. logging in after a day", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 3. logging in after 2 days
 	/// - should return one penalty, and the bank should be reduced to test_amount - (1 = (0.02^1))
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 3))
+	date_list = list(LAZYACCESS(dates_of_interest, 3))
 	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 1)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("3. logging in after 2 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 4. logging in after 3 days
 	/// - should return two penalty, and the bank should be reduced to test_amount - (2 = (0.02^2))
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 4))
+	date_list = list(LAZYACCESS(dates_of_interest, 4))
 	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 2)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("4. logging in after 3 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 5. logging in after 7 days
 	/// - should return six penalty, and the bank should be reduced to test_amount - (6 = (0.02^6))
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 8))
+	date_list = list(LAZYACCESS(dates_of_interest, 8))
 	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 6)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("5. logging in after 7 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 6. logging in after 8 days (the max)
 	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 9))
+	date_list = list(LAZYACCESS(dates_of_interest, 9))
 	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("6. logging in after 8 days (max)", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 7. logging in after 200 days
 	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 201))
+	date_list = list(LAZYACCESS(dates_of_interest, 201))
 	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("7. logging in after 200 days", date_list, test_amount, exp_bank, exp_penalty)
@@ -420,28 +427,29 @@ SUBSYSTEM_DEF(economy)
 	/// reward loop
 	/// 8. logging in today and yesterday
 	/// - should return 1 bonus, and the bank should be increased to test_amount + 100
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2))
+	date_list = list(LAZYACCESS(dates_of_interest, 2))
 	exp_penalty = (spree_reward_per_day * 1)
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("8. logging in today and yesterday", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 9. logging in today, yesterday, and the day before that
 	/// - should return 2 bonus, and the bank should be increased to test_amount + 200
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3))
+	date_list = list(LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3))
 	exp_penalty = (spree_reward_per_day * 2)
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("9. logging in today, yesterday, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 10. logging in today, yesterday, the day before that, and the day before that
 	/// - should return 3 bonus, and the bank should be increased to test_amount + 300
-	date_list = list(LAZYACCESS(dates_of_interest, 1), LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3), LAZYACCESS(dates_of_interest, 4))
+	date_list = list(LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3), LAZYACCESS(dates_of_interest, 4))
 	exp_penalty = (spree_reward_per_day * 3)
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("10. logging in today, yesterday, the day before that, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 11. logging in for the past 20 days
 	/// - should return 7 bonus, and the bank should be increased to test_amount + 700
-	for(var/i in 1 to 20)
+	date_list.Cut()
+	for(var/i in 2 to 20)
 		date_list += LAZYACCESS(dates_of_interest, i)
 	exp_penalty = (spree_reward_per_day * 7)
 	exp_bank = test_amount + exp_penalty
@@ -449,7 +457,8 @@ SUBSYSTEM_DEF(economy)
 
 	/// 12. logging in for the past 5 days, then a break of 2 days, then logging in for the past 200 days
 	/// - should return 5 bonus, and the bank should be increased to test_amount + 500
-	for(var/i in 1 to 5)
+	date_list.Cut()
+	for(var/i in 2 to 6)
 		date_list += LAZYACCESS(dates_of_interest, i)
 	for(var/i in 8 to 200)
 		date_list += LAZYACCESS(dates_of_interest, i)
@@ -460,15 +469,9 @@ SUBSYSTEM_DEF(economy)
 	to_chat(world, span_boldannounce("Daily spawn in stuff tests:\n") + "[printme]")
 
 /datum/controller/subsystem/economy/proc/run_unit_test(nombre = "ERROR", list/date_list = list(today), cash_before = 1000, expected_cash_after = 1000, expected_penalty = 1000)
-	// var/list/todaytoday = splittext(time2text(world.realtime, "YYYY-MM-DD"), "-")
-	// for(var/i in 1 to LAZYLEN(todaytoday))
-	// 	todaytoday[i] = text2num(todaytoday[i])
-	// var/todaytodaytoday = TIMES_TO_NUMBER(todaytoday[1], todaytoday[2], todaytoday[3])
-	var/todaytodaytoday = floor((world.realtime - (23 YEARS)) / (1 DAYS)) // close enough
-	date_list = reverseList(date_list)
-	var/penalty = calculate_daily_spawn_in_stuff(null, date_list, cash_before, todaytodaytoday)
+	var/penalty = calculate_daily_spawn_in_stuff(null, date_list, cash_before)
 	var/cash_after = cash_before + penalty
-	var/days_passed = todaytodaytoday - LAZYACCESS(date_list, 1)
+	var/days_passed = relevant_dates[1] - LAZYACCESS(date_list, 1)
 	var/list/gotted_data = list(
 		"cash_before" = cash_before, 
 		"penalty" = penalty, 
