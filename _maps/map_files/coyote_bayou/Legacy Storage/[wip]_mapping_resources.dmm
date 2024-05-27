@@ -26963,8 +26963,7 @@
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	icon_type_smooth = "supermart";
-	name = "supermart wall";
-	smooth = 1
+	name = "supermart wall"
 	},
 /area/f13/wasteland)
 "nHR" = (
@@ -28342,8 +28341,7 @@
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
 	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/wasteland)
 "oqs" = (
@@ -30942,7 +30940,6 @@
 	icon_state = "store";
 	desc = null;
 	name = "concrete wall";
-	smooth = 1;
 	icon_type_smooth = "store";
 	canSmoothWith = list(/turf/closed/wall/f13/store,/turf/closed/wall/f13/store/constructed,/turf/closed/wall,/turf/closed/indestructible/f13/obsidian,/turf/closed/wall/mineral/concrete/blastproof,/turf/closed/wall/f13/store/concretewall)
 	},
@@ -31536,8 +31533,7 @@
 	desc = null;
 	name = "concrete wall";
 	canSmoothWith = list(/turf/closed/wall/f13/supermart,/turf/closed/wall/mineral/concrete,/turf/closed/wall,/turf/closed/indestructible/f13/obsidian);
-	icon_type_smooth = "supermart";
-	smooth = 1
+	icon_type_smooth = "supermart"
 	},
 /area/f13/wasteland)
 "pMs" = (
@@ -39221,8 +39217,7 @@
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi';
 	icon_state = "r_wall";
 	name = "rusty reinforced wall";
-	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/brass,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/indestructible/f13/obsidian);
-	smooth = 1
+	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/brass,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/indestructible/f13/obsidian)
 	},
 /area/f13/wasteland)
 "tUH" = (
@@ -43867,8 +43862,7 @@
 "wtr" = (
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall";
-	smooth = 1
+	icon_state = "r_wall"
 	},
 /area/f13/wasteland)
 "wtx" = (
