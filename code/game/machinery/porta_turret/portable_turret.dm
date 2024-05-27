@@ -1886,7 +1886,7 @@
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
 		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
-	stun_projectile = /obj/item/projectile/bullet/m5mm/rubber
+	stun_projectile = /obj/item/projectile/bullet/m5mm
 	lethal_projectile = /obj/item/projectile/bullet/m5mm
 	lethal_projectile_sound = 'sound/f13weapons/assault_carbine.ogg'
 	stun_projectile_sound = 'sound/f13weapons/assault_carbine.ogg'
