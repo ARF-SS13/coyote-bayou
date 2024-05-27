@@ -39,7 +39,8 @@
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
 	girder_type = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_LOGCABIN_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_LOGCABIN_WALLS)
 
 /turf/closed/wall/f13/wood/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
@@ -51,7 +52,8 @@
 	icon_state = "wall-0"
 	hardness = 50
 	var/broken = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_HOUSE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_HOUSE_WALLS)
 
 /turf/closed/wall/f13/wood/house/clean
 	icon = 'icons/turf/walls/house_wall.dmi'

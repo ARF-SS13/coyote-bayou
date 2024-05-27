@@ -104,6 +104,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_REDBRICK_WALLS S_OBJ(16)			///turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick
 #define SMOOTH_GROUP_OLDBRICK_WALLS S_OBJ(17)			///turf/closed/wall/mineral/brick/old, /obj/structure/falsewall/brick/old
 #define SMOOTH_GROUP_CORRUGATED_WALLS S_OBJ(18)			///turf/closed/wall/corrugated, /obj/structure/falsewall/corrugated
+#define SMOOTH_GROUP_LOGCABIN_WALLS S_OBJ(19)			///turf/closed/wall/f13/wood
 
 #define SMOOTH_GROUP_PAPERFRAME S_OBJ(20)				///obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe
 
@@ -122,6 +123,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_BRONZE_TABLES S_OBJ(53)			///obj/structure/table/bronze
 #define SMOOTH_GROUP_ABDUCTOR_TABLES S_OBJ(54)			///obj/structure/table/abductor
 #define SMOOTH_GROUP_GLASS_TABLES S_OBJ(55)				///obj/structure/table/glass
+#define SMOOTH_GROUP_BOOTH_TABLES S_OBJ(56)				///obj/structure/table/booth
 
 #define SMOOTH_GROUP_ALIEN_NEST S_OBJ(59)				///obj/structure/bed/nest
 #define SMOOTH_GROUP_ALIEN_RESIN S_OBJ(60)				///obj/structure/alien/resin
@@ -138,3 +140,5 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CLEANABLE_DIRT	S_OBJ(67)			///obj/effect/decal/cleanable/dirt
 
 #define SMOOTH_GROUP_BAMBOO_FLOOR S_TURF(68) //![/turf/open/floor/bamboo]
+
+#define SMOOTH_GROUP_HOUSE_WALLS S_OBJ(301)				///turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/clean

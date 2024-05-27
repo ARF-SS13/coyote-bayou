@@ -280,7 +280,8 @@
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
 	icon_state = "wood0"
-	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_LOGCABIN_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_LOGCABIN_WALLS)
 
 /obj/structure/falsewall/iron
 	name = "rough metal wall"

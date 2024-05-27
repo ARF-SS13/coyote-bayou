@@ -10,7 +10,7 @@
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "f" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/buffalogourd,
 /obj/item/kitchen/knife{
 	attack_verb = list("slashed","filled");
@@ -48,11 +48,11 @@
 /area/survivalpod)
 "t" = (
 /obj/item/storage/backpack/duffelbag,
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "w" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/aethergiest{
 	desc = "A canned slab of aethergiest steak, pre-cooked and lasts forever!";
 	icon_state = "porknbeans";
@@ -61,7 +61,7 @@
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "x" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato,
 /obj/item/storage/fancy/candle_box,
 /obj/item/lighter/greyscale,
