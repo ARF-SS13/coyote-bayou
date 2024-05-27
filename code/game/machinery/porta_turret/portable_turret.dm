@@ -650,7 +650,7 @@
 
 	var/list/maybetargets = oview(scan_range, base)
 	var/list/scanned = list()
-	var/safety = 2000
+	var/safety = 20000
 	while(maybetargets.len && safety--)
 		var/atom/movable/potarget = LAZYACCESS(maybetargets, maybetargets.len)
 		maybetargets -= potarget
@@ -945,6 +945,7 @@
 			casing = new casing_type_lethal(our_turf)
 		if(!casing)
 			return FALSE
+		casing.BB?.factionize(faction)
 		casing.fire_casing(
 			target = target,
 			user = src,
@@ -965,6 +966,7 @@
 			turret_projectile = new stun_projectile(our_turf)
 		else
 			turret_projectile = new lethal_projectile(our_turf)
+		turret_projectile.factionize(faction)
 		turret_projectile.preparePixelProjectile(target, our_turf, spread = the_spread)
 		turret_projectile.firer = src
 		turret_projectile.fired_from = src
@@ -1836,6 +1838,99 @@
 		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and maintained by robots."
 	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("wastebot")
+
+
+/// .22LR turret
+/obj/machinery/porta_turret/f13/town
+	name = "allied point defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a burst of 9mm bullets \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	faction = list("neutral")
+	stun_projectile = /obj/item/projectile/bullet/c9mm/rubber
+	lethal_projectile = /obj/item/projectile/bullet/c9mm
+	lethal_projectile_sound = 'sound/f13weapons/9mm.ogg'
+	stun_projectile_sound = 'sound/f13weapons/9mm.ogg'
+	burst_count = 3
+	shot_spread = 5
+	req_access = list()
+
+/obj/machinery/porta_turret/f13/town/Initialize()
+	. = ..()
+	add_atom_colour(list(
+		0, 3, 0,
+		1, -2, 1,
+		0, 0, 0,
+	), FIXED_COLOUR_PRIORITY) // makes it a different pallette, all without actual icon editing, lah!
+
+/obj/machinery/porta_turret/f13/town/open_fire_on_target(atom/forced_target)
+	var/atom/targetthing = GET_WEAKREF(last_target)
+	if(isplayer(targetthing))
+		mode = TURRET_STUN
+	else
+		mode = TURRET_LETHAL
+	. = ..()
+
+/obj/machinery/porta_turret/f13/town/AMR_turret
+	name = "allied big game point defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a big fat .50 BMG round \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	stun_projectile = /obj/item/projectile/bullet/a50MG/rubber
+	lethal_projectile = /obj/item/projectile/bullet/a50MG
+	lethal_projectile_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	stun_projectile_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	burst_count = 1
+	shot_spread = 0
+	shot_delay = 3 SECONDS
+	scan_range = 30 // laggy!
+
+/obj/machinery/porta_turret/f13/town/gauss
+	name = "allied railgun point defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Will blast its frickin railgun \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	stun_projectile = /obj/item/projectile/bullet/c2mm
+	lethal_projectile = /obj/item/projectile/bullet/c2mm
+	lethal_projectile_sound = 'sound/f13weapons/gauss_rifle.ogg'
+	stun_projectile_sound = 'sound/f13weapons/gauss_rifle.ogg'
+	burst_count = 1
+	shot_spread = 0
+	shot_delay = 3 SECONDS
+	scan_range = 30 // laggy!
+
+/obj/machinery/porta_turret/f13/town/gatling_laser
+	name = "allied laser defense system"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a spray of lasers \
+		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
+		<br><br>\
+		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
+		part of your family. So, say hi to Uncle Turret! He's got your back! -<u>Adventurer's Guild</u>"
+	stun_projectile = /obj/item/projectile/beam/laser/pistol/hitscan/stun
+	lethal_projectile = /obj/item/projectile/beam/laser/gatling/hitscan
+	lethal_projectile_sound = 'sound/weapons/hyperblaster.ogg'
+	stun_projectile_sound = 'sound/weapons/hyperblaster.ogg'
+	burst_count = 10
+	shot_spread = 7
+	shot_delay = 0.1 SECONDS
 
 /// Nash's Friendliest Autogun
 /// needs ammo~
