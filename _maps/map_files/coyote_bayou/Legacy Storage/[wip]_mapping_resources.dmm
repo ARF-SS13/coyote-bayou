@@ -12574,7 +12574,6 @@
 	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
-	icon_type_smooth = "supermart";
 	name = "Reinforced prison wall"
 	},
 /area/f13/wasteland)
@@ -22005,7 +22004,6 @@
 	desc = "An extremely tough wall.";
 	icon = 'icons/fallout/turfs/walls/house.dmi';
 	icon_state = "house0";
-	icon_type_smooth = "house";
 	name = "reinforced wooden wall"
 	},
 /area/f13/wasteland)
@@ -26962,7 +26960,6 @@
 	desc = "A pre-War supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
-	icon_type_smooth = "supermart";
 	name = "supermart wall"
 	},
 /area/f13/wasteland)
@@ -28340,7 +28337,6 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
 	name = "Concrete wall"
 	},
 /area/f13/wasteland)
@@ -30940,7 +30936,6 @@
 	icon_state = "store";
 	desc = null;
 	name = "concrete wall";
-	icon_type_smooth = "store";
 	canSmoothWith = list(/turf/closed/wall/f13/store,/turf/closed/wall/f13/store/constructed,/turf/closed/wall,/turf/closed/indestructible/f13/obsidian,/turf/closed/wall/mineral/concrete/blastproof,/turf/closed/wall/f13/store/concretewall)
 	},
 /area/f13/wasteland)
@@ -31532,8 +31527,7 @@
 	icon_state = "supermart";
 	desc = null;
 	name = "concrete wall";
-	canSmoothWith = list(/turf/closed/wall/f13/supermart,/turf/closed/wall/mineral/concrete,/turf/closed/wall,/turf/closed/indestructible/f13/obsidian);
-	icon_type_smooth = "supermart"
+	canSmoothWith = list(/turf/closed/wall/f13/supermart,/turf/closed/wall/mineral/concrete,/turf/closed/wall,/turf/closed/indestructible/f13/obsidian)
 	},
 /area/f13/wasteland)
 "pMs" = (
