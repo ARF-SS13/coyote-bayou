@@ -21,10 +21,12 @@
 	fulltile = 1
 	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/house
 	icon_state = "housewindowbroken"
 	max_integrity = 1
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/wood
 	icon = 'icons/obj/wood_window.dmi'
@@ -34,6 +36,7 @@
 	fulltile = 1
 	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/wood/broken
 	icon_state = "woodwindowbroken"
@@ -47,6 +50,7 @@
 	fulltile = 1
 	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/sheet/mineral/wood))
@@ -94,6 +98,7 @@
 	fulltile = 1
 	smoothing_flags = 0
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/stainedglass/woodwindoworange
 	icon = 'modular_roguetown/misc/structure.dmi'

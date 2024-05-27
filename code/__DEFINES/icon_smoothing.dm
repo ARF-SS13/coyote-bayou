@@ -142,3 +142,8 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_BAMBOO_FLOOR S_TURF(68) //![/turf/open/floor/bamboo]
 
 #define SMOOTH_GROUP_HOUSE_WALLS S_OBJ(301)				///turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/clean
+#define SMOOTH_GROUP_INTERIOR_WALLS S_OBJ(302)			///turf/closed/wall/f13/wood/interior
+#define SMOOTH_GROUP_TENT_WALLS S_OBJ(303)				///turf/closed/wall/f13/tentwall
+#define SMOOTH_GROUP_SUPERMART_WALLS S_OBJ(304)			///turf/closed/wall/f13/supermart
+#define SMOOTH_GROUP_UTILITY_WALLS S_OBJ(305)			///turf/closed/wall/f13/tunnel
+#define SMOOTH_GROUP_VAULT_WALLS S_OBJ(306)				///turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault

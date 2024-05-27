@@ -22,12 +22,12 @@
 	girder_type = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
+	canSmoothWith = null
 	unbreakable = 0
 
 /turf/closed/wall/f13/ruins/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
-
+	
 /turf/closed/wall/f13/wood
 	name = "cabin wall"
 	desc = "A traditional wooden log cabin wall."
@@ -53,7 +53,7 @@
 	hardness = 50
 	var/broken = 0
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_HOUSE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_HOUSE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_HOUSE_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/wood/house/clean
 	icon = 'icons/turf/walls/house_wall.dmi'
@@ -70,6 +70,8 @@
 	hardness = 10
 //	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_INTERIOR_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_INTERIOR_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/store
 	name = "DEPRECATED WALL! REPLACE WITH CONCRETE WALLS!"
@@ -108,7 +110,7 @@
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 	custom_materials = list(/datum/material/sandstone = 4000)
 
 /obj/structure/falsewall/concrete
@@ -121,7 +123,7 @@
 	walltype = /turf/closed/wall/mineral/concrete
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/brick
 	name = "brick wall"
@@ -134,7 +136,7 @@
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_REDBRICK_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 	custom_materials = list(/datum/material/sandstone = 4000)
 
 /obj/structure/falsewall/brick
@@ -147,7 +149,7 @@
 	walltype = /turf/closed/wall/mineral/brick
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_REDBRICK_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_REDBRICK_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/brick/old
 	name = "weathered brick wall"
@@ -160,7 +162,7 @@
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDBRICK_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 	custom_materials = list(/datum/material/sandstone = 4000)
 
 /obj/structure/falsewall/brick/old
@@ -173,7 +175,7 @@
 	walltype = /turf/closed/wall/mineral/brick
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDBRICK_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_OLDBRICK_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
@@ -184,9 +186,10 @@
 	unbreakable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
-	sheet_type = null
+	sheet_type = /obj/item/stack/sheet/cloth
 	smoothing_flags = SMOOTH_BITMASK
-	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TENT_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_TENT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/scrap
 	name = "scrap wall"
@@ -197,8 +200,7 @@
 	hardness = 80
 //	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
-	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall)
+	canSmoothWith = null
 
 /turf/closed/wall/f13/scrap/red
 	icon = 'icons/fallout/turfs/walls/scrap_red.dmi'
@@ -236,16 +238,20 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SUPERMART_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_SUPERMART_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
 	desc = "A sturdy metal wall with various pipes and wiring set inside a special groove."
 	icon = 'icons/turf/walls/utility_wall.dmi'
 	icon_state = "wall-0"
+	base_icon_state = "wall"
 	hardness = 100
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/tunnel, /turf/closed/wall)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_UTILITY_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_UTILITY_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/f13/vault
 	name = "vault wall"
@@ -256,7 +262,8 @@
 	hardness = 130
 	explosion_block = 5
 //	smoothing_flags = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_VAULT_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/r_wall/f13
 	name = "glitch"
@@ -273,7 +280,8 @@
 	hardness = 230
 	explosion_block = 5
 //	smoothing_flags = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_VAULT_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/r_wall/f13vault/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
@@ -290,7 +298,7 @@
 //	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall)
+	canSmoothWith = null
 
 /turf/closed/wall/f13/sunset/brick_small_dark
 	name = "brick wall"
@@ -302,7 +310,7 @@
 //	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall)
+	canSmoothWith = null
 
 /turf/closed/wall/f13/sunset/brick_small_light
 	name = "brick wall"
