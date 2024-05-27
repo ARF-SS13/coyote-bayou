@@ -3557,11 +3557,6 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building/abandoned)
-"bDL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building/abandoned)
 "bEi" = (
 /obj/structure/flora/grass/coyote/eleven,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5202,7 +5197,7 @@
 /area/f13/wasteland)
 "crv" = (
 /obj/structure/barricade/bars,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
 "crG" = (
@@ -8893,10 +8888,6 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city)
-"dPL" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building)
 "dPV" = (
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/inside/subway,
@@ -9550,7 +9541,7 @@
 /obj/structure/barricade/wooden/planks{
 	icon_state = "board-2"
 	},
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "ega" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9913,7 +9904,7 @@
 	},
 /area/f13/wasteland/city)
 "eoe" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/spacevine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -11801,11 +11792,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"ffz" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building/abandoned)
 "ffE" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/remains/human,
@@ -14906,9 +14892,6 @@
 	pixel_y = 10
 	},
 /turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
-"gvq" = (
-/turf/closed/wall/f13/wood/house/broken,
 /area/f13/building/abandoned)
 "gvG" = (
 /obj/structure/railing{
@@ -18487,7 +18470,7 @@
 	},
 /obj/item/shard,
 /obj/structure/spacevine,
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "iel" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -21392,10 +21375,6 @@
 	},
 /turf/closed/wall/f13/sunset/brick_small,
 /area/f13/building)
-"jpu" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building/abandoned)
 "jpN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/cabinet/anchored{
@@ -24636,10 +24615,12 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "kGj" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindow"
+	},
 /obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "kGu" = (
 /turf/closed/wall/f13/ruins,
@@ -26303,10 +26284,6 @@
 /obj/structure/wreck/trash/halftire,
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
-"lrX" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building/abandoned)
 "lse" = (
 /obj/structure/flora/burnedtree5,
 /turf/open/indestructible/ground/outside/desert,
@@ -30534,11 +30511,6 @@
 	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland/city)
-"npN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building/abandoned)
 "npO" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/spray/pestspray,
@@ -37961,7 +37933,7 @@
 /area/f13/building/abandoned)
 "qGr" = (
 /obj/structure/barricade/wooden/planks/pregame,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/curtain{
 	color = "#8A806B";
 	icon_state = "closed";
@@ -39152,7 +39124,7 @@
 /area/f13/wasteland/city)
 "rke" = (
 /obj/structure/lattice/catwalk,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/spacevine{
 	name = "Mutant Vines"
 	},
@@ -46071,7 +46043,7 @@
 /area/f13/building)
 "ugE" = (
 /obj/structure/lattice/catwalk,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/water,
 /area/f13/city)
 "ugJ" = (
@@ -47604,7 +47576,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "uRd" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -48765,7 +48737,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -53762,9 +53734,6 @@
 /obj/item/card/highbounty,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
-"xMn" = (
-/turf/closed/wall/f13/wood/house/broken,
-/area/f13/building)
 "xMB" = (
 /obj/machinery/smartfridge/bottlerack/grownbin{
 	pixel_x = 2;
@@ -56181,7 +56150,7 @@ whw
 jgD
 wUT
 nNp
-gvq
+vsM
 boF
 uqT
 tCU
@@ -56695,7 +56664,7 @@ iRX
 wWG
 cjX
 vsM
-gvq
+vsM
 ebw
 gbu
 ebw
@@ -56710,7 +56679,7 @@ uxM
 oqJ
 quO
 pSW
-gvq
+vsM
 ebw
 gCi
 vsM
@@ -56720,7 +56689,7 @@ nNp
 qrP
 uLK
 nNp
-lrX
+nNp
 gMW
 gMW
 gMW
@@ -57217,7 +57186,7 @@ gZM
 ebw
 ebw
 uxM
-jpu
+oOC
 kFT
 xPl
 ebw
@@ -57466,7 +57435,7 @@ iRX
 wWG
 quO
 nNp
-gvq
+vsM
 aog
 lLh
 ebw
@@ -57484,12 +57453,12 @@ nNp
 nNp
 oOC
 nNp
-lrX
-lrX
+nNp
+nNp
 vsM
 nNp
 bzA
-lrX
+nNp
 oOC
 bhY
 gCi
@@ -57986,7 +57955,7 @@ nNp
 qrP
 vsM
 nNp
-npN
+qrP
 nNp
 vsM
 nBc
@@ -58260,13 +58229,13 @@ gmp
 jst
 qrP
 dQz
-lrX
+nNp
 sKg
 uhY
 gic
 gFy
 cds
-lrX
+nNp
 nTq
 oFm
 gVU
@@ -58780,7 +58749,7 @@ aPu
 vsM
 uxM
 ebw
-lrX
+nNp
 roR
 cRr
 pVV
@@ -59024,7 +58993,7 @@ gKo
 wWG
 eeY
 vsM
-lrX
+nNp
 iwL
 nNp
 nNp
@@ -59551,7 +59520,7 @@ vsM
 oOC
 vsM
 vsM
-ffz
+iwL
 kPs
 oFm
 yft
@@ -60039,7 +60008,7 @@ pjv
 iRX
 wWG
 xSr
-lrX
+nNp
 vsM
 nNp
 nNp
@@ -60065,7 +60034,7 @@ qwr
 vsM
 wfk
 ebw
-kGj
+uEh
 roR
 vhx
 fki
@@ -60579,7 +60548,7 @@ uxM
 ebw
 jmi
 ega
-oqJ
+kGj
 vMj
 nhN
 yft
@@ -60830,7 +60799,7 @@ ebw
 sDc
 vsM
 nBc
-lrX
+nNp
 ebw
 ebw
 mpb
@@ -61093,7 +61062,7 @@ kAs
 ebw
 ebw
 ega
-lrX
+nNp
 kPs
 nhN
 yft
@@ -61344,7 +61313,7 @@ nrv
 yhW
 dFn
 fVd
-lrX
+nNp
 nNp
 hwK
 wxn
@@ -62107,15 +62076,15 @@ yft
 qPZ
 vGR
 vsM
-gvq
-lrX
-lrX
+vsM
 nNp
-npN
+nNp
+nNp
+qrP
 nNp
 nNp
 vsM
-lrX
+nNp
 nNp
 tNp
 gCi
@@ -62627,7 +62596,7 @@ gmp
 aPu
 gzM
 hts
-bDL
+nuj
 eBA
 hbP
 xtR
@@ -62882,8 +62851,8 @@ hqm
 uhY
 cDT
 vsM
-gvq
-jpu
+vsM
+oOC
 oOC
 vsM
 oOC
@@ -63648,16 +63617,16 @@ nhN
 tJt
 oMR
 vGR
-jpu
+oOC
 vsM
-gvq
+vsM
 vsM
 vsM
 vsM
 oOC
 vsM
-lrX
-lrX
+nNp
+nNp
 qrP
 nNp
 nNp
@@ -67113,8 +67082,8 @@ cJy
 vsM
 vsM
 vsM
-gvq
-gvq
+vsM
+vsM
 vsM
 tiN
 iKf
@@ -67860,8 +67829,8 @@ iKf
 vHo
 fzB
 vsM
-gvq
-gvq
+vsM
+vsM
 vsM
 wLm
 ylN
@@ -72390,7 +72359,7 @@ iKf
 uGu
 cQl
 qrP
-npN
+qrP
 iwL
 nNp
 vsM
@@ -74590,7 +74559,7 @@ gVU
 out
 iKf
 iKf
-xMn
+eFz
 iKC
 dZs
 iKC
@@ -74847,7 +74816,7 @@ dBE
 out
 iKf
 iKf
-xMn
+eFz
 fRj
 oOn
 vxf
@@ -79419,7 +79388,7 @@ vsM
 nNp
 vsM
 nNp
-gvq
+vsM
 nNp
 vsM
 iKf
@@ -94167,8 +94136,8 @@ tiN
 eFz
 eFz
 kUh
-dPL
-dPL
+jUS
+jUS
 eFz
 eFz
 iKf
@@ -94427,7 +94396,7 @@ gbL
 fPA
 sjQ
 tSo
-dPL
+jUS
 aCW
 cPT
 iKf
@@ -94684,7 +94653,7 @@ pSq
 gbL
 eFz
 wRl
-dPL
+jUS
 kIZ
 iKf
 iKf
@@ -94936,12 +94905,12 @@ iKf
 iKf
 iKf
 eFz
-xMn
+eFz
 izD
 gbL
 eFz
 eFz
-dPL
+jUS
 evq
 jzl
 kgF
@@ -95192,7 +95161,7 @@ iKf
 iKf
 iKf
 iKf
-dPL
+jUS
 auk
 pSq
 gbL
@@ -95706,12 +95675,12 @@ iKf
 iKf
 tiN
 iKf
-dPL
-dPL
+jUS
+jUS
 eFz
 eFz
 bHL
-dPL
+jUS
 eFz
 iKf
 vNB
@@ -98804,21 +98773,21 @@ pVV
 yft
 gVU
 eMs
-gvq
-gvq
-gvq
 vsM
-gvq
+vsM
+vsM
+vsM
+vsM
 vsM
 vsM
 pKE
 vsM
-gvq
-gvq
 vsM
 vsM
-gvq
-gvq
+vsM
+vsM
+vsM
+vsM
 iKf
 iKf
 iKf
@@ -99061,7 +99030,7 @@ pnb
 pnb
 pnb
 pnb
-gvq
+vsM
 sVm
 sPp
 czW
@@ -99075,7 +99044,7 @@ xZX
 vsM
 eYS
 eYS
-gvq
+vsM
 iKf
 afz
 iKf
@@ -100080,11 +100049,11 @@ qES
 qES
 iKf
 iKf
-xMn
+eFz
 tBA
 tBA
 cSE
-xMn
+eFz
 pkw
 iKf
 fpO
@@ -100103,7 +100072,7 @@ pPk
 vsM
 sSP
 sSP
-gvq
+vsM
 iKf
 iKf
 mYI
@@ -100337,18 +100306,18 @@ iKf
 qES
 iKf
 iKf
-xMn
+eFz
 qLT
 tBA
 tKR
-xMn
+eFz
 iKf
 lkC
 iKf
 dNx
 vsM
-gvq
-gvq
+vsM
+vsM
 hpd
 sPp
 uxM
@@ -101128,7 +101097,7 @@ tQD
 hrr
 uxM
 htr
-gvq
+vsM
 iKf
 hZK
 iKf
@@ -101634,8 +101603,8 @@ iKf
 iKf
 oTx
 iKf
-gvq
-gvq
+vsM
+vsM
 gTY
 hpd
 jnR
@@ -101892,7 +101861,7 @@ iKf
 iKf
 iKf
 iKf
-gvq
+vsM
 jek
 uxM
 cnO
@@ -102412,7 +102381,7 @@ ocL
 uxM
 sSx
 vaQ
-gvq
+vsM
 iKf
 dcp
 fMs
@@ -102665,11 +102634,11 @@ aCW
 iKf
 vsM
 pXm
-gvq
+vsM
 vsM
 vsM
 pXm
-gvq
+vsM
 iKf
 iKf
 iKf

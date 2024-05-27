@@ -22,7 +22,7 @@
 	smoothing_flags = NONE
 	level = 3
 
-/obj/structure/window/fulltile/house/broken
+/obj/structure/window/fulltile/house
 	icon_state = "housewindowbroken"
 	max_integrity = 1
 

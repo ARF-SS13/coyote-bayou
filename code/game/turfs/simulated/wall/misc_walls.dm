@@ -222,3 +222,25 @@
 	sheet_type = /obj/item/stack/sheet/bronze
 	sheet_amount = 2
 	girder_type = /obj/structure/girder/bronze
+
+/turf/closed/wall/corrugated
+	name = "corrugated metal wall"
+	desc = "A metal wall made out of extremely widely available corrugated iron sheets. Just slap the onto some supports and you have your very own rickety wall!"
+	icon = 'icons/turf/walls/corrugated_wall.dmi'
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_CORRUGATED_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CORRUGATED_WALLS)
+
+/turf/closed/wall/corrugated/red
+	name = "red corrugated metal wall"
+	desc = "A hastily slapped-together FAST wall, it's really fast! Because it's painted red."
+	icon = 'icons/turf/walls/corrugated_wall_red.dmi'
+
+/turf/closed/wall/corrugated/green
+	name = "green corrugated metal wall"
+	desc = "A dark-green corrugated sheet wall. Woah, is this a stealth barn? You could hide this in a field and no one would ever find it!"
+	icon = 'icons/turf/walls/corrugated_wall_green.dmi'
+
+/turf/closed/wall/corrugated/blue
+	name = "blue corrugated metal wall"
+	desc = "Super-common corrugated sheets slapped onto a frame, a wall! It gives off an aura of Pantone 7545C... or is it Pantone 7546C? Perhaps the radiation is interfering with my interior decorating knowledge..."
+	icon = 'icons/turf/walls/corrugated_wall_blue.dmi'

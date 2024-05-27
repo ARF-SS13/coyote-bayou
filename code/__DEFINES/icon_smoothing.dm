@@ -103,6 +103,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CONCRETE_WALLS S_OBJ(15)			///turf/closed/wall/mineral/concrete, /obj/structure/falsewall/concrete
 #define SMOOTH_GROUP_REDBRICK_WALLS S_OBJ(16)			///turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick
 #define SMOOTH_GROUP_OLDBRICK_WALLS S_OBJ(17)			///turf/closed/wall/mineral/brick/old, /obj/structure/falsewall/brick/old
+#define SMOOTH_GROUP_CORRUGATED_WALLS S_OBJ(18)			///turf/closed/wall/corrugated, /obj/structure/falsewall/corrugated
 
 #define SMOOTH_GROUP_PAPERFRAME S_OBJ(20)				///obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe
 

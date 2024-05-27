@@ -56,8 +56,6 @@
 /turf/closed/wall/f13/wood/house/clean
 	icon = 'icons/turf/walls/house_wall.dmi'
 
-/turf/closed/wall/f13/wood/house/broken
-	name = "DEPRECATED WALL! INFORM MAPPERS TO REPLACE THIS!"
 /turf/closed/wall/f13/coyote/fortress_brick
 	name = "DEPRECATED WALL! INFORM MAPPERS TO REPLACE THIS!"
 
