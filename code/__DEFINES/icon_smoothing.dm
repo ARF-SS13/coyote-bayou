@@ -124,6 +124,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_ABDUCTOR_TABLES S_OBJ(54)			///obj/structure/table/abductor
 #define SMOOTH_GROUP_GLASS_TABLES S_OBJ(55)				///obj/structure/table/glass
 #define SMOOTH_GROUP_BOOTH_TABLES S_OBJ(56)				///obj/structure/table/booth
+#define SMOOTH_GROUP_JUNK_TABLES S_OBJ(57)				///obj/structure/table/wood/junk
 
 #define SMOOTH_GROUP_ALIEN_NEST S_OBJ(59)				///obj/structure/bed/nest
 #define SMOOTH_GROUP_ALIEN_RESIN S_OBJ(60)				///obj/structure/alien/resin
@@ -147,3 +148,4 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_SUPERMART_WALLS S_OBJ(304)			///turf/closed/wall/f13/supermart
 #define SMOOTH_GROUP_UTILITY_WALLS S_OBJ(305)			///turf/closed/wall/f13/tunnel
 #define SMOOTH_GROUP_VAULT_WALLS S_OBJ(306)				///turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault
+#define SMOOTH_GROUP_OLDWOOD_WALLS S_OBJ(307)			///turf/closed/wall/f13/coyote/oldwood

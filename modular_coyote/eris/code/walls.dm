@@ -57,25 +57,3 @@
 	/obj/structure/simple_door/interior
 	)
 */
-/turf/closed/wall/f13/coyote/oldwood
-	name = "old wood wall"
-	desc = "A wall of very old and rotting wood."
-	icon = 'icons/turf/walls/wood_wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	hardness = 80
-	smoothing_flags = SMOOTH_BITMASK
-	girder_type = 0
-	sheet_type = null
-	canSmoothWith = list(
-	/turf/closed/wall/f13/coyote/oldwood,
-	/turf/closed/wall,
-	/obj/structure/window/fulltile,
-	/obj/structure/window/fulltile/house,
-	/obj/structure/window/fulltile/wood,
-	/obj/structure/window/fulltile/store,
-	/obj/structure/window/fulltile/ruins,
-	/obj/structure/simple_door,
-	/obj/structure/simple_door/wood,
-	/obj/structure/simple_door/interior
-	)

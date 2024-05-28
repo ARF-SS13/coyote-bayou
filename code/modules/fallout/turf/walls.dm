@@ -73,32 +73,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_INTERIOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_INTERIOR_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
-/turf/closed/wall/f13/store
-	name = "DEPRECATED WALL! REPLACE WITH CONCRETE WALLS!"
-	desc = "A pre-War store wall made of solid concrete."
-	icon = 'icons/turf/walls/f13store.dmi'
-	icon_state = "store"
-//	icon_type_smooth = "store"
-	hardness = 80
-	smoothing_flags = SMOOTH_CORNERS
-	//	disasemblable = 0
-	baseturfs = /turf/open/indestructible/ground/outside/ruins
-	girder_type = 0
-	sheet_type = null
-	canSmoothWith = list(
-	/turf/closed/wall/f13/store,
-	/turf/closed/wall/f13/store/constructed,
-	/turf/closed/wall,
-	/obj/structure/window/fulltile,
-	/obj/structure/window/fulltile/house,
-	/obj/structure/window/fulltile/wood,
-	/obj/structure/window/fulltile/store,
-	/obj/structure/window/fulltile/ruins,
-	/obj/structure/simple_door,
-	/obj/structure/simple_door/wood,
-	/obj/structure/simple_door/interior
-	)
-
 /turf/closed/wall/mineral/concrete
 	name = "concrete wall"
 	desc = "A pre-fabricated concrete wall."
@@ -322,7 +296,7 @@
 //	smoothing_flags = SMOOTH_OLD
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall)
+	canSmoothWith = null
 
 //Fallout 13 indestructible walls
 
@@ -455,3 +429,28 @@
 	animate(src.fullDark,alpha=0,time=10,easing=CUBIC_EASING)
 	return
 */
+
+/turf/closed/wall/f13/coyote/oldwood
+	name = "old wood wall"
+	desc = "A wall of very old and rotting wood."
+	icon = 'icons/turf/walls/wood_wall.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	hardness = 80
+	smoothing_flags = SMOOTH_BITMASK
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(
+	/turf/closed/wall/f13/coyote/oldwood,
+	/turf/closed/wall,
+	/obj/structure/window/fulltile,
+	/obj/structure/window/fulltile/house,
+	/obj/structure/window/fulltile/wood,
+	/obj/structure/window/fulltile/store,
+	/obj/structure/window/fulltile/ruins,
+	/obj/structure/simple_door,
+	/obj/structure/simple_door/wood,
+	/obj/structure/simple_door/interior
+	)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDWOOD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_OLDWOOD_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)

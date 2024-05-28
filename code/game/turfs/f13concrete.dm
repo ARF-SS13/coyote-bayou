@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 		if(do_after(user, 50, target=src))
 			C.use(2)
 			var/turf/T = get_turf(src)
-			T.PlaceOnTop(/turf/closed/wall/f13/store/constructed)
+			T.PlaceOnTop(/turf/closed/wall/mineral/concrete)
 			qdel(src)
 		return
 	else if(istype(I, /obj/item/weldingtool))
@@ -237,7 +237,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 
 	return ..()
 
-/turf/closed/wall/f13/store/constructed
+/turf/closed/wall/mineral/concrete
 	name = "store wall"
 	desc = "A pre-War store wall made of solid concrete. This one looks newly built."
 	icon = 'icons/turf/walls/f13store.dmi'
@@ -248,8 +248,8 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	girder_type = /obj/structure/barricade/concrete
 	sheet_type = null
 	canSmoothWith = list(
-	/turf/closed/wall/f13/store,
-	/turf/closed/wall/f13/store/constructed,
+	/turf/closed/wall/mineral/concrete,
+	/turf/closed/wall/mineral/concrete,
 	/turf/closed/wall,
 	/obj/structure/window/fulltile,
 	/obj/structure/window/fulltile/house,
