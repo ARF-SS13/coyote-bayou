@@ -599,12 +599,12 @@
 /obj/item/projectile/proc/faction_check(atom/target)
 	if(not_harmful)
 		return FALSE // its something that shouldnt be harmful
-	if(!isliving(target) || !LAZYLEN(faction))
+	if(!(isliving(target) || istype(target, /obj/machinery/porta_turret)) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
-	if(maybehit.shoot_me)
-		return FALSE
-	return LAZYLEN(maybehit.faction & faction)
+	if(isliving(target) && maybehit.shoot_me)
+		return FALSE // so, turrets and livings dont share the same faction var
+	return LAZYLEN(maybehit.faction & faction) // but they're named the same so its just fine
 
 
 /// Check if the projectile is Super Effective on the target!

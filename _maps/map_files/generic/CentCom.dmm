@@ -12030,6 +12030,16 @@
 	icon_state = "bar"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
+"XP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc,
+/area/f13/building)
 "XQ" = (
 /obj/structure/table,
 /obj/item/wirecutters,
@@ -69375,7 +69385,7 @@ Wz
 ld
 SQ
 Xi
-SQ
+XP
 Pd
 SQ
 BQ
