@@ -915,6 +915,8 @@ y
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
 	icon_state = "aethergiest_g"
 	item_state = "aethergiest_g"
+	alpha = 200
+	color = "#3355EF"
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 50
