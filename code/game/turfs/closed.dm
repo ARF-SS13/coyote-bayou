@@ -205,7 +205,7 @@
 	icon_state = "r_wall"
 	baseturfs = /turf/open/floor/plating
 	smoothing_flags = SMOOTH_CORNERS
-	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/indestructible/f13vaultrusted)
+	canSmoothWith = null
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"

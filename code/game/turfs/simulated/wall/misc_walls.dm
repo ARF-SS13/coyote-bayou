@@ -202,8 +202,8 @@
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
-	icon_state = "rusty_reinforced_wall-0"
-	base_icon_state = "rusty_reinforced_wall"
+	icon_state = "wall-0"
+	base_icon_state = "wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
 

@@ -69,7 +69,6 @@
 //	icon_type_smooth = "interior"
 	hardness = 10
 //	smooth = SMOOTH_OLD
-	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_INTERIOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_INTERIOR_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
