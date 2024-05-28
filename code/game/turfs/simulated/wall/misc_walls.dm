@@ -190,8 +190,8 @@
 	name = "rusted wall"
 	desc = "A rusted metal wall."
 	icon = 'icons/turf/walls/rusty_wall.dmi'
-	icon_state = "rusty_wall-0"
-	base_icon_state = "rusty_wall"
+	icon_state = "wall-0"
+	base_icon_state = "wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 
