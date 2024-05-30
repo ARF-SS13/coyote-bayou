@@ -210,7 +210,6 @@
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall, /obj/structure/window/fulltile, /obj/structure/window/fulltile/house, /obj/structure/window/fulltile/wood, /obj/structure/window/fulltile/store)
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SUPERMART_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_SUPERMART_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
@@ -438,17 +437,5 @@
 	smoothing_flags = SMOOTH_BITMASK
 	girder_type = 0
 	sheet_type = null
-	canSmoothWith = list(
-	/turf/closed/wall/f13/coyote/oldwood,
-	/turf/closed/wall,
-	/obj/structure/window/fulltile,
-	/obj/structure/window/fulltile/house,
-	/obj/structure/window/fulltile/wood,
-	/obj/structure/window/fulltile/store,
-	/obj/structure/window/fulltile/ruins,
-	/obj/structure/simple_door,
-	/obj/structure/simple_door/wood,
-	/obj/structure/simple_door/interior
-	)
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_OLDWOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_OLDWOOD_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
