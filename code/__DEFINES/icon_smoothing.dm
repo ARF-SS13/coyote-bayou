@@ -70,7 +70,6 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_RED	S_TURF(17)				///turf/open/floor/carpet/red
 #define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(18)		///turf/open/floor/carpet/royalblack
 #define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(19)		///turf/open/floor/carpet/royalblue
-#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(21)			///turf/open/floor/carpet/stellar
 
 #define SMOOTH_GROUP_CLOSED_TURFS S_TURF(24)			///turf/closed
 #define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(25)			///turf/closed/wall/material
@@ -101,11 +100,6 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_TITANIUM_WALLS S_OBJ(11)			///turf/closed/wall/mineral/titanium, /obj/structure/falsewall/titanium
 #define SMOOTH_GROUP_PLASTITANIUM_WALLS S_OBJ(13)		///turf/closed/wall/mineral/plastitanium, /obj/structure/falsewall/plastitanium
 #define SMOOTH_GROUP_SURVIVAL_TIANIUM_POD S_OBJ(14)		///turf/closed/wall/mineral/titanium/survival/pod, /obj/machinery/door/airlock/survival_pod, /obj/structure/window/shuttle/survival_pod
-#define SMOOTH_GROUP_CONCRETE_WALLS S_OBJ(15)			///turf/closed/wall/mineral/concrete, /obj/structure/falsewall/concrete
-#define SMOOTH_GROUP_REDBRICK_WALLS S_OBJ(16)			///turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick
-#define SMOOTH_GROUP_OLDBRICK_WALLS S_OBJ(17)			///turf/closed/wall/mineral/brick/old, /obj/structure/falsewall/brick/old
-#define SMOOTH_GROUP_CORRUGATED_WALLS S_OBJ(18)			///turf/closed/wall/corrugated, /obj/structure/falsewall/corrugated
-#define SMOOTH_GROUP_LOGCABIN_WALLS S_OBJ(19)			///turf/closed/wall/f13/wood
 
 #define SMOOTH_GROUP_PAPERFRAME S_OBJ(20)				///obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe
 
@@ -141,8 +135,9 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_CLEANABLE_DIRT	S_OBJ(67)			///obj/effect/decal/cleanable/dirt
 
-#define SMOOTH_GROUP_BAMBOO_FLOOR S_TURF(68) //![/turf/open/floor/bamboo]
+#define SMOOTH_GROUP_BAMBOO_FLOOR S_OBJ(68) //![/turf/open/floor/bamboo]
 
+#define SMOOTH_GROUP_CARPET_STELLAR S_OBJ(300)			///turf/open/floor/carpet/stellar
 #define SMOOTH_GROUP_HOUSE_WALLS S_OBJ(301)				///turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/clean
 #define SMOOTH_GROUP_INTERIOR_WALLS S_OBJ(302)			///turf/closed/wall/f13/wood/interior
 #define SMOOTH_GROUP_TENT_WALLS S_OBJ(303)				///turf/closed/wall/f13/tentwall
@@ -150,3 +145,8 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_UTILITY_WALLS S_OBJ(305)			///turf/closed/wall/f13/tunnel
 #define SMOOTH_GROUP_VAULT_WALLS S_OBJ(306)				///turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault
 #define SMOOTH_GROUP_OLDWOOD_WALLS S_OBJ(307)			///turf/closed/wall/f13/coyote/oldwood
+#define SMOOTH_GROUP_CONCRETE_WALLS S_OBJ(308)			///turf/closed/wall/mineral/concrete, /obj/structure/falsewall/concrete
+#define SMOOTH_GROUP_REDBRICK_WALLS S_OBJ(309)			///turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick
+#define SMOOTH_GROUP_OLDBRICK_WALLS S_OBJ(310)			///turf/closed/wall/mineral/brick/old, /obj/structure/falsewall/brick/old
+#define SMOOTH_GROUP_CORRUGATED_WALLS S_OBJ(311)		///turf/closed/wall/corrugated, /obj/structure/falsewall/corrugated
+#define SMOOTH_GROUP_LOGCABIN_WALLS S_OBJ(312)			///turf/closed/wall/f13/wood
