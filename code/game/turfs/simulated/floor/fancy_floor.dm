@@ -615,6 +615,15 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ROYAL_BLUE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ROYAL_BLUE)
 
+/turf/open/floor/carpet/stellar
+	name = "stellar carpet"
+	icon = 'icons/turf/floors/carpet_stellar.dmi'
+	icon_state = "stellar_carpet-255"
+	base_icon_state = "stellar_carpet"
+	floor_tile = /obj/item/stack/tile/carpet/stellar
+	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_STELLAR
+	canSmoothWith = SMOOTH_GROUP_CARPET_STELLAR
+
 /turf/open/floor/carpet/vault
 	icon = 'icons/turf/floors/carpet_vault.dmi'
 	canSmoothWith = list(/turf/open/floor/carpet/vault)

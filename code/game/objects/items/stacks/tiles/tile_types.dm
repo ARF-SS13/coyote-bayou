@@ -302,6 +302,13 @@
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 	merge_type = /obj/item/stack/tile/carpet/royalblue
 
+/obj/item/stack/tile/carpet/stellar
+	name = "stellar carpet"
+	icon_state = "tile_carpet_stellar"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/stellar
+	merge_type = /obj/item/stack/tile/carpet/stellar
+
 /obj/item/stack/tile/carpet/ten
 	amount = 10
 
