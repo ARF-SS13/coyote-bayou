@@ -135,9 +135,9 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_CLEANABLE_DIRT	S_OBJ(67)			///obj/effect/decal/cleanable/dirt
 
-#define SMOOTH_GROUP_BAMBOO_FLOOR S_OBJ(68) //![/turf/open/floor/bamboo]
+#define SMOOTH_GROUP_BAMBOO_FLOOR S_TURF(68) //![/turf/open/floor/bamboo]
 
-#define SMOOTH_GROUP_CARPET_STELLAR S_OBJ(300)			///turf/open/floor/carpet/stellar
+#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(300)			///turf/open/floor/carpet/stellar
 #define SMOOTH_GROUP_HOUSE_WALLS S_OBJ(301)				///turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/clean
 #define SMOOTH_GROUP_INTERIOR_WALLS S_OBJ(302)			///turf/closed/wall/f13/wood/interior
 #define SMOOTH_GROUP_TENT_WALLS S_OBJ(303)				///turf/closed/wall/f13/tentwall
