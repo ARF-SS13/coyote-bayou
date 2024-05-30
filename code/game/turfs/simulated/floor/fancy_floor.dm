@@ -621,8 +621,8 @@
 	icon_state = "stellar_carpet-255"
 	base_icon_state = "stellar_carpet"
 	floor_tile = /obj/item/stack/tile/carpet/stellar
-	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_STELLAR
-	canSmoothWith = SMOOTH_GROUP_CARPET_STELLAR
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_STELLAR)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_STELLAR)
 
 /turf/open/floor/carpet/vault
 	icon = 'icons/turf/floors/carpet_vault.dmi'
