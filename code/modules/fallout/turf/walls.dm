@@ -249,10 +249,9 @@
 	desc = "A wall built to withstand an atomic explosion."
 	icon = 'icons/fallout/turfs/walls/vault_reinforced.dmi'
 	icon_state = "vaultrwall0"
-//	icon_type_smooth = "vaultrwall"
 	hardness = 230
 	explosion_block = 5
-//	smoothing_flags = SMOOTH_OLD
+	smoothing_flags = null
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_VAULT_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 

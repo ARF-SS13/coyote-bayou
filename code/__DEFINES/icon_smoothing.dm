@@ -103,10 +103,10 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_PAPERFRAME S_OBJ(20)				///obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe
 
-#define SMOOTH_GROUP_WINDOW_FULLTILE S_OBJ(21)			///turf/closed/indestructible/fakeglass, /obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile
-#define SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE S_OBJ(22)	///obj/structure/window/bronze/fulltile
-#define SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM S_OBJ(23)	///turf/closed/indestructible/opsglass, /obj/structure/window/plasma/reinforced/plastitanium
-#define SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE S_OBJ(24)	///obj/structure/window/shuttle
+#define SMOOTH_GROUP_WINDOW_FULLTILE S_OBJ(22)			///turf/closed/indestructible/fakeglass, /obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/reinforced/plasma/fulltile
+#define SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE S_OBJ(23)	///obj/structure/window/bronze/fulltile
+#define SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM S_OBJ(24)	///turf/closed/indestructible/opsglass, /obj/structure/window/reinforced/plasma/plastitanium
+#define SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE S_OBJ(25)	///obj/structure/window/reinforced/shuttle
 
 #define SMOOTH_GROUP_LATTICE  S_OBJ(30)					///obj/structure/lattice
 
