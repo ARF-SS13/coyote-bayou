@@ -546,13 +546,14 @@
 	throwforce = 15
 	throwforce_on = 30
 	attack_speed = CLICK_CD_MELEE
-	var/emp_radius = 1
+	var/emp_amount = 5
 
-///obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
-//	. = ..()
-//	if(!active)
-//		return
-//	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
+/obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
+	. = ..()
+	if(!active || !ismovable(A))
+		return
+	A.emp_act(emp_amount)
+	// empulse_using_range(A, emp_radius, log=0) //fox go a (A)
 
 //dan kelly is a nerd NO YOU ARE!!!
 

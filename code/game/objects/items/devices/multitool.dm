@@ -30,6 +30,7 @@
 	usesound = 'sound/weapons/empty.ogg'
 	var/datum/integrated_io/selected_io = null  //functional for integrated circuits.
 	var/mode = 0
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/multitool/chaplain
 	name = "\improper hypertool"

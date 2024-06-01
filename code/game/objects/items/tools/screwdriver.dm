@@ -26,6 +26,7 @@
 	reskinnable_component = null
 	wound_bonus = -10
 	bare_wound_bonus = 5
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/screwdriver/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)

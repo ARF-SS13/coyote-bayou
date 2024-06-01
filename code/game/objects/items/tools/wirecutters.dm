@@ -23,6 +23,7 @@
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/wirecutters/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
