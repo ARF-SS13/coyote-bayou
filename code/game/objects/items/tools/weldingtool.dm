@@ -38,6 +38,7 @@
 	toolspeed = 1
 	wound_bonus = 0
 	bare_wound_bonus = 5
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/weldingtool/Initialize()
 	. = ..()
