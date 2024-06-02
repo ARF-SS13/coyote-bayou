@@ -1040,6 +1040,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["flist"])]...<br>"
 
+			dat += "</td>"
+			dat += APPEARANCE_CATEGORY_COLUMN
+
 			//Start Creature Character
 			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
@@ -1074,8 +1077,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			// End creature Character
 
 			dat += "</td>"
-			//	END COLUMN 1
-			//	START COLUMN 2
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 			dat += "<h2>Voice</h2>"
