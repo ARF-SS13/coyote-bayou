@@ -1121,6 +1121,13 @@
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/f13effects/sunsetsounds/waa.ogg'
 
+/datum/emote/gurp
+	key = "gurp"
+	key_third_person = "GURPS!"
+	message = "lets out a loud GURP!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/f13effects/sunsetsounds/gurp.ogg'
+
 /datum/emote/mission_complete
 	key = "success"
 	key_third_person = "successes"
