@@ -95,6 +95,13 @@
 /obj/effect/decal/cleanable/dirt/dust
 	name = "dust"
 	desc = "A thin layer of dust coating the floor."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "dust"
+	base_icon_state = "dust"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+	beauty = -25
 
 /obj/effect/decal/cleanable/greenglow/ecto
 	name = "ectoplasmic puddle"

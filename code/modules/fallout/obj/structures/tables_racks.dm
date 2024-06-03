@@ -16,8 +16,10 @@
 	desc = "A diner style booth table."
 	icon = 'icons/obj/smooth_structures/booth_table.dmi'
 	icon_state = "boothtable"
+	smoothing_flags = SMOOTH_CORNERS
 	flags_1 = NODECONSTRUCT_1
 	canSmoothWith = list(SMOOTH_GROUP_BOOTH_TABLES)
+	smoothing_groups = list(SMOOTH_GROUP_BOOTH_TABLES)
 
 /*
 /obj/structure/table/booth/Initialize()

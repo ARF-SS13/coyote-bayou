@@ -66,9 +66,8 @@
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
 	icon = 'icons/fallout/turfs/walls/interior.dmi'
 	icon_state = "interior0"
-//	icon_type_smooth = "interior"
 	hardness = 10
-//	smooth = SMOOTH_OLD
+	smoothing_flags = SMOOTH_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_INTERIOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_INTERIOR_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 

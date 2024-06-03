@@ -233,7 +233,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fd" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/closed/mineral/random/low_chance,
@@ -473,10 +473,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "lO" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -535,8 +535,8 @@
 	},
 /area/f13/wasteland)
 "oo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -605,7 +605,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ql" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "qJ" = (
@@ -949,7 +949,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "zF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -1748,7 +1748,7 @@
 	},
 /area/f13/wasteland)
 "UF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/closed/wall/f13/ruins,
