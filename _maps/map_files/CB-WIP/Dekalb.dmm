@@ -10,7 +10,7 @@
 /obj/structure/barricade/barswindow{
 	dir = 4
 	},
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -412,7 +412,7 @@
 /turf/open/floor/wood_mosaic,
 /area/f13/wasteland)
 "le" = (
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/structure/barricade/barswindow{
 	layer = 3.5;
 	dir = 8
@@ -829,7 +829,7 @@
 /turf/closed/wall/f13/tunnel,
 /area/f13/wasteland)
 "wG" = (
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/structure/barricade/bars{
 	max_integrity = 1200;
 	name = "reinforced metal bars";
@@ -970,7 +970,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "yZ" = (
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/structure/barricade/bars{
 	layer = 3.5;
 	dir = 8
@@ -1162,7 +1162,7 @@
 	obj_integrity = 1200;
 	dir = 1
 	},
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/structure/curtain{
 	color = "#363636"
 	},
@@ -1416,7 +1416,7 @@
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
 "IE" = (
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/structure/barricade/bars{
 	max_integrity = 1200;
 	name = "reinforced metal bars";
@@ -1447,7 +1447,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/wasteland)
 "Jc" = (
-/obj/structure/table/wood/settler/junk,
+/obj/structure/table/wood/junk,
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
 "Jn" = (
@@ -1762,7 +1762,7 @@
 	obj_integrity = 1200;
 	dir = 1
 	},
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/machinery/light/floor,
 /obj/structure/curtain{
 	color = "#363636"
@@ -2113,7 +2113,7 @@
 /obj/structure/barricade/bars{
 	dir = 4
 	},
-/obj/structure/table/wood/settler/bar,
+/obj/structure/table/wood/bar,
 /obj/machinery/light/floor,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
