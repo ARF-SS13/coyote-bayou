@@ -241,7 +241,7 @@
 /obj/item/stack/sheet/mineral/silver,
 /obj/item/stack/sheet/mineral/silver,
 /obj/item/stack/sheet/mineral/silver,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -308,7 +308,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "avA" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/phone,
 /turf/open/floor/plasteel/darkbrown/side{
 	dir = 8
@@ -642,7 +642,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "aTL" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/wood/settler/fancy/black,
 /obj/item/reagent_containers/food/drinks/mug/tea/forest,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave)
@@ -1116,7 +1116,7 @@
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
 "byS" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8
 	},
@@ -1133,7 +1133,7 @@
 	},
 /area/f13/wasteland)
 "bAq" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/open/floor/plating/wooden2,
@@ -3818,7 +3818,7 @@
 	},
 /area/f13/building)
 "fqv" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/laser_pointer/green,
 /obj/item/laser_pointer/purple,
 /turf/open/floor/plating/wooden2,
@@ -4298,7 +4298,7 @@
 /area/f13/building)
 "gcJ" = (
 /obj/item/stack/sheet/mineral/diamond,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -4337,7 +4337,7 @@
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/stack/sheet/mineral/gold,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4594,7 +4594,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "gte" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/hand_labeler,
 /obj/item/pen,
 /obj/item/pen,
@@ -5289,7 +5289,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "hqo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
 "hqW" = (
@@ -6096,7 +6096,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/building)
 "irY" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/camera,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
@@ -6525,7 +6525,7 @@
 	},
 /area/f13/underground/cave)
 "iSA" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/festive,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
@@ -6654,7 +6654,7 @@
 /area/f13/building)
 "jad" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/glass/bottle/ichor/red,
 /turf/open/floor/plating/wooden2,
@@ -7455,7 +7455,7 @@
 /area/f13/building)
 "khS" = (
 /obj/item/stack/sheet/mineral/adamantine,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -9405,7 +9405,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building)
 "mYZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/sheet/mineral/silver,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9652,7 +9652,7 @@
 	},
 /area/f13/building)
 "njr" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/camera_film,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
@@ -9963,7 +9963,7 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "nEw" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/toy/figure/wizard,
 /obj/machinery/light/fo13colored/Aqua{
 	dir = 8
@@ -10728,7 +10728,7 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "oJl" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 2;
 	name = "2maintenance loot spawner"
@@ -10933,7 +10933,7 @@
 /obj/item/stack/sheet/mineral/mythril,
 /obj/item/stack/sheet/mineral/mythril,
 /obj/item/stack/sheet/mineral/mythril,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating{
@@ -11154,7 +11154,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/wasteland)
 "ppy" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/instrument/piano_synth,
 /obj/item/instrument/guitar,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -11409,7 +11409,7 @@
 /area/f13/building)
 "pJz" = (
 /obj/item/stack/sheet/mineral/diamond,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11560,7 +11560,7 @@
 	},
 /area/f13/building)
 "pUa" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -13343,7 +13343,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building)
 "syG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/wooden2,
 /area/f13/building)
@@ -14179,7 +14179,7 @@
 /area/f13/building)
 "tBI" = (
 /obj/item/documents/syndicate/mining,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -15095,14 +15095,14 @@
 /area/f13/building)
 "uNP" = (
 /obj/item/pickaxe/drill/cyborg/diamond,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building)
 "uOe" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1
 	},
@@ -15470,7 +15470,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building)
 "vmM" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
 "vmY" = (
@@ -15951,7 +15951,7 @@
 /obj/item/stack/sheet/mineral/diamond,
 /obj/item/stack/sheet/mineral/diamond,
 /obj/item/stack/sheet/mineral/diamond,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -16429,7 +16429,7 @@
 	},
 /area/f13/building)
 "wwB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1
 	},

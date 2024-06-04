@@ -112,7 +112,7 @@
 	},
 /area/f13/building)
 "aP" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -130,7 +130,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ba" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler/bar,
 /obj/item/gun/ballistic/revolver/revolver45,
 /obj/item/ammo_box/c45rev,
 /obj/item/ammo_box/c45rev,
@@ -1003,7 +1003,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "hl" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -1438,7 +1438,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ke" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler/bar,
 /obj/item/gun/ballistic/shotgun/trench,
 /obj/item/ammo_box/shotgun/buck,
 /obj/effect/decal/cleanable/dirt,
@@ -1638,7 +1638,7 @@
 	},
 /area/f13/wasteland)
 "lF" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2041,7 +2041,7 @@
 	},
 /area/f13/wasteland)
 "ot" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -2096,7 +2096,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "oQ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -2262,7 +2262,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pV" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler/bar,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /obj/effect/decal/cleanable/dirt,
@@ -3107,7 +3107,7 @@
 	},
 /area/f13/wasteland)
 "ws" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/fluff/bandit,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -3161,7 +3161,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/wasteland)
 "wN" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -3653,7 +3653,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building)
 "zZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4100,7 +4100,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "CI" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/storage/backpack/satchel/leather,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -4157,7 +4157,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "De" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
@@ -4170,7 +4170,7 @@
 	},
 /area/f13/building)
 "Di" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -4198,7 +4198,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Ds" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/candle/infinite,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -4350,7 +4350,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ep" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	pixel_y = 3
 	},
@@ -5088,7 +5088,7 @@
 	},
 /area/f13/wasteland)
 "JU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -5167,11 +5167,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Km" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Kr" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -5288,7 +5288,7 @@
 	},
 /area/f13/wasteland)
 "KX" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -5367,7 +5367,7 @@
 	},
 /area/f13/wasteland)
 "Lu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/clothing_middle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -5643,7 +5643,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "NB" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler/bar,
 /obj/machinery/computer/terminal{
 	dir = 4;
 	termtag = "Secret"
@@ -5765,7 +5765,7 @@
 /area/f13/wasteland)
 "Os" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8;
 	termtag = "Business"
@@ -5850,7 +5850,7 @@
 	},
 /area/f13/building)
 "OW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5870,7 +5870,7 @@
 	},
 /area/f13/wasteland)
 "Pc" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
@@ -6091,7 +6091,7 @@
 	},
 /area/f13/wasteland)
 "Ql" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Qm" = (
@@ -6112,7 +6112,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building)
 "Qr" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler/bar,
 /obj/item/restraints/handcuffs{
 	pixel_x = -2;
 	pixel_y = 9
@@ -6403,7 +6403,7 @@
 	},
 /area/f13/building)
 "Sg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7089,7 +7089,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "Xs" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7116,7 +7116,7 @@
 	},
 /area/f13/wasteland)
 "XK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7355,11 +7355,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "Zp" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/phone,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/desert,

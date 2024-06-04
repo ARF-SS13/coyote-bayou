@@ -150,3 +150,4 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_OLDBRICK_WALLS S_OBJ(310)			///turf/closed/wall/mineral/brick/old, /obj/structure/falsewall/brick/old
 #define SMOOTH_GROUP_CORRUGATED_WALLS S_OBJ(311)		///turf/closed/wall/corrugated, /obj/structure/falsewall/corrugated
 #define SMOOTH_GROUP_LOGCABIN_WALLS S_OBJ(312)			///turf/closed/wall/f13/wood
+#define SMOOTH_GROUP_SETTLER_TABLES S_OBJ(313)			///obj/structure/table/wood/settler

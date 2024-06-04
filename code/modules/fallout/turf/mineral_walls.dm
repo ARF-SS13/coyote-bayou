@@ -133,8 +133,8 @@
 	hardness = 70
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_WOOD_WALLS
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/iron
 	name = "rough metal wall"
@@ -142,7 +142,8 @@
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron"
 	sheet_type = /obj/item/stack/rods
-	canSmoothWith = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
 	weak_wall = FALSE
 
 /turf/closed/wall/mineral/snow

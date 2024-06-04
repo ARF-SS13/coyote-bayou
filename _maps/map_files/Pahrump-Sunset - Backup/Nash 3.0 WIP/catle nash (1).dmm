@@ -316,7 +316,7 @@
 /area/f13/building)
 "cG" = (
 /obj/item/binoculars,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "cP" = (
@@ -328,7 +328,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "cQ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/gun/ballistic/automatic/marksman/sniper,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
@@ -528,7 +528,7 @@
 	},
 /area/f13/wasteland)
 "fu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
@@ -592,7 +592,7 @@
 	pixel_y = 18;
 	pixel_x = -12
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = 9;
 	layer = 4;
@@ -633,7 +633,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "gy" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/wood/settler/fancy/black,
 /obj/item/candle/infinite{
 	pixel_y = 9
 	},
@@ -824,7 +824,7 @@
 	},
 /area/f13/building)
 "iE" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/wood/settler/fancy/black,
 /obj/structure/junk/small/tv{
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
@@ -896,7 +896,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "jy" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/weapon/spatula,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1004,7 +1004,7 @@
 	},
 /area/f13/wasteland)
 "ko" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -1092,7 +1092,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "li" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/wood/settler/fancy/black,
 /obj/item/reagent_containers/food/snacks/beefnoodle{
 	pixel_y = 2
 	},
@@ -1163,7 +1163,7 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "mo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
@@ -1246,7 +1246,7 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "nC" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "nD" = (
@@ -1363,7 +1363,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1450,7 +1450,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "po" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "pp" = (
@@ -1689,7 +1689,7 @@
 	},
 /area/f13/wasteland)
 "sf" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_y = 7
 	},
@@ -1827,7 +1827,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "ug" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -1835,7 +1835,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "uj" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -1922,7 +1922,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "uV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 13;
 	pixel_x = 5
@@ -2171,7 +2171,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/radio/tribal{
 	pixel_y = 13;
 	pixel_x = 2
@@ -2457,7 +2457,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Bk" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -2537,7 +2537,7 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/church)
 "Ce" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	pixel_y = -1;
 	termtag = "Business"
@@ -2645,7 +2645,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "CV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
@@ -2902,7 +2902,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "FY" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "FZ" = (
@@ -2913,7 +2913,7 @@
 	},
 /area/f13/wasteland)
 "Gb" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3500,7 +3500,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Lt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -3575,7 +3575,7 @@
 	},
 /area/f13/wasteland)
 "Mx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/plate,
 /obj/item/candle/infinite{
 	pixel_y = 9
@@ -4307,7 +4307,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Uq" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -4410,7 +4410,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1;
 	pixel_y = 3;
@@ -4548,7 +4548,7 @@
 /turf/open/transparent/openspace,
 /area/f13/building)
 "WK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
@@ -4735,7 +4735,7 @@
 	pixel_y = 23;
 	pixel_x = 8
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = -12;
 	layer = 4;

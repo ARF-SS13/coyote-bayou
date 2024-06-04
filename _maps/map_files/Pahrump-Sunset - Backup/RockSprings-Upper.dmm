@@ -33,13 +33,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
 "cv" = (
-/obj/structure/table/wood,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
 "cE" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/sheet/animalhide/human,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
@@ -179,7 +179,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
 "jK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet,
 /area/f13/village/tunnel_motel)
@@ -189,7 +189,7 @@
 /turf/open/floor/carpet,
 /area/f13/village/tunnel_motel)
 "lZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
@@ -213,7 +213,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/f13Cash/random/med,
 /obj/item/stack/f13Cash/random/med,
 /obj/item/stack/f13Cash/random/med,
@@ -231,7 +231,7 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/item/bodypart/l_leg{
 	dir = 8;
@@ -683,7 +683,7 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "000000"
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "NC" = (
@@ -846,7 +846,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "TF" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
 "TI" = (
@@ -937,7 +937,7 @@
 /turf/closed/wall/f13/wood,
 /area/f13/village/overpass_village)
 "Yz" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/jet{
 	pixel_x = -6;
 	pixel_y = 2

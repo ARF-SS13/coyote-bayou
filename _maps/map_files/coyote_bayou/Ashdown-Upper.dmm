@@ -45,7 +45,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "aD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/burger/chicken,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -61,7 +61,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "aI" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/book/random/triple,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -164,7 +164,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "bx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/statuebust,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -317,7 +317,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/bottle/brown/beer{
 	pixel_x = 6
 	},
@@ -400,7 +400,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "dr" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire/raider{
 	name = "Wham Bam Thank You Ma'amgera";
 	desc = "You'll disappear, you'll lose control, your bodies moving on its own. You watch yourself, walk away, a foreign spirt took your place.";
@@ -632,7 +632,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "eW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/carpet2{
 	layer = 1
 	},
@@ -864,7 +864,7 @@
 	},
 /area/f13/wasteland/ashdown)
 "gR" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8
 	},
@@ -1012,7 +1012,7 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "hT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks/beer{
 	pixel_y = 4;
 	dir = 4;
@@ -1051,7 +1051,7 @@
 	light_power = 2;
 	pixel_y = 9
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/toy/crayon/spraycan,
 /obj/item/toy/crayon/spraycan,
 /obj/item/storage/crayons,
@@ -1257,7 +1257,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "jJ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/book/granter/crafting_recipe/bitters,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -1494,7 +1494,7 @@
 /area/f13/caves)
 "lz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/fancy/purple,
+/obj/structure/table/wood/settler/fancy/purple,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/lilycrown,
 /obj/item/clothing/head/poppycrown,
@@ -1597,7 +1597,7 @@
 /area/f13/building)
 "mo" = (
 /obj/item/stack/sheet/mineral/wood/fifty,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mp" = (
@@ -1743,7 +1743,7 @@
 	},
 /area/f13/building/abandoned)
 "nk" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "nl" = (
@@ -1752,7 +1752,7 @@
 	},
 /area/f13/building/abandoned)
 "nm" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -1868,7 +1868,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "ou" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lantern/dim,
 /obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2031,7 +2031,7 @@
 	},
 /area/f13/building)
 "px" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "py" = (
@@ -2498,7 +2498,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood/poker{
+/obj/structure/table/wood/settler/poker{
 	name = "felt table"
 	},
 /turf/open/floor/carpet/black,
@@ -2575,7 +2575,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tL" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/bottle/brown/beer{
 	pixel_x = -6
 	},
@@ -2730,13 +2730,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "uD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
 /area/f13/building)
 "uF" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/sheet/hay/ten,
 /obj/item/stack/sheet/leather/five,
 /obj/item/stack/sheet/cloth/ten,
@@ -2812,7 +2812,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vl" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -2974,7 +2974,7 @@
 /area/f13/wasteland)
 "wh" = (
 /obj/structure/bedsheetbin/towel,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
@@ -3023,7 +3023,7 @@
 /area/f13/building)
 "wC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/big/rug_red{
 	dir = 4;
 	layer = 1
@@ -3272,7 +3272,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood/poker{
+/obj/structure/table/wood/settler/poker{
 	name = "felt table"
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -3615,7 +3615,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "AM" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/mountain,
@@ -3821,7 +3821,7 @@
 	pixel_y = 10
 	},
 /obj/item/chisel,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Cm" = (
@@ -4246,7 +4246,7 @@
 /area/f13/building/abandoned)
 "Fi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 4;
 	pixel_y = 4;
@@ -4345,7 +4345,7 @@
 /area/f13/wasteland)
 "FN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/poker{
+/obj/structure/table/wood/settler/poker{
 	name = "felt table"
 	},
 /obj/item/toy/cards/deck{
@@ -4501,7 +4501,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "GJ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/meat/steak/chicken,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/item/lighter/greyscale,
@@ -5249,7 +5249,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "Mh" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
 /obj/item/brahminbrand,
 /obj/item/brahmincollar{
@@ -5646,7 +5646,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "PD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 4
 	},
@@ -5797,7 +5797,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "QK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/brahminsaddle,
 /obj/item/brahminsaddle,
 /obj/item/brahminbridle,
@@ -6026,7 +6026,7 @@
 /area/f13/caves)
 "Si" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/fancy/purple,
+/obj/structure/table/wood/settler/fancy/purple,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/schoolgirl/red,
 /obj/item/clothing/under/schoolgirl/orange,
@@ -6064,7 +6064,7 @@
 /area/f13/wasteland/ashdown)
 "Sm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/poker{
+/obj/structure/table/wood/settler/poker{
 	name = "felt table"
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -6590,7 +6590,7 @@
 /obj/item/storage/fancy/rollingpapers{
 	pixel_y = 9
 	},
-/obj/structure/table/wood/junk{
+/obj/structure/table/wood/settler/junk{
 	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
@@ -6683,7 +6683,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Wb" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/lighter/greyscale{
 	pixel_y = 8
 	},

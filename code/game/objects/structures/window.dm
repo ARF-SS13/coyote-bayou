@@ -701,7 +701,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
-	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	level = 3
 	glass_amount = 2
 
@@ -710,7 +711,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	icon_state = "rice_window-0"
 	base_icon_state = "rice_window"
 	max_integrity = 150
-	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	level = 3
 	glass_amount = 2
 

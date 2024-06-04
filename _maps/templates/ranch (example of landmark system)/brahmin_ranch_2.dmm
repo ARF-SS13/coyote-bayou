@@ -70,7 +70,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/sheet/cardboard,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/barber{
@@ -79,7 +79,7 @@
 	},
 /area/f13/village)
 "an" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -90,7 +90,7 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 28
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/plasteel/barber{
@@ -134,7 +134,7 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/village)
 "as" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -142,12 +142,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "at" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "au" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stack/sheet/cloth,
 /obj/item/candle/infinite,
 /turf/open/floor/f13/wood,
@@ -298,7 +298,7 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
 "aW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -346,7 +346,7 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/village)
 "be" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/waffles,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -354,7 +354,7 @@
 	},
 /area/f13/village)
 "bf" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/candle,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -362,7 +362,7 @@
 	},
 /area/f13/village)
 "bg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -489,16 +489,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bC" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
 "bE" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
@@ -507,16 +507,16 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bH" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bI" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paperplane,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -632,7 +632,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
 "cg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/crafting/abraxo,
 /obj/item/crafting/duct_tape,
 /obj/structure/sink/kitchen{
@@ -658,7 +658,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ck" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/dildo{
 	icon_state = "dildo";
 	layer = 1.1
@@ -750,7 +750,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/village)
 "cx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"

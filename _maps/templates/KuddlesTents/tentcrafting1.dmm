@@ -18,7 +18,7 @@
 	},
 /area/f13/wasteland)
 "g" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall{
 	dir = 1;
 	pixel_y = 16
@@ -50,7 +50,7 @@
 	},
 /area/f13/wasteland)
 "n" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -72,7 +72,7 @@
 	},
 /area/f13/wasteland)
 "x" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/sink/greyscale{
 	color = "#715030";
 	desc = "A wooden basin used for washing one's hands and face.";
@@ -142,7 +142,7 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "V" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
