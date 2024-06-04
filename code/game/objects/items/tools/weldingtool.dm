@@ -39,6 +39,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 5
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/weldingtool/Initialize()
 	. = ..()
