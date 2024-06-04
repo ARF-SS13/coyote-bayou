@@ -17,6 +17,7 @@
 	usesound = 'sound/items/ratchet.ogg'
 	custom_materials = list(/datum/material/iron=500)
 	reskinnable_component = null
+	block_parry_data = /datum/block_parry_data/bokken
 
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_WRENCH

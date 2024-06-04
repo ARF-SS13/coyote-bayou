@@ -24,6 +24,7 @@
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/wirecutters/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
