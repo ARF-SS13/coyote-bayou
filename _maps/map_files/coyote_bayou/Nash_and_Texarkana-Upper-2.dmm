@@ -1936,7 +1936,7 @@
 	},
 /area/f13/caves)
 "gx" = (
-/obj/structure/table/wood/settler_counter,
+/obj/structure/table/wood_counter,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -1972,7 +1972,7 @@
 	dir = 4;
 	color = "#121212"
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 4;
 	pixel_x = 6
 	},
@@ -2611,7 +2611,7 @@
 "jA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/table/wood/settler_counter/bend{
+/obj/structure/table/wood_counter/bend{
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -3486,7 +3486,7 @@
 "mY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -5023,7 +5023,7 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -5798,7 +5798,7 @@
 	dir = 4;
 	color = "#121212"
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 4;
 	pixel_x = 6
 	},
@@ -7613,7 +7613,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -8800,7 +8800,7 @@
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -9538,7 +9538,7 @@
 /area/f13/caves)
 "JK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/settler_counter,
+/obj/structure/table/wood_counter,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -11382,7 +11382,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -12696,7 +12696,7 @@
 "UK" = (
 /obj/machinery/light,
 /obj/machinery/microwave,
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -12996,7 +12996,7 @@
 	pixel_x = 6
 	},
 /obj/item/reagent_containers/glass/maunamug,
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -14215,7 +14215,7 @@
 	pixel_y = 19;
 	layer = 1.9
 	},
-/obj/structure/table/wood/settler_counter{
+/obj/structure/table/wood_counter{
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
