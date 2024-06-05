@@ -103,6 +103,9 @@
 	anchored = TRUE
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "uglymine"
+	light_color = "#ff0000"
+	light_power = 10
+	light_range = 3
 	var/armed = TRUE //we can be armed and unanchored if we want, but this isn't normally the case
 	var/random = FALSE //are our wires random?
 	/// We manually check to see if we've been triggered in case multiple atoms cross us in the time between the mine being triggered and it actually deleting, to avoid a race condition with multiple detonations
