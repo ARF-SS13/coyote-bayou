@@ -92,7 +92,7 @@
 	},
 /area/f13/building)
 "aJ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "aM" = (
@@ -277,7 +277,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/city)
 "cw" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -442,7 +442,7 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "dW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/pack/coffee{
 	pixel_x = -3;
 	pixel_y = -1
@@ -534,7 +534,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "eF" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -578,7 +578,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "fm" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/crafting/coffee_pot{
 	pixel_x = -5;
 	pixel_y = 10
@@ -773,7 +773,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "ha" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/glass/mortar{
 	pixel_x = -3;
 	pixel_y = 7
@@ -796,7 +796,7 @@
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
 "hh" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/crafting/coffee_pot{
 	pixel_x = -5;
 	pixel_y = 10
@@ -978,7 +978,7 @@
 /obj/structure/sign/barsign{
 	icon_state = "the_lightbulb"
 	},
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -1106,7 +1106,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "jH" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "jL" = (
@@ -1376,7 +1376,7 @@
 	},
 /area/f13/building)
 "mc" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -2183,7 +2183,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "st" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -2236,7 +2236,7 @@
 /area/f13/village)
 "sW" = (
 /obj/effect/decal/cleanable/generic,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2461,7 +2461,7 @@
 	},
 /area/f13/city)
 "uW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/pack/coffee{
 	pixel_x = -3;
 	pixel_y = -1
@@ -2529,7 +2529,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "vv" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/crafting/coffee_pot,
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -2737,7 +2737,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "xh" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -2787,7 +2787,7 @@
 /turf/open/floor/plating/f13/outside/road,
 /area/f13/brotherhood)
 "xH" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -2838,7 +2838,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "yi" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/soap/homemade,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -2894,7 +2894,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "yR" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -2906,7 +2906,7 @@
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/wasteland)
 "yV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/wirecutters{
 	icon_state = "cutters"
 	},
@@ -3007,7 +3007,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -3251,7 +3251,7 @@
 	color = "#5c131b";
 	pixel_x = 32
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/grenade/homemade/coffeepotbomb,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
@@ -3970,7 +3970,7 @@
 /turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
 "Hb" = (
-/turf/closed/wall/f13/store,
+/turf/closed/wall/mineral/concrete,
 /area/f13/city)
 "Hc" = (
 /obj/effect/decal/cleanable/glass{
@@ -4221,7 +4221,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "Jo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -4246,14 +4246,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "Jt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "Jv" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
@@ -4341,7 +4341,7 @@
 	},
 /area/f13/building)
 "KE" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/seeds/rose,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -4689,7 +4689,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Np" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/smelling_salts/wayfarer,
 /obj/item/smelling_salts/wayfarer,
 /turf/open/floor/f13/wood,
@@ -4971,7 +4971,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/city)
 "Pt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 11
@@ -4994,7 +4994,7 @@
 /turf/closed/wall/f13/tunnel,
 /area/f13/city)
 "Pw" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
@@ -5125,7 +5125,7 @@
 /area/f13/city)
 "QF" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -5167,7 +5167,7 @@
 	},
 /area/f13/building)
 "Re" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/pack/coffee{
 	pixel_x = -3;
 	pixel_y = -1
@@ -5205,7 +5205,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "Rt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/grenade/homemade/coffeepotbomb,
 /obj/item/crafting/coffee_pot{
 	pixel_x = -5
@@ -5268,7 +5268,7 @@
 	},
 /area/f13/city)
 "RZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/pack/coffee{
 	pixel_x = -3;
 	pixel_y = -1
@@ -5576,7 +5576,7 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "Uo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Ur" = (
@@ -5638,7 +5638,7 @@
 	},
 /area/f13/wasteland)
 "UV" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -5952,7 +5952,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "Xu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
@@ -6024,7 +6024,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "Yh" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -6140,7 +6140,7 @@
 	},
 /area/f13/building)
 "YU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/village)
