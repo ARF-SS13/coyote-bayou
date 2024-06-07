@@ -1,25 +1,31 @@
 //A table that'd be built by players, since their constructions would be... less impressive than their prewar counterparts.
 
+
 /obj/structure/table/wood/settler
 	desc = "A wooden table constructed by a carpentering amateur from various planks.<br>It's the work of wasteland settler."
 	icon_state = "settlertable"
 	icon = 'icons/obj/smooth_structures/wood_table_settler.dmi'
-//	icon_type_smooth = "settlertable"
 	obj_integrity = 50
 	max_integrity = 50
-	canSmoothWith = list(/obj/structure/table/wood/settler)
+	smoothing_flags = SMOOTH_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_SETTLER_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_SETTLER_TABLES)
 
 /obj/structure/table/booth
 	name = "booth table"
 	desc = "A diner style booth table."
 	icon = 'icons/obj/smooth_structures/booth_table.dmi'
 	icon_state = "boothtable"
+	smoothing_flags = SMOOTH_CORNERS
 	flags_1 = NODECONSTRUCT_1
-	canSmoothWith = list(/obj/structure/table/booth)
+	canSmoothWith = list(SMOOTH_GROUP_BOOTH_TABLES)
+	smoothing_groups = list(SMOOTH_GROUP_BOOTH_TABLES)
 
+/*
 /obj/structure/table/booth/Initialize()
 	canSmoothWith += subtypesof(/turf/closed/wall/f13/wood) + subtypesof(/obj/structure/window/fulltile)
 	. = ..()
+*/
 
 /obj/structure/table/booth/deconstruction_hints(mob/user)
 	return span_notice("The top is panelled together and could likely be taken apart with a crowbar.")
@@ -42,7 +48,7 @@
 	anchored = TRUE
 	framestack = /obj/item/stack/sheet/mineral/wood
 	buildstack = /obj/item/stack/sheet/cloth
-	smooth = SMOOTH_FALSE
+	smoothing_flags = NONE
 
 /obj/structure/table/snooker/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))

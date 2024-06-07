@@ -6,7 +6,7 @@
 	dir = 5
 	max_integrity = 20
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
 
 /obj/structure/window/fulltile/ruins/broken
@@ -19,12 +19,14 @@
 	dir = 5
 	max_integrity = 40
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
-/obj/structure/window/fulltile/house/broken
+/obj/structure/window/fulltile/house
 	icon_state = "housewindowbroken"
 	max_integrity = 1
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/wood
 	icon = 'icons/obj/wood_window.dmi'
@@ -32,8 +34,9 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/wood/broken
 	icon_state = "woodwindowbroken"
@@ -45,8 +48,9 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/sheet/mineral/wood))
@@ -92,8 +96,9 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /obj/structure/window/fulltile/stainedglass/woodwindoworange
 	icon = 'modular_roguetown/misc/structure.dmi'
@@ -101,7 +106,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowwhite
@@ -110,7 +115,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowmoonlight
@@ -119,7 +124,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/woodwindowyellow
@@ -128,7 +133,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedsilver
@@ -137,7 +142,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedyellow
@@ -146,7 +151,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/stainedglass/stainedzizo
@@ -155,5 +160,5 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
