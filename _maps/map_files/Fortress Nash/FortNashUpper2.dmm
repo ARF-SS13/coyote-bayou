@@ -35,7 +35,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building/hospital)
 "aX" = (
@@ -66,7 +68,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "bv" = (
@@ -288,7 +292,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "fI" = (
@@ -613,6 +619,7 @@
 	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
+	icon_type_smooth = "supermart";
 	name = "Reinforced prison wall"
 	},
 /area/f13/wasteland)
@@ -714,7 +721,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "qW" = (
@@ -927,7 +936,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "vw" = (
@@ -1002,7 +1013,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "wX" = (
@@ -1038,7 +1051,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building/hospital)
 "xC" = (
@@ -1190,7 +1205,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "BD" = (
@@ -1244,7 +1261,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "CD" = (
@@ -1823,7 +1842,9 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	name = "Concrete wall"
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "RC" = (
@@ -2028,7 +2049,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "VH" = (
-/obj/structure/window/fulltile/house,
+/obj/structure/window/fulltile/house/broken,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "VP" = (

@@ -3,12 +3,10 @@
 	name = "chasm"
 	desc = "Watch your step."
 	baseturfs = /turf/open/chasm
+	smooth = SMOOTH_TRUE | SMOOTH_BORDER | SMOOTH_MORE
 	icon = 'icons/turf/floors/chasms.dmi'
-	icon_state = "chasms-255"
-	base_icon_state = "chasms"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_TURF_CHASM)
-	canSmoothWith = list(SMOOTH_GROUP_TURF_CHASM)
+	icon_state = "smooth"
+	canSmoothWith = list(/turf/open/floor/fakepit, /turf/open/chasm)
 	density = TRUE //This will prevent hostile mobs from pathing into chasms, while the canpass override will still let it function like an open turf
 	bullet_bounce_sound = null //abandon all hope ye who enter
 
@@ -94,8 +92,6 @@
 // Chasms for Ice moon, with planetary atmos and glow
 /turf/open/chasm/icemoon
 	icon = 'icons/turf/floors/icechasms.dmi'
-	icon_state = "icechasms-255"
-	base_icon_state = "icechasms"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/chasm/icemoon
@@ -106,8 +102,6 @@
 // Chasms for the jungle, with planetary atmos and a different icon
 /turf/open/chasm/jungle
 	icon = 'icons/turf/floors/junglechasm.dmi'
-	icon_state = "junglechasm-255"
-	base_icon_state = "junglechasm"
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/chasm/jungle
@@ -126,7 +120,6 @@
 	baseturfs = /turf/open/chasm/magic
 	light_range = 1.9
 	light_power = 0.65
-	smoothing_flags = SMOOTH_CORNERS | SMOOTH_BORDER
 
 /turf/open/chasm/magic/Initialize()
 	. = ..()

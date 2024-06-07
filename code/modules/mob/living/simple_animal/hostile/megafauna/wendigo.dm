@@ -62,7 +62,7 @@ Difficulty: Hard
 /datum/action/innate/megafauna_attack/disorienting_scream
 	name = "Disorienting Scream"
 	icon_icon = 'icons/turf/walls/wall.dmi'
-	button_icon_state = "wall-0"
+	button_icon_state = "wall"
 	chosen_message = span_colossus("You are now screeching, disorienting targets around you.")
 	chosen_attack_num = 3
 

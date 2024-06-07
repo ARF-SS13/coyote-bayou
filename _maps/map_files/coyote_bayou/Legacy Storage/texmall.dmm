@@ -112,7 +112,7 @@
 	},
 /area/f13/building)
 "aP" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -1638,7 +1638,7 @@
 	},
 /area/f13/wasteland)
 "lF" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2041,7 +2041,7 @@
 	},
 /area/f13/wasteland)
 "ot" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -2096,7 +2096,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "oQ" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -2472,7 +2472,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/wasteland)
 "rm" = (
-/turf/closed/wall/mineral/concrete{
+/turf/closed/wall/f13/store{
 	color = "#a9a1a1";
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
@@ -2551,7 +2551,7 @@
 /area/f13/wasteland)
 "rG" = (
 /obj/structure/mirror,
-/turf/closed/wall/mineral/concrete,
+/turf/closed/wall/f13/store,
 /area/f13/wasteland)
 "rH" = (
 /obj/structure/chair/f13foldupchair{
@@ -2696,7 +2696,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "sD" = (
-/turf/closed/wall/mineral/concrete{
+/turf/closed/wall/f13/store{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -3107,7 +3107,7 @@
 	},
 /area/f13/wasteland)
 "ws" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/clothing/head/fluff/bandit,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -3161,7 +3161,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/wasteland)
 "wN" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -3653,7 +3653,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building)
 "zZ" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3937,7 +3937,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/closed/wall/mineral/concrete{
+/turf/closed/wall/f13/store{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -4025,7 +4025,7 @@
 /area/f13/wasteland)
 "Cj" = (
 /obj/structure/sign/departments/restroom,
-/turf/closed/wall/mineral/concrete{
+/turf/closed/wall/f13/store{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -4100,7 +4100,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "CI" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/storage/backpack/satchel/leather,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -4157,7 +4157,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "De" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
@@ -4170,7 +4170,7 @@
 	},
 /area/f13/building)
 "Di" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -4198,7 +4198,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Ds" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/candle/infinite,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -4350,7 +4350,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ep" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/computer/terminal{
 	pixel_y = 3
 	},
@@ -4981,7 +4981,7 @@
 	},
 /area/f13/building)
 "IZ" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
 "Jf" = (
 /obj/structure/simple_door/room,
@@ -5167,11 +5167,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Km" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Kr" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -5288,7 +5288,7 @@
 	},
 /area/f13/wasteland)
 "KX" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -5367,7 +5367,7 @@
 	},
 /area/f13/wasteland)
 "Lu" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/clothing_middle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -5582,7 +5582,7 @@
 	},
 /area/f13/building)
 "Nh" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/wood/house/broken,
 /area/f13/wasteland)
 "Ni" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5765,7 +5765,7 @@
 /area/f13/wasteland)
 "Os" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/computer/terminal{
 	dir = 8;
 	termtag = "Business"
@@ -5870,7 +5870,7 @@
 	},
 /area/f13/wasteland)
 "Pc" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
@@ -6091,7 +6091,7 @@
 	},
 /area/f13/wasteland)
 "Ql" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Qm" = (
@@ -6403,7 +6403,7 @@
 	},
 /area/f13/building)
 "Sg" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7089,7 +7089,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "Xs" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7116,7 +7116,7 @@
 	},
 /area/f13/wasteland)
 "XK" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -7213,7 +7213,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Yx" = (
-/turf/closed/wall/mineral/concrete,
+/turf/closed/wall/f13/store,
 /area/f13/wasteland)
 "Yy" = (
 /obj/structure/closet/fridge,
@@ -7355,11 +7355,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "Zp" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/phone,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/desert,

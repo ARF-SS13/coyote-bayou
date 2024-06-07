@@ -90,20 +90,18 @@
 /turf/closed/indestructible/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
-	icon = 'icons/turf/walls/brick_wall_desert.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
+	icon = 'icons/turf/walls/sandstone_wall.dmi'
+	icon_state = "sandstone"
 	baseturfs = /turf/closed/indestructible/sandstone
-	smoothing_flags = SMOOTH_BITMASK
+	smooth = SMOOTH_TRUE
 
 /turf/closed/indestructible/wood
 	name = "wooden wall"
 	desc = "A wall with wooden plating. Stiff."
 	icon = 'icons/turf/walls/wood_wall.dmi'
-	icon_state = "wood_wall-0"
-	base_icon_state = "wood_wall"
-	smoothing_flags = SMOOTH_BITMASK
+	icon_state = "wood"
 	baseturfs = /turf/closed/indestructible/wood
+	smooth = SMOOTH_TRUE
 
 /turf/closed/indestructible/oldshuttle/corner
 	icon_state = "corner"
@@ -130,33 +128,18 @@
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	icon_state = "riveted"
+	smooth = SMOOTH_TRUE
 	explosion_block = INFINITY
 
 /turf/closed/indestructible/syndicate
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SYNDICATE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SYNDICATE_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	icon_state = "map-shuttle"
+	smooth = SMOOTH_TRUE
 
 /turf/closed/indestructible/riveted/uranium
 	icon = 'icons/turf/walls/uranium_wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/indestructible/wood
-	icon = 'icons/turf/walls/wood_wall.dmi'
-	icon_state = "wood"
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+	icon_state = "uranium"
 
 /turf/closed/indestructible/abductor
 	icon_state = "alien1"
@@ -164,22 +147,18 @@
 /turf/closed/indestructible/opshuttle
 	icon_state = "wall3"
 
-
 /turf/closed/indestructible/fakeglass
 	name = "window"
-	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
 	icon_state = "fake_window"
-	base_icon_state = "reinforced_window"
 	opacity = 0
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	smooth = SMOOTH_TRUE
+	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
 
 /turf/closed/indestructible/fakeglass/Initialize()
 	. = ..()
+	icon_state = null //set the icon state to null, so our base state isn't visible
 	underlays += mutable_appearance('icons/obj/structures.dmi', "grille") //add a grille underlay
 	underlays += mutable_appearance('icons/turf/floors.dmi', "plating") //add the plating underlay, below the grille
-
 
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
@@ -202,11 +181,10 @@
 	name = "rusty vault wall"
 	desc = "A rusty chunk of metal used to separate rooms."
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
+	icon_state = "r_wall"
 	baseturfs = /turf/open/floor/plating
-	smoothing_flags = SMOOTH_CORNERS
-	canSmoothWith = null
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/indestructible/f13vaultrusted)
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
@@ -230,10 +208,9 @@
 
 /turf/closed/indestructible/rock/snow/ice/ore
 	icon = 'icons/turf/walls/icerock_wall.dmi'
-	icon_state = "icerock_wall-0"
-	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	icon_state = "icerock"
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	canSmoothWith = list (/turf/closed)
 	pixel_x = -4
 	pixel_y = -4
 
@@ -261,11 +238,8 @@
 	name = "necropolis wall"
 	desc = "A thick, seemingly indestructible stone wall."
 	icon = 'icons/turf/walls/boss_wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_BOSS_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_BOSS_WALLS)
+	icon_state = "wall"
+	canSmoothWith = list(/turf/closed/indestructible/riveted/boss, /turf/closed/indestructible/riveted/boss/see_through)
 	explosion_block = 50
 	baseturfs = /turf/closed/indestructible/riveted/boss
 
@@ -282,7 +256,6 @@
 	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
 	icon = 'icons/turf/walls/hierophant_wall.dmi'
 	icon_state = "wall"
-	smoothing_flags = SMOOTH_CORNERS
 
 /turf/closed/indestructible/rock/glacierrock
 	name = "unaturally hard ice wall"

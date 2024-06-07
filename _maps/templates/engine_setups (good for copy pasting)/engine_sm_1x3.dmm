@@ -70,7 +70,7 @@
 /turf/open/floor/engine,
 /area/engine/engineering)
 "aV" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/engineering/glass/critical{
 	heat_proof = 1;
 	name = "Supermatter Chamber";
@@ -432,7 +432,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "iU" = (
@@ -449,8 +449,8 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "jp" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "jr" = (
@@ -928,7 +928,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "wz" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/dark,
@@ -1113,7 +1113,7 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "Gas to Chamber"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "CW" = (
@@ -1201,8 +1201,8 @@
 /turf/open/floor/engine,
 /area/engine/engineering)
 "Ey" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/dark,

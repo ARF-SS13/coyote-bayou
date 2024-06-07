@@ -127,8 +127,6 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	var/xenobiology_compatible = FALSE //Can the Xenobio management console transverse this area by default?
 	var/list/canSmoothWithAreas //typecache to limit the areas that atoms in this area can smooth with
 
-	///Typepath to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
-	var/area/area_limited_icon_smoothing
 
 	/// Color on minimaps, if it's null (which is default) it makes one at random.
 	var/minimap_color

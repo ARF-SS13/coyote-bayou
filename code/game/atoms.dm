@@ -90,26 +90,6 @@
 	/// A luminescence-shifted value of the last color calculated for chatmessage overlays
 	var/chat_color_darkened
 
-	///Used for changing icon states for different base sprites.
-	var/base_icon_state
-
-	///Icon-smoothing behavior.
-	var/smoothing_flags = NONE
-	///What directions this is currently smoothing with. IMPORTANT: This uses the smoothing direction flags as defined in icon_smoothing.dm, instead of the BYOND flags.
-	var/smoothing_junction = NONE
-	///Smoothing variable
-	var/top_left_corner
-	///Smoothing variable
-	var/top_right_corner
-	///Smoothing variable
-	var/bottom_left_corner
-	///Smoothing variable
-	var/bottom_right_corner
-	///What smoothing groups does this atom belongs to, to match canSmoothWith. If null, nobody can smooth with it.
-	var/list/smoothing_groups = null
-	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
-	var/list/canSmoothWith = null
-
 	///Mobs that are currently do_after'ing this atom, to be cleared from on Destroy()
 	var/list/targeted_by
 	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
@@ -164,14 +144,8 @@
 	if (light_system == STATIC_LIGHT && light_power && light_range)
 		update_light()
 
-	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
-		SET_BITFLAG_LIST(smoothing_groups)
-	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
-			smoothing_flags |= SMOOTH_OBJ
-		SET_BITFLAG_LIST(canSmoothWith)
+	if (canSmoothWith)
+		canSmoothWith = typelist("canSmoothWith", canSmoothWith)
 
 	// apply materials properly from the default custom_materials value
 	set_custom_materials(custom_materials)
@@ -217,9 +191,6 @@
 	targeted_by = null
 
 	QDEL_NULL(light)
-
-	if(smoothing_flags & SMOOTH_QUEUED)
-		SSicon_smooth.remove_from_queues(src)
 
 	if(LAZYLEN(quest_tag))
 		QDEL_LIST(quest_tag)

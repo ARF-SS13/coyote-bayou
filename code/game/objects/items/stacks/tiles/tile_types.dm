@@ -171,15 +171,6 @@
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/tile/wood
 
-//Bamboo
-/obj/item/stack/tile/bamboo
-	name = "bamboo mat pieces"
-	singular_name = "bamboo mat piece"
-	desc = "A piece of a bamboo mat with a decorative trim."
-	icon_state = "tile_bamboo"
-	turf_type = /turf/open/floor/bamboo
-	merge_type = /obj/item/stack/tile/bamboo
-	resistance_flags = FLAMMABLE
 
 //Cloth Floors
 
@@ -301,13 +292,6 @@
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 	merge_type = /obj/item/stack/tile/carpet/royalblue
-
-/obj/item/stack/tile/carpet/stellar
-	name = "stellar carpet"
-	icon_state = "tile_carpet_stellar"
-	item_state = "tile-carpet-royalblue"
-	turf_type = /turf/open/floor/carpet/stellar
-	merge_type = /obj/item/stack/tile/carpet/stellar
 
 /obj/item/stack/tile/carpet/ten
 	amount = 10
