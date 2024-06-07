@@ -199,14 +199,16 @@
 	icon_state = "cliff-top-goonorig"
 
 /turf/closed/indestructible/f13vaultrusted
-	name = "rusty vault wall"
-	desc = "A rusty chunk of metal used to separate rooms."
+	name = "rusted reinforced wall"
+	desc = "A huge chunk of rusted reinforced metal."
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
 	icon_state = "wall-0"
 	base_icon_state = "wall"
+	smoothing_flags = SMOOTH_BITMASK
 	baseturfs = /turf/open/floor/plating
-	smoothing_flags = SMOOTH_CORNERS
-	canSmoothWith = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS)
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
