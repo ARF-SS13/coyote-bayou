@@ -74,7 +74,7 @@
 	integrity_failure = 0.25
 	armor = ARMOR_VALUE_HEAVY
 	/// Base turret icon state
-	base_icon_state = "standard"
+	var/base_icon_state = "standard"
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
 	/// For turrets inside other objects

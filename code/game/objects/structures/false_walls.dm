@@ -6,16 +6,22 @@
 	desc = "A huge chunk of metal used to separate rooms."
 	anchored = TRUE
 	icon = 'icons/turf/walls/wall.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
+	icon_state = "wall"
 	plane = WALL_PLANE
 	layer = LOW_OBJ_LAYER
 	density = TRUE
 	opacity = 1
 	max_integrity = 100
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+
+	canSmoothWith = list(
+	/turf/closed/wall,
+	/turf/closed/wall/r_wall,
+	/obj/structure/falsewall,
+//	/obj/structure/falsewall/brass,
+	/obj/structure/falsewall/reinforced,
+	/turf/closed/wall/rust,
+	/turf/closed/wall/r_wall/rust)
+	smooth = SMOOTH_TRUE
 	can_be_unanchored = FALSE
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
@@ -62,15 +68,15 @@
 	if(opening)
 		if(density)
 			icon_state = "fwall_opening"
-			smoothing_flags = NONE
+			smooth = SMOOTH_FALSE
 			clear_smooth_overlays()
 		else
 			icon_state = "fwall_closing"
 	else
 		if(density)
-			icon_state = "[base_icon_state]-[smoothing_junction]"
-			smoothing_flags = SMOOTH_BITMASK
-			QUEUE_SMOOTH(src)
+			icon_state = initial(icon_state)
+			smooth = SMOOTH_TRUE
+			queue_smooth(src)
 		else
 			icon_state = "fwall_open"
 
@@ -141,9 +147,9 @@
 	name = "reinforced wall"
 	desc = "A huge chunk of reinforced metal used to separate rooms."
 	icon = 'icons/turf/walls/reinforced_wall.dmi'
+	icon_state = "r_wall"
 	walltype = /turf/closed/wall/r_wall
 	mineral = /obj/item/stack/sheet/plasteel
-	smoothing_flags = SMOOTH_BITMASK
 
 /obj/structure/falsewall/reinforced/examine_status(mob/user)
 	to_chat(user, span_notice("The outer <b>grille</b> is fully intact."))
@@ -162,13 +168,12 @@
 	name = "uranium wall"
 	desc = "A wall with uranium plating. This is probably a bad idea."
 	icon = 'icons/turf/walls/uranium_wall.dmi'
+	icon_state = "uranium"
 	mineral = /obj/item/stack/sheet/mineral/uranium
 	walltype = /turf/closed/wall/mineral/uranium
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS)
 	var/active = null
 	var/last_event = 0
+	canSmoothWith = list(/obj/structure/falsewall/uranium, /turf/closed/wall/mineral/uranium)
 
 /obj/structure/falsewall/uranium/attackby(obj/item/W, mob/user, params)
 	radiate()
@@ -193,46 +198,51 @@
  * Other misc falsewall types
  */
 
+/obj/structure/falsewall/brick
+	name = "brick wall"
+	desc = "Sturdy wall made of bricks and mortar"
+	icon = 'icons/turf/walls/brick_wall.dmi'
+	icon_state = "brickwall"
+	mineral = /obj/item/stack/rods
+	walltype = /turf/closed/wall/mineral/brick
+	canSmoothWith = list(/obj/structure/falsewall/brick, /turf/closed/wall/mineral/brick)
+
 /obj/structure/falsewall/gold
 	name = "gold wall"
 	desc = "A wall with gold plating. Swag!"
 	icon = 'icons/turf/walls/gold_wall.dmi'
+	icon_state = "gold"
 	mineral = /obj/item/stack/sheet/mineral/gold
 	walltype = /turf/closed/wall/mineral/gold
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_GOLD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_GOLD_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/gold, /turf/closed/wall/mineral/gold)
 
 /obj/structure/falsewall/silver
 	name = "silver wall"
 	desc = "A wall with silver plating. Shiny."
 	icon = 'icons/turf/walls/silver_wall.dmi'
+	icon_state = "silver"
 	mineral = /obj/item/stack/sheet/mineral/silver
 	walltype = /turf/closed/wall/mineral/silver
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SILVER_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SILVER_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/silver, /turf/closed/wall/mineral/silver)
 
 /obj/structure/falsewall/diamond
 	name = "diamond wall"
 	desc = "A wall with diamond plating. You monster."
 	icon = 'icons/turf/walls/diamond_wall.dmi'
+	icon_state = "diamond"
 	mineral = /obj/item/stack/sheet/mineral/diamond
 	walltype = /turf/closed/wall/mineral/diamond
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_DIAMOND_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/diamond, /turf/closed/wall/mineral/diamond)
 	max_integrity = 800
 
 /obj/structure/falsewall/plasma
 	name = "plasma wall"
 	desc = "A wall with plasma plating. This is definitely a bad idea."
 	icon = 'icons/turf/walls/plasma_wall.dmi'
+	icon_state = "plasma"
 	mineral = /obj/item/stack/sheet/mineral/plasma
 	walltype = /turf/closed/wall/mineral/plasma
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASMA_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_PLASMA_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/plasma, /turf/closed/wall/mineral/plasma)
 
 /obj/structure/falsewall/plasma/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature() > 300)
@@ -256,46 +266,55 @@
 /obj/structure/falsewall/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
-	icon = 'icons/turf/walls/brick_wall_desert.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
+	icon = 'icons/turf/walls/sandstone_wall.dmi'
+	icon_state = "sandstone"
 	mineral = /obj/item/stack/sheet/mineral/sandstone
 	walltype = /turf/closed/wall/mineral/sandstone
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SANDSTONE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SANDSTONE_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/sandstone, /turf/closed/wall/mineral/sandstone)
 
 /obj/structure/falsewall/wood
 	name = "wooden wall"
 	desc = "A wall with wooden plating. Stiff."
 	icon = 'icons/turf/walls/wood_wall.dmi'
+	icon_state = "wood"
 	mineral = /obj/item/stack/sheet/mineral/wood
 	walltype = /turf/closed/wall/mineral/wood
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/wood, /turf/closed/wall/mineral/wood)
 
 /obj/structure/falsewall/wood/f13
 	name = "wooden wall"
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
 	icon_state = "wood0"
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_LOGCABIN_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_LOGCABIN_WALLS)
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+	icon_type_smooth = "wood"
+	smooth = SMOOTH_OLD
+
+/obj/structure/falsewall/wood/f13/update_icon_state()
+	if(opening)
+		if(density)
+			icon_state = "fwall_opening"
+			smooth = SMOOTH_FALSE
+			clear_smooth_overlays()
+		else
+			icon_state = "fwall_closing"
+	else
+		if(density)
+			icon_state = initial(icon_state)
+			smooth = SMOOTH_OLD
+			queue_smooth(src)
+		else
+			icon_state = "fwall_open"
 
 /obj/structure/falsewall/iron
 	name = "rough metal wall"
 	desc = "A wall with rough metal plating."
 	icon = 'icons/turf/walls/iron_wall.dmi'
-	icon_state = "iron_wall-0"
-	base_icon_state = "iron_wall"
+	icon_state = "iron"
 	mineral = /obj/item/stack/rods
 	mineral_amount = 5
 	walltype = /turf/closed/wall/mineral/iron
-	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/iron, /turf/closed/wall/mineral/iron)
 
 /obj/structure/falsewall/rust
 	name = "rusted wall"
@@ -308,33 +327,30 @@
 	name = "poylmer wall" //Fortuna edit: alien alloy -> polymer
 	desc = "A wall with polymer alloy plating."
 	icon = 'icons/turf/walls/abductor_wall.dmi'
-	icon_state = "abductor_wall-0"
-	base_icon_state = "abductor_wall"
+	icon_state = "abductor"
 	mineral = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS)
+	canSmoothWith = list(/obj/structure/falsewall/abductor, /turf/closed/wall/mineral/abductor)
 
 /obj/structure/falsewall/titanium
 	name = "wall"
 	desc = "A light-weight titanium wall used in shuttles."
 	icon = 'icons/turf/walls/shuttle_wall.dmi'
+	icon_state = "shuttle"
 	mineral = /obj/item/stack/sheet/mineral/titanium
 	walltype = /turf/closed/wall/mineral/titanium
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	smooth = SMOOTH_MORE
+	canSmoothWith = list(/turf/closed/wall/mineral/titanium, /obj/machinery/door/airlock/shuttle, /obj/machinery/door/airlock, /obj/structure/window/shuttle, /obj/structure/shuttle/engine/heater)
 
 /obj/structure/falsewall/plastitanium
 	name = "wall"
 	desc = "An evil wall of plasma and titanium."
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
+	icon_state = "shuttle"
 	mineral = /obj/item/stack/sheet/mineral/plastitanium
 	walltype = /turf/closed/wall/mineral/plastitanium
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	smooth = SMOOTH_MORE
+	canSmoothWith = list(/turf/closed/wall/mineral/plastitanium, /obj/machinery/door/airlock/shuttle, /obj/machinery/door/airlock, /obj/structure/window/shuttle, /obj/structure/shuttle/engine/heater)
 
 /*/obj/structure/falsewall/brass
 	name = "clockwork wall"
@@ -362,25 +378,3 @@
 /obj/structure/falsewall/brass/ratvar_act()
 	if(GLOB.ratvar_awakens)
 		obj_integrity = max_integrity*/
-
-/obj/structure/falsewall/corrugated
-	name = "corrugated metal wall"
-	desc = "A metal wall made out of extremely widely available corrugated iron sheets. Just slap the onto some supports and you have your very own rickety wall!"
-	icon = 'icons/turf/walls/corrugated_wall.dmi'
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_CORRUGATED_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_CORRUGATED_WALLS)
-
-/obj/structure/falsewall/corrugated/red
-	name = "red corrugated metal wall"
-	desc = "A hastily slapped-together FAST wall, it's really fast! Because it's painted red."
-	icon = 'icons/turf/walls/corrugated_wall_red.dmi'
-
-/obj/structure/falsewall/corrugated/green
-	name = "green corrugated metal wall"
-	desc = "A dark-green corrugated sheet wall. Woah, is this a stealth barn? You could hide this in a field and no one would ever find it!"
-	icon = 'icons/turf/walls/corrugated_wall_green.dmi'
-
-/obj/structure/falsewall/corrugated/blue
-	name = "blue corrugated metal wall"
-	desc = "Super-common corrugated sheets slapped onto a frame, a wall! It gives off an aura of Pantone 7545C... or is it Pantone 7546C? Perhaps the radiation is interfering with my interior decorating knowledge..."
-	icon = 'icons/turf/walls/corrugated_wall_blue.dmi'

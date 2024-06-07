@@ -109,16 +109,14 @@
 	name = "sandbags"
 	desc = "Bags of sand. Self explanatory."
 	icon = 'icons/obj/smooth_structures/sandbags.dmi'
-	icon_state = "sandbags-0"
-	base_icon_state = "sandbags"
+	icon_state = "sandbags"
 	max_integrity = 280
 	proj_pass_rate = 20
 	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_SANDBAGS)
-	canSmoothWith = list(SMOOTH_GROUP_SANDBAGS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SECURITY_BARRICADE)
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
 	var/drop_amount = 1
 
 /obj/structure/barricade/sandbags/attack_hand(mob/user)
@@ -233,7 +231,7 @@
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
 	var/drop_amount = 3
-/*
+
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
 		if(isfloorturf(loc) || isplatingturf(loc))
@@ -330,7 +328,7 @@
 			to_chat(user, span_warning("You can only build the structure on a solid floor!"))
 	else
 		return ..()
-*/
+
 /obj/structure/barricade/wooden/proc/check_menu(mob/living/user, obj/item/I)
 	if(!istype(user))
 		return FALSE
@@ -394,7 +392,7 @@
 	pass_flags = LETPASSTHROW
 //	material = SAND
 	climbable = TRUE
-	smoothing_flags = SMOOTH_TRUE
+	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
 */
 

@@ -110,7 +110,7 @@
 			return
 		to_chat(user, span_notice("You start adding [W] to [src]..."))
 		if(do_after(user, 20, target = src) && W.use(1))
-			new /obj/structure/table/wood(src.loc)
+			new /obj/structure/table/wood/settler(src.loc)
 			qdel(src)
 		return
 	else if(istype(I, /obj/item/stack/tile/carpet))

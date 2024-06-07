@@ -1,7 +1,6 @@
 /turf
 	icon = 'icons/turf/floors.dmi'
 	level = 1
-	flags_1 = CAN_BE_DIRTY_1
 	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID	//when this be added to vis_contents of something it inherit something.plane and be associatet with something on clicking,
 													//important for visualisation of turf in openspace and interraction with openspace that show you turf.
 
@@ -19,6 +18,8 @@
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
 	var/blocks_air = FALSE
+
+	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
@@ -38,9 +39,6 @@
 							//IE if the turf is supposed to be water, set TRUE.
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
-
-	///Icon-smoothing variable to map a diagonal wall corner with a fixed underlay.
-	var/list/fixed_underlay = null
 
 	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
 	var/dynamic_lumcount = 0
@@ -81,18 +79,8 @@
 	assemble_baseturfs()
 
 	levelupdate()
-
-	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
-		SET_BITFLAG_LIST(smoothing_groups)
-	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
-			smoothing_flags |= SMOOTH_OBJ
-		SET_BITFLAG_LIST(canSmoothWith)
-	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH(src)
-
+	if(smooth)
+		queue_smooth(src)
 	visibilityChanged()
 
 	if(initial(opacity)) // Could be changed by the initialization of movable atoms in the turf.
