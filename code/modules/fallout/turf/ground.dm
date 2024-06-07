@@ -960,8 +960,8 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	base_icon_state = "mat"
 	floor_tile = /obj/item/stack/tile/bamboo
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_BAMBOO_FLOOR
-	canSmoothWith = SMOOTH_GROUP_BAMBOO_FLOOR
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_BAMBOO_FLOOR)
+	canSmoothWith = list(SMOOTH_GROUP_BAMBOO_FLOOR)
 	flags_1 = NONE
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
