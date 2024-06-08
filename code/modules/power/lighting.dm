@@ -985,3 +985,6 @@
 		update(FALSE)
 	flickering = FALSE
 
+#define LIGHT_NORTH_PIXEL_Y_OFFSET 
+#define LIGHT_EAST_PIXEL_X_OFFSET
+#define LIGHT_WEST_PIXEL_X_OFFSET

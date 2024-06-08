@@ -2,9 +2,10 @@
 	name = "runed metal wall"
 	desc = "A cold metal wall engraved with indecipherable symbols. Studying them causes your head to pound."
 	icon = 'icons/turf/walls/cult_wall.dmi'
-	icon_state = "cult"
+	icon_state = "cult_wall-0"
+	base_icon_state = "cult_wall"
+	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
-	smooth = SMOOTH_MORE
 	sheet_type = /obj/item/stack/sheet/runed_metal
 	sheet_amount = 1
 	explosion_block = 10
@@ -170,13 +171,16 @@
 */
 
 /turf/closed/wall/vault
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "rockvault"
+	name = "vault wall"
+	desc = "An airtight metal wall with decorative blue-and-gold plating."
+	icon = 'icons/turf/walls/wall_vault.dmi'
 
 /turf/closed/wall/ice
 	icon = 'icons/turf/walls/icedmetal_wall.dmi'
-	icon_state = "iced"
+	icon_state = "icedmetal_wall-0"
+	base_icon_state = "icedmetal_wall"
 	desc = "A wall covered in a thick sheet of ice."
+	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
 	hardness = 35
 	slicing_duration = 150 //welding through the ice+metal
@@ -186,6 +190,9 @@
 	name = "rusted wall"
 	desc = "A rusted metal wall."
 	icon = 'icons/turf/walls/rusty_wall.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 
 /turf/closed/wall/rust/rust_heretic_act()
@@ -195,7 +202,10 @@
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
-	hardness = 50
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	smoothing_flags = SMOOTH_BITMASK
+	hardness = 15
 
 /turf/closed/wall/r_wall/rust/rust_heretic_act()
 	if(prob(50))
@@ -206,7 +216,31 @@
 	name = "clockwork wall"
 	desc = "A huge chunk of bronze, decorated like gears and cogs."
 	icon = 'icons/turf/walls/clockwork_wall.dmi'
-	icon_state = "clockwork_wall"
+	icon_state = "clockwork_wall-0"
+	base_icon_state = "clockwork_wall"
+	smoothing_flags = SMOOTH_BITMASK
 	sheet_type = /obj/item/stack/sheet/bronze
 	sheet_amount = 2
 	girder_type = /obj/structure/girder/bronze
+
+/turf/closed/wall/corrugated
+	name = "corrugated metal wall"
+	desc = "A metal wall made out of extremely widely available corrugated iron sheets. Just slap the onto some supports and you have your very own rickety wall!"
+	icon = 'icons/turf/walls/corrugated_wall.dmi'
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_CORRUGATED_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CORRUGATED_WALLS)
+
+/turf/closed/wall/corrugated/red
+	name = "red corrugated metal wall"
+	desc = "A hastily slapped-together FAST wall, it's really fast! Because it's painted red."
+	icon = 'icons/turf/walls/corrugated_wall_red.dmi'
+
+/turf/closed/wall/corrugated/green
+	name = "green corrugated metal wall"
+	desc = "A dark-green corrugated sheet wall. Woah, is this a stealth barn? You could hide this in a field and no one would ever find it!"
+	icon = 'icons/turf/walls/corrugated_wall_green.dmi'
+
+/turf/closed/wall/corrugated/blue
+	name = "blue corrugated metal wall"
+	desc = "Super-common corrugated sheets slapped onto a frame, a wall! It gives off an aura of Pantone 7545C... or is it Pantone 7546C? Perhaps the radiation is interfering with my interior decorating knowledge..."
+	icon = 'icons/turf/walls/corrugated_wall_blue.dmi'

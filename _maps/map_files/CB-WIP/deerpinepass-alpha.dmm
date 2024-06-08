@@ -26,7 +26,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ak" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -52,7 +52,7 @@
 	},
 /area/f13/wasteland)
 "at" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "au" = (
@@ -875,7 +875,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light,
 /obj/structure/fence/wooden{
 	pixel_x = -14
@@ -1121,7 +1121,7 @@
 /obj/structure/fence/wooden{
 	pixel_x = 14
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -1423,7 +1423,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "lj" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 1
 	},
@@ -1450,7 +1450,7 @@
 	},
 /area/f13/wasteland)
 "lt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "lv" = (
@@ -1497,7 +1497,7 @@
 	},
 /area/f13/wasteland)
 "lK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/carpet4{
 	layer = 1
 	},
@@ -1797,7 +1797,7 @@
 /turf/closed/indestructible/f13/matrix/transition,
 /area/f13/wasteland)
 "og" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2134,7 +2134,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qw" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "qA" = (
@@ -2218,7 +2218,7 @@
 	layer = 5
 	},
 /obj/structure/window/fulltile/house,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/wasteland)
 "qY" = (
 /obj/structure/table,
@@ -2418,7 +2418,7 @@
 	},
 /area/f13/wasteland)
 "sJ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland)
 "sL" = (
@@ -2431,7 +2431,7 @@
 /obj/structure/fence/wooden{
 	pixel_x = -14
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -2854,7 +2854,7 @@
 /area/f13/wasteland)
 "vL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/structure/decoration/rag,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
@@ -3399,7 +3399,7 @@
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
 "yZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -4047,7 +4047,7 @@
 	},
 /area/f13/wasteland)
 "Dn" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "Do" = (
@@ -4246,7 +4246,7 @@
 	},
 /area/f13/wasteland)
 "EB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "EF" = (
@@ -4610,7 +4610,7 @@
 	},
 /area/f13/wasteland)
 "Ho" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -4727,7 +4727,7 @@
 	},
 /area/f13/wasteland)
 "Ip" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/fence/wooden{
 	pixel_x = -14
 	},
@@ -4965,7 +4965,7 @@
 	},
 /area/f13/wasteland)
 "Jn" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 4;
 	doc_content_1 = "So, I'm leaving this note for the other shift managers but I really think we just can't try to stop these people anymore.  I watched a woman stab someone for some salt pork yesterday and I think we should just let them take it.  I don't really want to die working retail. ~Francis";
@@ -5449,7 +5449,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "MW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light,
 /obj/structure/fence/wooden{
 	pixel_x = 13
@@ -5953,7 +5953,7 @@
 	},
 /area/f13/wasteland)
 "PT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8
 	},
@@ -6090,7 +6090,7 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "QZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/cell_charger,
 /obj/machinery/cell_charger{
 	pixel_y = 13
@@ -6227,7 +6227,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "RU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/fence/wooden{
 	pixel_x = 14
 	},
@@ -6518,7 +6518,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ug" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -7090,7 +7090,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "XX" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 1
 	},
@@ -7378,7 +7378,7 @@
 	},
 /area/f13/wasteland)
 "ZZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/junk/small/tv,
 /obj/machinery/light/small{
 	dir = 1

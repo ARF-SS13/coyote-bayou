@@ -18,6 +18,7 @@
 	anchored = TRUE
 	layer = CLOSED_DOOR_LAYER
 	explosion_block = 0.5
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)	//	Okay, this is scuffed. If we're a wall that merges with windows, we'll merge with doors too!
 	var/can_have_lock = FALSE
 	var/obj/item/lock_construct/padlock
 	var/obj/item/lock_bolt/deadbolt

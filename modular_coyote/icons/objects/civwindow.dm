@@ -6,7 +6,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/windowframe
@@ -15,7 +15,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/windowmetal
@@ -24,7 +24,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/windowmetalframe
@@ -33,7 +33,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/medieval_windownew
@@ -42,7 +42,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/brick_windownew
@@ -51,7 +51,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/stone_windownew
@@ -60,7 +60,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/sandstone_windownew
@@ -69,7 +69,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/sumerian_windownew
@@ -78,7 +78,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/shoji_windownew
@@ -87,7 +87,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/nordic_window
@@ -96,7 +96,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/roman_window
@@ -105,7 +105,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/aztec_window
@@ -114,7 +114,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/bamboo_windownew
@@ -123,7 +123,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/villa_windownew
@@ -132,7 +132,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/villa_windownew_full
@@ -141,7 +141,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/stone_windownew_full
@@ -150,7 +150,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/sandstone_windownew_full
@@ -159,7 +159,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/red_earthwindownew
@@ -168,7 +168,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/brick_windownew_full
@@ -177,7 +177,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/metal_porthole_full
@@ -186,7 +186,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/clay_windownew
@@ -195,7 +195,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/oriental_windownew
@@ -204,7 +204,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/redsandstone_windownew_full
@@ -213,7 +213,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/redsandstonewindow_small_full
@@ -222,7 +222,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/marble_windownew
@@ -231,7 +231,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
 
 /obj/structure/window/fulltile/civ/marble_windownew_full
@@ -240,5 +240,5 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = 0
 	level = 3
