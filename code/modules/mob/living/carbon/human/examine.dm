@@ -260,7 +260,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			if(WOUND_BLEED_SEVERE_THRESHOLD to WOUND_BLEED_CRITICAL_THRESHOLD)
 				msg += "<B>[t_His] [BP.name] looks absolutely mangled!</B>\n"
 			if(WOUND_BLEED_CRITICAL_THRESHOLD to INFINITY)
-				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a deathclaw!</B>\n"
+				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a aethergiest!</B>\n"
 
 		var/has_bleed_wounds = is_bleeding()
 		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))

@@ -73,6 +73,7 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/cultivator=1, \
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1,
+		/obj/item/pda=1,
 		/obj/item/supplykit)
 	shoes = 		/obj/item/clothing/shoes/workboots
 

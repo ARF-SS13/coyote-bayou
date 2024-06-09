@@ -29,7 +29,7 @@
 	name = "Combat Coat"
 	result = /obj/item/clothing/suit/armor/light/leather/leathercoat
 	reqs = list(/obj/item/clothing/suit/armor/light/leather/leather_jacketmk2 = 1,
-				/obj/item/stack/sheet/animalhide/deathclaw  = 1)
+				/obj/item/stack/sheet/animalhide/aethergiest  = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -81,10 +81,10 @@
 //<--end of taur saddles
 
 /*
-/datum/crafting_recipe/armor_plate_deathclaw
+/datum/crafting_recipe/armor_plate_aethergiest
 	name = "Armor Plate"
 	result = /obj/item/stack/crafting/armor_plate
-	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw  = 1,
+	reqs = list(/obj/item/stack/sheet/animalhide/aethergiest  = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)

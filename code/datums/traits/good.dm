@@ -1497,7 +1497,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "Gieger Counters are for suckers, mostly."
 	value = 40
 	category = "Radiation Quirks"
-	mechanics = "You only absorb 25% of all radiation."
+	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
 		/datum/quirk/radimmunesorta,
 		/datum/quirk/radweakmajor,
@@ -1610,8 +1610,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
 	conflicts = list()
 	mob_trait = TRAIT_STRONG_GRABBER
-	gain_text = span_notice("You feel like you could wrestle a deathclaw!!!")
-	lose_text = span_danger("You no longer feel like you should wrestle deathclaws...")
+	gain_text = span_notice("You feel like you could wrestle a aethergiest!!!")
+	lose_text = span_danger("You no longer feel like you should wrestle aethergiests...")
 	medical_record_text = "Patient is apparently very good at gripping things."
 	locked =  FALSE
 	human_only = FALSE

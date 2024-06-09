@@ -56,7 +56,7 @@
 		user.forceMove(get_turf(src))
 		return TRUE
 
-/obj/effect/portal/proc/on_entered(atom/movable/AM, oldloc, force_stop = 0)
+/obj/effect/portal/proc/on_entered(datum/source, atom/movable/AM, oldloc, force_stop = 0)
 	SIGNAL_HANDLER
 	if(force_stop)
 		return
@@ -64,6 +64,13 @@
 		return
 	if(linked && (get_turf(oldloc) == get_turf(linked)))
 		return
+	if(ishostile(AM))
+		var/mob/living/simple_animal/hostile/HAM = AM
+		if(!HAM.ckey)
+			var/turf/toss_here = get_edge_target_turf(src, pick(GLOB.alldirs))
+			say("HOSTILE ENTITY DETECTED: REJECTING.")
+			HAM.throw_at(toss_here, 200, 2, null, TRUE, TRUE)
+			return
 	if(!teleport(AM))
 		return
 
@@ -163,7 +170,7 @@
 		return ..()
 
 /obj/effect/portal/proc/teleport(atom/movable/M, force = FALSE)
-	if(!force && (!istype(M) || iseffect(M) || (ismecha(M) && !mech_sized) || (!isobj(M) && !ismob(M)))) //Things that shouldn't teleport.
+	if(!force && (!istype(M) || iseffect(M))) //Things that shouldn't teleport.
 		return
 	var/turf/real_target = get_link_target_turf()
 	if(!istype(real_target))

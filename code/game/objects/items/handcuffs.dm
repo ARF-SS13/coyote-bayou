@@ -236,7 +236,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	flags_1 = CONDUCT_1
 	throwforce = 0
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slowdown = 4.5
 	breakouttime = 300	//Deciseconds = 30s = 0.5 minute
 
@@ -245,6 +245,7 @@
 	throw_speed = 1
 	throw_range = 1
 	icon_state = "beartrap"
+	w_class = WEIGHT_CLASS_NORMAL
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
 	var/trap_damage = 30

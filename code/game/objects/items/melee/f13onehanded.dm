@@ -910,11 +910,13 @@ y
 	force = 40 //Assaultron, so, makes sense.
 	backstab_multiplier = 1.40
 
-/obj/item/melee/unarmed/deathclawgauntlet
-	name = "deathclaw gauntlet"
+/obj/item/melee/unarmed/aethergiestgauntlet
+	name = "aethergiest gauntlet"
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
-	icon_state = "deathclaw_g"
-	item_state = "deathclaw_g"
+	icon_state = "aethergiest_g"
+	item_state = "aethergiest_g"
+	alpha = 200
+	color = "#3355EF"
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 50
@@ -927,7 +929,7 @@ y
 	name = "yao guai gauntlet"
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. A weapon worthy of the any warrior."
 	icon_state = "yao_guai_g"
-	item_state = "deathclaw_g"
+	item_state = "aethergiest_g"
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 45

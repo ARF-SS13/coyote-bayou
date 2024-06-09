@@ -97,7 +97,7 @@ Trash - 4cp (geckos, pillbugs, bloatflies, basic ghouls etc)
 Low Tier - 6cp (reavers, glowing ones, eyebots, cazadors etc)
 Mid Tier - 10cp/1sp (ants, scorpions, average raiders, mr handys etc)
 High Tier - 15cp/1.5sp (spiders, renegades, boss raiders, protectrons etc )
-Rare - 20cp/2sp (basic deathclaws, hellpigs, securitrons)
+Rare - 20cp/2sp (basic aethergiests, hellpigs, securitrons)
 Unique - 50cp/5sp (mango mat, the other fruit guys, etc)
 */
 

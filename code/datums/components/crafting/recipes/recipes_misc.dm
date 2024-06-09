@@ -827,7 +827,7 @@
 	time = 300
 	reqs = list(
 				/obj/item/instrument/violin = 1,
-				/obj/item/stack/sheet/animalhide/deathclaw = 1,
+				/obj/item/stack/sheet/animalhide/aethergiest = 1,
 				/obj/item/reagent_containers/food/snacks/grown/horsenettle =1
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)

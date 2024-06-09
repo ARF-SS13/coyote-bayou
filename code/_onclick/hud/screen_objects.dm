@@ -590,10 +590,320 @@
 	layer = UI_DAMAGE_LAYER
 	plane = FULLSCREEN_PLANE
 
+#define HEALTH_STATE_BASE 1
+#define HEALTH_STATE_FLICKER 2
+#define HEALTH_STATE_BLINK 3
+#define HEALTH_STATE_BLINK_FLICKER 4
+
+#define HEALTH_STATE_FLICKER_CYCLES 5
+
 /atom/movable/screen/healths
 	name = "health"
 	icon_state = "health0"
 	screen_loc = ui_health
+	var/base_state = "%100"
+	var/flicker_state = "%100"
+	var/blink_state = "%100"
+	var/blink_flicker_state = "%100"
+	var/curr_text = "%100"
+	var/curr_state = HEALTH_STATE_BASE
+	/// and so we use a constantly looping global random lookup table and then modulo it against 240 to see if mario should blink this frame
+	var/flicker_counter = 3 // in 0.2ths of a second
+	var/flicker_counter_max = 3
+	var/blink_counter = 200 
+	var/blink_counter_max = 200
+	var/reopen_counter = 2
+	var/reopen_counter_max = 200
+	var/update_counter = 5 // ticks before we auto-update
+
+/atom/movable/screen/healths/Initialize(mapload)
+	. = ..()
+	START_PROCESSING(SSfastprocess, src)
+
+/atom/movable/screen/healths/Destroy()
+	STOP_PROCESSING(SSfastprocess, src)
+	. = ..()
+
+/atom/movable/screen/healths/proc/FormattifyHealthText(mob/living/mymob, health_to_display)
+	if(!mymob)
+		base_state = "???%"
+		flicker_state = "???%"
+		return
+	if(isnull(health_to_display))
+		health_to_display = mymob.health
+	var/dmg_before_crit = mymob.maxHealth - mymob.crit_threshold
+	var/dmg_taken = mymob.maxHealth - health_to_display
+	var/healthpercent = (((dmg_before_crit - dmg_taken) / (dmg_before_crit == 0 ? 0.01 : dmg_before_crit)) * 100) // displayed HP
+	var/rawnum = round(healthpercent, mymob.HP_text_roundto)
+	var/textnum_base = "%[rawnum]"
+	var/textnum_flicker = "%[rawnum]"
+	/// sexy monospaced console font
+	// var/font_fam = "monospace"
+	var/font_color_base = "#ffffff"
+	var/font_color_flicker = "#ffffff"
+	var/smiley_base = "'_'"
+	var/smiley_flicker = "'_'"
+	var/smiley_blink = "'_'"
+	var/smiley_blink_flicker = "'_'"
+	if(mymob.stat == DEAD)
+		font_color_base = "#ffffff"
+		font_color_base = "#ffffff"
+		smiley_base = "-_- RIP"
+		smiley_flicker = "-_- RIP"
+		smiley_blink = "-_- RIP"
+		smiley_blink_flicker = "-_- RIP"
+	else if(healthpercent > 95)
+		font_color_base = "#a8a8ff"
+		font_color_flicker = "#a8a8ff"
+		smiley_base = "^_^"
+		smiley_flicker = "^_^"
+		smiley_blink = "^_^"
+		smiley_blink_flicker = "^_^"
+	else if(healthpercent > 10)
+		switch(healthpercent)
+			if(90 to INFINITY)
+				smiley_base          = "^_^"
+				smiley_flicker       = "^_^"
+				smiley_blink         = "^_^"
+				smiley_blink_flicker = "^_^"
+				font_color_base = "#5334ff"
+				font_color_flicker = font_color_base
+			if(85 to 90)
+				smiley_base          = "^_^;"
+				smiley_flicker       = "^_^;"
+				smiley_blink         = "-_-;"
+				smiley_blink_flicker = "-_-;"
+				font_color_base = "#a8a8ff"
+				font_color_flicker = font_color_base
+			if(80 to 85)
+				smiley_base          = "^_^;"
+				smiley_flicker       = "^_^;"
+				smiley_blink         = "-_-;"
+				smiley_blink_flicker = "-_-;"
+				font_color_base = "#b97cff"
+				font_color_flicker = font_color_base
+			if(75 to 80)
+				smiley_base          = "'_'"
+				smiley_flicker       = "'_'"
+				smiley_blink         = "-_-"
+				smiley_blink_flicker = "-_-"
+				font_color_base = "#d2a1ff"
+				font_color_flicker = font_color_base
+			if(70 to 75)
+				smiley_base          = "'_'"
+				smiley_flicker       = "'_'"
+				smiley_blink         = "-_-"
+				smiley_blink_flicker = "-_-"
+				font_color_base = "#e27bff"
+				font_color_flicker = font_color_base
+			if(65 to 70)
+				smiley_base          = ";_;"
+				smiley_flicker       = ";_;"
+				smiley_blink         = "-_-"
+				smiley_blink_flicker = "-_-"
+				font_color_base = "#ff00bf"
+				font_color_flicker = font_color_base
+			if(60 to 65)
+				smiley_base          = ";_;"
+				smiley_flicker       = ";_;"
+				smiley_blink         = "-_-"
+				smiley_blink_flicker = "-_-"
+				font_color_base = "#fff200"
+				font_color_flicker = "#ffc400"
+			if(55 to 60)
+				smiley_base          = ";n;"
+				smiley_flicker       = ";n;"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#ffb700"
+				font_color_flicker = "#ff7f00"
+			if(50 to 55)
+				smiley_base          = "*n*"
+				smiley_flicker       = "*n*"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#ff7f00"
+				font_color_flicker = "#ff0000"
+			if(45 to 50)
+				smiley_base          = "@n@"
+				smiley_flicker       = "@n@"
+				smiley_blink         = "-n@"
+				smiley_blink_flicker = "-n@"
+				font_color_base = "#ff0000"
+				font_color_flicker = "#ff0090"
+			if(40 to 45)
+				smiley_base          = "@n@"
+				smiley_flicker       = "@n@"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#e600ff"
+				font_color_flicker = "#ff00bf"
+			if(35 to 40)
+				smiley_base          = "OnO"
+				smiley_flicker       = "OnO"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#e600ff"
+				font_color_flicker = "#e100ff"
+			if(30 to 35)
+				smiley_base          = "0n0"
+				smiley_flicker       = "0n0"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#e600ff"
+				font_color_flicker = "#9d0076"
+			if(25 to 30)
+				smiley_base          = "#n#"
+				smiley_flicker       = "#n#"
+				smiley_blink         = "-n-"
+				smiley_blink_flicker = "-n-"
+				font_color_base = "#e600ff"
+				font_color_flicker = "#5f0047"
+			if(20 to 25)
+				smiley_base          = "#A#"
+				smiley_flicker       = "#A#"
+				smiley_blink         = "-A-"
+				smiley_blink_flicker = "-A-"
+				font_color_base = "#e600ff"
+				font_color_flicker = "#840025"
+			if(15 to 20)
+				smiley_base          = ">A<"
+				smiley_flicker       = ">A<"
+				smiley_blink         = "-A-"
+				smiley_blink_flicker = "-A-"
+				font_color_base = "#ff00bf"
+				font_color_flicker = "#840063"
+			if(10 to 15)
+				smiley_base          = "wAw"
+				smiley_flicker       = "wAw"
+				smiley_blink         = "-A-"
+				smiley_blink_flicker = "-A-"
+				font_color_base = "#ff0090"
+				font_color_flicker = "#840063"
+			if(5 to 10)
+				smiley_base          = "xAx"
+				smiley_flicker       = "xAx"
+				smiley_blink         = "-A-"
+				smiley_blink_flicker = "-A-"
+				font_color_base = "#ff0070"
+				font_color_flicker = "#840063"
+			if(-INFINITY to 5)
+				smiley_base    = "X.X"
+				smiley_flicker = "X.X"
+				smiley_blink   = "-.-"
+				smiley_blink_flicker   = "-.-"
+				font_color_base = "#ff0050"
+				font_color_flicker = "#840063"
+	else if(healthpercent > 0)
+		font_color_base = "#ff00bf"
+		font_color_flicker = "#840063"
+		smiley_base = "XnX;;"
+		smiley_flicker = "XnX;;"
+		smiley_blink = "XnX;;"
+		smiley_blink_flicker = "XnX;;"
+	else // in crit lol
+		// var/total_adjusted_hp = mymob.maxHealth + -HEALTH_THRESHOLD_DEAD // guaranteed to be bigger than dmg_before_crit
+		// // how many times larger the health below crit is compared to above crit
+		// // so if you have 20 HP before crit, and 80 HP after crit, this will be 4
+		// var/crit_scalar = total_adjusted_hp / dmg_before_crit
+		// /// we're in crit! so we need to scale down the health percentage to fit in the crit range
+		// rawnum /= crit_scalar
+		// rawnum = round(rawnum, mymob.HP_text_roundto)
+		if(mymob.attackable_in_crit()) // we're downed, and attackable
+			font_color_base      = "#ff0000"
+			font_color_flicker   = "#350000"
+			textnum_base         = "!![textnum_base]!!"
+			textnum_flicker      = "!![textnum_flicker]!!"
+			smiley_base          = ";XAX;"
+			smiley_flicker       = ";XAX;"
+			smiley_blink         = ";-A-;"
+			smiley_blink_flicker = ";-A-;"
+		else
+			if(mymob.InFullCritical())
+				textnum_base         = ">[textnum_base]<"
+				textnum_flicker      = ">[textnum_flicker]<"
+				smiley_base          = "/-_-\\"
+				smiley_flicker       = "/-_-\\"
+				smiley_blink         = "/-_-\\"
+				smiley_blink_flicker = "/-_-\\"
+				font_color_base = "#c3ddff"
+				font_color_flicker = "#4d5662"
+			else
+				textnum_base         = "~[textnum_base]~"
+				textnum_flicker      = "~[textnum_flicker]~"
+				smiley_base          = "-,_-"
+				smiley_flicker       = "-,_-"
+				smiley_blink         = "-,n-"
+				smiley_blink_flicker = "-,n-"
+				font_color_base = "#9e8a8a"
+				font_color_flicker = "#9e8a8a"
+	base_state = "<font color='[font_color_base]'>[textnum_base]"
+	flicker_state = "<font color='[font_color_flicker]'>[textnum_flicker]"
+	blink_state = "<font color='[font_color_base]'>[textnum_base]"
+	blink_flicker_state = "<font color='[font_color_flicker]'>[textnum_flicker]"
+	var/datum/preferences/P = extract_prefs(mymob)
+	if(P?.show_health_smilies)
+		base_state += "<br>[smiley_base]"
+		flicker_state += "<br>[smiley_flicker]"
+		blink_state += "<br>[smiley_blink]"
+		blink_flicker_state += "<br>[smiley_blink_flicker]"
+		maptext_y = -8
+	else
+		maptext_y = 0
+	base_state += "</font>"
+	flicker_state += "</font>"
+	blink_state += "</font>"
+	blink_flicker_state += "</font>"
+
+
+/atom/movable/screen/healths/process()
+	update_counter--
+	if(update_counter <= 0)
+		update_counter = 5
+		var/mob/living/maybeowner = hud.mymob
+		if(maybeowner)
+			FormattifyHealthText(maybeowner)
+	flicker_counter--
+	if(flicker_counter <= 0)
+		flicker_counter = flicker_counter_max
+		switch(curr_state) // invert our flicker state
+			if(HEALTH_STATE_BASE)
+				curr_state = HEALTH_STATE_FLICKER
+			if(HEALTH_STATE_FLICKER)
+				curr_state = HEALTH_STATE_BASE
+			if(HEALTH_STATE_BLINK)
+				curr_state = HEALTH_STATE_BLINK_FLICKER
+			if(HEALTH_STATE_BLINK_FLICKER)
+				curr_state = HEALTH_STATE_BLINK
+
+	blink_counter--
+	if(blink_counter <= 0)
+		switch(curr_state)
+			if(HEALTH_STATE_BASE)
+				curr_state = HEALTH_STATE_BLINK
+			if(HEALTH_STATE_FLICKER)
+				curr_state = HEALTH_STATE_BLINK_FLICKER
+		reopen_counter--
+		if(reopen_counter <= 0)
+			reopen_counter = reopen_counter_max
+			blink_counter = rand(blink_counter_max, blink_counter_max * 2)
+			if(curr_state == HEALTH_STATE_BLINK)
+				curr_state = HEALTH_STATE_BASE
+			if(curr_state == HEALTH_STATE_BLINK_FLICKER)
+				curr_state = HEALTH_STATE_FLICKER
+
+	switch(curr_state)
+		if(HEALTH_STATE_BASE)
+			curr_text = base_state
+		if(HEALTH_STATE_FLICKER)
+			curr_text = flicker_state
+		if(HEALTH_STATE_BLINK)
+			curr_text = blink_state
+		if(HEALTH_STATE_BLINK_FLICKER)
+			curr_text = blink_flicker_state
+	maptext = curr_text
+	maptext_width = 64
+
 
 /atom/movable/screen/healths/alien
 	icon = 'icons/mob/screen_alien.dmi'

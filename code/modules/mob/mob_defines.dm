@@ -212,3 +212,9 @@
 
 	///is the mob set to always whisper?
 	var/is_autowhisper = FALSE
+
+	///round_healthtext_to_this_number
+	var/HP_text_roundto = 5
+
+	/// if we did anything hostile, let us get attacked in crit, until we take this much more damage
+	var/in_crit_HP_penalty = 0

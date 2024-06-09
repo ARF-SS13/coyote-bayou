@@ -370,8 +370,8 @@
 	item_state = "raven_hood"
 
 /obj/item/clothing/suit/hooded/cloak/goliath
-	name = "deathclaw cloak"
-	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
+	name = "aethergiest cloak"
+	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome aethergiest."
 	icon_state = "clawsuitcloak"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -379,7 +379,7 @@
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
-	name = "deathclaw cloak hood"
+	name = "aethergiest cloak hood"
 	desc = "A protective & concealing hood."
 	icon_state = "clawheadcloak"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
@@ -451,7 +451,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/hhunter
 	name = "Razorclaw armour"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	desc = "A suit of armour fashioned out of the remains of a legendary aethergiest."
 	icon_state = "rcarmour"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/hhunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -462,7 +462,7 @@
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
 	name = "Razorclaw helm"
-	desc = "The skull of a legendary deathclaw."
+	desc = "The skull of a legendary aethergiest."
 	icon_state = "rchelmet"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -477,7 +477,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/shunter
 	name = "Quickclaw armour"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
+	desc = "A suit of armour fashioned out of the remains of a legendary aethergiest, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
 	icon_state = "birdarmor_t"
 	slowdown = 0
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
@@ -488,7 +488,7 @@
 
 /obj/item/clothing/head/hooded/cloakhood/shunter
 	name = "Quickclaw hood"
-	desc = "A hood madde of deathclaw hides, light while also being comfortable to wear, designed for speed."
+	desc = "A hood madde of aethergiest hides, light while also being comfortable to wear, designed for speed."
 	icon_state = "birdhood"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF

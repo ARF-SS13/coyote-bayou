@@ -23,7 +23,7 @@
 	var/tanktype = /obj/structure/reagent_dispensers/watertank
 	var/sprite_name = "fire_extinguisher"
 	var/power = 5 //Maximum distance launched water will travel
-	var/precision = FALSE //By default, turfs picked from a spray are random, set to 1 to make it always have at least one water effect per row
+	var/precision = TRUE //By default, turfs picked from a spray are random, set to 1 to make it always have at least one water effect per row
 	var/cooling_power = 2 //Sets the cooling_temperature of the water reagent datum inside of the extinguisher when it is refilled
 
 /obj/item/extinguisher/mini
@@ -38,6 +38,20 @@
 	force = 3
 	custom_materials = list(/datum/material/iron = 50, /datum/material/glass = 40)
 	max_water = 30
+	sprite_name = "miniFE"
+	dog_fashion = null
+
+/obj/item/extinguisher/waster
+	name = "GekkerTec integrated DataPal fire suppression device"
+	desc = "A light and compact fibreglass-framed model fire extinguisher. It's also pretty darn solid for something so small."
+	icon_state = "miniFE0"
+	item_state = "miniFE"
+	flags_1 = null //doesn't CONDUCT_1
+	throwforce = 30
+	w_class = WEIGHT_CLASS_TINY
+	force = 25
+	custom_materials = list(/datum/material/iron = 50, /datum/material/glass = 40)
+	max_water = 12000
 	sprite_name = "miniFE"
 	dog_fashion = null
 
@@ -131,52 +145,66 @@
 	if(refilling)
 		refilling = FALSE
 		return
-	if (!safety)
-		if (src.reagents.total_volume < 1)
-			to_chat(usr, span_warning("\The [src] is empty!"))
-			return
+	if(target == user)
+		autoextinguish(user)
+	else if(!safety)
+		Extinguish(user, target)
 
-		if (world.time < src.last_use + 12)
-			return
+/obj/item/extinguisher/proc/autoextinguish(mob/living/user)
+	if(!user)
+		return
+	// user.ExtinguishMob()
+	if(Extinguish(user, user))
+		to_chat(user, span_notice("You extinguish yourself with \the [src]. What a relief!"))
+		return TRUE
 
-		src.last_use = world.time
+/obj/item/extinguisher/proc/Extinguish(mob/user, atom/target)
+	if (src.reagents.total_volume < 1)
+		to_chat(usr, span_warning("\The [src] is empty!"))
+		return
 
-		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+	if (world.time < src.last_use + 12)
+		return
+	. = TRUE
 
-		var/direction = get_dir(src,target)
+	src.last_use = world.time
 
-		if(user.buckled && isobj(user.buckled) && !user.buckled.anchored)
-			var/obj/B = user.buckled
-			var/movementdirection = turn(direction,180)
-			addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_chair, B, movementdirection), 1)
+	playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
 
-		else user.newtonian_move(turn(direction, 180))
+	var/direction = get_dir(src,target)
 
-		//Get all the turfs that can be shot at
-		var/turf/T = get_turf(target)
-		var/turf/T1 = get_step(T,turn(direction, 90))
-		var/turf/T2 = get_step(T,turn(direction, -90))
-		var/list/the_targets = list(T,T1,T2)
+	if(user.buckled && isobj(user.buckled) && !user.buckled.anchored)
+		var/obj/B = user.buckled
+		var/movementdirection = turn(direction,180)
+		addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_chair, B, movementdirection), 1)
+
+	else user.newtonian_move(turn(direction, 180))
+
+	//Get all the turfs that can be shot at
+	var/turf/T = get_turf(target)
+	var/turf/T1 = get_step(T,turn(direction, 90))
+	var/turf/T2 = get_step(T,turn(direction, -90))
+	var/list/the_targets = list(T,T1,T2)
+	if(precision)
+		var/turf/T3 = get_step(T1, turn(direction, 90))
+		var/turf/T4 = get_step(T2,turn(direction, -90))
+		the_targets.Add(T3,T4)
+
+	var/list/water_particles=list()
+	for(var/a=0, a<5, a++)
+		var/obj/effect/particle_effect/water/W = new /obj/effect/particle_effect/water(get_turf(src))
+		var/my_target = pick(the_targets)
+		water_particles[W] = my_target
+		// If precise, remove turf from targets so it won't be picked more than once
 		if(precision)
-			var/turf/T3 = get_step(T1, turn(direction, 90))
-			var/turf/T4 = get_step(T2,turn(direction, -90))
-			the_targets.Add(T3,T4)
+			the_targets -= my_target
+		var/datum/reagents/R = new/datum/reagents(5)
+		W.reagents = R
+		R.my_atom = W
+		reagents.trans_to(W,1)
 
-		var/list/water_particles=list()
-		for(var/a=0, a<5, a++)
-			var/obj/effect/particle_effect/water/W = new /obj/effect/particle_effect/water(get_turf(src))
-			var/my_target = pick(the_targets)
-			water_particles[W] = my_target
-			// If precise, remove turf from targets so it won't be picked more than once
-			if(precision)
-				the_targets -= my_target
-			var/datum/reagents/R = new/datum/reagents(5)
-			W.reagents = R
-			R.my_atom = W
-			reagents.trans_to(W,1)
-
-		//Make em move dat ass, hun
-		addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_particles, water_particles), 2)
+	//Make em move dat ass, hun
+	addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_particles, water_particles), 2)
 
 //Particle movement loop
 /obj/item/extinguisher/proc/move_particles(list/particles, repetition=0)

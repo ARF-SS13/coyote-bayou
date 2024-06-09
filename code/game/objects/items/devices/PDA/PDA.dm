@@ -51,6 +51,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/obj/item/radio/radio = null //the radio inside the pipboy
 	/// The internal geiger counter
 	var/obj/item/geiger_counter/geiger
+	/// our internal extinguisher
+	var/obj/item/extinguisher/extinguisher
 	var/g_on = FALSE
 	var/g_rads
 	//variables exclusively used on 'update_overlays' (which should never be called directly, and 'update_icon' doesn't use args anyway)
@@ -150,6 +152,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item =	new /obj/item/pen(src)
 	radio = new /obj/item/radio(src)
 	geiger = new /obj/item/geiger_counter(src)
+	extinguisher = new /obj/item/extinguisher/waster(src)
 	new_overlays = TRUE
 	personalize()
 
@@ -1318,6 +1321,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 		QDEL_NULL(radio)
 	if(istype(geiger))
 		QDEL_NULL(geiger)
+	if(istype(extinguisher))
+		QDEL_NULL(extinguisher)
 	return ..()
 
 //AI verb and proc for sending PDA messages.

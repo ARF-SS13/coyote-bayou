@@ -8,9 +8,9 @@
  *afterattack. The return value does not matter.
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params, attackchain_flags, damage_multiplier = 1)
-	if(user != target && !isitem(target) && user.incapacitated() && !extract_ckey(target)) // no attacking mobs, other players is okay
-		to_chat(user, span_danger("You are to messed up to use [src] on anything but yourself!"))
-		return
+	// if(user != target && !isitem(target) && user.incapacitated() && !extract_ckey(target)) // no attacking mobs, other players is okay
+	// 	to_chat(user, span_danger("You are to messed up to use [src] on anything but yourself!"))
+	// 	return
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
@@ -130,6 +130,8 @@
 			force_modifier = (-force * 0.2) // You do 80% damage because you're a walking corpse
 		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER))
 			force_modifier = (-force * 0.8) // You do 20% damage because of fear
+		if(user.health < user.crit_threshold)
+			force_modifier = (-force * 0.2) // You do 80% damage because you're in critical condition
 		else
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 				force_modifier += 10
@@ -146,6 +148,8 @@
 			if(HAS_TRAIT(user, TRAIT_SMUTANT))
 				force_modifier += (force * 0.1)
 	force_modifier = clamp(force_modifier, -force, force * 0.25)
+	if(ishostile(M))
+		user.in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
 
 	var/force_out = force + force_modifier
 	if(force_out <= 0)

@@ -349,6 +349,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
+/*
 /datum/design/mech_teleporter
 	name = "Exosuit Module (Teleporter Module)"
 	desc = "An exosuit module that allows exosuits to teleport to any position in view."
@@ -358,6 +359,7 @@
 	materials = list(/datum/material/iron=10000,/datum/material/diamond=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+*/
 
 /datum/design/mech_rcd
 	name = "Exosuit Module (RCD Module)"

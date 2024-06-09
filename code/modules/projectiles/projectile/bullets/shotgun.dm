@@ -23,7 +23,7 @@
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 //	supereffective_damage = 2
-//	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+//	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
 //needler shotgun pellet.
@@ -52,7 +52,7 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 	supereffective_damage = 8
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 //ratshot pellet: 6 damage instead of 8, fewer pellets. would make many tiny damage pellets but performance
 /obj/item/projectile/bullet/pellet/shotgun_ratshot
@@ -73,7 +73,7 @@
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* rubber pellet
  * DAMAGE: 1
@@ -105,7 +105,7 @@
 	//However, you can find handloaded buckshot in the trash, you can't find rubbershot.
 	//This means that you'll always be paying to use rubbershot, whereas handloaded buckshot is often a freebie.
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* handload pellet
  * DAMAGE: 8
@@ -130,7 +130,7 @@
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 	supereffective_damage = 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -236,7 +236,7 @@
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION
 
 	supereffective_damage = BULLET_DAMAGE_PISTOL_9MM
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* train
  * DAMAGE: 20

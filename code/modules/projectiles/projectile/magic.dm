@@ -472,7 +472,7 @@
 	damage_type = BRUTE
 	nodamage = 0
 	supereffective_damage = 100
-	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "aethergiest", removed because buggy
 
 	//explosion values
 	var/exp_heavy = 0
@@ -518,7 +518,7 @@
 	damage_type = BRUTE
 	nodamage = 0
 	supereffective_damage = 40
-	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "aethergiest", removed because buggy
 
 
 /obj/item/projectile/magic/nuclear
