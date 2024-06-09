@@ -6,6 +6,7 @@
 	mind.show_memory(src, 0)
 	SSsecondwind.init_my_second_wind(ckey)
 	SSeconomy.get_quest_book(src) // loads their quest data on spawn
+	SSeconomy.player_spawned(src)
 
 	//Round specific stuff
 	if(SSticker.mode)

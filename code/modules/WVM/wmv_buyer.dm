@@ -439,8 +439,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
 	if(!silent)
-		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
-		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = quiet)
+		say("I'll give you [SSeconomy.format_currency(final_price, TRUE, TRUE)] per [I]!", just_chat = quiet)
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -676,8 +675,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
 	var/thing = I ? "\the [I]" : "something"
-	var/currencie = soldfor > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	var/currencei = totalcash > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	var/currencie = "[SSeconomy.format_currency(soldfor, TRUE, TRUE)]"
+	var/currencei = "[SSeconomy.format_currency(totalcash, TRUE, TRUE)]"
 	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
 
 /obj/item/debug_vendorsale

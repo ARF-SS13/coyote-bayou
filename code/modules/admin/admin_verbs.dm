@@ -30,6 +30,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
 	/datum/verbs/menu/Admin/verb/playerpanel,
+	/client/proc/edit_quest_bank,			/*edit quest bank etc*/
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/getvpt,                /*shows all users who connected from a shady place*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
@@ -198,6 +199,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
 	/client/proc/print_gun_debug_information,
+	/client/proc/test_dailies_penalty,
+	/client/proc/test_dailies_spree,
 	// /client/proc/atmos_control,
 	// /client/proc/reload_cards,
 	// /client/proc/validate_cards,
@@ -699,6 +702,62 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	prefs.save_preferences()
 	to_chat(src, span_abductor("You will [prefs.admin_wire_tap ? "now" : "no longer"] eavesdrop on other players' DMs."))
 	to_chat(src, "Preferences saved.")
+
+/client/proc/edit_quest_bank()
+	set category = "Admin.Game"
+	set name = "Edit Questbank"
+	set desc = "Modify someone's questbank balance!"
+
+	if(!holder || !check_rights(R_ADMIN, 0))
+		to_chat(usr, span_notice("You don't have the rights to do that!"))
+		log_admin("[key_name(usr)] tried to edit a questbank without the rights.")
+		return
+	
+	GLOB.qbank_editor.Open(usr)
+	to_chat(usr, span_interface("Questbank editor opened. If it hasn't, tell Superlagg."))
+
+
+/client/proc/test_dailies_spree()
+	set category = "Debug"
+	set name = "Test Dailies Spree"
+
+	if(!SSeconomy.debug_daily_spawn_in_stuff)
+		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		return
+
+	var/datum/preferences/P = extract_prefs(usr) // me!
+	P.days_spawned_in = list()
+	P.days_spawned_in += REALTIME2QDAYS(-1)
+	P.days_spawned_in += REALTIME2QDAYS(-2)
+	P.days_spawned_in += REALTIME2QDAYS(-3)
+	P.days_spawned_in += REALTIME2QDAYS(-10)
+	P.days_spawned_in += REALTIME2QDAYS(-11)
+	P.days_spawned_in += REALTIME2QDAYS(-12)
+	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
+	P.save_character()
+	to_chat(usr, "You have now spawned in on the last 3 days, starting yesterday. Should return 3 bonuses.")
+
+/client/proc/test_dailies_penalty()
+	set category = "Debug"
+	set name = "Test Dailies penalty"
+
+	if(!SSeconomy.debug_daily_spawn_in_stuff)
+		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		return
+
+	var/datum/preferences/P = extract_prefs(usr) // me!
+	P.days_spawned_in = list()
+	// P.days_spawned_in += REALTIME2QDAYS(-1)
+	// P.days_spawned_in += REALTIME2QDAYS(-2)
+	// P.days_spawned_in += REALTIME2QDAYS(-3)
+	P.days_spawned_in += REALTIME2QDAYS(-4)
+	P.days_spawned_in += REALTIME2QDAYS(-5)
+	P.days_spawned_in += REALTIME2QDAYS(-10)
+	P.days_spawned_in += REALTIME2QDAYS(-11)
+	P.days_spawned_in += REALTIME2QDAYS(-30)
+	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
+	P.save_character()
+	to_chat(usr, "You have now spawned in on the last 4 days ago. Should return 4 penalties.")
 
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"

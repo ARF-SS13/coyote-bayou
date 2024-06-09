@@ -118,7 +118,7 @@ SUBSYSTEM_DEF(economy)
 	var/list/relevant_dates = list()
 	var/today = 0
 	var/inactivity_cutoff = 7 // days
-	var/spree_reward_per_day = 100
+	var/spree_reward_per_day = COINS_TO_CREDITS(100)
 	var/spree_max = 7 // days
 
 	var/debug_quests = FALSE
@@ -126,7 +126,7 @@ SUBSYSTEM_DEF(economy)
 	var/debug_ignore_extinction = FALSE
 	var/debug_include_laggy_item_quests = FALSE
 	var/debug_ignore_historical_round_number_check = TRUE
-	var/debug_daily_spawn_in_stuff = FALSE
+	var/debug_daily_spawn_in_stuff = TRUE
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	setup_currency()
@@ -146,10 +146,13 @@ SUBSYSTEM_DEF(economy)
 	var/datelength = today // its the number of days since the beginning of time, so what better size for a list of dates?
 	relevant_dates.Cut()
 	relevant_dates.len = datelength
+	var/list/list_o_days = list(REALTIME2QDAYS(0)) // today!
 
 	for(var/dia in 1 to LAZYLEN(relevant_dates))
-		relevant_dates[dia] = REALTIME2QDAYS(-dia - 1)
-	// relevant_dates = reverseList(relevant_dates)
+		list_o_days += REALTIME2QDAYS(-dia)
+	relevant_dates = list_o_days.Copy() // reverseList(list_o_days)
+	if(relevant_dates[1] != today)
+		to_chat(world, span_adminobserverooc("Today is not the first day of the universe! [relevant_dates[1]] != [today]"))
 	
 	. = ..()
 	spawn(5 SECONDS)
@@ -172,7 +175,7 @@ SUBSYSTEM_DEF(economy)
 		"help pay off Chiara's donut budget",
 		"help pay off Chiara's chair repair budget",
 		"go towards growing of a new and even even bigger World's Largest Potato",
-		"fun constructuion of libraries with books in them this time",
+		"fund constructuion of libraries with books in them this time",
 		"be used to fund a use for all these corpses you've all been sending us",
 		"go towards putting out the River of Flame",
 		"pay to put food on your family",
@@ -186,7 +189,7 @@ SUBSYSTEM_DEF(economy)
 		"fund cuter homes for all those adorable crows what deliver things for nuts",
 		"be used to buy more magnets",
 		"be used to buy more candles",
-		"be used to buy less candles",
+		"be used to spend less on candles",
 		"help fund research into what the heck a Gibbl is",
 		"help feed the curveless",
 		"be used to fund the new and improved World's Largest Potato",
@@ -294,6 +297,17 @@ SUBSYSTEM_DEF(economy)
 			currency_name_plural = "Dollars"
 			currency_unit = "$"
 
+/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE)
+	if(credits_to_coins)
+		amount = CREDITS_TO_COINS(amount)
+		amount = floor(amount)
+	if(!full)
+		return "[amount] [currency_unit]"
+	if(amount > 1 || amount < -1)
+		return "[amount] [currency_name_plural]"
+	else
+		return "[amount] [currency_name]"
+
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
 /// cept we arent actually making any money off this game, and player retention here is just to feel like I'm not a loser, mom
@@ -357,8 +371,6 @@ SUBSYSTEM_DEF(economy)
 		var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
 		var/penalty = their_bank - floor(their_bank * penalty_percent)
 		return -penalty
-
-
 
 /// My first unit tests! :3
 /datum/controller/subsystem/economy/proc/test_daily_calcs()
@@ -508,6 +520,35 @@ SUBSYSTEM_DEF(economy)
 // 	P.last_quest_login = world.realtime
 // 	P.save_character()
 // 	return penalty
+
+/// Handles when the player logs in, to load their quest book, but NOT calculate penalties (at least not yet)
+/// basically just a wrapper for get_quest_book
+/datum/controller/subsystem/economy/proc/player_login(someone)
+	var/datum/preferences/P = extract_prefs(someone)
+	if(!P)
+		CRASH("No preferences for [someone]!")
+	P.anticipated_daily_change = calculate_daily_spawn_in_stuff(someone)
+	return P.anticipated_daily_change
+
+/// Handles actually deducting/adding cash to the player's account, updating their cash, updating their personal calendar
+/// Updates their calendar on fire! So, be mindful with it
+/datum/controller/subsystem/economy/proc/player_spawned(someone)
+	var/datum/preferences/P = extract_prefs(someone)
+	if(!P)
+		return FALSE
+	if(LAZYACCESS(P.days_spawned_in, 1) == today)
+		return FALSE // already been handled!
+	var/penalty = P.anticipated_daily_change
+	if(!penalty)
+		penalty = calculate_daily_spawn_in_stuff(someone)
+	P.saved_unclaimed_points += penalty
+	P.anticipated_daily_change = 0
+	P.last_quest_login = world.realtime
+	P.days_spawned_in.Insert(1, REALTIME2QDAYS(0)) // 0 is today
+	P.save_character()
+	var/datum/quest_book/QB = get_quest_book(someone)
+	QB.load_saved_data()
+	return penalty
 
 /datum/controller/subsystem/economy/proc/setup_quests()
 	if(LAZYLEN(all_quests))
@@ -979,6 +1020,9 @@ SUBSYSTEM_DEF(economy)
 	if(D)
 		D.adjust_money(min(civ_cash, MAX_GRANT_CIV))
 
+////////////////////////////////////////////////////////////////////////////
+/// Quest book /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 /datum/quest_book
 	var/q_uid
 	var/ownername = "RELPH"
@@ -1015,15 +1059,16 @@ SUBSYSTEM_DEF(economy)
 	/// and the holy bepis
 	var/triple_virgin = TRUE
 	var/money_dialogging = FALSE
-	var/has_been_login_spreed = FALSE
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
 	if(!quester)
+		stack_trace("Quest book created without a quester!")
 		qdel(src)
 		return
 	var/datum/preferences/P = extract_prefs(quester)
 	if(!P)
+		stack_trace("Quest book created for [quester], but they lacked a prefs file!")
 		qdel(src)
 		return
 	q_uid = P.quester_uid
@@ -1031,6 +1076,9 @@ SUBSYSTEM_DEF(economy)
 	if(!LAZYACCESS(SSeconomy.quest_books, q_uid))
 		SSeconomy.quest_books[q_uid] = src
 	update_owner_data(quester)
+
+/datum/quest_book/proc/load_saved_data()
+	var/mob/quester = SSeconomy.quid2mob(q_uid)
 	/// who lives in a pineapple under the sea?
 	load_player_finished_quests(quester)
 	/// who loves his brainwashing and always wants more?
@@ -1047,8 +1095,8 @@ SUBSYSTEM_DEF(economy)
 
 /datum/quest_book/proc/update_owner_data(mob/quester)
 	if(!isliving(quester))
-		ownername = "Tad Ghostle"
-		ownerjob = "Repairman"
+		ownername = safepick(GLOB.cow_names + GLOB.carp_names)
+		ownerjob = "[safepick(GLOB.megacarp_first_names)] [safepick(GLOB.megacarp_last_names)]"
 		return
 	if(ckey(quester.real_name) == ckey(quester.ckey) || ckey(quester.name) == ckey(quester.ckey))
 		if(!(strings("data/super_special_ultra_instinct.json", "[ckey(quester.name)]", TRUE, TRUE) || strings("data/super_special_ultra_instinct.json", "[ckey(quester.real_name)]", TRUE, TRUE)))
@@ -1335,7 +1383,7 @@ SUBSYSTEM_DEF(economy)
 		SSeconomy.activate_quest(B)
 		B.assign_to(user)
 	double_virgin = FALSE
-	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [round(CREDITS_TO_COINS(P.saved_unclaimed_points))] [SSeconomy.currency_unit] from your save file! =3"))
+	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [SSeconomy.format_currency(P.saved_unclaimed_points, TRUE)] from your save file! =3"))
 	return TRUE
 
 /// Save all the active quests to the save, overwriting whatever's in there
@@ -1373,21 +1421,29 @@ SUBSYSTEM_DEF(economy)
 	
 
 
-/datum/quest_book/proc/adjust_funds(amount, datum/bounty/B, update_overall = TRUE)
+/datum/quest_book/proc/adjust_funds(amount, datum/bounty/B, update_overall = TRUE, set_it_instead = FALSE)
 	if(!amount)
 		return
 	if(istype(B))
 		if(LAZYACCESS(paystubs, B.uid))
 			return // no double dipping~
 		paystubs[B.uid] = amount
-	unclaimed_points += amount
+	var/delta = amount
+	if(set_it_instead)
+		delta = amount - unclaimed_points
+		unclaimed_points = amount
+	else
+		unclaimed_points = clamp(unclaimed_points + delta, 0, 1000000000)
 	if(update_overall)
-		overall_banked += amount
+		overall_banked += delta
+		lifetime_total_banked += delta
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return
 	var/datum/preferences/P = extract_prefs(user)
 	P.saved_unclaimed_points = unclaimed_points
+	P.historical_banked_points = lifetime_total_banked
+	update_lifetime_total(FALSE)
 	return TRUE
 
 /datum/quest_book/proc/have_they_done_this_quest_before(datum/bounty/B)
@@ -1477,11 +1533,11 @@ SUBSYSTEM_DEF(economy)
 	toots["TTtophistoricalquests"] = "The top quester of all time has completed [SSeconomy.historical_highest_completed] quests[am_top_quester_historical ? ", and that top quester is you! Keep it up =3" : "."]"
 	toots["TTglobalquests"] = "In total, [SSeconomy.total_completed] quests have been completed this period."
 
-	toots["TTyourbanked"] = "You have earned [round(overall_banked / 10)] [SSeconomy.currency_name_plural] this period[am_top_earner ? ", making you the top earner this period! Nice job =3" : "."]"
-	toots["TTtopbanked"] = "The top earner this period has earned [round(SSeconomy.highest_banked / 10)] [SSeconomy.currency_name_plural][am_top_earner ? ", and that top earner is you! Keep it up =3" : "."]"
-	toots["TThistoricalbanked"] = "Since the beginning of time, you have earned [round(get_historical_banked() / 10)] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", making you the top earner of all time (at least compared to everyone present)! Nice job =3" : "."]"
-	toots["TTtophistoricalbanked"] = "The top earner of all time has earned [round(SSeconomy.historical_highest_banked / 10)] [SSeconomy.currency_name_plural][am_top_earner_historical ? ", and that top earner is you! Keep it up =3" : "."]"
-	toots["TTglobalbanked"] = "In total, [round(SSeconomy.total_banked / 10)] [SSeconomy.currency_name_plural] have been earned this period."
+	toots["TTyourbanked"] = "You have earned [SSeconomy.format_currency(overall_banked, TRUE, TRUE)] this period[am_top_earner ? ", making you the top earner this period! Nice job =3" : "."]"
+	toots["TTtopbanked"] = "The top earner this period has earned [SSeconomy.format_currency(SSeconomy.highest_banked, TRUE, TRUE)][am_top_earner ? ", and that top earner is you! Keep it up =3" : "."]"
+	toots["TThistoricalbanked"] = "Since the beginning of time, you have earned [SSeconomy.format_currency(get_historical_banked(), TRUE, TRUE)][am_top_earner_historical ? ", making you the top earner of all time (at least compared to everyone present)! Nice job =3" : "."]"
+	toots["TTtophistoricalbanked"] = "The top earner of all time has earned [SSeconomy.format_currency(SSeconomy.historical_highest_banked, TRUE, TRUE)][am_top_earner_historical ? ", and that top earner is you! Keep it up =3" : "."]"
+	toots["TTglobalbanked"] = "In total, [SSeconomy.format_currency(SSeconomy.total_banked, TRUE, TRUE)] have been earned this period."
 
 	data["Toots"] = toots
 	return data
@@ -1653,11 +1709,11 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("That cash is worthless!"))
 		return
-	var/to_deposit = floor(totalvalue * 0.2)
-	var/to_tax = totalvalue - to_deposit
-	if(to_deposit < 1)
+	var/to_tax = ceil(totalvalue * SSeconomy.coin_deposit_tax)
+	var/to_deposit = totalvalue - to_tax
+	if(to_deposit < COINS_TO_CREDITS(1))
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
-		to_chat(user, span_alert("The taxes wouldn't leave you with anything! Try depositing at least 5 [SSeconomy.currency_name_plural] worth of cash!"))
+		to_chat(user, span_alert("The taxes wouldn't leave you with anything! Try depositing at least 10 [SSeconomy.currency_name_plural] worth of cash!"))
 		return
 	var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n\
 		The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). \
@@ -1673,16 +1729,19 @@ SUBSYSTEM_DEF(economy)
 	money_dialogging = FALSE
 	if(confyrm == "Deposit" && !QDELETED(coins))
 		/// time has passed! time to update how much we're really adding to the cash hole
-		totalvalue = coins.amount * valueper
+		var/newtotalvalue = coins.amount * valueper
+		if(newtotalvalue != totalvalue) // their coins changed value!
+			playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+			to_chat(user, span_alert("Deposit discrepancy detected! Transaction terminated, please try again!"))
+			return // might be trying to pull a fast one, but more likely that stack code kinda chowdered their cash
 		if(totalvalue < 1)
 			playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 			to_chat(user, span_alert("That cash is suddenly worthless!"))
 			return
-		to_deposit = floor(totalvalue * 0.2)
 		coins.amount = 0
 		coins.value = 0
 		qdel(coins)
-		adjust_funds(round(COINS_TO_CREDITS(to_deposit)), null, FALSE)
+		adjust_funds(round(COINS_TO_CREDITS(to_deposit)), null, FALSE, FALSE)
 		to_chat(user, span_green("You deposited [to_deposit] [SSeconomy.currency_name_plural] (after taxes) into your Guild Account!"))
 		playsound(user, 'sound/machines/coin_insert.ogg', 80, TRUE)
 		update_static_data(user)
@@ -1700,14 +1759,14 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("You don't have any cash to cash out! Try completing some quests =3"))
 		return FALSE
-	var/payment = min(cashmoney, unclaimed_points)
+	var/payment = clamp(cashmoney, 0, unclaimed_points)
 	if(payment < 1)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("You don't have that much cash to cash out! Try completing some quests =3"))
 		return FALSE
-	unclaimed_points -= payment
+	adjust_funds(-payment, null, FALSE, FALSE)
 	var/obj/item/card/quest_reward/QR = new(get_turf(user))
-	QR.assign_value(payment, 1.15, "#[random_color()]")
+	QR.assign_value(payment, 1, "#[random_color()]")
 	if(user)
 		user.put_in_hands(QR)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
@@ -1734,7 +1793,7 @@ SUBSYSTEM_DEF(economy)
 	playsound(user, 'sound/machines/printer_press_unbirth.ogg', 40, TRUE)
 	to_chat(user, span_green("You deposited a ticket for [CREDITS_TO_COINS(payment)] [SSeconomy.currency_name_plural] into your Guild Account!"))
 	qdel(QR)
-	adjust_funds(payment, null, FALSE)
+	adjust_funds(payment, null, FALSE, FALSE)
 	return TRUE
 
 /datum/quest_book/proc/get_historical_finished()
@@ -1972,9 +2031,9 @@ SUBSYSTEM_DEF(economy)
 	saleprice = round(price)
 	punchbonus = round((price * mult) - price)
 	add_atom_colour(coler, FIXED_COLOUR_PRIORITY)
-	name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]"
+	name = "Guild Quest voucher - [SSeconomy.format_currency(saleprice, TRUE)]"
 	desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. \
-		\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]!"
+		\n\nThis thing is worth [SSeconomy.format_currency(saleprice, TRUE)]!"
 
 /obj/item/card/quest_reward/punch()
 	if(!..())
@@ -2084,4 +2143,528 @@ SUBSYSTEM_DEF(economy)
 		alpha=0,
 		transform=fm,
 	)
+
+GLOBAL_DATUM_INIT(qbank_editor, /datum/quest_bank_editor, new)
+
+#define QBSOUNDTYPE_DIRECT 0
+#define QBSOUNDTYPE_INWORLD 1
+
+/// The admin tool what makes the quest bank go b
+/// cus doing it by
+/datum/quest_bank_editor
+	/// why spawn one of these for everyone when I can just spawn one and then store everyone's options in a list, Dan you are a genius!
+	var/list/saved_options = list()
+	var/list/sound_key_list = list(
+		"SILENT" = FALSE,
+		"DWOOP" = 'sound/machines/dwoop.ogg',
+		"TWO-BEEP" = 'sound/machines/twobeep.ogg',
+		"TWO-BEEP-HIGH" = 'sound/machines/twobeep_high.ogg',
+		"PDA" = 'modular_coyote/sound/pipsounds/beepboop.ogg',
+		"QUEST-COMPLETE" = 'sound/effects/quest_complete.ogg',
+		"BWEEBWEE" = 'sound/effects/bweebweebwaa.ogg',
+		"DIABLO-COINS" = 'sound/effects/goldcoins.ogg',
+	)
+	var/list/message_styles = list(
+		"RED",
+		"GREEN",
+		"BLUE",
+		"PRIORITY",
+		"PRIORITY-CENTERED",
+		"HYPNOPHRASE",
+		// "PDA-MESSAGE",
+	)
+	var/list/to_save = list()
+
+/datum/quest_bank_editor/New()
+	. = ..()
+	START_PROCESSING(SSprocessing, src)
+
+/datum/quest_bank_editor/proc/Open(someone)
+	var/client/pussy = extract_mob(someone)
+	if(!pussy)
+		return
+	if(!check_rights(R_ADMIN, 0))
+		log_admin("Some pussy tried to open the quest bank editor without permission")
+		return
+	var/list/dat = list()
+	dat += "<center><a href='byond://?src=[REF(src)];Options=1'>\[OPTIONS\]</a> "
+	dat += "<a href='byond://?src=[REF(src)];Refresh=1'>\[REFRESH\]</a></center>"
+	dat += "<hr>"
+	dat += "<h1>HI! I'M THE QUEST BANK EDITOR!</h1> "
+	dat += "<br>Here you can edit the Quest Bank of anyone currently connected to the server and spawned in!</br>"
+	dat += "<br>Currently only works on people who are currently connected to the server and have already spawned in at least once, so if they disconnect, vore em. =3</br>"
+	dat += "<br>Also currently only lets you edit the cash in their bank, but more features are coming soon =3</br>"
+	dat += "<br>You can also set options for what sound and message to be sent to them when you adjust their bank! This way you can have the adjustments be flavored as coming from in-world if you want. Or not!</br>"
+	dat += "<br>You can set a default notification for all players, and/or set a notification for a specific player. </br>"
+	dat += "<br>With love, Dan 'Superlagg' Kelly <3</br>"
+	/// the actual editor
+	dat += "<b>Quest Bank Editor</b>"
+	dat += "<hr>"
+	var/list/pussys = list()
+	for(var/quid in SSeconomy.quest_books)
+		var/datum/quest_book/QB = LAZYACCESS(SSeconomy.quest_books, quid)
+		var/msg = "<center><div style='margin:5px; padding:5px; border:1px solid black; border-radius:5px;'>"
+		msg += "<span style='font-size:0.8em;'>[QB.q_uid]</span>"
+		var/list/their_options = GetOptionsFor(pussy, QB.q_uid)
+		msg += "<br><b>[QB.ownername] ([QB.ownerjob])</b> "
+		var/mob/owner = SSeconomy.quid2mob(QB.q_uid)
+		var/should_work = owner && owner.client && !QB.virgin && !QB.double_virgin
+		var/whynot = ""
+		if(!owner)
+			whynot = "Disconnected!"
+		else if(QB.virgin || QB.double_virgin)
+			whynot = "Not spawned in yet!"
+		if(should_work)
+			msg += "<span style='font-size:0.8em; color:green;'>Should work! =3</span>"
+		else
+			msg += "<span style='font-size:0.8em; color:red;'>[whynot] Probably WONT work!</span>"
+		msg += "<br>Banked: "
+		if(should_work)
+			msg += "<a href='byond://?src=[REF(src)];EditQbank=1;WhoFor=[QB.q_uid]'>"
+		msg += "[SSeconomy.format_currency(QB.unclaimed_points, TRUE, TRUE)]"
+		if(should_work)
+			msg += " \[EDIT\]</a>"
+		msg += "<br><a href='byond://?src=[REF(src)];"
+		msg += "ToggleNotify=1;WhoFor=[QB.q_uid]'>[their_options["Notify"] ? "\[WILL NOTIFY\]" : "\[WILL NOT NOTIFY\]"]</a> "
+		msg += "<a href='byond://?src=[REF(src)];"
+		msg += "Options=1;WhoFor=[QB.q_uid]'>\[PERSONALIZE\]</a> "
+		msg += "<a href='byond://?src=[REF(src)];"
+		msg += "ToggleUsingCustomOptions=1;WhoFor=[QB.q_uid]'>"
+		if(their_options["CustomOptions"])
+			msg += "<span style='color:green;'>[span_alert("\[USING PERSONALIZED OPTIONS\]")]</span>"
+		else
+			msg += "<span style='color:blue;'>[span_alert("\[USING DEFAULT OPTIONS\]")]</span>"
+		msg += "</a>"
+		msg += "</div><br></center>"
+		pussys += msg
+	dat += pussys.Join()
+	dat += "<center><a href='byond://?src=[REF(src)];Options=1'>\[OPTIONS\]</a> "
+	dat += "<a href='byond://?src=[REF(src)];Refresh=1'>\[REFRESH\]</a></center>"
+	SetCurrentMenu(pussy, "Main")
+	/// the browser
+	winset(pussy, "qbank_editor", "is-visible=1;focus=0;")
+	var/datum/browser/popup = new(pussy, "qbank_browser", "<div align='center'>Quest Bank Editor</div>", 600, 700)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(pussy, "qbank_editor", src)
+
+/datum/quest_bank_editor/proc/OptionsMenu(mob/user, whofor)
+	var/list/myoptions = GetOptionsFor(user, whofor)
+	var/list/dat = list()
+	dat += "<center><a href='byond://?src=[REF(src)];Main=1'>\[MAIN\]</a> "
+	if(whofor && whofor != "Default")
+		dat += "<a href='byond://?src=[REF(src)];Options=1'>\[BACK\]</a>"
+	dat += "<a href='byond://?src=[REF(src)];Refresh=1'>\[REFRESH\]</a></center>"
+	dat += "<hr>"
+	dat += "<h1>Quest Bank Editor Options</h1>"
+	dat += "<hr>"
+	if(whofor && whofor != "Default")
+		var/mob/who_its_for = SSeconomy.quid2mob(whofor)
+		if(who_its_for)
+			dat += "<h3>Options for [who_its_for.real_name] ([who_its_for.ckey])</h3>"
+		else
+			var/datum/quest_book/QB = LAZYACCESS(SSeconomy.quest_books, whofor)
+			if(QB)
+				dat += "<h3>Options for [QB.ownername] ([QB.ownerjob])</h3>"
+			else
+				dat += "<h3>Options for someone maybe?</h3>"
+		dat += "<b>[whofor]</b>"
+		dat += "<a href='byond://?src=[REF(src)];ToggleUsingCustomOptions=1;WhoFor=[whofor]'>"
+		if(myoptions["CustomOptions"])
+			dat += "<span style='color:green;'>[span_alert("WILL USE THESE CUSTOM OPTIONS")]</span>"
+		else
+			dat += "<span style='color:red;'>[span_alert("WILL USE DEFAULT OPTIONS")]</span>"
+	else
+		dat += "<h3>Default Options</h3>"
+	dat += "</a>"
+	/// toggle letting them know that you adjusted it
+	dat += "<p><b>Notify Player : </b>"
+	dat += "<a href='byond://?src=[REF(src)];ToggleNotify=1;WhoFor=[whofor]'>"
+	if(myoptions["Notify"])
+		dat += "<span style='color:green;'>[span_alert("ON")]</span>"
+	else
+		dat += "<span style='color:red;'>[span_alert("OFF")]</span>"
+	dat += "</a>"
+	dat += "<br>Toggle whether or not they will get a notification when you adjust their's bank!"
+	/// Change what sound to play when you adjust it
+	dat += "<p><b>Notification Sound : </b>"
+	dat += "<a href='byond://?src=[REF(src)];ChangeSound=1;WhoFor=[whofor]'>"
+	dat += "<span style='color:blue;'>[span_alert("[myoptions["Sound"]]")]</span>"
+	dat += "</a>"
+	dat += "<br>Change the sound that will play to them when you adjust their bank (if any)!"
+	/// Change if it is just to the player, or a sound in-world
+	dat += "<p><b>Sound Type : </b>"
+	dat += "<a href='byond://?src=[REF(src)];ChangeSoundType=1;WhoFor=[whofor]'>"
+	if(myoptions["SoundType"] == QBSOUNDTYPE_DIRECT)
+		dat += "<span style='color:green;'>[span_alert("DIRECT")]</span>"
+	else
+		dat += "<span style='color:red;'>[span_alert("NORMAL")]</span>"
+	dat += "</a>"
+	dat += "<br>Toggle whether or not the sound will play directly to the player, or in-world!"
+	/// Change the message that will be sent to them
+	dat += "<p><b>Notification Message : </b><br>"
+	dat += "<a href='byond://?src=[REF(src)];ChangeMessage=1;WhoFor=[whofor]'>"
+	dat += "<span style='color:blue;'>[span_alert("[myoptions["Message"]]")]</span>"
+	dat += "</a>"
+	dat += "<br>Change the message that will be sent to them when you adjust their bank (if any)!"
+	/// Change the message style
+	dat += "<p><b>Notification Message Style : </b>"
+	dat += "<a href='byond://?src=[REF(src)];ChangeMessageStyle=1;WhoFor=[whofor]'>"
+	dat += "<span style='color:blue;'>[span_alert("[myoptions["MessageStyle"]]")]</span>"
+	dat += "</a>"
+	dat += "<br>Change the style of the message that will be sent to them when you adjust their bank (if any)!"
+	dat += "<hr>"
+	dat += "<br>With love, Dan 'Superlagg' Kelly <3</br>"
+	dat += "<center><a href='byond://?src=[REF(src)];Main=1'>\[MAIN\]</a> "
+	if(whofor && whofor != "Default")
+		dat += "<a href='byond://?src=[REF(src)];Options=1'>\[BACK\]</a>"
+	dat += "<a href='byond://?src=[REF(src)];Refresh=1'>\[REFRESH\]</a> "
+	dat += "<br><a href='byond://?src=[REF(src)];Reset=1;WhoFor=[whofor]'>\[RESET\]</a></center>"
+	SetCurrentMenu(user, "Options", whofor)
+	winset(user, "qbank_editor", "is-visible=1;focus=0;")
+	var/datum/browser/popup = new(user, "qbank_browser", "<div align='center'>Quest Bank Editor Options</div>", 600, 700)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(user, "qbank_editor", src)
+
+/datum/quest_bank_editor/proc/SetCurrentMenu(mob/user, menu, whofor)
+	var/client/pussy = extract_client(user)
+	if(!pussy)
+		return
+	var/list/myoptions = GetOptionsFor(user)
+	myoptions["CurrentMenu"] = menu
+	if(myoptions["CurrentMenu"] == "Main")
+		myoptions["CurrentWhoFor"] = "Default"
+	if(whofor)
+		myoptions["CurrentWhoFor"] = whofor
+	else
+		myoptions["CurrentWhoFor"] = "Default"
+	SaveOptions(user, "Default", myoptions)
+
+/datum/quest_bank_editor/proc/Refresh(mob/user)
+	var/list/myoptions = GetOptionsFor(user)
+	if(myoptions["CurrentMenu"] == "Options")
+		OptionsMenu(user, myoptions["CurrentWhoFor"])
+	else
+		Open(user)
+
+/datum/quest_bank_editor/proc/ToggleNotify(mob/user, edit_for)
+	var/list/myoptions = GetOptionsFor(user, edit_for)
+	if(myoptions["Notify"])
+		myoptions["Notify"] = FALSE
+	else
+		myoptions["Notify"] = TRUE
+	to_chat(user, span_notice("You will now [myoptions["Notify"] ? "notify" : "not notify"] whoever you changed the bank values of!!"))
+	SaveOptions(user, edit_for, myoptions, TRUE)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/ChangeSound(mob/user, edit_for)
+	var/myoptions = GetOptionsFor(user, edit_for)
+	var/newoption = input(
+		user,
+		"What sound would you like to play when you adjust their bank?",
+		"Sound",
+		"[myoptions["Sound"]]",
+	) as null|anything in sound_key_list
+	if(isnull(newoption))
+		to_chat(user, span_notice("Nevermind!!"))
+		return
+	myoptions["Sound"] = newoption
+	to_chat(user, span_notice("You will now play [newoption] when you adjust their bank!"))
+	SendSound(user, myoptions, TRUE)
+	SaveOptions(user, edit_for, myoptions, TRUE)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/ChangeSoundType(mob/user, edit_for)
+	var/myoptions = GetOptionsFor(user, edit_for)
+	if(myoptions["SoundType"] == QBSOUNDTYPE_INWORLD)
+		myoptions["SoundType"] = QBSOUNDTYPE_DIRECT
+	else
+		myoptions["SoundType"] = QBSOUNDTYPE_INWORLD
+	to_chat(user, span_notice("You will now play the sound [myoptions["SoundType"] == QBSOUNDTYPE_DIRECT ? "directly to the player" : "in-world"] when you adjust their bank!"))
+	SendSound(user, myoptions, TRUE)
+	SaveOptions(user, edit_for, myoptions, TRUE)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/ChangeMessage(mob/user, edit_for)
+	var/myoptions = GetOptionsFor(user, edit_for)
+	var/newoption = input(
+		user,
+		"What message would you like to send when you adjust their bank?\n\
+		TOKENS!\n\
+		:: - everything to the left of :: will be the sender, and everything to the right to be the message!\n\
+		$S$ - Cash change (short): 30[SSeconomy.currency_unit]\n\
+		$F$ - Cash change (full): 30 [SSeconomy.currency_name]\n\
+		$+-$ - Credited (if cash change is positive) or Deducted (if negative)\n\
+		$tofrom$ - To (if cash change is positive) or From (if negative)\n\
+		$FIN$ - Their final balance after change\n\
+		Your mum :: $S$ has been $+-$ $tofrom$ your QBank account! You now have $FIN$! becomes....\n\
+		Your mum: 30[SSeconomy.currency_unit] has been credited to your QBank account! You now have 30[SSeconomy.currency_unit]!",
+		"Message",
+		"[myoptions["Message"]]",
+	) as null|message
+	if(isnull(newoption))
+		to_chat(user, span_notice("Nevermind!!"))
+		return
+	myoptions["Message"] = newoption
+	to_chat(user, span_notice("You will now send this message when you change their bank!:"))
+	SendChat(user, myoptions)
+	SaveOptions(user, edit_for, myoptions, TRUE)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/ChangeMessageStyle(mob/user, edit_for)
+	var/myoptions = GetOptionsFor(user, edit_for)
+	var/newoption = input(
+		user,
+		"What style would you like to send the message in?",
+		"MessageStyle",
+		"[myoptions["MessageStyle"]]",
+	) as null|anything in message_styles
+	if(isnull(newoption))
+		to_chat(user, span_notice("Nevermind!!"))
+		return
+	myoptions["MessageStyle"] = newoption
+	to_chat(user, span_notice("You will now send the message in [newoption] style when you change their bank! It will look like this:"))
+	SendChat(user, myoptions)
+	SaveOptions(user, edit_for, myoptions, TRUE)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/ToggleUseCustomOptions(mob/user, edit_for)
+	var/myoptions = GetOptionsFor(user, edit_for)
+	if(myoptions["CustomOptions"])
+		myoptions["CustomOptions"] = FALSE
+	else
+		myoptions["CustomOptions"] = TRUE
+	to_chat(user, span_notice("You will now [myoptions["CustomOptions"] ? "use" : "not use"] custom options for whoever you changed the bank values of!!"))
+	SaveOptions(user, edit_for, myoptions)
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/DefaultOptions()
+	return list(
+		"Notify" = TRUE,
+		"Sound" = "DWOOP",
+		"SoundType" = QBSOUNDTYPE_DIRECT,
+		"Message" = "Sharon Adventurer's Guild :: $L$ has been $+-$ $tofrom$ your QBank account! You now have $FIN$!",
+		"MessageStyle" = "PRIORITY",
+		"CustomOptions" = FALSE,
+	)
+
+/datum/quest_bank_editor/proc/LoadSavedOptionsFromPrefsIfPossible(mob/user)
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return
+	if(!LAZYLEN(P.quest_bank_editor_prefs))
+		return // sweet un touched cinnamon bun~
+	if(!islist(saved_options[user.ckey]))
+		saved_options[user.ckey] = list()
+	saved_options[user.ckey] = P.quest_bank_editor_prefs.Copy()
+
+/datum/quest_bank_editor/proc/SaveOptionsToPrefs(mob/user)
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return
+	var/list/myoptions = saved_options[user.ckey]
+	P.quest_bank_editor_prefs = myoptions.Copy()
+	QueueSave(user.ckey)
+
+/datum/quest_bank_editor/proc/GetOptionsFor(mob/user, edit_for, default_to_default)
+	LoadSavedOptionsFromPrefsIfPossible(user)
+	if(!edit_for)
+		edit_for = "Default"
+	if(!islist(saved_options[user.ckey]))
+		saved_options[user.ckey] = list()
+		saved_options[user.ckey]["Default"] = DefaultOptions()
+	if(!islist(saved_options[user.ckey][edit_for]))
+		saved_options[user.ckey][edit_for] = DefaultOptions()
+	if(default_to_default)
+		var/list/myoptions = saved_options[user.ckey][edit_for]
+		if(myoptions["CustomOptions"])
+			return myoptions
+		else
+			return saved_options[user.ckey]["Default"]
+	return saved_options[user.ckey][edit_for]
+
+/datum/quest_bank_editor/proc/SaveOptions(mob/user, edit_for, list/options, set_custom)
+	if(!edit_for)
+		edit_for = "Default"
+	if(!islist(saved_options[user.ckey]))
+		saved_options[user.ckey] = list()
+		saved_options[user.ckey]["Default"] = DefaultOptions()
+	if(!islist(saved_options[user.ckey][edit_for]))
+		saved_options[user.ckey][edit_for] = DefaultOptions()
+	if(edit_for != "Default" && set_custom)
+		options["CustomOptions"] = TRUE
+	var/dosave = LAZYLEN(saved_options[user.ckey][edit_for] ^ options)
+	saved_options[user.ckey][edit_for] = options.Copy()
+	if(dosave)
+		SaveOptionsToPrefs(user)
+
+/datum/quest_bank_editor/proc/EditQbank(mob/user, datum/quest_book/QB)
+	if(!user || !QB)
+		return
+	if(!check_rights(R_ADMIN, 0))
+		log_admin("Some pussy tried to open the quest bank editor without permission")
+		return
+	var/new_balance = input(
+		user,
+		"Give/Take how much money to/from [QB.ownername] ([QB.ownerjob])?\n\
+		Enter a number, positive to give, negative to take.\n\
+		Their current balance: [CREDITS_TO_COINS(QB.unclaimed_points)] [SSeconomy.currency_name_plural]",
+		"Credit or Debt",
+		"[CREDITS_TO_COINS(QB.unclaimed_points)]",
+	) as null|num // why did I make questmoney be internally credits, and functionally coins? 
+	if(isnull(new_balance)) // oh yeah its cus this whole thing is a grotesque mutant of TG's bounty system
+		to_chat(user, span_notice("Nevermind!!")) // Still think I came out ahead
+		return
+	new_balance = COINS_TO_CREDITS(floor(new_balance)) // 12 -> 120, 12.134 -> 121 
+	// if(new_balance < 0)
+	// 	to_chat(user, span_alert("You can't set the balance to less than 0!"))
+	// 	return
+	if(new_balance >= 1000000000)
+		to_chat(user, span_alert("You can't set the balance to more than 1,000,000,000!"))
+		return
+	/// now we need to convert this absolute value to a relative value, so we can use the native adjust_funds function
+	// var/list/myoptions = GetOptionsFor(user, QB.q_uid)
+	NotifyUser(QB.q_uid, user, new_balance)
+	QB.adjust_funds(new_balance, null, TRUE)
+	to_chat(user, span_notice("You have adjusted [QB.ownername]'s ([QB.ownerjob]) balance by [SSeconomy.format_currency(new_balance, TRUE)]]!"))
+	to_chat(user, span_notice("They now have [SSeconomy.format_currency(QB.unclaimed_points, TRUE)]!"))
+	Refresh(user)
+
+/datum/quest_bank_editor/proc/NotifyUser(quid_to_notify, mob/user, cash_change)
+	/// first, find the options to use for em!
+	var/myoptions = GetOptionsFor(user, quid_to_notify, TRUE)
+	if(!myoptions["Notify"])
+		return
+	var/mob/them = SSeconomy.quid2mob(quid_to_notify)
+	SendSound(them, myoptions)
+	SendChat(them, myoptions, cash_change)
+	to_chat(them, span_notice("Your QBank account have been adjusted by [SSeconomy.format_currency(cash_change, TRUE)]!"))
+	to_chat(user, span_notice("You have notified [them] of the change!"))
+	return TRUE
+
+/datum/quest_bank_editor/proc/SendSound(mob/them, list/inputoptions, selfonly)
+	if(!them || !LAZYLEN(inputoptions))
+		return
+	var/snd = sound_key_list[inputoptions["Sound"]]
+	if(!snd || inputoptions["Sound"] == "SILENT" || snd == "SILENT" || snd == "")
+		return
+	var/kind = inputoptions["SoundType"]
+	if(kind == QBSOUNDTYPE_DIRECT || selfonly)
+		them.playsound_local(them, snd, 80, TRUE)
+	else
+		playsound(them, snd, 80, TRUE)
+	return TRUE
+
+/datum/quest_bank_editor/proc/SendChat(mob/them, list/inputoptions, cash_change)
+	if(!them || !LAZYLEN(inputoptions))
+		return
+	var/msg = inputoptions["Message"]
+	var/style = inputoptions["MessageStyle"]
+	/// if its not a priority message, and there is a :: in the message, we need to split it up
+	if(style != "PRIORITY" && style != "PRIORITY-CENTERED")
+		var/checktest = splittext(msg, "::")
+		if(LAZYLEN(checktest) == 2)
+			msg = checktest[2]
+			/// and, just so this feature isnt wasted on non-priority, lets use the first part as the sender
+			msg = "<b>[checktest[1]]</b>: " + msg
+	msg = replacetext(msg, "$S$", SSeconomy.format_currency(cash_change, TRUE))
+	msg = replacetext(msg, "$L$", SSeconomy.format_currency(cash_change, TRUE, TRUE))
+	msg = replacetext(msg, "$+-$", cash_change >= 0 ? "credited" : "deducted")
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(them)
+	var/newbank = QB ? max(QB.unclaimed_points + cash_change, 0) : "ERROR"
+	msg = replacetext(msg, "$FIN$", SSeconomy.format_currency(newbank, TRUE, TRUE))
+	msg = replacetext(msg, "$tofrom$", cash_change >= 0 ? "to" : "from")
+	/// now we need to switch the style
+	switch(style)
+		if("RED")
+			msg = span_alert(msg)
+		if("GREEN")
+			msg = span_green(msg)
+		if("BLUE")
+			msg = span_notice(msg)
+		if("PRIORITY")
+			msg = BuildPriorityMessage(msg)
+		if("PRIORITY-CENTERED")
+			msg = BuildPriorityMessage(msg, TRUE)
+		if("HYPNOPHRASE")
+			msg = span_hypnophrase(msg)
+		// if("PDA-MESSAGE") // todo: this
+		// 	SendPDA(them, msg)
+	to_chat(them, msg)
+	return TRUE
+
+/datum/quest_bank_editor/proc/BuildPriorityMessage(message, slashes)
+	var/head = "Adventurer's Guild Message"
+	var/list/checktest = splittext(message, "::")
+	if(LAZYLEN(checktest) > 1)
+		head = checktest[1]
+		message = checktest[2]
+	head = "<h1 class='alert'>[head]</h1>"
+	var/str = "<div style='border:1px solid white; padding:5px; border-radius:5px;'>"
+	if(slashes)
+		str += "<center>"
+	str += head
+	str += "<br>"
+	str += message
+	str += "<br>"
+	if(slashes)
+		str += "</center>"
+	str += "</div>"
+	return str
+
+/datum/quest_bank_editor/proc/QueueSave(ckey)
+	to_save[ckey] = world.time + 5 SECONDS
+
+/datum/quest_bank_editor/process()
+	for(var/ckey in to_save)
+		if(world.time > to_save[ckey])
+			var/datum/preferences/P = extract_prefs(ckey)
+			if(P)
+				var/list/tosave = saved_options[ckey]
+				P.quest_bank_editor_prefs = tosave.Copy()
+				P.save_preferences()
+				to_chat(P.parent, span_green("Your Quest Bank Editor options have been saved!"))
+			to_save -= ckey
+
+/datum/quest_bank_editor/Topic(href, list/href_list)
+	. = ..()
+	var/mob/user = usr // bite me
+	if(href_list["Options"])
+		. = TRUE
+		OptionsMenu(user, href_list["WhoFor"])
+	if(href_list["Main"])
+		. = TRUE
+		Open(user)
+	if(href_list["Refresh"])
+		. = TRUE
+		Refresh(user)
+	if(href_list["Reset"])
+		SaveOptions(user, href_list["WhoFor"], DefaultOptions())
+		OptionsMenu(user, href_list["WhoFor"])
+	if(href_list["EditQbank"]) // the actual editor
+		. = TRUE
+		var/datum/quest_book/QB = LAZYACCESS(SSeconomy.quest_books, href_list["WhoFor"])
+		if(QB)
+			EditQbank(user, QB)
+	if(href_list["ToggleNotify"])
+		. = TRUE
+		ToggleNotify(user, href_list["WhoFor"])
+	if(href_list["ChangeSound"])
+		. = TRUE
+		ChangeSound(user, href_list["WhoFor"])
+	if(href_list["ChangeSoundType"])
+		. = TRUE
+		ChangeSoundType(user, href_list["WhoFor"])
+	if(href_list["ChangeMessage"])
+		. = TRUE
+		ChangeMessage(user, href_list["WhoFor"])
+	if(href_list["ChangeMessageStyle"])
+		. = TRUE
+		ChangeMessageStyle(user, href_list["WhoFor"])
+	if(href_list["ToggleUsingCustomOptions"])
+		. = TRUE
+		ToggleUseCustomOptions(user, href_list["WhoFor"])
+	if(.)
+		Refresh(user)
 

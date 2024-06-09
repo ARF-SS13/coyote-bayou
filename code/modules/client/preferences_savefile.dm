@@ -276,7 +276,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["lockouts"]	>> lockouts // my bans!
 	S["admin_wire_tap"]	>> admin_wire_tap // my bans!
-
+	var/jasin = ""
+	S["quest_bank_editor_prefs"]	>> jasin
+	quest_bank_editor_prefs = safe_json_decode(jasin)
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
@@ -332,6 +334,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
 	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
+	quest_bank_editor_prefs = sanitize_islist(quest_bank_editor_prefs, list())
 	admin_wire_tap 		= sanitize_integer(admin_wire_tap, TRUE)
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
@@ -452,6 +455,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 	WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
+	var/jsout = safe_json_encode(quest_bank_editor_prefs)
+	WRITE_FILE(S["quest_bank_editor_prefs"], jsout)
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)

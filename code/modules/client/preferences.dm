@@ -159,11 +159,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/historical_banked_points = 0
 	/// tight list of the character's active quests
 	var/list/saved_active_quests = list()
+	var/anticipated_daily_change = 0
 	var/saved_unclaimed_points = 0
 	/// Last time we spawned in and took economic damage
 	var/last_quest_login = 0 // its a big number, but our savefiles simply arent bloated enough, and I've got a sonic OC to round out
 	/// every single world.realtime we've logged in
 	var/list/days_spawned_in = list() // "Hey sonic, is that a truckload of chilidogs?"
+	var/list/quest_bank_editor_prefs = list()
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
@@ -504,12 +506,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<center><h2>Quest Board UID</h2>"
 			dat += "[quester_uid]</center>"
-			var/away42long = 0 // SSeconomy.inactivity_penalty(src)
+			var/cash_change = SSeconomy.player_login(src)
 			var/list/llogin_msg = list()
 			llogin_msg += "<center><B>Last Login:</B> [time2text(last_quest_login)]"
-			llogin_msg += " <B>Banked Cash:</B> [saved_unclaimed_points][SSeconomy.currency_unit]"
-			if(away42long)
-				llogin_msg += " - [span_alert("[away42long]")][SSeconomy.currency_unit] (inactivity fee)"
+			llogin_msg += " <B>Banked Cash:</B> [SSeconomy.format_currency(saved_unclaimed_points, TRUE)]"
+			if(cash_change > 0)
+				llogin_msg += " ([span_green("[SSeconomy.format_currency(cash_change, TRUE)]")] activity bonus)"
+			else if(cash_change < 0)
+				llogin_msg += " ([span_alert("[SSeconomy.format_currency(cash_change, TRUE)]")] inactivity tax)"
 			llogin_msg += "</center>"
 			dat += llogin_msg.Join()
 			if(CONFIG_GET(flag/roundstart_traits))
@@ -1788,7 +1792,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
 /// reverses it cus its more intuitive that way (for everyone but me)
-/datum/preferences/proc/decode_cockstring(reverse = TRUE)
+/datum/preferences/proc/decode_cockstring(reverse = TRUE) // my code my rules
 	var/list/list_out = list()
 	list_out = splittext(features["genital_order"], ":")
 	list_out = reverseList(list_out)
