@@ -496,12 +496,21 @@
 /datum/emote/living/spark
 	key = "spark"
 	key_third_person = "sparks"
-	message = "emits a bunch of sparks!"
-	message_param = "emits a bunch of sparks because of %t!"
+	message_param = "%t."
 
 /datum/emote/living/spark/run_emote(mob/user, params)
 	..()
-	do_fake_sparks(5,FALSE,user)
+	do_sparks(5,FALSE,user)
+
+/datum/emote/living/sparkq
+	key = "sparkq"
+	key_third_person = "sparkq"
+	message_param = "%t."
+
+/datum/emote/living/sparkq/run_emote(mob/user, params)
+	..()
+	playsound(user, 'sound/effects/portalboy_hit.ogg', 100, TRUE)
+	do_sparks(5, FALSE, user, /datum/effect_system/spark_spread/quantum)
 
 /datum/emote/living/shake
 	key = "shake"
@@ -1111,6 +1120,13 @@
 	message = "let out a lengthy, rather anxious noise."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/f13effects/sunsetsounds/waa.ogg'
+
+/datum/emote/gurp
+	key = "gurp"
+	key_third_person = "GURPS!"
+	message = "lets out a loud GURP!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/f13effects/sunsetsounds/gurp.ogg'
 
 /datum/emote/mission_complete
 	key = "success"

@@ -109,7 +109,7 @@
 	/obj/item/weapon/reagent_containers/food/snacks/meat/steak/gecko = 1,
 	/obj/item/weapon/reagent_containers/food/snacks/meat/steak/molerat = 1,
 	/obj/item/weapon/reagent_containers/food/snacks/meat/steak/wolf = 1,
-	/obj/item/weapon/reagent_containers/food/snacks/meat/steak/deathclaw = 1,
+	/obj/item/weapon/reagent_containers/food/snacks/meat/steak/aethergiest = 1,
 	/obj/item/weapon/reagent_containers/food/snacks/f13/bubblegum = 1,
 	/obj/item/weapon/reagent_containers/food/snacks/f13/bubblegum/large = 0.1,
 	/obj/item/weapon/reagent_containers/food/snacks/f13/cram = 1,

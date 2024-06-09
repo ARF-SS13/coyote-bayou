@@ -185,6 +185,9 @@ SUBSYSTEM_DEF(recoil)
 		my_angle *= recoil_wielded_reward
 		my_angle -= (rand(1,my_angle) * SIGN(my_angle))
 	if(istype(shotter))
+		if(shotter.InCritical())
+			my_angle += rand(5,10) * SIGN(my_angle)
+			my_angle *= 2 // good luck! uwu
 		if(HAS_TRAIT(shotter,TRAIT_NEARSIGHT)) //Yes.
 			my_angle *= 2 //You're much less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
 		if(HAS_TRAIT(shotter,TRAIT_POOR_AIM)) //You really shouldn't try this at home.

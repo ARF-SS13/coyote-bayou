@@ -17,6 +17,7 @@
 	usesound = 'sound/items/ratchet.ogg'
 	custom_materials = list(/datum/material/iron=500)
 	reskinnable_component = null
+	block_parry_data = /datum/block_parry_data/bokken
 
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_WRENCH
@@ -24,6 +25,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	wound_bonus = -10
 	bare_wound_bonus = 5
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/wrench/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
@@ -68,6 +70,14 @@
 	else
 		to_chat(user, span_notice("You were interrupted."))
 		praying = FALSE
+
+/obj/item/wrench/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure) || istype(A, /obj/machinery))
+		var/obj/W = A
+		W.take_damage(force, BRUTE, "melee", 0, attacked_by = user)
 
 /obj/item/wrench/cyborg
 	name = "automatic wrench"
@@ -165,3 +175,32 @@
 	item_state = "wrench"
 	toolspeed = 0.1
 	reskinnable_component = /datum/component/reskinnable/wrench
+
+// Sledgehammer			Keywords: Damage 25/45, Blacksmithing
+/obj/item/wrench/sledgehammer
+	name = "buster wrench"
+	desc = "An unusually large wrench that appears equally adept at bashing skulls and turning bolts. Why it has to be so damn big is anyone's guess, but you can't deny that it feels satisfying to swing."
+	item_state = "altevian-wrench"
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+
+	icon = 'icons/obj/revwrench.dmi'
+	icon_state = "altevian-wrench"
+	wielded_icon = "altevian-wrench"
+	mob_overlay_icon = 'icons/obj/revwrenchback.dmi'
+	lefthand_file = 'icons/obj/revwrenchleft.dmi'
+	righthand_file = 'icons/obj/revwrenchright.dmi'
+	toolspeed = 1
+	force = 30
+	throwforce = 20 // Huge hammers aren't that great for throwing
+	sharpness = SHARP_NONE
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	force_wielded = 70
+	force_unwielded = 30
+	attack_speed = CLICK_CD_MELEE * 1.8 //14.4
+
+/obj/item/wrench/sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/jousting/sledge)
+
+
+

@@ -141,7 +141,7 @@
 	id = "regenerative_nanites"
 	program_type = /datum/nanite_program/regenerative
 	category = list("Medical Nanites")
-
+*/ 
 /datum/design/nanites/regenerative_advanced
 	name = "Bio-Reconstruction"
 	desc = "The nanites manually repair and replace organic cells, acting much faster than normal regeneration. \
@@ -149,7 +149,7 @@
 	id = "regenerative_plus_nanites"
 	program_type = /datum/nanite_program/regenerative_advanced
 	category = list("Medical Nanites")
-
+/*
 /datum/design/nanites/temperature
 	name = "Temperature Adjustment"
 	desc = "The nanites adjust the host's internal temperature to an ideal level."

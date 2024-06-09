@@ -5,7 +5,7 @@
 //	var/last_event = 0
 //	var/active = null
 	canSmoothWith = null
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_BITMASK
 	weak_wall = TRUE
 
 /turf/closed/wall/mineral/gold
@@ -126,47 +126,15 @@
 /turf/closed/wall/mineral/wood
 	name = "wooden wall"
 	desc = "A wall made by a wasteland dweller."
-	icon = 'icons/fallout/turfs/walls/wood_crafted.dmi'
-	icon_state = "wood"
+	icon = 'icons/turf/walls/wood_log.dmi'
+	icon_state = "wall-0"
+	base_icon_state = "wall"
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	hardness = 70
 	explosion_block = 0
-	smooth = SMOOTH_FALSE
-	//canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
-
-/turf/closed/wall/mineral/wood/New()
-	..()
-	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
-		W.relativewall()
-	..()
-
-/turf/closed/wall/mineral/wood/Del()
-	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
-		W.relativewall()
-	..()
-
-//Bringing back an old version of wall smoothing code because this has a bit of a special icon.
-/turf/closed/wall/mineral/wood/proc/relativewall()
-	var/junction = 0
-
-	for(var/cdir in GLOB.cardinals)
-		var/turf/T = get_step(src,cdir)
-		if(istype(T, /turf/closed/wall/mineral/wood))
-			junction |= cdir
-			continue
-		for(var/atom/A in T)
-			if(istype(A, /obj/structure/window/fulltile))
-				junction |= cdir
-				break
-
-
-	switch(junction)
-		if(3)
-			icon_state = "wood1"
-		if(12)
-			icon_state = "wood2"
-		else
-			icon_state = "wood"
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/iron
 	name = "rough metal wall"
@@ -174,7 +142,8 @@
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron"
 	sheet_type = /obj/item/stack/rods
-	canSmoothWith = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
 	weak_wall = FALSE
 
 /turf/closed/wall/mineral/snow
@@ -191,85 +160,9 @@
 	desc = "A wall with an advanced polymer alloy plating."
 	icon = 'icons/turf/walls/abductor_wall.dmi'
 	icon_state = "abductor"
-	smooth = SMOOTH_TRUE|SMOOTH_DIAGONAL
+	smoothing_flags = SMOOTH_BITMASK
 	sheet_type = /obj/item/stack/sheet/mineral/abductor
 	slicing_duration = 200   //alien wall takes twice as much time to slice
 	explosion_block = 3
 	canSmoothWith = list(/turf/closed/wall/mineral/abductor, /obj/structure/falsewall/abductor)
 	weak_wall = FALSE
-/*
-/turf/closed/wall/mineral/titanium //has to use this path due to how building walls works
-	name = "wall"
-	desc = "A lightweight titanium wall used in shuttles."
-	icon = 'icons/turf/walls/shuttle_wall.dmi'
-	icon_state = "map-shuttle"
-	sheet_type = /obj/item/stack/sheet/mineral/titanium
-	smooth = SMOOTH_MORE|SMOOTH_DIAGONAL
-	canSmoothWith = list(/turf/closed/wall/mineral/titanium, /obj/machinery/door/airlock/shuttle, /obj/machinery/door/airlock/, /turf/closed/wall/shuttle, /obj/structure/window/shuttle, /obj/structure/shuttle/engine, /obj/structure/shuttle/engine/heater, )
-
-/turf/closed/wall/mineral/titanium/nodiagonal
-	smooth = SMOOTH_MORE
-	icon_state = "map-shuttle_nd"
-
-/turf/closed/wall/mineral/titanium/nosmooth
-	icon = 'icons/turf/shuttle.dmi'
-	icon_state = "wall"
-	smooth = SMOOTH_FALSE
-
-/turf/closed/wall/mineral/titanium/overspace
-	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
-
-//sub-type to be used for interior shuttle walls
-//won't get an underlay of the destination turf on shuttle move
-/turf/closed/wall/mineral/titanium/interior/copyTurf(turf/T)
-	if(T.type != type)
-		T.ChangeTurf(type)
-		if(underlays.len)
-			T.underlays = underlays
-	if(T.icon_state != icon_state)
-		T.icon_state = icon_state
-	if(T.icon != icon)
-		T.icon = icon
-	if(color)
-		T.atom_colours = atom_colours.Copy()
-		T.update_atom_colour()
-	if(T.dir != dir)
-		T.dir = dir
-	T.transform = transform
-	return T
-
-/turf/closed/wall/mineral/titanium/copyTurf(turf/T)
-	. = ..()
-	T.transform = transform
-
-/turf/closed/wall/mineral/plastitanium
-	name = "wall"
-	desc = "An evil wall of plasma and titanium."
-	icon = 'icons/turf/shuttle.dmi'
-	icon_state = "wall3"
-	sheet_type = /obj/item/stack/sheet/mineral/plastitanium
-	smooth = SMOOTH_FALSE
-
-//have to copypaste this code
-/turf/closed/wall/mineral/plastitanium/interior/copyTurf(turf/T)
-	if(T.type != type)
-		T.ChangeTurf(type)
-		if(underlays.len)
-			T.underlays = underlays
-	if(T.icon_state != icon_state)
-		T.icon_state = icon_state
-	if(T.icon != icon)
-		T.icon = icon
-	if(color)
-		T.atom_colours = atom_colours.Copy()
-		T.update_atom_colour()
-	if(T.dir != dir)
-		T.dir = dir
-	T.transform = transform
-	return T
-
-/turf/closed/wall/mineral/plastitanium/copyTurf(turf/T)
-	. = ..()
-	T.transform = transform
-*/

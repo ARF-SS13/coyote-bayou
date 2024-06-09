@@ -140,7 +140,7 @@
 		msg += "<br>Misfortune just seems to stick to them like a fly to shit."
 
 	if (special_s>7)
-		msg += "<br>Simply built out of muscle, they could wrestle a deathclaw to death."
+		msg += "<br>Simply built out of muscle, they could wrestle a aethergiest to death."
 	if (special_p>7)
 		msg += "<br>A sharp and attentive gaze almost pierces through you, nothing gets past them it seems."
 	if (special_e>7)

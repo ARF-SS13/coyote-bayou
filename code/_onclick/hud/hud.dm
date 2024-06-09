@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/movable/action_button/hide_toggle/hide_actions_toggle
 	var/action_buttons_hidden = FALSE
 
-	var/atom/movable/screen/healths
+	var/atom/movable/screen/healths/healths
 	var/atom/movable/screen/healthdoll
 	var/atom/movable/screen/internals
 

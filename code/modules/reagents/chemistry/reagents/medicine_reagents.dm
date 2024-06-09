@@ -1342,7 +1342,7 @@
 	M.adjustBruteLoss(-5*REM, FALSE, include_roboparts = TRUE) //A ton of healing - this is a 50 telecrystal investment.
 	M.adjustFireLoss(-5*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-15 * effect_mult, FALSE)
-	M.adjustToxLoss(-5*REM, FALSE)
+	M.adjustToxLoss(-5*REM, TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
 	M.adjustCloneLoss(-3*REM, FALSE)
 	M.adjustStaminaLoss(-25*REM,FALSE)
@@ -1364,7 +1364,7 @@
 	M.adjustBruteLoss(-2*REM, FALSE, include_roboparts = TRUE)
 	M.adjustFireLoss(-2*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-5*REM, FALSE)
-	M.adjustToxLoss(-2*REM, FALSE)
+	M.adjustToxLoss(-2*REM, TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 	M.adjustCloneLoss(-1.25*REM, FALSE)
 	M.adjustStaminaLoss(-4*REM,FALSE)

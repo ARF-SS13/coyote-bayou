@@ -84,8 +84,8 @@
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/custom
-	name = "weathered deathclaw power armor helmet"
-	desc = "An Enclave 'Equalizer' Advanced power armor helmet-- though this one appears to be more like a mask, to accommodate a deathclaw's uniquely shaped skull. The polarized yellow lenses have long since stopped functioning, and one of the lenses is badly cracked. It's pretty hard to see out of, but it's something, at least."
+	name = "weathered aethergiest power armor helmet"
+	desc = "An Enclave 'Equalizer' Advanced power armor helmet-- though this one appears to be more like a mask, to accommodate a aethergiest's uniquely shaped skull. The polarized yellow lenses have long since stopped functioning, and one of the lenses is badly cracked. It's pretty hard to see out of, but it's something, at least."
 	icon_state = "arroyohelm"
 	item_state = "arroyohelm"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2)
@@ -401,7 +401,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor Helmet"
-	desc = "An Enclave 'Equalizer' Advanced power armor helmet-- though this one appears to be more like a mask, to accommodate a deathclaw's uniquely shaped skull. The polarized yellow lenses have long since stopped functioning, and one of the lenses is badly cracked. It's pretty hard to see out of, but it's something, at least."
+	desc = "An Enclave 'Equalizer' Advanced power armor helmet-- though this one appears to be more like a mask, to accommodate a aethergiest's uniquely shaped skull. The polarized yellow lenses have long since stopped functioning, and one of the lenses is badly cracked. It's pretty hard to see out of, but it's something, at least."
 	icon_state = "arroyohelm"
 	item_state = "arroyohelm"
 	flags_inv = HIDESNOUT

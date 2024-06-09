@@ -1330,6 +1330,18 @@
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/melee/powered/ripper/dull(src)
 
+/datum/gear/donator/kits/RevolverEloise
+	name = "A Bigass Wrench"
+	path = /obj/item/storage/box/large/custom_kit/RevolverEloise
+	ckeywhitelist = list("RevolverEloise")
+
+/obj/item/storage/box/large/custom_kit/RevolverEloise
+	name = "A box with a bigass wrench in it"
+	desc = "*notices toolbox* OwO what's this?"
+
+/obj/item/storage/box/large/custom_kit/RevolverEloise/PopulateContents()
+	new /obj/item/wrench/sledgehammer(src)
+
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
 	path = /obj/item/storage/box/large/custom_kit/roachwitharoach

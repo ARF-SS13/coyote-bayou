@@ -93,9 +93,9 @@
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul, /mob/living/simple_animal/hostile/ghoul/reaver, /mob/living/simple_animal/hostile/ghoul/glowing)
 	faction = list("ghoul")
 
-/mob/living/simple_animal/hostile/spawner/deathclaw
+/mob/living/simple_animal/hostile/spawner/aethergiest
 	name = "death claw nest"
-	desc = "A nest full of deathclaws, some are coming out."
+	desc = "A nest full of aethergiests, some are coming out."
 	icon_state = "hole"
 	icon_living ="hole"
 	icon = 'icons/mob/nest.dmi'
@@ -103,8 +103,8 @@
 	maxHealth = 1000
 	max_mobs = 2
 	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw, /mob/living/simple_animal/hostile/deathclaw/mother)
-	faction = list("deathclaw")
+	mob_types = list(/mob/living/simple_animal/hostile/aethergiest, /mob/living/simple_animal/hostile/aethergiest/mother)
+	faction = list("aethergiest")
 
 /mob/living/simple_animal/hostile/spawner/scorpion
 	name = "rad scorpion nest"
