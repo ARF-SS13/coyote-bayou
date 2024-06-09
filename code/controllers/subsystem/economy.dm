@@ -1059,6 +1059,8 @@ SUBSYSTEM_DEF(economy)
 	/// and the holy bepis
 	var/triple_virgin = TRUE
 	var/money_dialogging = FALSE
+	var/max_coin_depositry = QUEST_MINIMUM_MAX_COIN_DEPOSIT
+	var/coins_deposited = 0
 
 /datum/quest_book/New(mob/quester)
 	. = ..()
@@ -1367,6 +1369,8 @@ SUBSYSTEM_DEF(economy)
 		return // they broke everything
 	// SSeconomy.incur_housing_fee_percent(P)
 	adjust_funds(P.saved_unclaimed_points, null, FALSE)
+	max_coin_depositry = max(QUEST_MINIMUM_MAX_COIN_DEPOSIT, round(unclaimed_points * 0.1, 100)) // increments of 10 coins
+	coins_deposited = 0
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
@@ -1657,8 +1661,8 @@ SUBSYSTEM_DEF(economy)
 		return
 	if(istype(holded, /obj/item/card/quest_reward)) // Ticket in hand
 		return devour_ticket(holded)
-	if(istype(holded, /obj/item/stack/f13Cash))
-		return deposit_coins(holded)
+	// if(istype(holded, /obj/item/stack/f13Cash))
+	// 	return deposit_coins(holded)
 	return cash_out()
 
 /datum/quest_book/proc/cash_out()
@@ -1715,6 +1719,13 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("The taxes wouldn't leave you with anything! Try depositing at least 10 [SSeconomy.currency_name_plural] worth of cash!"))
 		return
+	/// check if they have enough daily cash allowance to deposit this
+	// var/allowance_remaining = max_coin_depositry - coins_deposited
+	// if(allowance_remaining < COINS_TO_CREDITS)
+	// 	playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+	// 	to_chat(user, span_alert("You've already deposited the maximum amount of cash today! Try again tomorrow!"))
+	// 	return
+
 	var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n\
 		The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). \
 		Do you wish to proceed?"

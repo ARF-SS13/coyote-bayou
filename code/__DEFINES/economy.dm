@@ -90,6 +90,8 @@
 #define QUEST_KIND_COLLECT_ITEMS "collect item"
 #define QUEST_KIND_SCAN_MACHINE "scan machine"
 
+#define QUEST_MINIMUM_MAX_COIN_DEPOSIT COINS_TO_CREDITS(100)
+
 /*
 Trash - 4cp (geckos, pillbugs, bloatflies, basic ghouls etc)
 Low Tier - 6cp (reavers, glowing ones, eyebots, cazadors etc)
