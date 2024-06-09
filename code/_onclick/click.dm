@@ -30,6 +30,8 @@
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLICKON, A, params) & COMSIG_MOB_CANCEL_CLICKON)
 		return
 	. = ClickOn(A, params)
+	if(.)
+		client?.last_meaningful_action = world.time // basically an AFK timer
 	if(!(. & DISCARD_LAST_ACTION))
 		FlushCurrentAction()
 	else

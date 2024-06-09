@@ -25,9 +25,9 @@
 
 	/// PRICES ARE IN TENTHS OF A COPPER (cus cargo uses credits, even tho it doesnt look like it)
 	/// How much the card is worth
-	var/saleprice = COINS_TO_CREDITS(10)
+	var/saleprice = 0
 	/// How much the puncher gives out for free
-	var/punchbonus = COINS_TO_CREDITS(20)
+	var/punchbonus = 0
 
 /obj/item/card/ComponentInitialize()
 	. = ..()

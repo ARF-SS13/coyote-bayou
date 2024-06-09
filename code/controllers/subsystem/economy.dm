@@ -2,7 +2,7 @@
 
 SUBSYSTEM_DEF(economy)
 	name = "QuestEconomy"
-	wait = 15 MINUTES
+	wait = 10 SECONDS
 	init_order = INIT_ORDER_ECONOMY + 2000
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 5
@@ -61,6 +61,9 @@ SUBSYSTEM_DEF(economy)
 	var/coin_deposit_tax = 0.80 
 	/// Every day you dont log in, how much of your money just fricks off into the void?
 	var/housing_fee_percent = 0.02
+	var/penalty_per_day = COINS_TO_CREDITS(25)
+	var/use_compound_taxes = FALSE
+	var/use_spree = FALSE
 	/// where all the money that you lose from taxes goes
 	var/public_projects = "local localatorium"
 
@@ -103,6 +106,8 @@ SUBSYSTEM_DEF(economy)
 	var/historical_highest_banked = 0
 	var/historical_highest_banked_uid = ""
 
+	var/list/paybar = list()
+	var/pay_period = 1 HOURS
 
 	var/list/used_tags = list()
 
@@ -162,7 +167,42 @@ SUBSYSTEM_DEF(economy)
 	if(world.time > next_quest_update)
 		refresh_quest_pool()
 		update_quest_statistics()
+	pay_everyone()
 
+/// This is the main loop for the economy. It handles all the money stuff for sitting on your butt!
+/// First part is rounding up all the players and making sure they're on the payroll
+/// then, we tick up the numbers associated with their accounts,
+/// and when it hits full, we pay them and go back to zero
+/// heres the kicker, it only counts up while you're not comfy! :D
+/datum/controller/subsystem/economy/proc/pay_everyone()
+	/// first, we round up all the players and make sure they're on the payroll
+	for(var/quid in quest_books)
+		if(!isnull(paybar[quid]))
+			continue
+		paybar[quid] = 0 // welcome to the payroll, quid!
+	/// then, we tick up the numbers associated with their accounts
+	/// but oonly if they arent comfy! And also a human, we dont pay simplemobs, its against Rustyville 7: Too Rusty Too Quit
+	var/increaseby = floor(world.time - last_fire)
+	for(var/squid in paybar)
+		var/mob/living/carbon/human/H = quid2mob(squid)
+		if(!ishuman(H))
+			continue // come back when you're a little, mmmm, carbonner!
+		if(!H.mind || !H.client || !H.ckey)
+			continue // come back, please!
+		if(H.afk)
+			continue
+		paybar[squid] += (increaseby * (H.insanelycomfy ? 0.25 : 1))
+		/// and when it hits full, we pay them and go back to zero
+		if(paybar[squid] >= pay_period)
+			paybar[squid] = 0
+			var/datum/job/clintonjobs = SSjob.GetJob(H.mind.assigned_role) // bless you Gonterman
+			if(!clintonjobs)
+				continue
+			var/toupe = clintonjobs.paycheck
+			if(!toupe)
+				continue
+			adjust_funds(H, toupe)
+			to_chat(H, span_green("You've been paid [format_currency(toupe, TRUE)] for your hard work!"))
 
 /datum/controller/subsystem/economy/proc/setup_public_project()
 	var/list/projects = list(
@@ -339,6 +379,8 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/proc/calculate_spree_reward(list/dates2check, list/our_calendar, their_bank)
 	if(!LAZYLEN(dates2check) || !LAZYLEN(our_calendar) || !their_bank)
 		return 0
+	if(!use_spree)
+		return 0
 	var/login_spree = 0 // check for spree!
 	var/ourcheck_index = 2
 	var/theircheck_index = 1
@@ -366,11 +408,17 @@ SUBSYSTEM_DEF(economy)
 	var/inactive_days = -1
 	var/our_date = LAZYACCESS(our_calendar, 1)
 	var/their_date = LAZYACCESS(dates2check, 1)
-	inactive_days = clamp(our_date - their_date - 1, 0 , inactivity_cutoff) // today should be bigger than their last login, so this should be positive
+	if(use_compound_taxes)
+		inactive_days = clamp(our_date - their_date - 1, 0 , (365 * 10)) // ya know, if you're not on for 10 years straight, you deserve a break
+	else
+		inactive_days = clamp(our_date - their_date - 1, 0 , inactivity_cutoff) // ya know, if you're not on for 10 years straight, you deserve a break
 	if(inactive_days > 0)
-		var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
-		var/penalty = their_bank - floor(their_bank * penalty_percent)
-		return -penalty
+		if(use_compound_taxes)
+			var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816
+			var/penalty = their_bank - floor(their_bank * penalty_percent)
+			return -penalty
+		else
+			return -(inactive_days * penalty_per_day)
 
 /// My first unit tests! :3
 /datum/controller/subsystem/economy/proc/test_daily_calcs()
@@ -397,42 +445,61 @@ SUBSYSTEM_DEF(economy)
 	/// 2. logging in after a day
 	/// - should return a bonus of 100, and the bank should be increased to test_amount + 100
 	date_list = list(LAZYACCESS(dates_of_interest, 2))
-	exp_penalty = (spree_reward_per_day * 1)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 1)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("2. logging in after a day", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 3. logging in after 2 days
 	/// - should return one penalty, and the bank should be reduced to test_amount - (1 = (0.02^1))
 	date_list = list(LAZYACCESS(dates_of_interest, 3))
-	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 1)))
+	if(use_compound_taxes)
+		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 1)))
+	else
+		exp_penalty = -( (penalty_per_day * 1))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("3. logging in after 2 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 4. logging in after 3 days
 	/// - should return two penalty, and the bank should be reduced to test_amount - (2 = (0.02^2))
 	date_list = list(LAZYACCESS(dates_of_interest, 4))
-	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 2)))
+	if(use_compound_taxes)
+		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 2)))
+	else
+		exp_penalty = -( (penalty_per_day * 2))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("4. logging in after 3 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 5. logging in after 7 days
 	/// - should return six penalty, and the bank should be reduced to test_amount - (6 = (0.02^6))
 	date_list = list(LAZYACCESS(dates_of_interest, 8))
-	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 6)))
+	if(use_compound_taxes)
+		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 6)))
+	else
+		exp_penalty = -( (penalty_per_day * 6))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("5. logging in after 7 days", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 6. logging in after 8 days (the max)
 	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
 	date_list = list(LAZYACCESS(dates_of_interest, 9))
-	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	if(use_compound_taxes)
+		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	else
+		exp_penalty = -( (penalty_per_day * 7))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("6. logging in after 8 days (max)", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 7. logging in after 200 days
 	/// - should return seven penalty, and the bank should be reduced to test_amount - (7 = (0.02^7))
+	/// - or 200 penalty if not using compound taxes
 	date_list = list(LAZYACCESS(dates_of_interest, 201))
-	exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	if(use_compound_taxes)
+		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
+	else
+		exp_penalty = -( (penalty_per_day * 200))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("7. logging in after 200 days", date_list, test_amount, exp_bank, exp_penalty)
 
@@ -440,21 +507,30 @@ SUBSYSTEM_DEF(economy)
 	/// 8. logging in today and yesterday
 	/// - should return 1 bonus, and the bank should be increased to test_amount + 100
 	date_list = list(LAZYACCESS(dates_of_interest, 2))
-	exp_penalty = (spree_reward_per_day * 1)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 1)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("8. logging in today and yesterday", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 9. logging in today, yesterday, and the day before that
 	/// - should return 2 bonus, and the bank should be increased to test_amount + 200
 	date_list = list(LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3))
-	exp_penalty = (spree_reward_per_day * 2)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 2)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("9. logging in today, yesterday, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
 
 	/// 10. logging in today, yesterday, the day before that, and the day before that
 	/// - should return 3 bonus, and the bank should be increased to test_amount + 300
 	date_list = list(LAZYACCESS(dates_of_interest, 2), LAZYACCESS(dates_of_interest, 3), LAZYACCESS(dates_of_interest, 4))
-	exp_penalty = (spree_reward_per_day * 3)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 3)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("10. logging in today, yesterday, the day before that, and the day before that", date_list, test_amount, exp_bank, exp_penalty)
 
@@ -463,7 +539,10 @@ SUBSYSTEM_DEF(economy)
 	date_list.Cut()
 	for(var/i in 2 to 20)
 		date_list += LAZYACCESS(dates_of_interest, i)
-	exp_penalty = (spree_reward_per_day * 7)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 7)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("11. logging in for the past 20 days", date_list, test_amount, exp_bank, exp_penalty)
 
@@ -474,7 +553,10 @@ SUBSYSTEM_DEF(economy)
 		date_list += LAZYACCESS(dates_of_interest, i)
 	for(var/i in 8 to 200)
 		date_list += LAZYACCESS(dates_of_interest, i)
-	exp_penalty = (spree_reward_per_day * 5)
+	if(use_spree)
+		exp_penalty = (spree_reward_per_day * 5)
+	else
+		exp_penalty = 0
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("12. logging in for the past 5 days, then a break of 2 days, then logging in for the past 200 days", date_list, test_amount, exp_bank, exp_penalty)
 	var/printme = return_list.Join("\n")
@@ -1659,10 +1741,10 @@ SUBSYSTEM_DEF(economy)
 	if(holded && QDELING(holded))
 		to_chat(user, span_alert("That item is no more!"))
 		return
-	if(istype(holded, /obj/item/card/quest_reward)) // Ticket in hand
+	if(istype(holded, /obj/item/card)) // Ticket in hand
 		return devour_ticket(holded)
-	// if(istype(holded, /obj/item/stack/f13Cash))
-	// 	return deposit_coins(holded)
+	if(istype(holded, /obj/item/stack/f13Cash))
+		return deposit_coins(holded)
 	return cash_out()
 
 /datum/quest_book/proc/cash_out()
@@ -1713,53 +1795,47 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("That cash is worthless!"))
 		return
-	var/to_tax = ceil(totalvalue * SSeconomy.coin_deposit_tax)
-	var/to_deposit = totalvalue - to_tax
-	if(to_deposit < COINS_TO_CREDITS(1))
-		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
-		to_chat(user, span_alert("The taxes wouldn't leave you with anything! Try depositing at least 10 [SSeconomy.currency_name_plural] worth of cash!"))
-		return
-	/// check if they have enough daily cash allowance to deposit this
-	// var/allowance_remaining = max_coin_depositry - coins_deposited
-	// if(allowance_remaining < COINS_TO_CREDITS)
+	// var/to_tax = ceil(totalvalue * SSeconomy.coin_deposit_tax)
+	// var/to_deposit = totalvalue - to_tax
+	// if(to_deposit < 1)
 	// 	playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
-	// 	to_chat(user, span_alert("You've already deposited the maximum amount of cash today! Try again tomorrow!"))
+	// 	to_chat(user, span_alert("That cash is worthless!"))
 	// 	return
 
-	var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n\
-		The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). \
-		Do you wish to proceed?"
-	money_dialogging = TRUE
-	var/confyrm = alert(
-		user,
-		sans_representation,
-		"Tax Form CB-13",
-		"Deposit",
-		"Cancel",
-	)
-	money_dialogging = FALSE
-	if(confyrm == "Deposit" && !QDELETED(coins))
+	// var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n
+	// 	The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). 
+	// 	Do you wish to proceed?"
+	// money_dialogging = TRUE
+	// var/confyrm = alert(
+	// 	user,
+	// 	sans_representation,
+	// 	"Tax Form CB-13",
+	// 	"Deposit",
+	// 	"Cancel",
+	// )
+	// money_dialogging = FALSE
+	// if(confyrm == "Deposit" && !QDELETED(coins))
 		/// time has passed! time to update how much we're really adding to the cash hole
-		var/newtotalvalue = coins.amount * valueper
-		if(newtotalvalue != totalvalue) // their coins changed value!
-			playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
-			to_chat(user, span_alert("Deposit discrepancy detected! Transaction terminated, please try again!"))
-			return // might be trying to pull a fast one, but more likely that stack code kinda chowdered their cash
-		if(totalvalue < 1)
-			playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
-			to_chat(user, span_alert("That cash is suddenly worthless!"))
-			return
-		coins.amount = 0
-		coins.value = 0
-		qdel(coins)
-		adjust_funds(round(COINS_TO_CREDITS(to_deposit)), null, FALSE, FALSE)
-		to_chat(user, span_green("You deposited [to_deposit] [SSeconomy.currency_name_plural] (after taxes) into your Guild Account!"))
-		playsound(user, 'sound/machines/coin_insert.ogg', 80, TRUE)
-		update_static_data(user)
-		return
-	else
-		to_chat(user, span_notice("Nevermind!!"))
-		return
+	// var/newtotalvalue = coins.amount * valueper
+	// if(newtotalvalue != totalvalue) // their coins changed value!
+	// 	playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+	// 	to_chat(user, span_alert("Deposit discrepancy detected! Transaction terminated, please try again!"))
+	// 	return // might be trying to pull a fast one, but more likely that stack code kinda chowdered their cash
+	// if(totalvalue < 1)
+	// 	playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+	// 	to_chat(user, span_alert("That cash is suddenly worthless!"))
+	// 	return
+	coins.amount = 0
+	coins.value = 0
+	qdel(coins)
+	adjust_funds(round(COINS_TO_CREDITS(totalvalue)), null, FALSE, FALSE)
+	to_chat(user, span_green("You deposited [totalvalue] [SSeconomy.currency_name_plural] into your Guild Account!"))
+	playsound(user, 'sound/machines/coin_insert.ogg', 80, TRUE)
+	update_static_data(user)
+	// return
+	// else
+	// 	to_chat(user, span_notice("Nevermind!!"))
+	// 	return
 
 /datum/quest_book/proc/dispense_reward(cashmoney)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
@@ -1786,14 +1862,22 @@ SUBSYSTEM_DEF(economy)
 	return TRUE
 
 /// FIN VORE FIN VORE
-/datum/quest_book/proc/devour_ticket(obj/item/card/quest_reward/QR)
+/datum/quest_book/proc/devour_ticket(obj/item/card/QR)
 	var/mob/user = SSeconomy.quid2mob(q_uid)
 	if(!user)
 		return FALSE
 	update_owner_data(user)
-	if(!istype(QR, /obj/item/card/quest_reward))
+	if(!istype(QR, /obj/item/card))
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("That's not a ticket!"))
+		return FALSE
+	if(!istype(QR, /obj/item/card/id))
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("Nobody wants your worthless ID!"))
+		return FALSE
+	if(QR.saleprice < COINS_TO_CREDITS(1))
+		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
+		to_chat(user, span_alert("That's worthless!"))
 		return FALSE
 	var/payment = QR.saleprice
 	QR.saleprice = 0

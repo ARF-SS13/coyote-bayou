@@ -1222,6 +1222,34 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/takes_crit_damage = !HAS_TRAIT(H, TRAIT_NOCRITDAMAGE)
 		if((H.health < H.crit_threshold) && takes_crit_damage)
 			H.adjustBruteLoss(1)
+	get_comfy(H)
+
+/datum/species/proc/get_comfy(mob/living/carbon/human/H)
+	//If you haven't walked into a different tile in 5 minutes, don't drain hunger.
+	if(H.client && (((world.time - H.client?.last_move)) > 5 MINUTES))
+		if(!H.insanelycomfy)
+			to_chat(H, span_notice("You feel comfy."))
+			H.insanelycomfy = TRUE
+			for(var/mob/living/somone in range(1, H))
+				if(somone == H)
+					continue
+				if(!somone.client)
+					continue
+				SSstatpanels.discard_horny_demographic(H) // If we're comfy with someone, its likely that they are fuking each other
+				break // And the horny demographic thing is to get people who arent fuking to find people to fuk, so if theyre fuking, remove them from the list of people lookin to fuk
+	else if(H.insanelycomfy)
+		to_chat(H, span_notice("You no longer feel comfy."))
+		H.insanelycomfy = FALSE
+		SSstatpanels.collect_horny_demographic(H)
+	/// and, the even comfier thing
+	if(H.client && ((world.time - H.client?.last_meaningful_action) > 5 MINUTES) && (world.time - H.client?.last_move) > 5 MINUTES)
+		if(!H.afk)
+			to_chat(H, span_notice("You feel cozy."))
+			H.afk = TRUE
+	else if(H.afk)
+		to_chat(H, span_notice("You no longer feel cozy."))
+		H.afk = FALSE
+
 
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
@@ -1485,23 +1513,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
 				H.update_inv_w_uniform()
 				H.update_inv_wear_suit()
-
-	//If you haven't walked into a different tile in 5 minutes, don't drain hunger.
-	if(H.client && (((world.time - H.client?.last_move)) > 5 MINUTES))
-		if(!H.insanelycomfy)
-			to_chat(H, span_notice("You feel comfy."))
-			H.insanelycomfy = TRUE
-			for(var/mob/living/somone in range(1, H))
-				if(somone == H)
-					continue
-				if(!somone.client)
-					continue
-				SSstatpanels.discard_horny_demographic(H) // If we're comfy with someone, its likely that they are fucking each other
-				break // And the horny demographic thing is to get people who arent fucking to find people to fuck, so if theyre fucking, remove them from the list of people lookin to fuck
-	else if(H.insanelycomfy)
-		to_chat(H, span_notice("You no longer feel comfy."))
-		H.insanelycomfy = FALSE
-		SSstatpanels.collect_horny_demographic(H)
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER) && !H.insanelycomfy)
