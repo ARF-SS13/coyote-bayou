@@ -184,25 +184,29 @@ SUBSYSTEM_DEF(economy)
 	/// but oonly if they arent comfy! And also a human, we dont pay simplemobs, its against Rustyville 7: Too Rusty Too Quit
 	var/increaseby = floor(world.time - last_fire)
 	for(var/squid in paybar)
-		var/mob/living/carbon/human/H = quid2mob(squid)
-		if(!ishuman(H))
+		var/mob/living/carbon/human/pay_pig = quid2mob(squid)
+		if(!ishuman(pay_pig))
 			continue // come back when you're a little, mmmm, carbonner!
-		if(!H.mind || !H.client || !H.ckey)
+		if(!pay_pig.mind || !pay_pig.client || !pay_pig.ckey)
 			continue // come back, please!
-		if(H.afk)
-			continue
-		paybar[squid] += (increaseby * (H.insanelycomfy ? 0.25 : 1))
+		if(pay_pig.stat != CONSCIOUS)
+			continue // no sleeping on the job!
+		if(pay_pig.health < pay_pig.crit_threshold)
+			continue // bleed out on your own time!
+		if(pay_pig.afk)
+			continue // Come back, please!
+		paybar[squid] += increaseby // (increaseby * (pay_pig.insanelycomfy ? 0.25 : 1))
 		/// and when it hits full, we pay them and go back to zero
 		if(paybar[squid] >= pay_period)
 			paybar[squid] = 0
-			var/datum/job/clintonjobs = SSjob.GetJob(H.mind.assigned_role) // bless you Gonterman
+			var/datum/job/clintonjobs = SSjob.GetJob(pay_pig.mind.assigned_role) // bless you Gonterman
 			if(!clintonjobs)
 				continue
 			var/toupe = clintonjobs.paycheck
 			if(!toupe)
 				continue
-			adjust_funds(H, toupe)
-			to_chat(H, span_green("You've been paid [format_currency(toupe, TRUE)] for your hard work!"))
+			adjust_funds(pay_pig, toupe)
+			to_chat(pay_pig, span_green("You've been paid [format_currency(toupe, TRUE)] for your hard work!"))
 
 /datum/controller/subsystem/economy/proc/setup_public_project()
 	var/list/projects = list(
@@ -409,9 +413,9 @@ SUBSYSTEM_DEF(economy)
 	var/our_date = LAZYACCESS(our_calendar, 1)
 	var/their_date = LAZYACCESS(dates2check, 1)
 	if(use_compound_taxes)
-		inactive_days = clamp(our_date - their_date - 1, 0 , (365 * 10)) // ya know, if you're not on for 10 years straight, you deserve a break
+		inactive_days = clamp(our_date - their_date - 1, 0 , inactivity_cutoff)
 	else
-		inactive_days = clamp(our_date - their_date - 1, 0 , inactivity_cutoff) // ya know, if you're not on for 10 years straight, you deserve a break
+		inactive_days = clamp(our_date - their_date - 1, 0 , (365 * 10)) // ya know, if you're not on for 10 years straight, you deserve a break
 	if(inactive_days > 0)
 		if(use_compound_taxes)
 			var/penalty_percent = ((1-housing_fee_percent) ** inactive_days) // 1 - 4 inactive days at 2% compounding daily = (0.98**4) = 0.92236816

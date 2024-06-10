@@ -1242,7 +1242,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		H.insanelycomfy = FALSE
 		SSstatpanels.collect_horny_demographic(H)
 	/// and, the even comfier thing
-	if(H.client && ((world.time - H.client?.last_meaningful_action) > 5 MINUTES) && (world.time - H.client?.last_move) > 5 MINUTES)
+	if(H.client && ((world.time - H.client?.last_meaningful_action) > 7 MINUTES) && (world.time - H.client?.last_move) > 5 MINUTES)
 		if(!H.afk)
 			to_chat(H, span_notice("You feel cozy."))
 			H.afk = TRUE

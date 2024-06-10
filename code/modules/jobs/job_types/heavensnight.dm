@@ -1,6 +1,3 @@
-/datum/job/heavensnight
-	department_flag = HEAVENSNIGHT
-
 /*
 * This commented block is just here as a template.______qdel_list_wrapper(list/L)
 *
@@ -79,29 +76,9 @@
 		)
 */
 
-/datum/job/heavensnight/f13manager
-	title = "Club Manager"
-	flag = F13MANAGER
-	department_head = list("Club Manager")
-	head_announce = list("Security")
-	faction = FACTION_CLUB
-	social_faction = FACTION_CLUB
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are the manager for the Heavens Night club, you ensure the workings of the club are in order."
-	supervisors = "Yourself and your customers!"
-	selection_color = "#c94b8a"
-	exp_requirements = 0
-	exp_type = EXP_TYPE_CLUB
-
-	outfit = /datum/outfit/job/heavensnight/f13manager
-
-	access = list(ACCESS_CLUB)
-	minimal_access = list(ACCESS_CLUB)
-
 /datum/outfit/job/heavensnight/f13manager
 	name = "Club Manager"
-	jobtype = /datum/job/heavensnight/f13manager
+	jobtype = /datum/job/townfolk/club_manager
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/supplykit
@@ -118,29 +95,10 @@
 		///obj/item/card/id/selfassign,
 		)
 
-/datum/job/heavensnight/f13clubworker
-	title = "Club Worker"
-	flag = F13CLUBWORKER
-	department_head = list("Club Worker")
-	head_announce = list("Security")
-	faction = FACTION_CLUB
-	social_faction = FACTION_CLUB
-	total_positions = -1
-	spawn_positions = -1
-	description = "You are the manager for the Heavens Night club, you ensure the workings of the club are in order."
-	supervisors = "Yourself and your customers!"
-	selection_color = "#df80af"
-	exp_requirements = 0
-	exp_type = EXP_TYPE_CLUB
-
-	outfit = /datum/outfit/job/heavensnight/f13clubworker
-
-	access = list(ACCESS_CLUB)
-	minimal_access = list(ACCESS_CLUB)
 
 /datum/outfit/job/heavensnight/f13clubworker
 	name = "Club Worker"
-	jobtype = /datum/job/heavensnight/f13clubworker
+	jobtype = /datum/job/townfolk/club_worker
 	id =	/obj/item/card/id/selfassign
 	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/supplykit
