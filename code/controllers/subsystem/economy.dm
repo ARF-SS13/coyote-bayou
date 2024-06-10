@@ -503,7 +503,7 @@ SUBSYSTEM_DEF(economy)
 	if(use_compound_taxes)
 		exp_penalty = -( test_amount - floor(test_amount * ((1-housing_fee_percent) ** 7)))
 	else
-		exp_penalty = -( (penalty_per_day * 200))
+		exp_penalty = -( (penalty_per_day * min(today, 200)))
 	exp_bank = test_amount + exp_penalty
 	return_list += run_unit_test("7. logging in after 200 days", date_list, test_amount, exp_bank, exp_penalty)
 
