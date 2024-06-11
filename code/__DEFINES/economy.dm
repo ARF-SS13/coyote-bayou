@@ -81,14 +81,16 @@
 #define BOUNTY_QUOTA_DEAD (1 << 2)
 
 /// Credits to Coins
-#define COINS(x) (x * 10)
-#define COINS_TO_CREDITS(x) (x / 10)
+#define COINS_TO_CREDITS(x) (x * 10)
+#define CREDITS_TO_COINS(x) (x / 10)
 
 #define QUEST_KIND_KILL_BOSS "kill boss"
 #define QUEST_KIND_KILL_MOBS "kill mob"
 #define QUEST_KIND_SCAN_MOBS "scan mob"
 #define QUEST_KIND_COLLECT_ITEMS "collect item"
 #define QUEST_KIND_SCAN_MACHINE "scan machine"
+
+#define QUEST_MINIMUM_MAX_COIN_DEPOSIT COINS_TO_CREDITS(100)
 
 /*
 Trash - 4cp (geckos, pillbugs, bloatflies, basic ghouls etc)

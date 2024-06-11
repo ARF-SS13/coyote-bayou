@@ -8,10 +8,10 @@
  *  */
 
 /datum/bounty/kill_boss
-	base_reward =         COINS(300)
-	medium_reward_bonus = COINS(0)
-	hard_reward_bonus =   COINS(0)
-	CBT_reward_bonus =    COINS(0)
+	base_reward =         COINS_TO_CREDITS(300)
+	medium_reward_bonus = COINS_TO_CREDITS(0)
+	hard_reward_bonus =   COINS_TO_CREDITS(0)
+	CBT_reward_bonus =    COINS_TO_CREDITS(0)
 	flavor_kind = QUEST_KIND_KILL_BOSS
 	candupe = FALSE
 	respect_extinction = TRUE
@@ -41,7 +41,7 @@
 	paths=list(
 		/mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
 	)
-	price_per_thing = COINS(300)
+	price_per_thing = COINS_TO_CREDITS(300)
 
 /////////////////// BLUEBERRY BATES //////////////////////
 /datum/bounty/kill_boss/blueberry_bates
@@ -59,7 +59,7 @@
 	paths=list(
 		/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
 	)
-	price_per_thing = COINS(300)
+	price_per_thing = COINS_TO_CREDITS(300)
 
 /////////////////// GENERIC RAIDER BOSS //////////////////////
 /datum/bounty/kill_boss/generic_raider_boss
@@ -77,7 +77,7 @@
 	paths=list(
 		/mob/living/simple_animal/hostile/raider/ranged/boss
 	)
-	price_per_thing = COINS(250)
+	price_per_thing = COINS_TO_CREDITS(250)
 
 /////////////////// GENERIC RAIDER LEGENDARY //////////////////////
 /datum/bounty/kill_boss/generic_raider_legendary
@@ -95,7 +95,7 @@
 	paths=list(
 		/mob/living/simple_animal/hostile/raider/legendary
 	)
-	price_per_thing = COINS(200)
+	price_per_thing = COINS_TO_CREDITS(200)
 
 /////////////////// SHAMBLING ABOMINATION //////////////////////
 /datum/bounty/kill_boss/shambling_abomination
@@ -113,7 +113,7 @@
 		/mob/living/simple_animal/hostile/abomination,
 		/mob/living/simple_animal/hostile/abomhorror
 	)
-	price_per_thing = COINS(300)
+	price_per_thing = COINS_TO_CREDITS(300)
 
 /////////////////// LEGENDARY SUPERMUTANT //////////////////////
 /datum/bounty/kill_boss/legendary_supermutant
@@ -131,7 +131,7 @@
 	paths=list(
 		/mob/living/simple_animal/hostile/supermutant/legendary
 	)
-	price_per_thing = COINS(200)
+	price_per_thing = COINS_TO_CREDITS(200)
 
 // /datum/bounty/kill_boss/project99
 // 	name = "Dethrone Lady Vox and Lord Nagafen"

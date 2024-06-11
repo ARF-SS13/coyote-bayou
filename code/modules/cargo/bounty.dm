@@ -3,10 +3,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 /datum/bounty
 	var/name
 	var/description
-	var/base_reward =         COINS(50) // In credits.
-	var/medium_reward_bonus = COINS(10) // In credits.
-	var/hard_reward_bonus =   COINS(30) // In credits.
-	var/CBT_reward_bonus =    COINS(50) // In credits.
+	var/base_reward =         COINS_TO_CREDITS(50) // In credits.
+	var/medium_reward_bonus = COINS_TO_CREDITS(10) // In credits.
+	var/hard_reward_bonus =   COINS_TO_CREDITS(30) // In credits.
+	var/CBT_reward_bonus =    COINS_TO_CREDITS(50) // In credits.
 
 	/// Which questgivers can give this quest? for flavor purposes
 	/// format: list(QUESTGIVER_GUILD, QUESTGIVER_GRAGG, etc)
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			payout += hard_reward_bonus
 		if(QUEST_DIFFICULTY_CBT)
 			payout += CBT_reward_bonus
-	return "[base_reward / 10] [SSeconomy.currency_name]"
+	return "[SSeconomy.format_currency(base_reward, TRUE, TRUE)]"
 
 /datum/bounty/proc/can_claim()
 	return !claimed
@@ -356,7 +356,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty/proc/phrase_reward(mob/doer)
 	var/payment = get_reward()
-	var/msg = "You have been awarded [span_green("[payment / 10] [SSeconomy.currency_name_plural]")]!"
+	var/msg = "You have been awarded [span_green("[SSeconomy.format_currency(payment, TRUE, TRUE)]")]!"
 	return "[msg]"
 
 // If an item sent in the cargo shuttle can satisfy the bounty.

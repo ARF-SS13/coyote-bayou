@@ -409,27 +409,27 @@
 /obj/item/paper/report_card/proc/fridge_report_card_get_value()
 	switch(grade)
 		if("P")
-			return COINS(2500)
+			return COINS_TO_CREDITS(2500)
 		if("S")
-			return COINS(1000) // we're going out for frosty chocolate milkshakes
+			return COINS_TO_CREDITS(1000) // we're going out for frosty chocolate milkshakes
 		if("A+")
-			return COINS(250)
+			return COINS_TO_CREDITS(250)
 		if("A")
-			return COINS(200)
+			return COINS_TO_CREDITS(200)
 		if("A-")
-			return COINS(175)
+			return COINS_TO_CREDITS(175)
 		if("B+")
-			return COINS(75)
+			return COINS_TO_CREDITS(75)
 		if("B")
-			return COINS(50)
+			return COINS_TO_CREDITS(50)
 		if("B-")
-			return COINS(10)
+			return COINS_TO_CREDITS(10)
 		if("C+")
-			return COINS(5)
+			return COINS_TO_CREDITS(5)
 		if("C")
-			return COINS(1)
+			return COINS_TO_CREDITS(1)
 		else
-			return COINS(1) // If I get a 75% or below, I dont pass, and neither will you
+			return COINS_TO_CREDITS(1) // If I get a 75% or below, I dont pass, and neither will you
 
 /obj/item/paper/supplyreport
 	var/costvalue = 0 // See me after class

@@ -21,6 +21,10 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 			var/mob/clicker = usr
 			if(clicker.a_intent == INTENT_HARM)
 				is_mob_in_harm_intent = TRUE
+			else
+				var/obj/item/h = clicker.get_active_held_item()
+				if(h && h.force_harmclick)
+					is_mob_in_harm_intent = TRUE
 		if(is_mob_in_harm_intent) // in harm intent, disable clickdragging and try to click on whatever your mouse is over when you let up a click
 			if(over == usr && src != usr) // If you clickdrag something out of range to yourself, click what you originaly clicked
 				return usr.client.Click(src, over_location, src_control, params)

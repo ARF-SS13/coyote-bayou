@@ -32,35 +32,12 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/storage/fancy/flare_pouch, \
 		/obj/item/storage/fancy/flare_pouch/glowstick)
 
-/datum/job/oasis
-	exp_type = EXP_TYPE_OASIS
-	faction = FACTION_OASIS
 
 
-/datum/job/oasis/f13farmer
-	title = "Farmer"
-	flag = F13FARMER
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13farmer
-
-	access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
-	)
 
 /datum/outfit/job/den/f13farmer
 	name = "Farmer"
-	jobtype = /datum/job/oasis/f13farmer
+	jobtype = /datum/job/townfolk/f13farmer
 
 	id = /obj/item/card/id/dogtag/town
 
@@ -92,34 +69,10 @@ here's a tip, go search DEFINES/access.dm
 
 /*--------------------------------------------------------------*/
 
-/datum/job/oasis/f13prospector
-	title = "Prospector"
-	flag = F13PROSPECTOR
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13prospector
-
-	access = list(ACCESS_BAR, ACCESS_MINING)
-	minimal_access = list(ACCESS_BAR, ACCESS_MINING)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
-	)
-
-	loadout_options = list(
-	/datum/outfit/loadout/scavenger,
-	/datum/outfit/loadout/miner,)
 
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
-	jobtype = /datum/job/oasis/f13prospector
+	jobtype = /datum/job/townfolk/f13prospector
 
 	id = /obj/item/card/id/dogtag/town
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -171,7 +124,7 @@ here's a tip, go search DEFINES/access.dm
 
 /*--------------------------------------------------------------*/
 
-/datum/job/oasis/f13dendoc
+/datum/job/townfolk/f13dendoc
 	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEP_OASIS
@@ -187,16 +140,16 @@ here's a tip, go search DEFINES/access.dm
 	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING, ACCESS_FOLLOWER)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
+			/datum/job/townfolk
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
+			/datum/job/townfolk
 		)
 	)
 
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
-	jobtype = /datum/job/oasis/f13dendoc
+	jobtype = /datum/job/townfolk/f13dendoc
 	chemwhiz = TRUE
 	belt = /obj/item/supplykit
 	ears = /obj/item/radio/headset/headset_town/medical
@@ -232,39 +185,12 @@ here's a tip, go search DEFINES/access.dm
 
 /*--------------------------------------------------------------*/
 
-/datum/job/oasis/f13settler
-	title = "Citizen"
-	flag = F13SETTLER
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/den/f13settler
-
-	
-	loadout_options = list(
-		/datum/outfit/loadout/provisioner,
-		/datum/outfit/loadout/groundskeeper,
-		/datum/outfit/loadout/artisan,
-		/datum/outfit/loadout/outdoorsman,
-		/datum/outfit/loadout/busker,
-	)
-	access = list(ACCESS_BAR)
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
 
 
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
-	jobtype = /datum/job/oasis/f13settler
+	jobtype = /datum/job/townfolk/citizen
 	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
@@ -345,24 +271,6 @@ here's a tip, go search DEFINES/access.dm
 
 //Researcher
 
-/datum/job/oasis/recresearcher
-	title = "Reclaimer Researcher"
-	flag = RECRESEARCHER
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Reclaimer Researcher. As a Reclaimer it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher
-
-	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
-	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
-
 /datum/outfit/job/den/recresearcher/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -377,7 +285,7 @@ here's a tip, go search DEFINES/access.dm
 
 /datum/outfit/job/den/recresearcher
 	name = "Reclaimer Researcher"
-	jobtype = /datum/job/oasis/recresearcher
+	jobtype = /datum/job/reclaimers/researcher
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel/tox
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
@@ -396,24 +304,9 @@ here's a tip, go search DEFINES/access.dm
 
 //Archeologist
 
-/datum/job/oasis/recresearcher/archeologist
-	title = "Reclaimer Archeologist"
-	flag = RECARCHEOLOGIST
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher/archeologist
-
 /datum/outfit/job/den/recresearcher/archeologist
 	name = "Reclaimer Archeologist"
-	jobtype = /datum/job/oasis/recresearcher/archeologist
+	jobtype = /datum/job/reclaimers/archeologist
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
@@ -432,24 +325,9 @@ here's a tip, go search DEFINES/access.dm
 
 //Slimeologist
 
-/datum/job/oasis/recresearcher/slimeologist
-	title = "Reclaimer Slimeologist"
-	flag = RECSLIMEOLOGIST
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher/slimeologist
-
 /datum/outfit/job/den/recresearcher/slimeologist
 	name = "Reclaimer Slimeologist"
-	jobtype = /datum/job/oasis/recresearcher/slimeologist
+	jobtype = /datum/job/reclaimers/slimeologist
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
@@ -467,24 +345,9 @@ here's a tip, go search DEFINES/access.dm
 
 //Mechanic
 
-/datum/job/oasis/recresearcher/mechanic
-	title = "Reclaimer Mechanic"
-	flag = RECMECHANIC
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher/mechanic
-
 /datum/outfit/job/den/recresearcher/mechanic
 	name = "Reclaimer Mechanic"
-	jobtype = /datum/job/oasis/recresearcher/mechanic
+	jobtype = /datum/job/reclaimers/mechanic
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
@@ -502,24 +365,9 @@ here's a tip, go search DEFINES/access.dm
 
 //Nanite Specialist
 
-/datum/job/oasis/recresearcher/nanspec
-	title = "Reclaimer Nanite Specialist"
-	flag = RECNANSPEC
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher/nanspec
-
 /datum/outfit/job/den/recresearcher/nanspec
 	name = "Reclaimer Nanite Specialist"
-	jobtype = /datum/job/oasis/recresearcher/nanspec
+	jobtype = /datum/job/reclaimers/nanspec
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
@@ -537,24 +385,10 @@ here's a tip, go search DEFINES/access.dm
 
 //Reclaimer Guard
 
-/datum/job/oasis/recresearcher/guard
-	title = "Reclaimer Guard"
-	flag = RECGUARD
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	selection_color = "#a94aa9"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/recresearcher/guard
 
 /datum/outfit/job/den/recresearcher/guard
 	name = "Reclaimer Guard"
-	jobtype = /datum/job/oasis/recresearcher/guard
+	jobtype = /datum/job/reclaimers/guard
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel
 	duffelbag =	/obj/item/storage/backpack/duffelbag
@@ -573,31 +407,6 @@ here's a tip, go search DEFINES/access.dm
 
 
 //Reclaimer healer
-/datum/job/oasis/f13practitioner
-	title = "Reclaimer Healer"
-	flag = RECMEDIC
-	department_flag = RECLAIMERS
-	faction = "Reclaimers"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the Reclaimers."
-	description = "You work for the Reclaimers. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	selection_color = "#FFDDFF"
-	exp_requirements = 0
-
-	outfit = /datum/outfit/job/den/f13practitioner
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD, ACCESS_SCIENCE)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD, ACCESS_SCIENCE)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis/f13practitioner,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis/f13practitioner,
-		),
-	)
-
 /datum/outfit/job/den/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -627,7 +436,7 @@ here's a tip, go search DEFINES/access.dm
 
 /datum/outfit/job/den/f13practitioner
 	name =	"Guild Healer"
-	jobtype =	/datum/job/oasis/f13practitioner
+	jobtype =	/datum/job/reclaimers/healer
 	uniform =	/obj/item/clothing/under/f13/followers
 	ears = /obj/item/radio/headset/headset_town/guild
 	id =	/obj/item/card/id/silver
@@ -646,29 +455,9 @@ here's a tip, go search DEFINES/access.dm
 
 
 
-/datum/job/oasis/nashcurator
-	title = "Librarian"
-	flag = LIBRARIAN
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/nashcurator
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
 /datum/outfit/job/den/nashcurator
 	name = "Librarian"
-	jobtype = /datum/job/oasis/nashcurator
+	jobtype = /datum/job/townfolk/librarian
 	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
@@ -691,38 +480,10 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
 
-/datum/job/oasis/f13barkeep
-	title = "Barkeep"
-	flag = F13BARKEEP	
-	department_flag = DEP_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "the Adventurers Guild."
-	description = "You work for the Adventurers Guild. Check your guidebook for more info."
-	enforces = "Check your guidebook"
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/den/f13barkeep
-
-	loadout_options = list(
-	/datum/outfit/loadout/diner
-	)
-
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis
-		)
-	)
-
 
 /datum/outfit/job/den/f13barkeep
 	name = "Barkeep"
-	jobtype = /datum/job/oasis/f13barkeep
+	jobtype = /datum/job/townfolk/f13barkeep
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/guild

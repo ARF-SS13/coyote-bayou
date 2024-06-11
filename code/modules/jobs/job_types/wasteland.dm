@@ -1,5 +1,4 @@
-/datum/job/wasteland
-	department_flag = WASTELAND
+
 
 /*
 Raider
@@ -620,39 +619,18 @@ Raider
 		/obj/item/storage/fancy/rollingpapers = 1,
 		)
 
-/datum/job/wasteland/f13raider/adventurer
-	title = "Adventurer"
-	flag = DEP_OASIS
-	faction = FACTION_OASIS
-	total_positions = -1
-	spawn_positions = -1
-	selection_color = "#df80af"
-	exp_requirements = 0
-
-
-	outfit = /datum/outfit/job/wasteland/f13wastelander
-
-	access = list()
-	minimal_access = list()
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13raider,
-		),
-		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13raider,
-		),
-		/datum/matchmaking_pref/outlaw = list(
-			/datum/job/wasteland/f13raider,
-		),
-		/datum/matchmaking_pref/bounty_hunter = list(
-			/datum/job/wasteland/f13raider,
-		),
-	)
-
+/datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	for(var/datum/crafting_recipe/recipe as() in GLOB.tribal_job_recipes)
+		H.mind.teach_crafting_recipe(recipe)
+	H.grant_language(/datum/language/tribal)
+	add_verb(H, /mob/living/proc/create_tribe)
 
 /datum/outfit/job/wasteland/f13raider/resident
 	name = "Tunnel Rats Resident"
-	jobtype = /datum/job/wasteland/f13raider/adventurer
+	jobtype = /datum/job/townfolk/adventurer
 
 	id = null
 	ears = null
@@ -880,64 +858,6 @@ Raider
 
 
 
-/datum/job/wasteland/f13wastelander
-	title = "Wastelander"
-	flag = F13WASTELANDER
-	faction = FACTION_WASTELAND
-	total_positions = -1
-	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
-	supervisors = "fate"
-	selection_color = "#dddddd"
-
-	outfit = /datum/outfit/job/wasteland/f13wastelander
-
-	access = list()		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list()
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/mentor = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/disciple = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-	)
-	/*
-	loadout_options = list(
-	/datum/outfit/loadout/vault_refugee,
-	/datum/outfit/loadout/salvager,
-	/datum/outfit/loadout/medic,
-	/datum/outfit/loadout/merchant,
-	/datum/outfit/loadout/scavenger,
-	/datum/outfit/loadout/settler,
-	/datum/outfit/loadout/warrior,
-	/datum/outfit/loadout/gambler,
-	/datum/outfit/loadout/vaquero,
-	/datum/outfit/loadout/hobo,
-	/datum/outfit/loadout/hombre,
-	/datum/outfit/loadout/exmil,
-	/datum/outfit/loadout/strandedbos,
-	/datum/outfit/loadout/eidolon,
-	/datum/outfit/loadout/aviator,
-	/datum/outfit/loadout/trapper,
-	/datum/outfit/loadout/trouper,
-	/datum/outfit/loadout/monk)
-//	/datum/outfit/loadout/ncrcitizen,
-//	/datum/outfit/loadout/legioncivilian,
-//	/datum/outfit/loadout/wastelander_desert_ranger)
-*/
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
@@ -1286,31 +1206,13 @@ Raider
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
-/datum/job/wasteland/f13wastelander/backstage
-	title = "Backstage Character"
-	flag = CBOOCBACKSTAGE
-	faction = FACTION_WASTELAND
-
 
 /datum/job/wasteland/f13wastelander/gar
 	title = "Garland Citizen"
 	flag = F13WASTEGAR
 	faction = FACTION_WASTELAND
 
-/datum/job/wasteland/f13radioop
-	title = "Radio Operator"
-	flag = F13RADIOOP
-	faction = FACTION_OASIS
-	total_positions = 2
-	spawn_positions = 2
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
-	supervisors = "fate"
-	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wasteland/f13radioop
-
-	access = list(ACCESS_TCOMSAT)
-	minimal_access = list(ACCESS_TCOMSAT)
 /datum/outfit/job/wasteland/f13radioop
 	name = "Radio Operator"
 	jobtype = /datum/job/wasteland/f13radioop
@@ -1412,47 +1314,6 @@ Raider
 
 
 //Nash Preacher
-/datum/job/oasis/f13preacher
-	title = "Preacher"
-	flag = F13PREACHER
-	department_flag = DEP_OASIS
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "your faith"
-	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/oasis/f13preacher
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
-	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
-	/datum/outfit/loadout/cleanser		//Just some bombs.
-	)
-*/
-	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts <--I'm doing something about it now!
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/mentor = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/disciple = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-	)
-
 
 
 /datum/outfit/loadout/crusader
@@ -1482,7 +1343,7 @@ Raider
 	)
 
 
-/datum/job/oasis/f13preacher/after_spawn(mob/living/H, mob/M)
+/datum/job/townfolk/preacher/after_spawn(mob/living/H, mob/M)
 	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
@@ -1577,7 +1438,7 @@ Raider
 
 /datum/outfit/job/oasis/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/oasis/f13preacher
+	jobtype = /datum/job/townfolk/preacher
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
@@ -1677,9 +1538,9 @@ Raider
 	minimal_access = list(ACCESS_DEN)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis/f13mayor,
-			/datum/job/oasis/f13sheriff,
-			/datum/job/oasis/f13detective,
+			/datum/job/townfolk/f13mayor,
+			/datum/job/townfolk/f13sheriff,
+			/datum/job/townfolk/f13detective,
 		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13wastelander,
@@ -1940,101 +1801,6 @@ Raider
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 
 //New tribal role. Replaces old tribe stuff.
-/datum/job/wasteland/f13tribal
-	title = "Far-Lands Tribals"
-	flag = F13TRIBAL
-	faction = FACTION_WASTELAND
-	social_faction = FACTION_TRIBE
-	total_positions = -1
-	spawn_positions = -1
-	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
-	supervisors = "the Ways of your own tribe."
-
-	selection_color = "#dddddd"
-
-	outfit = /datum/outfit/job/wasteland/f13tribal
-
-	access = list()
-	minimal_access = list()
-/*
-	loadout_options = list(
-	/datum/outfit/loadout/brawler,
-	/datum/outfit/loadout/spearman,
-	/datum/outfit/loadout/wayfarermelee,
-	/datum/outfit/loadout/wayfarerranged,
-	/datum/outfit/loadout/wayfarershaman,
-	/datum/outfit/loadout/shaman,
-	/datum/outfit/loadout/lostvillager,
-	/datum/outfit/loadout/whitelegsranged,
-	/datum/outfit/loadout/whitelegsshaman,
-	/datum/outfit/loadout/deadhorsesmelee,
-	/datum/outfit/loadout/deadhorsesranged,
-	/datum/outfit/loadout/deadhorsesshaman,
-	/datum/outfit/loadout/sorrowshunter,
-	/datum/outfit/loadout/sorrowsshaman,
-	/datum/outfit/loadout/eightiesmelee,
-	/datum/outfit/loadout/eightiesranged,
-	/datum/outfit/loadout/eightiesshaman,
-	/datum/outfit/loadout/rustwalkersscipher,
-	/datum/outfit/loadout/rustwalkersscrapper,
-	/datum/outfit/loadout/rustwalkersshaman,
-	/datum/outfit/loadout/bonedancerexile
-	)
-*/
-/datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-/*
-	ADD_TRAIT(H, TRAIT_TRIBAL, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_TRAPPER, src)
-	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
-	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	H.grant_language(/datum/language/tribal)
-*/
-
-	var/list/recipes = list(
-		/datum/crafting_recipe/tribal_pa,
-		/datum/crafting_recipe/tribal_pa_helmet,
-		/datum/crafting_recipe/tribal_combat_armor,
-		/datum/crafting_recipe/tribal_combat_armor_helmet,
-		/datum/crafting_recipe/tribal_r_combat_armor,
-		/datum/crafting_recipe/tribal_r_combat_armor_helmet,
-		/datum/crafting_recipe/tribalwar/chitinarmor,
-		/datum/crafting_recipe/tribalwar/aethergiestspear,
-		/datum/crafting_recipe/tribalwar/lightcloak,
-		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
-		/datum/crafting_recipe/warpaint,
-		/datum/crafting_recipe/tribalradio,
-		/datum/crafting_recipe/tribalwar/goliathcloak,
-		///datum/crafting_recipe/tribalwar/bonebow,
-		///datum/crafting_recipe/tribalwar/tribe_bow,
-		///datum/crafting_recipe/tribalwar/sturdybow,
-		/datum/crafting_recipe/tribalwar/warclub,
-		///datum/crafting_recipe/tribalwar/silverbow,
-		///datum/crafting_recipe/tribalwar/arrowbone,
-		/datum/crafting_recipe/tribalwar/bonespear,
-		/datum/crafting_recipe/tribalwar/bonecodpiece,
-		/datum/crafting_recipe/tribalwar/bracers,
-		///datum/crafting_recipe/tribal/bonetalisman,
-		/datum/crafting_recipe/bitterdrink,
-		/datum/crafting_recipe/bitterdrink5,
-		/datum/crafting_recipe/healpoultice,
-		/datum/crafting_recipe/healpoultice5,
-		/datum/crafting_recipe/redambrosia,
-		/datum/crafting_recipe/blueambrosia,
-		/datum/crafting_recipe/greenambrosia,
-		/datum/crafting_recipe/food/pemmican,
-		/datum/crafting_recipe/tribal/bonebag,
-		/datum/crafting_recipe/horsecream_good
-	)
-	for(var/datum/crafting_recipe/recipe as() in recipes)
-		H.mind.teach_crafting_recipe(recipe)
-	H.grant_language(/datum/language/tribal)
-	add_verb(H, /mob/living/proc/create_tribe)
-
 
 /datum/outfit/job/wasteland/f13tribal
 	name = "Far-Lands Tribal"
@@ -2589,28 +2355,9 @@ Raider
 
 // Newbie Teacher
 
-/datum/job/wasteland/f13ranger
-	title = "Texarkana Ranger"
-	flag = F13TEACHER
-	department_flag = TEACHER
-	faction = FACTION_TEACHER
-	req_admin_notify = 1
-	total_positions = 3
-	spawn_positions = 3
-	exp_requirements = 0 //10080
-	exp_type = EXP_TYPE_LIVING
-	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
-	supervisors = "fate"
-	selection_color = "#228c22"
-
-	outfit = /datum/outfit/job/wasteland/f13ranger
-
-	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER)
-
 /datum/outfit/job/wasteland/f13ranger
 	name = "Texarkana Ranger"
-	jobtype = /datum/job/wasteland/f13ranger
+	jobtype = /datum/job/wasteland/ranger
 
 	id = /obj/item/card/id/dogtag/ranger
 	ears = /obj/item/radio/headset/headset_town/lawman

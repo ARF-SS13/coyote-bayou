@@ -277,7 +277,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["lockouts"]	>> lockouts // my bans!
 	S["admin_wire_tap"]	>> admin_wire_tap // my bans!
-
+	var/jasin = ""
+	S["quest_bank_editor_prefs"]	>> jasin
+	quest_bank_editor_prefs = safe_json_decode(jasin)
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
@@ -325,6 +327,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	damagescreenshake       = sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	widescreenpref          = sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
 	end_of_round_deathmatch = sanitize_integer(end_of_round_deathmatch, FALSE, TRUE, initial(end_of_round_deathmatch))
+
+	quest_bank_editor_prefs = sanitize_islist(quest_bank_editor_prefs, list())
+
 	show_health_smilies     = sanitize_integer(show_health_smilies, 0, 1, initial(show_health_smilies))
 	autostand               = sanitize_integer(autostand, 0, 1, initial(autostand))
 	cit_toggles             = sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
@@ -455,6 +460,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 	WRITE_FILE(S["admin_wire_tap"], admin_wire_tap)
+	var/jsout = safe_json_encode(quest_bank_editor_prefs)
+	WRITE_FILE(S["quest_bank_editor_prefs"], jsout)
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -914,6 +921,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["pda_skin"]			>> pda_skin
 	S["pda_ringmessage"]	>> pda_ringmessage
 
+	S["last_quest_login"]	>> last_quest_login
+
 	//Permanent Tattoos
 	faved_interactions = safe_json_decode(S["faved_interactions"])
 	blocked_from_dms = safe_json_decode(S["blocked_from_dms"])
@@ -951,6 +960,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	saved_unclaimed_points     = sanitize_integer(saved_unclaimed_points,    0, INFINITY, initial(saved_unclaimed_points))
 	number_of_finished_quests  = sanitize_integer(number_of_finished_quests, 0, INFINITY, initial(number_of_finished_quests))
 	historical_banked_points   = sanitize_integer(historical_banked_points,  0, INFINITY, initial(historical_banked_points))
+	last_quest_login           = sanitize_integer(last_quest_login,          5, INFINITY, world.realtime)
 
 
 	//Sanitize
@@ -1569,6 +1579,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["pda_skin"], pda_skin)
 	WRITE_FILE(S["pda_ringmessage"], pda_ringmessage)
+
+	WRITE_FILE(S["last_quest_login"], last_quest_login)
 
 	return 1
 

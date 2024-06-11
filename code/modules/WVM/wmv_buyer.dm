@@ -433,14 +433,13 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if("[I.type]" == last_appraised)
 		quiet = TRUE
 	last_appraised = "[I.type]"
-	var/final_price = (round(COINS_TO_CREDITS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
+	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
 		if(!silent)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
 	if(!silent)
-		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
-		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = quiet)
+		say("I'll give you [SSeconomy.format_currency(final_price, TRUE, TRUE)] per [I]!", just_chat = quiet)
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -676,8 +675,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
 	var/thing = I ? "\the [I]" : "something"
-	var/currencie = soldfor > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	var/currencei = totalcash > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
+	var/currencie = "[SSeconomy.format_currency(soldfor, TRUE, TRUE)]"
+	var/currencei = "[SSeconomy.format_currency(totalcash, TRUE, TRUE)]"
 	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
 
 /obj/item/debug_vendorsale
@@ -690,7 +689,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
 
 /obj/item/debug_vendorsale/proc/get_value()
-	return round(COINS_TO_CREDITS(12345))
+	return round(CREDITS_TO_COINS(12345))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for

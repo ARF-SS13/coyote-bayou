@@ -56,7 +56,7 @@
 		P.info += "Paid by: [paying_account.account_holder]<br/>"
 	P.info += "Rank: [orderer_rank]<br/>"
 	P.info += "Comment: [reason]<br/>"
-	P.costvalue = round(COINS(abs(gaussian(10, 10))))
+	P.costvalue = round(COINS_TO_CREDITS(abs(gaussian(10, 10))))
 
 	P.update_icon()
 	return P
