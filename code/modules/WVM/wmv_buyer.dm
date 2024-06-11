@@ -677,7 +677,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/thing = I ? "\the [I]" : "something"
 	var/currencie = "[SSeconomy.format_currency(soldfor, TRUE, TRUE)]"
 	var/currencei = "[SSeconomy.format_currency(totalcash, TRUE, TRUE)]"
-	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
+	say("Sold [thing] for [currencie], bringing the total to [currencei]!")
 
 /obj/item/debug_vendorsale
 	name = "Really Valuable Thing"
