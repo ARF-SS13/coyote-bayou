@@ -233,7 +233,7 @@
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
 	var/drop_amount = 3
-/*
+
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
 		if(isfloorturf(loc) || isplatingturf(loc))
@@ -241,9 +241,9 @@
 				var/obj/item/stack/sheet/mineral/wood/W = I
 				if(W.amount >= 3)
 					var/list/walls = list(
-						"Wooden Wall" = image(icon = 'icons/fallout/turfs/walls/wood.dmi', icon_state = "wood0"),
+						"Wooden Wall" = image(icon = 'icons/turf/walls/wood_log.dmi', icon_state = "wall-12"),
 						"Interior Wall" = image(icon = 'icons/fallout/turfs/walls/interior.dmi', icon_state = "interior0"),
-						"House Wall" = image(icon = 'icons/fallout/turfs/walls/house.dmi', icon_state = "house0")
+						"House Wall" = image(icon = 'icons/turf/walls/house_wall_dirty.dmi', icon_state = "wall-12")
 					)
 					var/chosen_wall = show_radial_menu(user, src, walls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user, I))
@@ -267,7 +267,7 @@
 							to_chat(user, span_notice("You start building a house wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
-								T.ChangeTurf(/turf/closed/wall/f13/wood/house)
+								T.ChangeTurf(/turf/closed/wall/f13/wood/house/clean)
 								qdel(src)
 								return TRUE
 				else
@@ -303,7 +303,7 @@
 				var/obj/item/stack/sheet/cloth/C = I
 				if(C.amount >= 3)
 					var/list/tentwalls = list(
-						"Tent Wall" = image(icon = 'icons/fallout/turfs/walls/tent.dmi', icon_state = "tent0"),
+						"Tent Wall" = image(icon = 'icons/turf/walls/tent_wall.dmi', icon_state = "wall-0"),
 						"Tent Flaps" = image(icon = 'icons/fallout/structures/doors.dmi', icon_state = "tent")
 					)
 					var/chosen_tent = show_radial_menu(user, src, tentwalls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
@@ -330,7 +330,7 @@
 			to_chat(user, span_warning("You can only build the structure on a solid floor!"))
 	else
 		return ..()
-*/
+
 /obj/structure/barricade/wooden/proc/check_menu(mob/living/user, obj/item/I)
 	if(!istype(user))
 		return FALSE
