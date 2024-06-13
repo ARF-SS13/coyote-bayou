@@ -443,11 +443,11 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fb" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
 "fd" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/closed/mineral/random/low_chance,
@@ -779,7 +779,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "iT" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1053,10 +1053,10 @@
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
 "lO" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -1282,8 +1282,8 @@
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
 "oo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -1432,7 +1432,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ql" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "qt" = (
@@ -1907,7 +1907,7 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "wl" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -2151,7 +2151,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "zF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -2576,13 +2576,13 @@
 /area/f13/wasteland)
 "Eh" = (
 /obj/structure/simple_door/wood,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
 /area/f13/building/church)
 "En" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2968,7 +2968,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Iw" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior2"
 	},
@@ -3146,7 +3146,7 @@
 	pixel_x = -7;
 	pixel_y = -12
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
 "JW" = (
@@ -3618,7 +3618,7 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building/church)
 "Pp" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/prewar/poster70{
 	pixel_y = 32
 	},
@@ -4039,7 +4039,7 @@
 	},
 /area/f13/wasteland)
 "UF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/roof,
@@ -4263,7 +4263,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "WX" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
