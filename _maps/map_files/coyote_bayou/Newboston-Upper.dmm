@@ -745,9 +745,7 @@
 "cb" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/wood,
 /area/f13/building)
 "cd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1333,9 +1331,7 @@
 /area/f13/wasteland/city/newboston/house/cabin_six)
 "dl" = (
 /obj/structure/decoration/rag,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "dm" = (
 /obj/machinery/light/broken{
@@ -3031,8 +3027,7 @@
 "hh" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/building)
 "hi" = (
@@ -3479,9 +3474,7 @@
 	name = "vines"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "ih" = (
 /obj/structure/flora/chomp/bush2{
@@ -3684,8 +3677,7 @@
 	icon_state = "the_lightbulb"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/building)
 "iD" = (
@@ -4642,18 +4634,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"kF" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
-/area/f13/building)
 "kG" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -6254,9 +6234,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "oj" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -6391,8 +6369,7 @@
 	color = "000000"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/building)
 "oy" = (
@@ -6545,15 +6522,6 @@
 	color = "#888888"
 	},
 /area/f13/building/tribal)
-"oN" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
-/area/f13/building)
 "oO" = (
 /obj/structure/curtain{
 	color = "#5c131b";
@@ -8995,8 +8963,7 @@
 /area/f13/wasteland/city/newboston/house/cabin_four)
 "uP" = (
 /obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "housewindowbroken"
+	dir = 2
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/spacevine,
@@ -10510,8 +10477,7 @@
 /area/f13/building)
 "yR" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/brotherhood)
 "yT" = (
@@ -11642,8 +11608,7 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "Bq" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -14877,9 +14842,7 @@
 /obj/structure/decoration/rag{
 	icon_state = "skin"
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/mineral/brick,
 /area/f13/building)
 "IJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -14988,8 +14951,7 @@
 /area/f13/tribe)
 "IX" = (
 /obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "housewindowbroken"
+	dir = 2
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/curtain{
@@ -16366,10 +16328,6 @@
 	},
 /turf/open/floor/f13,
 /area/f13/brotherhood)
-"Mo" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "Mp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -16541,9 +16499,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "MJ" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowbroken"
-	},
+/obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/curtain{
 	color = "#845f58";
@@ -16810,12 +16766,6 @@
 	color = "#A1BFFF"
 	},
 /area/f13/tribe)
-"Ne" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
-/area/f13/building)
 "Nf" = (
 /obj/structure/closet/cabinet/anchored{
 	pixel_x = 3;
@@ -20025,11 +19975,6 @@
 	footstep = "grass"
 	},
 /area/f13/tribe)
-"Ut" = (
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
-/area/f13/building)
 "Uu" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -20266,8 +20211,7 @@
 "UV" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/wasteland)
 "UW" = (
@@ -20871,17 +20815,15 @@
 	},
 /area/f13/tribe)
 "Wm" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowbroken"
-	},
+/obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/curtain{
 	color = "#845f58";
 	layer = 5
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "Wn" = (
@@ -21724,8 +21666,7 @@
 /area/f13/wasteland/city/newboston/house/cabin_six)
 "Yh" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+	desc = "A pre-War wall made of solid concrete."
 	},
 /area/f13/building)
 "Yi" = (
@@ -30635,10 +30576,10 @@ Yj
 rz
 MH
 oc
-Mo
-Mo
+EU
+EU
 vA
-Mo
+EU
 pK
 TL
 rz
@@ -30892,7 +30833,7 @@ Yj
 rz
 Jy
 oc
-Mo
+EU
 YU
 nz
 YU
@@ -31149,7 +31090,7 @@ Yj
 sV
 pK
 JN
-Mo
+EU
 cx
 yJ
 rS
@@ -31406,7 +31347,7 @@ Yj
 rz
 Vb
 oc
-Mo
+EU
 YU
 yi
 YU
@@ -31663,10 +31604,10 @@ Yj
 rz
 MH
 oc
-Mo
-Mo
-Mo
-Mo
+EU
+EU
+EU
+EU
 pK
 TL
 rz
@@ -32948,7 +32889,7 @@ Yj
 GU
 mX
 Pj
-Mo
+EU
 Pj
 ZV
 an
@@ -59959,8 +59900,8 @@ PE
 tN
 tN
 rs
-Ut
-Ut
+rs
+rs
 rs
 dK
 dK
@@ -60218,7 +60159,7 @@ tN
 dl
 ZK
 Ur
-Ut
+rs
 dK
 Vj
 Yz
@@ -60729,7 +60670,7 @@ bU
 tN
 tN
 tN
-Ne
+Xs
 sQ
 ZR
 oi
@@ -60986,13 +60927,13 @@ bU
 tN
 tN
 tN
-Ne
+Xs
 oI
 ZR
 oi
 Xs
-Ne
-Ne
+Xs
+Xs
 Xs
 yl
 dK
@@ -61250,7 +61191,7 @@ BR
 Va
 WY
 tv
-Ne
+Xs
 yl
 dK
 dK
@@ -61507,7 +61448,7 @@ ZR
 rC
 NU
 iT
-Ne
+Xs
 Dx
 dK
 dK
@@ -61758,12 +61699,12 @@ Ws
 Ws
 Ws
 rq
-kF
+rq
 Pt
-Ut
-Ne
-Ne
-oN
+rs
+Xs
+Xs
+zb
 zb
 EO
 dK
@@ -80818,8 +80759,8 @@ GU
 Yj
 Yj
 GU
-jZ
-jZ
+GU
+GU
 tN
 tN
 tN
@@ -82621,7 +82562,7 @@ GU
 GU
 GU
 Yj
-jZ
+GU
 GU
 GU
 GU
@@ -82879,7 +82820,7 @@ GU
 GU
 GU
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -83136,9 +83077,9 @@ GU
 GU
 GU
 GU
-jZ
 GU
-jZ
+GU
+GU
 GU
 GU
 GU
@@ -83395,7 +83336,7 @@ GU
 GU
 GU
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -83650,11 +83591,11 @@ GU
 GU
 GU
 GU
-jZ
-jZ
 GU
 GU
-jZ
+GU
+GU
+GU
 GU
 GU
 GU
@@ -83906,11 +83847,11 @@ GU
 GU
 GU
 GU
-jZ
-jZ
 GU
-jZ
-jZ
+GU
+GU
+GU
+GU
 GU
 GU
 GU
@@ -84165,7 +84106,7 @@ us
 jZ
 GU
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -84421,8 +84362,8 @@ us
 us
 GU
 GU
-jZ
-jZ
+GU
+GU
 GU
 GU
 GU
@@ -85444,7 +85385,7 @@ us
 GU
 GU
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -85700,7 +85641,7 @@ GU
 GU
 GU
 jZ
-jZ
+GU
 GU
 GU
 GU
@@ -85958,7 +85899,7 @@ GU
 GU
 jZ
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -86215,7 +86156,7 @@ GU
 jZ
 GU
 GU
-jZ
+GU
 GU
 GU
 GU
@@ -86471,8 +86412,8 @@ GU
 GU
 GU
 jZ
-jZ
-Rz
+GU
+GU
 GU
 GU
 GU
@@ -86728,8 +86669,8 @@ GU
 GU
 jZ
 jZ
-jZ
-jZ
+GU
+GU
 GU
 GU
 GU
@@ -86986,7 +86927,7 @@ GU
 GU
 Rz
 GU
-jZ
+GU
 GU
 GU
 GU
