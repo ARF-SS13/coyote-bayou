@@ -119,6 +119,8 @@
 	RegisterSignal(src, COMSIG_LICK_RETURN,PROC_REF(start_licking))
 
 /obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
+	if(SEND_SIGNAL(licked, COMSIG_ATOM_LICKED, user, src))
+		return
 	var/list/lick_words = get_lick_words(user)
 	if(isliving(licked))
 		user.visible_message(
