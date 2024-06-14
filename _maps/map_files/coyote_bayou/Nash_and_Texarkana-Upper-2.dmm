@@ -9354,6 +9354,20 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Js" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/splineplain{
+	dir = 8
+	},
+/obj/structure/respawner_blocker{
+	pixel_y = 9
+	},
+/turf/open/floor/plating/f13/outside/roof,
+/area/f13/wasteland)
 "Ju" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -13239,6 +13253,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/respawner_blocker{
+	pixel_y = 9
+	},
 /turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
 "WH" = (
@@ -13777,6 +13794,9 @@
 /obj/effect/turf_decal/weather/splineplain{
 	dir = 10
 	},
+/obj/structure/respawner_blocker{
+	pixel_y = 9
+	},
 /turf/open/floor/plating/f13/outside/roof/metal/corrugated{
 	color = "grey"
 	},
@@ -13853,6 +13873,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/respawner_blocker{
+	pixel_y = 9
+	},
 /turf/open/floor/plating/f13/outside/roof{
 	color = "grey"
 	},
@@ -51217,7 +51240,7 @@ BR
 dR
 lz
 Zo
-Yr
+Js
 CS
 Vw
 Yr
@@ -60749,7 +60772,7 @@ bY
 bY
 bY
 jk
-hm
+WH
 hm
 hm
 hm
@@ -61006,14 +61029,14 @@ bY
 bY
 bY
 jk
+WH
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -61263,16 +61286,16 @@ bY
 bY
 bY
 jk
+WH
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -61520,16 +61543,16 @@ bY
 bY
 bY
 jk
+WH
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -61777,16 +61800,16 @@ bY
 jk
 jk
 jk
+WH
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -62034,16 +62057,16 @@ Xd
 jk
 jk
 jk
+WH
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -62291,16 +62314,16 @@ yV
 jk
 jk
 jk
+WH
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -62551,13 +62574,13 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -62808,11 +62831,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
@@ -63065,11 +63088,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+yP
+yP
+yP
+yP
+yP
 hm
 hm
 hm
