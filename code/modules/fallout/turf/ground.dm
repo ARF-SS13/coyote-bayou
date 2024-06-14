@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(grass_plant_list, list(
-	/obj/structure/flora/grass/wasteland = 350,
+	/obj/structure/flora/grass/wasteland = 1400,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
@@ -454,8 +454,8 @@ GLOBAL_LIST_INIT(trash_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(salvage_spawn_list, list(
-	/obj/effect/decal/cleanable/dirt/dust = 50,
-	/obj/structure/car = 10,
+	/obj/effect/decal/cleanable/dirt/dust = 110,
+	/obj/structure/car = 5,
 	/obj/structure/car/rubbish1 = 10,
 	/obj/structure/car/rubbish2 = 10,
 	/obj/structure/car/rubbish3 = 10,
