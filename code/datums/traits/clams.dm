@@ -76,14 +76,15 @@
 	inedible = TRUE // sorta
 	tastes = list("seafood" = 4, "dirt" = 1, "pointy" = 1)
 	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/water = 2,
 		/datum/reagent/consumable/sodiumchloride = 3,
 		/datum/reagent/consumable/iron = 1,
 		/datum/reagent/consumable/vitamin = 2,
-		/datum/reagent/consumable/clam_meat = 6,
-		/datum/reagent/consumable/clam_juice = 14,
-		/datum/reagent/shell_shrapnel = 10,
+		/datum/reagent/consumable/clam_meat = 3,
+		/datum/reagent/consumable/clam_juice = 5,
+		/datum/reagent/shell_shrapnel = 10, // yeouch!
+		/datum/reagent/calciumcarbonate = 2,
 	)
 
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
@@ -331,6 +332,29 @@
 			msg_in.replacetext("th", "zh") // yinglet
 	return msg_in
 
+/obj/item/reagent_containers/food/snacks/clam_meat
+	name = "clam meat"
+	icon = 'icons/obj/food.dmi'
+	icon_state = "clam_meat"
+	desc = "A delicious morsel of clam meat, both good for zhe body and soul. A local delicacy of weird rats on stilts."
+	tastes = list("seafood" = 4, "dirt" = 1, "weh" = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/water = 2,
+		/datum/reagent/consumable/sodiumchloride = 3,
+		/datum/reagent/consumable/iron = 1,
+		/datum/reagent/consumable/vitamin = 2,
+		/datum/reagent/consumable/clam_meat = 3,
+		/datum/reagent/consumable/clam_juice = 5,
+	)
+	bitesize = 12
+	filling_color = "#CD853F"
+
+/obj/item/reagent_containers/food/snacks/clam_meat/proc/oysterize()
+	name = "oyster meat"
+	icon_state = "oyster_meat"
+	desc = "A delicious morsel of oyster meat, both good for zhe body and soul. A local rocky mountain delicacy of weird rats on stilts, despite not being a clam."
+	tastes = list("oyster" = 4, "dirt" = 1, "weh" = 1)
 
 
 
