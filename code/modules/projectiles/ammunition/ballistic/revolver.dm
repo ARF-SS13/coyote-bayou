@@ -2,7 +2,7 @@
 /obj/item/ammo_casing/a357
 	name = ".357 FMJ bullet casing"
 	desc = "A .357 FMJ bullet casing."
-	caliber = CALIBER_357
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/a357
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	custom_materials = list(
@@ -86,7 +86,7 @@
 /obj/item/ammo_casing/m44
 	name = ".44 magnum FMJ bullet casing"
 	desc = "A .44 magnum full metal jacket bullet casing."
-	caliber = CALIBER_44
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/m44
 	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
@@ -98,7 +98,7 @@
 /obj/item/ammo_casing/m44/improvised
 	name = "shoddy .44 magnum bullet casing"
 	desc = "A homemade .44 magnum bullet casing."
-	caliber = CALIBER_44
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/m44/improvised
 	material_class = BULLET_IS_HEAVY_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -117,7 +117,7 @@
 /obj/item/ammo_casing/c4570
 	name = ".45-70 FMJ bullet casing"
 	desc = "A .45-70 full metal jacket bullet casing."
-	caliber = CALIBER_4570
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/c4570
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
@@ -136,7 +136,7 @@
 /obj/item/ammo_casing/c4570/improvised
 	name = "shoddy .45-70 bullet casing"
 	desc = "A homemade .45-70 bullet casing."
-	caliber = CALIBER_4570
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/c4570/improvised
 	material_class = BULLET_IS_HEAVY_RIFLE
 	casing_quality = BULLET_IS_HANDLOAD
@@ -178,7 +178,7 @@
 /obj/item/ammo_casing/a45lc
 	name = ".45 Long Colt bullet casing"
 	desc = "An archaic .45 long colt bullet casing."
-	caliber = CALIBER_45LC
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/a45lc
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	custom_materials = list(
@@ -190,7 +190,7 @@
 /obj/item/ammo_casing/a45lc/improvised
 	name = "shoddy .45 LC bullet casing"
 	desc = "An archaic .45 long colt bullet casing. Now about 25% worse."
-	caliber = CALIBER_45LC
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/a45lc/improvised
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD

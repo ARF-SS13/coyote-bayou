@@ -1,7 +1,7 @@
 /obj/item/ammo_casing/caseless/rocket
 	name = "\improper Low Yield Rocket"
 	desc = "The PM-9LHE is an 84mm low-yield High Explosive rocket. Fire at people and pray."
-	caliber = CALIBER_ROCKET
+	caliber = CALIBER_SHOTGUN
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "m6a1"
 	projectile_type = /obj/item/projectile/bullet/a84mm_he
@@ -42,7 +42,7 @@
 
 /obj/item/ammo_casing/caseless/a75
 	desc = "A .75 bullet casing."
-	caliber = CALIBER_75
+	caliber = CALIBER_COMPACT
 	icon_state = "s-casing-live"
 	projectile_type = /obj/item/projectile/bullet/gyro
 

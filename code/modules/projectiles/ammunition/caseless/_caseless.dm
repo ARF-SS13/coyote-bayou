@@ -27,7 +27,7 @@
 	desc = "A dart for use in needler pistols."
 	icon_state = "needlecasing"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = CALIBER_NEEDLE
+	caliber = CALIBER_COMPACT
 	force = 2
 	throwforce = 1
 	embedding = list("embed_chance"= 25)
@@ -38,7 +38,7 @@
 	desc = "A heavy and long dart for use in needler heavy weaponary."
 	icon_state = "heavyneedlecase"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = CALIBER_HNEEDLE
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/heavyneedle
 
 /obj/item/ammo_casing/caseless/needle/improvised
@@ -46,7 +46,7 @@
 	desc = "A dart for use in needler pistols."
 	icon_state = "needleimprovcase"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = CALIBER_NEEDLE
+	caliber = CALIBER_COMPACT
 	force = 2
 	throwforce = 1
 	projectile_type = /obj/item/projectile/bullet/needle/improvised
@@ -54,13 +54,13 @@
 /obj/item/ammo_casing/caseless/musketball
 	name = "Musketball"
 	desc = "This is a lead ball for a musket."
-	caliber = CALIBER_MUSKET_BALL
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/F13/musketball
 
 /obj/item/ammo_casing/caseless/lasermusket
 	name = "Battery"
 	desc = "A single use battery for the lasmusket."
-	caliber = CALIBER_MUSKET_LASER
+	caliber = CALIBER_MEDIUM
 	icon_state = "lasmusketbat"
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
@@ -68,7 +68,7 @@
 /obj/item/ammo_casing/caseless/plasmacaster
 	name = "Plasma can"
 	desc = "A single use can of plasma for the plasma musket."
-	caliber = CALIBER_MUSKET_PLASMA
+	caliber = CALIBER_LONG
 	icon_state = "plasmacan"
 	projectile_type = /obj/item/projectile/f13plasma/plasmacaster
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy

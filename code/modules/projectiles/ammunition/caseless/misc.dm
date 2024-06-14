@@ -53,7 +53,7 @@
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
-	caliber = CALIBER_ROCK
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/rock
 	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50) //rocks are made of silicon, same as sand
@@ -77,7 +77,7 @@
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
-	caliber = CALIBER_BRICK
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/brick
 	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50)
@@ -88,7 +88,7 @@
 /obj/item/ammo_casing/caseless/flintlock
 	name = "packed blackpowder cartridge"
 	desc = "a measure of blackpowder and round musket ball."
-	caliber = CALIBER_FLINTLOCK
+	caliber = CALIBER_MEDIUM
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "flintlock_casing"
 	projectile_type = /obj/item/projectile/flintlock
@@ -103,7 +103,7 @@
 /obj/item/ammo_casing/caseless/flintlock/minie
 	name = "packed blackpowder minie cartridge"
 	desc = "A conical bullet designed to give flintlocks a bit more of a modern edge."
-	caliber = CALIBER_FLINTLOCK
+	caliber = CALIBER_LONG
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "flintlock_casing_minie"
 	projectile_type = /obj/item/projectile/flintlock/minie

@@ -1,6 +1,13 @@
 /*ALL DEFINES RELATED TO AMMO GO HERE*/
 
 //Caliber defines
+// hi, this is Jaeger, we redid weapon calibers and damage
+// reference below
+#define CALIBER_COMPACT "compact rounds"
+#define CALIBER_MEDIUM "medium rounds"
+#define CALIBER_LONG "long rounds"
+#define CALIBER_SHOTGUN "shotgun rounds"
+// deprecated defines
 #define CALIBER_22LR ".22LR rounds"
 #define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_MOUSE ".22LR mouseshot rounds"
@@ -19,7 +26,7 @@
 #define CALIBER_4570 ".45-70 rounds"
 #define CALIBER_50MG ".50MG rounds"
 #define CALIBER_2MM "2mmEC gauss slugs"
-#define CALIBER_SHOTGUN "12 gauge shells"
+#define CALIBER_SHOTGUN_DEPRECATED "12 gauge shells" // added _bad
 #define CALIBER_CASELESS "4.73mm caseless"
 #define CALIBER_75 ".75 gyrojets"
 #define CALIBER_195 "1.95mm rounds"

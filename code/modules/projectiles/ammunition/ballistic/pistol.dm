@@ -2,7 +2,7 @@
 /obj/item/ammo_casing/c10mm
 	name = "10mm FMJ bullet casing"
 	desc = "A 10mm FMJ bullet casing."
-	caliber = CALIBER_10MM
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/c10mm
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	casing_quality = BULLET_IS_SURPLUS
@@ -15,7 +15,7 @@
 /obj/item/ammo_casing/c10mm/improvised
 	name = "shoddy 10mm bullet casing"
 	desc = "A homemade 10mm FMJ bullet casing."
-	caliber = CALIBER_10MM
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/c10mm/improvised
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -43,7 +43,7 @@
 /obj/item/ammo_casing/c9mm
 	name = "9mm FMJ bullet casing"
 	desc = "A 9mm FMJ bullet casing."
-	caliber = CALIBER_9MM
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/c9mm
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_SURPLUS
@@ -85,7 +85,7 @@
 /obj/item/ammo_casing/p14mm
 	name = "14mm FMJ bullet casing"
 	desc = "A 14mm FMJ bullet casing."
-	caliber = CALIBER_14MM
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/mm14
 	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
@@ -97,7 +97,7 @@
 /obj/item/ammo_casing/p14mm/improvised
 	name = "shoddy 14mm bullet casing"
 	desc = "A handloaded 14mm bullet casing."
-	caliber = CALIBER_14MM
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/mm14
 	material_class = BULLET_IS_HEAVY_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -124,7 +124,7 @@
 /obj/item/ammo_casing/a22
 	name = ".22lr bullet casing"
 	desc = "A .22lr bullet casing."
-	caliber = CALIBER_22LR
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/c22
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -154,7 +154,7 @@
 /obj/item/ammo_casing/bee
 	name = ".22lr beellet casing"
 	desc = "A hybernating bee inside a capsule."
-	caliber = CALIBER_BEE
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/bee
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -167,7 +167,7 @@
 /obj/item/ammo_casing/mouse
 	name = ".22lr mouseshot casing"
 	desc = "A tiny mouse nestled inside a capsule."
-	caliber = CALIBER_MOUSE
+	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/mouse
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
@@ -183,6 +183,50 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_ratshot // My headcanon is its lead BBs
 	pellets = 4 // 4 for now, maybe 3 if its overboard
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+
+// .45 
+
+/obj/item/ammo_casing/c45
+	name = ".45 FMJ bullet casing"
+	desc = "A .45 FMJ bullet casing."
+	caliber = CALIBER_COMPACT
+	projectile_type = /obj/item/projectile/bullet/c45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_45
+
+/obj/item/ammo_casing/c45/improvised
+	name = "shoddy .45 bullet casing"
+	desc = "A handmade .45 bullet casing."
+	caliber = CALIBER_COMPACT
+	projectile_type = /obj/item/projectile/bullet/c45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
+
+/obj/item/ammo_casing/c45/incendiary
+	name = ".45 incendiary bullet casing"
+	desc = "A .45 incendiary bullet casing."
+	projectile_type = /obj/item/projectile/bullet/c45/incendiary
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
+
+/obj/item/ammo_casing/c45/rubber
+	name = ".45 rubber bullet casing"
+	desc = "A .45 rubber bullet casing."
+	projectile_type = /obj/item/projectile/bullet/c45/rubber
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_RUBBER
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 // BETA AMMO // Obsolete
 /obj/item/ammo_casing/testcasing

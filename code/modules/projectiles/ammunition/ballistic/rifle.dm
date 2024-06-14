@@ -3,7 +3,7 @@
 	name = ".308 FMJ bullet casing"
 	desc = "A .308 FMJ bullet casing."
 	icon_state = "762-casing"
-	caliber = CALIBER_308
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/a308
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	custom_materials = list(
@@ -63,7 +63,7 @@
 	name = ".30-06 FMJ bullet casing"
 	desc = "A .30-06 FMJ bullet casing."
 	icon_state = "762-casing"
-	caliber = CALIBER_3006
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/a3006
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
@@ -76,7 +76,7 @@
 	name = ".30-06 FMJ bullet casing"
 	desc = "A .30-06 FMJ bullet casing."
 	icon_state = "762-casing"
-	caliber = CALIBER_3006
+	caliber = CALIBER_LONG
 	projectile_type = /obj/item/projectile/bullet/a3006/rubber
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
@@ -101,7 +101,7 @@
 /obj/item/ammo_casing/a556
 	name = "5.56mm FMJ bullet casing"
 	desc = "A 5.56mm bullet casing."
-	caliber = CALIBER_556
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/a556
 	material_class = BULLET_IS_LIGHT_RIFLE
 	custom_materials = list(
@@ -161,7 +161,7 @@
 /obj/item/ammo_casing/m5mm
 	name = "5mm FMJ bullet casing"
 	desc = "A 5mm bullet casing."
-	caliber = CALIBER_5MM
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/m5mm
 	material_class = BULLET_IS_LIGHT_RIFLE
 	casing_quality = BULLET_IS_SURPLUS
@@ -174,7 +174,7 @@
 /obj/item/ammo_casing/m5mm/improvised
 	name = "shoddy 5mm bullet casing"
 	desc = "A handmade 5mm bullet casing."
-	caliber = CALIBER_5MM
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/m5mm/improvised
 	material_class = BULLET_IS_LIGHT_RIFLE
 	casing_quality = BULLET_IS_HANDLOAD
@@ -193,7 +193,7 @@
 /obj/item/ammo_casing/a40mm
 	name = "40mm HE shell"
 	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
-	caliber = CALIBER_40MM
+	caliber = CALIBER_SHOTGUN
 	icon_state = "40mmHE"
 	projectile_type = /obj/item/projectile/bullet/a40mm/he
 	material_class = BULLET_IS_GRENADE
@@ -207,14 +207,14 @@
 /obj/item/ammo_casing/a40mm/hedp
 	name = "40mm HEDP shell"
 	desc = "A cased dual purpose grenade that can only be activated once fired out of a grenade launcher."
-	caliber = CALIBER_40MM
+	caliber = CALIBER_SHOTGUN
 	icon_state = "40mmHEDP"
 	projectile_type = /obj/item/projectile/bullet/a40mm/hedp
 
 /obj/item/ammo_casing/a40mm/buck
 	name = "40mm buckshot shell"
 	desc = "A large caliber buckshot round, designed to be fired out of a grenade launcher."
-	caliber = CALIBER_40MM
+	caliber = CALIBER_SHOTGUN
 	icon_state = "40mmbuck"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	custom_materials = list(
@@ -227,7 +227,7 @@
 /obj/item/ammo_casing/c2mm
 	name = "2mm gauss projectile casing"
 	desc = "A 2mm gauss projectile casing."
-	caliber = CALIBER_2MM
+	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/c2mm
 	material_class = BULLET_IS_GAUSS
 	casing_quality = BULLET_IS_SURPLUS

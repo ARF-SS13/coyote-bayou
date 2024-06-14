@@ -3,7 +3,7 @@
 /obj/item/ammo_casing/a50MG
 	name = ".50MG bullet casing"
 	desc = "A .50MG bullet casing."
-	caliber = CALIBER_50MG
+	caliber = CALIBER_LONG
 	icon_state = "50mg2"
 	projectile_type = /obj/item/projectile/bullet/a50MG
 	material_class = BULLET_IS_HEAVY_RIFLE
@@ -17,7 +17,7 @@
 /obj/item/ammo_casing/a50MG/improvised
 	name = "shoddy .50MG bullet casing"
 	desc = "A handmade .50MG bullet casing."
-	caliber = CALIBER_50MG
+	caliber = CALIBER_LONG
 	icon_state = "50mg2"
 	projectile_type = /obj/item/projectile/bullet/a50MG/improvised
 	material_class = BULLET_IS_HEAVY_RIFLE
