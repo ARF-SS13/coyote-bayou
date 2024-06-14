@@ -834,6 +834,7 @@
 				if(method == VAPOR)
 					var/mob/living/L = A
 					touch_protection = L.get_permeability_protection()
+				R.pre_react(A, method, R.volume * volume_modifier, show_message, touch_protection)
 				if(isrobotic(A) && !R.synth_metabolism_use_human)
 					R.reaction_synth(A, method, R.volume * volume_modifier, show_message, touch_protection)
 				else

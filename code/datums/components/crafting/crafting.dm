@@ -460,7 +460,11 @@
 		//We just need the name, so cheat-typecast to /atom for speed (even tho Reagents are /datum they DO have a "name" var)
 		//Also these are typepaths so sadly we can't just do "[a]"
 		var/atom/A = a
-		req_text += " [R.reqs[A]] [initial(A.name)],"
+		req_text += " [R.reqs[A]]"
+		if(R.customtext[A])
+			req_text += " [R.customtext[A]],"
+		else
+			req_text += " [initial(A.name)],"
 	req_text = replacetext(req_text,",","",-1)
 	data["req_text"] = req_text
 
