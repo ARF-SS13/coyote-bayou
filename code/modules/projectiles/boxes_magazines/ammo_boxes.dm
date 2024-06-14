@@ -121,7 +121,7 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
 	multiple_sprites = 0
-	caliber = list(CALIBER_FLINTLOCK)
+	caliber = list(CALIBER_MEDIUM)
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
 
@@ -134,7 +134,7 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock/minie
 	multiple_sprites = 0
-	caliber = list(CALIBER_FLINTLOCK)
+	caliber = list(CALIBER_LONG)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/flintlock/rubber
@@ -146,7 +146,7 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock/rubber
 	multiple_sprites = 0
-	caliber = list(CALIBER_FLINTLOCK)
+	caliber = list(CALIBER_MEDIUM)
 	w_class = WEIGHT_CLASS_SMALL
 
 //.22 LR
@@ -156,7 +156,7 @@
 	icon_state = "22rd"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a22
-	caliber = list(CALIBER_22LR)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 120
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
@@ -214,7 +214,7 @@
 	icon_state = "needlecapsule"
 	desc = "A capsule filled to the brim with needles"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
-	caliber = list(CALIBER_NEEDLE)
+	caliber = list(CALIBER_COMPACT)
 	multiple_sprites = 2
 	max_ammo = 144
 	w_class = WEIGHT_CLASS_SMALL
@@ -227,7 +227,7 @@
 	icon_state = "needleimprov"
 	desc = "A capsule filled to the brim with needles"
 	ammo_type = /obj/item/ammo_casing/caseless/needle/improvised
-	caliber = list(CALIBER_NEEDLE)
+	caliber = list(CALIBER_COMPACT)
 	multiple_sprites = 2
 	max_ammo = 144
 	w_class = WEIGHT_CLASS_SMALL
@@ -240,7 +240,7 @@
 	icon_state = "needlerbox"
 	desc = "A Box filled with crystal needles"
 	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
-	caliber = list(CALIBER_SHOTGUNNEEDLER)
+	caliber = list(CALIBER_SHOTGUN)
 	multiple_sprites = 2
 	max_ammo = 48
 	w_class = WEIGHT_CLASS_SMALL
@@ -253,7 +253,7 @@
 	icon_state = "heavyneedles"
 	desc = "A capsule filled with heavy duty ruby needles"
 	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
-	caliber = list(CALIBER_HNEEDLE)
+	caliber = list(CALIBER_LONG)
 	multiple_sprites = 2
 	max_ammo = 24
 	w_class = WEIGHT_CLASS_SMALL
@@ -267,7 +267,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmbox"
 	multiple_sprites = 2
-	caliber = list(CALIBER_9MM)
+	caliber = list(CALIBER_COMPACT)
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 90
 	w_class = WEIGHT_CLASS_SMALL
@@ -358,7 +358,7 @@
 	icon_state = "10mmbox"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = list(CALIBER_10MM)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
@@ -413,7 +413,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "357box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_357)
+	caliber = list(CALIBER_COMPACT)
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 50
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
@@ -475,7 +475,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "44box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_44)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 48
 	w_class = WEIGHT_CLASS_SMALL
@@ -516,7 +516,7 @@
 	name = "ammo box (.45 Long Colt)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
-	caliber = list(CALIBER_45LC)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
@@ -550,7 +550,7 @@
 /obj/item/ammo_box/c45
 	name = "ammo box (.45 ACP)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = list(CALIBER_45ACP)
+	caliber = list(CALIBER_COMPACT)
 	multiple_sprites = 2
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
@@ -610,7 +610,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "4570box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_4570)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
@@ -672,7 +672,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "5mmbox"
 	multiple_sprites = 2
-	caliber = list(CALIBER_5MM)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/m5mm
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
@@ -714,7 +714,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "556box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_556)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/a556
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_SMALL
@@ -795,7 +795,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "308box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_308)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
@@ -832,7 +832,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "box30"
 	multiple_sprites = 2
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
@@ -931,7 +931,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 24
 	w_class = WEIGHT_CLASS_SMALL
@@ -996,7 +996,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "14mmbox"
 	multiple_sprites = 2
-	caliber = list(CALIBER_14MM)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/p14mm
 	max_ammo = 36
 	w_class = WEIGHT_CLASS_SMALL
@@ -1037,7 +1037,7 @@
 	name = "ammo box (4.73mm caseless)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "47box"
-	caliber = list(CALIBER_CASELESS)
+	caliber = list(CALIBER_MEDIUM)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	w_class = WEIGHT_CLASS_SMALL
@@ -1100,7 +1100,7 @@
 	icon_state = "lasmusketbox"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
-	caliber = list(CALIBER_MUSKET_LASER)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 36
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	w_class = WEIGHT_CLASS_SMALL
@@ -1113,7 +1113,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
 	max_ammo = 24
-	caliber = list(CALIBER_MUSKET_PLASMA)
+	caliber = list(CALIBER_LONG)
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
@@ -1172,7 +1172,7 @@
 	name = "speed loader (.22 LR)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
-	caliber = list(CALIBER_22LR)
+	caliber = list(CALIBER_COMPACT)
 	ammo_type = /obj/item/ammo_casing/a22
 	max_ammo = 6
 	multiple_sprites = 1
@@ -1279,7 +1279,7 @@
 	desc = "Designed to quickly reload revolvers."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "10mm"
-	caliber = list(CALIBER_45ACP)
+	caliber = list(CALIBER_COMPACT)
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 7
 	multiple_sprites = 1
@@ -1294,7 +1294,7 @@
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "44"
-	caliber = list(CALIBER_45LC)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 6
 	multiple_sprites = 1
@@ -1311,7 +1311,7 @@
 	name = "speed loader (.308)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "rev308"
-	caliber = list(CALIBER_308)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 10
 	multiple_sprites = 1
@@ -1426,7 +1426,7 @@
 	name = "stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "308"
-	caliber = list(CALIBER_308)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 5
 	multiple_sprites = 1
@@ -1454,7 +1454,7 @@
 /obj/item/ammo_box/a22
 	name = "stripper clip (.22LR)"
 	icon_state = "308"
-	caliber = list(CALIBER_22LR)
+	caliber = list(CALIBER_COMPACT)
 	ammo_type = /obj/item/ammo_casing/a22
 	max_ammo = 5
 	multiple_sprites = 1
@@ -1473,7 +1473,7 @@
 	desc = "A stripper clip."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = list(CALIBER_556)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 5
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
@@ -1487,7 +1487,7 @@
 	icon_state = "needler"
 	caliber = "needle"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
-	caliber = list(CALIBER_NEEDLE)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -1501,7 +1501,7 @@
 	icon_state = "50mg"
 	caliber = "a50mg"
 	ammo_type = /obj/item/ammo_casing/c2mm
-	caliber = list(CALIBER_2MM)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
@@ -1514,7 +1514,7 @@
 	desc = "A rack of 2mm gauss blender ammo, for when you want to die and take everyone with you."
 	icon_state = "50ap"
 	ammo_type = /obj/item/ammo_casing/c2mm/blender
-	caliber = list(CALIBER_2MM)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
@@ -1527,7 +1527,7 @@
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL

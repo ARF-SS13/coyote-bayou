@@ -283,6 +283,83 @@
 	variance = 15
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
+// 40mm (Grenade Launcher)
+/obj/item/ammo_casing/a40mm
+	name = "40mm HE shell"
+	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
+	caliber = CALIBER_SHOTGUN
+	icon_state = "40mmHE"
+	projectile_type = /obj/item/projectile/bullet/a40mm/he
+	material_class = BULLET_IS_GRENADE
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_GRENADE_CASING + MATS_GRENADE_BULLET,
+		/datum/material/blackpowder = MATS_GRENADE_POWDER)
+	fire_power = CASING_POWER_GRENADE * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_40MM
+
+/obj/item/ammo_casing/a40mm/hedp
+	name = "40mm HEDP shell"
+	desc = "A cased dual purpose grenade that can only be activated once fired out of a grenade launcher."
+	caliber = CALIBER_SHOTGUN
+	icon_state = "40mmHEDP"
+	projectile_type = /obj/item/projectile/bullet/a40mm/hedp
+
+/obj/item/ammo_casing/a40mm/buck
+	name = "40mm buckshot shell"
+	desc = "A large caliber buckshot round, designed to be fired out of a grenade launcher."
+	caliber = CALIBER_SHOTGUN
+	icon_state = "40mmbuck"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	custom_materials = list(
+		/datum/material/iron = MATS_GRENADE_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
+	pellets = 12 //96 damage. can't complain
+	variance = SHOTGUN_SPREAD_BASE
+
+// big ass rockets
+/obj/item/ammo_casing/caseless/rocket
+	name = "\improper Low Yield Rocket"
+	desc = "The PM-9LHE is an 84mm low-yield High Explosive rocket. Fire at people and pray."
+	caliber = CALIBER_SHOTGUN
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "m6a1"
+	projectile_type = /obj/item/projectile/bullet/a84mm_he
+	is_pickable = FALSE
+	custom_materials = list(
+		/datum/material/iron = MATS_ROCKET_CASING + MATS_ROCKET_BULLET,
+		/datum/material/blackpowder = MATS_ROCKET_POWDER) // great source of powder
+	sound_properties = CSP_MISC
+
+/obj/item/ammo_casing/caseless/rocket/hedp
+	name = "\improper High Explosive Dual Purpose Rocket"
+	desc = "The PM-9HEDP is an 84mm High Explosive Dual Purpose rocket. Pointy end toward mechs."
+	icon_state = "og7v"
+	projectile_type = /obj/item/projectile/bullet/a84mm
+
+/obj/item/ammo_casing/caseless/rocket/incendiary
+	name = "\improper Incendiary Rocket"
+	desc = "The PM-9 I is an 84mm incendiary rocket. Fire with care."
+	icon_state = "rocketshell"
+	projectile_type = /obj/item/projectile/bullet/a84mm_incend
+
+/obj/item/ammo_casing/caseless/rocket/chem
+	name = "\improper Chemical Rocket"
+	desc = "The PM-9C is an 84mm chemical dispersement rocket. Fire with great shame."
+	icon_state = "pg7v"
+	projectile_type = /obj/item/projectile/bullet/a84mm_chem
+
+/obj/item/ammo_casing/caseless/rocket/big
+	name = "\improper High Yield HE Rocket"
+	desc = " The PM-9 HHE is like the low-yield HE rocket, but bigger."
+	icon_state = "m6a1"
+	projectile_type = /obj/item/projectile/bullet/a84mm_he_big
+
+/obj/item/ammo_casing/caseless/rocket/big/Initialize(mapload, set_snowflake_id)
+	. = ..()
+	transform *= 1.5
+	special_transform = transform
+
 // BETA STUFF // Obsolete
 /obj/item/ammo_casing/shotgun/buckshot/test
 	name = "buckshot shell"
