@@ -1100,6 +1100,8 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+	//Testing message to fix git issue.
+
 /obj/item/gun/ballistic/automatic/pistol/lugerrevolver
 	name = "Zünder-14 Pistol"
 	desc = "A Zünder-14 pistol. Zunder means 'detonator' in German. Comes with a side-mounted rail mount for scopes. Manufactured by Leo Armaments, this over engineered pistol is a literal toggle-lock semi-automatic pistol/revolver hybrid. Chambered in a heavy .44, the trigger is slightly lighter and easy to press. What were Leo Armaments thinking?"
