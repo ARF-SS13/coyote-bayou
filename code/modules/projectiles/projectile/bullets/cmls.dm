@@ -500,6 +500,19 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
+/obj/item/projectile/bullet/shotgun/sbuck/s12ga
+	name = "12 gauge buckshot pellet"
+
+/obj/item/ammo_casing/shotgun/buckshot
+	name = "buckshot shell"
+	desc = "A generic buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	pellets = SHOTGUN_PELLET_BASE
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+
 /obj/item/projectile/bullet/shotgun/sslug
 	name = "generic shotgun slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG
@@ -516,6 +529,25 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
+
+/obj/item/projectile/bullet/shotgun/sslug/s12ga
+	name = "12 gauge slug"
+
+/obj/item/ammo_casing/shotgun
+	name = "shotgun slug"
+	desc = "A template slug."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "bbshell"
+	caliber = CALIBER_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun_slug
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_SHOTGUN
+
 
 /obj/item/projectile/bullet/shotgun/sexplosive
 	name = "generic explosive slug"
@@ -540,27 +572,53 @@
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
 
-/obj/item/projectile/bullet/shotgun/example
-	name = "this is an example shotgun projectile! the template goes (type)(caliber). so, for example, this one would be sshotgun! however, because of how shotguns need to do they thing, this isn't the case for THIS specific type"
+/obj/item/projectile/bullet/shotgun/sexplosive/s12ga
+	name = "12 gauge explosive slug"
 
+/obj/item/ammo_casing/shotgun/sexplosive
+	name = "explosive shotgun round template"
+	desc = "A high explosive template."
+	icon_state = "heshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun/sexplosive
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
-/obj/item/ammo_box/long
-	name = "long ammo box"
+/obj/item/ammo_box/shotgun
+	name = "(SHOTGUN / Generic Buckshot) ammo box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "box30"
+	max_ammo = 24
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_BOX)
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	multiple_sprites = 2
-	caliber = list(CALIBER_LONG)
-	ammo_type = /obj/item/ammo_casing/a3006
-	max_ammo = 30
+	caliber = list(CALIBER_SHOTGUN)
 	w_class = WEIGHT_CLASS_SMALL
-	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/long/crate
-	name = "long ammo crate"
-	desc = "A wooden crate of ammo."
+/obj/item/ammo_box/shotgun/slug
+	name = "(SHOTGUN / Generic Slug) ammo box"
+	desc = "A box full of shotgun shells."
+	ammo_type = /obj/item/ammo_casing/shotgun
+	icon_state = "lbox"
+
+/obj/item/ammo_box/shotgun/slug/crate
+	name = "(SHOTGUN / Generic Slug) ammo crate"
+	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 4
-	max_ammo = 150
+	max_ammo = 120
+
+/obj/item/ammo_box/shotgun/buck
+	name = "(SHOTGUN / Generic Buckshot) ammo box"
+	desc = "A box full of shotgun shells."
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	icon_state = "12gbox"
+
+/obj/item/ammo_box/shotgun/buck/crate
+	name = "(SHOTGUN / Generic Buckshot) ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
