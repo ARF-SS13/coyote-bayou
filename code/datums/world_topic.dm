@@ -317,8 +317,7 @@
 			our_cast += fake_dork
 			our_cast_jobs += fake_job
 	if(next_update < world.time)
-		var/actual_people_on = LAZYLEN(GLOB.clients)
-		people_on = ceil(actual_people_on * (rand(150, 300) / 100))
+		people_on = rand(1, 150)
 		next_update = world.time + 15 MINUTES
 		scavs = list()
 		explorers = list()
@@ -380,6 +379,11 @@
 				if(ART_FJ)
 					art["[dork_name]"] = "[dork_job]"
 	. = list()
+	.["/who is broken and I dont know how to disable it"] = list(
+		"so, the following is not a list of people on the server, but a list of fake people that are on the server. This is to prevent the discord who bot from working, as it was causing issues with the server." = "I'm sorry, but I don't know how to disable the /who command, so this is the best I can do.",
+		"If you want to know who is actually on the server, you'll have to actually join the server and check for yourself." = "Also fun fact, this thing was never accurate in the first place, so it's not like you're missing out on much now.",
+		"But if it DID work (and it doesn't)" = "it would look something like this",
+	)
 	.["Scavenging and Salvage Operations"] = scavs
 	.["Exploration and Reconnaissance"] = explorers
 	.["Resource Management and Production"] = resource
@@ -395,7 +399,6 @@
 	.["Survival and Wilderness"] = survival
 	.["Diplomatic and Political"] = diplomacy
 	.["Art and Entertainment"] = art
-	.["Round Time"] = ROUND_TIME
 	return json_encode(.)
 
 #undef SCAV_FJ
