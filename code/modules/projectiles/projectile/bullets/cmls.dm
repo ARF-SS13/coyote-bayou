@@ -41,8 +41,35 @@
 /obj/item/projectile/bullet/compact/c357
 	name = ".357 bullet"
 
+/obj/item/ammo_casing/compact
+	name = "compact bullet casing template"
+	desc = "A compact bullet casing template."
+	caliber = CALIBER_COMPACT
+	projectile_type = /obj/item/projectile/bullet/compact/cexample
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_10MM
 
-/obj/item/ammo_casing/caseless/needle
+/obj/item/ammo_casing/compact/cexample
+	name = "compact bullet casing template"
+	desc = "A compact bullet casing template."
+	projectile_type = /obj/item/projectile/bullet/compact/cexample
+
+/obj/item/ammo_casing/compact/c22
+	name = ".22 LR bullet casing"
+	desc = "A .22 LR bullet casing."
+	projectile_type = /obj/item/projectile/bullet/compact/c22
+
+/obj/item/ammo_casing/compact/c9mm
+	name = "9mm bullet casing"
+	desc = "A 9mm bullet casing."
+	projectile_type = /obj/item/projectile/bullet/compact/c9mm
+
+/obj/item/ammo_casing/caseless/cneedle
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
 	icon_state = "needlecasing"
@@ -51,19 +78,59 @@
 	force = 2
 	throwforce = 1
 	embedding = list("embed_chance"= 25)
-	projectile_type = /obj/item/projectile/bullet/cneedle
+	projectile_type = /obj/item/projectile/bullet/compact/cneedle
+
+/obj/item/ammo_casing/compact/c10mm
+	name = "10mm bullet casing"
+	desc = "A 10mm bullet casing."
+	projectile_type = /obj/item/projectile/bullet/compact/c10mm
+
+/obj/item/ammo_casing/compact/c357
+	name = ".357 bullet casing"
+	desc = "A 10mm bullet casing."
+	projectile_type = /obj/item/projectile/bullet/compact/c357
 
 /obj/item/ammo_box/compact
 	name = "compact ammo box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "10mmbox"
 	multiple_sprites = 2
-	ammo_type = /obj/item/ammo_casing/c10mm
+	ammo_type = /obj/item/ammo_casing/compact/cexample
 	caliber = list(CALIBER_COMPACT)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/compact/template
+	name = "(COMPACT / Template) ammo box"
+	icon_state = "10mmbox"
+	ammo_type = /obj/item/ammo_casing/compact/cexample
+
+/obj/item/ammo_box/compact/c22
+	name = "(COMPACT / .22LR) ammo box"
+	icon_state = "22box"
+	ammo_type = /obj/item/ammo_casing/compact/c22
+
+/obj/item/ammo_box/compact/c9mm
+	name = "(COMPACT / 9mm) ammo box"
+	icon_state = "9mmbox"
+	ammo_type = /obj/item/ammo_casing/compact/c9mm
+
+/obj/item/ammo_box/compact/cneedle
+	name = "(COMPACT / Amethyst Needle) ammo box"
+	icon_state = "9mmbox"
+	ammo_type = /obj/item/ammo_casing/caseless/cneedle
+
+/obj/item/ammo_box/compact/c10mm
+	name = "(COMPACT / 10mm) ammo box"
+	icon_state = "10mmbox"
+	ammo_type = /obj/item/ammo_casing/compact/c10mm
+
+/obj/item/ammo_box/compact/c357
+	name = "(COMPACT / .357) ammo box"
+	icon_state = "357box"
+	ammo_type = /obj/item/ammo_casing/compact/c357
 
 /obj/item/ammo_box/compact/crate
 	name = "compact ammo crate"
@@ -73,6 +140,30 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 4
 	max_ammo = 300
+
+/obj/item/ammo_box/compact/crate/template
+	name = "(COMPACT / Template) ammo crate"
+	ammo_type = /obj/item/ammo_casing/compact/cexample
+
+/obj/item/ammo_box/compact/crate/c22
+	name = "(COMPACT / .22LR) ammo crate"
+	ammo_type = /obj/item/ammo_casing/compact/c22
+
+/obj/item/ammo_box/compact/crate/c9mm
+	name = "(COMPACT / 9mm) ammo crate"
+	ammo_type = /obj/item/ammo_casing/compact/c9mm
+
+/obj/item/ammo_box/compact/crate/cneedle
+	name = "(COMPACT / Amethyst Needle) ammo crate"
+	ammo_type = /obj/item/ammo_casing/caseless/cneedle
+
+/obj/item/ammo_box/compact/crate/c10mm
+	name = "(COMPACT / 10mm) ammo crate"
+	ammo_type = /obj/item/ammo_casing/compact/c10mm
+
+/obj/item/ammo_box/compact/crate/c357
+	name = "(COMPACT / .357) ammo crate"
+	ammo_type = /obj/item/ammo_casing/compact/c357
 
 /obj/item/projectile/bullet/medium
 	name = "generic medium bullet"
@@ -95,7 +186,7 @@
 /obj/item/projectile/bullet/medium/m44
 	name = ".44 bullet"
 
-/obj/item/projectile/bullet/medium/m14
+/obj/item/projectile/bullet/medium/m14mm
 	name = "14mm bullet"
 
 /obj/item/projectile/bullet/medium/m45lc
@@ -104,7 +195,7 @@
 /obj/item/projectile/bullet/medium/m473
 	name = "4.73 bullet"
 
-/obj/item/projectile/bullet/medium/m566
+/obj/item/projectile/bullet/medium/m556
 	name = "5.56 bullet"
 
 /obj/item/projectile/bullet/medium/m5mm
@@ -277,7 +368,7 @@
 /obj/item/projectile/bullet/long/l50mg
 	name = ".50MG bullet"
 
-/obj/item/projectile/bullet/l4570
+/obj/item/projectile/bullet/long/l4570
 	name = ".45-70 bullet"
 
 /obj/item/ammo_casing/long
@@ -361,7 +452,7 @@
 /obj/item/ammo_box/long/lheavyneedle
 	name = "(LONG / Ruby Needle) ammo box"
 	icon_state = "308box"
-	ammo_type = /obj/item/ammo_casing/long/lheavyneedle
+	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
 
 /obj/item/ammo_box/long/crate
 	name = "long ammo crate"
@@ -390,7 +481,7 @@
 
 /obj/item/ammo_box/long/crate/lheavyneedle
 	name = "(LONG / Ruby Needle) ammo crate"
-	ammo_type = /obj/item/ammo_casing/long/lheavyneedle
+	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
 
 /obj/item/projectile/bullet/shotgun/sbuck
 	name = "generic buckshot pellet"

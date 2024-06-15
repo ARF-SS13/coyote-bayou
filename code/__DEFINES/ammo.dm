@@ -26,7 +26,7 @@
 #define CALIBER_4570 ".45-70 rounds"
 #define CALIBER_50MG ".50MG rounds"
 #define CALIBER_2MM "2mmEC gauss slugs"
-#define CALIBER_SHOTGUN_DEPRECATED "12 gauge shells" // added _bad
+#define CALIBER_SHOTGUN_DEPRECATED "12 gauge shells" // added _DEPRECATED
 #define CALIBER_CASELESS "4.73mm caseless"
 #define CALIBER_75 ".75 gyrojets"
 #define CALIBER_195 "1.95mm rounds"
