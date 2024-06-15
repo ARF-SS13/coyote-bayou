@@ -16,7 +16,7 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "furry"
 
-	allowed_limb_ids = list("human","mammal","aquatic","avian")
+	allowed_limb_ids = list(ALL_TYPICAL_BIO_LIMB_IDS)
 
 
 /mob/living/carbon/human/species/dwarf //species admin spawn path

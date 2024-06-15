@@ -29,7 +29,7 @@
 	tail_type = "tail_lizard"
 	wagging_type = "waggingtail_lizard"
 	species_type = "lizard"
-	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+	allowed_limb_ids = list(ALL_TYPICAL_BIO_LIMB_IDS)
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)
