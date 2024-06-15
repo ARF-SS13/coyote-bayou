@@ -61,6 +61,7 @@
 	var/static/default_body_markings_icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	var/list/markings_color = list()
 	var/digitigrade_type
+	var/mask_key // for yinglet legs
 
 	var/animal_origin = null //for nonhuman bodypart (e.g. monkey)
 	var/dismemberable = 1 //whether it can be dismembered with a weapon.
@@ -743,6 +744,9 @@
 			if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
 				if(DIGITIGRADE in S.species_traits)
 					digitigrade_type = lowertext(H.dna.features["legs"])
+					if(digitigrade_type == "yinglet")
+						digitigrade_type = "digitigrade"
+						mask_key = "Yinglet"
 			else
 				digitigrade_type = null
 
@@ -820,6 +824,8 @@
 
 	var/image_dir = 0
 	var/icon_gender = (body_gender == FEMALE) ? "f" : "m" //gender of the icon, if applicable
+	var/digitype = digitigrade_type
+	var/icon/mask_icon = mask_key ? GLOB.limb_mask_key_icons[lowertext(mask_key)] : null //get the mask icon for the limb
 
 	if(dropped)
 		image_dir = SOUTH
@@ -832,13 +838,18 @@
 		if(!isnull(body_markings) && is_organic_limb(FALSE))
 			for(var/list/marking_list in body_markings_list)
 				// marking stores icon and value for the specific bodypart
+				var/image/markimage
 				if(!use_digitigrade)
 					if(body_zone == BODY_ZONE_CHEST)
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
+						markimage = image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
+						markimage = image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 				else
-					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+					markimage = image(marking_list[1], "[marking_list[2]]_[digitype]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+				if(mask_icon) // yes yes
+					var/image/I2 = image(mask_icon, "[body_zone]_mask", -onmob_markings_layer, image_dir)
+					markimage.filters += filter(type = "alpha", icon = I2)
+				. += markimage
 
 	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
@@ -869,11 +880,14 @@
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 		else if (use_digitigrade)
 			if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
-				limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
+				limb.icon_state = "[digitype]_[use_digitigrade]_[body_zone]"
 			else
-				limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
+				limb.icon_state = "[species_id]_[digitype]_[use_digitigrade]_[body_zone]"
 		else
 			limb.icon_state = "[species_id]_[body_zone]"
+		if(mask_icon)
+			var/image/I = image(mask_icon, "[body_zone]_mask", -onmob_markings_layer, image_dir)
+			limb.filters += filter(type = "alpha", icon = I)
 
 		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
 			second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
@@ -885,7 +899,7 @@
 			if(species_id == "husk")
 				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitype]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
@@ -895,7 +909,7 @@
 						else
 							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir))
 					else
-						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir))
+						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitype]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir))
 
 					if(color_src && length(marking_list) == 3)
 						var/image/I = markings_list[length(markings_list)]
@@ -918,6 +932,16 @@
 						auxmarking += aux_marking_image
 			. += aux
 			. += auxmarking
+			if(mask_icon)
+				for(var/image/img in aux)
+					var/image/mask = image(mask_icon, "[body_zone]_mask", -img.layer, img.dir)
+					if(mask)
+						img.filters += filter(type = "alpha", icon = mask)
+				for(var/image/img in auxmarking)
+					var/image/mask = image(mask_icon, "[body_zone]_mask", -img.layer, img.dir)
+					if(mask)
+						img.filters += filter(type = "alpha", icon = mask)
+
 
 	else
 		limb.icon = icon
@@ -949,13 +973,18 @@
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
+					var/image/MK
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
+							MK = image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 						else
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
+							MK = image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+						MK = image(marking_list[1], "[marking_list[2]]_[digitype]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+					if(mask_icon)
+						var/image/I = image(mask_icon, "[body_zone]_mask", -onmob_markings_layer, image_dir)
+						MK.filters += filter(type = "alpha", icon = I)
+					. += MK
 		return
 
 	if(color_src) //TODO - add color matrix support for base species limbs (or dont because color matrixes suck)
@@ -992,6 +1021,13 @@
 		limb.icon_state = "[original_state]_front"
 		second_limb.icon_state = "[original_state]_behind"
 		second_limb.color = limb.color
+		if(mask_icon)
+			var/image/L1 = image(mask_icon, "[original_state]_front_mask", -onmob_markings_layer, image_dir)
+			if(L1)
+				limb.filters += filter(type = "alpha", icon = L1)
+			var/image/L2 = image(mask_icon, "[original_state]_behind_mask", -onmob_markings_layer, image_dir)
+			if(L2)
+				second_limb.filters += filter(type = "alpha", icon = L2)
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
 	drop_organs()

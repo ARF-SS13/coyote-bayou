@@ -14,6 +14,9 @@
 /datum/sprite_accessory/legs/digitigrade_bird
 	name = "Avian"
 
+/datum/sprite_accessory/legs/digitigrade_yinglet
+	name = "Yinglet"
+
 
 /******************************************
 ************** Taur Bodies ****************

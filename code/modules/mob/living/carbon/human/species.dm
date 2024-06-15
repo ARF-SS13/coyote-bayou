@@ -344,13 +344,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.hud_used.update_locked_slots()
 
 	// this needs to be FIRST because qdel calls update_body which checks if we have DIGITIGRADE legs or not and if not then removes DIGITIGRADE from species_traits
-	if(C.dna.species.mutant_bodyparts["legs"] 
-		&& (
-			C.dna.features["legs"] == "Digitigrade" 
-			|| C.dna.features["legs"] == "Avian"
-			|| C.dna.features["legs"] == "Yinglet"
-			)
-		)
+	if(C.dna.species.mutant_bodyparts["legs"] && (C.dna.features["legs"] in list("Digitigrade","Avian","Yinglet")))
 		species_traits |= DIGITIGRADE
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(FALSE)

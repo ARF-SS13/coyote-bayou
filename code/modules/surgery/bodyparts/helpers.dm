@@ -265,9 +265,10 @@
 /mob/living/carbon/proc/Digitigrade_Leg_Swap(swap_back)
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/O = X
+		O.mask_key = dna.features["legs"]
+		O.update_limb(FALSE, src)
 		if((O.body_part == LEG_LEFT || O.body_part == LEG_RIGHT) && ((!O.use_digitigrade && !swap_back) || (O.use_digitigrade && swap_back)))
 			O.use_digitigrade = swap_back ? NOT_DIGITIGRADE : FULL_DIGITIGRADE
-			O.update_limb(FALSE, src)
 
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src

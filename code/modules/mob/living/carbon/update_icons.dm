@@ -264,6 +264,8 @@
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
 		. += "-[BP.body_zone]"
+		if(GLOB.limb_mask_key_icons[BP.mask_key])
+			. += "-[BP.mask_key]"
 		if(BP.use_digitigrade)
 			. += "-digitigrade[BP.use_digitigrade]"
 		if(BP.animal_origin)
