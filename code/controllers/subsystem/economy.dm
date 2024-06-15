@@ -1875,7 +1875,7 @@ SUBSYSTEM_DEF(economy)
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("That's not a ticket!"))
 		return FALSE
-	if(!istype(QR, /obj/item/card/id))
+	if(istype(QR, /obj/item/card/id))
 		playsound(user, 'sound/machines/dash.ogg', 75, TRUE)
 		to_chat(user, span_alert("Nobody wants your worthless ID!"))
 		return FALSE
