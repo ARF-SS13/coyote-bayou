@@ -216,8 +216,8 @@
 ///Adds the functionality to self_message.
 /mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
-	//if(self_message && target != src)
-		//show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
+	if(self_message && target != src)
+		show_message(self_message, null, blind_message, null, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -282,8 +282,8 @@
  */
 /mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
-	//if(self_message)
-		//show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
+	if(self_message)
+		show_message(self_message, null, deaf_message, null, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.
