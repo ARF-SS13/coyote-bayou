@@ -5,7 +5,7 @@
  * License: DK GG-NO-RE 4.0
  * 
  * Description: A bunch of clamstuffs for yinglets, cus we both have them and I like them
-  */
+*/
 
 #define CLAM_OYSTER_THRESHOLD 4
 
@@ -114,6 +114,10 @@
 /obj/item/reagent_containers/food/snacks/clam/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(lick_clam))
+
+/obj/item/reagent_containers/food/snacks/clam/Destroy()
+	destroy_innards()
+	. = ..()
 
 /obj/item/reagent_containers/food/snacks/clam/examine(mob/user)
 	. = ..()
