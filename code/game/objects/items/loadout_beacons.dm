@@ -499,9 +499,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/law/police/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/police(src)
-	new /obj/item/ammo_box/shotgun/buck(src) //eeeevery flavor
-	new /obj/item/ammo_box/shotgun/bean(src)
-	new /obj/item/ammo_box/shotgun/rubber(src) //make sure these are okay
+	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
 
 /obj/item/storage/box/gun/rifle/brushgun
 	name = "brush gun case"

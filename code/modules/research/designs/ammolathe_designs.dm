@@ -60,7 +60,8 @@
 	autocalc_materials = FALSE
 
 /* --Tier 1 Ammo and Magazines-- */
-//Tier 1 Magazines
+//Tier 1 Magazines // we don't use these anymore
+/*
 /datum/design/ammolathe/zip9mm
 	name = "zipgun clip (9mm)"
 	id = "zip9m"
@@ -172,7 +173,7 @@
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/m45/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
-
+*/
 //Tier 1 Ammo
 /datum/design/ammolathe/musket
 	name = "flintlock ball pouch"
@@ -187,7 +188,7 @@
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/flintlock/rubber
 	category = list("initial", "Simple Ammo")
-
+/*
 /datum/design/ammolathe/beanbag
 	name = "beanbag shotgun box"
 	id = "beanbag"
@@ -215,7 +216,7 @@
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/shotgun/rubber/crate
 	category = list("initial", "Simple Ammo")
-
+*/
 /datum/design/ammolathe/c10mm
 	name = "10mm FMJ ammo box"
 	id = "c10mm_lathe"
@@ -271,14 +272,14 @@
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/shotgun/buck/crate
 	category = list("initial", "Simple Ammo")
-
+/*
 /datum/design/ammolathe/incendshot
 	name = "incendiary shotgun box"
 	id = "incendshot"
 	materials = list (/datum/material/iron = 12000, /datum/material/blackpowder = 5000)
 	build_path = /obj/item/ammo_box/shotgun/incendiary
 	category = list("initial", "Simple Ammo")
-
+*/
 /datum/design/ammolathe/a308
 	name = ".308 ammo box"
 	id = "a308"
@@ -1287,7 +1288,7 @@
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/c38box/rubber
 	category = list("initial", "Handloaded Ammo")
-*/
+
 /datum/design/ammolathe/improvised/a357
 	name = ".357 Magnum bag"
 	id = "handloader_a357_lathe"
@@ -1462,3 +1463,4 @@
 	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/a50MGbox/improvised/crate
 	category = list("initial", "Handloaded Ammo")
+*/

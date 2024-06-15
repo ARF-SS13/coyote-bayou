@@ -742,20 +742,8 @@
 /obj/effect/spawner/lootdrop/f13/trash_ammo //all equal chance cause the boxes hold different amounts
 	name = "trash ammo boxes"
 	loot = list(
-		/obj/item/ammo_box/a308box/improvised = 1,
-		/obj/item/ammo_box/a3006box/improvised = 1,
-		/obj/item/ammo_box/m5mmbox/improvised = 1,
-		/obj/item/ammo_box/a556/improvised = 1,
-		/obj/item/ammo_box/c10mm/improvised = 1,
-		/obj/item/ammo_box/c9mm/improvised = 1,
-		/obj/item/ammo_box/shotgun/improvised = 1,
-		/obj/item/ammo_box/a357box/improvised = 1,
-		/obj/item/ammo_box/m44box/improvised = 1,
-		/obj/item/ammo_box/c45/improvised = 1,
-		/obj/item/ammo_box/m14mm/improvised = 1,
-		/obj/item/ammo_box/c4570box/improvised = 1,
-		/obj/item/ammo_box/m22 = 1,
-		/obj/item/ammo_box/rock/improvised = 1,
+		/obj/item/ammo_box/compact = 1,
+
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_ammo

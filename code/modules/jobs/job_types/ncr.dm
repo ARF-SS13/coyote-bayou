@@ -607,7 +607,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck = 3,
-		/obj/item/ammo_box/shotgun/trainshot = 1,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570box/knockback = 1,
 		)
@@ -940,7 +939,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
 		/obj/item/ammo_box/magazine/m45 = 3,
 	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
-		/obj/item/ammo_box/shotgun/bean = 2,
+		/obj/item/ammo_box/shotgun = 2,
 		/obj/item/melee/classic_baton/militarypolice = 1,
 		/obj/item/stack/crafting/armor_plate = 4,
 		)

@@ -503,7 +503,7 @@
 /obj/item/projectile/bullet/shotgun/buck/s12ga
 	name = "12 gauge buckshot pellet"
 
-/obj/item/ammo_casing/shotgun/buckshot
+/obj/item/ammo_casing/shotgun/buck
 	name = "buckshot shell"
 	desc = "A generic buckshot shell."
 	icon_state = "gshell"
@@ -512,7 +512,7 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
-/obj/item/ammo_casing/shotgun/buckshot/s12ga
+/obj/item/ammo_casing/shotgun/buck/s12ga
 	name = "12 gauge buckshot shell"
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "gshell"

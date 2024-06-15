@@ -186,7 +186,7 @@
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_FAST
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
-		/obj/item/ammo_box/shotgun/improvised,
+		/obj/item/ammo_box/shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
 		/obj/effect/gibspawner/generic/animal
 		)

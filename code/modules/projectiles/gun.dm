@@ -1596,7 +1596,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/a50MGbox(src)
 	new /obj/item/ammo_box/shotgun/slug(src)
 	new /obj/item/ammo_box/shotgun/buck(src)
-	new /obj/item/ammo_box/shotgun/improvised(src)
+//	new /obj/item/ammo_box/shotgun/improvised(src)
 	new /obj/item/ammo_box/m22(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/ammo_box/c10mm(src)
