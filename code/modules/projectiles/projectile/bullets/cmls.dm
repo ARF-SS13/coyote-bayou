@@ -198,7 +198,7 @@
 	ammo_type = /obj/item/ammo_casing/medium/m45lc
 
 /obj/item/ammo_box/medium/m473
-	name = "(MEDIUM / 4.7mm) ammo box"
+	name = "(MEDIUM / 4.73mm) ammo box"
 	icon_state = "47box"
 	ammo_type = /obj/item/ammo_casing/medium/m473
 
@@ -228,6 +228,24 @@
 
 /obj/item/ammo_box/medium/crate/m44
 	name = "(MEDIUM / .44) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m14mm
+	name = "(MEDIUM / 14mm) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m45lc
+	name = "(MEDIUM / .45 Long Colt) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m473
+	name = "(MEDIUM / 4.73mm) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m556
+	name = "(MEDIUM / 5.56mm) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m5mm
+	name = "(MEDIUM / 5mm) ammo crate"
+
+/obj/item/ammo_box/medium/crate/m5mm
+	name = "(MEDIUM / 2mm Electromagnetic Cartridge) ammo crate"
 
 /obj/item/projectile/bullet/long
 	name = "generic long bullet"
