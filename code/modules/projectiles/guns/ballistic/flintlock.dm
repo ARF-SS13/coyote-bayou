@@ -44,6 +44,29 @@
 	..()
 	gun_tags |= GUN_PROJECTILE
 
+/obj/item/gun/flintlock/UpdateAmmoCountOverlay()
+	if(isturf(loc))//Only show th ammo count if the magazine is, like, in an inventory or something. Mags on the ground don't need a big number on them, that's ugly.
+		maptext = ""
+	else
+		var/txte = ""
+		var/culur = "#FF0000"
+		if(chambered)
+			if(cocked)
+				txte = "1/1 !C!"
+				culur = "#00FFFF"
+			else
+				txte = "1/1"
+				culur = "#FFFF00"
+		else
+			if(cocked)
+				txte = "0/1 !C!"
+				culur = "#FF0000"
+			else
+				txte = "0/1"
+				culur = "#FF0000"
+		maptext = "<font color='[culur]'><b>[txte]</b></font>"
+
+
 /obj/item/gun/flintlock/ui_data(mob/user)
 	var/list/data = ..()
 	data["cockable"] = TRUE
@@ -195,6 +218,13 @@
 		shoot_with_empty_chamber(user)
 		return FALSE
 	var/atom/tar_get = user?.client?.mouseObject
+	if(istype(tar_get, /atom/movable/screen)) // we clicked the ~void~, and now we need to do math
+		tar_get = null
+		if(user?.client)
+			var/angel = mouse_angle_from_client(user.client)
+			var/turf/shootat = get_turf_in_angle(angel, get_turf(src), 20) // sure
+			if(shootat)
+				tar_get = shootat
 	/// this is if they disconnect, or tossed the gun before it fired, or ceased to exist, or something
 	if(!tar_get || !user || loc != user)
 		tar_get = null

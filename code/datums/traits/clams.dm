@@ -84,6 +84,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
 	inedible = TRUE // sorta
 	tastes = list("seafood" = 4, "dirt" = 1, "shrapnel" = 1)
+	w_class = WEIGHT_CLASS_TINY
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/water = 2,
@@ -207,7 +208,10 @@
 	if(!guts)
 		to_chat(likcer, span_alert(oysterclam("You fish your tongue around in there for a bit, but aw man, there's no meat!", likcer)))
 		return // no guts no glory
-	likcer.visible_message(oysterclam("Wizh a deft flick of your tongue, you dart in between a gap in the shell and lap out the meat!", likcer))
+	likcer.visible_message(
+		self_message = oysterclam("Wizh a deft flick of your tongue, you dart in between a gap in the shell and lap out the meat!", likcer),
+		message = oysterclam("[likcer] licks the clam!", likcer),
+	)
 	eviscerate_clam(likcer, TRUE, tongue)
 
 /obj/item/reagent_containers/food/snacks/clam/proc/screw_clam(mob/living/carbon/likcer, obj/item/screwer)
@@ -363,6 +367,7 @@
 	icon = 'icons/mob/clothing/clam.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
 	tastes = list("seafood" = 4, "dirt" = 1, "weh" = 1)
+	w_class = WEIGHT_CLASS_TINY
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/water = 2,
@@ -391,6 +396,7 @@
 	icon_state = "clam_shell"
 	slot_flags = INV_SLOTBIT_HEAD // as a tiny dorky hat
 	tastes = list("shell" = 4, "dirt" = 1, "weh" = 1)
+	w_class = WEIGHT_CLASS_TINY
 	list_reagents = list(
 		/datum/reagent/shell_shrapnel = 5,
 		/datum/reagent/calciumcarbonate = 2,
@@ -420,6 +426,7 @@
 	icon_state = "pearl"
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
 	tastes = list("pearl" = 4, "dirt" = 1)
+	w_class = WEIGHT_CLASS_TINY
 	grind_results = list(
 		/datum/reagent/medicine/bicaridine = 4,
 		/datum/reagent/medicine/kelotane = 4,
@@ -444,6 +451,7 @@
 	desc = "A dainty little necklace made from pearls strung up on some kind of string. \
 		It is very pretty and clearly someone put a lot of effort into making it. \
 		Some say you can get one for free, granted you have the right assets."
+	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/mob/clothing/clam.dmi'
 	icon_state = "pearl_necklace"
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
@@ -455,6 +463,7 @@
 	name = "seashell bra"
 	desc = "A cute tropical bra made from seashells and string. It's as cute as it is impractical and utterly lacking in support, \
 		which is saying something cus this bra is really really cute! Perfect for flat chested weird rats on stilts to pretend they have boobs."
+	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/mob/clothing/clam.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
 	icon_state = "clam_bra"
@@ -473,6 +482,7 @@
 	name = "seashell codpiece"
 	desc = "A cute tropical codpiece made from a seashell and string. It's as cute as it is impractical for anyone even remotely hung, \
 		which is saying something cus this codpiece is really really cute! Perfect for weird rats on stilts to pretend they have a bulge."
+	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/mob/clothing/clam.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
 	icon_state = "clam_codpiece"
@@ -491,6 +501,7 @@
 	name = "seashell bikini"
 	desc = "A cute tropical bikini made from seashells and string. It's as cute as it is impractical and utterly lacking in support, \
 		which is saying something cus this bikini is really really cute! Perfect for flat chested weird rats on stilts to pretend they have boobs and or a bulge."
+	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/mob/clothing/clam.dmi'
 	icon_state = "clam_bikini"
 	mob_overlay_icon = 'icons/mob/clothing/clam_onmob.dmi'
