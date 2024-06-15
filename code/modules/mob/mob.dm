@@ -163,6 +163,8 @@
 	var/targetsaycolor = null
 	if(!!target)
 		targetsaycolor = target.get_chat_color()
+	if(!self_message)
+		self_message = message
 
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
@@ -197,7 +199,9 @@
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/blind = M.is_blind()
 		var/msg = message
-		if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
+		if(M == src)
+			msg = self_message
+		else if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
 			msg = blind_message
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
@@ -216,8 +220,8 @@
 ///Adds the functionality to self_message.
 /mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message && target != src)
-		show_message(self_message, null, blind_message, null, pref_check)
+	// if(self_message && target != src)
+	// 	show_message(self_message, null, blind_message, null, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -246,6 +250,8 @@
 	if(!length(hearers))
 		return
 	hearers -= ignored_mobs
+	if(!self_message)
+		self_message = message
 	//if(self_message)
 		//hearers -= src
 //	var/raw_msg = message
@@ -259,7 +265,11 @@
 	for(var/mob/M in hearers)
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
-		var/msg = M.can_hear() ? message : deaf_message
+		var/msg = message
+		if(M == src)
+			msg = self_message
+		else if(!M.can_hear())
+			msg = deaf_message
 		if(M.client?.prefs.color_chat_log)
 			var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
 			msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
@@ -282,8 +292,8 @@
  */
 /mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message)
-		show_message(self_message, null, deaf_message, null, pref_check)
+	// if(self_message)
+	// 	show_message(self_message, null, deaf_message, null, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.
