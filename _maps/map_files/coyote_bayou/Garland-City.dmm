@@ -228,12 +228,6 @@
 	icon_state = "outerturn - W"
 	},
 /area/f13/wasteland)
-"ajj" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "akE" = (
 /mob/living/simple_animal/hostile/raider/ranged/biker{
 	name = "Razor Twins Raider"
@@ -2056,9 +2050,6 @@
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
-/area/f13/building)
-"bHy" = (
-/turf/closed/wall/f13/wood/interior,
 /area/f13/building)
 "bHG" = (
 /obj/structure/spacevine{
@@ -11146,11 +11137,6 @@
 /obj/structure/nest/frog,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
-"iAJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "iBo" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -16242,10 +16228,6 @@
 "muO" = (
 /turf/open/indestructible/ground/outside/road,
 /area/f13/caves)
-"mvc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "mvY" = (
 /obj/structure/car/rubbish1{
 	pixel_y = -13;
@@ -27981,9 +27963,6 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building)
-"viN" = (
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
 "viX" = (
 /obj/structure/rack,
 /obj/item/clothing/head/hardhat,
@@ -28142,10 +28121,6 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
-"voy" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
 "voG" = (
 /mob/living/simple_animal/hostile/mirelurk/baby,
 /turf/open/indestructible/ground/inside/mountain,
@@ -30296,10 +30271,6 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/wasteland)
-"wTE" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "wTF" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_2"
@@ -30664,13 +30635,6 @@
 "xjm" = (
 /obj/machinery/vending/autodrobe,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"xjy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/closed/wall/f13/wood/interior,
 /area/f13/building)
 "xjA" = (
 /obj/structure/decoration/rag,
@@ -33072,17 +33036,17 @@ wyc
 tKh
 glj
 ggD
-bHy
+glj
 uLV
 bYO
 glj
 dbY
-bHy
+glj
 uLV
 bYO
 glj
 ggD
-wTE
+xIe
 set
 how
 ksy
@@ -33586,17 +33550,17 @@ iTD
 tKh
 glj
 lkx
-bHy
+glj
 sKY
 snE
 glj
 lkx
-wTE
+xIe
 wJG
 gYv
 xIe
 eNm
-wTE
+xIe
 jAk
 snE
 cpq
@@ -33843,17 +33807,17 @@ tKh
 tKh
 glj
 iJQ
-bHy
+glj
 lYk
 snE
 glj
 kFn
-bHy
+glj
 lYk
 snE
 glj
 kFn
-bHy
+glj
 lYk
 snE
 glj
@@ -35899,11 +35863,11 @@ tKh
 iTD
 glj
 wgz
-bHy
+glj
 snE
 glj
 mom
-bHy
+glj
 tWc
 glj
 uhp
@@ -36156,11 +36120,11 @@ tKh
 tKh
 glj
 ueu
-wTE
+xIe
 hyV
 glj
 snE
-bHy
+glj
 ueu
 xIe
 uhp
@@ -38079,7 +38043,7 @@ tKh
 wmg
 ghb
 hqf
-bHy
+glj
 qyt
 vIC
 jfa
@@ -38336,7 +38300,7 @@ wPD
 wmg
 maI
 lBl
-wTE
+xIe
 wzr
 uOi
 vmF
@@ -38596,8 +38560,8 @@ vmF
 pqF
 muC
 iXY
-viN
-wTE
+ahy
+xIe
 qcx
 aqs
 lfN
@@ -38850,10 +38814,10 @@ tKh
 glj
 rss
 bXj
-bHy
+glj
 njI
 lzr
-bHy
+glj
 reu
 bIf
 jfa
@@ -39110,7 +39074,7 @@ glj
 jfa
 jfa
 jfa
-bHy
+glj
 xcF
 lAb
 jfa
@@ -39293,9 +39257,9 @@ lju
 glj
 iMb
 ocf
-bHy
+glj
 ghi
-bHy
+glj
 lKx
 qHj
 glj
@@ -39552,7 +39516,7 @@ rcT
 uhp
 kqO
 ntb
-bHy
+glj
 lVU
 snE
 iqA
@@ -39807,9 +39771,9 @@ qTT
 cpq
 tgf
 kFn
-bHy
+glj
 mom
-viN
+ahy
 mQX
 snE
 iqA
@@ -39881,7 +39845,7 @@ ghb
 eVD
 vmF
 iXY
-bHy
+glj
 qDP
 pmr
 jfa
@@ -40062,11 +40026,11 @@ cON
 cON
 qTT
 cpq
-bHy
-bHy
-bHy
+glj
+glj
+glj
 opK
-viN
+ahy
 dHT
 let
 glj
@@ -40133,14 +40097,14 @@ tKh
 myr
 myr
 glj
-bHy
-bHy
-bHy
-wTE
+glj
+glj
+glj
+xIe
 pqF
-bHy
-bHy
-bHy
+glj
+glj
+glj
 jfa
 tKh
 tKh
@@ -40321,10 +40285,10 @@ qTT
 cpq
 neA
 eiM
-wTE
+xIe
 snE
-voy
-bHy
+qdy
+glj
 qcE
 glj
 tKh
@@ -40578,7 +40542,7 @@ qTT
 iqA
 neA
 deJ
-bHy
+glj
 snE
 pUI
 ujY
@@ -40652,7 +40616,7 @@ rkU
 qxu
 fWR
 eqJ
-wTE
+xIe
 snL
 uzV
 jfa
@@ -40835,10 +40799,10 @@ qTT
 iqA
 kEd
 snE
-viN
-bHy
+ahy
+glj
 lPN
-viN
+ahy
 neA
 glj
 myr
@@ -41050,7 +41014,7 @@ qtc
 wzr
 vmF
 glj
-bHy
+glj
 ueu
 jfa
 rYf
@@ -41350,7 +41314,7 @@ cpq
 snE
 snE
 lPN
-bHy
+glj
 tqs
 gYv
 vou
@@ -41607,9 +41571,9 @@ iqA
 snE
 gYv
 ffY
-iAJ
+bdY
 snE
-bHy
+glj
 qcE
 cpq
 myr
@@ -41864,9 +41828,9 @@ iqA
 snE
 sRi
 dJi
-iAJ
+bdY
 mom
-bHy
+glj
 kCo
 glj
 myr
@@ -41933,17 +41897,17 @@ jQi
 kYh
 xIe
 pyD
-bHy
+glj
 oxG
 nVb
 glj
 lSZ
-bHy
+glj
 juv
 vmF
 glj
 lSZ
-ajj
+cpq
 uJS
 vmF
 glj
@@ -42121,9 +42085,9 @@ glj
 sNM
 neA
 neA
-bHy
+glj
 snE
-bHy
+glj
 hMb
 glj
 tKh
@@ -42447,17 +42411,17 @@ qTT
 sed
 glj
 pcx
-bHy
+glj
 kMX
 fah
 glj
 pcx
-bHy
+glj
 vJV
 kia
 glj
 pcx
-bHy
+glj
 kMX
 fah
 glj
@@ -42704,17 +42668,17 @@ qTT
 sed
 glj
 tja
-bHy
+glj
 dTa
 hGL
 glj
 aUG
-bHy
+glj
 mbC
 rdW
 glj
 tja
-bHy
+glj
 tzr
 fah
 glj
@@ -44374,16 +44338,16 @@ eyZ
 tvr
 tKh
 myr
-ajj
-ajj
+cpq
+cpq
 cNI
-xjy
-ajj
-bHy
+xPz
+cpq
+glj
 uGx
 fZs
-bHy
-bHy
+glj
+glj
 jQi
 hwp
 hwp
@@ -44631,16 +44595,16 @@ qFx
 xoB
 tKh
 tKh
-bHy
+glj
 wqw
 oBd
-mvc
+nrU
 dUC
 dUC
 xrz
 eeR
 eeR
-bHy
+glj
 jQi
 cON
 rvC
@@ -44954,7 +44918,7 @@ tKh
 glj
 fdi
 xXb
-wTE
+xIe
 xtN
 mYL
 edq
@@ -45017,11 +44981,11 @@ qTT
 sed
 cpq
 reu
-bHy
+glj
 fah
 glj
 fah
-bHy
+glj
 reu
 glj
 sLv
@@ -45145,10 +45109,10 @@ oKn
 xoB
 tKh
 tKh
-bHy
+glj
 cyN
 hAI
-bHy
+glj
 sWi
 sWi
 dxY
@@ -45274,11 +45238,11 @@ qTT
 sed
 glj
 vSk
-viN
+ahy
 fah
 glj
 fah
-bHy
+glj
 gvw
 xIe
 oWI
@@ -45405,7 +45369,7 @@ tKh
 eDO
 oBd
 lXm
-wTE
+xIe
 wZV
 yen
 pnM
@@ -45484,7 +45448,7 @@ jQi
 sed
 glj
 vmF
-bHy
+glj
 qcE
 xIe
 tKh
@@ -45659,7 +45623,7 @@ pYX
 jfa
 iTD
 lfN
-bHy
+glj
 uaf
 dUC
 dUC
@@ -45668,7 +45632,7 @@ pOg
 lYS
 ePY
 dUC
-bHy
+glj
 jQi
 nOZ
 nOZ
@@ -45916,7 +45880,7 @@ aqs
 qOI
 iTD
 tKh
-bHy
+glj
 ncl
 tPt
 cfn
@@ -45983,8 +45947,8 @@ ifE
 tKh
 lfN
 glj
-bHy
-bHy
+glj
+glj
 qcE
 glj
 glj
@@ -46173,7 +46137,7 @@ vmF
 jfa
 iTD
 iTD
-bHy
+glj
 hPT
 dUC
 cfn
@@ -46430,16 +46394,16 @@ vmF
 jfa
 tKh
 tKh
-bHy
+glj
 vuS
 dUC
-bHy
+glj
 eeR
 iuy
 xrz
 oBd
 sWi
-bHy
+glj
 jQi
 nOZ
 nOZ
@@ -46690,7 +46654,7 @@ tKh
 xug
 nTZ
 jan
-bHy
+glj
 jAW
 lNq
 sBe
@@ -46947,7 +46911,7 @@ tKh
 rFo
 tTY
 pdP
-wTE
+xIe
 mdY
 yjN
 dUC
@@ -47204,13 +47168,13 @@ tKh
 uub
 abq
 pdP
-bHy
+glj
 sWi
 wjU
 oBd
 gIL
 yjR
-wTE
+xIe
 jQi
 aMD
 hwp
@@ -47458,16 +47422,16 @@ xPo
 jfa
 tKh
 tKh
-bHy
+glj
 cVg
 dUC
-bHy
+glj
 sKf
 dUC
 dUC
 yjN
 dUC
-bHy
+glj
 jQi
 cON
 cON
@@ -47715,16 +47679,16 @@ qey
 xvV
 tKh
 tKh
-bHy
-bHy
+glj
+glj
 fZs
-bHy
-bHy
-bHy
+glj
+glj
+glj
 bYV
 fZs
-bHy
-ajj
+glj
+cpq
 dyB
 qDQ
 qDQ
@@ -85734,11 +85698,11 @@ tKh
 tKh
 glj
 bOS
-bHy
+glj
 snE
 glj
 bMa
-bHy
+glj
 uEG
 glj
 xZz
@@ -85991,11 +85955,11 @@ tKh
 tKh
 glj
 ueu
-bHy
+glj
 hhE
 glj
 uEr
-bHy
+glj
 ueu
 glj
 ryr
@@ -87027,7 +86991,7 @@ uEr
 sLo
 aoz
 tqU
-bHy
+glj
 hMK
 ifO
 mcw
@@ -87277,14 +87241,14 @@ tKh
 rjU
 oKI
 fdi
-bHy
+glj
 snE
 snE
 oTI
 glj
 rJY
 uhp
-bHy
+glj
 jGB
 dWv
 diO
@@ -87534,14 +87498,14 @@ uYb
 glj
 ueu
 glj
-bHy
+glj
 uEr
 bMa
 snE
-bHy
+glj
 aTv
 uhp
-bHy
+glj
 cea
 vmF
 ifO
@@ -87795,12 +87759,12 @@ snE
 kEO
 tXL
 spD
-bHy
-bHy
+glj
+glj
 qcE
-ajj
-bHy
-bHy
+cpq
+glj
+glj
 qcE
 glj
 glj
@@ -88052,10 +88016,10 @@ mcw
 dWv
 vmF
 vmF
-bHy
+glj
 rYR
 vmF
-ajj
+cpq
 fhZ
 fhZ
 mcw
@@ -89331,7 +89295,7 @@ tKh
 cpq
 fdi
 kFn
-bHy
+glj
 oNn
 cGx
 dWv
@@ -90113,9 +90077,9 @@ cGx
 edq
 edq
 glj
-bHy
+glj
 vmF
-bHy
+glj
 cpq
 jQi
 sed
@@ -90360,8 +90324,8 @@ tKh
 tKh
 tKh
 cpq
-bHy
-bHy
+glj
+glj
 qcE
 glj
 glj
@@ -91393,11 +91357,11 @@ cKv
 lSN
 glj
 glj
-bHy
+glj
 ueu
-bHy
-bHy
-bHy
+glj
+glj
+glj
 wFX
 mcw
 fhZ
@@ -91654,7 +91618,7 @@ ubZ
 mcw
 izd
 tZO
-bHy
+glj
 edq
 uOi
 fhZ
@@ -92168,7 +92132,7 @@ tTL
 xsD
 mmi
 pgf
-bHy
+glj
 vmF
 vmF
 vmF

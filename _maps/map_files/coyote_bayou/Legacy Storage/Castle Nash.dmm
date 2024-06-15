@@ -75,7 +75,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "ao" = (
 /obj/structure/flora/chomp/bones/lrock4,
 /turf/open/indestructible/ground/outside/desert,
@@ -175,7 +175,6 @@
 	pixel_y = 1
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -319,23 +318,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"bo" = (
-/obj/structure/spacevine,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = 0
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = 0
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/building/trader)
 "bp" = (
 /obj/machinery/hydroponics/soil{
 	name = "riverbed soil";
@@ -392,7 +374,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "bD" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/indestructible/ground/outside/desert,
@@ -422,7 +404,7 @@
 	},
 /obj/machinery/light/small{
 	dir = 4;
-	pixel_y = 14
+	pixel_y = 17
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -564,20 +546,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "cb" = (
-/obj/structure/fence/wooden{
-	density = 0;
+/obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_x = -14;
-	pixel_y = 0
+	pixel_y = 12
 	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = 0
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#EEEEEE";
+	opacity = 0
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/building/trader)
+/area/f13/wasteland)
 "cc" = (
 /obj/machinery/door/poddoor/gate,
 /turf/open/indestructible/cobble,
@@ -971,6 +948,7 @@
 "dz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -1057,6 +1035,7 @@
 	pixel_y = 7
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -1611,7 +1590,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "fm" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4;
@@ -1673,7 +1652,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "fs" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -1747,8 +1726,8 @@
 	},
 /area/f13/building/church)
 "fD" = (
-/obj/structure/table,
 /obj/effect/spawner/lootdrop/lighter,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1917,6 +1896,7 @@
 /area/f13/wasteland)
 "fX" = (
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -2420,7 +2400,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -2552,7 +2532,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "hU" = (
 /mob/living/simple_animal/chicken{
 	name = "Too-Fat-to-Fly"
@@ -2657,7 +2637,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "il" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c";
@@ -2761,7 +2741,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "iy" = (
 /obj/structure/closet{
 	anchored = 1
@@ -3331,6 +3311,7 @@
 	pixel_y = 6
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -3410,7 +3391,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "kG" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -3455,7 +3436,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "kO" = (
 /obj/structure/railing/corner{
 	color = "#A47449"
@@ -3493,11 +3474,6 @@
 	color = "#779999"
 	},
 /area/f13/bar)
-"kT" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior14"
-	},
-/area/f13/building)
 "kU" = (
 /obj/structure/chair/wood{
 	dir = 4;
@@ -3619,6 +3595,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -3823,7 +3800,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "lU" = (
 /obj/item/statuebust{
 	can_be_unanchored = 1;
@@ -4044,9 +4021,6 @@
 	dir = 4
 	},
 /area/f13/wasteland)
-"mB" = (
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building/church)
 "mC" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
@@ -4239,10 +4213,9 @@
 	},
 /area/f13/wasteland)
 "np" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior1"
-	},
-/area/f13/building/hospital/clinic)
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/brick,
+/area/f13/building/trader)
 "nq" = (
 /obj/structure/flora/chomp/thicket3,
 /turf/open/indestructible/ground/outside/desert,
@@ -4332,10 +4305,6 @@
 /obj/structure/window/fulltile/wood{
 	layer = 3
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
 /obj/structure/curtain{
 	color = "#c40e0e"
 	},
@@ -4362,14 +4331,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"nP" = (
-/obj/structure/barricade/bars{
-	layer = 3.5
-	},
-/obj/structure/decoration/rag,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/brick,
-/area/f13/building/trader)
 "nR" = (
 /obj/structure/simple_door/wood/alt/window,
 /turf/open/floor/f13/wood,
@@ -4581,10 +4542,16 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "ou" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior4"
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 6
 	},
-/area/f13/building/hospital/clinic)
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "ov" = (
 /obj/structure/flora/chomp/shrub1,
 /turf/open/indestructible/ground/outside/desert,
@@ -4856,12 +4823,6 @@
 "pq" = (
 /turf/open/indestructible/cobble,
 /area/f13/wasteland)
-"ps" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior2"
-	},
-/area/f13/building/church)
 "pt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
@@ -4916,7 +4877,9 @@
 /area/f13/wasteland)
 "pE" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
 /area/f13/building/hospital)
 "pF" = (
 /obj/effect/turf_decal/big{
@@ -5001,7 +4964,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "pU" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -5192,7 +5155,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "qB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6157,7 +6120,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -6217,6 +6180,7 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -6241,11 +6205,6 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/purple,
-/area/f13/building)
-"tP" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior4"
-	},
 /area/f13/building)
 "tS" = (
 /obj/machinery/mineral/wasteland_vendor/crafting{
@@ -6274,7 +6233,6 @@
 	dir = 1
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -6447,10 +6405,6 @@
 	},
 /area/f13/wasteland)
 "uv" = (
-/obj/structure/wood_counter{
-	layer = 6;
-	pixel_y = -1
-	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = 9
@@ -6526,11 +6480,6 @@
 	color = "#FFFFFF"
 	},
 /area/f13/wasteland)
-"uF" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior6"
-	},
-/area/f13/building/church)
 "uH" = (
 /obj/structure/dresser{
 	pixel_y = 10
@@ -6829,11 +6778,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"vJ" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior8"
-	},
-/area/f13/building/hospital/clinic)
 "vK" = (
 /obj/structure/chair/bench{
 	pixel_y = 10
@@ -6918,8 +6862,14 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "wc" = (
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#eeeeee";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "wg" = (
 /obj/structure/car/rubbish3{
 	pixel_x = -12;
@@ -7222,10 +7172,13 @@
 	},
 /area/f13/wasteland)
 "xd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
+	opacity = 0
 	},
 /area/f13/wasteland)
 "xf" = (
@@ -7335,7 +7288,7 @@
 "xw" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building/trader)
 "xy" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -7404,23 +7357,11 @@
 	},
 /area/f13/building)
 "xJ" = (
-/obj/structure/spacevine,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = 0
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
+	opacity = 0
 	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = 0
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/building/trader)
+/area/f13/wasteland)
 "xL" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 8;
@@ -7748,23 +7689,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
-"yQ" = (
-/obj/structure/spacevine,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = 0
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = 0
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/building/trader)
 "yR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7802,7 +7726,7 @@
 /area/f13/building)
 "yX" = (
 /turf/closed/indestructible/f13/matrix,
-/area/f13/wasteland)
+/area/f13/building/trader)
 "yY" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -7885,10 +7809,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "zj" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior12"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
 	},
-/area/f13/building)
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "zk" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood,
@@ -8006,8 +7935,8 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "zN" = (
-/obj/structure/table,
 /obj/structure/window,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -8052,6 +7981,7 @@
 	pixel_y = 12
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -8065,7 +7995,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Aa" = (
 /obj/structure/sink/cupboard{
 	pixel_x = -1;
@@ -8146,7 +8076,6 @@
 	pixel_y = 6
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -8258,7 +8187,7 @@
 	pixel_y = 7
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -8273,13 +8202,22 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "AE" = (
-/obj/structure/table{
-	layer = 3
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14;
+	pixel_y = 0
 	},
-/area/f13/building)
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/trader)
 "AF" = (
 /obj/structure/fence/corner/wooden{
 	dir = 4
@@ -8354,7 +8292,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/closed/wall/mineral/brick,
-/area/f13/wasteland)
+/area/f13/building/trader)
 "AR" = (
 /obj/structure/decoration/vent/rusty{
 	pixel_y = 29
@@ -8456,10 +8394,25 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Bh" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior3"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
 	},
-/area/f13/building)
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = -3
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 7
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "Bi" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
@@ -8535,7 +8488,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Bw" = (
-/turf/closed/wall/f13/wood/interior,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
 /area/f13/building/hospital)
 "Bx" = (
 /obj/structure/flora/grass/coyote/four,
@@ -8742,7 +8697,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -8772,11 +8727,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"Ce" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior2"
-	},
-/area/f13/building/hospital/clinic)
 "Cf" = (
 /obj/structure/simple_door/room{
 	name = "Clinic"
@@ -8971,7 +8921,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "CF" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	density = 0;
@@ -9050,7 +9000,9 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/turf/closed/wall/f13/coyote/fortress_brick,
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
+	},
 /area/f13/wasteland)
 "CL" = (
 /obj/structure/rack,
@@ -9081,7 +9033,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "CP" = (
 /obj/structure/noticeboard{
 	desc = "A notice board, for the town of Nash.";
@@ -9259,8 +9211,8 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "Do" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior3"
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
 	},
 /area/f13/building/hospital/clinic)
 "Dp" = (
@@ -9392,7 +9344,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "DR" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -9473,10 +9425,6 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "Ei" = (
-/obj/structure/wood_counter{
-	layer = 6;
-	pixel_y = -1
-	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	pixel_y = 9
@@ -9731,6 +9679,7 @@
 	pixel_y = 7
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -10002,7 +9951,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "FO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -10230,10 +10179,6 @@
 /obj/structure/window/fulltile/wood{
 	layer = 3
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
 /obj/structure/curtain{
 	color = "#c40e0e"
 	},
@@ -10298,7 +10243,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "GP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10463,7 +10408,6 @@
 	pixel_y = 6
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -10516,6 +10460,7 @@
 	pixel_y = 12
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#cccccc";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -11077,11 +11022,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"Jf" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior1"
-	},
-/area/f13/building)
 "Jg" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
@@ -11110,9 +11050,7 @@
 /area/f13/wasteland)
 "Jm" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior8"
-	},
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "Jn" = (
 /obj/structure/flora/tree/jungle/small{
@@ -11141,15 +11079,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Js" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior8"
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/area/f13/building)
+/area/f13/building/trader)
 "Jv" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior2"
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/area/f13/building)
+/area/f13/building/trader)
 "Jy" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -11162,6 +11101,7 @@
 	pixel_y = 8
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -11500,7 +11440,7 @@
 	},
 /area/f13/wasteland)
 "KD" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -11651,11 +11591,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/wasteland)
-"Le" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior14"
-	},
-/area/f13/building/hospital/clinic)
 "Lk" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 8;
@@ -11831,10 +11766,11 @@
 	},
 /area/f13/building/trader)
 "LC" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior13"
+/obj/machinery/light/small,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/area/f13/building/hospital/clinic)
+/area/f13/building/trader)
 "LE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/bench{
@@ -11884,7 +11820,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "LO" = (
 /obj/structure/railing/corner{
 	dir = 4;
@@ -12111,7 +12047,7 @@
 	dir = 1
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -12449,7 +12385,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Nu" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -12542,9 +12478,7 @@
 /area/f13/wasteland)
 "NJ" = (
 /obj/structure/rug/big/rug_fancy,
-/obj/structure/table{
-	layer = 3
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -12608,7 +12542,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "NQ" = (
 /obj/effect/turf_decal/big{
 	dir = 4
@@ -12627,7 +12561,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "NT" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -12692,11 +12626,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"Oc" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior10"
-	},
-/area/f13/building)
 "Od" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -12715,7 +12644,7 @@
 /turf/closed/wall/f13/sunset/brick_small_dark{
 	color = "#AA5555"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Of" = (
 /obj/structure/statue/bone/skull{
 	dir = 1;
@@ -12892,7 +12821,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "OQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -12960,7 +12889,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "OY" = (
 /obj/structure/flora/chomp/shrubber1,
 /turf/open/indestructible/ground/outside/desert,
@@ -13218,7 +13147,7 @@
 	pixel_y = 6
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -13346,7 +13275,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Qq" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = -3;
@@ -13443,10 +13372,6 @@
 /obj/structure/window/fulltile/wood{
 	layer = 3
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
 /obj/structure/curtain{
 	color = "#c40e0e"
 	},
@@ -13537,7 +13462,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Rd" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -13592,11 +13517,6 @@
 /obj/structure/flora/chomp/shrub3,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"Ro" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior5"
-	},
-/area/f13/building)
 "Rp" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -13825,7 +13745,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "RU" = (
 /obj/item/clothing/suit/toggle/lawyer/black,
 /obj/item/clothing/suit/toggle/lawyer/purple,
@@ -13872,8 +13792,8 @@
 	},
 /area/f13/building)
 "Sc" = (
-/turf/closed/wall/f13/coyote/fortress_brick{
-	opacity = 0
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
 	},
 /area/f13/wasteland)
 "Sd" = (
@@ -14130,7 +14050,9 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/turf/closed/wall/f13/coyote/fortress_brick,
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
+	},
 /area/f13/wasteland)
 "Ta" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -14274,8 +14196,8 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "Tw" = (
-/obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -14494,7 +14416,7 @@
 /area/f13/wasteland)
 "TY" = (
 /obj/structure/sign/gunshop,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/r_wall,
 /area/f13/building/trader)
 "TZ" = (
 /obj/structure/sign/poster/wanted,
@@ -14502,7 +14424,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "Uc" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/caps/fivezerozero,
@@ -14902,11 +14824,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
-"Vt" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior1"
-	},
-/area/f13/building/church)
 "Vv" = (
 /obj/structure/flora/chomp/bush3,
 /turf/open/indestructible/ground/outside/desert,
@@ -15101,10 +15018,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "VW" = (
-/obj/structure/barricade/bars{
-	layer = 3.5
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/f13/building/trader)
 "VX" = (
@@ -15156,7 +15069,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -15379,7 +15292,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "WS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15389,7 +15302,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "WU" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/turf_decal/weather/dirt{
@@ -15497,11 +15410,6 @@
 	opacity = 0
 	},
 /area/f13/building)
-"Xm" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior3"
-	},
-/area/f13/building/church)
 "Xn" = (
 /obj/structure/flora/chomp/thicket4,
 /turf/open/indestructible/ground/outside/desert,
@@ -15598,12 +15506,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"XB" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland)
 "XD" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -15616,7 +15518,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -15704,7 +15606,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building/trader)
 "XR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -15726,7 +15628,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -15871,7 +15773,6 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -15961,11 +15862,6 @@
 	dir = 4
 	},
 /area/f13/wasteland)
-"YE" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior2"
-	},
-/area/f13/building/church)
 "YF" = (
 /obj/structure/chair/stool/f13stool,
 /turf/open/floor/plasteel/asteroid{
@@ -16065,7 +15961,7 @@
 "YW" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/brick,
-/area/f13/wasteland)
+/area/f13/building/trader)
 "YX" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -16305,7 +16201,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#EEEEEE";
+	color = "#eeeeee";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -16411,7 +16307,6 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#CCCCCC";
 	opacity = 0
 	},
 /area/f13/wasteland)
@@ -24830,7 +24725,7 @@ Oi
 DU
 nD
 GH
-AE
+yl
 nD
 Nu
 rE
@@ -27394,7 +27289,7 @@ qD
 FV
 Iv
 FV
-AE
+yl
 nD
 FV
 FV
@@ -27914,7 +27809,7 @@ ei
 FV
 nD
 GH
-AE
+yl
 nD
 eg
 rv
@@ -33266,7 +33161,7 @@ WV
 bd
 FV
 uj
-tP
+fK
 bd
 FV
 fZ
@@ -33523,7 +33418,7 @@ ZL
 kb
 HM
 HM
-zj
+fK
 Oz
 HM
 FV
@@ -33780,8 +33675,8 @@ ZL
 fD
 Rr
 HM
-zj
-OZ
+fK
+yl
 Rr
 FV
 iH
@@ -34037,7 +33932,7 @@ ZL
 bj
 zL
 FV
-zj
+fK
 bj
 IJ
 FV
@@ -34290,13 +34185,13 @@ hz
 hz
 hz
 dZ
-Gs
-Jv
-Jf
+WV
+fK
+fK
 uZ
-Oc
-Bh
-Jf
+fK
+fK
+fK
 Pq
 Gs
 dZ
@@ -34640,7 +34535,7 @@ PR
 lL
 yl
 FV
-tP
+fK
 OZ
 bj
 Wh
@@ -35062,10 +34957,10 @@ tb
 hz
 dZ
 fK
-wc
+fK
 uZ
-Jv
-Ro
+fK
+fK
 jm
 Rr
 FV
@@ -35154,9 +35049,9 @@ ZL
 pW
 FV
 jI
-Oc
-Bh
-Ro
+fK
+fK
+fK
 bd
 iH
 dZ
@@ -35322,9 +35217,9 @@ fK
 fN
 rT
 rT
-kT
-Bh
-Jf
+fK
+fK
+fK
 ry
 cF
 rE
@@ -35413,7 +35308,7 @@ FV
 FV
 FV
 FV
-Oc
+fK
 PR
 PR
 dZ
@@ -35579,7 +35474,7 @@ fK
 NU
 Qw
 vC
-Js
+fK
 Sj
 aS
 HM
@@ -37562,10 +37457,10 @@ TE
 hz
 sS
 td
-uF
-Vt
+Bi
+Bi
 Su
-mB
+Bi
 Su
 jv
 hz
@@ -38332,12 +38227,12 @@ CZ
 TE
 hz
 sS
-YE
-Vt
+Bi
+Bi
 hc
-ps
-Xm
-Vt
+Jm
+Bi
+Bi
 sS
 hz
 hz
@@ -39283,69 +39178,69 @@ jF
 TE
 hz
 hz
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 Sc
 hz
 hz
@@ -39540,23 +39435,17 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
-NA
+Sc
+Sc
 iT
 iT
-NA
-iT
-iT
-iT
-iT
-iT
-iT
+Sc
 iT
 iT
 iT
@@ -39589,20 +39478,26 @@ iT
 iT
 iT
 iT
-NA
-iT
-iT
-NA
-NA
 iT
 iT
 iT
 iT
 iT
 iT
+Sc
 iT
 iT
-NA
+Sc
+Sc
+iT
+iT
+iT
+iT
+iT
+iT
+iT
+iT
+Sc
 Sc
 hz
 hz
@@ -39797,13 +39692,13 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
+Sc
 Dx
 iT
 iT
@@ -39846,11 +39741,11 @@ iT
 iT
 iT
 iT
-NA
+Sc
 iT
 iT
 xZ
-NA
+Sc
 iT
 iT
 iT
@@ -39859,7 +39754,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -40054,17 +39949,17 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
+Sc
 CK
 iT
 iT
-NA
+Sc
 iT
 iT
 iT
@@ -40103,11 +39998,11 @@ iT
 iT
 iT
 iT
-NA
+Sc
 iT
 iT
 CK
-NA
+Sc
 iT
 iT
 iT
@@ -40116,7 +40011,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -40311,69 +40206,69 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 SY
 SY
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -40568,11 +40463,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Je
 qV
 qV
@@ -40585,7 +40480,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 mb
 mb
 uc
@@ -40606,7 +40501,7 @@ ae
 hl
 Er
 XS
-fX
+xJ
 Ac
 xn
 qv
@@ -40626,11 +40521,11 @@ uc
 uc
 mt
 Ax
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -40825,11 +40720,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zJ
 vu
 vu
@@ -40863,7 +40758,7 @@ of
 sT
 Er
 XS
-Gy
+zj
 mx
 iP
 JP
@@ -40883,11 +40778,11 @@ hz
 AD
 AD
 GJ
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -41082,11 +40977,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zJ
 pY
 vu
@@ -41120,7 +41015,7 @@ Qe
 sT
 Er
 XS
-fX
+xJ
 Mu
 iP
 JP
@@ -41140,11 +41035,11 @@ qv
 qv
 hg
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -41339,11 +41234,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 jR
 vu
 vu
@@ -41397,11 +41292,11 @@ iP
 iP
 ZV
 sW
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -41596,11 +41491,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 dV
 vu
 vu
@@ -41613,7 +41508,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 mi
 mi
 Pb
@@ -41654,11 +41549,11 @@ ym
 pq
 ZV
 AD
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -41853,11 +41748,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zJ
 Cd
 oa
@@ -41911,11 +41806,11 @@ hA
 ze
 ZV
 AD
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -42110,11 +42005,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 SW
 fO
 lF
@@ -42168,11 +42063,11 @@ LV
 ze
 jd
 oj
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -42367,11 +42262,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 lF
 lW
 lW
@@ -42405,7 +42300,7 @@ DB
 ae
 Er
 Wf
-fX
+xJ
 mx
 iP
 JP
@@ -42425,11 +42320,11 @@ wT
 Wp
 jd
 oj
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -42624,11 +42519,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 DK
 BX
 lW
@@ -42662,7 +42557,7 @@ ae
 ae
 mQ
 tC
-fX
+xJ
 Mu
 iP
 YJ
@@ -42674,7 +42569,7 @@ oh
 oh
 oh
 QH
-ou
+Do
 Fv
 Fv
 mc
@@ -42682,11 +42577,11 @@ wT
 ze
 jd
 uc
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -42881,11 +42776,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Mj
 Qr
 VL
@@ -42929,9 +42824,9 @@ tL
 yq
 Bu
 Ue
-Ce
 Do
-LC
+Do
+Do
 Nl
 Fv
 Gr
@@ -42939,11 +42834,11 @@ RK
 ze
 ZV
 yS
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -43138,11 +43033,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 lW
 SQ
 BX
@@ -43188,19 +43083,19 @@ oh
 wV
 ey
 xt
-Le
-np
+Do
+Do
 zE
 zE
 Fn
 ze
 ZV
 uc
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -43395,11 +43290,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 oB
 CA
 DK
@@ -43445,7 +43340,7 @@ oh
 Ue
 oh
 sk
-vJ
+Do
 xp
 Fv
 Hu
@@ -43453,11 +43348,11 @@ wT
 ze
 ZV
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -43652,11 +43547,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 lW
 lW
 lW
@@ -43710,11 +43605,11 @@ wT
 ze
 ZV
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -43909,11 +43804,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 lW
 lW
 Me
@@ -43948,7 +43843,7 @@ FV
 FV
 FV
 Zs
-EQ
+Bh
 wn
 Ak
 it
@@ -43959,19 +43854,19 @@ Bm
 oh
 oh
 Mk
-Ce
-np
+Do
+Do
 iY
 oN
 wT
 ze
 ZV
 AD
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -44166,11 +44061,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 lW
 pj
 DK
@@ -44224,11 +44119,11 @@ RK
 ze
 ZV
 db
-NA
-NA
+Sc
+Sc
 hj
-NA
-NA
+Sc
+Sc
 Sc
 hz
 hz
@@ -44423,11 +44318,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 DK
 lm
 DK
@@ -44462,7 +44357,7 @@ HM
 YA
 AI
 XD
-fX
+xJ
 bE
 Cl
 it
@@ -44481,11 +44376,11 @@ Fn
 ze
 jd
 fz
-NA
+Sc
 Mm
 iT
-NA
-NA
+Sc
+Sc
 Sc
 hz
 hz
@@ -44680,11 +44575,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Mj
 lW
 lW
@@ -44719,7 +44614,7 @@ HM
 MP
 Ka
 tC
-fX
+xJ
 lw
 Cl
 it
@@ -44731,18 +44626,18 @@ RY
 QN
 at
 eK
-Ce
 Do
-np
+Do
+Do
 Fn
 ze
 jd
 oj
-NA
+Sc
 JU
 iT
 xZ
-NA
+Sc
 Sc
 hz
 hz
@@ -44937,11 +44832,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 DK
 lW
 IS
@@ -44954,7 +44849,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 AD
 nF
 em
@@ -44976,7 +44871,7 @@ wS
 Ft
 Ka
 tC
-Gy
+zj
 bE
 Cl
 it
@@ -44995,11 +44890,11 @@ RK
 ze
 jd
 oj
-NA
+Sc
 UT
 iT
 CK
-NA
+Sc
 Sc
 hz
 hz
@@ -45194,11 +45089,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 yF
 yF
 cp
@@ -45233,7 +45128,7 @@ KI
 Ch
 Ka
 tC
-fX
+xJ
 bE
 Ak
 it
@@ -45252,15 +45147,15 @@ RK
 ze
 jd
 Gn
-NA
-NA
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 Sc
 hz
 TN
@@ -45451,11 +45346,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 yF
 uH
 kv
@@ -45490,7 +45385,7 @@ FV
 HM
 Ka
 tC
-fX
+xJ
 AL
 Ak
 it
@@ -45509,7 +45404,7 @@ Bd
 ze
 jd
 uc
-NA
+Sc
 iT
 iT
 iT
@@ -45517,7 +45412,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -45708,11 +45603,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Co
 qm
 kv
@@ -45747,7 +45642,7 @@ FV
 FV
 Ka
 tC
-fX
+xJ
 AL
 Ak
 it
@@ -45766,7 +45661,7 @@ WD
 iP
 jd
 Ax
-NA
+Sc
 iT
 iT
 iT
@@ -45774,7 +45669,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -45965,11 +45860,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 qo
 kv
@@ -46004,7 +45899,7 @@ FV
 HM
 Ka
 tC
-Gy
+zj
 bE
 Cl
 gk
@@ -46023,7 +45918,7 @@ GW
 pq
 jd
 sW
-NA
+Sc
 iT
 iT
 iT
@@ -46031,7 +45926,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -46222,11 +46117,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 yF
 zA
 Ea
@@ -46239,7 +46134,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 uc
 nF
 AH
@@ -46261,7 +46156,7 @@ GR
 sq
 Ka
 tC
-fX
+xJ
 bE
 Cl
 sQ
@@ -46280,15 +46175,15 @@ nD
 ze
 jd
 hz
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -46479,11 +46374,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 Ho
 bT
@@ -46518,7 +46413,7 @@ Qu
 Qu
 Ka
 tC
-fX
+xJ
 bE
 Ak
 CX
@@ -46542,10 +46437,10 @@ hz
 hz
 hz
 GJ
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -46736,11 +46631,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 TH
 zA
@@ -46775,7 +46670,7 @@ ZR
 ZR
 Ka
 tC
-fX
+xJ
 yw
 Ak
 Ks
@@ -46799,10 +46694,10 @@ oj
 uc
 Mh
 AD
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -46993,11 +46888,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 yF
 qo
 jG
@@ -47031,8 +46926,8 @@ jo
 gx
 pv
 Ka
-tW
-Gy
+wc
+zj
 Db
 uS
 VB
@@ -47056,10 +46951,10 @@ ES
 HK
 uc
 AD
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 TN
@@ -47250,11 +47145,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 Tt
 kv
@@ -47267,7 +47162,7 @@ ly
 ZG
 SC
 Fl
-Gy
+xd
 oj
 nF
 VD
@@ -47289,7 +47184,7 @@ Ka
 Eh
 cF
 Mt
-fX
+xJ
 iw
 pq
 ug
@@ -47313,10 +47208,10 @@ sF
 GU
 Fq
 hz
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 Vd
@@ -47507,11 +47402,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 HZ
 OT
@@ -47545,8 +47440,8 @@ nD
 wq
 sJ
 Dc
-tW
-fX
+wc
+xJ
 AL
 pq
 JP
@@ -47570,10 +47465,10 @@ ug
 ug
 ug
 ug
-NA
+Sc
 hj
 hj
-NA
+Sc
 hz
 hz
 qU
@@ -47764,11 +47659,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 TH
 yF
@@ -48021,11 +47916,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 yF
 qo
 jG
@@ -48278,11 +48173,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 Tt
 kv
@@ -48535,11 +48430,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 HZ
 OT
@@ -48598,11 +48493,11 @@ uu
 YD
 YD
 YD
-NA
+Sc
 hj
 hj
-NA
-hz
+Sc
+Sc
 hz
 qU
 qU
@@ -48792,11 +48687,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 zA
 TH
 yF
@@ -48831,7 +48726,7 @@ Ax
 Gh
 ep
 PV
-wt
+ou
 AL
 pq
 pq
@@ -48855,10 +48750,10 @@ yS
 uc
 uY
 hz
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 MH
@@ -49049,11 +48944,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Cw
 lW
 lW
@@ -49067,15 +48962,15 @@ ZG
 SC
 SC
 fX
-pa
-YX
-YX
-YX
+kj
+AE
+AE
+AE
 xw
-YX
+AE
 WQ
 xw
-pa
+kj
 AD
 hz
 Ae
@@ -49088,7 +48983,7 @@ Vf
 Ae
 ep
 tC
-Gy
+zj
 lw
 JP
 JP
@@ -49112,10 +49007,10 @@ Cy
 sA
 AD
 ID
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -49306,11 +49201,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Iw
 bT
 LW
@@ -49324,28 +49219,28 @@ ZG
 SC
 SC
 fX
-YX
+AE
 yX
 yX
-pa
-tb
-xd
-XB
+kj
+OD
+GP
+kq
 OX
-YX
+AE
 AD
 xr
-kj
+VW
 LK
-kj
+VW
 Wy
 Wy
 Wy
-kj
+VW
 LK
 TY
 tC
-fX
+xJ
 bE
 pq
 JP
@@ -49369,10 +49264,10 @@ NL
 uc
 gr
 AD
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -49563,11 +49458,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 NI
 RI
 VF
@@ -49581,18 +49476,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 FM
 hS
 lT
-tb
-xd
-xd
-tb
-YX
+OD
+GP
+GP
+OD
+AE
 AD
 qL
-cb
+oE
 tl
 bh
 OD
@@ -49600,9 +49495,9 @@ OD
 OD
 pG
 xb
-cb
+oE
 tC
-fX
+xJ
 AL
 JP
 pq
@@ -49626,10 +49521,10 @@ GJ
 uc
 hz
 pN
-NA
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -49820,11 +49715,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 pD
 RI
 HF
@@ -49840,16 +49735,16 @@ SC
 fX
 AQ
 zZ
-cV
+Jv
 GO
-tb
+OD
 Qp
 XQ
 LN
-YX
+AE
 AD
 hz
-bo
+oE
 tS
 kq
 GP
@@ -49857,9 +49752,9 @@ OD
 OD
 OD
 KB
-cb
+oE
 tC
-fX
+xJ
 AL
 JP
 JP
@@ -49878,15 +49773,15 @@ cG
 ze
 ZV
 hz
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -50077,11 +49972,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 iB
 RI
 VF
@@ -50095,7 +49990,7 @@ ZG
 SC
 SC
 fX
-YX
+AE
 lT
 RT
 TZ
@@ -50106,7 +50001,7 @@ DO
 xw
 hz
 sW
-xJ
+oE
 GG
 OD
 GP
@@ -50114,9 +50009,9 @@ ab
 OD
 OD
 Hi
-cb
+oE
 tC
-Gy
+zj
 AL
 pq
 JP
@@ -50135,7 +50030,7 @@ cG
 ze
 ZV
 uc
-NA
+Sc
 iT
 iT
 iT
@@ -50143,7 +50038,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -50334,11 +50229,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Of
 bT
 dC
@@ -50352,18 +50247,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 fl
-cV
+Jv
 lT
-tb
-XB
-tb
-xd
+OD
+kq
+OD
+GP
 xw
 hz
 NL
-yQ
+oE
 Yi
 OD
 kq
@@ -50371,9 +50266,9 @@ kq
 kq
 kq
 Wj
-cb
+oE
 tC
-fX
+xJ
 AL
 JP
 pq
@@ -50392,7 +50287,7 @@ cG
 Wp
 jd
 sW
-NA
+Sc
 iT
 iT
 iT
@@ -50400,7 +50295,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -50591,11 +50486,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Fy
 lW
 lW
@@ -50609,18 +50504,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 an
-cV
+Jv
 bC
-tb
-tb
-XB
+OD
+OD
+kq
 Nt
 xw
 hz
 AD
-qO
+VW
 fe
 fe
 NH
@@ -50628,9 +50523,9 @@ Uf
 WO
 Is
 qO
-VW
+oE
 tC
-fX
+xJ
 bE
 JP
 pq
@@ -50649,7 +50544,7 @@ ug
 JP
 jd
 hz
-NA
+Sc
 iT
 iT
 iT
@@ -50657,7 +50552,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 mC
@@ -50848,11 +50743,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 bT
 bT
@@ -50866,18 +50761,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 lT
 RT
 TZ
 ON
-tb
-xd
+OD
+GP
 CE
-YX
+AE
 hz
 AD
-qO
+VW
 Jh
 OD
 kq
@@ -50885,9 +50780,9 @@ OD
 OD
 OD
 OE
-VW
+oE
 tC
-fX
+xJ
 bE
 pq
 JP
@@ -50906,15 +50801,15 @@ pq
 JP
 jd
 uc
-NA
-NA
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 Sc
 hz
 mC
@@ -51105,11 +51000,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 Sd
 CQ
@@ -51123,18 +51018,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 qA
 NP
 CO
-tb
-tb
-tb
+OD
+OD
+OD
 NS
-YX
+AE
 sW
 hz
-qO
+VW
 wZ
 xu
 GP
@@ -51142,9 +51037,9 @@ OD
 wi
 kq
 cR
-VW
+oE
 tC
-fX
+xJ
 bE
 pq
 JP
@@ -51163,11 +51058,11 @@ JP
 Lp
 jd
 uc
-NA
+Sc
 UT
 iT
-NA
-NA
+Sc
+Sc
 Sc
 hz
 hz
@@ -51362,11 +51257,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 oi
 CQ
@@ -51380,18 +51275,18 @@ ZG
 SC
 SC
 fX
-YX
+AE
 pT
-RX
+Js
 GO
 ix
 ix
-tb
-tb
+OD
+OD
 Od
 AD
 hz
-qO
+VW
 xy
 OD
 ZO
@@ -51399,9 +51294,9 @@ xk
 vh
 OD
 gC
-VW
+oE
 tC
-Gy
+zj
 AL
 JP
 pq
@@ -51420,11 +51315,11 @@ cJ
 iP
 jd
 uc
-NA
+Sc
 JU
 iT
 xZ
-NA
+Sc
 Sc
 hz
 hz
@@ -51619,11 +51514,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 bX
 CQ
@@ -51636,16 +51531,16 @@ ly
 ZG
 SC
 SC
-Gy
-YX
+xd
+AE
 yX
 yX
-YX
-YX
-pa
+AE
+AE
+kj
 ik
-pa
-YX
+kj
+AE
 NL
 hz
 VW
@@ -51656,9 +51551,9 @@ xM
 yR
 kq
 LB
-VW
+oE
 tC
-fX
+xJ
 bE
 JP
 JP
@@ -51677,11 +51572,11 @@ mA
 YD
 gZ
 hz
-NA
+Sc
 Mm
 iT
 CK
-NA
+Sc
 Sc
 hz
 hz
@@ -51876,11 +51771,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 KC
 oi
 CQ
@@ -51894,18 +51789,18 @@ ZG
 SC
 SC
 fX
-pa
+kj
 Od
-YX
-pa
+AE
+kj
 TO
-YX
+AE
 WS
-Dq
-YX
+LC
+AE
 hz
 AD
-qO
+VW
 Vk
 OD
 If
@@ -51913,15 +51808,15 @@ ud
 GP
 OD
 pt
-qO
+VW
 tC
-fX
+xJ
 bE
 pq
 JP
 dS
 tW
-fX
+SC
 hz
 sW
 uc
@@ -51934,11 +51829,11 @@ qe
 hz
 Ii
 hz
-NA
-NA
+Sc
+Sc
 hj
-NA
-NA
+Sc
+Sc
 Sc
 hz
 hz
@@ -52133,11 +52028,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 KC
 GQ
 CQ
@@ -52156,13 +52051,13 @@ BH
 Ex
 yK
 hz
-UV
+np
 Rc
-cV
-YX
+Jv
+AE
 hz
 Vw
-qO
+VW
 AP
 OD
 wl
@@ -52170,15 +52065,15 @@ JM
 fH
 nS
 oE
-qO
+VW
 tC
-fX
+xJ
 bE
 pq
 JP
 dS
 tW
-fX
+SC
 hz
 ia
 uc
@@ -52191,11 +52086,11 @@ gq
 Ib
 pQ
 Zu
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -52390,11 +52285,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 kd
 CQ
@@ -52413,29 +52308,29 @@ AD
 AD
 AD
 dR
-pa
-YX
-YX
+kj
+AE
+AE
 YW
 ds
 hz
-nP
-qO
-qO
-qO
-qO
-qO
-qO
 VW
-nP
-tW
-fX
+VW
+VW
+VW
+VW
+VW
+VW
+oE
+oE
+wc
+xJ
 Xo
 JP
 JP
 dS
 tW
-fX
+SC
 eZ
 uc
 Ae
@@ -52448,11 +52343,11 @@ YM
 hz
 Cy
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -52647,11 +52542,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 KC
 sf
 vp
@@ -52692,7 +52587,7 @@ JP
 pq
 dS
 tW
-Gy
+cb
 uc
 Ae
 Uo
@@ -52705,11 +52600,11 @@ YM
 Ae
 kc
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -52904,11 +52799,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 KC
 sf
 oi
@@ -52949,7 +52844,7 @@ pq
 JP
 dS
 tW
-fX
+SC
 hz
 JY
 YM
@@ -52962,11 +52857,11 @@ wp
 BA
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -53161,11 +53056,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 sf
 oi
@@ -53206,7 +53101,7 @@ pq
 JP
 dS
 tW
-fX
+SC
 hz
 YM
 fh
@@ -53219,11 +53114,11 @@ tZ
 YM
 sW
 uc
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -53418,11 +53313,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 KC
 sf
 oi
@@ -53463,7 +53358,7 @@ uu
 uu
 IK
 tW
-fX
+SC
 hz
 YM
 Kh
@@ -53476,11 +53371,11 @@ jA
 lE
 uc
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -53675,11 +53570,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 CQ
 KC
 CQ
@@ -53720,7 +53615,7 @@ hz
 yI
 mQ
 tW
-Gy
+cb
 hz
 gq
 nK
@@ -53733,11 +53628,11 @@ jA
 YM
 hz
 uc
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -53932,11 +53827,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 CQ
 TB
@@ -53977,7 +53872,7 @@ hz
 xr
 mQ
 tW
-fX
+SC
 hz
 YM
 Ni
@@ -53990,11 +53885,11 @@ PZ
 YM
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 vU
@@ -54189,11 +54084,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 TP
 UL
@@ -54234,7 +54129,7 @@ hz
 gO
 mQ
 tW
-fX
+SC
 hz
 YM
 lD
@@ -54247,11 +54142,11 @@ YM
 BD
 sW
 sW
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -54446,11 +54341,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 TP
 KK
@@ -54491,7 +54386,7 @@ hz
 sW
 mQ
 tW
-fX
+SC
 AR
 yZ
 YM
@@ -54504,11 +54399,11 @@ hz
 hz
 AD
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -54703,11 +54598,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 TP
 qo
@@ -54720,7 +54615,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 Jp
 cW
 Jj
@@ -54742,13 +54637,13 @@ hz
 mQ
 Yl
 SC
-Gy
+xd
 hz
 hz
 hz
 mQ
 tW
-Gy
+cb
 hz
 hz
 uc
@@ -54761,11 +54656,11 @@ ri
 uc
 AD
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -54960,11 +54855,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 TP
 kv
@@ -55005,7 +54900,7 @@ xr
 ri
 RJ
 tW
-fX
+SC
 hz
 xr
 ri
@@ -55018,11 +54913,11 @@ hz
 yS
 tY
 AD
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -55217,11 +55112,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 TP
 xN
@@ -55262,7 +55157,7 @@ hz
 hz
 mQ
 tW
-fX
+SC
 hz
 hz
 hz
@@ -55275,11 +55170,11 @@ uc
 AD
 Ax
 AD
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -55474,11 +55369,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 CQ
 CQ
@@ -55519,7 +55414,7 @@ hz
 BI
 mQ
 tW
-fX
+SC
 hz
 hz
 hz
@@ -55532,11 +55427,11 @@ AD
 hz
 hz
 ri
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -55731,11 +55626,11 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 IQ
 IQ
 IQ
@@ -55748,7 +55643,7 @@ ly
 ZG
 SC
 SC
-Gy
+xd
 Yk
 cW
 cW
@@ -55770,13 +55665,13 @@ hz
 Ga
 Yl
 SC
-Gy
+xd
 hz
 hz
 hz
 mQ
 tW
-Gy
+cb
 hz
 hz
 hz
@@ -55789,11 +55684,11 @@ hz
 hz
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -55988,69 +55883,69 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -56245,23 +56140,17 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
-NA
+Sc
+Sc
 iT
 iT
-NA
-iT
-iT
-iT
-iT
-iT
-iT
+Sc
 iT
 iT
 iT
@@ -56294,20 +56183,26 @@ iT
 iT
 iT
 iT
-NA
-iT
-iT
-NA
-NA
 iT
 iT
 iT
 iT
 iT
 iT
+Sc
 iT
 iT
-NA
+Sc
+Sc
+iT
+iT
+iT
+iT
+iT
+iT
+iT
+iT
+Sc
 Sc
 hz
 hz
@@ -56502,13 +56397,13 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
+Sc
 Dx
 iT
 iT
@@ -56551,11 +56446,11 @@ iT
 iT
 iT
 iT
-NA
+Sc
 iT
 iT
 xZ
-NA
+Sc
 iT
 iT
 iT
@@ -56564,7 +56459,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -56759,17 +56654,17 @@ jF
 TE
 hz
 hz
-NA
+Sc
 iT
 iT
 iT
 iT
 iT
-NA
+Sc
 CK
 iT
 iT
-NA
+Sc
 iT
 iT
 iT
@@ -56808,11 +56703,11 @@ iT
 iT
 iT
 iT
-NA
+Sc
 iT
 iT
 CK
-NA
+Sc
 iT
 iT
 iT
@@ -56821,7 +56716,7 @@ iT
 iT
 iT
 iT
-NA
+Sc
 Sc
 hz
 hz
@@ -57016,69 +56911,69 @@ jF
 TE
 hz
 hz
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 UW
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 hj
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
+Sc
 Sc
 hz
 hz
@@ -66922,12 +66817,12 @@ pq
 pq
 pq
 Fu
-sS
-RQ
-sS
-zc
-sS
-sS
+Fu
+Fu
+Fu
+Fu
+Fu
+Fu
 Fu
 dZ
 dZ
@@ -67178,14 +67073,14 @@ nD
 pq
 pq
 pq
-sS
+Fu
 Ao
 Px
 fC
 lG
 Be
 eY
-LR
+Fu
 dZ
 dZ
 dZ
@@ -67435,14 +67330,14 @@ nD
 pq
 pq
 pq
-sS
+Fu
 td
-uF
-Vt
+Fu
+Fu
 Su
-mB
+Fu
 Su
-jv
+Fu
 dZ
 dZ
 dZ
@@ -67692,14 +67587,14 @@ Og
 pq
 pq
 pq
-jv
+Fu
 ih
-Jm
+Fu
 aT
 aT
 AM
 ih
-sS
+Fu
 dZ
 dZ
 dZ
@@ -67949,14 +67844,14 @@ UR
 pq
 pq
 pq
-sS
+Fu
 VE
 gF
 ih
 ih
 ih
 ih
-sS
+Fu
 dZ
 dZ
 dZ
@@ -68206,14 +68101,14 @@ pq
 pq
 pq
 pq
-sS
-YE
-Vt
+Fu
+Fu
+Fu
 hc
-ps
-Xm
-Vt
-sS
+Fu
+Fu
+Fu
+Fu
 dZ
 dZ
 dZ
@@ -68463,14 +68358,14 @@ pq
 pq
 pq
 pq
-sS
+Fu
 XJ
 pB
 FD
 FD
 Fd
 lU
-sS
+Fu
 dZ
 dZ
 dZ
@@ -68720,14 +68615,14 @@ co
 pq
 pq
 pq
-sS
+Fu
 wh
 aO
 NN
 Hf
 aO
 wh
-sS
+Fu
 dZ
 dZ
 dZ
@@ -69748,14 +69643,14 @@ pi
 pq
 pq
 pq
-Bi
+Fu
 ZH
 qn
 qb
 FD
 ZH
 qn
-Bi
+Fu
 dZ
 dZ
 dZ
@@ -70005,7 +69900,7 @@ nD
 pq
 pq
 pq
-jV
+Fu
 Mn
 Mn
 gF
