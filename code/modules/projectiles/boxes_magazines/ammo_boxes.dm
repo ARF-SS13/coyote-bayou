@@ -7,6 +7,7 @@
 
 
 //Shotguns
+/*
 /obj/item/ammo_box/shotgun
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	max_ammo = 24
@@ -111,7 +112,7 @@
 	desc = "A box full of trainshot shells. For hunting trains, you suppose."
 	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
 	icon_state = "trainshotbox"
-
+*/
 /obj/item/ammo_box/flintlock
 	name = "powderbag and musket balls"
 	desc = "A sack full of musket balls and blackpowder."

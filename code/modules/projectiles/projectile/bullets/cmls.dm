@@ -42,8 +42,8 @@
 	name = ".357 bullet"
 
 /obj/item/ammo_casing/compact
-	name = "compact bullet casing template"
-	desc = "A compact bullet casing template."
+	name = "generic compact bullet casing"
+	desc = "A generic compact bullet casing."
 	caliber = CALIBER_COMPACT
 	projectile_type = /obj/item/projectile/bullet/compact/cexample
 	material_class = BULLET_IS_MEDIUM_PISTOL
@@ -55,8 +55,8 @@
 	sound_properties = CSP_PISTOL_10MM
 
 /obj/item/ammo_casing/compact/cexample
-	name = "compact bullet casing template"
-	desc = "A compact bullet casing template."
+	name = "generic compact bullet casing"
+	desc = "A generic compact bullet casing."
 	projectile_type = /obj/item/projectile/bullet/compact/cexample
 
 /obj/item/ammo_casing/compact/c22
@@ -91,11 +91,11 @@
 	projectile_type = /obj/item/projectile/bullet/compact/c357
 
 /obj/item/ammo_box/compact
-	name = "compact ammo box"
+	name = "(COMPACT / Generic) ammo box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "10mmbox"
 	multiple_sprites = 2
-	ammo_type = /obj/item/ammo_casing/compact/cexample
+	ammo_type = /obj/item/ammo_casing/compact
 	caliber = list(CALIBER_COMPACT)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
@@ -133,7 +133,7 @@
 	ammo_type = /obj/item/ammo_casing/compact/c357
 
 /obj/item/ammo_box/compact/crate
-	name = "compact ammo crate"
+	name = "(COMPACT / Generic) ammo crate"
 	desc = "A wooden crate of ammo."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
@@ -205,8 +205,8 @@
 	name = "2mm gauss projectile"
 
 /obj/item/ammo_casing/medium
-	name = "medium bullet casing template"
-	desc = "A medium bullet casing template."
+	name = "generic medium bullet casing"
+	desc = "A generic medium bullet casing."
 	caliber = CALIBER_MEDIUM
 	projectile_type = /obj/item/projectile/bullet/medium/mexample
 	material_class = BULLET_IS_LIGHT_RIFLE
@@ -257,19 +257,19 @@
 	projectile_type = /obj/item/projectile/bullet/medium/m2mm
 
 /obj/item/ammo_box/medium
-	name = "medium ammo box"
+	name = "(MEDIUM / Generic) ammo box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "308box"
 	multiple_sprites = 2
 	caliber = list(CALIBER_LONG)
-	ammo_type = /obj/item/ammo_casing/a308
+	ammo_type = /obj/item/ammo_casing/medium
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/medium/template
-	name = "medium ammo box"
+	name = "(MEDIUM / Template) ammo box"
 	icon_state = "556box"
 	ammo_type = /obj/item/ammo_casing/medium/template
 
@@ -309,7 +309,7 @@
 	ammo_type = /obj/item/ammo_casing/medium/m2mm
 
 /obj/item/ammo_box/medium/crate
-	name = "medium ammo crate"
+	name = "(MEDIUM / Generic) ammo crate"
 	desc = "A wooden crate of ammo."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
@@ -372,11 +372,11 @@
 	name = ".45-70 bullet"
 
 /obj/item/ammo_casing/long
-	name = "Template long ammo casing"
-	desc = "A template long ammo casing. Like, on the box. You're NOT supposed to have this."
+	name = "generic long ammo casing"
+	desc = "A generic long ammo casing."
 	icon_state = "762-casing"
 	caliber = CALIBER_LONG
-	projectile_type = /obj/item/projectile/bullet/long/lexample
+	projectile_type = /obj/item/projectile/bullet/long
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
@@ -418,12 +418,12 @@
 	projectile_type = /obj/item/projectile/bullet/long/lheavyneedle
 
 /obj/item/ammo_box/long
-	name = "long ammo box"
+	name = "(LONG / Generic) ammo box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "box30"
 	multiple_sprites = 2
 	caliber = list(CALIBER_LONG)
-	ammo_type = /obj/item/ammo_casing/a3006
+	ammo_type = /obj/item/ammo_casing/long
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
@@ -455,7 +455,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/needle/heavy
 
 /obj/item/ammo_box/long/crate
-	name = "long ammo crate"
+	name = "(LONG / Generic) ammo crate"
 	desc = "A wooden crate of ammo."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
@@ -500,42 +500,27 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
-/obj/item/projectile/bullet/shotgun/sbuck/s12ga
+/obj/item/projectile/bullet/shotgun/buck/s12ga
 	name = "12 gauge buckshot pellet"
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
 	desc = "A generic buckshot shell."
 	icon_state = "gshell"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	projectile_type = /obj/item/projectile/bullet/shotgun/buck
 	pellets = SHOTGUN_PELLET_BASE
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
-
-/obj/item/projectile/bullet/shotgun/sslug
-	name = "generic shotgun slug"
-	damage = BULLET_DAMAGE_SHOTGUN_SLUG
-	damage_list = list("45" = 35, "60" = 50, "75" = 14, "200" = 1)
-	stamina = BULLET_STAMINA_SHOTGUN_SLUG
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_SHOTGUN_SLUG
-
-	wound_bonus = BULLET_WOUND_SHOTGUN_SLUG
-	bare_wound_bonus = BULLET_WOUND_SHOTGUN_SLUG_NAKED_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-
-	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
-	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
-
-/obj/item/projectile/bullet/shotgun/sslug/s12ga
-	name = "12 gauge slug"
+/obj/item/ammo_casing/shotgun/buckshot/s12ga
+	name = "12 gauge buckshot shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun/buck/s12ga
 
 /obj/item/ammo_casing/shotgun
-	name = "shotgun slug"
-	desc = "A template slug."
+	name = "generic shotgun slug"
+	desc = "A generic shotgun slug."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "bbshell"
 	caliber = CALIBER_SHOTGUN
@@ -548,8 +533,10 @@
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_SHOTGUN
 
+/obj/item/projectile/bullet/shotgun/s12ga
+	name = "12 gauge slug"
 
-/obj/item/projectile/bullet/shotgun/sexplosive
+/obj/item/projectile/bullet/shotgun/explosive
 	name = "generic explosive slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_DAMAGE_EXPLOSIVE
 	stamina = BULLET_STAMINA_SHOTGUN_SLUG * BULLET_STAMINA_EXPLOSIVE
@@ -572,7 +559,7 @@
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
 
-/obj/item/projectile/bullet/shotgun/sexplosive/s12ga
+/obj/item/projectile/bullet/shotgun/explosive/s12ga
 	name = "12 gauge explosive slug"
 
 /obj/item/ammo_casing/shotgun/sexplosive
@@ -614,8 +601,21 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	icon_state = "12gbox"
 
+/obj/item/ammo_box/shotgun/buck/s12ga
+	name = "(SHOTGUN / 12 Gauge Buckshot) ammo box"
+	ammo_type = /obj/item/ammo_casing/shotgun/buck/s12ga
+
 /obj/item/ammo_box/shotgun/buck/crate
 	name = "(SHOTGUN / Generic Buckshot) ammo crate"
+	desc = "A wooden crate full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 120
+
+/obj/item/ammo_box/shotgun/buck/s12ga/crate
+	name = "(SHOTGUN / 12 Gauge Buckshot) ammo crate"
 	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
