@@ -365,8 +365,9 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "ajw" = (
-/obj/structure/wreck/bus/orange/alt,
-/turf/open/indestructible/ground/outside/gravel,
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/campfire/barrel,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "ajC" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -12905,10 +12906,12 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "eQF" = (
-/turf/open/floor/f13{
-	icon_state = "stagestairs"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/area/f13/building/coyote/safe/redwater)
+/obj/structure/campfire/barrel,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "eQV" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -33334,16 +33337,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
-"mzt" = (
-/obj/structure/decoration/shock{
-	pixel_y = 4;
-	name = "PORTAL-STORM SHELTER";
-	desc = "A sign indicating that this bunker is a portal storm shelter."
-	},
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/building/coyote/safe/redwater)
 "mzB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
@@ -53380,14 +53373,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
-"uex" = (
-/obj/structure/decoration/vent{
-	pixel_y = 5
-	},
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/building/coyote/safe/redwater)
 "ueP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -67114,7 +67099,7 @@ dnF
 dnF
 wgx
 wgx
-bFR
+kTH
 bFR
 bFR
 bFR
@@ -67122,7 +67107,7 @@ bFR
 flv
 flv
 flv
-bFR
+kTH
 flv
 bFR
 sui
@@ -67895,7 +67880,7 @@ sui
 sui
 oYs
 flv
-bFR
+kTH
 sui
 sui
 cqX
@@ -68654,7 +68639,7 @@ mCc
 tRd
 tRd
 bFR
-bFR
+kTH
 flv
 wgx
 jLh
@@ -68675,7 +68660,7 @@ rzm
 mCt
 flv
 flv
-nQD
+ajw
 bFR
 iAu
 kmH
@@ -69445,7 +69430,7 @@ flv
 flv
 flv
 flv
-ajw
+flv
 flv
 flv
 flv
@@ -70217,8 +70202,8 @@ flv
 flv
 flv
 flv
-aru
-bPw
+kTH
+bFR
 bPw
 tWH
 qqz
@@ -70979,7 +70964,7 @@ hjh
 sui
 sui
 ybw
-bFR
+kTH
 bFR
 bFR
 flv
@@ -71497,7 +71482,7 @@ rzm
 bFR
 flv
 flv
-mov
+eQF
 lNf
 bFR
 bFR
@@ -85977,14 +85962,14 @@ bFR
 bFR
 sNS
 bFR
-lVL
-lVL
-lVL
-lVL
-lVL
-lVL
-lVL
-lVL
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 bFR
 bFR
 bFR
@@ -86234,16 +86219,16 @@ bFR
 bFR
 bFR
 bFR
-lVL
-qaO
-qaO
-qaO
-qaO
-qaO
-lVL
-lVL
-lVL
-lVL
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 bFR
 bFR
 bFR
@@ -86491,14 +86476,14 @@ bFR
 bFR
 ifN
 bFR
-lVL
-qaO
-cNa
-vao
-tta
-qaO
-qaO
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 iIF
 iIF
@@ -86748,14 +86733,14 @@ bFR
 ifN
 bFR
 bFR
-mzt
-qaO
-qoL
-vLF
-vLF
-dJE
-pcq
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 iIF
 iIF
@@ -87005,14 +86990,14 @@ bFR
 bFR
 bFR
 bFR
-eQF
-buM
-wzF
-aio
-jCy
-hTS
-noO
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 kDz
 kDz
@@ -87262,14 +87247,14 @@ bFR
 bFR
 bFR
 bFR
-uex
-mKs
-vYB
-rwI
-rwI
-rwI
-jAC
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 kDz
 qhm
@@ -87520,13 +87505,13 @@ bFR
 flv
 iIF
 iIF
-qaO
-qaO
-koY
-qaO
-qaO
-nFA
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 kDz
 emZ
@@ -87777,13 +87762,13 @@ gll
 flv
 iIF
 iIF
-qaO
-hUP
-vLF
-vtW
-qaO
-qaO
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 kDz
 emZ
@@ -88034,11 +88019,11 @@ flv
 bFR
 iIF
 iIF
-qaO
-rkl
-rwI
-xmc
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 iIF
 tzA
@@ -88291,11 +88276,11 @@ flv
 bFR
 iIF
 iIF
-qaO
-qaO
-qaO
-qaO
-qaO
+iIF
+iIF
+iIF
+iIF
+iIF
 iIF
 iIF
 iIF
