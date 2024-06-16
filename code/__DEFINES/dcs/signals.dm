@@ -755,7 +755,7 @@
 #define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
 #define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
-#define COMSIG_CLOTHING_ADJUST "COMSIG_CLOTHING_ADJUST" // (obj/item/clothing/source, mob/user)
+#define COMSIG_CLOTHING_FIX "COMSIG_CLOTHING_FIX" // (obj/item/clothing/source, mob/user)
 
 #define COMSIG_BOUNTYPROGRAM_OPEN_MENU "bounty_open_program" // (datum/source, mob/user)
 #define COMSIG_BOUNTYPROGRAM_GIVE_CLAIMER "bounty_give_claimer" // (datum/source, mob/user)
