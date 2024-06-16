@@ -1582,3 +1582,9 @@
 	item_state = "whitemagerobes"
 	icon_state = "whitemagerobes"
 
+/obj/item/clothing/suit/coat/coyote/british_jacket
+	name = "british jacket"
+	desc = "A big comfy jacket!"
+	icon_state = "british_jacket"
+	item_state = "british_jacket"
+	body_parts_covered = CHEST|ARMS
