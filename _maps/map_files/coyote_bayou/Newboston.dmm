@@ -21142,6 +21142,19 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
+"lsn" = (
+/obj/structure/lamp_post/quadra,
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 78;
+	pixel_x = -25;
+	plane = -6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "lsq" = (
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
@@ -22158,7 +22171,8 @@
 "lUl" = (
 /obj/structure/railing{
 	dir = 4;
-	color = "#bb3333"
+	color = "#bb3333";
+	plane = -5
 	},
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
@@ -74666,7 +74680,7 @@ yde
 lUl
 rpa
 rJa
-mdh
+lsn
 twx
 oQS
 aUg
