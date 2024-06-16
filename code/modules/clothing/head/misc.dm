@@ -795,3 +795,8 @@
 	icon_state = "canadian"
 	item_state = "canadian"
 
+/obj/item/clothing/head/ncr_ranger
+	name = "ncr ranger helmet"
+	desc = "Is a helmet. Yep."
+	icon_state = "ncr_ranger"
+	item_state = "ncr_ranger"

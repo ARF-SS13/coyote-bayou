@@ -1489,3 +1489,8 @@
 	name = "Canadian Mountie Hat"
 	path= /obj/item/clothing/head/canadian
 
+/datum/gear/head/ncrranger
+	name = "NCR Ranger Helmet"
+	path= /obj/item/clothing/head/ncr_ranger
+
+
