@@ -481,8 +481,12 @@ GLOBAL_LIST_INIT(bodypart_names, list(num2text(HEAD) = "Head", num2text(CHEST) =
 GLOBAL_LIST_INIT(bodypart_values, list("Head" = num2text(HEAD), "Chest" = num2text(CHEST), "Left Leg" = num2text(LEG_LEFT), "Right Leg" = num2text(LEG_RIGHT), "Left Arm" = num2text(ARM_LEFT), "Right Arm" = num2text(ARM_RIGHT)))
 
 GLOBAL_LIST_INIT(limb_mask_key_icons, list(
-	"yinglet" = 'icons/mob/mam/citadel/yinglet_masks.dmi'
-))
+	"yinglet" = list(
+		BODY_ZONE_L_ARM = 'icons/mob/mam/citadel/yinglet_masks.dmi',
+		BODY_ZONE_R_ARM = 'icons/mob/mam/citadel/yinglet_masks.dmi',
+		BODY_ZONE_L_LEG = 'icons/mob/mam/citadel/yinglet_masks.dmi',
+		BODY_ZONE_R_LEG = 'icons/mob/mam/citadel/yinglet_masks.dmi',
+)))
 
 #define ALL_TYPICAL_BIO_LIMB_IDS "mammal","aquatic","avian", "human", "shadekin", "yinglet"
 #define ALL_TYPICAL_SYNTH_LIMB_IDS ALL_TYPICAL_BIO_LIMB_IDS, "protectron", "golem"
