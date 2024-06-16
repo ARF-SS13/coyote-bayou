@@ -1469,5 +1469,26 @@
     resize = 0.5
     update_transform()
 
+/mob/living/simple_animal/advanced/darkbrowntanuki
+	name = "dark brown tanuki"
+	desc = "A twolegged raccoon dog with a leaf on it's head."
+	icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_state = "dark_brown"
+	icon_living = "dark_brown"
+	icon_dead = "dark_brown_dead"
 
+/mob/living/simple_animal/advanced/darkgreytanuki
+	name = "dark grey tanuki"
+	desc = "A twolegged raccoon dog with a leaf on it's head."
+	icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_state = "dark_grey"
+	icon_living = "dark_grey"
+	icon_dead = "dark_grey_dead"
 
+/mob/living/simple_animal/advanced/unicorn
+	name = "unicorn"
+	desc = "Stay away from the red bull."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "unicorn"
+	icon_living = "unicorn"
+	icon_dead = "unicorn_dead"
