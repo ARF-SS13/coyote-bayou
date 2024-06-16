@@ -788,3 +788,10 @@
 	item_state = "hoodcowl"
 	flags_inv = HIDEHAIR
 	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/canadian
+	name = "canadian mounty hat"
+	desc = "smells like maple syrup"
+	icon_state = "canadian"
+	item_state = "canadian"
+

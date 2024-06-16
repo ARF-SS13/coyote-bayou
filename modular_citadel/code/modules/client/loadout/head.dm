@@ -1484,3 +1484,8 @@
 /datum/gear/head/hoodcowl
 	name = "Hood cowl"
 	path= /obj/item/clothing/head/hoodcowl
+
+/datum/gear/head/canadian
+	name = "Canadian Mountie Hat"
+	path= /obj/item/clothing/head/canadian
+
