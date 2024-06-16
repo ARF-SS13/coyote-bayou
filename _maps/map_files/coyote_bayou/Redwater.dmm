@@ -365,8 +365,9 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "ajw" = (
-/obj/structure/wreck/bus/orange/alt,
-/turf/open/indestructible/ground/outside/gravel,
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/campfire/barrel,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "ajC" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -12904,6 +12905,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"eQF" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/campfire/barrel,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "eQV" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -67091,7 +67099,7 @@ dnF
 dnF
 wgx
 wgx
-bFR
+kTH
 bFR
 bFR
 bFR
@@ -67099,7 +67107,7 @@ bFR
 flv
 flv
 flv
-bFR
+kTH
 flv
 bFR
 sui
@@ -67872,7 +67880,7 @@ sui
 sui
 oYs
 flv
-bFR
+kTH
 sui
 sui
 cqX
@@ -68631,7 +68639,7 @@ mCc
 tRd
 tRd
 bFR
-bFR
+kTH
 flv
 wgx
 jLh
@@ -68652,7 +68660,7 @@ rzm
 mCt
 flv
 flv
-nQD
+ajw
 bFR
 iAu
 kmH
@@ -69422,7 +69430,7 @@ flv
 flv
 flv
 flv
-ajw
+flv
 flv
 flv
 flv
@@ -70194,8 +70202,8 @@ flv
 flv
 flv
 flv
-aru
-bPw
+kTH
+bFR
 bPw
 tWH
 qqz
@@ -70956,7 +70964,7 @@ hjh
 sui
 sui
 ybw
-bFR
+kTH
 bFR
 bFR
 flv
@@ -71474,7 +71482,7 @@ rzm
 bFR
 flv
 flv
-mov
+eQF
 lNf
 bFR
 bFR
