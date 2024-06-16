@@ -437,24 +437,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You start tromping around like a barbarian.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
 
-
-/datum/quirk/quick_step
-	name = "Speed Walker"
-	desc = "You walk with determined strides, and out-pace most people, at least, if you're both walking."
-	value = 20
-	category = "Movement Quirks"
-	mechanics = "You move faster while walking than most do while jogging."
-	conflicts = list(
-		/datum/quirk/clumsy,
-		/datum/quirk/overweight,
-		/datum/quirk/cantrun,
-	)
-	mob_trait = TRAIT_SPEEDY_STEP
-	gain_text = span_notice("You feel determined. No time to lose.")
-	lose_text = span_danger("You feel less determined. What's the rush, man?")
-	medical_record_text = "Patient scored highly on racewalking tests."
-
-
 /*/datum/quirk/treasurehunter 
 	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
 	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
@@ -1497,7 +1479,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "Gieger Counters are for suckers, mostly."
 	value = 40
 	category = "Radiation Quirks"
-	mechanics = "You only absorb 25% of all radiation."
+	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
 		/datum/quirk/radimmunesorta,
 		/datum/quirk/radweakmajor,
@@ -1610,8 +1592,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
 	conflicts = list()
 	mob_trait = TRAIT_STRONG_GRABBER
-	gain_text = span_notice("You feel like you could wrestle a deathclaw!!!")
-	lose_text = span_danger("You no longer feel like you should wrestle deathclaws...")
+	gain_text = span_notice("You feel like you could wrestle a aethergiest!!!")
+	lose_text = span_danger("You no longer feel like you should wrestle aethergiests...")
 	medical_record_text = "Patient is apparently very good at gripping things."
 	locked =  FALSE
 	human_only = FALSE

@@ -84,7 +84,7 @@
 	var/pinned = resting && pulledby && pulledby.grab_state >= GRAB_NECK // Cit change - adds pinning for aggressive-grabbing people on the ground
 	var/has_limbs = has_arms || ignore_legs || has_legs
 	var/canmove = !immobilize && !stun && conscious && !paralyze && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && has_limbs && !pinned && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
-	var/canresist = !stun && conscious && !stat_softcrit && !paralyze && has_limbs && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
+	var/canresist = canmove // !stun && conscious && !paralyze && has_limbs && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
 
 	if(canmove)
 		mobility_flags |= MOBILITY_MOVE
@@ -123,15 +123,15 @@
 		lying = 0
 
 	if(should_be_lying || restrained || incapacitated(allow_crit = TRUE))
-		mobility_flags &= ~(MOBILITY_UI|MOBILITY_PULL)
+		mobility_flags &= ~(MOBILITY_PULL)
 	else
-		mobility_flags |= MOBILITY_UI|MOBILITY_PULL
+		mobility_flags |= MOBILITY_PULL
 
 	var/canitem_general = !paralyze && !stun && conscious && stat_conscious && !chokehold && !restrained && has_arms && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
 	if(canitem_general)
-		mobility_flags |= (MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE | MOBILITY_HOLD)
+		mobility_flags |= (MOBILITY_UI | MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE | MOBILITY_HOLD)
 	else
-		mobility_flags &= ~(MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE | MOBILITY_HOLD)
+		mobility_flags &= ~(MOBILITY_UI | MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE | MOBILITY_HOLD)
 
 	if(HAS_TRAIT(src, TRAIT_MOBILITY_NOMOVE))
 		DISABLE_BITFIELD(mobility_flags, MOBILITY_MOVE)

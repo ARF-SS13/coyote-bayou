@@ -87,7 +87,16 @@
 	spread = BULLET_SPREAD_HANDLOAD
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = RUBBERY_WOUND_FLINTLOCK
+	pixels_per_second = BULLET_SPEED_FLINTLOCK_RUBBER
 
 	flag = "bullet"
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
+
+	ricochets_max = 10
+	ricochet_incidence_leeway = 0
+	ricochet_decay_damage = 0.9
+	ricochet_decay_chance = 11
+	ricochet_chance = 100
+	ricochet_auto_aim_range = 0
+

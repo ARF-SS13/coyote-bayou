@@ -347,7 +347,6 @@
 	conflicts = list(
 		/datum/quirk/freerunning,
 		/datum/quirk/light_step,
-		/datum/quirk/quick_step,
 	)
 	gain_text = span_notice("You feel blubbery!")
 	//no lose_text cause why would there be?

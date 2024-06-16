@@ -739,7 +739,7 @@
 			if(prob(10))
 				potentials |= typesof(/mob/living/simple_animal/hostile/skeleton) // SP00KY SCARY SKELETONS
 			if(prob(25))
-				potentials |= typesof(/mob/living/simple_animal/hostile/deathclaw)
+				potentials |= typesof(/mob/living/simple_animal/hostile/aethergiest)
 			potentials -= mobpath
 		/// shuffle the ghouls
 		else if(ispath(mobpath, /mob/living/simple_animal/hostile/ghoul))
@@ -772,7 +772,7 @@
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/wolf)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/alligator)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/mirelurk)\
-			|| ispath(mobpath, /mob/living/simple_animal/hostile/deathclaw)\
+			|| ispath(mobpath, /mob/living/simple_animal/hostile/aethergiest)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/hellpig)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/texas_rattler)\
 			|| ispath(mobpath, /mob/living/simple_animal/hostile/stalker)\
@@ -786,11 +786,11 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/wolf)
 			potentials |= typesof(/mob/living/simple_animal/hostile/alligator)
 			potentials |= typesof(/mob/living/simple_animal/hostile/mirelurk)
-			if((ispath(mobpath, /mob/living/simple_animal/hostile/deathclaw) && prob(50)) || prob(50))
-				potentials |= typesof(/mob/living/simple_animal/hostile/deathclaw)
+			if((ispath(mobpath, /mob/living/simple_animal/hostile/aethergiest) && prob(50)) || prob(50))
+				potentials |= typesof(/mob/living/simple_animal/hostile/aethergiest)
 				if(prob(80))
-					potentials -= typesof(/mob/living/simple_animal/hostile/deathclaw/power_armor)
-					potentials -= typesof(/mob/living/simple_animal/hostile/deathclaw/legendary)
+					potentials -= typesof(/mob/living/simple_animal/hostile/aethergiest/power_armor)
+					potentials -= typesof(/mob/living/simple_animal/hostile/aethergiest/legendary)
 			if((ispath(mobpath, /mob/living/simple_animal/hostile/hellpig) && prob(50)) || prob(50))
 				potentials |= typesof(/mob/living/simple_animal/hostile/hellpig)
 			if(ispath(mobpath, /mob/living/simple_animal/hostile/texas_rattler) || prob(50))

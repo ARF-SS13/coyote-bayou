@@ -657,7 +657,7 @@ const YourCash = (props, context) => {
     + formatMoney(ActualCash)
     + " this round!";
   const HighestTip = IsGlobalHighest ? "You are the highest earner this round!" : "";
-  const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!";
+  const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!  Or you can click here with money/tickets to deposit them to your account!";
 
   return (
     <Button

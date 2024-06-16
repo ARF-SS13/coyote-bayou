@@ -170,7 +170,7 @@
 	name = "Bio-Reconstruction"
 	desc = "The nanites manually repair and replace organic cells, acting much faster than normal regeneration. \
 			However, this program cannot detect the difference between harmed and unharmed, causing it to consume nanites even if it has no effect."
-	use_rate = 11 // because of the power
+	use_rate = 2 // because of the power
 	rogue_types = list(/datum/nanite_program/suffocating, /datum/nanite_program/necrotic)
 
 /datum/nanite_program/regenerative_advanced/active_effect()
@@ -181,13 +181,13 @@
 			return
 		var/update = FALSE
 		for(var/obj/item/bodypart/L in parts)
-			if(L.heal_damage(5/parts.len, 5/parts.len, FALSE))
+			if(L.heal_damage(1/parts.len, 1/parts.len, FALSE))
 				update = TRUE
 		if(update)
 			host_mob.update_damage_overlays()
 	else
-		host_mob.adjustBruteLoss(-5, TRUE)
-		host_mob.adjustFireLoss(-5, TRUE)
+		host_mob.adjustBruteLoss(-1, TRUE)
+		host_mob.adjustFireLoss(-1, TRUE)
 
 /datum/nanite_program/brain_heal_advanced
 	name = "Neural Reimaging"
@@ -216,7 +216,7 @@
 	name = "Defibrillation"
 	desc = "The nanites shock the host's heart when triggered, bringing them back to life if the body can sustain it."
 	can_trigger = TRUE
-	trigger_cost = 200 // literally a free second wind?? hello??  
+	trigger_cost = 50
 	trigger_cooldown = 60
 	rogue_types = list(/datum/nanite_program/shocking)
 

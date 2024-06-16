@@ -8,10 +8,10 @@
  * */
 
 /datum/bounty/kill
-	base_reward =         COINS(50)
-	medium_reward_bonus = COINS(10)
-	hard_reward_bonus =   COINS(20)
-	CBT_reward_bonus =    COINS(30)
+	base_reward =         COINS_TO_CREDITS(50)
+	medium_reward_bonus = COINS_TO_CREDITS(10)
+	hard_reward_bonus =   COINS_TO_CREDITS(20)
+	CBT_reward_bonus =    COINS_TO_CREDITS(30)
 	flavor_kind = QUEST_KIND_KILL_MOBS
 	candupe = FALSE
 	respect_extinction = TRUE
@@ -42,7 +42,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(3)
+	price_per_thing = COINS_TO_CREDITS(3)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -90,7 +90,7 @@
 	needed_amount = 20
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(1)
+	price_per_thing = COINS_TO_CREDITS(1)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -138,7 +138,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(4)
+	price_per_thing = COINS_TO_CREDITS(4)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -191,7 +191,7 @@
 	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(3)
+	price_per_thing = COINS_TO_CREDITS(3)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -238,7 +238,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(20)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -291,7 +291,7 @@
 	needed_amount = 15
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(2)
+	price_per_thing = COINS_TO_CREDITS(2)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -338,7 +338,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(5)
+	price_per_thing = COINS_TO_CREDITS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -386,7 +386,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(6)
+	price_per_thing = COINS_TO_CREDITS(6)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -434,7 +434,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(10)
+	price_per_thing = COINS_TO_CREDITS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -481,7 +481,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(4)
+	price_per_thing = COINS_TO_CREDITS(4)
 	easy_multiplier = 1
 	medium_multiplier = 1
 	hard_multiplier = 2
@@ -528,7 +528,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(20)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -575,7 +575,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(8)
+	price_per_thing = COINS_TO_CREDITS(8)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -626,7 +626,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(15)
+	price_per_thing = COINS_TO_CREDITS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -651,47 +651,47 @@
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // Deathclaws
-/datum/bounty/kill/deathclaws
+/datum/bounty/kill/aethergiests
 	name = "Slay some Deathclaws"
 	description = "Deathclaws are scary and mean! (and honestly kinda tasty) I'll pay you to kill some of them."
-	flavor_focus = /mob/living/simple_animal/hostile/deathclaw
+	flavor_focus = /mob/living/simple_animal/hostile/aethergiest
 	weight = 1
 	init_wanteds = list(
-		/datum/bounty_quota/deathclaw/easy,
-		/datum/bounty_quota/deathclaw/medium,
-		/datum/bounty_quota/deathclaw/hard,
-		/datum/bounty_quota/deathclaw/cocknballtorture,
+		/datum/bounty_quota/aethergiest/easy,
+		/datum/bounty_quota/aethergiest/medium,
+		/datum/bounty_quota/aethergiest/hard,
+		/datum/bounty_quota/aethergiest/cocknballtorture,
 	)
 	difficulty = QUEST_DIFFICULTY_EASY | QUEST_DIFFICULTY_MED | QUEST_DIFFICULTY_HARD | QUEST_DIFFICULTY_CBT
 
 ///// DEATHCLAW QUOTAS /////
-/datum/bounty_quota/deathclaw
+/datum/bounty_quota/aethergiest
 	name = "Kill some Deathclaws"
 	paths = list(
-		/mob/living/simple_animal/hostile/deathclaw,
+		/mob/living/simple_animal/hostile/aethergiest,
 	)
 	needed_amount = 2
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(50)
+	price_per_thing = COINS_TO_CREDITS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
 	CBT_multiplier = 4
 
-/datum/bounty_quota/deathclaw/easy
+/datum/bounty_quota/aethergiest/easy
 	needed_amount = 2
 	difficulty = QUEST_DIFFICULTY_EASY
 
-/datum/bounty_quota/deathclaw/medium
+/datum/bounty_quota/aethergiest/medium
 	needed_amount = 4
 	difficulty = QUEST_DIFFICULTY_MED
 
-/datum/bounty_quota/deathclaw/hard
+/datum/bounty_quota/aethergiest/hard
 	needed_amount = 6
 	difficulty = QUEST_DIFFICULTY_HARD
 
-/datum/bounty_quota/deathclaw/cocknballtorture
+/datum/bounty_quota/aethergiest/cocknballtorture
 	needed_amount = 20
 	difficulty = QUEST_DIFFICULTY_CBT // the cocknballtorture part is actually finding 20 of em
 
@@ -718,7 +718,7 @@
 	needed_amount = 20
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(50)
+	price_per_thing = COINS_TO_CREDITS(50)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -756,7 +756,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(10)
+	price_per_thing = COINS_TO_CREDITS(10)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -807,7 +807,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(20)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -852,7 +852,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(5000)
+	price_per_thing = COINS_TO_CREDITS(5000)
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -880,7 +880,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(5)
+	price_per_thing = COINS_TO_CREDITS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -928,7 +928,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(15)
+	price_per_thing = COINS_TO_CREDITS(15)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -977,7 +977,7 @@
 	needed_amount = 5
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(15)
+	price_per_thing = COINS_TO_CREDITS(15)
 	hard_multiplier = 1
 	CBT_multiplier = 2
 
@@ -1015,7 +1015,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(5)
+	price_per_thing = COINS_TO_CREDITS(5)
 	easy_multiplier = 1
 	medium_multiplier = 2
 	hard_multiplier = 3
@@ -1109,7 +1109,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(200)
+	price_per_thing = COINS_TO_CREDITS(200)
 	easy_multiplier = 1
 	medium_multiplier = 1
 	hard_multiplier = 2
@@ -1155,7 +1155,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(100) // Rely on multipliers for this one
+	price_per_thing = COINS_TO_CREDITS(100) // Rely on multipliers for this one
 	easy_multiplier = 1.2
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -1220,7 +1220,7 @@
 	pick_this_many = 0
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(15) // Rely on multipliers for this one
+	price_per_thing = COINS_TO_CREDITS(15) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -1273,7 +1273,7 @@
 	auto_generate_info = FALSE
 	info = "Any raw plant matter such as melons"
 	claimdelay = 0.5
-	price_per_thing = COINS(2) // Rely on multipliers for this one
+	price_per_thing = COINS_TO_CREDITS(2) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -1324,7 +1324,7 @@
 	needed_amount = 10
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(5) // Rely on multipliers for this one
+	price_per_thing = COINS_TO_CREDITS(5) // Rely on multipliers for this one
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 5

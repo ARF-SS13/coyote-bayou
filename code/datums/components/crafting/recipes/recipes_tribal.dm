@@ -16,7 +16,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
+				/obj/item/stack/sheet/animalhide/aethergiest = 1) //changed from goliath to aethergiest
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/bracers

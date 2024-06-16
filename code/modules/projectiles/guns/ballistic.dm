@@ -54,6 +54,34 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		return
 	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
 
+/obj/item/gun/ballistic/UpdateAmmoCountOverlay()
+	if(isturf(loc))//Only show th ammo count if the magazine is, like, in an inventory or something. Mags on the ground don't need a big number on them, that's ugly.
+		maptext = ""
+	else 
+		var/ammos = get_ammo()
+		var/ammomax = get_max_ammo()
+		var/textt = ""
+		var/culur = "#FF0000"
+		if(ammomax == 0)
+			culur = "#FFFFFF"
+		else if(ammos == ammomax)
+			culur = "#00FFFF"
+		else if(ammos > ammomax * 0.75)
+			culur = "#00FF00"
+		else if(ammos > ammomax * 0.5)
+			culur = "#FFFF00"
+		else if(ammos > ammomax * 0.25)
+			culur = "#FFA500"
+		else if(ammos > 0)
+			culur = "#FF0000"
+		else
+			culur = "#FF00FF"
+		if(ammos > 0)
+			textt = "[ammos]/[get_max_ammo()]"
+		else
+			textt = "0/[get_max_ammo()]"
+		maptext = "<font color='[culur]'><b>[textt]</b></font>"
+
 /obj/item/gun/ballistic/update_icon_state()
 	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
 		return // all done!

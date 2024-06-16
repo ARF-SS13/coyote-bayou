@@ -16,16 +16,16 @@
 
 //Turf conversion
 /turf/closed/wall/fabrication_vals(mob/living/user, obj/item/clockwork/replica_fabricator/fabricator, silent) //four sheets of metal
-	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/clockwork, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 4), "spawn_dir" = SOUTH)
+	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/cult, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 4), "spawn_dir" = SOUTH)
 
 /turf/closed/wall/mineral/fabrication_vals(mob/living/user, obj/item/clockwork/replica_fabricator/fabricator, silent) //two sheets of metal
-	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/clockwork, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 2), "spawn_dir" = SOUTH)
+	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/cult, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 2), "spawn_dir" = SOUTH)
 
 /turf/closed/wall/mineral/iron/fabrication_vals(mob/living/user, obj/item/clockwork/replica_fabricator/fabricator, silent) //two sheets of metal, five rods
-	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/clockwork, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 2) - (POWER_ROD * 5), "spawn_dir" = SOUTH)
+	return list("operation_time" = 50, "new_obj_type" = /turf/closed/wall/cult, "power_cost" = POWER_WALL_TOTAL - (POWER_METAL * 2) - (POWER_ROD * 5), "spawn_dir" = SOUTH)
 
 /turf/closed/wall/mineral/cult/fabrication_vals(mob/living/user, obj/item/clockwork/replica_fabricator/fabricator, silent) //no metal
-	return list("operation_time" = 80, "new_obj_type" = /turf/closed/wall/clockwork, "power_cost" = POWER_WALL_TOTAL, "spawn_dir" = SOUTH)
+	return list("operation_time" = 80, "new_obj_type" = /turf/closed/wall/cult, "power_cost" = POWER_WALL_TOTAL, "spawn_dir" = SOUTH)
 
 /turf/closed/wall/r_wall/fabrication_vals(mob/living/user, obj/item/clockwork/replica_fabricator/fabricator, silent)
 	return FALSE

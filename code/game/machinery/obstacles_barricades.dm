@@ -109,14 +109,16 @@
 	name = "sandbags"
 	desc = "Bags of sand. Self explanatory."
 	icon = 'icons/obj/smooth_structures/sandbags.dmi'
-	icon_state = "sandbags"
+	icon_state = "sandbags-0"
+	base_icon_state = "sandbags"
 	max_integrity = 280
 	proj_pass_rate = 20
 	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_SANDBAGS)
+	canSmoothWith = list(SMOOTH_GROUP_SANDBAGS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SECURITY_BARRICADE)
 	var/drop_amount = 1
 
 /obj/structure/barricade/sandbags/attack_hand(mob/user)
@@ -239,9 +241,9 @@
 				var/obj/item/stack/sheet/mineral/wood/W = I
 				if(W.amount >= 3)
 					var/list/walls = list(
-						"Wooden Wall" = image(icon = 'icons/fallout/turfs/walls/wood.dmi', icon_state = "wood0"),
+						"Wooden Wall" = image(icon = 'icons/turf/walls/wood_log.dmi', icon_state = "wall-12"),
 						"Interior Wall" = image(icon = 'icons/fallout/turfs/walls/interior.dmi', icon_state = "interior0"),
-						"House Wall" = image(icon = 'icons/fallout/turfs/walls/house.dmi', icon_state = "house0")
+						"House Wall" = image(icon = 'icons/turf/walls/house_wall_dirty.dmi', icon_state = "wall-12")
 					)
 					var/chosen_wall = show_radial_menu(user, src, walls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user, I))
@@ -265,7 +267,7 @@
 							to_chat(user, span_notice("You start building a house wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
-								T.ChangeTurf(/turf/closed/wall/f13/wood/house)
+								T.ChangeTurf(/turf/closed/wall/f13/wood/house/clean)
 								qdel(src)
 								return TRUE
 				else
@@ -301,7 +303,7 @@
 				var/obj/item/stack/sheet/cloth/C = I
 				if(C.amount >= 3)
 					var/list/tentwalls = list(
-						"Tent Wall" = image(icon = 'icons/fallout/turfs/walls/tent.dmi', icon_state = "tent0"),
+						"Tent Wall" = image(icon = 'icons/turf/walls/tent_wall.dmi', icon_state = "wall-0"),
 						"Tent Flaps" = image(icon = 'icons/fallout/structures/doors.dmi', icon_state = "tent")
 					)
 					var/chosen_tent = show_radial_menu(user, src, tentwalls, custom_check = CALLBACK(src,PROC_REF(check_menu), user, I), require_near = TRUE, tooltips = TRUE)
@@ -392,7 +394,7 @@
 	pass_flags = LETPASSTHROW
 //	material = SAND
 	climbable = TRUE
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
 */
 

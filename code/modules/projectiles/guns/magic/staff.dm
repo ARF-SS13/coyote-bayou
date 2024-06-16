@@ -383,7 +383,7 @@
 	damage_type = BURN
 	flag = "laser"
 	supereffective_damage = 5 //This should make it deal 5 damage regardless of armor
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/gun/magic/staff/kelpmagic/acidstaff/lowpower
 	name = "low power staff of acid"
@@ -433,7 +433,7 @@
 	pixels_per_second = 275
 	flag = "laser"
 	supereffective_damage = 1 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT

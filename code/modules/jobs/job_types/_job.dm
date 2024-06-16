@@ -87,6 +87,9 @@
 	//Description, short text about the job
 	var/description = ""
 
+	//Description, short text about the job
+	var/extrastuff = ""
+
 	//Against the faction rules, for imporant things that you SHOULDNT do.
 	var/forbids = ""
 
@@ -97,7 +100,26 @@
 	var/list/datum/outfit/loadout_options
 
 	/// Which kind of matchmaking this job allows, and with which departments. Associative list:  matchmaking_allowed[matchmaking datum typepath] -> list(job datum typepaths allowed)
-	var/list/matchmaking_allowed
+	var/list/matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job,
+		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job,
+		),
+		/datum/matchmaking_pref/protegee = list(
+			/datum/job,
+		),
+	)
 
 	/// Which kind of whitelist does this job use? for txt based whitelisting
 	/// the value should be something like "strings/names/cow.txt"

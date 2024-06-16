@@ -1174,7 +1174,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		return
 	else
 		if(hud_used.healths)
-			var/health_amount = min(health, maxHealth - clamp(getStaminaLoss()-50, 0, 80))//CIT CHANGE - makes staminaloss have less of an impact on the health hud
+			var/health_amount = min(health, maxHealth/*  - clamp(getStaminaLoss()-50, 0, 80) */)//CIT CHANGE - makes staminaloss have less of an impact on the health hud // LAGG CHANGE - removed stamina loss from health hud
 			if(..(health_amount)) //not dead
 				switch(hal_screwyhud)
 					if(SCREWYHUD_CRIT)

@@ -94,4 +94,4 @@
 	category = CATEGORY_CARBON
 
 /datum/keybinding/carbon/questscanner/down(client/user)
-	SSeconomy.give_claimer(user, user)
+	SSeconomy.give_claimer(usr, usr)

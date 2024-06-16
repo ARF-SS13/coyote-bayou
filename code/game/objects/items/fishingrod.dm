@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 		balloon_alert(current_user, "Something is biting!")
 
 /obj/item/fishingrod/proc/complete_fishing()
-	var/fish_got = prob(trash_chance)
+	var/fish_got = prob(100-trash_chance)
 	switch(fish_got)
 		if(FALSE)
 			if(prob(trash_chance))

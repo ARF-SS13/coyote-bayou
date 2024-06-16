@@ -145,6 +145,7 @@
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 	planetary_atmos = FALSE // They're _inside_ a vault.
+	smoothing_flags = null
 
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"

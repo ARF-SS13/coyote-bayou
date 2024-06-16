@@ -33,6 +33,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/prewar = 2,
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
+		/obj/item/pearl = 20,
+		/obj/item/clothing/accessory/pearl_necklace = 300,
 		/obj/item/reagent_containers/hypospray = 1,
 		/obj/item/reagent_containers/pill/patch/medx = 3,
 		/obj/item/reagent_containers/pill/patch/steady = 3,
@@ -164,7 +166,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
-		/obj/item/stack/sheet/animalhide/deathclaw = 20,
+		/obj/item/stack/sheet/animalhide/aethergiest = 20,
 		/obj/item/stack/sheet/animalhide/gecko = 2,
 		/obj/item/stack/sheet/animalhide/molerat = 2,
 		/obj/item/stack/sheet/animalhide/wolf = 8,
@@ -173,7 +175,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/f13/stalkerpelt = 8,
 		/obj/item/clothing/head/bearpelt = 20,
 		/obj/item/stack/sheet/animalhide/human = 0,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 4,
 		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 8,
@@ -433,14 +435,13 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if("[I.type]" == last_appraised)
 		quiet = TRUE
 	last_appraised = "[I.type]"
-	var/final_price = (round(COINS_TO_CREDITS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
+	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
 		if(!silent)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
 	if(!silent)
-		var/manyorsome = final_price > 1 ? "[SSeconomy.currency_name_plural]" : "[SSeconomy.currency_name]"
-		say("I'll give you [final_price] [manyorsome] per [I]!", just_chat = quiet)
+		say("I'll give you [SSeconomy.format_currency(final_price, TRUE, TRUE)] per [I]!", just_chat = quiet)
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -676,9 +677,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
 	var/thing = I ? "\the [I]" : "something"
-	var/currencie = soldfor > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	var/currencei = totalcash > 1 ? "[SSeconomy.currency_name]" : "[SSeconomy.currency_name_plural]"
-	say("Sold [thing] for [soldfor] [currencie], bringing the total to [totalcash] [currencei]!")
+	var/currencie = "[SSeconomy.format_currency(soldfor, TRUE, TRUE)]"
+	var/currencei = "[SSeconomy.format_currency(totalcash, TRUE, TRUE)]"
+	say("Sold [thing] for [currencie], bringing the total to [currencei]!")
 
 /obj/item/debug_vendorsale
 	name = "Really Valuable Thing"
@@ -690,7 +691,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(get_value))
 
 /obj/item/debug_vendorsale/proc/get_value()
-	return round(COINS_TO_CREDITS(12345))
+	return round(CREDITS_TO_COINS(12345))
 
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for

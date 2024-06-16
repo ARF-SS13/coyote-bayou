@@ -463,7 +463,7 @@
  * Plasma fucks em to death
  * DT - Specifically 24 so no starting knives can counter it.
  * * * * * * * * * * * */
-// Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw. - Jaeger
+// Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary aethergiest. - Jaeger
 #define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
 		"melee" = 20, \
 		"bullet" = 30, \
@@ -475,10 +475,10 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 24) // Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw.
+		"damage_threshold" = 24) // Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary aethergiest.
 
 /* Deathclaw power armor - basically a super boss fight
- * Power armor + deathclaw = yeah youre not killing this
+ * Power armor + aethergiest = yeah youre not killing this
  * Doesn't appear anywhere outside of super dangerous areas that DO NOT offer a power fantasy. Has stats to match it. Regular 5.56 will not do here, bring a melee weapon or something bigger.
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_PA list(\
@@ -1113,7 +1113,7 @@
 /* DT tokens
  * Adds on damage threshold
  * T1 - Small plated inserts, or heavy leather
- * T2 - Sturdy plated inserts, or deathclaw plating
+ * T2 - Sturdy plated inserts, or aethergiest plating
  * T3 - Dedicated armor reinforcements
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_DT_T1 list(\

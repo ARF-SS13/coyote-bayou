@@ -190,6 +190,9 @@ ATTACHMENTS
 	var/reloading = FALSE
 	/// This is the base reload speed, which is modified by things like the size of the magazine in use.
 	var/reloading_time = 1 SECONDS
+	maptext_width = 48 //prevents ammo count from wrapping down into two lines
+	maptext_x = 4
+	maptext_y = 2
 
 /obj/item/gun/Initialize()
 	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
@@ -337,7 +340,7 @@ ATTACHMENTS
 	update_icon()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P, casing_sound)
-	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
+	if(stam_cost && istype(user)) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
@@ -349,7 +352,7 @@ ATTACHMENTS
 		shootprops[CSP_INDEX_SOUND_OUT] = silenced ? fire_sound_silenced : fire_sound
 
 	playsound(
-		user,
+		src,
 		shootprops[CSP_INDEX_SOUND_OUT],
 		shootprops[CSP_INDEX_VOLUME],
 		shootprops[CSP_INDEX_VARY],
@@ -377,6 +380,7 @@ ATTACHMENTS
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
+	update_icon()
 
 /obj/item/gun/attack(mob/living/M, mob/user)
 	if(bayonet && user.a_intent == INTENT_HARM)
@@ -385,6 +389,7 @@ ATTACHMENTS
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
+	update_icon()
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
 	if(bayonet && user.a_intent == INTENT_HARM) // Must run BEFORE parent call, so we don't smack them with the gun body too.
@@ -393,6 +398,7 @@ ATTACHMENTS
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
+	update_icon()
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
@@ -418,7 +424,7 @@ ATTACHMENTS
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
-	if(user && user.incapacitated())
+	if(user && user.incapacitated(allow_crit = TRUE))
 		to_chat(user, span_danger("You're too messed up to shoot [src]!"))
 		return
 
@@ -618,10 +624,11 @@ ATTACHMENTS
 				update_icon()
 				return
 			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+				if(get_dist((user || get_turf(src)), target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
 					shoot_live_shot(user, 1, target, message, stam_cost, BB, casing_sound)
 				else
 					shoot_live_shot(user, 0, target, message, stam_cost, BB, casing_sound)
+				user?.in_crit_HP_penalty = 25
 		else
 			shoot_with_empty_chamber(user)
 			update_icon()
@@ -1067,6 +1074,18 @@ ATTACHMENTS
 		if("Weapon Info")
 			ui_interact(user)
 
+/// Updates the ammo count number that renders on top of the icon
+/obj/item/gun/proc/UpdateAmmoCountOverlay()
+	return
+
+/obj/item/gun/doMove(atom/destination)
+	. = ..()
+	UpdateAmmoCountOverlay()
+
+/obj/item/gun/update_icon()
+	. = ..()
+	UpdateAmmoCountOverlay()
+
 /obj/item/gun/proc/toggle_scope(mob/living/user)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
@@ -1175,18 +1194,18 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 	else
-		stack_trace("No firemodes found for [src]!")
-		message_admins("No firemodes found for [src]!")
+		// stack_trace("No firemodes found for [src]!")
+		// message_admins("No firemodes found for [src]!")
 		data["firemode_count"] = 1
-		data["firemode_info"] = list(
+		data["firemode_info"] = list(list(
 			"index" = 1,
 			"current" = TRUE,
-			"name" = "Im a fire mode!",
-			"desc" = "but its broken",
+			"name" = "Single Shot",
+			"desc" = "Single shot firing mode. Fires one shot at a time.",
 			"burst" = 1,
 			"fire_delay" = 1,
 			"fire_rate" = 1,
-		)
+		))
 
 	data["attachments"] = list()
 	var/attindex = 1

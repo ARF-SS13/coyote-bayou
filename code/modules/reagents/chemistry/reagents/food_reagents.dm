@@ -23,14 +23,14 @@
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
 		current_cycle++
-		M.adjust_nutrition(nutriment_factor, max_nutrition)
+		M.adjust_nutrition(nutriment_factor * effect_mult, max_nutrition)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	..()
 	if (canbrew)
 		if (holder?.has_reagent(/datum/reagent/medicine/spaceacillin))
 			return
 		if (HAS_TRAIT(M, TRAIT_AUTOBREW))
-			holder?.add_reagent(/datum/reagent/consumable/ethanol, 0.5) //foods and drinks metabolize 0.4 per tick. 0.5 added per tick is just enough to cause slight buildup
+			holder?.add_reagent(/datum/reagent/consumable/ethanol, 0.5 * effect_mult) //foods and drinks metabolize 0.4 per tick. 0.5 added per tick is just enough to cause slight buildup
 
 /datum/reagent/consumable/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == INGEST)

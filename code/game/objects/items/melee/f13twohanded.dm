@@ -317,9 +317,9 @@
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 // Deathclaw Spear		Keywords: TRIBAL, Damage 22/48, Armor-piercing +0.3, Reach
-/obj/item/twohanded/spear/bonespear/deathclaw
-	name = "deathclaw spear"
-	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
+/obj/item/twohanded/spear/bonespear/aethergiest
+	name = "aethergiest spear"
+	desc = "A finely crafted spear with a shaft wrapped in aethergiest leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	icon_state = "spear-claw"
 	icon_prefix = "spear-claw"
 	force = 22
@@ -332,8 +332,8 @@
 
 // Deathclaw Spear-Axe		Keywords: TRIBAL, Damage 25/30, Armor-piercing +0.25, Reach, Wound Bonus
 /obj/item/twohanded/spearaxe
-	name = "deathclaw spear-axe"
-	desc = "An exceptionally crafted, agile spear-axe with a light shaft wrapped in deathclaw leather. It is tipped with a claw from a terrifying beast and well weighted for single-hand use. Attacks fast."
+	name = "aethergiest spear-axe"
+	desc = "An exceptionally crafted, agile spear-axe with a light shaft wrapped in aethergiest leather. It is tipped with a claw from a terrifying beast and well weighted for single-hand use. Attacks fast."
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
@@ -546,13 +546,14 @@
 	throwforce = 15
 	throwforce_on = 30
 	attack_speed = CLICK_CD_MELEE
-	var/emp_radius = 1
+	var/emp_amount = 5
 
-///obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
-//	. = ..()
-//	if(!active)
-//		return
-//	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
+/obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
+	. = ..()
+	if(!active || !ismovable(A))
+		return
+	A.emp_act(emp_amount)
+	// empulse_using_range(A, emp_radius, log=0) //fox go a (A)
 
 //dan kelly is a nerd NO YOU ARE!!!
 

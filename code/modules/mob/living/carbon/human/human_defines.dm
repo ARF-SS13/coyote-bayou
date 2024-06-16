@@ -97,6 +97,7 @@
 	var/last_fire_update
 
 	var/busy= FALSE
+	var/afk= FALSE
 
 	COOLDOWN_DECLARE(crit_damage_cd)
 	COOLDOWN_DECLARE(crit_bleed_cd)

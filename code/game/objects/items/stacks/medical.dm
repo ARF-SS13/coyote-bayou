@@ -441,8 +441,8 @@
 	var/third_person_verb = "lapping at"
 	var/action_verb = "lick at"
 	var/action_verb_2 = "lick"
-	heal_brute = 2
-	heal_burn = 2
+	heal_brute = 5
+	heal_burn = 5
 	heal_mobs = 5
 	self_delay = 2 SECONDS
 	other_delay = 2 SECONDS

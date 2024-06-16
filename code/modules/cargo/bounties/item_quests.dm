@@ -11,10 +11,10 @@
 
 
 /datum/bounty/item
-	base_reward =         COINS(20)
-	medium_reward_bonus = COINS(10)
-	hard_reward_bonus =   COINS(20)
-	CBT_reward_bonus =    COINS(30)
+	base_reward =         COINS_TO_CREDITS(20)
+	medium_reward_bonus = COINS_TO_CREDITS(10)
+	hard_reward_bonus =   COINS_TO_CREDITS(20)
+	CBT_reward_bonus =    COINS_TO_CREDITS(30)
 	flavor_kind = QUEST_KIND_COLLECT_ITEMS
 	candupe = TRUE
 
@@ -37,7 +37,7 @@
 		/obj/item/validball,
 	)
 	needed_amount = 1
-	price_per_thing = COINS(200)
+	price_per_thing = COINS_TO_CREDITS(200)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -62,7 +62,7 @@
 		/obj/item/blackbox,
 	)
 	needed_amount = 1
-	price_per_thing = COINS(50)
+	price_per_thing = COINS_TO_CREDITS(50)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2
@@ -139,7 +139,7 @@
 	needed_amount = 1
 	paths_get_subtypes = TRUE
 	paths_includes_root = TRUE
-	price_per_thing = COINS(20)
+	price_per_thing = COINS_TO_CREDITS(20)
 	easy_multiplier = 1
 	medium_multiplier = 1.5
 	hard_multiplier = 2

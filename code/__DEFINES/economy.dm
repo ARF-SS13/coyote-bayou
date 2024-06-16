@@ -81,8 +81,8 @@
 #define BOUNTY_QUOTA_DEAD (1 << 2)
 
 /// Credits to Coins
-#define COINS(x) (x * 10)
-#define COINS_TO_CREDITS(x) (x / 10)
+#define COINS_TO_CREDITS(x) (x * 10)
+#define CREDITS_TO_COINS(x) (x / 10)
 
 #define QUEST_KIND_KILL_BOSS "kill boss"
 #define QUEST_KIND_KILL_MOBS "kill mob"
@@ -90,12 +90,14 @@
 #define QUEST_KIND_COLLECT_ITEMS "collect item"
 #define QUEST_KIND_SCAN_MACHINE "scan machine"
 
+#define QUEST_MINIMUM_MAX_COIN_DEPOSIT COINS_TO_CREDITS(100)
+
 /*
 Trash - 4cp (geckos, pillbugs, bloatflies, basic ghouls etc)
 Low Tier - 6cp (reavers, glowing ones, eyebots, cazadors etc)
 Mid Tier - 10cp/1sp (ants, scorpions, average raiders, mr handys etc)
 High Tier - 15cp/1.5sp (spiders, renegades, boss raiders, protectrons etc )
-Rare - 20cp/2sp (basic deathclaws, hellpigs, securitrons)
+Rare - 20cp/2sp (basic aethergiests, hellpigs, securitrons)
 Unique - 50cp/5sp (mango mat, the other fruit guys, etc)
 */
 

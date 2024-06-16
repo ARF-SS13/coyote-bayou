@@ -278,7 +278,6 @@
 #define TRAIT_NIGHT_VISION_GREATER		"night_vision_greater"
 #define TRAIT_LIGHT_STEP		"light_step"
 #define TRAIT_SILENT_STEP		"silent_step"
-#define TRAIT_SPEEDY_STEP		"speedy_step"
 #define TRAIT_SPIRITUAL			"spiritual"
 #define TRAIT_BLINDFAITH		"blindfaith"
 #define TRAIT_VORACIOUS			"voracious"
@@ -375,6 +374,9 @@
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 #define TRAIT_NOHIDEFACE "no hide face"
 #define TRAIT_SECURITYEXPERT "security-expert"
+#define TRAIT_CLAM_TONGUE "clam_tongue"
+#define TRAIT_CLAM_LOVER "clam_lover"
+#define TRAIT_CLAM_FISHER "clam_fisher"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

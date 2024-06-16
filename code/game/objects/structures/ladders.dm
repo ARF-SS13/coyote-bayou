@@ -17,7 +17,7 @@
 	var/move_me = TRUE
 	var/in_use = FALSE // To avoid message spam
 	var/timetouse = 15
-	var/base_icon_state = ""
+	base_icon_state = ""
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()

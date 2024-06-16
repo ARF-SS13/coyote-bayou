@@ -261,7 +261,7 @@
 		if(isanimal(master)) // simple animals that never had a player associated
 			var/mob/living/simple_animal/SA = master
 			if(SA.stat != DEAD)
-				return FALSE // no killing deathclaws with your belly, kill em first
+				return FALSE // no killing aethergiests with your belly, kill em first
 		return TRUE // If the mob never was a player, let it be eaten
 	if(!CHECK_PREFS(master, VOREPREF_BEING_PREY))
 		return FALSE

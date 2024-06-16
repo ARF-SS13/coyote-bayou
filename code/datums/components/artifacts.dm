@@ -239,7 +239,7 @@
 	for(var/datum/artifact_effect/AE in effects)
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
-	return round(COINS_TO_CREDITS(total_value), 25)
+	return round(CREDITS_TO_COINS(total_value), 25)
 
 /datum/component/artifact/proc/tabulate_wellability()
 	SIGNAL_HANDLER

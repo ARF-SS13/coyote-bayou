@@ -315,6 +315,7 @@
 	max_items = 3 // battery, persona core, capacitor. Battery cant be removed, so really 1
 	max_w_class = STORAGE_BOX_DEFAULT_MAX_SIZE
 	rustle_sound = TRUE
+	max_depth = 999 // zap
 	quota = list(
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/cell = 1,
