@@ -1265,12 +1265,12 @@
 	roundstart = TRUE
 	icon_width = 64
 	alt_prefixes = list(
-		"Inverted" = "oginvert_", 
-		"Hybrid" = "gnorm_", 
-		"Hybrid Inverted" = "gnorminvert_", 
-		"Subtle" = "gsubtle_", 
-		"Silver" = "os_", 
-		"Silver Inverted" = "osinvert_", 
+		"Inverted" = "oginvert_",
+		"Hybrid" = "gnorm_",
+		"Hybrid Inverted" = "gnorminvert_",
+		"Subtle" = "gsubtle_",
+		"Silver" = "os_",
+		"Silver Inverted" = "osinvert_",
 		"Silver Hybrid" = "snorm_",
 		"Silver Hybrid Inverted" = "snorminvert_",
 		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
@@ -1315,6 +1315,28 @@
 	icon_rest_suffix = "_rest"
 /mob/living/carbon/human/species/bigwolfblack
 	race = /datum/species/feral/bigwolfblack
+
+/datum/species/feral/darkbrowntanuki
+	name = "Dark brown tanuki"
+	id = "dark_brown_tanuki"
+	simple_icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/darkbrowntanuki
+	race = /datum/species/feral/darkbrowntanuki
+
+/datum/species/feral/darkgreytanuki
+	name = "Dark grey tanuki"
+	id = "dark_grey_tanuki"
+	simple_icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/darkgreytanuki
+	race = /datum/species/feral/darkgreytanuki
 
 //start deathclaws
 /datum/species/feral/deathclaw
@@ -1560,8 +1582,8 @@
 	name = "Adapted Hivebot"
 	id = "hivebot"
 	alt_prefixes = list(
-		"Small" = "small_", 
-		"Small Alt" = "smallarm_", 
+		"Small" = "small_",
+		"Small Alt" = "smallarm_",
 		"Medium" = "medium_",
 		"Medium Alt" = "mediumarm_",
 		"Ranged" = "ranged_",
@@ -1818,7 +1840,7 @@
 /mob/living/carbon/human/species/microraptor
 	race = /datum/species/adapted/raptorborg/microraptor
 
-// End of the silly raptors 
+// End of the silly raptors
 
 /datum/species/adapted/drakeborg
 	name = "REPORT THIS AS A BUGGY"
