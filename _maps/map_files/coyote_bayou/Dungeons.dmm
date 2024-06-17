@@ -191,10 +191,7 @@
 /turf/open/water,
 /area/f13/underground/cave/tunnelertemple/void)
 "adn" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
+/turf/closed/mineral/random/low_chance/underground,
 /area/f13/enclave)
 "ady" = (
 /obj/structure/flora/tree/cherryblossom3,
@@ -4913,9 +4910,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
-"cnq" = (
-/turf/open/floor/holofloor/carpet,
-/area/f13/bunker)
 "cnA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -7593,9 +7587,18 @@
 	},
 /area/f13/bunker/bighornbunker)
 "dpq" = (
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/holofloor/carpet,
-/area/f13/bunker)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/renegade/soldier,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "bcircuit1";
+	light_color = "#0076bc";
+	light_power = 3;
+	light_range = 4
+	},
+/area/f13/brotherhood/archives)
 "dpr" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
@@ -9957,17 +9960,6 @@
 "enX" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/wasteland/city/newboston/bar)
-"eob" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/structure/table/wood/settler,
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood/archives)
 "eoo" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -10784,7 +10776,9 @@
 /obj/structure/table/wood/settler,
 /obj/item/flashlight/lantern/dim,
 /obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/bunker)
 "eGp" = (
 /obj/structure/sign/departments/botany,
@@ -15887,14 +15881,9 @@
 	},
 /area/f13/bunker/bighornbunker)
 "gTZ" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "bcircuit1";
-	light_color = "#0076bc";
-	light_power = 3;
-	light_range = 4
-	},
-/area/f13/brotherhood/archives)
+/obj/structure/table/wood/fancy/blue,
+/turf/open/floor/carpet/stellar,
+/area/f13/building)
 "gUb" = (
 /obj/structure/table/reinforced,
 /obj/item/cautery,
@@ -17547,7 +17536,9 @@
 "hIF" = (
 /obj/structure/chair/wood,
 /mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/bunker)
 "hIK" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -21048,12 +21039,6 @@
 	dir = 8
 	},
 /area/f13/building)
-"jrL" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/caves)
 "jrQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -21582,8 +21567,8 @@
 /obj/structure/table/wood/settler,
 /obj/item/storage/fancy/candle_box,
 /obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/carpet{
-	icon_state = "carpetsymbol"
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
 "jEW" = (
@@ -25348,9 +25333,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
-"lrj" = (
-/turf/closed/wall/r_wall,
-/area/f13/caves)
 "lrm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -29104,6 +29086,9 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/brotherhood/rnd)
+"mZs" = (
+/turf/closed/wall/r_wall,
+/area/f13/caves)
 "mZW" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -32356,7 +32341,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/renegade/soldier,
+/obj/structure/fence/handrail{
+	density = 0;
+	layer = 4.1;
+	pixel_y = -14
+	},
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "bcircuit1";
 	light_color = "#0076bc";
@@ -36092,6 +36082,15 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"pYT" = (
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "bcircuit1";
+	light_color = "#0076bc";
+	light_power = 3;
+	light_range = 4
+	},
+/area/f13/brotherhood/archives)
 "pZl" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -47729,10 +47728,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
-"vjq" = (
-/obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/stellar,
-/area/f13/building)
 "vjz" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -47869,6 +47864,17 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
+"vmd" = (
+/obj/structure/lattice{
+	density = 1
+	},
+/obj/structure/table/wood/settler,
+/obj/structure/lattice{
+	density = 1
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood/archives)
 "vmk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -48425,24 +48431,6 @@
 	name = "cave"
 	},
 /area/f13/building)
-"vxF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/fence/handrail{
-	density = 0;
-	layer = 4.1;
-	pixel_y = -14
-	},
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "bcircuit1";
-	light_color = "#0076bc";
-	light_power = 3;
-	light_range = 4
-	},
-/area/f13/brotherhood/archives)
 "vxU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4;
@@ -49792,10 +49780,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/armory)
-"wfC" = (
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/holofloor/carpet,
-/area/f13/bunker)
 "wfM" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/tunnel{
@@ -49817,7 +49801,9 @@
 /obj/structure/chair/wood{
 	dir = 1
 	},
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/bunker)
 "whe" = (
 /obj/structure/fence/corner,
@@ -53160,7 +53146,9 @@
 /obj/item/storage/book/bible,
 /obj/item/clothing/suit/armor/light/duster/robe_hubologist,
 /obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/bunker)
 "xKO" = (
 /obj/structure/table,
@@ -54231,7 +54219,9 @@
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/bunker)
 "yjZ" = (
 /obj/structure/closet/locker/fridge,
@@ -61464,8 +61454,8 @@ lzR
 qEZ
 qEZ
 fQA
-cnq
-cnq
+wvF
+wvF
 fQA
 qEZ
 esJ
@@ -61720,10 +61710,10 @@ qEZ
 qEZ
 avj
 tGA
-cnq
-cnq
-cnq
-cnq
+wvF
+wvF
+wvF
+wvF
 qEZ
 esJ
 qEZ
@@ -61976,9 +61966,9 @@ wvF
 wvF
 wvF
 gum
-cnq
-cnq
-cnq
+wvF
+wvF
+wvF
 yjO
 wgW
 dsS
@@ -62233,7 +62223,7 @@ wvF
 wvF
 wvF
 gum
-cnq
+wvF
 xKD
 fQA
 joo
@@ -62747,7 +62737,7 @@ wvF
 wvF
 wvF
 gum
-cnq
+wvF
 eGe
 fQA
 joo
@@ -63004,9 +62994,9 @@ wvF
 wvF
 wvF
 gum
-cnq
-cnq
-cnq
+wvF
+wvF
+wvF
 yjO
 wgW
 dsS
@@ -63262,10 +63252,10 @@ qEZ
 qEZ
 avj
 tGA
-cnq
-cnq
-cnq
-cnq
+wvF
+wvF
+wvF
+wvF
 qEZ
 esJ
 qEZ
@@ -63520,8 +63510,8 @@ lzR
 qEZ
 qEZ
 fQA
-cnq
-cnq
+wvF
+wvF
 fQA
 qEZ
 esJ
@@ -65043,8 +65033,8 @@ qEZ
 esJ
 qEZ
 unx
-cnq
-cnq
+wvF
+wvF
 unx
 qEZ
 ojM
@@ -65300,8 +65290,8 @@ qEZ
 esJ
 qEZ
 eRL
-cnq
-cnq
+wvF
+wvF
 rND
 qEZ
 wvF
@@ -65557,8 +65547,8 @@ qEZ
 esJ
 qEZ
 unx
-cnq
-cnq
+wvF
+wvF
 unx
 qEZ
 wvF
@@ -65814,8 +65804,8 @@ qEZ
 esJ
 qEZ
 qQt
-dpq
-cnq
+xwW
+wvF
 asL
 qEZ
 lzR
@@ -66071,8 +66061,8 @@ qEZ
 esJ
 qoq
 unx
-wfC
-cnq
+goD
+wvF
 unx
 qEZ
 qEZ
@@ -66328,8 +66318,8 @@ qEZ
 esJ
 qEZ
 gbs
-cnq
-cnq
+wvF
+wvF
 eED
 xzZ
 fvR
@@ -66585,8 +66575,8 @@ qEZ
 esJ
 qEZ
 sVB
-cnq
-cnq
+wvF
+wvF
 sFz
 oXA
 lzR
@@ -67613,8 +67603,8 @@ qEZ
 esJ
 qEZ
 sVB
-cnq
-cnq
+wvF
+wvF
 sFz
 oXA
 lzR
@@ -67623,8 +67613,8 @@ wvF
 lzR
 oXA
 sFz
-cnq
-cnq
+wvF
+wvF
 ydo
 qEZ
 vBk
@@ -67870,8 +67860,8 @@ qEZ
 esJ
 qEZ
 wto
-cnq
-cnq
+wvF
+wvF
 ton
 xpv
 dmm
@@ -67880,8 +67870,8 @@ lzR
 dmm
 gVq
 rvi
-cnq
-cnq
+wvF
+wvF
 hQr
 qEZ
 rzm
@@ -68127,8 +68117,8 @@ qEZ
 esJ
 qoq
 xwr
-cnq
-cnq
+wvF
+wvF
 xwr
 qEZ
 qEZ
@@ -68137,8 +68127,8 @@ cYW
 qEZ
 qoq
 xcN
-cnq
-cnq
+wvF
+wvF
 lmx
 qEZ
 wvF
@@ -68384,8 +68374,8 @@ qEZ
 esJ
 qEZ
 asL
-cnq
-dpq
+wvF
+xwW
 vNm
 qEZ
 mMa
@@ -68394,8 +68384,8 @@ uIq
 mMa
 qEZ
 qGQ
-cnq
-cnq
+wvF
+wvF
 kOE
 qEZ
 rzm
@@ -68641,8 +68631,8 @@ qEZ
 esJ
 qEZ
 xwr
-cnq
-cnq
+wvF
+wvF
 xwr
 qEZ
 fHs
@@ -68651,8 +68641,8 @@ uIq
 fHs
 qEZ
 xcN
-cnq
-cnq
+wvF
+wvF
 xcN
 qEZ
 cKP
@@ -68898,8 +68888,8 @@ qEZ
 esJ
 qEZ
 arE
-cnq
-cnq
+wvF
+wvF
 nrk
 qEZ
 lOw
@@ -68908,8 +68898,8 @@ uIq
 shy
 qEZ
 asL
-cnq
-cnq
+wvF
+wvF
 mYI
 qEZ
 vfL
@@ -69155,8 +69145,8 @@ qEZ
 esJ
 qEZ
 xwr
-cnq
-cnq
+wvF
+wvF
 xwr
 qEZ
 lus
@@ -69165,8 +69155,8 @@ tfY
 lus
 qEZ
 xcN
-cnq
-cnq
+wvF
+wvF
 xcN
 qEZ
 gja
@@ -73035,7 +73025,7 @@ pPM
 bpQ
 whv
 tot
-adn
+bpQ
 dOt
 vjR
 dOt
@@ -73292,7 +73282,7 @@ pPM
 bpQ
 whv
 adn
-adn
+bpQ
 tQv
 vjR
 tQv
@@ -73549,7 +73539,7 @@ pPM
 bpQ
 whv
 adn
-adn
+bpQ
 wQl
 pRW
 pRW
@@ -73806,7 +73796,7 @@ pPM
 bpQ
 whv
 adn
-adn
+bpQ
 wQl
 vjR
 vjR
@@ -74063,7 +74053,7 @@ pPM
 bpQ
 whv
 adn
-adn
+bpQ
 tQv
 vjR
 tQv
@@ -74320,7 +74310,7 @@ pPM
 bpQ
 whv
 tot
-adn
+bpQ
 dOt
 vjR
 dOt
@@ -111822,11 +111812,11 @@ hzI
 ijC
 ouE
 ouE
-vjq
-vjq
+gTZ
+gTZ
 ouE
-vjq
-vjq
+gTZ
+gTZ
 tvr
 ryW
 boV
@@ -112850,11 +112840,11 @@ oAu
 pHF
 ouE
 ouE
-vjq
-vjq
+gTZ
+gTZ
 ouE
-vjq
-vjq
+gTZ
+gTZ
 tvr
 ryW
 boV
@@ -114779,7 +114769,7 @@ xSD
 vuG
 xim
 xSD
-owt
+dpq
 yhh
 kdT
 qKN
@@ -115293,9 +115283,9 @@ xSD
 wiF
 non
 qKN
-vxF
+owt
 viS
-gTZ
+pYT
 wiF
 xSD
 wiF
@@ -116062,7 +116052,7 @@ pVz
 pVz
 bga
 uPi
-eob
+vmd
 cqu
 jdd
 quH
@@ -118348,20 +118338,20 @@ vUU
 vUU
 vUU
 vUU
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
 vUU
 vUU
 vUU
@@ -118393,13 +118383,13 @@ vUU
 vUU
 vUU
 vUU
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
 vUU
 vUU
 vUU
@@ -118840,13 +118830,13 @@ vUU
 vUU
 vUU
 vUU
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
-lrj
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
+mZs
 wXK
 wXK
 wXK
