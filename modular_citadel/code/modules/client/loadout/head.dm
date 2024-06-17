@@ -634,6 +634,10 @@
 	name = "khaki slouch hat, alt version"
 	path = /obj/item/clothing/head/slouch/alt
 
+/datum/gear/head/slouch/colorable
+	name = "slouch hat, colorable"
+	path = /obj/item/clothing/head/slouch/colorable
+
 /datum/gear/head/turban
 	name = "Military Turban"
 	path = /obj/item/clothing/head/military_turban
