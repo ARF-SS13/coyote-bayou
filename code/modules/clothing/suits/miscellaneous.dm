@@ -1156,6 +1156,13 @@
 	item_state = "trench_colorable"
 	armor = ARMOR_VALUE_LIGHT
 
+/obj/item/clothing/suit/toggle/labcoat/ranger/sack_coat
+	name = "Sack coat, colorable"
+	desc = "It's a coat. Might keep you warm. Or not.."
+	icon_state = "sack_coat"
+	item_state = "sack_coat"
+	armor = ARMOR_VALUE_LIGHT
+
 /obj/item/clothing/suit/eris/poncho
 	name = "Rainbow Poncho"
 	desc = "A rainbow poncho"
