@@ -4167,6 +4167,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/light_emitter,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/brotherhood/operations)
 "bUv" = (
@@ -9957,11 +9958,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/wasteland/city/newboston/bar)
 "eob" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+/obj/structure/lattice{
+	density = 1
 	},
-/area/f13/brotherhood/offices2nd)
+/obj/structure/table/wood/settler,
+/obj/structure/lattice{
+	density = 1
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood/archives)
 "eoo" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -11084,6 +11090,7 @@
 /area/f13/bunker)
 "eNx" = (
 /mob/living/simple_animal/hostile/renegade/soldier,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "eNB" = (
 /obj/machinery/light/small{
@@ -13238,6 +13245,7 @@
 	pixel_x = 7;
 	pixel_y = 13
 	},
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "fKb" = (
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -15879,9 +15887,14 @@
 	},
 /area/f13/bunker/bighornbunker)
 "gTZ" = (
-/obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/stellar,
-/area/f13/building)
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "bcircuit1";
+	light_color = "#0076bc";
+	light_power = 3;
+	light_range = 4
+	},
+/area/f13/brotherhood/archives)
 "gUb" = (
 /obj/structure/table/reinforced,
 /obj/item/cautery,
@@ -17728,6 +17741,7 @@
 "hNR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/light_emitter,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/brotherhood/operations)
 "hNT" = (
@@ -19377,6 +19391,7 @@
 "iDj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/slime/core,
+/mob/living/simple_animal/hostile/renegade/soldier,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "iDC" = (
@@ -21081,7 +21096,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/stairs,
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "jtK" = (
 /obj/item/radio/intercom{
@@ -22123,9 +22138,6 @@
 	},
 /turf/open/floor/wood_worn/wood_worn_dark,
 /area/f13/building)
-"jTc" = (
-/obj/effect/decal/cleanable/dirt,
-/area/f13/brotherhood/rnd)
 "jTl" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/turf_decal{
@@ -22313,10 +22325,7 @@
 /area/f13/building)
 "jZM" = (
 /obj/structure/decoration/smokeold,
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "jZX" = (
 /obj/effect/decal/cleanable/dirt{
@@ -25340,11 +25349,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "lrj" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/brotherhood/medical)
+/turf/closed/wall/r_wall,
+/area/f13/caves)
 "lrm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -27526,7 +27532,7 @@
 /area/f13/brotherhood/rnd)
 "mqh" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/bronze,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "mqu" = (
 /obj/machinery/computer/terminal{
@@ -28284,7 +28290,7 @@
 /obj/machinery/light/floor,
 /obj/effect/temp_visual/impact_effect/blue_laser,
 /obj/effect/decal/cleanable/glitter/blue,
-/turf/closed/wall/mineral/iron,
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
 "mHA" = (
 /obj/effect/decal/cleanable/greenglow,
@@ -29098,12 +29104,6 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/brotherhood/rnd)
-"mZs" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/caves)
 "mZW" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -29832,7 +29832,6 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Archives"
 	},
-/obj/item/artifact/rare,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -30008,6 +30007,7 @@
 	pixel_x = 7;
 	pixel_y = 7
 	},
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "nsS" = (
 /obj/machinery/light/small{
@@ -31917,6 +31917,7 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "okM" = (
 /obj/structure/chair{
@@ -32351,11 +32352,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "owt" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/area/f13/brotherhood/offices1st)
+/mob/living/simple_animal/hostile/renegade/soldier,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "bcircuit1";
+	light_color = "#0076bc";
+	light_power = 3;
+	light_range = 4
+	},
+/area/f13/brotherhood/archives)
 "owP" = (
 /obj/structure/table,
 /obj/machinery/button/door{
@@ -35218,8 +35226,6 @@
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker/bighornbunker)
-"pEV" = (
-/area/f13/brotherhood/rnd)
 "pFg" = (
 /obj/structure/chair{
 	dir = 4
@@ -36086,12 +36092,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"pYT" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/underground/cave)
 "pZl" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -37265,6 +37265,7 @@
 	pixel_y = 13
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "qyc" = (
 /obj/structure/showcase/horrific_experiment{
@@ -37859,6 +37860,7 @@
 	name = "Radiation Shutters";
 	pixel_x = -32
 	},
+/mob/living/simple_animal/hostile/renegade/engie,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
 "qKN" = (
@@ -40147,6 +40149,7 @@
 	pixel_x = -7
 	},
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "rOh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -47866,14 +47869,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
-"vmd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/item/artifact/common,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
-/area/f13/brotherhood/reactor)
 "vmk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -48283,7 +48278,6 @@
 	brightness = 3;
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -48432,11 +48426,23 @@
 	},
 /area/f13/building)
 "vxF" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/area/f13/brotherhood/operating)
+/obj/structure/fence/handrail{
+	density = 0;
+	layer = 4.1;
+	pixel_y = -14
+	},
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "bcircuit1";
+	light_color = "#0076bc";
+	light_power = 3;
+	light_range = 4
+	},
+/area/f13/brotherhood/archives)
 "vxU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4;
@@ -49373,12 +49379,6 @@
 /obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
-"vWK" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/brotherhood/offices2nd)
 "vWM" = (
 /obj/structure/destructible/tribal_torch/wall{
 	dir = 8
@@ -49876,7 +49876,6 @@
 	desc = "A collection of scrolls, archives and relics.";
 	name = "Brotherhood Historical Archives"
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon_artifacts,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -50845,12 +50844,6 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building)
-"wCd" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/brotherhood/armory)
 "wCm" = (
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -51577,6 +51570,7 @@
 	pixel_x = 7
 	},
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "wWq" = (
 /obj/structure/spider/stickyweb,
@@ -108344,9 +108338,9 @@ dmB
 dmB
 vBM
 lzc
-owt
-vWK
-vWK
+dmB
+pVz
+pVz
 pVz
 pVz
 pVz
@@ -108601,7 +108595,7 @@ iWN
 iWN
 vBM
 hSv
-owt
+dmB
 pVz
 pVz
 pVz
@@ -108858,7 +108852,7 @@ qlq
 vBM
 vBM
 vmL
-owt
+dmB
 pVz
 aAh
 dtc
@@ -109115,7 +109109,7 @@ vBM
 gPP
 vBM
 vBM
-owt
+dmB
 pVz
 aAh
 dtc
@@ -109372,7 +109366,7 @@ vBM
 vBM
 eZS
 iEb
-owt
+dmB
 pVz
 aAh
 dtc
@@ -109404,7 +109398,7 @@ bvj
 wcO
 wcO
 wcO
-vmd
+cgW
 mBm
 aAM
 pkA
@@ -109629,7 +109623,7 @@ khM
 qlq
 oAj
 vfZ
-owt
+dmB
 pVz
 bvK
 dtc
@@ -109886,7 +109880,7 @@ dmB
 dmB
 dmB
 rgF
-owt
+dmB
 pVz
 srZ
 wuL
@@ -110143,7 +110137,7 @@ hsZ
 qLZ
 gtL
 sHf
-owt
+dmB
 pVz
 pVz
 pVz
@@ -110400,7 +110394,7 @@ dmB
 dmB
 dmB
 sHf
-owt
+dmB
 pVz
 pVz
 pAq
@@ -110657,7 +110651,7 @@ bex
 cKa
 dmB
 sHf
-owt
+dmB
 pVz
 dDC
 ddz
@@ -110914,7 +110908,7 @@ bex
 vYb
 dmB
 sHf
-owt
+dmB
 pVz
 pVz
 hyL
@@ -111171,7 +111165,7 @@ vUs
 gHv
 dmB
 sHf
-owt
+dmB
 pVz
 pVz
 szp
@@ -111428,7 +111422,7 @@ dmB
 dmB
 dmB
 sHf
-owt
+dmB
 pVz
 pVz
 pVz
@@ -111685,7 +111679,7 @@ bxL
 gtL
 hsy
 sHf
-owt
+dmB
 uhr
 uhr
 lvh
@@ -111829,10 +111823,10 @@ ijC
 ouE
 ouE
 vjq
-gTZ
+vjq
 ouE
 vjq
-gTZ
+vjq
 tvr
 ryW
 boV
@@ -111942,7 +111936,7 @@ eQJ
 eQJ
 eQJ
 uMb
-owt
+dmB
 uhr
 erd
 wWn
@@ -111971,7 +111965,7 @@ jBt
 cjG
 jBt
 iYv
-cuZ
+hJK
 hJK
 idH
 mHk
@@ -112199,7 +112193,7 @@ eus
 eus
 eQJ
 sHf
-owt
+dmB
 erd
 jew
 uhr
@@ -112456,17 +112450,17 @@ eus
 eus
 eQJ
 sHf
-owt
+dmB
 erd
 suQ
 nsN
 aSH
-pEV
+aSH
 erd
 aSH
 fkn
 qxZ
-jTc
+mqh
 veW
 uYg
 qaP
@@ -112713,7 +112707,7 @@ eus
 eus
 eQJ
 sHf
-owt
+dmB
 pvH
 vlI
 enA
@@ -112857,10 +112851,10 @@ pHF
 ouE
 ouE
 vjq
-gTZ
+vjq
 ouE
 vjq
-gTZ
+vjq
 tvr
 ryW
 boV
@@ -112970,17 +112964,17 @@ eus
 eus
 eQJ
 sHf
-owt
+dmB
 erd
 suQ
 okG
 aSH
-pEV
+aSH
 erd
 aSH
 fkn
 fJN
-pEV
+aSH
 qsm
 uiV
 ybR
@@ -113227,7 +113221,7 @@ eus
 eus
 eQJ
 sHf
-owt
+dmB
 erd
 jew
 uhr
@@ -113484,7 +113478,7 @@ eQJ
 eQJ
 lXc
 tfC
-lrj
+uDy
 uhr
 erd
 rNX
@@ -113513,7 +113507,7 @@ rgk
 nnp
 thi
 kyt
-cuZ
+hJK
 hJK
 idH
 mHk
@@ -113741,7 +113735,7 @@ qSM
 uCj
 oex
 mbA
-lrj
+uDy
 uhr
 uhr
 lvh
@@ -113998,7 +113992,7 @@ uFE
 oex
 oex
 pkV
-lrj
+uDy
 pVz
 pVz
 pVz
@@ -114255,7 +114249,7 @@ oex
 oex
 oex
 wqJ
-lrj
+uDy
 lyq
 pVz
 sqY
@@ -114512,7 +114506,7 @@ uDy
 anP
 uDy
 uDy
-lrj
+uDy
 stD
 stD
 bPq
@@ -114769,7 +114763,7 @@ wYa
 bds
 wYa
 wYa
-vxF
+wYa
 ast
 pVz
 rOh
@@ -114785,13 +114779,13 @@ xSD
 vuG
 xim
 xSD
-sSf
+owt
 yhh
 kdT
 qKN
 non
 vQm
-xSD
+wiF
 lix
 eOW
 iVr
@@ -115026,7 +115020,7 @@ aOO
 eBL
 ofW
 gGg
-vxF
+wYa
 pVz
 pVz
 fUc
@@ -115048,7 +115042,7 @@ kdT
 smj
 acA
 smj
-xSD
+wiF
 nmO
 adW
 eOU
@@ -115283,8 +115277,8 @@ aOO
 eBL
 eBL
 eQe
-vxF
-eob
+wYa
+pVz
 pVz
 oMu
 pVz
@@ -115297,14 +115291,14 @@ rSk
 oFm
 xSD
 wiF
+non
 qKN
-qKN
-oSt
+vxF
 viS
-kdT
+gTZ
+wiF
 xSD
-xSD
-xSD
+wiF
 xSD
 lix
 kpc
@@ -115540,7 +115534,7 @@ ipF
 bZQ
 fHf
 fEB
-vxF
+wYa
 sqY
 vsw
 nan
@@ -115797,7 +115791,7 @@ xPE
 iib
 pAA
 eBL
-vxF
+wYa
 kEJ
 pVz
 xAg
@@ -116068,7 +116062,7 @@ pVz
 pVz
 bga
 uPi
-uPi
+eob
 cqu
 jdd
 quH
@@ -116311,7 +116305,7 @@ oVy
 wYa
 wYa
 ycP
-vxF
+wYa
 kEJ
 pVz
 tWO
@@ -116825,7 +116819,7 @@ cQP
 wYa
 wYa
 sQN
-vxF
+wYa
 dLP
 pVz
 tWO
@@ -117082,7 +117076,7 @@ xSl
 jyN
 gyj
 mfU
-vxF
+wYa
 eim
 pVz
 pVz
@@ -117339,7 +117333,7 @@ wYa
 wYa
 wYa
 wYa
-vxF
+wYa
 eim
 dLP
 tUD
@@ -117596,7 +117590,7 @@ skq
 cJG
 vak
 bgp
-vxF
+wYa
 eim
 pVz
 lCs
@@ -117853,7 +117847,7 @@ nPj
 dPd
 vMY
 loB
-vxF
+wYa
 pVz
 pVz
 pVz
@@ -118110,7 +118104,7 @@ eZL
 lTB
 bgp
 sub
-vxF
+wYa
 pVz
 pVz
 pVz
@@ -118331,7 +118325,7 @@ vUU
 vUU
 vUU
 vUU
-wCd
+iUR
 gyu
 qzI
 mKM
@@ -118345,7 +118339,7 @@ dKo
 iUR
 ute
 pDg
-wCd
+iUR
 tuJ
 ruF
 ruF
@@ -118354,6 +118348,51 @@ vUU
 vUU
 vUU
 vUU
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
+vUU
 jrL
 jrL
 jrL
@@ -118361,51 +118400,6 @@ jrL
 jrL
 jrL
 jrL
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-vUU
-mZs
-mZs
-mZs
-mZs
-mZs
-mZs
-mZs
 vUU
 vUU
 vUU
@@ -118588,21 +118582,21 @@ hrZ
 hrZ
 hrZ
 hrZ
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
-wCd
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
+iUR
 iUR
 iUR
 iUR
@@ -118846,13 +118840,13 @@ vUU
 vUU
 vUU
 vUU
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
-jrL
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
+lrj
 wXK
 wXK
 wXK
@@ -119102,13 +119096,13 @@ whv
 whv
 whv
 whv
-pYT
-pYT
-pYT
-pYT
-pYT
-pYT
-pYT
+uTH
+uTH
+uTH
+uTH
+uTH
+uTH
+uTH
 whv
 whv
 whv
