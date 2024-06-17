@@ -9618,12 +9618,6 @@
 	color = "#555555"
 	},
 /area/f13/caves)
-"vr" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/building)
 "vt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/ruins,
@@ -19272,15 +19266,6 @@
 /obj/item/clothing/shoes/laceup,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
-"QR" = (
-/obj/structure/decoration/rag,
-/obj/structure/curtain{
-	color = "#89A077";
-	layer = 5
-	},
-/obj/structure/window/fulltile/house,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "QS" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -47180,11 +47165,11 @@ tF
 bg
 sM
 sM
-UI
+Zb
+Zb
 HK
 WG
 VC
-QR
 mM
 bx
 iw
@@ -47438,10 +47423,10 @@ vN
 ql
 ql
 AC
+Zb
 tF
 Cd
 FV
-vr
 mM
 bx
 RQ
