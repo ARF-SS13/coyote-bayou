@@ -789,7 +789,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/lesbian
-	name  = "Lesbian Pride Pin"
+	name  = "Lesbiab Pride Pin"
 	path = /obj/item/clothing/accessory/pride/lesbian
 	cost = 0
 
@@ -807,3 +807,8 @@
 	name  = "Cowboy Vest"
 	path = /obj/item/clothing/accessory/sheriffvest
 	cost = 0
+
+	/datum/gear/backpack/braceletpair
+	name = "Bracelet (pair)"
+	path = /obj/item/clothing/accessory/braceletpair
+	cost = 1

@@ -989,3 +989,12 @@
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
+
+//Bracelets, Anklets and other random shit//
+/obj/item/clothing/accessory/braceletpair
+	name = "\improper Recolorable Bracelets (pair)"
+	desc = "Yep, bracelets."
+	item_state = "braceletpair"
+	icon_state = "braceletpair"
+	minimize_when_attached = FALSE
