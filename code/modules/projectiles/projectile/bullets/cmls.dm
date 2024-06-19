@@ -41,7 +41,7 @@
 /obj/item/projectile/bullet/compact/c357
 	name = ".357 bullet"
 
-/obj/item/ammo_casing/compact
+/obj/item/ammo_casing/compact/generic
 	name = "generic compact bullet casing"
 	desc = "A generic compact bullet casing."
 	caliber = CALIBER_COMPACT
@@ -55,8 +55,8 @@
 	sound_properties = CSP_PISTOL_10MM
 
 /obj/item/ammo_casing/compact/cexample
-	name = "generic compact bullet casing"
-	desc = "A generic compact bullet casing."
+	name = "compact template bullet casing"
+	desc = "A compact template bullet casing."
 	projectile_type = /obj/item/projectile/bullet/compact/cexample
 
 /obj/item/ammo_casing/compact/c22

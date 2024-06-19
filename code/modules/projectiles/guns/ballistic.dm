@@ -26,6 +26,13 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/cock_sound = "gun_slide_lock"
 	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
 
+	var/ammo_type
+	var/ammo_name
+	var/ammo_magazine_name
+	var/ammo_capacity
+	var/ammo_single_load
+	var/damage_list
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if(spawnwithmagazine)
