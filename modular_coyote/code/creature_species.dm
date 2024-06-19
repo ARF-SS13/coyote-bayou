@@ -780,6 +780,19 @@
 /mob/living/carbon/human/species/shepard
 	race = /datum/species/feral/shepard
 
+/datum/species/feral/raccoon
+	name = "Feral Raccoon"
+	id = "raccoon_darkgrey"
+	simple_icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead_suffix = "_dead"
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/raccoon
+	race = /datum/species/feral/raccoon
+
 /datum/species/feral/dog
 	name = "Feral Dog"
 	id = "dog_feral"
