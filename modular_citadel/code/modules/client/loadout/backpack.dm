@@ -808,7 +808,7 @@
 	path = /obj/item/clothing/accessory/sheriffvest
 	cost = 0
 
-	/datum/gear/backpack/braceletpair
+/datum/gear/backpack/braceletpair
 	name = "Bracelet (pair)"
 	path = /obj/item/clothing/accessory/braceletpair
 	cost = 1
