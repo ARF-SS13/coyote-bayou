@@ -26,6 +26,7 @@
 	var/last_act = 0
 	var/scan_state = "" //Holder for the image we display when we're pinged by a mining scanner
 	var/defer_change = 0
+	color = "#a17768"	//Make everything muddy-brown
 
 /turf/closed/mineral/Initialize()
 	. = ..()

@@ -705,6 +705,17 @@
 	desc = "Used for painful, primitive medical procedures."
 	icon_state = "optable_primitive"
 
+/obj/structure/table/wasteland
+	name = "table"
+	desc = "An old worn-out metal table."
+	icon = 'icons/obj/smooth_structures/table_wasteland.dmi'
+	icon_state = "table"
+	base_icon_state = "table"
+	max_integrity = 50
+	smoothing_flags = SMOOTH_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_TABLES)
+
 /*
  * Racks
  */
