@@ -984,6 +984,24 @@
 /mob/living/carbon/human/species/bat
 	race = /datum/species/feral/bat
 
+/datum/species/feral/raptor
+	name = "Feral Feathered Raptor"
+	id = "raptor"
+	simple_icon = 'modular_coyote/icons/mob/raptor_big 56x32.dmi'
+	icon_width = 56
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_dead"
+	alt_prefixes = list("Black Feathers" = "black_", 
+	"White Feathers" = "white_", 
+	"Purple Feathers" = "purple_", 
+	"Red Feathers" = "red_", 
+	"Green Feathers" = "green_", 
+	"Blue Feathers" = "blue_")
+	roundstart = TRUE
+	liked_food = MEAT
+/mob/living/carbon/human/species/raptor
+	race = /datum/species/feral/raptor
+
 /datum/species/feral/gecko
 	name = "Feral Gecko"
 	id = "gekko"
@@ -1444,6 +1462,16 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/geist
 	race = /datum/species/feral/aethergiest/geist
+
+/datum/species/feral/aethergiest/broodmother
+	name = "Brood Mother"
+	id = "broodmother"
+	rotate_on_lying = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+/mob/living/carbon/human/species/broodmother
+	race = /datum/species/feral/aethergiest/broodmother
 
 /datum/species/feral/femdigo
 	name = "Female Wendigo"
