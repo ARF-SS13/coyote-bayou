@@ -984,9 +984,9 @@
 /mob/living/carbon/human/species/bat
 	race = /datum/species/feral/bat
 
-/datum/species/feral/raptor
+/datum/species/feral/featherraptor
 	name = "Feral Feathered Raptor"
-	id = "raptor"
+	id = "fraptor"
 	simple_icon = 'modular_coyote/icons/mob/raptor_big 56x32.dmi'
 	icon_width = 56
 	icon_dead_suffix = "_dead"
@@ -999,8 +999,8 @@
 	"Blue Feathers" = "blue_")
 	roundstart = TRUE
 	liked_food = MEAT
-/mob/living/carbon/human/species/raptor
-	race = /datum/species/feral/raptor
+/mob/living/carbon/human/species/featherraptor
+	race = /datum/species/feral/featherraptor
 
 /datum/species/feral/gecko
 	name = "Feral Gecko"
