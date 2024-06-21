@@ -987,7 +987,7 @@
 /datum/species/feral/featherraptor
 	name = "Feral Feathered Raptor"
 	id = "fraptor"
-	simple_icon = 'modular_coyote/icons/mob/raptor_big 56x32.dmi'
+	simple_icon = 'modular_coyote/icons/mob/raptor_big_56x32.dmi'
 	icon_width = 56
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_dead"
