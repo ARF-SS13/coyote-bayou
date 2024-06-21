@@ -8,23 +8,23 @@
 
 //Shotguns
 /*
-/obj/item/ammo_box/shotgun
+/obj/item/ammo_box/generic/shotgun
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	max_ammo = 24
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_BOX)
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/generic/shotgun
 	multiple_sprites = 2
 	caliber = list(CALIBER_SHOTGUN)
 	w_class = WEIGHT_CLASS_SMALL
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/shotgun/slug
+/obj/item/ammo_box/generic/shotgun/slug
 	name = "Slug shotgun ammo box"
 	desc = "A box full of shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/generic/shotgun
 	icon_state = "lbox"
 
-/obj/item/ammo_box/shotgun/slug/crate
+/obj/item/ammo_box/generic/shotgun/slug/crate
 	name = "Slug shotgun ammo crate"
 	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
@@ -33,13 +33,13 @@
 	multiple_sprites = 4
 	max_ammo = 120
 
-/obj/item/ammo_box/shotgun/buck
+/obj/item/ammo_box/generic/shotgun/buck
 	name = "Buckshot shotgun ammo box"
 	desc = "A box full of shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	icon_state = "gbox"
 
-/obj/item/ammo_box/shotgun/buck/crate
+/obj/item/ammo_box/generic/shotgun/buck/crate
 	name = "Buckshot shotgun ammo crate"
 	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
@@ -48,19 +48,19 @@
 	multiple_sprites = 4
 	max_ammo = 120
 
-/obj/item/ammo_box/shotgun/magnum
+/obj/item/ammo_box/generic/shotgun/magnum
 	name = "Magnum buckshot shotgun ammo box"
 	desc = "A box full of shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/magnumshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/magnumshot
 	icon_state = "mbox"
 
-/obj/item/ammo_box/shotgun/bean
+/obj/item/ammo_box/generic/shotgun/bean
 	name = "Beanbag shotgun ammo box"
 	desc = "A box full of shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/beanbag
 	icon_state = "bbox"
 
-/obj/item/ammo_box/shotgun/bean/crate
+/obj/item/ammo_box/generic/shotgun/bean/crate
 	name = "Beanbag shotgun ammo crate"
 	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
@@ -69,13 +69,13 @@
 	multiple_sprites = 4
 	max_ammo = 120
 
-/obj/item/ammo_box/shotgun/rubber
+/obj/item/ammo_box/generic/shotgun/rubber
 	name = "Rubbershot shotgun ammo box"
 	desc = "A box full of shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/rubbershot
 	icon_state = "stunbox"
 
-/obj/item/ammo_box/shotgun/rubber/crate
+/obj/item/ammo_box/generic/shotgun/rubber/crate
 	name = "Rubbershot shotgun ammo crate"
 	desc = "A wooden crate full of shotgun shells."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
@@ -84,15 +84,15 @@
 	multiple_sprites = 4
 	max_ammo = 120
 
-/obj/item/ammo_box/shotgun/improvised
+/obj/item/ammo_box/generic/shotgun/improvised
 	name = "homemade shotgun shells"
 	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
 	max_ammo = 24
 	multiple_sprites = 3
-	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/improvised
 	icon_state = "improvshotbag"
 
-/obj/item/ammo_box/shotgun/improvised/crate
+/obj/item/ammo_box/generic/shotgun/improvised/crate
 	name = "bulk homemade shotgun shells"
 	desc = "A whole big bag of recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
@@ -101,16 +101,16 @@
 	multiple_sprites = 4
 	max_ammo = 120
 
-/obj/item/ammo_box/shotgun/incendiary
+/obj/item/ammo_box/generic/shotgun/incendiary
 	name = "Box of incendiary shotgun shells"
 	desc = "A box full of incendiary shotgun shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/incendiary
 	icon_state = "mbox"
 
-/obj/item/ammo_box/shotgun/trainshot
+/obj/item/ammo_box/generic/shotgun/trainshot
 	name = "trainshot shotshell ammo box"
 	desc = "A box full of trainshot shells. For hunting trains, you suppose."
-	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/trainshot
 	icon_state = "trainshotbox"
 */
 /obj/item/ammo_box/flintlock
@@ -240,7 +240,7 @@
 	name = "Capsule full of crystal needles"
 	icon_state = "needlerbox"
 	desc = "A Box filled with crystal needles"
-	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/needlerbuckshot
 	caliber = list(CALIBER_SHOTGUN)
 	multiple_sprites = 2
 	max_ammo = 48
@@ -1371,7 +1371,7 @@
 
 //Shotgun clips (sort out with the box versio if implemented)
 /*
-/obj/item/ammo_box/shotgun
+/obj/item/ammo_box/generic/shotgun
 	name = "stripper clip (shotgun shells)"
 	desc = "A stripper clip, designed to help with loading a shotgun slightly faster."
 	icon = 'icons/obj/ammo.dmi'
@@ -1380,25 +1380,25 @@
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	w_volume = ITEM_VOLUME_STRIPPER_CLIP
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/generic/shotgun
 	max_ammo = 4
 	var/pixeloffsetx = 4
 	start_empty = TRUE
 */
-/obj/item/ammo_box/shotgun/loaded
+/obj/item/ammo_box/generic/shotgun/loaded
 	start_empty = FALSE
 
-/obj/item/ammo_box/shotgun/loaded/rubbershot
-	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+/obj/item/ammo_box/generic/shotgun/loaded/rubbershot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/rubbershot
 
-/obj/item/ammo_box/shotgun/loaded/buckshot
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+/obj/item/ammo_box/generic/shotgun/loaded/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 
-/obj/item/ammo_box/shotgun/loaded/beanbag
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+/obj/item/ammo_box/generic/shotgun/loaded/beanbag
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/beanbag
 
-/obj/item/ammo_box/shotgun/loaded/incendiary
-	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+/obj/item/ammo_box/generic/shotgun/loaded/incendiary
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/incendiary
 
 /obj/item/ammo_box/musketbag/
 	name = "Bag of Musket Cartridges"
@@ -1610,12 +1610,12 @@
 	name = "rifle magazine (.308) (+FIRE!)"
 	ammo_type = /obj/item/ammo_casing/F13/m308/fire
 
-/obj/item/ammo_box/shotgun/update_overlays()
+/obj/item/ammo_box/generic/shotgun/update_overlays()
 	. = ..()
 	if(stored_ammo.len)
 		var/offset = -4
 		for(var/A in stored_ammo)
-			var/obj/item/ammo_casing/shotgun/C = A
+			var/obj/item/ammo_casing/generic/shotgun/C = A
 			offset += pixeloffsetx
 			var/mutable_appearance/shell_overlay = mutable_appearance(icon, "[initial(C.icon_state)]-clip")
 			shell_overlay.pixel_x += offset

@@ -26,33 +26,42 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/cock_sound = "gun_slide_lock"
 	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
 
-	var/ammo_type
-	var/ammo_name
-	var/ammo_magazine_name
-	var/ammo_capacity
-	var/ammo_single_load
-	var/damage_list
+	/// Sets if this thing will use the cool CMLS gun-side damage and ammo properties (thanks bun!)
+	var/ammo_use_generic = TRUE // reject ballistic, embrace gameplay
+	var/ammo_type = CALIBER_COMPACT
+	var/ammo_kind = "9x25mm Parental"
+	var/ammo_magazine_name = "%MAX round clipazine"
+	var/ammo_capacity = 10
+	var/ammo_single_load = FALSE
+	var/damage_list = list(
+		"10" = 50,
+		"1" = 2,
+		"40" = 2,
+	)
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if(spawnwithmagazine)
-		if (!magazine)
-			if(init_mag_type)
-				magazine = new init_mag_type(src)
-			else
-				magazine = new mag_type(src)
-			if(magazine.fixed_mag)
-				gun_tags |= GUN_INTERNAL_MAG
-	allowed_mags |= mag_type
-	allowed_mags |= subtypesof(mag_type)
-	if(extra_mag_types)
-		if(islist(extra_mag_types) && LAZYLEN(extra_mag_types))
-			allowed_mags |= extra_mag_types
-		else if (ispath(extra_mag_types))
-			allowed_mags |= typesof(extra_mag_types)
-	if(LAZYLEN(disallowed_mags))
-		allowed_mags -= disallowed_mags
-	register_magazines()
+	if(ammo_use_generic)
+		generify()
+	else
+		if(spawnwithmagazine)
+			if (!magazine)
+				if(init_mag_type)
+					magazine = new init_mag_type(src)
+				else
+					magazine = new mag_type(src)
+				if(magazine.fixed_mag)
+					gun_tags |= GUN_INTERNAL_MAG
+		allowed_mags |= mag_type
+		allowed_mags |= subtypesof(mag_type)
+		if(extra_mag_types)
+			if(islist(extra_mag_types) && LAZYLEN(extra_mag_types))
+				allowed_mags |= extra_mag_types
+			else if (ispath(extra_mag_types))
+				allowed_mags |= typesof(extra_mag_types)
+		if(LAZYLEN(disallowed_mags))
+			allowed_mags -= disallowed_mags
+		register_magazines()
 	chamber_round()
 	update_icon()
 
@@ -80,6 +89,16 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		var/atom/movable/marge = mag
 		names_of_mags += initial(marge.name)
 	GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts: [english_list(names_of_mags)]."
+
+/// takes the ammo_var things and uses it to fashion our very own internal magazine based off our vars
+/// also sets it to internal mag, cus we're cool like that
+/obj/item/gun/ballistic/proc/generify()
+	magazine = new /obj/item/ammo_box/magazine/generic(src, src)
+	// magazine.ammo_type = ammo_type
+	magazine.ammo_kind = ammo_kind
+	magazine.name = ammo_magazine_name
+	magazine.max_ammo = ammo_capacity
+	magazine.multiload = !ammo_single_load
 
 /// Ejects whatever's chambered, and attempts to load a new one from the magazine
 /// chamber_round wont load another one if something's still in the chamber

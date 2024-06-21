@@ -97,27 +97,52 @@
 	return amount
 
 /obj/item/ammo_box/proc/fill_magazine(num_bullets = max_ammo, cock)
-	var/to_load = clamp(num_bullets, 0, max(0, max_ammo - LAZYLEN(stored_ammo)))
-	if(to_load < 1)
-		return
-	. = to_load
-	for(var/i in 1 to to_load)
-		stored_ammo += new ammo_type(src)
-	if(cock && istype(loc, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/my_gun = loc
-		if(my_gun?.chambered?.BB)
+	if(replace_spent_rounds)
+		if(LAZYLEN(stored_ammo))
+			QDEL_LIST(stored_ammo)
+		LAZYLENGTHEN(stored_ammo, max_ammo)
+		num_bullets = clamp(num_bullets, 0, LAZYLEN(stored_ammo))
+		for(var/i in 1 to LAZYLEN(stored_ammo))
+			var/be_spent = FALSE
+			if(i > num_bullets)
+				be_spent = TRUE
+			var/bluuet = new ammo_type(src, be_spent)
+			post_process_ammo(bluuet)
+			LAZYSET(stored_ammo, i, bluuet)
+	else
+		var/to_load = clamp(num_bullets, 0, max(0, max_ammo - LAZYLEN(stored_ammo)))
+		if(to_load < 1)
 			return
-		my_gun?.chamber_round()
+		. = to_load
+		for(var/i in 1 to to_load)
+			var/bluuet = new ammo_type(src)
+			stored_ammo += new ammo_type(src)
+			post_process_ammo(bluuet)
+		if(cock && istype(loc, /obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/my_gun = loc
+			if(my_gun?.chambered?.BB)
+				return
+			my_gun?.chamber_round()
+
+/obj/item/ammo_box/proc/post_process_ammo(bluuet)
+	return
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
-	if (!stored_ammo.len)
-		return null
-	else
-		var/b = stored_ammo[stored_ammo.len]
-		stored_ammo -= b
-		if (keep)
-			stored_ammo.Insert(1,b)
+	if(replace_spent_rounds)
+		rotate()
+		var/b = LAZYACCESS(stored_ammo, 1)
+		if(!keep)
+			stored_ammo[1] = null
 		return b
+	else
+		if (!stored_ammo.len)
+			return null
+		else
+			var/b = stored_ammo[stored_ammo.len]
+			stored_ammo -= b
+			if (keep)
+				stored_ammo.Insert(1,b)
+			return b
 
 /obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/other_casing, replace_spent = 0)
 	// Boxes don't have a caliber type, magazines do. Not sure if it's intended or not, but if we fail to find a caliber, then we fall back to ammo_type.
@@ -205,7 +230,7 @@
 		if(load_from_box(A, user, silent))
 			return TRUE
 	if(COOLDOWN_FINISHED(src, supposedly_a_problem) && istype(A, /obj/item/gun))
-		COOLDOWN_START(src, supposedly_a_problem, 1) // just a brief thing so that the game has time to load the thing before you try to load the thing again, thanks automatics
+		COOLDOWN_START(src, supposedly_a_problem, 2) // just a brief thing so that the game has time to load the thing before you try to load the thing again, thanks automatics
 		return A.attackby(src, user, params, silent, replace_spent)
 
 /obj/item/ammo_box/proc/load_from_box(obj/item/ammo_box/other_ammobox, mob/user, silent)
@@ -427,16 +452,32 @@
 	UpdateAmmoCountOverlay()
 
 //Behavior for magazines
-/obj/item/ammo_box/magazine/proc/ammo_count()
-	return stored_ammo.len
+/obj/item/ammo_box/magazine/proc/ammo_count(countempties = TRUE)
+	var/boolets = 0
+	for(var/obj/item/ammo_casing/bullet in stored_ammo)
+		if(bullet && (bullet.BB || countempties))
+			boolets++
+	return boolets
 
 /obj/item/ammo_box/magazine/proc/empty_magazine()
 	var/turf_mag = get_turf(src)
 	for(var/obj/item/ammo in stored_ammo)
 		ammo.forceMove(turf_mag)
 		stored_ammo -= ammo
-	UpdateAmmoCountOverlay()
+	UpdateAmmoCountOverlay(FALSE)
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
 	update_icon()
+
+/obj/item/ammo_box/magazine/proc/rotate()
+	if(!length(stored_ammo))
+		return
+	var/b = stored_ammo[1]
+	stored_ammo.Cut(1,2)
+	stored_ammo.Insert(0, b)
+
+/obj/item/ammo_box/magazine/proc/spin()
+	for(var/i in 1 to rand(0, max_ammo*2))
+		rotate()
+

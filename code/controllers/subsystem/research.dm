@@ -504,14 +504,17 @@ SUBSYSTEM_DEF(research)
 	if(islist(techweb_designs) && clearall)
 		QDEL_LIST(techweb_designs)
 	var/list/returned = list()
-	for(var/path in subtypesof(/datum/design))
+	for(var/path in subtypesof(/datum/design) + SSCMLS.GetAmmoTypeDesigns())
 		var/datum/design/DN = path
-		if(isnull(initial(DN.id)))
-			stack_trace("WARNING: Design with null ID detected. Build path: [initial(DN.build_path)]")
-			continue
-		else if(initial(DN.id) == DESIGN_ID_IGNORE)
-			continue
-		DN = new path
+		if(!istype(path, /datum/design))
+			if(isnull(initial(DN.id)))
+				stack_trace("WARNING: Design with null ID detected. Build path: [initial(DN.build_path)]")
+				continue
+			else if(initial(DN.id) == DESIGN_ID_IGNORE)
+				continue
+			DN = new path
+		else
+			DN = path
 		if(returned[initial(DN.id)])
 			stack_trace("WARNING: Design ID clash with ID [initial(DN.id)] detected! Path: [path]")
 			errored_datums[DN] = initial(DN.id)

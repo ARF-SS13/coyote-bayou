@@ -17,17 +17,17 @@
 /datum/supplykit_item/ammospec/box12rubber
 	name = "12 gauge rubber shot box"
 	desc = "A box containing 12 rounds of 12 gauge rubber shot."
-	item = /obj/item/ammo_box/shotgun/rubber
+	item = /obj/item/ammo_box/generic/shotgun/rubber
 
 /datum/supplykit_item/ammospec/box12bean
 	name = "12 gauge beanbag box"
 	desc = "A box containing 12 rounds of 12 gauge beanbags."
-	item = /obj/item/ammo_box/shotgun/bean
+	item = /obj/item/ammo_box/generic/shotgun/bean
 
 /datum/supplykit_item/ammospec/box12improv
 	name = "12 gauge improvised bag"
 	desc = "A box containing 12 rounds of 12 gauge improvised shot."
-	item = /obj/item/ammo_box/shotgun/improvised
+	item = /obj/item/ammo_box/generic/shotgun/improvised
 	cost = 5
 */
 /datum/supplykit_item/ammospec/box22rubber

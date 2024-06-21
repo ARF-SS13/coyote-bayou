@@ -191,6 +191,18 @@ ATTACHMENTS
 	/// This is the base reload speed, which is modified by things like the size of the magazine in use.
 	var/reloading_time = 1 SECONDS
 
+	/// without a damage_list defined, default to this damage
+	var/damage // if left null, and the rest of these damage vars are also null, the projectile will default to its own damage system
+	/// The damage list to use for this gun! format: list("dmg" = weight) so, list("15" = 5, "20" = 3, "1000" = 0.1)
+	var/list/damage_list
+	/// without a damage list defined, and both of these defined, will roll a random number between these two values
+	var/damage_high
+	var/damage_low
+	/// if not null, will override the projectile's damage type
+	var/damage_type
+	/// if not null, will override what kind of armor the projectile checks against
+	var/damage_armor_type
+
 /obj/item/gun/Initialize()
 	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	if(!recoil_tag)
@@ -1594,9 +1606,9 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/ammo_box/a3006box(src)
 	new /obj/item/ammo_box/a50MGbox(src)
-	new /obj/item/ammo_box/shotgun/slug(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
-//	new /obj/item/ammo_box/shotgun/improvised(src)
+	new /obj/item/ammo_box/generic/shotgun/slug(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
+//	new /obj/item/ammo_box/generic/shotgun/improvised(src)
 	new /obj/item/ammo_box/m22(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/ammo_box/c10mm(src)

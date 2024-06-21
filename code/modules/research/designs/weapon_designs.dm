@@ -144,7 +144,7 @@
 	id = "sec_shellclip"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000)
-	build_path = /obj/item/ammo_box/shotgun
+	build_path = /obj/item/ammo_box/generic/shotgun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -192,7 +192,7 @@
 	id = "stunshell"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 200)
-	build_path = /obj/item/ammo_casing/shotgun/stunslug
+	build_path = /obj/item/ammo_casing/generic/shotgun/stunslug
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
@@ -202,7 +202,7 @@
 	id = "techshotshell"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 200)
-	build_path = /obj/item/ammo_casing/shotgun/techshell
+	build_path = /obj/item/ammo_casing/generic/shotgun/techshell
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
@@ -212,7 +212,7 @@
 	id = "shotgundartcryostatis"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 3500)
-	build_path = /obj/item/ammo_casing/shotgun/dart/noreact
+	build_path = /obj/item/ammo_casing/generic/shotgun/dart/noreact
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 

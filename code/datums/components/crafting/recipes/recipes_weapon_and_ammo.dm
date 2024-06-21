@@ -383,7 +383,7 @@
 /*
 /datum/crafting_recipe/shotgunammo3p
 	name = "12g 3p trainshot box"
-	result = /obj/item/ammo_box/shotgun/trainshot
+	result = /obj/item/ammo_box/generic/shotgun/trainshot
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/prewar = 2,
 	/obj/item/stack/sheet/metal = 1,
@@ -759,7 +759,7 @@
 	reqs = list(/obj/item/screwdriver = 1,
 	/obj/item/twohanded/baseball = 1,
 	/obj/item/stack/crafting/metalparts = 2,
-	/obj/item/ammo_casing/shotgun = 1,
+	/obj/item/ammo_casing/generic/shotgun = 1,
 	/obj/item/stack/rods = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 120

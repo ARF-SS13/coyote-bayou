@@ -51,6 +51,15 @@
 		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
 		user.newtonian_move(get_dir(target, user))
 	update_icon()
+
+	if(caseless)
+		moveToNullspace()
+		if(istype(fired_from, /obj/item/gun))
+			var/obj/item/gun/gonne = fired_from
+			if(gonne.chambered == src)
+				gonne.chambered = null // harddels suffer
+				gonne.update_icon()
+		qdel(src)
 	return 1
 
 /obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0, atom/fired_from)
@@ -93,6 +102,18 @@
 		var/obj/item/gun/G = fired_from
 		G.post_modify_projectile(BB)
 		//BB.damage *= G.damage_multiplier
+		if(!isnull(G.damage))
+			BB.damage = G.damage
+		if(!isnull(G.damage_list))
+			BB.damage_list = G.damage_list
+		if(!isnull(G.damage_high))
+			BB.damage_high = G.damage_high
+		if(!isnull(G.damage_low))
+			BB.damage_low = G.damage_low
+		if(!isnull(G.damage_type))
+			BB.damage_type = G.damage_type
+		if(!isnull(G.damage_armor_type))
+			BB.flag = G.damage_armor_type
 		BB.damage_mod = G.damage_multiplier
 		BB.armour_penetration *= G.penetration_multiplier
 		BB.pixels_per_second *= G.projectile_speed_multiplier

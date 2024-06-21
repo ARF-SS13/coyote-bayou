@@ -276,3 +276,7 @@ GLOBAL_LIST_INIT(ammo_material_multipliers, list(
 #define BULLET_IS_SURPLUS 2
 #define BULLET_IS_MATCH 3
 
+/////// LE CORBS
+#define AMMOBOX_IS_BOX "Box"
+#define AMMOBOX_IS_CRATE "Crate"
+

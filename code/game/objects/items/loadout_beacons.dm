@@ -499,9 +499,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/law/police/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/police(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 /obj/item/storage/box/gun/rifle/brushgun
 	name = "brush gun case"
@@ -666,7 +666,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
-	//new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+	//new /obj/item/ammo_box/generic/shotgun/buck(src) //lots of shotshells, just one box
 	new /obj/item/ammo_box/c4570box(src)
 	new /obj/item/ammo_box/c4570/ratshot(src)
 
@@ -675,7 +675,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/rifle/widowmaker/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/widowmaker(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 /obj/item/storage/box/gun/rifle/gras
 	name = "Gras Rifle"
@@ -1016,7 +1016,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/hobo/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/shotpistol(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 /obj/item/storage/box/gun/hobo/zipgun
 	name = "Zip gun case"
@@ -1057,7 +1057,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/hobo/single_shotgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/hobo/single_shotgun(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 /obj/item/storage/box/gun/hobo/knifegun
 	name = "knife gun case"
@@ -1320,14 +1320,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/pistol/taurpistol/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/taurjudge(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 /obj/item/storage/box/gun/rifle/shottybotty
 	name = "S163 Shotgun case"
 
 /obj/item/storage/box/gun/rifle/shottybotty/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/s163(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/generic/shotgun/buck(src)
 
 
 /obj/item/storage/box/gun/rifle/foomas

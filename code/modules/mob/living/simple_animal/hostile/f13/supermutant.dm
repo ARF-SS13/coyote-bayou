@@ -177,7 +177,7 @@
 	health = 130
 	retreat_distance = 3
 	minimum_distance = 2
-	casingtype = /obj/item/ammo_casing/shotgun/improvised/simplemob
+	casingtype = /obj/item/ammo_casing/generic/shotgun/improvised/simplemob
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
@@ -186,7 +186,7 @@
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_FAST
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
-		/obj/item/ammo_box/shotgun,
+		/obj/item/ammo_box/generic/shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
 		/obj/effect/gibspawner/generic/animal
 		)
@@ -523,7 +523,7 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release_wall(dir)
 	for(var/mob/living/target in view(10, src))
-		var/obj/item/ammo_casing/casing = new /obj/item/ammo_casing/shotgun/incendiary(get_turf(src))
+		var/obj/item/ammo_casing/casing = new /obj/item/ammo_casing/generic/shotgun/incendiary(get_turf(src))
 		casing.factionize(faction)
 		casing.fire_casing(target, src, null, null, null, ran_zone(), 0, null, null, null, src)
 		qdel(casing)
