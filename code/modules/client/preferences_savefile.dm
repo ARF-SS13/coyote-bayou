@@ -187,7 +187,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	vr_path = "data/player_saves/[ckey[1]]/[ckey]/vore"
 	// TODO: Make bellies save/load to/from a human readable format
 	// Shouldnt be too hard to convert the current savefile format to json or txt or something
-	// Hopefully everyone's bellies dont get fucked when I do that!
+	// Hopefully everyone's bellies dont get HECKed when I do that!
 
 /datum/preferences/proc/load_preferences()
 	if(!path)
@@ -463,13 +463,66 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/jsout = safe_json_encode(quest_bank_editor_prefs)
 	WRITE_FILE(S["quest_bank_editor_prefs"], jsout)
 
+/datum/preferences/proc/delete_character(slot, verification_name)
+	if(!path || !slot || !verification_name)
+		return FALSE
+	if(!fexists(path))
+		return FALSE
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		return FALSE
+	S.cd = "/"
+	if(!slot)
+		slot = default_slot
+	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
+	if(slot != default_slot)
+		default_slot = slot
+		WRITE_FILE(S["default_slot"] , slot)
+
+	S.cd = "/character[slot]"
+	/// first, check that this character is actually the right one, compare againt their name
+	var/test_name = "WHOA THERE"
+	S["real_name"] >> test_name
+	if(test_name != verification_name)
+		return FALSE
+	// save_character(TRUE) // fun fact, the 'backup' not only doesnt work, it also bloats the save file
+	S.dir.Remove("/character[slot]")
+	. = TRUE
+	S.cd = "/"
+	default_slot = 1
+	WRITE_FILE(S["default_slot"] , 1)
+	if(!load_character(default_slot))
+		initialize_preferences() // just so we dont carry over literally everything from the last character
+		random_character()
+		real_name = random_unique_name(gender)
+		save_character()
+
+/datum/preferences/proc/print_all_save_dirs()
+	if(!path)
+		return FALSE
+	if(world.time < loadcharcooldown) //This is before the check to see if the filepath exists to ensure that BYOND can't get hung up on read attempts when the hard drive is a little slow
+		if(istype(parent))
+			to_chat(parent, span_warning("You're attempting to load your character a little too fast. Wait half a second, then try again."))
+		return "SLOW THE HECK DOWN" //the reason this isn't null is to make sure that people don't have their character slots overridden by random chars if they accidentally double-click a slot
+	loadcharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
+	if(!fexists(path))
+		return FALSE
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		return FALSE
+	S.cd = ""
+	var/list/outputs = list()
+	for(var/lein in S.dir)
+		outputs += lein
+	return outputs.Join(", ")
+
 /datum/preferences/proc/load_character(slot)
 	if(!path)
 		return FALSE
 	if(world.time < loadcharcooldown) //This is before the check to see if the filepath exists to ensure that BYOND can't get hung up on read attempts when the hard drive is a little slow
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to load your character a little too fast. Wait half a second, then try again."))
-		return "SLOW THE FUCK DOWN" //the reason this isn't null is to make sure that people don't have their character slots overridden by random chars if they accidentally double-click a slot
+		return "SLOW THE HECK DOWN" //the reason this isn't null is to make sure that people don't have their character slots overridden by random chars if they accidentally double-click a slot
 	loadcharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	if(!fexists(path))
 		return FALSE
@@ -1275,10 +1328,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return 1
 
-/datum/preferences/proc/save_character()
+/datum/preferences/proc/save_character(backup_shunt)
 	if(!path)
 		return 0
-	if(world.time < savecharcooldown)
+	if(world.time < savecharcooldown && !backup_shunt)
 		//if(istype(parent))
 			//to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
@@ -1287,7 +1340,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/savefile/S = new /savefile(path)
 	if(!S)
 		return 0
-	S.cd = "/character[default_slot]"
+	if(backup_shunt)
+		var/mob/user = usr
+		S.cd = "/DELETED-["[real_name]-deletedby-[user.ckey]-[rand(1000, 9999)]-[time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]"]"
+	else
+		S.cd = "/character[default_slot]"
 
 	WRITE_FILE(S["version"]			, SAVEFILE_VERSION_MAX)	//load_character will sanitize any bad data, so assume up-to-date.)
 
