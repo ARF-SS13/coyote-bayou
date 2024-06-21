@@ -786,7 +786,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Electron Charge Pack (ECP)",					/obj/item/stock_parts/cell/ammo/ecp,					25),
 		new /datum/data/wasteland_equipment("Ultracite Ammo Cell (UAC)",					/obj/item/stock_parts/cell/ammo/ultracite,				75),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							30),
-		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/ammo_casing/caseless/arrow/field,		3),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box (120 bullets)",						/obj/item/ammo_box/m22,									15),
@@ -814,7 +814,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Electron Charge Pack (ECP)",					/obj/item/stock_parts/cell/ammo/ecp,					25),
 		new /datum/data/wasteland_equipment("Ultracite Ammo Cell (UAC)",					/obj/item/stock_parts/cell/ammo/ultracite,				75),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							30),
-		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		3),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/ammo_casing/caseless/arrow/field,		3),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/badammo
@@ -843,7 +843,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						30),
 		new /obj/item/ammo_box/flintlock("Black Powder Ammo",								/obj/item/ammo_box/flintlock,							30),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							60),
-		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		7),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/ammo_casing/caseless/arrow/field,		7),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box",									/obj/item/ammo_box/m22,									30),
@@ -867,7 +867,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Plasma Canisters (6 canisters)",				/obj/item/ammo_box/plasmamusket,						30),
 		new /obj/item/ammo_box/flintlock("Black Powder Ammo",								/obj/item/ammo_box/flintlock,							30),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",						/obj/item/storage/battery_box,							60),
-		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/projectile/bullet/reusable/arrow/field,		7),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",						/obj/item/ammo_casing/caseless/arrow/field,		7),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
