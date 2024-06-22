@@ -192,10 +192,12 @@
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
+	base_icon_state = "smoothrocks"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	color = "#a17768"
+	layer = EDGED_TURF_LAYER
 
 /turf/closed/indestructible/rock/sand
 	name = "dense sandstone"
