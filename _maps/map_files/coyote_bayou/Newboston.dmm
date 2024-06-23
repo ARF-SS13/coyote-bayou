@@ -5973,9 +5973,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"dpp" = (
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "dpM" = (
 /obj/structure/bed/old,
 /obj/item/bedsheet/brown,
@@ -9527,11 +9524,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white,
 /area/f13/building/abandoned)
-"flc" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior1"
-	},
-/area/f13/building)
 "flJ" = (
 /obj/structure/window/fulltile/wood_window,
 /obj/structure/curtain{
@@ -12082,11 +12074,6 @@
 /obj/structure/flora/wasteplant/wild_feracactus,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
-"gBt" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior2"
-	},
-/area/f13/building)
 "gBT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
@@ -13104,10 +13091,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"hdY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
-/area/f13/building)
 "hec" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -75717,8 +75700,8 @@ jfA
 vyX
 gJk
 sXy
-gBt
-flc
+vyX
+vyX
 vyX
 gpx
 iLC
@@ -96851,10 +96834,10 @@ yde
 yde
 yde
 yde
-dpp
+yde
 jdm
-hdY
-dpp
+sZG
+yde
 yde
 mQz
 tPQ
