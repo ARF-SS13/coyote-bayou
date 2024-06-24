@@ -2041,7 +2041,7 @@
 	light_power = 2;
 	light_range = 2
 	},
-/area/f13/wasteland)
+/area/f13/caves)
 "eH" = (
 /obj/structure/stone_tile/slab{
 	pixel_y = 31
@@ -5142,7 +5142,7 @@
 	anchored = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/wasteland)
+/area/f13/caves)
 "ln" = (
 /obj/structure/bed/roller/bedroll{
 	name = "tree shaded bedroll";
@@ -14227,6 +14227,34 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"FU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/glowshroom{
+	color = "#4F7942";
+	light_color = "#4F7942";
+	light_range = 3
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#33FF48";
+	light_color = "#33FF48";
+	light_power = 2;
+	light_range = 2
+	},
+/area/f13/caves)
 "FV" = (
 /obj/structure/curtain{
 	color = "#89A077";
@@ -20636,7 +20664,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins,
-/area/f13/wasteland)
+/area/f13/caves)
 "TY" = (
 /obj/structure/table/booth,
 /turf/open/floor/f13/wood,
@@ -56406,7 +56434,7 @@ OL
 lR
 In
 Vm
-um
+FU
 vt
 AW
 ot
@@ -57180,7 +57208,7 @@ qF
 NC
 ro
 Ps
-um
+FU
 Ps
 Ps
 Ps
@@ -57442,7 +57470,7 @@ cG
 ro
 ro
 Ps
-um
+FU
 AJ
 Yj
 bq

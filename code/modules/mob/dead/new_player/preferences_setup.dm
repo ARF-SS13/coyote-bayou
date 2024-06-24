@@ -4,23 +4,47 @@
 	if(gender_override)
 		gender = gender_override
 	else
-		gender = MALE
-	underwear = "Boxers"
-	undie_color = random_clothing_dye()
-	undershirt = "Shirt - Short Sleeved"
-	shirt_color = random_clothing_dye()
-	socks = "Short"
-	socks_color = random_clothing_dye()
-	use_custom_skin_tone = FALSE
-	skin_tone = pick("latino", "mediterranean")
-	hair_style = pick("Trimmed", "Fade (Low)")
-	facial_hair_style = pick("Beard (5 o\'Clock)", "Beard (3 o\'Clock)")
-	hair_color = random_hair_shade()
-	facial_hair_color = random_hair_shade()
-	left_eye_color = random_dark_shade()
-	right_eye_color = random_dark_shade()
-	age = (rand(20, 25))
+		gender = pick(MALE, FEMALE)
+	real_name = random_unique_name(gender)
+	underwear = "Nude"
+	undershirt = "Nude"
+	socks = "Nude"
+	undie_color = "5e5e5e"
+	shirt_color = "5e5e5e"
+	socks_color = "5e5e5e"
+	skin_tone = random_skin_tone()
+	hair_style = "Bedhead"
+	facial_hair_style = "Shaved"
+	hair_color = random_short_color()
+	facial_hair_color = hair_color
+	var/random_eye_color = "000000"
+	left_eye_color = random_eye_color
+	right_eye_color = random_eye_color
 
+	features["mcolor"] = "CCCCCC"
+	features["mcolor2"] = "EEEEEE"
+	features["mcolor3"] = "777777"
+	features["tail_lizard"] = "None"
+	features["snout"] = "None"
+	features["horns"] = "None"
+	features["frills"] = "None"
+	features["spines"] = "None"
+	features["insect_wings"] = "None"
+	features["deco_wings"] = "None"
+	features["insect_fluff"] = "None"
+	features["flavor_text"] = "" //Oh no.
+	features["body_model"] = gender
+
+	pref_species = new /datum/species/mammal()
+	features["tail"] = "Fox"
+	features["tail_lizard"] = "Fox"
+	features["tail_human"] = "Fox"
+	features["mam_tail_animated"] = "Fox"
+	features["ears"] = "Fox"
+	features["mam_ears"] = "Fox"
+	features["snout"] = "Mammal, Long"
+	features["mam_snouts"] = "Mammal, Long"
+	features["legs"] = "Digitigrade"
 
 /datum/preferences/proc/update_preview_icon(current_tab)
 	var/equip_job = TRUE
