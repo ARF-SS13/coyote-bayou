@@ -1347,21 +1347,11 @@
 /mob/living/carbon/human/species/bigwolfblack
 	race = /datum/species/feral/bigwolfblack
  
-/datum/species/feral/darkbrowntanuki
-	name = "Dark brown tanuki"
-	id = "dark_brown_tanuki"
-	simple_icon = 'modular_coyote/icons/mob/tanuki.dmi'
-	icon_width = 128
-	roundstart = TRUE
-	icon_dead_suffix = "_dead"
-	icon_rest_suffix = "_rest"
-/mob/living/carbon/human/species/darkbrowntanuki
-	race = /datum/species/feral/darkbrowntanuki
-
 /datum/species/feral/darkgreytanuki
-	name = "Dark grey tanuki"
-	id = "dark_grey_tanuki"
+	name = "Tanuki"
+	id = "tanuki"
 	simple_icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	alt_prefixes = list("Dark Brown" = "dark_")
 	icon_width = 128
 	roundstart = TRUE
 	icon_dead_suffix = "_dead"
