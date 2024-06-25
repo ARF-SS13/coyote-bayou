@@ -19,6 +19,7 @@
 	var/select = 0 //doesn't do anything?
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	reloading_time = 0.5 SECONDS
+	is_revolver = TRUE
 
 /obj/item/gun/ballistic/revolver/Initialize()
 	. = ..()
@@ -45,7 +46,7 @@
 		to_chat(user, span_alert("[src] is empty!"))
 	update_icon()
 
-/obj/item/gun/ballistic/revolver/proc/eject_shells(mob/living/user, just_empties = TRUE)
+/obj/item/gun/ballistic/proc/eject_shells(mob/living/user, just_empties = TRUE)
 	if(!magazine)
 		return FALSE
 	var/num_unloaded = 0

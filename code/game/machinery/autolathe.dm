@@ -739,7 +739,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 
 /obj/machinery/autolathe/ammo/Initialize()
-	categories = SSCMLS.design_cats // meow
+	categories = SScmls.design_cats // meow
 	. = ..()
 	
 

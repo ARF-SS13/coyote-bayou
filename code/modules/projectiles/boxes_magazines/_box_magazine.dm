@@ -36,6 +36,7 @@
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
 	var/supposedly_a_problem = 0
+	var/eject_one_casing_per_click = FALSE
 	maptext_width = 48 //prevents ammo count from wrapping down into two lines
 
 /obj/item/ammo_box/Initialize(mapload, ...)
@@ -115,9 +116,9 @@
 			return
 		. = to_load
 		for(var/i in 1 to to_load)
-			var/bluuet = new ammo_type(src)
-			stored_ammo += new ammo_type(src)
+			var/obj/item/ammo_casing/bluuet = new ammo_type(src)
 			post_process_ammo(bluuet)
+			stored_ammo += bluuet
 		if(cock && istype(loc, /obj/item/gun/ballistic))
 			var/obj/item/gun/ballistic/my_gun = loc
 			if(my_gun?.chambered?.BB)
@@ -125,6 +126,9 @@
 			my_gun?.chamber_round()
 
 /obj/item/ammo_box/proc/post_process_ammo(bluuet)
+	return
+
+/obj/item/ammo_box/proc/handle_ejection(mob/living/user, is_enbloc, put_it_in_their_hand, sounds_and_words)
 	return
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
@@ -221,12 +225,12 @@
 				to_chat(user, span_alert("There's already a glowing piece of metal in \the [src]! Quick, stick a casing in!"))
 		return
 
-	if(istype(A, /obj/item/ammo_casing/))
+	if(istype(A, /obj/item/ammo_casing))
 		if(change_caliber(user, A))
 			return TRUE
 		if(load_from_casing(A, user, silent))
 			return TRUE
-	if(istype(A, /obj/item/ammo_box/))
+	if(istype(A, /obj/item/ammo_box))
 		if(load_from_box(A, user, silent))
 			return TRUE
 	if(COOLDOWN_FINISHED(src, supposedly_a_problem) && istype(A, /obj/item/gun))
@@ -452,32 +456,32 @@
 	UpdateAmmoCountOverlay()
 
 //Behavior for magazines
-/obj/item/ammo_box/magazine/proc/ammo_count(countempties = TRUE)
+/obj/item/ammo_box/proc/ammo_count(countempties = TRUE)
 	var/boolets = 0
 	for(var/obj/item/ammo_casing/bullet in stored_ammo)
 		if(bullet && (bullet.BB || countempties))
 			boolets++
 	return boolets
 
-/obj/item/ammo_box/magazine/proc/empty_magazine()
+/obj/item/ammo_box/proc/empty_magazine()
 	var/turf_mag = get_turf(src)
 	for(var/obj/item/ammo in stored_ammo)
 		ammo.forceMove(turf_mag)
 		stored_ammo -= ammo
 	UpdateAmmoCountOverlay(FALSE)
 
-/obj/item/ammo_box/magazine/handle_atom_del(atom/A)
+/obj/item/ammo_box/handle_atom_del(atom/A)
 	stored_ammo -= A
 	update_icon()
 
-/obj/item/ammo_box/magazine/proc/rotate()
+/obj/item/ammo_box/proc/rotate()
 	if(!length(stored_ammo))
 		return
 	var/b = stored_ammo[1]
 	stored_ammo.Cut(1,2)
 	stored_ammo.Insert(0, b)
 
-/obj/item/ammo_box/magazine/proc/spin()
+/obj/item/ammo_box/proc/spin()
 	for(var/i in 1 to rand(0, max_ammo*2))
 		rotate()
 

@@ -101,7 +101,7 @@ other types of metals and chemistry for reagents).
 		materials = design_materials // baby shark, doo doo doo doo doo doo doo
 	/// heres a cute shark: <(OvO)>
 
-/datum/design/proc/post_build()
+/datum/design/proc/post_build(atom/built)
 	return
 
 /datum/design/proc/material_cost_autobalance()

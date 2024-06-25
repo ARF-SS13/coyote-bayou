@@ -504,7 +504,7 @@ SUBSYSTEM_DEF(research)
 	if(islist(techweb_designs) && clearall)
 		QDEL_LIST(techweb_designs)
 	var/list/returned = list()
-	for(var/path in subtypesof(/datum/design) + SSCMLS.GetAmmoTypeDesigns())
+	for(var/path in subtypesof(/datum/design) + SScmls.GetAmmoTypeDesigns())
 		var/datum/design/DN = path
 		if(!istype(path, /datum/design))
 			if(isnull(initial(DN.id)))

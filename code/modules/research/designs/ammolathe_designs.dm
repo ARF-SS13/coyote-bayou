@@ -2,7 +2,8 @@
 	build_type = AMMOLATHE
 	/// Automatically sets the ammo's material cost through Dynamic Stuff~
 	autocalc_materials = TRUE
-	var/datum/ammo_type/ammotype
+	var/box_CorB = CORB_BOX
+	var/datum/ammo_kind/ammotype
 
 /// spawns some ammo boxes, rips the material data, and then trashes them
 /datum/design/ammolathe/AutocalcMaterialCosts()
@@ -33,13 +34,10 @@
 	materials = material_list
 
 /// sets the resulting generic ammo thing to be a bit less generic
-/datum/design/ammolathe/proc/post_build()
-	if(!LAZYLEN(material_list))
+/datum/design/ammolathe/post_build(atom/built)
+	if(!istype(built, /obj/item/ammo_box/generic))
 		return
-	for(var/mat in GLOB.ammo_material_multipliers)
-		if(mat in material_list)
-			material_list[mat] *= GLOB.ammo_material_multipliers[mat]
-	materials = material_list
+	SScmls.SetupBox(built, ammotype, box_CorB)
 
 //materials
 /datum/design/ammolathe/metalplate
