@@ -10018,9 +10018,9 @@
 /area/f13/caves)
 "fsE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wasteland,
 /obj/machinery/plantgenes,
 /obj/item/storage/box/strange_seeds_5pack,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/building)
 "fsH" = (
@@ -26634,10 +26634,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wasteland,
 /obj/machinery/reagentgrinder{
 	pixel_y = 6
 	},
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/side{
 	dir = 4
 	},
@@ -35994,16 +35994,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/f13/building)
-"tuf" = (
-/obj/machinery/vending/cola/space_up{
-	pixel_x = 2;
-	pixel_y = 21;
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "tuk" = (
 /obj/structure/table/wood/settler,
 /obj/structure/sign/poster/contraband/pinup_vixen{
@@ -36495,7 +36485,6 @@
 "tHB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wasteland,
 /obj/item/storage/box/disks_plantgene,
 /obj/item/storage/box/disks_plantgene,
 /obj/item/storage/box/disks_plantgene,
@@ -36503,6 +36492,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/side{
 	dir = 4
 	},
@@ -37632,16 +37622,6 @@
 	},
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/wasteland/city/newboston/chapel)
-"ute" = (
-/obj/machinery/vending/cola/starkist{
-	pixel_x = 6;
-	pixel_y = 21;
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder - N"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "utH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/chomp/bush2{
@@ -43579,11 +43559,6 @@
 /obj/structure/table/wood/bar,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
-"xGQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/aug_manipulator,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "xHh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/fakelattice,
@@ -80304,7 +80279,7 @@ tBH
 jRP
 fsE
 bLR
-ute
+his
 bGv
 vSN
 tru
@@ -80561,7 +80536,7 @@ jRP
 bJk
 jIg
 bLR
-tuf
+mdh
 lVZ
 avK
 avK
@@ -84417,7 +84392,7 @@ kcx
 rXx
 cKt
 jkD
-xGQ
+sKy
 qNK
 nPr
 aCU
