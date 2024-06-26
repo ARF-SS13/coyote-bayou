@@ -92,6 +92,8 @@
 	var/pellet_count = 1 // only used for shotguns
 	var/caseless = FALSE // if the bullet is caseless, it will not leave a casing behind
 
+	var/recoil = 4 // how much recoil the gun has when firing this bullet
+
 	/// ammo has a box associated
 	var/has_box = TRUE
 	/// ammo has a crate associated
@@ -586,6 +588,7 @@
 	BB.name = GetBulletProjectileName(BB)
 	BB.icon = GetBulletIcon()
 	BB.icon_state = GetBulletProjectileIconState(BB)
+	BB.recoil = recoil
 	BB.desc = "If you can read this, you're too close!"
 
 /datum/ammo_kind/proc/ShouldConvertBullet(obj/item/ammo_casing/generic/AC)

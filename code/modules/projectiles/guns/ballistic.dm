@@ -51,6 +51,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/ammo_single_load = FALSE
 	var/is_revolver = FALSE
 
+	var/recoil_per_shot = 2 // degrees
+
 	var/sound_magazine_eject = "gun_remove_empty_magazine"
 	var/sound_magazine_insert = "gun_insert_full_magazine"
 
@@ -103,6 +105,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if(!isnull(damage_low))        BB.damage_low  = damage_low
 	if(!isnull(damage_type))       BB.damage_type = damage_type
 	if(!isnull(damage_armor_type)) BB.flag        = damage_armor_type
+	if(!isnull(recoil_per_shot))   BB.recoil      = recoil_per_shot
 	// stop me~ you cant~
 
 /obj/item/gun/ballistic/proc/register_magazines()
