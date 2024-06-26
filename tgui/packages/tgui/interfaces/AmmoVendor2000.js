@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {
   useBackend,
   useLocalState,
@@ -21,38 +22,71 @@ import {
 } from '../format';
 import { Window } from '../layouts';
 import { createSearch } from 'common/string';
-import { multiline } from '../../common/string';
+import { marked } from 'marked';
+import { sanitizeText } from '../sanitize';
 
 const SideButtonWidth = "100px";
-const QBOK = <Box inline backgroundColor="green" color="white">OK</Box>;
+const BuyButtonWidth = "100px";
+const QBOK = <Box inline backgroundColor="green" color="white">-!!CONNECTED!!-</Box>;
 const WindowTitle = "Adventurer's Ammo Supply PRO v0.8β";
 const TickOn = <Icon name="toggle-on" color="green" />;
 const TickOff = <Icon name="toggle-off" color="label" />;
+
+// Styles
+const AmmoEntryOuterStyle = {};
+
+const AmmoDescStyle = {};
+
+const HelloUserStyle = {
+  "font-size": "16px",
+  "font-weight": "bold",
+  "border-bottom": "2px solid rgba(255, 255, 255, 0.5)",
+};
+
+const ConnectionOKStyle = {
+  "font-size": "12px",
+  "font-weight": "bold",
+  "border": "2px solid rgba(0, 255, 0, 0.5)",
+};
+
+const SideButtonStyle = {};
+
+const EntryHeaderStyle = {
+  "font-size": "16px",
+  "font-weight": "bold",
+  "padding": "0px",
+  "margin": "0px",
+  "border-bottom": "2px solid rgba(255, 255, 255, 0.5)",
+};
+const ItemEntryStatsStyle = {
+  "font-size": "10px",
+  "margin": "0px",
+  "padding": "3px",
+  "border-bottom": "1px inset rgba(255, 255, 255, 0.5)",
+  "line-height": "1.2",
+};
+
+const ItemEntryDescStyle = {
+  "font-size": "12px",
+  "margin": "4px",
+  "padding": "4px",
+};
+
+const ItemEntryContainerStyle = {
+  "border": "3px inset #FFF",
+  // "#a4bad6" in rgba, plus 2 shades brighter
+  "color": "rgba(194, 226, 244, 1)",
+  "background-color": "#223322",
+};
+
+
+
 
 /*
  * This is the main window of the AmmoVendor2000 interface. Cool!
  */
 export const AmmoVendor2000 = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    Username,
-    QBcash,
-    CurrencyUnit,
-    CurrencyName,
-    CurrencyPlural,
-  } = data;
-
-  // Which ammo type is choosen for to be bought
-  const [
-    SelectedTab,
-    setSelectedTab,
-  ] = useLocalState(context, 'SelectedTab', 1);
-
-  // Are we buying a crate, or a box?
-  const [
-    CrateMode,
-    setCrateMode,
-  ] = useLocalState(context, 'CrateMode', false);
 
   return (
     <Window
@@ -77,10 +111,7 @@ export const AmmoVendor2000 = (props, context) => {
               </Flex.Item>
               <Flex.Item basis={SideButtonWidth}>
                 <Box
-                  style={{
-                    "background-color": "label",
-                    "border-radius": "5px",
-                  }}>
+                  style={SideButtonStyle}>
                   <Stack fill vertical>
                     <Stack.Item>
                       <BoxToggler />
@@ -99,8 +130,7 @@ export const AmmoVendor2000 = (props, context) => {
             </Section>
           </Stack.Item>
           <Stack.Item>
-            {/* <BottomToolbar /> */}
-            <Box />
+            <BottomToolbar />
           </Stack.Item>
         </Stack>
       </Window.Content>
@@ -123,7 +153,6 @@ const TopChunk = (props, context) => {
     CurrencyPlural,
   } = data;
   const HiThere = `Welcome, ${Username}!`;
-  const QBConn = `Guild QBank Account Connection: ${QBOK}`;
 
   return (
     <Flex direction="row">
@@ -133,22 +162,18 @@ const TopChunk = (props, context) => {
           <Stack.Item>
             <Box
               inline
-              style={{
-                "font-size": "20px",
-                "font-weight": "bold",
-                "color": "white",
-              }}>
+              fluid
+              width="90%"
+              style={HelloUserStyle}>
               {HiThere}
             </Box>
           </Stack.Item>
           <Stack.Item>
             <Box
               inline
-              style={{
-                "font-size": "16px",
-                "color": "label",
-              }}>
-              {QBConn}
+              style={ConnectionOKStyle}>
+              Guild QBank Account Connection:
+              {QBOK}
             </Box>
           </Stack.Item>
         </Stack>
@@ -157,20 +182,12 @@ const TopChunk = (props, context) => {
       <Flex.Item basis={SideButtonWidth}>
         <Box
           inline
-          style={{
-            "background-color": "label",
-            "border-radius": "5px",
-          }}>
+          width="100%"
+          fluid
+          style={SideButtonStyle}>
           <Stack fill vertical>
             <Stack.Item>
-              <Button
-                fluid
-                color="green"
-                style={{
-                  "border-radius": "5px",
-                }}>
-                <YourCash />
-              </Button>
+              <YourCash />
             </Stack.Item>
             <Stack.Item>
               <SearchBox />
@@ -198,6 +215,8 @@ const YourCash = (props, context) => {
 
   return (
     <Button
+      fluid
+      textAlign="center"
       width="100%"
       onClick={() => act('ClickedCashThing', {
         Username: Username,
@@ -249,6 +268,7 @@ const BoxToggler = (props, context) => {
 
   return (
     <Button
+      fluid
       onClick={() => {
         setCrateMode(false);
         act('MakeSound', { sound: 'BoxOn' });
@@ -280,6 +300,7 @@ const CrateToggler = (props, context) => {
 
   return (
     <Button
+      fluid
       onClick={() => {
         setCrateMode(true);
         act('MakeSound', { sound: 'CrateOn' });
@@ -298,6 +319,40 @@ const CrateToggler = (props, context) => {
   );
 };
 
+// The actual item entry slug
+// ANATOMY OF AN ALLITEMS ENTRY:
+// {
+//   "Category": "Compact Ammo Boxes",
+//   "Name": "9mm Box",
+//   "Desc": "A box of 9mm ammo. Also theres a heckload of text!",
+//   "ShortDesc": "A box of 9mm ammo. Also the...",
+//   "RawCost": 152, // in copper
+//   "CopperCost": 2,
+//   "SilverCost": 5,
+//   "GoldCost": 1,
+//   "C_M_L_S": "C",
+//   "Caliber": "Compact",
+//   "KindPath": "/datum/ammo_kind/compact/9mm",
+//   "MaxAmmo": 50,
+//   "IsCrate": 0,
+//   "IsBox": 1,
+//   "DamageFlat": 10 OR X, // X is a string, if so, dont display it
+//        vv these are sown ONLY IF DamageFlat is NOT a number
+//   "DamageMin": 5,
+//   "DamageMax": 15,
+//   "DamageMean": 10,
+//   "DamageMedian": 10,
+//   "DamageMode": 10,
+//   "DamageVariance": 0,
+//   "DamageStdDev": 0,
+//   "DamageSkew": 0,
+//   "DamageKurtosis": 0,
+//   "DamageEntropy": 0
+//   "DamageCrit": 20,
+//   "DamageCritChance": 0.9%,
+// }
+
+
 /*
  * This is the set of tabs that allow to choose ammo type
  */
@@ -314,11 +369,12 @@ const TabQuad = (props, context) => {
 
   // 2x2
   return (
-    <Box>
+    <Box textAlign="center">
       <Stack fill vertical>
         <Stack.Item>
           <Tabs fluid>
             <Tabs.Tab
+              width="50%"
               selected={SelectedTab === 1}
               onClick={() => {
                 setSelectedTab(1);
@@ -327,6 +383,7 @@ const TabQuad = (props, context) => {
               Compact Ammo
             </Tabs.Tab>
             <Tabs.Tab
+              width="50%"
               selected={SelectedTab === 2}
               onClick={() => {
                 setSelectedTab(2);
@@ -339,6 +396,7 @@ const TabQuad = (props, context) => {
         <Stack.Item>
           <Tabs fluid>
             <Tabs.Tab
+              width="50%"
               selected={SelectedTab === 3}
               onClick={() => {
                 setSelectedTab(3);
@@ -347,7 +405,7 @@ const TabQuad = (props, context) => {
               Long Ammo
             </Tabs.Tab>
             <Tabs.Tab
-              textAlign="center"
+              width="50%"
               selected={SelectedTab === 4}
               onClick={() => {
                 setSelectedTab(4);
@@ -369,6 +427,12 @@ const MainWindow = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     AllItems = [],
+    Username,
+    UserQUID,
+    QBcash,
+    CurrencyUnit,
+    CurrencyName,
+    CurrencyPlural,
   } = data;
 
   const [
@@ -385,6 +449,14 @@ const MainWindow = (props, context) => {
     searchText,
     setSearchText,
   ] = useLocalState(context, 'searchText', '');
+
+  // list of entries in the local state that have been clicked to be expanded
+  // this is used to keep track of which entries are expanded
+  // all without one of my buggy toggleboxes
+  const [
+    ExpandedEntries,
+    setExpandedEntries,
+  ] = useLocalState(context, 'ExpandedEntries', []);
 
   const TrueCategory
     = searchText.length > 0
@@ -403,10 +475,17 @@ const MainWindow = (props, context) => {
     return item.Name + item.Desc;
   });
 
-  const EntryList = AllItems.filter(item => {
-    return item.Category === TrueCategory
-      || (searchText.length > 0 && testSearch(item));
-  });
+  // if search contains text, filter the list to only show items that match
+  // and then filter out any entries that have isCrate set to true if CrateMode is false
+  // and vice versa
+  // if search does not contain anything, only show entries where
+  // Category = TrueCategory
+  const EntryList = searchText.length > 0
+    ? AllItems
+      .filter(testSearch)
+      .filter(item => CrateMode ? item.IsCrate : item.IsBox)
+    : AllItems
+      .filter(item => item.Category === TrueCategory);
 
   if (EntryList.length === 0) {
     return (
@@ -418,68 +497,103 @@ const MainWindow = (props, context) => {
     );
   }
   return (
-    <Stack fill vertical>
-      <Stack.Item>
-        <Box as="h2" textAlign="center">
-          {TrueCategory}
-        </Box>
-      </Stack.Item>
+    <Box>
+      <Box as="h2" textAlign="center">
+        {TrueCategory}
+      </Box>
       {EntryList.map((item, i) => (
-        <Stack.Item key={i}>
-          <ItemEntry
-            item={item} />
-        </Stack.Item>
+        <Box
+          key={i}
+          style={ItemEntryContainerStyle}>
+          <Stack fill vertical>
+            <Stack.Item>
+              <Box
+                style={EntryHeaderStyle}>
+                <Flex direction="row">
+                  <Flex.Item grow>
+                    <Button
+                      width="100%"
+                      height="100%"
+                      color="transparent"
+                      fluid
+                      style={{
+                        "border": "none",
+                        "hover": "none",
+                      }}
+                      textAlign="left"
+                      onClick={() => {
+                        if (ExpandedEntries.includes(i)) {
+                          setExpandedEntries(ExpandedEntries.filter(e => e !== i));
+                        }
+                        else {
+                          setExpandedEntries([...ExpandedEntries, i]);
+                        }
+                      }}>
+                      {item.Name}
+                    </Button>
+                  </Flex.Item>
+                  <Flex.Item basis={BuyButtonWidth}>
+                    <Button
+                      icon="shopping-cart"
+                      width={BuyButtonWidth}
+                      content={
+                        `${item.RawCost} ${CurrencyUnit}`
+                      }
+                      onClick={() => act('PurchaseAmmo', {
+                        DesiredAmmoKind: item.KindPath,
+                        UserQUID: UserQUID,
+                        Username: Username,
+                        QBcash: QBcash,
+                        RawCost: item.RawCost,
+                        CopperCost: item.CopperCost,
+                        SilverCost: item.SilverCost,
+                        GoldCost: item.GoldCost,
+                        CrateOrBox: CrateMode ? "Crate" : "Box",
+                      })} />
+                  </Flex.Item>
+                </Flex>
+              </Box>
+            </Stack.Item> {/* End of header */}
+            <Stack.Item> {/* Statestical stuff */}
+              <Box
+                style={ItemEntryStatsStyle}>
+                {
+                  ExpandedEntries.includes(i) ? (
+                    <BuildDesc ItemObject={item} />
+                  ) : (
+                    <BuildDesc Abbreviate ItemObject={item} />
+                  )
+                }
+              </Box>
+            </Stack.Item>
+            <Stack.Item> {/* Description */}
+              <Box
+                style={ItemEntryDescStyle}>
+                {ExpandedEntries.includes(i) ? item.Desc : item.ShortDesc}
+              </Box>
+            </Stack.Item>
+          </Stack>
+        </Box>
       ))}
-    </Stack>
+    </Box>
   );
 };
 
-// The actual item entry slug
-// ANATOMY OF AN ALLITEMS ENTRY:
-// {
-//   "Category": "Compact Ammo Boxes",
-//   "Name": "9mm Box",
-//   "Desc": "A box of 9mm ammo. Also theres a heckload of text!",
-//   "ShortDesc": "A box of 9mm ammo. Also the...",
-//   "RawCost": 152, // in copper
-//   "CopperCost": 2,
-//   "SilverCost": 5,
-//   "GoldCost": 1,
-//   "C_M_L_S": "C",
-//   "Caliber": "Compact",
-//   "KindPath": "/datum/ammo_kind/compact/9mm",
-//   "MaxAmmo": 50,
-//   "Crate": false,
-//   "DamageFlat": 10 OR X, // X is a string, if so, dont display it
-//        vv these are sown ONLY IF DamageFlat is NOT a number
-//   "DamageMin": 5,
-//   "DamageMax": 15,
-//   "DamageMean": 10,
-//   "DamageMedian": 10,
-//   "DamageMode": 10,
-//   "DamageVariance": 0,
-//   "DamageStdDev": 0,
-//   "DamageSkew": 0,
-//   "DamageKurtosis": 0,
-//   "DamageEntropy": 0
-// }
-const ItemEntry = (props, context) => {
+
+// Closed Description thing
+// This is the thing that shows the short description
+// and when clicked, expands to show the full description
+const BuildDesc = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    item = {},
+    Abbreviate = false,
+    ItemObject = {},
   } = props;
 
   const {
-    Name,
     Desc,
     ShortDesc,
-    RawCost,
-    CopperCost,
-    SilverCost,
-    GoldCost,
-    C_M_L_S,
     Caliber,
-    KindPath,
     MaxAmmo,
     Crate,
     DamageFlat,
@@ -493,161 +607,72 @@ const ItemEntry = (props, context) => {
     DamageSkew,
     DamageKurtosis,
     DamageEntropy,
-  } = item;
+    DamageCrit,
+    DamageCritChance,
+  } = ItemObject;
 
-  const [
-    CrateMode,
-    setCrateMode,
-  ] = useLocalState(context, 'CrateMode', false);
+  const DescToUse = Abbreviate ? ShortDesc : Desc;
 
-  const {
-    Username,
-    UserQUID,
-    QBcash,
-    CurrencyUnit,
-    CurrencyName,
-    CurrencyPlural,
-  } = data;
-
-  // theres two parts of this: the header and the body
-  // header has the name, the cost, and the buy button (which has the cost)
-  // body has a bunch of stuff innit
-  // - the max bullets in the box/crate
-  // - the caliber (compact, medium, long, shotgun)
-  // - the short desc
-  // when you click the desc, it expands to show the full desc
-  // the full desc when clicked again hides that stuff
-  // the toggled stuff is a togglebox, which I made, cus im cool
-
-  const ShortDamageReadout = () => {
-    if (typeof DamageFlat === "number") {
-      return (
-        <Box>
-          {`Damage: ${DamageFlat}`}
-        </Box>
-      );
-    } else {
-      return (
-        <Box>
-          {`Damage: ${DamageMin} - ${DamageMax} (Avg: ${DamageMean})`}
-        </Box>
-      );
-    }
-  };
-  const DamageReadout = () => {
-    if (typeof DamageFlat === "number") {
-      return (
-        <Box>
-          {`Damage: ${DamageFlat}`}
-        </Box>
-      );
-    } else {
-      // showtime! lets generate all sorts of BS statestical nonsense
-      let DamageStats = [];
-      if (DamageMin !== DamageMax) {
-        DamageStats.push(`Damage: ${DamageMin} - ${DamageMax}`);
-      } else {
-        DamageStats.push(`Damage: ${DamageMin}`);
-      }
-      // the (mean, median, mode) trio, format: (Avg: 10, Med: 10, Mod: 10)
-      DamageStats.push(`(
-        Avg: ${toFixed(DamageMean, 1)},
-        Med: ${toFixed(DamageMedian, 1)},
-        Mod: ${toFixed(DamageMode, 1)}
-      )`);
-      // the (variance, std dev, skew, kurtosis, entropy) quintet
-      // format: (Var: 0, StdDev: 0, Skew: 0, Kurt: 0, Ent: 0)
-      DamageStats.push(`(
-        Var: ${toFixed(DamageVariance, 1)},
-        1SD: ${toFixed(DamageStdDev, 1)},
-        Skew: ${toFixed(DamageSkew, 1)},
-        Kurt: ${toFixed(DamageKurtosis, 1)},
-        Ent: ${toFixed(DamageEntropy, 1)}
-      )`);
-      return (
-        <Box>
-          {DamageStats.map((stat, i) => (
-            <Box key={i}>
-              {stat}
-            </Box>
-          ))}
-        </Box>
-      );
-    }
-  };
-  const cuteString = `${CurrencyUnit} ${RawCost}`;
-  const ammoMaxBullets = `Contains ${MaxAmmo} rounds of ${Caliber} ammo in a ${Crate ? "crate" : "box"}.`;
-  const closedDesc = () => (
-    <Box>
-      <Box>
-        {ammoMaxBullets}
-      </Box>
-      <Box>
-        {ShortDamageReadout()}
-      </Box>
-      <Box>
-        {ShortDesc}
-      </Box>
-    </Box>
-  );
-  const openedDesc = () => (
-    <Box>
-      <Box>
-        {ammoMaxBullets}
-      </Box>
-      <Box>
-        {DamageReadout()}
-      </Box>
-      <Box>
-        {Desc}
-      </Box>
-    </Box>
-  );
+  const AmmoMaxBullets = `Contains ${MaxAmmo} ${Caliber} in a ${Crate ? "crate" : "box"}.`;
+  const StatBasis = "20%";
 
   return (
-    <Box
-      style={{
-        "background-color": "black",
-        "border-radius": "5px",
-        "padding": "2px",
-        "margin": "2px",
-      }}>
-      <Section
-        title={Name}
-        buttons={(
-          <Button
-            icon="shopping-cart"
-            content={cuteString}
-            onClick={() => act('PurchaseAmmo', {
-              DesiredAmmoKind: KindPath,
-              UserQUID: UserQUID,
-              Username: Username,
-              QBcash: QBcash,
-              RawCost: RawCost,
-              CopperCost: CopperCost,
-              SilverCost: SilverCost,
-              GoldCost: GoldCost,
-              CrateOrBox: CrateMode ? "Crate" : "Box",
-            })} />
-        )}>
-        {/* <ToggleBox
-          OpenStuff={openedDesc}
-          ClosedStuff={closedDesc} /> */}
-      </Section>
-    </Box>
+    <Stack fill vertical>
+      <Stack.Item> {/* Ammo Count */}
+        {AmmoMaxBullets}
+      </Stack.Item>
+      <Stack.Item> {/* Damage stuff */}
+        {
+          isNaN(DamageFlat) ? (
+            <Stack fill vertical>
+              <Stack.Item>
+                {`Damage: ${DamageMin} - ${DamageMax}`}
+                {Abbreviate ? (
+                  ` (Avg: ${DamageMean})`
+                ) : null}
+                {!isNaN(DamageCrit) ? (
+                  ` (Crit: ${DamageCrit} @ ${DamageCritChance}%)`
+                ) : null}
+              </Stack.Item>
+              {
+                Abbreviate ? null : (
+                  <Flex direction="row" wrap="wrap" align="baseline">
+                    <Flex.Item basis={StatBasis}>
+                      {`Mean: ${DamageMean}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Median: ${DamageMedian}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Mode: ${DamageMode}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`StdDev: ${DamageStdDev}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Variance: ${DamageVariance}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Skew: ${DamageSkew}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Kurtosis: ${DamageKurtosis}`}
+                    </Flex.Item>
+                    <Flex.Item basis={StatBasis}>
+                      {`Entropy: ${DamageEntropy}`}
+                    </Flex.Item>
+                  </Flex>
+                )
+              }
+            </Stack>
+          ) : (
+            `Damage: ${DamageFlat}`
+          )
+        }
+      </Stack.Item>
+    </Stack>
   );
 };
-// Proc that sifts through the massive AllItems list and returns a filtered list
-// based on the search text, selected tab and crate mode
-// Search text is applied to Name and Desc
-// Selected tab is applied to Category
-
-
-
-
-
-
-
 
 // The bottom toolbar
 // just has a readout of what their weapons can accept

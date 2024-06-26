@@ -45,27 +45,36 @@
 /// Also defines the icon states for the ammo and the box, which are used to visually represent the ammo in the game.
 /// so it does both box and bullet! wow!
 /datum/ammo_kind
-	var/name = "Gun Bullet"
+	/// Base name of the ammo kind, used for the name of the ammo, the box, the crate, and the magazine, as well as the projectile
+	var/name = "2.22x22mm Sr. Compact"
+	/// Flavor text for the casing, used for the desc of the casing
 	var/bullet_flavor = "Some kind of bullet, designed in 1925 by Jean-Krousing von de la Krouse III as a way to turn brass into lead. \
 		From the moment he laid eyes on the newest creation by Stubby Jack, he knew what he needed to do, and that was create the best \
 		way to turn brass into lead. And so, he did. And it was good. And it was called the Gun Bullet."
+	/// "You load a 2.22x22mm Sr. Compact round into the chamber."
 	var/casing_kind = "round"
+	/// "You are hit by a 2.22x22mm Sr. Compact bullet!"
 	var/projectile_kind = "bullet"
 
+	/// The name and desc of the associated box
 	var/box_name = null // set if you want te box to have a custom name
 	var/box_flavor = null // set if you want the box to have a custom flavor
 
+	/// The name and desc of the associated crate
 	var/crate_name = null // set if you want te box to have a custom name
 	var/crate_flavor = null // set if you want the box to have a custom flavor
 	
+	/// The name and desc of the associated magazine (if the gun ejects a magazine)
 	var/magazine_name = null // set if you want te box to have a custom name
 	var/magazine_flavor = null // set if you want the box to have a custom flavor
 
+	/// The caliber to be assigned to the casing, box, magazine, projectile, and, if applicable, the gun
 	var/caliber = CALIBER_COMPACT
 	/// when we're a box and someone tries to insert a bullet, don't convert it *if* the bullet's ammo_kind type is in this list
-	var/list/compatible_kinds = list()
+	var/list/compatible_kinds = list() // currently doesnt work
 	/// the sound properies this bullet makes when fired, when not overwritten by the gun (usually it isnt, but they should be)
 	var/sound_properties = CSP_PISTOL_LIGHT // look up [code\modules\projectiles\ammo_casing_gun_sound_properties.dm]
+	/// The icon file the auto-cataloguer will use to collect the icon states
 	var/ammo_icon = 'icons/obj/ammo/compact.dmi' /// you'll want a separate DMI for each *visually distinct* ammo type
 
 	/// Stuff relating to the damage and such of the bullet
@@ -92,6 +101,7 @@
 	/// ammo has a magazine associated
 	var/has_magazine = TRUE
 
+	/// don't touch anything below this line (cus it'll be overwritten!)
 	/// dont touch these, they're where the auto-generated icon states will go
 	var/list/bullet_states = list()
 	var/list/box_states = list()
@@ -110,6 +120,8 @@
 	var/damage_skew = 0 // the skew of the damage dealt by the bullet
 	var/damage_kurtosis = 0 // the kurtosis of the damage dealt by the bullet
 	var/damage_entropy = 0 // the entropy of the damage dealt by the bullet
+	var/damage_critical = 0 // the critical damage dealt by the bullet
+	var/damage_critical_chance = 0 // the chance of a critical hit
 
 	/// these are all set by SScmls, dont touch them cus they'll be overwritten
 	var/box_max_ammo = 0
@@ -243,6 +255,22 @@
 		damage_skew = skew
 		damage_kurtosis = kurtosis
 		damage_entropy = entropy
+		/// now check if the highest number in the damage list is significantly higher than the mean
+		/// if so, this will be our critical damage, otherwise there's no critical damage
+		if(dmg_max > (mean + (stddev * 1.2)))
+			damage_critical = dmg_max
+			/// our damage list is weighted, so we need to calculate the chance of picking the highest value
+			damage_critical_chance = (damage_list["[dmg_max]"] / total) * 100
+			// then, set the max damage to the number that is in the damage list just below the max
+			// this is so we dont have the readout say it does 20-9000 damage when it just crits for 9000 and does 20-80 normally
+			var/highest = 0
+			var/second_highest = 0
+			for(var/dam in damage_list)
+				var/dmg = text2num(dam)
+				if(dmg > highest)
+					second_highest = highest
+					highest = dmg
+			damage_max = second_highest
 		return
 	/// finally, determine if we use a damage range
 	if(LAZYLEN(damage_range))
@@ -697,7 +725,11 @@
 	var/dam_skew = round(damage_skew, 0.1)
 	var/dam_kurtosis = round(damage_kurtosis, 0.1)
 	var/dam_entropy = round(damage_entropy, 0.1)
+	var/dam_crit = damage_critical ? damage_critical : "X"
+	var/dam_crit_chance = damage_critical_chance ? round(damage_critical_chance, 0.1) : "X"
 	var/shorteneddesc = bullet_flavor
+	/// okay check if the highest damage value is significantly higher than the mean
+	/// we'll call that the crit value
 	if(LAZYLEN(shorteneddesc) > 100)
 		shorteneddesc = copytext(shorteneddesc, 1, 97) + "..."
 	if(has_box)
@@ -745,6 +777,8 @@
 		dat["DamageSkew"] = dam_skew
 		dat["DamageKurtosis"] = dam_kurtosis
 		dat["DamageEntropy"] = dam_entropy
+		dat["DamageCrit"] = dam_crit
+		dat["DamageCritChance"] = dam_crit_chance
 		SScmls.data_for_tgui += list(dat)
 	/// then, the crate
 	if(has_crate)
@@ -794,6 +828,8 @@
 		dat["DamageSkew"] = dam_skew
 		dat["DamageKurtosis"] = dam_kurtosis
 		dat["DamageEntropy"] = dam_entropy
+		dat["DamageCrit"] = dam_crit
+		dat["DamageCritChance"] = dam_crit_chance
 		SScmls.data_for_tgui += list(dat)
 
 
@@ -874,6 +910,8 @@
 	return     GetState(CORB_BULLET, SUFFIX_FULL,  null, null)
 
 /datum/ammo_kind/proc/GetBoxName(obj/item/ammo_box/generic/mag)
+	if(mag?.rawname)
+		return mag.rawname
 	if(box_name)
 		return box_name
 	return "[name] box"

@@ -9,6 +9,7 @@
 	var/wildspawned = FALSE // if it's wildspawned, it will be filled by the ammo_kind
 	var/datum/ammo_kind/ammo_kind = /datum/ammo_kind/compact
 	var/box_CorB = CORB_BOX
+	var/rawname = ""
 
 /obj/item/ammo_box/generic/Initialize(mapload, ...)
 	if(wildspawned)
@@ -51,11 +52,15 @@
 /obj/item/ammo_box/generic/proc/PrepForGun(obj/item/gun/ballistic/gun)
 	if(!istype(gun, /obj/item/gun/ballistic))
 		return
-	name = istext(gun.ammo_magazine_name) ? gun.ammo_magazine_name : "[gun.name]" // you reload your Shoot Gun with 5.23x45mm bullets
+	SetGunName(gun)
 	max_ammo = gun.ammo_capacity || 1
 	multiload = !gun.ammo_single_load || TRUE
 	replace_spent_rounds = gun.is_revolver || FALSE
 	gun.magazine = src
+
+/obj/item/ammo_box/generic/proc/SetGunName(obj/item/gun/ballistic/gun)
+	rawname = istext(gun.ammo_magazine_name) ? gun.ammo_magazine_name : "[gun.name]" // you reload your Shoot Gun with 5.23x45mm bullets
+	rawname = replacetext(rawname, MAG_TOKEN_MAX_AMMO, "[max_ammo]")
 
 /// takes the ammo from the source and puts it into the box
 /obj/item/ammo_box/generic/proc/LoadFromSource(obj/item/ammo_box/generic/source)

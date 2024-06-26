@@ -45,11 +45,14 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	/// if not null, will override what kind of armor the projectile checks against
 	var/damage_armor_type
 
-	var/datum/ammo_kind/ammo_kind = /datum/ammo_kind/compact/q_9x19mm
-	var/ammo_magazine_name = "%MAX round clipazine"
+	var/datum/ammo_kind/ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	var/ammo_magazine_name = "%MAXAMMO% round clipazine"
 	var/ammo_capacity = 10
 	var/ammo_single_load = FALSE
 	var/is_revolver = FALSE
+
+	var/sound_magazine_eject = "gun_remove_empty_magazine"
+	var/sound_magazine_insert = "gun_insert_full_magazine"
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()

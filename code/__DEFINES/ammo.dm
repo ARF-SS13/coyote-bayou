@@ -315,6 +315,7 @@ GLOBAL_LIST_INIT(ammo_material_multipliers, list(
 #define MAGAZINE_PARTIAL_COUNT_STATE(pfx)   "[pfx]-[SUFFIX_PARTIAL]-[PART_COUNT]"
 #define MAGAZINE_PARTIAL_PERCENT_STATE(pfx) "[pfx]-[SUFFIX_PARTIAL]-[PART_PERCENT]"
 
+#define MAG_TOKEN_MAX_AMMO "%MAXAMMO%"
 
 
 // #define BOX_PARTIAL_COUNT_STATE(count) "[CORB_BOX]-[PART_COUNT]-[count]"
