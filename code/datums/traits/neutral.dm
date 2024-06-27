@@ -1443,6 +1443,7 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(fix_text))
+	user.visible_message(span_info("[user] adjusts their fit to find some relief"), null, null, 3)
 	active = FALSE
 	make_timers()
 
@@ -1454,6 +1455,7 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(drop_text))
+	user.visible_message(span_info("[user] undoes their clothing to find some relief"), null, null, 3)
 	var/obj/item/clothing/S = source
 	S.verbs -= /obj/item/clothing/proc/FixClothesFit
 	active = FALSE
