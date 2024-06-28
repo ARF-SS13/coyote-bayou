@@ -5503,7 +5503,6 @@
 	},
 /area/f13/building)
 "eiS" = (
-/obj/item/ammo_casing/shotgun/buckshot,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
 	randomizer_kind = "mid level mobs";
@@ -5812,12 +5811,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"euF" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "euQ" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -11924,7 +11917,6 @@
 /area/f13/building)
 "jeU" = (
 /obj/structure/table,
-/obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/clothing/head/beret,
 /obj/item/clothing/ears/earmuffs,
 /turf/open/floor/f13{
@@ -12660,18 +12652,6 @@
 	icon_state = "horizontaltopbordertop1"
 	},
 /area/f13/wasteland)
-"jMs" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "garland city police"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "jMt" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/window/fulltile/house,
@@ -19883,7 +19863,6 @@
 /area/f13/wasteland)
 "pbs" = (
 /obj/structure/table,
-/obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/clothing/head/beret,
 /obj/item/clothing/ears/earmuffs,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -28502,13 +28481,6 @@
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
-	},
-/area/f13/building)
-"vEF" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "vFj" = (
@@ -51146,7 +51118,7 @@ uhp
 tvr
 taP
 xbi
-jMs
+ran
 sBo
 wTd
 cnJ
@@ -51401,8 +51373,8 @@ tvr
 slD
 piZ
 nhe
-vEF
-euF
+oyf
+juh
 aDl
 cxE
 uPg
@@ -51658,7 +51630,7 @@ tvr
 nTg
 oqn
 tvr
-euF
+juh
 ran
 juh
 tvr
@@ -53321,7 +53293,7 @@ juh
 npl
 npl
 qSw
-euF
+juh
 juh
 hIG
 glj
@@ -53572,7 +53544,7 @@ tKh
 glj
 cnJ
 eUE
-euF
+juh
 cxE
 juh
 cdg
@@ -85804,7 +85776,7 @@ jGm
 tvr
 juh
 vef
-euF
+juh
 tvr
 izO
 hfy
@@ -86059,7 +86031,7 @@ kKq
 keg
 uhp
 nhe
-euF
+juh
 eiS
 juh
 mzE
@@ -86316,7 +86288,7 @@ kKq
 wjB
 oqn
 tvr
-euF
+juh
 juh
 juh
 tvr
