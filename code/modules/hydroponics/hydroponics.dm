@@ -545,7 +545,7 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia))
 		if(!self_sustaining)
 			adjustSelfSuff(1)
-			to_chat(user, "You spread the gaia through the soil. ([self_sustainingprog] out of 7)")
+			to_chat(user, "You spread the gaia through the soil.")
 			qdel(O)
 			return
 		else
@@ -788,7 +788,7 @@
 	weedlevel = clamp(weedlevel + adjustamt, 0, 10)
 
 /obj/machinery/hydroponics/proc/adjustSelfSuff(adjustamt)
-	if(self_sustainingprog>=6)
+	if(self_sustainingprog>=0)
 		become_self_sufficient()
 	else
 		self_sustainingprog += adjustamt
