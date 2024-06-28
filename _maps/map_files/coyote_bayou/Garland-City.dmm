@@ -14787,7 +14787,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "lqZ" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -21460,7 +21460,7 @@
 	},
 /area/f13/building)
 "qmy" = (
-/obj/machinery/autolathe/ammo/unlocked_basic,
+/obj/structure/CMLS_ammo_vendor/unlocked_basic,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "qmC" = (
@@ -21551,7 +21551,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -31433,7 +31433,7 @@
 	},
 /area/f13/building)
 "xSS" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{

@@ -8542,7 +8542,7 @@
 /area/f13/vault)
 "gFD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/structure/lattice{
 	layer = 3
 	},
@@ -12422,7 +12422,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "jRw" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/f13{
@@ -13364,7 +13364,7 @@
 /area/f13/brotherhood/rnd)
 "kGM" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/autolathe/ammo/unlocked,
+/obj/structure/CMLS_ammo_vendor/unlocked,
 /obj/effect/turf_decal/stripes/white/end,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)

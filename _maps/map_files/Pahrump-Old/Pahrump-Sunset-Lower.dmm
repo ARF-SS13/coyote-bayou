@@ -306,7 +306,7 @@
 	},
 /area/f13/building/sewers)
 "aij" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{
@@ -848,7 +848,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "aDN" = (
-/obj/machinery/autolathe/ammo/unlocked_basic,
+/obj/structure/CMLS_ammo_vendor/unlocked_basic,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "aEe" = (
@@ -10034,7 +10034,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -22024,7 +22024,7 @@
 	},
 /area/f13/building/sewers)
 "nND" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "nNP" = (
@@ -22817,7 +22817,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "otS" = (
-/obj/machinery/autolathe/ammo,
+/obj/structure/CMLS_ammo_vendor,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "oul" = (
@@ -30857,7 +30857,7 @@
 	},
 /area/f13/caves)
 "tSC" = (
-/obj/machinery/autolathe/ammo/unlocked,
+/obj/structure/CMLS_ammo_vendor/unlocked,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
