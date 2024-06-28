@@ -5,11 +5,13 @@
 	icon_state = "wall-0"
 	base_icon_state = "wall"
 	hardness = 80
-	smoothing_flags = SMOOTH_BITMASK
 	girder_type = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
-	canSmoothWith = list(/turf/closed/wall/f13/coyote/darkwoodwall, /turf/closed/wall)
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_DARKWOOD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_DARKWOOD_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
+
 /*
 /turf/closed/wall/f13/coyote/fortress_brick
 	name = "fortress brickwall"

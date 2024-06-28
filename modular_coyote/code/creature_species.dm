@@ -780,6 +780,19 @@
 /mob/living/carbon/human/species/shepard
 	race = /datum/species/feral/shepard
 
+/datum/species/feral/raccoon
+	name = "Feral Raccoon"
+	id = "raccoon_darkgrey"
+	simple_icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead_suffix = "_dead"
+	icon_width = 32
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/raccoon
+	race = /datum/species/feral/raccoon
+
 /datum/species/feral/dog
 	name = "Feral Dog"
 	id = "dog_feral"
@@ -970,6 +983,36 @@
 	liked_food = FRUIT
 /mob/living/carbon/human/species/bat
 	race = /datum/species/feral/bat
+
+/datum/species/feral/featherraptor
+	name = "Feral Feathered Raptor"
+	id = "fraptor"
+	simple_icon = 'modular_coyote/icons/mob/raptor_big_56x32.dmi'
+	icon_width = 56
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_dead"
+	alt_prefixes = list("Black Feathers" = "black_", 
+	"White Feathers" = "white_", 
+	"Purple Feathers" = "purple_", 
+	"Red Feathers" = "red_", 
+	"Green Feathers" = "green_", 
+	"Blue Feathers" = "blue_")
+	roundstart = TRUE
+	liked_food = MEAT
+/mob/living/carbon/human/species/featherraptor
+	race = /datum/species/feral/featherraptor
+
+/datum/species/feral/plantmouth
+	name = "Venus Human Trap"
+	id = "venus_human_trap"
+	simple_icon = 'icons/effects/spacevines.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_rest"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT
+/mob/living/carbon/human/species/plantmouth
+	race = /datum/species/feral/plantmouth
 
 /datum/species/feral/gecko
 	name = "Feral Gecko"
@@ -1265,12 +1308,12 @@
 	roundstart = TRUE
 	icon_width = 64
 	alt_prefixes = list(
-		"Inverted" = "oginvert_", 
-		"Hybrid" = "gnorm_", 
-		"Hybrid Inverted" = "gnorminvert_", 
-		"Subtle" = "gsubtle_", 
-		"Silver" = "os_", 
-		"Silver Inverted" = "osinvert_", 
+		"Inverted" = "oginvert_",
+		"Hybrid" = "gnorm_",
+		"Hybrid Inverted" = "gnorminvert_",
+		"Subtle" = "gsubtle_",
+		"Silver" = "os_",
+		"Silver Inverted" = "osinvert_",
 		"Silver Hybrid" = "snorm_",
 		"Silver Hybrid Inverted" = "snorminvert_",
 		"Silver Subtle" = "ssubtle_") //Yeah I went a little wild with how many alt sprites they have
@@ -1315,7 +1358,21 @@
 	icon_rest_suffix = "_rest"
 /mob/living/carbon/human/species/bigwolfblack
 	race = /datum/species/feral/bigwolfblack
+ 
+/datum/species/feral/darkgreytanuki
+	name = "Tanuki"
+	id = "tanuki"
+	simple_icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	alt_prefixes = list("Dark Brown" = "dark_")
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/darkgreytanuki
+	race = /datum/species/feral/darkgreytanuki
 
+//start deathclaws
+/datum/species/feral/deathclaw
 //start aethergiests
 /datum/species/feral/aethergiest
 	roundstart = FALSE //This is just the parent type, don't let players actually select it.
@@ -1407,6 +1464,16 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/geist
 	race = /datum/species/feral/aethergiest/geist
+
+/datum/species/feral/aethergiest/broodmother
+	name = "Brood Mother"
+	id = "broodmother"
+	rotate_on_lying = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+/mob/living/carbon/human/species/broodmother
+	race = /datum/species/feral/aethergiest/broodmother
 
 /datum/species/feral/femdigo
 	name = "Female Wendigo"
@@ -1560,8 +1627,8 @@
 	name = "Adapted Hivebot"
 	id = "hivebot"
 	alt_prefixes = list(
-		"Small" = "small_", 
-		"Small Alt" = "smallarm_", 
+		"Small" = "small_",
+		"Small Alt" = "smallarm_",
 		"Medium" = "medium_",
 		"Medium Alt" = "mediumarm_",
 		"Ranged" = "ranged_",
@@ -1838,7 +1905,7 @@
 /mob/living/carbon/human/species/microraptor
 	race = /datum/species/adapted/raptorborg/microraptor
 
-// End of the silly raptors 
+// End of the silly raptors
 
 /datum/species/adapted/drakeborg
 	name = "REPORT THIS AS A BUGGY"

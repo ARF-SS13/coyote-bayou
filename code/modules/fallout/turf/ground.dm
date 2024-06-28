@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(grass_plant_list, list(
-	/obj/structure/flora/grass/wasteland = 350,
+	/obj/structure/flora/grass/wasteland = 1400,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
@@ -178,6 +178,8 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/med_pine_dead = 7,
 	/obj/structure/flora/tree_stump = 5,
 	/obj/structure/flora/tree/african_acacia_dead = 5,
+	/obj/structure/flora/tree/cypress_tree = 5,
+	/obj/structure/flora/tree/rainforest_tree = 5,
 	/obj/structure/flora/tree/tall = 5,
 	/obj/structure/flora/tree/oak_one = 5,
 	/obj/structure/flora/tree/oak_two = 5,
@@ -435,10 +437,10 @@ GLOBAL_LIST_INIT(dust_spawn_list, list(
 	/obj/effect/decal/cleanable/dirt/dust = 90,
 	/obj/effect/decal/remains = 1,
 	/obj/effect/decal/cleanable/blood/drip = 1,
-	/obj/structure/bonfire/prelit = 1, 
+	/obj/structure/bonfire/prelit = 1,
 	/obj/effect/decal/waste = 1,
 	/obj/structure/barricade/sandbags = 1,
-	/obj/item/shard = 1, 
+	/obj/item/shard = 1,
 	/obj/effect/decal/cleanable/generic = 1,
 	/obj/effect/decal/cleanable/glass = 1,
 	/obj/structure/flora/grass/coyote/one = 1,
@@ -454,8 +456,8 @@ GLOBAL_LIST_INIT(trash_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(salvage_spawn_list, list(
-	/obj/effect/decal/cleanable/dirt/dust = 50,
-	/obj/structure/car = 10,
+	/obj/effect/decal/cleanable/dirt/dust = 110,
+	/obj/structure/car = 5,
 	/obj/structure/car/rubbish1 = 10,
 	/obj/structure/car/rubbish2 = 10,
 	/obj/structure/car/rubbish3 = 10,

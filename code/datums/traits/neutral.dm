@@ -1365,19 +1365,20 @@
 	gain_text = span_notice("You feel seen!")
 	lose_text = span_notice("You feel hidden")
 
-/obj/item/clothing/proc/Adjust()
-	SEND_SIGNAL(src, COMSIG_CLOTHING_ADJUST, usr)
-	verbs -= /obj/item/clothing/proc/Adjust
+/obj/item/clothing/proc/FixClothesFit()
+	set name = "Fix Fit"
+	SEND_SIGNAL(src, COMSIG_CLOTHING_FIX, usr)
+	verbs -= /obj/item/clothing/proc/FixClothesFit
 
-#define	CLOTHING_ADJUST_TIME_MIN 10 MINUTES
-#define CLOTHING_ADJUST_TIME_MAX 15 MINUTES 
+#define	CLOTHING_FIX_TIME_MIN 10 MINUTES
+#define CLOTHING_FIX_TIME_MAX 15 MINUTES 
 
 /datum/quirk/dan_nicki
 	name = "Big Boobs"
 	desc = "If the internet was a thing, people would be looking you up on google."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to adjust your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
+	mechanics = "You need to fix the fit of your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
 	conflicts = list()
 	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
 	lose_text = span_notice("The urge to find a tailor disappears.")
@@ -1386,8 +1387,8 @@
 	var/active = FALSE
 	var/datum/status_effect/debuff = /datum/status_effect/dan_nicki
 	var/warning_text = "Your clothes are getting a little tight..."
-	var/unadjust_text = "Your clothes feel way too tight to breathe! You'll need to adjust them using their context menu."
-	var/adjust_text = "You feel like you can breathe again. That's much better."
+	var/unfix_text = "Your clothes feel way too tight to breathe! You'll need to fix their fit using their context menu."
+	var/fix_text = "You feel like you can breathe again. That's much better."
 	var/drop_text = "Whew... free at last!"
 
 /datum/status_effect/dan_nicki
@@ -1403,9 +1404,9 @@
 /datum/quirk/dan_nicki/proc/make_timers()
 	deltimer(debufftimer)
 	deltimer(warningtimer)
-	var/time_til_debuff = rand(CLOTHING_ADJUST_TIME_MIN, CLOTHING_ADJUST_TIME_MAX)
+	var/time_til_debuff = rand(CLOTHING_FIX_TIME_MIN, CLOTHING_FIX_TIME_MAX)
 	var/time_til_warning = time_til_debuff - (1 MINUTES)
-	debufftimer = addtimer(CALLBACK(src, PROC_REF(unadjust)), time_til_debuff, TIMER_DELETE_ME | TIMER_STOPPABLE)
+	debufftimer = addtimer(CALLBACK(src, PROC_REF(unfixclothes)), time_til_debuff, TIMER_DELETE_ME | TIMER_STOPPABLE)
 	warningtimer = addtimer(CALLBACK(src, PROC_REF(warn)), time_til_warning, TIMER_DELETE_ME | TIMER_STOPPABLE)
 
 /datum/quirk/dan_nicki/add()
@@ -1417,15 +1418,15 @@
 	deltimer(debufftimer)
 	deltimer(warningtimer)
 
-/datum/quirk/dan_nicki/proc/unadjust()
+/datum/quirk/dan_nicki/proc/unfixclothes()
 	var/mob/living/H = quirk_holder
 	var/obj/item/clothing/under/prison = H.get_item_by_slot(SLOT_W_UNIFORM)
 	if(prison)
 		H.apply_status_effect(debuff)
-		prison.verbs += /obj/item/clothing/proc/Adjust
-		RegisterSignal(prison, COMSIG_CLOTHING_ADJUST, PROC_REF(on_adjust))
+		prison.verbs += /obj/item/clothing/proc/FixClothesFit
+		RegisterSignal(prison, COMSIG_CLOTHING_FIX, PROC_REF(on_fix))
 		RegisterSignal(prison, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
-		to_chat(H, span_warning(unadjust_text))
+		to_chat(H, span_warning(unfix_text))
 		active = TRUE
 	else
 		make_timers()
@@ -1434,14 +1435,15 @@
 	if(quirk_holder.get_item_by_slot(SLOT_W_UNIFORM))
 		to_chat(quirk_holder, span_warning(warning_text))
 
-/datum/quirk/dan_nicki/proc/on_adjust(obj/item/source, mob/user)
+/datum/quirk/dan_nicki/proc/on_fix(obj/item/source, mob/user)
 	var/mob/living/H = user
 	if(!istype(H))
 		return
 	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
 		return
 	H.remove_status_effect(debuff)
-	to_chat(H, span_warning(adjust_text))
+	to_chat(H, span_warning(fix_text))
+	user.visible_message(span_info("[user] adjusts their fit to find some relief"), null, null, 3)
 	active = FALSE
 	make_timers()
 
@@ -1453,28 +1455,29 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(drop_text))
+	user.visible_message(span_info("[user] undoes their clothing to find some relief"), null, null, 3)
 	var/obj/item/clothing/S = source
-	S.verbs -= /obj/item/clothing/proc/Adjust
+	S.verbs -= /obj/item/clothing/proc/FixClothesFit
 	active = FALSE
 	make_timers()
 
 
-#undef CLOTHING_ADJUST_TIME_MIN
-#undef CLOTHING_ADJUST_TIME_MAX
+#undef CLOTHING_FIX_TIME_MIN
+#undef CLOTHING_FIX_TIME_MAX
 
 /datum/quirk/dan_nicki/wreckingballs
 	name = "Big Balls"
 	desc = "You have a hard time finding clothes that fit."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to adjust your clothes every once in a while, or you'll suffer a speed penalty."
+	mechanics = "You need to fix the fit of your clothes every once in a while, or you'll suffer a speed penalty."
 	conflicts = list()
 	gain_text = span_notice("The heavy swingers between your legs strain your clothes.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/wreckingballs
 	warning_text = "Your clothes are getting a little tight..."
-	unadjust_text = "Your clothes feel way too tight to move! You'll need to adjust them using their context menu."
-	adjust_text = "You feel like you can move your legs again. That's much better."
+	unfix_text = "Your clothes feel way too tight to move! You'll need to fix their fit using their context menu."
+	fix_text = "You feel like you can move your legs again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/wreckingballs
@@ -1501,14 +1504,14 @@
 	desc = "You have a HARD time finding clothes that fit."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to adjust your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
+	mechanics = "You need to fix the fit of your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
 	conflicts = list()
 	gain_text = span_notice("You feel your clothes stretch around your extra leg.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/hotrod
 	warning_text = "Your clothes are getting a little tight..."
-	unadjust_text = "Your clothes feel way too tight to reach into your pockets! You'll need to adjust them using their context menu."
-	adjust_text = "You feel like you can reach into your pockets again. That's much better."
+	unfix_text = "Your clothes feel way too tight to reach into your pockets! You'll need to fix their fit using their context menu."
+	fix_text = "You feel like you can reach into your pockets again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/hotrod
@@ -1537,14 +1540,14 @@
 	desc = "You have a hard time getting your clothes on."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to adjust your clothes every once in a while, or they'll become uncomfortable."
+	mechanics = "You need to fix the fit of your clothes every once in a while, or they'll become uncomfortable."
 	conflicts = list()
 	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/toomuchcake
 	warning_text = "Your clothes are getting a little tight..."
-	unadjust_text = "Your clothes feel way too tight! You'll need to adjust them using their context menu."
-	adjust_text = "You feel more comfortable in your clothes again. That's much better."
+	unfix_text = "Your clothes feel way too tight! You'll need to fix their fit using their context menu."
+	fix_text = "You feel more comfortable in your clothes again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/toomuchcake

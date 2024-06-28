@@ -190,6 +190,9 @@ ATTACHMENTS
 	var/reloading = FALSE
 	/// This is the base reload speed, which is modified by things like the size of the magazine in use.
 	var/reloading_time = 1 SECONDS
+	maptext_width = 48 //prevents ammo count from wrapping down into two lines
+	maptext_x = 4
+	maptext_y = 2
 
 /obj/item/gun/Initialize()
 	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
@@ -377,6 +380,7 @@ ATTACHMENTS
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
+	update_icon()
 
 /obj/item/gun/attack(mob/living/M, mob/user)
 	if(bayonet && user.a_intent == INTENT_HARM)
@@ -385,6 +389,7 @@ ATTACHMENTS
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
+	update_icon()
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
 	if(bayonet && user.a_intent == INTENT_HARM) // Must run BEFORE parent call, so we don't smack them with the gun body too.
@@ -393,6 +398,7 @@ ATTACHMENTS
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
+	update_icon()
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
@@ -1067,6 +1073,18 @@ ATTACHMENTS
 			toggle_safety(user)
 		if("Weapon Info")
 			ui_interact(user)
+
+/// Updates the ammo count number that renders on top of the icon
+/obj/item/gun/proc/UpdateAmmoCountOverlay()
+	return
+
+/obj/item/gun/doMove(atom/destination)
+	. = ..()
+	UpdateAmmoCountOverlay()
+
+/obj/item/gun/update_icon()
+	. = ..()
+	UpdateAmmoCountOverlay()
 
 /obj/item/gun/proc/toggle_scope(mob/living/user)
 	//looking through a scope limits your periphereal vision

@@ -402,5 +402,12 @@
 	icon_state = "spinda"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/ears/mam_ears/hare
+	name = "hare"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "hare"
+	matrixed_sections = MATRIX_RED_GREEN
+
+
 
 

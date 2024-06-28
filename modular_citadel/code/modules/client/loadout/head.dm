@@ -634,6 +634,10 @@
 	name = "khaki slouch hat, alt version"
 	path = /obj/item/clothing/head/slouch/alt
 
+/datum/gear/head/slouch/colorable
+	name = "slouch hat, colorable"
+	path = /obj/item/clothing/head/slouch/colorable
+
 /datum/gear/head/turban
 	name = "Military Turban"
 	path = /obj/item/clothing/head/military_turban
@@ -1484,3 +1488,13 @@
 /datum/gear/head/hoodcowl
 	name = "Hood cowl"
 	path= /obj/item/clothing/head/hoodcowl
+
+/datum/gear/head/canadian
+	name = "Canadian Mountie Hat"
+	path= /obj/item/clothing/head/canadian
+
+/datum/gear/head/ncrranger
+	name = "NCR Ranger Helmet"
+	path= /obj/item/clothing/head/ncr_ranger
+
+

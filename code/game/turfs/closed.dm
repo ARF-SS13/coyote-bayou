@@ -190,14 +190,24 @@
 /turf/closed/indestructible/rock
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
-	icon = 'icons/fallout/turfs/mining.dmi' //fortuna edit. fixing icon path.
-	icon_state = "rock"
+	icon = 'icons/turf/smoothrocks.dmi'
+	icon_state = "smoothrocks-0"
+	base_icon_state = "smoothrocks"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	color = "#a17768"
+	layer = EDGED_TURF_LAYER
 
 /turf/closed/indestructible/rock/sand
 	name = "dense sandstone"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
 	icon_state = "cliff-top-goonorig"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+	color = null
 
 /turf/closed/indestructible/f13vaultrusted
 	name = "rusted reinforced wall"

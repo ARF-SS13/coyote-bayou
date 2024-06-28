@@ -232,9 +232,10 @@
 //	icon_type_smooth = "vault"
 	hardness = 130
 	explosion_block = 5
-//	smoothing_flags = SMOOTH_OLD
+	smoothing_flags = null
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_VAULT_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
+//	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = null
 
 /turf/closed/wall/r_wall/f13
 	name = "glitch"

@@ -1456,6 +1456,14 @@
 	icon_living = "purple_kirin"
 	icon_dead = "purple_kirin_dead"
 
+/mob/living/simple_animal/advanced/plantmouth
+	name = "Venus Human Trap"
+	desc = "A planty monster with a smile the size of your head"
+	icon = 'icons/effects/spacevines.dmi'
+	icon_state = "venus_human_trap"
+	icon_living = "venus_human_trap"
+	icon_dead = "venus_human_trap_rest"
+
 /mob/living/simple_animal/advanced/greycat
 	name = "fluffy cat"
 	desc = "a fluffy grey and white cat."
@@ -1469,5 +1477,92 @@
     resize = 0.5
     update_transform()
 
+/mob/living/simple_animal/advanced/darkbrowntanuki
+	name = "dark brown tanuki"
+	desc = "A twolegged raccoon dog with a leaf on it's head."
+	icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_state = "dark_brown"
+	icon_living = "dark_brown"
+	icon_dead = "dark_brown_dead"
 
+/mob/living/simple_animal/advanced/darkgreytanuki
+	name = "dark grey tanuki"
+	desc = "A twolegged raccoon dog with a leaf on it's head."
+	icon = 'modular_coyote/icons/mob/tanuki.dmi'
+	icon_state = "dark_grey"
+	icon_living = "dark_grey"
+	icon_dead = "dark_grey_dead"
 
+/mob/living/simple_animal/advanced/unicorn
+	name = "unicorn"
+	desc = "Stay away from the red bull."
+	icon = 'modular_coyote/icons/mob/kirin.dmi'
+	icon_state = "unicorn"
+	icon_living = "unicorn"
+	icon_dead = "unicorn_dead"
+
+//Ranger Creatures
+
+/mob/living/simple_animal/advanced/longjaw
+	name = "longjaw"
+	desc = "A spotted grey creature."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "longjaw"
+	icon_living = "longjaw"
+	icon_dead = "longjaw_dead"
+
+/mob/living/simple_animal/advanced/uttie
+	name = "utahraptor"
+	desc = "A dinosaur. Oh my."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "uttie"
+	icon_living = "uttie"
+	icon_dead = "uttie_dead"
+
+/mob/living/simple_animal/advanced/gorgon
+	name = "gorgon"
+	desc = "A dinosaur. Oh my."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "gorgon"
+	icon_living = "gorgon"
+	icon_dead = "gorgon_dead"
+
+/mob/living/simple_animal/advanced/rack_deer
+	name = "rack deer"
+	desc = "A strange type of deer."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "rack_deer"
+	icon_living = "rack_deer"
+	icon_dead = "rack_deer_dead"
+
+/mob/living/simple_animal/advanced/lightening
+	name = "lightening Raptor"
+	desc = "A very green raptor."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "lightening"
+	icon_living = "lightening"
+	icon_dead = "lightening_dead"
+
+/mob/living/simple_animal/advanced/hyena
+	name = "Hyena"
+	desc = "Cackle."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "hyena"
+	icon_living = "hyena"
+	icon_dead = "hyena_dead"
+
+/mob/living/simple_animal/advanced/saber_cat
+	name = "saber cat"
+	desc = "My kitty, what long teeth you have."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "saber_cat"
+	icon_living = "saber_cat"
+	icon_dead = "saber_cat_dead"
+
+/mob/living/simple_animal/advanced/malkia
+	name = "malkia"
+	desc = "A strange canine like being."
+	icon = 'modular_coyote/icons/mob/rangercritters.dmi'
+	icon_state = "malkia"
+	icon_living = "malkia"
+	icon_dead = "malkia_dead"

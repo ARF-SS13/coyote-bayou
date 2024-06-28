@@ -190,6 +190,10 @@
 	name = "long puttees"
 	path = /obj/item/clothing/shoes/putt
 
+/datum/gear/shoes/putt/brown
+	name = "long puttees, tan"
+	path = /obj/item/clothing/shoes/putt/brown
+
 /datum/gear/shoes/cowboy/alt
 	name = "Alt Cowboy Boots"
 	path = /obj/item/clothing/shoes/cowboy/alt

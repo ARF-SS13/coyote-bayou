@@ -581,6 +581,12 @@
 	icon_state = "putt"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
+/obj/item/clothing/shoes/putt/brown
+	name = "long puttees - tan"
+	desc = "Long woolen leg wraps used sense the first world war"
+	icon_state = "putt_brown"
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/shoes/cowboy/ranger
 	name = "Ranger Cowboy"
 	desc = "A set of cowboy boots. Yeehaw!"
