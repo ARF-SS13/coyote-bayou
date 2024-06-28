@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 4
 	multiload = 0
@@ -15,43 +15,43 @@
 	else
 		return ..()
 /obj/item/ammo_box/magazine/internal/shot/trench
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/shot/mino
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 3
 
 /obj/item/ammo_box/magazine/internal/shot/needler
-	ammo_type = /obj/item/ammo_casing/shotgun/needlerbuckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/needlerbuckshot
 	caliber = list(CALIBER_SHOTGUNNEEDLER)
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/shot/tube
 	name = "dual feed shotgun internal tube"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/shot/lethal
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/internal/shot/shorty
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 2
 
 /obj/item/ammo_box/magazine/internal/shot/com
 	name = "combat shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/shot/com/compact
 	name = "compact combat shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/shot/com/citykiller
 	name = "city killer shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/internal/shot/single
@@ -70,17 +70,17 @@
 
 /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	name = "double-barrel shotgun internal magazine (simple)"
-	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/improvised
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
 	caliber = SHOTGUNBAT_AMMO_CALIBERS
-	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/improvised
 	max_ammo = 1
 
 /obj/item/ammo_box/magazine/internal/shot/police
 	name = "police shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/beanbag
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/shot/grenade
@@ -91,7 +91,7 @@
 
 /obj/item/ammo_box/magazine/internal/shot/bounty
 	name = "triple-barrel shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/incapacitate
+	ammo_type = /obj/item/ammo_casing/generic/shotgun/incapacitate
 	max_ammo = 3
 
 /obj/item/ammo_box/magazine/internal/shot/tube44

@@ -789,8 +789,8 @@
 	spawn_on_turf = FALSE
 	loot = list("" = 25,
 		/obj/item/ammo_box/magazine/wt550m9 = 1,
-		/obj/item/ammo_casing/shotgun/buckshot = 7,
-		/obj/item/ammo_casing/shotgun/rubbershot = 7,
+		/obj/item/ammo_casing/generic/shotgun/buckshot = 7,
+		/obj/item/ammo_casing/generic/shotgun/rubbershot = 7,
 		/obj/item/ammo_casing/a308 = 15,
 		/obj/item/ammo_box/a308 = 15,
 		)
@@ -801,8 +801,8 @@
 	spawn_on_turf = FALSE
 	loot = list("" = 50,
 		/obj/item/ammo_box/magazine/wt550m9 = 2,
-		/obj/item/ammo_casing/shotgun/buckshot = 10,
-		/obj/item/ammo_casing/shotgun/rubbershot = 10,
+		/obj/item/ammo_casing/generic/shotgun/buckshot = 10,
+		/obj/item/ammo_casing/generic/shotgun/rubbershot = 10,
 		/obj/item/ammo_casing/a308 = 7,
 		/obj/item/ammo_box/a308 = 7,
 		)
@@ -812,11 +812,11 @@
 	lootcount = 1
 	spawn_on_turf = FALSE
 	loot = list("" = 50,
-		/obj/item/ammo_box/shotgun/loaded/buckshot = 5,
-		/obj/item/ammo_box/shotgun/loaded/beanbag = 5,
-		/obj/item/ammo_box/shotgun/loaded/incendiary = 5,
-		/obj/item/ammo_casing/shotgun/buckshot = 8,
-		/obj/item/ammo_casing/shotgun/rubbershot = 9,
-		/obj/item/ammo_casing/shotgun = 8,
-		/obj/item/ammo_casing/shotgun/incendiary = 10,
+		/obj/item/ammo_box/generic/shotgun/loaded/buckshot = 5,
+		/obj/item/ammo_box/generic/shotgun/loaded/beanbag = 5,
+		/obj/item/ammo_box/generic/shotgun/loaded/incendiary = 5,
+		/obj/item/ammo_casing/generic/shotgun/buckshot = 8,
+		/obj/item/ammo_casing/generic/shotgun/rubbershot = 9,
+		/obj/item/ammo_casing/generic/shotgun = 8,
+		/obj/item/ammo_casing/generic/shotgun/incendiary = 10,
 		)

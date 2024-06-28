@@ -16,7 +16,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "pistol22"
 	ammo_type = /obj/item/ammo_casing/a22
-	caliber = list(CALIBER_22LR)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 16
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
@@ -31,7 +31,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "22carbine"
 	ammo_type = /obj/item/ammo_casing/a22
-	caliber = list(CALIBER_22LR)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 32
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
@@ -46,7 +46,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "zip"
 	ammo_type = /obj/item/ammo_casing/c9mm/improvised
-	caliber = ZIPGUN_AMMO_CALIBERS
+	caliber = CALIBER_COMPACT
 	max_ammo = 5
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
@@ -58,7 +58,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = list(CALIBER_9MM)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
@@ -72,7 +72,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/bee
-	caliber = list(CALIBER_BEE, CALIBER_9MM)
+	caliber = list(CALIBER_BEE, CALIBER_COMPACT)
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
@@ -83,7 +83,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/mouse
-	caliber = list(CALIBER_MOUSE, CALIBER_9MM)
+	caliber = list(CALIBER_MOUSE, CALIBER_COMPACT)
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
@@ -95,7 +95,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "m9mmds"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = list(CALIBER_9MM)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 15
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
@@ -108,7 +108,7 @@
 	name = "pistol magazine (10mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	desc = "A gun magazine."
-	caliber = list(CALIBER_10MM)
+	caliber = list(CALIBER_COMPACT)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
@@ -148,7 +148,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "45"
 	ammo_type = /obj/item/ammo_casing/c45
-	caliber = list(CALIBER_45ACP)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
@@ -192,7 +192,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50ae"
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = list(CALIBER_44)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 8
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
@@ -226,7 +226,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50ae"
 	ammo_type = /obj/item/ammo_casing/p14mm
-	caliber = list(CALIBER_14MM)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 7
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
@@ -244,7 +244,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "5mmmag"
 	ammo_type = /obj/item/ammo_casing/m5mm
-	caliber = list(CALIBER_5MM)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 20
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
@@ -258,7 +258,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "pistol47"
 	ammo_type = /obj/item/ammo_casing/caseless/g11
-	caliber = list(CALIBER_CASELESS)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 18
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
@@ -272,7 +272,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "14mmmagnum"
 	ammo_type = /obj/item/ammo_casing/p14mm
-	caliber = list(CALIBER_14MM)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 5
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
@@ -280,6 +280,19 @@
 
 /obj/item/ammo_box/magazine/m14mmcustom/empty
 	start_empty = 1
+
+// needler capsule
+/obj/item/ammo_box/magazine/needlercapsule
+	name = "Capsule filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_COMPACT)
+	max_ammo = 24
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/testbullet
@@ -289,16 +302,3 @@
 	ammo_type = /obj/item/ammo_casing/testcasing
 	caliber = list(CALIBER_9MM)
 	max_ammo = 100
-
-
-/obj/item/ammo_box/magazine/needlercapsule
-	name = "Capsule filled with needlers"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "needlerpack"
-	ammo_type = /obj/item/ammo_casing/caseless/needle
-	caliber = list(CALIBER_NEEDLE)
-	max_ammo = 24
-	multiple_sprites = 2
-	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
-	w_class = WEIGHT_CLASS_TINY
-	multiload = TRUE

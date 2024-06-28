@@ -360,6 +360,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 			if(LAZYLEN(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
+			being_built.post_build(new_item)
 
 	icon_state = icon_state_base
 	busy = FALSE
@@ -711,19 +712,19 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	desc = "An ammo bench that utilizes metal and other materials to make ammo and magazines."
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo
 	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo
-	categories = list(
-					"Handloaded Ammo",
-					"Handmade Magazines",
-					"Simple Ammo",
-					"Simple Magazines",
-					"Basic Ammo",
-					"Basic Magazines",
-					"Intermediate Ammo",
-					"Intermediate Magazines",
-					"Advanced Ammo",
-					"Advanced Magazines",
-					"Materials"
-					)
+	// categories = list(
+	// 				"Handloaded Ammo",
+	// 				"Handmade Magazines",
+	// 				"Simple Ammo",
+	// 				"Simple Magazines",
+	// 				"Basic Ammo",
+	// 				"Basic Magazines",
+	// 				"Intermediate Ammo",
+	// 				"Intermediate Magazines",
+	// 				"Advanced Ammo",
+	// 				"Advanced Magazines",
+	// 				"Materials"
+	// 				)
 	allowed_materials = list(
 		/datum/material/iron,
 		/datum/material/titanium,
@@ -734,8 +735,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/intermediate = 0
 	var/advanced = 0
 	/// does this bench accept books?
-	var/accepts_books = TRUE
+	var/accepts_books = FALSE // no, no it doesnt
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
+
+/obj/machinery/autolathe/ammo/Initialize()
+	categories = SScmls.design_cats // meow
+	. = ..()
+	
+
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 /* 	if(!busy && !stat)
@@ -757,27 +764,27 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 			if(pre_insert_check(user, O))
 				insert_magazine_from_gun(user, O)
 			return */
-	if(panel_open && accepts_books)
-		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
-			simple = TRUE
-			qdel(O)
-			return
-		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
-			basic = TRUE
-			qdel(O)
-			return
-		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
-			intermediate = TRUE
-			qdel(O)
-			return
-		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
-			advanced = TRUE
-			qdel(O)
-			return
+	// if(panel_open && accepts_books)
+	// 	if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
+	// 		to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
+	// 		simple = TRUE
+	// 		qdel(O)
+	// 		return
+	// 	if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
+	// 		to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
+	// 		basic = TRUE
+	// 		qdel(O)
+	// 		return
+	// 	else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
+	// 		to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
+	// 		intermediate = TRUE
+	// 		qdel(O)
+	// 		return
+	// 	else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
+	// 		to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
+	// 		advanced = TRUE
+	// 		qdel(O)
+	// 		return
 	return ..()
 /* 
 /obj/machinery/autolathe/ammo/proc/insert_thing(obj/item/thing, obj/item/thing_bag, datum/component/material_container/mat_box)
@@ -897,66 +904,67 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
  */
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
-	if("Handloaded Ammo" in D.category)
-		return ..()
-	if("Handmade Magazines" in D.category)
-		return ..()
-	if("Simple Ammo" in D.category)
-		if(simple == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Simple Magazines" in D.category)
-		if(simple == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Basic Ammo" in D.category)
-		if(basic == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Basic Magazines" in D.category)
-		if(basic == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Intermediate Ammo" in D.category)
-		if(intermediate == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Intermediate Magazines" in D.category)
-		if(intermediate == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Advanced Ammo" in D.category)
-		if(advanced == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Advanced Magazines" in D.category)
-		if(advanced == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
+	. = ..() // it sure can!
+	// if("Handloaded Ammo" in D.category)
+	// 	return ..()
+	// if("Handmade Magazines" in D.category)
+	// 	return ..()
+	// if("Simple Ammo" in D.category)
+	// 	if(simple == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Simple Magazines" in D.category)
+	// 	if(simple == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Basic Ammo" in D.category)
+	// 	if(basic == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Basic Magazines" in D.category)
+	// 	if(basic == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Intermediate Ammo" in D.category)
+	// 	if(intermediate == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Intermediate Magazines" in D.category)
+	// 	if(intermediate == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Advanced Ammo" in D.category)
+	// 	if(advanced == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
+	// if("Advanced Magazines" in D.category)
+	// 	if(advanced == 0)
+	// 		return FALSE
+	// 	else
+	// 		. = ..()
+	// else
+	// 	. = ..()
 
 /obj/machinery/autolathe/ammo/on_deconstruction()
 	..()
@@ -993,12 +1001,12 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	icon_state_loading_other = "ammolathe_improv_o"
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo/improvised
 	//stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo_improvised
-	categories = list(
-					"Handloaded Ammo",
-					"Handmade Magazines",
-					"Materials",
-					"Simple Magazines"
-					)
+	// categories = list(
+	// 				"Handloaded Ammo",
+	// 				"Handmade Magazines",
+	// 				"Materials",
+	// 				"Simple Magazines"
+	// 				)
 	allowed_materials = list(
 		/datum/material/iron,
 		/datum/material/blackpowder)

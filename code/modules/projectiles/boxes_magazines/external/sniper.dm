@@ -5,7 +5,7 @@
 	max_ammo = 8
 	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/a50MG
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
@@ -13,13 +13,13 @@
 /obj/item/ammo_box/magazine/amr/bifrost
 	name = "\improper MK-18 MOD 1 Mjolnir 8 round Aluminum magazine"
 	ammo_type = /obj/item/ammo_casing/a3006
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 
 /obj/item/ammo_box/magazine/spaagrifle
 	name = "reloadable recoiless rifle magazine"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	icon_state = "spaagrocket"
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	max_ammo = 1
 	custom_materials = list(/datum/material/iron = MATS_MISC)
 	w_class = WEIGHT_CLASS_HUGE
@@ -36,7 +36,7 @@
 	icon_state = "hcmag"
 	max_ammo = 4
 	ammo_type = /obj/item/ammo_casing/a50MG
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	multiple_sprites= 2
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
@@ -64,7 +64,7 @@
 	icon_state = "boys"
 	max_ammo = 5
 	ammo_type = /obj/item/ammo_casing/a50MG
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL

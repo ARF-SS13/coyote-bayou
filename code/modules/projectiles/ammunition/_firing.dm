@@ -51,6 +51,15 @@
 		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
 		user.newtonian_move(get_dir(target, user))
 	update_icon()
+
+	if(caseless)
+		moveToNullspace()
+		if(istype(fired_from, /obj/item/gun))
+			var/obj/item/gun/gonne = fired_from
+			if(gonne.chambered == src)
+				gonne.chambered = null // harddels suffer
+				gonne.update_icon()
+		qdel(src)
 	return 1
 
 /obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0, atom/fired_from)
@@ -91,22 +100,8 @@
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from
+		G.modify_projectile(BB)
 		G.post_modify_projectile(BB)
-		//BB.damage *= G.damage_multiplier
-		BB.damage_mod = G.damage_multiplier
-		BB.armour_penetration *= G.penetration_multiplier
-		BB.pixels_per_second *= G.projectile_speed_multiplier
-		if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
-			BB.zone_accuracy_type = G.get_zone_accuracy_type()
-		//SEND_SIGNAL(src, COMSIG_GUN_SHOT, BB, G) // time to modify it more uwu
-		/* if(HAS_TRAIT(user, TRAIT_CRIT_SHOT)) // imma spend 12 points to shoot myself in the face
-			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!
-			BB.ricochet_chance = max(BB.ricochet_chance, 100) //it wont decay so we can leave it at 100 for always bouncing
-			BB.ricochet_auto_aim_range = max(BB.ricochet_auto_aim_range, 3)
-			BB.ricochet_auto_aim_angle = max(BB.ricochet_auto_aim_angle, 360) //it can turn full circle and shoot you in the face because our aim? is insane.
-			BB.ricochet_decay_chance = 0
-			BB.ricochet_decay_damage = max(BB.ricochet_decay_damage, 0.1)
-			BB.ricochet_incidence_leeway = 0 */
 
 	if(reagents && BB.reagents)
 		reagents.trans_to(BB, reagents.total_volume) //For chemical darts/bullets

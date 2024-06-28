@@ -26,25 +26,64 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/cock_sound = "gun_slide_lock"
 	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
 
+	/// Sets if this thing will use the cool CMLS gun-side damage and ammo properties (thanks bun!)
+	/// the following are CMLS vars!
+	var/use_cmls = TRUE // reject ballistic, embrace gameplay
+	/// without a damage_list defined, default to this damage
+	var/damage // if left null, and the rest of these damage vars are also null, the projectile will default to its own damage system
+	/// The damage list to use for this gun! format: list("dmg" = weight) so, list("15" = 5, "20" = 3, "1000" = 0.1)
+	var/damage_list = list(
+		"10" = 50,
+		"1" = 2,
+		"40" = 2,
+	)
+	/// without a damage list defined, and both of these defined, will roll a random number between these two values
+	var/damage_high
+	var/damage_low
+	/// if not null, will override the projectile's damage type
+	var/damage_type
+	/// if not null, will override what kind of armor the projectile checks against
+	var/damage_armor_type
+
+	var/datum/ammo_kind/ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	var/ammo_magazine_name = "%MAXAMMO% round clipazine"
+	var/ammo_capacity = 10
+	var/ammo_single_load = FALSE
+	var/is_revolver = FALSE
+
+	var/recoil_per_shot = 2 // degrees
+
+	var/sound_magazine_eject = "gun_remove_empty_magazine"
+	var/sound_magazine_insert = "gun_insert_full_magazine"
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if(spawnwithmagazine)
-		if (!magazine)
-			if(init_mag_type)
-				magazine = new init_mag_type(src)
-			else
-				magazine = new mag_type(src)
-			if(magazine.fixed_mag)
-				gun_tags |= GUN_INTERNAL_MAG
-	allowed_mags |= mag_type
-	allowed_mags |= subtypesof(mag_type)
-	if(extra_mag_types)
-		if(islist(extra_mag_types) && LAZYLEN(extra_mag_types))
-			allowed_mags |= extra_mag_types
-		else if (ispath(extra_mag_types))
-			allowed_mags |= typesof(extra_mag_types)
-	if(LAZYLEN(disallowed_mags))
-		allowed_mags -= disallowed_mags
+	if(use_cmls)
+		if(!SScmls.GunCanCMLS(src))
+			message_admins("GUN [src] cannot use CMLS, please fix it! It also exploded, fix that too.")
+			log_world("GUN [src] cannot use CMLS, please fix it! It also exploded, fix that too.")
+			stack_trace("GUN [src] cannot use CMLS, please fix it! It also exploded, fix that too.")
+			explosion(src, 1, 1, 1, 1, TRUE, TRUE, 1)
+			return
+		SScmls.SetupGun(src)
+	else
+		if(spawnwithmagazine)
+			if (!magazine)
+				if(init_mag_type)
+					magazine = new init_mag_type(src)
+				else
+					magazine = new mag_type(src)
+				if(magazine.fixed_mag)
+					gun_tags |= GUN_INTERNAL_MAG
+		allowed_mags |= mag_type
+		allowed_mags |= subtypesof(mag_type)
+		if(extra_mag_types)
+			if(islist(extra_mag_types) && LAZYLEN(extra_mag_types))
+				allowed_mags |= extra_mag_types
+			else if (ispath(extra_mag_types))
+				allowed_mags |= typesof(extra_mag_types)
+		if(LAZYLEN(disallowed_mags))
+			allowed_mags -= disallowed_mags
 	register_magazines()
 	chamber_round()
 	update_icon()
@@ -87,12 +126,22 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		return // all done!
 	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
+/obj/item/gun/ballistic/modify_projectile(obj/item/projectile/BB)
+	if(!isnull(damage))            BB.damage      = damage
+	if(!isnull(damage_list))       BB.damage_list = damage_list
+	if(!isnull(damage_high))       BB.damage_high = damage_high
+	if(!isnull(damage_low))        BB.damage_low  = damage_low
+	if(!isnull(damage_type))       BB.damage_type = damage_type
+	if(!isnull(damage_armor_type)) BB.flag        = damage_armor_type
+	if(!isnull(recoil_per_shot))   BB.recoil      = recoil_per_shot
+	// stop me~ you cant~
+
 /obj/item/gun/ballistic/proc/register_magazines()
 	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))
 		return
 	GLOB.gun_accepted_magazines["[type]"] = ""
 	if(magazine && magazine.fixed_mag)
-		GLOB.gun_accepted_magazines["[type]"] = "This weapon has a fixed magazine that accepts [english_list(magazine.caliber)]."
+		GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts [english_list(magazine.caliber)]."
 		return
 	var/list/names_of_mags = list()
 	for(var/mag in allowed_mags)
@@ -147,6 +196,9 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 				chamber_round(0)
 				update_icon()
 				return TRUE
+
+	if(SScmls.InsertCMLSmagIntoGun(user, src, A))
+		return TRUE
 
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/new_mag = A
@@ -236,8 +288,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 
 /obj/item/gun/ballistic/proc/pump(mob/living/M, visible = TRUE)
 	if(visible)
-		M.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("You [cock_wording] \the [src]."))
-		playsound(M, cock_sound, 60, 1)
+		M?.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("You [cock_wording] \the [src]."))
+		playsound(src, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -264,6 +316,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		return TRUE
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
+	if(SScmls.EjectCMLSmagFromGun(user, src, magazine))
+		return TRUE
 	if(magazine)
 		if(magazine.fixed_mag || !casing_ejector)
 			pump(user, TRUE)

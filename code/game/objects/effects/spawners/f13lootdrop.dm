@@ -1378,14 +1378,14 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "shotgun bat and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/ammo_box/shotgun/improvised
+				/obj/item/ammo_box/generic/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/caravan_shotgun
 	name = "caravan shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/ammo_box/shotgun/improvised
+				/obj/item/ammo_box/generic/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/mosin
@@ -1406,7 +1406,7 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "shotpistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/shotpistol,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/generic/shotgun/buck
 				)
 
 /obj/effect/spawner/bundle/f13/n99
@@ -1469,14 +1469,14 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "hunting shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/hunting,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/generic/shotgun/buck
 				)
 
 /obj/effect/spawner/bundle/f13/shotgunlever
 	name = "lever action shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/generic/shotgun/buck
 	)
 
 /obj/effect/spawner/bundle/f13/revolverm29
@@ -1651,14 +1651,14 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "auto-5 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
-				/obj/item/ammo_box/shotgun/buck,
+				/obj/item/ammo_box/generic/shotgun/buck,
 				)
 
 /obj/effect/spawner/bundle/f13/trenchshotgun
 	name = "trench shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/trench,
-				/obj/item/ammo_box/shotgun/buck,
+				/obj/item/ammo_box/generic/shotgun/buck,
 				)
 
 /obj/effect/spawner/bundle/f13/wattz
@@ -1721,16 +1721,16 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "Neostead 2000 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
-				/obj/item/ammo_box/shotgun/slug,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/generic/shotgun/slug,
+				/obj/item/ammo_box/generic/shotgun/buck
 	)
 
 /obj/effect/spawner/bundle/f13/auto5
 	name = "Auto 5 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
-				/obj/item/ammo_box/shotgun/buck,
-				/obj/item/ammo_box/shotgun/slug
+				/obj/item/ammo_box/generic/shotgun/buck,
+				/obj/item/ammo_box/generic/shotgun/slug
 	)
 
 // Obsolete
@@ -1870,7 +1870,7 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "citykiller and ammo spawner"
 	items = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
-		/obj/item/ammo_box/shotgun/buck
+		/obj/item/ammo_box/generic/shotgun/buck
 	)
 
 /obj/effect/spawner/bundle/f13/guns/p90
@@ -2019,8 +2019,8 @@ there should be very few of these spawns on the whole map. finding one should be
 
 	loot = list(
 				/obj/item/ammo_box/magazine/m9mm,
-				/obj/item/ammo_box/shotgun/buck,
-				/obj/item/ammo_box/shotgun/slug,
+				/obj/item/ammo_box/generic/shotgun/buck,
+				/obj/item/ammo_box/generic/shotgun/slug,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
@@ -2051,7 +2051,7 @@ there should be very few of these spawns on the whole map. finding one should be
 	lootdoubles = TRUE
 
 	loot = list(
-				/obj/item/ammo_box/shotgun/buck,
+				/obj/item/ammo_box/generic/shotgun/buck,
 				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,

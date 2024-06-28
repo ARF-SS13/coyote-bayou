@@ -3,7 +3,7 @@
 	desc = "A well-worn magazine fitted for the surplus rifle."
 	icon_state = "75-8"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = list(CALIBER_10MM)
+	caliber = list(CALIBER_COMPACT)
 	max_ammo = 10
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_SMALL_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
@@ -18,7 +18,7 @@
 	name = "toploader magazine (5.56mm)"
 	icon_state = "5.56m"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = list(CALIBER_556)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 30
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
@@ -32,7 +32,7 @@
 	name = "pipe rifle ammo belt (.357-ish)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "autopipe_belt"
-	caliber = AUTOPIPE_AMMO_CALIBERS
+	caliber = CALIBER_COMPACT
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 18
 	multiple_sprites = 2
@@ -49,7 +49,7 @@
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"
 	icon_state = "r20"
-	caliber = list(CALIBER_556)
+	caliber = list(CALIBER_MEDIUM)
 	max_ammo = 20
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
@@ -97,7 +97,7 @@
 /obj/item/ammo_box/magazine/m5mm
 	name = "Assault Rifle Magazine (5mm)"
 	icon_state = "r30"
-	caliber = list(CALIBER_5MM)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/m5mm
 	max_ammo = 30
 	multiple_sprites = 2
@@ -111,7 +111,7 @@
 	name = "en-bloc clip (.30-06)"
 	icon_state = "enbloc-8"
 	ammo_type = /obj/item/ammo_casing/a3006
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 	randomize_ammo_count = FALSE
 	max_ammo = 8
 	w_class = WEIGHT_CLASS_SMALL
@@ -132,7 +132,7 @@
 	icon_state = "enbloc-8"
 	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_308)
+	caliber = list(CALIBER_LONG)
 	max_ammo = 8
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
@@ -152,7 +152,7 @@
 	icon_state = "mag308"
 	ammo_type = /obj/item/ammo_casing/a308
 	randomize_ammo_count = FALSE
-	caliber = list(CALIBER_308)
+	caliber = list(CALIBER_LONG)
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_RIFLE_MAGAZINE)
@@ -175,7 +175,7 @@
 /obj/item/ammo_box/magazine/m473
 	name = "g11 magazine (4.73mm)"
 	icon_state = "473mm"
-	caliber = list(CALIBER_CASELESS)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
 	multiple_sprites = 2
@@ -185,7 +185,7 @@
 /obj/item/ammo_box/magazine/m473custom
 	name = "g11 magazine (4.73mm)"
 	icon_state = "473mmc"
-	caliber = list(CALIBER_CASELESS)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 30
 	multiple_sprites = 2
@@ -219,7 +219,7 @@
 	name = "Custom OstStrauss magazine"
 	icon_state = "mg3"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = list(CALIBER_556)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/a556
 	max_ammo = 35
 	multiple_sprites = 2
@@ -230,7 +230,7 @@
 	name = "4.7mm magazine"
 	icon_state = "47mm"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = list(CALIBER_CASELESS)
+	caliber = list(CALIBER_MEDIUM)
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 35
 	multiple_sprites = 2
@@ -244,7 +244,7 @@
 	name = "Stg-44 magazine chambered in 8mm kurz (.30-06)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "stgmag"
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 30
 	multiple_sprites = 2
@@ -259,7 +259,7 @@
 	name = "FG-42 magazine chambered in 8mm kurz (.30-06)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "fg42"
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 20
 	multiple_sprites = 2
@@ -274,7 +274,7 @@
 	name = "patrone 88 cartridge (30-06)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "3006"
-	caliber = list(CALIBER_3006)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 5
 	multiple_sprites = 2
@@ -296,7 +296,7 @@
 	name = "Pzb39 Box magazine"
 	icon_state = "pzb39"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = list(CALIBER_50MG)
+	caliber = list(CALIBER_LONG)
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 10
 	multiple_sprites = 2
@@ -311,7 +311,7 @@
 	name = "2mm electromagnetic magazine"
 	icon_state = "2mm"
 	ammo_type = /obj/item/ammo_casing/c2mm
-	caliber = list(CALIBER_2MM)
+	caliber = list(CALIBER_MEDIUM)
 	randomize_ammo_count = FALSE
 	max_ammo = 10
 	multiple_sprites = 2

@@ -12,7 +12,7 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 250)
 	materials = list(/datum/material/iron = 1000)
-	build_path = /obj/item/ammo_casing/shotgun/beanbag
+	build_path = /obj/item/ammo_casing/generic/shotgun/beanbag
 	category = list("initial", "Security")
 
 /datum/design/rubbershot
@@ -20,7 +20,7 @@
 	id = "rubber_shot"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/rubbershot
+	build_path = /obj/item/ammo_casing/generic/shotgun/rubbershot
 	category = list("initial", "Security")
 
 /datum/design/c38
@@ -93,7 +93,7 @@
 	id = "shotgun_slug"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun
+	build_path = /obj/item/ammo_casing/generic/shotgun
 	category = list("hacked", "Security")
 
 /datum/design/buckshot_shell
@@ -101,7 +101,7 @@
 	id = "buckshot_shell"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/buckshot
+	build_path = /obj/item/ammo_casing/generic/shotgun/buckshot
 	category = list("hacked", "Security")
 
 /datum/design/shotgun_dart
@@ -109,7 +109,7 @@
 	id = "shotgun_dart"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/dart
+	build_path = /obj/item/ammo_casing/generic/shotgun/dart
 	category = list("hacked", "Security")
 
 /datum/design/incendiary_slug
@@ -117,7 +117,7 @@
 	id = "incendiary_slug"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/incendiary
+	build_path = /obj/item/ammo_casing/generic/shotgun/incendiary
 	category = list("hacked", "Security")
 */
 

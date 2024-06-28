@@ -469,13 +469,13 @@
 	name = "ammospawner civilian"
 	loot = list(
 		/obj/item/ammo_box/c10mm/improvised = 10,
-		/obj/item/ammo_box/shotgun/improvised = 10,
+		/obj/item/ammo_box/generic/shotgun/improvised = 10,
 		/obj/item/ammo_box/c38box/improvised = 10,
 		/obj/item/ammo_box/m44box/improvised = 10,
 		/obj/item/ammo_box/a556/sport/improvised = 5,
 		/obj/item/ammo_box/c45/improvised = 5,
-		/obj/item/ammo_box/shotgun/buck = 5,
-		/obj/item/ammo_box/shotgun/bean = 5,
+		/obj/item/ammo_box/generic/shotgun/buck = 5,
+		/obj/item/ammo_box/generic/shotgun/bean = 5,
 		/obj/item/ammo_box/c38 = 5,
 		/obj/item/ammo_box/m22 = 5,
 		/obj/item/ammo_box/c9mm = 5,
@@ -492,7 +492,7 @@
 	name = "ammospawner military"
 	loot = list(
 		/obj/item/ammo_box/c45 = 15,
-		/obj/item/ammo_box/shotgun/slug = 15,
+		/obj/item/ammo_box/generic/shotgun/slug = 15,
 		/obj/item/stock_parts/cell/ammo/ec = 15,
 		/obj/item/ammo_box/a556 = 15,
 		/obj/item/ammo_box/a762 = 10,

@@ -65,6 +65,9 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 16
+
 /obj/item/gun/ballistic/automatic/pistol/pistol22/val
 	name = "Mini VAL"
 	desc = "An absurdly tiny VAL rifle. You can barely reach its trigger."
@@ -108,8 +111,9 @@
 	can_scope = FALSE
 	can_bayonet = FALSE
 
-
-
+	ammo_kind = /datum/ammo_kind/medium/q_14mm
+	ammo_capacity = 4
+	is_revolver = TRUE
 
 /* * * * * * * * * * *
  * Browning Hi-Power
@@ -135,6 +139,9 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 15
 
 //M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
 /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
@@ -281,6 +288,8 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_5728mm
+	ammo_capacity = 20
 
 //loadout 5mms, mirrored but with different names.
 /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1 //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
@@ -360,6 +369,9 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 10
+
 //Luger. pretty much the same as a C93, same smol magazine, same semi-auto old gun
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "9mm Luger"
@@ -437,6 +449,9 @@
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
 	reskinnable_component = /datum/component/reskinnable/beretta9
+
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 15
 
 //9mm carbine: pistol capacity, but two shot burst. needs suppressor set correctly
 /obj/item/gun/ballistic/automatic/pistol/beretta/carbine
@@ -532,6 +547,9 @@
 	can_suppress = TRUE
 	can_scope = FALSE
 
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 15
+
 /* * * * * * * * * *
 * MEDIUM PISTOLS
 * * * * * * * * * */
@@ -563,6 +581,9 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+
+	ammo_kind = /datum/ammo_kind/medium/q_10mm
+	ammo_capacity = 12
 
 /* * * * * * * * * * *
  * Executive Pistol Burst Only
@@ -650,7 +671,8 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 
-
+	ammo_kind = /datum/ammo_kind/medium/q_10mm
+	ammo_capacity = 10
 
 // Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil ----> Updated note: Uses 10 magazine only now, can be buffed slightly.
 /obj/item/gun/ballistic/automatic/pistol/type17/tox //custom
@@ -686,6 +708,9 @@
 	init_mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
 	mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
 
+	ammo_kind = /datum/ammo_kind/medium/q_10mm
+	ammo_capacity = 10
+
 /* * * * * * * * * * *
  * Sig P220
  * Light Mediumer pistol
@@ -717,6 +742,9 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+	ammo_kind = /datum/ammo_kind/compact/q_45
+	ammo_capacity = 8
 
 /obj/item/gun/ballistic/automatic/pistol/sig/trusty //wiggles x 2
 	name = "Trusty Sig P220"
@@ -809,6 +837,9 @@
 		/datum/firemode/semi_auto/fast,
 	)
 
+	ammo_kind = /datum/ammo_kind/medium/q_10mm
+	ammo_capacity = 12
+
 /* * * * * * * * * * *
  * M1911 Semi-Auto
  * Light Medium pistol
@@ -837,6 +868,9 @@
 	suppressor_x_offset = 28
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+	ammo_kind = /datum/ammo_kind/compact/q_45
+	ammo_capacity = 8
 
 /* * * * * * * * * * *
  * M1911 Custom Semi-Auto
@@ -914,6 +948,9 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Tacticool
 
+	ammo_kind = /datum/ammo_kind/compact/q_45
+	ammo_capacity = 8
+
 /* * * * * * * * * * * * * *
  * HEAVY SEMI-AUTO PISTOLS *
  * * * * * * * * * * * * * */
@@ -942,6 +979,9 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
+
 /* * * * * * * * * * *
  * El Capitan Semi-Auto
  * Big Heavy pistol
@@ -965,6 +1005,9 @@
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
+
 /* * * * * * * * * * *
  * Automag Semi-Auto
  * Cooler Heavy pistol
@@ -984,13 +1027,17 @@
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
+
 /* * * * * * * * * *
 * .44 automag copycats. same as the original one with or without added flavor *
 * * * * * * * * */
@@ -1021,6 +1068,9 @@
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
+
 /* * * * * * * * * * *
  * 14mm Semi-Auto
  * Super Heavy pistol
@@ -1045,6 +1095,9 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
+
 /* * * * * * * * * * *
  * 14mm Compact Semi-Auto
  * super Heavy pistol
@@ -1067,6 +1120,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
 
 /* * * * * * * * * * * *
 * K8 Assault Pistol
@@ -1100,6 +1156,9 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 15
+
 /obj/item/gun/ballistic/automatic/pistol/lugerrevolver
 	name = "Zünder-14 Pistol"
 	desc = "A Zünder-14 pistol. Zunder means 'detonator' in German. Comes with a side-mounted rail mount for scopes. Manufactured by Leo Armaments, this over engineered pistol is a literal toggle-lock semi-automatic pistol/revolver hybrid. Chambered in a heavy .44, the trigger is slightly lighter and easy to press. What were Leo Armaments thinking?"
@@ -1121,6 +1180,8 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 6
 
 /obj/item/gun/ballistic/automatic/pistol/lugerrevolver/tox
 	name = "Custom Zünder-14 Pistol"
@@ -1164,6 +1225,9 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 10
+
 //4.7mm caseless pistol. Alternative ammo type to the 5mm with slight differences. Spawn tier with shy less damage than a baseline 5mm firearm.
 /obj/item/gun/ballistic/automatic/pistol/pistol47mm
 	name = "4.7mm A39 Pistol"
@@ -1185,6 +1249,8 @@
 	can_scope = FALSE
 	can_suppress = TRUE
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"
@@ -1232,6 +1298,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 8
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

@@ -1,8 +1,8 @@
 /proc/playsound(
 		atom/source,
 		soundin,
-		vol as num,
-		vary,
+		vol = 80,
+		vary = TRUE,
 		extrarange as num,
 		falloff_exponent = SOUND_FALLOFF_EXPONENT,
 		frequency = null,

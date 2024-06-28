@@ -1,3 +1,9 @@
+
+// hi bestie. we used to have this REALLY complicated set of cartridges, but we've since moved past that since CMLS / Hunt Showdown-ification!!!
+// Let's start this from the top, again, because I ripped this shit to shreds. The values below are just for posterity sake, and, are not at all how we ACTUALLY do things around here anymore.
+// see projectile/bullets/cmls.dm for ballistic weapons nonsense
+// okay bestie, take care
+
 ////////////////////
 // 5.56 MM & .223 //
 ////////////////////

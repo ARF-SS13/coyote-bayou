@@ -19,6 +19,7 @@
 	var/select = 0 //doesn't do anything?
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	reloading_time = 0.5 SECONDS
+	is_revolver = TRUE
 
 /obj/item/gun/ballistic/revolver/Initialize()
 	. = ..()
@@ -45,7 +46,7 @@
 		to_chat(user, span_alert("[src] is empty!"))
 	update_icon()
 
-/obj/item/gun/ballistic/revolver/proc/eject_shells(mob/living/user, just_empties = TRUE)
+/obj/item/gun/ballistic/proc/eject_shells(mob/living/user, just_empties = TRUE)
 	if(!magazine)
 		return FALSE
 	var/num_unloaded = 0
@@ -138,6 +139,9 @@
 		/datum/firemode/semi_auto/faster
 	)
 
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 6
+
 /obj/item/gun/ballistic/revolver/detective/derringer
 	name = ".22LR derringer"
 	desc = "A small four barrel derringer, designed to fire two barrels at a time."
@@ -147,6 +151,9 @@
 	init_firemodes = list(
 		/datum/firemode/burst/two/faster
 	)
+
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 4
 
 /obj/item/gun/ballistic/revolver/detective/derringer/update_icon_state()
 	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
@@ -197,6 +204,8 @@
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
+	ammo_kind = /datum/ammo_kind/compact/q_45
+	ammo_capacity = 7
 
 /* * * * * * * * * * *
  * Hermes revolver
@@ -215,7 +224,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/hermes
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1 // 7 shots made this shit way too cumbersome, added an extra damage up for the loss in damage
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
@@ -223,6 +232,9 @@
 		/datum/firemode/automatic/rpm300,
 	)
 	use_casing_sounds = TRUE
+
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 6
 
 /* * * * * * * * * *
  * HEAVY REVOLVERS *
@@ -248,6 +260,9 @@
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
+
+	ammo_kind = /datum/ammo_kind/compact/q_357
+	ammo_capacity = 6
 
 //full auto .357 revolver. shoots wayfast
 /obj/item/gun/ballistic/revolver/colt357/auto
@@ -289,6 +304,9 @@
 	flight_y_offset = 15
 
 	use_casing_sounds = TRUE
+
+	ammo_kind = /datum/ammo_kind/compact/q_357
+	ammo_capacity = 6
 
 /* * * * * * * * * * *
  * Mateba revolver
@@ -360,6 +378,9 @@
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
+	ammo_kind = /datum/ammo_kind/compact/q_357
+	ammo_capacity = 6
+
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "Webley Revolver"
 	desc = "The Webley Revolver was the pre-war standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
@@ -403,6 +424,10 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 6
+
 /* * * * * * * * * * *
  * Pearly .44 magnum revolver
  * Cute heavier revolver
@@ -500,6 +525,9 @@
 	)
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 6
+
 /* * * * * * * * * * * * * *
 * Lemat Revolver
 * -9mm chambering
@@ -527,6 +555,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+	ammo_kind = /datum/ammo_kind/compact/q_9mm
+	ammo_capacity = 6
 
 /obj/item/gun/ballistic/revolver/Lemat/customrevolvers //custom revolver
 	name = "'Cain' 9mm revolver"
@@ -599,6 +630,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
 /* * * * * * * * * * *
  * M2045 Magnum Revolver Rifle
  * Heavy revolver rifle
@@ -625,7 +657,8 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 
-
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 10
 
 /* * * * * * * * * * * *
 * Colt Buntline revolver
@@ -655,6 +688,9 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 
+	ammo_kind = /datum/ammo_kind/compact/q_45lc
+	ammo_capacity = 6
+
 /* * * * * * * * * * *
 * Judge revolver
 * + 3 shot shotgun revolver
@@ -680,6 +716,9 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 3
+
 //4.7mm revolver. 6 shots, caseless ammo and shy extra damage. Spawn gun, fires faster
 /obj/item/gun/ballistic/revolver/revolver47mm
 	name = "4.7mm revolver 2190 edition."
@@ -701,6 +740,9 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 
+	ammo_kind = /datum/ammo_kind/medium/q_473mm
+	ammo_capacity = 6
+
 //5mm revolver. More ammo than 4.7mm at 7 shots a cylinder, hits harder but fires slower. spawn gun
 /obj/item/gun/ballistic/revolver/revolver5mm
 	name = "5mm break-action revolver"
@@ -721,6 +763,9 @@
 	can_scope = FALSE
 	can_suppress = FALSE
 	can_bayonet = FALSE
+
+	ammo_kind = /datum/ammo_kind/medium/q_5mm
+	ammo_capacity = 7
 
 // heavy duty needler revolving rifle
 /obj/item/gun/ballistic/revolver/needlerrifle
@@ -744,6 +789,9 @@
 	can_bayonet = FALSE
 
 	fire_sound = 'sound/f13weapons/needler.ogg'
+
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 3
 
 /* * * * * * * * * * *
  * Hunting revolver
@@ -770,6 +818,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 6
 
 /obj/item/gun/ballistic/revolver/hunting/custom
 	name = "Deireadh le ceantar revolver"
@@ -812,6 +863,9 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 1
+
 /* * * * * * * * * * *
  * Degraded hunting revolver
  * Really heavy revolver
@@ -829,6 +883,10 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 6
+
 /* * * * * * * * * * *
  * Sequoia revolvers
  * Super heavy revolver
@@ -848,7 +906,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0 //it does plenty of damage without a boost >.>
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1 //it does plenty of damage without a boost (>.>) (<.<) but it's cool
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -856,13 +914,16 @@
 	)
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 6
+
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
 	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip has a blade attached to the bottom. You know, for stabbin'."
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 3
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -905,6 +966,9 @@
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
+	ammo_kind = /datum/ammo_kind/compact/q_45lc
+	ammo_capacity = 6
+
 /obj/item/gun/ballistic/revolver/derringerLC
 	name = ".45 LC derringer"
 	desc = "A classy, pearl handled derringer firing .45LC in a compact package."
@@ -926,6 +990,9 @@
 		icon_state = "[initial(icon_state)]_open"
 	else
 		icon_state = "[initial(icon_state)]"
+
+	ammo_kind = /datum/ammo_kind/compact/q_45lc
+	ammo_capacity = 1
 
 /* * * * * * * * * * *
  * .223 revolver
@@ -953,6 +1020,9 @@
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 5
+
 /* * * * * * * * * * *
  * Needler 'revolver'
  * Wounding revolver
@@ -976,6 +1046,9 @@
 	silenced = TRUE
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/gunshot_silenced.ogg'
+
+	ammo_kind = /datum/ammo_kind/compact/q_needler
+	ammo_capacity = 10
 
 /obj/item/gun/ballistic/revolver/needler/ultra
 	name = "Ultracite needler"

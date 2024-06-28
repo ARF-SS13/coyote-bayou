@@ -1781,8 +1781,8 @@
 	lethal_projectile = null
 	lethal_projectile_sound = 'sound/f13weapons/shotgun.ogg'
 	stun_projectile_sound = 'sound/f13weapons/shotgun.ogg'
-	casing_type_stun = /obj/item/ammo_casing/shotgun/rubbershot
-	casing_type_lethal = /obj/item/ammo_casing/shotgun/buckshot
+	casing_type_stun = /obj/item/ammo_casing/generic/shotgun/rubbershot
+	casing_type_lethal = /obj/item/ammo_casing/generic/shotgun/buckshot
 
 /obj/machinery/porta_turret/f13/turret_shotgun/raider
 	name = "raider autoshotgun"
@@ -1908,8 +1908,8 @@
 	lethal_projectile = null
 	lethal_projectile_sound = 'sound/f13weapons/shotgun.ogg'
 	stun_projectile_sound = 'sound/f13weapons/shotgun.ogg'
-	casing_type_stun = /obj/item/ammo_casing/shotgun/rubbershot
-	casing_type_lethal = /obj/item/ammo_casing/shotgun/buckshot/wide
+	casing_type_stun = /obj/item/ammo_casing/generic/shotgun/rubbershot
+	casing_type_lethal = /obj/item/ammo_casing/generic/shotgun/buckshot/wide
 
 /obj/machinery/porta_turret/f13/town/AMR_turret
 	name = "allied big game point defense system"

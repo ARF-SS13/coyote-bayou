@@ -132,6 +132,9 @@
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 2
+
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter) | istype(A, /obj/item/twohanded/chainsaw))
@@ -174,6 +177,10 @@
 		/datum/firemode/semi_auto/shotgun_fixed,
 		/datum/firemode/burst/two/shotgun_fixed,
 	)
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 2
+
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
@@ -224,6 +231,9 @@
 		/datum/firemode/semi_auto/shotgun_fixed
 	)
 
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 1
+
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/shotpistol/update_icon_state()
@@ -264,6 +274,10 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	is_revolver = TRUE
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 5
 
 // Haha johnathan you're fucking my sawed off shotgun
 // /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
@@ -320,7 +334,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
-	
+	is_revolver = TRUE
 	var/stock = FALSE
 	can_flashlight = TRUE
 	gunlight_state = "flightangle"
@@ -329,6 +343,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 6
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -380,7 +397,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-
+	is_revolver = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
@@ -395,7 +412,8 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 4
 
 
 /* * * * * * * * * * * *
@@ -431,6 +449,10 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+	is_revolver = TRUE
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 4
 
 /obj/item/gun/ballistic/shotgun/
 /* * * * * * * * * * * *
@@ -477,6 +499,9 @@
 
 	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 4
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/worn
 	name = " Venn Family Shotgun"
@@ -527,6 +552,10 @@
 	knife_x_offset = 23
 	knife_y_offset = 23
 
+	is_revolver = TRUE
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 5
+
 /* * * * * * * * * * *
  * Lever-Action shotgun Restocked
  * Speedy pump shotgun, with stock
@@ -566,7 +595,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -596,6 +625,9 @@
 
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 12
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/examine(mob/user)
 	. = ..()
@@ -676,6 +708,10 @@
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
+	is_revolver = TRUE
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 8
+
 /obj/item/gun/ballistic/shotgun/needles
 	name = "Pz87 pump-action shotgun"
 	desc = "A Pz87 shotgun. Manufactured by Latos Systems in collaboration with the Swiss navy and Remington, this shotgun has a internal 6+1 internal tube capacity. Unlike traditional ballistics, it fires micro-needles. A prototype shotgun that never saw the light of combat and battle."
@@ -692,6 +728,9 @@
 	)
 	fire_sound = 'sound/f13weapons/needler.ogg'
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
+
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 7
 
 /* * * * * * * * * * *
  * Jackhammer shotgun
@@ -716,6 +755,9 @@
 	)
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 0.8)
 
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 8
+
 // Ballistic Fist			Keywords: Damage max 42, Shotgun
 /obj/item/gun/ballistic/revolver/ballisticfist
 	name = "ballistic fist"
@@ -734,6 +776,10 @@
 		/datum/firemode/semi_auto/slow
 	)
 	init_recoil = SHOTGUN_RECOIL(1, 1)
+
+	is_revolver = TRUE
+	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
+	ammo_capacity = 2
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting
