@@ -306,7 +306,7 @@
 	},
 /area/f13/building/sewers)
 "aij" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{
@@ -884,7 +884,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "aDN" = (
-/obj/structure/CMLS_ammo_vendor/unlocked_basic,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "aEe" = (
@@ -9349,7 +9349,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 6
@@ -11869,7 +11869,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "hbA" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "hbF" = (
@@ -21493,7 +21493,7 @@
 	},
 /area/f13/building/sewers)
 "nND" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "nNJ" = (
@@ -22336,7 +22336,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "otS" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "oul" = (
@@ -30467,7 +30467,7 @@
 	},
 /area/f13/caves)
 "tSC" = (
-/obj/structure/CMLS_ammo_vendor/unlocked,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},

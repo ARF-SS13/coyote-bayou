@@ -7490,7 +7490,7 @@
 /area/f13/caves)
 "dgD" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9271,7 +9271,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "dRT" = (
-/obj/structure/CMLS_ammo_vendor/unlocked,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/item/book/granter/crafting_recipe/gunsmith_two,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
@@ -12820,7 +12820,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/CMLS_ammo_vendor/unlocked_basic,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "fnE" = (
@@ -16480,7 +16480,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/village)
 "gLG" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -16810,7 +16810,7 @@
 	},
 /area/f13/wasteland)
 "gSx" = (
-/obj/structure/CMLS_ammo_vendor/unlocked_basic,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
@@ -22485,7 +22485,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -34875,7 +34875,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "ovg" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/item/stack/sheet/metal,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -42822,7 +42822,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rWL" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rWN" = (
@@ -47795,7 +47795,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "udt" = (
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "udx" = (
@@ -49952,7 +49952,7 @@
 /area/f13/brotherhood/surface)
 "uZd" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/CMLS_ammo_vendor,
+/obj/structure/CMLS_ammo_vending_machine,
 /obj/item/stack/rods/fifty,
 /turf/open/floor/f13/wood,
 /area/f13/village)
