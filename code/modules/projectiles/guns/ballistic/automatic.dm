@@ -447,6 +447,9 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = TRUE
 
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 16
+
 //MP40: a uzi but with different flavor
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40
 	name = "Maschinenpistole 40"

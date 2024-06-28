@@ -40,4 +40,10 @@
 	magazine_flavor = "A handful of 12 gauge shotgun shells. A classic shell found in the hands of hunters, soldiers, and the occasional madman."
 	ammo_icon = 'icons/obj/ammo/shotgun.dmi'
 
-
+/datum/ammo_kind/shotgun/q_40mm
+	name = "40mm buckshot"
+	bullet_flavor = "A low velocity series of pellets."
+	box_name = "box of 40mm shotgun shells"
+	crate_name = "crate of 40mm shotgun shells"
+	magazine_name = "handful of 40mm shotgun shells"
+	magazine_flavor = "A handful of 40mm shotgun shells. A classic shell found in the hands of hunters, soldiers, and the occasional madman."
