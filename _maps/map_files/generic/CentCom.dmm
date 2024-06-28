@@ -2495,7 +2495,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "ix" = (
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/tdome/tdomeobserve)
 "iy" = (
 /obj/item/twohanded/required/kirbyplants{
@@ -3045,7 +3045,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "jU" = (
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "jV" = (
 /turf/open/floor/plasteel/stairs/left,
@@ -3128,7 +3128,7 @@
 /area/centcom/evac)
 "kl" = (
 /obj/machinery/computer/security/telescreen/entertainment,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "km" = (
 /turf/closed/wall/f13/tunnel,
@@ -3178,7 +3178,7 @@
 /area/centcom/evac)
 "kA" = (
 /obj/machinery/newscaster/security_unit,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "kB" = (
 /obj/structure/toilet{
@@ -3269,7 +3269,7 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "kT" = (
 /obj/structure/sign/warning/nosmoking,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "kV" = (
 /obj/structure/sink{
@@ -3367,11 +3367,11 @@
 /area/f13/underground/mountain)
 "lr" = (
 /obj/machinery/status_display/ai,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "ls" = (
 /obj/machinery/status_display,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "lt" = (
 /obj/machinery/door/airlock/external{
@@ -4070,7 +4070,7 @@
 /area/centcom/evac)
 "nI" = (
 /obj/structure/decoration/clock/active,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "nJ" = (
 /obj/structure/flora/wasteplant/wild_punga,
@@ -4474,7 +4474,7 @@
 /area/centcom/evac)
 "oC" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "oD" = (
 /obj/machinery/computer/auxillary_base{
@@ -4974,7 +4974,7 @@
 /area/centcom/evac)
 "qd" = (
 /obj/structure/sign/warning/securearea,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "qe" = (
 /obj/machinery/door/airlock/centcom{
@@ -4989,7 +4989,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "qg" = (
 /obj/machinery/door/airlock/centcom{
@@ -5786,7 +5786,7 @@
 /area/centcom/evac)
 "sI" = (
 /obj/structure/sign/barsign,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "sJ" = (
 /obj/machinery/door/airlock/silver{
@@ -6947,7 +6947,6 @@
 "vS" = (
 /obj/machinery/door/window/brigdoor{
 	base_state = "rightsecure";
-	dir = 4;
 	icon_state = "rightsecure";
 	name = "CentCom Customs";
 	req_access_txt = "109"
@@ -7151,7 +7150,7 @@
 /area/centcom/evac)
 "wA" = (
 /obj/structure/sign/departments/security,
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "wB" = (
 /obj/structure/vault_door/old{
@@ -8189,7 +8188,7 @@
 	name = "Auxillary Dock";
 	req_access_txt = ""
 	},
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "Cc" = (
 /turf/open/floor/plasteel/vault{
@@ -8241,7 +8240,7 @@
 	name = "General Supply Control";
 	req_access_txt = "102"
 	},
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "Ci" = (
 /obj/structure/spacevine{
@@ -8256,7 +8255,7 @@
 	name = "Heavy Supply Control";
 	req_access_txt = "102"
 	},
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "Cl" = (
 /obj/machinery/button/door{
@@ -8264,7 +8263,7 @@
 	name = "Main Blast Doors Control";
 	req_access_txt = "102"
 	},
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/vault,
 /area/centcom/evac)
 "Cn" = (
 /obj/effect/turf_decal/stripes/line{
@@ -12285,10 +12284,6 @@
 /turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
-/area/f13/building)
-"Zj" = (
-/obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/stellar,
 /area/f13/building)
 "Zk" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
@@ -57150,19 +57145,19 @@ aa
 aa
 aa
 aa
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -57407,7 +57402,7 @@ aa
 aa
 aa
 aa
-RL
+aa
 RM
 RM
 RM
@@ -57419,7 +57414,7 @@ RM
 RM
 RM
 RM
-RL
+aa
 aa
 aa
 aa
@@ -57664,7 +57659,7 @@ aa
 aa
 aa
 aa
-RL
+aa
 RM
 RM
 RM
@@ -57676,7 +57671,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -57921,7 +57916,7 @@ aa
 aa
 aa
 aa
-RL
+aa
 RM
 GB
 GB
@@ -57933,7 +57928,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -58178,7 +58173,7 @@ RL
 RL
 RL
 aa
-RL
+aa
 RM
 sG
 Ga
@@ -58190,7 +58185,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -58435,7 +58430,7 @@ RM
 RM
 RL
 aa
-RL
+aa
 RM
 yq
 Gt
@@ -58447,7 +58442,7 @@ GB
 GB
 Hy
 RM
-RL
+aa
 aa
 aa
 aa
@@ -58692,7 +58687,7 @@ Su
 RM
 RL
 aa
-RL
+aa
 RM
 GB
 GA
@@ -58704,7 +58699,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -58949,7 +58944,7 @@ Su
 RM
 RL
 aa
-RL
+aa
 RM
 GB
 GB
@@ -58961,7 +58956,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -59206,7 +59201,7 @@ Su
 RM
 RL
 aa
-RL
+aa
 RM
 RM
 RM
@@ -59218,7 +59213,7 @@ GB
 GB
 GB
 RM
-RL
+aa
 aa
 aa
 aa
@@ -59463,7 +59458,7 @@ Su
 RM
 RL
 aa
-RL
+aa
 RM
 RT
 Sb
@@ -59475,7 +59470,7 @@ Sb
 Sb
 Te
 RM
-RL
+aa
 aa
 aa
 aa
@@ -59720,7 +59715,7 @@ Su
 RM
 RL
 aa
-RL
+aa
 RM
 RU
 Sc
@@ -59732,7 +59727,7 @@ SM
 ST
 Tg
 RM
-RL
+aa
 aa
 aa
 aa
@@ -59977,7 +59972,7 @@ RM
 RM
 RL
 aa
-RL
+aa
 RM
 RV
 Se
@@ -59989,7 +59984,7 @@ Sf
 Se
 Th
 RM
-RL
+aa
 aa
 aa
 aa
@@ -60234,7 +60229,7 @@ RL
 RL
 RL
 aa
-RL
+aa
 RM
 RW
 Sf
@@ -60246,7 +60241,7 @@ Sf
 Sf
 GZ
 RM
-RL
+aa
 aa
 aa
 aa
@@ -60491,7 +60486,7 @@ aa
 aa
 aa
 aa
-RL
+aa
 RM
 RM
 Sg
@@ -60503,7 +60498,7 @@ SR
 Sf
 Tj
 RM
-RL
+aa
 aa
 aa
 aa
@@ -60748,8 +60743,8 @@ aa
 aa
 aa
 aa
-RL
-RL
+aa
+aa
 RM
 RM
 RM
@@ -60760,7 +60755,7 @@ RM
 RM
 RM
 RM
-RL
+aa
 aa
 aa
 aa
@@ -61006,18 +61001,18 @@ aa
 aa
 aa
 aa
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
-RL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -70143,10 +70138,10 @@ PP
 GN
 GN
 HF
-Zj
+HF
 GN
 HF
-Zj
+HF
 DL
 Dq
 Xc
@@ -71171,10 +71166,10 @@ Tr
 GN
 GN
 HF
-Zj
+HF
 GN
 HF
-Zj
+HF
 DL
 Dq
 Xc

@@ -857,12 +857,7 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "adG" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/massfusion)
 "adJ" = (
 /obj/structure/flora/grass/wasteland{
@@ -7199,15 +7194,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"aCk" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
-/area/f13/building/coyote/nash/mall/groundfloor)
 "aCl" = (
 /obj/structure/chair/right{
 	dir = 1
@@ -7732,15 +7718,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
-	},
-/area/f13/building/coyote/nash/mall/groundfloor)
-"aEf" = (
-/obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "aEg" = (
@@ -10059,12 +10036,7 @@
 /area/f13/building/coyote/nash/mall/groundfloor)
 "aMC" = (
 /obj/effect/overlay/junk,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/firestation)
 "aMD" = (
 /obj/structure/simple_door/house,
@@ -16434,14 +16406,6 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland)
-"bnO" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building)
 "bnQ" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/ruins{
@@ -23199,12 +23163,7 @@
 "cHG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "cHL" = (
 /obj/structure/flora/grass/wasteland{
@@ -23438,12 +23397,7 @@
 "cLw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/contraband/donut_corp,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "cLA" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -30492,15 +30446,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
-"eJz" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building)
 "eJH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fence/corner/wooden{
@@ -32990,14 +32935,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"fuB" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building/coyote/nash/museum/groundfloor)
 "fuC" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 4;
@@ -36991,15 +36928,6 @@
 	icon_state = "verticalrightborderright3"
 	},
 /area/f13/wasteland/city/nash/theloop)
-"gyP" = (
-/obj/structure/decoration/clock/old/active,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building)
 "gza" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/airlock/medical{
@@ -39079,12 +39007,7 @@
 "gZR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "hac" = (
 /obj/effect/decal/waste{
@@ -47290,12 +47213,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "jmR" = (
 /obj/structure/debris/v1,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "jmZ" = (
 /obj/structure/stairs/east,
@@ -58269,12 +58187,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "mjT" = (
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/firestation)
 "mka" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -67416,12 +67329,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "oFq" = (
 /obj/structure/barricade/wooden,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "oFy" = (
 /obj/structure/barricade/wooden,
@@ -67595,12 +67503,7 @@
 "oHz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "oHK" = (
 /obj/structure/flora/tree/tall,
@@ -74185,15 +74088,6 @@
 	icon_state = "verticaloutermain2top"
 	},
 /area/f13/building/hospital)
-"qxh" = (
-/obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building)
 "qxo" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -76138,12 +76032,7 @@
 /area/f13/building/abandoned)
 "qWS" = (
 /obj/structure/fireaxecabinet,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/firestation)
 "qWU" = (
 /obj/structure/barricade/sandbags,
@@ -77773,16 +77662,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ruins)
-"rvR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building/coyote/nash/museum/groundfloor)
 "rwa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -88203,12 +88082,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "umH" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -90330,14 +90204,6 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland/massfusion)
-"uSc" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
-/area/f13/building/coyote/nash/mall/groundfloor)
 "uSh" = (
 /obj/structure/closet/fridge{
 	anchored = 1
@@ -91474,15 +91340,6 @@
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
-/area/f13/building/coyote/nash/mall/groundfloor)
-"vkF" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "vkH" = (
 /obj/structure/table/wasteland,
@@ -99880,12 +99737,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xAr" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/firestation)
 "xAw" = (
 /obj/structure/simple_door/metal/dirtystore,
@@ -135776,7 +135628,7 @@ kqs
 llI
 aOk
 agk
-rvR
+hle
 uUP
 ezd
 fDF
@@ -136033,7 +135885,7 @@ etg
 llI
 aOk
 agk
-rvR
+hle
 uya
 cuh
 iEN
@@ -136290,7 +136142,7 @@ oLJ
 llI
 llI
 bsk
-rvR
+hle
 byq
 uEb
 wCs
@@ -136804,7 +136656,7 @@ bjB
 kBz
 txk
 agk
-rvR
+hle
 kKm
 pYq
 qtr
@@ -137061,14 +136913,14 @@ bhk
 bEw
 txk
 agk
-rvR
+hle
 uSY
 mnR
 vqc
 gLq
 agk
 agk
-fuB
+agk
 poN
 poN
 agk
@@ -137318,7 +137170,7 @@ clY
 aYQ
 txk
 agk
-rvR
+hle
 hpP
 sep
 qtr
@@ -137832,7 +137684,7 @@ acD
 aOk
 llI
 agk
-rvR
+hle
 mwm
 qbz
 qtr
@@ -138089,7 +137941,7 @@ etg
 xHN
 llI
 bsk
-rvR
+hle
 xZo
 kXD
 oMq
@@ -138346,7 +138198,7 @@ aOk
 mkA
 aOk
 bsk
-rvR
+hle
 qOU
 oKp
 tSC
@@ -151184,13 +151036,13 @@ jGn
 fcL
 jih
 ajS
-bnO
-bnO
+ajS
+ajS
 umG
-bnO
-qxh
-qxh
-bnO
+ajS
+bOI
+bOI
+ajS
 aOk
 aOk
 rqF
@@ -151441,13 +151293,13 @@ afS
 ssf
 woR
 eGt
-bnO
+ajS
 iWE
 iDe
 rQD
 afS
 lhh
-bnO
+ajS
 llI
 biO
 llI
@@ -151698,13 +151550,13 @@ ieJ
 jAv
 sGX
 beV
-bnO
+ajS
 quu
 iDe
-bnO
+ajS
 fFf
 vdF
-qxh
+bOI
 llI
 aOk
 maQ
@@ -151955,10 +151807,10 @@ gIG
 iCU
 fvp
 aRp
-bnO
+ajS
 iJF
 gDc
-bnO
+ajS
 lYA
 wro
 oHz
@@ -152212,13 +152064,13 @@ fFf
 syg
 aaM
 nri
-bnO
+ajS
 afS
 sLC
 aaP
 wCJ
 beR
-eJz
+uro
 llI
 llI
 iAq
@@ -152475,7 +152327,7 @@ wJP
 brX
 sLC
 afS
-bnO
+ajS
 aae
 aae
 tBz
@@ -152732,7 +152584,7 @@ glS
 bQt
 atz
 ddz
-qxh
+bOI
 aae
 aae
 tBz
@@ -152986,10 +152838,10 @@ ivj
 xEJ
 afS
 phZ
-qxh
-qxh
-bnO
-bnO
+bOI
+bOI
+ajS
+ajS
 aae
 aae
 tBz
@@ -153102,43 +152954,43 @@ nTE
 chZ
 wMm
 whJ
-uSc
-uSc
-uSc
-uSc
-aEf
-aEf
-aEf
-aEf
-aEf
-uSc
-uSc
+qvN
+qvN
+qvN
+qvN
+kSZ
+kSZ
+kSZ
+kSZ
+kSZ
+qvN
+qvN
 jmR
 axM
-aEf
-aEf
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
+kSZ
+kSZ
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
 kSV
 vQL
 tYz
@@ -153240,13 +153092,13 @@ gVp
 fFf
 fFf
 vGm
-bnO
+ajS
 fdL
 afS
 mgq
 pWI
 oGh
-bnO
+ajS
 aae
 aae
 tBz
@@ -153359,7 +153211,7 @@ nTE
 chZ
 lox
 whJ
-uSc
+qvN
 bZq
 iEs
 aAG
@@ -153395,7 +153247,7 @@ xwI
 xrV
 lUn
 aNF
-aCk
+kwf
 xAr
 mjT
 mjT
@@ -153491,19 +153343,19 @@ bxS
 bdr
 biH
 bmB
-bnO
+ajS
 nRt
 bhy
 bdT
 afS
 afS
-bnO
+ajS
 nDc
 aiZ
-bnO
+ajS
 beb
 ouU
-bnO
+ajS
 aae
 aae
 tBz
@@ -153616,7 +153468,7 @@ bLR
 ouJ
 lox
 whJ
-aEf
+kSZ
 aDc
 xwI
 xwI
@@ -153748,19 +153600,19 @@ aSJ
 noH
 ajQ
 gvl
-bnO
-bnO
-gyP
-qxh
+ajS
+ajS
+bhC
+bOI
 ccU
 ccU
-qxh
-qxh
-bnO
-bnO
-bnO
-qxh
-bnO
+bOI
+bOI
+ajS
+ajS
+ajS
+bOI
+ajS
 aae
 aae
 tBz
@@ -153873,7 +153725,7 @@ dpt
 ouJ
 nGx
 whJ
-aEf
+kSZ
 qAw
 xwI
 qvN
@@ -153886,21 +153738,21 @@ qvN
 qvN
 bzi
 qvN
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-aCk
-aCk
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+kwf
+kwf
 bzi
-aCk
-aCk
-uSc
+kwf
+kwf
+qvN
 qvN
 qvN
 bzi
@@ -154005,8 +153857,8 @@ bhC
 acp
 ujp
 gHk
-bnO
-bnO
+ajS
+ajS
 aHF
 aHF
 ekW
@@ -154130,7 +153982,7 @@ dpt
 wsS
 nGx
 whJ
-aEf
+kSZ
 aNF
 xwI
 qvN
@@ -154143,7 +153995,7 @@ gcr
 jVn
 jVn
 fFV
-uSc
+qvN
 hSD
 lpY
 iIm
@@ -154151,13 +154003,13 @@ vky
 lPb
 iNg
 lpY
-uSc
+qvN
 fmI
 aOI
 aOQ
 xqC
 xqC
-uSc
+qvN
 cUr
 daR
 jtJ
@@ -154258,11 +154110,11 @@ fzM
 fzM
 fzM
 cra
-bnO
-bnO
-qxh
-bnO
-bnO
+ajS
+ajS
+bOI
+ajS
+ajS
 aHF
 oLL
 wxu
@@ -154387,7 +154239,7 @@ dpt
 axJ
 lox
 whJ
-aEf
+kSZ
 ePa
 aAG
 qvN
@@ -154400,7 +154252,7 @@ qvN
 rIc
 jVn
 aMP
-uSc
+qvN
 nuc
 aOT
 aOQ
@@ -154408,13 +154260,13 @@ aOT
 oUE
 uFs
 kBM
-uSc
+qvN
 mWj
 aOQ
 aOd
 mPZ
 cQo
-uSc
+qvN
 aBb
 aPf
 wBP
@@ -154644,7 +154496,7 @@ bto
 axJ
 hyH
 whJ
-aEf
+kSZ
 xwI
 aAG
 qvN
@@ -154657,7 +154509,7 @@ utz
 izN
 izN
 fWA
-uSc
+qvN
 pyJ
 aOT
 fBd
@@ -154665,13 +154517,13 @@ niB
 lPb
 jAX
 eyS
-uSc
+qvN
 lcf
 ptf
 aOQ
 aBc
 aBc
-uSc
+qvN
 iPb
 gBQ
 tzf
@@ -154901,7 +154753,7 @@ axJ
 fJV
 lox
 whJ
-uSc
+qvN
 xwI
 aAG
 qvN
@@ -154914,7 +154766,7 @@ qvN
 jVn
 jVn
 mOh
-uSc
+qvN
 lpY
 aOd
 lpY
@@ -154922,13 +154774,13 @@ oUE
 bRg
 oUE
 kBM
-aCk
+kwf
 cLw
 nEV
-aCk
-uSc
-uSc
-uSc
+kwf
+qvN
+qvN
+qvN
 yga
 uQj
 pDa
@@ -155158,7 +155010,7 @@ bsH
 vGj
 qWU
 hGf
-uSc
+qvN
 xwI
 mAe
 qvN
@@ -155171,7 +155023,7 @@ jIn
 jIn
 jIn
 noo
-uSc
+qvN
 fXY
 aOT
 aOT
@@ -155183,7 +155035,7 @@ aIU
 gAu
 aOT
 vUU
-uSc
+qvN
 rmy
 bDx
 aPf
@@ -155194,7 +155046,7 @@ qEX
 mNK
 aLz
 mVT
-aCk
+kwf
 kTu
 hXr
 sxj
@@ -155415,7 +155267,7 @@ sqn
 lCs
 nGx
 whJ
-uSc
+qvN
 kNk
 xwI
 qvN
@@ -155428,7 +155280,7 @@ jIn
 aLg
 uTY
 oym
-uSc
+qvN
 aBF
 aMB
 uFs
@@ -155440,7 +155292,7 @@ eqf
 tUJ
 doI
 mDe
-uSc
+qvN
 aOS
 rXm
 aIT
@@ -155672,7 +155524,7 @@ fSq
 wUx
 lox
 whJ
-aEf
+kSZ
 xwI
 xwI
 qvN
@@ -155685,7 +155537,7 @@ jIn
 qiH
 jIn
 vBd
-uSc
+qvN
 viM
 hUh
 aOQ
@@ -155697,7 +155549,7 @@ aPi
 aPi
 aPi
 aKY
-uSc
+qvN
 sfF
 aDB
 tzf
@@ -155929,7 +155781,7 @@ dpt
 lCs
 nGx
 whJ
-aEf
+kSZ
 xwI
 aAG
 qvN
@@ -155942,7 +155794,7 @@ jVn
 sVR
 jVn
 prH
-uSc
+qvN
 lpY
 aOv
 aOv
@@ -155954,7 +155806,7 @@ tem
 qXv
 jRM
 jxi
-uSc
+qvN
 mWM
 dbR
 aGj
@@ -156186,7 +156038,7 @@ jzN
 wsS
 nGx
 whJ
-uSc
+qvN
 fKL
 qaT
 qvN
@@ -156199,8 +156051,8 @@ gWW
 aNl
 aOa
 mmn
-uSc
-uSc
+qvN
+qvN
 qlO
 icq
 ybZ
@@ -156210,19 +156062,19 @@ xDJ
 xDJ
 icq
 xDJ
-uSc
-uSc
+qvN
+qvN
 qvN
 mcu
 chc
 hTI
-uSc
-uSc
-uSc
-uSc
-aEf
-aEf
-uSc
+qvN
+qvN
+qvN
+qvN
+kSZ
+kSZ
+qvN
 ubB
 ubB
 ubB
@@ -157992,8 +157844,8 @@ kSZ
 aNn
 qvN
 gAj
-uSc
-uSc
+qvN
+qvN
 aDO
 aEb
 aEv
@@ -158016,7 +157868,7 @@ qvN
 jMw
 hNs
 wPM
-uSc
+qvN
 vnq
 kTu
 sxj
@@ -158249,7 +158101,7 @@ qvN
 crd
 aBJ
 aBJ
-uSc
+qvN
 jaV
 jVn
 aEc
@@ -158261,7 +158113,7 @@ uzK
 xKL
 pap
 aMA
-uSc
+qvN
 gtt
 gIM
 rcf
@@ -158273,7 +158125,7 @@ pCS
 jVn
 tmw
 iwD
-uSc
+qvN
 vnq
 kTu
 uXF
@@ -158506,7 +158358,7 @@ qvN
 crd
 aBJ
 aBJ
-uSc
+qvN
 iig
 jIn
 bye
@@ -158518,7 +158370,7 @@ vvk
 jVn
 jIn
 jVn
-uSc
+qvN
 rOI
 dcR
 dcR
@@ -158530,7 +158382,7 @@ jVn
 jVn
 jVn
 jVn
-aEf
+kSZ
 vnq
 nRZ
 aLT
@@ -158756,14 +158608,14 @@ pFT
 bLR
 lox
 uLP
-aEf
+kSZ
 bKz
 ogx
 aBa
 aBL
 aBJ
 ybY
-uSc
+qvN
 bye
 jVn
 oNQ
@@ -158775,7 +158627,7 @@ euI
 uTt
 sYF
 vTf
-uSc
+qvN
 qCd
 dcR
 hKS
@@ -158787,7 +158639,7 @@ uUj
 aMW
 bHl
 mIK
-aEf
+kSZ
 vnq
 kTu
 bfp
@@ -159013,14 +158865,14 @@ dpt
 pQy
 lox
 whJ
-uSc
+qvN
 qaT
 mLT
 aBa
 hNO
 aCi
 xek
-uSc
+qvN
 jIn
 jVn
 vvk
@@ -159032,7 +158884,7 @@ lPh
 jVn
 jIn
 jIn
-uSc
+qvN
 inS
 dcR
 nTY
@@ -159044,7 +158896,7 @@ jVn
 jVn
 jVn
 jVn
-uSc
+qvN
 vnq
 kTu
 nRV
@@ -159270,14 +159122,14 @@ dpt
 wsS
 lox
 whJ
-uSc
+qvN
 xwI
 aAG
 qvN
 qvN
 qvN
 aOt
-uSc
+qvN
 bSu
 jVn
 vvk
@@ -159289,7 +159141,7 @@ hip
 dAy
 bBa
 aFo
-uSc
+qvN
 gkW
 dcR
 dcR
@@ -159301,7 +159153,7 @@ cjC
 fPD
 eXg
 jVn
-uSc
+qvN
 vnq
 nRZ
 aLT
@@ -159527,14 +159379,14 @@ dpt
 lCs
 lox
 whJ
-uSc
+qvN
 xwI
 xwI
 qvN
 iNT
 aIH
 qhq
-uSc
+qvN
 iTH
 jIn
 hij
@@ -159546,7 +159398,7 @@ qvN
 qvN
 qvN
 iQD
-uSc
+qvN
 ifO
 dcR
 oMW
@@ -159558,7 +159410,7 @@ qvN
 qvN
 qvN
 viG
-aEf
+kSZ
 vnq
 kTu
 mcp
@@ -159784,14 +159636,14 @@ dpt
 spU
 lox
 whJ
-uSc
+qvN
 mVT
 aAG
 qvN
 qvN
 qvN
 aOt
-uSc
+qvN
 aOP
 adj
 aEe
@@ -159803,7 +159655,7 @@ rTT
 aNL
 rTT
 aNL
-uSc
+qvN
 tNE
 dcR
 dcR
@@ -159815,7 +159667,7 @@ aMw
 aOc
 fzq
 aNL
-aEf
+kSZ
 vnq
 kTu
 sxj
@@ -160041,14 +159893,14 @@ lFl
 kcz
 lox
 whJ
-uSc
+qvN
 wpL
 aAG
 qvN
 aGK
 aIH
 aOt
-uSc
+qvN
 aDr
 jVn
 aNn
@@ -160060,7 +159912,7 @@ gBM
 tRF
 aIX
 tDR
-uSc
+qvN
 xeu
 rKZ
 sAZ
@@ -160072,7 +159924,7 @@ pzT
 iXT
 gBM
 dxq
-aEf
+kSZ
 vnq
 nRZ
 aLT
@@ -160298,26 +160150,26 @@ fSq
 kZV
 lox
 whJ
-uSc
+qvN
 wAG
 dEq
 qvN
 qvN
 qvN
 qvN
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-uSc
-vkF
-uSc
-uSc
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+qvN
+sWc
+qvN
+qvN
 aMD
-uSc
+qvN
 qvN
 qvN
 qvN
@@ -160329,7 +160181,7 @@ sWc
 sWc
 qvN
 aMD
-uSc
+qvN
 vnq
 kTu
 sxj
@@ -160555,7 +160407,7 @@ fSq
 hDO
 lox
 whJ
-uSc
+qvN
 aNm
 xwI
 rpQ
@@ -160586,7 +160438,7 @@ aAG
 aAG
 kWZ
 kWZ
-uSc
+qvN
 vnq
 eBS
 oUZ
@@ -160812,7 +160664,7 @@ fSq
 wsS
 lox
 whJ
-aEf
+kSZ
 toc
 aAG
 sBr
@@ -160843,7 +160695,7 @@ aEw
 aCZ
 cgB
 dnG
-aEf
+kSZ
 kbi
 iWY
 iWY
@@ -161069,38 +160921,38 @@ fSq
 wsS
 lox
 nPz
-aEf
-aEf
+kSZ
+kSZ
 oFq
 oFq
 oFq
 oFq
-uSc
-uSc
-aEf
-aEf
-uSc
-uSc
-uSc
-uSc
-aEf
-aEf
-aEf
-aEf
-aEf
-aEf
-uSc
-uSc
-uSc
-uSc
-uSc
-aEf
-aEf
-aEf
-uSc
-uSc
-uSc
-uSc
+qvN
+qvN
+kSZ
+kSZ
+qvN
+qvN
+qvN
+qvN
+kSZ
+kSZ
+kSZ
+kSZ
+kSZ
+kSZ
+qvN
+qvN
+qvN
+qvN
+qvN
+kSZ
+kSZ
+kSZ
+qvN
+qvN
+qvN
+qvN
 rgG
 jPy
 ntk
