@@ -5982,12 +5982,6 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/city/nash/theloop)
-"axP" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/city/nash/theloop)
 "axQ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -10859,11 +10853,6 @@
 	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"aPt" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/city/nash/downtown)
 "aPu" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -11022,12 +11011,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerinner - W"
 	},
-/area/f13/wasteland/city/nash/downtown)
-"aPU" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spacevine,
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/downtown)
 "aPV" = (
 /obj/item/ammo_casing/c9mm,
@@ -11398,7 +11381,6 @@
 	anchored = 1
 	},
 /obj/machinery/light,
-/obj/item/ammo_box/shotgun/bean,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
@@ -74272,12 +74254,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
-"qAd" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2left"
-	},
-/area/f13/wasteland/massfusion/entrance)
 "qAe" = (
 /obj/structure/flora/rock/pile/largejungle{
 	icon_state = "bush3";
@@ -92497,8 +92473,6 @@
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "vAk" = (
 /obj/structure/table/wasteland,
-/obj/item/ammo_box/shotgun/bean,
-/obj/item/ammo_box/shotgun/bean,
 /obj/item/gun/ballistic/shotgun/hunting,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -137839,7 +137813,7 @@ gVf
 fBN
 eRU
 dZM
-aPU
+dRC
 aBe
 rbH
 hCc
@@ -140150,7 +140124,7 @@ kPa
 kPa
 jPv
 rSY
-aPt
+kPa
 yag
 pJW
 pnF
@@ -151150,7 +151124,7 @@ aOk
 nHY
 lmE
 axr
-axP
+gQR
 wUx
 chZ
 uvd
@@ -154209,7 +154183,7 @@ ldJ
 aUQ
 oKR
 pYa
-qAd
+cIy
 kwY
 hsJ
 odj

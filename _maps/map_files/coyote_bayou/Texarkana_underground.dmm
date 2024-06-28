@@ -3427,12 +3427,6 @@
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
-"bMy" = (
-/obj/item/ammo_casing/shotgun/buckshot,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
 "bMz" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -4174,7 +4168,6 @@
 "bQh" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/ammo_box/shotgun/slug,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
 	},
@@ -5985,10 +5978,6 @@
 	icon_state = "purplefull"
 	},
 /area/f13/caves)
-"cEo" = (
-/obj/item/ammo_casing/shotgun/improvised,
-/turf/open/floor/plasteel/freezer,
-/area/f13/caves)
 "cEI" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/f13{
@@ -6512,12 +6501,6 @@
 "dbi" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/ammo_box/shotgun/buck,
-/obj/item/ammo_box/shotgun/buck,
-/obj/item/ammo_box/shotgun/buck,
-/obj/item/ammo_box/shotgun/buck,
-/obj/item/ammo_box/shotgun/bean,
-/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},
@@ -6762,7 +6745,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dmm" = (
-/obj/item/ammo_casing/shotgun/buckshot,
 /obj/structure/wreck/trash/engine,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
@@ -10546,7 +10528,6 @@
 /area/f13/building)
 "ggk" = (
 /obj/structure/table,
-/obj/item/ammo_box/shotgun/slug,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -18179,13 +18160,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"lxU" = (
-/obj/effect/decal/fakelattice,
-/obj/item/ammo_casing/shotgun/improvised,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/f13/caves)
 "lxV" = (
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
@@ -20957,7 +20931,6 @@
 /area/f13/tunnel)
 "nsW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/shotgun/improvised,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
@@ -30436,7 +30409,6 @@
 "tPZ" = (
 /obj/structure/table/wood/settler,
 /obj/item/twohanded/legionaxe,
-/obj/item/ammo_box/shotgun/incendiary,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -31264,11 +31236,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
-"uzn" = (
-/obj/machinery/light/broken,
-/obj/item/ammo_casing/shotgun/improvised,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
 "uzo" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -72253,7 +72220,7 @@ uEV
 aaA
 vxA
 pBn
-lxU
+rFR
 bCG
 aaa
 aak
@@ -73543,7 +73510,7 @@ aaA
 ifg
 aaA
 pTg
-cEo
+lxV
 pzk
 ffU
 xXl
@@ -74306,7 +74273,7 @@ uEV
 hHu
 hHu
 uEV
-uzn
+eNE
 aaA
 onl
 hHu
@@ -75676,7 +75643,7 @@ bIj
 ceQ
 qjR
 ceQ
-bMy
+sxN
 wAv
 bSG
 boU
