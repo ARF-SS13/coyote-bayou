@@ -1,9 +1,7 @@
 
 /datum/ammo_kind/medium
 	name = "medium"
-	bullet_flavor = "A medium bullet. It's not too big, it's not too small, it's just right. The Medium Bullet was designed in 1945 by \
-		Arbus Qcmarualsdnxz, world renouned party animal who stacked two compact bullets on top of each other and wondered what if \
-		they were one bullet. And so, the Medium Bullet was born."
+	bullet_flavor = "A generic medium bullet."
 	casing_kind = "cartridge"
 	projectile_kind = "bullet"
 	box_name = "medium bullet box"
@@ -17,6 +15,13 @@
 		a single magazine. Typically used by assault rifles and heavy pistols."
 	caliber = CALIBER_MEDIUM
 	ammo_icon = 'icons/obj/ammo/medium.dmi'
+	damage_list = list(
+		"30" = 25,
+		"45" = 55,
+		"60" = 15,
+		"75" = 4,
+		"200" = 1
+	)
 
 // Example
 
@@ -90,3 +95,18 @@
 	magazine_name = "4.73mm Caseless magazine"
 	magazine_flavor = "A magazine of 4.73mm Caseless bullets."
 
+/datum/ammo_kind/medium/q_939
+	name = "9x39 Soviet"
+	bullet_flavor = "The 9×39 is based on the Soviet 7.62×39mm case, but with the neck expanded to fit a 9.2mm bullet."
+	box_name = "9x39 Soviet ammo box"
+	crate_name = "9x39 Soviet ammo crate"
+	magazine_name = "9x39 Soviet magazine"
+	magazine_flavor = "A magazine of 9x39 Soviet bullets."
+
+/datum/ammo_kind/medium/q_5728mm
+	name = "5.7×28mm NATO"
+	bullet_flavor = "The FN 5.7×28mm is a small-caliber, high-velocity, smokeless-powder, rebated, non-tapered, bottleneck, centerfire cartridge designed for pistols and personal defense weapons (PDW) uses, manufactured by FN Herstal."
+	box_name = "5.7×28mm NATO ammo box"
+	crate_name = "5.7×28mm NATO ammo crate"
+	magazine_name = "5.7×28mm NATO magazine"
+	magazine_flavor = "A magazine of 5.7×28mm NATO bullets."

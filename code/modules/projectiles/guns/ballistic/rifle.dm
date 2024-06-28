@@ -103,11 +103,13 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	ammo_kind = /datum/ammo_kind/compact/q_357
+	ammo_capacity = 12
+
 /* * * * * * * * * * * * * * * *
 * .22LR Lever Action Rifle
 * 20 round capacity
 * My hands are stupid and I must game
-* 我的社會信用太低所以我不能離開家
 * Its In .22 I Don't Know What Else I Can Put Here
 * * * * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/rifle/repeater/trainer
@@ -134,6 +136,9 @@
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 20
 
 /* * * * * * * * * * * * * * * *
 * .22LR Mares Leg
@@ -167,6 +172,9 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 20
+
 /* * * * * * * * * * * * * * * *
 * Volcanic pistol
 * -6 round capacity
@@ -196,6 +204,9 @@
 	)
 	reskinnable_component = /datum/component/reskinnable/volcanic
 
+	ammo_kind = /datum/ammo_kind/compact/q_45
+	ammo_capacity = 5
+
 /* * * * * * * * * * *
  * Coyote Repeater
  * Baseline Repeater Tribal Skin
@@ -211,7 +222,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -240,6 +251,9 @@
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+	ammo_kind = /datum/ammo_kind/medium/q_44
+	ammo_capacity = 12
+
 /* * * * * * * * * * *
  * Trail Repeater Tribal
  * Rain Stick
@@ -255,7 +269,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = RIFLE_RECOIL(1, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -285,6 +299,9 @@
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
+	ammo_kind = /datum/ammo_kind/long/q_4570
+	ammo_capacity = 10
+
 /* * * * * * * * * * *
  * Brush Repeater Tribal
  * Medicine Stick
@@ -300,7 +317,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -331,6 +348,10 @@
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
+
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 7
+
 /* * * * * * * * * * *
  * Ranger repeater tribal
  * Smell-The-Roses
@@ -346,7 +367,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -411,6 +432,9 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	ammo_kind = /datum/ammo_kind/long/q_3006
+	ammo_capacity = 5
+
 /obj/item/gun/ballistic/rifle/hunting/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -428,7 +452,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -457,6 +481,9 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 5
 
 /obj/item/gun/ballistic/rifle/hunting/remington/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -492,6 +519,9 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+
+	ammo_kind = /datum/ammo_kind/long/q_3006
+	ammo_capacity = 3
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -538,6 +568,9 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	ammo_kind = /datum/ammo_kind/long/q_76254r
+	ammo_capacity = 5
+
 //lee speed
 /obj/item/gun/ballistic/rifle/leespeedster
 	name = "Lee Einfield 'Speed' rifle."
@@ -560,6 +593,9 @@
 		/datum/firemode/semi_auto/fastest
 	)
 
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 10
+
 /obj/item/gun/ballistic/rifle/mosin/mini
 	name = "Mini-mosin"
 	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
@@ -576,6 +612,9 @@
 	transform *= 0.6
 	special_transform = transform
 
+	ammo_kind = /datum/ammo_kind/compact/q_22lr
+	ammo_capacity = 5
+
 /* * * * * * * * * * *
  * Laser Mosin Bolt-Action Rifle
  * Moist Bolt-Action Laser
@@ -591,6 +630,8 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
 
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 5
 
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
@@ -629,6 +670,9 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = /datum/component/reskinnable/enfield
+
+	ammo_kind = /datum/ammo_kind/long/q_308
+	ammo_capacity = 10
 
 /obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
 	..()
@@ -692,7 +736,10 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
+	is_revolver = TRUE
 
+	ammo_kind = /datum/ammo_kind/long/q_3006
+	ammo_capacity = 1
 
 /obj/item/gun/ballistic/rifle/antique/tankgun
 	name = "Mauser TankGewehr M1918"
@@ -713,12 +760,16 @@
 	can_scope = FALSE
 	can_bayonet = FALSE
 	can_suppress = FALSE
+	is_revolver = TRUE
 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 1
 
 /obj/item/gun/ballistic/rifle/antique/tankgun/custom
 	name = "Custom TankGewehr M1918"
@@ -770,6 +821,10 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	is_revolver = TRUE
+
+	ammo_kind = /datum/ammo_kind/long/q_3006
+	ammo_capacity = 1
 
 /obj/item/gun/ballistic/rifle/antique/gross/marty
 	name = "sawed off Martini Henry"
@@ -816,6 +871,9 @@
 		/datum/firemode/semi_auto/slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
+	ammo_capacity = 30
 
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -972,6 +1030,9 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 5
+
 /obj/item/gun/ballistic/rifle/mag/antimaterial/loadout
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Not only lacks an iron sight, but due to unmaintained age it doesn't punch as hard."
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
@@ -1001,7 +1062,8 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
-
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 10
 
 /obj/item/gun/ballistic/rifle/mauserrifle
 	name = "Mauser Model 1871"
@@ -1015,7 +1077,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T4
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = RIFLE_RECOIL (1.4 , 0.9)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -1027,6 +1089,9 @@
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/fg42.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 8
 
 /obj/item/gun/ballistic/rifle/gewehr88
 	name = "Model 1888 commission rifle"
@@ -1040,7 +1105,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	init_recoil = RIFLE_RECOIL (1.2 , 0.7)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -1055,7 +1120,8 @@
 	force = 30
 	force_wielded = 35
 
-
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 8
 
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
@@ -1080,6 +1146,9 @@
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+	ammo_kind = /datum/ammo_kind/long/q_50bmg
+	ammo_capacity = 3
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting

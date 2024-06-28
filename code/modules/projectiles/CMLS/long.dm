@@ -22,10 +22,10 @@
 	sound_properties = CSP_RIFLE_HEAVY
 	ammo_icon = 'icons/obj/ammo/long.dmi'
 	damage_list = list(
-		"50" = 40,
-		"75" = 10,
-		"1" = 1,
-		"1000" = 1,
+		"45" = 30,
+		"60" = 65,
+		"75" = 4,
+		"200" = 1
 	)
 
 // Example
@@ -75,3 +75,11 @@
 	crate_name = "crate of .50 BMG bullets"
 	magazine_name = ".50 BMG magazine"
 	magazine_flavor = "A magazine of .50 BMG bullets."
+
+/datum/ammo_kind/long/q_76254r
+	name = "7.62x54mmR Russian"
+	bullet_flavor = "The 7.62×54mmR is a rimmed rifle cartridge developed by the Russian Empire and introduced as a service cartridge in 1891."
+	box_name = "box of 7.62x54mmR Russian bullets"
+	crate_name = "crate of 7.62x54mmR Russian bullets"
+	magazine_name = "7.62x54mmR Russian magazine"
+	magazine_flavor = "A magazine of 7.62x54mmR Russian bullets."

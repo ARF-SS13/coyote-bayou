@@ -18,14 +18,13 @@
 	caliber = CALIBER_SHOTGUN
 	sound_properties = CSP_SHOTGUN
 	ammo_icon = 'icons/obj/ammo/shotgun.dmi'
-	pellet_count = 8
+	pellet_count = 4
 	damage_list = list(
-		"15" = 40,
-		"20" = 10,
-		"25" = 1,
-		"40" = 1,
+		"11.25" = 55,
+		"15" = 35,
+		"18.75" = 9,
+		"50" = 1,
 	)
-
 
 /datum/ammo_kind/shotgun/q_12_gauge
 	name = "12 gauge buckshot"

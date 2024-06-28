@@ -18,10 +18,10 @@
 	sound_properties = CSP_PISTOL_LIGHT
 	ammo_icon = 'icons/obj/ammo/compact.dmi'
 	damage_list = list(
-		"30" = 30,
-		"35" = 10,
-		"40" = 1,
-		"200" = 1,
+		"30" = 60,
+		"45" = 30,
+		"60" = 9,
+		"200" = 1
 	)
 
 // Example
@@ -61,12 +61,12 @@
 	sound_properties = CSP_PISTOL_357
 
 /datum/ammo_kind/compact/q_9mm
-	name = "9mm Parabellum"
+	name = "9x19mm Parabellum"
 	bullet_flavor = "Originally designed by Austrian firearm designer Georg Luger in 1901, it is widely considered the most popular handgun and submachine gun cartridge due to its low cost, adequate stopping power and extensive availability."
-	box_name = "box of 9mm Parabellum bullets"
-	crate_name = "crate of 9mm Parabellum bullets"
-	magazine_name = "9mm Parabellum magazine"
-	magazine_flavor = "A magazine fitting 9mm Parabellum bullets."
+	box_name = "box of 9x19mm Parabellum bullets"
+	crate_name = "crate of 9x19mm Parabellum bullets"
+	magazine_name = "9x19mm Parabellum magazine"
+	magazine_flavor = "A magazine fitting 9x19mm Parabellum bullets."
 	sound_properties = CSP_PISTOL_9MM
 
 /datum/ammo_kind/compact/q_10mm
