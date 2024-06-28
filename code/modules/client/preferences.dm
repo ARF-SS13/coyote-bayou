@@ -2,6 +2,105 @@
 #define HANDS_SLOT_AMT		2
 #define BACKPACK_SLOT_AMT	4
 
+#define DEFAULT_FEATURES list(\
+		"mcolor" = "CCCCCC",\
+		"mcolor2" = "EEEEEE",\
+		"mcolor3" = "777777",\
+		"tail_lizard" = "Fox",\
+		"tail_human" = "Fox",\
+		"snout" = "Mammal, Long",\
+		"horns" = "None",\
+		"horns_color" = "85615a",\
+		"blood_color" = "",\
+		"ears" = "Fox",\
+		"wings" = "None",\
+		"wings_color" = "FFF",\
+		"frills" = "None",\
+		"deco_wings" = "None",\
+		"spines" = "None",\
+		"legs" = "Digitigrade",\
+		"insect_wings" = "Plain",\
+		"insect_fluff" = "None",\
+		"insect_markings" = "None",\
+		"arachnid_legs" = "Plain",\
+		"arachnid_spinneret" = "Plain",\
+		"arachnid_mandibles" = "Plain",\
+		"mam_body_markings" = list(),\
+		"mam_ears" = "Fox",\
+		"mam_snouts" = "Mammal, Long",\
+		"mam_tail" = "Fox",\
+		"mam_tail_animated" = "Fox",\
+		"derg_body" = "Smooth Dragon Body",\
+		"derg_belly" = "None",\
+		"derg_horns" = "None",\
+		"derg_mane" = "None",\
+		"derg_ears" = "Fox",\
+		"derg_eyes" = "None",\
+		"xenodorsal" = "Standard",\
+		"xenohead" = "Standard",\
+		"xenotail" = "Xenomorph Tail",\
+		"taur" = "None",\
+		"genitals_use_skintone" = FALSE,\
+		"has_cock" = FALSE,\
+		"cock_shape" = DEF_COCK_SHAPE,\
+		"cock_size" = COCK_SIZE_DEF,\
+		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,\
+		"cock_color" = "ffffff",\
+		"cock_taur" = FALSE,\
+		"has_balls" = FALSE,\
+		"balls_color" = "ffffff",\
+		"balls_shape" = DEF_BALLS_SHAPE,\
+		"balls_size" = BALLS_SIZE_DEF,\
+		"balls_cum_rate" = CUM_RATE,\
+		"balls_cum_mult" = CUM_RATE_MULT,\
+		"balls_efficiency" = CUM_EFFICIENCY,\
+		"has_breasts" = FALSE,\
+		"breasts_color" = "ffffff",\
+		"breasts_size" = BREASTS_SIZE_DEF,\
+		"breasts_shape" = DEF_BREASTS_SHAPE,\
+		"breasts_producing" = FALSE,\
+		"has_butt" = FALSE,\
+		"butt_color" = "ffffff",\
+		"butt_size" = BUTT_SIZE_DEF,\
+		"has_belly" = FALSE,\
+		"belly_color" = "ffffff",\
+		"belly_size" = BELLY_SIZE_DEF,\
+		"belly_shape" = DEF_BELLY_SHAPE,\
+		"has_vag" = FALSE,\
+		"vag_shape" = DEF_VAGINA_SHAPE,\
+		"vag_color" = "ffffff",\
+		"has_womb" = FALSE,\
+		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,\
+		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"butt_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"belly_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"balls_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"breasts_visibility_flags"= GEN_VIS_FLAG_DEFAULT,\
+		"cock_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,\
+		"genital_order" = DEF_COCKSTRING,\
+		"genital_hide" = NONE,\
+		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",\
+		"ipc_screen" = "Sunburst",\
+		"ipc_antenna" = "None",\
+		"flavor_text" = "",\
+		"silicon_flavor_text" = "",\
+		"ooc_notes" = "",\
+		"background_info_notes" = "",\
+		"flist" = "",\
+		"meat_type" = "Mammalian",\
+		"taste" = "something",\
+		"body_model" = MALE,\
+		"body_size" = RESIZE_DEFAULT_SIZE,\
+		"body_width" = RESIZE_DEFAULT_WIDTH,\
+		"color_scheme" = OLD_CHARACTER_COLORING,\
+		"chat_color" = "whoopsie")
+
 GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences
@@ -11,6 +110,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/vr_path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 	var/max_save_slots = 30
+	var/lockdown = FALSE // prevents any funny business while we delete
 
 	//non-preference stuff
 	var/muted = 0
@@ -171,106 +271,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
 	var/alt_appearance = "Default"
 	var/admin_wire_tap = TRUE
-	var/list/features = list(
-		"mcolor" = "FFFFFF",
-		"mcolor2" = "FFFFFF",
-		"mcolor3" = "FFFFFF",
-		"tail_lizard" = "Smooth",
-		"tail_human" = "None",
-		"snout" = "Round",
-		"horns" = "None",
-		"horns_color" = "85615a",
-		"blood_color" = "",
-		"ears" = "None",
-		"wings" = "None",
-		"wings_color" = "FFF",
-		"frills" = "None",
-		"deco_wings" = "None",
-		"spines" = "None",
-		"legs" = "Plantigrade",
-		"insect_wings" = "Plain",
-		"insect_fluff" = "None",
-		"insect_markings" = "None",
-		"arachnid_legs" = "Plain",
-		"arachnid_spinneret" = "Plain",
-		"arachnid_mandibles" = "Plain",
-		"mam_body_markings" = list(),
-		"mam_ears" = "None",
-		"mam_snouts" = "None",
-		"mam_tail" = "None",
-		"mam_tail_animated" = "None",
-		"derg_body" = "Smooth Dragon Body",
-		"derg_belly" = "None",
-		"derg_horns" = "None",
-		"derg_mane" = "None",
-		"derg_ears" = "None",
-		"derg_eyes" = "None",
-		"xenodorsal" = "Standard",
-		"xenohead" = "Standard",
-		"xenotail" = "Xenomorph Tail",
-		"taur" = "None",
-		"genitals_use_skintone" = FALSE,
-		"has_cock" = FALSE,
-		"cock_shape" = DEF_COCK_SHAPE,
-		"cock_size" = COCK_SIZE_DEF, // didnt use the same naming convention, what a dick
-		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,
-		"cock_color" = "ffffff",
-		"cock_taur" = FALSE,
-		"has_balls" = FALSE,
-		"balls_color" = "ffffff",
-		"balls_shape" = DEF_BALLS_SHAPE,
-		"balls_size" = BALLS_SIZE_DEF,
-		"balls_cum_rate" = CUM_RATE,
-		"balls_cum_mult" = CUM_RATE_MULT,
-		"balls_efficiency" = CUM_EFFICIENCY,
-		"has_breasts" = FALSE,
-		"breasts_color" = "ffffff",
-		"breasts_size" = BREASTS_SIZE_DEF,
-		"breasts_shape" = DEF_BREASTS_SHAPE,
-		"breasts_producing" = FALSE,
-		"has_butt" = FALSE,
-		"butt_color" = "ffffff",
-		"butt_size" = BUTT_SIZE_DEF,
-		"has_belly" = FALSE,
-		"belly_color" = "ffffff",
-		"belly_size" = BELLY_SIZE_DEF,
-		"belly_shape" = DEF_BELLY_SHAPE,
-		"has_vag" = FALSE,
-		"vag_shape" = DEF_VAGINA_SHAPE,
-		"vag_color" = "ffffff",
-		"has_womb" = FALSE,
-		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,
-		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"butt_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"belly_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"balls_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"breasts_visibility_flags"= GEN_VIS_FLAG_DEFAULT,
-		"cock_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
-		"genital_order" = DEF_COCKSTRING,
-		"genital_hide" = NONE,
-		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
-		"ipc_screen" = "Sunburst",
-		"ipc_antenna" = "None",
-		"flavor_text" = "",
-		"silicon_flavor_text" = "",
-		"ooc_notes" = "",
-		"background_info_notes" = "",
-		"flist" = "",
-		"meat_type" = "Mammalian",
-		"taste" = "something",
-		"body_model" = MALE,
-		"body_size" = RESIZE_DEFAULT_SIZE,
-		"body_width" = RESIZE_DEFAULT_WIDTH,
-		"color_scheme" = OLD_CHARACTER_COLORING,
-		"chat_color" = "whoopsie"
-		)
-
+	var/list/features = DEFAULT_FEATURES
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
 	var/modified_limbs = list() //prosthetic/amputated limbs
@@ -1773,6 +1774,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<hr><center>"
 
 	if(!IsGuestKey(user.key))
+		dat += "<a href='?_src_=prefs;preference=delete_character'>Delete</a> "
 		dat += "<a href='?_src_=prefs;preference=load'>Undo</a> "
 		dat += "<a href='?_src_=prefs;preference=save'>Save Setup</a> "
 
@@ -2462,6 +2464,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	save_preferences()
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
+	if(lockdown)
+		return
 	. = ..()
 	if(href_list["close"])
 		var/client/C = usr.client
@@ -2469,6 +2473,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			C.clear_character_previews()
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
+	if(lockdown)
+		return
 	if(href_list["jobbancheck"])
 		var/datum/db_query/query_get_jobban = SSdbcore.NewQuery(
 			"SELECT reason, bantime, duration, expiration_time, IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].a_ckey), a_ckey) FROM [format_table_name("ban")] WHERE ckey = :ckey AND (bantype = 'JOB_PERMABAN'  OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned) AND job = :job",
@@ -4263,8 +4269,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					load_preferences()
 					load_character()
 
+				if("delete_character")
+					run_deletion_song_and_dance()
+
 				if("changeslot")
 					if(!load_character(text2num(href_list["num"])))
+						initialize_preferences() // just so we dont carry over literally everything from the last character
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
@@ -4417,8 +4427,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!roundstart_checks || (pref_species.id in GLOB.roundstart_races))
 		chosen_species = pref_species.type
 	else
-		chosen_species = /datum/species/human
-		pref_species = new /datum/species/human
+		chosen_species = /datum/species/mammal
+		pref_species = new /datum/species/mammal
 		save_character()
 
 	var/old_size = character.dna.features["body_size"]
@@ -4629,6 +4639,176 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/find_gear = has_loadout_gear(save_slot, gear_type)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
+
+/// sux0rs I gotta do this, but hey, I love to sux0r my cox0r
+/datum/preferences/proc/initialize_preferences()
+	pda_style                     = initial(pda_style)
+	pda_color                     = initial(pda_color)
+	pda_skin                      = initial(pda_skin)
+	pda_ringmessage                = initial(pda_ringmessage)
+	my_shark                      = initial(my_shark)
+	genital_whitelist             = initial(genital_whitelist)
+	whoflags                      = initial(whoflags)
+	uses_glasses_colour           = initial(uses_glasses_colour)
+	show_in_directory             = initial(show_in_directory)
+	directory_tag                 = initial(directory_tag)
+	directory_erptag              = initial(directory_erptag)
+	directory_ad                  = initial(directory_ad)
+	real_name                     = initial(real_name)
+	be_random_name                = initial(be_random_name)
+	be_random_body                = initial(be_random_body)
+	gender                        = initial(gender)
+	age                           = initial(age)
+	view_pixelshift               = initial(view_pixelshift)
+	enable_personal_chat_color    = initial(enable_personal_chat_color)
+	personal_chat_color           = initial(personal_chat_color)
+	lust_tolerance                = initial(lust_tolerance)
+	sexual_potency                = initial(sexual_potency)
+	unholypref                    = initial(unholypref)
+	preview_hide_undies           = initial(preview_hide_undies)
+	undershirt_overclothes        = initial(undershirt_overclothes)
+	undies_overclothes            = initial(undies_overclothes)
+	socks_overclothes             = initial(socks_overclothes)
+	underwear_overhands           = initial(underwear_overhands)
+	underwear                     = initial(underwear)
+	undie_color                   = initial(undie_color)
+	undershirt                    = initial(undershirt)
+	shirt_color                   = initial(shirt_color)
+	socks                         = initial(socks)
+	socks_color                   = initial(socks_color)
+	backbag                       = initial(backbag)
+	jumpsuit_style                = initial(jumpsuit_style)
+	hair_style                    = initial(hair_style)
+	hair_style_2                  = initial(hair_style_2)
+	hair_color                    = initial(hair_color)
+	facial_hair_style             = initial(facial_hair_style)
+	facial_hair_color             = initial(facial_hair_color)
+	skin_tone                     = initial(skin_tone)
+	use_custom_skin_tone          = initial(use_custom_skin_tone)
+	left_eye_color                = initial(left_eye_color)
+	right_eye_color               = initial(right_eye_color)
+	eye_type                      = initial(eye_type)
+	split_eye_colors              = initial(split_eye_colors)
+	tbs                           = initial(tbs)
+	kisser                        = initial(kisser)
+	dm_open                       = initial(dm_open)
+	needs_a_friend                = initial(needs_a_friend)
+	saved_finished_quests_old     = list()
+	saved_finished_quests         = list()
+	number_of_finished_quests     = initial(number_of_finished_quests)
+	historical_banked_points      = initial(historical_banked_points)
+	saved_active_quests           = list()
+	anticipated_daily_change      = initial(anticipated_daily_change)
+	saved_unclaimed_points        = initial(saved_unclaimed_points)
+	last_quest_login              = initial(last_quest_login)
+	days_spawned_in               = list()
+	quest_bank_editor_prefs       = list()
+	show_health_smilies           = initial(show_health_smilies)
+	alt_appearance                = initial(alt_appearance)
+	admin_wire_tap                = initial(admin_wire_tap)
+	features                      = DEFAULT_FEATURES // SUFFER
+	custom_speech_verb            = initial(custom_speech_verb)
+	custom_tongue                 = initial(custom_tongue)
+	modified_limbs                = initial(modified_limbs)
+	chosen_limb_id                = initial(chosen_limb_id)
+	security_records              = initial(security_records)
+	medical_records               = initial(medical_records)
+	custom_names                  = list()
+	preferred_ai_core_display     = initial(preferred_ai_core_display)
+	prefered_security_department  = initial(prefered_security_department)
+	custom_species                = initial(custom_species)
+	creature_species              = initial(creature_species)
+	creature_name                 = initial(creature_name)
+	creature_flavor_text          = initial(creature_flavor_text)
+	creature_ooc                  = initial(creature_ooc)
+	creature_image                = initial(creature_image)
+	creature_profilepic           = initial(creature_profilepic)
+	creature_pfphost              = initial(creature_pfphost)
+	creature_body_size            = initial(creature_body_size)
+	creature_fuzzy                = initial(creature_fuzzy)
+	char_quirks                   = list()
+	all_quirks                    = list()
+	quirk_category                = initial(quirk_category)
+	job_preferences               = list()
+	joblessrole                   = initial(joblessrole)
+	current_tab                   = initial(current_tab)
+	erp_tab_page                  = initial(erp_tab_page)
+	unlock_content                = initial(unlock_content)
+	uplink_spawn_loc              = initial(uplink_spawn_loc)
+	show_mismatched_markings      = initial(show_mismatched_markings)
+	gear_points                   = initial(gear_points)
+	gear_categories               = null
+	chosen_gear                   = list()
+	loadout_data                  = list()
+	loadout_slot                  = initial(loadout_slot)
+	gear_category                 = initial(gear_category)
+	gear_subcategory              = initial(gear_subcategory)
+	eye_over_hair                 = initial(eye_over_hair)
+	persistent_scars              = initial(persistent_scars)
+	scars_list                    = list("1" = "", "2" = "", "3" = "", "4" = "", "5" = "")
+	scars_index                   = initial(scars_index)
+	hide_ckey                     = initial(hide_ckey)
+	special_s                     = initial(special_s)
+	special_p                     = initial(special_p)
+	special_e                     = initial(special_e)
+	special_c                     = initial(special_c)
+	special_i                     = initial(special_i)
+	special_a                     = initial(special_a)
+	special_l                     = initial(special_l)
+	custom_pixel_x                = initial(custom_pixel_x)
+	custom_pixel_y                = initial(custom_pixel_y)
+	permanent_tattoos             = initial(permanent_tattoos)
+	matchmaking_prefs             = list()
+	fuzzy                         = initial(fuzzy)
+	waddle_amount                 = initial(waddle_amount)
+	up_waddle_time                = initial(up_waddle_time)
+	side_waddle_time              = initial(side_waddle_time)
+	input_mode_hotkey             = initial(input_mode_hotkey)
+	pref_species                  = new /datum/species/mammal()
+	quester_uid                   = generate_quester_id()
+
+/datum/preferences/proc/run_deletion_song_and_dance()
+	lockdown = TRUE
+	/// stage one, ask if they are sure, and detail the fact that this will delete the character forever
+	/// with no chance of retrieval
+	var/stage1text = "You have clicked the button that will delete [real_name]. If you go through with this, [real_name] will \
+		be deleted, forever. There are no backups available, and no way to retrieve [real_name] once deleted. All of your \
+		flavor texts, quirks, and preferences associated with [real_name] will be lost, permanently and forever. The only things that will \
+		remain of [real_name] are things you have written down or screenshotted. Are you sure you want to delete [real_name]?"
+	var/choose = alert(usr, stage1text, "Character Deletion", "Yes, Delete This Character Forever", "NO WAIT I CHANGED MY MIND")
+	if(choose != "Yes, Delete This Character Forever")
+		lockdown = FALSE
+		to_chat(usr, span_green("Your character remains safe and sound."))
+		return
+	/// stage two, ask if they are really sure, and ask if they'd like to go back and save their flavor text or keep a screenshot of their prefs
+	/// a chance to back out, but also a chance to save some stuff
+	var/stage2text = "Are you absolutely sure you want to delete [real_name]? Have you saved their flavor text, OOC notes, or any other \
+		information you want to keep? You might also want to take a screenshot of [real_name]'s preferences, just in case you want to \
+		recreate them later. Again, there are no backups of [real_name] stored on the server or anywhere else, and there is no possible way \
+		to undo this or retrieve any data relating to [real_name]. Once deleted, [real_name] is *gone* for *good*. \
+		Are you sure you want to delete [real_name]?"
+	var/choose2 = alert(usr, stage2text, "Character Deletion", "Yes, Delete This Character Forever", "NO WAIT I CHANGED MY MIND")
+	if(choose2 != "Yes, Delete This Character Forever")
+		lockdown = FALSE
+		to_chat(usr, span_green("Your character remains safe and sound."))
+		return
+	/// stage three, have them type in the name of the character to confirm they really want to delete it
+	var/confirmtext = "To confirm that you really want to delete [real_name], type in their name exactly as it appears in the text box below. \
+		Please be careful, as this is your last chance to back out of deleting [real_name]. Again, just to be clear, the file structure \
+		that we use with BYOND to save your individual characters does not allow for any feasible method of backing up or restoring \
+		deleted characters. Once you delete [real_name], they are gone forever. Please confirm that you want to delete [real_name] by typing \
+		their name in the box below."
+	var/confirm = input(usr, confirmtext, "Character Deletion") as text|null
+	if(confirm != real_name)
+		lockdown = FALSE
+		to_chat(usr, span_green("Your character remains safe and sound."))
+		return
+	/// stage four, actually delete the character
+	log_game("[parent.ckey] has deleted [real_name] via the preferences menu. [real_name] is gone, forever. RIP.")
+	to_chat(usr, span_danger("So be it. Deleting [real_name]..."))
+	delete_character(default_slot, real_name)
+	to_chat(usr, span_danger("Character deletion complete. They are gone, forever."))
+	lockdown = FALSE
 
 /datum/preferences/proc/get_my_quirks()
 	if(!LAZYLEN(char_quirks))

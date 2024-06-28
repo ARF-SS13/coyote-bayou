@@ -68,6 +68,7 @@ All foods are distributed among various categories. Use common sense.
 	var/customfoodfilling = 1 // whether it can be used as filling in custom food
 	var/dunkable = FALSE // for dunkable food, make true
 	var/dunk_amount = 10 // how much reagent is transferred per dunk
+	var/inedible = FALSE // for inedible food, make true
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 
@@ -110,7 +111,7 @@ All foods are distributed among various categories. Use common sense.
 	return TRUE
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent == INTENT_HARM || inedible)
 		return ..()
 	INVOKE_ASYNC(src,PROC_REF(attempt_forcefeed), M, user)
 
@@ -178,7 +179,7 @@ All foods are distributed among various categories. Use common sense.
 								span_notice("You unwillingly [eatverb] \the [src]."))
 					//if((600 * (1 + M.overeatduration / 1000)) to INFINITY) // Had to change this to a const, sorry if it don't work! Can convert it to an if else statemetnt but I'm lazy.
 					if(650 to INFINITY)
-						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS) || forced)
 							M.visible_message(
 								span_notice("[M] gluttonously [eatverb]s \the [src], cramming it down [M.p_their()] throat!"), 
 								span_notice("You gluttonously [eatverb] \the [src], cramming it down your throat!"))

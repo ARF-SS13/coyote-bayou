@@ -670,7 +670,8 @@ GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
 	/obj/item/stack/sheet/sinew,
 	/obj/item/stack/sheet/bone,
 	/obj/item/fishy,
-	/obj/item/disk/plantgene
+	/obj/item/disk/plantgene,
+	/obj/item/pearl,
 	)))
 
 GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(

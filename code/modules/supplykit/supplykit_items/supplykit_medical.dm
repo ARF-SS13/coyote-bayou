@@ -27,14 +27,14 @@
 	name = "Type 1 First Aid Kit"
 	desc = "A kit containing large amounts of gauze, some sutures, and a stimpak"
 	item = /obj/item/storage/firstaid/regular
-	cost = 20
+	cost = 50
 	important = TRUE
 
 /datum/supplykit_item/medical/firstaid2
 	name = "Type 2 First Aid Kit"
 	desc = "A kit containing a wide variety of medical supplies, including gauze, sutures, a stim, and more."
 	item = /obj/item/storage/firstaid/ancient
-	cost = 20
+	cost = 50
 	important = TRUE
 
 /datum/supplykit_item/medical/blood
@@ -92,13 +92,13 @@
 	item = /obj/item/gun/medbeam
 	cost = 70
 
-/* burns aren't implimented
+
 /datum/supplykit_item/medical/ointment
 	name = "Ointment"
 	desc = "A tube of soothing ointment that heals burns and animals."
 	item = /obj/item/stack/medical/ointment
 	cost = 10
-*/
+
 
 /datum/supplykit_item/medical/charcoalsyringe
 	name = "Charcoal Syringe"

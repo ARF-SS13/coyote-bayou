@@ -238,6 +238,11 @@
 	desc = "Better not forget these flowers"
 	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
 
+/obj/structure/flora/wasteplant/forgetmenot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "forget ye thot"
+
 /obj/structure/flora/wasteplant/geranium
 	name = "geranium"
 	icon_state = "geranium"

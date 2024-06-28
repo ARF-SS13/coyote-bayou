@@ -128,13 +128,6 @@
 	total_positions = -1
 	spawn_positions = -1
 	outfit = /datum/outfit/job/den/f13settler
-	loadout_options = list(
-		/datum/outfit/loadout/provisioner,
-		/datum/outfit/loadout/groundskeeper,
-		/datum/outfit/loadout/artisan,
-		/datum/outfit/loadout/outdoorsman,
-		/datum/outfit/loadout/busker,
-	)
 
 //////////////////////////////
 /// Citizen

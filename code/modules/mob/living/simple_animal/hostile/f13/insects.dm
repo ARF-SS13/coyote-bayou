@@ -689,7 +689,7 @@
 
 /mob/living/simple_animal/hostile/pillbug/leader/Initialize()
 	.=..()
-	resize = 3.0
+	resize = 2.0
 	update_transform()
 
 /mob/living/simple_animal/hostile/pillbug/leader/become_the_mob(mob/user)

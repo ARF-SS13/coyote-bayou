@@ -82,6 +82,29 @@
 	charges++
 	charge_timer = addtimer(CALLBACK(src,PROC_REF(charge)), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
+/obj/item/gun/magic/UpdateAmmoCountOverlay()
+	if(isturf(loc))//Only show th ammo count if the magazine is, like, in an inventory or something. Mags on the ground don't need a big number on them, that's ugly.
+		maptext = ""
+	else
+		var/txte = ""
+		var/culur = "#FF0000"
+		var/shots_max = max_charges
+		var/shots_remaining = charges
+		if(shots_remaining >= shots_max)
+			culur = "#00FFFF"
+		else if(shots_remaining >= shots_max * 0.75)
+			culur = "#00FF00"
+		else if(shots_remaining >= shots_max * 0.5)
+			culur = "#FFFF00"
+		else if(shots_remaining >= shots_max * 0.25)
+			culur = "#FFA500"
+		else if(shots_remaining > 0)
+			culur = "#FF0000"
+		else
+			culur = "#FF00FF"
+		txte = "[shots_remaining]/[shots_max]"
+		maptext = "<font color='[culur]'><b>[txte]</b></font>"
+
 /obj/item/gun/magic/vv_edit_var(var_name, var_value)
 	. = ..()
 	switch(var_name)
