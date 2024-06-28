@@ -1027,7 +1027,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
