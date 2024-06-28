@@ -1458,9 +1458,8 @@
 
 /mob/living/simple_animal/advanced/plantmouth
 	name = "Venus Human Trap"
-	id = "venus_human_trap"
-	simple_icon = 'icons/effects/spacevines.dmi'
-	icon_width = 32
+	desc = "A planty monster with a smile the size of your head"
+	icon = 'icons/effects/spacevines.dmi'
 	icon_state = "venus_human_trap"
 	icon_living = "venus_human_trap"
 	icon_dead = "venus_human_trap_rest"
