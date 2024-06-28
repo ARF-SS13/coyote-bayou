@@ -877,7 +877,7 @@ Raider
 		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/card/id/selfassign,
-		/obj/item/radio/headset
+
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
@@ -1447,12 +1447,7 @@ Raider
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	r_pocket = 		/obj/item/storage/fancy/flare_pouch
-
-	backpack =		/obj/item/storage/backpack/cultpack
-	satchel = 		/obj/item/storage/backpack/cultpack
 	backpack_contents = list(
-		/obj/item/camera/spooky = 1,
-		/obj/item/reagent_containers/food/drinks/flask=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
 		/obj/item/storage/wallet/stash/mid,
