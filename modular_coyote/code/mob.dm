@@ -1456,6 +1456,15 @@
 	icon_living = "purple_kirin"
 	icon_dead = "purple_kirin_dead"
 
+/mob/living/simple_animal/advanced/plantmouth
+	name = "Venus Human Trap"
+	id = "venus_human_trap"
+	simple_icon = 'icons/effects/spacevines.dmi'
+	icon_width = 32
+	icon_state = "venus_human_trap"
+	icon_living = "venus_human_trap"
+	icon_dead = "venus_human_trap_rest"
+
 /mob/living/simple_animal/advanced/greycat
 	name = "fluffy cat"
 	desc = "a fluffy grey and white cat."
