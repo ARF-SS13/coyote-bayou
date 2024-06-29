@@ -150,9 +150,6 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_22lr
-	ammo_capacity = 180
-
 /obj/item/gun/ballistic/automatic/smg/american180/dp27
 	name = "Mini DP-27"
 	desc = "A tiny replica DP-27, with a .22 pan magazine."
@@ -199,8 +196,6 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_939
-	ammo_capacity = 20
 
 /obj/item/gun/ballistic/automatic/c96auto
 	name = "Mauser M712"
@@ -222,9 +217,6 @@
 		/datum/firemode/automatic/rpm200 ,
 		/datum/firemode/semi_auto/fast
 	)
-
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 20
 
 /* * * * * * * * * * *
  * 14mm SMG
@@ -254,9 +246,6 @@
 		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-
-	ammo_kind = /datum/ammo_kind/medium/q_14mm
-	ammo_capacity = 20
 
 /* * * * * * * * * * *
  * Greasegun SMG!
@@ -288,9 +277,6 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
-
-	ammo_kind = /datum/ammo_kind/compact/q_45
-	ammo_capacity = 30
 
 /* * * * * * * * * * *
  * Worn greasegun SMG
@@ -343,9 +329,6 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
-
-	ammo_kind = /datum/ammo_kind/medium/q_10mm
-	ammo_capacity = 24
 
 /* * * * * * * * * * *
  * Worn 10mm SMG
@@ -401,9 +384,6 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 30
-
 /* * * * * * * * * * *
  * Uzi .22 SMG
  * Lighter .22 SMG
@@ -434,9 +414,6 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
-
-	ammo_kind = /datum/ammo_kind/compact/q_22lr
-	ammo_capacity = 30
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/mp22
 	name = ".22 MP5"
@@ -469,9 +446,6 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = TRUE
-
-	ammo_kind = /datum/ammo_kind/compact/q_22lr
-	ammo_capacity = 16
 
 //MP40: a uzi but with different flavor
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40
@@ -602,9 +576,6 @@
 	)
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 36
-
 /* * * * * * * * * * *
  * Worn Carl Gustaf 10mm SMG
  * Poor Baseline 10mm SMG
@@ -652,9 +623,6 @@
 	)
 
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
-
-	ammo_kind = /datum/ammo_kind/compact/q_45
-	ammo_capacity = 50
 
 /* * * * * * * * * * *
  * Whitelegs Thompson SMG
@@ -707,9 +675,6 @@
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_5728mm
-	ammo_capacity = 50
-
 /* * * * * * * * * * *
  * Worn P90c SMG
  * Light 10mm SMG
@@ -759,8 +724,6 @@
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 60
 
 /* * * * * * * * * * *
  * MP-5 SD SMG
@@ -792,9 +755,6 @@
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 30
-
 /* * * * * * * * * * *
  * PPSh SMG
  * Spraycan 9mm SMG
@@ -823,9 +783,6 @@
 	scope_x_offset = 9
 	scope_y_offset = 21
 	can_scope = TRUE
-
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 71
 
 /* * * * * * * * * * *
  * Sidewinder SMG
@@ -1050,8 +1007,6 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_10mm
-	ammo_capacity = 20
 
 /obj/item/gun/ballistic/automatic/m1carbine/covcarbine
 	name = "T25 Assault Carbine"
@@ -1176,9 +1131,6 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_9mm
-	ammo_capacity = 11
-
 /* * * * * * * * * * *
  * Commando Carbine
  * Silent .45 carbine
@@ -1206,9 +1158,6 @@
 	scope_x_offset = 6
 	scope_y_offset = 14
 
-	ammo_kind = /datum/ammo_kind/compact/q_45
-	ammo_capacity = 11
-
 /* * * * * * * * * * *
  * Combat Carbine
  * Baseline .45 carbine
@@ -1231,9 +1180,6 @@
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'
-
-	ammo_kind = /datum/ammo_kind/compact/q_45
-	ammo_capacity = 20
 
 /* * * * * * * * * * *
  * Trusty Combat Carbine
@@ -1320,10 +1266,6 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/weapons/Gunshot2.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_22lr
-	ammo_capacity = 25 // based off of a ruger 10/22
-
-
 /* * * * * * * * * * *
  * M1-22 carbine
  * .22 LR
@@ -1405,8 +1347,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
+
 
 /* * * * * * * * * * * *
 * Matilda Rifle
@@ -1437,9 +1378,6 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
-
 /* * * * * * * * * * *
  * Varmint Rifle w/ 20rd mag
  * Light semi-auto rifle
@@ -1451,7 +1389,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/varmint/extended
-	ammo_capacity = 60
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 /* * * * * * * * * * *
  * Verminkiller Rifle
@@ -1620,10 +1558,6 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	reskinnable_component = /datum/component/reskinnable/service_rifle
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
-
-
 /* * * * * * * * * * * * * * * *
 * Famas G80{generation}
 * Whole generation of them. Upgrades in tier for their loot spawns. Worn spawn famas, Famas G1, P47, M41
@@ -1650,9 +1584,6 @@
 	can_bayonet = FALSE
 	can_scope = FALSE
 	can_suppress = TRUE
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 25
 
 /obj/item/gun/ballistic/automatic/famas/pristine
 	name = "Fusil D'assaut F1"
@@ -1758,8 +1689,7 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
+
 
 // * * * * *
 // * G43 rifle *
@@ -1792,9 +1722,6 @@
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 10
-
 /obj/item/gun/ballistic/automatic/ww1selfloader // tier above the G43 rifle. Powerful yet slow.
 	name = "Selbstlader 1906 Rifle"
 	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patented back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
@@ -1816,9 +1743,6 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 5
 
 // Civilian version of the G43, uses 5mm and has a 15 round capacity, faster firerate.
 /obj/item/gun/ballistic/automatic/gewehr41civ
@@ -1844,9 +1768,6 @@
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_5mm
-	ammo_capacity = 15
-
 /obj/item/gun/ballistic/automatic/gewehr41civ/tox
 	name = "Custom G41 rifle"
 	desc = "A customized G41 rifle. While it can not hold a suppressor, it's still just as sturdy as before. The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
@@ -1869,9 +1790,6 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 10
 
 // Worn Marksman Carbine
 
@@ -1968,9 +1886,6 @@
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 8
-
 /* * * * * * * * * * *
  * Enfield SLR Rifle
  * Baseline semi-auto 7.62mm rifle
@@ -2008,9 +1923,6 @@
 	scope_x_offset = 4
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 10
 
 /obj/item/gun/ballistic/automatic/slr/stinki
 	name = "Custom Enfield SLR"
@@ -2090,9 +2002,6 @@
 	if(.)
 		return
 
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 8
-
 /* * * * * * * * * * *
  * Old Glory Rifle
  * Heavier semi-auto 7.62mm rifle
@@ -2169,9 +2078,6 @@
 	auto_eject_sound = 'sound/weapons/magout.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 8
-
 /* * * * * * * * * * *
  * Sniper Rifle
  * Sniper semi-auto 7.62mm rifle
@@ -2201,9 +2107,6 @@
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	zoom_factor = 2
-
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 8
 
 /* * * * * * * * * * *
  * Gold Sniper Rifle
@@ -2261,7 +2164,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	name = "compact sniper rifle"
-	desc = "A DKS 501, chambered in .30-06. With a light polymer body, it's suited for long treks through the desert. This particular model is lighter and faster."
+	desc = "A DKS 501, chambered in .30-06.  With a light polymer body, it's suited for long treks through the desert. This particular model is lighter and faster."
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -2307,8 +2210,6 @@
 	suppressor_y_offset = 28
 	reskinnable_component = null
 
-	ammo_capacity = 60
-
 /* * * * * * * * * * *
  * R91 assault rifle
  * Baseline 5.56mm autorifle
@@ -2341,9 +2242,6 @@
 	suppressor_y_offset = 15
 	suppressor_state = "ar_suppressor"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
 
 /* * * * * * * * * * *
  * Infiltrator service rifle
@@ -2399,9 +2297,6 @@
 	can_bayonet = FALSE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
-
 /* * * * * * * * * * *
  * Type 93 assault rifle
  * Chinese 5.56mm AN-94-like rifle
@@ -2429,9 +2324,6 @@
 	suppressor_x_offset = 27
 	suppressor_y_offset = 27
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
 
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
@@ -2493,8 +2385,6 @@
 	zoom_factor = 1.2
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
 
 /* * * * * * * * * *
 * P47 Battle rifle
@@ -2528,9 +2418,6 @@
 	can_flashlight = FALSE
 	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
 
 /obj/item/gun/ballistic/automatic/p47merek
 	name = "Custom P47 Rifle"
@@ -2589,9 +2476,6 @@
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
 	zoom_factor = 1.2
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 20
-
 /* * * * * * * * * * *
  * Assault Carbine Rifle
  * Baseline 5mm autorifle
@@ -2629,9 +2513,6 @@
 	flight_y_offset = 21
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	reskinnable_component = /datum/component/reskinnable/auto_556
-
-	ammo_kind = /datum/ammo_kind/medium/q_5mm
-	ammo_capacity = 30
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2847,9 +2728,6 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_5mm
-	ammo_capacity = 30
-
 /obj/item/gun/ballistic/automatic/ak556/custom // Custom
 	name = "Custom Ak-74 assault rifle"
 	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
@@ -2895,9 +2773,6 @@
 	can_scope = FALSE
 	can_suppress = TRUE
 
-	ammo_kind = /datum/ammo_kind/shotgun/q_12_gauge
-	ammo_capacity = 8
-
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "Ak74u"
 	desc = "A AK74u assault rifle. Rechambered in 5.56x45 NATO, this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, hits a shy bit harder, slower firerate, and allows much easier carry at the cost of higher recoil."
@@ -2921,9 +2796,6 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
 
 /obj/item/gun/ballistic/automatic/aksmol/aldric //custom weapon, unused.
 	name = "Ak74u Custom"
@@ -3000,9 +2872,6 @@
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
-
 //259 dps pristine version
 /obj/item/gun/ballistic/automatic/fnfal/pristine
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
@@ -3028,7 +2897,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list (
@@ -3039,9 +2908,6 @@
 	can_flashlight = FALSE
 	zoom_factor = 1.1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
 
 /obj/item/gun/ballistic/automatic/z34rifle/needlercustom
 	name = "The People's Rifle"
@@ -3163,9 +3029,6 @@
 	can_suppress = TRUE
 	can_flashlight = FALSE
 
-	ammo_kind = /datum/ammo_kind/medium/q_473mm
-	ammo_capacity = 30
-
 /obj/item/gun/ballistic/automatic/rifle47mm/china
 	name = "Chinese 4.7mm assault rifle"
 	desc = "A QBZ-95-1 assault rifle rechambered in 4.7mm caseless ammo, a odd collab between West Germany's 4.7mm cartridge and the PLA. Despite the new caliber type, it performs like its own original caliber. The gun seems to fire quicker and is a shy bit more accurate with lesser recoil!"
@@ -3238,8 +3101,6 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
 
 /* * * * * * * * * * *
  * L1A1 Self Loading Rifle
@@ -3267,9 +3128,6 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
-
 //custom gun
 /obj/item/gun/ballistic/automatic/fg42tox
 	name = "Custom FG-42 rifle"
@@ -3296,8 +3154,7 @@
 	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/fg42.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 20
+
 
 /obj/item/gun/ballistic/automatic/democracy
 	name = "M36 'Justice' battle rifle"
@@ -3321,9 +3178,6 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	can_bayonet = FALSE
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 20
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
@@ -3353,9 +3207,6 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 20
-
 /* * * * * * * * * * *
  * G11 Rifle
  * Fancy 4.73mm autorifle
@@ -3383,9 +3234,6 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 
-	ammo_kind = /datum/ammo_kind/medium/q_473mm
-	ammo_capacity = 50
-
 // Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
 /obj/item/gun/ballistic/automatic/g36 //unused, note from Tox: Will redo entirely eventually
 	name = " G36C Assault rifle"
@@ -3408,9 +3256,6 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	can_suppress = TRUE
 	can_bayonet = FALSE
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 30
 
 //worn g11
 
@@ -3464,9 +3309,6 @@
 	knife_x_offset = 25
 	knife_y_offset = 12
 
-	ammo_kind = /datum/ammo_kind/medium/q_473mm
-	ammo_capacity = 50
-
 /obj/item/gun/ballistic/automatic/wt550/worn
 	name = "WT-550 Sporting Carbine"
 	desc = "A WT-550 locked to semi-automatic and marketed for sport shooting or home defense. This one looks like it has seen better days."
@@ -3514,9 +3356,6 @@
 	)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 60
-
 /* * * * * * * * * * *
  * LSW LMG
  * Mobile 5.56mm LMG
@@ -3546,9 +3385,6 @@
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 60
-
 //hefty and clonky
 /obj/item/gun/ballistic/automatic/lewis
 	name = "Lewis automatic rifle"
@@ -3568,9 +3404,6 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 97
 
 /obj/item/gun/ballistic/automatic/lewis/dp27
 	name = "DP-27"
@@ -3623,9 +3456,6 @@
 		/datum/firemode/automatic/rpm200
 	)
 
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 30
-
 /obj/item/gun/ballistic/automatic/bren/custom
 	name = "Custom Bren gun"
 	desc = "A rather heavy gun that served as the primary British infantry LMG throughout the second world war."
@@ -3665,15 +3495,13 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	added_spread = GUN_SPREAD_SUPERAWFUL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_LESS_DAMAGE_T6
 	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
 
-	ammo_kind = /datum/ammo_kind/medium/q_5mm
-	ammo_capacity = 100
 
 /* * * * * * * * * * *
 * RPD-72
@@ -3708,9 +3536,6 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
-
-	ammo_kind = /datum/ammo_kind/long/q_308
-	ammo_capacity = 40
 
 /* * * * * * * * * * *
 * Oststrauß
@@ -3747,8 +3572,6 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 60
 
 /obj/item/gun/ballistic/automatic/concussive
 	name = "Latos Systems Cromwell-55 shotgun rifle"
@@ -3772,10 +3595,6 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
-	is_revolver = TRUE
-
-	ammo_kind = /datum/ammo_kind/shotgun/q_40mm
-	ammo_capacity = 8
 
 /* * * * * * * * * * *
  * Browning M1919 MMG
@@ -3807,9 +3626,6 @@
 	var/cover_open = FALSE
 	var/require_twohands = FALSE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 80
 
 /obj/item/gun/ballistic/automatic/m1919/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/20, 1)*20 : "-empty"]"
@@ -3891,9 +3707,6 @@
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/needler.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_needler
-	ammo_capacity = 24
-
 /obj/item/gun/ballistic/automatic/needlerrifle/custom
 	name = "Advanced Violet Needler Rifle"
 	desc = "A custom and violet colored NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.'."
@@ -3949,8 +3762,6 @@
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/needler.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_needler
-	ammo_capacity = 60
 
 /obj/item/gun/ballistic/automatic/needlersmg
 	name = "Worn S-27 Akula Needler SMG"
@@ -3977,9 +3788,6 @@
 	can_flashlight = FALSE
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/needler.ogg'
-
-	ammo_kind = /datum/ammo_kind/compact/q_needler
-	ammo_capacity = 15
 
 /obj/item/gun/ballistic/automatic/stg44custom
 	name = "Custom Engraved STG-44"
@@ -4009,9 +3817,6 @@
 	can_flashlight = FALSE
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/fg42.ogg'
-
-	ammo_kind = /datum/ammo_kind/long/q_3006
-	ammo_capacity = 30
 
 /* * * * * * * * * *
 * TG78 Anti Material Rifle.
@@ -4044,8 +3849,7 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
-	ammo_kind = /datum/ammo_kind/long/q_50bmg
-	ammo_capacity = 5
+
 
 
 //custom ptrs rifle
@@ -4074,9 +3878,6 @@
 	can_flashlight = FALSE
 	can_scope = TRUE
 
-	ammo_kind = /datum/ammo_kind/long/q_50bmg
-	ammo_capacity = 5
-
 // Bolter Assault rifle.
 // Has insane recoil but makes up for extreme damage
 // low ROF but the damage makes up for it witha T2. Unique tier, might be too stronk
@@ -4102,9 +3903,6 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
-
-	ammo_kind = /datum/ammo_kind/medium/q_14mm
-	ammo_capacity = 21
 
 /obj/item/gun/ballistic/automatic/compact14mmrifle/custom
 	name = "Custom T55E1 Assault Carbine"
@@ -4160,9 +3958,6 @@
 	zoom_factor = 1.2
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
 
-	ammo_kind = /datum/ammo_kind/compact/q_needler
-	ammo_capacity = 10
-
 /* * * * * * * * * * *
  * xl70e3
  * Fancy 5.56mm autorifle
@@ -4189,6 +3984,3 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	zoom_factor = 1.2
 	can_scope = FALSE
-
-	ammo_kind = /datum/ammo_kind/medium/q_556x45mm
-	ammo_capacity = 60

@@ -222,8 +222,8 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/psychotic
 	backpack_contents = list(
 		///obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
-		///obj/item/ammo_box/generic/shotgun/buck = 1,
-		///obj/item/ammo_box/generic/shotgun/bean = 1,
+		///obj/item/ammo_box/shotgun/buck = 1,
+		///obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 1,
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		)
@@ -525,7 +525,7 @@ Raider
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/melee/onehanded/slavewhip = 1,
 		///obj/item/gun/ballistic/shotgun/police = 1,
-		///obj/item/ammo_box/generic/shotgun/bean = 2,
+		///obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/restraints/legcuffs/beartrap = 1,
 		/obj/item/restraints/legcuffs = 1,
 		/obj/item/storage/belt/shoulderholster = 1,
@@ -579,7 +579,7 @@ Raider
 		/obj/item/stack/sheet/mineral/titanium = 15,
 		/obj/item/stack/ore/blackpowder/twenty = 1,
 	//	/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
-	//	/obj/item/ammo_box/generic/shotgun/slug = 2
+	//	/obj/item/ammo_box/shotgun/slug = 2
 		)
 
 /datum/outfit/loadout/nefarious_conman
@@ -792,7 +792,7 @@ Raider
 		/obj/item/shovel/trench = 1,
 		/obj/item/cultivator/rake = 1,
 		///obj/item/gun/ballistic/revolver/single_shotgun = 1,
-		///obj/item/ammo_box/generic/shotgun/buck = 1,
+		///obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/clothing/under/f13/jamrock = 1,
 		/obj/item/clothing/head/scarecrow_hat = 1,
 		/obj/item/clothing/shoes/winterboots  = 1,
@@ -967,7 +967,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/f13/biker
 	//l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents =  list(/obj/item/storage/box/vendingmachine=1,
-							///obj/item/ammo_box/generic/shotgun/buck = 2,
+							///obj/item/ammo_box/shotgun/buck = 2,
 							)
 
 /datum/outfit/loadout/gambler
@@ -1106,7 +1106,7 @@ Raider
 	mask = /obj/item/clothing/mask/balaclava
 	//l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents = list(
-	//	/obj/item/ammo_box/generic/shotgun/slug=2,
+	//	/obj/item/ammo_box/shotgun/slug=2,
 		/obj/item/reagent_containers/food/drinks/flask/russian=1,
 		/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka=1,)
 
@@ -1507,7 +1507,7 @@ Raider
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	suit = /obj/item/clothing/suit/armor/medium/vest
 	backpack_contents = list(
-		/obj/item/ammo_box/generic/shotgun/buck = 2,
+		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		)
 
@@ -1988,7 +1988,7 @@ Raider
 		/obj/item/clothing/under/f13/eighties = 1,
 		/obj/item/clothing/under/f13/female/eighties = 1,
 		///obj/item/gun/ballistic/shotgun/trench = 1,
-		///obj/item/ammo_box/generic/shotgun/buck = 2,
+		///obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
 		/obj/item/reagent_containers/pill/patch/jet = 2
@@ -2001,7 +2001,7 @@ Raider
 		/obj/item/clothing/under/f13/eighties = 1,
 		/obj/item/clothing/under/f13/female/eighties = 1,
 		///obj/item/gun/ballistic/revolver/single_shotgun = 1,
-		///obj/item/ammo_box/generic/shotgun/buck = 1,
+		///obj/item/ammo_box/shotgun/buck = 1,
 		///obj/item/gun/ballistic/automatic/smg/greasegun/worn = 1,
 		///obj/item/ammo_box/magazine/greasegun = 2,
 		/obj/item/reagent_containers/pill/healingpowder = 2
@@ -2014,7 +2014,7 @@ Raider
 		/obj/item/clothing/under/f13/eighties = 1,
 		/obj/item/clothing/under/f13/female/eighties = 1,
 		///obj/item/gun/ballistic/revolver/single_shotgun = 1,
-		///obj/item/ammo_box/generic/shotgun/slug = 1,
+		///obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/storage/belt/utility/full = 1,
 //		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1

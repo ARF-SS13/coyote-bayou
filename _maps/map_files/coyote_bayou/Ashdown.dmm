@@ -10282,6 +10282,8 @@
 /obj/item/ammo_box/c10mm/improvised,
 /obj/item/ammo_box/c45/improvised,
 /obj/item/ammo_box/m44box/improvised,
+/obj/item/ammo_box/shotgun/improvised,
+/obj/item/ammo_box/shotgun/improvised,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
@@ -33647,7 +33649,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oNI" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /obj/structure/sign/poster/contraband/pinup_couch{
 	pixel_x = -32
 	},

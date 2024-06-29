@@ -2,7 +2,7 @@
 	name = "box magazine (1.95x129mm)"
 	icon_state = "a762-50"
 	ammo_type = /obj/item/ammo_casing/mm195x129
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_195)
 	max_ammo = 50
 
 /obj/item/ammo_box/magazine/mm195x129/hollow
@@ -24,13 +24,13 @@
 /obj/item/ammo_box/magazine/mm712x82/match
 	name = "box magazine (Match 7.12x82mm)"
 	ammo_type = /obj/item/ammo_casing/mm712x82/match
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_712)
 
 /obj/item/ammo_box/magazine/w3006
 	name = "sniper rifle magazine (.30-06)"
 	icon_state = "sniper_mag"
 	ammo_type = /obj/item/ammo_casing/a3006
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_3006)
 	max_ammo = 7
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
@@ -43,7 +43,7 @@
 	name = "ammo box (5.56)"
 	icon_state = "r80"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_556)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
@@ -58,7 +58,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "rpdm"
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
@@ -74,7 +74,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_FLINTLOCK)
 	max_ammo = 100
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
@@ -87,7 +87,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "lanoe"
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	max_ammo = 97
 	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
@@ -101,7 +101,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "lewis"
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	max_ammo = 47
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
@@ -115,7 +115,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "bren"
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 2
@@ -128,7 +128,7 @@
 	name = "ammo box (5mm)"
 	icon_state = "cz53"
 	ammo_type = /obj/item/ammo_casing/m5mm
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_5MM)
 	max_ammo = 240
 	w_class = WEIGHT_CLASS_GIGANTIC // agony
 	multiple_sprites = 2
@@ -141,7 +141,7 @@
 	name = "ammo box (.308)"
 	icon_state = "r80"
 	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
@@ -157,7 +157,7 @@
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_NECK //sling these big belts all over your fuckin self
-	caliber = list(CALIBER_LONG)
+	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
 /obj/item/ammo_box/magazine/mm308/empty

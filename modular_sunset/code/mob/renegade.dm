@@ -150,7 +150,7 @@
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
-	casingtype = /obj/item/ammo_casing/generic/shotgun
+	casingtype = /obj/item/ammo_casing/shotgun
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -322,7 +322,7 @@
 	ranged_cooldown_time = 3
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/auto5.ogg'
-	casingtype = /obj/item/ammo_casing/generic/shotgun/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE

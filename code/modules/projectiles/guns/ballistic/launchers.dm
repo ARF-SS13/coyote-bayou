@@ -19,9 +19,6 @@
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
 
-	ammo_kind = /datum/ammo_kind/shotgun/q_40mm
-	ammo_capacity = 1
-
 //pump grenade launcher
 
 /obj/item/gun/ballistic/shotgun/grenade
@@ -41,9 +38,6 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-
-	ammo_kind = /datum/ammo_kind/shotgun/q_40mm
-	ammo_capacity = 3
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	desc = "A 6-shot grenade launcher."

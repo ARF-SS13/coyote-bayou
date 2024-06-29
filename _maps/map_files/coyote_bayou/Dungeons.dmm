@@ -2035,7 +2035,7 @@
 	},
 /area/f13/underground/cave)
 "aSe" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},
@@ -10125,6 +10125,7 @@
 "eqZ" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
+/obj/item/ammo_box/shotgun/buck,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -13766,6 +13767,8 @@
 /obj/structure/table,
 /obj/item/stamp/hos,
 /obj/item/gun/ballistic/shotgun/trench,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "fXa" = (
@@ -21578,6 +21581,7 @@
 /area/f13/vault)
 "jEY" = (
 /obj/structure/table/reinforced,
+/obj/item/ammo_box/shotgun/buck,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
@@ -23786,7 +23790,7 @@
 /area/f13/brotherhood/rnd)
 "kGM" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo/unlocked,
 /obj/effect/turf_decal/stripes/white/end,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
@@ -40774,7 +40778,7 @@
 /area/f13/brotherhood/leisure)
 "scW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /obj/structure/lattice{
 	layer = 3
 	},
@@ -49512,6 +49516,14 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"was" = (
+/obj/structure/rack,
+/obj/item/ammo_box/shotgun/buck,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13{
+	icon_state = "darkdirty"
+	},
+/area/f13/bunker)
 "wau" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -56084,7 +56096,7 @@ qUU
 lzR
 lzR
 lzR
-giY
+was
 qEZ
 esJ
 qEZ

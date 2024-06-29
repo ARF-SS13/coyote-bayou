@@ -13,23 +13,23 @@
 	limited_stock = -1 //-1 is infinite stock. otherwise, limits how many you can buy. also prevents discounts
 	restricted_roles = list() //for restricting by job type
 	*/
-/*
+
 /datum/supplykit_item/ammospec/box12rubber
 	name = "12 gauge rubber shot box"
 	desc = "A box containing 12 rounds of 12 gauge rubber shot."
-	item = /obj/item/ammo_box/generic/shotgun/rubber
+	item = /obj/item/ammo_box/shotgun/rubber
 
 /datum/supplykit_item/ammospec/box12bean
 	name = "12 gauge beanbag box"
 	desc = "A box containing 12 rounds of 12 gauge beanbags."
-	item = /obj/item/ammo_box/generic/shotgun/bean
+	item = /obj/item/ammo_box/shotgun/bean
 
 /datum/supplykit_item/ammospec/box12improv
 	name = "12 gauge improvised bag"
 	desc = "A box containing 12 rounds of 12 gauge improvised shot."
-	item = /obj/item/ammo_box/generic/shotgun/improvised
+	item = /obj/item/ammo_box/shotgun/improvised
 	cost = 5
-*/
+
 /datum/supplykit_item/ammospec/box22rubber
 	name = ".22LR nonlethal box"
 	desc = "A box containing 60 rounds of .22LR rubber ammunition."

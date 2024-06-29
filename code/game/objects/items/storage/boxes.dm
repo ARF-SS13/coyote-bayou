@@ -710,7 +710,7 @@
 
 /obj/item/storage/box/lethalslugs/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/generic/shotgun(src)
+		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/stunslug
 	name = "box of stun slugs"
@@ -720,7 +720,7 @@
 
 /obj/item/storage/box/stunslug/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/generic/shotgun/stunslug(src)
+		new /obj/item/ammo_casing/shotgun/stunslug(src)
 
 /obj/item/storage/box/techsslug
 	name = "box of tech shotgun shells"
@@ -730,7 +730,7 @@
 
 /obj/item/storage/box/techsslug/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/generic/shotgun/techshell(src)
+		new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/fireshot
 	name = "box of incendiary ammo"
@@ -740,7 +740,7 @@
 
 /obj/item/storage/box/fireshot/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/generic/shotgun/incendiary(src)
+		new /obj/item/ammo_casing/shotgun/incendiary(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"

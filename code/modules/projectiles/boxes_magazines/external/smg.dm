@@ -8,7 +8,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "cg45"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_10MM)
 	max_ammo = 36
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG)
@@ -22,7 +22,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "vss"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_9MM)
 	max_ammo = 30
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG)
@@ -36,7 +36,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c45
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_45ACP)
 	max_ammo = 30
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG)
@@ -77,7 +77,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ppshDrum"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_9MM)
 	max_ammo = 71
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
@@ -91,7 +91,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "smg22"
 	ammo_type = /obj/item/ammo_casing/a22
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_22LR)
 	max_ammo = 180
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
@@ -105,7 +105,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "smg22"
 	ammo_type = /obj/item/ammo_casing/bee
-	caliber = list(CALIBER_BEE, CALIBER_COMPACT)
+	caliber = list(CALIBER_BEE, CALIBER_22LR)
 	max_ammo = 180
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
@@ -116,7 +116,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "tommydrum"
 	ammo_type = /obj/item/ammo_casing/c45
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_45ACP)
 	max_ammo = 50
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
 	w_class = WEIGHT_CLASS_NORMAL
@@ -142,7 +142,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "14smg"
 	ammo_type = /obj/item/ammo_casing/p14mm
-	caliber = list(CALIBER_MEDIUM)
+	caliber = list(CALIBER_14MM)
 	max_ammo = 21
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
@@ -167,7 +167,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "5.56m"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = list(CALIBER_COMPACT)
+	caliber = list(CALIBER_10MM)
 	max_ammo = 50
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)

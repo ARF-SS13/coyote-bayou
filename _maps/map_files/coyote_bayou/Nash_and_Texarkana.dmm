@@ -2572,7 +2572,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "akS" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "akT" = (
@@ -5982,6 +5982,12 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"axP" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "axQ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -6955,7 +6961,7 @@
 	},
 /area/f13/ruins)
 "aBx" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -10853,6 +10859,11 @@
 	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"aPt" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland/city/nash/downtown)
 "aPu" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -11011,6 +11022,12 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerinner - W"
 	},
+/area/f13/wasteland/city/nash/downtown)
+"aPU" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/downtown)
 "aPV" = (
 /obj/item/ammo_casing/c9mm,
@@ -11381,6 +11398,7 @@
 	anchored = 1
 	},
 /obj/machinery/light,
+/obj/item/ammo_box/shotgun/bean,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
@@ -26543,7 +26561,7 @@
 	},
 /area/f13/wasteland/city)
 "dFw" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -45087,7 +45105,7 @@
 /obj/machinery/light/broken{
 	dir = 8
 	},
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /obj/item/stack/sheet/metal/ten,
 /obj/item/stack/ore/blackpowder/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -74254,6 +74272,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
+"qAd" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2left"
+	},
+/area/f13/wasteland/massfusion/entrance)
 "qAe" = (
 /obj/structure/flora/rock/pile/largejungle{
 	icon_state = "bush3";
@@ -75382,7 +75406,7 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/building/abandoned)
 "qPw" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -91756,7 +91780,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
 "vqq" = (
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "vqy" = (
@@ -92473,6 +92497,8 @@
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "vAk" = (
 /obj/structure/table/wasteland,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/ammo_box/shotgun/bean,
 /obj/item/gun/ballistic/shotgun/hunting,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -99161,7 +99187,7 @@
 "xtP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/CMLS_ammo_vending_machine,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "xtS" = (
@@ -137813,7 +137839,7 @@ gVf
 fBN
 eRU
 dZM
-dRC
+aPU
 aBe
 rbH
 hCc
@@ -140124,7 +140150,7 @@ kPa
 kPa
 jPv
 rSY
-kPa
+aPt
 yag
 pJW
 pnF
@@ -151124,7 +151150,7 @@ aOk
 nHY
 lmE
 axr
-gQR
+axP
 wUx
 chZ
 uvd
@@ -154183,7 +154209,7 @@ ldJ
 aUQ
 oKR
 pYa
-cIy
+qAd
 kwY
 hsJ
 odj

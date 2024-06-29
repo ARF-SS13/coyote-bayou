@@ -71,7 +71,7 @@
 	/obj/item/ammo_box/m308 = 1,
 	/obj/item/ammo_box/magazine/m223 = 1,
 	/obj/item/ammo_box/m223 = 1,
-	/obj/item/ammo_casing/generic/shotgun/buckshot = 1,
+	/obj/item/ammo_casing/shotgun/buckshot = 1,
 	/obj/item/weapon/stock_parts/cell = 1)
 */
 /obj/effect/spawner/lootdrop/wmelee_low

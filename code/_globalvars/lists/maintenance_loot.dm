@@ -185,7 +185,7 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 	/obj/item/clothing/suit/armor/light/kit = 5,
 	/obj/item/clothing/head/welding = 5
 ))
-/*
+
 GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/a308box/improvised = 2,
 	/obj/item/ammo_box/a3006box/improvised = 2,
@@ -194,7 +194,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	/obj/item/ammo_box/c10mm/improvised = 5,
 	/obj/item/ammo_box/c9mm/improvised = 5,
-	/obj/item/ammo_box/generic/shotgun/improvised = 1,
+	/obj/item/ammo_box/shotgun/improvised = 1,
 	/obj/item/ammo_box/a357box/improvised = 3,
 	/obj/item/ammo_box/m44box/improvised = 1,
 	/obj/item/ammo_box/c45/improvised = 5,
@@ -203,7 +203,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/m22 = 3,
 	/obj/item/ammo_box/rock/improvised = 3
 ))
-*/
+
 GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/storage/pill_bottle/chem_tin/radx = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 20,
@@ -322,8 +322,9 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/toy/crayon/spraycan = 5,
 	/obj/item/laser_pointer = 5
 ))
-// 	GLOB.trash_ammo "+\" was below here, minus the ""
-GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_chem +\
+
+GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
+	GLOB.trash_chem +\
 	GLOB.trash_clothing +\
 	GLOB.trash_craft +\
 	GLOB.trash_gun +\
@@ -550,34 +551,34 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t1_range, list(
-//	/obj/item/ammo_box/generic/shotgun,
+	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/gun/ballistic/revolver/caravan_shotgun,
-//	/obj/item/ammo_box/generic/shotgun,
+	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/gun/ballistic/rifle/mosin,
-//	/obj/item/ammo_box/generic/long/l308,
+	/obj/item/ammo_box/a308,
 	/obj/item/gun/ballistic/revolver/police,
-//	/obj/item/ammo_box/generic/compact/c22,
+	/obj/item/ammo_box/c22,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox,
 	/obj/item/gun/ballistic/rifle/hunting,
-//	/obj/item/ammo_box/generic/long/l30,
+	/obj/item/ammo_box/a308,
 	/obj/item/gun/ballistic/automatic/pistol/n99,
-//	/obj/item/ammo_box/magazine/m10mm/adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/pistol/m1911,
-//	/obj/item/ammo_box/magazine/m45,
+	/obj/item/ammo_box/magazine/m45,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil,
-//	/obj/item/ammo_box/magazine/m9mm,
+	/obj/item/ammo_box/magazine/m9mm,
 	/obj/item/gun/ballistic/automatic/pistol/n99,
-//	/obj/item/ammo_box/magazine/m10mm/adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/varmint,
-//	/obj/item/ammo_box/magazine/m556/rifle/small,
+	/obj/item/ammo_box/magazine/m556/rifle/small,
 	/obj/item/gun/ballistic/automatic/sportcarbine,
-//	/obj/item/ammo_box/magazine/m22/extended,
-//	/obj/item/ammo_box/m22
+	/obj/item/ammo_box/magazine/m22/extended,
+	/obj/item/ammo_box/m22
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/shotgun/hunting,
-	/obj/item/ammo_box/generic/shotgun/buck,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
 	/obj/item/ammo_box/magazine/m22/extended,
 	/obj/item/gun/ballistic/revolver/m29,
@@ -609,7 +610,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/smg/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
-	/obj/item/ammo_box/generic/shotgun/buck,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/gun/energy/laser/wattz,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/revolver/needler,
@@ -676,7 +677,8 @@ GLOBAL_LIST_INIT(loot_unique_range, list(
 
 GLOBAL_LIST_INIT(loot_t1_ammo, list(
 	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/ammo_box/generic/shotgun/buck,
+	/obj/item/ammo_box/shotgun/buck,
+	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/ammo_box/c22,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle/small
@@ -696,7 +698,7 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
-	/obj/item/ammo_box/generic/shotgun/buck,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/greasegun,

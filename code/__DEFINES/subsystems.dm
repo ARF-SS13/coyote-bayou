@@ -83,7 +83,6 @@
 #define INIT_ORDER_INPUT			90
 #define INIT_ORDER_SOUNDS			85
 #define INIT_ORDER_VIS				80
-#define INIT_ORDER_CMLS				79
 #define INIT_ORDER_RESEARCH			75
 #define INIT_ORDER_EVENTS			70
 #define INIT_ORDER_JOBS				65

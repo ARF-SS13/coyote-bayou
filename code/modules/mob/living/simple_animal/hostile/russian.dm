@@ -55,7 +55,7 @@
 	icon_living = "russianrangedelite"
 	maxHealth = 150
 	health = 150
-	casingtype = /obj/item/ammo_casing/generic/shotgun/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = /obj/item/gun/ballistic/rifle/mosin
 
 /mob/living/simple_animal/hostile/russian/ranged/officer
