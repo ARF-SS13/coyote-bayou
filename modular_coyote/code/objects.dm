@@ -922,7 +922,95 @@
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "otter"
 
+/obj/item/toy/plush/emperorpengquin
+	name = "Emperor Penquin"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "emperor_penguin_plush"
 
+/obj/item/toy/plush/emperorpengquin/baby
+	name = "Emperor Penquin baby"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "baby_penguin_plush"
+
+/obj/item/toy/plush/bear
+	name = "grizzly bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_grizzly"
+
+/obj/item/toy/plush/bear/polar
+	name = "polar bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_polar"
+
+/obj/item/toy/plush/bear/soda
+	name = "soda bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_soda"
+
+/obj/item/toy/plush/bear/bloody
+	name = "bloody bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_bloody"
+
+/obj/item/toy/plush/bear/panda
+	name = "panda bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_panda"
+
+/obj/item/toy/plush/bear/space
+	name = "space bear"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bear_space"
+
+/obj/item/toy/plush/toadplush
+	name = "toad plush"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "toadplush"
+
+/obj/item/toy/plush/demonsquish
+	name = "demon squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "demon"
+
+/obj/item/toy/plush/pansquish
+	name = "panda squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pan"
+
+/obj/item/toy/plush/bun
+	name = "bun squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bun"
+
+/obj/item/toy/plush/jay
+	name = "jay squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "jay"
+
+/obj/item/toy/plush/axi
+	name = "axi squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "axi"
+
+/obj/item/toy/plush/snek
+	name = "snek squishmallow"
+	desc = "An adorable plushie!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "snek"
 
 
 //Nests from virgo
