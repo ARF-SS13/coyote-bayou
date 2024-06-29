@@ -50,11 +50,14 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/ammo_capacity = 10
 	var/ammo_single_load = FALSE
 	var/is_revolver = FALSE
+	var/ejects_magazine = FALSE
 
 	var/recoil_per_shot = 2 // degrees
 
 	var/sound_magazine_eject = "gun_remove_empty_magazine"
 	var/sound_magazine_insert = "gun_insert_full_magazine"
+
+	var/use_gun_sprite_handler = FALSE
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -86,6 +89,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			allowed_mags -= disallowed_mags
 	register_magazines()
 	chamber_round()
+	if(use_gun_sprite_handler)
+		SSgun_sprites.RegisterGunSprites(src)
 	update_icon()
 
 /obj/item/gun/ballistic/admin_fill_gun()
@@ -122,6 +127,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		maptext = "<font color='[culur]'><b>[textt]</b></font>"
 
 /obj/item/gun/ballistic/update_icon_state()
+	if(SSgun_sprites.SkinGun(src))
+		return
 	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
 		return // all done!
 	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
@@ -169,8 +176,11 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if (chambered || !magazine)
 		return
 	else if (magazine.ammo_count())
-		chambered = magazine.get_round()
-		chambered.forceMove(src)
+		if(is_revolver)
+			chambered = magazine.get_round(TRUE)
+		else
+			chambered = magazine.get_round()
+			chambered.forceMove(src)
 	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
@@ -460,7 +470,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		data["magazine_name"] = magazine.name
 		data["magazine_calibers"] = english_list(magazine.caliber)
 	data["shots_remaining"] = get_ammo()
-	data["shots_max"] = get_max_ammo()
+	data["shots_max"] = get_max_ammo() - (is_revolver ? 1 : 0) // revolvers have one less shot
 
 	return data
 

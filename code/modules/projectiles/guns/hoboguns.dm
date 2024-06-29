@@ -347,6 +347,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "autopipe"
 	item_state = "autopipe"
+	use_gun_sprite_handler = FALSE
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO

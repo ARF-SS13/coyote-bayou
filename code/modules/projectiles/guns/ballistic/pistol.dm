@@ -15,6 +15,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
+	use_gun_sprite_handler = FALSE
 	weapon_class = WEAPON_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	weapon_weight = GUN_ONE_HAND_AKIMBO
