@@ -20,7 +20,8 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	/obj/item/fishy/gunner_jellyfish		=1,
 	/obj/item/fishy/needlefish		=4,
 	/obj/item/fishy/armorfish		=2,
-	/obj/item/fishy/pufferfish		=1
+	/obj/item/fishy/pufferfish		=1,
+	/mob/living/simple_animal/whale		= 0.5
 ))
 //I have tried to have variables be highly influential so that customization can happen
 //customization, maybe some rods are better than others ;)
