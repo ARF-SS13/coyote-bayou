@@ -124,7 +124,6 @@
 	var/damage_low
 	/// Define them both! Also the damage list takes priority
 	var/damage_high
-	var/is_crit = FALSE
 	var/crit_sound = 'sound/weapons/crit.ogg'
 	var/dink_sound = 'sound/weapons/dink.ogg'
 
@@ -475,7 +474,7 @@
 		// 	var/playdink = rand(1, 10)
 		// 	if(playdink <= 3)
 		// 		playsound(src, 'sound/weapons/dink.ogg', 30, 1)
-		if(is_crit)
+		if(damage > is_crit_above)
 			playsound(src, crit_sound, 100, 1)
 
 		L.on_hit(src)
@@ -1172,8 +1171,8 @@
 			continue
 		if(newdam > damage_out)
 			damage_out = newdam
-		if(newdam >= is_crit_above)
-			is_crit = TRUE
+		if(damage >= is_crit_above)
+			playsound(src, crit_sound, 100, 1, 30)
 	damage = damage_out
 
 
