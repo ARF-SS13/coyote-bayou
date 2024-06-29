@@ -25,6 +25,7 @@
 		"18.75" = 9,
 		"50" = 1,
 	)
+	damage_flat = 5
 
 /datum/ammo_kind/shotgun/q_12_gauge
 	name = "12 gauge buckshot"

@@ -27,6 +27,7 @@
 		"75" = 4,
 		"200" = 1
 	)
+	damage_flat = 15
 
 // Example
 
