@@ -15,7 +15,6 @@
 	clumsy_check = 0
 	item_flags = NONE
 	casing_ejector = FALSE
-	use_gun_sprite_handler = FALSE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three,

@@ -183,16 +183,16 @@ SUBSYSTEM_DEF(cmls)
 	if(!istype(gun))
 		return FALSE
 	/// check if it has any of its damage vars set up, gotta have at least one!
-	// var/can_haz_dmg = FALSE
-	// if(!isnull(gun.damage))
-	// 	can_haz_dmg = TRUE
-	// else if(LAZYLEN(gun.damage_list))
-	// 	can_haz_dmg = TRUE
-	// else if(!isnull(gun.damage_low) && !isnull(gun.damage_high))
-	// 	can_haz_dmg = TRUE
-	// if(!can_haz_dmg)
-	// 	return FALSE // CMLS ammo inherently doesnt do damage, I think, probably
-	/// check if it has a valid ammo kind ^ no it totally does
+	var/can_haz_dmg = FALSE
+	if(!isnull(gun.damage))
+		can_haz_dmg = TRUE
+	else if(LAZYLEN(gun.damage_list))
+		can_haz_dmg = TRUE
+	else if(!isnull(gun.damage_low) && !isnull(gun.damage_high))
+		can_haz_dmg = TRUE
+	if(!can_haz_dmg)
+		return FALSE // CMLS ammo inherently doesnt do damage, I think, probably
+	/// check if it has a valid ammo kind
 	var/datum/ammo_kind/ammou = GetAmmoKind(gun.ammo_kind)
 	if(!istype(ammou))
 		return FALSE
@@ -429,7 +429,6 @@ SUBSYSTEM_DEF(cmls)
 			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), gun, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
 	mag.update_icon()
 	gunmag.update_icon()
-	gun.update_icon()
 	return TRUE
 
 /// if the gun has ammo, spawn a mag with that ammo and fill it with the ammo
