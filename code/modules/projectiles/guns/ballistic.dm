@@ -5,6 +5,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	name = "projectile gun"
 	icon_state = "pistol"
 	weapon_class = WEAPON_CLASS_RIFLE
+	var/icon_state_base
 	var/spawnwithmagazine = TRUE
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm/adv //Removes the need for max_ammo and caliber 
 	var/init_mag_type = null
@@ -32,11 +33,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	/// without a damage_list defined, default to this damage
 	var/damage // if left null, and the rest of these damage vars are also null, the projectile will default to its own damage system
 	/// The damage list to use for this gun! format: list("dmg" = weight) so, list("15" = 5, "20" = 3, "1000" = 0.1)
-	var/damage_list = list(
-		"10" = 50,
-		"1" = 2,
-		"40" = 2,
-	)
+	var/damage_list
 	/// without a damage list defined, and both of these defined, will roll a random number between these two values
 	var/damage_high
 	var/damage_low
@@ -50,11 +47,14 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	var/ammo_capacity = 10
 	var/ammo_single_load = FALSE
 	var/is_revolver = FALSE
+	var/ejects_magazine = FALSE
 
 	var/recoil_per_shot = 2 // degrees
 
 	var/sound_magazine_eject = "gun_remove_empty_magazine"
 	var/sound_magazine_insert = "gun_insert_full_magazine"
+
+	var/use_gun_sprite_handler = FALSE
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -86,6 +86,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			allowed_mags -= disallowed_mags
 	register_magazines()
 	chamber_round()
+	if(use_gun_sprite_handler)
+		SSgun_sprites.RegisterGunSprites(src)
 	update_icon()
 
 /obj/item/gun/ballistic/admin_fill_gun()
@@ -122,6 +124,8 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		maptext = "<font color='[culur]'><b>[textt]</b></font>"
 
 /obj/item/gun/ballistic/update_icon_state()
+	if(SSgun_sprites.SkinGun(src))
+		return
 	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
 		return // all done!
 	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
@@ -169,8 +173,11 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if (chambered || !magazine)
 		return
 	else if (magazine.ammo_count())
-		chambered = magazine.get_round()
-		chambered.forceMove(src)
+		if(is_revolver)
+			chambered = magazine.get_round(TRUE)
+		else
+			chambered = magazine.get_round()
+			chambered.forceMove(src)
 	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
@@ -460,7 +467,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		data["magazine_name"] = magazine.name
 		data["magazine_calibers"] = english_list(magazine.caliber)
 	data["shots_remaining"] = get_ammo()
-	data["shots_max"] = get_max_ammo()
+	data["shots_max"] = get_max_ammo() - (is_revolver ? 1 : 0) // revolvers have one less shot
 
 	return data
 

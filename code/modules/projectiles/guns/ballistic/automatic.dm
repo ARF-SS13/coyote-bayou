@@ -16,6 +16,8 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 
+	use_gun_sprite_handler = TRUE
+	ejects_magazine = TRUE // only if casing_ejector is true
 	var/auto_eject = 0 //for en blocs
 	var/auto_eject_sound = null
 	//var/alarmed = 0 //for a funky, annoying sound when ammo runs out. broken code
@@ -40,6 +42,8 @@
 	*/
 
 /obj/item/gun/ballistic/automatic/update_icon_state()
+	if(SSgun_sprites.SkinGun(src))
+		return
 	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
 		return // all done!
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
