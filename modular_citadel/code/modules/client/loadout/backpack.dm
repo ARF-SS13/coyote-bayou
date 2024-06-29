@@ -812,3 +812,18 @@
 	name = "Bracelet (pair)"
 	path = /obj/item/clothing/accessory/braceletpair
 	cost = 1
+
+/datum/gear/backpack/ribbon
+	name  = "Hair Ribbon"
+	path = /obj/item/clothing/accessory/ribbon
+	cost = 0
+
+/datum/gear/backpack/bow
+	name  = "Hair bow"
+	path = /obj/item/clothing/accessory/bow
+	cost = 0
+
+/datum/gear/backpack/bow/small
+	name  = "Hair bow, small"
+	path = /obj/item/clothing/accessory/bow/small
+	cost = 0
