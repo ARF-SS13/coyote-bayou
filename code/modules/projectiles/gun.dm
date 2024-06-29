@@ -1585,14 +1585,6 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
 
-/obj/item/gun/proc/modify_projectile(obj/item/projectile/BB)
-	//BB.damage *= G.damage_multiplier
-	BB.damage_mod = damage_multiplier
-	BB.armour_penetration *= penetration_multiplier
-	BB.pixels_per_second *= projectile_speed_multiplier
-	if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
-		BB.zone_accuracy_type = get_zone_accuracy_type()
-
 /obj/item/gun/proc/post_modify_projectile(obj/item/projectile/BB)
 	return
 
@@ -1620,9 +1612,9 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/ammo_box/a3006box(src)
 	new /obj/item/ammo_box/a50MGbox(src)
-	new /obj/item/ammo_box/generic/shotgun/slug(src)
-	new /obj/item/ammo_box/generic/shotgun/buck(src)
-//	new /obj/item/ammo_box/generic/shotgun/improvised(src)
+	new /obj/item/ammo_box/shotgun/slug(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/shotgun/improvised(src)
 	new /obj/item/ammo_box/m22(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/ammo_box/c10mm(src)

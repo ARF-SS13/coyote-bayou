@@ -158,7 +158,7 @@
 	rapid_fire_delay = 6
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/generic/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
 
 /mob/living/simple_animal/hostile/renegade/syndicate/civilian
 	minimum_distance = 10

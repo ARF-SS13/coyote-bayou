@@ -44,7 +44,7 @@
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
-	ammo_type = /obj/item/ammo_casing/generic/shotgun/buckshot/test
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/internal/cylinder/flintlock

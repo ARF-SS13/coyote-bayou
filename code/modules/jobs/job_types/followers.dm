@@ -568,9 +568,9 @@ Follower Volunteer
 	name = "Followers Close Protection Guard"
 	suit_store = /obj/item/gun/ballistic/shotgun/police
 	backpack_contents = list(
-		/obj/item/ammo_box/generic/shotgun/bean = 1,
-		/obj/item/ammo_box/generic/shotgun/buck = 1,
-		/obj/item/ammo_box/generic/shotgun/slug = 1,
+		/obj/item/ammo_box/shotgun/bean = 1,
+		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/ammo_box/shotgun/slug = 1,
 	)
 
 /datum/outfit/loadout/guard_energy

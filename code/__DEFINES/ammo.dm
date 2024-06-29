@@ -1,13 +1,6 @@
 /*ALL DEFINES RELATED TO AMMO GO HERE*/
 
 //Caliber defines
-// hi, this is Jaeger, we redid weapon calibers and damage
-// reference below
-#define CALIBER_COMPACT "compact rounds"
-#define CALIBER_MEDIUM "medium rounds"
-#define CALIBER_LONG "long rounds"
-#define CALIBER_SHOTGUN "shotgun rounds"
-// deprecated defines
 #define CALIBER_22LR ".22LR rounds"
 #define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_MOUSE ".22LR mouseshot rounds"
@@ -26,7 +19,7 @@
 #define CALIBER_4570 ".45-70 rounds"
 #define CALIBER_50MG ".50MG rounds"
 #define CALIBER_2MM "2mmEC gauss slugs"
-#define CALIBER_SHOTGUN_DEPRECATED "12 gauge shells" // added _DEPRECATED
+#define CALIBER_SHOTGUN "12 gauge shells"
 #define CALIBER_CASELESS "4.73mm caseless"
 #define CALIBER_75 ".75 gyrojets"
 #define CALIBER_195 "1.95mm rounds"
@@ -275,54 +268,4 @@ GLOBAL_LIST_INIT(ammo_material_multipliers, list(
 #define BULLET_IS_RUBBER 1
 #define BULLET_IS_SURPLUS 2
 #define BULLET_IS_MATCH 3
-
-/////// LE CORBS
-
-// ANATOMY OF A CORB STATE
-// "[corb]-[suffix]-[part]-[key]"
-
-#define SUFFIX_FULL    "full" // mandatory Full state for icons
-#define SUFFIX_EMPTY   "empty" // mandatory Empty state for icons
-#define SUFFIX_PROJ    "projectile"
-#define SUFFIX_MAGAZINE_DEFAULT "default"
-#define SUFFIX_PARTIAL "partial"
-
-#define CORB_BULLET    "bullet"
-#define CORB_BOX       "box"
-#define CORB_CRATE     "crate"
-#define CORB_MAGAZINE  "magazine"
-
-#define PART_BROAD     "broad"
-#define PART_COUNT     "count"
-#define PART_PERCENT   "percent"
-
-#define BULLET_FULL_STATE                   "[CORB_BULLET]-[SUFFIX_FULL]"
-#define BULLET_EMPTY_STATE                  "[CORB_BULLET]-[SUFFIX_EMPTY]"
-#define BULLET_PROJ_STATE                   "[CORB_BULLET]-[SUFFIX_PROJ]"
-#define BOX_FULL_STATE                      "[CORB_BOX]-[SUFFIX_FULL]"
-#define BOX_EMPTY_STATE                     "[CORB_BOX]-[SUFFIX_EMPTY]"
-#define CRATE_FULL_STATE                    "[CORB_CRATE]-[SUFFIX_FULL]"
-#define CRATE_EMPTY_STATE                   "[CORB_CRATE]-[SUFFIX_EMPTY]"
-#define BOX_PARTIAL_STATE                   "[CORB_BOX]-[SUFFIX_PARTIAL]-[PART_BROAD]"
-#define CRATE_PARTIAL_STATE                 "[CORB_CRATE]-[SUFFIX_PARTIAL]-[PART_BROAD]"
-#define BOX_PARTIAL_COUNT_STATE             "[CORB_CRATE]-[SUFFIX_PARTIAL]-[PART_COUNT]"
-#define CRATE_PARTIAL_COUNT_STATE           "[CORB_CRATE]-[SUFFIX_PARTIAL]-[PART_COUNT]"
-#define BOX_PARTIAL_PERCENT_STATE           "[CORB_CRATE]-[SUFFIX_PARTIAL]-[PART_PERCENT]"
-#define CRATE_PARTIAL_PERCENT_STATE         "[CORB_CRATE]-[SUFFIX_PARTIAL]-[PART_PERCENT]"
-#define MAGAZINE_FULL_STATE                 "[CORB_MAGAZINE]-[SUFFIX_FULL]"
-#define MAGAZINE_EMPTY_STATE                "[CORB_MAGAZINE]-[SUFFIX_EMPTY]"
-#define MAGAZINE_PARTIAL_STATE(pfx)         "[pfx]-[SUFFIX_PARTIAL]-[PART_BROAD]"
-#define MAGAZINE_PARTIAL_COUNT_STATE(pfx)   "[pfx]-[SUFFIX_PARTIAL]-[PART_COUNT]"
-#define MAGAZINE_PARTIAL_PERCENT_STATE(pfx) "[pfx]-[SUFFIX_PARTIAL]-[PART_PERCENT]"
-
-#define MAG_TOKEN_MAX_AMMO "%MAXAMMO%"
-
-
-// #define BOX_PARTIAL_COUNT_STATE(count) "[CORB_BOX]-[PART_COUNT]-[count]"
-// #define CRATE_PARTIAL_COUNT_STATE(count) "[CORB_CRATE]-[PART_COUNT]-[count]"
-// #define BOX_PARTIAL_PERCENT_STATE(percent) "[CORB_BOX]-[PARTIAL_PERCENT]-[percent]"
-// #define CRATE_PARTIAL_PERCENT_STATE(percent) "[CORB_CRATE]-[PARTIAL_PERCENT]-[percent]"
-
-
-
 

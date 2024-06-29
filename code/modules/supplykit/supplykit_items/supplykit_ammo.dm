@@ -18,12 +18,12 @@
 /datum/supplykit_item/ammo/box12buck
 	name = "12 gauge buckshot box"
 	desc = "A box containing 12 rounds of 12 gauge buckshot."
-	item = /obj/item/ammo_box/generic/shotgun/buck
+	item = /obj/item/ammo_box/shotgun/buck
 
 /datum/supplykit_item/ammo/box12slug
 	name = "12 gauge slug box"
 	desc = "A box containing 12 rounds of 12 gauge slugs."
-	item = /obj/item/ammo_box/generic/shotgun/slug
+	item = /obj/item/ammo_box/shotgun/slug
 
 /datum/supplykit_item/ammo/box22
 	name = ".22LR ammo box"

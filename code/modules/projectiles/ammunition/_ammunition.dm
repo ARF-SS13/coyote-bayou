@@ -15,14 +15,14 @@
 	var/material_class = BULLET_IS_LIGHT_PISTOL
 	/// Used to deduct the right amount of bullet mats from the bullet when fired
 	var/casing_quality = BULLET_IS_SURPLUS
-	var/fire_sound = null              //What sound should play when this ammo is fired
-	var/caliber = null                 //Which kind of guns it can be loaded into - NOT a list!
-	var/projectile_type = null         //The bullet type to create when New() is called
-	var/obj/item/projectile/BB = null  //The loaded bullet
-	var/pellets = 1                    //Pellets for spreadshot
-	var/variance = 0                   //Variance for inaccuracy fundamental to the casing
-	var/randomspread = 1               //Randomspread for automatics
-	var/delay = 0                      //Delay for energy weapons
+	var/fire_sound = null						//What sound should play when this ammo is fired
+	var/caliber = null							//Which kind of guns it can be loaded into - NOT a list!
+	var/projectile_type = null					//The bullet type to create when New() is called
+	var/obj/item/projectile/BB = null 			//The loaded bullet
+	var/pellets = 1								//Pellets for spreadshot
+	var/variance = 0							//Variance for inaccuracy fundamental to the casing
+	var/randomspread = 1						//Randomspread for automatics
+	var/delay = 0								//Delay for energy weapons
 	/// Override this to make the gun check for a different cooldown rather than CLICK_CD_RANGE, which is 4 deciseconds.
 	var/click_cooldown_override
 	var/firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect	//the visual effect appearing when the ammo is fired.
@@ -35,7 +35,6 @@
 	var/sound_properties = CSP_PISTOL_LIGHT
 	var/e_cost = 100 //The amount of energy a cell needs to expend to create this shot.
 	var/select_name = "energy"
-	var/caseless = FALSE // cus why not
 
 /obj/item/ammo_casing/Initialize(mapload, spent)
 	setup_sound_datums()

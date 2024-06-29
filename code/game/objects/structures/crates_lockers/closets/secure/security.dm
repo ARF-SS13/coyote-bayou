@@ -230,7 +230,7 @@
 	..()
 	new /obj/item/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/generic/shotgun/buck(src)
+		new /obj/item/ammo_box/shotgun/buck(src)
 /obj/structure/closet/secure_closet/armory3
 	name = "armory energy gun locker"
 	req_access = list(ACCESS_ARMORY)
@@ -258,7 +258,7 @@
 	new /obj/item/electrostaff(src)
 	new /obj/item/electrostaff(src)
 	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/generic/shotgun/buck(src)
+		new /obj/item/ammo_box/shotgun/buck(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

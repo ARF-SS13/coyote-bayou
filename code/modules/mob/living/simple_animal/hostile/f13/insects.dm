@@ -504,7 +504,7 @@
 	a_intent = INTENT_HARM
 	idlesound = list('sound/f13npc/bloatfly/fly.ogg')
 	blood_volume = 0
-	casingtype = /obj/item/ammo_casing/generic/shotgun/bloatfly
+	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
 	projectiletype = null
 	projectilesound = 'sound/f13npc/bloatfly/shoot2.ogg'
 	//sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
@@ -515,9 +515,9 @@
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
 		MOB_CASING_LIST(\
-			MOB_CASING_ENTRY(/obj/item/ammo_casing/generic/shotgun/bloatfly, 4),\
-			MOB_CASING_ENTRY(/obj/item/ammo_casing/generic/shotgun/bloatfly/two, 3),\
-			MOB_CASING_ENTRY(/obj/item/ammo_casing/generic/shotgun/bloatfly/three, 3)\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly, 4),\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/two, 3),\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/three, 3)\
 		)
 	)
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."

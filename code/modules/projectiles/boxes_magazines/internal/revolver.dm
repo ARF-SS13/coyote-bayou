@@ -194,7 +194,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/judge
 	name = "Cylinder for a Judge"
-	ammo_type = /obj/item/ammo_casing/generic/shotgun
+	ammo_type = /obj/item/ammo_casing/shotgun
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 3
 
