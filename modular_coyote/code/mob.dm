@@ -1566,3 +1566,14 @@
 	icon_state = "malkia"
 	icon_living = "malkia"
 	icon_dead = "malkia_dead"
+
+/mob/living/simple_animal/whale
+	name = "Whale"
+	desc = "What the hell? That's a whale!"
+	icon = 'modular_coyote/icons/mob/space_whale.dmi'
+	icon_state = "alive"
+	icon_living = "alive"
+	icon_dead = "alive"
+	maxHealth = 200
+	health = 200
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10)
