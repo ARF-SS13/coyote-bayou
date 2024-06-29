@@ -237,7 +237,7 @@
 /obj/item/projectile/proc/create_statblock()
 	var/list/my_block = list()
 	my_block["projectile_name"] = name || "Unnamed Projectile"
-	my_block["projectile_damage"] = damage || 0
+	my_block["projectile_damage"] = round(damage, 0.5) || 0
 	my_block["projectile_damage_type"] = damage_type || "brute"
 	my_block["projectile_flag"] = flag || "bullet"
 	my_block["projectile_stamina"] = stamina || 0

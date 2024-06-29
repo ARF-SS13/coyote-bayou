@@ -1344,7 +1344,6 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(quester)
 	if(!P)
 		return
-	virgin = FALSE
 	/// list format: list("1" = list(list(queststuff)), "2" = list(top_5_medium_quests), "4" = list(top_5_hard_quests)), "8" = list(top_5_cbt_quests))
 	for(var/list/questy in P.saved_finished_quests)
 		if(!LAZYACCESS(questy, "VALID"))
@@ -1355,6 +1354,7 @@ SUBSYSTEM_DEF(economy)
 		finished_quests += FQ
 	lifetime_quest_total = P.number_of_finished_quests
 	compare_n_sort_finished_quests()
+	virgin = FALSE
 
 /// if nautical nonsense be something you wish
 /datum/quest_book/proc/compare_n_sort_finished_quests()
@@ -1457,6 +1457,9 @@ SUBSYSTEM_DEF(economy)
 	adjust_funds(P.saved_unclaimed_points, null, FALSE)
 	max_coin_depositry = max(QUEST_MINIMUM_MAX_COIN_DEPOSIT, round(unclaimed_points * 0.1, 100)) // increments of 10 coins
 	coins_deposited = 0
+	for(var/pat in P.saved_active_quests)
+		if(!ispath(pat, /datum/bounty))
+			P.saved_active_quests -= pat
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
@@ -1464,14 +1467,15 @@ SUBSYSTEM_DEF(economy)
 			P.saved_active_quests -= questy
 			continue
 		var/datum/bounty/B = text2path(questy[QB_SAVE_QUEST_TYPE])
-		B = new B(null, TRUE) // prevents it from generating anything
-		var/succeedful = B.deserialize_from_list(questy[QB_SAVE_QUEST_DATA])
-		if(!succeedful)
-			message_admins("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
-			CRASH("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
-		active_quests[B.uid] = B
-		SSeconomy.activate_quest(B)
-		B.assign_to(user)
+		if(ispath(B))
+			B = new B(null, TRUE) // prevents it from generating anything
+			var/succeedful = B.deserialize_from_list(questy[QB_SAVE_QUEST_DATA])
+			if(!succeedful)
+				message_admins("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
+				CRASH("Quest Book: Quest loading for [user.ckey] failed for quest [B.name]! This is bad! It means they couldnt load their active quests!")
+			active_quests[B.uid] = B
+			SSeconomy.activate_quest(B)
+			B.assign_to(user)
 	double_virgin = FALSE
 	to_chat(user, span_green("Loaded [LAZYLEN(active_quests)] quests and [SSeconomy.format_currency(P.saved_unclaimed_points, TRUE)] from your save file! =3"))
 	return TRUE
@@ -2312,7 +2316,7 @@ GLOBAL_DATUM_INIT(qbank_editor, /datum/quest_bank_editor, new)
 		if(!owner)
 			whynot = "Disconnected!"
 		else if(QB.virgin || QB.double_virgin)
-			whynot = "Not spawned in yet!"
+			whynot = "Their questbook hasn't loaded!"
 		if(should_work)
 			msg += "<span style='font-size:0.8em; color:green;'>Should work! =3</span>"
 		else
