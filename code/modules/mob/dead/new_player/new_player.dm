@@ -605,7 +605,7 @@
 				H.dropItemToGround(suit)
 				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
 		if(H.client && H.client.prefs.quester_uid) // Time to log the heck in!
-			SSeconomy.player_spawned(H)
+			SSeconomy.apply_daily_cash_modifier(H)
 
 	character.client.is_in_game = 1
 	spawn(5 MINUTES)
