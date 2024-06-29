@@ -33,11 +33,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	/// without a damage_list defined, default to this damage
 	var/damage // if left null, and the rest of these damage vars are also null, the projectile will default to its own damage system
 	/// The damage list to use for this gun! format: list("dmg" = weight) so, list("15" = 5, "20" = 3, "1000" = 0.1)
-	var/damage_list = list(
-		"10" = 50,
-		"1" = 2,
-		"40" = 2,
-	)
+	var/damage_list
 	/// without a damage list defined, and both of these defined, will roll a random number between these two values
 	var/damage_high
 	var/damage_low
