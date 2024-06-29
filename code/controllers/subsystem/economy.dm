@@ -158,7 +158,6 @@ SUBSYSTEM_DEF(economy)
 	relevant_dates = list_o_days.Copy() // reverseList(list_o_days)
 	if(relevant_dates[1] != today)
 		to_chat(world, span_adminobserverooc("Today is not the first day of the universe! [relevant_dates[1]] != [today]"))
-	
 	. = ..()
 	spawn(5 SECONDS)
 		to_chat(world, span_boldannounce("Added [LAZYLEN(all_quests)] quests! :D"))
@@ -1457,16 +1456,17 @@ SUBSYSTEM_DEF(economy)
 	adjust_funds(P.saved_unclaimed_points, null, FALSE)
 	max_coin_depositry = max(QUEST_MINIMUM_MAX_COIN_DEPOSIT, round(unclaimed_points * 0.1, 100)) // increments of 10 coins
 	coins_deposited = 0
-	for(var/pat in P.saved_active_quests)
-		if(!ispath(pat, /datum/bounty))
-			P.saved_active_quests -= pat
 	var/list/savequests = P.saved_active_quests.Copy()
 	for(var/list/questy in savequests)
 		if(!LAZYACCESS(questy, "VALID"))
 			message_admins("Quest Book: Quest loading for [user.ckey] encourntered an invalid save chunk! This is bad! It means they couldnt load their active quests!")
 			P.saved_active_quests -= questy
 			continue
-		var/datum/bounty/B = text2path(questy[QB_SAVE_QUEST_TYPE])
+		var/qpathtxt = questy[QB_SAVE_QUEST_TYPE]
+		if(!LAZYACCESS(SSeconomy.all_quests, qpathtxt))
+			stack_trace("Quest Book: Quest path [qpathtxt] is not a valid quest type! Probably just a removed quest entry, might not be a bug, but it might be!")
+			continue
+		var/datum/bounty/B = text2path(qpathtxt)
 		if(ispath(B))
 			B = new B(null, TRUE) // prevents it from generating anything
 			var/succeedful = B.deserialize_from_list(questy[QB_SAVE_QUEST_DATA])
