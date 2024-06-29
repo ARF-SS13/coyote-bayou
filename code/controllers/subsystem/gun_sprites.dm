@@ -8,10 +8,12 @@ SUBSYSTEM_DEF(gun_sprites)
 	var/list/guns = list()
 
 /datum/controller/subsystem/gun_sprites/proc/RegisterGunSprites(obj/item/gun/ballistic/gun)
+	if(!gun || !gun.use_gun_sprite_handler)
+		return // opt out
 	var/base = gun.icon_state_base || initial(gun.icon_state)
-	if(LAZYACCESS(guns, base))
-		return // already registered
 	gun.icon_state_base = base
+	if(LAZYACCESS(guns, base))
+		return TRUE // already registered
 	var/datum/gun_sprite_handler/gsh = new(gun)
 	guns[base] = gsh
 
@@ -50,12 +52,13 @@ SUBSYSTEM_DEF(gun_sprites)
 
 /datum/gun_sprite_handler/proc/ExtractSprites(obj/item/gun/ballistic/gun)
 	base_state = initial(gun.icon_state)
+	icon = initial(gun.icon)
 	gun.icon_state_base = base_state
 	/// and now, the fun begins
 	/// SO. gun icon_states tend (and I do mean TEND) to follow a pattern of "gunname" and "gunname-e"
 	/// but, they may also have a maga capacity associated, like "gunname-10" or "gunname-10-e"
 	/// we will automatically check for all these, and determine what system we'll use accordingly
-	var/list/states = icon_states(base_state)
+	var/list/states = icon_states(icon)
 	if(!LAZYLEN(states))
 		gun.use_gun_sprite_handler = FALSE
 		broken = TRUE
@@ -74,7 +77,6 @@ SUBSYSTEM_DEF(gun_sprites)
 			stock.open_loaded = state
 			continue
 		/// now, we check for capacity states
-		var/capacity = 0
 		var/list/substates = splittext(state, "-")
 		/// we cant rely on number-e to be the second and third entries, cus some jokers love to put dashes wherever
 		/// but we can rely on them to be the last two entries
@@ -84,25 +86,25 @@ SUBSYSTEM_DEF(gun_sprites)
 		var/lastie2 = LAZYACCESS(substates, LAZYLEN(substates) - 1)
 		var/numlastie = text2num(lastie)
 		if(isnum(numlastie)) // a loaded, closed capacity state
-			var/datum/gun_sprite_cache/gsc = LAZYACCESS(capacity_states, numlastie)
+			var/datum/gun_sprite_cache/gsc = LAZYACCESS(capacity_states, lastie)
 			if(!gsc)
 				gsc = new()
-				capacity_states[numlastie] = gsc
+				capacity_states[lastie] = gsc
 			gsc.closed_loaded = state
 			continue
 		var/numlastie2 = text2num(lastie2)
 		if(isnum(numlastie2)) // a loaded, open capacity state
-			var/datum/gun_sprite_cache/gsc = LAZYACCESS(capacity_states, numlastie2)
+			var/datum/gun_sprite_cache/gsc = LAZYACCESS(capacity_states, lastie2)
 			if(!gsc)
 				gsc = new()
-				capacity_states[numlastie2] = gsc
+				capacity_states[lastie2] = gsc
 			gsc.open_loaded = state
 			continue
 	/// and now, sanitize everything so that we have a full set of states
 	SanitizeStates()
 
 /datum/gun_sprite_handler/proc/SanitizeStates()
-	var/list/states = icon_states(base_state)
+	var/list/states = icon_states(icon)
 	if(!stock)
 		stock = new()
 		stock.default = base_state
@@ -122,7 +124,7 @@ SUBSYSTEM_DEF(gun_sprites)
 		stock.open_loaded = stock.closed_loaded
 	if(LAZYLEN(capacity_states) == 1)
 		/// we're gonna delete this, but extract any different states and put them in the stock
-		var/datum/gun_sprite_cache/gsc = capacity_states[1]
+		var/datum/gun_sprite_cache/gsc = capacity_states[capacity_states[1]]
 		if(gsc.closed_loaded != stock.closed_loaded)
 			stock.closed_loaded = gsc.closed_loaded
 		if(gsc.open_loaded != stock.open_loaded)
@@ -164,13 +166,13 @@ SUBSYSTEM_DEF(gun_sprites)
 	/// that should be obvious enough
 
 /// now, to give back the appropriate icon!
-/datum/gun_sprite_handler/GetIcon(obj/item/gun/ballistic/gun)
+/datum/gun_sprite_handler/proc/GetIcon(obj/item/gun/ballistic/gun)
 	if(broken)
 		return // it'll handle it
 	return icon
 
 /// now, to give back the appropriate icon state!
-/datum/gun_sprite_handler/GetIconState(obj/item/gun/ballistic/gun)
+/datum/gun_sprite_handler/proc/GetIconState(obj/item/gun/ballistic/gun)
 	if(broken)
 		return // it'll handle it
 	var/magcap = gun.magazine ? gun.magazine.max_ammo : 0

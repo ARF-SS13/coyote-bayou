@@ -429,6 +429,7 @@ SUBSYSTEM_DEF(cmls)
 			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), gun, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
 	mag.update_icon()
 	gunmag.update_icon()
+	gun.update_icon()
 	return TRUE
 
 /// if the gun has ammo, spawn a mag with that ammo and fill it with the ammo
