@@ -612,27 +612,31 @@ SUBSYSTEM_DEF(economy)
 	var/datum/preferences/P = extract_prefs(someone)
 	if(!P)
 		CRASH("No preferences for [someone]!")
+	var/datum/quest_book/QB = get_quest_book(someone)
+	QB.load_saved_data()
 	P.anticipated_daily_change = calculate_daily_spawn_in_stuff(someone)
 	return P.anticipated_daily_change
 
 /// Handles actually deducting/adding cash to the player's account, updating their cash, updating their personal calendar
 /// Updates their calendar on fire! So, be mindful with it
-/datum/controller/subsystem/economy/proc/player_spawned(someone)
+/datum/controller/subsystem/economy/proc/apply_daily_cash_modifier(someone)
 	var/datum/preferences/P = extract_prefs(someone)
 	if(!P)
 		return FALSE
 	if(LAZYACCESS(P.days_spawned_in, 1) == today)
 		return FALSE // already been handled!
-	var/penalty = P.anticipated_daily_change
-	if(!penalty)
-		penalty = calculate_daily_spawn_in_stuff(someone)
-	P.saved_unclaimed_points += penalty
+	var/datum/quest_book/QB = get_quest_book(someone)
+	if(QB.virgin || QB.double_virgin)
+		QB.load_saved_data()
+		if(QB.virgin || QB.double_virgin)
+			CRASH("FAILED to load quest book for [someone]!")
+	var/penalty = calculate_daily_spawn_in_stuff(someone)
 	P.anticipated_daily_change = 0
 	P.last_quest_login = world.realtime
 	P.days_spawned_in.Insert(1, REALTIME2QDAYS(0)) // 0 is today
-	P.save_character()
-	var/datum/quest_book/QB = get_quest_book(someone)
-	QB.load_saved_data()
+	if(!penalty)
+		return FALSE
+	QB.adjust_funds(penalty, null, TRUE, FALSE)
 	return penalty
 
 /datum/controller/subsystem/economy/proc/setup_quests()
@@ -1162,6 +1166,7 @@ SUBSYSTEM_DEF(economy)
 	QW = new(src)
 	if(!LAZYACCESS(SSeconomy.quest_books, q_uid))
 		SSeconomy.quest_books[q_uid] = src
+	load_saved_data()
 	update_owner_data(quester)
 
 /datum/quest_book/proc/load_saved_data()
