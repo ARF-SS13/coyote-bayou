@@ -14,7 +14,7 @@
 // Base Wasteland Outfit
 // This is the base default outfit for just about everyone
 // please please please base everything off this
-/datum/outfit/wasteland
+/datum/outfit/job/cb
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
 
@@ -39,7 +39,7 @@
 		/obj/item/card/id/selfassign,
 		)
 
-/datum/outfit/wasteland/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(isrobotic(H))
 		box = /obj/item/storage/survivalkit/medical/synth

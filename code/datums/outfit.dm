@@ -56,6 +56,8 @@
 	.=..()
 //////////////////////////////////////////////////////
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(isrobotic(H))
+		box = /obj/item/storage/survivalkit/medical/synth
 	//to be overridden for customization depending on client prefs,species etc
 	return
 

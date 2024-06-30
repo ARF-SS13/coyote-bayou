@@ -155,6 +155,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
+	"Radio Operator",
 	"Farmer",
 	"Prospector",
 	"Town Doctor",
@@ -255,8 +256,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
-	"Radio Operator",
-	"Backstage Character"
+	"Character Testing Area"
 ))
 
 GLOBAL_LIST_INIT(redwater_positions, list(
@@ -267,9 +267,9 @@ GLOBAL_LIST_INIT(redwater_positions, list(
 ))
 
 GLOBAL_LIST_INIT(tunnelrats_positions, list(
-	"Tunnel Rats C.H.U.D.",
-	"Tunnel Rats S.C.A.V.",
-	"Tunnel Rats R.A.T.",
+	"Giant Tunnel Rat Supreme",
+	"Tunnel Rats Chud",
+	"Tunnel Rats Scav",
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(

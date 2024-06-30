@@ -336,7 +336,7 @@
 
 /obj/effect/mob_spawn/human/cook
 	name = "Cook"
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 
 random
 /obj/effect/mob_spawn/human/doctor

@@ -40,26 +40,10 @@
 	supervisors = "fate"
 	selection_color = "#dddddd"
 	paycheck = 0 // Wastelanders are paid in the form of loot and barter
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 	access = list()
 	minimal_access = list()
 
-//////////////////////////////
-/// Radio Operator
-/// Some jerkoff who sits in a radio tower and broadcasts their dumb opinions to the world
-/datum/job/wasteland/f13radioop
-	title = "Radio Operator"
-	flag = F13RADIOOP
-	// faction = FACTION_OASIS
-	total_positions = 2
-	spawn_positions = 2
-	description = "You are the voice of the wasteland, broadcasting your thoughts and opinions to the world. You have the power to shape the wasteland's future, or simply entertain the masses. The choice is yours."
-	supervisors = "the (nonexistent) FCC"
-	selection_color = "#dddddd"
-	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
-	outfit = /datum/outfit/job/wasteland/f13radioop
-	access = list(ACCESS_TCOMSAT)
-	minimal_access = list(ACCESS_TCOMSAT)
 
 //////////////////////////////
 /// Far-Lands Tribals
@@ -79,10 +63,10 @@
 	minimal_access = list()
 
 //////////////////////////////
-/// Wasteland Backstage Character
+/// Wasteland Backstage Character Testing Area
 /// Someone who spawned in to mercilessly hump other backstagers
 /datum/job/wasteland/backstage
-	title = "Backstage Character"
+	title = "Character Testing Area"
 	flag = CBOOCBACKSTAGE
 	faction = FACTION_WASTELAND
 	total_positions = -1
@@ -91,7 +75,7 @@
 	supervisors = "<i>your throbbing biological urges</i>"
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 	access = list()
 	minimal_access = list()
 
@@ -166,6 +150,23 @@
 	loadout_options = list(
 		/datum/outfit/loadout/diner
 	)
+
+//////////////////////////////
+/// Radio Operator
+/// Some jerkoff who sits in a radio tower and broadcasts their dumb opinions to the world
+/datum/job/townie/radiooperator
+	title = "Radio Operator"
+	flag = F13RADIOOP
+	// faction = FACTION_OASIS
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are the voice of the wasteland, broadcasting your thoughts and opinions to the world. You have the power to shape the wasteland's future, or simply entertain the masses. The choice is yours."
+	supervisors = "the (nonexistent) FCC"
+	selection_color = "#dddddd"
+	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
+	outfit = /datum/outfit/job/wasteland/f13radioop
+	access = list(ACCESS_TCOMSAT)
+	minimal_access = list(ACCESS_TCOMSAT)
 
 
 //////////////////////////////
@@ -264,7 +265,7 @@
 	description = "You are an adventurer, a resident of New Boston who has taken up the call to explore the wasteland. You are the backbone of the settlement, exploring and risking your own (undying) life to bring back resources and knowledge for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 

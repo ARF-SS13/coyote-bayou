@@ -18,29 +18,69 @@
 	total_positions = -1
 	spawn_positions = -1
 	selection_color = "#df80af"
+	outfit = /datum/outfit/job/cb/tunnelrats
 	exp_type = EXP_TYPE_LIVING
 	exp_requirements = 1
+
+/datum/job/tunnelrats/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
+	SSquirks.AddQuirkToMob(spawner, /datum/quirk/ratmaster, TRUE, TRUE)
+	. = ..()
+
+////////////////////////
+// Tunnel Rats Giant Rat
+// The leader of the Tunnel Rats.
+/datum/job/tunnelrats/bigratthatmakestherules
+	title = "Giant Tunnel Rat Supreme"
+	total_positions = 1
+	spawn_positions = 1
+	outfit = /datum/outfit/job/cb/tunnelrats/boss
+	description = "You are the Giant Tunnel Rat Supreme, the leader of the Tunnel Rats. You're the most rat of them all, and all your gross ratlings look up to you for guidance."
+	supervisors = "you!"
+	selection_color = "#FF00FF"
 
 ////////////////////////
 // Tunnel Rats C.H.U.D.
 // A Tunnel Rat who specializes in the use of the C.H.U.D. system.
 /datum/job/tunnelrats/chud
-	title = "Tunnel Rats C.H.U.D." //I swear to god. ~TK
-	description = "You are a Tunnel Rat who specializes in the use of the C.H.U.D. system: an advanced way to navigate the tunnels and caves of the wasteland to be the top cannibalistic humanoid underground dweller."
-	supervisors = "C.H.U.D. Supervisor Giant Rat Supreme"
+	title = "Tunnel Rats Chud" //I swear to god. ~TK
+	description = "You are a Tunnel Rat Chud, which is sort of like a guard.  Be you a bully or a strong arm of justice you protect your little hole in the ground."
+	supervisors = "Giant Rat Supreme"
+	total_positions = 3
+	spawn_positions = 3
 
 ////////////////////////
 // Tunnel Rats scav
-// A Tunnel Rat who specializes in the use of the scav system.
+// The tunnel rat townsfolk, basically.
 /datum/job/tunnelrats/scav
-	title = "Tunnel Rats S.C.A.V."
-	description = "You are a Tunnel Rat who specializes in the use of the S.C.A.V. system: a state of the art methodology of wallowing in the filth of the underwastes to be the top scrumf."
-	supervisors = "S.C.A.V. Supervisor Giant Rat Supreme"
+	title = "Tunnel Rats Scav"
+	description = "You are a Tunnel Rat scavenger. Be you a townsfolk or some sort of adventurer your life revolves trying to survive in your little underground hovel."
+	supervisors = "Giant Rat Supreme & the Chuds"
+
+
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////// OUTFITS /////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// BASE TUNNEL RAT OUTFIT
+////////////////////////
+/// machete, welding helmet, technophreak, better meds I guess???
+/datum/outfit/job/cb/tunnelrats
+	name = "Tunnel Rats Base"
+	jobtype = /datum/job/tunnelrats
+
+	box = /obj/item/storage/survivalkit/medical
+	head = /obj/item/clothing/head/welding/up
+	suit_store = /obj/item/melee/onehanded/machete
+	technophreak = TRUE
 
 ////////////////////////
-// Tunnel Rats Rat
-// A Tunnel Rat who specializes in the use of the Rat system.
-/datum/job/tunnelrats/rat
-	title = "Tunnel Rats R.A.T."
-	description = "You are a Tunnel Rat who specializes in the use of the R.A.T. system: a cutting edge way to be a rat."
-	supervisors = "R.A.T. Supervisor Giant Rat Supreme"
+// TUNNEL RAT BOSS OUTFIT
+////////////////////////
+/// machete, welding mask, technophreak, better meds I guess???
+/datum/outfit/job/cb/tunnelrats/boss
+	name = "Tunnel Rats Giant Rat"
+	jobtype = /datum/job/tunnelrats/bigratthatmakestherules
+
+	box = /obj/item/storage/survivalkit/medical/follower
+	head = null
+	mask = /obj/item/clothing/mask/gas/welding/up
+	suit_store = /obj/item/melee/onehanded/machete/forgedmachete

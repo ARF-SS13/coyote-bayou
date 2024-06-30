@@ -881,12 +881,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Detective"
 	icon_state = "Detective"
 
+/obj/effect/landmark/start/f13/tunnelratsboss
+	name = "Giant Tunnel Rat Supreme"
+	icon_state = "Detective"
+
 /obj/effect/landmark/start/f13/tunnelratschud
-	name = "Tunnel Rats C.H.U.D."
+	name = "Tunnel Rats Chud"
 	icon_state = "Detective"
 
 /obj/effect/landmark/start/f13/tunnelratsurchin
-	name = "Tunnel Rats S.C.A.V."
+	name = "Tunnel Rats Scav"
 	icon_state = "Detective"
 
 /obj/effect/landmark/start/f13/tunnelratsrat

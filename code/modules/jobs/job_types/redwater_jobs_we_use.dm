@@ -17,7 +17,7 @@
 	total_positions = -1
 	spawn_positions = -1
 	selection_color = "#dcba97"
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 	access = list()
 	minimal_access = list()
 	paycheck = 75

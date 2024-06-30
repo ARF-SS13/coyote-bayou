@@ -9,6 +9,11 @@
 "au" = (
 /turf/open/floor/f13,
 /area/f13/wasteland)
+"aL" = (
+/obj/structure/bed,
+/obj/item/bedsheet/blue,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "aW" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/carpet,
@@ -44,6 +49,12 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"bX" = (
+/obj/structure/chair/f13chair1{
+	dir = 8
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "cd" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13/wood,
@@ -103,6 +114,11 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"cQ" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain/directional/west,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "cZ" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -154,6 +170,13 @@
 "ei" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
+"en" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "eq" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -194,6 +217,11 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"fm" = (
+/obj/item/lock_bolt,
+/obj/structure/simple_door/room,
+/turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "fB" = (
 /obj/structure/simple_door/room,
@@ -274,6 +302,10 @@
 /turf/closed/wall/f13/sunset/brick_small_dark{
 	color = "#AA5555"
 	},
+/area/f13/building/firetower)
+"if" = (
+/obj/structure/dresser,
+/turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "in" = (
 /obj/machinery/light/small{
@@ -494,6 +526,12 @@
 /obj/structure/campfire,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/caves)
+"qf" = (
+/obj/structure/table/wood/settler,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "qo" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -580,6 +618,11 @@
 	pixel_y = -2
 	},
 /turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"rN" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain/directional/east,
+/turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "rO" = (
 /obj/structure/table,
@@ -765,6 +808,18 @@
 	pixel_y = 13
 	},
 /turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"xc" = (
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/clothing_low,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"xm" = (
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "xA" = (
 /obj/structure/railing,
@@ -1039,6 +1094,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"Ff" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/window/fulltile/house,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "Fj" = (
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland)
@@ -1213,6 +1278,13 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/firetower)
+"Jk" = (
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "JK" = (
 /obj/structure/rug/carpet{
 	layer = 1;
@@ -1284,6 +1356,18 @@
 /turf/open/transparent/openspace,
 /area/f13/building/firetower)
 "MI" = (
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"MZ" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/obj/structure/dresser,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"Nv" = (
+/obj/structure/campfire/stove,
 /turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "NC" = (
@@ -1545,6 +1629,15 @@
 "TI" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"TQ" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/turf/open/transparent/openspace{
+	name = "air"
+	},
 /area/f13/building/firetower)
 "UC" = (
 /obj/structure/chair/sofa/left{
@@ -52143,13 +52236,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+rN
+rN
+je
+rN
+rN
+je
 bk
 bk
 bk
@@ -52400,16 +52493,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+aL
+MI
+je
+aL
+MI
+je
+je
+je
+je
 bk
 bk
 bk
@@ -52657,16 +52750,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+MZ
+MI
+je
+MZ
+MI
+je
+Nv
+qf
+Ff
 bk
 bk
 bk
@@ -52914,16 +53007,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+je
+xm
+je
+je
+xm
+je
+en
+bX
+Ff
 bk
 bk
 bk
@@ -53171,16 +53264,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+TQ
+MI
+MI
+MI
+MI
+fm
+MI
+aL
+Ff
 bk
 bk
 bk
@@ -53428,16 +53521,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+je
+Jk
+je
+je
+Jk
+je
+if
+xc
+Ff
 bk
 bk
 bk
@@ -53685,16 +53778,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+MZ
+MI
+je
+MZ
+MI
+je
+je
+je
+je
 bk
 bk
 bk
@@ -53942,13 +54035,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+aL
+MI
+je
+aL
+MI
+je
 bk
 bk
 bk
@@ -54199,13 +54292,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+cQ
+cQ
+je
+cQ
+cQ
+je
 bk
 bk
 bk

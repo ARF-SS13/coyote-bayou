@@ -1105,7 +1105,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13radioop
 	name = "Radio Operator"
-	jobtype = /datum/job/wasteland/f13radioop
+	jobtype = /datum/job/townie/radiooperator
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset
 	belt = /obj/item/supplykit
@@ -1122,7 +1122,7 @@ Raider
 		/obj/item/clothing/mask/chameleon
 		)
 
-/datum/outfit/wasteland/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/storage/fancy/flare_pouch, \

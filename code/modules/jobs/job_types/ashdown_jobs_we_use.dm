@@ -26,5 +26,5 @@
 	exp_type = EXP_TYPE_LIVING
 	exp_requirements = 1
 	selection_color = "#2244FF"
-	outfit = /datum/outfit/wasteland
+	outfit = /datum/outfit/job/cb
 	paycheck = 75

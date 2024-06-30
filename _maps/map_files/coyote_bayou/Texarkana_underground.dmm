@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "aab" = (
 /turf/closed/wall/f13/tunnel,
@@ -211,13 +211,13 @@
 /area/f13/building/sewers)
 "aff" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/lock_bolt{
-	dir = 8
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/turf/open/floor/wood_common{
-	icon_state = "common-broken2"
-	},
-/area/f13/building)
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/building/sewers)
 "afo" = (
 /obj/structure/nest/raider/ranged{
 	pixel_y = -27
@@ -443,7 +443,7 @@
 "anv" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "anF" = (
 /obj/effect/validball_spawner,
@@ -1241,16 +1241,10 @@
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/building/sewers)
 "aTZ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/railing/handrail/rusty,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
+/turf/closed/wall/rust,
 /area/f13/building/sewers)
 "aUl" = (
 /obj/item/pickaxe,
@@ -3052,26 +3046,12 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bKD" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
-"bKE" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/building)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bKH" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
@@ -3607,7 +3587,6 @@
 	dir = 1;
 	icon_state = "bench"
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "bNm" = (
@@ -3809,7 +3788,6 @@
 	dir = 1;
 	icon_state = "bench"
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3884,7 +3862,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/redwaterwatcher,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5894,7 +5871,7 @@
 /area/f13/caves)
 "cCt" = (
 /obj/effect/decal/cleanable/blood/drip,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "cCI" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6023,7 +6000,7 @@
 	desc = "A Delco-brand pre-war car battery, with alligator clips and jumper cables to match. This could probably work as a makeshift defibrillator, in a pinch.";
 	name = "car battery"
 	},
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "cGy" = (
 /turf/open/indestructible/ground/outside/desert,
@@ -6032,6 +6009,7 @@
 /obj/structure/sign/painting/library{
 	pixel_x = -32
 	},
+/obj/effect/landmark/start/f13/tunnelratschud,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6070,7 +6048,7 @@
 /area/f13/caves)
 "cJr" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "cKd" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7300,7 +7278,6 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
-/obj/effect/landmark/start/redwaterwatcher,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -8014,7 +7991,6 @@
 /obj/structure/chair/stool{
 	icon_state = "bench"
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "ejN" = (
@@ -9033,7 +9009,6 @@
 	pixel_x = -32
 	},
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/weapon_22,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "eUw" = (
@@ -9431,7 +9406,11 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/closed/wall/rust,
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
 "flP" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9525,6 +9504,11 @@
 	pixel_x = 33
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "trash mobs";
+	randomizer_tag = "Nash East Road"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fqv" = (
@@ -10222,6 +10206,7 @@
 "fTd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/f13/tunnelratsurchin,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -11940,17 +11925,6 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"hgL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
-	},
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/building/sewers)
 "hhp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
@@ -14133,7 +14107,6 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/landmark/start/redwaterwatcher,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -14329,15 +14302,15 @@
 	},
 /area/f13/building/massfusion)
 "iKT" = (
-/obj/item/storage/trash_stack,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
+/obj/structure/simple_door/wood,
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "iLo" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -16344,7 +16317,7 @@
 /area/f13/tunnel)
 "kkZ" = (
 /obj/effect/decal/cleanable/glitter/blue,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "klp" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -18490,11 +18463,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "lJE" = (
-/obj/structure/spacevine,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -19028,6 +18999,7 @@
 	dir = 1;
 	light_color = "#706891"
 	},
+/obj/effect/landmark/start/f13/tunnelratsurchin,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -19619,7 +19591,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "muT" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "mvj" = (
 /obj/structure/disposalpipe/junction/yjunction{
@@ -19731,7 +19703,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "mxQ" = (
@@ -20150,7 +20121,7 @@
 /area/f13/tunnel)
 "mRq" = (
 /obj/structure/glowshroom/shadowshroom,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "mRt" = (
 /turf/open/floor/f13{
@@ -21857,6 +21828,12 @@
 /obj/structure/junk/small/bed,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"odm" = (
+/obj/effect/landmark/start/f13/tunnelratschud,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "odv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire/robot,
@@ -22781,6 +22758,13 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"oMl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/f13/tunnelratschud,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "oMs" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -23338,6 +23322,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"pcW" = (
+/obj/effect/landmark/start/f13/tunnelratsboss,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "pde" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -25633,7 +25623,7 @@
 /area/f13/building)
 "qzt" = (
 /obj/structure/barricade/wooden,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "qzv" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -25798,7 +25788,7 @@
 	light_color = "#4F7942";
 	light_range = 3
 	},
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "qEQ" = (
 /obj/structure/wreck/trash/machinepiletwo,
@@ -26800,8 +26790,15 @@
 	},
 /area/f13/building)
 "rnh" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/tunnel)
+"rni" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/f13/tunnelratsurchin,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "rnp" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -26947,6 +26944,9 @@
 /area/f13/building/sewers)
 "rte" = (
 /obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 4
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "rtz" = (
@@ -27564,7 +27564,7 @@
 /area/f13/building/sewers)
 "rSH" = (
 /obj/structure/flora/rock/pile/largejungle,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/tunnel)
 "rTf" = (
 /obj/structure/rack/shelf_metal,
@@ -28292,7 +28292,7 @@
 /area/f13/caves)
 "stc" = (
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "sts" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -28787,7 +28787,6 @@
 /obj/structure/chair/stool{
 	icon_state = "bench"
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -28986,13 +28985,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "sQT" = (
-/obj/structure/simple_door/metal/ventilation{
-	name = "drainage system"
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "sRk" = (
 /obj/machinery/button/door{
@@ -30279,8 +30276,14 @@
 "tJv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
+"tKf" = (
+/obj/effect/landmark/start/f13/tunnelratsurchin,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "tKh" = (
 /obj/structure/table_frame/wood,
 /turf/open/indestructible/ground/inside/subway,
@@ -30370,7 +30373,7 @@
 /area/f13/caves)
 "tQE" = (
 /obj/structure/glowshroom,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "tRm" = (
 /obj/structure/bed/mattress{
@@ -32673,13 +32676,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "vBv" = (
-/obj/item/lock_bolt{
-	dir = 8
-	},
-/turf/open/floor/wood_common{
-	icon_state = "common-broken3"
-	},
-/area/f13/building)
+/turf/closed/wall/f13/ruins,
+/area/f13/building/sewers)
 "vBx" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13{
@@ -34145,7 +34143,9 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk,
-/turf/closed/wall/rust,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/building/sewers)
 "wCJ" = (
 /obj/structure/lattice/catwalk,
@@ -34827,7 +34827,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/landmark/start/redwateresident,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "xeV" = (
@@ -35563,7 +35562,7 @@
 "xCn" = (
 /obj/structure/glowshroom,
 /obj/effect/decal/cleanable/glitter/blue,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "xCw" = (
 /obj/item/trash/f13/electronic/toaster,
@@ -36304,10 +36303,6 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"yat" = (
-/obj/machinery/telecomms/relay/preset,
-/turf/open/indestructible,
-/area/f13/tcoms)
 "yau" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -37351,10 +37346,10 @@ bOO
 bOO
 bOO
 dZq
-ehC
-riU
-ehC
-ehC
+pcW
+oMl
+odm
+odm
 cGU
 sKq
 bOp
@@ -37572,7 +37567,7 @@ aaB
 aaB
 aaB
 aaB
-aaB
+bKD
 blc
 blc
 blc
@@ -37610,9 +37605,9 @@ bOO
 oMS
 ehC
 riU
-riU
-ehC
-ehC
+rni
+tKf
+tKf
 ehC
 ehC
 ehC
@@ -37867,9 +37862,9 @@ bOh
 ehC
 ehC
 ehC
-riU
-riU
-ehC
+rni
+rni
+tKf
 sKq
 bOp
 ehC
@@ -38126,7 +38121,7 @@ bOO
 bOO
 lXK
 fTd
-riU
+rni
 riU
 riU
 riU
@@ -44567,9 +44562,9 @@ bOb
 iEg
 wxU
 yik
-aff
+afW
 bOb
-vBv
+wxU
 yik
 afW
 iTC
@@ -46578,7 +46573,7 @@ aae
 aae
 pLf
 pLf
-kyV
+sQT
 pLf
 aae
 aae
@@ -46892,7 +46887,7 @@ xrB
 cwz
 tkZ
 wfv
-hgL
+hXn
 gur
 jLS
 jLS
@@ -47143,7 +47138,7 @@ bOb
 bOb
 bOb
 bOb
-bKD
+qtd
 xlI
 oeZ
 mEa
@@ -47660,7 +47655,7 @@ lqS
 xlI
 qFl
 bOb
-aTZ
+gSE
 xRB
 roN
 pAe
@@ -48691,7 +48686,7 @@ oeZ
 hXn
 sIt
 uGn
-lJE
+hFF
 bOb
 fyn
 jLS
@@ -49466,7 +49461,7 @@ hFF
 bOb
 ohA
 tnV
-bKE
+jLS
 bOb
 bOb
 aae
@@ -50691,7 +50686,7 @@ eLh
 aty
 eLh
 jGk
-xiw
+aTZ
 eFN
 eFN
 eFN
@@ -50948,14 +50943,14 @@ aty
 aty
 aty
 eFN
+xiw
+dHk
+dHk
+kyV
+eFN
+eFN
+aff
 sQT
-dHk
-dHk
-kyV
-eFN
-eFN
-uuS
-kyV
 eFN
 aae
 bOb
@@ -51257,11 +51252,11 @@ aae
 aae
 aae
 aae
-jGk
+pDR
+lJE
 gcv
-iUE
-tkZ
-hFF
+gcv
+gcv
 jGk
 lqn
 rQy
@@ -51514,11 +51509,11 @@ aae
 aae
 lqn
 lqn
+vBv
+iKT
 jGk
-gcv
-gcv
-gcv
-gcv
+jGk
+jGk
 jGk
 qbT
 xqZ
@@ -51771,12 +51766,12 @@ lqn
 lqn
 lqn
 tyh
-pDR
+vBv
 taG
-jGk
-jGk
-jGk
-jGk
+taG
+taG
+taG
+taG
 qbT
 mzU
 lXg
@@ -52541,7 +52536,7 @@ krB
 ikb
 tXP
 lqn
-mmC
+aaB
 xID
 xID
 qsK
@@ -53060,7 +53055,7 @@ lXg
 lqn
 gGV
 gGV
-iKT
+sdv
 wMO
 aaB
 cDH
@@ -54604,7 +54599,7 @@ aaB
 gGV
 gGV
 gGV
-aaB
+mmC
 xID
 xID
 aaB
@@ -101162,11 +101157,11 @@ aae
 aae
 aae
 aae
-cjD
-cjD
-cjD
-cjD
-cjD
+aae
+aae
+aae
+aae
+aaa
 "}
 (252,1,1) = {"
 aaa
@@ -101419,11 +101414,11 @@ aae
 aae
 aae
 aae
-cjD
-cho
-cho
-cho
-cjD
+aae
+aae
+aae
+aae
+aaa
 "}
 (253,1,1) = {"
 aaa
@@ -101676,11 +101671,11 @@ aae
 aae
 aae
 aae
-cjD
-cho
-cho
-cho
-cjD
+aae
+aae
+aae
+aae
+aaa
 "}
 (254,1,1) = {"
 aaa
@@ -101933,11 +101928,11 @@ aae
 aae
 aae
 aae
-cjD
-yat
-cho
-cho
-cjD
+aae
+aae
+aae
+aae
+aaa
 "}
 (255,1,1) = {"
 aaa
@@ -102190,9 +102185,9 @@ aaa
 aaa
 aaa
 aaa
-cjD
-cjD
-cjD
-cjD
-cjD
+aaa
+aaa
+aaa
+aaa
+aaa
 "}

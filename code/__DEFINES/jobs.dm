@@ -1,5 +1,11 @@
 //Globa job defines
 
+/// EXP times are in minutes
+#define PLAYTIME_ALT_TOWN (120 * 60)
+#define PLAYTIME_RANGER_JOB (200 * 60)
+#define PLAYTIME_HEAD_JOB (80 * 60)
+#define PLAYTIME_HARD_JOB (10 * 60)
+
 //Defines Factions
 #define FACTION_NCR "NCR"
 #define FACTION_LEGION "Legion"

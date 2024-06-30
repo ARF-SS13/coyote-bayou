@@ -294,6 +294,7 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/technophreak = FALSE //F13 technophreak, for chemistry machines
 	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
 	var/pa_wear = FALSE //F13 pa_wear, ability to wear PA
 	var/gunsmith_one = FALSE //F13 gunsmith perk, ability to craft Tier 2 guns and ammo
@@ -349,6 +350,9 @@
 
 	if(gunsmith_four == TRUE)
 		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR, "gunsmith_four")
+
+	if(technophreak == TRUE)
+		SSquirks.AddQuirkToMob(H, /datum/quirk/technophreak, TRUE, TRUE)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
