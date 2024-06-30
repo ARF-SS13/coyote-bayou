@@ -79,6 +79,12 @@
 	var/sight_shoot_delay_time = 0.7 SECONDS
 	COOLDOWN_DECLARE(sight_shoot_delay)
 
+	/// The base random spread of the mob's ranged attacks.
+	var/ranged_base_spread = 7
+	/// The spread added to the base spread per shot for a burst.
+	var/ranged_extra_spread_per_shot = 10
+	/// the max spread this mob can accumulate
+	var/ranged_max_spread = 45
 	var/ranged_message = "fires" //Fluff text for ranged mobs
 	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
@@ -718,14 +724,16 @@
 	if(CheckFriendlyFire(A))
 		return
 	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
+	var/spreadgun = ranged_base_spread
 	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src,PROC_REF(Shoot), A)
 		for(var/i in 1 to rapid)
-			addtimer(cb, (i - 1)*rapid_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A, spreadgun), (i - 1)*rapid_fire_delay)
+			spreadgun += ranged_extra_spread_per_shot
 	else
-		Shoot(A)
+		Shoot(A, spreadgun)
 		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src,PROC_REF(Shoot), A), i * auto_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A, spreadgun), i * auto_fire_delay)
+			spreadgun += ranged_extra_spread_per_shot
 	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
@@ -748,11 +756,15 @@
 	playsound(src, throw_thing_sound, 100, TRUE)
 	visible_message(span_alert("[src] throws [tosser] at [targeted_atom]!"))
 
-/mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
+/mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom, spread = 0)
 	var/atom/origin = get_origin()
 	if( !origin || QDELETED(targeted_atom) || targeted_atom == origin.loc || targeted_atom == origin )
 		return
 	var/turf/startloc = get_turf(origin)
+	if(!spread)
+		spread = ranged_base_spread
+	var/true_spread = spread ? rand(-spread, spread) : 0
+	true_spread = clamp(true_spread, -ranged_max_spread, ranged_max_spread)
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(
@@ -768,7 +780,7 @@
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.factionize(faction)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), true_spread, null, null, null, src)
 		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
@@ -793,7 +805,7 @@
 		if(AIStatus != AI_ON)//Don't want mindless mobs to have their movement screwed up firing in space
 			newtonian_move(get_dir(targeted_atom, origin))
 		P.original = targeted_atom
-		P.preparePixelProjectile(targeted_atom, src)
+		P.preparePixelProjectile(targeted_atom, src, spread = true_spread)
 		P.fire()
 		return P
 

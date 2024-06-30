@@ -72,6 +72,8 @@
 	gun_bullet_spread += BB?.spread || 0 // bullet's inherent inaccuracy
 	gun_bullet_spread += distro || 0 // gun's inaccuracy
 	gun_bullet_spread += variance || 0 // cartridge's inaccuracy
+	if(!user.client) // ai
+		return rand(-gun_bullet_spread, gun_bullet_spread)
 	. = SSrecoil.get_output_offset(gun_bullet_spread, user, fired_from)
 
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
