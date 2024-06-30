@@ -36,7 +36,7 @@ RUN_DELAY 1.8
 WALK_DELAY 2.8
 
 ## This is subtracted from the run speed to get the final sprint speed.
-SPRINT_SPEED_INCREASE 0.9
+SPRINT_SPEED_INCREASE 1.1
 ## Size of sprint buffer, in tiles.
 SPRINT_BUFFER_MAX 30
 ## Number of sprint buffer tiles regained per second.
