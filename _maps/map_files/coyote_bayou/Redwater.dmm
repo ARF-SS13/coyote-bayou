@@ -19,10 +19,6 @@
 "aao" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt,
-/obj/machinery/light/small{
-	color = "#FF0000";
-	light_color = "#FF0000"
-	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
@@ -907,12 +903,13 @@
 	},
 /area/f13/building)
 "auZ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/lock_bolt{
-	dir = 4
+/turf/open/floor/f13{
+	dir = 4;
+	icon_state = "yellowsiding"
 	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/building)
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "avo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
@@ -1279,6 +1276,14 @@
 /obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"aEJ" = (
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "aFa" = (
 /obj/structure/chair/booth{
 	dir = 4
@@ -2343,6 +2348,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/outdoors)
+"bbT" = (
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "bbX" = (
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/f13{
@@ -3318,6 +3330,10 @@
 /area/f13/wasteland/redwater)
 "buM" = (
 /obj/machinery/door/airlock/grunge,
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are either entering or leaving the town of Redwater, it's safe to assume the inside of this town is dangerous and people outside of this town will likely not like you if you are from it. On top of all that inside of Redwater is generally considered a 'lewd space'. Can you accept that?";
+	title = "Welcome to Heavens Night."
+	},
 /turf/open/floor/f13,
 /area/f13/building/coyote/safe/redwater)
 "buN" = (
@@ -4231,6 +4247,12 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland/redwater)
+"bNc" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "bNf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4880,6 +4902,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
+"cda" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "cdf" = (
 /obj/structure/fence,
 /obj/effect/decal/waste{
@@ -7997,8 +8029,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dpJ" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building/coyote/safe/redwater)
+/turf/open/floor/f13{
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "dqa" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/campfire,
@@ -9415,13 +9451,21 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dVn" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/machinery/light/small{
-	color = "#FF0000";
-	light_color = "#FF0000"
+/obj/structure/rack/shelf_metal/modern,
+/obj/item/storage/medical/ancientfirstaid,
+/obj/item/storage/box/ration/ranger_breakfast{
+	pixel_y = -6
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors)
+/obj/item/storage/box/ration/ranger_lunch{
+	pixel_y = -1
+	},
+/obj/item/storage/box/ration/ranger_dinner{
+	pixel_y = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "dVu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11523,6 +11567,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/redwater)
+"eOH" = (
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "eON" = (
 /turf/closed/wall/r_wall/f13composite{
 	icon_state = "rubblepillar"
@@ -14514,6 +14564,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"gdP" = (
+/obj/item/beacon{
+	mouse_opacity = 0;
+	alpha = 0;
+	name = "RTN Teleporter Beacon"
+	},
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "gdV" = (
 /obj/structure/table/wood/poker{
 	name = "felt table"
@@ -15602,6 +15662,21 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"gBp" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/obj/structure/chair/sofa/corp/corner{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 8;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "gBq" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -15893,6 +15968,17 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/caves)
+"gGE" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "gGQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/barrel/four,
@@ -18032,7 +18118,8 @@
 "hDY" = (
 /obj/structure/simple_door/metal/fence{
 	door_type = "fence_wood";
-	icon_state = "fence_wood"
+	icon_state = "fence_wood";
+	dir = 2
 	},
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -19459,6 +19546,9 @@
 /area/f13/wasteland/redwater)
 "iiF" = (
 /obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "iiN" = (
@@ -19740,6 +19830,10 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"ipO" = (
+/obj/effect/landmark/start/f13/redwaterprostitute,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "ipQ" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/stack/sheet/cardboard/fifty,
@@ -20066,6 +20160,14 @@
 	},
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland/redwater)
+"ivY" = (
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "iwt" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -20862,6 +20964,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"iJC" = (
+/obj/structure/simple_door/metal,
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "iJK" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -23977,6 +24085,14 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland/redwater)
+"jYg" = (
+/turf/open/floor/f13{
+	dir = 6;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "jYj" = (
 /obj/structure/closet,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -25118,9 +25234,15 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "kBd" = (
-/obj/effect/landmark/start/f13/redwaterprostitute,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
+/obj/structure/decoration/vent{
+	pixel_y = -8
+	},
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "kBf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/grass/wasteland{
@@ -27018,6 +27140,16 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"lnM" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "lnN" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/bar,
@@ -33183,6 +33315,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal/cave)
+"nZs" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	dir = 9;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "nZt" = (
 /obj/structure/chair/f13chair2{
 	dir = 4
@@ -33973,10 +34116,6 @@
 "oqz" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/machinery/light/small{
-	color = "#FF0000";
-	light_color = "#FF0000"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
 "oqX" = (
@@ -36484,6 +36623,14 @@
 	name = "rocky dirt"
 	},
 /area/f13/building/tribal)
+"ptO" = (
+/turf/open/floor/f13{
+	dir = 5;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "ptP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -37778,6 +37925,12 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/building)
+"pWy" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "pWD" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -45259,6 +45412,14 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/caves)
+"sZB" = (
+/obj/machinery/computer/teleporter{
+	dir = 4
+	},
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "sZH" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -48061,6 +48222,14 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/redwater)
+"ugA" = (
+/turf/open/floor/f13{
+	dir = 1;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "ugO" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/rock/pile/largejungle{
@@ -48546,6 +48715,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"usp" = (
+/obj/machinery/teleport/station,
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "usr" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -50217,6 +50392,11 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"vbV" = (
+/turf/open/floor/f13,
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "vbX" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -54896,6 +55076,14 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"wZV" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "yellowsiding"
+	},
+/area/f13/building/coyote/safe/redwater{
+	name = "Fort Redwater Portal Shelter"
+	})
 "xae" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -58430,11 +58618,11 @@ mCc
 tRd
 tRd
 tRd
-qaO
-qaO
-qaO
-qaO
-qaO
+bbT
+bbT
+bbT
+bbT
+bbT
 lVL
 lVL
 bFR
@@ -58687,13 +58875,13 @@ tRd
 tRd
 tRd
 tRd
-qaO
-cNa
-vao
-tta
-qaO
-qaO
-qaO
+bbT
+sZB
+usp
+bNc
+bbT
+bbT
+bbT
 jGy
 qUU
 qUU
@@ -58944,13 +59132,13 @@ tRd
 mCc
 tRd
 tRd
-qaO
-qoL
-vLF
-vLF
-dJE
-pcq
-qaO
+bbT
+ivY
+aEJ
+aEJ
+gBp
+gGE
+bbT
 kmH
 kmH
 kmH
@@ -59201,13 +59389,13 @@ mCc
 tRd
 tRd
 tRd
-qaO
-wzF
-aio
-jCy
-hTS
-noO
-qaO
+bbT
+ugA
+gdP
+vbV
+eOH
+dpJ
+bbT
 bFR
 bFR
 iAu
@@ -59458,13 +59646,13 @@ mCc
 mCc
 mCc
 mCc
-mKs
-vYB
-rwI
-rwI
-rwI
-jAC
-buM
+kBd
+ptO
+auZ
+auZ
+auZ
+jYg
+pWy
 flv
 bFR
 sui
@@ -59715,13 +59903,13 @@ bFR
 bFR
 mCc
 mCc
-qaO
-qaO
-koY
-qaO
-qaO
-nFA
-qaO
+bbT
+bbT
+iJC
+bbT
+bbT
+dVn
+bbT
 flv
 wgx
 sui
@@ -59972,13 +60160,13 @@ bFR
 bFR
 bFR
 tXr
-qaO
-hUP
-vLF
-vtW
-qaO
-qaO
-qaO
+bbT
+nZs
+aEJ
+wZV
+bbT
+bbT
+bbT
 flv
 wgx
 sui
@@ -60229,11 +60417,11 @@ bFR
 gEk
 wgx
 tXr
-qaO
-rkl
-rwI
-xmc
-qaO
+bbT
+lnM
+auZ
+cda
+bbT
 bFR
 bFR
 flv
@@ -60486,11 +60674,11 @@ bFR
 wgx
 jdI
 tXr
-qaO
-qaO
-qaO
-qaO
-qaO
+bbT
+bbT
+bbT
+bbT
+bbT
 ybw
 bFR
 flv
@@ -106772,9 +106960,9 @@ uuN
 hDA
 hDA
 hXM
-oom
-mCp
-xwD
+oVc
+pUv
+nIH
 bbr
 rrj
 kmO
@@ -107023,15 +107211,15 @@ oVc
 oVc
 pUv
 xwD
-xyE
-xyE
-xyE
-xyE
-xyE
-xyE
-nSn
-nSn
-bbr
+rrj
+shh
+oom
+oom
+oom
+oom
+oom
+mCp
+xwD
 bbr
 rrj
 kmO
@@ -107279,15 +107467,15 @@ oVc
 oVc
 oVc
 pUv
-bpn
-bIz
-bIz
-bIz
-bIz
-bIz
-bIz
-bIz
-bIz
+xwD
+xyE
+nSn
+nSn
+nSn
+nSn
+nSn
+nSn
+nSn
 bbr
 bbr
 rrj
@@ -107535,17 +107723,17 @@ oVc
 oVc
 oVc
 oVc
-oVc
-vKA
-vKA
-vKA
-vKA
-vKA
-vKA
-vKA
-vKA
-awc
-xwD
+pUv
+bpn
+bIz
+bIz
+bIz
+bIz
+bIz
+bIz
+bIz
+bIz
+bbr
 bbr
 rrj
 kmO
@@ -107793,15 +107981,15 @@ oVc
 oVc
 oVc
 oVc
-oVc
-oVc
-oVc
-oVc
-oVc
-oVc
-oVc
-oVc
-pUv
+vKA
+vKA
+vKA
+vKA
+vKA
+vKA
+vKA
+vKA
+awc
 xwD
 bbr
 rrj
@@ -112722,7 +112910,7 @@ mKx
 iZH
 iZH
 iiF
-auZ
+aTz
 mGj
 tIw
 cYX
@@ -119640,7 +119828,7 @@ bbr
 jzp
 avo
 wmx
-dVn
+pUv
 qaO
 cNa
 vao
@@ -120418,7 +120606,7 @@ rwI
 rwI
 rwI
 jAC
-dpJ
+qaO
 oVc
 oVc
 oVc
@@ -122204,8 +122392,8 @@ cNd
 flm
 seA
 ehW
-kBd
-kBd
+ipO
+ipO
 hyJ
 aTs
 hyJ
@@ -122461,8 +122649,8 @@ tuo
 jub
 seA
 caR
-kBd
-kBd
+ipO
+ipO
 hyJ
 aTs
 gpe
@@ -122718,8 +122906,8 @@ sui
 xOB
 seA
 bJT
-kBd
-kBd
+ipO
+ipO
 hyJ
 aTs
 wnJ
