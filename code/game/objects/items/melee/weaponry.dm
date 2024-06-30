@@ -125,7 +125,7 @@ superlagg says: cool story, oranges
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
 	parry_stamina_cost = 10 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 10 // small parry window
+	parry_time_active = 15 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
