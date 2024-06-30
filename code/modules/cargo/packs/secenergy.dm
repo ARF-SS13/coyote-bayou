@@ -71,54 +71,6 @@
 	crate_name = "energy weapon crate"
 template end */
 
-datum/supply_pack/security/tgcarbine
-	name = "TG Carbine"
-	desc = "The basic Trident Gammaworks blaster carbine."
-	cost = 2000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/carbine)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/security/tgpistol
-	name = "TG Blaster Pistol"
-	desc = "A more compact version of the TG carbine. Talk about a pocket protector."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/carbine/pistol)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/security/tgspamlaser
-	name = "TG Repeating Blaster"
-	desc = "Maximum capacity, minimum power."
-	cost = 1000
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/spamlaser)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/security/tgrifle
-	name = "TG Laser Rifle"
-	desc = "A MKII Trident Gammaworks Laser Rifle. Useful if you don't have room for extra ammo cells, but suffers in longer adventures."
-	cost = 2500
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/security/tgheavyrifle
-	name = "TG Heavy Laser Rifle"
-	desc = "A heavier variant of the MKII Laser Rifle. Fewer shots but each one hits much harder."
-	cost = 1800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle/heavy)
-	crate_name = "select weapon crate"
-
-/datum/supply_pack/security/tgautorifle
-	name = "TG Tactical Laser"
-	desc = "The successor to the MKII Laser Rifle. Better in almost every way."
-	cost = 3800
-	num_contained = 1
-	contains = list(/obj/item/gun/energy/laser/tg/rifle/auto)
-	crate_name = "select weapon crate"
-
 /datum/supply_pack/security/tgnukerifle
 	name = "TG Nuclear Rifle"
 	desc = "Self-charging, powerful, and it irradiates your enemies! Just don't get hit with an EMP or you'll start to glow."
