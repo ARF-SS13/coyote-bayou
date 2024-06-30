@@ -174,6 +174,11 @@ GLOBAL_LIST_INIT(den_positions, list(
 	"Den Citizen",
 ))
 
+//ashdown_positions Citizenship
+GLOBAL_LIST_INIT(ashdown_positions, list(
+	"Ashdown Citizen",
+))
+
 //Gar Citizenship
 //GLOBAL_LIST_INIT(gar_positions, list(
 //	"Garland Citizen",
@@ -245,7 +250,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Mob Boss",
 	"Den Mob Enforcer",
 	"Den Doctor",
-//	"Outlaw",
+//	"Redwater Townie",
 	"Faithful",
 	"Vigilante",
 	"Far-Lands Tribals",
@@ -254,12 +259,17 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Backstage Character"
 ))
 
+GLOBAL_LIST_INIT(redwater_positions, list(
+	"Redwater Prostitute",
+	"Redwater Townie",
+	"Redwater Pimp",
+	"Redwater Overboss",
+))
+
 GLOBAL_LIST_INIT(tunnelrats_positions, list(
-	//"Redwater Slave",
-	//"Outlaw",
-	"Tunnel Rats Churl"
-	//"Tunnel Rats Strongarm"
-	//"Redwater Overboss",
+	"Tunnel Rats C.H.U.D.",
+	"Tunnel Rats S.C.A.V.",
+	"Tunnel Rats R.A.T.",
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
@@ -368,11 +378,14 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
+	"Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
+	"Den" = list("jobs" = den_positions, "color" = "#884488"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_LIVING = list("titles" = list("Texarkana Ranger")), // all living mobs
+	EXP_TYPE_LIVING = list("titles" = tunnelrats_positions | redwater_positions | ashdown_positions | den_positions), // all living mobs
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	EXP_TYPE_COMMAND = list("titles" = command_positions),
 	EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
@@ -385,7 +398,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 
 	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | heavensnight_positions | enclave_positions),
 
-	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
+	EXP_TYPE_OUTLAW = list("titles" = list("Redwater Townie","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
 	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
 	EXP_TYPE_RECLAIMER = list("titles" = reclaimer_positions ),

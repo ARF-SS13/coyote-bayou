@@ -3,8 +3,8 @@
 *
 * Dont use this
 
-/datum/job/wasteland/f13raider
-	title = "Outlaw"
+/datum/job/redwater/townie
+	title = "Redwater Townie"
 	flag = F13RAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
@@ -24,16 +24,16 @@
 	minimal_access = list()
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/outlaw = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/bounty_hunter = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 	)
 	loadout_options = list(
@@ -56,8 +56,8 @@
 
 
 /datum/outfit/job/wasteland/f13raider
-	name = "Outlaw"
-	jobtype = /datum/job/wasteland/f13raider
+	name = "Redwater Townie"
+	jobtype = /datum/job/redwater/townie
 	id = null
 	ears = null
 	belt = /obj/item/supplykit

@@ -843,7 +843,19 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	color = "#66BBBB"
 
 /obj/effect/landmark/start/f13/raider
-	name = "Outlaw"
+	name = "Redwater Townie"
+	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/redwateroverboss
+	name = "Redwater Overboss"
+	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/redwaterpimp
+	name = "Redwater Pimp"
+	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/redwaterprostitute
+	name = "Redwater Prostitute"
 	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/enforcer
@@ -868,6 +880,40 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/detective
 	name = "Detective"
 	icon_state = "Detective"
+
+/obj/effect/landmark/start/f13/tunnelratschud
+	name = "Tunnel Rats C.H.U.D."
+	icon_state = "Detective"
+
+/obj/effect/landmark/start/f13/tunnelratsurchin
+	name = "Tunnel Rats S.C.A.V."
+	icon_state = "Detective"
+
+/obj/effect/landmark/start/f13/tunnelratsrat
+	name = "Tunnel Rats R.A.T."
+	icon_state = "Detective"
+
+//Redwater Prostitute Spawn Point code
+/obj/effect/landmark/start/redwaterSlave
+	name = "Redwater Prostitute"
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+
+//Redwater Resident Spawn Point code
+/obj/effect/landmark/start/redwateresident
+	name = "Tunnel Rats C.H.U.D."
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+
+//Redwater Watcher Spawn Point code
+/obj/effect/landmark/start/redwaterwatcher
+	name = "Tunnel Rats Strongarm"
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+
 
 // Enclave
 /obj/effect/landmark/start/f13/usspy

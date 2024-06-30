@@ -27,26 +27,6 @@
 /datum/job/wasteland
 	department_flag = WASTELAND
 	faction = FACTION_WASTELAND
-	// matchmaking_allowed = list(
-	// 	/datum/matchmaking_pref/friend = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// 	/datum/matchmaking_pref/rival = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// 	/datum/matchmaking_pref/mentor = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// 	/datum/matchmaking_pref/disciple = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// 	/datum/matchmaking_pref/patron = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// 	/datum/matchmaking_pref/protegee = list(
-	// 		/datum/job/wasteland/f13wastelander,
-	// 	),
-	// )
 
 //////////////////////////////
 /// Wastelander
@@ -60,7 +40,7 @@
 	supervisors = "fate"
 	selection_color = "#dddddd"
 	paycheck = 0 // Wastelanders are paid in the form of loot and barter
-	outfit = /datum/outfit/job/wasteland/f13wastelander
+	outfit = /datum/outfit/wasteland
 	access = list()
 	minimal_access = list()
 
@@ -111,7 +91,7 @@
 	supervisors = "<i>your throbbing biological urges</i>"
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
-	outfit = /datum/outfit/job/wasteland/f13wastelander
+	outfit = /datum/outfit/wasteland
 	access = list()
 	minimal_access = list()
 
@@ -284,7 +264,7 @@
 	description = "You are an adventurer, a resident of New Boston who has taken up the call to explore the wasteland. You are the backbone of the settlement, exploring and risking your own (undying) life to bring back resources and knowledge for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
-	outfit = /datum/outfit/job/wasteland/f13wastelander
+	outfit = /datum/outfit/wasteland
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 
@@ -505,6 +485,30 @@
 	access = list(ACCESS_TRIBE, ACCESS_BAR)
 	minimal_access = list(ACCESS_TRIBE, ACCESS_BAR)
 	paycheck = COINS_TO_CREDITS(125) // 125 copper per hour
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 GLOBAL_LIST_INIT(tribal_job_recipes, list(
 		/datum/crafting_recipe/tribal_pa,

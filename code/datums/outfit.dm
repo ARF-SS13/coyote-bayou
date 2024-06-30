@@ -29,7 +29,7 @@
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 	/// SWAG. Everyone gets one of these. Everyone. Fuckin everyone.
-	var/list/stuff_we_all_get = list(/obj/item/book/manual/advice_survival = 1)
+	var/list/stuff_we_all_get = list()
 	/// list of tats. format: list(OUTFIT_TATTOO(/datum/tattoo/tat, spot on bodypart))
 	/// make sure the locations correspond to the right limb, and don't overlap with anything
 	/// in fact, make a new spot for them anyway

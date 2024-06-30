@@ -568,11 +568,20 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
+"ew" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ashdown,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "ex" = (
 /obj/machinery/conveyor_switch{
 	pixel_y = -9;
 	id = "ashdown"
 	},
+/obj/effect/landmark/start/f13/ashdown,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -2298,6 +2307,13 @@
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"rN" = (
+/obj/effect/landmark/start/f13/ashdown,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "rP" = (
 /obj/structure/flora/rock/pile/largejungle{
 	icon_state = "bush3";
@@ -3343,6 +3359,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/abandoned)
+"yZ" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/ashdown,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "zb" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -71373,12 +71397,12 @@ nR
 nR
 yI
 Fr
-On
-On
-On
-je
-On
-On
+rN
+rN
+rN
+ew
+rN
+rN
 FA
 eo
 mB
@@ -71630,12 +71654,12 @@ Jw
 nR
 LV
 nR
-On
-je
-On
-On
-On
-On
+rN
+ew
+rN
+rN
+rN
+rN
 hp
 eo
 UU
@@ -71887,11 +71911,11 @@ nR
 nR
 iX
 RQ
-On
-je
-On
-On
-On
+rN
+ew
+rN
+rN
+rN
 ex
 UG
 eo
@@ -72144,12 +72168,12 @@ jZ
 jZ
 qa
 Bm
-On
-je
-On
-On
-On
-FA
+rN
+ew
+rN
+rN
+rN
+yZ
 Hi
 eo
 vP

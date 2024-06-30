@@ -332,9 +332,6 @@
 		holder = "[uniform]"
 	uniform = text2path(holder)
 
-	if(box_two && isrobotic(H))
-		box_two = /obj/item/storage/survivalkit/medical/synth
-
 	if(chemwhiz == TRUE)
 		ADD_TRAIT(H, TRAIT_CHEMWHIZ, "chemwhiz")
 
