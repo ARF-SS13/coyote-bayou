@@ -171,6 +171,8 @@
 		/datum/outfit/loadout/scavenger,
 		/datum/outfit/loadout/miner,
 	)
+	exp_requirements = 1
+	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Barkeep
@@ -545,21 +547,3 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag,
 		/datum/crafting_recipe/horsecream_good))
-
-//////////////////////////////
-/// Wastelander
-/// As basic as it gets, no masters, no obligations, just you and the wasteland, how fun
-/datum/job/wasteland/testlander
-	title = "Test Lander"
-	flag = F13WASTELANDER
-	total_positions = -1
-	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
-	supervisors = "fate"
-	selection_color = "#dddddd"
-	paycheck = 0 // Wastelanders are paid in the form of loot and barter
-	outfit = /datum/outfit/job/wasteland/f13wastelander
-	access = list()
-	minimal_access = list()
-	exp_type = EXP_TYPE_LIVING
-	exp_requirements = 1
