@@ -13955,7 +13955,9 @@
 	pixel_x = 17
 	},
 /obj/item/trash,
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/underground/cave/coyote/antmound)
 "bcK" = (
 /obj/structure/flora/grass/wasteland{
@@ -29363,13 +29365,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
-"etW" = (
-/obj/effect/step_trigger/player_choice_log{
-	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
-	title = "Welcome to Redwater Z"
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/building)
 "eui" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -83808,11 +83803,6 @@
 	icon_state = "outerborder - N"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"tfQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/junglebush/c,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave/coyote/antmound)
 "tgi" = (
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/indestructible/ground/outside/gravel,
@@ -84598,12 +84588,12 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "trc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/trash_stack{
-	icon_state = "trash_2"
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave/coyote/antmound)
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building)
 "trj" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -86844,9 +86834,9 @@
 	},
 /area/f13/building/massfusion)
 "tRW" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/flora/junglebush/c,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/underground/cave/coyote/antmound)
 "tSe" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -96675,7 +96665,6 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "wIx" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -103024,19 +103013,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
-sjM
-sjM
-sjM
-sjM
+hHB
+hHB
+hHB
+hHB
+hHB
 vVy
-vVy
-vVy
-vVy
-vVy
-vVy
-vVy
-vVy
+frQ
+bYO
+bYO
+bYO
+bYO
+bYO
+bYO
 vVy
 vVy
 vVy
@@ -103281,19 +103270,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 gLE
 lzk
 gLE
-sjM
+hHB
 nUo
-trc
-tfQ
-tRW
-lDP
-upa
-lDP
-upa
+bYO
+blQ
+qHJ
+lSp
+kMJ
+qHJ
+kHY
 lDP
 mLh
 oxG
@@ -103538,19 +103527,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 fJj
 aEa
 gUZ
-sjM
+hHB
 goa
-frQ
-rwS
-rwS
-rwS
-rwS
-rwS
-rwS
+atJ
+rZq
+jfZ
+qzw
+gLE
+sqV
+bYO
 upa
 uML
 oxG
@@ -103795,19 +103784,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 bYO
 sOm
 fVr
 iqs
 suQ
 bYO
-blQ
-qHJ
-lSp
-kMJ
-qHJ
-kHY
+mGX
+xVO
+hHB
+loM
+iPL
+fHJ
 rId
 cZl
 oxG
@@ -104052,19 +104041,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 bYO
 jBY
 wBM
 knr
 pYu
-atJ
-rZq
-jfZ
-qzw
-gLE
-sqV
+bYO
+fqG
+nNp
 rwS
+tRW
+tRW
+tRW
 lDA
 fVn
 ifK
@@ -104309,19 +104298,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 qmC
 kOP
 kOP
 bYO
 qZI
-rwS
-mGX
-xVO
-hHB
-loM
-iPL
-fHJ
+tRW
+tRW
+tRW
+tRW
+tRW
+tRW
+tRW
 kUr
 inP
 wWr
@@ -104572,10 +104561,10 @@ qgf
 rte
 cft
 bcJ
-rwS
-fqG
-nNp
-rwS
+tRW
+tRW
+tRW
+tRW
 wIx
 nwa
 qfc
@@ -104823,7 +104812,7 @@ ezS
 ezS
 mVi
 mVi
-sjM
+hHB
 lMw
 dff
 ijT
@@ -105080,7 +105069,7 @@ ezS
 mVi
 mVi
 ezS
-sjM
+hHB
 sjM
 vUB
 gMv
@@ -105337,13 +105326,13 @@ mVi
 mVi
 ezS
 ezS
-sjM
+hHB
 rtW
 dKU
 lrY
-sjM
+hHB
 uII
-sjM
+hHB
 xfW
 pef
 qfX
@@ -105594,11 +105583,11 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 kJH
 grM
 qWp
-sjM
+hHB
 chf
 pHC
 xfW
@@ -105851,11 +105840,11 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 kJH
 grM
 rkB
-sjM
+hHB
 vGo
 cXd
 xfW
@@ -106055,7 +106044,7 @@ fCt
 acl
 ujz
 ujz
-etW
+trc
 url
 url
 url
@@ -106108,13 +106097,13 @@ ezS
 ezS
 ezS
 ezS
-sjM
-sjM
-sjM
-sjM
-sjM
-sjM
-sjM
+hHB
+hHB
+hHB
+hHB
+hHB
+hHB
+hHB
 rfl
 emv
 emv

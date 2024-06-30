@@ -1617,7 +1617,7 @@
 	},
 /area/f13/building/abandoned)
 "mt" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "mu" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -1669,12 +1669,7 @@
 /obj/structure/fence/wooden{
 	dir = 4
 	},
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "mG" = (
 /obj/structure/flora/twig,
@@ -1942,7 +1937,7 @@
 	},
 /area/f13/building)
 "oJ" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/wasteland)
 "oK" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2698,7 +2693,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "up" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "ur" = (
 /obj/structure/flora/grass/coyote/twentynine,
@@ -3387,12 +3382,7 @@
 /obj/structure/fence/wooden{
 	dir = 4
 	},
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	name = "supermart wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "zh" = (
 /obj/structure/railing/wood{
@@ -4334,7 +4324,7 @@
 /area/f13/caves)
 "FC" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "FE" = (
 /obj/structure/window/fulltile/wood,
