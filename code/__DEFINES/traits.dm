@@ -278,6 +278,7 @@
 #define TRAIT_NIGHT_VISION_GREATER		"night_vision_greater"
 #define TRAIT_LIGHT_STEP		"light_step"
 #define TRAIT_SILENT_STEP		"silent_step"
+#define TRAIT_SPEEDY_STEP		"speedy_step"
 #define TRAIT_SPIRITUAL			"spiritual"
 #define TRAIT_BLINDFAITH		"blindfaith"
 #define TRAIT_VORACIOUS			"voracious"

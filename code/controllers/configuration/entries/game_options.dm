@@ -270,7 +270,7 @@
 	M.sync()
 
 /datum/config_entry/number/movedelay/sprint_speed_increase
-	config_entry_value = 1.1
+	config_entry_value = 0.9
 
 /datum/config_entry/number/movedelay/sprint_buffer_max
 	config_entry_value = 16
