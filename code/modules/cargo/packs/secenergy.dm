@@ -326,7 +326,7 @@ datum/supply_pack/security/tgcarbine
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/plasma/pistol/adam)
 	crate_name = "select weapon crate"
-
+/*
 /datum/supply_pack/security/ak470
 	name = "Kalashnikov 470"
 	desc = "The original soviet special. Self charging and quite powerful, though incredibly difficult to control. For the union!"
@@ -342,7 +342,7 @@ datum/supply_pack/security/tgcarbine
 	num_contained = 1
 	contains = list(/obj/item/gun/energy/laser/LaserAK/worn)
 	crate_name = "select weapon crate"
-
+*/
 /datum/supply_pack/security/ebowbig
 	name = "Energy Crossbow"
 	desc = "One shot, one kill. More often than not, anyway. Bonus, it's self-charging!"
