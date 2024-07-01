@@ -515,4 +515,3 @@ here's a tip, go search DEFINES/access.dm
 	/obj/item/storage/box/ingredients/exotic = 1,
 	/obj/item/storage/box/ingredients/sushi = 1
 	)
-
