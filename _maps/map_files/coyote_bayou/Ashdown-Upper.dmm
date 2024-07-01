@@ -3273,6 +3273,17 @@
 	name = "air"
 	},
 /area/f13/building)
+"yc" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_y = 4;
+	pixel_x = 2
+	},
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/building/workshop/ashdown)
 "yf" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5257,6 +5268,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Ly" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/building/workshop/ashdown)
 "LB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
@@ -66582,13 +66602,13 @@ FR
 py
 tO
 hL
+Ly
 Ef
 Ef
 Ef
 Ef
 Ef
-Ef
-Ef
+Ly
 Kp
 py
 py
@@ -67867,13 +67887,13 @@ Oz
 yi
 py
 ex
+yc
 Ef
 Ef
 Ef
 Ef
 Ef
-Ef
-Ef
+yc
 Kp
 py
 Rt
