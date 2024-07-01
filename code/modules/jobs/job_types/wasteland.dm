@@ -1122,7 +1122,7 @@ Raider
 		/obj/item/clothing/mask/chameleon
 		)
 
-/datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/storage/fancy/flare_pouch, \
@@ -1150,6 +1150,23 @@ Raider
 		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/cool_book/ashdowncit = 1
+		)
+
+/datum/outfit/job/wasteland/den
+	name = "Den Citizen"
+	jobtype = /datum/job/redwater/townie
+	id = null
+	belt = /obj/item/supplykit
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/storage/fancy/flare_pouch
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		)
 
 

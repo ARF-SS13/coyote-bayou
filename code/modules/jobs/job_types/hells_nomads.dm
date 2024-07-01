@@ -10,7 +10,7 @@
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan/biker
-	belt = /obj/item/kit_spawner/waster
+	belt     = /obj/item/supplykit
 	r_pocket = /obj/item/flashlight/flare
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical

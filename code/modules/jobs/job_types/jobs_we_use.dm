@@ -40,7 +40,7 @@
 	supervisors = "fate"
 	selection_color = "#dddddd"
 	paycheck = 0 // Wastelanders are paid in the form of loot and barter
-	outfit = /datum/outfit/job/cb
+	outfit = /datum/outfit/job/wasteland
 	access = list()
 	minimal_access = list()
 
@@ -75,7 +75,7 @@
 	supervisors = "<i>your throbbing biological urges</i>"
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
-	outfit = /datum/outfit/job/cb
+	outfit = /datum/outfit/job/wasteland
 	access = list()
 	minimal_access = list()
 
@@ -308,7 +308,7 @@
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
-	outfit = /datum/outfit/job/cb
+	outfit = /datum/outfit/job/wasteland
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 

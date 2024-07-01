@@ -20,7 +20,7 @@
 	supervisors = "yourself"
 	total_positions = -1
 	spawn_positions = -1
-	outfit = /datum/outfit/job/wasteland/ashdown
+	outfit = /datum/outfit/job/wasteland/den
 	selection_color = "#2244FF"
 	paycheck = 75
 	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN

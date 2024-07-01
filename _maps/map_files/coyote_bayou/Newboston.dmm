@@ -4227,12 +4227,15 @@
 	},
 /area/f13/wasteland/city)
 "cqF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/securedoor{
-	name = "First Bank of Nash";
-	req_one_access_txt = "52"
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
 	},
-/turf/open/floor/wood_common,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building/trader)
 "cqO" = (
 /obj/structure/chair/sofa/right,
