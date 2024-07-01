@@ -48,6 +48,7 @@
 	pda = /obj/item/pda
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/pda
 	)
 
 /datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
