@@ -786,7 +786,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/shopkeeper
-	name = "Texarkana Trade Worker"
+	name = "Shopkeeper"
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/banker
@@ -851,7 +851,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/redwaterpimp
-	name = "Redwater Pimp"
+	name = "Redwater Watcher"
 	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/redwaterprostitute

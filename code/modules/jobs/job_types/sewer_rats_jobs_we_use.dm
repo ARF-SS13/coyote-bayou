@@ -19,8 +19,8 @@
 	spawn_positions = -1
 	selection_color = "#df80af"
 	outfit = /datum/outfit/job/cb/tunnelrats
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
-	exp_requirements = 1
 
 /datum/job/tunnelrats/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
 	SSquirks.AddQuirkToMob(spawner, /datum/quirk/ratmaster, TRUE, TRUE)
@@ -37,6 +37,8 @@
 	description = "You are the Giant Tunnel Rat Supreme, the leader of the Tunnel Rats. You're the most rat of them all, and all your gross ratlings look up to you for guidance."
 	supervisors = "you!"
 	selection_color = "#FF00FF"
+	exp_requirements = PLAYTIME_ALT_TOWN_HEAD
+	exp_type = EXP_TYPE_LIVING
 
 ////////////////////////
 // Tunnel Rats C.H.U.D.
@@ -47,6 +49,8 @@
 	supervisors = "Giant Rat Supreme"
 	total_positions = 3
 	spawn_positions = 3
+	exp_requirements = PLAYTIME_HEAD_JOB
+	exp_type = EXP_TYPE_LIVING
 
 ////////////////////////
 // Tunnel Rats scav
@@ -55,6 +59,8 @@
 	title = "Tunnel Rats Scav"
 	description = "You are a Tunnel Rat scavenger. Be you a townsfolk or some sort of adventurer your life revolves trying to survive in your little underground hovel."
 	supervisors = "Giant Rat Supreme & the Chuds"
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
 
 
 //////////////////////////////////////////////////////////////////////////////////

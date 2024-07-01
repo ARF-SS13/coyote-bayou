@@ -602,8 +602,15 @@
 	if(!(isliving(target) || istype(target, /obj/machinery/porta_turret)) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
-	if(isliving(target) && maybehit.shoot_me)
-		return FALSE // so, turrets and livings dont share the same faction var
+	if(isliving(target))
+		if(maybehit.shoot_me)
+			return FALSE // so, turrets and livings dont share the same faction var
+		if(!maybehit.client && target == original)
+			return FALSE // We're trying to shoot that thing, and since it isnt a player, hit it!
+		if(isliving(firer))
+			var/mob/living/hootreshootre = firer
+			if(hootreshootre.enabled_combat_indicator && maybehit.enabled_combat_indicator)
+				return FALSE // if they're both in combat, they're not friends, get shootabie
 	return LAZYLEN(maybehit.faction & faction) // but they're named the same so its just fine
 
 

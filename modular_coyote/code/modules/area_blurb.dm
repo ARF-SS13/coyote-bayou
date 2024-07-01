@@ -144,3 +144,6 @@ ty ilu - bear
 
 /area/f13/building/coyote/safe/redwater
 	name = "Redwater Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/fortredwater
+	name = "Fort Redwater Portal-Storm Shelter"

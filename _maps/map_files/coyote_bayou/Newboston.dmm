@@ -968,6 +968,7 @@
 	icon_state = "spline_plain";
 	dir = 8
 	},
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/pod/light,
 /area/f13/building/workshop/nash)
 "aun" = (
@@ -3909,6 +3910,12 @@
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
+"chX" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/lock_construct,
+/obj/item/key,
+/turf/open/floor/wood_common,
+/area/f13/building/workshop/nash)
 "cis" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/spray/plantbgone,
@@ -17515,6 +17522,7 @@
 	icon_state = "spline_plain";
 	dir = 8
 	},
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/pod{
 	name = "tiles"
 	},
@@ -21169,6 +21177,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
+"ltp" = (
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/building/trader)
 "ltK" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -23444,6 +23458,13 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13,
 /area/f13/building)
+"mDr" = (
+/obj/effect/landmark/start/f13/banker,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0";
+	color = "#999999"
+	},
+/area/f13/building/trader)
 "mDA" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -25578,7 +25599,6 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "nOU" = (
 /obj/machinery/light/small,
-/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
 "nPb" = (
@@ -28615,7 +28635,7 @@
 /area/f13/building)
 "pAP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/wood{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/open/floor/wood_common,
@@ -69395,8 +69415,8 @@ hRl
 kwv
 sQo
 vbR
-iJo
-jeh
+mDr
+ltp
 lkQ
 hVc
 lbs
@@ -69652,8 +69672,8 @@ hRl
 mcE
 mke
 vbR
-iJo
-jeh
+mDr
+ltp
 lkQ
 hVc
 lbs
@@ -76592,7 +76612,7 @@ hVc
 lQN
 ybW
 ybW
-mvw
+ybW
 hVc
 hVc
 hVc
@@ -76846,10 +76866,10 @@ hRl
 (126,1,1) = {"
 hRl
 hVc
-mvw
+chX
 ybW
 ybW
-mvw
+ybW
 hVc
 woy
 rHz

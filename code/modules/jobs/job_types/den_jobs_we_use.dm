@@ -21,8 +21,7 @@
 	total_positions = -1
 	spawn_positions = -1
 	outfit = /datum/outfit/job/wasteland/ashdown
-	exp_type = EXP_TYPE_LIVING
-	exp_requirements = 1
 	selection_color = "#2244FF"
-	outfit = /datum/outfit/job/cb
 	paycheck = 75
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING

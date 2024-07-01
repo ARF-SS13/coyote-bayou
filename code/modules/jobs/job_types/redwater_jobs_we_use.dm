@@ -17,10 +17,11 @@
 	total_positions = -1
 	spawn_positions = -1
 	selection_color = "#dcba97"
-	outfit = /datum/outfit/job/cb
 	access = list()
 	minimal_access = list()
 	paycheck = 75
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Redwater Townie
@@ -39,12 +40,14 @@
 	description = "You're one of Redwater's finest, a prostitute who sells their body for the good of the gang. Your job as a prostitutional technician is to utilize your brothular expertise to provide your clients with the highest quality of service and satisfaction, safely and efficiently, as per EEOC '99 guidelines. For more information, please consult the Redwater Prostitutional Procedures Manual, which currently doesn't exist because Redwater plays by its own rules."
 
 //////////////////////////////
-/// Redwater Pimp
-/// The regional manager of the Redwater prostitutes.
+/// Redwater Watcher
+/// A goon who guards the Redwater turf.
 /datum/job/redwater/pimp
-	title = "Redwater Pimp"
+	title = "Redwater Watcher"
 	supervisors = "Redwater's <i>finest</i>"
-	description = "You're a pimp, the regional manager of the Redwater prostitutes. You're the one who runs and operates the brothular aspects of Redwater, ensuring that your prostitutional technicians meet or exceed regional standards of service and satisfaction, safely and efficiently, as per EEOC '99 guidelines. For more information, please consult the Redwater Prostitutional Procedures Manual, which currently doesn't exist because Redwater plays by its own rules."
+	description = "You're a Redwater Watcher, one of the strongarm goons who keeps the Redwater turf safe from the scum of the earth. You're the muscle, the brawn, the one who keeps the peace in the streets. You're the one who makes sure that the Redwater Raiders are the only ones who run the show in this town."
+	exp_requirements = PLAYTIME_ALT_TOWN_HEAD
+	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Redwater Overboss
@@ -57,3 +60,5 @@
 	description = "You're the boss of Redwater's operations. You're the one who makes the big decisions and the one who everyone looks up to. When your pimps have an issue, you'll be there."
 	supervisors = "fate"
 	selection_color = "#df80af"
+	exp_requirements = PLAYTIME_ALT_TOWN_BOSS
+	exp_type = EXP_TYPE_LIVING

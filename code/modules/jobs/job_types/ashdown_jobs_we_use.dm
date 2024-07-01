@@ -23,8 +23,47 @@
 	spawn_positions = -1
 	outfit = /datum/outfit/job/wasteland/ashdown
 	faction = FACTION_ASHDOWN
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
-	exp_requirements = 1
-	selection_color = "#2244FF"
-	outfit = /datum/outfit/job/cb
+	selection_color = "#ff915e"
 	paycheck = 75
+
+
+//////////////////////////////
+/// An ashdown biker!
+/// They ride their cow wife with pride
+/datum/job/ashdown/biker
+	title = "Hells Nomad"
+	department_flag = KHAN
+	faction = FACTION_BIKER
+	total_positions = 4
+	spawn_positions = 4
+	outfit = /datum/outfit/job/biker
+	exp_requirements = PLAYTIME_ALT_TOWN_HEAD
+	exp_type = EXP_TYPE_LIVING
+	//whitelist_path = "strings/job_whitelist/biker.txt"
+	/// They get tattoos, which are *basically* access
+	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
+	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
+
+/// The boss of the cowbikers (unused, for now)
+/datum/job/ashdown/biker/boss
+	title = "Overbiker"
+	department_flag = KHAN
+	selection_color = "#ff915e"
+	faction = FACTION_BIKER
+	exp_type = EXP_TYPE_LIVING
+	total_positions = 1
+	spawn_positions = 1
+	exp_requirements = PLAYTIME_ALT_TOWN_BOSS
+	exp_type = EXP_TYPE_LIVING
+	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+
+
+
+
+
+
+
+

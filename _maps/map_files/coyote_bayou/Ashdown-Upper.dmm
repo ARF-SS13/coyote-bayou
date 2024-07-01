@@ -169,7 +169,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bB" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/lighter/gold{
 	desc = "A shiny and relatively expensive zippo lighter. There's a small world etched on the bottom that reads, ''Sunflower'";
 	pixel_x = -6;
@@ -233,7 +233,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bV" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife{
@@ -344,8 +344,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "cU" = (
-/obj/machinery/mineral/wasteland_vendor/attachments,
-/turf/open/indestructible/cobble,
+/obj/machinery/mineral/wasteland_trader{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/card/kingbounty{
+	pixel_y = 10;
+	mouse_opacity = 0;
+	anchored = 1
+	},
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
 /area/f13/building/workshop/ashdown)
 "da" = (
 /obj/structure/flora/tallgrass8,
@@ -526,14 +537,16 @@
 	},
 /area/f13/building)
 "ei" = (
-/obj/structure/fence/wooden{
-	pixel_x = -14;
-	pixel_y = -4
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/turf/open/indestructible/cobble,
-/area/f13/building/workshop/ashdown)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "em" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 6
 	},
@@ -554,8 +567,8 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "es" = (
-/obj/structure/table,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -577,16 +590,12 @@
 	},
 /area/f13/caves)
 "ex" = (
-/obj/machinery/conveyor_switch{
-	pixel_y = -9;
-	id = "ashdown"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/obj/effect/landmark/start/f13/ashdown,
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
-/area/f13/caves)
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "eB" = (
 /obj/structure/flora/grass/coyote/twentyeight,
 /turf/open/indestructible/ground/outside/dirt,
@@ -607,7 +616,7 @@
 /area/f13/building)
 "eM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/structure/closet/crate/large{
@@ -623,7 +632,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "eV" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife{
@@ -760,8 +769,8 @@
 	},
 /area/f13/building/abandoned)
 "fZ" = (
-/obj/structure/table,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/item/storage/box/matches{
 	pixel_y = 9;
@@ -773,7 +782,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "gc" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -849,8 +858,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "gB" = (
-/turf/open/indestructible/cobble/side{
-	dir = 8
+/obj/machinery/workbench/advanced,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
 /area/f13/building/workshop/ashdown)
 "gJ" = (
@@ -863,10 +874,12 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "gP" = (
-/turf/open/indestructible/cobble/corner{
-	dir = 4
+/obj/effect/landmark/start/f13/biker,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
-/area/f13/building/workshop/ashdown)
+/area/f13/caves)
 "gR" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
@@ -994,7 +1007,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "hG" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -1040,8 +1053,8 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building/workshop/ashdown)
 "hX" = (
-/obj/structure/table,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -1206,7 +1219,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jx" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/big/rug_red{
 	layer = 1
 	},
@@ -1447,7 +1460,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "lh" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/recharger{
 	pixel_x = 5;
 	pixel_y = 9
@@ -1659,10 +1672,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "mD" = (
-/turf/open/indestructible/cobble/corner{
-	dir = 1
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/area/f13/building/workshop/ashdown)
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "mF" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -1714,19 +1729,11 @@
 	},
 /area/f13/building/abandoned)
 "mY" = (
-/obj/machinery/mineral/wasteland_trader{
-	pixel_x = 1;
-	pixel_y = -1
+/obj/machinery/autolathe,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
-/obj/item/card/kingbounty{
-	pixel_y = 10;
-	mouse_opacity = 0;
-	anchored = 1
-	},
-/obj/structure/fence/wooden{
-	pixel_x = -14
-	},
-/turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
 "mZ" = (
 /turf/closed/wall/mineral/concrete,
@@ -1778,10 +1785,15 @@
 	},
 /area/f13/building/workshop/ashdown)
 "nt" = (
-/turf/open/indestructible/cobble/corner{
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/area/f13/building/workshop/ashdown)
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "nu" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -1909,7 +1921,11 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building/workshop/ashdown)
 "oA" = (
-/turf/open/indestructible/cobble,
+/obj/machinery/chem_master/primitive,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
 /area/f13/building/workshop/ashdown)
 "oD" = (
 /obj/structure/dresser,
@@ -1982,7 +1998,7 @@
 	},
 /area/f13/building/abandoned)
 "oW" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife{
@@ -2058,7 +2074,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "pR" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/bottle/rum/empty,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
@@ -2149,8 +2165,13 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "qW" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
-/turf/open/indestructible/cobble,
+/obj/machinery/mineral/wasteland_vendor/traderspecial{
+	icon_state = "trade_,mining"
+	},
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
 /area/f13/building/workshop/ashdown)
 "qY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2205,7 +2226,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rf" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
@@ -2389,7 +2410,7 @@
 /obj/item/stack/ore/blackpowder/fifty,
 /obj/item/stack/sheet/hay/twenty,
 /obj/item/stack/sheet/cloth/five,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/grenade/f13/stinger,
 /obj/item/grenade/f13/stinger,
 /obj/effect/decal/cleanable/dirt,
@@ -2493,7 +2514,7 @@
 	},
 /area/f13/caves)
 "tj" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/big/rug_red{
 	layer = 1
 	},
@@ -2917,7 +2938,7 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/machinery/vending/matvend,
+/obj/machinery/mineral/wasteland_vendor/pipboy,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "vL" = (
@@ -2954,7 +2975,7 @@
 	},
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -3270,8 +3291,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "yk" = (
-/turf/open/indestructible/cobble/side{
-	dir = 1
+/obj/machinery/mineral/wasteland_vendor/attachments,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
 /area/f13/building/workshop/ashdown)
 "yl" = (
@@ -3304,10 +3327,14 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "yu" = (
-/obj/structure/fence/wooden{
-	pixel_x = 16
+/obj/structure/table/wood/settler,
+/obj/machinery/autolathe/ammo,
+/obj/item/stack/ore/blackpowder/fifty,
+/obj/item/stack/ore/blackpowder/fifty,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
-/turf/open/indestructible/cobble,
 /area/f13/building/workshop/ashdown)
 "yw" = (
 /obj/item/storage/trash_stack,
@@ -3341,6 +3368,16 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
+"yQ" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "yR" = (
 /obj/structure/railing{
 	dir = 8
@@ -3355,8 +3392,7 @@
 	},
 /area/f13/building/abandoned)
 "yZ" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
-/obj/effect/landmark/start/f13/ashdown,
+/obj/effect/landmark/start/f13/biker_boss,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -3467,7 +3503,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "zs" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife{
@@ -3781,6 +3817,15 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building)
+"BF" = (
+/obj/machinery/mineral/wasteland_vendor/general{
+	icon_state = "nugeneric_idle"
+	},
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/building/workshop/ashdown)
 "BG" = (
 /obj/machinery/vending/kink,
 /obj/structure/sign/poster/contraband/pinup_shower{
@@ -3871,8 +3916,11 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/abandoned)
 "Cy" = (
-/obj/machinery/workbench,
-/turf/open/floor/f13/wood,
+/obj/machinery/mineral/wasteland_vendor/weapons,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
 /area/f13/building/workshop/ashdown)
 "CC" = (
 /obj/structure/chair/stool/retro/black,
@@ -4037,8 +4085,10 @@
 	},
 /area/f13/building)
 "DW" = (
-/turf/open/indestructible/cobble/side{
-	dir = 4
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
 	},
 /area/f13/building/workshop/ashdown)
 "DY" = (
@@ -4208,11 +4258,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "EQ" = (
-/obj/structure/fence/wooden{
-	pixel_x = 13;
-	pixel_y = -4
+/obj/machinery/mineral/wasteland_vendor/general{
+	icon_state = "nugeneric_idle"
 	},
-/turf/open/indestructible/cobble,
+/turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "ER" = (
 /obj/structure/flora/burnedlog,
@@ -4240,9 +4289,7 @@
 "Ff" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe,
-/obj/item/stack/sheet/glass/five,
-/obj/item/stack/sheet/metal/five,
+/obj/machinery/mineral/wasteland_vendor/medical,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Fh" = (
@@ -4304,8 +4351,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "Fu" = (
-/turf/open/indestructible/cobble/side,
-/area/f13/building/workshop/ashdown)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "Fw" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/decal/cleanable/dirt,
@@ -4429,9 +4483,7 @@
 	},
 /area/f13/building/abandoned)
 "Gf" = (
-/obj/structure/table{
-	pixel_x = -9
-	},
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 10;
 	pixel_x = -9
@@ -4450,8 +4502,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "Gk" = (
-/obj/structure/table,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/item/storage/box/matches{
 	pixel_y = 9;
@@ -4750,9 +4802,15 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "IE" = (
-/obj/structure/table,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "IL" = (
 /obj/structure/flora/tree/cactus_alt,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5055,9 +5113,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Kp" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
-/turf/open/indestructible/cobble,
-/area/f13/building/workshop/ashdown)
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "Ks" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/hydronutrients,
@@ -5191,7 +5252,7 @@
 	},
 /area/f13/building/abandoned)
 "Lw" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -5476,7 +5537,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "NZ" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -5709,12 +5770,12 @@
 /area/f13/wasteland)
 "Qd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Qe" = (
-/obj/structure/table,
-/obj/structure/table,
+/obj/structure/table/wood/settler,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -6129,7 +6190,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "SJ" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/structure/rug/big/rug_red{
 	layer = 1
 	},
@@ -6151,8 +6212,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "SQ" = (
-/turf/open/indestructible/cobble/corner,
-/area/f13/building/workshop/ashdown)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/closet/crate/bin/trashbin{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/ashdown)
 "SV" = (
 /obj/structure/closet/cabinet,
 /turf/open/indestructible/ground/inside/mountain,
@@ -6181,7 +6250,7 @@
 	},
 /area/f13/building/abandoned)
 "Tg" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/storage/box/dice,
 /obj/structure/rug/big/rug_red{
 	layer = 1
@@ -6551,9 +6620,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Vl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe/ammo/unlocked_basic,
+/obj/machinery/mineral/wasteland_vendor/mining,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Vp" = (
@@ -6649,7 +6716,7 @@
 	},
 /area/f13/building/abandoned)
 "VP" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/microwave,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6798,7 +6865,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "Xr" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife{
@@ -6983,7 +7050,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Yt" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/cell_charger{
 	pixel_y = 7
 	},
@@ -7040,7 +7107,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "YK" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 7
 	},
@@ -7172,7 +7239,7 @@
 	},
 /area/f13/building/abandoned)
 "ZJ" = (
-/obj/structure/table,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/glass/rag,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -62912,10 +62979,10 @@ tc
 uv
 VX
 Ti
-lk
+Vl
 vt
 vJ
-Vc
+EQ
 rf
 pX
 On
@@ -63426,9 +63493,9 @@ Yf
 tJ
 lP
 wS
-Cy
+lk
 Ff
-Vl
+xL
 aH
 eM
 oz
@@ -66001,13 +66068,13 @@ py
 py
 py
 ke
-zE
-zE
-zE
-zE
-zE
-zE
-zE
+ei
+ei
+ei
+ei
+ei
+ei
+ei
 FR
 Ym
 kM
@@ -66257,15 +66324,15 @@ Ym
 py
 py
 ke
-Yf
-mD
-gB
-gB
-gB
-gB
-gB
-nt
 hL
+tJ
+BF
+yu
+mY
+oA
+gB
+tJ
+Kp
 py
 Ym
 py
@@ -66514,15 +66581,15 @@ ke
 FR
 py
 tO
-Yf
-yk
-ei
-qW
-cU
-Kp
-mY
-Fu
 hL
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Kp
 py
 py
 Ym
@@ -66770,16 +66837,16 @@ QL
 PE
 tg
 Ym
-tO
-Yf
-yk
-oA
-oA
-oA
-oA
-oA
-Fu
-hL
+Ft
+mD
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+yQ
 py
 dV
 Lj
@@ -67027,16 +67094,16 @@ HX
 jC
 RB
 py
-Ft
-Yf
-yk
-oA
-oA
-oA
-oA
-oA
-Fu
-hL
+py
+py
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+py
 py
 Eg
 kq
@@ -67285,15 +67352,15 @@ Yf
 RB
 py
 py
-tO
-yk
-oA
-oA
-oA
-oA
-oA
-Fu
-hL
+py
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+py
 Ym
 AZ
 tY
@@ -67542,15 +67609,15 @@ kR
 Oz
 Or
 py
-tO
-yk
-oA
-oA
-oA
-oA
-oA
-Fu
-hL
+nt
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+IE
 Ym
 Il
 Ee
@@ -67799,15 +67866,15 @@ kR
 Oz
 yi
 py
-tO
-yk
-EQ
-oA
-oA
-oA
-yu
-Fu
-hL
+ex
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Ef
+Kp
 py
 Rt
 Na
@@ -68056,15 +68123,15 @@ jC
 lg
 yi
 py
-Jn
 SQ
+tJ
+yk
 DW
-DW
-DW
-DW
-DW
-gP
-hL
+cU
+Cy
+qW
+tJ
+Kp
 py
 tY
 Fl
@@ -68314,13 +68381,13 @@ RH
 vn
 py
 tO
-Yf
-Yf
-Yf
-Yf
-Yf
-Yf
-xe
+zE
+zE
+zE
+zE
+zE
+zE
+Fu
 iQ
 py
 BS
@@ -68527,7 +68594,7 @@ ti
 ti
 vc
 yD
-IE
+px
 nR
 nR
 hz
@@ -71389,10 +71456,10 @@ yI
 Fr
 rN
 rN
-rN
-ew
-rN
-rN
+On
+je
+gP
+On
 FA
 eo
 mB
@@ -71646,10 +71713,10 @@ LV
 nR
 rN
 ew
-rN
-rN
-rN
-rN
+On
+On
+gP
+On
 hp
 eo
 UU
@@ -71903,10 +71970,10 @@ iX
 RQ
 rN
 ew
-rN
-rN
-rN
-ex
+On
+On
+gP
+On
 UG
 eo
 MG
@@ -72160,9 +72227,9 @@ qa
 Bm
 rN
 ew
-rN
-rN
-rN
+On
+On
+gP
 yZ
 Hi
 eo
