@@ -25250,7 +25250,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kzG" = (
-/obj/effect/fake_stairs/west,
+/obj/structure/stairs{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kAj" = (
@@ -36723,7 +36725,7 @@
 	},
 /area/f13/building/tribal)
 "ptO" = (
-/obj/effect/fake_stairs/west{
+/obj/structure/stairs{
 	dir = 4
 	},
 /turf/open/floor/f13{
@@ -52526,9 +52528,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
 "vRp" = (
-/obj/effect/fake_stairs/west{
-	dir = 2
-	},
+/obj/structure/stairs,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "vRr" = (
