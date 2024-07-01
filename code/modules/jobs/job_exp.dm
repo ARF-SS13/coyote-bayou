@@ -47,17 +47,16 @@ GLOBAL_PROTECT(exp_to_update)
 	return TRUE
 
 /client/proc/calc_exp_type(exptype)
-	var/list/explist = src.prefs.exp.Copy()
-	var/amount = 0
-	var/list/typelistupper = GLOB.exp_jobsmap[exptype]
-	var/list/typelist = typelistupper["titles"]
-	if(!typelist)
-		return -1
-	for(var/i = 1, i <= typelist.len, i++)
-		if(exptype == explist[i])
-			amount += explist[explist[i]]
-
-	return amount
+	// var/list/explist = src.prefs.exp.Copy()
+	// var/amount = 0
+	// var/list/typelistupper = GLOB.exp_jobsmap[exptype]
+	// var/list/typelist = typelistupper["titles"]
+	// if(!typelist)
+	// 	return -1
+	// for(var/i = 1, i <= typelist.len, i++)
+	// 	if(exptype == explist[i])
+	// 		amount += explist[explist[i]]
+	return LAZYACCESS(prefs.exp,exptype)
 
 /client/proc/get_exp_report()
 	if(!CONFIG_GET(flag/use_exp_tracking))

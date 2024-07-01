@@ -137,6 +137,8 @@
 		/datum/outfit/loadout/scavenger,
 		/datum/outfit/loadout/miner,
 	)
+	exp_requirements = 1
+	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Barkeep
