@@ -825,7 +825,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/wastelander/backstage
-	name = "Backstage Character"
+	name = "Character Testing Area"
 	icon_state = "Wastelander"
 	color = "#FF0000"
 
