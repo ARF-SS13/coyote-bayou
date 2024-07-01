@@ -20,7 +20,7 @@
 	access = list()
 	minimal_access = list()
 	paycheck = 75
-	outfit = /datum/outfit/job/wasteland/f13raider
+	outfit = /datum/outfit/job/cb/redwater
 	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
 
