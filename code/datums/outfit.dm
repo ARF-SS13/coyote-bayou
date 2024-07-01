@@ -30,6 +30,8 @@
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 	/// SWAG. Everyone gets one of these. Everyone. Fuckin everyone.
 	var/list/stuff_we_all_get = list()
+	var/card = null
+	var/pda = null
 	/// list of tats. format: list(OUTFIT_TATTOO(/datum/tattoo/tat, spot on bodypart))
 	/// make sure the locations correspond to the right limb, and don't overlap with anything
 	/// in fact, make a new spot for them anyway
@@ -141,6 +143,12 @@
 					number2 = 1
 				for(var/i in 1 to number2)
 					H.equip_to_slot_or_del(new path2(H),SLOT_IN_BACKPACK)
+		if(card)
+			backpack_contents.Insert(1, card)
+			backpack_contents[card] = 1
+		if(pda)
+			backpack_contents.Insert(1, pda)
+			backpack_contents[pda] = 1
 
 	if(!H.head && toggle_helmet && istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit))
 		var/obj/item/clothing/suit/space/hardsuit/HS = H.wear_suit

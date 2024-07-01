@@ -63,30 +63,3 @@
 	exp_type = EXP_TYPE_LIVING
 
 
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////// OUTFITS /////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-// BASE TUNNEL RAT OUTFIT
-////////////////////////
-/// machete, welding helmet, technophreak, better meds I guess???
-/datum/outfit/job/cb/tunnelrats
-	name = "Tunnel Rats Base"
-	jobtype = /datum/job/tunnelrats
-
-	box = /obj/item/storage/survivalkit/medical
-	head = /obj/item/clothing/head/welding/up
-	suit_store = /obj/item/melee/onehanded/machete
-	technophreak = TRUE
-
-////////////////////////
-// TUNNEL RAT BOSS OUTFIT
-////////////////////////
-/// machete, welding mask, technophreak, better meds I guess???
-/datum/outfit/job/cb/tunnelrats/boss
-	name = "Tunnel Rats Giant Rat"
-	jobtype = /datum/job/tunnelrats/bigratthatmakestherules
-
-	box = /obj/item/storage/survivalkit/medical/follower
-	head = null
-	mask = /obj/item/clothing/mask/gas/welding/up
-	suit_store = /obj/item/melee/onehanded/machete/forgedmachete

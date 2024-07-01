@@ -27,6 +27,7 @@
 /datum/job/wasteland
 	department_flag = WASTELAND
 	faction = FACTION_WASTELAND
+	outfit = /datum/outfit/job/cb
 
 //////////////////////////////
 /// Wastelander
@@ -40,10 +41,8 @@
 	supervisors = "fate"
 	selection_color = "#dddddd"
 	paycheck = 0 // Wastelanders are paid in the form of loot and barter
-	outfit = /datum/outfit/job/wasteland
 	access = list()
 	minimal_access = list()
-
 
 //////////////////////////////
 /// Far-Lands Tribals
@@ -58,7 +57,7 @@
 	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe"
 	selection_color = "#dddddd"
-	outfit = /datum/outfit/job/wasteland/f13tribal
+	outfit = /datum/outfit/job/cb/tribal
 	access = list()
 	minimal_access = list()
 
@@ -75,7 +74,6 @@
 	supervisors = "<i>your throbbing biological urges</i>"
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
-	outfit = /datum/outfit/job/wasteland
 	access = list()
 	minimal_access = list()
 
@@ -91,7 +89,7 @@
 	selection_color = "#dcba97"
 	total_positions = -1
 	spawn_positions = -1
-	outfit = /datum/outfit/job/den/f13settler
+	outfit = /datum/outfit/job/cb
 
 //////////////////////////////
 /// Citizen
@@ -114,7 +112,9 @@
 	flag = F13FARMER
 	description = "You are a farmer, responsible for the cultivation of crops and the care of livestock. You are the backbone of the settlement, providing food and resources for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurer's Guild"
-	outfit = /datum/outfit/job/den/f13farmer
+	loadout_options = list(
+		/datum/outfit/loadout/farmer
+	)
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in food) (they can also sell the food) (there's a lot of food)
 	access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
@@ -128,14 +128,12 @@
 	description = "You are a prospector, responsible for the extraction of valuable resources from the earth. You are the backbone of the settlement, providing raw materials for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurer's Guild"
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in ore) (they can also sell the ore) (there's a lot of ore)
-	outfit = /datum/outfit/job/den/f13prospector
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_MINING)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINING)
 	loadout_options = list(
-		/datum/outfit/loadout/scavenger,
-		/datum/outfit/loadout/miner,
+		/datum/outfit/loadout/miner
 	)
 	exp_requirements = 1
 	exp_type = EXP_TYPE_LIVING
@@ -148,7 +146,7 @@
 	flag = F13BARKEEP	
 	description = "You are a barkeep, responsible for the operation of the local tavern. You are the backbone of the settlement, providing drinks and entertainment for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
-	outfit = /datum/outfit/job/den/f13barkeep
+	outfit = /datum/outfit/job/cb/guild/barkeep
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -170,7 +168,7 @@
 	supervisors = "the (nonexistent) FCC"
 	selection_color = "#dddddd"
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
-	outfit = /datum/outfit/job/wasteland/f13radioop
+	outfit = /datum/outfit/job/cb/guild/radio
 	access = list(ACCESS_TCOMSAT)
 	minimal_access = list(ACCESS_TCOMSAT)
 
@@ -190,7 +188,7 @@
 	description = "You are the manager for the Heaven's Night club, responsible for the operation of the establishment. You are the backbone of the settlement, operating the club that provides such sweet relief to survivors of the wasteland. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild, sort of"
 	selection_color = "#c94b8a"
-	outfit = /datum/outfit/job/heavensnight/f13manager
+	outfit = /datum/outfit/job/cb/guild/club/manager
 	access = list(ACCESS_CLUB)
 	minimal_access = list(ACCESS_CLUB)
 
@@ -207,7 +205,7 @@
 	description = "You are a worker at the Heaven's Night club, providing entertainment and relief to the patrons of the establishment. You are the backbone of the settlement, to provide carnal morale to the hardworking townsfolk. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild, your customers, and the Manager"
 	selection_color = "#df80af"
-	outfit = /datum/outfit/job/heavensnight/f13clubworker
+	outfit = /datum/outfit/job/cb/guild/club
 	access = list(ACCESS_CLUB)
 	minimal_access = list(ACCESS_CLUB)
 
@@ -223,7 +221,7 @@
 	supervisors = "your god, as well as the Adventurers Guild"
 	selection_color = "#dcba97"
 	paycheck = COINS_TO_CREDITS(250) // 250 copper per hour
-	outfit = /datum/outfit/job/oasis/f13preacher
+	outfit = /datum/outfit/job/cb/guild/preacher
 	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts <--I'm doing something about it now!
 	minimal_access = list(ACCESS_BAR)
 
@@ -237,7 +235,7 @@
 	description = "You are the curator of the New Boston Library, responsible for the collection and organization of knowledge. You are the backbone of the settlement, providing access to information and resources for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
-	outfit = /datum/outfit/job/den/nashcurator
+	outfit = /datum/outfit/job/cb/guild/curator
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
@@ -308,7 +306,7 @@
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
-	outfit = /datum/outfit/job/wasteland
+	outfit = /datum/outfit/job/cb
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 

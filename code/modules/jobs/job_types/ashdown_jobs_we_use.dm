@@ -21,7 +21,7 @@
 	supervisors = "yourself"
 	total_positions = -1
 	spawn_positions = -1
-	outfit = /datum/outfit/job/wasteland/ashdown
+	outfit = /datum/outfit/job/cb/ashdown
 	faction = FACTION_ASHDOWN
 	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
@@ -38,7 +38,7 @@
 	faction = FACTION_BIKER
 	total_positions = 4
 	spawn_positions = 4
-	outfit = /datum/outfit/job/biker
+	outfit = /datum/outfit/job/cb/ashdown/biker
 	exp_requirements = PLAYTIME_ALT_TOWN_HEAD
 	exp_type = EXP_TYPE_LIVING
 	//whitelist_path = "strings/job_whitelist/biker.txt"
