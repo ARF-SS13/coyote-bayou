@@ -180,6 +180,8 @@ GLOBAL_LIST_INIT(den_positions, list(
 //ashdown_positions Citizenship
 GLOBAL_LIST_INIT(ashdown_positions, list(
 	"Ashdown Citizen",
+	"Hells Nomad",
+	"Overbiker",
 ))
 
 //Gar Citizenship
@@ -380,7 +382,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#33FF22"),
 	"Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
 	"Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
 	"Den" = list("jobs" = den_positions, "color" = "#884488"),

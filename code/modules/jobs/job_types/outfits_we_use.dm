@@ -24,7 +24,7 @@
 		/obj/item/clothing/under/f13/lumberjack,
 		/obj/item/clothing/under/f13/roving)
 	gloves   = /obj/item/pda
-	id       = /obj/item/storage/wallet/stash/low
+	id       = /obj/item/card/id/selfassign
 	ears     = /obj/item/radio/headset
 	belt     = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack
