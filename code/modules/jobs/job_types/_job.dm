@@ -95,6 +95,12 @@
 
 	//For things that faction Enforces.
 	var/enforces = ""
+
+	//Job difficulty
+	var/difficulty = ""
+	
+	var/list/tgui_slug = list()
+
 	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
 	//This is ontop of the base job outfit
 	var/list/datum/outfit/loadout_options
@@ -258,6 +264,32 @@
 		return 0
 
 	return max(0, minimal_player_age - C.player_age)
+
+
+/datum/job/proc/get_tgui_slug()
+	if(LAZYLEN(tgui_slug))
+		return tgui_slug
+	var/list/coolgat = list()
+	coolgat["Title"] = job.title
+	coolgat["Path"] = job.type
+	coolgat["Category"] = cat
+	coolgat["Description"] = job.description
+	coolgat["Supervisors"] = job.supervisors
+	coolgat["Paycheck"] = job.paycheck
+	coolgat["TotalPositions"] = job.total_positions
+	coolgat["SpawnPositions"] = job.spawn_positions
+	coolgat["CurrentPositions"] = job.current_positions
+	coolgat["Forbids"] = job.forbids
+	coolgat["Enforces"] = job.enforces
+	coolgat["Extrastuff"] = job.extrastuff
+	coolgat["HasTimeLock"] = job.my_job.exp_requirements > 0
+	coolgat["ReqMinutes"] = "[DisplayTimeText(job.exp_requirements, abbreviated = TRUE)]"
+	coolgat["ReqType"] = job.exp_type
+	coolgat["Difficulty"] = job.difficulty
+	coolgat["JobColor"] = job.color
+	coolgat["CurrencyUnit"] = SSeconomy.currency_unit
+	tgui_slug = coolgat
+	return tgui_slug
 
 /datum/job/proc/config_check()
 	return TRUE

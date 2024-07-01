@@ -371,6 +371,29 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
+GLOBAL_LIST_INIT(position_ordering, list(
+	EXP_TYPE_WASTELAND = list(),
+	"New Boston" = list(),
+	"Reclaimers" = list(),
+	EXP_TYPE_TRIBAL = list(),
+	"Guild" = list(),
+	"Den" = list(),
+	"Ashdown" = list(),
+	"Tunnel Rats" = list(),
+	"Garland" = list(),
+	EXP_TYPE_BROTHERHOOD = list(),
+	EXP_TYPE_LEGION = list(),
+	EXP_TYPE_NCR = list(),
+	EXP_TYPE_VAULT = list(),
+	EXP_TYPE_ENCLAVE = list(),
+	EXP_TYPE_KHAN = list(),
+	EXP_TYPE_FOLLOWERS = list(),
+	EXP_TYPE_SILICON = list(),
+	EXP_TYPE_CLUB = list(),
+	EXP_TYPE_BIKER = list(),
+	"debug" = list(),
+))
+
 GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_LIVING = list("titles" = list("Texarkana Ranger")), // all living mobs
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
