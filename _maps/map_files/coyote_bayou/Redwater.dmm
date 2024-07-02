@@ -920,12 +920,6 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/building/coyote/safe/fortredwater)
-"avi" = (
-/obj/structure/obstacle/barbedwire/end{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "avo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
@@ -958,6 +952,12 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
+"awj" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "awp" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1412,6 +1412,13 @@
 	},
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland/redwater)
+"aHz" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "aHS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -4217,7 +4224,10 @@
 	},
 /area/f13/building/abandoned)
 "bMd" = (
-/obj/structure/flora/tallgrass9,
+/obj/structure/flora/grass/wasteland,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "bMm" = (
@@ -4489,12 +4499,10 @@
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland/redwater)
 "bRy" = (
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
+	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "bRG" = (
 /obj/structure/barricade/wooden,
@@ -5906,6 +5914,13 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/redwater)
+"cux" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/decal/cleanable/blood/gibs/down{
+	icon_state = "gib3-old"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "cuD" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowvertical"
@@ -7012,6 +7027,9 @@
 	name = "redwest"
 	},
 /obj/effect/spawner/lootdrop/f13/trash,
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "redwaterwest"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "cSG" = (
@@ -8313,10 +8331,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"dvj" = (
-/obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/grass,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "dvn" = (
 /obj/structure/fermenting_barrel,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -8539,6 +8553,9 @@
 	id = "rednorth";
 	name = "redeast"
 	},
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "rednorth"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "dzx" = (
@@ -8572,10 +8589,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "dAy" = (
-/obj/structure/obstacle/barbedwire{
-	dir = 4
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "dAz" = (
 /obj/structure/lamp_post/doubles/bent,
@@ -9095,12 +9113,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"dKf" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "dKh" = (
 /turf/closed/wall/f13/wood{
 	color = "#cababa"
@@ -9902,6 +9914,9 @@
 	id = "redwaterwest";
 	name = "redwest"
 	},
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "redwaterwest"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "ebT" = (
@@ -10330,6 +10345,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"ekL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "ekT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
@@ -11836,6 +11858,9 @@
 	id = "rednorth";
 	name = "redeast"
 	},
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "rednorth"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "eRC" = (
@@ -12563,16 +12588,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building)
-"feR" = (
-/obj/structure/fence{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "feS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/grass/wasteland{
@@ -12618,6 +12633,10 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"ffW" = (
+/obj/structure/flora/tallgrass9,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "fgj" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor1-old"
@@ -13041,13 +13060,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
-"foO" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "fpk" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14391,6 +14403,10 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"fVW" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "fWn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/room/dirty,
@@ -14557,11 +14573,6 @@
 /obj/item/cultivator,
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/building)
-"gac" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "gak" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -15878,13 +15889,6 @@
 "gBR" = (
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/redwater)
-"gBS" = (
-/obj/structure/flora/grass/jungle,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "gCc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/tallgrass9,
@@ -15918,11 +15922,6 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland/redwater)
-"gCR" = (
-/obj/structure/flora/grass/wasteland,
-/obj/structure/flora/grass/jungle,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "gCY" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/gravel,
@@ -16863,6 +16862,13 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"gXl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/down{
+	icon_state = "gib3-old"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "gXo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed/old{
@@ -17082,11 +17088,6 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
-"hct" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/obstacle/barbedwire,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "hcy" = (
@@ -18594,12 +18595,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hJr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "hJA" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
@@ -19892,8 +19887,11 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "imm" = (
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "ims" = (
 /obj/structure/flora/rock/pile/largejungle{
@@ -22089,6 +22087,9 @@
 	name = "redwest"
 	},
 /obj/effect/turf_decal/weather/dirt,
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "redwaterwest"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "jcq" = (
@@ -23373,13 +23374,6 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
-"jCZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "jDI" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress4";
@@ -23547,10 +23541,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "jHK" = (
+/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 5
+	dir = 4
 	},
-/turf/open/indestructible/ground/outside/water,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "jHX" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -24703,6 +24699,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"kjk" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "kjn" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -25384,6 +25386,16 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/redwater)
+"kyr" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
+"kzg" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "kzj" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
@@ -26328,6 +26340,11 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"kUr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/obstacle/barbedwire,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "kUJ" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/rare_melee,
@@ -28302,6 +28319,15 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
+"lGB" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/effect/decal/cleanable/blood/gibs/down{
+	icon_state = "gib3-old"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "lGJ" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare_weps,
@@ -29369,6 +29395,13 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/wasteland)
+"mdV" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "mea" = (
 /obj/item/stack/ore/slag,
 /obj/item/stack/ore/slag,
@@ -29441,13 +29474,6 @@
 /obj/structure/junk/locker,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"meY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/obstacle/barbedwire{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "mfy" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -31413,13 +31439,6 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
-"nbG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/grass/jungle,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "nbI" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/structure/table/wood/settler,
@@ -31504,13 +31523,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
-"ndR" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "nex" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/dirt,
@@ -32571,6 +32583,9 @@
 	id = "rednorth";
 	name = "redeast"
 	},
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	id = "rednorth"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "nCt" = (
@@ -33151,6 +33166,15 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nQd" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "nQq" = (
 /obj/structure/flora/twig2,
 /turf/open/floor/grass,
@@ -33442,12 +33466,6 @@
 	footstep = "dirt";
 	name = "rocky dirt"
 	},
-/area/f13/wasteland/city/newboston/outdoors/redwater)
-"nUV" = (
-/obj/structure/fence{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "nVb" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -34917,6 +34935,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
+"oAH" = (
+/obj/structure/flora/rock/pile/largejungle{
+	icon_state = "bush3"
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "oBb" = (
 /mob/living/simple_animal/hostile/raider/junker/boss{
 	health = 400;
@@ -35131,12 +35156,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/redwater)
-"oEL" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "oEY" = (
 /mob/living/simple_animal/hostile/gecko/tribal/warrior,
 /turf/open/indestructible/ground/outside/road{
@@ -38011,6 +38030,10 @@
 /obj/structure/junk/small/bed2,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"pPr" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "pPs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/terminal{
@@ -39215,16 +39238,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
-"qrm" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "qrn" = (
 /obj/structure/table/wood/settler,
 /obj/item/paper_bin{
@@ -39618,6 +39631,11 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"qAJ" = (
+/obj/structure/flora/grass/wasteland,
+/obj/structure/flora/grass/jungle,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "qAL" = (
 /obj/structure/flora/grass/wasteland,
 /obj/effect/turf_decal/weather/dirt{
@@ -40269,13 +40287,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"qNR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "qNT" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -42569,15 +42580,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland/redwater)
-"rGC" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "rGE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -43743,6 +43745,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"sdV" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/grass,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "sdX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood/settler,
@@ -45227,6 +45233,13 @@
 	color = "#6D6D6D"
 	},
 /area/f13/building)
+"sJd" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "sJD" = (
 /obj/structure/fence{
 	dir = 4
@@ -46837,6 +46850,16 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
+"tuf" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "tuo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -47042,15 +47065,6 @@
 /obj/structure/debris/v2,
 /turf/closed/wall/rust,
 /area/f13/building/abandoned)
-"txY" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
-	},
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "tya" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -47292,6 +47306,12 @@
 	icon_state = "greenrusty"
 	},
 /area/f13/wasteland)
+"tCM" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "tCT" = (
 /obj/item/storage/trash_stack{
 	pixel_x = -18
@@ -49118,10 +49138,6 @@
 /obj/effect/landmark/poster_spawner/prewar,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
-"umZ" = (
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "une" = (
 /obj/effect/spawner/lootdrop/f13/uncommon_melee,
 /turf/open/floor/plasteel/cult,
@@ -49459,17 +49475,6 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
-"uvf" = (
-/obj/structure/flora/grass/jungle,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
-"uvr" = (
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "bush3"
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "uvN" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -49793,13 +49798,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"uCa" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "uCj" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -51768,13 +51766,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/building)
-"vuo" = (
-/obj/structure/fence{
-	dir = 8
-	},
-/obj/structure/barricade/wooden,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "vuv" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/water{
@@ -51791,6 +51782,12 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
+"vuN" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "vvh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/overlay/junk/shower{
@@ -53588,6 +53585,11 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
+"wfS" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "wfY" = (
 /obj/structure/nest/mirelurk{
 	spawn_time = 20
@@ -55306,6 +55308,12 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
+"wPI" = (
+/obj/structure/obstacle/barbedwire{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "wQg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -55689,13 +55697,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/wood_common,
 /area/f13/building)
-"wYT" = (
-/obj/structure/fence{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "wZi" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -55774,6 +55775,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/building)
+"xaw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "xaR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
@@ -56029,8 +56035,8 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "xgA" = (
 /obj/structure/window/fulltile/house{
@@ -56877,11 +56883,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "xxi" = (
-/obj/structure/flora/grass/wasteland,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "xxr" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -57777,11 +57786,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
-"xQr" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/city/newboston/outdoors/redwater)
 "xQD" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -57834,6 +57838,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"xRX" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "xSe" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -58047,6 +58058,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"xXk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/obstacle/barbedwire{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city/newboston/outdoors/redwater)
 "xXl" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1"
@@ -86556,8 +86574,8 @@ ltD
 oPZ
 ltD
 wNH
-wYT
-avi
+mdV
+vuN
 oVc
 gss
 oDH
@@ -86814,7 +86832,7 @@ qEe
 jqS
 nLV
 aWd
-dAy
+wPI
 oVc
 gss
 gss
@@ -87071,7 +87089,7 @@ mjg
 afy
 nLV
 uXk
-meY
+xXk
 oVc
 fNi
 gss
@@ -87327,8 +87345,8 @@ dVR
 okU
 hni
 aTN
-feR
-meY
+tuf
+xXk
 oVc
 gss
 uKq
@@ -87585,7 +87603,7 @@ fAQ
 soc
 nLV
 bZo
-dAy
+wPI
 oVc
 gss
 gss
@@ -87842,7 +87860,7 @@ rtH
 jqS
 nLV
 bZo
-dAy
+wPI
 gss
 gss
 gss
@@ -88098,12 +88116,12 @@ hni
 rtH
 qNA
 aTN
-feR
-meY
+tuf
+xXk
 oVc
 gss
 gss
-bRy
+jHK
 rLu
 xyE
 vji
@@ -88356,7 +88374,7 @@ jqS
 jqS
 aTN
 bZo
-dAy
+wPI
 oVc
 gss
 hXg
@@ -88612,8 +88630,8 @@ qNA
 fAQ
 qNA
 nLV
-wYT
-dAy
+mdV
+wPI
 oVc
 fNi
 rYR
@@ -88869,8 +88887,8 @@ dzx
 rtH
 fAQ
 aTN
-wYT
-meY
+mdV
+xXk
 oVc
 gss
 kua
@@ -89126,8 +89144,8 @@ fAQ
 lFS
 dzx
 nLV
-vuo
-meY
+sJd
+xXk
 gss
 oDH
 kua
@@ -89383,8 +89401,8 @@ pdN
 alI
 wKQ
 xLx
-nUV
-meY
+tCM
+xXk
 oVc
 gss
 hXg
@@ -89641,7 +89659,7 @@ wFM
 wFM
 iQt
 iQt
-dAy
+wPI
 gss
 gss
 sbB
@@ -89898,7 +89916,7 @@ dJS
 pim
 aut
 iQt
-dAy
+wPI
 oVc
 gss
 pUv
@@ -90155,7 +90173,7 @@ dJS
 dJS
 uMa
 iQt
-dAy
+wPI
 oVc
 oVc
 dOE
@@ -90412,7 +90430,7 @@ btb
 jJF
 uMa
 iQt
-dAy
+wPI
 oVc
 oVc
 pUv
@@ -90423,7 +90441,7 @@ uew
 oVc
 oqz
 rxG
-dvj
+sdV
 bFR
 bFR
 bFR
@@ -90669,7 +90687,7 @@ dJS
 xfG
 uMa
 mVP
-dAy
+wPI
 oVc
 oVc
 pUv
@@ -90926,7 +90944,7 @@ dJS
 dJS
 lRh
 wFM
-dAy
+wPI
 oVc
 oVc
 pUv
@@ -91183,7 +91201,7 @@ iSZ
 uMa
 pim
 iQt
-dAy
+wPI
 oVc
 gss
 dOE
@@ -91440,7 +91458,7 @@ dLj
 mqI
 pim
 tss
-dAy
+wPI
 oVc
 oDH
 pUv
@@ -91697,10 +91715,10 @@ dJS
 pim
 mqI
 tss
-dAy
+wPI
 fNi
 uKq
-bRy
+jHK
 xwD
 bbr
 pfl
@@ -91954,7 +91972,7 @@ dJS
 pim
 dLj
 tss
-meY
+xXk
 fNi
 hXg
 stn
@@ -92211,7 +92229,7 @@ sHq
 eZa
 sHq
 tss
-dAy
+wPI
 gss
 hXg
 bBf
@@ -92463,14 +92481,14 @@ qUU
 qUU
 qUU
 mwx
-hct
+kUr
 mwx
 mwx
 mwx
 mwx
 vhF
 oVc
-bRy
+jHK
 bBf
 bbr
 rrj
@@ -92977,7 +92995,7 @@ crT
 bFR
 bFR
 oVc
-gac
+wfS
 oVc
 oVc
 oVc
@@ -94021,7 +94039,7 @@ gss
 oVc
 oVc
 oVc
-bMd
+ffW
 aXu
 bFR
 caE
@@ -94535,7 +94553,7 @@ pps
 rxG
 sSH
 pps
-uvr
+oAH
 caE
 bFR
 crT
@@ -99931,7 +99949,7 @@ oVc
 oVc
 oVc
 oVc
-gac
+wfS
 sVP
 bBV
 nIF
@@ -100702,7 +100720,7 @@ oVc
 oVc
 oVc
 oVc
-foO
+cux
 sVP
 bFR
 cxN
@@ -101719,7 +101737,7 @@ nwA
 heD
 heD
 heD
-jCZ
+xgr
 rIA
 brg
 mGw
@@ -101978,14 +101996,14 @@ vyV
 pUh
 vyV
 heD
-jCZ
+xgr
 ucq
 ePc
 eQj
 hfj
 oom
 oom
-xxi
+bMd
 oom
 oom
 oom
@@ -102228,7 +102246,7 @@ fhX
 fhX
 fhX
 fhX
-gCR
+qAJ
 vyV
 vyV
 vyV
@@ -102239,13 +102257,13 @@ rhD
 fXv
 mlL
 bbw
-oEL
+kyr
 heD
 heD
 heD
 heD
-nbG
-nbG
+imm
+imm
 hcy
 hcy
 bsJ
@@ -102488,15 +102506,15 @@ fhX
 vyV
 vyV
 vyV
-gBS
+aHz
 wpQ
 wpQ
 wpQ
-dKf
+kjk
 trD
 gSI
 kmQ
-jHK
+bRy
 wpQ
 wpQ
 wpQ
@@ -102742,7 +102760,7 @@ wej
 fhX
 fhX
 wej
-uvf
+pPr
 vyV
 vyV
 oFY
@@ -111462,7 +111480,7 @@ oVc
 oVc
 oVc
 pUv
-qNR
+ekL
 vyV
 vyV
 rhD
@@ -111713,7 +111731,7 @@ oVc
 gss
 oVc
 oVc
-txY
+lGB
 oVc
 oVc
 oVc
@@ -111967,7 +111985,7 @@ oVc
 oVc
 oVc
 oVc
-gac
+wfS
 gss
 oVc
 sVP
@@ -112233,7 +112251,7 @@ oVc
 oVc
 oVc
 pUv
-ndR
+xRX
 vyV
 vyV
 rhD
@@ -112490,10 +112508,10 @@ oVc
 oVc
 oVc
 pUv
-jHK
+bRy
 wpQ
 wpQ
-dKf
+kjk
 wUf
 wUf
 wUf
@@ -112748,8 +112766,8 @@ bbr
 bbr
 rrj
 ilb
-xgr
-xgr
+dAy
+dAy
 iXx
 rAm
 eRB
@@ -112996,7 +113014,7 @@ oVc
 oVc
 grv
 oVc
-xQr
+xaw
 oVc
 oVc
 gss
@@ -113512,16 +113530,16 @@ oVc
 oVc
 oVc
 oVc
-xQr
+xaw
 sVP
 bbr
 bbr
 oVc
 rrj
-oEL
+kyr
 heD
 heD
-hJr
+awj
 wUf
 wUf
 wUf
@@ -113767,8 +113785,8 @@ oVc
 grv
 oVc
 oVc
-imm
-imm
+fVW
+fVW
 bbr
 bbr
 bbr
@@ -114031,8 +114049,8 @@ xyE
 bbr
 oVc
 bqQ
-oEL
-umZ
+kyr
+kzg
 vyV
 vyV
 rhD
@@ -114546,10 +114564,10 @@ jKR
 oVc
 pUv
 uaP
-uvf
+pPr
 vyV
 vyV
-dKf
+kjk
 wUf
 wUf
 wUf
@@ -114802,7 +114820,7 @@ bbr
 gss
 grv
 pUv
-jHK
+bRy
 vyV
 fhX
 jFE
@@ -115317,7 +115335,7 @@ oVc
 oVc
 oVc
 ljA
-rGC
+nQd
 fhX
 jFE
 cYX
@@ -115831,7 +115849,7 @@ oVc
 oVc
 oVc
 pUv
-qrm
+xxi
 fhX
 jFE
 cYX
@@ -116858,7 +116876,7 @@ oVc
 pps
 oVc
 oVc
-uCa
+gXl
 hXg
 wHR
 jFE
@@ -117115,7 +117133,7 @@ oVc
 pps
 gss
 oVc
-uCa
+gXl
 hXg
 wHR
 fhX
@@ -118401,7 +118419,7 @@ oVc
 oVc
 oVc
 gss
-bRy
+jHK
 wHR
 fhX
 jFE
@@ -119987,9 +120005,9 @@ jzp
 wTy
 hPS
 nUN
-xxi
-xxi
-xxi
+bMd
+bMd
+bMd
 sSi
 lOd
 oVc
