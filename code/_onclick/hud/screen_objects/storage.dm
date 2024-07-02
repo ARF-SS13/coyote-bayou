@@ -48,6 +48,7 @@
 /atom/movable/screen/storage/continuous
 	icon_state = "storage_continue"
 	insertion_click = TRUE
+	layer = 4
 
 /atom/movable/screen/storage/volumetric_box
 	icon_state = "stored_continue"

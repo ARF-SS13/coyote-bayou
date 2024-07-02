@@ -6,16 +6,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/explosive/explosive_collar
-	name = "Explosive Collar"
-	result = /obj/item/electropack/shockcollar/explosive
-	reqs = list(/obj/item/stack/ore/blackpowder = 1,
-				/obj/item/electropack/shockcollar = 1,
-				/obj/item/stack/cable_coil = 1,
-				/obj/item/assembly/igniter = 1,)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+// /datum/crafting_recipe/explosive/explosive_collar
+// 	name = "Explosive Collar"
+// 	result = /obj/item/electropack/shockcollar/explosive
+// 	reqs = list(/obj/item/stack/ore/blackpowder = 1,
+// 				/obj/item/electropack/shockcollar = 1,
+// 				/obj/item/stack/cable_coil = 1,
+// 				/obj/item/assembly/igniter = 1,)
+// 	time = 30
+// 	category = CAT_WEAPONRY
+// 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/chemical_payload
 	name = "Chemical Payload (C4)"

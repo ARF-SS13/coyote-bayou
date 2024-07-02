@@ -272,6 +272,10 @@
 	weather_tags = list(WEATHER_SAFE)
 	outdoors = TRUE
 
+/area/f13/wasteland/city/newboston/outdoors/redwater
+	name = "Redwater"
+	color = "#FF0000"
+
 /area/f13/wasteland/city/newboston/house
 	name = "New Boston Housing"
 	icon_state = "house"

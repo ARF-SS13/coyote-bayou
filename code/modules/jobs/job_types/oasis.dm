@@ -54,72 +54,8 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/supplykit)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
-/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
-	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/settler, \
-		/obj/item/clothing/under/f13/brahminm, \
-		/obj/item/clothing/under/f13/machinist, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/roving)
-	r_pocket = pick(
-		/obj/item/storage/fancy/flare_pouch, \
-		/obj/item/storage/fancy/flare_pouch/glowstick)
-
 
 /*--------------------------------------------------------------*/
-
-
-/datum/outfit/job/den/f13prospector
-	name = "Prospector"
-	jobtype = /datum/job/townfolk/f13prospector
-
-	id = /obj/item/card/id/dogtag/town
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-	l_pocket = /obj/item/storage/wallet/stash/mid
-	//r_pocket = /obj/item/flashlight/lantern
-	belt = /obj/item/storage/bag/ore
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack_contents = list(
-		/obj/item/supplykit,
-		/obj/item/pda = 1,
-		)
-
-/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
-	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/machinist, \
-		/obj/item/clothing/under/f13/roving, \
-		/obj/item/clothing/under/f13/cowboyt)
-
-/datum/outfit/job/den/f13prospector/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-
-/datum/outfit/loadout/scavenger
-	name = "Scavenger"
-	glasses = /obj/item/clothing/glasses/welding
-	belt = /obj/item/storage/belt/utility/full
-	backpack_contents = list(
-		/obj/item/pickaxe/mini = 1,
-		/obj/item/shovel/spade = 1,
-		)
-
-/datum/outfit/loadout/miner
-	name = "Miner"
-	suit = /obj/item/clothing/suit/armor/light/leather/rig
-	head = /obj/item/clothing/head/hardhat
-	backpack_contents = list(
-		/obj/item/t_scanner/adv_mining_scanner = 1,
-		/obj/item/pickaxe/silver = 1,
-		/obj/item/shovel = 1,
-		)
 
 
 /*--------------------------------------------------------------*/
@@ -188,33 +124,6 @@ here's a tip, go search DEFINES/access.dm
 
 
 
-/datum/outfit/job/den/f13settler
-	name = "Citizen"
-	jobtype = /datum/job/townfolk/citizen
-	belt = /obj/item/supplykit
-	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/settler
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	//r_pocket = /obj/item/storage/fancy/flare_pouch
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/low = 1,
-		/obj/item/pda = 1,
-		)
-
-/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/gentlesuit,
-		/obj/item/clothing/under/f13/formal,
-		/obj/item/clothing/under/f13/spring,
-		/obj/item/clothing/under/f13/relaxedwear,
-		/obj/item/clothing/under/f13/machinist,
-		/obj/item/clothing/under/f13/brahminf,
-		/obj/item/clothing/under/f13/cowboyb,
-		/obj/item/clothing/under/f13/cowboyg,
-		/obj/item/clothing/under/f13/cowboyt)
 
 
 /datum/outfit/loadout/provisioner
@@ -454,65 +363,4 @@ here's a tip, go search DEFINES/access.dm
 	)
 
 
-
-/datum/outfit/job/den/nashcurator
-	name = "Librarian"
-	jobtype = /datum/job/townfolk/librarian
-	belt = /obj/item/supplykit
-	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/settler
-	ears = /obj/item/radio/headset/headset_town/guild
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	gloves = /obj/item/pda
-	
-
-/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/gentlesuit,
-		/obj/item/clothing/under/f13/formal,
-		/obj/item/clothing/under/f13/spring,
-		/obj/item/clothing/under/f13/relaxedwear,
-		/obj/item/clothing/under/f13/machinist,
-		/obj/item/clothing/under/f13/brahminf,
-		/obj/item/clothing/under/f13/cowboyb,
-		/obj/item/clothing/under/f13/cowboyg,
-		/obj/item/clothing/under/f13/cowboyt)
-
-
-/datum/outfit/job/den/f13barkeep
-	name = "Barkeep"
-	jobtype = /datum/job/townfolk/f13barkeep
-	uniform = /obj/item/clothing/under/f13/bartenderalt
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/supplykit
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	backpack = /obj/item/storage/backpack/satchel/leather
-	gloves = /obj/item/pda
-	l_pocket = /obj/item/storage/wallet/stash/mid
-	backpack_contents = list(
-		/obj/item/book/manual/nuka_recipes = 1,
-		/obj/item/pda
-		)
-
-/datum/outfit/loadout/diner
-	name = "Diner"
-	neck = /obj/item/clothing/neck/apron/chef
-
-	backpack_contents = list(
-	/obj/item/storage/box/ingredients/wildcard = 1,
-	/obj/item/storage/box/ingredients/fiesta = 1,
-	/obj/item/storage/box/ingredients/italian = 1,
-	/obj/item/storage/box/ingredients/vegetarian = 1,
-	/obj/item/storage/box/ingredients/american = 1,
-	/obj/item/storage/box/ingredients/fruity = 1,
-	/obj/item/storage/box/ingredients/sweets = 1,
-	/obj/item/storage/box/ingredients/delights = 1,
-	/obj/item/storage/box/ingredients/grains = 1,
-	/obj/item/storage/box/ingredients/carnivore = 1,
-	/obj/item/storage/box/ingredients/exotic = 1,
-	/obj/item/storage/box/ingredients/sushi = 1
-	)
 
