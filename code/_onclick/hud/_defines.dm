@@ -33,8 +33,8 @@
 #define ui_gloves "WEST+2:10,SOUTH+2:9"
 
 //bottom row
-#define ui_oclothing "WEST:6,SOUTH+1:7"
-#define ui_iclothing "WEST+1:8,SOUTH+1:7"
+#define ui_oclothing "WEST+1:8,SOUTH+1:7"
+#define ui_iclothing "WEST:6,SOUTH+1:7"
 #define ui_shoes "WEST+2:10,SOUTH+1:7"
 
 //Middle left indicators
@@ -47,9 +47,9 @@
 #define ui_sstore1 "WEST+1:6,SOUTH:3"
 #define ui_id "WEST+2:6,SOUTH:3"
 #define ui_belt "WEST+3:5,SOUTH:3"
-#define ui_back "WEST+4:4,SOUTH:3"
-#define ui_storage1 "WEST+5:4,SOUTH:3"
-#define ui_storage2 "WEST+6,SOUTH:3"
+#define ui_back "WEST+6,SOUTH:3"
+#define ui_storage1 "WEST+4:4,SOUTH:3"
+#define ui_storage2 "WEST+5:4,SOUTH:3"
 #define ui_resistdelay "WEST+7:16,SOUTH+1:17"
 #define ui_overridden_resist "WEST+7:16,SOUTH+1:1"
 #define ui_combat_toggle "WEST+7:16,SOUTH:2"
