@@ -1137,6 +1137,7 @@
 	icon = 'modular_coyote/icons/objects/cypress.dmi'
 	icon_state = "cypress_tree"
 	anchored = TRUE
+	pixel_x = 0
 
 /obj/structure/flora/tree/rainforest_tree
 	name = "rainforest tree"
