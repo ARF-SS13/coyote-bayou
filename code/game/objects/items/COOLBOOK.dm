@@ -5,7 +5,7 @@
 	desc = "This is an error. If you see this, inform a developer!"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book1"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	/// The key to the book's entry in the library.
 	var/book_key = "example"
 	/// The chapter we're on. If null, its the index page.

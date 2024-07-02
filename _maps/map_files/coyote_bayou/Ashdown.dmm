@@ -3197,12 +3197,7 @@
 /area/f13/wasteland)
 "bvs" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "bvy" = (
 /obj/structure/wreck/trash/machinepiletwo,
@@ -3849,12 +3844,7 @@
 /area/f13/building)
 "bKA" = (
 /obj/structure/sign/poster/prewar/poster72,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "bKK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9389,12 +9379,7 @@
 	},
 /area/f13/wasteland)
 "ecn" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building/abandoned)
 "ecr" = (
 /obj/structure/fence{
@@ -9453,7 +9438,9 @@
 /obj/structure/fence/corner{
 	dir = 1
 	},
-/turf/open/indestructible/ground/outside/graveldirt,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain1"
+	},
 /area/f13/wasteland)
 "edR" = (
 /obj/structure/table/glass,
@@ -12565,12 +12552,7 @@
 /area/f13/building)
 "fwb" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building/abandoned)
 "fws" = (
 /obj/structure/closet/crate/grave{
@@ -13507,7 +13489,7 @@
 /area/f13/wasteland)
 "fRP" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "fRT" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14375,12 +14357,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "gko" = (
 /obj/structure/rack,
@@ -16032,14 +16009,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"gVD" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
-/area/f13/building)
 "gVE" = (
 /obj/machinery/light{
 	dir = 8
@@ -17433,12 +17402,7 @@
 /area/f13/wasteland)
 "hIW" = (
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building/abandoned)
 "hJg" = (
 /obj/structure/railing{
@@ -17611,7 +17575,9 @@
 /area/f13/building/hospital/clinic/ashdown)
 "hMS" = (
 /obj/structure/fence,
-/turf/open/indestructible/ground/outside/graveldirt,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain1"
+	},
 /area/f13/wasteland)
 "hNc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -20064,12 +20030,7 @@
 /area/f13/wasteland)
 "iNU" = (
 /obj/structure/decoration/clock/old/active,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "iNY" = (
 /obj/effect/turf_decal/stripes/line{
@@ -20762,12 +20723,7 @@
 "jdw" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building/abandoned)
 "jdL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -24956,12 +24912,7 @@
 "kQw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "kQF" = (
 /obj/structure/decoration/rag,
@@ -26759,7 +26710,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "lHJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30265,13 +30216,7 @@
 	},
 /area/f13/wasteland)
 "nmX" = (
-/turf/closed/indestructible/rock{
-	color = "#b09168";
-	desc = "An extremely tough wall.";
-	icon = 'icons/fallout/turfs/walls/house.dmi';
-	icon_state = "house0";
-	name = "reinforced wooden wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "nnd" = (
 /obj/effect/decal/marking{
@@ -30687,9 +30632,6 @@
 /obj/item/reagent_containers/pill/patch/jet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"nwB" = (
-/turf/closed/indestructible/rock,
 /area/f13/building)
 "nwJ" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -32565,13 +32507,7 @@
 	anchored = 1
 	},
 /obj/structure/noticeboard,
-/turf/closed/indestructible/rock{
-	color = "#b09168";
-	desc = "An extremely tough wall.";
-	icon = 'icons/fallout/turfs/walls/house.dmi';
-	icon_state = "house0";
-	name = "reinforced wooden wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "ooc" = (
 /obj/structure/chair/wood{
@@ -33160,12 +33096,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "oDd" = (
 /obj/structure/sign/poster/contraband/revolver,
@@ -33956,12 +33887,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
-"oTc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/wasteland)
 "oTg" = (
 /obj/structure/sign/poster/contraband/pinup_bed{
 	pixel_x = 32
@@ -38237,7 +38162,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "qQJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -40322,12 +40247,7 @@
 /area/f13/wasteland)
 "rNh" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "rNu" = (
 /obj/structure/railing{
@@ -40756,7 +40676,7 @@
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
 "rYb" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "rYl" = (
 /obj/structure/barricade/tentclothedge{
@@ -41207,10 +41127,6 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"sic" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock,
 /area/f13/building)
 "sij" = (
 /obj/structure/table/reinforced,
@@ -41671,12 +41587,7 @@
 "srk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "srl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -42938,13 +42849,7 @@
 /area/f13/wasteland)
 "sUf" = (
 /obj/structure/barricade/wooden,
-/turf/closed/indestructible/rock{
-	color = "#b09168";
-	desc = "An extremely tough wall.";
-	icon = 'icons/fallout/turfs/walls/house.dmi';
-	icon_state = "house0";
-	name = "reinforced wooden wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "sUk" = (
 /obj/item/kirbyplants/photosynthetic,
@@ -43023,13 +42928,7 @@
 	},
 /area/f13/wasteland)
 "sVB" = (
-/turf/closed/indestructible/rock{
-	color = "#b09168";
-	desc = "An extremely tough wall.";
-	icon = 'icons/fallout/turfs/walls/house.dmi';
-	icon_state = "house0";
-	name = "reinforced wooden wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/bar/ashdown)
 "sWf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43804,12 +43703,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "tnz" = (
 /obj/structure/barricade/sandbags,
@@ -46061,12 +45955,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	name = "Concrete wall"
-	},
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/building)
 "uiZ" = (
 /obj/structure/wreck/trash/three_barrels,
@@ -50086,7 +49975,9 @@
 	dir = 8
 	},
 /obj/structure/fence,
-/turf/open/indestructible/ground/outside/graveldirt,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - W"
+	},
 /area/f13/wasteland)
 "wfi" = (
 /obj/structure/chair/sofa/right{
@@ -52140,7 +52031,7 @@
 "xbv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "xbx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -65182,7 +65073,7 @@ aqk
 ozb
 ffE
 fSr
-sic
+bvs
 vvR
 bhz
 jzE
@@ -65439,7 +65330,7 @@ aqk
 azp
 ozb
 vvR
-sic
+bvs
 vvR
 tHX
 egS
@@ -65696,7 +65587,7 @@ aqk
 nSl
 acg
 vvR
-nwB
+nmX
 jzE
 jhh
 gKi
@@ -65953,7 +65844,7 @@ wNa
 wGW
 azT
 fSr
-nwB
+nmX
 fSr
 aqk
 jzE
@@ -66210,7 +66101,7 @@ aqk
 azT
 uYZ
 fSr
-sic
+bvs
 fSr
 aqk
 fSr
@@ -67237,7 +67128,7 @@ fSr
 tHX
 tHX
 fSr
-nwB
+nmX
 fSr
 tHX
 fSr
@@ -67494,7 +67385,7 @@ fSr
 msP
 fSr
 fSr
-sic
+bvs
 fSr
 vvX
 vvX
@@ -70251,11 +70142,11 @@ uSf
 uSf
 uSf
 liR
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
 bvs
 kcD
 kcD
@@ -70507,12 +70398,12 @@ sCs
 mXT
 beY
 uSf
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
 bvs
 bvs
-gVD
+nmX
 bvs
 cRv
 kcD
@@ -70764,13 +70655,13 @@ dZs
 dZs
 wNm
 oLJ
-gVD
+nmX
 mrS
 fEp
 srk
 rCB
 leX
-gVD
+nmX
 ggm
 tev
 wjo
@@ -71021,15 +70912,15 @@ dZs
 xin
 dZs
 xnp
-gVD
+nmX
 ndh
 jkr
 srk
 ndZ
 hLo
 bvs
-gVD
-gVD
+nmX
+nmX
 rNh
 iKf
 iKf
@@ -71278,13 +71169,13 @@ ydL
 kvz
 ndZ
 sAr
-gVD
+nmX
 fft
 scq
 srk
 laV
 uwQ
-gVD
+nmX
 bdX
 ndZ
 kQw
@@ -71801,7 +71692,7 @@ dzC
 uwQ
 rjP
 rBB
-gVD
+nmX
 iKf
 iKf
 iKf
@@ -72049,14 +71940,14 @@ oZd
 dZs
 dZs
 dXW
-gVD
+nmX
 pko
 oZo
 tUs
 tzk
 emg
 bvs
-gVD
+nmX
 tnv
 uiY
 iKf
@@ -72311,7 +72202,7 @@ ndZ
 pcl
 oDa
 gkh
-gVD
+nmX
 bvs
 lKj
 fAb
@@ -72569,7 +72460,7 @@ cYQ
 aHm
 iLT
 pSB
-gVD
+nmX
 fJi
 iKf
 iKf
@@ -72820,13 +72711,13 @@ uon
 ndZ
 wpQ
 ljG
-gVD
+nmX
 oxc
 jyl
 rNh
 mAE
 mar
-gVD
+nmX
 fJi
 wlA
 rWg
@@ -73077,9 +72968,9 @@ iNU
 lgc
 jWg
 jWg
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
 bvs
 uiY
 uiY
@@ -73583,8 +73474,8 @@ iKf
 iKf
 bvs
 bvs
-gVD
-gVD
+nmX
+nmX
 uiY
 qZY
 iKf
@@ -85775,7 +85666,7 @@ rYb
 rYb
 rYb
 rYb
-gVD
+nmX
 xqD
 raT
 raT
@@ -86025,14 +85916,14 @@ rYb
 fRP
 rYb
 rYb
-gVD
+nmX
 uKX
 uKX
 xBX
 uKX
 uTc
 uKX
-gVD
+nmX
 kju
 gmo
 bbS
@@ -86276,13 +86167,13 @@ syA
 rYb
 rYb
 rYb
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
 rRL
 mXC
 ajY
@@ -86533,7 +86424,7 @@ awt
 rYb
 rYb
 rYb
-gVD
+nmX
 xsg
 aqU
 eIq
@@ -86790,7 +86681,7 @@ syA
 rYb
 rYb
 rYb
-gVD
+nmX
 xGq
 cmo
 aEg
@@ -86803,11 +86694,11 @@ iNs
 iNs
 fWP
 jvP
-gVD
+nmX
 xqD
 raT
 raT
-gVD
+nmX
 bQF
 jdn
 mwz
@@ -87053,7 +86944,7 @@ fIa
 ocm
 pkW
 els
-gVD
+nmX
 maU
 sty
 myx
@@ -87304,7 +87195,7 @@ syA
 rYb
 rYb
 rYb
-gVD
+nmX
 els
 bWr
 jjh
@@ -87561,13 +87452,13 @@ syA
 rYb
 rYb
 rYb
-gVD
+nmX
 nqA
 eJM
 vgw
 baK
 rOH
-gVD
+nmX
 maU
 gEy
 skU
@@ -87818,7 +87709,7 @@ awt
 rYb
 rYb
 rYb
-gVD
+nmX
 gjH
 els
 bKu
@@ -88075,7 +87966,7 @@ syA
 rYb
 rYb
 rYb
-gVD
+nmX
 iCT
 els
 djz
@@ -88332,7 +88223,7 @@ syA
 rYb
 rYb
 rYb
-gVD
+nmX
 kiT
 xaV
 sYX
@@ -88345,7 +88236,7 @@ pVI
 mTj
 eeA
 mvE
-gVD
+nmX
 xqD
 raT
 xqD
@@ -88588,21 +88479,21 @@ syA
 syA
 rYb
 rYb
-gVD
-gVD
+nmX
+nmX
 bvs
 bvs
 gkh
 bvs
 bpK
-gVD
+nmX
 jNR
 shK
 dWA
 uBt
 ray
 nGx
-gVD
+nmX
 nfG
 wkD
 viM
@@ -88845,14 +88736,14 @@ awt
 awt
 rYb
 rYb
-gVD
+nmX
 cBZ
 nnl
 els
 gkh
 rAU
 els
-gVD
+nmX
 jNR
 wKt
 wAj
@@ -89102,14 +88993,14 @@ syA
 syA
 rYb
 rYb
-gVD
+nmX
 orh
 aju
 pkW
 ucg
 pkW
 eUU
-gVD
+nmX
 maU
 cUn
 jdn
@@ -89366,7 +89257,7 @@ els
 srk
 els
 ikx
-gVD
+nmX
 maU
 sDi
 jdn
@@ -89615,26 +89506,26 @@ syA
 syA
 syA
 rYb
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
 bvs
-gVD
-gVD
+nmX
+nmX
 pUu
-gVD
+nmX
 maU
 dXu
 eTf
 lFL
 iNs
 ahd
-gVD
+nmX
 fGW
 fGW
 sfQ
-gVD
+nmX
 dXu
 jOH
 xoS
@@ -89872,7 +89763,7 @@ syA
 syA
 syA
 rYb
-gVD
+nmX
 lhx
 lhx
 iGL
@@ -89891,7 +89782,7 @@ bvs
 fGW
 fQz
 miZ
-gVD
+nmX
 gLu
 dCD
 wuc
@@ -90129,7 +90020,7 @@ syA
 syA
 gMW
 rYb
-gVD
+nmX
 tkw
 akJ
 shz
@@ -90137,18 +90028,18 @@ kju
 shz
 njt
 shz
-gVD
+nmX
 jNR
 sty
 iNs
 jAQ
 eeA
 ahd
-gVD
+nmX
 fGW
 twq
 viM
-gVD
+nmX
 xoS
 bky
 qxv
@@ -90386,7 +90277,7 @@ gMW
 gMW
 gMW
 rYb
-gVD
+nmX
 lhx
 cKC
 xOJ
@@ -90394,7 +90285,7 @@ sRB
 cou
 kju
 arx
-gVD
+nmX
 eOi
 sMc
 wuc
@@ -90405,7 +90296,7 @@ bvs
 cDX
 gqS
 viM
-gVD
+nmX
 dXu
 dCD
 wuc
@@ -90643,7 +90534,7 @@ rYb
 rYb
 rYb
 rYb
-gVD
+nmX
 aqh
 iAX
 nrA
@@ -90890,17 +90781,17 @@ rji
 tBA
 oaw
 bYG
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
 iBp
 yln
 jSg
@@ -90915,10 +90806,10 @@ eeA
 eeA
 eeA
 ahd
-gVD
+nmX
 bvs
-gVD
-gVD
+nmX
+nmX
 bvs
 gLu
 phK
@@ -91147,7 +91038,7 @@ oPH
 tBA
 wFi
 nim
-gVD
+nmX
 sCK
 oGw
 eWp
@@ -91157,7 +91048,7 @@ uwI
 iAX
 iAX
 iAX
-gVD
+nmX
 yjz
 eIY
 bSm
@@ -91404,7 +91295,7 @@ oaw
 tBA
 exK
 uiH
-gVD
+nmX
 gTv
 eXt
 kwO
@@ -91414,7 +91305,7 @@ taP
 iAX
 tvx
 iAX
-gVD
+nmX
 fQz
 nwW
 cHC
@@ -91422,7 +91313,7 @@ fgW
 dcq
 oPr
 shz
-gVD
+nmX
 hZR
 jio
 bwV
@@ -91661,7 +91552,7 @@ tBA
 tBA
 vaJ
 dZk
-gVD
+nmX
 gTv
 rSX
 xMd
@@ -91679,18 +91570,18 @@ fRT
 akJ
 shz
 fQz
-gVD
-gVD
+nmX
+nmX
 bvs
-gVD
+nmX
 bvs
-gVD
+nmX
 spo
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
 xoS
 lAC
 wuc
@@ -91918,7 +91809,7 @@ qib
 uiH
 uiH
 kzG
-gVD
+nmX
 gTv
 rSX
 eXt
@@ -91936,7 +91827,7 @@ kju
 mTF
 kju
 sTx
-gVD
+nmX
 pFS
 dMs
 hdH
@@ -91947,7 +91838,7 @@ dMs
 fVL
 ilH
 aom
-gVD
+nmX
 bIH
 bky
 kTF
@@ -92175,7 +92066,7 @@ kzG
 gQO
 jRj
 kzG
-gVD
+nmX
 gTv
 eXt
 kwO
@@ -92185,7 +92076,7 @@ qwE
 iAX
 iAX
 iAX
-gVD
+nmX
 oCN
 fKt
 urP
@@ -92193,7 +92084,7 @@ emH
 dIL
 fIJ
 fQz
-gVD
+nmX
 kYD
 lAM
 dYu
@@ -92432,7 +92323,7 @@ ygF
 jCj
 bvN
 kzG
-gVD
+nmX
 sCK
 ptH
 bQE
@@ -92442,7 +92333,7 @@ xFZ
 iAX
 iAX
 iAX
-gVD
+nmX
 fIJ
 shz
 mQz
@@ -92450,7 +92341,7 @@ shz
 ngV
 viM
 iTC
-gVD
+nmX
 fbI
 dMs
 fbI
@@ -92689,17 +92580,17 @@ eaC
 kzG
 kzG
 kzG
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
 xJb
 xJb
 shz
@@ -92707,7 +92598,7 @@ fGW
 fQz
 fQz
 xYK
-gVD
+nmX
 evh
 dMs
 evh
@@ -92718,7 +92609,7 @@ eze
 ktI
 rYT
 grm
-gVD
+nmX
 bIH
 bky
 xoS
@@ -92956,24 +92847,24 @@ gMW
 gMW
 gMW
 gMW
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
 bvs
-gVD
-gVD
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
+nmX
+nmX
 bvs
-gVD
-gVD
-gVD
-gVD
+nmX
+nmX
+nmX
+nmX
 bvs
 bvs
 dXu
@@ -95023,7 +94914,7 @@ por
 por
 keN
 aal
-oTc
+roR
 oFm
 voZ
 voZ
@@ -95295,7 +95186,7 @@ pVV
 gUg
 gUg
 wWG
-iKf
+roR
 iKf
 iKf
 iKf
@@ -95552,7 +95443,7 @@ lHJ
 yft
 yft
 wWG
-iKf
+roR
 iKf
 aCW
 xOq
@@ -95809,7 +95700,7 @@ yft
 lHJ
 oMR
 wWG
-iKf
+roR
 tiN
 mYI
 rIJ
@@ -96066,7 +95957,7 @@ pnb
 pnb
 pnb
 ime
-iKf
+roR
 xOq
 iKf
 iKf
@@ -96324,10 +96215,10 @@ hMS
 hMS
 hMS
 hMS
-hMS
-hMS
-hMS
-hMS
+hEn
+hEn
+hEn
+hEn
 wek
 tiN
 mYI
@@ -96585,7 +96476,7 @@ ljk
 mYU
 ccy
 ceH
-diG
+jHw
 tiN
 tiN
 iel
@@ -96842,7 +96733,7 @@ aAO
 trV
 aAO
 wWG
-diG
+jHw
 tiN
 iKf
 afz
@@ -97099,7 +96990,7 @@ dBj
 aAO
 uYw
 xfw
-diG
+jHw
 iKf
 iKf
 iKf
@@ -97356,7 +97247,7 @@ nGN
 dBj
 leg
 pEz
-diG
+jHw
 iKf
 aCW
 iKf
@@ -97613,7 +97504,7 @@ nGN
 nGN
 nGN
 noh
-diG
+jHw
 iKf
 rIJ
 xOq
@@ -97870,7 +97761,7 @@ nGN
 aAO
 lgU
 wWG
-diG
+jHw
 iKf
 iKf
 rIJ
@@ -98127,7 +98018,7 @@ nGN
 dBj
 trV
 wWG
-diG
+jHw
 iKf
 iKf
 iKf
@@ -98384,7 +98275,7 @@ kSI
 maI
 dMJ
 ime
-diG
+jHw
 iKf
 iKf
 afz
@@ -116398,7 +116289,7 @@ wWK
 gMW
 gMW
 kOR
-gMW
+kOR
 gMW
 gMW
 gMW
@@ -116654,8 +116545,8 @@ gMW
 wWK
 gMW
 gMW
-gMW
-gMW
+kOR
+kOR
 gMW
 gMW
 iKf
@@ -116673,7 +116564,7 @@ pjv
 pjv
 pjv
 pjv
-rxC
+mGP
 gMW
 gMW
 gMW
@@ -116912,8 +116803,8 @@ wWK
 wWK
 gMW
 gMW
-gMW
-gMW
+kOR
+kOR
 iKf
 iKf
 mGg
@@ -116929,8 +116820,8 @@ pjv
 pjv
 pjv
 pjv
-nGz
-oPR
+pjv
+nqc
 gMW
 gMW
 gMW
@@ -117186,7 +117077,7 @@ pjv
 pjv
 pjv
 pjv
-oPR
+nqc
 dKD
 gMW
 gMW
@@ -117442,7 +117333,7 @@ pjv
 pjv
 pjv
 pjv
-rxC
+mGP
 dKD
 wWK
 gMW
@@ -117698,7 +117589,7 @@ pjv
 pjv
 pjv
 pjv
-nGz
+pjv
 nqc
 iqz
 wWK
@@ -117955,7 +117846,7 @@ pjv
 pjv
 pjv
 pjv
-rxC
+mGP
 dKD
 gMW
 wWK

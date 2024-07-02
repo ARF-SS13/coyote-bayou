@@ -5,7 +5,7 @@
 	icon_state ="book1"
 	throw_speed = 2
 	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	var/title = "book"
 

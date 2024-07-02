@@ -318,7 +318,6 @@
 	time = 50
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
-	always_available = FALSE
 
 ///////////////
 //Power Armor//

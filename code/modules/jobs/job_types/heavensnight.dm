@@ -3,8 +3,8 @@
 *
 * Dont use this
 
-/datum/job/wasteland/f13raider
-	title = "Outlaw"
+/datum/job/redwater/townie
+	title = "Redwater Townie"
 	flag = F13RAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
@@ -18,22 +18,22 @@
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
-	outfit = /datum/outfit/job/wasteland/f13raider
+	outfit = /datum/outfit/job/cb/redwater
 
 	access = list()
 	minimal_access = list()
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/outlaw = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 		/datum/matchmaking_pref/bounty_hunter = list(
-			/datum/job/wasteland/f13raider,
+			/datum/job/redwater/townie,
 		),
 	)
 	loadout_options = list(
@@ -55,9 +55,9 @@
 	)
 
 
-/datum/outfit/job/wasteland/f13raider
-	name = "Outlaw"
-	jobtype = /datum/job/wasteland/f13raider
+/datum/outfit/job/cb/redwater
+	name = "Redwater Townie"
+	jobtype = /datum/job/redwater/townie
 	id = null
 	ears = null
 	belt = /obj/item/supplykit
@@ -76,42 +76,5 @@
 		)
 */
 
-/datum/outfit/job/heavensnight/f13manager
-	name = "Club Manager"
-	jobtype = /datum/job/townfolk/club_manager
-	id =	/obj/item/card/id/silver
-	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/flare
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-	box = /obj/item/storage/survivalkit
-	box_two = /obj/item/storage/survivalkit/medical
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/pda = 1,
-		/obj/item/cool_book/hnguide,
-		///obj/item/card/id/selfassign,
-		)
 
-
-/datum/outfit/job/heavensnight/f13clubworker
-	name = "Club Worker"
-	jobtype = /datum/job/townfolk/club_worker
-	id =	/obj/item/card/id/selfassign
-	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/flare
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-	box = /obj/item/storage/survivalkit
-	box_two = /obj/item/storage/survivalkit/medical
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/pda = 1,
-		/obj/item/cool_book/hnguide,
-		///obj/item/card/id/selfassign,
-		)
 

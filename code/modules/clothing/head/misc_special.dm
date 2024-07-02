@@ -33,6 +33,12 @@
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
+/obj/item/clothing/head/welding/up
+
+/obj/item/clothing/head/welding/up/Initialize()
+	. = ..()
+	visor_toggling()
+
 /*
  * Cakehat
  */

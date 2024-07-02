@@ -66,200 +66,266 @@
 	crate_name = "ballistic weapon crate"
 template end */
 
-// Handguns
-/datum/supply_pack/security/deagle
-	name = "Desert Eagle"
-	desc = "A heavy handgun chambered in .44 magnum. More style than function."
-	cost = 1920
+/datum/supply_pack/security/fatman
+	name = "Fatman"
+	desc = "Its a fatman.  It blows shit way the fuck up."
+	cost = 140000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/deagle)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/fatman)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/tec22
-	name = "Tec .22"
-	desc = "An automatic machine pistol chambered in .22 long rifle. What side are you on, Pillbugs or Geckos?"
-	cost = 2420
+/datum/supply_pack/security/nightops
+	name = "M22 Night Ops SMG"
+	desc = "An SMG of all time."
+	cost = 8600
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/smg/m22)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/mk23
-	name = "Mk. 23 SOCOM"
-	desc = "An extra tactical handgun chambered in .45 ACP, comes with a seclight mount. The true sidearm of operators in any century."
-	cost = 6500 // DPS price was 3960, but extra cost because it's a REALLY good pistol
+/datum/supply_pack/security/bozar
+	name = "Bozar"
+	desc = "It's a sniper rifle. It's a machine gun. It's overpowered."
+	cost = 7400
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/mk23)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/bozar)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/lemat
-	name = "Lemat 9mm Revolver"
-	desc = "An exceptionally high-capacity revolver chambered in 9mm. Quantity is a quality of its own, right?"
-	cost = 1940
+/datum/supply_pack/security/greasegun
+	name = "M3A1 Greasegun"
+	desc = "Smearing people off sidewalks since 1942."
+	cost = 7200
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/revolver/Lemat)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/smg/greasegun)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/medusa
-	name = "Medusa Multi-Caliber Revolver"
-	desc = "A unique revolver that can fit a wide range of pistol calibers. Perfect for the disorganized or scavengers alike."
-	cost = 2500
+/datum/supply_pack/security/asval
+	name = "AS-VAL Supressed Rifle"
+	desc = "No, Artyom.  You are the zone."
+	cost = 6800
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/revolver/medusa)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/smg/vss)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/makarov
-	name = "Makarov"
-	desc = "A Soviet handgun chambered in 9mm and uses doublestack magazines. Remember, no Russian."
-	cost = 2600
+/datum/supply_pack/security/autorevolver
+	name = "Auto-Revolver"
+	desc = "It's like a single action army if the single action army was an ma deuce."
+	cost = 6600
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/colt357/auto)
+	crate_name = "select weapon crate"
 
-// Submachine Guns
-/datum/supply_pack/security/mp40
-	name = "MP 40"
-	desc = "A German submachine gun chambered in 9mm. It's hard to tell if this one came from a museum or a movie set, but either way it works just fine."
-	cost = 3020
+/datum/supply_pack/security/webley
+	name = "Webley Revolver"
+	desc = "These reproduction Webley revolvers are of the highest quality.  Buy 4.  Trust me."
+	cost = 6600
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/police/webley)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/worngreasegun
-	name = "Worn Greasegun"
-	desc = "A worn-down American submachine gun chambered in .45 ACP. While it's seen better days, this classic will still chew through mutants and raiders alike."
-	cost = 3000
+/datum/supply_pack/security/carlgustaf
+	name = "10mm Carl Gustaf"
+	desc = "Did Carl ever come in other calibers?  Where are the Swedes these days?"
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/smg/greasegun/worn)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/smg/cg45)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/bushmaster
-	name = "Bushmaster Arm Pistol"
-	desc = "An unusual semi-automatic 'pistol' chambered in 5.56mm. I mean, it's called a pistol but it uses a rifle cartridge so I guess it's a carbine?"
-	cost = 2040
+/datum/supply_pack/security/widowmaker
+	name = "Winchester Widowmaker"
+	desc = "It has widowmaker in the name.  It doesn't come edgier than this, hombre."
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/widowmaker)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/worn10mmsmg
-	name = "Worn 10mm SMG"
-	desc = "A worn-down submachine gun chambered in 10mm. This thing just cannot be comfortable to shoot. At least it sucks to be shot by, too."
-	cost = 4750
+/datum/supply_pack/security/shotpistol
+	name = "Hand Shotgun"
+	desc = "Versus a butt shotgun.  Where else are you supposed to hold this damn thing?"
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/smg/smg10mm/worn)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/shotpistol)
+	crate_name = "select weapon crate"
 
-// Shotguns / Cowboy Guns
-/datum/supply_pack/security/riotshotty
-	name = "Riot Shotgun"
-	desc = "A shotgun that uses drum mags. While it's meant for riot suppression, there's absolutely nothing stopping you from loading it with buckshot or slugs."
-	cost = 4000
+/datum/supply_pack/security/shotpistol
+	name = "Hand Shotgun"
+	desc = "Versus a butt shotgun.  Where else are you supposed to hold this damn thing?"
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/shotgun/riot)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/shotpistol)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/saiga
-	name = "Saiga 12k Shotgun"
-	desc = "A Russian shotgun that uses magazines. Someone really looked at an AK and thought it'd be better off shooting buckshot."
-	cost = 3000
+/datum/supply_pack/security/tenmmsmg
+	name = "10mm Submissive Machine Gun"
+	desc = "A big chunky monkey fucking typewriter of an SMG. Good for bashing people to death when you inevitably run out of ammo because it was too heavy for you to carry."
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/saiga12k)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/smg/smg10mm)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/trenchgun
-	name = "Trenchgun"
-	desc = "A pump-action shotgun that can fit extra ammo and a bayonet. For when you really need to get up close and personal."
-	cost = 2260
+/datum/supply_pack/security/r91
+	name = "R91 Assault Rifle"
+	desc = "A devisive weapon of war. Purists will say it shouldn't exist because Dr. House didn't want Sneezer to lose in Old Vegas.  Or something.  I don't know."
+	cost = 6300
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/shotgun/trench)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/assault_rifle)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/cowboyrepeater
-	name = "Cowboy Repeater"
-	desc = "A lever-action rifle chambered in .357 magnum. Yee haw."
+/datum/supply_pack/security/maria
+	name = "9mm Maria"
+	desc = "A blessed pistol, forged in the fires of Gondor or something."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/ninemil/maria)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/mp5sd
+	name = "MP-5 SD"
+	desc = "An MP-5 of curious ancestry."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/mp5sd)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/bren
+	name = "Bren Gun"
+	desc = "We're going to Brazil, get in."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/bren)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/m1919
+	name = "M1919 Machine Gun"
+	desc = "You know you will never look as cool as the guys in Soldier of Fortune, no matter how much you try."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/m1919)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/pancorjackhammer
+	name = "Pancor Jackhammer"
+	desc = "You're not making Ian proud right now."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/shotgun/pancor)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/p90
+	name = "FN P90c"
+	desc = "We can never go back to 2002, but Counter Strike will live in our hearts forever."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/p90)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/fourteenmilsmg
+	name = "14mm SMG"
+	desc = "Listen, we know why you're here but you don't have to hate your wrists in character as much as out of character."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/smg14)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ppsh41
+	name = "PPSH-41"
+	desc = "FPS Russia moment."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/ppsh)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ppsh41
+	name = "PPSH-41"
+	desc = "FPS Russia moment."
+	cost = 6300
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/ppsh)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/r84lmg
+	name = "R84 Light Machine Gun"
+	desc = "Yep.  It's a gun."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/r84)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/lsw
+	name = "Light Support Weapon"
+	desc = "A tool of war that is neither light, nor supportive.  It is a weapon though.  Thank god."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/lsw)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/ch47assrifle
+	name = "4.7mm Chinese Assault Rifle"
+	desc = "Well above average in caliber, we assure you."
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/rifle47mm/china)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/tommygun
+	name = "Thomspon SMG"
+	desc = "You're either gangster or a paratrooper.  Which is it?"
+	cost = 5800
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/tommygun)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/amr
+	name = "Anti-Material Rifle"
+	desc = "As opposed to Pro-material rifles?"
+	cost = 5000
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/rifle/mag/antimaterial)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/mac10
+	name = "Ingram Model 10"
+	desc = "Okay, maybe you are an operator."
+	cost = 4400
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/heavyneedlerifle
+	name = "OT-64 Heavy Needler Rifle"
+	desc = "The bane of anyone not wearing light armor or the simple minded."
+	cost = 4400
+	num_contained = 1
+	contains = list(/obj/item/gun/ballistic/revolver/needlerrifle)
+	crate_name = "select weapon crate"
+
+/datum/supply_pack/security/compact14mmrifle
+	name = "Compact 14mm Rifle"
+	desc = "Oh yeah, compact alright."
 	cost = 2000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/rifle/repeater/cowboy)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/compact14mmrifle)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/trailcarbine
-	name = "Trail Carbine"
-	desc = "A lever-action rifle chambered in .44 magnum. For when you want to yee and haw just a little harder."
-	cost = 2500
+/datum/supply_pack/security/alr15
+	name = "ALR-15 Rifle"
+	desc = "It's an assault rifle all right."
+	cost = 2000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/rifle/repeater/trail)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/service/alr)
+	crate_name = "select weapon crate"
 
-// Assault Rifles
-/datum/supply_pack/security/servicerifle
-	name = "Service Rifle"
-	desc = "A semi-automatic rifle chambered in 5.56mm. This versatile weapon even has a bayonet lug, just in case you want to turn your firearm into a discount spear."
-	cost = 3620
+/datum/supply_pack/security/ak74u
+	name = "AK-74U Assault Rifle"
+	desc = "It's like a baby AK."
+	cost = 2000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/service)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/automatic/aksmol)
+	crate_name = "select weapon crate"
 
-/datum/supply_pack/security/needlerifle
-	name = "NR-43 Needle Rifle"
-	desc = "A semi-automatic rifle that fires crystalline needles. Supposedly made on earth, but it seems fairly alien in design."
-	cost = 3750
+/datum/supply_pack/security/buntline
+	name = "Colt Buntline Revolver"
+	desc = "Put bluntly, its a bit of long for a wheel gat."
+	cost = 2000
 	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/needlerrifle)
-	crate_name = "ballistic weapon crate"
-
-/datum/supply_pack/security/ak47
-	name = "AK-47"
-	desc = "A classic Soviet assault rifle rechambered in .308 and only accepts extended magazines. Supposedly it'll work no matter what you do to it. Odds are you'll be putting that claim to the test out here."
-	cost = 2280
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/fnfal/ak47)
-	crate_name = "ballistic weapon crate"
-
-// Long Rifles (Bolts/Snipers)
-/datum/supply_pack/security/garand
-	name = "M1 Garand"
-	desc = "A semi-automatic rifle that uses .30-06 en-bloc clips. Yes, they're actually clips and not magazines. Also, mind your thumb!"
-	cost = 2480
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/m1garand)
-	crate_name = "ballistic weapon crate"
-
-/datum/supply_pack/security/g43
-	name = "G43"
-	desc = "A semi-automatic rifle that uses .308 extended magazines. Unfortunately, this is a modern-ish reproduction. At least you don't need to track down 8mm Mauser to use it."
-	cost = 2280
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/automatic/gewehr43)
-	crate_name = "ballistic weapon crate"
-
-/datum/supply_pack/security/mosin
-	name = "M38 Mosin-Nagant"
-	desc = "A bolt-action rifle rechambered in .308 with a bayonet lug. The world's deadliest moist nugget."
-	cost = 1380
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/rifle/mosin)
-	crate_name = "ballistic weapon crate"
-
-/datum/supply_pack/security/huntingrifle
-	name = "Hunting Rifle"
-	desc = "A bolt-action rifle chambered in .30-06. Perfect no matter what you decide to hunt, from geckos to aethergiests. Just, maybe, don't try and use this to clear out a pillbug infestation?"
-	cost = 2200
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/rifle/hunting)
-	crate_name = "ballistic weapon crate"
-
-// Special Weapons (Bows, Explosives, etc)
-/datum/supply_pack/security/longbow
-	name = "Longbow"
-	desc = "A bow with a higher than average draw power. Mostly silent but plenty deadly."
-	cost = 1080
-	num_contained = 1
-	contains = list(/obj/item/gun/ballistic/bow/longbow)
-	crate_name = "ballistic weapon crate"
-
-/datum/supply_pack/security/flamethrower
-	name = "M2 Flamethrower"
-	desc = "A backpack fuel tank with attached flamethrower. You probably shouldn't use this to cook your lunch."
-	cost = 3000
-	num_contained = 1
-	contains = list(/obj/item/m2flamethrowertank)
-	crate_name = "ballistic weapon crate"
+	contains = list(/obj/item/gun/ballistic/revolver/buntline)
+	crate_name = "select weapon crate"

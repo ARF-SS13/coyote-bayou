@@ -29,7 +29,9 @@
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 	/// SWAG. Everyone gets one of these. Everyone. Fuckin everyone.
-	var/list/stuff_we_all_get = list(/obj/item/book/manual/advice_survival = 1)
+	var/list/stuff_we_all_get = list()
+	var/card = null
+	var/pda = null
 	/// list of tats. format: list(OUTFIT_TATTOO(/datum/tattoo/tat, spot on bodypart))
 	/// make sure the locations correspond to the right limb, and don't overlap with anything
 	/// in fact, make a new spot for them anyway
@@ -56,6 +58,8 @@
 	.=..()
 //////////////////////////////////////////////////////
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(isrobotic(H))
+		box = /obj/item/storage/survivalkit/medical/synth
 	//to be overridden for customization depending on client prefs,species etc
 	return
 
@@ -139,6 +143,12 @@
 					number2 = 1
 				for(var/i in 1 to number2)
 					H.equip_to_slot_or_del(new path2(H),SLOT_IN_BACKPACK)
+		if(card)
+			backpack_contents.Insert(1, card)
+			backpack_contents[card] = 1
+		if(pda)
+			backpack_contents.Insert(1, pda)
+			backpack_contents[pda] = 1
 
 	if(!H.head && toggle_helmet && istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit))
 		var/obj/item/clothing/suit/space/hardsuit/HS = H.wear_suit

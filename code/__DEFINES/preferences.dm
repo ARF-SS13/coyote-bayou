@@ -94,7 +94,7 @@
 #define EXP_TYPE_DECANUS        "Decanus"
 #define EXP_TYPE_TRIBAL			"Tribal"
 #define EXP_TYPE_FOLLOWERS		"New Boston Clinic"
-#define EXP_TYPE_OUTLAW			"Outlaw"
+#define EXP_TYPE_OUTLAW			"Redwater Townie"
 #define EXP_TYPE_KHAN			"Great Khans"
 #define EXP_TYPE_CLUB			"Heavens Night"
 //Flags in the players table in the db

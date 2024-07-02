@@ -10,6 +10,7 @@
 	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=2500)
+	var/stepbro = FALSE
 
 	var/code = 2
 	var/frequency = FREQ_ELECTROPACK
@@ -25,7 +26,7 @@
 	return ..()
 
 /obj/item/electropack/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(iscarbon(user))
+	if(iscarbon(user) && stepbro) // im stuck in the shock collar stepbro
 		var/mob/living/carbon/C = user
 		if(src == C.back)
 			to_chat(user, span_warning("You need help taking this off!"))
@@ -55,7 +56,11 @@
 /obj/item/electropack/receive_signal(datum/signal/signal)
 	if(!signal || signal.data["code"] != code)
 		return
+	Zap()
+	if(master)
+		master.receive_signal()
 
+/obj/item/electropack/proc/Zap()
 	if(isliving(loc) && on)
 		if(shock_cooldown)
 			return
@@ -71,8 +76,6 @@
 
 		L.DefaultCombatKnockdown(100)
 
-	if(master)
-		master.receive_signal()
 
 /obj/item/electropack/proc/set_frequency(new_frequency)
 	SSradio.remove_object(src, frequency)
@@ -132,18 +135,15 @@
 	return ..()
 
 /obj/item/electropack/shockcollar
-	name = "slave collar"
-	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. A small lock is present, though it seems impossible to get it off anyway without external help."
+	name = "novelty buzz collar"
+	desc = "A cute industrial-looking choker with some cute wires running to a box with a picture of a cartoon lightning bolt on it. Vibrates and makes a loud buzzing noise when activated!"
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollar"
 	item_state = "slavecollar"
 	body_parts_covered = NECK
 	slot_flags = INV_SLOTBIT_NECK //no more pocket shockers. Now done without lazyness
 	w_class = WEIGHT_CLASS_SMALL
-	strip_delay = 60
-	equip_delay_other = 60
 	custom_materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
-	var/lock = FALSE
 	var/tagname = null
 
 /obj/item/electropack/shockcollar/Initialize()
@@ -160,119 +160,44 @@
 	return ..()
 */ //Removed due to these being basically for kink stuff only. ~TK
 
-/obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //we have to override this because of text
-	if(!signal || signal.data["code"] != code)
+/obj/item/electropack/shockcollar/Zap()
+	playsound(src, "sound/weapons/taserhit.ogg", 80, TRUE)
+	var/mob/wearer = loc
+	if(!ismob(wearer))
 		return
-
-	if(isliving(loc) && on) //the "on" arg is currently useless
-		var/mob/living/L = loc
-		if(!L.get_item_by_slot(SLOT_NECK)) //**properly** stops pocket shockers
-			return
-		if(shock_cooldown == TRUE)
-			return
-		shock_cooldown = TRUE
-		addtimer(VARSET_CALLBACK(src, shock_cooldown, FALSE), 100)
-		step(L, pick(GLOB.cardinals))
-
-		to_chat(L, span_danger("You feel a sharp shock from the collar!"))
-		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-		s.set_up(3, 1, L)
-		s.start()
-
-		L.DefaultCombatKnockdown(100)
-
-	if(master)
-		master.receive_signal()
-	return
+	to_chat(wearer, span_danger("You feel your collar vibrate and make a totally authentic shocking noise! Oh no! What a terrible shock! Oh no!~"))
 
 /obj/item/electropack/shockcollar/attackby(obj/item/W, mob/user, params) //moves it here because on_click is being bad
 	if(istype(W, /obj/item/pen))
-		var/t = stripped_input(user, "Would you like to write a name on the collar?", "Name your new slave", tagname ? tagname : "Sclavus", MAX_NAME_LEN)
+		var/t = stripped_input(user, "What's your collar's name?", "My collar is named Susan, Betty", tagname ? tagname : "Susan", MAX_NAME_LEN)
 		if(t)
 			tagname = t
 			name = "[initial(name)] - [t]"
 		return
-	if(istype(W, /obj/item/clothing/head/helmet)) //lazy method of denying this
-		return
-	/*if(istype(W, /obj/item/key/scollar)) //SCRAPPING FOR NOW
-		if(lock != FALSE)
-			to_chat(user, span_warning("With a click the shock collar unlocks!"))
-			lock = FALSE
-			REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-		else
-			to_chat(user, span_warning("With a click the shock collar locks!"))
-			lock = TRUE
-		if(ismob(src.loc))
-			return
-		var/mob/M = src.loc
-		if(M.get_item_by_slot(SLOT_NECK) == src)
-			ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-	return ..()*/
-
 
 //
 //Explosive collar
 /obj/item/electropack/shockcollar/explosive
-	name = "explosive collar"
-	desc = "A thick reinforced metal collar. 'Explosion' danger symbols line the outside. A small lock is present, though it seems impossible to get it off anyway without external help."
+	name = "'explosive' collar"
+	desc = "A cute industrial-looking choker with some cute wires running to a box with a picture of a cartoon bomb on it. Oh nooo, it'll toooootally explode if someone signals it!~"
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollarb"
 	item_state = "slavecollarb"
 	slot_flags = INV_SLOTBIT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
-	strip_delay = 60
-	equip_delay_other = 60
 
-/obj/item/electropack/shockcollar/explosive/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/pen))
-		var/t = stripped_input(user, "Would you like to write a name on the collar?", "Name your new slave", tagname ? tagname : "Sclavus", MAX_NAME_LEN)
-		if(t)
-			tagname = t
-			name = "[initial(name)] - [t]"
+/obj/item/electropack/shockcollar/explosive/Zap()
+	playsound(src, "sound/effects/explosioncreak.ogg", 80, TRUE)
+	var/mob/wearer = loc
+	if(!ismob(wearer))
 		return
-	if(istype(W, /obj/item/clothing/head/helmet)) //lazy method of denying this
-		return
-/*	if(istype(W, /obj/item/key/bcollar)) //SCRAPPING FOR NOW
-		if(lock != FALSE)
-			to_chat(user, span_warning("With a click the explosive collar unlocks!"))
-			lock = FALSE
-			REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-		to_chat(user, span_warning("With a click the explosive collar locks!"))
-		lock = TRUE
-		if(!ismob(src.loc))
-			return
-		var/mob/M = src.loc
-		if(M.get_item_by_slot(SLOT_NECK) == src)
-			ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-	return ..()*/
-
-/obj/item/electropack/shockcollar/explosive/receive_signal(datum/signal/signal) //this removes the "on" check
-	if(!signal || signal.data["code"] != code)
-		return
-
-	if(isliving(loc))
-		var/mob/living/L = loc
-		step(L, pick(GLOB.cardinals))
-		to_chat(L, span_danger("Beep beep"))
-		boom(L)
-
-	if(master)
-		master.receive_signal()
-	return
-
-/obj/item/electropack/shockcollar/explosive/proc/boom(mob/living/L)
-	explosion(get_turf(src),0,1,2, flame_range = 2)
-	if(!istype(L) || L != loc || L.get_item_by_slot(SLOT_NECK) != src)
-		return
-	var/obj/item/bodypart/head/victimhead = L.get_bodypart(BODY_ZONE_HEAD)
-	if(istype(victimhead))
-		victimhead.dismember()
+	to_chat(wearer, span_danger("Your collar rumbles and makes a loud head-shattering kaboom! Oh no! Such a massive explosion that totally blew your head off! Oh no!~"))
 
 //Collar keys
 /obj/item/key/scollar
-	name = "Slave Collar Key"
-	desc = "A small key designed to work with shock collars."
+	name = "Novelty Collar Key"
+	desc = "A small key designed to work with shock collars. Or it would, if they had a lock."
 /* I'LL COME BACK TO THIS MAYBE. TODAYS DATE IS 9th JAN 2021. IF I DIDN'T COME BACK TO THIS GET RID OF THE KEY STUFF
 /obj/item/key/scollar/attack(mob/living/M, mob/living/user)
 	if(!istype(M.get_item_by_slot(SLOT_NECK), /obj/item/electropack/shockcollar))
@@ -286,5 +211,5 @@
 	REMOVE_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
 */
 /obj/item/key/bcollar
-	name = "Explosive Collar Key"
-	desc = "A small key designed to work with explosive collars."
+	name = "Novelty Explosive Collar Key"
+	desc = "A small key designed to work with explosive collars. Or it would, if they had a lock."
