@@ -86,8 +86,8 @@
 		SP_IGNORE_WALLS(TRUE),
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-		speed = 10 // added to make his dumbass hold still - Jaeger
-	)
+		)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // LIGHT RANGED EMP VARIANT
 /mob/living/simple_animal/hostile/renegade/grunt/emp
@@ -130,7 +130,7 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // LIGHT SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/engie
@@ -219,7 +219,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 //MEDIUM MELEE VARIANT
 /mob/living/simple_animal/hostile/renegade/defender
@@ -306,7 +306,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // HEAVY SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/guardian
@@ -350,7 +350,7 @@
 		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
 		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
 	)
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // POWER ARMOR VARIANT
 /mob/living/simple_animal/hostile/renegade/meister
@@ -402,7 +402,7 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
@@ -456,7 +456,7 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
@@ -504,7 +504,7 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
-	speed = 10 // added to make his dumbass hold still - Jaeger
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/doc/Initialize(mapload)
 	. = ..()
