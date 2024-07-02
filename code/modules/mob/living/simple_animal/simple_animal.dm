@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
 	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
-	/// Breaks everything, makes player controlled mobs wayyyyy tooo slow
+	/// Breaks everything, makes player controlled mobs wayyyyy tooo slow - didn't ask teehee
 	var/speed = 1
 
 	var/idlesound = null //What to play when idling, if anything.
