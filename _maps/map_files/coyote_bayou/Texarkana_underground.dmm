@@ -5163,7 +5163,7 @@
 /turf/closed/wall/rust,
 /area/f13/tunnel)
 "cjD" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/wall/rust,
 /area/f13/tcoms)
 "cjG" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6550,10 +6550,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"dej" = (
-/obj/machinery/telecomms/relay/preset/auto,
-/turf/open/indestructible,
-/area/f13/tcoms)
 "des" = (
 /obj/structure/flora/twig3,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
@@ -19611,7 +19607,7 @@
 	},
 /area/f13/building)
 "mvJ" = (
-/obj/machinery/ntnet_relay,
+/obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/tcoms)
 "mvW" = (
@@ -37183,7 +37179,7 @@ cpp
 aaa
 cjD
 cho
-mvJ
+cho
 cho
 cjD
 aaa
@@ -37440,7 +37436,7 @@ cpp
 aaa
 cjD
 cho
-cho
+mvJ
 cho
 cjD
 aaa
@@ -37697,7 +37693,7 @@ cpp
 aaa
 cjD
 cho
-dej
+cho
 cho
 cjD
 aaa
