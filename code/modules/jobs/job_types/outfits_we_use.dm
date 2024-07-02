@@ -44,12 +44,14 @@
 		/obj/item/clothing/shoes/workboots,
 		/obj/item/clothing/shoes/jackboots,
 	)
-	card = /obj/item/card/id/selfassign
 	pda = /obj/item/pda
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda
 	)
+	stuff_we_all_get = list(
+		/obj/item/card/id/selfassign
+		)
 
 /datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
 	. = ..()
