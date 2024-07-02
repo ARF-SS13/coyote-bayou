@@ -82,7 +82,7 @@
 	var/screen_pixel_x = 16								//These two are pixel values for screen loc of boxes and closer
 	var/screen_pixel_y = 16
 	var/screen_start_x = 4								//These two are where the storage starts being rendered, screen_loc wise.
-	var/screen_start_y = 2
+	var/screen_start_y = 4
 	//End
 
 	/// How many rows of inventory are shown by default. Only useful for volumetric storage!
