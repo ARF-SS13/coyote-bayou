@@ -24,7 +24,7 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "furry"
 
-	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+	allowed_limb_ids = list(ALL_TYPICAL_BIO_LIMB_IDS)
 
 /*
 //Ghouls have weak limbs.
