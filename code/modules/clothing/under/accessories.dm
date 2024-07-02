@@ -999,17 +999,3 @@
 	icon_state = "braceletpair"
 	minimize_when_attached = FALSE
 
-/obj/item/clothing/accessory/ribbon
-	name = "\improper Hair Ribbon"
-	desc = "A cute ribbon to wear in your hair!"
-	icon_state = "ribbon"
-
-/obj/item/clothing/accessory/bow
-	name = "\improper Hair Bow"
-	desc = "A cute bow to wear in your hair!"
-	icon_state = "bow"
-
-/obj/item/clothing/accessory/bow/small
-	name = "\improper Hair Bow, small"
-	desc = "A cute bow to wear in your hair!"
-	icon_state = "bow_small"
