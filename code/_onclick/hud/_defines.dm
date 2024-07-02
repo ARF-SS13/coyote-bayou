@@ -67,8 +67,8 @@
 #define ui_movi "Center+3:33,SOUTH:4"
 #define ui_zonesel "Center+5:2,SOUTH:3:1"
 #define ui_mood 	"Center-1:5,South+1:11"
-#define ui_healthdoll 	"Center+0:0,South+2:4"
-#define ui_health 	"Center+0:5,South+1:20"
+#define ui_healthdoll 	"Center+0:0,South+2:-19"
+#define ui_health 	"Center+0:0,South+1:-2"
 #define ui_stamina "Center+0:27,South+1:18" // replacing internals button
 #define ui_questbook "CENTER+2:19,SOUTH+1:-12"
 #define ui_questscanner "CENTER+3:21,SOUTH+1:-12"
