@@ -283,9 +283,13 @@ GLOBAL_LIST_INIT(redwater_positions, list(
 ))
 
 GLOBAL_LIST_INIT(tunnelrats_positions, list(
-	"Giant Tunnel Rat Supreme",
-	"Tunnel Rats Chud",
-	"Tunnel Rats Scav",
+	"Giant Tunnel Rat Supreme", //leader
+	"Tunnel Rats Chud", //guard
+	"Tunnel Rats Scav", //townie
+	"Tunnel Rats Runner", //adventurer
+	"Tunnel Rats Swiller", //barkeep
+	"Tunnel Rats Techy", //science
+	"Tunnel Rats Patcher" //doctor
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(

@@ -18,6 +18,7 @@
 	total_positions = -1
 	spawn_positions = -1
 	selection_color = "#df80af"
+	paycheck = 75
 	outfit = /datum/outfit/job/cb/tunnelrats
 	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
@@ -36,6 +37,7 @@
 	outfit = /datum/outfit/job/cb/tunnelrats/boss
 	description = "You are the Giant Tunnel Rat Supreme, the leader of the Tunnel Rats. You're the most rat of them all, and all your gross ratlings look up to you for guidance."
 	supervisors = "you!"
+	paycheck = 400
 	selection_color = "#FF00FF"
 	exp_requirements = PLAYTIME_ALT_TOWN_HEAD
 	exp_type = EXP_TYPE_LIVING
@@ -49,6 +51,7 @@
 	supervisors = "Giant Rat Supreme"
 	total_positions = 3
 	spawn_positions = 3
+	paycheck = 200
 	exp_requirements = PLAYTIME_HEAD_JOB
 	exp_type = EXP_TYPE_LIVING
 
@@ -57,9 +60,84 @@
 // The tunnel rat townsfolk, basically.
 /datum/job/tunnelrats/scav
 	title = "Tunnel Rats Scav"
-	description = "You are a Tunnel Rat scavenger. Be you a townsfolk or some sort of adventurer your life revolves trying to survive in your little underground hovel."
+	description = "You are a Tunnel Rat scavenger. You're expected to hang out in your town."
 	supervisors = "Giant Rat Supreme & the Chuds"
 	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
 	exp_type = EXP_TYPE_LIVING
 
+////////////////////////
+// Tunnel Rats Runner
+// The tunnel rat adventurer
+/datum/job/tunnelrats/adventurer
+	title = "Tunnel Rats Runner"
+	description = "You are a Tunnel Rat Runner. You are some sort of adventurer your life revolves trying to survive in your little underground hovel."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	paycheck = 25
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
+
+////////////////////////
+// Tunnel Rats Swiller
+// The tunnel rat barkeep
+/datum/job/tunnelrats/barkeep
+	title = "Tunnel Rats Swiller"
+	description = "You run the little bar in the Tunnel Rats area."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	total_positions = 2
+	spawn_positions = 2
+	paycheck = 100
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
+
+////////////////////////
+// Tunnel Rats Techy
+// The tunnel rat scientist
+/datum/job/tunnelrats/scientist
+	title = "Tunnel Rats Techy"
+	description = "With help from the Reclaimers you help research the things that your adventurers find. Your servers are tied into the New Boston ones, so if they prosper so do you..."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	total_positions = 3
+	spawn_positions = 3
+	paycheck = 150
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
+
+////////////////////////
+// Tunnel Rats Patcher
+// The tunnel rat doctor
+/datum/job/tunnelrats/doctor
+	title = "Tunnel Rats Patcher"
+	description = "You run the clinic in the sewers, it's not great but someone has to do it."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	total_positions = 2
+	spawn_positions = 2
+	paycheck = 250
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
+
+////////////////////////
+// Tunnel Rats Tart
+// The tunnel sex worker
+/datum/job/tunnelrats/sexworker
+	title = "Tunnel Rats Tart"
+	description = "You are one of the Tunnel Rats tarts, a group that sell themselves for others pleasure."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	total_positions = 4
+	spawn_positions = 4
+	paycheck = 200
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
+
+////////////////////////
+// Tunnel Rats Digger
+// The tunnel rat miner
+/datum/job/tunnelrats/miner
+	title = "Tunnel Rats Digger"
+	description = "You dig the holes and fight the ants. The tunnel rats owe everything to you, or so you tell people."
+	supervisors = "Giant Rat Supreme & the Chuds"
+	total_positions = 2
+	spawn_positions = 2
+	paycheck = 80
+	exp_requirements = PLAYTIME_ALT_TOWN_CITIZEN
+	exp_type = EXP_TYPE_LIVING
 
