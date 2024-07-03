@@ -276,7 +276,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/kitchenspike,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "bc" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -453,11 +453,7 @@
 	},
 /area/f13/building)
 "bM" = (
-/obj/effect/fake_stairs/south{
-	color = "#A47449";
-	dir = 1
-	},
-/obj/structure/simple_door/room,
+/obj/structure/rug/big/rug_fancy,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "bN" = (
@@ -1101,22 +1097,6 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "dY" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/under/misc/stripper/mankini,
-/obj/item/clothing/under/misc/stripper/mankini,
-/obj/item/clothing/under/maid,
-/obj/item/clothing/under/maid,
-/obj/item/clothing/under/clown,
-/obj/item/clothing/under/pants/chaps,
-/obj/item/clothing/under/pants/jeanshort,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/under/misc/stripper,
-/obj/item/clothing/under/misc/stripper,
-/obj/item/clothing/under/misc/gear_harness,
-/obj/item/clothing/under/misc/gear_harness,
-/obj/item/clothing/under/misc/stripper/green,
-/obj/item/clothing/under/misc/stripper/green,
-/obj/structure/rug/big/rug_fancy,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "ea" = (
@@ -1221,7 +1201,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "eq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1255,12 +1235,6 @@
 /area/f13/caves)
 "ev" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/machinery/light/floor{
 	plane = -6
 	},
@@ -1433,6 +1407,15 @@
 "fi" = (
 /obj/structure/butter_churn,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"fj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#FF8CC9";
+	color = "#FF72D5"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
 "fk" = (
 /obj/item/clothing/gloves/color/red/insulated,
@@ -1821,15 +1804,13 @@
 	color = "#A47449";
 	dir = 1
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/blue{
 	plane = -4;
 	layer = 3
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -1906,7 +1887,10 @@
 	},
 /area/f13/caves)
 "gx" = (
-/obj/structure/table/wood_counter,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -1933,21 +1917,8 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "gD" = (
-/obj/item/lipstick,
-/obj/item/lipstick/black,
-/obj/structure/mirror{
-	pixel_x = 24
-	},
-/obj/effect/turf_decal/siding/wideplating{
-	dir = 4;
-	color = "#121212"
-	},
-/obj/structure/table/wood_counter{
-	dir = 4;
-	pixel_x = 6
-	},
-/turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/caves)
 "gE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -2103,6 +2074,24 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"hq" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/under/misc/stripper/mankini,
+/obj/item/clothing/under/misc/stripper/mankini,
+/obj/item/clothing/under/maid,
+/obj/item/clothing/under/maid,
+/obj/item/clothing/under/clown,
+/obj/item/clothing/under/pants/chaps,
+/obj/item/clothing/under/pants/jeanshort,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/misc/stripper,
+/obj/item/clothing/under/misc/stripper,
+/obj/item/clothing/under/misc/gear_harness,
+/obj/item/clothing/under/misc/gear_harness,
+/obj/item/clothing/under/misc/stripper/green,
+/obj/item/clothing/under/misc/stripper/green,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "hr" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -2153,6 +2142,10 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"hE" = (
+/obj/structure/chair/stool/retro/black,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -2391,8 +2384,14 @@
 /area/f13/building)
 "iE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/sign/poster/contraband/pinup_ride{
+	pixel_y = 0;
+	pixel_x = 28
+	},
+/obj/machinery/light/small{
+	color = "#FF4162";
+	light_color = "#FF4162";
+	dir = 4
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
@@ -2498,7 +2497,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "jk" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "jm" = (
 /obj/effect/decal/cleanable/blood,
@@ -2940,6 +2939,20 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
+"lj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/curtain{
+	color = "#1F1F1F"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "lk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3072,7 +3085,7 @@
 	color = "#FF72D5"
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "lF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
@@ -3170,6 +3183,18 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
+"md" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/pinup_funk{
+	pixel_x = -28
+	},
+/obj/machinery/light/small{
+	color = "#FF4162";
+	light_color = "#FF4162";
+	dir = 8
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "me" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/validball_spawner,
@@ -3188,7 +3213,10 @@
 /obj/structure/towel_rack{
 	pixel_y = 27
 	},
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mk" = (
@@ -3319,15 +3347,13 @@
 	color = "#A47449";
 	dir = 1
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/white{
 	layer = 3;
 	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -3359,7 +3385,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rug/big/rug_fancy,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "mG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -3438,8 +3464,9 @@
 "mY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/table/wood_counter{
-	dir = 1
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
@@ -3472,7 +3499,7 @@
 	color = "lime"
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "nh" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -3491,6 +3518,14 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"nj" = (
+/obj/structure/simple_door/room,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "nk" = (
 /obj/structure/cargocrate,
 /turf/open/indestructible/ground/inside/mountain,
@@ -3746,7 +3781,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "og" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
@@ -4010,15 +4045,13 @@
 	color = "#A47449";
 	dir = 5
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/machinery/light/floor{
 	color = "#C000FF";
 	light_color = "#E74AE2"
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -4128,12 +4161,6 @@
 /area/f13/wasteland)
 "pD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/item/instrument/accordion,
 /obj/machinery/light/floor{
 	plane = -6
@@ -4257,7 +4284,7 @@
 /area/f13/caves)
 "qb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "qc" = (
 /obj/structure/railing{
@@ -4324,7 +4351,7 @@
 	color = "#1F1F1F"
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "qy" = (
 /obj/machinery/microwave/stove{
 	pixel_x = 18
@@ -4519,15 +4546,13 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/blue{
 	plane = -4;
 	layer = 3
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -4660,7 +4685,10 @@
 	},
 /area/f13/wasteland)
 "rI" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /obj/item/pickaxe,
 /obj/item/flashlight/lantern/dim{
 	icon_state = "lantern-on";
@@ -4896,7 +4924,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/room,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "sC" = (
 /obj/item/cultivator,
 /obj/item/shovel/spade,
@@ -4968,8 +4996,9 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood_counter{
-	dir = 1
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -5068,15 +5097,13 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/machinery/light/floor{
 	color = "#FF8CBA";
 	light_color = "#FF8CBA"
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -5730,6 +5757,7 @@
 /area/f13/wasteland)
 "vP" = (
 /obj/item/lipstick,
+/obj/item/lipstick/black,
 /obj/structure/mirror{
 	pixel_x = 24
 	},
@@ -5737,9 +5765,14 @@
 	dir = 4;
 	color = "#121212"
 	},
-/obj/structure/table/wood_counter{
-	dir = 4;
-	pixel_x = 6
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891";
+	pixel_y = 6
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
@@ -5871,12 +5904,6 @@
 /area/f13/building)
 "wn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/item/instrument/guitar,
 /obj/machinery/light/floor{
 	plane = -6
@@ -5913,15 +5940,20 @@
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "wy" = (
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/white{
 	layer = 3;
 	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_x = -1;
+	opacity = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -6070,7 +6102,7 @@
 	pixel_y = 30
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "wX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -6193,12 +6225,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/fake_stairs/south{
 	color = "#6F4F40"
-	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
 	},
 /obj/machinery/light/floor{
 	plane = -6
@@ -6472,12 +6498,6 @@
 /area/f13/wasteland)
 "yr" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/item/instrument/saxophone,
 /obj/machinery/light/floor{
 	plane = -6
@@ -6571,12 +6591,6 @@
 	},
 /area/f13/wasteland)
 "yK" = (
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1
@@ -6584,6 +6598,10 @@
 /obj/machinery/light/floor{
 	color = "lime";
 	light_color = "#90FF6E"
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -6603,15 +6621,13 @@
 	},
 /area/f13/wasteland)
 "yN" = (
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/machinery/light/floor{
 	color = "aqua";
 	light_color = "#00FFFF"
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -7124,15 +7140,13 @@
 	},
 /area/f13/wasteland)
 "AS" = (
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/pink{
 	layer = 3;
 	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -7498,8 +7512,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/wood_counter{
-	dir = 4
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
@@ -7660,6 +7675,16 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Ds" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "Du" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7749,6 +7774,24 @@
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"DH" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	plane = -4;
+	layer = 3
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/floor/wood_worn,
+/area/f13/building)
 "DI" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -8150,13 +8193,8 @@
 /area/f13/building)
 "Fb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	light_color = "#E74AE2";
-	color = "#C000FF";
-	dir = 4
-	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "Fe" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#4F3528";
@@ -8178,6 +8216,15 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Fh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	light_color = "#E74AE2";
+	color = "#C000FF";
+	dir = 4
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/caves)
 "Fj" = (
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/indestructible,
@@ -8232,7 +8279,7 @@
 /obj/item/lock_construct,
 /obj/item/key,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "Fr" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -8670,8 +8717,9 @@
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood_counter{
-	dir = 1
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -9038,12 +9086,6 @@
 /area/f13/wasteland)
 "It" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/item/instrument/banjo,
 /obj/machinery/light/floor{
 	plane = -6
@@ -9422,7 +9464,10 @@
 /area/f13/caves)
 "JK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood_counter,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -10228,12 +10273,14 @@
 /area/f13/building)
 "Mz" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#706891";
-	pixel_y = 6
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1;
+	density = 0
 	},
-/obj/structure/chair/stool/retro/black,
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "MD" = (
@@ -10550,7 +10597,7 @@
 	color = "aqua"
 	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "NB" = (
 /obj/structure/bonfire/prelit,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -10807,7 +10854,10 @@
 	},
 /area/f13/wasteland)
 "OD" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -10836,6 +10886,24 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"OJ" = (
+/obj/effect/decal/cleanable/glitter/pink{
+	layer = 3;
+	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_x = -1;
+	opacity = 1
+	},
+/turf/open/floor/wood_worn,
+/area/f13/building)
 "OL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
@@ -11214,6 +11282,21 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
+"Qd" = (
+/obj/item/lipstick,
+/obj/structure/mirror{
+	pixel_x = 24
+	},
+/obj/effect/turf_decal/siding/wideplating{
+	dir = 4;
+	color = "#121212"
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "Qe" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -11263,8 +11346,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/obj/structure/table/wood_counter{
-	dir = 1
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
@@ -11446,11 +11530,9 @@
 /obj/structure/fence/pole_b{
 	color = "#7F675D"
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -11488,7 +11570,7 @@
 	},
 /obj/structure/simple_door/room,
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "QZ" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -11566,6 +11648,17 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
+"Rh" = (
+/obj/effect/decal/cleanable/glitter/white{
+	layer = 3;
+	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
+/turf/open/floor/wood_worn,
 /area/f13/building)
 "Rk" = (
 /obj/structure/railing{
@@ -11653,7 +11746,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "RF" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/wasteland)
 "RG" = (
 /obj/effect/spawner/lootdrop/f13/trash_food,
@@ -12273,14 +12366,8 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "TI" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#FF8CC9";
-	color = "#FF72D5"
-	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "TK" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -12371,15 +12458,13 @@
 	},
 /area/f13/wasteland)
 "Ue" = (
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/blue{
 	plane = -4;
 	layer = 3
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -12548,15 +12633,19 @@
 /obj/structure/towel_rack{
 	pixel_y = 27
 	},
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /obj/structure/bedsheetbin/towel,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "UK" = (
 /obj/machinery/light,
 /obj/machinery/microwave,
-/obj/structure/table/wood_counter{
-	dir = 1
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
@@ -12691,6 +12780,13 @@
 	color = "#1F1F1F"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	pixel_x = -1;
+	opacity = 1
+	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
 "Vl" = (
@@ -12855,8 +12951,9 @@
 	pixel_x = 6
 	},
 /obj/item/reagent_containers/glass/maunamug,
-/obj/structure/table/wood_counter{
-	dir = 4
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
@@ -12967,15 +13064,13 @@
 	color = "#A47449";
 	dir = 1
 	},
-/obj/structure/table/bronze{
-	color = "#533B62";
-	name = "stage";
-	desc = "A stage for dancing.";
-	density = 0
-	},
 /obj/effect/decal/cleanable/glitter/pink{
 	layer = 3;
 	plane = -4
+	},
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/wood_worn,
 /area/f13/building)
@@ -13972,9 +14067,12 @@
 /area/f13/wasteland)
 "Zm" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
+	},
 /turf/open/floor/wood_common/wood_common_dark,
-/area/f13/building)
+/area/f13/caves)
 "Zn" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14067,8 +14165,9 @@
 	pixel_y = 19;
 	layer = 1.9
 	},
-/obj/structure/table/wood_counter{
-	pixel_y = 3
+/obj/structure/table/wood/settler{
+	layer = 2.5;
+	alpha = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
@@ -44225,8 +44324,8 @@ ed
 ed
 ed
 ed
-ed
-ed
+jk
+jk
 jk
 jk
 jk
@@ -45243,19 +45342,19 @@ ed
 ed
 ed
 jk
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
-Zo
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
+gD
 jk
 ed
 ed
@@ -45500,19 +45599,19 @@ ed
 Xr
 Xr
 jk
-Zo
+gD
 Fp
 lE
 bb
-Zo
+gD
 Fp
 oe
 bb
-Zo
+gD
 Fp
 NA
 bb
-Zo
+gD
 jk
 ed
 ed
@@ -45757,19 +45856,19 @@ ed
 ed
 ed
 jk
-Zo
+gD
 wW
-NO
+Fb
 mE
-Zo
+gD
 wW
-NO
+Fb
 mE
-Zo
+gD
 wW
-NO
+Fb
 mE
-Zo
+gD
 jk
 ed
 ed
@@ -46014,19 +46113,19 @@ ed
 ed
 ed
 jk
-Zo
-NO
-NO
-NO
-Zo
-NO
-NO
-NO
-Zo
-NO
-NO
-NO
-Zo
+gD
+Fb
+Fb
+Fb
+gD
+Fb
+Fb
+Fb
+gD
+Fb
+Fb
+Fb
+gD
 jk
 ed
 ed
@@ -46271,19 +46370,19 @@ ed
 ed
 ed
 jk
-Zo
+gD
 qw
 Zm
-NO
-Zo
+Fb
+gD
 qw
 Zm
-NO
-Zo
+Fb
+gD
 qw
 Zm
-NO
-Zo
+Fb
+gD
 jk
 ed
 ed
@@ -46528,19 +46627,19 @@ ed
 ed
 ed
 jk
-Zo
-Zo
-Zo
+gD
+gD
+gD
 QX
-Zo
-Zo
-Zo
+gD
+gD
+gD
 sy
-Zo
-Zo
-Zo
+gD
+gD
+gD
 sy
-Zo
+gD
 jk
 ed
 ed
@@ -46785,19 +46884,19 @@ ed
 ed
 ed
 jk
-Zo
+gD
 ep
 NA
-NO
-NO
-TI
-NO
-NO
-ng
-NO
-NO
 Fb
-Zo
+Fb
+TI
+fj
+Fb
+ng
+Fb
+Fh
+Fb
+gD
 jk
 ed
 ed
@@ -47046,8 +47145,9 @@ Zo
 Zo
 Zo
 Zo
-NO
-IU
+lj
+lj
+Zo
 Zo
 Zo
 Zo
@@ -47055,8 +47155,7 @@ Zo
 Xp
 Zo
 Zo
-jk
-ed
+Zo
 ed
 ed
 ed
@@ -47309,11 +47408,11 @@ yK
 Ue
 yN
 Zo
-NO
+dY
+dY
+dY
 hL
 Zo
-jk
-ed
 ed
 ed
 Xr
@@ -47564,13 +47663,13 @@ NO
 xE
 go
 AS
-Ue
-bM
-NO
-dY
+DH
 Zo
-jk
-ed
+Ds
+dY
+bM
+hq
+Zo
 ed
 ed
 Xr
@@ -47822,12 +47921,12 @@ xE
 mw
 QR
 wy
-Zo
+nj
 Mz
+hE
 xE
 Zo
-jk
-ed
+Zo
 ed
 ed
 ed
@@ -48077,13 +48176,13 @@ qk
 NO
 xE
 VY
-wy
-AS
+Rh
+OJ
 Zo
-gD
+Zo
 vP
+Qd
 Zo
-jk
 jk
 jk
 jk
@@ -50133,8 +50232,8 @@ NO
 NO
 lA
 We
+md
 NO
-iE
 NO
 NO
 NO
@@ -50390,7 +50489,7 @@ NO
 JL
 lA
 We
-NO
+iE
 NO
 NO
 NO

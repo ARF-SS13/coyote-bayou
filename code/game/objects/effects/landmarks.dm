@@ -824,6 +824,47 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Den Citizen"
 	icon_state = "Wastelander"
 
+
+/obj/effect/landmark/start/f13/wastelander/den/seeker
+	name = "Den Seeker"
+	icon_state = "Wastelander"
+	color = "#00FFFF"
+
+/obj/effect/landmark/start/f13/wastelander/den/siren
+	name = "Den Siren"
+	icon_state = "Wastelander"	
+	color = "#ff44ff"
+
+/obj/effect/landmark/start/f13/wastelander/den/miner
+	name = "Den Miner"
+	icon_state = "Wastelander"	
+	color = "#AA33ff"
+
+/obj/effect/landmark/start/f13/wastelander/den/tavernworker
+	name = "Den Tavern Worker"
+	icon_state = "Wastelander"	
+	color = "#FF33AA"
+	
+/obj/effect/landmark/start/f13/wastelander/den/healer
+	name = "Den Healer"
+	icon_state = "Wastelander"	
+	color = "#3333AA"
+
+/obj/effect/landmark/start/f13/wastelander/den/donuteer
+	name = "Den Donuteer"
+	icon_state = "Wastelander"	
+	color = "#ff0000"
+
+/obj/effect/landmark/start/f13/wastelander/den/keeper
+	name = "Den Keeper"
+	icon_state = "Wastelander"	
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/wastelander/den/Monarch
+	name = "Den Heirophant"
+	icon_state = "Wastelander"	
+	color = "#0000FF"
+
 /obj/effect/landmark/start/f13/wastelander/backstage
 	name = "Character Testing Area"
 	icon_state = "Wastelander"
@@ -845,6 +886,26 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/raider
 	name = "Redwater Townie"
 	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/redwateroutrider
+	name = "Redwater Outrider"
+	icon_state = "Raider"
+	color = "#FF0000"
+
+/obj/effect/landmark/start/f13/redwatersawbones
+	name = "Redwater Sawbones"
+	icon_state = "Raider"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/redwatercooker
+	name = "Redwater Cooker"
+	icon_state = "Raider"
+	color = "#0000FF"
+
+/obj/effect/landmark/start/f13/redwaterbartender
+	name = "Redwater Bartender"
+	icon_state = "Raider"
+	color = "#FF00FF"
 
 /obj/effect/landmark/start/f13/redwateroverboss
 	name = "Redwater Overboss"
