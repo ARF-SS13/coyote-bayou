@@ -98259,6 +98259,13 @@
 	icon_state = "verticalrightborderright2"
 	},
 /area/f13/wasteland/city)
+"xfl" = (
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are either entering or leaving the area of town of Redwater, it's safe to assume the area around this town is dangerous and people outside of this town will likely not like you if you are from it.  Can you accept that?";
+	title = "Redwater Warning."
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "xfq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
@@ -159574,8 +159581,8 @@ byS
 aae
 aae
 aae
-aae
-aaa
+huP
+kEE
 "}
 (223,1,1) = {"
 aaa
@@ -159830,9 +159837,9 @@ pyr
 pyr
 aae
 aae
-aae
-aae
-aaa
+huP
+huP
+kEE
 "}
 (224,1,1) = {"
 aaa
@@ -160087,9 +160094,9 @@ pyr
 pyr
 aae
 aae
-aae
-aae
-aaa
+huP
+huP
+kEE
 "}
 (225,1,1) = {"
 aaa
@@ -160344,9 +160351,9 @@ suR
 pyr
 aae
 aae
-aae
-aae
-aaa
+huP
+huP
+kEE
 "}
 (226,1,1) = {"
 aaa
@@ -160601,9 +160608,9 @@ suR
 pyr
 aae
 aae
-aae
-aae
-aaa
+huP
+huP
+kEE
 "}
 (227,1,1) = {"
 aaa
@@ -160857,10 +160864,10 @@ pyr
 pyr
 pyr
 aae
-aae
-aae
-aae
-aaa
+huP
+huP
+huP
+kEE
 "}
 (228,1,1) = {"
 aaa
@@ -161113,11 +161120,11 @@ cTJ
 iDA
 pyr
 pyr
-aae
-aae
-aae
-aae
-aaa
+xfl
+huP
+huP
+huP
+kEE
 "}
 (229,1,1) = {"
 gGm
@@ -161371,10 +161378,10 @@ iDA
 pyr
 pyr
 aae
-aae
-aae
-aae
-aaa
+huP
+huP
+huP
+kEE
 "}
 (230,1,1) = {"
 opW
@@ -161628,10 +161635,10 @@ hzF
 gkQ
 pyr
 aae
-aae
-aae
-aae
-aaa
+huP
+huP
+huP
+kEE
 "}
 (231,1,1) = {"
 opW
@@ -161886,9 +161893,9 @@ pyr
 pyr
 aae
 aae
-aae
-aae
-aaa
+huP
+huP
+kEE
 "}
 (232,1,1) = {"
 opW
@@ -162144,8 +162151,8 @@ byS
 aae
 aae
 aae
-aae
-aaa
+huP
+kEE
 "}
 (233,1,1) = {"
 opW

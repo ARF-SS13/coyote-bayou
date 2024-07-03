@@ -30,14 +30,56 @@
 /datum/job/redwater/townie
 	title = "Redwater Townie"
 	description = "You're a Redwater townie, your everyday 'citizen' of Redwater. Whether you're a low-level grundlesnatch or just someone who likes to chill with the prostitutinest folks this side of the River of Flame, one thing's for sure: Redwater is your home."
-	supervisors = "Redwater's finest"
+	supervisors = "Redwater's Watchers & Overboss"
+
+//////////////////////////////
+/// Redwater Outrider
+/// Your everyday Redwater 'adventurer''.
+/datum/job/redwater/outrider
+	title = "Redwater Outrider"
+	paycheck = 25
+	description = "You're a Redwater Outrider, you are one of the folks who goes out and messes with stuff."
+	supervisors = "Redwater's Watchers & Overboss"
+
+//////////////////////////////
+/// Redwater Sawbones
+/// Your everyday Redwater """Doctor""".
+/datum/job/redwater/sawbones
+	title = "Redwater Sawbones"
+	total_positions = 1
+	spawn_positions = 1
+	paycheck = 300
+	description = "You're a Redwater Sawbones, you patch folks up!"
+	supervisors = "Redwater's Watchers & Overboss"
+
+//////////////////////////////
+/// Redwater Cooker
+/// Your everyday Redwater """Chemist""".
+/datum/job/redwater/cooker
+	title = "Redwater Cooker"
+	total_positions = 2
+	spawn_positions = 2
+	paycheck = 100
+	description = "You're a Redwater Cooker, you do chemistry... or something very nearly like it."
+	supervisors = "Redwater's Watchers & Overboss"
+
+//////////////////////////////
+/// Club Bartender
+/// Your everyday Redwater Bartender.
+/datum/job/redwater/bartender
+	title = "Redwater Bartender"
+	total_positions = 2
+	spawn_positions = 2
+	paycheck = 100
+	description = "You're a Redwater Bartender, you serve drinks in the club and probably fondle the merchandise."
+	supervisors = "Redwater's Watchers & Overboss"
 
 //////////////////////////////
 /// Redwater Prostitute
 /// Humpster in the dumpster.
 /datum/job/redwater/prostitute
 	title = "Redwater Prostitute"
-	supervisors = "Redwater's <i>finest</i>"
+	supervisors = "Redwater's Watchers & Overboss"
 	description = "You're one of Redwater's finest, a prostitute who sells their body for the good of the gang. Your job as a prostitutional technician is to utilize your brothular expertise to provide your clients with the highest quality of service and satisfaction, safely and efficiently, as per EEOC '99 guidelines. For more information, please consult the Redwater Prostitutional Procedures Manual, which currently doesn't exist because Redwater plays by its own rules."
 
 //////////////////////////////

@@ -351,6 +351,17 @@
 	icon_state = "bluerustychess"
 	},
 /area/f13/building/mall)
+"akh" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/wastelander/den/healer,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "akj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/house,
@@ -1867,6 +1878,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"bpx" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/landmark/start/f13/wastelander/den/tavernworker,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "bpz" = (
 /obj/item/reagent_containers/food/snacks/donut/jelly/trumpet,
 /obj/structure/table/booth{
@@ -2904,7 +2920,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "ccP" = (
-/obj/effect/landmark/start/f13/wastelander/den,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -2912,6 +2927,7 @@
 	dir = 4;
 	pixel_y = -16
 	},
+/obj/effect/landmark/start/f13/wastelander/den/keeper,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "ccR" = (
@@ -6159,10 +6175,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "evy" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
+/obj/effect/landmark/start/f13/wastelander/den/Monarch,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "evC" = (
@@ -6899,6 +6912,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building)
+"eYF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/landmark/start/f13/wastelander/den/healer,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "eYY" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -7017,6 +7037,7 @@
 /area/f13/caves)
 "fdg" = (
 /obj/effect/turf_decal/weather/dirt,
+/obj/effect/landmark/start/f13/wastelander/den/seeker,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "fdh" = (
@@ -7291,6 +7312,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
+"fnn" = (
+/obj/effect/landmark/start/f13/wastelander/den/donuteer,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "fnp" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/trash,
@@ -7896,7 +7921,7 @@
 	},
 /area/f13/building)
 "fHZ" = (
-/obj/effect/landmark/start/f13/wastelander/den,
+/obj/effect/landmark/start/f13/wastelander/den/keeper,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "fIq" = (
@@ -8213,6 +8238,7 @@
 	dir = 4;
 	pixel_y = -16
 	},
+/obj/effect/landmark/start/f13/wastelander/den/keeper,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "fWs" = (
@@ -9589,15 +9615,6 @@
 /obj/item/healthanalyzer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"gME" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "gMX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/supermart,
@@ -11055,6 +11072,13 @@
 "hMq" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"hMs" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/wastelander/den/keeper,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "hMD" = (
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13819,6 +13843,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/effect/landmark/start/f13/wastelander/den,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "jzs" = (
@@ -16263,6 +16288,11 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"kVs" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/landmark/start/f13/wastelander/den/siren,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building/tunnel)
 "kVz" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -17557,6 +17587,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/obj/effect/landmark/start/f13/wastelander/den,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "lTA" = (
@@ -20871,6 +20902,7 @@
 	},
 /area/f13/building/massfusion)
 "nTZ" = (
+/obj/effect/landmark/start/f13/wastelander/den/siren,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "nUm" = (
@@ -22172,9 +22204,7 @@
 	},
 /area/f13/building)
 "oOB" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
+/obj/effect/landmark/start/f13/wastelander/den,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "oOE" = (
@@ -25416,6 +25446,9 @@
 /obj/structure/fluff/hedge,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"rgU" = (
+/turf/closed/wall/f13/tunnel,
+/area/f13/caves)
 "rhv" = (
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
@@ -27561,9 +27594,7 @@
 	},
 /area/f13/ruins)
 "sPg" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
+/obj/effect/landmark/start/f13/wastelander/den/miner,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "sPE" = (
@@ -34220,14 +34251,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
 "xsB" = (
-/obj/effect/landmark/start/f13/wastelander/den,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
+/obj/effect/landmark/start/f13/wastelander/den/tavernworker,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tunnel)
 "xsR" = (
@@ -72934,11 +72958,11 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
+rgU
+rgU
+rgU
+rgU
+rgU
 vje
 beF
 dZt
@@ -73191,12 +73215,12 @@ vje
 vje
 vje
 vje
-omN
-omN
-omN
-omN
-omN
-fzV
+mBe
+eYF
+akh
+hMs
+hMs
+fwT
 qvv
 qvv
 qvv
@@ -73450,9 +73474,9 @@ oez
 vje
 mBe
 oOB
+fnn
+sPg
 xsB
-sPg
-sPg
 pAt
 qnO
 fKM
@@ -73707,9 +73731,9 @@ oez
 oez
 mBe
 jzb
-fHZ
-nTZ
-fdg
+fnn
+sPg
+bpx
 jsq
 iCH
 iCH
@@ -73966,9 +73990,9 @@ mBe
 jzb
 fHZ
 nTZ
-fdg
-gME
-mjT
+kVs
+eQv
+iCH
 iCH
 iCH
 hFd
@@ -74222,7 +74246,7 @@ oez
 mBe
 jzb
 fHZ
-nTZ
+evy
 fdg
 eQv
 iCH
@@ -74480,7 +74504,7 @@ mBe
 lTi
 ccP
 fVT
-evy
+fdg
 giX
 iCH
 iCH

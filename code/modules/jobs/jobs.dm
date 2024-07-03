@@ -175,6 +175,14 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 //Den Citizenship
 GLOBAL_LIST_INIT(den_positions, list(
 	"Den Citizen",
+	"Den Seeker",
+	"Den Siren",
+	"Den Miner",
+	"Den Tavern Worker",
+	"Den Healer",
+	"Den Donuteer",
+	"Den Keeper",
+	"Den Hierophant"
 ))
 
 //ashdown_positions Citizenship
@@ -265,6 +273,10 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 
 GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Prostitute",
+	"Redwater Outrider",
+	"Redwater Sawbones",
+	"Redwater Cooker",
+	"Redwater Bartender",
 	"Redwater Townie",
 	"Redwater Watcher",
 	"Redwater Overboss",
