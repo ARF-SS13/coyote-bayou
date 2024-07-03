@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(den_positions, list(
 	"Den Healer",
 	"Den Donuteer",
 	"Den Keeper",
-	"Den Heirophant"
+	"Den Hierophant"
 ))
 
 //ashdown_positions Citizenship

@@ -861,7 +861,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	color = "#00FF00"
 
 /obj/effect/landmark/start/f13/wastelander/den/Monarch
-	name = "Den Heirophant"
+	name = "Den Hierophant"
 	icon_state = "Wastelander"	
 	color = "#0000FF"
 
