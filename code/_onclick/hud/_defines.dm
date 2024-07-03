@@ -49,7 +49,7 @@
 #define ui_belt "WEST+3:5,SOUTH:3"
 #define ui_back "WEST+6,SOUTH:3"
 #define ui_storage2 "WEST+4:4,SOUTH:3"
-#define ui_storage1 "WEST+5:4,SOUTH:3"
+#define ui_storage1 "WEST+5:2,SOUTH:3"
 #define ui_resistdelay "WEST+7:16,SOUTH+1:17"
 #define ui_overridden_resist "WEST+7:16,SOUTH+1:1"
 #define ui_combat_toggle "WEST+7:16,SOUTH:2"
