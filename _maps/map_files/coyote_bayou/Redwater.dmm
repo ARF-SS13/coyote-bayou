@@ -6774,10 +6774,6 @@
 /obj/item/cane,
 /turf/open/floor/f13,
 /area/f13/city)
-"cNC" = (
-/obj/effect/landmark/start/f13/redwateroutrider,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
 "cND" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/junk/small/table{
@@ -15302,7 +15298,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/redwaterbartender,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
 "goE" = (
@@ -17860,10 +17855,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
-"hrg" = (
-/obj/effect/landmark/start/f13/redwaterbartender,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
 "hrm" = (
 /obj/structure/window/fulltile/wood{
 	layer = 3
@@ -24696,6 +24687,12 @@
 /obj/structure/camera_assembly,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building/abandoned)
+"kfl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "kfC" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -30907,6 +30904,15 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
+"mJA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "mJC" = (
 /obj/structure/debris/v4,
 /obj/structure/debris/v3,
@@ -32618,6 +32624,10 @@
 "nzx" = (
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/redwater)
+"nzG" = (
+/obj/effect/landmark/start/f13/redwatersawbones,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "nzM" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -33293,12 +33303,6 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"nPD" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "nPE" = (
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/road,
@@ -35650,6 +35654,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"oLt" = (
+/obj/effect/landmark/start/f13/redwaterbartender,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "oLz" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -37350,6 +37358,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
+/area/f13/caves)
+"pwH" = (
+/obj/effect/landmark/start/f13/redwatercooker,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
 "pxk" = (
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -40167,10 +40179,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
-"qIa" = (
-/obj/effect/landmark/start/f13/redwatersawbones,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
 "qIh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt{
@@ -42165,10 +42173,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"rua" = (
-/obj/effect/landmark/start/f13/redwatercooker,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
 "rui" = (
 /obj/structure/dresser{
 	pixel_y = 10
@@ -45219,6 +45223,12 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
+"sEM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "sFi" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -45828,12 +45838,6 @@
 /obj/structure/simple_door/repaired,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"sRG" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "sRL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/overlay/junk/curtain,
@@ -47528,6 +47532,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
+"tCN" = (
+/obj/effect/landmark/start/f13/redwateroutrider,
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "tCT" = (
 /obj/item/storage/trash_stack{
 	pixel_x = -18
@@ -49653,16 +49661,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
-"uup" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/machinery/gear_painter,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "uuq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -52766,16 +52764,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"vIE" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/landmark/start/f13/redwaterbartender,
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
 "vIG" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/twig2,
@@ -56410,6 +56398,16 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/redwater)
+"xjn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "xjx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet,
@@ -122848,9 +122846,9 @@ aMP
 oaP
 noL
 rHq
-uup
-sRG
-sRG
+xjn
+sEM
+sEM
 seA
 oVc
 oVc
@@ -123107,8 +123105,8 @@ xyE
 bbr
 aLI
 goD
-vIE
-nPD
+mJA
+kfl
 oVc
 oVc
 oVc
@@ -123357,12 +123355,12 @@ ivi
 cNd
 flm
 seA
-hrg
+oLt
 ipO
 ipO
 hyJ
-cNC
-rua
+tCN
+pwH
 lKA
 hyJ
 seA
@@ -123618,8 +123616,8 @@ caR
 ipO
 ipO
 hyJ
-cNC
-qIa
+tCN
+nzG
 lKA
 gpe
 bUk
@@ -123875,8 +123873,8 @@ bJT
 ipO
 ipO
 hyJ
-cNC
-qIa
+tCN
+nzG
 aTs
 wnJ
 bUk
