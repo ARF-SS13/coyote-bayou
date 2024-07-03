@@ -954,6 +954,36 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Tunnel Rats Scav"
 	icon_state = "Detective"
 
+/obj/effect/landmark/start/f13/tunnelratsrunner
+	name = "Tunnel Rats Runner"
+	icon_state = "Detective"
+	color = "#ff0000"
+
+/obj/effect/landmark/start/f13/tunnelratsswiller
+	name = "Tunnel Rats Swiller"
+	icon_state = "Detective"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/tunnelratstechy
+	name = "Tunnel Rats Techy"
+	icon_state = "Detective"
+	color = "#0000FF"
+
+/obj/effect/landmark/start/f13/tunnelratspatcher
+	name = "Tunnel Rats Patcher"
+	icon_state = "Detective"
+	color = "#FF00FF"
+
+/obj/effect/landmark/start/f13/tunnelratstart
+	name = "Tunnel Rats Tart"
+	icon_state = "Detective"
+	color = "#00FFFF"
+
+/obj/effect/landmark/start/f13/tunnelratsdigger
+	name = "Tunnel Rats Digger"
+	icon_state = "Detective"
+	color = "#FFccFF"
+
 /obj/effect/landmark/start/f13/tunnelratsrat
 	name = "Tunnel Rats R.A.T."
 	icon_state = "Detective"
