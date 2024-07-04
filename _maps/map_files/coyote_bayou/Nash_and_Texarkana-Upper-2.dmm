@@ -58,8 +58,11 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/ruins)
 "ai" = (
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
+/obj/structure/nest/protectron,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "aj" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -447,7 +450,6 @@
 	pixel_y = 25;
 	pixel_x = 9
 	},
-/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -1248,7 +1250,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "ex" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -2690,7 +2692,7 @@
 	dir = 4
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "jW" = (
 /obj/structure/flora/ausbushes/sparsegrass{
 	randomize_xy = 0
@@ -2816,7 +2818,7 @@
 /obj/structure/table/wasteland,
 /obj/item/binoculars,
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "kA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2978,10 +2980,6 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building)
-"lq" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "ls" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -4357,9 +4355,8 @@
 	pixel_x = 18
 	},
 /obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1;
-	pixel_x = -10
+	density = 0;
+	pixel_x = -8
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -5619,7 +5616,7 @@
 	dir = 4
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "uZ" = (
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
@@ -8123,7 +8120,6 @@
 	},
 /area/f13/wasteland)
 "EQ" = (
-/mob/living/simple_animal/hostile/raider/junker/boss,
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
@@ -9153,7 +9149,7 @@
 	dir = 5
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "IM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10239,6 +10235,7 @@
 /area/f13/building)
 "Mu" = (
 /obj/machinery/light,
+/obj/structure/nest/protectron,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -10384,7 +10381,6 @@
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "MN" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
@@ -11666,7 +11662,7 @@
 	dir = 9
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "Rm" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
@@ -13855,7 +13851,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood_common,
-/area/f13/wasteland)
+/area/f13/building)
 "YH" = (
 /obj/structure/wreck/trash/halftire,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -64843,8 +64839,8 @@ hm
 hm
 hm
 uY
-ai
-ai
+bS
+bS
 PR
 bS
 bS
@@ -65100,8 +65096,8 @@ hm
 hm
 hm
 ky
-ai
-ai
+bS
+bS
 Tj
 bS
 bS
@@ -65357,8 +65353,8 @@ hm
 hm
 hm
 YG
-ai
-ai
+bS
+bS
 PR
 bS
 bS
@@ -76670,7 +76666,7 @@ hm
 hm
 hm
 tR
-mx
+ai
 yZ
 rQ
 VB
@@ -77185,7 +77181,7 @@ tR
 ST
 ST
 mx
-lq
+dw
 dw
 VR
 tR
