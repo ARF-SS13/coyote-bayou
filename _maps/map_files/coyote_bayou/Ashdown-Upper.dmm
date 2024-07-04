@@ -596,6 +596,13 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
+"eA" = (
+/obj/effect/landmark/start/f13/ashdownscarlet,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "eB" = (
 /obj/structure/flora/grass/coyote/twentyeight,
 /turf/open/indestructible/ground/outside/dirt,
@@ -827,6 +834,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"gl" = (
+/obj/effect/landmark/start/f13/ashdownartiste,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "gm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -874,7 +888,7 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "gP" = (
-/obj/effect/landmark/start/f13/biker,
+/obj/effect/landmark/start/f13/ashdowncanteenworker,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -3403,7 +3417,7 @@
 	},
 /area/f13/building/abandoned)
 "yZ" = (
-/obj/effect/landmark/start/f13/biker_boss,
+/obj/effect/landmark/start/f13/ashdownknight,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -4016,6 +4030,13 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building)
+"Dy" = (
+/obj/effect/landmark/start/f13/ashdownadventurer,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "Dz" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
@@ -4110,6 +4131,14 @@
 /obj/structure/nest/frog,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
+"Eb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ashdowncanteenworker,
+/turf/open/indestructible/cobble{
+	light_color = null;
+	color = "#777777"
+	},
+/area/f13/caves)
 "Ec" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/dirt,
@@ -4382,6 +4411,7 @@
 /area/f13/caves)
 "FA" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/ashdownviceroy,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -4458,6 +4488,10 @@
 /obj/effect/spawner/lootdrop/f13/common_guns,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
+"FU" = (
+/obj/effect/landmark/start/f13/ashdownsilvereye,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "FX" = (
 /obj/structure/chair/sofa/right{
 	color = "#800000";
@@ -6050,6 +6084,7 @@
 	pixel_y = 32;
 	layer = 4
 	},
+/obj/effect/landmark/start/f13/ashdownsilvereye,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "RR" = (
@@ -71476,10 +71511,10 @@ yI
 Fr
 rN
 rN
-On
-je
+Dy
+Eb
 gP
-On
+eA
 FA
 eo
 mB
@@ -71730,13 +71765,13 @@ nR
 Jw
 nR
 LV
-nR
+FU
 rN
 ew
-On
-On
+Dy
 gP
-On
+yZ
+eA
 hp
 eo
 UU
@@ -71990,10 +72025,10 @@ iX
 RQ
 rN
 ew
-On
-On
-gP
-On
+Dy
+gl
+yZ
+eA
 UG
 eo
 MG
@@ -72247,9 +72282,9 @@ qa
 Bm
 rN
 ew
-On
-On
-gP
+Dy
+gl
+yZ
 yZ
 Hi
 eo

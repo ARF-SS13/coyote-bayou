@@ -187,9 +187,15 @@ GLOBAL_LIST_INIT(den_positions, list(
 
 //ashdown_positions Citizenship
 GLOBAL_LIST_INIT(ashdown_positions, list(
-	"Ashdown Citizen",
-	"Hells Nomad",
-	"Overbiker",
+	"Ashdown Artisan",
+	"Ashdown Squire",
+	"Ashdown Knight",
+	"Ashdown Viceroy",
+	"Ashdown Canteen Worker",
+	"Ashdown Scarlet",
+	"Ashdown Apothecary",
+	"Ashdown Artiste",
+	"Ashdown Silvereye",
 ))
 
 //Gar Citizenship
@@ -289,7 +295,9 @@ GLOBAL_LIST_INIT(tunnelrats_positions, list(
 	"Tunnel Rats Runner", //adventurer
 	"Tunnel Rats Swiller", //barkeep
 	"Tunnel Rats Techy", //science
-	"Tunnel Rats Patcher" //doctor
+	"Tunnel Rats Patcher", //doctor
+	"Tunnel Rats Tart", //sex worker
+	"Tunnel Rats Digger", //miner
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(

@@ -875,8 +875,49 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/ashdown
-	name = "Ashdown Citizen"
+	name = "Ashdown Artisan"
 	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/ashdownadventurer
+	name = "Ashdown Squire"
+	icon_state = "Wastelander"
+	color = "#0000FF"
+
+/obj/effect/landmark/start/f13/ashdownknight
+	name = "Ashdown Knight"
+	icon_state = "Wastelander"
+	color = "#00FFFF"
+
+/obj/effect/landmark/start/f13/ashdownviceroy
+	name = "Ashdown Viceroy"
+	icon_state = "Wastelander"
+	color = "#FFFFFF"
+
+/obj/effect/landmark/start/f13/ashdowncanteenworker
+	name = "Ashdown Canteen Worker"
+	icon_state = "Wastelander"
+	color = "#FFFF00"
+
+/obj/effect/landmark/start/f13/ashdownscarlet
+	name = "Ashdown Scarlet"
+	icon_state = "Wastelander"
+	color = "#FF0000"
+
+/obj/effect/landmark/start/f13/ashdowncanteenworker
+	name = "Ashdown Canteen Worker"
+	icon_state = "Wastelander"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/ashdownartiste
+	name = "Ashdown Canteen Worker"
+	icon_state = "Wastelander"
+	color = "#FF00FF"
+
+/obj/effect/landmark/start/f13/ashdownsilvereye
+	name = "Ashdown Canteen Silvereye"
+	icon_state = "Wastelander"
+	color = "#00FFFF"
+	
 
 /obj/effect/landmark/start/f13/texasranger
 	name = "Texarkana Ranger"
@@ -1136,14 +1177,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/mangudai
 	name = "Mangudai"
 	icon_state = "Pusher"
-
-/obj/effect/landmark/start/f13/biker
-	name = "Hells Nomad"
-	icon_state = "Assistant"
-
-/obj/effect/landmark/start/f13/biker_boss
-	name = "Overbiker"
-	icon_state = "Captain"
 
 // Reclaimers job spawns
 
