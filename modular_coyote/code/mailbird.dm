@@ -51,7 +51,7 @@
 		to_chat(user, span_warning("You need an item to give to the bird you call!"))
 		return FALSE
 
-	if(mail.w_class > WEIGHT_CLASS_SMALL)
+	if(mail.w_class > WEIGHT_CLASS_NORMAL)
 		to_chat(user, span_warning("This item is too heavy to give to a bird!"))
 		return FALSE
 

@@ -71,73 +71,73 @@ GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
 GLOBAL_LIST_INIT(faction_whitelist_positions, list(
-"Head Scribe",
-"Elder",
-"Head Paladin",
-"Head Knight",
-"Head Scribe",
-"Senior Paladin",
-"Paladin",
-"Senior Knight",
-"Knight",
-"Senior Scribe",
-"Scribe",
-"BoS Off-Duty",
+// "Head Scribe",
+// "Elder",
+// "Head Paladin",
+// "Head Knight",
+// "Head Scribe",
+// "Senior Paladin",
+// "Paladin",
+// "Senior Knight",
+// "Knight",
+// "Senior Scribe",
+// "Scribe",
+// "BoS Off-Duty",
 
-"Lil Ceasar's Centurion",
-"Lil Ceasar's Explorer",
-"Lil Ceasar's Middle Manager",
-"Lil Ceasar's Veteran Decanus",
-"Lil Ceasar's Legionnaire",
-"Lil Ceasar's Prime Decanus",
-"Lil Ceasar's Legionnaire",
-"Lil Ceasar's Recruit Decanus",
-"Lil Ceasar's Scout",
-"Lil Ceasar's Cook",
-"Lil Ceasar's Delivery Personel",
+// "Lil Ceasar's Centurion",
+// "Lil Ceasar's Explorer",
+// "Lil Ceasar's Middle Manager",
+// "Lil Ceasar's Veteran Decanus",
+// "Lil Ceasar's Legionnaire",
+// "Lil Ceasar's Prime Decanus",
+// "Lil Ceasar's Legionnaire",
+// "Lil Ceasar's Recruit Decanus",
+// "Lil Ceasar's Scout",
+// "Lil Ceasar's Cook",
+// "Lil Ceasar's Delivery Personel",
 
-"High Alderperson",
-"Sheriff",
-"Deputy",
-"Deputy Mayor",
-"Texarkana Quartermaster",
-"Texarkana Trade Worker",
-"Doctor",
-"Prospector",
-"Detective",
+// "High Alderperson",
+// "Sheriff",
+// "Deputy",
+// "Deputy Mayor",
+// "Texarkana Quartermaster",
+// "Texarkana Trade Worker",
+// "Doctor",
+// "Prospector",
+// "Detective",
 
-"Enclave Lieutenant",
-"Enclave Gunnery Sergeant",
-"Enclave Sergeant",
-"Enclave Armored Infantry",
-"Enclave Specialist",
-"Enclave Scientist",
-"Enclave Private",
-"Enclave Bunker Duty",
+// "Enclave Lieutenant",
+// "Enclave Gunnery Sergeant",
+// "Enclave Sergeant",
+// "Enclave Armored Infantry",
+// "Enclave Specialist",
+// "Enclave Scientist",
+// "Enclave Private",
+// "Enclave Bunker Duty",
 
-"Chief",
-"Spiritual Leader",
-"Head Forager",
-"Harvest Leader",
-"Forager",
+// "Chief",
+// "Spiritual Leader",
+// "Head Forager",
+// "Harvest Leader",
+// "Forager",
 
-"Noyan",
-"Steward",
-"Kheshig",
-"Khorchin",
-"Kipchak",
+// "Noyan",
+// "Steward",
+// "Kheshig",
+// "Khorchin",
+// "Kipchak",
 
-"Senior Doctor",
-"Town Doctor",
-"Town Paramedic",
+// "Senior Doctor",
+// "Town Doctor",
+// "Town Paramedic",
 
-"Cyborg",
-"Overseer",
-"Chief of Security",
-"Vault-tec Doctor",
-"Vault-tec Scientist",
-"Vault-tec Security",
-"Vault-tec Engineer",
+// "Cyborg",
+// "Overseer",
+// "Chief of Security",
+// "Vault-tec Doctor",
+// "Vault-tec Scientist",
+// "Vault-tec Security",
+// "Vault-tec Engineer",
 ))
 //Brotherhood
 GLOBAL_LIST_INIT(brotherhood_positions, list(
@@ -155,7 +155,10 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
+	"Radio Operator",
 	"Farmer",
+	"Shopkeeper",
+	"Banker",
 	"Prospector",
 	"Town Doctor",
 	"Town Scientist",
@@ -172,6 +175,27 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 //Den Citizenship
 GLOBAL_LIST_INIT(den_positions, list(
 	"Den Citizen",
+	"Den Seeker",
+	"Den Siren",
+	"Den Miner",
+	"Den Tavern Worker",
+	"Den Healer",
+	"Den Donuteer",
+	"Den Keeper",
+	"Den Hierophant"
+))
+
+//ashdown_positions Citizenship
+GLOBAL_LIST_INIT(ashdown_positions, list(
+	"Ashdown Artisan",
+	"Ashdown Squire",
+	"Ashdown Knight",
+	"Ashdown Viceroy",
+	"Ashdown Canteen Worker",
+	"Ashdown Scarlet",
+	"Ashdown Apothecary",
+	"Ashdown Artiste",
+	"Ashdown Silvereye",
 ))
 
 //Gar Citizenship
@@ -245,21 +269,35 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Mob Boss",
 	"Den Mob Enforcer",
 	"Den Doctor",
-//	"Outlaw",
+//	"Redwater Townie",
 	"Faithful",
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
-	"Radio Operator",
-	"Backstage Character"
+	"Character Testing Area"
+))
+
+GLOBAL_LIST_INIT(redwater_positions, list(
+	"Redwater Prostitute",
+	"Redwater Outrider",
+	"Redwater Sawbones",
+	"Redwater Cooker",
+	"Redwater Bartender",
+	"Redwater Townie",
+	"Redwater Watcher",
+	"Redwater Overboss",
 ))
 
 GLOBAL_LIST_INIT(tunnelrats_positions, list(
-	//"Redwater Slave",
-	//"Outlaw",
-	"Tunnel Rats Churl"
-	//"Tunnel Rats Strongarm"
-	//"Redwater Overboss",
+	"Giant Tunnel Rat Supreme", //leader
+	"Tunnel Rats Chud", //guard
+	"Tunnel Rats Scav", //townie
+	"Tunnel Rats Runner", //adventurer
+	"Tunnel Rats Swiller", //barkeep
+	"Tunnel Rats Techy", //science
+	"Tunnel Rats Patcher", //doctor
+	"Tunnel Rats Tart", //sex worker
+	"Tunnel Rats Digger", //miner
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
@@ -368,11 +406,14 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#33FF22"),
+	"Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
+	"Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
+	"Den" = list("jobs" = den_positions, "color" = "#884488"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_LIVING = list("titles" = list("Texarkana Ranger")), // all living mobs
+	EXP_TYPE_LIVING = list("titles" = tunnelrats_positions | redwater_positions | ashdown_positions | den_positions), // all living mobs
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	EXP_TYPE_COMMAND = list("titles" = command_positions),
 	EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
@@ -385,7 +426,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 
 	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | heavensnight_positions | enclave_positions),
 
-	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
+	EXP_TYPE_OUTLAW = list("titles" = list("Redwater Townie","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
 	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
 	EXP_TYPE_RECLAIMER = list("titles" = reclaimer_positions ),

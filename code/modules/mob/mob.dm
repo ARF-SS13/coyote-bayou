@@ -199,9 +199,9 @@
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/blind = M.is_blind()
 		var/msg = message
-		if(M == src)
-			msg = self_message
-		else if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
+		//if(M == src)
+		//	msg = self_message
+		if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
 			msg = blind_message
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
@@ -266,9 +266,9 @@
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
 		var/msg = message
-		if(M == src)
-			msg = self_message
-		else if(!M.can_hear())
+		//if(M == src)
+		//	msg = self_message
+		if(!M.can_hear())
 			msg = deaf_message
 		if(M.client?.prefs.color_chat_log)
 			var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)

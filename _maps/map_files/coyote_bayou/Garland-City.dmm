@@ -4452,6 +4452,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"dun" = (
+/mob/living/simple_animal/hostile/dinosaur/rex,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/wasteland)
 "duq" = (
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor/auto,
@@ -8396,6 +8400,13 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"gvS" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/mob/living/simple_animal/hostile/dinosaur/rex,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "gvZ" = (
 /obj/structure/chair{
 	dir = 4
@@ -16273,6 +16284,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"mxR" = (
+/mob/living/simple_animal/hostile/dinosaur/rex,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "mxS" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -16659,6 +16674,11 @@
 /obj/structure/nest/supermutant,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
+"mJy" = (
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "mKl" = (
 /obj/structure/flora/junglebush/large{
 	color = "#886600";
@@ -41660,7 +41680,7 @@ tKh
 tKh
 tKh
 tKh
-tKh
+dun
 myr
 tKh
 iTD
@@ -45566,7 +45586,7 @@ tKh
 iTD
 itZ
 tKh
-tKh
+dun
 doZ
 itZ
 tKh
@@ -51273,7 +51293,7 @@ tKh
 tKh
 tKh
 tKh
-tKh
+dun
 tKh
 tKh
 tKh
@@ -51956,7 +51976,7 @@ jSb
 tKh
 tKh
 tKh
-tKh
+dun
 tKh
 tKh
 jSb
@@ -52187,7 +52207,7 @@ lfN
 tKh
 tKh
 tKh
-tKh
+dun
 tKh
 tKh
 tKh
@@ -53440,7 +53460,7 @@ tKh
 tKh
 uVx
 tKh
-tKh
+dun
 tKh
 tKh
 jSb
@@ -54549,7 +54569,7 @@ kTa
 kTa
 kTa
 tKh
-tKh
+dun
 tKh
 tKh
 tKh
@@ -54675,7 +54695,7 @@ tKh
 iTD
 tKh
 tKh
-tKh
+dun
 eFN
 eFN
 tKh
@@ -60667,7 +60687,7 @@ tKh
 tKh
 iTD
 tKh
-tKh
+dun
 tKh
 tKh
 jSb
@@ -61769,7 +61789,7 @@ dID
 dID
 dID
 lzk
-dID
+mxR
 dID
 dID
 lqV
@@ -66030,7 +66050,7 @@ eFN
 tKh
 tKh
 tKh
-tKh
+dun
 tKh
 tKh
 tKh
@@ -68311,7 +68331,7 @@ tKh
 tKh
 tKh
 tKh
-tKh
+dun
 tKh
 jSb
 tKh
@@ -75643,7 +75663,7 @@ cON
 cON
 cON
 cON
-nVG
+gvS
 cON
 cON
 bGy
@@ -80302,7 +80322,7 @@ eyA
 eyA
 tKh
 tKh
-tKh
+dun
 iTD
 tKh
 tKh
@@ -88346,7 +88366,7 @@ wyc
 tKh
 wyc
 wyc
-tKh
+dun
 tKh
 cpq
 fDM
@@ -89040,7 +89060,7 @@ lkx
 uhp
 qcE
 vmF
-mtY
+mJy
 njI
 rss
 nfp

@@ -407,7 +407,7 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/shotgun/s163
 	name = "S163 Minotaur shotgun"
-	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 3+1 magazine tube capacity alongside a built in small ammo counter"
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 5+1 magazine tube capacity alongside a built in small ammo counter"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mino
 	icon_state = "s163"
 	item_state = "s163"

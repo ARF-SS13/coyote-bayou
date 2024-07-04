@@ -800,3 +800,18 @@
 	desc = "Is a helmet. Yep."
 	icon_state = "ncr_ranger"
 	item_state = "ncr_ranger"
+
+/obj/item/clothing/head/ribbon
+	name = "\improper Hair Ribbon"
+	desc = "A cute ribbon to wear in your hair!"
+	icon_state = "ribbon"
+
+/obj/item/clothing/head/bow
+	name = "\improper Hair Bow"
+	desc = "A cute bow to wear in your hair!"
+	icon_state = "bow"
+
+/obj/item/clothing/head/bow/small
+	name = "\improper Hair Bow, small"
+	desc = "A cute bow to wear in your hair!"
+	icon_state = "bow_small"
