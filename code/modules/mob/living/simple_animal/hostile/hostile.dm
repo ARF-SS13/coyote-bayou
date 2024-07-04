@@ -11,11 +11,11 @@
 	var/rapid = 0 //How many shots per volley.
 	var/rapid_fire_delay = 2 //Time between rapid fire shots
 
-	var/dodging = TRUE
+	var/dodging = FALSE
 	var/approaching_target = FALSE //We should dodge now
 	var/in_melee = FALSE	//We should sidestep now
-	var/dodge_prob = 5
-	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
+	var/dodge_prob = 0
+	var/sidestep_per_cycle = 0 //How many sidesteps per npcpool cycle when in melee
 
 	var/extra_projectiles = 0 //how many projectiles above 1?
 	/// How long to wait between shots?
