@@ -909,12 +909,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	color = "#00FF00"
 
 /obj/effect/landmark/start/f13/ashdownartiste
-	name = "Ashdown Canteen Worker"
+	name = "Ashdown Artiste"
 	icon_state = "Wastelander"
 	color = "#FF00FF"
 
 /obj/effect/landmark/start/f13/ashdownsilvereye
-	name = "Ashdown Canteen Silvereye"
+	name = "Ashdown Silvereye"
 	icon_state = "Wastelander"
 	color = "#00FFFF"
 	
