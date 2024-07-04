@@ -223,7 +223,7 @@
 		/obj/item/cool_book/ashdowncit = 1,
 	)
 
-
+/*
 /datum/outfit/job/cb/ashdown/biker
 	name     = "Hells Nomad"
 	jobtype  = /datum/job/ashdown/biker
@@ -248,6 +248,7 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_biker)
+*/
 
 /////////////////////////////
 // BASE TUNNEL RAT OUTFIT //
