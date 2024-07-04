@@ -118,10 +118,10 @@
 
 	//let's find someone to kill.
 	var/turf/crimescene = locate(murderer.x + xdiff, murderer.y + ydiff, murderer.z)
-	var/mob/living/victim = locate() in crimescene
+	var/mob/living/victim = find_victim(crimescene)
 	if(!istype(victim))
 		crimescene = locate(murderer.x + xdiff * 2, murderer.y + ydiff * 2, murderer.z)
-		victim = locate() in crimescene
+		victim = find_victim(crimescene)
 
 		//so no victim?
 		if(!istype(victim))
@@ -129,3 +129,10 @@
 			return
 	murderer.ClickOn(victim, params)
 	return
+
+/// find the first living mob in a turf
+/proc/find_victim(turf/crimescene)
+	for(var/mob/living/bystander in crimescene)
+		if(bystander.stat != DEAD)
+			return bystander
+	return null
