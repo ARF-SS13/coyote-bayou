@@ -2,8 +2,8 @@
 	name = "wirecutters"
 	desc = "This cuts wires, and can repair damaged wires in robots."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "cutters_map"
-	item_state = "cutters"
+	icon_state = "basicwire"
+	item_state = "basicwire"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -23,6 +23,8 @@
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/wirecutters/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
@@ -157,9 +159,10 @@
 	desc = "Literally just a piece of bent and scraped junk metal, enough to cut something, but extremly unwieldly and worthless. Mainly just ripping with weight behind it."
 	item_state = "crudewire"
 	icon_state = "crudewire"
-	toolspeed = 6
+	toolspeed = 4
 	reskinnable_component = null
 
+/*
 /obj/item/wirecutters/basic
 	name = "basic cutters"
 	desc = "Almost sharpened cutters, maded of sharpened rusted metal and multiple parts."
@@ -167,12 +170,12 @@
 	item_state = "basicwire"
 	toolspeed = 2
 	reskinnable_component = null
+*/
 
 /obj/item/wirecutters/hightech
-	name = "advanced snapping device"
-	desc = "A mechanically assisted snapping device, capable of cutting anything."
-	icon_state = "advancedwire"
-	item_state = "advancedwire"
+	name = "prewar wirecutters"
+	desc = "A set of high quality machined cutters."
+	icon_state = "cutters_map"
+	item_state = "cutters"
 	toolspeed = 0.1
-	sharpness = SHARP_EDGED
 	reskinnable_component = null

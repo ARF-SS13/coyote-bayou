@@ -852,6 +852,8 @@
 
 /proc/safe_json_decode(string, default = list())
 	. = default
+	if(!istext(string))
+		return
 	if(isnull(string))
 		return
 	return json_decode(string)
@@ -953,3 +955,12 @@
 		return options
 	var/next = WRAP(varpos + 1, 1, LAZYLEN(options))
 	return LAZYACCESS(options, next)
+
+/proc/get_random(list/input)
+	return input[rand(1,input.len)]
+
+// returns input if it's not a list. otherwise, pick an item at random.
+/proc/get_random_if_list(input)
+	if(islist(input))
+		return get_random(input)
+	return input

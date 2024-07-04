@@ -24,6 +24,14 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
+/obj/item/ammo_casing/shotgun/buckshot/wide
+	name = "supermagnum shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	pellets = 20
+	variance = 25
+
 /obj/item/ammo_casing/shotgun/needlerbuckshot
 	name = "Crystal needler shotgun shell"
 	desc = "A small gauge shell filled with crystal needlers."
@@ -53,6 +61,11 @@
 		/datum/material/iron = (MATS_SHOTGUN_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_SHOTGUN_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
+
+/obj/item/ammo_casing/shotgun/improvised/simplemob
+	projectile_type = /obj/item/projectile/bullet/pellet/simplemob
+	pellets = SHOTGUN_PELLET_IMPROVISED * 2 // double the pellets, but half the damage of each, doubles the effectiveness of armor
+	variance = SHOTGUN_SPREAD_IMPROVISED * 3
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"

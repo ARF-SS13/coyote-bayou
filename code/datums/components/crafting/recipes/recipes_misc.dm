@@ -136,6 +136,69 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
+/datum/crafting_recipe/cheaphivebot
+	name = "Cheap Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/cheap
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/rods = 12,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list()
+	time = 30
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/hivebot
+	name = "Regular Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot
+	reqs = list(/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 15)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/rangedhivebot
+	name = "Ranged Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/ranged
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/factoryhivebot
+	name = "Industrial Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/factory
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/crystalhivebot
+	name = "Magical Hivebot"
+	result = /mob/living/simple_animal/advanced/hivebot/crystal
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 8,
+				/obj/item/stack/crafting/goodparts = 6,
+				/obj/item/stack/sheet/metal = 12,
+				/obj/item/stack/sheet/bluespace_crystal = 2,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
 	result = /obj/item/stock_parts/manipulator/pico
@@ -615,6 +678,13 @@
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
 
+/datum/crafting_recipe/scrap_pa/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
+
 /datum/crafting_recipe/scrap_pa_helm
 	name = "Powered Scrap Suit Helmet"
 	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider
@@ -629,6 +699,13 @@
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
 
+/datum/crafting_recipe/scrap_pa_helm/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
+
 /datum/crafting_recipe/repair_t45
 	name = "Refurbished T-45b Power Armor"
 	result = /obj/item/clothing/suit/armor/power_armor/t45b
@@ -642,6 +719,13 @@
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
 
+/datum/crafting_recipe/repair_t45/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
+
 /datum/crafting_recipe/repair_t45_helm
 	name = "Refurbished T-45b Power Armor Helmet"
 	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b
@@ -652,6 +736,13 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
 
 /datum/crafting_recipe/repair_t45/hotrod
 	name = "Refurbished T-45b Hotrod Power Armor"
@@ -666,6 +757,13 @@
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
 
+/datum/crafting_recipe/repair_t45/hotrod/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
+
 /datum/crafting_recipe/repair_t45_helm/hotrod
 	name = "Refurbished T-45b Hotrod Power Armor Helmet"
 	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
@@ -676,6 +774,13 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm/hotrod/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_PA_WEAR))
+			return TRUE
+	return FALSE
 
 
 /datum/crafting_recipe/teachboy
@@ -722,7 +827,7 @@
 	time = 300
 	reqs = list(
 				/obj/item/instrument/violin = 1,
-				/obj/item/stack/sheet/animalhide/deathclaw = 1,
+				/obj/item/stack/sheet/animalhide/aethergiest = 1,
 				/obj/item/reagent_containers/food/snacks/grown/horsenettle =1
 				)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)

@@ -688,7 +688,7 @@
 	if(!ismob(loc))
 		return
 	var/mob/M = loc
-	if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+	if(!M.incapacitated(allow_crit = TRUE) && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 
@@ -784,12 +784,14 @@
 	max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
 	max_volume = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	max_depth = 999
 
 /datum/component/storage/concrete/blender_machinery
 	max_items = 4 // battery, manipulator, core, + beaker. Beaker/core cant be removed, so really 2
 	max_w_class = STORAGE_BOX_DEFAULT_MAX_SIZE
 	max_combined_w_class = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
 	max_volume = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
+	max_depth = 999
 	rustle_sound = TRUE
 	quota = list(
 		/obj/item/stock_parts/manipulator = 1,

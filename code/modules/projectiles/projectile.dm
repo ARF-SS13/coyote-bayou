@@ -131,6 +131,7 @@
 	var/damage_mult = 1
 	/// dont touch this
 	var/finalmost_damage = 0
+	var/not_harmful = FALSE
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -183,6 +184,7 @@
 	/// bullet's general zone hit accuracy
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
+	var/is_player_projectile = FALSE
 
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
@@ -234,7 +236,7 @@
 /obj/item/projectile/proc/create_statblock()
 	var/list/my_block = list()
 	my_block["projectile_name"] = name || "Unnamed Projectile"
-	my_block["projectile_damage"] = damage || 0
+	my_block["projectile_damage"] = round(damage, 0.5) || 0
 	my_block["projectile_damage_type"] = damage_type || "brute"
 	my_block["projectile_flag"] = flag || "bullet"
 	my_block["projectile_stamina"] = stamina || 0
@@ -595,10 +597,21 @@
 	return hit_something
 
 /obj/item/projectile/proc/faction_check(atom/target)
-	if(!isliving(target) || !LAZYLEN(faction))
+	if(not_harmful)
+		return FALSE // its something that shouldnt be harmful
+	if(!(isliving(target) || istype(target, /obj/machinery/porta_turret)) || !LAZYLEN(faction))
 		return
 	var/mob/living/maybehit = target
-	return LAZYLEN(maybehit.faction & faction)
+	if(isliving(target))
+		if(maybehit.shoot_me)
+			return FALSE // so, turrets and livings dont share the same faction var
+		if(!maybehit.client && target == original)
+			return FALSE // We're trying to shoot that thing, and since it isnt a player, hit it!
+		if(isliving(firer))
+			var/mob/living/hootreshootre = firer
+			if(hootreshootre.enabled_combat_indicator && maybehit.enabled_combat_indicator)
+				return FALSE // if they're both in combat, they're not friends, get shootabie
+	return LAZYLEN(maybehit.faction & faction) // but they're named the same so its just fine
 
 
 /// Check if the projectile is Super Effective on the target!
@@ -653,6 +666,8 @@
 	var/list/mob/living/possible_mobs = typecache_filter_list(T, GLOB.typecache_mob)
 	var/list/mob/mobs = list()
 	for(var/mob/living/M in possible_mobs)
+		// if(M.shoot_me && is_player_projectile)
+		// 	return M
 		if(!can_hit_target(M, permutated, M == original, TRUE))
 			continue
 		mobs += M

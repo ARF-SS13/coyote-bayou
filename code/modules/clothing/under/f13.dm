@@ -1284,7 +1284,7 @@
 
 /obj/item/clothing/under/f13/tribe_Hhunter
 	name = "Razorclaw robes"
-	desc = "Tanned leather robes, decorated with bones of deathclaws and marked with the great machine spirit of earth."
+	desc = "Tanned leather robes, decorated with bones of aethergiests and marked with the great machine spirit of earth."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "hhunterrags"
 	item_state = "hhunterrags"

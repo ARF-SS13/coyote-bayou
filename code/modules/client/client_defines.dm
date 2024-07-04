@@ -35,6 +35,7 @@
 	var/visual_delay = 0
 
 	var/last_move = 0
+	var/last_meaningful_action = 0
 	var/area			= null
 
 	/// Last time we Click()ed. No clicking twice in one tick!

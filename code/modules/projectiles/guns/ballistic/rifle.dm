@@ -35,6 +35,7 @@
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -149,7 +150,7 @@
 	item_state = "lever22short"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
@@ -563,7 +564,7 @@
 	name = "Mini-mosin"
 	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/twentytwo
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 
 	init_firemodes = list(
@@ -754,7 +755,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // T1 or T0 just make it a downgrade to the sawed off hunting rifle
 	init_recoil = RIFLE_RECOIL(3, 2) // Say goodbye your to kneecaps chucklenuts

@@ -254,7 +254,7 @@
 	cost = 5000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
-
+/*
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"
 	desc = "Try your luck with these highly secure loot boxes! Solve the lock, win great prizes! WARNING: EXPLOSIVE FAILURE."
@@ -264,7 +264,7 @@
 	crate_name = "abandoned crate"
 	crate_type = /obj/structure/closet/crate/large
 	dangerous = TRUE
-
+*/
 /datum/supply_pack/misc/potted_plants
 	name = "Potted Plants Crate"
 	desc = "Spruce up the station with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
@@ -308,6 +308,18 @@
 //////////////////////////// Caps and other //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+// Let me explain something to you, fellow coder
+// The shuttle should be the town's lifeline.
+//
+// However, enterprising individuals shouldn't be rewarded for snuffing that lifeline.
+// This IS a multiplayer game afterall.
+//
+// As such, consider your actions wisely. 
+// Coins conversion, or cool shit in the shuttle?
+// -
+// I've chosen here. It would be better for the majority if an overachieving minority didn't have complete control over what can be bought or sold.
+
+/*
 /datum/supply_pack/misc/capstwofifty
 	name = "Coins Conversion 250"
 	desc = "Converts credits into Coins! 250 Version"
@@ -321,6 +333,8 @@
 	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
 	crate_name = "coins crate 2"
+*/ 
+
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Misc + Decor ////////////////////////////////////

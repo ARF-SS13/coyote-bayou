@@ -125,13 +125,13 @@ superlagg says: cool story, oranges
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
 	parry_stamina_cost = 10 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 10 // small parry window
+	parry_time_active = 15 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
-	parry_efficiency_to_counterattack = 120
+	parry_efficiency_to_counterattack = 20 // unless you completely butcher your parry, you will riposte
 	parry_efficiency_considered_successful = 0		// VERY generous
 	parry_efficiency_perfect = 120
 	parry_efficiency_perfect_override = list()
@@ -676,9 +676,9 @@ superlagg says: cool story, oranges
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "pitchfork"
 	desc = "A simple tool used for moving hay."
-	force = 25
+	force = 40
 	throwforce = 25
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "impaled", "pierced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED

@@ -3,10 +3,10 @@
 
 //primary vars
 /datum/supplykit_item/energy/
-	name = 
-	desc = 
-	item = 
-	cost = 
+	name =
+	desc =
+	item =
+	cost =
 
 //other vars
 	surplus = 100 //if set below 100, reduces chances of being in the surplus crate
@@ -108,19 +108,36 @@
 	name = "Covenant Plasma Pistol"
 	desc = "An alien looking plasma pistol with an internal self charging battery."
 	item = /obj/item/gun/energy/laser/plasma/covpistol
-	cost = 40
+	cost = 20
 
 /datum/supplykit_item/energy/plasmarifle
 	name = "Covenant Plasma Rifle"
 	desc = "An alien looking plasma rifle with an internal self charging battery."
 	item = /obj/item/gun/energy/laser/plasma/plasmacov
-	cost = 40
+	cost = 20
 
 /datum/supplykit_item/energy/repeater
 	name = "Repeating Blaster"
-	desc = "A rapidfire energy blaster with an internal battery. It can be cranked to recharge"
+	desc = "A repeating blaster that shoots very quickly. Uses very low power blaster bolts. Can be cranked to be recharged."
 	item = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
 	cost = 40
+
+/datum/supplykit_item/energy/shocker
+	name = "Shock Autoblaster"
+	desc = "A repeating blaster that uses low power tesla shocks. Can be cranked to recharge."
+	item = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock
+	cost = 40
+
+/datum/supplykit_item/energy/smuggledhos
+	name = "Smuggled HOS Pistol"
+	desc = "A smuggled HOS pistol from a far off space station. Due to a size restricted capacitor to make it fit discreetly in cargo, it takes five seconds to charge."
+	item = /obj/item/gun/energy/laser/tg/recharger/loadout
+	cost = 40 // 5 second long self charge + 100 dps
+
+/datum/supplykit_item/energy/smuggledhos/captain
+	name = "Smuggled Antique Laser Pistol"
+	desc = "A smuggled Captain's antique pistol from a far off space station. Statistically the same as the Smuggled HOS Pistol."
+	item = /obj/item/gun/energy/laser/tg/recharger/loadout/captainskin
 
 /datum/supplykit_item/energy/wattz
 	name = "Wattz 1000"

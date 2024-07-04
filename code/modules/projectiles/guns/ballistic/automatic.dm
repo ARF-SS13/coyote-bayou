@@ -1092,11 +1092,11 @@
 /obj/item/gun/ballistic/automatic/m1carbine/compact/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		w_class = WEIGHT_CLASS_BULKY
+		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		to_chat(user, "You fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
@@ -1252,7 +1252,6 @@
 	)
 	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	max_upgrades = 5 // moddable to fuck and fack
 	can_bayonet = TRUE
 	bayonet_state = "bayonetstraight"
 	knife_x_offset = 22
@@ -1288,7 +1287,6 @@
 		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm200
 	)
-	max_upgrades = 3
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
 	knife_x_offset = 22
@@ -1483,7 +1481,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	/// sets if the gun is turnt
 	var/turnt = FALSE
-	max_upgrades = 6
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -1726,8 +1723,8 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/ww1selfloader // tier above the G43 rifle. Powerful yet slow.
-	name = " Selbstlader 1906 Rifle"
-	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patened back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
+	name = "Selbstlader 1906 Rifle"
+	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patented back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
 	icon_state = "lugerrifle"
 	item_state = "lugerrifle"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2778,7 +2775,7 @@
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "Ak74u"
-	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO, this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, hits a shy bit harder, slower firerate, and allows much easier carry at the cost of higher recoil."
+	desc = "A AK74u assault rifle. Rechambered in 5.56x45 NATO, this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, hits a shy bit harder, slower firerate, and allows much easier carry at the cost of higher recoil."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2959,6 +2956,7 @@
 	can_flashlight = FALSE
 	zoom_factor = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 /obj/item/gun/ballistic/automatic/fnfal/ak47 //slow ROF, hits like a truck. Slow counterpart to the G3
 	name = "Retro AK-47"
 	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture and a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines."
@@ -3256,7 +3254,6 @@
 		/datum/firemode/automatic/rpm75
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-	max_upgrades = 2
 	can_suppress = TRUE
 	can_bayonet = FALSE
 
@@ -3349,7 +3346,7 @@
 	item_state = "R84"
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	init_mag_type = /obj/item/ammo_box/magazine/lmg
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -3399,7 +3396,7 @@
 	item_state = "lewis"
 	mag_type = /obj/item/ammo_box/magazine/lewis
 	init_mag_type = /obj/item/ammo_box/magazine/lewis/l47
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = LMG_RECOIL(1.2, 1.2)
@@ -3431,7 +3428,7 @@
 	item_state = "lanoe"
 	mag_type = /obj/item/ammo_box/magazine/lewis
 	init_mag_type = /obj/item/ammo_box/magazine/lewis
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = LMG_RECOIL(1.2, 1.2)
@@ -3450,7 +3447,7 @@
 	item_state = "bren"
 	mag_type = /obj/item/ammo_box/magazine/bren
 	init_mag_type = /obj/item/ammo_box/magazine/bren
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = LMG_RECOIL(1.2, 1.2)
@@ -3469,7 +3466,7 @@
 	item_state = "bren"
 	mag_type = /obj/item/ammo_box/magazine/bren
 	init_mag_type = /obj/item/ammo_box/magazine/bren
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T3
 	init_recoil = LMG_RECOIL(1.2, 1.2)
@@ -3526,7 +3523,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/rpd
 	init_mag_type = /obj/item/ammo_box/magazine/rpd
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -3560,7 +3557,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	init_mag_type = /obj/item/ammo_box/magazine/lmg
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.7
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
@@ -3617,7 +3614,7 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/mm308
 	init_mag_type = /obj/item/ammo_box/magazine/mm308
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -3748,7 +3745,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
 	init_mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_REPEATER
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -3838,7 +3835,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
@@ -3867,7 +3864,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
 	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T4
 	init_recoil = HMG_RECOIL (1.4 , 1.5)
@@ -3947,7 +3944,7 @@
 	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	init_mag_type = /obj/item/ammo_box/magazine/m2mm
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE

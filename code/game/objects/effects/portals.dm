@@ -56,7 +56,7 @@
 		user.forceMove(get_turf(src))
 		return TRUE
 
-/obj/effect/portal/proc/on_entered(atom/movable/AM, oldloc, force_stop = 0)
+/obj/effect/portal/proc/on_entered(datum/source, atom/movable/AM, oldloc, force_stop = 0)
 	SIGNAL_HANDLER
 	if(force_stop)
 		return
@@ -64,6 +64,13 @@
 		return
 	if(linked && (get_turf(oldloc) == get_turf(linked)))
 		return
+	if(ishostile(AM))
+		var/mob/living/simple_animal/hostile/HAM = AM
+		if(!HAM.ckey)
+			var/turf/toss_here = get_edge_target_turf(src, pick(GLOB.alldirs))
+			say("HOSTILE ENTITY DETECTED: REJECTING.")
+			HAM.throw_at(toss_here, 200, 2, null, TRUE, TRUE)
+			return
 	if(!teleport(AM))
 		return
 
@@ -71,10 +78,21 @@
 	return
 
 /obj/effect/portal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(get_turf(user) == get_turf(src))
+	var/turf/my_turf = get_turf(src)
+	if(istype(user.pulling, /mob/living))
+		var/mob/living/pullee = user.pulling
+		if(get_turf(pullee) == my_turf)
+			user.stop_pulling()
+			teleport(pullee)
+			return
+		if(Adjacent(pullee))
+			user.Move_Pulled(my_turf)
+			return
+	if(get_turf(user) == my_turf)
 		teleport(user)
+		return
 	if(Adjacent(user))
-		user.forceMove(get_turf(src))
+		user.Move(my_turf, get_dir(user, src))
 
 /obj/effect/portal/Initialize(mapload, _lifespan = 0, obj/effect/portal/_linked, automatic_link = FALSE, turf/hard_target_override, atmos_link_override)
 	. = ..()
@@ -152,7 +170,7 @@
 		return ..()
 
 /obj/effect/portal/proc/teleport(atom/movable/M, force = FALSE)
-	if(!force && (!istype(M) || iseffect(M) || (ismecha(M) && !mech_sized) || (!isobj(M) && !ismob(M)))) //Things that shouldn't teleport.
+	if(!force && (!istype(M) || iseffect(M))) //Things that shouldn't teleport.
 		return
 	var/turf/real_target = get_link_target_turf()
 	if(!istype(real_target))

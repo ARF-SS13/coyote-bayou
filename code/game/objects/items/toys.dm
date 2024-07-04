@@ -869,7 +869,7 @@
 /obj/item/toy/cards/deck/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/M = usr
-	if(!istype(M) || usr.incapacitated() || usr.lying)
+	if(!istype(M) || usr.incapacitated(allow_crit = TRUE) || usr.lying)
 		return
 	if(Adjacent(usr))
 		if(over_object == M && loc != M)
@@ -967,7 +967,7 @@
 /obj/item/toy/cards/cardhand/proc/check_menu(mob/living/user)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated())
+	if(user.incapacitated(allow_crit = TRUE))
 		return FALSE
 	return TRUE
 

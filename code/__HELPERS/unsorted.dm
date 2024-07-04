@@ -15,8 +15,6 @@
 	var/textb = copytext(HTMLstring, 6, 8)
 	return rgb(255 - hex2num(textr), 255 - hex2num(textg), 255 - hex2num(textb))
 
-//Better performant than an artisanal proc and more reliable than Turn(). From TGMC.
-#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
 //Returns location. Returns null if no location was found.
 /proc/get_teleport_loc(turf/location,mob/target,distance = 1, density = FALSE, errorx = 0, errory = 0, eoffsetx = 0, eoffsety = 0)
 /*
@@ -1199,7 +1197,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /mob/dview/Destroy(force = FALSE)
 	if(!ready_to_die)
-		stack_trace("ALRIGHT WHICH FUCKER TRIED TO DELETE *MY* DVIEW?")
+		stack_trace("ALRIGHT WHICH frickER TRIED TO DELETE *MY* DVIEW?")
 
 		if (!force)
 			return QDEL_HINT_LETMELIVE
@@ -1707,6 +1705,34 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(clint)
 			return clint
 
+/// Takes in a client, mob, ckey, quid, or even prefs, and returns a mob
+/proc/extract_mob(something)
+	if(isclient(something))
+		var/client/clint = something
+		return clint.mob
+	if(ismob(something))
+		return something
+	if(istext(something))
+		var/mob/Mm = locate(something)
+		if(Mm) // if its a REF()
+			return Mm 
+		var/client/C = LAZYACCESS(GLOB.directory, something)
+		if(C)
+			return C.mob
+		var/mob/critter = SSeconomy.quid2mob(something)
+		if(critter)
+			return critter
+	if(istype(something, /datum/preferences))
+		var/datum/preferences/P = something
+		return P.parent.mob
+
+/// takes in something that may have preferences, and returns their quid, wot wot
+/proc/extract_quid(something)
+	var/datum/preferences/P = extract_prefs(something)
+	if(!P)
+		return
+	return P.quester_uid
+
 /// Takes in a client, mob, or ckey, and returns the ckey
 /proc/get_ckey(clientthing)
 	var/client/clint
@@ -1799,7 +1825,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/index = GaussianReacharound(mean, stddev, min, max)
 	return index
 
-/// takes in fuckin anything and outputs if its a player
+/// takes in frickin anything and outputs if its a player
 /proc/isplayer(imput)
 	if(istext(imput))
 		return !!LAZYACCESS(GLOB.directory, imput)

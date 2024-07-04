@@ -510,6 +510,8 @@ SUBSYSTEM_DEF(job)
 			to_chat(M, "<b>[job.custom_spawn_text]</b>")
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(M, span_notice("<B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B>"))
+		if(job.extrastuff != "")
+			to_chat(M, "<FONT color='green'><b>[job.extrastuff]</b>")
 	//if(ishuman(H))
 		//var/mob/living/carbon/human/wageslave = H
 		//to_chat(M, "<b><span class = 'big'>Your account ID is [wageslave.account_id].</span></b>")

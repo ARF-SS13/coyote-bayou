@@ -321,6 +321,22 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if(lums <= 0.6)
 		REMOVE_TRAIT(quirk_holder, TRAIT_LIGHT_SENSITIVITY, TRAIT_GENERIC)
 
+/datum/quirk/lightburning
+	name = "Shadow Creature"
+	desc = "You are a shadey creature! Bright lights burn you, the shadows mend you."
+	value = -33 // This can kill you, which is extremely bad, and makes city play somewhat impossible
+	category = "Health Quirks"
+	mechanics = "While in the light, you slowly wither away, but the reverse happens in the dark, healing you and giving you nutrition."
+	conflicts = list(/datum/quirk/nyctophobia)
+
+/datum/quirk/lightburning/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddElement(/datum/element/photosynthesis, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.2, 0.2) // Set it a bit higher, since finding true dark areas (totally 0) is near impossible
+
+/datum/quirk/lightburning/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.RemoveElement(/datum/element/photosynthesis, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.2, 0.2)
+
 /datum/quirk/nonviolent
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
@@ -1506,7 +1522,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "For a reason or another, you're unable to wear medium or heavy armour"
 	value = -35
 	category = "Functional Quirks"
-	mechanics = "You can't wear medium, heavy or power armor anymore."
+	mechanics = "You can't wear any armor that has more than 2 DT or 35 DR against melee, bullets, or lasers."
 	conflicts = list(
 		/datum/quirk/pa_wear
 	)

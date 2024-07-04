@@ -49,7 +49,7 @@ ty ilu - bear
 	narrate = "This road, if you follow it long enough, goes around the city of Texarkana in a slightly broken but very big loop. You don't know why it's like that, but it sure is. Rumors say that this path, especially on the north western portion, are particularly dangerous."
 
 /area/f13/wasteland/city/nash/downtown
-	narrate = "The actual city of Texarkana, and you're knee deep in it. This town is not safe. Often filled with raiders, poisonous monsters, and even the occasional deathclaw. You need to keep your wits about you, or else you're going to wish you were just hurting. Remember, Nash is to the West."
+	narrate = "The actual city of Texarkana, and you're knee deep in it. This town is not safe. Often filled with raiders, poisonous monsters, and even the occasional aethergiest. You need to keep your wits about you, or else you're going to wish you were just hurting. Remember, Nash is to the West."
 
 
 /area/f13/wasteland/city/nash/redriverdepotroad
@@ -144,3 +144,12 @@ ty ilu - bear
 
 /area/f13/building/coyote/safe/redwater
 	name = "Redwater Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/fortredwater
+	name = "Fort Redwater Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/den
+	name = "Den Portal-Storm Shelter"
+
+/area/f13/building/coyote/safe/trats
+	name = "Tunnel Rats Portal-Storm Shelter"

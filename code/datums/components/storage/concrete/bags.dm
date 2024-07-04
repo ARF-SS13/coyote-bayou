@@ -51,12 +51,7 @@
 	. = ..()
 	can_hold = typecacheof(list(/obj/item/salvage))
 	can_hold |= GLOB.storage_salvage_storage_bag_can_hold
-
-/// salvage storage bag
-/datum/component/storage/concrete/bag/salvage/storage/Initialize()
-	. = ..()
-	can_hold = GLOB.storage_salvage_storage_bag_can_hold
-	limited_random_access = FALSE
+	can_hold |= typecacheof(list(/obj/item/stock_parts))
 
 /// Casing bag
 /datum/component/storage/concrete/bag/casing

@@ -4,6 +4,17 @@
 	slot = SLOT_IN_BACKPACK
 	cost = 1
 
+/datum/gear/backpack/flashlight
+	name = "flashlight"
+	path = /obj/item/flashlight
+	cost = 0
+
+/datum/gear/backpack/torch
+	name = "torch"
+	path = /obj/item/flashlight/flare/torch
+	cost = 0
+
+/*
 /datum/gear/backpack/redwater
 	name = "contraband radio"
 	path = /obj/item/radio/redwater
@@ -13,6 +24,7 @@
 	name = "contraband keycard"
 	path = /obj/item/card/id/denid
 	cost = 0
+*/
 
 /datum/gear/backpack/tattoo_kit
 	name = "Tattoo kit"
@@ -777,7 +789,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/lesbian
-	name  = "Lesbian Pride Pin"
+	name  = "Lesbiab Pride Pin"
 	path = /obj/item/clothing/accessory/pride/lesbian
 	cost = 0
 
@@ -795,3 +807,8 @@
 	name  = "Cowboy Vest"
 	path = /obj/item/clothing/accessory/sheriffvest
 	cost = 0
+
+/datum/gear/backpack/braceletpair
+	name = "Bracelet (pair)"
+	path = /obj/item/clothing/accessory/braceletpair
+	cost = 1

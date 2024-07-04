@@ -1,10 +1,10 @@
 //Bluespace crystals, used in telescience and when crushed it will blink you to a random turf.
 /obj/item/stack/ore/bluespace_crystal
-	name = "Ultracite Ore"
+	name = "unrefined Netherium cluster"
 	desc = "A radioactive glass-like ore, it houses an incredibly potent source of energy."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "bluespace_crystal"
-	singular_name = "ultracite ore"
+	singular_name = "unrefined Netherium cluster"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
 	points = 50
@@ -14,7 +14,7 @@
 	merge_type = /obj/item/stack/ore/bluespace_crystal
 
 /obj/item/stack/ore/bluespace_crystal/refined
-	name = "refined ultracite"
+	name = "refined Netherium cluster"
 	points = 0
 	refined_type = null
 	merge_type = /obj/item/stack/ore/bluespace_crystal/refined
@@ -32,8 +32,8 @@
 
 //Artificial bluespace crystal, doesn't give you much research.
 /obj/item/stack/ore/bluespace_crystal/artificial
-	name = "Artificial Ultracite"
-	desc = "An artificially made Ultracite, it looks delicate."
+	name = "Artificial Netherium cluster"
+	desc = "An artificially made Netherium cluster, it looks delicate."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT*0.5)
 	blink_range = 4 // Not as good as the organic stuff!
 	points = 0 //nice try
@@ -43,12 +43,12 @@
 
 //Polycrystals, aka stacks
 /obj/item/stack/sheet/bluespace_crystal
-	name = "Stable Ultracite"
+	name = "Stable Netherium crystal cluster"
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "polycrystal"
 	item_state = "sheet-polycrystal"
-	singular_name = "Stable Ultracite"
-	desc = "A stable ultracite, made of fused-together smelted ore. You could probably break one off."
+	singular_name = "Netherium crystal cluster"
+	desc = "A stable Netherium crystal cluster, made of fused-together smelted ore. You could probably break one off."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
 	attack_verb = list("futured", "scienced", "crystalized", "empowered", "energized")
 	novariants = TRUE
@@ -58,7 +58,7 @@
 	merge_type = /obj/item/stack/sheet/bluespace_crystal
 
 /obj/item/stack/sheet/bluespace_crystal/attack_self(mob/user)// to prevent the construction menu from ever happening
-	to_chat(user, span_warning("You cannot crush the ultracite in-hand, try breaking one off."))
+	to_chat(user, span_warning("You cannot crush the cluster in-hand, try breaking one off."))
 
 /obj/item/stack/sheet/bluespace_crystal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.get_inactive_held_item() == src)
@@ -68,9 +68,9 @@
 		user.put_in_hands(BC)
 		use(1)
 		if(!amount)
-			to_chat(user, span_notice("You break the final piece of ultracite off."))
+			to_chat(user, span_notice("You break the final piece of the Netherium crystal cluster off."))
 		else
-			to_chat(user, span_notice("You break off a piece of ultracite."))
+			to_chat(user, span_notice("You break off a piece from the Netherium crystal cluster."))
 	else
 		..()
 

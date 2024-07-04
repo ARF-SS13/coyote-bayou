@@ -168,6 +168,11 @@
 	icon_state = "avali"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/ears/mam_ears/eros/avali/single
+	name = "Avali, single, alt"
+	icon_state = "avalisingle"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/ears/mam_ears/eros/faceant // sarcoph @ hyperstation, march 2022
 	name = "Face Antennae (Hyper)"
 	icon_state = "faceant"
@@ -372,3 +377,37 @@
 	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
 	icon_state = "sylveon"
 	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/mam_ears/pika
+	name = "pikachu"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "pika"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/pokebunny
+	name = "Pokebunny"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "pokebunny"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/lopunny
+	name = "Lopunny"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "lopunny"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/spinda
+	name = "spinda"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "spinda"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/hare
+	name = "hare"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "hare"
+	matrixed_sections = MATRIX_RED_GREEN
+
+
+
+

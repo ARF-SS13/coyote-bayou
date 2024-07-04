@@ -35,7 +35,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp // ECP has 20,000 charge, shot drain is 2000. This gives it 10 shots vs a rifle's 15.
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 
@@ -107,7 +107,7 @@
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	custom_materials = list(/datum/material/iron=2000)
-	silenced = TRUE
+	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -120,7 +120,6 @@
 	unique_frequency = TRUE
 	can_flashlight = 0
 	max_mod_capacity = 0 // TG Kinetic Accelerator Mods
-	max_upgrades = 1 // ERIS weapon mods
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
@@ -143,10 +142,12 @@
 	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/sling)
 	weapon_weight = GUN_ONE_HAND_ONLY
+	w_class = WEIGHT_CLASS_TINY
 	force = 5
 	force_unwielded = 5
 	force_wielded = 10
 	throwforce = 5
+	silenced = TRUE
 	icon = 'modular_coyote/icons/objects/bows.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -161,11 +162,12 @@
 	name = "sling staff"
 	desc = "A simple piece of leather strapped to a staff allowing it greater damage both in melee and at range. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
 	weapon_weight = GUN_TWO_HAND_ONLY
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 25
 	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 25
+	silenced = TRUE
 	icon_state = "slingstaff"
 	overheat_time = 40 // 4.0 seconds
 	init_recoil = LASER_CARBINE_RECOIL(2, 1)

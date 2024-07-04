@@ -86,7 +86,7 @@
 		)
 
 /obj/item/clothing/mask/gas/clown_hat/ui_action_click(mob/user)
-	if(!istype(user) || user.incapacitated())
+	if(!istype(user) || user.incapacitated(allow_crit = TRUE))
 		return
 
 	var/static/list/options = list("True Form" = "clown", "The Feminist" = "sexyclown", "The Madman" = "joker",
@@ -94,7 +94,7 @@
 
 	var/choice = show_radial_menu(user,src, clownmask_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
 
-	if(src && choice && !user.incapacitated() && in_range(user,src))
+	if(src && choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		icon_state = options[choice]
 		user.update_inv_wear_mask()
 		for(var/X in actions)
@@ -133,14 +133,14 @@
 		)
 
 /obj/item/clothing/mask/gas/mime/ui_action_click(mob/user)
-	if(!istype(user) || user.incapacitated())
+	if(!istype(user) || user.incapacitated(allow_crit = TRUE))
 		return
 
 	var/static/list/options = list("Blanc" = "mime", "Triste" = "sadmime", "Effrayé" = "scaredmime", "Excité" ="sexymime")
 
 	var/choice = show_radial_menu(user,src, mimemask_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
 
-	if(src && choice && !user.incapacitated() && in_range(user,src))
+	if(src && choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		icon_state = options[choice]
 		user.update_inv_wear_mask()
 		for(var/X in actions)

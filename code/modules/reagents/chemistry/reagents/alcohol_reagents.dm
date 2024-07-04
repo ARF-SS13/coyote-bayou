@@ -268,6 +268,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		. = 1
 	return ..() || .
 
+/datum/reagent/consumable/ethanol/vilk
+	name = "Vilk"
+	description = "A worrisome coctktail of vodka and milk, surprisingly effective at treating radiation poisoning. For the Mommyland!"
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	boozepwr = 35
+	taste_description = "bitterness and cream"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of vilk"
+	glass_desc = "A worrisome coctktail of vodka and milk, surprisingly effective at treating radiation poisoning. For the Mommyland!"
+
+/datum/reagent/consumable/ethanol/vilk/on_mob_life(mob/living/carbon/M)
+	M.radiation = max(M.radiation-4,0)
+	return ..()
+
 /datum/reagent/consumable/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
 	description = "Made for a woman, strong enough for a man."

@@ -644,6 +644,78 @@
 	foodtype = GRAIN | JUNKFOOD | SUGAR
 	dunkable = TRUE
 
+/obj/item/reagent_containers/food/snacks/sugarcookie/tree
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_tree"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
+/obj/item/reagent_containers/food/snacks/sugarcookie/bear
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_bear"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
+/obj/item/reagent_containers/food/snacks/sugarcookie/santa
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_santa"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
+/obj/item/reagent_containers/food/snacks/sugarcookie/stocking
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_stocking"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
+/obj/item/reagent_containers/food/snacks/sugarcookie/present
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_present"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
+/obj/item/reagent_containers/food/snacks/sugarcookie/cane
+	name = "sugar cookie"
+	desc = "Just like your little sister used to make."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "sugarcookie_cane"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
 /obj/item/reagent_containers/food/snacks/chococornet
 	name = "chocolate cornet"
 	desc = "Which side's the head, the fat end or the thin end?"
@@ -907,3 +979,143 @@
 	tastes = list("peanut butter" = 1, "peanuts" = 1, "cream" = 1)
 	foodtype = GRAIN | JUNKFOOD | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/cheesepierogi
+	name = "cheese pierogi"
+	desc = "Cheesy and potato goodness."
+	icon_state = "cheese_pierogi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("pastry" = 1, "potatos" = 1, "cheese")
+	foodtype = GRAIN | DAIRY
+
+/obj/item/reagent_containers/food/snacks/meatpierogi
+	name = "meat pierogi"
+	desc = "meaty, cheesy and potato goodness."
+	icon_state = "meat_pierogi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("pastry" = 1, "potatos" = 1, "cheese", "meat")
+	foodtype = GRAIN | DAIRY | MEAT
+
+/obj/item/reagent_containers/food/snacks/meatcalzone
+	name = "meat calzone"
+	desc = "stuffed with goodness!"
+	icon_state = "meat_calzone"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	filling_color = "#F2CE91"
+	tastes = list("baked dough" = 1, "cheese", "meat")
+	foodtype = GRAIN | DAIRY | MEAT
+
+/obj/item/reagent_containers/food/snacks/vegetariancalzone
+	name = "vegetarian calzone"
+	desc = "stuffed with goodness!"
+	icon_state = "vegetarian_calzone"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	filling_color = "#F2CE91"
+	tastes = list("baked dough" = 1, "cheese", "Veggies")
+	foodtype = GRAIN | DAIRY
+
+/obj/item/reagent_containers/food/snacks/carameltruffle
+	name = "caramel truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "caramel_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "caramel")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/chocolatetruffle
+	name = "chocolate truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "chocolate_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "cream")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/peanuttruffle
+	name = "peanut truffle"
+	desc = "So chocolatey and creamy!"
+	icon_state = "chocolate_truffle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "peanut")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/peanutbuttercup
+	name = "peanut butter cup"
+	desc = "So chocolatey and creamy!"
+	icon_state = "peanut_butter_cup"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("chocolate" = 1, "peanut")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/thumbprintcookie
+	name = "thumbprint cookie"
+	desc = "A sweet and delicous cookie!"
+	icon_state = "thumbprint_cookie"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/snickerdoodle
+	name = "snickerdoodle cookie"
+	desc = "A sweet and delicous cookie!"
+	icon_state = "snickerdoodle"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/macaronred
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_1"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/macaronyellow
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_2"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/macaronpurple
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_3"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/macarongreen
+	name = "macaron"
+	desc = "A sweet soft sugar based confection!"
+	icon_state = "macaron_4"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F2CE91"
+	tastes = list("sugar" = 1, "sweetness")
+	foodtype = SUGAR | DAIRY

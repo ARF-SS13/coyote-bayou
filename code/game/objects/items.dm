@@ -151,6 +151,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///What dye registry should be looked at when dying this item; see washing_machine.dm
 	var/dying_key
 
+	var/force_harmclick = FALSE
+
 	//Grinder vars
 	var/list/grind_results //A reagent list containing the reagents this item produces when ground up in a grinder - this can be an empty list to allow for reagent transferring only
 	var/list/juice_results //A reagent list containing blah blah... but when JUICED in a grinder!
@@ -630,7 +632,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr) || usr.lying)
+	if(usr.incapacitated(allow_crit = TRUE) || !Adjacent(usr) || usr.lying)
 		return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota

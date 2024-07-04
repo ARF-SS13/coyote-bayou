@@ -67,6 +67,7 @@
 	if(thealert.timeout)
 		addtimer(CALLBACK(src,PROC_REF(alert_timeout), thealert, category), thealert.timeout)
 		thealert.timeout = world.time + thealert.timeout - world.tick_lag
+	// thealert.setup()
 	return thealert
 
 /mob/proc/alert_timeout(atom/movable/screen/alert/alert, category)
@@ -107,6 +108,23 @@
 
 /atom/movable/screen/alert/MouseExited()
 	closeToolTip(usr)
+
+// /atom/movable/screen/alert/progbar
+// 	name = "Cool Timed Alert"
+// 	desc = "This alert has a progress bar associated with it. Could be a timer, could be charge, could be anything."
+// 	icon_state = "not_enough_oxy"
+// 	var/maxvalue = 100
+// 	var/currentvalue = 0
+// 	var/minvalue = 0
+// 	var/is_timer = FALSE
+// 	var/processes = FALSE
+// 	var/mybar
+
+// /atom/movable/screen/alert/progbar/proc/setup()
+// 	if(!mob_viewer)
+// 		return
+// 	mybar = SSprogress_bars.add_bar(src, mob_viewer, maxvalue, FALSE, FALSE)
+
 
 
 //Gas alerts
@@ -305,6 +323,48 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	L.MarkResistTime()
 	if(CHECK_MOBILITY(L, MOBILITY_MOVE))
 		return L.resist_fire() //I just want to start a flame in your hearrrrrrtttttt.
+
+/atom/movable/screen/alert/in_crit
+	name = "You've Been Downed!"
+	desc = "Oh no! You've been injured so badly that you're unable to stand up! Hostile mobs will continue to attack you, until you've taken a few hits while downed, then they'll leave you alone until you're healed. \
+		Your ability to fight back is severely hampered: You're unable to punch, melee attacks will deal 20% less damage, and guns will be wildly inaccurate. Furthermore, if you perform a hostile act (like stabbing someone or shooting a gun), enemy mobs will immediately start attacking you again (for a short time). \
+		You are not helpless though! You can still crawl around, and even use items and weapons while downed. You can use medical supplies on yourself, sleep to heal slowly, or call for help over the radio. If you still have it, you can use your Hand Teleporter to open a portal and either crawl through it to safety, or call for help. \
+		Click this button to open a portal back to town."
+	icon_state = "paralysis"
+
+/atom/movable/screen/alert/in_crit/Click()
+	var/mob/living/L = usr
+	if(!istype(L))
+		return
+	if(GLOB.clicky_portal_pairs[L.ckey] >= world.time)
+		to_chat(L, span_alert("You already have a portal open! Give it a few seconds to close before opening another one."))
+		return
+	var/turf/there = coords2turf(GLOB.home_portal_coords)
+	if(!there)
+		var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
+		there = get_turf(O)
+		if(!there)
+			to_chat(L, span_alert("The place where the portal should go isnt there! This is probably a bug!"))
+			return
+	GLOB.clicky_portal_pairs[L.ckey] = world.time + 20 SECONDS
+	var/turf/here = get_turf(L)
+	var/list/obj/effect/portal/created = create_portal_pair(here, there, 30 SECONDS, 3, null, TRUE)
+	if(!(LAZYLEN(created) == 2))
+		return
+	try_move_adjacent(created[1], L.dir)
+	var/obj/effect/portal/portal = created[1]
+	portal.say("EMERGENCY TOWN PORTAL ENGAGED.")
+	
+GLOBAL_LIST_EMPTY(clicky_portal_pairs)
+GLOBAL_VAR(home_portal_coords)
+
+/obj/effect/landmark/safe_home
+	name = "Default Teleporter Beacon System Area Station area"
+	desc = "This is the default place for teleporter portals to appear. neat!"
+
+/obj/effect/landmark/safe_home/Initialize()
+	. = ..()
+	GLOB.home_portal_coords = atom2coords(src)
 
 
 //ALIENS

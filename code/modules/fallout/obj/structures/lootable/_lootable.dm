@@ -376,8 +376,8 @@ GLOBAL_LIST_INIT(lootable_types, list(
 /obj/structure/lootable/hidden_stash
 	name = "hidden stash"
 	desc = "Maybe I can find something to wear in here..."
-	icon = 'icons/fallout/objects/decals.dmi'
-	icon_state = "ventrusty"
+	icon = 'modular_coyote/icons/objects/paxilmaniacpak/loot_structures.dmi'
+	icon_state = "cache"
 	loot_tier = LOOT_TIER_MID
 	loot_type = LOOT_HIDDEN_STASH
 	var/randomize_loot_tier = TRUE

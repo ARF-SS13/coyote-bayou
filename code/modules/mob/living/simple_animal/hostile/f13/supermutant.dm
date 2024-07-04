@@ -25,7 +25,6 @@
 		"yells"
 		)
 	move_to_delay = 5
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	emote_taunt_sound = list(
@@ -171,13 +170,14 @@
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
+	color = "#3344BE"
 	ranged = 1
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 
 	health = 130
-	retreat_distance = 2
-	minimum_distance = 1
-	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	retreat_distance = 3
+	minimum_distance = 2
+	casingtype = /obj/item/ammo_casing/shotgun/improvised/simplemob
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'

@@ -2,7 +2,7 @@
 #define SHOULDER_FLIP_COMBO "DHDHG"
 #define FOOT_SMASH_COMBO "HH"
 #define SIDE_KICK_COMBO "skick"
-#define DEFT_SWITCH_COMBO "deft"
+//#define DEFT_SWITCH_COMBO "deft"
 
 /datum/martial_art/the_rising_bass
 	name = "The Rising Bass"
@@ -11,7 +11,7 @@
 	help_verb = /mob/living/carbon/human/proc/rising_bass_help
 	pugilist = TRUE
 	var/datum/action/risingbassmove/sidekick = new/datum/action/risingbassmove/sidekick()
-	var/datum/action/risingbassmove/deftswitch = new/datum/action/risingbassmove/deftswitch()
+	//var/datum/action/risingbassmove/deftswitch = new/datum/action/risingbassmove/deftswitch()
 	var/repulsecool = 0
 	var/physdammod = 0.7
 	var/stamdammod = 0.28
@@ -33,10 +33,10 @@
 		streak = ""
 		footSmash(A,D)
 		return TRUE
-	if(findtext(streak,DEFT_SWITCH_COMBO))
-		streak = ""
-		deftSwitch(A,D)
-		return TRUE
+	//if(findtext(streak,DEFT_SWITCH_COMBO))
+		//streak = ""
+		//deftSwitch(A,D)
+		//return TRUE
 	return FALSE
 
 
@@ -66,10 +66,10 @@
 	button_icon_state = "sidekick"
 	movestreak = "skick"
 
-/datum/action/risingbassmove/deftswitch
-	name = "Deft Switch"
-	button_icon_state = "deftswitch"
-	movestreak = "deft"
+//datum/action/risingbassmove/deftswitch
+	//name = "Deft Switch"
+	//button_icon_state = "deftswitch"
+	//movestreak = "deft"
 
 /datum/martial_art/the_rising_bass/proc/checkfordensity(turf/target, mob/mover)
 	if (target.density)
@@ -150,19 +150,19 @@
 		return TRUE
 	return FALSE
 
-/datum/martial_art/the_rising_bass/proc/deftSwitch(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	if(CHECK_MOBILITY(D, MOBILITY_STAND))
-		if (D.get_active_held_item())
-			var/obj/item/G = D.get_active_held_item()
-			if (G && !(G.item_flags & (ABSTRACT|DROPDEL)) && D.temporarilyRemoveItemFromInventory(G))
-				A.put_in_hands(G)
-				D.visible_message(span_warning("[A] slaps [D]'s hands, taking [G] from them!"), \
-					span_userdanger("[A] slaps you, taking [G] from you!"))
-				log_combat(A, D, "deft switched (Rising Bass)")
-				return TRUE
-			else
-				to_chat(A, "<i>[G] can't be taken out of [D]'s hands!</i>")
-	return FALSE
+//datum/martial_art/the_rising_bass/proc/deftSwitch(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	//if(CHECK_MOBILITY(D, MOBILITY_STAND))
+		//if (D.get_active_held_item())
+			//var/obj/item/G = D.get_active_held_item()
+			//if (G && !(G.item_flags & (ABSTRACT|DROPDEL)) && D.temporarilyRemoveItemFromInventory(G))
+				//A.put_in_hands(G)
+				//D.visible_message(span_warning("[A] slaps [D]'s hands, taking [G] from them!"), /
+					//span_userdanger("[A] slaps you, taking [G] from you!"))
+				//log_combat(A, D, "deft switched (Rising Bass)")
+				//return TRUE
+			//.else
+				//to_chat(A, "<i>[G] can't be taken out of [D]'s hands!</i>")
+	//return FALSE
 
 /datum/martial_art/the_rising_bass/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	add_to_streak("D",D)
@@ -198,10 +198,10 @@
 		return TRUE
 	return ..()
 
-/datum/martial_art/the_rising_bass/add_to_streak(element,mob/living/carbon/human/D)
-	if (streak == DEFT_SWITCH_COMBO || streak == SIDE_KICK_COMBO)
-		return
-	. = ..()
+//datum/martial_art/the_rising_bass/add_to_streak(element,mob/living/carbon/human/D)
+	//if (streak == DEFT_SWITCH_COMBO || streak == SIDE_KICK_COMBO)
+		//return
+	//. = ..()
 
 /datum/martial_art/the_rising_bass/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
@@ -213,12 +213,14 @@
 		return BULLET_ACT_HIT
 	if(!isturf(A.loc)) //NO MOTHERFLIPPIN MECHS!
 		return BULLET_ACT_HIT
-	A.visible_message(span_danger("[A] dodges the projectile cleanly, they're immune to ranged weapons!"), span_userdanger("You dodge out of the way of the projectile!"))
-	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
-
+	A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectiles with their bare hands!"), span_userdanger("You deflect the projectile!"))
+	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE )
+	P.firer = A
+	P.setAngle(rand(0, 360))//SHING
 	var/totalStamDam = (P.damage > P.stamina) ? P.damage * physdammod : P.stamina * stamdammod
 	A.adjustStaminaLossBuffered(totalStamDam) //Changed it so the autododge takes more stamina than carp. -Farmwizard
-	return BULLET_ACT_FORCE_PIERCE
+	return BULLET_ACT_FORCE_PIERCE	
+
 
 /mob/living/carbon/human/proc/rising_bass_help()
 	set name = "Recall Teachings"
@@ -231,13 +233,13 @@
 	to_chat(usr, "<span class='notice'>Shoulder Flip</span>: Disarm Harm Disarm Harm Grab. Flips opponent over your shoulder and stuns.")
 	to_chat(usr, "<span class='notice'>Repulse Punch</span>: Harm Disarm Disarm. Slams the opponent far away from you.")
 	to_chat(usr, "<span class='notice'>Foot Smash</span>: Harm Harm. Knocks opponent prone, minor damage.")
-	to_chat(usr, "<span class='notice'>Deft Switch</span>: Switches the opponent's held item for your own. Most useful with nothing in your hand.")
+	//to_chat(usr, "<span class='notice'>Deft Switch</span>: Switches the opponent's held item for your own. Most useful with nothing in your hand.")
 
 /datum/martial_art/the_rising_bass/teach(mob/living/carbon/human/H, make_temporary = FALSE)
 	. = ..()
 	if(!.)
 		return
-	deftswitch.Grant(H)
+	//deftswitch.Grant(H)
 	sidekick.Grant(H)
 	ADD_TRAIT(H, TRAIT_NOGUNS, RISING_BASS_TRAIT)
 	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RISING_BASS_TRAIT)
@@ -246,7 +248,7 @@
 
 /datum/martial_art/the_rising_bass/on_remove(mob/living/carbon/human/H)
 	. = ..()
-	deftswitch.Remove(H)
+	//deftswitch.Remove(H)
 	sidekick.Remove(H)
 	REMOVE_TRAIT(H, TRAIT_NOGUNS, RISING_BASS_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RISING_BASS_TRAIT)

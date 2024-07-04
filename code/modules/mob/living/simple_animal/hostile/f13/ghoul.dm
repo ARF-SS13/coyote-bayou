@@ -350,9 +350,16 @@
 
 /obj/item/projectile/radiation_thing
 	name = "radiation"
-	damage = 0
-	irradiate = 20
+	damage = 15
+	irradiate = 5
 	icon_state = "declone"
+
+/obj/item/projectile/radiation_thing/neurothing
+	name = "radiation"
+	damage = 15
+	irradiate = 5
+	icon_state = "neurotoxin"
+
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
@@ -516,7 +523,6 @@
 	name = "ravenous feral ghoul"
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
-	stat_attack = CONSCIOUS
 	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	can_ghost_into = FALSE
 	maxHealth = 200

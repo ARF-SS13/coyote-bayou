@@ -1,4 +1,52 @@
 ///////////////////////////
+// Diggy hole			//
+//////////////////////////
+
+/*/datum/crafting_recipe/trashloot
+	name = "Quickly dig up trash"
+	result = /obj/effect/spawner/lootdrop/f13/trash
+	reqs = list() // This should mean it requires nothing to craft, right?
+	tools = list()
+	time = 6 SECONDS //Beast master can do the same thing in 10, lowered from 12 initally because this is its singular gimmick
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/trashloot/check_requirements(mob/user, list/collected_requirements)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_TREASURE_HUNTER))
+			return TRUE
+	return FALSE
+
+/datum/crafting_recipe/trashloot/on_finished(atom/a, atom/parent)
+	if(!parent)
+		return
+	parent.visible_message(span_notice("[parent] digs up some stuff!"))
+	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
+*/// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
+/*
+/datum/crafting_recipe/trashloot/common
+	name = "Dig up common loot"
+	reqs = list(/obj/item/pickaxe = 1)  // so you at least have to put SOMETHING in
+	result = /obj/effect/spawner/lootdrop/f13/common
+	time = 30 SECONDS
+
+/datum/crafting_recipe/trashloot/uncommon
+	name = "Slowly dig uncommon loot"
+	result = /obj/effect/spawner/lootdrop/f13/uncommon
+	reqs = list(/obj/item/pickaxe/drill = 1) // so you at least have to put SOMETHING in
+	time = 60 SECONDS 
+*/
+
+// if you can give me a valid reason just to be able to spawn free shit besides unicorn horn arguments, do let me know 
+
+/*/datum/crafting_recipe/trashloot/rock
+	name = "Excavate a strange rock"
+	result = /obj/item/strangerock
+	reqs = list(/obj/item/pickaxe = 1) // so you at least have to put SOMETHING in
+	time = 60 SECONDS */// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
+
+///////////////////////////
 //Electronics and Robots//
 ///////////////////////////
 /datum/crafting_recipe/USAeyebot
@@ -270,50 +318,6 @@
 	time = 120
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-
-/datum/crafting_recipe/trashloot
-	name = "Quickly dig up trash"
-	result = /obj/effect/spawner/lootdrop/f13/trash
-	reqs = list() // This should mean it requires nothing to craft, right?
-	tools = list()
-	time = 6 SECONDS //Beast master can do the same thing in 10, lowered from 12 initally because this is its singular gimmick
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/trashloot/check_requirements(mob/user, list/collected_requirements)
-	if(isliving(user))
-		var/mob/living/L = user
-		if(HAS_TRAIT(L, TRAIT_TREASURE_HUNTER))
-			return TRUE
-	return FALSE
-
-/datum/crafting_recipe/trashloot/on_finished(atom/a, atom/parent)
-	if(!parent)
-		return
-	parent.visible_message(span_notice("[parent] digs up some stuff!"))
-	playsound(get_turf(parent), 'sound/effects/shovel_dig.ogg', 50, 1)
-
-/*
-/datum/crafting_recipe/trashloot/common
-	name = "Dig up common loot"
-	reqs = list(/obj/item/pickaxe = 1)  // so you at least have to put SOMETHING in
-	result = /obj/effect/spawner/lootdrop/f13/common
-	time = 30 SECONDS
-
-/datum/crafting_recipe/trashloot/uncommon
-	name = "Slowly dig uncommon loot"
-	result = /obj/effect/spawner/lootdrop/f13/uncommon
-	reqs = list(/obj/item/pickaxe/drill = 1) // so you at least have to put SOMETHING in
-	time = 60 SECONDS 
-*/
-
-// if you can give me a valid reason just to be able to spawn free shit besides unicorn horn arguments, do let me know 
-
-/datum/crafting_recipe/trashloot/rock
-	name = "Excavate a strange rock"
-	result = /obj/item/strangerock
-	reqs = list(/obj/item/pickaxe = 1) // so you at least have to put SOMETHING in
-	time = 60 SECONDS 
 
 /*
 /datum/crafting_recipe/msgterminal

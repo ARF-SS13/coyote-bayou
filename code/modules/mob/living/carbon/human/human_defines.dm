@@ -43,6 +43,7 @@
 	//Eye colour
 	var/left_eye_color = "000"
 	var/right_eye_color = "000"
+	var/eye_over_hair = FALSE
 
 	var/skin_tone = "caucasian1"	//Skin tone
 
@@ -96,6 +97,13 @@
 	var/last_fire_update
 
 	var/busy= FALSE
+	var/afk= FALSE
+
+	COOLDOWN_DECLARE(crit_damage_cd)
+	COOLDOWN_DECLARE(crit_bleed_cd)
+	COOLDOWN_DECLARE(crit_faint_cd)
+	var/list/agonies = list() // we go into crit, we come out with an agony
+	var/crit_agony = 0
 
 /// Unarmed parry data for human
 /datum/block_parry_data/unarmed/human

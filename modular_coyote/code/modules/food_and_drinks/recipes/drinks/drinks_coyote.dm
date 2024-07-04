@@ -240,6 +240,25 @@
 	results = list(/datum/reagent/consumable/peachshake = 3)
 	required_reagents = list(/datum/reagent/consumable/peachjuice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
 
+/datum/reagent/consumable/orangeshake
+	name = "Orange Shake"
+	description = "A frosty orange milkshake."
+	color = "#541B00"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8 * REAGENTS_METABOLISM
+	taste_description = "sweet creamy oranges"
+	glass_icon_state = "orangeshake"
+	glass_name = "orange shake"
+	glass_desc = "A orange flavored milkshake."
+	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
+
+/datum/chemical_reaction/drink/orangehshake
+	name = "orange Shake"
+	id = /datum/reagent/consumable/orangeshake
+	results = list(/datum/reagent/consumable/orangeshake = 3)
+	required_reagents = list(/datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+
 /datum/reagent/consumable/ethanol/cloverclub
 	name = "Clover Club"
 	description = "A light and refreshing raspberry cocktail."

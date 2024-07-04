@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 	return ..()
 
 /mob/proc/play_AC_typing_indicator(txt, atom/playfrom, mob/whoprefs, do_static)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
-	if(stat != CONSCIOUS)
+	if(stat > SOFT_CRIT)
 		return
 	if(!playfrom)
 		playfrom = src
@@ -180,16 +180,14 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 	if(!txt && prefdo == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])//If the message is empty, play nothing
 		return
 	
-	if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
-		return
+	// if(whoprefs != src && !CHECK_PREFS(whoprefs, RADIOPREF_HEAR_RADIO_BLURBLES)) // chances are you approve of the settings you set yourself
+	// 	return
 	
-	if(do_static && prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
+	if(prefdo != GLOB.play_methods[PLAY_ANIMALCROSSING_TI])
 		playsound(playfrom, get_typing_indicator_sound(do_static), get_typing_indicator_volume(do_static), FALSE)
 		return
 
 	var/datum/typing_sound/TS = GLOB.typing_sounds[get_typing_indicator_sound_name()]
-	if(!TS || !TS.permitAnimalCrossing)
-		return
 	
 	var/list/word_count = splittext(txt," ")
 	var/counter = word_count.len
@@ -201,6 +199,8 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 		var/TI_frequency
 		if (!isnum(counter))                                                            //something went wrong with the counter and it needs to be fixed. Quick, do SOMETHING!
 			counter = 4
+		if(!TS || !TS.permitAnimalCrossing)
+			counter = 1
 		if(do_static)
 			counter++ // one last on the endge
 		var/timecounter = 0

@@ -232,6 +232,7 @@
 /area/f13/wasteland/city/newboston
 	name = "New Boston"
 	icon_state = "newboston"
+	safe_town = TRUE
 	ambience_area = list(
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/woodcreak,
@@ -270,6 +271,10 @@
 		)
 	weather_tags = list(WEATHER_SAFE)
 	outdoors = TRUE
+
+/area/f13/wasteland/city/newboston/outdoors/redwater
+	name = "Redwater"
+	color = "#FF0000"
 
 /area/f13/wasteland/city/newboston/house
 	name = "New Boston Housing"

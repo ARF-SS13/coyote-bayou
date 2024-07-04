@@ -10,7 +10,7 @@
 		/mob/living/simple_animal/hostile/gecko/big,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/bloatfly,\
-		/mob/living/simple_animal/hostile/radroach)
+		/mob/living/simple_animal/hostile/pillbug)
 #define RTS_RATS_ALLOWED list(\
 		/mob/living/simple_animal/hostile/rat,\
 		/mob/living/simple_animal/hostile/rat/skitter,\
@@ -33,7 +33,7 @@
 		/mob/living/simple_animal/hostile/gecko/legacy,\
 		/mob/living/simple_animal/hostile/gecko/fire,\
 		/mob/living/simple_animal/hostile/molerat,\
-		/mob/living/simple_animal/hostile/radroach)
+		/mob/living/simple_animal/hostile/pillbug)
 
 #define CONTROL_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/gecko,\
@@ -41,7 +41,7 @@
 		/mob/living/simple_animal/hostile/gecko/legacy,\
 		/mob/living/simple_animal/hostile/gecko/fire,\
 		/mob/living/simple_animal/hostile/molerat,\
-		/mob/living/simple_animal/hostile/radroach)
+		/mob/living/simple_animal/hostile/pillbug)
 
 
 /datum/action/innate/ghostify

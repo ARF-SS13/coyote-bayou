@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
+	var/safe_town
+
 	/// Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
 	var/map_name
 
@@ -125,6 +127,8 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	var/xenobiology_compatible = FALSE //Can the Xenobio management console transverse this area by default?
 	var/list/canSmoothWithAreas //typecache to limit the areas that atoms in this area can smooth with
 
+	///Typepath to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
+	var/area/area_limited_icon_smoothing
 
 	/// Color on minimaps, if it's null (which is default) it makes one at random.
 	var/minimap_color
@@ -674,7 +678,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 	var/sound/S = sound(music_to_play, repeat = TRUE, wait = 0, volume = 25, channel = CHANNEL_AMBIENT_MUSIC)
 	addtimer(CALLBACK(src, PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
-	COOLDOWN_START(L.client, area_music_cooldown, music_to_play[SL_FILE_LENGTH] + sound_delay)
+	L.client.SoundQuery()
+	COOLDOWN_START(L.client, area_music_cooldown, S.len + sound_delay)
 
 /area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)
 	SEND_SOUND(play_to, to_play)

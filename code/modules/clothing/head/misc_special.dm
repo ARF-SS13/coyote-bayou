@@ -33,6 +33,12 @@
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
+/obj/item/clothing/head/welding/up
+
+/obj/item/clothing/head/welding/up/Initialize()
+	. = ..()
+	visor_toggling()
+
 /*
  * Cakehat
  */
@@ -339,7 +345,7 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/head/slouch/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
 		up = !up
 		icon_state = "[initial(icon_state)][up ? "up" : ""]"
 		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
@@ -358,7 +364,26 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/head/slouch/alt/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
+		up = !up
+		icon_state = "[initial(icon_state)][up ? "up" : ""]"
+		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
+
+		user.update_inv_head()
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.head_update(src, forced = 1)
+
+/obj/item/clothing/head/slouch/colorable
+	name = "Colorable Slouch Hat"
+	desc = "A fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
+	icon_state = "slouch_colorable"
+	item_state = "slouch_colorable"
+	can_toggle = 1
+	actions_types = list(/datum/action/item_action/toggle)
+
+/obj/item/clothing/head/slouch/colorable/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated(allow_crit = TRUE))
 		up = !up
 		icon_state = "[initial(icon_state)][up ? "up" : ""]"
 		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
@@ -581,7 +606,7 @@
 	icon_state = "samurai_warrior3"
 	item_state = "samurai_warrior3"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
-	
+
 /obj/item/clothing/head/coyote/samuraiwarriorfour
 	name = "Stylish Samurai Helmet - Black"
 	desc = "Oda Nobunag-on-my-balls."
@@ -595,7 +620,7 @@
 	icon_state = "samurai_warrior5"
 	item_state = "samurai_warrior5"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
-	
+
 /obj/item/clothing/head/coyote/samuraiguard1
 	name = "Simple Samurai Helmet - Reddish Brown"
 	desc = "Oda Nobunag-on-my-balls."

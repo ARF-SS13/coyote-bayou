@@ -17,10 +17,10 @@
 
 /datum/crafting_recipe/sharpener
 	name = "Whetstone"
-	result = /obj/item/melee/smith/sharpener
+	result = /obj/item/sharpener
 	reqs = list(
 		/obj/item/ingot/titanium = 1,
-		/obj/item/stack/sheet/plasteel = 10,
+		/obj/item/stack/sheet/plasteel = 1,
 		/obj/item/stack/sheet/mineral/diamond = 1,
 		)
 	tools = list(TOOL_WORKBENCH)
@@ -70,6 +70,42 @@
 		/obj/item/stack/sheet/metal = 6,
 		)
 	tools = list(TOOL_CROWBAR)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/bronzeingot
+	name = "Attune Metal (T1, Black Bronze)"
+	result = /obj/item/ingot/bronze
+	time = 300
+	reqs = list(
+		/obj/item/ingot/iron = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		)
+	tools = list()
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/mythrilingot
+	name = "Enhance Black Bronze (T2, Mythril)"
+	result = /obj/item/ingot/mythril
+	time = 300
+	reqs = list(
+		/obj/item/ingot/bronze = 1,
+		/obj/item/stack/sheet/mineral/plasma = 1,
+		)
+	tools = list()
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/adamantineingot
+	name = "Alloy Mythril (T3, Adamantine)"
+	result = /obj/item/ingot/adamantine
+	time = 300
+	reqs = list(
+		/obj/item/ingot/mythril = 1,
+		/obj/item/advanced_crafting_components/alloys = 1,
+		)
+	tools = list()
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 

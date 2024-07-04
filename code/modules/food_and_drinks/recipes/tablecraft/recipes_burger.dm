@@ -11,7 +11,7 @@
 	)
 
 	result = /obj/item/reagent_containers/food/snacks/burger/plain
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/baconburger
 	name = "Bacon Burger"
@@ -22,7 +22,7 @@
 	)
 
 	result = /obj/item/reagent_containers/food/snacks/burger/baconburger
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/bigbiteburger
 	name = "Big bite burger"
@@ -32,7 +32,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/bigbite
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 
 /datum/crafting_recipe/food/cheeseburger
@@ -43,7 +43,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/cheese
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/ribburger
 	name = "McRib"
@@ -53,7 +53,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/rib
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/mcguffin
 	name = "McGuffin"
@@ -63,7 +63,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/mcguffin
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/tofuburger
 	name = "Tofu burger"
@@ -72,7 +72,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/tofu
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 ///////////////EXOTIC//////////////////
 
@@ -84,72 +84,8 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/fish
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/pineapplepizza
-	name = "Hawaiian pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
-		/obj/item/reagent_containers/food/snacks/pineappleslice = 3,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/pineapple
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/margheritapizza
-	name = "Cheese pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/margherita
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/meatpizza
-	name = "Meat pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 4,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/meat
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mushroompizza
-	name = "Mushroom pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mushroom
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/sassysagepizza
-	name = "Meatball pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 3,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/sassysage
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/vegetablepizza
-	name = "Vegetable pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
-		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
-		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/vegetable
-	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/superbiteburger
 	name = "Super bite burger"
@@ -165,7 +101,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/superbite
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/corgiburger
 	name = "Corgi burger"
@@ -175,7 +111,7 @@
 	)
 
 	result = /obj/item/reagent_containers/food/snacks/burger/corgi
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/humanburger
 	name = "Human burger"
@@ -187,7 +123,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/human
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/appendixburger
 	name = "Appendix burger"
@@ -196,7 +132,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/appendix
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/brainburger
 	name = "Brain burger"
@@ -205,7 +141,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/brain
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/bearger
 	name = "Bearger"
@@ -214,7 +150,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/bearger
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/chickenburger
 	name = "Chicken Sandwich"
@@ -224,7 +160,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/chicken
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/crabburger
 	name = "Crab Burger"
@@ -233,7 +169,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/crab
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fivealarmburger
 	name = "Five alarm burger"
@@ -243,7 +179,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/fivealarm
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/slimeburger
 	name = "Jelly burger"
@@ -252,7 +188,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/jelly/slime
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/jellyburger
 	name = "Jelly burger"
@@ -261,7 +197,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/jelly/cherry
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 ////////////COLORED BURGERS//////////////
 
@@ -273,7 +209,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/red
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/orangeburger
 	name = "Orange burger"
@@ -283,7 +219,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/orange
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/yellowburger
 	name = "Yellow burger"
@@ -293,7 +229,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/yellow
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/greenburger
 	name = "Green burger"
@@ -303,7 +239,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/green
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/blueburger
 	name = "Blue burger"
@@ -313,7 +249,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/blue
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/purpleburger
 	name = "Purple burger"
@@ -323,7 +259,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/purple
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/blackburger
 	name = "Black burger"
@@ -333,7 +269,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/black
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/whiteburger
 	name = "White burger"
@@ -343,59 +279,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/white
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mothic_firecracker
-	name = "Fire Cracker Pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 4,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/grown/chili = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mothic_five_cheese
-	name = "Five Cheese Pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mothic_white_pie
-	name = "White Pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
-		/obj/item/reagent_containers/food/snacks/grown/garlic = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mothic_pesto
-	name = "Pesto Pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
-		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_pesto
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mothic_garlic
-	name = "Garlic Pizza"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
-		/obj/item/reagent_containers/food/snacks/grown/garlic = 2,
-		/obj/item/reagent_containers/food/snacks/butter = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_garlic
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sloppyjoe
 	name = "sloppyjoe"
@@ -407,7 +291,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/sloppy
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/phillycheesesteak
 	name = "philly cheesesteak"
@@ -418,7 +302,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/philly_cheesesteak
-	subcategory = CAT_BURGER
+	subcategory = CAT_MISCFOOD
 
 /// Legacy Content
 

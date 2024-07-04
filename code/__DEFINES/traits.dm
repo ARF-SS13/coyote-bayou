@@ -214,7 +214,7 @@
 #define TRAIT_SOH				"soh"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
-#define TRAIT_TREASURE_HUNTER 	"treasurehunter"
+/*#define TRAIT_TREASURE_HUNTER 	"treasurehunter"*/// Not until crafting menus are fixed
 #define TRAIT_SIXTHSENSE		"sixthsense"
 #define TRAIT_DISSECTED			"dissected"
 #define TRAIT_FEARLESS			"fearless"
@@ -352,6 +352,8 @@
 #define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
+#define TRAIT_ORAL_FIXATION "oral fixation"
+#define TRAIT_PACKRAT "packrat"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
 #define TRAIT_WEAPONSMITH "weaponsmith"
@@ -373,6 +375,9 @@
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 #define TRAIT_NOHIDEFACE "no hide face"
 #define TRAIT_SECURITYEXPERT "security-expert"
+#define TRAIT_CLAM_TONGUE "clam_tongue"
+#define TRAIT_CLAM_LOVER "clam_lover"
+#define TRAIT_CLAM_FISHER "clam_fisher"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

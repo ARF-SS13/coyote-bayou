@@ -16,7 +16,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
+				/obj/item/stack/sheet/animalhide/aethergiest = 1) //changed from goliath to aethergiest
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/bracers
@@ -44,11 +44,40 @@
 				/obj/item/weaponcrafting/string = 1,
 				)
 
+/datum/crafting_recipe/tribalwar/bow
+	name = "Long Bow"
+	result = /obj/item/gun/ballistic/bow/longbow
+	time = 65
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20, //easy to make. you can get one as a starter
+				/obj/item/weaponcrafting/string = 5,
+				/obj/item/stack/sheet/leather = 5,
+				/obj/item/stack/sheet/metal = 5
+				)
+
+/datum/crafting_recipe/tribalwar/composite
+	name = "Composite Bow"
+	result = /obj/item/gun/ballistic/bow/composite
+	time = 65
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10, 
+				/obj/item/weaponcrafting/string = 3,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/bone = 2
+				)
+
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
 	result = /obj/item/melee/onehanded/machete/training
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
+				/obj/item/stack/sheet/cloth = 2
+				)
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/boomerang
+	name = "Wooden Boomerang"
+	result = /obj/item/melee/f13onehanded/boomerang
+	time = 50
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 15,
 				/obj/item/stack/sheet/cloth = 2
 				)
 	tools = list(TOOL_WORKBENCH)

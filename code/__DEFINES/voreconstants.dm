@@ -305,3 +305,5 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 
 #define RADIOPREF_HEAR_RADIO_BLURBLES "hear_staticky_chittering"
 #define RADIOPREF_HEAR_RADIO_STATIC "hear_staticky_clicks"
+
+#define ADMIN_CHAT_FILTER_DMS "ADMIN_CHAT_FILTER_DMS"

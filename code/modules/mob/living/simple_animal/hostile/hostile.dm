@@ -46,7 +46,7 @@
 
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
-	var/move_to_delay = 3
+	var/move_to_delay = 3.5
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
@@ -79,6 +79,12 @@
 	var/sight_shoot_delay_time = 0.7 SECONDS
 	COOLDOWN_DECLARE(sight_shoot_delay)
 
+	/// The base random spread of the mob's ranged attacks.
+	var/ranged_base_spread = 7
+	/// The spread added to the base spread per shot for a burst.
+	var/ranged_extra_spread_per_shot = 10
+	/// the max spread this mob can accumulate
+	var/ranged_max_spread = 45
 	var/ranged_message = "fires" //Fluff text for ranged mobs
 	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
@@ -103,7 +109,9 @@
 	var/search_objects_timer_id //Timer for regaining our old search_objects value after being attacked
 	var/search_objects_regain_time = 30 //the delay between being attacked and gaining our old search_objects value back
 	var/list/wanted_objects = list() //A typecache of objects types that will be checked against to attack, should we have search_objects enabled
-	var/stat_attack = CONSCIOUS //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
+	var/attack_downed_players = TRUE // ignore stat attack, attack people in soft crit.... for a while
+	var/attack_downed_until = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT // Attack until they're this proportion between soft crit and hard crit
+	var/stat_attack = SOFT_CRIT //Mobs with stat_attack to UNCONSCIOUS will attempt to attack things that are unconscious, Mobs with stat_attack set to DEAD will attempt to attack the dead.
 	var/stat_exclusive = FALSE //Mobs with this set to TRUE will exclusively attack things defined by stat_attack, stat_attack DEAD means they will only attack corpses
 	var/attack_same = 0 //Set us to 1 to allow us to attack our own faction
 	var/datum/weakref/targetting_origin = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
@@ -451,8 +459,12 @@
 					return FALSE
 				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
 					return FALSE
-				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
-					return FALSE
+				if(attack_downed_players && L.stat == SOFT_CRIT && iscarbon(L))
+					/// so fun fact, not all players go into crit at 0 HP
+					/// some go into crit at, like, 50 HP, or at -40 HP
+					/// so we have to offset the crit threshold by the amount of health they have
+					if(!L.attackable_in_crit())
+						return FALSE
 				if(friends[L] > 0 && foes[L] < 1)
 					return FALSE
 			else
@@ -712,14 +724,16 @@
 	if(CheckFriendlyFire(A))
 		return
 	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
+	var/spreadgun = ranged_base_spread
 	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src,PROC_REF(Shoot), A)
 		for(var/i in 1 to rapid)
-			addtimer(cb, (i - 1)*rapid_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A, spreadgun), (i - 1)*rapid_fire_delay)
+			spreadgun += ranged_extra_spread_per_shot
 	else
-		Shoot(A)
+		Shoot(A, spreadgun)
 		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src,PROC_REF(Shoot), A), i * auto_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A, spreadgun), i * auto_fire_delay)
+			spreadgun += ranged_extra_spread_per_shot
 	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
@@ -742,11 +756,15 @@
 	playsound(src, throw_thing_sound, 100, TRUE)
 	visible_message(span_alert("[src] throws [tosser] at [targeted_atom]!"))
 
-/mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
+/mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom, spread = 0)
 	var/atom/origin = get_origin()
 	if( !origin || QDELETED(targeted_atom) || targeted_atom == origin.loc || targeted_atom == origin )
 		return
 	var/turf/startloc = get_turf(origin)
+	if(!spread)
+		spread = ranged_base_spread
+	var/true_spread = spread ? rand(-spread, spread) : 0
+	true_spread = clamp(true_spread, -ranged_max_spread, ranged_max_spread)
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(
@@ -762,7 +780,7 @@
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.factionize(faction)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), true_spread, null, null, null, src)
 		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
@@ -787,7 +805,7 @@
 		if(AIStatus != AI_ON)//Don't want mindless mobs to have their movement screwed up firing in space
 			newtonian_move(get_dir(targeted_atom, origin))
 		P.original = targeted_atom
-		P.preparePixelProjectile(targeted_atom, src)
+		P.preparePixelProjectile(targeted_atom, src, spread = true_spread)
 		P.fire()
 		return P
 

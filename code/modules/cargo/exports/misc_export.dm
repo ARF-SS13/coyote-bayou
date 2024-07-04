@@ -256,17 +256,17 @@
 		/obj/item/gun/energy/ionrifle/carbine,
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
-		/obj/item/melee/unarmed/deathclawgauntlet,
+		/obj/item/melee/unarmed/aethergiestgauntlet,
 		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
-		/obj/item/twohanded/spear/bonespear/deathclaw,
+		/obj/item/twohanded/spear/bonespear/aethergiest,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
 		/obj/item/sord,
 		/obj/item/melee/transforming/plasmacutter/regular/adam,
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
-		/obj/item/gun/energy/laser/cranklasergun/tg/particalcannon,
+		/obj/item/gun/energy/laser/tg/particlecannon,
 		/obj/item/gun/energy/laser/xcomufolaser,
 		/obj/item/gun/energy/laser/LaserAK,
 	)
@@ -410,7 +410,7 @@
 	cost = 450
 	unit_name = "high-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/wolf,
-						/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw)
+						/obj/item/reagent_containers/food/snacks/meat/slab/aethergiest)
 
 /datum/export/item/processedmeats
 	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
@@ -716,27 +716,28 @@
 /datum/export/item/forged
 	cost = 200
 	unit_name = "forged weapons"
-	export_types = list(/obj/item/melee/smith/sword,
-	/obj/item/melee/smith/sword/spatha,
-	/obj/item/melee/smith/sword/sabre,
-	/obj/item/melee/smith/dagger,
-	/obj/item/melee/smith/dagger/bowie,
-	/obj/item/melee/smith/machete,
-	/obj/item/melee/smith/machete/gladius,
-	/obj/item/melee/smith/machete/reforged,
-	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/mace,
-	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/twohand/longsword,
-	/obj/item/melee/smith/twohand/axe,
-	/obj/item/melee/smith/twohand/axe/warhoned,
-	/obj/item/melee/smith/twohand/axe/crusher,
-	/obj/item/melee/smith/twohand/axe/scrapblade,
-	/obj/item/melee/smith/twohand/spear,
-	/obj/item/melee/smith/twohand/spear/lance,
-	/obj/item/melee/smith/twohand/spear/trident,
-	/obj/item/melee/smith/javelin,
-	/obj/item/melee/smith/throwingknife,
+	export_types = list(
+//	/obj/item/melee/smith/sword,
+//	/obj/item/melee/smith/sword/spatha,
+//	/obj/item/melee/smith/sword/sabre,
+	/obj/item/melee/smith/dagger // haha skyrim dagger farm
+//	/obj/item/melee/smith/dagger/bowie,
+//	/obj/item/melee/smith/machete,
+//	/obj/item/melee/smith/machete/gladius,
+//	/obj/item/melee/smith/machete/reforged,
+//	/obj/item/melee/smith/wakizashi,
+//	/obj/item/melee/smith/mace,
+//	/obj/item/melee/smith/twohand/katana,
+//	/obj/item/melee/smith/twohand/longsword,
+//	/obj/item/melee/smith/twohand/axe,
+//	/obj/item/melee/smith/twohand/axe/warhoned,
+//	/obj/item/melee/smith/twohand/axe/crusher,
+//	/obj/item/melee/smith/twohand/axe/scrapblade,
+//	/obj/item/melee/smith/twohand/spear,
+//	/obj/item/melee/smith/twohand/spear/lance,
+//	/obj/item/melee/smith/twohand/spear/trident,
+//	/obj/item/melee/smith/javelin,
+//	/obj/item/melee/smith/throwingknife,
 	)
 
 /datum/export/item/nucrate // Hopefully this one works

@@ -109,7 +109,7 @@
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(30, 35, 40, 45),
+		MOB_HEALTH_LIST(30, 35, 40,),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 2, 4),
@@ -133,7 +133,19 @@
 	guaranteed_butcher_results = list()
 	butcher_results = list()
 	del_on_death = TRUE
+	var/die_at_this_time = 0
+	var/lifetime = 1 MINUTES
 
+/mob/living/simple_animal/hostile/gecko/summon/Initialize()
+	die_at_this_time = world.time + lifetime
+	. = ..()
+
+/mob/living/simple_animal/hostile/gecko/summon/BiologicalLife(seconds, times_fired)
+	. = ..()
+	if(world.time >= die_at_this_time)
+		if(prob(5))
+			explosion(get_turf(src), -1, -1, 2, 0, FALSE, FALSE, 2, FALSE, TRUE) // why do we explode dood
+		dust()
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	melee_damage_lower *= 0.5
@@ -265,6 +277,112 @@
 	resize = 0.8
 	update_transform()
 
+//rad Geckos//
+
+/mob/living/simple_animal/hostile/gecko/fire/rads
+	name = "rad spitting gecko"
+	desc = "A large mutated reptile with sharp teeth and a warm disposition. Sorta smells like ozone."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 35
+	health = 35
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 4
+	melee_damage_upper = 12
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 8
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	pass_flags = PASSTABLE
+	speak_emote = list(
+		"squeaks",
+		"cackles",
+		"snickers",
+		"shriek",
+		"scream",
+		"skrem",
+		"scrambles",
+		"warbles",
+		"chirps",
+		"cries",
+		"kyaas",
+		"chortles",
+		"gecks"
+		)
+	emote_see = list(
+		"screeches",
+		"licks its eyes",
+		"twitches",
+		"scratches its frills",
+		"gonks",
+		"honks",
+		"scronks",
+		"sniffs",
+		"gecks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"tears at",
+		"dabs",
+		"scratches",
+		"gnaws",
+		"chews",
+		"chomps",
+		"lunges",
+		"gecks"
+		)
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_CLAW
+	ranged = TRUE
+	check_friendly_fire = TRUE
+	projectiletype = /obj/item/projectile/radiation_thing/neurothing
+	projectilesound = 'sound/weapons/etherealhit.ogg'
+
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(40, 40, 200, 45, 45, 255),
+		MOB_SPEED_LIST(2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(28, 30, 32),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2, 3),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/mob/living/simple_animal/hostile/gecko/fire/Initialize()
+	.=..()
+	resize = 0.8
+	update_transform()
 
 /* firey gecko spit
  * DAMAGE: 5
@@ -449,7 +567,7 @@
 		MOB_COLOR_VARIATION(180, 255, 255, 255, 255, 255), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
 		MOB_SPEED_LIST(2, 2.2, 2.4, 2.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
-		MOB_HEALTH_LIST(30, 35, 40),
+		MOB_HEALTH_LIST(30, 35, 38),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 		MOB_MINIMUM_DISTANCE_LIST(1, 2),
@@ -929,6 +1047,7 @@
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE
+	can_glow_revive = FALSE
 	variation_list = list(
 		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
 		MOB_SPEED_LIST(2.9, 3.3, 3.5),
@@ -974,7 +1093,7 @@
 	sharpness = SHARP_NONE
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
-/obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/moleratsummon/on_hit(atom/target, blocked = FALSE)
 	..()
 	spawn_and_random_walk(/mob/living/simple_animal/hostile/molerat/micro/summon, target, 10, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
 	//		break
@@ -986,6 +1105,9 @@
 	butcher_results = list()
 	del_on_death = TRUE
 
+/mob/living/simple_animal/hostile/molerat/leader/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/molerat, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
 
 
 

@@ -28,6 +28,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	turns_per_move = 5
+	var/is_blacklisted = FALSE // THis variable lets you stop mobs from being joinable roundstart
 	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	// Sprites are already rotated for lying down while resting.
@@ -252,6 +253,16 @@
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
+	p_types = list(P_TYPE_NORM)
+	mob_size = MOB_SIZE_SMALL
+	p_traits = list(P_TRAIT_RIDEABLE)
+
+/mob/living/simple_animal/advanced/eeveealt
+	name = "eevee, alt"
+	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pokemon to evolve."
+	icon_state = "eevee2"
+	icon_living = "eevee2"
+	icon_dead = "eevee2_d"
 	p_types = list(P_TYPE_NORM)
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)

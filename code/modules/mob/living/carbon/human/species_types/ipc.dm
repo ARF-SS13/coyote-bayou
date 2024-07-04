@@ -21,7 +21,6 @@
 	inherent_traits = list(
 		TRAIT_EASYDISMEMBER,
 		TRAIT_LIMBATTACHMENT,
-		TRAIT_NO_PROCESS_FOOD,
 		TRAIT_RADIMMUNE,
 		TRAIT_NOBREATH,
 		TRAIT_CLONEIMMUNE,
@@ -79,10 +78,10 @@
 	H.update_body()
 
 /datum/species/synthfurry/ipc/spec_life(mob/living/carbon/human/H)
-	if(H.nutrition < NUTRITION_LEVEL_FED)
+	/*if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
+		H.nutrition = NUTRITION_LEVEL_FED*/
 
 /datum/species/synthfurry/ipc/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return FALSE

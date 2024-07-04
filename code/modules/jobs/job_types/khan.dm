@@ -120,26 +120,6 @@
 
 //KIPCHAK =================================================================
 
-/datum/outfit/loadout/miner
-	name = "Miner"
-	r_hand = /obj/item/pickaxe
-	l_hand = /obj/item/flashlight/lantern
-	belt = /obj/item/storage/bag/ore
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
-		/obj/item/shovel = 1)
-
-/datum/outfit/loadout/prospector
-	name = "Prospector"
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/m1911/custom
-	l_hand = /obj/item/weldingtool/largetank
-	belt = /obj/item/storage/belt/fannypack
-	mask = /obj/item/clothing/mask/gas/welding
-	backpack_contents = list(
-		/obj/item/wrench = 1,
-		/obj/item/ammo_box/magazine/m45 = 3,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
-		/obj/item/book/granter/trait/techno = 1)
 
 /datum/outfit/loadout/hunter
 	name = "Forager"
@@ -341,12 +321,6 @@
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khan/kipchak
 
-	loadout_options = list(
-		/datum/outfit/loadout/miner,
-		/datum/outfit/loadout/prospector,
-		/datum/outfit/loadout/hunter,
-		)
-
 
 /datum/job/khan/khorchin
 	title = "Khorchin"
@@ -360,12 +334,6 @@
 	exp_requirements = 150
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khan/khorchin
-
-	loadout_options = list(
-		/datum/outfit/loadout/fighter,
-		/datum/outfit/loadout/guard,
-		/datum/outfit/loadout/protector,
-		)
 
 
 /datum/job/khan/kheshig
@@ -381,11 +349,6 @@
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khan/kheshig
 
-	loadout_options = list(
-		/datum/outfit/loadout/veteran,
-		/datum/outfit/loadout/sprayer,
-		/datum/outfit/loadout/pusher,
-		)
 
 
 /datum/job/khan/steward
@@ -402,11 +365,6 @@
 	exp_requirements = 750
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khanleader/steward
-
-	loadout_options = list(
-		/datum/outfit/loadout/taxcollector,
-		/datum/outfit/loadout/privileged,
-		)
 
 
 /datum/job/khan/noyan
@@ -425,9 +383,3 @@
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khanleader/noyan
 
-	loadout_options = list(
-		/datum/outfit/loadout/ironfist,
-		/datum/outfit/loadout/peopleleader,
-		/datum/outfit/loadout/pacifier,
-		/datum/outfit/loadout/bigboss,
-		)

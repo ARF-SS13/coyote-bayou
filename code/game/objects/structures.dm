@@ -11,6 +11,11 @@
 	var/broken = 0 //similar to machinery's stat BROKEN
 	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
 	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
+	var/max_stuff = 0 //how many items can be salvaged from this structure, if its salvagable
+	var/base_stuff = 0 //how many items are guaranteed to be salvaged from this structure, if its salvagable
+
+	var/datum/component/toolable/salvage/salvagecomponent
+
 	layer = BELOW_OBJ_LAYER
 	//ricochets on structures commented out for now because there's a lot of structures that /shouldnt/ be ricocheting and those need to be reviewed first
 	//flags_1 = DEFAULT_RICOCHET_1
@@ -19,17 +24,28 @@
 
 /obj/structure/Initialize()
 	. = ..()
-	if(smooth)
-		queue_smooth(src)
-		queue_smooth_neighbors(src)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+		QUEUE_SMOOTH(src)
+		QUEUE_SMOOTH_NEIGHBORS(src)
 		icon_state = ""
 	GLOB.cameranet.updateVisibility(src)
 
 /obj/structure/Destroy()
 	GLOB.cameranet.updateVisibility(src)
-	if(smooth)
-		queue_smooth_neighbors(src)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+		QUEUE_SMOOTH_NEIGHBORS(src)
 	return ..()
+
+/obj/structure/ComponentInitialize()
+	. = ..()
+	if(salvagecomponent)
+		AddComponent(salvagecomponent)
+		if(max_stuff && base_stuff)
+			var/datum/component/toolable/salvage/S = GetComponent(/datum/component/toolable/salvage)
+			if(istype(S, /datum/component/toolable/salvage))
+				S.max_drops = max_stuff
+				S.guaranteed_drops = base_stuff
+	
 
 /obj/structure/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -132,3 +148,75 @@
 		return 0
 	else // All other than projectiles should use the regular CanPass inheritance
 		return ..()
+
+// /obj/structure/welder_act(mob/living/user, obj/item/I)
+// 	if(!can_salvage)
+// 		return ..()
+// 	return scrap_it(user, I)
+
+// /obj/structure/proc/scrap_it(mob/living/user, obj/item/I)
+// 	if(!can_salvage) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+// 		return
+// 	if(!user || !user.ckey)
+// 		return
+// 	if(using_this[user.ckey] == TRUE)
+// 		return
+// 	if(!I.tool_start_check(user, amount=2)) //this seems to be called everywhere, so for consistency's sake
+// 		return
+// 	if(!free_spin(user, I, TRUE))
+// 		return its_dead(user, I)
+
+// 	using_this[user.ckey] = TRUE
+// 	var/turf/usr_turf = get_turf(user) //Bellow are the changes made by Dan
+// 	user.visible_message("[user] starts disassembling [src].")
+// 	while(made_stuff < max_stuff && !QDELETED(src))
+// 		var/welder_akimbo = FALSE
+// 		var/obj/item/l = user.get_inactive_held_item()
+// 		var/obj/item/weldingtool/WO
+// 		if(istype(l,/obj/item/weldingtool))
+// 			WO = l
+// 			if(WO.tool_start_check(user, amount=2))
+// 				welder_akimbo = TRUE
+// 		var/salvage_time = disassembly_duration
+// 		if(welder_akimbo)
+// 			salvage_time /= 1.5
+// 		if(!I.use_tool(src, user, salvage_time, volume=75))
+// 			user.visible_message("[user] stops disassembling [src].")
+// 			break //you did something, like moving, so stop
+// 		WO.use(1)
+// 		var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
+// 		user.visible_message("[user] slices through a [fake_dismantle][welder_akimbo ? " with both their welders at once!" : "."]")
+// 		made_stuff++
+// 		var/scrap_amount = rand(1,4)						//controls basic scrap amount
+// 		for(var/i1 in 1 to scrap_amount)
+// 			new (usr_turf)
+// 		if(prob(30))										//controls chance of advanced scrap
+// 			new (usr_turf)
+// 		if(prob(5))											//controls chance of high quality tool
+// 			new (usr_turf)
+// 		var/trash_amount = rand(1,3)						//controls trash amount
+// 		for(var/i2 in 1 to (1+trash_amount))
+// 			new /obj/effect/spawner/lootdrop/f13/trash(usr_turf)
+// 		if(!free_spin(user, I))
+// 			return its_dead(user, I)
+// 	using_this-= user.ckey
+
+// /obj/structure/proc/its_dead(mob/user, obj/item/I)
+// 	visible_message("[src] falls apart, the final components having been removed.")
+// 	qdel(src)
+
+// /obj/structure/proc/free_spin(mob/user, obj/item/I, pre_check)
+// 	if(pre_check && made_stuff < base_stuff)
+// 		return TRUE
+// 	if(made_stuff >= max_stuff)
+// 		return FALSE
+// 	if(made_stuff >= base_stuff)
+// 		var/chance_for_extra = 15
+// 		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+// 			chance_for_extra += 50
+// 		if(made_stuff < max_stuff && prob(chance_for_extra))
+// 			to_chat(user, span_green("Your expert salvaging sense lets you spot a bit more usable scrap!"))
+// 			return TRUE
+// 		else
+// 			return FALSE
+

@@ -409,30 +409,37 @@
 /obj/item/paper/report_card/proc/fridge_report_card_get_value()
 	switch(grade)
 		if("P")
-			return 2500
+			return COINS_TO_CREDITS(2500)
 		if("S")
-			return 1000 // we're going out for frosty chocolate milkshakes
+			return COINS_TO_CREDITS(1000) // we're going out for frosty chocolate milkshakes
 		if("A+")
-			return 250
+			return COINS_TO_CREDITS(250)
 		if("A")
-			return 200
+			return COINS_TO_CREDITS(200)
 		if("A-")
-			return 175
+			return COINS_TO_CREDITS(175)
 		if("B+")
-			return 75
+			return COINS_TO_CREDITS(75)
 		if("B")
-			return 50
+			return COINS_TO_CREDITS(50)
 		if("B-")
-			return 10
+			return COINS_TO_CREDITS(10)
 		if("C+")
-			return 5
+			return COINS_TO_CREDITS(5)
 		if("C")
-			return 1
+			return COINS_TO_CREDITS(1)
 		else
-			return 0 // If I get a 75% or below, I dont pass, and neither will you
+			return COINS_TO_CREDITS(1) // If I get a 75% or below, I dont pass, and neither will you
 
+/obj/item/paper/supplyreport
+	var/costvalue = 0 // See me after class
+	
+/obj/item/paper/supplyreport/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(getcostvalue))
 
-
+/obj/item/paper/supplyreport/proc/getcostvalue()
+	return costvalue
 
 
 #undef MAX_PAPER_LENGTH

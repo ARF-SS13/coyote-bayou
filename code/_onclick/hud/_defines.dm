@@ -18,7 +18,24 @@
 */
 
 //Lower left, persistent menu
-#define ui_inventory "WEST:6,SOUTH:5"
+#define ui_inventory "WEST:6,SOUTH:3"
+
+//Pop-up inventory
+
+//top row
+#define ui_head "WEST+1:8,SOUTH+3:11"
+#define ui_glasses "WEST:6,SOUTH+3:11"
+#define ui_ears "WEST+2:10,SOUTH+3:11"
+
+//middle row
+#define ui_neck "WEST:6,SOUTH+2:9"
+#define ui_mask "WEST+1:8,SOUTH+2:9"
+#define ui_gloves "WEST+2:10,SOUTH+2:9"
+
+//bottom row
+#define ui_oclothing "WEST+1:8,SOUTH+1:7"
+#define ui_iclothing "WEST:6,SOUTH+1:7"
+#define ui_shoes "WEST+2:10,SOUTH+1:7"
 
 //Middle left indicators
 #define ui_lingchemdisplay "WEST,CENTER-1:15"
@@ -27,28 +44,52 @@
 #define ui_devilsouldisplay "WEST:6,CENTER-1:15"
 
 //Lower center, persistent menu
-#define ui_sstore1 "CENTER-5:10,SOUTH:5"
-#define ui_id "CENTER-4:12,SOUTH:5"
-#define ui_belt "CENTER-3:14,SOUTH:5"
-#define ui_back "CENTER-2:14,SOUTH:5"
+#define ui_sstore1 "WEST+1:6,SOUTH:3"
+#define ui_id "WEST+2:6,SOUTH:3"
+#define ui_belt "WEST+3:5,SOUTH:3"
+#define ui_back "WEST+6,SOUTH:3"
+#define ui_storage2 "WEST+4:4,SOUTH:3"
+#define ui_storage1 "WEST+5:2,SOUTH:3"
+#define ui_resistdelay "WEST+7:16,SOUTH+1:17"
+#define ui_overridden_resist "WEST+7:16,SOUTH+1:1"
+#define ui_combat_toggle "WEST+7:16,SOUTH:2"
+#define ui_crafting	"WEST+7:-16,SOUTH:35"
+#define ui_building "WEST+7:-16,SOUTH:2"
+#define ui_language_menu "WEST+7:-16,SOUTH:19"
+
+
+//Right side near hands
+#define ui_wield "CENTER+1:17,SOUTH:4"
+#define ui_acti "CENTER+1:33,SOUTH:3"
+#define ui_pull_resist "CENTER+1:18,SOUTH+1:4" //THIS IS ACTUALLY THE REST BUTTON?  WHAT THE FUCK? ~TK
+#define ui_drop_throw "CENTER+2:33,SOUTH+0:4"
+#define ui_sprintbufferloc "CENTER+3:34,SOUTH:16"
+#define ui_movi "Center+3:33,SOUTH:4"
+#define ui_zonesel "Center+5:2,SOUTH:3:1"
+#define ui_mood 	"Center-1:5,South+1:11"
+#define ui_healthdoll 	"Center+0:0,South+2:-19"
+#define ui_health 	"Center+0:0,South+1:-2"
+#define ui_stamina "Center+0:27,South+1:18" // replacing internals button
+#define ui_questbook "CENTER+2:19,SOUTH+1:-12"
+#define ui_questscanner "CENTER+3:21,SOUTH+1:-12"
+#define ui_pull_stop "CENTER+4:6,SOUTH+1:-11"
 
 /proc/ui_hand_position(i) //values based on old hand ui positions (CENTER:-/+16,SOUTH:5)
 	var/x_off = -(!(i % 2))
 	var/y_off = round((i-1) / 2)
-	return"CENTER+[x_off]:16,SOUTH+[y_off]:5"
+	return"CENTER+[x_off]:16,SOUTH+[y_off]:3"
 
 /proc/ui_equip_position(mob/M)
 	var/y_off = round((M.held_items.len-1) / 2) //values based on old equip ui position (CENTER: +/-16,SOUTH+1:5)
-	return "CENTER:-16,SOUTH+[y_off+1]:5"
+	return "CENTER:-16,SOUTH+[y_off+1]:3"
 
 /proc/ui_swaphand_position(mob/M, which = 1) //values based on old swaphand ui positions (CENTER: +/-16,SOUTH+1:5)
 	var/x_off = which == 1 ? -1 : 0
 	var/y_off = round((M.held_items.len-1) / 2)
-	return "CENTER+[x_off]:16,SOUTH+[y_off+1]:5"
+	return "CENTER+[x_off]:16,SOUTH+[y_off+1]:3"
 
-#define ui_storage1 "CENTER+1:18,SOUTH:5"
-#define ui_storage2 "CENTER+2:20,SOUTH:5"
 
+//Totally unused
 #define ui_borg_sensor "CENTER-3:15, SOUTH:5"		//borgs
 #define ui_borg_lamp "CENTER-4:15, SOUTH:5"			//borgs
 #define ui_borg_thrusters "CENTER-5:15, SOUTH:5"	//borgs
@@ -76,20 +117,14 @@
 #define ui_drone_head "CENTER-3:14,SOUTH:5"     //maintenance drones
 
 //Lower right, persistent menu
-#define ui_drop_throw "EAST-1:28,SOUTH+1:7"
-#define ui_pull_resist "EAST-2:26,SOUTH+1:7"
-#define ui_pull_stop "EAST-1:28,SOUTH+1:24"
-#define ui_questbook "EAST-3:21,SOUTH+1:5"
-#define ui_movi "EAST-2:26,SOUTH:5"
-#define ui_sprintbufferloc "EAST-2:26,SOUTH:18"
-#define ui_acti "EAST-3:24,SOUTH:5"
-#define ui_zonesel "EAST-1:28,SOUTH:5"
+
+
+
+
+
+
 #define ui_acti_alt "EAST-1:28,SOUTH:5"	//alternative intent switcher for when the interface is hidden (F12)
-#define ui_crafting	"EAST-1:27,SOUTH+3:5"
-#define ui_building "EAST-1:27,SOUTH+2:7"
-#define ui_language_menu "EAST-1:27,SOUTH+2:22"
-#define ui_wield "EAST-1:10,SOUTH+1:23"
-#define ui_questscanner "EAST-2:24,SOUTH+1:5"
+
 
 #define ui_borg_pull "EAST-2:26,SOUTH+1:7"
 #define ui_borg_radio "EAST-1:28,SOUTH+1:7"
@@ -105,12 +140,10 @@
 
 
 //Middle right (status indicators)
-#define ui_healthdoll 			"EAST-1:28,		CENTER-1:13"
-#define ui_health 				"EAST-1:28,		CENTER-0:15"
-#define ui_internal 			"EAST-1:28,		CENTER+2:19"//CIT CHANGE - moves internal icon up a little bit to accommodate for the stamina meter
-#define ui_mood 				"EAST-1:28,		CENTER-2:10"
-#define ui_character_actions	"EAST-1:28,		CENTER-3:10"
-#define ui_bayou				"EAST-1:28,		CENTER-4:10"
+#define ui_internal 			"EAST-1:28,		SOUTH+3:11"//CIT CHANGE - moves internal icon up a little bit to accommodate for the stamina meter
+
+#define ui_character_actions	"EAST-1:28,		SOUTH+1:2"
+#define ui_bayou				"EAST-1:28,		SOUTH+0:2" //Character directory
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"
@@ -148,18 +181,6 @@
 #define ui_ai_multicam "SOUTH+1:6,WEST+13"
 #define ui_ai_add_multicam "SOUTH+1:6,WEST+14"
 
-//Pop-up inventory
-#define ui_shoes "WEST+1:8,SOUTH:5"
-
-#define ui_iclothing "WEST:6,SOUTH+1:7"
-#define ui_oclothing "WEST+1:8,SOUTH+1:7"
-#define ui_gloves "WEST+2:10,SOUTH+1:7"
-
-#define ui_glasses "WEST:6,SOUTH+3:11"
-#define ui_mask "WEST+1:8,SOUTH+2:9"
-#define ui_ears "WEST+2:10,SOUTH+2:9"
-#define ui_neck "WEST:6,SOUTH+2:9"
-#define ui_head "WEST+1:8,SOUTH+3:11"
 
 //Ghosts
 
@@ -169,18 +190,16 @@
 #define ui_ghost_teleport       "SOUTH:6,CENTER-0.25:24"
 #define ui_ghost_spawners       "SOUTH:6,CENTER+0.75:24"
 #define ui_ghost_second_wind    "SOUTH:38,CENTER-1.25:24"
+#define ui_ghost_char_dir    "SOUTH:38,CENTER-2.25:24"
 #define ui_ghost_move_up       	"SOUTH:6,CENTER+1.75:24"
 #define ui_ghost_move_down      "SOUTH:6,CENTER+1.75:24"
 
 
-//UI position overrides for 1:1 screen layout. (default is 7:5)
-#define ui_stamina "EAST-1:28,CENTER+1:17" // replacing internals button
-#define ui_overridden_resist "EAST-3:24,SOUTH+1:7"
 #define ui_questbook_overridden "EAST-3:24,SOUTH+1:7"
 #define ui_clickdelay "CENTER,SOUTH+1:-31"
-#define ui_resistdelay "EAST-3:24,SOUTH+1:4"
-#define ui_combat_toggle "EAST-4:22,SOUTH:5"
 
-#define ui_boxcraft "EAST-4:22,SOUTH+1:6"
+
+
+#define ui_boxcraft "EAST-4:24,SOUTH+1:6"
 #define ui_boxarea "EAST-4:6,SOUTH+1:6"
 #define ui_boxlang "EAST-5:22,SOUTH+1:6"

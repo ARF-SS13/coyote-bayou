@@ -91,7 +91,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock)
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -104,7 +104,7 @@
 	desc = "This Glock 86 plasma pistol has had its magnetic housing chamber realigned to reduce the drain on its energy cell. Its efficiency has doubled, allowing it to fire more shots before the battery is expended."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock/extended)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 //Plasma Rifle

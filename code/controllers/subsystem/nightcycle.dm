@@ -35,23 +35,23 @@ SUBSYSTEM_DEF(nightcycle)
 
 	// Variables for badmining
 	var/sunrise_sun_color = "#ffd1b3"
-	var/sunrise_sun_power = 95
+	var/sunrise_sun_power = 65
 	var/morning_sun_color = "#fba52b"
-	var/morning_sun_power = 145
+	var/morning_sun_power = 115
 	var/latemorn_sun_color = "#fba52b"
-	var/latemorn_sun_power = 185
+	var/latemorn_sun_power = 155
 	var/daytime_sun_color = "#faf7cb"
-	var/daytime_sun_power = 215
+	var/daytime_sun_power = 185
 	var/afternoon_sun_color = "#faf7cb"
-	var/afternoon_sun_power = 195
+	var/afternoon_sun_power = 165
 	var/lateafternoon_sun_color = "#faf7cb"
-	var/lateafternoon_sun_power = 175
+	var/lateafternoon_sun_power = 145
 	var/sunset_sun_color = "#f5b151"
-	var/sunset_sun_power = 135
+	var/sunset_sun_power = 105
 	var/fullsunset_sun_color = "#f37588"
-	var/fullsunset_sun_power = 85
-	var/nighttime_sun_color = "#676b74"
-	var/nighttime_sun_power = 40
+	var/fullsunset_sun_power = 55
+	var/nighttime_sun_color = "#28292d"
+	var/nighttime_sun_power = 1 // dark as shit brooo
 
 	/// If defined with any number besides null it will determine how long each cycle lasts.
 //	var/custom_cycle_wait = 1600 SECONDS
@@ -217,14 +217,19 @@ SUBSYSTEM_DEF(nightcycle)
 		junction |= direction_flag; \
 	} while(FALSE)
 
+#define	NORTHEAST_JUNCTION (1<<4)
+#define	SOUTHEAST_JUNCTION (1<<5)
+#define	SOUTHWEST_JUNCTION (1<<6)
+#define	NORTHWEST_JUNCTION (1<<7)
+
 /// Scans neighbors for sunlight sources and sets up the proper object to handle it.
 /turf/proc/smooth_sunlight_border()
 	var/new_junction = NONE
 	for(var/direction in GLOB.cardinals) //Cardinal case first.
 		SUNLIGHT_ADJ_IN_DIR(src, new_junction, direction, direction)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHWEST, NORTHWEST_JUNCTION)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHEAST, NORTHEAST_JUNCTION)
-	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHWEST, NORTHWEST_JUNCTION)	//This used to be a bitfield but icon smoothing redefined the define into these strings.
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHEAST, NORTHEAST_JUNCTION)	//NE (1>>4), SE (1>>5), SW (1>>6), NW (1>>7) respectively.
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHWEST, SOUTHWEST_JUNCTION)	//See Fortune 13 #5 and TGstation #53906 for this is probably broken.
 	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
 	if(new_junction == border_neighbors)
 		return // No change.
@@ -308,3 +313,8 @@ SUBSYSTEM_DEF(nightcycle)
 #undef SUNSET
 #undef NIGHTTIME
 #undef DAY_END
+
+#undef	NORTHEAST_JUNCTION
+#undef	SOUTHEAST_JUNCTION
+#undef	SOUTHWEST_JUNCTION
+#undef	NORTHWEST_JUNCTION

@@ -36,62 +36,81 @@
 /area/f13/building/library
 	name = "New Boston Library"
 	narrate = "A small library full of books that are cobbled together with cheap wood glue. The air is musty and choked with ink."
+	safe_town = TRUE
 
 /area/f13/building/church
 	name = "New Boston Church"
 	narrate = "Lavender and vanilla oil. The air is surprisingly clean and lacks the characteristic bitter tang of the waste-air. Rust nor radiation has penetrated this holy place."
+	safe_town = TRUE
 
 /area/f13/building/hospital/clinic
 	narrate = "Fans- cold air- a rarity. The floor is sticky and the scent of chemicals makes your eyes water. A gentle hum of medical machinery transcends the clinic's humble appearance."
+	safe_town = TRUE
 
 /area/f13/building/hospital/clinic/nash
 	name = "New Boston Clinic"
+	safe_town = TRUE
 
 /area/f13/building/hospital/clinic/ashdown
 	name = "Ashdown Clinic"
+	safe_town = TRUE
 
 /area/f13/bar
 	narrate = "A crackling radio goes off in the corner. You are greeted to your favorite drinking spot by the sound of an indistinct radio announcer declaring the hottest hits of the deadlands."
+	safe_town = TRUE
 
 /area/f13/bar/nash
 	name = "New Boston Bar"
+	safe_town = TRUE
 
 /area/f13/bar/ashdown
 	name = "Ashdown Bar"
+	safe_town = TRUE
 
 /area/f13/building/nash/policestation
 	name = "New Boston PD"
 	narrate = "A grungy old police station, somehow despite the world going insane its kept the purpose it was built for."
+	safe_town = TRUE
 
 
 /area/f13/building/trader
 	name = "New Boston Trader"
 	narrate = "This area seems to go from super busy to quiet as a grave; but right now, maybe you have something to sell."
+	safe_town = TRUE
 
 /area/f13/building/workshop
 	narrate = "Loose tools and materials are strewn around, cluttering the tables and floor. In the corner, the forge smoulders quietly."
+	safe_town = TRUE
 
 /area/f13/building/workshop/nash
 	name = "New Boston Workshop"
+	narrate = "The gathering point of many a adventurer and busybody civilian. This is where myths and legends are spun, equipment is shared, and where the coins flow like water."
+	safe_town = TRUE
 
 /area/f13/building/workshop/ashdown
 	name = "Ashdown Workshop"
+	safe_town = TRUE
 
 
 /area/f13/building/bank
 	name = "New Boston Bank"
 	narrate = "Smells like new money, burns like old debt."
+	safe_town = TRUE
 
 /area/f13/wasteland/city/downtown
 	narrate = "Even from here, you can see the husks of the old world; a school, a hospital, a mall. Who knows what this area contains?"
+	safe_town = TRUE
 
 /area/f13/wasteland/depot
+	safe_town = TRUE
 
 /area/f13/wasteland/nash
 	name = "The city of Nash"
+	safe_town = TRUE
 
 /area/f13/wasteland/ashdown
 	name = "The township of Ashdown"
+	safe_town = TRUE
 
 
 /area/f13/ruins/depot

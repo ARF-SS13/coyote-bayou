@@ -1856,6 +1856,11 @@
 	path = /obj/item/clothing/suit/toggle/labcoat/aurora/ashjacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/britishjacket
+	name = "British Jacket"
+	path = /obj/item/clothing/suit/coat/coyote/british_jacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/aurora/robesuit
 	name = "Green and Yellow Robe"
 	path = /obj/item/clothing/suit/aurora/robesuit

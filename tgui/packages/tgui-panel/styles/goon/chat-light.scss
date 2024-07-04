@@ -1103,8 +1103,8 @@ h1.alert, h2.alert {
 }
 
 .private	{
-  color: #00BB80;
-  font-weight: bold;
+  color: #00563b;
+  // font-weight: bold;
   animation: private 3000ms;
   animation-direction: linear;
 }
@@ -1123,7 +1123,23 @@ h1.alert, h2.alert {
     color: #00FF00;
   }
 	100% {
-    color: #00BB80;
+    color: #00563b;
+  }
+}
+
+.privateSent	{
+  color: #002c21;
+  // font-weight: bold;
+  animation: privateSent 3000ms;
+  animation-direction: linear;
+}
+
+@keyframes privateSent {
+	0% {
+    color: #00FF00;
+  }
+	100% {
+    color: #002c21;
   }
 }
 

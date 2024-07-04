@@ -219,16 +219,21 @@
 /obj/item/reagent_containers/food/snacks/cell
 	name = "oops"
 	desc = "If you're reading this it means I messed up. This is related to ipcs/synths eating cells and I didn't know a better way to do it than making a new food object."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 0.5)
+	list_reagents = list(/datum/reagent/consumable/nutriment/batteryacid = 1)
 	tastes = list("electricity" = 1, "metal" = 1)
+	eatingsound = 'sound/weapons/laserPumpEmpty.ogg'
 
 /obj/item/stock_parts/cell/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && isrobotic(M))
+		if(charge == 0)
+			to_chat(user, "This powercell doesnt have enough power to charge you.")
+			return
 		var/obj/item/reagent_containers/food/snacks/cell/cell_as_food = new
 		cell_as_food.name = name
 		if(cell_as_food.attack(M, user, def_zone))
 			take_damage(40, sound_effect=FALSE, attacked_by = user)
 		qdel(cell_as_food)
+		use(maxcharge*0.2)
 	else
 		return ..()
 

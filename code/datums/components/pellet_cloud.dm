@@ -96,7 +96,17 @@
  * Honestly this is mostly just a rehash of [/obj/item/ammo_casing/proc/fire_casing()] for pellet counts > 1, except this lets us tamper with the pellets and hook onto them for tracking purposes.
  * The arguments really don't matter, this proc is triggered by COMSIG_PELLET_CLOUD_INIT which is only for this really, it's just a big mess of the state vars we need for doing the stuff over here.
  */
-/datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
+/datum/component/pellet_cloud/proc/create_casing_pellets(
+	obj/item/ammo_casing/shell,
+	atom/target,
+	mob/living/user,
+	fired_from,
+	randomspread,
+	spread,
+	zone_override,
+	params,
+	distro
+)
 	shooter = user
 	var/targloc = get_turf(target)
 	if(!zone_override)
@@ -104,11 +114,11 @@
 
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
-		var/angle_out = clamp(distro, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+		var/angle_out = clamp(spread, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 		/// Distro is the angle offset the whole thing will be centered on
 		/// spread is the max deviation from that center the pellets can be
 		if(randomspread)
-			angle_out += rand(-spread, spread) * 0.5
+			angle_out += rand(-distro, distro) * 0.5
 		else //Smart spread
 			angle_out = round((i / num_pellets - 0.5) * max(distro, 1))
 

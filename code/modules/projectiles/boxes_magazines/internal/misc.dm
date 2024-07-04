@@ -26,7 +26,7 @@
 	name = "m2 flamethower fuel tank"
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
 	caliber = list(CALIBER_FUEL)
-	max_ammo = 12 //6 bursts, iirc its about the same ammount as the IRL M2
+	max_ammo = 480
 
 /obj/item/ammo_box/magazine/internal/cylinder/sling
 	name = "sling pouch"

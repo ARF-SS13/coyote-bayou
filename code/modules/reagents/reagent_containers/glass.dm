@@ -46,7 +46,7 @@
 				M.visible_message(span_danger("[user] attempts to feed something to [M]."), \
 							span_userdanger("[user] attempts to feed something to you."))
 				log_combat(user, M, "is attempting to feed", reagents.log_list())
-				if(!do_mob(user, M))
+				if(!do_mob(user, M, 1 SECONDS, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 					return
 				if(!reagents || !reagents.total_volume)
 					return // The drink might be empty after the delay, such as by spam-feeding

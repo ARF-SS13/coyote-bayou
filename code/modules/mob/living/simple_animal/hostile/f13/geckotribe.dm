@@ -99,7 +99,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -164,7 +164,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(10, 15, 20),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -281,7 +281,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -291,7 +291,7 @@
 	)
 
 //gecko with a bow. will bravely defend its home
-/mob/living/simple_animal/hostile/gecko/tribal/hunter
+/mob/living/simple_animal/hostile/gecko/tribal/hunter // oh I love that game!
 	name = "gecko hunter"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one has a bone spear."
 	icon_state = "gekko_tribe_bowman"
@@ -397,7 +397,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -531,7 +531,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -575,8 +575,8 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 200
+	health = 200
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -591,6 +591,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -638,6 +639,7 @@
 	move_resist = MOVE_FORCE_OVERPOWERING
 	projectiletype = /obj/item/projectile/geckosummon
 	projectilesound = 'sound/magic/Staff_Healing.ogg'
+	can_glow_revive = FALSE
 	idlesound = list(
 		'sound/f13npc/gecko/geckocall1.ogg',
 		'sound/f13npc/gecko/geckocall2.ogg',
@@ -660,9 +662,9 @@
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(2000),
+		MOB_HEALTH_LIST(200),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
@@ -732,8 +734,8 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 150
+	health = 150
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -750,6 +752,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -819,7 +822,7 @@
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(3000),
 		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 3, 3),
@@ -869,129 +872,6 @@
 	gottem.ensnare(hit)
 	return BULLET_ACT_HIT
 
-/mob/living/simple_animal/hostile/gecko/tribal/shaman
-	name = "gecko shaman"
-	desc = "A large mutated reptile that has learned the basics of tool usage. This one has pouches of herbs"
-	icon_state = "gekko_tribe_shaman"
-	icon_living = "gekko_tribe_shaman"
-	icon_dead = "gekko_dead"
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	speak_chance = 0
-	turns_per_move = 5
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
-		/obj/item/stack/sheet/animalhide/gecko = 1,
-		/obj/item/clothing/under/f13/tribe_shaman = 1,
-		/obj/effect/spawner/lootdrop/f13/trash_medicine = 3,
-		/obj/item/stack/sheet/bone = 1,
-		/obj/item/stack/sheet/sinew = 1,)
-	butcher_difficulty = 1
-	response_help_simple = "pets"
-	response_disarm_simple = "gently pushes aside"
-	response_harm_simple = "hits"
-	peaceful = TRUE
-	taunt_chance = 30
-	speed = 0
-	maxHealth = 35
-	health = 35
-	harm_intent_damage = 8
-	obj_damage = 20
-	melee_damage_lower = 4
-	melee_damage_upper = 12
-	move_to_delay = 1.5
-	retreat_distance = 0
-	minimum_distance = 0
-	aggro_vision_range = 7
-	vision_range = 8
-	waddle_amount = 3
-	waddle_up_time = 1
-	waddle_side_time = 2
-	pass_flags = PASSTABLE
-	speak_emote = list(
-		"squeaks",
-		"cackles",
-		"snickers",
-		"shriek",
-		"scream",
-		"skrem",
-		"scrambles",
-		"warbles",
-		"chirps",
-		"cries",
-		"kyaas",
-		"chortles",
-		"gecks"
-		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
-	attack_verb_simple = list(
-		"bites",
-		"claws",
-		"tears at",
-		"dabs",
-		"scratches",
-		"gnaws",
-		"chews",
-		"chomps",
-		"lunges",
-		"gecks"
-		)
-	faction = list("gecko", "critter-friend") // critter-friend is a flag for related beast friend/master quirk. Makes hostile mob passive for quirk holder.
-	a_intent = INTENT_HARM
-	gold_core_spawnable = HOSTILE_SPAWN
-	footstep_type = FOOTSTEP_MOB_CLAW
-	ranged = TRUE
-	check_friendly_fire = TRUE
-	projectiletype = /obj/item/projectile/geckofire
-	projectilesound = 'sound/magic/fireball.ogg'
-	idlesound = list(
-		'sound/f13npc/gecko/geckocall1.ogg',
-		'sound/f13npc/gecko/geckocall2.ogg',
-		'sound/f13npc/gecko/geckocall3.ogg',
-		'sound/f13npc/gecko/geckocall4.ogg',
-		'sound/f13npc/gecko/geckocall5.ogg'
-		)
-
-	emote_taunt = list("screeches")
-	emote_taunt_sound = list(
-		'sound/f13npc/gecko/gecko_charge1.ogg',
-		'sound/f13npc/gecko/gecko_charge2.ogg',
-		'sound/f13npc/gecko/gecko_charge3.ogg'
-		)
-	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
-	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
-	can_ghost_into = TRUE
-	desc_short = "Short, angry, and as confused as they are tasty."
-	desc_important = "Still in development! Report wierdness on the discord!"
-
-	variation_list = list(
-		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
-		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(30, 35, 40, 45),
-		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
-		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-	)
-
-/mob/living/simple_animal/hostile/gecko/tribal/shaman/Initialize(mapload)
-	. = ..()
-	// we only heal BRUTELOSS because each type directly heals a simplemob's health
-	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
-	// aka 40% of max life every tick, which is basically unkillable
-	// TODO: refactor this if simple_animals ever get damage types
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/gecko, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
-
 
 /mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman
 	name = "gecko tribe small shaman"
@@ -1035,6 +915,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	robust_searching = TRUE
+	bossmob = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -1099,19 +980,20 @@
 	can_ghost_into = FALSE
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	can_glow_revive = FALSE
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(2000),
+		MOB_HEALTH_LIST(75),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
-/mob/living/simple_animal/hostile/gecko/tribal/shaman/Initialize(mapload)
+/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
 	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much

@@ -160,8 +160,18 @@
 	..()
 	target.emp_act(15)//5 severity is very, very low
 
-
 //////////////////////
+//	Split Arrow		//
+//////////////////////
+
+/obj/item/projectile/bullet/reusable/arrow/split
+	name = "split arrow"
+	desc = "an arrow that splits apart after firing."
+	break_chance = 100 // Don't want people getting 2 back for shooting 1
+	spread = 15 // Whats the downside? Not much, but it requires good metal parts to make + is hard to hit things with
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/split
+	
+
 //	Bludgeon Arrow	//
 //////////////////////
 // Stamina Arrow
@@ -201,7 +211,7 @@
 	damage = 20
 	armour_penetration = 0.10
 	supereffective_damage = 40
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone
 
 /obj/item/projectile/bullet/reusable/arrow/bronze //Just some AP shots

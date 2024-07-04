@@ -283,7 +283,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = BULLET_DAMAGE_RIFLE_473 * 2
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot")
 
 /* 4.73 explosive
  * DAMAGE: 15
@@ -719,7 +719,7 @@
 
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = 90
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /////////
 // .50 //
@@ -1165,7 +1165,7 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
 	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH // hmm
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	/// Reduces damage by this much when it hits a thing
 	var/per_wall_mult = 0.8
 

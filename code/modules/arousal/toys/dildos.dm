@@ -34,27 +34,27 @@
 /obj/item/dildo/proc/customize(mob/living/user)
 	if(!can_customize)
 		return FALSE
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/color_choice = input(user,"Choose a color for your dildo.","Dildo Color") as null|anything in GLOB.dildo_colors
-		if(src && color_choice && !user.incapacitated() && in_range(user,src))
+		if(src && color_choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 			sanitize_inlist(color_choice, GLOB.dildo_colors, "Red")
 			color = GLOB.dildo_colors[color_choice]
 	update_icon()
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/shape_choice = input(user,"Choose a shape for your dildo.","Dildo Shape") as null|anything in GLOB.dildo_shapes
-		if(src && shape_choice && !user.incapacitated() && in_range(user,src))
+		if(src && shape_choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 			sanitize_inlist(shape_choice, GLOB.dildo_colors, "Knotted")
 			dildo_shape = GLOB.dildo_shapes[shape_choice]
 	update_icon()
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/size_choice = input(user,"Choose the size for your dildo.","Dildo Size") as null|anything in GLOB.dildo_sizes
-		if(src && size_choice && !user.incapacitated() && in_range(user,src))
+		if(src && size_choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 			sanitize_inlist(size_choice, GLOB.dildo_colors, "Medium")
 			dildo_size = GLOB.dildo_sizes[size_choice]
 	update_icon()
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/transparency_choice = input(user,"Choose the transparency of your dildo. Lower is more transparent!(192-255)","Dildo Transparency") as null|num
-		if(src && transparency_choice && !user.incapacitated() && in_range(user,src))
+		if(src && transparency_choice && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 			sanitize_integer(transparency_choice, 192, 255, 192)
 			alpha = transparency_choice
 	update_icon()

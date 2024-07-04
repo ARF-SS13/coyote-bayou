@@ -114,6 +114,10 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
+	extra_projectiles = 3
+	ranged = TRUE
+	projectiletype = /obj/item/projectile/magic/kelpmagic/magmaspray/weak
+	projectilesound = 'sound/weapons/fire03.ogg'
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
 	. = ..()
@@ -121,7 +125,7 @@
 /mob/living/simple_animal/hostile/fireant/Aggro()
 	..()
 	summon_backup(10)
-
+/*
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
 	var/atom/my_target = get_target()
@@ -129,7 +133,7 @@
 		return
 	var/mob/living/carbon/human/H = my_target
 	H.reagents.add_reagent(/datum/reagent/hellwater, 1)
-
+*/
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
 	name = "giant ant queen"
@@ -356,7 +360,6 @@
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
-	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = 1
@@ -538,10 +541,10 @@
 	. = ..()
 
 //////////////
-// RADROACH //
+// Pillbug //
 //////////////
 
-/mob/living/simple_animal/hostile/radroach
+/mob/living/simple_animal/hostile/pillbug
 	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
 	icon = 'modular_coyote/icons/mob/pillbug.dmi'
@@ -585,7 +588,7 @@
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
-		MOB_HEALTH_LIST(10, 30, 1),
+		MOB_HEALTH_LIST(10, 20, 1),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(1, 2, 3), //teehee ~TK <3
@@ -604,13 +607,13 @@
 	actual_retreat_message = "The %NAME skitters away from %TARGET like a lunatic!"
 	healing_message = "The %NAME bandages itself!" // ye, oh easily, thats why I love procs~
 
-/mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/pillbug/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 //Variants for Radroachers
 
-/mob/living/simple_animal/hostile/radroach/micro
+/mob/living/simple_animal/hostile/pillbug/micro
 	name = "Micro Pillbug"
 	maxHealth = 20
 	health = 20
@@ -627,12 +630,17 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/micro/Initialize()
+/mob/living/simple_animal/hostile/pillbug/micro/Initialize()
 	.=..()
 	resize = 0.75
 	update_transform()
 
-/mob/living/simple_animal/hostile/radroach/strongradroach
+/mob/living/simple_animal/hostile/pillbug/micro/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+/mob/living/simple_animal/hostile/pillbug/strongradroach
 	maxHealth = 140
 	health = 140
 	name = "Macro Pillbug"
@@ -651,7 +659,12 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/leader
+/mob/living/simple_animal/hostile/pillbug/strongradroach/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+/mob/living/simple_animal/hostile/pillbug/leader
 	name = "Pillbug Leader"
 	maxHealth = 40
 	health = 40
@@ -662,6 +675,7 @@
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE
+	can_glow_revive = FALSE
 	variation_list = list(
 		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
 		MOB_SPEED_LIST(4, 4.2, 4.3),
@@ -673,13 +687,15 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	) //same as a newt for how they attack
 
-/mob/living/simple_animal/hostile/radroach/leader/Initialize()
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize()
 	.=..()
-	resize = 3.0
+	resize = 2.0
 	update_transform()
 
-
-
+/mob/living/simple_animal/hostile/pillbug/leader/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 /obj/item/projectile/pillbugsummon
 	name = "pillbug summoning"
@@ -695,7 +711,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	wound_falloff_tile = 0
-	
+
 	pixels_per_second = BULLET_SPEED_BASE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -704,18 +720,18 @@
 
 /obj/item/projectile/pillbugsummon/on_hit(atom/target, blocked = FALSE)
 	..()
-	spawn_and_random_walk(/mob/living/simple_animal/hostile/radroach/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/pillbug/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
 	//		break
 	return BULLET_ACT_HIT
 
-/mob/living/simple_animal/hostile/radroach/summon //untameable
+/mob/living/simple_animal/hostile/pillbug/summon //untameable
 	faction = list("gecko")
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
 	del_on_death = TRUE
 
-/mob/living/simple_animal/hostile/radroach/leader/Initialize(mapload)
+/mob/living/simple_animal/hostile/pillbug/leader/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/radroach, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/pillbug, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS)
 

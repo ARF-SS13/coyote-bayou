@@ -16,12 +16,16 @@ SUBSYSTEM_DEF(chat)
 
 	/// all the wacky ass flirt datums we have in existence
 	var/list/flirts = list()
+	var/list/flirtsByNumbers = list()
 	/// A cached mass of jsonified flirt datums, for TGUI
 	var/list/flirt_for_tgui = list() // flirt for me, flirt for me, flirt flirt
 	var/list/flirts_all_categories = list() // flirt for me, flirt for me, flirt flirt
 
 	var/flirt_debug = TRUE
 	var/debug_block_radio_blurbles = FALSE
+
+	/// Format: list("quid" = /datum/character_inspection)
+	var/list/inspectors = list()
 
 	/// list of flirt ckey things so that we can store their target or something
 	/// format: list("flirterckey" = "targetckey")
@@ -33,6 +37,7 @@ SUBSYSTEM_DEF(chat)
 	var/list/flirt_cooldowns = list()
 	/// how long between flirts can we flirt
 	var/flirt_cooldown_time = 5 SECONDS
+	var/debug_character_directory = 0
 
 /datum/controller/subsystem/chat/Initialize(start_timeofday)
 	setup_emoticon_cache()
@@ -88,11 +93,15 @@ SUBSYSTEM_DEF(chat)
 /datum/controller/subsystem/chat/fire()
 	for(var/key in payload_by_client)
 		var/client/client = key
-		var/payload = payload_by_client[key]
+		var/list/payload = payload_by_client[key]
 		payload_by_client -= key
 		if(client)
-			if(payload["prefCheck"] && CHECK_PREFS(client, payload["prefCheck"]))
-				continue // we dont want to see it
+			// for(var/pl_badwater in 1 to LAZYLEN(payload))
+			// 	// Check if we should block this message
+			// 	var/list/control_point = LAZYACCESS(payload, pl_badwater)
+			// 	if(control_point["prefCheck"] && !CHECK_PREFS(client, control_point["prefCheck"]))
+			// 		payload.Cut(pl_badwater, pl_badwater-1) // Failmate
+			// 		continue // we dont want to see it
 			// Send to tgchat
 			client.tgui_panel?.window.send_message("chat/message", payload)
 			// Send to old chat
@@ -106,10 +115,14 @@ SUBSYSTEM_DEF(chat)
 		for(var/_target in target)
 			var/client/client = CLIENT_FROM_VAR(_target)
 			if(client)
+				if(message["prefCheck"] && !CHECK_PREFS(client, message["prefCheck"]))
+					continue
 				LAZYADD(payload_by_client[client], list(message))
 		return
 	var/client/client = CLIENT_FROM_VAR(target)
 	if(client)
+		if(message["prefCheck"] && !CHECK_PREFS(client, message["prefCheck"]))
+			return
 		LAZYADD(payload_by_client[client], list(message))
 
 /datum/controller/subsystem/chat/proc/build_flirt_datums()
@@ -265,10 +278,113 @@ SUBSYSTEM_DEF(chat)
 			if(LAZYACCESS(flirt_cooldowns, flirter.ckey) < world.time)
 				to_chat(flirter, span_warning("Hold your horses! You're still working on that last flirt!"))
 				return
-			return F.give_flirter(flirter, target)
+			return F.give_flirter(flirter)
 
 /datum/controller/subsystem/chat/ui_state(mob/user)
 	return GLOB.always_state
+
+/datum/controller/subsystem/chat/proc/start_page(mob/sender, mob/reciever)
+	if(!sender || !reciever)
+		return
+	sender = extract_mob(sender)
+	if(!sender || !sender.client)
+		return
+	reciever = extract_mob(reciever)
+	if(!reciever || !reciever.client)
+		to_chat(sender, span_alert("Unable to contact user, please try again later!"))
+		return
+	if(is_blocked(sender, reciever))
+		to_chat(sender, span_warning("Module failed to load."))
+		return
+	var/theirname = name_or_shark(reciever) || "some jerk" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
+	var/sender_should_see_ckey = check_rights_for(extract_client(sender), R_ADMIN)
+	if(sender_should_see_ckey)
+		theirname = "[theirname] - [extract_ckey(reciever)]"  // we're an admin, we can see their name
+	var/mesage = input(
+		sender,
+		"Enter your message to [theirname]. This will send a direct message to them, which they can reply to! Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>",
+		"Direct OOC Message",
+		""
+	) as message|null
+	if(!mesage)
+		return
+	var/myname = name_or_shark(sender) || "Anonymouse"
+	var/recipient_should_see_ckey = check_rights_for(extract_client(reciever), R_ADMIN)
+	if(recipient_should_see_ckey)
+		myname = "[myname] - [extract_ckey(sender)]"  // we're an admin, we can see their name
+
+	var/payload2them = "<u><b>From [dm_linkify(reciever, sender, myname)]</u></b>: [mesage]<br>"
+	payload2them = span_private(payload2them)
+	to_chat(reciever, span_private("<br><U>You have a new message from [name_or_shark(sender) || "Some jerk"]!</U><br>"))
+	to_chat(reciever, payload2them)
+	reciever.playsound_local(reciever, 'sound/effects/direct_message_recieved.ogg', 75, FALSE)
+
+	var/payload2me = "<u><b>To [dm_linkify(sender, reciever, theirname)]</u></b>: [mesage]<br>"
+	payload2me = span_private_sent(payload2me)
+	to_chat(sender, span_private_sent("<br><U>Your message to [theirname] has been sent!</U><br>"))
+	to_chat(sender, payload2me)
+	sender.playsound_local(sender, 'sound/effects/direct_message_setn.ogg', 75, FALSE)
+
+	log_ooc("[sender.real_name] ([sender.ckey]) -> [reciever.real_name] ([reciever.ckey]): [mesage]")
+	message_admins("[ADMIN_TPMONTY(sender)] -DM-> [ADMIN_TPMONTY(reciever)]: [mesage]", ADMIN_CHAT_FILTER_DMS, list(sender, reciever))
+
+/// takes in a sencer, a reciever, and an optional name, and turns it into a clickable link to send a DM
+/datum/controller/subsystem/chat/proc/dm_linkify(mob/sender, mob/reciever, optional_name)
+	if(!sender || !reciever)
+		return
+	sender = extract_mob(sender)
+	if(!sender || !sender.client)
+		return
+	reciever = extract_mob(reciever)
+	if(!reciever || !reciever.client)
+		return
+	var/theirname = optional_name || name_or_shark(reciever) || "Anonymouse" // stop. naming. your. ckeys. after. your characcteres!!!!!!!!!!!!!!!!!!
+	
+	return "<a href='?src=[REF(src)];DM=1;sender_quid=[REF(sender)];reciever_quid=[REF(reciever)]'>[theirname]</a>"
+
+/datum/controller/subsystem/chat/Topic(href, list/href_list)
+	. = ..()
+	if(href_list["DM"])
+		start_page(href_list["sender_quid"], href_list["reciever_quid"])
+
+/datum/controller/subsystem/chat/proc/is_blocked(mob/sender, mob/reciever)
+	return FALSE // todo: this
+
+/datum/controller/subsystem/chat/proc/name_or_shark(mob/they)
+	if(!istype(they))
+		return "Nobody"
+	if(check_rights(R_ADMIN, FALSE))
+		return they.name || they.real_name
+	if(ckey(they.real_name) == ckey(they.ckey) || ckey(they.name) == ckey(they.ckey))
+		if(they.client)
+			var/test_name = they.client.prefs.real_name
+			if(ckey(test_name) == ckey(they.ckey))
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(test_name)]", TRUE, TRUE))
+					return test_name
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(they.name)]", TRUE, TRUE))
+					return test_name
+				if(strings("data/super_special_ultra_instinct.json", "[ckey(they.real_name)]", TRUE, TRUE))
+					return test_name
+				if(they.ckey == "aldrictavalin") // tired of this not working
+					return test_name
+				return they.client.prefs.my_shark
+			return test_name
+		return safepick(GLOB.cow_names + GLOB.megacarp_first_names + GLOB.megacarp_last_names)
+	return they.real_name
+
+/datum/controller/subsystem/chat/proc/inspect_character(mob/viewer, list/payload)
+	if(!viewer)
+		return
+	viewer = extract_mob(viewer)
+	if(!viewer || !viewer.client)
+		return
+	var/datum/character_inspection/chai = LAZYACCESS(inspectors, viewer.client.prefs.quester_uid)
+	if(!chai)
+		chai = new()
+		inspectors[viewer.client.prefs.quester_uid] = chai
+	chai.update(viewer, payload)
+	chai.show_to(viewer)
+	return TRUE
 
 /datum/controller/subsystem/chat/proc/flirt_debug_toggle()
 	TOGGLE_VAR(flirt_debug)
@@ -331,6 +447,12 @@ SUBSYSTEM_DEF(chat)
 	if(user.stat == DEAD)
 		to_chat(user, span_warning("You've got better things to do than flirt, such as being dead."))
 		return
+	if(LAZYLEN(params))
+		var/whichm = text2num(params)
+		if(isnum(whichm) && whichm > 0 && whichm <= LAZYLEN(SSchat.flirtsByNumbers))
+			var/datum/flirt/F = LAZYACCESS(SSchat.flirtsByNumbers, whichm)
+			if(F)
+				return F.give_flirter(user)
 	to_chat(user, span_notice("You get ready to flirt. What will you do? And who with?"))
 	to_chat(user, span_notice("HOW TO USE: Click on the emote you want to use, and it'll give you a thing in your hand! Just click on whoever you want to send a flirtatious message to, or just use it in hand to send a message to everyone nearby. That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
@@ -568,5 +690,118 @@ SUBSYSTEM_DEF(chat)
 			message = replacetext(message, "YELLVERBS", emoter.verb_yell)
 	message = replacetext(message, "THEIR", emoter.p_their())
 	return message
+
+////////////// so those datums were awful, maybe this one will be better
+/datum/character_inspection // DROP YOUR PANTS, ITS CHARACTER INSPECTION DAY
+	var/gender
+	var/species
+	var/vorepref
+	var/erppref
+	var/kisspref
+	var/flink
+	var/ad
+	var/notes
+	var/flavor
+	var/their_quid
+	var/looking_for_friends
+	var/dms_r_open
+	var/name
+	var/profile_pic
+
+	/// update the character inspection with new data
+/datum/character_inspection/proc/update(mob/viewer, list/payload)
+	if(!payload)
+		return
+	gender = payload["gender"]
+	species = payload["species"]
+	vorepref = payload["tag"]
+	erppref = payload["erptag"]
+	kisspref = payload["whokisser"]
+	flink = payload["flist"]
+	ad = payload["character_ad"]
+	notes = payload["ooc_notes"]
+	flavor = payload["flavor_text"]
+	their_quid = payload["quid"]
+	looking_for_friends = payload["looking_for_friends"]
+	dms_r_open = TRUE
+	name = payload["name"]
+	profile_pic = payload["profile_pic"]
+	if(viewer && viewer.client)
+		show_to(viewer)
+
+	/// show the character inspection to the viewer
+/datum/character_inspection/proc/show_to(mob/viewer)
+	ui_interact(viewer)
+
+/datum/character_inspection/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CharacterInspection")
+		ui.open()
+		ui.set_autoupdate(FALSE)
+
+/datum/character_inspection/ui_static_data(mob/user)
+	var/list/static_data = list()
+	static_data["gender"] = gender
+	static_data["species"] = species
+	static_data["vorepref"] = vorepref
+	static_data["erppref"] = erppref
+	static_data["kisspref"] = kisspref
+	static_data["flink"] = flink
+	static_data["ad"] = html_decode(ad)
+	static_data["notes"] = html_decode(notes)
+	static_data["flavor"] = html_decode(flavor)
+	static_data["their_quid"] = their_quid
+	static_data["name"] = name
+	static_data["looking_for_friends"] = looking_for_friends
+	static_data["dms_r_open"] = TRUE
+	static_data["profile_pic"] = profile_pic
+	if(user && user.client) // dont know why they wouldnt, but whatever
+		static_data["viewer_quid"] = user.client.prefs.quester_uid
+	return static_data
+
+/datum/character_inspection/ui_act(action, list/params)
+	. = ..()
+	if(!params["viewer_quid"])
+		return
+	var/mob/viower = extract_mob(params["viewer_quid"])
+	if(!viower) // warning: sum of dis chapta is extremely scray
+		return // viower excretion advisd
+	var/mob/viowed = extract_mob(params["their_quid"])
+	if(!viowed)
+		return
+	if(action == "pager")
+		SSchat.start_page(viower, viowed)
+		return TRUE
+	if(action == "show_pic")
+		var/dat = {"
+			<img src='[profile_pic]' width='100%' height='100%' 'object-fit: scale-down;'>
+			<br>
+			[profile_pic] <- Copy this link to your browser to view the full sized image.
+		"}
+		var/datum/browser/popup = new(viower, "enlargeImage", "Full Sized Picture!",1024,768)
+		popup.set_content(dat)
+		popup.open()
+		return TRUE
+	if(action == "view_flist")
+		if(viowed)
+			to_chat(viower, span_notice("Opening F-list..."))
+			SEND_SIGNAL(viowed, COMSIG_FLIST, viower)
+			return TRUE
+		else
+			to_chat(viower, span_alert("Couldn't find that character's F-list!"))
+			return TRUE
+	return TRUE
+
+/datum/character_inspection/ui_state(mob/user)
+	return GLOB.always_state
+
+/mob/verb/direct_message(mob/A as mob in view(10, src))
+	set name = "Direct Message"
+	set category = "OOC"
+	set desc = "Send a direct message to this character."
+	set popup_menu = TRUE
+
+	SSchat.start_page(src, A)
 
 

@@ -134,13 +134,14 @@
 	category = list("Utility Nanites")
 
 ////////////////////MEDICAL NANITES//////////////////////////////////////
+/*
 /datum/design/nanites/regenerative
 	name = "Accelerated Regeneration"
 	desc = "The nanites boost the host's natural regeneration, increasing their healing speed."
 	id = "regenerative_nanites"
 	program_type = /datum/nanite_program/regenerative
 	category = list("Medical Nanites")
-
+*/ 
 /datum/design/nanites/regenerative_advanced
 	name = "Bio-Reconstruction"
 	desc = "The nanites manually repair and replace organic cells, acting much faster than normal regeneration. \
@@ -148,14 +149,14 @@
 	id = "regenerative_plus_nanites"
 	program_type = /datum/nanite_program/regenerative_advanced
 	category = list("Medical Nanites")
-
+/*
 /datum/design/nanites/temperature
 	name = "Temperature Adjustment"
 	desc = "The nanites adjust the host's internal temperature to an ideal level."
 	id = "temperature_nanites"
 	program_type = /datum/nanite_program/temperature
 	category = list("Medical Nanites")
-
+*/ 
 /datum/design/nanites/purging
 	name = "Blood Purification"
 	desc = "The nanites purge toxins and chemicals from the host's bloodstream."
@@ -250,16 +251,18 @@
 	id = "adrenaline_nanites"
 	program_type = /datum/nanite_program/adrenaline
 	category = list("Augmentation Nanites")
-
+/*
 /datum/design/nanites/mindshield
 	name = "Mental Barrier"
 	desc = "The nanites form a protective membrane around the host's brain, shielding them from abnormal influences while they're active."
 	id = "mindshield_nanites"
 	program_type = /datum/nanite_program/mindshield
 	category = list("Augmentation Nanites")
-
+*/
 ////////////////////DEFECTIVE NANITES//////////////////////////////////////
 
+// Let's not
+/*
 /datum/design/nanites/glitch
 	name = "Glitch"
 	desc = "A heavy software corruption that causes nanites to gradually break down."
@@ -315,9 +318,12 @@
 	id = "braindecay_nanites"
 	program_type = /datum/nanite_program/brain_decay
 	category = list("Defective Nanites")
-
+*/
 ////////////////////WEAPONIZED NANITES/////////////////////////////////////
 
+// Let's not
+
+/*
 /datum/design/nanites/flesh_eating
 	name = "Cellular Breakdown"
 	desc = "The nanites destroy cellular structures in the host's body, causing brute damage."
@@ -382,7 +388,9 @@
 	program_type = /datum/nanite_program/explosive
 	category = list("Weaponized Nanites")
 
-/datum/design/nanites/mind_control
+*/
+
+/datum/design/nanites/mind_control // :3
 	name = "Mind Control"
 	desc = "The nanites imprint an absolute directive onto the host's brain while they're active."
 	id = "mindcontrol_nanites"
@@ -390,7 +398,7 @@
 	category = list("Weaponized Nanites")
 
 ////////////////////SUPPRESSION NANITES//////////////////////////////////////
-
+/*
 /datum/design/nanites/shock
 	name = "Electric Shock"
 	desc = "The nanites shock the host when triggered. Destroys a large amount of nanites!"
@@ -439,14 +447,14 @@
 	id = "mute_nanites"
 	program_type = /datum/nanite_program/mute
 	category = list("Suppression Nanites")
-
+*/
 /datum/design/nanites/voice
 	name = "Skull Echo"
 	desc = "The nanites echo a synthesized message inside the host's skull."
 	id = "voice_nanites"
 	program_type = /datum/nanite_program/comm/voice
 	category = list("Suppression Nanites")
-
+/*
 /datum/design/nanites/speech
 	name = "Forced Speech"
 	desc = "The nanites force the host to say a pre-programmed sentence when triggered."
@@ -460,21 +468,21 @@
 	id = "hallucination_nanites"
 	program_type = /datum/nanite_program/comm/hallucination
 	category = list("Suppression Nanites")
-
+*/
 /datum/design/nanites/good_mood
 	name = "Happiness Enhancer"
 	desc = "The nanites synthesize serotonin inside the host's brain, creating an artificial sense of happiness."
 	id = "good_mood_nanites"
 	program_type = /datum/nanite_program/good_mood
 	category = list("Suppression Nanites")
-
+/*
 /datum/design/nanites/bad_mood
 	name = "Happiness Suppressor"
 	desc = "The nanites suppress the production of serotonin inside the host's brain, creating an artificial state of depression."
 	id = "bad_mood_nanites"
 	program_type = /datum/nanite_program/bad_mood
 	category = list("Suppression Nanites")
-
+*/
 ////////////////////SENSOR NANITES//////////////////////////////////////
 
 /datum/design/nanites/sensor_health

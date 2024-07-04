@@ -69,7 +69,7 @@
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/cell_charger{
 	pixel_x = -4;
 	pixel_y = -1
@@ -340,7 +340,7 @@
 	},
 /area/f13/wasteland)
 "amA" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin{
 	pixel_y = 9
 	},
@@ -528,7 +528,7 @@
 "aqA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "aqN" = (
 /obj/structure/flora/tallgrass4,
@@ -675,7 +675,7 @@
 /obj/item/camera_film,
 /obj/item/crafting/abraxo,
 /obj/item/assembly/prox_sensor,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/radio,
@@ -1129,7 +1129,7 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
 "aIi" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8;
 	termtag = "Public"
@@ -1426,7 +1426,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aNT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/bearpelt{
 	pixel_y = 8
 	},
@@ -1469,7 +1469,7 @@
 	},
 /area/f13/building/abandoned)
 "aPu" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -2706,7 +2706,7 @@
 /area/f13/building)
 "bwc" = (
 /obj/effect/landmark,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "bwv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3206,7 +3206,7 @@
 	},
 /area/f13/building/tribal)
 "bHF" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -3254,7 +3254,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "bJK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/newspaper,
 /turf/open/floor/carpet/purple,
 /area/f13/building)
@@ -3382,7 +3382,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "bLT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3584,7 +3584,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "bPC" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -3;
 	pixel_y = 0
 	},
@@ -3892,7 +3892,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "cbo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/candle/infinite{
 	icon_state = "candle3_lit";
 	pixel_x = -6;
@@ -4351,7 +4351,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "cwI" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -4605,7 +4605,7 @@
 "cEJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/shreds,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "cET" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -4619,7 +4619,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cFn" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4685,7 +4685,7 @@
 	},
 /area/f13/building/hospital)
 "cGK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/instrument/recorder,
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -4738,7 +4738,7 @@
 	},
 /area/f13/wasteland)
 "cIF" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -4932,7 +4932,7 @@
 /area/f13/building)
 "cQs" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "cQT" = (
 /obj/machinery/chem_master,
@@ -4962,7 +4962,7 @@
 	},
 /area/f13/wasteland)
 "cSh" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/store/cake/pavlova,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -4996,7 +4996,7 @@
 "cTr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5030,7 +5030,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "cUQ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/item/storage/box/matches{
 	pixel_x = -3;
@@ -5066,7 +5066,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
@@ -5550,7 +5550,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "dmD" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "dmT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5884,7 +5884,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dxl" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/lighter,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -6622,7 +6622,7 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "dVy" = (
 /obj/structure/chair/wood{
@@ -6871,7 +6871,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eew" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/vertibird_flare,
 /obj/item/vertibird_flare,
 /obj/item/vertibird_flare,
@@ -7041,7 +7041,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/hospital)
 "eiG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/helmet/f13/goner/blue{
 	pixel_x = -7;
 	pixel_y = 9
@@ -7200,7 +7200,7 @@
 "epw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -7250,7 +7250,7 @@
 	name = "counter shutters";
 	req_one_access_txt = null
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars{
@@ -7333,7 +7333,7 @@
 	color = "#000000";
 	icon_state = "trimline_fill"
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "euX" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -7345,7 +7345,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "evn" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/rag,
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -7405,7 +7405,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ewz" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp/captain{
 	name = "banker rubber stamp";
 	pixel_x = 4
@@ -7419,7 +7419,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -7777,7 +7777,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/microwave,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -7815,7 +7815,7 @@
 	},
 /area/f13/building/abandoned)
 "eKg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/open/floor/wood_common{
@@ -7956,7 +7956,7 @@
 	pixel_x = 14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "ePJ" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -8095,7 +8095,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "eUx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/glasswork/glasskit,
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -8136,7 +8136,7 @@
 /area/f13/wasteland)
 "eXt" = (
 /obj/structure/sign/poster/contraband/smoke,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -8398,7 +8398,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "fhD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/candle/infinite{
 	icon_state = "candle1_lit";
 	pixel_y = 12
@@ -8448,7 +8448,7 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "fiL" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/binoculars,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -8549,7 +8549,7 @@
 /area/f13/wasteland)
 "flJ" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -8882,7 +8882,7 @@
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "fwV" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -8896,7 +8896,7 @@
 "fxN" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "fye" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8920,7 +8920,7 @@
 "fyO" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "fyP" = (
 /obj/structure/fence/wooden{
@@ -8967,7 +8967,7 @@
 "fzs" = (
 /obj/item/glasswork/blowing_rod,
 /obj/item/glasswork/blowing_rod,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -9017,7 +9017,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fBG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
@@ -9095,7 +9095,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -9150,7 +9150,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "fGJ" = (
 /obj/structure/flora/grass/wasteland{
@@ -9228,7 +9228,7 @@
 	},
 /area/f13/wasteland)
 "fJk" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
 /obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
@@ -9341,7 +9341,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "fKY" = (
 /obj/structure/stone_tile/slab,
@@ -9426,7 +9426,7 @@
 	},
 /area/f13/building/tribal)
 "fMT" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	name = "Witness Stand"
 	},
 /turf/open/floor/carpet/royalblack,
@@ -9581,7 +9581,7 @@
 	pixel_y = 0
 	},
 /obj/structure/spacevine,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "fRw" = (
 /obj/structure/chair/wood/wings{
@@ -9754,7 +9754,7 @@
 	pixel_x = 2;
 	color = "#CC4444"
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "fVT" = (
 /obj/structure/flora/grass/coyote/four,
@@ -9829,7 +9829,7 @@
 /area/f13/wasteland)
 "fXH" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "fXL" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -9975,7 +9975,7 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "gcX" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -10012,7 +10012,7 @@
 /area/f13/wasteland)
 "gfc" = (
 /obj/machinery/vending/boozeomat,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "gfE" = (
 /turf/open/indestructible/cobble/side,
@@ -10271,7 +10271,7 @@
 /area/f13/tunnel)
 "gld" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/store,
+/turf/closed/wall/mineral/concrete,
 /area/f13/ruins)
 "glt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10687,7 +10687,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gvC" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/gun/ballistic/revolver/caravan_shotgun{
 	name = "Mess Fixer"
 	},
@@ -10886,7 +10886,7 @@
 "gCH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "gDb" = (
 /obj/structure/toilet{
@@ -11346,7 +11346,7 @@
 	},
 /area/f13/building)
 "gRp" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8;
 	termtag = "Public"
@@ -11363,7 +11363,7 @@
 	},
 /area/f13/building)
 "gRP" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt,
@@ -11521,7 +11521,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/library)
 "gXy" = (
 /obj/structure/flora/tallgrass4,
@@ -11798,7 +11798,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "heE" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/terminal{
 	dir = 8;
@@ -11848,7 +11848,7 @@
 /area/f13/wasteland/city/nash/suburbs)
 "hht" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "hhM" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12264,7 +12264,7 @@
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/building/church)
 "htk" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 4;
 	termtag = "Public"
@@ -12296,7 +12296,7 @@
 	},
 /area/f13/building)
 "htH" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -12403,7 +12403,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hxT" = (
-/turf/closed/wall/f13/coyote/tavern_wall{
+/turf/closed/wall/f13/tentwall{
 	color = "#992222"
 	},
 /area/f13/building)
@@ -12475,7 +12475,7 @@
 	},
 /area/f13/building)
 "hzB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -12550,7 +12550,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/cell_charger,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -12973,7 +12973,7 @@
 	color = "#a98c5d";
 	dir = 4
 	},
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "hPf" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -13028,7 +13028,7 @@
 	},
 /area/f13/building)
 "hQK" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -13040,7 +13040,7 @@
 /area/f13/wasteland)
 "hQO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -13444,7 +13444,7 @@
 	},
 /area/f13/building/hospital)
 "ieN" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "ieY" = (
 /obj/structure/stairs/east{
@@ -13602,7 +13602,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "ikG" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13722,7 +13722,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "iop" = (
@@ -13867,7 +13867,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "isU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/abandoned)
@@ -13891,7 +13891,7 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "itO" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/newspaper,
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
@@ -13984,7 +13984,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "iwF" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	density = 0;
 	pixel_y = 13
 	},
@@ -14276,7 +14276,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iCW" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp/ce{
 	desc = "A rubber stamp for stamping VERY important documents.";
 	name = "banker golden stamp";
@@ -14500,7 +14500,7 @@
 	},
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "iJj" = (
 /obj/structure/rack/shelf_wood,
@@ -14646,7 +14646,7 @@
 	},
 /area/f13/wasteland)
 "iOq" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 13;
 	pixel_x = 5
@@ -14658,7 +14658,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "iOJ" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_y = 7
 	},
@@ -14724,7 +14724,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iRB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -14921,7 +14921,7 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "jbx" = (
 /obj/structure/window/fulltile/wood,
@@ -15134,7 +15134,7 @@
 	},
 /area/f13/building/tribal)
 "jhU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/storage/keys_set,
 /obj/item/key,
 /obj/item/key,
@@ -15310,7 +15310,7 @@
 	},
 /area/f13/building)
 "jmP" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -3
 	},
 /obj/machinery/light/small{
@@ -15629,7 +15629,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "jun" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
@@ -15777,7 +15777,7 @@
 	},
 /area/f13/building)
 "jyG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1;
 	doc_content_1 = "Hey, John. Writing back to talk to you about the repairs. Boss is concerned about them. He swears he heard cracking. Says that it's because of the moisture from the plant across the way. I kind of think he's worrying about nothing. When's the next time you can get here?";
@@ -16253,7 +16253,7 @@
 	},
 /area/f13/wasteland)
 "jNQ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "jOq" = (
@@ -16320,7 +16320,7 @@
 /area/f13/wasteland)
 "jPB" = (
 /obj/structure/sign/poster/wanted,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -16442,7 +16442,7 @@
 	},
 /area/f13/building/tribal)
 "jSU" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -17007,7 +17007,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "kkP" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = 15;
 	pixel_y = 3
@@ -17017,7 +17017,7 @@
 	pixel_x = 16;
 	pixel_y = 7
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = -7;
 	pixel_y = 3
@@ -17264,7 +17264,7 @@
 	},
 /area/f13/building/abandoned)
 "kpD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -17548,7 +17548,7 @@
 /turf/open/indestructible/ground/outside/river,
 /area/f13/tunnel)
 "kyJ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/folder/documents,
 /obj/item/folder/yellow,
 /obj/item/folder/blue,
@@ -18201,7 +18201,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "kWV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -18454,12 +18454,12 @@
 	},
 /area/f13/building/tribal)
 "lgr" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "lgw" = (
@@ -19022,7 +19022,7 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "lyq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19071,7 +19071,7 @@
 /obj/structure/barricade/bars{
 	layer = 2.8
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
@@ -19182,7 +19182,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lDU" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -19266,7 +19266,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "lGe" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "lGE" = (
 /obj/structure/flora/grass/wasteland{
@@ -19387,7 +19387,7 @@
 	pixel_y = 23;
 	pixel_x = 8
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = -12;
 	layer = 4;
@@ -19569,7 +19569,7 @@
 /area/f13/building/abandoned)
 "lQc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/item/stack/ore/blackpowder/fifty,
 /obj/item/stack/ore/blackpowder/fifty,
@@ -19611,7 +19611,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -19883,7 +19883,7 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "lYT" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/library)
 "lYU" = (
 /obj/structure/holohoop{
@@ -20084,7 +20084,7 @@
 	},
 /area/f13/building)
 "mdO" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp/captain{
 	name = "banker rubber stamp";
 	pixel_x = 4
@@ -20424,7 +20424,7 @@
 	},
 /area/f13/building)
 "mpG" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/head/bearpelt{
 	pixel_y = 8
 	},
@@ -20642,7 +20642,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "mzg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/sink{
 	pixel_y = 22;
 	pixel_x = 16
@@ -20707,7 +20707,7 @@
 /area/f13/building/abandoned)
 "mAn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 8;
 	termtag = "Business"
@@ -20791,7 +20791,7 @@
 /turf/open/indestructible/cobble,
 /area/f13/building)
 "mCg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -21052,7 +21052,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "mMk" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -21122,7 +21122,7 @@
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "mSp" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
@@ -21214,7 +21214,7 @@
 	},
 /area/f13/wasteland)
 "mWd" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1;
 	pixel_y = 3;
@@ -21241,7 +21241,7 @@
 	},
 /area/f13/building/tribal)
 "mWY" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clipboard,
 /obj/item/clothing/mask/cigarette/cigar,
 /turf/open/floor/carpet/green,
@@ -21432,7 +21432,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "neg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/weapon/spatula{
 	pixel_x = -6
 	},
@@ -21696,7 +21696,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "nmZ" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
@@ -21977,7 +21977,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/f13/steak,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -22268,7 +22268,7 @@
 	},
 /area/f13/wasteland)
 "nFn" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/restraints/handcuffs,
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -22309,7 +22309,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "nGa" = (
@@ -22526,7 +22526,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -23074,7 +23074,7 @@
 /area/f13/wasteland)
 "ogG" = (
 /obj/structure/sign/poster/contraband/smoke,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -23251,7 +23251,7 @@
 	},
 /area/f13/wasteland)
 "opY" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/phone,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -23352,7 +23352,7 @@
 	},
 /area/f13/building/tribal)
 "oun" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/rag,
 /obj/item/twohanded/spear/bonespear{
 	pixel_y = 8
@@ -23433,7 +23433,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
@@ -23994,7 +23994,7 @@
 /area/f13/building/tribal)
 "oNX" = (
 /obj/item/stack/medical/suture/emergency/five,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/bonesetter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -24201,7 +24201,7 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "oVg" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/bedsheet/cult{
 	pixel_x = 3;
 	pixel_y = 9
@@ -24307,7 +24307,7 @@
 	pixel_x = -2;
 	pixel_y = 15
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	density = 0;
 	pixel_x = -3;
 	pixel_y = 13
@@ -24669,7 +24669,7 @@
 	},
 /area/f13/building/abandoned)
 "piT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/folder/red{
 	pixel_x = -8
 	},
@@ -24795,7 +24795,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "pmO" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp/denied,
 /obj/item/stamp/denied,
 /obj/item/key,
@@ -24817,7 +24817,7 @@
 	},
 /area/f13/building/tribal)
 "poH" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/newspaper,
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -24833,7 +24833,7 @@
 	},
 /area/f13/building/tribal)
 "ppA" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp{
 	pixel_x = 4
 	},
@@ -25047,7 +25047,7 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building/trader)
 "pxh" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = -8;
 	pixel_y = 5
@@ -25781,7 +25781,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "pXa" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
 	light_color = "#f4e3b0"
@@ -25905,7 +25905,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "pZZ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -26094,7 +26094,7 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "qej" = (
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -26118,7 +26118,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "qgc" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "qgf" = (
@@ -26239,7 +26239,7 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/surrounding_tile,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -26461,7 +26461,7 @@
 	},
 /area/f13/wasteland)
 "qwf" = (
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "qws" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26491,7 +26491,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "qxf" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "qxi" = (
@@ -26517,7 +26517,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qxJ" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = 15;
 	pixel_y = 3
@@ -26527,7 +26527,7 @@
 	pixel_x = 16;
 	pixel_y = 7
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = -7;
 	pixel_y = 3
@@ -26682,7 +26682,7 @@
 	},
 /area/f13/building/tribal)
 "qDj" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "qDG" = (
 /obj/structure/table/wood/fancy/black,
@@ -26809,7 +26809,7 @@
 	},
 /area/f13/building/abandoned)
 "qGt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/bed/mattress{
 	icon_state = "mattress4";
 	pixel_y = 7
@@ -26906,7 +26906,7 @@
 /area/f13/wasteland)
 "qKZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -27061,7 +27061,7 @@
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "qQM" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "qRm" = (
@@ -27210,14 +27210,14 @@
 /area/f13/wasteland)
 "qWv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -1;
 	pixel_y = 2
 	},
 /obj/machinery/reagentgrinder{
 	pixel_y = 15
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = 27;
 	pixel_y = 2
 	},
@@ -27268,7 +27268,7 @@
 	pixel_y = 18;
 	pixel_x = -12
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = 9;
 	layer = 4;
@@ -27392,7 +27392,7 @@
 "rcd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "rcu" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -27497,7 +27497,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "rel" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = 11;
 	pixel_y = 2
 	},
@@ -27986,7 +27986,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "rub" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -28099,7 +28099,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "rwR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -28357,7 +28357,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "rGc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -28744,7 +28744,7 @@
 	},
 /area/f13/building/abandoned)
 "rSE" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 3;
 	pixel_x = -8;
 	pixel_y = 5
@@ -28974,7 +28974,7 @@
 	},
 /area/f13/wasteland)
 "saB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/binoculars,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -29458,7 +29458,7 @@
 	},
 /area/f13/building/workshop)
 "snp" = (
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/ruins)
 "snG" = (
 /obj/structure/flora/grass/wasteland{
@@ -29669,7 +29669,7 @@
 	layer = 2.8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
@@ -29771,7 +29771,7 @@
 	},
 /area/f13/wasteland)
 "suO" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/plate,
 /obj/item/candle/infinite{
 	pixel_y = 9
@@ -29946,7 +29946,7 @@
 	},
 /area/f13/building/trader)
 "sCa" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/folder/documents{
 	pixel_x = -5;
 	pixel_y = 2
@@ -30125,7 +30125,7 @@
 	},
 /area/f13/wasteland)
 "sJB" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/stamp/ce{
 	desc = "A rubber stamp for stamping VERY important documents.";
 	name = "banker golden stamp";
@@ -30215,7 +30215,7 @@
 /area/f13/building/library)
 "sNe" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -30349,7 +30349,7 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "sPL" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/weapon/spatula,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -30493,7 +30493,7 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 15
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	density = 0;
 	pixel_y = 13
 	},
@@ -30659,7 +30659,7 @@
 	pixel_y = 14;
 	pixel_x = -6
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 11;
 	pixel_x = 8
 	},
@@ -31136,7 +31136,7 @@
 /area/f13/wasteland)
 "tki" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -31272,7 +31272,7 @@
 	pixel_x = -2;
 	pixel_y = 29
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	density = 0;
 	pixel_y = 13
 	},
@@ -31353,7 +31353,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "tqp" = (
@@ -32309,7 +32309,7 @@
 	},
 /area/f13/wasteland)
 "tVA" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/sink{
 	pixel_y = 22;
 	pixel_x = 16
@@ -32379,7 +32379,7 @@
 	},
 /area/f13/wasteland)
 "tYk" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/weapon/spatula{
 	pixel_x = -6
 	},
@@ -32615,7 +32615,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -32685,7 +32685,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ujy" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	density = 0;
 	pixel_y = 13
 	},
@@ -32754,7 +32754,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "une" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "unu" = (
@@ -32925,7 +32925,7 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "uso" = (
 /obj/structure/stone_tile/slab,
@@ -33123,7 +33123,7 @@
 /turf/closed/indestructible/rock,
 /area/f13/building/tribal)
 "uwp" = (
-/turf/closed/wall/f13/store,
+/turf/closed/wall/mineral/concrete,
 /area/f13/ruins)
 "uwt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -33524,7 +33524,7 @@
 "uNd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -33637,7 +33637,7 @@
 	pixel_x = -2;
 	light_on = 1
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "uSx" = (
 /obj/structure/spacevine,
@@ -34474,7 +34474,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vtx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/folder/red{
 	pixel_x = -8
 	},
@@ -34582,7 +34582,7 @@
 	},
 /area/f13/ruins)
 "vxD" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
@@ -34837,7 +34837,7 @@
 /area/f13/wasteland)
 "vHx" = (
 /obj/structure/sign/poster/contraband/space_cola,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -34891,7 +34891,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vJl" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	pixel_y = -1;
 	termtag = "Business"
@@ -35050,7 +35050,7 @@
 	},
 /area/f13/wasteland)
 "vOt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/item/storage/box/matches{
 	pixel_x = -3;
@@ -35625,7 +35625,7 @@
 	},
 /area/f13/building)
 "wfL" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/newspaper,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -35896,7 +35896,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "wqf" = (
 /obj/structure/decoration/rag,
@@ -35937,7 +35937,7 @@
 /area/f13/wasteland)
 "wqT" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house/broken,
+/turf/closed/wall/f13/wood/house,
 /area/f13/ruins)
 "wqV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36166,7 +36166,7 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 17;
 	pixel_x = 8
 	},
@@ -36458,7 +36458,7 @@
 	pixel_x = 2;
 	color = "#CC4444"
 	},
-/turf/closed/wall/f13/coyote/tavern_wall{
+/turf/closed/wall/f13/tentwall{
 	color = "#992222"
 	},
 /area/f13/building)
@@ -36630,7 +36630,7 @@
 /obj/item/hemostat/tribal,
 /obj/item/retractor/tribal,
 /obj/item/handsaw,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clothing/gloves/f13/crudemedical,
 /obj/item/cautery{
 	color = "#a55d35";
@@ -36733,7 +36733,7 @@
 	},
 /area/f13/wasteland)
 "wPT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -36936,7 +36936,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "wYT" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -6
 	},
@@ -37019,7 +37019,7 @@
 /area/f13/building/tribal)
 "wZG" = (
 /obj/item/defibrillator/primitive,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "wZN" = (
@@ -37063,7 +37063,7 @@
 	pixel_x = -4;
 	pixel_y = 6
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building)
 "xaz" = (
 /obj/structure/window/fulltile/wood,
@@ -37126,7 +37126,7 @@
 	},
 /area/f13/building/tribal)
 "xcu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/clipboard,
 /obj/item/clothing/mask/cigarette/cigar,
 /turf/open/floor/carpet/green,
@@ -37304,7 +37304,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "xgr" = (
@@ -37402,7 +37402,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/microwave,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -37784,7 +37784,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xwe" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
@@ -38198,7 +38198,7 @@
 /area/f13/building)
 "xGS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -38416,7 +38416,7 @@
 /area/f13/building)
 "xMs" = (
 /obj/structure/sign/poster/prewar/vault_tec,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
@@ -39088,7 +39088,7 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/bar)
 "yeH" = (
 /obj/structure/spacevine{
@@ -39235,7 +39235,7 @@
 	},
 /area/f13/wasteland)
 "yjs" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin{
 	pixel_y = 9
 	},
@@ -39293,7 +39293,7 @@
 /area/f13/building/tribal)
 "yjX" = (
 /obj/structure/sign/poster/contraband/space_cola,
-/turf/closed/wall/f13/store{
+/turf/closed/wall/mineral/concrete{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},

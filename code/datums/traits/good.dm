@@ -455,7 +455,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient scored highly on racewalking tests."
 
 
-/datum/quirk/treasurehunter 
+/*/datum/quirk/treasurehunter 
 	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
 	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
 	value = 22
@@ -468,7 +468,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You really feel like digging.")
 	lose_text = span_notice("You really don't feel like digging.")
 	medical_record_text = "Patient really likes to eat dirt" // Nobody reads these anyway
-	human_only = FALSE
+	human_only = FALSE*/// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
 
 
 /datum/quirk/musician
@@ -960,11 +960,11 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 
 /datum/quirk/pa_wear
-	name = "Power Armor Training"
-	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere or something."
+	name = "Power Armor Crafting"
+	desc = "You've been around the wastes and have learned the wonders of crafting high tech armor from somewhere or something."
 	value = 32
 	category = "Lifepath Quirks"
-	mechanics = "You can wear power armor."
+	mechanics = "You can craft powerarmor, anyone can wear it though."
 	conflicts = list(
 		/datum/quirk/dumb,
 		/datum/quirk/luddite,
@@ -1497,7 +1497,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "Gieger Counters are for suckers, mostly."
 	value = 40
 	category = "Radiation Quirks"
-	mechanics = "You only absorb 25% of all radiation."
+	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
 		/datum/quirk/radimmunesorta,
 		/datum/quirk/radweakmajor,
@@ -1610,8 +1610,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
 	conflicts = list()
 	mob_trait = TRAIT_STRONG_GRABBER
-	gain_text = span_notice("You feel like you could wrestle a deathclaw!!!")
-	lose_text = span_danger("You no longer feel like you should wrestle deathclaws...")
+	gain_text = span_notice("You feel like you could wrestle a aethergiest!!!")
+	lose_text = span_danger("You no longer feel like you should wrestle aethergiests...")
 	medical_record_text = "Patient is apparently very good at gripping things."
 	locked =  FALSE
 	human_only = FALSE
@@ -1688,7 +1688,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "You're a better than average shot."
 	value = 44
 	category = "Ranged Quirks"
-	mechanics = "Your accuracy degrades much slower from movement, firing, or anything else."
+	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/deadeye,
@@ -1765,6 +1765,15 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
 	medical_record_text = "Patient has failed heart monitoring tests multiple times."
 	locked =  FALSE
+
+/datum/quirk/packrat
+	name = "Packrat"
+	desc = "You are well practiced at hoarding random junk, and can carry nearly double what most others can."
+	value = 34
+	category = "Functional Quirks"
+	mechanics = "You can carry a second backpack or duffel bag in your suit slot, for additional stuff!"
+	conflicts = list()
+	mob_trait = TRAIT_PACKRAT
 
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
@@ -1990,7 +1999,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer have the giga zoomies...")
 	medical_record_text = "Patient is full of way too much energy, and has not stopped running around my office as of writing."
 
-/datum/quirk/artifact_identify
+/*/datum/quirk/artifact_identify
 	name = "Artifact Hunter"
 	desc = "You have a keen eye for identifying magical, otherworldly trash! You can identify artifacts at a glance."
 	value = 32
@@ -2002,7 +2011,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You feel as if you lost the knack for identifying ancient objects.")
 	medical_record_text = "Patient claims to know about alien, or some form of ancient technology."
 	locked =  FALSE
-	human_only = FALSE
+	human_only = FALSE*/ // Artifacts are identified in 5 seconds, potential change in the future to let you spawn with an artifact
 
 /datum/quirk/armblader
 	name = "Arm Blader"
@@ -2936,10 +2945,12 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/security_expert/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
+	if(H?.mind)
+		if(!H.mind.learned_recipes)
+			H.mind.learned_recipes = list()
 		H.mind.learned_recipes += GLOB.security_expert
 
 /datum/quirk/security_expert/remove()
 	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
+	if(H?.mind)
 		H.mind.learned_recipes -= GLOB.security_expert

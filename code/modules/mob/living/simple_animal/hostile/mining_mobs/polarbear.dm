@@ -27,7 +27,6 @@
 	pull_force = MOVE_FORCE_VERY_STRONG
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
-	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	/// Message for when the polar bear starts to attack faster
 	var/aggressive_message_said = FALSE

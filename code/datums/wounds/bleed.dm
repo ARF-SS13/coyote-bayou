@@ -11,6 +11,7 @@
 	base_treat_time = 3 SECONDS
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SUTURE)
 	renew_text = "rips back open"
+	base_aggravation_force = 3
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
 	/// The lowest that this wound will naturally bleed, before multipliers
@@ -278,6 +279,11 @@
 
 /datum/wound/bleed/get_blood_flow(include_reductions = FALSE)
 	. = blood_flow
+
+	if(aggravated_until > world.time)
+		. *= (base_aggravation_force * aggravation_scalar)
+	else
+		aggravated_until = 0
 	
 	if(!include_reductions)
 		return

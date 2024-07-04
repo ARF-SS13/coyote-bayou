@@ -437,7 +437,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-	component_type = /datum/component/storage/concrete/bag/salvage/storage
+	component_type = /datum/component/storage/concrete/bag/salvage
 
 /obj/item/storage/bag/casings
 	name = "casing bag"
@@ -669,11 +669,11 @@
 	component_type = /datum/component/storage/concrete/bag/quiver/light_quiver
 
 /obj/item/storage/bag/tribe_quiver/light/full/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 35 to 50)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
 /obj/item/storage/bag/tribe_quiver/light/full/flint/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 35 to 50)
 		new /obj/item/ammo_casing/caseless/arrow/flint(src)//Little more applicable for tribals.
 
 /obj/item/storage/bag/tribe_quiver/heavy
@@ -685,7 +685,7 @@
 	component_type = /datum/component/storage/concrete/bag/quiver/heavy_quiver
 
 /obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()
-	for(var/i in 1 to 12)
+	for(var/i in 75 to 100)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
 /obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)

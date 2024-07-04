@@ -409,7 +409,7 @@
 
 	// This could be a bit overboard, if it actually worked.
 	supereffective_damage = BULLET_DAMAGE_PISTOL_10MM
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
 	name = "recharger beam"
@@ -733,6 +733,17 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	sharpness = SHARP_POINTY
 
+//Covie Carbine "bullet"
+/obj/item/projectile/beam/laser/mpc/covcarb
+	name = "crystal"
+	icon_state = "plasma1"
+	damage = 30
+	damage_list = list("20" = 8, "25" = 8, "30" = 55, "35" = 10, "40" = 19)
+	stamina = BULLET_STAMINA_PISTOL_10MM
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_10MM
+	light_color = LIGHT_COLOR_GREEN
+
 /obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
 	icon_state = "ion"
@@ -839,7 +850,7 @@
 	hitscan = TRUE
 
 /obj/item/projectile/beam/laser/beam //Covenant version of a watzz2k hitscan proj. Hits like a semi-truck
-	name = " sniper laser bolt"
+	name = "sniper laser bolt"
 	damage = 80
 	damage_list = list( "70" = 25, "80" = 40, "85" = 25)
 	wound_bonus = 10
@@ -873,7 +884,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 12
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/pistol/covenant/bane
 	name = "plasma energy bolt"
@@ -892,7 +903,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 20
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/repeater/covenant
 	name = "plasma energy bolt"
@@ -911,7 +922,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 11
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/f13plasma/repeater/onibane
 	name = "plasma energy bolt"
@@ -930,7 +941,7 @@
 	damage_type = BURN
 	flag = "energy"
 	supereffective_damage = 18
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
@@ -1002,7 +1013,7 @@
 	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "1000" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
 	wound_bonus = 60 // nasty, but it's still a laser
 	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload in the field
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
@@ -1012,7 +1023,7 @@
 	name = "blaster bolt"
 	damage = 10
 	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
-	recoil = BULLET_RECOIL_HEAVY_LASER
+	recoil = BULLET_RECOIL_PLASMA
 
 //Laser AK projectiles
 /obj/item/projectile/beam/laser/tg/kalashheavy

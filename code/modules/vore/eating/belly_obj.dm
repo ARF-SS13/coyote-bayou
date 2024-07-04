@@ -16,6 +16,7 @@
 	name = "belly"							// Name of this location
 	desc = "It appears to be rather warm and wet. Makes sense, considering the fact it's a belly."	// Flavor text description of inside sight/sound/smells/feels.
 	rad_flags = RAD_NO_CONTAMINATE | RAD_PROTECT_CONTENTS
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/vore_sound = "Gulp"					// Sound when ingesting someone
 	var/vore_verb = "ingest"				// Verb for eating with this in messages
 	var/release_verb = "expels"				// Verb for releasing something from a stomach
@@ -249,6 +250,11 @@
 	SEND_SIGNAL(src, COMSIG_VORE_ADD_BELLY, loc)
 	heartbeat_loop = new(list(), FALSE)
 	squish_loop = new(list(), FALSE)
+	/// So one of the stipulations to having vore be so readily accessible and available to just about anyione
+	/// is that it should not give the player a mechanical advantage over someone who doesnt use it
+	/// Think about it, a potentially game-changing mechanic that is locked out for someone who doesnt like vore kinda sucks
+	/// So, yeah
+	ADD_TRAIT(src, TRAIT_ARTIFACT_BLOCKER, src)
 
 /obj/vore_belly/ComponentInitialize()
 	. = ..()

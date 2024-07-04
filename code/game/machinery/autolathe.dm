@@ -1138,13 +1138,15 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	GLOB.lathe_reports_done += 1
 	our_paper.name = "recycling report card #[GLOB.lathe_reports_done]"
 	var/mrs_heavybottoms_english_class_parent_teacher_conference = get_grade()
-	our_paper.grade = mrs_heavybottoms_english_class_parent_teacher_conference
+	our_paper.grade = mrs_heavybottoms_english_class_parent_teacher_conference || "F"
 	our_paper.info = write_contents(mrs_heavybottoms_english_class_parent_teacher_conference)
 	our_paper.update_icon_state()
 	var/list/ppl = list()
 	for(var/mob/m in view(15, get_turf(lathe)))
 		ppl += m
-	var/mob/M = pick(ppl)
+	var/mob/M
+	if(LAZYLEN(ppl))
+		M = pick(ppl)
 	if(M)
 		our_paper.throw_at(M, 100, 1, M, TRUE)
 	else
@@ -1173,15 +1175,22 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		if(toolspeed)
 			numof /= max(toolspeed, 0.00001)
 		stuff_recycled += numof
+	stuff_recycled = max(stuff_recycled, 1)
 	var/score = 0
-	var/cool_mean = floor(abs(sqrt(abs(stuff_recycled) ** 1.025) ** 0.9))
+	var/cool_mean = floor(abs(sqrt(abs(stuff_recycled) ** 1.1) ** 0.975))
 	var/cool_sd = sqrt(abs(cool_mean))
 	score = gaussian(cool_mean, cool_sd)
-	score = rand(score, gaussian(score, sqrt(score)))
-	score = floor(score + rand(score*0.25, score*3))
+	score = rand(score, gaussian(score, sqrt(abs(score))))
+	score = floor(score + rand(score*0.5, score*3))
 	score = abs(score)
 	if((world.time % 60) > 57)
-		score *= 2 // good luck!
+		score *= 5 // good luck!
+	else
+		var/a_square = sqrt(abs(score))
+		for(var/i in 1 to 100) // computers are good at math, right?
+			a_square += sqrt(abs(a_square))
+		score += sqrt(abs(a_square))
+	score = round(score)
 	switch(score)
 		if(-INFINITY to 0)
 			return "F"

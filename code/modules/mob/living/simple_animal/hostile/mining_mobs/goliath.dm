@@ -98,7 +98,6 @@
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	loot = list()
-	stat_attack = CONSCIOUS
 	robust_searching = 1
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random/Initialize()
