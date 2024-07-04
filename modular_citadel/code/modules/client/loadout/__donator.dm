@@ -790,6 +790,9 @@
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
 	new /obj/item/jaegerholopara(src)
+	new /obj/item/storage/book/bible/syndicate(src)
+	new /obj/item/storage/toolbox/syndicate(src)
+	new /obj/item/nullrod/claymore/chainsaw_sword(src)
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
