@@ -1610,6 +1610,19 @@
 /mob/living/carbon/human/species/sentrybot
 	race = /datum/species/adapted/simplebot/sentrybot
 
+/datum/species/adapted/simplebot/flyingfortress
+	name = "Adapted Flying Fortress"
+	id = "netguardian"
+	icon_rest_suffix = "-rest"
+	icon_dead_suffix = "-crash"
+	alt_prefixes = list("No Scanner" = "noscan_")
+	rotate_on_lying = FALSE
+	simple_icon = 'icons/mob/netguardian.dmi'
+	icon_width = 48
+	roundstart = TRUE
+/mob/living/carbon/human/species/flyingfortress
+	race = /datum/species/adapted/simplebot/flyingfortress
+
 /datum/species/adapted/simplebot/swarmer
 	name = "Adapted Swarmer"
 	simple_icon = 'icons/mob/playerswarmer.dmi'
@@ -1656,6 +1669,66 @@
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/probe
 	race = /datum/species/adapted/simplebot/probe
+
+/datum/species/adapted/simplebot/tallborg
+	name = "Adapted Tall Synthetic"
+	id = "tallborg"
+	simple_icon = 'icons/mob/tallrobot.dmi'
+// This is going to be quite long... Theres alot
+	alt_prefixes = list(
+		"Default Feminine" = "fem_",
+		"Default Alt Fem" = "femalt_",
+		"Default K4T" = "k4t_",
+		"Cargo" = "cargo_",
+		"Feminine Cargo" = "femcargo_",
+		"Alt Fem Cargo" = "altfemcargo_",
+		"K4T Cargo" = "k4tcargo_",
+		"Alt K4T Cargo" = "altk4tcargo_",
+		"Miner" = "mine_",
+		"Feminine Miner" = "femmine_",
+		"Alt Fem Miner" = "altfemmine_",
+		"K4T Miner" = "k4tmine_",
+		"Alt K4T Miner" = "altk4tmine_",
+		"Medical" = "medi_",
+		"Feminine Medical" = "femmedi_",
+		"Alt Fem Medical" = "altfemmedi_",
+		"K4T Medical" = "k4tmedi_",
+		"Alt K4T Medical" = "altk4tmed_",
+		"Janitor" = "jani_",
+		"Feminine Janitor" = "femjani_",
+		"Alt Fem Janitor" = "altfemjani_",
+		"K4T Janitor" = "k4tjani_",
+		"Alt K4T Janitor" = "altk4tjani_",
+		"Engineer" = "engi_",
+		"Feminine Engineer" = "engifem_",
+		"Alt Fem Engineer" = "altengifem_",
+		"K4T Engineer" = "k4tengi_",
+		"Alt K4T Engineer" = "altk4tengi_",
+		"Security" = "sec_",
+		"Feminine Security" = "femsec_",
+		"Alt Fem Security" = "femsecalt_",
+		"K4T Security" = "k4tsec_",
+		"Service" = "serve_",
+		"Feminine Service" = "femserve_",
+		"Alt Fem Service" = "altfemserve_",
+		"K4T Service" = "k4tserve_",
+		"Alt K4T Service" = "altk4tserve_",
+		"Ninja" = "ninja_",
+		"Feminine Ninja" = "femninja_",
+		"Alt Fem Ninja" = "altfemninja_",
+		"K4T Ninja" = "k4tninja_",
+		"Syndicate" = "syndi_",
+		"Feminine Syndicate" = "femsyndi_",
+		"Alt Fem Syndicate" = "realv1fromultrakill_",
+		"K4T Syndicate" = "k4tsyndi_",
+	)
+	icon_dead_suffix = "-wreck"
+	icon_rest_suffix = "-rest"
+	roundstart = TRUE
+	rotate_on_lying = FALSE
+	attack_sound = 'sound/weapons/sear.ogg'
+/mob/living/carbon/human/species/tallborg
+	race = /datum/species/adapted/simplebot/tallborg
 
 // Lets just seperate all the feral robot animal robots from the pure, normal robots this time that totally arent thicc
 
