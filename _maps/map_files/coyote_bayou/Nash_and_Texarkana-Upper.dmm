@@ -8288,7 +8288,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/rolling,
 /obj/item/clothing/gloves/boxing/green{
 	pixel_y = 8
 	},
@@ -8297,6 +8296,7 @@
 	pixel_x = -10;
 	layer = 1
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -21235,9 +21235,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "ogS" = (
-/obj/structure/table/wasteland,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/building)
 "ogV" = (
 /obj/structure/flora/junglebush/large,
@@ -22342,7 +22343,8 @@
 /area/f13/building/mall)
 "oTL" = (
 /obj/structure/filingcabinet{
-	pixel_x = 10
+	pixel_x = 10;
+	density = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/royalblack,
@@ -23660,7 +23662,6 @@
 /area/f13/caves)
 "pUK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/rolling,
 /obj/structure/mirror/alt{
 	pixel_y = -30
 	},
@@ -23668,6 +23669,7 @@
 	pixel_x = 9;
 	pixel_y = 14
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -25143,11 +25145,11 @@
 /area/f13/building)
 "qXb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/rolling,
 /obj/structure/mirror/alt{
 	pixel_y = -30
 	},
 /obj/structure/bedsheetbin/towel,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -27688,7 +27690,7 @@
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/rolling,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -32201,9 +32203,7 @@
 /obj/structure/window{
 	dir = 4
 	},
-/obj/structure/table/wood_counter/bend{
-	dir = 8
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -72915,8 +72915,8 @@ rSL
 fzV
 mgO
 mgO
-tzz
-xTR
+fwT
+ogS
 xTR
 tzz
 tzz
@@ -75487,7 +75487,7 @@ psI
 qUc
 xmI
 gDZ
-dMq
+xAb
 xAb
 xAb
 pXs
@@ -75744,7 +75744,7 @@ psI
 qUc
 fqF
 gDZ
-ogS
+dMq
 nfs
 jTa
 gDZ
