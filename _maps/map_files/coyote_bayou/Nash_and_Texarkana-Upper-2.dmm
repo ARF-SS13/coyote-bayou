@@ -1810,10 +1810,7 @@
 	plane = -4;
 	layer = 3
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "gp" = (
@@ -1889,10 +1886,7 @@
 	},
 /area/f13/caves)
 "gx" = (
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -2568,9 +2562,7 @@
 "jA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common_food,
-/obj/structure/table/wood_counter/bend{
-	dir = 8
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "jF" = (
@@ -3211,10 +3203,7 @@
 /obj/structure/towel_rack{
 	pixel_y = 27
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mk" = (
@@ -3349,10 +3338,7 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "mx" = (
@@ -3461,7 +3447,6 @@
 /area/f13/wasteland)
 "mY" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/common_food,
 /obj/structure/table/wood/settler{
 	layer = 2.5;
 	alpha = 1
@@ -3518,10 +3503,7 @@
 /area/f13/wasteland)
 "nj" = (
 /obj/structure/simple_door/room,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "nk" = (
@@ -4047,10 +4029,7 @@
 	color = "#C000FF";
 	light_color = "#E74AE2"
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "pd" = (
@@ -4547,10 +4526,7 @@
 	plane = -4;
 	layer = 3
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "ri" = (
@@ -4993,10 +4969,7 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -5098,10 +5071,7 @@
 	color = "#FF8CBA";
 	light_color = "#FF8CBA"
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "ts" = (
@@ -5941,10 +5911,6 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -5952,6 +5918,7 @@
 	pixel_x = -1;
 	opacity = 1
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "wz" = (
@@ -6596,10 +6563,7 @@
 	color = "lime";
 	light_color = "#90FF6E"
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "yL" = (
@@ -6622,10 +6586,7 @@
 	color = "aqua";
 	light_color = "#00FFFF"
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "yP" = (
@@ -7141,10 +7102,7 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "AT" = (
@@ -7509,10 +7467,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "CN" = (
@@ -7673,13 +7628,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Ds" = (
-/obj/structure/stairs/west{
-	color = "#A47449";
-	dir = 4
-	},
 /obj/structure/railing{
 	color = "#A47449"
 	},
+/obj/effect/fake_stairs/east,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "Du" = (
@@ -7776,10 +7728,6 @@
 	plane = -4;
 	layer = 3
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -7787,6 +7735,7 @@
 	pixel_x = -1;
 	opacity = 1
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "DI" = (
@@ -8713,10 +8662,7 @@
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 1
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -9460,10 +9406,7 @@
 /area/f13/caves)
 "JK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -10270,13 +10213,11 @@
 /area/f13/building)
 "Mz" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1;
-	density = 0
-	},
 /obj/structure/railing{
 	color = "#A47449"
+	},
+/obj/structure/table/wood/settler{
+	density = 0
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
@@ -10850,12 +10791,9 @@
 	},
 /area/f13/wasteland)
 "OD" = (
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bedsheetbin,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -10887,10 +10825,6 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -10898,6 +10832,7 @@
 	pixel_x = -1;
 	opacity = 1
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "OL" = (
@@ -11028,6 +10963,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"Po" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/caves)
 "Pp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -11342,10 +11281,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -11526,10 +11462,7 @@
 /obj/structure/fence/pole_b{
 	color = "#7F675D"
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "QS" = (
@@ -11650,10 +11583,7 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "Rk" = (
@@ -12458,10 +12388,7 @@
 	plane = -4;
 	layer = 3
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "Ug" = (
@@ -12629,20 +12556,14 @@
 /obj/structure/towel_rack{
 	pixel_y = 27
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
 /obj/structure/bedsheetbin/towel,
+/obj/structure/table/wood/settler,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "UK" = (
 /obj/machinery/light,
 /obj/machinery/microwave,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "UL" = (
@@ -12947,10 +12868,7 @@
 	pixel_x = 6
 	},
 /obj/item/reagent_containers/glass/maunamug,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "VJ" = (
@@ -13064,10 +12982,7 @@
 	layer = 3;
 	plane = -4
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "Wa" = (
@@ -14063,10 +13978,7 @@
 /area/f13/wasteland)
 "Zm" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
 "Zn" = (
@@ -14161,10 +14073,7 @@
 	pixel_y = 19;
 	layer = 1.9
 	},
-/obj/structure/table/wood/settler{
-	layer = 2.5;
-	alpha = 1
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "ZL" = (
@@ -46368,7 +46277,7 @@ ed
 jk
 gD
 qw
-Zm
+Po
 Fb
 gD
 qw
