@@ -324,6 +324,7 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/technophreak = FALSE //F13 technophreak, for chemistry machines
 	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
 	var/pa_wear = FALSE //F13 pa_wear, ability to wear PA
 	var/gunsmith_one = FALSE //F13 gunsmith perk, ability to craft Tier 2 guns and ammo
@@ -362,9 +363,6 @@
 		holder = "[uniform]"
 	uniform = text2path(holder)
 
-	if(box_two && isrobotic(H))
-		box_two = /obj/item/storage/survivalkit/medical/synth
-
 	if(chemwhiz == TRUE)
 		ADD_TRAIT(H, TRAIT_CHEMWHIZ, "chemwhiz")
 
@@ -383,6 +381,9 @@
 	if(gunsmith_four == TRUE)
 		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR, "gunsmith_four")
 
+	if(technophreak == TRUE)
+		SSquirks.AddQuirkToMob(H, /datum/quirk/technophreak, TRUE, TRUE)
+
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -391,22 +392,22 @@
 	if(!J)
 		J = SSjob.GetJob(H.job)
 
-	var/obj/item/card/id/C = H.wear_id
-	if(istype(C) && C.bank_support)
+	var/obj/item/card/id/C
+	var/obj/item/pda/PDA
+	var/list/everything = get_all_in_turf(H)
+	for(var/obj/item/A in everything)
+		if(istype(A, /obj/item/card/id))
+			C = A
+		if(istype(A, /obj/item/pda))
+			PDA = A
+	if(istype(C))
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
 		C.assignment = J.title
 		C.update_label()
-		for(var/A in SSeconomy.bank_accounts)
-			var/datum/bank_account/B = A
-			if(B.account_id == H.account_id)
-				C.registered_account = B
-				B.bank_cards += C
-				break
 		H.sec_hud_set_ID()
 
-	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title

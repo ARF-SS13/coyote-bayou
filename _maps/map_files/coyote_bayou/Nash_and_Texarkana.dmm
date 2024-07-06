@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "aab" = (
 /turf/closed/wall/f13/tunnel,
@@ -13955,7 +13955,9 @@
 	pixel_x = 17
 	},
 /obj/item/trash,
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/underground/cave/coyote/antmound)
 "bcK" = (
 /obj/structure/flora/grass/wasteland{
@@ -16128,7 +16130,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ruins)
 "bmc" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/tunnel/sub)
 "bmd" = (
 /obj/structure/window/reinforced/tinted{
@@ -16191,7 +16193,7 @@
 	},
 /area/f13/ruins)
 "bmo" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/tunnel/southwest)
 "bmq" = (
 /obj/machinery/light,
@@ -21823,7 +21825,7 @@
 "cru" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "crx" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -29363,9 +29365,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
-"etW" = (
-/turf/open/floor/plating/ashplanet/ash,
-/area/f13/wasteland)
 "eui" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -31149,7 +31148,7 @@
 /area/f13/wasteland/massfusion/entrance)
 "eTX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "eUp" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -40610,9 +40609,12 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "hzI" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/obj/machinery/light/sign/nash{
+	pixel_x = -20;
+	pixel_y = 23
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
 "hzN" = (
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirtcorner"
@@ -43482,14 +43484,8 @@
 	},
 /area/f13/wasteland)
 "imR" = (
-/obj/machinery/light/sign/nash{
-	pixel_x = -20;
-	pixel_y = 23
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland)
+/turf/open/transparent/openspace,
+/area/f13/building)
 "imS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -47403,7 +47399,7 @@
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "jpG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/wasteland)
 "jpH" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -53651,6 +53647,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"laR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "laZ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/branch_broken,
@@ -55230,7 +55230,7 @@
 /area/f13/building/abandoned)
 "lxp" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/underground/cave/coyote/antmound)
 "lxJ" = (
 /obj/machinery/light/small,
@@ -65238,6 +65238,9 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
+"obJ" = (
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "obM" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human{
@@ -69017,6 +69020,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"paH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are either entering or leaving the area of town of Redwater, it's safe to assume the area around this town is dangerous and people outside of this town will likely not like you if you are from it.  Can you accept that?";
+	title = "Redwater Warning."
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "paJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2bottom"
@@ -83791,11 +83803,6 @@
 	icon_state = "outerborder - N"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"tfQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/junglebush/c,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave/coyote/antmound)
 "tgi" = (
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/indestructible/ground/outside/gravel,
@@ -84581,12 +84588,12 @@
 /turf/open/floor/plating/rockcrete_slab,
 /area/f13/wasteland)
 "trc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/trash_stack{
-	icon_state = "trash_2"
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are entering or leaving an area controlled by the tunnel rats. They are a standoffish folk who roam the tunnels underneath Texarkana.  If you are leaving the area outside is most certainly very unsafe.  Are you sure you want to continue?";
+	title = "Welcome to Redwater Z"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave/coyote/antmound)
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/building)
 "trj" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -86827,9 +86834,9 @@
 	},
 /area/f13/building/massfusion)
 "tRW" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/flora/junglebush/c,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/underground/cave/coyote/antmound)
 "tSe" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -88408,6 +88415,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/ruins)
+"urQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/grass/coyote/one,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "urY" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road{
@@ -93889,7 +93902,7 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "vVy" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/underground/cave/coyote/antmound)
 "vVO" = (
 /turf/open/indestructible/ground/outside/ruins,
@@ -95541,7 +95554,7 @@
 	pixel_y = 12;
 	pixel_x = 17
 	},
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/obsidian,
 /area/f13/underground/cave/coyote/antmound)
 "wsB" = (
 /turf/open/floor/f13/wood,
@@ -96652,7 +96665,6 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "wIx" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -97583,6 +97595,11 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building/abandoned)
+"wXd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/grass/coyote/one,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "wXh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine{
@@ -98242,6 +98259,13 @@
 	icon_state = "verticalrightborderright2"
 	},
 /area/f13/wasteland/city)
+"xfl" = (
+/obj/effect/step_trigger/player_choice_log{
+	question = "You are either entering or leaving the area of town of Redwater, it's safe to assume the area around this town is dangerous and people outside of this town will likely not like you if you are from it.  Can you accept that?";
+	title = "Redwater Warning."
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/caves)
 "xfq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
@@ -102996,19 +103020,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
-sjM
-sjM
-sjM
-sjM
+hHB
+hHB
+hHB
+hHB
+hHB
 vVy
-vVy
-vVy
-vVy
-vVy
-vVy
-vVy
-vVy
+frQ
+bYO
+bYO
+bYO
+bYO
+bYO
+bYO
 vVy
 vVy
 vVy
@@ -103253,19 +103277,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 gLE
 lzk
 gLE
-sjM
+hHB
 nUo
-trc
-tfQ
-tRW
-lDP
-upa
-lDP
-upa
+bYO
+blQ
+qHJ
+lSp
+kMJ
+qHJ
+kHY
 lDP
 mLh
 oxG
@@ -103510,19 +103534,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 fJj
 aEa
 gUZ
-sjM
+hHB
 goa
-frQ
-rwS
-rwS
-rwS
-rwS
-rwS
-rwS
+atJ
+rZq
+jfZ
+qzw
+gLE
+sqV
+bYO
 upa
 uML
 oxG
@@ -103767,19 +103791,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 bYO
 sOm
 fVr
 iqs
 suQ
 bYO
-blQ
-qHJ
-lSp
-kMJ
-qHJ
-kHY
+mGX
+xVO
+hHB
+loM
+iPL
+fHJ
 rId
 cZl
 oxG
@@ -104024,19 +104048,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 bYO
 jBY
 wBM
 knr
 pYu
-atJ
-rZq
-jfZ
-qzw
-gLE
-sqV
+bYO
+fqG
+nNp
 rwS
+tRW
+tRW
+tRW
 lDA
 fVn
 ifK
@@ -104281,19 +104305,19 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 qmC
 kOP
 kOP
 bYO
 qZI
-rwS
-mGX
-xVO
-hHB
-loM
-iPL
-fHJ
+tRW
+tRW
+tRW
+tRW
+tRW
+tRW
+tRW
 kUr
 inP
 wWr
@@ -104486,7 +104510,7 @@ fCt
 tEq
 tEq
 tEq
-fCt
+cfA
 bEw
 uba
 aOk
@@ -104544,10 +104568,10 @@ qgf
 rte
 cft
 bcJ
-rwS
-fqG
-nNp
-rwS
+tRW
+tRW
+tRW
+tRW
 wIx
 nwa
 qfc
@@ -104795,7 +104819,7 @@ ezS
 ezS
 mVi
 mVi
-sjM
+hHB
 lMw
 dff
 ijT
@@ -105052,7 +105076,7 @@ ezS
 mVi
 mVi
 ezS
-sjM
+hHB
 sjM
 vUB
 gMv
@@ -105249,14 +105273,14 @@ fCt
 fCt
 uEl
 fCt
-etW
+fCt
 utZ
 fCt
 fCt
-baB
-fCt
-fCt
-uEl
+acl
+acl
+acl
+acl
 fCt
 bEw
 pHS
@@ -105309,13 +105333,13 @@ mVi
 mVi
 ezS
 ezS
-sjM
+hHB
 rtW
 dKU
 lrY
-sjM
+hHB
 uII
-sjM
+hHB
 xfW
 pef
 qfX
@@ -105510,14 +105534,14 @@ fCt
 fCt
 fCt
 fCt
-fCt
-fCt
-fCt
-uEl
-fCt
-bEw
-pHS
-cAf
+acl
+imR
+imR
+acl
+eqK
+aYQ
+uba
+aOk
 aOk
 ljn
 aOk
@@ -105566,11 +105590,11 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 kJH
 grM
 qWp
-sjM
+hHB
 chf
 pHC
 xfW
@@ -105767,21 +105791,21 @@ fCt
 fCt
 fCt
 fCt
-gFp
-fCt
-dJW
-fCt
-fCt
-mTu
-uba
-cAf
+acl
+ujz
+ujz
+acl
+hzI
+url
+url
+aOk
 aOk
 bjb
 aOk
-aOk
-aOk
-aOk
-aOk
+url
+url
+url
+url
 trw
 aUo
 njV
@@ -105823,11 +105847,11 @@ ezS
 ezS
 ezS
 ezS
-sjM
+hHB
 kJH
 grM
 rkB
-sjM
+hHB
 vGo
 cXd
 xfW
@@ -106024,21 +106048,21 @@ fCt
 fCt
 baB
 fCt
-fCt
-fCt
-uEl
-fCt
-tEq
-bEw
-uba
-aOk
-aOk
-aOk
-aOk
-aOk
-aOk
-aOk
-aOk
+acl
+ujz
+ujz
+trc
+url
+url
+url
+url
+url
+url
+url
+url
+url
+url
+url
 aQZ
 mHp
 opz
@@ -106080,13 +106104,13 @@ ezS
 ezS
 ezS
 ezS
-sjM
-sjM
-sjM
-sjM
-sjM
-sjM
-sjM
+hHB
+hHB
+hHB
+hHB
+hHB
+hHB
+hHB
 rfl
 emv
 emv
@@ -106281,17 +106305,17 @@ fCt
 fCt
 fCt
 fCt
-fCt
-fCt
-fCt
-fCt
-fCt
-sVN
-uba
-aOk
-bjb
-aOk
-aOk
+acl
+acl
+acl
+acl
+jgz
+kBz
+pHS
+url
+url
+url
+url
 cMS
 aOk
 aOk
@@ -106546,9 +106570,9 @@ fCt
 bEw
 pHS
 aOk
-aOk
-aOk
-aOk
+url
+url
+url
 fur
 aOk
 cMS
@@ -109122,7 +109146,7 @@ aOk
 cMS
 gWL
 aOk
-lgt
+aOk
 mnP
 rFj
 nvn
@@ -109379,7 +109403,7 @@ aOk
 aOk
 aOk
 aOk
-lgt
+aOk
 vCm
 rFj
 nvn
@@ -109635,8 +109659,8 @@ aOk
 mkA
 llI
 hkV
-lgt
-lgt
+aOk
+aOk
 qOY
 rFj
 tIN
@@ -109893,7 +109917,7 @@ udG
 gbh
 paJ
 skm
-imR
+skm
 vZM
 sHg
 xeh
@@ -127431,8 +127455,8 @@ fCt
 fCt
 aae
 aae
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (98,1,1) = {"
@@ -127688,8 +127712,8 @@ fCt
 aae
 aae
 aae
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (99,1,1) = {"
@@ -127945,8 +127969,8 @@ eqK
 eqK
 aae
 aae
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (100,1,1) = {"
@@ -128200,10 +128224,10 @@ acD
 acD
 acD
 acD
-aOk
-aOk
-aJN
-aJN
+aae
+obJ
+obJ
+obJ
 kEE
 "}
 (101,1,1) = {"
@@ -128457,10 +128481,10 @@ llI
 iYj
 llI
 qyV
-llI
-llI
-oLv
-aJN
+asS
+laR
+wXd
+obJ
 kEE
 "}
 (102,1,1) = {"
@@ -128714,10 +128738,10 @@ mkA
 vvB
 llI
 iYj
-llI
-oSP
-oLv
-aJN
+paH
+urQ
+wXd
+obJ
 kEE
 "}
 (103,1,1) = {"
@@ -128971,10 +128995,10 @@ aOk
 kMg
 mkA
 bjb
-vvB
-vvB
+asS
+wXd
 cru
-aJN
+obJ
 kEE
 "}
 (104,1,1) = {"
@@ -129230,8 +129254,8 @@ aaa
 aaa
 aaa
 aaa
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (105,1,1) = {"
@@ -129487,8 +129511,8 @@ aae
 aae
 aae
 aaa
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (106,1,1) = {"
@@ -129744,8 +129768,8 @@ aae
 aae
 aae
 aaa
-aJN
-aJN
+obJ
+obJ
 kEE
 "}
 (107,1,1) = {"
@@ -130002,7 +130026,7 @@ aae
 aae
 aaa
 aaa
-aJN
+obJ
 kEE
 "}
 (108,1,1) = {"
@@ -134886,7 +134910,7 @@ vid
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (127,1,1) = {"
 kEE
@@ -135143,7 +135167,7 @@ aJN
 aJN
 aJN
 ame
-kEE
+aaa
 "}
 (128,1,1) = {"
 aaa
@@ -135400,7 +135424,7 @@ ame
 ame
 ame
 ame
-kEE
+aaa
 "}
 (129,1,1) = {"
 aaa
@@ -135657,7 +135681,7 @@ aJN
 aJN
 jdr
 cpz
-kEE
+aaa
 "}
 (130,1,1) = {"
 aaa
@@ -135914,7 +135938,7 @@ tCT
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (131,1,1) = {"
 aaa
@@ -136171,7 +136195,7 @@ oLv
 tCT
 exq
 aJN
-kEE
+aaa
 "}
 (132,1,1) = {"
 aaa
@@ -136428,7 +136452,7 @@ uoW
 egC
 exq
 sFq
-kEE
+aaa
 "}
 (133,1,1) = {"
 aaa
@@ -136685,7 +136709,7 @@ tCT
 nKz
 jto
 aJN
-kEE
+aaa
 "}
 (134,1,1) = {"
 aaa
@@ -136942,7 +136966,7 @@ uyh
 nKz
 jto
 aJN
-kEE
+aaa
 "}
 (135,1,1) = {"
 aaa
@@ -137199,7 +137223,7 @@ tCT
 ame
 rcB
 aJN
-kEE
+aaa
 "}
 (136,1,1) = {"
 aaa
@@ -137456,7 +137480,7 @@ tCT
 aJN
 aJN
 mOq
-kEE
+aaa
 "}
 (137,1,1) = {"
 aaa
@@ -137713,7 +137737,7 @@ dgh
 aJN
 aJN
 bPT
-kEE
+aaa
 "}
 (138,1,1) = {"
 aaa
@@ -137970,7 +137994,7 @@ nKz
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (139,1,1) = {"
 aaa
@@ -138227,7 +138251,7 @@ bPT
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (140,1,1) = {"
 aaa
@@ -138484,7 +138508,7 @@ bPT
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (141,1,1) = {"
 aaa
@@ -138741,7 +138765,7 @@ nKz
 ame
 aJN
 ame
-kEE
+aaa
 "}
 (142,1,1) = {"
 aaa
@@ -138998,7 +139022,7 @@ aJN
 mOq
 aJN
 ame
-kEE
+aaa
 "}
 (143,1,1) = {"
 aaa
@@ -139255,7 +139279,7 @@ aJN
 bPT
 ame
 cpz
-kEE
+aaa
 "}
 (144,1,1) = {"
 aaa
@@ -139512,7 +139536,7 @@ aJN
 aJN
 ame
 aJN
-kEE
+aaa
 "}
 (145,1,1) = {"
 aaa
@@ -139769,7 +139793,7 @@ aJN
 aJN
 ame
 aJN
-kEE
+aaa
 "}
 (146,1,1) = {"
 aaa
@@ -140026,7 +140050,7 @@ aJN
 aJN
 uoW
 sFq
-kEE
+aaa
 "}
 (147,1,1) = {"
 aaa
@@ -140283,7 +140307,7 @@ aJN
 aJN
 uoW
 aJN
-kEE
+aaa
 "}
 (148,1,1) = {"
 aaa
@@ -140540,7 +140564,7 @@ aJN
 aJN
 uoW
 aJN
-kEE
+aaa
 "}
 (149,1,1) = {"
 aaa
@@ -140797,7 +140821,7 @@ aJN
 ame
 mOq
 aJN
-kEE
+aaa
 "}
 (150,1,1) = {"
 aaa
@@ -141054,7 +141078,7 @@ qOr
 aJN
 aJN
 mOq
-kEE
+aaa
 "}
 (151,1,1) = {"
 aaa
@@ -141311,7 +141335,7 @@ aOk
 aJN
 aJN
 bPT
-kEE
+aaa
 "}
 (152,1,1) = {"
 aaa
@@ -141568,7 +141592,7 @@ aCK
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (153,1,1) = {"
 aaa
@@ -141825,7 +141849,7 @@ hrz
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (154,1,1) = {"
 aaa
@@ -142082,7 +142106,7 @@ hrz
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (155,1,1) = {"
 aaa
@@ -142339,7 +142363,7 @@ aOk
 uoW
 aJN
 tCT
-kEE
+aaa
 "}
 (156,1,1) = {"
 aaa
@@ -142596,7 +142620,7 @@ llI
 aJN
 aJN
 tCT
-kEE
+aaa
 "}
 (157,1,1) = {"
 aaa
@@ -142853,7 +142877,7 @@ llI
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (158,1,1) = {"
 aaa
@@ -143110,7 +143134,7 @@ aOk
 aJN
 uoW
 tCT
-kEE
+aaa
 "}
 (159,1,1) = {"
 aaa
@@ -143367,7 +143391,7 @@ apM
 aJN
 uoW
 tCT
-kEE
+aaa
 "}
 (160,1,1) = {"
 aaa
@@ -143624,7 +143648,7 @@ aOk
 aJN
 uoW
 aJN
-kEE
+aaa
 "}
 (161,1,1) = {"
 aaa
@@ -143881,7 +143905,7 @@ aJN
 ame
 nKz
 aJN
-kEE
+aaa
 "}
 (162,1,1) = {"
 aaa
@@ -144138,7 +144162,7 @@ aJN
 ame
 nKz
 ame
-kEE
+aaa
 "}
 (163,1,1) = {"
 aaa
@@ -144395,7 +144419,7 @@ uoW
 kBr
 nKz
 ame
-kEE
+aaa
 "}
 (164,1,1) = {"
 aaa
@@ -144652,7 +144676,7 @@ ame
 mkz
 nKz
 cpz
-kEE
+aaa
 "}
 (165,1,1) = {"
 aaa
@@ -144909,7 +144933,7 @@ ame
 uoW
 nKz
 aJN
-kEE
+aaa
 "}
 (166,1,1) = {"
 aaa
@@ -145166,7 +145190,7 @@ aJN
 aJN
 nKz
 aJN
-kEE
+aaa
 "}
 (167,1,1) = {"
 aaa
@@ -145423,7 +145447,7 @@ aJN
 nKz
 ame
 sFq
-kEE
+aaa
 "}
 (168,1,1) = {"
 aaa
@@ -145680,7 +145704,7 @@ aJN
 aJN
 ame
 aJN
-kEE
+aaa
 "}
 (169,1,1) = {"
 aaa
@@ -145937,7 +145961,7 @@ aJN
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (170,1,1) = {"
 aaa
@@ -146194,7 +146218,7 @@ aJN
 sFq
 ame
 aJN
-kEE
+aaa
 "}
 (171,1,1) = {"
 aaa
@@ -146451,7 +146475,7 @@ chM
 ame
 ame
 aJN
-kEE
+aaa
 "}
 (172,1,1) = {"
 aaa
@@ -146708,7 +146732,7 @@ exq
 exq
 cpz
 aJN
-kEE
+aaa
 "}
 (173,1,1) = {"
 aaa
@@ -146965,7 +146989,7 @@ aJN
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (174,1,1) = {"
 aaa
@@ -147222,7 +147246,7 @@ uoW
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (175,1,1) = {"
 aaa
@@ -147479,7 +147503,7 @@ aJN
 wzG
 sFq
 aJN
-kEE
+aaa
 "}
 (176,1,1) = {"
 aaa
@@ -147736,7 +147760,7 @@ aJN
 cpz
 aJN
 aJN
-kEE
+aaa
 "}
 (177,1,1) = {"
 aaa
@@ -147993,7 +148017,7 @@ aJN
 aJN
 aJN
 aJN
-kEE
+aaa
 "}
 (178,1,1) = {"
 aaa
@@ -148250,7 +148274,7 @@ aaB
 aae
 aJN
 aJN
-kEE
+aaa
 "}
 (179,1,1) = {"
 aaa
@@ -159557,7 +159581,7 @@ byS
 aae
 aae
 aae
-aJN
+huP
 kEE
 "}
 (223,1,1) = {"
@@ -159811,10 +159835,10 @@ goM
 bWr
 pyr
 pyr
-aJN
-aqz
-aJN
-aJN
+aae
+aae
+huP
+huP
 kEE
 "}
 (224,1,1) = {"
@@ -160068,10 +160092,10 @@ pyr
 bWr
 pyr
 pyr
-aJN
-aJN
-aJN
-aJN
+aae
+aae
+huP
+huP
 kEE
 "}
 (225,1,1) = {"
@@ -160325,9 +160349,9 @@ suR
 pyr
 suR
 pyr
-aJN
-aqz
-aJN
+aae
+aae
+huP
 huP
 kEE
 "}
@@ -160582,10 +160606,10 @@ hzF
 bWr
 suR
 pyr
-aqz
-aJN
+aae
+aae
 huP
-aJN
+huP
 kEE
 "}
 (227,1,1) = {"
@@ -160839,7 +160863,7 @@ hzF
 pyr
 pyr
 pyr
-aqz
+aae
 huP
 huP
 huP
@@ -161096,9 +161120,9 @@ cTJ
 iDA
 pyr
 pyr
-hzI
+xfl
 huP
-aJN
+huP
 huP
 kEE
 "}
@@ -161351,12 +161375,12 @@ yiA
 pyr
 pyr
 iDA
-hzF
-hzF
+pyr
+pyr
+aae
 huP
 huP
-aJN
-aJN
+huP
 kEE
 "}
 (230,1,1) = {"
@@ -161610,10 +161634,10 @@ iDA
 hzF
 gkQ
 pyr
-hzI
-aqz
-aJN
-aJN
+aae
+huP
+huP
+huP
 kEE
 "}
 (231,1,1) = {"
@@ -161867,10 +161891,10 @@ sBD
 suR
 pyr
 pyr
-aJN
-aqz
-aJN
-aJN
+aae
+aae
+huP
+huP
 kEE
 "}
 (232,1,1) = {"
@@ -162127,7 +162151,7 @@ byS
 aae
 aae
 aae
-aJN
+huP
 kEE
 "}
 (233,1,1) = {"

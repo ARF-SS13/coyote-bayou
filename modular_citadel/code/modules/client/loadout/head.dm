@@ -1497,4 +1497,17 @@
 	name = "NCR Ranger Helmet"
 	path= /obj/item/clothing/head/ncr_ranger
 
+/datum/gear/head/ribbon
+	name  = "Hair Ribbon"
+	path = /obj/item/clothing/head/ribbon
+	cost = 0
 
+/datum/gear/head/bow
+	name  = "Hair bow"
+	path = /obj/item/clothing/head/bow
+	cost = 0
+
+/datum/gear/head/bow/small
+	name  = "Hair bow, small"
+	path = /obj/item/clothing/head/bow/small
+	cost = 0

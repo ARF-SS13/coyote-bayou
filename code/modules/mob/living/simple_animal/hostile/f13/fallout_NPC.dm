@@ -109,7 +109,7 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
-
+	speed = 10 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/vault/security/Aggro()
 	..()
@@ -144,7 +144,7 @@
 	response_harm_simple = "hits"
 	retreat_distance = 6
 	minimum_distance = 6
-	speed = 0
+	speed = 4
 	ranged_cooldown_time = 22
 	extra_projectiles = 2
 	stat_attack = 1
@@ -219,6 +219,7 @@
 	max_heal_amount = 0.85
 	heal_per_life = 0.115
 	tactical_retreat = 10
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/enclave/scientist/Aggro()
 	..()
@@ -257,6 +258,7 @@
 		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // Enclave corpses
 /obj/effect/mob_spawn/human/corpse/enclavescientist
@@ -300,7 +302,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	speed = 1
+	speed = 4
 	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 200
@@ -358,6 +360,7 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/bs/paladin
 	name = "Tech-Trooper Commander"
@@ -386,6 +389,7 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /obj/effect/mob_spawn/human/corpse/bs/paladin
 	name = "Brotherhood Paladin"
@@ -415,7 +419,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	speed = 1
+	speed = 4
 	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 120
@@ -468,6 +472,7 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
+	speed = 10 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/ncr/ranger
 	name = "NCR Ranger"
@@ -495,6 +500,8 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
+
 /obj/effect/mob_spawn/human/corpse/ncr/ranger
 	name = "NCR Ranger"
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
@@ -573,6 +580,7 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/legion/decan
 	name = "Legion Decanus"
@@ -600,6 +608,7 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/legion/decan
 

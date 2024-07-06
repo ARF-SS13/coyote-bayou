@@ -16,7 +16,7 @@
 
 	rating = 1
 	var/charge = 0 //set on init
-	var/maxCharge = 10000
+	var/maxCharge = 1000000000
 
 /obj/item/stock_parts/chem_cartridge/Initialize()
 	. = ..()
@@ -42,7 +42,7 @@
 	icon_state = "salvaged"
 	item_state = "salvaged"
 	custom_price = PRICE_ALMOST_EXPENSIVE
-	maxCharge = 2500
+	maxCharge = 250000000
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/crafted
@@ -51,13 +51,13 @@
 	icon_state = "crafted"
 	item_state = "crafted"
 	custom_price = PRICE_ABOVE_EXPENSIVE
-	maxCharge = 7000
+	maxCharge = 700000000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/simple
 	name = "Knock-off chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. It looks like a mass produced knock-off."
-	maxCharge = 5000
+	maxCharge = 500000000
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500, /datum/material/plasma = 100)
 
@@ -67,5 +67,5 @@
 	icon_state = "pristine"
 	item_state = "pristine"
 	custom_price = PRICE_REALLY_EXPENSIVE
-	maxCharge = 10000
+	maxCharge = 1000000000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1000, /datum/material/plasma = 500)

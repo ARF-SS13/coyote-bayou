@@ -604,30 +604,44 @@
 	desc = "You, and likely your character, are a bit shy. This is a fine thing to be, but letting people know this way will let them know you do want to be included in social situations when its feasible. Basically just top bait though, lets be real."
 	value = 0
 	category = "OOC Quirks"
-	mechanics = "The description should be fairly clear, but to reiterate this quirk exists as an OOC flag to let everyone know that you have some sort of social issue that makes it hard for you to approach others. If anyone dares to give you shit about taking this please alert staff immediatly, we will eat their legs off."
+	mechanics = "The description should be fairly clear, but to reiterate this quirk exists as an OOC flag to let everyone know that you have some sort of social issue that makes it hard for you to approach others. If anyone dares to give you problems about taking this please alert staff immediatly, we will eat their legs off."
 	conflicts = list()
 	mob_trait = TRAIT_SHY
 	human_only = FALSE
 
 /datum/quirk/pvefocus
-	name = "PVE Focused"
-	desc = "Your gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
+	name = "PVP Refusing"
+	desc = "You opt out of PVP, and refuse to take part in it. Players may not engage you in PVP, or try to bait you into it. Likewise, you \
+		may not engage or bait others into trying to PVP with you. While you don't need this quirk to opt out of PVP, it does help set this \
+		preference for you by default. You can toggle this on or off at any time by using *nopvp."
 	value = 0
 	category = "OOC Quirks"
-	mechanics = "Ya' like fighting geckos, do ya'?"
-	conflicts = list()
+	mechanics = "Your examine text will let others know that you're not interested in PVP engagements."
+	conflicts = list(
+		/datum/quirk/pvpfocus,
+	)
 	mob_trait = TRAIT_PVEFOC
 	human_only = FALSE
 
+/datum/quirk/pvefocus/on_spawn()
+	var/mob/living/M = quirk_holder
+	M.SetPVPflag(PVP_NO)
+
 /datum/quirk/pvpfocus
 	name = "PVP Focused"
-	desc = "Your gameplay focus is on PVP.  While PVE is basically inescapible in the wastes to even get from point A to point B this lets you opt in to letting others know that when shit starts to hit the fan ICly that violence is on the table for your character."
+	desc = "You're looking for PVP action! While you don't need this quirk to partake in PVP, it is helpful for others to know that you're happy to do so. \
+		Keep in mind that players can opt out of PVP, either through saying so through LOOC, having the PVP Opt Out quirk, or by using *nopvp. \
+		If a player has opted out of PVP, you should respect their wishes and not engage in PVP with them."
 	value = 0
 	category = "OOC Quirks"
-	mechanics = "Ya' like fighting people, do ya'?"
+	mechanics = "Your examine text will let others know that you're open for PVP engagements."
 	conflicts = list()
 	mob_trait = TRAIT_PVPFOC
 	human_only = FALSE
+
+/datum/quirk/pvpfocus/on_spawn()
+	var/mob/living/M = quirk_holder
+	M.SetPVPflag(PVP_YES)
 
 /datum/quirk/loocapproach
 	name = "L/OOC Approach"
@@ -639,15 +653,15 @@
 	mob_trait = TRAIT_OOCAPP
 	human_only = FALSE
 
-/datum/quirk/pvpande
-	name = "PVP/PVE Accepting"
-	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
-	value = 0
-	category = "OOC Quirks"
-	mechanics = "Yeah, you're just violent and quirky. We get it."
-	conflicts = list()
-	mob_trait = TRAIT_COMBATSWITCH
-	human_only = FALSE
+// /datum/quirk/pvpande
+// 	name = "PVP/PVE Accepting"
+// 	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
+// 	value = 0
+// 	category = "OOC Quirks"
+// 	mechanics = "Yeah, you're just violent and quirky. We get it."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_COMBATSWITCH
+// 	human_only = FALSE
 
 /*/datum/quirk/smol
 	name = "Scoopable!"
@@ -758,7 +772,7 @@
 	category = "Lifepath Quirks"
 	mechanics = "Like it says, camera and photo album. The album saves between rounds for you to remember all those good times with. Or cry in six months when you come back and see it again."
 	conflicts = list(
-		/datum/quirk/luddite, // fucker'll steal your soul
+		/datum/quirk/luddite, // fucer'll steal your soul
 	)
 	mob_trait = TRAIT_PHOTOGRAPHER
 	gain_text = span_notice("You know everything about photography.")
@@ -1444,7 +1458,7 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(fix_text))
-	user.visible_message(span_info("[user] adjusts their fit to find some relief"), null, null, 3)
+	user.visible_message(span_info("[user] adjusts their fit to find some relief."), null, null, 3)
 	active = FALSE
 	make_timers()
 
@@ -1456,7 +1470,7 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(drop_text))
-	user.visible_message(span_info("[user] undoes their clothing to find some relief"), null, null, 3)
+	user.visible_message(span_info("[user] undoes their clothing to find some relief."), null, null, 3)
 	var/obj/item/clothing/S = source
 	S.verbs -= /obj/item/clothing/proc/FixClothesFit
 	active = FALSE

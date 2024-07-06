@@ -180,6 +180,9 @@
 		if(critterthing.stat != CONSCIOUS || critterthing.health <= 0)
 			Unbuckle(user)
 			return
+	for(var/atom/thing in get_step(AM, direction))
+		if(thing.density)
+			return
 	if(world.time < last_vehicle_move + ((last_move_diagonal? 2 : 1) * vehicle_move_delay))
 		return
 	last_vehicle_move = world.time

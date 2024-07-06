@@ -940,3 +940,23 @@
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
+	
+/datum/emote/living/carbon/pvp_opt_out
+	key = "nopvp"
+	restraint_check = FALSE
+
+/datum/emote/living/carbon/pvp_opt_out/run_emote(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_PVEFOC))
+		REMOVE_TRAIT(user, TRAIT_PVEFOC, ROUNDSTART_TRAIT)
+	else
+		ADD_TRAIT(user, TRAIT_PVEFOC, ROUNDSTART_TRAIT)
+
+	SSpornhud.update_visibility(user, PHUD_PVP_FLAG, HAS_TRAIT(user, TRAIT_PVEFOC))
+	if(HAS_TRAIT(user, TRAIT_PVEFOC))
+		log_consent("[user] ([user.ckey]) has opted OPTED OUT of PVP!")
+		to_chat(user, span_notice("You have opted out of PVP."))
+	else
+		log_consent("[user] ([user.ckey]) has OPTED BACK INTO PVP!")
+		to_chat(user, span_notice("You have opted back into PVP."))
+

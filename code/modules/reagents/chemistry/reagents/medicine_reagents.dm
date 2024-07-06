@@ -2084,6 +2084,8 @@
 
 /datum/reagent/medicine/music/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	if(volume > max_effect_at)
+		volume = max_effect_at
 	if(!M.can_hear() && prob(5))
 		to_chat(M, span_alert("Boy you wish you could hear that. Probably sounds nice. Too bad you can't!"))
 		return
