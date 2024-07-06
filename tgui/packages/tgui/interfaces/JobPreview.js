@@ -24,6 +24,9 @@ import {
 import { Window } from '../layouts';
 import { multiline } from '../../common/string';
 
+const MAIN = true;
+const JDESC = false;
+
 // ANATOMY OF AllJobsNCats
 // AllJobsNCats = [
 //   {
@@ -33,7 +36,7 @@ import { multiline } from '../../common/string';
 //     {
 //       "Title": "Head Coach",
 //       "Path": "/datum/job/headcoach",
-//       "Category": "Nash Boston Pro Team",
+//       "Category": "Nash Boston orb meat",
 //       "Description": "The head coach kinda blows.",
 //       "Supervisors": "Principal Dingus",
 //       "Paycheck": 100,
@@ -62,34 +65,43 @@ export const JobPreview = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     AllJobsNCats = [],
-    MyJob = {},
     MyCkey = "Fooby",
   } = data;
 
+  const [
+    MyJobject,
+    setMyJobject,
+  ] = useLocalState(context, "MyJobject", {});
+
   // checks if MyJob is empty
-  const MenuState = Object.keys(MyJob).length === 0 ? "MAIN" : "JOBDESC";
-  const JobMenuWidth = MenuState ? "100%" : 0;
-  const JobMenuShrinkfit = MenuState ? false : true;
+  const MenuState = Object
+    .keys(MyJobject)
+    .length === 0 ? MAIN : JDESC;
+  const JobMenuWidth = MenuState === MAIN ? "100%" : "5%";
+  const DescriptionWidth = MenuState === MAIN ? "0%" : "95%";
+  const JobMenuShrinkfit = MenuState === MAIN ? 0 : 1;
 
 
   return (
     <Window
-      width={640}
-      height={480}
+      width={1024}
+      height={768}
       resizable
       theme="ntos"
       title="What will you be today?">
       <Window.Content>
-        <Stack fill>
-          <Stack.Item basis={JobMenuWidth} shrink={JobMenuShrinkfit}>
-            <JobMenu />
-          </Stack.Item>
-          {MenuState === "JOBDESC" ? (
-            <Stack.Item grow>
-              <JobDescription />
-            </Stack.Item>
-          ) : null}
-        </Stack>
+        <Box
+          width={JobMenuWidth}
+          height="100%">
+          <JobMenu />
+        </Box>
+        {MenuState === JDESC ? (
+          <Box
+            width={DescriptionWidth}
+            height="100%">
+            <JobDescription />
+          </Box>
+        ) : null}
       </Window.Content>
     </Window>
   );
@@ -105,37 +117,40 @@ const JobMenu = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     AllJobsNCats = [],
-    MyJob = {},
     MyCkey,
   } = data;
 
-  const MenuState = Object.keys(MyJob).length === 0 ? "MAIN" : "JOBDESC";
-  const WrapFlex = MenuState === "MAIN" ? "wrap" : "nowrap";
-  const Basisness = MenuState === "MAIN" ? "auto" : "100%";
+  const [
+    MyJobject,
+    setMyJobject,
+  ] = useLocalState(context, "MyJobject", {});
 
+  const MenuState = Object.keys(MyJobject).length === 0 ? MAIN : JDESC;
+  const WrapFlex = MenuState === MAIN ? "100%" : "5%";
+  const JobsDirection = MenuState === MAIN ? "row" : "column";
   return (
-    <Section
-      title="Jobs"
-      fill
-      scrollable={MenuState === "MAIN"}
-      buttons={MenuState === "JOBDESC" ? (
-        <Button
-          icon="arrow-left"
-          onClick={() => act('ClearJob')} />
-      ) : null}>
-      <Flex
-        wrap={WrapFlex}
-        direction="column"
-        basis={Basisness}>
-        {AllJobsNCats.map((Cat, index) => (
-          <Flex.Item key={index}>
-            <CatJobList
-              key={index}
-              Cat={Cat} />
-          </Flex.Item>
-        ))}
-      </Flex>
-    </Section>
+    // <Section
+    //   title="Jobs"
+    //   height="100%"
+    //   scrollable={MenuState === JDESC}
+    //   buttons={MenuState === JDESC ? (
+    //     <Button // back button, clears MyJobject
+    //       icon="arrow-left"
+    //       onClick={() => setMyJobject({})} />
+    //   ) : null}>
+    <Flex
+      wrap={WrapFlex}
+      direction={JobsDirection}>
+      {AllJobsNCats.map((Cat, index) => (
+        <Flex.Item key={index}>
+          <CatJobList
+            key={index}
+            Cat={Cat} />
+          Box
+        </Flex.Item>
+      ))}
+    </Flex>
+    // </Section>
   );
 };
 
@@ -146,6 +161,11 @@ const CatJobList = (props, context) => {
   const {
     Cat = {},
   } = props;
+
+  const [
+    MyJobject,
+    setMyJobject,
+  ] = useLocalState(context, "MyJobject", {});
 
   const {
     CatColor,
@@ -169,9 +189,19 @@ const CatJobList = (props, context) => {
       <Stack fill vertical>
         {CatJobs.map((Job, index) => (
           <Stack.Item key={index}>
-            <JobButton
+            <Button
               key={index}
-              Job={Job} />
+              color={
+                Job.Title === MyJobject.Title
+                  ? "green"
+                  : "default"
+              }
+              onClick={() => setMyJobject(Job)}>
+              <Box
+                color={Job.JobColor}>
+                {`${Job.Title} [${Job.CurrentPositions}/${Job.TotalPositions}]`}
+              </Box>
+            </Button>
           </Stack.Item>
         ))}
       </Stack>
@@ -179,62 +209,21 @@ const CatJobList = (props, context) => {
   );
 };
 
-// The job button
-// A single job button
-const JobButton = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    Job = {},
-  } = props;
-
-  const {
-    Title,
-    Description,
-    Supervisors,
-    Paycheck,
-    TotalPositions,
-    SpawnPositions,
-    CurrentPositions,
-    Forbids,
-    Enforces,
-    Extrastuff,
-    ReqMinutes,
-    ReqType,
-    Difficulty,
-    JobColor,
-    CurrencyUnit,
-  } = Job;
-
-  return (
-    <Button
-      color="transparent"
-      onClick={() => act('GetJob', {
-        JobTitle: Title,
-      })} >
-      <Box
-        color={JobColor}>
-        {`${Title} [${CurrentPositions}/${TotalPositions}]`}
-      </Box>
-    </Button>
-  );
-};
-
-
-
-
-
-
-
-
-
 // The job description
 // Holds the job's description and details
 const JobDescription = (props, context) => {
   const { act, data } = useBackend(context);
+
+  const [
+    MyJobject,
+    setMyJobject,
+  ] = useLocalState(context, "MyJobject", {});
+
   const {
-    MyJob = {},
+    MyJob = MyJobject,
     MyCkey,
   } = data;
+
   const {
     Title,
     Description,
@@ -254,6 +243,7 @@ const JobDescription = (props, context) => {
 
   return (
     <Section
+      fill
       title={Title
         + " -- (" + CurrentPositions
         + "/" + TotalPositions + ")"}
@@ -263,9 +253,9 @@ const JobDescription = (props, context) => {
       <Stack fill vertical textAlign="left">
         <Stack.Item>
           {ReqType
-            && ReqType.length > 0
+            && ReqType.length > 1
             && ReqMinutes
-            && ReqMinutes.length > 0 ? (
+            && ReqMinutes.length > 1 ? (
               <Box>
                 {"This job requires "
                 + ReqMinutes
@@ -274,7 +264,7 @@ const JobDescription = (props, context) => {
                 + " to take!"}
               </Box>
             ) : null}
-          <Box>
+          <Box width="100%">
             {Description}
           </Box>
           {Extrastuff && Extrastuff.length > 0 ? (

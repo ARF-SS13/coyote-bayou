@@ -854,14 +854,17 @@ SUBSYSTEM_DEF(job)
 		var/list/category_slug = list()
 		category_slug["CatColor"] = categlob["color"]
 		category_slug["CatTitle"] = cat
-		category_slug["CatJobs"] = list()
+		category_slug["CatJobs"] = list() // merek gives good catjobs
 		/// now fill them with some jobs
-		var/list/catjobs = list() // merek gives good catjobs
 		for(var/cjob in categlob["jobs"])
 			var/datum/job/job = SSjob.GetJob(cjob)
 			if(!job)
 				continue
-			category_slug["CatJobs"] += list(job.get_tgui_slug())
+			var/list/tug_slug = job.get_tgui_slug()
+			if(!tug_slug)
+				continue
+			tug_slug["Category"] = cat
+			category_slug["CatJobs"] += list(tug_slug)
 		categories[cat] = category_slug
 	// trim empty categories
 	for(var/cat in categories)
@@ -900,15 +903,15 @@ SUBSYSTEM_DEF(job)
 	. = ..()
 	if(!user || !user.client)
 		return
+	compile_tgui_map()
 	var/list/slugpower = tgui_slugs.Copy()
 	/// cleverly slot the player-specific data into the jobs within the slugs
 	var/list/xps = user?.client?.prefs?.exp.Copy()
-	for(var/cat in slugpower)
-		for(var/list/job in slugpower[cat]["Jobs"])
+	for(var/list/cat in slugpower)
+		for(var/list/job in cat["CatJobs"])
 			var/datum/job/j = SSjob.GetJob(job["Title"])
 			if(!j)
 				continue
-			
 			var/my_time = LAZYACCESS(xps, j.exp_type)
 			job["CurrentMinutes"] = DisplayTimeText(my_time, abbreviated = TRUE) || "0m"
 			var/timeleft = 0
