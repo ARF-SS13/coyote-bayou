@@ -3,7 +3,7 @@
 
 /mob/living/carbon/Initialize()
 	. = ..()
-	create_reagents(1000, NONE, NO_REAGENTS_VALUE)
+	create_reagents(100000, NONE, NO_REAGENTS_VALUE) // STIMPAK BUG ME NOT
 	update_body_parts() //to update the carbon's new bodyparts appearance
 	GLOB.carbon_list += src
 	blood_volume = (BLOOD_VOLUME_NORMAL * blood_ratio)

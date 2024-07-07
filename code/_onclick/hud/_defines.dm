@@ -142,8 +142,9 @@
 //Middle right (status indicators)
 #define ui_internal 			"EAST-1:28,		SOUTH+3:11"//CIT CHANGE - moves internal icon up a little bit to accommodate for the stamina meter
 
-#define ui_character_actions	"EAST-1:28,		SOUTH+1:2"
-#define ui_bayou				"EAST-1:28,		SOUTH+0:2" //Character directory
+#define ui_character_actions	"EAST-1:28, SOUTH+1:2"
+#define ui_bayou				"EAST-1:28, SOUTH+0:2" //Character directory
+#define ui_pvpbuttons			"EAST-1:28, SOUTH+1:18" //slut directory
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"

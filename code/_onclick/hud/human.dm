@@ -394,6 +394,10 @@
 	chardir_hud_button.hud = src
 	infodisplay += chardir_hud_button
 
+	pvp_focus_toggle = new /atom/movable/screen/pvp_focus_toggle()
+	pvp_focus_toggle.hud = src
+	infodisplay += pvp_focus_toggle
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src
