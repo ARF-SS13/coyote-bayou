@@ -153,7 +153,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bB" = (
-/obj/structure/table/wood/settler,
 /obj/item/lighter/gold{
 	desc = "A shiny and relatively expensive zippo lighter. There's a small world etched on the bottom that reads, ''Sunflower'";
 	pixel_x = -6;
@@ -162,6 +161,7 @@
 /obj/item/storage/fancy/cigarettes/cigars/cohiba{
 	pixel_y = 7
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bE" = (
@@ -2007,12 +2007,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "pR" = (
-/obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/bottle/rum/empty,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
 	pixel_y = 10
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pT" = (
@@ -6501,9 +6501,7 @@
 /obj/item/storage/fancy/rollingpapers{
 	pixel_y = 9
 	},
-/obj/structure/table/wood/junk{
-	pixel_y = 4
-	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "VE" = (

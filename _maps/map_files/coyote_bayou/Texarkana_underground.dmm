@@ -3629,8 +3629,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bNx" = (
-/obj/structure/bed/mattress,
-/obj/item/blanket,
+/obj/structure/table/wood/settler,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "bNy" = (
@@ -7035,8 +7036,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
 "dwa" = (
-/obj/structure/table/wasteland,
-/obj/item/kitchen/knife/butcher,
+/obj/machinery/chem_master/condimaster,
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "dwr" = (
@@ -9402,10 +9402,8 @@
 	pixel_y = 12
 	},
 /obj/structure/bed/old,
-/obj/item/blanket{
-	pixel_y = 12
-	},
-/obj/item/blanket,
+/obj/item/bedsheet/random,
+/obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -10301,14 +10299,10 @@
 	},
 /area/f13/building)
 "fVa" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#880000"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/table/wasteland,
+/obj/item/kitchen/knife/butcher,
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/open/floor/wood_wide,
 /area/f13/building)
 "fVc" = (
 /obj/structure/fence{
@@ -17162,10 +17156,8 @@
 	pixel_y = 12
 	},
 /obj/structure/bed/old,
-/obj/item/blanket{
-	pixel_y = 12
-	},
-/obj/item/blanket,
+/obj/item/bedsheet/random,
+/obj/item/bedsheet/random,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -19780,7 +19772,7 @@
 /area/f13/caves)
 "mxp" = (
 /obj/structure/bed/old,
-/obj/item/blanket,
+/obj/item/bedsheet/random,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -20433,12 +20425,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "mYl" = (
-/obj/machinery/light/small/broken{
-	dir = 8
+/obj/structure/table/wood/settler,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/chem_dispenser/drinks/fullupgrade,
+/turf/open/floor/wood_wide,
 /area/f13/building)
 "mYn" = (
 /obj/structure/flora/wasteplant/wild_punga,
@@ -21392,7 +21386,7 @@
 /area/f13/caves)
 "nIK" = (
 /obj/structure/bed/old,
-/obj/item/blanket,
+/obj/item/bedsheet/random,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -22359,13 +22353,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"orF" = (
-/obj/structure/closet/cabinet/anchored,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "osC" = (
 /obj/structure/simple_door/glass,
 /obj/item/lock_bolt{
@@ -28990,12 +28977,6 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/building/sewers)
-"sMF" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "sNJ" = (
 /obj/item/beacon{
 	mouse_opacity = 0;
@@ -29312,7 +29293,7 @@
 /area/f13/caves)
 "sWE" = (
 /obj/structure/bed/old,
-/obj/item/blanket,
+/obj/item/bedsheet/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "sWJ" = (
@@ -44206,7 +44187,7 @@ fNJ
 xnJ
 fNJ
 xnJ
-xnJ
+ciT
 bOb
 coW
 umM
@@ -44458,12 +44439,12 @@ mEa
 ozx
 nnI
 bNx
-xnJ
-ciT
+fNJ
+fNJ
+fNJ
+fNJ
+fNJ
 shs
-lVv
-dwa
-aiV
 bOb
 oeq
 oSu
@@ -44714,13 +44695,13 @@ gcv
 mEa
 tkZ
 nnI
-bOb
-osC
-bOb
-bOb
-bOb
-bOb
-bOb
+mYl
+xnJ
+fNJ
+dwa
+lVv
+fVa
+aiV
 bOb
 mxp
 oSu
@@ -44971,13 +44952,13 @@ tkZ
 ozx
 ozx
 bOb
-jfF
-xlI
-fVa
-jHd
-jHd
-mYl
-orF
+bOb
+osC
+bOb
+bOb
+bOb
+bOb
+bOb
 bOb
 wOw
 kUb
@@ -45228,7 +45209,7 @@ bOb
 bOb
 bOb
 bOb
-poS
+jfF
 xlI
 nEr
 ryi
@@ -45485,9 +45466,9 @@ pry
 kyV
 pbU
 bOb
-rfx
+xlI
 jHd
-sMF
+tfm
 ryi
 jHd
 jHd
@@ -45999,7 +45980,7 @@ pry
 pry
 pUc
 bOb
-xlI
+poS
 xlI
 jHd
 lzu
@@ -46256,7 +46237,7 @@ pry
 kyV
 pry
 bOb
-xlI
+rfx
 jHd
 jHd
 nJn
