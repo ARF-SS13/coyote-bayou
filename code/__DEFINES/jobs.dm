@@ -415,3 +415,36 @@
 #define JOB_DISPLAY_ORDER_KHORCHIN 131
 #define JOB_DISPLAY_ORDER_KIPCHAK 132
 #define JOB_DISPLAY_ORDER_MANGUDAI 133
+
+#define REC_SKILL_COMBAT_LVL1 "Combat - Lvl I" = \
+	"You can't go two steps outside without running into something that wants to test the limits of your (and its) immortality. \
+	Being able to defend yourself is a must, whether it's with a gun, a sword, or your bare hands. \
+	Most critters you'll encounter in the wastes are fairly low-threat, such as Pillbugs, Rats, and Geckos, which will be \
+	good practice for the more dangerous creatures you'll encounter later on. \
+	Your survival knife is surprisingly effective! If you are on Harm intent (the red one), if you click past a critter, you'll \
+	swing at it with your knife. Guns are a simple point-and-click affair, but most require either bullets, magazines full of bullets, \
+	batteries, or just a good pump to work. You can quickly reload guns by pressing (by default) ctrl-R. \
+	Some guns need to be racked or cocked after each shot, and this is done by pressing the use key (default: C) while holding the gun."
+#define REC_SKILL_HEALING_LVL1 "Healing - Lvl I" = \
+	"You're going to get hurt. A lot. So, you'll want to be able to patch yourself up when you do, preferably before you \
+	die. Thankfully, first aid is fairly simple! There are yellow Broc flowers scattered throughout the wastes that, when eaten, \
+	will heal your bruises, albeit slowly. You can also find Stimpaks, which are a bit more potent, but harder to come by. If you \
+	craft a Broc flower with a Xander root (the brown ones), you'll get some healing powder that'll heal both bruises and burns, \
+	and fairly quickly at that. If all else fails, click the green cross on the bottom right of your screen, then use whatever \
+	it spawns on yourself to heal yourself up -- be sure to drink water if you're doing this!"
+#define REC_SKILL_TRAUMA_LVL1 "Trauma - Lvl I" = \
+	"Most folk bleed when they are injured, and you are (probably) no exception. If you find yourself leaking red stuff, \
+	find a bandage and click yourself with it to apply it to any wounds you've taken. If you have sutures, you can use them \
+	too, and if you have both bandages and sutures applied, you'll heal up even faster! Do note that if you are injured while \
+	you have a bandage or suture applied, they'll be destroyed and you'll be right back to bleeding! As your wounds heal up, \
+	be sure to stay good and fed, as this speeds along the process."
+#define REC_SKILL_SURVIVAL_LVL1 "Survival - Lvl I" = \
+	"Surviving in the wastes is a tough business, but you're a tough person! You'll need to eat and drink to keep yourself \
+	alive, and you can do this by finding food and water in the wastes. You can find food in the form of various plants, \
+	animals, and pre-event foodstuffs, and you can find water in the form of bottles of water, ponds, and sinks. You can \
+	cook most meats by sticking them into a microwave or oven (found in most houses)."
+
+
+
+
+

@@ -822,17 +822,15 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
 
-/datum/controller/subsystem/job/proc/ShowJobPreview(ckey, rankname)
-	if(!ckey || !rankname)
-		return
-	var/datum/job/job = GetJob(rankname)
-	if(!job)
+/datum/controller/subsystem/job/proc/ShowJobPreview(ckey)
+	ckey = extract_ckey(ckey)
+	if(!ckey)
 		return
 	var/datum/job_preview_holder/jph = preview_holders[ckey]
 	if(!jph)
 		jph = new /datum/job_preview_holder(ckey)
 		preview_holders[ckey] = jph
-	return jph.show_job(job)
+	return jph.showme()
 
 /// A holder for the TGUI job preview thing!!
 /datum/job_preview_holder
@@ -875,15 +873,11 @@ SUBSYSTEM_DEF(job)
 		tgui_slugs += list(categories[cat])
 
 /datum/job_preview_holder/proc/show_main()
-	my_job = null
 	var/mob/user = ckey2mob(my_ckey)
 	ui_interact(user)
 	return TRUE
 
-/datum/job_preview_holder/proc/show_job(datum/job/job)
-	if(!job)
-		return
-	my_job = job
+/datum/job_preview_holder/proc/showme()
 	var/mob/user = ckey2mob(my_ckey)
 	ui_interact(user)
 	return TRUE
@@ -913,11 +907,15 @@ SUBSYSTEM_DEF(job)
 			if(!j)
 				continue
 			var/my_time = LAZYACCESS(xps, j.exp_type)
-			job["CurrentMinutes"] = DisplayTimeText(my_time, abbreviated = TRUE) || "0m"
+			if(my_time < 1)
+				job["CurrentMinutes"] = "0m"
+			else
+				job["CurrentMinutes"] = DisplayTimeText(my_time * 10 * 60, abbreviated = TRUE) || "0m"
 			var/timeleft = 0
 			if(istype(j))
 				timeleft = j.required_playtime_remaining(user.client)
-			job["TimeTillCanSpawn"] = "[DisplayTimeText(timeleft, abbreviated = TRUE)]"
+			job["RawTimeLeft"] = timeleft
+			job["TimeTillCanSpawn"] = "[DisplayTimeText(timeleft * 10 * 60, abbreviated = TRUE)]"
 			if(isnewplayer(user))
 				var/mob/dead/new_player/player = user
 				job["SpawnFailure"] = player.IsJobUnavailable(j.title, latejoin = TRUE)
@@ -925,13 +923,15 @@ SUBSYSTEM_DEF(job)
 				job["SpawnFailure"] = JOB_UNAVAILABLE_NOT_NEWPLAYER
 	var/list/data = list()
 	data["AllJobsNCats"] = slugpower
-	data["MyJob"] = my_job?.get_tgui_slug()
 	return data
 
 /datum/job_preview_holder/ui_data(mob/user)
 	. = ..()
 	var/list/data = list()
+	data["IsInGame"] = !isnewplayer(user)
 	data["MyCkey"] = user.client?.ckey || my_ckey
+	data["CurrentJobTitle"] = user.mind?.assigned_role || "Assistant"
+	return data
 
 /datum/job_preview_holder/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -941,10 +941,15 @@ SUBSYSTEM_DEF(job)
 	if(action != "JoinJob")
 		return
 	if(!istype(user, /mob/dead/new_player))
+		user.playsound_local(user, 'sound/machines/low_buzz.ogg', 80, TRUE)
 		to_chat(user, span_alert("You'll want to respawn and mess with this from the lobby screen if you want to become this job."))
 		return
 	var/mob/dead/new_player/player = user
-	player.AttemptLateSpawn(my_job.title)
+	if(!player.AttemptLateSpawn(params["JoinJob"]))
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(ui)
+		ui.close()
 
 
 

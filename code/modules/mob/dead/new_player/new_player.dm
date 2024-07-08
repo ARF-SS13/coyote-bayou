@@ -267,7 +267,7 @@
 			message_admins(msg)
 			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
 			return
-		if(!SSjob.ShowJobPreview(client?.ckey, href_list["SelectedJob"]))
+		if(!SSjob.ShowJobPreview(client?.ckey))
 			var/do_it_anyway = alert(src, "Are you sure you want to join as this role?", "Role Selection", "Yes", "No")
 			if(do_it_anyway == "Yes")
 				AttemptLateSpawn(href_list["SelectedJob"])
@@ -498,6 +498,7 @@
 		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 		return
 
+	. = TRUE
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
@@ -718,6 +719,10 @@
 	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()
+	if(SSjob.ShowJobPreview(client?.ckey))
+		return // its handlinmg imt
+
+
 	var/list/dat = list()
 
 	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"

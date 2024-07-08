@@ -29,9 +29,6 @@
 	//How many players have this job
 	var/current_positions = 0
 
-	//Supervisors, who this person answers to directly
-	var/supervisors = ""
-
 	//Sellection screen color
 	var/selection_color = "#ffffff"
 
@@ -48,7 +45,7 @@
 	var/outfit = null
 	var/plasma_outfit = null //the outfit given to plasmamen
 
-	var/exp_requirements = 0 //This is in... minutes?
+	var/exp_requirements = 0 // Minutes required of exp_type to play this job
 
 	var/exp_type = EXP_TYPE_LIVING
 	var/exp_type_department = ""
@@ -84,21 +81,64 @@
 	/// Starting skill modifiers.
 	var/list/starting_modifiers
 
-	//Description, short text about the job
-	var/description = ""
 
 	//Description, short text about the job
 	var/extrastuff = ""
 
-	//Against the faction rules, for imporant things that you SHOULDNT do.
-	var/forbids = ""
-
 	//For things that faction Enforces.
-	var/enforces = ""
+	var/enforces = "" // unused, use responsibilities instead
 
-	//Job difficulty
-	var/difficulty = ""
-	
+	/// DESCRIPTION STUFF TO FILL OUT THE FIVE HEAD OF THE JOB DESCRIPTION STUFF
+	/// Brief description, the elevator pitch about the general idea of the job
+	var/brief_description
+	/// Extended description, a more detailed description of the job, what it's about, what it does, etc.
+	/// Optional!
+	var/description
+	/// Lore about the job, stuff relating to the job's history, its story-related importance, etc.
+	var/lore
+	/// Who your boss is, who you answer to, who you look up to, those typically considered your supervisors
+	var/supervisors
+	/// Who you boss around, who you're in charge of, who you're responsible for, those typically considered your subordinates
+	var/subordinates
+	/// Things you're not allowed to do, things you're forbidden from doing, things you're not supposed to do
+	var/forbids // "This role forbids you from..."
+	/// General job responsibilities, what you're expected to do, what you're supposed to be doing, what you're supposed to be responsible for
+	/// Your overall role in town
+	var/overall_responsibilities
+	/// What you do, what your job entails, what your responsibilities are, what you're expected to do
+	/// this is a list that'll be displayed as bullet points
+	var/list/specific_responsibilities
+	/// A brief Day In The Life Of, an optional section that describes what a typical day in the life of this job is like
+	var/day_in_the_life
+	/// What skills that you, as a player, are recommended to have to play this job
+	var/list/recommended_skills
+	/// What part of the game this job is most focused on, what you'll be doing most of the time
+	/// Things like Adventuring, Socializing, Job-Simming, etc.
+	var/focus // "This role focuses on..."
+	/// Difficulty description, whether or not this job is for beginners, intermediate players, or advanced players
+	var/difficulty
+	/// OOC rules and guidelines for playing this job, what you should and shouldn't do, what's expected of you
+	var/ooc_rules
+
+	/// Faction related stuff, typically applied to the parent job of a group of jobs
+	var/faction_leader
+	var/faction_name
+	/// Short description of the faction
+	var/faction_short_description
+	/// Lore behind the faction
+	var/faction_lore
+	/// General vibe of the faction
+	var/faction_vibe
+	/// Goals of the faction
+	var/faction_goals
+	/// Rivals of the faction
+	var/faction_rivals
+	/// Allies of the faction
+	var/faction_allies
+	/// Points of contention for the faction
+	var/faction_points_of_contention
+
+
 	var/list/tgui_slug = list()
 
 	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
@@ -286,6 +326,34 @@
 	coolgat["ReqType"] = exp_type || "Living"
 	coolgat["Difficulty"] = difficulty
 	coolgat["JobColor"] = selection_color || "#ffffff"
+
+	coolgat["BriefDescription"]           = brief_description
+	coolgat["Description"]                = description
+	coolgat["Lore"]                       = lore
+	if(LAZYLEN(lore) > 150)
+		coolgat["LoreShort"] = "[copytext(lore, 0, 150)]..."
+	coolgat["Supervisors"]               = supervisors
+	coolgat["Subordinates"]              = subordinates
+	coolgat["Forbids"]                   = forbids
+	coolgat["OverallResponsibilities"]   = overall_responsibilities
+	coolgat["SpecificResponsibilities"]  = specific_responsibilities
+	coolgat["DayInTheLife"]              = day_in_the_life
+	coolgat["RecommendedSkills"]         = list()
+	for(var/skill in recommended_skills)
+		coolgat["RecommendedSkills"] += list(skill, recommended_skills[skill])
+	coolgat["Focus"]                     = focus
+	coolgat["Difficulty"]                = difficulty
+	coolgat["OOCRules"]                  = ooc_rules
+	coolgat["FactionName"]               = faction_name
+	coolgat["FactionLeader"]             = faction_leader
+	coolgat["FactionShortDescription"]   = faction_short_description
+	coolgat["FactionLore"]               = faction_lore
+	coolgat["FactionVibe"]               = faction_vibe
+	coolgat["FactionGoals"]              = faction_goals
+	coolgat["FactionRivals"]             = faction_rivals
+	coolgat["FactionAllies"]             = faction_allies
+	coolgat["FactionPointsOfContention"] = faction_points_of_contention
+
 	tgui_slug = coolgat
 	return tgui_slug
 

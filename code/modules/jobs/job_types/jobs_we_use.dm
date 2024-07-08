@@ -29,6 +29,51 @@
 	faction = FACTION_WASTELAND
 	outfit = /datum/outfit/job/cb
 
+	faction_name = "Wastelanders"
+	faction_leader = null
+	faction_short_description = {"
+		Residents of the wasteland, these wanderers have no masters, no obligations, and no home aside from those they make for themselves. 
+		They are free to roam the wasteland as they please, taking on whatever work they can find and making a living for themselves.
+	"}
+	faction_lore = {"
+		Unaligned and untethered to any particular faction, the Wastelanders are a diverse group of individuals who have chosen (or forced) 
+		to make their way in the wasteland on their own terms. They are free to roam the wasteland as they please, taking on whatever work 
+		they can find and whatever scraps they can scavenge, all in a day's work to see the next sunrise.<br><br>
+		While they may not have the resources or the backing of the larger factions, the Wastelanders are a hardy and resourceful bunch, 
+		able to make a living for themselves in the harshest of conditions. To be a Wastelander is to be free, to be independent, and to 
+		be beholden to no one but yourself. Some may think of their independence as a death sentence, alone to the hellish and often alien 
+		forces of the wasteland, but ask any long time Waster and they'll tell you that the wastes fear them more than any other.
+	"}
+	faction_vibe = {"
+		The general vibe of the Wastelanders is one of independence, self-reliance, and a certain degree of lawlessness. 
+		Overall, Wastelanders tend to focus on adventuring, scavenging, and survival, often alone or in small groups. 
+		It is a great faction for players who want to explore the wasteland, fight monsters, and make it big in the wasteland.
+	"}
+	faction_goals = {"
+		Your goals are whatever you make of them. You are free to roam the wasteland as you please, taking on whatever work you feel like, 
+		and making a living for yourself. You can choose to be a hero, a villain, or anything in between. The wasteland is your oyster, 
+		though don't be surprised to find a clam instead.
+	"}
+	faction_rivals = {"
+		While the Wastelanders are not officially aligned with any other faction, and by default don't have any official rivals, 
+		they are often at odds with the more organized factions of the wasteland. The Wastelanders are a wild card, and their 
+		independence and unpredictability can make them a threat to the more established powers of the region. Rivalry is often 
+		on a case-by-case basis, and can vary greatly depending on the individual Wastelander and the faction they are dealing with.
+	"}
+	faction_allies = {"
+		While the Wastelanders are not officially aligned with any other faction, and by default don't have any official allies,
+		they are often not opposed to working with other factions when it suits their needs. The Wastelanders are a diverse group,
+		and their interests can align with those of other factions, even if only temporarily. The Wastelanders are a wild card,
+		and their independence and unpredictability can make them valuable allies in the right circumstances.
+	"}
+	faction_points_of_contention = {"
+		Wastelanders are often seen as vagrants, outcasts, and troublemakers by the more established factions of the wasteland. The term 
+		'murderhobo' is often used to describe them, and while not all Wastelanders fit this stereotype, many do. Anyone from simple 
+		homesteaders to hardened mercenaries to straight up raiders are considered Wastelanders, and being a part of this 'faction' means 
+		being associated with all of them. Whether or not this is actually true is up to you to decide.
+	"}
+
+
 //////////////////////////////
 /// Wastelander
 /// As basic as it gets, no masters, no obligations, just you and the wasteland, how fun
@@ -37,8 +82,44 @@
 	flag = F13WASTELANDER
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
-	supervisors = "fate"
+	brief_description = {"
+		You are a Wastelander, a wanderer in the wasteland who has arrived in the region for purposes known only to you. 
+		Try to make a living for yourself - or simply survive - and craft your own unique story. 
+	"}
+	description = {"
+		You are one of the many Wastelanders who roam the wasteland, making a living out of whatever multi-dimensional horrors 
+		and ancient ruins you can find in the wasteland. You could be a scavenger, a mercenary, a raider, or anything in between, 
+		but one thing is for sure: you are beholden to no one but yourself. You are free to roam the wasteland as you please,
+		taking on whatever work you can find and whatever scraps you can scavenge, all in a day's work!
+	"}
+	lore = null
+	supervisors = "Fate."
+	subordinates = "Anyone you can convince to follow you."
+	forbids = "Nothing!"
+	overall_responsibilities = "Survive, thrive, and make a living for yourself in the wasteland."
+	specific_responsibilities = list(
+		"Scavenge for supplies and resources.",
+		"Explore the wasteland and uncover its secrets.",
+		"Take on odd jobs and contracts for pay.",
+		"Fight off the various dangers of the wasteland.",
+		"Craft and build your own gear and equipment.",
+		"Make a name for yourself in the wasteland.",
+		"Have fun and make it all up as you go along!",
+	)
+	day_in_the_life = {"
+		As a Wastelander, your day-to-day life is one of adventure, danger, and excitement. You might start your day by scavenging 
+		for supplies in the ruins of a pre-war city, then head out to explore a long-forgotten bunker, and end the day by fighting 
+		off a horde of mutated creatures. Or you might spend the day building a lovely home in the middle of the swamp for you and 
+		that cute radvixen you met this morning. The wasteland is your oyster, and it's up to you to make that oyster a clam!
+	"}
+	recommended_skills = list(
+		REC_SKILL_COMBAT_LVL1,
+		REC_SKILL_HEALING_LVL1,
+		REC_SKILL_TRAUMA_LVL1,
+		REC_SKILL_SURVIVAL_LVL1,
+	)
+	focus = "Survival, exploration, combat, and crafting, as well as chatting up the various folks you meet in the wasteland."
+	difficulty = "Easy to Medium. Most of the challenge comes from combat and survival against monsters and the occasional hostile survivor."
 	selection_color = "#dddddd"
 	paycheck = 0 // Wastelanders are paid in the form of loot and barter
 	access = list()
@@ -54,8 +135,56 @@
 	social_faction = FACTION_TRIBE
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
-	supervisors = "the Ways of your own tribe"
+
+	brief_description = {"
+		You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe. 
+		From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive.
+	"}
+	description = {"
+		You are a wastelander who belongs to a tribe that isn't the Mountain River tribe, and may or may not be native to the region. 
+		You have your own reasons for being here, and your own goals and ambitions, along with the skills, knowledge, and traditions of 
+		your tribe to help you along the way. You are free to roam the wasteland as you please, taking on whatever work you can find and
+		whatever scraps you can scavenge. Whether you were born into the tribe or joined later in life, you are a member of this tribe, 
+		whatever that may mean to you. Maybe you were cast out for some crime, or maybe you wandered out this way as you were foraging 
+		for your camp, or maybe you were just bored and wanted to see what was out past the horizon. Whatever the case, you are here now, 
+		and it is up to you to make the most of it.
+	"}
+	lore = {"
+		Most of the tribes in the surrounding regions tend to be nomadic, moving from place to place in search of food, water, and shelter. 
+		They are often small, close-knit communities, bound together by blood, tradition, and a shared history. The tribes are often
+		led by a chief or elder, who is responsible for making decisions for the tribe and guiding them through the wasteland. The tribes
+		often have their own customs, rituals, and beliefs, and are often wary of outsiders, but are not necessarily hostile to them.
+		Most tribes tend to favor a simpler set of equipment, often things that can be built out of scavenged materials or parts of the
+		land itself, though it is not uncommon for tribes to embrace more advanced technology if they can find it and make use of it.
+	"}
+	supervisors = "Fate, the Ways of your own tribe, and the whims of whatever god(s) you may or may not believe in."
+	subordinates = "Anyone you can convince to follow you and/or your tribe."
+	forbids = "Anything that goes against the ways of your tribe, if you have any."
+	overall_responsibilities = "Survive, thrive, and make a living for yourself in the wasteland."
+	specific_responsibilities = list(
+		"Scavenge for supplies and resources.",
+		"Explore the wasteland and uncover its secrets.",
+		"Take on odd jobs and contracts for pay.",
+		"Fight off the various dangers of the wasteland.",
+		"Craft and build your own gear and equipment.",
+		"Make a name for yourself in the wasteland.",
+		"Have fun and make it all up as you go along!",
+	)
+	day_in_the_life = {"
+		As a member of a tribe, your day-to-day life is one of tradition, community, and survival. You might start your day by 
+		performing a ritual to honor the spirits of the land, then head out to hunt for food, and end the day by sharing a meal 
+		with your tribe around the campfire. Or you might spend the day exploring the ruins of a pre-war city, looking for 
+		technology to bring back to your tribe, or fighting off a rival tribe that has encroached on your territory. The wasteland 
+		is your home, and it's up to you to protect it and make it thrive!
+	"}
+	recommended_skills = list(
+		REC_SKILL_COMBAT_LVL1,
+		REC_SKILL_HEALING_LVL1,
+		REC_SKILL_TRAUMA_LVL1,
+		REC_SKILL_SURVIVAL_LVL1,
+	)
+	focus = "Survival, exploration, combat, and crafting, as well as chatting up the various folks you meet in the wasteland."
+	difficulty = "Easy to Medium. Most of the challenge comes from combat and survival against monsters and the occasional hostile survivor."
 	selection_color = "#dddddd"
 	outfit = /datum/outfit/job/cb/tribal
 	access = list()
@@ -70,8 +199,36 @@
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are here for one thing and one thing alone: have a good time, either alone, or with others. This role is perfect for someone looking to have a nice private scene with someone, as it is completely safe from the chaos of the main game. Have fun!"
-	supervisors = "<i>your throbbing biological urges</i>"
+
+	brief_description = {"
+		You are here for one thing and one thing alone: have a good time, either alone, or with others. This role is perfect for someone 
+		looking to have a nice private scene with someone, as it is completely safe from the chaos of the main game. Have fun!
+	"}
+	description = {"
+		This is a testing area for characters, where you can try out new builds, test out new mechanics, or just have a good time. 
+		As a part of the Backstage, you exist in a state of ambiguous in-character existence, where the canonity of your actions is 
+		up to you and whoever you're with. You could be here for any number of reasons, from testing out a new character concept to 
+		continuing an RP from last round, to even a multi-hour long session of hard core rutting that cute fox you met in the bar! 
+		Whatever the case, you are here to have a good time, and that's all that matters.
+	"}
+	lore = null
+	supervisors = "Your throbbing biological urges."
+	subordinates = "Nobody (unless you're into that sort of thing)."
+	forbids = "Nothing in particular, as long as it's within the rules of the server, and not disruptive of others trying to do things."
+	overall_responsibilities = "Have a good time, either alone, or with others."
+	specific_responsibilities = list(
+		"Test out new character concepts.",
+		"Try out new mechanics and features.",
+		"Continue an RP from last round.",
+		"Explore the depths of that cute fox you met in the bar.",
+		"Have fun and make it all up as you go along!",
+	)
+	day_in_the_life = {"
+		As a Backstage character, your day-to-day life is pretty much whatever you want it to be.
+	"}
+	recommended_skills = list()
+	focus = "Anywhere from testing game mechanics to long-form roleplay in a largely safe area."
+	difficulty = "Easy. You can't exactly 'fail' at this role, unless you're trying to."
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
 	access = list()
@@ -90,6 +247,55 @@
 	total_positions = -1
 	spawn_positions = -1
 	outfit = /datum/outfit/job/cb
+
+	faction_name = "New Boston Townies"
+	faction_leader = "The leader of the New Boston Townies is the Adventurers Guild."
+	faction_short_description = {"
+		Residents of New Boston, these hardy, ambitious souls have come together to make a living in the harsh wasteland. 
+		They are the backbone of the settlement, providing the goods and services that keep the community running.
+	"}
+	faction_lore = {"
+		New Boston, the town on the edge of what could be considered civilization. Situated on the southernmost end of the Corridor, just 
+		before the Texarkana Swamp Heap, New Boston exists as the frontier between the known and the unknown, the 'mostly safe' and the 
+		'definitely not safe'. Arguably run by the Adventurers Guild, the town serves as a hub for all kinds of folks, those looking for work, 
+		adventure, or just something to sate their lust for curiosity and excitement.<br><br>
+		The Adventurers Guild is as the name suggests, a loose coalition of adventurers, mercenaries, and other such explorer-salvager folk 
+		with a vested interest in taming the multi-dimensional hellscape that is the Wasteland. They're the entire reason that New Boston 
+		came to be, as the town was founded by the Guild as a base of operations for their various expeditions and operations in the region. 
+		Whether or not you're a part of the Guild, you're a part of New Boston, and that means you're a part of the town's future, for better 
+		or for worse.<br><br> Add more lore here as needed.
+	"}
+	faction_vibe = {"
+		The general vibe of the New Boston Townies is one of community, cooperation, and survival. The residents of New Boston are a diverse 
+		group of individuals, each with their own skills, talents, and ambitions, but all united in their desire to make a living in the 
+		wasteland. The town is a place of opportunity, where hard work and determination can lead to success, and where the bonds of 
+		friendship and camaraderie can help you through the toughest of times. It is a great faction for players who want to build a life 
+		for themselves in the wasteland, and who are looking for a sense of community and belonging.
+	"}
+	faction_goals = {"
+		Your goals are to make a living for yourself in the wasteland, and to help the town of New Boston thrive. You can choose to be a 
+		hero, a villain, or anything in between, but whatever you choose, your actions will have an impact on the town and its residents. 
+		Whether you're a farmer, a prospector, a barkeep, or a preacher, you have a role to play in the town's future, and it's up to you 
+		to make the most of it.
+	"}
+	faction_rivals = {"
+		The New Boston Townies are not officially aligned with, or against, any other faction, despite being the reason those factions exist 
+		in the first place. While new Boston is typically seen as a neutral ground, it is not uncommon for the town to come into conflict 
+		with other less savory groups, such as Redwater or the Tunnel Rats. Conflicts are entirely handled outside of the town, and anything 
+		that happens in the wastes <b>stays</b> in the wastes.
+	"}
+	faction_allies = {"
+		The New Boston Townies are not officially aligned with any other faction, though they are generally considered to be on good 
+		(or at least non-hostile) terms with most of the other factions in the region. The town serves as a hub for all kinds of folks, 
+		and the residents of New Boston are known for their hospitality and willingness to work with others, so long as they don't cause 
+		too much trouble.
+	"}
+	faction_points_of_contention = {"
+		While the New Boston Townies are generally seen as a friendly and welcoming bunch, they are not without their own internal 
+		problems and conflicts. The town is a melting pot of different people, cultures, and beliefs, and tensions can run high at 
+		times. Whether it's a dispute over land, resources, or just a good old-fashioned bar fight, the residents of New Boston are 
+		not immune to the same problems that plague the rest of the wasteland.
+	"}
 
 //////////////////////////////
 /// Citizen

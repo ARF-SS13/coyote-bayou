@@ -71,6 +71,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/newbie_hud_button
 	var/atom/movable/screen/chardir_hud_button
 	var/atom/movable/screen/pvp_focus_toggle/pvp_focus_toggle
+	var/atom/movable/screen/job_button
 
 	// subtypes can override this to force a specific UI style
 	var/ui_style

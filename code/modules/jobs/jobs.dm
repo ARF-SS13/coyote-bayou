@@ -266,12 +266,9 @@ GLOBAL_LIST_INIT(vault_positions, list(
 ))
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
-	"Den Mob Boss",
-	"Den Mob Enforcer",
-	"Den Doctor",
-//	"Redwater Townie",
-	"Faithful",
-	"Vigilante",
+	// "Den Mob Boss",
+	// "Den Mob Enforcer",
+	// "Den Doctor",
 	"Far-Lands Tribals",
 	"Wastelander",
 	"Character Testing Area"
