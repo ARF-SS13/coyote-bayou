@@ -1717,7 +1717,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked =  FALSE
 
 /datum/quirk/toxinlover
-	name = "Toxinlover"
+	name = "Toxin Lover"
 	desc = "Your biology is hyperadapted to toxins to the point where you process them the opposite of any normal organic, \
 		however most healing magic and chemicals will quickly kill you or drain your blood. This is not a system reccomended for magic users."
 	value = -34
@@ -1729,4 +1729,4 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_TOXINLOVER
 	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an exact inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages.")
 	lose_text = span_notice("You are now operating under normal toxin damage systems.")
-	locked =  FALSE
+	locked =  TRUE
