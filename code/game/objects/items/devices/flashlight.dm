@@ -13,7 +13,7 @@
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
-	light_range = 4
+	light_range = 6
 	light_power = 1
 	light_color = "#CDDDFF"
 	light_on = FALSE
@@ -163,7 +163,7 @@
 	item_state = ""
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	flags_1 = CONDUCT_1
-	light_range = 2
+	light_range = 3
 	light_color = "#FFDDCC"
 	var/holo_cooldown = 0
 
@@ -216,7 +216,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	force = 30 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
-	light_range = 6 // A little better than the standard flashlight.
+	light_range = 9 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	hitsound = 'sound/weapons/genhit1.ogg'
@@ -229,7 +229,7 @@
 	item_state = "flashlight"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	light_range = 5 // A little better than the standard flashlight.
+	light_range = 7 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
 	hitsound = 'sound/weapons/genhit1.ogg'
 	custom_price = PRICE_ALMOST_CHEAP
@@ -243,7 +243,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
-	light_range = 5
+	light_range = 7
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	light_on = TRUE
@@ -282,7 +282,7 @@
 	icon = 'icons/fallout/objects/lamps.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	light_system = MOVABLE_LIGHT
-	light_range = 4 // Pretty bright.
+	light_range = 6 // Pretty bright.
 	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
@@ -359,7 +359,7 @@
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	icon = 'icons/obj/lighting.dmi'
 	w_class = WEIGHT_CLASS_SMALL // Sure stuff it in your pocket
-	light_range = 4
+	light_range = 6
 	light_color = LIGHT_COLOR_ORANGE
 	icon_state = "torch"
 	item_state = "torch"
@@ -404,14 +404,14 @@
 	light_system = MOVABLE_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
-	light_range = 6	// luminosity when on
+	light_range = 9	// luminosity when on
 	light_color = LIGHT_COLOR_ORANGE
 	custom_price = PRICE_CHEAP
 
 /obj/item/flashlight/lantern/dim //to replace the 426 mapped in lanterns
 	name = "dim lantern"
 	desc = "An old lantern, who's flickering wick has dimmed with age."
-	light_range = 4
+	light_range = 6
 
 /obj/item/flashlight/lantern/mining
 	name = "prospector lamp"
@@ -424,7 +424,7 @@
 	light_system = MOVABLE_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
-	light_range = 5	// luminosity when on
+	light_range = 7	// luminosity when on
 	light_color = LIGHT_COLOR_ORANGE
 	custom_price = PRICE_CHEAP
 
@@ -445,7 +445,7 @@
 	slot_flags = INV_SLOTBIT_BELT
 	custom_materials = null
 	light_system = MOVABLE_LIGHT
-	light_range = 6 //luminosity when on
+	light_range = 9 //luminosity when on
 	light_color = "#FFEEAA"
 
 /obj/item/flashlight/emp
@@ -508,7 +508,7 @@
 	custom_price = PRICE_CHEAP_AS_FREE
 	w_class = WEIGHT_CLASS_TINY
 	light_system = MOVABLE_LIGHT
-	light_range = 4
+	light_range = 6
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -602,7 +602,7 @@
 	icon_state = null
 	light_color = null
 	light_system = MOVABLE_LIGHT
-	light_range = 4
+	light_range = 6
 	light_power = 10
 	light_on = TRUE
 	on = TRUE
