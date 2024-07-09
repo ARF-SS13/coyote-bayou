@@ -102,6 +102,9 @@
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 10 SECONDS, 1)
 	)
 
+/datum/looping_sound/ambient/critters/extra
+	chance = 15
+
 //ANIMALS//
 ///////////////////
 //Small Critters//
