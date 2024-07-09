@@ -33,6 +33,8 @@
 		/datum/looping_sound/ambient/critters/birds/crow,
 		/datum/looping_sound/ambient/critters/frogs,
 		/datum/looping_sound/ambient/forest,
+		/datum/looping_sound/ambient/general/forest,
+		/datum/looping_sound/ambient/general/forest/direcitonal
 	)
 	outdoors = 1
 	open_space = 1

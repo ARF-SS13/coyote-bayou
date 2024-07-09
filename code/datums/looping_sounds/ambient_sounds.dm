@@ -545,3 +545,24 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_07.ogg', 2 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
 		)
+
+/datum/looping_sound/ambient/general/forest
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(90, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambientforestcenter.ogg', 28 SECONDS, 1)
+	)
+
+/datum/looping_sound/ambient/general/forest/direcitonal
+	chance = 30
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(50, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambientforestleft.ogg', 28 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambientforestright.ogg', 28 SECONDS, 1)
+	)
