@@ -28,11 +28,14 @@
 	icon_state = "wasteland"
 	ambience_area = list(
 		/datum/looping_sound/ambient/critters,
+		/datum/looping_sound/ambient/critters/extra,
 		/datum/looping_sound/ambient/swamp,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
 		/datum/looping_sound/ambient/critters/frogs,
 		/datum/looping_sound/ambient/forest,
+		/datum/looping_sound/ambient/general/forest,
+		/datum/looping_sound/ambient/general/forest/direcitonal
 	)
 	outdoors = 1
 	open_space = 1
@@ -63,6 +66,7 @@
 	ambience_area = list(
 		/datum/looping_sound/ambient/city,
 		/datum/looping_sound/ambient/critters,
+		/datum/looping_sound/ambient/critters/extra,
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
@@ -222,6 +226,9 @@
 /area/f13/wasteland/newboston
 	name = "New Boston Wasteland"
 
+/area/f13/wasteland/newboston/redwater
+	name = "Redwater Wasteland"
+
 /area/f13/wasteland/garlandcity
 	name = "Garland City Wasteland"
 
@@ -263,11 +270,14 @@
 		AREA_SOUND('sound/f13ambience/bird_8.ogg', 10 SECONDS))
 
 	ambience_area = list(
-		/datum/looping_sound/ambient/town,
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		
+
 		)
 	weather_tags = list(WEATHER_SAFE)
 	outdoors = TRUE
