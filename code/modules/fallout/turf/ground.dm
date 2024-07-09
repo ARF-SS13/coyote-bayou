@@ -205,14 +205,14 @@ GLOBAL_LIST_INIT(plant_type_weighted, list(
 	name = "Dirt hole"
 	icon_state = "dirthole"
 	desc = "A dirt hole."
-	slowdown = 3
+	slowdown = 1
 	flags_1 = ADJACENCIES_OVERLAY
 
 /turf/open/indestructible/ground/outside/river
 	name = "river"
 	icon_state = "riverwateruhh"
 	desc = "A river."
-	slowdown = 5
+	slowdown = 2
 	flags_1 = ADJACENCIES_OVERLAY
 
 
@@ -485,14 +485,14 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	name = "Dirt hole"
 	icon_state = "dirthole"
 	desc = "A dirt hole."
-	slowdown = 3
+	slowdown = 2
 	flags_1 = ADJACENCIES_OVERLAY
 
 /turf/open/indestructible/ground/outside/river
 	name = "river"
 	icon_state = "riverwateruhh"
 	desc = "A river."
-	slowdown = 5
+	slowdown = 2
 	flags_1 = ADJACENCIES_OVERLAY
 
 
@@ -565,7 +565,7 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	desc = "Shallow river water."
 	icon = 'icons/fallout/turfs/ground.dmi'
 	icon_state = "riverwateruhh"
-	slowdown = 6
+	slowdown = 2
 	depth = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
