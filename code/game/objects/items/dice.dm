@@ -47,6 +47,12 @@
 	result = roll(sides)
 	update_icon()
 
+/obj/item/dice/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W,/obj/item/dice))
+		var/obj/item/dice_cup/C = W
+		C.PutDieInCup(src, user)
+
 /obj/item/dice/d1
 	name = "d1"
 	desc = "A die with only one side. Deterministic!"
@@ -190,3 +196,23 @@
 	if(can_be_rigged)
 		rigged = result
 	..(M)
+
+/obj/item/storage/bag/tray/dice_cup
+	name = "tray"
+	desc = "A metal tray to lay food on."
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "stone_mug"
+	max_items = 2000
+
+/obj/item/storage/bag/tray/dice_cup/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(/obj/item/dice)
+	STR.insert_preposition = "in"
+	STR.max_items = max_items
+
+
+
+
+
