@@ -47,12 +47,6 @@
 	result = roll(sides)
 	update_icon()
 
-/obj/item/dice/attackby(obj/item/W, mob/user, params)
-	. = ..()
-	if(istype(W,/obj/item/dice))
-		var/obj/item/dice_cup/C = W
-		C.PutDieInCup(src, user)
-
 /obj/item/dice/d1
 	name = "d1"
 	desc = "A die with only one side. Deterministic!"
@@ -212,7 +206,11 @@
 	STR.insert_preposition = "in"
 	STR.max_items = max_items
 
-
-
+/obj/item/storage/bag/tray/dice_cup/attack(mob/living/M, mob/living/user)
+	var/list/oldContents = contents.Copy()
+	for(var/obj/item/dice/D in oldContents)
+		D.diceroll(user)
+	. = ..()
+	// Drop all the things. All of them.
 
 
