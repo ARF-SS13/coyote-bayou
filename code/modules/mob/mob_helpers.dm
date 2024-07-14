@@ -69,6 +69,32 @@
 	return sanitize(.)
 
 /**
+ * Convert random words of a passed in message to ellipses
+ *
+ * * phrase - the string to convert
+ * * probability - probability any character gets changed
+ *
+ * This proc is not laggy at all, and is better in every way =3
+ */
+/proc/dots(phrase, probability = 25)
+	if(probability <= 0)
+		return phrase
+	phrase = html_decode(phrase)
+	var/list/words = splittext(phrase, " ")
+	. = ""
+	var/indes = 1
+	var/has_multiple_words = LAZYLEN(words) > 1
+	for(var/word in words)
+		if(prob(probability))
+			. += "..."
+		else
+			if(has_multiple_words && indes < LAZYLEN(words))
+				. += "[word] "
+			else
+				. += "[word]"
+	return sanitize(.)
+
+/**
  * Makes you speak like you're drunk
  */
 /proc/slur(phrase, strength = 50)

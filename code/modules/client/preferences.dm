@@ -419,6 +419,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// Button to switch from input bar to hotkey mode.
 	var/input_mode_hotkey = "Tab"
+	/// lets the user see runechat that's offscreen
+	var/see_fancy_offscreen_runechat = TRUE
+	/// lets the user see runechat that's hidden behind a wall
+	var/see_hidden_runechat = TRUE
 
 /datum/preferences/New(client/C)
 	parent = C

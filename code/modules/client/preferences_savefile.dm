@@ -1014,7 +1014,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	number_of_finished_quests  = sanitize_integer(number_of_finished_quests, 0, INFINITY, initial(number_of_finished_quests))
 	historical_banked_points   = sanitize_integer(historical_banked_points,  0, INFINITY, initial(historical_banked_points))
 	last_quest_login           = sanitize_integer(last_quest_login,          5, INFINITY, world.realtime)
-
+	if(features["chat_color"] == "whoopsie")
+		features["chat_color"] = random_color()
 
 	//Sanitize
 

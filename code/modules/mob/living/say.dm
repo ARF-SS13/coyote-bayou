@@ -33,7 +33,7 @@
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
 
-	var/static/list/one_character_prefix = list(MODE_HEADSET = TRUE, MODE_ROBOT = TRUE, MODE_WHISPER = TRUE, MODE_SING = TRUE)
+	var/static/list/one_character_prefix = list(MODE_HEADSET = TRUE, MODE_ROBOT = TRUE, MODE_WHISPER = TRUE, MODE_SING = TRUE, "$" = TRUE, "#" = TRUE)
 
 	var/ic_blocked = FALSE
 
@@ -112,23 +112,16 @@
 		to_chat(src, span_warning("You find yourself unable to speak!"))
 		return
 
-	var/message_range = 7
+	var/message_range = SSchat.base_say_distance
 
 	//var/succumbed = FALSE
 
 	//var/fullcrit = InFullCritical()
 	if(in_critical || message_mode == MODE_WHISPER)
-		message_range = 1 + (!!in_critical * 2)
+		if(!in_critical)
+			message_range = SSchat.base_whisper_distance
 		spans |= SPAN_ITALICS
 		src.log_talk(message, LOG_WHISPER)
-		/* if(fullcrit) // no more dying for you!
-			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
-			// If we cut our message short, abruptly end it with a-..
-			var/message_len = length_char(message)
-			message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
-			message = Ellipsis(message, 10, 1)
-			message_mode = MODE_WHISPER_CRIT
-			succumbed = TRUE */
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
@@ -151,7 +144,10 @@
 		var/randomnote = pick("\u2669", "\u266A", "\u266B")
 		message = "[randomnote] [message] [randomnote]"
 		spans |= SPAN_SINGING
-
+	
+	if(message_mode == MODE_YELL)
+		spans |= SPAN_YELL
+	
 	var/radio_return = radio(message, message_mode, spans, language)
 	if(radio_return & ITALICS)
 		spans |= SPAN_ITALICS
@@ -186,7 +182,7 @@
 		if(sourceturf && T && !(sourceturf in get_hear(5, T)))
 			. = span_small("[.]")
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE, list/data)
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE, list/data = list())
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args) //parent calls can't overwrite the current proc args.
 	if(!client)
 		return
@@ -203,13 +199,6 @@
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		data["message_mode"] = message_mode
-		// make a second one, for in case we go from not seeing them to seeing them
-		if(data["is_eaves"] || data["is_far"] || data["display_turf"])
-			var/list/cooldata = data
-			data["is_eaves"] = FALSE
-			data["is_far"] = FALSE
-			data["display_turf"] = null
-			create_chat_message(speaker, message_language, raw_message, spans, NONE, cooldata)
 		create_chat_message(speaker, message_language, raw_message, spans, NONE, data)
 
 	if(just_chat)
@@ -222,17 +211,24 @@
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	if(islist(data) && LAZYACCESS(data, "is_radio") && (data["ckey"] in GLOB.directory) && !SSchat.debug_block_radio_blurbles)
 		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_STATIC))
-			playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
+			playsound(src, RADIO_STATIC_SOUND, 20, FALSE, SOUND_DISTANCE(2), ignore_walls = TRUE)
 		if(CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
 			var/mob/blurbler = ckey2mob(data["ckey"])
 			if(blurbler && blurbler != src)
 				blurbler.play_AC_typing_indicator(raw_message, src, src, TRUE)
 	return message
 
-/mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)
-	//var/stutter_chance = max(0, 40-special_c*10)//SPECIAL Integration
-	//if(prob(stutter_chance))
-	//	stuttering += 5
+/mob/living/send_speech(
+	message,
+	message_range = 6,
+	obj/source = src,
+	bubble_type = bubble_icon,
+	list/spans,
+	datum/language/message_language=null,
+	message_mode,
+	just_chat
+)
+	var/max_range = 15
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
 	var/quietness = eavesdropping_modes[message_mode]
 	// okay just throw out the message range
@@ -257,16 +253,15 @@
 	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
 	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
 	var/list/visible_close = CC.visible_close.Copy()
-	// var/list/visible_far = CC.visible_far.Copy()
-	var/list/hidden_pathable = CC.hidden_pathable.Copy()
-	// var/list/hidden_inaccessible = CC.hidden_inaccessible.Copy()
+	var/list/visible_far = CC.visible_far.Copy()
+	var/list/hidden_close_pathable = CC.hidden_close_pathable.Copy()
 	CC.putback()
 
 
 	var/list/the_dead = list()
-//	var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
-//	if(!eavesdrop_range && say_test(message) == "2")	//CIT CHANGE - ditto
-//		yellareas = get_areas_in_range(message_range*0.5, source)	//CIT CHANGE - ditto
+	// var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
+	// if(!eavesdrop_range && say_test(message) == "2")	//CIT CHANGE - ditto
+	// 	yellareas = get_areas_in_range(message_range*0.5, source)	//CIT CHANGE - ditto
 	for(var/_M in GLOB.player_list)
 		var/mob/M = _M
 		if(QDELETED(M)) //Some times nulls and deleteds stay in this list. This is a workaround to prevent ic chat breaking for everyone when they do.
@@ -280,20 +275,20 @@
 				continue
 			if(!(M.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 				continue
-		listening |= M
+		CC.visible_close[M] = TRUE
 		the_dead[M] = TRUE
-
-	var/eavesdropping
 	
+	var/eavesdropping
 	var/eavesrendered
-	if(eavesdrop_range)
-		eavesdropping = stars(message)
+	if(!quietness)
+		eavesdropping = dots(message)
 		eavesrendered = compose_message(src, message_language, eavesdropping, null, spans, message_mode, FALSE, source)
 
 	var/rendered = compose_message(src, message_language, message, null, spans, message_mode, FALSE, source)
+	/// non-players
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
-		if(eavesdrop_range && get_dist(source, AM) > message_range && !(the_dead[AM]))
+		if(!quietness && get_dist(source, AM) > message_range && !(the_dead[AM]))
 			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, source, just_chat)
 		else
 			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
@@ -303,43 +298,68 @@
 	for(var/mob/mvc in visible_close)
 		mvc.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
 		sblistening |= mvc.client
-	// for(var/mob/mvf in visible_far)
-	// 	var/list/coolspans = spans
-	// 	coolspans += SPAN_SMALL
-	// 	var/list/data = list()
-	// 	data["is_eaves"] = TRUE
-	// 	data["display_turf"] = src
-	// 	mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
-	// 	sblistening |= mvf.client
-	for(var/mob/mhp in hidden_pathable)
-		var/turf/hearfrom = hidden_pathable[mhp]
+	for(var/mob/mvf in visible_far)
+		var/list/coolspans = spans
+		coolspans += SPAN_SMALL
+		var/list/data = list()
+		data["is_eaves"] = TRUE
+		data["is_far"] = TRUE
+		mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
+		sblistening |= mvf.client
+	for(var/mob/mhp in hidden_close_pathable)
+		var/turf/hearfrom = hidden_close_pathable[mhp]
 		var/list/cooler_spans = spans
-		cooler_spans += SPAN_SMALL
+		cooler_spans += SPAN_SMALLER
 		var/list/data = list()
 		data["is_eaves"] = TRUE
 		data["display_turf"] = hearfrom
 		mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
 		sblistening |= mhp.client
-	// for(var/mob/mhp in hidden_inaccessible)
-	// 	var/turf/hearfrom = hidden_inaccessible[mhp]
-	// 	var/list/cooler_spans = spans
-	// 	cooler_spans += SPAN_SMALLER
-	// 	var/list/data = list()
-	// 	data["is_eaves"] = TRUE
-	// 	data["is_far"] = TRUE
-	// 	mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
-	// 	sblistening |= mhp.client
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble
 	var/list/speech_bubble_recipients = list()
-	for(var/mob/M in listening)
+	for(var/mob/M in sblistening)
 		if(M.client?.prefs && !M.client.prefs.chat_on_map)
 			speech_bubble_recipients.Add(M.client)
+
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
+
+/mob/living/simple_animal/debug_chatterboy
+	name = "Chatterboy"
+	desc = "A debug chatterboy. He's here to help you debug your chatterboys. He's not actually a chatterboy, though. He's just a rock."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	maxHealth = 1
+	wander = FALSE
+	var/speak_cooldown = 0
+
+/mob/living/simple_animal/debug_chatterboy/BiologicalLife(seconds, times_fired)
+	. = ..()
+	// if(speak_cooldown > world.time)
+	// 	return
+	// speak_cooldown = world.time + 2 SECONDS
+	/// various longwinded "RPer" messages
+	var/speech = pick(
+		"Hello, I am a chatterboy. I am here to help you debug your chatterboys. I am not actually a chatterboy, though. I am just a rock.",
+		"Wow! I am a chatterboy! Your chatterboys are so cool! I wish I was a chatterboy! But I am just a rock. :(",
+		"$AAAAAAAAAAAAAAAA I AM A CHATTERBOY I AM HERE TO HELP YOU DEBUG YOUR CHATTERBOYS I AM NOT ACTUALLY A CHATTERBOY THOUGH I AM JUST A ROCK",
+		"$NOOOOOOOOO, NO NO NO NO, MY MOTHER WAS A CHATTERBOY, MY FATHER WAS A CHATTERBOY, I AM A CHATTERBOY, I AM HERE TO HELP YOU DEBUG YOUR CHATTERBOYS, I AM NOT ACTUALLY A CHATTERBOY THOUGH, I AM JUST A ROCK",
+		"I gave away our wikipedia article to the chatterboys. Citations needed.",
+		"#My character would actually screw over the party and steal the loot. It's what my character would do.",
+		"#Actually, my character is a pacifist. They would never kill anyone. They would just steal the loot and run away.",
+		"We dong have any brass windows.",
+		"%Big fat dongs, i wanna devour them all.",
+		"%Hey, heeeeyyy, wow",
+		"I dont know what to say, I'm just a rock.",
+		"SCREW OFF, CORRY YOU WANNA BE CHATTERBOY",
+		"I stuff all the cheeseburgers in my mouth and swallow them whole.",
+	)
+	playsound(src, 'sound/effects/bwoing.ogg', 100, TRUE)
+	say(speech)
 
 /mob/proc/binarycheck()
 	return FALSE

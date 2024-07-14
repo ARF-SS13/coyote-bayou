@@ -20,7 +20,16 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/can_speak()
 	return 1
 
-/atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
+/atom/movable/proc/send_speech(
+	message,
+	range = 7,
+	atom/movable/source = src,
+	bubble_type,
+	list/spans,
+	datum/language/message_language = null,
+	message_mode,
+	just_chat,
+)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
@@ -62,7 +71,8 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/say_mod(input, message_mode)
 	var/ending = copytext_char(input, -1)
-	if(message_mode == MODE_WHISPER)
+	var/beginning = copytext_char(input, 1)
+	if(message_mode == MODE_WHISPER || beginning == "#")
 		. = verb_whisper
 	else if(message_mode == MODE_SING)
 		. = verb_sing
@@ -72,6 +82,8 @@ And the base of the send_speech() proc, which is the core of saycode.
 		. = verb_ask
 	else if(ending == "!")
 		. = verb_exclaim
+	else if(beginning == "$")
+		. = verb_yell
 	else
 		. = verb_say
 	return get_random_if_list(.)

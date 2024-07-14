@@ -21,12 +21,11 @@ SUBSYSTEM_DEF(chat)
 	var/extended_whisper_distance = 3
 	
 	var/base_sing_distance = 15
-	var/extended_sing_distance = 150
+	var/extended_sing_distance = INFINITY
 	var/base_yell_distance = 15
-	var/extended_yell_distance = 150
+	var/extended_yell_distance = INFINITY
 	var/far_distance = 6 // how far until they're considered offscreen
 
-	var/chat_display_plane = LIGHTING_PLANE + 1 // FUKCUAING FUKCING LIGHTING EATING AS //CHAT_PLANE
 
 	var/list/payload_by_client = list()
 	/// All the lookups for translating emotes to say prefixes
@@ -56,6 +55,8 @@ SUBSYSTEM_DEF(chat)
 	/// how long between flirts can we flirt
 	var/flirt_cooldown_time = 5 SECONDS
 	var/debug_character_directory = 0
+
+	var/debug_chud = FALSE
 
 /datum/controller/subsystem/chat/Initialize(start_timeofday)
 	setup_emoticon_cache()

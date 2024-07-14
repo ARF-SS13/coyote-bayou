@@ -58,6 +58,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/pokesound = 'sound/weapons/tap.ogg'
 	var/usesound = null
 	var/throwhitsound = null
+	var/equipsound = null
+	var/tableplacesound = null
 
 	/// Weight class for how much storage capacity it uses and how big it physically is meaning storages can't hold it if their maximum weight class isn't as high as it.
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -226,6 +228,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// Allows items to preserve their transform when picked up
 	if(!special_transform && transform != initial(transform))
 		special_transform = transform
+
+	if(!isnull(equipsound))
+		listify(equipsound)
+	if(!isnull(tableplacesound))
+		listify(tableplacesound)
 
 	/// CB Dual Wielding
 	if(force != 0)
@@ -557,6 +564,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
+	play_equip_sound()
 	item_flags |= IN_INVENTORY
 	add_hud_actions(user)
 
@@ -1298,3 +1306,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/mob/living/target = over
 		L.do_give(target)
 	return ..()
+
+/obj/item/proc/play_equip_sound(volume=50)
+	if(!LAZYLEN(equipsound))
+		return
+	playsound(src, safepick(equipsound), volume, TRUE)
+
+/obj/item/proc/after_placed_on_table(obj/structure/table, volume=50)
+	if(!LAZYLEN(tableplacesound))
+		return
+	playsound(src, safepick(tableplacesound), volume, TRUE)

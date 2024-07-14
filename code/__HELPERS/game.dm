@@ -197,7 +197,7 @@
 	return
 
 
-// Better recursive loop, technically sort of not actually recursive cause that shit is stupid, enjoy.
+// Better recursive loop, technically sort of not actually recursive cause that sh1t is stupid, enjoy.
 //No need for a recursive limit either
 /proc/recursive_mob_check(atom/O,client_check=1,sight_check=1,include_radio=1)
 
@@ -238,7 +238,35 @@
 
 	return found_mobs
 
-/proc/get_hearers_in_view(R, atom/source)
+/obj/soundblocker
+	name = "Sound Blocker"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "tdome_admin" // trust me it makes sense
+	invisibility = INVISIBILITY_ABSTRACT
+	var/flag = BLOCK_SOUND_COMPLETE
+
+/obj/soundblocker/partial
+	name = "Partial Sound Blocker"
+	icon_state = "tdome_observer"
+	flag = BLOCK_SOUND_PARTIAL
+
+/obj/soundblocker/corner
+	name = "Corner Sound Blocker"
+	icon_state = "tdome_corner"
+	flag = BLOCK_SOUND_PARTIAL | SOUND_BLOCK_CORNER
+
+/obj/soundblocker/Initialize()
+	. = ..()
+	RegisterSignal(get_turf(src), COMSIG_UPDATE_SOUND_BLOCKERS, PROC_REF(UpdateSoundBlockers))
+	RegisterSignal(get_turf(src), COMSIG_CHECK_SOUND_BLOCKERS,  PROC_REF(CheckSoundBlockers))
+
+/obj/soundblocker/proc/UpdateSoundBlockers()
+
+/obj/soundblocker/proc/CheckSoundBlockers()
+
+
+
+/proc/get_hearers_in_view(R, atom/source, exclude_players)
 	var/turf/T = get_turf(source)
 	. = list()
 	if(!T)
@@ -258,10 +286,141 @@
 	var/i = 0
 	while(i < length(processing))
 		var/atom/A = processing[++i]
+		processing += A.contents
+		if(exclude_players && istype(A, /mob))
+			var/mob/M = A
+			if(M.client)
+				continue // we'll get to them
 		if(A.flags_1 & HEAR_1)
 			. += A
 			SEND_SIGNAL(A, COMSIG_ATOM_HEARER_IN_VIEW, processing, .)
-		processing += A.contents
+
+GLOBAL_LIST_EMPTY(chat_chuds)
+
+/proc/get_chatchud(atom/source)
+	for(var/i in 1 to LAZYLEN(GLOB.chat_chuds))
+		var/datum/chatchud/chud = GLOB.chat_chuds[i]
+		if(chud.ready)
+			return chud
+	var/datum/chatchud/chud = new /datum/chatchud()
+	GLOB.chat_chuds += chud
+	return chud
+
+/datum/chatchud
+	var/list/visible_close = list()
+	var/list/visible_far = list()
+	var/list/hidden_close_pathable = list()
+	var/list/hidden_inaccessible = list()
+	var/ready = TRUE
+
+/datum/chatchud/proc/putback()
+	visible_close.Cut()
+	visible_far.Cut()
+	hidden_close_pathable.Cut()
+	ready = TRUE
+
+/obj/effect/temp_visual/debug_heart
+	name = "love heart"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "heart"
+	duration = 2 SECONDS
+
+/obj/effect/temp_visual/numbers
+	name = "numberwang"
+	icon = 'icons/effects/numbers.dmi'
+	icon_state = "blank"
+	duration = 2 SECONDS
+
+/obj/effect/temp_visual/numbers/backgrounded
+	name = "numberwang"
+	icon = 'icons/effects/numbers.dmi'
+	icon_state = "blank_ish"
+	duration = 3 SECONDS
+
+/obj/effect/temp_visual/numbers/Initialize(mapload, numb, coler)
+	. = ..()
+	numericate(numb, coler)
+
+/obj/effect/temp_visual/numbers/proc/numericate(numb, coler)
+	if(numb > 99999999)
+		numb = 99999999
+	var/list/splitnumbers = list()
+	/// splits numb into its digits, from most to least significant
+	while(numb > 0)
+		splitnumbers += numb % 10
+		numb /= 10
+		numb = floor(numb)
+	/// now we have to reverse the list
+	splitnumbers = reverseList(splitnumbers)
+	var/offset = 0
+	/// now we can display the numbers
+	for(var/i in 1 to LAZYLEN(splitnumbers))
+		var/digy = clamp(LAZYACCESS(splitnumbers, i), 0, 9)
+		var/image/numbie = image('icons/effects/numbers.dmi', src, "[digy]")
+		numbie.pixel_x = offset
+		overlays += numbie
+		offset += 9
+	if(coler)
+		color = coler
+
+/// returns a datum of players and how well they can hear the source
+/proc/get_listening(atom/source, close_range, long_range, quiet)
+	var/area/A = get_area(source)
+	var/private = A.private
+	var/datum/chatchud/CC = get_chatchud(source)
+	var/list/see_close = hearers(source, close_range)
+	var/list/see_far = hearers(source, long_range) - see_close
+	var/debug_i = 0
+	dingus:
+		for(var/client/C in GLOB.clients)
+			var/mob/M = C.mob
+			if(M.z != source.z)
+				continue dingus
+			if(get_dist(M, source) > long_range)
+				continue dingus
+			var/is_far = (M in see_far)
+			var/is_close = (M in see_close)
+			if(is_far)
+				if(private)
+					continue dingus
+				CC.visible_far[M] = TRUE
+				continue dingus
+			else if(is_close)
+				CC.visible_close[M] = TRUE
+				continue dingus
+			// if(get_dist(M, source) > long_range)
+			// 	continue dingus // they're too far away to hear
+			// now the fun begins. Try to find a path to them
+			// now the real fun begins
+			var/list/soundwalk = get_path_to(source, M, long_range, use_visibility = TRUE)
+			if(!islist(soundwalk))
+				CC.hidden_inaccessible[M] = TRUE
+				continue dingus
+			if(!LAZYLEN(soundwalk) || LAZYLEN(soundwalk) > long_range)
+				CC.hidden_inaccessible[M] = TRUE
+				continue dingus
+			// now walk through the path and find the first tile that can see the source
+			donger:
+				for(var/turf/T as anything in soundwalk)
+					var/list/seeline = getline(T, M)
+					debug_i = 0
+					var/cole = pick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
+					for(var/turf/TT as anything in seeline) // beeg american TTs
+						if(SSchat.debug_chud)
+							new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
+							debug_i++
+						if(TT.opacity)
+							continue donger
+						for(var/atom/AM as anything in TT.contents)
+							if(AM.opacity)
+								continue donger
+					if(SSchat.debug_chud)
+						new /obj/effect/temp_visual/debug_heart(T)
+					CC.hidden_close_pathable[M] = T
+					continue dingus
+			// couldnt find anything! mark them as hidden
+			CC.hidden_inaccessible[M] = TRUE
+	return CC
 
 GLOBAL_LIST_EMPTY(chat_chuds)
 

@@ -12,6 +12,8 @@
 #define SPAN_SANS "sans"
 #define SPAN_PAPYRUS "papyrus"
 #define SPAN_REALLYBIG "reallybig"
+#define SPAN_SMALL "small"
+#define SPAN_SMALLER "small"
 #define SPAN_COMMAND "command_headset"
 #define SPAN_CLOWN "clown"
 #define SPAN_SINGING "singing"
@@ -140,6 +142,7 @@
 #define ONLY_OVERHEAD (1<<1)
 // Append the player's name to the front
 #define PUT_NAME_IN (1<<2)
+#define IS_EAVESDROP (1<<3)
 
 #define EMOTE_HEADER_TEXT "\
 	The Following Chat Functions Exist \n\

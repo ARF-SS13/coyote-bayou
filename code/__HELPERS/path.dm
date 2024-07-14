@@ -16,7 +16,7 @@
  * * simulated_only: Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
  * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
  */
-/proc/get_path_to(caller, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude)
+/proc/get_path_to(caller, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, use_visibility)
 	if(!caller || !get_turf(end))
 		return
 
@@ -26,7 +26,7 @@
 		l = SSpathfinder.mobs.getfree(caller)
 
 	var/list/path
-	var/datum/pathfind/pathfind_datum = new(caller, end, id, max_distance, mintargetdist, simulated_only, exclude)
+	var/datum/pathfind/pathfind_datum = new(caller, end, id, max_distance, mintargetdist, simulated_only, exclude, use_visibility)
 	path = pathfind_datum.search()
 	qdel(pathfind_datum)
 
@@ -40,7 +40,7 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,caller, id) && (next != avoid))
+#define CAN_STEP(cur_turf, next) (next && (use_visibility ? (checkvis(next)) : (!next.density && cur_turf.Adjacent(next) && !cur_turf.LinkBlockedWithAccess(next,caller, id,use_visibility))) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && (next != avoid))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
@@ -116,8 +116,10 @@
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/turf/avoid
+	/// whether to use opacity checks instead of density checks
+	var/use_visibility
 
-/datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid)
+/datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, use_visibility)
 	src.caller = caller
 	end = get_turf(goal)
 	open = new /datum/heap(/proc/HeapPathWeightCompare)
@@ -127,6 +129,7 @@
 	src.mintargetdist = mintargetdist
 	src.simulated_only = simulated_only
 	src.avoid = avoid
+	src.use_visibility = use_visibility
 
 /// The proc you use to run the search, returns FALSE if it's invalid, an empty list if no path could be found, or a valid path to the target
 /datum/pathfind/proc/search()
@@ -318,6 +321,14 @@
 				if(possible_child_node.tile == end || (mintargetdist && (get_dist(possible_child_node.tile, end) <= mintargetdist)))
 					unwind_path(possible_child_node)
 			return
+
+/datum/pathfind/proc/checkvis(turf/destination_turf)
+	if(destination_turf.opacity)
+		return FALSE
+	for(var/atom/iter_atom in destination_turf)
+		if(iter_atom.opacity)
+			return FALSE
+	return TRUE
 
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags

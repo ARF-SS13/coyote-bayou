@@ -138,6 +138,7 @@
 	var/starting_x = 0			//just like before, pixels from EDGE of map! This is set in initialize_location().
 	var/starting_y = 0
 	var/starting_z = 0
+	var/inuse = FALSE
 
 /datum/point/vector/New(_x, _y, _z, _pixel_x = 0, _pixel_y = 0, _angle, _speed, initial_increment = 0)
 	..()

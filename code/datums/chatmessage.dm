@@ -7,6 +7,8 @@
 #define CHAT_MESSAGE_WIDTH			100 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		200 // characters
 
+// GLOBAL_LIST_EMPTY(verbal_punch_lasers)
+
 /**
  * # Chat Message Overlay
  *
@@ -23,6 +25,12 @@
 	var/scheduled_destruction
 	/// Contains the approximate amount of lines for height decay
 	var/approx_lines
+	/// is offscreen? put it somewhere they can see it then
+	var/offscreen
+	/// is eavesdrop? if so, make it smaller
+	var/eavesdrop
+	/// an alternative turf to display the message at
+	var/turf/alt_display
 
 /**
  * Constructs a chat message overlay
@@ -34,7 +42,7 @@
  * * extra_classes - Extra classes to apply to the span that holds the text
  * * lifespan - The lifespan of the message in deciseconds
  */
-/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN)
+/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN, list/data = list())
 	. = ..()
 	if (!istype(target))
 		CRASH("Invalid target given for chatmessage")
@@ -42,13 +50,10 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
-<<<<<<< HEAD
-=======
 	alt_display = data["display_turf"] || null
-	if(data["is_far"] && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
+	if((get_dist(owner, (alt_display || target)) > 6 || data["is_far"]) && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
 		offscreen = TRUE
 	eavesdrop = data["is_eaves"] || FALSE
->>>>>>> 5c90758cdc0 (chore: Update chat display plane to prevent messages from being hidden by FoV)
 	INVOKE_ASYNC(src,PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
 
 /datum/chatmessage/Destroy()
@@ -59,6 +64,7 @@
 	owned_by = null
 	message_loc = null
 	message = null
+	alt_display = null
 	return ..()
 
 /**
@@ -144,44 +150,49 @@
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
+	var/atom/remembered_location = alt_display || target
 	message_loc = alt_display || target
 	if(offscreen) // if its offscreen, put it somewhere they can see it
 		var/turf/ownerturf = get_turf(owner)
-		var/turf/targetturf = get_turf(message_loc)
-		var/westest = max(ownerturf.x - 9, 1)
-		var/eastest = min(ownerturf.x + 9, world.maxx)
-		var/northest = max(ownerturf.y - 9, 1)
-		var/southest = min(ownerturf.y + 9, world.maxy)
-		var/list/turfe = getline(targetturf, ownerturf)
-		var/turf/where = null
-		for(var/turf/check in turfe)
-			if(SSchat.debug_chud)
-				new /obj/effect/temp_visual/monkeyify(check)
-			if(!TURF_IN_RECTANGLE(check, westest, northest, eastest, southest))
-				continue
-			if(!(check in view(10, ownerturf)))
-				continue
-			message_loc = check
-			where = check
-			if(SSchat.debug_chud)
-				new /obj/effect/temp_visual/love_heart(message_loc)
-			break
-		if(!where)
-			message_loc = ownerturf // whatevs
+		message_loc = ownerturf
+		var/angle_to_source = Get_Angle(ownerturf, message_loc)
+		// cus the damn angles are rotated 90 degrees clockwise, gotta change the angle 90 degrees counter
+		// // get us a verbal punch laser
+		// var/i = 1
+		// var/datum/point/vector/punch_laser
+		// while(!punch_laser)
+		// 	punch_laser = GLOB.verbal_punch_lasers[i]
+		// 	if(!punch_laser)
+		// 		punch_laser = new /datum/point/vector()
+		// 		GLOB.verbal_punch_lasers[i] = punch_laser
+		// 	else if(punch_laser.inuse)
+		// 		i++
+		// 		punch_laser = null
+		// punch_laser.initialize_location(ownerturf.x, ownerturf.y, ownerturf.z, 0, 0)
+		// punch_laser.initialize_trajectory(32*6, angle_to_source) // 32 pixels per tile, 6 tiles away
+		// punch_laser.increment(1)
+		var/turf/displayloc = get_turf_in_angle(angle_to_source, ownerturf, 6)
+		if(!displayloc)
+			displayloc = ownerturf // whatevs
+		message_loc = displayloc
+		if(SSchat.debug_chud)
+			ownerturf.Beam(displayloc, icon_state = "g_beam", time = 3 SECONDS)
+
 	if(!owned_by)
 		return
 	if (owned_by.seen_messages)
 		var/idx = 1
 		var/combined_height = approx_lines
-		for(var/msg in owned_by.seen_messages[message_loc])
+		for(var/msg in owned_by.seen_messages[remembered_location])
 			var/datum/chatmessage/m = msg
-			animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
-			combined_height += m.approx_lines
-			var/sched_remaining = m.scheduled_destruction - world.time
-			if (sched_remaining > CHAT_MESSAGE_SPAWN_TIME)
-				var/remaining_time = (sched_remaining) * (CHAT_MESSAGE_EXP_DECAY ** idx++) * (CHAT_MESSAGE_HEIGHT_DECAY ** combined_height)
-				m.scheduled_destruction = world.time + remaining_time
-				addtimer(CALLBACK(m,PROC_REF(end_of_life)), remaining_time, TIMER_UNIQUE|TIMER_OVERRIDE)
+			if(m.message)
+				animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
+				combined_height += m.approx_lines
+				var/sched_remaining = m.scheduled_destruction - world.time
+				if (sched_remaining > CHAT_MESSAGE_SPAWN_TIME)
+					var/remaining_time = (sched_remaining) * (CHAT_MESSAGE_EXP_DECAY ** idx++) * (CHAT_MESSAGE_HEIGHT_DECAY ** combined_height)
+					m.scheduled_destruction = world.time + remaining_time
+					addtimer(CALLBACK(m,PROC_REF(end_of_life)), remaining_time, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 	if(SSchat.debug_chud)
 		var/turf/ownerturf = get_turf(owner)
@@ -194,7 +205,8 @@
 	message.plane = SSchat.chat_display_plane
 	message.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	message.alpha = 0
-	message.pixel_y = owner.bound_height * 0.95
+	var/hight = (alt_display || offscreen) ? 0 : owner.bound_height
+	message.pixel_y = hight * 0.95
 
 	message.maptext_width = CHAT_MESSAGE_WIDTH
 	message.maptext_height = mheight
@@ -202,16 +214,16 @@
 	message.maptext = complete_text
 	var/alphatomakeit = 255
 	if(eavesdrop)
-		message.pixel_x = rand(-16, 16)
-		message.pixel_y = rand(-16, 16)
-		alphatomakeit /= 2
+		message.alpha /= 2
 	if(offscreen)
-		alphatomakeit /= 2
+		message.alpha /= 2
+		// message.pixel_x = rand(-40, 40)
+		// message.pixel_y = rand(-40, 40)
 
 	// View the message
-	LAZYADDASSOC(owned_by.seen_messages, message_loc, src)
+	LAZYADDASSOC(owned_by.seen_messages, remembered_location, src)
 	owned_by.images |= message
-	animate(message, alpha = 255, time = CHAT_MESSAGE_SPAWN_TIME)
+	animate(message, alpha = alphatomakeit, time = CHAT_MESSAGE_SPAWN_TIME)
 
 	// Prepare for destruction
 	scheduled_destruction = world.time + (lifespan - CHAT_MESSAGE_EOL_FADE)
@@ -233,7 +245,7 @@
  * * raw_message - The text content of the message
  * * spans - Additional classes to be added to the message
  */
-/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE)
+/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE, list/data = list())
 	// Ensure the list we are using, if present, is a copy so we don't modify the list provided to us
 	spans = spans ? spans.Copy() : list()
 
@@ -250,9 +262,9 @@
 
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
-		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"))
+		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"), null, data)
 	else
-		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
+		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans, null, data)
 
 
 // Tweak these defines to change the available color ranges
