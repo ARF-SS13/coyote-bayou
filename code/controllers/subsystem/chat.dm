@@ -10,6 +10,24 @@ SUBSYSTEM_DEF(chat)
 	priority = FIRE_PRIORITY_CHAT
 	init_order = INIT_ORDER_CHAT
 
+	var/forbid_ghosting = FALSE
+	/* 
+	** Base 
+	 */
+	var/base_say_distance = 7
+	var/extended_say_distance = 16
+
+	var/base_whisper_distance = 1
+	var/extended_whisper_distance = 3
+	
+	var/base_sing_distance = 15
+	var/extended_sing_distance = 150
+	var/base_yell_distance = 15
+	var/extended_yell_distance = 150
+	var/far_distance = 6 // how far until they're considered offscreen
+
+	var/chat_display_plane = LIGHTING_PLANE + 1 // FUKCUAING FUKCING LIGHTING EATING AS //CHAT_PLANE
+
 	var/list/payload_by_client = list()
 	/// All the lookups for translating emotes to say prefixes
 	var/list/emoticon_cache = list()

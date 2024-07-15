@@ -138,6 +138,20 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	grant_all_languages()
 	show_data_huds()
 	data_huds_on = 1
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
+
+/mob/dead/observer/proc/slam_dunk_to_main_menu()
+	if(!SSchat.forbid_ghosting)
+		return
+	if(IsAdminGhost(src, TRUE))
+		return TRUE
+	if(client)
+		if(check_rights_for(client, R_ADMIN))
+			return TRUE
+		abandon_mob()
+		return TRUE
+	sleep(0.5 SECONDS)
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -416,6 +430,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			destination = get_step(destination, WEST)
 
 		abstract_move(destination)//Get out of closets and such as a ghost
+<<<<<<< HEAD
+=======
+	slam_dunk_to_main_menu()
+>>>>>>> 5c90758cdc0 (chore: Update chat display plane to prevent messages from being hidden by FoV)
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"

@@ -202,7 +202,15 @@
 
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
-		create_chat_message(speaker, message_language, raw_message, spans)
+		data["message_mode"] = message_mode
+		// make a second one, for in case we go from not seeing them to seeing them
+		if(data["is_eaves"] || data["is_far"] || data["display_turf"])
+			var/list/cooldata = data
+			data["is_eaves"] = FALSE
+			data["is_far"] = FALSE
+			data["display_turf"] = null
+			create_chat_message(speaker, message_language, raw_message, spans, NONE, cooldata)
+		create_chat_message(speaker, message_language, raw_message, spans, NONE, data)
 
 	if(just_chat)
 		return
@@ -226,10 +234,35 @@
 	//if(prob(stutter_chance))
 	//	stuttering += 5
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
-	var/eavesdrop_range = 0
-	if(eavesdropping_modes[message_mode])
-		eavesdrop_range = EAVESDROP_EXTRA_RANGE
-	var/list/listening = get_hearers_in_view(message_range+eavesdrop_range, source)
+	var/quietness = eavesdropping_modes[message_mode]
+	// okay just throw out the message range
+	switch(message_mode)
+		if(MODE_WHISPER)
+			quietness = TRUE
+			message_range = SSchat.base_whisper_distance
+			max_range = SSchat.extended_whisper_distance
+		if(MODE_YELL)
+			quietness = FALSE
+			message_range = SSchat.base_yell_distance
+			max_range = SSchat.extended_yell_distance
+		if(MODE_SING)
+			quietness = FALSE
+			message_range = SSchat.base_sing_distance
+			max_range = SSchat.extended_sing_distance
+		else
+			quietness = FALSE
+			message_range = SSchat.base_say_distance
+			max_range = SSchat.extended_say_distance
+
+	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
+	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
+	var/list/visible_close = CC.visible_close.Copy()
+	// var/list/visible_far = CC.visible_far.Copy()
+	var/list/hidden_pathable = CC.hidden_pathable.Copy()
+	// var/list/hidden_inaccessible = CC.hidden_inaccessible.Copy()
+	CC.putback()
+
+
 	var/list/the_dead = list()
 //	var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
 //	if(!eavesdrop_range && say_test(message) == "2")	//CIT CHANGE - ditto
@@ -264,6 +297,39 @@
 			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, source, just_chat)
 		else
 			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
+
+	var/list/sblistening = list()
+	/// players
+	for(var/mob/mvc in visible_close)
+		mvc.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
+		sblistening |= mvc.client
+	// for(var/mob/mvf in visible_far)
+	// 	var/list/coolspans = spans
+	// 	coolspans += SPAN_SMALL
+	// 	var/list/data = list()
+	// 	data["is_eaves"] = TRUE
+	// 	data["display_turf"] = src
+	// 	mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
+	// 	sblistening |= mvf.client
+	for(var/mob/mhp in hidden_pathable)
+		var/turf/hearfrom = hidden_pathable[mhp]
+		var/list/cooler_spans = spans
+		cooler_spans += SPAN_SMALL
+		var/list/data = list()
+		data["is_eaves"] = TRUE
+		data["display_turf"] = hearfrom
+		mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
+		sblistening |= mhp.client
+	// for(var/mob/mhp in hidden_inaccessible)
+	// 	var/turf/hearfrom = hidden_inaccessible[mhp]
+	// 	var/list/cooler_spans = spans
+	// 	cooler_spans += SPAN_SMALLER
+	// 	var/list/data = list()
+	// 	data["is_eaves"] = TRUE
+	// 	data["is_far"] = TRUE
+	// 	mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
+	// 	sblistening |= mhp.client
+
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble

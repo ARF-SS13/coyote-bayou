@@ -42,6 +42,13 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
+<<<<<<< HEAD
+=======
+	alt_display = data["display_turf"] || null
+	if(data["is_far"] && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
+		offscreen = TRUE
+	eavesdrop = data["is_eaves"] || FALSE
+>>>>>>> 5c90758cdc0 (chore: Update chat display plane to prevent messages from being hidden by FoV)
 	INVOKE_ASYNC(src,PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
 
 /datum/chatmessage/Destroy()
@@ -127,7 +134,6 @@
 
 	// We dim italicized text to make it more distinguishable from regular text
 	var/tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
-
 	// Approximate text height
 	// Note we have to replace HTML encoded metacharacters otherwise MeasureText will return a zero height
 	// BYOND Bug #2563917
@@ -138,7 +144,30 @@
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
-	message_loc = target
+	message_loc = alt_display || target
+	if(offscreen) // if its offscreen, put it somewhere they can see it
+		var/turf/ownerturf = get_turf(owner)
+		var/turf/targetturf = get_turf(message_loc)
+		var/westest = max(ownerturf.x - 9, 1)
+		var/eastest = min(ownerturf.x + 9, world.maxx)
+		var/northest = max(ownerturf.y - 9, 1)
+		var/southest = min(ownerturf.y + 9, world.maxy)
+		var/list/turfe = getline(targetturf, ownerturf)
+		var/turf/where = null
+		for(var/turf/check in turfe)
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/monkeyify(check)
+			if(!TURF_IN_RECTANGLE(check, westest, northest, eastest, southest))
+				continue
+			if(!(check in view(10, ownerturf)))
+				continue
+			message_loc = check
+			where = check
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/love_heart(message_loc)
+			break
+		if(!where)
+			message_loc = ownerturf // whatevs
 	if(!owned_by)
 		return
 	if (owned_by.seen_messages)
@@ -154,9 +183,15 @@
 				m.scheduled_destruction = world.time + remaining_time
 				addtimer(CALLBACK(m,PROC_REF(end_of_life)), remaining_time, TIMER_UNIQUE|TIMER_OVERRIDE)
 
+	if(SSchat.debug_chud)
+		var/turf/ownerturf = get_turf(owner)
+		var/turf/targetturf = get_turf(message_loc)
+		ownerturf.Beam(targetturf, icon_state = "g_beam", time = 3 SECONDS)
+		ownerturf.Beam(get_turf(target), icon_state = "1-full", time = 3 SECONDS)
+
 	// Build message image
 	message = image(loc = message_loc, layer = CHAT_LAYER)
-	message.plane = CHAT_PLANE
+	message.plane = SSchat.chat_display_plane
 	message.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	message.alpha = 0
 	message.pixel_y = owner.bound_height * 0.95
@@ -165,6 +200,13 @@
 	message.maptext_height = mheight
 	message.maptext_x = (CHAT_MESSAGE_WIDTH - owner.bound_width) * -0.5
 	message.maptext = complete_text
+	var/alphatomakeit = 255
+	if(eavesdrop)
+		message.pixel_x = rand(-16, 16)
+		message.pixel_y = rand(-16, 16)
+		alphatomakeit /= 2
+	if(offscreen)
+		alphatomakeit /= 2
 
 	// View the message
 	LAZYADDASSOC(owned_by.seen_messages, message_loc, src)
