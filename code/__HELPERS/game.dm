@@ -494,7 +494,7 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	if(coler)
 		color = coler
 
-#define IS_IN_VIEWER_RECT(turf) TURF_IN_RECTANGLE(turf, westest, eastest, northest, southest)
+#define IS_IN_VIEWER_RECT(turf) TURF_IN_RECTANGLE(turf, westest, northest, eastest, southest)
 
 /// returns a datum of players and how well they can hear the source
 /proc/get_listening(atom/source, close_range, long_range, quiet)
@@ -511,7 +511,7 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 				continue dingus
 			var/westest = max(viewer_turf.x - 9, 1)
 			var/eastest = min(viewer_turf.x + 9, world.maxx)
-			var/northest = max(viewer_turf.y - 6, 1)
+			var/northest = max(viewer_turf.y - 7, 1)
 			var/southest = min(viewer_turf.y + 6, world.maxy)
 			var/list/things_in_viewer_los = view(9, viewer_turf)
 			if(SSchat.debug_chud)

@@ -154,30 +154,27 @@
 	message_loc = alt_display || target
 	if(offscreen) // if its offscreen, put it somewhere they can see it
 		var/turf/ownerturf = get_turf(owner)
-		message_loc = ownerturf
-		var/angle_to_source = Get_Angle(ownerturf, message_loc)
-		// cus the damn angles are rotated 90 degrees clockwise, gotta change the angle 90 degrees counter
-		// // get us a verbal punch laser
-		// var/i = 1
-		// var/datum/point/vector/punch_laser
-		// while(!punch_laser)
-		// 	punch_laser = GLOB.verbal_punch_lasers[i]
-		// 	if(!punch_laser)
-		// 		punch_laser = new /datum/point/vector()
-		// 		GLOB.verbal_punch_lasers[i] = punch_laser
-		// 	else if(punch_laser.inuse)
-		// 		i++
-		// 		punch_laser = null
-		// punch_laser.initialize_location(ownerturf.x, ownerturf.y, ownerturf.z, 0, 0)
-		// punch_laser.initialize_trajectory(32*6, angle_to_source) // 32 pixels per tile, 6 tiles away
-		// punch_laser.increment(1)
-		var/turf/displayloc = get_turf_in_angle(angle_to_source, ownerturf, 6)
-		if(!displayloc)
-			displayloc = ownerturf // whatevs
-		message_loc = displayloc
-		if(SSchat.debug_chud)
-			ownerturf.Beam(displayloc, icon_state = "g_beam", time = 3 SECONDS)
-
+		var/turf/targetturf = get_turf(message_loc)
+		var/westest = max(ownerturf.x - 9, 1)
+		var/eastest = min(ownerturf.x + 9, world.maxx)
+		var/northest = max(ownerturf.y - 7, 1)
+		var/southest = min(ownerturf.y + 6, world.maxy)
+		var/list/turfe = getline(targetturf, ownerturf)
+		var/turf/where = null
+		for(var/turf/check in turfe)
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/monkeyify(check)
+			if(!TURF_IN_RECTANGLE(check, westest, northest, eastest, southest))
+				continue
+			if(!(check in view(10, ownerturf)))
+				continue
+			message_loc = check
+			where = check
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/love_heart(message_loc)
+			break
+		if(!where)
+			message_loc = ownerturf // whatevs
 	if(!owned_by)
 		return
 	if (owned_by.seen_messages)

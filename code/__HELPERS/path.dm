@@ -323,10 +323,14 @@
 			return
 
 /datum/pathfind/proc/checkvis(turf/destination_turf)
+	if(locate(/mob/living) in destination_turf)
+		return TRUE
 	if(destination_turf.opacity)
 		return FALSE
-	for(var/atom/iter_atom in destination_turf)
+	for(var/atom/iter_atom as anything in destination_turf)
 		if(iter_atom.opacity)
+			if(istype(iter_atom, /obj/structure/window) || istype(iter_atom, /obj/machinery/door/window))
+				continue
 			return FALSE
 	return TRUE
 
