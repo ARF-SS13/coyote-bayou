@@ -166,6 +166,7 @@
 			result = rigged
 	var/fake_result = roll(sides)//Daredevil isn't as good as he used to be
 	var/comment = ""
+	playsound(src, 'sound/effects/statroll.ogg', 100, TRUE, -1)
 	if(sides == 20 && result == 20)
 		comment = "NAT 20!"
 	else if(sides == 20 && result == 1)
@@ -214,11 +215,12 @@
 	if(!LAZYLEN(contents))
 		M.visible_message(
 			span_notice("[M] rattles [M.p_their()] empty dice cup! Pass the dice, please!"),
-			span_italic("You rattle your empty dice cup!"))
+			span_italic("I rattle my empty dice cup!"))
 		return
 	M.visible_message(
 		span_notice("[M] rattles [M.p_their()] dice cup! The dice inside clatter!"),
-		span_italic("You rattle your dice cup! The dice inside clatter!"))
+		span_italic("I rattle my dice cup! The dice inside clatter!"))
+	playsound(src, 'sound/effects/statroll.ogg', 100, TRUE, -1)
 	
 /// actually rolls the dice and chunks them out on the table
 /// must be a table, but ya know
@@ -250,6 +252,7 @@
 		D.pixel_x = rand(-16, 16)
 		D.pixel_y = rand(-16, 16)
 	var/msg_out = span_green("[user] dumps the dice out of \the [src]! And here are the results...<br>")
+	playsound(src, 'sound/effects/statroll.ogg', 100, TRUE, -1)
 	msg_out += span_notice(output_messages.Join("<br>"))
 	user.visible_message(msg_out)
 	return TABLE_NO_PLACE
