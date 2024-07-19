@@ -235,25 +235,25 @@
 		if(href_list["late_join"] == "override")
 			LateChoices()
 			return
+		PreLateChoices()
 
-		if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
-			to_chat(usr, span_danger("[CONFIG_GET(string/hard_popcap_message)]"))
+		// if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
+		// 	to_chat(usr, span_danger("[CONFIG_GET(string/hard_popcap_message)]"))
 
-			var/queue_position = SSticker.queued_players.Find(usr)
-			if(queue_position == 1)
-				to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
-			else if(queue_position)
-				to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
-			else
-				SSticker.queued_players += usr
-				to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
-			return
+		// 	var/queue_position = SSticker.queued_players.Find(usr)
+		// 	if(queue_position == 1)
+		// 		to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
+		// 	else if(queue_position)
+		// 		to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
+		// 	else
+		// 		SSticker.queued_players += usr
+		// 		to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
+		// 	return
 
 /* 		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
 			alert(src, "This character name is already in use. Choose another.")
 			return */
 
-		PreLateChoices()
 
 	if(href_list["join_as_creature"])
 		CreatureSpawn()
@@ -267,17 +267,11 @@
 			message_admins(msg)
 			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
 			return
-
-		if(!GLOB.enter_allowed)
-			to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
-			return
-
-		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
-			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-				to_chat(usr, span_warning("Server is full."))
-				return
-
-		AttemptLateSpawn(href_list["SelectedJob"])
+		if(!SSjob.ShowJobPreview(client?.ckey))
+			var/do_it_anyway = alert(src, "Are you sure you want to join as this role?", "Role Selection", "Yes", "No")
+			if(do_it_anyway == "Yes")
+				AttemptLateSpawn(href_list["SelectedJob"])
+		// AttemptLateSpawn(href_list["SelectedJob"])
 		return
 
 	if(href_list["JoinAsGhostRole"])
@@ -504,17 +498,7 @@
 		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 		return
 
-	var/arrivals_docked = TRUE
-	if(SSshuttle.arrivals)
-		close_spawn_windows()	//In case we get held up
-		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			src << alert("The arrivals shuttle is currently malfunctioning! You cannot join.")
-			return FALSE
-
-		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
-			SSshuttle.arrivals.RequireUndocked(src)
-		arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
-
+	. = TRUE
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
@@ -530,10 +514,10 @@
 
 	if(job && !job.override_latejoin_spawn(character))
 		SSjob.SendToLateJoin(character)
-		if(!arrivals_docked)
-			var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
-			Spl.Fade(TRUE)
-			character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
+		// if(!arrivals_docked)
+		// 	var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
+		// 	Spl.Fade(TRUE)
+		// 	character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
@@ -735,6 +719,10 @@
 	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()
+	if(SSjob.ShowJobPreview(client?.ckey))
+		return // its handlinmg imt
+
+
 	var/list/dat = list()
 
 	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"

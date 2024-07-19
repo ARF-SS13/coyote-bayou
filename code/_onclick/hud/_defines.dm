@@ -144,7 +144,8 @@
 
 #define ui_character_actions	"EAST-1:28, SOUTH+1:2"
 #define ui_bayou				"EAST-1:28, SOUTH+0:2" //Character directory
-#define ui_pvpbuttons			"EAST-1:28, SOUTH+1:18" //slut directory
+#define ui_pvpbuttons			"EAST-1:28, SOUTH+1:18" //sludt directory
+#define ui_job_viewer			"EAST-1:28, SOUTH+2:0" //job viewer
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"

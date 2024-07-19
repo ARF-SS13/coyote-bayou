@@ -19,6 +19,8 @@ SUBSYSTEM_DEF(job)
 
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
+	var/list/preview_holders = list()
+
 /datum/controller/subsystem/job/Initialize(timeofday)
 	SSmapping.HACK_LoadMapConfig()
 	if(!occupations.len)
@@ -819,3 +821,136 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
+
+/datum/controller/subsystem/job/proc/ShowJobPreview(ckey)
+	ckey = extract_ckey(ckey)
+	if(!ckey)
+		return
+	var/datum/job_preview_holder/jph = preview_holders[ckey]
+	if(!jph)
+		jph = new /datum/job_preview_holder(ckey)
+		preview_holders[ckey] = jph
+	return jph.showme()
+
+/// A holder for the TGUI job preview thing!!
+/datum/job_preview_holder
+	var/datum/job/my_job
+	var/my_ckey
+	var/list/tgui_slugs = list()
+
+/datum/job_preview_holder/New(ckey)
+	. = ..()
+	my_ckey = ckey
+
+/datum/job_preview_holder/proc/compile_tgui_map()
+	tgui_slugs.Cut()
+	var/list/categories = GLOB.position_ordering.Copy()
+	for(var/cat in GLOB.position_categories)
+		if(!islist(categories[cat]))
+			categories[cat] = list()
+		var/list/categlob = GLOB.position_categories[cat]
+		var/list/category_slug = list()
+		category_slug["CatColor"] = categlob["color"]
+		category_slug["CatTitle"] = cat
+		category_slug["CatJobs"] = list() // merek gives good catjobs
+		/// now fill them with some jobs
+		for(var/cjob in categlob["jobs"])
+			var/datum/job/job = SSjob.GetJob(cjob)
+			if(!job)
+				continue
+			var/list/tug_slug = job.get_tgui_slug()
+			if(!tug_slug)
+				continue
+			tug_slug["Category"] = cat
+			category_slug["CatJobs"] += list(tug_slug)
+		categories[cat] = category_slug
+	// trim empty categories
+	for(var/cat in categories)
+		if(!LAZYLEN(categories[cat]))
+			categories -= cat
+	// then add the naked slugs to the list, to preserve order
+	for(var/cat in categories)
+		tgui_slugs += list(categories[cat])
+
+/datum/job_preview_holder/proc/show_main()
+	var/mob/user = ckey2mob(my_ckey)
+	ui_interact(user)
+	return TRUE
+
+/datum/job_preview_holder/proc/showme()
+	var/mob/user = ckey2mob(my_ckey)
+	ui_interact(user)
+	return TRUE
+
+/datum/job_preview_holder/ui_state(mob/user)
+	return GLOB.always_state
+
+/datum/job_preview_holder/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "JobPreview")
+		ui.open()
+		ui.set_autoupdate(FALSE)
+	update_static_data(user, ui)
+
+/datum/job_preview_holder/ui_static_data(mob/user)
+	. = ..()
+	if(!user || !user.client)
+		return
+	compile_tgui_map()
+	var/list/slugpower = tgui_slugs.Copy()
+	/// cleverly slot the player-specific data into the jobs within the slugs
+	var/list/xps = user?.client?.prefs?.exp.Copy()
+	for(var/list/cat in slugpower)
+		for(var/list/job in cat["CatJobs"])
+			var/datum/job/j = SSjob.GetJob(job["Title"])
+			if(!j)
+				continue
+			var/my_time = LAZYACCESS(xps, j.exp_type)
+			if(my_time < 1)
+				job["CurrentMinutes"] = "0m"
+			else
+				job["CurrentMinutes"] = DisplayTimeText(my_time * 10 * 60, abbreviated = TRUE) || "0m"
+			var/timeleft = 0
+			if(istype(j))
+				timeleft = j.required_playtime_remaining(user.client)
+			job["RawTimeLeft"] = timeleft
+			job["TimeTillCanSpawn"] = "[DisplayTimeText(timeleft * 10 * 60, abbreviated = TRUE)]"
+			if(isnewplayer(user))
+				var/mob/dead/new_player/player = user
+				job["SpawnFailure"] = player.IsJobUnavailable(j.title, latejoin = TRUE)
+			else
+				job["SpawnFailure"] = JOB_UNAVAILABLE_NOT_NEWPLAYER
+	var/list/data = list()
+	data["AllJobsNCats"] = slugpower
+	return data
+
+/datum/job_preview_holder/ui_data(mob/user)
+	. = ..()
+	var/list/data = list()
+	data["IsInGame"] = !isnewplayer(user)
+	data["MyCkey"] = user.client?.ckey || my_ckey
+	data["CurrentJobTitle"] = user.mind?.assigned_role || "Assistant"
+	return data
+
+/datum/job_preview_holder/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	var/mob/user = ckey2mob(params["MyCkey"])
+	if(!user)
+		return
+	if(action != "JoinJob")
+		return
+	if(!istype(user, /mob/dead/new_player))
+		user.playsound_local(user, 'sound/machines/low_buzz.ogg', 80, TRUE)
+		to_chat(user, span_alert("You'll want to respawn and mess with this from the lobby screen if you want to become this job."))
+		return
+	var/mob/dead/new_player/player = user
+	if(!player.AttemptLateSpawn(params["JoinJob"]))
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(ui)
+		ui.close()
+
+
+
+

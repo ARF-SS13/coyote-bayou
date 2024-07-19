@@ -123,6 +123,16 @@
 	if(usr.client)
 		usr.client.show_character_directory()
 
+/atom/movable/screen/job_button
+	name = "Review Role"
+	desc = "Review your current role, as well as the roles of others."
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "jobviewer"
+	screen_loc = ui_job_viewer
+
+/atom/movable/screen/job_button/Click(location,control,params)
+	SSjob.ShowJobPreview(usr)
+
 /atom/movable/screen/pvp_focus_toggle
 	name = "PVP focus On/Off"
 	icon = 'icons/mob/screen_gen.dmi'

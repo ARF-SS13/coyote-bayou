@@ -398,6 +398,10 @@
 	pvp_focus_toggle.hud = src
 	infodisplay += pvp_focus_toggle
 
+	job_button = new /atom/movable/screen/job_button()
+	job_button.hud = src
+	infodisplay += job_button
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src

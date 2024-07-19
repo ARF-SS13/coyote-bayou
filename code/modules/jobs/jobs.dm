@@ -266,12 +266,9 @@ GLOBAL_LIST_INIT(vault_positions, list(
 ))
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
-	"Den Mob Boss",
-	"Den Mob Enforcer",
-	"Den Doctor",
-//	"Redwater Townie",
-	"Faithful",
-	"Vigilante",
+	// "Den Mob Boss",
+	// "Den Mob Enforcer",
+	// "Den Doctor",
 	"Far-Lands Tribals",
 	"Wastelander",
 	"Character Testing Area"
@@ -410,6 +407,29 @@ GLOBAL_LIST_INIT(position_categories, list(
 	"Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
 	"Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
 	"Den" = list("jobs" = den_positions, "color" = "#884488"),
+))
+
+GLOBAL_LIST_INIT(position_ordering, list(
+	EXP_TYPE_WASTELAND = list(),
+	"New Boston" = list(),
+	"Reclaimers" = list(),
+	EXP_TYPE_TRIBAL = list(),
+	"Guild" = list(),
+	"Den" = list(),
+	"Ashdown" = list(),
+	"Tunnel Rats" = list(),
+	"Garland" = list(),
+	EXP_TYPE_BROTHERHOOD = list(),
+	EXP_TYPE_LEGION = list(),
+	EXP_TYPE_NCR = list(),
+	EXP_TYPE_VAULT = list(),
+	EXP_TYPE_ENCLAVE = list(),
+	EXP_TYPE_KHAN = list(),
+	EXP_TYPE_FOLLOWERS = list(),
+	EXP_TYPE_SILICON = list(),
+	EXP_TYPE_CLUB = list(),
+	EXP_TYPE_BIKER = list(),
+	"debug" = list(),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
