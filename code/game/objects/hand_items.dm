@@ -201,7 +201,15 @@
 			.[LICK_INTENT] = "aggressively"
 		if(INTENT_HARM)
 			.[LICK_INTENT] = "very aggressively"
+/*
+You take the item in hand.
+The item + the intent + direction of click = outcome.
+Example
 
+Touch + Help + facing each other = Hug
+Touch + help + facing their side = pat shoulder
+touch + help + facing their rear = pat back
+*/
 
 #undef LICK_LOCATION
 #undef LICK_INTENT
@@ -625,6 +633,12 @@
 	hitsound = 'sound/weapons/sear.ogg'
 	damtype = BURN
 	attack_verb = list("seared", "zapped", "fried", "shocked")
+
+/* *
+ *
+ */
+
+
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))

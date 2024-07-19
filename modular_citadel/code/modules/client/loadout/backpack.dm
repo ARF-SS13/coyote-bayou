@@ -9,6 +9,11 @@
 	path = /obj/item/flashlight
 	cost = 0
 
+/datum/gear/backpack/hairbrush
+	name = "hairbrush"
+	path = /obj/item/hairbrush
+	cost = 0
+
 /datum/gear/backpack/torch
 	name = "torch"
 	path = /obj/item/flashlight/flare/torch
