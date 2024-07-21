@@ -166,12 +166,12 @@
 /datum/emote/living/carbon/lick/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable))
+	if(istype(I, /obj/item/hand_item/tactile))
 		I.melee_attack_chain(user, user)
 	// else if(I)
 	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
 	// 	return
-	var/obj/item/hand_item/healable/licker/licky = new(user)
+	var/obj/item/hand_item/tactile/licker/licky = new(user)
 	if(user.put_in_hands(licky))
 		to_chat(user, span_notice("You extend your tongue and get ready to lick something."))
 	else
@@ -185,14 +185,33 @@
 /datum/emote/living/carbon/touch/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable/))
+	if(istype(I, /obj/item/hand_item/tactile/))
 		I.melee_attack_chain(user, user)
 	// else if(I)
 	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
 	// 	return
-	var/obj/item/hand_item/healable/toucher/touchy = new(user)
+	var/obj/item/hand_item/tactile/toucher/touchy = new(user)
 	if(user.put_in_hands(touchy))
 		to_chat(user, span_notice("You get ready to touch something."))
+	else
+		qdel(touchy)
+
+/datum/emote/living/carbon/kiss
+	key = "kiss"
+	key_third_person = "kisses"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/kiss/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/tactile/))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("My active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/kisser/touchy = new(user)
+	if(user.put_in_hands(touchy))
+		to_chat(user, span_notice("You get ready to smooch something."))
 	else
 		qdel(touchy)
 
@@ -204,12 +223,12 @@
 /datum/emote/living/carbon/tend/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable/))
+	if(istype(I, /obj/item/hand_item/tactile/))
 		I.melee_attack_chain(user, user)
 	// else if(I)
 	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
 	// 	return
-	var/obj/item/hand_item/healable/tender/tendy = new(user)
+	var/obj/item/hand_item/tactile/tender/tendy = new(user)
 	if(user.put_in_hands(tendy))
 		to_chat(user, span_notice("You retrieve your emergency kit and get ready to tend something."))
 	else

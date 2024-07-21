@@ -20,7 +20,7 @@
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
 
 /// Just a cool hand-item that holds a healing... thing
-/obj/item/hand_item/healable
+/obj/item/hand_item/tactile
 	var/obj/item/stack/medical/healthing = /obj/item/stack/medical/bruise_pack/lick
 	/// are we licking something?
 	var/working = FALSE
@@ -30,9 +30,11 @@
 	var/action_verb_s = "licks"
 	var/action_verb_ing = "licking"
 	var/can_taste = TRUE
+	var/datum/grope_kiss_MERP/grope = /datum/grope_kiss_MERP
+	var/list/lastgrope
 
 /// Course our first hand item would be a tongue
-/obj/item/hand_item/healable/tender //chimken
+/obj/item/hand_item/tactile/tender //chimken
 	name = "triage kit"
 	desc = "A small collection of vital medical supplies."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -47,7 +49,7 @@
 	action_verb_ing = "tending"
 	can_taste = FALSE
 
-/obj/item/hand_item/healable/toucher
+/obj/item/hand_item/tactile/toucher //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
 	name = "touch"
 	desc = "A finger, for touching things."
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -94,16 +96,16 @@
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
 
-/obj/item/hand_item/healable/attack(mob/living/L, mob/living/carbon/user)
+/obj/item/hand_item/tactile/attack(mob/living/L, mob/living/carbon/user)
 	return start_licking(src, L, user)
 
-/obj/item/hand_item/healable/attack_obj(obj/O, mob/living/user)
+/obj/item/hand_item/tactile/attack_obj(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
-/obj/item/hand_item/healable/attack_obj_nohit(obj/O, mob/living/user)
+/obj/item/hand_item/tactile/attack_obj_nohit(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
-/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/user)
+/obj/item/hand_item/tactile/proc/start_licking(atom/source, atom/licked, mob/living/user)
 	if(!isliving(user))
 		return FALSE
 	if(working)
@@ -116,10 +118,10 @@
 	lick_atom(licked, user)
 	return cool_thing(source, user, licked)
 
-/obj/item/hand_item/healable/proc/cool_thing(mob/living/user, atom/licked)
+/obj/item/hand_item/tactile/proc/cool_thing(mob/living/user, atom/licked)
 	return TRUE
 
-/obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
+/obj/item/hand_item/tactile/proc/tend_hurt(mob/living/user, mob/living/target)
 	if(!isliving(user) || !isliving(target))
 		return
 	if(!HAS_TRAIT(user, needed_trait))
@@ -137,12 +139,14 @@
 	return TRUE
 
 
-/obj/item/hand_item/healable/licker/Initialize(mapload)
+/obj/item/hand_item/tactile/licker/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_LICK_RETURN,PROC_REF(start_licking))
 
-/obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
+/obj/item/hand_item/tactile/proc/lick_atom(atom/movable/licked, mob/living/user)
 	if(SEND_SIGNAL(licked, COMSIG_ATOM_LICKED, user, src))
+		return
+	if(do_a_grope(user, licked))
 		return
 	var/list/lick_words = get_lick_words(user)
 	if(isliving(licked))
@@ -162,7 +166,7 @@
 	if(can_taste && iscarbon(user))
 		lick_flavor(atom_licked = licked, licker = user)
 
-/obj/item/hand_item/healable/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/licker)
+/obj/item/hand_item/tactile/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/licker)
 	if(!atom_licked)
 		return
 	if(!licker)
@@ -175,7 +179,7 @@
 		C.taste(null, atom_licked)
 	playsound(get_turf(src), pokesound, 25, 1, SOUND_DISTANCE(LICK_SOUND_TEXT_RANGE))
 
-/obj/item/hand_item/healable/licker/tend_hurt(mob/living/licked, mob/living/user)
+/obj/item/hand_item/tactile/licker/tend_hurt(mob/living/licked, mob/living/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		var/obj/item/organ/tongue/our_tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
@@ -186,7 +190,8 @@
 /obj/item/hand_item/tactile/proc/do_a_grope(mob/living/doer, mob/living/target)
 	if(!LAZYLEN(GLOB.gropekissers))
 		for(var/booby in typesof(/datum/grope_kiss_MERP))
-			var/datum/grope_kiss_MERP/gkm = new booby()
+			var/datum/grope_kiss_MERP/gkm = booby
+			gkm = new()
 			GLOB.gropekissers[gkm.type] = gkm
 	if(!grope)
 		return
@@ -664,7 +669,13 @@
 	damtype = BURN
 	attack_verb = list("seared", "zapped", "fried", "shocked")
 
-// /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
+/* *
+ *
+ */
+
+
+
+// /obj/item/hand_item/tactile/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))
 // 		return FALSE
 // 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
