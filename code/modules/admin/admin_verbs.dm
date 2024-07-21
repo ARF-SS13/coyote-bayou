@@ -1045,6 +1045,42 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] has granted a 1UP to [keytorez].")
 	message_admins("[ADMIN_TPMONTY(usr)] has granted a 1UP to [keytorez].")
 
+/// Never gonna give one up, never gonna give one down
+/datum/admins/proc/grope_shotglass()
+	set category = "Admin.Game"
+	set name = "grope shotglass"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with grope_shotglass() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with grope_shotglass() without admin perms.")
+		return
+
+	var/list/ppl = list()
+	for(var/kye in GLOB.directory)
+		var/client/C = GLOB.directory[kye]
+		if(!ismob(C.mob))
+			continue
+		ppl[C.mob.name] = kye
+	
+	var/whotorez = input(usr, "Who do you want to let grope wierd things?", "Give a hand") as null|anything in ppl
+	if(!whotorez)
+		to_chat(usr, "Nevermind then.")
+		return
+	if(whotorez in GLOB.shotglass_gropers)
+		GLOB.shotglass_gropers -= ppl[whotorez]
+		to_chat(usr, "[whotorez] can no longer grope shotglasses.")
+		var/mob/whomst = ckey2mob(ppl[whotorez])
+		if(whomst)
+			to_chat(whomst, "Oh you can't grope shotglasses anymore. dang")
+		log_admin("[key_name(usr)] stopped letting [whotorez] [ppl[whotorez]] grope just about anything.")
+	else
+		GLOB.shotglass_gropers -= ppl[whotorez]
+		to_chat(usr, "[whotorez] can now grope shotglasses. yeah.")
+		var/mob/whomst = ckey2mob(ppl[whotorez])
+		if(whomst)
+			to_chat(whomst, "Hey you can grope shotglasses now.")
+		log_admin("[key_name(usr)] let [whotorez] [ppl[whotorez]] grope just about anything.")
+
 /datum/admins/proc/change_view_range()
 	set category = "Admin.Game"
 	set name = "Change Global View Range"
