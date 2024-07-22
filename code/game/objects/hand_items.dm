@@ -62,11 +62,34 @@
 	action_verb_ing = "touching"
 	can_taste = FALSE
 
-/obj/item/hand_item/healable/licker
+/obj/item/hand_item/tactile/kisser
+	name = "kisser"
+	desc = "A kisser, for smooching things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "kisser"
+	attack_verb = list("kissed", "smooched", "snogged")
+	grope = /datum/grope_kiss_MERP/kiss
+	pokesound = list(
+		'sound/effects/kiss.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss3.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss4.ogg',
+	)
+	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
+	needed_trait = TRAIT_HEAL_TOUCH
+	tend_word = "smooching"
+	action_verb = "kiss"
+	action_verb_s = "kisses"
+	action_verb_ing = "kissing"
+	can_taste = FALSE
+
+/obj/item/hand_item/tactile/licker
 	name = "tongue"
 	desc = "Mlem."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "tonguenormal"
+	grope = /datum/grope_kiss_MERP/lick
 	attack_verb = list("licked", "lapped", "mlemmed")
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
@@ -160,11 +183,26 @@
 			return FALSE
 	. = ..()
 
-/obj/item/hand_item/healable/proc/get_lick_words(mob/living/user)
+/obj/item/hand_item/tactile/proc/do_a_grope(mob/living/doer, mob/living/target)
+	if(!LAZYLEN(GLOB.gropekissers))
+		for(var/booby in typesof(/datum/grope_kiss_MERP))
+			var/datum/grope_kiss_MERP/gkm = new booby()
+			GLOB.gropekissers[gkm.type] = gkm
+	if(!grope)
+		return
+	var/datum/grope_kiss_MERP/gunkem = LAZYACCESS(GLOB.gropekissers, grope)
+	if(!gunkem) // the G is soft
+		return
+	var/list/gropeturn = gunkem.make_visible_message(doer, target, lastgrope)
+	if(gropeturn)
+		lastgrope = gropeturn
+		return TRUE
+
+/obj/item/hand_item/tactile/proc/get_lick_words(mob/living/user)
 	if(!user)
 		return
 
-	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork")
+	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork") //👀 Dan I swear to god.
 	switch(user.zone_selected)
 		if(BODY_ZONE_CHEST)
 			.[LICK_LOCATION] = "chest"
