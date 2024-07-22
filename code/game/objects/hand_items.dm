@@ -190,8 +190,7 @@
 /obj/item/hand_item/tactile/proc/do_a_grope(mob/living/doer, mob/living/target)
 	if(!LAZYLEN(GLOB.gropekissers))
 		for(var/booby in typesof(/datum/grope_kiss_MERP))
-			var/datum/grope_kiss_MERP/gkm = booby
-			gkm = new()
+			var/datum/grope_kiss_MERP/gkm = new booby()
 			GLOB.gropekissers[gkm.type] = gkm
 	if(!grope)
 		return
