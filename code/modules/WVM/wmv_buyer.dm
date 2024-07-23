@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
 		return FALSE
 	if(!silent)
-		say("I'll give you [SSeconomy.format_currency(final_price, FALSE, TRUE)] per [I]!", just_chat = quiet)
+		say("I'll give you [SSeconomy.format_currency(final_price, FALSE, TRUE)] per [I]!", just_chat = quiet) //Uses false for second argument because final_price has already been converted to copper from credits during initial assignment.
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
