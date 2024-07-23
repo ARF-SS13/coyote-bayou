@@ -677,8 +677,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
 	var/thing = I ? "\the [I]" : "something"
-	var/currencie = "[SSeconomy.format_currency(soldfor, TRUE, TRUE)]"
-	var/currencei = "[SSeconomy.format_currency(totalcash, TRUE, TRUE)]"
+	var/currencie = "[SSeconomy.format_currency(soldfor, FALSE, TRUE)]" //Second argument false because we are already receiving coppers for the proc arguments
+	var/currencei = "[SSeconomy.format_currency(totalcash, FALSE, TRUE)]"
 	say("Sold [thing] for [currencie], bringing the total to [currencei]!")
 
 /obj/item/debug_vendorsale
