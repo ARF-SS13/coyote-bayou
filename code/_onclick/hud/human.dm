@@ -105,6 +105,13 @@
 	using.hud = src
 	static_inventory += using
 
+	using = new /atom/movable/screen/craft
+	using.icon = ui_style
+	if(!widescreenlayout) // CIT CHANGE
+		using.screen_loc = ui_boxcraft // CIT CHANGE
+	using.hud = src
+	static_inventory += using
+
 	action_intent = new /atom/movable/screen/act_intent/segmented
 	action_intent.icon_state = mymob.a_intent
 	action_intent.hud = src
