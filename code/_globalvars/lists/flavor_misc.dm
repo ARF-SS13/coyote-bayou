@@ -238,7 +238,15 @@ GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything
 	"Mecha Shell Bag" = /obj/item/storage/backpack/skyrat/mechashell,
 	"Pyramid Shell Bag" = /obj/item/storage/backpack/skyrat/pyramidshell,
 	"Spiral Shell Bag" = /obj/item/storage/backpack/skyrat/spiralshell,
-	"Rock Shell Bag" = /obj/item/storage/backpack/skyrat/rockshell
+	"Rock Shell Bag" = /obj/item/storage/backpack/skyrat/rockshell,
+	"Purse" = /obj/item/storage/backpack/purse,
+	"Purse, black" = /obj/item/storage/backpack/purse/black,
+	"Purse, red" = /obj/item/storage/backpack/purse/red,
+	"Purse, green" = /obj/item/storage/backpack/purse/green,
+	"Purse, blue" = /obj/item/storage/backpack/purse/blue,
+	"Purse, yellow" = /obj/item/storage/backpack/purse/yellow, 
+	"Purse, cyan" = /obj/item/storage/backpack/purse/cyan,
+	"Purse, purple" = /obj/item/storage/backpack/purse/purple,
 	))
 
 //Suit/Skirt

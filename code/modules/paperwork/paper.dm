@@ -23,7 +23,7 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
 	item_state = "paper"
-	// inhand_icon_state = "paper"
+	// item_state = "paper"
 	// worn_icon_state = "paper"
 	// custom_fire_overlay = "paper_onfire_overlay"
 	throwforce = 0

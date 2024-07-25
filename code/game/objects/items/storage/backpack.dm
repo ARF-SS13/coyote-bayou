@@ -1004,4 +1004,34 @@
 /obj/item/storage/backpack/invisipack // backpack with no mob sprite
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "invisipack"
-	item_state = "invisipack"
+	inhand_icon_state = "invisipack"
+
+/obj/item/storage/backpack/purse 
+	icon = 'icons/fallout/objects/storage.dmi'
+	desc = "A stylish handbag, not really recolorable!"
+	lefthand_file = 'icons/fallout/onmob/items/bags_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/items/bags_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
+	icon_state = "purse"
+	inhand_icon_state = "purse"
+
+/obj/item/storage/backpack/purse/black
+	color = "#333333"
+
+/obj/item/storage/backpack/purse/red
+	color = "#bb3333"
+
+/obj/item/storage/backpack/purse/green
+	color = "#33bb33"
+
+/obj/item/storage/backpack/purse/blue
+	color = "#3333bb"
+
+/obj/item/storage/backpack/purse/yellow
+	color = "#bbbb33"
+
+/obj/item/storage/backpack/purse/cyan
+	color = "#33bbbb"
+
+/obj/item/storage/backpack/purse/purple
+	color = "#bb33bb"
