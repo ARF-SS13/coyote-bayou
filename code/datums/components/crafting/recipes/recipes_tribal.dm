@@ -508,7 +508,7 @@
 	name = "Gravity Gloves"
 	result = /obj/item/clothing/gloves/fingerless/pugilist/gravity
 	time = 30
-	reqs = list(/datum/material/titanium = 10,
+	reqs = list(/obj/item/stack/sheet/mineral/titanium = 10,
 				/obj/item/stack/crafting/goodparts = 5,
 				/obj/item/stack/sheet/mineral/plasma = 2,
 				/obj/item/stack/sheet/mineral/diamond = 1,
