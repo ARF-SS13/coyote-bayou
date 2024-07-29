@@ -953,7 +953,13 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		return
 	var/newpose = stripped_input(usr, "Set the custom OOC status! (Char Limit: [MAX_STATUS_LEN])\n\
 		You can add a color to the OOC status! Just add 'QQcHEXCODE;' before your status, without quotes. \
-		Just swap out HEXCODE with a 6-character hexcode color, like FFF123", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
+		Just swap out HEXCODE with a 6-character hexcode color, like FFF123\n\
+		\n\
+		You can disable this dialog in game preferences, it exists to help give yourself a gimmick or goal when you join into a round.\
+		It can be as simple as \"I want to go questing.\", or what kind of Roleplay you are seeking.\n\
+		\n\
+		This will set the OOC status in the who list, if you cancel this dialog it will default to no status.\
+		What is your OOC Status for today?:", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
 	c_pose = newpose
 	DispenseInfo(defaultpose, SSwho.ParsePoseColor(newpose), "OOC status")
 
