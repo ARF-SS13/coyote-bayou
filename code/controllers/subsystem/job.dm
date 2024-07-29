@@ -497,9 +497,14 @@ SUBSYSTEM_DEF(job)
 			else
 				handle_auto_deadmin_roles(M.client, rank) */
 
-	to_chat(M, "<b>You are the [rank].</b>")
+		//Skyrat changes
+	var/display_rank = rank
+	if(M.client && M.client.prefs && M.client.prefs.alt_titles_preferences[rank])
+		display_rank = M.client.prefs.alt_titles_preferences[rank]
+	//End of skyrat changes
+	to_chat(M, "<b>You are the [display_rank].</b>") //Skyrat change
 	if(job)
-		to_chat(M, "<b>As the [rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+		to_chat(M, "<b>As the [display_rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>") //Skyrat change
 		job.radio_help_message(M)
 		to_chat(M, "<FONT color='blue'><B>[job.description]</b>")
 		to_chat(M, "<FONT color='red'><b>[job.forbids]</b>")
