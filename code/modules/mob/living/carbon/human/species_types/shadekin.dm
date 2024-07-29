@@ -8,7 +8,7 @@
 	say_mod = "mars"
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF", "mcolor3" = "FFFFFF", "mam_tail" = "Shadekin", "mam_ears" = "Shadekin", "deco_wings" = "None",
 						"taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
-	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+	allowed_limb_ids = list(ALL_TYPICAL_BIO_LIMB_IDS)
 	mutanteyes = /obj/item/organ/eyes/shadekin
 	limbs_id = "shadekin"
 
