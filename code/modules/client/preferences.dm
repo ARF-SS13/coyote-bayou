@@ -418,7 +418,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/side_waddle_time = 2
 
 	/// Button to switch from input bar to hotkey mode.
-	var/input_mode_hotkey = "Ctrl+Tab"
+	var/input_mode_hotkey = "Tab"
 
 /datum/preferences/New(client/C)
 	parent = C
