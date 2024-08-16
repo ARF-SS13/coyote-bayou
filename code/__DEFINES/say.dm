@@ -153,13 +153,11 @@
 	\n\
 	- @ moves your name to that position in emotes and subtles. \n\
 	\n\
-	- ! at the start of a radio comm to emote over the radio \n\
-
-	\n\
-	We have added the following emoticons to say, add them to the end of your 'say' messages for say verb variation \n\
-	:), :(, :D, ;D, :P, :O, :|, :/, :S, :*, :3, :>, :<, :C, :L, <3, :X, :#, :$,  \n\
-	:@, :^), :&, :!, :?, B^U, :B, :J, >:(, >:D, >:P, >:3, >:O, >:|, >:/, >:S,  \n\
-	"
+	- ! at the start of a radio comm to emote over the radio "
+	// \n
+	// We have added the following emoticons to say, add them to the end of your 'say' messages for say verb variation \n
+	// :), :(, :D, ;D, :P, :O, :|, :/, :S, :*, :3, :>, :<, :C, :L, <3, :X, :#, :$,  \n
+	// :@, :^), :&, :!, :?, B^U, :B, :J, >:(, >:D, >:P, >:3, >:O, >:|, >:/, >:S,  \n
 //Dan is the best, <3 ~TK
 //put space before the \ so it reads properly
 // use \ for readability, but one big line. \n for a new line. \n\ for a new line and readability.

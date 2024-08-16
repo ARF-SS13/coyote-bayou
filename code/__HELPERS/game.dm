@@ -506,8 +506,10 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	dingus:
 		for(var/client/C in GLOB.clients)
 			var/mob/M = C.mob
+			if(isnewplayer(M))
+				continue dingus // quit talkin to ghosts, unless ur an admeme
 			var/turf/viewer_turf = get_turf(M)
-			if(source_turf.z != viewer_turf.z)
+			if(source_turf.z != viewer_turf.z) // TODO: let people yell up stairs
 				continue dingus
 			var/westest = max(viewer_turf.x - 9, 1)
 			var/eastest = min(viewer_turf.x + 9, world.maxx)

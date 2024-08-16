@@ -11,6 +11,7 @@ import { createLogger } from '../logging';
 import { Box } from './Box';
 import { Icon } from './Icon';
 import { Tooltip } from './Tooltip';
+import { Textarea } from '../components';
 
 const logger = createLogger('Button');
 
@@ -36,6 +37,8 @@ export const Button = props => {
     children,
     onclick,
     onClick,
+    inputHeight,
+    inputWidth,
     ...rest
   } = props;
   const hasContent = !!(content || children);
@@ -305,3 +308,115 @@ export class ButtonInput extends Component {
 }
 
 Button.Input = ButtonInput;
+
+export class ButtonTextArea extends Component {
+  constructor() {
+    super();
+    this.inputRef = createRef();
+    this.state = {
+      inInput: false,
+    };
+  }
+
+  setInInput(inInput) {
+    this.setState({
+      inInput,
+    });
+    if (this.inputRef) {
+      const input = this.inputRef.current;
+      if (inInput) {
+        input.value = this.props.currentValue || "";
+        try {
+          input.focus();
+          input.select();
+        }
+        catch {}
+      }
+    }
+  }
+
+  commitResult(e) {
+    if (this.inputRef) {
+      const input = this.inputRef.current;
+      const hasValue = (input.value !== "");
+      if (hasValue) {
+        this.props.onCommit(e, input.value);
+        return;
+      } else {
+        if (!this.props.defaultValue) {
+          return;
+        }
+        this.props.onCommit(e, this.props.defaultValue);
+      }
+    }
+  }
+
+  render() {
+    const {
+      fluid,
+      content,
+      icon,
+      iconRotation,
+      iconSpin,
+      tooltip,
+      tooltipPosition,
+      color = 'default',
+      placeholder,
+      maxLength,
+      ...rest
+    } = this.props;
+
+    let buttonContent = (
+      <Box
+        className={classes([
+          'Button',
+          fluid && 'Button--fluid',
+          'Button--color--' + color,
+        ])}
+        {...rest}
+        onClick={() => this.setInInput(true)}>
+        {icon && (
+          <Icon name={icon} rotation={iconRotation} spin={iconSpin} />
+        )}
+        <div>
+          {content}
+        </div>
+        <Textarea
+          ref={this.inputRef}
+          onBlur={e => {
+            if (!this.state.inInput) {
+              return;
+            }
+            this.setInInput(false);
+            this.commitResult(e);
+          }}
+          onKeyDown={e => {
+            if (e.keyCode === KEY_ENTER) {
+              this.setInInput(false);
+              this.commitResult(e);
+              return;
+            }
+            if (e.keyCode === KEY_ESCAPE) {
+              this.setInInput(false);
+            }
+          }}
+        />
+      </Box>
+    );
+
+    if (tooltip) {
+      buttonContent = (
+        <Tooltip
+          content={tooltip}
+          position={tooltipPosition}
+        >
+          {buttonContent}
+        </Tooltip>
+      );
+    }
+
+    return buttonContent;
+  }
+}
+
+Button.TextArea = ButtonTextArea;

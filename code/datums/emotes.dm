@@ -3,6 +3,7 @@
 	var/key_third_person = "" //This will also call the emote
 	var/no_message = FALSE
 	var/message = "" //Message displayed when emote is used
+	var/original_message = "" //Original message before any changes
 	var/message_alien = "" //Message displayed if the user is a grown alien
 	var/message_larva = "" //Message displayed if the user is an alien larva
 	var/message_robot = "" //Message displayed if the user is a robot
@@ -17,6 +18,8 @@
 	var/list/mob_type_blacklist_typecache //Types that are NOT allowed to use that emote
 	var/list/mob_type_ignore_stat_typecache
 	var/stat_allowed = SOFT_CRIT
+	var/mommychat = TRUE
+	var/mommychat_partial = TRUE
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
 	/// Sound to play when emote is called.
@@ -89,14 +92,37 @@
 
 
 	msg = "<span class='emote'>[msg]</span>"
+	var/datum/rental_mommy/chat/mommy = (mommychat || mommychat_partial) && (user && user.client) && BuildMommy(user, msg)
 	if(!omit_left_name)
 		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags, hearing_distance = message_range)
+		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags, hearing_distance = message_range, data = list("mom" = mommy))
 	else
-		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags, vision_distance = message_range)
+		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags, vision_distance = message_range, data = list("mom" = mommy))
+	if(mommy)
+		mommy.checkin()
 
+// OI WHAT IF YE MUM WERE BUILT ON BA'REYS
+/datum/emote/proc/BuildMommy(mob/user, message)
+	if(!user || !user.client)
+		return
+	var/datum/rental_mommy/chat/mommy = SSrentaldatums.CheckoutMommy("chat_datums")
+	if(!mommy)
+		return
+	mommy.original_message = message
+	mommy.message = message
+	mommy.original_speakername = user.name
+	mommy.speakername = user.name
+	mommy.source = user
+	mommy.message_mode = null // it'll be set by the chat system
+	mommy.message_key = null // it'll be set by the chat system
+	mommy.is_emote = TRUE
+	mommy.partial = mommychat_partial
+	if(mommy.partial)
+		mommy.hide_name_n_verb = TRUE
+	mommy.furry_dating_sim = TRUE
+	return mommy
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.
 /mob/proc/emote_for_ghost_sight(message, admin_only, message_range)

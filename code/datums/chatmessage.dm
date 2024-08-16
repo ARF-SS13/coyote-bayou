@@ -257,6 +257,19 @@
 	if (originalSpeaker != src && speaker == src)
 		return
 
+	var/datum/preferences/P = extract_prefs(speaker)
+	if(P)
+		var/list/m_images = P.ProfilePics.Copy()
+		if(LAZYLEN(raw_message) && istext(raw_message))
+			var/list/splittify = splittext(raw_message, ":")
+			if(LAZYLEN(splittify) > 1)
+				math:
+					for(var/splut in splittify)
+						var/testpart = ":[splut]:"
+						for(var/list/moud in m_images)
+							if(moud["Mode"] == testpart)
+								raw_message = replacetext(raw_message, testpart, "") // remove the custom mode from the message
+								break math // mathematical
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"), null, data)

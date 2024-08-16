@@ -52,6 +52,7 @@
  * * probability - probability any character gets changed
  *
  * This proc is dangerously laggy, avoid it or die
+ * no its not lol
  */
 /proc/stars(phrase, probability = 25)
 	if(probability <= 0)
@@ -76,9 +77,15 @@
  *
  * This proc is not laggy at all, and is better in every way =3
  */
-/proc/dots(phrase, probability = 25)
+/proc/dots(phrase, probability = 25, distance, maxdistance)
 	if(probability <= 0)
 		return phrase
+	if(distance && maxdistance)
+		/// throw out probability and calculate a new one based on how far away the message is
+		/// from the source of the message (distance) and the maximum distance the message can be
+		/// heard from (maxdistance)
+		probability = 100 - (distance / maxdistance) * 100
+		probability = clamp(probability, 0, 90)
 	phrase = html_decode(phrase)
 	var/list/words = splittext(phrase, " ")
 	. = ""

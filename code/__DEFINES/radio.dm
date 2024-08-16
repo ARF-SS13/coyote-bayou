@@ -242,6 +242,7 @@
 #define MODE_ASK "ask"
 #define MODE_EXCLAIM "exclaim"
 #define MODE_YELL "yell"
+#define MODE_PROFILE_PIC "Profile / Examine" // if you rename this, Rename the string that appears in HornyChat.js
 
 GLOBAL_LIST_INIT(radiochannels, list(
 	RADIO_CHANNEL_COMMON = FREQ_COMMON,

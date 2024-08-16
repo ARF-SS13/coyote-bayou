@@ -175,6 +175,10 @@
 	return LINGHIVE_NONE
 
 /mob/proc/get_message_mode(message)
+	//regex to catch something like :bungus: or :skub: , alphanumeric, no spaces, no punctuation
+	var/regex/emoji_regex = regex(@":[a-zA-Z0-9]+:", "i")
+	if(emoji_regex.Find(message))
+		return // VisualChat (HornyChat, MommyChat, CoolChat, etc.) will handle the message mode
 	var/key = message[1]
 	if(key == "#")
 		return MODE_WHISPER

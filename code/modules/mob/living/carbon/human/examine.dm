@@ -96,8 +96,9 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 
 	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
 
-	if (profilePicture)
-		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
+	var/imagelink = SSchat.GetPicForMode(src, MODE_PROFILE_PIC)
+	if (imagelink)
+		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[imagelink]' width='125' height='auto' max-height='300'></a>"
 
 
 	var/vampDesc = ReturnVampExamine(user) // Vamps recognize the names of other vamps.

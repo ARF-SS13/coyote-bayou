@@ -261,6 +261,15 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	// return consumer.see_fancy_offscreen_runechat // kinda vital here
 
 
+/datum/prefcheck/see_horny_furry_stuff
+	index = SHOW_ME_HORNY_FURRIES
+
+/datum/prefcheck/see_horny_furry_stuff/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_SEE_COOLCHAT) // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
+
 
 
 

@@ -150,6 +150,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/chat_on_map = TRUE
 	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
 	var/see_chat_non_mob = TRUE
+	var/see_furry_dating_sim = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
 	///Whether to apply mobs' runechat color to the chat log as well
@@ -246,9 +247,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this  /      V      \/
-	/// which quester UID we're using      |       |       |
-	var/quester_uid //                     (_______|_______)
+	var/kisser = KISS_DEFAULT // Kiss this  /         V         \.
+	/// which quester UID we're using      (          |          ).
+	var/quester_uid //                    (__________) (__________)
 	var/dm_open = TRUE
 	var/needs_a_friend = FALSE // for the quest
 	var/list/blocked_from_dms = list() // list of quids
@@ -297,6 +298,50 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_pfphost = ""
 	var/creature_body_size = 1
 	var/creature_fuzzy = FALSE
+
+	var/list/ProfilePics = list(
+		list(
+			"Mode" = MODE_PROFILE_PIC,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_SAY,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_ASK,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_SING,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_EXCLAIM,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_YELL,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_WHISPER,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = ":example:",
+			"Host" = "",
+			"URL" = "",
+		),
+	)
+	var/list/mommychat_settings = list() // will be set by SSchat (goodness me)
 
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
@@ -538,6 +583,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 
+			dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
 
@@ -1012,6 +1058,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			dat += "<h3>Flavor Text</h3>"
 			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
+			dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
 			if(length(features["flavor_text"]) <= 40)
 				if(!length(features["flavor_text"]))
 					dat += "\[...\]"
@@ -3739,6 +3786,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_toggle_color = input(user, "Choose your HUD toggle flash color:", "Game Preference",hud_toggle_color) as color|null
 					if(new_toggle_color)
 						hud_toggle_color = new_toggle_color
+
+				if("setup_hornychat")
+					SSchat.HornyPreferences(user)
 
 				if("gender")
 					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) as null|anything in list(MALE,FEMALE,"nonbinary","object")
