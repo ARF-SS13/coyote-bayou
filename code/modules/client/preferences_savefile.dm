@@ -296,7 +296,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ooccolor                = sanitize_ooccolor(sanitize_hexcolor(ooccolor, 6, 1, initial(ooccolor)))
 	lastchangelog           = sanitize_text(lastchangelog, initial(lastchangelog))
 	genital_whitelist       = sanitize_text(genital_whitelist, initial(genital_whitelist))
-	input_mode_hotkey       = sanitize_text(input_mode_hotkey, initial(input_mode_hotkey))
+	input_mode_hotkey       = "Tab" // *puts cup under disk drive* Tab, please! //sanitize_text(input_mode_hotkey, initial(input_mode_hotkey))
 	UI_style                = sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
 	hotkeys                 = sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
 	chat_on_map             = sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
