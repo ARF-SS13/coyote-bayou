@@ -125,6 +125,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				pda_skin = "Random!"
 				WRITE_FILE(S["pda_skin"], pda_skin)
 				current_version |= PMC_MY_PDA_FLIES_IN_FULL_COLOR
+			if(PMC_MOMMYCHAT_IS_COOL) // i broke it =3
+				pda_skin = "Random!"
+				WRITE_FILE(S["pda_skin"], pda_skin)
+				current_version |= PMC_MY_PDA_FLIES_IN_FULL_COLOR
 			if(PMC_FENNY_FINISHED_124_QUESTS) // i broke it =3
 				current_version |= PMC_FENNY_FINISHED_124_QUESTS
 				var/list/huge_quest_list = list()
