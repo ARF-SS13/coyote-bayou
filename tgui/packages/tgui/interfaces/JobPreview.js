@@ -9,6 +9,7 @@ import {
   Button,
   Tooltip,
   Section,
+  Collapsible,
   LabeledList,
   Stack,
   Flex,
@@ -157,6 +158,7 @@ const JobMenu = (props, context) => {
       title="Pick A Role!"
       height="100%"
       // minWidth={0}
+      p={1}
       minHeight="100%"
       fill
       scrollable
@@ -207,6 +209,111 @@ const CatJobList = (props, context) => {
   const MenuState = Object.keys(MyJobject).length === 0 ? MAIN : JDESC;
   const Duplex = MenuState === MAIN && CatJobs.length > 7 ? true : false;
 
+  let MoreVisibleCatColor = CatColor;
+  // if the color (a 6 digit hexcolor with #) is too close to #0b4b26,
+  // brighten or darken it so it's more visible
+  const BadColorArray = [
+    parseInt("#0b4b26".slice(1, 3), 16),
+    parseInt("#0b4b26".slice(3, 5), 16),
+    parseInt("#0b4b26".slice(5, 7), 16),
+  ];
+  // first break the color into its RGB components
+  const CatColorArray = [
+    parseInt(CatColor.slice(1, 3), 16),
+    parseInt(CatColor.slice(3, 5), 16),
+    parseInt(CatColor.slice(5, 7), 16),
+  ];
+  // then check if the color is too close to #0b4b26
+  // if it is, brighten or darken it depending on which side it's on
+  if (Math.abs(CatColorArray[0] - BadColorArray[0]) < 50
+    && Math.abs(CatColorArray[1] - BadColorArray[1]) < 50
+    && Math.abs(CatColorArray[2] - BadColorArray[2]) < 50) {
+    // if the color is too dark, brighten it
+    if (CatColorArray[0] < 128
+      && CatColorArray[1] < 128
+      && CatColorArray[2] < 128) {
+      MoreVisibleCatColor = "#"
+        + CatColorArray.map((color) => {
+          return Math.min(
+            Math.max(
+              color + 85,
+              0
+            ),
+            255
+          ).toString(16).padStart(2, "0");
+        }).join("");
+    } else {
+      // if the color is too light, darken it
+      MoreVisibleCatColor = "#"
+        + CatColorArray.map((color) => {
+          return Math.min(
+            Math.max(
+              color - 85,
+              0
+            ),
+            255
+          ).toString(16).padStart(2, "0");
+        }).join("");
+    }
+  }
+
+  // gets the average color between the category color and all the job colors
+  // and returns it as a hex code
+  // this is used to make the category boxes transparent
+  // but still
+  // and also makes sure each of the numbers is something that would be
+  // able to be used in a hex color
+  const AllColorsUsed = [CatColor];
+  CatJobs.forEach((Job) => {
+    // first check if this color is already in the list
+    if (!AllColorsUsed.includes(Job.JobColor)) {
+      AllColorsUsed.push(Job.JobColor);
+    }
+  });
+  const AvgColor = AllColorsUsed.reduce((acc, color) => {
+    const ColorArray = [
+      parseInt(color.slice(1, 3), 16),
+      parseInt(color.slice(3, 5), 16),
+      parseInt(color.slice(5, 7), 16),
+    ];
+    return [
+      acc[0] + ColorArray[0],
+      acc[1] + ColorArray[1],
+      acc[2] + ColorArray[2],
+    ];
+  }, [0, 0, 0]).map((color) => {
+    return Math.min(
+      Math.max(
+        Math.round(color / (AllColorsUsed.length)),
+        0
+      ),
+      255
+    ).toString(16).padStart(2, "0");
+  });
+  const AvgColorHex = "#" + AvgColor.join("");
+
+  // takes in a 6 digit hex code color (with the #) (so, like #FF0000)
+  // darkens it by 50% and returns it as an rgba color array
+  // with the alpha value set to 0.5
+  // this is used to make the category boxes transparent
+  // but still
+  // And also makes sure each of the numbers is something that would be
+  // able to be used in an rgba color
+  const NewCatColorArray = [];
+  for (let i = 1; i < 7; i += 2) {
+    NewCatColorArray.push(
+      Math.min(
+        Math.max(
+          parseInt(AvgColorHex.slice(i, i + 2), 16) - 85,
+          0
+        ),
+        255
+      )
+    );
+  }
+  NewCatColorArray.push(0.5);
+
+
   return (
     <Box
       as="fieldset"
@@ -214,7 +321,7 @@ const CatJobList = (props, context) => {
       ml="4px"
       p="4px"
       height="100%"
-      backgroundColor="rgba(0, 0, 0, 0.5)"
+      backgroundColor={`rgba(${CatColorArray.join(", ")})`}
       style={{
         "border": "2px solid " + CatColor,
         "borderRadius": "5px",
@@ -225,7 +332,7 @@ const CatJobList = (props, context) => {
           width="100%"
           textAlign="center"
           as="h3"
-          color={CatColor}>
+          color={MoreVisibleCatColor}>
           {CatTitle}
         </Box>
       </Box>
@@ -420,6 +527,7 @@ const JobDescription = (props, context) => {
       title={Title}
       scrollable
       width="100%"
+      p={1}
       buttons={(
         <JoinButton Job={MyJobject} />
       )}>
@@ -606,39 +714,52 @@ const JobDescription = (props, context) => {
         ? (
           <Box>
             <Section
-              title={"Faction: " + FactionName}>
-              {FactionShortDescription && FactionShortDescription.length > 0
-                ? (
-                  <CoolBox text={FactionShortDescription} />
-                ) : null}
-              {FactionLeader && FactionLeader.length > 0
-                ? (
-                  <CoolBox text={FactionLeader} />
-                ) : null}
-              {FactionLore && FactionLore.length > 0
-                ? (
-                  <CoolBox text={FactionLore} />
-                ) : null}
-              {FactionVibe && FactionVibe.length > 0
-                ? (
-                  <CoolBox text={FactionVibe} />
-                ) : null}
-              {FactionGoals && FactionGoals.length > 0
-                ? (
-                  <CoolBox text={FactionGoals} />
-                ) : null}
-              {FactionRivals && FactionRivals.length > 0
-                ? (
-                  <CoolBox text={FactionRivals} />
-                ) : null}
-              {FactionAllies && FactionAllies.length > 0
-                ? (
-                  <CoolBox text={FactionAllies} />
-                ) : null}
-              {FactionPointsOfContention && FactionPointsOfContention.length > 0
-                ? (
-                  <CoolBox text={FactionPointsOfContention} />
-                ) : null}
+              title=""
+              width="100%">
+              <Collapsible
+                title={"Faction: " + FactionName}
+                color={JobColor}>
+                <Section>
+                  {FactionShortDescription && FactionShortDescription.length > 0
+                    ? (
+                      <Section
+                        title="Overview">
+                        <CoolBox text={FactionShortDescription} />
+                      </Section>
+                    ) : null}
+                  {FactionLeader && FactionLeader.length > 0
+                    ? (
+                      <Section
+                        title="Leader">
+                        <CoolBox text={FactionLeader} />
+                      </Section>
+                    ) : null}
+                  {FactionLore && FactionLore.length > 0
+                    ? (
+                      <CoolBox text={FactionLore} />
+                    ) : null}
+                  {FactionVibe && FactionVibe.length > 0
+                    ? (
+                      <CoolBox text={FactionVibe} />
+                    ) : null}
+                  {FactionGoals && FactionGoals.length > 0
+                    ? (
+                      <CoolBox text={FactionGoals} />
+                    ) : null}
+                  {FactionRivals && FactionRivals.length > 0
+                    ? (
+                      <CoolBox text={FactionRivals} />
+                    ) : null}
+                  {FactionAllies && FactionAllies.length > 0
+                    ? (
+                      <CoolBox text={FactionAllies} />
+                    ) : null}
+                  {FactionPointsOfContention && FactionPointsOfContention.length > 0
+                    ? (
+                      <CoolBox text={FactionPointsOfContention} />
+                    ) : null}
+                </Section>
+              </Collapsible>
             </Section>
           </Box>
         ) : null}
