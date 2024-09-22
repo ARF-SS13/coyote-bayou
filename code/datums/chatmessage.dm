@@ -42,7 +42,7 @@
  * * extra_classes - Extra classes to apply to the span that holds the text
  * * lifespan - The lifespan of the message in deciseconds
  */
-/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN, list/data = list())
+/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN, list/data = list(), datum/rental_mommy/chat/mommy = null)
 	. = ..()
 	if (!istype(target))
 		CRASH("Invalid target given for chatmessage")
@@ -50,9 +50,15 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
-	alt_display = data["display_turf"] || null
-	if((get_dist(owner, (alt_display || target)) > 6 || data["is_far"]) && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
-		offscreen = TRUE
+	if(CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT))
+		if(mommy)
+			if(mommy.display_turf && mommy.display_turf != target)
+				alt_display = mommy.display_turf
+				offscreen = TRUE
+		else
+			alt_display = data["display_turf"] || null
+			if((get_dist(owner, (alt_display || target)) > 6 || data["is_far"])) // SD screens are 7 radius, but the UI covers a bit of that
+				offscreen = TRUE
 	eavesdrop = data["is_eaves"] || FALSE
 	INVOKE_ASYNC(src,PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
 
@@ -152,11 +158,11 @@
 	// Translate any existing messages upwards, apply exponential decay factors to timers
 	var/atom/remembered_location = alt_display || target
 	message_loc = alt_display || target
-	if(offscreen) // if its offscreen, put it somewhere they can see it
+	if(offscreen && get_dist(owner, target) > 6) // SD screens are 7 radius, but the UI covers a bit of that
 		var/turf/ownerturf = get_turf(owner)
 		var/turf/targetturf = get_turf(message_loc)
-		var/westest = max(ownerturf.x - 9, 1)
-		var/eastest = min(ownerturf.x + 9, world.maxx)
+		var/westest = max(ownerturf.x - 7, 1)
+		var/eastest = min(ownerturf.x + 7, world.maxx)
 		var/northest = max(ownerturf.y - 7, 1)
 		var/southest = min(ownerturf.y + 6, world.maxy)
 		var/list/turfe = getline(targetturf, ownerturf)
@@ -211,9 +217,14 @@
 	message.maptext = complete_text
 	var/alphatomakeit = 255
 	if(eavesdrop)
-		message.alpha /= 2
+		alphatomakeit /= 2
 	if(offscreen)
-		message.alpha /= 2
+		alphatomakeit /= 2
+	if(SPAN_SMALL in extra_classes)
+		alphatomakeit /= 2
+	if(SPAN_SMALLER in extra_classes)
+		alphatomakeit /= 2
+	
 		// message.pixel_x = rand(-40, 40)
 		// message.pixel_y = rand(-40, 40)
 
@@ -225,6 +236,8 @@
 	// Prepare for destruction
 	scheduled_destruction = world.time + (lifespan - CHAT_MESSAGE_EOL_FADE)
 	addtimer(CALLBACK(src,PROC_REF(end_of_life)), lifespan - CHAT_MESSAGE_EOL_FADE, TIMER_UNIQUE|TIMER_OVERRIDE)
+	if(offscreen)
+		new /obj/effect/buildmode_line(owner.client, get_turf(owner), message_loc, "I'm a line!", lifespan - CHAT_MESSAGE_EOL_FADE)
 
 /**
  * Applies final animations to overlay CHAT_MESSAGE_EOL_FADE deciseconds prior to message deletion
@@ -242,7 +255,7 @@
  * * raw_message - The text content of the message
  * * spans - Additional classes to be added to the message
  */
-/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE, list/data = list())
+/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE, list/data = list(), datum/rental_mommy/chat/mommy = null)
 	// Ensure the list we are using, if present, is a copy so we don't modify the list provided to us
 	spans = spans ? spans.Copy() : list()
 
@@ -272,9 +285,9 @@
 								break math // mathematical
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
-		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"), null, data)
+		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"), null, data, mommy)
 	else
-		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans, null, data)
+		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans, null, data, mommy)
 
 
 // Tweak these defines to change the available color ranges

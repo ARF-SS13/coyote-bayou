@@ -430,10 +430,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			destination = get_step(destination, WEST)
 
 		abstract_move(destination)//Get out of closets and such as a ghost
-<<<<<<< HEAD
-=======
 	slam_dunk_to_main_menu()
->>>>>>> 5c90758cdc0 (chore: Update chat display plane to prevent messages from being hidden by FoV)
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"

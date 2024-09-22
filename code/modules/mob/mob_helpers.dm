@@ -93,7 +93,10 @@
 	var/has_multiple_words = LAZYLEN(words) > 1
 	for(var/word in words)
 		if(prob(probability))
-			. += "..."
+			for(var/i in 1 to min(3, length(word)))
+				. += "."
+			// if(has_multiple_words && indes < LAZYLEN(words))
+			// 	. += " "
 		else
 			if(has_multiple_words && indes < LAZYLEN(words))
 				. += "[word] "

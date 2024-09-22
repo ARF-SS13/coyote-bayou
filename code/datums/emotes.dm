@@ -100,7 +100,7 @@
 		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags, hearing_distance = message_range, data = list("mom" = mommy))
 	else
 		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags, vision_distance = message_range, data = list("mom" = mommy))
-	if(mommy)
+	if(mommy && !mommy.available)
 		mommy.checkin()
 
 // OI WHAT IF YE MUM WERE BUILT ON BA'REYS

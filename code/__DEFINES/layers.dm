@@ -123,6 +123,7 @@
 
 ///Normal 1 per turf dynamic lighting objects
 #define LIGHTING_PLANE 100
+#define RUNECHAT_PLANE (LIGHTING_PLANE + 1) // GOSH DARN IT LIGHTING, STOP EATING MY CHAT THINGS!
 
 #define RAD_TEXT_LAYER 15.1
 

@@ -222,6 +222,8 @@
 				mom3.display_turf = null
 				mom3.is_eavesdropping = FALSE
 				create_chat_message(speaker, message_language, raw_message, spans, NONE, null, mom3)
+				if(!mom3.available)
+					mom3.checkin()
 			create_chat_message(speaker, message_language, raw_message, spans, NONE, null, momchat)
 		else
 			data["message_mode"] = message_mode
@@ -237,7 +239,7 @@
 	if(just_chat)
 		return
 	// Recompose message for AI hrefs, language incomprehension.
-	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode, FALSE, source, data)
+	message = compose_message(speaker, message_language, momchat.original_message, radio_freq, spans, message_mode, FALSE, source, data)
 	var/client/C = client
 	if(C.prefs.color_chat_log)
 		var/base_chat_color = speaker.get_chat_color()
@@ -296,8 +298,8 @@
 	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
 	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
 	var/list/visible_close = CC.visible_close.Copy()
-	var/list/visible_far = CC.visible_far.Copy()
-	var/list/hidden_close_pathable = CC.hidden_close_pathable.Copy()
+	// var/list/visible_far = CC.visible_far.Copy()
+	var/list/hidden_pathable = CC.hidden_pathable.Copy()
 	CC.putback()
 
 	var/list/the_dead = list()
@@ -384,6 +386,8 @@
 		mom3.runechat_mode = "hidden_pathable"
 		mhp.Hear(msg_rerendered, src, message_language, msg_rerendered, null, spans, message_mode, source, just_chat, list("mommy" = mom3))
 		sblistening |= mhp.client
+		if(!mom3.available)
+			mom3.checkin()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 

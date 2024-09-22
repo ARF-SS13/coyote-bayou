@@ -61,6 +61,7 @@ SUBSYSTEM_DEF(chat)
 	init_order = INIT_ORDER_CHAT
 
 	var/forbid_ghosting = FALSE
+	var/chat_display_plane = RUNECHAT_PLANE
 	/* 
 	** Base 
 	 */
@@ -162,6 +163,7 @@ SUBSYSTEM_DEF(chat)
 	var/img_size = 125
 	var/headspace = 4
 	var/debug_chud = FALSE
+	var/debug_use_cool_los_proc = FALSE
 	var/list/colorable_keys = list(
 		"TopBoxGradient1",
 		"TopBoxGradient2",
@@ -216,7 +218,7 @@ SUBSYSTEM_DEF(chat)
 	// build_stock_image_packs()
 	. = ..()
 	spawn(5 SECONDS)
-		to_chat(world, span_boldnotice("Initialized [LAZYLEN(emoticon_cache)] emoticons! ;D"))
+		to_chat(world, span_boldnotice("Initialized [LAZYLEN(emoticon_cache)] (non-functional) emoticons! ;D"))
 		to_chat(world, span_boldnotice("Initialized [LAZYLEN(flirts)] flirty messages! <3"))
 		to_chat(world, span_boldnotice("VisualChat engaged! Have a very visual day! <3"))
 		// to_chat(world, span_boldnotice("Initialized [LAZYLEN(stock_image_packs)] stock image packs! 'w'"))
