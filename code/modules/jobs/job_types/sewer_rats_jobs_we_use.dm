@@ -24,7 +24,7 @@
 	exp_type = EXP_TYPE_LIVING
 
 /datum/job/tunnelrats/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
-	SSquirks.AddQuirkToMob(spawner, /datum/quirk/ratmaster, TRUE, TRUE)
+	// SSquirks.AddQuirkToMob(spawner, /datum/quirk/ratmaster, TRUE, TRUE)
 	. = ..()
 
 ////////////////////////

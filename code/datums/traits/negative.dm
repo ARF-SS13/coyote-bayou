@@ -22,6 +22,7 @@
 		if(H.blood_volume > BLOOD_VOLUME_SYMPTOMS_DEBILITATING) // If blood volume is higher than (30%), do stuff. You can survive with this blood level but it sucks.
 			H.blood_volume -= 0.275	//WARNING! PR #843 HAS DONE A LOT OF STUFF TO BLOOD SO CHECK IT BEFORE CHANGING THIS ! ! You regenerate 2.5 blood if you're fed.
 
+
 /datum/quirk/depression
 	name = "Mood - Depressive" //mood dude
 	desc = "You sometimes just hate life, and get a mood debuff for it."
@@ -31,8 +32,8 @@
 	mechanics = "Every tick you have a chance to get hit with a pretty big negative moodlet. Yeah. Depression kind of sucks, who'da'thunk'it?"
 	conflicts = list(
 		/datum/quirk/friendly,
-		/datum/quirk/jolly,
-		/datum/quirk/optimist,
+		// /datum/quirk/jolly,
+		// /datum/quirk/optimist,
 		/datum/quirk/pessimist,
 		/datum/quirk/apathetic,
 	)
@@ -54,8 +55,8 @@
 	mechanics = "Every tick you have a chance to be hit with a negative moodlet. Yeah. It sucks being a downer all the time."
 	conflicts = list(
 		/datum/quirk/friendly,
-		/datum/quirk/jolly,
-		/datum/quirk/optimist,
+		// /datum/quirk/jolly,
+		// /datum/quirk/optimist,
 		/datum/quirk/depression,
 		/datum/quirk/apathetic,
 )
@@ -374,8 +375,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Health Quirks"
 	mechanics = "Your legs just flat out don't work."
 	conflicts = list(
-		/datum/quirk/soft_yards,
-		/datum/quirk/hard_yards,
+		// /datum/quirk/soft_yards,
+		// /datum/quirk/hard_yards,
 		/datum/quirk/slower,
 		/datum/quirk/slow,
 	)
@@ -420,7 +421,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Ranged Quirks"
 	mechanics = "Your accuracy degrades like crazy when moving, firing, or doing much of anything."
 	conflicts = list(
-		/datum/quirk/deadeye,
+		// /datum/quirk/deadeye,
 		/datum/quirk/straightshooter
 	)
 	mob_trait = TRAIT_POOR_AIM
@@ -959,7 +960,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/eye, TRAUMA_RESILIENCE_ABSOLUTE)
 
-
+/*
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
@@ -997,6 +998,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_danger("There's a lot on your mind right now.")
 	lose_text = span_notice("Your mind finally feels calm.")
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
+*/
 
 /datum/quirk/blindness
 	name = "Blind"
@@ -1093,6 +1095,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = span_notice("Your fingers feel normal again.")
 	human_only = FALSE
 
+/*
 /datum/quirk/illiterate
 	name = "Illiterate"
 	desc = "You can't read nor write, plain and simple."
@@ -1105,6 +1108,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_ILLITERATE
 	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
+*/
 
 /datum/quirk/flimsy
 	name = "Health - Flimsy"
@@ -1316,8 +1320,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mechanics = "Your melee attacks do 5 less damage."
 	conflicts = list(
 		/datum/quirk/nonviolent,
-		/datum/quirk/bigleagues,
-		/datum/quirk/littleleagues,
+		// /datum/quirk/bigleagues,
+		// /datum/quirk/littleleagues,
 		/datum/quirk/wimpy,
 	)
 	mob_trait = TRAIT_GENTLE
@@ -1334,8 +1338,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mechanics = "Your melee attacks do 10 less damage."
 	conflicts = list(
 		/datum/quirk/nonviolent,
-		/datum/quirk/bigleagues,
-		/datum/quirk/littleleagues,
+		// /datum/quirk/bigleagues,
+		// /datum/quirk/littleleagues,
 		/datum/quirk/gentle,
 	)
 	mob_trait = TRAIT_WIMPY
@@ -1351,8 +1355,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Movement Quirks"
 	mechanics = "Slows you down a fair deal if you're going off roads and normal paths."
 	conflicts = list(
-		/datum/quirk/soft_yards,
-		/datum/quirk/hard_yards,
+		// /datum/quirk/soft_yards,
+		// /datum/quirk/hard_yards,
 		/datum/quirk/slower,
 		/datum/quirk/paraplegic,
 	)
@@ -1368,8 +1372,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Movement Quirks"
 	mechanics = "Slows you down a lot if you go off roads and normal paths."
 	conflicts = list(
-		/datum/quirk/soft_yards,
-		/datum/quirk/hard_yards,
+		// /datum/quirk/soft_yards,
+		// /datum/quirk/hard_yards,
 		/datum/quirk/slow,
 		/datum/quirk/paraplegic,
 	)
@@ -1546,6 +1550,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	medical_record_text = "Patient has an exceptionally weak muscolar system."
 	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"
 
+/*
 /datum/quirk/bruteweak
 	name = "Brute Weakness, Minor"
 	desc = "You're weaker to physical trauma than others."
@@ -1687,6 +1692,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+*/
 
 /datum/quirk/radweakmajor
 	name = "Radiation Weakness, Major"
@@ -1695,8 +1701,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Radiation Quirks"
 	mechanics = "You absorb 100% more radiation."
 	conflicts = list(
-		/datum/quirk/radimmunesorta,
-		/datum/quirk/radimmuneish,
+		// /datum/quirk/radimmunesorta,
+		// /datum/quirk/radimmuneish,
 		/datum/quirk/radweak
 	)
 	mob_trait = TRAIT_100_RAD_WEAK
@@ -1709,13 +1715,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Radiation Quirks"
 	mechanics = "You absorb 50% more radiation"
 	conflicts = list(
-		/datum/quirk/radimmunesorta,
-		/datum/quirk/radimmuneish,
+		// /datum/quirk/radimmunesorta,
+		// /datum/quirk/radimmuneish,
 		/datum/quirk/radweakmajor
 	)
 	mob_trait = TRAIT_50_RAD_WEAK
 	locked =  FALSE
 
+/*
 /datum/quirk/toxinlover
 	name = "Toxin Lover"
 	desc = "Your biology is hyperadapted to toxins to the point where you process them the opposite of any normal organic, \
@@ -1730,3 +1737,4 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an exact inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages.")
 	lose_text = span_notice("You are now operating under normal toxin damage systems.")
 	locked =  TRUE
+*/
