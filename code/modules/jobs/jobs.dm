@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Texarkana Ranger",
 	"Adventurer"
 ))
-
+/*
 //Den Citizenship
 GLOBAL_LIST_INIT(den_positions, list(
 	"Den Citizen",
@@ -197,7 +197,7 @@ GLOBAL_LIST_INIT(ashdown_positions, list(
 	"Ashdown Artiste",
 	"Ashdown Silvereye",
 ))
-
+*/
 //Gar Citizenship
 //GLOBAL_LIST_INIT(gar_positions, list(
 //	"Garland Citizen",
@@ -276,7 +276,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Wastelander",
 	"Character Testing Area"
 ))
-
+/*
 GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Prostitute",
 	"Redwater Outrider",
@@ -299,6 +299,7 @@ GLOBAL_LIST_INIT(tunnelrats_positions, list(
 	"Tunnel Rats Tart", //sex worker
 	"Tunnel Rats Digger", //miner
 ))
+*/
 
 GLOBAL_LIST_INIT(khan_positions, list(
 	"Noyan",
@@ -406,14 +407,14 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#33FF22"),
-	"Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
-	"Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
-	"Den" = list("jobs" = den_positions, "color" = "#884488"),
+	// "Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#33FF22"),
+	// "Redwater" = list("jobs" = redwater_positions, "color" = "#FF0000"),
+	// "Ashdown" = list("jobs" = ashdown_positions, "color" = "#334488"),
+	// "Den" = list("jobs" = den_positions, "color" = "#884488"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_LIVING = list("titles" = tunnelrats_positions | redwater_positions | ashdown_positions | den_positions), // all living mobs
+	// EXP_TYPE_LIVING = list("titles" = tunnelrats_positions | redwater_positions | ashdown_positions | den_positions), // all living mobs
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	EXP_TYPE_COMMAND = list("titles" = command_positions),
 	EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
