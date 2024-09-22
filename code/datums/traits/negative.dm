@@ -1722,11 +1722,10 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_50_RAD_WEAK
 	locked =  FALSE
 
-/*
 /datum/quirk/toxinlover
-	name = "Toxin Lover"
+	name = "Toxin Inversion"
 	desc = "Your biology is hyperadapted to toxins to the point where you process them the opposite of any normal organic, \
-		however most healing magic and chemicals will quickly kill you or drain your blood. This is not a system reccomended for magic users."
+		Magic will actively harm you, and taking this as a syntheric forfiets your right to life(Dont). This quirk is not for the faint of heart as you will usually end up RR'ed if dead to toxins."
 	value = -34
 	category = "Health Quirks"
 	mechanics = "You heal and regenerate toxin damage from toxic chemicals, but are harmed by anything that would normally fix toxin damage. With the existance of mages and the hunting horn, this is a burden to bare."
@@ -1734,7 +1733,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 	)
 	mob_trait = TRAIT_TOXINLOVER
-	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an exact inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages.")
+	gain_text = span_boldannounce("You have opted to take the toxinlover system of damage, your toxin damage will be an inverse of normal, with most hazardous chemicals being beneficial, while healing medicine and magic quickly killing you. Be careful around mages and charcoal.")
 	lose_text = span_notice("You are now operating under normal toxin damage systems.")
-	locked =  TRUE
-*/
+	locked =  FALSE
