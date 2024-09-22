@@ -35234,6 +35234,19 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
+"tbc" = (
+/obj/structure/decoration/vent{
+	icon = 'icons/obj/structures.dmi';
+	icon_state = "manhole_closed"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "S2"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "tbk" = (
 /mob/living/simple_animal/hostile/retaliate/aethergiest{
 	color = "#0099ff";
@@ -78066,7 +78079,7 @@ uWY
 tLM
 uWY
 mLI
-cJp
+tbc
 uWY
 uWY
 tLM

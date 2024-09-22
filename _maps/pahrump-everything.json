@@ -4,14 +4,6 @@
 	"map_file": [
 		"Dungeons.dmm",
 		"Texarkana_underground.dmm",
-		"Nash_and_Texarkana.dmm",
-		"Nash_and_Texarkana-Upper.dmm",
-		"Nash_and_Texarkana-Upper-2.dmm",
-		"Redwater.dmm",
-		"Redwater-Upper.dmm",
-		"Ashdown.dmm",
-		"Ashdown-Upper.dmm",
-		"Garland-City.dmm",
 		"Newboston.dmm",
 		"Newboston-Upper.dmm"
 	],
@@ -42,124 +34,9 @@
 			"No Parallax": true,
 			"Linkage" : "Cross",
 			"Name": "Lower Yuma",
-			"Force X": 2,
-			"Force Y": 2,
-			"Force Z": 0
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Name": "Yuma",
-			"Force X": 2,
-			"Force Y": 2,
-			"Force Z": 1
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/transparent/openspace",
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Above": true,
-			"Name": "Yuma - Upper",
-			"Force X": 2,
-			"Force Y": 2,
-			"Force Z": 2
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/transparent/openspace",
-			"Down": -1,
-			"Linkage" : "Cross",
-			"No Parallax": true,
-			"Above": true,
-			"Name": "Yuma - Second Upper boogaloo 2",
-			"Force X": 2,
-			"Force Y": 2,
-			"Force Z": 3
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Force South": 1,
-			"Name": "Rock Springs",
-			"Force X": 2,
+			"Force X": 1,
 			"Force Y": 1,
-			"Force Z": 1
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/transparent/openspace",
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Above": true,
-			"Name": "Redwater Upper",
-			"Force X": 2,
-			"Force Y": 1,
-			"Force Z": 2
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Force North": 1,
-			"Name": "Red River",
-			"Force X": 2,
-			"Force Y": 3,
-			"Force Z": 1
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Force North": 1,
-			"Name": "Red River",
-			"Force X": 2,
-			"Force Y": 3,
-			"Force Z": 2
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Force East": 1,
-			"Name": "Garland City",
-			"Force X": 3,
-			"Force Y": 2,
-			"Force Z": 1
+			"Force Z": -1
 		},
 
 		{
@@ -173,7 +50,7 @@
 			"Force West": 1,
 			"Name": "New Boston",
 			"Force X": 1,
-			"Force Y": 2,
+			"Force Y": 1,
 			"Force Z": 1
 		},
 
@@ -186,7 +63,7 @@
 			"Above": true,
 			"Name": "New Boston - Upper",
 			"Force X": 1,
-			"Force Y": 2,
+			"Force Y": 1,
 			"Force Z": 2
 		}
 	],
