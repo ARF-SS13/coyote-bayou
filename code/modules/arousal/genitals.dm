@@ -597,7 +597,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 				continue
 			/// this SHOULD(tm) make arms show up over butts from the front -- currently broken, love Lagg
 			var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
-			var/mutable_appearance/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
+			var/image/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
 			var/image/gross_image = image(grundle_out ? grundle_out : accessory_icon, src, genital_state, layer = -layer_to_put_it) // mutable appearances just... dont work for client images. rip performance
 
 			if(do_center)
