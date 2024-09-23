@@ -39,7 +39,7 @@
 						ZTRAIT_DOWN = -1,
 						ZTRAIT_NOPARALLAX = 1,
 						ZTRAIT_LINKAGE = CROSSLINKED,
-						Z_FORCE_X = 2,
+						Z_FORCE_X = 1,
 						Z_FORCE_Y = 2,
 						Z_FORCE_Z = 0
 						),
