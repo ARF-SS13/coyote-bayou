@@ -14455,10 +14455,13 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building/abandoned)
 "hRg" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Newb Oston Gaming 3"
+/obj/docking_port/stationary{
+	area_type = /area/f13/wasteland;
+	dir = 1;
+	height = 6;
+	id = "emergency_home";
+	name = "BoxStation emergency evac bay";
+	width = 25
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -47434,7 +47437,7 @@ bam
 tPQ
 tPQ
 bam
-hRg
+tPQ
 tPQ
 aGs
 tPQ
@@ -49231,7 +49234,7 @@ aGs
 tPQ
 bam
 tPQ
-hRg
+tPQ
 bam
 tPQ
 tPQ
@@ -51289,7 +51292,7 @@ bam
 tPQ
 tPQ
 bam
-tPQ
+hRg
 eEp
 qee
 qee
