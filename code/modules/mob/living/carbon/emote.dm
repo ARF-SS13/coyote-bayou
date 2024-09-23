@@ -10,7 +10,7 @@
 	message = "blinks."
 	sound = 'sound/effects/blink.ogg'
 
-/*
+
 /datum/emote/living/carbon/hddspinup
 	key = "bootup"
 	key_third_person = "whirrs up their on board memory."
@@ -24,7 +24,7 @@
 	message = "pings!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
-*/
+
 
 /datum/emote/living/carbon/rpurr
 	key = "rpurr"
@@ -752,12 +752,12 @@
 	key = "blank"
 	message = "looks like they have no thoughts in their head."
 
-/*
+
 /datum/emote/living/carbon/snunch
 	key = "snunch"
 	message = "is lunching like a snake."
 //hahadorks
-*/
+
 
 /datum/emote/living/carbon/powerpose
 	key = "powerpose"

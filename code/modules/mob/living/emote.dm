@@ -738,7 +738,6 @@
 
 	to_chat(user, message)
 
-/* Fortuna edit: beep disabled
 /datum/emote/beep
 	key = "beep"
 	key_third_person = "beeps"
@@ -746,7 +745,7 @@
 	message_param = "beeps at %t."
 	sound = 'sound/machines/twobeep.ogg'
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/living/carbon/human)
-*/
+
 
 /datum/emote/living/slap
 	key = "slap"
@@ -848,6 +847,14 @@
 		var/mob/living/carbon/C = user
 		if(. && isliving(user))
 			pick(playsound(C, 'sound/f13effects/sunsetsounds/baa.ogg', 50, 1),playsound(C, 'sound/f13effects/sunsetsounds/baa2.ogg', 50, 1))
+
+/datum/emote/living/moxi
+	key = "moxi"
+	key_third_person = "moxis"
+	message = "diligently says hi!"
+	message_param = "diligently says hi to %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/moxi.ogg' //im
 
 /datum/emote/purr
 	key = "purr"
@@ -1116,7 +1123,7 @@
 		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
 			pick(playsound(C, 'sound/f13effects/sunsetsounds/wah1.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah2.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah3.ogg', 34, 1),)
 
-/*
+
 /datum/emote/living/boowomp
 	key = "boowomp"
 	key_third_person = "frowns heavily."
@@ -1156,7 +1163,7 @@
 	key_third_person = "raises an eyebrow menacingly!"
 	message = "raises an eyebrow menacingly!"
 	sound = 'sound/f13effects/sunsetsounds/vineboom.ogg'
-*/
+
 
 /datum/emote/living/frogcry
 	key = "frogcry"
@@ -1453,7 +1460,7 @@
 	message = "tilts their head."
 	message_param = "tilts their head at %t."
 
-/*
+
 /datum/emote/living/rizz
 	key = "rizz"
 	key_third_person = "rizzler"
@@ -1481,7 +1488,7 @@
 	message = "<span class='urgent'>draws attention to themselves!</span>"
 	message_param = "<span class='urgent'>%t</span>" //Funny block text
 	sound = "modular_splurt/sound/voice/alienbeeper.ogg"
-*/
+
 
 //Slime start
 
@@ -1510,7 +1517,7 @@
 			S.slime_mood = slime_mood
 			S.handle_body(H)
 
-/*
+
 /datum/emote/mood/sneaky
 	key = "slimesneaky"
 	slime_mood = "aslime-mischevous"
@@ -1536,4 +1543,4 @@
 	slime_mood = "aslime-angry"
 
 // Slime end
-*/
+
