@@ -231,9 +231,9 @@
 ////////////////////////////////
 
 /mob/living/proc/handle_healreservoir()
-	var/heal_max = 5
+	var/heal_max = 10
 	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
-		heal_max = 25
+		heal_max = 30
 	if(heal_reservoir < heal_max)
 		if(iscarbon(src)) //Humans and stuff with stinky reagents
 			if(src.reagents.has_reagent(/datum/reagent/water))
