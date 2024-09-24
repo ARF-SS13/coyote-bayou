@@ -4964,6 +4964,11 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland/city/newboston/house/cabin_seven)
+"kR" = (
+/turf/closed{
+	icon_state = "black"
+	},
+/area/f13/wasteland)
 "kS" = (
 /obj/structure/table/wood/settler,
 /obj/item/paper_bin{
@@ -9735,6 +9740,11 @@
 	icon_state = "common-broken4"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"vL" = (
+/turf/closed{
+	icon_state = "black"
+	},
+/area/f13/tunnel)
 "vM" = (
 /obj/structure/rug/big/rug_fancy,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -14846,7 +14856,9 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
 	},
-/turf/open/floor/plating/f13/outside/roof,
+/turf/closed{
+	icon_state = "black"
+	},
 /area/f13/wasteland)
 "Hl" = (
 /obj/structure/flora/chomp/bush2{
@@ -19431,6 +19443,17 @@
 	footstep = "grass"
 	},
 /area/f13/tribe)
+"Rj" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/turf/closed{
+	icon_state = "black"
+	},
+/area/f13/wasteland)
 "Rm" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -19842,6 +19865,14 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/f13/building)
+"Sa" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/turf/closed{
+	icon_state = "black"
+	},
+/area/f13/wasteland)
 "Sc" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -23704,7 +23735,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -23961,7 +23992,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -24218,7 +24249,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -24475,7 +24506,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -24732,7 +24763,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -24989,7 +25020,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -25246,7 +25277,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -25503,7 +25534,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -25760,7 +25791,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -26017,7 +26048,7 @@ zs
 zs
 zs
 zs
-jD
+vL
 GU
 GU
 GU
@@ -26274,7 +26305,7 @@ zs
 zs
 zs
 jD
-tN
+kR
 tN
 tN
 GU
@@ -26531,7 +26562,7 @@ zs
 zs
 jD
 tN
-tN
+kR
 tN
 tN
 GU
@@ -26788,7 +26819,7 @@ zs
 jD
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -27045,7 +27076,7 @@ zs
 jD
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -27302,7 +27333,7 @@ jD
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -27559,7 +27590,7 @@ jD
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -27816,7 +27847,7 @@ jD
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -28073,7 +28104,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -28330,7 +28361,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -28587,7 +28618,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -28844,7 +28875,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -29101,7 +29132,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -29358,7 +29389,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -29615,7 +29646,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -29872,7 +29903,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -30129,7 +30160,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -30386,7 +30417,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -30643,7 +30674,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -30900,7 +30931,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -31157,7 +31188,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -31414,7 +31445,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -31671,7 +31702,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -31928,7 +31959,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -32185,7 +32216,7 @@ tN
 tN
 tN
 tN
-Fb
+Sa
 Fb
 Fb
 Fb
@@ -32435,14 +32466,14 @@ xI
 hT
 hT
 Ek
-de
-de
-de
-de
-de
-de
-de
-Fb
+tN
+tN
+tN
+tN
+tN
+tN
+tN
+Sa
 Fb
 xi
 xi
@@ -32699,7 +32730,7 @@ tN
 tN
 tN
 tN
-Fb
+Sa
 xi
 xi
 Fb
@@ -32956,7 +32987,7 @@ tN
 tN
 tN
 tN
-Fb
+Sa
 Fb
 Fb
 Fb
@@ -33213,7 +33244,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -33470,7 +33501,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -33727,7 +33758,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -33984,7 +34015,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -34241,7 +34272,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -34498,7 +34529,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -34755,7 +34786,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Fb
@@ -35012,7 +35043,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 nQ
@@ -35269,7 +35300,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -35526,7 +35557,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 VD
 VD
@@ -35783,7 +35814,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -36040,7 +36071,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 qV
@@ -36297,7 +36328,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 qV
@@ -36554,7 +36585,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 tN
@@ -36811,7 +36842,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 tN
@@ -37068,7 +37099,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 tN
@@ -37325,7 +37356,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -37582,7 +37613,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 VD
 VD
@@ -37839,7 +37870,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -38096,7 +38127,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -38353,7 +38384,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -38610,7 +38641,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -38867,7 +38898,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -39124,7 +39155,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -39381,7 +39412,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -39638,7 +39669,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -39895,7 +39926,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -40152,7 +40183,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 xi
 Fb
@@ -40409,7 +40440,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 xi
 xi
@@ -40666,7 +40697,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -40923,7 +40954,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -41180,7 +41211,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -41437,7 +41468,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -41694,7 +41725,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -41951,7 +41982,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -42208,7 +42239,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -42465,7 +42496,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -42722,7 +42753,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -42979,7 +43010,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -43236,7 +43267,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -43493,7 +43524,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -43750,7 +43781,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -44007,7 +44038,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 xi
@@ -44264,7 +44295,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -44521,7 +44552,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -44778,7 +44809,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -45035,7 +45066,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -45292,7 +45323,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 Fb
 Fb
 Fb
@@ -45549,7 +45580,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -45798,15 +45829,15 @@ qV
 VD
 VD
 qV
-de
-de
-de
-de
-de
-de
-de
-de
-Lc
+tN
+tN
+tN
+tN
+tN
+tN
+tN
+tN
+Sa
 Lc
 Lc
 Lc
@@ -46063,7 +46094,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -46320,7 +46351,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -46577,7 +46608,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 VS
@@ -46834,7 +46865,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -47091,7 +47122,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 Lc
@@ -47348,7 +47379,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -47605,7 +47636,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 VS
@@ -47862,7 +47893,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -48119,7 +48150,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -48376,7 +48407,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -48633,7 +48664,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -48890,7 +48921,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -49147,7 +49178,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -49404,7 +49435,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -49661,7 +49692,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -49918,7 +49949,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -50175,7 +50206,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -50432,7 +50463,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -50689,7 +50720,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -50946,7 +50977,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -51203,7 +51234,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -51460,7 +51491,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -51717,7 +51748,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -51974,7 +52005,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -52231,7 +52262,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -52488,7 +52519,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -52745,7 +52776,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -53002,7 +53033,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -53259,7 +53290,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -53516,7 +53547,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -53773,7 +53804,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -54030,7 +54061,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -54287,7 +54318,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -54544,7 +54575,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -54801,7 +54832,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -55058,7 +55089,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -55315,7 +55346,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -55572,7 +55603,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -55829,7 +55860,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -56086,7 +56117,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -56343,7 +56374,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -56600,7 +56631,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -56857,7 +56888,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -57114,7 +57145,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -57371,7 +57402,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -57628,7 +57659,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -57885,7 +57916,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -58142,7 +58173,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -58399,7 +58430,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -58656,7 +58687,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -58913,7 +58944,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -59170,7 +59201,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -59427,7 +59458,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -59684,7 +59715,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -59941,7 +59972,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -60198,7 +60229,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -60455,7 +60486,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Lc
@@ -60712,7 +60743,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 Lc
@@ -61226,7 +61257,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -61483,7 +61514,7 @@ tN
 tN
 tN
 tN
-VS
+Rj
 Lc
 Lc
 VS
@@ -61740,7 +61771,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 VS
 Lc
 VS
@@ -61997,7 +62028,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 VS
 Lc
 Lc
@@ -62254,7 +62285,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 VS
 VS
 Lc
@@ -62511,7 +62542,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -62768,7 +62799,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -63025,7 +63056,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -63282,7 +63313,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -63539,7 +63570,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -63796,7 +63827,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -64053,7 +64084,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -64310,7 +64341,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 rw
@@ -64567,7 +64598,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 rw
@@ -64824,7 +64855,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 rw
@@ -65081,7 +65112,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 rw
@@ -65338,7 +65369,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 AG
@@ -65595,7 +65626,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 AG
@@ -65852,7 +65883,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 AG
 AG
@@ -66109,7 +66140,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 AG
 AG
@@ -66366,7 +66397,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 AG
@@ -66623,7 +66654,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 AG
 rw
 AG
@@ -66880,7 +66911,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 AG
 rw
 rw
@@ -67137,7 +67168,7 @@ tN
 tN
 tN
 tN
-rw
+Sa
 rw
 rw
 rw
@@ -67394,7 +67425,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -67651,7 +67682,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 pR
 pR
@@ -67908,7 +67939,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 GX
 GX
@@ -68165,7 +68196,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 GX
@@ -68422,7 +68453,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 GX
@@ -68679,7 +68710,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 pR
@@ -68936,7 +68967,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 MK
 GX
@@ -69193,7 +69224,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 zg
@@ -69450,7 +69481,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 GX
@@ -69707,7 +69738,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 zg
 pR
@@ -69964,7 +69995,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 pR
 pR
@@ -70221,7 +70252,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 pR
 pR
 pR
@@ -70478,7 +70509,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 nQ
@@ -70735,7 +70766,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -70992,7 +71023,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -71249,7 +71280,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -71506,7 +71537,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -71763,7 +71794,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -72020,7 +72051,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 VD
@@ -72277,7 +72308,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 VD
@@ -72534,7 +72565,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -72791,7 +72822,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -73048,7 +73079,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -73305,7 +73336,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 qV
 qV
@@ -73562,7 +73593,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 VD
 VD
@@ -73819,7 +73850,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 qV
 VD
 qV
@@ -74076,7 +74107,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 VD
 VD
 qV
@@ -74333,7 +74364,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 VD
 qV
 qV
@@ -74590,7 +74621,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -74847,7 +74878,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -75104,7 +75135,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 VD
 qV
@@ -75354,14 +75385,14 @@ pR
 pR
 pR
 pR
-nQ
-nQ
-nQ
-nQ
-nQ
-nQ
-nQ
-qV
+tN
+tN
+tN
+tN
+tN
+tN
+tN
+Sa
 VD
 qV
 qV
@@ -75618,7 +75649,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -75875,7 +75906,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 qV
 qV
@@ -76132,7 +76163,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 VD
 VD
 qV
@@ -76389,7 +76420,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 VD
 VD
@@ -76646,7 +76677,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 VD
 VD
@@ -76903,7 +76934,7 @@ tN
 tN
 tN
 tN
-qV
+Sa
 qV
 qV
 qV
@@ -77160,7 +77191,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -77417,7 +77448,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -77674,7 +77705,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -77931,7 +77962,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -78188,7 +78219,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -78445,7 +78476,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -78702,7 +78733,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -78959,7 +78990,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -79216,7 +79247,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -79473,7 +79504,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -79730,7 +79761,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -79987,7 +80018,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 VS
 VS
 VS
@@ -80244,7 +80275,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -80501,7 +80532,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -80758,7 +80789,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -81015,7 +81046,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 Lc
@@ -81272,7 +81303,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 VS
 VS
@@ -81529,7 +81560,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 VS
@@ -81786,7 +81817,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -82043,7 +82074,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -82300,7 +82331,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -82557,7 +82588,7 @@ tN
 tN
 tN
 tN
-Lc
+Sa
 Lc
 Lc
 Lc
@@ -82814,7 +82845,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -83071,7 +83102,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -83328,7 +83359,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -83585,7 +83616,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -83842,7 +83873,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -84099,7 +84130,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -84356,7 +84387,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -84613,7 +84644,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -84870,7 +84901,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -85127,7 +85158,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -85384,7 +85415,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -85641,7 +85672,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -85898,7 +85929,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -86155,7 +86186,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -86412,7 +86443,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -86669,7 +86700,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -86926,7 +86957,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -87183,7 +87214,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -87440,7 +87471,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -87697,7 +87728,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -87954,7 +87985,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 tN
@@ -88211,7 +88242,7 @@ tN
 tN
 tN
 tN
-tN
+kR
 tN
 tN
 GU
@@ -88468,7 +88499,7 @@ jD
 jD
 jD
 jD
-jD
+vL
 jD
 GU
 GU
