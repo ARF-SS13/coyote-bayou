@@ -16887,6 +16887,15 @@
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"jbv" = (
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/wasteland/city/newboston/bar)
 "jbx" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -18219,7 +18228,8 @@
 	},
 /area/f13/building)
 "jLW" = (
-/obj/machinery/vending/boozeomat,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
 "jMc" = (
@@ -22193,15 +22203,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"lHY" = (
-/obj/structure/table/wood/settler,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/wasteland/city/newboston/bar)
 "lIo" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/beakers{
@@ -43828,6 +43829,7 @@
 /area/f13/building)
 "xuF" = (
 /obj/machinery/light,
+/obj/machinery/vending/boozeomat,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
 "xuQ" = (
@@ -76260,7 +76262,7 @@ oRJ
 vOY
 rDQ
 mTe
-lHY
+jbv
 vOY
 pdv
 ueL
