@@ -396,6 +396,42 @@
 		icon_state = "[initial(icon_state)]"
 
 
+
+
+/* * * * * * * * * * * *
+* s163 minotaur shotgun
+* + pump action shotgun
+* + Can be supressed
+* + Common 'police' shotgun used by I.C police forces
+* - doesn't have a folding stock and can not be modified heavily like the police shotgun
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/shotgun/s163
+	name = "S163 Minotaur shotgun"
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 5+1 magazine tube capacity alongside a built in small ammo counter"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/mino
+	icon_state = "s163"
+	item_state = "s163"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_suppress = TRUE
+	casing_ejector = FALSE
+	spawnwithmagazine = TRUE
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	init_recoil = SHOTGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
 /obj/item/gun/ballistic/shotgun/
 /* * * * * * * * * * * *
  * Semi-auto shotguns  *
@@ -640,6 +676,45 @@
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
+/obj/item/gun/ballistic/shotgun/needles
+	name = "Pz87 pump-action shotgun"
+	desc = "A Pz87 shotgun. Manufactured by Latos Systems in collaboration with the Swiss navy and Remington, this shotgun has a internal 6+1 internal tube capacity. Unlike traditional ballistics, it fires micro-needles. A prototype shotgun that never saw the light of combat and battle."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "needlesg"
+	item_state = "needlesg"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/needler
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	fire_sound = 'sound/f13weapons/needler.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
+
+/* * * * * * * * * * *
+ * Jackhammer shotgun
+ * Magazine automatic! shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/shotgun/pancor
+	name = "Pancor Jackhammer"
+	desc = "A drum-loaded, fully automatic shotgun. The pinnacle of turning things into swiss cheese."
+	icon_state = "pancor"
+	item_state = "cshotgun1"
+	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/slow
+	)
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 0.8)
 
 // Ballistic Fist			Keywords: Damage max 42, Shotgun
 /obj/item/gun/ballistic/revolver/ballisticfist
