@@ -911,7 +911,7 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 	var/watTsee = make_message_for_target(doer, target, actions, tense, LAZYACCESS(partname, 1))
 	var/watEsee = make_message_for_everyone(doer, target, actions, tense, LAZYACCESS(partname, 1))
 	var/watIsee = make_message_for_myself_to_me(doer, target, actions, tense, LAZYACCESS(partname, 1))
-	var/watYEsee = make_message_for_myself_to_others(doer, target, actions, tense, LAZYACCESS(partname, 1))
+	var/watYEsee = make_message_for_myself_to_others(doer, target, actions, tense, LAZYACCESS(partname, 1)) // catch the wave!
 	if(target == doer)
 		playsound(doer, snd, 50, TRUE)
 		to_chat(doer, span_love(watIsee))
@@ -1071,8 +1071,8 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 					return "side"
 			else
 				if(turnt == dirTarg)
-					return "back"
-		return "front"
+					return "front"
+		return "back"
 	/// now, check a special ring of turfs around the target
 	var/list/turfz = list()
 	turfz.len = 8
@@ -2847,7 +2847,6 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 	
 	
 	r_foot_back = list("right calf")
-
 
 
 
