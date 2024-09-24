@@ -77,6 +77,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				chat_toggles = sanitize_integer(chat_toggles, 0, INFINITY, TOGGLES_DEFAULT_CHAT)
 				WRITE_FILE(S["chat_toggles"], chat_toggles)
 				current_revision |= PMR_DAN_MESSED_UP_CHATPREFS
+			if(PMR_RUNECHAT_LENGTHENING)
+				S["max_chat_length"] >> max_chat_length
+				max_chat_length = 500
+				WRITE_FILE(S["max_chat_length"], max_chat_length)
+				S["chat_width"] >> chat_width
+				chat_width = 300
+				WRITE_FILE(S["chat_width"], chat_width)
+				current_revision |= PMR_RUNECHAT_LENGTHENING
 	current_revision = PREFERENCES_MASTER_REVISIONLIST
 	WRITE_FILE(S["current_revision"], safe_json_encode(current_revision))
 	return TRUE
