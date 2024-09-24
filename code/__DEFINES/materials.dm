@@ -12,4 +12,6 @@
 #define MATERIAL_ADD_PREFIX (1<<1)
 #define MATERIAL_AFFECT_STATISTICS (1<<2)
 
+#define SHEETS *1000
+
 #define MATERIAL_SOURCE(mat) "[mat.name]_material"

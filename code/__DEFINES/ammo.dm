@@ -1,21 +1,28 @@
 /*ALL DEFINES RELATED TO AMMO GO HERE*/
 
 //Caliber defines
+
+#define CALIBER_9MM "9mm rounds"
+#define CALIBER_45ACP ".45 ACP rounds"
+
+#define CALIBER_357 ".357 magnum rounds"
+#define CALIBER_44 ".44 magnum rounds"
+
+#define CALIBER_556 "5.56mm / .223 rounds"
+#define CALIBER_308 ".308 rounds"
+
+#define CALIBER_3006 ".30-06 rounds"
+#define CALIBER_BALLBEARING "15mm ball bearings"
+
 #define CALIBER_22LR ".22LR rounds"
 #define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_MOUSE ".22LR mouseshot rounds"
 #define CALIBER_5MM "5mm rounds"
-#define CALIBER_556 "5.56mm / .223 rounds"
-#define CALIBER_308 ".308 rounds"
-#define CALIBER_3006 ".30-06 rounds"
-#define CALIBER_9MM "9mm rounds"
+
 #define CALIBER_10MM "10mm rounds"
 #define CALIBER_14MM "14mm rounds"
 //#define CALIBER_38 ".38 special rounds"
-#define CALIBER_357 ".357 magnum rounds"
-#define CALIBER_44 ".44 magnum rounds"
 #define CALIBER_45LC ".45 LC rounds"
-#define CALIBER_45ACP ".45 ACP rounds"
 #define CALIBER_4570 ".45-70 rounds"
 #define CALIBER_50MG ".50MG rounds"
 #define CALIBER_2MM "2mmEC gauss slugs"
