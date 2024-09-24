@@ -1004,7 +1004,7 @@
 /obj/item/storage/backpack/invisipack // backpack with no mob sprite
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "invisipack"
-	inhand_icon_state = "invisipack"
+	item_state = "invisipack"
 
 /obj/item/storage/backpack/purse 
 	icon = 'icons/fallout/objects/storage.dmi'
@@ -1013,7 +1013,7 @@
 	righthand_file = 'icons/fallout/onmob/items/bags_righthand.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
 	icon_state = "purse"
-	inhand_icon_state = "purse"
+	item_state = "purse"
 
 /obj/item/storage/backpack/purse/black
 	color = "#333333"
