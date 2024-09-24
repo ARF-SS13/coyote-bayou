@@ -59,6 +59,10 @@
 	var/socks = "Nude" //Which socks the player wants
 	var/socks_color = "FFFFFF"
 
+	var/nail_style = null
+	var/nail_color = "white"
+	var/cheesed //Handle cheesing lol
+
 	var/warpaint = null
 	var/warpaint_color = null
 
@@ -146,3 +150,5 @@
 	var/mob/living/L = attacker
 	if(istype(L))
 		L.Stagger(D.parry_data["HUMAN_PARRY_STAGGER"])
+
+
