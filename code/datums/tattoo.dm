@@ -745,8 +745,8 @@
 			next_time = 0.5 SECONDS
 			user.visible_message(span_notice("[user] zips a quick mark into [victim]'s [lowertext(tat_loc)]."))
 	if(prob(scream_prob))
-		victim.emote("scream")
-	owie.receive_damage(brute = owie.brute_dam < 30 ? brute_d : 0, stamina = stamina_d, wound_bonus = bleed_d, sharpness = SHARP_EDGED, damage_coverings = FALSE)
+		victim.emote("scream") //                  V- all the fuckin furries belong at weenie hut jr
+	owie.receive_damage(brute = owie.brute_dam < 10 ? brute_d : 0, stamina = stamina_d, wound_bonus = -999, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 	if(engraving)
 		addtimer(CALLBACK(src,PROC_REF(make_noises_and_pain), victim, user, tat_loc, part), next_time)
 
