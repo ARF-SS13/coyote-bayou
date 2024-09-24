@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(autotransfer)
 	wait = 1 MINUTES
 
 	var/starttime
-	var/targettime = 4.25 HOURS
+	var/targettime = 4.25 WEEKS
 	var/voteinterval
 	var/maxvotes
 	var/curvotes = 0
