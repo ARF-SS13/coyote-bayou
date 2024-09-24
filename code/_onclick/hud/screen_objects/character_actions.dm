@@ -89,7 +89,7 @@
 			I = H.get_active_held_item()
 			I?.melee_attack_chain(H, H, params)
 
-		else if(istype(I, /obj/item/hand_item/healable/))
+		else if(istype(I, /obj/item/hand_item/tactile/))
 			I = H.get_active_held_item()
 			I?.melee_attack_chain(H, H, params)
 
