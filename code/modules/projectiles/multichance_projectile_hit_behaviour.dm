@@ -16,10 +16,10 @@
 #define PROB_LEGS_MISS 25			//Chances of wasting a bullet when aiming legs
 
 //multipliers of damage dealth by the projectile
-#define DAM_MULT_HEADSHOT_HIT 1.5   //headshots deal more damage
+#define DAM_MULT_HEADSHOT_HIT 1.15   //headshots deal more damage
 #define DAM_MULT_ARMS_HIT 0.85      //shooting on the arms deals less damage
-#define DAM_MULT_LEGS_HIT 0.75		//shooting on the legs deals less damage
-#define SPEED_MULT_LEGS_HIT 1.5		//shooting on the legs makes the mob chase you slowly
+#define DAM_MULT_LEGS_HIT 0.70		//shooting on the legs deals less damage
+#define SPEED_MULT_LEGS_HIT 1.2		//shooting on the legs makes the mob chase you slowly
 
 //target debuffs
 #define TRGT_DEBUFF_MULT_DAM_ARMS_HIT 0.75			//After being shot on the arms, the mob deals less damage, because it can't swing its claws just as good!

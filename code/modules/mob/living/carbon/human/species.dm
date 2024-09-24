@@ -851,6 +851,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(H.warpaint && !H.IsFeral())
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
+	if(H.nail_style)
+		var/mutable_appearance/nail_overlay = mutable_appearance('modular_splurt/icons/mobs/nails.dmi', "nails", -HANDS_PART_LAYER)
+		nail_overlay.color = H.nail_color
+		standing += nail_overlay
 
 	// if(standing.len) // MAYBE - WIZARD
 	H.overlays_standing[BODY_LAYER] = standing_undereyes | standing
@@ -1183,9 +1187,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 							winghacked += extra2_accessory_overlay
 				else
 					standing += extra2_accessory_overlay
-
 		H.overlays_standing[layernum] = standing
-
 	H.apply_overlay(BODY_BEHIND_LAYER)
 	H.apply_overlay(BODY_ADJ_LAYER)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)

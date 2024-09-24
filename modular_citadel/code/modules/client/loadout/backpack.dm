@@ -9,6 +9,11 @@
 	path = /obj/item/flashlight
 	cost = 0
 
+/datum/gear/backpack/hairbrush
+	name = "hairbrush"
+	path = /obj/item/hairbrush
+	cost = 0
+
 /datum/gear/backpack/torch
 	name = "torch"
 	path = /obj/item/flashlight/flare/torch
@@ -812,3 +817,67 @@
 	name = "Bracelet (pair)"
 	path = /obj/item/clothing/accessory/braceletpair
 	cost = 1
+
+/datum/gear/backpack/lipstick
+	name = "Red lipstick"
+	path = /obj/item/lipstick
+	cost = 0
+/datum/gear/backpack/lipstick_purple
+	name = "Purple lipstick"
+	path = /obj/item/lipstick/purple
+	cost = 0
+/datum/gear/backpack/lipstick_jade
+	name = "Jade lipstick"
+	path = /obj/item/lipstick/jade
+	cost = 0
+/datum/gear/backpack/lipstick_black
+	name = "Black lipstick"
+	path = /obj/item/lipstick/black
+	cost = 0
+/datum/gear/backpack/lipstick_random
+	name = "Random lipstick"
+	path = /obj/item/lipstick/random
+	cost = 0
+
+/datum/gear/backpack/nailpolish
+	name = "Midnight nailpolish"
+	path = /obj/item/nailpolish
+	cost = 0
+/datum/gear/backpack/nailpolish_red
+	name = "Red nailpolish"
+	path = /obj/item/nailpolish/red
+	cost = 0
+/datum/gear/backpack/nailpolish_blue
+	name = "Blue nailpolish"
+	path = /obj/item/nailpolish/blue
+	cost = 0
+/datum/gear/backpack/nailpolish_aqua
+	name = "Aqua nailpolish"
+	path = /obj/item/nailpolish/aqua
+	cost = 0
+/datum/gear/backpack/nailpolish_black
+	name = "Black nailpolish"
+	path = /obj/item/nailpolish/black
+	cost = 0
+/datum/gear/backpack/nailpolish_white
+	name = "White nailpolish"
+	path = /obj/item/nailpolish/white
+	cost = 0
+/datum/gear/backpack/nailpolish_navy
+	name = "Navy nailpolish"
+	path = /obj/item/nailpolish/navy
+	cost = 0
+/datum/gear/backpack/nailpolish_yellow
+	name = "Yellow nailpolish"
+	path = /obj/item/nailpolish/yellow
+	cost = 0
+/datum/gear/backpack/nailpolish_purple
+	name = "Purple nailpolish"
+	path = /obj/item/nailpolish/purple
+	cost = 0
+
+
+
+
+
+

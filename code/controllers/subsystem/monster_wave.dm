@@ -2,6 +2,7 @@
 SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
 	wait = 2 SECONDS //change to either 30 MINUTES or 1 HOURS
+	var/allow_spawner_lads = FALSE
 	/// big list of all the spawners that have been destroyed
 	var/list/spawner_tickets = list() // list(/datum/nest_box)
 	/// big list of all the spawner lads in existence
@@ -24,6 +25,11 @@ SUBSYSTEM_DEF(monster_wave)
 //and changing allowed_firings to like.... 12?
 //     ^This guy was a coward. ~TK
 
+/datum/controller/subsystem/monster_wave/Initialize(start_timeofday)
+	. = ..()
+	if(!allow_spawner_lads)
+		to_chat(world, span_boldannounce("Nest Portals Disabled :c"))
+
 /datum/controller/subsystem/monster_wave/stat_entry(msg)
 	msg = "T:[num_spawned],G:[highest_gen],S:[LAZYLEN(spawner_tickets)],M:[LAZYLEN(spawner_lads)],B:[LAZYLEN(spawn_blockers)],C:[round(cost,0.005)]"
 	return msg
@@ -34,6 +40,8 @@ SUBSYSTEM_DEF(monster_wave)
 	mob2hole()
 
 /datum/controller/subsystem/monster_wave/proc/ticket2mob()
+	if(!allow_spawner_lads)
+		return
 	var/tries = 50
 	mainloop:
 		while(tries-- > 0)
@@ -80,6 +88,8 @@ SUBSYSTEM_DEF(monster_wave)
 			return TRUE
 
 /datum/controller/subsystem/monster_wave/proc/mob2hole()
+	if(!allow_spawner_lads)
+		return
 	var/tries = 50
 	while(tries-- > 0)
 		var/whichnum = rand(1, LAZYLEN(spawner_lads))

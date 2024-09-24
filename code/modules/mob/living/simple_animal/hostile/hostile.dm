@@ -735,7 +735,7 @@
 			addtimer(CALLBACK(src,PROC_REF(Shoot), A, spreadgun), i * auto_fire_delay)
 			spreadgun += ranged_extra_spread_per_shot
 	ThrowSomething(A)
-	ranged_cooldown = world.time + ranged_cooldown_time
+	ranged_cooldown = world.time + ranged_cooldown_time + rand(0,30)
 	if(sound_after_shooting)
 		addtimer(CALLBACK(usr, GLOBAL_PROC_REF(playsound), src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
 	if(projectiletype)

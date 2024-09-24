@@ -134,3 +134,16 @@
 	mid_length = 2
 	volume = 35
 
+/datum/looping_sound/hairbrush
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_01.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_02.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_03.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_04.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_05.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_06.ogg', 3 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_07.ogg', 8 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_08.ogg', 8 SECONDS, 1),
+		)
+	volume = 80
+

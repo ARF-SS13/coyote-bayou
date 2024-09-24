@@ -212,12 +212,12 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "This trait forces your mood towards balance, it will make happiness and sadness last for shorter amounts of time as you return to neutral."
 	conflicts = list(
 		/datum/quirk/friendly,
-		/datum/quirk/jolly,
-		/datum/quirk/optimist,
+		// /datum/quirk/jolly,
+		// /datum/quirk/optimist,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
 		//datum/quirk/family_heirloom,
-		/datum/quirk/unstable,
+		// /datum/quirk/unstable,
 		/datum/quirk/empath,
 		)
 	mood_quirk = TRUE
@@ -381,6 +381,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."
 
+/*
 /datum/quirk/jolly
 	name = "Mood - Sanguine"
 	desc = "You sometimes just feel happy, for no reason at all. Gives mood buffs, occasionally."
@@ -420,7 +421,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/optimist/on_process()
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "optimist", /datum/mood_event/optimism)
-
+*/
 
 /datum/quirk/light_step
 	name = "Light Step"
@@ -437,7 +438,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You start tromping around like a barbarian.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
 
-
+/*
 /datum/quirk/quick_step
 	name = "Speed Walker"
 	desc = "You walk with determined strides, and out-pace most people, at least, if you're both walking."
@@ -453,7 +454,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel determined. No time to lose.")
 	lose_text = span_danger("You feel less determined. What's the rush, man?")
 	medical_record_text = "Patient scored highly on racewalking tests."
-
+*/
 
 /*/datum/quirk/treasurehunter 
 	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
@@ -765,7 +766,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You know how plants work!")
 	lose_text = span_danger("You forgot how plants work... somehow.")
 
-
+/*
 /datum/quirk/night_vision
 	name = "Dark Vision - Minor"
 	desc = "You can see a small distance around you in full darkness compared to most people by two whole tiles."
@@ -809,6 +810,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/night_vision_greater/remove()
 	quirk_holder.update_sight()
+*/
 
 /datum/quirk/nukalover
 	name = "Cola Fiend"
@@ -889,12 +891,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
+/*
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
 	value = 65
 	category = "Melee Quirks"
-	mechanics = "You do an extra 10 damage with all melee attacks."
+	mechanics = "You do an extra 25 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
 		/datum/quirk/nonviolent,
 		/datum/quirk/littleleagues,
@@ -926,6 +929,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to have above average upper body strength."
 	locked = FALSE
 	human_only = FALSE
+	*/
 
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
@@ -976,6 +980,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient claims to wear a powerful suit of metal."
 	locked = FALSE
 
+/*
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
@@ -1012,13 +1017,14 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("The world beneath your heels suddenly feels like tugging you down...")
 	medical_record_text = "Patient describes going on walks."
 	locked = FALSE
+*/
 
 /datum/quirk/lifegiver
 	name = "Health - Tough"
 	desc = "You embody wellness! "
 	value = 32
 	category = "Health Quirks"
-	mechanics = "You have +10 health. What this actually means is that you need to take ten more points of damage before you go into crit."
+	mechanics = "You have +20 health. What this actually means is that you need to take ten more points of damage before you go into crit."
 	conflicts = list(
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/flimsy,
@@ -1033,15 +1039,15 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth += 10
-	H.health += 10
+	H.maxHealth += 20
+	H.health += 20
 
 /datum/quirk/lifegiverplus
 	name = "Health - Tougher"
 	desc = "You embody wellness to the MAX! Instantly gain +20 maximum Health."
 	value = 65
 	category = "Health Quirks"
-	mechanics = "You have +20 health. What this actually means is you need to take 20 more points of damage before you go into crit."
+	mechanics = "You have +40 health. What this actually means is you need to take 20 more points of damage before you go into crit."
 	conflicts = list(
 		/datum/quirk/lifegiver,
 		/datum/quirk/flimsy,
@@ -1056,8 +1062,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/lifegiverplus/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.maxHealth += 20
-	H.health += 20
+	H.maxHealth += 40
+	H.health += 40
 
 /datum/quirk/iron_fist
 	name = "Fists of Iron"
@@ -1261,6 +1267,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 */
 
+/*
 /datum/quirk/whitelegstraditions
 	name = "Post Apocalyptic Tribal Traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
@@ -1278,6 +1285,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/book/granter/trait/tribaltraditions/B = new(get_turf(H))
 	H.put_in_hands(B)
+*/
 
 /*
 /datum/quirk/deadhorsestraditions
@@ -1492,6 +1500,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
 	locked =  FALSE */
 
+/*
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
 	desc = "Gieger Counters are for suckers, mostly."
@@ -1525,6 +1534,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer think you should hang out next to rad puddles.")
 	medical_record_text = "Patient appears to be resilient to some radiation. X-Ray scans are fuzzy. "
 	locked =  FALSE
+*/
 
 /datum/quirk/nohunger
 	name = "Does not Eat"
@@ -1565,7 +1575,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Medical Quirks"
 	mechanics = "When using the fireman carry you lift people up at a faster rate."
 	conflicts = list(
-		/datum/quirk/quickcarry,
+		// /datum/quirk/quickcarry,
 	)
 	mob_trait = TRAIT_QUICKER_CARRY
 	gain_text = span_notice("You feel like a ACCEPTABLE fireman!")
@@ -1573,6 +1583,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to drag people around on occasion."
 	locked =  FALSE
 
+/*
 /datum/quirk/quickcarry
 	name = "Quick Carry"
 	desc = "You're exceptionally good when it comes to carrying people!"
@@ -1587,6 +1598,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You're ability to carry folk seems massively diminished.")
 	medical_record_text = "Patient appears to haul bodies around."
 	locked =  FALSE
+*/
 
 /datum/quirk/builder
 	name = "Experienced Builder"
@@ -1663,6 +1675,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to always walk on their toes."
 	locked =  FALSE
 
+/*
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "When you hit your target, you frequently hit your target's vital points more often than not."
@@ -1682,6 +1695,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient flicked a fly out of the air using a toothpick."
 	locked =  FALSE
 	human_only = FALSE
+	*/
 
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
@@ -1691,7 +1705,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
 	conflicts = list(
 		/datum/quirk/clumsy,
-		/datum/quirk/deadeye,
+		// /datum/quirk/deadeye,
 		/datum/quirk/poor_aim,
 	)
 	mob_trait = TRAIT_NICE_SHOT
@@ -1742,7 +1756,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Ranged Quirks"
 	mechanics = "You can use magical wands, staves, and other advanced magical items. However, magic has a cost -- your potential elsewhere is limited, and learning a martial art will sever your connection to magic."
 	conflicts = list(
-	/datum/quirk/deadeye,
+	// /datum/quirk/deadeye,
 	/datum/quirk/mastermartialartist,
 	)
 
@@ -1777,6 +1791,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_PACKRAT
 */
 
+/*
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
 	desc = "Rats and wild mice of all kind outright ignore you now."
@@ -1942,6 +1957,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/H = quirk_holder
 	if(H)
 		H.faction -= list("bees-friend")
+*/
 
 /datum/quirk/wildshape
 	name = "Wild Shape"
@@ -2310,8 +2326,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Magic Quirks"
 	mechanics = "When using the *shocking emote, you summon a melee spell cantrip that strikes fast and delivers powerful shocks to your foes"
 	conflicts = list(
-		/datum/quirk/littleleagues,
-		/datum/quirk/bigleagues
+		// /datum/quirk/littleleagues,
+		// /datum/quirk/bigleagues
 	)
 	mob_trait = TRAIT_SHOCKINGGRASP
 	gain_text = span_notice("You know how to cast shocking grasp!")
@@ -2324,7 +2340,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	value = 0 
 	category = "Magic Quirks"
 	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
-	conflicts = list(/datum/quirk/mute) // Negligibly useful quirk shouldnt cost points or slots, but also shouldnt make a big negative into free points. Also you can get telepathy through genetics, which is easier now.
+	// conflicts = list(/datum/quirk/mute) // Negligibly useful quirk shouldnt cost points or slots, but also shouldnt make a big negative into free points. Also you can get telepathy through genetics, which is easier now.
 	mob_trait = TRAIT_TELEPATHY
 	gain_text = span_notice("You suddenly don't feel the need to talk out loud anymore.")
 	lose_text = span_danger("Talking out loud suddenly feels like a much better idea.")
@@ -2408,6 +2424,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 //Quackages Start Here//
 
+/*
 /datum/quirk/package/lifeoftheparty
 	name = "Life of the Party"
 	desc = "You were just meant to be the center of attention, and you revel when all eyes are on you!"
@@ -2708,6 +2725,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
+
 /datum/quirk/package/creatureofthenightgreater
 	name = "Creature of the Night - Greater"
 	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
@@ -2844,6 +2862,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(H)
 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
 
+
 /datum/quirk/bruteresist
 	name = "Brute Resist, Minor"
 	desc = "You're more resistant to physical trauma than others."
@@ -2935,6 +2954,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
+*/
 
 /datum/quirk/security_expert
 	name = "Security Expert"

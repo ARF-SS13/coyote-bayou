@@ -2849,20 +2849,3 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 	r_foot_back = list("right calf")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
