@@ -237,9 +237,11 @@
 	if(heal_reservoir < heal_max)
 		if(iscarbon(src)) //Humans and stuff with stinky reagents
 			if(src.reagents.has_reagent(/datum/reagent/water))
-				heal_reservoir += 0.5
+				heal_reservoir += 0.75
+			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment))
+				heal_reservoir += 0.75
 			else
-				heal_reservoir += 0.25
+				heal_reservoir += 0.05
 		else //Everything else
 			heal_reservoir += (rand(10,50)/100)//0.1 to 0.5
 			heal_reservoir = min(heal_reservoir,heal_max)
