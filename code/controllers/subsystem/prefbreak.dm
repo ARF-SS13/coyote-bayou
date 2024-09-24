@@ -257,8 +257,7 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 
 /datum/prefcheck/see_fancy_offscreen_runechat/allowed(datum/preferences/consumer)
 	PREFBROKEN
-	return TRUE
-	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+	return consumer.see_fancy_offscreen_runechat // kinda vital here
 
 
 /datum/prefcheck/see_horny_furry_stuff

@@ -231,6 +231,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["hotkeys"]			>> hotkeys
 	S["chat_on_map"]		>> chat_on_map
 	S["max_chat_length"]	>> max_chat_length
+	S["chat_width"]			>> chat_width
 	S["see_chat_non_mob"]	>> see_chat_non_mob
 	READ_FILE(S["see_rc_emotes"] , see_rc_emotes)
 	S["color_chat_log"] >> color_chat_log
@@ -311,6 +312,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	hotkeys                 = sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
 	chat_on_map             = sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
 	max_chat_length         = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
+	chat_width              = sanitize_integer(chat_width, 1, CHAT_MESSAGE_MAX_WIDTH, initial(max_chat_length))
 	see_chat_non_mob        = sanitize_integer(see_chat_non_mob, 0, 1, initial(see_chat_non_mob))
 	see_rc_emotes           = sanitize_integer(see_rc_emotes, FALSE, TRUE, initial(see_rc_emotes))
 	color_chat_log          = sanitize_integer(color_chat_log, FALSE, TRUE, initial(color_chat_log))
@@ -418,6 +420,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["hotkeys"], hotkeys)
 	WRITE_FILE(S["chat_on_map"], chat_on_map)
 	WRITE_FILE(S["max_chat_length"], max_chat_length)
+	WRITE_FILE(S["chat_width"], chat_width)
 	WRITE_FILE(S["see_chat_non_mob"], see_chat_non_mob)
 	WRITE_FILE(S["see_rc_emotes"], see_rc_emotes)
 	WRITE_FILE(S["color_chat_log"], color_chat_log)

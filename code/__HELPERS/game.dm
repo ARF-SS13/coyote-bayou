@@ -399,12 +399,12 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			if(am_widescreen)
 				northest = max(viewer_turf.y - 7, 1)
 			else
-				northest = max(viewer_turf.y - 6, 1)
+				northest = max(viewer_turf.y - 7, 1)
 			var/southest 
 			if(am_widescreen)
-				southest = min(viewer_turf.y + 6, world.maxy)
+				southest = min(viewer_turf.y + 5, world.maxy)
 			else
-				southest = min(viewer_turf.y + 6, world.maxy)
+				southest = min(viewer_turf.y + 5, world.maxy)
 			var/list/things_in_viewer_los = view(7, viewer_turf)
 			if(SSchat.debug_chud)
 				var/turf/t_northwest = locate(westest, northest, viewer_turf.z)
@@ -432,19 +432,19 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 				if(get_dist(source_turf, viewer_turf) <= close_range)
 					CC.visible_close[M] = TRUE
 					continue dingus
-				// else if(get_dist(source_turf, viewer_turf) <= long_range)
-				// 	CC.visible_far[M] = TRUE
-				// 	continue dingus
+				else if(get_dist(source_turf, viewer_turf) <= long_range)
+					CC.visible_far[M] = TRUE
+					continue dingus
 			// if the source is in a Private area,
 			// and the viewer is either not in the line of sight or not in the box of visibility,
 			// then they're hidden, so we dont bleat out a bunch of horny moaning to the whole world
 			if(private)
 				continue dingus
-			if(in_rect && !quiet)
-				CC.hidden_pathable[M] = source_turf // close enough
-				continue dingus
+			// if(in_rect && !quiet)
+			// 	CC.hidden_pathable[M] = source_turf // close enough
+			// 	continue dingus
 			// now the fun begins. Try to find a path to them
-			var/list/soundwalk = get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE)
+			var/list/soundwalk = get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE) // yes i'm using expensive pathfinding for horny moaning, I'm an expensive date
 			// they're closed off, no path to them, but they're still within long range
 			if(!islist(soundwalk))
 				CC.hidden_inaccessible[M] = TRUE // mark them as hidden
@@ -456,14 +456,15 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			// 1. must be in the box of visibility
 			// 2. must be in the line of sight of the hearer
 			debug_i = 0
+			var/list/ccline = getline(source_turf, viewer_turf) // know that cool pathfinding stuff? throw it out, just needed it for seeing if we can reach em!
 			var/cole = SSchat.debug_chud && safepick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
-			for(var/turf/T as anything in soundwalk) // for each step we take...
+			for(var/turf/T as anything in ccline) // for each step we take...
 				if(SSchat.debug_chud)
 					new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
 					debug_i++
 				if(!IS_IN_VIEWER_RECT(T)) // ...check if our turf is in the viewer's box of visibility
 					continue // we can't see them
-				// if(!(T in things_in_viewer_los)) // if they're in the box but not in the line of sight,
+				// if(!(isInSight(T, viewer_turf))) // if they're in the box but not in the line of sight,
 				// 	continue // we can't see them
 				// at this point, we have met these conditions
 				if(SSchat.debug_chud)

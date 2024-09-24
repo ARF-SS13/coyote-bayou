@@ -214,16 +214,17 @@
 	// Create map text prior to modifying message for goonchat
 	if (!isdummy(source) && client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		if(momchat)
-			if(momchat.runechat_mode == "hidden_pathable")
-				/// make one that's just normal, to display at the real source
-				var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutMommy("chat_datums")
-				mom3.copy_mommy(momchat)
-				mom3.runechat_mode = "visible_close"
-				mom3.display_turf = null
-				mom3.is_eavesdropping = FALSE
-				create_chat_message(speaker, message_language, raw_message, spans, NONE, null, mom3)
-				if(!mom3.available)
-					mom3.checkin()
+			// if(momchat.runechat_mode == "hidden_pathable")
+			// 	/// make one that's just normal, to display at the real source
+			// 	var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutMommy("chat_datums")
+			// 	mom3.copy_mommy(momchat)
+			// 	mom3.runechat_mode = "visible_close"
+			// 	mom3.display_turf = null
+			// 	mom3.is_eavesdropping = FALSE
+			// 	create_chat_message(speaker, message_language, raw_message, spans, NONE, null, mom3)
+			// 	if(!mom3.available)
+			// 		mom3.checkin()
+			// else // oh god please beat me with a crowbar, make me cum so hard to the sound of my broken kneecaps, cmon it'll be fun
 			create_chat_message(speaker, message_language, raw_message, spans, NONE, null, momchat)
 		else
 			data["message_mode"] = message_mode
@@ -298,7 +299,7 @@
 	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
 	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
 	var/list/visible_close = CC.visible_close.Copy()
-	// var/list/visible_far = CC.visible_far.Copy()
+	var/list/visible_far = CC.visible_far.Copy()
 	var/list/hidden_pathable = CC.hidden_pathable.Copy()
 	CC.putback()
 
@@ -372,7 +373,7 @@
 	// 	data["display_turf"] = src
 	// 	mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
 	// 	sblistening |= mvf.client
-	for(var/mob/mhp in hidden_pathable)
+	for(var/mob/mhp in hidden_pathable|visible_far)
 		var/turf/hearfrom = hidden_pathable[mhp]
 		var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutMommy("chat_datums")
 		mom3.copy_mommy(momchat)
@@ -381,10 +382,10 @@
 		mom3.display_turf = hearfrom
 		mom3.recipiant = mhp
 		var/msg_dotted = dots(message, distance = get_dist(get_turf(src), get_turf(mhp)), maxdistance = max_range)
-		var/msg_rerendered = compose_message(src, message_language, msg_dotted, null, spans, message_mode, FALSE, source, list("mommy" = mom3))
+		var/msg_rerendered = compose_message(src, message_language, msg_dotted, null, spans | mom3.spans, message_mode, FALSE, source, list("mommy" = mom3))
 		mom3.message = msg_rerendered
 		mom3.runechat_mode = "hidden_pathable"
-		mhp.Hear(msg_rerendered, src, message_language, msg_rerendered, null, spans, message_mode, source, just_chat, list("mommy" = mom3))
+		mhp.Hear(msg_rerendered, src, message_language, msg_rerendered, null, spans | mom3.spans, message_mode, source, just_chat, list("mommy" = mom3))
 		sblistening |= mhp.client
 		if(!mom3.available)
 			mom3.checkin()
