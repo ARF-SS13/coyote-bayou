@@ -33,6 +33,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails_animated/mam_tails_animated/fennecdown
+	name = "Downward Fennec Tail"
+	icon_state = "downwardfennec"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/fennecdown
 	name = "Downward Fennec Tail"
 	icon_state = "downwardfennec"

@@ -78,10 +78,12 @@ export const PersonalCrafting = (props, context) => {
                 icon="cog"
                 content="Refresh"
                 onClick={() => act('update_static')} />
+              {/* THANKS POPPER, YOU LAGGY PIECE OF SH1T
               <Button.Checkbox
                 content="Compact"
                 checked={display_compact}
                 onClick={() => act('toggle_compact')} />
+              */}
               <Button.Checkbox
                 content="Craftable Only"
                 checked={display_craftable_only}

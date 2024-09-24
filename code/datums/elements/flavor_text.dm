@@ -80,10 +80,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
 		return
 	var/msg = replacetext(text, "\n", " ")
-	if(length_char(msg) <= 40)
+	if(length_char(msg) <= 200)
 		examine_list += span_notice("[msg]")
 	else
-		examine_list += "<span class='notice'>[copytext_char(msg, 1, 37)]... <a href='?src=[REF(src)];show_flavor=[REF(target)]'>More...</span></a>"
+		examine_list += "<span class='notice'>[copytext_char(msg, 1, 197)]... <a href='?src=[REF(src)];show_flavor=[REF(target)]'>More...</span></a>"
 
 /datum/element/flavor_text/Topic(href, href_list)
 	. = ..()

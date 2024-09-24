@@ -14,6 +14,7 @@
 	var/datum/looping_sound/hairbrush/fwhuush
 	var/last_brushed
 	var/vis_dist = 3
+	var/last_act = 0
 
 
 /obj/item/hairbrush/Initialize()
@@ -27,8 +28,11 @@
 /obj/item/hairbrush/attack(mob/target, mob/user)
 	. = COMPONENT_ITEM_NO_ATTACK
 	if(am_brushing)
-		to_chat(user, span_alert("You're already brushing!"))
-		return
+		if(last_brushed + (brush_speed * 1.5) < world.time)
+			am_brushing = FALSE
+		else
+			to_chat(user, span_alert("You're already brushing!"))
+			return
 	brush(target, user)
 
 /obj/item/hairbrush/proc/abort(mob/target, mob/user)
@@ -165,6 +169,7 @@
 				vis_dist,
 			)
 	last_brushed = brush_what
+	last_act = world.time
 	brush(target, user, TRUE)
 
 /obj/item/hairbrush/proc/smack_em_on_the_butt(mob/user, mob/target)

@@ -53,8 +53,8 @@
 	if(!istype(U) || !istype(W))
 		return ..()
 
-	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/melee/onehanded/knife) || istype(W,/obj/item/hand_item/healable/licker))
-		if(alert(U, "You sure you want to jam that in there?",,"Yes","No") == "Yes")
+	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/melee/onehanded/knife) || istype(W,/obj/item/hand_item/tactile/licker))
+		if(alert(U, "I sure you want to jam that in there?",,"Yes","No") == "Yes")
 			if(do_after(user, 10, 1, target = src))
 				U.visible_message(span_warning("[user] jams [W] into [src]!"), span_notice("You jam [W] into [src]!"))
 				U.transferItemToLoc(W,src)
