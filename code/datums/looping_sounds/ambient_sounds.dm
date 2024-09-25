@@ -68,22 +68,12 @@
 	direct = TRUE
 	loop_delay = 3 MINUTES
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13ambience/bear_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/bear_2.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/wild1.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/wild1.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/frog_1.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/frog_2.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/coyote_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/coyote_2.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/squirrel_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/battle_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/battle_2.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/battle_3.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/rattlesnake_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/rattlesnake_2.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/rattlesnake_3.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_1.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_2.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_3.ogg', 10 SECONDS, 1),
@@ -92,14 +82,8 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_6.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_7.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/cougar.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/lynx.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/wolfhowl.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo2.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo3.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo4.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 10 SECONDS, 1)
 	)
 
 /datum/looping_sound/ambient/critters/extra
