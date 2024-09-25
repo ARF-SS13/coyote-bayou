@@ -50,11 +50,10 @@
 			humanAM.AdjustKnockdown(25)
 			playsound(get_turf(src), 'sound/effects/wallsmack.ogg', 100, 0, 0)
 			if(HAS_TRAIT(humanAM, TRAIT_ZOOMIES))
-				humanAM.adjustBruteLoss(20) //falling from 1 story is 11 damage. falling from 2 stories is 31
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
-				visible_message(span_warning("[humanAM] runs straight into [src] with a sickening impact!"))
+				visible_message(span_warning("[humanAM] runs straight into [src] with a smack!"))
 			if(HAS_TRAIT(humanAM, TRAIT_SUPER_ZOOMIES))
-				humanAM.adjustBruteLoss(40)
+				humanAM.adjustBruteLoss(30)
 				visible_message(span_warning("[humanAM] runs straight into [src] with a violent impact!"))
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
 				playsound(get_turf(src), 'sound/effects/wounds/crack2.ogg', 100, 0, 0)

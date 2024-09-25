@@ -62,6 +62,8 @@
 	if(. && (combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && !(movement_type & FLYING) && CHECK_ALL_MOBILITY(src, MOBILITY_MOVE|MOBILITY_STAND) && m_intent == MOVE_INTENT_RUN && has_gravity(loc) && (!pulledby || (pulledby.pulledby == src)))
 		if(!HAS_TRAIT(src, TRAIT_FREESPRINT))
 			doSprintLossTiles(1)
+		else
+			doSprintLossTiles(1)
 		if((oldpseudoheight - pseudo_z_axis) >= 8)
 			to_chat(src, span_warning("You trip off of the elevated surface!"))
 			for(var/obj/item/I in held_items)

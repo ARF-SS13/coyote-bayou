@@ -2473,7 +2473,7 @@
 		/datum/firemode/burst/two/fast
 	)
 	zoomable = TRUE
-	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	fire_sound = 'sound/f13weapons/bozar_fire.ogg' // to be replaced with the honking noise
 	zoom_factor = 1.2
 
 /* * * * * * * * * * *
