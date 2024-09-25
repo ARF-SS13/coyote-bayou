@@ -38,13 +38,15 @@
 					/obj/item/reagent_containers/pill/charcoal = 6)
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
 					/obj/item/storage/box/hug/medical = 1,
-					/obj/item/storage/pill_bottle/psicodine = 2,
 					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 12,
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier = 2,
 					///obj/item/gun/syringe/dart = 2,
 					/obj/item/plunger/reinforced = 2)
+
+
+//						/obj/item/storage/pill_bottle/psicodine = 2, was in this
 
 	armor = ARMOR_VALUE_HEAVY
 	resistance_flags = FIRE_PROOF

@@ -171,14 +171,14 @@
 	icon_state = "pill18"
 	list_reagents = list(/datum/reagent/medicine/insulin = 50)
 	roundstart = TRUE
-
+/*
 /obj/item/reagent_containers/pill/psicodine
 	name = "psicodine pill"
 	desc = "Used to treat mental instability and phobias."
 	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
 	icon_state = "pill22"
 	roundstart = TRUE
-
+*/
 /obj/item/reagent_containers/pill/antirad
 	name = "potassium iodide pill"
 	desc = "Used to treat radition used to counter radiation poisoning."

@@ -44,9 +44,6 @@
 			qdel(src)
 			return
 
-/obj/item/lockpick_set/proc/can_use(mob/user)
-	return HAS_TRAIT(user, TRAIT_SECURITYEXPERT)
-
 /obj/item/locked_box
 	name = "locked box"
 	desc = "An object that contains objects that may be useful."
@@ -160,10 +157,6 @@
 			return
 
 		var/obj/item/lockpick_set/tool = W
-		if(!tool.can_use(user))
-			to_chat(user, span_warning("You're not really sure what to do with this..."))
-			return
-
 		if(lock_tier > 3 && tool.lockpick_tier < 2)
 			to_chat(user, span_warning("You need a better set of tools to get past security measures like this!"))
 			return

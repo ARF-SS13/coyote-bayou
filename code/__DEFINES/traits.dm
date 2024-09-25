@@ -374,7 +374,6 @@
 #define TRAIT_ENDLESS_RUNNER "endless_runner"
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 #define TRAIT_NOHIDEFACE "no hide face"
-#define TRAIT_SECURITYEXPERT "security-expert"
 #define TRAIT_CLAM_TONGUE "clam_tongue"
 #define TRAIT_CLAM_LOVER "clam_lover"
 #define TRAIT_CLAM_FISHER "clam_fisher"
