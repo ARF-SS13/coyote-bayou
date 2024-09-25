@@ -184,11 +184,6 @@
 /obj/machinery/door/proc/try_to_lockpick(obj/item/lockpick_set/picking, mob/user)
 	if(!istype(picking))
 		return FALSE
-
-	if(!picking.can_use(user))
-		to_chat(user, span_warning("You're not sure where to start with this..."))
-		return FALSE
-
 	picking.in_use = TRUE
 
 	var/list/pick_messages = list(
