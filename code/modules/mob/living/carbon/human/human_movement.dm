@@ -16,10 +16,6 @@
 		if(!SSI)
 			SSI = CONFIG_GET_ENTRY(number/movedelay/sprint_speed_increase)
 		. -= SSI.config_entry_value
-	if(m_intent == MOVE_INTENT_RUN && HAS_TRAIT(src, TRAIT_ZOOMIES))
-		. -= 1.25 // 1.1 + 0.15
-	if(m_intent == MOVE_INTENT_RUN && HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
-		. -= 1.40 // 1.25 + 0.15
 	if(m_intent == MOVE_INTENT_WALK && HAS_TRAIT(src, TRAIT_SPEEDY_STEP))
 		. -= 1.25
 
