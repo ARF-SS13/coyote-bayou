@@ -304,7 +304,6 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp1.ogg', 130 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp2.ogg', 130 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp3.ogg', 130 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp4.ogg', 130 SECONDS, 1),
 	)
 
 /datum/looping_sound/ambient/swamp/quiet
@@ -370,40 +369,6 @@
 	)
 
 //Underground End//
-
-//Generic Ambience//
-/datum/looping_sound/ambient/general
-	chance = 40
-	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(60, 80)
-	direct = TRUE
-	loop_delay = 0
-	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_1.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_2.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_3.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_4.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_5.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_6.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_7.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_8.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_9.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_10.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_11.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_12.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_13.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_14.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_15.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_16.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_17.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_18.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_19.ogg', 10 SECONDS, 1),
-		//SOUND_LOOP_ENTRY('sound/ambience/ambigen5.ogg', 15 SECONDS, 1), //Might Opt back into these later ~TK
-		//SOUND_LOOP_ENTRY('sound/ambience/ambigen6.ogg', 33 SECONDS, 1),
-		//SOUND_LOOP_ENTRY('sound/ambience/ambigen9.ogg', 9 SECONDS, 1),
-		//SOUND_LOOP_ENTRY('sound/ambience/ambigen10.ogg', 20 SECONDS, 1),
-		//SOUND_LOOP_ENTRY('sound/ambience/ambigen15.ogg', 12 SECONDS, 1),
-	)
 
 /datum/looping_sound/ambient/lightbulb
 	chance = 100
