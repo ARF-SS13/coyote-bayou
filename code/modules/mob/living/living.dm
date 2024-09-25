@@ -20,6 +20,17 @@
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
 	clienthud.add_hud_to(src)
+	add_filter("cool_shadow",10, list(
+		"type"="drop_shadow",
+		"x"=1,
+		"y"=-1,
+		"size"=3,
+		"offset"=2,
+		"color"= "#0000007A"))
+	// add_filter("sick_outline",11, list(
+	// 	"type"="outline",
+	// 	"size"=1,
+	// 	"color"= "#000000"))
 
 /mob/living/prepare_huds()
 	..()
