@@ -93,13 +93,12 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	/obj/structure/flora/wasteplant/wild_fungus = 2,
 	/obj/structure/flora/wasteplant/wild_agave = 5,
 	/obj/structure/flora/wasteplant/fever_blossom = 8,
-// these were added retroactively and were actually in the grass list so their weights are off
 	/obj/structure/flora/wasteplant/tomato = 2,
 	/obj/structure/flora/wasteplant/watermelon =2,
 	/obj/structure/flora/wasteplant/grape = 2,
 	/obj/structure/flora/wasteplant/pumpkin = 2,
 	/obj/structure/flora/wasteplant/corn = 2,
-	/obj/structure/flora/wasteplant/carrot = 2
+	/obj/structure/flora/wasteplant/carrot = 2,
 	/obj/structure/flora/wasteplant/berrybush/tinto = 2,
 	/obj/structure/flora/wasteplant/berrybush/amar = 2,
 	/obj/structure/flora/wasteplant/berrybush/azul = 2,
@@ -109,6 +108,8 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	/obj/structure/flora/wasteplant/berrybush/marron = 2,
 	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
 	))
+
+// tomatoes and below were added retroactively and were actually in the grass list so their weights are off
 
 GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/grass/wasteland = 1400,
