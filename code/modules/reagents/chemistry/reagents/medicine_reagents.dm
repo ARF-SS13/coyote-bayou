@@ -1635,7 +1635,7 @@
 			M.adjustStaminaLoss(1.5*REM, 0)
 	..()
 	return TRUE
-
+/*
 /datum/reagent/medicine/psicodine
 	name = "Psicodine"
 	description = "Suppresses anxiety and other various forms of mental distress. Overdose causes hallucinations and minor toxin damage."
@@ -1672,7 +1672,7 @@
 	M.adjustToxLoss(1, 0)
 	..()
 	. = 1
-
+*/
 /datum/reagent/medicine/silibinin
 	name = "Silibinin"
 	description = "A thistle derrived hepatoprotective flavolignan mixture that help reverse damage to the liver."

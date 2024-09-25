@@ -336,13 +336,13 @@
 	results = list(/datum/reagent/medicine/modafinil = 5)
 	required_reagents = list(/datum/reagent/diethylamine = 1, /datum/reagent/ammonia = 1, /datum/reagent/phenol = 1, /datum/reagent/acetone = 1, /datum/reagent/toxin/acid = 1)
 	required_catalysts = list(/datum/reagent/bromine = 1) // as close to the real world synthesis as possible
-
+/*
 /datum/chemical_reaction/psicodine
 	name = "Psicodine"
 	id = /datum/reagent/medicine/psicodine
 	results = list(/datum/reagent/medicine/psicodine = 5)
 	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
-
+*/
 /datum/chemical_reaction/medsuture
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/ephedrine = 10)
 
