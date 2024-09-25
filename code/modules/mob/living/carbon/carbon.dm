@@ -1,5 +1,6 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	var/dodgechance = 30
 
 /mob/living/carbon/Initialize()
 	. = ..()
@@ -24,6 +25,16 @@
 	GLOB.carbon_list -= src
 	moveToNullspace() // suckit
 	return QDEL_HINT_LETMELIVE
+
+/mob/living/carbon/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(src.dodgechance))
+		playsound(loc, 'sound/effects/suitstep1.ogg', 50, 1, -1)
+		visible_message(span_danger("[src] dodges [Proj]!"))
+		return BULLET_ACT_FORCE_PIERCE
+	else
+		. = ..()
 
 /mob/living/carbon/relaymove(mob/user, direction)
 	if(user in src.stomach_contents)
