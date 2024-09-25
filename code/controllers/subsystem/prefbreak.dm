@@ -268,6 +268,14 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_SEE_COOLCHAT) // kinda vital here
 	// return consumer.see_fancy_offscreen_runechat // kinda vital here
 
+/datum/prefcheck/visualchat_use_contrasting_color
+	index = USE_AUTO_CONTRAST
+
+/datum/prefcheck/visualchat_use_contrasting_color/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.visualchat_use_contrasting_color // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
 
 
 

@@ -252,6 +252,7 @@
 	if(momchat && should_hornify(momchat))
 		momchat.furry_dating_sim = TRUE
 	if(momchat && isdummy(momchat.source))
+		momchat.message = message
 		return momchat
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type, null, momchat)
 	if(islist(data) && LAZYACCESS(data, "is_radio") && (data["ckey"] in GLOB.directory) && !SSchat.debug_block_radio_blurbles)
@@ -297,11 +298,13 @@
 			max_range = SSchat.extended_say_distance
 
 	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
-	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
-	var/list/visible_close = CC.visible_close.Copy()
-	var/list/visible_far = CC.visible_far.Copy()
-	var/list/hidden_pathable = CC.hidden_pathable.Copy()
-	CC.putback()
+	var/datum/chatchud/CC = null
+	if(!direct_to_mob)
+		CC = get_listening(src, message_range, max_range, quietness)
+	var/list/visible_close = CC ? CC.visible_close.Copy() : list(direct_to_mob)
+	var/list/visible_far = CC ? CC.visible_far.Copy() : list()
+	var/list/hidden_pathable = CC ? CC.hidden_pathable.Copy() : list()
+	CC?.putback()
 
 	var/list/the_dead = list()
 	// var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
@@ -338,12 +341,13 @@
 	momchat.only_overhead = just_chat
 	momchat.source_quid = extract_quid(src)
 	momchat.source_ckey = ckey
-	if(direct_to_mob)
-		momchat.recipiant = direct_to_mob
+	. = momchat
 	var/list/rental_data = list("mommy" = momchat) // mommy is very disappointed
 	var/rendered = compose_message(src, message_language, message, null, spans, message_mode, FALSE, source, rental_data)
-	if(momchat.recipiant)
-		return momchat.recipiant.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat, list("mommy" = momchat))
+	if(direct_to_mob)
+		momchat.recipiant = direct_to_mob
+		momchat.recipiant.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat, list("mommy" = momchat))
+		return
 	/// non-players
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
@@ -585,6 +589,8 @@
 /mob/living/should_hornify(datum/rental_mommy/chat/mommy)
 	if(!mommy)
 		return FALSE
+	if(isdummy(mommy.source))
+		return TRUE // previews n such
 	if(!ishuman(mommy.source))
 		return FALSE
 	var/mob/living/carbon/human/H = mommy.source

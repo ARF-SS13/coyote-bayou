@@ -71,10 +71,10 @@ SUBSYSTEM_DEF(chat)
 	var/base_whisper_distance = 1
 	var/extended_whisper_distance = 3
 	
-	var/base_sing_distance = 15
-	var/extended_sing_distance = INFINITY
-	var/base_yell_distance = 15
-	var/extended_yell_distance = INFINITY
+	var/base_sing_distance = 500
+	var/extended_sing_distance = 600
+	var/base_yell_distance = 500
+	var/extended_yell_distance = 600
 	var/far_distance = 6 // how far until they're considered offscreen
 
 
@@ -509,6 +509,9 @@ SUBSYSTEM_DEF(chat)
 	var/client/C = extract_client(someone)
 	if(!C)
 		return
+	if(!SSprefbreak.initialized || !SSrentaldatums.initialized)
+		to_chat(C, span_alert("Hold your horses! Parts of the game that this thing relies on hasn't initialized yet! Everything should be ready when the round starts. =3"))
+		return
 	var/datum/horny_tgui_holder/HTH = LAZYACCESS(horny_tguis, C.ckey)
 	if(!HTH)
 		HTH = new(C.ckey)
@@ -585,7 +588,7 @@ SUBSYSTEM_DEF(chat)
 			else
 				msg = "[msg][message_mode]" // to catch any custom modes
 
-	var/datum/rental_mommy/chat/mommy = D.say(msg, direct_to_mob = target)
+	var/datum/rental_mommy/chat/mommy = D.say(msg, direct_to_mob = D) // silent screaming (??)
 	D.moveToNullspace()
 	D.invisibility = initial(D.invisibility)
 	if(!mommy)
@@ -818,11 +821,15 @@ SUBSYSTEM_DEF(chat)
 		if(!no_boober_period)
 			cum += "<p style='font-weight: bold; margin: 0;'>[m_name] <span style='[nobold_verb? "font-weight: normal;" : ""] font-style: italic; color: [dtc];'>[m_verb]</span></p>"
 		if(!nomessage)
-			cum += "<p style='margin: 0; colorr: [dtc]; id='Message'>[m_message]</p>"
+			cum += "<p style='margin: 0; color: [dtc]; id='Message'>[m_message]</p>"
 		cum += "</div>"
 	cum += "</div>"
+	var/egg_surrounded_by_sperm = cum.Join() // the full message
+	if(P.visualchat_use_contrasting_color)
+		var/ccolr = get_contrasting_color(bbc_1, bbc_2)
+		egg_surrounded_by_sperm = "<span style='color: [ccolr];'>" + egg_surrounded_by_sperm + "</span>"
 	// now we need to send it to the target
-	return cum.Join()
+	return egg_surrounded_by_sperm // ya know, how *is* babby formed?
 
 
 /datum/controller/subsystem/chat/proc/get_horny_pfp(m_rawmessage, list/m_images, m_mode, list/imglist)
@@ -1597,6 +1604,7 @@ SUBSYSTEM_DEF(chat)
 	/// then, the user's images
 	SSchat.SanitizeUserImages(P)
 	SSchat.SanitizeUserPreferences(P)
+	data["AutoContrast"] = CHECK_PREFS(P, USE_AUTO_CONTRAST)
 	data["SeeOthers"] = CHECK_PREFS(P, SHOW_ME_HORNY_FURRIES)
 	data["UserImages"] = P.ProfilePics
 	data["UserCKEY"] = user.ckey
@@ -2025,6 +2033,17 @@ SUBSYSTEM_DEF(chat)
 		if("SaveEverything")
 			to_chat(M, span_notice("Saving all changes..."))
 			// all the settings are autosaved, so this is just to make you feel better
+		if("ChangeTextColor")
+			to_chat(M, span_notice("Change your Runechat color! Neat!"))
+			. = CHANGED_NOTHING
+			M.change_chat_color(TRUE)
+		if("ToggleAutoContrast")
+			TOGGLE_VAR(P.visualchat_use_contrasting_color)
+			if(P.visualchat_use_contrasting_color)
+				to_chat(M, span_notice("AutoContrast is now enabled! The non-personalized text in your messages (emotes, etc) will now attempt to use a contrasting color."))
+			else
+				to_chat(M, span_notice("AutoContrast is now disabled! The non-personalized text in your messages (emotes, etc) will follow the light/dark mode settings of the VIEWER! This could get ugly, so, yeah."))
+			. = CHANGED_NOTHING
 		if("ModifyHost")
 			var/mode = params["Mode"]
 			var/newhost = params["NewHost"]

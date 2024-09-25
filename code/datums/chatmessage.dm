@@ -219,13 +219,13 @@
 	message.maptext = complete_text
 	var/alphatomakeit = 255
 	if(eavesdrop)
-		alphatomakeit /= 3
-	if(offscreen)
 		alphatomakeit /= 2
+	if(offscreen)
+		alphatomakeit /= 1.5
 		message.pixel_x = rand(-40, 40)
 		message.pixel_y = rand(-40, 40)
-	if((SPAN_SMALL in extra_classes) || (SPAN_SMALLER in extra_classes))
-		alphatomakeit /= 2
+	// if((SPAN_SMALL in extra_classes) || (SPAN_SMALLER in extra_classes))
+	// 	alphatomakeit /= 2
 
 	// View the message
 	LAZYADDASSOC(owned_by.seen_messages, remembered_location, src)
@@ -350,7 +350,7 @@
 	if(!P)
 		to_chat("How in the world are you missing preferences?!")
 		return
-	var/list/choices = list("Configure Length", "Configure Width", "Configure Off-Screen Messages")
+	var/list/choices = list("Configure Length", "Configure Width", "Configure Off-Screen Messages", "Change Color")
 	var/my_choose = input(
 		src,
 		"Welcome to Runechat! Here you can modify your preferences for how Runechat looks to you!\n\

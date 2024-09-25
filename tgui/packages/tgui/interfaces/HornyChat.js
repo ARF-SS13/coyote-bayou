@@ -151,6 +151,9 @@ const BackMsgMode2Front = {
 // Thanks to https://www.colorhexa.com/ for the colors
 // (I didnt actually use that site, I just like to thank random people)
 
+// yes I know this system is called like 5 different things
+// they're all correct tho
+
 export const HornyChat = (props, context) => {
   const { act, data } = useBackend(context);
   return (
@@ -274,6 +277,7 @@ const LowerRowBar = (props, context) => {
   const {
     UserCKEY,
     SeeOthers,
+    AutoContrast,
   } = data;
 
   return (
@@ -314,12 +318,37 @@ const LowerRowBar = (props, context) => {
         <Button
           fluid
           icon={SeeOthers ? "eye" : "eye-slash"}
-          content={
+          tooltip={
             SeeOthers
-              ? "VisualChat Visible"
-              : "VisualChat Hidden"
+              ? "You can see other people's VisualChat messages! Click to hide them!"
+              : "You can't see other people's VisualChat messages! Click to show them!"
           }
           onClick={() => act('ToggleWhinyLittleBazingaMode', {
+            UserCkey: UserCKEY,
+          })} />
+      </Stack.Item>
+      <Stack.Item shrink>
+        {/* A toggle for using the thing where it makes a contrasting color for your gaudy background */}
+        <Button
+          fluid
+          icon={AutoContrast ? "section" : "lightbulb"}
+          color={AutoContrast ? "green" : "default"}
+          tooltip={
+            AutoContrast
+              ? "Your non-colorized text will automatically attempt to contrast with your personalized backgrounds!"
+              : "Your non-colorized text will obey the viewer's(!) light/dark mode settings! This could get ugly!"
+          }
+          onClick={() => act('ToggleAutoContrast', {
+            UserCkey: UserCKEY,
+          })} />
+      </Stack.Item>
+      <Stack.Item shrink>
+        {/* A button to change the color of the text */}
+        <Button
+          fluid
+          icon="paint-brush"
+          tooltip="Change the color of your text!"
+          onClick={() => act('ChangeTextColor', {
             UserCkey: UserCKEY,
           })} />
       </Stack.Item>
