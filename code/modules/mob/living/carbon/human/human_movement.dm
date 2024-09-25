@@ -16,6 +16,10 @@
 		if(!SSI)
 			SSI = CONFIG_GET_ENTRY(number/movedelay/sprint_speed_increase)
 		. -= SSI.config_entry_value
+	if(m_intent == MOVE_INTENT_RUN && HAS_TRAIT(src, TRAIT_ZOOMIES))
+		. -= 1.25 // 1.1 + 0.15
+	if(m_intent == MOVE_INTENT_RUN && HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
+		. -= 1.40 // 1.25 + 0.15
 	if(m_intent == MOVE_INTENT_WALK && HAS_TRAIT(src, TRAIT_SPEEDY_STEP))
 		. -= 1.25
 
@@ -61,8 +65,6 @@
 		HM.on_move(NewLoc)
 	if(. && (combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && !(movement_type & FLYING) && CHECK_ALL_MOBILITY(src, MOBILITY_MOVE|MOBILITY_STAND) && m_intent == MOVE_INTENT_RUN && has_gravity(loc) && (!pulledby || (pulledby.pulledby == src)))
 		if(!HAS_TRAIT(src, TRAIT_FREESPRINT))
-			doSprintLossTiles(1)
-		else
 			doSprintLossTiles(1)
 		if((oldpseudoheight - pseudo_z_axis) >= 8)
 			to_chat(src, span_warning("You trip off of the elevated surface!"))

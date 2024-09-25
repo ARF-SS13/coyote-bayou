@@ -42,7 +42,7 @@ SPRINT_BUFFER_MAX 30
 ## Number of sprint buffer tiles regained per second.
 SPRINT_BUFFER_REGEN_PER_DS 0.08
 ## Cost in stamina per tile sprinted.
-SPRINT_STAMINA_COST 5
+SPRINT_STAMINA_COST 0
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
