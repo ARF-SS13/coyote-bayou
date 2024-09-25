@@ -44,9 +44,6 @@
 			qdel(src)
 			return
 
-/obj/item/lockpick_set/proc/can_use(mob/user)
-	return HAS_TRAIT(user, TRAIT_SECURITYEXPERT)
-
 /obj/item/locked_box
 	name = "locked box"
 	desc = "An object that contains objects that may be useful."
