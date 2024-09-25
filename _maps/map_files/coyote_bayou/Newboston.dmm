@@ -3516,6 +3516,10 @@
 /obj/machinery/door/unpowered/securedoor,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"bPR" = (
+/obj/structure/flora/wasteplant/wild_datura,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "bQl" = (
 /obj/machinery/mineral/wasteland_trader{
 	pixel_x = 1;
@@ -13766,7 +13770,12 @@
 	},
 /area/f13/building)
 "hrK" = (
-)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/wasteland)
 "hrM" = (
 /obj/structure/decoration/rag,
 /obj/structure/fence{
@@ -14413,12 +14422,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"hJF" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress6"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
 "hJJ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
@@ -22239,6 +22242,10 @@
 /obj/structure/simple_door/metal/barred,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"lKm" = (
+/obj/structure/flora/wasteplant/wild_buffalogourd,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lKz" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -29096,10 +29103,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/building/tribal)
-"pBs" = (
-/obj/structure/flora/wasteplant/wild_datura,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "pBB" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -36847,10 +36850,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"tDH" = (
-/obj/structure/flora/wasteplant/wild_buffalogourd,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "tDI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -58726,7 +58725,7 @@ tot
 tot
 tot
 tot
-tDH
+lKm
 tPQ
 pft
 tPQ
@@ -58981,7 +58980,7 @@ tot
 tot
 tot
 tot
-tDH
+lKm
 tPQ
 tPQ
 tPQ
@@ -64354,7 +64353,7 @@ tot
 tot
 ucj
 tPQ
-pBs
+bPR
 ucj
 ucj
 ucj
@@ -65129,7 +65128,7 @@ ucj
 ucj
 ucj
 ucj
-pBs
+bPR
 orL
 orL
 tPQ
@@ -65379,7 +65378,7 @@ tot
 tot
 tot
 tPQ
-pBs
+bPR
 tPQ
 ucj
 ucj
@@ -99843,7 +99842,7 @@ pgV
 hay
 kqP
 qZN
-hJF
+mXa
 tot
 hRl
 tot
