@@ -276,37 +276,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You don't seem to be able to jump as high as you used to.")
 	medical_record_text = "Patient scored highly on cardio tests."
 
-
-/datum/quirk/tackler
-	name = "Leaper"
-	desc = "You are able to leap short distances, and on occasion tackle others, albeit somewhat clumsly."
-	value = 14
-	category = "Movement Quirks"
-	mechanics = "You are able to jump short distances with throw enabled and an empty hand, hitting people will tackle them, leaning towards poor results for you."
-	conflicts = list(
-		/datum/quirk/clumsy,
-		/datum/quirk/overweight,
-		/datum/quirk/tacklerapex,
-		/datum/quirk/tackleradv
-	)
-	mob_trait = TRAIT_TACKLER
-	gain_text = span_notice("Your legs feel stronger.")
-	lose_text = span_danger("Your legs feel weaker.")
-	medical_record_text = "Patient's dexterity belies a good capacity for long distance jumping."
-
-/datum/quirk/tackler/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.AddComponent(/datum/component/tackler/simple, \
-		stamina_cost = 30, \
-		base_knockdown = 0 SECONDS, \
-		range = 4, \
-		speed = 1, \
-		skill_mod = -1, \
-		min_distance = 0 \
-)
-
-
-
 /datum/quirk/tackleradv
 	name = "Advanced Leaper"
 	desc = "You are able to leap long distances with ease."
@@ -317,7 +286,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 		/datum/quirk/clumsy,
 		/datum/quirk/overweight,
 		/datum/quirk/tacklerapex,
-		/datum/quirk/tackler
 	)
 	mob_trait = TRAIT_TACKLERADV
 	gain_text = span_notice("Your legs feel much stronger.")
@@ -345,10 +313,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/overweight,
-		/datum/quirk/tackler,
 		/datum/quirk/tackleradv
 	)
-	mob_trait = TRAIT_TACKLERAPEX
+	mob_trait = TRAIT_TACKLERNONCONX
 	gain_text = span_notice("Your legs feel incredibly stronger.")
 	lose_text = span_danger("Your legs feel incredibly weaker.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for street wide jumping."

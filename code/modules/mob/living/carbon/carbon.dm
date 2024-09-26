@@ -26,6 +26,17 @@
 	moveToNullspace() // suckit
 	return QDEL_HINT_LETMELIVE
 
+/mob/living/carbon/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/tackler/simple, \
+		stamina_cost = 30, \
+		base_knockdown = 0 SECONDS, \
+		range = 4, \
+		speed = 1, \
+		skill_mod = -1, \
+		min_distance = 0 \
+	)
+
 /mob/living/carbon/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return

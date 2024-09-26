@@ -13,7 +13,7 @@
  * There are 2 """skill rolls""" involved here, which are handled and explained in sack() and rollTackle() (for roll 1, carbons), and splat() (for roll 2, walls and solid objects)
 */
 /datum/component/tackler
-	dupe_mode = COMPONENT_DUPE_UNIQUE
+	dupe_mode = COMPONENT_DUPE_HIGHLANDER
 	///How much stamina it takes to launch a tackle
 	var/stamina_cost
 	///Launching a tackle calls Knockdown on you for this long, so this is your cooldown. Once you stand back up, you can tackle again.
