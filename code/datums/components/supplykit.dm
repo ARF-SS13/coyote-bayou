@@ -25,6 +25,7 @@ GLOBAL_LIST_EMPTY(supplykits)
 	GLOB.supplykits += src
 	supplykit_items = get_supplykit_items(TRUE, allow_restricted, filters)
 	active = _enabled
+
 	supplytokens = starting_st + 50*(floor(world.time/(24 HOURS))) //50 per extra hour past the first
 
 /datum/component/supplykit/InheritComponent(datum/component/supplykit/U)
