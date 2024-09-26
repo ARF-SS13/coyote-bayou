@@ -327,7 +327,7 @@
 #define TRAIT_THERMAL_VISION    "thermal_vision"
 #define TRAIT_TACKLER            "tackler"
 #define TRAIT_TACKLERADV           "Advanced Tackler"
-#define TRAIT_TACKLERAPEX           "Apex Tackler"
+#define TRAIT_TACKLERNONCONX           "Apex Tackler"
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 #define TRAIT_NO_INTERNALS		"no-internals"
 #define TRAIT_NO_ALCOHOL		"alcohol_intolerance"

@@ -315,7 +315,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		/datum/quirk/overweight,
 		/datum/quirk/tackleradv
 	)
-	mob_trait = TRAIT_TACKLERAPEX
+	mob_trait = TRAIT_TACKLERNONCONX
 	gain_text = span_notice("Your legs feel incredibly stronger.")
 	lose_text = span_danger("Your legs feel incredibly weaker.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for street wide jumping."
