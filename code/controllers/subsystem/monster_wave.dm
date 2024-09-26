@@ -2,22 +2,23 @@
 SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
 	wait = 2 SECONDS //change to either 30 MINUTES or 1 HOURS
-	var/allow_spawner_lads = FALSE
+	var/allow_spawner_lads = TRUE
 	/// big list of all the spawners that have been destroyed
 	var/list/spawner_tickets = list() // list(/datum/nest_box)
 	/// big list of all the spawner lads in existence
 	var/list/spawner_lads = list() // list(/mob/living/simple_animal/nest_spawn_hole_guy)
 	/// big list of what we actually spawned, for an occasional admin report
 	/// How long it takes from when the spawner dies to when it starts the respawn process
-	var/nest_respawndelay = 15 MINUTES
+	var/nest_respawndelay = 5 HOURS
 	/// How long it takes from when the spawnermob thing spawns to when it turns into a nest
-	var/spawn_delay = 15 MINUTES
+	var/spawn_delay = 1 // 15 MINUTES
 	/// how long after being blocked will we hold off on trying to spawn stuff there?
-	var/spawn_block_delay = 1 MINUTES
+	var/spawn_block_delay = 1 HOURS
 	/// coords of spawn blocker devices per Z level
 	var/list/spawn_blockers = list() // list(/obj/structure/respawner_blocker)
 	var/num_spawned = 0
 	var/highest_gen = 0
+	var/insta_boy = TRUE
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
@@ -54,38 +55,44 @@ SUBSYSTEM_DEF(monster_wave)
 				continue
 			var/turf/there = coords2turf(NB.coords)
 			if(!there)
-				unregister_nest_seed(NB)
-				qdel(NB)
+				killnest(NB)
 				continue
 			if(is_spawn_blocked(there))
 				NB.delayed_by += spawn_block_delay
 				continue
 			var/can_put = can_place_riftnest(there)
 			if(can_put == KILL_INVALID_SPAWN)
-				unregister_nest_seed(NB)
-				qdel(NB)
+				killnest(NB)
 				continue
 			else if(!can_put)
 				for(var/turf/somewhere in spiral_range(dist=3, center=there, orange=1))
 					can_put = can_place_riftnest(somewhere)
 					if(can_put == KILL_INVALID_SPAWN)
-						unregister_nest_seed(NB)
-						qdel(NB)
+						killnest(NB)
 						continue mainloop
 					else if(can_put)
 						there = somewhere
 						break
 			if(can_put == KILL_INVALID_SPAWN)
-				unregister_nest_seed(NB)
-				qdel(NB)
+				killnest(NB)
 				continue
 			else if(!can_put)
 				continue
 			NB.mutate() // >:3c
 			var/mob/living/simple_animal/nest_spawn_hole_guy/NSHG = new(there)
 			NSHG.set_up(NB)
-			unregister_nest_seed(NB)
+			killnest(NB)
 			return TRUE
+
+/datum/controller/subsystem/monster_wave/proc/killnest(datum/nest_box/NB)
+	if(!istype(NB) || QDELETED(NB))
+		return
+	NB.time_i_died = world.time
+	NB.delayed_by = 0
+	if(insta_boy)
+		return // no kill the insta boy
+	SSmonster_wave.unregister_nest_seed(NB)
+	qdel(NB)
 
 /datum/controller/subsystem/monster_wave/proc/mob2hole()
 	if(!allow_spawner_lads)
@@ -109,6 +116,14 @@ SUBSYSTEM_DEF(monster_wave)
 /datum/controller/subsystem/monster_wave/proc/is_spawn_blocked(turf/here)
 	if(!here)
 		return TRUE
+	for(var/client/C in GLOB.clients)
+		var/mob/d = C.mob
+		if(!isliving(d))
+			continue
+		if(d.z != here.z)
+			continue
+		if(get_dist(d, here) <= 9)
+			return TRUE
 	for(var/obj/structure/respawner_blocker/RB in spawn_blockers)
 		if(here.z != RB.z)
 			continue
@@ -134,6 +149,8 @@ SUBSYSTEM_DEF(monster_wave)
 	return TRUE
 
 /datum/controller/subsystem/monster_wave/proc/get_spawn_delay()
+	if(insta_boy)
+		return 1 // nowish
 	return spawn_delay + world.time
 
 /datum/controller/subsystem/monster_wave/proc/register_nest_seed(datum/nest_box/NB)
@@ -177,6 +194,9 @@ SUBSYSTEM_DEF(monster_wave)
 /mob/living/simple_animal/nest_spawn_hole_guy/Initialize(datum/nest_box/NB)
 	if(NB)
 		set_up(NB)
+	if(SSmonster_wave.insta_boy)
+		invisibility = INVISIBILITY_ABSTRACT
+		light_on = FALSE
 	. = ..()
 
 /mob/living/simple_animal/nest_spawn_hole_guy/Destroy()
@@ -224,8 +244,7 @@ SUBSYSTEM_DEF(monster_wave)
 	if(SSmonster_wave.is_spawn_blocked(src))
 		return
 	if(locate(/obj/structure/nest) in get_turf(src))
-		death()
-		return TRUE
+		return
 	. = TRUE
 	/// time to make the nest!
 	var/datum/nest_box/NB = nest_seed
