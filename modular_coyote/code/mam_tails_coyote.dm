@@ -760,3 +760,34 @@
 	icon_state = "pikachumale"
 	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/flagtail
+	name = "flagtail"
+	icon_state = "flagtail"
+	matrixed_sections = MATRIX_ALL
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/flagtail
+	name = "flagtail"
+	icon_state = "flagtail"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/bigsquirrel
+	name = "big squirrel"
+	icon_state = "bigsquirrel"
+	matrixed_sections = MATRIX_ALL
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/bigsquirrel
+	name = "big squirrel"
+	icon_state = "bigsquirrel"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+
+
