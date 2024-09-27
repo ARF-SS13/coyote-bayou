@@ -743,6 +743,9 @@ SUBSYSTEM_DEF(job)
 			if(i[LOADOUT_CUSTOM_DESCRIPTION])
 				var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 				I.desc = custom_description
+			if(i[LOADOUT_CUSTOM_COLOR])
+				var/custom_cllor = i[LOADOUT_CUSTOM_COLOR]
+				I.color = "[custom_cllor]"
 			var/displace_me = FALSE
 			if(G.slot in displaceables) /// mm yes, displace me in my G.slot~
 				displace_me = TRUE

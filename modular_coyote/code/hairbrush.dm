@@ -30,6 +30,9 @@
 	if(am_brushing)
 		if(last_brushed + (brush_speed * 1.5) < world.time)
 			am_brushing = FALSE
+			abort()
+			abort()
+			abort() // STOP PLAYING FFS
 		else
 			to_chat(user, span_alert("You're already brushing!"))
 			return
