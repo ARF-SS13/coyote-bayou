@@ -735,7 +735,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/smg/mp5sd
+/obj/item/gun/ballistic/automatic/smg/mp5sd //hello world
 	name = "MP-5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
