@@ -112,10 +112,12 @@
 #define LOADOUT_COLOR "loadout_color"
 #define LOADOUT_CUSTOM_NAME "loadout_custom_name"
 #define LOADOUT_CUSTOM_DESCRIPTION "loadout_custom_description"
+#define LOADOUT_CUSTOM_COLOR "loadout_custom_description"
 
 //loadout item flags
 #define LOADOUT_CAN_NAME (1<<0) //renaming items
 #define LOADOUT_CAN_DESCRIPTION (1<<1) //adding a custom description to items
+#define LOADOUT_CAN_COLOR (1<<2) //adding a custom dick to ur butt
 
 //quirks
 #define QUIRK_POSITIVE	"Positive"

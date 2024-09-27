@@ -1644,6 +1644,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 							if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+							if(gear.loadout_flags & LOADOUT_CAN_COLOR)
+								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_recolor=1;loadout_gear_name=[html_encode(gear.name)];'>Color</a> <span style='border: 1px solid #161616; background-color: [loadout_item[LOADOUT_CUSTOM_COLOR] ? loadout_item[LOADOUT_CUSTOM_COLOR] : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;</span>"
 						else if((gear_points - gear.cost) < 0)
 							class_link = "style='white-space:normal;' class='linkOff'"
 						else if(donoritem)
@@ -4327,7 +4329,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						loadout_data["SAVE_[loadout_slot]"] = list(new_loadout_data) //double packed because you somehow had no save slot in your loadout?
 
-		if(href_list["loadout_color"] || href_list["loadout_rename"] || href_list["loadout_redescribe"])
+		if(href_list["loadout_color"] || href_list["loadout_rename"] || href_list["loadout_redescribe"] || href_list["loadout_recolor"])
 		//if the gear doesn't exist, or they don't have it, ignore the request
 			var/name = html_decode(href_list["loadout_gear_name"])
 			var/datum/gear/G = GLOB.loadout_items[gear_category][gear_subcategory][name]
@@ -4353,6 +4355,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/new_description = stripped_input(user, "Enter new description for item. Maximum 500 characters.", "Loadout Item Redescribing", null, 500)
 				if(new_description)
 					user_gear[LOADOUT_CUSTOM_DESCRIPTION] = new_description
+
+			if(href_list["loadout_recolor"] && (G.loadout_flags & LOADOUT_CAN_COLOR))
+				// var/enter_the_matrix = alert(
+				// 	user,
+				// 	"Use the simple Color Picker to choose a solid color, or use the more advanced (and convoluted) Color Matrix editor to recolor this?",
+				// 	"Colorize, Quick or Advanced?",
+				// 	"Color Picker",
+				// 	"Matrix Editor",
+				// 	"Cancel",
+				// )
+				// if(enter_the_matrix == "Color Picker")
+				var/new_color = input(
+					user,
+					"Pick a cool new color for your [G.name]! =3",
+					"Recolor Your Thing",
+					user_gear[LOADOUT_CUSTOM_COLOR] || "#FFFFFF",
+				) as color|null
+				if(new_color)
+					user_gear[LOADOUT_CUSTOM_COLOR] = "#[sanitize_hexcolor(new_color, 6)]"
+					to_chat(user, span_notice("Your [G.name] has been recolored to [user_gear[LOADOUT_CUSTOM_COLOR]]!"))
+				// else if(enter_the_matrix == "Matrix Editor")
+				// 	gear_color_matrix_setup_thing(user, user_gear, G)
 
 	ShowChoices(user)
 	return 1
