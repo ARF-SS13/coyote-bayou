@@ -8,8 +8,8 @@
 // These guns should have minimal DPS, be a relic, or are generally good for newbies.
 
 /obj/item/gun/flintlock/musket
-	name = "ancient musket"
-	desc = "An ancient but well kept blackpowder musket."
+	name = "post-fall fire belcher"
+	desc = "A decently made, probably even safe, muzzle loading rifle made after the fall of the old world."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
 	item_state = "308"
@@ -34,8 +34,8 @@
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musketoon
-	name = "ancient musketoon"
-	desc = "An ancient but well kept blackpowder musketoon; handy!"
+	name = "post-fall thunder rod"
+	desc = "A handy post-fall muzzle loading carbine."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musketoon"
 	item_state = "308"
@@ -59,8 +59,8 @@
 	prefire_randomness = FLINTLOCK_MINIMUSKET_PREFIRE_STD
 
 /obj/item/gun/flintlock/musket/jezail
-	name = "ancient jezail"
-	desc = "An ancient but well kept blackpowder jezail; handy!"
+	name = "post-fall heirloom long belcher"
+	desc = "A well taken care of muzzle loading firearm. This one shows family insignia and looks to have been handed down for generations."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "jezail"
 	item_state = "308"
@@ -84,8 +84,8 @@
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock
-	name = "flintlock pistol"
-	desc = "An ancient but well kept blackpowder pistol."
+	name = "post-fall short belcher"
+	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh.  Just don't drop it while loaded."
 	icon_state = "flintlock"
 	item_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
@@ -104,8 +104,8 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
 
 /obj/item/gun/ballistic/automatic/pistol/pistol22
-	name = "Target Pistol"
-	desc = "A sporting handgun with an integrated silencer."
+	name = "can tacker"
+	desc = "A 16 shot pre-fall handgun chambered in .22 long rifle. Great for killing rusty cans."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
@@ -122,8 +122,8 @@
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "Target Revolver"
-	desc = "A small sporting revolver that's easily concealable."
+	name = "sidewinder"
+	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	weapon_class = WEAPON_CLASS_SMALL
@@ -135,7 +135,7 @@
 	)
 
 /obj/item/gun/ballistic/rifle/repeater/trainer
-	name = "Target Repeater"
+	name = "snapback"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
 	item_state = "lever22"
@@ -160,7 +160,7 @@
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 /obj/item/gun/ballistic/automatic/sportcarbine
-	name = "Target Carbine"
+	name = "spitball"
 	desc = "One of the many .22 LR carbines that were all the rage before the cataclysm. While lacking in firepower, it more than makes up for it with its cheapness to fire."
 	icon_state = "surplus"
 	item_state = "rifle"
@@ -193,7 +193,7 @@
 // These guns should have okay DPS, be an older weapon, and are very good canidates for roundstart weapons. This sets the pace.
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
-	name = "9mm Pistol"
+	name = "nine"
 	desc = "A mass produced pre-cataclysm 9mm pistol."
 	icon_state = "ninemil"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -211,8 +211,8 @@
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
-	name = "Eastern 9mm SMG"
-	desc = "A machine pistol."
+	name = "subby"
+	desc = "A machine pistol. In 9mm."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "skorpion"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -223,7 +223,7 @@
 	)
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby
-	name = "Ruby"
+	name = "ruby"
 	desc = "A post-cataclysm petite pocket pistol copied after the pre-cataclysm design of the same name."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "ruby"
@@ -233,7 +233,7 @@
 	weapon_class = WEAPON_CLASS_TINY
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov
-	name = "Eastern Pistol"
+	name = "eastern pistol"
 	desc = "An easy to conceal pistol chambered in 9mm."
 	icon_state = "makarov"
 	item_state = "glock"
@@ -245,8 +245,8 @@
 	weapon_class = WEAPON_CLASS_TINY
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
-	name = "Trophy Pistol"
-	desc = "A german 9mm pistol, which takes single stack magazines."
+	name = "trophy pistol"
+	desc = "A foreign 9mm pistol, which takes single stack magazines."
 	icon_state = "p08"
 	item_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -254,7 +254,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
-	name = "Police Pistol"
+	name = "P.D."
 	desc = "Chambered in 9mm, this is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
 	item_state = "glock"
@@ -263,8 +263,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/type17
-	name = "Broomhandle Pistol"
-	desc = "The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 9mm after the original ammo ran dry decades ago."
+	name = "broomie"
+	desc = "The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 9mm after the original ammo ran dry centuries ago."
 	icon_state = "chinapistol"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -280,8 +280,8 @@
 	can_suppress = TRUE
 
 /obj/item/gun/ballistic/revolver/revolver45
-	name = "Double Action .45 Revolver"
-	desc = "Smith and Wesson revolver firing .45 ACP from a seven round cylinder."
+	name = ".45 ACP two step"
+	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
 	item_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
@@ -294,7 +294,7 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 /obj/item/gun/ballistic/revolver/colt357
-	name = "Single Action .357 Revolver"
+	name = "357 two step"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	item_state = "357colt"
@@ -308,8 +308,8 @@
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
 /obj/item/gun/ballistic/revolver/revolver44
-	name = "Single Action .44 Revolver"
-	desc = "I hadn't noticed, but there on their hip, was a moderately sized iron..."
+	name = ".44 two step"
+	desc = "A fairly large post-fall revolver chambered in .44, chunky."
 	item_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
@@ -325,7 +325,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
 /obj/item/gun/ballistic/revolver/buntline
-	name = "Revolver Carbine"
+	name = "long two step"
 	desc = "A revolver carbine. The revolver itself is the same as any other single action, albeit it has an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
 	item_state = "coltcarbine"
@@ -345,8 +345,8 @@
 	can_bayonet = FALSE
 
 /obj/item/gun/ballistic/revolver/derringerLC
-	name = "Derringer"
-	desc = "A classy, pearl handled derringer firing .45 in a compact package."
+	name = "garnet"
+	desc = "A classy, pearl handled pistol firing .45 in a very compact package."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "remington_95_ivory"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two
@@ -361,7 +361,7 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/cg45
-	name = "Luty"
+	name = "open bolt sweeper"
 	desc = "Post-cataclysm submachine gun crudely constructed out of various steel parts using advanced powered hand tools; likely one of the most complex guns that is feasible to make outside of a machine shop."
 	icon_state = "cg45"
 	item_state = "cg45"
@@ -378,8 +378,8 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 /obj/item/gun/ballistic/automatic/m1carbine
-	name = "Reserve Carbine"
-	desc = "Once used by the US Army, it found its way into police and National Guard armories, though it's since been rechambered in a more common caliber. It looks like it can accept a bayonet."
+	name = "reservist carbine"
+	desc = "A design thought to have been used hundreds of years ago by a now long gone power. It's ubiquitous nature made it prime for post-fall gunsmiths to restore."
 	icon_state = "m1carbine"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
@@ -409,7 +409,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "Caravan Rifle"
+	name = "alley-oop"
 	desc = "An over-under hunting rifle, for large game."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -430,7 +430,7 @@
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 /obj/item/gun/ballistic/revolver/shotpistol
-	name = "Hand Shotgun"
+	name = "blaster"
 	desc = "Exactly one half of a hammer fired double barrel shotgun, stripped down and streamlined to fit snugly in someone's pocket."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -448,7 +448,7 @@
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker
-	name = "Double Barrel Shotgun"
+	name = "flyswatter"
 	desc = "A simple hammer fired double barrel shotgun."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -468,7 +468,7 @@
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
-	name = "Cowpoke Shotgun"
+	name = "slapback"
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
 	item_state = "shotgunlever"
@@ -486,7 +486,7 @@
 	can_bayonet = FALSE
 
 /obj/item/gun/ballistic/rifle/repeater/cowboy
-	name = "Cowpoke Repeater"
+	name = "cavalry rifle"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
@@ -501,8 +501,8 @@
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 /obj/item/gun/ballistic/rifle/antique/gras
-	name = "Mardi-Gras Rifle"
-	desc = "A post-catacylsm copy of an old black powder cartridge gun of French lineage."
+	name = "Mardi-Gras rifle"
+	desc = "A post-catacylsm copy of an old black powder cartridge gun of French lineage. No one is sure where the name came from, but it stuck."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
@@ -530,8 +530,8 @@
 	reskinnable_component = null
 
 /obj/item/gun/ballistic/rifle/mag/boys
-	name = "Salvaged Bolt-Action Rifle"
-	desc = "A heavy rifle boasting a strong kick and an even stronger punch."
+	name = "salvaged bolt-action rifle"
+	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures! (worm gear clamps not included)"
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
 	item_state = "boys"
@@ -553,7 +553,7 @@
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
-	name = "Salvaged Eastern Rifle"
+	name = "salvaged eastern dragon"
 	desc = "A clever design adapted out of salvaged surplus eastern rifles and wasteland scarcity. The magazine is welded to the frame and a port was added after."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -583,7 +583,7 @@
 	casing_ejector = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "Reserve Pistol"
+	name = "flatline"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
@@ -605,7 +605,7 @@
 // These guns should have respectable DPS, be a relatively newer weapon, and are very good canidates for loot weapons. You can break these down at a workbench for gunmods and parts to upgrade the tier of your starter.
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99
-	name = "Warden Pistol"
+	name = "warden"
 	desc = "A compact .45 pistol. A shorter version of the Service Pistol. It is tiny compared to its bigger brothers and packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -631,7 +631,7 @@
 	init_recoil = HANDGUN_RECOIL(1.5, 1.1)
 
 /obj/item/gun/ballistic/automatic/pistol/beretta
-	name = "Service Pistol"
+	name = "big nine"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -651,7 +651,7 @@
 	reskinnable_component = null
 
 /obj/item/gun/ballistic/automatic/pistol/sig
-	name = "Park Ranger Pistol"
+	name = "straightline"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
 	icon_state = "newsig"
 	item_state = "gun"
@@ -674,7 +674,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
-	name = "Deagle"
+	name = "shucker"
 	desc = "A .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	item_state = "deagle"
@@ -691,7 +691,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /obj/item/gun/ballistic/revolver/police
-	name = "Double Action .357 Revolver"
+	name = ".357 one step"
 	desc = "Pre-Cataclysm double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
@@ -706,7 +706,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "Double Action .44 Revolver"
+	name = ".44 one step"
 	desc = "Powerful handgun for those who want to travel the deadlands safely in style. Has a bit of a kick."
 	item_state = "model29"
 	icon_state = "m29"
@@ -724,8 +724,8 @@
 	)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5
-	name = "Service SMG"
-	desc = "A lightweight submachine gun that earned its place as one of the most popular SMGs in the world"
+	name = "hose"
+	desc = "A pre-fall design, ancient and fairly common as far as sub machineguns go."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
@@ -738,8 +738,8 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
-	name = "9mm SMG"
-	desc = "A compact machine pistol with a blistering fire rate."
+	name = "lil' hose"
+	desc = "A pre-fall compact machine pistol with a blistering fire rate. Not terribly accurate though."
 	icon = 	'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "mac10"
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -753,8 +753,8 @@
 	)
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
-	name = "Reserve .45 SMG"
-	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
+	name = "heavy hose"
+	desc = "A pre-fall design similar to the fairly common post-fall open bolt smgs. It has tight tolerances and fires a heavy cartridge."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
@@ -774,8 +774,8 @@
 	suppressor_y_offset = 19
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact
-	name = "Compact Reserve Carbine"
-	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."
+	name = "reservist compact"
+	desc = "Similar to the reservist carbine, this model has a folding stock for greater mobility."
 	icon_state = "m1a1carbine"
 	weapon_class = WEAPON_CLASS_CARBINE
 	w_class = WEIGHT_CLASS_NORMAL
@@ -784,8 +784,8 @@
 	init_recoil = CARBINE_RECOIL(1.5, 1.5)
 
 /obj/item/gun/ballistic/automatic/varmint
-	name = "Ranch Rifle"
-	desc = "A simple semi-auto rifle in 5.56mm calibre. Easy to use and maintain."
+	name = "coyote"
+	desc = "A simple pre-fall semi-auto rifle in 5.56mm calibre. Easy to use and maintain."
 	icon_state = "varmint"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -809,8 +809,8 @@
 	can_scope = TRUE
 
 /obj/item/gun/ballistic/automatic/service
-	name = "Reserve Semi-Automatic Rifle"
-	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military before it was replaced with automatic variants. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
+	name = "wolf"
+	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time.  Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -831,8 +831,8 @@
 	reskinnable_component = null
 
 /obj/item/gun/ballistic/automatic/m1garand/sks // to-do, make this have an internal mag please
-	name = "Eastern Reserve Rifle"
-	desc = "An old, eastern semi-automatic rifle. Still packs a punch and has a bayonet lug."
+	name = "eastern dragon"
+	desc = "Somehow, despite all that has gone wrong over the last few hundred years this eastern rifle is still working. It's almost immaculate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -856,8 +856,8 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/aksmol
-	name = "Eastern Reserve SMG"
-	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, and was rechambered into .223."
+	name = "eastern drake"
+	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch. Oh."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -880,8 +880,8 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/fnfal/ak47
-	name = "Eastern Rifle"
-	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture and a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines."
+	name = "eastern wyvern"
+	desc = "A fairly uncommon eastern rifle. It's hard to tell if this one is in good shape or really bad. They just don't ever look quite right."
 	icon_state = "trueak"
 	item_state = "trueak"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -904,8 +904,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/armalite
-	name = "Service DMR"
-	desc = "A semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
+	name = "bear"
+	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
 	item_state = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m308
@@ -920,8 +920,8 @@
 	)
 
 /obj/item/gun/ballistic/shotgun/grenade
-	name = "Pump Grenade Launcher"
-	desc = "A bulky but surprisingly lightweight grenade launcher with a stiff pump."
+	name = "bloop"
+	desc = "A pre-fall bulky but surprisingly lightweight grenade launcher with a stiff pump."
 	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
 	icon_state = "china_lake"
 	item_state = "shotguntrench"
@@ -938,8 +938,8 @@
 	)
 
 /obj/item/gun/ballistic/shotgun/hunting
-	name = "Pump Action Hunting Shotgun"
-	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
+	name = "razorback"
+	desc = "A pre-fall traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
@@ -951,8 +951,8 @@
 	)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
-	name = "Semi-Automatic Hunting Shotgun"
-	desc = "A semi-automatic shotgun with a four round tube."
+	name = "hawg"
+	desc = "A pre-fall semi-automatic shotgun with a four round tube."
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
@@ -967,7 +967,7 @@
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 /obj/item/gun/ballistic/rifle/repeater/trail
-	name = "Cowpoke Trail Carbine"
+	name = "heavy snapback"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
@@ -982,8 +982,8 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /obj/item/gun/ballistic/rifle/hunting
-	name = "Military Surplus Rifle"
-	desc = "A sturdy military rifle, rechambered to .30-06 Springfield."
+	name = "hunting rifle"
+	desc = "A sturdy military rifle, rechambered to .30-06 Springfield.  Which one?  Who fucking knows."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
@@ -1007,7 +1007,7 @@
 	)
 
 /obj/item/gun/ballistic/revolver/police/webley
-	name = "Semi-Automatic Police Revolver"
+	name = "half step"
 	desc = "A gas operated police revolver that fires just about as fast as you can click the trigger."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "webley"
@@ -1024,8 +1024,8 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
 /obj/item/gun/ballistic/automatic/smg/tommygun
-	name = "Gangster SMG"
-	desc = "A powerful submachinegun chambered in .45 ACP, this weapon fires at a blistering rate with a heavy pistol cartridge, and can accept very high capacity magazines, to boot."
+	name = "drumroll"
+	desc = "A powerful pre-fall submachinegun chambered in .45 ACP, this weapon fires at a blistering rate with a heavy pistol cartridge, and can accept very high capacity magazines, to boot."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "tommygun"
 	item_state = "shotgun"
@@ -1043,7 +1043,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "Streetsweeper SMG"
+	name = "stacatto"
 	desc = "A lightweight, automatic submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
@@ -1063,7 +1063,7 @@
 	suppressor_y_offset = 16
 
 /obj/item/gun/ballistic/automatic/smg/mp5sd
-	name = "Special Operations SMG"
+	name = "nailtacker"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
@@ -1083,8 +1083,8 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
 
 /obj/item/gun/ballistic/automatic/m1garand
-	name = "Reserve Rifle"
-	desc = "The WWII American Classic. Still has that satisfiying ping."
+	name = "eagle"
+	desc = "A very hefty pre-fall rifle with an en-bloc magazine known for making an appealing noise when it is ejected."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "m1garand"
 	item_state = "rifle"
@@ -1113,8 +1113,8 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/ak556
-	name = "Eastern Service Rfile"
-	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
+	name = "eastern lynx"
+	desc = "A pre-fall eastern rifle of a design believed to be more modern. A bit of a unicorn of a gun, and kind of needy."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1135,8 +1135,8 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/z34rifle
-	name = "Eastern Service DMR"
-	desc = "The Soviet Z34 battle rifle. Based off the SLR or FN FAL, it is chambered in 7.62 Soviet. Now rechambered in .308, the weapon itself comes with a scope and seems to have a much heavier trigger than most rifles."
+	name = "eastern puma"
+	desc = "A pre-fall large eastern rifle designed for hunting.  Hunting what?  Men."
 	icon_state = "zastava"
 	item_state = "zastava"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1159,8 +1159,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/fnfal
-	name = "Reserve Battle Rifle"
-	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable weapon for any terrain or tactical situation."
+	name = "handy"
+	desc = "A large pre-fall battle rifle. Known today as a tempermental, heavy, beast of a weapon. At least the designers had the foresight to add a handle."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "fnfal"
 	item_state = "fnfal"
@@ -1178,8 +1178,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
-	name = "Service Battle Rifle"
-	desc = "A battle rifle chambered in 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308 ammunition."
+	name = "forte"
+	desc = "A foreign designed battle rifle. Pre-fall in design and well.  Tempermental.  Pretty decent overall though."
 	icon_state = "g3"
 	item_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1202,8 +1202,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/rpd
-	name = "Eastern LMG"
-	desc = "A soviet made Russian LMG. Known as the RPK, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
+	name = "eastern whirlwind"
+	desc = "A pre-fall eastern designed light machine gun. It's rude, it's crude, it's downright demonic."
 	icon_state = "rpd"
 	item_state = "rpd"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1226,8 +1226,8 @@
 	can_flashlight = FALSE
 
 /obj/item/gun/ballistic/automatic/bar
-	name = "Reserve LMG"
-	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
+	name = "lion"
+	desc = "A pre-fall rifle. No one is sure who these were made for, they're almost too big for the average man to use. Perhaps people were larger back then?"
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "BAR"
@@ -1247,8 +1247,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/saiga12k
-	name = "Eastern Semi-Automatic Shotgun"
-	desc = "A 12g Saiga-12 shotgun. Manufactured in Russia, this shotgun is as reliable as they get. 8 shot capacity, decent firerate. It's good for hunting stags!"
+	name = "eastern stag"
+	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch.  Sure hope you don't want spare parts though."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1269,7 +1269,7 @@
 	can_suppress = TRUE
 
 /obj/item/gun/ballistic/shotgun/police
-	name = "Police Semi-Automatic Shotgun"
+	name = "jackhammer"
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
@@ -1291,8 +1291,8 @@
 	)
 
 /obj/item/gun/ballistic/shotgun/trench
-	name = "trench shotgun"
-	desc = "A quick military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
+	name = "bucktoothed boar"
+	desc = "A post-fall military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
 	item_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
@@ -1310,8 +1310,8 @@
 	)
 
 /obj/item/gun/ballistic/rifle/repeater/brush
-	name = "Cowpoke Brush Gun"
-	desc = "A heavy Lever-action rifle chambered in .45-70. its sturdy design lets it handle the largest cartridges and largest game."
+	name = "smashback"
+	desc = "A heavy Lever-action rifle chambered in .30-06 its sturdy design lets it handle the largest cartridges and largest game."
 	icon_state = "brushgun"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
@@ -1326,9 +1326,9 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
 /obj/item/gun/ballistic/rifle/enfield
-	name = "Lee-Enfield rifle"
-	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
-	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
+	name = "smelly"
+	desc = "A pre-fall 10 round bolt action rifle.  No one is sure why they're called smellies, they don't stink at all generally and are quite good."
+	sawn_desc = "Why would someone short stock a smelly? Does that make this just a whiff?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
 	item_state = "smle"
