@@ -243,5 +243,5 @@
 			else
 				heal_reservoir += 0.00
 		else //Everything else
-			heal_reservoir += (rand(10,50)/100)//0.1 to 0.5
+			heal_reservoir += (rand(-5,-10)/100)//-0.05 to -0.10, this creates a slight drain.  So you use it or lose it.
 			heal_reservoir = min(heal_reservoir,heal_max)
