@@ -283,6 +283,15 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/taur/bunny
+	name = "bunny"
+	icon_state = "bunny"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+
+
 
 
 
