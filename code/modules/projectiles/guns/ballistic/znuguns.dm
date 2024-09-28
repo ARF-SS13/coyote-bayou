@@ -224,6 +224,17 @@
 /obj/item/ammo_box/magazine/m9mm/doublestack/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m1carbine
+	name = "9mm carbine magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m10mm"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	max_ammo = 12
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m1carbine/empty
+	start_empty = 1
+
 /obj/item/projectile/bullet/b357 // blackpowder load
 	name = ".357 bullet"
 	damage = 20
@@ -413,6 +424,38 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
+	name = ".45 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/two
+	name = ".45 revolver breech"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/two/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/cg45
+	name = "handmade .45 stick magazine (.45)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "cg45"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/cg45/empty
+	start_empty = 1
+
 /obj/item/projectile/bullet/b44 // blackpowder
 	name = ".44 FMJ bullet"
 	damage = 35
@@ -507,6 +550,85 @@
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev44/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/s556 // smokeless
+	name = "5.56 bullet"
+	damage = 45
+	damage_list = list("22.5" = 20, "45" = 60, "90" = 20)
+	stamina = list("22.5" = 20, "45" = 60, "90" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_223
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m556 // military
+	name = "5.56 bullet"
+	damage = 45
+	damage_list = list("25" = 20, "50" = 60, "100" = 20)
+	stamina = list("25" = 20, "50" = 60, "100" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_223
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/s556
+	name = "smokeless .223 cartridge"
+	desc = "A smokeless powder load for a .223 cartridge. Fits just fine in 5.56x45mm rifles."
+	caliber = CALIBER_556
+	projectile_type = /obj/item/projectile/bullet/s556
+	material_class = BULLET_IS_LIGHT_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
+
+/obj/item/ammo_casing/m556
+	name = "military 5.56x45mm cartridge"
+	desc = "A factory spec smokeless powder load for a 5.56x45mm cartridge, fit for service. Fits just fine in .223 rifles."
+	caliber = CALIBER_556
+	projectile_type = /obj/item/projectile/bullet/s556
+	material_class = BULLET_IS_LIGHT_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
+
+/obj/item/ammo_box/magazine/m556/rifle
+	name = "rifle magazine (.223/5.56mm)"
+	icon_state = "r20"
+	caliber = list(CALIBER_556)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m556/rifle/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m556/rifle/assault
+	name = "rifle magazine (.223/5.56mm)"
+	icon_state = "r30"
+	max_ammo = 30
+	ammo_type = /obj/item/ammo_casing/s556
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_LARGE_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m556/rifle/assault/empty
 	start_empty = 1
 
 // TIER 0, STARTER
@@ -837,7 +959,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger/empty
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -854,7 +976,7 @@
 	desc = "A classy, pearl handled pistol firing .45 in a very compact package."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "remington_95_ivory"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two/empty
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -871,7 +993,7 @@
 	icon_state = "cg45"
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
-	init_mag_type = /obj/item/ammo_box/magazine/cg45
+	init_mag_type = null
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -887,8 +1009,8 @@
 	desc = "A design thought to have been used hundreds of years ago by a now long gone power. It's ubiquitous nature made it prime for post-fall gunsmiths to restore."
 	icon_state = "m1carbine"
 	item_state = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/m10mm
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	mag_type = null
+	init_mag_type = /obj/item/ammo_box/magazine/m1carbine
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
@@ -912,27 +1034,6 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
-/obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "alley-oop"
-	desc = "An over-under hunting rifle, for large game."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "caravan"
-	item_state = "shotgundouble"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	init_firemodes = list(
-		/datum/firemode/semi_auto/shotgun_fixed,
-		/datum/firemode/burst/two/shotgun_fixed,
-	)
-	can_scope = TRUE
-	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 /obj/item/gun/ballistic/revolver/shotpistol
 	name = "blaster"
