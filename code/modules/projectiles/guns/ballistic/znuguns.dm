@@ -171,7 +171,6 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_9MM
 
-
 /obj/item/ammo_casing/s9mm
 	name = "smokeless 9mm cartridge"
 	desc = "A standard smokeless powder load for a 9mm cartridge."
@@ -223,6 +222,117 @@
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m9mm/doublestack/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/b357 // blackpowder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("10" = 20, "20" = 60, "40" = 20)
+	stamina = list("10" = 20, "20" = 60, "40" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s357 // smokeless powder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("12.5" = 20, "25" = 60, "50" = 20)
+	stamina = list("12.5" = 20, "25" = 60, "50" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m357 // military powder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("15" = 20, "30" = 60, "60" = 20)
+	stamina = list("15" = 20, "30" = 60, "60" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b357
+	name = "blackpowder .357 cartridge"
+	desc = "A blackpowder load for a .357 cartridge."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/b357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_casing/s357
+	name = "smokeless .357 cartridge"
+	desc = "A smokeless powder load for a .357 cartridge."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/s357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_casing/m357
+	name = "military .357 cartridge"
+	desc = "A factory spec smokeless powder load for a .357 cartridge, fit for service."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/m357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev357
+	name = "357 magnum cylinder"
+	ammo_type = /obj/item/ammo_casing/s357
+	caliber = list(CALIBER_357)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45
+	name = ".45 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev44
+	name = ".44 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = list(CALIBER_44)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev357/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev44/empty
 	start_empty = 1
 
 // TIER 0, STARTER
@@ -467,7 +577,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "trophy pistol"
-	desc = "A foreign 9mm pistol, which takes single stack magazines."
+	desc = "A foreign 9mm pistol."
 	icon_state = "p08"
 	item_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -505,7 +615,7 @@
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
 	item_state = "45revolver"
 	icon_state = "45revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/empty
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -519,7 +629,7 @@
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	item_state = "357colt"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357/empty
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -533,7 +643,7 @@
 	desc = "A fairly large post-fall revolver chambered in .44, chunky."
 	item_state = "44colt"
 	icon_state = "44colt"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/empty
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
