@@ -823,7 +823,7 @@
 	name = "sidewinder"
 	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
 	icon_state = "detective"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
