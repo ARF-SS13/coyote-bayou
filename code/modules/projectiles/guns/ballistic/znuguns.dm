@@ -3,6 +3,227 @@
 // This file is broken up into tiers.
 // tiers go from zero to three.
 
+// -> bullets -> cartridges -> magazines -> guns
+
+
+/obj/item/projectile/bullet/b22 // blackpowder load
+	name = ".22lr bullet"
+	damage = 10
+	damage_list = list("5" = 30, "10" = 60, "20" = 10)
+	stamina = list("5" = 30, "10" = 60, "20" = 10)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_22
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b22
+	name = "blackpowder .22LR cartridge"
+	desc = "A blackpowder load for a .22LR cartridge."
+	caliber = CALIBER_22LR
+	projectile_type = /obj/item/projectile/bullet/b22
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
+
+/obj/item/projectile/bullet/s22 // smokeless load
+	name = ".22lr bullet"
+	damage = 15
+	damage_list = list("7.5" = 30, "15" = 60, "30" = 10)
+	stamina = list("7.5" = 30, "15" = 60, "30" = 10)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_22
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/s22
+	name = "smokeless .22LR cartridge"
+	desc = "A standard smokeless load for a .22LR cartridge."
+	caliber = CALIBER_22LR
+	projectile_type = /obj/item/projectile/bullet/s22
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
+
+
+/obj/item/ammo_box/magazine/m22
+	name = "pistol magazine (.22LR)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "pistol22"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 16
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = 1 SHEETS)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m22/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m22/extended
+	name = "carbine magazine (.22LR)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "22carbine"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 32
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = 2 SHEETS)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m22/extended/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev22
+	name = ".22 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev22/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/shot/long22
+	name = ".22LR Long internal tube magazine" //baby repeater
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 16
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/long22/empty
+	start_empty = 1
+
+// start of 9mm Blackpowder, Smokeless, Military
+
+/obj/item/projectile/bullet/b9mm
+	name = "9mm bullet"
+	damage = 20
+	damage_list = list("10" = 20, "20" = 60, "40" = 20)
+	stamina = list("10" = 20, "20" = 60, "40" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s9mm
+	name = "9mm bullet"
+	damage = 25
+	damage_list = list("12.5" = 20, "25" = 60, "50" = 20)
+	stamina = list("12.5" = 20, "25" = 60, "50" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m9mm
+	name = "9mm bullet"
+	damage = 30
+	damage_list = list("15" = 20, "30" = 60, "60" = 20)
+	stamina = list("15" = 20, "30" = 60, "60" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b9mm
+	name = "blackpowder 9mm cartridge"
+	desc = "A standard blackpowder load for a 9mm cartridge."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/b9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+
+/obj/item/ammo_casing/s9mm
+	name = "smokeless 9mm cartridge"
+	desc = "A standard smokeless powder load for a 9mm cartridge."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/s9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+/obj/item/ammo_casing/m9mm
+	name = "military 9mm cartridge"
+	desc = "A factory spec smokeless powder load for a 9mm cartridge, fit for service."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/m9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+/obj/item/ammo_box/magazine/m9mm
+	name = "pistol magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmp"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m9mm/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m9mm/doublestack
+	name = "doublestack pistol magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 15
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+
+/obj/item/ammo_box/magazine/m9mm/doublestack/empty
+	start_empty = 1
 
 // TIER 0, STARTER
 // These guns should have minimal DPS, be a relic, or are generally good for newbies.
@@ -125,7 +346,7 @@
 	name = "sidewinder"
 	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
 	icon_state = "detective"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22/empty
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -139,7 +360,7 @@
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
 	item_state = "lever22"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22/empty
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
