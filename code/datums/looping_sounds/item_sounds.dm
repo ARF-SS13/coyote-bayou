@@ -145,5 +145,5 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_07.ogg', 8 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/hairbrush/hairbrush_08.ogg', 8 SECONDS, 1),
 		)
-	volume = 80
+	volume = 40
 
