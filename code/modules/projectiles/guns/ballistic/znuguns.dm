@@ -982,7 +982,7 @@
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
 	item_state = "45revolver"
 	icon_state = "45revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -996,7 +996,7 @@
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	item_state = "357colt"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1010,7 +1010,7 @@
 	desc = "A fairly large post-fall revolver chambered in .44, chunky."
 	item_state = "44colt"
 	icon_state = "44colt"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -1030,7 +1030,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -1047,7 +1047,7 @@
 	desc = "A classy, pearl handled pistol firing .45 in a very compact package."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "remington_95_ivory"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
