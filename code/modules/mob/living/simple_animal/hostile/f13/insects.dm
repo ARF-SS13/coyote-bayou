@@ -335,7 +335,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 
-	move_to_delay = 2.0
+	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 3
@@ -553,6 +553,7 @@
 	icon_dead = "pillbug_dead"
 	icon_gib = "radroach_gib"
 	can_ghost_into = TRUE
+	move_to_delay = 4
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1

@@ -31,7 +31,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -107,7 +107,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40,),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -194,7 +194,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -301,7 +301,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -452,7 +452,7 @@
 	obj_damage = 20
 	melee_damage_lower = 7
 	melee_damage_upper = 18
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -540,7 +540,7 @@
 	obj_damage = 20
 	melee_damage_lower = 7
 	melee_damage_upper = 18
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -605,7 +605,7 @@
 	obj_damage = 20
 	melee_damage_lower = 12
 	melee_damage_upper = 24
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 4
@@ -709,8 +709,8 @@
 //////////////////////////
 
 /mob/living/simple_animal/hostile/stalker
-	name = "nightstalker"
-	desc = "A crazed genetic hybrid of rattlesnake and coyote DNA."
+	name = "snakedog"
+	desc = "A crazed genetic hybrid of cottonmouth and coyote DNA. They're not nightstalkers, I swear."
 	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
@@ -719,7 +719,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	move_to_delay = 2
+	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
@@ -1198,7 +1198,7 @@
 	obj_damage = 20
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 9

@@ -1,23 +1,23 @@
 /* IN THIS FILE
--Ghouls
+-walkers
 */
 
-//Base Ghoul
-/mob/living/simple_animal/hostile/ghoul
-	name = "feral ghoul"
-	desc = "A ghoul that has lost its mind and become aggressive."
-	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
-	icon_state = "feralghoul"
-	icon_living = "feralghoul"
-	icon_dead = "feralghoul_dead"
-	var/rare_icon = "feralghoul_h"
+//Base walker
+/mob/living/simple_animal/hostile/walker
+	name = "feral walker"
+	desc = "A walker that has lost its mind and become aggressive."
+	icon = 'icons/fallout/mobs/humans/walkers.dmi'
+	icon_state = "feralwalker"
+	icon_living = "feralwalker"
+	icon_dead = "feralwalker_dead"
+	var/rare_icon = "feralwalker_h"
 	can_ghost_into = TRUE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	mob_armor = ARMOR_VALUE_walker_NAKED
 	maxHealth = 40 
 	health = 40
 	robust_searching = 1
-	move_to_delay = 3.1
+	move_to_delay = 5
 	turns_per_move = 5
 	waddle_amount = 2
 	waddle_up_time = 1
@@ -78,16 +78,16 @@
 		
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("hostile", "ghoul")
+	faction = list("hostile", "walker")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+		/obj/item/reagent_containers/food/snacks/meat/slab/human/walker = 2,
 		/obj/item/stack/sheet/animalhide/human = 1,
 		/obj/item/stack/sheet/bone = 1
 		)
 
-	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
+	emote_taunt_sound = list('sound/f13npc/walker/taunt.ogg')
 	emote_taunt = list(
 		"gurgles",
 		"stares",
@@ -102,9 +102,9 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
-	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
-	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
+	emote_taunt_sound = list('sound/f13npc/walker/aggro1.ogg', 'sound/f13npc/walker/aggro2.ogg', 'sound/f13npc/walker/aggro3.ogg',) //I will not apologize. ~TK
+	idlesound = list('sound/f13npc/walker/idle.ogg', 'sound/effects/scrungy.ogg')
+	death_sound = 'sound/f13npc/walker/walker_death.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 1
@@ -129,7 +129,7 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10)
 	)
 
-/mob/living/simple_animal/hostile/ghoul/Initialize()
+/mob/living/simple_animal/hostile/walker/Initialize()
 	. = ..()
 	if(prob(50))
 		icon_state = rare_icon
@@ -139,7 +139,7 @@
 		loot = GLOB.trash_mob_loot
 
 
-/mob/living/simple_animal/hostile/ghoul/Aggro()
+/mob/living/simple_animal/hostile/walker/Aggro()
 	. = ..()
 	if(.)
 		return
@@ -148,22 +148,22 @@
 		say(pick("*scrungy", "*mbark"))
 
 
-/mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
+/mob/living/simple_animal/hostile/walker/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/walker
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/walker
 	. = ..()
 
 
-// Ghoul Reaver
-/mob/living/simple_animal/hostile/ghoul/reaver
-	name = "feral ghoul reaver"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
-	icon_state = "ghoulreaver"
-	icon_living = "ghoulreaver"
-	icon_dead = "ghoulreaver_dead"
-	rare_icon = "ghoulreaver_h"
+// walker Reaver
+/mob/living/simple_animal/hostile/walker/reaver
+	name = "feral walker reaver"
+	desc = "A walker that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	icon_state = "walkerreaver"
+	icon_living = "walkerreaver"
+	icon_dead = "walkerreaver_dead"
+	rare_icon = "walkerreaver_h"
 	speed = 2
-	mob_armor = ARMOR_VALUE_GHOUL_REAVER
+	mob_armor = ARMOR_VALUE_walker_REAVER
 	maxHealth = 50
 	health = 50
 	rapid_melee = 2
@@ -172,7 +172,7 @@
 	ranged = TRUE
 	ranged_message = "throws a rock"
 	ranged_cooldown_time = 3 SECONDS
-	projectiletype = /obj/item/projectile/bullet/ghoul_rock
+	projectiletype = /obj/item/projectile/bullet/walker_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
 	melee_damage_lower = 8
@@ -194,48 +194,48 @@
 		MOB_MINIMUM_DISTANCE_LIST(1, 2),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10),
 		MOB_PROJECTILE_LIST(\
-			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock, 10),\
-			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/blunt_rock, 10),\
-			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/jagged_scrap, 1)\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/walker_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/walker_rock/blunt_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/walker_rock/jagged_scrap, 1)\
 		)
 	)
 	desc_short = "A beefy creature that may or may not be a reanimated corpse."
 
-/mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
+/mob/living/simple_animal/hostile/walker/reaver/Initialize()
 	. = ..()
 
-/mob/living/simple_animal/hostile/ghoul/reaver/Aggro()
+/mob/living/simple_animal/hostile/walker/reaver/Aggro()
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr
-	name = "feral ghoul soldier"
-	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+/mob/living/simple_animal/hostile/walker/reaver/ncr
+	name = "feral walker soldier"
+	desc = "A former US Army combatant, now walkerified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "plated feral ghoul soldier"
-	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+/mob/living/simple_animal/hostile/walker/reaver/ncr_helmet
+	name = "plated feral walker soldier"
+	desc = "A former US Army combatant, now walkerified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
-	name = "feral ghoul officer"
-	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+/mob/living/simple_animal/hostile/walker/reaver/ncr_officer
+	name = "feral walker officer"
+	desc = "A former US Army officer, now walkerified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	speed = 3
 	can_ghost_into = FALSE
 
-//Cold Feral Ghoul
-/mob/living/simple_animal/hostile/ghoul/coldferal
-	name = "cold ghoul feral"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+//Cold Feral walker
+/mob/living/simple_animal/hostile/walker/coldferal
+	name = "cold walker feral"
+	desc = "A walker that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "cold_feral"
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
-	mob_armor = ARMOR_VALUE_GHOUL_COLD
+	mob_armor = ARMOR_VALUE_walker_COLD
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -246,14 +246,14 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-//Frozen Feral Ghoul
-/mob/living/simple_animal/hostile/ghoul/frozenreaver
-	name = "frozen ghoul reaver"
-	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+//Frozen Feral walker
+/mob/living/simple_animal/hostile/walker/frozenreaver
+	name = "frozen walker reaver"
+	desc = "A walker that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
-	mob_armor = ARMOR_VALUE_GHOUL_COLDER
+	mob_armor = ARMOR_VALUE_walker_COLDER
 	speed = 1.5
 	maxHealth = 80
 	health = 80
@@ -265,15 +265,15 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-//Legendary Ghoul
-/mob/living/simple_animal/hostile/ghoul/legendary
-	name = "legendary ghoul"
-	desc = "A ghoul that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+//Legendary walker
+/mob/living/simple_animal/hostile/walker/legendary
+	name = "legendary walker"
+	desc = "A walker that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
+	icon_state = "glowinwalker"
+	icon_living = "glowinwalker"
+	icon_dead = "glowinwalker_dead"
 	color = "#FFFF00"
-	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
+	mob_armor = ARMOR_VALUE_walker_LEGEND
 	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
@@ -292,20 +292,20 @@
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A deadly creature that may or may not be reanimated jerky."
 
-/mob/living/simple_animal/hostile/ghoul/legendary/become_the_mob(mob/user)
+/mob/living/simple_animal/hostile/walker/legendary/become_the_mob(mob/user)
 	call_backup = null
 	send_mobs = null
 	. = ..()
 
-//Glowing Ghoul
-/mob/living/simple_animal/hostile/ghoul/glowing
-	name = "glowing feral ghoul"
-	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
-	rare_icon = "glowinghoul_h"
-	mob_armor = ARMOR_VALUE_GHOUL_GLOWING
+//Glowing walker
+/mob/living/simple_animal/hostile/walker/glowing
+	name = "glowing feral walker"
+	desc = "A feral walker that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	icon_state = "glowinwalker"
+	icon_living = "glowinwalker"
+	icon_dead = "glowinwalker_dead"
+	rare_icon = "glowinwalker_h"
+	mob_armor = ARMOR_VALUE_walker_GLOWING
 	maxHealth = 40 
 	health = 40
 	speed = 2
@@ -340,13 +340,13 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50)
 	)
 
-/mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
+/mob/living/simple_animal/hostile/walker/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
 	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
 	// aka 40% of max life every tick, which is basically unkillable
 	// TODO: refactor this if simple_animals ever get damage types
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/walker, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
 /obj/item/projectile/radiation_thing
 	name = "radiation"
@@ -361,11 +361,11 @@
 	icon_state = "neurotoxin"
 
 
-/mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
+/mob/living/simple_animal/hostile/walker/glowing/Aggro()
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/glowing/AttackingTarget()
+/mob/living/simple_animal/hostile/walker/glowing/AttackingTarget()
 	. = ..()
 	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
@@ -373,7 +373,7 @@
 	var/mob/living/carbon/human/H = my_target
 	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
-/mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
+/mob/living/simple_animal/hostile/walker/glowing/strong // FEV mutation
 	maxHealth = 256
 	health = 256
 	speed = 1.4 // Nyooom
@@ -381,15 +381,15 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 
-//Alive Ghoul
-/mob/living/simple_animal/hostile/ghoul/soldier
-	name = "ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon_state = "soldier_ghoul"
-	icon_living = "soldier_ghoul"
-	icon_dead = "soldier_ghoul_d"
+//Alive walker
+/mob/living/simple_animal/hostile/walker/soldier
+	name = "walker soldier"
+	desc = "Have you ever seen a living walker before?<br>walkers are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	icon_state = "soldier_walker"
+	icon_living = "soldier_walker"
+	icon_dead = "soldier_walker_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
+	mob_armor = ARMOR_VALUE_walker_COMBAT
 	maxHealth = 60 
 	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
@@ -397,36 +397,36 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-//Alive Ghoul
-/mob/living/simple_animal/hostile/ghoul/soldier/armored
-	name = "armored ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon_state = "soldier_ghoul_a"
-	icon_living = "soldier_ghoul_a"
-	icon_dead = "soldier_ghoul_a_d"
+//Alive walker
+/mob/living/simple_animal/hostile/walker/soldier/armored
+	name = "armored walker soldier"
+	desc = "Have you ever seen a living walker before?<br>walkers are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+	icon_state = "soldier_walker_a"
+	icon_living = "soldier_walker_a"
+	icon_dead = "soldier_walker_a_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
+	mob_armor = ARMOR_VALUE_walker_COMBAT
 	maxHealth = 80 
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 	loot_drop_amount = 3
 
-//Alive Ghoul
-/mob/living/simple_animal/hostile/ghoul/scorched
-	name = "scorched ghoul soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+//Alive walker
+/mob/living/simple_animal/hostile/walker/scorched
+	name = "scorched walker soldier"
+	desc = "Have you ever seen a living walker before?<br>walkers are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_m"
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
+	mob_armor = ARMOR_VALUE_walker_COMBAT
 	speak_chance = 1
 	environment_smash = 0
 	response_help_simple = "hugs"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "growl"
-	move_to_delay = 4
+	move_to_delay = 5
 	faction = list("scorched", "hostile")
 	death_sound = null
 	melee_damage_upper = 20
@@ -447,22 +447,22 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10)
 	)
 
-//Alive Ghoul Ranged
-/mob/living/simple_animal/hostile/ghoul/scorched/ranged
-	name = "Ranged Ghoul Soldier"
-	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
+//Alive walker Ranged
+/mob/living/simple_animal/hostile/walker/scorched/ranged
+	name = "Ranged walker Soldier"
+	desc = "Have you ever seen a living walker before?<br>walkers are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
 	icon_gib = "syndicate_gib"
-	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
+	mob_armor = ARMOR_VALUE_walker_COMBAT
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
 	response_help_simple = "hugs"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "ow"
-	move_to_delay = 4
+	move_to_delay = 5
 	ranged = TRUE
 	ranged_cooldown_time = 200
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
@@ -488,14 +488,14 @@
 	)
 
 //Sunset mob of some sort?
-/mob/living/simple_animal/hostile/ghoul/wyomingghost
+/mob/living/simple_animal/hostile/walker/wyomingghost
 	name = "ghost soldier"
 	desc = "A figure clad in armor that stands silent except for the slight wheezing coming from them, a dark orange and black liquid pumps through a clear tube into the gas mask. The armor they wear seems to be sealed to their skin."
 	icon_state = "wyomingghost"
 	icon_living = "wyomingghost"
 	icon_dead = "wyomingghost_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mob_armor = ARMOR_VALUE_GHOUL_PA
+	mob_armor = ARMOR_VALUE_walker_PA
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("wheezes")
@@ -511,37 +511,37 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("supermutant","ghoul")
+	faction = list("supermutant","walker")
 	decompose = FALSE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 	loot_drop_amount = 5
 
-//Halloween Event Ghouls
-/mob/living/simple_animal/hostile/ghoul/zombie
-	name = "ravenous feral ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat."
-	faction = list("ghoul")
-	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
+//Halloween Event walkers
+/mob/living/simple_animal/hostile/walker/zombie
+	name = "ravenous feral walker"
+	desc = "A ferocious feral walker, hungry for human meat."
+	faction = list("walker")
+	mob_armor = ARMOR_VALUE_walker_COMBAT
 	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/*/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
+/*/mob/living/simple_animal/hostile/walker/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		try_to_ghoul_zombie_infect(H)*/
+		try_to_walker_zombie_infect(H)*/
 
-/mob/living/simple_animal/hostile/ghoul/zombie/reaver
-	name = "ravenous feral ghoul reaver"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
-	icon_state = "ghoulreaver"
-	icon_living = "ghoulreaver"
-	icon_dead = "ghoulreaver_dead"
+/mob/living/simple_animal/hostile/walker/zombie/reaver
+	name = "ravenous feral walker reaver"
+	desc = "A ferocious feral walker, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
+	icon_state = "walkerreaver"
+	icon_living = "walkerreaver"
+	icon_dead = "walkerreaver_dead"
 	speed = 2
 	maxHealth = 216
 	health = 216
@@ -552,12 +552,12 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing
-	name = "ravenous glowing feral ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+/mob/living/simple_animal/hostile/walker/zombie/glowing
+	name = "ravenous glowing feral walker"
+	desc = "A ferocious feral walker, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	icon_state = "glowinwalker"
+	icon_living = "glowinwalker"
+	icon_dead = "glowinwalker_dead"
 	maxHealth = 192
 	health = 192
 	speed = 2
@@ -570,19 +570,19 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing/Initialize(mapload)
+/mob/living/simple_animal/hostile/walker/zombie/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
 	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
 	// aka 40% of max life every tick, which is basically unkillable
 	// TODO: refactor this if simple_animals ever get damage types
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/walker, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing/Aggro()
+/mob/living/simple_animal/hostile/walker/zombie/glowing/Aggro()
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing/AttackingTarget()
+/mob/living/simple_animal/hostile/walker/zombie/glowing/AttackingTarget()
 	. = ..()
 	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
@@ -590,14 +590,14 @@
 	var/mob/living/carbon/human/H = my_target
 	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
-/mob/living/simple_animal/hostile/ghoul/zombie/legendary
-	name = "legendary ravenous ghoul"
-	desc = "A ferocious feral ghoul, hungry for human meat. This one has exceptionally large, bulging muscles. It looks quite strong."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+/mob/living/simple_animal/hostile/walker/zombie/legendary
+	name = "legendary ravenous walker"
+	desc = "A ferocious feral walker, hungry for human meat. This one has exceptionally large, bulging muscles. It looks quite strong."
+	icon_state = "glowinwalker"
+	icon_living = "glowinwalker"
+	icon_dead = "glowinwalker_dead"
 	color = "#FFFF00"
-	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
+	mob_armor = ARMOR_VALUE_walker_LEGEND
 	maxHealth = 200
 	health = 200
 	can_ghost_into = FALSE
