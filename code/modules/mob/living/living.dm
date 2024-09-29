@@ -1521,7 +1521,7 @@
 	clear_alert("cret")
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))
-	set category = "IC"
+	set category = "Roleplaying"
 	set name = "Give"
 	do_give(target)
 

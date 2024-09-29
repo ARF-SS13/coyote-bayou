@@ -428,7 +428,7 @@
 
 /mob/living/verb/layershift_up()
 	set name = "Shift Layer Upwards"
-	set category = "IC"
+	set category = "Roleplaying"
 
 	// if(incapacitated(allow_crit = TRUE))
 	// 	to_chat(src, span_warning("You can't do that right now!"))
@@ -459,7 +459,7 @@
 
 /mob/living/verb/layershift_down()
 	set name = "Shift Layer Downwards"
-	set category = "IC"
+	set category = "Roleplaying"
 
 	// if(incapacitated(allow_crit = TRUE))
 	// 	to_chat(src, span_warning("You can't do that right now!"))
