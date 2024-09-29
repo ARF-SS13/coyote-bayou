@@ -463,6 +463,7 @@ GLOBAL_LIST_INIT(nongendered_limb_types, list(
 GLOBAL_LIST_INIT(eye_types, list(
 	"normal",
 	"anime",
+	"wideanime",
 	"wide",
 	"derpy",
 	"insect",

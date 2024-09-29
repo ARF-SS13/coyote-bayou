@@ -124,8 +124,8 @@
 /obj/item/hand_item/tactile/proc/tend_hurt(mob/living/user, mob/living/target)
 	if(!isliving(user) || !isliving(target))
 		return
-	if(!HAS_TRAIT(user, needed_trait))
-		return FALSE
+	//if(!HAS_TRAIT(user, needed_trait))
+	//	return FALSE
 	var/mob/living/mlemmed = target
 	if(iscarbon(mlemmed) && !mlemmed.get_bodypart(user.zone_selected))
 		return FALSE

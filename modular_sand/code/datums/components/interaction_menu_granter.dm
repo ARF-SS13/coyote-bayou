@@ -9,9 +9,9 @@
 
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
-	set name = "Interact With"
+	set name = "Mechanically Rolepay With"
 	set desc = "Perform an interaction with someone."
-	set category = "IC"
+	set category = "Roleplaying"
 	set src in range(10)
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)

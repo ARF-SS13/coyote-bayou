@@ -40,13 +40,13 @@
 	move_to_delay = 3.5
 
 
-/mob/living/simple_animal/hostile/chinese/Aggro()
-	. = ..()
-	if(.)
-		return
-	summon_backup(15)
-	if(!ckey)
-		say(pick("操你祖宗十八代", "乡巴佬", "傻逼" , "妈你个", "操你大爷", "祝你生孩子没屁眼", "扯鸡巴蛋", "狗改不了吃屎", "爆你菊花" ))
+// /mob/living/simple_animal/hostile/chinese/Aggro()
+// 	. = ..()
+// 	if(.)
+// 		return
+// 	summon_backup(15)
+// 	if(!ckey)
+// 		say(pick("操你祖宗十八代", "乡巴佬", "傻逼" , "妈你个", "操你大爷", "祝你生孩子没屁眼", "扯鸡巴蛋", "狗改不了吃屎", "爆你菊花" ))
 
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"

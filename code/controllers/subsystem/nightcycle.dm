@@ -132,7 +132,7 @@ SUBSYSTEM_DEF(nightcycle)
 				lamp.icon_state = "[initial(lamp.icon_state)]-on"
 				lamp.set_light_on(TRUE)
 		if(NIGHTTIME)
-			message_admins("Transitioning into night...")
+			//message_admins("Transitioning into night...")
 			current_sun_color = nighttime_sun_color
 			current_sun_power = nighttime_sun_power
 		else

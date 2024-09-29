@@ -35,7 +35,7 @@
 		/obj/item/stack/sheet/sinew = 1
 		)
 	speak_emote = list("foams", "clacks", "chitters", "snips", "snaps")
-	emote_see = list("clack its claws", "foam at the mouth", "woobs", "extends its eyestalks")
+	// emote_see = list("clack its claws", "foam at the mouth", "woobs", "extends its eyestalks")
 	attack_verb_simple = list ("pinches", "rends", "snips", "snaps", "snibbity-snaps", "clonks", "disects")
 	maxHealth = 120
 	health = 120
