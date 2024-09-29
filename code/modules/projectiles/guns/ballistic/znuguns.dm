@@ -3,6 +3,920 @@
 // This file is broken up into tiers.
 // tiers go from zero to three.
 
+// -> bullets -> cartridges -> magazines -> guns
+
+#define TIER0 1.00 // bad maintenance, poor design, a shortened barrel, or all three.
+#define TIER1 1.15 // regular unskilled maintenance, okay design, a standard barrel, or all three.
+#define TIER2 1.25 // regular maintenance, respectable design, a standard length or slightly elongated barrel, or all three.
+#define TIER3 1.30 // regular skilled maintenance, modern design, a standard length or slightly elongated barrel, or all three.
+
+/obj/item/projectile/bullet/b22 // blackpowder load
+	name = ".22lr bullet"
+	damage = 10
+	damage_list = list("5" = 30, "10" = 60, "20" = 10)
+	stamina = list("5" = 30, "10" = 60, "20" = 10)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_22
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b22
+	name = "blackpowder .22LR cartridge"
+	desc = "A blackpowder load for a .22LR cartridge."
+	caliber = CALIBER_22LR
+	projectile_type = /obj/item/projectile/bullet/b22
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
+
+/obj/item/projectile/bullet/s22 // smokeless load
+	name = ".22lr bullet"
+	damage = 15
+	damage_list = list("7.5" = 30, "15" = 60, "30" = 10)
+	stamina = list("7.5" = 30, "15" = 60, "30" = 10)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_22
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/s22
+	name = "smokeless .22LR cartridge"
+	desc = "A standard smokeless load for a .22LR cartridge."
+	caliber = CALIBER_22LR
+	projectile_type = /obj/item/projectile/bullet/s22
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
+
+
+/obj/item/ammo_box/magazine/m22
+	name = "pistol magazine (.22LR)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "pistol22"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 16
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = 1 SHEETS)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m22/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m22/extended
+	name = "carbine magazine (.22LR)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "22carbine"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 32
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = 2 SHEETS)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m22/extended/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev22
+	name = ".22 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev22/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/shot/long22
+	name = ".22LR Long internal tube magazine" //baby repeater
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 16
+	multiload = 1
+
+// start of 9mm Blackpowder, Smokeless, Military
+
+/obj/item/projectile/bullet/b9mm
+	name = "9mm bullet"
+	damage = 20
+	damage_list = list("10" = 20, "20" = 60, "40" = 20)
+	stamina = list("10" = 20, "20" = 60, "40" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s9mm
+	name = "9mm bullet"
+	damage = 25
+	damage_list = list("12.5" = 20, "25" = 60, "50" = 20)
+	stamina = list("12.5" = 20, "25" = 60, "50" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m9mm
+	name = "9mm bullet"
+	damage = 30
+	damage_list = list("15" = 20, "30" = 60, "60" = 20)
+	stamina = list("15" = 20, "30" = 60, "60" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_9MM
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_9MM
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b9mm
+	name = "blackpowder 9mm cartridge"
+	desc = "A standard blackpowder load for a 9mm cartridge."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/b9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+/obj/item/ammo_casing/s9mm
+	name = "smokeless 9mm cartridge"
+	desc = "A standard smokeless powder load for a 9mm cartridge."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/s9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+/obj/item/ammo_casing/m9mm
+	name = "military 9mm cartridge"
+	desc = "A factory spec smokeless powder load for a 9mm cartridge, fit for service."
+	caliber = CALIBER_9MM
+	projectile_type = /obj/item/projectile/bullet/m9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
+
+/obj/item/ammo_box/magazine/m9mm
+	name = "pistol magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmp"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m9mm/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m9mm/doublestack
+	name = "doublestack pistol magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 15
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+
+/obj/item/ammo_box/magazine/m9mm/doublestack/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m1carbine
+	name = "9mm carbine magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m10mm"
+	ammo_type = /obj/item/ammo_casing/s9mm
+	max_ammo = 12
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m1carbine/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/b357 // blackpowder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("10" = 20, "20" = 60, "40" = 20)
+	stamina = list("10" = 20, "20" = 60, "40" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s357 // smokeless powder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("12.5" = 20, "25" = 60, "50" = 20)
+	stamina = list("12.5" = 20, "25" = 60, "50" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m357 // military powder load
+	name = ".357 bullet"
+	damage = 20
+	damage_list = list("15" = 20, "30" = 60, "60" = 20)
+	stamina = list("15" = 20, "30" = 60, "60" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_38
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_38
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b357
+	name = "blackpowder .357 cartridge"
+	desc = "A blackpowder load for a .357 cartridge."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/b357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_casing/s357
+	name = "smokeless .357 cartridge"
+	desc = "A smokeless powder load for a .357 cartridge."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/s357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_casing/m357
+	name = "military .357 cartridge"
+	desc = "A factory spec smokeless powder load for a .357 cartridge, fit for service."
+	caliber = CALIBER_357
+	projectile_type = /obj/item/projectile/bullet/m357
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev357
+	name = "357 magnum cylinder"
+	ammo_type = /obj/item/ammo_casing/s357
+	caliber = list(CALIBER_357)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/shot/tube357
+	name = ".357 magnum internal tube magazine" //cowboy repeater
+	ammo_type = /obj/item/ammo_casing/s357
+	caliber = list(CALIBER_357)
+	max_ammo = 12
+	multiload = 0
+
+/obj/item/projectile/bullet/b45 // blackpowder
+	name = ".45 FMJ bullet"
+	damage = 25
+	damage_list = list("12.5" = 20, "25" = 60, "50" = 20)
+	stamina = list("12.5" = 20, "25" = 60, "50" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_45ACP
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s45 // smokeless
+	name = ".45 FMJ bullet"
+	damage = 35
+	damage_list = list("17.5" = 20, "35" = 60, "70" = 20)
+	stamina = list("17.5" = 20, "35" = 60, "70" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_45ACP
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m45 // military
+	name = ".45 FMJ bullet"
+	damage = 40
+	damage_list = list("20" = 20, "40" = 60, "80" = 20)
+	stamina = list("20" = 20, "40" = 60, "80" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_45ACP
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b45
+	name = "blackpowder .45 cartridge"
+	desc = "A blackpowder load for a .45 cartridge."
+	caliber = CALIBER_45ACP
+	projectile_type = /obj/item/projectile/bullet/b45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_45
+
+/obj/item/ammo_casing/s45
+	name = "smokeless .45 cartridge"
+	desc = "A smokeless powder load for a .45 cartridge."
+	caliber = CALIBER_45ACP
+	projectile_type = /obj/item/projectile/bullet/s45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_45
+
+/obj/item/ammo_casing/m45
+	name = "military .45 cartridge"
+	desc = "A factory spec smokeless powder load for a .45 cartridge, fit for service."
+	caliber = CALIBER_45ACP
+	projectile_type = /obj/item/projectile/bullet/m45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_45
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45
+	name = ".45 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
+	name = ".45 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/two
+	name = ".45 revolver breech"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/two/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/cg45
+	name = "handmade .45 stick magazine (.45)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "cg45"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/cg45/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/b44 // blackpowder
+	name = ".44 FMJ bullet"
+	damage = 35
+	damage_list = list("17.5" = 20, "35" = 60, "70" = 20)
+	stamina = list("17.5" = 20, "35" = 60, "70" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_44
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_44
+	damage_falloff = 0
+
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/s44 // smokeless
+	name = ".44 FMJ bullet"
+	damage = 40
+	damage_list = list("20" = 20, "40" = 60, "80" = 20)
+	stamina = list("20" = 20, "40" = 60, "80" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_44
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_44
+	damage_falloff = 0
+
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m44 // military
+	name = ".44 FMJ bullet"
+	damage = 45
+	damage_list = list("22.5" = 20, "45" = 60, "90" = 20)
+	stamina = list("22.5" = 20, "45" = 60, "90" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_44
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_PISTOL_44
+	damage_falloff = 0
+
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/b44
+	name = "blackpowder .44 cartridge"
+	desc = "A blackpowder load for a .44 cartridge."
+	caliber = CALIBER_44
+	projectile_type = /obj/item/projectile/bullet/b44
+	material_class = BULLET_IS_HEAVY_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_44
+
+/obj/item/ammo_casing/s44
+	name = "smokeless .44 cartridge"
+	desc = "A smokeless powder load for a .44 cartridge."
+	caliber = CALIBER_44
+	projectile_type = /obj/item/projectile/bullet/s44
+	material_class = BULLET_IS_HEAVY_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_44
+
+/obj/item/ammo_casing/m44
+	name = "military .44 cartridge"
+	desc = "A factory spec smokeless powder load for a .45 cartridge, fit for service."
+	caliber = CALIBER_44
+	projectile_type = /obj/item/projectile/bullet/m44
+	material_class = BULLET_IS_HEAVY_PISTOL
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_44
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev44
+	name = ".44 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/s44
+	caliber = list(CALIBER_44)
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/m44
+	name = "handgun magazine (.44 magnum)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "50ae"
+	ammo_type = /obj/item/ammo_casing/s44
+	caliber = list(CALIBER_44)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m44/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/s556 // smokeless
+	name = "5.56 bullet"
+	damage = 45
+	damage_list = list("22.5" = 20, "45" = 60, "90" = 20)
+	stamina = list("22.5" = 20, "45" = 60, "90" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_223
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m556 // military
+	name = "5.56 bullet"
+	damage = 45
+	damage_list = list("25" = 20, "50" = 60, "100" = 20)
+	stamina = list("25" = 20, "50" = 60, "100" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_223
+	damage_falloff = 0
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/s556
+	name = "smokeless .223 cartridge"
+	desc = "A smokeless powder load for a .223 cartridge. Fits just fine in 5.56x45mm rifles."
+	caliber = CALIBER_556
+	projectile_type = /obj/item/projectile/bullet/s556
+	material_class = BULLET_IS_LIGHT_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
+
+/obj/item/ammo_casing/m556
+	name = "military 5.56x45mm cartridge"
+	desc = "A factory spec smokeless powder load for a 5.56x45mm cartridge, fit for service. Fits just fine in .223 rifles."
+	caliber = CALIBER_556
+	projectile_type = /obj/item/projectile/bullet/s556
+	material_class = BULLET_IS_LIGHT_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
+
+/obj/item/ammo_box/magazine/m556/rifle
+	name = "rifle magazine (.223/5.56mm)"
+	icon_state = "r20"
+	caliber = list(CALIBER_556)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m556/rifle/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m556/rifle/assault
+	name = "rifle magazine (.223/5.56mm)"
+	icon_state = "r30"
+	max_ammo = 30
+	ammo_type = /obj/item/ammo_casing/s556
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_LARGE_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m556/rifle/assault/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/s308 // smokeless
+	name = ".308 bullet"
+	damage = 60
+	damage_list = list("30" = 20, "60" = 60, "120" = 20)
+	stamina = list("30" = 20, "60" = 60, "120" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_308
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_308
+	damage_falloff = 0
+
+	eyeblur = 1 SECONDS
+
+/obj/item/projectile/bullet/m308 // military
+	name = "7.62x51mm bullet"
+	damage = 65
+	damage_list = list("32.5" = 20, "65" = 60, "130" = 20)
+	stamina = list("32.5" = 20, "65" = 60, "130" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_308
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_308
+	damage_falloff = 0
+
+	eyeblur = 1 SECONDS
+
+/obj/item/ammo_casing/s308
+	name = "smokeless .308 cartridge"
+	desc = "A smokeless powder load for a .308 cartridge. Fits just fine in 7.62x51mm rifles."
+	icon_state = "762-casing"
+	caliber = CALIBER_308
+	projectile_type = /obj/item/projectile/bullet/s308
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_casing/m308
+	name = "military 7.62x51mm cartridge"
+	desc = "A factory spec smokeless powder load for a 7.62x51mm cartridge, fit for service. Fits just fine in .308 rifles."
+	icon_state = "762-casing"
+	caliber = CALIBER_308
+	projectile_type = /obj/item/projectile/bullet/m308
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_box/magazine/m308/ext
+	name = "extended rifle magazine (.308)"
+	icon_state = "extmag308"
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_EXTENDED_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m308/ext/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/pellet/bbuckshot // blackpowder
+	name = "buckshot pellet"
+	damage = 50
+	damage_list = list("10" = 20, "12.5" = 60, "15" = 20)
+	stamina = list("10" = 20, "12.5" = 60, "15" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/bbuckshot
+	name = "blackpowder buckshot shell"
+	desc = "A 12 gauge shell filled with blackpowder and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 4
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/projectile/bullet/pellet/sbuckshot // smokeless
+	name = "buckshot pellet"
+	damage = 60
+	damage_list = list("15" = 20, "20" = 60, "25" = 20)
+	stamina = list("15" = 20, "20" = 60, "25" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/sbuckshot
+	name = "smokeless powder buckshot shell"
+	desc = "A 12 gauge shell filled with smokeless powder and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 3
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/projectile/bullet/pellet/mbuckshot // military
+	name = "buckshot pellet"
+	damage = 65
+	damage_list = list("16.25" = 20, "32.5" = 60, "65" = 20)
+	stamina = list("16.25" = 20, "32.5" = 60, "65" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/mbuckshot
+	name = "military buckshot shell"
+	desc = "A 12 gauge shell filled with smokeless powder fit for a soldier and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 2
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/ammo_box/magazine/internal/shot
+	name = "shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 4
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/shot/single
+	name = "single-barrel shotgun breech"
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/shot/dual
+	name = "double-barrel shotgun breech"
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/internal/shot/trench
+	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/shot/police
+	name = "police shotgun tube"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/saiga
+	name = "shotgun magazine"
+	desc = "A 12g magazine."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "shotgunmag"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/saiga/empty
+	start_empty = 1
+
+/obj/item/projectile/bullet/s3006 // smokeless
+	name = ".30-06 bullet"
+	damage = 90
+	damage_list = list("45" = 20, "90" = 60, "180" = 20)
+	stamina = list("45" = 20, "90" = 60, "180" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = 0
+
+/obj/item/projectile/bullet/m3006 // military
+	name = ".30-06 bullet"
+	damage = 95
+	damage_list = list("45" = 10, "95" = 60, "190" = 30)
+	stamina = list("45" = 10, "95" = 60, "190" = 30)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = 0
+
+/obj/item/ammo_casing/s3006
+	name = "smokeless .30-06 cartridge"
+	desc = "A smokeless powder load for a .30-06 cartridge."
+	icon_state = "762-casing"
+	caliber = CALIBER_3006
+	projectile_type = /obj/item/projectile/bullet/s3006
+	material_class = BULLET_IS_HEAVY_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_casing/m3006
+	name = "military .30-06 cartridge"
+	desc = "Factory spec smokeless powder load for a .30-06 cartridge. Easily worth its weight in coins."
+	icon_state = "762-casing"
+	caliber = CALIBER_3006
+	projectile_type = /obj/item/projectile/bullet/m3006
+	material_class = BULLET_IS_HEAVY_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_box/magazine/internal/gras
+	name = "Mardi-Gras breech"
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/shot/tube4570
+	name = ".30-06 internal tube magazine" //brush gun
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 10
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/boltaction/hunting
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 5
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
+	max_ammo = 10
 
 // TIER 0, STARTER
 // These guns should have minimal DPS, be a relic, or are generally good for newbies.
@@ -85,7 +999,7 @@
 
 /obj/item/gun/flintlock
 	name = "post-fall short belcher"
-	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh.  Just don't drop it while loaded."
+	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh. Just don't drop it while loaded."
 	icon_state = "flintlock"
 	item_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
@@ -111,7 +1025,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // plug em in the skull!
 	init_firemodes = list(
@@ -121,6 +1034,8 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+	damage_multiplier = TIER0
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "sidewinder"
 	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
@@ -128,11 +1043,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
+
+	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/rifle/repeater/trainer
 	name = "snapback"
@@ -144,7 +1060,6 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	can_scope = TRUE
 	scope_state = "scope_long"
@@ -159,6 +1074,8 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	damage_multiplier = TIER0
+
 /obj/item/gun/ballistic/automatic/sportcarbine
 	name = "spitball"
 	desc = "One of the many .22 LR carbines that were all the rage before the cataclysm. While lacking in firepower, it more than makes up for it with its cheapness to fire."
@@ -168,7 +1085,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0 // its a weakass cartridge
 	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -189,18 +1105,19 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/weapons/Gunshot2.ogg'
 
+	damage_multiplier = TIER0
+
 // TIER 1, STARTER
 // These guns should have okay DPS, be an older weapon, and are very good canidates for roundstart weapons. This sets the pace.
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "nine"
-	desc = "A mass produced pre-cataclysm 9mm pistol."
+	desc = "A mass produced pre-fall 9mm pistol."
 	icon_state = "ninemil"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -209,6 +1126,8 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
 	name = "subby"
@@ -242,16 +1161,18 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
-	weapon_class = WEAPON_CLASS_TINY
+	weapon_class = WEAPON_CLASS_SMALL
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "trophy pistol"
-	desc = "A foreign 9mm pistol, which takes single stack magazines."
+	desc = "A foreign 9mm pistol."
 	icon_state = "p08"
 	item_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
 	name = "P.D."
@@ -268,7 +1189,6 @@
 	icon_state = "chinapistol"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
 
 	can_suppress = FALSE
@@ -279,6 +1199,8 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/revolver/revolver45
 	name = ".45 ACP two step"
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
@@ -287,11 +1209,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "357 two step"
@@ -301,11 +1224,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/revolver44
 	name = ".44 two step"
@@ -366,7 +1290,7 @@
 	icon_state = "cg45"
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
-	init_mag_type = /obj/item/ammo_box/magazine/cg45
+	init_mag_type = null
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -382,8 +1306,8 @@
 	desc = "A design thought to have been used hundreds of years ago by a now long gone power. It's ubiquitous nature made it prime for post-fall gunsmiths to restore."
 	icon_state = "m1carbine"
 	item_state = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/m10mm
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	mag_type = null
+	init_mag_type = /obj/item/ammo_box/magazine/m1carbine
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
@@ -407,27 +1331,6 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
-/obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "alley-oop"
-	desc = "An over-under hunting rifle, for large game."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "caravan"
-	item_state = "shotgundouble"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	init_firemodes = list(
-		/datum/firemode/semi_auto/shotgun_fixed,
-		/datum/firemode/burst/two/shotgun_fixed,
-	)
-	can_scope = TRUE
-	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 /obj/item/gun/ballistic/revolver/shotpistol
 	name = "blaster"
@@ -458,7 +1361,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
@@ -466,6 +1368,7 @@
 	)
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
 	name = "slapback"
@@ -475,7 +1378,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = SHOTGUN_RECOIL(1, 1)
 	init_firemodes = list(
@@ -485,6 +1387,8 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	can_bayonet = FALSE
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/repeater/cowboy
 	name = "cavalry rifle"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
@@ -493,16 +1397,17 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Mardi-Gras rifle"
-	desc = "A post-catacylsm copy of an old black powder cartridge gun of French lineage. No one is sure where the name came from, but it stuck."
+	desc = "A post-catacylsm copy of an old black powder cartridge gun of foreign lineage. No one is sure where the name came from, but it stuck."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
@@ -511,7 +1416,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -529,9 +1433,11 @@
 	)
 	reskinnable_component = null
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/mag/boys
 	name = "salvaged bolt-action rifle"
-	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures! (worm gear clamps not included)"
+	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures (hose clamps not included)!"
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
 	item_state = "boys"
@@ -542,7 +1448,6 @@
 	mag_type = /obj/item/ammo_box/magazine/boys
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -552,9 +1457,11 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
 	name = "salvaged eastern dragon"
-	desc = "A clever design adapted out of salvaged surplus eastern rifles and wasteland scarcity. The magazine is welded to the frame and a port was added after."
+	desc = "A clever design adapted out of salvaged surplus eastern wyverns and wasteland scarcity. The magazine is welded to the frame and a port was added after."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -564,7 +1471,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -581,6 +1487,8 @@
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
 	casing_ejector = TRUE
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "flatline"
@@ -601,12 +1509,13 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
-// TIER 2, ESCALATION
-// These guns should have respectable DPS, be a relatively newer weapon, and are very good canidates for loot weapons. You can break these down at a workbench for gunmods and parts to upgrade the tier of your starter.
+	damage_multiplier = TIER1
+
+// THIS IS THE START OF TIER 2 GUNS
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99
 	name = "warden"
-	desc = "A compact .45 pistol. A shorter version of the Service Pistol. It is tiny compared to its bigger brothers and packs a punch."
+	desc = "A compact .45 pistol. A shorter version of a straightline. It is tiny compared to its bigger brothers and packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -620,7 +1529,6 @@
 		/obj/item/ammo_box/magazine/m10mm/rifle)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -630,6 +1538,8 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_recoil = HANDGUN_RECOIL(1.5, 1.1)
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/beretta
 	name = "big nine"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
@@ -638,7 +1548,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -650,6 +1559,8 @@
 
 	reskinnable_component = null
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "straightline"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
@@ -660,7 +1571,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -673,6 +1583,8 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "shucker"
 	desc = "A .44 magnum semi-automatic handgun."
@@ -682,13 +1594,14 @@
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/police
 	name = ".357 one step"
@@ -697,13 +1610,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 one step"
@@ -713,7 +1627,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
@@ -722,6 +1635,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5
 	name = "hose"
@@ -734,8 +1649,9 @@
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	weapon_class = WEAPON_CLASS_NORMAL //high class, one of the few smol smgs
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
 	name = "lil' hose"
@@ -743,7 +1659,6 @@
 	icon = 	'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "mac10"
 	weapon_class = WEAPON_CLASS_NORMAL
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = SMG_RECOIL(2, 2)
 	suppressor_x_offset = 28
 	suppressor_y_offset = 20
@@ -751,6 +1666,8 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
 	name = "heavy hose"
@@ -762,7 +1679,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_suppress = TRUE
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -773,6 +1689,8 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "reservist compact"
 	desc = "Similar to the reservist carbine, this model has a folding stock for greater mobility."
@@ -780,8 +1698,9 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1.5, 1.5)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/varmint
 	name = "coyote"
@@ -792,7 +1711,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -808,16 +1726,17 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/service
 	name = "wolf"
-	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time.  Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
+	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -829,6 +1748,8 @@
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	reskinnable_component = null
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/m1garand/sks // to-do, make this have an internal mag please
 	name = "eastern dragon"
@@ -843,7 +1764,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/sks
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 
 	bayonet_state = "bayonet"
@@ -855,9 +1775,11 @@
 	auto_eject_sound = 'sound/weapons/magout.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "eastern drake"
-	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch. Oh."
+	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -867,7 +1789,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -878,6 +1799,8 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/fnfal/ak47
 	name = "eastern wyvern"
@@ -891,7 +1814,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.0, 2.0)
 	init_firemodes = list(
@@ -903,6 +1825,8 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/armalite
 	name = "bear"
 	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
@@ -912,12 +1836,13 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.5, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/grenade
 	name = "bloop"
@@ -930,25 +1855,27 @@
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	can_bayonet = FALSE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "razorback"
 	desc = "A pre-fall traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "hawg"
@@ -958,13 +1885,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 
 	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/rifle/repeater/trail
 	name = "heavy snapback"
@@ -974,16 +1902,17 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
-	desc = "A sturdy military rifle, rechambered to .30-06 Springfield.  Which one?  Who fucking knows."
+	desc = "A sturdy military surplus rifle, rechambered to .30-06 Springfield. Which one? Maybe <b>you</b> should tell us."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
@@ -991,7 +1920,6 @@
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -1006,6 +1934,10 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	damage_multiplier = TIER2
+
+// THIS IS THE START OF TIER 3 GUNS
+
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "half step"
 	desc = "A gas operated police revolver that fires just about as fast as you can click the trigger."
@@ -1015,13 +1947,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/tommygun
 	name = "drumroll"
@@ -1033,7 +1966,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1042,8 +1974,10 @@
 
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "stacatto"
+	name = "staccato"
 	desc = "A lightweight, automatic submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
@@ -1052,7 +1986,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/uzim9mm/rockwell) //so I don't have to assign a ton of new sprite names
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = TRUE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1061,6 +1994,8 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/mp5sd
 	name = "nailtacker"
@@ -1072,7 +2007,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1081,6 +2015,8 @@
 	silenced = TRUE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/m1garand
 	name = "eagle"
@@ -1092,7 +2028,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -1111,6 +2046,8 @@
 	scope_y_offset = 14
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/ak556
 	name = "eastern lynx"
@@ -1134,9 +2071,11 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/z34rifle
 	name = "eastern puma"
-	desc = "A pre-fall large eastern rifle designed for hunting.  Hunting what?  Men."
+	desc = "A pre-fall large eastern rifle designed for hunting. Hunting what? Men."
 	icon_state = "zastava"
 	item_state = "zastava"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1146,7 +2085,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list (
@@ -1158,6 +2096,8 @@
 	zoom_factor = 1.1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "handy"
 	desc = "A large pre-fall battle rifle. Known today as a tempermental, heavy, beast of a weapon. At least the designers had the foresight to add a handle."
@@ -1168,7 +2108,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
 	init_firemodes = list(
@@ -1177,9 +2116,11 @@
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
 	name = "forte"
-	desc = "A foreign designed battle rifle. Pre-fall in design and well.  Tempermental.  Pretty decent overall though."
+	desc = "A foreign designed battle rifle. Pre-fall in design and well. Tempermental. Pretty decent overall though."
 	icon_state = "g3"
 	item_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1189,7 +2130,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1.3, 1.2)
 	init_firemodes = list(
@@ -1200,6 +2140,8 @@
 	can_suppress = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/rpd
 	name = "eastern whirlwind"
@@ -1214,7 +2156,6 @@
 	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(2, 2)
 	init_firemodes = list(
@@ -1224,6 +2165,7 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/bar
 	name = "lion"
@@ -1236,7 +2178,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 1)
 	init_firemodes = list(
@@ -1246,9 +2187,11 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "eastern stag"
-	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch.  Sure hope you don't want spare parts though."
+	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch. Sure hope you don't want spare parts though."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1267,6 +2210,8 @@
 	can_bayonet = FALSE
 	can_scope = FALSE
 	can_suppress = TRUE
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/shotgun/police
 	name = "jackhammer"
@@ -1327,12 +2272,12 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "smelly"
-	desc = "A pre-fall 10 round bolt action rifle.  No one is sure why they're called smellies, they don't stink at all generally and are quite good."
+	desc = "A pre-fall 10 round bolt action rifle. No one is sure why they're called smellies, they don't stink at all generally and are quite good."
 	sawn_desc = "Why would someone short stock a smelly? Does that make this just a whiff?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
 	item_state = "smle"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1351,4 +2296,4 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	reskinnable_component = /datum/component/reskinnable/enfield
+	reskinnable_component = null
