@@ -36,8 +36,8 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"toughness",
 		),
 	EMOTE_SPECIAL_CHA = list(
-		"Mox",
-		"Moxie",
+		"mox",
+		"moxie",
 		"Cha",
 		),
 	EMOTE_SPECIAL_INT = list(
