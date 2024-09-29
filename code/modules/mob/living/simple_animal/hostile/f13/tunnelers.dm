@@ -20,7 +20,7 @@
 	robust_searching = TRUE
 	turns_per_move = 5
 	speak_emote = list("growls")
-	emote_see = list("screeches")
+	// emote_see = list("screeches")
 	a_intent = INTENT_HARM
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
