@@ -5,6 +5,10 @@
 
 // -> bullets -> cartridges -> magazines -> guns
 
+#define TIER0 1.00 // bad maintenance, poor design, a shortened barrel, or all three.
+#define TIER1 1.15 // regular unskilled maintenance, okay design, a standard barrel, or all three.
+#define TIER2 1.25 // regular maintenance, respectable design, a standard length or slightly elongated barrel, or all three.
+#define TIER3 1.30 // regular skilled maintenance, modern design, a standard length or slightly elongated barrel, or all three.
 
 /obj/item/projectile/bullet/b22 // blackpowder load
 	name = ".22lr bullet"
@@ -550,7 +554,18 @@
 	caliber = list(CALIBER_44)
 	max_ammo = 6
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev44/empty
+/obj/item/ammo_box/magazine/m44
+	name = "handgun magazine (.44 magnum)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "50ae"
+	ammo_type = /obj/item/ammo_casing/s44
+	caliber = list(CALIBER_44)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m44/empty
 	start_empty = 1
 
 /obj/item/projectile/bullet/s556 // smokeless
@@ -1010,7 +1025,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // plug em in the skull!
 	init_firemodes = list(
@@ -1020,6 +1034,8 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+	damage_multiplier = TIER0
+
 /obj/item/gun/ballistic/revolver/detective
 	name = "sidewinder"
 	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
@@ -1027,23 +1043,23 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
+
+	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/rifle/repeater/trainer
 	name = "snapback"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
 	item_state = "lever22"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22/empty
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	can_scope = TRUE
 	scope_state = "scope_long"
@@ -1058,6 +1074,8 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	damage_multiplier = TIER0
+
 /obj/item/gun/ballistic/automatic/sportcarbine
 	name = "spitball"
 	desc = "One of the many .22 LR carbines that were all the rage before the cataclysm. While lacking in firepower, it more than makes up for it with its cheapness to fire."
@@ -1067,7 +1085,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0 // its a weakass cartridge
 	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -1088,18 +1105,19 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/weapons/Gunshot2.ogg'
 
+	damage_multiplier = TIER0
+
 // TIER 1, STARTER
 // These guns should have okay DPS, be an older weapon, and are very good canidates for roundstart weapons. This sets the pace.
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "nine"
-	desc = "A mass produced pre-cataclysm 9mm pistol."
+	desc = "A mass produced pre-fall 9mm pistol."
 	icon_state = "ninemil"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -1108,6 +1126,8 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
 	name = "subby"
@@ -1141,7 +1161,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
-	weapon_class = WEAPON_CLASS_TINY
+	weapon_class = WEAPON_CLASS_SMALL
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "trophy pistol"
@@ -1151,6 +1171,8 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
 	name = "P.D."
@@ -1167,7 +1189,6 @@
 	icon_state = "chinapistol"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
 
 	can_suppress = FALSE
@@ -1178,6 +1199,8 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/revolver/revolver45
 	name = ".45 ACP two step"
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
@@ -1186,11 +1209,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "357 two step"
@@ -1200,11 +1224,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/revolver44
 	name = ".44 two step"
@@ -1336,7 +1361,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
@@ -1344,6 +1368,7 @@
 	)
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
 	name = "slapback"
@@ -1353,7 +1378,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = SHOTGUN_RECOIL(1, 1)
 	init_firemodes = list(
@@ -1363,6 +1387,8 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	can_bayonet = FALSE
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/repeater/cowboy
 	name = "cavalry rifle"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
@@ -1371,16 +1397,17 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Mardi-Gras rifle"
-	desc = "A post-catacylsm copy of an old black powder cartridge gun of French lineage. No one is sure where the name came from, but it stuck."
+	desc = "A post-catacylsm copy of an old black powder cartridge gun of foreign lineage. No one is sure where the name came from, but it stuck."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
@@ -1389,7 +1416,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -1407,9 +1433,11 @@
 	)
 	reskinnable_component = null
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/mag/boys
 	name = "salvaged bolt-action rifle"
-	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures! (worm gear clamps not included)"
+	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures (hose clamps not included)!"
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
 	item_state = "boys"
@@ -1420,7 +1448,6 @@
 	mag_type = /obj/item/ammo_box/magazine/boys
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -1430,9 +1457,11 @@
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
+	damage_multiplier = TIER1
+
 /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
 	name = "salvaged eastern dragon"
-	desc = "A clever design adapted out of salvaged surplus eastern rifles and wasteland scarcity. The magazine is welded to the frame and a port was added after."
+	desc = "A clever design adapted out of salvaged surplus eastern wyverns and wasteland scarcity. The magazine is welded to the frame and a port was added after."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1442,7 +1471,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -1459,6 +1487,8 @@
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
 	casing_ejector = TRUE
+
+	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "flatline"
@@ -1479,12 +1509,13 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
-// TIER 2, ESCALATION
-// These guns should have respectable DPS, be a relatively newer weapon, and are very good canidates for loot weapons. You can break these down at a workbench for gunmods and parts to upgrade the tier of your starter.
+	damage_multiplier = TIER1
+
+// THIS IS THE START OF TIER 2 GUNS
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99
 	name = "warden"
-	desc = "A compact .45 pistol. A shorter version of the Service Pistol. It is tiny compared to its bigger brothers and packs a punch."
+	desc = "A compact .45 pistol. A shorter version of a straightline. It is tiny compared to its bigger brothers and packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1498,7 +1529,6 @@
 		/obj/item/ammo_box/magazine/m10mm/rifle)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -1508,6 +1538,8 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_recoil = HANDGUN_RECOIL(1.5, 1.1)
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/beretta
 	name = "big nine"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
@@ -1516,7 +1548,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -1528,6 +1559,8 @@
 
 	reskinnable_component = null
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "straightline"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
@@ -1538,7 +1571,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -1551,6 +1583,8 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "shucker"
 	desc = "A .44 magnum semi-automatic handgun."
@@ -1560,13 +1594,14 @@
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/police
 	name = ".357 one step"
@@ -1575,13 +1610,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 one step"
@@ -1591,7 +1627,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
@@ -1600,6 +1635,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5
 	name = "hose"
@@ -1612,8 +1649,9 @@
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	weapon_class = WEAPON_CLASS_NORMAL //high class, one of the few smol smgs
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
 	name = "lil' hose"
@@ -1621,7 +1659,6 @@
 	icon = 	'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "mac10"
 	weapon_class = WEAPON_CLASS_NORMAL
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = SMG_RECOIL(2, 2)
 	suppressor_x_offset = 28
 	suppressor_y_offset = 20
@@ -1629,6 +1666,8 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
 	name = "heavy hose"
@@ -1640,7 +1679,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_suppress = TRUE
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -1651,6 +1689,8 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "reservist compact"
 	desc = "Similar to the reservist carbine, this model has a folding stock for greater mobility."
@@ -1658,8 +1698,9 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = CARBINE_RECOIL(1.5, 1.5)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/varmint
 	name = "coyote"
@@ -1670,7 +1711,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -1686,6 +1726,8 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/service
 	name = "wolf"
 	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
@@ -1695,7 +1737,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -1707,6 +1748,8 @@
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	reskinnable_component = null
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/m1garand/sks // to-do, make this have an internal mag please
 	name = "eastern dragon"
@@ -1721,7 +1764,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/sks
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 
 	bayonet_state = "bayonet"
@@ -1732,6 +1774,8 @@
 	scope_y_offset = 12
 	auto_eject_sound = 'sound/weapons/magout.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "eastern drake"
@@ -1745,7 +1789,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -1756,6 +1799,8 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/fnfal/ak47
 	name = "eastern wyvern"
@@ -1769,7 +1814,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.0, 2.0)
 	init_firemodes = list(
@@ -1781,6 +1825,8 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER2
+
 /obj/item/gun/ballistic/automatic/armalite
 	name = "bear"
 	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
@@ -1790,12 +1836,13 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.5, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/grenade
 	name = "bloop"
@@ -1808,12 +1855,13 @@
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	can_bayonet = FALSE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "razorback"
@@ -1823,10 +1871,11 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "hawg"
@@ -1836,13 +1885,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 
 	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/rifle/repeater/trail
 	name = "heavy snapback"
@@ -1852,12 +1902,13 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+
+	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
@@ -1869,7 +1920,6 @@
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -1884,6 +1934,10 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	damage_multiplier = TIER2
+
+// THIS IS THE START OF TIER 3 GUNS
+
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "half step"
 	desc = "A gas operated police revolver that fires just about as fast as you can click the trigger."
@@ -1893,13 +1947,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/tommygun
 	name = "drumroll"
@@ -1911,7 +1966,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1919,6 +1973,8 @@
 	)
 
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "staccato"
@@ -1930,7 +1986,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/uzim9mm/rockwell) //so I don't have to assign a ton of new sprite names
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = TRUE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1939,6 +1994,8 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/mp5sd
 	name = "nailtacker"
@@ -1950,7 +2007,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -1959,6 +2015,8 @@
 	silenced = TRUE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/m1garand
 	name = "eagle"
@@ -1970,7 +2028,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -1989,6 +2046,8 @@
 	scope_y_offset = 14
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/ak556
 	name = "eastern lynx"
@@ -2012,6 +2071,8 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/z34rifle
 	name = "eastern puma"
 	desc = "A pre-fall large eastern rifle designed for hunting. Hunting what? Men."
@@ -2024,7 +2085,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list (
@@ -2036,6 +2096,8 @@
 	zoom_factor = 1.1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "handy"
 	desc = "A large pre-fall battle rifle. Known today as a tempermental, heavy, beast of a weapon. At least the designers had the foresight to add a handle."
@@ -2046,7 +2108,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
 	init_firemodes = list(
@@ -2054,6 +2115,8 @@
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
 	name = "forte"
@@ -2067,7 +2130,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1.3, 1.2)
 	init_firemodes = list(
@@ -2078,6 +2140,8 @@
 	can_suppress = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/rpd
 	name = "eastern whirlwind"
@@ -2092,7 +2156,6 @@
 	weapon_class = WEAPON_CLASS_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(2, 2)
 	init_firemodes = list(
@@ -2102,6 +2165,7 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/bar
 	name = "lion"
@@ -2114,7 +2178,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 1)
 	init_firemodes = list(
@@ -2123,6 +2186,8 @@
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "eastern stag"
@@ -2145,6 +2210,8 @@
 	can_bayonet = FALSE
 	can_scope = FALSE
 	can_suppress = TRUE
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/shotgun/police
 	name = "jackhammer"
