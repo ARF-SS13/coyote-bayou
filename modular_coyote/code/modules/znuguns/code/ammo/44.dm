@@ -106,8 +106,7 @@
 	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/ammo_box/magazine/m44/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/internal/shot/tube44
 	name = ".44 magnum internal tube magazine" //trail carbine

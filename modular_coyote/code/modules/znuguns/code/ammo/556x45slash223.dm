@@ -63,20 +63,18 @@
 	icon_state = "r20"
 	caliber = list(CALIBER_556)
 	max_ammo = 20
+	ammo_type = /obj/item/ammo_casing/s556
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m556/rifle/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m556/rifle/assault
 	name = "rifle magazine (.223/5.56mm)"
 	icon_state = "r30"
 	max_ammo = 30
-	ammo_type = /obj/item/ammo_casing/s556
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_LARGE_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m556/rifle/assault/empty
-	start_empty = 1
+	fixed_mag = TRUE

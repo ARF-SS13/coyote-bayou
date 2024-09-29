@@ -105,8 +105,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/ammo_box/magazine/m9mm/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m9mm/doublestack
 	name = "doublestack pistol magazine (9mm)"
@@ -118,29 +117,26 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
-/obj/item/ammo_box/magazine/m9mm/doublestack/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m1carbine
 	name = "9mm carbine magazine"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "m10mm"
 	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
 	max_ammo = 12
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/m1carbine/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/uzim9mm
-	name = "big smg stick mag"
+	name = "stick mag (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "uzi9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	max_ammo = 32
+	max_ammo = 30
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/uzim9mm/update_icon()
-	..()
-	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
+	fixed_mag = TRUE
