@@ -84,6 +84,8 @@
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_357
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/s357

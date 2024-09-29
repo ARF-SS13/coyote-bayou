@@ -147,3 +147,13 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
+/obj/item/ammo_box/magazine/greasegun
+	name = "hefty smg stick mag"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "grease"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 30
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL

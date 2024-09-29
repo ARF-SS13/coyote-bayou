@@ -84,6 +84,8 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
+///////////////// Magazines ////////////////////
+
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot

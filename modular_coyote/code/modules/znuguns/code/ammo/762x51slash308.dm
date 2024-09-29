@@ -60,6 +60,8 @@
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/m308/ext
 	name = "extended rifle magazine (.308)"
 	icon_state = "extmag308"
@@ -69,4 +71,38 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m308/ext/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/sks
+	name = ".308 SKS clip"
+	icon_state = "enbloc-8"
+	randomize_ammo_count = FALSE
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 8
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/sks/update_icon()
+	..()
+	if (ammo_count() >= 10)
+		icon_state = "enbloc-8"
+	else
+		icon_state = "enbloc-[ammo_count()]"
+
+/obj/item/ammo_box/magazine/sks/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/rpd
+	name = "rpd drum magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "rpdm"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/rpd/empty
 	start_empty = 1

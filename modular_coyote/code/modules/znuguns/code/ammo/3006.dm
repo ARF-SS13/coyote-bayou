@@ -80,6 +80,9 @@
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	max_ammo = 10
 
+/obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
+	max_ammo = 20
+
 /obj/item/ammo_box/magazine/boys
 	name = "Handmade .30-06 magazine)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -93,3 +96,20 @@
 
 /obj/item/ammo_box/magazine/boys/empty
 	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/garand3006
+	name = "en-bloc clip (.30-06)"
+	icon_state = "enbloc-8"
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	randomize_ammo_count = FALSE
+	max_ammo = 8
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+
+/obj/item/ammo_box/magazine/garand3006/update_icon()
+	..()
+	if (ammo_count() >= 8)
+		icon_state = "enbloc-8"
+	else
+		icon_state = "enbloc-[ammo_count()]"

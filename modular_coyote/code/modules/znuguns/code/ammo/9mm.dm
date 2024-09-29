@@ -1,5 +1,6 @@
 // Put projectiles, casings, magazines here. Guns go in their respective tiers somewhere around modular_coyote/code/modules/znuguns/code/guns .
 
+////////////////// Ammo ////////////////////
 /obj/item/projectile/bullet/b9mm
 	name = "9mm bullet"
 	damage = 20
@@ -87,6 +88,12 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_9MM
 
+
+
+///////////////////// Magazines///////////////////
+
+
+
 /obj/item/ammo_box/magazine/m9mm
 	name = "pistol magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -124,3 +131,16 @@
 
 /obj/item/ammo_box/magazine/m1carbine/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/uzim9mm
+	name = "big smg stick mag"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "uzi9mm"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	max_ammo = 32
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/uzim9mm/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"

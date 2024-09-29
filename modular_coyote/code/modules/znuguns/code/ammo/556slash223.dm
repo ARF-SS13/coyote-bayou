@@ -56,6 +56,8 @@
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_LIGHT
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (.223/5.56mm)"
 	icon_state = "r20"

@@ -54,6 +54,7 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	sound_properties = CSP_PISTOL_22
 
+///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/m22
 	name = "pistol magazine (.22LR)"
