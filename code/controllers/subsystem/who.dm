@@ -732,8 +732,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 // Make the verb here.
 /mob/verb/SetStatusMsg()
-	set name = "Set Status"
-	set category = "OOC"
+	set name = "Set Who Status"
+	set category = "Roleplaying"
 
 	if(!client)
 		return
