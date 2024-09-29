@@ -152,6 +152,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/chat_width = CHAT_MESSAGE_WIDTH
 	var/see_chat_non_mob = TRUE
 	var/see_furry_dating_sim = TRUE
+	var/visualchat_see_horny_radio = TRUE
 	var/visualchat_use_contrasting_color = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE

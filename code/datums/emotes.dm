@@ -107,7 +107,7 @@
 /datum/emote/proc/BuildMommy(mob/user, message)
 	if(!user || !user.client)
 		return
-	var/datum/rental_mommy/chat/mommy = SSrentaldatums.CheckoutMommy("chat_datums")
+	var/datum/rental_mommy/chat/mommy = SSrentaldatums.CheckoutChatMommy()
 	if(!mommy)
 		return
 	mommy.original_message = message

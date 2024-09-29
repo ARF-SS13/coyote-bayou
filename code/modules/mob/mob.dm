@@ -123,6 +123,8 @@
 	var/msg_backup = msg
 	///NOW HOLD ON THERE BUCKO, I think you're forgetting something~
 	if(momchat && momchat.furry_dating_sim && (isdummy(momchat.source) || CHECK_PREFS(src, SHOW_ME_HORNY_FURRIES))) // its right here
+		if(!momchat.recipiant)
+			momchat.recipiant = src // for me? aw ya shouldntve!
 		msg = SSchat.BuildHornyFurryDatingSimMessage(momchat) // in my subsystem~
 	if(!msg || !length(msg))
 		msg = msg_backup // just in case
@@ -229,7 +231,7 @@
 					msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			var/datum/rental_mommy/chat/yourmom
 			if(momchat && M.should_hornify(momchat))
-				yourmom = SSrentaldatums.CheckoutMommy("chat_datums")
+				yourmom = SSrentaldatums.CheckoutChatMommy()
 				yourmom.copy_mommy(momchat)
 				yourmom.recipiant = M
 				yourmom.message = msg
@@ -295,7 +297,7 @@
 			//msg = self_message
 		var/datum/rental_mommy/chat/yamum = null
 		if(momchat && M.should_hornify(momchat))
-			yamum = SSrentaldatums.CheckoutMommy("chat_datums")
+			yamum = SSrentaldatums.CheckoutChatMommy()
 			yamum.copy_mommy(momchat)
 			yamum.recipiant = M
 			yamum.message = message

@@ -41,8 +41,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	if(!mymom)
 		return null
 	for(var/datum/rental_mommy/chat/mommy in mymom)
-		if(mommy.available)
-			mommy.checkout()
+		if(mommy.checkout())
 			return mommy
 	var/datum/rental_mommy/chat/mommy = LAZYACCESS(mymom, 1) // there will always be at least one mommy
 	var/datum/rental_mommy/chat/mommy2 = new mommy.type()
@@ -50,19 +49,32 @@ SUBSYSTEM_DEF(rentaldatums)
 	mommy2.checkout()
 	return mommy2
 
+/datum/controller/subsystem/rentaldatums/proc/CheckoutChatMommy()
+	return CheckoutMommy("chat_datums")
+
 /datum/rental_mommy // hey isnt that your mom?
 	/// Is your mom available?
 	var/available = TRUE
 	/// The number of tally marks sharpied on your mom's butt that denotes how many times she's been "rented"
 	var/uses = 0
+	/// How long we've booked your mom for
+	var/checked_out_until = 0
 
 /datum/rental_mommy/proc/checkout()
+	if(!available)
+		if(world.time < checked_out_until)
+			return
+		checkin()
 	available = FALSE
 	uses += 1
+	checked_out_until = (world.time + 5 MINUTES)
+	return TRUE
 
 /datum/rental_mommy/proc/checkin()
 	wipe()
 	available = TRUE
+	checked_out_until = 0
+	return TRUE
 
 /datum/rental_mommy/proc/wipe()
 	return
@@ -134,6 +146,16 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/is_emote
 	var/partial
 	var/hide_name_n_verb
+	var/direct_to_mob
+	var/in_critical
+	var/coloned_word
+	var/is_quiet
+	var/speech_range_set
+	var/radio_no_pass
+	var/verb_pretreated
+	var/radio_returns
+	var/mode_trimmed
+	var/is_actually_radio
 
 /datum/rental_mommy/chat/copy_mommy(datum/rental_mommy/chat/mommy)
 	if(!..())
@@ -191,6 +213,16 @@ SUBSYSTEM_DEF(rentaldatums)
 	is_emote                           = mommy.is_emote
 	partial                            = mommy.partial
 	hide_name_n_verb                   = mommy.hide_name_n_verb
+	direct_to_mob                      = mommy.direct_to_mob
+	in_critical                        = mommy.in_critical
+	coloned_word                       = mommy.coloned_word
+	is_quiet                           = mommy.is_quiet
+	speech_range_set                   = mommy.speech_range_set
+	radio_no_pass                      = mommy.radio_no_pass
+	verb_pretreated                    = mommy.verb_pretreated
+	radio_returns                      = mommy.radio_returns
+	mode_trimmed                       = mommy.mode_trimmed
+	is_actually_radio                 = mommy.is_actually_radio
 
 /datum/rental_mommy/chat/wipe()
 	original_message                   = ""
@@ -246,4 +278,56 @@ SUBSYSTEM_DEF(rentaldatums)
 	is_emote                           = null
 	partial                            = null
 	hide_name_n_verb                   = null
+	direct_to_mob                      = null
+	in_critical                        = null
+	coloned_word                       = null
+	is_quiet                           = null
+	speech_range_set                   = null
+	radio_no_pass                      = null
+	verb_pretreated                    = null
+	radio_returns                      = null
+	mode_trimmed                       = null
+	is_actually_radio                  = null
+
+// /// Know what, know what? screw it, I'm compiling all the chat procs into this datum
+// /datum/rental_mommy/chat/proc/handle_say(
+// 	atom/speaker,
+// 	message,
+// 	bubble_type,
+// 	list/spans = list(),
+// 	sanitize,
+// 	language,
+// 	ignore_spam,
+// 	forced,
+// 	only_overhead,
+// 	direct_to_mob
+// )
+
+// 	src.original_message = message
+// 	src.message = message
+// 	src.source = speaker
+// 	src.message_mode = MODE_SAY
+// 	src.spans = spans.Copy()
+// 	src.sanitize = sanitize
+// 	src.bubble_type = bubble_type
+// 	src.language = language
+// 	src.only_overhead = only_overhead
+// 	src.source_quid = extract_quid(src)
+// 	src.source_ckey = ckey
+// 	src.direct_to_mob = direct_to_mob
+// 	src.ignore_spam = ignore_spam
+// 	src.forced = forced
+
+// 	if(ismob(source))
+// 		compile_from_mob(speaker)
+
+// 	var/talk_key = get_key(momchat.message)
+// 	momchat.message_key = talk_key
+
+
+// /mob/living/proc/get_key(message)
+// 	var/key = message[1]
+// 	if(key in GLOB.department_radio_prefixes)
+// 		return lowertext(message[1 + length(key)])
+
 

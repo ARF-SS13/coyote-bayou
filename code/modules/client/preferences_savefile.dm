@@ -934,6 +934,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/list/milfhub = safe_json_decode(S["mommychat_settings"])
 	mommychat_settings = islist(milfhub) ? milfhub : list()
 	S["visualchat_use_contrasting_color"]		>> visualchat_use_contrasting_color // Hair gradients electric boogaloo 2!!
+	S["visualchat_see_horny_radio"]		>> visualchat_see_horny_radio // Hair gradients electric boogaloo 2!!
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
@@ -1031,6 +1032,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//sanitize data
 	visualchat_use_contrasting_color  = sanitize_integer(visualchat_use_contrasting_color, 0, 1, initial(visualchat_use_contrasting_color))
+	visualchat_see_horny_radio        = sanitize_integer(visualchat_see_horny_radio, 0, 1, initial(visualchat_see_horny_radio))
 	show_in_directory                 = sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
 	directory_tag                     = sanitize_inlist(directory_tag, GLOB.char_directory_vore_tags, initial(directory_tag))
 	directory_erptag                  = sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
@@ -1606,6 +1608,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(milfjson)
 		WRITE_FILE(S["mommychat_settings"], milfjson)
 	WRITE_FILE(S["visualchat_use_contrasting_color"],		visualchat_use_contrasting_color)
+	WRITE_FILE(S["visualchat_see_horny_radio"],		visualchat_see_horny_radio)
 
 	WRITE_FILE(S["creature_profilepic"],		creature_profilepic)
 	WRITE_FILE(S["creature_pfphost"],			creature_pfphost)

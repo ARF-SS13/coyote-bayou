@@ -370,7 +370,13 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 #define IS_IN_VIEWER_RECT(turf) TURF_IN_RECTANGLE(turf, westest, northest, eastest, southest)
 
 /// returns a datum of players and how well they can hear the source
-/proc/get_listening(atom/source, close_range, long_range, quiet)
+/proc/get_listening(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("get_listening() called with null momchat!!!!!!11")
+	var/atom/source = momchat.source
+	var/close_range = momchat.close_message_range
+	var/long_range = momchat.far_message_range
+
 	var/area/A = get_area(source)
 	var/private = A.private
 	var/datum/chatchud/CC = get_chatchud(source)

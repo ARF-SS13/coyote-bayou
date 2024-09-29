@@ -71,11 +71,27 @@ SUBSYSTEM_DEF(chat)
 	var/base_whisper_distance = 1
 	var/extended_whisper_distance = 3
 	
+	var/base_radio_reduced_distance = 2
+	var/extended_radio_reduced_distance = 3
+	
 	var/base_sing_distance = 500
 	var/extended_sing_distance = 600
 	var/base_yell_distance = 500
 	var/extended_yell_distance = 600
 	var/far_distance = 6 // how far until they're considered offscreen
+
+	var/static/list/unconscious_allowed_modes = list(
+		MODE_CHANGELING = TRUE,
+		MODE_ALIEN = TRUE,
+	)
+	var/static/list/one_character_prefix = list(
+		MODE_HEADSET = TRUE,
+		MODE_ROBOT = TRUE,
+		MODE_WHISPER = TRUE,
+		MODE_SING = TRUE,
+		MODE_YELL = TRUE,
+		MODE_WHISPER = TRUE,
+	)
 
 
 	var/list/payload_by_client = list()
@@ -620,6 +636,46 @@ SUBSYSTEM_DEF(chat)
 			return "Yell"
 	return "[mode]"
 
+/// takes in a rental mommy and extracts the custom verb from the message, and sets it up for u
+/datum/controller/subsystem/chat/proc/ExtractCustomVerb(datum/rental_mommy/chat/momchat)
+	if(!istype(momchat))
+		CRASH("ExtractCustomVerb called with invalid arguments! [momchat]!")
+	if(momchat.verb_pretreated)
+		return // we already did this
+	var/mob/living/speaker = momchat.source
+	var/datum/preferences/P = momchat.prefs_override || extract_prefs(speaker)
+	if(!P)
+		momchat.verb_pretreated = TRUE // we did it?
+		return 
+	var/list/m_images = P ? P.ProfilePics.Copy() : test_pics
+	if(LAZYLEN(momchat.original_message) && istext(momchat.original_message))
+		var/list/splittify = splittext(momchat.original_message, ":")
+		if(LAZYLEN(splittify) > 1)
+			math:
+				for(var/splut in splittify)
+					var/testpart = ":[splut]:"
+					for(var/list/moud in m_images)
+						if(moud["Mode"] == testpart)
+							momchat.message_mode = testpart
+							momchat.coloned_word = testpart
+							var/list/quicksplit = splittext(momchat.original_message, testpart)
+							if(LAZYLEN(quicksplit) == 2 && ckey(quicksplit[2]) == "") // the token was at the end... probably
+								momchat.original_message = trim(quicksplit[1])
+								momchat.message = trim(quicksplit[1])
+								break math // mathematical
+							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
+							momchat.original_message = PurgeWord(momchat.original_message, testpart)
+							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
+							momchat.message = PurgeWord(momchat.message, testpart)
+							break math // mathematical
+	momchat.verb_pretreated = TRUE // we did it!
+
+/datum/controller/subsystem/chat/proc/PurgeWord(message, word)
+	. = replacetext(., " [word] ", "")
+	. = replacetext(., "[word] ", "")
+	. = replacetext(., " [word]", "")
+	. = replacetext(., "[word]", "")
+
 /datum/controller/subsystem/chat/proc/BuildHornyFurryDatingSimMessage(datum/rental_mommy/chat/mommy)
 	if(!istype(mommy))
 		CRASH("BuildHornyFurryDatingSimMessage called with invalid arguments! [mommy]!")
@@ -644,42 +700,19 @@ SUBSYSTEM_DEF(chat)
 	/// - A color for the text background
 	/// - A color for the header background
 	/// and from this, we will make a furry dating sim style message that will be sent to the target *and* the speaker
+	ExtractCustomVerb(mommy)
 	var/m_name       = mommy.speakername || mommy.source.name
 	var/m_verb       = mommy.message_saymod_comma || "says, "
 	var/m_rawmessage = mommy.original_message
 	var/m_message    = mommy.message
 	var/m_mode       = mommy.message_mode || MODE_SAY
+	var/m_radio	     = mommy.is_radio
 	if(!LAZYLEN(P.mommychat_settings[m_mode]))
 		SanitizeUserPreferences(mommy.source)
 
 	/// look for something in m_rawmessage formatted as :exammple: and extract that to look up a custom image
 	/// We'll extract this, store it as a var, and use it as an override for the profile image
 	var/list/m_images = P ? P.ProfilePics.Copy() : test_pics
-	if(LAZYLEN(m_rawmessage) && istext(m_rawmessage))
-		var/list/splittify = splittext(m_rawmessage, ":")
-		if(LAZYLEN(splittify) > 1)
-			math:
-				for(var/splut in splittify)
-					var/testpart = ":[splut]:"
-					for(var/list/moud in m_images)
-						if(moud["Mode"] == testpart)
-							m_mode = testpart
-							var/list/quicksplit = splittext(m_rawmessage, testpart)
-							if(LAZYLEN(quicksplit) == 2 && ckey(quicksplit[2]) == "") // the token was at the end... probably
-								m_rawmessage = trim(quicksplit[1])
-								m_message = trim(quicksplit[1])
-								break math // mathematical
-							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
-							m_rawmessage = replacetext(m_rawmessage, " [testpart] ", "")
-							m_rawmessage = replacetext(m_rawmessage, "[testpart] ", "")
-							m_rawmessage = replacetext(m_rawmessage, " [testpart]", "")
-							m_rawmessage = replacetext(m_rawmessage, "[testpart]", "")
-							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
-							m_message = replacetext(m_message, " [testpart] ", "")
-							m_message = replacetext(m_message, "[testpart] ", "")
-							m_message = replacetext(m_message, " [testpart]", "")
-							m_message = replacetext(m_message, "[testpart]", "")
-							break math // mathematical
 	var/list/hidden_toe = list() // critical
 	var/m_pfp = get_horny_pfp(m_rawmessage, m_images, m_mode, hidden_toe)
 	var/list/set4mode = P.mommychat_settings["[m_mode]"]
@@ -741,6 +774,8 @@ SUBSYSTEM_DEF(chat)
 			var/timecheck = heard_em["last_heard"] + same_mode_timeout
 			if(timecheck > world.time)
 				giv_head = FALSE // (get them) OFF WITH YOUR HEADS!
+	if(m_radio)
+		giv_head = FALSE
 	target.heard_data[mommyquid] = list("last_heard" = world.time, "message_mode" = m_mode)
 	var/nomessage = FALSE
 	var/nobold_verb = FALSE
@@ -2043,6 +2078,13 @@ SUBSYSTEM_DEF(chat)
 				to_chat(M, span_notice("AutoContrast is now enabled! The non-personalized text in your messages (emotes, etc) will now attempt to use a contrasting color."))
 			else
 				to_chat(M, span_notice("AutoContrast is now disabled! The non-personalized text in your messages (emotes, etc) will follow the light/dark mode settings of the VIEWER! This could get ugly, so, yeah."))
+			. = CHANGED_NOTHING
+		if("ToggleRadioHorny")
+			TOGGLE_VAR(P.visualchat_see_horny_radio)
+			if(P.visualchat_see_horny_radio)
+				to_chat(M, span_notice("You will see a (smallified) VisualChat message when people use the radio!"))
+			else
+				to_chat(M, span_notice("You will no longer see VisualChat messages when people use the radio!"))
 			. = CHANGED_NOTHING
 		if("ModifyHost")
 			var/mode = params["Mode"]

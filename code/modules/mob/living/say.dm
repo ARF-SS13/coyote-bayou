@@ -20,7 +20,10 @@
 
 	return new_msg
 
-/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat, mob/direct_to_mob = null)
+#define RETURN_MOM momchat?.checkin();return
+/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, only_overhead, mob/direct_to_mob = null)
+	if(!SSrentaldatums.initialized)
+		return
 	/* var/static/list/crit_allowed_modes = list(
 		MODE_WHISPER = TRUE,
 		MODE_CUSTOM_SAY = TRUE,
@@ -30,136 +33,157 @@
 		MODE_CHANGELING = TRUE,
 		MODE_ALIEN = TRUE
 		) */
-	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
-	var/talk_key = get_key(message)
+	var/datum/rental_mommy/chat/momchat = SSrentaldatums.CheckoutChatMommy() // hi mom
+	momchat.original_message = message
+	momchat.message = message
+	momchat.source = src
+	momchat.message_mode = MODE_SAY
+	momchat.spans = spans
+	momchat.sanitize = TRUE
+	momchat.bubble_type = bubble_type
+	momchat.language = language
+	momchat.only_overhead = only_overhead
+	momchat.source_quid = extract_quid(src)
+	momchat.source_ckey = ckey
+	momchat.direct_to_mob = direct_to_mob
 
-	var/static/list/one_character_prefix = list(MODE_HEADSET = TRUE, MODE_ROBOT = TRUE, MODE_WHISPER = TRUE, MODE_SING = TRUE, MODE_YELL = TRUE, MODE_WHISPER = TRUE)
+	// var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
+	var/talk_key = get_key(momchat.message)
+	momchat.message_key = talk_key
+
+	// var/static/list/one_character_prefix = list(MODE_HEADSET = TRUE, MODE_ROBOT = TRUE, MODE_WHISPER = TRUE, MODE_SING = TRUE, MODE_YELL = TRUE, MODE_WHISPER = TRUE)
 
 	var/ic_blocked = FALSE
 
-	if(client && !forced && CHAT_FILTER_CHECK(message))
+	if(client && !forced && CHAT_FILTER_CHECK(momchat.message))
 		//The filter doesn't act on the sanitized message, but the raw message.
 		ic_blocked = TRUE
 
 	if(sanitize)
-		message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-	if(!message || message == "")
-		return
+		momchat.message = trim(copytext_char(sanitize(momchat.message), 1, MAX_MESSAGE_LEN))
+	if(!momchat.message || momchat.message == "")
+		RETURN_MOM
 
 	if(ic_blocked)
 		//The filter warning message shows the sanitized message though.
-		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span>"))
+		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[momchat.message]\"</span>"))
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
-		return
+		RETURN_MOM
 
+	if(check_emote(momchat.original_message, just_runechat = only_overhead))
+		RETURN_MOM
 	var/datum/saymode/saymode = SSradio.saymodes[talk_key]
-	var/message_mode = get_message_mode(message)
-	var/original_message = message
+	SSchat.ExtractCustomVerb(momchat)
+	get_message_mode(momchat)
+	momchat.original_message = momchat.message
 	var/in_critical = InCritical()
-
-	/// a regex that will look for a word surrounded by colons, such as :bingus: or :wamfosm: . Spaces are not allowed in the word.
-	var/regex/colonizer_regex = regex(@":(\w+):", "g")
-	var/is_colone = colonizer_regex.Find(message)
-
-	if(!is_colone)
-		if(one_character_prefix[message_mode])
-			message = copytext_char(message, 2)
-		else if(message_mode || saymode)
-			message = copytext_char(message, 2)
-	message = trim(message)
-	if(!message)
-		return
-	if(message_mode == MODE_ADMIN)
+	momchat.in_critical = in_critical
+	if(!momchat.mode_trimmed)
+		if(SSchat.one_character_prefix[momchat.message_mode])
+			momchat.message = copytext_char(momchat.message, 2)
+		else if(saymode)
+			momchat.message = copytext_char(momchat.message, 2)
+	momchat.message = trim(momchat.message)
+	if(!momchat.message)
+		RETURN_MOM
+	if(momchat.message_mode == MODE_ADMIN)
 		if(client)
-			client.cmd_admin_say(message)
-		return
+			client.cmd_admin_say(momchat.message)
+		RETURN_MOM
 
-	// if(message_mode == MODE_DEADMIN)
+	// if(momchat.message_mode == MODE_DEADMIN)
 	// 	if(client)
-	// 		client.dsay(message)
-	// 	return
+	// 		client.dsay(momchat.message)
+	// 	RETURN_MOM
 
 	if(stat == DEAD)
-		say_dead(original_message)
-		return
+		say_dead(momchat.original_message)
+		RETURN_MOM
 
-	if(check_emote(original_message, just_runechat = just_chat) || !can_speak_basic(original_message, ignore_spam))
-		return
+	if(!can_speak_basic(momchat.original_message, ignore_spam))
+		RETURN_MOM
 
 	//if(in_critical)
-	//	if(!(crit_allowed_modes[message_mode]))
-	//		return
-	if(stat == UNCONSCIOUS && !(unconscious_allowed_modes[message_mode]))
-		return
+	//	if(!(crit_allowed_modes[momchat.message_mode]))
+	//		RETURN_MOM
+	if(stat == UNCONSCIOUS && !(SSchat.unconscious_allowed_modes[momchat.message_mode]))
+		RETURN_MOM
 
 	// language comma detection.
-	var/datum/language/message_language = get_message_language(message)
+	var/datum/language/message_language = get_message_language(momchat.message)
 	if(message_language)
 		// No, you cannot speak in xenocommon just because you know the key
 		if(can_speak_language(message_language))
-			language = message_language
-		message = copytext_char(message, 3)
+			momchat.language = message_language
+		momchat.message = copytext_char(momchat.message, 3)
 
 		// Trim the space if they said ",0 I LOVE LANGUAGES"
-		message = trim_left(message)
+		momchat.message = trim_left(momchat.message)
 
-	if(!language)
-		language = get_selected_language()
+	if(!momchat.language)
+		momchat.language = get_selected_language()
 
 	// Detection of language needs to be before inherent channels, because
 	// AIs use inherent channels for the holopad. Most inherent channels
 	// ignore the language argument however.
 
-	if(saymode && !saymode.handle_message(src, message, language))
-		return
+	if(saymode && !saymode.handle_message(src, momchat.message, momchat.language))
+		RETURN_MOM
 
-	if(!can_speak_vocal(message))
+	if(!can_speak_vocal(momchat.message))
 		to_chat(src, span_warning("You find yourself unable to speak!"))
-		return
+		RETURN_MOM
 
-	var/message_range = SSchat.base_say_distance
+	set_speech_range(momchat)
 
 	//var/succumbed = FALSE
 
 	//var/fullcrit = InFullCritical()
-	if(in_critical || message_mode == MODE_WHISPER)
-		if(!in_critical)
-			message_range = SSchat.base_whisper_distance
+	if(in_critical || momchat.message_mode == MODE_WHISPER)
 		spans |= SPAN_ITALICS
-		src.log_talk(message, LOG_WHISPER)
+		src.log_talk(momchat.message, LOG_WHISPER)
 	else
-		src.log_talk(message, LOG_SAY, forced_by=forced)
+		src.log_talk(momchat.message, LOG_SAY, forced_by=forced)
 
-	message = treat_message(message) // unfortunately we still need this
+	treat_message(momchat) // unfortunately we still need this
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
-		message = uppertext(message)
-	if(!message)
-		return
+		momchat.message = uppertext(momchat.message)
+	if(!momchat.message)
+		RETURN_MOM
 
-	last_words = message
+	last_words = momchat.message
 
-	spans |= speech_span
+	momchat.spans |= speech_span
 
-	if(language && LAZYLEN(GLOB.language_datum_instances))
-		var/datum/language/L = GLOB.language_datum_instances[language]
-		spans |= L.spans
+	if(momchat.language && LAZYLEN(GLOB.language_datum_instances))
+		var/datum/language/L = GLOB.language_datum_instances[momchat.language]
+		momchat.spans |= L.spans
 
-	if(message_mode == MODE_SING)
+	if(momchat.message_mode == MODE_SING)
 		var/randomnote = pick("\u2669", "\u266A", "\u266B")
-		message = "[randomnote] [message] [randomnote]"
-		spans |= SPAN_SINGING
+		momchat.msg_decor_left = randomnote
+		momchat.msg_decor_right = randomnote
+		momchat.message = "[momchat.msg_decor_left] [momchat.message] [momchat.msg_decor_right]"
+		momchat.spans |= SPAN_SINGING
 	
-	if(message_mode == MODE_YELL)
-		spans |= SPAN_YELL
+	if(momchat.message_mode == MODE_YELL)
+		momchat.spans |= SPAN_YELL
 	
-	var/radio_return = radio(message, message_mode, spans, language)
-	if(radio_return & ITALICS)
-		spans |= SPAN_ITALICS
-	if(radio_return & REDUCE_RANGE)
-		message_range = 3
-	if(radio_return & NOPASS)
-		return 1
+	radio(momchat)
+	if(momchat.radio_no_pass) // love that anime
+		RETURN_MOM
+	if(momchat.radio_returns & ITALICS)
+		momchat.spans |= SPAN_ITALICS
+	if(momchat.radio_returns & REDUCE_RANGE)
+		momchat.close_message_range = SSchat.base_radio_reduced_distance
+		momchat.far_message_range = SSchat.extended_radio_reduced_distance
+
+	send_speech(momchat)
+	if(momchat.direct_to_mob)
+		return momchat // make sure to put her back (wet or otherwise)
+	RETURN_MOM // please
+
 /*Optimisation as we don't use space
 	//No screams in space, unless you're next to someone.
 	var/turf/T = get_turf(src)
@@ -171,14 +195,41 @@
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
 */
-	return send_speech(message, message_range, src, bubble_type, spans, language, message_mode, just_chat, direct_to_mob)
 
 	/* if(succumbed)
 		succumb()
-		to_chat(src, compose_message(src, language, message, null, spans, message_mode)) */
+		to_chat(src, compose_message(src, language, message, null, spans, momchat.message_mode)) */
 
-/mob/living/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source, list/data = list())
-	. = ..()
+/mob/proc/set_speech_range(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("set_speech_range called with no momchat!!!!!!!!!!!!!!!!!!!")
+	// if(momchat.in_critical)
+	// 	momchat.is_quiet = TRUE
+	// 	momchat.close_message_range = SSchat.base_whisper_distance
+	// 	momchat.far_message_range = SSchat.extended_whisper_distance
+	// else
+	// var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
+	switch(momchat.message_mode)
+		if(MODE_WHISPER, MODE_WHISPER_CRIT)
+			momchat.is_quiet = TRUE
+			momchat.close_message_range = SSchat.base_whisper_distance
+			momchat.far_message_range = SSchat.extended_whisper_distance
+		if(MODE_YELL)
+			momchat.is_quiet = FALSE
+			momchat.close_message_range = SSchat.base_yell_distance
+			momchat.far_message_range = SSchat.extended_yell_distance
+		if(MODE_SING)
+			momchat.is_quiet = FALSE
+			momchat.close_message_range = SSchat.base_sing_distance
+			momchat.far_message_range = SSchat.extended_sing_distance
+		else
+			momchat.is_quiet = FALSE
+			momchat.close_message_range = SSchat.base_say_distance
+			momchat.far_message_range = SSchat.extended_say_distance
+	momchat.speech_range_set = TRUE
+
+// /mob/living/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source, list/data = list())
+// 	. = ..()
 	// if(isliving(speaker))
 	// 	var/turf/sourceturf = get_turf(source)
 	// 	var/turf/T = get_turf(src)
@@ -194,13 +245,13 @@
 	list/spans,
 	message_mode,
 	atom/movable/source,
-	just_chat = FALSE,
+	only_overhead = FALSE,
 	list/data = list(),
 ) // TEN ARGUMENTS !! FIVE BUTTS! SECRET THIRD LEG!
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args) //parent calls can't overwrite the current proc args.
 	if(!client)
 		return
-	var/datum/rental_mommy/chat/momchat = data["mommy"]
+	var/datum/rental_mommy/chat/momchat = data["momchat"]
 	var/deaf_message
 	var/deaf_type
 	if(speaker != src)
@@ -211,12 +262,20 @@
 		deaf_message = span_notice("You can't hear yourself!")
 		deaf_type = 2 // Since you should be able to hear yourself without looking
 	
+
+	if(only_overhead)
+		return
+	// Recompose message for AI hrefs, language incomprehension.
+	var/msg = momchat ? momchat.original_message : raw_message
+	message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
+	/// abject misery - replaces doubled double quotes with single double quotes
+	message = replacetext(message, "\"\"", "\"")
 	// Create map text prior to modifying message for goonchat
 	if (!isdummy(source) && client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		if(momchat)
 			// if(momchat.runechat_mode == "hidden_pathable")
 			// 	/// make one that's just normal, to display at the real source
-			// 	var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutMommy("chat_datums")
+			// 	var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutChatMommy()
 			// 	mom3.copy_mommy(momchat)
 			// 	mom3.runechat_mode = "visible_close"
 			// 	mom3.display_turf = null
@@ -225,7 +284,7 @@
 			// 	if(!mom3.available)
 			// 		mom3.checkin()
 			// else // oh god please beat me with a crowbar, make me cum so hard to the sound of my broken kneecaps, cmon it'll be fun
-			create_chat_message(speaker, message_language, raw_message, spans, NONE, null, momchat)
+			create_chat_message(speaker, message_language, message, spans, NONE, null, momchat)
 		else
 			data["message_mode"] = message_mode
 			// make a second one, for in case we go from not seeing them to seeing them
@@ -234,13 +293,9 @@
 				cooldata["is_eaves"] = FALSE
 				cooldata["is_far"] = FALSE
 				cooldata["display_turf"] = null
-				create_chat_message(speaker, message_language, raw_message, spans, NONE, cooldata)
-			create_chat_message(speaker, message_language, raw_message, spans, NONE, data)
-
-	if(just_chat)
-		return
-	// Recompose message for AI hrefs, language incomprehension.
-	message = compose_message(speaker, message_language, momchat.original_message, radio_freq, spans, message_mode, FALSE, source, data)
+				create_chat_message(speaker, message_language, message, spans, NONE, cooldata)
+			else
+				create_chat_message(speaker, message_language, message, spans, NONE, data)
 	var/client/C = client
 	if(C.prefs.color_chat_log)
 		var/base_chat_color = speaker.get_chat_color()
@@ -264,53 +319,17 @@
 				blurbler.play_AC_typing_indicator(raw_message, src, src, TRUE)
 	return message
 
-/mob/living/send_speech(
-	message,
-	message_range = 6,
-	obj/source = src,
-	bubble_type = bubble_icon,
-	list/spans,
-	datum/language/message_language=null,
-	message_mode,
-	just_chat,
-	mob/direct_to_mob = null,
-)
-	var/max_range = 15
-	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
-	var/quietness = eavesdropping_modes[message_mode]
-	// okay just throw out the message range
-	switch(message_mode)
-		if(MODE_WHISPER)
-			quietness = TRUE
-			message_range = SSchat.base_whisper_distance
-			max_range = SSchat.extended_whisper_distance
-		if(MODE_YELL)
-			quietness = FALSE
-			message_range = SSchat.base_yell_distance
-			max_range = SSchat.extended_yell_distance
-		if(MODE_SING)
-			quietness = FALSE
-			message_range = SSchat.base_sing_distance
-			max_range = SSchat.extended_sing_distance
-		else
-			quietness = FALSE
-			message_range = SSchat.base_say_distance
-			max_range = SSchat.extended_say_distance
-
-	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
+/mob/living/send_speech(datum/rental_mommy/chat/momchat)
 	var/datum/chatchud/CC = null
-	if(!direct_to_mob)
-		CC = get_listening(src, message_range, max_range, quietness)
-	var/list/visible_close = CC ? CC.visible_close.Copy() : list(direct_to_mob)
+	if(!momchat.direct_to_mob)
+		CC = get_listening(momchat)
+	var/list/visible_close = CC ? CC.visible_close.Copy() : list(momchat.direct_to_mob)
 	var/list/visible_far = CC ? CC.visible_far.Copy() : list()
 	var/list/hidden_pathable = CC ? CC.hidden_pathable.Copy() : list()
 	CC?.putback()
 
 	var/list/the_dead = list()
-	// var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
-	// if(!eavesdrop_range && say_test(message) == "2")	//CIT CHANGE - ditto
-	// 	yellareas = get_areas_in_range(message_range*0.5, source)	//CIT CHANGE - ditto
-	if(!direct_to_mob)
+	if(!momchat.direct_to_mob)
 		for(var/_M in GLOB.player_list)
 			var/mob/M = _M
 			if(QDELETED(M)) //Some times nulls and deleteds stay in this list. This is a workaround to prevent ic chat breaking for everyone when they do.
@@ -321,80 +340,73 @@
 				continue
 			if(!M.client || !client) //client is so that ghosts don't have to listen to mice
 				continue
-			if(get_dist(M, source) > 7 || M.z != z) //they're out of range of normal hearing
-				if(eavesdropping_modes[message_mode] && !(M.client?.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
+			if(get_dist(M, momchat.source) > 7 || M.z != z) //they're out of range of normal hearing
+				if(momchat.is_quiet && !(M.client?.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
 					continue
 				if(!(M.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
 			CC.visible_close[M] = TRUE
 			the_dead[M] = TRUE
 	
-	var/datum/rental_mommy/chat/momchat = SSrentaldatums.CheckoutMommy("chat_datums")
-	momchat.original_message = message
-	momchat.message = message
-	momchat.source = source
-	momchat.message_mode = message_mode
-	momchat.spans = spans
-	momchat.sanitize = TRUE
-	momchat.bubble_type = bubble_type
-	momchat.language = message_language
-	momchat.only_overhead = just_chat
-	momchat.source_quid = extract_quid(src)
-	momchat.source_ckey = ckey
 	. = momchat
-	var/list/rental_data = list("mommy" = momchat) // mommy is very disappointed
-	var/rendered = compose_message(src, message_language, message, null, spans, message_mode, FALSE, source, rental_data)
-	if(direct_to_mob)
-		momchat.recipiant = direct_to_mob
-		momchat.recipiant.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat, list("mommy" = momchat))
+	var/list/rental_data = list("momchat" = momchat) // mommy is very disappointed
+	var/rendered = compose_message(src, momchat.language, momchat.message, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
+	if(momchat.direct_to_mob)
+		momchat.recipiant = momchat.direct_to_mob
+		momchat.recipiant.Hear(rendered, src, momchat.language, momchat.message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, list("momchat" = momchat))
 		return
-	/// non-players
-	for(var/_AM in listening)
-		var/atom/movable/AM = _AM
-		if(quietness && get_dist(source, AM) > message_range && !(the_dead[AM]))
-			var/eavesdropping = dots(message)
-			var/eavesrendered = compose_message(src, message_language, eavesdropping, null, spans, message_mode, FALSE, source, rental_data)
-			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, source, just_chat)
-		else
-			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
-
 	var/list/sblistening = list()
 	/// players
 	for(var/mob/mvc in visible_close)
-		var/datum/rental_mommy/chat/mom2 = SSrentaldatums.CheckoutMommy("chat_datums")
+		var/datum/rental_mommy/chat/mom2 = SSrentaldatums.CheckoutChatMommy()
 		mom2.copy_mommy(momchat)
 		mom2.runechat_mode = "visible_close"
 		mom2.recipiant = mvc
-		mvc.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat, list("mommy" = mom2))
+		mvc.Hear(rendered, src, momchat.language, momchat.message, null, mom2.spans, momchat.message_mode, momchat.source, momchat.only_overhead, list("momchat" = mom2))
 		sblistening |= mvc.client
 		if(!mom2.available)
 			mom2.checkin()
 	// for(var/mob/mvf in visible_far)
-	// 	var/list/coolspans = spans
+	// 	var/list/coolspans = momchat.spans
 	// 	coolspans += SPAN_SMALL
 	// 	var/list/data = list()
 	// 	data["is_eaves"] = TRUE
 	// 	data["display_turf"] = src
-	// 	mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
+	// 	mvf.Hear(eavesrendered, src, momchat.language, eavesdropping, null, coolspans, momchat.message_mode, momchat.source, momchat.only_overhead, data)
 	// 	sblistening |= mvf.client
 	for(var/mob/mhp in hidden_pathable|visible_far)
 		var/turf/hearfrom = hidden_pathable[mhp]
-		var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutMommy("chat_datums")
+		var/datum/rental_mommy/chat/mom3 = SSrentaldatums.CheckoutChatMommy()
 		mom3.copy_mommy(momchat)
 		mom3.spans |= SPAN_SMALL
 		mom3.is_eavesdropping = TRUE
 		mom3.display_turf = hearfrom
 		mom3.recipiant = mhp
-		var/msg_dotted = dots(message, distance = get_dist(get_turf(src), get_turf(mhp)), maxdistance = max_range)
-		var/msg_rerendered = compose_message(src, message_language, msg_dotted, null, spans | mom3.spans, message_mode, FALSE, source, list("mommy" = mom3))
+		var/msg_dotted = dots(mom3.message, distance = get_dist(get_turf(src), get_turf(mhp)), maxdistance = momchat.far_message_range)
+		var/msg_rerendered = compose_message(src, mom3.language, msg_dotted, null, momchat.spans | mom3.spans, momchat.message_mode, FALSE, momchat.source, list("momchat" = mom3))
+		/// and cus the spans dont get frindly right, here it s again
+		msg_rerendered = span_small(msg_rerendered)
 		mom3.message = msg_rerendered
 		mom3.runechat_mode = "hidden_pathable"
-		mhp.Hear(msg_rerendered, src, message_language, msg_rerendered, null, spans | mom3.spans, message_mode, source, just_chat, list("mommy" = mom3))
+		mhp.Hear(msg_rerendered, src, momchat.language, msg_rerendered, null, momchat.spans | mom3.spans, momchat.message_mode, momchat.source, momchat.only_overhead, list("momchat" = mom3))
 		sblistening |= mhp.client
 		if(!mom3.available)
 			mom3.checkin()
+	/// non-players
+	/// only sends the momchat.message to things like radios and toasters
+	var/list/listening = get_hearers_in_view(momchat.close_message_range, src, TRUE)
+	var/list/date = list()
+	date["momchat"] = momchat
+	for(var/_AM in listening)
+		var/atom/movable/AM = _AM
+		if(momchat.is_quiet && get_dist(momchat.source, AM) > momchat.close_message_range && !(the_dead[AM]))
+			var/eavesdropping = dots(momchat.message)
+			var/eavesrendered = compose_message(src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
+			AM.Hear(eavesrendered, src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
+		else
+			AM.Hear(rendered, src, momchat.language, momchat.original_message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
 
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, momchat.message)
 
 	//speech bubble
 	var/list/speech_bubble_recipients = list()
@@ -402,7 +414,7 @@
 		if(M.client?.prefs && !M.client.prefs.chat_on_map)
 			speech_bubble_recipients.Add(M.client)
 
-	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
+	var/image/I = image('icons/mob/talk.dmi', src, "[momchat.bubble_type][say_test(momchat.message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
 
@@ -438,6 +450,18 @@
 	)
 	playsound(src, 'sound/effects/bwoing.ogg', 100, TRUE)
 	say(speech)
+
+/mob/living/simple_animal/debug_chatterboy/radiolad
+	name = "Chatterboy w/ radio"
+	desc = "A debug chatterboy w a radoi. He's here to help you debug your chatterboys. He's not actually a chatterboy, though. He's just a rock."
+
+/mob/living/simple_animal/debug_chatterboy/radiolad/Initialize()
+	var/obj/item/radio/R = new(get_turf(src))
+	R.broadcasting = TRUE
+	R.listening = TRUE
+	R.become_hearing_sensitive(INNATE_TRAIT)
+	R.name = "CHATTERBOY CHATPIECE"
+	. = ..()
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -501,69 +525,63 @@
 				return LD
 	return null
 
-/mob/living/proc/treat_message(message)
-	if(!LAZYLEN(message))
-		return message
-
+/mob/living/proc/treat_message(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("treat_message called with no momchat!!!!!!!!!!!!!!!!!!!")
+	if(!LAZYLEN(momchat.message))
+		return
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
-		message = unintelligize(message)
-
+		momchat.message = unintelligize(momchat.message)
 	if(derpspeech)
-		message = derpspeech(message, stuttering)
-
+		momchat.message = derpspeech(momchat.message, stuttering)
 	if(stuttering)
-		message = stutter(message)
-
+		momchat.message = stutter(momchat.message)
 	if(slurring)
-		message = slur(message,slurring)
-
+		momchat.message = slur(momchat.message,slurring)
 	if(cultslurring)
-		message = cultslur(message)
-
+		momchat.message = cultslur(momchat.message)
 /*	if(clockcultslurring)
-		message = CLOCK_CULT_SLUR(message)*/
-
-	var/end_char = copytext(message, length(message), length(message) + 1)
+		momchat.message = CLOCK_CULT_SLUR(momchat.message)*/
+	var/end_char = copytext(momchat.message, length(momchat.message), length(momchat.message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~", ",", "_", "+", "|", "*")))
-		message += "."
+		momchat.message += "."
+	momchat.message = capitalize(momchat.message)
 
-	message = capitalize(message)
-
-	return message
-
-/mob/living/proc/radio(message, message_mode, list/spans, language)
+/mob/living/proc/radio(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("radio called with no momchat!!!!!!!!!!!!!!!!!!!")
 	var/obj/item/implant/radio/imp = locate() in implants
 	if(imp?.radio.on)
-		if(message_mode == MODE_HEADSET)
-			imp.radio.talk_into(src, message, , spans, language)
-			return ITALICS | REDUCE_RANGE
-		if(message_mode == MODE_DEPARTMENT || (message_mode in GLOB.radiochannels))
-			imp.radio.talk_into(src, message, message_mode, spans, language)
-			return ITALICS | REDUCE_RANGE
+		if(momchat.message_mode == MODE_HEADSET)
+			imp.radio.talk_into(src, momchat.message, , momchat.spans, momchat.language, momchat)
+			momchat.radio_returns = ITALICS | REDUCE_RANGE
+		if(momchat.message_mode == MODE_DEPARTMENT || (momchat.message_mode in GLOB.radiochannels))
+			imp.radio.talk_into(src, momchat.message, momchat.message_mode, momchat.spans, momchat.language, momchat)
+			momchat.radio_returns = ITALICS | REDUCE_RANGE
+	if(!momchat.radio_returns)
+		switch(momchat.message_mode)
+			if(MODE_WHISPER)
+				momchat.radio_returns = ITALICS
+			if(MODE_R_HAND)
+				for(var/obj/item/r_hand in get_held_items_for_side("r", all = TRUE))
+					if (r_hand)
+						momchat.radio_returns = r_hand.talk_into(src, momchat.message, , momchat.spans, momchat.language, momchat)
+						break
+					momchat.radio_returns = ITALICS | REDUCE_RANGE
+			if(MODE_L_HAND)
+				for(var/obj/item/l_hand in get_held_items_for_side("l", all = TRUE))
+					if (l_hand)
+						momchat.radio_returns = l_hand.talk_into(src, momchat.message, , momchat.spans, momchat.language, momchat)
+						break
+					momchat.radio_returns = ITALICS | REDUCE_RANGE
 
-	switch(message_mode)
-		if(MODE_WHISPER)
-			return ITALICS
-		if(MODE_R_HAND)
-			for(var/obj/item/r_hand in get_held_items_for_side("r", all = TRUE))
-				if (r_hand)
-					return r_hand.talk_into(src, message, , spans, language)
-				return ITALICS | REDUCE_RANGE
-		if(MODE_L_HAND)
-			for(var/obj/item/l_hand in get_held_items_for_side("l", all = TRUE))
-				if (l_hand)
-					return l_hand.talk_into(src, message, , spans, language)
-				return ITALICS | REDUCE_RANGE
+			if(MODE_INTERCOM)
+				for (var/obj/item/radio/intercom/I in view(1, null))
+					I.talk_into(src, momchat.message, , momchat.spans, momchat.language, momchat)
+				momchat.radio_returns = ITALICS | REDUCE_RANGE
 
-		if(MODE_INTERCOM)
-			for (var/obj/item/radio/intercom/I in view(1, null))
-				I.talk_into(src, message, , spans, language)
-			return ITALICS | REDUCE_RANGE
-
-		if(MODE_BINARY)
-			return ITALICS | REDUCE_RANGE //Does not return 0 since this is only reached by humans, not borgs or AIs.
-
-	return 0
+			if(MODE_BINARY)
+				momchat.radio_returns = ITALICS | REDUCE_RANGE //Does not return 0 since this is only reached by humans, not borgs or AIs.
 
 /mob/living/say_mod(input, message_mode)
 	. = ..()
@@ -591,6 +609,12 @@
 		return FALSE
 	if(isdummy(mommy.source))
 		return TRUE // previews n such
+	// if(istype(mommy.source, /atom/movable/virtualspeaker)) // radios n such
+	// 	if(!CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
+	// 		return FALSE
+	// 	return TRUE
+	if(mommy.is_actually_radio)
+		return FALSE // to do: make this work good
 	if(!ishuman(mommy.source))
 		return FALSE
 	var/mob/living/carbon/human/H = mommy.source

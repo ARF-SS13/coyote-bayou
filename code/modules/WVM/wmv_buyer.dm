@@ -438,10 +438,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/final_price = (round(CREDITS_TO_COINS(SEND_SIGNAL(I, COMSIG_ATOM_GET_VALUE)))) || GLOB.wasteland_vendor_shop_list[trader_key][I.type] // get value, get paid
 	if(!final_price)
 		if(!silent)
-			say("I'll give you absolutely nothing for \the [I]!", just_chat = quiet)
+			say("I'll give you absolutely nothing for \the [I]!", only_overhead = quiet)
 		return FALSE
 	if(!silent)
-		say("I'll give you [SSeconomy.format_currency(final_price, FALSE, TRUE)] per [I]!", just_chat = quiet) //Uses false for second argument because final_price has already been converted to copper from credits during initial assignment.
+		say("I'll give you [SSeconomy.format_currency(final_price, FALSE, TRUE)] per [I]!", only_overhead = quiet) //Uses false for second argument because final_price has already been converted to copper from credits during initial assignment.
 	return final_price
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -511,7 +511,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(time2sell > 10 SECONDS)
 		var/difference = time2sell - (10 SECONDS)
 		time2sell = (10 SECONDS) + sqrt(sqrt(difference)) // genius
-	say("Now processing [thing2sell]!", just_chat = TRUE)
+	say("Now processing [thing2sell]!", only_overhead = TRUE)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()

@@ -84,7 +84,7 @@
 		/// throw out probability and calculate a new one based on how far away the message is
 		/// from the source of the message (distance) and the maximum distance the message can be
 		/// heard from (maxdistance)
-		probability = 100 - (distance / maxdistance) * 100
+		probability = (distance / maxdistance) * 100
 		probability = clamp(probability, 0, 90)
 	phrase = html_decode(phrase)
 	var/list/words = splittext(phrase, " ")

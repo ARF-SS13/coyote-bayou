@@ -276,6 +276,14 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	return consumer.visualchat_use_contrasting_color // kinda vital here
 	// return consumer.see_fancy_offscreen_runechat // kinda vital here
 
+/datum/prefcheck/visualchat_see_horny_radio_stuff
+	index = SHOW_ME_HORNY_RADIO
+
+/datum/prefcheck/visualchat_see_horny_radio_stuff/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.visualchat_see_horny_radio // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
 
 
 

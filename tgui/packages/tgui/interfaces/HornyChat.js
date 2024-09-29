@@ -277,6 +277,7 @@ const LowerRowBar = (props, context) => {
   const {
     UserCKEY,
     SeeOthers,
+    SeeRadio,
     AutoContrast,
   } = data;
 
@@ -327,11 +328,25 @@ const LowerRowBar = (props, context) => {
             UserCkey: UserCKEY,
           })} />
       </Stack.Item>
+      {/* <Stack.Item shrink>
+        <Button
+          fluid
+          color={SeeRadio ? "green" : "default"}
+          icon={SeeRadio ? "volume-up" : "volume-mute"}
+          tooltip={
+            SeeRadio
+              ? "You can see other people's VisualChat messages over the radio! Click to hide them!"
+              : "You can't see other people's VisualChat messages over the radio! Click to show them!"
+          }
+          onClick={() => act('ToggleRadioHorny', {
+            UserCkey: UserCKEY,
+          })} />
+      </Stack.Item> */}
       <Stack.Item shrink>
         {/* A toggle for using the thing where it makes a contrasting color for your gaudy background */}
         <Button
           fluid
-          icon={AutoContrast ? "section" : "lightbulb"}
+          icon={AutoContrast ? "cat" : "lightbulb"}
           color={AutoContrast ? "green" : "default"}
           tooltip={
             AutoContrast
