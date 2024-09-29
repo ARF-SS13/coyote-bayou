@@ -105,9 +105,6 @@
 	max_ammo = 16
 	multiload = 1
 
-/obj/item/ammo_box/magazine/internal/shot/long22/empty
-	start_empty = 1
-
 // start of 9mm Blackpowder, Smokeless, Military
 
 /obj/item/projectile/bullet/b9mm
@@ -325,8 +322,12 @@
 	caliber = list(CALIBER_357)
 	max_ammo = 6
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev357/empty
-	start_empty = 1
+/obj/item/ammo_box/magazine/internal/shot/tube357
+	name = ".357 magnum internal tube magazine" //cowboy repeater
+	ammo_type = /obj/item/ammo_casing/s357
+	caliber = list(CALIBER_357)
+	max_ammo = 12
+	multiload = 0
 
 /obj/item/projectile/bullet/b45 // blackpowder
 	name = ".45 FMJ bullet"
@@ -777,7 +778,7 @@
 
 	eyeblur = 0.5 SECONDS
 
-/obj/item/ammo_casing/shotgun/sbuckshot
+/obj/item/ammo_casing/shotgun/mbuckshot
 	name = "military buckshot shell"
 	desc = "A 12 gauge shell filled with smokeless powder fit for a soldier and buckshot."
 	icon_state = "gshell"
@@ -788,14 +789,41 @@
 
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 4
 	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/shot/single
-	name = "single-barrel shotgun internal magazine"
+	name = "single-barrel shotgun breech"
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/shot/dual
+	name = "double-barrel shotgun breech"
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/internal/shot/trench
+	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/shot/police
+	name = "police shotgun tube"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/saiga
+	name = "shotgun magazine"
+	desc = "A 12g magazine."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "shotgunmag"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/saiga/empty
+	start_empty = 1
 
 /obj/item/projectile/bullet/s3006 // smokeless
 	name = ".30-06 bullet"
@@ -832,7 +860,7 @@
 	desc = "A smokeless powder load for a .30-06 cartridge."
 	icon_state = "762-casing"
 	caliber = CALIBER_3006
-	projectile_type = /obj/item/projectile/bullet/a3006
+	projectile_type = /obj/item/projectile/bullet/s3006
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
@@ -858,6 +886,22 @@
 	ammo_type = /obj/item/ammo_casing/s3006
 	caliber = list(CALIBER_3006)
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/shot/tube4570
+	name = ".30-06 internal tube magazine" //brush gun
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 10
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/boltaction/hunting
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 5
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
+	max_ammo = 10
 
 // TIER 0, STARTER
 // These guns should have minimal DPS, be a relic, or are generally good for newbies.
@@ -940,7 +984,7 @@
 
 /obj/item/gun/flintlock
 	name = "post-fall short belcher"
-	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh.  Just don't drop it while loaded."
+	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh. Just don't drop it while loaded."
 	icon_state = "flintlock"
 	item_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
@@ -1644,7 +1688,7 @@
 
 /obj/item/gun/ballistic/automatic/service
 	name = "wolf"
-	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time.  Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
+	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -1691,7 +1735,7 @@
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "eastern drake"
-	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch. Oh."
+	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1776,7 +1820,7 @@
 	desc = "A pre-fall traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1817,7 +1861,7 @@
 
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
-	desc = "A sturdy military rifle, rechambered to .30-06 Springfield.  Which one?  Who fucking knows."
+	desc = "A sturdy military surplus rifle, rechambered to .30-06 Springfield. Which one? Maybe <b>you</b> should tell us."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
@@ -1877,7 +1921,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "stacatto"
+	name = "staccato"
 	desc = "A lightweight, automatic submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
@@ -1970,7 +2014,7 @@
 
 /obj/item/gun/ballistic/automatic/z34rifle
 	name = "eastern puma"
-	desc = "A pre-fall large eastern rifle designed for hunting.  Hunting what?  Men."
+	desc = "A pre-fall large eastern rifle designed for hunting. Hunting what? Men."
 	icon_state = "zastava"
 	item_state = "zastava"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2013,7 +2057,7 @@
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
 	name = "forte"
-	desc = "A foreign designed battle rifle. Pre-fall in design and well.  Tempermental.  Pretty decent overall though."
+	desc = "A foreign designed battle rifle. Pre-fall in design and well. Tempermental. Pretty decent overall though."
 	icon_state = "g3"
 	item_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2082,7 +2126,7 @@
 
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "eastern stag"
-	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch.  Sure hope you don't want spare parts though."
+	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch. Sure hope you don't want spare parts though."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2161,12 +2205,12 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "smelly"
-	desc = "A pre-fall 10 round bolt action rifle.  No one is sure why they're called smellies, they don't stink at all generally and are quite good."
+	desc = "A pre-fall 10 round bolt action rifle. No one is sure why they're called smellies, they don't stink at all generally and are quite good."
 	sawn_desc = "Why would someone short stock a smelly? Does that make this just a whiff?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
 	item_state = "smle"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -2185,4 +2229,4 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	reskinnable_component = /datum/component/reskinnable/enfield
+	reskinnable_component = null
