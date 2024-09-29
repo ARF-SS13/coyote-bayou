@@ -508,7 +508,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		user.emote_for_ghost_sight(result_message)
 
 /mob/living/verb/suggest_skillcheck(mob/living/target)
-	set category = "OOC"
+	set category = "Roleplaying"
 	set name = "Suggest Skillcheck"
 	var/skill = input(usr, "Which skill?", "Skill Suggester 9000", null) as null|anything in GLOB.special_skill_list
 	if(isnull(skill))
