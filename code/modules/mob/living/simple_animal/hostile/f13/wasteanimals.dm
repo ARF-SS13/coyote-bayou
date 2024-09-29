@@ -31,7 +31,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -107,7 +107,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40,),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -194,7 +194,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -263,7 +263,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 40, 40, 255, 45, 45),
-		MOB_SPEED_LIST(2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(, 3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(28, 30, 32),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3),
@@ -301,7 +301,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 12
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -370,7 +370,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(40, 40, 200, 45, 45, 255),
-		MOB_SPEED_LIST(2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(28, 30, 32),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3),
@@ -452,7 +452,7 @@
 	obj_damage = 20
 	melee_damage_lower = 7
 	melee_damage_upper = 18
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -540,7 +540,7 @@
 	obj_damage = 20
 	melee_damage_lower = 7
 	melee_damage_upper = 18
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 7
@@ -565,7 +565,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(180, 255, 255, 255, 255, 255), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2, 2.2, 2.4, 2.6),
+		MOB_SPEED_LIST(2.4, 2.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(30, 35, 38),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -605,7 +605,7 @@
 	obj_damage = 20
 	melee_damage_lower = 12
 	melee_damage_upper = 24
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 4
@@ -633,7 +633,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(120, 80, 80, 250, 100, 100), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2.5, 2.8, 3.0, 3.2),
+		MOB_SPEED_LIST(3.0, 3.2),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(100, 110, 120),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -673,7 +673,7 @@
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 5)\
 		),
 		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
-		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
+		MOB_SPEED_LIST(3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
 		MOB_HEALTH_LIST(2, 3, 5, 7, 30, 35, 37, 38, 40, 45, 48, 49, 49, 49, 49, 2000),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -709,8 +709,8 @@
 //////////////////////////
 
 /mob/living/simple_animal/hostile/stalker
-	name = "nightstalker"
-	desc = "A crazed genetic hybrid of rattlesnake and coyote DNA."
+	name = "snakedog"
+	desc = "A crazed genetic hybrid of cottonmouth and coyote DNA. They're not nightstalkers, I swear."
 	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
@@ -719,7 +719,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	move_to_delay = 2
+	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
@@ -987,7 +987,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_LIST(3.6, 3.9, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(25),
 		MOB_HEALTH_LIST(15, 20, 25, 26),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -1022,7 +1022,7 @@
 	melee_damage_upper = 6
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_LIST(3, 4, 5),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(10, 13, 15),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -1050,7 +1050,7 @@
 	can_glow_revive = FALSE
 	variation_list = list(
 		MOB_COLOR_VARIATION(245, 215, 0, 255, 220, 5), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_LIST(3, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(70, 75, 80),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -1198,7 +1198,7 @@
 	obj_damage = 20
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-	move_to_delay = 1.5
+	move_to_delay = 3.5
 	retreat_distance = 0
 	minimum_distance = 0
 	aggro_vision_range = 9
