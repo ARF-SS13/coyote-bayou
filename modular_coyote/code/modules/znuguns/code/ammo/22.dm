@@ -1,3 +1,5 @@
+// Put projectiles, casings, magazines here. Guns go in their respective tiers somewhere around modular_coyote/code/modules/znuguns/code/guns .
+
 /obj/item/projectile/bullet/b22 // blackpowder load
 	name = ".22lr bullet"
 	damage = 10

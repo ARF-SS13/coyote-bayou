@@ -1,3 +1,4 @@
+// Put tier respective guns (and loadout options) here. Ammo goes in their respective files somewhere around modular_coyote/code/modules/znuguns/code/ammo .
 
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "half step"
