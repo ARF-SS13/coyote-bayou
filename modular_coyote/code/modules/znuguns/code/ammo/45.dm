@@ -87,6 +87,8 @@
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_45
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	name = ".45 revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/s45
@@ -127,3 +129,21 @@
 
 /obj/item/ammo_box/magazine/cg45/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/m45
+	name = "handgun magazine (.45)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "45"
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+
+/obj/item/ammo_box/magazine/m45/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m45/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
+

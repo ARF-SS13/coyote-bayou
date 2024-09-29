@@ -56,6 +56,8 @@
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/internal/gras
 	name = "Mardi-Gras breech"
 	ammo_type = /obj/item/ammo_casing/s3006
@@ -77,3 +79,17 @@
 
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	max_ammo = 10
+
+/obj/item/ammo_box/magazine/boys
+	name = "Handmade .30-06 magazine)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "boys"
+	max_ammo = 3
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/boys/empty
+	start_empty = TRUE

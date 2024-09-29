@@ -24,8 +24,8 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "tommygun"
 	item_state = "shotgun"
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
-	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
@@ -119,8 +119,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "ak74"
 	icon_state = "ak74"
-	mag_type = /obj/item/ammo_box/magazine/m5mm
-	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_recoil = AUTORIFLE_RECOIL(1.4, 1.6)
@@ -143,8 +143,8 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
+	init_mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -166,8 +166,8 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "fnfal"
 	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -236,8 +236,8 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "BAR"
 	item_state = "BAR"
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
+	init_mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE

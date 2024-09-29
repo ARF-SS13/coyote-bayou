@@ -8,12 +8,9 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Warden10"
 	item_state = "glock"
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
-	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
-	disallowed_mags = list(
-		/obj/item/ammo_box/magazine/m10mm/adv/ext,
-		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
-		/obj/item/ammo_box/magazine/m10mm/rifle)
+	init_mag_type = /obj/item/ammo_box/magazine/m45
+	mag_type = /obj/item/ammo_box/magazine/m45
+	disallowed_mags = list()
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_firemodes = list(
@@ -213,15 +210,15 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
-	damage_multiplier = TIER2
+	damage_multiplier = TIER2 * 1.05
 
 /obj/item/gun/ballistic/automatic/service
 	name = "wolf"
 	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -272,8 +269,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "ak74utest"
 	icon_state = "ak74utest"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
@@ -319,8 +316,8 @@
 	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
 	item_state = "assault_carbine"
-	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -369,7 +366,7 @@
 	desc = "A pre-fall semi-automatic shotgun with a four round tube."
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(

@@ -357,8 +357,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "salvak"
 	item_state = "salvak"
-	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
-	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_recoil = RIFLE_RECOIL(1, 0.5)

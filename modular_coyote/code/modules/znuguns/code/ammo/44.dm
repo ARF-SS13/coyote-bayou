@@ -87,6 +87,8 @@
 	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_44
 
+///////////////////// Magazines///////////////////
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	name = ".44 revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/s44
@@ -106,3 +108,10 @@
 
 /obj/item/ammo_box/magazine/m44/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/shot/tube44
+	name = ".44 magnum internal tube magazine" //trail carbine
+	ammo_type = /obj/item/ammo_casing/s44
+	caliber = list(CALIBER_44)
+	max_ammo = 12
+	multiload = 1
