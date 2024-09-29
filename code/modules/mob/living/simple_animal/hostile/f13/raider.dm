@@ -291,11 +291,11 @@
 		"yowls",
 		"prowls"
 		)
-	emote_see = list(
-		"laughs",
-		"nyas",
-		""
-		)
+	// emote_see = list(
+	// 	"laughs",
+	// 	"nyas",
+	// 	""
+	// 	)
 	attack_verb_simple = list(
 		"claws",
 		"maims",
@@ -354,10 +354,10 @@
 		"grumbles",
 		"grouches"
 		)
-	emote_see = list(
-		"chitters",
-		"idly gnaws on a hat",
-		)
+	// emote_see = list(
+	// 	"chitters",
+	// 	"idly gnaws on a hat",
+	// 	)
 	attack_verb_simple = list(
 		"bayonets",
 		"smacks",

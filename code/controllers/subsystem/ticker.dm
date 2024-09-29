@@ -456,8 +456,9 @@ SUBSYSTEM_DEF(ticker)
 	if(m)
 		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
 	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
-	if(isnull(override))
-		addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+	//I'm turning this system off for now.  It is useful in concept but in reality it pulls people harshly out of roleplay.  ~TK
+	//if(isnull(override))
+	//	addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)

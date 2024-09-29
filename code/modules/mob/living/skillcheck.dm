@@ -1,10 +1,10 @@
-#define EMOTE_SPECIAL_STR "Strength"
-#define EMOTE_SPECIAL_PER "Perception"
-#define EMOTE_SPECIAL_END "Endurance"
-#define EMOTE_SPECIAL_CHA "Charisma"
-#define EMOTE_SPECIAL_INT "Intelligence"
-#define EMOTE_SPECIAL_AGI "Agility"
-#define EMOTE_SPECIAL_LCK "Luck"
+#define EMOTE_SPECIAL_STR "Brawn"
+#define EMOTE_SPECIAL_PER "Awareness"
+#define EMOTE_SPECIAL_END "Toughness"
+#define EMOTE_SPECIAL_CHA "Moxie"
+#define EMOTE_SPECIAL_INT "Smarts"
+#define EMOTE_SPECIAL_AGI "Deftness"
+#define EMOTE_SPECIAL_LCK "Fate"
 #define EMOTE_SPECIAL_GEN "Flat Roll"
 #define EMOTE_SPECIAL_SUF "Crit"
 
@@ -20,42 +20,26 @@ GLOBAL_LIST_INIT(special_skill_list, list(
 
 GLOBAL_LIST_INIT(special_triggers, list(
 	EMOTE_SPECIAL_STR = list(
-		"s",
-		"str",
-		"strength",
-		"strangth",
-		"strong",
-		"strongth",
-		"might",
-		"power"),
+		"b",
+		"brn",
+		"brawn",
+	),
 	EMOTE_SPECIAL_PER = list(
-		"p",
-		"per",
-		"perception",
-		"preception",
-		"look",
-		"see",
-		"peep"),
+		"a",
+		"aware",
+		"awareness",
+		),
 	EMOTE_SPECIAL_END = list(
-		"e",
-		"end",
-		"endurance",
-		"endurence",
-		"toughness",
 		"tough",
-		"grit",
-		"beef",
-		"beefiness"),
+		"tuff", 
+		"end",
+		"toughness",
+		),
 	EMOTE_SPECIAL_CHA = list(
-		"c",
-		"cha",
-		"charisma",
-		"charesma",
-		"charm",
+		"mox",
 		"moxie",
-		"smarm",
-		"wink",
-		"char"),
+		"Cha",
+		),
 	EMOTE_SPECIAL_INT = list(
 		"int",
 		"i",
@@ -74,7 +58,9 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dork",
 		"dorkiness",
 		"dweeb",
-		"dweebishness"),
+		"dweebishness",
+		"smarts",
+		),
 	EMOTE_SPECIAL_AGI = list(
 		"agi",
 		"a",
@@ -94,7 +80,10 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dodge",
 		"evade",
 		"evasion",
-		"cat"),
+		"cat",
+		"deft",
+		"deftness",
+		),
 	EMOTE_SPECIAL_LCK = list(
 		"l",
 		"lck",
@@ -107,7 +96,10 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"fortune",
 		"dice",
 		"luk",
-		"luc"),
+		"luc",
+		"fat",
+		"fate",
+		),
 	EMOTE_SPECIAL_GEN = list(
 		"x",
 		"non",
@@ -125,7 +117,7 @@ GLOBAL_LIST_INIT(special_triggers, list(
 GLOBAL_LIST_INIT(special_phrases, list(
 	EMOTE_SPECIAL_STR = list(
 		"initial" = list(
-			"tests their strength...",
+			"tests their brawn...",
 			"flexes their arm(s)...",
 			"prepares to lift...",
 			"puts their back into it..."),
@@ -257,43 +249,43 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			"The game was rigged from the start."))))
 
 /mob/living/verb/emote_special_str()
-	set name = "Roll Strength"
+	set name = "Roll Brawn"
 	set desc = "Roll for bicep circumfrence."
 	set category = "Roleplaying"
 	emote("special_strength")
 
 /mob/living/verb/emote_special_per()
-	set name = "Roll Perception"
+	set name = "Roll Awareness"
 	set desc = "Roll for eyeball circumfrence."
 	set category = "Roleplaying"
 	emote("special_perception")
 
 /mob/living/verb/emote_special_end()
-	set name = "Roll Endurance"
+	set name = "Roll Toughness"
 	set desc = "Roll for heart circumfrence."
 	set category = "Roleplaying"
 	emote("special_endurance")
 
 /mob/living/verb/emote_special_cha()
-	set name = "Roll Charisma"
+	set name = "Roll Moxie"
 	set desc = "Roll for beauty circumfrence."
 	set category = "Roleplaying"
 	emote("special_charisma")
 
 /mob/living/verb/emote_special_int()
-	set name = "Roll Intelligence"
+	set name = "Roll Smarts"
 	set desc = "Roll for brain circumfrence."
 	set category = "Roleplaying"
 	emote("special_intelligence")
 
 /mob/living/verb/emote_special_agi()
-	set name = "Roll Agility"
+	set name = "Roll Deftness"
 	set desc = "Roll for wiggly circumfrence."
 	set category = "Roleplaying"
 	emote("special_agility")
 
 /mob/living/verb/emote_special_luc()
-	set name = "Roll Luck"
+	set name = "Roll Fate"
 	set desc = "Roll for some sort of circumfrence."
 	set category = "Roleplaying"
 	emote("special_luck")
@@ -508,7 +500,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		user.emote_for_ghost_sight(result_message)
 
 /mob/living/verb/suggest_skillcheck(mob/living/target)
-	set category = "OOC"
+	set category = "Roleplaying"
 	set name = "Suggest Skillcheck"
 	var/skill = input(usr, "Which skill?", "Skill Suggester 9000", null) as null|anything in GLOB.special_skill_list
 	if(isnull(skill))
@@ -516,7 +508,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	to_chat(target, span_info("[usr.name] would like you to perform a [skill] check."))
 
 /mob/living/verb/skill_contest(mob/living/target)
-	set category = "OOC"
+	set category = "Roleplaying"
 	set name = "Skill Contest"
 	// decide skill
 	var/skill = input(usr, "Which skill?", "Skill Chooser 9001", null) as null|anything in GLOB.special_skill_list

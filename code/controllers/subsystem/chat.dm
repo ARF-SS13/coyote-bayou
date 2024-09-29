@@ -426,7 +426,7 @@ SUBSYSTEM_DEF(chat)
 
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
-	set category = "IC"
+	set category = "Roleplaying"
 
 	if(!SSchat.can_usr_flirt_with_this(A))
 		return

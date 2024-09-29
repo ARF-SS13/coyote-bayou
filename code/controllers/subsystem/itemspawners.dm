@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(itemspawners)
 		return
 	COOLDOWN_START(src, next_trash_delivery, restock_trash_interval)
 	log_game("Restocking trash piles...")
-	message_admins("Restocking trash piles...")
+	//message_admins("Restocking trash piles...")
 
 	for(var/datum/weakref/TS in GLOB.trash_piles)
 		var/obj/item/storage/trash_stack/tresh = TS?.resolve()

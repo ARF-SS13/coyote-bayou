@@ -32,7 +32,7 @@
 	//tiles within they start making noise, does count the mobs tile
 
 	speak_emote = list("clacks", "chitters", "snips", "snaps")
-	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
+	// emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
 	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/effect/spawner/lootdrop/f13/deadantloot = 1)
@@ -335,7 +335,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 
-	move_to_delay = 2.0
+	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 3
@@ -553,6 +553,7 @@
 	icon_dead = "pillbug_dead"
 	icon_gib = "radroach_gib"
 	can_ghost_into = TRUE
+	move_to_delay = 4
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1

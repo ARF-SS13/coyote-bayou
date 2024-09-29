@@ -44,7 +44,7 @@
 	//tiles within they start making noise
 	turns_per_move = 5
 	speak_emote = list("growls")
-	emote_see = list("screeches", "screams", "howls", "bellows", "flails", "fidgets", "festers")
+	//emote_see = list("screeches", "screams", "howls", "bellows", "flails", "fidgets", "festers")
 	a_intent = INTENT_HARM
 	attack_verb_simple = list("whipped", "whacked", "whomped", "wailed on", "smacked", "smashed", "bapped")
 	unsuitable_atmos_damage = 20

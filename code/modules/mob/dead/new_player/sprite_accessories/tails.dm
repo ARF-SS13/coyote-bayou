@@ -151,14 +151,14 @@
 	icon_state = "catbig"
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
 	color_src = MATRIXED
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails_animated/human/catbig
 	name = "Cat, Big"
 	icon_state = "catbig"
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
 	color_src = MATRIXED
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/human/twocat
 	name = "Cat, Double"
@@ -671,12 +671,12 @@
 /datum/sprite_accessory/tails/mam_tails/catbig
 	name = "Cat, Big"
 	icon_state = "catbig"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/catbig
 	name = "Cat, Big"
 	icon_state = "catbig"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/twocat
 	name = "Cat, Double"
