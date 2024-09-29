@@ -13,7 +13,7 @@
 	var/rare_icon = "feralghoul_h"
 	can_ghost_into = TRUE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mob_armor = ARMOR_VALUE_ghoul_NAKED
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
 	maxHealth = 40 
 	health = 40
 	robust_searching = 1
@@ -163,7 +163,7 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	mob_armor = ARMOR_VALUE_ghoul_REAVER
+	mob_armor = ARMOR_VALUE_GHOUL_REAVER
 	maxHealth = 50
 	health = 50
 	rapid_melee = 2
@@ -235,7 +235,7 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
-	mob_armor = ARMOR_VALUE_ghoul_COLD
+	mob_armor = ARMOR_VALUE_GHOUL_COLD
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -253,7 +253,7 @@
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
-	mob_armor = ARMOR_VALUE_ghoul_COLDER
+	mob_armor = ARMOR_VALUE_GHOUL_COLDER
 	speed = 1.5
 	maxHealth = 80
 	health = 80
@@ -273,7 +273,7 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	mob_armor = ARMOR_VALUE_ghoul_LEGEND
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
 	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
@@ -305,7 +305,7 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	rare_icon = "glowinghoul_h"
-	mob_armor = ARMOR_VALUE_ghoul_GLOWING
+	mob_armor = ARMOR_VALUE_GHOUL_GLOWING
 	maxHealth = 40 
 	health = 40
 	speed = 2
@@ -597,7 +597,7 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	mob_armor = ARMOR_VALUE_ghoul_LEGEND
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
 	maxHealth = 200
 	health = 200
 	can_ghost_into = FALSE
