@@ -37,7 +37,7 @@
 	var/shadecolor = "#2600ff"
 
 /datum/rts_selector_box/attack
-	shade_color = "#FF0000"
+	shadecolor = "#FF0000"
 
 /datum/rts_selector_box/New(datum/rts_commander/parent)
 	src.parent = parent
