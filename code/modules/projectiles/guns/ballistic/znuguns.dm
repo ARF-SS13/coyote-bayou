@@ -702,6 +702,163 @@
 /obj/item/ammo_box/magazine/m308/ext/empty
 	start_empty = 1
 
+/obj/item/projectile/bullet/pellet/bbuckshot // blackpowder
+	name = "buckshot pellet"
+	damage = 50
+	damage_list = list("10" = 20, "12.5" = 60, "15" = 20)
+	stamina = list("10" = 20, "12.5" = 60, "15" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/bbuckshot
+	name = "blackpowder buckshot shell"
+	desc = "A 12 gauge shell filled with blackpowder and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 4
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/projectile/bullet/pellet/sbuckshot // smokeless
+	name = "buckshot pellet"
+	damage = 60
+	damage_list = list("15" = 20, "20" = 60, "25" = 20)
+	stamina = list("15" = 20, "20" = 60, "25" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/sbuckshot
+	name = "smokeless powder buckshot shell"
+	desc = "A 12 gauge shell filled with smokeless powder and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 3
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/projectile/bullet/pellet/mbuckshot // military
+	name = "buckshot pellet"
+	damage = 65
+	damage_list = list("16.25" = 20, "32.5" = 60, "65" = 20)
+	stamina = list("16.25" = 20, "32.5" = 60, "65" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = 0
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	eyeblur = 0.5 SECONDS
+
+/obj/item/ammo_casing/shotgun/sbuckshot
+	name = "military buckshot shell"
+	desc = "A 12 gauge shell filled with smokeless powder fit for a soldier and buckshot."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/sbuckshot
+	pellets = 2
+	variance = SHOTGUN_SPREAD_BASE
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+
+/obj/item/ammo_box/magazine/internal/shot
+	name = "shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 4
+	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/shot/single
+	name = "single-barrel shotgun internal magazine"
+	max_ammo = 1
+
+/obj/item/projectile/bullet/s3006 // smokeless
+	name = ".30-06 bullet"
+	damage = 90
+	damage_list = list("45" = 20, "90" = 60, "180" = 20)
+	stamina = list("45" = 20, "90" = 60, "180" = 20)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = 0
+
+/obj/item/projectile/bullet/m3006 // military
+	name = ".30-06 bullet"
+	damage = 95
+	damage_list = list("45" = 10, "95" = 60, "190" = 30)
+	stamina = list("45" = 10, "95" = 60, "190" = 30)
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = 0
+
+/obj/item/ammo_casing/s3006
+	name = "smokeless .30-06 cartridge"
+	desc = "A smokeless powder load for a .30-06 cartridge."
+	icon_state = "762-casing"
+	caliber = CALIBER_3006
+	projectile_type = /obj/item/projectile/bullet/a3006
+	material_class = BULLET_IS_HEAVY_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_casing/m3006
+	name = "military .30-06 cartridge"
+	desc = "Factory spec smokeless powder load for a .30-06 cartridge. Easily worth its weight in coins."
+	icon_state = "762-casing"
+	caliber = CALIBER_3006
+	projectile_type = /obj/item/projectile/bullet/m3006
+	material_class = BULLET_IS_HEAVY_RIFLE
+	custom_materials = list(
+		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
+
+/obj/item/ammo_box/magazine/internal/gras
+	name = "Mardi-Gras breech"
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 1
+
 // TIER 0, STARTER
 // These guns should have minimal DPS, be a relic, or are generally good for newbies.
 
