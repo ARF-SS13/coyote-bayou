@@ -516,7 +516,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	to_chat(target, span_info("[usr.name] would like you to perform a [skill] check."))
 
 /mob/living/verb/skill_contest(mob/living/target)
-	set category = "OOC"
+	set category = "Roleplaying"
 	set name = "Skill Contest"
 	// decide skill
 	var/skill = input(usr, "Which skill?", "Skill Chooser 9001", null) as null|anything in GLOB.special_skill_list
